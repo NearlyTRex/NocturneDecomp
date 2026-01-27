@@ -16,16 +16,16 @@ void core_larva_cpp_FUN_00503020(void)
   float fVar2;
   CEnemy *in_stack_00000004;
   
-  this_ptr = &(in_stack_00000004->base_character).model;
+  this_ptr = &(in_stack_00000004->base).model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-  pCVar1 = &in_stack_00000004[1].base_character;
-  (pCVar1->base_actor).actor_name[8] = '\0';
-  (pCVar1->base_actor).actor_name[9] = '\0';
-  (pCVar1->base_actor).actor_name[10] = '\0';
-  (pCVar1->base_actor).actor_name[0xb] = '\0';
+  pCVar1 = &in_stack_00000004[1].base;
+  (pCVar1->base).actor_name[8] = '\0';
+  (pCVar1->base).actor_name[9] = '\0';
+  (pCVar1->base).actor_name[10] = '\0';
+  (pCVar1->base).actor_name[0xb] = '\0';
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,30.0);
-  *(float *)in_stack_00000004->field6_0xbe38 = fVar2;
+  *(float *)in_stack_00000004->unk2 = fVar2;
   return;
 }

@@ -19,7 +19,7 @@ core_vehicle_cpp_CVehicle_dtor_FUN_005e8d20(CVehicle *this_ptr,uint d1,uint d2,u
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)(this_ptr->field3_0x93c + 0x6e4));
+  core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)(this_ptr->unk2 + 0x6e4));
   iVar1 = core_vehicle_cpp_FUN_005e8dd0();
   ptr = (CVehicle *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(iVar1 + -0x93c),1);
   if ((d1 & 2) == 0) {

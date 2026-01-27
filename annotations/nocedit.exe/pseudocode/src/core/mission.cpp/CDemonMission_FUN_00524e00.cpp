@@ -24,8 +24,8 @@ int __cdecl core_mission_cpp_CDemonMission_FUN_00524e00(CDemonMission *this_ptr)
                           core_actor_cpp_castToClassHash_FUN_0040c790
                                     (actor_ptr,g_CEnemyClassInfo.name_hash),
            this_ptr_00 != (CCharacter *)0x0 &&
-           (iVar1 = (*(((this_ptr_00->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr_00),
-           iVar1 != 0))) {
+           (iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00), iVar1 != 0
+           ))) {
       iVar2 = iVar2 + 1;
       actor_ptr = actor_ptr->next_actor;
       if (actor_ptr == (CDemonActor *)0x0) {

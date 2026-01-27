@@ -14,15 +14,15 @@ uint core_werewolf_cpp_FUN_005f2070(void)
   
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CWerewolfClassInfo.name_hash);
-  if (pCVar1[0x8d].field25_0x144 == 0) {
-    pCVar1[0x8d].field25_0x144 = 1;
+  if (pCVar1[0x8d].unk13 == 0) {
+    pCVar1[0x8d].unk13 = 1;
   }
   else {
-    if (pCVar1[0x8d].field25_0x144 != 1) {
-      pCVar1[0x8d].field25_0x144 = 0;
+    if (pCVar1[0x8d].unk13 != 1) {
+      pCVar1[0x8d].unk13 = 0;
       return 1;
     }
-    pCVar1[0x8d].field25_0x144 = 2;
+    pCVar1[0x8d].unk13 = 2;
   }
   return 1;
 }

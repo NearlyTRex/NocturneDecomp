@@ -50,8 +50,8 @@ void core_scat_cpp_FUN_005584a0(void)
   
   bVar8 = 0;
   if (in_stack_00000008 == 0) {
-    local_1c = DAT_03106168;
-    local_18 = DAT_03106170;
+    local_1c = INT_03106168;
+    local_18 = INT_03106170;
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(1.5707964,&local_cc);
     local_fc.w = local_cc.w;
     puVar3 = (uint *)((int)&local_fc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
@@ -64,8 +64,8 @@ void core_scat_cpp_FUN_005584a0(void)
     pCVar1 = &local_bc;
   }
   else {
-    local_1c = DAT_0310616c;
-    local_18 = DAT_03106174;
+    local_1c = INT_0310616c;
+    local_18 = INT_03106174;
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-1.5707964,&local_ac);
     local_fc.w = local_ac.w;
     puVar3 = (uint *)((int)&local_fc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

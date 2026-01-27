@@ -13,12 +13,11 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
   CSkeleton *this_ptr_01;
   CMotionList *pCVar1;
   
-  core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base_hero);
-  this_ptr_00 = &(this_ptr->base_hero).base_character.model;
+  core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base);
+  this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,"gabriela.dfm");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
-  core_cloth_cpp_CCloth_load_FUN_00438cf0
-            ((CCloth *)(this_ptr->field1_0x1fbd4 + 0x40),"gabcoat.cth");
+  core_cloth_cpp_CCloth_load_FUN_00438cf0((CCloth *)(this_ptr->unk + 0x40),"gabcoat.cth");
   core_cloth_cpp_FUN_00439710();
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   INT_02d7b848 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
@@ -64,18 +63,18 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
   INT_02d7b880 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
-  (this_ptr->base_hero).field6_0x1fb9c[8] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[9] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[10] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0xb] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0xc] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0xd] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0xe] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0xf] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0x10] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0x11] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0x12] = '\0';
-  (this_ptr->base_hero).field6_0x1fb9c[0x13] = '\0';
-  *(int *)(this_ptr->base_hero).base_character.carry_hands[0].field0_0x0 = INT_02d7b888;
+  (this_ptr->base).unk3[8] = '\0';
+  (this_ptr->base).unk3[9] = '\0';
+  (this_ptr->base).unk3[10] = '\0';
+  (this_ptr->base).unk3[0xb] = '\0';
+  (this_ptr->base).unk3[0xc] = '\0';
+  (this_ptr->base).unk3[0xd] = '\0';
+  (this_ptr->base).unk3[0xe] = '\0';
+  (this_ptr->base).unk3[0xf] = '\0';
+  (this_ptr->base).unk3[0x10] = '\0';
+  (this_ptr->base).unk3[0x11] = '\0';
+  (this_ptr->base).unk3[0x12] = '\0';
+  (this_ptr->base).unk3[0x13] = '\0';
+  *(int *)(this_ptr->base).base.carry_hands[0].unk1 = INT_02d7b888;
   return;
 }

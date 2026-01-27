@@ -21,7 +21,7 @@ int core_frankgen_cpp_FUN_004d1f70(void)
   float fVar5;
   double input_value;
   
-  if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
+  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
     iVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
     *(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar2 + 0x15c);
     core_frankgen_cpp_LoadModel_FUN_004d2190();

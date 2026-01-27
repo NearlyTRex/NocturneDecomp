@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 18,
-        "message": "'PTR_core_box_cpp_FUN_0065b2a4' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 22,
-        "message": "'CCameraView' {aka 'struct CCameraView'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -24,7 +11,7 @@
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 30,
         "line": 22,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -48,7 +35,7 @@
     {
       "addr": "00422950",
       "from_addr": "0042296d",
-      "name": "core_boxactor.cpp_FUN_00422950",
+      "name": "core_boxactor.cpp_factoryFunc_FUN_00422950",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,7 +66,7 @@
   "globals": [
     {
       "addr": "0065b2a4",
-      "name": "PTR_core_box.cpp_FUN_0065b2a4",
+      "name": "g_CLightActorVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -90,7 +77,7 @@
       {
         "call_addr": "0042296d",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00422950",
+        "caller": "core_boxactor.cpp_factoryFunc_FUN_00422950",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -144,7 +131,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 11,
       "match": "pCVar2[-1].",
-      "text": "pCVar2[-1].saved_screen_buffer_rows[0x36f] = &PTR_core_box_cpp_FUN_0065b2a4;",
+      "text": "pCVar2[-1].saved_screen_buffer_rows[0x36f] = &g_CLightActorVTable;",
       "type": "negative_offset"
     },
     {

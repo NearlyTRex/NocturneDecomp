@@ -407,7 +407,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0xbed4]    ; 004e68de
     FLD float ptr [EBP + 0x76]          ; 004e68e4
     PUSH 0x59ddb0                       ; 004e68e7
-    MOV EAX,[0x02d83320]                ; 004e68ec | DAT_02d83320
+    MOV EAX,[0x02d83320]                ; 004e68ec | INT_02d83320
     FLD1                                ; 004e68f1
     FSUBRP ST2,ST0                      ; 004e68f3
     PUSH EAX                            ; 004e68f5
@@ -801,12 +801,12 @@ section .text
     PUSH EAX                            ; 004e6d84
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 004e6d85
         ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
-    MOV EAX,[0x02d83300]                ; 004e6d8a | DAT_02d83300
+    MOV EAX,[0x02d83300]                ; 004e6d8a | INT_02d83300
     ADD ESP,0x4                         ; 004e6d8f
     CMP EDI,0xc                         ; 004e6d92
     JNZ 0x004e6d9c                      ; 004e6d95
         ;   XREF to: 004e6d9c (CONDITIONAL_JUMP)  ; LAB_004e6d9c
-    MOV EAX,[0x02d83304]                ; 004e6d97 | DAT_02d83304
+    MOV EAX,[0x02d83304]                ; 004e6d97 | INT_02d83304
     PUSH EAX                            ; 004e6d9c
         ;   Label: LAB_004e6d9c
     LEA EAX,[EBP + 0xfffffeaa]          ; 004e6d9d
@@ -857,7 +857,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 004e6e1d
         ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004e6e22
-    MOV EAX,[0x02d832fc]                ; 004e6e25 | DAT_02d832fc
+    MOV EAX,[0x02d832fc]                ; 004e6e25 | INT_02d832fc
     PUSH EAX                            ; 004e6e2a
     LEA EAX,[EBP + 0xfffffeda]          ; 004e6e2b
     PUSH EAX                            ; 004e6e31
@@ -906,7 +906,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 004e6ea8
         ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004e6ead
-    MOV EAX,[0x02d832fc]                ; 004e6eb0 | DAT_02d832fc
+    MOV EAX,[0x02d832fc]                ; 004e6eb0 | INT_02d832fc
     PUSH EAX                            ; 004e6eb5
     LEA EAX,[EBP + 0xfffffe9e]          ; 004e6eb6
     PUSH EAX                            ; 004e6ebc
@@ -1365,7 +1365,7 @@ section .text
     FADDP                               ; 004e73d6
     FSTP float ptr [EBP + 0xe]          ; 004e73d8
     MOV EAX,dword ptr [EBP + 0xe]       ; 004e73db
-    MOV EDX,dword ptr [0x02d7a7b8]      ; 004e73de | DAT_02d7a7b8
+    MOV EDX,dword ptr [0x02d7a7b8]      ; 004e73de | INT_02d7a7b8
     SAR EAX,0x1                         ; 004e73e4
     ADD EAX,EDX                         ; 004e73e6
     MOV dword ptr [EBP + 0x12],EAX      ; 004e73e8
@@ -2144,7 +2144,7 @@ section .text
     FSTP float ptr [EBP + 0xfffffdb6]   ; 004e7cf5
     LEA EAX,[EBP + 0xfffffdb2]          ; 004e7cfb
         ;   Label: LAB_004e7cfb
-    MOV EDX,dword ptr [0x02d83304]      ; 004e7d01 | DAT_02d83304
+    MOV EDX,dword ptr [0x02d83304]      ; 004e7d01 | INT_02d83304
     PUSH EAX                            ; 004e7d07
     LEA EAX,[EDX*0x4 + 0x0]             ; 004e7d08
     MOV dword ptr [EBP + 0xfffffde6],EBX ; 004e7d0f
@@ -2155,7 +2155,7 @@ section .text
     ADD EAX,EDX                         ; 004e7d26
     PUSH 0x3e4ccccd                     ; 004e7d28
     PUSH EAX                            ; 004e7d2d
-    PUSH 0x2d832b4                      ; 004e7d2e | DAT_02d832b4
+    PUSH 0x2d832b4                      ; 004e7d2e | INT_02d832b4
     LEA EAX,[EBP + 0xffffff76]          ; 004e7d33
     PUSH EAX                            ; 004e7d39
     CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 004e7d3a
@@ -2264,7 +2264,7 @@ section .text
     FSTP float ptr [EBP + 0xfffffd7a]   ; 004e7e63
     LEA EAX,[EBP + 0xfffffd76]          ; 004e7e69
         ;   Label: LAB_004e7e69
-    MOV EDX,dword ptr [0x02d83300]      ; 004e7e6f | DAT_02d83300
+    MOV EDX,dword ptr [0x02d83300]      ; 004e7e6f | INT_02d83300
     PUSH EAX                            ; 004e7e75
     LEA EAX,[EDX*0x4 + 0x0]             ; 004e7e76
     MOV dword ptr [EBP + 0xfffffdaa],EBX ; 004e7e7d
@@ -2275,7 +2275,7 @@ section .text
     ADD EAX,EDX                         ; 004e7e94
     PUSH 0x3ecccccd                     ; 004e7e96
     PUSH EAX                            ; 004e7e9b
-    PUSH 0x2d832a8                      ; 004e7e9c | DAT_02d832a8
+    PUSH 0x2d832a8                      ; 004e7e9c | INT_02d832a8
     LEA EAX,[EBP + 0xfffffe7a]          ; 004e7ea1
     PUSH EAX                            ; 004e7ea7
     CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 004e7ea8
@@ -2441,7 +2441,7 @@ section .text
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 004e8089
     JZ 0x004e8152                       ; 004e8091
         ;   XREF to: 004e8152 (CONDITIONAL_JUMP)  ; LAB_004e8152
-    MOV ECX,dword ptr [0x02d83310]      ; 004e8097 | DAT_02d83310
+    MOV ECX,dword ptr [0x02d83310]      ; 004e8097 | INT_02d83310
     PUSH 0x3e4ccccd                     ; 004e809d
     PUSH ECX                            ; 004e80a2
     MOV ESI,dword ptr [EBX + 0xbee0]    ; 004e80a3
@@ -2455,7 +2455,7 @@ section .text
     TEST EDX,EDX                        ; 004e80c0
     JZ 0x004e80e0                       ; 004e80c2
         ;   XREF to: 004e80e0 (CONDITIONAL_JUMP)  ; LAB_004e80e0
-    MOV ECX,dword ptr [0x02d83308]      ; 004e80c4 | DAT_02d83308
+    MOV ECX,dword ptr [0x02d83308]      ; 004e80c4 | INT_02d83308
     PUSH 0x3e4ccccd                     ; 004e80ca
     PUSH ECX                            ; 004e80cf
     MOV ESI,dword ptr [EBX + 0xbee4]    ; 004e80d0
@@ -2464,7 +2464,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_FUN_0042b760 ; 004e80d8
         ;   XREF to: 0042b760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b760(CCharacter * this_ptr)
     ADD ESP,0x10                        ; 004e80dd
-    MOV EAX,[0x02d83314]                ; 004e80e0 | DAT_02d83314
+    MOV EAX,[0x02d83314]                ; 004e80e0 | INT_02d83314
         ;   Label: LAB_004e80e0
     PUSH 0x3e4ccccd                     ; 004e80e5
     PUSH EAX                            ; 004e80ea
@@ -2479,7 +2479,7 @@ section .text
     TEST ECX,ECX                        ; 004e8108
     JZ 0x004e8128                       ; 004e810a
         ;   XREF to: 004e8128 (CONDITIONAL_JUMP)  ; LAB_004e8128
-    MOV ESI,dword ptr [0x02d8330c]      ; 004e810c | DAT_02d8330c
+    MOV ESI,dword ptr [0x02d8330c]      ; 004e810c | INT_02d8330c
     PUSH 0x3e4ccccd                     ; 004e8112
     PUSH ESI                            ; 004e8117
     MOV EAX,dword ptr [EBX + 0xbeec]    ; 004e8118
@@ -2488,7 +2488,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_FUN_0042b760 ; 004e8120
         ;   XREF to: 0042b760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b760(CCharacter * this_ptr)
     ADD ESP,0x10                        ; 004e8125
-    MOV EDX,dword ptr [0x02d832fc]      ; 004e8128 | DAT_02d832fc
+    MOV EDX,dword ptr [0x02d832fc]      ; 004e8128 | INT_02d832fc
         ;   Label: LAB_004e8128
     PUSH 0x3f333333                     ; 004e812e
     PUSH EDX                            ; 004e8133
@@ -2505,7 +2505,7 @@ section .text
     ADD ESP,0x4                         ; 004e814a
     JMP 0x004e698a                      ; 004e814d
         ;   XREF to: 004e698a (UNCONDITIONAL_JUMP)  ; LAB_004e698a
-    MOV EAX,[0x02d83324]                ; 004e8152 | DAT_02d83324
+    MOV EAX,[0x02d83324]                ; 004e8152 | INT_02d83324
         ;   Label: LAB_004e8152
     PUSH 0x3f000000                     ; 004e8157
     PUSH EAX                            ; 004e815c

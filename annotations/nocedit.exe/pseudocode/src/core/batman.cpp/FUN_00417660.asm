@@ -26,7 +26,7 @@
 ;   CConsole g_ConsolePtr
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
-;   undefined4 g_CGameInstance.field57_0x1e0
+;   undefined4 g_CGameInstance.unk4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
@@ -99,7 +99,7 @@ section .text
     MOV dword ptr [ESP + 0x20],0x3ca3d70a ; 004176d8
     MOV EAX,[0x0067b654]                ; 004176e0 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_004176e0
-    CMP dword ptr [EAX + 0x1e0],0x0     ; 004176e5 | g_CGameInstance.field57_0x1e0
+    CMP dword ptr [EAX + 0x1e0],0x0     ; 004176e5 | g_CGameInstance.unk4
     JZ 0x004176f6                       ; 004176ec
         ;   XREF to: 004176f6 (CONDITIONAL_JUMP)  ; LAB_004176f6
     MOV dword ptr [ESP + 0x20],0x3f800000 ; 004176ee

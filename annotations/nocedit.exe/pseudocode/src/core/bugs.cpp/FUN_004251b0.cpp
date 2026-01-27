@@ -26,7 +26,7 @@ int core_bugs_cpp_FUN_004251b0(void)
   int iStack_c;
   char *pcStack_8;
   
-  if (in_stack_00000004[0x1a].field21_0x11c == 0) {
+  if (in_stack_00000004[0x1a].unk10 == 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
@@ -35,7 +35,7 @@ int core_bugs_cpp_FUN_004251b0(void)
       iStack_c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
       if (iStack_c != 0) {
         iVar1 = 0;
-        if (0 < in_stack_00000004[0x8d].field26_0x148) {
+        if (0 < in_stack_00000004[0x8d].unk14) {
           pcStack_8 = in_stack_00000004[0xd8].create_event + 0x10;
           position = (CVector3i *)(in_stack_00000004[0x8e].actor_name + 8);
           rotation = (CVector3i *)&in_stack_00000004[0x8d].vtable;
@@ -55,13 +55,13 @@ int core_bugs_cpp_FUN_004251b0(void)
                       (g_CDemonRendererPtr2,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                       ((CKeyFramedModelInstance *)
-                       (pcStack_8 + (&in_stack_00000004[0x8d].field28_0x150)[iVar1 * 0x10] * 0x17c),
-                       0.0,0x2e7);
+                       (pcStack_8 + (&in_stack_00000004[0x8d].unk15)[iVar1 * 0x10] * 0x17c),0.0,
+                       0x2e7);
             engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
             position = (CVector3i *)&position[5].y;
             iVar1 = iVar1 + 1;
             rotation = (CVector3i *)&rotation[5].y;
-          } while (iVar1 < in_stack_0000000c[0x8d].field26_0x148);
+          } while (iVar1 < in_stack_0000000c[0x8d].unk14);
         }
         core_set_cpp_CDemonSet_FUN_00570cd0(g_CDemonSetPtr);
       }

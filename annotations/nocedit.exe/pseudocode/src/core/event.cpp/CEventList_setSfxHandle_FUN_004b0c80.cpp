@@ -9,15 +9,16 @@
 void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr)
 
 {
-  CEvent CVar1;
+  char cVar1;
   int iVar2;
   uint uVar3;
-  CEvent *pCVar4;
-  byte bVar5;
-  CEvent *in_stack_00000008;
-  uint in_stack_0000000c;
+  char *pcVar4;
+  int *piVar5;
+  byte bVar6;
+  char *in_stack_00000008;
+  int in_stack_0000000c;
   
-  bVar5 = 0;
+  bVar6 = 0;
   core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
   iVar2 = core_event_cpp_CEventList_FUN_004b0d60(this_ptr);
   if (iVar2 < 0) {
@@ -30,29 +31,29 @@ void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *thi
     this_ptr[1].event_count = iVar2 + 1;
   }
   uVar3 = 0xffffffff;
-  pCVar4 = in_stack_00000008;
+  pcVar4 = in_stack_00000008;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    CVar1 = *pCVar4;
-    pCVar4 = pCVar4 + (uint)bVar5 * -2 + 1;
-  } while (CVar1 != (CEvent)0x0);
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+  } while (cVar1 != '\0');
   if (0x13 < ~uVar3 - 1) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xbae;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters");
   }
-  pCVar4 = this_ptr[1].event_list + iVar2 * 0x120 + 4;
+  piVar5 = this_ptr[1].event_list + iVar2 * 0x48 + 1;
   do {
-    CVar1 = *in_stack_00000008;
-    *pCVar4 = CVar1;
-    if (CVar1 == (CEvent)0x0) break;
-    CVar1 = in_stack_00000008[1];
+    cVar1 = *in_stack_00000008;
+    *(char *)piVar5 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = in_stack_00000008[1];
     in_stack_00000008 = in_stack_00000008 + 2;
-    pCVar4[1] = CVar1;
-    pCVar4 = pCVar4 + 2;
-  } while (CVar1 != (CEvent)0x0);
-  *(uint *)(this_ptr[1].event_list + iVar2 * 0x120) = in_stack_0000000c;
+    *(char *)((int)piVar5 + 1) = cVar1;
+    piVar5 = (int *)((int)piVar5 + 2);
+  } while (cVar1 != '\0');
+  this_ptr[1].event_list[iVar2 * 0x48] = in_stack_0000000c;
   core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
   return;
 }

@@ -71,9 +71,9 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentAlphaValue = 0xff
-;   uint g_RedMask16 = 0xf800
-;   uint g_GreenMask16 = 0x7e0
-;   uint g_BlueMask16 = 0x1f
+;   ulonglong g_RedMask16 = 0xf800
+;   ulonglong g_GreenMask16 = 0x7e0
+;   ulonglong g_BlueMask16 = 0x1f
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   ushort[256] g_ColorTable16

@@ -11,27 +11,27 @@ CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_pt
 {
   CColonel *pCVar1;
   
-  pCVar1 = (CColonel *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
-  (pCVar1->base_hero).base_character.base_actor.vtable._ub = &g_CColonelVTable;
-  pCVar1->field1_0x1fbd4[0] = '\0';
-  pCVar1->field1_0x1fbd4[1] = '\0';
-  pCVar1->field1_0x1fbd4[2] = '\0';
-  pCVar1->field1_0x1fbd4[3] = '\0';
-  pCVar1->field1_0x1fbd4[4] = '\0';
-  pCVar1->field1_0x1fbd4[5] = '\0';
-  pCVar1->field1_0x1fbd4[6] = '\0';
-  pCVar1->field1_0x1fbd4[7] = '\0';
+  pCVar1 = (CColonel *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CColonelVTable;
+  pCVar1->unk[0] = '\0';
+  pCVar1->unk[1] = '\0';
+  pCVar1->unk[2] = '\0';
+  pCVar1->unk[3] = '\0';
+  pCVar1->unk[4] = '\0';
+  pCVar1->unk[5] = '\0';
+  pCVar1->unk[6] = '\0';
+  pCVar1->unk[7] = '\0';
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar1->base_hero).base_character.model,"colonel.dfm");
-  pCVar1->field1_0x1fbd4[0x14] = '\0';
-  pCVar1->field1_0x1fbd4[0x15] = '\0';
-  pCVar1->field1_0x1fbd4[0x16] = -0x80;
-  pCVar1->field1_0x1fbd4[0x17] = '?';
-  pCVar1->field1_0x1fbd4[0x10] = '\0';
-  pCVar1->field1_0x1fbd4[0x11] = '\0';
-  pCVar1->field1_0x1fbd4[0x12] = '\0';
-  pCVar1->field1_0x1fbd4[0x13] = '\0';
-  *(uint *)(pCVar1->field1_0x1fbd4 + 0xc) = *(uint *)(pCVar1->field1_0x1fbd4 + 0x10);
-  *(uint *)(pCVar1->field1_0x1fbd4 + 8) = *(uint *)(pCVar1->field1_0x1fbd4 + 0xc);
+            (&(pCVar1->base).base.model,"colonel.dfm");
+  pCVar1->unk[0x14] = '\0';
+  pCVar1->unk[0x15] = '\0';
+  pCVar1->unk[0x16] = -0x80;
+  pCVar1->unk[0x17] = '?';
+  pCVar1->unk[0x10] = '\0';
+  pCVar1->unk[0x11] = '\0';
+  pCVar1->unk[0x12] = '\0';
+  pCVar1->unk[0x13] = '\0';
+  *(uint *)(pCVar1->unk + 0xc) = *(uint *)(pCVar1->unk + 0x10);
+  *(uint *)(pCVar1->unk + 8) = *(uint *)(pCVar1->unk + 0xc);
   return pCVar1;
 }

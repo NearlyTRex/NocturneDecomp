@@ -19,21 +19,21 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3970(CExplosion *this_ptr)
   uint in_stack_00000010;
   
   if (this_ptr != in_stack_00000008) {
-    *(uint *)this_ptr->field0_0x0 = *(uint *)in_stack_00000008->field0_0x0;
-    *(uint *)(this_ptr->field0_0x0 + 4) = *(uint *)(in_stack_00000008->field0_0x0 + 4);
-    *(uint *)(this_ptr->field0_0x0 + 8) = *(uint *)(in_stack_00000008->field0_0x0 + 8);
+    *(uint *)this_ptr->unk = *(uint *)in_stack_00000008->unk;
+    *(uint *)(this_ptr->unk + 4) = *(uint *)(in_stack_00000008->unk + 4);
+    *(uint *)(this_ptr->unk + 8) = *(uint *)(in_stack_00000008->unk + 8);
   }
   this_ptr_00 = g_CDemonSetPtr;
-  this_ptr->field0_0x0[0xc] = '\0';
-  this_ptr->field0_0x0[0xd] = '\0';
-  this_ptr->field0_0x0[0xe] = -0x80;
-  this_ptr->field0_0x0[0xf] = '?';
-  *(uint *)(this_ptr->field0_0x0 + 0x10) = in_stack_0000000c;
+  this_ptr->unk[0xc] = '\0';
+  this_ptr->unk[0xd] = '\0';
+  this_ptr->unk[0xe] = -0x80;
+  this_ptr->unk[0xf] = '?';
+  *(uint *)(this_ptr->unk + 0x10) = in_stack_0000000c;
   core_set_cpp_CDemonSet_FUN_00570fa0(this_ptr_00);
   iVar4 = 0;
   iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-  *(int *)(this_ptr->field0_0x0 + 0x18) = iVar1;
-  *(uint *)(this_ptr->field0_0x0 + 0x14) = in_stack_00000010;
+  *(int *)(this_ptr->unk + 0x18) = iVar1;
+  *(uint *)(this_ptr->unk + 0x14) = in_stack_00000010;
   do {
     fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
     fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);

@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005bf720(CStranger* param_1,
-   uint param_2) */
-
 void core_stranger_cpp_CStranger_FUN_005bf720(void)
 
 {
@@ -34,7 +31,7 @@ void core_stranger_cpp_CStranger_FUN_005bf720(void)
             (this_ptr,*(int *)(in_stack_00000004 + 0x1fc84),
              *(float *)(in_stack_00000004 + 0x1fc54) * (float)40,-1);
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                     (&local_1c,(CVector3f *)(DAT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));
+                     (&local_1c,(CVector3f *)(INT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));
   blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
   bone_index = -1;
   local_1c.z = -pCVar1->y;

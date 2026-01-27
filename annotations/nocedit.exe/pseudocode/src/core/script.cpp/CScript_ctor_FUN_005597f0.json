@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 99,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 13,
     "suspect_count": 8,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 30
+    "total_lines": 29
   },
   "cross_references": [
     {
@@ -110,56 +110,56 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 9,
+      "line": 8,
       "match": "pCVar1[-1].",
       "text": "pCVar1[-1].data_array = (char **)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 10,
+      "line": 9,
       "match": "pCVar1[-1].",
       "text": "pCVar1[-1].vtable = (CStrList_vtable *)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 11,
+      "line": 10,
       "match": "pCVar1[-2].",
       "text": "pCVar1[-2].capacity = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 12,
+      "line": 11,
       "match": "pCVar1[-2].",
       "text": "pCVar1[-2].data_array = (char **)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 12,
       "match": "pCVar1[-2].",
       "text": "pCVar1[-2].vtable = (CStrList_vtable *)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 13,
       "match": "pCVar1[-1].",
       "text": "pCVar1[-1].item_count = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 14,
       "match": "pCVar1[-1].",
       "text": "pCVar1[-1].capacity = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 15,
       "match": "pCVar1[-4].",
       "text": "return (CScript *)&pCVar1[-4].data_array;",
       "type": "negative_offset"

@@ -30,7 +30,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
 ;   CFireEffect g_CFireEffectInstance
-;   undefined4 DAT_02d7a7b8
+;   int INT_02d7a7b8
 ;   int g_HeroCount
 ;   CHero*[4] g_HeroActors
 ;   ... and 6 more
@@ -365,7 +365,7 @@ section .text
     PUSH 0x0                            ; 005dfe59
     FSTP float ptr [ESP + 0xa8]         ; 005dfe5b
     MOV EAX,dword ptr [ESP + 0xa8]      ; 005dfe62
-    MOV EDI,dword ptr [0x02d7a7b8]      ; 005dfe69 | DAT_02d7a7b8
+    MOV EDI,dword ptr [0x02d7a7b8]      ; 005dfe69 | INT_02d7a7b8
     SAR EAX,0x1                         ; 005dfe6f
     PUSH 0x0                            ; 005dfe71
     ADD EAX,EDI                         ; 005dfe73

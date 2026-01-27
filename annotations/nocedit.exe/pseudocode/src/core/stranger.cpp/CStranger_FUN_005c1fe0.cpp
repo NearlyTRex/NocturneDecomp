@@ -51,9 +51,9 @@ uint core_stranger_cpp_CStranger_FUN_005c1fe0(void)
   int local_18;
   float local_14;
   
-  in_stack_00000004[0x179].field19_0x114 = 0;
+  in_stack_00000004[0x179].unk8 = 0;
   local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
-  if ((((float)0.98999999999999999 <= local_14) && (in_stack_00000004[0x1b].field7_0x6c == 0)) &&
+  if ((((float)0.98999999999999999 <= local_14) && (in_stack_00000004[0x1b].unk1 == 0)) &&
      (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0)) {
     local_20 = &(in_stack_00000004->location).position;
     local_1c = 0.0;
@@ -112,7 +112,7 @@ uint core_stranger_cpp_CStranger_FUN_005c1fe0(void)
             pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                (in_stack_00000004,&CStack_90,&(this_ptr_00->location).position);
             if (0.0 < pCVar2->z) {
-              in_stack_00000004[0x179].field19_0x114 = (int)this_ptr_00;
+              in_stack_00000004[0x179].unk8 = (int)this_ptr_00;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         ((CMotionController *)(in_stack_00000004 + 1),0x2a,1);
               in_stack_00000004[0x8d].create_event[0x48] = '\0';
@@ -131,7 +131,7 @@ uint core_stranger_cpp_CStranger_FUN_005c1fe0(void)
               if ((float *)piVar1 != &fStack_60) {
                 *piVar1 = (int)fStack_60;
                 in_stack_00000004[0x17b].scale.z = (int)fStack_5c;
-                in_stack_00000004[0x17b].field19_0x114 = (int)fStack_58;
+                in_stack_00000004[0x17b].unk8 = (int)fStack_58;
               }
               CStack_6c.x = (float)local_a4._8_4_ - (in_stack_00000004->location).position.x;
               CStack_6c.y = fStack_98 - (in_stack_00000004->location).position.y;
@@ -139,8 +139,8 @@ uint core_stranger_cpp_CStranger_FUN_005c1fe0(void)
               pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_78,&CStack_6c);
               this_ptr = g_CConsolePtr;
-              in_stack_00000004[0x17b].field20_0x118 = (int)pCVar2->y;
-              in_stack_00000004[0x17b].field21_0x11c = 0x3f800000;
+              in_stack_00000004[0x17b].unk9 = (int)pCVar2->y;
+              in_stack_00000004[0x17b].unk10 = 0x3f800000;
               engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr,"Climbing ladder %s\n")
               ;
               return 1;

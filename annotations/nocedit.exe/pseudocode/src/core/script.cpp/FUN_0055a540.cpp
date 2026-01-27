@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_script.cpp_FUN_0055a540(CScript* param_1) */
-
 void core_script_cpp_FUN_0055a540(void)
 
 {
@@ -36,7 +33,7 @@ void core_script_cpp_FUN_0055a540(void)
   pCVar2->allow_damage_flag = 1;
   pCVar2->allow_enemy_attack_flag = 1;
   pCVar2->letterbox_mode = 0;
-  _DAT_0310f4a0 = 0;
+  FLOAT_0310f4a0 = 0.0;
   in_stack_00000004[0x115] = 0xbf800000;
   in_stack_00000004[0x116] = 0xffffffff;
   pcVar6 = g_CDemonSetPtr->geometry_filename;

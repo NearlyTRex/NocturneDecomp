@@ -2,52 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 53,
-        "line": 26,
-        "message": "'CEvent' {aka 'struct CEvent'} has no member named 'field_0x0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 43,
-        "line": 30,
-        "message": "'CEvent' {aka 'struct CEvent'} has no member named 'field_0x0'"
-      },
-      {
         "category": "other",
         "column": 29,
-        "line": 31,
+        "line": 30,
         "message": "cast from 'CEventList*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 26,
-        "line": 39,
-        "message": "'CEventList' {aka 'struct CEventList'} has no member named 'field14_0x3218'"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 42,
-        "message": "'CEventList' {aka 'struct CEventList'} has no member named 'field14_0x3218'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 43,
-        "message": "'CEventList' {aka 'struct CEventList'} has no member named 'field14_0x3218'"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 49,
-        "message": "'CEventList' {aka 'struct CEventList'} has no member named 'field16_0x3380'; did you mean 'field_3308'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 50,
-        "message": "'CEventList' {aka 'struct CEventList'} has no member named 'field16_0x3380'; did you mean 'field_3308'?"
+        "category": "other",
+        "column": 22,
+        "line": 31,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -61,6 +25,12 @@
       {
         "category": "other",
         "column": 14,
+        "line": 30,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
         "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -68,17 +38,16 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 92,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 52,
-    "suspect_count": 3,
+    "pseudocode_lines": 50,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_field"
+      "pointer_cast"
     ],
-    "total_lines": 156
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -241,24 +210,17 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x0",
-      "text": "*(uint *)pCVar7 = *(uint *)&((CEvent *)pCVar6)->field_0x0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 23,
-      "match": "field_0x0",
-      "text": "*pCVar7 = (CEvent)((CEvent *)pCVar6)->field_0x0;",
-      "type": "unnamed_field"
+      "match": "(CEventList *)((int)",
+      "text": "pCVar6 = (CEventList *)((int)pCVar6 + 1);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(CEventList *)((int)",
-      "text": "pCVar6 = (CEventList *)((int)pCVar6 + 1);",
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)piVar7 + 1);",
       "type": "pointer_cast"
     }
   ]

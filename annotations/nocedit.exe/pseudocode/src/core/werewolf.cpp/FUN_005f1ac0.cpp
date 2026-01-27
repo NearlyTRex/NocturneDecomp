@@ -51,8 +51,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
     if ((pSVar3->state_index != 0xd) && (pSVar3->state_index != 0xc)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)this_ptr,0xc,1);
-      if ((in_stack_00000004[0x8d].field25_0x144 == 0) &&
-         (g_CDemonSetPtr->last_switch_area_invalid != 0)) {
+      if ((in_stack_00000004[0x8d].unk13 == 0) && (g_CDemonSetPtr->last_switch_area_invalid != 0)) {
         fVar1 = (in_stack_00000004->location).position.x;
         if (fVar1 <= (float)5) {
           if ((double)fVar1 < -5) {
@@ -71,7 +70,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
     }
     goto LAB_005f1bc9;
   }
-  if (in_stack_00000004[0x8d].field25_0x144 != 2) {
+  if (in_stack_00000004[0x8d].unk13 != 2) {
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        ((CMotionController *)this_ptr);
     iVar5 = pSVar3->state_index;

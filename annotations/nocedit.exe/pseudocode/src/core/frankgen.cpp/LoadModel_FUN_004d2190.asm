@@ -23,8 +23,8 @@
 ;   void* switchdataD_004d2168 = 004d21b1
 ;   TerminatedCString s_core_frankgen_cpp_0062ab35
 ;   TerminatedCString s_WTF_0062ab4a
-;   undefined4 DAT_0065e658
-;   undefined4 DAT_0065e670
+;   float FLOAT_0065e658 = 0.00390625
+;   float FLOAT_0065e670 = 2300
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 004d22ec (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x4d2168]  ; 004d21aa | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    PUSH dword ptr [0x0065e670]         ; 004d21b1 | DAT_0065e670
+    PUSH dword ptr [0x0065e670]         ; 004d21b1 | FLOAT_0065e670
         ;   Label: caseD_0
     PUSH 0x0                            ; 004d21b7
     PUSH EBP                            ; 004d21b9
@@ -96,13 +96,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d2218
     MOVSD ES:EDI,ESI                    ; 004d2219
     FILD dword ptr [EAX]                ; 004d221a
-    FMUL float ptr [0x0065e658]         ; 004d221c | DAT_0065e658
+    FMUL float ptr [0x0065e658]         ; 004d221c | FLOAT_0065e658
     FSTP float ptr [EBX]                ; 004d2222
     FILD dword ptr [EAX + 0x4]          ; 004d2224
-    FMUL float ptr [0x0065e658]         ; 004d2227 | DAT_0065e658
+    FMUL float ptr [0x0065e658]         ; 004d2227 | FLOAT_0065e658
     FSTP float ptr [EBX + 0x4]          ; 004d222d
     FILD dword ptr [EAX + 0x8]          ; 004d2230
-    FMUL float ptr [0x0065e658]         ; 004d2233 | DAT_0065e658
+    FMUL float ptr [0x0065e658]         ; 004d2233 | FLOAT_0065e658
     FSTP float ptr [EBX + 0x8]          ; 004d2239
     LEA EAX,[ESP + 0x18]                ; 004d223c
     PUSH EAX                            ; 004d2240

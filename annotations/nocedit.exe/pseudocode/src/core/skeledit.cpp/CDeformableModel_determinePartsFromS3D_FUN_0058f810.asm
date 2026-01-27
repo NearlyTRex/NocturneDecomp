@@ -889,7 +889,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa0bc]    ; 0058ffef
     XOR EDX,EDX                         ; 0058fff6
     MOV dword ptr [EBX + 0x14],EAX      ; 0058fff8
-    FLD double ptr [0x0064bfd2]         ; 0058fffb | DAT_0064bfd2
+    FLD double ptr [0x0064bfd2]         ; 0058fffb | DOUBLE_0064bfd2
     MOV EAX,dword ptr [ESP + EDX*0x1 + 0x9f80] ; 00590001
         ;   Label: LAB_00590001
     MOV dword ptr [ECX + 0x18],EAX      ; 00590008
@@ -1715,7 +1715,7 @@ section .text
     FXCH                                ; 00590be4
     FSTP float ptr [ESP + 0x9fd8]       ; 00590be6
     FSTP float ptr [ESP + 0x9fdc]       ; 00590bed
-    FCOMP double ptr [0x0064bfda]       ; 00590bf4 | DAT_0064bfda
+    FCOMP double ptr [0x0064bfda]       ; 00590bf4 | DOUBLE_0064bfda
     FNSTSW AX                           ; 00590bfa
     SAHF                                ; 00590bfc
     JBE 0x00590c4b                      ; 00590bfd
@@ -1748,14 +1748,14 @@ section .text
     FLD float ptr [ESP + 0x9fd8]        ; 00590c4b
         ;   Label: LAB_00590c4b
     FABS                                ; 00590c52
-    FCOMP double ptr [0x0064bfda]       ; 00590c54 | DAT_0064bfda
+    FCOMP double ptr [0x0064bfda]       ; 00590c54 | DOUBLE_0064bfda
     FNSTSW AX                           ; 00590c5a
     SAHF                                ; 00590c5c
     JA 0x00590bff                       ; 00590c5d
         ;   XREF to: 00590bff (CONDITIONAL_JUMP)  ; LAB_00590bff
     FLD float ptr [ESP + 0x9fdc]        ; 00590c5f
     FABS                                ; 00590c66
-    FCOMP double ptr [0x0064bfda]       ; 00590c68 | DAT_0064bfda
+    FCOMP double ptr [0x0064bfda]       ; 00590c68 | DOUBLE_0064bfda
     FNSTSW AX                           ; 00590c6e
     SAHF                                ; 00590c70
     JA 0x00590bff                       ; 00590c71
@@ -1981,7 +1981,7 @@ section .text
     FMUL float ptr [EAX + 0x8]          ; 00590fd6
     FADDP                               ; 00590fd9
     XOR ESI,ESI                         ; 00590fdb
-    FSUBR double ptr [0x0064bfea]       ; 00590fdd | DAT_0064bfea
+    FSUBR double ptr [0x0064bfea]       ; 00590fdd | DOUBLE_0064bfea
     MOV dword ptr [ESP + 0xa0ec],ESI    ; 00590fe3
     FSTP float ptr [ESP + 0xa0e8]       ; 00590fea
     MOV ECX,dword ptr [ESP + 0xa0ec]    ; 00590ff1
@@ -2034,7 +2034,7 @@ section .text
     FXCH                                ; 005910b9
     FSTP float ptr [ESP + 0x9ff0]       ; 005910bb
     FSTP float ptr [ESP + 0x9ff4]       ; 005910c2
-    FCOMP double ptr [0x0064bfe2]       ; 005910c9 | DAT_0064bfe2
+    FCOMP double ptr [0x0064bfe2]       ; 005910c9 | DOUBLE_0064bfe2
     FNSTSW AX                           ; 005910cf
     SAHF                                ; 005910d1
     JBE 0x005919c1                      ; 005910d2
@@ -2719,14 +2719,14 @@ section .text
     FLD float ptr [ESP + 0x9ff0]        ; 005919c1
         ;   Label: LAB_005919c1
     FABS                                ; 005919c8
-    FCOMP double ptr [0x0064bfe2]       ; 005919ca | DAT_0064bfe2
+    FCOMP double ptr [0x0064bfe2]       ; 005919ca | DOUBLE_0064bfe2
     FNSTSW AX                           ; 005919d0
     SAHF                                ; 005919d2
     JA 0x005910d8                       ; 005919d3
         ;   XREF to: 005910d8 (CONDITIONAL_JUMP)  ; LAB_005910d8
     FLD float ptr [ESP + 0x9ff4]        ; 005919d9
     FABS                                ; 005919e0
-    FCOMP double ptr [0x0064bfe2]       ; 005919e2 | DAT_0064bfe2
+    FCOMP double ptr [0x0064bfe2]       ; 005919e2 | DOUBLE_0064bfe2
     FNSTSW AX                           ; 005919e8
     SAHF                                ; 005919ea
     JA 0x005910d8                       ; 005919eb
@@ -3268,7 +3268,7 @@ section .text
         ;   XREF to: 005920cd (CONDITIONAL_JUMP)  ; LAB_005920cd
     FLD float ptr [ESP + 0x8]           ; 00592154
         ;   Label: LAB_00592154
-    FCOMP double ptr [0x0064bfe2]       ; 00592158 | DAT_0064bfe2
+    FCOMP double ptr [0x0064bfe2]       ; 00592158 | DOUBLE_0064bfe2
     FNSTSW AX                           ; 0059215e
     SAHF                                ; 00592160
     JA 0x0059236b                       ; 00592161

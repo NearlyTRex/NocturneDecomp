@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000
-;   undefined1 DAT_00684acd
+;   byte BYTE_00684acd = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0060eb57
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_0060df18
     RCR EDX,0x1                         ; 0060df19
         ;   Label: LAB_0060df19
-    CMP byte ptr [0x00684acd],0x0       ; 0060df1b | DAT_00684acd
+    CMP byte ptr [0x00684acd],0x0       ; 0060df1b | BYTE_00684acd
         ;   Label: LAB_0060df1b
     JZ 0x0060df45                       ; 0060df22
         ;   XREF to: 0060df45 (CONDITIONAL_JUMP)  ; LAB_0060df45

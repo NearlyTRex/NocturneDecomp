@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Struct "FormatSpec": ignoring multiple overlapping fields */
-
 void __cdecl
 crt_stdio_c_FormatFixedPoint_FUN_0060305c(char *buffer,int fixed_point_value,FormatSpec *spec_info)
 

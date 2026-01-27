@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_shotgun.cpp_staticInit_FUN_00587e70(void)
+; __cdecl void core_shotgun.cpp_staticInit_FUN_00587e70(void)
 ;
 ;
 ; Referenced Globals:

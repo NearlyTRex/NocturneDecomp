@@ -69,10 +69,10 @@ LAB_004c7525:
   if (render_mode == 0) {
     iVar3 = 0;
     do {
-      if ((*(int *)(g_CraterPool[0].field0_0x0 + iVar3 + 4) != 0) &&
-         (core_fire_cpp_CCrater_render_FUN_004c4620((CCrater *)(g_CraterPool[0].field0_0x0 + iVar3))
-         , render_completeness != 0)) {
-        pcVar1 = g_CraterPool[0].field0_0x0 + iVar3 + 4;
+      if ((*(int *)(g_CraterPool[0].unk + iVar3 + 4) != 0) &&
+         (core_fire_cpp_CCrater_render_FUN_004c4620((CCrater *)(g_CraterPool[0].unk + iVar3)),
+         render_completeness != 0)) {
+        pcVar1 = g_CraterPool[0].unk + iVar3 + 4;
         pcVar1[0] = '\0';
         pcVar1[1] = '\0';
         pcVar1[2] = '\0';

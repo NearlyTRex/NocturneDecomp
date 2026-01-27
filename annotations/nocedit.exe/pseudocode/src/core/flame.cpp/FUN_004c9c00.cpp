@@ -96,16 +96,16 @@ void core_flame_cpp_FUN_004c9c00(void)
     }
     if (*(int *)(in_stack_00000004 + 0x288) != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_94);
-      iVar2 = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._ub)->
-                hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
+      iVar2 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->hasCollision)
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
       if (iVar2 == 2) {
         this_ptr = g_HeroActors[g_LocalHeroIndex];
-        fStack_3c = (this_ptr->base_character).base_actor.location.position.x -
-                    *(float *)(in_stack_00000004 + 0x20);
-        fStack_38 = (this_ptr->base_character).base_actor.location.position.y -
-                    *(float *)(in_stack_00000004 + 0x24);
-        fStack_34 = (this_ptr->base_character).base_actor.location.position.z -
-                    *(float *)(in_stack_00000004 + 0x28);
+        fStack_3c = (this_ptr->base).base.location.position.x - *(float *)(in_stack_00000004 + 0x20)
+        ;
+        fStack_38 = (this_ptr->base).base.location.position.y - *(float *)(in_stack_00000004 + 0x24)
+        ;
+        fStack_34 = (this_ptr->base).base.location.position.z - *(float *)(in_stack_00000004 + 0x28)
+        ;
         if (((float)-0.5 < fStack_38) && (fStack_38 < (float)local_94.result_ptr)) {
           dVar4 = crt_math_c_round_FUN_005fe6b0
                             ((double)((*(float *)(in_stack_00000004 + 0x158) +
@@ -115,7 +115,7 @@ void core_flame_cpp_FUN_004c9c00(void)
           fStack_18 = (float)(int)local_14;
           if ((ABS(fStack_40) < (float)local_94.result_ptr + fStack_18) &&
              (ABS(fStack_38) < (float)local_94.result_ptr + fStack_18)) {
-            core_charactr_cpp_CCharacter_FUN_0042b5b0(&this_ptr->base_character);
+            core_charactr_cpp_CCharacter_FUN_0042b5b0(&this_ptr->base);
           }
         }
       }
@@ -124,24 +124,20 @@ void core_flame_cpp_FUN_004c9c00(void)
       if (*(int *)(in_stack_00000004 + 0x29c) < 0) {
         *(uint *)(in_stack_00000004 + 0x29c) = 0;
       }
-      if (*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c) <= *(int *)(in_stack_00000004 + 0x29c)
-         ) {
+      if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= *(int *)(in_stack_00000004 + 0x29c)) {
         *(uint *)(in_stack_00000004 + 0x29c) = 0;
       }
-      if (0 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c)) {
+      if (0 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
         this_ptr_00 = *(CCharacter **)
-                       (g_CDemonSetPtr->field19_0x14f0a0 +
-                       *(int *)(in_stack_00000004 + 0x29c) * 4 + 8000);
+                       (g_CDemonSetPtr->unk4 + *(int *)(in_stack_00000004 + 0x29c) * 4 + 8000);
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_6c);
-        iVar2 = (*((this_ptr_00->base_actor).vtable._ub)->hasCollision)
-                          (&this_ptr_00->base_actor,&SStack_6c);
+        iVar2 = (*((this_ptr_00->base).vtable._ub)->hasCollision)(&this_ptr_00->base,&SStack_6c);
         if (iVar2 == 2) {
-          fStack_30 = (this_ptr_00->base_actor).location.position.x -
-                      *(float *)(in_stack_00000004 + 0x20);
-          fVar1 = (this_ptr_00->base_actor).location.position.y -
-                  *(float *)(in_stack_00000004 + 0x24);
-          fStack_28 = (this_ptr_00->base_actor).location.position.z -
-                      *(float *)(in_stack_00000004 + 0x28);
+          fStack_30 = (this_ptr_00->base).location.position.x - *(float *)(in_stack_00000004 + 0x20)
+          ;
+          fVar1 = (this_ptr_00->base).location.position.y - *(float *)(in_stack_00000004 + 0x24);
+          fStack_28 = (this_ptr_00->base).location.position.z - *(float *)(in_stack_00000004 + 0x28)
+          ;
           fStack_2c = fVar1;
           dVar4 = crt_math_c_round_FUN_005fe6b0
                             ((double)((*(float *)(in_stack_00000004 + 0x158) +

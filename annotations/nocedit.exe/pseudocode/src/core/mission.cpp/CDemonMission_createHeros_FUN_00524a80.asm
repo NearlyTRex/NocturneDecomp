@@ -19,7 +19,7 @@
 ;   TerminatedCString s_CDemonMission_createHero_00639484
 ;   TerminatedCString s_CHeroPlaceholder_006394c7
 ;   CGame* g_CGamePtr = 02d81a9c
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 DAT_02d81b60
@@ -29,7 +29,7 @@
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02f7c740
+;   CNetGame g_CNetGameInstance
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -57,8 +57,8 @@ section .text
     CMP EBX,0x10                        ; 00524a95
     JNZ 0x00524a8a                      ; 00524a98
         ;   XREF to: 00524a8a (CONDITIONAL_JUMP)  ; LAB_00524a8a
-    MOV EAX,[0x00680a00]                ; 00524a9a | g_CNetGameInstance
-    MOV ECX,dword ptr [EAX]             ; 00524a9f | DAT_02f7c740
+    MOV EAX,[0x00680a00]                ; 00524a9a | g_CNetGamePtr
+    MOV ECX,dword ptr [EAX]             ; 00524a9f | g_CNetGameInstance
     TEST ECX,ECX                        ; 00524aa1
     JZ 0x00524b8d                       ; 00524aa3
         ;   XREF to: 00524b8d (CONDITIONAL_JUMP)  ; LAB_00524b8d
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 00524b1e (CONDITIONAL_JUMP)  ; LAB_00524b1e
     XOR EBX,EBX                         ; 00524ac5
     XOR ESI,ESI                         ; 00524ac7
-    MOV EAX,[0x00680a00]                ; 00524ac9 | DAT_02f7c740 | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 00524ac9 | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_00524ac9
     PUSH 0x0                            ; 00524ace
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x34] ; 00524ad0 | DAT_02f7c774 | DAT_02f7c7ec
@@ -90,9 +90,9 @@ section .text
         ;   XREF to: 00524b88 (CONDITIONAL_JUMP)  ; LAB_00524b88
     MOV EAX,dword ptr [EBX + 0x2db87c0] ; 00524ae7 | g_HeroActors
     MOV dword ptr [EAX + 0xbe28],0x1    ; 00524aed
-    MOV EAX,[0x00680a00]                ; 00524af7 | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 00524af7 | g_CNetGamePtr
     ADD EBX,0x4                         ; 00524afc
-    LEA EDX,[EAX + ESI*0x1]             ; 00524aff | DAT_02f7c740
+    LEA EDX,[EAX + ESI*0x1]             ; 00524aff | g_CNetGameInstance
     MOV EAX,dword ptr [EBX + 0x2db87bc] ; 00524b02 | g_HeroActors
     MOV EDX,dword ptr [EDX + 0x38]      ; 00524b08 | DAT_02f7c778
     INC EDI                             ; 00524b0b
@@ -102,7 +102,7 @@ section .text
     CMP EDI,EAX                         ; 00524b1a
     JL 0x00524ac9                       ; 00524b1c
         ;   XREF to: 00524ac9 (CONDITIONAL_JUMP)  ; LAB_00524ac9
-    MOV EAX,[0x00680a00]                ; 00524b1e | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 00524b1e | g_CNetGamePtr
         ;   Label: LAB_00524b1e
     MOV EAX,dword ptr [EAX + 0x114]     ; 00524b23 | DAT_02f7c854
     MOV [0x02db87d0],EAX                ; 00524b29 | g_LocalHeroIndex

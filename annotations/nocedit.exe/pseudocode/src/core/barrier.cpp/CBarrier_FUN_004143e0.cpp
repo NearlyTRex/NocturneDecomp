@@ -9,7 +9,7 @@
 void __cdecl core_barrier_cpp_CBarrier_FUN_004143e0(CBarrier *this_ptr)
 
 {
-  if (*(int *)(this_ptr->field1_0x158 + 0xc) == 0) {
+  if (*(int *)(this_ptr->unk + 0xc) == 0) {
     return;
   }
   core_setcolid_cpp_CDemonSet_FUN_00574440(g_CDemonSetPtr);

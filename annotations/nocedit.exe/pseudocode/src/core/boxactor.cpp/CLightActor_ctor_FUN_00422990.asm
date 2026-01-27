@@ -7,10 +7,10 @@
 ; CLightActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_FUN_00422950 at 0042296d
+;   core_boxactor.cpp_factoryFunc_FUN_00422950 at 0042296d
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable PTR_core_box.cpp_FUN_0065b2a4
+;   CDemonActor_vtable g_CLightActorVTable
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_00421700
@@ -33,7 +33,7 @@ section .text
     CALL core_dlight.cpp_CDemonLight_ctor_FUN_004726a0 ; 004229ad
         ;   XREF to: 004726a0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr)
     SUB EAX,0x670                       ; 004229b2
-    MOV dword ptr [EAX + 0x154],0x65b2a4 ; 004229b7 | PTR_core_box.cpp_FUN_0065b2a4
+    MOV dword ptr [EAX + 0x154],0x65b2a4 ; 004229b7 | g_CLightActorVTable
     LEA EDX,[EAX + 0x361c]              ; 004229c1
     MOV dword ptr [EAX + 0x2324],0x1    ; 004229c7
     MOV dword ptr [EDX + 0x8],0x0       ; 004229d1

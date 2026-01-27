@@ -40,6 +40,6 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da870(CTeleportDest *this_pt
                (uint)in_stack_fffffb9c,(uint)in_stack_fffffba0);
     return;
   }
-  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   return;
 }

@@ -31,7 +31,7 @@
 ;   core_chain.cpp_FUN_004300d0 at 004303e9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d7a7b8
+;   int INT_02d7a7b8
 ;
 ; *****************************************************************************
 
@@ -94,7 +94,7 @@ section .text
     FADDP                               ; 0042ff67
     FSTP float ptr [ESP + 0x48]         ; 0042ff69
     MOV EAX,dword ptr [ESP + 0x48]      ; 0042ff6d
-    MOV EDI,dword ptr [0x02d7a7b8]      ; 0042ff71 | DAT_02d7a7b8
+    MOV EDI,dword ptr [0x02d7a7b8]      ; 0042ff71 | INT_02d7a7b8
     SAR EAX,0x1                         ; 0042ff77
     ADD EAX,EDI                         ; 0042ff79
     MOV dword ptr [ESP + 0x54],EAX      ; 0042ff7b

@@ -286,7 +286,7 @@ LAB_0054cd70:
         core_platfrm_cpp_FUN_0054e320();
         return;
       }
-      iVar6 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iVar2 + -4);
+      iVar6 = *(int *)(g_CDemonSetPtr->unk4 + iVar2 + -4);
       iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x120))();
       if ((iVar4 < 1) && (iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x68))(), iVar4 == 0))
       break;

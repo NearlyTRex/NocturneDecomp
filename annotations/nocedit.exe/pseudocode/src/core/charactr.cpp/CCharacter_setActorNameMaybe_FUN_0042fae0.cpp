@@ -10,6 +10,6 @@ CCharacter * __cdecl
 core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fae0(CCharacter *this_ptr,char **actor_name)
 
 {
-  *(char **)(this_ptr->base_actor).actor_name = *actor_name;
+  *(char **)(this_ptr->base).actor_name = *actor_name;
   return this_ptr;
 }

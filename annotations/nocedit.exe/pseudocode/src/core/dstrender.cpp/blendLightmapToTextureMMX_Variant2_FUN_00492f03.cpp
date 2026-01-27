@@ -39,10 +39,11 @@ core_dstrender_cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03
   uint5 uVar25;
   
   uVar24 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)
-                                                  g_SolidColorMode >> 0x18) << 0x30) >> 0x28),
-                                                  (char)((uint)g_SolidColorMode >> 0x10)) << 0x20)
-                                        >> 0x18),(char)((uint)g_SolidColorMode >> 8)),
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
+                                                                                0x18) << 0x30) >>
+                                                                 0x28),
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
                           (ushort)(byte)g_SolidColorMode),6);
   do {
     uVar9 = *texture_buffer;

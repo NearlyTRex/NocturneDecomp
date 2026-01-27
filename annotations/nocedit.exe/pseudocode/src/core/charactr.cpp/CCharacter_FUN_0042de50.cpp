@@ -13,7 +13,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
   CMotionList *this_ptr_00;
   float fVar2;
   
-  iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr);
+  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr);
   if (iVar1 < 2) {
     if ((this_ptr->model).model_name[0] != '\0') {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl
 wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7
           (ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
@@ -50,9 +48,9 @@ LAB_005b5640:
       SVar1 = g_AlphaTable[uVar7 >> 8];
       uVar11 = (ulonglong)SVar1 ^ (ulonglong)g_AlphaTable[0xff];
       uVar7 = (uint)*destPixels;
-      uVar21 = (uint7)((uVar7 & _g_BlueMask16) << g_BlueBitShift) |
-               (uint7)((uVar7 & _g_GreenMask16) << g_GreenBlueBits) |
-               (uint7)((uVar7 & _g_RedMask16) << g_TotalColorBits);
+      uVar21 = (uint7)((uVar7 & g_BlueMask16) << g_BlueBitShift) |
+               (uint7)((uVar7 & g_GreenMask16) << g_GreenBlueBits) |
+               (uint7)((uVar7 & g_RedMask16) << g_TotalColorBits);
       uVar10 = (ushort)(((uVar21 >> 0x18) << 0x30) >> 0x28);
       uVar6 = CONCAT21(uVar10,(char)(uVar21 >> 0x10));
       uVar9 = (ushort)uVar21;

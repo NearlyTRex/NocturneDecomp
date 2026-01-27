@@ -50,16 +50,15 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 124,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 29,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
     "total_lines": 70
   },
@@ -92,8 +91,8 @@
   "globals": [
     {
       "addr": "02d832fc",
-      "name": "DAT_02d832fc",
-      "type": "undefined4",
+      "name": "INT_02d832fc",
+      "type": "int",
       "value": null
     }
   ],
@@ -194,15 +193,8 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
-      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d832fc,&local_4c);",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158),INT_02d832fc,&local_4c);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_02d832fc",
-      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d832fc,&local_4c);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

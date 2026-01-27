@@ -22,7 +22,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_manpuz_cpp_freeReflectors_FUN_0050bad0((SReflector **)(this_ptr->field10_0x648 + 0xcf8));
+  core_manpuz_cpp_freeReflectors_FUN_0050bad0((SReflector **)(this_ptr->unk3 + 0xcf8));
   core_manpuz_cpp_freeGems_FUN_0050bab0((SGem **)(extraout_EAX + -0x8a0));
   core_manpuz_cpp_freePanels_FUN_0050ba90((SPanel **)(extraout_EAX_00 + -0x4b0));
   ptr = (CMansionPuzzleCircle *)

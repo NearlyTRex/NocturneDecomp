@@ -18,10 +18,10 @@ core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCi
     g_CurrentLineNumber = 0x5e6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::panelOccupied - invalid index: %d");
   }
-  if (*(int *)(this_ptr->field6_0x5f4 + in_stack_00000008 * 100 + -4) == 0) {
+  if (*(int *)(this_ptr->unk2 + in_stack_00000008 * 100 + -4) == 0) {
     iVar1 = core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aef0(this_ptr);
-    if ((*(int *)(this_ptr->field6_0x5f4 + iVar1 * 100 + -4) == 0) ||
-       ((*(uint *)(this_ptr->field6_0x5f4 + iVar1 * 100 + 4) & 0x7fffffff) == 0)) {
+    if ((*(int *)(this_ptr->unk2 + iVar1 * 100 + -4) == 0) ||
+       ((*(uint *)(this_ptr->unk2 + iVar1 * 100 + 4) & 0x7fffffff) == 0)) {
       return 0;
     }
   }

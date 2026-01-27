@@ -22,7 +22,7 @@
 ;   ulonglong g_GreenBlueBits = 0x5
 ;   ulonglong g_BlueBitShift = 0x3
 ;   uint[256] g_LightmapTexturePalette
-;   int g_SolidColorMode
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 

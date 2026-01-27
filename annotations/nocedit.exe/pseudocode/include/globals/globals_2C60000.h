@@ -55,6 +55,14 @@ extern int g_RenderTriangleEdgeCount;
 extern int g_RenderTriangleMinScanlineY;
 extern int g_RenderTriangleMaxScanlineY;
 extern int g_RasterizerDepthBias;
+extern int INT_02c6d0a0;
+extern int INT_02c6d0a4;
+extern int INT_02c6d0a8;
+extern int INT_02c6d0ac;
+extern int INT_02c6d0b0;
+extern int INT_02c6d0b4;
+extern int INT_02c6d0b8;
+extern int INT_02c6d0bc;
 extern int g_DashAnimationLastFrame;
 extern int g_LastAnimationTimerValue;
 extern int g_CurrentDrawColor;
@@ -73,10 +81,4 @@ extern int g_CaptureTextureCount;
 
 // int[16]
 extern int g_VertexIndexBuffer[16];
-
-// undefined4
-extern undefined4 DAT_02c6d0a0;
-extern undefined4 DAT_02c6d0a8;
-extern undefined4 DAT_02c6d0b4;
-extern undefined4 DAT_02c6d0bc;
 

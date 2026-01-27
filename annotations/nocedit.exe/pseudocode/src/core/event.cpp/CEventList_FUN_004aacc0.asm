@@ -2187,10 +2187,10 @@ section .text
     INC EAX                             ; 004abf32
     JMP 0x004abf21                      ; 004abf33
         ;   XREF to: 004abf21 (UNCONDITIONAL_JUMP)  ; LAB_004abf21
-    MOV ECX,dword ptr [0x00680a00]      ; 004abf35 | DAT_02f7c740 | g_CNetGameInstance
+    MOV ECX,dword ptr [0x00680a00]      ; 004abf35 | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_004abf35
     MOV dword ptr [EBP + -0x5e],EAX     ; 004abf3b
-    CMP dword ptr [ECX],0x0             ; 004abf3e | DAT_02f7c740
+    CMP dword ptr [ECX],0x0             ; 004abf3e | g_CNetGameInstance
     JNZ 0x004abf85                      ; 004abf41
         ;   XREF to: 004abf85 (CONDITIONAL_JUMP)  ; LAB_004abf85
     LEA ECX,[EBP + -0x6]                ; 004abf43

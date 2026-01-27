@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_flashlit.cpp_staticInit_FUN_004cbb50(void)
+; __cdecl void core_flashlit.cpp_staticInit_FUN_004cbb50(void)
 ;
 ;
 ; Referenced Globals:

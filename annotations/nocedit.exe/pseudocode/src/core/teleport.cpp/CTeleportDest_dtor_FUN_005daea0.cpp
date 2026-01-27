@@ -18,7 +18,7 @@ core_teleport_cpp_CTeleportDest_dtor_FUN_005daea0(CTeleportDest *this_ptr,uint d
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  ptr = core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
+  ptr = core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base,1);
   if ((d1 & 2) == 0) {
     return (CTeleportDest *)ptr;
   }

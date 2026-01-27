@@ -22,7 +22,7 @@ shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
   g_FontCharacterHeight = g_EditorFont->max_char_height;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x6a);
   iVar1 = g_InputKeyMask;
-  if (0 < (this_ptr->base_strlist).item_count) {
+  if (0 < (this_ptr->base).item_count) {
     g_InputKeyMask = 0x7f;
     shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0
               (this_ptr,dialog_title,config_param1,config_param2);

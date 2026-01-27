@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004f937c = 004f93d4
-;   undefined4 DAT_02db89a4
-;   undefined4 DAT_02db89a8
+;   int INT_02db89a4
+;   int INT_02db89a8
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
@@ -69,7 +69,7 @@ section .text
     POP ESI                             ; 004f9400
     POP EBX                             ; 004f9401
     RET                                 ; 004f9402
-    MOV EDI,dword ptr [0x02db89a4]      ; 004f9403 | DAT_02db89a4
+    MOV EDI,dword ptr [0x02db89a4]      ; 004f9403 | INT_02db89a4
         ;   Label: caseD_65
     PUSH EDI                            ; 004f9409
     PUSH EBX                            ; 004f940a
@@ -78,7 +78,7 @@ section .text
     ADD ESP,0x8                         ; 004f9410
     JMP 0x004f93f0                      ; 004f9413
         ;   XREF to: 004f93f0 (UNCONDITIONAL_JUMP)  ; LAB_004f93f0
-    MOV ECX,dword ptr [0x02db89a8]      ; 004f9415 | DAT_02db89a8
+    MOV ECX,dword ptr [0x02db89a8]      ; 004f9415 | INT_02db89a8
         ;   Label: caseD_66
     PUSH ECX                            ; 004f941b
     PUSH EBX                            ; 004f941c

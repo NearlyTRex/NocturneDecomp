@@ -73,7 +73,7 @@ void core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
         (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,sound_name);
         return;
       }
-      pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar7 + -4);
+      pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar7 + -4);
       if (pCVar1 != in_stack_00000004) break;
 LAB_005d9adc:
       iVar5 = iVar5 + 1;

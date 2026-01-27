@@ -155,26 +155,26 @@ section .text
     MOV dword ptr [0x0310fd48],ECX      ; 00564909 | DAT_0310fd48
     JMP 0x005648c8                      ; 0056490f
         ;   XREF to: 005648c8 (UNCONDITIONAL_JUMP)  ; LAB_005648c8
-    MOV EAX,[0x0310fce0]                ; 00564911 | DAT_0310fce0
+    MOV EAX,[0x0310fce0]                ; 00564911 | CEdScrollBar_0310fcd8.max_value
         ;   Label: caseD_4
     MOV EDI,dword ptr [0x0310fd48]      ; 00564916 | DAT_0310fd48
-    MOV EDX,dword ptr [0x0310fcd8]      ; 0056491c | DAT_0310fcd8
+    MOV EDX,dword ptr [0x0310fcd8]      ; 0056491c | CEdScrollBar_0310fcd8
     PUSH EBP                            ; 00564922
     SUB EDI,EAX                         ; 00564923
     SUB EDX,EAX                         ; 00564925
     MOV dword ptr [0x0310fd48],EDI      ; 00564927 | DAT_0310fd48
-    MOV dword ptr [0x0310fcd8],EDX      ; 0056492d | DAT_0310fcd8
+    MOV dword ptr [0x0310fcd8],EDX      ; 0056492d | CEdScrollBar_0310fcd8
     JMP 0x005648c8                      ; 00564933
         ;   XREF to: 005648c8 (UNCONDITIONAL_JUMP)  ; LAB_005648c8
-    MOV EAX,[0x0310fce0]                ; 00564935 | DAT_0310fce0
+    MOV EAX,[0x0310fce0]                ; 00564935 | CEdScrollBar_0310fcd8.max_value
         ;   Label: caseD_5
     MOV EBX,dword ptr [0x0310fd48]      ; 0056493a | DAT_0310fd48
-    MOV ESI,dword ptr [0x0310fcd8]      ; 00564940 | DAT_0310fcd8
+    MOV ESI,dword ptr [0x0310fcd8]      ; 00564940 | CEdScrollBar_0310fcd8
     PUSH EBP                            ; 00564946
     ADD EBX,EAX                         ; 00564947
     ADD ESI,EAX                         ; 00564949
     MOV dword ptr [0x0310fd48],EBX      ; 0056494b | DAT_0310fd48
-    MOV dword ptr [0x0310fcd8],ESI      ; 00564951 | DAT_0310fcd8
+    MOV dword ptr [0x0310fcd8],ESI      ; 00564951 | CEdScrollBar_0310fcd8
     JMP 0x005648c8                      ; 00564957
         ;   XREF to: 005648c8 (UNCONDITIONAL_JUMP)  ; LAB_005648c8
     XOR ECX,ECX                         ; 0056495c

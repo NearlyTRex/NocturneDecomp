@@ -5432,9 +5432,9 @@ section .text
         ;   XREF to: 0055e4f9 (CONDITIONAL_JUMP)  ; LAB_0055e4f9
     MOV EDI,dword ptr [ESP + 0x3e8c]    ; 0055e4b0
     ADD EDI,ESI                         ; 0055e4b7
-    MOV EAX,[0x00680a00]                ; 0055e4b9 | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 0055e4b9 | g_CNetGamePtr
     MOV dword ptr [ESP + 0x3e8c],EDI    ; 0055e4be
-    CMP dword ptr [EAX],0x0             ; 0055e4c5 | DAT_02f7c740
+    CMP dword ptr [EAX],0x0             ; 0055e4c5 | g_CNetGameInstance
     JNZ 0x0055e510                      ; 0055e4c8
         ;   XREF to: 0055e510 (CONDITIONAL_JUMP)  ; LAB_0055e510
     CMP dword ptr [0x0310ec9c],0x0      ; 0055e4ca | DAT_0310ec9c

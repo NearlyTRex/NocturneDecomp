@@ -7,7 +7,7 @@
 // Ghidra size: 0x3c (60 bytes)
 typedef struct SCapsuleCollision {
     float constant; // 0x0
-    char field_4[12]; // 0x4
+    char unk[12]; // 0x4
     float start_x; // 0x10
     float start_z; // 0x14
     float dir_x; // 0x18

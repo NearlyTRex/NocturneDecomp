@@ -10,9 +10,9 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3710(CStranger *this_ptr)
 
 {
   core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
-  if (*(int *)(this_ptr->field2_0x1fbd8 + 0x54) == 0) {
+  if (*(int *)(this_ptr->unk1 + 0x54) == 0) {
     return 1;
   }
-  (**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 0xc))();
+  (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xc))();
   return 1;
 }

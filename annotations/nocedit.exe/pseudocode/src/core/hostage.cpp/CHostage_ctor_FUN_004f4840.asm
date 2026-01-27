@@ -7,7 +7,7 @@
 ; CHostage *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hostage.cpp_FUN_004f4800 at 004f481a
+;   core_hostage.cpp_factoryFunc_FUN_004f4800 at 004f481a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hickdad_dfm_0062ee2f

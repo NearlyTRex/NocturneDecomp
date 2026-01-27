@@ -26,43 +26,41 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
   float local_14;
   
   if (this_ptr->visual_type == 1) {
-    *(float *)(this_ptr->field14_0x3c0 + 0x24) = (this_ptr->base_actor).location.position.x;
-    *(float *)(this_ptr->field14_0x3c0 + 0x28) = (this_ptr->base_actor).location.position.y;
-    *(float *)(this_ptr->field14_0x3c0 + 0x2c) = (this_ptr->base_actor).location.position.z;
-    *(int *)(this_ptr->field14_0x3c0 + 0x30) = (this_ptr->base_actor).location.area_id;
-    pCVar1 = &(this_ptr->base_actor).orient;
-    *(float *)(this_ptr->field14_0x3c0 + 0x28) =
-         *(float *)(this_ptr->field14_0x3c0 + 0x28) + 1.7f;
-    if ((COrientation *)(this_ptr->field14_0x3c0 + 0x34) != pCVar1) {
-      *(float *)(this_ptr->field14_0x3c0 + 0x34) = pCVar1->pitch;
-      *(float *)(this_ptr->field14_0x3c0 + 0x38) = (this_ptr->base_actor).orient.bank;
-      *(float *)(this_ptr->field14_0x3c0 + 0x3c) = (this_ptr->base_actor).orient.heading;
+    *(float *)(this_ptr->unk3 + 0x24) = (this_ptr->base).location.position.x;
+    *(float *)(this_ptr->unk3 + 0x28) = (this_ptr->base).location.position.y;
+    *(float *)(this_ptr->unk3 + 0x2c) = (this_ptr->base).location.position.z;
+    *(int *)(this_ptr->unk3 + 0x30) = (this_ptr->base).location.area_id;
+    pCVar1 = &(this_ptr->base).orient;
+    *(float *)(this_ptr->unk3 + 0x28) = *(float *)(this_ptr->unk3 + 0x28) + 1.7f;
+    if ((COrientation *)(this_ptr->unk3 + 0x34) != pCVar1) {
+      *(float *)(this_ptr->unk3 + 0x34) = pCVar1->pitch;
+      *(float *)(this_ptr->unk3 + 0x38) = (this_ptr->base).orient.bank;
+      *(float *)(this_ptr->unk3 + 0x3c) = (this_ptr->base).orient.heading;
     }
     core_flame_cpp_FUN_004c9c00();
   }
   else if (this_ptr->visual_type == 0) {
-    *(float *)(this_ptr->field14_0x3c0 + 0x2a8) =
-         delta_time * (float)3.1415926535000001 + *(float *)(this_ptr->field14_0x3c0 + 0x2a8);
+    *(float *)(this_ptr->unk3 + 0x2a8) =
+         delta_time * (float)3.1415926535000001 + *(float *)(this_ptr->unk3 + 0x2a8);
   }
   else {
-    fVar4 = delta_time * (float)8 + *(float *)(this_ptr->field14_0x3c0 + 0x42c);
-    *(float *)(this_ptr->field14_0x3c0 + 0x42c) = fVar4;
+    fVar4 = delta_time * (float)8 + *(float *)(this_ptr->unk3 + 0x42c);
+    *(float *)(this_ptr->unk3 + 0x42c) = fVar4;
     if ((float)16 <= fVar4) {
-      *(float *)(this_ptr->field14_0x3c0 + 0x42c) =
-           *(float *)(this_ptr->field14_0x3c0 + 0x42c) + -16.0f;
+      *(float *)(this_ptr->unk3 + 0x42c) = *(float *)(this_ptr->unk3 + 0x42c) + -16.0f;
     }
   }
-  if (this_ptr->field3_0x2d4 == 0) {
-    if (*(int *)this_ptr->field14_0x3c0 != 0) {
-      this_ptr->field14_0x3c0[0] = '\0';
-      this_ptr->field14_0x3c0[1] = '\0';
-      this_ptr->field14_0x3c0[2] = '\0';
-      this_ptr->field14_0x3c0[3] = '\0';
+  if (this_ptr->unk2 == 0) {
+    if (*(int *)this_ptr->unk3 != 0) {
+      this_ptr->unk3[0] = '\0';
+      this_ptr->unk3[1] = '\0';
+      this_ptr->unk3[2] = '\0';
+      this_ptr->unk3[3] = '\0';
       return;
     }
-    pCVar1 = &(this_ptr->base_actor).orient;
+    pCVar1 = &(this_ptr->base).orient;
     iVar10 = this_ptr->state;
-    pCVar2 = &(this_ptr->base_actor).location;
+    pCVar2 = &(this_ptr->base).location;
     if (iVar10 == 1) {
       fVar4 = this_ptr->timer + delta_time;
       this_ptr->timer = fVar4;
@@ -76,14 +74,14 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
           iVar10 = *(int *)this_ptr->start_loc;
           this_ptr->state = 2;
           (pCVar2->position).x = *(float *)(iVar10 + 0x20);
-          (this_ptr->base_actor).location.position.y = *(float *)(iVar10 + 0x24);
-          (this_ptr->base_actor).location.position.z = *(float *)(iVar10 + 0x28);
-          (this_ptr->base_actor).location.area_id = *(int *)(iVar10 + 0x2c);
+          (this_ptr->base).location.position.y = *(float *)(iVar10 + 0x24);
+          (this_ptr->base).location.position.z = *(float *)(iVar10 + 0x28);
+          (this_ptr->base).location.area_id = *(int *)(iVar10 + 0x2c);
           iVar10 = *(int *)this_ptr->start_loc;
           if (pCVar1 != (COrientation *)(iVar10 + 0x30)) {
             pCVar1->pitch = *(float *)(iVar10 + 0x30);
-            (this_ptr->base_actor).orient.bank = *(float *)(iVar10 + 0x34);
-            (this_ptr->base_actor).orient.heading = *(float *)(iVar10 + 0x38);
+            (this_ptr->base).orient.bank = *(float *)(iVar10 + 0x34);
+            (this_ptr->base).orient.heading = *(float *)(iVar10 + 0x38);
           }
         }
       }
@@ -92,23 +90,23 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
         if (((iVar10 == 0) || (iVar10 = core_vessel_cpp_FUN_005e9180(), iVar10 == 0)) &&
            ((iVar10 = core_vessel_cpp_FUN_005e9180(), iVar10 != 0 ||
             (iVar10 = core_vessel_cpp_FUN_005e9180(), iVar10 != 0)))) {
-          (this_ptr->base_actor).location.position.y = 9999.9;
-          (this_ptr->base_actor).location.position.z = 9999.9;
-          (this_ptr->base_actor).location.position.x = 9999.9;
+          (this_ptr->base).location.position.y = 9999.9;
+          (this_ptr->base).location.position.z = 9999.9;
+          (this_ptr->base).location.position.x = 9999.9;
         }
         else {
           iVar10 = *(int *)this_ptr->start_loc;
           this_ptr->state = 2;
-          (this_ptr->base_actor).location.position.x = *(float *)(iVar10 + 0x20);
-          (this_ptr->base_actor).location.position.y = *(float *)(iVar10 + 0x24);
-          (this_ptr->base_actor).location.position.z = *(float *)(iVar10 + 0x28);
-          (this_ptr->base_actor).location.area_id = *(int *)(iVar10 + 0x2c);
+          (this_ptr->base).location.position.x = *(float *)(iVar10 + 0x20);
+          (this_ptr->base).location.position.y = *(float *)(iVar10 + 0x24);
+          (this_ptr->base).location.position.z = *(float *)(iVar10 + 0x28);
+          (this_ptr->base).location.area_id = *(int *)(iVar10 + 0x2c);
           iVar10 = *(int *)this_ptr->start_loc;
-          pCVar1 = &(this_ptr->base_actor).orient;
+          pCVar1 = &(this_ptr->base).orient;
           if (pCVar1 != (COrientation *)(iVar10 + 0x30)) {
             pCVar1->pitch = *(float *)(iVar10 + 0x30);
-            (this_ptr->base_actor).orient.bank = *(float *)(iVar10 + 0x34);
-            (this_ptr->base_actor).orient.heading = *(float *)(iVar10 + 0x38);
+            (this_ptr->base).orient.bank = *(float *)(iVar10 + 0x34);
+            (this_ptr->base).orient.heading = *(float *)(iVar10 + 0x38);
           }
         }
       }
@@ -134,17 +132,17 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
         iVar10 = *(int *)this_ptr->start_loc;
         this_ptr->timer = 1.0;
         (pCVar2->position).x = *(float *)(iVar10 + 0x20);
-        (this_ptr->base_actor).location.position.y = *(float *)(iVar10 + 0x24);
-        (this_ptr->base_actor).location.position.z = *(float *)(iVar10 + 0x28);
-        (this_ptr->base_actor).location.area_id = *(int *)(iVar10 + 0x2c);
+        (this_ptr->base).location.position.y = *(float *)(iVar10 + 0x24);
+        (this_ptr->base).location.position.z = *(float *)(iVar10 + 0x28);
+        (this_ptr->base).location.area_id = *(int *)(iVar10 + 0x2c);
         iVar10 = *(int *)this_ptr->start_loc;
         if (pCVar1 == (COrientation *)(iVar10 + 0x30)) {
           this_ptr->state = 2;
         }
         else {
           pCVar1->pitch = *(float *)(iVar10 + 0x30);
-          (this_ptr->base_actor).orient.bank = *(float *)(iVar10 + 0x34);
-          (this_ptr->base_actor).orient.heading = *(float *)(iVar10 + 0x38);
+          (this_ptr->base).orient.bank = *(float *)(iVar10 + 0x34);
+          (this_ptr->base).orient.heading = *(float *)(iVar10 + 0x38);
           this_ptr->state = 2;
         }
       }
@@ -163,26 +161,24 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
     }
     else {
       pCVar3 = g_HeroActors[g_LocalHeroIndex];
-      pCVar2 = &(this_ptr->base_actor).location;
-      fVar4 = (pCVar3->base_character).base_actor.location.position.x - (pCVar2->position).x;
-      fVar5 = (pCVar3->base_character).base_actor.location.position.y -
-              (this_ptr->base_actor).location.position.y;
-      fVar6 = (pCVar3->base_character).base_actor.location.position.z -
-              (this_ptr->base_actor).location.position.z;
+      pCVar2 = &(this_ptr->base).location;
+      fVar4 = (pCVar3->base).base.location.position.x - (pCVar2->position).x;
+      fVar5 = (pCVar3->base).base.location.position.y - (this_ptr->base).location.position.y;
+      fVar6 = (pCVar3->base).base.location.position.z - (this_ptr->base).location.position.z;
       local_18 = 999.9;
       local_14 = 0.0;
       iVar10 = this_ptr->prey;
       if (iVar10 != 0) {
         fVar7 = (pCVar2->position).x - *(float *)(iVar10 + 0x20);
-        fVar8 = (this_ptr->base_actor).location.position.y - *(float *)(iVar10 + 0x24);
-        fVar9 = (this_ptr->base_actor).location.position.z - *(float *)(iVar10 + 0x28);
+        fVar8 = (this_ptr->base).location.position.y - *(float *)(iVar10 + 0x24);
+        fVar9 = (this_ptr->base).location.position.z - *(float *)(iVar10 + 0x28);
         local_18 = SQRT(fVar9 * fVar9 + fVar7 * fVar7 + fVar8 * fVar8);
       }
       iVar10 = this_ptr->neutral;
       if (iVar10 != 0) {
-        fVar7 = *(float *)(iVar10 + 0x20) - (this_ptr->base_actor).location.position.x;
-        fVar8 = *(float *)(iVar10 + 0x24) - (this_ptr->base_actor).location.position.y;
-        fVar9 = *(float *)(iVar10 + 0x28) - (this_ptr->base_actor).location.position.z;
+        fVar7 = *(float *)(iVar10 + 0x20) - (this_ptr->base).location.position.x;
+        fVar8 = *(float *)(iVar10 + 0x24) - (this_ptr->base).location.position.y;
+        fVar9 = *(float *)(iVar10 + 0x28) - (this_ptr->base).location.position.z;
         local_14 = SQRT(fVar9 * fVar9 + fVar7 * fVar7 + fVar8 * fVar8);
       }
       if ((((local_18 < this_ptr->eat_distance) &&
@@ -201,10 +197,10 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
         core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
         *(uint *)(this_ptr->prey + 0x7f0) = 1;
         *(uint *)(this_ptr->neutral + 0x7f0) = 1;
-        this_ptr->field14_0x3c0[0x430] = '\x01';
-        this_ptr->field14_0x3c0[0x431] = '\0';
-        this_ptr->field14_0x3c0[0x432] = '\0';
-        this_ptr->field14_0x3c0[0x433] = '\0';
+        this_ptr->unk3[0x430] = '\x01';
+        this_ptr->unk3[0x431] = '\0';
+        this_ptr->unk3[0x432] = '\0';
+        this_ptr->unk3[0x433] = '\0';
         return;
       }
     }

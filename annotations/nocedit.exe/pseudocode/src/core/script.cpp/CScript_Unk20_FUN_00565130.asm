@@ -76,11 +76,11 @@ section .text
     ADD ESP,0x4                         ; 00565174
     CALL core_script.cpp_FUN_00564500   ; 00565177
         ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00564500()
-    PUSH 0x310fd0c                      ; 0056517c | DAT_0310fd0c
+    PUSH 0x310fd0c                      ; 0056517c | CEdScrollBar_0310fd0c
     CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 ; 00565181
         ;   XREF to: 004a5fc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00565186
-    PUSH 0x310fcd8                      ; 00565189 | DAT_0310fcd8
+    PUSH 0x310fcd8                      ; 00565189 | CEdScrollBar_0310fcd8
     CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 ; 0056518e
         ;   XREF to: 004a5fc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00565193

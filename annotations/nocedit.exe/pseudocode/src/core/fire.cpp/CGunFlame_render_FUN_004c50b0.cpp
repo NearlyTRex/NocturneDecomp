@@ -49,22 +49,21 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   float fStack_30;
   float fStack_2c;
   
-  if (*(float *)this_ptr->field0_0x0 <= 0.0) {
+  if (*(float *)this_ptr->unk <= 0.0) {
     return;
   }
   auStack_dc._0_4_ = 0x4c50dc;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->field0_0x0 + 0x1c));
+  dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->unk + 0x1c));
   fStack_2c = (float)(int)ROUND(dVar11);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_GunFlameTextures + (int)fStack_2c);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr2,(CVector3f *)(this_ptr->field0_0x0 + 4));
+            (g_CDemonRendererPtr2,(CVector3f *)(this_ptr->unk + 4));
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&CStack_88);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&CStack_88,(CVector3i *)0x0);
-  fVar9 = ((float10)2.0f - (float10)*(float *)this_ptr->field0_0x0) /
-          (float10)2.0f;
+  fVar9 = ((float10)2.0f - (float10)*(float *)this_ptr->unk) / (float10)2.0f;
   local_cc = (float)fVar9;
   auStack_dc = (byte  [8])(double)fVar9;
   fStack_d4 = (float)(fVar9 * (float10)4 + (float10)0.40000000000000002);
@@ -72,22 +71,22 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   if ((float10)(double)auStack_dc < (float10)0.40000000000000002) {
     pfVar3 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                        (g_CDemonRendererPtr2,local_94);
-    local_a0 = *pfVar3 - ((CVector3f *)(this_ptr->field0_0x0 + 4))->x;
-    fVar9 = (float10)pfVar3[1] - (float10)*(float *)(this_ptr->field0_0x0 + 8);
+    local_a0 = *pfVar3 - ((CVector3f *)(this_ptr->unk + 4))->x;
+    fVar9 = (float10)pfVar3[1] - (float10)*(float *)(this_ptr->unk + 8);
     local_9c = (float)fVar9;
-    fVar4 = (float10)pfVar3[2] - (float10)*(float *)(this_ptr->field0_0x0 + 0xc);
+    fVar4 = (float10)pfVar3[2] - (float10)*(float *)(this_ptr->unk + 0xc);
     local_98 = (float)fVar4;
-    fVar5 = (float10)*(float *)(this_ptr->field0_0x0 + 0x10);
+    fVar5 = (float10)*(float *)(this_ptr->unk + 0x10);
     fStack_d4 = (float)(((float10)1 +
                         ((float10)1 -
-                        ABS((float10)local_98 * (float10)*(float *)(this_ptr->field0_0x0 + 0x18) +
-                            (float10)local_a0 * (float10)*(float *)(this_ptr->field0_0x0 + 0x10) +
-                            (float10)local_9c * (float10)*(float *)(this_ptr->field0_0x0 + 0x14)) /
-                        (SQRT((float10)*(float *)(this_ptr->field0_0x0 + 0x18) *
-                              (float10)*(float *)(this_ptr->field0_0x0 + 0x18) +
+                        ABS((float10)local_98 * (float10)*(float *)(this_ptr->unk + 0x18) +
+                            (float10)local_a0 * (float10)*(float *)(this_ptr->unk + 0x10) +
+                            (float10)local_9c * (float10)*(float *)(this_ptr->unk + 0x14)) /
+                        (SQRT((float10)*(float *)(this_ptr->unk + 0x18) *
+                              (float10)*(float *)(this_ptr->unk + 0x18) +
                               fVar5 * fVar5 +
-                              (float10)*(float *)(this_ptr->field0_0x0 + 0x14) *
-                              (float10)*(float *)(this_ptr->field0_0x0 + 0x14)) *
+                              (float10)*(float *)(this_ptr->unk + 0x14) *
+                              (float10)*(float *)(this_ptr->unk + 0x14)) *
                         SQRT(fVar4 * (float10)local_98 +
                              (float10)local_a0 * (float10)local_a0 + fVar9 * (float10)local_9c))) *
                         ((float10)1 - (float10)(double)auStack_dc * (float10)2.5) *

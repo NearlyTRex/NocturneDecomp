@@ -105,11 +105,11 @@ section .text
     MOV EAX,[0x03f875fc]                ; 005ea385 | g_WaterAnimationTimer
     IMUL EDX                            ; 005ea38a
     IDIV EBX                            ; 005ea38c
-    MOV [0x03f8f62c],EAX                ; 005ea38e | DAT_03f8f62c
+    MOV [0x03f8f62c],EAX                ; 005ea38e | INT_03f8f62c
     CMP EAX,0xffff                      ; 005ea393
     JLE 0x005ea798                      ; 005ea398
         ;   XREF to: 005ea798 (CONDITIONAL_JUMP)  ; LAB_005ea798
-    MOV dword ptr [0x03f8f62c],0xffff   ; 005ea39e | DAT_03f8f62c
+    MOV dword ptr [0x03f8f62c],0xffff   ; 005ea39e | INT_03f8f62c
     MOV EDX,dword ptr [0x03f87600]      ; 005ea3a8 | g_WaterCurrentFrame
         ;   Label: LAB_005ea3a8
     LEA EAX,[EDX*0x4 + 0x0]             ; 005ea3ae
@@ -158,17 +158,17 @@ section .text
     FMUL float ptr [ESI + 0x8]          ; 005ea453
     MOV EBX,dword ptr [0x006703ec]      ; 005ea456 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [ESP + 0x4]           ; 005ea45c
-    FADD float ptr [0x03f875f0]         ; 005ea460 | DAT_03f875f0
+    FADD float ptr [0x03f875f0]         ; 005ea460 | FLOAT_03f875f0
     FLD float ptr [ESP + 0x8]           ; 005ea466
     LEA EAX,[ESP + 0x4]                 ; 005ea46a
-    FADD float ptr [0x03f875f4]         ; 005ea46e | DAT_03f875f4
+    FADD float ptr [0x03f875f4]         ; 005ea46e | FLOAT_03f875f4
     PUSH EAX                            ; 005ea474
     FXCH ST2                            ; 005ea475
     FSTP float ptr [ESP + 0x10]         ; 005ea477
     FSTP float ptr [ESP + 0x8]          ; 005ea47b
     FSTP float ptr [ESP + 0xc]          ; 005ea47f
     FLD float ptr [ESP + 0x10]          ; 005ea483
-    FADD float ptr [0x03f875f8]         ; 005ea487 | DAT_03f875f8
+    FADD float ptr [0x03f875f8]         ; 005ea487 | FLOAT_03f875f8
     PUSH EBX                            ; 005ea48d | g_CDemonRendererInstance
     FSTP float ptr [ESP + 0x14]         ; 005ea48e
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 005ea492
@@ -424,7 +424,7 @@ section .text
     JGE 0x005ea3a8                      ; 005ea79a
         ;   XREF to: 005ea3a8 (CONDITIONAL_JUMP)  ; LAB_005ea3a8
     XOR EBX,EBX                         ; 005ea7a0
-    MOV dword ptr [0x03f8f62c],EBX      ; 005ea7a2 | DAT_03f8f62c
+    MOV dword ptr [0x03f8f62c],EBX      ; 005ea7a2 | INT_03f8f62c
     JMP 0x005ea3a8                      ; 005ea7a8
         ;   XREF to: 005ea3a8 (UNCONDITIONAL_JUMP)  ; LAB_005ea3a8
     CMP dword ptr [0x02d03e94],0x0      ; 005ea7ad | g_UseExternalRenderer

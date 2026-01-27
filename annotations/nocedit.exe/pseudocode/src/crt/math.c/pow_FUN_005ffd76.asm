@@ -17,7 +17,7 @@
 ;   sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 at 0053214b
 ;
 ; Referenced Globals:
-;   int g_UseSoftwareMath = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_exp_FUN_006068e2

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_00567d30(uint param_1) */
-
 int core_script_cpp_FUN_00567d30(void)
 
 {

@@ -9,9 +9,9 @@
 void __cdecl core_trash_cpp_CTrash_serialize_FUN_005dec80(CTrash *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
-  core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-            ((CKeyFramedModelInstance *)&this_ptr->model_name,"modelName");
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
+  core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName")
+  ;
   core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->home_pos,"homePos");
   return;
 }

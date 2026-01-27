@@ -54,13 +54,13 @@ void core_mobster_cpp_FUN_005279f0(void)
         iVar5 = 0;
         local_18 = 0;
         while( true ) {
-          if (*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c) <= iVar6) {
+          if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= iVar6) {
             uVar4 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
             *(uint *)(in_stack_00000004 + 0xbf54) = uVar4;
             return;
           }
           pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                             (*(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + local_18 + 8000),
+                             (*(CDemonActor **)(g_CDemonSetPtr->unk4 + local_18 + 8000),
                               g_CMobsterClassInfo.name_hash);
           if (((pCVar2 != (CDemonActor *)0x0) &&
               (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660

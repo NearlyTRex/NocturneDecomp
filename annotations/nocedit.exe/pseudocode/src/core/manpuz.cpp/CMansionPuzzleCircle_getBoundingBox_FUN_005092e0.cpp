@@ -13,12 +13,12 @@ core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_005092e0
 {
   float fVar1;
   
-  fVar1 = *(float *)(this_ptr->field10_0x648 + 0xec0);
+  fVar1 = *(float *)(this_ptr->unk3 + 0xec0);
   (out_box->min).y = 0.0;
   (out_box->min).x = -fVar1;
-  (out_box->min).z = -*(float *)(this_ptr->field10_0x648 + 0xec0);
-  (out_box->max).x = *(float *)(this_ptr->field10_0x648 + 0xec0);
-  (out_box->max).y = *(float *)(this_ptr->field10_0x648 + 0xec8);
-  (out_box->max).z = *(float *)(this_ptr->field10_0x648 + 0xec0);
+  (out_box->min).z = -*(float *)(this_ptr->unk3 + 0xec0);
+  (out_box->max).x = *(float *)(this_ptr->unk3 + 0xec0);
+  (out_box->max).y = *(float *)(this_ptr->unk3 + 0xec8);
+  (out_box->max).z = *(float *)(this_ptr->unk3 + 0xec0);
   return out_box;
 }

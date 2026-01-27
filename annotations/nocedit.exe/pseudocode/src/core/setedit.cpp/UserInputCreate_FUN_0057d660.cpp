@@ -176,7 +176,7 @@ LAB_0057d6df:
   local_54 = 0.0;
   pbStack_14 = (byte *)0x0;
   core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,0x1e0);
-  piStack_2c = &param_5->cameras[param_6 + -1].field17_0x1a0;
+  piStack_2c = &param_5->cameras[param_6 + -1].unk4;
   pCStack_30 = param_5->cameras;
   do {
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
@@ -376,15 +376,15 @@ LAB_0057db4e:
     if (iVar16 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_570);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&CStack_570.base_strlist,"W\tToggle full screen mode");
+                (&CStack_570.base,"W\tToggle full screen mode");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_570.base,"S\tToggle strobe mode")
+      ;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&CStack_570.base_strlist,"S\tToggle strobe mode");
+                (&CStack_570.base,"O\tHold to show original background");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&CStack_570.base_strlist,"O\tHold to show original background");
+                (&CStack_570.base,"F\tEnter fov value manually");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&CStack_570.base_strlist,"F\tEnter fov value manually");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&CStack_570.base_strlist,"D\tToggle original background 'difference' mode");
+                (&CStack_570.base,"D\tToggle original background 'difference' mode");
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&CStack_570,"Camera editor hot keys",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80

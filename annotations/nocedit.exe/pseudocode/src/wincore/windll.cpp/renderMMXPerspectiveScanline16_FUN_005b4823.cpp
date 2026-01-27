@@ -353,9 +353,9 @@ wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
               if ((((iVar11 < 0xff01) || (uVar10 < 0xff)) || (iVar11 < 0xff)) || (g_BlendMode != 0))
               {
                 uVar15 = (uint)*(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr);
-                uVar36 = (uint7)((uVar15 & _g_BlueMask16) << g_BlueBitShift) |
-                         (uint7)((uVar15 & _g_GreenMask16) << g_GreenBlueBits) |
-                         (uint7)((uVar15 & _g_RedMask16) << g_TotalColorBits);
+                uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |
+                         (uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |
+                         (uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);
                 uVar24 = (ushort)(((uVar36 >> 0x18) << 0x30) >> 0x28);
                 uVar7 = CONCAT21(uVar24,(char)(uVar36 >> 0x10));
                 uVar8 = CONCAT41((int)(((uint7)uVar7 << 0x20) >> 0x18),(char)(uVar36 >> 8));
@@ -490,9 +490,9 @@ wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
           uVar44 = 0;
           if ((g_RenderStateFlags & 0x20U) != 0) {
             uVar15 = (uint)*(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr);
-            uVar36 = (uint7)((uVar15 & _g_BlueMask16) << g_BlueBitShift) |
-                     (uint7)((uVar15 & _g_GreenMask16) << g_GreenBlueBits) |
-                     (uint7)((uVar15 & _g_RedMask16) << g_TotalColorBits);
+            uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |
+                     (uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |
+                     (uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);
             uVar44 = (ulonglong)
                      CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar36 >> 0x18) << 0x30) >>
                                                                      0x28),(char)(uVar36 >> 0x10))

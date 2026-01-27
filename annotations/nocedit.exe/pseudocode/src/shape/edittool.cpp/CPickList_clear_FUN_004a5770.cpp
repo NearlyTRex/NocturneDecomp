@@ -21,6 +21,6 @@ void __cdecl shape_edittool_cpp_CPickList_clear_FUN_004a5770(CPickList *this_ptr
     this_ptr->hotkey_array = (int *)0x0;
   }
   this_ptr->hotkey_capacity = 0;
-  shape_edittool_cpp_CStrList_clear_FUN_004a2b10(&this_ptr->base_strlist);
+  shape_edittool_cpp_CStrList_clear_FUN_004a2b10(&this_ptr->base);
   return;
 }

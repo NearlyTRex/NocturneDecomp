@@ -7,7 +7,7 @@
 ; CAmmo *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80 at 00410d9a
+;   core_ammo.cpp_factoryFunc_FUN_00410d80 at 00410d9a
 ;   core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700 at 0041175f
 ;   core_game.cpp_FUN_004dd930 at 004dd955
 ;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 at 004fe92e

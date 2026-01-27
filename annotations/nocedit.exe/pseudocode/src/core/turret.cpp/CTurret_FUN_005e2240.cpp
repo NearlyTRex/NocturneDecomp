@@ -16,34 +16,34 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2240(CTurret *this_ptr)
   float local_18;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(this_ptr->field1_0x578 + 0xc));
-  core_weapon_cpp_CWeapon_FUN_005edff0(&this_ptr->base_weapon);
+            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc));
+  core_weapon_cpp_CWeapon_FUN_005edff0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                          (&(this_ptr->base_weapon).model);
+                          (&(this_ptr->base).model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
                      (this_ptr_00,this_ptr_00->frame_count + -1);
   local_18 = -1e+30;
   for (iVar3 = 0; iVar3 < this_ptr_00->vertex_count; iVar3 = iVar3 + 1) {
     fVar1 = (float)pCVar2->z + (float)pCVar2->y * (float)0.20000000000000001;
     if (local_18 < fVar1) {
-      *(float *)(this_ptr->field12_0x85c + 4) = (float)pCVar2->x * 0.00390625f;
-      *(float *)(this_ptr->field12_0x85c + 8) = (float)pCVar2->y * 0.00390625f;
-      *(float *)(this_ptr->field12_0x85c + 0xc) = (float)pCVar2->z * 0.00390625f;
+      *(float *)(this_ptr->unk4 + 4) = (float)pCVar2->x * 0.00390625f;
+      *(float *)(this_ptr->unk4 + 8) = (float)pCVar2->y * 0.00390625f;
+      *(float *)(this_ptr->unk4 + 0xc) = (float)pCVar2->z * 0.00390625f;
       local_18 = fVar1;
     }
     pCVar2 = pCVar2 + 1;
   }
-  this_ptr->field12_0x85c[0x58] = '\0';
-  this_ptr->field12_0x85c[0x59] = '\0';
-  this_ptr->field12_0x85c[0x5a] = '\0';
-  this_ptr->field12_0x85c[0x5b] = '\0';
-  this_ptr->field12_0x85c[0x5c] = '\0';
-  this_ptr->field12_0x85c[0x5d] = '\0';
-  this_ptr->field12_0x85c[0x5e] = '\0';
-  this_ptr->field12_0x85c[0x5f] = '\0';
-  this_ptr->field12_0x85c[0x54] = '\0';
-  this_ptr->field12_0x85c[0x55] = '\0';
-  this_ptr->field12_0x85c[0x56] = '\0';
-  this_ptr->field12_0x85c[0x57] = '\0';
+  this_ptr->unk4[0x58] = '\0';
+  this_ptr->unk4[0x59] = '\0';
+  this_ptr->unk4[0x5a] = '\0';
+  this_ptr->unk4[0x5b] = '\0';
+  this_ptr->unk4[0x5c] = '\0';
+  this_ptr->unk4[0x5d] = '\0';
+  this_ptr->unk4[0x5e] = '\0';
+  this_ptr->unk4[0x5f] = '\0';
+  this_ptr->unk4[0x54] = '\0';
+  this_ptr->unk4[0x55] = '\0';
+  this_ptr->unk4[0x56] = '\0';
+  this_ptr->unk4[0x57] = '\0';
   return;
 }

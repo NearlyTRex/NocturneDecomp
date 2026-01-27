@@ -16,7 +16,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr)
   char *pcVar5;
   char *pcVar6;
   
-  core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->field0_0x0);
+  core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   core_cloth_cpp_FUN_00438ba0();
   iVar4 = core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(iVar4 + -0x4bcd0) = &g_CMimicVTable;

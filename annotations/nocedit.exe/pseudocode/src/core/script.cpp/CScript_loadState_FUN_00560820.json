@@ -6,12 +6,6 @@
         "column": 5,
         "line": 12,
         "message": "ambiguating new declaration of 'int core_script_cpp_CScript_loadState_FUN_00560820()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 44,
-        "message": "'DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
       }
     ],
     "success": false,
@@ -56,6 +50,12 @@
         "category": "other",
         "column": 34,
         "line": 41,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -140,17 +140,16 @@
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 564,
+    "complexity_score": 549,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 26,
     "pseudocode_lines": 79,
-    "suspect_count": 46,
+    "suspect_count": 45,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
       "stack_param",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 372
@@ -360,8 +359,8 @@
     },
     {
       "addr": "0310f4a0",
-      "name": "DAT_0310f4a0",
-      "type": "undefined4",
+      "name": "FLOAT_0310f4a0",
+      "type": "float",
       "value": null
     }
   ],
@@ -539,15 +538,8 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%g\\n\",&DAT_0310f4a0);",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%g\\n\",&FLOAT_0310f4a0);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0310f4a0",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%g\\n\",&DAT_0310f4a0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

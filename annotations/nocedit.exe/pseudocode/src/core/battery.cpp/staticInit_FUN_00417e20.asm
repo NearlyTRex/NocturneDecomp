@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_battery.cpp_staticInit_FUN_00417e20(void)
+; __cdecl void core_battery.cpp_staticInit_FUN_00417e20(void)
 ;
 ;
 ; Referenced Globals:

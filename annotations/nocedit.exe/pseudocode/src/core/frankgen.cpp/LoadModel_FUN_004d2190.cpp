@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_frankgen.cpp_LoadModel(uint param_1) */
-
 void core_frankgen_cpp_LoadModel_FUN_004d2190(void)
 
 {
@@ -72,9 +69,9 @@ LAB_004d21b9:
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar4;
   *(uint *)((int)&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
        puVar4[(uint)bVar5 * -2 + 1];
-  local_24.x = (float)iStack_30 * _DAT_0065e658;
-  local_24.y = (float)local_2c * _DAT_0065e658;
-  local_24.z = (float)local_28 * _DAT_0065e658;
+  local_24.x = (float)iStack_30 * 0.00390625f;
+  local_24.y = (float)local_2c * 0.00390625f;
+  local_24.z = (float)local_28 * 0.00390625f;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (in_stack_00000004,(CVector3f *)&stack0xffffffc4,&local_24);
   if ((CVector3f *)(in_stack_00000004[3].create_event + 0x10) != pCVar3) {

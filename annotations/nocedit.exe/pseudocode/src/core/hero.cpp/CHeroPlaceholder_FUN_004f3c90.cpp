@@ -13,16 +13,15 @@ int __cdecl core_hero_cpp_CHeroPlaceholder_FUN_004f3c90(CHeroPlaceholder *this_p
   CBoundingBox3D *this_ptr_00;
   CBoundingBox3D local_1c;
   
-  if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
+  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
-      core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-      this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                              (&this_ptr->base_actor,&local_1c);
+      core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
+      this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_1c);
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
+      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
       if (iVar1 != 0) {
-        core_actor_cpp_CDemonActor_FUN_0040dec0(&this_ptr->base_actor);
+        core_actor_cpp_CDemonActor_FUN_0040dec0(&this_ptr->base);
       }
       return iVar1;
     }

@@ -58,25 +58,25 @@ void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void)
     g_CurrentDebugLine = 0xd5;
     g_CurrentDebugFilename = "..\\core\\dfont.cpp";
     if (g_MediumWinFont != (CWinFont *)0x0) {
-      (*((g_MediumWinFont->base_font).vtable)->ctor)(&g_MediumWinFont->base_font);
+      (*((g_MediumWinFont->base).vtable)->ctor)(&g_MediumWinFont->base);
     }
     g_CurrentDebugFilename = "..\\core\\dfont.cpp";
     g_CurrentDebugLine = 0xd7;
     g_MediumWinFont = (CWinFont *)0x0;
     if (g_TinyWinFont != (CWinFont *)0x0) {
-      (*((g_TinyWinFont->base_font).vtable)->ctor)(&g_TinyWinFont->base_font);
+      (*((g_TinyWinFont->base).vtable)->ctor)(&g_TinyWinFont->base);
     }
     g_CurrentDebugFilename = "..\\core\\dfont.cpp";
     g_CurrentDebugLine = 0xd9;
     g_TinyWinFont = (CWinFont *)0x0;
     if (g_ThemeWinFont != (CWinFont *)0x0) {
-      (*((g_ThemeWinFont->base_font).vtable)->ctor)(&g_ThemeWinFont->base_font);
+      (*((g_ThemeWinFont->base).vtable)->ctor)(&g_ThemeWinFont->base);
     }
     g_CurrentDebugFilename = "..\\core\\dfont.cpp";
     g_CurrentDebugLine = 0xdb;
     g_ThemeWinFont = (CWinFont *)0x0;
     if (g_DebugWinFont != (CWinFont *)0x0) {
-      (*((g_DebugWinFont->base_font).vtable)->ctor)(&g_DebugWinFont->base_font);
+      (*((g_DebugWinFont->base).vtable)->ctor)(&g_DebugWinFont->base);
     }
     g_DebugWinFont = (CWinFont *)0x0;
   }

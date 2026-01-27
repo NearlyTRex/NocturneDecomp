@@ -13,8 +13,8 @@ COptimize * __cdecl shape_superopt_cpp_COptimize_ctor_FUN_005d6f90(COptimize *th
   
   this_ptr_00 = (COptimize *)shape_superopt_cpp_CObj_ctor_FUN_005d2230(&this_ptr->obj);
   this_ptr_00->vtable = &g_COptimizeVTable;
-  this_ptr_00->field6_0x3c = (void *)0x0;
-  this_ptr_00->field5_0x38 = 0;
+  this_ptr_00->unk6 = (void *)0x0;
+  this_ptr_00->unk5 = 0;
   shape_superopt_cpp_COptimize_FUN_005d7000(this_ptr_00);
   return this_ptr_00;
 }

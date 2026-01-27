@@ -38,12 +38,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
                                    (&local_50,&local_2c,(CMatrix3x4f *)(pcVar2 + 8));
           core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_20,input_vector,matrix);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (&this_ptr->base_actor,&local_44,&local_20);
+                    (&this_ptr->base,&local_44,&local_20);
           local_38.y = 0.0;
           local_38.z = 0.0;
           local_38.x = 3.0;
           core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                    (&this_ptr->base_actor,&local_5c,&local_38);
+                    (&this_ptr->base,&local_5c,&local_38);
           core_gore_cpp_FUN_004edaa0();
         }
       }

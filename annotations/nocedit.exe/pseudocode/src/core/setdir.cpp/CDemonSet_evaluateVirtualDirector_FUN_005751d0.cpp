@@ -214,11 +214,11 @@ LAB_0057523f:
   pCStack_24 = this_ptr->cameras;
   while ((iVar10 = g_VDCameraIndex, iVar12 = g_WindowHeight, 0 < iStack_58 &&
          (g_VDCameraIndex < this_ptr->camera_count))) {
-    uVar11 = this_ptr->cameras[g_VDCameraIndex].field16_0x19c;
+    uVar11 = this_ptr->cameras[g_VDCameraIndex].unk3;
     if (uStack_28 == uVar11) {
       this_ptr_02 = pCStack_24 + g_VDCameraIndex;
       pCStack_14 = actor;
-      if (this_ptr_02->field17_0x1a0 == 0) {
+      if (this_ptr_02->unk4 == 0) {
         fVar14 = (float)(uStack_28 ^ uVar11);
         fVar9 = fVar14;
       }

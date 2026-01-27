@@ -206,10 +206,10 @@
 ;   undefined4 g_CLightActorClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_03f6bab0
-;   undefined4 DAT_03f6babc
-;   undefined4 DAT_03f6bb00
-;   undefined4 DAT_03f6bb04
+;   float FLOAT_03f6bab0
+;   float FLOAT_03f6babc
+;   int INT_03f6bb00
+;   int INT_03f6bb04
 ;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
@@ -286,7 +286,7 @@ section .text
     JNZ 0x005c0eaa                      ; 005c0856
         ;   XREF to: 005c0eaa (CONDITIONAL_JUMP)  ; LAB_005c0eaa
     PUSH 0x3f87558                      ; 005c085c | g_ZeroVector
-    PUSH 0x3f6babc                      ; 005c0861 | DAT_03f6babc
+    PUSH 0x3f6babc                      ; 005c0861 | FLOAT_03f6babc
     LEA EAX,[EBP + 0xfffff92a]          ; 005c0866
     PUSH EAX                            ; 005c086c
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c086d
@@ -732,7 +732,7 @@ section .text
         ;   XREF to: 005c0943 (UNCONDITIONAL_JUMP)  ; LAB_005c0943
     PUSH 0x3f87558                      ; 005c0eaa | g_ZeroVector
         ;   Label: LAB_005c0eaa
-    PUSH 0x3f6bab0                      ; 005c0eaf | DAT_03f6bab0
+    PUSH 0x3f6bab0                      ; 005c0eaf | FLOAT_03f6bab0
     LEA EAX,[EBP + 0xfffff59a]          ; 005c0eb4
     PUSH EAX                            ; 005c0eba
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c0ebb
@@ -1051,7 +1051,7 @@ section .text
     FSTP float ptr [EBP + 0xfffff656]   ; 005c132e
     JMP 0x005c0946                      ; 005c1334
         ;   XREF to: 005c0946 (UNCONDITIONAL_JUMP)  ; LAB_005c0946
-    MOV EDX,dword ptr [0x03f6bb04]      ; 005c1339 | DAT_03f6bb04
+    MOV EDX,dword ptr [0x03f6bb04]      ; 005c1339 | INT_03f6bb04
         ;   Label: LAB_005c1339
     LEA EAX,[EDX*0x4 + 0x0]             ; 005c133f
     SUB EAX,EDX                         ; 005c1346
@@ -1063,7 +1063,7 @@ section .text
     PUSH EAX                            ; 005c1356
     CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005c1357
         ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-    MOV EDX,dword ptr [0x03f6bb00]      ; 005c135c | DAT_03f6bb00
+    MOV EDX,dword ptr [0x03f6bb00]      ; 005c135c | INT_03f6bb00
     MOV ESI,EAX                         ; 005c1362
     LEA EAX,[EDX*0x4 + 0x0]             ; 005c1364
     SUB EAX,EDX                         ; 005c136b

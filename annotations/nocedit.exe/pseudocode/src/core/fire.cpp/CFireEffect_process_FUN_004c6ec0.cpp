@@ -49,7 +49,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   } while (this_ptr_01 != (CSpark *)&g_SparkActiveCount);
   this_ptr_02 = g_MuzzleFlashPool;
   do {
-    if (*(int *)this_ptr_02->field0_0x0 != 0) {
+    if (*(int *)this_ptr_02->unk != 0) {
       core_fire_cpp_CMuzzleFlash_process_FUN_004c1a00(this_ptr_02);
     }
     this_ptr_02 = this_ptr_02 + 1;
@@ -74,7 +74,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   } while (this_ptr_04 != (CGlassParticle *)&g_CFireEffectGlassParticlesEnd);
   this_ptr_05 = g_BulletTrailPool;
   do {
-    if (*(int *)(this_ptr_05->field0_0x0 + 0x20) != 0) {
+    if (*(int *)(this_ptr_05->unk + 0x20) != 0) {
       core_fire_cpp_CBulletTrail_process_FUN_004c21d0(this_ptr_05);
     }
     this_ptr_05 = this_ptr_05 + 1;
@@ -120,7 +120,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   this_ptr_11 = g_GunFlamePool;
   bVar1 = false;
   do {
-    if ((*(uint *)this_ptr_11->field0_0x0 & 0x7fffffff) != 0) {
+    if ((*(uint *)this_ptr_11->unk & 0x7fffffff) != 0) {
       if (!bVar1) {
         core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(unaff_EBP);
         bVar1 = true;

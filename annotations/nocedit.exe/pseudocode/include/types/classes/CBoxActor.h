@@ -9,24 +9,24 @@
 // Structure: CBoxActor
 // Ghidra size: 0x66c (1644 bytes)
 typedef struct CBoxActor {
-    CDemonActor base_actor; // 0x0
+    CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
     char loop_wav_name[20]; // 0x2d4
     char collision_wav_name[20]; // 0x2e8
-    int field_764; // 0x2fc
+    int unk1; // 0x2fc
     CVector3f rpm; // 0x300
     float fps; // 0x30c
-    int field_784; // 0x310
+    int unk2; // 0x310
     int pickup_type; // 0x314
     struct CDemonActor* carrier_actor; // 0x318
     int can_be_pushed; // 0x31c
     int pushed_by_actor; // 0x320
     int constrain_extents_actor; // 0x324
-    int field_808; // 0x328
+    int unk3; // 0x328
     char push_sound[100]; // 0x32c
     float weight_in_pounds; // 0x390
     int sim_box; // 0x394
-    char field_920[600]; // 0x398
+    char unk4[600]; // 0x398
     int ground_type; // 0x5f0
     int plot_in_shadow_flag; // 0x5f4
     int collision_flag; // 0x5f8

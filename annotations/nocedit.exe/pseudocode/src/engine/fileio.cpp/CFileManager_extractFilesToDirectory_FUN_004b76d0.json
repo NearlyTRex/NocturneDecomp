@@ -15,7 +15,7 @@
       },
       {
         "category": "other",
-        "column": 46,
+        "column": 38,
         "line": 83,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
@@ -33,7 +33,7 @@
       },
       {
         "category": "other",
-        "column": 43,
+        "column": 35,
         "line": 92,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
@@ -75,8 +75,8 @@
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 163,
+        "column": 75,
+        "line": 162,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -187,18 +187,18 @@
       {
         "category": "other",
         "column": 51,
-        "line": 167,
+        "line": 166,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 398,
+    "complexity_score": 397,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
-    "pseudocode_lines": 163,
+    "pseudocode_lines": 162,
     "suspect_count": 21,
     "suspect_types": [
       "format_string_mismatch",
@@ -207,7 +207,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 508
+    "total_lines": 507
   },
   "cross_references": [
     {
@@ -762,42 +762,42 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 161,
       "match": "in_stack_ffffeef8",
       "text": "(&local_8dc,0,unaff_EBX,unaff_ESI,in_stack_ffffeef8,in_stack_ffffeefc,in_stack_ffffef00)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 161,
       "match": "in_stack_ffffeefc",
       "text": "(&local_8dc,0,unaff_EBX,unaff_ESI,in_stack_ffffeef8,in_stack_ffffeefc,in_stack_ffffef00)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 161,
       "match": "in_stack_ffffef00",
       "text": "(&local_8dc,0,unaff_EBX,unaff_ESI,in_stack_ffffeef8,in_stack_ffffeefc,in_stack_ffffef00)",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 162,
+      "line": 161,
       "match": "unaff_EBX",
       "text": "(&local_8dc,0,unaff_EBX,unaff_ESI,in_stack_ffffeef8,in_stack_ffffeefc,in_stack_ffffef00)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 162,
+      "line": 161,
       "match": "unaff_ESI",
       "text": "(&local_8dc,0,unaff_EBX,unaff_ESI,in_stack_ffffeef8,in_stack_ffffeefc,in_stack_ffffef00)",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 164,
+      "line": 163,
       "match": "&stack0xffffeef8",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffeef8);",
       "type": "stack_ref"

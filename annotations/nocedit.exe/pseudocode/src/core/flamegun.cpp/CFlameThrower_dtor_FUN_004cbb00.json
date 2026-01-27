@@ -1,0 +1,161 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cbb00",
+    "address_range": [
+      [
+        "004cbb00",
+        "004cbb4d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00",
+    "signature": "CFlameThrower * core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower * this_ptr, uint d1, uint d2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005edf80",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_dtor_FUN_005edf80"
+    },
+    {
+      "addr": "005fe659",
+      "is_variadic": false,
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "005fe632",
+      "is_variadic": false,
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632"
+    },
+    {
+      "addr": "0050f210",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065e390",
+      "name": "g_CFlameThrowerTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 23,
+      "INT_ADD": 13,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 11
+    },
+    "pcode_op_count": 124
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameThrower *"
+      },
+      {
+        "is_param": true,
+        "name": "d1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "d2",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBX",
+      "text": "core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base,1,unaff_EBX,unaff_retaddr);",
+      "type": "unaffected_reg"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 228,
+        "vtable_addr": "0065e284"
+      },
+      {
+        "class_name": "CFlameThrower",
+        "offset": 8,
+        "vtable_addr": "0065e394"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

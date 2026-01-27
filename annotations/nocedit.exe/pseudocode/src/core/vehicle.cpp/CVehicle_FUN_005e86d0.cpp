@@ -14,7 +14,7 @@ int * __cdecl core_vehicle_cpp_CVehicle_FUN_005e86d0(CVehicle *this_ptr)
   float *in_stack_00000008;
   
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+                     ((CKeyFramedModelInstance *)this_ptr->unk1);
   pCVar1 = pCVar2->frame_bounds;
   *in_stack_00000008 = pCVar1->x;
   in_stack_00000008[1] = pCVar1->y;

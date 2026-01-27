@@ -7,7 +7,7 @@
 ; XREF[6]:
 ;   core_cloth.cpp_CClothList_load_FUN_0043bfa0 at 0043bffa
 ;   core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 at 004be204
-;   core_gabriela.cpp_constructorMaybe_FUN_004d2b20 at 004d2b36
+;   core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20 at 004d2b36
 ;   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 at 0051f1e5
 ;   core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850 at 005d8864
 ;   core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590 at 005e55c0

@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 35,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 49,
-        "line": 36,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -26,24 +13,24 @@
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 238,
+    "complexity_score": 236,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 61,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 202
+    "total_lines": 200
   },
   "cross_references": [
     {
       "addr": "004136b0",
       "from_addr": "004136cb",
-      "name": "core_baron.cpp_FUN_004136b0",
+      "name": "core_baron.cpp_CBaron_FUN_004136b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,7 +122,7 @@
     },
     {
       "addr": "03265254",
-      "name": "g_CDemonSetInstance.field19_0x14f0a0[7996]",
+      "name": "g_CDemonSetInstance.unk4[7996]",
       "type": "undefined4",
       "value": null
     },
@@ -292,56 +279,56 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 44,
       "match": "unaff_EBX",
-      "text": "fStack_20 = *unaff_EBX - (this_ptr->base_actor).location.position.x;",
+      "text": "fStack_20 = *unaff_EBX - (this_ptr->base).location.position.x;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBX",
+      "text": "local_1c = (unaff_EBX[1] - (this_ptr->base).location.position.y) *",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 47,
       "match": "unaff_EBX",
-      "text": "local_1c = (unaff_EBX[1] - (this_ptr->base_actor).location.position.y) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBX",
-      "text": "fStack_18 = unaff_EBX[2] - (this_ptr->base_actor).location.position.z;",
+      "text": "fStack_18 = unaff_EBX[2] - (this_ptr->base).location.position.z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_6",
       "text": "if (fVar1 < *param_6) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_6",
       "text": "*param_6 = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_6",
       "text": "*param_6 = SQRT(*param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_6",
       "text": "*param_6 = SQRT(*param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 63,
       "match": "SQRT",
       "text": "*param_6 = SQRT(*param_6);",
       "type": "decompiler_intrinsic"

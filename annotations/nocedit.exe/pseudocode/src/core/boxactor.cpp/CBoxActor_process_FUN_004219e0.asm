@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_FUN_00422a50 at 00422a67
+;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422a67
 ;
 ; Referenced Globals:
 ;   float FLOAT_00616643 = 0.1047198

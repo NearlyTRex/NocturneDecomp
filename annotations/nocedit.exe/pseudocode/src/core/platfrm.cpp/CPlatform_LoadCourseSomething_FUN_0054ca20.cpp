@@ -27,8 +27,8 @@ void core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   pCVar1 = in_stack_00000004 + 1;
   do {
-    while (in_stack_00000004[3].field19_0x114 != 0) {
-      in_stack_00000004[3].field19_0x114 = 0;
+    while (in_stack_00000004[3].unk8 != 0) {
+      in_stack_00000004[3].unk8 = 0;
       core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0();
       in_stack_00000004 = (CDemonActor *)&(in_stack_00000004->orient).bank;
       if (in_stack_00000004 == (CDemonActor *)(pCVar1->create_event + 0x38)) {

@@ -198,7 +198,7 @@ LAB_004e14f5:
                            ("Error writing temp file to load saved game.");
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar8);
         support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&local_6c.lzw_dict);
-        support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_6c.base_codec,1);
+        support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_6c.base,1);
         crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
                   ((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);
         crt_fstream_cpp_ifstream_dtor_FUN_005ff856
@@ -215,7 +215,7 @@ LAB_004e14f5:
                   ("Can't reopen %s","save\\$$SAVE$$.TMP");
       }
       support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&local_6c.lzw_dict);
-      support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_6c.base_codec,1);
+      support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_6c.base,1);
       crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
                 ((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);
       crt_fstream_cpp_ifstream_dtor_FUN_005ff856

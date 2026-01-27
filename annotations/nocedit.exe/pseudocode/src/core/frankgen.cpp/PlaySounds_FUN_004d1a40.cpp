@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_frankgen.cpp_PlaySounds(uint param_1, uint
-   param_2) */
-
 void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
 
 {
@@ -33,22 +29,22 @@ void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
   CVector3f CStack_24;
   CVector3f CStack_18;
   
-  _DAT_02d7b7f0 = *(float *)(in_stack_00000004[1].actor_name + 4);
+  FLOAT_02d7b7f0 = *(float *)(in_stack_00000004[1].actor_name + 4);
   pCVar1 = (CDemonActor *)core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
   if (pCVar1 == in_stack_00000004) {
     fVar3 = in_stack_00000008 * 30.0f + *(float *)(in_stack_00000004[1].actor_name + 4);
     *(float *)(in_stack_00000004[1].actor_name + 4) = fVar3;
-    if (_DAT_0065e670 <= fVar3) {
+    if (2300.0f <= fVar3) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
-           *(float *)(in_stack_00000004[1].actor_name + 4) - _DAT_0065e670;
+           *(float *)(in_stack_00000004[1].actor_name + 4) - 2300.0f;
     }
   }
   else {
     *(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(pCVar1[1].actor_name + 4)
     ;
   }
-  if (*(float *)(in_stack_00000004[1].actor_name + 4) < _DAT_02d7b7f0) {
-    _DAT_02d7b7f0 = _DAT_02d7b7f0 - _DAT_0065e670;
+  if (*(float *)(in_stack_00000004[1].actor_name + 4) < FLOAT_02d7b7f0) {
+    FLOAT_02d7b7f0 = FLOAT_02d7b7f0 - 2300.0f;
   }
   core_frankgen_cpp_LoadModel_FUN_004d2190();
   switch(*(uint *)in_stack_00000004[1].actor_name) {

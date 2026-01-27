@@ -11,6 +11,9 @@
 extern int g_SavedWindowWidth;
 extern int g_SavedWindowHeight;
 extern int g_VDIsActorAreaInvalid;
+extern int INT_03364ce0;
+extern int INT_03364ce4;
+extern int INT_03364ce8;
 
 // int[250]
 extern int g_VDCameraSortIndices[250];

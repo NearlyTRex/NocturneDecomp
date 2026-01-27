@@ -17,7 +17,7 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005e7940(CVehicle *this_pt
   char *pcVar6;
   int *piVar7;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667

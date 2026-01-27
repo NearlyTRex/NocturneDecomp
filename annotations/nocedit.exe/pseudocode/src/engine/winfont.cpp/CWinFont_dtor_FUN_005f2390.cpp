@@ -18,9 +18,9 @@ engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr,uint d1,uint d2
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_font).vtable = &g_CWinFontVTable;
+  (this_ptr->base).vtable = &g_CWinFontVTable;
   engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(this_ptr);
-  ptr = (CWinFont *)engine_palette_cpp_CFont_dtor_FUN_00544ec0(&this_ptr->base_font);
+  ptr = (CWinFont *)engine_palette_cpp_CFont_dtor_FUN_00544ec0(&this_ptr->base);
   if ((d1 & 2) == 0) {
     return ptr;
   }

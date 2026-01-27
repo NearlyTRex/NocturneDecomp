@@ -12,6 +12,6 @@ core_fileman_cpp_CDemonFileManager_dtor_FUN_00508880(CDemonFileManager *this_ptr
 {
   CDemonFileManager *extraout_EAX;
   
-  engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(&this_ptr->base_filemanager);
+  engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(&this_ptr->base);
   return extraout_EAX;
 }

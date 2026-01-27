@@ -24,48 +24,48 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
   
   this_ptr_00 = &this_ptr->model;
   if (in_stack_00000008 < 7) {
-    if ((in_stack_00000008 == 1) && (*(int *)(this_ptr->field2_0x240c + 4) != 0)) {
+    if ((in_stack_00000008 == 1) && (*(int *)(this_ptr->unk1 + 4) != 0)) {
       pcVar5 = "Bip01 L Foot";
       pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
       iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
       if (-1 < iVar3) {
         fVar6 = 1.0;
-        pCVar1 = (this_ptr->base_actor).vtable._ub;
+        pCVar1 = (this_ptr->base).vtable._ub;
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,&local_3c,iVar3);
-        (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);
+        (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar4,fVar6);
         return;
       }
     }
   }
   else if (in_stack_00000008 < 8) {
-    if (*(int *)(this_ptr->field2_0x240c + 4) != 0) {
+    if (*(int *)(this_ptr->unk1 + 4) != 0) {
       pcVar5 = "Bip01 R Foot";
       pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
       iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
       if (-1 < iVar3) {
         fVar6 = 1.0;
-        pCVar1 = (this_ptr->base_actor).vtable._ub;
+        pCVar1 = (this_ptr->base).vtable._ub;
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,&local_18,iVar3);
-        (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);
+        (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar4,fVar6);
         return;
       }
     }
   }
   else if (0x1e < in_stack_00000008) {
     if (in_stack_00000008 < 0x20) {
-      if (*(int *)(this_ptr->field2_0x240c + 4) != 0) {
+      if (*(int *)(this_ptr->unk1 + 4) != 0) {
         pcVar5 = "Bip01 L Foot";
         pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00)
         ;
         iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
         if (-1 < iVar3) {
           fVar6 = 1.7;
-          pCVar1 = (this_ptr->base_actor).vtable._ub;
+          pCVar1 = (this_ptr->base).vtable._ub;
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                              (this_ptr_00,&local_24,iVar3);
-          (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);
+          (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar4,fVar6);
           return;
         }
       }
@@ -74,17 +74,17 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
       if (in_stack_00000008 != 0x25) {
         return;
       }
-      if (*(int *)(this_ptr->field2_0x240c + 4) != 0) {
+      if (*(int *)(this_ptr->unk1 + 4) != 0) {
         pcVar5 = "Bip01 R Foot";
         pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00)
         ;
         iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
         if (-1 < iVar3) {
           fVar6 = 1.7;
-          pCVar1 = (this_ptr->base_actor).vtable._ub;
+          pCVar1 = (this_ptr->base).vtable._ub;
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                              (this_ptr_00,&local_30,iVar3);
-          (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);
+          (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar4,fVar6);
           return;
         }
       }

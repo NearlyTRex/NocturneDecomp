@@ -2,22 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 46,
-        "line": 37,
-        "message": "'CZombieDog' {aka 'struct CZombieDog'} has no member named 'field1_0xbeb4'"
-      },
-      {
         "category": "other",
         "column": 21,
-        "line": 43,
+        "line": 42,
         "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 44,
-        "message": "'CZombieDog' {aka 'struct CZombieDog'} has no member named 'field1_0xbeb4'"
       }
     ],
     "success": false,
@@ -30,31 +18,31 @@
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 47,
         "line": 20,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 43,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 87,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 36,
     "suspect_count": 4,
     "suspect_types": [
       "extra_output",
       "stack_param"
     ],
-    "total_lines": 112
+    "total_lines": 111
   },
   "cross_references": [],
   "function": {
@@ -190,12 +178,12 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
-      "text": "fVar1 = (this_ptr->base_enemy).base_character.hit_points - *(float *)(in_stack_00000008 + 4);",
+      "text": "fVar1 = (this_ptr->base).base.hit_points - *(float *)(in_stack_00000008 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
+      "line": 30,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"

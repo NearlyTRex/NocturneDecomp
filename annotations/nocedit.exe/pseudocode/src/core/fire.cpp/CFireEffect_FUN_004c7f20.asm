@@ -12,7 +12,7 @@
 ;   core_shotgun.cpp_FUN_005888f0 at 00588a64
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065dcc0
+;   float FLOAT_0065dcc0 = 0.02000000
 ;   CRock* g_CFireEffectRocksEnd
 ;   CLaserBeam[64] g_LaserBeamPool
 ;
@@ -37,7 +37,7 @@ section .text
     PUSH EBX                            ; 004c7f30
     PUSH dword ptr [ESP + 0x30]         ; 004c7f31
     MOV ECX,dword ptr [ESP + 0x30]      ; 004c7f35
-    PUSH dword ptr [0x0065dcc0]         ; 004c7f39 | DAT_0065dcc0
+    PUSH dword ptr [0x0065dcc0]         ; 004c7f39 | FLOAT_0065dcc0
     PUSH ECX                            ; 004c7f3f
     MOV EBX,dword ptr [ESP + 0x34]      ; 004c7f40
     PUSH EBX                            ; 004c7f44

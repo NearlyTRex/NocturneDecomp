@@ -26,4 +26,16 @@ extern char g_FileIOBuffer[65536];
 extern int g_PathfindingQueueHead;
 extern int g_PathfindingQueueTail;
 extern int g_PathfindingNodesExpanded;
+extern int INT_030d4fe8;
+extern int INT_030d4fec;
+extern int INT_030d4ff0;
+extern int INT_030d4ff4;
+extern int INT_030d4ff8;
+extern int INT_030d4ffc;
+extern int INT_030d5000;
+extern int INT_030d5004;
+extern int INT_030d5008;
+extern int INT_030d500c;
+extern int INT_030d5010;
+extern int INT_030d5014;
 

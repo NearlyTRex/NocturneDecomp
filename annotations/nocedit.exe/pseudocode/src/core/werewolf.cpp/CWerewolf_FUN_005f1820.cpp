@@ -20,18 +20,17 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
   CVector3f local_14;
   
   bVar4 = 0;
-  if ((*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 == 0) ||
-     ((this_ptr->base_enemy).pool_me != 0)) {
+  if ((*(int *)(this_ptr->base).base.unk3 == 0) || ((this_ptr->base).pool_me != 0)) {
     return 0;
   }
-  if (1.0 < (float)this_ptr->field11_0xbf00) {
-    this_ptr->field11_0xbf00 = (int)((float)this_ptr->field11_0xbf00 + -1.0f);
+  if (1.0 < (float)this_ptr->unk6) {
+    this_ptr->unk6 = (int)((float)this_ptr->unk6 + -1.0f);
   }
-  if ((float)this_ptr->field11_0xbf00 <= (float)0.80000000000000004) {
-    if (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) {
+  if ((float)this_ptr->unk6 <= (float)0.80000000000000004) {
+    if (*(int *)(this_ptr->base).base.unk3 != 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-      pCVar2 = (this_ptr->base_enemy).base_character.model.bone_transform.bone_world_matrices +
-               *(int *)(this_ptr->field4_0xbec0 + 0x10);
+      pCVar2 = (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               *(int *)(this_ptr->unk3 + 0x10);
       pCVar3 = &local_50;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
         pCVar3->m[0].w = pCVar2->m[0].w;
@@ -51,7 +50,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
     }
     core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
-    return *(int *)(this_ptr->base_enemy).base_character.field13_0x2620;
+    return *(int *)(this_ptr->base).base.unk3;
   }
   iVar1 = core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
   return iVar1;

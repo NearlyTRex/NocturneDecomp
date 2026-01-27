@@ -15,8 +15,8 @@ void __cdecl core_game_cpp_CGame_FUN_004dda80(CGame *this_ptr)
   float in_stack_0000000c;
   int in_stack_00000010;
   
-  *(float *)(this_ptr->field101_0x38c + in_stack_00000010 * 4 + 0x188) =
-       *(float *)(this_ptr->field101_0x38c + in_stack_00000010 * 4 + 0x188) * in_stack_0000000c;
+  *(float *)(this_ptr->unk13 + in_stack_00000010 * 4 + 0x188) =
+       *(float *)(this_ptr->unk13 + in_stack_00000010 * 4 + 0x188) * in_stack_0000000c;
   iVar1 = 0;
   iVar2 = in_stack_00000008;
   if (0 < *(int *)(in_stack_00000008 + 0x28558)) {

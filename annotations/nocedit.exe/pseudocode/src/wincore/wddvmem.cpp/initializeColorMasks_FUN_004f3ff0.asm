@@ -8,9 +8,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   uint g_RedMask16 = 0xf800
-;   uint g_GreenMask16 = 0x7e0
-;   uint g_BlueMask16 = 0x1f
+;   ulonglong g_RedMask16 = 0xf800
+;   ulonglong g_GreenMask16 = 0x7e0
+;   ulonglong g_BlueMask16 = 0x1f
 ;   ulonglong g_RedMask32 = 0xf80000
 ;   ulonglong g_GreenMask32 = 0xfc00
 ;   ulonglong g_BlueMask32 = 0xf8

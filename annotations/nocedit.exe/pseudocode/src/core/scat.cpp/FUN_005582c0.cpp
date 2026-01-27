@@ -53,7 +53,7 @@ void core_scat_cpp_FUN_005582c0(void)
                       ((CMotionController *)this_ptr_00,motion_index,
                        *(float *)(in_stack_00000004 + 0x2a90));
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-              (this_ptr_00,motion_index,fVar1,local_28,DAT_0310619c,
+              (this_ptr_00,motion_index,fVar1,local_28,INT_0310619c,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     if (*(int *)(in_stack_00000004 + 0x2a8c) == 1) {
       core_scat_cpp_FUN_005584a0();

@@ -20,7 +20,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
   }
   delta_time_00 = g_CGamePtr->delta_time_float;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&(this_ptr->base_hero).base_character.model.motion_controller);
+                     (&(this_ptr->base).base.model.motion_controller);
   bVar1 = false;
   switch(pSVar3->state_index) {
   case 7:

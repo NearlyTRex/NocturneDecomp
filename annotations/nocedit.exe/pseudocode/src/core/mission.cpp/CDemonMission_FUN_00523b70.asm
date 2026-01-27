@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[17]:
-;   core_baron.cpp_FUN_00413f20 at 00413fbd
+;   core_baron.cpp_CBaronWeapon_FUN_00413f20 at 00413fbd
 ;   core_bodypart.cpp_CreateBodyPart_FUN_00418e10 at 00418eda
 ;   core_gore.cpp_CreateFlies_FUN_004edf30 at 004ee006
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 at 00520c48

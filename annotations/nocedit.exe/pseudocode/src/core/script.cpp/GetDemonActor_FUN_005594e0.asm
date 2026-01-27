@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Actor_s_is_of_type_s_thi_00641626
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEventList g_CEventListInstance
 ;   CHero*[4] g_HeroActors
 ;   ... and 8 more
@@ -113,7 +113,7 @@ section .text
     PUSH EDX                            ; 00559564
     PUSH ESI                            ; 00559565
     CALL core_actor.cpp_isOfClassHash_FUN_0040c760 ; 00559566
-        ;   XREF to: 0040c760 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040c760(CDemonActor * actor_ptr, uint class_name_hash) | DAT_02f7c740
+        ;   XREF to: 0040c760 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040c760(CDemonActor * actor_ptr, uint class_name_hash) | g_CNetGameInstance
     ADD ESP,0x8                         ; 0055956b
     TEST EAX,EAX                        ; 0055956e
     JZ 0x00559635                       ; 00559570
@@ -146,8 +146,8 @@ section .text
     TEST EAX,EAX                        ; 005595a5
     JNZ 0x00559601                      ; 005595a7
         ;   XREF to: 00559601 (CONDITIONAL_JUMP)  ; LAB_00559601
-    MOV EAX,[0x00680a00]                ; 005595a9 | DAT_02f7c740 | g_CNetGameInstance
-    CMP dword ptr [EAX],0x0             ; 005595ae | DAT_02f7c740
+    MOV EAX,[0x00680a00]                ; 005595a9 | g_CNetGameInstance | g_CNetGamePtr
+    CMP dword ptr [EAX],0x0             ; 005595ae | g_CNetGameInstance
     JNZ 0x005595e8                      ; 005595b1
         ;   XREF to: 005595e8 (CONDITIONAL_JUMP)  ; LAB_005595e8
     MOV ESI,dword ptr [0x02db87d0]      ; 005595b3 | g_LocalHeroIndex

@@ -25,7 +25,7 @@ void core_flies_cpp_FUN_004cbe60(void)
     core_actor_cpp_serializeInteger_FUN_0040b7f0
               (&in_stack_00000004[0x1f].health,"gatherCount");
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[0x1f].field7_0x6c,"gatherTime");
+              ((float *)&in_stack_00000004[0x1f].unk1,"gatherTime");
     if (g_CFliesClassVersion < 3) {
       return;
     }

@@ -1,22 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 227,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
-    "pseudocode_lines": 32,
-    "suspect_count": 16,
+    "pseudocode_lines": 31,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
       "special_math_intrinsic",
       "unknown_type",
       "warning_indirect_jump",
-      "warning_jumptable",
-      "warning_overlapping_globals"
+      "warning_jumptable"
     ],
-    "total_lines": 164
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -64,51 +63,51 @@
     },
     {
       "addr": "00687518",
-      "name": "DAT_00687518",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00687518",
+      "type": "float",
+      "value": "16"
     },
     {
       "addr": "0068751c",
-      "name": "DAT_0068751c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0068751c",
+      "type": "float",
+      "value": "0.0625"
     },
     {
       "addr": "00687520",
-      "name": "DAT_00687520",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT10_00687520",
+      "type": "float10",
+      "value": "-0.3333333333333333333"
     },
     {
       "addr": "0068752a",
-      "name": "DAT_0068752a",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT10_0068752a",
+      "type": "float10",
+      "value": "0.1999999999999994471"
     },
     {
       "addr": "00687534",
-      "name": "DAT_00687534",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT10_00687534",
+      "type": "float10",
+      "value": "-0.1428571428555127940"
     },
     {
       "addr": "0068753e",
-      "name": "DAT_0068753e",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT10_0068753e",
+      "type": "float10",
+      "value": "0.1111111089064621512"
     },
     {
       "addr": "00687548",
-      "name": "DAT_00687548",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT10_00687548",
+      "type": "float10",
+      "value": "-0.09090758475228815823"
     },
     {
       "addr": "00687552",
-      "name": "DAT_00687552",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT10_00687552",
+      "type": "float10",
+      "value": "0.07641690805844016167"
     },
     {
       "addr": "0068755c",
@@ -218,99 +217,92 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/unresolved type",
-      "line": 15,
+      "line": 13,
       "match": "unkuint10",
       "text": "uStack_20 = (uint)((unkuint10)y >> 0x20);",
       "type": "unknown_type"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 16,
+      "line": 14,
       "match": "unkuint10",
       "text": "uStack_1c = (ushort)((unkuint10)y >> 0x40);",
       "type": "unknown_type"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 17,
+      "line": 15,
       "match": "unkuint10",
       "text": "uStack_2c = (uint)((unkuint10)x >> 0x20);",
       "type": "unknown_type"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 18,
+      "line": 16,
       "match": "unkuint10",
       "text": "uStack_28 = (ushort)((unkuint10)x >> 0x40);",
       "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "CARRY4",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "CARRY4",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 21,
       "match": "ABS",
       "text": "uVar2 = (uint)(ABS(y) <= ABS(x));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 21,
       "match": "ABS",
       "text": "uVar2 = (uint)(ABS(y) <= ABS(x));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Jump table recovery failed",
-      "line": 27,
+      "line": 25,
       "match": "WARNING: Could not recover jumptable",
       "text": "/* WARNING: Could not recover jumptable at 0x0060c599. Too many branches */",
       "type": "warning_jumptable"
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 28,
+      "line": 26,
       "match": "WARNING: Treating indirect jump as call",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 28,
       "match": "CARRY4",
       "text": "[(uVar2 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "CARRY4",
       "text": "* 2 + (uint)CARRY4(uVar1,uVar1)])((uint)uStack_28 << 0x11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 32,
       "match": "fpatan",
       "text": "fVar3 = (float10)fpatan(x,y);",
       "type": "decompiler_intrinsic"

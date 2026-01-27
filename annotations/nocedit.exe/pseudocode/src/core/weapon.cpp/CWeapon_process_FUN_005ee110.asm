@@ -10,9 +10,9 @@
 ; XREF[9]:
 ;   core_baron.cpp_CBaronWeapon_process_FUN_00413dc0 at 00413dd6
 ;   core_crossbow.cpp_CCrossbow_process_FUN_00448d30 at 00448d3d
-;   core_dynamite.cpp_FUN_0049cfb0 at 0049cfc2
-;   core_elephant.cpp_FUN_004a7070 at 004a7091
-;   core_flamegun.cpp_FUN_004cb9b0 at 004cb9c2
+;   core_dynamite.cpp_CDynamite_process_FUN_0049cfb0 at 0049cfc2
+;   core_elephant.cpp_CElephantGun_FUN_004a7070 at 004a7091
+;   core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0 at 004cb9c2
 ;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 0050645e
 ;   core_melee.cpp_FUN_0050ec10 at 0050ec1d
 ;   core_shotgun.cpp_FUN_00587f70 at 00587f91

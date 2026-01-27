@@ -3,15 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 69,
+        "column": 63,
         "line": 20,
         "message": "'stack0xffffffd4' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 39,
-        "line": 33,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       }
     ],
     "success": false,
@@ -214,7 +208,7 @@
       "description": "Direct stack address reference",
       "line": 13,
       "match": "&stack0xffffffd4",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd4);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);",
       "type": "stack_ref"
     },
     {

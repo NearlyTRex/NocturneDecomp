@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00600ac1) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 uint crt_unknown_c_FUN_00600a64(void)
 
@@ -17,7 +16,7 @@ uint crt_unknown_c_FUN_00600a64(void)
   uint uVar3;
   byte *in_stack_00000004;
   
-  _DAT_03f9b1f0 = in_stack_00000004;
+  INT_03f9b1f0 = (int)in_stack_00000004;
   if ((*in_stack_00000004 & 1) != 0) {
     return 3;
   }

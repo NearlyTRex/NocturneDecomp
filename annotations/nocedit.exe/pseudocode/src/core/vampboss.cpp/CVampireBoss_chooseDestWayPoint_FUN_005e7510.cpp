@@ -38,12 +38,12 @@ void core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
     }
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
     iVar2 = *(int *)(iVar10 + 0xce90c);
-    fVar3 = *(float *)(iVar2 + 0x20) - (pCVar1->base_character).base_actor.location.position.x;
+    fVar3 = *(float *)(iVar2 + 0x20) - (pCVar1->base).base.location.position.x;
     fVar4 = *(float *)(iVar2 + 0x20) - *(float *)(in_stack_00000004 + 0x20);
-    fVar8 = *(float *)(iVar2 + 0x24) - (pCVar1->base_character).base_actor.location.position.y;
+    fVar8 = *(float *)(iVar2 + 0x24) - (pCVar1->base).base.location.position.y;
     fVar5 = *(float *)(iVar2 + 0x24) - *(float *)(in_stack_00000004 + 0x24);
     fVar6 = *(float *)(iVar2 + 0x28) - *(float *)(in_stack_00000004 + 0x28);
-    fVar7 = *(float *)(iVar2 + 0x28) - (pCVar1->base_character).base_actor.location.position.z;
+    fVar7 = *(float *)(iVar2 + 0x28) - (pCVar1->base).base.location.position.z;
     fVar3 = fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4 +
             fVar7 * fVar7 + fVar8 * fVar8 + fVar3 * fVar3;
     if (local_20 < fVar3) {

@@ -1,0 +1,114 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00599550",
+    "address_range": [
+      [
+        "00599550",
+        "005995ba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CLodVert_copy_FUN_00599550",
+    "signature": "CLodVert * core_skeledit.cpp_CLodVert_copy_FUN_00599550(CLodVert * this_ptr, CLodVert * other)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8125,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 34,
+      "INT_ADD": 22,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_MULT": 4,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 11,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 122
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodVert *"
+      },
+      {
+        "is_param": true,
+        "name": "other",
+        "offset": 8,
+        "size": 4,
+        "type": "CLodVert *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 4,
+        "vtable_addr": "00662e64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

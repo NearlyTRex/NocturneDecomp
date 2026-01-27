@@ -8,7 +8,7 @@
 ;   core_curtain.cpp_FUN_0044b340 at 0044b354
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065c4c0
+;   float FLOAT_0065c4c0 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -100,13 +100,13 @@ section .text
         ;   Label: LAB_0044b111
     MOV EAX,EDX                         ; 0044b113
     FLD float ptr [EAX]                 ; 0044b115
-    FMUL float ptr [0x0065c4c0]         ; 0044b117 | DAT_0065c4c0
+    FMUL float ptr [0x0065c4c0]         ; 0044b117 | FLOAT_0065c4c0
     FISTP dword ptr [EBX]               ; 0044b11d
     FLD float ptr [EAX + 0x4]           ; 0044b11f
-    FMUL float ptr [0x0065c4c0]         ; 0044b122 | DAT_0065c4c0
+    FMUL float ptr [0x0065c4c0]         ; 0044b122 | FLOAT_0065c4c0
     FISTP dword ptr [EBX + 0x4]         ; 0044b128
     FLD float ptr [EAX + 0x8]           ; 0044b12b
-    FMUL float ptr [0x0065c4c0]         ; 0044b12e | DAT_0065c4c0
+    FMUL float ptr [0x0065c4c0]         ; 0044b12e | FLOAT_0065c4c0
     FISTP dword ptr [EBX + 0x8]         ; 0044b134
     INC EDI                             ; 0044b137
     ADD EDX,0x74                        ; 0044b138

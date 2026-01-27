@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 145,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 60,
-    "suspect_count": 6,
+    "pseudocode_lines": 59,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
-      "stack_param",
-      "warning_overlapping_globals"
+      "stack_param"
     ],
-    "total_lines": 184
+    "total_lines": 183
   },
   "cross_references": [
     {
@@ -46,8 +45,8 @@
     },
     {
       "addr": "03f9b1f0",
-      "name": "DAT_03f9b1f0",
-      "type": "undefined4",
+      "name": "INT_03f9b1f0",
+      "type": "int",
       "value": null
     }
   ],
@@ -106,31 +105,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "uint *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = uVar6;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(byte *)((int)",
-      "text": "(byte *)((int)&pHVar4->heap_size + pHVar4->heap_size) < _DAT_03f9b1f0)) {",
+      "text": "(byte *)((int)&pHVar4->heap_size + pHVar4->heap_size) < (uint)INT_03f9b1f0)) {",
       "type": "pointer_cast"
     },
     {

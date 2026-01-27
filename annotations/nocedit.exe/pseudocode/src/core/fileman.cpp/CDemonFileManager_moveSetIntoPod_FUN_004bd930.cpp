@@ -19,11 +19,10 @@ core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager
   if (iVar1 == 0) {
     return;
   }
-  engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10
-            (&this_ptr->base_filemanager);
+  engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(&this_ptr->base);
   core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(this_ptr,local_104);
-  engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base_filemanager);
+  engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base);
   engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-            (&this_ptr->base_filemanager,(char *)0x0,(char *)0x0);
+            (&this_ptr->base,(char *)0x0,(char *)0x0);
   return;
 }

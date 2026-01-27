@@ -58,7 +58,7 @@ core_path_cpp_CPathMap_findPathToDestination_FUN_00547320
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
             (&g_CDemonRaytraceInstance,dest_position,in_stack_fffffee8);
   pfVar6 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x1c);
-  this_ptr->field2_0x18 = local_58;
+  this_ptr->unk1 = local_58;
   *pfVar6 = afStack_54[(uint)bVar7 * -2];
   pfVar6[(uint)bVar7 * -2 + 1] = afStack_54[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
   local_a4.y = 0.0;
@@ -93,7 +93,7 @@ core_path_cpp_CPathMap_findPathToDestination_FUN_00547320
     local_98 = 0xfffffffc;
     local_a4.y = 5.60519e-45;
   }
-  local_ac = (this_ptr->voxel_coords).x - this_ptr->field2_0x18;
+  local_ac = (this_ptr->voxel_coords).x - this_ptr->unk1;
   if (0x31 < (int)((local_ac ^ (int)local_ac >> 0x1f) - ((int)local_ac >> 0x1f))) {
     afStack_54[2] = (this_ptr->current_position).x - dest_position->x;
     afStack_54[3] = (this_ptr->current_position).y - dest_position->y;
@@ -108,7 +108,7 @@ LAB_005473e0:
     }
     return 2;
   }
-  local_a4.x = (float)((this_ptr->voxel_coords).z - this_ptr->field4_0x20);
+  local_a4.x = (float)((this_ptr->voxel_coords).z - this_ptr->unk3);
   if (0x31 < (int)(((uint)local_a4.x ^ (int)local_a4.x >> 0x1f) - ((int)local_a4.x >> 0x1f))) {
     local_64.x = (this_ptr->current_position).x - dest_position->x;
     local_64.y = (this_ptr->current_position).y - dest_position->y;
@@ -122,10 +122,10 @@ LAB_005473e0:
     out_euler_angles->z = pCVar1->z;
     return 2;
   }
-  g_PathfindingCurrentX = this_ptr->field2_0x18 - (this_ptr->grid_origin).x;
+  g_PathfindingCurrentX = this_ptr->unk1 - (this_ptr->grid_origin).x;
   g_PathfindingDestZ = 0x32;
   g_PathfindingDestX = 0x32;
-  g_PathfindingCurrentZ = this_ptr->field4_0x20 - (this_ptr->grid_origin).z;
+  g_PathfindingCurrentZ = this_ptr->unk3 - (this_ptr->grid_origin).z;
   if ((((g_PathfindingCurrentX < 0) || (99 < g_PathfindingCurrentX)) || (g_PathfindingCurrentZ < 0))
      || (99 < g_PathfindingCurrentZ)) {
     local_dc.x = (this_ptr->current_position).x - dest_position->x;
@@ -164,7 +164,7 @@ LAB_005473e0:
   dVar8 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(unaff_retaddr + 8));
   iStack_24 = (int)ROUND(dVar8);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                    (this_ptr,g_PathfindingCurrentZ,g_PathfindingCurrentX,this_ptr->field3_0x1c);
+                    (this_ptr,g_PathfindingCurrentZ,g_PathfindingCurrentX,this_ptr->unk2);
   iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                     (this_ptr,g_PathfindingDestZ,g_PathfindingDestX,(this_ptr->voxel_coords).y);
   iVar2 = core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40
@@ -198,7 +198,7 @@ LAB_005473e0:
                     (this_ptr,g_PathfindingDestX,g_PathfindingDestZ,g_PathfindingCurrentX,
                      g_PathfindingCurrentZ,(int)fVar9);
   if (iVar2 == 0) {
-    uVar4 = core_path_cpp_CPathMap_queuePop_FUN_005487a0(this_ptr,this_ptr->field3_0x1c);
+    uVar4 = core_path_cpp_CPathMap_queuePop_FUN_005487a0(this_ptr,this_ptr->unk2);
     if (uVar4 != 0) {
       uVar4 = this_ptr->height_cache[g_PathfindingDestZ][g_PathfindingDestX] -
               (this_ptr->voxel_coords).y;

@@ -11,7 +11,7 @@ void __cdecl core_weapon_cpp_CWeapon_serialize_FUN_005ee250(CWeapon *this_ptr)
 {
   char *local_104 [64];
   
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName")
   ;
   if (2 < g_CWeaponClassVersion) {

@@ -51,8 +51,8 @@ LAB_004b2681:
     pSVar2 = local_14;
     if (0 < iVar4) {
       do {
-        if (iVar5 < *(int *)(pSVar2->field1_0x4 + 0xfc)) {
-          iVar5 = *(int *)(pSVar2->field1_0x4 + 0xfc);
+        if (iVar5 < *(int *)(pSVar2->unk1 + 0xfc)) {
+          iVar5 = *(int *)(pSVar2->unk1 + 0xfc);
         }
         iVar3 = iVar3 + 1;
         pSVar2 = pSVar2 + 1;

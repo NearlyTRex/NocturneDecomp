@@ -24,11 +24,11 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSe
   iVar3 = g_RaytraceStateStackDepth;
   pSVar6 = g_RaytraceStateStack + g_RaytraceStateStackDepth;
   pSVar6->ray_type = this_ptr->ray_type;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_r = this_ptr->field60_0x15f684;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_g = this_ptr->field61_0x15f688;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_b = this_ptr->field62_0x15f68c;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_r = this_ptr->unk8;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_g = this_ptr->unk9;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_b = this_ptr->unk10;
   iVar5 = 0;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_a = this_ptr->field63_0x15f690;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].color_a = this_ptr->unk11;
   iVar1 = this_ptr->ignore_list_count;
   pSVar2 = g_RaytraceStateStack + g_RaytraceStateStackDepth;
   g_RaytraceStateStackDepth = g_RaytraceStateStackDepth + 1;
@@ -73,8 +73,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSe
     g_RaytraceStateStack[iVar3].saved_collision_point.z = (this_ptr->collision_impact_position).z;
   }
   g_RaytraceStateStack[iVar3].saved_collision_actor = this_ptr->collision_actor;
-  g_RaytraceStateStack[iVar3].field19_0x98 = this_ptr->field11_0x14d148;
-  g_RaytraceStateStack[iVar3].field20_0x9c = this_ptr->field12_0x14d14c;
-  g_RaytraceStateStack[iVar3].field14_0x74 = this_ptr->field71_0x15f6dc;
+  g_RaytraceStateStack[iVar3].unk2 = this_ptr->unk1;
+  g_RaytraceStateStack[iVar3].unk3 = this_ptr->unk2;
+  g_RaytraceStateStack[iVar3].unk1 = this_ptr->unk12;
   return;
 }

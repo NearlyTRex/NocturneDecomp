@@ -347,13 +347,11 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
     if (iVar7 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_8e4);
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base_strlist,"Outside");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base_strlist,"Small");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_8e4.base_strlist,"Medium (e.g. Mausoleum)");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_8e4.base_strlist,"Large (e.g. Warehouse)");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base_strlist,"Humongous");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base,"Outside");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base,"Small");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base,"Medium (e.g. Mausoleum)");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base,"Large (e.g. Warehouse)");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8e4.base,"Humongous");
       iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_8e4,"Select default room size",*local_40,0);
       if (-1 < iVar7) {
@@ -386,13 +384,13 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
     if (iVar7 != 0) {
       if (this_ptr->room_count < 0x14) {
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_53c);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base_strlist,"Outside");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base_strlist,"Small");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base,"Outside");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base,"Small");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_53c.base_strlist,"Medium (e.g. Mausoleum)");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_53c.base_strlist,"Large (e.g. Warehouse)");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base_strlist,"Humongous");
+                  (&local_53c.base,"Medium (e.g. Mausoleum)");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base,"Large (e.g. Warehouse)")
+        ;
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base,"Humongous");
         in_stack_fffff3dc = &local_53c;
         in_stack_fffff3d8 = (CKeys *)0x582016;
         iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -422,7 +420,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
           (local_18->extents).x = 10.0;
           (local_18->extents).y = 10.0;
           (local_18->extents).z = 10.0;
-          local_18->field4_0x40 = DAT_03365cbc;
+          local_18->unk = DAT_03365cbc;
           this_ptr->room_count = this_ptr->room_count + 1;
         }
       }
@@ -471,9 +469,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       in_stack_fffff3f4 = (CPickList *)&stack0xfffff374;
       in_stack_fffff3f0 = (CKeys *)0x582235;
       iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (in_stack_fffff3f4,"Choose room size",pSVar2->field4_0x40,0);
+                        (in_stack_fffff3f4,"Choose room size",pSVar2->unk,0);
       if (-1 < iVar7) {
-        pSVar2->field4_0x40 = iVar7;
+        pSVar2->unk = iVar7;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)&stack0xfffff374,0,in_stack_fffff404,in_stack_fffff408,

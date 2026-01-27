@@ -66,36 +66,36 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   int local_14;
   
   bVar14 = 0;
-  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+            ((CKeyFramedModelInstance *)this_ptr->unk1);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(this_ptr->field1_0x158 + 0x17c));
+            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x17c));
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(this_ptr->field1_0x158 + 0x2f8));
+            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x2f8));
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->field10_0x648 + 0xe78));
+            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->unk3 + 0xe78));
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+                     ((CKeyFramedModelInstance *)this_ptr->unk1);
   local_c4 = (pCVar6->bounds_min).x;
   local_c0 = (pCVar6->bounds_min).y;
   local_bc = (pCVar6->bounds_min).z;
   local_b8 = (pCVar6->bounds_max).x;
   local_b4 = (pCVar6->bounds_max).y;
   local_b0 = (pCVar6->bounds_max).z;
-  this_ptr->field10_0x648[0xec4] = -0x3f;
-  this_ptr->field10_0x648[0xec5] = '9';
-  this_ptr->field10_0x648[0xec6] = 'B';
-  this_ptr->field10_0x648[0xec7] = 'A';
+  this_ptr->unk3[0xec4] = -0x3f;
+  this_ptr->unk3[0xec5] = '9';
+  this_ptr->unk3[0xec6] = 'B';
+  this_ptr->unk3[0xec7] = 'A';
   fVar15 = (float10)fcos((float10)0.5235988f * (float10)0.5);
   fVar1 = (this_ptr->emitter_pos).y;
   fVar2 = (this_ptr->emitter_pos).x;
   fVar3 = (this_ptr->emitter_pos).z;
-  *(float *)(this_ptr->field10_0x648 + 0xec0) =
-       (float)(((float10)*(float *)(this_ptr->field10_0x648 + 0xec4) + (float10)local_b0) / fVar15);
-  *(float *)(this_ptr->field10_0x648 + 0xec8) = local_b4 - local_c0;
+  *(float *)(this_ptr->unk3 + 0xec0) =
+       (float)(((float10)*(float *)(this_ptr->unk3 + 0xec4) + (float10)local_b0) / fVar15);
+  *(float *)(this_ptr->unk3 + 0xec8) = local_b4 - local_c0;
   if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {
-    fVar1 = *(float *)(this_ptr->field10_0x648 + 0xec8);
+    fVar1 = *(float *)(this_ptr->unk3 + 0xec8);
     (this_ptr->emitter_pos).x = 0.0;
     fVar2 = (float)2;
     (this_ptr->emitter_pos).z = -1.1;
@@ -113,17 +113,17 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_17c,&this_ptr->gem_pos,(CVector3f *)&this_ptr->gem_orient);
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)(this_ptr->field1_0x158 + 0x17c));
+                     ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x17c));
   local_ac = (pCVar6->bounds_min).x;
   local_a8 = (pCVar6->bounds_min).y;
   local_a4 = (pCVar6->bounds_min).z;
   local_a0 = (pCVar6->bounds_max).x;
   local_9c = (pCVar6->bounds_max).y;
   local_98 = (pCVar6->bounds_max).z;
-  local_34 = this_ptr->field10_0x648 + 0x458;
-  local_28 = (CVector3f *)(this_ptr->field10_0x648 + 0x47c);
-  local_2c = this_ptr->field10_0x648 + 0x45c;
-  local_30 = this_ptr->field10_0x648 + 0x460;
+  local_34 = this_ptr->unk3 + 0x458;
+  local_28 = (CVector3f *)(this_ptr->unk3 + 0x47c);
+  local_2c = this_ptr->unk3 + 0x45c;
+  local_30 = this_ptr->unk3 + 0x460;
   local_38 = 0;
   do {
     iVar9 = local_38;
@@ -161,7 +161,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
     local_94.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_ec,&local_94);
     pCVar8 = &local_94;
-    local_88.z = *(float *)(this_ptr->field10_0x648 + 0xec4);
+    local_88.z = *(float *)(this_ptr->unk3 + 0xec4);
     local_88.x = 0.0;
     local_88.y = 0.0;
     pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_ec,&local_7c,&local_88)
@@ -228,56 +228,47 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   fVar1 = (this_ptr->gem_pos).y;
   fVar5 = (float)0.75;
   fVar17 = (float10)0.5;
-  pcVar10 = this_ptr->field10_0x648 + 0xd04;
+  pcVar10 = this_ptr->unk3 + 0xd04;
   fVar2 = (this_ptr->emitter_pos).y;
   fVar3 = (float)0.25;
-  *(float *)(this_ptr->field10_0x648 + 0xd0c) =
-       (float)(fVar15 * (float10)*(float *)(this_ptr->field10_0x648 + 0xec4) * fVar17);
-  *(float *)pcVar10 =
-       (float)((float10)*(float *)(this_ptr->field10_0x648 + 0xec4) * fVar16 * fVar17);
-  *(float *)(this_ptr->field10_0x648 + 0xd08) = fVar2 * fVar3 + fVar1 * fVar5;
-  if (this_ptr->field10_0x648 + 0xcf8 != pcVar10) {
-    *(float *)(this_ptr->field10_0x648 + 0xcf8) = *(float *)pcVar10;
-    *(uint *)(this_ptr->field10_0x648 + 0xcfc) =
-         *(uint *)(this_ptr->field10_0x648 + 0xd08);
-    *(uint *)(this_ptr->field10_0x648 + 0xd00) =
-         *(uint *)(this_ptr->field10_0x648 + 0xd0c);
+  *(float *)(this_ptr->unk3 + 0xd0c) =
+       (float)(fVar15 * (float10)*(float *)(this_ptr->unk3 + 0xec4) * fVar17);
+  *(float *)pcVar10 = (float)((float10)*(float *)(this_ptr->unk3 + 0xec4) * fVar16 * fVar17);
+  *(float *)(this_ptr->unk3 + 0xd08) = fVar2 * fVar3 + fVar1 * fVar5;
+  if (this_ptr->unk3 + 0xcf8 != pcVar10) {
+    *(float *)(this_ptr->unk3 + 0xcf8) = *(float *)pcVar10;
+    *(uint *)(this_ptr->unk3 + 0xcfc) = *(uint *)(this_ptr->unk3 + 0xd08);
+    *(uint *)(this_ptr->unk3 + 0xd00) = *(uint *)(this_ptr->unk3 + 0xd0c);
   }
-  ((CVector3f *)(this_ptr->field10_0x648 + 0xd20))->x = -0.0805024;
-  this_ptr->field10_0x648[0xd28] = '\0';
-  this_ptr->field10_0x648[0xd29] = '\0';
-  this_ptr->field10_0x648[0xd2a] = '\0';
-  this_ptr->field10_0x648[0xd2b] = '\0';
-  fVar1 = *(float *)(this_ptr->field10_0x648 + 0xcfc);
-  this_ptr->field10_0x648[0xd24] = -0x24;
-  this_ptr->field10_0x648[0xd25] = ')';
-  this_ptr->field10_0x648[0xd26] = -0x3b;
-  this_ptr->field10_0x648[0xd27] = -0x41;
-  *(float *)(this_ptr->field10_0x648 + 0xcfc) = fVar1 + -4.0f;
+  ((CVector3f *)(this_ptr->unk3 + 0xd20))->x = -0.0805024;
+  this_ptr->unk3[0xd28] = '\0';
+  this_ptr->unk3[0xd29] = '\0';
+  this_ptr->unk3[0xd2a] = '\0';
+  this_ptr->unk3[0xd2b] = '\0';
+  fVar1 = *(float *)(this_ptr->unk3 + 0xcfc);
+  this_ptr->unk3[0xd24] = -0x24;
+  this_ptr->unk3[0xd25] = ')';
+  this_ptr->unk3[0xd26] = -0x3b;
+  this_ptr->unk3[0xd27] = -0x41;
+  *(float *)(this_ptr->unk3 + 0xcfc) = fVar1 + -4.0f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)(this_ptr->field10_0x648 + 0xd2c),
-             (CVector3f *)(this_ptr->field10_0x648 + 0xd20));
-  fVar1 = *(float *)(this_ptr->field10_0x648 + 0xcf8);
-  fVar2 = *(float *)(this_ptr->field10_0x648 + 0xd04);
-  *(uint *)(this_ptr->field10_0x648 + 0xd5c) =
-       *(uint *)(this_ptr->field10_0x648 + 0xcfc);
-  uVar4 = *(uint *)(this_ptr->field10_0x648 + 0xd28);
-  *(uint *)(this_ptr->field10_0x648 + 0xd60) =
-       *(uint *)(this_ptr->field10_0x648 + 0xd00);
-  fVar3 = *(float *)(this_ptr->field10_0x648 + 0xd24);
-  *(uint *)(this_ptr->field10_0x648 + 0xd68) =
-       *(uint *)(this_ptr->field10_0x648 + 0xd08);
-  *(uint *)(this_ptr->field10_0x648 + 0xd6c) =
-       *(uint *)(this_ptr->field10_0x648 + 0xd0c);
-  ((CVector3f *)(this_ptr->field10_0x648 + 0xd80))->x = *(float *)(this_ptr->field10_0x648 + 0xd20);
-  *(uint *)(this_ptr->field10_0x648 + 0xd88) = uVar4;
-  *(float *)(this_ptr->field10_0x648 + 0xd58) = -fVar1;
-  *(float *)(this_ptr->field10_0x648 + 0xd64) = -fVar2;
-  *(float *)(this_ptr->field10_0x648 + 0xd84) = -fVar3;
+            ((CMatrix3x3f *)(this_ptr->unk3 + 0xd2c),(CVector3f *)(this_ptr->unk3 + 0xd20));
+  fVar1 = *(float *)(this_ptr->unk3 + 0xcf8);
+  fVar2 = *(float *)(this_ptr->unk3 + 0xd04);
+  *(uint *)(this_ptr->unk3 + 0xd5c) = *(uint *)(this_ptr->unk3 + 0xcfc);
+  uVar4 = *(uint *)(this_ptr->unk3 + 0xd28);
+  *(uint *)(this_ptr->unk3 + 0xd60) = *(uint *)(this_ptr->unk3 + 0xd00);
+  fVar3 = *(float *)(this_ptr->unk3 + 0xd24);
+  *(uint *)(this_ptr->unk3 + 0xd68) = *(uint *)(this_ptr->unk3 + 0xd08);
+  *(uint *)(this_ptr->unk3 + 0xd6c) = *(uint *)(this_ptr->unk3 + 0xd0c);
+  ((CVector3f *)(this_ptr->unk3 + 0xd80))->x = *(float *)(this_ptr->unk3 + 0xd20);
+  *(uint *)(this_ptr->unk3 + 0xd88) = uVar4;
+  *(float *)(this_ptr->unk3 + 0xd58) = -fVar1;
+  *(float *)(this_ptr->unk3 + 0xd64) = -fVar2;
+  *(float *)(this_ptr->unk3 + 0xd84) = -fVar3;
   iVar9 = 0;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)(this_ptr->field10_0x648 + 0xd8c),
-             (CVector3f *)(this_ptr->field10_0x648 + 0xd80));
+            ((CMatrix3x3f *)(this_ptr->unk3 + 0xd8c),(CVector3f *)(this_ptr->unk3 + 0xd80));
   do {
     core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af80(this_ptr);
     iVar9 = iVar9 + 1;

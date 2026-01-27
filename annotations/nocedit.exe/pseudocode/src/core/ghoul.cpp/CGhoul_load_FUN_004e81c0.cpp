@@ -18,34 +18,29 @@ void core_ghoul_cpp_CGhoul_load_FUN_004e81c0(void)
     core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   }
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
-            (&(in_stack_00000004->base_character).model,"modelName");
+            (&(in_stack_00000004->base).model,"modelName");
   if ((1 < g_CGhoulClassVersion) && (g_CGhoulClassVersion < 7)) {
     core_actor_cpp_serializeFloat_FUN_0040b770
               (&in_stack_00000004->guard_distance,"guardDistance");
   }
   if (2 < g_CGhoulClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].base_character.base_actor.location.position.y,
-               "livesLeft");
+              ((int *)&in_stack_00000004[1].base.base.location.position.y,"livesLeft");
   }
   if (4 < g_CGhoulClassVersion) {
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (&(in_stack_00000004->base_character).model.motion_controller,"motion state")
-    ;
+              (&(in_stack_00000004->base).model.motion_controller,"motion state");
   }
   if (g_CGhoulClassVersion < 6) {
     return;
   }
   core_actor_cpp_serializePartStatus_FUN_0040bae0
-            (&(in_stack_00000004->base_character).model,"partStatus");
+            (&(in_stack_00000004->base).model,"partStatus");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].base_character.base_actor.location.position.z,
-             "spasmCount");
+            ((int *)&in_stack_00000004[1].base.base.location.position.z,"spasmCount");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].base_character.base_actor.location.position.y,
-             "livesLeft");
+            ((int *)&in_stack_00000004[1].base.base.location.position.y,"livesLeft");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14),
-             "ariseTimer");
+            ((int *)(in_stack_00000004[1].base.base.actor_name + 0x14),"ariseTimer");
   return;
 }

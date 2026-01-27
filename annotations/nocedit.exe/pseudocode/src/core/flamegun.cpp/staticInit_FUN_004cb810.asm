@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_flamegun.cpp_staticInit_FUN_004cb810(void)
+; __cdecl void core_flamegun.cpp_staticInit_FUN_004cb810(void)
 ;
 ;
 ; Referenced Globals:

@@ -6,12 +6,6 @@
         "column": 6,
         "line": 12,
         "message": "ambiguating new declaration of 'void core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 67,
-        "line": 29,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
       }
     ],
     "success": false,
@@ -32,6 +26,12 @@
         "category": "other",
         "column": 34,
         "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 79,
+        "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
@@ -253,7 +253,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "(local_10c,(char *)0x0,(char *)0x0,in_stack_00000004->field2_0xc + 0x38,\"scr\");",
+      "text": "(local_10c,(char *)0x0,(char *)0x0,in_stack_00000004->unk2 + 0x38,\"scr\");",
       "type": "stack_param"
     }
   ]

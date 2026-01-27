@@ -24,14 +24,14 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
   g_CurrentGameTime = g_CurrentGameTime + iVar2;
   g_LastPingTime = iVar1 / 0x12;
   while( true ) {
-    iVar1 = support_trisock_cpp_isSocketValid_FUN_005e1b70
-                      ((SSocketContext *)(this_ptr->field7_0x118 + 0x58));
+    iVar1 = support_trisock_cpp_isSocketValid_FUN_005e1b70((SSocketContext *)(this_ptr->unk + 0x58))
+    ;
     if (iVar1 == 0) {
       return;
     }
     iVar1 = support_trisock_cpp_receiveSocketData_FUN_005e1c20
-                      ((SSocketContext *)(this_ptr->field7_0x118 + 0x58),g_NetworkReceiveBuffer,
-                       0x404,&local_10);
+                      ((SSocketContext *)(this_ptr->unk + 0x58),g_NetworkReceiveBuffer,0x404,
+                       &local_10);
     if (iVar1 < 1) break;
     g_NetworkPacketSize = iVar1 + 1;
     core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0

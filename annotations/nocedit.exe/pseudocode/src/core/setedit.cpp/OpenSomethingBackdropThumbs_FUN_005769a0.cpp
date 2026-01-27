@@ -45,7 +45,7 @@ void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
   if (local_3c == (FILE *)0x0) {
     local_3c = engine_dosio_c_getFile_FUN_00481a50("art",local_5c,"rb");
     if (local_3c == (FILE *)0x0) {
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CPickList_03653fc0.base_strlist,local_5c);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CPickList_03653fc0.base,local_5c);
       goto LAB_00576a3d;
     }
     uVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",local_5c);

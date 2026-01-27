@@ -469,7 +469,7 @@ section .text
     FADDP                               ; 0047f585
     FSTP float ptr [EBP + 0x66]         ; 0047f587
     MOV EAX,dword ptr [EBP + 0x66]      ; 0047f58a
-    MOV EDX,dword ptr [0x02d7a7b8]      ; 0047f58d | DAT_02d7a7b8
+    MOV EDX,dword ptr [0x02d7a7b8]      ; 0047f58d | INT_02d7a7b8
     SAR EAX,0x1                         ; 0047f593
     ADD EAX,EDX                         ; 0047f595
     MOV dword ptr [EBP + 0x72],EAX      ; 0047f597

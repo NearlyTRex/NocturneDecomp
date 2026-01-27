@@ -48,18 +48,18 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,
   pCVar1 = g_CDemonSetPtr;
   if (g_CDemonSetPtr->set_file_version < 0x12) {
     this_ptr->fog_enabled = 1;
-    (this_ptr->fog).color_index.r = *(int *)(pCVar1->field19_0x14f0a0 + 0xbb90);
-    (this_ptr->fog).color_index.g = *(int *)(pCVar1->field19_0x14f0a0 + 0xbb94);
+    (this_ptr->fog).color_index.r = *(int *)(pCVar1->unk4 + 0xbb90);
+    (this_ptr->fog).color_index.g = *(int *)(pCVar1->unk4 + 0xbb94);
     pCVar2 = &(this_ptr->fog).scroll;
-    (this_ptr->fog).color_index.b = *(int *)(pCVar1->field19_0x14f0a0 + 0xbb98);
-    if (pCVar2 != (CVector3f *)(pCVar1->field19_0x14f0a0 + 0xbb9c)) {
-      pCVar2->x = *(float *)(pCVar1->field19_0x14f0a0 + 0xbb9c);
-      (this_ptr->fog).scroll.y = *(float *)(pCVar1->field19_0x14f0a0 + 0xbba0);
-      (this_ptr->fog).scroll.z = *(float *)(pCVar1->field19_0x14f0a0 + 0xbba4);
+    (this_ptr->fog).color_index.b = *(int *)(pCVar1->unk4 + 0xbb98);
+    if (pCVar2 != (CVector3f *)(pCVar1->unk4 + 0xbb9c)) {
+      pCVar2->x = *(float *)(pCVar1->unk4 + 0xbb9c);
+      (this_ptr->fog).scroll.y = *(float *)(pCVar1->unk4 + 0xbba0);
+      (this_ptr->fog).scroll.z = *(float *)(pCVar1->unk4 + 0xbba4);
     }
-    (this_ptr->fog).height_threshold = *(float *)(pCVar1->field19_0x14f0a0 + 0xbba8);
-    (this_ptr->fog).density_multiplier = *(float *)(pCVar1->field19_0x14f0a0 + 0xbbac);
-    (this_ptr->fog).reserved = *(float *)(pCVar1->field19_0x14f0a0 + 0xbbb0);
+    (this_ptr->fog).height_threshold = *(float *)(pCVar1->unk4 + 0xbba8);
+    (this_ptr->fog).density_multiplier = *(float *)(pCVar1->unk4 + 0xbbac);
+    (this_ptr->fog).reserved = *(float *)(pCVar1->unk4 + 0xbbb0);
   }
   else {
     crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&this_ptr->fog_enabled);

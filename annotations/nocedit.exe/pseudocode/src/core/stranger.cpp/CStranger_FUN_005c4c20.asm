@@ -59,8 +59,8 @@
 ;   undefined4 g_CDemonSetInstance.damage_listener_count
 ;   undefined4 g_CDemonSetInstance.damage_listeners
 ;   undefined4 DAT_03263318
-;   undefined4 DAT_03f6bad0
-;   undefined4 DAT_03f6bad4
+;   int INT_03f6bad0
+;   int INT_03f6bad4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -241,7 +241,7 @@ section .text
     MOV dword ptr [ESP + 0x88],EAX      ; 005c4dd6
     MOV EAX,dword ptr [EDX + 0x8]       ; 005c4ddd
     MOV dword ptr [ESP + 0x8c],EAX      ; 005c4de0
-    MOV ESI,dword ptr [0x03f6bad0]      ; 005c4de7 | DAT_03f6bad0
+    MOV ESI,dword ptr [0x03f6bad0]      ; 005c4de7 | INT_03f6bad0
         ;   Label: LAB_005c4de7
     PUSH ESI                            ; 005c4ded
     LEA EAX,[ESP + 0x58]                ; 005c4dee
@@ -343,7 +343,7 @@ section .text
         ;   XREF to: 005c4f3c (CONDITIONAL_JUMP)  ; LAB_005c4f3c
     MOV EAX,dword ptr [ESP + 0x28]      ; 005c4f34
     MOV dword ptr [ESP + 0x18],EAX      ; 005c4f38
-    MOV EDX,dword ptr [0x03f6bad4]      ; 005c4f3c | DAT_03f6bad4
+    MOV EDX,dword ptr [0x03f6bad4]      ; 005c4f3c | INT_03f6bad4
         ;   Label: LAB_005c4f3c
     PUSH EDX                            ; 005c4f42
     LEA EAX,[ESP + 0xc4]                ; 005c4f43

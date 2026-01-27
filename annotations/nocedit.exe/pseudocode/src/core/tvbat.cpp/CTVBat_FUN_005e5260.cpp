@@ -19,15 +19,15 @@ void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5260(CTVBat *this_ptr)
   float in_stack_0000002c;
   
   if (this_ptr->follow_orders == 0) {
-    pCVar1 = &(this_ptr->base_enemy).base_character.base_actor.location;
+    pCVar1 = &(this_ptr->base).base.base.location;
     if ((CLocation *)&this_ptr->home_pos != pCVar1) {
       (this_ptr->home_pos).x = (pCVar1->position).x;
-      (this_ptr->home_pos).y = (this_ptr->base_enemy).base_character.base_actor.location.position.y;
-      (this_ptr->home_pos).z = (this_ptr->base_enemy).base_character.base_actor.location.position.z;
+      (this_ptr->home_pos).y = (this_ptr->base).base.base.location.position.y;
+      (this_ptr->home_pos).z = (this_ptr->base).base.base.location.position.z;
     }
   }
   this_ptr_00 = g_CKeysPtr;
-  (this_ptr->base_enemy).base_character.hit_points = 10.0;
+  (this_ptr->base).base.hit_points = 10.0;
   iVar2 = (*this_ptr_00->vtable->getKeyState)(this_ptr_00,0x1d);
   if (iVar2 == 0) {
     core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800((CCharacter *)this_ptr);

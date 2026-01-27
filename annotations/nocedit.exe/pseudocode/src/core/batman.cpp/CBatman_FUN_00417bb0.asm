@@ -11,8 +11,8 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_008227b8
-;   undefined4 DAT_008227dc
+;   int INT_008227b8
+;   int INT_008227dc
 ;   undefined4 DAT_008227e4
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     SUB ESP,0x24                        ; 00417bb4
     MOV ESI,dword ptr [ESP + 0x38]      ; 00417bb7
     MOV EDI,dword ptr [ESP + 0x3c]      ; 00417bbb
-    MOV EDX,dword ptr [0x008227b8]      ; 00417bbf | DAT_008227b8
+    MOV EDX,dword ptr [0x008227b8]      ; 00417bbf | INT_008227b8
     PUSH EDX                            ; 00417bc5
     LEA EAX,[ESP + 0x1c]                ; 00417bc6
     PUSH EAX                            ; 00417bca
@@ -48,7 +48,7 @@ section .text
     CMP dword ptr [ESI + EAX*0x4 + 0x2298],0x0 ; 00417be9
     JZ 0x00417c33                       ; 00417bf1
         ;   XREF to: 00417c33 (CONDITIONAL_JUMP)  ; LAB_00417c33
-    MOV EBP,dword ptr [0x008227dc]      ; 00417bf3 | DAT_008227dc
+    MOV EBP,dword ptr [0x008227dc]      ; 00417bf3 | INT_008227dc
     PUSH EBP                            ; 00417bf9
     LEA EAX,[ESP + 0x10]                ; 00417bfa
     PUSH EAX                            ; 00417bfe

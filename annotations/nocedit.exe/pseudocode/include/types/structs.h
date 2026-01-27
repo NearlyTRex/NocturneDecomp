@@ -89,6 +89,7 @@
 #include "types/structs/SMRGLVertex.h"
 #include "types/structs/SMemHead.h"
 #include "types/structs/SMinimalPolygonDescriptor.h"
+#include "types/structs/SMirrorReflection.h"
 #include "types/structs/SMixBuffer.h"
 #include "types/structs/SMixResampleStereoParams.h"
 #include "types/structs/SModelPartName.h"

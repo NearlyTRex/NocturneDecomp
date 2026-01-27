@@ -8,10 +8,10 @@
         "message": "ambiguating new declaration of 'void core_scat_cpp_FUN_00558720()'"
       },
       {
-        "category": "missing_member",
-        "column": 42,
-        "line": 66,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field11_0xdc'"
+        "category": "incompatible_types",
+        "column": 29,
+        "line": 67,
+        "message": "invalid operands of types 'float' and 'CDemonActor_vtable*' to binary 'operator+'"
       },
       {
         "category": "other",
@@ -110,16 +110,15 @@
   },
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 831,
+    "complexity_score": 816,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
     "pseudocode_lines": 186,
-    "suspect_count": 62,
+    "suspect_count": 61,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -239,8 +238,8 @@
     },
     {
       "addr": "03106174",
-      "name": "DAT_03106174",
-      "type": "undefined4",
+      "name": "INT_03106174",
+      "type": "int",
       "value": null
     },
     {
@@ -546,14 +545,14 @@
       "description": "Unresolved stack parameter",
       "line": 59,
       "match": "in_stack_00000004",
-      "text": "((float)in_stack_00000004[0x8d].field11_0xdc * (float)3.1415926535000001 *",
+      "text": "((float)in_stack_00000004[0x8d].unk2 * (float)3.1415926535000001 * (float)2 *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000008",
-      "text": "(float)2 * in_stack_00000008 + local_13c._ub);",
+      "text": "in_stack_00000008 + local_13c._ub);",
       "type": "stack_param"
     },
     {
@@ -742,15 +741,8 @@
       "description": "Unresolved stack parameter",
       "line": 139,
       "match": "in_stack_00000004",
-      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_a8,DAT_03106174);",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_a8,INT_03106174);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_03106174",
-      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_a8,DAT_03106174);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -22,9 +22,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
   
   iVar3 = 0;
   pCVar4 = this_ptr;
-  if (0 < *(int *)this_ptr->field73_0x15f6e4) {
+  if (0 < *(int *)this_ptr->unk13) {
     do {
-      iVar1 = *(int *)(pCVar4->field73_0x15f6e4 + 4);
+      iVar1 = *(int *)(pCVar4->unk13 + 4);
       puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))();
       if (&uStack_28 != puVar2) {
         uStack_28 = *puVar2;
@@ -44,7 +44,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
       iVar3 = iVar3 + 1;
       engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
       pCVar4 = (CDemonSet *)pCVar4->cameras;
-    } while (iVar3 < *(int *)this_ptr->field73_0x15f6e4);
+    } while (iVar3 < *(int *)this_ptr->unk13);
   }
   return;
 }

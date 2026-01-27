@@ -22,12 +22,12 @@ typedef struct SRaytraceState {
     int voxel_distance; // 0x60
     CVector3f voxel_hit_point; // 0x64
     int voxel_surface_type; // 0x70
-    int field_116; // 0x74
+    int unk1; // 0x74
     CVector3f saved_collision_normal; // 0x78
     int saved_ground_type; // 0x84
     CVector3f saved_collision_point; // 0x88
     struct CDemonActor* saved_collision_actor; // 0x94
-    int field_152; // 0x98
-    int field_156; // 0x9c
+    int unk2; // 0x98
+    int unk3; // 0x9c
 } SRaytraceState;
 

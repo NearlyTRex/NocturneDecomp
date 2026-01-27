@@ -13,7 +13,7 @@
 ; XREF[6]:
 ;   core_bodypart.cpp_CBodyPart_FUN_0041b070 at 0041b19d
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041fe90 at 0041ff8b
-;   core_boxactor.cpp_FUN_004218d0 at 004219ca
+;   core_boxactor.cpp_CBoxActor_FUN_004218d0 at 004219ca
 ;   core_fire.cpp_CStake_spawn_FUN_004bfe90 at 004c009e
 ;   core_fire.cpp_CToss_create_FUN_004c3ee0 at 004c3fab
 ;   core_weapon.cpp_FUN_005ee740 at 005ee817

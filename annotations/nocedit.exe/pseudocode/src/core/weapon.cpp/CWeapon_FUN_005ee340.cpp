@@ -14,18 +14,16 @@ int __cdecl core_weapon_cpp_CWeapon_FUN_005ee340(CWeapon *this_ptr)
   CDemonActor *in_stack_00000008;
   
   iVar2._0_1_ = this_ptr->carried_by_actor;
-  iVar2._1_1_ = this_ptr->field9_0x305[0];
-  iVar2._2_1_ = this_ptr->field9_0x305[1];
-  iVar2._3_1_ = this_ptr->field9_0x305[2];
-  if (((((iVar2 == 0) && (this_ptr->weapon_state == 0)) &&
-       (*(int *)(this_ptr->field9_0x305 + 599) != 0)) &&
+  iVar2._1_1_ = this_ptr->unk3[0];
+  iVar2._2_1_ = this_ptr->unk3[1];
+  iVar2._3_1_ = this_ptr->unk3[2];
+  if (((((iVar2 == 0) && (this_ptr->weapon_state == 0)) && (*(int *)(this_ptr->unk3 + 599) != 0)) &&
       ((float)0.5 <
-       SQRT(*(float *)(this_ptr->field9_0x305 + 0x57) * *(float *)(this_ptr->field9_0x305 + 0x57) +
-            *(float *)(this_ptr->field9_0x305 + 0x4f) * *(float *)(this_ptr->field9_0x305 + 0x4f) +
-            *(float *)(this_ptr->field9_0x305 + 0x53) * *(float *)(this_ptr->field9_0x305 + 0x53))))
-     || (iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->field9_0x305[0],
-        iVar1._2_1_ = this_ptr->field9_0x305[1], iVar1._3_1_ = this_ptr->field9_0x305[2], iVar1 != 0
-        )) {
+       SQRT(*(float *)(this_ptr->unk3 + 0x57) * *(float *)(this_ptr->unk3 + 0x57) +
+            *(float *)(this_ptr->unk3 + 0x4f) * *(float *)(this_ptr->unk3 + 0x4f) +
+            *(float *)(this_ptr->unk3 + 0x53) * *(float *)(this_ptr->unk3 + 0x53)))) ||
+     (iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->unk3[0],
+     iVar1._2_1_ = this_ptr->unk3[1], iVar1._3_1_ = this_ptr->unk3[2], iVar1 != 0)) {
     return 0;
   }
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CIcePick");

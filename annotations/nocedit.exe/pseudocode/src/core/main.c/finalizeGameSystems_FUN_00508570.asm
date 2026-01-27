@@ -22,7 +22,7 @@
 ;   TerminatedCString s_core_main_c_0063565e
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   void* PTR_g_SpecialBitmapsInstance_00680b80 = 02fd8a80
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
 ;   ... and 12 more
@@ -258,9 +258,9 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560 ; 005087a2
         ;   XREF to: 00410560 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 005087a7
-    MOV EBX,dword ptr [0x00680a00]      ; 005087aa | DAT_02f7c740 | g_CNetGameInstance
+    MOV EBX,dword ptr [0x00680a00]      ; 005087aa | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_005087aa
-    PUSH EBX                            ; 005087b0 | DAT_02f7c740
+    PUSH EBX                            ; 005087b0 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053f830 ; 005087b1
         ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_0053f830()
     ADD ESP,0x4                         ; 005087b6

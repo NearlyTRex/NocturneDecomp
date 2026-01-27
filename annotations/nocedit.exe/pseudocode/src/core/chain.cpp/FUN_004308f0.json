@@ -4,14 +4,8 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'uint core_chain_cpp_FUN_004308f0()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 63,
-        "message": "'_DAT_0065b9e0' was not declared in this scope; did you mean 'DAT_0067b9e0'?"
       }
     ],
     "success": false,
@@ -25,38 +19,37 @@
       {
         "category": "other",
         "column": 16,
-        "line": 60,
+        "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 61,
+        "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 62,
+        "line": 59,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 435,
-    "complexity_score": 834,
+    "complexity_score": 817,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 6,
-    "pseudocode_lines": 164,
-    "suspect_count": 65,
+    "pseudocode_lines": 162,
+    "suspect_count": 64,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
-      "suspect_float",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 599
+    "total_lines": 597
   },
   "cross_references": [],
   "function": {
@@ -131,9 +124,9 @@
   "globals": [
     {
       "addr": "0065b9e0",
-      "name": "DAT_0065b9e0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065b9e0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "006703ec",
@@ -221,458 +214,451 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 30,
       "match": "in_stack_00000004",
       "text": "this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&local_90);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 30,
       "match": "in_stack_00000004",
       "text": "this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&local_90);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 32,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004[4].actor_name + 0x14) = iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 33,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "(g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_00000004[1].actor_name + 0x14))",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 49,
+      "line": 46,
       "match": "2.8026e-45",
       "text": "local_90.min.x = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 50,
+      "line": 47,
       "match": "4.2039e-45",
       "text": "local_90.min.y = 4.2039e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 50,
       "match": "in_stack_0000000c",
       "text": "pfVar5 = (float *)(in_stack_0000000c + 0x28c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 51,
       "match": "in_stack_0000000c",
       "text": "pfVar4 = (float *)(in_stack_0000000c + 0x2b0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 52,
       "match": "in_stack_0000000c",
       "text": "for (iVar3 = 0; iVar3 < *(int *)(in_stack_0000000c + 0x158) + -1; iVar3 = iVar3 + 1) {",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 53,
       "match": "ROUND",
-      "text": "CStack_34.x = (int)ROUND(*pfVar5 * _DAT_0065b9e0);",
+      "text": "CStack_34.x = (int)ROUND(*pfVar5 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 54,
       "match": "ROUND",
-      "text": "CStack_34.y = (int)ROUND(pfVar5[1] * _DAT_0065b9e0);",
+      "text": "CStack_34.y = (int)ROUND(pfVar5[1] * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ROUND",
+      "text": "CStack_34.z = (int)ROUND(pfVar5[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "ROUND",
-      "text": "CStack_34.z = (int)ROUND(pfVar5[2] * _DAT_0065b9e0);",
+      "text": "CStack_70.x = (int)ROUND(*pfVar5 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
-      "text": "CStack_70.x = (int)ROUND(*pfVar5 * _DAT_0065b9e0);",
+      "text": "CStack_70.y = (int)ROUND(pfVar5[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "ROUND",
-      "text": "CStack_70.y = (int)ROUND(pfVar5[1] * _DAT_0065b9e0);",
+      "text": "CStack_70.z = (int)ROUND(pfVar5[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "ROUND",
-      "text": "CStack_70.z = (int)ROUND(pfVar5[2] * _DAT_0065b9e0);",
+      "text": "CStack_40.x = (int)ROUND(*pfVar4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 64,
       "match": "ROUND",
-      "text": "CStack_40.x = (int)ROUND(*pfVar4 * _DAT_0065b9e0);",
+      "text": "CStack_40.y = (int)ROUND(pfVar4[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 65,
       "match": "ROUND",
-      "text": "CStack_40.y = (int)ROUND(pfVar4[1] * _DAT_0065b9e0);",
+      "text": "CStack_40.z = (int)ROUND(pfVar4[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
-      "text": "CStack_40.z = (int)ROUND(pfVar4[2] * _DAT_0065b9e0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "ROUND",
-      "text": "iStack_10 = (int)ROUND(*pfVar4 * _DAT_0065b9e0);",
+      "text": "iStack_10 = (int)ROUND(*pfVar4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 88,
+      "line": 85,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr->u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 89,
+      "line": 86,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr->v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 90,
+      "line": 87,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr[1].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 88,
+      "match": "2.2775203e-38",
+      "text": "pCVar2->vertex_buffer_ptr[1].v = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 89,
+      "match": "2.2775203e-38",
+      "text": "pCVar2->vertex_buffer_ptr[2].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 90,
+      "match": "2.2775203e-38",
+      "text": "pCVar2->vertex_buffer_ptr[2].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 91,
       "match": "2.2775203e-38",
-      "text": "pCVar2->vertex_buffer_ptr[1].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 92,
-      "match": "2.2775203e-38",
-      "text": "pCVar2->vertex_buffer_ptr[2].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 93,
-      "match": "2.2775203e-38",
-      "text": "pCVar2->vertex_buffer_ptr[2].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 94,
-      "match": "2.2775203e-38",
       "text": "pCVar2->vertex_buffer_ptr[3].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 95,
+      "line": 92,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 93,
       "match": "ROUND",
-      "text": "CStack_64.x = (int)ROUND(*pfVar5 * _DAT_0065b9e0);",
+      "text": "CStack_64.x = (int)ROUND(*pfVar5 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 94,
       "match": "ROUND",
-      "text": "CStack_64.y = (int)ROUND(pfVar5[1] * _DAT_0065b9e0);",
+      "text": "CStack_64.y = (int)ROUND(pfVar5[1] * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "CStack_64.z = (int)ROUND(pfVar5[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
-      "text": "CStack_64.z = (int)ROUND(pfVar5[2] * _DAT_0065b9e0);",
+      "text": "CStack_64.x = (int)ROUND(*pfVar4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 99,
       "match": "ROUND",
-      "text": "CStack_64.x = (int)ROUND(*pfVar4 * _DAT_0065b9e0);",
+      "text": "CStack_64.y = (int)ROUND(pfVar4[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 100,
       "match": "ROUND",
-      "text": "CStack_64.y = (int)ROUND(pfVar4[1] * _DAT_0065b9e0);",
+      "text": "CStack_64.z = (int)ROUND(pfVar4[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 105,
       "match": "ROUND",
-      "text": "CStack_64.z = (int)ROUND(pfVar4[2] * _DAT_0065b9e0);",
+      "text": "CStack_28.x = (int)ROUND(*pfVar5 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 106,
       "match": "ROUND",
-      "text": "CStack_28.x = (int)ROUND(*pfVar5 * _DAT_0065b9e0);",
+      "text": "CStack_28.y = (int)ROUND(pfVar5[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 107,
       "match": "ROUND",
-      "text": "CStack_28.y = (int)ROUND(pfVar5[1] * _DAT_0065b9e0);",
+      "text": "CStack_28.z = (int)ROUND(pfVar5[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "ROUND",
-      "text": "CStack_28.z = (int)ROUND(pfVar5[2] * _DAT_0065b9e0);",
+      "text": "CStack_58.x = (int)ROUND(*pfVar5 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 111,
       "match": "ROUND",
-      "text": "CStack_58.x = (int)ROUND(*pfVar5 * _DAT_0065b9e0);",
+      "text": "CStack_58.y = (int)ROUND(pfVar5[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 112,
       "match": "ROUND",
-      "text": "CStack_58.y = (int)ROUND(pfVar5[1] * _DAT_0065b9e0);",
+      "text": "CStack_58.z = (int)ROUND(pfVar5[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "ROUND",
-      "text": "CStack_58.z = (int)ROUND(pfVar5[2] * _DAT_0065b9e0);",
+      "text": "CStack_4c.x = (int)ROUND(*pfVar4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 116,
       "match": "ROUND",
-      "text": "CStack_4c.x = (int)ROUND(*pfVar4 * _DAT_0065b9e0);",
+      "text": "CStack_4c.y = (int)ROUND(pfVar4[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 117,
       "match": "ROUND",
-      "text": "CStack_4c.y = (int)ROUND(pfVar4[1] * _DAT_0065b9e0);",
+      "text": "CStack_4c.z = (int)ROUND(pfVar4[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 120,
       "match": "ROUND",
-      "text": "CStack_4c.z = (int)ROUND(pfVar4[2] * _DAT_0065b9e0);",
+      "text": "CStack_1c.x = (int)ROUND(*pfVar4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 121,
       "match": "ROUND",
-      "text": "CStack_1c.x = (int)ROUND(*pfVar4 * _DAT_0065b9e0);",
+      "text": "CStack_1c.y = (int)ROUND(pfVar4[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 122,
       "match": "ROUND",
-      "text": "CStack_1c.y = (int)ROUND(pfVar4[1] * _DAT_0065b9e0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
-      "match": "ROUND",
-      "text": "CStack_1c.z = (int)ROUND(pfVar4[2] * _DAT_0065b9e0);",
+      "text": "CStack_1c.z = (int)ROUND(pfVar4[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 141,
+      "line": 138,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr->u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 142,
+      "line": 139,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr->v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 143,
+      "line": 140,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr[1].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 144,
+      "line": 141,
       "match": "2.2775203e-38",
       "text": "pCVar2->vertex_buffer_ptr[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 145,
+      "line": 142,
       "match": "2.2775203e-38",
       "text": "pCVar2->vertex_buffer_ptr[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 146,
+      "line": 143,
       "match": "2.2775203e-38",
       "text": "pCVar2->vertex_buffer_ptr[2].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 147,
+      "line": 144,
       "match": "2.2775203e-38",
       "text": "pCVar2->vertex_buffer_ptr[3].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 148,
+      "line": 145,
       "match": "7.34684e-40",
       "text": "pCVar2->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 146,
       "match": "ROUND",
-      "text": "CStack_64.x = (int)ROUND(*pfVar5 * _DAT_0065b9e0);",
+      "text": "CStack_64.x = (int)ROUND(*pfVar5 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 147,
       "match": "ROUND",
-      "text": "CStack_64.y = (int)ROUND(pfVar5[1] * _DAT_0065b9e0);",
+      "text": "CStack_64.y = (int)ROUND(pfVar5[1] * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 148,
+      "match": "ROUND",
+      "text": "CStack_64.z = (int)ROUND(pfVar5[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 151,
       "match": "ROUND",
-      "text": "CStack_64.z = (int)ROUND(pfVar5[2] * _DAT_0065b9e0);",
+      "text": "CStack_64.x = (int)ROUND(*pfVar4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
+      "line": 152,
       "match": "ROUND",
-      "text": "CStack_64.x = (int)ROUND(*pfVar4 * _DAT_0065b9e0);",
+      "text": "CStack_64.y = (int)ROUND(pfVar4[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 153,
       "match": "ROUND",
-      "text": "CStack_64.y = (int)ROUND(pfVar4[1] * _DAT_0065b9e0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
-      "match": "ROUND",
-      "text": "CStack_64.z = (int)ROUND(pfVar4[2] * _DAT_0065b9e0);",
+      "text": "CStack_64.z = (int)ROUND(pfVar4[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ],

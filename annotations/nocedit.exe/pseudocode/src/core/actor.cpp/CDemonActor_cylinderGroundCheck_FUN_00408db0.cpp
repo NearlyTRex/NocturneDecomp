@@ -24,7 +24,7 @@ core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0
                     (g_CDemonSetPtr,&(this_ptr->location).position,radius);
   pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (g_CDemonSetPtr->collision_actor,g_CPlatformClassInfo.name_hash);
-  this_ptr->field11_0xdc = (int)pCVar3;
+  this_ptr->unk2 = (int)pCVar3;
   pCVar1 = g_CDemonSetPtr;
   if (out_normal != (CVector3f *)0x0) {
     if (out_normal != &g_CDemonSetPtr->collision_normal) {

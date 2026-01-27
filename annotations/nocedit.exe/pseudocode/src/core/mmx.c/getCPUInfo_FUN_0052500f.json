@@ -13,13 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 13,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 13,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_cpu_detection"
+    ],
     "total_lines": 41
   },
   "cross_references": [],
@@ -125,5 +127,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "0052500f",
+      "cpu_function": "getcpuinfo",
+      "description": "CPU detection code with EFLAGS/CPUID manipulation - expected unusual patterns",
+      "function_name": "core_mmx.c_getCPUInfo_FUN_0052500f",
+      "match": "getcpuinfo",
+      "text": "CPU detection function at 0052500f",
+      "type": "special_cpu_detection"
+    }
+  ]
 }

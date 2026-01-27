@@ -10,6 +10,6 @@ CDemonLight * __cdecl
 core_dlight_cpp_CDemonLight_copy_FUN_00476c30(CDemonLight *this_ptr,CDemonLight *other)
 
 {
-  (this_ptr->base).base.field0_0x0 = (other->base).base.field0_0x0;
+  (this_ptr->base).base.unk1 = (other->base).base.unk1;
   return this_ptr;
 }

@@ -2,40 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 38,
-        "message": "'_DAT_03f8f62c' was not declared in this scope; did you mean 'DAT_03f8f638'?"
-      },
-      {
         "category": "other",
         "column": 26,
-        "line": 57,
+        "line": 55,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 58,
+        "line": 56,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 59,
-        "line": 59,
-        "message": "'_DAT_03f875f0' was not declared in this scope; did you mean 'DAT_03FB75F0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 60,
-        "message": "'_DAT_03f875f4' was not declared in this scope; did you mean 'DAT_03FB75F4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 59,
-        "line": 61,
-        "message": "'_DAT_03f875f8' was not declared in this scope; did you mean 'DAT_03FB75F8'?"
       }
     ],
     "success": false,
@@ -49,31 +25,30 @@
       {
         "category": "other",
         "column": 18,
-        "line": 57,
+        "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 58,
+        "line": 56,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 361,
+    "complexity_score": 345,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 30,
-    "pseudocode_lines": 146,
-    "suspect_count": 20,
+    "pseudocode_lines": 145,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 540
+    "total_lines": 539
   },
   "cross_references": [
     {
@@ -271,20 +246,20 @@
     },
     {
       "addr": "03f875f0",
-      "name": "DAT_03f875f0",
-      "type": "undefined4",
+      "name": "FLOAT_03f875f0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "03f875f4",
-      "name": "DAT_03f875f4",
-      "type": "undefined4",
+      "name": "FLOAT_03f875f4",
+      "type": "float",
       "value": null
     },
     {
       "addr": "03f875f8",
-      "name": "DAT_03f875f8",
-      "type": "undefined4",
+      "name": "FLOAT_03f875f8",
+      "type": "float",
       "value": null
     },
     {
@@ -331,8 +306,8 @@
     },
     {
       "addr": "03f8f62c",
-      "name": "DAT_03f8f62c",
-      "type": "undefined4",
+      "name": "INT_03f8f62c",
+      "type": "int",
       "value": null
     },
     {
@@ -581,141 +556,134 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 20,
       "match": "ABS",
       "text": "if (ABS(this_ptr->water_level_y) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)g_VisibleWaterTilesX + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "iVar2 = *(int *)((int)g_VisibleWaterTilesY + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 63,
       "match": "fsin",
       "text": "fVar3 = (float10)fsin((float10)iVar2 * (float10)3.1415926535000001 * (float10)0.5",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "ROUND",
       "text": "local_60.x = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "ROUND",
       "text": "local_60.y = (int)ROUND(local_6c.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 71,
       "match": "ROUND",
       "text": "local_60.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 78,
       "match": "fsin",
       "text": "fVar3 = (float10)fsin((float10)iVar2 * (float10)3.1415926535000001 * (float10)0.5",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 83,
       "match": "ROUND",
       "text": "local_54.x = (int)ROUND(local_6c.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 84,
       "match": "ROUND",
       "text": "local_54.y = (int)ROUND(local_6c.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 85,
       "match": "ROUND",
       "text": "local_54.z = (int)ROUND(local_6c.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 92,
       "match": "fsin",
       "text": "fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 98,
       "match": "ROUND",
       "text": "local_48.x = (int)ROUND(local_6c.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 99,
       "match": "ROUND",
       "text": "local_48.y = (int)ROUND(local_6c.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 100,
       "match": "ROUND",
       "text": "local_48.z = (int)ROUND(local_6c.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 106,
       "match": "fsin",
       "text": "fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 112,
       "match": "ROUND",
       "text": "local_3c.x = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 113,
       "match": "ROUND",
       "text": "local_3c.y = (int)ROUND(local_6c.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 114,
       "match": "ROUND",
       "text": "local_3c.z = (int)ROUND(local_6c.z * 256.0f);",
       "type": "decompiler_intrinsic"

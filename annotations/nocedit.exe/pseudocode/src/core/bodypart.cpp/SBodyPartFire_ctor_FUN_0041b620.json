@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 73,
-        "line": 14,
-        "message": "'SBodyPartFire' {aka 'struct SBodyPartFire'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 39,
-        "line": 15,
-        "message": "'CFlame' {aka 'struct CFlame'} has no member named 'field12_0x290'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -108,7 +95,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 8,
       "match": "pCVar1[-1].",
-      "text": "return (SBodyPartFire *)(pCVar1[-1].field12_0x290 + 8);",
+      "text": "return (SBodyPartFire *)(pCVar1[-1].unk4 + 8);",
       "type": "negative_offset"
     }
   ],

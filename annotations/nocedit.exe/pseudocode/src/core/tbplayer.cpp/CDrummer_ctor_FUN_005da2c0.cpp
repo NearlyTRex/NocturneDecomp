@@ -11,9 +11,9 @@ CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005da2c0(CDrummer *this_p
 {
   CDrummer *pCVar1;
   
-  pCVar1 = (CDrummer *)core_npc_cpp_CNPC_ctor_FUN_005447e0(&this_ptr->base_npc);
-  (pCVar1->base_npc).base_character.base_actor.vtable._ub = &g_CDrummerVTable;
+  pCVar1 = (CDrummer *)core_npc_cpp_CNPC_ctor_FUN_005447e0(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CDrummerVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar1->base_npc).base_character.model,"drummer.dfm");
+            (&(pCVar1->base).base.model,"drummer.dfm");
   return pCVar1;
 }

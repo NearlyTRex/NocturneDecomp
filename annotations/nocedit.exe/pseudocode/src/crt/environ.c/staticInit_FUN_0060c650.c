@@ -30,7 +30,7 @@ void __cdecl crt_environ_c_staticInit_FUN_0060c650(void)
     }
     pcVar2 = (char *)crt_unknown_c_FUN_0060c640();
     if (pcVar2 != (char *)0x0) {
-      DAT_03f9c150 = pcVar2;
+      INT_03f9c150 = (int)pcVar2;
       ppcVar3 = (char **)crt_unknown_c_FUN_0060c640();
       if (ppcVar3 == (char **)0x0) {
         crt_memory_c_free_FUN_00601cd0(pcVar2);

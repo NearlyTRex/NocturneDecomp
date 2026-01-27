@@ -81,11 +81,11 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
   char *local_14;
   
   if (in_stack_00000014 < 3) {
-    local_20 = (CVector3f *)in_stack_00000010->field6_0x20;
-    local_50 = in_stack_00000010->field6_0x20 + 4;
-    local_4c = in_stack_00000010->field6_0x20 + 8;
+    local_20 = (CVector3f *)in_stack_00000010->unk5;
+    local_50 = in_stack_00000010->unk5 + 4;
+    local_4c = in_stack_00000010->unk5 + 8;
     local_1c = &in_stack_00000010->hit_position;
-    local_18 = (CVector3f *)in_stack_00000010->field8_0x38;
+    local_18 = (CVector3f *)in_stack_00000010->unk6;
     local_54 = in_stack_00000014 + 1;
     local_60 = in_stack_0000000c + 1;
     local_5c = in_stack_0000000c + 2;
@@ -93,9 +93,8 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
     local_58 = &in_stack_00000008->z;
     while( true ) {
       core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270
-                (g_CDemonSetPtr,(float)in_stack_00000010->field2_0x8,
-                 (float)(in_stack_00000010->color).r,(float)(in_stack_00000010->color).g,
-                 (float)(in_stack_00000010->color).b);
+                (g_CDemonSetPtr,(float)in_stack_00000010->unk2,(float)(in_stack_00000010->color).r,
+                 (float)(in_stack_00000010->color).g,(float)(in_stack_00000010->color).b);
       local_e0.x = in_stack_00000008->x;
       local_e0.y = *local_80;
       local_e0.z = *local_58;
@@ -172,7 +171,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
           local_18->y = pCVar2->y;
           local_18->z = pCVar2->z;
         }
-        if ((((in_stack_00000014 == 0) && (in_stack_00000010->field4_0x18 != 0)) &&
+        if ((((in_stack_00000014 == 0) && (in_stack_00000010->unk3 != 0)) &&
             (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                                 (this_ptr_00,g_CCharacterClassInfo.name_hash),
             pCVar3 != (CDemonActor *)0x0)) &&
@@ -215,7 +214,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
         (*((this_ptr_00->vtable)._ub)->getSurfaceProperties)(this_ptr_00,in_stack_00000010);
       }
       local_28 = 0.0;
-      if (in_stack_00000010->field5_0x1c != 0) {
+      if (in_stack_00000010->unk4 != 0) {
         local_28 = in_stack_00000010->intensity;
       }
       if (0.0 < in_stack_00000010->alpha_or_wetness) {
@@ -254,14 +253,14 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
     local_104 = *in_stack_0000000c;
     local_100 = in_stack_0000000c[1];
     local_fc = in_stack_0000000c[2];
-    local_7c = in_stack_00000010->field6_0x20;
-    local_78 = in_stack_00000010->field6_0x20 + 4;
-    local_74 = in_stack_00000010->field6_0x20 + 8;
+    local_7c = in_stack_00000010->unk5;
+    local_78 = in_stack_00000010->unk5 + 4;
+    local_74 = in_stack_00000010->unk5 + 8;
     local_64 = &(in_stack_00000010->hit_position).y;
     local_70 = &(in_stack_00000010->hit_position).z;
-    local_6c = in_stack_00000010->field8_0x38;
-    local_68 = in_stack_00000010->field8_0x38 + 4;
-    local_14 = in_stack_00000010->field8_0x38 + 8;
+    local_6c = in_stack_00000010->unk6;
+    local_68 = in_stack_00000010->unk6 + 4;
+    local_14 = in_stack_00000010->unk6 + 8;
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr_00);
     core_fire_cpp_CFireEffect_FUN_004c8230(this_ptr);

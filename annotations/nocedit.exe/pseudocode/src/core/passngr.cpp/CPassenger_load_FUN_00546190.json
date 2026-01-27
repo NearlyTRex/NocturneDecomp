@@ -24,60 +24,60 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 22,
+        "column": 62,
+        "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 25,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 28,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 30,
+        "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 35,
+        "line": 34,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 40,
+        "column": 77,
+        "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 47,
+        "column": 76,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 133,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 35,
     "suspect_count": 9,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 119
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -240,42 +240,42 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.health,",
+      "text": "((char **)&in_stack_00000004[1].base.base.health,\"wolfModelName\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].w,",
+      "text": "(&in_stack_00000004[1].base.model.bone_transform.bone_rotations[0x53].w,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
-      "text": "model_ptr = &(in_stack_00000004->base_character).model;",
+      "text": "model_ptr = &(in_stack_00000004->base).model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].x,",
+      "text": "(&in_stack_00000004[1].base.model.bone_transform.bone_rotations[0x53].x,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0xc),",
+      "text": "((char **)(in_stack_00000004[1].base.base.create_event + 0xc),\"nameOfWolf\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 37,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0x2c),",
+      "text": "((char **)(in_stack_00000004[1].base.base.create_event + 0x2c),\"transformWav\");",
       "type": "stack_param"
     }
   ],

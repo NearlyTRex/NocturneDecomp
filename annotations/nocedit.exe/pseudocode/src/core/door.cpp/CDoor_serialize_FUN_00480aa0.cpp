@@ -13,20 +13,20 @@ void __cdecl core_door_cpp_CDoor_serialize_FUN_00480aa0(CDoor *this_ptr)
   char *pcVar2;
   char *pcVar3;
   
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName")
   ;
   core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->door_type,"doorType");
   core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->door_side,"doorSide");
   core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->door_state,"doorState");
   core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->door_swing,"doorSwing");
-  core_actor_cpp_serializeString_FUN_0040b5c0((char **)this_ptr->field7_0x2e8,"openEvent");
+  core_actor_cpp_serializeString_FUN_0040b5c0((char **)this_ptr->unk1,"openEvent");
+  core_actor_cpp_serializeString_FUN_0040b5c0((char **)(this_ptr->unk1 + 100),"closeEvent")
+  ;
+  core_actor_cpp_serializeString_FUN_0040b5c0((char **)(this_ptr->unk2 + 1000),"openSound")
+  ;
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(this_ptr->field7_0x2e8 + 100),"closeEvent");
-  core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(this_ptr->field9_0x47c + 1000),"openSound");
-  core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(this_ptr->field9_0x47c + 0x44c),"closeSound");
+            ((char **)(this_ptr->unk2 + 0x44c),"closeSound");
   core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->key_mask,"keyMask");
   core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->orig_pos,"origPos");
   core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->orig_orient,"origOrient");
@@ -39,9 +39,9 @@ void __cdecl core_door_cpp_CDoor_serialize_FUN_00480aa0(CDoor *this_ptr)
   }
   if (2 < g_CDoorClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(this_ptr->field7_0x2e8 + 200),"eventToTriggerWhenOpen");
+              ((char **)(this_ptr->unk1 + 200),"eventToTriggerWhenOpen");
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(this_ptr->field7_0x2e8 + 300),"eventToTriggerWhenClosed");
+              ((char **)(this_ptr->unk1 + 300),"eventToTriggerWhenClosed");
   }
   if (3 < g_CDoorClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->one_shot,"oneShot");
@@ -49,13 +49,13 @@ void __cdecl core_door_cpp_CDoor_serialize_FUN_00480aa0(CDoor *this_ptr)
   if (g_CDoorClassVersion < 7) {
     if (4 < g_CDoorClassVersion) {
       core_actor_cpp_serializeString_FUN_0040b5c0
-                ((char **)(this_ptr->field9_0x47c + 500),"scriptOpenEvent");
-      if (this_ptr->field9_0x47c[500] == '\0') {
+                ((char **)(this_ptr->unk2 + 500),"scriptOpenEvent");
+      if (this_ptr->unk2[500] == '\0') {
         this_ptr->open_rules = 0;
       }
       else {
         pcVar2 = "true";
-        pcVar3 = this_ptr->field9_0x47c;
+        pcVar3 = this_ptr->unk2;
         do {
           cVar1 = *pcVar2;
           *pcVar3 = cVar1;
@@ -91,6 +91,6 @@ void __cdecl core_door_cpp_CDoor_serialize_FUN_00480aa0(CDoor *this_ptr)
     return;
   }
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(this_ptr->field9_0x47c + 0x4b0),"lockedSound");
+            ((char **)(this_ptr->unk2 + 0x4b0),"lockedSound");
   return;
 }

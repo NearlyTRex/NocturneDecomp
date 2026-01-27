@@ -18,9 +18,9 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   CVector3f local_24;
   CVector3f local_18;
   
-  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
+  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar2[1].base_actor.actor_name + 0xc));
+                          ((CKeyFramedModelInstance *)(pCVar2[1].base.actor_name + 0xc));
   this_ptr_00[-3].part_visibility_flags[0x11] = (int)&g_CTurretVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)(this_ptr_00[-3].part_visibility_flags + 0x12),

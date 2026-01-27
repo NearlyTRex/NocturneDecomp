@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_frankgen.cpp_FUN_004d25f0(uint param_1) */
-
 void core_frankgen_cpp_FUN_004d25f0(void)
 
 {
@@ -43,10 +40,10 @@ void core_frankgen_cpp_FUN_004d25f0(void)
     *(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) - in_stack_00000008;
   }
   if (*(float *)(iVar1 + 0x15c) < 0.0) {
-    *(float *)(iVar1 + 0x15c) = _DAT_0065e670 + *(float *)(iVar1 + 0x15c);
+    *(float *)(iVar1 + 0x15c) = 2300.0f + *(float *)(iVar1 + 0x15c);
   }
-  if (_DAT_0065e670 <= *(float *)(iVar1 + 0x15c)) {
-    *(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) - _DAT_0065e670;
+  if (2300.0f <= *(float *)(iVar1 + 0x15c)) {
+    *(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) - 2300.0f;
   }
   *(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar1 + 0x15c);
   core_frankgen_cpp_LoadModel_FUN_004d2190();

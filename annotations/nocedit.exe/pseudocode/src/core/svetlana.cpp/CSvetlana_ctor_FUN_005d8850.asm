@@ -7,7 +7,7 @@
 ; CSvetlana *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_svetlana.cpp_FUN_005d8810 at 005d882a
+;   core_svetlana.cpp_factoryFunc_FUN_005d8810 at 005d882a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_svetlana_dfm_006548f9

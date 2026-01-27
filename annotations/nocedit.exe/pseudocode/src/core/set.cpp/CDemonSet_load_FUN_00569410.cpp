@@ -64,23 +64,23 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   if (this_ptr->set_file_version < 0x11) {
     crt_stdio_c_fgets_FUN_005fefd0(local_228,0xff,pFVar4);
     crt_stdio_c_fscanf_FUN_005fe7c0
-              (pFVar4,"%d,%d,%d,%d\n",local_48,(SFog *)(this_ptr->field19_0x14f0a0 + 0xbb90),
-               this_ptr->field19_0x14f0a0 + 0xbb94,this_ptr->field19_0x14f0a0 + 0xbb98);
+              (pFVar4,"%d,%d,%d,%d\n",local_48,(SFog *)(this_ptr->unk4 + 0xbb90),
+               this_ptr->unk4 + 0xbb94,this_ptr->unk4 + 0xbb98);
     crt_stdio_c_fgets_FUN_005fefd0(local_228,0xff,pFVar4);
     crt_stdio_c_fscanf_FUN_005fe7c0
-              (pFVar4,"%f,%f,%f\n",this_ptr->field19_0x14f0a0 + 0xbb9c,
-               this_ptr->field19_0x14f0a0 + 0xbba0,this_ptr->field19_0x14f0a0 + 0xbba4);
+              (pFVar4,"%f,%f,%f\n",this_ptr->unk4 + 0xbb9c,this_ptr->unk4 + 0xbba0,
+               this_ptr->unk4 + 0xbba4);
     crt_stdio_c_fscanf_FUN_005fe7c0
-              (pFVar4,"%f,%f,%f,%f\n",this_ptr->field19_0x14f0a0 + 0xbba8,
-               this_ptr->field19_0x14f0a0 + 0xbbac,local_48,local_48);
-    this_ptr->field19_0x14f0a0[0xbbb0] = '\0';
-    this_ptr->field19_0x14f0a0[0xbbb1] = '\0';
-    this_ptr->field19_0x14f0a0[0xbbb2] = 'H';
-    this_ptr->field19_0x14f0a0[0xbbb3] = 'B';
+              (pFVar4,"%f,%f,%f,%f\n",this_ptr->unk4 + 0xbba8,this_ptr->unk4 + 0xbbac,local_48,
+               local_48);
+    this_ptr->unk4[0xbbb0] = '\0';
+    this_ptr->unk4[0xbbb1] = '\0';
+    this_ptr->unk4[0xbbb2] = 'H';
+    this_ptr->unk4[0xbbb3] = 'B';
   }
   else {
     core_dcamera_cpp_loadCameraFog_FUN_00453e50
-              ((SFog *)(this_ptr->field19_0x14f0a0 + 0xbb90),pFVar4,this_ptr->set_file_version);
+              ((SFog *)(this_ptr->unk4 + 0xbb90),pFVar4,this_ptr->set_file_version);
   }
   crt_stdio_c_fgets_FUN_005fefd0(local_228,0xff,pFVar4);
   crt_stdio_c_fscanf_FUN_005fe7c0
@@ -218,7 +218,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     crt_stdio_c_fscanf_FUN_005fe7c0(pFVar4,"%d\n",&this_ptr->room_count);
     if (0 < this_ptr->room_count) {
       local_38 = this_ptr->rooms;
-      local_40 = &this_ptr->rooms[0].field4_0x40;
+      local_40 = &this_ptr->rooms[0].unk;
       pCVar8 = &this_ptr->rooms[0].rotation_matrix;
       local_18 = &this_ptr->rooms[0].extents;
       local_2c = &this_ptr->rooms[0].extents.y;
@@ -426,11 +426,11 @@ LAB_00569dd5:
   if (0 < this_ptr->camera_count) {
     do {
       fVar1 = this_ptr->min_ambient_value;
-      pCVar5->cameras[0].field8_0x14c = 0;
-      pCVar5->cameras[0].field17_0x1a0 = 1;
+      pCVar5->cameras[0].unk2 = 0;
+      pCVar5->cameras[0].unk4 = 1;
       iVar10 = iVar10 + 1;
       pCVar5->cameras[0].ambient_value = fVar1;
-      pCVar5 = (CDemonSet *)&pCVar5->cameras[0].field17_0x1a0;
+      pCVar5 = (CDemonSet *)&pCVar5->cameras[0].unk4;
     } while (iVar10 < this_ptr->camera_count);
   }
   return;

@@ -10,12 +10,12 @@
 ;
 ; Referenced Globals:
 ;   CBitFont* g_ConsoleFont
-;   undefined4 DAT_0310fcd8
-;   undefined4 DAT_0310fcdc
-;   undefined4 DAT_0310fce0
-;   undefined4 DAT_0310fd0c
-;   undefined4 DAT_0310fd10
-;   undefined4 DAT_0310fd14
+;   CEdScrollBar CEdScrollBar_0310fcd8
+;   undefined4 CEdScrollBar_0310fcd8.current_value
+;   undefined4 CEdScrollBar_0310fcd8.max_value
+;   CEdScrollBar CEdScrollBar_0310fd0c
+;   undefined4 CEdScrollBar_0310fd0c.current_value
+;   undefined4 CEdScrollBar_0310fd0c.max_value
 ;   undefined4 DAT_031141d0
 ;   undefined4 DAT_031141d4
 ;   undefined4 DAT_031141d8
@@ -81,7 +81,7 @@ section .text
     MOV dword ptr [0x031141f8],EDX      ; 005666d4 | DAT_031141f8
     MOV EDX,dword ptr [0x031141dc]      ; 005666da | DAT_031141dc
     MOV dword ptr [0x031141d0],ESI      ; 005666e0 | DAT_031141d0
-    MOV dword ptr [0x031141fc],EDX      ; 005666e6 | DAT_031141fc
+    MOV dword ptr [0x031141fc],EDX      ; 005666e6 | INT_031141fc
     SUB EDX,EAX                         ; 005666ec
     MOV dword ptr [0x031141f0],ESI      ; 005666ee | DAT_031141f0
     MOV dword ptr [0x031141f4],EDX      ; 005666f4 | DAT_031141f4
@@ -106,7 +106,7 @@ section .text
     MOV dword ptr [0x031141e8],EDX      ; 00566737 | DAT_031141e8
     MOV EDX,dword ptr [0x031141e0]      ; 0056673d | DAT_031141e0
     PUSH EDX                            ; 00566743
-    PUSH 0x310fd0c                      ; 00566744 | DAT_0310fd0c
+    PUSH 0x310fd0c                      ; 00566744 | CEdScrollBar_0310fd0c
     MOV [0x031141ec],EAX                ; 00566749 | DAT_031141ec
     CALL shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60 ; 0056674e
         ;   XREF to: 004a5b60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60(CEdScrollBar * this_ptr, int left_pos, int top_pos, int right_pos, ...)
@@ -119,7 +119,7 @@ section .text
     PUSH ESI                            ; 0056676a
     MOV EBP,dword ptr [0x031141e8]      ; 0056676b | DAT_031141e8
     PUSH EBP                            ; 00566771
-    PUSH 0x310fcd8                      ; 00566772 | DAT_0310fcd8
+    PUSH 0x310fcd8                      ; 00566772 | CEdScrollBar_0310fcd8
     CALL shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60 ; 00566777
         ;   XREF to: 004a5b60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60(CEdScrollBar * this_ptr, int left_pos, int top_pos, int right_pos, ...)
     MOV EDX,dword ptr [0x031141ec]      ; 0056677c | DAT_031141ec
@@ -132,7 +132,7 @@ section .text
     MOV EDX,dword ptr [0x031141e8]      ; 0056679b | DAT_031141e8
     MOV EBX,dword ptr [0x03114204]      ; 005667a1 | DAT_03114204
     SUB EDX,ECX                         ; 005667a7
-    MOV [0x0310fce0],EAX                ; 005667a9 | DAT_0310fce0
+    MOV [0x0310fce0],EAX                ; 005667a9 | CEdScrollBar_0310fcd8.max_value
     MOV EAX,EDX                         ; 005667ae
     SAR EDX,0x1f                        ; 005667b0
     IDIV EBX                            ; 005667b3
@@ -140,12 +140,12 @@ section .text
     LEA ESI,[EDI + 0x38]                ; 005667b8
     PUSH ESI                            ; 005667bb
     XOR EBX,EBX                         ; 005667bc
-    MOV [0x0310fd14],EAX                ; 005667be | DAT_0310fd14
-    MOV dword ptr [0x0310fd10],EBX      ; 005667c3 | DAT_0310fd10
+    MOV [0x0310fd14],EAX                ; 005667be | CEdScrollBar_0310fd0c.max_value
+    MOV dword ptr [0x0310fd10],EBX      ; 005667c3 | CEdScrollBar_0310fd0c.current_value
     CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005667c9
         ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
     ADD ESP,0x4                         ; 005667ce
-    MOV [0x0310fcdc],EAX                ; 005667d1 | DAT_0310fcdc
+    MOV [0x0310fcdc],EAX                ; 005667d1 | CEdScrollBar_0310fcd8.current_value
     PUSH ESI                            ; 005667d6
         ;   Label: LAB_005667d6
     CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005667d7

@@ -12,7 +12,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c91e0(CFireEffect *this_ptr)
   char *pcVar1;
   
   core_fire_cpp_FUN_004c6170();
-  pcVar1 = g_TrailActiveListHead->field0_0x0;
+  pcVar1 = g_TrailActiveListHead->unk;
   g_TrailActiveListHead = (CTrail *)(pcVar1 + 1);
   if ((int)(pcVar1 + 1) < 0x32) {
     return;

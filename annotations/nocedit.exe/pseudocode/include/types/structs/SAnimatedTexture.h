@@ -6,7 +6,7 @@
 // Structure: SAnimatedTexture
 // Ghidra size: 0x1c (28 bytes)
 typedef struct SAnimatedTexture {
-    char field_0[8]; // 0x0
+    char unk[8]; // 0x0
     int frame_count; // 0x8
     int current_frame; // 0xc
     int frame_duration; // 0x10

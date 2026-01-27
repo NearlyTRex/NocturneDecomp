@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CKeyFramedModelInstance * core_drip.cpp_staticInit_FUN_0048df80(void)
+; __cdecl void core_drip.cpp_staticInit_FUN_0048df80(void)
 ;
 ;
 ; Referenced Globals:
@@ -9,7 +9,7 @@
 ;   int g_CDripClassVersion = 0x6
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CDripClassInfo
-;   undefined4 DAT_02c9b170
+;   CKeyFramedModelInstance DAT_02c9b170
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c2e0

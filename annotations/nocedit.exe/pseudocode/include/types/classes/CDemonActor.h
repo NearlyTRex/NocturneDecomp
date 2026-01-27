@@ -20,28 +20,28 @@ typedef struct CDemonActor {
     int runtime_state; // 0x60
     int health; // 0x64
     int validation_magic; // 0x68
-    int field_108; // 0x6c
+    int unk1; // 0x6c
     int was_created; // 0x70
     float create_prob; // 0x74
     char create_event[100]; // 0x78
-    int field_220; // 0xdc
-    CVector3f field_224; // 0xe0
-    CVector3f field_236; // 0xec
-    int field_248; // 0xf8
+    int unk2; // 0xdc
+    CVector3f unk3; // 0xe0
+    CVector3f unk4; // 0xec
+    int unk5; // 0xf8
     int is_transparent; // 0xfc
-    int field_256; // 0x100
-    int field_260; // 0x104
+    int unk6; // 0x100
+    int unk7; // 0x104
     CVector3i scale; // 0x108
-    int field_276; // 0x114
-    int field_280; // 0x118
-    int field_284; // 0x11c
-    int field_288; // 0x120
-    int field_292; // 0x124
+    int unk8; // 0x114
+    int unk9; // 0x118
+    int unk10; // 0x11c
+    int unk11; // 0x120
+    int unk12; // 0x124
     CDemonActorTransformState previous_transform_state; // 0x128
-    int field_324; // 0x144
-    int field_328; // 0x148
+    int unk13; // 0x144
+    int unk14; // 0x148
     struct CDemonActor* next_actor; // 0x14c
-    int field_336; // 0x150
+    int unk15; // 0x150
     CDemonActor_union_vtable vtable; // 0x154
 } CDemonActor;
 

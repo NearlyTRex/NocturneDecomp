@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_turret.cpp_staticInit_FUN_005e2080(void)
+; __cdecl void core_turret.cpp_staticInit_FUN_005e2080(void)
 ;
 ;
 ; Referenced Globals:

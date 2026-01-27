@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void core_mmx.c_detectIntelProcessor_FUN_00524f4c(void)
+; __cdecl void core_mmx.c_detectIntelProcessor_FUN_00524f4c(void)
 ;
 ;
 ; XREF[2]:

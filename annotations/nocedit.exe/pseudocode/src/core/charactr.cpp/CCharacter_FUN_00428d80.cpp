@@ -19,16 +19,16 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428d80(CCharacter *this_ptr)
   float local_c;
   
   pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                     (&this_ptr->base_actor,&local_24,in_stack_00000008);
+                     (&this_ptr->base,&local_24,in_stack_00000008);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,pCVar1);
   local_c = pCVar1->y;
-  local_10 = *(float *)(this_ptr->field2_0x240c + 0x2c);
+  local_10 = *(float *)(this_ptr->unk1 + 0x2c);
   fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_c);
   fVar3 = -local_10;
   if ((-local_10 <= fVar2) && (fVar3 = local_10, fVar2 <= local_10)) {
-    *(float *)(this_ptr->field2_0x240c + 0xc) = fVar2;
+    *(float *)(this_ptr->unk1 + 0xc) = fVar2;
     return;
   }
-  *(float *)(this_ptr->field2_0x240c + 0xc) = fVar3;
+  *(float *)(this_ptr->unk1 + 0xc) = fVar3;
   return;
 }

@@ -25,14 +25,14 @@ engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120
       crt_stdio_c_sprintf_FUN_005fdbd0
                 ((char *)local_3f4,"You currently have %s checked out.  Replace local copy with network copy?",target_filename);
       iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                        (local_3f4,g_VersionControlSession.field1_0x20);
+                        (local_3f4,g_VersionControlSession.unk1);
       return iVar2;
     }
     if ((uVar1 & 8) == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
                 ((char *)local_200,"A writable copy of %s exists.  Replace it?",target_filename);
       iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                        (local_200,g_VersionControlSession.field1_0x20 + 4);
+                        (local_200,g_VersionControlSession.unk1 + 4);
       return iVar2;
     }
   }

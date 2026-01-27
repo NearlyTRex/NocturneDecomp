@@ -22,7 +22,7 @@ CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_pt
     return this_ptr;
   }
   core_hero_cpp_CHero_dtor_FUN_004f2470
-            (&this_ptr->base_hero,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,
+            (&this_ptr->base,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,
              in_stack_00000014);
   if ((d1 & 2) == 0) {
     return ptr;

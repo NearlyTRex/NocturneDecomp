@@ -36,13 +36,13 @@ int __cdecl core_ladder_cpp_CLadder_FUN_00502620(CLadder *this_ptr)
   int iStack_14;
   
   bVar6 = 0;
-  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   uVar8 = 0x50264d;
   pCVar9 = this_ptr;
-  this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base_actor,(CBoundingBox3D *)&local_74);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                          (&this_ptr->base,(CBoundingBox3D *)&local_74);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  if ((iVar1 != 0) && (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0)) {
+  if ((iVar1 != 0) && (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0)) {
     iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar2 == 0) {
       g_ActiveRenderColor = 0xfb;
@@ -169,8 +169,8 @@ int __cdecl core_ladder_cpp_CLadder_FUN_00502620(CLadder *this_ptr)
   }
   if (iVar1 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)&this_ptr->model,0.0,-1);
+              (&this_ptr->model,0.0,-1);
   }
-  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   return iVar1;
 }

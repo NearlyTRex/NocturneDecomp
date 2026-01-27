@@ -24,15 +24,14 @@ void core_batman_cpp_FUN_004179a0(void)
   CVector3f local_30;
   CVector3f local_24;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[1].base_actor.field28_0x150);
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[1].base_actor.field26_0x148);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[1].base.unk15);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[1].base.unk14);
   if (*(int *)((int)in_stack_00000008 + 0x28) == 7) {
     iVar2 = 0;
     *(float *)((int)in_stack_00000008 + 4) =
          *(float *)((int)in_stack_00000008 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,&local_30,(CVector3f *)((int)in_stack_00000008 + 0x1c)
-              );
+              (&in_stack_00000004->base,&local_30,(CVector3f *)((int)in_stack_00000008 + 0x1c));
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
@@ -43,7 +42,7 @@ void core_batman_cpp_FUN_004179a0(void)
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&in_stack_00000004->model,&local_3c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,&local_24,input_local_point);
+              (&in_stack_00000004->base,&local_24,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_batman_cpp_FUN_00417660();
@@ -57,11 +56,11 @@ void core_batman_cpp_FUN_004179a0(void)
     if ((pSVar3->state_index != 7) && (pSVar3->state_index != 8)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,7,1);
-      sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[1].base_actor.next_actor);
+      sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[1].base.next_actor);
       pCVar4 = (CDemonActor *)
-               (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                         (&in_stack_00000004->base_actor,"batman-die.wav");
-      in_stack_00000004[1].base_actor.next_actor = pCVar4;
+               (*((in_stack_00000004->base).vtable._ub)->playSound)
+                         (&in_stack_00000004->base,"batman-die.wav");
+      in_stack_00000004[1].base.next_actor = pCVar4;
       local_3c.y = in_stack_00000008;
       local_3c.x = (float)in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
@@ -82,13 +81,12 @@ void core_batman_cpp_FUN_004179a0(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,6,1);
     }
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                      ((uint)in_stack_00000004[1].base_actor.next_actor);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_00000004[1].base.next_actor);
     if (iVar2 == 0) {
       pCVar4 = (CDemonActor *)
-               (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                         (&in_stack_00000004->base_actor,"batman-hurt?.wav");
-      in_stack_00000004[1].base_actor.next_actor = pCVar4;
+               (*((in_stack_00000004->base).vtable._ub)->playSound)
+                         (&in_stack_00000004->base,"batman-hurt?.wav");
+      in_stack_00000004[1].base.next_actor = pCVar4;
       local_3c.y = in_stack_00000008;
       local_3c.x = (float)in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();

@@ -36,17 +36,16 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
   int local_14;
   
   this_ptr->character_width = g_FontCharacterWidth + 1;
-  this_ptr->field9_0x178 = 8;
-  this_ptr->field1_0x10[0x28] = '\x01';
-  this_ptr->field1_0x10[0x29] = '\0';
-  this_ptr->field1_0x10[0x2a] = '\0';
-  this_ptr->field1_0x10[0x2b] = '\0';
-  crt_memory_c_memset_FUN_005fde40(this_ptr->field1_0x10,0,0x28);
+  this_ptr->unk2 = 8;
+  this_ptr->unk1[0x28] = '\x01';
+  this_ptr->unk1[0x29] = '\0';
+  this_ptr->unk1[0x2a] = '\0';
+  this_ptr->unk1[0x2b] = '\0';
+  crt_memory_c_memset_FUN_005fde40(this_ptr->unk1,0,0x28);
   local_14 = 0;
-  if (0 < (this_ptr->base_strlist).item_count) {
+  if (0 < (this_ptr->base).item_count) {
     do {
-      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                         (&this_ptr->base_strlist,local_14);
+      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&this_ptr->base,local_14);
       iVar10 = 0;
       pCVar5 = this_ptr;
       while( true ) {
@@ -61,11 +60,11 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
         }
         *pcVar8 = '\0';
         iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,local_160);
-        if (*(int *)pCVar5->field1_0x10 < iVar4) {
-          *(int *)pCVar5->field1_0x10 = iVar4;
+        if (*(int *)pCVar5->unk1 < iVar4) {
+          *(int *)pCVar5->unk1 = iVar4;
         }
         iVar10 = iVar10 + 1;
-        pCVar5 = (CPickList *)&(pCVar5->base_strlist).capacity;
+        pCVar5 = (CPickList *)&(pCVar5->base).capacity;
         if (*pcVar3 == '\0') break;
         if (9 < iVar10) {
           g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -73,36 +72,36 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many picklist columns!");
         }
       }
-      if (*(int *)(this_ptr->field1_0x10 + 0x28) < iVar10) {
-        *(int *)(this_ptr->field1_0x10 + 0x28) = iVar10;
+      if (*(int *)(this_ptr->unk1 + 0x28) < iVar10) {
+        *(int *)(this_ptr->unk1 + 0x28) = iVar10;
       }
       local_14 = local_14 + 1;
-    } while (local_14 < (this_ptr->base_strlist).item_count);
+    } while (local_14 < (this_ptr->base).item_count);
   }
   pCVar5 = this_ptr;
-  for (iVar10 = 0; iVar10 < *(int *)(this_ptr->field1_0x10 + 0x28) + -1; iVar10 = iVar10 + 1) {
-    *(int *)pCVar5->field1_0x10 = *(int *)pCVar5->field1_0x10 + g_WindowWidth / 0x28;
-    pCVar5 = (CPickList *)&(pCVar5->base_strlist).capacity;
+  for (iVar10 = 0; iVar10 < *(int *)(this_ptr->unk1 + 0x28) + -1; iVar10 = iVar10 + 1) {
+    *(int *)pCVar5->unk1 = *(int *)pCVar5->unk1 + g_WindowWidth / 0x28;
+    pCVar5 = (CPickList *)&(pCVar5->base).capacity;
   }
   iVar4 = 0;
-  iVar10 = *(int *)(this_ptr->field1_0x10 + 0x28);
+  iVar10 = *(int *)(this_ptr->unk1 + 0x28);
   this_ptr->total_content_width = 0;
   pCVar5 = this_ptr;
   if (0 < iVar10) {
     do {
       iVar4 = iVar4 + 1;
-      iVar10 = *(int *)(this_ptr->field1_0x10 + 0x28);
-      this_ptr->total_content_width = this_ptr->total_content_width + *(int *)pCVar5->field1_0x10;
-      pCVar5 = (CPickList *)&(pCVar5->base_strlist).capacity;
+      iVar10 = *(int *)(this_ptr->unk1 + 0x28);
+      this_ptr->total_content_width = this_ptr->total_content_width + *(int *)pCVar5->unk1;
+      pCVar5 = (CPickList *)&(pCVar5->base).capacity;
     } while (iVar4 < iVar10);
   }
-  this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->field9_0x178 * 2;
+  this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->unk2 * 2;
   iVar10 = (g_WindowHeight + g_FontCharacterWidth * -4) / this_ptr->character_width;
   this_ptr->vertical_page_size = iVar10;
   if (iVar10 < 1) {
     this_ptr->vertical_page_size = 1;
   }
-  iVar10 = (this_ptr->base_strlist).item_count;
+  iVar10 = (this_ptr->base).item_count;
   if (iVar10 < this_ptr->vertical_page_size) {
     this_ptr->vertical_page_size = iVar10;
   }
@@ -113,7 +112,7 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
   if (iVar10 < 1) {
     this_ptr->column_count = 1;
   }
-  iVar10 = ((this_ptr->base_strlist).item_count + this_ptr->vertical_page_size + -1) /
+  iVar10 = ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
            this_ptr->vertical_page_size;
   if (iVar10 < this_ptr->column_count) {
     this_ptr->column_count = iVar10;
@@ -122,7 +121,7 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
     this_ptr->column_count = this_ptr->selected_index;
   }
   this_ptr->dialog_result = 0;
-  if (this_ptr->vertical_page_size * this_ptr->column_count < (this_ptr->base_strlist).item_count) {
+  if (this_ptr->vertical_page_size * this_ptr->column_count < (this_ptr->base).item_count) {
     if (this_ptr->column_count < 2) {
       this_ptr->dialog_result = 1;
     }
@@ -215,7 +214,7 @@ LAB_004a4afc:
   }
   this_ptr->vertical_page_size = iVar4 / this_ptr->character_width;
   this_ptr->column_count = iVar10 / this_ptr->total_content_width;
-  iVar4 = ((this_ptr->base_strlist).item_count + this_ptr->vertical_page_size + -1) /
+  iVar4 = ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
           this_ptr->vertical_page_size;
   if (iVar4 < this_ptr->column_count) {
     this_ptr->column_count = iVar4;

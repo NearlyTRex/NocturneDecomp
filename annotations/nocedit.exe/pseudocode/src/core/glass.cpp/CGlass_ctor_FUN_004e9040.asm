@@ -7,7 +7,7 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_glass.cpp_CGlass_factoryFunc_FUN_004e9000 at 004e901a
+;   core_glass.cpp_factoryFunc_FUN_004e9000 at 004e901a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_HEADLITE_RAW_0062df62

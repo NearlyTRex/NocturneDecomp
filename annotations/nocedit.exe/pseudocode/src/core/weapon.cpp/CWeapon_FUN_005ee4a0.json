@@ -4,56 +4,38 @@
       {
         "category": "other",
         "column": 37,
-        "line": 23,
+        "line": 21,
         "message": "'void*' is not a pointer-to-object type"
-      },
-      {
-        "category": "missing_member",
-        "column": 25,
-        "line": 27,
-        "message": "'CDemonLight' {aka 'struct CDemonLight'} has no member named 'field17_0x1cbc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 28,
+        "line": 26,
         "message": "'stack0x00000000' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 29,
+        "line": 27,
         "message": "request for member '_0_4_' in 'auStack_20', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 30,
+        "line": 28,
         "message": "request for member '_4_4_' in 'auStack_20', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 53,
+        "line": 51,
         "message": "'DAT_03f95d7c' was not declared in this scope; did you mean 'DAT_03f95df8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 54,
-        "message": "'_DAT_03f95db8' was not declared in this scope; did you mean 'DAT_03f95df8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 55,
+        "line": 53,
         "message": "'DAT_03f95d98' was not declared in this scope; did you mean 'DAT_03f95df8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 57,
-        "message": "'_DAT_03f95d9c' was not declared in this scope; did you mean 'DAT_03f95df8'?"
       }
     ],
     "success": false,
@@ -68,21 +50,20 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 199,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 23,
-    "pseudocode_lines": 49,
-    "suspect_count": 12,
+    "pseudocode_lines": 48,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 178
+    "total_lines": 177
   },
   "cross_references": [],
   "function": {
@@ -215,7 +196,7 @@
     },
     {
       "addr": "02d807ac",
-      "name": "g_CDemonLightInstance.field17_0x1cbc",
+      "name": "g_CDemonLightInstance.unk2",
       "type": "undefined4",
       "value": null
     },
@@ -263,14 +244,14 @@
     },
     {
       "addr": "03f95d9c",
-      "name": "DAT_03f95d9c",
-      "type": "undefined4",
+      "name": "INT_03f95d9c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03f95db8",
-      "name": "DAT_03f95db8",
-      "type": "undefined4",
+      "name": "INT_03f95db8",
+      "type": "int",
       "value": null
     }
   ],
@@ -336,85 +317,78 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_EBP",
       "text": "float unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_ffffffc8",
       "text": "uint in_stack_ffffffc8;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 21,
+      "line": 19,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 22,
+      "line": 20,
       "match": "._0_4_",
       "text": "g_CDemonLightInstance.base.base.position.x = auStack_20._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 23,
+      "line": 21,
       "match": "._4_4_",
       "text": "g_CDemonLightInstance.base.base.position.y = auStack_20._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_ffffffc8",
       "text": "pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,in_stack_ffffffc8);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 37,
       "match": "unaff_EBP",
       "text": "unaff_EBP = fStack_10 * 0.06666667f;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 39,
       "match": "unaff_EBP",
       "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_EBP);",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 44,
       "match": "DAT_03f95d7c",
       "text": "((CDemonGlobe *)&DAT_03f95d7c,(CColor3f *)(auStack_20 + 4));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 46,
       "match": "DAT_03f95d98",
       "text": "DAT_03f95d98 = 0x20;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_03f95d7c",
       "text": "core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360((CDemonGlobe *)&DAT_03f95d7c,3.0);",
       "type": "undefined_data"

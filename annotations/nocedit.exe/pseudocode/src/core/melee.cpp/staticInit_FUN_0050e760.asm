@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_melee.cpp_staticInit_FUN_0050e760(void)
+; __cdecl void core_melee.cpp_staticInit_FUN_0050e760(void)
 ;
 ;
 ; Referenced Globals:

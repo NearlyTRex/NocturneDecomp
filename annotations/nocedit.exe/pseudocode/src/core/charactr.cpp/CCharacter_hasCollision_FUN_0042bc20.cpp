@@ -14,7 +14,7 @@ core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20
   int iVar1;
   
   if (collision_info->ray_type != 2) {
-    iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr);
+    iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr);
     if (iVar1 < 2) {
       if ((collision_info->ray_type != 1) && (collision_info->ray_type != 3)) {
         collision_info->cylinder_top_y =

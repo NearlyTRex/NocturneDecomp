@@ -88,7 +88,7 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
                 (local_52c,"%s\t%s\t%s\t%d\t%s",local_22c,local_12c,&local_32c,
                  *(uint *)((int)&local_8ec->size + iVar4),local_2c);
       crt_string_c_strupr_FUN_00600770(local_52c);
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8d4.base_strlist,local_52c);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8d4.base,local_52c);
       iVar2 = iVar2 + 1;
       iVar4 = iVar4 + 0x14;
     } while (iVar2 < local_8f0);

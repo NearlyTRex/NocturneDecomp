@@ -64,6 +64,8 @@ _SUSPECT_PATTERN_DEFS = [
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
     # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, etc.
     (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
+    # CPUID intrinsics - Ghidra's representation of CPUID instruction
+    (r'\bcpuid_\w+\b', 'cpuid_intrinsic', 'CPUID intrinsic (CPU detection)'),
     # builtin_* - Ghidra builtin functions
     (r'\bbuiltin_\w+\b', 'builtin_function', 'Ghidra builtin function'),
     # Non-standard integer sizes (int3, uint5, uint7, byte3, etc.) - unusual bit manipulation
@@ -74,6 +76,10 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\bin_(FS|GS)\b', 'segment_register', 'Segment register input (TLS or unusual code)'),
     # FPU register inputs (in_ST0-7) - FPU calling convention issues
     (r'\bin_ST[0-7]\b', 'fpu_register_input', 'FPU register input (calling convention issue)'),
+    # EFLAGS bit inputs (in_CF, in_ZF, etc.) - CPU flag manipulation, often CPUID/detection code
+    (r'\bin_(CF|PF|AF|ZF|SF|TF|IF|DF|OF|NT|RF|VM|AC|VIF|VIP|ID)\b', 'eflags_input', 'EFLAGS bit input (CPU detection or flag manipulation)'),
+    # Unresolved register references (register0xNNNN) - Ghidra couldn't map to named register
+    (r'\bregister0x[0-9a-fA-F]+\b', 'unresolved_register', 'Unresolved register reference'),
     # DAT_XXXXXXXX - Undefined global data references
     (r'\bDAT_[0-9a-fA-F]{8}\b', 'undefined_data', 'Undefined global data reference'),
     # field_0xNN - Auto-generated struct field names (unnamed fields)
@@ -126,6 +132,8 @@ def identify_assembly_suspects(assembly_code):
     Currently detects:
     - MMX instructions (MOVQ, EMMS, etc.) which indicate SIMD code that
       may not decompile cleanly
+    - CPU detection instructions (CPUID, PUSHFD, POPFD) which indicate
+      CPU feature detection code that may have unusual decompilation
 
     Args:
         assembly_code: The assembly code as a string
@@ -150,6 +158,10 @@ def identify_assembly_suspects(assembly_code):
 
     # MM register pattern (MM0-MM7)
     mm_reg_pattern = re.compile(r'\bMM[0-7]\b', re.IGNORECASE)
+
+    # CPU detection instruction patterns (CPUID, EFLAGS manipulation)
+    cpuid_pattern = re.compile(r'\bCPUID\b', re.IGNORECASE)
+    eflags_pattern = re.compile(r'\b(PUSHFD?|POPFD?|LAHF|SAHF)\b', re.IGNORECASE)
 
     lines = assembly_code.split('\n')
     mmx_found = False
@@ -183,6 +195,37 @@ def identify_assembly_suspects(assembly_code):
             'match': ', '.join(sorted(mmx_instructions)[:5]) if mmx_instructions else 'MMX',
             'text': 'Function uses MMX instructions',
             'description': 'MMX/SIMD assembly - may not decompile to clean C code'
+        })
+
+    # Check for CPUID instructions (CPU feature detection)
+    cpuid_found = False
+    eflags_manip = False
+    first_cpuid_line = None
+
+    for line_num, line in enumerate(lines, 1):
+        line_stripped = line.strip()
+        if not line_stripped or line_stripped.startswith(';'):
+            continue
+
+        if cpuid_pattern.search(line):
+            cpuid_found = True
+            if first_cpuid_line is None:
+                first_cpuid_line = line_num
+
+        if eflags_pattern.search(line):
+            eflags_manip = True
+
+    # Add suspect for CPUID usage
+    if cpuid_found:
+        desc = 'CPU detection code using CPUID'
+        if eflags_manip:
+            desc += ' with EFLAGS manipulation'
+        suspects.append({
+            'line': first_cpuid_line or 1,
+            'type': 'cpuid_assembly',
+            'match': 'CPUID',
+            'text': 'Function uses CPUID instruction',
+            'description': desc + ' - expected unusual decompilation patterns'
         })
 
     return suspects
@@ -1538,6 +1581,25 @@ def identify_special_functions(json_data, func_addr):
             'crt_type': crt_type,
         })
         return suspects
+
+    # Check for CPU detection/intrinsic functions (CPUID, MMX detection, etc.)
+    cpu_patterns = [
+        'cpuid', 'detectintel', 'detectamd', 'detectcpu', 'getcpuinfo',
+        'checkmmx', 'checksse', 'detectmmx', 'detectsse', 'cpufeature',
+        'processorinfo', 'cpucaps', 'cpuident'
+    ]
+    for pattern in cpu_patterns:
+        if pattern in func_lower:
+            suspects.append({
+                'type': 'special_cpu_detection',
+                'match': pattern,
+                'text': 'CPU detection function at %s' % func_addr,
+                'description': 'CPU detection code with EFLAGS/CPUID manipulation - expected unusual patterns',
+                'address': func_addr,
+                'function_name': func_name,
+                'cpu_function': pattern,
+            })
+            return suspects
 
     return suspects
 

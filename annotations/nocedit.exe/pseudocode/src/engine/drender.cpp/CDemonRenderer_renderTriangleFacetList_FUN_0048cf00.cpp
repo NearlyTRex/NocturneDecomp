@@ -44,7 +44,7 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
           if ((primitive_array->base).count == 4) {
             local_1c = primitive_array[2].surface_normal.B;
           }
-          if (this_ptr->field8_0x20 == 0) {
+          if (this_ptr->unk == 0) {
             this_ptr->vertex_buffer_ptr[local_28.x].u = (float)primitive_array[1].base.count;
             this_ptr->vertex_buffer_ptr[local_28.x].v = (float)primitive_array[1].surface_normal.A;
             this_ptr->vertex_buffer_ptr[local_28.y].u = (float)primitive_array[1].surface_normal.C;
@@ -86,7 +86,7 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
             local_14 = local_14 + 1;
             primitive_array =
                  (SMRGLHeaderPrimitive *)
-                 (((STriangleIndices *)primitive_array)->field0_0x0 + render_flags);
+                 (((STriangleIndices *)primitive_array)->unk1 + render_flags);
             in_EAX = render_flags;
           } while (local_14 < primitive_count);
         }

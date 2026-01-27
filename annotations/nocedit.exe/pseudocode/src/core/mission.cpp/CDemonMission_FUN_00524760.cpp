@@ -21,17 +21,17 @@ int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr)
   }
   if (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) {
     core_mission_cpp_CDemonMission_FUN_00523cf0(this_ptr);
-    this_ptr->field6_0x54c[0x10] = -1;
+    this_ptr->unk4[0x10] = -1;
     this_ptr_00 = g_CEventListPtr;
-    this_ptr->field6_0x54c[0x11] = -1;
-    this_ptr->field6_0x54c[0x12] = -1;
-    this_ptr->field6_0x54c[0x13] = -1;
-    this_ptr->field6_0x54c[0xc] = '\0';
-    this_ptr->field6_0x54c[0xd] = '\0';
-    this_ptr->field6_0x54c[0xe] = '\0';
-    this_ptr->field6_0x54c[0xf] = '\0';
-    *(uint *)(this_ptr->field6_0x54c + 8) = *(uint *)(this_ptr->field6_0x54c + 0xc);
-    *(uint *)(this_ptr->field6_0x54c + 4) = *(uint *)(this_ptr->field6_0x54c + 8);
+    this_ptr->unk4[0x11] = -1;
+    this_ptr->unk4[0x12] = -1;
+    this_ptr->unk4[0x13] = -1;
+    this_ptr->unk4[0xc] = '\0';
+    this_ptr->unk4[0xd] = '\0';
+    this_ptr->unk4[0xe] = '\0';
+    this_ptr->unk4[0xf] = '\0';
+    *(uint *)(this_ptr->unk4 + 8) = *(uint *)(this_ptr->unk4 + 0xc);
+    *(uint *)(this_ptr->unk4 + 4) = *(uint *)(this_ptr->unk4 + 8);
     core_event_cpp_CEventList_FUN_004aaa70(this_ptr_00);
     g_CGamePtr->letterbox_mode = 0;
     core_mission_cpp_CDemonMission_FUN_00523fb0(this_ptr);

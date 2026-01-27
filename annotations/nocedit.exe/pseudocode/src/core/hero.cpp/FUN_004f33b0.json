@@ -15,7 +15,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 69,
+        "column": 63,
         "line": 57,
         "message": "'stack0xffffff80' was not declared in this scope"
       }
@@ -32,11 +32,11 @@
   },
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 254,
+    "complexity_score": 253,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 63,
     "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -44,7 +44,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 241
+    "total_lines": 240
   },
   "cross_references": [
     {
@@ -312,29 +312,29 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "input_world_point = &(in_stack_00000004->base_actor).location;",
+      "text": "input_world_point = &(in_stack_00000004->base).location;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base_actor).location.position.z;",
+      "text": "(in_stack_00000004->base).location.position.z;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "if (((ABS((this_ptr->base).location.position.y - (in_stack_00000004->base).location.position.y",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "ABS",
-      "text": "if (((ABS((this_ptr->base_actor).location.position.y -",
+      "text": "if (((ABS((this_ptr->base).location.position.y - (in_stack_00000004->base).location.position.y",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base_actor).location.position.y) <= (float)10) &&",
-      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -354,7 +354,7 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
-      "text": "(pCVar4->y - (in_stack_00000004->base_actor).orient.bank);",
+      "text": "(pCVar4->y - (in_stack_00000004->base).orient.bank);",
       "type": "stack_param"
     },
     {
@@ -368,33 +368,33 @@
       "description": "Direct stack address reference",
       "line": 50,
       "match": "&stack0xffffff80",
-      "text": "(&this_ptr->base_actor,(SInteractionInfo *)&stack0xffffff80),",
+      "text": "(&this_ptr->base,(SInteractionInfo *)&stack0xffffff80), fStack_78 != 0.0 &&",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000004",
-      "text": "fVar2 = CStack_4c.z - (in_stack_00000004->base_actor).location.position.z,",
+      "text": "fVar2 = CStack_4c.z - (in_stack_00000004->base).location.position.z,",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 56,
       "match": "SQRT",
       "text": "SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5)))))) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 58,
       "match": "in_stack_00000004",
-      "text": "(&this_ptr->base_actor,&in_stack_00000004->base_actor), iVar3 != 0)) {",
+      "text": "(&this_ptr->base,&in_stack_00000004->base), iVar3 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_00000004",
       "text": "*(CCharacter **)(in_stack_00000004[2].cloth_data + 0x54d0) = this_ptr;",
       "type": "stack_param"

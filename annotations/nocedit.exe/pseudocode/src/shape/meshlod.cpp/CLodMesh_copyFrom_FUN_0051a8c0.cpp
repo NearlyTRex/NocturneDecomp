@@ -52,12 +52,12 @@ shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *this_ptr,CLodMesh *so
   pSVar5 = source_mesh->submesh_data;
   pSVar9 = this_ptr->submesh_data;
   for (uVar1 = (uint)(this_ptr->submesh_count * 0x48) >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *(uint *)pSVar9->field0_0x0 = *(uint *)pSVar5->field0_0x0;
+    *(uint *)pSVar9->unk = *(uint *)pSVar5->unk;
     pSVar5 = (SLodSubmesh *)((int)pSVar5 + (uint)bVar11 * -8 + 4);
     pSVar9 = (SLodSubmesh *)((int)pSVar9 + (uint)bVar11 * -8 + 4);
   }
   for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pSVar9->field0_0x0[0] = pSVar5->field0_0x0[0];
+    pSVar9->unk[0] = pSVar5->unk[0];
     pSVar5 = (SLodSubmesh *)((int)pSVar5 + (uint)bVar11 * -2 + 1);
     pSVar9 = (SLodSubmesh *)((int)pSVar9 + (uint)bVar11 * -2 + 1);
   }

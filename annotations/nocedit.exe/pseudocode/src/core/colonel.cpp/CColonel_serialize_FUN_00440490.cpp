@@ -9,6 +9,6 @@
 void __cdecl core_colonel_cpp_CColonel_serialize_FUN_00440490(CColonel *this_ptr)
 
 {
-  core_hero_cpp_CHero_serialize_FUN_004f2610(&this_ptr->base_hero);
+  core_hero_cpp_CHero_serialize_FUN_004f2610(&this_ptr->base);
   return;
 }

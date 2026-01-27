@@ -40,16 +40,16 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
   CDemonActor *local_18;
   float fStack_14;
   
-  if ((*(int *)(in_stack_00000004->field13_0x2620 + 0x46c) == 0xe) &&
+  if ((*(int *)(in_stack_00000004->unk3 + 0x46c) == 0xe) &&
      (in_stack_00000004->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
-    in_stack_00000004->field13_0x2620[0x470] = '\0';
-    in_stack_00000004->field13_0x2620[0x471] = '\0';
-    in_stack_00000004->field13_0x2620[0x472] = '\0';
-    in_stack_00000004->field13_0x2620[0x473] = '\0';
-    in_stack_00000004->field13_0x2620[0x46c] = '\0';
-    in_stack_00000004->field13_0x2620[0x46d] = '\0';
-    in_stack_00000004->field13_0x2620[0x46e] = '\0';
-    in_stack_00000004->field13_0x2620[0x46f] = '\0';
+    in_stack_00000004->unk3[0x470] = '\0';
+    in_stack_00000004->unk3[0x471] = '\0';
+    in_stack_00000004->unk3[0x472] = '\0';
+    in_stack_00000004->unk3[0x473] = '\0';
+    in_stack_00000004->unk3[0x46c] = '\0';
+    in_stack_00000004->unk3[0x46d] = '\0';
+    in_stack_00000004->unk3[0x46e] = '\0';
+    in_stack_00000004->unk3[0x46f] = '\0';
   }
   local_40 = 0xffffffff;
   local_1c = (CInventory *)0x0;
@@ -99,7 +99,7 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
           if (70.0f < fVar1) {
             *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = 70.0f;
           }
-          if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x14) != 0) {
+          if (*(int *)(in_stack_00000004[1].base.actor_name + 0x14) != 0) {
             return;
           }
           goto switchD_005c56f5_caseD_8;
@@ -156,14 +156,13 @@ switchD_005c56f5_caseD_8:
         }
       }
     }
-    local_20 = *(int *)(in_stack_00000004->field13_0x2620 + 0x470);
+    local_20 = *(int *)(in_stack_00000004->unk3 + 0x470);
     iVar4 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(in_stack_00000004);
-    fStack_14 = (float)(*(int *)(in_stack_00000004->field13_0x2620 +
-                                *(int *)(in_stack_00000004->field13_0x2620 + 0x46c) * 0x38 + 0x38) *
-                       0x54c);
+    fStack_14 = (float)(*(int *)(in_stack_00000004->unk3 +
+                                *(int *)(in_stack_00000004->unk3 + 0x46c) * 0x38 + 0x38) * 0x54c);
     pCVar5 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(local_2c);
     local_38 = pCVar5->motions[0].motion_name + (int)fStack_14;
-    switch(*(uint *)(in_stack_00000004->field13_0x2620 + 0x46c)) {
+    switch(*(uint *)(in_stack_00000004->unk3 + 0x46c)) {
     case 6:
       local_24 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c),
@@ -173,7 +172,7 @@ switchD_005c56f5_caseD_8:
         lVar2 = 0xb / (longlong)*(int *)(local_38 + 100);
         fStack_14 = (float)lVar2;
         fVar3 = (float)(int)fStack_14;
-        fVar1 = *(float *)(in_stack_00000004->field13_0x2620 + 0x470);
+        fVar1 = *(float *)(in_stack_00000004->unk3 + 0x470);
         if (fVar3 < fVar1 || (fVar3 == fVar1) != 0) {
           core_dynamite_cpp_FUN_0049cf20
                     (CONCAT22((short)((ulonglong)lVar2 >> 0x10),
@@ -188,7 +187,7 @@ switchD_005c56f5_caseD_8:
     case 7:
       if (*(int *)(in_stack_00000004[2].cloth_data + 0x5558) == 3) {
         fStack_14 = (float)(0xb / (longlong)*(int *)(local_38 + 100));
-        if ((float)(int)fStack_14 <= *(float *)(in_stack_00000004->field13_0x2620 + 0x470)) {
+        if ((float)(int)fStack_14 <= *(float *)(in_stack_00000004->unk3 + 0x470)) {
           core_stranger_cpp_CStranger_FUN_005c51c0
                     (&CStack_50,(int)(0xb % (longlong)*(int *)(local_38 + 100)),in_stack_00000004,
                      local_38,in_stack_00000004,&CStack_50);
@@ -198,7 +197,7 @@ switchD_005c56f5_caseD_8:
           local_28 = local_34;
           if (local_34 != (CDemonActor *)0x0) {
             pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                               (&in_stack_00000004->base_actor,&CStack_5c,&CStack_50);
+                               (&in_stack_00000004->base,&CStack_5c,&CStack_50);
             if ((CVector3f *)(local_28[4].actor_name + 0x1c) != pCVar9) {
               ((CVector3f *)(local_28[4].actor_name + 0x1c))->x = pCVar9->x;
               local_28[4].location.position.x = pCVar9->y;
@@ -211,7 +210,7 @@ switchD_005c56f5_caseD_8:
             in_stack_00000004[2].cloth_data[0x554f] = '\0';
           }
           if (in_stack_00000004->carry_hands[1].carry_actor != (CDemonActor *)0x0) {
-            (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
+            (*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc21)();
           }
           in_stack_00000004[2].cloth_data[0x5558] = '\0';
           in_stack_00000004[2].cloth_data[0x5559] = '\0';
@@ -220,20 +219,19 @@ switchD_005c56f5_caseD_8:
           *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = 10.0f;
         }
       }
-      if (1.0 <= *(float *)(in_stack_00000004->field13_0x2620 + 0x470)) {
-        in_stack_00000004->field13_0x2620[0x46c] = '\0';
-        in_stack_00000004->field13_0x2620[0x46d] = '\0';
-        in_stack_00000004->field13_0x2620[0x46e] = '\0';
-        in_stack_00000004->field13_0x2620[0x46f] = '\0';
-        in_stack_00000004->field13_0x2620[0x470] = '\0';
-        in_stack_00000004->field13_0x2620[0x471] = '\0';
-        in_stack_00000004->field13_0x2620[0x472] = '\0';
-        in_stack_00000004->field13_0x2620[0x473] = '\0';
+      if (1.0 <= *(float *)(in_stack_00000004->unk3 + 0x470)) {
+        in_stack_00000004->unk3[0x46c] = '\0';
+        in_stack_00000004->unk3[0x46d] = '\0';
+        in_stack_00000004->unk3[0x46e] = '\0';
+        in_stack_00000004->unk3[0x46f] = '\0';
+        in_stack_00000004->unk3[0x470] = '\0';
+        in_stack_00000004->unk3[0x471] = '\0';
+        in_stack_00000004->unk3[0x472] = '\0';
+        in_stack_00000004->unk3[0x473] = '\0';
       }
       break;
     case 8:
-      if (((local_20 < 0x3f19999a) &&
-          (0x3f199999 < *(int *)(in_stack_00000004->field13_0x2620 + 0x470))) &&
+      if (((local_20 < 0x3f19999a) && (0x3f199999 < *(int *)(in_stack_00000004->unk3 + 0x470))) &&
          (iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0
                             (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c),
                              "CShotgun"), iVar6 != 0)) {
@@ -242,16 +240,14 @@ switchD_005c56f5_caseD_8:
       }
       break;
     case 0xc:
-      if (((local_20 < 0x3ebd70a4) &&
-          (0x3ebd70a3 < *(int *)(in_stack_00000004->field13_0x2620 + 0x470))) &&
+      if (((local_20 < 0x3ebd70a4) && (0x3ebd70a3 < *(int *)(in_stack_00000004->unk3 + 0x470))) &&
          (*(int *)(in_stack_00000004[2].cloth_data + 0x554c) != 0)) {
         (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x554c) + 0x154) + 0x70))()
         ;
       }
       break;
     case 0xd:
-      if (((local_20 < 0x3f28f5c3) &&
-          (0x3f28f5c2 < *(int *)(in_stack_00000004->field13_0x2620 + 0x470))) &&
+      if (((local_20 < 0x3f28f5c3) && (0x3f28f5c2 < *(int *)(in_stack_00000004->unk3 + 0x470))) &&
          (*(int *)(in_stack_00000004[2].cloth_data + 0x554c) != 0)) {
         (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x554c) + 0x154) + 0x70))()
         ;

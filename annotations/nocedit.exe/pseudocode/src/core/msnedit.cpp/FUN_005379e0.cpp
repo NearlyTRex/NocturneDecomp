@@ -37,9 +37,9 @@ LAB_005379f3:
       string_data = (char *)(in_stack_fffff2fc >> 0x20);
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_5b0);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_5b0.base_strlist,"Randomize all enemies with randomizeMe flag set.");
+                (&local_5b0.base,"Randomize all enemies with randomizeMe flag set.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_5b0.base_strlist,"Randomize enemy speeds for specific enemies.");
+                (&local_5b0.base,"Randomize enemy speeds for specific enemies.");
       config_param1 =
            shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                      (&local_5b0,"Enemy randomizer",config_param1,0);
@@ -86,8 +86,8 @@ LAB_00537aa5:
     }
     else {
       iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                        (g_CEditorToolsPtr,"Enter minimum random speed",&0x3F666666,1,0.01,
-                         100.0,1);
+                        (g_CEditorToolsPtr,"Enter minimum random speed",&0.9f,1,
+                         0.01,100.0,1);
       if (iVar4 == 0) {
         in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -96,8 +96,8 @@ LAB_00537aa5:
       }
       else {
         iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                          (g_CEditorToolsPtr,"Enter maximum random speed",&0x3F8CCCCD,1,
-                           0x3F666666,100.0,1);
+                          (g_CEditorToolsPtr,"Enter maximum random speed",&1.1f,1,
+                           0.9f,100.0,1);
         if (iVar4 == 0) {
           in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -107,9 +107,9 @@ LAB_00537aa5:
         else {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_958);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&CStack_958.base_strlist,"Randomize speed for specified enemies with randomizeMe flag set");
+                    (&CStack_958.base,"Randomize speed for specified enemies with randomizeMe flag set");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&CStack_958.base_strlist,"Randomize speed for all specified enemies");
+                    (&CStack_958.base,"Randomize speed for all specified enemies");
           iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                             (&CStack_958,"Randomize speeds",DAT_02f797e0,0);
           if (-1 < iVar4) {
@@ -125,7 +125,8 @@ LAB_00537aa5:
                    iVar4 != 0)))) &&
                  (iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                                     (&DAT_00680580,pCVar3->actor_name,0), iVar4 != 0)) {
-                fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0x3F666666,0x3F8CCCCD);
+                fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+                                      (0.9f,1.1f);
                 pCVar2 = (pCVar3->vtable)._ub;
                 *(float *)(pCVar3[0x8d].create_event + 0x34) = fStack_14;
                 (*pCVar2->setup)(pCVar3);

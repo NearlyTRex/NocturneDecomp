@@ -13,13 +13,13 @@ void __cdecl core_dog_cpp_CZombieDog_setup_FUN_0047f0c0(CZombieDog *this_ptr)
   CSkeleton *this_ptr_01;
   int iVar1;
   
-  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
+  this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine1");
-  *(int *)(this_ptr->field1_0xbeb4 + 8) = iVar1;
+  *(int *)(this_ptr->unk + 8) = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
-  *(int *)(this_ptr->field1_0xbeb4 + 0xc) = iVar1;
-  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
+  *(int *)(this_ptr->unk + 0xc) = iVar1;
+  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base);
   return;
 }

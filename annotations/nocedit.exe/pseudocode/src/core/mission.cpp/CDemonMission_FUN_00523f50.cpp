@@ -20,14 +20,14 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523f50(CDemonMission *this_ptr
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
   this_ptr_00 = g_CDemonSetPtr;
   g_HeroCount = 0;
-  this_ptr->field6_0x54c[0x338] = '\0';
-  this_ptr->field6_0x54c[0x339] = '\0';
-  this_ptr->field6_0x54c[0x33a] = '\0';
-  this_ptr->field6_0x54c[0x33b] = '\0';
+  this_ptr->unk4[0x338] = '\0';
+  this_ptr->unk4[0x339] = '\0';
+  this_ptr->unk4[0x33a] = '\0';
+  this_ptr->unk4[0x33b] = '\0';
   core_setcolid_cpp_CDemonSet_FUN_00574560(this_ptr_00);
-  this_ptr->field6_0x54c[0x14] = '\0';
-  this_ptr->field6_0x54c[0x15] = '\0';
-  this_ptr->field6_0x54c[0x16] = '\0';
-  this_ptr->field6_0x54c[0x17] = '\0';
+  this_ptr->unk4[0x14] = '\0';
+  this_ptr->unk4[0x15] = '\0';
+  this_ptr->unk4[0x16] = '\0';
+  this_ptr->unk4[0x17] = '\0';
   return;
 }

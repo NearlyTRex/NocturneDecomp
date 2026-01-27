@@ -17,8 +17,8 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_CheatFlags
 ;   int g_DebugRecording
-;   undefined4 g_DebugRecordingParams
-;   undefined4 DAT_02d831bc
+;   int g_DebugRecordingParams
+;   float FLOAT_02d831bc
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
@@ -44,7 +44,7 @@ section .text
     XOR EDX,EDX                         ; 004d7752
     PUSH EBX                            ; 004d7754 | g_CEditorToolsInstance
     MOV dword ptr [0x02d831b4],EDX      ; 004d7755 | g_DebugRecording
-    MOV dword ptr [0x02d831bc],EDX      ; 004d775b | DAT_02d831bc
+    MOV dword ptr [0x02d831bc],EDX      ; 004d775b | FLOAT_02d831bc
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004d7761
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d7766

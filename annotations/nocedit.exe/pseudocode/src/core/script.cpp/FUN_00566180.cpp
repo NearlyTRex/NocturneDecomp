@@ -27,7 +27,7 @@ void core_script_cpp_FUN_00566180(void)
   file_ptr = engine_dosio_c_getFile_FUN_00481a50("world",in_stack_00000008,"wt");
   if (file_ptr != (FILE *)0x0) {
     iVar1 = 0;
-    DAT_0310fd10 = 0;
+    CEdScrollBar_0310fd0c.current_value = 0;
     while( true ) {
       iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(font_ptr);
       if (iVar2 <= iVar1) break;

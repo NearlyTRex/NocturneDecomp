@@ -1,0 +1,420 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 23,
+        "line": 32,
+        "message": "cast from 'CDemonActor_vtable*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 49,
+        "message": "cast from 'CCourseFrameList*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 59,
+        "message": "cast from 'CCourse*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 60,
+        "message": "invalid cast from type 'float' to type 'CCourseFrameList*'"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 62,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 63,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 66,
+        "message": "cast from 'CCourse*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 67,
+        "message": "cast from 'CCourse*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 68,
+        "message": "cast from 'CCourseFrameList*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 86,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 34,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 50,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 59,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 62,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 63,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 66,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 67,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 88,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 89,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 115,
+    "complexity_score": 224,
+    "cross_reference_count": 4,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 84,
+    "suspect_count": 13,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_cast"
+    ],
+    "total_lines": 199
+  },
+  "cross_references": [
+    {
+      "addr": "00441ca0",
+      "from_addr": "00441ca7",
+      "name": "core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00520f20",
+      "from_addr": "00520f25",
+      "name": "core_minecar.cpp_FUN_00520f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00520e50",
+      "from_addr": "00520e6a",
+      "name": "core_minecar.cpp_factoryFunc_FUN_00520e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c810",
+      "from_addr": "0054c82a",
+      "name": "core_platfrm.cpp_factoryFunc_FUN_0054c810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054c850",
+    "address_range": [
+      [
+        "0054c850",
+        "0054ca1c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_ctor_FUN_0054c850",
+    "signature": "CPlatform * core_platfrm.cpp_CPlatform_ctor_FUN_0054c850(CPlatform * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "004424c0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_ctor_FUN_004424c0"
+    },
+    {
+      "addr": "00478ce0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005f7b20",
+      "is_variadic": false,
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f774",
+      "name": "s_slider1_kfm_0063f774",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006622a4",
+      "name": "g_CPlatformVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00520f25",
+        "call_type": "direct",
+        "caller": "core_minecar.cpp_FUN_00520f20",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00441ca7",
+        "call_type": "direct",
+        "caller": "core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00520e6a",
+        "call_type": "direct",
+        "caller": "core_minecar.cpp_factoryFunc_FUN_00520e50",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054c82a",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_factoryFunc_FUN_0054c810",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.363636363636363,
+    "instruction_count": 99,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 97,
+      "INT_ADD": 77,
+      "INT_AND": 26,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LESS": 4,
+      "INT_MULT": 16,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 34,
+      "INT_ZEXT": 16,
+      "LOAD": 19,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 55
+    },
+    "pcode_op_count": 432
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 34,
+      "match": "pCVar5[-5].",
+      "text": "pCVar5[-5].len = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 35,
+      "match": "pCVar5[-5].",
+      "text": "pCVar5[-5].loop = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar5[-3].",
+      "text": "pCVar5[-3].len = 0x40000000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 37,
+      "match": "pCVar5[-4].",
+      "text": "pCVar5[-4].loop = 0x40000000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pCVar5[-5].",
+      "text": "pCVar5[-5].frame_list = (CCourseFrameList *)0x0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
+      "match": "pCVar5[-3].",
+      "text": "*(byte *)&pCVar5[-3].frame_list = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "puVar8 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)",
+      "text": "puVar7 = (uint *)((int)&local_14 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)",
+      "text": "*puVar8 = *(uint *)((int)&local_14 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(uint *)((int)",
+      "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)",
+      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 75,
+      "match": "pCVar5[-4].",
+      "text": "pCVar5[-4].len = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 76,
+      "match": "pCVar5[-4].",
+      "text": "pCVar5[-4].frame_list = (CCourseFrameList *)0x0;",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPlatform",
+        "offset": 0,
+        "vtable_addr": "0065c044"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

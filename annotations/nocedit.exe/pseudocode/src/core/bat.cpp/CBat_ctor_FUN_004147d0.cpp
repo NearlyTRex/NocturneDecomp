@@ -16,7 +16,7 @@ CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_004147d0(CBat *this_ptr)
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)&pCVar2[1].location);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                           ((CKeyFramedModelInstance *)&pCVar3[1].frame_list);

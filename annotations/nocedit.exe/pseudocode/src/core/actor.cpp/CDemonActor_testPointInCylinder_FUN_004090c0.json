@@ -8,16 +8,16 @@
         "message": "invalid cast from type 'void*' to type 'float'"
       },
       {
-        "category": "missing_member",
-        "column": 23,
+        "category": "other",
+        "column": 7,
         "line": 28,
-        "message": "'SCollisionInfo' {aka 'struct SCollisionInfo'} has no member named 'field9_0x24'; did you mean 'field_4'?"
+        "message": "invalid cast from type 'void*' to type 'float'"
       },
       {
-        "category": "missing_member",
-        "column": 23,
-        "line": 29,
-        "message": "'SCollisionInfo' {aka 'struct SCollisionInfo'} has no member named 'field9_0x24'; did you mean 'field_4'?"
+        "category": "other",
+        "column": 52,
+        "line": 28,
+        "message": "invalid cast from type 'void*' to type 'float'"
       }
     ],
     "success": false,
@@ -32,16 +32,16 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 78,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 5,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -189,14 +189,14 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000014",
-      "text": "((float)local_30.field9_0x24 + in_stack_00000014) *",
+      "text": "((float)local_30.unk5 + in_stack_00000014) * ((float)local_30.unk5 + in_stack_00000014))) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000014",
-      "text": "((float)local_30.field9_0x24 + in_stack_00000014))) {",
+      "text": "((float)local_30.unk5 + in_stack_00000014) * ((float)local_30.unk5 + in_stack_00000014))) {",
       "type": "stack_param"
     }
   ],

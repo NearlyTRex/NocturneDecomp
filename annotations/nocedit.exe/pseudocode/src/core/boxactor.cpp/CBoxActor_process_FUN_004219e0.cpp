@@ -32,11 +32,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
   int local_20;
   float local_1c;
   
-  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->model_name);
+  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   iVar9 = pCVar4->frame_count;
-  fVar5 = this_ptr->fps + (float)this_ptr->field7_0x310;
-  this_ptr->field7_0x310 = (int)fVar5;
+  fVar5 = this_ptr->fps + (float)this_ptr->unk2;
+  this_ptr->unk2 = (int)fVar5;
   local_2c = crt_math_c_floor_FUN_005feb90((double)fVar5);
   dVar8 = crt_math_c_round_FUN_005fe6b0(local_2c);
   iStack_24 = (int)ROUND(dVar8);
@@ -84,16 +83,16 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
-  if ((this_ptr_00[2].validation_magic == 0) && (0.0 < this_ptr_00[2].field12_0xe0.x)) {
+  if ((this_ptr_00[2].validation_magic == 0) && (0.0 < this_ptr_00[2].unk3.x)) {
     CStack_74.y = (this_ptr_00->location).position.x;
     CStack_74.z = (this_ptr_00->location).position.y;
     local_68._0_4_ = (this_ptr_00->location).position.z;
-    core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)&this_ptr_00[2].field12_0xe0.y,delta_time);
-    pfVar1 = &this_ptr_00[2].field13_0xec.y;
+    core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)&this_ptr_00[2].unk3.y,delta_time);
+    pfVar1 = &this_ptr_00[2].unk4.y;
     if (&this_ptr_00->orient != (COrientation *)pfVar1) {
       (this_ptr_00->orient).pitch = *pfVar1;
-      (this_ptr_00->orient).bank = this_ptr_00[2].field13_0xec.z;
-      (this_ptr_00->orient).heading = (float)this_ptr_00[2].field14_0xf8;
+      (this_ptr_00->orient).bank = this_ptr_00[2].unk4.z;
+      (this_ptr_00->orient).heading = (float)this_ptr_00[2].unk5;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr_00);
     pCVar6 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)
@@ -109,20 +108,19 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
     CStack_74.z = -(float)local_68._20_4_;
     pCVar7 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                        (this_ptr_00,(CVector3f *)(local_68 + 0x30),&CStack_74);
-    local_68._24_4_ = this_ptr_00[2].field12_0xe0.y + pCVar7->x;
-    local_68._28_4_ = this_ptr_00[2].field12_0xe0.z + pCVar7->y;
-    local_68._32_4_ = this_ptr_00[2].field13_0xec.x + pCVar7->z;
+    local_68._24_4_ = this_ptr_00[2].unk3.y + pCVar7->x;
+    local_68._28_4_ = this_ptr_00[2].unk3.z + pCVar7->y;
+    local_68._32_4_ = this_ptr_00[2].unk4.x + pCVar7->z;
     (this_ptr_00->location).position.x = (float)local_68._24_4_;
     (this_ptr_00->location).position.y = (float)local_68._28_4_;
     (this_ptr_00->location).position.z = (float)local_68._32_4_;
     fVar5 = this_ptr_00[2].previous_transform_state.position.x;
     fVar2 = this_ptr_00[2].previous_transform_state.position.y;
     fVar5 = SQRT(fVar2 * fVar2 +
-                 (float)this_ptr_00[2].field23_0x124 * (float)this_ptr_00[2].field23_0x124 +
-                 fVar5 * fVar5);
+                 (float)this_ptr_00[2].unk12 * (float)this_ptr_00[2].unk12 + fVar5 * fVar5);
     if ((float)3 < fVar5) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_d4);
-      auStack_d4._4_4_ = fVar5 * this_ptr_00[2].field12_0xe0.x * 0.2f;
+      auStack_d4._4_4_ = fVar5 * this_ptr_00[2].unk3.x * 0.2f;
       core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
                 (g_CDemonSetPtr,(SDamageInfo *)local_68,&(this_ptr_00->location).position,auStack_d4
                 );

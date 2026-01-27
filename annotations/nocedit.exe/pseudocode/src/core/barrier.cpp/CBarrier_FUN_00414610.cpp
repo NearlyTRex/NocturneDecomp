@@ -11,7 +11,7 @@ void __cdecl core_barrier_cpp_CBarrier_FUN_00414610(CBarrier *this_ptr)
 {
   int *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);
+  core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"With CTRL held down, use slew keys to size box.");
   *in_stack_00000008 = *in_stack_00000008 + 0xb;

@@ -18,19 +18,16 @@ void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
   SMotion *pSVar4;
   CCharacter *in_stack_00000004;
   
-  if (g_CNetGameInstance->connection_type != 0) {
+  if (g_CNetGamePtr->connection_type != 0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 0x130;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar3 = g_LocalHeroIndex;
-  (in_stack_00000004->base_actor).scale.x =
-       (g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.scale.x;
-  (in_stack_00000004->base_actor).scale.y = (g_HeroActors[iVar3]->base_character).base_actor.scale.y
-  ;
+  (in_stack_00000004->base).scale.x = (g_HeroActors[g_LocalHeroIndex]->base).base.scale.x;
+  (in_stack_00000004->base).scale.y = (g_HeroActors[iVar3]->base).base.scale.y;
   fVar1 = *(float *)(in_stack_00000004[6].cloth_data + 0x2ae0);
-  (in_stack_00000004->base_actor).scale.z = (g_HeroActors[iVar3]->base_character).base_actor.scale.z
-  ;
+  (in_stack_00000004->base).scale.z = (g_HeroActors[iVar3]->base).base.scale.z;
   if (0.0 <= fVar1) {
     core_mimic_cpp_CMimic_processMorph_FUN_00520ba0();
     return;
@@ -40,20 +37,19 @@ void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
     if (*(int *)(in_stack_00000004[6].cloth_data + 0x1e84) < 2) {
       if ((*(int *)(in_stack_00000004[6].cloth_data + 0x1e84) < 1) &&
          (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                            (g_CEventListPtr,(char *)&in_stack_00000004[1].base_actor.is_transparent
-                            ), iVar3 != 0)) {
+                            (g_CEventListPtr,(char *)&in_stack_00000004[1].base.is_transparent),
+         iVar3 != 0)) {
         in_stack_00000004[6].cloth_data[0x1e84] = '\x01';
         in_stack_00000004[6].cloth_data[0x1e85] = '\0';
         in_stack_00000004[6].cloth_data[0x1e86] = '\0';
         in_stack_00000004[6].cloth_data[0x1e87] = '\0';
       }
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                        (g_CEventListPtr,in_stack_00000004[1].base_actor.create_event + 0x20);
+                        (g_CEventListPtr,in_stack_00000004[1].base.create_event + 0x20);
       if ((iVar3 != 0) &&
          (core_mimic_cpp_FUN_0051f930(), *(int *)(in_stack_00000004[6].cloth_data + 0x1e84) == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                           (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.
-                             motion_controller);
+                           (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
         uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0051f8da:

@@ -2,45 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 26,
-        "line": 45,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field4_0x1fab8'"
-      },
-      {
-        "category": "missing_member",
-        "column": 91,
-        "line": 60,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 64,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field4_0x1fab8'"
-      },
-      {
-        "category": "missing_member",
-        "column": 91,
-        "line": 85,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 89,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field4_0x1fab8'"
-      },
-      {
-        "category": "missing_member",
-        "column": 91,
-        "line": 111,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
         "column": 30,
-        "line": 122,
+        "line": 119,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -54,25 +18,25 @@
       },
       {
         "category": "other",
-        "column": 38,
+        "column": 26,
         "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 122,
+        "line": 119,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 306,
+    "complexity_score": 303,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 118,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
@@ -81,7 +45,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 404
+    "total_lines": 401
   },
   "cross_references": [],
   "function": {
@@ -622,54 +586,54 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000008",
-      "text": "((this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
+      "text": "((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000008",
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
+      "text": "*(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,local_1d4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 77,
       "match": "in_stack_00000008",
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
+      "text": "*(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,local_264);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 102,
       "match": "in_stack_00000008",
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
+      "text": "*(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,&local_174);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 112,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 120,
+      "line": 117,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = *pfVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 122,
+      "line": 119,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 122,
+      "line": 119,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"

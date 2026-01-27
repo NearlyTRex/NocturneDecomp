@@ -37,7 +37,7 @@ uint core_marquee_cpp_FUN_0050c050(void)
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&DAT_0067d150);
     this_ptr = (CCourse *)&in_stack_00000004[1].orient_matrix.m[1].y;
-    if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
+    if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
       fVar1 = in_stack_00000004[1].orient_matrix.m[1].x;
       if (fVar1 == 1.4013e-45) {
         dVar5 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004[1].location.position.y);

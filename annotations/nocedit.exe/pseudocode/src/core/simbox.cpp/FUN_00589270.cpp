@@ -15,8 +15,8 @@ void __cdecl core_simbox_cpp_FUN_00589270(CSimBox *this_ptr)
   char *pcVar4;
   char *in_stack_0000000c;
   
-  pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                     (&this_ptr->base_actor,g_CSimBoxClassInfo.name_hash);
+  pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(&this_ptr->base,g_CSimBoxClassInfo.name_hash)
+  ;
   fVar2 = pCVar3[2].location.position.y;
   if (fVar2 == 0.0) {
     pcVar4 = "Demo";

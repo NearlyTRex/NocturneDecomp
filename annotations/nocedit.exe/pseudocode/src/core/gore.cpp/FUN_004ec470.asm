@@ -20,9 +20,9 @@
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02d83368.base.count
-;   undefined4 DAT_02d83380
-;   undefined4 DAT_02d83384
-;   undefined4 DAT_02d83388
+;   int INT_02d83380
+;   int INT_02d83384
+;   int INT_02d83388
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -46,10 +46,10 @@ section .text
     PUSH 0xffff                         ; 004ec492
     XOR ECX,ECX                         ; 004ec497
     MOV dword ptr [0x02d8336c],EDX      ; 004ec499 | DAT_02d83368.base.count
-    MOV dword ptr [0x02d83380],ECX      ; 004ec49f | DAT_02d83380
-    MOV dword ptr [0x02d83384],EBX      ; 004ec4a5 | DAT_02d83384
-    MOV dword ptr [0x02d83388],ESI      ; 004ec4ab | DAT_02d83388
-    MOV dword ptr [0x02d8338c],EDI      ; 004ec4b1 | DAT_02d8338c
+    MOV dword ptr [0x02d83380],ECX      ; 004ec49f | INT_02d83380
+    MOV dword ptr [0x02d83384],EBX      ; 004ec4a5 | INT_02d83384
+    MOV dword ptr [0x02d83388],ESI      ; 004ec4ab | INT_02d83388
+    MOV dword ptr [0x02d8338c],EDI      ; 004ec4b1 | INT_02d8338c
     MOV dword ptr [0x0068802c],EBP      ; 004ec4b7 | g_RenderVertexBuffer[0].u
     MOV [0x00688030],EAX                ; 004ec4bd | g_RenderVertexBuffer[0].v
     MOV [0x0068805c],EAX                ; 004ec4c2 | g_RenderVertexBuffer[1].u

@@ -17,11 +17,11 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a420(CMansionPuzzleCir
   *in_stack_00000014 = 0.0;
   *in_stack_00000010 = *in_stack_00000014;
   *in_stack_0000000c = *in_stack_00000010;
-  if ((*(int *)(this_ptr->field6_0x5f4 + in_stack_00000008 * 100 + -4) != 0) &&
-     ((*(uint *)(this_ptr->field6_0x5f4 + in_stack_00000008 * 100 + 4) & 0x7fffffff) == 0)) {
-    *in_stack_0000000c = (float)*(int *)(this_ptr->field10_0x648 + in_stack_00000008 * 100 + -0xc);
-    *in_stack_00000010 = (float)*(int *)(this_ptr->field10_0x648 + in_stack_00000008 * 100 + -8);
-    *in_stack_00000014 = (float)*(int *)(this_ptr->field10_0x648 + in_stack_00000008 * 100 + -4);
+  if ((*(int *)(this_ptr->unk2 + in_stack_00000008 * 100 + -4) != 0) &&
+     ((*(uint *)(this_ptr->unk2 + in_stack_00000008 * 100 + 4) & 0x7fffffff) == 0)) {
+    *in_stack_0000000c = (float)*(int *)(this_ptr->unk3 + in_stack_00000008 * 100 + -0xc);
+    *in_stack_00000010 = (float)*(int *)(this_ptr->unk3 + in_stack_00000008 * 100 + -8);
+    *in_stack_00000014 = (float)*(int *)(this_ptr->unk3 + in_stack_00000008 * 100 + -4);
     return;
   }
   return;

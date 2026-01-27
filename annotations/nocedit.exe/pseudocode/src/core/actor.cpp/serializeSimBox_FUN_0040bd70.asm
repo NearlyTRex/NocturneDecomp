@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 at 00419a05
-;   core_boxactor.cpp_CBoxActor_load_FUN_00422060 at 00422190
+;   core_boxactor.cpp_CBoxActor_serialize_FUN_00422060 at 00422190
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sim_box_state_info_openi_0061402e

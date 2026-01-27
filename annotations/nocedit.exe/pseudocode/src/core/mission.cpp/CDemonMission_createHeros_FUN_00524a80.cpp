@@ -22,17 +22,17 @@ core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,
     *(uint *)((int)g_HeroActors + iVar4) = 0;
     iVar4 = iVar2;
   } while (iVar2 != 0x10);
-  if (g_CNetGameInstance->connection_type == 0) {
+  if (g_CNetGamePtr->connection_type == 0) {
     g_HeroCount = 1;
-    g_LocalHeroIndex = g_CNetGameInstance->connection_type;
+    g_LocalHeroIndex = g_CNetGamePtr->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(this_ptr);
     if (iVar4 == 0) {
       return 0;
     }
-    *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = g_CGamePtr->aim_mode;
+    *(int *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x13908) = g_CGamePtr->aim_mode;
   }
   else {
-    g_HeroCount = g_CNetGameInstance->player_count;
+    g_HeroCount = g_CNetGamePtr->player_count;
     if (3 < g_HeroCount) {
       g_CurrentFilename = "..\\core\\mission.cpp";
       g_CurrentLineNumber = 0x639;
@@ -50,12 +50,12 @@ core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,
         *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0xbe28) = 1;
         iVar4 = iVar4 + 1;
         *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0x1f734) =
-             *(uint *)(g_CNetGameInstance->players[0].name + iVar3 + 0x18);
+             *(uint *)(g_CNetGamePtr->players[0].name + iVar3 + 0x18);
         iVar3 = iVar3 + 0x78;
         iVar2 = iVar2 + 4;
       } while (iVar4 < g_HeroCount);
     }
-    g_LocalHeroIndex = g_CNetGameInstance->local_player_index;
+    g_LocalHeroIndex = g_CNetGamePtr->local_player_index;
   }
   g_HeroActors[g_LocalHeroIndex]->control_type = 0;
   actor_ptr = this_ptr->first_actor;

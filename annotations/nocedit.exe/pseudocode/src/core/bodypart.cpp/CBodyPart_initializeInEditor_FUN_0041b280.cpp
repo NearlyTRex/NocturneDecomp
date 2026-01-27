@@ -67,16 +67,16 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
         crt_stdio_c_sprintf_FUN_005fdbd0(local_e0,"%s\t%s",pSVar5,pcVar4);
         iVar3 = iVar3 + 4;
         iVar6 = iVar6 + 1;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_58c.base_strlist,local_e0);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_58c.base,local_e0);
       } while (iVar6 < iVar2);
     }
     if (bVar1) {
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_58c.base_strlist,"(Done)");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_58c.base,"(Done)");
     }
     local_18 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                          (&local_58c,"Select which part(s) to dismember",local_18,0);
     if (local_18 < 0) break;
-    if ((bVar1) && (local_18 == local_58c.base_strlist.item_count + -1)) {
+    if ((bVar1) && (local_18 == local_58c.base.item_count + -1)) {
       iVar6 = 0;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,(uint)in_stack_ffffd7c8,

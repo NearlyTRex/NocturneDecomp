@@ -25,7 +25,7 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
         g_CurrentLineNumber = 0xab2;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setCounter - too many counters!");
       }
-      pcVar5 = this_ptr->field16_0x3380 + this_ptr->counter_count * 0x20;
+      pcVar5 = this_ptr->unk6 + this_ptr->counter_count * 0x20;
       do {
         cVar2 = *in_stack_00000008;
         *pcVar5 = cVar2;
@@ -47,8 +47,8 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
       iVar4 = this_ptr->counter_count + -1;
       this_ptr->counter_count = iVar4;
       crt_string_c_memmove_FUN_005fe5e0
-                (this_ptr->field16_0x3380 + iVar3 * 0x20,
-                 this_ptr->field16_0x3380 + iVar3 * 0x20 + 0x20,(iVar4 - iVar3) * 0x20);
+                (this_ptr->unk6 + iVar3 * 0x20,this_ptr->unk6 + iVar3 * 0x20 + 0x20,
+                 (iVar4 - iVar3) * 0x20);
       crt_string_c_memmove_FUN_005fe5e0
                 (this_ptr->variablesVarName1 + iVar1 + -0x2c,
                  this_ptr->variablesVarName1 + iVar1 + -0x28,(this_ptr->counter_count - iVar3) * 4);

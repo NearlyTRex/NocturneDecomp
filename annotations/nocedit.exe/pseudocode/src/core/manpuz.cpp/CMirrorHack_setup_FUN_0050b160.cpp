@@ -9,8 +9,8 @@
 void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_0050b160(CMirrorHack *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+            ((CKeyFramedModelInstance *)this_ptr->unk);
   return;
 }

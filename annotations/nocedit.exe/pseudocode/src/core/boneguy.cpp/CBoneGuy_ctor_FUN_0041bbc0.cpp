@@ -20,10 +20,9 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   double dVar8;
   float local_20;
   
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   dest = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                   (pCVar4[1].base_character.base_actor.create_event + 0x10,0x14,
-                    &g_SBoneGuyBoxTypeInfo);
+                   (pCVar4[1].base.base.create_event + 0x10,0x14,&g_SBoneGuyBoxTypeInfo);
   *(CDemonActor_vtable **)((int)dest + -0xbde8) = &g_CBoneGuyVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             ((CDeformableModelInstance *)((int)dest + -0xbde4),"boneguy.dfm");

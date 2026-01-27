@@ -38,7 +38,7 @@ core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
   } while (cVar1 != '\0');
   pCVar3->auto_update_flag = 0;
   pCVar3->enabled_flag = 1;
-  pCVar3->field8_0x6c[0x18] = '\0';
+  pCVar3->unknown[0x18] = '\0';
   pCVar3->data_ptr = data_ptr;
   pCVar3->validator_or_callback = callback_or_extra;
   return (int)pCVar3;

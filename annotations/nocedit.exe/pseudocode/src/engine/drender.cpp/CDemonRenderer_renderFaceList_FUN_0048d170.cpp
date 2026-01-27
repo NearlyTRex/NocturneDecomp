@@ -37,7 +37,7 @@ engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
             local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
             local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
             local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
-            if (this_ptr->field8_0x20 == 0) {
+            if (this_ptr->unk == 0) {
               this_ptr->vertex_buffer_ptr[local_24.x].u = (float)((uint)face_array->u_coord_0 << 8);
               this_ptr->vertex_buffer_ptr[local_24.x].v = (float)((uint)face_array->v_coord_0 << 8);
               this_ptr->vertex_buffer_ptr[local_24.y].u = (float)((uint)face_array->u_coord_1 << 8);

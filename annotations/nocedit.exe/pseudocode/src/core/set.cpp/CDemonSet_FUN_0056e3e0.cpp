@@ -25,7 +25,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr)
   float local_3c;
   float local_38;
   
-  iVar4 = DAT_02d7a7b8;
+  iVar4 = INT_02d7a7b8;
   iVar6 = 0;
   local_3c = 0.0;
   local_40 = 0.0;
@@ -37,7 +37,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr)
         fVar5 = *(float *)(iVar1 + 0x104) - (*in_stack_00000008 + *in_stack_0000000c);
         fVar2 = *(float *)(iVar1 + 0x108) - (in_stack_00000008[1] + in_stack_0000000c[1]);
         fVar3 = *(float *)(iVar1 + 0x10c) - (in_stack_00000008[2] + in_stack_0000000c[2]);
-        fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + DAT_02d7a7b8);
+        fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + INT_02d7a7b8);
         if (fVar5 <= *(float *)(iVar1 + 0x11d4)) {
           fVar5 = 1.0 - fVar5 / *(float *)(iVar1 + 0x11d4);
           local_3c = *(float *)(iVar1 + 0x11c4) * fVar5 + local_3c;
@@ -69,6 +69,6 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr)
   dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
   g_RenderVertexBuffer[in_stack_00000010].color = (int)ROUND(dVar9) << 8;
   g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar8) << 8);
-  DAT_02d7a7b8 = iVar4;
+  INT_02d7a7b8 = iVar4;
   return;
 }

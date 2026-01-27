@@ -14,7 +14,7 @@ core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260
   CKeyFramedModel *pCVar1;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+                     ((CKeyFramedModelInstance *)this_ptr->unk);
   (out_box->min).x = (pCVar1->bounds_min).x;
   (out_box->min).y = (pCVar1->bounds_min).y;
   (out_box->min).z = (pCVar1->bounds_min).z;

@@ -11,6 +11,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cd50(CCharacter *this_ptr)
 {
   uint in_stack_00000008;
   
-  *(uint *)(this_ptr->field11_0x25a0 + 0x14) = in_stack_00000008;
+  *(uint *)(this_ptr->unk2 + 0x14) = in_stack_00000008;
   return;
 }

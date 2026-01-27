@@ -1,38 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 16,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 43,
-        "line": 22,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 36,
-        "line": 28,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 30,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 37,
-        "line": 31,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -55,23 +24,35 @@
       {
         "category": "other",
         "column": 25,
-        "line": 24,
+        "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 26,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 30,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 58,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 3,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 74
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -194,14 +175,14 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "(*(char **)(this_ptr->field6_0x54c + 0x33c),in_stack_00000008);",
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(*(char **)(this_ptr->unk4 + 0x33c),in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "(\"CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!\",in_stack_00000008,",
       "type": "stack_param"

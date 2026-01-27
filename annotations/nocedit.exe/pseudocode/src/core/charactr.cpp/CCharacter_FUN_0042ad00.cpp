@@ -60,7 +60,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
            (float)(&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] +
            (*(float *)(pCVar9->cloth_data + 0x498) * fVar2) / fVar3;
       iVar6 = iVar6 + 1;
-      pCVar9 = (CCharacter *)((pCVar9->base_actor).actor_name + 0x18);
+      pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
     } while (iVar6 < *(int *)(this_ptr->cloth_data + 0x478));
   }
   iVar6 = 0;

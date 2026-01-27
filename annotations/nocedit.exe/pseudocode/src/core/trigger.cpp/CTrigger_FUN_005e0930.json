@@ -1,32 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 15,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 16,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 57,
-        "line": 19,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 20,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -38,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 59,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 13,
     "suspect_count": 4,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [],
   "function": {
@@ -126,16 +101,16 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
-      "text": "if (((*in_stack_00000008 == 3) && (*(int *)(this_ptr->field1_0x158 + 0x1c) == 5)) &&",
+      "text": "if (((*in_stack_00000008 == 3) && (*(int *)(this_ptr->unk + 0x1c) == 5)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
-      "text": "(*(int *)(this_ptr->field1_0x158 + 0x19c) == in_stack_00000008[1])) {",
+      "text": "(*(int *)(this_ptr->unk + 0x19c) == in_stack_00000008[1])) {",
       "type": "stack_param"
     }
   ],

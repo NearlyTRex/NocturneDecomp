@@ -35,25 +35,24 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
   char *pcVar9;
   
   bVar10 = 0;
-  if (this_ptr->field101_0x38c[0x528] == '\0') {
+  if (this_ptr->unk13[0x528] == '\0') {
     return;
   }
-  pcVar9 = this_ptr->field101_0x38c + 0x528;
+  pcVar9 = this_ptr->unk13 + 0x528;
   this_ptr->cutscene_skippable = 0;
   iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",pcVar9);
   if (iVar2 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",pcVar9);
-    this_ptr->field101_0x38c[0x528] = '\0';
+    this_ptr->unk13[0x528] = '\0';
     return;
   }
-  iVar3 = *(int *)(this_ptr->field101_0x38c + 0x628) * *(int *)(this_ptr->field101_0x38c + 0x62c);
+  iVar3 = *(int *)(this_ptr->unk13 + 0x628) * *(int *)(this_ptr->unk13 + 0x62c);
   if (iVar2 != iVar3) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"%s is %d bytes, but expected %dx%d=%d byte file",pcVar9,
-               *(uint *)(this_ptr->field101_0x38c + 0x628),
-               *(int *)(this_ptr->field101_0x38c + 0x62c),iVar3);
-    this_ptr->field101_0x38c[0x528] = '\0';
+               *(uint *)(this_ptr->unk13 + 0x628),*(int *)(this_ptr->unk13 + 0x62c),iVar3);
+    this_ptr->unk13[0x528] = '\0';
     return;
   }
   crt_string_c_splitpath_FUN_005ff178(pcVar9,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
@@ -123,36 +122,35 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     local_18 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                         (*(int *)(this_ptr->field101_0x38c + 0x628) *
-                          *(int *)(this_ptr->field101_0x38c + 0x62c),"..\\core\\game.cpp",0x1016
-                         );
+                         (*(int *)(this_ptr->unk13 + 0x628) * *(int *)(this_ptr->unk13 + 0x62c),
+                          "..\\core\\game.cpp",0x1016);
     if (local_18 != (void *)0x0) {
       pFVar4 = engine_dosio_c_getFile_FUN_00481a50
-                         ("art",this_ptr->field101_0x38c + 0x528,"rb");
+                         ("art",this_ptr->unk13 + 0x528,"rb");
       if (pFVar4 == (FILE *)0x0) {
         g_CurrentFilename = "..\\core\\game.cpp";
         g_CurrentLineNumber = 0x101f;
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("Can't open %s",this_ptr->field101_0x38c + 0x528);
+                  ("Can't open %s",this_ptr->unk13 + 0x528);
       }
       crt_stdio_c_fread_FUN_005fd990
-                (local_18,*(SIZE_T *)(this_ptr->field101_0x38c + 0x628),
-                 *(SIZE_T *)(this_ptr->field101_0x38c + 0x62c),pFVar4);
+                (local_18,*(SIZE_T *)(this_ptr->unk13 + 0x628),*(SIZE_T *)(this_ptr->unk13 + 0x62c),
+                 pFVar4);
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\game.cpp",0x1021);
       local_1c = 0;
       if (0 < g_WindowHeight) {
         local_24 = 0;
         do {
-          local_14 = *(int *)(this_ptr->field101_0x38c + 0x628) *
-                     ((local_1c * *(int *)(this_ptr->field101_0x38c + 0x62c)) / g_WindowHeight);
+          local_14 = *(int *)(this_ptr->unk13 + 0x628) *
+                     ((local_1c * *(int *)(this_ptr->unk13 + 0x62c)) / g_WindowHeight);
           iVar2 = 0;
           if (0 < g_WindowWidth) {
             iVar3 = 0;
             iVar7 = 0;
             do {
               pbVar5 = (byte *)((int)local_18 +
-                               (*(int *)(this_ptr->field101_0x38c + 0x628) * iVar2) / g_WindowWidth
-                               + local_14);
+                               (*(int *)(this_ptr->unk13 + 0x628) * iVar2) / g_WindowWidth +
+                               local_14);
               if (g_BitsPerPixel == 0x10) {
                 local_28 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7);
                 *local_28 = auStack_330[*pbVar5];
@@ -195,11 +193,11 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(in_stack_0000000c);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_0000000c,in_stack_fffff5d8);
-      in_stack_0000000c->field101_0x38c[0x528] = '\0';
+      in_stack_0000000c->unk13[0x528] = '\0';
       shape_memdbg_cpp_debugFree_FUN_0050f460(unaff_EBP,"..\\core\\game.cpp",0x1057);
       return;
     }
   }
-  this_ptr->field101_0x38c[0x528] = '\0';
+  this_ptr->unk13[0x528] = '\0';
   return;
 }

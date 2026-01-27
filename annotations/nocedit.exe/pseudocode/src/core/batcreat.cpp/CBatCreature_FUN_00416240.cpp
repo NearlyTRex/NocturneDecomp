@@ -14,7 +14,7 @@ int __cdecl core_batcreat_cpp_CBatCreature_FUN_00416240(CBatCreature *this_ptr)
   CVector3f local_14;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base_enemy).base_character.model,&local_14,DAT_0082274c);
+                     (&(this_ptr->base).base.model,&local_14,DAT_0082274c);
   if (in_stack_00000008 == pCVar1) {
     return 1;
   }

@@ -7,7 +7,7 @@
 ; CHotDemon *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hotdemon.cpp_FUN_004f6c60 at 004f6c7a
+;   core_hotdemon.cpp_factoryFunc_FUN_004f6c60 at 004f6c7a
 ;   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 at 005c714c
 ;
 ; Referenced Globals:

@@ -41,16 +41,16 @@ void core_msnedit_cpp_HideActors_FUN_0053dcf0(void)
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b8);
       for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
           pCVar1 = pCVar1->next_actor) {
-        if (pCVar1->field26_0x148 == 0) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b8.base_strlist,pCVar1->actor_name);
+        if (pCVar1->unk14 == 0) {
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b8.base,pCVar1->actor_name);
         }
       }
       iVar4 = 0;
-      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_3b8.base_strlist);
+      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_3b8.base);
       while (iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_3b8,"Hide actors.  Press ESC When done.",iVar4,0), -1 < iVar4)
       {
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base_strlist,iVar4);
+        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base,iVar4);
         pcVar2 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000004);
         if (pcVar2 == (char *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
@@ -61,7 +61,7 @@ void core_msnedit_cpp_HideActors_FUN_0053dcf0(void)
         pcVar2[0x149] = '\0';
         pcVar2[0x14a] = '\0';
         pcVar2[0x14b] = '\0';
-        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_3b8.base_strlist,iVar4);
+        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_3b8.base,iVar4);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 (&local_3b8,0,in_stack_fffff8a0,in_stack_fffff8a4,(uint)in_stack_fffff8a8,
@@ -74,11 +74,11 @@ void core_msnedit_cpp_HideActors_FUN_0053dcf0(void)
       iVar4 = 0;
       for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
           pCVar1 = pCVar1->next_actor) {
-        if ((pCVar1->field26_0x148 == 0) &&
+        if ((pCVar1->unk14 == 0) &&
            (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                               (&DAT_00680660,pCVar1->actor_name,0), iVar3 != 0)) {
           iVar4 = iVar4 + 1;
-          pCVar1->field26_0x148 = 1;
+          pCVar1->unk14 = 1;
         }
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -91,10 +91,10 @@ void core_msnedit_cpp_HideActors_FUN_0053dcf0(void)
       iVar4 = 0;
       for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
           pCVar1 = pCVar1->next_actor) {
-        if ((pCVar1->field26_0x148 == 0) &&
+        if ((pCVar1->unk14 == 0) &&
            (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,&DAT_006806c8), iVar3 != 0)) {
           iVar4 = iVar4 + 1;
-          pCVar1->field26_0x148 = 1;
+          pCVar1->unk14 = 1;
         }
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0

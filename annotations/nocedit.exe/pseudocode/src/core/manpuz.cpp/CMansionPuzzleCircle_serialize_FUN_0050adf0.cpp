@@ -15,7 +15,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_serialize_FUN_0050adf0(CMansionPuzzleCircle
   int *int_ptr_00;
   int *int_ptr_01;
   
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   if (1 < g_CMansionPuzzleCircleClassVersion) {
     core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->gem_pos,"pGemPos");
     core_actor_cpp_serializeOrientation_FUN_0040b3e0(&this_ptr->gem_orient,"pGemOrient");
@@ -28,7 +28,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_serialize_FUN_0050adf0(CMansionPuzzleCircle
     int_ptr_00 = &this_ptr->red;
     do {
       core_actor_cpp_serializeInteger_FUN_0040b7f0
-                ((int *)(this_ptr->field6_0x5f4 + iVar1 * 100 + -4),"exists");
+                ((int *)(this_ptr->unk2 + iVar1 * 100 + -4),"exists");
       core_actor_cpp_serializeInteger_FUN_0040b7f0(int_ptr_00,"r");
       core_actor_cpp_serializeInteger_FUN_0040b7f0(int_ptr_01,"g");
       iVar1 = iVar1 + 1;

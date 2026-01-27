@@ -28,15 +28,15 @@ typedef struct CDemonSet {
     int ground_type; // 0x14d134
     CVector3f collision_impact_position; // 0x14d138
     struct CDemonActor* collision_actor; // 0x14d144
-    int field_1364296; // 0x14d148
-    int field_1364300; // 0x14d14c
+    int unk1; // 0x14d148
+    int unk2; // 0x14d14c
     float min_ambient_value; // 0x14d150
     void* actor_list_ptr; // 0x14d154
     char actor_list_data[96]; // 0x14d158
-    char field_1364408[7904]; // 0x14d1b8
+    char unk3[7904]; // 0x14d1b8
     int damage_listener_count; // 0x14f098
     void** damage_listeners; // 0x14f09c
-    char field_1372320[48088]; // 0x14f0a0
+    char unk4[48088]; // 0x14f0a0
     int per_pixel_lighting_enabled; // 0x15ac78
     int default_master_reverb; // 0x15ac7c
     int lighting_quality_mode; // 0x15ac80
@@ -57,13 +57,13 @@ typedef struct CDemonSet {
     int rendering_mode; // 0x15ae70
     CVector3i light_direction; // 0x15ae74
     int ambient_base_quick; // 0x15ae80
-    int field_1420932; // 0x15ae84
+    int unk5; // 0x15ae84
     int light_scale_factor; // 0x15ae88
     int color_scale_factor; // 0x15ae8c
     int fog_scale_factor; // 0x15ae90
     float set_scale_factor; // 0x15ae94
-    int field_1420952; // 0x15ae98
-    int field_1420956; // 0x15ae9c
+    int unk6; // 0x15ae98
+    int unk7; // 0x15ae9c
     int camera_enabled_flag; // 0x15aea0
     int selected_camera_index; // 0x15aea4
     int previous_best_camera_index; // 0x15aea8
@@ -77,10 +77,10 @@ typedef struct CDemonSet {
     SVDBox vdir_boxes[250]; // 0x15b414
     int default_ground_type; // 0x15f67c
     int ray_type; // 0x15f680
-    float field_1439364; // 0x15f684
-    float field_1439368; // 0x15f688
-    float field_1439372; // 0x15f68c
-    float field_1439376; // 0x15f690
+    float unk8; // 0x15f684
+    float unk9; // 0x15f688
+    float unk10; // 0x15f68c
+    float unk11; // 0x15f690
     int ignore_list_count; // 0x15f694
     int collision_flag; // 0x15f698
     struct CDemonActor* ignore_list[10]; // 0x15f69c
@@ -88,9 +88,9 @@ typedef struct CDemonSet {
     int voxel_distance; // 0x15f6c8
     CVector3f voxel_hit_point; // 0x15f6cc
     int voxel_surface_type; // 0x15f6d8
-    int field_1439452; // 0x15f6dc
+    int unk12; // 0x15f6dc
     int* rendering_flags_ptr; // 0x15f6e0
-    char field_1439460[8004]; // 0x15f6e4
+    char unk13[8004]; // 0x15f6e4
     int has_sky; // 0x161628
     char sky_texture_name[32]; // 0x16162c
     int sky_type; // 0x16164c

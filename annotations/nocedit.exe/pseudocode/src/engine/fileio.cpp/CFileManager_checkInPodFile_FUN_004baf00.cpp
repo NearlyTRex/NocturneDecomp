@@ -121,11 +121,11 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   if (local_30 != local_21f0) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1e2c);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_1e2c.base_strlist,"That's OK, check it in anyway.");
+              (&local_1e2c.base,"That's OK, check it in anyway.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_1e2c.base_strlist,"Oops.  Don't check the POD in.");
+              (&local_1e2c.base,"Oops.  Don't check the POD in.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_1e2c.base_strlist,"Show local file differences.");
+              (&local_1e2c.base,"Show local file differences.");
     crt_stdio_c_sprintf_FUN_005fdbd0(local_eac,"WARNING!\n\nYou are about to check in %s, which is not in sync\nwith your extracted files.  (Perhaps you forget to rebuild the\npod after making changes?)",local_77c);
     while( true ) {
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -208,12 +208,11 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
       (local_12b4.timestamp < (char *)(local_16dc.timestamp + 2))) &&
      (local_16dc.timestamp < (char *)(local_12b4.timestamp + 2))) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1a84);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1a84.base,"Undo the checkout.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_1a84.base_strlist,"Undo the checkout.");
+              (&local_1a84.base,"Yes, I did change the file.  Check it in, like I said to do in the first place.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_1a84.base_strlist,"Yes, I did change the file.  Check it in, like I said to do in the first place.");
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_1a84.base_strlist,"Oops.  Keep the file checked out.");
+              (&local_1a84.base,"Oops.  Keep the file checked out.");
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       (&local_1a84,"Checking in file that didn't change.",-1,0);
     if ((iVar2 < 0) || (iVar2 == 2)) {
@@ -562,11 +561,11 @@ LAB_004bb492:
                   if (iVar2 < 0) {
                     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_21d4);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                              (&local_21d4.base_strlist,"Delete local files and mount");
+                              (&local_21d4.base,"Delete local files and mount");
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                              (&local_21d4.base_strlist,"Delete local files but don't mount");
+                              (&local_21d4.base,"Delete local files but don't mount");
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                              (&local_21d4.base_strlist,"Keep files extracted and pod dismounted");
+                              (&local_21d4.base,"Keep files extracted and pod dismounted");
                     crt_stdio_c_sprintf_FUN_005fdbd0(local_10a0,"%s checked in",local_77c);
                     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                       (&local_21d4,local_10a0,-1,0);

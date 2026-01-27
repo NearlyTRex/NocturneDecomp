@@ -25,7 +25,7 @@ void core_zombie_cpp_CZombie_FUN_005fc220(void)
     iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
     switch(iVar3 % 6) {
     case 0:
-      CVar4 = in_stack_00000004[1].base_actor.vtable;
+      CVar4 = in_stack_00000004[1].base.vtable;
       break;
     case 1:
       CVar4 = (CDemonActor_union_vtable)in_stack_00000004[1].model.motion_controller.motion_list_ptr
@@ -52,7 +52,7 @@ void core_zombie_cpp_CZombie_FUN_005fc220(void)
   }
 switchD_005fc256_default:
   pCVar1 = (CMotionList *)in_stack_00000008->_ub;
-  if (((((pCVar1 == (CMotionList *)in_stack_00000004[1].base_actor.vtable._ub) ||
+  if (((((pCVar1 == (CMotionList *)in_stack_00000004[1].base.vtable._ub) ||
         (pCVar1 == in_stack_00000004[1].model.motion_controller.motion_list_ptr)) ||
        (pCVar1 == (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index))
       || ((pCVar1 == (CMotionList *)
@@ -68,7 +68,7 @@ switchD_005fc256_default:
         in_stack_00000008->_ub) {
       local_14._ub = (CDemonActor_vtable *)0x3ca3d70a;
     }
-    if (g_CGamePtr->field57_0x1e0 != 0) {
+    if (g_CGamePtr->unk4 != 0) {
       local_14 = (CDemonActor_union_vtable)0x3f800000;
     }
     if (g_CGamePtr->blood_flag == 0) {
@@ -78,7 +78,7 @@ switchD_005fc256_default:
     if (iVar3 != 0) {
       core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-      if (in_stack_00000008->_ub == in_stack_00000004[1].base_actor.vtable._ub) {
+      if (in_stack_00000008->_ub == in_stack_00000004[1].base.vtable._ub) {
         core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       }
       if ((CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.current_motion_index ==

@@ -9,9 +9,8 @@
 void __cdecl core_teleport_cpp_CTeleport_serialize_FUN_005dab30(CTeleport *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
-  core_actor_cpp_serializeVector_FUN_0040b340((CVector3f *)this_ptr->field1_0x158,(char *)0x0);
-  core_actor_cpp_serializeActor_FUN_0040b870
-            ((CDemonActor *)(this_ptr->field1_0x158 + 0xc),(char *)0x0);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
+  core_actor_cpp_serializeVector_FUN_0040b340((CVector3f *)this_ptr->unk,(char *)0x0);
+  core_actor_cpp_serializeActor_FUN_0040b870((CDemonActor *)(this_ptr->unk + 0xc),(char *)0x0);
   return;
 }

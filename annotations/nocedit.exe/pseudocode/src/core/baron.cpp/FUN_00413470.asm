@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_baron.cpp_FUN_00413470()
+; __cdecl void core_baron.cpp_FUN_00413470(int param_1, CDemonActor * param_2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; CDemonActor *    Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x28]:4  local_28

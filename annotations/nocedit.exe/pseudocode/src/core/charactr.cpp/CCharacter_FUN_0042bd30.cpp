@@ -76,13 +76,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
     iVar2 = 0;
     pCVar3 = this_ptr;
     do {
-      if (in_stack_0000000c == *(int *)(pCVar3->carry_hands[0].field0_0x0 + 4)) {
-        (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc21)();
+      if (in_stack_0000000c == *(int *)(pCVar3->carry_hands[0].unk1 + 4)) {
+        (*(((this_ptr->base).vtable._uc)->_uc).cfunc21)();
       }
       iVar2 = iVar2 + 1;
-      pCVar3 = (CCharacter *)&(pCVar3->base_actor).orient_matrix.m[0].z;
+      pCVar3 = (CCharacter *)&(pCVar3->base).orient_matrix.m[0].z;
     } while (iVar2 < 2);
-    *(uint *)in_stack_00000008->field1_0x158 = in_stack_00000010;
+    *(uint *)in_stack_00000008->unk = in_stack_00000010;
     return;
   }
   return;

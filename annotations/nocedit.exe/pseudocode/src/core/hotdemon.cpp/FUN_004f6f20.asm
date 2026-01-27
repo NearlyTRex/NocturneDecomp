@@ -61,7 +61,7 @@
 ;   CGore* g_CGorePtr = 02d83364
 ;   CConsole g_ConsolePtr
 ;   CGore g_CGoreInstance
-;   undefined4 DAT_02db88d0
+;   int INT_02db88d0
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -352,7 +352,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004f7200
     ADD ESP,0x8                         ; 004f7203
     LEA EAX,[EBP + 0xffffff7e]          ; 004f7206
-    MOV EDX,dword ptr [0x02db88d0]      ; 004f720c | DAT_02db88d0
+    MOV EDX,dword ptr [0x02db88d0]      ; 004f720c | INT_02db88d0
     PUSH EAX                            ; 004f7212
     LEA EAX,[EDX*0x4 + 0x0]             ; 004f7213
     MOV dword ptr [EBP + -0x4e],EBX     ; 004f721a

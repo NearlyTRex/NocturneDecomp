@@ -57,7 +57,7 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
   if ((float)0.001 < blend_weight) {
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     local_34 = (this_ptr->bone_transform).bone_rotations;
-    if (this_ptr->field11_0x2250 == 0) {
+    if (this_ptr->unk == 0) {
       iVar8 = 0;
       if (0 < this_ptr_00->bone_count) {
         local_24 = this_ptr;
@@ -89,7 +89,7 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
         } while (iVar8 < this_ptr_00->bone_count);
       }
     }
-    else if (this_ptr->field11_0x2250 == 1) {
+    else if (this_ptr->unk == 1) {
       local_18 = (CQuaternion4f *)0x0;
       if (0 < this_ptr_00->bone_count) {
         local_28 = this_ptr;

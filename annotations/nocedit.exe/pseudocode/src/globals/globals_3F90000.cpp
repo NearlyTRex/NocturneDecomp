@@ -128,10 +128,20 @@ double g_TimerCalibration = {};
 // dword
 dword DWORD_03f9d000 = 0x1000;
 
+// float
+float FLOAT_03f96b44 = {};
+float FLOAT_03f96b48 = {};
+float FLOAT_03f96b4c = {};
+float FLOAT_03f96b50 = {};
+float FLOAT_03f96b54 = {};
+float FLOAT_03f96b58 = {};
+
 // int
 int g_RenderingInProgress = {};
 int g_GraphicsResetFlag = {};
 int g_UseSoftwareRendering = {};
+int INT_03f95d9c = {};
+int INT_03f95db8 = {};
 int g_AccumulatedGameTime = {};
 int g_InputReadIndex = {};
 int g_InputWriteIndex = {};
@@ -155,12 +165,15 @@ int g_ClipVertexCountStage4 = {};
 int g_RasterizerEdgeCount = {};
 int g_RasterizerMinY = {};
 int g_RasterizerMaxY = {};
+int INT_03f9b1f0 = {};
 int g_EmergencyExitFlag = {};
 int g_EnvironInitialized = {};
+int INT_03f9bfd4 = {};
 int g_MultibyteLocaleActive = {};
 int g_BufferedCharacter = {};
 int g_BufferedVirtualKey = {};
 int g_BufferedRepeatCount = {};
+int INT_03f9c150 = {};
 
 // int[20]
 int g_InputBuffer[20] = {};
@@ -194,7 +207,6 @@ undefined4 DAT_03f9675c = {};
 undefined4 DAT_03f96b40 = {};
 undefined4 g_FreeListHeadPointer = {};
 undefined4 DAT_03f9b210 = {};
-undefined4 DAT_03f9c150 = {};
 
 // void*
 void* g_SoftwareFrameBuffer = {};

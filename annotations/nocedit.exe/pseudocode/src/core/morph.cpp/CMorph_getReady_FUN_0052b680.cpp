@@ -54,7 +54,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   CMorph *local_18;
   CMorph *local_14;
   
-  if ((*(int *)(this_ptr + 0x54) < 3) || (*(int *)(this_ptr + 0x65c) < 3)) {
+  if ((this_ptr[0x15].unk < 3) || (this_ptr[0x197].unk < 3)) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 799;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorph::getReady - can't do this unless we have setup both models!");
@@ -65,7 +65,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   local_24 = &local_c8;
   do {
     pCVar4 = local_24;
-    iVar1 = *(int *)(local_38 + 0x58);
+    iVar1 = local_38[0x16].unk;
     pCVar2 = (CBoundingBox3D *)(iVar1 + 4);
     if (pCVar2 != local_24) {
       (local_24->min).x = (pCVar2->min).x;
@@ -80,18 +80,18 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
     pCVar4 = local_24;
     iVar1 = local_2c;
     iVar7 = 0x10;
-    for (iVar8 = 1; iVar8 < *(int *)(this_ptr + iVar1 + 0x54); iVar8 = iVar8 + 1) {
-      iVar3 = *(int *)(this_ptr + iVar1 + 0x58) + iVar7;
+    for (iVar8 = 1; iVar8 < *(int *)((int)&this_ptr[0x15].unk + iVar1); iVar8 = iVar8 + 1) {
+      iVar3 = *(int *)((int)&this_ptr[0x16].unk + iVar1) + iVar7;
       iVar7 = iVar7 + 0x10;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar4,(CVector3f *)(iVar3 + 4));
     }
     local_2c = local_2c + 0x608;
     local_24 = local_24 + 1;
-    local_38 = local_38 + 0x608;
+    local_38 = local_38 + 0x182;
   } while (local_2c != 0xc10);
   local_20 = &local_c8.max;
   local_1c = local_a4;
-  local_34 = this_ptr + 0x608;
+  local_34 = this_ptr + 0x182;
   local_28 = 0;
   local_30 = this_ptr;
   do {
@@ -123,14 +123,14 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
     local_78 = local_20->z - (&local_c8)[local_28].min.z;
     local_60 = local_90 / local_78;
     iVar8 = 0;
-    if (0 < *(int *)(local_30 + 0x54)) {
+    if (0 < local_30[0x15].unk) {
       iVar3 = 0;
       do {
-        iVar6 = *(int *)(local_14 + 0x58) + iVar3;
+        iVar6 = local_14[0x16].unk + iVar3;
         local_50 = *(float *)(iVar6 + 4);
         local_4c = *(float *)(iVar6 + 8);
         local_48 = *(float *)(iVar6 + 0xc);
-        if (*(int *)(this_ptr + 0xc28) != 0) {
+        if (this_ptr[0x30a].unk != 0) {
           local_50 = *(float *)(iVar6 + 4) - (pCVar4->min).x;
           local_50 = local_50 * local_68;
           local_4c = *(float *)(iVar6 + 8) - (&local_c8)[iVar1].min.y;
@@ -141,15 +141,15 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
           local_48 = local_48 + (&local_c8)[iVar7].min.z;
         }
         uVar5 = core_morph_cpp_FUN_0052b280();
-        *(uint *)(*(int *)(local_14 + 0x58) + iVar3) = uVar5;
+        *(uint *)(local_14[0x16].unk + iVar3) = uVar5;
         iVar8 = iVar8 + 1;
         iVar3 = iVar3 + 0x10;
-      } while (iVar8 < *(int *)(local_14 + 0x54));
+      } while (iVar8 < local_14[0x15].unk);
     }
     local_28 = local_28 + 1;
     local_1c = local_1c + -6;
-    local_34 = local_34 + -0x608;
-    local_30 = local_30 + 0x608;
+    local_34 = local_34 + -0x182;
+    local_30 = local_30 + 0x182;
     local_20 = local_20 + 2;
   } while (local_28 < 2);
   return;

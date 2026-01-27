@@ -36,42 +36,42 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 28,
+        "column": 68,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 14,
+        "column": 67,
+        "line": 29,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 74,
         "line": 31,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 34,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 37,
+        "column": 82,
+        "line": 33,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 113,
+    "complexity_score": 110,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 25,
     "suspect_count": 8,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 88
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -232,35 +232,35 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "model_ptr = &(in_stack_00000004->base_character).model;",
+      "text": "model_ptr = &(in_stack_00000004->base).model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.orient.heading,",
+      "text": "((int *)&in_stack_00000004[1].base.base.orient.heading,\"stoneRed\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.orient_matrix,",
+      "text": "((int *)&in_stack_00000004[1].base.base.orient_matrix,\"stoneGreen\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "((int *)&in_stack_00000004[1].base.base.orient_matrix.m[0].y,\"stoneBlue\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].y,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "((CDemonActor *)&in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].z,",
+      "text": "((CDemonActor *)&in_stack_00000004[1].base.base.orient_matrix.m[0].z,\"homeBase\"",
       "type": "stack_param"
     }
   ],

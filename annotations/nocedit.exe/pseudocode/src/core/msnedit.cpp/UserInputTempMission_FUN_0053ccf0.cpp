@@ -58,10 +58,10 @@ void core_msnedit_cpp_UserInputTempMission_FUN_0053ccf0(void)
   core_mission_cpp_CDemonMission_clearMaybe_FUN_00522c80(local_10);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Loading %s");
-  in_stack_00000004->field2_0xc[0x30] = '\x01';
-  in_stack_00000004->field2_0xc[0x31] = '\0';
-  in_stack_00000004->field2_0xc[0x32] = '\0';
-  in_stack_00000004->field2_0xc[0x33] = '\0';
+  in_stack_00000004->unk2[0x30] = '\x01';
+  in_stack_00000004->unk2[0x31] = '\0';
+  in_stack_00000004->unk2[0x32] = '\0';
+  in_stack_00000004->unk2[0x33] = '\0';
   g_CDemonMissionPtr = local_10;
   if (iVar2 == 0) {
     core_mission_cpp_CDemonMission_load_FUN_00522d90(local_10,local_3c,1);
@@ -71,10 +71,10 @@ void core_msnedit_cpp_UserInputTempMission_FUN_0053ccf0(void)
   }
   core_mission_cpp_CDemonMission_FUN_00523cf0(local_10);
   local_14 = 0;
-  in_stack_00000004->field2_0xc[0x30] = '\0';
-  in_stack_00000004->field2_0xc[0x31] = '\0';
-  in_stack_00000004->field2_0xc[0x32] = '\0';
-  in_stack_00000004->field2_0xc[0x33] = '\0';
+  in_stack_00000004->unk2[0x30] = '\0';
+  in_stack_00000004->unk2[0x31] = '\0';
+  in_stack_00000004->unk2[0x32] = '\0';
+  in_stack_00000004->unk2[0x33] = '\0';
   g_CDemonMissionPtr = in_stack_00000004;
   puVar6 = &0x0000002A;
   pcVar5 = local_a0;

@@ -36,22 +36,22 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   core_mission_cpp_FUN_005248e0();
   crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
   core_inivar_cpp_readIniData_FUN_004fbd90();
-  local_14 = this_ptr->field2_0xc + 0x38;
-  local_1c = this_ptr->field4_0x148;
+  local_14 = this_ptr->unk2 + 0x38;
+  local_1c = this_ptr->unk3;
   g_IncludeCommentsWhenWriting = 0;
   local_18 = local_1c;
   do {
-    this_ptr->field0_0x0[4] = '\x01';
-    this_ptr->field0_0x0[5] = '\0';
-    this_ptr->field0_0x0[6] = '\0';
-    this_ptr->field0_0x0[7] = '\0';
-    this_ptr->field2_0xc[0x30] = '\0';
-    this_ptr->field2_0xc[0x31] = '\0';
-    this_ptr->field2_0xc[0x32] = '\0';
-    this_ptr->field2_0xc[0x33] = '\0';
+    this_ptr->unk1[4] = '\x01';
+    this_ptr->unk1[5] = '\0';
+    this_ptr->unk1[6] = '\0';
+    this_ptr->unk1[7] = '\0';
+    this_ptr->unk2[0x30] = '\0';
+    this_ptr->unk2[0x31] = '\0';
+    this_ptr->unk2[0x32] = '\0';
+    this_ptr->unk2[0x33] = '\0';
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Mission editor",0,0);
-    if (this_ptr->field2_0xc[0x38] == '\0') {
+    if (this_ptr->unk2[0x38] == '\0') {
       pcVar5 = "No misison loaded";
       pcVar6 = local_21c;
       do {
@@ -118,7 +118,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
           }
         }
         else if (uVar2 < 0x33) {
-          if (this_ptr->field2_0xc[0x38] == '\0') {
+          if (this_ptr->unk2[0x38] == '\0') {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"No mission loaded.");
           }
@@ -280,14 +280,14 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
                 (g_CEditorToolsPtr,"Cleaning up...");
       crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
       this_ptr_00 = g_CEditorToolsPtr;
-      this_ptr->field0_0x0[4] = '\0';
-      this_ptr->field0_0x0[5] = '\0';
-      this_ptr->field0_0x0[6] = '\0';
-      this_ptr->field0_0x0[7] = '\0';
-      this_ptr->field2_0xc[0x30] = '\0';
-      this_ptr->field2_0xc[0x31] = '\0';
-      this_ptr->field2_0xc[0x32] = '\0';
-      this_ptr->field2_0xc[0x33] = '\0';
+      this_ptr->unk1[4] = '\0';
+      this_ptr->unk1[5] = '\0';
+      this_ptr->unk1[6] = '\0';
+      this_ptr->unk1[7] = '\0';
+      this_ptr->unk2[0x30] = '\0';
+      this_ptr->unk2[0x31] = '\0';
+      this_ptr->unk2[0x32] = '\0';
+      this_ptr->unk2[0x33] = '\0';
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (this_ptr_00,"Deleting actors...");
       core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);

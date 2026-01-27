@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_mobster.cpp_staticInit_FUN_00525070(void)
+; __cdecl void core_mobster.cpp_staticInit_FUN_00525070(void)
 ;
 ;
 ; Referenced Globals:

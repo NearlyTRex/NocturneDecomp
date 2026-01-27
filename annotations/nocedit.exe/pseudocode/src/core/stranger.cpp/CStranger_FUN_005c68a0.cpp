@@ -12,21 +12,21 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c68a0(CStranger *this_ptr)
   int in_stack_00000008;
   
   core_charactr_cpp_CCharacter_FUN_0042f8a0((CCharacter *)this_ptr);
-  if (in_stack_00000008 == *(int *)(this_ptr->field2_0x1fbd8 + 0x28)) {
-    this_ptr->field2_0x1fbd8[0x28] = '\0';
-    this_ptr->field2_0x1fbd8[0x29] = '\0';
-    this_ptr->field2_0x1fbd8[0x2a] = '\0';
-    this_ptr->field2_0x1fbd8[0x2b] = '\0';
-    if (in_stack_00000008 != *(int *)(this_ptr->field2_0x1fbd8 + 0x48)) {
+  if (in_stack_00000008 == *(int *)(this_ptr->unk1 + 0x28)) {
+    this_ptr->unk1[0x28] = '\0';
+    this_ptr->unk1[0x29] = '\0';
+    this_ptr->unk1[0x2a] = '\0';
+    this_ptr->unk1[0x2b] = '\0';
+    if (in_stack_00000008 != *(int *)(this_ptr->unk1 + 0x48)) {
       return;
     }
   }
-  else if (in_stack_00000008 != *(int *)(this_ptr->field2_0x1fbd8 + 0x48)) {
+  else if (in_stack_00000008 != *(int *)(this_ptr->unk1 + 0x48)) {
     return;
   }
-  this_ptr->field2_0x1fbd8[0x48] = '\0';
-  this_ptr->field2_0x1fbd8[0x49] = '\0';
-  this_ptr->field2_0x1fbd8[0x4a] = '\0';
-  this_ptr->field2_0x1fbd8[0x4b] = '\0';
+  this_ptr->unk1[0x48] = '\0';
+  this_ptr->unk1[0x49] = '\0';
+  this_ptr->unk1[0x4a] = '\0';
+  this_ptr->unk1[0x4b] = '\0';
   return;
 }

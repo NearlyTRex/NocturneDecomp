@@ -25,7 +25,7 @@ void core_cloth_cpp_FUN_0043ddf0(void)
   bVar7 = 0;
   local_178[0] = '\0';
   local_278[0] = '\0';
-  local_14 = in_stack_00000004->padding_0x0 + 0x3ce88;
+  local_14 = in_stack_00000004->unk + 0x3ce88;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Cloth Editor",0,0);

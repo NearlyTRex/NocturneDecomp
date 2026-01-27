@@ -41,16 +41,15 @@ LAB_0052499a:
     this_ptr_00 = (CHeroPlaceholder *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
-    if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->field1_0x158)
-       ) {
+    if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->unk)) {
       if (in_stack_00000010 == (CDemonActor *)0x0) {
         pCVar1 = (CHero *)core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(this_ptr_00);
       }
       else {
         (*((in_stack_00000010->vtable)._ub)->setPositionAndOrientation)
-                  (in_stack_00000010,&(this_ptr_00->base_actor).location.position,
-                   (CVector3f *)&(this_ptr_00->base_actor).orient);
-        (in_stack_00000010->location).area_id = (this_ptr_00->base_actor).location.area_id;
+                  (in_stack_00000010,&(this_ptr_00->base).location.position,
+                   (CVector3f *)&(this_ptr_00->base).orient);
+        (in_stack_00000010->location).area_id = (this_ptr_00->base).location.area_id;
         core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
                   ((CMotionController *)(in_stack_00000010 + 1),0,0.0);
         pCVar1 = (CHero *)0x0;

@@ -14,8 +14,8 @@
 ;
 ; Referenced Globals:
 ;   char[256] g_CharacterClassificationTable
-;   undefined4 DAT_0310fcd8
-;   undefined4 DAT_0310fd0c
+;   CEdScrollBar CEdScrollBar_0310fcd8
+;   CEdScrollBar CEdScrollBar_0310fd0c
 ;   undefined4 DAT_031141e0
 ;   undefined4 DAT_031141e4
 ;   undefined4 DAT_031141e8
@@ -62,7 +62,7 @@ section .text
     CMP EBX,EAX                         ; 005664f7
     JGE 0x005664df                      ; 005664f9
         ;   XREF to: 005664df (CONDITIONAL_JUMP)  ; LAB_005664df
-    MOV EDX,dword ptr [0x0310fcd8]      ; 005664fb | DAT_0310fcd8
+    MOV EDX,dword ptr [0x0310fcd8]      ; 005664fb | CEdScrollBar_0310fcd8
     MOV EAX,EBX                         ; 00566501
     MOV ECX,dword ptr [0x03114208]      ; 00566503 | DAT_03114208
     SUB EAX,EDX                         ; 00566509
@@ -100,7 +100,7 @@ section .text
     ADD EAX,dword ptr [0x03114208]      ; 0056655b | DAT_03114208
     PUSH 0x4                            ; 00566561
     DEC EAX                             ; 00566563
-    MOV EBX,dword ptr [0x0310fd0c]      ; 00566564 | DAT_0310fd0c
+    MOV EBX,dword ptr [0x0310fd0c]      ; 00566564 | CEdScrollBar_0310fd0c
     PUSH EAX                            ; 0056656a
     MOV EAX,dword ptr [ESP + 0x10]      ; 0056656b
     MOV ESI,dword ptr [0x03114204]      ; 0056656f | DAT_03114204
@@ -120,7 +120,7 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 00566593
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 00566598
-    MOV EAX,[0x0310fd0c]                ; 0056659b | DAT_0310fd0c
+    MOV EAX,[0x0310fd0c]                ; 0056659b | CEdScrollBar_0310fd0c
         ;   Label: LAB_0056659b
     MOV EDX,dword ptr [0x03114204]      ; 005665a0 | DAT_03114204
     NEG EAX                             ; 005665a6

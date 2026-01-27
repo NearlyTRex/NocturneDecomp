@@ -138,9 +138,8 @@ LAB_004d6841:
     }
   }
   else {
-    fVar2 = (float)in_stack_00000004[0x8d].field11_0xdc * (float)3.1415926535000001 *
-            (float)2 * in_stack_00000008 +
-            *(float *)(in_stack_00000004[0x17a].actor_name + 0xc);
+    fVar2 = (float)in_stack_00000004[0x8d].unk2 * (float)3.1415926535000001 * (float)2 *
+            in_stack_00000008 + *(float *)(in_stack_00000004[0x17a].actor_name + 0xc);
     local_3c = 0x3fc90fdb;
     *(float *)(in_stack_00000004[0x17a].actor_name + 0xc) = fVar2;
     if (fVar2 < -1.570796f) {

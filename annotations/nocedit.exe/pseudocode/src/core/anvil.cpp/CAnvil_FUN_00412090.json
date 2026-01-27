@@ -12,23 +12,23 @@
       {
         "category": "other",
         "column": 54,
-        "line": 20,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 62,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 16,
     "suspect_count": 4,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [],
   "function": {
@@ -128,19 +128,19 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(&this_ptr->base_actor,in_stack_00000008)",
+      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(&this_ptr->base,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"MODELS\\\\%s\\n\",pCVar1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "(pCVar1,in_stack_00000008,skip_raw_files);",
       "type": "stack_param"

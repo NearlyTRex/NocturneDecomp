@@ -9,7 +9,7 @@
 void __cdecl core_ammo_cpp_CAmmo_serialize_FUN_00410f40(CAmmo *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName")
   ;
   core_actor_cpp_serializeString_FUN_0040b5c0

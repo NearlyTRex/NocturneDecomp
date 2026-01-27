@@ -566,17 +566,16 @@
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 743,
+    "complexity_score": 698,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "pseudocode_lines": 158,
-    "suspect_count": 56,
+    "suspect_count": 52,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 364
@@ -643,26 +642,26 @@
     },
     {
       "addr": "03106168",
-      "name": "DAT_03106168",
-      "type": "undefined4",
+      "name": "INT_03106168",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0310616c",
-      "name": "DAT_0310616c",
-      "type": "undefined4",
+      "name": "INT_0310616c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03106170",
-      "name": "DAT_03106170",
-      "type": "undefined4",
+      "name": "INT_03106170",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03106174",
-      "name": "DAT_03106174",
-      "type": "undefined4",
+      "name": "INT_03106174",
+      "type": "int",
       "value": null
     }
   ],
@@ -937,20 +936,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_03106168",
-      "text": "local_1c = DAT_03106168;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_03106170",
-      "text": "local_18 = DAT_03106170;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(uint *)((int)",
@@ -977,20 +962,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_cc + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_0310616c",
-      "text": "local_1c = DAT_0310616c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_03106174",
-      "text": "local_18 = DAT_03106174;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

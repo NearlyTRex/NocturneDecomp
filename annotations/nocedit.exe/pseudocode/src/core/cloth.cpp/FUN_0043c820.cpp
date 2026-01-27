@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_cloth_cpp_FUN_0043c820(void)
 
 {
   float *in_stack_00000004;
   CVector3i local_10;
   
-  local_10.x = (int)ROUND(*in_stack_00000004 * _DAT_0065bb3c);
-  local_10.y = (int)ROUND(in_stack_00000004[1] * _DAT_0065bb3c);
-  local_10.z = (int)ROUND(in_stack_00000004[2] * _DAT_0065bb3c);
+  local_10.x = (int)ROUND(*in_stack_00000004 * 256.0f);
+  local_10.y = (int)ROUND(in_stack_00000004[1] * 256.0f);
+  local_10.z = (int)ROUND(in_stack_00000004[2] * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_10);
   core_cloth_cpp_FUN_0043c6e0();

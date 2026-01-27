@@ -54,7 +54,7 @@ CHero * core_script_cpp_GetDemonActor_FUN_005594e0(void)
   else {
     iVar2 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"$");
     if (iVar2 == 0) {
-      if (g_CNetGameInstance->connection_type != 0) {
+      if (g_CNetGamePtr->connection_type != 0) {
         crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,"Can't use '$' actor specifier in multi-player");
         return (CHero *)0x0;
       }

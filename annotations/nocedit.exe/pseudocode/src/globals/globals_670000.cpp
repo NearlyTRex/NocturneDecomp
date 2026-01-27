@@ -2084,6 +2084,7 @@ ushort g_LightmapData[384] = {
 };
 
 // void*
+void* g_CBaronStaticInitFunc = (void*)core_baron_cpp_staticInit_FUN_00412b41;
 void* g_PerspectiveScanlineColorPtr = nullptr;
 void* switchdataD_00679d10 = (void*)0x004B1A0C; // caseD_0
 void* switchdataD_00679d54 = (void*)0x004B1A9B; // caseD_0

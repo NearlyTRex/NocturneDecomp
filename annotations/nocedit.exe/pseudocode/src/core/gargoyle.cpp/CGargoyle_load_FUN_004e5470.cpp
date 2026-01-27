@@ -16,7 +16,7 @@ void core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
   core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
-  model_ptr = &(in_stack_00000004->base_character).model;
+  model_ptr = &(in_stack_00000004->base).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
             (&model_ptr->motion_controller,"motion state");
@@ -24,16 +24,13 @@ void core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
     return;
   }
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].base_character.base_actor.orient.heading,
-             "stoneRed");
+            ((int *)&in_stack_00000004[1].base.base.orient.heading,"stoneRed");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].base_character.base_actor.orient_matrix,
-             "stoneGreen");
+            ((int *)&in_stack_00000004[1].base.base.orient_matrix,"stoneGreen");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].y,
-             "stoneBlue");
+            ((int *)&in_stack_00000004[1].base.base.orient_matrix.m[0].y,"stoneBlue");
   core_actor_cpp_serializeActor_FUN_0040b870
-            ((CDemonActor *)&in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].z,
-             "homeBase");
+            ((CDemonActor *)&in_stack_00000004[1].base.base.orient_matrix.m[0].z,"homeBase"
+            );
   return;
 }

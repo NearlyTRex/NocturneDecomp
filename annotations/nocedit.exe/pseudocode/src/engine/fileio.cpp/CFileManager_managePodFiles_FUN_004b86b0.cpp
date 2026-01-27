@@ -501,12 +501,12 @@ LAB_004b8df1:
             crt_stdio_c_sprintf_FUN_005fdbd0
                       (pcVar13,"\tChecked out by %s",(int)pvVar10 + 0x308);
           }
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base_strlist,&stack0xffffdcc8);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base,&stack0xffffdcc8);
           iVar2 = iVar2 + 1;
           pvVar10 = (void *)((int)pvVar10 + 0x39c);
         } while (iVar2 < local_48);
       }
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base_strlist,"Go!");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base,"Go!");
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_170c,"Select action for each pod, select \"Go!\" when you are done",local_60,0);
       pvVar10 = local_44;
@@ -517,7 +517,7 @@ LAB_004b8df1:
                    in_stack_ffffdcd4,in_stack_ffffdcd8);
         goto LAB_004b901b;
       }
-      if (iVar2 < local_170c.base_strlist.item_count + -1) {
+      if (iVar2 < local_170c.base.item_count + -1) {
         iVar9 = (int)local_44 + iVar2 * 0x39c + 0x204;
         iVar4 = crt_stdio_c_sprintf_FUN_005fdbd0
                           (&stack0xffffdcc8,"Select action for %s\n",iVar9);
@@ -622,40 +622,37 @@ LAB_004b9590:
           crt_stdio_c_sprintf_FUN_005fdbd0(pcVar12,pcVar13);
         }
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1364);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base_strlist,PTR_s_Skip_00679da0);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_s_Skip_00679da0);
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base_strlist,PTR_s_Copy_00679da4)
-          ;
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_s_Copy_00679da4);
         }
         if ((*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x374) == 0) &&
            (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5)) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_1364.base_strlist,PTR_s_Copy_Mount_00628453_00679da8);
+                    (&local_1364.base,PTR_s_Copy_Mount_00628453_00679da8);
         }
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_1364.base_strlist,PTR_s_Copy_Extract_00628460_00679dac);
+                    (&local_1364.base,PTR_s_Copy_Extract_00628460_00679dac);
+        }
+        if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_s_Dismount_00679db0);
         }
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_1364.base_strlist,PTR_s_Dismount_00679db0);
-        }
-        if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_1364.base_strlist,PTR_s_Dismount_Delete_00628478_00679db4);
+                    (&local_1364.base,PTR_s_Dismount_Delete_00628478_00679db4);
         }
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_1364.base_strlist,"Show local file differences");
+                    (&local_1364.base,"Show local file differences");
         }
         iVar9 = shape_edittool_cpp_CStrList_findString_FUN_004a3030
-                          (&local_1364.base_strlist,
+                          (&local_1364.base,
                            (&PTR_s_Skip_00679da0)[*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378)]);
         while (iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  (&local_1364,&stack0xffffdcc8,iVar9,0), -1 < iVar9) {
           pcVar13 = "Show local file differences";
-          pcVar12 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                              (&local_1364.base_strlist,iVar9);
+          pcVar12 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base,iVar9);
           iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar12,pcVar13);
           if (iVar4 != 0) {
             iVar4 = 0;
@@ -672,14 +669,14 @@ LAB_004b9590:
                  in_stack_ffffdcd4,in_stack_ffffdcd8);
       local_20 = 0;
       this_ptr->batch_mode = 1;
-      g_VersionControlSession.field1_0x20[0] = '\0';
-      g_VersionControlSession.field1_0x20[1] = '\0';
-      g_VersionControlSession.field1_0x20[2] = '\0';
-      g_VersionControlSession.field1_0x20[3] = '\0';
-      g_VersionControlSession.field1_0x20[4] = '\0';
-      g_VersionControlSession.field1_0x20[5] = '\0';
-      g_VersionControlSession.field1_0x20[6] = '\0';
-      g_VersionControlSession.field1_0x20[7] = '\0';
+      g_VersionControlSession.unk1[0] = '\0';
+      g_VersionControlSession.unk1[1] = '\0';
+      g_VersionControlSession.unk1[2] = '\0';
+      g_VersionControlSession.unk1[3] = '\0';
+      g_VersionControlSession.unk1[4] = '\0';
+      g_VersionControlSession.unk1[5] = '\0';
+      g_VersionControlSession.unk1[6] = '\0';
+      g_VersionControlSession.unk1[7] = '\0';
       if (0 < local_48) {
         local_24 = (char *)((int)local_44 + 0x100);
         do {
@@ -745,13 +742,13 @@ LAB_004b9590:
                     if ((local_38 & 8) != 0) goto LAB_004b9af4;
                     crt_stdio_c_sprintf_FUN_005fdbd0
                               ((char *)local_980,"A writable copy of %s exists.  Replace it?",pcVar12);
-                    pcVar12 = g_VersionControlSession.field1_0x20 + 4;
+                    pcVar12 = g_VersionControlSession.unk1 + 4;
                     piVar8 = local_980;
                   }
                   else {
                     crt_stdio_c_sprintf_FUN_005fdbd0
                               ((char *)local_78c,"You currently have %s checked out.  Replace local copy with network copy?",pcVar12);
-                    pcVar12 = g_VersionControlSession.field1_0x20;
+                    pcVar12 = g_VersionControlSession.unk1;
                     piVar8 = local_78c;
                   }
                   iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
@@ -930,7 +927,7 @@ LAB_004b901b:
     if (0x17 < iVar4) break;
 LAB_004b994d:
     pcVar12 = *(char **)((int)&PTR_s_Skip_00679da0 + iVar4);
-    pcVar13 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base_strlist,iVar9);
+    pcVar13 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base,iVar9);
     iVar7 = crt_string_c_stricmp_FUN_005fe7f0(pcVar13,pcVar12);
     if (iVar7 == 0) {
       *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378) = iVar6;

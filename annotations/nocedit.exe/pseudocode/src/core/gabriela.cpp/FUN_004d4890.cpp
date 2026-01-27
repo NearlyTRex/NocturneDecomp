@@ -49,12 +49,12 @@ void core_gabriela_cpp_FUN_004d4890(void)
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                 (this_ptr,(CVector3f *)(auStack_5c + 4),bone_index);
       if (*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) {
-        if (*(int *)(in_stack_00000004->field2_0x240c + 4) != 0) {
+        if (*(int *)(in_stack_00000004->unk1 + 4) != 0) {
           local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                (&this_ptr->motion_controller,2);
           if ((float)0.40000000000000002 < local_18) {
-            (*((in_stack_00000004->base_actor).vtable._ub)->processFootstepAtOffset)
-                      (&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.7);
+            (*((in_stack_00000004->base).vtable._ub)->processFootstepAtOffset)
+                      (&in_stack_00000004->base,(CVector3f *)(auStack_5c + 4),1.7);
           }
           else {
             local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
@@ -63,25 +63,24 @@ void core_gabriela_cpp_FUN_004d4890(void)
               local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                    (&this_ptr->motion_controller,3);
               if ((float)0.40000000000000002 < local_18) {
-                (*((in_stack_00000004->base_actor).vtable._ub)->processFootstepAtOffset)
-                          (&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.0);
+                (*((in_stack_00000004->base).vtable._ub)->processFootstepAtOffset)
+                          (&in_stack_00000004->base,(CVector3f *)(auStack_5c + 4),1.0);
               }
             }
             else {
-              (*((in_stack_00000004->base_actor).vtable._ub)->processFootstepAtOffset)
-                        (&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.0);
+              (*((in_stack_00000004->base).vtable._ub)->processFootstepAtOffset)
+                        (&in_stack_00000004->base,(CVector3f *)(auStack_5c + 4),1.0);
             }
           }
         }
       }
       else {
-        pCVar1 = (in_stack_00000004->base_actor).vtable._ub;
+        pCVar1 = (in_stack_00000004->base).vtable._ub;
         iVar2 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) + 0x154) +
                             0x3c))();
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (&in_stack_00000004->base_actor,(CVector3f *)auStack_5c,
-                            (CVector3f *)local_68);
-        (*pCVar1->handleFootstep)(&in_stack_00000004->base_actor,pCVar4,iVar2,in_stack_ffffff44);
+                           (&in_stack_00000004->base,(CVector3f *)auStack_5c,(CVector3f *)local_68);
+        (*pCVar1->handleFootstep)(&in_stack_00000004->base,pCVar4,iVar2,in_stack_ffffff44);
       }
       break;
     case 2:
@@ -106,7 +105,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
       core_hero_cpp_FUN_004f3890();
       break;
     case 3:
-      (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
+      (*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc21)();
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,0,1);
       break;
@@ -122,7 +121,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr,&local_40,INT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  (&in_stack_00000004->base_actor,(CVector3f *)(local_68 + 4),pCVar4);
+                  (&in_stack_00000004->base,(CVector3f *)(local_68 + 4),pCVar4);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_a0);
         local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
         local_a0._4_4_ = local_18;
@@ -135,16 +134,15 @@ void core_gabriela_cpp_FUN_004d4890(void)
         }
         local_6c = in_stack_00000004;
         local_68._0_4_ = in_stack_00000004;
-        (*(((local_1c->base_actor).vtable._uc)->_uc).processDamage)
-                  (local_1c,(SDamageInfo *)&local_a0);
+        (*(((local_1c->base).vtable._uc)->_uc).processDamage)(local_1c,(SDamageInfo *)&local_a0);
         local_a0 = (double)fStack_94;
         if (0.0 < local_a0) {
           dVar5 = crt_math_c_round_FUN_005fe6b0(local_a0 * 0.20000000000000001);
           iStack_14 = (int)ROUND(dVar5);
           in_stack_ffffff44 = 7.098521e-39;
           core_gore_cpp_FUN_004edbb0();
-          (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                    (&in_stack_00000004->base_actor,"kick1.wav");
+          (*((in_stack_00000004->base).vtable._ub)->playSound)
+                    (&in_stack_00000004->base,"kick1.wav");
           in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
           break;
         }
@@ -154,16 +152,16 @@ void core_gabriela_cpp_FUN_004d4890(void)
     case 0xf:
       if ((in_stack_00000004->grabbed_by != (CDemonActor *)0x0) &&
          (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                             (&in_stack_00000004->base_actor,&local_28,
+                             (&in_stack_00000004->base,&local_28,
                               &(in_stack_00000004->grabbed_by->location).position), 0.0 < pCVar4->z)
          ) {
-        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                  (&in_stack_00000004->base_actor,"hit-gh[4,7].wav");
+        (*((in_stack_00000004->base).vtable._ub)->playSound)
+                  (&in_stack_00000004->base,"hit-gh[4,7].wav");
       }
       break;
     case 0x11:
-      (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                (&in_stack_00000004->base_actor,"gb-fall1.wav");
+      (*((in_stack_00000004->base).vtable._ub)->playSound)
+                (&in_stack_00000004->base,"gb-fall1.wav");
       break;
     case 0x12:
       break;

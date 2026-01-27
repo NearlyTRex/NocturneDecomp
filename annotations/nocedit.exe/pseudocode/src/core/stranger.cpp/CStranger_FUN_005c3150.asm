@@ -54,8 +54,8 @@
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 DAT_032613a0
-;   undefined4 DAT_03f6bacc
-;   undefined4 DAT_03f6bb04
+;   int INT_03f6bacc
+;   int INT_03f6bb04
 ;   undefined4 DAT_03f6bb24
 ;
 ; Called Functions:
@@ -349,7 +349,7 @@ section .text
     MOV dword ptr [EBP + 0x2e],ESI      ; 005c3465
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c3468
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x03f6bacc]      ; 005c346d | DAT_03f6bacc
+    MOV ESI,dword ptr [0x03f6bacc]      ; 005c346d | INT_03f6bacc
     LEA EAX,[ESI*0x4 + 0x0]             ; 005c3473
     SUB EAX,ESI                         ; 005c347a
     SHL EAX,0x4                         ; 005c347c
@@ -460,7 +460,7 @@ section .text
     MOV dword ptr [EBP + -0xa],ECX      ; 005c3587
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c358a
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x03f6bacc]      ; 005c358f | DAT_03f6bacc
+    MOV ESI,dword ptr [0x03f6bacc]      ; 005c358f | INT_03f6bacc
     LEA EAX,[ESI*0x4 + 0x0]             ; 005c3595
     SUB EAX,ESI                         ; 005c359c
     MOV ESI,EAX                         ; 005c359e
@@ -567,7 +567,7 @@ section .text
     MOV dword ptr [EBP + 0x3e],ECX      ; 005c36bc
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c36bf
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x03f6bb04]      ; 005c36c4 | DAT_03f6bb04
+    MOV ESI,dword ptr [0x03f6bb04]      ; 005c36c4 | INT_03f6bb04
     LEA EAX,[ESI*0x4 + 0x0]             ; 005c36ca
     SUB EAX,ESI                         ; 005c36d1
     SHL EAX,0x4                         ; 005c36d3

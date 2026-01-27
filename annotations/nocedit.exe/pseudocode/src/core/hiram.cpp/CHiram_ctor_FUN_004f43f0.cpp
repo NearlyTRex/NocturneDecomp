@@ -14,12 +14,12 @@ CHiram * __cdecl core_hiram_cpp_CHiram_ctor_FUN_004f43f0(CHiram *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CHiram *)core_npc_cpp_CNPC_ctor_FUN_005447e0(&this_ptr->base_actor);
-  (pCVar2->base_actor).base_character.base_actor.vtable._ub = &g_CHiramVTable;
+  pCVar2 = (CHiram *)core_npc_cpp_CNPC_ctor_FUN_005447e0(&this_ptr->base);
+  (pCVar2->base).base.base.vtable._ub = &g_CHiramVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar2->base_actor).base_character.model,"hiram.dfm");
+            (&(pCVar2->base).base.model,"hiram.dfm");
   pcVar3 = "killHiram";
-  pcVar4 = pCVar2->field1_0x1f708;
+  pcVar4 = pCVar2->unk;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

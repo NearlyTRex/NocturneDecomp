@@ -48,7 +48,7 @@
 ;   float FLOAT_00645e1b = 0.6660000
 ;   double DOUBLE_00645e23 = 2
 ;   float FLOAT_00662850 = 256
-;   undefined4 DAT_02d7a7b8
+;   int INT_02d7a7b8
 ;   int g_ActiveLightCount
 ;   CDemonLight*[96] g_ActiveLightList
 ;   undefined4 DAT_03276f38
@@ -593,7 +593,7 @@ section .text
         ;   XREF to: 0056d952 (UNCONDITIONAL_JUMP)  ; LAB_0056d952
     MOV EAX,dword ptr [ESP + 0x88]      ; 0056daec
         ;   Label: LAB_0056daec
-    MOV ECX,dword ptr [0x02d7a7b8]      ; 0056daf3 | DAT_02d7a7b8
+    MOV ECX,dword ptr [0x02d7a7b8]      ; 0056daf3 | INT_02d7a7b8
     SAR EAX,0x1                         ; 0056daf9
     ADD EAX,ECX                         ; 0056dafb
     MOV dword ptr [ESP + 0x78],EAX      ; 0056dafd

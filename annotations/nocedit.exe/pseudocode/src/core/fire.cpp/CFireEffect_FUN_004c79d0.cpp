@@ -35,7 +35,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c79d0(CFireEffect *this_ptr)
        (uint)((longlong)in_stack_00000020 * (longlong)iVar2) >> 0x10 |
        (int)((ulonglong)((longlong)in_stack_00000020 * (longlong)iVar2) >> 0x20) << 0x10;
   g_SparkPool[(int)pCVar1].intensity_target = in_stack_0000001c;
-  g_SparkPool[(int)pCVar1].field4_0x44 = in_stack_00000024;
+  g_SparkPool[(int)pCVar1].unk = in_stack_00000024;
   g_SparkPool[(int)pCVar1].fade_rate = in_stack_00000028;
   return;
 }

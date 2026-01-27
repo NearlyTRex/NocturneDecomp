@@ -35,21 +35,21 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
   int local_1c;
   int local_18;
   
-  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   iVar5 = this_ptr->round_flag;
-  *(float *)(this_ptr->field21_0x298 + 0x2af98) =
-       (this_ptr->base_actor).location.position.y - this_ptr->height_delta * this_ptr->param;
+  *(float *)(this_ptr->unk5 + 0x2af98) =
+       (this_ptr->base).location.position.y - this_ptr->height_delta * this_ptr->param;
   if (iVar5 == 0) {
     while( true ) {
       fVar4 = 1.0 / this_ptr->patch_size;
       fVar1 = (this_ptr->size).x;
       dVar19 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->size).z * fVar4));
       dVar20 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * fVar4));
-      *(int *)(this_ptr->field21_0x298 + 0x7d08) = (int)ROUND(dVar20);
+      *(int *)(this_ptr->unk5 + 0x7d08) = (int)ROUND(dVar20);
       iVar11 = (int)ROUND(dVar20) + 1;
-      *(uint *)(this_ptr->field21_0x298 + 0x7d0c) = uStack_4c;
+      *(uint *)(this_ptr->unk5 + 0x7d0c) = uStack_4c;
       iVar5 = ((int)ROUND(dVar19) + 1) * iVar11;
-      *(int *)this_ptr->field21_0x298 = iVar5;
+      *(int *)this_ptr->unk5 = iVar5;
       if (iVar5 < 0x3e9) break;
       this_ptr->patch_size = this_ptr->patch_size * (float)2;
     }
@@ -86,13 +86,13 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
         local_18 = local_18 + 1;
       } while (local_18 < (int)(-fVar1 * fVar4));
     }
-    pcVar9 = this_ptr->field21_0x298 + 0x7d10;
-    iVar8 = *(int *)(this_ptr->field21_0x298 + 0x7d0c);
+    pcVar9 = this_ptr->unk5 + 0x7d10;
+    iVar8 = *(int *)(this_ptr->unk5 + 0x7d0c);
     local_30 = 0;
     if (0 < iVar8) {
       do {
         iVar5 = 0;
-        if (0 < *(int *)(this_ptr->field21_0x298 + 0x7d08)) {
+        if (0 < *(int *)(this_ptr->unk5 + 0x7d08)) {
           iVar11 = local_30 % 4 << 0x16;
           iVar8 = (local_30 % 4 + 1) * 0x400000;
           do {
@@ -108,7 +108,7 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
             *(uint *)(pcVar9 + 0x10) = uVar2;
             *(uint *)(pcVar9 + 0xc) = uVar2;
             *(uint *)(pcVar9 + 8) = uVar2;
-            iVar12 = (*(int *)(this_ptr->field21_0x298 + 0x7d08) + 1) * local_30 + iVar5;
+            iVar12 = (*(int *)(this_ptr->unk5 + 0x7d08) + 1) * local_30 + iVar5;
             *(int *)(pcVar9 + 0x30) = iVar12;
             iVar12 = iVar12 + 1;
             *(int *)(pcVar9 + 0x38) = iVar11;
@@ -118,7 +118,7 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
             *(int *)(pcVar9 + 0x34) = iVar7;
             *(int *)(pcVar9 + 0x28) = iVar10;
             *(int *)(pcVar9 + 0x2c) = iVar11;
-            *(int *)(pcVar9 + 0x18) = iVar12 + *(int *)(this_ptr->field21_0x298 + 0x7d08) + 1;
+            *(int *)(pcVar9 + 0x18) = iVar12 + *(int *)(this_ptr->unk5 + 0x7d08) + 1;
             *(int *)(pcVar9 + 0x1c) = iVar10;
             *(int *)(pcVar9 + 0x20) = iVar8;
             pcVar9[0x4c] = '\x03';
@@ -133,12 +133,12 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
             *(uint *)(pcVar9 + 0x58) = uVar2;
             *(uint *)(pcVar9 + 0x54) = uVar2;
             *(uint *)(pcVar9 + 0x50) = uVar2;
-            iVar12 = *(int *)(this_ptr->field21_0x298 + 0x7d08);
+            iVar12 = *(int *)(this_ptr->unk5 + 0x7d08);
             *(int *)(pcVar9 + 0x7c) = iVar7;
             iVar12 = iVar5 + (iVar12 + 1) * local_30;
             *(int *)(pcVar9 + 0x78) = iVar12;
             *(int *)(pcVar9 + 0x80) = iVar11;
-            iVar3 = *(int *)(this_ptr->field21_0x298 + 0x7d08);
+            iVar3 = *(int *)(this_ptr->unk5 + 0x7d08);
             *(int *)(pcVar9 + 100) = iVar7;
             iVar12 = iVar12 + iVar3 + 2;
             *(int *)(pcVar9 + 0x6c) = iVar12;
@@ -148,76 +148,73 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
             *(int *)(pcVar9 + 0x68) = iVar8;
             iVar5 = iVar5 + 1;
             pcVar9 = pcVar9 + 0x90;
-          } while (iVar5 < *(int *)(this_ptr->field21_0x298 + 0x7d08));
+          } while (iVar5 < *(int *)(this_ptr->unk5 + 0x7d08));
         }
         local_30 = local_30 + 1;
-        iVar8 = *(int *)(this_ptr->field21_0x298 + 0x7d0c);
+        iVar8 = *(int *)(this_ptr->unk5 + 0x7d0c);
       } while (local_30 < iVar8);
     }
-    iVar11 = *(int *)(this_ptr->field21_0x298 + 0x7d08) * *(int *)(this_ptr->field21_0x298 + 0x7d0c)
-             * 2;
-    *(int *)(this_ptr->field21_0x298 + 0x2af9c) = iVar11;
+    iVar11 = *(int *)(this_ptr->unk5 + 0x7d08) * *(int *)(this_ptr->unk5 + 0x7d0c) * 2;
+    *(int *)(this_ptr->unk5 + 0x2af9c) = iVar11;
   }
   else {
-    this_ptr->field21_0x298[0x2af9c] = ' ';
-    this_ptr->field21_0x298[0x2af9d] = '\0';
-    this_ptr->field21_0x298[0x2af9e] = '\0';
-    this_ptr->field21_0x298[0x2af9f] = '\0';
-    this_ptr->field21_0x298[0] = '\0';
-    this_ptr->field21_0x298[1] = '\0';
-    this_ptr->field21_0x298[2] = '\0';
-    this_ptr->field21_0x298[3] = '\0';
+    this_ptr->unk5[0x2af9c] = ' ';
+    this_ptr->unk5[0x2af9d] = '\0';
+    this_ptr->unk5[0x2af9e] = '\0';
+    this_ptr->unk5[0x2af9f] = '\0';
+    this_ptr->unk5[0] = '\0';
+    this_ptr->unk5[1] = '\0';
+    this_ptr->unk5[2] = '\0';
+    this_ptr->unk5[3] = '\0';
     iVar5 = 0;
-    if (0 < *(int *)(this_ptr->field21_0x298 + 0x2af9c)) {
+    if (0 < *(int *)(this_ptr->unk5 + 0x2af9c)) {
       fVar15 = (float10)8388608;
       fVar16 = (float10)65536;
       fVar17 = (float10)128;
       do {
-        fVar18 = ((float10)iVar5 / (float10)*(int *)(this_ptr->field21_0x298 + 0x2af9c)) *
+        fVar18 = ((float10)iVar5 / (float10)*(int *)(this_ptr->unk5 + 0x2af9c)) *
                  (float10)3.1415926535000001 * (float10)2;
         fVar14 = (float10)fcos(fVar18);
         fVar18 = (float10)fsin(fVar18);
-        *(float *)(this_ptr->field21_0x298 + *(int *)this_ptr->field21_0x298 * 0x20 + 4) =
+        *(float *)(this_ptr->unk5 + *(int *)this_ptr->unk5 * 0x20 + 4) =
              (float)(fVar14 * (float10)(this_ptr->size).x * (float10)0.70699999999999996);
-        pcVar9 = this_ptr->field21_0x298 + *(int *)this_ptr->field21_0x298 * 0x20 + 8;
+        pcVar9 = this_ptr->unk5 + *(int *)this_ptr->unk5 * 0x20 + 8;
         pcVar9[0] = '\0';
         pcVar9[1] = '\0';
         pcVar9[2] = '\0';
         pcVar9[3] = '\0';
-        *(float *)(this_ptr->field21_0x298 + *(int *)this_ptr->field21_0x298 * 0x20 + 0xc) =
+        *(float *)(this_ptr->unk5 + *(int *)this_ptr->unk5 * 0x20 + 0xc) =
              (float)(fVar18 * (float10)(this_ptr->size).z * (float10)0.70699999999999996);
-        iVar11 = *(int *)this_ptr->field21_0x298 * 0x20;
+        iVar11 = *(int *)this_ptr->unk5 * 0x20;
         dVar19 = crt_math_c_round_FUN_005fe6b0
-                           ((double)(((float10)*(float *)(this_ptr->field21_0x298 + iVar11 + 4) /
+                           ((double)(((float10)*(float *)(this_ptr->unk5 + iVar11 + 4) /
                                      (float10)(this_ptr->size).x) * fVar17 * fVar16 + fVar15));
-        *(int *)(this_ptr->field21_0x298 + iVar11 + 0x1c) = (int)ROUND(dVar19);
-        iVar11 = *(int *)this_ptr->field21_0x298 * 0x20;
+        *(int *)(this_ptr->unk5 + iVar11 + 0x1c) = (int)ROUND(dVar19);
+        iVar11 = *(int *)this_ptr->unk5 * 0x20;
         dVar19 = crt_math_c_round_FUN_005fe6b0
-                           ((double)(((float10)*(float *)(this_ptr->field21_0x298 + iVar11 + 0xc) /
+                           ((double)(((float10)*(float *)(this_ptr->unk5 + iVar11 + 0xc) /
                                      (float10)(this_ptr->size).z) * fVar17 * fVar16 + fVar15));
-        *(int *)(this_ptr->field21_0x298 + iVar11 + 0x20) = (int)ROUND(dVar19);
+        *(int *)(this_ptr->unk5 + iVar11 + 0x20) = (int)ROUND(dVar19);
         iVar5 = iVar5 + 1;
-        iVar11 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
-        *(int *)this_ptr->field21_0x298 = *(int *)this_ptr->field21_0x298 + 1;
+        iVar11 = *(int *)(this_ptr->unk5 + 0x2af9c);
+        *(int *)this_ptr->unk5 = *(int *)this_ptr->unk5 + 1;
       } while (iVar5 < iVar11);
     }
-    iVar5 = *(int *)this_ptr->field21_0x298 * 0x20;
-    pcVar9 = this_ptr->field21_0x298 + iVar5 + 0xc;
+    iVar5 = *(int *)this_ptr->unk5 * 0x20;
+    pcVar9 = this_ptr->unk5 + iVar5 + 0xc;
     pcVar9[0] = '\0';
     pcVar9[1] = '\0';
     pcVar9[2] = '\0';
     pcVar9[3] = '\0';
-    *(uint *)(this_ptr->field21_0x298 + iVar5 + 8) =
-         *(uint *)(this_ptr->field21_0x298 + iVar5 + 0xc);
-    *(uint *)(this_ptr->field21_0x298 + iVar5 + 4) =
-         *(uint *)(this_ptr->field21_0x298 + iVar5 + 8);
-    iVar5 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
+    *(uint *)(this_ptr->unk5 + iVar5 + 8) = *(uint *)(this_ptr->unk5 + iVar5 + 0xc);
+    *(uint *)(this_ptr->unk5 + iVar5 + 4) = *(uint *)(this_ptr->unk5 + iVar5 + 8);
+    iVar5 = *(int *)(this_ptr->unk5 + 0x2af9c);
     iVar11 = 0;
-    iVar8 = *(int *)this_ptr->field21_0x298 + 1;
+    iVar8 = *(int *)this_ptr->unk5 + 1;
     local_1c = 0;
-    *(int *)this_ptr->field21_0x298 = iVar8;
+    *(int *)this_ptr->unk5 = iVar8;
     if (0 < iVar5) {
-      pcVar9 = this_ptr->field21_0x298 + 0x7d10;
+      pcVar9 = this_ptr->unk5 + 0x7d10;
       pCVar13 = this_ptr;
       do {
         pcVar9[4] = '\x03';
@@ -233,7 +230,7 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
         *(uint *)(pcVar9 + 0xc) = uVar2;
         *(uint *)(pcVar9 + 8) = uVar2;
         iVar12 = local_1c + 1;
-        uVar2 = *(uint *)(this_ptr->field21_0x298 + 0x2af9c);
+        uVar2 = *(uint *)(this_ptr->unk5 + 0x2af9c);
         pcVar9[0x1c] = '\0';
         pcVar9[0x1d] = '\0';
         pcVar9[0x1e] = '\0';
@@ -243,31 +240,30 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
         pcVar9[0x22] = '\0';
         pcVar9[0x23] = '\0';
         *(uint *)(pcVar9 + 0x18) = uVar2;
-        iVar5 = iVar12 % *(int *)(this_ptr->field21_0x298 + 0x2af9c);
+        iVar5 = iVar12 % *(int *)(this_ptr->unk5 + 0x2af9c);
         *(int *)(pcVar9 + 0x24) = local_1c;
-        *(uint *)(pcVar9 + 0x28) = *(uint *)(pCVar13->field21_0x298 + 0x1c);
-        uVar2 = *(uint *)(pCVar13->field21_0x298 + 0x20);
+        *(uint *)(pcVar9 + 0x28) = *(uint *)(pCVar13->unk5 + 0x1c);
+        uVar2 = *(uint *)(pCVar13->unk5 + 0x20);
         *(int *)(pcVar9 + 0x30) = iVar5;
         *(uint *)(pcVar9 + 0x2c) = uVar2;
-        iVar8 = *(int *)(this_ptr->field21_0x298 + iVar5 * 0x20 + 0x1c);
+        iVar8 = *(int *)(this_ptr->unk5 + iVar5 * 0x20 + 0x1c);
         *(int *)(pcVar9 + 0x34) = iVar8;
-        pCVar13 = (CWaterActor *)&(pCVar13->base_actor).location;
-        *(uint *)(pcVar9 + 0x38) =
-             *(uint *)(this_ptr->field21_0x298 + iVar5 * 0x20 + 0x20);
+        pCVar13 = (CWaterActor *)&(pCVar13->base).location;
+        *(uint *)(pcVar9 + 0x38) = *(uint *)(this_ptr->unk5 + iVar5 * 0x20 + 0x20);
         pcVar9 = pcVar9 + 0x48;
-        iVar11 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
+        iVar11 = *(int *)(this_ptr->unk5 + 0x2af9c);
         local_1c = iVar12;
       } while (iVar12 < iVar11);
     }
   }
   core_wateract_cpp_FUN_005eafa0(iVar11,iVar8);
-  this_ptr->field21_0x298[0x2af90] = '\0';
-  this_ptr->field21_0x298[0x2af91] = '\0';
-  this_ptr->field21_0x298[0x2af92] = '\0';
-  this_ptr->field21_0x298[0x2af93] = '\0';
-  this_ptr->field21_0x298[0x2af94] = '\0';
-  this_ptr->field21_0x298[0x2af95] = '\0';
-  this_ptr->field21_0x298[0x2af96] = '\0';
-  this_ptr->field21_0x298[0x2af97] = '\0';
+  this_ptr->unk5[0x2af90] = '\0';
+  this_ptr->unk5[0x2af91] = '\0';
+  this_ptr->unk5[0x2af92] = '\0';
+  this_ptr->unk5[0x2af93] = '\0';
+  this_ptr->unk5[0x2af94] = '\0';
+  this_ptr->unk5[0x2af95] = '\0';
+  this_ptr->unk5[0x2af96] = '\0';
+  this_ptr->unk5[0x2af97] = '\0';
   return;
 }

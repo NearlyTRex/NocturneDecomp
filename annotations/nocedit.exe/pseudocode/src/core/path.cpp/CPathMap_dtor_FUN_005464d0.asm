@@ -8,9 +8,9 @@
 ;
 ; XREF[8]:
 ;   core_hero.cpp_CHero_dtor_FUN_004f2470 at 004f24ae
-;   core_hiram.cpp_FUN_004f4450 at 004f4473
-;   core_hostage.cpp_FUN_004f6b60 at 004f6b79
-;   core_hpriest.cpp_FUN_004f7cb0 at 004f7cc9
+;   core_hiram.cpp_CHiram_dtor_FUN_004f4450 at 004f4473
+;   core_hostage.cpp_CHostage_dtor_FUN_004f6b60 at 004f6b79
+;   core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0 at 004f7cc9
 ;   core_npc.cpp_CNPC_dtor_FUN_004f4700 at 004f4719
 ;   core_passngr.cpp_CPassenger_dtor_FUN_00545c10 at 00545c7a
 ;   core_tbplayer.cpp_CBassPlayer_dtor_FUN_005da610 at 005da629

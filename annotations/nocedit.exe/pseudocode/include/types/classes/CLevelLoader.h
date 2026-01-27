@@ -11,7 +11,7 @@ typedef struct CLevelLoader {
     int total_frames; // 0x4
     int version; // 0x8
     int enabled; // 0xc
-    char field_16[256]; // 0x10
+    char unk[256]; // 0x10
     int use_custom_viewport; // 0x110
     int viewport_x; // 0x114
     int viewport_y; // 0x118

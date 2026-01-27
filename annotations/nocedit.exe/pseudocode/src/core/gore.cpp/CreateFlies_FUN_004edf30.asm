@@ -18,7 +18,7 @@
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
-;   core_flies.cpp_FUN_004cbd60
+;   core_flies.cpp_CFlies_ctor_FUN_004cbd60
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
@@ -110,8 +110,8 @@ section .text
     RET                                 ; 004ee013
     PUSH EAX                            ; 004ee014
         ;   Label: LAB_004ee014
-    CALL core_flies.cpp_FUN_004cbd60    ; 004ee015
-        ;   XREF to: 004cbd60 (UNCONDITIONAL_CALL)  ; CFlies * core_flies.cpp_FUN_004cbd60(CFlies * this_ptr)
+    CALL core_flies.cpp_CFlies_ctor_FUN_004cbd60 ; 004ee015
+        ;   XREF to: 004cbd60 (UNCONDITIONAL_CALL)  ; CFlies * core_flies.cpp_CFlies_ctor_FUN_004cbd60(CFlies * this_ptr)
     ADD ESP,0x4                         ; 004ee01a
     JMP 0x004edf5a                      ; 004ee01d
         ;   XREF to: 004edf5a (UNCONDITIONAL_JUMP)  ; LAB_004edf5a

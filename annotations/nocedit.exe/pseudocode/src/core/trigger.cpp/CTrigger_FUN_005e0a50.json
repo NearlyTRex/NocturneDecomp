@@ -1,50 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 16,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 17,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 70,
-        "line": 17,
-        "message": "'SSurfaceInfo' {aka 'struct SSurfaceInfo'} has no member named 'field2_0x8'; did you mean 'field_8'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 18,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 19,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 20,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 21,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -56,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 92,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 16,
     "suspect_count": 7,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 47
+    "total_lines": 46
   },
   "cross_references": [],
   "function": {
@@ -146,42 +103,42 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000008",
-      "text": "(&this_ptr->base_actor,in_stack_00000008);",
+      "text": "core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(&this_ptr->base,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_00000008",
-      "text": "(*(int *)(this_ptr->field1_0x158 + 0x19c) == in_stack_00000008->field2_0x8)) {",
+      "text": "(*(int *)(this_ptr->unk + 0x19c) == in_stack_00000008->unk2)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->alpha_or_wetness = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->reflectivity = 1.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->angle_copy = in_stack_00000008->angle_or_rotation;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->angle_copy = in_stack_00000008->angle_or_rotation;",
       "type": "stack_param"

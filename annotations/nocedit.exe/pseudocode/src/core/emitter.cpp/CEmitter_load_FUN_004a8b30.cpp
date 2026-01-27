@@ -28,44 +28,43 @@ void core_emitter_cpp_CEmitter_load_FUN_004a8b30(void)
   }
   if (*(int *)in_stack_00000004[1].actor_name == 3) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].field12_0xe0.y,"laserR");
+              ((int *)&in_stack_00000004[1].unk3.y,"laserR");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].field12_0xe0.z,"laserG");
+              ((int *)&in_stack_00000004[1].unk3.z,"laserG");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].field13_0xec,"laserB");
+              ((int *)&in_stack_00000004[1].unk4,"laserB");
     if (2 < g_CEmitterClassVersion) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0
-                ((int *)&in_stack_00000004[1].field12_0xe0,"laserType");
+                ((int *)&in_stack_00000004[1].unk3,"laserType");
     }
   }
   if (2 < g_CEmitterClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[1].field11_0xdc,"maxEmitTime");
+              ((float *)&in_stack_00000004[1].unk2,"maxEmitTime");
     core_actor_cpp_serializeFloat_FUN_0040b770
               ((float *)&in_stack_00000004[3].orient_matrix,"emitPeriod");
   }
   if (3 < g_CEmitterClassVersion) {
     core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-              ((CKeyFramedModelInstance *)&in_stack_00000004[1].field13_0xec.y,"modelName")
-    ;
+              ((CKeyFramedModelInstance *)&in_stack_00000004[1].unk4.y,"modelName");
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[2].field19_0x114,"rockSpeed");
+              ((float *)&in_stack_00000004[2].unk8,"rockSpeed");
   }
   if (4 < g_CEmitterClassVersion) {
-    core_actor_cpp_serializeInteger_FUN_0040b7f0
-              (&in_stack_00000004[2].field20_0x118,"periodicFlag");
+    core_actor_cpp_serializeInteger_FUN_0040b7f0(&in_stack_00000004[2].unk9,"periodicFlag")
+    ;
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[2].field21_0x11c,"maxWaitTime");
+              ((float *)&in_stack_00000004[2].unk10,"maxWaitTime");
   }
   if (5 < g_CEmitterClassVersion) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)&in_stack_00000004[2].field22_0x120,"destActor");
+              ((CDemonActor *)&in_stack_00000004[2].unk11,"destActor");
   }
   if (g_CEmitterClassVersion < 7) {
     return;
   }
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)&in_stack_00000004[2].field23_0x124,"wavName");
+            ((char **)&in_stack_00000004[2].unk12,"wavName");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
             ((int *)&in_stack_00000004[3].orient.bank,"sfxType");
   return;

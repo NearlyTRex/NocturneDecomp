@@ -43,7 +43,7 @@ engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048b
         }
         g_RenderStateFlag2 = PREPROCESS_NONE;
         g_RenderStateFlags = RENDER_ENGINE_CORE_COMPLEX;
-        if ((this_ptr->field8_0x20 == 0) && (iVar4 = 0, 0 < (prim->base).count)) {
+        if ((this_ptr->unk == 0) && (iVar4 = 0, 0 < (prim->base).count)) {
           iVar3 = 0;
           pSVar2 = prim;
           do {

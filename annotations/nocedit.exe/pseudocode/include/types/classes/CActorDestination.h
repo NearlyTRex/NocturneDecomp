@@ -12,6 +12,6 @@ typedef struct CActorDestination {
     char dest_class[44]; // 0x15c
     char what_event[100]; // 0x188
     int persistent_event_flag; // 0x1ec
-    int field_496; // 0x1f0
+    int unk; // 0x1f0
 } CActorDestination;
 

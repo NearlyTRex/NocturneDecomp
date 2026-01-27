@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_cloth.cpp_FUN_00439710(uint param_1, uint param_2,
-   uint param_3, uint param_4) */
-
 void core_cloth_cpp_FUN_00439710(void)
 
 {
@@ -202,9 +198,9 @@ void core_cloth_cpp_FUN_00439710(void)
         }
         piVar13 = (int *)(*(int *)(in_stack_00000004 + 0x10c) + iVar12);
         pfVar18 = pfVar18 + 0x47;
-        *piVar13 = (int)ROUND(*pfVar10 * _DAT_0065bb3c);
-        piVar13[1] = (int)ROUND(pfVar10[1] * _DAT_0065bb3c);
-        piVar13[2] = (int)ROUND(pfVar10[2] * _DAT_0065bb3c);
+        *piVar13 = (int)ROUND(*pfVar10 * 256.0f);
+        piVar13[1] = (int)ROUND(pfVar10[1] * 256.0f);
+        piVar13[2] = (int)ROUND(pfVar10[2] * 256.0f);
         iVar7 = iVar7 + 1;
         pfVar10 = pfVar10 + 0x47;
         iVar12 = iVar12 + 0xc;

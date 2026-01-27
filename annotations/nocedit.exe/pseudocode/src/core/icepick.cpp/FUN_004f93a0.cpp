@@ -54,7 +54,7 @@ void core_icepick_cpp_FUN_004f93a0(void)
       }
       break;
     case 0x69:
-      (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
+      (*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc21)();
       break;
     default:
       core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void)
 
 {
@@ -42,7 +40,7 @@ void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void)
   PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f0c =
        crt_sync_c_leave_global_thread_critical_section_FUN_0060a1ac;
   g_GlobalInitLock = crt_sync_c_allocate_critical_section_FUN_00609f24();
-  _DAT_03f9bfd4 = 1;
+  INT_03f9bfd4 = 1;
   PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f1c =
        crt_sync_c_leave_global_runtime_critical_section_FUN_0060a1ec;
   PTR_crt_sync_c_CriticalSectionCleanup_FUN_00602434_00684f20 =

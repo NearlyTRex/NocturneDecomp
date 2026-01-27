@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 59,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 14,
-    "suspect_count": 3,
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "special_crt_function",
-      "warning_struct_overlap"
+      "special_crt_function"
     ],
-    "total_lines": 50
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -78,20 +76,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Struct has overlapping fields",
-      "line": 2,
-      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
-      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
-      "type": "warning_struct_overlap"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 10,
-      "match": "(int *)((int)",
-      "text": "iVar1 = (((((spec_info->width - *(int *)((int)&spec_info->flags + 2)) -",
-      "type": "pointer_cast"
-    },
     {
       "address": "0060317c",
       "crt_type": "runtime support",

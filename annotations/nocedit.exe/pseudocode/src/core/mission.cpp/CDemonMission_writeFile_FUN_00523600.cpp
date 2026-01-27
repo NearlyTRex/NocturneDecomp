@@ -19,7 +19,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   FILE *in_stack_00000008;
   
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x1ae);
-  if (*(int *)(this_ptr->field6_0x54c + 0x338) == 0) {
+  if (*(int *)(this_ptr->unk4 + 0x338) == 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Preparing actors...");
     core_mission_cpp_CDemonMission_FUN_00523cf0(this_ptr);
@@ -29,12 +29,12 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d,%d\n",this_ptr->mission_version_num,4)
   ;
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// Root name of mission\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%s\n",this_ptr->field2_0xc + 0x38);
+  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%s\n",this_ptr->unk2 + 0x38);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// setList\n");
   iVar5 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n",this_ptr->set_list);
   if (0 < (int)this_ptr->set_list) {
-    pcVar4 = this_ptr->field4_0x148;
+    pcVar4 = this_ptr->unk3;
     do {
       iVar5 = iVar5 + 1;
       crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%s\n",pcVar4);
@@ -79,7 +79,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
       g_CurrentLineNumber = 0x1e9;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Too many actors");
     }
-    *(CDemonActor **)(this_ptr->field8_0x890 + this_ptr->actorCountMaybe * 4) = pCVar2;
+    *(CDemonActor **)(this_ptr->unk5 + this_ptr->actorCountMaybe * 4) = pCVar2;
     this_ptr->actorCountMaybe = this_ptr->actorCountMaybe + 1;
   }
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
@@ -92,8 +92,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
           g_CurrentLineNumber = 500;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many actors");
         }
-        *(CDemonActor **)(this_ptr->field8_0x890 + this_ptr->actorCountMaybe * 4) = pCVar6->items[0]
-        ;
+        *(CDemonActor **)(this_ptr->unk5 + this_ptr->actorCountMaybe * 4) = pCVar6->items[0];
         pCVar6 = (CInventory *)&pCVar6->owner;
         this_ptr->actorCountMaybe = this_ptr->actorCountMaybe + 1;
       }

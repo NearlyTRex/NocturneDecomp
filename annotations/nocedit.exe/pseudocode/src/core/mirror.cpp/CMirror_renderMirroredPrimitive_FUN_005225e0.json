@@ -1,32 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 23,
-        "message": "'_DAT_02f33724' was not declared in this scope; did you mean 'DAT_02f33394'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 24,
-        "message": "'_DAT_02f33728' was not declared in this scope; did you mean 'DAT_02f33398'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 25,
-        "message": "'_DAT_02f3372c' was not declared in this scope; did you mean 'DAT_03FB372C'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 26,
-        "message": "'_DAT_02f33730' was not declared in this scope; did you mean 'DAT_02f33378'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -38,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 39,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 12,
-    "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 64
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
   },
   "cross_references": [],
   "function": {
@@ -125,26 +98,26 @@
     },
     {
       "addr": "02f33724",
-      "name": "DAT_02f33724",
-      "type": "undefined4",
+      "name": "INT_02f33724",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f33728",
-      "name": "DAT_02f33728",
-      "type": "undefined4",
+      "name": "INT_02f33728",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f3372c",
-      "name": "DAT_02f3372c",
-      "type": "undefined4",
+      "name": "INT_02f3372c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f33730",
-      "name": "DAT_02f33730",
-      "type": "undefined4",
+      "name": "INT_02f33730",
+      "type": "int",
       "value": null
     }
   ],
@@ -200,13 +173,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -1,44 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 18,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 65,
-        "line": 18,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 20,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 57,
-        "line": 20,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 22,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 22,
-        "line": 23,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -55,29 +18,29 @@
       {
         "category": "other",
         "column": 23,
-        "line": 27,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 29,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 76,
+    "complexity_score": 75,
     "cross_reference_count": 8,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 5,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 61
+    "total_lines": 60
   },
   "cross_references": [
     {
@@ -249,16 +212,16 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008;",
+      "text": "*(CDemonActor **)(this_ptr->unk4 + *(int *)(this_ptr->unk4 + 0x14) * 4 + 0x18) = in_stack_00000008",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c;",
+      "text": "*(uint *)(this_ptr->unk4 + *(int *)(this_ptr->unk4 + 0x14) * 4 + 0x1a8) = in_stack_0000000c;",
       "type": "stack_param"
     }
   ]

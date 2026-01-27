@@ -4,14 +4,8 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_script_cpp_CScript_WriteScriptFile_FUN_00560b50()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 28,
-        "message": "'_DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
       }
     ],
     "success": false,
@@ -21,6 +15,24 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -79,6 +91,12 @@
       {
         "category": "other",
         "column": 54,
+        "line": 28,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 54,
         "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -90,13 +108,13 @@
       },
       {
         "category": "other",
-        "column": 54,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 48,
+        "line": 32,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 54,
+        "column": 32,
         "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -126,20 +144,14 @@
       },
       {
         "category": "other",
-        "column": 48,
-        "line": 38,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
+        "column": 54,
         "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 39,
+        "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -151,7 +163,7 @@
       {
         "category": "other",
         "column": 54,
-        "line": 43,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -162,63 +174,50 @@
       },
       {
         "category": "other",
-        "column": 54,
-        "line": 45,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 47,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 12,
-        "line": 48,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 51,
+        "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 52,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 54,
+        "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 56,
+        "line": 53,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 517,
+    "complexity_score": 500,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 33,
-    "pseudocode_lines": 47,
-    "suspect_count": 45,
+    "pseudocode_lines": 45,
+    "suspect_count": 44,
     "suspect_types": [
       "format_string_mismatch",
       "param_count_too_few",
-      "stack_param",
-      "warning_overlapping_globals"
+      "stack_param"
     ],
-    "total_lines": 255
+    "total_lines": 253
   },
   "cross_references": [
     {
@@ -452,8 +451,8 @@
     },
     {
       "addr": "0310f4a0",
-      "name": "DAT_0310f4a0",
-      "type": "undefined4",
+      "name": "FLOAT_0310f4a0",
+      "type": "float",
       "value": null
     }
   ],
@@ -521,185 +520,192 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// CScript version\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// gGame->letterboxMode\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// gGame->allowDamageFlag\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// gGame->allowEnemyAttackFlag\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// letterBoxBlackT\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%g\\n\",(double)_DAT_0310f4a0);",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%g\\n\",(double)FLOAT_0310f4a0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// nextCmd\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// currentMessage\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"\\\"%s\\\"\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// cmdTimer\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 25,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,\"%g\\n\",(double)*(float *)(in_stack_00000004 + 0x4c));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000008,\"%g\\n\",(double)*(float *)(in_stack_00000004 + 0x4c));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 26,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// dialogWavTime\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 28,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,\"%g\\n\",(double)*(float *)(in_stack_00000004 + 0x50));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000008,\"%g\\n\",(double)*(float *)(in_stack_00000004 + 0x50));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// whoIsSpeaking\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 31,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// focusActor\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 33,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// focusActorLocked\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000008",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000008",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// callStack count, list\\n\");",
       "type": "stack_param"
     },
     {
@@ -712,48 +718,34 @@
     {
       "description": "Unresolved stack parameter",
       "line": 38,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// callStack count, list\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004 + 0x45c)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "} while (iVar1 < *(int *)(in_stack_00000004 + 0x45c));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 44,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// CRC\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 46,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%u\\n\");",
       "type": "stack_param"
@@ -775,7 +767,7 @@
       "expected_args": 1,
       "format_string": "%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 13,
+      "line_number": 10,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -786,7 +778,7 @@
       "expected_args": 1,
       "format_string": "%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 15,
+      "line_number": 12,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -797,7 +789,7 @@
       "expected_args": 1,
       "format_string": "%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 17,
+      "line_number": 14,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -808,7 +800,7 @@
       "expected_args": 1,
       "format_string": "%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 19,
+      "line_number": 16,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -819,7 +811,7 @@
       "expected_args": 1,
       "format_string": "%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 23,
+      "line_number": 20,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -830,8 +822,19 @@
       "expected_args": 1,
       "format_string": "\\\"%s\\\"\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 25,
+      "line_number": 22,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"\\\"%s\\\"\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 34,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -852,18 +855,7 @@
       "expected_args": 1,
       "format_string": "%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 40,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 44,
+      "line_number": 41,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -874,7 +866,7 @@
       "expected_args": 1,
       "format_string": "%u\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 49,
+      "line_number": 46,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%u\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

@@ -25,7 +25,7 @@ typedef struct CDeformableModelInstance {
     int cached_skinned_lod_index; // 0x2230
     struct CVector3i* skinned_vertices_buffer; // 0x2234
     CBoundingBox3D bounding_box; // 0x2238
-    int field_8784; // 0x2250
+    int unk; // 0x2250
     CVector3f accumulated_root_motion; // 0x2254
     char model_name[80]; // 0x2260
     struct CDeformableModel* model_ptr; // 0x22b0

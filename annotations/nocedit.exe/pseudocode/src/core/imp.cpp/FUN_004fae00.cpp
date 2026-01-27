@@ -21,7 +21,7 @@ void core_imp_cpp_FUN_004fae00(void)
   char *sound_name;
   CVector3f local_24;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].field25_0x144);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].unk13);
   if (*(int *)((int)in_stack_00000008 + 0x28) == 8) {
     iVar3 = 0;
     *(float *)((int)in_stack_00000008 + 4) =
@@ -41,7 +41,7 @@ void core_imp_cpp_FUN_004fae00(void)
   if (0.0 < (float)pCVar1) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)this_ptr,5,1);
-    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(in_stack_00000004[0x8d].field26_0x148);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(in_stack_00000004[0x8d].unk14);
     if (iVar3 != 0) goto LAB_004faefc;
     sound_name = "imp-hurt?.wav";
   }
@@ -52,11 +52,11 @@ void core_imp_cpp_FUN_004fae00(void)
     if ((pSVar2->state_index == 6) || (pSVar2->state_index == 7)) goto LAB_004faefc;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)this_ptr,6,1);
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].field26_0x148);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].unk14);
     sound_name = "imp-die?.wav";
   }
   iVar3 = (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,sound_name);
-  in_stack_00000004[0x8d].field26_0x148 = iVar3;
+  in_stack_00000004[0x8d].unk14 = iVar3;
 LAB_004faefc:
   local_24.y = in_stack_00000008;
   local_24.x = (float)in_stack_00000004;

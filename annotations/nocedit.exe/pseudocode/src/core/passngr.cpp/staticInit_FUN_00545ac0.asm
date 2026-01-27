@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_passngr.cpp_staticInit_FUN_00545ac0(void)
+; __cdecl void core_passngr.cpp_staticInit_FUN_00545ac0(void)
 ;
 ;
 ; Referenced Globals:

@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_hero.cpp_FUN_004f3c00
+;   core_hero.cpp_CHeroPlaceholder_ctor_FUN_004f3c00
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_FUN_00523f20
@@ -139,8 +139,8 @@ section .text
     JZ 0x00524d15                       ; 00524d0a
         ;   XREF to: 00524d15 (CONDITIONAL_JUMP)  ; LAB_00524d15
     PUSH EAX                            ; 00524d0c
-    CALL core_hero.cpp_FUN_004f3c00     ; 00524d0d
-        ;   XREF to: 004f3c00 (UNCONDITIONAL_CALL)  ; CHeroPlaceholder * core_hero.cpp_FUN_004f3c00(CHeroPlaceholder * this_ptr)
+    CALL core_hero.cpp_CHeroPlaceholder_ctor_FUN_004f3c00 ; 00524d0d
+        ;   XREF to: 004f3c00 (UNCONDITIONAL_CALL)  ; CHeroPlaceholder * core_hero.cpp_CHeroPlaceholder_ctor_FUN_004f3c00(CHeroPlaceholder * this_ptr)
     ADD ESP,0x4                         ; 00524d12
     MOV EBP,EAX                         ; 00524d15
         ;   Label: LAB_00524d15

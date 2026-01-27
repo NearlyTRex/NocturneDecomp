@@ -2,17 +2,15 @@
 // Address: 00520e20
 // Address Range: [[00520e20, 00520e43]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_minecar.cpp_staticInit_FUN_00520e20(void)
+// Signature: void core_minecar.cpp_staticInit_FUN_00520e20(void)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void)
+void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void)
 
 {
-  CDemonActorType *pCVar1;
-  
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CMineCarClassInfo,"CMineCar",core_minecar_cpp_FUN_00520e50,
-                      &g_CMineCarClassVersion,1,&g_CPlatformClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CMineCarClassInfo,"CMineCar",core_minecar_cpp_factoryFunc_FUN_00520e50,
+             &g_CMineCarClassVersion,1,&g_CPlatformClassInfo);
+  return;
 }

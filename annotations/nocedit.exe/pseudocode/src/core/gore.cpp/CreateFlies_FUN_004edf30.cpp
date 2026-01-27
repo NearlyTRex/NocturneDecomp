@@ -24,7 +24,7 @@ CFlies * core_gore_cpp_CreateFlies_FUN_004edf30(void)
   this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a20,"..\\core\\gore.cpp",0x67c);
   this_ptr_00 = (CFlies *)0x0;
   if (this_ptr != (CFlies *)0x0) {
-    this_ptr_00 = core_flies_cpp_FUN_004cbd60(this_ptr);
+    this_ptr_00 = core_flies_cpp_CFlies_ctor_FUN_004cbd60(this_ptr);
   }
   if (this_ptr_00 == (CFlies *)0x0) {
     g_CurrentFilename = "..\\core\\gore.cpp";
@@ -32,24 +32,23 @@ CFlies * core_gore_cpp_CreateFlies_FUN_004edf30(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create flies!");
   }
   fVar2 = (float)60;
-  (this_ptr_00->base_actor).location.position.x = *in_stack_00000008;
-  (this_ptr_00->base_actor).location.position.y = in_stack_00000008[1];
-  (this_ptr_00->base_actor).location.position.z = in_stack_00000008[2];
-  iVar1 = *(int *)g_CDemonMissionPtr->field0_0x0;
-  this_ptr_00->field1_0x158[0xc] = '\0';
-  this_ptr_00->field1_0x158[0xd] = '\0';
-  this_ptr_00->field1_0x158[0xe] = '\0';
-  this_ptr_00->field1_0x158[0xf] = '\0';
-  (this_ptr_00->base_actor).location.area_id = iVar1;
-  *(uint *)(this_ptr_00->field1_0x158 + 0x28b4) = in_stack_0000000c;
-  *(float *)(this_ptr_00->field1_0x158 + 0x28bc) = fVar2 / in_stack_00000010;
-  if ((in_stack_00000014 != (uint *)0x0) &&
-     (this_ptr_00->field1_0x158 != (char *)in_stack_00000014)) {
-    *(uint *)this_ptr_00->field1_0x158 = *in_stack_00000014;
-    *(uint *)(this_ptr_00->field1_0x158 + 4) = in_stack_00000014[1];
-    *(uint *)(this_ptr_00->field1_0x158 + 8) = in_stack_00000014[2];
+  (this_ptr_00->base).location.position.x = *in_stack_00000008;
+  (this_ptr_00->base).location.position.y = in_stack_00000008[1];
+  (this_ptr_00->base).location.position.z = in_stack_00000008[2];
+  iVar1 = *(int *)g_CDemonMissionPtr->unk1;
+  this_ptr_00->unk[0xc] = '\0';
+  this_ptr_00->unk[0xd] = '\0';
+  this_ptr_00->unk[0xe] = '\0';
+  this_ptr_00->unk[0xf] = '\0';
+  (this_ptr_00->base).location.area_id = iVar1;
+  *(uint *)(this_ptr_00->unk + 0x28b4) = in_stack_0000000c;
+  *(float *)(this_ptr_00->unk + 0x28bc) = fVar2 / in_stack_00000010;
+  if ((in_stack_00000014 != (uint *)0x0) && (this_ptr_00->unk != (char *)in_stack_00000014)) {
+    *(uint *)this_ptr_00->unk = *in_stack_00000014;
+    *(uint *)(this_ptr_00->unk + 4) = in_stack_00000014[1];
+    *(uint *)(this_ptr_00->unk + 8) = in_stack_00000014[2];
   }
-  (*((this_ptr_00->base_actor).vtable._ub)->setup)(&this_ptr_00->base_actor);
+  (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
   return this_ptr_00;

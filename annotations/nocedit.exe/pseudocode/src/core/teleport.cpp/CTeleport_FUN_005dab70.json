@@ -1,38 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 35,
-        "line": 15,
-        "message": "'CTeleport' {aka 'struct CTeleport'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 13,
-        "line": 18,
-        "message": "'CTeleport' {aka 'struct CTeleport'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 13,
-        "line": 19,
-        "message": "'CTeleport' {aka 'struct CTeleport'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 13,
-        "line": 20,
-        "message": "'CTeleport' {aka 'struct CTeleport'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 13,
-        "line": 21,
-        "message": "'CTeleport' {aka 'struct CTeleport'} has no member named 'field1_0x158'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -134,14 +103,14 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CDemonActor_onActorDeleted_FUN_0040d000(&this_ptr->base_actor,in_stack_00000008);",
+      "text": "core_actor_cpp_CDemonActor_onActorDeleted_FUN_0040d000(&this_ptr->base,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "if (*(CDemonActor **)(this_ptr->field1_0x158 + 0xc) != in_stack_00000008) {",
+      "text": "if (*(CDemonActor **)(this_ptr->unk + 0xc) != in_stack_00000008) {",
       "type": "stack_param"
     }
   ],

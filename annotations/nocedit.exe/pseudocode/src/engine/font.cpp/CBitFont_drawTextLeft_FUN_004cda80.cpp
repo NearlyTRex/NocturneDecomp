@@ -57,8 +57,7 @@ LAB_004cdad3:
         *pcVar3 = '\0';
       }
       engine_palette_cpp_CFont_drawText_FUN_00544ed0
-                (&this_ptr->win_font_helper->base_font,(int)local_14,x_pos,y_pos,color_mode,
-                 color_value);
+                (&this_ptr->win_font_helper->base,(int)local_14,x_pos,y_pos,color_mode,color_value);
       iVar1 = extraout_EAX;
       if (extraout_EAX == -1) {
         this_ptr->win_font_enabled = 0;

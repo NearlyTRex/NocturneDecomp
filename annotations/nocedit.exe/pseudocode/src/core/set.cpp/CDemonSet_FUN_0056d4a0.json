@@ -422,12 +422,12 @@
   },
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 1038,
+    "complexity_score": 1028,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
     "pseudocode_lines": 258,
-    "suspect_count": 76,
+    "suspect_count": 75,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -500,8 +500,8 @@
     },
     {
       "addr": "02d7a7b8",
-      "name": "DAT_02d7a7b8",
-      "type": "undefined4",
+      "name": "INT_02d7a7b8",
+      "type": "int",
       "value": null
     },
     {
@@ -1482,13 +1482,6 @@
       "match": "in_stack_00000008",
       "text": "fVar2 = *(float *)(iVar4 + 0x10c) - (in_stack_00000008->z + pCVar6->z);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 223,
-      "match": "DAT_02d7a7b8",
-      "text": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + DAT_02d7a7b8) * *(float *)(iVar4 + 0x11dc))",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

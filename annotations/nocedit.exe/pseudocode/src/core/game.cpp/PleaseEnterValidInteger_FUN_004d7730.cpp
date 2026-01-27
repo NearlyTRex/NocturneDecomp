@@ -6,23 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_game.cpp_FUN_004d7730() */
-
 void core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void)
 
 {
   int iVar1;
   
   g_DebugRecording = 0;
-  _DAT_02d831bc = 0;
+  FLOAT_02d831bc = 0.0;
   iVar1 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                     (g_CEditorToolsPtr,"Enter Movie FPS",&30.0f,1,0.25,
                      240.0,1);
   if (iVar1 != 0) {
     iVar1 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                      (g_CEditorToolsPtr,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",
-                       (int *)&g_DebugRecordingParams,1,0,99999,1);
+                      (g_CEditorToolsPtr,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",&g_DebugRecordingParams
+                       ,1,0,99999,1);
     if (iVar1 != 0) {
       iVar1 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                         (g_CEditorToolsPtr,"Enter image width",&0x00000040,1,1,9999,1);

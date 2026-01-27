@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_vampboss.cpp_staticInit_FUN_005e5520(void)
+; __cdecl void core_vampboss.cpp_staticInit_FUN_005e5520(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_grave.cpp_staticInit_FUN_004ee4a0(void)
+; __cdecl void core_grave.cpp_staticInit_FUN_004ee4a0(void)
 ;
 ;
 ; Referenced Globals:

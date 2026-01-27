@@ -20,16 +20,16 @@ void core_svetlana_cpp_FUN_005d9d30(void)
   int in_stack_00000008;
   int iVar4;
   
-  if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {
+  if ((*(uint *)in_stack_00000004[1].base.actor_name & 0x7fffffff) != 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  if (g_CGamePtr->field53_0x1d0 != 0) {
+  if (g_CGamePtr->unk2 != 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  *(float *)in_stack_00000004[1].base_actor.actor_name = 3.0f;
+  *(float *)in_stack_00000004[1].base.actor_name = 3.0f;
   fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
@@ -44,11 +44,11 @@ void core_svetlana_cpp_FUN_005d9d30(void)
         in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr->motion_controller,8,1);
-        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
+        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base);
         sound_sndmain_cpp_killSfx_FUN_005a9c40
                   (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
-        uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                          (&in_stack_00000004->base_actor,"svet-die.wav");
+        uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
+                          (&in_stack_00000004->base,"svet-die.wav");
         *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
         core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
         return;
@@ -67,8 +67,8 @@ void core_svetlana_cpp_FUN_005d9d30(void)
     iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
     if (iVar4 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                        (&in_stack_00000004->base_actor,"svet-hurt?.wav");
+      uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
+                        (&in_stack_00000004->base,"svet-hurt?.wav");
       *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;

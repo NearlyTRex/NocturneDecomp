@@ -8,8 +8,8 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 at 005d8c66
 ;
 ; Referenced Globals:
-;   undefined4 DAT_03f6cbd4
-;   undefined4 DAT_03f6cbd8
+;   int INT_03f6cbd4
+;   int INT_03f6cbd8
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 005d99eb (CONDITIONAL_JUMP)  ; LAB_005d99eb
     JA 0x005d99f7                       ; 005d9996
         ;   XREF to: 005d99f7 (CONDITIONAL_JUMP)  ; LAB_005d99f7
-    MOV EDI,dword ptr [0x03f6cbd4]      ; 005d9998 | DAT_03f6cbd4
+    MOV EDI,dword ptr [0x03f6cbd4]      ; 005d9998 | INT_03f6cbd4
     PUSH EDI                            ; 005d999e
     PUSH EBX                            ; 005d999f
     CALL core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10 ; 005d99a0
@@ -68,7 +68,7 @@ section .text
     POP ESI                             ; 005d99ce
     POP EBX                             ; 005d99cf
     RET                                 ; 005d99d0
-    MOV EDX,dword ptr [0x03f6cbd8]      ; 005d99d1 | DAT_03f6cbd8
+    MOV EDX,dword ptr [0x03f6cbd8]      ; 005d99d1 | INT_03f6cbd8
         ;   Label: LAB_005d99d1
     PUSH EDX                            ; 005d99d7
     PUSH EBX                            ; 005d99d8

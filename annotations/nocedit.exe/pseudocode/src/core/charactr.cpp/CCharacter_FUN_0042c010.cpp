@@ -25,7 +25,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c010(CCharacter *this_ptr)
   float local_c;
   
   if ((in_stack_00000008 != (CDemonActor *)0x0) &&
-     (iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc16)(), iVar1 != 0)) {
+     (iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).cfunc16)(), iVar1 != 0)) {
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (in_stack_00000008,&local_44,in_stack_0000000c);
     local_2c = local_20 - pCVar2->x;

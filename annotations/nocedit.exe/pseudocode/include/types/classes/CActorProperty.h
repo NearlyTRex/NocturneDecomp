@@ -14,7 +14,7 @@ typedef struct CActorProperty {
     void* min_ptr_or_choice; // 0x60
     int max_or_param; // 0x64
     void* data_ptr; // 0x68
-    char field_108[124]; // 0x6c
+    char unknown[124]; // 0x6c
     void* validator_or_callback; // 0xe8
 } CActorProperty;
 

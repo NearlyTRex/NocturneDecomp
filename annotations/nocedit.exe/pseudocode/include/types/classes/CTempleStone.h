@@ -2,10 +2,12 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoxActor.h"
 
 // Structure: CTempleStone
 // Ghidra size: 0x670 (1648 bytes)
 typedef struct CTempleStone {
-    char field_0[1648]; // 0x0
+    CBoxActor base; // 0x0
+    int unk; // 0x66c
 } CTempleStone;
 

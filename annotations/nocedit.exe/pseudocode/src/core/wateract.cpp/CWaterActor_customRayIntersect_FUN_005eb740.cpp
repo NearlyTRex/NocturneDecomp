@@ -31,25 +31,25 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWat
   int iStack_14;
   
   ray_origin = (CVector3f *)0x0;
-  this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base_actor,(CBoundingBox3D *)(auStack_80 + 0x30));
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                          (&this_ptr->base,(CBoundingBox3D *)(auStack_80 + 0x30));
   fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                     (this_ptr_00,ray_origin,in_stack_ffffff60,in_stack_ffffff64);
   if ((fVar1 < 0.0) || (1.0 < fVar1)) {
     fStack_18 = 2.0;
   }
   else {
-    iStack_14 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
+    iStack_14 = *(int *)(this_ptr->unk5 + 0x2af9c);
     iVar3 = 0;
     fStack_84 = 2.0;
-    pcVar2 = this_ptr->field21_0x298 + 0x7d10;
+    pcVar2 = this_ptr->unk5 + 0x7d10;
     if (0 < iStack_14) {
       do {
         core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                   ((CDemonTriangle *)auStack_80,
-                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x18) * 0x20 + 4),
-                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x24) * 0x20 + 4),
-                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x30) * 0x20 + 4));
+                   (CVector3f *)(this_ptr->unk5 + *(int *)(pcVar2 + 0x18) * 0x20 + 4),
+                   (CVector3f *)(this_ptr->unk5 + *(int *)(pcVar2 + 0x24) * 0x20 + 4),
+                   (CVector3f *)(this_ptr->unk5 + *(int *)(pcVar2 + 0x30) * 0x20 + 4));
         fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
                           ((CDemonTriangle *)auStack_80,in_stack_00000008,in_stack_0000000c);
         if (((fVar1 < fStack_84) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {

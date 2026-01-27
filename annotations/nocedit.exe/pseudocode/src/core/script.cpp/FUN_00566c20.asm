@@ -9,8 +9,8 @@
 ;   core_script.cpp_FUN_00566bc0 at 00566be1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0310fcd8
-;   undefined4 DAT_0310fd0c
+;   CEdScrollBar CEdScrollBar_0310fcd8
+;   CEdScrollBar CEdScrollBar_0310fd0c
 ;   undefined4 DAT_031141e0
 ;   undefined4 DAT_031141e4
 ;   undefined4 DAT_031141e8
@@ -61,7 +61,7 @@ section .text
     MOV EAX,EDX                         ; 00566c71
     SAR EDX,0x1f                        ; 00566c73
     IDIV ECX                            ; 00566c76
-    MOV EDX,dword ptr [0x0310fd0c]      ; 00566c78 | DAT_0310fd0c
+    MOV EDX,dword ptr [0x0310fd0c]      ; 00566c78 | CEdScrollBar_0310fd0c
     ADD EAX,EDX                         ; 00566c7e
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00566c80
     MOV dword ptr [EDX],EAX             ; 00566c84
@@ -71,7 +71,7 @@ section .text
     MOV EAX,EDX                         ; 00566c90
     SAR EDX,0x1f                        ; 00566c92
     IDIV EDI                            ; 00566c95
-    MOV EDX,dword ptr [0x0310fcd8]      ; 00566c97 | DAT_0310fcd8
+    MOV EDX,dword ptr [0x0310fcd8]      ; 00566c97 | CEdScrollBar_0310fcd8
     ADD EAX,EDX                         ; 00566c9d
     MOV EDX,dword ptr [ESP + 0x20]      ; 00566c9f
     MOV dword ptr [EDX],EAX             ; 00566ca3

@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004ebb32
     PUSH 0x0                            ; 004ebb35
-    PUSH 0x2d83390                      ; 004ebb37 | DAT_02d83390
+    PUSH 0x2d83390                      ; 004ebb37 | INT_02d83390
     MOV ECX,dword ptr [0x006703ec]      ; 004ebb3c | g_CDemonRendererPtr2
     MOV EBX,0xbdcccccd                  ; 004ebb42
     PUSH ECX                            ; 004ebb47 | g_CDemonRendererInstance
@@ -254,7 +254,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004ebd65
     PUSH 0x4                            ; 004ebd68
     PUSH ESI                            ; 004ebd6a
-    PUSH 0x2d8339c                      ; 004ebd6b | DAT_02d8339c
+    PUSH 0x2d8339c                      ; 004ebd6b | INT_02d8339c
     LEA EAX,[ESP + 0x7c]                ; 004ebd70
     PUSH EAX                            ; 004ebd74
     MOV EDX,dword ptr [0x006810c8]      ; 004ebd75 | g_CDemonSetPtr | g_CDemonSetInstance

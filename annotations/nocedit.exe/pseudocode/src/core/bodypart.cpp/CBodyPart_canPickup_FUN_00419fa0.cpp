@@ -10,7 +10,7 @@ int __cdecl
 core_bodypart_cpp_CBodyPart_canPickup_FUN_00419fa0(CBodyPart *this_ptr,CDemonActor *picker)
 
 {
-  if ((*(int *)this_ptr->field1_0x158 == 0) && (*(int *)(this_ptr->field1_0x158 + 0xb6c) == 0)) {
+  if ((*(int *)this_ptr->unk == 0) && (*(int *)(this_ptr->unk + 0xb6c) == 0)) {
     return 3;
   }
   return 0;

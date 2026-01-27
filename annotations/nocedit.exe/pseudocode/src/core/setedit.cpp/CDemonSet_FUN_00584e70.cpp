@@ -112,7 +112,7 @@ LAB_00584f0b:
         pcVar3 = "backdrop\\%s.cm\n";
       }
       crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,pcVar3,pCVar2);
-      local_18 = (CDemonSet *)&local_18->cameras[0].field17_0x1a0;
+      local_18 = (CDemonSet *)&local_18->cameras[0].unk4;
       pCVar2 = pCVar2 + 1;
       local_14 = local_14 + 1;
     } while (local_14 < this_ptr->camera_count);

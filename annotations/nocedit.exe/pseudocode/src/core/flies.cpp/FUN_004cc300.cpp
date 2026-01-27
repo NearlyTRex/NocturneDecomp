@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_flies.cpp_FUN_004cc300(uint param_1) */
-
 int core_flies_cpp_FUN_004cc300(void)
 
 {
@@ -91,9 +88,9 @@ int core_flies_cpp_FUN_004cc300(void)
           pcStack_18 = (char *)0x3f;
         }
         core_spline_cpp_FUN_005b92d0();
-        CStack_30.x = (int)ROUND(fStack_3c * _DAT_0065e500);
-        CStack_30.y = (int)ROUND(fStack_38 * _DAT_0065e500);
-        CStack_30.z = (int)ROUND(fStack_34 * _DAT_0065e500);
+        CStack_30.x = (int)ROUND(fStack_3c * 256.0f);
+        CStack_30.y = (int)ROUND(fStack_38 * 256.0f);
+        CStack_30.z = (int)ROUND(fStack_34 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_30);
         pCVar2 = g_CDemonRendererPtr2;

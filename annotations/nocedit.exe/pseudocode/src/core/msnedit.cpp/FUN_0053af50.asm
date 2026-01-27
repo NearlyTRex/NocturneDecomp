@@ -13,8 +13,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_02f7a02c
-;   undefined4 DAT_02f7c52c
-;   undefined4 DAT_02f7c530
+;   int INT_02f7c52c
+;   int INT_02f7c530
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
@@ -124,11 +124,11 @@ section .text
     POP EDI                             ; 0053afee
     POP EBX                             ; 0053afef
     RET                                 ; 0053aff0
-    CMP dword ptr [0x02f7c52c],0x0      ; 0053aff1 | DAT_02f7c52c
+    CMP dword ptr [0x02f7c52c],0x0      ; 0053aff1 | INT_02f7c52c
         ;   Label: caseD_d
     JL 0x0053b008                       ; 0053aff8
         ;   XREF to: 0053b008 (CONDITIONAL_JUMP)  ; LAB_0053b008
-    MOV dword ptr [0x02f7c52c],0xffffffff ; 0053affa | DAT_02f7c52c
+    MOV dword ptr [0x02f7c52c],0xffffffff ; 0053affa | INT_02f7c52c
     POP EBP                             ; 0053b004
     POP EDI                             ; 0053b005
     POP EBX                             ; 0053b006
@@ -141,8 +141,8 @@ section .text
     SAR EDX,0x1f                        ; 0053b017
     IDIV EBX                            ; 0053b01a
     XOR ECX,ECX                         ; 0053b01c
-    MOV dword ptr [0x02f7c530],ECX      ; 0053b01e | DAT_02f7c530
-    MOV [0x02f7c52c],EAX                ; 0053b024 | DAT_02f7c52c
+    MOV dword ptr [0x02f7c530],ECX      ; 0053b01e | INT_02f7c530
+    MOV [0x02f7c52c],EAX                ; 0053b024 | INT_02f7c52c
     POP EBP                             ; 0053b029
     POP EDI                             ; 0053b02a
     POP EBX                             ; 0053b02b

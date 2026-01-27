@@ -8,8 +8,8 @@
 // Structure: CDraculaBride
 // Ghidra size: 0xbfec (49132 bytes)
 typedef struct CDraculaBride {
-    CEnemy base_enemy; // 0x0
-    char field_48820[144]; // 0xbeb4
+    CEnemy base; // 0x0
+    char unk[144]; // 0xbeb4
     int freakyVoiceNumber; // 0xbf44
     int mistState; // 0xbf48
     float vanishTimer; // 0xbf4c

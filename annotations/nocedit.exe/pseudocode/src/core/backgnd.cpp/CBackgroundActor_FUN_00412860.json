@@ -2,14 +2,8 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 37,
-        "line": 16,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 71,
+        "column": 65,
         "line": 19,
         "message": "'stack0xffffffe4' was not declared in this scope"
       }
@@ -153,14 +147,14 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) && (in_stack_00000008 != 0)) {",
+      "text": "if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) && (in_stack_00000008 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 12,
       "match": "&stack0xffffffe4",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);",
       "type": "stack_ref"
     }
   ],

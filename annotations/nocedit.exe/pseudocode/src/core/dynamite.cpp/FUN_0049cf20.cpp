@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_weapon_dynamite.cpp_FUN_0049cf20(uint param_1) */
 
 void core_dynamite_cpp_FUN_0049cf20(void)
@@ -16,7 +15,7 @@ void core_dynamite_cpp_FUN_0049cf20(void)
   int in_stack_00000004;
   char local_68 [100];
   
-  *(uint *)(in_stack_00000004 + 0x578) = _DAT_0065d30c;
+  *(float *)(in_stack_00000004 + 0x578) = 3.5f;
   crt_stdio_c_sprintf_FUN_005fdbd0(local_68,"fuse.wav");
   uVar1 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
   *(uint *)(in_stack_00000004 + 0x588) = uVar1;

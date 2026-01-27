@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
   uint in_stack_00000020;
   
   pCVar2 = g_BulletTrailActiveListHead;
-  pcVar1 = g_BulletTrailActiveListHead->field0_0x0;
+  pcVar1 = g_BulletTrailActiveListHead->unk;
   this_ptr_00 = g_FireballPool + (int)g_BulletTrailActiveListHead;
   g_BulletTrailActiveListHead = (CBulletTrail *)(pcVar1 + 1);
   if (0x3f < (int)(pcVar1 + 1)) {
@@ -37,10 +37,10 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
   }
   g_FireballPool[(int)pCVar2].lighting_active = in_stack_0000001c;
   g_FireballPool[(int)pCVar2].first_update_flag = 0;
-  g_FireballPool[(int)pCVar2].field9_0x58 = in_stack_00000020;
+  g_FireballPool[(int)pCVar2].unk2 = in_stack_00000020;
   sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_005a98b0
             (in_stack_00000020,(CVector3f *)this_ptr_00);
   sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_005a9a00
-            (g_FireballPool[(int)pCVar2].field9_0x58,&g_FireballPool[(int)pCVar2].base.velocity);
+            (g_FireballPool[(int)pCVar2].unk2,&g_FireballPool[(int)pCVar2].base.velocity);
   return;
 }

@@ -21,13 +21,13 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   if (this_ptr->profile_mode != 0) {
     unaff_ESI = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
-  pCVar3 = g_CNetGameInstance;
+  pCVar3 = g_CNetGamePtr;
   this_ptr->is_processing = 1;
   if (pCVar3->connection_type == 0) {
     seed_value = crt_stdlib_c_rand_FUN_005feb5c();
   }
   else {
-    seed_value = *(uint *)(pCVar3->field7_0x118 + 0x54);
+    seed_value = *(uint *)(pCVar3->unk + 0x54);
   }
   core_actor_cpp_setRandomSeed_FUN_0040cb90(seed_value);
   core_game_cpp_FUN_004e09c0();
@@ -59,13 +59,13 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
       this_ptr->cutscene_skippable = 0;
       core_sound_cpp_CSound_init_FUN_005b2dd0(this_ptr_00);
       core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-                (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focusActor,2);
+                (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focus_actor,2);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr,in_stack_ffffffe4);
       pCVar1 = g_CScriptPtr;
-      pCVar1->padding_0x10[0] = '\0';
-      pCVar1->padding_0x10[1] = '\0';
-      pCVar1->padding_0x10[2] = '\0';
-      pCVar1->padding_0x10[3] = '\0';
+      pCVar1->unk3[0] = '\0';
+      pCVar1->unk3[1] = '\0';
+      pCVar1->unk3[2] = '\0';
+      pCVar1->unk3[3] = '\0';
     }
     else {
       engine_2d_c_clearInputAndWait_FUN_00403260();

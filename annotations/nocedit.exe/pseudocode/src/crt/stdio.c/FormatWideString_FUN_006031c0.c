@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Struct "FormatSpec": ignoring multiple overlapping fields */
-
 void __cdecl
 crt_stdio_c_FormatWideString_FUN_006031c0
           (wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info,

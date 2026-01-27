@@ -39,11 +39,13 @@ CLASS_HIERARCHY = {
     'CWeapon': 'CDemonActor',
     'CGun': 'CWeapon',
     'CMelee': 'CWeapon',
+    'CBoxActor': 'CDemonActor',
+    'CLightActor': 'CBoxActor',
 }
 
 # Intermediate classes that define their own vtable extensions
 # These are classes whose source files can define new vtable slots
-INTERMEDIATE_CLASSES = {'CDemonActor', 'CCharacter', 'CEnemy', 'CHero', 'CNPC', 'CWeapon'}
+INTERMEDIATE_CLASSES = {'CDemonActor', 'CCharacter', 'CEnemy', 'CHero', 'CNPC', 'CWeapon', 'CBoxActor'}
 
 # Source files that define intermediate class vtable methods
 INTERMEDIATE_SOURCE_FILES = {
@@ -53,6 +55,7 @@ INTERMEDIATE_SOURCE_FILES = {
     'hero': 'CHero',
     'npc': 'CNPC',
     'weapon': 'CWeapon',
+    'boxactor': 'CBoxActor',
 }
 
 # Mapping from source file to expected class name
@@ -269,6 +272,14 @@ def analyze_vtable(child_vt, base_methods):
     # Determine the class this vtable belongs to from its functions
     vtable_class = get_vtable_class(child_vt)
 
+    # Build list of parent classes for this vtable's class
+    parent_classes = set()
+    if vtable_class and vtable_class in CLASS_HIERARCHY:
+        current = CLASS_HIERARCHY.get(vtable_class)
+        while current:
+            parent_classes.add(current)
+            current = CLASS_HIERARCHY.get(current)
+
     for func in child_vt['functions']:
         offset = func['offset']
         func_name = func['func_name']
@@ -281,8 +292,14 @@ def analyze_vtable(child_vt, base_methods):
         base = base_methods[offset]
         base_method_name = base['name']
 
-        # Skip if this is directly using CDemonActor's method (not overridden)
-        if 'CDemonActor_' in func_name:
+        # Skip if this is using a parent class's method (not overridden)
+        # Check for CDemonActor or any other parent class in the inheritance chain
+        func_class = extract_class_name(func_name)
+        if func_class and (func_class == 'CDemonActor' or func_class in parent_classes):
+            continue
+
+        # Skip destructor functions - they have special calling conventions
+        if '_dtor_' in func_name or base_method_name == 'dtor':
             continue
 
         # Get source file for this function

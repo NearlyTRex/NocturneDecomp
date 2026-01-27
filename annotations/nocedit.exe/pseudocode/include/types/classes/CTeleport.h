@@ -7,7 +7,7 @@
 // Structure: CTeleport
 // Ghidra size: 0x168 (360 bytes)
 typedef struct CTeleport {
-    CDemonActor base_actor; // 0x0
-    char field_344[16]; // 0x158
+    CDemonActor base; // 0x0
+    char unk[16]; // 0x158
 } CTeleport;
 

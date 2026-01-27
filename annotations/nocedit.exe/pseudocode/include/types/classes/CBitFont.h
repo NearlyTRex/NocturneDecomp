@@ -30,7 +30,7 @@ typedef struct CBitFont {
     int font_enabled; // 0x3180
     int rendering_ready; // 0x3184
     int load_flags; // 0x3188
-    int field_12684; // 0x318c
+    int unk; // 0x318c
     int win_font_enabled; // 0x3190
     struct CWinFont* win_font_helper; // 0x3194
 } CBitFont;

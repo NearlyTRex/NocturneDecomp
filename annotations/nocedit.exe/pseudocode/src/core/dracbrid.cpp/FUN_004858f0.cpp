@@ -75,7 +75,7 @@ void core_dracbrid_cpp_FUN_004858f0(void)
   fStack_44 = local_20 * 0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (in_stack_00000004,&CStack_58,(CVector3f *)auStack_4c);
-  if (in_stack_00000004[0x88].field20_0x118 == 0) {
+  if (in_stack_00000004[0x88].unk9 == 0) {
     core_gore_cpp_FUN_004edbb0();
     return;
   }

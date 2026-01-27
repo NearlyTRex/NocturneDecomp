@@ -1501,10 +1501,6 @@
       "type":"struct"
     },
     {
-      "name":"CTempleStone",
-      "type":"struct"
-    },
-    {
       "name":"CTerrain",
       "type":"struct"
     },
@@ -1681,10 +1677,6 @@
       "type":"struct"
     },
     {
-      "name":"CBackgroundActor",
-      "type":"struct"
-    },
-    {
       "name":"CBarrier",
       "type":"struct"
     },
@@ -1745,10 +1737,6 @@
       "type":"struct"
     },
     {
-      "name":"CFlameCan",
-      "type":"struct"
-    },
-    {
       "name":"CFlies",
       "type":"struct"
     },
@@ -1761,19 +1749,7 @@
       "type":"struct"
     },
     {
-      "name":"CGrave",
-      "type":"struct"
-    },
-    {
-      "name":"CHealthItem",
-      "type":"struct"
-    },
-    {
       "name":"CHeroPlaceholder",
-      "type":"struct"
-    },
-    {
-      "name":"CLadder",
       "type":"struct"
     },
     {
@@ -1821,22 +1797,6 @@
       "type":"struct"
     },
     {
-      "name":"CPendulum",
-      "type":"struct"
-    },
-    {
-      "name":"CPlatform",
-      "type":"struct"
-    },
-    {
-      "name":"CConveyor",
-      "type":"struct"
-    },
-    {
-      "name":"CMineCar",
-      "type":"struct"
-    },
-    {
       "name":"CSimBox",
       "type":"struct"
     },
@@ -1850,14 +1810,6 @@
     },
     {
       "name":"CTeleportDest",
-      "type":"struct"
-    },
-    {
-      "name":"CTrap",
-      "type":"struct"
-    },
-    {
-      "name":"CTrash",
       "type":"struct"
     },
     {
@@ -3705,6 +3657,10 @@
       "type":"struct"
     },
     {
+      "name":"CBackgroundActor",
+      "type":"struct"
+    },
+    {
       "name":"CBoxActor",
       "type":"struct"
     },
@@ -3713,7 +3669,23 @@
       "type":"struct"
     },
     {
+      "name":"CFlameCan",
+      "type":"struct"
+    },
+    {
+      "name":"CGrave",
+      "type":"struct"
+    },
+    {
+      "name":"CHealthItem",
+      "type":"struct"
+    },
+    {
       "name":"CKeyActor",
+      "type":"struct"
+    },
+    {
+      "name":"CLadder",
       "type":"struct"
     },
     {
@@ -3725,7 +3697,35 @@
       "type":"struct"
     },
     {
+      "name":"CPendulum",
+      "type":"struct"
+    },
+    {
+      "name":"CPlatform",
+      "type":"struct"
+    },
+    {
+      "name":"CConveyor",
+      "type":"struct"
+    },
+    {
+      "name":"CMineCar",
+      "type":"struct"
+    },
+    {
       "name":"CSpike",
+      "type":"struct"
+    },
+    {
+      "name":"CTempleStone",
+      "type":"struct"
+    },
+    {
+      "name":"CTrap",
+      "type":"struct"
+    },
+    {
+      "name":"CTrash",
       "type":"struct"
     },
     {
@@ -7538,7 +7538,7 @@
       "importable":true,
       "name":"CDemonActor_FactoryFunc",
       "parameters":[],
-      "return_type":"CDemonActor*",
+      "return_type":"void*",
       "type":"function_definition"
     },
     {
@@ -19734,7 +19734,7 @@
         },
         {
           "len":4,
-          "name":"field_316",
+          "name":"unk1",
           "offset":316,
           "type":"int"
         },
@@ -19758,7 +19758,7 @@
         },
         {
           "len":4,
-          "name":"field_332",
+          "name":"unk2",
           "offset":332,
           "type":"int"
         },
@@ -19806,13 +19806,13 @@
         },
         {
           "len":4,
-          "name":"field_412",
+          "name":"unk3",
           "offset":412,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_416",
+          "name":"unk4",
           "offset":416,
           "type":"int"
         }
@@ -19878,7 +19878,7 @@
         },
         {
           "len":4006,
-          "name":"field_542",
+          "name":"unk1",
           "offset":542,
           "type":"char[4006]"
         },
@@ -19902,7 +19902,7 @@
         },
         {
           "len":8,
-          "name":"field_4568",
+          "name":"unk2",
           "offset":4568,
           "type":"char[8]"
         },
@@ -20040,7 +20040,7 @@
         },
         {
           "len":4,
-          "name":"field_496",
+          "name":"unk",
           "offset":496,
           "type":"int"
         }
@@ -20106,7 +20106,7 @@
         },
         {
           "len":124,
-          "name":"field_108",
+          "name":"unknown",
           "offset":108,
           "type":"char[124]"
         },
@@ -20130,7 +20130,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"int"
         },
@@ -20160,19 +20160,19 @@
       "fields":[
         {
           "len":4,
-          "name":"ptrRaw",
+          "name":"raw",
           "offset":0,
           "type":"char*"
         },
         {
           "len":4,
-          "name":"ptrOpa",
+          "name":"opa",
           "offset":4,
           "type":"char*"
         },
         {
           "len":4,
-          "name":"ptrAct",
+          "name":"act",
           "offset":8,
           "type":"uint*"
         },
@@ -20202,7 +20202,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -20244,7 +20244,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -20274,7 +20274,7 @@
         },
         {
           "len":4,
-          "name":"field_796",
+          "name":"unk1",
           "offset":796,
           "type":"float"
         },
@@ -20310,7 +20310,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -20358,13 +20358,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":108,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[108]"
         }
@@ -20382,15 +20382,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":380,
-          "name":"model_name",
+          "name":"model",
           "offset":344,
-          "type":"char[380]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -20418,13 +20418,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"field_0",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":256,
-          "name":"field_130004",
+          "name":"unk",
           "offset":130004,
           "type":"char[256]"
         }
@@ -20442,13 +20442,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":4,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"int"
         }
@@ -20466,13 +20466,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":216,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[216]"
         }
@@ -20490,19 +20490,19 @@
       "fields":[
         {
           "len":128776,
-          "name":"base_npc",
+          "name":"base",
           "offset":0,
           "type":"CNPC"
         },
         {
           "len":4,
-          "name":"field_128776",
+          "name":"unk1",
           "offset":128776,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_128780",
+          "name":"unk2",
           "offset":128780,
           "type":"int"
         }
@@ -20520,7 +20520,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -20556,7 +20556,7 @@
         },
         {
           "len":4,
-          "name":"field_784",
+          "name":"unk1",
           "offset":784,
           "type":"char[4]"
         },
@@ -20580,7 +20580,7 @@
         },
         {
           "len":8,
-          "name":"field_896",
+          "name":"unk2",
           "offset":896,
           "type":"char[8]"
         }
@@ -20598,13 +20598,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":80,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[80]"
         }
@@ -20622,13 +20622,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":164,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[164]"
         },
@@ -20652,7 +20652,7 @@
         },
         {
           "len":12,
-          "name":"field_49004",
+          "name":"unk2",
           "offset":49004,
           "type":"char[12]"
         }
@@ -20670,7 +20670,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -20682,7 +20682,7 @@
         },
         {
           "len":380,
-          "name":"field_348",
+          "name":"unk",
           "offset":348,
           "type":"char[380]"
         },
@@ -20712,19 +20712,19 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":4,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_48824",
+          "name":"unk2",
           "offset":48824,
           "type":"int"
         }
@@ -20742,13 +20742,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":388,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[388]"
         },
@@ -20766,7 +20766,7 @@
         },
         {
           "len":3216,
-          "name":"field_49216",
+          "name":"unk2",
           "offset":49216,
           "type":"char[3216]"
         }
@@ -20910,7 +20910,7 @@
         },
         {
           "len":4,
-          "name":"field_12684",
+          "name":"unk",
           "offset":12684,
           "type":"int"
         },
@@ -20940,7 +20940,7 @@
       "fields":[
         {
           "len":20,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[20]"
         },
@@ -21006,7 +21006,7 @@
       "fields":[
         {
           "len":64,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[64]"
         }
@@ -21024,7 +21024,7 @@
       "fields":[
         {
           "len":40,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[40]"
         }
@@ -21042,7 +21042,7 @@
       "fields":[
         {
           "len":68,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[68]"
         }
@@ -21060,13 +21060,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":3544,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[3544]"
         }
@@ -21084,13 +21084,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":128,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[128]"
         },
@@ -21138,7 +21138,7 @@
         },
         {
           "len":1372,
-          "name":"field_49024",
+          "name":"unk2",
           "offset":49024,
           "type":"char[1372]"
         },
@@ -21180,7 +21180,7 @@
         },
         {
           "len":4864,
-          "name":"field_13204",
+          "name":"unk",
           "offset":13204,
           "type":"char[4864]"
         },
@@ -21246,7 +21246,7 @@
         },
         {
           "len":4,
-          "name":"field_60",
+          "name":"unk",
           "offset":60,
           "type":"int"
         },
@@ -21342,7 +21342,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -21366,7 +21366,7 @@
         },
         {
           "len":4,
-          "name":"field_764",
+          "name":"unk1",
           "offset":764,
           "type":"int"
         },
@@ -21384,7 +21384,7 @@
         },
         {
           "len":4,
-          "name":"field_784",
+          "name":"unk2",
           "offset":784,
           "type":"int"
         },
@@ -21420,7 +21420,7 @@
         },
         {
           "len":4,
-          "name":"field_808",
+          "name":"unk3",
           "offset":808,
           "type":"int"
         },
@@ -21444,7 +21444,7 @@
         },
         {
           "len":600,
-          "name":"field_920",
+          "name":"unk4",
           "offset":920,
           "type":"char[600]"
         },
@@ -21504,13 +21504,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":56,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[56]"
         }
@@ -21528,13 +21528,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":12,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[12]"
         },
@@ -21546,7 +21546,7 @@
         },
         {
           "len":25600,
-          "name":"field_48836",
+          "name":"unk2",
           "offset":48836,
           "type":"char[25600]"
         },
@@ -21558,7 +21558,7 @@
         },
         {
           "len":30160,
-          "name":"field_74440",
+          "name":"unk3",
           "offset":74440,
           "type":"char[30160]"
         },
@@ -21642,7 +21642,7 @@
       "fields":[
         {
           "len":36,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[36]"
         }
@@ -21690,7 +21690,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"void*"
         },
@@ -21708,7 +21708,7 @@
         },
         {
           "len":4,
-          "name":"field_52",
+          "name":"unk2",
           "offset":52,
           "type":"int"
         },
@@ -21780,7 +21780,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -21798,7 +21798,7 @@
         },
         {
           "len":8,
-          "name":"field_352",
+          "name":"unk1",
           "offset":352,
           "type":"char[8]"
         },
@@ -21810,7 +21810,7 @@
         },
         {
           "len":284,
-          "name":"field_364",
+          "name":"unk2",
           "offset":364,
           "type":"char[284]"
         },
@@ -21822,7 +21822,7 @@
         },
         {
           "len":720,
-          "name":"field_652",
+          "name":"unk3",
           "offset":652,
           "type":"char[720]"
         },
@@ -21852,7 +21852,7 @@
         },
         {
           "len":12,
-          "name":"field_1388",
+          "name":"unk4",
           "offset":1388,
           "type":"char[12]"
         }
@@ -21870,7 +21870,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -21882,7 +21882,7 @@
         },
         {
           "len":48,
-          "name":"field_9228",
+          "name":"unk1",
           "offset":9228,
           "type":"char[48]"
         },
@@ -21936,7 +21936,7 @@
         },
         {
           "len":124,
-          "name":"field_9632",
+          "name":"unk2",
           "offset":9632,
           "type":"char[124]"
         },
@@ -21948,7 +21948,7 @@
         },
         {
           "len":1140,
-          "name":"field_9760",
+          "name":"unk3",
           "offset":9760,
           "type":"char[1140]"
         },
@@ -22248,7 +22248,7 @@
       "fields":[
         {
           "len":261728,
-          "name":"padding_0x0",
+          "name":"unk",
           "offset":0,
           "type":"char[261728]"
         },
@@ -22269,9 +22269,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CClothList",
       "pack":false,
       "type":"struct"
@@ -22367,13 +22374,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":24,
-          "name":"field_130004",
+          "name":"unk",
           "offset":130004,
           "type":"char[24]"
         }
@@ -22523,7 +22530,7 @@
         },
         {
           "len":4096,
-          "name":"field_48",
+          "name":"unk",
           "offset":48,
           "type":"char[4096]"
         },
@@ -22649,13 +22656,13 @@
       "fields":[
         {
           "len":1836,
-          "name":"base_platform",
+          "name":"base",
           "offset":0,
           "type":"CPlatform"
         },
         {
           "len":308,
-          "name":"field_1836",
+          "name":"unk",
           "offset":1836,
           "type":"char[308]"
         }
@@ -22763,7 +22770,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -22775,7 +22782,7 @@
         },
         {
           "len":384,
-          "name":"field_348",
+          "name":"unk1",
           "offset":348,
           "type":"char[384]"
         },
@@ -22787,7 +22794,7 @@
         },
         {
           "len":28,
-          "name":"field_736",
+          "name":"unk2",
           "offset":736,
           "type":"char[28]"
         }
@@ -22805,7 +22812,7 @@
       "fields":[
         {
           "len":112,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[112]"
         }
@@ -22823,13 +22830,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":680,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"char[680]"
         }
@@ -22847,7 +22854,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -22859,13 +22866,13 @@
         },
         {
           "len":376,
-          "name":"field_348",
+          "name":"unk1",
           "offset":348,
           "type":"char[376]"
         },
         {
           "len":4,
-          "name":"field_724",
+          "name":"unk2",
           "offset":724,
           "type":"int"
         },
@@ -22931,7 +22938,7 @@
         },
         {
           "len":1076,
-          "name":"field_960",
+          "name":"unk3",
           "offset":960,
           "type":"char[1076]"
         }
@@ -22949,7 +22956,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -22961,7 +22968,7 @@
         },
         {
           "len":8,
-          "name":"field_356",
+          "name":"unk1",
           "offset":356,
           "type":"char[8]"
         },
@@ -23033,7 +23040,7 @@
         },
         {
           "len":416016,
-          "name":"field_516",
+          "name":"unk2",
           "offset":516,
           "type":"char[416016]"
         },
@@ -23069,7 +23076,7 @@
         },
         {
           "len":4,
-          "name":"field_416552",
+          "name":"unk3",
           "offset":416552,
           "type":"char[4]"
         },
@@ -23081,7 +23088,7 @@
         },
         {
           "len":8,
-          "name":"field_416560",
+          "name":"unk4",
           "offset":416560,
           "type":"char[8]"
         }
@@ -23201,7 +23208,7 @@
         },
         {
           "len":12,
-          "name":"field_35488",
+          "name":"unk",
           "offset":35488,
           "type":"char[12]"
         },
@@ -23321,7 +23328,7 @@
         },
         {
           "len":4,
-          "name":"field_8784",
+          "name":"unk",
           "offset":8784,
           "type":"int"
         },
@@ -23399,7 +23406,7 @@
         },
         {
           "len":4,
-          "name":"field_108",
+          "name":"unk1",
           "offset":108,
           "type":"int"
         },
@@ -23423,25 +23430,25 @@
         },
         {
           "len":4,
-          "name":"field_220",
+          "name":"unk2",
           "offset":220,
           "type":"int"
         },
         {
           "len":12,
-          "name":"field_224",
+          "name":"unk3",
           "offset":224,
           "type":"CVector3f"
         },
         {
           "len":12,
-          "name":"field_236",
+          "name":"unk4",
           "offset":236,
           "type":"CVector3f"
         },
         {
           "len":4,
-          "name":"field_248",
+          "name":"unk5",
           "offset":248,
           "type":"int"
         },
@@ -23453,13 +23460,13 @@
         },
         {
           "len":4,
-          "name":"field_256",
+          "name":"unk6",
           "offset":256,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_260",
+          "name":"unk7",
           "offset":260,
           "type":"int"
         },
@@ -23471,31 +23478,31 @@
         },
         {
           "len":4,
-          "name":"field_276",
+          "name":"unk8",
           "offset":276,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_280",
+          "name":"unk9",
           "offset":280,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_284",
+          "name":"unk10",
           "offset":284,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_288",
+          "name":"unk11",
           "offset":288,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_292",
+          "name":"unk12",
           "offset":292,
           "type":"int"
         },
@@ -23507,13 +23514,13 @@
         },
         {
           "len":4,
-          "name":"field_324",
+          "name":"unk13",
           "offset":324,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_328",
+          "name":"unk14",
           "offset":328,
           "type":"int"
         },
@@ -23525,7 +23532,7 @@
         },
         {
           "len":4,
-          "name":"field_336",
+          "name":"unk15",
           "offset":336,
           "type":"int"
         },
@@ -24221,7 +24228,7 @@
       "fields":[
         {
           "len":8,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[8]"
         },
@@ -24287,7 +24294,7 @@
       "fields":[
         {
           "len":1280020,
-          "name":"base_filemanager",
+          "name":"base",
           "offset":0,
           "type":"CFileManager"
         }
@@ -24551,7 +24558,7 @@
         },
         {
           "len":4,
-          "name":"field_7280",
+          "name":"unk1",
           "offset":7280,
           "type":"int"
         },
@@ -24576,7 +24583,7 @@
         },
         {
           "len":4,
-          "name":"field_7356",
+          "name":"unk2",
           "offset":7356,
           "type":"int"
         },
@@ -24667,7 +24674,7 @@
       "fields":[
         {
           "len":8,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[8]"
         },
@@ -24679,7 +24686,7 @@
         },
         {
           "len":312,
-          "name":"field_12",
+          "name":"unk2",
           "offset":12,
           "type":"char[312]"
         },
@@ -24691,7 +24698,7 @@
         },
         {
           "len":1024,
-          "name":"field_328",
+          "name":"unk3",
           "offset":328,
           "type":"char[1024]"
         },
@@ -24703,7 +24710,7 @@
         },
         {
           "len":832,
-          "name":"field_1356",
+          "name":"unk4",
           "offset":1356,
           "type":"char[832]"
         },
@@ -24715,7 +24722,7 @@
         },
         {
           "len":8000,
-          "name":"field_2192",
+          "name":"unk5",
           "offset":2192,
           "type":"char[8000]"
         }
@@ -24781,7 +24788,7 @@
         },
         {
           "len":8,
-          "name":"field_60",
+          "name":"unk",
           "offset":60,
           "type":"char[8]"
         },
@@ -25063,7 +25070,7 @@
         },
         {
           "len":4,
-          "name":"field_32",
+          "name":"unk",
           "offset":32,
           "type":"int"
         }
@@ -25147,13 +25154,13 @@
         },
         {
           "len":4,
-          "name":"field_1364296",
+          "name":"unk1",
           "offset":1364296,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_1364300",
+          "name":"unk2",
           "offset":1364300,
           "type":"int"
         },
@@ -25177,7 +25184,7 @@
         },
         {
           "len":7904,
-          "name":"field_1364408",
+          "name":"unk3",
           "offset":1364408,
           "type":"char[7904]"
         },
@@ -25195,7 +25202,7 @@
         },
         {
           "len":48088,
-          "name":"field_1372320",
+          "name":"unk4",
           "offset":1372320,
           "type":"char[48088]"
         },
@@ -25321,7 +25328,7 @@
         },
         {
           "len":4,
-          "name":"field_1420932",
+          "name":"unk5",
           "offset":1420932,
           "type":"int"
         },
@@ -25351,13 +25358,13 @@
         },
         {
           "len":4,
-          "name":"field_1420952",
+          "name":"unk6",
           "offset":1420952,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_1420956",
+          "name":"unk7",
           "offset":1420956,
           "type":"int"
         },
@@ -25441,25 +25448,25 @@
         },
         {
           "len":4,
-          "name":"field_1439364",
+          "name":"unk8",
           "offset":1439364,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_1439368",
+          "name":"unk9",
           "offset":1439368,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_1439372",
+          "name":"unk10",
           "offset":1439372,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_1439376",
+          "name":"unk11",
           "offset":1439376,
           "type":"float"
         },
@@ -25507,7 +25514,7 @@
         },
         {
           "len":4,
-          "name":"field_1439452",
+          "name":"unk12",
           "offset":1439452,
           "type":"int"
         },
@@ -25519,7 +25526,7 @@
         },
         {
           "len":8004,
-          "name":"field_1439460",
+          "name":"unk13",
           "offset":1439460,
           "type":"char[8004]"
         },
@@ -25663,7 +25670,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -25705,7 +25712,7 @@
         },
         {
           "len":400,
-          "name":"field_744",
+          "name":"unk1",
           "offset":744,
           "type":"char[400]"
         },
@@ -25717,7 +25724,7 @@
         },
         {
           "len":1300,
-          "name":"field_1148",
+          "name":"unk2",
           "offset":1148,
           "type":"char[1300]"
         },
@@ -25765,7 +25772,7 @@
         },
         {
           "len":12,
-          "name":"field_2492",
+          "name":"unk3",
           "offset":2492,
           "type":"char[12]"
         },
@@ -25777,7 +25784,7 @@
         },
         {
           "len":4,
-          "name":"field_2508",
+          "name":"unk4",
           "offset":2508,
           "type":"char[4]"
         },
@@ -25819,13 +25826,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":144,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[144]"
         },
@@ -25963,7 +25970,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -25987,7 +25994,7 @@
         },
         {
           "len":4,
-          "name":"field_732",
+          "name":"unk1",
           "offset":732,
           "type":"char[4]"
         },
@@ -26011,7 +26018,7 @@
         },
         {
           "len":12,
-          "name":"field_748",
+          "name":"unk2",
           "offset":748,
           "type":"char[12]"
         },
@@ -26047,7 +26054,7 @@
         },
         {
           "len":4,
-          "name":"field_824",
+          "name":"unk3",
           "offset":824,
           "type":"int"
         }
@@ -26065,13 +26072,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":32,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[32]"
         }
@@ -26089,19 +26096,19 @@
       "fields":[
         {
           "len":128776,
-          "name":"base_npc",
+          "name":"base",
           "offset":0,
           "type":"CNPC"
         },
         {
           "len":4,
-          "name":"field_128776",
+          "name":"unk1",
           "offset":128776,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_128780",
+          "name":"unk2",
           "offset":128780,
           "type":"int"
         }
@@ -26161,13 +26168,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":20,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"char[20]"
         }
@@ -26317,25 +26324,25 @@
       "fields":[
         {
           "len":48,
-          "name":"padding_0x0",
+          "name":"unk",
           "offset":0,
           "type":"char[48]"
         },
         {
           "len":4,
-          "name":"renderSkyInEditor",
+          "name":"render_sky_in_editor",
           "offset":48,
           "type":"int"
         },
         {
           "len":4,
-          "name":"renderWaterInEditor",
+          "name":"render_water_in_editor",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"fullLightInEditor",
+          "name":"full_light_in_editor",
           "offset":56,
           "type":"int"
         }
@@ -26353,7 +26360,7 @@
       "fields":[
         {
           "len":1,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char"
         }
@@ -26461,13 +26468,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":12,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"char[12]"
         }
@@ -26485,7 +26492,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -26515,7 +26522,7 @@
         },
         {
           "len":96,
-          "name":"field_368",
+          "name":"unk1",
           "offset":368,
           "type":"char[96]"
         },
@@ -26527,7 +26534,7 @@
         },
         {
           "len":96,
-          "name":"field_468",
+          "name":"unk2",
           "offset":468,
           "type":"char[96]"
         },
@@ -26569,7 +26576,7 @@
         },
         {
           "len":376,
-          "name":"field_588",
+          "name":"unk3",
           "offset":588,
           "type":"char[376]"
         },
@@ -26605,7 +26612,7 @@
         },
         {
           "len":100,
-          "name":"field_984",
+          "name":"unk4",
           "offset":984,
           "type":"char[100]"
         },
@@ -26617,7 +26624,7 @@
         },
         {
           "len":4,
-          "name":"field_1088",
+          "name":"unk5",
           "offset":1088,
           "type":"char[4]"
         },
@@ -26629,7 +26636,7 @@
         },
         {
           "len":76,
-          "name":"field_1096",
+          "name":"unk6",
           "offset":1096,
           "type":"char[76]"
         }
@@ -26647,7 +26654,7 @@
       "fields":[
         {
           "len":48676,
-          "name":"base_character",
+          "name":"base",
           "offset":0,
           "type":"CCharacter"
         },
@@ -26671,7 +26678,7 @@
         },
         {
           "len":4,
-          "name":"field_48688",
+          "name":"unk1",
           "offset":48688,
           "type":"int"
         },
@@ -26683,7 +26690,7 @@
         },
         {
           "len":16,
-          "name":"field_48696",
+          "name":"unk2",
           "offset":48696,
           "type":"char[16]"
         },
@@ -26695,7 +26702,7 @@
         },
         {
           "len":4,
-          "name":"field_48812",
+          "name":"unk3",
           "offset":48812,
           "type":"int"
         },
@@ -26776,9 +26783,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CEvent",
       "pack":false,
       "type":"struct"
@@ -26798,11 +26812,11 @@
           "len":100,
           "name":"event_list",
           "offset":4,
-          "type":"CEvent[100]"
+          "type":"int[25]"
         },
         {
           "len":3100,
-          "name":"field_104",
+          "name":"unk1",
           "offset":104,
           "type":"char[3100]"
         },
@@ -26816,11 +26830,11 @@
           "len":100,
           "name":"current_event_list",
           "offset":3208,
-          "type":"CEvent[100]"
+          "type":"int[25]"
         },
         {
           "len":3100,
-          "name":"field_3308",
+          "name":"unk2",
           "offset":3308,
           "type":"char[3100]"
         },
@@ -26834,11 +26848,11 @@
           "len":100,
           "name":"game_flag_list",
           "offset":6412,
-          "type":"CEvent[100]"
+          "type":"int[25]"
         },
         {
           "len":3100,
-          "name":"field_6512",
+          "name":"unk3",
           "offset":6512,
           "type":"char[3100]"
         },
@@ -26852,11 +26866,11 @@
           "len":100,
           "name":"persistent_event_list",
           "offset":9616,
-          "type":"CEvent[100]"
+          "type":"int[25]"
         },
         {
           "len":3100,
-          "name":"field_9716",
+          "name":"unk4",
           "offset":9716,
           "type":"char[3100]"
         },
@@ -26874,7 +26888,7 @@
         },
         {
           "len":356,
-          "name":"field_12824",
+          "name":"unk5",
           "offset":12824,
           "type":"char[356]"
         },
@@ -26886,7 +26900,7 @@
         },
         {
           "len":360,
-          "name":"field_13184",
+          "name":"unk6",
           "offset":13184,
           "type":"char[360]"
         },
@@ -27210,7 +27224,7 @@
       "fields":[
         {
           "len":28,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[28]"
         }
@@ -27660,7 +27674,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"int"
         },
@@ -27672,7 +27686,7 @@
         },
         {
           "len":120,
-          "name":"field_8",
+          "name":"unk2",
           "offset":8,
           "type":"char[120]"
         }
@@ -27774,13 +27788,13 @@
       "fields":[
         {
           "len":500,
-          "name":"base_actor_destination",
+          "name":"base",
           "offset":0,
           "type":"CActorDestination"
         },
         {
           "len":496,
-          "name":"field_500",
+          "name":"unk",
           "offset":500,
           "type":"char[496]"
         }
@@ -27798,7 +27812,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -27810,7 +27824,7 @@
         },
         {
           "len":380,
-          "name":"field_348",
+          "name":"unk1",
           "offset":348,
           "type":"char[380]"
         },
@@ -27822,7 +27836,7 @@
         },
         {
           "len":64,
-          "name":"field_732",
+          "name":"unk2",
           "offset":732,
           "type":"char[64]"
         }
@@ -27948,13 +27962,13 @@
         },
         {
           "len":4,
-          "name":"field_84",
+          "name":"unk1",
           "offset":84,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_88",
+          "name":"unk2",
           "offset":88,
           "type":"int"
         },
@@ -27978,7 +27992,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"int"
         }
@@ -27996,7 +28010,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -28008,7 +28022,7 @@
         },
         {
           "len":68,
-          "name":"field_356",
+          "name":"unk1",
           "offset":356,
           "type":"char[68]"
         },
@@ -28026,7 +28040,7 @@
         },
         {
           "len":4,
-          "name":"field_432",
+          "name":"unk2",
           "offset":432,
           "type":"char[4]"
         },
@@ -28038,7 +28052,7 @@
         },
         {
           "len":200,
-          "name":"field_440",
+          "name":"unk3",
           "offset":440,
           "type":"char[200]"
         },
@@ -28068,7 +28082,7 @@
         },
         {
           "len":20,
-          "name":"field_656",
+          "name":"unk4",
           "offset":656,
           "type":"char[20]"
         }
@@ -28086,21 +28100,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -28122,7 +28130,7 @@
         },
         {
           "len":776,
-          "name":"field_736",
+          "name":"unk",
           "offset":736,
           "type":"char[776]"
         }
@@ -28140,13 +28148,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":16,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"char[16]"
         }
@@ -28164,7 +28172,7 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         }
@@ -28182,13 +28190,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":10440,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[10440]"
         }
@@ -28266,7 +28274,7 @@
       "fields":[
         {
           "len":64,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[64]"
         }
@@ -28284,7 +28292,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -28302,7 +28310,7 @@
         },
         {
           "len":828,
-          "name":"field_352",
+          "name":"unk",
           "offset":352,
           "type":"char[828]"
         }
@@ -28320,13 +28328,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":261812,
-          "name":"field_130004",
+          "name":"unk",
           "offset":130004,
           "type":"char[261812]"
         }
@@ -28656,19 +28664,19 @@
         },
         {
           "len":256,
-          "name":"field_208",
+          "name":"unk1",
           "offset":208,
           "type":"char[256]"
         },
         {
           "len":4,
-          "name":"field_464",
+          "name":"unk2",
           "offset":464,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_468",
+          "name":"unk3",
           "offset":468,
           "type":"int"
         },
@@ -28686,7 +28694,7 @@
         },
         {
           "len":4,
-          "name":"field_480",
+          "name":"unk4",
           "offset":480,
           "type":"int"
         },
@@ -28698,7 +28706,7 @@
         },
         {
           "len":4,
-          "name":"field_488",
+          "name":"unk5",
           "offset":488,
           "type":"int"
         },
@@ -28716,7 +28724,7 @@
         },
         {
           "len":4,
-          "name":"field_500",
+          "name":"unk6",
           "offset":500,
           "type":"int"
         },
@@ -28740,13 +28748,13 @@
         },
         {
           "len":4,
-          "name":"field_516",
+          "name":"unk7",
           "offset":516,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_520",
+          "name":"unk8",
           "offset":520,
           "type":"int"
         },
@@ -28770,19 +28778,19 @@
         },
         {
           "len":4,
-          "name":"field_536",
+          "name":"unk9",
           "offset":536,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_540",
+          "name":"unk10",
           "offset":540,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_544",
+          "name":"unk11",
           "offset":544,
           "type":"int"
         },
@@ -28866,7 +28874,7 @@
         },
         {
           "len":4,
-          "name":"field_600",
+          "name":"unk12",
           "offset":600,
           "type":"int"
         },
@@ -28950,19 +28958,19 @@
         },
         {
           "len":1584,
-          "name":"field_908",
+          "name":"unk13",
           "offset":908,
           "type":"char[1584]"
         },
         {
           "len":4,
-          "name":"field_2492",
+          "name":"unk14",
           "offset":2492,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_2496",
+          "name":"unk15",
           "offset":2496,
           "type":"int"
         },
@@ -28980,7 +28988,7 @@
         },
         {
           "len":252,
-          "name":"field_2508",
+          "name":"unk16",
           "offset":2508,
           "type":"char[252]"
         },
@@ -29004,13 +29012,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":56,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[56]"
         },
@@ -29034,7 +29042,7 @@
         },
         {
           "len":32,
-          "name":"field_48888",
+          "name":"unk2",
           "offset":48888,
           "type":"char[32]"
         }
@@ -29052,7 +29060,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -29064,7 +29072,7 @@
         },
         {
           "len":380,
-          "name":"field_348",
+          "name":"unk",
           "offset":348,
           "type":"char[380]"
         }
@@ -29082,13 +29090,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":20,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[20]"
         },
@@ -29100,7 +29108,7 @@
         },
         {
           "len":12,
-          "name":"field_48844",
+          "name":"unk2",
           "offset":48844,
           "type":"char[12]"
         },
@@ -29118,7 +29126,7 @@
         },
         {
           "len":88,
-          "name":"field_48864",
+          "name":"unk3",
           "offset":48864,
           "type":"char[88]"
         }
@@ -29208,7 +29216,7 @@
         },
         {
           "len":500,
-          "name":"field_1208",
+          "name":"unk1",
           "offset":1208,
           "type":"char[500]"
         },
@@ -29220,13 +29228,13 @@
         },
         {
           "len":4,
-          "name":"field_2860",
+          "name":"unk2",
           "offset":2860,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_2864",
+          "name":"unk3",
           "offset":2864,
           "type":"int"
         },
@@ -29244,7 +29252,7 @@
         },
         {
           "len":4,
-          "name":"field_2876",
+          "name":"unk4",
           "offset":2876,
           "type":"int"
         }
@@ -29316,7 +29324,7 @@
       "fields":[
         {
           "len":1,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char"
         }
@@ -29334,21 +29342,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -29364,7 +29366,7 @@
         },
         {
           "len":4,
-          "name":"field_732",
+          "name":"unk1",
           "offset":732,
           "type":"char[4]"
         },
@@ -29388,7 +29390,7 @@
         },
         {
           "len":96,
-          "name":"field_748",
+          "name":"unk2",
           "offset":748,
           "type":"char[96]"
         },
@@ -29400,7 +29402,7 @@
         },
         {
           "len":96,
-          "name":"field_848",
+          "name":"unk3",
           "offset":848,
           "type":"char[96]"
         }
@@ -29496,13 +29498,13 @@
         },
         {
           "len":4,
-          "name":"field_52",
+          "name":"unk1",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_56",
+          "name":"unk2",
           "offset":56,
           "type":"int"
         },
@@ -29550,7 +29552,7 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         }
@@ -29568,7 +29570,7 @@
       "fields":[
         {
           "len":36,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[36]"
         }
@@ -29586,13 +29588,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":24,
-          "name":"field_130004",
+          "name":"unk",
           "offset":130004,
           "type":"char[24]"
         }
@@ -29610,21 +29612,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -29652,13 +29648,13 @@
       "fields":[
         {
           "len":48676,
-          "name":"base_character",
+          "name":"base",
           "offset":0,
           "type":"CCharacter"
         },
         {
           "len":4,
-          "name":"field_48676",
+          "name":"unk1",
           "offset":48676,
           "type":"int"
         },
@@ -29670,7 +29666,7 @@
         },
         {
           "len":80140,
-          "name":"field_48684",
+          "name":"unk2",
           "offset":48684,
           "type":"char[80140]"
         },
@@ -29688,7 +29684,7 @@
         },
         {
           "len":52,
-          "name":"field_129948",
+          "name":"unk3",
           "offset":129948,
           "type":"char[52]"
         },
@@ -29778,13 +29774,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":4,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"int"
         }
@@ -29802,13 +29798,13 @@
       "fields":[
         {
           "len":128776,
-          "name":"base_npc",
+          "name":"base",
           "offset":0,
           "type":"CNPC"
         },
         {
           "len":100,
-          "name":"field_128776",
+          "name":"unk",
           "offset":128776,
           "type":"char[100]"
         }
@@ -29826,13 +29822,13 @@
       "fields":[
         {
           "len":128776,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CNPC"
         },
         {
           "len":100,
-          "name":"field_128776",
+          "name":"unk",
           "offset":128776,
           "type":"char[100]"
         }
@@ -29850,7 +29846,7 @@
       "fields":[
         {
           "len":128776,
-          "name":"base_npc",
+          "name":"base",
           "offset":0,
           "type":"CNPC"
         },
@@ -29862,7 +29858,7 @@
         },
         {
           "len":936,
-          "name":"field_128780",
+          "name":"unk1",
           "offset":128780,
           "type":"char[936]"
         },
@@ -29874,7 +29870,7 @@
         },
         {
           "len":4,
-          "name":"field_129720",
+          "name":"unk2",
           "offset":129720,
           "type":"char[4]"
         },
@@ -29886,7 +29882,7 @@
         },
         {
           "len":28,
-          "name":"field_129728",
+          "name":"unk3",
           "offset":129728,
           "type":"char[28]"
         },
@@ -29898,7 +29894,7 @@
         },
         {
           "len":16,
-          "name":"field_129760",
+          "name":"unk4",
           "offset":129760,
           "type":"char[16]"
         }
@@ -29916,13 +29912,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":60,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[60]"
         }
@@ -29940,13 +29936,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":48,
-          "name":"field_130004",
+          "name":"unk",
           "offset":130004,
           "type":"char[48]"
         }
@@ -29964,13 +29960,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":64,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[64]"
         }
@@ -30496,21 +30492,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
-          "len":4,
+          "len":380,
           "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":12,
@@ -30526,7 +30516,7 @@
         },
         {
           "len":24,
-          "name":"field_740",
+          "name":"unk1",
           "offset":740,
           "type":"char[24]"
         },
@@ -30550,13 +30540,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":20,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[20]"
         }
@@ -30574,7 +30564,7 @@
       "fields":[
         {
           "len":64,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[64]"
         }
@@ -30592,7 +30582,7 @@
       "fields":[
         {
           "len":1,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char"
         }
@@ -30634,7 +30624,7 @@
         },
         {
           "len":256,
-          "name":"field_16",
+          "name":"unk",
           "offset":16,
           "type":"char[256]"
         },
@@ -30688,7 +30678,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -30700,7 +30690,7 @@
         },
         {
           "len":116,
-          "name":"field_348",
+          "name":"unk1",
           "offset":348,
           "type":"char[116]"
         },
@@ -30712,7 +30702,7 @@
         },
         {
           "len":263,
-          "name":"field_465",
+          "name":"unk2",
           "offset":465,
           "type":"char[263]"
         },
@@ -30736,7 +30726,7 @@
         },
         {
           "len":96,
-          "name":"field_740",
+          "name":"unk3",
           "offset":740,
           "type":"char[96]"
         },
@@ -30748,7 +30738,7 @@
         },
         {
           "len":96,
-          "name":"field_840",
+          "name":"unk4",
           "offset":840,
           "type":"char[96]"
         },
@@ -30760,7 +30750,7 @@
         },
         {
           "len":96,
-          "name":"field_940",
+          "name":"unk5",
           "offset":940,
           "type":"char[96]"
         },
@@ -30802,7 +30792,7 @@
         },
         {
           "len":1000,
-          "name":"field_1060",
+          "name":"unk6",
           "offset":1060,
           "type":"char[1000]"
         },
@@ -30832,13 +30822,13 @@
       "fields":[
         {
           "len":1644,
-          "name":"base_boxactor",
+          "name":"base",
           "offset":0,
           "type":"CBoxActor"
         },
         {
           "len":12300,
-          "name":"field_1644",
+          "name":"unk",
           "offset":1644,
           "type":"char[12300]"
         }
@@ -30856,13 +30846,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":212,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[212]"
         }
@@ -30880,13 +30870,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":24,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"char[24]"
         }
@@ -30904,7 +30894,7 @@
       "fields":[
         {
           "len":44,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[44]"
         }
@@ -31342,7 +31332,7 @@
       "fields":[
         {
           "len":4,
-          "name":"base_codec",
+          "name":"base",
           "offset":0,
           "type":"CCodec"
         },
@@ -31354,7 +31344,7 @@
         },
         {
           "len":8,
-          "name":"field_32",
+          "name":"unk",
           "offset":32,
           "type":"char[8]"
         },
@@ -31396,7 +31386,7 @@
       "fields":[
         {
           "len":4,
-          "name":"base_codec",
+          "name":"base",
           "offset":0,
           "type":"CCodec"
         },
@@ -31594,13 +31584,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":1140,
-          "name":"field_344",
+          "name":"unk1",
           "offset":344,
           "type":"char[1140]"
         },
@@ -31630,7 +31620,7 @@
         },
         {
           "len":72,
-          "name":"field_1524",
+          "name":"unk2",
           "offset":1524,
           "type":"char[72]"
         },
@@ -31654,7 +31644,7 @@
         },
         {
           "len":3788,
-          "name":"field_1608",
+          "name":"unk3",
           "offset":1608,
           "type":"char[3788]"
         }
@@ -31672,7 +31662,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -31684,7 +31674,7 @@
         },
         {
           "len":28,
-          "name":"field_348",
+          "name":"unk1",
           "offset":348,
           "type":"char[28]"
         },
@@ -31708,7 +31698,7 @@
         },
         {
           "len":28,
-          "name":"field_388",
+          "name":"unk2",
           "offset":388,
           "type":"char[28]"
         },
@@ -31720,7 +31710,7 @@
         },
         {
           "len":24,
-          "name":"field_420",
+          "name":"unk3",
           "offset":420,
           "type":"char[24]"
         }
@@ -31810,7 +31800,7 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
@@ -31846,7 +31836,7 @@
         },
         {
           "len":16,
-          "name":"field_1420",
+          "name":"unk1",
           "offset":1420,
           "type":"char[16]"
         },
@@ -31864,7 +31854,7 @@
         },
         {
           "len":96,
-          "name":"field_1444",
+          "name":"unk2",
           "offset":1444,
           "type":"char[96]"
         },
@@ -31876,7 +31866,7 @@
         },
         {
           "len":96,
-          "name":"field_1544",
+          "name":"unk3",
           "offset":1544,
           "type":"char[96]"
         },
@@ -31888,7 +31878,7 @@
         },
         {
           "len":96,
-          "name":"field_1644",
+          "name":"unk4",
           "offset":1644,
           "type":"char[96]"
         }
@@ -31948,13 +31938,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"field_0",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":261952,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[261952]"
         },
@@ -31966,7 +31956,7 @@
         },
         {
           "len":3168,
-          "name":"field_310776",
+          "name":"unk2",
           "offset":310776,
           "type":"char[3168]"
         }
@@ -31984,13 +31974,13 @@
       "fields":[
         {
           "len":1836,
-          "name":"base_platform",
+          "name":"base",
           "offset":0,
           "type":"CPlatform"
         },
         {
           "len":4,
-          "name":"field_1836",
+          "name":"unk",
           "offset":1836,
           "type":"int"
         }
@@ -32014,7 +32004,7 @@
         },
         {
           "len":4,
-          "name":"field_148",
+          "name":"unk",
           "offset":148,
           "type":"char[4]"
         },
@@ -32044,13 +32034,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":384,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[384]"
         }
@@ -32068,13 +32058,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":36,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[36]"
         },
@@ -32086,7 +32076,7 @@
         },
         {
           "len":8,
-          "name":"field_48860",
+          "name":"unk2",
           "offset":48860,
           "type":"char[8]"
         },
@@ -32104,7 +32094,7 @@
         },
         {
           "len":168,
-          "name":"field_48876",
+          "name":"unk3",
           "offset":48876,
           "type":"char[168]"
         }
@@ -32122,13 +32112,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":8884,
-          "name":"field_130004",
+          "name":"unk1",
           "offset":130004,
           "type":"char[8884]"
         },
@@ -32152,7 +32142,7 @@
         },
         {
           "len":3332,
-          "name":"field_138900",
+          "name":"unk2",
           "offset":138900,
           "type":"char[3332]"
         }
@@ -32197,9 +32187,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CMorph",
       "pack":false,
       "type":"struct"
@@ -32211,7 +32208,7 @@
       "fields":[
         {
           "len":84,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[84]"
         },
@@ -32223,7 +32220,7 @@
         },
         {
           "len":1456,
-          "name":"field_88",
+          "name":"unk2",
           "offset":88,
           "type":"char[1456]"
         }
@@ -32493,7 +32490,7 @@
         },
         {
           "len":4,
-          "name":"field_21324",
+          "name":"unk1",
           "offset":21324,
           "type":"int"
         },
@@ -32517,7 +32514,7 @@
         },
         {
           "len":36,
-          "name":"field_29708",
+          "name":"unk2",
           "offset":29708,
           "type":"char[36]"
         },
@@ -32529,7 +32526,7 @@
         },
         {
           "len":2304,
-          "name":"field_32048",
+          "name":"unk3",
           "offset":32048,
           "type":"char[2304]"
         }
@@ -32571,7 +32568,7 @@
       "fields":[
         {
           "len":92,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[92]"
         }
@@ -32631,7 +32628,7 @@
         },
         {
           "len":92,
-          "name":"field_280",
+          "name":"unk",
           "offset":280,
           "type":"char[92]"
         }
@@ -32649,7 +32646,7 @@
       "fields":[
         {
           "len":48676,
-          "name":"base_character",
+          "name":"base",
           "offset":0,
           "type":"CCharacter"
         },
@@ -32661,7 +32658,7 @@
         },
         {
           "len":80088,
-          "name":"field_48680",
+          "name":"unk",
           "offset":48680,
           "type":"char[80088]"
         },
@@ -33093,37 +33090,37 @@
         },
         {
           "len":8,
-          "name":"field_28",
+          "name":"unk1",
           "offset":28,
           "type":"double"
         },
         {
           "len":8,
-          "name":"field_36",
+          "name":"unk2",
           "offset":36,
           "type":"double"
         },
         {
           "len":8,
-          "name":"field_44",
+          "name":"unk3",
           "offset":44,
           "type":"double"
         },
         {
           "len":4,
-          "name":"field_52",
+          "name":"unk4",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_56",
+          "name":"unk5",
           "offset":56,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_60",
+          "name":"unk6",
           "offset":60,
           "type":"void*"
         },
@@ -33429,25 +33426,25 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"unk2",
           "offset":4,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"unk3",
           "offset":8,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"unk4",
           "offset":12,
           "type":"int"
         }
@@ -33558,9 +33555,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CPartStatus",
       "pack":false,
       "type":"struct"
@@ -33572,13 +33576,13 @@
       "fields":[
         {
           "len":128776,
-          "name":"base_npc",
+          "name":"base",
           "offset":0,
           "type":"CNPC"
         },
         {
           "len":3384,
-          "name":"field_128776",
+          "name":"unk",
           "offset":128776,
           "type":"char[3384]"
         },
@@ -33620,19 +33624,19 @@
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"unk1",
           "offset":24,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"unk2",
           "offset":28,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_32",
+          "name":"unk3",
           "offset":32,
           "type":"int"
         },
@@ -33728,21 +33732,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -33752,7 +33750,7 @@
         },
         {
           "len":96,
-          "name":"field_728",
+          "name":"unk1",
           "offset":728,
           "type":"char[96]"
         },
@@ -33764,7 +33762,7 @@
         },
         {
           "len":96,
-          "name":"field_828",
+          "name":"unk2",
           "offset":828,
           "type":"char[96]"
         },
@@ -33782,7 +33780,7 @@
         },
         {
           "len":4,
-          "name":"field_932",
+          "name":"unk3",
           "offset":932,
           "type":"char[4]"
         },
@@ -33800,7 +33798,7 @@
         },
         {
           "len":28,
-          "name":"field_944",
+          "name":"unk4",
           "offset":944,
           "type":"char[28]"
         },
@@ -33818,7 +33816,7 @@
         },
         {
           "len":28,
-          "name":"field_980",
+          "name":"unk5",
           "offset":980,
           "type":"char[28]"
         },
@@ -33830,7 +33828,7 @@
         },
         {
           "len":52,
-          "name":"field_1012",
+          "name":"unk6",
           "offset":1012,
           "type":"char[52]"
         },
@@ -33872,7 +33870,7 @@
         },
         {
           "len":4,
-          "name":"field_1088",
+          "name":"unk7",
           "offset":1088,
           "type":"int"
         }
@@ -33890,13 +33888,13 @@
       "fields":[
         {
           "len":16,
-          "name":"base_strlist",
+          "name":"base",
           "offset":0,
           "type":"CStrList"
         },
         {
           "len":44,
-          "name":"field_16",
+          "name":"unk1",
           "offset":16,
           "type":"char[44]"
         },
@@ -33944,7 +33942,7 @@
         },
         {
           "len":4,
-          "name":"field_376",
+          "name":"unk2",
           "offset":376,
           "type":"int"
         },
@@ -34049,9 +34047,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CPickListEntry",
       "pack":false,
       "type":"struct"
@@ -34063,15 +34068,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":380,
-          "name":"field_344",
+          "name":"model",
           "offset":344,
-          "type":"char[380]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -34117,7 +34122,7 @@
         },
         {
           "len":44,
-          "name":"field_752",
+          "name":"unk1",
           "offset":752,
           "type":"char[44]"
         },
@@ -34147,7 +34152,7 @@
         },
         {
           "len":364,
-          "name":"field_852",
+          "name":"unk2",
           "offset":852,
           "type":"char[364]"
         },
@@ -34171,7 +34176,7 @@
         },
         {
           "len":64,
-          "name":"field_1228",
+          "name":"unk3",
           "offset":1228,
           "type":"char[64]"
         },
@@ -34201,7 +34206,7 @@
         },
         {
           "len":528,
-          "name":"field_1308",
+          "name":"unk4",
           "offset":1308,
           "type":"char[528]"
         }
@@ -34555,7 +34560,7 @@
         },
         {
           "len":364,
-          "name":"field_256",
+          "name":"unk1",
           "offset":256,
           "type":"char[364]"
         },
@@ -34573,7 +34578,7 @@
         },
         {
           "len":156,
-          "name":"field_724",
+          "name":"unk2",
           "offset":724,
           "type":"char[156]"
         },
@@ -34603,7 +34608,7 @@
         },
         {
           "len":28,
-          "name":"field_896",
+          "name":"unk3",
           "offset":896,
           "type":"char[28]"
         }
@@ -35125,7 +35130,7 @@
         },
         {
           "len":16,
-          "name":"field_56",
+          "name":"unk",
           "offset":56,
           "type":"char[16]"
         }
@@ -35227,13 +35232,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":44,
-          "name":"field_130004",
+          "name":"unk",
           "offset":130004,
           "type":"char[44]"
         }
@@ -35251,85 +35256,85 @@
       "fields":[
         {
           "len":4,
-          "name":"padding_0x0",
+          "name":"unk1",
           "offset":0,
           "type":"char[4]"
         },
         {
           "len":4,
-          "name":"whoIsSpeaking",
+          "name":"who_is_speaking",
           "offset":4,
           "type":"int"
         },
         {
           "len":4,
-          "name":"padding_0x8",
+          "name":"unk2",
           "offset":8,
           "type":"char[4]"
         },
         {
           "len":4,
-          "name":"focusActor",
+          "name":"focus_actor",
           "offset":12,
           "type":"int"
         },
         {
           "len":4,
-          "name":"padding_0x10",
+          "name":"unk3",
           "offset":16,
           "type":"char[4]"
         },
         {
           "len":4,
-          "name":"focusActorLocked",
+          "name":"focus_actor_locked",
           "offset":20,
           "type":"int"
         },
         {
           "len":48,
-          "name":"padding_0x18",
+          "name":"unk4",
           "offset":24,
           "type":"char[48]"
         },
         {
           "len":4,
-          "name":"nextCmd",
+          "name":"next_cmd",
           "offset":72,
           "type":"int"
         },
         {
           "len":4,
-          "name":"cmdTimer",
+          "name":"cmd_timer",
           "offset":76,
           "type":"float"
         },
         {
           "len":4,
-          "name":"dialogWavTime",
+          "name":"dialog_wav_time",
           "offset":80,
           "type":"float"
         },
         {
           "len":1,
-          "name":"currentMessage",
+          "name":"current_message",
           "offset":84,
           "type":"char"
         },
         {
           "len":1031,
-          "name":"padding_0x55",
+          "name":"unk5",
           "offset":85,
           "type":"char[1031]"
         },
         {
           "len":4,
-          "name":"callStack_count",
+          "name":"call_stack_count",
           "offset":1116,
           "type":"int"
         },
         {
           "len":32,
-          "name":"field_1120",
+          "name":"unk6",
           "offset":1120,
           "type":"char[32]"
         }
@@ -35344,9 +35349,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CScriptCmdParm",
       "pack":false,
       "type":"struct"
@@ -35355,9 +35367,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CScriptCmdParse",
       "pack":false,
       "type":"struct"
@@ -35366,9 +35385,16 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"CScriptEditor",
       "pack":false,
       "type":"struct"
@@ -35380,13 +35406,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":16,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[16]"
         }
@@ -35488,7 +35514,7 @@
         },
         {
           "len":4,
-          "name":"field_108",
+          "name":"unk",
           "offset":108,
           "type":"int"
         }
@@ -35770,7 +35796,7 @@
         },
         {
           "len":32,
-          "name":"field_56",
+          "name":"unk",
           "offset":56,
           "type":"char[32]"
         }
@@ -35788,13 +35814,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":12,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"char[12]"
         }
@@ -35812,7 +35838,7 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         }
@@ -35830,13 +35856,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":1140,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[1140]"
         }
@@ -35962,13 +35988,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":76,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[76]"
         }
@@ -36040,7 +36066,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"int"
         }
@@ -36382,7 +36408,7 @@
         },
         {
           "len":4,
-          "name":"field_68",
+          "name":"unk",
           "offset":68,
           "type":"int"
         },
@@ -36406,7 +36432,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -36436,7 +36462,7 @@
         },
         {
           "len":12,
-          "name":"field_736",
+          "name":"unk1",
           "offset":736,
           "type":"char[12]"
         },
@@ -36454,7 +36480,7 @@
         },
         {
           "len":96,
-          "name":"field_756",
+          "name":"unk2",
           "offset":756,
           "type":"char[96]"
         },
@@ -36466,7 +36492,7 @@
         },
         {
           "len":96,
-          "name":"field_856",
+          "name":"unk3",
           "offset":856,
           "type":"char[96]"
         },
@@ -36478,7 +36504,7 @@
         },
         {
           "len":96,
-          "name":"field_956",
+          "name":"unk4",
           "offset":956,
           "type":"char[96]"
         },
@@ -36490,7 +36516,7 @@
         },
         {
           "len":96,
-          "name":"field_1056",
+          "name":"unk5",
           "offset":1056,
           "type":"char[96]"
         },
@@ -36508,7 +36534,7 @@
         },
         {
           "len":4,
-          "name":"field_1160",
+          "name":"unk6",
           "offset":1160,
           "type":"char[4]"
         },
@@ -36520,7 +36546,7 @@
         },
         {
           "len":96,
-          "name":"field_1168",
+          "name":"unk7",
           "offset":1168,
           "type":"char[96]"
         },
@@ -36532,7 +36558,7 @@
         },
         {
           "len":96,
-          "name":"field_1268",
+          "name":"unk8",
           "offset":1268,
           "type":"char[96]"
         },
@@ -36568,7 +36594,7 @@
       "fields":[
         {
           "len":60,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[60]"
         }
@@ -36586,13 +36612,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":2268,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[2268]"
         }
@@ -36622,7 +36648,7 @@
         },
         {
           "len":4,
-          "name":"field_604",
+          "name":"unk",
           "offset":604,
           "type":"int"
         }
@@ -36640,7 +36666,7 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
@@ -36652,7 +36678,7 @@
         },
         {
           "len":96,
-          "name":"field_130008",
+          "name":"unk1",
           "offset":130008,
           "type":"char[96]"
         },
@@ -36664,7 +36690,7 @@
         },
         {
           "len":564,
-          "name":"field_130108",
+          "name":"unk2",
           "offset":130108,
           "type":"char[564]"
         }
@@ -36772,13 +36798,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":12468,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[12468]"
         }
@@ -36796,13 +36822,13 @@
       "fields":[
         {
           "len":130004,
-          "name":"base_hero",
+          "name":"base",
           "offset":0,
           "type":"CHero"
         },
         {
           "len":523524,
-          "name":"field_130004",
+          "name":"unk",
           "offset":130004,
           "type":"char[523524]"
         }
@@ -36820,13 +36846,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":16,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[16]"
         }
@@ -36844,7 +36870,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         }
@@ -36861,10 +36887,16 @@
       "desc":"",
       "fields":[
         {
-          "len":1648,
-          "name":"field_0",
+          "len":1644,
+          "name":"base",
           "offset":0,
-          "type":"char[1648]"
+          "type":"CBoxActor"
+        },
+        {
+          "len":4,
+          "name":"unk",
+          "offset":1644,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -36880,13 +36912,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":120,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[120]"
         }
@@ -37066,7 +37098,7 @@
       "fields":[
         {
           "len":436,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[436]"
         }
@@ -37084,13 +37116,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":12,
-          "name":"field_1400",
+          "name":"unk",
           "offset":1400,
           "type":"char[12]"
         }
@@ -37108,7 +37140,7 @@
       "fields":[
         {
           "len":996,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[996]"
         }
@@ -37126,7 +37158,7 @@
       "fields":[
         {
           "len":36,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[36]"
         }
@@ -37144,21 +37176,21 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
+          "type":"CKeyFramedModelInstance"
         },
         {
-          "len":380,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[380]"
+          "len":4,
+          "name":"unk",
+          "offset":724,
+          "type":"int"
         },
         {
           "len":4,
@@ -37180,21 +37212,15 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":12,
@@ -37204,7 +37230,7 @@
         },
         {
           "len":72,
-          "name":"field_736",
+          "name":"unk",
           "offset":736,
           "type":"char[72]"
         }
@@ -37222,13 +37248,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":536,
-          "name":"field_344",
+          "name":"unk",
           "offset":344,
           "type":"char[536]"
         }
@@ -37246,13 +37272,13 @@
       "fields":[
         {
           "len":1400,
-          "name":"base_weapon",
+          "name":"base",
           "offset":0,
           "type":"CWeapon"
         },
         {
           "len":392,
-          "name":"field_1400",
+          "name":"unk1",
           "offset":1400,
           "type":"char[392]"
         },
@@ -37264,7 +37290,7 @@
         },
         {
           "len":100,
-          "name":"field_1796",
+          "name":"unk2",
           "offset":1796,
           "type":"char[100]"
         },
@@ -37306,7 +37332,7 @@
         },
         {
           "len":216,
-          "name":"field_1920",
+          "name":"unk3",
           "offset":1920,
           "type":"char[216]"
         },
@@ -37318,7 +37344,7 @@
         },
         {
           "len":96,
-          "name":"field_2140",
+          "name":"unk4",
           "offset":2140,
           "type":"char[96]"
         }
@@ -37336,13 +37362,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":392,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[392]"
         },
@@ -37354,7 +37380,7 @@
         },
         {
           "len":4,
-          "name":"field_49216",
+          "name":"unk2",
           "offset":49216,
           "type":"char[4]"
         },
@@ -37390,7 +37416,7 @@
         },
         {
           "len":4,
-          "name":"field_49248",
+          "name":"unk3",
           "offset":49248,
           "type":"char[4]"
         },
@@ -37402,7 +37428,7 @@
         },
         {
           "len":16,
-          "name":"field_49256",
+          "name":"unk4",
           "offset":49256,
           "type":"char[16]"
         },
@@ -37414,7 +37440,7 @@
         },
         {
           "len":100,
-          "name":"field_49276",
+          "name":"unk5",
           "offset":49276,
           "type":"char[100]"
         },
@@ -37432,7 +37458,7 @@
         },
         {
           "len":12,
-          "name":"field_49384",
+          "name":"unk6",
           "offset":49384,
           "type":"char[12]"
         }
@@ -37450,13 +37476,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":794124,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[794124]"
         },
@@ -37468,7 +37494,7 @@
         },
         {
           "len":3116,
-          "name":"field_842948",
+          "name":"unk2",
           "offset":842948,
           "type":"char[3116]"
         },
@@ -37480,7 +37506,7 @@
         },
         {
           "len":44,
-          "name":"field_846068",
+          "name":"unk3",
           "offset":846068,
           "type":"char[44]"
         }
@@ -37750,13 +37776,13 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
         {
           "len":2016,
-          "name":"field_344",
+          "name":"unk1",
           "offset":344,
           "type":"char[2016]"
         },
@@ -37768,7 +37794,7 @@
         },
         {
           "len":1776,
-          "name":"field_2364",
+          "name":"unk2",
           "offset":2364,
           "type":"char[1776]"
         },
@@ -37786,7 +37812,7 @@
         },
         {
           "len":68,
-          "name":"field_4148",
+          "name":"unk3",
           "offset":4148,
           "type":"char[68]"
         }
@@ -37876,7 +37902,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -37918,7 +37944,7 @@
         },
         {
           "len":28,
-          "name":"field_376",
+          "name":"unk1",
           "offset":376,
           "type":"char[28]"
         },
@@ -37930,7 +37956,7 @@
         },
         {
           "len":28,
-          "name":"field_408",
+          "name":"unk2",
           "offset":408,
           "type":"char[28]"
         },
@@ -37942,7 +37968,7 @@
         },
         {
           "len":96,
-          "name":"field_440",
+          "name":"unk3",
           "offset":440,
           "type":"char[96]"
         },
@@ -37954,7 +37980,7 @@
         },
         {
           "len":96,
-          "name":"field_540",
+          "name":"unk4",
           "offset":540,
           "type":"char[96]"
         },
@@ -38002,7 +38028,7 @@
         },
         {
           "len":176032,
-          "name":"field_664",
+          "name":"unk5",
           "offset":664,
           "type":"char[176032]"
         }
@@ -38056,7 +38082,7 @@
       "fields":[
         {
           "len":880,
-          "name":"base_trigger",
+          "name":"base",
           "offset":0,
           "type":"CTrigger"
         },
@@ -38068,7 +38094,7 @@
         },
         {
           "len":484,
-          "name":"field_884",
+          "name":"unk",
           "offset":884,
           "type":"char[484]"
         }
@@ -38086,7 +38112,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -38104,7 +38130,7 @@
         },
         {
           "len":16,
-          "name":"field_728",
+          "name":"unk1",
           "offset":728,
           "type":"char[16]"
         },
@@ -38128,7 +38154,7 @@
         },
         {
           "len":16,
-          "name":"field_756",
+          "name":"unk2",
           "offset":756,
           "type":"char[16]"
         },
@@ -38140,7 +38166,7 @@
         },
         {
           "len":611,
-          "name":"field_773",
+          "name":"unk3",
           "offset":773,
           "type":"char[611]"
         },
@@ -38164,7 +38190,7 @@
         },
         {
           "len":4,
-          "name":"field_1396",
+          "name":"unk4",
           "offset":1396,
           "type":"int"
         }
@@ -38242,7 +38268,7 @@
       "fields":[
         {
           "len":56,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[56]"
         }
@@ -38260,19 +38286,19 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":4,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_48824",
+          "name":"unk2",
           "offset":48824,
           "type":"int"
         },
@@ -38284,7 +38310,7 @@
         },
         {
           "len":20,
-          "name":"field_48832",
+          "name":"unk3",
           "offset":48832,
           "type":"char[20]"
         },
@@ -38296,7 +38322,7 @@
         },
         {
           "len":20,
-          "name":"field_48856",
+          "name":"unk4",
           "offset":48856,
           "type":"char[20]"
         },
@@ -38308,7 +38334,7 @@
         },
         {
           "len":8,
-          "name":"field_48880",
+          "name":"unk5",
           "offset":48880,
           "type":"char[8]"
         },
@@ -38326,7 +38352,7 @@
         },
         {
           "len":4,
-          "name":"field_48896",
+          "name":"unk6",
           "offset":48896,
           "type":"int"
         }
@@ -38344,37 +38370,37 @@
       "fields":[
         {
           "len":4,
-          "name":"base_font",
+          "name":"base",
           "offset":0,
           "type":"CFont"
         },
         {
           "len":4,
-          "name":"deviceContextHandle",
+          "name":"device_context_handle",
           "offset":4,
           "type":"HDC"
         },
         {
           "len":4,
-          "name":"dibHandle",
+          "name":"dib_handle",
           "offset":8,
           "type":"HBITMAP"
         },
         {
           "len":4,
-          "name":"fontHandle",
+          "name":"font_handle",
           "offset":12,
           "type":"HFONT"
         },
         {
           "len":4,
-          "name":"objectHandle",
+          "name":"object_handle",
           "offset":16,
           "type":"HGDIOBJ"
         },
         {
           "len":4,
-          "name":"ppvBits",
+          "name":"ppv_bits",
           "offset":20,
           "type":"void**"
         },
@@ -38428,13 +38454,13 @@
         },
         {
           "len":4,
-          "name":"yOffset1",
+          "name":"y_offset1",
           "offset":308,
           "type":"int"
         },
         {
           "len":4,
-          "name":"yOffset2",
+          "name":"y_offset2",
           "offset":312,
           "type":"int"
         }
@@ -38452,13 +38478,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":140,
-          "name":"field_48820",
+          "name":"unk1",
           "offset":48820,
           "type":"char[140]"
         },
@@ -38476,7 +38502,7 @@
         },
         {
           "len":100,
-          "name":"field_48968",
+          "name":"unk2",
           "offset":48968,
           "type":"char[100]"
         }
@@ -38494,13 +38520,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":60,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[60]"
         }
@@ -38518,13 +38544,13 @@
       "fields":[
         {
           "len":48820,
-          "name":"base_enemy",
+          "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
           "len":20,
-          "name":"field_48820",
+          "name":"unk",
           "offset":48820,
           "type":"char[20]"
         }
@@ -43195,7 +43221,7 @@
       "fields":[
         {
           "len":8,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[8]"
         },
@@ -43393,7 +43419,7 @@
       "fields":[
         {
           "len":688,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[688]"
         }
@@ -43411,7 +43437,7 @@
       "fields":[
         {
           "len":468,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[468]"
         }
@@ -43459,7 +43485,7 @@
         },
         {
           "len":4,
-          "name":"field_32",
+          "name":"unk1",
           "offset":32,
           "type":"int"
         },
@@ -43471,7 +43497,7 @@
         },
         {
           "len":44,
-          "name":"field_40",
+          "name":"unk2",
           "offset":40,
           "type":"char[44]"
         },
@@ -43495,7 +43521,7 @@
       "fields":[
         {
           "len":72,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[72]"
         }
@@ -43549,7 +43575,7 @@
       "fields":[
         {
           "len":64,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[64]"
         }
@@ -43819,7 +43845,7 @@
         },
         {
           "len":12,
-          "name":"field_4",
+          "name":"unk",
           "offset":4,
           "type":"char[12]"
         },
@@ -43903,7 +43929,7 @@
       "fields":[
         {
           "len":8,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[8]"
         },
@@ -43915,7 +43941,7 @@
         },
         {
           "len":56,
-          "name":"field_12",
+          "name":"unk2",
           "offset":12,
           "type":"char[56]"
         }
@@ -43933,7 +43959,7 @@
       "fields":[
         {
           "len":36,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[36]"
         }
@@ -43975,7 +44001,7 @@
       "fields":[
         {
           "len":288,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[288]"
         }
@@ -44029,7 +44055,7 @@
       "fields":[
         {
           "len":172,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[172]"
         }
@@ -44047,7 +44073,7 @@
       "fields":[
         {
           "len":17,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[17]"
         }
@@ -44071,25 +44097,25 @@
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"unk1",
           "offset":4,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"unk2",
           "offset":8,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"unk3",
           "offset":12,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"unk4",
           "offset":16,
           "type":"float"
         },
@@ -44119,7 +44145,7 @@
         },
         {
           "len":4,
-          "name":"field_36",
+          "name":"unk5",
           "offset":36,
           "type":"void*"
         }
@@ -44143,7 +44169,7 @@
         },
         {
           "len":16,
-          "name":"field_12",
+          "name":"unk",
           "offset":12,
           "type":"char[16]"
         }
@@ -44683,7 +44709,7 @@
       "fields":[
         {
           "len":116,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[116]"
         }
@@ -45127,7 +45153,7 @@
         },
         {
           "len":14,
-          "name":"field_18",
+          "name":"unk",
           "offset":18,
           "type":"char[14]"
         }
@@ -45145,7 +45171,7 @@
       "fields":[
         {
           "len":24,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[24]"
         }
@@ -45163,7 +45189,7 @@
       "fields":[
         {
           "len":52,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[52]"
         }
@@ -45379,19 +45405,19 @@
       "fields":[
         {
           "len":32,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[32]"
         },
         {
           "len":48,
-          "name":"field_32",
+          "name":"unk2",
           "offset":32,
           "type":"CVector3f[4]"
         },
         {
           "len":4,
-          "name":"field_80",
+          "name":"unk3",
           "offset":80,
           "type":"char[4]"
         }
@@ -45409,7 +45435,7 @@
       "fields":[
         {
           "len":184,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[184]"
         }
@@ -45601,13 +45627,13 @@
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"unk1",
           "offset":24,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"unk2",
           "offset":28,
           "type":"int"
         },
@@ -45829,7 +45855,7 @@
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"unk1",
           "offset":4,
           "type":"int"
         },
@@ -45853,25 +45879,25 @@
         },
         {
           "len":4,
-          "name":"field_20",
+          "name":"unk2",
           "offset":20,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"unk3",
           "offset":24,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"unk4",
           "offset":28,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_32",
+          "name":"unk5",
           "offset":32,
           "type":"int"
         },
@@ -45883,7 +45909,7 @@
         },
         {
           "len":4,
-          "name":"field_40",
+          "name":"unk6",
           "offset":40,
           "type":"int"
         }
@@ -46123,37 +46149,37 @@
         },
         {
           "len":4,
-          "name":"vertexCount",
+          "name":"vertex_count",
           "offset":4,
           "type":"int"
         },
         {
           "len":4,
-          "name":"polyCount",
+          "name":"poly_count",
           "offset":8,
           "type":"int"
         },
         {
           "len":4,
-          "name":"textureCount",
+          "name":"texture_count",
           "offset":12,
           "type":"int"
         },
         {
           "len":4,
-          "name":"partCount",
+          "name":"part_count",
           "offset":16,
           "type":"int"
         },
         {
           "len":4,
-          "name":"frameCount",
+          "name":"frame_count",
           "offset":20,
           "type":"int"
         },
         {
           "len":4,
-          "name":"hasCollisionData",
+          "name":"has_collision_data",
           "offset":24,
           "type":"int"
         }
@@ -46171,7 +46197,7 @@
       "fields":[
         {
           "len":24,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[24]"
         }
@@ -46189,7 +46215,7 @@
       "fields":[
         {
           "len":84,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[84]"
         }
@@ -46297,7 +46323,7 @@
       "fields":[
         {
           "len":8,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[8]"
         },
@@ -46394,7 +46420,7 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Class/Game",
+      "cat":"/Nocturne/Struct/Game",
       "desc":"",
       "fields":[
         {
@@ -46495,37 +46521,37 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"short*"
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"unk2",
           "offset":4,
           "type":"float**"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"unk3",
           "offset":8,
           "type":"float*"
         },
         {
           "len":8,
-          "name":"field_12",
+          "name":"unk4",
           "offset":12,
           "type":"double"
         },
         {
           "len":8,
-          "name":"field_20",
+          "name":"unk5",
           "offset":20,
           "type":"double"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"unk6",
           "offset":28,
           "type":"int"
         }
@@ -46561,7 +46587,7 @@
       "fields":[
         {
           "len":32,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[32]"
         }
@@ -46933,19 +46959,19 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"unk2",
           "offset":4,
           "type":"int"
         },
         {
           "len":16,
-          "name":"field_8",
+          "name":"unk3",
           "offset":8,
           "type":"char[16]"
         },
@@ -47035,7 +47061,7 @@
         },
         {
           "len":64,
-          "name":"field_96",
+          "name":"unk4",
           "offset":96,
           "type":"char[64]"
         }
@@ -47647,7 +47673,7 @@
         },
         {
           "len":36,
-          "name":"field_56",
+          "name":"unk1",
           "offset":56,
           "type":"char[36]"
         },
@@ -47659,7 +47685,7 @@
         },
         {
           "len":24,
-          "name":"field_96",
+          "name":"unk2",
           "offset":96,
           "type":"char[24]"
         }
@@ -47833,7 +47859,7 @@
       "fields":[
         {
           "len":100,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[100]"
         }
@@ -47899,7 +47925,7 @@
       "fields":[
         {
           "len":40,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[40]"
         }
@@ -48019,7 +48045,7 @@
       "fields":[
         {
           "len":6812,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[6812]"
         }
@@ -48127,7 +48153,7 @@
       "fields":[
         {
           "len":12,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[12]"
         }
@@ -48229,7 +48255,7 @@
         },
         {
           "len":4,
-          "name":"field_116",
+          "name":"unk1",
           "offset":116,
           "type":"int"
         },
@@ -48259,13 +48285,13 @@
         },
         {
           "len":4,
-          "name":"field_152",
+          "name":"unk2",
           "offset":152,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_156",
+          "name":"unk3",
           "offset":156,
           "type":"int"
         }
@@ -48313,7 +48339,7 @@
       "fields":[
         {
           "len":96,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[96]"
         }
@@ -48529,7 +48555,7 @@
         },
         {
           "len":4,
-          "name":"field_64",
+          "name":"unk",
           "offset":64,
           "type":"int"
         }
@@ -49087,7 +49113,7 @@
         },
         {
           "len":24,
-          "name":"field_24",
+          "name":"unk1",
           "offset":24,
           "type":"char[24]"
         },
@@ -49099,7 +49125,7 @@
         },
         {
           "len":4,
-          "name":"field_52",
+          "name":"unk2",
           "offset":52,
           "type":"int"
         }
@@ -49123,13 +49149,13 @@
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"unk1",
           "offset":4,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"unk2",
           "offset":8,
           "type":"int"
         },
@@ -49141,19 +49167,19 @@
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"unk3",
           "offset":24,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"unk4",
           "offset":28,
           "type":"int"
         },
         {
           "len":12,
-          "name":"field_32",
+          "name":"unk5",
           "offset":32,
           "type":"char[12]"
         },
@@ -49165,7 +49191,7 @@
         },
         {
           "len":12,
-          "name":"field_56",
+          "name":"unk6",
           "offset":56,
           "type":"char[12]"
         },
@@ -49249,7 +49275,7 @@
         },
         {
           "len":8,
-          "name":"field_28",
+          "name":"unk1",
           "offset":28,
           "type":"char[8]"
         },
@@ -49261,7 +49287,7 @@
         },
         {
           "len":8,
-          "name":"field_40",
+          "name":"unk2",
           "offset":40,
           "type":"char[8]"
         },
@@ -49273,7 +49299,7 @@
         },
         {
           "len":8,
-          "name":"field_52",
+          "name":"unk3",
           "offset":52,
           "type":"char[8]"
         }
@@ -49399,31 +49425,31 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"unk2",
           "offset":4,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"unk3",
           "offset":8,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"unk4",
           "offset":12,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"unk5",
           "offset":16,
           "type":"int"
         },
@@ -49435,7 +49461,7 @@
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"unk6",
           "offset":24,
           "type":"int"
         }
@@ -49717,7 +49743,7 @@
       "fields":[
         {
           "len":8,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[8]"
         },
@@ -49729,7 +49755,7 @@
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"unk2",
           "offset":12,
           "type":"char[4]"
         },
@@ -49741,7 +49767,7 @@
         },
         {
           "len":4,
-          "name":"field_20",
+          "name":"unk3",
           "offset":20,
           "type":"char[4]"
         },
@@ -49753,7 +49779,7 @@
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"unk4",
           "offset":28,
           "type":"char[4]"
         },
@@ -49765,7 +49791,7 @@
         },
         {
           "len":4,
-          "name":"field_36",
+          "name":"unk5",
           "offset":36,
           "type":"char[4]"
         },
@@ -49777,7 +49803,7 @@
         },
         {
           "len":4,
-          "name":"field_44",
+          "name":"unk6",
           "offset":44,
           "type":"char[4]"
         },
@@ -49789,7 +49815,7 @@
         },
         {
           "len":4,
-          "name":"field_52",
+          "name":"unk7",
           "offset":52,
           "type":"char[4]"
         },
@@ -49801,7 +49827,7 @@
         },
         {
           "len":4,
-          "name":"field_60",
+          "name":"unk8",
           "offset":60,
           "type":"char[4]"
         },
@@ -49825,7 +49851,7 @@
       "fields":[
         {
           "len":512,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[512]"
         },
@@ -49843,7 +49869,7 @@
         },
         {
           "len":12,
-          "name":"field_520",
+          "name":"unk2",
           "offset":520,
           "type":"char[12]"
         },
@@ -49903,7 +49929,7 @@
         },
         {
           "len":8,
-          "name":"field_568",
+          "name":"unk3",
           "offset":568,
           "type":"char[8]"
         },
@@ -49945,7 +49971,7 @@
       "fields":[
         {
           "len":16,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[16]"
         },
@@ -49957,7 +49983,7 @@
         },
         {
           "len":28,
-          "name":"field_20",
+          "name":"unk2",
           "offset":20,
           "type":"char[28]"
         },
@@ -50041,7 +50067,7 @@
         },
         {
           "len":256,
-          "name":"field_4",
+          "name":"unk1",
           "offset":4,
           "type":"char[256]"
         },
@@ -50083,7 +50109,7 @@
         },
         {
           "len":44,
-          "name":"field_284",
+          "name":"unk2",
           "offset":284,
           "type":"char[44]"
         }
@@ -50341,7 +50367,7 @@
       "fields":[
         {
           "len":24,
-          "name":"field_0",
+          "name":"unk1",
           "offset":0,
           "type":"char[24]"
         },
@@ -50353,7 +50379,7 @@
         },
         {
           "len":8,
-          "name":"field_28",
+          "name":"unk2",
           "offset":28,
           "type":"char[8]"
         },
@@ -50365,7 +50391,7 @@
         },
         {
           "len":8,
-          "name":"field_40",
+          "name":"unk3",
           "offset":40,
           "type":"char[8]"
         },
@@ -50377,7 +50403,7 @@
         },
         {
           "len":8,
-          "name":"field_52",
+          "name":"unk4",
           "offset":52,
           "type":"char[8]"
         }
@@ -50425,7 +50451,7 @@
       "fields":[
         {
           "len":28,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[28]"
         }
@@ -50803,7 +50829,7 @@
         },
         {
           "len":8,
-          "name":"field_60",
+          "name":"unk",
           "offset":60,
           "type":"char[8]"
         }
@@ -50827,7 +50853,7 @@
         },
         {
           "len":8,
-          "name":"field_32",
+          "name":"unk1",
           "offset":32,
           "type":"char[8]"
         },
@@ -50839,7 +50865,7 @@
         },
         {
           "len":64,
-          "name":"field_80",
+          "name":"unk2",
           "offset":80,
           "type":"char[64]"
         },
@@ -50953,7 +50979,7 @@
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"unk",
           "offset":24,
           "type":"void**"
         }
@@ -51037,7 +51063,7 @@
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"unk1",
           "offset":8,
           "type":"int"
         },
@@ -51049,7 +51075,7 @@
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"unk2",
           "offset":16,
           "type":"int"
         },
@@ -51094,9 +51120,16 @@
       "alig":1,
       "cat":"/Nocturne/Struct/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":4,
       "name":"SVoxelGridParams",
       "pack":false,
       "type":"struct"
@@ -51108,7 +51141,7 @@
       "fields":[
         {
           "len":32,
-          "name":"field_0",
+          "name":"unk",
           "offset":0,
           "type":"char[32]"
         }

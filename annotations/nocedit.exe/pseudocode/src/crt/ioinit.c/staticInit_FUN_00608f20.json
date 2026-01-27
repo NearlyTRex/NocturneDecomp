@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 94,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 29,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function",
-      "undefined_data"
+      "special_crt_function"
     ],
     "total_lines": 90
   },
@@ -59,15 +58,15 @@
     },
     {
       "addr": "00684ccc",
-      "name": "DAT_00684ccc",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_00684ccc",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "00684cd0",
-      "name": "DAT_00684cd0",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_00684cd0",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "00684cea",
@@ -77,9 +76,9 @@
     },
     {
       "addr": "00684d05",
-      "name": "DAT_00684d05",
-      "type": "undefined1",
-      "value": null
+      "name": "BYTE_00684d05",
+      "type": "byte",
+      "value": "0x0"
     },
     {
       "addr": "03f9b200",
@@ -135,20 +134,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00684d05",
-      "text": "DAT_00684d05 = DAT_00684d05 & 0xf8 | 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00684d05",
-      "text": "DAT_00684d05 = DAT_00684d05 & 0xf8 | 4;",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 25,

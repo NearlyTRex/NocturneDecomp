@@ -20,15 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 97,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 7,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
     "total_lines": 25
   },
@@ -49,8 +48,8 @@
   "globals": [
     {
       "addr": "02d7a7b8",
-      "name": "DAT_02d7a7b8",
-      "type": "undefined4",
+      "name": "INT_02d7a7b8",
+      "type": "int",
       "value": null
     }
   ],
@@ -152,13 +151,6 @@
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_02d7a7b8",
-      "text": ") >> 1) + DAT_02d7a7b8;",
-      "type": "undefined_data"
     }
   ]
 }

@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   void* switchdataD_004d25c8 = 004d2611
 ;   double DOUBLE_0062ac05 = 0.25
-;   undefined4 DAT_0065e670
+;   float FLOAT_0065e670 = 2300
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CKeys g_CKeysInstance
 ;
@@ -101,17 +101,17 @@ section .text
     SAHF                                ; 004d26ae
     JBE 0x004d26c3                      ; 004d26af
         ;   XREF to: 004d26c3 (CONDITIONAL_JUMP)  ; LAB_004d26c3
-    FLD float ptr [0x0065e670]          ; 004d26b1 | DAT_0065e670
+    FLD float ptr [0x0065e670]          ; 004d26b1 | FLOAT_0065e670
     FADD float ptr [ESI + 0x15c]        ; 004d26b7
     FSTP float ptr [ESI + 0x15c]        ; 004d26bd
     FLD float ptr [ESI + 0x15c]         ; 004d26c3
         ;   Label: LAB_004d26c3
-    FCOMP float ptr [0x0065e670]        ; 004d26c9 | DAT_0065e670
+    FCOMP float ptr [0x0065e670]        ; 004d26c9 | FLOAT_0065e670
     FNSTSW AX                           ; 004d26cf
     SAHF                                ; 004d26d1
     JC 0x004d26e6                       ; 004d26d2
         ;   XREF to: 004d26e6 (CONDITIONAL_JUMP)  ; LAB_004d26e6
-    FLD float ptr [0x0065e670]          ; 004d26d4 | DAT_0065e670
+    FLD float ptr [0x0065e670]          ; 004d26d4 | FLOAT_0065e670
     FSUBR float ptr [ESI + 0x15c]       ; 004d26da
     FSTP float ptr [ESI + 0x15c]        ; 004d26e0
     FLD float ptr [ESI + 0x15c]         ; 004d26e6

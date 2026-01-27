@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_boxactor.cpp_staticInit_FUN_00421650(void)
+; __cdecl void core_boxactor.cpp_staticInit_FUN_00421650(void)
 ;
 ;
 ; Referenced Globals:

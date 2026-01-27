@@ -879,7 +879,7 @@ LAB_005975b4:
                            (&pCVar14->motion_controller);
         pcVar18 = pCVar9->motions[0].motion_name + iVar6;
         iVar6 = iVar6 + 0x54c;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1900.base_strlist,pcVar18);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1900.base,pcVar18);
       }
       iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_1900,"Select motion",
@@ -947,7 +947,7 @@ LAB_005975b4:
           core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0(pCVar7,iVar6);
           in_stack_ffffcd30 = (double)CONCAT44(0x598339,fVar21);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"%s\t%s");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1558.base_strlist,(char *)local_46c);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1558.base,(char *)local_46c);
           fVar24 = (float)in_stack_ffffcd58;
           fVar21 = SUB84(in_stack_ffffcd30,0);
           iVar6 = iVar6 + 1;
@@ -983,18 +983,18 @@ LAB_005975b4:
         if (0 < DAT_03665f74.poly_count) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_e08);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"Model:\t%s");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base_strlist,(char *)local_46c);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,(char *)local_46c);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"Bone:\t%s");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base_strlist,(char *)local_46c);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,(char *)local_46c);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"Pos: %5.3f %5.3f %5.3f");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base_strlist,(char *)local_46c);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,(char *)local_46c);
           fVar21 = SUB84((double)local_19c.x,0);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"Orient: %5.3f %5.3f %5.3f");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base_strlist,(char *)local_46c);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,(char *)local_46c);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_e08.base_strlist,"Paste position/orientation from clipboard");
+                    (&local_e08.base,"Paste position/orientation from clipboard");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_e08.base_strlist,"Copy position/orientation to clipboard");
+                    (&local_e08.base,"Copy position/orientation to clipboard");
           pCVar23 = &local_e08;
           in_stack_ffffcd48 = (double)CONCAT44(0x59882c,fVar21);
           local_2c = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -1029,8 +1029,7 @@ LAB_005975b4:
           string_data = local_28;
           if (0 < local_bc->bone_count) {
             do {
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                        (&local_11b0.base_strlist,string_data->bone_name);
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_11b0.base,string_data->bone_name);
               fVar21 = SUB84(in_stack_ffffcd48,0);
               iVar6 = iVar6 + 1;
               string_data = string_data + 1;

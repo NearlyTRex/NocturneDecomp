@@ -48,7 +48,7 @@ CHero * core_event_cpp_FUN_004aa400(void)
       }
       goto LAB_004aa48f;
     }
-    if (g_CNetGameInstance->connection_type != 0) {
+    if (g_CNetGamePtr->connection_type != 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,"Can't use '$' actor specifier in multi-player");
       return (CHero *)0x0;
     }

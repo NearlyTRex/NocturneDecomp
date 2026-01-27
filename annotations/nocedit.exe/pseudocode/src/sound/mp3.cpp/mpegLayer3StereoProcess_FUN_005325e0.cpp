@@ -103,7 +103,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
   else {
     local_ac = 0;
   }
-  local_e0 = (uint)((*granule_array)->field0_0x0 == 0);
+  local_e0 = (uint)((*granule_array)->unk1 == 0);
   if ((frame_info->table_index & 1U) == 1) {
     pfVar14 = (float *)0x667f6ee7;
     local_207c = 0x3fe6a09e;
@@ -112,7 +112,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
     pfVar14 = (float *)0x995b2417;
     local_207c = 0x3feae89f;
   }
-  local_f4 = *(int *)((*granule_array)->field2_0x8 + 8) + (*granule_array)->field0_0x0 * 3;
+  local_f4 = *(int *)((*granule_array)->unk3 + 8) + (*granule_array)->unk1 * 3;
   iVar9 = 0;
   do {
     iVar6 = iVar9 + 2;

@@ -14,70 +14,10 @@
         "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
       },
       {
-        "category": "missing_member",
-        "column": 68,
-        "line": 34,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field13_0xec'"
-      },
-      {
         "category": "other",
         "column": 22,
         "line": 41,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 60,
-        "line": 43,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field11_0xdc'"
-      },
-      {
-        "category": "missing_member",
-        "column": 42,
-        "line": 44,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field11_0xdc'"
-      },
-      {
-        "category": "missing_member",
-        "column": 29,
-        "line": 51,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 52,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 53,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 54,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 25,
-        "line": 56,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field13_0xec'"
-      },
-      {
-        "category": "missing_member",
-        "column": 25,
-        "line": 57,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field13_0xec'"
-      },
-      {
-        "category": "missing_member",
-        "column": 25,
-        "line": 58,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field13_0xec'"
       }
     ],
     "success": false,
@@ -87,6 +27,18 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 44,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
@@ -325,7 +277,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
-      "text": "(g_CEventListPtr,(char *)&in_stack_00000004[5].field13_0xec.y);",
+      "text": "(g_CEventListPtr,(char *)&in_stack_00000004[5].unk4.y);",
       "type": "stack_param"
     },
     {
@@ -353,7 +305,7 @@
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004 == (CDemonActor *)actor_ptr->field11_0xdc) {",
+      "text": "if (in_stack_00000004 == (CDemonActor *)actor_ptr->unk2) {",
       "type": "stack_param"
     },
     {

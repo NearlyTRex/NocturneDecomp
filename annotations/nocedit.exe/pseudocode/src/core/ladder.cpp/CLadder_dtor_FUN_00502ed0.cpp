@@ -17,7 +17,7 @@ CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_00502ed0(CLadder *this_ptr,ui
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  ptr = (CLadder *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
+  ptr = (CLadder *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base,1);
   if ((d1 & 2) == 0) {
     return ptr;
   }

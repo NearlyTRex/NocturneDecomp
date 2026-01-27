@@ -12,6 +12,6 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_FUN_00412ab0(CBackgroundActor *th
   FILE *in_stack_00000008;
   
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
-            ((CKeyFramedModelInstance *)this_ptr->model_name,in_stack_00000008);
+            (&this_ptr->model,in_stack_00000008);
   return;
 }

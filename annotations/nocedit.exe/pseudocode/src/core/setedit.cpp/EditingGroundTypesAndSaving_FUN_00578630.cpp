@@ -60,9 +60,9 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_834);
       shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_834);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_834.base_strlist,"[Y]es, Accept changes and write changes to ground type file");
+                (&local_834.base,"[Y]es, Accept changes and write changes to ground type file");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_834.base_strlist,"[N]o, Abort changes and don't save anything I've changed");
+                (&local_834.base,"[N]o, Abort changes and don't save anything I've changed");
       shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(&local_834,0,0x15);
       shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(&local_834,1,0x31);
       iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

@@ -8,7 +8,7 @@
 ;   core_cloth.cpp_FUN_0043ddf0 at 0043e08e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065bb44
+;   float FLOAT_0065bb44 = 0.00390625
 ;   float FLOAT_0065bb54 = 0.125
 ;   float FLOAT_0065bb58 = 32
 ;   float FLOAT_0065bb5c = 0.9000000
@@ -16,7 +16,7 @@
 ;   float FLOAT_0065bb64 = 0.5
 ;   float FLOAT_0065bb68 = 0.5
 ;   float FLOAT_0065bb6c = 0.05000000
-;   undefined4 DAT_0065bb70
+;   float FLOAT_0065bb70 = 0.1500000
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_00438c50
@@ -55,7 +55,7 @@ section .text
     ADD ESP,0x4                         ; 0043dd2d
     FXCH ST6                            ; 0043dd30
     FSTP float ptr [EDI + 0x3ce58]      ; 0043dd32
-    FLD float ptr [0x0065bb70]          ; 0043dd38 | DAT_0065bb70
+    FLD float ptr [0x0065bb70]          ; 0043dd38 | FLOAT_0065bb70
     FXCH ST5                            ; 0043dd3e
     FSTP float ptr [EDI + 0x3ce5c]      ; 0043dd40
     FXCH ST3                            ; 0043dd46
@@ -85,13 +85,13 @@ section .text
     ADD EAX,ESI                         ; 0043dd96
     INC ECX                             ; 0043dd98
     FILD dword ptr [EAX]                ; 0043dd99
-    FMUL float ptr [0x0065bb44]         ; 0043dd9b | DAT_0065bb44
+    FMUL float ptr [0x0065bb44]         ; 0043dd9b | FLOAT_0065bb44
     FSTP float ptr [EBX]                ; 0043dda1
     FILD dword ptr [EAX + 0x4]          ; 0043dda3
-    FMUL float ptr [0x0065bb44]         ; 0043dda6 | DAT_0065bb44
+    FMUL float ptr [0x0065bb44]         ; 0043dda6 | FLOAT_0065bb44
     FSTP float ptr [EBX + 0x4]          ; 0043ddac
     FILD dword ptr [EAX + 0x8]          ; 0043ddaf
-    FMUL float ptr [0x0065bb44]         ; 0043ddb2 | DAT_0065bb44
+    FMUL float ptr [0x0065bb44]         ; 0043ddb2 | FLOAT_0065bb44
     FSTP float ptr [EBX + 0x8]          ; 0043ddb8
     ADD EDX,0x11c                       ; 0043ddbb
     MOV EBP,dword ptr [EDI + 0x104]     ; 0043ddc1

@@ -29,12 +29,11 @@ void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
                              (float)32767.700000000001));
   iVar6 = g_GlobalDeltaTimeInt;
   lVar5 = (longlong)((int)(iVar4 - (uint)(iVar7 << 1 < 0)) >> 2) * (longlong)(int)ROUND(dVar8);
-  *(uint *)this_ptr->field1_0x38 =
-       *(int *)this_ptr->field1_0x38 +
-       ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+  *(uint *)this_ptr->unk =
+       *(int *)this_ptr->unk + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
   lVar5 = (longlong)(iVar6 / 2) * (longlong)(int)ROUND(dVar8);
-  *(uint *)(this_ptr->field1_0x38 + 4) =
-       *(int *)(this_ptr->field1_0x38 + 4) +
-       ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+  *(uint *)(this_ptr->unk + 4) =
+       *(int *)(this_ptr->unk + 4) + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10)
+  ;
   return;
 }

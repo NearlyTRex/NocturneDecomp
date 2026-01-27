@@ -44,7 +44,7 @@ uint core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
     if (*(int *)(in_stack_00000004[1].create_event + 0x48) != 0) {
       pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (in_stack_00000008,g_CCharacterClassInfo.name_hash);
-      if ((pCVar6 != (CDemonActor *)0x0) && (pCVar6[0x1a].field22_0x120 == 0)) {
+      if ((pCVar6 != (CDemonActor *)0x0) && (pCVar6[0x1a].unk11 == 0)) {
         return 0;
       }
       CStack_38.y = (in_stack_00000008->location).position.y;

@@ -11,7 +11,7 @@
 CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_ptr)
 
 {
-  CEvent CVar1;
+  byte bVar1;
   char cVar2;
   float fVar3;
   CScript *pCVar4;
@@ -26,13 +26,15 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   uint uVar12;
   uint uVar13;
   SIZE_T SVar14;
-  CEvent *pCVar15;
-  CEvent *pCVar16;
-  uint *puVar17;
-  char *pcVar18;
-  uint *puVar19;
-  byte bVar20;
-  CEvent *in_stack_00000008;
+  byte *pbVar15;
+  byte *pbVar16;
+  int *piVar17;
+  uint *puVar18;
+  int *piVar19;
+  char *pcVar20;
+  uint *puVar21;
+  byte bVar22;
+  byte *in_stack_00000008;
   char local_163c [255];
   char local_153d [200];
   char local_1475 [200];
@@ -70,9 +72,9 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   byte local_108 [12];
   uint local_fc;
   uint uStack_f8;
-  CEvent *local_f4;
+  int *local_f4;
   uint local_f0;
-  CEvent *local_ec;
+  byte *local_ec;
   C3DSLight *local_e8;
   int local_e4;
   byte local_e0 [4];
@@ -126,48 +128,48 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   int local_18;
   uint local_14;
   
-  bVar20 = 0;
+  bVar22 = 0;
   DAT_02d0a460 = 0;
-  if (((in_stack_00000008 != (CEvent *)0x0) && (*in_stack_00000008 != (CEvent)0x0)) &&
+  if (((in_stack_00000008 != (byte *)0x0) && (*in_stack_00000008 != 0)) &&
      (iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)in_stack_00000008,"none"),
      iVar5 != 0)) {
-    if (*in_stack_00000008 == (CEvent)0x2e) {
+    if (*in_stack_00000008 == 0x2e) {
       in_stack_00000008 = in_stack_00000008 + 1;
     }
     local_f0 = (uint)(DAT_02d0a45c == 0);
-    local_ec = (CEvent *)&DAT_0062460c;
-    pCVar16 = in_stack_00000008;
+    local_ec = &DAT_0062460c;
+    pbVar16 = in_stack_00000008;
     do {
-      pCVar15 = pCVar16;
-      if (*pCVar16 == (CEvent)0x28) goto LAB_004aad41;
-      if (*pCVar16 == (CEvent)0x0) break;
-      pCVar15 = pCVar16 + 1;
-      if (*pCVar15 == (CEvent)0x28) goto LAB_004aad41;
-      pCVar16 = pCVar16 + 2;
-    } while (*pCVar15 != (CEvent)0x0);
-    pCVar15 = (CEvent *)0x0;
+      pbVar15 = pbVar16;
+      if (*pbVar16 == 0x28) goto LAB_004aad41;
+      if (*pbVar16 == 0) break;
+      pbVar15 = pbVar16 + 1;
+      if (*pbVar15 == 0x28) goto LAB_004aad41;
+      pbVar16 = pbVar16 + 2;
+    } while (*pbVar15 != 0);
+    pbVar15 = (byte *)0x0;
 LAB_004aad41:
-    if (pCVar15 == (CEvent *)0x0) {
+    if (pbVar15 == (byte *)0x0) {
       iVar5 = 0;
       if (0 < this_ptr->event_count) {
-        pCVar16 = this_ptr->event_list;
+        piVar19 = this_ptr->event_list;
         do {
-          iVar6 = crt_string_c_stricmp_FUN_005fe7f0((char *)pCVar16,(char *)in_stack_00000008);
+          iVar6 = crt_string_c_stricmp_FUN_005fe7f0((char *)piVar19,(char *)in_stack_00000008);
           if (iVar6 == 0) {
             return (CDemonActor *)0x1;
           }
           iVar5 = iVar5 + 1;
-          pCVar16 = pCVar16 + 0x20;
+          piVar19 = piVar19 + 8;
         } while (iVar5 < this_ptr->event_count);
       }
       uVar12 = 0xffffffff;
-      pCVar16 = in_stack_00000008;
+      pbVar16 = in_stack_00000008;
       do {
         if (uVar12 == 0) break;
         uVar12 = uVar12 - 1;
-        CVar1 = *pCVar16;
-        pCVar16 = pCVar16 + (uint)bVar20 * -2 + 1;
-      } while (CVar1 != (CEvent)0x0);
+        bVar1 = *pbVar16;
+        pbVar16 = pbVar16 + (uint)bVar22 * -2 + 1;
+      } while (bVar1 != 0);
       if (0x1f < ~uVar12 - 1) {
         pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
         return pCVar7;
@@ -177,29 +179,29 @@ LAB_004aad41:
         g_CurrentLineNumber = 599;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Too many events");
       }
-      pCVar15 = this_ptr->event_list + this_ptr->event_count * 0x20;
+      piVar17 = this_ptr->event_list + this_ptr->event_count * 8;
       local_14 = 0;
-      pCVar16 = pCVar15;
+      piVar19 = piVar17;
       do {
-        CVar1 = *in_stack_00000008;
-        *pCVar16 = CVar1;
-        local_f4 = pCVar15;
-        if (CVar1 == (CEvent)0x0) break;
-        CVar1 = in_stack_00000008[1];
+        bVar1 = *in_stack_00000008;
+        *(byte *)piVar19 = bVar1;
+        local_f4 = piVar17;
+        if (bVar1 == 0) break;
+        bVar1 = in_stack_00000008[1];
         in_stack_00000008 = in_stack_00000008 + 2;
-        pCVar16[1] = CVar1;
-        pCVar16 = pCVar16 + 2;
-      } while (CVar1 != (CEvent)0x0);
+        *(byte *)((int)piVar19 + 1) = bVar1;
+        piVar19 = (int *)((int)piVar19 + 2);
+      } while (bVar1 != 0);
       do {
         uVar12 = local_14;
         uVar13 = 0xffffffff;
-        pCVar16 = local_f4;
+        piVar19 = local_f4;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          CVar1 = *pCVar16;
-          pCVar16 = pCVar16 + (uint)bVar20 * -2 + 1;
-        } while (CVar1 != (CEvent)0x0);
+          iVar5 = *piVar19;
+          piVar19 = (int *)((int)piVar19 + (uint)bVar22 * -2 + 1);
+        } while ((byte)iVar5 != 0);
         if (~uVar13 - 1 <= local_14) {
           if (local_f0 == 0) {
             return (CDemonActor *)0x1;
@@ -207,23 +209,23 @@ LAB_004aad41:
           this_ptr->event_count = this_ptr->event_count + 1;
           return (CDemonActor *)0x1;
         }
-        iVar5 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*pCVar15);
-        *pCVar15 = SUB41(iVar5,0);
+        iVar5 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*piVar17);
+        *(byte *)piVar17 = (byte)iVar5;
         iVar5 = core_event_cpp_FUN_004b0f90();
         if (iVar5 == 0) {
           pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
           return pCVar7;
         }
         local_14 = uVar12 + 1;
-        pCVar15 = pCVar15 + 1;
+        piVar17 = (int *)((int)piVar17 + 1);
       } while( true );
     }
     iVar5 = crt_string_c_strnicmp_FUN_005ff070
                       ((char *)in_stack_00000008,"advanceLightFilter",0x12);
     if ((iVar5 == 0) &&
-       ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[0x12] + 1)] & 0xe0U) == 0)) {
+       ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0x12] + 1)] & 0xe0U) == 0)) {
       local_ec = in_stack_00000008 + 0x12;
-      while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
         local_ec = local_ec + 1;
       }
       pcVar8 = (char *)core_event_cpp_FUN_004aa6c0();
@@ -246,10 +248,9 @@ LAB_004aad41:
       iVar5 = crt_string_c_strnicmp_FUN_005ff070
                         ((char *)in_stack_00000008,"createExplosion",0xf);
       if ((iVar5 == 0) &&
-         ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[0xf] + 1)] & 0xe0U) == 0))
-      {
+         ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xf] + 1)] & 0xe0U) == 0)) {
         local_ec = in_stack_00000008 + 0xf;
-        while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+        while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
           local_ec = local_ec + 1;
         }
         local_e4 = -1;
@@ -271,7 +272,7 @@ LAB_004aad41:
             if (uVar12 == 0) break;
             uVar12 = uVar12 - 1;
             cVar2 = *pcVar8;
-            pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+            pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
           } while (cVar2 != '\0');
           SVar14 = ~uVar12 - 1;
           if (0 < (int)SVar14) {
@@ -305,11 +306,11 @@ LAB_004aad41:
           return pCVar7;
         }
         local_ec = local_ec + local_e4;
-        while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+        while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
           local_ec = local_ec + 1;
         }
         local_dc = 0x40800000;
-        if (*local_ec == (CEvent)0x2c) {
+        if (*local_ec == 0x2c) {
           local_e4 = -1;
           crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,", %f %n",&local_dc,&local_e4);
           if (local_e4 < 0) {
@@ -317,11 +318,11 @@ LAB_004aad41:
             return pCVar7;
           }
           local_ec = local_ec + local_e4;
-          while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+          while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
             local_ec = local_ec + 1;
           }
         }
-        if (*local_ec != (CEvent)0x29) {
+        if (*local_ec != 0x29) {
           pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
           return pCVar7;
         }
@@ -334,10 +335,9 @@ LAB_004aad41:
         iVar5 = crt_string_c_strnicmp_FUN_005ff070
                           ((char *)in_stack_00000008,"deleteActor",0xb);
         if ((iVar5 == 0) &&
-           ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[0xb] + 1)] & 0xe0U) == 0)
-           ) {
+           ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xb] + 1)] & 0xe0U) == 0)) {
           local_ec = in_stack_00000008 + 0xb;
-          while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+          while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
             local_ec = local_ec + 1;
           }
           pcVar8 = (char *)core_event_cpp_FUN_004aa6c0();
@@ -372,10 +372,9 @@ LAB_004aad41:
           iVar5 = crt_string_c_strnicmp_FUN_005ff070
                             ((char *)in_stack_00000008,"displayBitmap",0xd);
           if ((iVar5 == 0) &&
-             ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[0xd] + 1)] & 0xe0U) ==
-              0)) {
+             ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)] & 0xe0U) == 0)) {
             local_ec = in_stack_00000008 + 0xd;
-            while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+            while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
               local_ec = local_ec + 1;
             }
             local_d0 = -1;
@@ -386,7 +385,7 @@ LAB_004aad41:
               return pCVar7;
             }
             local_ec = local_ec + local_d0;
-            while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+            while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
               local_ec = local_ec + 1;
             }
             iVar5 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
@@ -406,10 +405,10 @@ LAB_004aad41:
             iVar5 = crt_string_c_strnicmp_FUN_005ff070
                               ((char *)in_stack_00000008,"fadeAmbientSound",0x10);
             if ((iVar5 == 0) &&
-               ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[0x10] + 1)] & 0xe0U)
-                == 0)) {
+               ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0x10] + 1)] & 0xe0U) == 0))
+            {
               local_ec = in_stack_00000008 + 0x10;
-              while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+              while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
                 local_ec = local_ec + 1;
               }
               local_c4 = -1;
@@ -428,10 +427,10 @@ LAB_004aad41:
               iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                 ((char *)in_stack_00000008,"fadeSfx",7);
               if ((iVar5 == 0) &&
-                 ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[7] + 1)] & 0xe0U)
-                  == 0)) {
+                 ((g_CharacterClassificationTable[(byte)(in_stack_00000008[7] + 1)] & 0xe0U) == 0))
+              {
                 local_ec = in_stack_00000008 + 7;
-                while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
                   local_ec = local_ec + 1;
                 }
                 local_b8 = -1;
@@ -449,7 +448,7 @@ LAB_004aad41:
                   if (uVar12 == 0) break;
                   uVar12 = uVar12 - 1;
                   cVar2 = *pcVar8;
-                  pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                  pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                 } while (cVar2 != '\0');
                 SVar14 = ~uVar12 - 1;
                 if (0 < (int)SVar14) {
@@ -479,26 +478,26 @@ LAB_004aad41:
                 iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                   ((char *)in_stack_00000008,"flagOn",6);
                 if ((iVar5 == 0) &&
-                   ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[6] + 1)] & 0xe0U)
-                    == 0)) {
+                   ((g_CharacterClassificationTable[(byte)(in_stack_00000008[6] + 1)] & 0xe0U) == 0)
+                   ) {
                   local_ec = in_stack_00000008 + 6;
-                  while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                  while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
                     local_ec = local_ec + 1;
                   }
                   pcVar8 = (char *)core_event_cpp_FUN_004aa6c0();
                   if (pcVar8 != (char *)0x0) {
 LAB_004aaf38:
-                    pcVar18 = &DAT_02d0a460;
+                    pcVar20 = &DAT_02d0a460;
                     do {
                       cVar2 = *pcVar8;
-                      *pcVar18 = cVar2;
+                      *pcVar20 = cVar2;
                       if (cVar2 == '\0') {
                         return (CDemonActor *)0x0;
                       }
                       cVar2 = pcVar8[1];
                       pcVar8 = pcVar8 + 2;
-                      pcVar18[1] = cVar2;
-                      pcVar18 = pcVar18 + 2;
+                      pcVar20[1] = cVar2;
+                      pcVar20 = pcVar20 + 2;
                     } while (cVar2 != '\0');
                     return (CDemonActor *)0x0;
                   }
@@ -510,11 +509,10 @@ LAB_004aaf38:
                   iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                     ((char *)in_stack_00000008,"flagOff",7);
                   if ((iVar5 == 0) &&
-                     ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[7] + 1)] &
-                      0xe0U) == 0)) {
+                     ((g_CharacterClassificationTable[(byte)(in_stack_00000008[7] + 1)] & 0xe0U) ==
+                      0)) {
                     local_ec = in_stack_00000008 + 7;
-                    while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0)
-                    {
+                    while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
                       local_ec = local_ec + 1;
                     }
                     pcVar8 = (char *)core_event_cpp_FUN_004aa6c0();
@@ -527,11 +525,10 @@ LAB_004aaf38:
                     iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                       ((char *)in_stack_00000008,"gameFlagOn",10);
                     if ((iVar5 == 0) &&
-                       ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[10] + 1)] &
-                        0xe0U) == 0)) {
+                       ((g_CharacterClassificationTable[(byte)(in_stack_00000008[10] + 1)] & 0xe0U)
+                        == 0)) {
                       local_ec = in_stack_00000008 + 10;
-                      while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0
-                            ) {
+                      while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
                         local_ec = local_ec + 1;
                       }
                       pcVar8 = (char *)core_event_cpp_FUN_004aa6c0();
@@ -544,11 +541,10 @@ LAB_004aaf38:
                       iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                         ((char *)in_stack_00000008,"gameFlagOff",0xb);
                       if ((iVar5 == 0) &&
-                         ((g_CharacterClassificationTable[(byte)((char)in_stack_00000008[0xb] + 1)]
-                          & 0xe0U) == 0)) {
+                         ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xb] + 1)] &
+                          0xe0U) == 0)) {
                         local_ec = in_stack_00000008 + 0xb;
-                        while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) !=
-                               0) {
+                        while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
                           local_ec = local_ec + 1;
                         }
                         pcVar8 = (char *)core_event_cpp_FUN_004aa6c0();
@@ -561,11 +557,11 @@ LAB_004aaf38:
                         iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                           ((char *)in_stack_00000008,"hurtCharacter",0xd);
                         if ((iVar5 == 0) &&
-                           ((g_CharacterClassificationTable
-                             [(byte)((char)in_stack_00000008[0xd] + 1)] & 0xe0U) == 0)) {
+                           ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)] &
+                            0xe0U) == 0)) {
                           local_ec = in_stack_00000008 + 0xd;
-                          while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U)
-                                 != 0) {
+                          while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0)
+                          {
                             local_ec = local_ec + 1;
                           }
                           local_b4 = -1;
@@ -582,7 +578,7 @@ LAB_004aaf38:
                             if (uVar12 == 0) break;
                             uVar12 = uVar12 - 1;
                             cVar2 = *pcVar8;
-                            pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                            pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                           } while (cVar2 != '\0');
                           SVar14 = ~uVar12 - 1;
                           if (0 < (int)SVar14) {
@@ -606,7 +602,7 @@ LAB_004aaf38:
                             if (uVar12 == 0) break;
                             uVar12 = uVar12 - 1;
                             cVar2 = *pcVar8;
-                            pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                            pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                           } while (cVar2 != '\0');
                           SVar14 = ~uVar12 - 1;
                           if (0 < (int)SVar14) {
@@ -625,8 +621,8 @@ LAB_004aaf38:
                             SVar14 = SVar14 - 1;
                           }
                           local_ec = local_ec + local_b4;
-                          while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U)
-                                 != 0) {
+                          while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0)
+                          {
                             local_ec = local_ec + 1;
                           }
                           this_ptr_00 = (CCharacter *)core_event_cpp_FUN_004aa400();
@@ -642,7 +638,7 @@ LAB_004aaf38:
                             return pCVar7;
                           }
                           if (local_f0 != 0) {
-                            (*(((this_ptr_00->base_actor).vtable._uc)->_uc).applyDamage)
+                            (*(((this_ptr_00->base).vtable._uc)->_uc).applyDamage)
                                       (this_ptr_00,local_ac,local_b0);
                           }
                         }
@@ -650,11 +646,11 @@ LAB_004aaf38:
                           iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                             ((char *)in_stack_00000008,"incCounter",10);
                           if ((iVar5 == 0) &&
-                             ((g_CharacterClassificationTable
-                               [(byte)((char)in_stack_00000008[10] + 1)] & 0xe0U) == 0)) {
+                             ((g_CharacterClassificationTable[(byte)(in_stack_00000008[10] + 1)] &
+                              0xe0U) == 0)) {
                             local_ec = in_stack_00000008 + 10;
-                            while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U
-                                   ) != 0) {
+                            while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0
+                                  ) {
                               local_ec = local_ec + 1;
                             }
                             local_a8 = -1;
@@ -672,7 +668,7 @@ LAB_004aaf38:
                               if (uVar12 == 0) break;
                               uVar12 = uVar12 - 1;
                               cVar2 = *pcVar8;
-                              pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                              pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                             } while (cVar2 != '\0');
                             SVar14 = ~uVar12 - 1;
                             if (0 < (int)SVar14) {
@@ -701,11 +697,11 @@ LAB_004aaf38:
                                               ((char *)in_stack_00000008,"killCharacter",
                                                0xd);
                             if ((iVar5 == 0) &&
-                               ((g_CharacterClassificationTable
-                                 [(byte)((char)in_stack_00000008[0xd] + 1)] & 0xe0U) == 0)) {
+                               ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)]
+                                & 0xe0U) == 0)) {
                               local_ec = in_stack_00000008 + 0xd;
-                              while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] &
-                                     2U) != 0) {
+                              while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) !=
+                                     0) {
                                 local_ec = local_ec + 1;
                               }
                               local_a0 = local_110;
@@ -737,7 +733,7 @@ LAB_004aaf38:
                                 if (uVar12 == 0) break;
                                 uVar12 = uVar12 - 1;
                                 cVar2 = *pcVar8;
-                                pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                               } while (cVar2 != '\0');
                               SVar14 = ~uVar12 - 1;
                               if (0 < (int)SVar14) {
@@ -762,7 +758,7 @@ LAB_004aaf38:
                                 if (uVar12 == 0) break;
                                 uVar12 = uVar12 - 1;
                                 cVar2 = *pcVar8;
-                                pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                               } while (cVar2 != '\0');
                               SVar14 = ~uVar12 - 1;
                               if (0 < (int)SVar14) {
@@ -782,8 +778,8 @@ LAB_004aaf38:
                                 SVar14 = SVar14 - 1;
                               }
                               local_ec = local_ec + local_a4;
-                              while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] &
-                                     2U) != 0) {
+                              while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) !=
+                                     0) {
                                 local_ec = local_ec + 1;
                               }
                               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa400();
@@ -806,14 +802,14 @@ LAB_004aaf38:
                               iVar5 = crt_string_c_strnicmp_FUN_005ff070
                                                 ((char *)in_stack_00000008,"killHero",8);
                               if ((iVar5 == 0) &&
-                                 ((g_CharacterClassificationTable
-                                   [(byte)((char)in_stack_00000008[8] + 1)] & 0xe0U) == 0)) {
+                                 ((g_CharacterClassificationTable[(byte)(in_stack_00000008[8] + 1)]
+                                  & 0xe0U) == 0)) {
                                 local_ec = in_stack_00000008 + 8;
-                                while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)]
-                                       & 2U) != 0) {
+                                while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U)
+                                       != 0) {
                                   local_ec = local_ec + 1;
                                 }
-                                if (g_CNetGameInstance->connection_type != 0) {
+                                if (g_CNetGamePtr->connection_type != 0) {
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                                   return pCVar7;
                                 }
@@ -825,8 +821,8 @@ LAB_004aaf38:
                                   return pCVar7;
                                 }
                                 local_ec = local_ec + local_94[0];
-                                while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)]
-                                       & 2U) != 0) {
+                                while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U)
+                                       != 0) {
                                   local_ec = local_ec + 1;
                                 }
                                 iVar5 = core_event_cpp_DifferentWaysToDie_FUN_004aa7d0();
@@ -836,8 +832,8 @@ LAB_004aaf38:
                                 }
                                 if ((local_f0 != 0) &&
                                    (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0)) {
-                                  (*(((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.
-                                      vtable._uc)->_uc).cfunc2)();
+                                  (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).
+                                    cfunc2)();
                                 }
                               }
                               else {
@@ -845,10 +841,10 @@ LAB_004aaf38:
                                                   ((char *)in_stack_00000008,"killSfx",7);
                                 if ((iVar5 == 0) &&
                                    ((g_CharacterClassificationTable
-                                     [(byte)((char)in_stack_00000008[7] + 1)] & 0xe0U) == 0)) {
+                                     [(byte)(in_stack_00000008[7] + 1)] & 0xe0U) == 0)) {
                                   local_ec = in_stack_00000008 + 7;
-                                  while ((g_CharacterClassificationTable
-                                          [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                  while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U
+                                         ) != 0) {
                                     local_ec = local_ec + 1;
                                   }
                                   local_8c = -1;
@@ -866,7 +862,7 @@ LAB_004aaf38:
                                     if (uVar12 == 0) break;
                                     uVar12 = uVar12 - 1;
                                     cVar2 = *pcVar8;
-                                    pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                    pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                   } while (cVar2 != '\0');
                                   SVar14 = ~uVar12 - 1;
                                   if (0 < (int)SVar14) {
@@ -886,7 +882,7 @@ LAB_004aaf38:
                                     SVar14 = SVar14 - 1;
                                   }
                                   local_88 = 0.0;
-                                  if (*local_ec == (CEvent)0x2c) {
+                                  if (*local_ec == 0x2c) {
                                     local_8c = -1;
                                     crt_stdio_c_sscanf_FUN_0060013c
                                               ((char *)local_ec,",%f%n",&local_88);
@@ -898,12 +894,12 @@ LAB_004aaf38:
                                     local_ec = local_ec + local_8c;
                                   }
                                   do {
-                                    pCVar16 = local_ec;
-                                    local_ec = pCVar16 + 1;
-                                  } while ((g_CharacterClassificationTable
-                                            [(byte)((char)*pCVar16 + 1)] & 2U) != 0);
-                                  if (*pCVar16 != (CEvent)0x29) {
-                                    local_ec = pCVar16;
+                                    pbVar16 = local_ec;
+                                    local_ec = pbVar16 + 1;
+                                  } while ((g_CharacterClassificationTable[(byte)(*pbVar16 + 1)] &
+                                           2U) != 0);
+                                  if (*pbVar16 != 0x29) {
+                                    local_ec = pbVar16;
                                     crt_stdio_c_sprintf_FUN_005fdbd0
                                               (&DAT_02d0a460,"Can't find matching ) in killSfx command");
                                     return (CDemonActor *)0x0;
@@ -927,10 +923,10 @@ LAB_004aaf38:
                                                      9);
                                   if ((iVar5 == 0) &&
                                      ((g_CharacterClassificationTable
-                                       [(byte)((char)in_stack_00000008[9] + 1)] & 0xe0U) == 0)) {
+                                       [(byte)(in_stack_00000008[9] + 1)] & 0xe0U) == 0)) {
                                     local_ec = in_stack_00000008 + 9;
-                                    while ((g_CharacterClassificationTable
-                                            [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                    while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] &
+                                           2U) != 0) {
                                       local_ec = local_ec + 1;
                                     }
                                     local_84 = -1;
@@ -952,10 +948,10 @@ LAB_004aaf38:
                                                        7);
                                     if ((iVar5 == 0) &&
                                        ((g_CharacterClassificationTable
-                                         [(byte)((char)in_stack_00000008[7] + 1)] & 0xe0U) == 0)) {
+                                         [(byte)(in_stack_00000008[7] + 1)] & 0xe0U) == 0)) {
                                       local_ec = in_stack_00000008 + 7;
-                                      while ((g_CharacterClassificationTable
-                                              [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                      while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)]
+                                             & 2U) != 0) {
                                         local_ec = local_ec + 1;
                                       }
                                       local_7c = -1;
@@ -974,7 +970,7 @@ LAB_004aaf38:
                                         if (uVar12 == 0) break;
                                         uVar12 = uVar12 - 1;
                                         cVar2 = *pcVar8;
-                                        pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                        pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                       } while (cVar2 != '\0');
                                       SVar14 = ~uVar12 - 1;
                                       if (0 < (int)SVar14) {
@@ -987,22 +983,22 @@ LAB_004aaf38:
                                         } while (0 < (int)SVar14);
                                       }
                                       (local_13ad + 1)[SVar14] = '\0';
-                                      while (pCVar16 = local_ec,
+                                      while (pbVar16 = local_ec,
                                             (g_CharacterClassificationTable
                                              [(byte)(local_13ad[1] + 1)] & 2U) != 0) {
                                         crt_string_c_memmove_FUN_005fe5e0
                                                   (local_13ad + 1,local_13ad + 2,SVar14);
                                         SVar14 = SVar14 - 1;
                                       }
-                                      puVar17 = &DAT_006793d8;
+                                      puVar18 = &DAT_006793d8;
                                       pcVar8 = local_b15 + 1;
                                       for (iVar5 = 0x32; iVar5 != 0; iVar5 = iVar5 + -1) {
-                                        *(uint *)pcVar8 = *puVar17;
-                                        puVar17 = puVar17 + (uint)bVar20 * -2 + 1;
-                                        pcVar8 = (char *)((int)pcVar8 + ((uint)bVar20 * -2 + 1) * 4)
+                                        *(uint *)pcVar8 = *puVar18;
+                                        puVar18 = puVar18 + (uint)bVar22 * -2 + 1;
+                                        pcVar8 = (char *)((int)pcVar8 + ((uint)bVar22 * -2 + 1) * 4)
                                         ;
                                       }
-                                      if (*pCVar16 == (CEvent)0x2c) {
+                                      if (*pbVar16 == 0x2c) {
                                         local_7c = -1;
                                         crt_stdio_c_sscanf_FUN_0060013c
                                                   ((char *)local_ec,",%[^)]%n",local_b15 + 1);
@@ -1019,7 +1015,7 @@ LAB_004aaf38:
                                           if (uVar12 == 0) break;
                                           uVar12 = uVar12 - 1;
                                           cVar2 = *pcVar8;
-                                          pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                          pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                         } while (cVar2 != '\0');
                                         SVar14 = ~uVar12 - 1;
                                         if (0 < (int)SVar14) {
@@ -1044,7 +1040,7 @@ LAB_004aaf38:
                                           if (uVar12 == 0) break;
                                           uVar12 = uVar12 - 1;
                                           cVar2 = *pcVar8;
-                                          pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                          pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                         } while (cVar2 != '\0');
                                         if (0x13 < ~uVar12 - 1) {
                                           crt_stdio_c_sprintf_FUN_005fdbd0
@@ -1055,12 +1051,12 @@ LAB_004aaf38:
                                         }
                                       }
                                       do {
-                                        pCVar16 = local_ec;
-                                        local_ec = pCVar16 + 1;
-                                      } while ((g_CharacterClassificationTable
-                                                [(byte)((char)*pCVar16 + 1)] & 2U) != 0);
-                                      if (*pCVar16 != (CEvent)0x29) {
-                                        local_ec = pCVar16;
+                                        pbVar16 = local_ec;
+                                        local_ec = pbVar16 + 1;
+                                      } while ((g_CharacterClassificationTable[(byte)(*pbVar16 + 1)]
+                                               & 2U) != 0);
+                                      if (*pbVar16 != 0x29) {
+                                        local_ec = pbVar16;
                                         crt_stdio_c_sprintf_FUN_005fdbd0
                                                   (&DAT_02d0a460,"Can't find matching ) in playSfx command"
                                                   );
@@ -1100,11 +1096,10 @@ LAB_004aaf38:
                                                          "setCameraAmbient",0x10);
                                       if ((iVar5 == 0) &&
                                          ((g_CharacterClassificationTable
-                                           [(byte)((char)in_stack_00000008[0x10] + 1)] & 0xe0U) == 0
-                                         )) {
+                                           [(byte)(in_stack_00000008[0x10] + 1)] & 0xe0U) == 0)) {
                                         local_ec = in_stack_00000008 + 0x10;
                                         while ((g_CharacterClassificationTable
-                                                [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                                [(byte)(*local_ec + 1)] & 2U) != 0) {
                                           local_ec = local_ec + 1;
                                         }
                                         local_74 = -1;
@@ -1124,7 +1119,7 @@ LAB_004aaf38:
                                           if (uVar12 == 0) break;
                                           uVar12 = uVar12 - 1;
                                           cVar2 = *pcVar8;
-                                          pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                          pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                         } while (cVar2 != '\0');
                                         SVar14 = ~uVar12 - 1;
                                         if (0 < (int)SVar14) {
@@ -1167,11 +1162,10 @@ LAB_004aaf38:
                                                            "setCounter",10);
                                         if ((iVar5 == 0) &&
                                            ((g_CharacterClassificationTable
-                                             [(byte)((char)in_stack_00000008[10] + 1)] & 0xe0U) == 0
-                                           )) {
+                                             [(byte)(in_stack_00000008[10] + 1)] & 0xe0U) == 0)) {
                                           local_ec = in_stack_00000008 + 10;
                                           while ((g_CharacterClassificationTable
-                                                  [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                                  [(byte)(*local_ec + 1)] & 2U) != 0) {
                                             local_ec = local_ec + 1;
                                           }
                                           local_6c = -1;
@@ -1190,7 +1184,7 @@ LAB_004aaf38:
                                             if (uVar12 == 0) break;
                                             uVar12 = uVar12 - 1;
                                             cVar2 = *pcVar8;
-                                            pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                            pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                           } while (cVar2 != '\0');
                                           SVar14 = ~uVar12 - 1;
                                           if (0 < (int)SVar14) {
@@ -1210,7 +1204,7 @@ LAB_004aaf38:
                                             SVar14 = SVar14 - 1;
                                           }
                                           local_68 = 0;
-                                          if (*local_ec == (CEvent)0x2c) {
+                                          if (*local_ec == 0x2c) {
                                             local_6c = -1;
                                             crt_stdio_c_sscanf_FUN_0060013c
                                                       ((char *)local_ec,",%d%n",&local_68);
@@ -1222,11 +1216,11 @@ LAB_004aaf38:
                                             }
                                             local_ec = local_ec + local_6c;
                                             while ((g_CharacterClassificationTable
-                                                    [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                                    [(byte)(*local_ec + 1)] & 2U) != 0) {
                                               local_ec = local_ec + 1;
                                             }
                                           }
-                                          if (*local_ec != (CEvent)0x29) {
+                                          if (*local_ec != 0x29) {
                                             crt_stdio_c_sprintf_FUN_005fdbd0
                                                       (&DAT_02d0a460,
                                                        "Error parsing setCounter arguments");
@@ -1244,11 +1238,11 @@ LAB_004aaf38:
                                                              "setGroupAmbient",0xf);
                                           if ((iVar5 == 0) &&
                                              ((g_CharacterClassificationTable
-                                               [(byte)((char)in_stack_00000008[0xf] + 1)] & 0xe0U)
-                                              == 0)) {
+                                               [(byte)(in_stack_00000008[0xf] + 1)] & 0xe0U) == 0))
+                                          {
                                             local_ec = in_stack_00000008 + 0xf;
                                             while ((g_CharacterClassificationTable
-                                                    [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                                    [(byte)(*local_ec + 1)] & 2U) != 0) {
                                               local_ec = local_ec + 1;
                                             }
                                             local_5c = -1;
@@ -1279,11 +1273,11 @@ LAB_004aaf38:
                                                                "setLightFilterFrame",0x13);
                                             if ((iVar5 == 0) &&
                                                ((g_CharacterClassificationTable
-                                                 [(byte)((char)in_stack_00000008[0x13] + 1)] & 0xe0U
-                                                ) == 0)) {
+                                                 [(byte)(in_stack_00000008[0x13] + 1)] & 0xe0U) == 0
+                                               )) {
                                               local_ec = in_stack_00000008 + 0x13;
                                               while ((g_CharacterClassificationTable
-                                                      [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                                      [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                 local_ec = local_ec + 1;
                                               }
                                               local_58 = -1;
@@ -1325,11 +1319,11 @@ LAB_004aaf38:
                                                                  "setLeverState",0xd);
                                               if ((iVar5 == 0) &&
                                                  ((g_CharacterClassificationTable
-                                                   [(byte)((char)in_stack_00000008[0xd] + 1)] &
-                                                  0xe0U) == 0)) {
+                                                   [(byte)(in_stack_00000008[0xd] + 1)] & 0xe0U) ==
+                                                  0)) {
                                                 local_ec = in_stack_00000008 + 0xd;
                                                 while ((g_CharacterClassificationTable
-                                                        [(byte)((char)*local_ec + 1)] & 2U) != 0) {
+                                                        [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                   local_ec = local_ec + 1;
                                                 }
                                                 local_48 = -1;
@@ -1349,7 +1343,7 @@ LAB_004aaf38:
                                                   if (uVar12 == 0) break;
                                                   uVar12 = uVar12 - 1;
                                                   cVar2 = *pcVar8;
-                                                  pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                  pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                 } while (cVar2 != '\0');
                                                 SVar14 = ~uVar12 - 1;
                                                 if (0 < (int)SVar14) {
@@ -1374,7 +1368,7 @@ LAB_004aaf38:
                                                   if (uVar12 == 0) break;
                                                   uVar12 = uVar12 - 1;
                                                   cVar2 = *pcVar8;
-                                                  pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                  pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                 } while (cVar2 != '\0');
                                                 SVar14 = ~uVar12 - 1;
                                                 if (0 < (int)SVar14) {
@@ -1425,12 +1419,11 @@ LAB_004aaf38:
                                                                    "setModelState",0xd);
                                                 if ((iVar5 == 0) &&
                                                    ((g_CharacterClassificationTable
-                                                     [(byte)((char)in_stack_00000008[0xd] + 1)] &
-                                                    0xe0U) == 0)) {
+                                                     [(byte)(in_stack_00000008[0xd] + 1)] & 0xe0U)
+                                                    == 0)) {
                                                   local_ec = in_stack_00000008 + 0xd;
                                                   while ((g_CharacterClassificationTable
-                                                          [(byte)((char)*local_ec + 1)] & 2U) != 0)
-                                                  {
+                                                          [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                     local_ec = local_ec + 1;
                                                   }
                                                   local_40 = -1;
@@ -1450,7 +1443,7 @@ LAB_004aaf38:
                                                     if (uVar12 == 0) break;
                                                     uVar12 = uVar12 - 1;
                                                     cVar2 = *pcVar8;
-                                                    pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                    pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                   } while (cVar2 != '\0');
                                                   SVar14 = ~uVar12 - 1;
                                                   if (0 < (int)SVar14) {
@@ -1476,7 +1469,7 @@ LAB_004aaf38:
                                                     if (uVar12 == 0) break;
                                                     uVar12 = uVar12 - 1;
                                                     cVar2 = *pcVar8;
-                                                    pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                    pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                   } while (cVar2 != '\0');
                                                   SVar14 = ~uVar12 - 1;
                                                   if (0 < (int)SVar14) {
@@ -1530,12 +1523,11 @@ LAB_004aaf38:
                                                                      "setTimer",8);
                                                   if ((iVar5 == 0) &&
                                                      ((g_CharacterClassificationTable
-                                                       [(byte)((char)in_stack_00000008[8] + 1)] &
-                                                      0xe0U) == 0)) {
+                                                       [(byte)(in_stack_00000008[8] + 1)] & 0xe0U)
+                                                      == 0)) {
                                                     local_ec = in_stack_00000008 + 8;
                                                     while ((g_CharacterClassificationTable
-                                                            [(byte)((char)*local_ec + 1)] & 2U) != 0
-                                                          ) {
+                                                            [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                       local_ec = local_ec + 1;
                                                     }
                                                     local_38 = -1;
@@ -1556,7 +1548,7 @@ LAB_004aaf38:
                                                       if (uVar12 == 0) break;
                                                       uVar12 = uVar12 - 1;
                                                       cVar2 = *pcVar8;
-                                                      pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                      pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                     } while (cVar2 != '\0');
                                                     SVar14 = ~uVar12 - 1;
                                                     if (0 < (int)SVar14) {
@@ -1583,7 +1575,7 @@ LAB_004aaf38:
                                                       if (uVar12 == 0) break;
                                                       uVar12 = uVar12 - 1;
                                                       cVar2 = *pcVar8;
-                                                      pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                      pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                     } while (cVar2 != '\0');
                                                     if (0x1f < ~uVar12 - 1) {
                                                       crt_stdio_c_sprintf_FUN_005fdbd0
@@ -1610,12 +1602,11 @@ LAB_004aaf38:
                                                                        "setWeather",10);
                                                     if ((iVar5 == 0) &&
                                                        ((g_CharacterClassificationTable
-                                                         [(byte)((char)in_stack_00000008[10] + 1)] &
-                                                        0xe0U) == 0)) {
+                                                         [(byte)(in_stack_00000008[10] + 1)] & 0xe0U
+                                                        ) == 0)) {
                                                       local_ec = in_stack_00000008 + 10;
                                                       while ((g_CharacterClassificationTable
-                                                              [(byte)((char)*local_ec + 1)] & 2U) !=
-                                                             0) {
+                                                              [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                         local_ec = local_ec + 1;
                                                       }
                                                       local_34 = -1;
@@ -1636,7 +1627,7 @@ LAB_004aaf38:
                                                     if (uVar12 == 0) break;
                                                     uVar12 = uVar12 - 1;
                                                     cVar2 = *pcVar8;
-                                                    pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                    pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                   } while (cVar2 != '\0');
                                                   SVar14 = ~uVar12 - 1;
                                                   if (0 < (int)SVar14) {
@@ -1682,12 +1673,11 @@ LAB_004aaf38:
                                                                        "shakeScreen",0xb);
                                                     if ((iVar5 == 0) &&
                                                        ((g_CharacterClassificationTable
-                                                         [(byte)((char)in_stack_00000008[0xb] + 1)]
-                                                        & 0xe0U) == 0)) {
+                                                         [(byte)(in_stack_00000008[0xb] + 1)] &
+                                                        0xe0U) == 0)) {
                                                       local_ec = in_stack_00000008 + 0xb;
                                                       while ((g_CharacterClassificationTable
-                                                              [(byte)((char)*local_ec + 1)] & 2U) !=
-                                                             0) {
+                                                              [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                         local_ec = local_ec + 1;
                                                       }
                                                       local_24 = -1;
@@ -1715,12 +1705,11 @@ LAB_004aaf38:
                                                                        0x11);
                                                     if ((iVar5 == 0) &&
                                                        ((g_CharacterClassificationTable
-                                                         [(byte)((char)in_stack_00000008[0x11] + 1)]
-                                                        & 0xe0U) == 0)) {
+                                                         [(byte)(in_stack_00000008[0x11] + 1)] &
+                                                        0xe0U) == 0)) {
                                                       local_ec = in_stack_00000008 + 0x11;
                                                       while ((g_CharacterClassificationTable
-                                                              [(byte)((char)*local_ec + 1)] & 2U) !=
-                                                             0) {
+                                                              [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                         local_ec = local_ec + 1;
                                                       }
                                                       local_20 = -1;
@@ -1741,7 +1730,7 @@ LAB_004aaf38:
                                                     if (uVar12 == 0) break;
                                                     uVar12 = uVar12 - 1;
                                                     cVar2 = *pcVar8;
-                                                    pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                    pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                   } while (cVar2 != '\0');
                                                   SVar14 = ~uVar12 - 1;
                                                   if (0 < (int)SVar14) {
@@ -1767,7 +1756,7 @@ LAB_004aaf38:
                                                     if (uVar12 == 0) break;
                                                     uVar12 = uVar12 - 1;
                                                     cVar2 = *pcVar8;
-                                                    pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                    pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                   } while (cVar2 != '\0');
                                                   SVar14 = ~uVar12 - 1;
                                                   if (0 < (int)SVar14) {
@@ -1828,26 +1817,25 @@ LAB_004aaf38:
                                                                        "switchCamera",0xc);
                                                     if ((iVar5 == 0) &&
                                                        ((g_CharacterClassificationTable
-                                                         [(byte)((char)in_stack_00000008[0xc] + 1)]
-                                                        & 0xe0U) == 0)) {
-                                                      pCVar16 = in_stack_00000008 + 0xc;
+                                                         [(byte)(in_stack_00000008[0xc] + 1)] &
+                                                        0xe0U) == 0)) {
+                                                      pbVar16 = in_stack_00000008 + 0xc;
                                                       while ((g_CharacterClassificationTable
-                                                              [(byte)((char)*pCVar16 + 1)] & 2U) !=
-                                                             0) {
-                                                        pCVar16 = pCVar16 + 1;
+                                                              [(byte)(*pbVar16 + 1)] & 2U) != 0) {
+                                                        pbVar16 = pbVar16 + 1;
                                                       }
                                                       local_1c = -1;
-                                                      puVar17 = &DAT_006794a0;
-                                                      puVar19 = local_344;
+                                                      puVar18 = &DAT_006794a0;
+                                                      puVar21 = local_344;
                                                       for (iVar5 = 0x19; iVar5 != 0;
                                                           iVar5 = iVar5 + -1) {
-                                                        *puVar19 = *puVar17;
-                                                        puVar17 = puVar17 + (uint)bVar20 * -2 + 1;
-                                                        puVar19 = puVar19 + (uint)bVar20 * -2 + 1;
+                                                        *puVar21 = *puVar18;
+                                                        puVar18 = puVar18 + (uint)bVar22 * -2 + 1;
+                                                        puVar21 = puVar21 + (uint)bVar22 * -2 + 1;
                                                       }
-                                                      local_ec = pCVar16;
+                                                      local_ec = pbVar16;
                                                       crt_stdio_c_sscanf_FUN_0060013c
-                                                                ((char *)pCVar16," ( %[^ ,)]%n",
+                                                                ((char *)pbVar16," ( %[^ ,)]%n",
                                                                  local_344);
                                                       if (local_1c < 2) {
                                                         pCVar7 = (CDemonActor *)
@@ -1856,8 +1844,7 @@ LAB_004aaf38:
                                                       }
                                                       local_ec = local_ec + local_1c;
                                                       while ((g_CharacterClassificationTable
-                                                              [(byte)((char)*local_ec + 1)] & 2U) !=
-                                                             0) {
+                                                              [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                         local_ec = local_ec + 1;
                                                       }
                                                       iVar5 = core_set_cpp_CDemonSet_FUN_0056b790
@@ -1868,7 +1855,7 @@ LAB_004aaf38:
                                                         return pCVar7;
                                                       }
                                                       local_70 = 3.0;
-                                                      if (*local_ec == (CEvent)0x2c) {
+                                                      if (*local_ec == 0x2c) {
                                                         local_1c = -1;
                                                         crt_stdio_c_sscanf_FUN_0060013c
                                                                   ((char *)local_ec,",%f%n",
@@ -1880,12 +1867,12 @@ LAB_004aaf38:
                                                         }
                                                         local_ec = local_ec + local_1c;
                                                         while ((g_CharacterClassificationTable
-                                                                [(byte)((char)*local_ec + 1)] & 2U)
-                                                               != 0) {
+                                                                [(byte)(*local_ec + 1)] & 2U) != 0)
+                                                        {
                                                           local_ec = local_ec + 1;
                                                         }
                                                       }
-                                                      if (*local_ec != (CEvent)0x29) {
+                                                      if (*local_ec != 0x29) {
                                                         pCVar7 = (CDemonActor *)
                                                                  core_event_cpp_FUN_004aa2a0();
                                                         return pCVar7;
@@ -1903,16 +1890,15 @@ LAB_004aaf38:
                                                                        "warpTo",6);
                                                     if ((iVar5 != 0) ||
                                                        ((g_CharacterClassificationTable
-                                                         [(byte)((char)in_stack_00000008[6] + 1)] &
-                                                        0xe0U) != 0)) {
+                                                         [(byte)(in_stack_00000008[6] + 1)] & 0xe0U)
+                                                        != 0)) {
                                                       pCVar7 = (CDemonActor *)
                                                                core_event_cpp_FUN_004aa2a0();
                                                       return pCVar7;
                                                     }
                                                     local_ec = in_stack_00000008 + 6;
                                                     while ((g_CharacterClassificationTable
-                                                            [(byte)((char)*local_ec + 1)] & 2U) != 0
-                                                          ) {
+                                                            [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                       local_ec = local_ec + 1;
                                                     }
                                                     local_18 = -1;
@@ -1930,7 +1916,7 @@ LAB_004aaf38:
                                                       if (uVar12 == 0) break;
                                                       uVar12 = uVar12 - 1;
                                                       cVar2 = *pcVar8;
-                                                      pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                      pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                     } while (cVar2 != '\0');
                                                     SVar14 = ~uVar12 - 1;
                                                     if (0 < (int)SVar14) {
@@ -1957,7 +1943,7 @@ LAB_004aaf38:
                                                       if (uVar12 == 0) break;
                                                       uVar12 = uVar12 - 1;
                                                       cVar2 = *pcVar8;
-                                                      pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                      pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                     } while (cVar2 != '\0');
                                                     SVar14 = ~uVar12 - 1;
                                                     if (0 < (int)SVar14) {
@@ -1980,8 +1966,7 @@ LAB_004aaf38:
                                                     }
                                                     local_ec = local_ec + local_18;
                                                     while ((g_CharacterClassificationTable
-                                                            [(byte)((char)*local_ec + 1)] & 2U) != 0
-                                                          ) {
+                                                            [(byte)(*local_ec + 1)] & 2U) != 0) {
                                                       local_ec = local_ec + 1;
                                                     }
                                                     pCVar7 = (CDemonActor *)
@@ -2055,7 +2040,7 @@ LAB_004aaf38:
                                                           if (uVar12 == 0) break;
                                                           uVar12 = uVar12 - 1;
                                                           cVar2 = *pcVar8;
-                                                          pcVar8 = pcVar8 + (uint)bVar20 * -2 + 1;
+                                                          pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                         } while (cVar2 != '\0');
                                                         local_18 = ~uVar12 - 1;
                                                       }
@@ -2079,12 +2064,12 @@ LAB_004aaf38:
                                                     setPositionAndOrientation)
                                                             (pCVar7,&local_11c,&local_134);
                                                   if (pCVar7 == (CDemonActor *)
-                                                                g_CScriptPtr->focusActor) {
+                                                                g_CScriptPtr->focus_actor) {
                                                     pCVar4 = g_CScriptPtr;
-                                                    pCVar4->padding_0x10[0] = '\x01';
-                                                    pCVar4->padding_0x10[1] = '\0';
-                                                    pCVar4->padding_0x10[2] = '\0';
-                                                    pCVar4->padding_0x10[3] = '\0';
+                                                    pCVar4->unk3[0] = '\x01';
+                                                    pCVar4->unk3[1] = '\0';
+                                                    pCVar4->unk3[2] = '\0';
+                                                    pCVar4->unk3[3] = '\0';
                                                   }
                                                   }
                                                   }
@@ -2115,10 +2100,10 @@ LAB_004aaf38:
         }
       }
     }
-    while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2U) != 0) {
       local_ec = local_ec + 1;
     }
-    if (*local_ec != (CEvent)0x0) {
+    if (*local_ec != 0) {
       pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
       return pCVar7;
     }

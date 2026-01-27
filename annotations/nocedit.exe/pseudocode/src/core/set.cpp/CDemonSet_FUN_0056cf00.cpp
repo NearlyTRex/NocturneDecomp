@@ -22,9 +22,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr)
   uint uStack_18;
   char *local_14;
   
-  iVar5 = *(int *)this_ptr->field73_0x15f6e4 + -1;
+  iVar5 = *(int *)this_ptr->unk13 + -1;
   if (-1 < iVar5) {
-    local_14 = this_ptr->cameras[0].name + *(int *)this_ptr->field73_0x15f6e4 * 4 + -8;
+    local_14 = this_ptr->cameras[0].name + *(int *)this_ptr->unk13 * 4 + -8;
     do {
       iVar1 = *(int *)(local_14 + 0x15f6e8);
       if (*(int *)(iVar1 + 0xfc) == 0) {

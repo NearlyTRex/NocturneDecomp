@@ -16,10 +16,10 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e0c30(CTrigger *this_ptr)
   CBoundingBox3D CStack_34;
   float afStack_14 [4];
   
-  if (*(int *)(this_ptr->field1_0x158 + 0x1c) != 4) {
+  if (*(int *)(this_ptr->unk + 0x1c) != 4) {
     return 0;
   }
-  pCVar3 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)(&this_ptr->base_actor,&CStack_34);
+  pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_34);
   fVar1 = ((pCVar3->min).y + (pCVar3->max).y) * 0.5f;
   fVar2 = ((pCVar3->min).z + (pCVar3->max).z) * 0.5f;
   if (in_stack_00000008 != afStack_14) {

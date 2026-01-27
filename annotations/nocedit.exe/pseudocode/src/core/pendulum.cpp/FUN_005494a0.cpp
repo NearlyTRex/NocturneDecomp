@@ -34,7 +34,7 @@ void core_pendulum_cpp_FUN_005494a0(void)
     auStack_44._16_4_ = (pCVar3->max).y;
     fStack_30 = (pCVar3->max).z;
   }
-  in_stack_00000004[2].field13_0xec.z =
+  in_stack_00000004[2].unk4.z =
        SQRT(((float)auStack_44._16_4_ - (float)auStack_44._4_4_) * (float)0.03125) *
        (float)6.2831853070000001;
   fVar1 = ((float)auStack_44._4_4_ + (float)auStack_44._16_4_) * 0.5f;

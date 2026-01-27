@@ -87,7 +87,7 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004c0420(CSpark *this_ptr)
   local_70.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_70);
-  uVar1 = this_ptr->field4_0x44;
+  uVar1 = this_ptr->unk;
   if (uVar1 == 0) {
     texture = &g_FireEffectSparkTexture;
   }

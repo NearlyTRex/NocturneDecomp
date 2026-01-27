@@ -20,7 +20,7 @@
 ;   int g_MouseY
 ;   int g_MouseButtonFlags
 ;   int g_ActiveRenderColor
-;   undefined4 DAT_02f7c630
+;   float FLOAT_02f7c630
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004011b0
@@ -158,7 +158,7 @@ section .text
         ;   XREF to: 00536d08 (UNCONDITIONAL_JUMP)  ; LAB_00536d08
     FLDZ                                ; 00536de4
         ;   Label: LAB_00536de4
-    FLD float ptr [0x02f7c630]          ; 00536de6 | DAT_02f7c630
+    FLD float ptr [0x02f7c630]          ; 00536de6 | FLOAT_02f7c630
     FSTP double ptr [ESP]               ; 00536dec
     FCOMP double ptr [ESP]              ; 00536def
     FNSTSW AX                           ; 00536df2

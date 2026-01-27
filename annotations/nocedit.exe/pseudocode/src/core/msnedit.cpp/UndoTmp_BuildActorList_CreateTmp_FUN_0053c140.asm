@@ -23,7 +23,7 @@
 ;   TerminatedCString s_core_msnedit_cpp_0063c83c
 ;   TerminatedCString s_UNDO_TMP_00680800
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_02f7c52c
+;   int INT_02f7c52c
 ;   undefined4 DAT_02f7c53c
 ;   undefined4 g_CEdCheckInstance.checked_state
 ;   CDemonSet g_CDemonSetInstance
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x4                         ; 0053c151
     MOV EDX,0xffffffff                  ; 0053c154
     MOV EAX,dword ptr [ESP + 0x14]      ; 0053c159
-    MOV dword ptr [0x02f7c52c],EDX      ; 0053c15d | DAT_02f7c52c
+    MOV dword ptr [0x02f7c52c],EDX      ; 0053c15d | INT_02f7c52c
     MOV dword ptr [EBX + 0x28],EAX      ; 0053c163
     TEST EAX,EAX                        ; 0053c166
     JZ 0x0053c1cb                       ; 0053c168

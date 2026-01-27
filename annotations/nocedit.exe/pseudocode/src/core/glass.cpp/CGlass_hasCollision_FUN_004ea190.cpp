@@ -11,7 +11,7 @@ core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCollisionInfo 
 
 {
   if ((this_ptr->shattered != 0) && (this_ptr->mirror_flag == 0)) {
-    (this_ptr->base).field16_0x100 = 1;
+    (this_ptr->base).unk6 = 1;
     return 0;
   }
   return 1;

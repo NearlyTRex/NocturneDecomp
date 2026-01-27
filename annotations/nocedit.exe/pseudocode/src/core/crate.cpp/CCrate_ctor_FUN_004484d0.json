@@ -1,0 +1,164 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [
+    {
+      "addr": "00448490",
+      "from_addr": "004484aa",
+      "name": "core_crate.cpp_factoryFunc_FUN_00448490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004484d0",
+    "address_range": [
+      [
+        "004484d0",
+        "00448527"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crate.cpp_CCrate_ctor_FUN_004484d0",
+    "signature": "CCrate * core_crate.cpp_CCrate_ctor_FUN_004484d0(CCrate * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "00478ce0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619af3",
+      "name": "s_question_kfm_00619af3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065c264",
+      "name": "g_CCrateVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004484aa",
+        "call_type": "direct",
+        "caller": "core_crate.cpp_factoryFunc_FUN_00448490",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 14,
+      "INT_ADD": 12,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 84
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrate *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "this_ptr_00[-1].",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CCrateVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "this_ptr_00[-1].",
+      "text": "return (CCrate *)(this_ptr_00[-1].part_visibility_flags + 9);",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCrate",
+        "offset": 0,
+        "vtable_addr": "0065c354"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

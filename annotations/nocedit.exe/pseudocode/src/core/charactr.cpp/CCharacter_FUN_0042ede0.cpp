@@ -47,15 +47,15 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
   float fStack_14;
   
   if (0.0 <= *(float *)(this_ptr->cloth_data + 0x32c)) {
-    pCVar6 = &(this_ptr->base_actor).location;
+    pCVar6 = &(this_ptr->base).location;
     pCVar3 = (CDemonActor *)core_hero_cpp_closestHeroToPoint_FUN_004f2170();
     local_2c = pCVar3;
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(pCVar3,&local_a4,&pCVar6->position);
     pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_a4);
     fVar1 = pCVar4->y;
     local_44.x = (pCVar6->position).x - (pCVar3->location).position.x;
-    local_44.y = (this_ptr->base_actor).location.position.y - (pCVar3->location).position.y;
-    local_44.z = (this_ptr->base_actor).location.position.z - (pCVar3->location).position.z;
+    local_44.y = (this_ptr->base).location.position.y - (pCVar3->location).position.y;
+    local_44.z = (this_ptr->base).location.position.z - (pCVar3->location).position.z;
     pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_8c,&local_44);
     local_24 = pCVar4->y;
     iVar2 = (*(((pCVar3->vtable)._ue)->_ue).field_8)();

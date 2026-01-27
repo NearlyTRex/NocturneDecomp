@@ -63,7 +63,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
           (&DAT_00823c54)[*(int *)(pCVar10->cloth_data + 0x488)] =
                (float)(&DAT_00823c54)[*(int *)(pCVar10->cloth_data + 0x488)] +
                (*(float *)(pCVar10->cloth_data + 0x498) * fVar2) / fVar1;
-          pCVar10 = (CCharacter *)((pCVar10->base_actor).actor_name + 0x18);
+          pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
         } while (iVar9 < *(int *)(this_ptr->cloth_data + 0x478));
       }
       iVar9 = 0;
@@ -106,8 +106,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
       if (iVar9 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(CStack_54.z);
-        uVar7 = (*((this_ptr->base_actor).vtable._ub)->playAmbientSound)
-                          (&this_ptr->base_actor,"character-onfire-loop.wav");
+        uVar7 = (*((this_ptr->base).vtable._ub)->playAmbientSound)
+                          (&this_ptr->base,"character-onfire-loop.wav");
         *(uint *)(this_ptr->cloth_data + 0x8d3c) = uVar7;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
@@ -118,8 +118,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
     *(float *)(this_ptr->cloth_data + 0x8d44) = fVar1;
     if (fVar1 < 0.0) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
-      (*((this_ptr->base_actor).vtable._ub)->playSound)
-                (&this_ptr->base_actor,"character-onfire-fallapart.wav");
+      (*((this_ptr->base).vtable._ub)->playSound)
+                (&this_ptr->base,"character-onfire-fallapart.wav");
       core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
     }
   }
@@ -132,14 +132,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
     pcVar12 = this_ptr->cloth_data + 0x954;
     do {
       if ((this_ptr->model).part_visibility_flags[*(int *)pcVar11] != 0) {
-        (this_ptr->base_actor).is_transparent = 1;
+        (this_ptr->base).is_transparent = 1;
         pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                            (&CStack_54,(CVector3f *)(pcVar11 + 8),
                             (CMatrix3x4f *)
                             ((int)(local_38->motion_list).state_names +
                             *(int *)(pcVar11 + 4) * 0x30 + -4));
         pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (&this_ptr->base_actor,&CStack_60,pCVar6);
+                           (&this_ptr->base,&CStack_60,pCVar6);
         *(float *)pcVar12 = pCVar6->x;
         *(float *)(pcVar12 + 4) = pCVar6->y;
         *(float *)(pcVar12 + 8) = pCVar6->z;
@@ -155,8 +155,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
       local_20 = local_20 + 1;
     } while (local_20 < *(int *)(this_ptr->cloth_data + 0x478));
   }
-  if ((*(int *)(this_ptr->field11_0x25a0 + 0x74) == 0) &&
-     (0 < *(int *)(this_ptr->cloth_data + 0x478))) {
+  if ((*(int *)(this_ptr->unk2 + 0x74) == 0) && (0 < *(int *)(this_ptr->cloth_data + 0x478))) {
     local_18 = (CSkeleton *)(this_ptr->cloth_data + 0x484);
     local_34 = (CDeformableModel *)(in_stack_00000008 * 2.0f);
     local_28 = 0;
@@ -178,7 +177,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
                 do {
                   if (iVar5 == *(int *)(pCVar10->cloth_data + 0x488)) break;
                   uVar8 = uVar8 + 1;
-                  pCVar10 = (CCharacter *)((pCVar10->base_actor).actor_name + 0x18);
+                  pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
                 } while ((int)uVar8 < *(int *)(this_ptr->cloth_data + 0x478));
               }
               if (uVar8 == *(uint *)(this_ptr->cloth_data + 0x478)) {
@@ -196,7 +195,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
             if (*(int *)(*(int *)(pcStack_14 + 4) * 0x24 + unaff_EBP + 0x2857c) ==
                 *(int *)(pCVar10->cloth_data + 0x488)) break;
             iVar9 = iVar9 + 1;
-            pCVar10 = (CCharacter *)((pCVar10->base_actor).actor_name + 0x18);
+            pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
           } while (iVar9 < *(int *)(this_ptr->cloth_data + 0x478));
         }
         if (iVar9 == *(int *)(this_ptr->cloth_data + 0x478)) {

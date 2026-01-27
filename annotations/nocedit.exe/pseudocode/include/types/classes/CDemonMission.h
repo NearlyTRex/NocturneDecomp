@@ -9,14 +9,14 @@ struct CDemonActor;
 // Structure: CDemonMission
 // Ghidra size: 0x27d0 (10192 bytes)
 typedef struct CDemonMission {
-    char field_0[8]; // 0x0
+    char unk1[8]; // 0x0
     int mission_version_num; // 0x8
-    char field_12[312]; // 0xc
+    char unk2[312]; // 0xc
     void* set_list; // 0x144
-    char field_328[1024]; // 0x148
+    char unk3[1024]; // 0x148
     struct CDemonActor* first_actor; // 0x548
-    char field_1356[832]; // 0x54c
+    char unk4[832]; // 0x54c
     int actorCountMaybe; // 0x88c
-    char field_2192[8000]; // 0x890
+    char unk5[8000]; // 0x890
 } CDemonMission;
 

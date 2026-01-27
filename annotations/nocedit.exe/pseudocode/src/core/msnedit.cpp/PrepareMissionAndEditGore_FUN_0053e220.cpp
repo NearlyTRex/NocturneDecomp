@@ -49,10 +49,10 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   this_ptr = g_CGamePtr;
   bVar6 = 0;
   DAT_02f7c634 = 0;
-  in_stack_00000004->field0_0x0[4] = '\x01';
-  in_stack_00000004->field0_0x0[5] = '\0';
-  in_stack_00000004->field0_0x0[6] = '\0';
-  in_stack_00000004->field0_0x0[7] = '\0';
+  in_stack_00000004->unk1[4] = '\x01';
+  in_stack_00000004->unk1[5] = '\0';
+  in_stack_00000004->unk1[6] = '\0';
+  in_stack_00000004->unk1[7] = '\0';
   core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
@@ -67,12 +67,12 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   core_mission_cpp_CDemonMission_FUN_00523cf0(in_stack_00000004);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Setting initial camera view.");
-  in_stack_00000004->field2_0xc[4] = '\0';
-  in_stack_00000004->field2_0xc[5] = '\0';
-  in_stack_00000004->field2_0xc[6] = '\0';
-  in_stack_00000004->field2_0xc[7] = '\0';
+  in_stack_00000004->unk2[4] = '\0';
+  in_stack_00000004->unk2[5] = '\0';
+  in_stack_00000004->unk2[6] = '\0';
+  in_stack_00000004->unk2[7] = '\0';
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
-            (g_CDemonSetPtr,*(int *)(in_stack_00000004->field2_0xc + 4));
+            (g_CDemonSetPtr,*(int *)(in_stack_00000004->unk2 + 4));
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -91,21 +91,21 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::editGore - Out of memory");
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)pCStack_18->model_name,"stranger-hat.kfm");
+            (&pCStack_18->model,"stranger-hat.kfm");
   pCVar4 = pCStack_18;
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(in_stack_00000004);
   pCVar3 = pCStack_18;
-  (pCVar4->base_actor).location.position.z = 0.0;
-  fVar1 = (pCVar4->base_actor).location.position.z;
-  (pCVar4->base_actor).location.position.y = fVar1;
-  (pCVar4->base_actor).location.position.x = fVar1;
-  (pCStack_18->base_actor).orient.heading = 0.0;
-  (pCStack_18->base_actor).orient.bank = (pCStack_18->base_actor).orient.heading;
-  (pCStack_18->base_actor).orient.pitch = (pCStack_18->base_actor).orient.bank;
-  (*((pCStack_18->base_actor).vtable._ub)->setup)(&pCStack_18->base_actor);
+  (pCVar4->base).location.position.z = 0.0;
+  fVar1 = (pCVar4->base).location.position.z;
+  (pCVar4->base).location.position.y = fVar1;
+  (pCVar4->base).location.position.x = fVar1;
+  (pCStack_18->base).orient.heading = 0.0;
+  (pCStack_18->base).orient.bank = (pCStack_18->base).orient.heading;
+  (pCStack_18->base).orient.pitch = (pCStack_18->base).orient.bank;
+  (*((pCStack_18->base).vtable._ub)->setup)(&pCStack_18->base);
   core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000004);
-  pCStack_18 = (CBoxActor *)&(pCVar3->base_actor).orient;
-  CStack_24.z = (int)&(pCVar4->base_actor).location;
+  pCStack_18 = (CBoxActor *)&(pCVar3->base).orient;
+  CStack_24.z = (int)&(pCVar4->base).location;
   while( true ) {
     wincore_winrun_cpp_doNothing_FUN_005f2f80();
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
@@ -114,7 +114,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     ((CVector3f *)CStack_24.z)->y = (float)in_stack_ffffff50;
     ((CVector3f *)CStack_24.z)->z = in_stack_ffffff54;
     if ((CBoxActor *)&stack0xffffff58 != pCStack_18) {
-      *(float *)&pCStack_18->base_actor = SUB84(in_stack_ffffff58,0);
+      *(float *)&pCStack_18->base = SUB84(in_stack_ffffff58,0);
       *(float *)((int)pCStack_18 + 4) = (float)((ulonglong)in_stack_ffffff58 >> 0x20);
       *(float *)((int)pCStack_18 + 8) = fStack_a0;
     }
@@ -123,7 +123,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     pCVar2 = g_CDemonSetPtr;
-    if (*(int *)(in_stack_00000004->field2_0xc + 0x2c) == 0) {
+    if (*(int *)(in_stack_00000004->unk2 + 0x2c) == 0) {
       g_CDemonCameraInstance.corona_blend_factor = CStack_24.y;
       g_CDemonSetPtr->lighting_quality_mode = 0;
       pCVar2->unk_lighting_param1 = 0;
@@ -134,9 +134,8 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       pCVar2->unk_lighting_param1 = 1;
     }
     pCVar2 = g_CDemonSetPtr;
-    g_CDemonSetPtr->unk_lighting_param3 =
-         (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x24) == 0);
-    pCVar2->unk_lighting_param4 = (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x28) == 0);
+    g_CDemonSetPtr->unk_lighting_param3 = (uint)(*(int *)(in_stack_00000004->unk2 + 0x24) == 0);
+    pCVar2->unk_lighting_param4 = (uint)(*(int *)(in_stack_00000004->unk2 + 0x28) == 0);
     core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar2);
     core_fire_cpp_CFireEffect_process_FUN_004c6ec0(g_CFireEffectPtr);
     core_gore_cpp_CGore_process_FUN_004ed9e0();
@@ -186,12 +185,10 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       fStack_a0 = fStack_a0 - g_CGamePtr->delta_time_float;
       if (fStack_a0 < 0.0) {
         aCStack_3c[0].x = (int)(float)10;
-        CStack_48.y = (int)(*(float *)(in_stack_00000004->field2_0xc + 0x38) *
-                           (float)aCStack_3c[0].x);
-        CStack_48.z = (int)(*(float *)(in_stack_00000004->field2_0xc + 0x44) *
-                           (float)aCStack_3c[0].x);
-        aCStack_3c[0].x =
-             (int)((float)aCStack_3c[0].x * *(float *)(in_stack_00000004->field2_0xc + 0x50));
+        CStack_48.y = (int)(*(float *)(in_stack_00000004->unk2 + 0x38) * (float)aCStack_3c[0].x);
+        CStack_48.z = (int)(*(float *)(in_stack_00000004->unk2 + 0x44) * (float)aCStack_3c[0].x);
+        aCStack_3c[0].x = (int)((float)aCStack_3c[0].x * *(float *)(in_stack_00000004->unk2 + 0x50))
+        ;
         fStack_a0 = fStack_a0 + 0.1f;
         core_gore_cpp_FUN_004edaa0();
       }

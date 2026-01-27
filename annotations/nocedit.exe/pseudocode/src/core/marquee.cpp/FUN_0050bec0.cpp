@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_marquee.cpp_FUN_0050bec0(byte param_1, uint
-   param_2) */
-
 void core_marquee_cpp_FUN_0050bec0(void)
 
 {
@@ -28,9 +24,9 @@ void core_marquee_cpp_FUN_0050bec0(void)
   CVector3i local_1c;
   
   bVar5 = 0;
-  local_1c.x = (int)ROUND(*in_stack_00000008 * _DAT_00661020);
-  local_1c.y = (int)ROUND(in_stack_00000008[1] * _DAT_00661020);
-  local_1c.z = (int)ROUND(in_stack_00000008[2] * _DAT_00661020);
+  local_1c.x = (int)ROUND(*in_stack_00000008 * 256.0f);
+  local_1c.y = (int)ROUND(in_stack_00000008[1] * 256.0f);
+  local_1c.z = (int)ROUND(in_stack_00000008[2] * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_1c);
   this_ptr = g_CDemonRendererPtr2;

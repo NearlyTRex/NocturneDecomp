@@ -42,7 +42,7 @@
 ;   float FLOAT_0062a05f = 0.05000000
 ;   double DOUBLE_0062a063 = 0.0500000000000000
 ;   double DOUBLE_0062a06b = 0.5
-;   undefined4 DAT_0065dcc0
+;   float FLOAT_0065dcc0 = 0.02000000
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_FUN_004c7eb0
@@ -182,7 +182,7 @@ section .text
     JNC 0x004c81ba                      ; 004c8101
         ;   XREF to: 004c81ba (CONDITIONAL_JUMP)  ; LAB_004c81ba
     MOV EDX,dword ptr [EBP + 0x38]      ; 004c8107
-    PUSH dword ptr [0x0065dcc0]         ; 004c810a | DAT_0065dcc0
+    PUSH dword ptr [0x0065dcc0]         ; 004c810a | FLOAT_0065dcc0
     PUSH EDX                            ; 004c8110
     PUSH EBX                            ; 004c8111
     PUSH EDI                            ; 004c8112
@@ -247,7 +247,7 @@ section .text
         ;   XREF to: 004c813b (UNCONDITIONAL_JUMP)  ; LAB_004c813b
     MOV EAX,dword ptr [EBP + 0x38]      ; 004c81ba
         ;   Label: LAB_004c81ba
-    PUSH dword ptr [0x0065dcc0]         ; 004c81bd | DAT_0065dcc0
+    PUSH dword ptr [0x0065dcc0]         ; 004c81bd | FLOAT_0065dcc0
     PUSH EAX                            ; 004c81c3
     PUSH EBX                            ; 004c81c4
     PUSH EDI                            ; 004c81c5

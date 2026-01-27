@@ -51,10 +51,10 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
   } while (pCVar2 != (CSpark *)&g_SparkActiveCount);
   pCVar3 = g_MuzzleFlashPool;
   do {
-    pCVar3->field0_0x0[0] = '\0';
-    pCVar3->field0_0x0[1] = '\0';
-    pCVar3->field0_0x0[2] = '\0';
-    pCVar3->field0_0x0[3] = '\0';
+    pCVar3->unk[0] = '\0';
+    pCVar3->unk[1] = '\0';
+    pCVar3->unk[2] = '\0';
+    pCVar3->unk[3] = '\0';
     pCVar3 = pCVar3 + 1;
   } while (pCVar3 != (CMuzzleFlash *)&g_GlassParticleNextIndex);
   g_StakeActiveCount = 0;
@@ -69,7 +69,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
   pCVar6 = g_BulletTrailPool;
   do {
     pCVar7 = pCVar6 + 1;
-    *(CBulletTrail **)(pCVar6->field0_0x0 + 0x20) = (CBulletTrail *)0x0;
+    *(CBulletTrail **)(pCVar6->unk + 0x20) = (CBulletTrail *)0x0;
     pCVar6 = pCVar7;
   } while (pCVar7 != (CBulletTrail *)&g_BulletTrailActiveListHead);
   g_BulletTrailActiveListHead = (CBulletTrail *)0x0;

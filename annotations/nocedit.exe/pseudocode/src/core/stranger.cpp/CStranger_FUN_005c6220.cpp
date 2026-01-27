@@ -109,35 +109,35 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
                        ((CMotionController *)(in_stack_00000004 + 0x158));
     if (pSVar4->state_index == 0x2a) {
       if (pCVar5 != (CCloth *)&stack0xffffffd8) {
-        this_ptr[1].padding_0x0[4] = '\0';
-        this_ptr[1].padding_0x0[5] = '\0';
-        this_ptr[1].padding_0x0[6] = '\0';
-        this_ptr[1].padding_0x0[7] = '\0';
-        pCVar5->padding_0x0[0] = '\0';
-        pCVar5->padding_0x0[1] = '\0';
-        pCVar5->padding_0x0[2] = '\0';
-        pCVar5->padding_0x0[3] = '\0';
-        this_ptr[1].padding_0x0[8] = '\0';
-        this_ptr[1].padding_0x0[9] = '\0';
-        this_ptr[1].padding_0x0[10] = -0x60;
-        this_ptr[1].padding_0x0[0xb] = -0x3f;
+        this_ptr[1].unk[4] = '\0';
+        this_ptr[1].unk[5] = '\0';
+        this_ptr[1].unk[6] = '\0';
+        this_ptr[1].unk[7] = '\0';
+        pCVar5->unk[0] = '\0';
+        pCVar5->unk[1] = '\0';
+        pCVar5->unk[2] = '\0';
+        pCVar5->unk[3] = '\0';
+        this_ptr[1].unk[8] = '\0';
+        this_ptr[1].unk[9] = '\0';
+        this_ptr[1].unk[10] = -0x60;
+        this_ptr[1].unk[0xb] = -0x3f;
         return;
       }
     }
     else if (pSVar4->state_index == 0x2b) {
       if (pCVar5 != (CCloth *)&stack0xffffffe4) {
-        this_ptr[1].padding_0x0[4] = '\0';
-        this_ptr[1].padding_0x0[5] = '\0';
-        this_ptr[1].padding_0x0[6] = '\0';
-        this_ptr[1].padding_0x0[7] = '\0';
-        pCVar5->padding_0x0[0] = '\0';
-        pCVar5->padding_0x0[1] = '\0';
-        pCVar5->padding_0x0[2] = '\0';
-        pCVar5->padding_0x0[3] = '\0';
-        this_ptr[1].padding_0x0[8] = '\0';
-        this_ptr[1].padding_0x0[9] = '\0';
-        this_ptr[1].padding_0x0[10] = -0x60;
-        this_ptr[1].padding_0x0[0xb] = 'A';
+        this_ptr[1].unk[4] = '\0';
+        this_ptr[1].unk[5] = '\0';
+        this_ptr[1].unk[6] = '\0';
+        this_ptr[1].unk[7] = '\0';
+        pCVar5->unk[0] = '\0';
+        pCVar5->unk[1] = '\0';
+        pCVar5->unk[2] = '\0';
+        pCVar5->unk[3] = '\0';
+        this_ptr[1].unk[8] = '\0';
+        this_ptr[1].unk[9] = '\0';
+        this_ptr[1].unk[10] = -0x60;
+        this_ptr[1].unk[0xb] = 'A';
         return;
       }
     }

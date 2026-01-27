@@ -24,9 +24,8 @@ void core_drip_cpp_FUN_0048e0e0(void)
                     (*(float *)(in_stack_00000004 + 0x2e0),*(float *)(in_stack_00000004 + 0x2e4));
   *(float *)(in_stack_00000004 + 0x2dc) = fVar1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)&DAT_02c9b170,"stalrock.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)&DAT_02c9b170);
+            (&DAT_02c9b170,"stalrock.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&DAT_02c9b170);
   *(uint *)(in_stack_00000004 + 0x338) = 0;
   return;
 }

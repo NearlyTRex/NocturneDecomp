@@ -22,7 +22,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
   if (actor_ptr != (CWeapon *)0x0) {
     if ((this_ptr->cached_ammo_count != actor_ptr->ammo_count) &&
        (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (&actor_ptr->base_actor,g_CLightGunClassInfo.name_hash),
+                           (&actor_ptr->base,g_CLightGunClassInfo.name_hash),
        pCVar3 == (CDemonActor *)0x0)) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(this_ptr,0);
     }

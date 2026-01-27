@@ -486,7 +486,7 @@ section .text
     XOR ESI,ESI                         ; 005e83d4
     MOV EAX,[0x006810c8]                ; 005e83d6 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005e83d6
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e83db | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e83db | g_CDemonSetInstance.unk4[7996]
     JL 0x005e85a9                       ; 005e83e1
         ;   XREF to: 005e85a9 (CONDITIONAL_JUMP)  ; LAB_005e85a9
     CMP dword ptr [ESP + 0xec],0x0      ; 005e83e7

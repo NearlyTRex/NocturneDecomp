@@ -31,7 +31,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
   bVar7 = 0;
   local_18 = this_ptr->geometry_filename;
   this_ptr->actor_list_ptr = (void *)0x0;
-  g_CDemonLightInstance.field17_0x1cbc = 0;
+  g_CDemonLightInstance.unk2 = 0;
   g_CDemonRaytraceInstance.rendering_mode = 1;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();

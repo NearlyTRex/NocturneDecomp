@@ -14,7 +14,7 @@ int core_mimic_cpp_FUN_00520890(void)
   int iVar1;
   CMimic *in_stack_00000004;
   
-  if ((in_stack_00000004->field0_0x0).base_character.base_actor.is_transparent == 0) {
+  if ((in_stack_00000004->base).base.base.is_transparent == 0) {
     return 0;
   }
   iVar1 = core_mimic_cpp_CMimic_FUN_005205f0(in_stack_00000004);

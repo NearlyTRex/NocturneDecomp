@@ -2,64 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
+        "category": "other",
         "column": 25,
-        "line": 18,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field4_0x1fab8'"
-      },
-      {
-        "category": "missing_member",
-        "column": 50,
-        "line": 31,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field2_0x1f70c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 38,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field8_0x1fae0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 39,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field8_0x1fae0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 40,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field8_0x1fae0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 41,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field8_0x1fae0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 42,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field8_0x1fae0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 77,
-        "line": 44,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field2_0x1f70c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 60,
-        "line": 48,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field2_0x1f70c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 49,
-        "message": "'CHostage' {aka 'struct CHostage'} has no member named 'field2_0x1f70c'"
+        "line": 46,
+        "message": "void value not ignored as it ought to be"
       }
     ],
     "success": false,
@@ -78,31 +24,31 @@
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 47,
         "line": 21,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 33,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 106,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 44,
     "suspect_count": 5,
     "suspect_types": [
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 148
+    "total_lines": 146
   },
   "cross_references": [],
   "function": {
@@ -221,19 +167,19 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "fVar1 = (this_ptr->base_npc).base_character.hit_points - *(float *)(in_stack_00000008 + 4);",
+      "text": "fVar1 = (this_ptr->base).base.hit_points - *(float *)(in_stack_00000008 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000008",
       "text": "else if (0.0 < *(float *)(in_stack_00000008 + 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 29,
       "match": "DAT_00821ff4",
       "text": "uVar3 = DAT_00821ff4;",
       "type": "undefined_data"

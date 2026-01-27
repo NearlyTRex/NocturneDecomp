@@ -18,8 +18,7 @@ float * __cdecl core_ladder_cpp_CLadder_FUN_005028c0(CLadder *this_ptr)
   CKeyFramedModel *pCVar7;
   float *in_stack_00000008;
   
-  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)&this_ptr->model);
+  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   if (pCVar7->poly_count < 1) {
     fVar5 = (float)0.5;
     fVar1 = (this_ptr->ladder_size).z;
@@ -35,8 +34,7 @@ float * __cdecl core_ladder_cpp_CLadder_FUN_005028c0(CLadder *this_ptr)
     in_stack_00000008[5] = fVar5 * fVar4;
     return in_stack_00000008;
   }
-  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)&this_ptr->model);
+  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   *in_stack_00000008 = (pCVar7->bounds_min).x;
   in_stack_00000008[1] = (pCVar7->bounds_min).y;
   in_stack_00000008[2] = (pCVar7->bounds_min).z;

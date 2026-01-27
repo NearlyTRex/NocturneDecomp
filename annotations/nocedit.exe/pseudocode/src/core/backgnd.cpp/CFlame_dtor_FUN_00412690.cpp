@@ -17,7 +17,7 @@ CFlame * __cdecl core_backgnd_cpp_CFlame_dtor_FUN_00412690(CFlame *this_ptr,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  ptr = (CFlame *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
+  ptr = (CFlame *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base,1);
   if ((d1 & 2) == 0) {
     return ptr;
   }

@@ -62,7 +62,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
       }
     }
   }
-  pCVar2 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)(&this_ptr->base_actor,&local_84);
+  pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_84);
   fStack_28 = (pCVar2->min).x + (pCVar2->max).x;
   local_24 = (pCVar2->min).y + (pCVar2->max).y;
   auStack_4c._0_4_ = fStack_28 * 0.5f;
@@ -70,16 +70,16 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   local_20 = (pCVar2->min).z + (pCVar2->max).z;
   fStack_44 = local_20 * 0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (&this_ptr->base_actor,&CStack_58,(CVector3f *)auStack_4c);
+            (&this_ptr->base,&CStack_58,(CVector3f *)auStack_4c);
   if (*(int *)(this_ptr->cloth_data + 0x8d40) == 0) {
     core_gore_cpp_FUN_004edbb0();
-    (this_ptr->base_actor).was_created = 2;
+    (this_ptr->base).was_created = 2;
     return;
   }
   this_ptr->cloth_data[0x478] = '\0';
   this_ptr->cloth_data[0x479] = '\0';
   this_ptr->cloth_data[0x47a] = '\0';
   this_ptr->cloth_data[0x47b] = '\0';
-  (this_ptr->base_actor).was_created = 2;
+  (this_ptr->base).was_created = 2;
   return;
 }

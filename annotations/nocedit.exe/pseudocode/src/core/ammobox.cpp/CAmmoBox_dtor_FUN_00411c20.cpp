@@ -17,7 +17,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_dtor_FUN_00411c20(CAmmoBox *this_pt
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  ptr = (CAmmoBox *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
+  ptr = (CAmmoBox *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base,1);
   if ((d1 & 2) == 0) {
     return ptr;
   }

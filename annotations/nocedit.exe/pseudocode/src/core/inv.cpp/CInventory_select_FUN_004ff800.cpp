@@ -35,7 +35,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         pCVar5 = (CLightGun *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
                            (actor_ptr,g_CGasMaskClassInfo.name_hash);
-        (pCVar5->base_weapon).weapon_state = (uint)((pCVar5->base_weapon).weapon_state == 0);
+        (pCVar5->base).weapon_state = (uint)((pCVar5->base).weapon_state == 0);
         this_ptr->light_gun_ptr = pCVar5;
         return 0;
       }
@@ -54,7 +54,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         g_CurrentLineNumber = 0x5c9;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CInventory::select - Catch 22");
       }
-      if ((float)98 < (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points) {
+      if ((float)98 < (g_HeroActors[g_LocalHeroIndex]->base).hit_points) {
         return 1;
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have used : ");

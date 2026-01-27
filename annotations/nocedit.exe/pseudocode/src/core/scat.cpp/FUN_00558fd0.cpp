@@ -39,7 +39,7 @@ void core_scat_cpp_FUN_00558fd0(void)
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_130,&local_28,&local_40);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-              (&local_130,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + DAT_03106194 * 0x30),&local_d0
+              (&local_130,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + INT_03106194 * 0x30),&local_d0
               );
     pCVar2 = &local_d0;
     pCVar3 = &local_70;

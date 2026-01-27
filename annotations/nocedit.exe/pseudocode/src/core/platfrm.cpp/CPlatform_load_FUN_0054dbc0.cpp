@@ -37,7 +37,7 @@ void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
             ((char **)&in_stack_00000004[2].orient_matrix.m[0].y,"courseFilename");
   if (*(char *)&in_stack_00000004[2].orient_matrix.m[0].y == '\0') {
     core_actor_cpp_serializeVector_FUN_0040b340
-              ((CVector3f *)&in_stack_00000004[2].field7_0x6c,"startPos");
+              ((CVector3f *)&in_stack_00000004[2].unk1,"startPos");
     core_actor_cpp_serializeQuaternion_FUN_0040b520
               ((CQuaternion4f *)(in_stack_00000004[2].create_event + 0xc),"origOrient");
     core_actor_cpp_serializeVector_FUN_0040b340
@@ -80,7 +80,7 @@ void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
   }
   if (5 < g_CPlatformClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              (&in_stack_00000004[3].field17_0x104,"plotAsBoxInShadow");
+              (&in_stack_00000004[3].unk7,"plotAsBoxInShadow");
   }
   if (7 < g_CPlatformClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770
@@ -100,7 +100,7 @@ void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
         do {
           core_actor_cpp_serializeActor_FUN_0040b870
                     ((CDemonActor *)&local_18,"attach actor");
-          pCVar1[3].field19_0x114 = local_18;
+          pCVar1[3].unk8 = local_18;
           iVar2 = iVar2 + 1;
           pCVar1 = (CDemonActor *)&(pCVar1->orient).bank;
         } while (iVar2 < local_1c);
@@ -110,7 +110,7 @@ void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
       local_14 = 0;
       pCVar1 = in_stack_00000004;
       do {
-        if (pCVar1[3].field19_0x114 != 0) {
+        if (pCVar1[3].unk8 != 0) {
           local_14 = local_14 + 1;
         }
         pCVar1 = (CDemonActor *)&(pCVar1->orient).bank;
@@ -119,9 +119,9 @@ void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_14,"attachCount");
       pCVar1 = in_stack_00000004;
       do {
-        if (pCVar1[3].field19_0x114 != 0) {
+        if (pCVar1[3].unk8 != 0) {
           core_actor_cpp_serializeActor_FUN_0040b870
-                    ((CDemonActor *)(&in_stack_00000004[3].field19_0x114 + iVar2 * 0xd),
+                    ((CDemonActor *)(&in_stack_00000004[3].unk8 + iVar2 * 0xd),
                      "attach actor");
         }
         iVar2 = iVar2 + 1;

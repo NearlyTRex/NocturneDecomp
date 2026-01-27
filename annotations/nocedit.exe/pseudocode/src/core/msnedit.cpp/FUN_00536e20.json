@@ -4,58 +4,22 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_msnedit_cpp_FUN_00536e20()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 39,
-        "line": 34,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 35,
-        "message": "'_DAT_02f7a028' was not declared in this scope; did you mean 'DAT_02f7c528'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 36,
-        "message": "'DAT_02f7a02c' was not declared in this scope; did you mean 'DAT_02f7c52c'?"
+        "line": 33,
+        "message": "'DAT_02f7a02c' was not declared in this scope; did you mean 'INT_02f7a028'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 37,
+        "line": 34,
         "message": "'DAT_02f7a094' was not declared in this scope; did you mean 'DAT_03f90a94'?"
       },
       {
-        "category": "missing_member",
-        "column": 39,
-        "line": 40,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 42,
-        "line": 41,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 45,
-        "line": 42,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 56,
-        "line": 58,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 42,
         "line": 127,
@@ -66,12 +30,6 @@
         "column": 42,
         "line": 127,
         "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 85,
-        "message": "'_DAT_0063b73c' was not declared in this scope; did you mean 'DAT_0065B738'?"
       },
       {
         "category": "incompatible_types",
@@ -91,31 +49,30 @@
       {
         "category": "other",
         "column": 47,
-        "line": 53,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 71,
+        "line": 68,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 361,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 116,
-    "suspect_count": 23,
+    "pseudocode_lines": 114,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 475
+    "total_lines": 473
   },
   "cross_references": [
     {
@@ -258,9 +215,9 @@
     },
     {
       "addr": "0063b73c",
-      "name": "DAT_0063b73c",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_0063b73c",
+      "type": "double",
+      "value": "-1"
     },
     {
       "addr": "00678a60",
@@ -318,8 +275,8 @@
     },
     {
       "addr": "02f7a028",
-      "name": "DAT_02f7a028",
-      "type": "undefined4",
+      "name": "INT_02f7a028",
+      "type": "int",
       "value": null
     },
     {
@@ -336,14 +293,14 @@
     },
     {
       "addr": "02f7c52c",
-      "name": "DAT_02f7c52c",
-      "type": "undefined4",
+      "name": "INT_02f7c52c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f7c530",
-      "name": "DAT_02f7c530",
-      "type": "undefined4",
+      "name": "INT_02f7c530",
+      "type": "int",
       "value": null
     },
     {
@@ -509,165 +466,60 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 23,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02f7c52c",
-      "text": "if ((((*(int *)(g_CDemonMissionPtr->field2_0xc + 0x1c) != 0) && (-1 < DAT_02f7c52c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_02f7c52c",
-      "text": "(DAT_02f7c52c < _DAT_02f7a028)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
+      "line": 26,
       "match": "DAT_02f7a02c",
-      "text": "((*(int *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec) == 0xd &&",
+      "text": "((*(int *)(&DAT_02f7a02c + INT_02f7c52c * 0xec) == 0xd &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_02f7c52c",
-      "text": "((*(int *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec) == 0xd &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
+      "line": 27,
       "match": "DAT_02f7a094",
-      "text": "(this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + DAT_02f7c52c * 0xec),",
+      "text": "(this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_02f7c52c",
-      "text": "(this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + DAT_02f7c52c * 0xec),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
+      "line": 35,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 47,
       "match": "DAT_02f7a02c",
-      "text": "((CActorProperty *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_02f7c52c",
-      "text": "((CActorProperty *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_02f7c52c",
-      "text": "DAT_02f7c52c = -1;",
+      "text": "((CActorProperty *)(&DAT_02f7a02c + INT_02f7c52c * 0xec),",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 55,
       "match": "SUB84",
       "text": "(local_f4,\"%6.2f\",SUB84((double)local_f8,0),",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_02f7c530",
-      "text": "DAT_02f7c530 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 73,
       "match": "SUB84",
       "text": "uStack_30 = SUB84(dVar3,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_02f7c530",
-      "text": "DAT_02f7c530 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_02f7c530",
-      "text": "if (DAT_02f7c530 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_02f7c530",
-      "text": "DAT_02f7c530 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_02f7c530",
-      "text": "DAT_02f7c530 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 97,
       "match": "SUB84",
       "text": "uStack_34 = SUB84(dVar3,0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_02f7c530",
-      "text": "DAT_02f7c530 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_02f7c530",
-      "text": "DAT_02f7c530 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_02f7c530",
-      "text": "if ((DAT_02f7c530 != 0) &&",
-      "type": "undefined_data"
     }
   ]
 }

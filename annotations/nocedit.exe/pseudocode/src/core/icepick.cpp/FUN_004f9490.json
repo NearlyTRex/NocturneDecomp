@@ -6,12 +6,6 @@
         "column": 6,
         "line": 12,
         "message": "ambiguating new declaration of 'void core_icepick_cpp_FUN_004f9490()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 51,
-        "line": 46,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
       }
     ],
     "success": false,
@@ -24,7 +18,7 @@
       },
       {
         "category": "other",
-        "column": 51,
+        "column": 45,
         "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -299,21 +293,21 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,&local_30,input_local_point);",
+      "text": "(&in_stack_00000004->base,&local_30,input_local_point);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
+      "text": "(*((in_stack_00000004->base).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,\"icepick-punch?.wav\");",
+      "text": "(&in_stack_00000004->base,\"icepick-punch?.wav\");",
       "type": "stack_param"
     },
     {
@@ -327,14 +321,14 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000004",
-      "text": "local_6c.attacker = &in_stack_00000004->base_actor;",
+      "text": "local_6c.attacker = &in_stack_00000004->base;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000004",
-      "text": "local_6c.wielder = &in_stack_00000004->base_actor;",
+      "text": "local_6c.wielder = &in_stack_00000004->base;",
       "type": "stack_param"
     },
     {

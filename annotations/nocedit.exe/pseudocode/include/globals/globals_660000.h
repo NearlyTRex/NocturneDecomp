@@ -482,6 +482,7 @@ extern int g_CameraShakeState;
 extern int g_FogColorIndexR;
 extern int g_FogColorIndexG;
 extern int g_FogColorIndexB;
+extern int INT_0066ed68;
 extern int g_EditorDetailLevel;
 extern int g_MouseReferenceY;
 extern int g_EditorColorMode;

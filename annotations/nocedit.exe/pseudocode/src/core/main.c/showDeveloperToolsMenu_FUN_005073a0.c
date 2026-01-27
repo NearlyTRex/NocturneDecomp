@@ -38,7 +38,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   
   bVar8 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
-                    (&g_CDemonFileManagerInstance.base_filemanager);
+                    (&g_CDemonFileManagerInstance.base);
   if (iVar1 == 0) {
     return;
   }

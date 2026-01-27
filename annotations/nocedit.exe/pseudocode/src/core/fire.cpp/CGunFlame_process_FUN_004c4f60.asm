@@ -21,7 +21,7 @@
 ;   double DOUBLE_00629f4b = 0.200000000000000
 ;   double DOUBLE_00629f53 = 0.5
 ;   float FLOAT_00629f5b = -20
-;   undefined4 DAT_0065dcc8
+;   float FLOAT_0065dcc8 = 15
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CFireEffect g_CFireEffectInstance
@@ -146,7 +146,7 @@ section .text
     ADD ESP,0x4                         ; 004c506b
     FLD float ptr [ESP + 0x20]          ; 004c506e
         ;   Label: LAB_004c506e
-    FMUL float ptr [0x0065dcc8]         ; 004c5072 | DAT_0065dcc8
+    FMUL float ptr [0x0065dcc8]         ; 004c5072 | FLOAT_0065dcc8
     FADD float ptr [EBX + 0x1c]         ; 004c5078
     FSTP float ptr [EBX + 0x1c]         ; 004c507b
     CMP dword ptr [EBX + 0x1c],0x41a00000 ; 004c507e

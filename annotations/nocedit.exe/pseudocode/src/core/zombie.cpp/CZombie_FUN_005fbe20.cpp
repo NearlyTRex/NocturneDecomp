@@ -13,9 +13,9 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe20(CZombie *this_ptr)
   int iVar2;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                     (&(this_ptr->base).base.model.motion_controller);
   if (pSVar1->state_index == 0xe) {
-    if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
+    if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
       return 0;
     }
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);

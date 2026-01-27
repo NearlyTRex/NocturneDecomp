@@ -24,7 +24,7 @@ core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)this_ptr->field3_0xcdcc4);
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)this_ptr->unk2);
   core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
   core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
   iVar1 = core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();

@@ -21,7 +21,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042d360(CCharacter *this_ptr)
     iVar2 = iVar2 + 1;
     if (1 < iVar2) break;
     pCVar1 = this_ptr->carry_hands[1].carry_actor;
-    this_ptr = (CCharacter *)&(this_ptr->base_actor).orient_matrix.m[0].z;
+    this_ptr = (CCharacter *)&(this_ptr->base).orient_matrix.m[0].z;
   }
   return 0;
 }

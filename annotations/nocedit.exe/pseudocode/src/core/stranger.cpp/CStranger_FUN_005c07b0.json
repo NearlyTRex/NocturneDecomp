@@ -68,12 +68,6 @@
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 293,
-        "message": "'DAT_03f6babc' was not declared in this scope; did you mean 'DAT_03f6bafc'?"
-      },
-      {
         "category": "other",
         "column": 34,
         "line": 301,
@@ -120,12 +114,6 @@
         "column": 34,
         "line": 326,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 333,
-        "message": "'DAT_03f6bab0' was not declared in this scope; did you mean 'DAT_03f6bae0'?"
       },
       {
         "category": "other",
@@ -554,12 +542,12 @@
   },
   "complexity": {
     "assembly_lines": 1063,
-    "complexity_score": 1446,
+    "complexity_score": 1401,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "pseudocode_lines": 576,
-    "suspect_count": 83,
+    "suspect_count": 79,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
@@ -567,7 +555,6 @@
       "stack_ref",
       "suspect_float",
       "unaffected_reg",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 1639
@@ -723,26 +710,26 @@
     },
     {
       "addr": "03f6bab0",
-      "name": "DAT_03f6bab0",
-      "type": "undefined4",
+      "name": "FLOAT_03f6bab0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "03f6babc",
-      "name": "DAT_03f6babc",
-      "type": "undefined4",
+      "name": "FLOAT_03f6babc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "03f6bb00",
-      "name": "DAT_03f6bb00",
-      "type": "undefined4",
+      "name": "INT_03f6bb00",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03f6bb04",
-      "name": "DAT_03f6bb04",
-      "type": "undefined4",
+      "name": "INT_03f6bb04",
+      "type": "int",
       "value": null
     },
     {
@@ -2297,13 +2284,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 286,
-      "match": "DAT_03f6babc",
-      "text": "(&local_75c,(CVector3f *)&DAT_03f6babc,&g_ZeroVector);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 294,
       "match": "(CMatrix3x4f *)((int)",
@@ -2358,13 +2338,6 @@
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 326,
-      "match": "DAT_03f6bab0",
-      "text": "(&local_aec,(CVector3f *)&DAT_03f6bab0,&g_ZeroVector);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -2428,20 +2401,6 @@
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x2a8c) == 0xe) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 375,
-      "match": "DAT_03f6bb04",
-      "text": "(&local_d8,&g_ZeroVector,(CMatrix3x4f *)(DAT_03f6bb04 * 0x30 + iVar7));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 377,
-      "match": "DAT_03f6bb00",
-      "text": "(&local_90,&g_ZeroVector,(CMatrix3x4f *)(DAT_03f6bb00 * 0x30 + iVar7));",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

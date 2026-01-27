@@ -8,7 +8,7 @@
 ;   core_frankgen.cpp_PlaySounds_FUN_004d1a40 at 004d1d14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d7b7f0
+;   float FLOAT_02d7b7f0
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
@@ -22,7 +22,7 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 004d1f20
         ;   Label: core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20
-    FCOMP float ptr [0x02d7b7f0]        ; 004d1f24 | DAT_02d7b7f0
+    FCOMP float ptr [0x02d7b7f0]        ; 004d1f24 | FLOAT_02d7b7f0
     FNSTSW AX                           ; 004d1f2a
     SAHF                                ; 004d1f2c
     JC 0x004d1f42                       ; 004d1f2d

@@ -7,7 +7,7 @@
 ; CSentinel *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_sentinel.cpp_FUN_00567d70 at 00567d8a
+;   core_sentinel.cpp_factoryFunc_FUN_00567d70 at 00567d8a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sentinel_dfm_00645719

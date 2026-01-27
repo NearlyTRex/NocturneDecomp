@@ -211,7 +211,7 @@ section .text
         ;   Label: LAB_00539205
     FLD float ptr [0x00661c44]          ; 0053920b | FLOAT_00661c44
     PUSH EBX                            ; 00539211
-    FSTP float ptr [0x02f7c540]         ; 00539212 | DAT_02f7c540
+    FSTP float ptr [0x02f7c540]         ; 00539212 | FLOAT_02f7c540
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 00539218
         ;   XREF to: 00523e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053921d
@@ -636,7 +636,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00539749
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0053974e
-    FLD float ptr [0x02f7c540]          ; 00539751 | DAT_02f7c540
+    FLD float ptr [0x02f7c540]          ; 00539751 | FLOAT_02f7c540
         ;   Label: LAB_00539751
     FLDZ                                ; 00539757
     FCOMPP                              ; 00539759
@@ -668,8 +668,8 @@ section .text
     MOV EAX,[0x0067b654]                ; 0053979a | g_CGamePtr
         ;   Label: LAB_0053979a
     FLD float ptr [EAX + 0x264]         ; 0053979f | g_CGameInstance.delta_time_float
-    FSUBR float ptr [0x02f7c540]        ; 005397a5 | DAT_02f7c540
-    FST float ptr [0x02f7c540]          ; 005397ab | DAT_02f7c540
+    FSUBR float ptr [0x02f7c540]        ; 005397a5 | FLOAT_02f7c540
+    FST float ptr [0x02f7c540]          ; 005397ab | FLOAT_02f7c540
     FLDZ                                ; 005397b1
     FCOMPP                              ; 005397b3
     FNSTSW AX                           ; 005397b5
@@ -677,7 +677,7 @@ section .text
     JBE 0x005397c2                      ; 005397b8
         ;   XREF to: 005397c2 (CONDITIONAL_JUMP)  ; LAB_005397c2
     XOR EDX,EDX                         ; 005397ba
-    MOV dword ptr [0x02f7c540],EDX      ; 005397bc | DAT_02f7c540
+    MOV dword ptr [0x02f7c540],EDX      ; 005397bc | FLOAT_02f7c540
     MOV EAX,dword ptr [EBP + 0x92]      ; 005397c2
         ;   Label: LAB_005397c2
     CMP dword ptr [EAX + 0x24],0x0      ; 005397c8
@@ -2018,7 +2018,7 @@ section .text
     MOV dword ptr [EBP + 0x7a],ECX      ; 0053a68b
     MOV EAX,[0x00661c44]                ; 0053a68e | FLOAT_00661c44
         ;   Label: LAB_0053a68e
-    MOV [0x02f7c540],EAX                ; 0053a693 | DAT_02f7c540
+    MOV [0x02f7c540],EAX                ; 0053a693 | FLOAT_02f7c540
     PUSH 0x17                           ; 0053a698
         ;   Label: LAB_0053a698
     MOV EAX,[0x0067cf44]                ; 0053a69a | g_CKeysPtr
@@ -2430,7 +2430,7 @@ section .text
     ADD ESP,0x8                         ; 0053aa8e
     MOV EAX,[0x00661c44]                ; 0053aa91 | FLOAT_00661c44
         ;   Label: caseD_3
-    MOV [0x02f7c540],EAX                ; 0053aa96 | DAT_02f7c540
+    MOV [0x02f7c540],EAX                ; 0053aa96 | FLOAT_02f7c540
     MOV EDI,dword ptr [EBP + 0x56]      ; 0053aa9b
         ;   Label: LAB_0053aa9b
     TEST EDI,EDI                        ; 0053aa9e
@@ -2447,7 +2447,7 @@ section .text
         ;   XREF to: 0056ae50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
     FLD float ptr [0x00661c44]          ; 0053aabf | FLOAT_00661c44
     ADD ESP,0x8                         ; 0053aac5
-    FSTP float ptr [0x02f7c540]         ; 0053aac8 | DAT_02f7c540
+    FSTP float ptr [0x02f7c540]         ; 0053aac8 | FLOAT_02f7c540
     TEST byte ptr [0x02cf6a94],0x1      ; 0053aace | g_MouseButtonFlags
         ;   Label: LAB_0053aace
     JZ 0x0053ad02                       ; 0053aad5
@@ -2466,8 +2466,8 @@ section .text
         ;   XREF to: 0053af0c (CONDITIONAL_JUMP)  ; LAB_0053af0c
     MOV EAX,[0x0067b654]                ; 0053ab09 | g_CGamePtr
     FLD float ptr [EAX + 0x264]         ; 0053ab0e | g_CGameInstance.delta_time_float
-    FADD float ptr [0x02f7c630]         ; 0053ab14 | DAT_02f7c630
-    FSTP float ptr [0x02f7c630]         ; 0053ab1a | DAT_02f7c630
+    FADD float ptr [0x02f7c630]         ; 0053ab14 | FLOAT_02f7c630
+    FSTP float ptr [0x02f7c630]         ; 0053ab1a | FLOAT_02f7c630
     MOV EAX,[0x006810c8]                ; 0053ab20 | g_CDemonSetPtr
         ;   Label: LAB_0053ab20
     MOV ESI,dword ptr [EBP + 0x4a]      ; 0053ab25
@@ -2823,7 +2823,7 @@ section .text
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     XOR EBX,EBX                         ; 0053af0c
         ;   Label: LAB_0053af0c
-    MOV dword ptr [0x02f7c630],EBX      ; 0053af0e | DAT_02f7c630
+    MOV dword ptr [0x02f7c630],EBX      ; 0053af0e | FLOAT_02f7c630
     JMP 0x0053ab20                      ; 0053af14
         ;   XREF to: 0053ab20 (UNCONDITIONAL_JUMP)  ; LAB_0053ab20
     XOR EAX,EAX                         ; 0053af19

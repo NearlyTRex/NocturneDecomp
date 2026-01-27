@@ -16,18 +16,18 @@ uint core_platfrm_cpp_FUN_0054e480(void)
   
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CPlatformClassInfo.name_hash);
-  switch(pCVar1[5].field7_0x6c) {
+  switch(pCVar1[5].unk1) {
   case 0:
-    pCVar1[5].field7_0x6c = 1;
+    pCVar1[5].unk1 = 1;
     break;
   case 1:
-    pCVar1[5].field7_0x6c = 2;
+    pCVar1[5].unk1 = 2;
     break;
   case 2:
-    pCVar1[5].field7_0x6c = 3;
+    pCVar1[5].unk1 = 3;
     break;
   default:
-    pCVar1[5].field7_0x6c = 0;
+    pCVar1[5].unk1 = 0;
     return 1;
   }
   return 1;

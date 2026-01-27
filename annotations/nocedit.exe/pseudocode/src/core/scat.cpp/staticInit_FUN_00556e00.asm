@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_scat.cpp_staticInit_FUN_00556e00(void)
+; __cdecl void core_scat.cpp_staticInit_FUN_00556e00(void)
 ;
 ;
 ; Referenced Globals:

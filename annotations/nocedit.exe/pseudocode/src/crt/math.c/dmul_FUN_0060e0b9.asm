@@ -11,7 +11,7 @@
 ;   crt_fpemu.c_staticInit_FUN_0060be80 at 0060bec7
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00684acd
+;   byte BYTE_00684acd = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0060eb3a
@@ -43,7 +43,7 @@ section .text
     RET                                 ; 0060e0d0
     RCR ECX,0x1                         ; 0060e0d1
         ;   Label: LAB_0060e0d1
-    CMP byte ptr [0x00684acd],0x0       ; 0060e0d3 | DAT_00684acd
+    CMP byte ptr [0x00684acd],0x0       ; 0060e0d3 | BYTE_00684acd
         ;   Label: LAB_0060e0d3
     JZ 0x0060e0eb                       ; 0060e0da
         ;   XREF to: 0060e0eb (CONDITIONAL_JUMP)  ; LAB_0060e0eb

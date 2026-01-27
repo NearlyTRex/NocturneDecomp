@@ -13,7 +13,7 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
   int iVar1;
   char *filename;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->field9_0x58);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk2);
   if (this_ptr->lighting_active == 0) {
     iVar1 = 0;
     do {

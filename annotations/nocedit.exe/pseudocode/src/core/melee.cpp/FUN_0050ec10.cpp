@@ -20,20 +20,20 @@ void core_melee_cpp_FUN_0050ec10(void)
   CVector3f CStack_18;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);
-  if ((0 < *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18)) &&
+  if ((0 < *(int *)(in_stack_00000004[1].base.actor_name + 0x18)) &&
      (in_stack_00000008 =
-           *(float *)(in_stack_00000004[1].base_actor.actor_name + 0x1c) - in_stack_00000008,
-     *(float *)(in_stack_00000004[1].base_actor.actor_name + 0x1c) = in_stack_00000008,
+           *(float *)(in_stack_00000004[1].base.actor_name + 0x1c) - in_stack_00000008,
+     *(float *)(in_stack_00000004[1].base.actor_name + 0x1c) = in_stack_00000008,
      in_stack_00000008 <= 0.0)) {
-    fVar2 = in_stack_00000004[1].base_actor.location.position.x * (float)1.1499999999999999;
-    pCVar1 = (in_stack_00000004->base_actor).vtable._uc;
-    *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18) =
-         *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18) + -1;
-    in_stack_00000004[1].base_actor.location.position.x = fVar2;
-    *(float *)(in_stack_00000004[1].base_actor.actor_name + 0x1c) = fVar2;
+    fVar2 = in_stack_00000004[1].base.location.position.x * (float)1.1499999999999999;
+    pCVar1 = (in_stack_00000004->base).vtable._uc;
+    *(int *)(in_stack_00000004[1].base.actor_name + 0x18) =
+         *(int *)(in_stack_00000004[1].base.actor_name + 0x18) + -1;
+    in_stack_00000004[1].base.location.position.x = fVar2;
+    *(float *)(in_stack_00000004[1].base.actor_name + 0x1c) = fVar2;
     input_local_point = (CVector3f *)(*(pCVar1->_uc).cfunc3)();
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,&CStack_18,input_local_point);
+              (&in_stack_00000004->base,&CStack_18,input_local_point);
     core_gore_cpp_FUN_004edaa0();
     return;
   }

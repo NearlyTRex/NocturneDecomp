@@ -13,7 +13,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBit
   uint *puVar2;
   uint *puVar3;
   
-  puVar2 = this_ptr->ptrAct;
+  puVar2 = this_ptr->act;
   puVar3 = g_Hardware32BitPalette;
   for (iVar1 = 0x100; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;

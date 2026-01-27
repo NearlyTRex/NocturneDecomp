@@ -15,7 +15,7 @@ void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)
   if (iVar1 != 0) {
     iVar1 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select mission to play","world",
-                       "*.msn",(int)g_CNetGameInstance->field7_0x118);
+                       "*.msn",(int)g_CNetGamePtr->unk);
     if (iVar1 != 0) {
       g_CurrentSaveFile = '\0';
       while( true ) {
@@ -24,10 +24,10 @@ void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)
         core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
       }
     }
-    core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGameInstance);
+    core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
     return;
   }
-  core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGameInstance);
+  core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
             (g_CEditorToolsPtr,"Can't init network to host game.",unaff_EBX);
   return;

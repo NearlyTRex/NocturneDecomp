@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 25,
-        "line": 47,
-        "message": "'CDemonLight' {aka 'struct CDemonLight'} has no member named 'field17_0x1cbc'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 15,
         "line": 49,
@@ -20,18 +14,6 @@
         "message": "'stack0x00000000' was not declared in this scope"
       },
       {
-        "category": "missing_member",
-        "column": 19,
-        "line": 66,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field71_0x218'; did you mean 'field_208'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 78,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field73_0x15f6e4'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 13,
         "line": 80,
@@ -42,24 +24,6 @@
         "column": 20,
         "line": 80,
         "message": "expected primary-expression before ')' token"
-      },
-      {
-        "category": "missing_member",
-        "column": 48,
-        "line": 80,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field73_0x15f6e4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 42,
-        "line": 84,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field73_0x15f6e4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 55,
-        "line": 111,
-        "message": "'CWeather' {aka 'struct CWeather'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       }
     ],
     "success": false,
@@ -75,6 +39,12 @@
         "column": 73,
         "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 80,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
@@ -377,7 +347,7 @@
     },
     {
       "addr": "02d807ac",
-      "name": "g_CDemonLightInstance.field17_0x1cbc",
+      "name": "g_CDemonLightInstance.unk2",
       "type": "undefined4",
       "value": null
     },
@@ -658,7 +628,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 73,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(pCVar5->field73_0x15f6e4 + 4) + 0x154) + 8))();",
+      "text": "(**(code **)(*(int *)(*(int *)(pCVar5->unk13 + 4) + 0x154) + 8))();",
       "type": "unresolved_funcptr"
     },
     {

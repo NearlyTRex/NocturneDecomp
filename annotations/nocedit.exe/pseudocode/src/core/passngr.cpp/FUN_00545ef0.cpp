@@ -51,8 +51,8 @@ void core_passngr_cpp_FUN_00545ef0(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,1,1);
       if (in_stack_00000004[2].cloth_data[0x50cc] != '\0') {
-        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                  (&in_stack_00000004->base_actor,in_stack_00000004[2].cloth_data + 0x50cc);
+        (*((in_stack_00000004->base).vtable._ub)->playSound)
+                  (&in_stack_00000004->base,in_stack_00000004[2].cloth_data + 0x50cc);
         in_stack_00000004[2].cloth_data[0x50cc] = '\0';
       }
     }
@@ -69,20 +69,20 @@ void core_passngr_cpp_FUN_00545ef0(void)
   }
   if (iVar2 != 0) {
     pCVar6 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (&in_stack_00000004->base_actor,&local_1c,
+                       (&in_stack_00000004->base,&local_1c,
                         &(in_stack_00000004->model).accumulated_root_motion);
-    pCVar1 = &(in_stack_00000004->base_actor).location;
+    pCVar1 = &(in_stack_00000004->base).location;
     (pCVar1->position).x = pCVar6->x + (pCVar1->position).x;
-    (in_stack_00000004->base_actor).location.position.y =
-         pCVar6->y + (in_stack_00000004->base_actor).location.position.y;
-    (in_stack_00000004->base_actor).location.position.z =
-         pCVar6->z + (in_stack_00000004->base_actor).location.position.z;
+    (in_stack_00000004->base).location.position.y =
+         pCVar6->y + (in_stack_00000004->base).location.position.y;
+    (in_stack_00000004->base).location.position.z =
+         pCVar6->z + (in_stack_00000004->base).location.position.z;
     iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x5130);
     if (iVar2 != 0) {
       *(float *)(iVar2 + 0x20) = (pCVar1->position).x;
-      *(float *)(iVar2 + 0x24) = (in_stack_00000004->base_actor).location.position.y;
-      *(float *)(iVar2 + 0x28) = (in_stack_00000004->base_actor).location.position.z;
-      *(int *)(iVar2 + 0x2c) = (in_stack_00000004->base_actor).location.area_id;
+      *(float *)(iVar2 + 0x24) = (in_stack_00000004->base).location.position.y;
+      *(float *)(iVar2 + 0x28) = (in_stack_00000004->base).location.position.z;
+      *(int *)(iVar2 + 0x2c) = (in_stack_00000004->base).location.area_id;
     }
   }
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(&in_stack_00000004->model)

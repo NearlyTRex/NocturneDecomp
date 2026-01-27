@@ -19,7 +19,7 @@ void core_lever_cpp_FUN_00504b20(void)
   float in_stack_00000008;
   
   if (*(float *)(in_stack_00000004 + 0x2dc) != in_stack_00000008) {
-    if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
+    if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
       if ((in_stack_00000008 <= 0.0) && (0.0 < *(float *)(in_stack_00000004 + 0x2dc))) {
         core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       }

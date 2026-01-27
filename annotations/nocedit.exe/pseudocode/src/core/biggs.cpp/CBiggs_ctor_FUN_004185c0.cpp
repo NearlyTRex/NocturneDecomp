@@ -17,9 +17,9 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004185c0(CBiggs *this_ptr)
   char *pcVar6;
   char *pcVar7;
   
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-            ((CKeyFramedModelInstance *)(pCVar4[1].base_character.base_actor.actor_name + 8));
+            ((CKeyFramedModelInstance *)(pCVar4[1].base.base.actor_name + 8));
   iVar5 = core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(iVar5 + -0xbeec) = &g_CBiggsVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840

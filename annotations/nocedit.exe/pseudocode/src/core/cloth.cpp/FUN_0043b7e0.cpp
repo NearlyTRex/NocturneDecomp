@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_cloth.cpp_FUN_0043b7e0(uint param_1, uint param_2,
-   uint param_3) */
-
 void core_cloth_cpp_FUN_0043b7e0(void)
 
 {
@@ -54,18 +50,18 @@ void core_cloth_cpp_FUN_0043b7e0(void)
     local_40 = (float)(fVar4 * (float10)*(float *)(iVar2 + 0x14));
     local_38 = 0.0;
     local_3c = (float)(fVar3 * (float10)*(float *)(iVar2 + 0x18));
-    local_64.x = (int)ROUND(local_40 * _DAT_0065bb3c);
-    local_64.y = (int)ROUND(local_3c * _DAT_0065bb3c);
-    local_64.z = (int)ROUND(_DAT_0065bb3c * 0.0);
+    local_64.x = (int)ROUND(local_40 * 256.0f);
+    local_64.y = (int)ROUND(local_3c * 256.0f);
+    local_64.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                local_1c),&local_64);
     local_38 = *(float *)(iVar2 + 0x44);
     local_28 = vertex_index1 + 0xd;
-    local_4c.x = (int)ROUND(local_40 * _DAT_0065bb3c);
-    local_4c.y = (int)ROUND(local_3c * _DAT_0065bb3c);
-    local_4c.z = (int)ROUND(local_38 * _DAT_0065bb3c);
+    local_4c.x = (int)ROUND(local_40 * 256.0f);
+    local_4c.y = (int)ROUND(local_3c * 256.0f);
+    local_4c.z = (int)ROUND(local_38 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +

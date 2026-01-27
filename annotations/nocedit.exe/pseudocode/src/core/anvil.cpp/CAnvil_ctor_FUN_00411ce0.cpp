@@ -15,7 +15,7 @@ CAnvil * __cdecl core_anvil_cpp_CAnvil_ctor_FUN_00411ce0(CAnvil *this_ptr)
   char *pcVar3;
   CKeyFramedModelInstance *pCVar4;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pcVar3 = "acmeanvilinc";

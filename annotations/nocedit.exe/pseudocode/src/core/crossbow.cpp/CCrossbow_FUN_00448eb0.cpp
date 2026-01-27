@@ -14,8 +14,8 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448eb0(CCrossbow *this_ptr)
   CKeyFramedModel *pCVar3;
   uint *in_stack_00000008;
   
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     (&(this_ptr->base_weapon).model);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&(this_ptr->base).model)
+  ;
   fVar1 = (pCVar3->bounds_max).y;
   fVar2 = (pCVar3->bounds_max).z;
   *in_stack_00000008 = 0;

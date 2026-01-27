@@ -51,8 +51,8 @@ LAB_004cfeb9:
     if (pcVar5 != (char *)0x0) {
       *pcVar5 = '\0';
     }
-    iVar2 = (*((this_ptr->win_font_helper->base_font).vtable)->getStringWidth)
-                      (&this_ptr->win_font_helper->base_font,text_00);
+    iVar2 = (*((this_ptr->win_font_helper->base).vtable)->getStringWidth)
+                      (&this_ptr->win_font_helper->base,text_00);
     if (iVar4 < iVar2) {
       iVar4 = iVar2;
     }

@@ -10,13 +10,13 @@
 ;
 ; XREF[5]:
 ;   core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620 at 0041b628
-;   core_crossbow.cpp_FUN_00448c70 at 00448c84
-;   core_flame.cpp_FUN_004c9a60 at 004c9a7a
-;   core_flamecan.cpp_FUN_004cb160 at 004cb184
+;   core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70 at 00448c84
+;   core_flame.cpp_factoryFunc_FUN_004c9a60 at 004c9a7a
+;   core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160 at 004cb184
 ;   core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60 at 005e8e84
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable PTR_core_flame.cpp_FUN_0065e034
+;   CDemonActor_vtable g_CFlameVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
@@ -34,7 +34,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004c9aa9
         ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c9aae
-    MOV dword ptr [EAX + 0x154],0x65e034 ; 004c9ab1 | PTR_core_flame.cpp_FUN_0065e034
+    MOV dword ptr [EAX + 0x154],0x65e034 ; 004c9ab1 | g_CFlameVTable
     MOV EBX,EAX                         ; 004c9abb
     MOV dword ptr [EAX + 0x158],0x3f800000 ; 004c9abd
     PUSH 0x41000000                     ; 004c9ac7

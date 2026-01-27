@@ -11,7 +11,7 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_FUN_00412a40(CBackgroundActor *th
 {
   CActorPropertyList *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
+  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
   if (this_ptr->collide_with_me == 0) {

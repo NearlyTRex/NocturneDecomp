@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00822944
-;   undefined4 DAT_00822958
-;   undefined4 DAT_0082295c
+;   int INT_00822958
+;   int INT_0082295c
 ;   undefined4 DAT_00822968
 ;   undefined4 DAT_0082296c
 ;
@@ -61,7 +61,7 @@ section .text
     MOV dword ptr [EBX + 0x8],EDX       ; 0041d59c
     PUSH EDI                            ; 0041d59f
         ;   Label: LAB_0041d59f
-    MOV EDI,dword ptr [0x00822958]      ; 0041d5a0 | DAT_00822958
+    MOV EDI,dword ptr [0x00822958]      ; 0041d5a0 | INT_00822958
     PUSH EDI                            ; 0041d5a6
     LEA EAX,[ESP + 0x2c]                ; 0041d5a7
     PUSH EAX                            ; 0041d5ab
@@ -80,7 +80,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 0041d5c9
     MOV ECX,dword ptr [EAX + 0x8]       ; 0041d5cc
     MOV dword ptr [EDX + 0x8],ECX       ; 0041d5cf
-    MOV EBP,dword ptr [0x0082295c]      ; 0041d5d2 | DAT_0082295c
+    MOV EBP,dword ptr [0x0082295c]      ; 0041d5d2 | INT_0082295c
         ;   Label: LAB_0041d5d2
     PUSH EBP                            ; 0041d5d8
     LEA EAX,[ESP + 0x38]                ; 0041d5d9

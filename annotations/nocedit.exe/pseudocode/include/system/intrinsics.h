@@ -220,6 +220,55 @@
 #endif // __MMX__
 
 // =============================================================================
+// CPUID Intrinsics (CPU identification)
+// =============================================================================
+// These wrap the CPUID instruction. Ghidra emits these when decompiling
+// CPU detection code. Each returns a pointer to a static 4-element array
+// containing EAX, EBX, ECX, EDX values from CPUID.
+//
+// Note: The returned pointer points to static storage that is overwritten
+// by subsequent calls. Copy the values if you need to preserve them.
+
+#if defined(_MSC_VER)
+#include <intrin.h>
+static inline int* _cpuid_intrinsic(int leaf) {
+    static int _cpuid_regs[4];
+    __cpuid(_cpuid_regs, leaf);
+    return _cpuid_regs;
+}
+#elif defined(__GNUC__) || defined(__clang__)
+#include <cpuid.h>
+static inline int* _cpuid_intrinsic(int leaf) {
+    static int _cpuid_regs[4];
+    __cpuid(leaf, _cpuid_regs[0], _cpuid_regs[1], _cpuid_regs[2], _cpuid_regs[3]);
+    return _cpuid_regs;
+}
+#else
+// Fallback for compilers without CPUID intrinsics
+static inline int* _cpuid_intrinsic(int leaf) {
+    static int _cpuid_regs[4] = {0, 0, 0, 0};
+    return _cpuid_regs;
+}
+#endif
+
+// CPUID leaf 0 - vendor string and max leaf
+#define cpuid_basic_info(x) _cpuid_intrinsic(x)
+// CPUID leaf 1 - version and feature info
+#define cpuid_Version_info(x) _cpuid_intrinsic(x)
+// CPUID leaf 2 - cache/TLB info
+#define cpuid_Cache_params(x) _cpuid_intrinsic(x)
+// CPUID leaf 3 - processor serial number
+#define cpuid_Serial_number(x) _cpuid_intrinsic(x)
+// CPUID leaf 4 - deterministic cache params
+#define cpuid_Deterministic_cache(x) _cpuid_intrinsic(x)
+// CPUID leaf 5 - MONITOR/MWAIT features
+#define cpuid_Monitor_mwait(x) _cpuid_intrinsic(x)
+// CPUID leaf 6 - thermal and power management
+#define cpuid_Thermal_power(x) _cpuid_intrinsic(x)
+// CPUID leaf 7 - extended features
+#define cpuid_Extended_features(x) _cpuid_intrinsic(x)
+
+// =============================================================================
 // Math Intrinsics
 // =============================================================================
 

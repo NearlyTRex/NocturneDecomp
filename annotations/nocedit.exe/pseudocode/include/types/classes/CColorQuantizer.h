@@ -21,7 +21,7 @@ typedef struct CColorQuantizer {
     float current_g; // 0x24
     float current_b; // 0x28
     float current_i; // 0x2c
-    char field_48[4096]; // 0x30
+    char unk[4096]; // 0x30
     SPaletteEntry palette[256]; // 0x1030
     SColorBox boxes[256]; // 0x2030
     char output_region[768]; // 0x4830

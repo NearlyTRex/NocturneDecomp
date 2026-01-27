@@ -15,7 +15,7 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch *this_ptr)
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
+  pCVar2 = core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
             ((CDeformableModelInstance *)(pCVar2 + 1));
   iVar3 = core_morph_cpp_FUN_0052b310();

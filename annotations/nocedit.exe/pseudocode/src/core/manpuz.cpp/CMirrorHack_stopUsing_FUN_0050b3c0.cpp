@@ -10,12 +10,12 @@ void __cdecl
 core_manpuz_cpp_CMirrorHack_stopUsing_FUN_0050b3c0(CMirrorHack *this_ptr,CDemonActor *user)
 
 {
-  if (user != *(CDemonActor **)(this_ptr->field1_0x158 + 0x17c)) {
+  if (user != *(CDemonActor **)(this_ptr->unk + 0x17c)) {
     return;
   }
-  this_ptr->field1_0x158[0x17c] = '\0';
-  this_ptr->field1_0x158[0x17d] = '\0';
-  this_ptr->field1_0x158[0x17e] = '\0';
-  this_ptr->field1_0x158[0x17f] = '\0';
+  this_ptr->unk[0x17c] = '\0';
+  this_ptr->unk[0x17d] = '\0';
+  this_ptr->unk[0x17e] = '\0';
+  this_ptr->unk[0x17f] = '\0';
   return;
 }

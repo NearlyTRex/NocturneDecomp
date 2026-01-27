@@ -14,12 +14,12 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523fb0(CDemonMission *this_ptr
   int iVar3;
   int in_stack_00000008;
   
-  if (in_stack_00000008 != *(int *)this_ptr->field0_0x0) {
-    *(int *)this_ptr->field0_0x0 = in_stack_00000008;
+  if (in_stack_00000008 != *(int *)this_ptr->unk1) {
+    *(int *)this_ptr->unk1 = in_stack_00000008;
     core_set_cpp_CDemonSet_load_FUN_00569410
-              (g_CDemonSetPtr,this_ptr->field4_0x148 + in_stack_00000008 * 0x100);
+              (g_CDemonSetPtr,this_ptr->unk3 + in_stack_00000008 * 0x100);
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
-    if (*(int *)(this_ptr->field6_0x54c + 0x338) == 0) {
+    if (*(int *)(this_ptr->unk4 + 0x338) == 0) {
       core_mission_cpp_CDemonMission_FUN_00523cf0(this_ptr);
     }
     iVar3 = 0;

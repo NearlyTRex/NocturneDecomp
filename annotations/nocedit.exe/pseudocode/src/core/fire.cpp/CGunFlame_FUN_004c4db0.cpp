@@ -21,15 +21,15 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4db0(CGunFlame *this_ptr)
   float local_10;
   float local_c;
   
-  if (this_ptr->field0_0x0 + 4 != (char *)in_stack_00000008) {
-    *(uint *)(this_ptr->field0_0x0 + 4) = *in_stack_00000008;
-    *(uint *)(this_ptr->field0_0x0 + 8) = in_stack_00000008[1];
-    *(uint *)(this_ptr->field0_0x0 + 0xc) = in_stack_00000008[2];
+  if (this_ptr->unk + 4 != (char *)in_stack_00000008) {
+    *(uint *)(this_ptr->unk + 4) = *in_stack_00000008;
+    *(uint *)(this_ptr->unk + 8) = in_stack_00000008[1];
+    *(uint *)(this_ptr->unk + 0xc) = in_stack_00000008[2];
   }
   local_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.0);
-  *(float *)this_ptr->field0_0x0 = 2.0f * local_c;
+  *(float *)this_ptr->unk = 2.0f * local_c;
   local_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,19.0);
-  *(float *)(this_ptr->field0_0x0 + 0x1c) = local_c;
+  *(float *)(this_ptr->unk + 0x1c) = local_c;
   local_20.x = *in_stack_0000000c;
   local_20.y = in_stack_0000000c[1];
   local_20.z = in_stack_0000000c[2];
@@ -44,18 +44,18 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4db0(CGunFlame *this_ptr)
   local_10 = local_38.z;
   local_c = local_38.z;
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_6c,&local_2c,&local_38);
-  if ((CVector3f *)(this_ptr->field0_0x0 + 0x10) != pCVar1) {
-    ((CVector3f *)(this_ptr->field0_0x0 + 0x10))->x = pCVar1->x;
-    *(float *)(this_ptr->field0_0x0 + 0x14) = pCVar1->y;
-    *(float *)(this_ptr->field0_0x0 + 0x18) = pCVar1->z;
+  if ((CVector3f *)(this_ptr->unk + 0x10) != pCVar1) {
+    ((CVector3f *)(this_ptr->unk + 0x10))->x = pCVar1->x;
+    *(float *)(this_ptr->unk + 0x14) = pCVar1->y;
+    *(float *)(this_ptr->unk + 0x18) = pCVar1->z;
   }
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.1);
-  *(float *)(this_ptr->field0_0x0 + 4) =
-       *(float *)(this_ptr->field0_0x0 + 4) + *(float *)(this_ptr->field0_0x0 + 0x10) * fVar2;
-  *(float *)(this_ptr->field0_0x0 + 8) =
-       *(float *)(this_ptr->field0_0x0 + 8) + *(float *)(this_ptr->field0_0x0 + 0x14) * fVar2;
-  *(float *)(this_ptr->field0_0x0 + 0xc) =
-       *(float *)(this_ptr->field0_0x0 + 0xc) + *(float *)(this_ptr->field0_0x0 + 0x18) * fVar2;
-  *(uint *)(this_ptr->field0_0x0 + 0x20) = in_stack_00000010;
+  *(float *)(this_ptr->unk + 4) =
+       *(float *)(this_ptr->unk + 4) + *(float *)(this_ptr->unk + 0x10) * fVar2;
+  *(float *)(this_ptr->unk + 8) =
+       *(float *)(this_ptr->unk + 8) + *(float *)(this_ptr->unk + 0x14) * fVar2;
+  *(float *)(this_ptr->unk + 0xc) =
+       *(float *)(this_ptr->unk + 0xc) + *(float *)(this_ptr->unk + 0x18) * fVar2;
+  *(uint *)(this_ptr->unk + 0x20) = in_stack_00000010;
   return;
 }

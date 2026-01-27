@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_wateract.cpp_staticInit_FUN_005ea810(void)
+; __cdecl void core_wateract.cpp_staticInit_FUN_005ea810(void)
 ;
 ;
 ; Referenced Globals:

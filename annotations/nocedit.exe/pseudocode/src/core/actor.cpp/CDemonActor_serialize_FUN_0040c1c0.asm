@@ -17,7 +17,7 @@
 ;   core_bat.cpp_CBat_serialize_FUN_00414910 at 00414916
 ;   core_battery.cpp_CBattery_load_FUN_00418000 at 00418006
 ;   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 at 0041988c
-;   core_boxactor.cpp_CBoxActor_load_FUN_00422060 at 00422070
+;   core_boxactor.cpp_CBoxActor_serialize_FUN_00422060 at 00422070
 ;   core_chain.cpp_CChain_load_FUN_00430fe0 at 00430fe6
 ;   ... and 40 more
 ;

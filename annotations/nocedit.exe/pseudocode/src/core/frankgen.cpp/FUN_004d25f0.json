@@ -4,20 +4,8 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_frankgen_cpp_FUN_004d25f0()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 46,
-        "message": "'_DAT_0065e670' was not declared in this scope; did you mean 'DAT_0065E370'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 48,
-        "message": "'_DAT_0065e670' was not declared in this scope; did you mean 'DAT_0065E370'?"
       }
     ],
     "success": false,
@@ -31,13 +19,31 @@
       {
         "category": "other",
         "column": 6,
-        "line": 39,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 39,
+        "line": 36,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -48,13 +54,13 @@
       },
       {
         "category": "other",
-        "column": 34,
+        "column": 44,
         "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 8,
+        "column": 19,
         "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -66,49 +72,30 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 34,
         "line": 46,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 48,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 49,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 49,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 53,
-        "line": 51,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 183,
+    "complexity_score": 166,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 43,
-    "suspect_count": 13,
+    "pseudocode_lines": 41,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param",
-      "warning_overlapping_globals"
+      "stack_param"
     ],
-    "total_lines": 168
+    "total_lines": 166
   },
   "cross_references": [],
   "function": {
@@ -156,9 +143,9 @@
     },
     {
       "addr": "0065e670",
-      "name": "DAT_0065e670",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065e670",
+      "type": "float",
+      "value": "2300"
     },
     {
       "addr": "0067cf44",
@@ -256,92 +243,85 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "switch(*(uint *)in_stack_00000004[1].actor_name) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).heading = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).bank = (in_stack_00000004->orient).heading;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).bank = (in_stack_00000004->orient).heading;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).pitch = (in_stack_00000004->orient).bank;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).pitch = (in_stack_00000004->orient).bank;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 33,
       "match": "in_stack_00000008",
       "text": "*(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar1 + 0x15c);",
       "type": "stack_param"

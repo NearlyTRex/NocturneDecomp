@@ -41,18 +41,18 @@
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGame* g_CGamePtr = 02d81a9c
-;   undefined4 DAT_00822498
-;   undefined4 DAT_008224cc
-;   undefined4 DAT_008224d0
-;   undefined4 DAT_008224dc
+;   int INT_00822498
+;   int INT_008224cc
+;   int INT_008224d0
+;   float FLOAT_008224dc
 ;   CConsole g_ConsolePtr
 ;   ... and 4 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_baron.cpp_FUN_004135e0
-;   core_baron.cpp_FUN_00413a00
+;   core_baron.cpp_CBaron_FUN_004135e0
+;   core_baron.cpp_CBaron_FUN_00413a00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
 ;   core_charactr.cpp_CCharacter_FUN_00429870
@@ -174,8 +174,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 00412fb2
     MOV EDX,dword ptr [EAX + 0x4]       ; 00412fb5
     MOV dword ptr [EAX],EDX             ; 00412fb8
-    CALL core_baron.cpp_FUN_00413a00    ; 00412fba
-        ;   XREF to: 00413a00 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_00413a00()
+    CALL core_baron.cpp_CBaron_FUN_00413a00 ; 00412fba
+        ;   XREF to: 00413a00 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_00413a00(CBaron * this_ptr, float param_2)
     MOV EBX,dword ptr [EBP + 0x1fccc]   ; 00412fbf
     ADD ESP,0x8                         ; 00412fc5
     TEST EBX,EBX                        ; 00412fc8
@@ -265,7 +265,7 @@ section .text
         ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004130d9
     PUSH 0x59ddb0                       ; 004130dc
-    MOV ESI,dword ptr [0x00822498]      ; 004130e1 | DAT_00822498
+    MOV ESI,dword ptr [0x00822498]      ; 004130e1 | INT_00822498
     PUSH ESI                            ; 004130e7
     LEA EAX,[EBP + 0x1fc9c]             ; 004130e8
     PUSH dword ptr [EBP + 0x1fca8]      ; 004130ee
@@ -338,9 +338,9 @@ section .text
     CMP EBX,0x2                         ; 004131c8
     JL 0x00413135                       ; 004131cb
         ;   XREF to: 00413135 (CONDITIONAL_JUMP)  ; LAB_00413135
-    FLD float ptr [0x008224dc]          ; 004131d1 | DAT_008224dc
+    FLD float ptr [0x008224dc]          ; 004131d1 | FLOAT_008224dc
     FADD float ptr [ESP + 0xb0]         ; 004131d7
-    FSTP float ptr [0x008224dc]         ; 004131de | DAT_008224dc
+    FSTP float ptr [0x008224dc]         ; 004131de | FLOAT_008224dc
     POP EDI                             ; 004131e4
     ADD ESP,0x98                        ; 004131e5
     POP EBP                             ; 004131eb
@@ -350,8 +350,8 @@ section .text
     PUSH dword ptr [ESP + 0xac]         ; 004131ef
         ;   Label: LAB_004131ef
     PUSH EBP                            ; 004131f6
-    CALL core_baron.cpp_FUN_004135e0    ; 004131f7
-        ;   XREF to: 004135e0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_004135e0()
+    CALL core_baron.cpp_CBaron_FUN_004135e0 ; 004131f7
+        ;   XREF to: 004135e0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_004135e0(CBaron * this_ptr)
     ADD ESP,0x8                         ; 004131fc
     JMP 0x00412f41                      ; 004131ff
         ;   XREF to: 00412f41 (UNCONDITIONAL_JUMP)  ; LAB_00412f41
@@ -387,7 +387,7 @@ section .text
     LEA EAX,[EBP + 0x158]               ; 0041323b
     JMP 0x0041300b                      ; 00413241
         ;   XREF to: 0041300b (UNCONDITIONAL_JUMP)  ; LAB_0041300b
-    MOV EBX,dword ptr [0x008224cc]      ; 00413246 | DAT_008224cc
+    MOV EBX,dword ptr [0x008224cc]      ; 00413246 | INT_008224cc
         ;   Label: caseD_4
     LEA EAX,[EBX*0x4 + 0x0]             ; 0041324c
     SUB EAX,EBX                         ; 00413253
@@ -419,7 +419,7 @@ section .text
     MOV dword ptr [ESP + 0x7c],EAX      ; 00413298
     MOV EAX,dword ptr [EBX + 0x8]       ; 0041329c
     MOV dword ptr [ESP + 0x80],EAX      ; 0041329f
-    MOV EBX,dword ptr [0x008224d0]      ; 004132a6 | DAT_008224d0
+    MOV EBX,dword ptr [0x008224d0]      ; 004132a6 | INT_008224d0
         ;   Label: LAB_004132a6
     LEA EAX,[EBX*0x4 + 0x0]             ; 004132ac
     SUB EAX,EBX                         ; 004132b3

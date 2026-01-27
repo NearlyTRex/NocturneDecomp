@@ -6,19 +6,19 @@
 // Structure: CScript
 // Ghidra size: 0x480 (1152 bytes)
 typedef struct CScript {
-    char padding_0x0[4]; // 0x0
-    int whoIsSpeaking; // 0x4
-    char padding_0x8[4]; // 0x8
-    int focusActor; // 0xc
-    char padding_0x10[4]; // 0x10
-    int focusActorLocked; // 0x14
-    char padding_0x18[48]; // 0x18
-    int nextCmd; // 0x48
-    float cmdTimer; // 0x4c
-    float dialogWavTime; // 0x50
-    char currentMessage; // 0x54
-    char padding_0x55[1031]; // 0x55
-    int callStack_count; // 0x45c
-    char field_1120[32]; // 0x460
+    char unk1[4]; // 0x0
+    int who_is_speaking; // 0x4
+    char unk2[4]; // 0x8
+    int focus_actor; // 0xc
+    char unk3[4]; // 0x10
+    int focus_actor_locked; // 0x14
+    char unk4[48]; // 0x18
+    int next_cmd; // 0x48
+    float cmd_timer; // 0x4c
+    float dialog_wav_time; // 0x50
+    char current_message; // 0x54
+    char unk5[1031]; // 0x55
+    int call_stack_count; // 0x45c
+    char unk6[32]; // 0x460
 } CScript;
 

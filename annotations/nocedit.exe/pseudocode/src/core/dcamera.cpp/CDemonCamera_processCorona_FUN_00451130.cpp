@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_00451130(CDemonCamera *this_ptr)
 
 {
@@ -17,7 +15,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_00451130(CDemonCame
   iVar1 = this_ptr->corona_blend_factor >> 0x1f;
   iVar1 = (this_ptr->corona_blend_factor + iVar1 * -0x100) - (uint)(iVar1 << 7 < 0);
   iVar2 = iVar1 >> 0x1f;
-  _DAT_00c199f8 = (int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+  INT_00c199f8 = (int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
   core_event_cpp_FUN_004b19d0();
   if (1 < g_ImageBytesPerPixel) {
     core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160

@@ -9,6 +9,6 @@
 void __cdecl core_baron_cpp_CBaron_FUN_00414070(CBaron *this_ptr)
 
 {
-  core_hero_cpp_CHero_FUN_004f3fa0(&this_ptr->field0_0x0);
+  core_hero_cpp_CHero_FUN_004f3fa0(&this_ptr->base);
   return;
 }

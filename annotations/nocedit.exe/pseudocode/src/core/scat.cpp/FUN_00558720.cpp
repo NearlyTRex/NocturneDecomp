@@ -63,8 +63,8 @@ void core_scat_cpp_FUN_00558720(void)
      (*(int *)(in_stack_00000004[0x8d].create_event + 0x38) != 2)) {
     local_13c._ub =
          (CDemonActor_vtable *)
-         ((float)in_stack_00000004[0x8d].field11_0xdc * (float)3.1415926535000001 *
-          (float)2 * in_stack_00000008 + local_13c._ub);
+         ((float)in_stack_00000004[0x8d].unk2 * (float)3.1415926535000001 * (float)2 *
+          in_stack_00000008 + local_13c._ub);
     local_1c = 0x3fc90fdb;
     if ((float)local_13c < -1.570796f) {
       local_13c._ub = (CDemonActor_vtable *)0xbfc90fdb;
@@ -143,7 +143,7 @@ LAB_00558aeb:
                       &CStack_60);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(in_stack_00000004,&CStack_9c,pCVar5);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_a8,DAT_03106174);
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_a8,INT_03106174);
   CStack_84.x = CStack_9c.x - pCVar5->x;
   CStack_84.y = CStack_9c.y - pCVar5->y;
   CStack_84.z = CStack_9c.z - pCVar5->z;

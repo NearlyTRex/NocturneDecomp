@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_boneguy.cpp_staticInit_FUN_0041b6d0(void)
+; __cdecl void core_boneguy.cpp_staticInit_FUN_0041b6d0(void)
 ;
 ;
 ; Referenced Globals:

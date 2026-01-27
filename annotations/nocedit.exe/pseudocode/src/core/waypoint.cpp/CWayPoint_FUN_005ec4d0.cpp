@@ -9,6 +9,6 @@
 void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec4d0(CWayPoint *this_ptr)
 
 {
-  core_trigger_cpp_CTrigger_FUN_005e0f70(&this_ptr->base_trigger);
+  core_trigger_cpp_CTrigger_FUN_005e0f70(&this_ptr->base);
   return;
 }

@@ -9,7 +9,7 @@
 void __cdecl core_hero_cpp_CHero_FUN_004f3af0(CHero *this_ptr)
 
 {
-  this_ptr->field1_0xbe24 = 0;
-  core_charactr_cpp_CCharacter_FUN_00428e30(&this_ptr->base_character);
+  this_ptr->unk1 = 0;
+  core_charactr_cpp_CCharacter_FUN_00428e30(&this_ptr->base);
   return;
 }

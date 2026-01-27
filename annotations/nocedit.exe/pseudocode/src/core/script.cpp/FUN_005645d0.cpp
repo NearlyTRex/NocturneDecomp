@@ -24,18 +24,20 @@ void core_script_cpp_FUN_005645d0(void)
             (DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1,DAT_031141dc + -1,0);
   g_ActiveRenderColor = 7;
   engine_2d_c_drawHLine_FUN_00402ee0(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1);
-  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_0310fd0c);
-  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_0310fcd8);
+  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&CEdScrollBar_0310fd0c);
+  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&CEdScrollBar_0310fcd8);
   engine_matrix_c_pushViewport_FUN_0050e320
             (DAT_031141e0,DAT_031141e4,(DAT_031141e8 - DAT_031141e0) + -1,
              (DAT_031141ec - DAT_031141e4) + -1);
-  for (iVar1 = DAT_0310fcd8; iVar1 <= DAT_0310fcd8 + DAT_0310fce0; iVar1 = iVar1 + 1) {
+  for (iVar1 = CEdScrollBar_0310fcd8.scroll_position;
+      iVar1 <= CEdScrollBar_0310fcd8.scroll_position + CEdScrollBar_0310fcd8.max_value;
+      iVar1 = iVar1 + 1) {
     core_script_cpp_FUN_005664d0();
   }
   if ((DAT_0310fd40._1_1_ & 0x40) == 0) {
     g_ActiveRenderColor = 0xff;
-    iVar1 = (DAT_0310fd48 - DAT_0310fcd8) * DAT_03114208 + DAT_031141e4;
-    x1 = DAT_03114204 * (DAT_0310fd44 - DAT_0310fd0c) + DAT_031141e0;
+    iVar1 = (DAT_0310fd48 - CEdScrollBar_0310fcd8.scroll_position) * DAT_03114208 + DAT_031141e4;
+    x1 = DAT_03114204 * (DAT_0310fd44 - CEdScrollBar_0310fd0c.scroll_position) + DAT_031141e0;
     y = iVar1 + DAT_03114208 + -1;
     if (DAT_0068105c == 0) {
       engine_2d_c_drawHLine_FUN_00402ee0(x1,y,DAT_03114204 + x1 + -1);

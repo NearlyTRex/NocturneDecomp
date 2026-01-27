@@ -30,7 +30,7 @@
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583514
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00648b39
+;   float FLOAT_00648b39 = 65535
 ;   double DOUBLE_00648b3d = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic DAT_006816c0
@@ -55,7 +55,7 @@ section .text
     SUB ESP,0x50                        ; 005817d6
     AND ESP,0xfffffff8                  ; 005817d9
     FLD float ptr [EBP + 0x1c]          ; 005817dc
-    FMUL float ptr [0x00648b39]         ; 005817df | DAT_00648b39
+    FMUL float ptr [0x00648b39]         ; 005817df | FLOAT_00648b39
     CALL crt_math.c_round_FUN_005fe6b0  ; 005817e5
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x4c]        ; 005817ea

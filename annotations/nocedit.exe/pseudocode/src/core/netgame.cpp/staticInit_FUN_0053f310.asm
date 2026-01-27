@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_staticInit_FUN_0053f310()
+; __cdecl void core_netgame.cpp_staticInit_FUN_0053f310(void)
 ;
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SChatHistoryTypeInfo
 ;   WatcomStaticDestructorNode DAT_006809f0
-;   undefined4 DAT_02f7c740
+;   CNetGame g_CNetGameInstance
 ;   SChatHistory[400] g_ChatHistory
 ;   int g_NetworkPacketSize
 ;   char[1028] g_NetworkReceiveBuffer
@@ -21,7 +21,7 @@
 
 section .text
 
-    PUSH 0x2f7c740                      ; 0053f310 | DAT_02f7c740
+    PUSH 0x2f7c740                      ; 0053f310 | g_CNetGameInstance
         ;   Label: core_netgame.cpp_staticInit_FUN_0053f310
     CALL core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0 ; 0053f315
         ;   XREF to: 0053f6d0 (UNCONDITIONAL_CALL)  ; CNetGame * core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame * this_ptr)

@@ -16,8 +16,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_FUN_0041af90(CBodyPart *this_ptr)
   char *in_stack_00000008;
   
   iVar3 = 0;
-  if (0 < *(int *)(this_ptr->field1_0x158 + 0x34)) {
-    pcVar4 = this_ptr->field1_0x158 + 0x40;
+  if (0 < *(int *)(this_ptr->unk + 0x34)) {
+    pcVar4 = this_ptr->unk + 0x40;
     do {
       iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,in_stack_00000008);
       if (iVar2 == 0) {
@@ -25,16 +25,16 @@ int __cdecl core_bodypart_cpp_CBodyPart_FUN_0041af90(CBodyPart *this_ptr)
       }
       iVar3 = iVar3 + 1;
       pcVar4 = pcVar4 + 0x18;
-    } while (iVar3 < *(int *)(this_ptr->field1_0x158 + 0x34));
+    } while (iVar3 < *(int *)(this_ptr->unk + 0x34));
   }
-  if (9 < *(int *)(this_ptr->field1_0x158 + 0x34)) {
+  if (9 < *(int *)(this_ptr->unk + 0x34)) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
     g_CurrentLineNumber = 0x47a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many body part textures!");
   }
   crt_memory_c_memset_FUN_005fde40
-            (this_ptr->field1_0x158 + *(int *)(this_ptr->field1_0x158 + 0x34) * 0x18 + 0x38,0,0x18);
-  pcVar4 = this_ptr->field1_0x158 + *(int *)(this_ptr->field1_0x158 + 0x34) * 0x18 + 0x40;
+            (this_ptr->unk + *(int *)(this_ptr->unk + 0x34) * 0x18 + 0x38,0,0x18);
+  pcVar4 = this_ptr->unk + *(int *)(this_ptr->unk + 0x34) * 0x18 + 0x40;
   do {
     cVar1 = *in_stack_00000008;
     *pcVar4 = cVar1;
@@ -44,7 +44,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_FUN_0041af90(CBodyPart *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar3 = *(int *)(this_ptr->field1_0x158 + 0x34);
-  *(int *)(this_ptr->field1_0x158 + 0x34) = iVar3 + 1;
+  iVar3 = *(int *)(this_ptr->unk + 0x34);
+  *(int *)(this_ptr->unk + 0x34) = iVar3 + 1;
   return iVar3;
 }

@@ -17,7 +17,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCir
   int in_stack_00000008;
   float in_stack_0000000c;
   
-  pcVar3 = this_ptr->field6_0x5f4 + in_stack_00000008 * 100 + -4;
+  pcVar3 = this_ptr->unk2 + in_stack_00000008 * 100 + -4;
   if (*(int *)pcVar3 != 0) {
     fVar1 = (*(float *)(pcVar3 + 8) * in_stack_0000000c) / 2.0f + *(float *)(pcVar3 + 4);
     *(float *)(pcVar3 + 4) = fVar1;
@@ -33,7 +33,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCir
     }
     if (1.0 <= *(float *)(pcVar3 + 4)) {
       iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aee0(this_ptr);
-      pcVar4 = this_ptr->field6_0x5f4 + iVar2 * 100 + -4;
+      pcVar4 = this_ptr->unk2 + iVar2 * 100 + -4;
       if (*(int *)pcVar4 != 0) {
         g_CurrentFilename = "..\\core\\manpuz.cpp";
         g_CurrentLineNumber = 0x45d;

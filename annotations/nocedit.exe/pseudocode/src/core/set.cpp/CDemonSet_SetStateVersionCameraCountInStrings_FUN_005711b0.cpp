@@ -23,9 +23,8 @@ core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSe
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (in_stack_00000008,"%d\n",pCVar2->cameras[0].field17_0x1a0);
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].field17_0x1a0;
+      crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n",pCVar2->cameras[0].unk4);
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_enemy_smiley.cpp_FUN_005a24d0(uint param_1) */
-
 void core_smiley_cpp_FUN_005a24d0(void)
 
 {
@@ -20,94 +17,94 @@ void core_smiley_cpp_FUN_005a24d0(void)
   CEnemy *in_stack_00000004;
   
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
-  this_ptr = &(in_stack_00000004->base_character).model;
+  this_ptr = &(in_stack_00000004->base).model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-  DAT_03f48fa0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fa0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Head");
-  _DAT_03f48fac =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L ForeArm");
-  _DAT_03f48fb0 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R ForeArm");
-  DAT_03f48fb4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fac = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 L ForeArm");
+  INT_03f48fb0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 R ForeArm");
+  INT_03f48fb4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 L UpperArm");
-  DAT_03f48fb8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fb8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 R UpperArm");
-  _DAT_03f48fbc =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Foot");
-  _DAT_03f48fc0 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R Foot");
-  _DAT_03f48fa4 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Hand");
-  DAT_03f48fa8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fbc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 L Foot");
+  INT_03f48fc0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 R Foot");
+  INT_03f48fa4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 L Hand");
+  INT_03f48fa8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 R Hand");
-  DAT_03f48fc4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fc4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine");
-  _DAT_03f48fc8 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Spine1");
-  DAT_03f48fcc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fc8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 Spine1");
+  INT_03f48fcc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine2");
-  DAT_03f48fa0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fa0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Head");
-  DAT_03f48fb4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fb4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 L UpperArm");
-  DAT_03f48fb8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fb8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 R UpperArm");
-  DAT_03f48fc4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fc4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine");
-  DAT_03f48fcc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_03f48fcc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine2");
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"larm01",1);
-  *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = iVar1;
+  *(int *)(in_stack_00000004[1].base.base.actor_name + 0x10) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"l4arm01",1);
-  *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14) = iVar1;
+  *(int *)(in_stack_00000004[1].base.base.actor_name + 0x14) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"rarm01",1);
-  *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18) = iVar1;
+  *(int *)(in_stack_00000004[1].base.base.actor_name + 0x18) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"r4arm01",1);
-  *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x1c) = iVar1;
+  *(int *)(in_stack_00000004[1].base.base.actor_name + 0x1c) = iVar1;
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_01,"rthigh01",1);
-  in_stack_00000004[1].base_character.base_actor.location.position.x = fVar2;
+  in_stack_00000004[1].base.base.location.position.x = fVar2;
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_01,"rshin01",1);
-  in_stack_00000004[1].base_character.base_actor.location.position.y = fVar2;
+  in_stack_00000004[1].base.base.location.position.y = fVar2;
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_01,"lthigh01",1);
-  in_stack_00000004[1].base_character.base_actor.location.position.z = fVar2;
+  in_stack_00000004[1].base.base.location.position.z = fVar2;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"lshin01",1);
-  in_stack_00000004[1].base_character.base_actor.location.area_id = iVar1;
+  in_stack_00000004[1].base.base.location.area_id = iVar1;
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_01,"ass01",1);
-  in_stack_00000004[1].base_character.base_actor.orient.pitch = fVar2;
+  in_stack_00000004[1].base.base.orient.pitch = fVar2;
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_01,"torso01",1);
-  in_stack_00000004[1].base_character.base_actor.orient.bank = fVar2;
+  in_stack_00000004[1].base.base.orient.bank = fVar2;
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_01,"head01",1);
-  in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].x = 0.0;
-  in_stack_00000004[1].base_character.base_actor.orient.heading = fVar2;
-  in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].y = 0.0;
-  in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].x = 1.4013e-45;
+  in_stack_00000004[1].base.base.orient_matrix.m[0].x = 0.0;
+  in_stack_00000004[1].base.base.orient.heading = fVar2;
+  in_stack_00000004[1].base.base.orient_matrix.m[0].y = 0.0;
+  in_stack_00000004[1].base.base.orient_matrix.m[1].x = 1.4013e-45;
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                    ((in_stack_00000004->base_character).model.model_name,"smiley2.dfm");
+                    ((in_stack_00000004->base).model.model_name,"smiley2.dfm");
   if (iVar1 == 0) {
-    in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].x = 2.8026e-45;
+    in_stack_00000004[1].base.base.orient_matrix.m[1].x = 2.8026e-45;
   }
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                    ((in_stack_00000004->base_character).model.model_name,"smiley3.dfm");
+                    ((in_stack_00000004->base).model.model_name,"smiley3.dfm");
   if (iVar1 != 0) {
     return;
   }
-  in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].x = 4.2039e-45;
-  (in_stack_00000004->base_character).field13_0x2620[4] = '\0';
-  (in_stack_00000004->base_character).field13_0x2620[5] = '\0';
-  (in_stack_00000004->base_character).field13_0x2620[6] = '\0';
-  (in_stack_00000004->base_character).field13_0x2620[7] = '\0';
+  in_stack_00000004[1].base.base.orient_matrix.m[1].x = 4.2039e-45;
+  (in_stack_00000004->base).unk3[4] = '\0';
+  (in_stack_00000004->base).unk3[5] = '\0';
+  (in_stack_00000004->base).unk3[6] = '\0';
+  (in_stack_00000004->base).unk3[7] = '\0';
   return;
 }

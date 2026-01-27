@@ -2,27 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 24,
-        "line": 54,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
         "column": 32,
-        "line": 97,
+        "line": 96,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 118,
+        "line": 117,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 171,
+        "line": 169,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -37,42 +31,42 @@
       {
         "category": "other",
         "column": 27,
-        "line": 84,
+        "line": 83,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 86,
+        "line": 85,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 97,
+        "line": 96,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 118,
+        "line": 117,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 171,
+        "line": 169,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 302,
-    "complexity_score": 415,
+    "complexity_score": 413,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
-    "pseudocode_lines": 165,
+    "pseudocode_lines": 163,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
@@ -80,7 +74,7 @@
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 467
+    "total_lines": 465
   },
   "cross_references": [],
   "function": {
@@ -470,138 +464,138 @@
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000008",
-      "text": "actor_ptr = (this_ptr->base_hero).base_character.carry_hands[(int)in_stack_00000008].carry_actor;",
+      "text": "actor_ptr = (this_ptr->base).base.carry_hands[(int)in_stack_00000008].carry_actor;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000008",
-      "text": "local_10 = *(float *)(this_ptr->base_hero).base_character.carry_hands[(int)in_stack_00000008].",
+      "text": "local_10 = *(float *)(this_ptr->base).base.carry_hands[(int)in_stack_00000008].unk1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 89,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 94,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 1.4013e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 95,
+      "line": 94,
       "match": "1.4013e-45",
       "text": "if (in_stack_00000008 == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 106,
+      "line": 104,
       "match": "unaff_EDI",
-      "text": "[unaff_EDI].m,&CStack_128);",
+      "text": "(this_ptr->base).base.model.bone_transform.bone_world_matrices[unaff_EDI].m,&CStack_128",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 110,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 121,
+      "line": 120,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 121,
       "match": "in_stack_00000008",
       "text": "local_5c.y = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 124,
+      "line": 123,
       "match": "in_stack_00000008",
       "text": "local_5c.z = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 125,
       "match": "in_stack_00000008",
       "text": "local_2c.y = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 126,
       "match": "in_stack_00000008",
       "text": "local_2c.z = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 130,
       "match": "in_stack_00000008",
       "text": "else if (in_stack_00000008 == 1.4013e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 131,
+      "line": 130,
       "match": "1.4013e-45",
       "text": "else if (in_stack_00000008 == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 150,
+      "line": 148,
       "match": "unaff_EDI",
-      "text": "[unaff_EDI].m);",
+      "text": "(this_ptr->base).base.model.bone_transform.bone_world_matrices[unaff_EDI].m);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 163,
+      "line": 161,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = pCVar4->m[0].w;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 162,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 165,
+      "line": 163,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 165,
+      "line": 163,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"

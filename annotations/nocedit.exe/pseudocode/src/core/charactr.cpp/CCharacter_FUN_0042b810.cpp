@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b810(CCharacter *this_ptr)
            core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&this_ptr->model,&local_1c,in_stack_0000000c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                (&this_ptr->base_actor,&local_28,input_local_point);
+                (&this_ptr->base,&local_28,input_local_point);
       local_10 = 0;
       local_c = 0x40e00000;
       local_8 = 0;

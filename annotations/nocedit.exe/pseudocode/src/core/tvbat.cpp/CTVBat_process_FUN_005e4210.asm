@@ -114,7 +114,7 @@ section .text
     XOR EDI,EDI                         ; 005e4236
     MOV EAX,[0x006810c8]                ; 005e4238 | g_CDemonSetPtr
         ;   Label: LAB_005e4238
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e423d | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e423d | g_CDemonSetInstance.unk4[7996]
     JGE 0x005e4276                      ; 005e4243
         ;   XREF to: 005e4276 (CONDITIONAL_JUMP)  ; LAB_005e4276
     PUSH 0x65692e                       ; 005e4245 | = "CVampireBoss"
@@ -261,9 +261,9 @@ section .text
     JBE 0x005e443f                      ; 005e4433
         ;   XREF to: 005e443f (CONDITIONAL_JUMP)  ; LAB_005e443f
     MOV dword ptr [EBX + 0xc068],0x0    ; 005e4435
-    MOV EAX,[0x00680a00]                ; 005e443f | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 005e443f | g_CNetGamePtr
         ;   Label: LAB_005e443f
-    CMP dword ptr [EAX],0x0             ; 005e4444 | DAT_02f7c740
+    CMP dword ptr [EAX],0x0             ; 005e4444 | g_CNetGameInstance
     JZ 0x005e446c                       ; 005e4447
         ;   XREF to: 005e446c (CONDITIONAL_JUMP)  ; LAB_005e446c
     MOV ECX,0x65693b                    ; 005e4449 | = "..\\core\\tvbat.cpp"

@@ -24,8 +24,8 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
       return;
     }
   }
-  else if ((layer_flag != 0) || (this_ptr->field18_0xb3c != 0)) {
-    this_ptr->field18_0xb3c = 0;
+  else if ((layer_flag != 0) || (this_ptr->unk4 != 0)) {
+    this_ptr->unk4 = 0;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                             (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
@@ -39,7 +39,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
     pCVar1 = this_ptr->broken_vertices;
     iVar4 = 0;
-    pcVar2 = this_ptr->field12_0x4b8;
+    pcVar2 = this_ptr->unk1;
     if (0 < this_ptr->broken_vertex_count) {
       do {
         *(int *)pcVar2 = (int)ROUND(pCVar1->x * 256.0f);
@@ -52,7 +52,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
     }
     iVar4 = 0;
     core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-              (g_CDemonSetPtr,this_ptr->broken_vertex_count,(int *)this_ptr->field12_0x4b8);
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,(int *)this_ptr->unk1);
     if (0 < this_ptr->broken_polygon_count) {
       polygon_info = &this_ptr->broken_quads[0].base;
       pCVar3 = this_ptr;

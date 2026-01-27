@@ -11,9 +11,9 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e34b0(CTurret *this_ptr)
 {
   uint in_stack_00000008;
   
-  if (*(int *)this_ptr->field12_0x85c != 0) {
+  if (*(int *)this_ptr->unk4 != 0) {
     return 0;
   }
-  *(uint *)this_ptr->field12_0x85c = in_stack_00000008;
+  *(uint *)this_ptr->unk4 = in_stack_00000008;
   return 1;
 }

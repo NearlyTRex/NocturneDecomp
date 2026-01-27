@@ -11,10 +11,10 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f6390(CHostage *this_ptr)
 {
   SMotion *pSVar1;
   
-  if (((*(int *)this_ptr->field4_0x1fab8 != 0) && (this_ptr->hostage_state != 3)) &&
+  if (((*(int *)this_ptr->unk2 != 0) && (this_ptr->hostage_state != 3)) &&
      (this_ptr->hostage_state != 4)) {
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&(this_ptr->base_npc).base_character.model.motion_controller);
+                       (&(this_ptr->base).base.model.motion_controller);
     if (pSVar1->state_index != 10) {
       return 1;
     }

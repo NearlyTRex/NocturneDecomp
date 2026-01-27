@@ -33,7 +33,7 @@ uint core_boneguy_cpp_FUN_0041d550(void)
     in_stack_00000008->z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_24,DAT_00822958
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_24,INT_00822958
                      );
   if (in_stack_00000008 + 1 != pCVar1) {
     in_stack_00000008[1].x = pCVar1->x;
@@ -41,7 +41,7 @@ uint core_boneguy_cpp_FUN_0041d550(void)
     in_stack_00000008[1].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,DAT_0082295c
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,INT_0082295c
                      );
   if (in_stack_00000008 + 2 != pCVar1) {
     in_stack_00000008[2].x = pCVar1->x;

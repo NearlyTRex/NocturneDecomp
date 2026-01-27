@@ -43,8 +43,7 @@ void core_lever_cpp_CLever_load_FUN_00504e80(void)
             ((char **)&in_stack_00000004[2].orient,"onEvent");
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)(in_stack_00000004[2].create_event + 0x1c),"offEvent");
-  core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)&in_stack_00000004[2].field14_0xf8,"sound");
+  core_actor_cpp_serializeString_FUN_0040b5c0((char **)&in_stack_00000004[2].unk5,"sound");
   core_actor_cpp_serializeFloat_FUN_0040b770
             ((float *)&in_stack_00000004[2].location.area_id,"param");
   if (1 < g_CLeverClassVersion) {

@@ -13,10 +13,9 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   CKeyFramedModelInstance *this_ptr_00;
   float fVar2;
   
-  pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
+  pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)
-                           (pCVar1[1].base_character.base_actor.actor_name + 0xc));
+                          ((CKeyFramedModelInstance *)(pCVar1[1].base.base.actor_name + 0xc));
   *(CDemonActor_vtable **)(this_ptr_00[-0x80].model_name + 0x1c) = &g_CTVBatVTable;
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;
   this_ptr_00[1].part_visibility_flags[1] = 0;

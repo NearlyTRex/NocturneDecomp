@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_curtain.cpp_staticInit_FUN_00449610(void)
+; __cdecl void core_curtain.cpp_staticInit_FUN_00449610(void)
 ;
 ;
 ; Referenced Globals:

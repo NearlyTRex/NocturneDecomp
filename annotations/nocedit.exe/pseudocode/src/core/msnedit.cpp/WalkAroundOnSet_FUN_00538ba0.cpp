@@ -28,10 +28,10 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Backing up to %s...");
     core_mission_cpp_CDemonMission_save_FUN_00522e30(in_stack_00000004);
-    in_stack_00000004->field0_0x0[4] = '\0';
-    in_stack_00000004->field0_0x0[5] = '\0';
-    in_stack_00000004->field0_0x0[6] = '\0';
-    in_stack_00000004->field0_0x0[7] = '\0';
+    in_stack_00000004->unk1[4] = '\0';
+    in_stack_00000004->unk1[5] = '\0';
+    in_stack_00000004->unk1[6] = '\0';
+    in_stack_00000004->unk1[7] = '\0';
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(in_stack_00000004,0);
     if (iVar1 != 0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -39,10 +39,10 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
       core_mission_cpp_CDemonMission_FUN_00523cf0(in_stack_00000004);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Preparing set...");
-      in_stack_00000004->field0_0x0[0] = -1;
-      in_stack_00000004->field0_0x0[1] = -1;
-      in_stack_00000004->field0_0x0[2] = -1;
-      in_stack_00000004->field0_0x0[3] = -1;
+      in_stack_00000004->unk1[0] = -1;
+      in_stack_00000004->unk1[1] = -1;
+      in_stack_00000004->unk1[2] = -1;
+      in_stack_00000004->unk1[3] = -1;
       core_mission_cpp_CDemonMission_FUN_00523fb0(in_stack_00000004);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Preparing...");
@@ -57,10 +57,10 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
     }
     this_ptr = g_CEditorToolsPtr;
     g_EditorFont = g_SmallEditorFont;
-    in_stack_00000004->field0_0x0[4] = '\x01';
-    in_stack_00000004->field0_0x0[5] = '\0';
-    in_stack_00000004->field0_0x0[6] = '\0';
-    in_stack_00000004->field0_0x0[7] = '\0';
+    in_stack_00000004->unk1[4] = '\x01';
+    in_stack_00000004->unk1[5] = '\0';
+    in_stack_00000004->unk1[6] = '\0';
+    in_stack_00000004->unk1[7] = '\0';
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr,"Reloading mission from %s");
     core_mission_cpp_CDemonMission_load_FUN_00522d90(in_stack_00000004,local_18,1);

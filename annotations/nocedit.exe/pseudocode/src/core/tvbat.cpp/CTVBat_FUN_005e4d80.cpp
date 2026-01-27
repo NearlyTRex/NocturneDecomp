@@ -26,21 +26,19 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                           ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffff88);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar3 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)(this_ptr->field1_0xbeb4 + 0xc),
-               *(float *)(this_ptr->field1_0xbeb4 + 8),-1);
+              ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc),*(float *)(this_ptr->unk1 + 8),-1);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-  if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
+  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
     iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-    if ((iVar4 == 0) && (this_ptr == *(CTVBat **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {
+    if ((iVar4 == 0) && (this_ptr == *(CTVBat **)(g_CDemonMissionPtr->unk2 + 0x1c))) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr2,
-                 &(*(CTVBat **)(g_CDemonMissionPtr->field2_0xc + 0x1c))->home_pos);
+                (g_CDemonRendererPtr2,&(*(CTVBat **)(g_CDemonMissionPtr->unk2 + 0x1c))->home_pos);
       iVar4 = 0;
       engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,1);
       do {

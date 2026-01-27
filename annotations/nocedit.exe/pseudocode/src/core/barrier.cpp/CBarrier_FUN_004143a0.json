@@ -2,16 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 17,
-        "line": 18,
-        "message": "'CBarrier' {aka 'struct CBarrier'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 74,
+        "category": "incompatible_types",
+        "column": 51,
         "line": 19,
-        "message": "'CBarrier' {aka 'struct CBarrier'} has no member named 'field1_0x158'"
+        "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CDemonActor*' [-fpermissive]"
       }
     ],
     "success": false,
@@ -133,7 +127,7 @@
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_00821ff4",
-      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(DAT_00821ff4,this_ptr->field1_0x158 + 0x10);",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(DAT_00821ff4,this_ptr->unk + 0x10);",
       "type": "undefined_data"
     }
   ],

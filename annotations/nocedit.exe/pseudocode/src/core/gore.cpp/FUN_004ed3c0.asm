@@ -51,11 +51,11 @@ section .text
     MOV EDI,0x3                         ; 004ed3d6
     MOV EBP,0x80000                     ; 004ed3db
     XOR ECX,ECX                         ; 004ed3e0
-    MOV dword ptr [0x02d833ac],EDX      ; 004ed3e2 | DAT_02d833ac
-    MOV dword ptr [0x02d833c0],ECX      ; 004ed3e8 | DAT_02d833c0
-    MOV dword ptr [0x02d833c4],EBX      ; 004ed3ee | DAT_02d833c4
-    MOV dword ptr [0x02d833c8],ESI      ; 004ed3f4 | DAT_02d833c8
-    MOV dword ptr [0x02d833cc],EDI      ; 004ed3fa | DAT_02d833cc
+    MOV dword ptr [0x02d833ac],EDX      ; 004ed3e2 | INT_02d833ac
+    MOV dword ptr [0x02d833c0],ECX      ; 004ed3e8 | INT_02d833c0
+    MOV dword ptr [0x02d833c4],EBX      ; 004ed3ee | INT_02d833c4
+    MOV dword ptr [0x02d833c8],ESI      ; 004ed3f4 | INT_02d833c8
+    MOV dword ptr [0x02d833cc],EDI      ; 004ed3fa | INT_02d833cc
     MOV dword ptr [0x0068802c],EBP      ; 004ed400 | g_RenderVertexBuffer[0].u
     MOV dword ptr [0x00688030],EBP      ; 004ed406 | g_RenderVertexBuffer[0].v
     MOV EDX,0xf80000                    ; 004ed40c | DAT_00f80000
@@ -77,11 +77,11 @@ section .text
     MOV EBP,dword ptr [0x006703ec]      ; 004ed451 | g_CDemonRendererPtr2
     XOR ECX,ECX                         ; 004ed457
     PUSH 0x67cb28                       ; 004ed459 | DAT_0067cb28
-    MOV dword ptr [0x02d833b0],ECX      ; 004ed45e | DAT_02d833b0
-    MOV dword ptr [0x02d833b4],ECX      ; 004ed464 | DAT_02d833b4
+    MOV dword ptr [0x02d833b0],ECX      ; 004ed45e | INT_02d833b0
+    MOV dword ptr [0x02d833b4],ECX      ; 004ed464 | INT_02d833b4
     PUSH EBP                            ; 004ed46a | g_CDemonRendererInstance
-    MOV dword ptr [0x02d833b8],ECX      ; 004ed46b | DAT_02d833b8
-    MOV dword ptr [0x02d833bc],ECX      ; 004ed471 | DAT_02d833bc
+    MOV dword ptr [0x02d833b8],ECX      ; 004ed46b | INT_02d833b8
+    MOV dword ptr [0x02d833bc],ECX      ; 004ed471 | INT_02d833bc
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004ed477
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA EBP,[EBX + 0x8]                 ; 004ed47c
@@ -165,7 +165,7 @@ section .text
         ;   Label: LAB_004ed582
     MOV dword ptr [EBP],0x0             ; 004ed588 | g_RenderVertexBuffer[3].color
     MOV dword ptr [ESI],0x0             ; 004ed58f | g_RenderVertexBuffer[3].fog
-    PUSH 0x2d833a8                      ; 004ed595 | DAT_02d833a8
+    PUSH 0x2d833a8                      ; 004ed595 | INT_02d833a8
         ;   Label: LAB_004ed595
     MOV ECX,dword ptr [0x006703ec]      ; 004ed59a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ed5a0 | g_CDemonRendererInstance

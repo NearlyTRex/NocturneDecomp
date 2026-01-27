@@ -25,14 +25,14 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052aca0(CMorphModel *this_ptr)
   int local_1c;
   int local_14;
   
-  if ((in_stack_00000008 < 0) || (*(int *)this_ptr->field0_0x0 <= in_stack_00000008)) {
+  if ((in_stack_00000008 < 0) || (*(int *)this_ptr->unk1 <= in_stack_00000008)) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x191;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setFaceList - invalid part index");
   }
-  iVar5 = in_stack_00000018 + *(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 0x10);
-  if (*(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 0x10) +
-      *(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 8) < in_stack_0000001c + iVar5) {
+  iVar5 = in_stack_00000018 + *(int *)(this_ptr->unk1 + in_stack_00000008 * 0x10 + 0x10);
+  if (*(int *)(this_ptr->unk1 + in_stack_00000008 * 0x10 + 0x10) +
+      *(int *)(this_ptr->unk1 + in_stack_00000008 * 0x10 + 8) < in_stack_0000001c + iVar5) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x198;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setFaceList - invalid vertex range");
@@ -46,7 +46,7 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052aca0(CMorphModel *this_ptr)
       iVar5 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60
                         (this_ptr,(char *)(*local_20 * 0x48 + in_stack_00000010 + 8));
       iVar4 = 0;
-      *(uint *)(*(int *)(this_ptr->field2_0x58 + 8) + local_14 + 4) = 3;
+      *(uint *)(*(int *)(this_ptr->unk2 + 8) + local_14 + 4) = 3;
       puVar2 = local_24;
       do {
         iVar3 = iVar4;
@@ -54,25 +54,23 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052aca0(CMorphModel *this_ptr)
           iVar3 = 2 - iVar4;
         }
         iVar3 = iVar3 * 0xc;
-        *(uint *)(iVar3 + 0x18 + *(int *)(this_ptr->field2_0x58 + 8) + local_14) = (uint)*puVar2;
+        *(uint *)(iVar3 + 0x18 + *(int *)(this_ptr->unk2 + 8) + local_14) = (uint)*puVar2;
         iVar4 = iVar4 + 1;
-        *(uint *)(iVar3 + 0x1c + *(int *)(this_ptr->field2_0x58 + 8) + local_14) =
-             (uint)puVar2[3] << 8;
-        *(uint *)(iVar3 + *(int *)(this_ptr->field2_0x58 + 8) + local_14 + 0x20) =
-             (uint)puVar2[6] << 8;
+        *(uint *)(iVar3 + 0x1c + *(int *)(this_ptr->unk2 + 8) + local_14) = (uint)puVar2[3] << 8;
+        *(uint *)(iVar3 + *(int *)(this_ptr->unk2 + 8) + local_14 + 0x20) = (uint)puVar2[6] << 8;
         puVar2 = puVar2 + 1;
       } while (iVar4 < 3);
-      *(int *)(local_14 + *(int *)(this_ptr->field2_0x58 + 8)) = iVar5;
-      piVar1 = (int *)(local_14 + 0x18 + *(int *)(this_ptr->field2_0x58 + 8));
-      *piVar1 = *piVar1 + *(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 0xc);
-      *(int *)(local_14 + 0x24 + *(int *)(this_ptr->field2_0x58 + 8)) =
-           *(int *)(local_14 + 0x24 + *(int *)(this_ptr->field2_0x58 + 8)) +
-           *(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 0xc);
+      *(int *)(local_14 + *(int *)(this_ptr->unk2 + 8)) = iVar5;
+      piVar1 = (int *)(local_14 + 0x18 + *(int *)(this_ptr->unk2 + 8));
+      *piVar1 = *piVar1 + *(int *)(this_ptr->unk1 + in_stack_00000008 * 0x10 + 0xc);
+      *(int *)(local_14 + 0x24 + *(int *)(this_ptr->unk2 + 8)) =
+           *(int *)(local_14 + 0x24 + *(int *)(this_ptr->unk2 + 8)) +
+           *(int *)(this_ptr->unk1 + in_stack_00000008 * 0x10 + 0xc);
       local_20 = local_20 + 1;
-      iVar5 = local_14 + *(int *)(this_ptr->field2_0x58 + 8);
+      iVar5 = local_14 + *(int *)(this_ptr->unk2 + 8);
       local_1c = local_1c + 1;
       *(int *)(iVar5 + 0x30) =
-           *(int *)(iVar5 + 0x30) + *(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 0xc);
+           *(int *)(iVar5 + 0x30) + *(int *)(this_ptr->unk1 + in_stack_00000008 * 0x10 + 0xc);
       local_24 = local_24 + 9;
       local_14 = local_14 + 0x3c;
     } while (local_1c < in_stack_0000001c);

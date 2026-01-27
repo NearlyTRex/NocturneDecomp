@@ -21,16 +21,16 @@ void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
   int iVar4;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[2].cloth_data + 0x54fc));
-  if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {
+  if ((*(uint *)in_stack_00000004[1].base.actor_name & 0x7fffffff) != 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  if (g_CGamePtr->field53_0x1d0 != 0) {
+  if (g_CGamePtr->unk2 != 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  *(float *)in_stack_00000004[1].base_actor.actor_name = 3.0f;
+  *(float *)in_stack_00000004[1].base.actor_name = 3.0f;
   fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
@@ -45,11 +45,11 @@ void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
         in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr->motion_controller,8,1);
-        (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
-        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
+        (*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc21)();
+        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[2].cloth_data + 0x5500));
-        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                  (&in_stack_00000004->base_actor,"icepick_die01.wav");
+        (*((in_stack_00000004->base).vtable._ub)->playSound)
+                  (&in_stack_00000004->base,"icepick_die01.wav");
         core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
         return;
       }
@@ -67,8 +67,8 @@ void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
     iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[2].cloth_data + 0x5500));
     if (iVar4 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                        (&in_stack_00000004->base_actor,"icepick_injured??.wav");
+      uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
+                        (&in_stack_00000004->base,"icepick_injured??.wav");
       *(uint *)(in_stack_00000004[2].cloth_data + 0x5500) = uVar3;
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;

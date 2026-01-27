@@ -1,56 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 16,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 20,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 22,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 75,
-        "line": 23,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 24,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 25,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 26,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 17,
-        "line": 27,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -62,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 62,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 55
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -184,7 +135,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008 * pCVar2->motions[iVar1].fps +",
+      "text": "in_stack_00000008 * pCVar2->motions[iVar1].fps + *(float *)(this_ptr->unk2 + 0x2c);",
       "type": "stack_param"
     },
     {

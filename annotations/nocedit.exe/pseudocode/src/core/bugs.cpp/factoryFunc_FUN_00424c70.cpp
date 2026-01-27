@@ -1,0 +1,20 @@
+// Name: core_bugs.cpp_factoryFunc_FUN_00424c70
+// Address: 00424c70
+// Address Range: [[00424c70, 00424c92]]
+// Convention: __cdecl
+// Signature: CBugs * core_bugs.cpp_factoryFunc_FUN_00424c70(void)
+
+#include "nocturne.h"
+
+CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00424c70(void)
+
+{
+  CBugs *pCVar1;
+  
+  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x199f8,"..\\core\\bugs.cpp",0x3e);
+  if (pCVar1 == (CBugs *)0x0) {
+    return (CBugs *)0x0;
+  }
+  pCVar1 = core_bugs_cpp_CBugs_ctor_FUN_00424cb0(pCVar1);
+  return pCVar1;
+}

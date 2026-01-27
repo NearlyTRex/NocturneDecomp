@@ -9,8 +9,8 @@
 ; XREF[8]:
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 at 0040d2d3
 ;   core_barrier.cpp_CBarrier_FUN_00414400 at 00414423
+;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422751
 ;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 00423553
-;   core_boxactor.cpp_FUN_004226e0 at 00422751
 ;   core_conveyor.cpp_FUN_00442130 at 00442192
 ;   core_emitter.cpp_FUN_004a8db0 at 004a8ee3
 ;   core_simbox.cpp_CSimBox_FUN_00589310 at 005893b3

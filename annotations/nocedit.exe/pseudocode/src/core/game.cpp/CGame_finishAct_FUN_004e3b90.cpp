@@ -41,7 +41,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   int local_18;
   
   bVar11 = 0;
-  if (in_stack_00000004->field87_0x258 == 2) {
+  if (in_stack_00000004->unk12 == 2) {
     pCVar8 = g_ThemeFont;
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
       pCVar8 = g_SmallEditorFont;

@@ -3,21 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 69,
+        "column": 63,
         "line": 19,
         "message": "'stack0xffffffe0' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 13,
-        "line": 27,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field13_0x574'"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 30,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field13_0x574'"
       }
     ],
     "success": false,
@@ -47,7 +35,7 @@
     {
       "addr": "00413de0",
       "from_addr": "00413de5",
-      "name": "core_baron.cpp_FUN_CBaronWeapon_00413de0",
+      "name": "core_baron.cpp_CBaronWeapon_FUN_00413de0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +98,7 @@
       {
         "call_addr": "00413de5",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_CBaronWeapon_00413de0",
+        "caller": "core_baron.cpp_CBaronWeapon_FUN_00413de0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -167,7 +155,7 @@
       "description": "Direct stack address reference",
       "line": 12,
       "match": "&stack0xffffffe0",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);",
       "type": "stack_ref"
     }
   ],

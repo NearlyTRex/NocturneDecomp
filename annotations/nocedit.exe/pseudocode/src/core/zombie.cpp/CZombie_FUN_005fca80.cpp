@@ -14,18 +14,18 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr)
   int iVar2;
   CActorPropertyList *in_stack_00000008;
   
-  core_enemy_cpp_CEnemy_FUN_004aa170(&this_ptr->base_enemy);
+  core_enemy_cpp_CEnemy_FUN_004aa170(&this_ptr->base);
   core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e4d0(in_stack_00000008);
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                     (&(this_ptr->base).base.model.motion_controller);
   if (pSVar1->state_index == 0xe) {
     core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
     core_actor_cpp_CActorPropertyList_FUN_0040e350(in_stack_00000008);
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                          (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                          (&(this_ptr->base).base.model.motion_controller);
   iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
   if (iVar2 != 0x16) {
     return;

@@ -16,7 +16,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.projection_scale
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
-;   undefined4 g_CDemonLightInstance.field17_0x1cbc
+;   undefined4 g_CDemonLightInstance.unk2
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EAX,[ESP + 0x14]                ; 00587fcf
     ADD ESP,0xc                         ; 00587fd3
-    MOV dword ptr [0x02d807ac],ESI      ; 00587fd6 | g_CDemonLightInstance.field17_0x1cbc
+    MOV dword ptr [0x02d807ac],ESI      ; 00587fd6 | g_CDemonLightInstance.unk2
     CMP EAX,0x2d7eaf4                   ; 00587fdc | g_CDemonLightInstance.base.base.position.x
     JZ 0x00587ffe                       ; 00587fe1
         ;   XREF to: 00587ffe (CONDITIONAL_JUMP)  ; LAB_00587ffe

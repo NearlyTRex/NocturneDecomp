@@ -15,8 +15,7 @@ float * __cdecl core_trash_cpp_CTrash_FUN_005df610(CTrash *this_ptr)
   CVector3f local_20;
   CVector3f local_14;
   
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)&this_ptr->model_name);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar1 = pCVar2->frame_bounds;
   *in_stack_00000008 = pCVar1->x;
   in_stack_00000008[1] = pCVar1->y;
@@ -24,11 +23,11 @@ float * __cdecl core_trash_cpp_CTrash_FUN_005df610(CTrash *this_ptr)
   in_stack_00000008[3] = pCVar1[1].x;
   in_stack_00000008[4] = pCVar1[1].y;
   in_stack_00000008[5] = pCVar1[1].z;
-  local_14.y = *(float *)(this_ptr->field4_0x2e0 + 0x30);
+  local_14.y = *(float *)(this_ptr->unk + 0x30);
   local_14.x = 0.0;
   local_14.z = 0.0;
   core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-            (&this_ptr->base_actor,&local_20,&local_14);
+            (&this_ptr->base,&local_20,&local_14);
   *in_stack_00000008 = *in_stack_00000008 + local_20.x;
   in_stack_00000008[1] = in_stack_00000008[1] + local_20.y;
   in_stack_00000008[2] = in_stack_00000008[2] + local_20.z;

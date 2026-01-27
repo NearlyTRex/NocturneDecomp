@@ -8,20 +8,20 @@
 // Structure: CWaterActor
 // Ghidra size: 0x2b238 (176696 bytes)
 typedef struct CWaterActor {
-    CDemonActor base_actor; // 0x0
+    CDemonActor base; // 0x0
     CVector3f size; // 0x158
     undefined4 opacity; // 0x164
     float height_delta; // 0x168
     float time_to_move; // 0x16c
     float time_to_move_down; // 0x170
     undefined4 move_sound; // 0x174
-    char field_376[28]; // 0x178
+    char unk1[28]; // 0x178
     undefined4 move_down_sound; // 0x194
-    char field_408[28]; // 0x198
+    char unk2[28]; // 0x198
     char* move_event; // 0x1b4
-    char field_440[96]; // 0x1b8
+    char unk3[96]; // 0x1b8
     char* move_down_event; // 0x218
-    char field_540[96]; // 0x21c
+    char unk4[96]; // 0x21c
     float param; // 0x27c
     int state; // 0x280
     float patch_size; // 0x284
@@ -29,6 +29,6 @@ typedef struct CWaterActor {
     int col_r; // 0x28c
     int col_g; // 0x290
     int col_b; // 0x294
-    char field_664[176032]; // 0x298
+    char unk5[176032]; // 0x298
 } CWaterActor;
 

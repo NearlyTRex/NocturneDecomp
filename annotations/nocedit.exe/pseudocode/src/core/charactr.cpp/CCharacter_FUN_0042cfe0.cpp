@@ -20,7 +20,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cfe0(CCharacter *this_ptr)
     pCVar1 = (CVector3f *)0x0;
     if (in_stack_0000000c != (CVector3f *)0x0) {
       pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                         (&this_ptr->base_actor,&local_1c,in_stack_0000000c);
+                         (&this_ptr->base,&local_1c,in_stack_0000000c);
       if (&local_10 != pCVar1) {
         local_10.x = pCVar1->x;
         local_10.y = pCVar1->y;

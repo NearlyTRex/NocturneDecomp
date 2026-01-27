@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl
 core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr)
@@ -430,7 +429,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
             *(uint *)((int)pvVar10 + 4) = 3;
             iVar5 = 0;
             *(uint *)((int)pvVar10 + 0x14) = local_13c[0];
-            dVar4 = _DAT_0064bfd2;
+            dVar4 = 65536;
             pvVar12 = pvVar10;
             do {
               *(uint *)((int)pvVar12 + 0x18) = *(uint *)(local_274 + iVar5 + -4);
@@ -520,9 +519,9 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
                       local_1ec = (streambuf *)ppcVar19[2];
                       local_220 = local_298 - local_1f0;
                       local_21c = (float)local_294 - (float)local_1ec;
-                      if ((((float)_DAT_0064bfda < ABS(local_224)) ||
-                          ((float)_DAT_0064bfda < ABS(local_220))) ||
-                         ((float)_DAT_0064bfda < ABS(local_21c))) break;
+                      if ((((float)0.02 < ABS(local_224)) ||
+                          ((float)0.02 < ABS(local_220))) ||
+                         ((float)0.02 < ABS(local_21c))) break;
                       pvVar10 = (void *)((int)pvVar10 + 0xc);
                       iVar5 = iVar5 + 1;
                       iVar15 = iVar15 + 1;
@@ -782,7 +781,7 @@ LAB_005902c8:
                   do {
                     local_114 = local_7c;
                     if (*(int *)((int)local_7c + 4) == 3) {
-                      local_110 = (float)_DAT_0064bfea -
+                      local_110 = (float)4 -
                                   (local_108[2] * local_78[2] +
                                   *local_108 * *local_78 + local_108[1] * local_78[1]);
                       local_10c = 0;
@@ -804,9 +803,9 @@ LAB_005902c8:
                           local_1c8 = *(float *)(iVar8 + 0x18);
                           local_208 = local_1cc - local_28c;
                           local_204 = local_1c8 - (float)local_288;
-                          if ((((float)_DAT_0064bfe2 < ABS(local_20c)) ||
-                              ((float)_DAT_0064bfe2 < ABS(local_208))) ||
-                             ((float)_DAT_0064bfe2 < ABS(local_204))) break;
+                          if ((((float)0.20000000000000001 < ABS(local_20c)) ||
+                              ((float)0.20000000000000001 < ABS(local_208))) ||
+                             ((float)0.20000000000000001 < ABS(local_204))) break;
                           fVar31 = local_204 * local_204 +
                                    local_20c * local_20c + local_208 * local_208;
                           iVar15 = iVar15 + 1;
@@ -990,11 +989,11 @@ LAB_005902c8:
                   0) {
                 shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_bec);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          (&local_bec.base_strlist,"Get rid of them them, I never want to see them again");
+                          (&local_bec.base,"Get rid of them them, I never want to see them again");
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          (&local_bec.base_strlist,"They are special to me, put them in a seperate part called \"MySpecialTriangles\"");
+                          (&local_bec.base,"They are special to me, put them in a seperate part called \"MySpecialTriangles\"");
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          (&local_bec.base_strlist,"Try best guess");
+                          (&local_bec.base,"Try best guess");
                 do {
                   iVar15 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                      (&local_bec,local_540,iVar15,0);
@@ -1308,7 +1307,7 @@ LAB_00591f48:
                           iVar5 = iVar5 + 0x34;
                         } while (iVar15 < in_stack_00000004[0xb]);
                       }
-                      if ((float)_DAT_0064bfe2 < fVar31) {
+                      if ((float)0.20000000000000001 < fVar31) {
                         crt_stdio_c_sprintf_FUN_005fdbd0
                                   (&DAT_03670650,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
                         goto LAB_0058f8e7;

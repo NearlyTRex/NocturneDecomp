@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_script.cpp_FUN_00559b20(uint param_1) */
-
 void core_script_cpp_FUN_00559b20(void)
 
 {
@@ -26,24 +23,24 @@ void core_script_cpp_FUN_00559b20(void)
   
   if (g_CGamePtr->letterbox_mode == 0) {
     fVar3 = (float)core_charactr_cpp_CCharacter_FUN_0042f9e0((CCharacter *)g_CGamePtr);
-    _DAT_0310f4a0 = _DAT_0310f4a0 - fVar3 / 0.35f;
+    FLOAT_0310f4a0 = FLOAT_0310f4a0 - fVar3 / 0.35f;
   }
   else {
-    DAT_031061e0 = g_CGamePtr->letterbox_mode;
+    INT_031061e0 = g_CGamePtr->letterbox_mode;
     fVar3 = (float)core_charactr_cpp_CCharacter_FUN_0042f9e0((CCharacter *)g_CGamePtr);
-    _DAT_0310f4a0 = fVar3 / 0.35f + _DAT_0310f4a0;
+    FLOAT_0310f4a0 = fVar3 / 0.35f + FLOAT_0310f4a0;
   }
   iVar8 = g_WindowHeight;
   iVar1 = g_WindowWidth;
-  if (_DAT_0310f4a0 < 0.0) {
-    _DAT_0310f4a0 = 0.0;
+  if (FLOAT_0310f4a0 < 0.0) {
+    FLOAT_0310f4a0 = 0.0;
   }
-  if (1.0 < _DAT_0310f4a0) {
-    _DAT_0310f4a0 = 1.0;
+  if (1.0 < FLOAT_0310f4a0) {
+    FLOAT_0310f4a0 = 1.0;
   }
   iVar4 = core_script_cpp_FUN_00559ac0();
   if (0 < iVar4) {
-    if (DAT_031061e0 != 2) {
+    if (INT_031061e0 != 2) {
       engine_2d_c_fillRectColor_FUN_00403170(0,0,iVar1 + -1,iVar4 + -1,0);
     }
     engine_2d_c_fillRectColor_FUN_00403170(0,iVar8 - iVar4,iVar1 + -1,iVar8 + -1,0);

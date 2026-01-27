@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
 
 {
@@ -59,23 +57,22 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
           iVar6 = iVar6 + 1;
         }
         iVar7 = iVar7 + 1;
-        pCVar2 = (CDemonSet *)&pCVar2->cameras[0].field17_0x1a0;
+        pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
       } while (iVar7 < this_ptr->camera_count);
     }
     if ((DAT_03364d14 & 1) == 0) {
       DAT_03364d14 = DAT_03364d14 | 1;
-      shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&DAT_03364ce0);
+      shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&INT_03364ce0);
       crt_stdlib_c_atexit_FUN_005ff060(&DAT_006816b0);
     }
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-              ((CEdScrollBar *)&DAT_03364ce0,0,g_WindowHeight + -10,g_WindowWidth + -1,
+              ((CEdScrollBar *)&INT_03364ce0,0,g_WindowHeight + -10,g_WindowWidth + -1,
                g_WindowHeight + -1);
-    _DAT_03364ce8 =
-         (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
-              (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6;
-    _DAT_03364ce4 = (iVar9 + 3) / 4 + ((iVar6 + 3) / 4) * 4;
-    shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_03364ce0);
-    shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_03364ce0);
+    INT_03364ce8 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
+                        (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6;
+    INT_03364ce4 = (iVar9 + 3) / 4 + ((iVar6 + 3) / 4) * 4;
+    shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&INT_03364ce0);
+    shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&INT_03364ce0);
     local_7c = 0;
     local_6c = 0;
     local_90 = 0;
@@ -95,7 +92,7 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
             local_68 = 4;
             if (local_90 != 0) {
 LAB_00577d41:
-              iVar6 = local_7c - _DAT_03364ce0;
+              iVar6 = local_7c - INT_03364ce0;
               if ((0 < iVar6 + local_68) &&
                  (iVar6 < (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
                                (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6)) {
@@ -197,7 +194,7 @@ LAB_00577d41:
               }
             }
           }
-          local_88 = (CDemonSet *)&local_88->cameras[0].field17_0x1a0;
+          local_88 = (CDemonSet *)&local_88->cameras[0].unk4;
           local_8c = local_8c + 1;
           local_84 = local_84 + 1;
           local_70 = local_70 + 1;

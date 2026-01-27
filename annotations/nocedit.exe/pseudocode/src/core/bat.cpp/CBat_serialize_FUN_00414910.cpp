@@ -9,7 +9,7 @@
 void __cdecl core_bat_cpp_CBat_serialize_FUN_00414910(CBat *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)this_ptr->course_filename,"courseFilename");
   core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->param,"param");

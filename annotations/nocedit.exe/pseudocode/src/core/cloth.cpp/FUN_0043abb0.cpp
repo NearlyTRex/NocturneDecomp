@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_cloth.cpp_FUN_0043abb0(uint param_1, uint param_2,
-   uint param_3, uint param_4, uint param_5, uint param_6) */
-
 void core_cloth_cpp_FUN_0043abb0(void)
 
 {
@@ -201,9 +197,9 @@ void core_cloth_cpp_FUN_0043abb0(void)
   local_114 = local_1d8.m[0].z;
   local_110 = local_1d8.m[1].z;
   local_10c = local_1d8.m[2].z;
-  local_90 = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
-  local_8c = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4);
-  local_88 = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8);
+  local_90 = *(float *)(g_CDemonSetPtr->unk4 + 0xbbc0);
+  local_8c = *(float *)(g_CDemonSetPtr->unk4 + 0xbbc4);
+  local_88 = *(float *)(g_CDemonSetPtr->unk4 + 0xbbc8);
   fVar2 = SQRT(local_88 * local_88 + local_90 * local_90 + local_8c * local_8c);
   if (fVar2 <= 0.0) {
     local_8c = 0.0;
@@ -223,9 +219,9 @@ void core_cloth_cpp_FUN_0043abb0(void)
     local_1e0 = 0.0;
   }
   local_d8.z = local_1e0 * (float)-1;
-  local_d8.x = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0) * local_d8.z;
-  local_d8.y = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4) * local_d8.z;
-  local_d8.z = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8) * local_d8.z;
+  local_d8.x = *(float *)(g_CDemonSetPtr->unk4 + 0xbbc0) * local_d8.z;
+  local_d8.y = *(float *)(g_CDemonSetPtr->unk4 + 0xbbc4) * local_d8.z;
+  local_d8.z = *(float *)(g_CDemonSetPtr->unk4 + 0xbbc8) * local_d8.z;
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                      (&local_1d8,&local_a8,&local_d8);
   local_198 = pCVar1->x + *(float *)(in_stack_00000004 + 0x3fe64);
@@ -409,9 +405,9 @@ void core_cloth_cpp_FUN_0043abb0(void)
     do {
       piVar9 = (int *)(*(int *)(in_stack_00000004 + 0x10c) + iVar6);
       iVar5 = iVar5 + 1;
-      *piVar9 = (int)ROUND(*pfVar4 * _DAT_0065bb3c);
-      piVar9[1] = (int)ROUND(pfVar4[1] * _DAT_0065bb3c);
-      piVar9[2] = (int)ROUND(pfVar4[2] * _DAT_0065bb3c);
+      *piVar9 = (int)ROUND(*pfVar4 * 256.0f);
+      piVar9[1] = (int)ROUND(pfVar4[1] * 256.0f);
+      piVar9[2] = (int)ROUND(pfVar4[2] * 256.0f);
       pfVar4 = pfVar4 + 0x47;
       iVar6 = iVar6 + 0xc;
     } while (iVar5 < *(int *)(in_stack_00000004 + 0x104));

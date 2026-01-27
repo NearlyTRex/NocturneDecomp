@@ -31,7 +31,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_5_2f_5_2f_5_2f_00621c2e
-;   undefined4 DAT_00621c42
+;   float FLOAT_00621c42 = -1
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_ConsolePtr
 ;   SFreaky[6] SFreaky_ARRAY_02c6d0c0
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 00486bad (CONDITIONAL_JUMP)  ; LAB_00486bad
     MOV EAX,dword ptr [ESP + 0x68]      ; 00486a89
     FLD float ptr [EAX + 0x1c]          ; 00486a8d | DAT_02c6d130
-    FADD float ptr [0x00621c42]         ; 00486a90 | DAT_00621c42
+    FADD float ptr [0x00621c42]         ; 00486a90 | FLOAT_00621c42
     FSTP float ptr [EAX + 0x1c]         ; 00486a96 | DAT_02c6d130
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00486a99
     CMP EBX,EAX                         ; 00486a9d

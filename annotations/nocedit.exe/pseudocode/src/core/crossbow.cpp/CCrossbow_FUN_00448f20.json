@@ -34,104 +34,68 @@
       {
         "category": "other",
         "column": 10,
-        "line": 86,
+        "line": 85,
         "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 101,
+        "column": 46,
+        "line": 99,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 115,
+        "line": 113,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
-        "category": "missing_member",
-        "column": 43,
-        "line": 126,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field11_0x14d148'"
-      },
-      {
         "category": "other",
-        "column": 20,
-        "line": 128,
+        "column": 49,
+        "line": 125,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 130,
+        "line": 128,
         "message": "request for member '_4_4_' in 'auStack_100', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 158,
+        "line": 156,
         "message": "cast from 'CCrossbow*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 161,
+        "line": 159,
         "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 44,
-        "line": 165,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
       },
       {
         "category": "other",
         "column": 13,
+        "line": 169,
+        "message": "invalid cast from type 'CDemonActor*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 29,
         "line": 172,
         "message": "invalid cast from type 'CDemonActor*' to type 'float'"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 175,
+        "line": 173,
         "message": "invalid cast from type 'CDemonActor*' to type 'float'"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 176,
+        "line": 174,
         "message": "invalid cast from type 'CDemonActor*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 177,
-        "message": "invalid cast from type 'CDemonActor*' to type 'float'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 183,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field7_0x2f4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 184,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field7_0x2f4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 185,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field7_0x2f4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 186,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field7_0x2f4'"
       }
     ],
     "success": false,
@@ -145,30 +109,30 @@
       {
         "category": "other",
         "column": 13,
-        "line": 90,
+        "line": 89,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 105,
+        "line": 103,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 182,
+        "line": 179,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 477,
-    "complexity_score": 248,
+    "complexity_score": 245,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 23,
-    "pseudocode_lines": 178,
+    "pseudocode_lines": 175,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -176,7 +140,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 655
+    "total_lines": 652
   },
   "cross_references": [],
   "function": {
@@ -518,28 +482,28 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 102,
+      "line": 100,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 123,
+      "line": 121,
       "match": "._4_4_",
       "text": "auStack_100._4_4_ = local_4c.weapon_damage_modifier;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 130,
       "match": "SQRT",
       "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 150,
+      "line": 148,
       "match": "1.45735e-43",
       "text": "SStack_f4.impact_direction.z = 1.45735e-43;",
       "type": "suspect_float"

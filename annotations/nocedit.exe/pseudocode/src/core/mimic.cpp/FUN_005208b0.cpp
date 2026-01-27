@@ -19,7 +19,7 @@ void core_mimic_cpp_FUN_005208b0(void)
   
   if (*(int *)(in_stack_00000004[0x8d].create_event + 0x38) != 0) {
     if (in_stack_00000008 != 0) {
-      in_stack_00000004[0x1a].field21_0x11c = 1;
+      in_stack_00000004[0x1a].unk10 = 1;
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
     this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)

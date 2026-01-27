@@ -18,7 +18,7 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502d00(CLadder *this_ptr)
   
   iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar2 == 0) {
-    core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   else {
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);

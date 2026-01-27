@@ -17,22 +17,22 @@ void __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebeb0(CWayPoint *this_ptr)
   int iVar6;
   char *str1;
   
-  core_trigger_cpp_CTrigger_FUN_005df990(&this_ptr->base_trigger);
+  core_trigger_cpp_CTrigger_FUN_005df990(&this_ptr->base);
   iVar6 = 0;
   if (0 < this_ptr->num_adjacent_waypoints) {
     pCVar5 = this_ptr;
     do {
-      iVar1 = *(int *)pCVar5->field2_0x374;
-      fVar2 = (this_ptr->base_trigger).base_actor.location.position.x - *(float *)(iVar1 + 0x20);
-      fVar4 = (this_ptr->base_trigger).base_actor.location.position.y - *(float *)(iVar1 + 0x24);
-      fVar3 = (this_ptr->base_trigger).base_actor.location.position.z - *(float *)(iVar1 + 0x28);
+      iVar1 = *(int *)pCVar5->unk;
+      fVar2 = (this_ptr->base).base.location.position.x - *(float *)(iVar1 + 0x20);
+      fVar4 = (this_ptr->base).base.location.position.y - *(float *)(iVar1 + 0x24);
+      fVar3 = (this_ptr->base).base.location.position.z - *(float *)(iVar1 + 0x28);
       iVar6 = iVar6 + 1;
-      *(float *)(pCVar5->field2_0x374 + 4) = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);
-      pCVar5 = (CWayPoint *)((pCVar5->base_trigger).base_actor.actor_name + 8);
+      *(float *)(pCVar5->unk + 4) = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);
+      pCVar5 = (CWayPoint *)((pCVar5->base).base.actor_name + 8);
     } while (iVar6 < this_ptr->num_adjacent_waypoints);
   }
-  if ((this_ptr->base_trigger).base_actor.create_event[0] != '\0') {
-    str1 = (this_ptr->base_trigger).base_actor.create_event;
+  if ((this_ptr->base).base.create_event[0] != '\0') {
+    str1 = (this_ptr->base).base.create_event;
     iVar6 = crt_string_c_stricmp_FUN_005fe7f0(str1,"none");
     if ((iVar6 != 0) &&
        (iVar6 = crt_string_c_stricmp_FUN_005fe7f0(str1,"true"), iVar6 != 0)) {

@@ -8,34 +8,10 @@
         "message": "ambiguating new declaration of 'int core_bugs_cpp_FUN_004251b0()'"
       },
       {
-        "category": "missing_member",
-        "column": 31,
-        "line": 29,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field21_0x11c'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 66,
         "line": 34,
         "message": "'stack0xffffffbc' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 41,
-        "line": 38,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field26_0x148'; did you mean 'field_108'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 63,
-        "line": 58,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field28_0x150'"
-      },
-      {
-        "category": "missing_member",
-        "column": 52,
-        "line": 64,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field26_0x148'; did you mean 'field_108'?"
       }
     ],
     "success": false,
@@ -229,7 +205,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[0x1a].field21_0x11c == 0) {",
+      "text": "if (in_stack_00000004[0x1a].unk10 == 0) {",
       "type": "stack_param"
     },
     {
@@ -264,7 +240,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004[0x8d].field26_0x148) {",
+      "text": "if (0 < in_stack_00000004[0x8d].unk14) {",
       "type": "stack_param"
     },
     {
@@ -313,14 +289,14 @@
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_00000004",
-      "text": "(pcStack_8 + (&in_stack_00000004[0x8d].field28_0x150)[iVar1 * 0x10] * 0x17c),",
+      "text": "(pcStack_8 + (&in_stack_00000004[0x8d].unk15)[iVar1 * 0x10] * 0x17c),0.0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_0000000c",
-      "text": "} while (iVar1 < in_stack_0000000c[0x8d].field26_0x148);",
+      "text": "} while (iVar1 < in_stack_0000000c[0x8d].unk14);",
       "type": "stack_param"
     },
     {

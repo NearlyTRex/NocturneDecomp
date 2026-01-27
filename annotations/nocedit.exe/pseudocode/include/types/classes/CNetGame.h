@@ -14,6 +14,6 @@ typedef struct CNetGame {
     SNetPlayer players[2]; // 0x20
     char padding[4]; // 0x110
     int local_player_index; // 0x114
-    char field_280[92]; // 0x118
+    char unk[92]; // 0x118
 } CNetGame;
 

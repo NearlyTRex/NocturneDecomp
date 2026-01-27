@@ -92,7 +92,6 @@ extern int g_BlendMode;
 extern int g_ProcessorType;
 extern int g_RenderStateFlags;
 extern int g_RenderStateFlag2;
-extern int g_SolidColorMode;
 extern int g_SolidRedComponent;
 extern int g_SolidGreenComponent;
 extern int g_SolidBlueComponent;
@@ -118,6 +117,9 @@ extern uint g_ReciprocalLookupTable[1600];
 // uint[256]
 extern uint g_ColorTable32[256];
 extern uint g_Hardware32BitPalette[256];
+
+// ulong
+extern ulong g_SolidColorMode;
 
 // ulonglong
 extern ulonglong g_SavedMMX0;

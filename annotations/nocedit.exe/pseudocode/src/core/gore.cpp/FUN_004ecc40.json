@@ -4,32 +4,8 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_gore_cpp_FUN_004ecc40()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 16,
-        "message": "'_DAT_02d83380' was not declared in this scope; did you mean 'DAT_02d833d0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "'_DAT_02d83384' was not declared in this scope; did you mean 'DAT_02d833d4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "'_DAT_02d83388' was not declared in this scope; did you mean 'DAT_02d83368'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 19,
-        "message": "'_DAT_02d8338c' was not declared in this scope; did you mean 'DAT_02d8330c'?"
       }
     ],
     "success": false,
@@ -44,18 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 179,
+    "complexity_score": 162,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 20,
-    "pseudocode_lines": 24,
-    "suspect_count": 14,
+    "pseudocode_lines": 22,
+    "suspect_count": 13,
     "suspect_types": [
       "suspect_float",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 65
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -189,26 +164,26 @@
     },
     {
       "addr": "02d83380",
-      "name": "DAT_02d83380",
-      "type": "undefined4",
+      "name": "INT_02d83380",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d83384",
-      "name": "DAT_02d83384",
-      "type": "undefined4",
+      "name": "INT_02d83384",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d83388",
-      "name": "DAT_02d83388",
-      "type": "undefined4",
+      "name": "INT_02d83388",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d8338c",
-      "name": "DAT_02d8338c",
-      "type": "undefined4",
+      "name": "INT_02d8338c",
+      "type": "int",
       "value": null
     }
   ],
@@ -243,99 +218,92 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 5,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.base.count = 4;",
       "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 13,
+      "line": 10,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 14,
+      "line": 11,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 15,
+      "line": 12,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 16,
+      "line": 13,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 17,
+      "line": 14,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 18,
+      "line": 15,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 19,
+      "line": 16,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 20,
+      "line": 17,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 18,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.A = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 19,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.C = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 20,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.D = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 21,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.B = 0xffff;",
       "type": "undefined_data"

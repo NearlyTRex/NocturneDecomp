@@ -26,6 +26,24 @@ extern CVector3f g_FaceNormalArray[4000];
 // CVector3i[20000]
 extern CVector3i g_TransformedVertexArray[20000];
 
+// float
+extern float FLOAT_032c1c74;
+extern float FLOAT_032c1c78;
+extern float FLOAT_032c1c7c;
+extern float FLOAT_032c1c80;
+extern float FLOAT_032c1c84;
+extern float FLOAT_032c1c88;
+extern float FLOAT_032c1c8c;
+extern float FLOAT_032c1c90;
+extern float FLOAT_032c1c94;
+extern float FLOAT_032c1ca0;
+extern float FLOAT_032c1ca4;
+extern float FLOAT_032c1ca8;
+extern float FLOAT_032c1cac;
+extern float FLOAT_032c1cb0;
+extern float FLOAT_032c1cb4;
+extern float FLOAT_032c1cb8;
+
 // int
 extern int g_SecondaryDirectionalLightCount;
 extern int g_PrimaryDirectionalLightCount;

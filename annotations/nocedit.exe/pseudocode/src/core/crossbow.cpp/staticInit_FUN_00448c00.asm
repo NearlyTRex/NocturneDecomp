@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_crossbow.cpp_staticInit_FUN_00448c00(void)
+; __cdecl void core_crossbow.cpp_staticInit_FUN_00448c00(void)
 ;
 ;
 ; Referenced Globals:

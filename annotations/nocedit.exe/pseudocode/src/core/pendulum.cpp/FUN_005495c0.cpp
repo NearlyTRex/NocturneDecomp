@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_pendulum.cpp_FUN_005495c0(uint param_1, uint
-   param_2, uint param_3, uint param_4) */
-
 void core_pendulum_cpp_FUN_005495c0(void)
 
 {
@@ -86,9 +82,9 @@ void core_pendulum_cpp_FUN_005495c0(void)
         pfStack_18 = (float *)(in_stack_00000008 + 0x20);
         pCStack_28 = (CMatrix3x3f *)(in_stack_00000004 + 0x3c);
         while( true ) {
-          CStack_a0.x = (float)(int)*ppCVar5 * _DAT_00662138;
-          CStack_a0.y = (float)(int)ppCVar5[1] * _DAT_00662138;
-          CStack_a0.z = (float)(int)ppCVar5[2] * _DAT_00662138;
+          CStack_a0.x = (float)(int)*ppCVar5 * 0.00390625f;
+          CStack_a0.y = (float)(int)ppCVar5[1] * 0.00390625f;
+          CStack_a0.z = (float)(int)ppCVar5[2] * 0.00390625f;
           pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              (pCStack_28,&CStack_64,&CStack_a0);
           if (&CStack_a0 != pCVar3) {

@@ -11,6 +11,6 @@ typedef struct SFace {
     int render_flags; // 0x4
     int depth; // 0x8
     STrianglePackedIndices indices; // 0xc
-    char field_18[14]; // 0x12
+    char unk[14]; // 0x12
 } SFace;
 

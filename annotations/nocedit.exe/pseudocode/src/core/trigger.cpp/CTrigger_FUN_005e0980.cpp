@@ -15,11 +15,10 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e0980(CTrigger *this_ptr)
   CBoundingBox3D CStack_30;
   CVector3f local_18;
   
-  if (*(int *)(this_ptr->field1_0x158 + 0x1c) == 3) {
+  if (*(int *)(this_ptr->unk + 0x1c) == 3) {
     pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                       (&this_ptr->base_actor,&local_18,in_stack_0000000c);
-    pCVar2 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                       (&this_ptr->base_actor,&CStack_30);
+                       (&this_ptr->base,&local_18,in_stack_0000000c);
+    pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_30);
     if (((((pCVar2->min).x <= pCVar1->x) && ((pCVar2->min).y <= pCVar1->y)) &&
         ((pCVar2->min).z <= pCVar1->z)) &&
        (((pCVar1->x <= (pCVar2->max).x && (pCVar1->y <= (pCVar2->max).y)) &&

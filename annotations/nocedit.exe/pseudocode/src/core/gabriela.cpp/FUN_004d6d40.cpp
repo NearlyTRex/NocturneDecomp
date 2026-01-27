@@ -46,17 +46,17 @@ void core_gabriela_cpp_FUN_004d6d40(void)
     return;
   }
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
-  if ((CDemonActor *)in_stack_00000004[0x1b].field7_0x6c != (CDemonActor *)0x0) {
+  if ((CDemonActor *)in_stack_00000004[0x1b].unk1 != (CDemonActor *)0x0) {
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
-              (g_CDemonSetPtr,(CDemonActor *)in_stack_00000004[0x1b].field7_0x6c);
+              (g_CDemonSetPtr,(CDemonActor *)in_stack_00000004[0x1b].unk1);
   }
   if (*(CDemonActor **)(in_stack_00000004[0x1b].create_event + 0x38) != (CDemonActor *)0x0) {
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
               (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004[0x1b].create_event + 0x38));
   }
   core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
-  if (in_stack_00000004[0x1b].field7_0x6c != 0) {
-    (**(code **)(*(int *)(in_stack_00000004[0x1b].field7_0x6c + 0x154) + 0x14))();
+  if (in_stack_00000004[0x1b].unk1 != 0) {
+    (**(code **)(*(int *)(in_stack_00000004[0x1b].unk1 + 0x154) + 0x14))();
   }
   core_gabriela_cpp_FUN_004d6f80();
   if (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) != 0) {

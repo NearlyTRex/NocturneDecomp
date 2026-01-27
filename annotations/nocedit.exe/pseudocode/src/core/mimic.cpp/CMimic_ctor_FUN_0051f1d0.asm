@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mimic.cpp_FUN_0051f190 at 0051f1aa
+;   core_mimic.cpp_factoryFunc_FUN_0051f190 at 0051f1aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGhoul_00638554

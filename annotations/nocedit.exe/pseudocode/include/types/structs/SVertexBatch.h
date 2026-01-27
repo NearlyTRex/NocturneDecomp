@@ -11,6 +11,6 @@ typedef struct SVertexBatch {
     int render_queue_index; // 0x4
     int vertex_count; // 0x8
     CVector3i vertex_buffer; // 0xc
-    void** field_24; // 0x18
+    void** unk; // 0x18
 } SVertexBatch;
 

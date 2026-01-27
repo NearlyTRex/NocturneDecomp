@@ -97,14 +97,14 @@ LAB_004ba895:
     }
     goto LAB_004ba895;
   }
-  g_VersionControlSession.field1_0x20[0] = '\0';
-  g_VersionControlSession.field1_0x20[1] = '\0';
-  g_VersionControlSession.field1_0x20[2] = '\0';
-  g_VersionControlSession.field1_0x20[3] = '\0';
-  g_VersionControlSession.field1_0x20[4] = '\0';
-  g_VersionControlSession.field1_0x20[5] = '\0';
-  g_VersionControlSession.field1_0x20[6] = '\0';
-  g_VersionControlSession.field1_0x20[7] = '\0';
+  g_VersionControlSession.unk1[0] = '\0';
+  g_VersionControlSession.unk1[1] = '\0';
+  g_VersionControlSession.unk1[2] = '\0';
+  g_VersionControlSession.unk1[3] = '\0';
+  g_VersionControlSession.unk1[4] = '\0';
+  g_VersionControlSession.unk1[5] = '\0';
+  g_VersionControlSession.unk1[6] = '\0';
+  g_VersionControlSession.unk1[7] = '\0';
   uVar4 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,local_340);
   if (((int)uVar4 < 0) || ((uVar4 & 8) != 0)) {
     iVar2 = 1;
@@ -113,7 +113,7 @@ LAB_004ba895:
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffff964,"A writable copy of %s exists.  Replace it?",local_340)
     ;
     iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                      ((int *)&stack0xfffff964,g_VersionControlSession.field1_0x20 + 4);
+                      ((int *)&stack0xfffff964,g_VersionControlSession.unk1 + 4);
   }
   if (0 < iVar2) {
     local_18 = -1;

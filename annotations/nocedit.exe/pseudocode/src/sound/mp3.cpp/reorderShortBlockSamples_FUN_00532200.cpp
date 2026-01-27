@@ -38,7 +38,7 @@ sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200
   int local_28;
   int local_24;
   
-  local_4c = *(int *)((*granule_array)->field2_0x8 + 8) + (*granule_array)->field0_0x0 * 3;
+  local_4c = *(int *)((*granule_array)->unk3 + 8) + (*granule_array)->unk1 * 3;
   iVar8 = 0;
   pafVar4 = (float (*) [18])output_samples;
   do {

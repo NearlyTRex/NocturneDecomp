@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_shovel.cpp_staticInit_FUN_00588b30(void)
+; __cdecl void core_shovel.cpp_staticInit_FUN_00588b30(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_bugs.cpp_staticInit_FUN_00424c40(void)
+; __cdecl void core_bugs.cpp_staticInit_FUN_00424c40(void)
 ;
 ;
 ; Referenced Globals:

@@ -6,24 +6,6 @@
         "column": 6,
         "line": 11,
         "message": "ambiguating new declaration of 'void core_waypoint_cpp_FUN_005ec4f0()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 32,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 37,
-        "line": 35,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 45,
-        "line": 36,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
       }
     ],
     "success": false,
@@ -50,6 +32,12 @@
         "category": "other",
         "column": 4,
         "line": 30,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -286,7 +274,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
-      "text": "if ((((*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iVar2 + 0x5dc8) != in_stack_00000004) &&",
+      "text": "if ((((*(int *)(g_CDemonSetPtr->unk4 + iVar2 + 0x5dc8) != in_stack_00000004) &&",
       "type": "stack_param"
     },
     {

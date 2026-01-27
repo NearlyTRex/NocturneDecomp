@@ -180,16 +180,16 @@ LAB_00540097:
   this_ptr->padding[1] = -1;
   this_ptr->padding[2] = -1;
   this_ptr->padding[3] = -1;
-  this_ptr->field7_0x118[0] = '\0';
+  this_ptr->unk[0] = '\0';
   this_ptr->connection_type = 0;
   g_ChatHistoryCount = 0;
   DAT_02f98ad0 = 0;
   g_RemoteSyncStage = 0;
   this_ptr->player_count = 0;
   DAT_02f7c8c4 = 0;
-  this_ptr->field7_0x118[0x50] = '\0';
-  this_ptr->field7_0x118[0x51] = '\0';
-  this_ptr->field7_0x118[0x52] = '\0';
-  this_ptr->field7_0x118[0x53] = '\0';
+  this_ptr->unk[0x50] = '\0';
+  this_ptr->unk[0x51] = '\0';
+  this_ptr->unk[0x52] = '\0';
+  this_ptr->unk[0x53] = '\0';
   return;
 }

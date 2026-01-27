@@ -17,13 +17,13 @@ void core_emitter_cpp_FUN_004a7e00(void)
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   iVar1 = *(int *)in_stack_00000004[1].actor_name;
-  in_stack_00000004[3].orient_matrix.m[0].y = (float)in_stack_00000004[1].field11_0xdc;
+  in_stack_00000004[3].orient_matrix.m[0].y = (float)in_stack_00000004[1].unk2;
   if (iVar1 == 4) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-              ((CKeyFramedModelInstance *)&in_stack_00000004[1].field13_0xec.y);
+              ((CKeyFramedModelInstance *)&in_stack_00000004[1].unk4.y);
   }
-  if (in_stack_00000004[2].field22_0x120 == 0) {
-    in_stack_00000004[2].field22_0x120 = (int)g_HeroActors[g_LocalHeroIndex];
+  if (in_stack_00000004[2].unk11 == 0) {
+    in_stack_00000004[2].unk11 = (int)g_HeroActors[g_LocalHeroIndex];
   }
   in_stack_00000004[3].orient.pitch = 0.0;
   uVar2 = *(uint *)(in_stack_00000004[1].actor_name + 0x10);

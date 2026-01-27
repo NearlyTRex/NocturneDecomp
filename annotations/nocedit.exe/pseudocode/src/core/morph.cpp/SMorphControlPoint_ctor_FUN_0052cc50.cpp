@@ -13,6 +13,6 @@ core_morph_cpp_SMorphControlPoint_ctor_FUN_0052cc50(SMorphControlPoint *this_ptr
   void *pvVar1;
   
   pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->field0_0x0 + 8,2,&g_CVectorTypeInfo);
+                     (this_ptr->unk + 8,2,&g_CVectorTypeInfo);
   return (SMorphControlPoint *)((int)pvVar1 + -8);
 }

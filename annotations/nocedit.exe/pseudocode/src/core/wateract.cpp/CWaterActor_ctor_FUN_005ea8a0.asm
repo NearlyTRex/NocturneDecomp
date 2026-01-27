@@ -7,7 +7,7 @@
 ; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_wateract.cpp_FUN_005ea860 at 005ea87a
+;   core_wateract.cpp_factoryFunc_FUN_005ea860 at 005ea87a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00657268
@@ -18,7 +18,7 @@
 ;   undefined4 s_one_0065726e
 ;   undefined4 s_ne_0065726f
 ;   undefined4 s_e_00657270
-;   CDemonActor_vtable PTR_core_wateract.cpp_FUN_00665334
+;   CDemonActor_vtable g_CWaterActorVTable
 ;   WatcomTypeInfo g_SWaterVertexTypeInfo
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005ea8bf
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffd64]          ; 005ea8c4
-    MOV dword ptr [EDX + 0x154],0x665334 ; 005ea8ca | PTR_core_wateract.cpp_FUN_00665334
+    MOV dword ptr [EDX + 0x154],0x665334 ; 005ea8ca | g_CWaterActorVTable
     MOV dword ptr [EDX + 0x158],0x40800000 ; 005ea8d4
     MOV dword ptr [EDX + 0x15c],0x3dcccccd ; 005ea8de
     MOV dword ptr [EDX + 0x160],0x40800000 ; 005ea8e8

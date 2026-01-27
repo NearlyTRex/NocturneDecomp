@@ -3,15 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 69,
-        "line": 33,
+        "column": 63,
+        "line": 32,
         "message": "'stack0xffffffe0' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 81,
-        "line": 37,
-        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field7_0x310'"
       }
     ],
     "success": false,
@@ -26,16 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 46,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 3,
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 30,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 124
+    "total_lines": 123
   },
   "cross_references": [],
   "function": {
@@ -170,9 +164,9 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 26,
+      "line": 25,
       "match": "&stack0xffffffe0",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);",
       "type": "stack_ref"
     }
   ],
@@ -184,7 +178,7 @@
         "vtable_addr": "00663604"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CLightActor",
         "offset": 8,
         "vtable_addr": "0065b2a4"
       },

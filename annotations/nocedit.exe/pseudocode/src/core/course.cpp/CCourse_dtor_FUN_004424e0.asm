@@ -8,12 +8,12 @@
 ;
 ; XREF[9]:
 ;   core_bat.cpp_CBat_dtor_FUN_00414fe0 at 00414ff5
-;   core_conveyor.cpp_FUN_00442380 at 00442395
+;   core_conveyor.cpp_CPlatform_dtor_FUN_00442380 at 00442395
 ;   core_conveyor.cpp_dtor_FUN_00442310 at 00442325
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e38e
-;   core_frankgen.cpp_FUN_004d28a0 at 004d28b5
+;   core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0 at 004d28b5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050785c
-;   core_marquee.cpp_FUN_0050c4c0 at 0050c4d5
+;   core_marquee.cpp_CMarquee_dtor_FUN_0050c4c0 at 0050c4d5
 ;   core_minecar.cpp_FUN_00520f40 at 00520f55
 ;   core_vehicle.cpp_CVehicle_dtor_FUN_005e8d20 at 005e8d35
 ;

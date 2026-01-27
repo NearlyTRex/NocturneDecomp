@@ -290,7 +290,7 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
     }
     else if (in_stack_0000000c == 0.0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_75c,(CVector3f *)&DAT_03f6babc,&g_ZeroVector);
+                (&local_75c,(CVector3f *)&FLOAT_03f6babc,&g_ZeroVector);
       pCVar10 = &local_75c;
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_66c);
       pCVar4 = &local_c6c;
@@ -330,7 +330,7 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_aec,(CVector3f *)&DAT_03f6bab0,&g_ZeroVector);
+                (&local_aec,(CVector3f *)&FLOAT_03f6bab0,&g_ZeroVector);
       pCVar10 = &local_aec;
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_72c);
       pCVar4 = &local_36c;
@@ -379,9 +379,9 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
   local_84.z = local_180.x;
   if (*(int *)(in_stack_00000004 + 0x2a8c) == 0xe) {
     pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_d8,&g_ZeroVector,(CMatrix3x4f *)(DAT_03f6bb04 * 0x30 + iVar7));
+                       (&local_d8,&g_ZeroVector,(CMatrix3x4f *)(INT_03f6bb04 * 0x30 + iVar7));
     pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_90,&g_ZeroVector,(CMatrix3x4f *)(DAT_03f6bb00 * 0x30 + iVar7));
+                       (&local_90,&g_ZeroVector,(CMatrix3x4f *)(INT_03f6bb00 * 0x30 + iVar7));
     local_198 = pCVar6->x + pCVar5->x;
     local_194 = pCVar6->y + pCVar5->y;
     local_108 = local_198 * 0.5f;

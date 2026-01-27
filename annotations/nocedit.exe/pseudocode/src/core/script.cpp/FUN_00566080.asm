@@ -14,7 +14,7 @@
 ;   undefined4 s_yntax_check_OK._00643f4e
 ;   undefined4 s_ntax_check_OK._00643f4f
 ;   undefined4 s_tax_check_OK._00643f50
-;   undefined4 DAT_0310f4b0
+;   CPickList DAT_0310f4b0
 ;   undefined4 DAT_0310fd44
 ;   undefined4 DAT_0310fd48
 ;   undefined1 DAT_0310fdc0

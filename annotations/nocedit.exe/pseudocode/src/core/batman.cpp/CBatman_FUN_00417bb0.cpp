@@ -19,16 +19,15 @@ int __cdecl core_batman_cpp_CBatman_FUN_00417bb0(CBatman *this_ptr)
   
   iVar2 = 1;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base_enemy).base_character.model,&local_1c,DAT_008227b8);
+                     (&(this_ptr->base).base.model,&local_1c,INT_008227b8);
   if (in_stack_00000008 != pCVar1) {
     in_stack_00000008->x = pCVar1->x;
     in_stack_00000008->y = pCVar1->y;
     in_stack_00000008->z = pCVar1->z;
   }
-  if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
-      [*(int *)(this_ptr->field1_0xbeb4 + 0x84)] != 0) {
+  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk1 + 0x84)] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                       (&(this_ptr->base_enemy).base_character.model,&local_28,DAT_008227dc);
+                       (&(this_ptr->base).base.model,&local_28,INT_008227dc);
     if (in_stack_00000008 + 1 != pCVar1) {
       in_stack_00000008[1].x = pCVar1->x;
       in_stack_00000008[1].y = pCVar1->y;
@@ -36,12 +35,11 @@ int __cdecl core_batman_cpp_CBatman_FUN_00417bb0(CBatman *this_ptr)
     }
     iVar2 = 2;
   }
-  if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
-      [*(int *)(this_ptr->field1_0xbeb4 + 0x70)] == 0) {
+  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk1 + 0x70)] == 0) {
     return iVar2;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base_enemy).base_character.model,&local_34,DAT_008227e4);
+                     (&(this_ptr->base).base.model,&local_34,DAT_008227e4);
   pCVar3 = in_stack_00000008 + iVar2;
   if (pCVar3 != pCVar1) {
     pCVar3->x = pCVar1->x;

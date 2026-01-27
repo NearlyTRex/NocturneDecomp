@@ -16,8 +16,8 @@
 ;   crt_fpemu.c_staticInit_FUN_0060be80 at 0060bebb
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00684acd
-;   int g_UseSoftwareMath = 0x0
+;   byte BYTE_00684acd = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
@@ -50,7 +50,7 @@ section .text
     RET                                 ; 0060dd0d
     RCR EDX,0x1                         ; 0060dd0e
         ;   Label: LAB_0060dd0e
-    CMP byte ptr [0x00684acd],0x0       ; 0060dd10 | DAT_00684acd
+    CMP byte ptr [0x00684acd],0x0       ; 0060dd10 | BYTE_00684acd
         ;   Label: LAB_0060dd10
     JZ 0x0060dd49                       ; 0060dd17
         ;   XREF to: 0060dd49 (CONDITIONAL_JUMP)  ; LAB_0060dd49

@@ -12,9 +12,9 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
   CEnemy *pCVar1;
   int iVar2;
   
-  pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
+  pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-            ((CDeformableModelInstance *)(pCVar1[1].base_character.base_actor.actor_name + 8));
+            ((CDeformableModelInstance *)(pCVar1[1].base.base.actor_name + 8));
   core_cloth_cpp_FUN_00438ba0();
   core_cloth_cpp_FUN_00438ba0();
   core_cloth_cpp_FUN_00438ba0();

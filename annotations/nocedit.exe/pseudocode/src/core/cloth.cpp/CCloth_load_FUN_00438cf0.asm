@@ -175,7 +175,7 @@ section .text
     ADD ESP,0x20                        ; 00438e68
     FXCH ST6                            ; 00438e6b
     FSTP float ptr [ESI + 0x3ce58]      ; 00438e6d
-    FLD float ptr [0x0065bb70]          ; 00438e73 | DAT_0065bb70
+    FLD float ptr [0x0065bb70]          ; 00438e73 | FLOAT_0065bb70
     FXCH ST5                            ; 00438e79
     FSTP float ptr [ESI + 0x3ce5c]      ; 00438e7b
     FXCH ST3                            ; 00438e81
@@ -391,13 +391,13 @@ section .text
     ADD EAX,EBP                         ; 004391a6
     INC EDI                             ; 004391a8
     FILD dword ptr [EAX]                ; 004391a9
-    FMUL float ptr [0x0065bb44]         ; 004391ab | DAT_0065bb44
+    FMUL float ptr [0x0065bb44]         ; 004391ab | FLOAT_0065bb44
     FSTP float ptr [EBX]                ; 004391b1
     FILD dword ptr [EAX + 0x4]          ; 004391b3
-    FMUL float ptr [0x0065bb44]         ; 004391b6 | DAT_0065bb44
+    FMUL float ptr [0x0065bb44]         ; 004391b6 | FLOAT_0065bb44
     FSTP float ptr [EBX + 0x4]          ; 004391bc
     FILD dword ptr [EAX + 0x8]          ; 004391bf
-    FMUL float ptr [0x0065bb44]         ; 004391c2 | DAT_0065bb44
+    FMUL float ptr [0x0065bb44]         ; 004391c2 | FLOAT_0065bb44
     FSTP float ptr [EBX + 0x8]          ; 004391c8
     ADD EDX,0x11c                       ; 004391cb
     MOV EAX,dword ptr [ESI + 0x104]     ; 004391d1

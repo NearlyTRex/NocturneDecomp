@@ -38,8 +38,8 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
   float local_1c;
   CVector3f *local_18;
   
-  this_ptr->field11_0x14d148 = -1;
-  this_ptr->field12_0x14d14c = -1;
+  this_ptr->unk1 = -1;
+  this_ptr->unk2 = -1;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   if (-1 < this_ptr->ignore_list_count) {
     if (max_t <= 0.0) {
@@ -74,15 +74,15 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240
               ((CBoundingBox3D *)local_88,(CVector3f *)(auStack_50 + 4));
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)&stack0xffffff34);
-    local_c4.ray_type = (int)this_ptr->field61_0x15f688;
-    local_c4.field1_0x4 = this_ptr->field62_0x15f68c;
-    local_c4.field2_0x8 = this_ptr->field63_0x15f690;
+    local_c4.ray_type = (int)this_ptr->unk9;
+    local_c4.unk1 = this_ptr->unk10;
+    local_c4.unk2 = this_ptr->unk11;
     local_1c = 0.0;
-    if (0 < *(int *)(this_ptr->field19_0x14f0a0 + 0x7d08)) {
+    if (0 < *(int *)(this_ptr->unk4 + 0x7d08)) {
       local_18 = &this_ptr->collision_normal;
       local_20 = this_ptr;
       do {
-        pCVar1 = *(CDemonActor **)(local_20->field19_0x14f0a0 + 0x7d0c);
+        pCVar1 = *(CDemonActor **)(local_20->unk4 + 0x7d0c);
         pvVar2 = (void *)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar1);
         if (pvVar2 == (void *)0x0) {
           local_c4.cylinder_top_y = (float)pvVar2;
@@ -100,8 +100,8 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
                 unaff_EBP->z = CStack_9c.z;
               }
               this_ptr->collision_actor = pCVar1;
-              this_ptr->field11_0x14d148 = iStack_90;
-              this_ptr->field12_0x14d14c = local_88._4_4_;
+              this_ptr->unk1 = iStack_90;
+              this_ptr->unk2 = local_88._4_4_;
               fStack_38 = ray_target->x - ray_origin->x;
               fStack_34 = ray_target->y - ray_origin->y;
               auStack_50._0_4_ = fStack_38 * fVar4;
@@ -135,7 +135,7 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
         }
         local_20 = (CDemonSet *)local_20->cameras;
         local_1c = (float)((int)local_1c + 1);
-      } while ((int)local_1c < *(int *)(this_ptr->field19_0x14f0a0 + 0x7d08));
+      } while ((int)local_1c < *(int *)(this_ptr->unk4 + 0x7d08));
     }
     pCVar1 = this_ptr->collision_actor;
     if (pCVar1 != (CDemonActor *)0x0) {

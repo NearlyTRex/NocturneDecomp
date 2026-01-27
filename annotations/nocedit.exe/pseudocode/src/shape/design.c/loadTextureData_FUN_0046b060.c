@@ -45,12 +45,11 @@ shape_design_c_loadTextureData_FUN_0046b060
   
   if (g_TextureManagerMode == 0) {
     local_1c = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (config_ptr->field0_0x0,(char *)0x0,"rb","..\\shape\\design.c"
-                          ,0x27a2);
+                         (config_ptr->unk1,(char *)0x0,"rb","..\\shape\\design.c",
+                          0x27a2);
   }
   else {
-    local_1c = engine_dosio_c_getFile_FUN_00481a50
-                         ("art",config_ptr->field0_0x0,"rb");
+    local_1c = engine_dosio_c_getFile_FUN_00481a50("art",config_ptr->unk1,"rb");
   }
   if (local_1c == (FILE *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";

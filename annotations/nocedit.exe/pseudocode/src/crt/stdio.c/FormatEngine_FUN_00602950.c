@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Struct "FormatSpec": ignoring multiple overlapping fields */
 
 int __cdecl
 crt_stdio_c_FormatEngine_FUN_00602950
@@ -38,7 +37,12 @@ crt_stdio_c_FormatEngine_FUN_00602950
   uint local_18;
   
   local_18 = local_18 & 0xffffff00;
-  local_88.flags._0_2_ = 0;
+  local_88.flags =
+       ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
+        ALTERNATE_FORM);
+  local_88.length_flags =
+       ~(BASIC_RESERVED|BASIC_NEAR_PTR_FLAG|BASIC_FAR_PTR_FLAG|BASIC_WIDE_FLAG|BASIC_CHAR_FLAG|
+         BASIC_SHORT_FLAG|BASIC_LONG_FLAG|BASIC_I64_FLAG);
   local_88.unknown_0x1C[0] = 'd';
   local_88.unknown_0x1C[1] = '\0';
   local_88.padding1 = '\0';
@@ -87,17 +91,17 @@ LAB_00602d41:
       *(va_list_t *)args = local_24;
       local_88.width =
            local_88.width -
-           (local_88._32_4_ + local_88.padding_needed + local_88.content_length +
+           (local_88.output_length + local_88.padding_needed + local_88.content_length +
             local_88.prefix_length + local_88.suffix_length + local_88.alternate_form_length);
       local_1c = extraout_EDX;
-      if ((((ushort)local_88.flags & LEFT_ALIGN) == 0) && (local_88.zerofill == ' ')) {
+      if (((local_88._30_2_ & 8) == 0) && (local_88.zerofill == ' ')) {
         while (0 < local_88.width) {
           (*callback)(&local_88,0x20);
           local_88.total_output_count = local_88.total_output_count + -1;
         }
       }
       local_20 = &local_88.length_modifier_flags;
-      iVar11 = local_88._32_4_;
+      iVar11 = local_88.output_length;
       while (0 < iVar11) {
         (*callback)(&local_88,(uint)(byte)*local_20);
         local_18 = local_18 + 1;
@@ -110,7 +114,7 @@ LAB_00602d41:
         local_88.prefix_length = local_88.prefix_length + -1;
       }
       if (local_88.conversion_char == 's') {
-        if (((ushort)local_88.flags & LONG_MODIFIER) == 0) {
+        if ((local_88._30_2_ & 0x20) == 0) {
           while (0 < local_88.content_length) {
             (*callback)(&local_88,(uint)(byte)*wide_string_offset);
             local_88.suffix_length = local_88.suffix_length + -1;
@@ -146,7 +150,7 @@ LAB_00602d41:
         (*callback)(&local_88,0x30);
         iStack_4c = iStack_4c + -1;
       }
-      if (((ushort)local_88.flags & LEFT_ALIGN) != 0) {
+      if ((local_88._30_2_ & 8) != 0) {
         while (0 < local_88.width) {
           (*callback)(&local_88,0x20);
           local_88.total_output_count = local_88.total_output_count + -1;
@@ -154,10 +158,10 @@ LAB_00602d41:
       }
       goto LAB_00602d41;
     }
-    if (((ushort)local_88.flags & LONG_MODIFIER) == 0) {
-      if (((ushort)local_88.flags & SHORT_MODIFIER) == 0) {
-        if (((ushort)local_88.flags & FAR_PTR) == 0) {
-          if (((ushort)local_88.flags & NEAR_PTR) == 0) {
+    if ((local_88._30_2_ & 0x20) == 0) {
+      if ((local_88._30_2_ & 0x10) == 0) {
+        if ((local_88._30_2_ & 0x80) == 0) {
+          if ((local_88._30_2_ & 0x40) == 0) {
             puVar3 = *(uint **)args;
             *(uint **)args = puVar3 + 1;
             *(uint *)*puVar3 = local_88._16_4_;
@@ -197,8 +201,8 @@ LAB_00602d41:
       }
       else {
         uVar4 = local_88._16_2_;
-        if (((ushort)local_88.flags & FAR_PTR) == 0) {
-          if (((ushort)local_88.flags & NEAR_PTR) == 0) {
+        if ((local_88._30_2_ & 0x80) == 0) {
+          if ((local_88._30_2_ & 0x40) == 0) {
             puVar3 = *(uint **)args;
             *(uint **)args = puVar3 + 1;
             *(ushort *)*puVar3 = uVar4;
@@ -238,8 +242,8 @@ LAB_00602d41:
       }
       goto LAB_006029a0;
     }
-    if (((ushort)local_88.flags & FAR_PTR) == 0) {
-      if (((ushort)local_88.flags & NEAR_PTR) == 0) {
+    if ((local_88._30_2_ & 0x80) == 0) {
+      if ((local_88._30_2_ & 0x40) == 0) {
         puVar3 = *(uint **)args;
         *(uint **)args = puVar3 + 1;
         *(uint *)*puVar3 = local_88._16_4_;

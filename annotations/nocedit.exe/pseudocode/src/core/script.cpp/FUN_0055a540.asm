@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [EAX + 0x228],EDX     ; 0055a5a2 | DAT_02d81cc4
     LEA EAX,[ESP + 0x4]                 ; 0055a5a8
     PUSH EAX                            ; 0055a5ac
-    MOV dword ptr [0x0310f4a0],EDX      ; 0055a5ad | DAT_0310f4a0
+    MOV dword ptr [0x0310f4a0],EDX      ; 0055a5ad | FLOAT_0310f4a0
     MOV dword ptr [EBX + 0x454],0xbf800000 ; 0055a5b3
     PUSH EDX                            ; 0055a5bd
     MOV dword ptr [EBX + 0x458],0xffffffff ; 0055a5be

@@ -41,7 +41,7 @@ int core_script_cpp_CScript_loadState_FUN_00560820(void)
               (in_stack_00000008,"%d\n",&g_CGamePtr->allow_enemy_attack_flag);
   }
   crt_stdio_c_fgets_FUN_005fefd0(local_118,0xff,in_stack_00000008);
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%g\n",&DAT_0310f4a0);
+  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%g\n",&FLOAT_0310f4a0);
   crt_stdio_c_fgets_FUN_005fefd0(local_118,0xff,in_stack_00000008);
   crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n",in_stack_00000004 + 0x48);
   crt_stdio_c_fgets_FUN_005fefd0(local_118,0xff,in_stack_00000008);

@@ -29,11 +29,10 @@ void core_msnedit_cpp_DeleteActors_FUN_0053df90(void)
   while( true ) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3bc);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_3bc.base_strlist,"Delete actors using list.");
+              (&local_3bc.base,"Delete actors using list.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_3bc.base_strlist,"Delete actors using wildcard");
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_3bc.base_strlist,"Delete actors by type");
+              (&local_3bc.base,"Delete actors using wildcard");
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3bc.base,"Delete actors by type");
     local_14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                          (&local_3bc,"Delete actors",local_14,0);
     if (local_14 < 0) break;

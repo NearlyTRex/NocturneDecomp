@@ -13,12 +13,12 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6850(CStranger *this_ptr)
   CDemonActor *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   
-  if (in_stack_00000008 == *(CDemonActor **)(this_ptr->field2_0x1fbd8 + 0x54)) {
-    pCVar1 = (this_ptr->base_hero).base_character.base_actor.vtable._ue;
-    this_ptr->field2_0x1fbd8[0x54] = '\0';
-    this_ptr->field2_0x1fbd8[0x55] = '\0';
-    this_ptr->field2_0x1fbd8[0x56] = '\0';
-    this_ptr->field2_0x1fbd8[0x57] = '\0';
+  if (in_stack_00000008 == *(CDemonActor **)(this_ptr->unk1 + 0x54)) {
+    pCVar1 = (this_ptr->base).base.base.vtable._ue;
+    this_ptr->unk1[0x54] = '\0';
+    this_ptr->unk1[0x55] = '\0';
+    this_ptr->unk1[0x56] = '\0';
+    this_ptr->unk1[0x57] = '\0';
     (*(pCVar1->_ue).field_4)();
   }
   core_charactr_cpp_CCharacter_drop_FUN_0042bf90

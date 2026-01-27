@@ -50,27 +50,9 @@
         "message": "invalid cast from type 'void*' to type 'float'"
       },
       {
-        "category": "missing_member",
-        "column": 36,
-        "line": 127,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 40,
-        "line": 131,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 41,
-        "line": 133,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
         "category": "other",
         "column": 21,
-        "line": 153,
+        "line": 149,
         "message": "invalid cast from type 'void*' to type 'float'"
       }
     ],
@@ -276,20 +258,20 @@
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 104,
+        "column": 66,
+        "line": 103,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 106,
+        "column": 66,
+        "line": 105,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 108,
+        "column": 66,
+        "line": 107,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -324,73 +306,73 @@
       },
       {
         "category": "other",
-        "column": 67,
+        "column": 55,
         "line": 127,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 129,
+        "line": 128,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 134,
+        "column": 49,
+        "line": 132,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 24,
-        "line": 140,
+        "column": 66,
+        "line": 136,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 142,
+        "column": 62,
+        "line": 138,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 24,
-        "line": 144,
+        "column": 66,
+        "line": 139,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 147,
+        "line": 143,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 148,
+        "line": 144,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 160,
+        "line": 156,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 160,
+        "line": 156,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 810,
+    "complexity_score": 806,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 17,
-    "pseudocode_lines": 155,
+    "pseudocode_lines": 151,
     "suspect_count": 63,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -399,7 +381,7 @@
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 501
+    "total_lines": 497
   },
   "cross_references": [
     {
@@ -583,7 +565,7 @@
     },
     {
       "addr": "03265254",
-      "name": "g_CDemonSetInstance.field19_0x14f0a0[7996]",
+      "name": "g_CDemonSetInstance.unk4[7996]",
       "type": "undefined4",
       "value": null
     },
@@ -975,23 +957,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
+      "line": 96,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 0x20);",
+      "text": "fStack_3c = (this_ptr->base).base.location.position.x - *(float *)(in_stack_00000004 + 0x20)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 98,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 0x24);",
+      "text": "fStack_38 = (this_ptr->base).base.location.position.y - *(float *)(in_stack_00000004 + 0x24)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 101,
+      "line": 100,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 0x28);",
+      "text": "fStack_34 = (this_ptr->base).base.location.position.z - *(float *)(in_stack_00000004 + 0x28)",
       "type": "stack_param"
     },
     {
@@ -1054,89 +1036,89 @@
       "description": "Unresolved stack parameter",
       "line": 120,
       "match": "in_stack_00000004",
-      "text": "if (*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c) <= *(int *)(in_stack_00000004 + 0x29c)",
+      "text": "if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= *(int *)(in_stack_00000004 + 0x29c)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 121,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x29c) = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 125,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x29c) * 4 + 8000);",
+      "text": "(g_CDemonSetPtr->unk4 + *(int *)(in_stack_00000004 + 0x29c) * 4 + 8000);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 129,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 0x20);",
+      "text": "fStack_30 = (this_ptr_00->base).location.position.x - *(float *)(in_stack_00000004 + 0x20)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 131,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 0x24);",
+      "text": "fVar1 = (this_ptr_00->base).location.position.y - *(float *)(in_stack_00000004 + 0x24);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 132,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 0x28);",
+      "text": "fStack_28 = (this_ptr_00->base).location.position.z - *(float *)(in_stack_00000004 + 0x28)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 136,
       "match": "in_stack_00000004",
       "text": "((double)((*(float *)(in_stack_00000004 + 0x158) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 137,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x160)) *",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 143,
+      "line": 139,
       "match": "ROUND",
       "text": "iStack_1c = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 144,
       "match": "ABS",
       "text": "if ((ABS(fStack_34) < fVar1) && (ABS(fStack_2c) < fVar1)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 144,
       "match": "ABS",
       "text": "if ((ABS(fStack_34) < fVar1) && (ABS(fStack_2c) < fVar1)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 153,
+      "line": 149,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x29c) = *(int *)(in_stack_00000004 + 0x29c) + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 153,
+      "line": 149,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x29c) = *(int *)(in_stack_00000004 + 0x29c) + 1;",
       "type": "stack_param"

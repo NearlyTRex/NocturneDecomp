@@ -20,7 +20,7 @@ int __cdecl core_enemy_cpp_FUN_004a9a50(CEnemy *this_ptr)
   if (in_stack_00000008 == (CDemonActor *)0x0) {
     return 0;
   }
-  pCVar1 = (CVector3f *)(*(((this_ptr->base_character).base_actor.vtable._ue)->_ue).field_0)();
+  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._ue)->_ue).field_0)();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,(CVector3f *)(auStack_3c + 4),pCVar1);
   (*((in_stack_00000008->vtable)._ub)->getBoundingBox)

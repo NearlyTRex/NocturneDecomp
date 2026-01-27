@@ -8,11 +8,11 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004e0332
-;   core_gasmask.cpp_FUN_004e5cc0 at 004e5cda
+;   core_gasmask.cpp_factoryFunc_FUN_004e5cc0 at 004e5cda
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gasmask_kfm_0062daa9
-;   CDemonActor_vtable PTR_core_gasmask.cpp_CGasMask_FUN_004e5d50_0065ebf4
+;   CDemonActor_vtable g_CGasMaskVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
@@ -39,7 +39,7 @@ section .text
     PUSH 0x62daa9                       ; 004e5d22 | = "gasmask.kfm"
     LEA EAX,[EBX + 0x158]               ; 004e5d27
     PUSH EAX                            ; 004e5d2d
-    MOV dword ptr [EBX + 0x154],0x65ebf4 ; 004e5d2e | PTR_core_gasmask.cpp_CGasMask_FUN_004e5d50_0065ebf4
+    MOV dword ptr [EBX + 0x154],0x65ebf4 ; 004e5d2e | g_CGasMaskVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004e5d38
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004e5d3d

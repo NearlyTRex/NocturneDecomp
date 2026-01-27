@@ -47,6 +47,9 @@ int g_ClipBuffer3VertexCount = {};
 int g_ClipBuffer4VertexCount = {};
 int g_ClipBuffer5VertexCount = {};
 int g_ClipOutputVertexCount = {};
+int DAT_02ceed24 = {};
+int DAT_02ceed28 = {};
+int DAT_02ceed2c = {};
 
 // undefined4
 undefined4 DAT_02cee5ac = {};

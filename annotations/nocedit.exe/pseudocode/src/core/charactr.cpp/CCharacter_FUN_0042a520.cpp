@@ -81,7 +81,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a520(CCharacter *this_ptr)
         local_38 = local_1c + 2;
         while (*(int *)(this_ptr->cloth_data + 0x478) < 0x32) {
           iVar7 = *(int *)(this_ptr->cloth_data + 0x478);
-          (this_ptr->base_actor).is_transparent = 1;
+          (this_ptr->base).is_transparent = 1;
           pcVar9 = local_3c + iVar7 * 0x18;
           *(int *)(this_ptr->cloth_data + 0x478) = iVar7 + 1;
           this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -106,7 +106,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a520(CCharacter *this_ptr)
           pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              (&local_6c,(CVector3f *)(pcVar9 + 8),local_44 + *(int *)(pcVar9 + 4));
           pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                             (&this_ptr->base_actor,&CStack_60,pCVar5);
+                             (&this_ptr->base,&CStack_60,pCVar5);
           iVar7 = *(int *)(this_ptr->cloth_data + 0x478) + -1;
           *(float *)(local_40 + iVar7 * 0x2a4 + 0x20) = pCVar5->x;
           *(float *)(local_40 + iVar7 * 0x2a4 + 0x24) = pCVar5->y;

@@ -17,10 +17,9 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   CHero *pCVar5;
   CKeyFramedModelInstance *pCVar6;
   
-  pCVar5 = core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
+  pCVar5 = core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)&pCVar5[1].base_character.base_actor.field17_0x104)
-  ;
+                     ((CKeyFramedModelInstance *)&pCVar5[1].base.base.unk7);
   this_ptr_00 = (CStranger *)(pCVar6[-0x157].part_visibility_flags + 0x13);
   pCVar6[-0x156].part_visibility_flags[9] = (int)&g_CStrangerVTable;
   pCVar6[-0xffffffff00000001].model_name[0] = '\0';

@@ -36,9 +36,9 @@ void core_game_cpp_FUN_004e2fc0(void)
       if (iVar1 == 0) break;
       core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
     }
-    core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGameInstance);
+    core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
     return;
   }
-  core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGameInstance);
+  core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
   return;
 }

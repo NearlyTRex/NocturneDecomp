@@ -9,8 +9,8 @@
 void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9150(CCryptVessel *this_ptr)
 
 {
-  (this_ptr->base_actor).orient.pitch = 0.0;
-  (this_ptr->base_actor).orient.heading = 0.0;
-  this_ptr->field3_0x2d4 = 0;
+  (this_ptr->base).orient.pitch = 0.0;
+  (this_ptr->base).orient.heading = 0.0;
+  this_ptr->unk2 = 0;
   return;
 }

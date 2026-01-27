@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Struct "FormatSpec": ignoring multiple overlapping fields */
-
 void __cdecl
 crt_stdio_c_FloatingPointStub_FUN_00603160(char *buffer,va_list_t *args,FormatSpec *spec_info)
 

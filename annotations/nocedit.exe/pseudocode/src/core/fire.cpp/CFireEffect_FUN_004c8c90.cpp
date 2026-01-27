@@ -27,15 +27,14 @@ int __cdecl core_fire_cpp_CFireEffect_FUN_004c8c90(CFireEffect *this_ptr)
   pCVar5 = g_ExplosionPool;
   iVar4 = 0;
   do {
-    if ((float)0.5 < *(float *)(pCVar5->field0_0x0 + 0xc)) {
+    if ((float)0.5 < *(float *)(pCVar5->unk + 0xc)) {
       if (&local_48 != local_24) {
-        local_48 = *in_stack_00000008 - *(float *)pCVar5->field0_0x0;
-        local_44 = in_stack_00000008[1] - *(float *)(pCVar5->field0_0x0 + 4);
-        local_40 = in_stack_00000008[2] - *(float *)(pCVar5->field0_0x0 + 8);
+        local_48 = *in_stack_00000008 - *(float *)pCVar5->unk;
+        local_44 = in_stack_00000008[1] - *(float *)(pCVar5->unk + 4);
+        local_40 = in_stack_00000008[2] - *(float *)(pCVar5->unk + 8);
       }
       fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
-      if (fVar1 < *(float *)(pCVar5->field0_0x0 + 0x10) * (float)0.5 + in_stack_0000000c
-         ) {
+      if (fVar1 < *(float *)(pCVar5->unk + 0x10) * (float)0.5 + in_stack_0000000c) {
         if (in_stack_00000010 != (float *)0x0) {
           fVar1 = 1.0 / fVar1;
           fVar2 = local_44 * fVar1 * 40.0f;
@@ -47,7 +46,7 @@ int __cdecl core_fire_cpp_CFireEffect_FUN_004c8c90(CFireEffect *this_ptr)
           }
         }
         if (in_stack_00000014 != (uint *)0x0) {
-          *in_stack_00000014 = *(uint *)(pCVar5->field0_0x0 + 0x14);
+          *in_stack_00000014 = *(uint *)(pCVar5->unk + 0x14);
         }
         return 1;
       }

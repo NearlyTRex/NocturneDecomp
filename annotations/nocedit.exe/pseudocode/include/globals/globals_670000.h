@@ -601,6 +601,7 @@ extern undefined4 DAT_0067e184;
 extern ushort g_LightmapData[384];
 
 // void*
+extern void* g_CBaronStaticInitFunc;
 extern void* g_PerspectiveScanlineColorPtr;
 extern void* switchdataD_00679d10;
 extern void* switchdataD_00679d54;

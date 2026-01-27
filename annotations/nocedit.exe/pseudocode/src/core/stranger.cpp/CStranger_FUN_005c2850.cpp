@@ -58,7 +58,7 @@ uint core_stranger_cpp_CStranger_FUN_005c2850(void)
   if (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0) {
     return 0;
   }
-  if ((in_stack_00000004[0x1f].field12_0xe0.y != 1.96182e-44) &&
+  if ((in_stack_00000004[0x1f].unk3.y != 1.96182e-44) &&
      (local_18 = (float)core_charactr_cpp_CCharacter_FUN_0042e840(),
      local_18 < (float)0.98999999999999999)) {
     return 0;
@@ -95,9 +95,9 @@ uint core_stranger_cpp_CStranger_FUN_005c2850(void)
              ((fVar4 < (float)3 && (ABS(fVar2) < (float)2)))) &&
             (dVar1 = (double)fVar3, 0.0 < dVar1)) && (dVar1 < 4)) {
           in_stack_00000004[0x17a].orient_matrix.m[1].x = 2.8026e-45;
-          if ((CLocation *)&in_stack_00000004[0x179].field22_0x120 != input_world_point) {
-            in_stack_00000004[0x179].field22_0x120 = (int)(input_world_point->position).x;
-            in_stack_00000004[0x179].field23_0x124 = (int)(pCVar5->location).position.y;
+          if ((CLocation *)&in_stack_00000004[0x179].unk11 != input_world_point) {
+            in_stack_00000004[0x179].unk11 = (int)(input_world_point->position).x;
+            in_stack_00000004[0x179].unk12 = (int)(pCVar5->location).position.y;
             in_stack_00000004[0x179].previous_transform_state.position.x =
                  (pCVar5->location).position.z;
           }
@@ -157,9 +157,9 @@ uint core_stranger_cpp_CStranger_FUN_005c2850(void)
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",fVar2,0xe78);
           }
           in_stack_00000004[0x17a].orient_matrix.m[1].x = 2.8026e-45;
-          if ((CLocation *)&in_stack_00000004[0x179].field22_0x120 != &pCStack_34->location) {
-            in_stack_00000004[0x179].field22_0x120 = (int)(pCStack_34->location).position.x;
-            in_stack_00000004[0x179].field23_0x124 = (int)(pCStack_34->location).position.y;
+          if ((CLocation *)&in_stack_00000004[0x179].unk11 != &pCStack_34->location) {
+            in_stack_00000004[0x179].unk11 = (int)(pCStack_34->location).position.x;
+            in_stack_00000004[0x179].unk12 = (int)(pCStack_34->location).position.y;
             in_stack_00000004[0x179].previous_transform_state.position.x =
                  (pCStack_34->location).position.z;
           }

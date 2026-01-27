@@ -9,5 +9,5 @@
 int __cdecl core_hero_cpp_CHero_FUN_004f2870(CHero *this_ptr)
 
 {
-  return (int)(this_ptr->field3_0xbe2c + 0x2c);
+  return (int)(this_ptr->unk2 + 0x2c);
 }

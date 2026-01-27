@@ -58,28 +58,28 @@ typedef struct CGame {
     int aim_mode; // 0xc4
     int auto_use_health; // 0xc8
     int cutscene_skippable; // 0xcc
-    char field_208[256]; // 0xd0
-    int field_464; // 0x1d0
-    int field_468; // 0x1d4
+    char unk1[256]; // 0xd0
+    int unk2; // 0x1d0
+    int unk3; // 0x1d4
     int event_processing_enabled; // 0x1d8
     int subtitle_system_enabled; // 0x1dc
-    int field_480; // 0x1e0
+    int unk4; // 0x1e0
     int camera_debug_enabled; // 0x1e4
-    int field_488; // 0x1e8
+    int unk5; // 0x1e8
     float time_scale_factor; // 0x1ec
     int scripted_sequence_active; // 0x1f0
-    int field_500; // 0x1f4
+    int unk6; // 0x1f4
     int editor_tools_enabled; // 0x1f8
     int is_paused; // 0x1fc
     int wait_for_keypress; // 0x200
-    int field_516; // 0x204
-    int field_520; // 0x208
+    int unk7; // 0x204
+    int unk8; // 0x208
     int profile_mode; // 0x20c
     int velocity_debug_enabled; // 0x210
     int head_of_horror_cheat; // 0x214
-    int field_536; // 0x218
-    int field_540; // 0x21c
-    int field_544; // 0x220
+    int unk9; // 0x218
+    int unk10; // 0x21c
+    int unk11; // 0x220
     int gamma; // 0x224
     int letterbox_mode; // 0x228
     int allow_damage_flag; // 0x22c
@@ -93,7 +93,7 @@ typedef struct CGame {
     float player_pos_x; // 0x24c
     float player_rotation; // 0x250
     int game_state_flags; // 0x254
-    int field_600; // 0x258
+    int unk12; // 0x258
     int clocktime; // 0x25c
     int delta_time_int; // 0x260
     float delta_time_float; // 0x264
@@ -107,12 +107,12 @@ typedef struct CGame {
     char message_text[256]; // 0x284
     float message_timer; // 0x384
     int status_display_count; // 0x388
-    char field_908[1584]; // 0x38c
-    int field_2492; // 0x9bc
-    int field_2496; // 0x9c0
+    char unk13[1584]; // 0x38c
+    int unk14; // 0x9bc
+    int unk15; // 0x9c0
     int need_chapter_reload; // 0x9c4
     int save_version; // 0x9c8
-    char field_2508[252]; // 0x9cc
+    char unk16[252]; // 0x9cc
     int show_customizable_keys; // 0xac8
 } CGame;
 

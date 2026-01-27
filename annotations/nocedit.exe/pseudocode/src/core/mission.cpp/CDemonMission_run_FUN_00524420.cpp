@@ -33,7 +33,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004daf80(g_CGamePtr);
     actor_ptr = g_HeroActors[g_LocalHeroIndex];
     core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0(this_ptr,(CDemonActor *)actor_ptr);
-    (*(((actor_ptr->base_character).base_actor.vtable._uh)->_uh).herofunc4)();
+    (*(((actor_ptr->base).base.vtable._uh)->_uh).herofunc4)();
     core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
     if ((iVar1 == 0) || (DAT_02f35f10 == '\0')) break;
     iVar1 = crt_string_c_stricmp_FUN_005fe7f0(g_CDemonSetPtr->geometry_filename,"hq.geo");
@@ -66,7 +66,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
   }
   core_mission_cpp_CDemonMission_FUN_00523f20(this_ptr);
 LAB_005244ee:
-  if (g_CGamePtr->field87_0x258 == 0) {
+  if (g_CGamePtr->unk12 == 0) {
     return;
   }
   core_game_cpp_CGame_finishAct_FUN_004e3b90();

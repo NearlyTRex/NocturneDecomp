@@ -7,7 +7,7 @@
 ; CColonel *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_colonel.cpp_FUN_0043f7a0 at 0043f7ba
+;   core_colonel.cpp_factoryFunc_FUN_0043f7a0 at 0043f7ba
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_colonel_dfm_00618b8e

@@ -15,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570870(CDemonSet *this_ptr)
   int in_stack_00000010;
   
   if (g_CGamePtr->scripted_sequence_active == 0) {
-    if (g_CGamePtr->field62_0x1f4 != 0) {
+    if (g_CGamePtr->unk6 != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar1 == 0) {
         core_set_cpp_FUN_005702b0();

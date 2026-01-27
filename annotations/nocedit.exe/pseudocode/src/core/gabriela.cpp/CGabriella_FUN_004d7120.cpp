@@ -49,9 +49,8 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr)
   float local_10;
   
   bVar6 = 0;
-  actor_ptr = (this_ptr->base_hero).base_character.carry_hands[(int)in_stack_00000008].carry_actor;
-  local_10 = *(float *)(this_ptr->base_hero).base_character.carry_hands[(int)in_stack_00000008].
-                       field0_0x0;
+  actor_ptr = (this_ptr->base).base.carry_hands[(int)in_stack_00000008].carry_actor;
+  local_10 = *(float *)(this_ptr->base).base.carry_hands[(int)in_stack_00000008].unk1;
   local_50.x = 0.0;
   local_5c.z = 0.0;
   local_5c.y = 0.0;
@@ -109,8 +108,8 @@ LAB_004d73e5:
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((CMatrix3x4f *)auStack_c8,
              (CMatrix3x4f *)
-             (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices
-             [unaff_EDI].m,&CStack_128);
+             (this_ptr->base).base.model.bone_transform.bone_world_matrices[unaff_EDI].m,&CStack_128
+            );
   pCVar4 = &CStack_128;
   pfVar5 = (float *)auStack_c8;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -153,8 +152,7 @@ LAB_004d719a:
   core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20
             (&local_2c,
              (CMatrix3x4f *)
-             (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices
-             [unaff_EDI].m);
+             (this_ptr->base).base.model.bone_transform.bone_world_matrices[unaff_EDI].m);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&CStack_158,&local_2c,&local_50)
   ;
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0

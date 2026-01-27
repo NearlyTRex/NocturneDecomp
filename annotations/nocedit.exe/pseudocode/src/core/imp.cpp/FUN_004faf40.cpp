@@ -27,7 +27,7 @@ int core_imp_cpp_FUN_004faf40(void)
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbef0) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,
-                        DAT_02db89f4);
+                        INT_02db89f4);
     if (in_stack_00000008 != pCVar1) {
       in_stack_00000008->x = pCVar1->x;
       in_stack_00000008->y = pCVar1->y;
@@ -38,7 +38,7 @@ int core_imp_cpp_FUN_004faf40(void)
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbec8) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_3c,
-                        DAT_02db8a08);
+                        INT_02db8a08);
     pCVar2 = in_stack_00000008 + iVar3;
     if (pCVar2 != pCVar1) {
       pCVar2->x = pCVar1->x;
@@ -50,7 +50,7 @@ int core_imp_cpp_FUN_004faf40(void)
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbed0) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,
-                        DAT_02db8a0c);
+                        INT_02db8a0c);
     pCVar2 = in_stack_00000008 + iVar3;
     if (pCVar2 != pCVar1) {
       pCVar2->x = pCVar1->x;
@@ -62,7 +62,7 @@ int core_imp_cpp_FUN_004faf40(void)
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbee8) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_48,
-                        DAT_02db8a18);
+                        INT_02db8a18);
     pCVar2 = in_stack_00000008 + iVar3;
     if (pCVar2 != pCVar1) {
       pCVar2->x = pCVar1->x;
@@ -75,7 +75,7 @@ int core_imp_cpp_FUN_004faf40(void)
     return iVar3;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_24,DAT_02db8a20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_24,INT_02db8a20
                      );
   in_stack_00000008 = in_stack_00000008 + iVar3;
   if (in_stack_00000008 != pCVar1) {

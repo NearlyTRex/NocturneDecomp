@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_anvil.cpp_staticInit_FUN_00411c70(void)
+; __cdecl void core_anvil.cpp_staticInit_FUN_00411c70(void)
 ;
 ;
 ; Referenced Globals:

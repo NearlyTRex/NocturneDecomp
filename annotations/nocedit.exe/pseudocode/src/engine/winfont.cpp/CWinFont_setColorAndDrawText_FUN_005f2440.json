@@ -4,73 +4,73 @@
       {
         "category": "other",
         "column": 7,
-        "line": 80,
+        "line": 78,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 84,
+        "line": 82,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 98,
+        "line": 96,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 98,
+        "line": 96,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 101,
+        "line": 99,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 101,
+        "line": 99,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 104,
+        "line": 102,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 130,
+        "line": 128,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 130,
+        "line": 128,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 133,
+        "line": 131,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 133,
+        "line": 131,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 137,
+        "line": 135,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -96,56 +96,56 @@
       },
       {
         "category": "other",
-        "column": 45,
-        "line": 54,
+        "column": 74,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 45,
-        "line": 57,
+        "column": 75,
+        "line": 55,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 69,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 72,
+        "line": 70,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 101,
+        "line": 99,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 133,
+        "line": 131,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 381,
-    "complexity_score": 195,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
-    "pseudocode_lines": 140,
+    "pseudocode_lines": 138,
     "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 521
+    "total_lines": 519
   },
   "cross_references": [
     {
@@ -418,14 +418,14 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 58,
       "match": "in_stack_0000002c",
       "text": "if (in_stack_0000002c != -1) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 92,
       "match": "(ushort *)((int)",
       "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar7] + y_position * 2);",
       "type": "pointer_cast"

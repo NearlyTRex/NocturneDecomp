@@ -18,7 +18,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.projection_scale
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
-;   undefined4 g_CDemonLightInstance.field17_0x1cbc
+;   undefined4 g_CDemonLightInstance.unk2
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
 ;
 ; Called Functions:
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0xc                         ; 00505af1
     XOR ECX,ECX                         ; 00505af4
     MOV dword ptr [0x02d807a4],EDX      ; 00505af6 | g_CDemonLightInstance.light_enabled_flag
-    MOV dword ptr [0x02d807ac],ECX      ; 00505afc | g_CDemonLightInstance.field17_0x1cbc
+    MOV dword ptr [0x02d807ac],ECX      ; 00505afc | g_CDemonLightInstance.unk2
     CMP EAX,0x2d7eaf4                   ; 00505b02 | g_CDemonLightInstance.base.base.position.x
     JZ 0x00505b24                       ; 00505b07
         ;   XREF to: 00505b24 (CONDITIONAL_JUMP)  ; LAB_00505b24

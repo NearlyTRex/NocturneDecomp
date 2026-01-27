@@ -9,8 +9,8 @@
 void __cdecl core_trap_cpp_CTrap_FUN_005de740(CTrap *this_ptr)
 
 {
-  uint in_stack_00000008;
+  int in_stack_00000008;
   
-  *(uint *)(this_ptr->field2_0x15c + 0x178) = in_stack_00000008;
+  this_ptr->unk = in_stack_00000008;
   return;
 }

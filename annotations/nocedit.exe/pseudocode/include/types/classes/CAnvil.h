@@ -7,7 +7,7 @@
 // Structure: CAnvil
 // Ghidra size: 0x344 (836 bytes)
 typedef struct CAnvil {
-    CDemonActor base_actor; // 0x0
+    CDemonActor base; // 0x0
     char model_name[380]; // 0x158
     char drop_condition[100]; // 0x2d4
     float drop_height; // 0x338

@@ -8,6 +8,9 @@
 CDemonActorType g_CDripClassInfo = {};
 CDemonActorType g_CDroneClassInfo = {};
 
+// CKeyFramedModelInstance
+CKeyFramedModelInstance DAT_02c9b170 = {};
+
 // SFace*[5000]
 SFace* g_CapturedFacePointers[5000] = {};
 

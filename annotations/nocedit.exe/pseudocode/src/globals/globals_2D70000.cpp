@@ -55,7 +55,11 @@ char* g_WrappedTextBuffer = {};
 // char[256]
 char g_TempTextBuffer[256] = {};
 
+// double
+double DOUBLE_02d7c2e0 = {};
+
 // float
+float FLOAT_02d7b7f0 = {};
 float FLOAT_02d7b808 = {};
 float FLOAT_02d7b80c = {};
 float FLOAT_02d7b810 = {};
@@ -72,8 +76,11 @@ float FLOAT_02d7b838 = {};
 float FLOAT_02d7b83c = {};
 float FLOAT_02d7b840 = {};
 float FLOAT_02d7b844 = {};
+float FLOAT_02d7c2e8 = {};
 
 // int
+int INT_02d7a7b4 = {};
+int INT_02d7a7b8 = {};
 int g_LightAttenuationMax = {};
 int INT_02d7a7c0 = {};
 int g_ShadowColor32 = {};
@@ -110,14 +117,12 @@ undefined1 DAT_02d7b410 = {};
 undefined1 DAT_02d7b804 = {};
 
 // undefined4
-undefined4 DAT_02d7a7b8 = {};
 undefined4 DAT_02d7a800 = {};
 undefined4 DAT_02d7a804 = {};
 undefined4 DAT_02d7b7f4 = {};
 undefined4 DAT_02d7b7f8 = {};
 undefined4 DAT_02d7b7fc = {};
 undefined4 DAT_02d7b800 = {};
-undefined4 DAT_02d7c2e8 = {};
 
 // ushort
 ushort g_ShadowColor16 = {};

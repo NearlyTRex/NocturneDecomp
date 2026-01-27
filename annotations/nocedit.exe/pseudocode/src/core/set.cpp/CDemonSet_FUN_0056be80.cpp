@@ -43,14 +43,14 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
             core_set_cpp_CDemonSet_FUN_0056aca0(this_ptr);
             local_18 = 0;
             pCVar6 = this_ptr;
-            if (0 < *(int *)this_ptr->field73_0x15f6e4) {
+            if (0 < *(int *)this_ptr->unk13) {
               do {
                 iVar5 = 0;
-                (**(code **)(*(int *)(*(int *)(pCVar6->field73_0x15f6e4 + 4) + 0x154) + 8))();
+                (**(code **)(*(int *)(*(int *)(pCVar6->unk13 + 4) + 0x154) + 8))();
                 if (0 < this_ptr->mirror_glass_count) {
                   do {
                     core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar5,0);
-                    (**(code **)(*(int *)(*(int *)(pCVar6->field73_0x15f6e4 + 4) + 0x154) + 8))();
+                    (**(code **)(*(int *)(*(int *)(pCVar6->unk13 + 4) + 0x154) + 8))();
                     iVar5 = iVar5 + 1;
                     core_set_cpp_FUN_00570af0();
                   } while (iVar5 < this_ptr->mirror_glass_count);
@@ -59,7 +59,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
                           (g_CDemonRendererPtr2,1);
                 local_18 = local_18 + 1;
                 pCVar6 = (CDemonSet *)pCVar6->cameras;
-              } while (local_18 < *(int *)this_ptr->field73_0x15f6e4);
+              } while (local_18 < *(int *)this_ptr->unk13);
             }
             core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
             core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
@@ -82,9 +82,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
           iVar5 = 0;
           pCVar6 = this_ptr;
           g_CurrentShadowLight = pCVar1;
-          if (0 < *(int *)this_ptr->field73_0x15f6e4) {
+          if (0 < *(int *)this_ptr->unk13) {
             do {
-              iVar3 = *(int *)(pCVar6->field73_0x15f6e4 + 4);
+              iVar3 = *(int *)(pCVar6->unk13 + 4);
               iVar4 = (**(code **)(*(int *)(iVar3 + 0x154) + 8))();
               if (iVar4 == 0) {
                 *(byte *)(iVar3 + 0x140) = *(byte *)(iVar3 + 0x140) & 0xfd;
@@ -96,7 +96,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
               engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
                         (g_CDemonRendererPtr2,1);
               pCVar6 = (CDemonSet *)pCVar6->cameras;
-            } while (iVar5 < *(int *)this_ptr->field73_0x15f6e4);
+            } while (iVar5 < *(int *)this_ptr->unk13);
           }
           core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
           core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);

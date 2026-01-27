@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_gargoyle.cpp_staticInit_FUN_004e4470(void)
+; __cdecl void core_gargoyle.cpp_staticInit_FUN_004e4470(void)
 ;
 ;
 ; Referenced Globals:

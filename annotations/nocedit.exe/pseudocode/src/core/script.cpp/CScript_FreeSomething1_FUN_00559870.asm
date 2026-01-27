@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_006416d4
 ;   TerminatedCString s_core_script_cpp_006416e7
-;   undefined4 DAT_0310f4b0
+;   CPickList DAT_0310f4b0
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_FreeSomething2_FUN_005598f0

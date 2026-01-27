@@ -26,12 +26,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b760(CCharacter *this_ptr)
            core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&this_ptr->model,&local_28,in_stack_0000000c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                (&this_ptr->base_actor,&local_10,input_local_point);
+                (&this_ptr->base,&local_10,input_local_point);
       local_34.x = -3.0;
       local_34.y = 0.0;
       local_34.z = 0.0;
-      core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                (&this_ptr->base_actor,&local_1c,&local_34);
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&local_1c,&local_34);
       core_gore_cpp_FUN_004edaa0();
       return;
     }

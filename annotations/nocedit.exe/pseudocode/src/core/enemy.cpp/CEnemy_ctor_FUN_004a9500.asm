@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0 at 0041bbcb
 ;   core_bride.cpp_CBride_ctor_FUN_004237a0 at 004237a6
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424cb0 at 00424cb8
-;   core_cow.cpp_FUN_00444140 at 00444146
+;   core_cow.cpp_CZombieCow_ctor_FUN_00444140 at 00444146
 ;   core_dog.cpp_CZombieDog_ctor_FUN_0047f050 at 0047f056
 ;   ... and 17 more
 ;

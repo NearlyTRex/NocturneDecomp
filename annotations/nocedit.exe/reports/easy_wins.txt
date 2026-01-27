@@ -11,7 +11,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   crt/fpemu.c (1 remaining of 1)
     - crt_fpemu.c_staticInit_FUN_0060be80
-      Suspects: decompiler_intrinsic, undefined_data, undefined_data, undefined_data, undefined_data, decompiler_intrinsic, unknown_field, special_crt_function
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, special_crt_function
 
   crt/io.c/stat/thunk (1 remaining of 1)
     - crt_io.c_stat_thunk_00600c18
@@ -43,7 +43,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   crt/ioinit.c (1 remaining of 1)
     - crt_ioinit.c_staticInit_FUN_00608f20
-      Suspects: undefined_data, undefined_data, pointer_cast, pointer_cast, special_crt_function
+      Suspects: pointer_cast, pointer_cast, special_crt_function
 
   crt/init.c (1 remaining of 1)
     - crt_init.c_ProcessInitTermHandlers_FUN_0060ac30
@@ -69,10 +69,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_inivar.cpp_readIniData_FUN_004fbd90
       Suspects: unaffected_reg, unaffected_reg
 
-  core/mmx.c (1 remaining of 4)
-    - core_mmx.c_detectIntelProcessor_FUN_00524f4c
-      Suspects: warning_unreachable, warning_unreachable, warning_overlapping_globals, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param
-
   core/slew.cpp (1 remaining of 4)
     - core_slew.cpp_CSlew_processInput_FUN_005a20b0
       Suspects: unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, unaffected_reg, unaffected_reg, decompiler_intrinsic, decompiler_intrinsic, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
@@ -97,13 +93,13 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   crt/environ.c (2 remaining of 2)
     - crt_environ.c_staticInit_FUN_0060c650
-      Suspects: undefined_data, special_crt_function
+      Suspects: special_crt_function
     - crt_environ.c_staticFinal_FUN_0060c73c
-      Suspects: undefined_data, undefined_data, undefined_data, special_crt_function
+      Suspects: special_crt_function
 
   crt/fpu.c (2 remaining of 2)
     - crt_fpu.c_staticInit_FUN_006047e0
-      Suspects: undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, special_crt_function
+      Suspects: undefined_data, special_crt_function
     - crt_fpu.c_ClearFPUExceptions_FUN_0060ce50
       Suspects: special_crt_function
 
@@ -138,10 +134,10 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: unaffected_reg, builtin_function, unaffected_reg
 
   core/gun.cpp (2 remaining of 7)
-    - core_gun.cpp_FUN_004f0b50
-      Suspects: unaffected_reg, unaffected_reg
     - core_gun.cpp_FUN_004f0350
       Suspects: extra_output, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, unknown_field, unknown_field, stack_param, stack_param, stack_param, stack_param, stack_param, extra_output, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, stack_param, unknown_field
+    - core_gun.cpp_CGun_dtor_FUN_004f0b50
+      Suspects: unaffected_reg, unaffected_reg
 
   core/terrain.cpp (2 remaining of 4)
     - core_terrain.cpp_CTerrain_dtor_FUN_005e1f30
@@ -155,12 +151,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_dskybox.cpp_renderSkyDome_FUN_004901f0
       Suspects: decompiler_intrinsic, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, stack_ref, pointer_cast, stack_ref, unknown_field, decompiler_intrinsic
 
-  core/minecar.cpp (2 remaining of 7)
-    - core_minecar.cpp_FUN_00520eb0
-      Suspects: unnamed_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
-    - core_minecar.cpp_FUN_00520e90
-      Suspects: stack_param, stack_param
-
   shape/spotview.cpp (2 remaining of 6)
     - shape_spotview.cpp_CSpotView_FUN_005b9620
       Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, param_count_too_few
@@ -171,7 +161,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [special_crt_function] - 253 functions
+  [special_crt_function] - 259 functions
     crt_stub.c_staticInit_FUN_005fde92                      (  4 lines)
     crt_stub.c_staticFinal_FUN_005fde93                     (  4 lines)
     crt_stub.c_staticInit_FUN_005ff9f2                      (  4 lines)
@@ -182,7 +172,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_thread.c_GetTLS_FUN_0060242c                        (  4 lines)
     crt_unknown.c_FUN_0060eb3a                              (  4 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
-    ... and 243 more
+    ... and 249 more
 
   [param_count_too_few] - 139 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
@@ -210,7 +200,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  7 lines)
     ... and 55 more
 
-  [stack_ref] - 39 functions
+  [stack_ref] - 40 functions
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
     engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210  ( 11 lines)
@@ -221,11 +211,12 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f ( 11 lines)
     shape_edittool.cpp_CEditorTools_showError_FUN_0049e740  ( 11 lines)
     engine_2d.c_drawTextCenteredFormatted_FUN_004023c0      ( 12 lines)
-    ... and 29 more
+    ... and 30 more
 
-  [decompiler_intrinsic] - 35 functions
+  [decompiler_intrinsic] - 37 functions
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0         (  7 lines)
+    core_script.cpp_FUN_00559ac0                            (  8 lines)
     engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00 (  9 lines)
     engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN (  9 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScaleSim ( 10 lines)
@@ -233,8 +224,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScale_FU ( 11 lines)
     wincore_winrun.cpp_sleep_FUN_005f40e0                   ( 12 lines)
     core_game.cpp_CGame_slamDT_FUN_004e3080                 ( 14 lines)
-    core_dmodel.cpp_CKeyFramedModelInstance_prepareForRende ( 16 lines)
-    ... and 25 more
+    ... and 27 more
 
   [param_count_too_many] - 25 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
@@ -254,39 +244,26 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CToss_dtor_FUN_004c95c0                   (  6 lines)
     core_fire.cpp_CStake_ctor_FUN_004c9740                  (  6 lines)
     core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620       (  6 lines)
+    core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640       (  6 lines)
     core_vehicle.cpp_CTire_ctor_FUN_005e8da0                (  7 lines)
     core_moon.cpp_CMoon_dtor_FUN_00529ab0                   (  7 lines)
-    core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640       (  7 lines)
     core_bodypart.cpp_SBodyPartModel_ctor_FUN_0041b660      (  8 lines)
     core_fire.cpp_CToss_ctor_FUN_004c3ea0                   ( 10 lines)
     core_course.cpp_CCourse_free_FUN_004426c0               ( 14 lines)
     ... and 12 more
 
-  [undefined_data] - 14 functions
+  [undefined_data] - 17 functions
     core_msnedit.cpp_FUN_0053d3a0                           (  4 lines)
     core_setedit.cpp_staticInit_FUN_00576930                (  6 lines)
     core_weather.cpp_staticInit_FUN_005eeaa0                (  6 lines)
     core_event.cpp_CEventList_FUN_004aabe0                  (  6 lines)
+    core_drip.cpp_staticInit_FUN_0048df80                   (  8 lines)
     core_charactr.cpp_staticInit_FUN_00427d80               (  8 lines)
     core_sound.cpp_staticInit_FUN_005b1760                  (  9 lines)
-    core_drip.cpp_staticInit_FUN_0048df80                   ( 10 lines)
+    core_netgame.cpp_staticInit_FUN_0053f310                ( 10 lines)
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettin ( 12 lines)
     core_script.cpp_FUN_00566bc0                            ( 12 lines)
-    core_boxactor.cpp_staticInit_FUN_00421650               ( 14 lines)
-    ... and 4 more
-
-  [warning_overlapping_globals] - 11 functions
-    core_dynamite.cpp_staticInit_FUN_0049cd40               ( 12 lines)
-    core_werewolf.cpp_staticInit_FUN_005efb70               ( 15 lines)
-    core_stranger.cpp_staticInit_FUN_005bae80               ( 15 lines)
-    core_ghoul.cpp_staticInit_FUN_004e5f90                  ( 15 lines)
-    core_bride.cpp_staticInit_FUN_00423700                  ( 15 lines)
-    core_dcamera.cpp_CDemonCamera_processCorona_FUN_0045113 ( 22 lines)
-    core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005 ( 24 lines)
-    core_flamegun.cpp_FUN_004cbbc0                          ( 32 lines)
-    core_game.cpp_PleaseEnterValidInteger_FUN_004d7730      ( 32 lines)
-    core_elephant.cpp_ctor_FUN_004a6fe0                     ( 40 lines)
-    ... and 1 more
+    ... and 7 more
 
   [format_string_mismatch] - 8 functions
     core_dcamera.cpp_saveCameraFog_FUN_00453f10             ( 14 lines)
@@ -305,7 +282,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_3d.c_dispatchMRGLBlockChain_FUN_00407890         ( 21 lines)
     engine_dosio.c_findFile_FUN_00481760                    ( 23 lines)
     core_charactr.cpp_CCharacter_FUN_0042b110               ( 23 lines)
-    core_boxactor.cpp_FUN_00422590                          ( 31 lines)
+    core_boxactor.cpp_CBoxActor_FUN_00422590                ( 31 lines)
 
   [warning_unreachable] - 5 functions
     core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554 ( 20 lines)
@@ -325,9 +302,14 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_math.c_pentiumFdivpWorkaround_FUN_00606f13          (  7 lines)
     crt_math.c_floor_FUN_005feb90                           ( 10 lines)
 
+  [special_cpu_detection] - 3 functions
+    core_mmx.c_detectMMXSupport_FUN_00524ff9                (  7 lines)
+    core_mmx.c_detectCPUFeatures_FUN_00524f10               (  9 lines)
+    core_mmx.c_getCPUInfo_FUN_0052500f                      ( 13 lines)
+
   [suspect_float] - 2 functions
     core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 45 lines)
-    core_flamegun.cpp_FUN_004cb880                          ( 47 lines)
+    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
 
   [unnamed_param] - 1 functions
     core_conveyor.cpp_FUN_004422f0                          (  7 lines)

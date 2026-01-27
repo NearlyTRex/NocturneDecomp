@@ -4,20 +4,14 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_script_cpp_FUN_0055a540()'"
       },
       {
         "category": "incompatible_types",
         "column": 44,
-        "line": 33,
+        "line": 30,
         "message": "invalid conversion from 'CHero*' to 'uint' {aka 'unsigned int'} [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 39,
-        "message": "'_DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
       }
     ],
     "success": false,
@@ -31,50 +25,49 @@
       {
         "category": "other",
         "column": 12,
-        "line": 47,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 68,
+        "line": 65,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 70,
+        "line": 67,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 92,
+        "line": 89,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 94,
+        "line": 91,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 298,
+    "complexity_score": 281,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 26,
-    "pseudocode_lines": 108,
-    "suspect_count": 17,
+    "pseudocode_lines": 106,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 251
+    "total_lines": 249
   },
   "cross_references": [
     {
@@ -260,8 +253,8 @@
     },
     {
       "addr": "0310f4a0",
-      "name": "DAT_0310f4a0",
-      "type": "undefined4",
+      "name": "FLOAT_0310f4a0",
+      "type": "float",
       "value": null
     },
     {
@@ -407,113 +400,106 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "uint *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x12] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "*(byte *)(in_stack_00000004 + 0x15) = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x13] = 0xbf800000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x14] = 0xbf800000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[3] = g_HeroActors[iVar3];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[4] = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 30,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x115] = 0xbf800000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x116] = 0xffffffff;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 33,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x117] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 34,
       "match": "DAT_0310f4a8",
       "text": "DAT_0310f4a8 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[5] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 107,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[6] = 0;",
       "type": "stack_param"

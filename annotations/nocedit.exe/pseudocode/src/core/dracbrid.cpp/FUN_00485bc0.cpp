@@ -16,7 +16,7 @@ int core_dracbrid_cpp_FUN_00485bc0(void)
   CCharacter *in_stack_00000004;
   SCollisionInfo *in_stack_00000008;
   
-  if (in_stack_00000004[1].base_actor.field23_0x124 != 0) {
+  if (in_stack_00000004[1].base.unk12 != 0) {
     return 0;
   }
   iVar1 = core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20

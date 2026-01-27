@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_batcreat.cpp_staticInit_FUN_00415080(void)
+; __cdecl void core_batcreat.cpp_staticInit_FUN_00415080(void)
 ;
 ;
 ; Referenced Globals:

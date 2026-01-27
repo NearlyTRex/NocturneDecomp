@@ -76,7 +76,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0061849a = 1.05000000000000
-;   undefined4 DAT_02d7a7b8
+;   int INT_02d7a7b8
 ;   int g_LightAttenuationMax
 ;
 ; Called Functions:
@@ -156,7 +156,7 @@ section .text
     FSTP float ptr [ESP + 0xd4]         ; 0043a50f
     MOV EAX,dword ptr [ESP + 0xd4]      ; 0043a516
     SAR EAX,0x1                         ; 0043a51d
-    ADD EAX,dword ptr [0x02d7a7b8]      ; 0043a51f | DAT_02d7a7b8
+    ADD EAX,dword ptr [0x02d7a7b8]      ; 0043a51f | INT_02d7a7b8
     MOV dword ptr [ESP + 0x118],EAX     ; 0043a525
     MOV dword ptr [ESP + 0x10c],EAX     ; 0043a52c
     MOV EAX,dword ptr [EDI + 0x78]      ; 0043a533
@@ -400,7 +400,7 @@ section .text
     FADDP                               ; 0043a8ab
     FSTP float ptr [ESP + 0xd8]         ; 0043a8ad
     MOV EAX,dword ptr [ESP + 0xd8]      ; 0043a8b4
-    MOV ECX,dword ptr [0x02d7a7b8]      ; 0043a8bb | DAT_02d7a7b8
+    MOV ECX,dword ptr [0x02d7a7b8]      ; 0043a8bb | INT_02d7a7b8
     SAR EAX,0x1                         ; 0043a8c1
     ADD EAX,ECX                         ; 0043a8c3
     MOV dword ptr [ESP + 0xdc],EAX      ; 0043a8c5

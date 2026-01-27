@@ -18,7 +18,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f28d0(CHero *this_ptr)
   CVector3f local_14;
   
   if (in_stack_0000000c == 0) {
-    this_ptr_00 = &(this_ptr->base_character).model;
+    this_ptr_00 = &(this_ptr->base).model;
     pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                        (&this_ptr_00->motion_controller);
     iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar1);
@@ -46,7 +46,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f28d0(CHero *this_ptr)
       }
     }
   }
-  (this_ptr->base_character).grabbed_by = in_stack_00000008;
-  (this_ptr->base_character).grabbed_type = in_stack_0000000c;
+  (this_ptr->base).grabbed_by = in_stack_00000008;
+  (this_ptr->base).grabbed_type = in_stack_0000000c;
   return 1;
 }

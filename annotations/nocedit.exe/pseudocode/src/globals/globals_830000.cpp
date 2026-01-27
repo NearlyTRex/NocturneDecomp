@@ -19,11 +19,33 @@ CDemonActorType g_CZombieCowClassInfo = {};
 SCramWorkingEntry g_CramSortedTextureEntries[1] = {};
 
 // int
+int INT_00838e40 = {};
+int INT_00838e44 = {};
+int INT_00838e48 = {};
+int INT_00838e4c = {};
+int INT_00838e50 = {};
+int INT_00838e54 = {};
+int INT_0083b124 = {};
+int INT_0083b128 = {};
+int INT_0083b12c = {};
+int INT_0083b130 = {};
+int INT_0083b134 = {};
+int INT_0083b138 = {};
+int INT_0083b13c = {};
+int INT_0083b140 = {};
+int INT_0083b144 = {};
+int INT_0083b148 = {};
+int INT_0083b14c = {};
+int INT_0083b150 = {};
+int INT_0083b154 = {};
+int INT_0083b158 = {};
+int INT_0083b15c = {};
+int INT_0083b160 = {};
+int INT_0083b164 = {};
 int g_CramVisualizationUpdateCounter = {};
 
 // undefined4
 undefined4 DAT_0083b10c = {};
-undefined4 DAT_0083b124 = {};
 undefined4 DAT_0083c228 = {};
 undefined4 DAT_0083c22c = {};
 undefined4 DAT_0083c230 = {};

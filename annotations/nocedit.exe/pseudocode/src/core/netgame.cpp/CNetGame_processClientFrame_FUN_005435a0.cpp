@@ -32,13 +32,13 @@ LAB_00543605:
       if (0 < g_SimFrameCount) {
         iVar1 = 0;
         do {
-          if (*(int *)(this_ptr->players[this_ptr->local_player_index].field5_0x38 + 0x10) ==
+          if (*(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10) ==
               *(int *)((int)&g_SimFrameHistory + iVar1)) {
             if (-1 < iVar2) {
               core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800();
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970();
               iVar1 = 0;
-              iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].field5_0x38 + 0x10);
+              iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10);
               if (0 < g_SimFrameCount) {
                 iVar3 = 0;
                 local_18 = &DAT_02f9c128;
@@ -57,16 +57,16 @@ LAB_00543605:
                 } while (iVar1 < g_SimFrameCount);
               }
               iVar2 = this_ptr->local_player_index;
-              this_ptr->field7_0x118[0x50] = '\0';
-              this_ptr->field7_0x118[0x51] = '\0';
-              this_ptr->field7_0x118[0x52] = '\0';
-              this_ptr->field7_0x118[0x53] = '\0';
+              this_ptr->unk[0x50] = '\0';
+              this_ptr->unk[0x51] = '\0';
+              this_ptr->unk[0x52] = '\0';
+              this_ptr->unk[0x53] = '\0';
               iVar1 = 0;
               if (g_SimFrameCount < 1) {
                 return;
               }
               iVar3 = 0;
-              while (*(int *)(this_ptr->players[iVar2].field5_0x38 + 0x10) !=
+              while (*(int *)(this_ptr->players[iVar2].unk1 + 0x10) !=
                      *(int *)((int)&g_SimFrameHistory + iVar3)) {
                 iVar3 = iVar3 + 100;
                 iVar1 = iVar1 + 1;
@@ -77,10 +77,10 @@ LAB_00543605:
               if (iVar1 < 0) {
                 return;
               }
-              this_ptr->field7_0x118[0x50] = '\x01';
-              this_ptr->field7_0x118[0x51] = '\0';
-              this_ptr->field7_0x118[0x52] = '\0';
-              this_ptr->field7_0x118[0x53] = '\0';
+              this_ptr->unk[0x50] = '\x01';
+              this_ptr->unk[0x51] = '\0';
+              this_ptr->unk[0x52] = '\0';
+              this_ptr->unk[0x53] = '\0';
               return;
             }
             break;

@@ -4,14 +4,8 @@
       {
         "category": "other",
         "column": 5,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'int core_script_cpp_FUN_00559ac0()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 19,
-        "message": "'_DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
       }
     ],
     "success": false,
@@ -26,17 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 40,
+    "complexity_score": 23,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "warning_overlapping_globals"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 40
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -86,8 +79,8 @@
     },
     {
       "addr": "0310f4a0",
-      "name": "DAT_0310f4a0",
-      "type": "undefined4",
+      "name": "FLOAT_0310f4a0",
+      "type": "float",
       "value": null
     }
   ],
@@ -155,15 +148,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 10,
       "match": "ROUND",
       "text": "return (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"

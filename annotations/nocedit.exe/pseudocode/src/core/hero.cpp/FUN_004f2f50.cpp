@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_hero_hero.cpp_FUN_004f2f50(uint param_1) */
-
 uint core_hero_cpp_FUN_004f2f50(void)
 
 {
@@ -43,7 +40,7 @@ uint core_hero_cpp_FUN_004f2f50(void)
           iVar3 = core_lever_cpp_FUN_00505080();
           if (iVar3 != 0) {
             local_14 = SQRT((local_3c.z + -2.0f) * (local_3c.z + -2.0f) +
-                            (local_3c.x + _DAT_0062ec4e) * (local_3c.x + _DAT_0062ec4e));
+                            (local_3c.x + -0.5f) * (local_3c.x + -0.5f));
             if (local_14 <= local_18) {
               in_stack_00000004[0x179].scale.z = (int)pCVar1;
               local_18 = local_14;

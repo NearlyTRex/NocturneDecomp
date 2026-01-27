@@ -28,9 +28,9 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
   CVector3f CStack_1c;
   CVector3i *position;
   
-  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  pCVar1 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                     (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffa0);
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
+  pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                     (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffa0);
   fVar2 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
   in_stack_0000000c[0xc].orient_matrix.m[1].y = fVar2;
   if (fVar2 != 0.0) {

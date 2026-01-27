@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_baron.cpp_FUN_004136b0 at 004136cb
+;   core_baron.cpp_CBaron_FUN_004136b0 at 004136cb
 ;   core_colonel.cpp_FUN_0043ff20 at 0043ffe3
 ;   core_gabriela.cpp_FUN_004d4190 at 004d4269
 ;   core_haystack.cpp_FUN_004f13f0 at 004f14bc
@@ -21,7 +21,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CMobsterClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.field19_0x14f0a0[7996]
+;   undefined4 g_CDemonSetInstance.unk4[7996]
 ;   undefined4 DAT_03265258
 ;   undefined4 g_CVehicleClassInfo.name_hash
 ;
@@ -52,7 +52,7 @@ section .text
     MOV dword ptr [ESP + 0x94],EAX      ; 004f398b
     MOV EAX,[0x006810c8]                ; 004f3992 | g_CDemonSetPtr
         ;   Label: LAB_004f3992
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004f3997 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004f3997 | g_CDemonSetInstance.unk4[7996]
     JL 0x004f39bb                       ; 004f399d
         ;   XREF to: 004f39bb (CONDITIONAL_JUMP)  ; LAB_004f39bb
     CMP dword ptr [ESP + 0x8c],0x0      ; 004f399f

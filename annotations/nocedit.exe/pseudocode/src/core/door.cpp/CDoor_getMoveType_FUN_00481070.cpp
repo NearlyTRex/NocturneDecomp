@@ -14,7 +14,7 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
   CVector3f local_18;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (&this_ptr->base_actor,&local_18,(CVector3f *)(in_stack_00000008 + 0x20));
+            (&this_ptr->base,&local_18,(CVector3f *)(in_stack_00000008 + 0x20));
   message = support_newmsg_cpp_getLocalizedString_FUN_005441f0("The door is locked from the other side.");
   if (local_18.z <= 0.0) {
     if ((this_ptr->allowed_sides & 2) != 0) goto LAB_004811fd;

@@ -19,7 +19,7 @@ void core_lightgun_cpp_FUN_00505ac0(void)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (in_stack_00000004,&CStack_14,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
-  g_CDemonLightInstance.field17_0x1cbc = 0;
+  g_CDemonLightInstance.unk2 = 0;
   if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].z) {
     g_CDemonLightInstance.base.base.position.x = (int)CStack_14.x;
     g_CDemonLightInstance.base.base.position.y = (int)CStack_14.y;

@@ -15,7 +15,7 @@
 ;   TerminatedCString s_core_script_cpp_00643f81
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 DAT_0310fd10
+;   undefined4 CEdScrollBar_0310fd0c.current_value
 ;
 ; Called Functions:
 ;   core_script.cpp_FUN_00566800
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 005661f8 (CONDITIONAL_JUMP)  ; LAB_005661f8
     XOR EDX,EDX                         ; 005661bb
     XOR EBX,EBX                         ; 005661bd
-    MOV dword ptr [0x0310fd10],EDX      ; 005661bf | DAT_0310fd10
+    MOV dword ptr [0x0310fd10],EDX      ; 005661bf | CEdScrollBar_0310fd0c.current_value
     PUSH ESI                            ; 005661c5
         ;   Label: LAB_005661c5
     CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005661c6

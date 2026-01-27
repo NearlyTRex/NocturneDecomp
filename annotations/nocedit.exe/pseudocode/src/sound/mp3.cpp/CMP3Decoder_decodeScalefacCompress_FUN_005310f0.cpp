@@ -46,7 +46,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[2] = (uVar3 & 0xf) >> 2;
       local_34[1] = (uVar3 >> 4) % 5;
       local_34[3] = uVar3 & 3;
-      pcVar1 = granule_info[granule].field17_0x60 + iVar5 + -0xc;
+      pcVar1 = granule_info[granule].unk4 + iVar5 + -0xc;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -62,7 +62,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[1] = (local_34[4] >> 2) % 5;
       local_34[3] = 0;
       local_1a = CONCAT22(1,(ushort)local_1a);
-      pcVar1 = granule_info[granule].field17_0x60 + iVar5 + -0xc;
+      pcVar1 = granule_info[granule].unk4 + iVar5 + -0xc;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -76,7 +76,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[2] = 0;
       local_34[3] = 0;
       local_1a = CONCAT22(2,(ushort)local_1a);
-      pcVar1 = granule_info[granule].field17_0x60 + iVar5 + -0xc;
+      pcVar1 = granule_info[granule].unk4 + iVar5 + -0xc;
       pcVar1[0] = '\x01';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -92,7 +92,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[1] = (uint)(((ulonglong)uVar3 % 0x24) / 6);
       local_34[3] = 0;
       local_34[2] = (uint)(((ulonglong)uVar3 % 0x24) % 6);
-      pcVar1 = granule_info[1].field17_0x60 + iVar5 + -0xc;
+      pcVar1 = granule_info[1].unk4 + iVar5 + -0xc;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -105,7 +105,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[3] = 0;
       local_34[2] = uVar3 & 3;
       local_34[1] = (uVar3 & 0xf) >> 2;
-      pcVar1 = granule_info[1].field17_0x60 + iVar5 + -0xc;
+      pcVar1 = granule_info[1].unk4 + iVar5 + -0xc;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -117,7 +117,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[2] = 0;
       local_34[3] = 0;
       local_34[1] = (uVar3 - 0xf4) % 3;
-      pcVar1 = granule_info[1].field17_0x60 + iVar5 + -0xc;
+      pcVar1 = granule_info[1].unk4 + iVar5 + -0xc;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';

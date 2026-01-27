@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 1046,
+    "complexity_score": 1031,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 181,
-    "suspect_count": 84,
+    "suspect_count": 83,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_crt_function",
       "unaffected_reg",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 445
@@ -61,14 +60,14 @@
   "globals": [
     {
       "addr": "00684acd",
-      "name": "DAT_00684acd",
-      "type": "undefined1",
-      "value": null
+      "name": "BYTE_00684acd",
+      "type": "byte",
+      "value": "0x0"
     },
     {
       "addr": "00685060",
       "name": "g_UseSoftwareMath",
-      "type": "int",
+      "type": "byte",
       "value": "0x0"
     }
   ],
@@ -298,13 +297,6 @@
       "match": "CARRY4",
       "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_00684acd",
-      "text": "if (DAT_00684acd == '\\0') {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

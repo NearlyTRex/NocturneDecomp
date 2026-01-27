@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 22,
-        "message": "'PTR_core_pendulum_cpp_FUN_00662154' was not declared in this scope; did you mean 'core_pendulum_cpp_FUN_0054a550'?"
-      },
-      {
         "category": "other",
         "column": 15,
         "line": 33,
@@ -102,7 +96,7 @@
     {
       "addr": "00549350",
       "from_addr": "0054936a",
-      "name": "core_pendulum.cpp_FUN_00549350",
+      "name": "core_pendulum.cpp_factoryFunc_FUN_00549350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -192,7 +186,7 @@
     },
     {
       "addr": "00662154",
-      "name": "PTR_core_pendulum.cpp_FUN_00662154",
+      "name": "g_CPendulumVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -203,7 +197,7 @@
       {
         "call_addr": "0054936a",
         "call_type": "direct",
-        "caller": "core_pendulum.cpp_FUN_00549350",
+        "caller": "core_pendulum.cpp_factoryFunc_FUN_00549350",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -259,7 +253,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_pendulum_cpp_FUN_00662154;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CPendulumVTable;",
       "type": "negative_offset"
     },
     {

@@ -14,8 +14,8 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
   CPathMap *pCVar2;
   int extraout_EAX;
   
-  pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base_character);
-  pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450((CPathMap *)&pCVar1[1].base_actor.orient.bank);
+  pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
+  pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450((CPathMap *)&pCVar1[1].base.orient.bank);
   core_inv_cpp_CInventory_ctor_FUN_004fd020((CInventory *)&pCVar2[1].current_position.y);
   this_ptr_00 = (CHero *)(extraout_EAX + -0x1f738);
   *(CHero **)(extraout_EAX + 4) = this_ptr_00;

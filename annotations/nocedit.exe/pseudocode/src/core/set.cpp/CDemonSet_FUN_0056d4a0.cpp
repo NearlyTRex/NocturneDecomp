@@ -227,7 +227,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
             fVar2 = *(float *)(iVar4 + 0x10c) - (in_stack_00000008->z + pCVar6->z);
             fVar1 = fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3;
             if (fVar1 <= *(float *)(iVar4 + 0x11d8)) {
-              fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + DAT_02d7a7b8) * *(float *)(iVar4 + 0x11dc))
+              fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + INT_02d7a7b8) * *(float *)(iVar4 + 0x11dc))
                       * 0.666f;
               fVar2 = (float)2;
               local_88 = fVar1 * *(float *)(iVar4 + 0x11c4) * fVar2 + local_88;

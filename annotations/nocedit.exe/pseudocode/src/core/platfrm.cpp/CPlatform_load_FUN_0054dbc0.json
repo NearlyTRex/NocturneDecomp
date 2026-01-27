@@ -6,42 +6,6 @@
         "column": 6,
         "line": 11,
         "message": "ambiguating new declaration of 'void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 51,
-        "line": 40,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 38,
-        "line": 83,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_108'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 21,
-        "line": 103,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field19_0x114'"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 113,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field19_0x114'"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 122,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field19_0x114'"
-      },
-      {
-        "category": "missing_member",
-        "column": 60,
-        "line": 124,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field19_0x114'"
       }
     ],
     "success": false,
@@ -98,6 +62,12 @@
         "category": "other",
         "column": 66,
         "line": 37,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -174,6 +144,12 @@
       },
       {
         "category": "other",
+        "column": 43,
+        "line": 83,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
         "column": 51,
         "line": 87,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -212,6 +188,12 @@
         "category": "other",
         "column": 62,
         "line": 119,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 125,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -700,7 +682,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
-      "text": "((CVector3f *)&in_stack_00000004[2].field7_0x6c,\"startPos\");",
+      "text": "((CVector3f *)&in_stack_00000004[2].unk1,\"startPos\");",
       "type": "stack_param"
     },
     {
@@ -805,7 +787,7 @@
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[3].field17_0x104,\"plotAsBoxInShadow\");",
+      "text": "(&in_stack_00000004[3].unk7,\"plotAsBoxInShadow\");",
       "type": "stack_param"
     },
     {
@@ -854,7 +836,7 @@
       "description": "Unresolved stack parameter",
       "line": 117,
       "match": "in_stack_00000004",
-      "text": "((CDemonActor *)(&in_stack_00000004[3].field19_0x114 + iVar2 * 0xd),",
+      "text": "((CDemonActor *)(&in_stack_00000004[3].unk8 + iVar2 * 0xd),",
       "type": "stack_param"
     },
     {
@@ -887,7 +869,7 @@
         "vtable_addr": "006622a4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CMinecar",
         "offset": 232,
         "vtable_addr": "006615d4"
       }

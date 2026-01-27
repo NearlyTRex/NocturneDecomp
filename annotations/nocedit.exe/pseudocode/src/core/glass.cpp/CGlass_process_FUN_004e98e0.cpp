@@ -2,11 +2,11 @@
 // Address: 004e98e0
 // Address Range: [[004e98e0, 004e9922]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr)
+// Signature: void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_glass_cpp_CGlass_process_FUN_004e98e0(CGlass *this_ptr)
+void __cdecl core_glass_cpp_CGlass_process_FUN_004e98e0(CGlass *this_ptr,float delta_time)
 
 {
   int iVar1;
@@ -20,7 +20,7 @@ void __cdecl core_glass_cpp_CGlass_process_FUN_004e98e0(CGlass *this_ptr)
     }
   }
   else {
-    (this_ptr->base).field17_0x104 = 1;
+    (this_ptr->base).unk7 = 1;
   }
   return;
 }

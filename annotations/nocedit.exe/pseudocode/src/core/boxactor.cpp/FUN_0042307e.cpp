@@ -1,27 +1,24 @@
 // Name: core_boxactor.cpp_FUN_0042307e
 // Address: 0042307e
 // Address Range: [[0042307e, 004230ad]]
-// Convention: unknown
-// Signature: undefined core_boxactor.cpp_FUN_0042307e()
+// Convention: __cdecl
+// Signature: char * core_boxactor.cpp_FUN_0042307e(int param_1)
 
 #include "nocturne.h"
 
-ulonglong
-core_boxactor_cpp_FUN_0042307e
-          (uint param_1,uint param_2,uint param_3,uint param_4,
-          uint param_5)
+char * __cdecl core_boxactor_cpp_FUN_0042307e(int param_1)
 
 {
-  switch(param_5) {
+  switch(param_1) {
   case 0:
-    return CONCAT44(param_2,"Custom");
+    return "Custom";
   case 1:
-    return CONCAT44(param_2,"Flashlight");
+    return "Flashlight";
   case 2:
-    return CONCAT44(param_2,"Lantern");
+    return "Lantern";
   case 3:
-    return CONCAT44(param_2,"Globe");
+    return "Globe";
   default:
-    return CONCAT44(param_2,"???");
+    return "???";
   }
 }

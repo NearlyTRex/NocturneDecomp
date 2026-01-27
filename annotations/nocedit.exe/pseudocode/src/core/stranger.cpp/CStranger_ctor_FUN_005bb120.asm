@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_005bb0e0 at 005bb0fd
+;   core_stranger.cpp_factoryFunc_FUN_005bb0e0 at 005bb0fd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stranger_dfm_006531c9

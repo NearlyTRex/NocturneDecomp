@@ -233,8 +233,8 @@ section .text
         ;   Label: LAB_004ba8d2
     PUSH EAX                            ; 004ba8d9
     PUSH EBX                            ; 004ba8da
-    MOV dword ptr [0x02d12bf0],EBX      ; 004ba8db | g_VersionControlSession.field1_0x20[0]
-    MOV dword ptr [0x02d12bf4],EBX      ; 004ba8e1 | g_VersionControlSession.field1_0x20[4]
+    MOV dword ptr [0x02d12bf0],EBX      ; 004ba8db | g_VersionControlSession.unk1[0]
+    MOV dword ptr [0x02d12bf4],EBX      ; 004ba8e1 | g_VersionControlSession.unk1[4]
     CALL engine_dosio.c_getFileTimestamp_FUN_00481960 ; 004ba8e7
         ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004ba8ec
@@ -410,7 +410,7 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004baabf
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004baac4
-    PUSH 0x2d12bf4                      ; 004baac7 | g_VersionControlSession.field1_0x20[4]
+    PUSH 0x2d12bf4                      ; 004baac7 | g_VersionControlSession.unk1[4]
     LEA EAX,[ESP + 0x4]                 ; 004baacc
     PUSH EAX                            ; 004baad0
     CALL engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 ; 004baad1

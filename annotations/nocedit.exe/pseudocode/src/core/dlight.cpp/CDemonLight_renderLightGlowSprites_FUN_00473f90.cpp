@@ -64,7 +64,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   float local_14;
   
   bVar3 = 0;
-  if (this_ptr->field17_0x1cbc != 0) {
+  if (this_ptr->unk2 != 0) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
               (g_CDemonRendererPtr2,&local_74.x);
     local_74.x = local_74.x - (float)(this_ptr->base).base.position.x;

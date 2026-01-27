@@ -6,36 +6,6 @@
         "column": 6,
         "line": 12,
         "message": "ambiguating new declaration of 'void core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 21,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 46,
-        "line": 24,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 36,
-        "line": 25,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 70,
-        "line": 30,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 55,
-        "line": 38,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
       }
     ],
     "success": false,
@@ -56,6 +26,12 @@
         "category": "other",
         "column": 6,
         "line": 23,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 24,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -86,12 +62,12 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 188,
+    "complexity_score": 178,
     "cross_reference_count": 12,
     "function_call_count": 7,
     "global_count": 9,
     "pseudocode_lines": 33,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "stack_param",
       "undefined_data",
@@ -255,8 +231,8 @@
     },
     {
       "addr": "02f7c52c",
-      "name": "DAT_02f7c52c",
-      "type": "undefined4",
+      "name": "INT_02f7c52c",
+      "type": "int",
       "value": null
     },
     {
@@ -334,24 +310,17 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_02f7c52c",
-      "text": "DAT_02f7c52c = 0xffffffff;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004->field2_0xc + 0x1c) = in_stack_00000008;",
+      "text": "*(int *)(in_stack_00000004->unk2 + 0x1c) = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "*(int *)(in_stack_00000004->field2_0xc + 0x1c) = in_stack_00000008;",
+      "text": "*(int *)(in_stack_00000004->unk2 + 0x1c) = in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -372,14 +341,14 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "if (*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x2c) !=",
+      "text": "if (*(int *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x2c) != *(int *)in_stack_00000004->unk1",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
-      "text": "*(int *)in_stack_00000004->field0_0x0) {",
+      "text": "if (*(int *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x2c) != *(int *)in_stack_00000004->unk1",
       "type": "stack_param"
     },
     {
@@ -400,14 +369,14 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000004",
-      "text": "(g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),1);",
+      "text": "(g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
-      "text": "(*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),file_handle);",
+      "text": "(*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),file_handle);",
       "type": "stack_param"
     }
   ]

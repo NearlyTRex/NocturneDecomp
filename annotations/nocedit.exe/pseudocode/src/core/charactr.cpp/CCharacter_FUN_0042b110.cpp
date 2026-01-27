@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b110(CCharacter *this_ptr)
          (pCVar1->bone_list[*(int *)(pCVar3->cloth_data + 0x488)].parent_index != -1)) {
         (**(code **)(*(int *)(pcVar2 + 0x154) + 0xc))();
       }
-      pCVar3 = (CCharacter *)((pCVar3->base_actor).actor_name + 0x18);
+      pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);
       iVar4 = iVar4 + 1;
       pcVar2 = pcVar2 + 0x2a4;
     } while (iVar4 < *(int *)(this_ptr->cloth_data + 0x478));

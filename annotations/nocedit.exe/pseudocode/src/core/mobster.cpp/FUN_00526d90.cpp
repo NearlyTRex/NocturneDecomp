@@ -39,34 +39,34 @@ uint core_mobster_cpp_FUN_00526d90(void)
   int iStack_18;
   float local_14;
   
-  if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 0xc) == 0) {
-    fVar9 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) - in_stack_00000008;
-    *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) = fVar9;
+  if (*(int *)(in_stack_00000004[1].base.actor_name + 0xc) == 0) {
+    fVar9 = *(float *)(in_stack_00000004[1].base.create_event + 0x24) - in_stack_00000008;
+    *(float *)(in_stack_00000004[1].base.create_event + 0x24) = fVar9;
     if (0.0 < fVar9) {
-      *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) =
-           *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) + 1;
+      *(int *)(in_stack_00000004[1].base.create_event + 0x20) =
+           *(int *)(in_stack_00000004[1].base.create_event + 0x20) + 1;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-      *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) = local_14;
+      *(float *)(in_stack_00000004[1].base.create_event + 0x24) = local_14;
     }
     if (((in_stack_00000004->model).part_visibility_flags
-         [*(int *)(in_stack_00000004->carry_hands[1].field0_0x0 + 4)] != 0) &&
+         [*(int *)(in_stack_00000004->carry_hands[1].unk1 + 4)] != 0) &&
        (in_stack_00000004->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
-      if (0.0 < *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28)) {
+      if (0.0 < *(float *)(in_stack_00000004[1].base.create_event + 0x28)) {
         in_stack_00000008 =
-             *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) - in_stack_00000008;
-        *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) = in_stack_00000008;
+             *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;
+        *(float *)(in_stack_00000004[1].base.create_event + 0x28) = in_stack_00000008;
         if (in_stack_00000008 < 0.0) {
           in_stack_00000004 = in_stack_00000004 + 1;
-          (in_stack_00000004->base_actor).create_event[0x28] = '\0';
-          (in_stack_00000004->base_actor).create_event[0x29] = '\0';
-          (in_stack_00000004->base_actor).create_event[0x2a] = '\0';
-          (in_stack_00000004->base_actor).create_event[0x2b] = '\0';
+          (in_stack_00000004->base).create_event[0x28] = '\0';
+          (in_stack_00000004->base).create_event[0x29] = '\0';
+          (in_stack_00000004->base).create_event[0x2a] = '\0';
+          (in_stack_00000004->base).create_event[0x2b] = '\0';
           return 0;
         }
       }
       else {
-        iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);
-        pCVar1 = &(in_stack_00000004->base_actor).location;
+        iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);
+        pCVar1 = &(in_stack_00000004->base).location;
         if (iVar8 == 0) {
           iVar7 = 0;
           iVar8 = 0;
@@ -100,13 +100,13 @@ uint core_mobster_cpp_FUN_00526d90(void)
             iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_24 + -1);
             fVar9 = afStack_a8[iVar8];
             pCVar4 = in_stack_00000004 + 1;
-            (pCVar4->base_actor).create_event[0x28] = '\0';
-            (pCVar4->base_actor).create_event[0x29] = '\0';
-            (pCVar4->base_actor).create_event[0x2a] = ' ';
-            (pCVar4->base_actor).create_event[0x2b] = -0x3e;
-            iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20);
-            *(float *)(in_stack_00000004[1].base_actor.create_event + 0x2c) = fVar9;
-            *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) = iVar8 + 1;
+            (pCVar4->base).create_event[0x28] = '\0';
+            (pCVar4->base).create_event[0x29] = '\0';
+            (pCVar4->base).create_event[0x2a] = ' ';
+            (pCVar4->base).create_event[0x2b] = -0x3e;
+            iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x20);
+            *(float *)(in_stack_00000004[1].base.create_event + 0x2c) = fVar9;
+            *(int *)(in_stack_00000004[1].base.create_event + 0x20) = iVar8 + 1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(in_stack_00000004->model).motion_controller,1,1);
             return 1;
@@ -116,35 +116,35 @@ uint core_mobster_cpp_FUN_00526d90(void)
           iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x8c))();
           if (iVar8 != 0) {
             pCVar4 = in_stack_00000004 + 1;
-            (pCVar4->base_actor).create_event[0x2c] = '\0';
-            (pCVar4->base_actor).create_event[0x2d] = '\0';
-            (pCVar4->base_actor).create_event[0x2e] = '\0';
-            (pCVar4->base_actor).create_event[0x2f] = '\0';
+            (pCVar4->base).create_event[0x2c] = '\0';
+            (pCVar4->base).create_event[0x2d] = '\0';
+            (pCVar4->base).create_event[0x2e] = '\0';
+            (pCVar4->base).create_event[0x2f] = '\0';
             pCVar4 = in_stack_00000004 + 1;
-            (pCVar4->base_actor).create_event[0x28] = '\0';
-            (pCVar4->base_actor).create_event[0x29] = '\0';
-            (pCVar4->base_actor).create_event[0x2a] = '\0';
-            (pCVar4->base_actor).create_event[0x2b] = '\0';
+            (pCVar4->base).create_event[0x28] = '\0';
+            (pCVar4->base).create_event[0x29] = '\0';
+            (pCVar4->base).create_event[0x2a] = '\0';
+            (pCVar4->base).create_event[0x2b] = '\0';
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(in_stack_00000004->model).motion_controller,1,1);
             return 0;
           }
-          iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);
+          iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);
           fVar9 = (pCVar1->position).x - *(float *)(iVar8 + 0x20);
-          fVar3 = (in_stack_00000004->base_actor).location.position.z - *(float *)(iVar8 + 0x28);
+          fVar3 = (in_stack_00000004->base).location.position.z - *(float *)(iVar8 + 0x28);
           fVar9 = (float)5 -
                   SQRT(fVar3 * fVar3 + fVar9 * fVar9) * (float)0.33333333333333298;
           if (fVar9 < 1.0) {
             fVar9 = 1.0;
           }
           fVar9 = in_stack_00000008 * fVar9 +
-                  *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28);
+                  *(float *)(in_stack_00000004[1].base.create_event + 0x28);
           iVar8 = -1;
-          *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) = fVar9;
+          *(float *)(in_stack_00000004[1].base.create_event + 0x28) = fVar9;
           if ((fVar9 < 0.0) &&
-             (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +
-                                                    0x2c) + 0x154) + 0x7c))(), iVar7 == 3)) {
-            pCVar2 = *(CDemonActor **)(in_stack_00000004[1].base_actor.create_event + 0x2c);
+             (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base.create_event + 0x2c)
+                                           + 0x154) + 0x7c))(), iVar7 == 3)) {
+            pCVar2 = *(CDemonActor **)(in_stack_00000004[1].base.create_event + 0x2c);
             (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_88);
             uStack_28 = 0x3f000000;
             core_bodypart_cpp_FUN_0041b540();
@@ -165,15 +165,15 @@ uint core_mobster_cpp_FUN_00526d90(void)
             return 1;
           }
           pCVar4 = in_stack_00000004 + 1;
-          (pCVar4->base_actor).create_event[0x2c] = '\0';
-          (pCVar4->base_actor).create_event[0x2d] = '\0';
-          (pCVar4->base_actor).create_event[0x2e] = '\0';
-          (pCVar4->base_actor).create_event[0x2f] = '\0';
+          (pCVar4->base).create_event[0x2c] = '\0';
+          (pCVar4->base).create_event[0x2d] = '\0';
+          (pCVar4->base).create_event[0x2e] = '\0';
+          (pCVar4->base).create_event[0x2f] = '\0';
           pCVar4 = in_stack_00000004 + 1;
-          (pCVar4->base_actor).create_event[0x28] = '\0';
-          (pCVar4->base_actor).create_event[0x29] = '\0';
-          (pCVar4->base_actor).create_event[0x2a] = -0x60;
-          (pCVar4->base_actor).create_event[0x2b] = 'A';
+          (pCVar4->base).create_event[0x28] = '\0';
+          (pCVar4->base).create_event[0x29] = '\0';
+          (pCVar4->base).create_event[0x2a] = -0x60;
+          (pCVar4->base).create_event[0x2b] = 'A';
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->model).motion_controller,1,1);
         }

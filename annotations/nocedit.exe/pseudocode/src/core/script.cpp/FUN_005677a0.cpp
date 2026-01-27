@@ -42,9 +42,9 @@ uint core_script_cpp_FUN_005677a0(void)
     local_1c = 0;
     do {
       local_14 = (char *)(local_1c + *(int *)(in_stack_00000004 + 0x2c));
-      iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base_strlist,local_14);
+      iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,local_14);
       if (iVar2 < 0) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_748.base_strlist,local_14);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_748.base,local_14);
         iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)&local_748);
       }
       else {
@@ -138,8 +138,7 @@ uint core_script_cpp_FUN_005677a0(void)
   else {
     shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_748,1);
     iVar3 = 0;
-    iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030
-                      (&local_748.base_strlist,in_stack_0000000c);
+    iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,in_stack_0000000c);
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       (&local_748,in_stack_00000008,iVar2,iVar3);
     if (-1 < iVar2) {
@@ -167,7 +166,7 @@ uint core_script_cpp_FUN_005677a0(void)
           iVar4 = iVar4 + 0x114;
         } while (iVar3 < *(int *)(in_stack_00000004 + 0x28));
       }
-      pcVar6 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_748.base_strlist,iVar2);
+      pcVar6 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_748.base,iVar2);
       do {
         cVar1 = *pcVar6;
         *in_stack_0000000c = cVar1;

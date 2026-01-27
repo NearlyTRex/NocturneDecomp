@@ -19,23 +19,23 @@ void core_ghoul_cpp_FUN_004e8e40(void)
   switch(iVar1) {
   case 0:
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-              (&(in_stack_00000004->base_character).model,"guul.dfm");
+              (&(in_stack_00000004->base).model,"guul.dfm");
     break;
   case 1:
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-              (&(in_stack_00000004->base_character).model,"chubgul2.dfm");
+              (&(in_stack_00000004->base).model,"chubgul2.dfm");
     return;
   case 2:
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-              (&(in_stack_00000004->base_character).model,"guullmap.dfm");
+              (&(in_stack_00000004->base).model,"guullmap.dfm");
     return;
   case 3:
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-              (&(in_stack_00000004->base_character).model,"longguul.dfm");
+              (&(in_stack_00000004->base).model,"longguul.dfm");
     return;
   case 4:
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-              (&(in_stack_00000004->base_character).model,"chubguul.dfm");
+              (&(in_stack_00000004->base).model,"chubguul.dfm");
     return;
   }
   return;

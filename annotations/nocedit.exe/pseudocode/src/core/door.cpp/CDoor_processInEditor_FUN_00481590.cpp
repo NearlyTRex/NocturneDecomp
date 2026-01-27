@@ -12,19 +12,19 @@ void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr)
   CLocation *pCVar1;
   COrientation *pCVar2;
   
-  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   if (this_ptr->door_state == 0) {
-    pCVar1 = &(this_ptr->base_actor).location;
+    pCVar1 = &(this_ptr->base).location;
     if ((CLocation *)&this_ptr->orig_pos != pCVar1) {
       (this_ptr->orig_pos).x = (pCVar1->position).x;
-      (this_ptr->orig_pos).y = (this_ptr->base_actor).location.position.y;
-      (this_ptr->orig_pos).z = (this_ptr->base_actor).location.position.z;
+      (this_ptr->orig_pos).y = (this_ptr->base).location.position.y;
+      (this_ptr->orig_pos).z = (this_ptr->base).location.position.z;
     }
-    pCVar2 = &(this_ptr->base_actor).orient;
+    pCVar2 = &(this_ptr->base).orient;
     if ((COrientation *)&this_ptr->orig_orient != pCVar2) {
       (this_ptr->orig_orient).x = pCVar2->pitch;
-      (this_ptr->orig_orient).y = (this_ptr->base_actor).orient.bank;
-      (this_ptr->orig_orient).z = (this_ptr->base_actor).orient.heading;
+      (this_ptr->orig_orient).y = (this_ptr->base).orient.bank;
+      (this_ptr->orig_orient).z = (this_ptr->base).orient.heading;
     }
   }
   if (this_ptr->door_state != 0) {

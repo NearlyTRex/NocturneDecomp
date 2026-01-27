@@ -250,7 +250,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     else {
       iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"hasItem");
       if (iVar6 == 0) {
-        if (g_CNetGameInstance->connection_type != 0) {
+        if (g_CNetGamePtr->connection_type != 0) {
           pcVar13 = "Can't use hasItem condition in multi-player";
           pcVar14 = &DAT_02d0a460;
           do {
@@ -404,7 +404,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
         }
         iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"hasKeyMask");
         if (iVar6 == 0) {
-          if (g_CNetGameInstance->connection_type != 0) {
+          if (g_CNetGamePtr->connection_type != 0) {
             pcVar13 = "Can't use hasKeyMask condition in multi-player";
             pcVar14 = &DAT_02d0a460;
             do {
@@ -598,8 +598,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                     *in_stack_0000000c = *in_stack_0000000c + local_90;
                   }
                   else {
-                    iVar6 = (*(((this_ptr_01->base_actor).vtable._uc)->_uc).isDamageable)
-                                      (this_ptr_01);
+                    iVar6 = (*(((this_ptr_01->base).vtable._uc)->_uc).isDamageable)(this_ptr_01);
                     local_dc = (uint)(1 < iVar6);
                     *in_stack_0000000c = *in_stack_0000000c + local_8c;
                   }
@@ -1115,11 +1114,9 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                               if (local_b4 != 0x0FFFFFFF) {
                                 local_30 = &local_b4->location;
                                 local_c0 = 0;
-                                for (iVar6 = 0;
-                                    iVar6 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
+                                for (iVar6 = 0; iVar6 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c);
                                     iVar6 = iVar6 + 1) {
-                                  iVar7 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 +
-                                                  (int)local_bc + 8000);
+                                  iVar7 = *(int *)(g_CDemonSetPtr->unk4 + (int)local_bc + 8000);
                                   if ((((local_b0 == (char *)*(int *)(iVar7 + 0xbe3c)) &&
                                        (iVar10 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(),
                                        iVar10 < 1)) &&

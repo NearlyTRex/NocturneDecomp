@@ -9,9 +9,9 @@
 void __cdecl core_fire_cpp_CGunFlame_ctor_FUN_004c4da0(CGunFlame *this_ptr)
 
 {
-  this_ptr->field0_0x0[0] = '\0';
-  this_ptr->field0_0x0[1] = '\0';
-  this_ptr->field0_0x0[2] = '\0';
-  this_ptr->field0_0x0[3] = '\0';
+  this_ptr->unk[0] = '\0';
+  this_ptr->unk[1] = '\0';
+  this_ptr->unk[2] = '\0';
+  this_ptr->unk[3] = '\0';
   return;
 }

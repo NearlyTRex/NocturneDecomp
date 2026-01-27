@@ -12,72 +12,6 @@
         "column": 54,
         "line": 24,
         "message": "invalid conversion from 'void*' to 'CFlies*' [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 39,
-        "line": 38,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 16,
-        "line": 39,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 16,
-        "line": 40,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 16,
-        "line": 41,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 16,
-        "line": 42,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 44,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 45,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 20,
-        "line": 47,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 48,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 49,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 50,
-        "message": "'CFlies' {aka 'struct CFlies'} has no member named 'field1_0x158'"
       }
     ],
     "success": false,
@@ -110,18 +44,18 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 240,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 132
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -147,7 +81,7 @@
     {
       "addr": "004cbd60",
       "is_variadic": false,
-      "name": "core_flies.cpp_FUN_004cbd60"
+      "name": "core_flies.cpp_CFlies_ctor_FUN_004cbd60"
     },
     {
       "addr": "00506f10",
@@ -332,70 +266,70 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00->base_actor).location.position.x = *in_stack_00000008;",
+      "text": "(this_ptr_00->base).location.position.x = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00->base_actor).location.position.y = in_stack_00000008[1];",
+      "text": "(this_ptr_00->base).location.position.y = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00->base_actor).location.position.z = in_stack_00000008[2];",
+      "text": "(this_ptr_00->base).location.position.z = in_stack_00000008[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 0x28b4) = in_stack_0000000c;",
+      "text": "*(uint *)(this_ptr_00->unk + 0x28b4) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000010",
-      "text": "*(float *)(this_ptr_00->field1_0x158 + 0x28bc) = fVar2 / in_stack_00000010;",
+      "text": "*(float *)(this_ptr_00->unk + 0x28bc) = fVar2 / in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000014",
-      "text": "if ((in_stack_00000014 != (uint *)0x0) &&",
+      "text": "if ((in_stack_00000014 != (uint *)0x0) && (this_ptr_00->unk != (char *)in_stack_00000014)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 != (uint *)0x0) && (this_ptr_00->unk != (char *)in_stack_00000014)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000014",
-      "text": "(this_ptr_00->field1_0x158 != (char *)in_stack_00000014)) {",
+      "text": "*(uint *)this_ptr_00->unk = *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000014",
-      "text": "*(uint *)this_ptr_00->field1_0x158 = *in_stack_00000014;",
+      "text": "*(uint *)(this_ptr_00->unk + 4) = in_stack_00000014[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000014",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 4) = in_stack_00000014[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000014",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 8) = in_stack_00000014[2];",
+      "text": "*(uint *)(this_ptr_00->unk + 8) = in_stack_00000014[2];",
       "type": "stack_param"
     },
     {

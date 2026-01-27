@@ -15,7 +15,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2890(CHero *this_ptr)
   
   if (in_stack_0000000c == 0) {
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                            (&(this_ptr->base_character).model.motion_controller);
+                            (&(this_ptr->base).model.motion_controller);
     iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
     if (iVar1 < 0) {
       return 0;

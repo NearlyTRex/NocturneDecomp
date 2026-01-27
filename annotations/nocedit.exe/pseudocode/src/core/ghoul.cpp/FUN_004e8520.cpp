@@ -22,22 +22,22 @@ void core_ghoul_cpp_FUN_004e8520(void)
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
     switch(iVar1 % 6) {
     case 0:
-      fVar2 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x44);
+      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x44);
       break;
     case 1:
-      fVar2 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x48);
+      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x48);
       break;
     case 2:
-      fVar2 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x4c);
+      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x4c);
       break;
     case 3:
-      fVar2 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x50);
+      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x50);
       break;
     case 4:
-      fVar2 = in_stack_00000004[1].base_actor.field12_0xe0.y;
+      fVar2 = in_stack_00000004[1].base.unk3.y;
       break;
     case 5:
-      fVar2 = in_stack_00000004[1].base_actor.field12_0xe0.x;
+      fVar2 = in_stack_00000004[1].base.unk3.x;
       break;
     default:
       goto switchD_004e8556_default;
@@ -46,20 +46,20 @@ void core_ghoul_cpp_FUN_004e8520(void)
   }
 switchD_004e8556_default:
   fVar2 = *in_stack_00000008;
-  if (((((fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x44)) ||
-        (fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x48))) ||
-       (fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x4c))) ||
-      ((fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x50) ||
-       (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.x)))) ||
-     (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.y)) {
+  if (((((fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x44)) ||
+        (fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x48))) ||
+       (fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x4c))) ||
+      ((fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x50) ||
+       (fVar2 == in_stack_00000004[1].base.unk3.x)))) || (fVar2 == in_stack_00000004[1].base.unk3.y)
+     ) {
     local_14 = in_stack_00000008[0xb];
-    if (in_stack_00000004[1].base_actor.field12_0xe0.y == *in_stack_00000008) {
+    if (in_stack_00000004[1].base.unk3.y == *in_stack_00000008) {
       local_14 = 0.05;
     }
-    if (in_stack_00000004[1].base_actor.field12_0xe0.x == *in_stack_00000008) {
+    if (in_stack_00000004[1].base.unk3.x == *in_stack_00000008) {
       local_14 = 0.02;
     }
-    if (g_CGamePtr->field57_0x1e0 != 0) {
+    if (g_CGamePtr->unk4 != 0) {
       local_14 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {
@@ -69,13 +69,13 @@ switchD_004e8556_default:
     if (iVar1 != 0) {
       core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-      if (*in_stack_00000008 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x44)) {
+      if (*in_stack_00000008 == *(float *)(in_stack_00000004[1].base.create_event + 0x44)) {
         core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       }
-      if (*(float *)(in_stack_00000004[1].base_actor.create_event + 0x4c) == *in_stack_00000008) {
+      if (*(float *)(in_stack_00000004[1].base.create_event + 0x4c) == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       }
-      if (in_stack_00000004[1].base_actor.field12_0xe0.x == *in_stack_00000008) {
+      if (in_stack_00000004[1].base.unk3.x == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
@@ -84,20 +84,20 @@ switchD_004e8556_default:
       }
       core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
       core_bodypart_cpp_FUN_0041a050();
-      if ((in_stack_00000004->model).part_visibility_flags
-          [(int)in_stack_00000004[1].base_actor.field12_0xe0.y] == 0) {
+      if ((in_stack_00000004->model).part_visibility_flags[(int)in_stack_00000004[1].base.unk3.y] ==
+          0) {
         in_stack_00000008[1] = 9999.0;
       }
       in_stack_00000008[2] = in_stack_00000008[2] * (float)7;
     }
   }
   fVar2 = *in_stack_00000008;
-  if (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.y) {
+  if (fVar2 == in_stack_00000004[1].base.unk3.y) {
     in_stack_00000008[1] = in_stack_00000008[1] * (float)2.5;
     return;
   }
-  if ((fVar2 != (float)in_stack_00000004[1].base_actor.field11_0xdc) &&
-     (fVar2 != in_stack_00000004[1].base_actor.field12_0xe0.x)) {
+  if ((fVar2 != (float)in_stack_00000004[1].base.unk2) &&
+     (fVar2 != in_stack_00000004[1].base.unk3.x)) {
     in_stack_00000008[1] = in_stack_00000008[1] * (float)0.5;
     return;
   }

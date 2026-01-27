@@ -251,7 +251,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
     } while (local_30 < g_DynamicLightCount);
   }
   if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
-     (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0)) {
+     (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0)) {
     core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370
               (&g_HeroActors[g_LocalHeroIndex]->inventory);
   }
@@ -278,7 +278,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
                dVar3,(double)(iVar6 - iVar5) * 0.055555555555555601 * 1.52587890625e-05 * 1000 *
                      dVar3);
   }
-  if (g_CGamePtr->field59_0x1e8 != 0) {
+  if (g_CGamePtr->unk5 != 0) {
     core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(this_ptr);
   }
   iVar5 = 0;

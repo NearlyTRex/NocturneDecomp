@@ -60,7 +60,7 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
   float local_14;
   
   bVar5 = 0;
-  if ((this_ptr->field17_0x1cbc != 0) && (g_CGamePtr->halo_mode == 2)) {
+  if ((this_ptr->unk2 != 0) && (g_CGamePtr->halo_mode == 2)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
               (g_CDemonRendererPtr2,&local_8c.x);
     local_8c.x = local_8c.x - (float)(this_ptr->base).base.position.x;

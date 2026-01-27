@@ -41,12 +41,12 @@ void core_msnedit_cpp_FUN_0053af50(void)
     core_msnedit_cpp_FUN_0053b510();
     return;
   case 0xd:
-    if (-1 < DAT_02f7c52c) {
-      DAT_02f7c52c = 0xffffffff;
+    if (-1 < INT_02f7c52c) {
+      INT_02f7c52c = -1;
       return;
     }
-    DAT_02f7c530 = 0;
-    DAT_02f7c52c = (int)(in_stack_00000008 + -0xbde80b) / 0xec;
+    INT_02f7c530 = 0;
+    INT_02f7c52c = (int)(in_stack_00000008 + -0xbde80b) / 0xec;
     return;
   }
   return;

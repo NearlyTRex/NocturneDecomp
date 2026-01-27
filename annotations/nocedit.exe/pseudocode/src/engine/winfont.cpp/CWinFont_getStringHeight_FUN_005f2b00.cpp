@@ -31,10 +31,10 @@ engine_winfont_cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont *this_ptr,char
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  BVar3 = (*g_GetTextExtentPoint32A)(this_ptr->deviceContextHandle,text_string,~uVar4 - 1,&local_10)
-  ;
+  BVar3 = (*g_GetTextExtentPoint32A)
+                    (this_ptr->device_context_handle,text_string,~uVar4 - 1,&local_10);
   if (BVar3 == 0) {
     local_10.cy = 0;
   }
-  return local_10.cy + this_ptr->yOffset1 + this_ptr->yOffset2;
+  return local_10.cy + this_ptr->y_offset1 + this_ptr->y_offset2;
 }

@@ -11,10 +11,9 @@ int __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_00412810(CBackgroundActo
 {
   uint uVar1;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->model_name);
-  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   uVar1 = (uint)(this_ptr->collide_with_me == 0);
-  (this_ptr->base_actor).field16_0x100 = uVar1;
+  (this_ptr->base).unk6 = uVar1;
   return uVar1;
 }

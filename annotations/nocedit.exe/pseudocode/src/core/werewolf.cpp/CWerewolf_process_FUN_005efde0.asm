@@ -1382,7 +1382,7 @@ section .text
     XOR EDI,EDI                         ; 005f0f7a
     MOV EAX,[0x006810c8]                ; 005f0f7c | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_005f0f7c
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005f0f81 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005f0f81 | g_CDemonSetInstance.unk4[7996]
     JGE 0x005f0c92                      ; 005f0f87
         ;   XREF to: 005f0c92 (CONDITIONAL_JUMP)  ; LAB_005f0c92
     MOV ECX,dword ptr [0x03f96b94]      ; 005f0f8d | g_CWerewolfClassInfo.name_hash

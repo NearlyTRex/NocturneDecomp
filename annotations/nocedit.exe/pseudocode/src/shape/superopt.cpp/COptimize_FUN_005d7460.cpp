@@ -27,7 +27,7 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7460(COptimize *this_ptr)
   int iStack_14;
   
   *(byte *)(in_stack_00000008 + 0x61) = *(byte *)(in_stack_00000008 + 0x61) | 0x20;
-  dVar1 = this_ptr->field2_0x24;
+  dVar1 = this_ptr->unk2;
   do {
     local_30 = 0;
     bVar4 = true;
@@ -53,7 +53,7 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7460(COptimize *this_ptr)
                 if (dStack_40 < 0.0) {
                   dStack_40 = -dStack_40;
                 }
-                if ((dStack_40 <= this_ptr->field3_0x2c) &&
+                if ((dStack_40 <= this_ptr->unk3) &&
                    (iVar5 = (**(code **)(*(int *)(iVar6 + 100) + 0x74))(), iVar5 != 0)) {
                   uVar8 = 0;
                   if (*(int *)(in_stack_0000000c + 8) != 0) {

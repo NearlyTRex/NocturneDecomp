@@ -24,7 +24,7 @@ core_succubus_cpp_CSuccubus_dtor_FUN_005c7820
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field1_0xbeb4 + 0x2488));
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->unk + 0x2488));
   iVar1 = core_cloth_cpp_FUN_0043bf80();
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(iVar1 + -0x22b4),0,unaff_EBX,unaff_retaddr,

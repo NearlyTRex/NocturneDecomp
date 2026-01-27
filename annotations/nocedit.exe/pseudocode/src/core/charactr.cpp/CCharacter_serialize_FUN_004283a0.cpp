@@ -15,7 +15,7 @@ void __cdecl core_charactr_cpp_CCharacter_serialize_FUN_004283a0(CCharacter *thi
   int local_18;
   int local_14;
   
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->hit_points,"hitPoints");
   if (1 < g_CCharacterClassVersion) {
     if (g_ActorReadingMode == 1) {
@@ -38,8 +38,8 @@ void __cdecl core_charactr_cpp_CCharacter_serialize_FUN_004283a0(CCharacter *thi
         if (pCVar1->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
           local_14 = local_14 + 1;
         }
-        pCVar1 = (CCharacter *)&(pCVar1->base_actor).orient_matrix.m[0].z;
-      } while (pCVar1 != (CCharacter *)((this_ptr->base_actor).create_event + 0x10));
+        pCVar1 = (CCharacter *)&(pCVar1->base).orient_matrix.m[0].z;
+      } while (pCVar1 != (CCharacter *)((this_ptr->base).create_event + 0x10));
       local_20 = 2;
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_14,"numCarryHands");
       local_20 = 0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bugs_cpp_FUN_00425340(void)
 
 {
@@ -35,11 +33,11 @@ void core_bugs_cpp_FUN_00425340(void)
     iVar3 = 0;
     iVar5 = local_2c;
     do {
-      local_3c.x = (int)ROUND((fVar2 + fVar1) * _DAT_0065b5b0);
-      local_3c.y = (int)ROUND((*(float *)(iVar5 + 0x128b8) + (float)0.25) * _DAT_0065b5b0
-                             );
+      local_3c.x = (int)ROUND((fVar2 + fVar1) * 256.0f);
+      local_3c.y = (int)ROUND((*(float *)(iVar5 + 0x128b8) + (float)0.25) *
+                              256.0f);
       local_3c.z = (int)ROUND(((float)iVar3 * 0.5f +
-                              *(float *)(in_stack_00000004 + 0x199f0)) * _DAT_0065b5b0);
+                              *(float *)(in_stack_00000004 + 0x199f0)) * 256.0f);
       local_18 = iVar3;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)

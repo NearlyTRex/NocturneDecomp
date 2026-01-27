@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_gore.cpp_FUN_004ed3c0(uint param_1, uint param_2) */
-
 void core_gore_cpp_FUN_004ed3c0(void)
 
 {
@@ -19,11 +16,11 @@ void core_gore_cpp_FUN_004ed3c0(void)
   int in_stack_00000008;
   CVector3i local_1c;
   
-  _DAT_02d833ac = 4;
-  _DAT_02d833c0 = 0;
-  _DAT_02d833c4 = 1;
-  _DAT_02d833c8 = 2;
-  _DAT_02d833cc = 3;
+  INT_02d833ac = 4;
+  INT_02d833c0 = 0;
+  INT_02d833c4 = 1;
+  INT_02d833c8 = 2;
+  INT_02d833cc = 3;
   g_RenderVertexBuffer[0].u = 7.34684e-40;
   g_RenderVertexBuffer[0].v = 7.34684e-40;
   g_RenderVertexBuffer[1].u = 2.2775203e-38;
@@ -35,10 +32,10 @@ void core_gore_cpp_FUN_004ed3c0(void)
   output = g_RenderVertexBuffer;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,in_stack_00000004[0xe]);
-  _DAT_02d833b0 = 0;
-  _DAT_02d833b4 = 0;
-  _DAT_02d833b8 = 0;
-  _DAT_02d833bc = 0;
+  INT_02d833b0 = 0;
+  INT_02d833b4 = 0;
+  INT_02d833b8 = 0;
+  INT_02d833bc = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0067cb28);
   pfVar2 = (float *)(in_stack_00000004 + 2);
   do {
@@ -132,7 +129,7 @@ LAB_004ed550:
   g_RenderVertexBuffer[3].fog = 0.0;
 LAB_004ed595:
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&DAT_02d833a8);
+            (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&INT_02d833a8);
   if (in_stack_00000008 != 0) {
     *in_stack_00000004 = 1;
     return;

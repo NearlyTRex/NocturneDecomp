@@ -11,6 +11,6 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9140(CCryptVessel *this_ptr)
 {
   int in_stack_00000008;
   
-  this_ptr->field3_0x2d4 = in_stack_00000008;
+  this_ptr->unk2 = in_stack_00000008;
   return;
 }

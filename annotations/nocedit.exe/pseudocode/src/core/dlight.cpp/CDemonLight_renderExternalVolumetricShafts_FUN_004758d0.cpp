@@ -78,8 +78,8 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
   int local_14;
   
   bVar5 = 0;
-  if (((this_ptr->field17_0x1cbc != 0) &&
-      ((float)0.10000000000000001 <= *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbd0))) &&
+  if (((this_ptr->unk2 != 0) &&
+      ((float)0.10000000000000001 <= *(float *)(g_CDemonSetPtr->unk4 + 0xbbd0))) &&
      (g_CGamePtr->halo_mode != 0)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
               (g_CDemonRendererPtr2,&local_f0);

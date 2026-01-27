@@ -1,0 +1,217 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 33,
+        "message": "void value not ignored as it ought to be"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 33,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 70,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 45,
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 131
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cb9b0",
+    "address_range": [
+      [
+        "004cb9b0",
+        "004cbaa1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0",
+    "signature": "void core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower * this_ptr, float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b3b80",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80"
+    },
+    {
+      "addr": "005b3b90",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_killSound_FUN_005b3b90"
+    },
+    {
+      "addr": "005ee110",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a39b",
+      "name": "s_fl_throw_wav_0062a39b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065e270",
+      "name": "FLOAT_0065e270",
+      "type": "float",
+      "value": "4"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.057971014492754,
+    "instruction_count": 69,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 124,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 27,
+      "INT_AND": 32,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 17,
+      "INT_ZEXT": 4,
+      "LOAD": 17,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 349
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameThrower *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004cb9b8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_EAX",
+      "text": "if (extraout_EAX == 0) {",
+      "type": "extra_output"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "0065e284"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

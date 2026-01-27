@@ -87,10 +87,10 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
   local_44 = in_stack_ffffff84 + local_70;
   local_54 = local_48 * 0.5f;
   local_50 = local_44 * 0.5f;
-  if ((float *)(g_CSpotViewPtr->field0_0x0 + 0x18) != &local_58) {
-    *(float *)(g_CSpotViewPtr->field0_0x0 + 0x18) = local_58;
-    *(float *)(pCVar3->field0_0x0 + 0x1c) = local_54;
-    *(float *)(pCVar3->field0_0x0 + 0x20) = local_50;
+  if ((float *)(g_CSpotViewPtr->unk + 0x18) != &local_58) {
+    *(float *)(g_CSpotViewPtr->unk + 0x18) = local_58;
+    *(float *)(pCVar3->unk + 0x1c) = local_54;
+    *(float *)(pCVar3->unk + 0x20) = local_50;
   }
   while( true ) {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
@@ -305,12 +305,12 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
   }
   shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   pCVar3 = g_CSpotViewPtr;
-  pCVar3->field0_0x0[0x20] = '\0';
-  pCVar3->field0_0x0[0x21] = '\0';
-  pCVar3->field0_0x0[0x22] = '\0';
-  pCVar3->field0_0x0[0x23] = '\0';
-  *(uint *)(pCVar3->field0_0x0 + 0x1c) = *(uint *)(pCVar3->field0_0x0 + 0x20);
-  *(uint *)(pCVar3->field0_0x0 + 0x18) = *(uint *)(pCVar3->field0_0x0 + 0x1c);
+  pCVar3->unk[0x20] = '\0';
+  pCVar3->unk[0x21] = '\0';
+  pCVar3->unk[0x22] = '\0';
+  pCVar3->unk[0x23] = '\0';
+  *(uint *)(pCVar3->unk + 0x1c) = *(uint *)(pCVar3->unk + 0x20);
+  *(uint *)(pCVar3->unk + 0x18) = *(uint *)(pCVar3->unk + 0x1c);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

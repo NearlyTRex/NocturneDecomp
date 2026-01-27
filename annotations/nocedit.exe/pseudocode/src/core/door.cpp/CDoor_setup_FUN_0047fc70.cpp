@@ -12,16 +12,15 @@ void __cdecl core_door_cpp_CDoor_setup_FUN_0047fc70(CDoor *this_ptr)
   int iVar1;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
-  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
-  iVar1 = crt_string_c_strcmp_FUN_005fef20(this_ptr->field7_0x2e8,"defaultDoorOpen");
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
+  iVar1 = crt_string_c_strcmp_FUN_005fef20(this_ptr->unk1,"defaultDoorOpen");
   if (iVar1 == 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(this_ptr->field7_0x2e8,"%sOpen",this_ptr);
+    crt_stdio_c_sprintf_FUN_005fdbd0(this_ptr->unk1,"%sOpen",this_ptr);
   }
-  iVar1 = crt_string_c_strcmp_FUN_005fef20(this_ptr->field7_0x2e8 + 100,"defaultDoorClose")
-  ;
+  iVar1 = crt_string_c_strcmp_FUN_005fef20(this_ptr->unk1 + 100,"defaultDoorClose");
   if (iVar1 != 0) {
     return;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(this_ptr->field7_0x2e8 + 100,"%sClose",this_ptr);
+  crt_stdio_c_sprintf_FUN_005fdbd0(this_ptr->unk1 + 100,"%sClose",this_ptr);
   return;
 }

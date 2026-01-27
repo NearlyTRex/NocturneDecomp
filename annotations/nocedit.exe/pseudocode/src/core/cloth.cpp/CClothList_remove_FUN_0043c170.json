@@ -2,22 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 44,
-        "message": "no matching function for call to 'CClothList::CClothList(int)'"
+        "category": "other",
+        "column": 27,
+        "line": 45,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "incompatible_types",
-        "column": 37,
-        "line": 49,
-        "message": "no matching function for call to 'CClothList::CClothList(int)'"
+        "category": "other",
+        "column": 33,
+        "line": 46,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "incompatible_types",
-        "column": 51,
-        "line": 59,
-        "message": "no matching function for call to 'CClothList::CClothList(int)'"
+        "category": "other",
+        "column": 19,
+        "line": 47,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 48,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -51,18 +57,43 @@
         "column": 11,
         "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 45,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 46,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 48,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 107,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 52,
-    "suspect_count": 5,
+    "suspect_count": 9,
     "suspect_types": [
+      "pointer_cast",
       "stack_param"
     ],
     "total_lines": 161
@@ -205,21 +236,21 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)this_ptr <= in_stack_00000008)) {",
+      "text": "if ((in_stack_00000008 < 0) || (this_ptr->unk <= in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)this_ptr <= in_stack_00000008)) {",
+      "text": "if ((in_stack_00000008 < 0) || (this_ptr->unk <= in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
-      "text": "if (*(int *)(this_ptr + in_stack_00000008 * 4 + 0x194) != 0) {",
+      "text": "if (this_ptr[in_stack_00000008 + 0x65].unk != 0) {",
       "type": "stack_param"
     },
     {
@@ -228,6 +259,34 @@
       "match": "in_stack_00000008",
       "text": "iVar5 = in_stack_00000008 + 1;",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)&pCVar6->unk + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(CClothList *)((int)",
+      "text": "pCVar6 = (CClothList *)((int)&pCVar6->unk + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)&pCVar7->unk + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(CClothList *)((int)",
+      "text": "pCVar7 = (CClothList *)((int)&pCVar7->unk + 2);",
+      "type": "pointer_cast"
     }
   ]
 }

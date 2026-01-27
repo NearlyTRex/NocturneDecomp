@@ -62,7 +62,7 @@ void core_msnedit_cpp_FUN_0053b9f0(void)
     this_ptr = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
     core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(in_stack_00000004);
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
-    (this_ptr->location).area_id = *(int *)in_stack_00000004->field0_0x0;
+    (this_ptr->location).area_id = *(int *)in_stack_00000004->unk1;
     pfVar3 = (float *)core_msnedit_cpp_FUN_00535c60();
     (this_ptr->location).position.x = *pfVar3;
     (this_ptr->location).position.y = pfVar3[1];

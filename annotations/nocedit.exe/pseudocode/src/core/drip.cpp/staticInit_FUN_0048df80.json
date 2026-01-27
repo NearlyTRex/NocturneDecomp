@@ -4,14 +4,8 @@
       {
         "category": "incompatible_types",
         "column": 40,
-        "line": 15,
-        "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'CDemonActor* (**)()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 18,
-        "message": "'DAT_02c9b170' was not declared in this scope; did you mean 'DAT_03F9F170'?"
+        "line": 13,
+        "message": "cannot convert 'CDrip* (*)()' to 'void* (**)()'"
       }
     ],
     "success": false,
@@ -25,23 +19,23 @@
       {
         "category": "other",
         "column": 32,
-        "line": 15,
+        "line": 13,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 25,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 8,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 25
+    "total_lines": 23
   },
   "cross_references": [],
   "function": {
@@ -54,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_drip.cpp_staticInit_FUN_0048df80",
-    "signature": "CKeyFramedModelInstance * core_drip.cpp_staticInit_FUN_0048df80(void)"
+    "signature": "void core_drip.cpp_staticInit_FUN_0048df80(void)"
   },
   "function_calls": [
     {
@@ -96,7 +90,7 @@
     {
       "addr": "02c9b170",
       "name": "DAT_02c9b170",
-      "type": "undefined4",
+      "type": "CKeyFramedModelInstance",
       "value": null
     }
   ],
@@ -138,9 +132,9 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 8,
       "match": "DAT_02c9b170",
-      "text": "((CKeyFramedModelInstance *)&DAT_02c9b170);",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_02c9b170);",
       "type": "undefined_data"
     }
   ]

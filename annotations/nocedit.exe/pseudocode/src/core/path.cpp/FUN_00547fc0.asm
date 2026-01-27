@@ -45,9 +45,9 @@
 ;   undefined4 DAT_030d4fd0.surface_normal.B
 ;   undefined4 DAT_030d4fd0.surface_normal.C
 ;   undefined4 DAT_030d4fd0.surface_normal.D
-;   undefined4 DAT_030d4fe8
-;   undefined4 DAT_030d4fec
-;   undefined4 DAT_030d4ff0
+;   int INT_030d4fe8
+;   int INT_030d4fec
+;   int INT_030d4ff0
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -120,22 +120,22 @@ section .text
     MOV [0x030d4fdc],EAX                ; 0054805e | DAT_030d4fd0.surface_normal.B
     MOV [0x030d4fe0],EAX                ; 00548063 | DAT_030d4fd0.surface_normal.C
     MOV [0x030d4fe4],EAX                ; 00548068 | DAT_030d4fd0.surface_normal.D
-    MOV [0x030d4fe8],EAX                ; 0054806d | DAT_030d4fe8
-    MOV dword ptr [0x030d4ff4],EDX      ; 00548072 | DAT_030d4ff4
-    MOV dword ptr [0x030d5000],ESI      ; 00548078 | DAT_030d5000
+    MOV [0x030d4fe8],EAX                ; 0054806d | INT_030d4fe8
+    MOV dword ptr [0x030d4ff4],EDX      ; 00548072 | INT_030d4ff4
+    MOV dword ptr [0x030d5000],ESI      ; 00548078 | INT_030d5000
     PUSH EAX                            ; 0054807e
     MOV EDX,0x3                         ; 0054807f
     MOV ESI,dword ptr [0x006703ec]      ; 00548084 | g_CDemonRendererPtr2
-    MOV dword ptr [0x030d4fec],EDI      ; 0054808a | DAT_030d4fec
-    MOV dword ptr [0x030d4ff0],EDI      ; 00548090 | DAT_030d4ff0
-    MOV dword ptr [0x030d4ff8],EDI      ; 00548096 | DAT_030d4ff8
-    MOV dword ptr [0x030d4ffc],EDI      ; 0054809c | DAT_030d4ffc
-    MOV dword ptr [0x030d5004],EDI      ; 005480a2 | DAT_030d5004
-    MOV dword ptr [0x030d5008],EDI      ; 005480a8 | DAT_030d5008
-    MOV dword ptr [0x030d5010],EDI      ; 005480ae | DAT_030d5010
+    MOV dword ptr [0x030d4fec],EDI      ; 0054808a | INT_030d4fec
+    MOV dword ptr [0x030d4ff0],EDI      ; 00548090 | INT_030d4ff0
+    MOV dword ptr [0x030d4ff8],EDI      ; 00548096 | INT_030d4ff8
+    MOV dword ptr [0x030d4ffc],EDI      ; 0054809c | INT_030d4ffc
+    MOV dword ptr [0x030d5004],EDI      ; 005480a2 | INT_030d5004
+    MOV dword ptr [0x030d5008],EDI      ; 005480a8 | INT_030d5008
+    MOV dword ptr [0x030d5010],EDI      ; 005480ae | INT_030d5010
     PUSH ESI                            ; 005480b4 | g_CDemonRendererInstance
-    MOV dword ptr [0x030d5014],EDI      ; 005480b5 | DAT_030d5014
-    MOV dword ptr [0x030d500c],EDX      ; 005480bb | DAT_030d500c
+    MOV dword ptr [0x030d5014],EDI      ; 005480b5 | INT_030d5014
+    MOV dword ptr [0x030d500c],EDX      ; 005480bb | INT_030d500c
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0 ; 005480c1
         ;   XREF to: 0048c9f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 005480c6

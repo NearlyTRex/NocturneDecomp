@@ -30,7 +30,7 @@ float __cdecl core_set_cpp_CDemonSet_FUN_0056fac0(CDemonSet *this_ptr)
                 (this_ptr_00,&local_30,&local_24);
       if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&
          (ABS(local_30.z) <= (pSVar1->extents).z)) {
-        return (float)pSVar1->field4_0x40;
+        return (float)pSVar1->unk;
       }
       iVar2 = iVar2 + 1;
       this_ptr_00 = (CMatrix3x3f *)((int)(this_ptr_00 + 1) + 0x20);

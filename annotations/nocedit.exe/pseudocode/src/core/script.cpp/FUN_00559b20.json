@@ -4,37 +4,13 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_script_cpp_FUN_00559b20()'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 29,
-        "message": "'_DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 34,
-        "message": "'_DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 38,
-        "message": "'_DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 41,
-        "message": "'_DAT_0310f4a0' was not declared in this scope; did you mean 'DAT_0310f4ac'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 69,
-        "line": 61,
+        "line": 58,
         "message": "'DAT_031061e8' was not declared in this scope; did you mean 'DAT_031091e8'?"
       }
     ],
@@ -49,31 +25,30 @@
       {
         "category": "other",
         "column": 9,
-        "line": 52,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 61,
+        "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 169,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
-    "pseudocode_lines": 74,
-    "suspect_count": 8,
+    "pseudocode_lines": 72,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 295
+    "total_lines": 293
   },
   "cross_references": [
     {
@@ -218,8 +193,8 @@
     },
     {
       "addr": "031061e0",
-      "name": "DAT_031061e0",
-      "type": "undefined4",
+      "name": "INT_031061e0",
+      "type": "int",
       "value": null
     },
     {
@@ -236,8 +211,8 @@
     },
     {
       "addr": "0310f4a0",
-      "name": "DAT_0310f4a0",
-      "type": "undefined4",
+      "name": "FLOAT_0310f4a0",
+      "type": "float",
       "value": null
     }
   ],
@@ -353,57 +328,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_031061e0",
-      "text": "DAT_031061e0 = g_CGamePtr->letterbox_mode;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_031061e0",
-      "text": "if (DAT_031061e0 != 2) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "if ((*(char *)(in_stack_00000004 + 0x54) != '\\0') && (g_CGamePtr->subtitle_mode != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "(this_ptr,(char *)(in_stack_00000004 + 0x54),&DAT_031061e8,10,0x400,",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 51,
       "match": "DAT_031061e8",
       "text": "(this_ptr,(char *)(in_stack_00000004 + 0x54),&DAT_031061e8,10,0x400,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 62,
       "match": "DAT_031061e8",
       "text": "text = &DAT_031061e8;",
       "type": "undefined_data"

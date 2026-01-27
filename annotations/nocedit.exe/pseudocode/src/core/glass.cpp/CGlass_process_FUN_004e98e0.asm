@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr)
+; __cdecl void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   CEventList* g_CEventListPtr = 02d05310

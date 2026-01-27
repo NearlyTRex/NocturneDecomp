@@ -85,7 +85,6 @@ int g_BlendMode = {};
 int g_ProcessorType = {};
 int g_RenderStateFlags = {};
 int g_RenderStateFlag2 = {};
-int g_SolidColorMode = {};
 int g_SolidRedComponent = {};
 int g_SolidGreenComponent = {};
 int g_SolidBlueComponent = {};
@@ -111,6 +110,9 @@ uint g_ReciprocalLookupTable[1600] = {};
 // uint[256]
 uint g_ColorTable32[256] = {};
 uint g_Hardware32BitPalette[256] = {};
+
+// ulong
+ulong g_SolidColorMode = {};
 
 // ulonglong
 ulonglong g_SavedMMX0 = {};

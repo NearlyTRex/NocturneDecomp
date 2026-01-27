@@ -116,7 +116,7 @@
 ;   double DOUBLE_006184a2 = 9999
 ;   double DOUBLE_006184aa = 0.0100000000000000
 ;   double DOUBLE_006184b2 = -1
-;   undefined4 DAT_0065bb3c
+;   float FLOAT_0065bb3c = 256
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 DAT_0326eed8
 ;   undefined4 DAT_0326eedc
@@ -754,13 +754,13 @@ section .text
     ADD EBX,EDX                         ; 0043b498
     INC ECX                             ; 0043b49a
     FLD float ptr [EAX]                 ; 0043b49b
-    FMUL float ptr [0x0065bb3c]         ; 0043b49d | DAT_0065bb3c
+    FMUL float ptr [0x0065bb3c]         ; 0043b49d | FLOAT_0065bb3c
     FISTP dword ptr [EBX]               ; 0043b4a3
     FLD float ptr [EAX + 0x4]           ; 0043b4a5
-    FMUL float ptr [0x0065bb3c]         ; 0043b4a8 | DAT_0065bb3c
+    FMUL float ptr [0x0065bb3c]         ; 0043b4a8 | FLOAT_0065bb3c
     FISTP dword ptr [EBX + 0x4]         ; 0043b4ae
     FLD float ptr [EAX + 0x8]           ; 0043b4b1
-    FMUL float ptr [0x0065bb3c]         ; 0043b4b4 | DAT_0065bb3c
+    FMUL float ptr [0x0065bb3c]         ; 0043b4b4 | FLOAT_0065bb3c
     FISTP dword ptr [EBX + 0x8]         ; 0043b4ba
     ADD ESI,0x11c                       ; 0043b4bd
     MOV EBX,dword ptr [EDI + 0x104]     ; 0043b4c3

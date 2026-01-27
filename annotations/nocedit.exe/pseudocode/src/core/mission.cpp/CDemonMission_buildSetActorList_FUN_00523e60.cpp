@@ -17,7 +17,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemo
       this_ptr_00 = this_ptr_00->next_actor) {
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
               (this_ptr_00,"..\\core\\mission.cpp",0x365);
-    if ((this_ptr_00->location).area_id == *(int *)this_ptr->field0_0x0) {
+    if ((this_ptr_00->location).area_id == *(int *)this_ptr->unk1) {
       if (1999 < (int)g_CDemonSetPtr->actor_list_ptr) {
         g_CurrentFilename = "..\\core\\mission.cpp";
         g_CurrentLineNumber = 0x36d;

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_tvbat.cpp_FUN_005e3e80 at 005e3e9a
+;   core_tvbat.cpp_factoryFunc_FUN_005e3e80 at 005e3e9a
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CTVBatVTable

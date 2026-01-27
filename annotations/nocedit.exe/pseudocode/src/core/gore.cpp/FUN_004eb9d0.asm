@@ -23,12 +23,12 @@
 ;   undefined4 DAT_02d83368.surface_normal.B
 ;   undefined4 DAT_02d83368.surface_normal.C
 ;   undefined4 DAT_02d83368.surface_normal.D
-;   undefined4 DAT_02d83380
-;   undefined4 DAT_02d83384
-;   undefined4 DAT_02d83388
-;   undefined4 DAT_02d8338c
-;   undefined4 DAT_02d83390
-;   undefined4 DAT_02d83394
+;   int INT_02d83380
+;   int INT_02d83384
+;   int INT_02d83388
+;   int INT_02d8338c
+;   int INT_02d83390
+;   int INT_02d83394
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -48,29 +48,29 @@ section .text
     MOV EAX,0x1                         ; 004eb9db
     LEA ESI,[ESP + 0x50]                ; 004eb9e0
     MOV EBX,dword ptr [0x006703ec]      ; 004eb9e4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
-    MOV EDI,0x2d83390                   ; 004eb9ea | DAT_02d83390
+    MOV EDI,0x2d83390                   ; 004eb9ea | INT_02d83390
     XOR ECX,ECX                         ; 004eb9ef
     MOV dword ptr [0x02d8336c],EDX      ; 004eb9f1 | DAT_02d83368.base.count
     MOV dword ptr [0x02d83370],ECX      ; 004eb9f7 | DAT_02d83368.surface_normal.A
     MOV dword ptr [0x02d83374],ECX      ; 004eb9fd | DAT_02d83368.surface_normal.B
     MOV dword ptr [0x02d83378],ECX      ; 004eba03 | DAT_02d83368.surface_normal.C
     MOV dword ptr [0x02d8337c],ECX      ; 004eba09 | DAT_02d83368.surface_normal.D
-    MOV dword ptr [0x02d83380],ECX      ; 004eba0f | DAT_02d83380
-    MOV [0x02d83384],EAX                ; 004eba15 | DAT_02d83384
+    MOV dword ptr [0x02d83380],ECX      ; 004eba0f | INT_02d83380
+    MOV [0x02d83384],EAX                ; 004eba15 | INT_02d83384
     PUSH EBX                            ; 004eba1a | g_CDemonRendererInstance
     MOV EDX,0x2                         ; 004eba1b
     MOV ECX,0x3                         ; 004eba20
-    MOV dword ptr [0x02d83388],EDX      ; 004eba25 | DAT_02d83388
-    MOV dword ptr [0x02d8338c],ECX      ; 004eba2b | DAT_02d8338c
+    MOV dword ptr [0x02d83388],EDX      ; 004eba25 | INT_02d83388
+    MOV dword ptr [0x02d8338c],ECX      ; 004eba2b | INT_02d8338c
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 ; 004eba31
         ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004eba36
     ADD ESP,0x4                         ; 004eba3a
-    MOVSD ES:EDI,ESI                    ; 004eba3d | DAT_02d83390
-    MOVSD ES:EDI,ESI                    ; 004eba3e | DAT_02d83394
-    MOVSD ES:EDI,ESI                    ; 004eba3f | DAT_02d83398
+    MOVSD ES:EDI,ESI                    ; 004eba3d | INT_02d83390
+    MOVSD ES:EDI,ESI                    ; 004eba3e | INT_02d83394
+    MOVSD ES:EDI,ESI                    ; 004eba3f | INT_02d83398
     XOR ESI,ESI                         ; 004eba40
-    MOV dword ptr [0x02d83394],ESI      ; 004eba42 | DAT_02d83394
+    MOV dword ptr [0x02d83394],ESI      ; 004eba42 | INT_02d83394
     MOV ESI,dword ptr [0x00823a74]      ; 004eba48 | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 004eba4e
     LEA EDI,[ESP + 0x28]                ; 004eba53
@@ -97,10 +97,10 @@ section .text
     CALL crt_math.c_round_FUN_005fe6b0  ; 004eba91
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004eba96
-    FISTP dword ptr [0x02d8339c]        ; 004eba98 | DAT_02d8339c
+    FISTP dword ptr [0x02d8339c]        ; 004eba98 | INT_02d8339c
     FXCH                                ; 004eba9e
-    FISTP dword ptr [0x02d833a0]        ; 004ebaa0 | DAT_02d833a0
-    FISTP dword ptr [0x02d833a4]        ; 004ebaa6 | DAT_02d833a4
+    FISTP dword ptr [0x02d833a0]        ; 004ebaa0 | INT_02d833a0
+    FISTP dword ptr [0x02d833a4]        ; 004ebaa6 | INT_02d833a4
     ADD ESP,0x5c                        ; 004ebaac
     POP EDI                             ; 004ebaaf
     POP ESI                             ; 004ebab0

@@ -12,7 +12,8 @@ uint core_boxactor_cpp_CLightActor_FUN_00423590(void)
   int iVar1;
   int in_stack_00000004;
   
-  iVar1 = core_boxactor_cpp_FUN_00423110();
+  iVar1 = core_boxactor_cpp_CLightActor_FUN_00423110
+                    ((CLightActor *)"Select type of light to fill in initial properties.  (You can manually adjust later).");
   if (-1 < iVar1) {
     *(int *)(in_stack_00000004 + 0x66c) = iVar1;
     return 1;

@@ -107,8 +107,8 @@ section .text
     MOV EBX,0xbfa78d36                  ; 005c3a06
         ;   Label: LAB_005c3a06
     MOV EAX,0x3f060a92                  ; 005c3a0b
-    MOV ESI,dword ptr [0x03f6bb00]      ; 005c3a10 | DAT_03f6bb00
-    MOV EDI,dword ptr [0x03f6bad8]      ; 005c3a16 | DAT_03f6bad8
+    MOV ESI,dword ptr [0x03f6bb00]      ; 005c3a10 | INT_03f6bb00
+    MOV EDI,dword ptr [0x03f6bad8]      ; 005c3a16 | INT_03f6bad8
     MOV dword ptr [ESP + 0x188],EBX     ; 005c3a1c
     MOV dword ptr [ESP + 0x18c],EAX     ; 005c3a23
     MOV EAX,dword ptr [EBP + 0x14]      ; 005c3a2a
@@ -348,8 +348,8 @@ section .text
         ;   XREF to: 005c39e4 (UNCONDITIONAL_JUMP)  ; LAB_005c39e4
     MOV EAX,dword ptr [ESP + 0x170]     ; 005c3d85
         ;   Label: LAB_005c3d85
-    MOV ESI,dword ptr [0x03f6bb04]      ; 005c3d8c | DAT_03f6bb04
-    MOV EDI,dword ptr [0x03f6badc]      ; 005c3d92 | DAT_03f6badc
+    MOV ESI,dword ptr [0x03f6bb04]      ; 005c3d8c | INT_03f6bb04
+    MOV EDI,dword ptr [0x03f6badc]      ; 005c3d92 | INT_03f6badc
     TEST EAX,EAX                        ; 005c3d98
     JNZ 0x005c3db9                      ; 005c3d9a
         ;   XREF to: 005c3db9 (CONDITIONAL_JUMP)  ; LAB_005c3db9

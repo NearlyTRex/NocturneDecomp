@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_enemy_draculabride.cpp_FUN_004869a0(uint param_1, uint
-   param_2) */
-
 void core_dracbrid_cpp_FUN_004869a0(void)
 
 {
@@ -50,39 +46,37 @@ void core_dracbrid_cpp_FUN_004869a0(void)
   local_38 = (SFreaky *)&g_DashAnimationAccumulator;
   do {
     local_20 = local_34;
-    if (in_stack_00000004 == *(int *)local_34->field2_0x50) {
-      iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)*(float *)local_34->field0_0x0);
+    if (in_stack_00000004 == *(int *)local_34->unk3) {
+      iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)*(float *)local_34->unk1);
       pSVar5 = local_34;
       if (iVar6 == 0) {
-        local_34->field2_0x50[0] = '\0';
-        local_34->field2_0x50[1] = '\0';
-        local_34->field2_0x50[2] = '\0';
-        local_34->field2_0x50[3] = '\0';
+        local_34->unk3[0] = '\0';
+        local_34->unk3[1] = '\0';
+        local_34->unk3[2] = '\0';
+        local_34->unk3[3] = '\0';
       }
       else {
-        pCVar1 = local_34->field1_0x20 + 3;
-        pCVar2 = local_34->field1_0x20 + 2;
-        pCVar3 = local_34->field1_0x20 + 1;
-        local_1c = local_34->field1_0x20;
-        *(float *)(local_34->field0_0x0 + 0x1c) =
-             *(float *)(local_34->field0_0x0 + 0x1c) + in_stack_00000008;
-        while (1.0 < *(float *)(local_20->field0_0x0 + 0x1c)) {
-          *(float *)(local_20->field0_0x0 + 0x1c) =
-               *(float *)(local_20->field0_0x0 + 0x1c) + _DAT_00621c42;
+        pCVar1 = local_34->unk2 + 3;
+        pCVar2 = local_34->unk2 + 2;
+        pCVar3 = local_34->unk2 + 1;
+        local_1c = local_34->unk2;
+        *(float *)(local_34->unk1 + 0x1c) = *(float *)(local_34->unk1 + 0x1c) + in_stack_00000008;
+        while (1.0 < *(float *)(local_20->unk1 + 0x1c)) {
+          *(float *)(local_20->unk1 + 0x1c) = *(float *)(local_20->unk1 + 0x1c) + -1.0f;
           if (pCVar3 != local_1c) {
             local_1c->x = pCVar3->x;
-            local_1c->y = pSVar5->field1_0x20[1].y;
-            local_1c->z = pSVar5->field1_0x20[1].z;
+            local_1c->y = pSVar5->unk2[1].y;
+            local_1c->z = pSVar5->unk2[1].z;
           }
           if (pCVar3 != pCVar2) {
             pCVar3->x = pCVar2->x;
-            pSVar5->field1_0x20[1].y = pSVar5->field1_0x20[2].y;
-            pSVar5->field1_0x20[1].z = pSVar5->field1_0x20[2].z;
+            pSVar5->unk2[1].y = pSVar5->unk2[2].y;
+            pSVar5->unk2[1].z = pSVar5->unk2[2].z;
           }
           if (pCVar2 != pCVar1) {
             pCVar2->x = pCVar1->x;
-            pSVar5->field1_0x20[2].y = pSVar5->field1_0x20[3].y;
-            pSVar5->field1_0x20[2].z = pSVar5->field1_0x20[3].z;
+            pSVar5->unk2[2].y = pSVar5->unk2[3].y;
+            pSVar5->unk2[2].z = pSVar5->unk2[3].z;
           }
           iVar6 = g_CDemonCameraInstance.base.position.x;
           local_64 = (float)*local_24;
@@ -98,27 +92,25 @@ void core_dracbrid_cpp_FUN_004869a0(void)
           local_44 = fVar4;
           if (pCVar1 != (CVector3f *)&local_44) {
             pCVar1->x = fVar4;
-            pSVar5->field1_0x20[3].y = local_40;
-            pSVar5->field1_0x20[3].z = local_3c;
+            pSVar5->unk2[3].y = local_40;
+            pSVar5->unk2[3].z = local_3c;
           }
         }
         core_spline_cpp_FUN_005b90a0();
         pfVar7 = (float *)core_spline_cpp_FUN_005b92d0();
-        if ((float *)(local_20->field0_0x0 + 4) != pfVar7) {
-          *(float *)(local_20->field0_0x0 + 4) = *pfVar7;
-          *(float *)(local_20->field0_0x0 + 8) = pfVar7[1];
-          *(float *)(local_20->field0_0x0 + 0xc) = pfVar7[2];
+        if ((float *)(local_20->unk1 + 4) != pfVar7) {
+          *(float *)(local_20->unk1 + 4) = *pfVar7;
+          *(float *)(local_20->unk1 + 8) = pfVar7[1];
+          *(float *)(local_20->unk1 + 0xc) = pfVar7[2];
         }
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",
-                   (double)*(float *)(local_20->field0_0x0 + 4),
-                   (double)*(float *)(local_20->field0_0x0 + 8),
-                   (double)*(float *)(local_20->field0_0x0 + 0xc));
+                  (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",(double)*(float *)(local_20->unk1 + 4),
+                   (double)*(float *)(local_20->unk1 + 8),(double)*(float *)(local_20->unk1 + 0xc));
         pfVar7 = (float *)core_spline_cpp_FUN_005b9490();
-        if ((float *)(local_20->field0_0x0 + 0x10) != pfVar7) {
-          *(float *)(local_20->field0_0x0 + 0x10) = *pfVar7;
-          *(float *)(local_20->field0_0x0 + 0x14) = pfVar7[1];
-          *(float *)(local_20->field0_0x0 + 0x18) = pfVar7[2];
+        if ((float *)(local_20->unk1 + 0x10) != pfVar7) {
+          *(float *)(local_20->unk1 + 0x10) = *pfVar7;
+          *(float *)(local_20->unk1 + 0x14) = pfVar7[1];
+          *(float *)(local_20->unk1 + 0x18) = pfVar7[2];
         }
       }
     }

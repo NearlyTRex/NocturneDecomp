@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 87,
-        "line": 22,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_108'?"
-      },
-      {
         "category": "other",
         "column": 45,
-        "line": 25,
+        "line": 24,
         "message": "cast from 'CDemonActor_vtable*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,41 +19,41 @@
       {
         "category": "other",
         "column": 14,
-        "line": 133,
+        "line": 132,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 187,
+        "line": 186,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 188,
+        "line": 187,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 344,
+    "complexity_score": 343,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "pseudocode_lines": 199,
+    "pseudocode_lines": 198,
     "suspect_count": 14,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 429
+    "total_lines": 428
   },
   "cross_references": [
     {
       "addr": "005bb0e0",
       "from_addr": "005bb0fd",
-      "name": "core_stranger.cpp_FUN_005bb0e0",
+      "name": "core_stranger.cpp_factoryFunc_FUN_005bb0e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -248,7 +242,7 @@
       {
         "call_addr": "005bb0fd",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_005bb0e0",
+        "caller": "core_stranger.cpp_factoryFunc_FUN_005bb0e0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -299,35 +293,42 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 108,
+      "line": 107,
       "match": "pCVar6[-1].",
       "text": "*(float *)(pCVar6[-1].model_name + 0x10) = fVar4;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 117,
+      "line": 116,
       "match": "pCVar6[-1].",
       "text": "uVar1 = *(uint *)(pCVar6[-1].model_name + 0x14);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 118,
+      "line": 117,
       "match": "pCVar6[-1].",
       "text": "uVar2 = *(uint *)(pCVar6[-1].model_name + 0x3c);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 119,
+      "line": 118,
       "match": "pCVar6[-1].",
       "text": "uVar3 = *(uint *)(pCVar6[-1].model_name + 0x34);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 120,
+      "line": 119,
+      "match": "pCVar6[-1].",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0x20) = *(uint *)(pCVar6[-1].model_name + 0x1c);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 119,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].model_name + 0x20) = *(uint *)(pCVar6[-1].model_name + 0x1c);",
       "type": "negative_offset"
@@ -335,62 +336,55 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 120,
-      "match": "pCVar6[-1].",
-      "text": "*(uint *)(pCVar6[-1].model_name + 0x20) = *(uint *)(pCVar6[-1].model_name + 0x1c);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 121,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].model_name + 0x18) = uVar1;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 122,
+      "line": 121,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].model_name + 0x40) = uVar2;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 123,
+      "line": 122,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].model_name + 0x38) = uVar3;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 147,
+      "line": 146,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].animation_state + 0x44) =",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 148,
+      "line": 147,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].animation_state + 0x48);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 149,
+      "line": 148,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].animation_state + 0x40) =",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 150,
+      "line": 149,
       "match": "pCVar6[-1].",
       "text": "*(uint *)(pCVar6[-1].animation_state + 0x44);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 180,
+      "line": 179,
       "match": "pCVar6[-2].",
       "text": "((CKeyFramedModelInstance *)(*(int *)(pCVar6[-2].model_name + 0x10) + 0x158),",
       "type": "negative_offset"

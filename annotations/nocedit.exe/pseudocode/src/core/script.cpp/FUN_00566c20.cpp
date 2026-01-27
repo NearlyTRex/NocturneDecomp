@@ -22,8 +22,10 @@ uint core_script_cpp_FUN_00566c20(void)
   if ((((DAT_031141e0 <= in_stack_00000008) && (DAT_031141e4 <= in_stack_0000000c)) &&
       (in_stack_00000008 < DAT_031141e8)) && (in_stack_0000000c < DAT_031141ec)) {
     *in_stack_00000010 =
-         ((in_stack_00000008 - DAT_031141e0) + DAT_03114204 / 2) / DAT_03114204 + DAT_0310fd0c;
-    *in_stack_00000014 = (in_stack_0000000c - iVar1) / DAT_03114208 + DAT_0310fcd8;
+         ((in_stack_00000008 - DAT_031141e0) + DAT_03114204 / 2) / DAT_03114204 +
+         CEdScrollBar_0310fd0c.scroll_position;
+    *in_stack_00000014 =
+         (in_stack_0000000c - iVar1) / DAT_03114208 + CEdScrollBar_0310fcd8.scroll_position;
     return 1;
   }
   return 0;

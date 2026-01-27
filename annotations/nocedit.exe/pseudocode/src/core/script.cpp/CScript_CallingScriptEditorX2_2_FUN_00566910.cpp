@@ -16,8 +16,8 @@ void core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910(void)
   
   iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(in_stack_00000004 + 0x38))
   ;
-  DAT_0310fcdc = iVar1 + 2;
-  if (DAT_0310fcdc <= DAT_0310fd48) {
+  CEdScrollBar_0310fcd8.current_value = iVar1 + 2;
+  if (CEdScrollBar_0310fcd8.current_value <= DAT_0310fd48) {
     DAT_0310fd48 = iVar1 + 1;
   }
   if (DAT_0310fd48 < 0) {

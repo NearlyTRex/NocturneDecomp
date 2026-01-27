@@ -8,7 +8,7 @@
 ;   crt_watcom.c_heapchk_FUN_00600ad0 at 00600b36
 ;
 ; Referenced Globals:
-;   undefined4 DAT_03f9b1f0
+;   int INT_03f9b1f0
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     PUSH EBP                            ; 00600a66
     MOV EBX,dword ptr [ESP + 0x10]      ; 00600a67
     MOV AH,byte ptr [EBX]               ; 00600a6b
-    MOV dword ptr [0x03f9b1f0],EBX      ; 00600a6d | DAT_03f9b1f0
+    MOV dword ptr [0x03f9b1f0],EBX      ; 00600a6d | INT_03f9b1f0
     TEST AH,0x1                         ; 00600a73
     JZ 0x00600a81                       ; 00600a76
         ;   XREF to: 00600a81 (CONDITIONAL_JUMP)  ; LAB_00600a81

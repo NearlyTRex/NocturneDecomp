@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000
-;   undefined4 DAT_03f9b1f0
+;   int INT_03f9b1f0
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     MOV EAX,dword ptr [ECX + 0x28]      ; 006009a4
         ;   Label: LAB_006009a4
     MOV EDX,dword ptr [EAX + 0x4]       ; 006009a7
-    MOV [0x03f9b1f0],EAX                ; 006009aa | DAT_03f9b1f0
+    MOV [0x03f9b1f0],EAX                ; 006009aa | INT_03f9b1f0
     TEST EDX,EDX                        ; 006009af
     JZ 0x006009c5                       ; 006009b1
         ;   XREF to: 006009c5 (CONDITIONAL_JUMP)  ; LAB_006009c5
@@ -117,7 +117,7 @@ section .text
     RET                                 ; 00600a35
     MOV EBX,EAX                         ; 00600a36
         ;   Label: LAB_00600a36
-    MOV dword ptr [0x03f9b1f0],EDX      ; 00600a38 | DAT_03f9b1f0
+    MOV dword ptr [0x03f9b1f0],EDX      ; 00600a38 | INT_03f9b1f0
     MOV EAX,EDX                         ; 00600a3e
     CMP EDX,ESI                         ; 00600a40
     JZ 0x00600a4a                       ; 00600a42

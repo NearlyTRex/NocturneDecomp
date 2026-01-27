@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 62,
+        "line": 60,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 62,
+        "line": 60,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -25,54 +25,54 @@
       {
         "category": "other",
         "column": 21,
-        "line": 38,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 39,
+        "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 37,
+        "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 53,
+        "line": 51,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 52,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 62,
+        "line": 60,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 150,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 58,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 205
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -302,51 +302,51 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
       "match": "DAT_0310f4a4",
       "text": "DAT_0310f4a4 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 31,
       "match": "DAT_0310eca0",
-      "text": "&DAT_0310eca0);",
+      "text": "*(uint *)(*(int *)(this_ptr->unk4 + 0x1c) + 4 + iVar1 * 8),&DAT_0310eca0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_0310f4a8",
       "text": "if (DAT_0310f4a8 == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 45,
       "match": "DAT_0310f4a8",
       "text": "DAT_0310f4a8 = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 48,
       "match": "DAT_0310f4a4",
       "text": "if (DAT_0310f4a4 != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 50,
       "match": "DAT_0310f4a4",
       "text": "DAT_0310f4a4 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
+      "line": 53,
       "match": "code *",
-      "text": "iVar4 = (**(code **)(*(int *)(this_ptr->whoIsSpeaking + 0x154) + 0x120))();",
+      "text": "iVar4 = (**(code **)(*(int *)(this_ptr->who_is_speaking + 0x154) + 0x120))();",
       "type": "unresolved_funcptr"
     }
   ]

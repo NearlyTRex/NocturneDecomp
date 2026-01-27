@@ -83,8 +83,7 @@ void core_drip_cpp_FUN_0048e2a0(void)
           fStack_28 = (float)(fVar10 * (float10)20.0f);
           fStack_2c = (float)(fVar7 * (float10)20.0f * (float10)(float)fVar8);
           fStack_24 = (float)(fVar9 * (float10)20.0f * (float10)(float)fVar8);
-          core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                    ((CKeyFramedModelInstance *)&DAT_02c9b170);
+          core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&DAT_02c9b170);
           iVar5 = iVar5 + 1;
           core_fire_cpp_CFireEffect_FUN_004c7e60(g_CFireEffectPtr);
         } while (iVar5 < 10);
@@ -107,7 +106,7 @@ void core_drip_cpp_FUN_0048e2a0(void)
     iVar5 = 0;
     while( true ) {
       if (g_CDemonSetPtr->damage_listener_count <= iVar6) break;
-      iVar2 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iVar5 + -4);
+      iVar2 = *(int *)(g_CDemonSetPtr->unk4 + iVar5 + -4);
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_a4);
       auStack_a4._4_4_ = in_stack_00000004[2].runtime_state;
       pCStack_70 = in_stack_00000004;

@@ -2,17 +2,15 @@
 // Address: 004c9a30
 // Address Range: [[004c9a30, 004c9a53]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_flame.cpp_staticInit_FUN_004c9a30(void)
+// Signature: void core_flame.cpp_staticInit_FUN_004c9a30(void)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_flame_cpp_staticInit_FUN_004c9a30(void)
+void __cdecl core_flame_cpp_staticInit_FUN_004c9a30(void)
 
 {
-  CDemonActorType *pCVar1;
-  
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CFlameClassInfo,"CFlame",core_flame_cpp_FUN_004c9a60,
-                      &g_CFlameClassVersion,7,&g_CDemonActorClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CFlameClassInfo,"CFlame",core_flame_cpp_factoryFunc_FUN_004c9a60,
+             &g_CFlameClassVersion,7,&g_CDemonActorClassInfo);
+  return;
 }

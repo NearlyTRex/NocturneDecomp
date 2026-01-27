@@ -177,7 +177,7 @@ engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *he
       }
     }
     uVar12 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)output);
-    output = (SSurfaceNormal *)(output->field7_0x1c + ((uVar12 & 0xfffffffc) - 0x1c));
+    output = (SSurfaceNormal *)(output->unk1 + ((uVar12 & 0xfffffffc) - 0x1c));
   } while (output->unknown != 0);
   engine_3d_c_dispatchMRGLBlockChain_FUN_00407890((SMRGLHeaderExtended *)header[1].child_count);
   return (SMRGLHeaderExtended *)&header[0x1c].child_count;

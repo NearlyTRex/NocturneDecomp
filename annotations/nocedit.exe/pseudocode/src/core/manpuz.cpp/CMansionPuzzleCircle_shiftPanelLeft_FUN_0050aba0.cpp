@@ -16,8 +16,8 @@ core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(CMansionPuzzleC
   int in_stack_00000008;
   
   iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aef0(this_ptr);
-  pcVar1 = this_ptr->field6_0x5f4 + in_stack_00000008 * 100 + -4;
-  pcVar3 = this_ptr->field6_0x5f4 + iVar2 * 100 + -4;
+  pcVar1 = this_ptr->unk2 + in_stack_00000008 * 100 + -4;
+  pcVar3 = this_ptr->unk2 + iVar2 * 100 + -4;
   if ((((*(int *)pcVar1 == 0) || (*(int *)pcVar3 != 0)) ||
       ((*(uint *)(pcVar1 + 4) & 0x7fffffff) != 0)) || ((*(uint *)(pcVar1 + 8) & 0x7fffffff) != 0)) {
     g_CurrentFilename = "..\\core\\manpuz.cpp";

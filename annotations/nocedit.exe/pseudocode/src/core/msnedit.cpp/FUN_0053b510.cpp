@@ -76,19 +76,19 @@ void core_msnedit_cpp_FUN_0053b510(void)
   pCVar3 = local_18;
   do {
     if (pCVar3 == (CDemonActor *)0x0) {
-      if (local_6ac.base_strlist.item_count < 1) {
+      if (local_6ac.base.item_count < 1) {
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                   (g_CEditorToolsPtr,"No actors relevent to the operation of this event.");
       }
       else {
-        shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base_strlist);
+        shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base);
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (acStack_304,"Actors relevent to \"%s\"",in_stack_00000008 + 4);
         pcVar9 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                    (&local_6ac,acStack_304,-1,0);
         if (-1 < (int)pcVar9) {
           shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                    (&local_6ac.base_strlist,(int)acStack_304,pcVar9,0);
+                    (&local_6ac.base,(int)acStack_304,pcVar9,0);
           core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000004);
           core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
         }
@@ -113,7 +113,7 @@ void core_msnedit_cpp_FUN_0053b510(void)
         if (iVar4 == 0) {
           crt_stdio_c_sprintf_FUN_005fdbd0(CStack_2fc.actor_name,"%s\tReferenced by name");
           in_stack_ffffd454 = &CStack_2fc;
-          in_stack_ffffd450 = (CStrList *)&local_6ac.base_strlist.data_array;
+          in_stack_ffffd450 = (CStrList *)&local_6ac.base.data_array;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (in_stack_ffffd450,in_stack_ffffd454->actor_name);
         }
@@ -167,8 +167,7 @@ void core_msnedit_cpp_FUN_0053b510(void)
                     crt_stdio_c_sprintf_FUN_005fdbd0
                               (CStack_2fc.actor_name,"%s\tChecks for \"%s\" in \"%s\"",unaff_EBP);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                              ((CStrList *)&local_6ac.base_strlist.data_array,CStack_2fc.actor_name)
-                    ;
+                              ((CStrList *)&local_6ac.base.data_array,CStack_2fc.actor_name);
                     break;
                   }
                   iVar5 = iVar5 + 1;

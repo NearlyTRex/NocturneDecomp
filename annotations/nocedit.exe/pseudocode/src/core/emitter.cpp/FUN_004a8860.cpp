@@ -32,10 +32,10 @@ uint core_emitter_cpp_FUN_004a8860(void)
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
       core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0((SLaserInfo *)local_7c);
-      local_7c._8_4_ = in_stack_00000004[1].field12_0xe0.x;
-      local_70 = in_stack_00000004[1].field12_0xe0.y;
-      local_6c = in_stack_00000004[1].field12_0xe0.z;
-      local_68 = in_stack_00000004[1].field13_0xec.x;
+      local_7c._8_4_ = in_stack_00000004[1].unk3.x;
+      local_70 = in_stack_00000004[1].unk3.y;
+      local_6c = in_stack_00000004[1].unk3.z;
+      local_68 = in_stack_00000004[1].unk4.x;
       local_64[0] = '\0';
       local_64[1] = '\0';
       local_64[2] = '\0';
@@ -57,13 +57,13 @@ uint core_emitter_cpp_FUN_004a8860(void)
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       return 1;
     }
-    if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
+    if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
       iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar2 == 0) {
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(in_stack_00000004,0xfb);
         if ((((*(int *)in_stack_00000004[1].actor_name == 3) && (DAT_02cf2b5c != 0)) &&
             (in_stack_00000004 == DAT_02cf2b78)) &&
-           (DAT_02cf2b78 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {
+           (DAT_02cf2b78 == *(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c))) {
           param5 = &DAT_02cf2b6c;
           label_offset = (CQuaternion4f *)&DAT_02cf2b60;
           uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330

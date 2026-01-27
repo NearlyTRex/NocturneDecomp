@@ -116,22 +116,10 @@
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 692,
-        "message": "'DAT_0310f4b0' was not declared in this scope; did you mean 'DAT_0310fdc0'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 54,
         "line": 737,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 751,
-        "message": "'DAT_0310f4b0' was not declared in this scope; did you mean 'DAT_0310fdc0'?"
       },
       {
         "category": "incompatible_types",
@@ -302,12 +290,6 @@
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 63,
-        "line": 1505,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field87_0x258'; did you mean 'field_208'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 63,
         "line": 1520,
@@ -452,12 +434,6 @@
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 63,
-        "line": 2035,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field87_0x258'; did you mean 'field_208'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 63,
         "line": 2049,
@@ -492,12 +468,6 @@
         "column": 66,
         "line": 2234,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 86,
-        "line": 2240,
-        "message": "'C3DSCamera' {aka 'struct C3DSCamera'} has no member named 'field8_0x14c'"
       },
       {
         "category": "incompatible_types",
@@ -5275,7 +5245,7 @@
     },
     {
       "addr": "00680a00",
-      "name": "g_CNetGameInstance",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "02f7c740"
     },
@@ -5461,8 +5431,8 @@
     },
     {
       "addr": "02f7c740",
-      "name": "DAT_02f7c740",
-      "type": "undefined4",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
       "value": null
     },
     {
@@ -5522,7 +5492,7 @@
     {
       "addr": "0310f4b0",
       "name": "DAT_0310f4b0",
-      "type": "undefined4",
+      "type": "CPickList",
       "value": null
     },
     {
@@ -7319,7 +7289,7 @@
       "description": "Undefined global data reference",
       "line": 685,
       "match": "DAT_0310f4b0",
-      "text": "((CStrList *)&DAT_0310f4b0,local_226c);",
+      "text": "(&DAT_0310f4b0.base,local_226c);",
       "type": "undefined_data"
     },
     {
@@ -7368,7 +7338,7 @@
       "description": "Undefined global data reference",
       "line": 744,
       "match": "DAT_0310f4b0",
-      "text": "((CStrList *)&DAT_0310f4b0,local_2654);",
+      "text": "(&DAT_0310f4b0.base,local_2654);",
       "type": "undefined_data"
     },
     {

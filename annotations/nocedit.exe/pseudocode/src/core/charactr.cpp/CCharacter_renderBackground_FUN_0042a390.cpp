@@ -14,12 +14,12 @@ core_charactr_cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter *this_ptr,
   int iVar1;
   float fStack_1c;
   
-  if (*(int *)this_ptr->field2_0x240c == 0) {
+  if (*(int *)this_ptr->unk1 == 0) {
     return;
   }
-  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base_actor,(CBoundingBox3D *)&fStack_1c);
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                          (&this_ptr->base,(CBoundingBox3D *)&fStack_1c);
   fStack_1c = 6.119892e-39;
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {
@@ -27,6 +27,6 @@ core_charactr_cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter *this_ptr,
     core_charactr_cpp_CCharacter_FUN_00429aa0(this_ptr);
   }
   fStack_1c = 6.119923e-39;
-  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   return;
 }

@@ -2,40 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 37,
-        "line": 45,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 55,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 58,
-        "line": 92,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 98,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 59,
-        "line": 101,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
+        "category": "other",
         "column": 38,
-        "line": 109,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
+        "line": 133,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -45,44 +15,38 @@
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 135,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 30,
-        "line": 156,
+        "line": 155,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 160,
+        "line": 159,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 168,
+        "line": 167,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 174,
+        "line": 173,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 178,
+        "line": 177,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 186,
+        "line": 185,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -97,60 +61,60 @@
       {
         "category": "other",
         "column": 20,
-        "line": 134,
+        "line": 133,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 135,
+        "line": 134,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 156,
+        "line": 155,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 160,
+        "line": 159,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 167,
+        "line": 166,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 174,
+        "line": 173,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 178,
+        "line": 177,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 185,
+        "line": 184,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 511,
+    "complexity_score": 510,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
-    "pseudocode_lines": 221,
+    "pseudocode_lines": 220,
     "suspect_count": 27,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -158,7 +122,7 @@
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 660
+    "total_lines": 659
   },
   "cross_references": [],
   "function": {
@@ -416,189 +380,189 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "ROUND",
       "text": "fStack_cc = (float)(int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 98,
+      "line": 97,
       "match": "5.60519e-44",
       "text": "fStack_cc = 5.60519e-44;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 107,
       "match": "ROUND",
       "text": "fStack_20 = (float)(int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 113,
+      "line": 112,
       "match": "1.1754944e-38",
       "text": "pCVar2->vertex_buffer_ptr->u = 1.1754944e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 114,
+      "line": 113,
       "match": "1.1754944e-38",
       "text": "pCVar2->vertex_buffer_ptr->v = 1.1754944e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 114,
       "match": "DAT_0068434c",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&DAT_0068434c);",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 115,
       "match": "ROUND",
       "text": "CStack_48.x = (int)ROUND(fStack_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
+      "line": 116,
       "match": "ROUND",
       "text": "CStack_48.y = (int)ROUND(fStack_5c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 117,
       "match": "ROUND",
       "text": "CStack_48.z = (int)ROUND(fStack_58 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 126,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 127,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 129,
       "match": "ROUND",
       "text": "CStack_6c.x = (int)ROUND(fStack_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
+      "line": 130,
       "match": "ROUND",
       "text": "CStack_6c.y = (int)ROUND(CStack_88.max.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 131,
       "match": "ROUND",
       "text": "CStack_6c.z = (int)ROUND(fStack_58 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 143,
+      "line": 142,
       "match": "fsin",
       "text": "fVar10 = (float10)fsin(fVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 143,
       "match": "fcos",
       "text": "fVar11 = (float10)fcos(fVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 148,
       "match": "(int *)((int)",
       "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 152,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 155,
       "match": "ROUND",
       "text": "CStack_54.x = (int)ROUND(fStack_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 156,
       "match": "ROUND",
       "text": "CStack_54.y = (int)ROUND(CStack_88.min.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
+      "line": 157,
       "match": "ROUND",
       "text": "CStack_54.z = (int)ROUND(fStack_58 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
+      "line": 166,
       "match": "(int *)((int)",
       "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 170,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
+      "line": 173,
       "match": "ROUND",
       "text": "aCStack_3c[0].x = (int)ROUND(fStack_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
+      "line": 174,
       "match": "ROUND",
       "text": "aCStack_3c[0].y = (int)ROUND(CStack_88.max.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 175,
       "match": "ROUND",
       "text": "aCStack_3c[0].z = (int)ROUND(fStack_58 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 207,
+      "line": 206,
       "match": "1.4013e-45",
       "text": "local_a4.min.x = 1.4013e-45;",
       "type": "suspect_float"

@@ -29,8 +29,8 @@ int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont *this_pt
     pcVar6 = (char *)0x0;
 LAB_004cffc4:
     if (pcVar6 == (char *)0x0) {
-      iVar3 = (*((this_ptr->win_font_helper->base_font).vtable)->getStringHeight)
-                        (&this_ptr->win_font_helper->base_font,text_string);
+      iVar3 = (*((this_ptr->win_font_helper->base).vtable)->getStringHeight)
+                        (&this_ptr->win_font_helper->base,text_string);
       return iVar3;
     }
   }

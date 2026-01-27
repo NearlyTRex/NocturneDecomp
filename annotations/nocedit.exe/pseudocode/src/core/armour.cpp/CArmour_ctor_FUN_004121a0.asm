@@ -7,7 +7,7 @@
 ; CArmour *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_armour.cpp_constructor_FUN_00412160 at 0041217a
+;   core_armour.cpp_factoryFunc_FUN_00412160 at 0041217a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_armour_dfm_00614dbb
@@ -16,7 +16,7 @@
 ;   undefined4 s_ne_00614dc8
 ;   undefined4 s_e_00614dc9
 ;   float FLOAT_00659d28 = 50
-;   undefined4 DAT_00659d2c
+;   float FLOAT_00659d2c = 100
 ;   CDemonActor_vtable g_CArmourVTable
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004121cd
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x00659d28]          ; 004121d2 | FLOAT_00659d28
-    FLD float ptr [0x00659d2c]          ; 004121d8 | DAT_00659d2c
+    FLD float ptr [0x00659d2c]          ; 004121d8 | FLOAT_00659d2c
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 004121de
     ADD ESP,0x8                         ; 004121e8
     MOV dword ptr [EBX + 0x2de0],0x40000000 ; 004121eb

@@ -114,7 +114,7 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
       if ((local_2e8 != local_10) ||
          (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_308,local_98), iVar3 != 0)) {
         crt_stdio_c_sprintf_FUN_005fdbd0(local_508,"--\t%s\t%s",local_308,local_34);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base_strlist,local_508);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
         pcVar6 = local_308;
         pcVar7 = local_98;
         local_10 = local_2e8;
@@ -129,7 +129,7 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
         } while (cVar1 != '\0');
       }
       crt_stdio_c_sprintf_FUN_005fdbd0(local_508,"\t%s\t%s",pcVar4,local_2e0);
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base_strlist,local_508);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
       record_index = record_index + 1;
     } while (record_index < (int)local_14);
   }

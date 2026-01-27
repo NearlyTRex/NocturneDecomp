@@ -192,7 +192,7 @@ section .text
     MOV EBX,0x37                        ; 00541518
     MOV dword ptr [ESP + 0x118],EAX     ; 0054151d
     MOV dword ptr [ESP + 0x114],EAX     ; 00541524
-    MOV ESI,dword ptr [0x00680a00]      ; 0054152b | g_CNetGameInstance
+    MOV ESI,dword ptr [0x00680a00]      ; 0054152b | g_CNetGamePtr
         ;   Label: LAB_0054152b
     MOV EAX,dword ptr [ESP + 0x118]     ; 00541531
     CMP EAX,dword ptr [ESI + 0x1c]      ; 00541538 | DAT_02f7c75c
@@ -210,7 +210,7 @@ section .text
     ADD ESP,0xc                         ; 0054155d
     MOV ESI,dword ptr [ESP + 0x11c]     ; 00541560
     MOV EDX,dword ptr [0x03f87498]      ; 00541567 | g_AnyAddressIP
-    MOV EAX,dword ptr [ESI + 0x1c]      ; 0054156d | DAT_02f7c77c
+    MOV EAX,dword ptr [ESI + 0x1c]      ; 0054156d | g_CNetGameInstance.players[0].name[28]
     ADD ESI,0x1c                        ; 00541570
     CMP EAX,EDX                         ; 00541573
     JNZ 0x005416fe                      ; 00541575
@@ -241,7 +241,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005415a6
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 005415ab
-    MOV EAX,[0x00680a00]                ; 005415ae | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 005415ae | g_CNetGamePtr
     MOV EDX,dword ptr [ESP + 0x118]     ; 005415b3
     CMP EDX,dword ptr [EAX + 0x114]     ; 005415ba | DAT_02f7c854
     JNZ 0x00541711                      ; 005415c0
@@ -274,7 +274,7 @@ section .text
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 005415f9
     MOV EAX,dword ptr [ESP + 0x11c]     ; 005415fc
-    CMP dword ptr [EAX + 0x44],0x0      ; 00541603 | DAT_02f7c7a4
+    CMP dword ptr [EAX + 0x44],0x0      ; 00541603 | g_CNetGameInstance.players[0].unk1[12]
     JZ 0x00541769                       ; 00541607
         ;   XREF to: 00541769 (CONDITIONAL_JUMP)  ; LAB_00541769
     MOV ESI,0x63da0f                    ; 0054160d | = "Ready"
@@ -381,7 +381,7 @@ section .text
         ;   XREF to: 0054159e (UNCONDITIONAL_JUMP)  ; LAB_0054159e
     MOV EAX,dword ptr [ESP + 0x11c]     ; 00541711
         ;   Label: LAB_00541711
-    FLD float ptr [EAX + 0x28]          ; 00541718 | DAT_02f7c788
+    FLD float ptr [EAX + 0x28]          ; 00541718 | g_CNetGameInstance.players[0].ping_quality
     FLDZ                                ; 0054171b
     FCOMPP                              ; 0054171d
     FNSTSW AX                           ; 0054171f
@@ -389,8 +389,8 @@ section .text
     JA 0x0054175f                       ; 00541722
         ;   XREF to: 0054175f (CONDITIONAL_JUMP)  ; LAB_0054175f
     MOV EAX,dword ptr [ESP + 0x11c]     ; 00541724
-    FLD float ptr [EAX + 0x28]          ; 0054172b | DAT_02f7c788
-    FMUL float ptr [0x0063da45]         ; 0054172e | DAT_0063da45
+    FLD float ptr [EAX + 0x28]          ; 0054172b | g_CNetGameInstance.players[0].ping_quality
+    FMUL float ptr [0x0063da45]         ; 0054172e | FLOAT_0063da45
     CALL crt_math.c_round_FUN_005fe6b0  ; 00541734
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x120]       ; 00541739
@@ -414,7 +414,7 @@ section .text
         ;   XREF to: 00541612 (UNCONDITIONAL_JUMP)  ; LAB_00541612
     MOV EAX,dword ptr [ESP + 0x11c]     ; 00541773
         ;   Label: LAB_00541773
-    MOV ESI,dword ptr [EAX + 0x34]      ; 0054177a | DAT_02f7c794
+    MOV ESI,dword ptr [EAX + 0x34]      ; 0054177a | g_CNetGameInstance.players[0].player_id
     PUSH ESI                            ; 0054177d
     PUSH 0x63da22                       ; 0054177e | = "%d"
     LEA EAX,[ESP + 0x10]                ; 00541783
@@ -752,7 +752,7 @@ section .text
         ;   XREF to: 00541c39 (CONDITIONAL_JUMP)  ; LAB_00541c39
     XOR EBX,EBX                         ; 00541b03
         ;   Label: LAB_00541b03
-    MOV EAX,[0x00680a00]                ; 00541b05 | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 00541b05 | g_CNetGamePtr
         ;   Label: LAB_00541b05
     CMP EBX,dword ptr [EAX + 0x1c]      ; 00541b0a | DAT_02f7c75c
     JGE 0x0054141d                      ; 00541b0d

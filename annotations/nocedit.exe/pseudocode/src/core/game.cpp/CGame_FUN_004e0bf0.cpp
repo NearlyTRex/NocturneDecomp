@@ -20,13 +20,13 @@ void __cdecl core_game_cpp_CGame_FUN_004e0bf0(CGame *this_ptr)
   if (((0.0 < in_stack_00000010) && (in_stack_00000008 != (char *)0x0)) &&
      (*in_stack_00000008 != '\0')) {
     iVar3 = 0;
-    pcVar4 = this_ptr->field101_0x38c;
+    pcVar4 = this_ptr->unk13;
     if (0 < this_ptr->status_display_count) {
       do {
         iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,in_stack_00000008);
         if (iVar2 == 0) {
-          *(uint *)(this_ptr->field101_0x38c + iVar3 * 4 + 0x500) = in_stack_0000000c;
-          *(float *)(this_ptr->field101_0x38c + iVar3 * 4 + 0x514) = in_stack_00000010;
+          *(uint *)(this_ptr->unk13 + iVar3 * 4 + 0x500) = in_stack_0000000c;
+          *(float *)(this_ptr->unk13 + iVar3 * 4 + 0x514) = in_stack_00000010;
           return;
         }
         iVar3 = iVar3 + 1;
@@ -34,7 +34,7 @@ void __cdecl core_game_cpp_CGame_FUN_004e0bf0(CGame *this_ptr)
       } while (iVar3 < this_ptr->status_display_count);
     }
     if (this_ptr->status_display_count < 5) {
-      pcVar4 = this_ptr->field101_0x38c + this_ptr->status_display_count * 0x100;
+      pcVar4 = this_ptr->unk13 + this_ptr->status_display_count * 0x100;
       do {
         cVar1 = *in_stack_00000008;
         *pcVar4 = cVar1;
@@ -44,10 +44,9 @@ void __cdecl core_game_cpp_CGame_FUN_004e0bf0(CGame *this_ptr)
         pcVar4[1] = cVar1;
         pcVar4 = pcVar4 + 2;
       } while (cVar1 != '\0');
-      *(uint *)(this_ptr->field101_0x38c + this_ptr->status_display_count * 4 + 0x500) =
+      *(uint *)(this_ptr->unk13 + this_ptr->status_display_count * 4 + 0x500) =
            in_stack_0000000c;
-      *(float *)(this_ptr->field101_0x38c + this_ptr->status_display_count * 4 + 0x514) =
-           in_stack_00000010;
+      *(float *)(this_ptr->unk13 + this_ptr->status_display_count * 4 + 0x514) = in_stack_00000010;
       this_ptr->status_display_count = this_ptr->status_display_count + 1;
       return;
     }

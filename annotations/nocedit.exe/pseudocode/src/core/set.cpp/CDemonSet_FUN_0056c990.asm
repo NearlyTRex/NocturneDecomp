@@ -131,7 +131,7 @@ section .text
     MOV dword ptr [EBP + -0x8],ECX      ; 0056ca36
     FXCH                                ; 0056ca39
     FADD double ptr [0x00645dbb]        ; 0056ca3b | DOUBLE_00645dbb
-    MOV dword ptr [0x02d807ac],ECX      ; 0056ca41 | g_CDemonLightInstance.field17_0x1cbc
+    MOV dword ptr [0x02d807ac],ECX      ; 0056ca41 | g_CDemonLightInstance.unk2
     FSTP float ptr [EBP + -0x10]        ; 0056ca47
     FADD float ptr [EBX + 0x34]         ; 0056ca4a
     ADD EDX,0x4                         ; 0056ca4d | g_CDemonLightInstance.base.base.position.x

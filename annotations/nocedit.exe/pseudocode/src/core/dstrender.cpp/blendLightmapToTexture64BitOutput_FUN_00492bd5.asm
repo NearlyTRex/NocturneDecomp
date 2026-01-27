@@ -19,7 +19,7 @@
 ;   ushort[384] g_LightmapData
 ;   double g_LightmapXorMask = 0.126945525291829
 ;   uint[256] g_LightmapTexturePalette
-;   int g_SolidColorMode
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 

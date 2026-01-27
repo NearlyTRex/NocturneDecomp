@@ -18,7 +18,7 @@ void core_bride_cpp_CBride_load_FUN_00424560(void)
     core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   }
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
-            (&(in_stack_00000004->base_character).model,"modelName");
+            (&(in_stack_00000004->base).model,"modelName");
   if ((1 < g_CBrideClassVersion) && (g_CBrideClassVersion < 4)) {
     core_actor_cpp_serializeFloat_FUN_0040b770
               (&in_stack_00000004->guard_distance,"guardDistance");
@@ -27,6 +27,6 @@ void core_bride_cpp_CBride_load_FUN_00424560(void)
     return;
   }
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
-            (&(in_stack_00000004->base_character).model.motion_controller,"state");
+            (&(in_stack_00000004->base).model.motion_controller,"state");
   return;
 }

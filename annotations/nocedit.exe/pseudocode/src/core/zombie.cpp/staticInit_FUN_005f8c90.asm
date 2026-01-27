@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_zombie.cpp_staticInit_FUN_005f8c90(void)
+; __cdecl void core_zombie.cpp_staticInit_FUN_005f8c90(void)
 ;
 ;
 ; Referenced Globals:

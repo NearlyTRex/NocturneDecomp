@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 18,
-        "message": "'CTrigger' {aka 'struct CTrigger'} has no member named 'field1_0x158'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 46,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -136,7 +129,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_0000000c",
-      "text": "(&this_ptr->base_actor,&local_18,in_stack_0000000c);",
+      "text": "(&this_ptr->base,&local_18,in_stack_0000000c);",
       "type": "stack_param"
     }
   ],

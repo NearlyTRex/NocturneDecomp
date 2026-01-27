@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_tvbat.cpp_FUN_005e3ec0()
+; __cdecl float core_tvbat.cpp_FUN_005e3ec0(float param_1)
 ;
+; Parameters:
+; float            Stack[0x4]:4   param_1
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4

@@ -17,12 +17,12 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   char[600] g_PrevKeyboardState
 ;   int g_InputResetFlag
 ;   int g_StoredCameraValue
-;   undefined4 DAT_02f7c740
+;   CNetGame g_CNetGameInstance
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
@@ -37,8 +37,8 @@ section .text
     PUSH 0x2c                           ; 004dce70
         ;   Label: core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
     PUSH 0x0                            ; 004dce72
-    MOV EDX,dword ptr [0x00680a00]      ; 004dce74 | DAT_02f7c740 | g_CNetGameInstance
-    PUSH EDX                            ; 004dce7a | DAT_02f7c740
+    MOV EDX,dword ptr [0x00680a00]      ; 004dce74 | g_CNetGameInstance | g_CNetGamePtr
+    PUSH EDX                            ; 004dce7a | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0 ; 004dce7b
         ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; void * * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004dce80

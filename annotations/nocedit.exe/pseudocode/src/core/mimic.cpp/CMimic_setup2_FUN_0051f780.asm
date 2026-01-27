@@ -8,13 +8,13 @@
 ;   TerminatedCString s_core_mimic_cpp_006386f9
 ;   TerminatedCString s_CMimic_setup_can_t_use_m_0063870b
 ;   CEventList* g_CEventListPtr = 02d05310
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEventList g_CEventListInstance
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02f7c740
+;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_00429870
@@ -35,8 +35,8 @@ section .text
         ;   Label: core_mimic.cpp_CMimic_setup2_FUN_0051f780
     PUSH EDI                            ; 0051f781
     MOV EBX,dword ptr [ESP + 0xc]       ; 0051f782
-    MOV EAX,[0x00680a00]                ; 0051f786 | DAT_02f7c740 | g_CNetGameInstance
-    CMP dword ptr [EAX],0x0             ; 0051f78b | DAT_02f7c740
+    MOV EAX,[0x00680a00]                ; 0051f786 | g_CNetGameInstance | g_CNetGamePtr
+    CMP dword ptr [EAX],0x0             ; 0051f78b | g_CNetGameInstance
     JNZ 0x0051f816                      ; 0051f78e
         ;   XREF to: 0051f816 (CONDITIONAL_JUMP)  ; LAB_0051f816
     MOV EAX,[0x02db87d0]                ; 0051f794 | g_LocalHeroIndex

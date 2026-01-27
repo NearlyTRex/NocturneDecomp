@@ -32,11 +32,11 @@ uint core_skeledit_cpp_FUN_00589c20(void)
       if (*(int *)(in_stack_00000008 + 0x30c) == 0) {
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_6c8);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_6c8.base_strlist,"Use the file and select LODs now.");
+                  (&local_6c8.base,"Use the file and select LODs now.");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_6c8.base_strlist,"Rebuild LODs, recreating the precompute file.");
+                  (&local_6c8.base,"Rebuild LODs, recreating the precompute file.");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_6c8.base_strlist,"Don't select LODs at this time.  I can always use the precompute file later.");
+                  (&local_6c8.base,"Don't select LODs at this time.  I can always use the precompute file later.");
         iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           (&local_6c8,"Precomputed LOD exists for this model",-1,0);
         this_ptr = &local_6c8;

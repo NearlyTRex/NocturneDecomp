@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 63,
-        "line": 38,
+        "line": 37,
         "message": "cast from 'SPlayerControl*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -19,30 +19,30 @@
       {
         "category": "other",
         "column": 27,
-        "line": 41,
+        "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 43,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 91,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 16,
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 50,
     "suspect_count": 3,
     "suspect_types": [
       "unaffected_reg",
       "warning_unreachable"
     ],
-    "total_lines": 152
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -111,7 +111,7 @@
     },
     {
       "addr": "00680a00",
-      "name": "g_CNetGameInstance",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "02f7c740"
     },
@@ -183,8 +183,8 @@
     },
     {
       "addr": "02f7c740",
-      "name": "DAT_02f7c740",
-      "type": "undefined4",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
       "value": null
     },
     {
@@ -275,7 +275,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 30,
       "match": "unaff_EDI",
       "text": "core_game_cpp_CallToJoystickStuff_FUN_004dc230(this_ptr,(int)ctrl,unaff_EDI);",
       "type": "unaffected_reg"

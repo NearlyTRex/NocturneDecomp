@@ -60,7 +60,7 @@ core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
     pCVar1 = this_ptr->selected_weapon;
     if (pCVar1 != pCVar6) {
       if (pCVar1 != (CWeapon *)0x0) {
-        (*((pCVar1->base_actor).vtable._ub)->process)(&pCVar1->base_actor,0.1);
+        (*((pCVar1->base).vtable._ub)->process)(&pCVar1->base,0.1);
       }
       this_ptr->selected_weapon = unaff_EDI;
       core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);

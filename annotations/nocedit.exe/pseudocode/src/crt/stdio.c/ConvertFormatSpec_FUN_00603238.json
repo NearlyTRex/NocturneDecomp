@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 778,
-    "complexity_score": 806,
+    "complexity_score": 605,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
-    "pseudocode_lines": 381,
-    "suspect_count": 39,
+    "pseudocode_lines": 420,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
       "param_count_too_few",
-      "pointer_cast",
       "register_param",
       "special_crt_function",
-      "unknown_field",
-      "warning_struct_overlap"
+      "unknown_field"
     ],
-    "total_lines": 1159
+    "total_lines": 1198
   },
   "cross_references": [
     {
@@ -206,263 +204,102 @@
   },
   "suspects": [
     {
-      "description": "Struct has overlapping fields",
-      "line": 2,
-      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
-      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
-      "type": "warning_struct_overlap"
-    },
-    {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
+      "line": 9,
       "match": "BADSPACEBASE",
       "text": "(in_ESP, BADSPACEBASE) causing decompiler uncertainty.",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_ESP",
       "text": "(in_ESP, BADSPACEBASE) causing decompiler uncertainty.",
       "type": "register_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&spec_info->flags + 2) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 77,
-      "match": "._0_4_",
-      "text": "value_64bit._0_4_ = *puVar3;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 80,
-      "match": "._4_4_",
-      "text": "value_64bit._4_4_ = *puVar3;",
+      "match": "._0_4_",
+      "text": "value_64bit._0_4_ = *puVar2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 83,
+      "match": "._4_4_",
+      "text": "value_64bit._4_4_ = *puVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 90,
       "match": "._4_4_",
       "text": "else if ((value_64bit._4_4_ & 0x80000000) == 0) {",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(int *)((int)",
-      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(int *)((int)",
-      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(int *)((int)",
-      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 119,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = ~value_64bit._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 119,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = ~value_64bit._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 120,
       "match": "._0_4_",
       "text": "value_64bit._0_4_ = ~(uint)value_64bit + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 122,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = value_64bit._4_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 122,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = value_64bit._4_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 138,
+      "line": 155,
       "match": "._0_4_",
-      "text": "value_64bit._0_4_ = *puVar3;",
+      "text": "value_64bit._0_4_ = *puVar2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 141,
+      "line": 158,
       "match": "._4_4_",
-      "text": "value_64bit._4_4_ = *puVar3;",
+      "text": "value_64bit._4_4_ = *puVar2;",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 156,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 159,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&spec_info->flags + 2) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 209,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 275,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&spec_info->flags + 2) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 281,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&spec_info->flags + 2) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 304,
-      "match": "(byte *)((int)",
-      "text": "pbVar1 = (byte *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 313,
+      "line": 349,
       "match": "._4_4_",
-      "text": "(uVar7 = value_64bit._4_4_, (uint)value_64bit != 0)) || (uVar7 != 0)))) {",
+      "text": "(uVar6 = value_64bit._4_4_, (uint)value_64bit != 0)) || (uVar6 != 0)))) {",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 314,
-      "match": "(int *)((int)",
-      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 315,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 317,
-      "match": "(int *)((int)",
-      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 318,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 325,
-      "match": "(int *)((int)",
-      "text": "iVar10 = *(int *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 326,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&spec_info->flags + 2) = iVar10 + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 351,
-      "match": "(int *)((int)",
-      "text": "pcVar9 = output_buffer + *(int *)((int)&spec_info->flags + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 359,
-      "match": "(int *)((int)",
-      "text": "(integer_value,output_buffer + *(int *)((int)&spec_info->flags + 2),iVar11);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 365,
+      "line": 405,
       "match": "._4_4_",
       "text": "if (((spec_info->precision == 0) && ((uint)value_64bit == 0)) && (value_64bit._4_4_ == 0)) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 371,
-      "match": "(int *)((int)",
-      "text": "(&value_64bit,output_buffer + *(int *)((int)&spec_info->flags + 2),iVar11);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

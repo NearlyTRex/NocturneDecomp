@@ -12,8 +12,8 @@ int __cdecl core_baron_cpp_CBaronWeapon_FUN_00413e30(CBaronWeapon *this_ptr)
   int iVar1;
   SMotion *pSVar2;
   
-  core_baron_cpp_FUN_00413f20();
-  iVar1 = this_ptr->field1_0x578;
+  core_baron_cpp_CBaronWeapon_FUN_00413f20(this_ptr);
+  iVar1 = this_ptr->unk;
   if (iVar1 != 0) {
     if (*(int *)(iVar1 + 0xbe38) != 0) {
       return 0;

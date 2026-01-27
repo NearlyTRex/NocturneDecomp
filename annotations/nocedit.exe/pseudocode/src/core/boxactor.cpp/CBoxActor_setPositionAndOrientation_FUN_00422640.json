@@ -1,0 +1,133 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 28,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 87
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00422640",
+    "address_range": [
+      [
+        "00422640",
+        "004226c2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640",
+    "signature": "void core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640(CBoxActor * this_ptr, CVector3f * new_position, CVector3f * new_orientation)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "004218d0",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_CBoxActor_FUN_004218d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.36,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 45,
+      "INT_ADD": 29,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "LOAD": 19,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 168
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      },
+      {
+        "is_param": true,
+        "name": "new_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "new_orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoxActor",
+        "offset": 96,
+        "vtable_addr": "00663604"
+      },
+      {
+        "class_name": "CLightActor",
+        "offset": 96,
+        "vtable_addr": "0065b2a4"
+      },
+      {
+        "class_name": "CBoxActor",
+        "offset": 96,
+        "vtable_addr": "0065b1b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

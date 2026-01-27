@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_ammobox.cpp_staticInit_FUN_00411530(void)
+; __cdecl void core_ammobox.cpp_staticInit_FUN_00411530(void)
 ;
 ;
 ; Referenced Globals:

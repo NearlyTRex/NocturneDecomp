@@ -7,10 +7,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Not_enough_memory_to_all_00659070
 ;   FILE* g_StaticFilePoolStart = 00000000
-;   undefined4 DAT_00684ccc
-;   undefined4 DAT_00684cd0
+;   int INT_00684ccc = 0x0
+;   int INT_00684cd0 = 0x1
 ;   undefined4 DAT_00684cea
-;   undefined1 DAT_00684d05
+;   byte BYTE_00684d05 = 0x0
 ;   FileListNode* g_AllocatedListHead
 ;   undefined4 g_FreeListHeadPointer
 ;
@@ -26,13 +26,13 @@ section .text
     PUSH EBX                            ; 00608f20
         ;   Label: crt_ioinit.c_staticInit_FUN_00608f20
     PUSH ESI                            ; 00608f21
-    MOV AH,byte ptr [0x00684d05]        ; 00608f22 | DAT_00684d05
+    MOV AH,byte ptr [0x00684d05]        ; 00608f22 | BYTE_00684d05
     AND AH,0xf8                         ; 00608f28
     MOV DL,AH                           ; 00608f2b
-    MOV byte ptr [0x00684d05],AH        ; 00608f2d | DAT_00684d05
+    MOV byte ptr [0x00684d05],AH        ; 00608f2d | BYTE_00684d05
     OR DL,0x4                           ; 00608f33
-    MOV byte ptr [0x00684d05],DL        ; 00608f36 | DAT_00684d05
-    MOV EDX,dword ptr [0x00684cd0]      ; 00608f3c | DAT_00684cd0
+    MOV byte ptr [0x00684d05],DL        ; 00608f36 | BYTE_00684d05
+    MOV EDX,dword ptr [0x00684cd0]      ; 00608f3c | INT_00684cd0
     MOV EBX,0x684cc4                    ; 00608f42 | g_StaticFilePoolStart
     TEST EDX,EDX                        ; 00608f47
     JZ 0x00608fb1                       ; 00608f49
@@ -66,11 +66,11 @@ section .text
         ;   Label: LAB_00608f7c
     MOV dword ptr [ESI + 0x4],EBX       ; 00608f81 | g_StaticFilePoolStart
     MOV dword ptr [ESI],EAX             ; 00608f84
-    MOV dword ptr [EBX + 0x8],ESI       ; 00608f86 | DAT_00684ccc
+    MOV dword ptr [EBX + 0x8],ESI       ; 00608f86 | INT_00684ccc
     MOV dword ptr [ESI + 0x8],0x0       ; 00608f89
-    MOV EAX,dword ptr [EBX + 0x8]       ; 00608f90 | DAT_00684ccc
+    MOV EAX,dword ptr [EBX + 0x8]       ; 00608f90 | INT_00684ccc
     MOV byte ptr [EAX + 0x14],0x0       ; 00608f93
-    MOV EAX,dword ptr [EBX + 0x8]       ; 00608f97 | DAT_00684ccc
+    MOV EAX,dword ptr [EBX + 0x8]       ; 00608f97 | INT_00684ccc
     MOV dword ptr [EAX + 0xc],0x0       ; 00608f9a
     MOV dword ptr [0x03f9b200],ESI      ; 00608fa1 | g_AllocatedListHead
     MOV ECX,dword ptr [EBX + 0x26]      ; 00608fa7 | DAT_00684cea

@@ -11,7 +11,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec690(CWayPoint *this_ptr)
 {
   int *in_stack_00000008;
   
-  core_trigger_cpp_CTrigger_FUN_005e1350(&this_ptr->base_trigger);
+  core_trigger_cpp_CTrigger_FUN_005e1350(&this_ptr->base);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
   core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
             (in_stack_00000008,"</>","Prev/next waypoint on trail.");

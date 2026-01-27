@@ -70,9 +70,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
     *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar5) = 0;
     iVar5 = iVar5 + 0x30;
   } while (iVar6 < 0x10);
-  local_7c.x = (int)ROUND(DAT_026a72d8 * 256.0f);
-  local_7c.y = (int)ROUND(DAT_026a72dc * 256.0f);
-  local_7c.z = (int)ROUND(DAT_026a72e0 * 256.0f);
+  local_7c.x = (int)ROUND(FLOAT_026a72d8 * 256.0f);
+  local_7c.y = (int)ROUND(FLOAT_026a72dc * 256.0f);
+  local_7c.z = (int)ROUND(FLOAT_026a72e0 * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar1->vertex_buffer_ptr[0x10].projected_vertex,&local_7c);
   pCVar1 = g_CDemonRendererPtr2;

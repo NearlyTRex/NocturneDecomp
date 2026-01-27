@@ -11,7 +11,7 @@ void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPic
 {
   int iVar1;
   
-  iVar1 = (this_ptr->base_strlist).item_count;
+  iVar1 = (this_ptr->base).item_count;
   if (iVar1 <= this_ptr->current_index) {
     this_ptr->current_index = iVar1 + -1;
   }
@@ -21,13 +21,13 @@ void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPic
   while (this_ptr->scroll_top < 0) {
     this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->vertical_page_size;
   }
-  while ((this_ptr->base_strlist).item_count <= this_ptr->scroll_top) {
+  while ((this_ptr->base).item_count <= this_ptr->scroll_top) {
     this_ptr->scroll_top = this_ptr->scroll_top - this_ptr->vertical_page_size;
   }
   if (this_ptr->scroll_top < 0) {
     this_ptr->scroll_top = 0;
   }
-  if (this_ptr->current_index < (this_ptr->base_strlist).item_count) {
+  if (this_ptr->current_index < (this_ptr->base).item_count) {
     while (iVar1 = this_ptr->scroll_top, this_ptr->current_index < iVar1) {
       if (this_ptr->column_count == 1) {
         this_ptr->scroll_top = iVar1 + -1;
@@ -49,7 +49,7 @@ void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPic
     }
   }
   if ((this_ptr->column_count == 1) &&
-     (iVar1 = (this_ptr->base_strlist).item_count - this_ptr->vertical_page_size,
+     (iVar1 = (this_ptr->base).item_count - this_ptr->vertical_page_size,
      iVar1 < this_ptr->scroll_top)) {
     this_ptr->scroll_top = iVar1;
   }

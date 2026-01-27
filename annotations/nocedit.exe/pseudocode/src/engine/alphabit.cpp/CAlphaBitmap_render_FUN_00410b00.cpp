@@ -25,8 +25,8 @@ engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(this_ptr);
   iVar1 = (bottom_y - top_y) + 1;
   iVar2 = top_y * this_ptr->width + left_x;
-  srcIndices = (uchar *)(this_ptr->ptrRaw + iVar2);
-  srcAlpha = (uchar *)(this_ptr->ptrOpa + iVar2);
+  srcIndices = (uchar *)(this_ptr->raw + iVar2);
+  srcAlpha = (uchar *)(this_ptr->opa + iVar2);
   local_18 = dest_x * 4;
   iVar2 = iVar1 * 4 + local_18;
   if (g_BitsPerPixel == 0x20) {

@@ -47,18 +47,18 @@ void __cdecl core_mission_cpp_FUN_00524c20(void)
                                (0x15c,"..\\core\\mission.cpp",0x689);
           pCVar4 = (CHeroPlaceholder *)0x0;
           if (this_ptr != (CHeroPlaceholder *)0x0) {
-            pCVar4 = core_hero_cpp_FUN_004f3c00(this_ptr);
+            pCVar4 = core_hero_cpp_CHeroPlaceholder_ctor_FUN_004f3c00(this_ptr);
           }
-          pCVar4->field1_0x158 = 0;
-          (pCVar4->base_actor).location.position.x = *(float *)(pcVar3 + 0x20);
-          (pCVar4->base_actor).location.position.y = *(float *)(pcVar3 + 0x24);
-          (pCVar4->base_actor).location.position.z = *(float *)(pcVar3 + 0x28);
-          pCVar5 = &(pCVar4->base_actor).orient;
-          (pCVar4->base_actor).location.area_id = *(int *)(pcVar3 + 0x2c);
+          pCVar4->unk = 0;
+          (pCVar4->base).location.position.x = *(float *)(pcVar3 + 0x20);
+          (pCVar4->base).location.position.y = *(float *)(pcVar3 + 0x24);
+          (pCVar4->base).location.position.z = *(float *)(pcVar3 + 0x28);
+          pCVar5 = &(pCVar4->base).orient;
+          (pCVar4->base).location.area_id = *(int *)(pcVar3 + 0x2c);
           if (pCVar5 != (COrientation *)(pcVar3 + 0x30)) {
             pCVar5->pitch = *(float *)(pcVar3 + 0x30);
-            (pCVar4->base_actor).orient.bank = *(float *)(pcVar3 + 0x34);
-            (pCVar4->base_actor).orient.heading = *(float *)(pcVar3 + 0x38);
+            (pCVar4->base).orient.bank = *(float *)(pcVar3 + 0x34);
+            (pCVar4->base).orient.heading = *(float *)(pcVar3 + 0x38);
           }
           core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(in_stack_00000004);
           core_mission_cpp_CDemonMission_FUN_00523f20(in_stack_00000004);

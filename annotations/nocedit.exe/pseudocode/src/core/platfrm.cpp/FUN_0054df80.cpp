@@ -31,7 +31,7 @@ uint core_platfrm_cpp_FUN_0054df80(void)
   
   if (in_stack_00000008 != 0) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_88);
-    local_88._0_8_ = (ulonglong)(uint)local_88.field1_0x4 << 0x20;
+    local_88._0_8_ = (ulonglong)(uint)local_88.unk1 << 0x20;
     iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();
     if (iVar1 == 2) {
       CStack_1c.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
@@ -45,10 +45,10 @@ uint core_platfrm_cpp_FUN_0054df80(void)
         (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&CStack_60);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                   (in_stack_00000004,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));
-        if (((CStack_60.min.z <= CStack_1c.x + (float)local_88.field9_0x24) &&
-            (((CStack_1c.x - (float)local_88.field9_0x24 <= CStack_60.max.z &&
-              (CStack_60.max.y <= CStack_1c.z + (float)local_88.field9_0x24)) &&
-             (CStack_1c.z - (float)local_88.field9_0x24 <= fStack_44)))) &&
+        if (((CStack_60.min.z <= CStack_1c.x + (float)local_88.unk5) &&
+            (((CStack_1c.x - (float)local_88.unk5 <= CStack_60.max.z &&
+              (CStack_60.max.y <= CStack_1c.z + (float)local_88.unk5)) &&
+             (CStack_1c.z - (float)local_88.unk5 <= fStack_44)))) &&
            ((CStack_60.max.x <= CStack_1c.y + (float)local_88.result_ptr &&
             (CStack_1c.y + local_88.cylinder_radius <= fStack_48)))) {
           pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80

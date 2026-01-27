@@ -14,33 +14,21 @@
         "message": "request for member '_0_4_' in 'auStack_104', which is of non-class type 'byte [48]' {aka 'unsigned char [48]'}"
       },
       {
-        "category": "missing_member",
-        "column": 54,
-        "line": 52,
-        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field1_0x578'"
-      },
-      {
-        "category": "missing_member",
-        "column": 77,
-        "line": 58,
-        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field1_0x578'"
-      },
-      {
         "category": "other",
         "column": 30,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 76,
+        "line": 75,
         "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 77,
+        "line": 76,
         "message": "request for member '_44_4_' in 'auStack_74', which is of non-class type 'byte [48]' {aka 'unsigned char [48]'}"
       }
     ],
@@ -55,24 +43,24 @@
       {
         "category": "other",
         "column": 14,
-        "line": 68,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 74,
+        "line": 73,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 278,
+    "complexity_score": 277,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
-    "pseudocode_lines": 83,
+    "pseudocode_lines": 82,
     "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -81,7 +69,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 247
+    "total_lines": 246
   },
   "cross_references": [],
   "function": {
@@ -393,35 +381,35 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 66,
       "match": "ROUND",
       "text": "pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 69,
       "match": "._44_4_",
       "text": "auStack_74._44_4_ = pCVar2->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_00000008",
       "text": "core_box_cpp_CBoundingBox3D_expand_FUN_00420240(in_stack_00000008,pCVar2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 84,
       "match": "in_stack_00000008",
       "text": "return (int *)in_stack_00000008;",
       "type": "stack_param"

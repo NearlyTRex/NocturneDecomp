@@ -17,7 +17,7 @@ void core_platfrm_cpp_FUN_0054e400(void)
   
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CPlatformClassInfo.name_hash);
-  switch(pCVar2[5].field7_0x6c) {
+  switch(pCVar2[5].unk1) {
   default:
     pcVar3 = "Disabled";
     break;

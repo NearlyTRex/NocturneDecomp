@@ -223,7 +223,7 @@ joined_r0x005a94f6:
             pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
             pCVar11->stream_read_position = 0;
             pCVar11->stream_write_position = 0;
-            pCVar11->streaming_slot_index = local_90.field14_0x6c;
+            pCVar11->streaming_slot_index = local_90.unk;
             iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar11);
             pCVar11 = local_18;
             goto joined_r0x005a94f6;

@@ -7,8 +7,8 @@
 // Structure: CBeast
 // Ghidra size: 0xbebc (48828 bytes)
 typedef struct CBeast {
-    CEnemy base_enemy; // 0x0
-    int field_48820; // 0xbeb4
-    int field_48824; // 0xbeb8
+    CEnemy base; // 0x0
+    int unk1; // 0xbeb4
+    int unk2; // 0xbeb8
 } CBeast;
 

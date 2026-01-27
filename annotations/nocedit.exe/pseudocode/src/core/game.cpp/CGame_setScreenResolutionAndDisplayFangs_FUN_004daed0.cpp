@@ -15,7 +15,7 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
   if ((g_WindowHeight != 0x1e0) || (this_ptr->game_bpp != 0x20)) {
     wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(0x280,0x1e0,0x20);
   }
-  if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
+  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
     g_EditorFont = g_ThemeFont;
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

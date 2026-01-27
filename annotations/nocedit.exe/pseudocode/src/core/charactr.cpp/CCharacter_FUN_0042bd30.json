@@ -14,22 +14,10 @@
         "message": "cast from 'CMatrix3x3f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 64,
-        "line": 79,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
         "column": 10,
         "line": 80,
         "message": "'void*' is not a pointer-to-object type"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 85,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
       }
     ],
     "success": false,
@@ -418,21 +406,21 @@
       "description": "Unresolved stack parameter",
       "line": 72,
       "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == *(int *)(pCVar3->carry_hands[0].field0_0x0 + 4)) {",
+      "text": "if (in_stack_0000000c == *(int *)(pCVar3->carry_hands[0].unk1 + 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_00000008",
-      "text": "*(uint *)in_stack_00000008->field1_0x158 = in_stack_00000010;",
+      "text": "*(uint *)in_stack_00000008->unk = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_00000010",
-      "text": "*(uint *)in_stack_00000008->field1_0x158 = in_stack_00000010;",
+      "text": "*(uint *)in_stack_00000008->unk = in_stack_00000010;",
       "type": "stack_param"
     }
   ]

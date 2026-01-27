@@ -18,9 +18,9 @@ core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0
   char *pcVar5;
   int iVar6;
   
-  core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(&this_ptr->base_actor,surface_info);
+  core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(&this_ptr->base,surface_info);
   iVar6 = 0;
-  pcVar4 = this_ptr->field10_0x648 + 0xd14;
+  pcVar4 = this_ptr->unk3 + 0xd14;
   do {
     fVar1 = *(float *)pcVar4 - (surface_info->hit_position).x;
     fVar3 = *(float *)(pcVar4 + 4) - (surface_info->hit_position).y;
@@ -32,14 +32,14 @@ core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0
     iVar6 = iVar6 + 1;
     pcVar4 = pcVar4 + 0x60;
   } while (iVar6 < 2);
-  if (surface_info->field2_0x8 == 2) {
+  if (surface_info->unk2 == 2) {
     iVar6 = 0;
-    pcVar4 = this_ptr->field10_0x648 + 0x47c;
+    pcVar4 = this_ptr->unk3 + 0x47c;
     do {
       fVar1 = *(float *)pcVar4 - (surface_info->hit_position).x;
       fVar3 = *(float *)(pcVar4 + 4) - (surface_info->hit_position).y;
       fVar2 = *(float *)(pcVar4 + 8) - (surface_info->hit_position).z;
-      pcVar5 = this_ptr->field10_0x648 + iVar6 * 0xb8 + 0x458;
+      pcVar5 = this_ptr->unk3 + iVar6 * 0xb8 + 0x458;
       if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < (float)0.25) {
         fVar1 = (float)0.0039215686274509803;
         *(float *)(pcVar5 + 0x18) =

@@ -49,8 +49,8 @@ void core_gabriela_cpp_FUN_004d5550(void)
   bVar8 = 0;
   core_charactr_cpp_CCharacter_FUN_0042d090(in_stack_00000004);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_34c,&(in_stack_00000004->base_actor).location.position,
-             (CVector3f *)&(in_stack_00000004->base_actor).orient);
+            (&local_34c,&(in_stack_00000004->base).location.position,
+             (CVector3f *)&(in_stack_00000004->base).orient);
   local_14 = in_stack_00000004[2].cloth_data + 0x5058;
   if (*(float *)(in_stack_00000004[2].cloth_data + 0x54fc) < 0.64f) {
     (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();

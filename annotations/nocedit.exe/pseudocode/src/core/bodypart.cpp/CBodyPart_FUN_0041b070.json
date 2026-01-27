@@ -2,82 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 31,
-        "line": 26,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 80,
-        "line": 26,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 57,
-        "line": 29,
+        "column": 51,
+        "line": 28,
         "message": "'stack0xffffffb4' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 35,
-        "line": 40,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 36,
-        "line": 46,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 49,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 50,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 52,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 55,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 56,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 63,
-        "line": 56,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
-        "line": 57,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 65,
-        "line": 57,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
       }
     ],
     "success": false,
@@ -92,16 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 64,
+    "complexity_score": 63,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 48,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 162
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -227,9 +155,9 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 21,
       "match": "&stack0xffffffb4",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);",
       "type": "stack_ref"
     }
   ]

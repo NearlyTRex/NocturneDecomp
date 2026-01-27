@@ -32,7 +32,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e9930(CGlass *this_ptr)
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&this_ptr->glass_texture);
     pCVar5 = this_ptr->broken_vertices;
-    input_vertices = this_ptr->field12_0x4b8;
+    input_vertices = this_ptr->unk1;
     iVar2 = 0;
     pcVar4 = input_vertices;
     if (0 < this_ptr->broken_vertex_count) {

@@ -23,11 +23,11 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   CVector3i local_20;
   CVector3i local_14;
   
-  if (*(float *)(this_ptr->field0_0x0 + 0x10) <= 0.0) {
+  if (*(float *)(this_ptr->unk + 0x10) <= 0.0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,*(SMRGLTextureBasic **)(this_ptr->field0_0x0 + 0x20));
+            (g_CDemonRendererPtr2,*(SMRGLTextureBasic **)(this_ptr->unk + 0x20));
   local_78.base.count = 4;
   local_78.surface_normal.D = 0;
   local_78.surface_normal.C = 0;
@@ -38,7 +38,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   local_5c = 1;
   local_58 = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
-            (g_CDemonRendererPtr2,*(float *)(this_ptr->field0_0x0 + 0x14));
+            (g_CDemonRendererPtr2,*(float *)(this_ptr->unk + 0x14));
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
@@ -47,7 +47,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_20,(CVector3i *)0x0);
   local_3c = 0.0;
-  local_44 = *(float *)(this_ptr->field0_0x0 + 0xc) * *(float *)(this_ptr->field0_0x0 + 0x14);
+  local_44 = *(float *)(this_ptr->unk + 0xc) * *(float *)(this_ptr->unk + 0x14);
   local_2c.x = (int)ROUND(local_44 * 256.0f);
   local_2c.y = (int)ROUND(local_44 * 256.0f);
   local_2c.z = (int)ROUND(256.0f * 0.0);

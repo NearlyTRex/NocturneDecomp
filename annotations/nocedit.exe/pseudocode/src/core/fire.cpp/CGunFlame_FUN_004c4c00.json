@@ -8,51 +8,9 @@
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 32,
-        "line": 28,
-        "message": "'CGunFlame' {aka 'struct CGunFlame'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 29,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 44,
-        "line": 31,
-        "message": "'CGunFlame' {aka 'struct CGunFlame'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 39,
-        "line": 33,
-        "message": "'CGunFlame' {aka 'struct CGunFlame'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 39,
-        "line": 35,
-        "message": "'CGunFlame' {aka 'struct CGunFlame'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 78,
-        "line": 39,
-        "message": "'CGunFlame' {aka 'struct CGunFlame'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 48,
-        "message": "'CGunFlame' {aka 'struct CGunFlame'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
         "column": 24,
-        "line": 51,
+        "line": 47,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -73,42 +31,42 @@
       {
         "category": "other",
         "column": 16,
-        "line": 51,
+        "line": 47,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 52,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 53,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 54,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 133,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 49,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 189
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -312,35 +270,35 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 33,
       "match": "DAT_02d13eb4",
       "text": "} while (iVar5 < DAT_02d13eb4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 36,
       "match": "DAT_02d13f80",
       "text": "if (0 < DAT_02d13f80) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 40,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)&DAT_02d13f84 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 40,
       "match": "DAT_02d13f84",
       "text": "iVar1 = *(int *)((int)&DAT_02d13f84 + iVar6);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 49,
       "match": "DAT_02d13f80",
       "text": "} while (iVar5 < DAT_02d13f80);",
       "type": "undefined_data"

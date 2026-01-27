@@ -9,24 +9,22 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_serialize_FUN_005e6f50(CVampireBoss *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base_enemy);
+  core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base);
   if (1 < g_CVampireBossVersion) {
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (&(this_ptr->base_enemy).base_character.model.motion_controller,
-               "human model motion state");
+              (&(this_ptr->base).base.model.motion_controller,"human model motion state");
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              ((CMotionController *)(this_ptr->field1_0xbeb4 + 8),"bat model motion state")
-    ;
+              ((CMotionController *)(this_ptr->unk1 + 8),"bat model motion state");
   }
   if (2 < g_CVampireBossVersion) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->field5_0xce8f4 + 0x18),"wayPoint0");
+              ((CDemonActor *)(this_ptr->unk3 + 0x18),"wayPoint0");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->field5_0xce8f4 + 0x1c),"wayPoint1");
+              ((CDemonActor *)(this_ptr->unk3 + 0x1c),"wayPoint1");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->field5_0xce8f4 + 0x20),"wayPoint2");
+              ((CDemonActor *)(this_ptr->unk3 + 0x20),"wayPoint2");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->field5_0xce8f4 + 0x24),"wayPoint3");
+              ((CDemonActor *)(this_ptr->unk3 + 0x24),"wayPoint3");
   }
   if (g_CVampireBossVersion < 4) {
     return;

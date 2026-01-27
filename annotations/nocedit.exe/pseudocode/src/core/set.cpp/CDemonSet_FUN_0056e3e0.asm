@@ -29,7 +29,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].light
 ;   undefined4 g_RenderVertexBuffer[0].color
 ;   undefined4 g_RenderVertexBuffer[0].fog
-;   undefined4 DAT_02d7a7b8
+;   int INT_02d7a7b8
 ;   undefined4 DAT_03277d80
 ;   undefined4 DAT_03277d84
 ;   undefined4 DAT_03277d88
@@ -48,7 +48,7 @@ section .text
     MOV EBP,ESP                         ; 0056e3e3
     SUB ESP,0x34                        ; 0056e3e5
     AND ESP,0xfffffff8                  ; 0056e3e8
-    MOV ESI,dword ptr [0x02d7a7b8]      ; 0056e3eb | DAT_02d7a7b8
+    MOV ESI,dword ptr [0x02d7a7b8]      ; 0056e3eb | INT_02d7a7b8
     MOV EDX,dword ptr [EBP + 0x14]      ; 0056e3f1
     MOV EAX,dword ptr [EBP + 0x18]      ; 0056e3f4
     XOR ECX,ECX                         ; 0056e3f7
@@ -139,7 +139,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x28]      ; 0056e4f7
     SHL EAX,0x8                         ; 0056e4fb
     MOV dword ptr [EBX + 0x28],EAX      ; 0056e4fe | g_RenderVertexBuffer[0].fog
-    MOV dword ptr [0x02d7a7b8],ESI      ; 0056e501 | DAT_02d7a7b8
+    MOV dword ptr [0x02d7a7b8],ESI      ; 0056e501 | INT_02d7a7b8
     MOV ESP,EBP                         ; 0056e507
     POP EBP                             ; 0056e509
     POP ESI                             ; 0056e50a

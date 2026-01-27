@@ -9,7 +9,7 @@
 void __cdecl core_vessel_cpp_CCryptVessel_serialize_FUN_005e9a80(CCryptVessel *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
             ((CKeyFramedModelInstance *)&this_ptr->model_name,"modelName");
   core_actor_cpp_serializeActor_FUN_0040b870((CDemonActor *)&this_ptr->prey,"prey");

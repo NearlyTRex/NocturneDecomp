@@ -44,10 +44,9 @@ void core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
       {
         iVar1 = 0;
         local_20 = (CVector3f *)0x1;
-        for (iVar3 = 0; iVar3 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
-            iVar3 = iVar3 + 1) {
+        for (iVar3 = 0; iVar3 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar3 = iVar3 + 1) {
           pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                             (*(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar1 + 8000),
+                             (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar1 + 8000),
                               g_CGhoulClassInfo.name_hash);
           if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2 != in_stack_00000004)) &&
              (this_ptr == (CDemonActor *)pCVar2[0x8e].orient_matrix.m[1].y)) goto LAB_004e646f;
@@ -67,7 +66,7 @@ void core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
           CStack_2c.y = 0.0;
           CStack_2c.z = 0.0;
           iVar1 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                            (this_ptr_00,local_20,&CStack_2c,in_stack_00000004->field7_0x6c);
+                            (this_ptr_00,local_20,&CStack_2c,in_stack_00000004->unk1);
           if (0 < iVar1) {
             in_stack_00000004[0x8e].orient_matrix.m[1].y = (float)this_ptr;
           }

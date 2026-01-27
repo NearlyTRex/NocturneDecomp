@@ -689,7 +689,7 @@ LAB_0055c37e:
                                                   (local_226c,"[Can't find %s in database]",
                                                    local_c14);
                                         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                                                  ((CStrList *)&DAT_0310f4b0,local_226c);
+                                                  (&DAT_0310f4b0.base,local_226c);
                                       }
                                       else {
                                         iVar8 = iVar8 * 0x226 + in_stack_00000004[8];
@@ -748,7 +748,7 @@ LAB_0055c37e:
                                                     (local_2654,"[Can't find %s in database]",
                                                      local_1ec);
                                           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                                                    ((CStrList *)&DAT_0310f4b0,local_2654);
+                                                    (&DAT_0310f4b0.base,local_2654);
                                         }
                                         else {
                                           iVar8 = iVar8 * 0x226 + in_stack_00000004[8];
@@ -1502,7 +1502,7 @@ LAB_0055a97f:
                                                     if (DAT_0310ec9c == 0) {
                                                       *in_stack_00000004 = 1;
                                                       local_114 = uVar15;
-                                                      pCVar6->field87_0x258 = 1;
+                                                      pCVar6->unk12 = 1;
                                                     }
                                                   }
                                                   else {
@@ -1571,13 +1571,13 @@ LAB_0055d708:
                                                                                                             
                                                   core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                                                             (g_CDemonSetPtr,
-                                                             (CDemonActor *)g_CScriptPtr->focusActor
-                                                             ,1);
+                                                             (CDemonActor *)
+                                                             g_CScriptPtr->focus_actor,1);
                                                   pCVar5 = g_CScriptPtr;
-                                                  pCVar5->padding_0x10[0] = '\0';
-                                                  pCVar5->padding_0x10[1] = '\0';
-                                                  pCVar5->padding_0x10[2] = '\0';
-                                                  pCVar5->padding_0x10[3] = '\0';
+                                                  pCVar5->unk3[0] = '\0';
+                                                  pCVar5->unk3[1] = '\0';
+                                                  pCVar5->unk3[2] = '\0';
+                                                  pCVar5->unk3[3] = '\0';
                                                   iVar14 = core_event_cpp_FUN_004b1970();
                                                   if (iVar8 == iVar14) {
                                                                                                         
@@ -1974,7 +1974,7 @@ joined_r0x0055c026:
                                                     return -1;
                                                   }
                                                   local_11c = local_11c + local_90;
-                                                  if (g_CNetGameInstance->connection_type != 0) {
+                                                  if (g_CNetGamePtr->connection_type != 0) {
                                                     crt_stdio_c_sprintf_FUN_005fdbd0
                                                               (&DAT_0310eca0,
                                                                "Can't use removeKeys command in multi-player");
@@ -2032,7 +2032,7 @@ joined_r0x0055c026:
                                                     if (DAT_0310ec9c == 0) {
                                                       *in_stack_00000004 = 1;
                                                       local_114 = uVar15;
-                                                      pCVar6->field87_0x258 = 2;
+                                                      pCVar6->unk12 = 2;
                                                     }
                                                   }
                                                   else {
@@ -2237,8 +2237,8 @@ LAB_0055e656:
                                                       return -1;
                                                     }
                                                     if (DAT_0310ec9c == 0) {
-                                                      g_CDemonSetPtr->cameras[iVar8].field8_0x14c =
-                                                           local_74;
+                                                      g_CDemonSetPtr->cameras[iVar8].unk2 = local_74
+                                                      ;
                                                     }
                                                   }
                                                   else {

@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: void core_script.cpp_CScript_WriteScriptFile(CScript* pScript, FILE* pFilePtr) */
-
 void core_script_cpp_CScript_WriteScriptFile_FUN_00560b50(void)
 
 {
@@ -25,7 +22,7 @@ void core_script_cpp_CScript_WriteScriptFile_FUN_00560b50(void)
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// gGame->allowEnemyAttackFlag\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// letterBoxBlackT\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%g\n",(double)_DAT_0310f4a0);
+  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%g\n",(double)FLOAT_0310f4a0);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// nextCmd\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// currentMessage\n");

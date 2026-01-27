@@ -9,26 +9,26 @@
 void __cdecl core_cloth_cpp_CClothList_add_FUN_0043c0f0(CClothList *this_ptr)
 
 {
-  CClothList CVar1;
+  char cVar1;
   CClothList *pCVar2;
-  CClothList *in_stack_00000008;
+  char *in_stack_00000008;
   
-  if (9 < *(int *)this_ptr) {
+  if (9 < this_ptr->unk) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0x5d1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CClothList::add - list is full");
   }
-  pCVar2 = this_ptr + *(int *)this_ptr * 0x28 + 4;
+  pCVar2 = this_ptr + this_ptr->unk * 10 + 1;
   do {
-    CVar1 = *in_stack_00000008;
-    *pCVar2 = CVar1;
-    if (CVar1 == (CClothList)0x0) break;
-    CVar1 = in_stack_00000008[1];
+    cVar1 = *in_stack_00000008;
+    *(char *)&pCVar2->unk = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = in_stack_00000008[1];
     in_stack_00000008 = in_stack_00000008 + 2;
-    pCVar2[1] = CVar1;
-    pCVar2 = pCVar2 + 2;
-  } while (CVar1 != (CClothList)0x0);
-  *(uint *)(this_ptr + *(int *)this_ptr * 4 + 0x194) = 0;
-  *(int *)this_ptr = *(int *)this_ptr + 1;
+    *(char *)((int)&pCVar2->unk + 1) = cVar1;
+    pCVar2 = (CClothList *)((int)&pCVar2->unk + 2);
+  } while (cVar1 != '\0');
+  this_ptr[this_ptr->unk + 0x65].unk = 0;
+  this_ptr->unk = this_ptr->unk + 1;
   return;
 }

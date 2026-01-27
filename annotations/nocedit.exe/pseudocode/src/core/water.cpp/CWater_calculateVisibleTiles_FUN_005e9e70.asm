@@ -143,12 +143,12 @@ section .text
     FMUL double ptr [0x0065721f]        ; 005e9f21 | DOUBLE_0065721f
     XOR ECX,ECX                         ; 005e9f27
     FLDZ                                ; 005e9f29
-    MOV dword ptr [0x03f875f4],ECX      ; 005e9f2b | DAT_03f875f4
+    MOV dword ptr [0x03f875f4],ECX      ; 005e9f2b | FLOAT_03f875f4
     MOV dword ptr [ESP + 0x94],ECX      ; 005e9f31
     FXCH ST2                            ; 005e9f38
-    FSTP float ptr [0x03f875f0]         ; 005e9f3a | DAT_03f875f0
+    FSTP float ptr [0x03f875f0]         ; 005e9f3a | FLOAT_03f875f0
     FXCH ST2                            ; 005e9f40
-    FSTP float ptr [0x03f875f8]         ; 005e9f42 | DAT_03f875f8
+    FSTP float ptr [0x03f875f8]         ; 005e9f42 | FLOAT_03f875f8
     FXCH                                ; 005e9f48
     FSTP float ptr [ESP + 0x8c]         ; 005e9f4a
     FCOMP float ptr [ESP + 0x8c]        ; 005e9f51
@@ -218,18 +218,18 @@ section .text
     FMUL float ptr [EDI + 0x8]          ; 005ea047
     MOV ECX,dword ptr [0x006703ec]      ; 005ea04a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [ESP + 0x64]          ; 005ea050
-    FADD float ptr [0x03f875f0]         ; 005ea054 | DAT_03f875f0
+    FADD float ptr [0x03f875f0]         ; 005ea054 | FLOAT_03f875f0
     FLD float ptr [ESP + 0x68]          ; 005ea05a
     LEA EAX,[ESP + 0x64]                ; 005ea05e
     FXCH ST2                            ; 005ea062
     FSTP float ptr [ESP + 0x6c]         ; 005ea064
     FSTP float ptr [ESP + 0x64]         ; 005ea068
     PUSH EAX                            ; 005ea06c
-    FADD float ptr [0x03f875f4]         ; 005ea06d | DAT_03f875f4
+    FADD float ptr [0x03f875f4]         ; 005ea06d | FLOAT_03f875f4
     FLD float ptr [ESP + 0x70]          ; 005ea073
     FXCH                                ; 005ea077
     FSTP float ptr [ESP + 0x6c]         ; 005ea079
-    FADD float ptr [0x03f875f8]         ; 005ea07d | DAT_03f875f8
+    FADD float ptr [0x03f875f8]         ; 005ea07d | FLOAT_03f875f8
     PUSH ECX                            ; 005ea083 | g_CDemonRendererInstance
     FSTP float ptr [ESP + 0x74]         ; 005ea084
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 005ea088

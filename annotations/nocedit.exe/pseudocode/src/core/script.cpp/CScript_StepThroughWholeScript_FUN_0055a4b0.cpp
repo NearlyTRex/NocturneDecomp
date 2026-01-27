@@ -19,7 +19,7 @@ byte * core_script_cpp_CScript_StepThroughWholeScript_FUN_0055a4b0(void)
   
   DAT_0310ec9c = 1;
   core_script_cpp_FUN_0055a540();
-  shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&DAT_0310f4b0);
+  shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);
   if (*(int *)(in_stack_00000004 + 0x48) < *(int *)(in_stack_00000004 + 0x30)) {
     do {
       iVar2 = *(int *)(in_stack_00000004 + 0x48);

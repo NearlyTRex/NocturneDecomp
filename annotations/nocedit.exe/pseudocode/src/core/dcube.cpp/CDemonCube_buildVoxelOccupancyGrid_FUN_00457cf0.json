@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 25,
-        "line": 100,
+        "line": 101,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 101,
+        "line": 102,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,25 +25,25 @@
       {
         "category": "other",
         "column": 10,
-        "line": 71,
+        "line": 72,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 79,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 19,
+        "column": 22,
         "line": 80,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 100,
+        "column": 14,
+        "line": 92,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 93,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -51,21 +51,27 @@
         "column": 16,
         "line": 101,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 102,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 120,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 95,
+    "pseudocode_lines": 96,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 251
+    "total_lines": 252
   },
   "cross_references": [
     {
@@ -331,16 +337,16 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(uint *)((int)",
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 95,
       "match": "(uint *)((int)",
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

@@ -31,7 +31,7 @@ void core_bugs_cpp_FUN_004250f0(void)
                                     [0x44].m[2].x), iVar1 != 0)) {
       in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].z = 1.4013e-45;
     }
-    switch(*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x20)) {
+    switch(*(uint *)(in_stack_00000004[1].base.create_event + 0x20)) {
     case 0:
       core_bugs_cpp_FUN_00425cc0();
       break;

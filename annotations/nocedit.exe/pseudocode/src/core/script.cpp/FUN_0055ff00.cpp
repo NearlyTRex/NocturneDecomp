@@ -35,7 +35,7 @@ float core_script_cpp_FUN_0055ff00(void)
       local_28 = core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(g_CSoundPtr,in_stack_0000000c);
       local_14 = local_28;
       if (local_28 < 0.0) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&DAT_0310f4b0,in_stack_0000000c);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&DAT_0310f4b0.base,in_stack_0000000c);
         uVar3 = 0xffffffff;
         pcVar4 = in_stack_00000010;
         do {

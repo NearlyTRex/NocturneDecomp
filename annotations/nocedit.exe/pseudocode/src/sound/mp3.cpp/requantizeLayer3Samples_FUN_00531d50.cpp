@@ -41,9 +41,8 @@ sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
   float *local_18;
   
   iVar7 = 0;
-  iVar8 = *(int *)((*granule_array)->field2_0x8 + 8) + (*granule_array)->field0_0x0 * 3;
-  if ((*(int *)(granule_info->field2_0x8 + 8) == 0) ||
-     (*(int *)(granule_info->field2_0x8 + 0xc) != 2)) {
+  iVar8 = *(int *)((*granule_array)->unk3 + 8) + (*granule_array)->unk1 * 3;
+  if ((*(int *)(granule_info->unk3 + 8) == 0) || (*(int *)(granule_info->unk3 + 0xc) != 2)) {
     local_1c = *(float **)(&DAT_0067e6cc + iVar8 * 0x94);
   }
   else {
@@ -97,8 +96,7 @@ sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
     iVar4 = 0;
     do {
       if (local_20 == local_1c) {
-        if ((*(int *)(granule_info->field2_0x8 + 8) == 0) ||
-           (*(int *)(granule_info->field2_0x8 + 0xc) != 2)) {
+        if ((*(int *)(granule_info->unk3 + 8) == 0) || (*(int *)(granule_info->unk3 + 0xc) != 2)) {
           iVar7 = iVar7 + 1;
           local_1c = *(float **)(&DAT_0067e6cc + iVar7 * 4 + iVar8);
         }
@@ -133,12 +131,11 @@ LAB_00531ee0:
         *(uint *)((int)output_samples->samples[0] + iVar4 + local_68) = 0;
       }
       else {
-        iVar6 = *(int *)granule_info->field2_0x8 + -0xd2;
-        if ((*(int *)(granule_info->field2_0x8 + 8) == 0) ||
-           (((*(int *)(granule_info->field2_0x8 + 0xc) != 2 ||
-             (granule_info->part_2_3_length_maybe != 0)) &&
-            ((*(int *)(granule_info->field2_0x8 + 0xc) != 2 ||
-             ((granule_info->part_2_3_length_maybe == 0 || (local_44 < 2)))))))) {
+        iVar6 = *(int *)granule_info->unk3 + -0xd2;
+        if ((*(int *)(granule_info->unk3 + 8) == 0) ||
+           (((*(int *)(granule_info->unk3 + 0xc) != 2 || (granule_info->part_2_3_length_maybe != 0))
+            && ((*(int *)(granule_info->unk3 + 0xc) != 2 ||
+                ((granule_info->part_2_3_length_maybe == 0 || (local_44 < 2)))))))) {
           iVar2 = (granule_info->subblock_gain[0] + 1) * -2 *
                   (scalefactor_data[channel_index * 0x3e + iVar7] +
                   granule_info->table_select[2] * *(int *)(iVar7 * 4 + 0x67e174));

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFramedModel *this_ptr)
 
 {
@@ -283,7 +281,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     local_48 = local_5c;
     iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
     if (iVar8 != 0) {
-      local_5c = local_48 * _DAT_00620def;
+      local_5c = local_48 * 0.1f;
     }
     iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     if (iVar8 != 0) {
@@ -404,9 +402,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         local_188 = local_188 + local_54;
         local_50 = 0;
       }
-      local_cc = (int)ROUND(local_18c * _DAT_0065c96c);
-      local_c8 = (int)ROUND(local_188 * _DAT_0065c96c);
-      local_c4 = (int)ROUND(local_184 * _DAT_0065c96c);
+      local_cc = (int)ROUND(local_18c * 256.0f);
+      local_c8 = (int)ROUND(local_188 * 256.0f);
+      local_c4 = (int)ROUND(local_184 * 256.0f);
       if ((local_cc != 0 || local_c8 != 0) || local_c4 != 0) {
         iVar8 = 0;
         for (iVar10 = 0; iVar10 < this_ptr->vertex_count * this_ptr->frame_count;

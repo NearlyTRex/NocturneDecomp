@@ -9,7 +9,7 @@
 int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9b90(CCryptVessel *this_ptr)
 
 {
-  if (((this_ptr->base_actor).was_created == 1) && (this_ptr->field3_0x2d4 == 0)) {
+  if (((this_ptr->base).was_created == 1) && (this_ptr->unk2 == 0)) {
     return 1;
   }
   return 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_icepick.cpp_staticInit_FUN_004f7d80(void)
+; __cdecl void core_icepick.cpp_staticInit_FUN_004f7d80(void)
 ;
 ;
 ; Referenced Globals:

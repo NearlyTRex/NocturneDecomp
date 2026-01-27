@@ -61,9 +61,9 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;   uchar[32768] g_ColorCubeLookup
 ;   int g_ActiveRenderColor
-;   undefined4 DAT_03364ce0
-;   undefined4 DAT_03364ce4
-;   undefined4 DAT_03364ce8
+;   int INT_03364ce0
+;   int INT_03364ce4
+;   int INT_03364ce8
 ;   undefined1 DAT_03364d14
 ;   ... and 3 more
 ;
@@ -147,7 +147,7 @@ section .text
     SUB EAX,0xa                         ; 00577b9b
     PUSH EAX                            ; 00577b9e
     PUSH 0x0                            ; 00577b9f
-    PUSH 0x3364ce0                      ; 00577ba1 | DAT_03364ce0
+    PUSH 0x3364ce0                      ; 00577ba1 | INT_03364ce0
     CALL shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60 ; 00577ba6
         ;   XREF to: 004a5b60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60(CEdScrollBar * this_ptr, int left_pos, int top_pos, int right_pos, ...)
     MOV EDX,dword ptr [0x00679394]      ; 00577bab | g_WindowWidth
@@ -157,13 +157,13 @@ section .text
     SBB EAX,EDX                         ; 00577bb9
     SAR EAX,0x6                         ; 00577bbb
     ADD ESP,0x14                        ; 00577bbe
-    PUSH 0x3364ce0                      ; 00577bc1 | DAT_03364ce0
-    MOV dword ptr [0x03364ce4],EBX      ; 00577bc6 | DAT_03364ce4
-    MOV [0x03364ce8],EAX                ; 00577bcc | DAT_03364ce8
+    PUSH 0x3364ce0                      ; 00577bc1 | INT_03364ce0
+    MOV dword ptr [0x03364ce4],EBX      ; 00577bc6 | INT_03364ce4
+    MOV [0x03364ce8],EAX                ; 00577bcc | INT_03364ce8
     CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 ; 00577bd1
         ;   XREF to: 004a5fc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00577bd6
-    PUSH 0x3364ce0                      ; 00577bd9 | DAT_03364ce0
+    PUSH 0x3364ce0                      ; 00577bd9 | INT_03364ce0
     CALL shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10 ; 00577bde
         ;   XREF to: 004a5c10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00577be3
@@ -261,7 +261,7 @@ section .text
     MOV DL,AH                           ; 00577d02
         ;   Label: LAB_00577d02
     OR DL,0x1                           ; 00577d04
-    PUSH 0x3364ce0                      ; 00577d07 | DAT_03364ce0
+    PUSH 0x3364ce0                      ; 00577d07 | INT_03364ce0
     MOV byte ptr [0x03364d14],DL        ; 00577d0c | DAT_03364d14
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0 ; 00577d12
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
@@ -281,7 +281,7 @@ section .text
         ;   XREF to: 00577c58 (CONDITIONAL_JUMP)  ; LAB_00577c58
     MOV EAX,dword ptr [ESP + 0x24]      ; 00577d41
         ;   Label: LAB_00577d41
-    SUB EAX,dword ptr [0x03364ce0]      ; 00577d45 | DAT_03364ce0
+    SUB EAX,dword ptr [0x03364ce0]      ; 00577d45 | INT_03364ce0
     MOV ECX,dword ptr [ESP + 0x38]      ; 00577d4b
     MOV dword ptr [ESP + 0x3c],EAX      ; 00577d4f
     ADD EAX,ECX                         ; 00577d53

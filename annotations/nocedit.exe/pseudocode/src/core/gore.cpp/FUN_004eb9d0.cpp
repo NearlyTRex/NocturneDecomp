@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_gore.cpp_FUN_004eb9d0() */
-
 void core_gore_cpp_FUN_004eb9d0(void)
 
 {
@@ -34,18 +31,17 @@ void core_gore_cpp_FUN_004eb9d0(void)
   DAT_02d83368.surface_normal.B = 0;
   DAT_02d83368.surface_normal.C = 0;
   DAT_02d83368.surface_normal.D = 0;
-  _DAT_02d83380 = 0;
-  _DAT_02d83384 = 1;
-  _DAT_02d83388 = 2;
-  _DAT_02d8338c = 3;
+  INT_02d83380 = 0;
+  INT_02d83384 = 1;
+  INT_02d83388 = 2;
+  INT_02d8338c = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_18);
-  _DAT_02d83390 = local_18.x;
-  *(uint *)(&DAT_02d83394 + (uint)bVar5 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar5 * -8 + 4);
-  *(uint *)(&DAT_02d83398 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  _DAT_02d83394 = 0;
+  INT_02d83390 = local_18.x;
+  (&INT_02d83394)[(uint)bVar5 * -2] = *(int *)((int)&local_18 + (uint)bVar5 * -8 + 4);
+  (&INT_02d83398)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
+       *(int *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  INT_02d83394 = 0;
   pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
   piVar3 = local_40;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -66,8 +62,8 @@ void core_gore_cpp_FUN_004eb9d0(void)
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_54 * fVar6));
   fVar6 = (float10)dVar9;
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
-  _DAT_02d8339c = (int)ROUND(dVar8);
-  _DAT_02d833a0 = (int)ROUND(fVar6);
-  _DAT_02d833a4 = (int)ROUND(dVar9);
+  INT_02d8339c = (int)ROUND(dVar8);
+  INT_02d833a0 = (int)ROUND(fVar6);
+  INT_02d833a4 = (int)ROUND(dVar9);
   return;
 }

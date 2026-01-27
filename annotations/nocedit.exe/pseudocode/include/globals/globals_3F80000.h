@@ -47,6 +47,9 @@ extern SCollisionInfo DAT_03f8fae8[100];
 extern SMRGLTextureBasic g_CurrentTexture;
 
 // float
+extern float FLOAT_03f875f0;
+extern float FLOAT_03f875f4;
+extern float FLOAT_03f875f8;
 extern float g_WaterAnimationPhase;
 
 // int
@@ -59,6 +62,7 @@ extern int g_CurrentTextureIndex;
 extern int g_WaterAnimationTimer;
 extern int g_WaterCurrentFrame;
 extern int g_VisibleWaterTileCount;
+extern int INT_03f8f62c;
 
 // int[4096]
 extern int g_VisibleWaterTilesX[4096];

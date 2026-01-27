@@ -106,7 +106,7 @@ void core_cloth_cpp_FUN_0043a420(void)
         local_74 = local_128;
       }
       local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
-      local_24 = (float)(((int)local_5c >> 1) + DAT_02d7a7b8);
+      local_24 = (float)(((int)local_5c >> 1) + INT_02d7a7b8);
       local_1c = pCVar7[10].x;
       if (local_1c < local_24) {
         local_2c = local_24 - local_1c;
@@ -180,7 +180,7 @@ void core_cloth_cpp_FUN_0043a420(void)
         fVar1 = local_ac * *(float *)(iVar5 + 0x38);
         fVar2 = local_a8 * *(float *)(iVar5 + 0x3c);
         local_58 = fVar2 * fVar2 + fVar1 * fVar1;
-        local_54 = (float)(((int)local_58 >> 1) + DAT_02d7a7b8);
+        local_54 = (float)(((int)local_58 >> 1) + INT_02d7a7b8);
         if (local_54 < 1.0) {
           local_48 = local_ac * local_ac + local_a8 * local_a8;
           local_44 = (float)(g_LightAttenuationMax - ((int)local_48 >> 1));

@@ -14,9 +14,9 @@ int * __cdecl core_tvbat_cpp_CTVBat_FUN_005e5050(CTVBat *this_ptr)
   double dVar3;
   float *in_stack_00000008;
   
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->field1_0xbeb4 + 8));
+  dVar3 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->unk1 + 8));
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)(this_ptr->field1_0xbeb4 + 0xc));
+                     ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc));
   pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3) * 2;
   *in_stack_00000008 = pCVar2->x;
   in_stack_00000008[1] = pCVar2->y;

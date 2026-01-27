@@ -14,7 +14,7 @@ void core_tommygun_cpp_FUN_005de5a0(void)
 {
   CWeapon *in_stack_00000004;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[1].base.actor_name + 4));
   core_weapon_cpp_CWeapon_FUN_005ee640(in_stack_00000004);
   return;
 }

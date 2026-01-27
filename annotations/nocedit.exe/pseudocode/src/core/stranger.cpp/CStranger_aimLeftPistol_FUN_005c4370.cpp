@@ -44,7 +44,7 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::aimLeftPistol - no weapon?");
   }
   (**(code **)(*(int *)((int)in_stack_00000004[0x17a].orient_matrix.m[0].x + 0x154) + 0xf4))();
-  bone_index = DAT_03f6bad8;
+  bone_index = INT_03f6bad8;
   fStack_24 = -1.3089969;
   fStack_2c = 0.5235988;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

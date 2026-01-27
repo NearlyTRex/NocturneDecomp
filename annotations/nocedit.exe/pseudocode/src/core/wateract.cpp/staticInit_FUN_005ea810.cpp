@@ -2,20 +2,19 @@
 // Address: 005ea810
 // Address Range: [[005ea810, 005ea85b]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_wateract.cpp_staticInit_FUN_005ea810(void)
+// Signature: void core_wateract.cpp_staticInit_FUN_005ea810(void)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void)
+void __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void)
 
 {
-  CDemonActorType *pCVar1;
-  
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_03f8f638,100,&g_CVectorTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
             (DAT_03f8fae8,100,&g_SCollisionInfoTypeInfo);
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CWaterActorClassInfo,"CWaterActor",core_wateract_cpp_FUN_005ea860,
-                      &g_CWaterActorVersion,6,&g_CDemonActorClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CWaterActorClassInfo,"CWaterActor",
+             core_wateract_cpp_factoryFunc_FUN_005ea860,&g_CWaterActorVersion,6,
+             &g_CDemonActorClassInfo);
+  return;
 }

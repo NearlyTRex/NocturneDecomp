@@ -2,64 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 54,
-        "line": 23,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 27,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 28,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
-      },
-      {
-        "category": "missing_member",
-        "column": 55,
-        "line": 28,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
-      },
-      {
-        "category": "missing_member",
-        "column": 24,
-        "line": 30,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
-      },
-      {
-        "category": "missing_member",
-        "column": 55,
-        "line": 31,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 35,
-        "line": 34,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field4_0xbec0'"
+        "category": "other",
+        "column": 34,
+        "line": 37,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
         "line": 38,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 39,
-        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 58,
-        "line": 54,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
       }
     ],
     "success": false,
@@ -73,30 +25,30 @@
       {
         "category": "other",
         "column": 18,
-        "line": 38,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 39,
+        "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 87,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 46,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 174
+    "total_lines": 173
   },
   "cross_references": [],
   "function": {
@@ -181,14 +133,14 @@
     },
     {
       "addr": "03f96b44",
-      "name": "DAT_03f96b44",
-      "type": "undefined4",
+      "name": "FLOAT_03f96b44",
+      "type": "float",
       "value": null
     },
     {
       "addr": "03f96b50",
-      "name": "DAT_03f96b50",
-      "type": "undefined4",
+      "name": "FLOAT_03f96b50",
+      "type": "float",
       "value": null
     }
   ],
@@ -284,14 +236,14 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"

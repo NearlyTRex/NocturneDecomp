@@ -23,12 +23,12 @@ typedef struct CGlass {
     int background_flag; // 0x370
     SMRGLTextureBasic broken_texture; // 0x374
     CVector3f broken_vertices[25]; // 0x38c
-    char field_1208[500]; // 0x4b8
+    char unk1[500]; // 0x4b8
     SMRGLPrimitiveQuad broken_quads[16]; // 0x6ac
-    int field_2860; // 0xb2c
-    int field_2864; // 0xb30
+    int unk2; // 0xb2c
+    int unk3; // 0xb30
     int broken_vertex_count; // 0xb34
     int broken_polygon_count; // 0xb38
-    int field_2876; // 0xb3c
+    int unk4; // 0xb3c
 } CGlass;
 

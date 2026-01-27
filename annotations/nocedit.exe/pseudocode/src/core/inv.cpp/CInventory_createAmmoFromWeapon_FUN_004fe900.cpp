@@ -30,20 +30,20 @@ core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventory *this_ptr,C
   }
   this_ptr_00->ammo_count = weapon->ammo_count;
   this_ptr_00->ammo_type = weapon->ammo_type;
-  core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(&weapon->base_actor);
+  core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(&weapon->base);
   core_ammo_cpp_CAmmo_FUN_00410fd0();
-  (*((this_ptr_00->base_actor).vtable._ub)->setup)(&this_ptr_00->base_actor);
+  (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   pcVar3 = "Some_ammo";
   pCVar2 = this_ptr_00;
   do {
     cVar1 = *pcVar3;
-    (pCVar2->base_actor).actor_name[0] = cVar1;
+    (pCVar2->base).actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    (pCVar2->base_actor).actor_name[1] = cVar1;
-    pCVar2 = (CAmmo *)((pCVar2->base_actor).actor_name + 2);
+    (pCVar2->base).actor_name[1] = cVar1;
+    pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_CInventory_addItem_FUN_004fd600((CInventory *)weapon,&this_ptr_00->base_actor,0);
+  core_inv_cpp_CInventory_addItem_FUN_004fd600((CInventory *)weapon,&this_ptr_00->base,0);
   return;
 }

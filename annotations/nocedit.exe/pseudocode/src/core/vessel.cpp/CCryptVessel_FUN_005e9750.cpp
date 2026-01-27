@@ -17,17 +17,17 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
   int iStack_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr2,&(this_ptr->base_actor).location.position);
-  position = &(this_ptr->base_actor).orient;
+            (g_CDemonRendererPtr2,&(this_ptr->base).location.position);
+  position = &(this_ptr->base).orient;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)position,(CVector3i *)0x0);
-  this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base_actor,(CBoundingBox3D *)local_30);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                          (&this_ptr->base,(CBoundingBox3D *)local_30);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  *(int *)(this_ptr->field14_0x3c0 + 0x428) = iVar1;
+  *(int *)(this_ptr->unk3 + 0x428) = iVar1;
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  if (*(int *)(this_ptr->field14_0x3c0 + 0x428) == 0) {
-    return *(int *)(this_ptr->field14_0x3c0 + 0x428);
+  if (*(int *)(this_ptr->unk3 + 0x428) == 0) {
+    return *(int *)(this_ptr->unk3 + 0x428);
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)position,(CVector3i *)0x0);
@@ -46,5 +46,5 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  return *(int *)(this_ptr->field14_0x3c0 + 0x428);
+  return *(int *)(this_ptr->unk3 + 0x428);
 }

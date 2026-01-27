@@ -732,7 +732,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00416f53
     ADD ESP,0x8                         ; 00416f56
     LEA EAX,[EBP + 0xffffff02]          ; 00416f59
-    MOV ESI,dword ptr [0x008227c0]      ; 00416f5f | DAT_008227c0
+    MOV ESI,dword ptr [0x008227c0]      ; 00416f5f | INT_008227c0
     PUSH EAX                            ; 00416f65
     LEA EAX,[ESI*0x4 + 0x0]             ; 00416f66
     MOV dword ptr [EBP + 0xffffff36],EBX ; 00416f6d
@@ -874,7 +874,7 @@ section .text
     XOR ESI,ESI                         ; 004170d8
     MOV EAX,[0x006810c8]                ; 004170da | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004170da
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004170df | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004170df | g_CDemonSetInstance.unk4[7996]
     JGE 0x00417111                      ; 004170e5
         ;   XREF to: 00417111 (CONDITIONAL_JUMP)  ; LAB_00417111
     MOV EDX,dword ptr [0x00822820]      ; 004170e7 | g_CBatmanClassInfo.name_hash
@@ -898,7 +898,7 @@ section .text
         ;   XREF to: 00417102 (CONDITIONAL_JUMP)  ; LAB_00417102
     MOV EAX,[0x006810c8]                ; 00417111 | g_CDemonSetPtr
         ;   Label: LAB_00417111
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 00417116 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 00417116 | g_CDemonSetInstance.unk4[7996]
     JNZ 0x00417021                      ; 0041711c
         ;   XREF to: 00417021 (CONDITIONAL_JUMP)  ; LAB_00417021
     PUSH 0x1                            ; 00417122

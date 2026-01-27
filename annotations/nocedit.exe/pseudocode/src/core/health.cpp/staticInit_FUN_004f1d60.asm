@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_health.cpp_staticInit_FUN_004f1d60(void)
+; __cdecl void core_health.cpp_staticInit_FUN_004f1d60(void)
 ;
 ;
 ; Referenced Globals:

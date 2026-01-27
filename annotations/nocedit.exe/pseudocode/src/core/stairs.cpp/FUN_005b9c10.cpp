@@ -67,7 +67,7 @@ core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemonActor *para
   int iStack_8;
   
   bVar13 = 0;
-  if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
+  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(param_1);

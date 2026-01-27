@@ -9,7 +9,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 61,
+        "column": 55,
         "line": 28,
         "message": "'stack0xffffffdc' was not declared in this scope"
       },
@@ -84,7 +84,7 @@
       },
       {
         "category": "other",
-        "column": 57,
+        "column": 51,
         "line": 93,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -385,14 +385,14 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffdc,",
+      "text": "(&in_stack_00000004->base,(CVector3f *)&stack0xffffffdc,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 21,
       "match": "&stack0xffffffdc",
-      "text": "(&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffdc,",
+      "text": "(&in_stack_00000004->base,(CVector3f *)&stack0xffffffdc,",
       "type": "stack_ref"
     },
     {
@@ -504,7 +504,7 @@
       "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_00000004",
-      "text": "((CMotionController *)(in_stack_00000004[1].base_actor.create_event + 0x20),iVar2,1);",
+      "text": "((CMotionController *)(in_stack_00000004[1].base.create_event + 0x20),iVar2,1);",
       "type": "stack_param"
     },
     {
@@ -518,14 +518,14 @@
       "description": "Unresolved stack parameter",
       "line": 85,
       "match": "in_stack_00000004",
-      "text": "uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
+      "text": "uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 86,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,\"voicuhurt.wav\");",
+      "text": "(&in_stack_00000004->base,\"voicuhurt.wav\");",
       "type": "stack_param"
     },
     {

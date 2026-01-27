@@ -42,17 +42,16 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
   int iStack_14;
   
   bVar9 = 0;
-  if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
+  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
-    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                            (&this_ptr->base_actor,&local_a4);
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
+    this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a4);
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     iStack_1c = iVar3;
-    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
     if (iVar3 != 0) {
-      switch(*(uint *)(this_ptr->field1_0x158 + 0x1c)) {
+      switch(*(uint *)(this_ptr->unk + 0x1c)) {
       default:
         iVar3 = 0xff;
         iVar4 = 0;
@@ -89,24 +88,24 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         iVar4 = 0x100;
         iVar3 = 0;
       }
-      if (this_ptr == *(CTrigger **)(g_CDemonMissionPtr->field2_0xc + 0x1c)) {
+      if (this_ptr == *(CTrigger **)(g_CDemonMissionPtr->unk2 + 0x1c)) {
         iVar6 = 0x80;
       }
       else {
         iVar6 = 0x40;
       }
-      if (*(int *)(this_ptr->field1_0x158 + 0x18) == 1) {
-        core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
+      if (*(int *)(this_ptr->unk + 0x18) == 1) {
+        core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
         dVar12 = crt_math_c_round_FUN_005fe6b0
-                           ((double)(*(float *)(this_ptr->field1_0x158 + 8) * (float)0.10000000000000001
-                                    + (float)12));
+                           ((double)(*(float *)(this_ptr->unk + 8) * (float)0.10000000000000001 +
+                                    (float)12));
         fStack_cc = (float)(int)ROUND(dVar12);
         if (0x28 < (int)fStack_cc) {
           fStack_cc = 5.60519e-44;
         }
-        (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)(&this_ptr->base_actor,&CStack_88);
+        (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_88);
         pCVar2 = g_CDemonRendererPtr2;
-        fVar1 = *(float *)(this_ptr->field1_0x158 + 8) * (float)0.5;
+        fVar1 = *(float *)(this_ptr->unk + 8) * (float)0.5;
         fStack_5c = 0.0;
         CStack_54.x = 0;
         fStack_58 = CStack_88.max.x;
@@ -220,10 +219,10 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         }
         engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
                   (g_CDemonRendererPtr2,1);
-        core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
+        core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
         return iStack_1c;
       }
-      core_actor_cpp_CDemonActor_FUN_0040dec0(&this_ptr->base_actor);
+      core_actor_cpp_CDemonActor_FUN_0040dec0(&this_ptr->base);
       return iStack_1c;
     }
   }

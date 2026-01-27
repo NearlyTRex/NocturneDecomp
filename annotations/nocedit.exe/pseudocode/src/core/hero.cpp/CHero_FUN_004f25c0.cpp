@@ -14,7 +14,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f25c0(CHero *this_ptr)
   CVector3f *in_stack_0000000c;
   CVector3f *in_stack_00000010;
   
-  if ((g_CGamePtr->field53_0x1d0 == 0) && ((this_ptr->field1_0xbe24 & 0x7fffffffU) == 0)) {
+  if ((g_CGamePtr->unk2 == 0) && ((this_ptr->unk1 & 0x7fffffffU) == 0)) {
     iVar1 = core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150
                       ((CDemonActor *)this_ptr,in_stack_00000008,in_stack_0000000c,in_stack_00000010
                       );

@@ -11,6 +11,6 @@ SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVerte
 {
   int iVar1;
   
-  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)(this_ptr[0xd].field0_0x0 + 0xf));
+  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)(this_ptr[0xd].unk + 0xf));
   return (SClothVertex *)(iVar1 + -0xec);
 }

@@ -7,11 +7,11 @@
 ; CShovel *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_shovel.cpp_FUN_00588b60 at 00588b7a
+;   core_shovel.cpp_factoryFunc_FUN_00588b60 at 00588b7a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoveit_kfm_00649b9a
-;   CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_00662bd4
+;   CDemonActor_vtable g_CShovelVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -32,7 +32,7 @@ section .text
     MOV EBX,EAX                         ; 00588bb3
     ADD EAX,0x158                       ; 00588bb5
     PUSH EAX                            ; 00588bba
-    MOV dword ptr [EAX + -0x4],0x662bd4 ; 00588bbb | PTR_core_weapon.cpp_ActorModelSomething_FUN_00662bd4
+    MOV dword ptr [EAX + -0x4],0x662bd4 ; 00588bbb | g_CShovelVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00588bc2
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2e0],0x7     ; 00588bc7

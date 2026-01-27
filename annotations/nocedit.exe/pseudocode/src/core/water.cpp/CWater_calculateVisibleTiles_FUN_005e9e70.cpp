@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr)
 
 {
@@ -57,10 +55,10 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
     core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70
               (&g_CDemonRaytraceInstance,(CVector3f *)local_8c);
     fVar1 = (float)0.5;
-    _DAT_03f875f0 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;
-    _DAT_03f875f8 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;
+    FLOAT_03f875f0 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;
+    FLOAT_03f875f8 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;
     local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;
-    _DAT_03f875f4 = 0.0;
+    FLOAT_03f875f4 = 0.0;
     local_20 = 0.0;
     if (0.0 < local_28) {
       local_20 = local_28;
@@ -84,9 +82,9 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
         iVar5 = -local_1c;
         if (iVar5 < local_1c) {
           do {
-            local_54.x = (float)iVar7 * this_ptr->tile_size + _DAT_03f875f0;
-            local_54.y = this_ptr->water_level_y + _DAT_03f875f4;
-            local_54.z = (float)iVar5 * this_ptr->tile_size + _DAT_03f875f8;
+            local_54.x = (float)iVar7 * this_ptr->tile_size + FLOAT_03f875f0;
+            local_54.y = this_ptr->water_level_y + FLOAT_03f875f4;
+            local_54.z = (float)iVar5 * this_ptr->tile_size + FLOAT_03f875f8;
             local_18 = iVar5;
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                       (g_CDemonRendererPtr2,&local_54);

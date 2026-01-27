@@ -39,43 +39,43 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
   int local_20;
   float local_18;
   
-  fVar3 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) - in_stack_00000008;
-  *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) = fVar3;
+  fVar3 = *(float *)(in_stack_00000004[1].base.create_event + 0x24) - in_stack_00000008;
+  *(float *)(in_stack_00000004[1].base.create_event + 0x24) = fVar3;
   if (0.0 < fVar3) {
-    *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) =
-         *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) + 1;
+    *(int *)(in_stack_00000004[1].base.create_event + 0x20) =
+         *(int *)(in_stack_00000004[1].base.create_event + 0x20) + 1;
     local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-    *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) = local_18;
+    *(float *)(in_stack_00000004[1].base.create_event + 0x24) = local_18;
   }
   if (in_stack_00000004->carry_hands[1].carry_actor == (CDemonActor *)0x0) {
-    if (*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) <= 0.0) {
-      iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);
+    if (*(float *)(in_stack_00000004[1].base.create_event + 0x28) <= 0.0) {
+      iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);
       if (iVar8 != 0) {
         iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x8c))();
         if (iVar8 != 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s can't pick up %s, sombody else beat me to it!\n",in_stack_00000004,
-                     *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x2c));
+                     *(uint *)(in_stack_00000004[1].base.create_event + 0x2c));
           pCVar4 = in_stack_00000004 + 1;
-          (pCVar4->base_actor).create_event[0x2c] = '\0';
-          (pCVar4->base_actor).create_event[0x2d] = '\0';
-          (pCVar4->base_actor).create_event[0x2e] = '\0';
-          (pCVar4->base_actor).create_event[0x2f] = '\0';
+          (pCVar4->base).create_event[0x2c] = '\0';
+          (pCVar4->base).create_event[0x2d] = '\0';
+          (pCVar4->base).create_event[0x2e] = '\0';
+          (pCVar4->base).create_event[0x2f] = '\0';
           pCVar4 = in_stack_00000004 + 1;
-          (pCVar4->base_actor).create_event[0x28] = '\0';
-          (pCVar4->base_actor).create_event[0x29] = '\0';
-          (pCVar4->base_actor).create_event[0x2a] = '\0';
-          (pCVar4->base_actor).create_event[0x2b] = '\0';
+          (pCVar4->base).create_event[0x28] = '\0';
+          (pCVar4->base).create_event[0x29] = '\0';
+          (pCVar4->base).create_event[0x2a] = '\0';
+          (pCVar4->base).create_event[0x2b] = '\0';
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->model).motion_controller,1,1);
           return 0;
         }
         iVar8 = -1;
-        if (*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) < 0.0) {
-          iVar6 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c
-                                                ) + 0x154) + 0x7c))();
+        if (*(float *)(in_stack_00000004[1].base.create_event + 0x28) < 0.0) {
+          iVar6 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base.create_event + 0x2c) +
+                                       0x154) + 0x7c))();
           if (iVar6 == 3) {
-            pCVar1 = *(CDemonActor **)(in_stack_00000004[1].base_actor.create_event + 0x2c);
+            pCVar1 = *(CDemonActor **)(in_stack_00000004[1].base.create_event + 0x2c);
             (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,(CBoundingBox3D *)(auStack_a0 + 4));
             uStack_30 = 0x3f000000;
             core_bodypart_cpp_FUN_0041b540();
@@ -94,24 +94,24 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
           }
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s beginning to pickup %s\n",in_stack_00000004,
-                     *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x2c));
+                     *(uint *)(in_stack_00000004[1].base.create_event + 0x2c));
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->model).motion_controller,7,1);
           return 1;
         }
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s can't pick up %s, giving up!!!!\n",in_stack_00000004,
-                   *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x2c));
+                   *(uint *)(in_stack_00000004[1].base.create_event + 0x2c));
         pCVar4 = in_stack_00000004 + 1;
-        (pCVar4->base_actor).create_event[0x2c] = '\0';
-        (pCVar4->base_actor).create_event[0x2d] = '\0';
-        (pCVar4->base_actor).create_event[0x2e] = '\0';
-        (pCVar4->base_actor).create_event[0x2f] = '\0';
+        (pCVar4->base).create_event[0x2c] = '\0';
+        (pCVar4->base).create_event[0x2d] = '\0';
+        (pCVar4->base).create_event[0x2e] = '\0';
+        (pCVar4->base).create_event[0x2f] = '\0';
         pCVar4 = in_stack_00000004 + 1;
-        (pCVar4->base_actor).create_event[0x28] = '\0';
-        (pCVar4->base_actor).create_event[0x29] = '\0';
-        (pCVar4->base_actor).create_event[0x2a] = -0x60;
-        (pCVar4->base_actor).create_event[0x2b] = 'A';
+        (pCVar4->base).create_event[0x28] = '\0';
+        (pCVar4->base).create_event[0x29] = '\0';
+        (pCVar4->base).create_event[0x2a] = -0x60;
+        (pCVar4->base).create_event[0x2b] = 'A';
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->model).motion_controller,1,1);
         return 0;
@@ -125,7 +125,7 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
         pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_20);
         pCVar5 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
         if (pCVar5 == (CDemonActor *)0x0) {
-          iVar6 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,&in_stack_00000004->base_actor);
+          iVar6 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,&in_stack_00000004->base);
           if (iVar6 == 3) {
             pCVar7 = (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,(CBoundingBox3D *)auStack_a0);
             CStack_58.z = (pCVar7->max).x - (pCVar7->min).x;
@@ -136,12 +136,12 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
               iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,"CBodyPart");
               if (iVar6 == 0) {
                 local_2c = (pCVar1->location).position.x -
-                           (in_stack_00000004->base_actor).location.position.x;
+                           (in_stack_00000004->base).location.position.x;
                 fStack_28 = (pCVar1->location).position.y -
-                            (in_stack_00000004->base_actor).location.position.y;
+                            (in_stack_00000004->base).location.position.y;
                 fStack_28 = fStack_28 * fStack_28;
                 local_24 = (pCVar1->location).position.z -
-                           (in_stack_00000004->base_actor).location.position.z;
+                           (in_stack_00000004->base).location.position.z;
                 fStack_28 = fStack_28 * fStack_28;
                 fVar3 = SQRT(local_24 * local_24 + local_2c * local_2c + fStack_28 * fStack_28);
                 if (((float)5 <= fVar3) && ((int)fVar3 < 0x41700001)) {
@@ -161,29 +161,29 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
         iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,(int)local_2c + -1);
         uVar2 = auStack_c0[iVar8 + -5];
         pCVar4 = in_stack_00000004 + 1;
-        (pCVar4->base_actor).create_event[0x28] = '\0';
-        (pCVar4->base_actor).create_event[0x29] = '\0';
-        (pCVar4->base_actor).create_event[0x2a] = ' ';
-        (pCVar4->base_actor).create_event[0x2b] = -0x3e;
-        iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20);
-        *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x2c) = uVar2;
-        *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) = iVar8 + 1;
+        (pCVar4->base).create_event[0x28] = '\0';
+        (pCVar4->base).create_event[0x29] = '\0';
+        (pCVar4->base).create_event[0x2a] = ' ';
+        (pCVar4->base).create_event[0x2b] = -0x3e;
+        iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x20);
+        *(uint *)(in_stack_00000004[1].base.create_event + 0x2c) = uVar2;
+        *(int *)(in_stack_00000004[1].base.create_event + 0x20) = iVar8 + 1;
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s is going to try to pick up %s\n",in_stack_00000004,
-                   *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x2c));
+                   *(uint *)(in_stack_00000004[1].base.create_event + 0x2c));
         return 1;
       }
     }
     else {
       in_stack_00000008 =
-           *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) - in_stack_00000008;
-      *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) = in_stack_00000008;
+           *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;
+      *(float *)(in_stack_00000004[1].base.create_event + 0x28) = in_stack_00000008;
       if (in_stack_00000008 < 0.0) {
         in_stack_00000004 = in_stack_00000004 + 1;
-        (in_stack_00000004->base_actor).create_event[0x28] = '\0';
-        (in_stack_00000004->base_actor).create_event[0x29] = '\0';
-        (in_stack_00000004->base_actor).create_event[0x2a] = '\0';
-        (in_stack_00000004->base_actor).create_event[0x2b] = '\0';
+        (in_stack_00000004->base).create_event[0x28] = '\0';
+        (in_stack_00000004->base).create_event[0x29] = '\0';
+        (in_stack_00000004->base).create_event[0x2a] = '\0';
+        (in_stack_00000004->base).create_event[0x2b] = '\0';
       }
     }
   }

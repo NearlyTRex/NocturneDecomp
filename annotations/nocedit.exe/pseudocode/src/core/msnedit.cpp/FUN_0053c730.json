@@ -4,85 +4,79 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_msnedit_cpp_FUN_0053c730()'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 44,
+        "line": 41,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 44,
+        "line": 41,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 46,
+        "line": 43,
         "message": "'stack0xfffffac0' was not declared in this scope; did you mean 'in_stack_fffffac0'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 47,
-        "message": "'_DAT_02f7a028' was not declared in this scope; did you mean 'DAT_02f7c528'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 19,
-        "line": 48,
-        "message": "'DAT_02f7a030' was not declared in this scope; did you mean 'DAT_02f7c530'?"
+        "line": 45,
+        "message": "'DAT_02f7a030' was not declared in this scope; did you mean 'DAT_03FBA030'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 51,
+        "line": 48,
         "message": "'DAT_02f79c20' was not declared in this scope; did you mean 'DAT_02f797e0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 51,
+        "line": 48,
         "message": "'DAT_02f79820' was not declared in this scope; did you mean 'DAT_02f79818'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 68,
-        "message": "'DAT_02f7a030' was not declared in this scope; did you mean 'DAT_02f7c530'?"
+        "line": 65,
+        "message": "'DAT_02f7a030' was not declared in this scope; did you mean 'DAT_03FBA030'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 78,
+        "line": 75,
         "message": "'DAT_02f7a080' was not declared in this scope; did you mean 'DAT_02d7a800'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 80,
-        "message": "'DAT_02f7a02c' was not declared in this scope; did you mean 'DAT_02f7c52c'?"
+        "line": 77,
+        "message": "'DAT_02f7a02c' was not declared in this scope; did you mean 'INT_02f7a028'?"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 85,
+        "line": 82,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 88,
+        "line": 85,
         "message": "'stack0xfffffac0' was not declared in this scope; did you mean 'in_stack_fffffac0'?"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 89,
+        "line": 86,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -97,58 +91,57 @@
       {
         "category": "other",
         "column": 8,
-        "line": 34,
+        "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 44,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 44,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 58,
+        "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 58,
+        "line": 55,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 81,
+        "line": 78,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 471,
+    "complexity_score": 454,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 15,
-    "pseudocode_lines": 81,
-    "suspect_count": 36,
+    "pseudocode_lines": 79,
+    "suspect_count": 35,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 237
+    "total_lines": 235
   },
   "cross_references": [
     {
@@ -262,8 +255,8 @@
     },
     {
       "addr": "02f7a028",
-      "name": "DAT_02f7a028",
-      "type": "undefined4",
+      "name": "INT_02f7a028",
+      "type": "int",
       "value": null
     },
     {
@@ -360,253 +353,246 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 7,
       "match": "unaff_ESI",
       "text": "uint unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 10,
       "match": "unaff_EDI",
       "text": "uint unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_fffffac0",
       "text": "uint in_stack_fffffac0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_fffffac4",
       "text": "uint in_stack_fffffac4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_fffffac8",
       "text": "char **in_stack_fffffac8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x28) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 25,
       "match": "DAT_00680908",
       "text": "puVar3 = &DAT_00680908;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 34,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 36,
       "match": "&stack0xfffffac0",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 38,
       "match": "DAT_02f7a030",
       "text": "puVar5 = &DAT_02f7a030;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 41,
       "match": "DAT_02f79c20",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f79c20,\"%s\\t%s\",puVar5,&DAT_02f79820);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 41,
       "match": "DAT_02f79820",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f79c20,\"%s\\t%s\",puVar5,&DAT_02f79820);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 47,
+      "line": 44,
       "match": "&stack0xfffffac0",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 44,
       "match": "DAT_02f79c20",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "(acStack_198,\"Edit %s properties\",*(uint *)(in_stack_00000004 + 0x28))",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 52,
       "match": "&stack0xfffffac0",
       "text": "((CStrList *)&stack0xfffffac0,local_6c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 54,
       "match": "&stack0xfffffac0",
       "text": "((CPickList *)&stack0xfffffac0,acStack_198,iVar2,config_param2);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 58,
       "match": "DAT_02f7a030",
       "text": "pcVar4 = &DAT_02f7a030 + iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 68,
       "match": "DAT_02f7a080",
       "text": "if (*(int *)(&DAT_02f7a080 + iVar2) != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 70,
       "match": "DAT_02f7a02c",
       "text": "((CActorProperty *)(&DAT_02f7a02c + iVar2),",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 71,
       "match": "in_stack_00000004",
       "text": "*(CDemonActor **)(in_stack_00000004 + 0x28));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 74,
       "match": "in_stack_fffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
+      "line": 74,
       "match": "&stack0xfffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 77,
+      "line": 74,
       "match": "unaff_ESI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 77,
+      "line": 74,
       "match": "unaff_EDI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 75,
       "match": "in_stack_fffffac4",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 75,
       "match": "in_stack_fffffac8",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 78,
       "match": "in_stack_fffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 81,
+      "line": 78,
       "match": "&stack0xfffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 78,
       "match": "unaff_ESI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 78,
       "match": "unaff_EDI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 79,
       "match": "in_stack_fffffac4",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 79,
       "match": "in_stack_fffffac8",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"

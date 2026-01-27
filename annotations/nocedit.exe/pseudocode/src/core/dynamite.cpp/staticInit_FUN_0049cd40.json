@@ -3,27 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 57,
-        "line": 17,
-        "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'CDemonActor* (**)()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 19,
-        "message": "'_DAT_02ceed24' was not declared in this scope; did you mean 'DAT_02fd8d24'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 20,
-        "message": "'_DAT_02ceed28' was not declared in this scope; did you mean 'DAT_02cee5ac'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "'_DAT_02ceed2c' was not declared in this scope; did you mean 'DAT_02cee5ac'?"
+        "column": 48,
+        "line": 13,
+        "message": "cannot convert 'CDynamite* (*)()' to 'void* (**)()'"
       }
     ],
     "success": false,
@@ -36,24 +18,24 @@
       },
       {
         "category": "other",
-        "column": 45,
-        "line": 17,
+        "column": 36,
+        "line": 13,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 27,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 12,
-    "suspect_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 28
+    "total_lines": 26
   },
   "cross_references": [],
   "function": {
@@ -66,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dynamite.cpp_staticInit_FUN_0049cd40",
-    "signature": "CDemonActorType * core_dynamite.cpp_staticInit_FUN_0049cd40(void)"
+    "signature": "void core_dynamite.cpp_staticInit_FUN_0049cd40(void)"
   },
   "function_calls": [
     {
@@ -97,19 +79,19 @@
     {
       "addr": "02ceed24",
       "name": "DAT_02ceed24",
-      "type": "undefined4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02ceed28",
       "name": "DAT_02ceed28",
-      "type": "undefined4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02ceed2c",
       "name": "DAT_02ceed2c",
-      "type": "undefined4",
+      "type": "int",
       "value": null
     },
     {
@@ -157,11 +139,25 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02ceed24",
+      "text": "DAT_02ceed24 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_02ceed28",
+      "text": "DAT_02ceed28 = -0x3e000000;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_02ceed2c",
+      "text": "DAT_02ceed2c = 0;",
+      "type": "undefined_data"
     }
   ]
 }

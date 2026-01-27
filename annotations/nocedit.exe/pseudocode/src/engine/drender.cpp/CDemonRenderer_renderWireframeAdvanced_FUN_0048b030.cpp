@@ -23,7 +23,7 @@ engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
               (this_ptr,(STrianglePackedIndices *)primitive,render_flags);
     return;
   }
-  if ((this_ptr->face_count == 0) && (this_ptr->field8_0x20 == 0)) {
+  if ((this_ptr->face_count == 0) && (this_ptr->unk == 0)) {
     pSVar3 = primitive;
     do {
       uVar1 = (ushort)(pSVar3->base).type;

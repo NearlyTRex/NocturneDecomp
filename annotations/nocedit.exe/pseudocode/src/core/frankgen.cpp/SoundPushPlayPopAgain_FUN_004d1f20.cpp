@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_frankgen.cpp_SoundPushPlayPopAgain(uint param_1,
-   uint param_2, uint param_3) */
-
 void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
 
 {
@@ -17,7 +13,7 @@ void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
   float in_stack_00000008;
   char *in_stack_0000000c;
   
-  if ((_DAT_02d7b7f0 <= in_stack_00000008) &&
+  if ((FLOAT_02d7b7f0 <= in_stack_00000008) &&
      (in_stack_00000008 < *(float *)(in_stack_00000004 + 0x15c))) {
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940

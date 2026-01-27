@@ -9,9 +9,9 @@
 ; int              Stack[0xc]:4   force_immediate
 ;
 ; XREF[97]:
+;   core_baron.cpp_CBaron_FUN_004135a0 at 004135c4
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00412ebf
 ;   core_baron.cpp_FUN_00413470 at 0041355b
-;   core_baron.cpp_FUN_004135a0 at 004135c4
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041554b
 ;   core_batcreat.cpp_FUN_00416030 at 00416126
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041694e

@@ -67,7 +67,11 @@ extern char* g_WrappedTextBuffer;
 // char[256]
 extern char g_TempTextBuffer[256];
 
+// double
+extern double DOUBLE_02d7c2e0;
+
 // float
+extern float FLOAT_02d7b7f0;
 extern float FLOAT_02d7b808;
 extern float FLOAT_02d7b80c;
 extern float FLOAT_02d7b810;
@@ -84,6 +88,7 @@ extern float FLOAT_02d7b838;
 extern float FLOAT_02d7b83c;
 extern float FLOAT_02d7b840;
 extern float FLOAT_02d7b844;
+extern float FLOAT_02d7c2e8;
 
 // int
 extern int INT_02d7a7b4;
@@ -130,7 +135,6 @@ extern undefined4 DAT_02d7b7f4;
 extern undefined4 DAT_02d7b7f8;
 extern undefined4 DAT_02d7b7fc;
 extern undefined4 DAT_02d7b800;
-extern undefined4 DAT_02d7c2e8;
 
 // ushort
 extern ushort g_ShadowColor16;

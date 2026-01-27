@@ -10,7 +10,7 @@
 ;
 ; XREF[17]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040956a
-;   core_boxactor.cpp_FUN_00422390 at 004223ba
+;   core_boxactor.cpp_CBoxActor_FUN_00422390 at 004223ba
 ;   core_charactr.cpp_CCharacter_FUN_0042c5f0 at 0042c731
 ;   core_charactr.cpp_CCharacter_FUN_0042ded0 at 0042df32
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d777

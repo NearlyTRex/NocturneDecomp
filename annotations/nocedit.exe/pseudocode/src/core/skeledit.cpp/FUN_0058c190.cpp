@@ -139,10 +139,10 @@ uint core_skeledit_cpp_FUN_0058c190(void)
        ) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1260);
       crt_stdio_c_sprintf_FUN_005fdbd0(local_418,"Display %s",in_stack_00000008);
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base_strlist,local_418);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
       crt_stdio_c_sprintf_FUN_005fdbd0(local_418,"Display %s",in_stack_00000004->model_name)
       ;
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base_strlist,local_418);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
       iVar14 = 0;
       while( true ) {
         iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -502,7 +502,7 @@ LAB_0058c601:
       pSVar19 = pCVar10->texture_sets;
       pSVar23 = local_1f4.submesh_data + iVar14;
       for (iVar7 = 0x12; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *(int *)pSVar23->field0_0x0 = pSVar19->textures[0].texture_variants[0].base.type;
+        *(int *)pSVar23->unk = pSVar19->textures[0].texture_variants[0].base.type;
         pSVar19 = (STextureSet *)((int)pSVar19 + (uint)bVar24 * -8 + 4);
         pSVar23 = (SLodSubmesh *)((int)pSVar23 + (uint)bVar24 * -8 + 4);
       }

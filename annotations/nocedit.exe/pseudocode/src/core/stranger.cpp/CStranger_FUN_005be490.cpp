@@ -25,10 +25,10 @@ float * core_stranger_cpp_CStranger_FUN_005be490(void)
   CVector3f local_18;
   
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),local_30,DAT_03f6bb04)
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),local_30,INT_03f6bb04)
   ;
   pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,DAT_03f6bb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,INT_03f6bb00
                      );
   fVar5 = 0.5f;
   fVar1 = pCVar7->y;

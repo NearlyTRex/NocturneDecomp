@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 7,
-        "line": 9,
-        "message": "ambiguating new declaration of 'float core_tvbat_cpp_FUN_005e3ec0()'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 32,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 6,
     "suspect_count": 2,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 13
+    "total_lines": 12
   },
   "cross_references": [],
   "function": {
@@ -40,9 +33,9 @@
         "005e3ed1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_tvbat.cpp_FUN_005e3ec0",
-    "signature": "undefined core_tvbat.cpp_FUN_005e3ec0()"
+    "signature": "float core_tvbat.cpp_FUN_005e3ec0(float param_1)"
   },
   "function_calls": [
     {
@@ -56,8 +49,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.5,
@@ -77,10 +70,10 @@
     "pcode_op_count": 18
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 16,
     "local_size": 12,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -96,23 +89,30 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "float in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "float __cdecl core_tvbat_cpp_FUN_005e3ec0(float param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "return fVar1 * in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "text": "return fVar1 * param_1;",
+      "type": "unnamed_param"
     }
   ]
 }

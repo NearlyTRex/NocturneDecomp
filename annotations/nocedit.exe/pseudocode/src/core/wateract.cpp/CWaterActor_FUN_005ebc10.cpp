@@ -13,7 +13,7 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ebc10(CWaterActor *this_ptr)
   int x_pos;
   int *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);
+  core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base,in_stack_00000008);
   x_pos = g_ClipLeft;
   iVar1 = *in_stack_00000008;
   *in_stack_00000008 = iVar1 + 0xb;

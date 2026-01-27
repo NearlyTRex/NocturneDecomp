@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int render_mode)
 
 {
@@ -35,14 +33,14 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         g_WaterCurrentFrame = 0;
       }
     }
-    _DAT_03f8f62c = (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)0x00002000);
-    if (_DAT_03f8f62c < 0x10000) {
-      if (_DAT_03f8f62c < 0) {
-        _DAT_03f8f62c = 0;
+    INT_03f8f62c = (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)0x00002000);
+    if (INT_03f8f62c < 0x10000) {
+      if (INT_03f8f62c < 0) {
+        INT_03f8f62c = 0;
       }
     }
     else {
-      _DAT_03f8f62c = 0xffff;
+      INT_03f8f62c = 0xffff;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,g_WaterTextures + g_WaterCurrentFrame);
@@ -56,9 +54,9 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
       do {
         iVar1 = *(int *)((int)g_VisibleWaterTilesX + local_18);
         iVar2 = *(int *)((int)g_VisibleWaterTilesY + local_18);
-        local_6c.x = (float)iVar1 * this_ptr->tile_size + _DAT_03f875f0;
-        local_6c.y = this_ptr->water_level_y + _DAT_03f875f4;
-        local_6c.z = (float)iVar2 * this_ptr->tile_size + _DAT_03f875f8;
+        local_6c.x = (float)iVar1 * this_ptr->tile_size + FLOAT_03f875f0;
+        local_6c.y = this_ptr->water_level_y + FLOAT_03f875f4;
+        local_6c.z = (float)iVar2 * this_ptr->tile_size + FLOAT_03f875f8;
         local_14 = iVar2;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,&local_6c);

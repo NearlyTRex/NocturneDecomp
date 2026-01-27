@@ -143,6 +143,26 @@ def get_fpu_intrinsics():
     }
 
 
+def get_cpuid_intrinsics():
+    """Return list of CPUID intrinsics that Ghidra emits.
+
+    These are functions Ghidra generates for CPUID instruction calls.
+    Each returns a pointer to a 4-element array containing EAX, EBX, ECX, EDX.
+
+    Returns list of (ghidra_name, leaf_value, description).
+    """
+    return [
+        ("cpuid_basic_info", 0, "CPUID leaf 0 - vendor string and max leaf"),
+        ("cpuid_Version_info", 1, "CPUID leaf 1 - version and feature info"),
+        ("cpuid_Cache_params", 2, "CPUID leaf 2 - cache/TLB info"),
+        ("cpuid_Serial_number", 3, "CPUID leaf 3 - processor serial number"),
+        ("cpuid_Deterministic_cache", 4, "CPUID leaf 4 - deterministic cache params"),
+        ("cpuid_Monitor_mwait", 5, "CPUID leaf 5 - MONITOR/MWAIT features"),
+        ("cpuid_Thermal_power", 6, "CPUID leaf 6 - thermal and power management"),
+        ("cpuid_Extended_features", 7, "CPUID leaf 7 - extended features"),
+    ]
+
+
 def get_mmx_intrinsics():
     """Return dict of MMX intrinsics mapping Ghidra names to mmintrin.h functions.
 
@@ -237,6 +257,10 @@ def get_all_intrinsic_names():
 
     # MMX intrinsics
     names.update(get_mmx_intrinsics().keys())
+
+    # CPUID intrinsics
+    for name, _, _ in get_cpuid_intrinsics():
+        names.add(name)
 
     # Math intrinsics
     names.update(["ROUND", "TRUNC", "ABS", "SQRT", "NAN", "INF", "FLOOR", "CEIL"])
@@ -412,6 +436,46 @@ def generate_intrinsics_header():
     lines.append("#define emms() _mm_empty()")
     lines.append("")
     lines.append("#endif // __MMX__")
+    lines.append("")
+
+    # CPUID intrinsics
+    lines.append("// =============================================================================")
+    lines.append("// CPUID Intrinsics (CPU identification)")
+    lines.append("// =============================================================================")
+    lines.append("// These wrap the CPUID instruction. Ghidra emits these when decompiling")
+    lines.append("// CPU detection code. Each returns a pointer to a static 4-element array")
+    lines.append("// containing EAX, EBX, ECX, EDX values from CPUID.")
+    lines.append("//")
+    lines.append("// Note: The returned pointer points to static storage that is overwritten")
+    lines.append("// by subsequent calls. Copy the values if you need to preserve them.")
+    lines.append("")
+    lines.append("#if defined(_MSC_VER)")
+    lines.append("#include <intrin.h>")
+    lines.append("static inline int* _cpuid_intrinsic(int leaf) {")
+    lines.append("    static int _cpuid_regs[4];")
+    lines.append("    __cpuid(_cpuid_regs, leaf);")
+    lines.append("    return _cpuid_regs;")
+    lines.append("}")
+    lines.append("#elif defined(__GNUC__) || defined(__clang__)")
+    lines.append("#include <cpuid.h>")
+    lines.append("static inline int* _cpuid_intrinsic(int leaf) {")
+    lines.append("    static int _cpuid_regs[4];")
+    lines.append("    __cpuid(leaf, _cpuid_regs[0], _cpuid_regs[1], _cpuid_regs[2], _cpuid_regs[3]);")
+    lines.append("    return _cpuid_regs;")
+    lines.append("}")
+    lines.append("#else")
+    lines.append("// Fallback for compilers without CPUID intrinsics")
+    lines.append("static inline int* _cpuid_intrinsic(int leaf) {")
+    lines.append("    static int _cpuid_regs[4] = {0, 0, 0, 0};")
+    lines.append("    return _cpuid_regs;")
+    lines.append("}")
+    lines.append("#endif")
+    lines.append("")
+
+    # Generate individual CPUID wrapper macros
+    for name, leaf, desc in get_cpuid_intrinsics():
+        lines.append(f"// {desc}")
+        lines.append(f"#define {name}(x) _cpuid_intrinsic(x)")
     lines.append("")
 
     # Math intrinsics

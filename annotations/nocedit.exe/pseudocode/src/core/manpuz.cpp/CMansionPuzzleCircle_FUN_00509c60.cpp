@@ -16,7 +16,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509c60(CMansionPuzzleCir
   local_1c.y = (int)((float)in_stack_00000008 * 0.5235988f);
   local_1c.x = 0;
   local_1c.z = 0;
-  local_28.z = *(int *)(this_ptr->field10_0x648 + 0xec4);
+  local_28.z = *(int *)(this_ptr->unk3 + 0xec4);
   local_28.x = 0;
   local_28.y = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_lever.cpp_staticInit_FUN_00504760(void)
+; __cdecl void core_lever.cpp_staticInit_FUN_00504760(void)
 ;
 ;
 ; Referenced Globals:

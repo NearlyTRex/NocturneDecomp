@@ -1,0 +1,139 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 15,
+        "message": "cannot convert 'CBaronWeapon* (*)()' to 'void* (**)()'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 14,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "00489d30",
+      "from_addr": "0048a0e2",
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00412b41",
+    "address_range": [
+      [
+        "00412b41",
+        "00412b73"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_baron.cpp_staticInit_FUN_00412b41",
+    "signature": "void core_baron.cpp_staticInit_FUN_00412b41(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c2e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_registerActorClass_FUN_0040c2e0"
+    },
+    {
+      "addr": "00478ce0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614eb8",
+      "name": "s_CBaronWeapon_00614eb8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e478",
+      "name": "g_CBaronWeaponClassVersion",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "0082251c",
+      "name": "g_CKeyFramedModelInstanceInstance",
+      "type": "CKeyFramedModelInstance",
+      "value": null
+    },
+    {
+      "addr": "00822698",
+      "name": "g_CBaronWeaponClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    },
+    {
+      "addr": "03f95d40",
+      "name": "g_CWeaponClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "estimated_params": 0
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.923076923076923,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 7,
+      "INT_ADD": 3,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 9,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 9,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 51
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

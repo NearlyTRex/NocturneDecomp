@@ -45,14 +45,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
   pCVar1 = g_CDemonSetPtr;
   bVar8 = 0;
   iVar2 = *(int *)(this_ptr->cloth_data + 0x35c);
-  if ((iVar2 < 5) && (-1 < g_CDemonSetPtr->field11_0x14d148)) {
+  if ((iVar2 < 5) && (-1 < g_CDemonSetPtr->unk1)) {
     *(int *)(this_ptr->cloth_data + 0x35c) = *(int *)(this_ptr->cloth_data + 0x35c) + 1;
     local_18 = this_ptr->cloth_data + iVar2 * 0x38 + 0x360;
-    *(int *)local_18 = pCVar1->field11_0x14d148;
-    iVar2 = pCVar1->field12_0x14d14c;
+    *(int *)local_18 = pCVar1->unk1;
+    iVar2 = pCVar1->unk2;
     *(int *)(local_18 + 4) = iVar2;
     if (iVar2 < 0) {
-      iVar2 = (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc17)();
+      iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).cfunc17)();
       *(int *)(local_18 + 4) = iVar2;
     }
     local_4c.x = (g_CDemonSetPtr->collision_result_vec2).x -
@@ -122,8 +122,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
       pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar8 * -2 + 1) * 4);
     }
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-              (&local_10c,&(this_ptr->base_actor).location.position,
-               (CVector3f *)&(this_ptr->base_actor).orient);
+              (&local_10c,&(this_ptr->base).location.position,(CVector3f *)&(this_ptr->base).orient)
+    ;
     core_xform_cpp_inverse_FUN_005f6210
               ((this_ptr->model).bone_transform.bone_world_matrices + *(int *)(local_18 + 4),
                &local_2ec);

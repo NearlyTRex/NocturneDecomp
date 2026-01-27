@@ -30,10 +30,9 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,(CVector3i *)this_ptr->field1_0x38,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,(CVector3i *)this_ptr->unk,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                (*(CKeyFramedModel **)(this_ptr->field1_0x38 + 0x1c),(CKeyFramedModelInstance *)0x0,
-                 0,-1);
+                (*(CKeyFramedModel **)(this_ptr->unk + 0x1c),(CKeyFramedModelInstance *)0x0,0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
       return;
     }

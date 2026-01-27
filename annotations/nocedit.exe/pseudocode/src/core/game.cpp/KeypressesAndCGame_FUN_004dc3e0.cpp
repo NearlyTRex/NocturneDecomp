@@ -140,8 +140,8 @@ LAB_004dc4e9:
   if (g_PrevKeyboardState[iVar4] != g_KeyboardState[iVar4]) {
     ctrl->action_states[1] = (uint)(byte)g_KeyboardState[iVar4];
   }
-  iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._uc)->_uc).
-            isDamageable)(&g_HeroActors[g_LocalHeroIndex]->base_character);
+  iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
+                    (&g_HeroActors[g_LocalHeroIndex]->base);
   if (iVar4 == 0) {
     iVar4 = game->key_fire;
     if (g_PrevKeyboardState[iVar4] != g_KeyboardState[iVar4]) {
@@ -234,8 +234,8 @@ LAB_004dc4e9:
     uVar5 = (uint)(game->block_auto_save == 0);
     game->block_auto_save = uVar5;
     if (((uVar5 == 0) || (this_ptr = g_HeroActors[g_LocalHeroIndex], this_ptr == (CHero *)0x0)) ||
-       (iVar4 = (*(((this_ptr->base_character).base_actor.vtable._uc)->_uc).isDamageable)
-                          (&this_ptr->base_character), iVar4 == 0)) {
+       (iVar4 = (*(((this_ptr->base).base.vtable._uc)->_uc).isDamageable)(&this_ptr->base),
+       iVar4 == 0)) {
       if (game->block_auto_save != 0) {
         return;
       }
@@ -245,12 +245,12 @@ LAB_004dc4e9:
     }
     iVar4 = g_CDemonSetPtr->selected_camera_index;
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-              (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focusActor,1);
+              (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focus_actor,1);
     pCVar3 = g_CScriptPtr;
-    pCVar3->padding_0x10[0] = '\0';
-    pCVar3->padding_0x10[1] = '\0';
-    pCVar3->padding_0x10[2] = '\0';
-    pCVar3->padding_0x10[3] = '\0';
+    pCVar3->unk3[0] = '\0';
+    pCVar3->unk3[1] = '\0';
+    pCVar3->unk3[2] = '\0';
+    pCVar3->unk3[3] = '\0';
     if (iVar4 == g_CDemonSetPtr->selected_camera_index) {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                 (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);

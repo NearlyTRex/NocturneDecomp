@@ -8,7 +8,7 @@
 ;   char* g_EnvironmentStrings = 00000000
 ;   char** g_EnvironStringArea
 ;   char** g_EnvironmentBlock
-;   undefined4 DAT_03f9c150
+;   int INT_03f9c150
 ;
 ; Called Functions:
 ;   crt_io.c_parseFileInfo_FUN_0060e3b0
@@ -67,7 +67,7 @@ section .text
     TEST EAX,EAX                        ; 0060c6a3
     JZ 0x0060c729                       ; 0060c6a5
         ;   XREF to: 0060c729 (CONDITIONAL_JUMP)  ; LAB_0060c729
-    MOV [0x03f9c150],EAX                ; 0060c6ab | DAT_03f9c150
+    MOV [0x03f9c150],EAX                ; 0060c6ab | INT_03f9c150
     LEA EAX,[ESI*0x4 + 0x0]             ; 0060c6b0
     ADD EAX,0x4                         ; 0060c6b7
     ADD ESI,EAX                         ; 0060c6ba

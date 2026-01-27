@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 57,
+        "category": "other",
+        "column": 32,
         "line": 18,
-        "message": "'CNetGame' {aka 'struct CNetGame'} has no member named 'field7_0x118'"
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -15,6 +15,24 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -122,7 +140,7 @@
     },
     {
       "addr": "00680a00",
-      "name": "g_CNetGameInstance",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "02f7c740"
     },
@@ -146,13 +164,13 @@
     },
     {
       "addr": "02f7c740",
-      "name": "DAT_02f7c740",
-      "type": "undefined4",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
       "value": null
     },
     {
       "addr": "02f7c858",
-      "name": "DAT_02f7c858",
+      "name": "g_CNetGameInstance.unk[0]",
       "type": "undefined4",
       "value": null
     }

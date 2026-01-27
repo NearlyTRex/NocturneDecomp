@@ -40,8 +40,8 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   auStack_104._0_4_ = 8.647348e-39;
   dVar7 = crt_math_c_round_FUN_005fe6b0((double)local_c);
   local_10 = (float)(int)ROUND(dVar7);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     (&(this_ptr->base_weapon).model);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&(this_ptr->base).model)
+  ;
   pCVar2 = pCVar1->frame_bounds + (int)local_10 * 2;
   (in_stack_00000008->min).x = pCVar2->x;
   (in_stack_00000008->min).y = pCVar2->y;
@@ -49,16 +49,15 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   (in_stack_00000008->max).x = pCVar2[1].x;
   (in_stack_00000008->max).y = pCVar2[1].y;
   (in_stack_00000008->max).z = pCVar2[1].z;
-  pCStack_14 = (CKeyFramedModelInstance *)(this_ptr->field1_0x578 + 0xc);
+  pCStack_14 = (CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(pCStack_14);
   if (pCVar1->poly_count < 1) {
     return (int *)in_stack_00000008;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)auStack_74,&g_ZeroVector,(CVector3f *)this_ptr->field1_0x578);
+            ((CMatrix3x4f *)auStack_74,&g_ZeroVector,(CVector3f *)this_ptr->unk1);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            ((CMatrix3x4f *)auStack_104,&g_ZeroVector,
-             (CVector3f *)&(this_ptr->base_weapon).base_actor.orient);
+            ((CMatrix3x4f *)auStack_104,&g_ZeroVector,(CVector3f *)&(this_ptr->base).base.orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((CMatrix3x4f *)auStack_74,(CMatrix3x4f *)auStack_104,&CStack_a4);
   pCVar4 = &CStack_a4;

@@ -1,110 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 32,
-        "line": 20,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 75,
-        "line": 20,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 21,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 22,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 23,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 24,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 25,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 66,
-        "line": 26,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 66,
-        "line": 26,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 66,
-        "line": 26,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 64,
-        "line": 27,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 64,
-        "line": 27,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 64,
-        "line": 27,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 65,
-        "line": 28,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 65,
-        "line": 28,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 65,
-        "line": 28,
-        "message": "'CHero' {aka 'struct CHero'} has no member named 'field3_0xbe2c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 47,
-        "line": 29,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -116,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 59,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 22,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 90
+    "total_lines": 88
   },
   "cross_references": [],
   "function": {
@@ -211,23 +108,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ABS",
+      "text": "((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 0x20)))))))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ABS",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 0x24)) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ABS",
-      "text": "((float)0.10000000000000001 < ABS(*(float *)(this_ptr->field3_0xbe2c + 0x20)))))))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "ABS",
-      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->field3_0xbe2c + 0x24)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
-      "match": "ABS",
-      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->field3_0xbe2c + 0x28)) ||",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 0x28)) ||",
       "type": "decompiler_intrinsic"
     }
   ],

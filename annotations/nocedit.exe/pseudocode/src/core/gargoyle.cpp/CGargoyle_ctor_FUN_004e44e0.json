@@ -1,0 +1,155 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 67,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 67,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "004e44a0",
+      "from_addr": "004e44ba",
+      "name": "core_gargoyle.cpp_factoryFunc_FUN_004e44a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e44e0",
+    "address_range": [
+      [
+        "004e44e0",
+        "004e45d1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gargoyle.cpp_CGargoyle_ctor_FUN_004e44e0",
+    "signature": "CGargoyle * core_gargoyle.cpp_CGargoyle_ctor_FUN_004e44e0(CGargoyle * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9500",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062d7d6",
+      "name": "s_gargoyle_dfm_0062d7d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065ea30",
+      "name": "DAT_0065ea30",
+      "type": "float",
+      "value": "50"
+    },
+    {
+      "addr": "0065ea34",
+      "name": "DAT_0065ea34",
+      "type": "float",
+      "value": "100"
+    },
+    {
+      "addr": "0065ea44",
+      "name": "g_CGargoyleVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e44ba",
+        "call_type": "direct",
+        "caller": "core_gargoyle.cpp_factoryFunc_FUN_004e44a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.297297297297297,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 67,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 26,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 159
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGargoyle *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGargoyle",
+        "offset": 0,
+        "vtable_addr": "0065ebb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

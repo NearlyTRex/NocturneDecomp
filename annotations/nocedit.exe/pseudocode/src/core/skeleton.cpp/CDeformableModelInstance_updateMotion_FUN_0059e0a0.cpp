@@ -155,7 +155,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     (this_ptr->bone_transform).root_position.x = fVar1 * fVar2;
     return;
   }
-  if (this_ptr->field11_0x2250 == 1) {
+  if (this_ptr->unk == 1) {
     local_1c = 0;
     if (0 < this_ptr_00->bone_count) {
       local_54 = 0;
@@ -245,7 +245,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
       } while (local_2c < this_ptr_00->bone_count);
     }
   }
-  else if (this_ptr->field11_0x2250 == 2) {
+  else if (this_ptr->unk == 2) {
     pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     local_18 = 0;
     local_70 = (pCVar10->motion_list).motions[motion_index].frame_start;

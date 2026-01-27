@@ -25,8 +25,8 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   int iStack_1c;
   float local_18;
   
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon,delta_time);
-  if (*(int *)this_ptr->field1_0x578 < 1) {
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
+  if (*(int *)this_ptr->unk < 1) {
     dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);
     local_20 = SUB84(dVar3,0);
     iStack_1c = (int)((ulonglong)dVar3 >> 0x20);
@@ -61,22 +61,21 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return;
     }
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 4));
     return;
   }
-  *(int *)this_ptr->field1_0x578 = *(int *)this_ptr->field1_0x578 + -1;
+  *(int *)this_ptr->unk = *(int *)this_ptr->unk + -1;
   base_frequency = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
   local_18 = base_frequency;
   iVar1 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
-                    (*(uint *)(this_ptr->field1_0x578 + 4),base_frequency);
+                    (*(uint *)(this_ptr->unk + 4),base_frequency);
   if (iVar1 != 0) {
     return;
   }
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 4));
   crt_stdio_c_sprintf_FUN_005fdbd0(local_8c,"m-gun1.wav @ 2.3 * %f",(double)base_frequency);
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 8));
-  uVar2 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->playAmbientSound)
-                    ((CDemonActor *)this_ptr,local_8c);
-  *(uint *)(this_ptr->field1_0x578 + 4) = uVar2;
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 8));
+  uVar2 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)((CDemonActor *)this_ptr,local_8c);
+  *(uint *)(this_ptr->unk + 4) = uVar2;
   return;
 }

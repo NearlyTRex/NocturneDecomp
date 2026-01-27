@@ -9,12 +9,12 @@
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_005e0a20(CTrigger *this_ptr)
 
 {
-  if (*(int *)(this_ptr->field1_0x158 + 0x1c) != 3) {
+  if (*(int *)(this_ptr->unk + 0x1c) != 3) {
     return 1;
   }
-  this_ptr->field1_0x158[0x198] = '\x01';
-  this_ptr->field1_0x158[0x199] = '\0';
-  this_ptr->field1_0x158[0x19a] = '\0';
-  this_ptr->field1_0x158[0x19b] = '\0';
+  this_ptr->unk[0x198] = '\x01';
+  this_ptr->unk[0x199] = '\0';
+  this_ptr->unk[0x19a] = '\0';
+  this_ptr->unk[0x19b] = '\0';
   return 1;
 }

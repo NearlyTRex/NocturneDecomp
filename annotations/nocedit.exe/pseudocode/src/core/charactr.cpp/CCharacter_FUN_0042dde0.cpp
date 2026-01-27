@@ -13,8 +13,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042dde0(CCharacter *this_ptr)
   char *string_00;
   uint *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(&this_ptr->base_actor,in_stack_00000008)
-  ;
+  core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(&this_ptr->base,in_stack_00000008);
   string_00 = (this_ptr->model).model_name;
   core_actor_cpp_crc32ProcessInt_FUN_0040cf50(in_stack_00000008,(int)this_ptr->hit_points);
   if (*string_00 == '\0') {

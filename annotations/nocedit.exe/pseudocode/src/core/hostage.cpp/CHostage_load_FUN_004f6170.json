@@ -6,18 +6,6 @@
         "column": 6,
         "line": 11,
         "message": "ambiguating new declaration of 'void core_hostage_cpp_CHostage_load_FUN_004f6170()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 73,
-        "line": 54,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field13_0xec'"
-      },
-      {
-        "category": "missing_member",
-        "column": 73,
-        "line": 57,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field28_0x150'"
       }
     ],
     "success": false,
@@ -60,7 +48,7 @@
       },
       {
         "category": "other",
-        "column": 57,
+        "column": 47,
         "line": 34,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -72,49 +60,67 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 39,
+        "column": 71,
+        "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 79,
-        "line": 42,
+        "column": 69,
+        "line": 41,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 74,
+        "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 47,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 62,
         "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 61,
+        "column": 63,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 64,
+        "line": 57,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 69,
+        "line": 60,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
+        "line": 65,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 70,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 68,
         "line": 74,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -126,36 +132,30 @@
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 85,
+        "column": 14,
+        "line": 86,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 92,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 95,
+        "line": 89,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 311,
+    "complexity_score": 305,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 22,
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 80,
     "suspect_count": 22,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 273
+    "total_lines": 267
   },
   "cross_references": [],
   "function": {
@@ -415,35 +415,35 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].y,",
+      "text": "((int *)&in_stack_00000004[1].base.model.transformed_vertices[0x2a].y,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
-      "text": "((int *)(in_stack_00000004[1].base_character.model.transformed_vertices + 0x2b),",
+      "text": "((int *)(in_stack_00000004[1].base.model.transformed_vertices + 0x2b),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
-      "text": "((CDemonActor *)&in_stack_00000004[1].base_character.model.transformed_vertices[0x2b].y,",
+      "text": "((CDemonActor *)&in_stack_00000004[1].base.model.transformed_vertices[0x2b].y,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
-      "text": "model_ptr = &(in_stack_00000004->base_character).model;",
+      "text": "model_ptr = &(in_stack_00000004->base).model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
-      "text": "(&(in_stack_00000004->base_character).model,\"partStatus\");",
+      "text": "(&(in_stack_00000004->base).model,\"partStatus\");",
       "type": "stack_param"
     },
     {
@@ -457,98 +457,98 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.actor_name + 4),",
+      "text": "((char **)(in_stack_00000004[1].base.base.actor_name + 4),\"rescueCondition\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_00000004",
-      "text": "((CClothList *)&(in_stack_00000004->base_character).cloth_count,\"clothList\");",
+      "text": "((CClothList *)&(in_stack_00000004->base).cloth_count,\"clothList\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.validation_magic,",
+      "text": "((char **)&in_stack_00000004[1].base.base.validation_magic,\"rescueEvent\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0x10),",
+      "text": "((char **)(in_stack_00000004[1].base.base.create_event + 0x10),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "((char **)&in_stack_00000004[1].base.base.unk4,\"heroLeftMeEvent\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.field13_0xec,",
+      "text": "((char **)&in_stack_00000004[1].base.base.unk15,\"heroCameBackEvent\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.field28_0x150,",
+      "text": "((char **)&in_stack_00000004[1].base.model.transformed_vertices[8].z,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[8].z,",
+      "text": "((char **)(in_stack_00000004[1].base.model.transformed_vertices + 0x11),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 57,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_character.model.transformed_vertices + 0x11),",
+      "text": "((int *)&in_stack_00000004[1].base.model.transformed_vertices[0x2d].z,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 62,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.model.transformed_vertices[0x2d].z,",
+      "text": "((char **)&in_stack_00000004[1].base.model.transformed_vertices[0].y,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 67,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[0].y,",
+      "text": "((char **)(in_stack_00000004->base).descriptive_name,\"descriptiveName\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 71,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004->base_character).descriptive_name,",
+      "text": "((CDemonActor *)&in_stack_00000004[1].base.model.transformed_vertices[0x2b].z,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 78,
       "match": "in_stack_00000004",
-      "text": "&in_stack_00000004[1].base_character.model.transformed_vertices[0x2b].z,",
+      "text": "((char **)&in_stack_00000004[1].base.model.transformed_vertices[0x19].y,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 81,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[0x19].y,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[0x21].z,",
+      "text": "((char **)&in_stack_00000004[1].base.model.transformed_vertices[0x21].z,",
       "type": "stack_param"
     }
   ],

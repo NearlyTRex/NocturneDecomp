@@ -18,7 +18,6 @@ void core_pendulum_cpp_FUN_0054a5a0
   
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(param_5,g_CPendulumClassInfo.name_hash);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (param_7,"%f",(double)(pCVar1[2].field13_0xec.z * (float)0.5),
-             unaff_EBX);
+            (param_7,"%f",(double)(pCVar1[2].unk4.z * (float)0.5),unaff_EBX);
   return;
 }

@@ -60,7 +60,7 @@ uint core_stranger_cpp_CStranger_FUN_005c1680(void)
       local_14 < (float)0.98999999999999999)) ||
      (((local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                              ((CMotionController *)(in_stack_00000004 + 1),0), local_14 < 1.0 ||
-       (in_stack_00000004[0x1b].field7_0x6c != 0)) ||
+       (in_stack_00000004[0x1b].unk1 != 0)) ||
       (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) != 0)))) {
     return 0;
   }
@@ -75,7 +75,7 @@ uint core_stranger_cpp_CStranger_FUN_005c1680(void)
       iStack_20 = (*((this_ptr_00->vtable)._ub)->canPickup)(this_ptr_00,in_stack_00000004);
       switch(iStack_20) {
       case 1:
-        if (in_stack_00000004[0x1b].field7_0x6c == 0) {
+        if (in_stack_00000004[0x1b].unk1 == 0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                     (this_ptr_00,(CVector3f *)(auStack_74 + 4),local_18);
           fVar1 = SQRT(fStack_68 * fStack_68 +
@@ -220,9 +220,9 @@ LAB_005c17d2:
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                  (this_ptr,&CStack_b8,DAT_03f6bb04);
+                  (this_ptr,&CStack_b8,INT_03f6bb04);
         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                  (this_ptr,aCStack_ac,DAT_03f6badc);
+                  (this_ptr,aCStack_ac,INT_03f6badc);
         fStack_60 = CStack_b8.y - aCStack_ac[0].y;
         fStack_64 = CStack_b8.x - aCStack_ac[0].x;
         fStack_5c = CStack_b8.z - aCStack_ac[0].z;

@@ -53,21 +53,17 @@ void core_gabriela_cpp_FUN_004d4190(void)
   crt_memory_c_memset_FUN_005fde40(in_stack_00000004[0x8d].create_event + 0x3c,0,0x2c);
   if (in_stack_00000004[0x179].previous_transform_state.orientation.y != 0.0) {
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
-    local_84 = (in_stack_00000004->location).position.x -
-               (pCVar1->base_character).base_actor.location.position.x;
-    local_80 = (in_stack_00000004->location).position.y -
-               (pCVar1->base_character).base_actor.location.position.y;
-    local_7c = (in_stack_00000004->location).position.z -
-               (pCVar1->base_character).base_actor.location.position.z;
+    local_84 = (in_stack_00000004->location).position.x - (pCVar1->base).base.location.position.x;
+    local_80 = (in_stack_00000004->location).position.y - (pCVar1->base).base.location.position.y;
+    local_7c = (in_stack_00000004->location).position.z - (pCVar1->base).base.location.position.z;
     fVar6 = SQRT(local_7c * local_7c + local_84 * local_84 + local_80 * local_80);
     if (in_stack_00000004[0x179].previous_transform_state.orientation.y == 4.2039e-45) {
       fVar6 = 0.0;
     }
     if ((float)4 <= fVar6) {
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                        ((CPathMap *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x2c),
-                         &(in_stack_00000004->location).position,&local_c0,
-                         in_stack_00000004->field7_0x6c);
+                        ((CPathMap *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x2c),
+                         &(in_stack_00000004->location).position,&local_c0,in_stack_00000004->unk1);
       if (iVar5 != 0) {
         fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_c0.y - (in_stack_00000004->orient).bank);
@@ -87,11 +83,11 @@ void core_gabriela_cpp_FUN_004d4190(void)
         pCVar1 = g_HeroActors[iVar5];
         if (&local_9c != local_b4) {
           local_9c = (in_stack_00000004->location).position.x -
-                     (pCVar1->base_character).base_actor.location.position.x;
+                     (pCVar1->base).base.location.position.x;
           local_98.x = (in_stack_00000004->location).position.y -
-                       (pCVar1->base_character).base_actor.location.position.y;
+                       (pCVar1->base).base.location.position.y;
           local_98.y = (in_stack_00000004->location).position.z -
-                       (pCVar1->base_character).base_actor.location.position.z;
+                       (pCVar1->base).base.location.position.z;
         }
         if ((float)10 <
             SQRT(local_98.y * local_98.y + local_9c * local_9c + local_98.x * local_98.x)) {

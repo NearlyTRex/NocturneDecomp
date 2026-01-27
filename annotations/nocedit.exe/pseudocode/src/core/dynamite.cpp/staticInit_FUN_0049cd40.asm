@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_dynamite.cpp_staticInit_FUN_0049cd40(void)
+; __cdecl void core_dynamite.cpp_staticInit_FUN_0049cd40(void)
 ;
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDynamite_00622e62
 ;   int g_CDynamiteClassVersion = 0x1
 ;   CDemonActorType g_CDynamiteClassInfo
-;   undefined4 DAT_02ceed24
-;   undefined4 DAT_02ceed28
-;   undefined4 DAT_02ceed2c
+;   int DAT_02ceed24
+;   int DAT_02ceed28
+;   int DAT_02ceed2c
 ;   CDemonActorType g_CWeaponClassInfo
 ;
 ; Called Functions:

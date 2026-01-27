@@ -8,14 +8,14 @@
 ;
 ; XREF[13]:
 ;   core_baron.cpp_CBaronWeapon_ctor_FUN_00413d40 at 00413d45
-;   core_crossbow.cpp_FUN_00448c70 at 00448c76
-;   core_dynamite.cpp_ctor_FUN_0049cdc0 at 0049cdc6
-;   core_elephant.cpp_ctor_FUN_004a6fe0 at 004a6fe6
-;   core_flamegun.cpp_FUN_004cb880 at 004cb886
-;   core_flamegun.cpp_FUN_004cbbc0 at 004cbbc6
-;   core_gun.cpp_FUN_004f02f0 at 004f02f6
-;   core_lightgun.cpp_FUN_00505900 at 00505906
-;   core_melee.cpp_FUN_0050e7d0 at 0050e7d8
+;   core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70 at 00448c76
+;   core_dynamite.cpp_CDynamite_ctor_FUN_0049cdc0 at 0049cdc6
+;   core_elephant.cpp_CElephantGun_ctor_FUN_004a6fe0 at 004a6fe6
+;   core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880 at 004cb886
+;   core_flamegun.cpp_CFlashlight_ctor_FUN_004cbbc0 at 004cbbc6
+;   core_gun.cpp_CGun_ctor_FUN_004f02f0 at 004f02f6
+;   core_lightgun.cpp_CLightGun_ctor_FUN_00505900 at 00505906
+;   core_melee.cpp_CMelee_ctor_FUN_0050e7d0 at 0050e7d8
 ;   core_shotgun.cpp_CShotgun_ctor_FUN_00587ee0 at 00587ee6
 ;   ... and 3 more
 ;

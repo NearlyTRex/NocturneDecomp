@@ -10,7 +10,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
-;   undefined4 g_CDemonSetInstance.field19_0x14f0a0[7996]
+;   undefined4 g_CDemonSetInstance.unk4[7996]
 ;   undefined4 DAT_03265258
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004aa10a
     MOV EAX,[0x006810c8]                ; 004aa10d | g_CDemonSetPtr
         ;   Label: LAB_004aa10d
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004aa112 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004aa112 | g_CDemonSetInstance.unk4[7996]
     JL 0x004aa124                       ; 004aa118
         ;   XREF to: 004aa124 (CONDITIONAL_JUMP)  ; LAB_004aa124
     MOV EAX,EBP                         ; 004aa11a

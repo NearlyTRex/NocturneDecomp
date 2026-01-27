@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_colonel.cpp_staticInit_FUN_0043f770(void)
+; __cdecl void core_colonel.cpp_staticInit_FUN_0043f770(void)
 ;
 ;
 ; Referenced Globals:

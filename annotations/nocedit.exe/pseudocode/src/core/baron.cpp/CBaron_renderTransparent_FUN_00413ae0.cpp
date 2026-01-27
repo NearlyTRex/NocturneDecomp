@@ -22,16 +22,14 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
   uint local_18;
   int iStack_14;
   
-  if ((*(int *)(this_ptr->field1_0x1fbd4 + 0xf8) == 0) && ((this_ptr->field0_0x0).control_type == 2)
-     ) {
+  if ((*(int *)(this_ptr->unk + 0xf8) == 0) && ((this_ptr->base).control_type == 2)) {
     return 0;
   }
-  pCVar1 = &(this_ptr->field0_0x0).base_character.model;
+  pCVar1 = &(this_ptr->base).base.model;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
   uVar2 = pSVar4->state_index;
-  local_44.min.x =
-       (this_ptr->field0_0x0).base_character.model.motion_controller.current_frame_number;
+  local_44.min.x = (this_ptr->base).base.model.motion_controller.current_frame_number;
   local_1c = local_44.min.x;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
@@ -52,12 +50,11 @@ LAB_00413b43:
   dVar6 = crt_math_c_round_FUN_005fe6b0((double)(fVar3 / (float)pSVar4->frame_count));
   local_1c = (float)(int)ROUND(dVar6);
 LAB_00413b59:
-  if (*(int *)(this_ptr->field1_0x1fbd4 + 0xfc) != 0) {
+  if (*(int *)(this_ptr->unk + 0xfc) != 0) {
     engine_3d_c_setRenderAlpha_FUN_00406d80(((int)local_1c * 2) / 3);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,
-               &(this_ptr->field0_0x0).base_character.base_actor.location.position);
-    CStack_2c.y = DAT_008224dc;
+              (g_CDemonRendererPtr2,&(this_ptr->base).base.base.location.position);
+    CStack_2c.y = (int)FLOAT_008224dc;
     CStack_2c.x = 0;
     CStack_2c.z = 0;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -67,14 +64,14 @@ LAB_00413b59:
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->field0_0x0).base_character.base_actor.vtable._ub)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                           ((CDemonActor *)this_ptr,&local_44);
   iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar5 != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iStack_14);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);
-    pCVar1 = &(this_ptr->field0_0x0).base_character.model;
+    pCVar1 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar1,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
     if (DAT_02f43978 != 0) {

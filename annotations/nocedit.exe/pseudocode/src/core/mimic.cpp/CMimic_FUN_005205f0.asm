@@ -37,7 +37,7 @@
 ;   undefined4 g_TransformMatrix[0][2]
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
-;   undefined4 DAT_02f33378
+;   int INT_02f33378
 ;   undefined4 DAT_02f43978
 ;   undefined4 g_CStrangerClassInfo.name_hash
 ;
@@ -202,7 +202,7 @@ section .text
     MOV dword ptr [EBP + 0x56],EDX      ; 00520763
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 00520766
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x02f33378]      ; 0052076b | DAT_02f33378
+    MOV ESI,dword ptr [0x02f33378]      ; 0052076b | INT_02f33378
     LEA EAX,[ESI*0x4 + 0x0]             ; 00520771
     SUB EAX,ESI                         ; 00520778
     MOV ESI,EAX                         ; 0052077a

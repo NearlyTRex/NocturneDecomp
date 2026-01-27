@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * core_boxactor.cpp_CBoxActor_FUN_00421fe0(CBoxActor * this_ptr)
+; __cdecl CBoundingBox3D * core_boxactor.cpp_CBoxActor_FUN_00421fe0(CBoxActor * this_ptr, CBoundingBox3D * out_box)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

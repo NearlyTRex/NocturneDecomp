@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_0310ec9c
 ;   undefined1 DAT_0310eca0
-;   undefined4 DAT_0310f4b0
+;   CPickList DAT_0310f4b0
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_step_FUN_0055a810

@@ -21,7 +21,7 @@ core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
   int local_14;
   
   if (g_CGamePtr->scripted_sequence_active == 0) {
-    if ((g_CGamePtr->field62_0x1f4 != 0) &&
+    if ((g_CGamePtr->unk6 != 0) &&
        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar2 == 0)) {
       core_set_cpp_CDemonSet_FUN_00570010(this_ptr);

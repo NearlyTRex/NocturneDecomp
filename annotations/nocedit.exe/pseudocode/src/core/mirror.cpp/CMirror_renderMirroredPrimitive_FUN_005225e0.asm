@@ -16,10 +16,10 @@
 ;   undefined4 g_MirrorTempPrimitive.surface_normal.B
 ;   undefined4 g_MirrorTempPrimitive.surface_normal.C
 ;   undefined4 g_MirrorTempPrimitive.surface_normal.D
-;   undefined4 DAT_02f33724
-;   undefined4 DAT_02f33728
-;   undefined4 DAT_02f3372c
-;   undefined4 DAT_02f33730
+;   int INT_02f33724
+;   int INT_02f33728
+;   int INT_02f3372c
+;   int INT_02f33730
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
@@ -42,16 +42,16 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14]      ; 00522608
     MOV dword ptr [0x02f33720],EDX      ; 0052260b | g_MirrorTempPrimitive.surface_normal.D
     MOV EDX,dword ptr [EAX + 0x18]      ; 00522611
-    MOV dword ptr [0x02f33724],EDX      ; 00522614 | DAT_02f33724
+    MOV dword ptr [0x02f33724],EDX      ; 00522614 | INT_02f33724
     MOV EDX,dword ptr [EAX + 0x24]      ; 0052261a
-    MOV dword ptr [0x02f33728],EDX      ; 0052261d | DAT_02f33728
+    MOV dword ptr [0x02f33728],EDX      ; 0052261d | INT_02f33728
     MOV EDX,dword ptr [EAX + 0x30]      ; 00522623
     PUSH 0x2f3370c                      ; 00522626 | g_MirrorTempPrimitive
-    MOV dword ptr [0x02f3372c],EDX      ; 0052262b | DAT_02f3372c
+    MOV dword ptr [0x02f3372c],EDX      ; 0052262b | INT_02f3372c
     MOV EDX,dword ptr [ESP + 0x8]       ; 00522631
     MOV EAX,dword ptr [EAX + 0x3c]      ; 00522635
     PUSH EDX                            ; 00522638
-    MOV [0x02f33730],EAX                ; 00522639 | DAT_02f33730
+    MOV [0x02f33730],EAX                ; 00522639 | INT_02f33730
     CALL core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 ; 0052263e
         ;   XREF to: 00522310 (UNCONDITIONAL_CALL)  ; uint core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00522643

@@ -408,7 +408,7 @@ section .text
     PUSH EAX                            ; 0048a0d4
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990 ; 0048a0d5
         ;   XREF to: 00487990 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-    MOV EAX,[0x006703e4]                ; 0048a0da | PTR_core_baron.cpp_FUN_00412b41_006703e4
+    MOV EAX,[0x006703e4]                ; 0048a0da | g_CBaronStaticInitFunc
     ADD ESP,0x14                        ; 0048a0df
     MOV dword ptr [ESP + 0xa8],EAX      ; 0048a0e2
     MOV EAX,[0x00679394]                ; 0048a0e9 | g_WindowWidth

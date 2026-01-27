@@ -9,5 +9,5 @@
 int __cdecl core_trap_cpp_CTrap_FUN_005de760(CTrap *this_ptr)
 
 {
-  return *(int *)(this_ptr->field2_0x15c + 0x178);
+  return this_ptr->unk;
 }

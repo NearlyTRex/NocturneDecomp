@@ -7,11 +7,25 @@
 // CEdCheck
 CEdCheck g_CEdCheckInstance = {};
 
+// CNetGame
+CNetGame g_CNetGameInstance = {};
+
 // SChatHistory[400]
 SChatHistory g_ChatHistory[400] = {};
 
+// float
+float FLOAT_02f7c540 = {};
+float FLOAT_02f7c630 = {};
+
 // int
+int INT_02f797e8 = {};
+int INT_02f797ec = {};
+int INT_02f797f0 = {};
 int g_DisableMouseHitOnBarrier = {};
+int INT_02f7a028 = {};
+int INT_02f7c510 = {};
+int INT_02f7c52c = {};
+int INT_02f7c530 = {};
 int g_LastPingTime = {};
 int g_RemoteSyncStage = {};
 int g_ChatHistoryCount = {};
@@ -25,22 +39,10 @@ undefined1 DAT_02f79818 = {};
 // undefined4
 undefined4 DAT_02f797e0 = {};
 undefined4 DAT_02f797e4 = {};
-undefined4 DAT_02f7c510 = {};
 undefined4 DAT_02f7c528 = {};
-undefined4 DAT_02f7c52c = {};
-undefined4 DAT_02f7c530 = {};
 undefined4 DAT_02f7c538 = {};
 undefined4 DAT_02f7c53c = {};
 undefined4 DAT_02f7c634 = {};
-undefined4 DAT_02f7c740 = {};
-undefined4 DAT_02f7c744 = {};
-undefined4 DAT_02f7c75c = {};
-undefined4 DAT_02f7c774 = {};
-undefined4 DAT_02f7c778 = {};
-undefined4 DAT_02f7c7ec = {};
-undefined4 DAT_02f7c854 = {};
-undefined4 DAT_02f7c8a8 = {};
-undefined4 DAT_02f7c8ac = {};
 undefined4 DAT_02f7c8bc = {};
 undefined4 DAT_02f7c8c4 = {};
 undefined4 DAT_02f7c8c8 = {};

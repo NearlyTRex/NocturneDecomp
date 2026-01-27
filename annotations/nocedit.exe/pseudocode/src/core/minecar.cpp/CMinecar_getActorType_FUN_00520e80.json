@@ -1,0 +1,93 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 4,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 7
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00520e80",
+    "address_range": [
+      [
+        "00520e80",
+        "00520e85"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_minecar.cpp_CMinecar_getActorType_FUN_00520e80",
+    "signature": "CDemonActorType * core_minecar.cpp_CMinecar_getActorType_FUN_00520e80(CMineCar * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02f333c8",
+      "name": "g_CMineCarClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMineCar *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMinecar",
+        "offset": 196,
+        "vtable_addr": "006615d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -99,11 +99,9 @@ void core_chain_cpp_FUN_004300d0(void)
   }
   iVar9 = *(int *)in_stack_00000004[1].actor_name;
   pCVar6 = &in_stack_00000004[1].previous_transform_state.orientation;
-  (&in_stack_00000004[1].field23_0x124)[iVar9 * 9] = 0;
-  (&in_stack_00000004[1].field22_0x120)[iVar9 * 9] =
-       (&in_stack_00000004[1].field23_0x124)[iVar9 * 9];
-  (&in_stack_00000004[1].field21_0x11c)[iVar9 * 9] =
-       (&in_stack_00000004[1].field22_0x120)[iVar9 * 9];
+  (&in_stack_00000004[1].unk12)[iVar9 * 9] = 0;
+  (&in_stack_00000004[1].unk11)[iVar9 * 9] = (&in_stack_00000004[1].unk12)[iVar9 * 9];
+  (&in_stack_00000004[1].unk10)[iVar9 * 9] = (&in_stack_00000004[1].unk11)[iVar9 * 9];
   if ((CLocation *)pCVar6 != &in_stack_00000004->location) {
     pCVar6->x = (in_stack_00000004->location).position.x;
     in_stack_00000004[1].previous_transform_state.orientation.y =
@@ -111,9 +109,9 @@ void core_chain_cpp_FUN_004300d0(void)
     in_stack_00000004[1].previous_transform_state.orientation.z =
          (in_stack_00000004->location).position.z;
   }
-  in_stack_00000004[1].field26_0x148 = 0;
-  in_stack_00000004[1].field25_0x144 = in_stack_00000004[1].field26_0x148;
-  in_stack_00000004[1].previous_transform_state.dirty_flags = in_stack_00000004[1].field25_0x144;
+  in_stack_00000004[1].unk14 = 0;
+  in_stack_00000004[1].unk13 = in_stack_00000004[1].unk14;
+  in_stack_00000004[1].previous_transform_state.dirty_flags = in_stack_00000004[1].unk13;
   local_4c = &in_stack_00000004[1].previous_transform_state.orientation;
   local_34 = in_stack_00000004[4].actor_name + 8;
   local_28 = &in_stack_00000004[2].location.position.y;
@@ -243,8 +241,8 @@ void core_chain_cpp_FUN_004300d0(void)
     }
     iVar9 = *(int *)in_stack_00000004[1].actor_name;
     local_94 = local_58 - (float)(&in_stack_00000004[1].scale)[iVar9 * 3].z;
-    local_90 = local_54 - (float)(&in_stack_00000004[1].field19_0x114)[iVar9 * 9];
-    local_8c = local_50 - (float)(&in_stack_00000004[1].field20_0x118)[iVar9 * 9];
+    local_90 = local_54 - (float)(&in_stack_00000004[1].unk8)[iVar9 * 9];
+    local_8c = local_50 - (float)(&in_stack_00000004[1].unk9)[iVar9 * 9];
     if (in_stack_00000008 * (float)0.10000000000000001 <
         SQRT(local_8c * local_8c + local_94 * local_94 + local_90 * local_90)) {
       local_48 = 1;

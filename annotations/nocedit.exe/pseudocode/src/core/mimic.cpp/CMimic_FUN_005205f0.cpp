@@ -27,13 +27,13 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
   CDemonActor *local_14;
   
   bVar4 = 0;
-  if (*(int *)(this_ptr->field0_0x0).base_character.field2_0x240c == 0) {
+  if (*(int *)(this_ptr->base).base.unk1 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    this_ptr_01 = (*((this_ptr->field0_0x0).base_character.base_actor.vtable._ub)->getBoundingBox)
+    this_ptr_01 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                             ((CDemonActor *)this_ptr,&local_64);
     local_1c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if (local_1c != 0) {
-      if (*(float *)(this_ptr->field3_0x4bdf8 + 0xc58) < 0.0) {
+      if (*(float *)(this_ptr->unk2 + 0xc58) < 0.0) {
         local_18 = g_CDemonRendererPtr2->advanced_culling_enabled;
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10
                   (g_CDemonRendererPtr2,(uint)(local_18 == 0));
@@ -44,7 +44,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
         g_TransformMatrix.m[0].y = -g_TransformMatrix.m[0].y;
         g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
-                  (&(this_ptr->field0_0x0).base_character.model,-1,0xffffffff,1,0);
+                  (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
         core_cloth_cpp_FUN_0043bae0();
         local_14 = core_actor_cpp_castToClassHash_FUN_0040c790
                              ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
@@ -61,8 +61,8 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     (&local_c4,
                      (CMatrix3x4f *)
-                     (this_ptr->field0_0x0).base_character.model.bone_transform.bone_world_matrices
-                     [DAT_02f33378].m,(CMatrix3x4f *)&stack0xffffff0c);
+                     (this_ptr->base).base.model.bone_transform.bone_world_matrices[INT_02f33378].m,
+                     (CMatrix3x4f *)&stack0xffffff0c);
           pfVar2 = (float *)&stack0xffffff0c;
           pCVar3 = &local_94;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -75,14 +75,14 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr2,(CVector3i *)&local_34,(CVector3i *)&local_4c);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                    ((CKeyFramedModelInstance *)&local_14[0x17a].field12_0xe0.z,0.0,-1);
+                    ((CKeyFramedModelInstance *)&local_14[0x17a].unk3.z,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         }
         core_charactr_cpp_CCharacter_FUN_0042a420((CCharacter *)this_ptr);
         if ((DAT_02f43978 != 0) &&
            (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
                               (g_CDemonRendererPtr2), iVar1 == 0)) {
-          this_ptr_00 = &(this_ptr->field0_0x0).base_character.model;
+          this_ptr_00 = &(this_ptr->base).base.model;
           core_motion_cpp_CMotionController_render_FUN_0052e700
                     (&this_ptr_00->motion_controller,(CDemonActor *)this_ptr);
           core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -93,7 +93,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
                   (g_CDemonRendererPtr2,local_18);
       }
       else {
-        core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->field3_0x4bdf8 + 0x2c));
+        core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->unk2 + 0x2c));
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

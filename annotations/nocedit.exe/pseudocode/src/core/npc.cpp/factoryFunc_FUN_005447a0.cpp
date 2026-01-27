@@ -1,0 +1,20 @@
+// Name: core_npc.cpp_factoryFunc_FUN_005447a0
+// Address: 005447a0
+// Address Range: [[005447a0, 005447c2]]
+// Convention: __cdecl
+// Signature: CNPC * core_npc.cpp_factoryFunc_FUN_005447a0(void)
+
+#include "nocturne.h"
+
+CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_005447a0(void)
+
+{
+  CNPC *pCVar1;
+  
+  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f708,"..\\core\\npc.cpp",0x2d);
+  if (pCVar1 == (CNPC *)0x0) {
+    return (CNPC *)0x0;
+  }
+  pCVar1 = core_npc_cpp_CNPC_ctor_FUN_005447e0(pCVar1);
+  return pCVar1;
+}

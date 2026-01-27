@@ -29,11 +29,9 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
   CVector3f local_1c;
   
   bVar5 = 0;
-  if ((*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) &&
-     (this_ptr->is_miner_zombie != 0)) {
+  if ((*(int *)(this_ptr->base).base.unk3 != 0) && (this_ptr->is_miner_zombie != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-              (&(this_ptr->base_enemy).base_character.model,*(int *)(this_ptr->field4_0xbf48 + 4),
-               &local_c4);
+              (&(this_ptr->base).base.model,*(int *)(this_ptr->unk2 + 4),&local_c4);
     local_70.y = 0.5;
     local_70.z = 0.5;
     pCVar3 = &local_c4;
@@ -65,9 +63,9 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
     core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_64);
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(&local_88,(CVector3i *)&local_7c,56.0,6.0);
   }
-  if (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 == 0) {
-    return *(int *)(this_ptr->base_enemy).base_character.field13_0x2620;
+  if (*(int *)(this_ptr->base).base.unk3 == 0) {
+    return *(int *)(this_ptr->base).base.unk3;
   }
   core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
-  return *(int *)(this_ptr->base_enemy).base_character.field13_0x2620;
+  return *(int *)(this_ptr->base).base.unk3;
 }

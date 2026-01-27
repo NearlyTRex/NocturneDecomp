@@ -12,6 +12,6 @@ CFootstep * __cdecl core_gore_cpp_FUN_004ee370(CFootstep *this_ptr)
   void *pvVar1;
   
   pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->field0_0x0 + 8,4,&g_CVectorTypeInfo);
+                     (this_ptr->unk + 8,4,&g_CVectorTypeInfo);
   return (CFootstep *)((int)pvVar1 + -8);
 }

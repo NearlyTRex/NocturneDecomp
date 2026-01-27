@@ -9,8 +9,8 @@
 void __cdecl core_main_c_staticInit_FUN_00506e80(void)
 
 {
-  engine_fileio_cpp_CFileManager_ctor_FUN_004b53a0(&g_CDemonFileManagerInstance.base_filemanager);
-  g_CDemonFileManagerInstance.base_filemanager.vtable = &g_CDemonFileManagerVTable;
+  engine_fileio_cpp_CFileManager_ctor_FUN_004b53a0(&g_CDemonFileManagerInstance.base);
+  g_CDemonFileManagerInstance.base.vtable = &g_CDemonFileManagerVTable;
   crt_stdlib_c_atexit_FUN_005ff060(&g_CDemonFileManagerDestructorNode);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&g_LoadingScreenBitmap1);
   crt_stdlib_c_atexit_FUN_005ff060(&g_LoadingScreenBitmap1DestructorNode);

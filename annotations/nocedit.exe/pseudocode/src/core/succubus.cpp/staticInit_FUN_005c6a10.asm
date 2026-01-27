@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_succubus.cpp_staticInit_FUN_005c6a10(void)
+; __cdecl void core_succubus.cpp_staticInit_FUN_005c6a10(void)
 ;
 ;
 ; Referenced Globals:

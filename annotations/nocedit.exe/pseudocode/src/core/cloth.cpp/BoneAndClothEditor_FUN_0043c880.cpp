@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_cloth.cpp_BoneAndClothEditor(uint param_1) */
-
 void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 
 {
@@ -67,12 +64,12 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
   local_50._4_4_ = (SMotion *)0x0;
   local_48 = 0.0;
   local_28 = 0.0;
-  _DAT_00838e48 = 0;
-  _DAT_00838e44 = 0;
-  _DAT_00838e40 = 0;
-  _DAT_00838e54 = 0;
-  _DAT_00838e50 = 0;
-  _DAT_00838e4c = 0;
+  INT_00838e48 = 0;
+  INT_00838e44 = 0;
+  INT_00838e40 = 0;
+  INT_00838e54 = 0;
+  INT_00838e50 = 0;
+  INT_00838e4c = 0;
   shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffaa8);
   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
@@ -129,9 +126,9 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
         do {
           piVar8 = (int *)(*(int *)(iVar1 + 0x10c) + iVar7);
           iVar4 = iVar4 + 1;
-          *piVar8 = (int)ROUND(*pfVar5 * _DAT_0065bb3c);
-          piVar8[1] = (int)ROUND(pfVar5[1] * _DAT_0065bb3c);
-          piVar8[2] = (int)ROUND(pfVar5[2] * _DAT_0065bb3c);
+          *piVar8 = (int)ROUND(*pfVar5 * 256.0f);
+          piVar8[1] = (int)ROUND(pfVar5[1] * 256.0f);
+          piVar8[2] = (int)ROUND(pfVar5[2] * 256.0f);
           pfVar5 = pfVar5 + 0x47;
           iVar7 = iVar7 + 0xc;
         } while (iVar4 < *(int *)(iVar1 + 0x104));
@@ -150,9 +147,9 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,(CVector3f *)&DAT_00838e40);
+              (g_CDemonRendererPtr2,(CVector3f *)&INT_00838e40);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,(CVector3i *)&DAT_00838e4c,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,(CVector3i *)&INT_00838e4c,(CVector3i *)0x0);
     if ((SMotion *)local_50._4_4_ != (SMotion *)0x0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (&g_CDeformableModelInstanceInstance,-1,0xffffffff,1,0);
@@ -175,9 +172,9 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
       if (0 < *(int *)(iVar1 + 0x3f028)) {
         do {
           pfVar5 = (float *)(*(int *)(iVar4 + 0x3f02c) * 0x11c + (int)local_2c);
-          local_6c.x = (int)ROUND(*pfVar5 * _DAT_0065bb3c);
-          local_6c.y = (int)ROUND(pfVar5[1] * _DAT_0065bb3c);
-          local_6c.z = (int)ROUND(pfVar5[2] * _DAT_0065bb3c);
+          local_6c.x = (int)ROUND(*pfVar5 * 256.0f);
+          local_6c.y = (int)ROUND(pfVar5[1] * 256.0f);
+          local_6c.z = (int)ROUND(pfVar5[2] * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_6c);
           core_cloth_cpp_FUN_0043c6e0();

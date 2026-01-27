@@ -28,24 +28,24 @@ void __cdecl core_game_cpp_CGame_FUN_004d85a0(CGame *this_ptr)
   }
   iVar4 = 0;
   if (0 < this_ptr->status_display_count) {
-    local_18 = this_ptr->field101_0x38c;
-    local_1c = this_ptr->field101_0x38c + 0x100;
+    local_18 = this_ptr->unk13;
+    local_1c = this_ptr->unk13 + 0x100;
     pCVar5 = this_ptr;
     do {
       while( true ) {
         iVar1 = iVar4 * 4;
-        fVar2 = *(float *)(pCVar5->field101_0x38c + 0x514) - this_ptr->delta_time_float;
-        *(float *)(pCVar5->field101_0x38c + 0x514) = fVar2;
+        fVar2 = *(float *)(pCVar5->unk13 + 0x514) - this_ptr->delta_time_float;
+        *(float *)(pCVar5->unk13 + 0x514) = fVar2;
         if (0.0 < fVar2) break;
         iVar3 = this_ptr->status_display_count + -1;
         this_ptr->status_display_count = iVar3;
         crt_string_c_memmove_FUN_005fe5e0(local_18,local_1c,(iVar3 - iVar4) * 0x100);
         crt_string_c_memmove_FUN_005fe5e0
-                  (this_ptr->field101_0x38c + iVar1 + 0x500,this_ptr->field101_0x38c + iVar1 + 0x504
-                   ,(this_ptr->status_display_count - iVar4) * 4);
+                  (this_ptr->unk13 + iVar1 + 0x500,this_ptr->unk13 + iVar1 + 0x504,
+                   (this_ptr->status_display_count - iVar4) * 4);
         crt_string_c_memmove_FUN_005fe5e0
-                  (this_ptr->field101_0x38c + iVar1 + 0x514,this_ptr->field101_0x38c + iVar1 + 0x518
-                   ,(this_ptr->status_display_count - iVar4) * 4);
+                  (this_ptr->unk13 + iVar1 + 0x514,this_ptr->unk13 + iVar1 + 0x518,
+                   (this_ptr->status_display_count - iVar4) * 4);
         if (this_ptr->status_display_count <= iVar4) {
           return;
         }

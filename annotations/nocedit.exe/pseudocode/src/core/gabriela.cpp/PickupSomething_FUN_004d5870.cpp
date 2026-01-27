@@ -78,7 +78,7 @@ uint core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
     if (pCVar4 == (CDemonActor *)0x0) {
       uStack_14 = (*((this_ptr->vtable)._ub)->canPickup)(this_ptr,in_stack_00000004);
       if (uStack_14 < 2) {
-        if ((uStack_14 == 1) && (in_stack_00000004[0x1b].field7_0x6c == 0)) {
+        if ((uStack_14 == 1) && (in_stack_00000004[0x1b].unk1 == 0)) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(this_ptr,&local_5c,pCStack_20);
           fStack_b4 = SQRT(local_5c.z * local_5c.z +
                            local_5c.x * local_5c.x + local_5c.y * local_5c.y);
@@ -96,8 +96,7 @@ uint core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
           if (local_5c.z <= (float)-0.80000000000000004) goto LAB_004d59f9;
         }
       }
-      else if (((uStack_14 < 3) || (uStack_14 == 3)) && (in_stack_00000004[0x1b].field7_0x6c == 0))
-      {
+      else if (((uStack_14 < 3) || (uStack_14 == 3)) && (in_stack_00000004[0x1b].unk1 == 0)) {
 LAB_004d59f9:
         local_38.x = (this_ptr->location).position.x - (&local_b0)[uStack_14].x;
         local_38.y = (this_ptr->location).position.y - (&local_b0)[uStack_14].y;

@@ -9,6 +9,6 @@
 void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574170(CDemonSet *this_ptr)
 
 {
-  this_ptr->field71_0x15f6dc = 1;
+  this_ptr->unk12 = 1;
   return;
 }

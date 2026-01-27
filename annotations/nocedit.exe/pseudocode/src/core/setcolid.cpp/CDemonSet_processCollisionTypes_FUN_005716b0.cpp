@@ -91,8 +91,8 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   }
   local_e4 = local_e4 + 2.0f;
   this_ptr->collision_actor = (CDemonActor *)0x0;
-  this_ptr->field11_0x14d148 = -1;
-  this_ptr->field12_0x14d14c = -1;
+  this_ptr->unk1 = -1;
+  this_ptr->unk2 = -1;
   CStack_30.z = local_14;
   if (-1 < this_ptr->ignore_list_count) {
     if (local_f8 + 4 != local_f8 + 0x10) {
@@ -113,11 +113,11 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_180 + 0x28));
     auStack_180._40_4_ = 0.0;
     CStack_24.z = 0.0;
-    if (0 < *(int *)(this_ptr->field19_0x14f0a0 + 0x7d08)) {
+    if (0 < *(int *)(this_ptr->unk4 + 0x7d08)) {
       pCVar1 = &this_ptr->collision_normal;
       local_18 = this_ptr;
       do {
-        pCVar2 = *(CDemonActor **)(local_18->field19_0x14f0a0 + 0x7d0c);
+        pCVar2 = *(CDemonActor **)(local_18->unk4 + 0x7d0c);
         iVar3 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar2);
         if (iVar3 == 0) {
           pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CSpikeClassInfo.name_hash);
@@ -132,10 +132,9 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
               iVar3 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010
                                 ((CBoundingBox3D *)local_f8,other);
               if (iVar3 != 0) {
-                if ((this_ptr->field71_0x15f6dc == 0) &&
-                   (SStack_150.field9_0x24 != (CKeyFramedModelInstance *)0x0)) {
+                if ((this_ptr->unk12 == 0) && (SStack_150.unk5 != (CKeyFramedModelInstance *)0x0)) {
                   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                          (SStack_150.field9_0x24);
+                                          (SStack_150.unk5);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                     g_CurrentFilename = "..\\core\\setcolid.cpp";
                     g_CurrentLineNumber = 0xcb;
@@ -347,7 +346,7 @@ LAB_005722ec:
         }
         local_18 = (CDemonSet *)local_18->cameras;
         CStack_24.z = (float)((int)CStack_24.z + 1);
-      } while ((int)CStack_24.z < *(int *)(this_ptr->field19_0x14f0a0 + 0x7d08));
+      } while ((int)CStack_24.z < *(int *)(this_ptr->unk4 + 0x7d08));
     }
     pCVar2 = this_ptr->collision_actor;
     if (pCVar2 != (CDemonActor *)0x0) {

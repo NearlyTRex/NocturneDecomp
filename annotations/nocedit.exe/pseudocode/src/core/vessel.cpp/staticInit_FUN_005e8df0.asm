@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_vessel.cpp_staticInit_FUN_005e8df0(void)
+; __cdecl void core_vessel.cpp_staticInit_FUN_005e8df0(void)
 ;
 ;
 ; Referenced Globals:

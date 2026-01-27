@@ -57,8 +57,7 @@ shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180
       pCVar6 = local_20;
       ppCVar9[-3] = local_20;
       ppCVar9[-4] = (CBitmap *)0x556362;
-      crt_string_c_strncpy_FUN_00600f40
-                (ppCVar9[-3]->field0_0x0,ppCVar9[-2]->field0_0x0,(SIZE_T)ppCVar9[-1]);
+      crt_string_c_strncpy_FUN_00600f40(ppCVar9[-3]->unk,ppCVar9[-2]->unk,(SIZE_T)ppCVar9[-1]);
       pcVar14 = pCVar6->palette;
       ppCVar9[-1] = (CBitmap *)pcVar14;
       pcVar12 = this_ptr->output_region;
@@ -94,7 +93,7 @@ shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180
       ppCVar9[-3] = (CBitmap *)"Phase 3";
       pCVar3 = this_ptr->progress_callback;
       ppCVar9[-4] = (CBitmap *)0x55622b;
-      iVar5 = (*pCVar3)(ppCVar9[-3]->field0_0x0,(int)ppCVar9[-2],(int)ppCVar9[-1]);
+      iVar5 = (*pCVar3)(ppCVar9[-3]->unk,(int)ppCVar9[-2],(int)ppCVar9[-1]);
       ppCVar4 = ppCVar9 + 3;
       if (iVar5 != 0) {
         g_CurrentDebugLine = 0x38d;

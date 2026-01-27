@@ -6,18 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Struct "FormatSpec": ignoring multiple overlapping fields */
-
 char * __cdecl crt_stdio_c_ParseFormatFlags_FUN_00602edc(char *format,FormatSpec *spec_info)
 
 {
-  byte uVar1;
+  FormatFlags FVar1;
   char cVar2;
   
-  *(ushort *)&spec_info->flags = 0;
+  spec_info->flags =
+       ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
+        ALTERNATE_FORM);
+  spec_info->length_flags =
+       ~(BASIC_RESERVED|BASIC_NEAR_PTR_FLAG|BASIC_FAR_PTR_FLAG|BASIC_WIDE_FLAG|BASIC_CHAR_FLAG|
+         BASIC_SHORT_FLAG|BASIC_LONG_FLAG|BASIC_I64_FLAG);
   cVar2 = *format;
   if (cVar2 != '-') goto LAB_00602ef8;
-  *(byte *)&spec_info->flags = (char)spec_info->flags | LEFT_ALIGN;
+  spec_info->flags = spec_info->flags | LEFT_ALIGN;
   while( true ) {
     while( true ) {
       while( true ) {
@@ -26,23 +29,24 @@ char * __cdecl crt_stdio_c_ParseFormatFlags_FUN_00602edc(char *format,FormatSpec
             format = format + 1;
             cVar2 = *format;
             if (cVar2 != '-') break;
-            *(byte *)&spec_info->flags = (char)spec_info->flags | LEFT_ALIGN;
+            spec_info->flags = spec_info->flags | LEFT_ALIGN;
           }
 LAB_00602ef8:
           if (cVar2 != '#') break;
-          *(byte *)&spec_info->flags = (char)spec_info->flags | ALTERNATE_FORM;
+          spec_info->flags = spec_info->flags | ALTERNATE_FORM;
         }
         if (cVar2 != '+') break;
-        uVar1 = (byte)spec_info->flags;
-        *(byte *)&spec_info->flags = uVar1 | FORCE_SIGN;
-        *(byte *)&spec_info->flags =
-             uVar1 & (FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|
+        FVar1 = spec_info->flags;
+        spec_info->flags = FVar1 | FORCE_SIGN;
+        spec_info->flags =
+             FVar1 & (FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|
                      ALTERNATE_FORM) | FORCE_SIGN;
       }
       if (cVar2 != ' ') break;
-      uVar1 = (byte)spec_info->flags;
-      if ((uVar1 & FORCE_SIGN) == 0) {
-        *(byte *)&spec_info->flags = uVar1 | SPACE_SIGN;
+      if ((spec_info->flags & FORCE_SIGN) ==
+          ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
+           ALTERNATE_FORM)) {
+        spec_info->flags = spec_info->flags | SPACE_SIGN;
       }
     }
     if (cVar2 != '0') break;

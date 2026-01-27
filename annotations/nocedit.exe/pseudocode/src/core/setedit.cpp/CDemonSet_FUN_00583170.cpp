@@ -201,7 +201,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
     if ((-1 < iVar8) && (iVar8 < this_ptr->vdir_box_count)) {
       do {
         local_28 = iVar8;
-        iVar8 = *(int *)(this_ptr->vdir_boxes[local_28].field3_0x3c + 4);
+        iVar8 = *(int *)(this_ptr->vdir_boxes[local_28].unk + 4);
       } while (-1 < iVar8);
     }
     iVar8 = 0;
@@ -237,7 +237,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
         else {
           do {
             iVar6 = iVar5;
-            iVar5 = *(int *)(this_ptr->vdir_boxes[iVar6].field3_0x3c + 4);
+            iVar5 = *(int *)(this_ptr->vdir_boxes[iVar6].unk + 4);
           } while (-1 < iVar5);
           in_stack_fffffd84 = pCVar4 + 1;
           if (iVar6 == local_28) {
@@ -925,8 +925,8 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           (pSVar7->rotation_matrix).m[2].x = (pSVar11->rotation_matrix).m[2].x;
           (pSVar7->rotation_matrix).m[2].y = (pSVar11->rotation_matrix).m[2].y;
           (pSVar7->rotation_matrix).m[2].z = (pSVar11->rotation_matrix).m[2].z;
-          *(uint *)pSVar7->field3_0x3c = *(uint *)pSVar11->field3_0x3c;
-          *(uint *)(pSVar7->field3_0x3c + 4) = *(uint *)(pSVar11->field3_0x3c + 4);
+          *(uint *)pSVar7->unk = *(uint *)pSVar11->unk;
+          *(uint *)(pSVar7->unk + 4) = *(uint *)(pSVar11->unk + 4);
           local_18 = this_ptr->vdir_box_count;
           pSVar7 = local_40 + local_18;
           this_ptr->vdir_box_count = local_18 + 1;

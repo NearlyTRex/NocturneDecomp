@@ -9,5 +9,5 @@
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042cd90(CCharacter *this_ptr)
 
 {
-  return (uint)(*(int *)(this_ptr->field11_0x25a0 + 0x14) == 0);
+  return (uint)(*(int *)(this_ptr->unk2 + 0x14) == 0);
 }

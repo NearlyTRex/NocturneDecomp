@@ -36,7 +36,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690
-;   core_boxactor.cpp_FUN_00422390
+;   core_boxactor.cpp_CBoxActor_FUN_00422390
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_00429820
@@ -967,8 +967,8 @@ section .text
     LEA EAX,[ESP + 0xc4]                ; 005bc4c3
     PUSH EAX                            ; 005bc4ca
     PUSH ESI                            ; 005bc4cb
-    CALL core_boxactor.cpp_FUN_00422390 ; 005bc4cc
-        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_FUN_00422390(CBoxActor * this_ptr)
+    CALL core_boxactor.cpp_CBoxActor_FUN_00422390 ; 005bc4cc
+        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_00422390(CBoxActor * this_ptr)
     ADD ESP,0xc                         ; 005bc4d1
     PUSH 0x0                            ; 005bc4d4
         ;   Label: LAB_005bc4d4

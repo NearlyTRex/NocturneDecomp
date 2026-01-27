@@ -42,7 +42,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"unused.act\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%f\n",(double)this_ptr->min_ambient_value);
-  core_dcamera_cpp_saveCameraFog_FUN_00453f10((SFog *)(this_ptr->field19_0x14f0a0 + 0xbb90),file);
+  core_dcamera_cpp_saveCameraFog_FUN_00453f10((SFog *)(this_ptr->unk4 + 0xbb90),file);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"waterHeight,waterTileSize\n");
   crt_stdio_c_fprintf_FUN_005fe6d0
             (file,"%f,%f\n",(double)g_CWaterPtr->water_level_y,(double)g_CWaterPtr->tile_size);

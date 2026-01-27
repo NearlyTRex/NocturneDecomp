@@ -312,7 +312,7 @@ section .text
     ADD ESP,0xc                         ; 004f9e2b
     JMP 0x004f9c99                      ; 004f9e2e
         ;   XREF to: 004f9c99 (UNCONDITIONAL_JUMP)  ; LAB_004f9c99
-    MOV EDX,dword ptr [0x02db89f4]      ; 004f9e33 | DAT_02db89f4
+    MOV EDX,dword ptr [0x02db89f4]      ; 004f9e33 | INT_02db89f4
         ;   Label: LAB_004f9e33
     PUSH EDX                            ; 004f9e39
     LEA EAX,[EBP + -0x7a]               ; 004f9e3a
@@ -675,7 +675,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004fa252
     ADD ESP,0x8                         ; 004fa255
     LEA EAX,[EBP + 0xfffffeea]          ; 004fa258
-    MOV EDX,dword ptr [0x02db89fc]      ; 004fa25e | DAT_02db89fc
+    MOV EDX,dword ptr [0x02db89fc]      ; 004fa25e | INT_02db89fc
     PUSH EAX                            ; 004fa264
     LEA EAX,[EDX*0x4 + 0x0]             ; 004fa265
     SUB EAX,EDX                         ; 004fa26c
@@ -714,7 +714,7 @@ section .text
     XOR ESI,ESI                         ; 004fa2c9
     MOV EAX,[0x006810c8]                ; 004fa2cb | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004fa2cb
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004fa2d0 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004fa2d0 | g_CDemonSetInstance.unk4[7996]
     JGE 0x004f9fef                      ; 004fa2d6
         ;   XREF to: 004f9fef (CONDITIONAL_JUMP)  ; caseD_6
     MOV ECX,dword ptr [0x02db8a5c]      ; 004fa2dc | g_CImpClassInfo.name_hash

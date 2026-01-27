@@ -49,7 +49,7 @@ extern CDemonPod* g_CDemonPodPtr;
 extern CDemonSet* g_CDemonSetPtr;
 
 // CNetGame*
-extern CNetGame* g_CNetGameInstance;
+extern CNetGame* g_CNetGamePtr;
 
 // CScript*
 extern CScript* g_CScriptPtr;
@@ -423,9 +423,6 @@ extern int g_PathfindingDeltaZ[9];
 extern short g_PureVirtualCallFlag;
 
 // uint
-extern uint g_RedMask16;
-extern uint g_GreenMask16;
-extern uint g_BlueMask16;
 extern uint g_WindowsPlatformVersionExt;
 extern uint g_WindowsVersionLow;
 extern uint g_WindowsVersionMid;
@@ -438,6 +435,9 @@ extern ulonglong g_TextureShift1;
 extern ulonglong g_TextureShift2;
 extern ulonglong g_TextureMask1;
 extern ulonglong g_TextureMask2;
+extern ulonglong g_RedMask16;
+extern ulonglong g_GreenMask16;
+extern ulonglong g_BlueMask16;
 extern ulonglong g_RedMask32;
 extern ulonglong g_GreenMask32;
 extern ulonglong g_BlueMask32;

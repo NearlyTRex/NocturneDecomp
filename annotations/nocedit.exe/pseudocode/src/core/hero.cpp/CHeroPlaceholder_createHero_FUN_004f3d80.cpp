@@ -61,15 +61,15 @@ LAB_004f3db9:
     core_main_c_displayErrorAndQuit_FUN_00506f10("CHeroPlaceholder::createHero - failed.");
   }
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-  (pCVar2->location).position.x = (this_ptr->base_actor).location.position.x;
-  (pCVar2->location).position.y = (this_ptr->base_actor).location.position.y;
-  (pCVar2->location).position.z = (this_ptr->base_actor).location.position.z;
-  (pCVar2->location).area_id = (this_ptr->base_actor).location.area_id;
-  pCVar1 = &(this_ptr->base_actor).orient;
+  (pCVar2->location).position.x = (this_ptr->base).location.position.x;
+  (pCVar2->location).position.y = (this_ptr->base).location.position.y;
+  (pCVar2->location).position.z = (this_ptr->base).location.position.z;
+  (pCVar2->location).area_id = (this_ptr->base).location.area_id;
+  pCVar1 = &(this_ptr->base).orient;
   if (&pCVar2->orient != pCVar1) {
     (pCVar2->orient).pitch = pCVar1->pitch;
-    (pCVar2->orient).bank = (this_ptr->base_actor).orient.bank;
-    (pCVar2->orient).heading = (this_ptr->base_actor).orient.heading;
+    (pCVar2->orient).bank = (this_ptr->base).orient.bank;
+    (pCVar2->orient).heading = (this_ptr->base).orient.heading;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(pCVar2);
   return pCVar2;

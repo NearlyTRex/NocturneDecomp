@@ -50,7 +50,7 @@
     {
       "addr": "00412b41",
       "from_addr": "00412b48",
-      "name": "core_baron.cpp_FUN_00412b41",
+      "name": "core_baron.cpp_staticInit_FUN_00412b41",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -92,7 +92,7 @@
     {
       "addr": "004484d0",
       "from_addr": "004484e4",
-      "name": "core_crate.cpp_FUN_004484d0",
+      "name": "core_crate.cpp_CCrate_ctor_FUN_004484d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,7 +104,7 @@
     {
       "addr": "0048e000",
       "from_addr": "0048e016",
-      "name": "core_drip.cpp_ctor_FUN_0048e000",
+      "name": "core_drip.cpp_CDrip_ctor_FUN_0048e000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,19 +116,19 @@
     {
       "addr": "004a7ca0",
       "from_addr": "004a7cb6",
-      "name": "core_emitter.cpp_ctor_FUN_004a7ca0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004be6b0",
-      "from_addr": "004be6c6",
-      "name": "core_filmreel.cpp_ctor_FUN_004be6b0",
+      "name": "core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bea40",
       "from_addr": "004bea56",
-      "name": "core_filmreel.cpp_ctor_FUN_004bea40",
+      "name": "core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be6b0",
+      "from_addr": "004be6c6",
+      "name": "core_filmreel.cpp_CFilmReel_ctor_FUN_004be6b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,13 +146,13 @@
     {
       "addr": "004cb160",
       "from_addr": "004cb176",
-      "name": "core_flamecan.cpp_FUN_004cb160",
+      "name": "core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d1720",
       "from_addr": "004d174d",
-      "name": "core_frankgen.cpp_FUN_004d1720",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004d1720",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -164,31 +164,31 @@
     {
       "addr": "004ee510",
       "from_addr": "004ee524",
-      "name": "core_grave.cpp_FUN_004ee510",
+      "name": "core_grave.cpp_CGrave_ctor_FUN_004ee510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f1dd0",
       "from_addr": "004f1de4",
-      "name": "core_health.cpp_FUN_004f1dd0",
+      "name": "core_health.cpp_CHealthItem_ctor_FUN_004f1dd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00501690",
       "from_addr": "005016a4",
-      "name": "core_keyactor.cpp_FUN_00501690",
+      "name": "core_keyactor.cpp_CKeyActor_ctor_FUN_00501690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00502540",
       "from_addr": "00502554",
-      "name": "core_ladder.cpp_FUN_00502540",
+      "name": "core_ladder.cpp_CLadder_ctor_FUN_00502540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005047d0",
       "from_addr": "005047e4",
-      "name": "core_lever.cpp_FUN_005047d0",
+      "name": "core_lever.cpp_CLever_ctor_FUN_005047d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -212,7 +212,7 @@
     {
       "addr": "0054c850",
       "from_addr": "0054c869",
-      "name": "core_platfrm.cpp_FUN_0054c850",
+      "name": "core_platfrm.cpp_CPlatform_ctor_FUN_0054c850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -326,7 +326,7 @@
       {
         "call_addr": "004484e4",
         "call_type": "direct",
-        "caller": "core_crate.cpp_FUN_004484d0",
+        "caller": "core_crate.cpp_CCrate_ctor_FUN_004484d0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -335,7 +335,7 @@
       {
         "call_addr": "004ee524",
         "call_type": "direct",
-        "caller": "core_grave.cpp_FUN_004ee510",
+        "caller": "core_grave.cpp_CGrave_ctor_FUN_004ee510",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -344,7 +344,7 @@
       {
         "call_addr": "004f1de4",
         "call_type": "direct",
-        "caller": "core_health.cpp_FUN_004f1dd0",
+        "caller": "core_health.cpp_CHealthItem_ctor_FUN_004f1dd0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -353,7 +353,7 @@
       {
         "call_addr": "005016a4",
         "call_type": "direct",
-        "caller": "core_keyactor.cpp_FUN_00501690",
+        "caller": "core_keyactor.cpp_CKeyActor_ctor_FUN_00501690",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -362,7 +362,7 @@
       {
         "call_addr": "005047e4",
         "call_type": "direct",
-        "caller": "core_lever.cpp_FUN_005047d0",
+        "caller": "core_lever.cpp_CLever_ctor_FUN_005047d0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],

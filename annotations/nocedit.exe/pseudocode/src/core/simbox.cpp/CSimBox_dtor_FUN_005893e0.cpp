@@ -19,7 +19,7 @@ core_simbox_cpp_CSimBox_dtor_FUN_005893e0(CSimBox *this_ptr,uint d1,uint d2,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->field1_0x158 + 0x200));
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->unk + 0x200));
   ptr = (CSimBox *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-2].scrape_points[3].local_position.z,1);

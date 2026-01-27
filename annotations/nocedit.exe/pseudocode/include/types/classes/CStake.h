@@ -9,6 +9,6 @@
 typedef struct CStake {
     int active; // 0x0
     CBox box; // 0x4
-    int field_604; // 0x25c
+    int unk; // 0x25c
 } CStake;
 

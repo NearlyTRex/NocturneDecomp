@@ -4,20 +4,14 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 11,
         "message": "ambiguating new declaration of 'uint core_flamegun_cpp_FUN_004cb920()'"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 23,
+        "line": 22,
         "message": "'void*' is not a pointer-to-object type"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 28,
-        "message": "'_DAT_0065e270' was not declared in this scope; did you mean 'DAT_0065E370'?"
       }
     ],
     "success": false,
@@ -32,17 +26,16 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 167,
+    "complexity_score": 151,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 27,
-    "suspect_count": 13,
+    "pseudocode_lines": 26,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param",
-      "warning_overlapping_globals"
+      "stack_param"
     ],
-    "total_lines": 80
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -72,9 +65,9 @@
   "globals": [
     {
       "addr": "0065e270",
-      "name": "DAT_0065e270",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065e270",
+      "type": "float",
+      "value": "4"
     },
     {
       "addr": "0067a3d0",
@@ -144,92 +137,85 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[4].actor_name + 8) < 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "input_local_point = (CVector3f *)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc3)();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,&CStack_10,input_local_point);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[4].location.position.x == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004[4].actor_name + 8) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004[4].actor_name + 8) + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[4].location.position.y = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[4].actor_name[0x18] = '\\x01';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[4].actor_name[0x19] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[4].actor_name[0x1a] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[4].actor_name[0x1b] = '\\0';",
       "type": "stack_param"

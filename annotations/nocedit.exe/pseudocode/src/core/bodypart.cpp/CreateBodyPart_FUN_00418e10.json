@@ -12,66 +12,6 @@
         "column": 54,
         "line": 30,
         "message": "invalid conversion from 'void*' to 'CBodyPart*' [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 29,
-        "line": 58,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 29,
-        "line": 59,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 29,
-        "line": 60,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 25,
-        "line": 62,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 63,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 64,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 65,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 74,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 25,
-        "line": 76,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 77,
-        "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
       }
     ],
     "success": false,
@@ -102,19 +42,19 @@
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 36,
         "line": 70,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 36,
         "line": 71,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 36,
         "line": 72,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -419,21 +359,21 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
-      "text": "(this_ptr_00->base_actor).location.position.x = *in_stack_00000004;",
+      "text": "(this_ptr_00->base).location.position.x = *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "(this_ptr_00->base_actor).location.position.y = in_stack_00000004[1];",
+      "text": "(this_ptr_00->base).location.position.y = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "(this_ptr_00->base_actor).location.position.z = in_stack_00000004[2];",
+      "text": "(this_ptr_00->base).location.position.z = in_stack_00000004[2];",
       "type": "stack_param"
     },
     {
@@ -454,14 +394,14 @@
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00->base_actor).orient.bank = in_stack_00000008[1];",
+      "text": "(this_ptr_00->base).orient.bank = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00->base_actor).orient.heading = in_stack_00000008[2];",
+      "text": "(this_ptr_00->base).orient.heading = in_stack_00000008[2];",
       "type": "stack_param"
     },
     {
@@ -503,28 +443,28 @@
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_0000000c",
-      "text": "else if (this_ptr_00->field1_0x158 + 0x128 != (char *)in_stack_0000000c) {",
+      "text": "else if (this_ptr_00->unk + 0x128 != (char *)in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 0x128) = *in_stack_0000000c;",
+      "text": "*(uint *)(this_ptr_00->unk + 0x128) = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 300) = in_stack_0000000c[1];",
+      "text": "*(uint *)(this_ptr_00->unk + 300) = in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 0x130) = in_stack_0000000c[2];",
+      "text": "*(uint *)(this_ptr_00->unk + 0x130) = in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {
@@ -538,49 +478,49 @@
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_00000010",
-      "text": "(this_ptr_00->base_actor).scale.x = *(int *)(in_stack_00000010 + 0x108);",
+      "text": "(this_ptr_00->base).scale.x = *(int *)(in_stack_00000010 + 0x108);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_00000010",
-      "text": "(this_ptr_00->base_actor).scale.y = *(int *)(in_stack_00000010 + 0x10c);",
+      "text": "(this_ptr_00->base).scale.y = *(int *)(in_stack_00000010 + 0x10c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 65,
       "match": "in_stack_00000010",
-      "text": "(this_ptr_00->base_actor).scale.z = *(int *)(in_stack_00000010 + 0x110);",
+      "text": "(this_ptr_00->base).scale.z = *(int *)(in_stack_00000010 + 0x110);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000014",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 0xb58) = in_stack_00000014;",
+      "text": "*(uint *)(this_ptr_00->unk + 0xb58) = in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 68,
       "match": "in_stack_00000018",
-      "text": "(this_ptr_00->base_actor).is_transparent = in_stack_00000018;",
+      "text": "(this_ptr_00->base).is_transparent = in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 69,
       "match": "in_stack_00000018",
-      "text": "*(int *)(this_ptr_00->field1_0x158 + 0xb5c) = in_stack_00000018;",
+      "text": "*(int *)(this_ptr_00->unk + 0xb5c) = in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_0000001c",
-      "text": "*(uint *)(this_ptr_00->field1_0x158 + 0xb60) = in_stack_0000001c;",
+      "text": "*(uint *)(this_ptr_00->unk + 0xb60) = in_stack_0000001c;",
       "type": "stack_param"
     }
   ]

@@ -16,7 +16,7 @@ void core_game_cpp_FUN_004e1c30(void)
   
   item_index = 0;
   in_stack_00000008 = in_stack_00000008 * 0x34;
-  if ((in_stack_00000004->base_strlist).item_count < 1) {
+  if ((in_stack_00000004->base).item_count < 1) {
     return;
   }
   do {
@@ -32,6 +32,6 @@ void core_game_cpp_FUN_004e1c30(void)
     }
     item_index = item_index + 1;
     in_stack_00000008 = in_stack_00000008 + 4;
-  } while (item_index < (in_stack_00000004->base_strlist).item_count);
+  } while (item_index < (in_stack_00000004->base).item_count);
   return;
 }

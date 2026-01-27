@@ -22,6 +22,6 @@ void core_hpriest_cpp_FUN_004f7c00(void)
   if (iVar1 == 0) {
     return;
   }
-  core_charactr_cpp_CCharacter_FUN_0042b9e0(&in_stack_00000004->base_character);
+  core_charactr_cpp_CCharacter_FUN_0042b9e0(&in_stack_00000004->base);
   return;
 }

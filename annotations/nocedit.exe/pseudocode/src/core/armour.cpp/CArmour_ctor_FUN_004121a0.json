@@ -1,44 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 27,
-        "message": "'_DAT_00659d2c' was not declared in this scope; did you mean 'DAT_00679D2C'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 20,
-        "line": 39,
-        "message": "'CArmour' {aka 'struct CArmour'} has no member named 'field1_0xbeb4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 52,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 53,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 54,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 55,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -49,35 +12,33 @@
       {
         "category": "other",
         "column": 12,
-        "line": 23,
+        "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 57,
-        "line": 26,
+        "column": 41,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 61,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 46,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 94
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
   },
   "cross_references": [
     {
       "addr": "00412160",
       "from_addr": "0041217a",
-      "name": "core_armour.cpp_constructor_FUN_00412160",
+      "name": "core_armour.cpp_factoryFunc_FUN_00412160",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -144,9 +105,9 @@
     },
     {
       "addr": "00659d2c",
-      "name": "DAT_00659d2c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00659d2c",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "00659d34",
@@ -161,7 +122,7 @@
       {
         "call_addr": "0041217a",
         "call_type": "direct",
-        "caller": "core_armour.cpp_constructor_FUN_00412160",
+        "caller": "core_armour.cpp_factoryFunc_FUN_00412160",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -213,15 +174,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -24,8 +24,8 @@ engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *this_ptr,int
   if ((((-1 < this_ptr->width + x) && (x < g_WindowWidth)) && (-1 < y + this_ptr->height)) &&
      (y < g_WindowHeight)) {
     engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(this_ptr);
-    local_14 = this_ptr->ptrRaw;
-    pcVar3 = this_ptr->ptrOpa;
+    local_14 = this_ptr->raw;
+    pcVar3 = this_ptr->opa;
     if (g_BitsPerPixel == 0x20) {
       local_24 = 0;
       if (0 < this_ptr->height) {

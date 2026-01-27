@@ -9,6 +9,6 @@
 void __cdecl core_vehicle_cpp_CVehicle_FUN_005e8cf0(CVehicle *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   return;
 }

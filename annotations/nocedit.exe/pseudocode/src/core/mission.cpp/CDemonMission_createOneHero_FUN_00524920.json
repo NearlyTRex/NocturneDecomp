@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 88,
-        "line": 44,
-        "message": "'CHeroPlaceholder' {aka 'struct CHeroPlaceholder'} has no member named 'field1_0x158'"
-      },
-      {
         "category": "other",
         "column": 10,
-        "line": 57,
+        "line": 56,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -56,16 +50,16 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 179,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 53,
     "suspect_count": 12,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 192
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -296,47 +290,47 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000008",
-      "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->field1_0x158)",
+      "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->unk)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 == (CDemonActor *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 42,
       "match": "in_stack_00000010",
       "text": "(*((in_stack_00000010->vtable)._ub)->setPositionAndOrientation)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000010",
-      "text": "(in_stack_00000010,&(this_ptr_00->base_actor).location.position,",
+      "text": "(in_stack_00000010,&(this_ptr_00->base).location.position,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 45,
       "match": "in_stack_00000010",
-      "text": "(in_stack_00000010->location).area_id = (this_ptr_00->base_actor).location.area_id;",
+      "text": "(in_stack_00000010->location).area_id = (this_ptr_00->base).location.area_id;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 47,
       "match": "in_stack_00000010",
       "text": "((CMotionController *)(in_stack_00000010 + 1),0,0.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_00000010",
       "text": "(*(((in_stack_00000010->vtable)._uc)->_uc).cfunc23)();",
       "type": "stack_param"

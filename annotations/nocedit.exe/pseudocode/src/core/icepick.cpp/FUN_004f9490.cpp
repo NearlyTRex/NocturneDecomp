@@ -30,7 +30,7 @@ void core_icepick_cpp_FUN_004f9490(void)
                  (&in_stack_00000004->model,&local_24,in_stack_00000008);
   iVar3 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (&in_stack_00000004->base_actor,&local_30,input_local_point);
+            (&in_stack_00000004->base,&local_30,input_local_point);
   iVar2 = 0;
   local_18 = 0;
   do {
@@ -39,11 +39,11 @@ void core_icepick_cpp_FUN_004f9490(void)
         if (local_18 == 0) {
           return;
         }
-        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                  (&in_stack_00000004->base_actor,"icepick-punch?.wav");
+        (*((in_stack_00000004->base).vtable._ub)->playSound)
+                  (&in_stack_00000004->base,"icepick-punch?.wav");
         return;
       }
-      this_ptr = *(CCharacter **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar2 + -4);
+      this_ptr = *(CCharacter **)(g_CDemonSetPtr->unk4 + iVar2 + -4);
       if (this_ptr != in_stack_00000004) break;
 LAB_004f94e9:
       iVar3 = iVar3 + 1;
@@ -53,10 +53,10 @@ LAB_004f94e9:
     local_6c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(90.0,130.0);
     local_6c.weapon_damage_modifier = 0.5;
     local_6c.unknown = -1;
-    local_6c.attacker = &in_stack_00000004->base_actor;
-    local_6c.wielder = &in_stack_00000004->base_actor;
+    local_6c.attacker = &in_stack_00000004->base;
+    local_6c.wielder = &in_stack_00000004->base;
     local_14 = local_6c.damage_amount;
-    iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).checkCylinderCollisionWorld)
+    iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                       (this_ptr,&local_30,1.0,&local_6c);
     if (iVar1 == 0) goto LAB_004f94e9;
     iVar3 = iVar3 + 1;

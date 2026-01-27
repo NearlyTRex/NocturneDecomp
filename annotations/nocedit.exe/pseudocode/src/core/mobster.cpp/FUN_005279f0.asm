@@ -21,7 +21,7 @@
 ;   undefined4 DAT_02d81ab8
 ;   undefined4 DAT_02f37eb4
 ;   undefined4 g_CMobsterClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.field19_0x14f0a0[7996]
+;   undefined4 g_CDemonSetInstance.unk4[7996]
 ;   undefined4 DAT_03265258
 ;   undefined4 DAT_0326525c
 ;   CSound g_CSoundInstance
@@ -144,7 +144,7 @@ section .text
     XOR EBX,EBX                         ; 00527aee
     MOV EAX,[0x006810c8]                ; 00527af0 | g_CDemonSetPtr
         ;   Label: LAB_00527af0
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 00527af5 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 00527af5 | g_CDemonSetInstance.unk4[7996]
     JGE 0x00527b4a                      ; 00527afb
         ;   XREF to: 00527b4a (CONDITIONAL_JUMP)  ; LAB_00527b4a
     MOV EDX,dword ptr [ESP + 0x68]      ; 00527afd

@@ -9,9 +9,8 @@
 void __cdecl core_ladder_cpp_CLadder_serialize_FUN_005029c0(CLadder *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
-  core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-            ((CKeyFramedModelInstance *)&this_ptr->model,"model");
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
+  core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"model");
   core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->ladder_size,"ladderSize");
   core_actor_cpp_serializeActor_FUN_0040b870
             ((CDemonActor *)this_ptr->master_actor,"masterActor");

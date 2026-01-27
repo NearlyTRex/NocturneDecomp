@@ -11,7 +11,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
 {
   int iVar1;
   
-  iVar1 = shape_superopt_cpp_CObj_weldVertices_FUN_005d4160(&this_ptr->obj,this_ptr->field1_0x1c,1);
+  iVar1 = shape_superopt_cpp_CObj_weldVertices_FUN_005d4160(&this_ptr->obj,this_ptr->unk1,1);
   if (iVar1 == 0) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to optimize vertices with given threshold");
     return 0;

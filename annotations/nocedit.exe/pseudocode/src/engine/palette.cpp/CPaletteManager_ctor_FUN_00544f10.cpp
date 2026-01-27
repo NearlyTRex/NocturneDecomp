@@ -14,18 +14,18 @@ engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr)
   int in_stack_00000008;
   int in_stack_0000000c;
   
-  this_ptr->field3_0xc = in_stack_00000008;
-  this_ptr->field2_0x8 = in_stack_0000000c;
+  this_ptr->unk4 = in_stack_00000008;
+  this_ptr->unk3 = in_stack_0000000c;
   pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (in_stack_00000008 << 6,"..\\engine\\palette.cpp",0x2b);
-  this_ptr->field1_0x4 = (int)pvVar1;
+  this_ptr->unk2 = (int)pvVar1;
   if (pvVar1 != (void *)0x0) {
-    this_ptr->field0_0x0 = 0;
+    this_ptr->unk1 = 0;
     return this_ptr;
   }
   g_CurrentFilename = "..\\engine\\palette.cpp";
   g_CurrentLineNumber = 0x2c;
   core_main_c_displayErrorAndQuit_FUN_00506f10("The very same person who says not to allocate memory on a constructor did it here.");
-  this_ptr->field0_0x0 = 0;
+  this_ptr->unk1 = 0;
   return this_ptr;
 }

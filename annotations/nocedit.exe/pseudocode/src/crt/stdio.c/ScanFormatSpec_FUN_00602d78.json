@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 168,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 93,
-    "suspect_count": 6,
+    "pseudocode_lines": 92,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "special_crt_function",
-      "warning_struct_overlap"
+      "special_crt_function"
     ],
-    "total_lines": 294
+    "total_lines": 293
   },
   "cross_references": [
     {
@@ -123,41 +121,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Struct has overlapping fields",
-      "line": 2,
-      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
-      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
-      "type": "warning_struct_overlap"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;",
-      "type": "pointer_cast"
-    },
     {
       "address": "00602d78",
       "crt_type": "runtime support",

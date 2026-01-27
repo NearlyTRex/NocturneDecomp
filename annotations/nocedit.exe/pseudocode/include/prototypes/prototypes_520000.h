@@ -24,7 +24,6 @@
 #include "types/classes/CMotionList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/classes/SMirrorReflection.h"
 #include "types/structs/SBat.h"
 #include "types/structs/SBitAllocationTable.h"
 #include "types/structs/SCPUInfo.h"
@@ -33,6 +32,7 @@
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLModelBounds.h"
+#include "types/structs/SMirrorReflection.h"
 #include "types/structs/SMorphControlPoint.h"
 #include "types/structs/SMotion.h"
 #include "types/structs/SMotionTransition.h"
@@ -131,7 +131,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524e60(CDemonMission * this_pt
 CDemonMission * __cdecl core_mission_cpp_CDemonMission_ctor_FUN_00524ef0(CDemonMission * this_ptr);
 CDemonMission * __cdecl core_mission_cpp_CDemonMission_dtor_FUN_00524f00(CDemonMission * this_ptr);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_00524f10(void);
-void __watcallRegister core_mmx_c_detectIntelProcessor_FUN_00524f4c(void);
+void __cdecl core_mmx_c_detectIntelProcessor_FUN_00524f4c(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_00524ff9(void);
 int __cdecl core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo * cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_00525070(void);

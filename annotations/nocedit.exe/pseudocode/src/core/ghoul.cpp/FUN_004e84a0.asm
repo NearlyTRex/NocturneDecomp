@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d832fc
+;   int INT_02d832fc
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
@@ -29,7 +29,7 @@ section .text
     MOV EBP,ESP                         ; 004e84a4
     SUB ESP,0x6c                        ; 004e84a6
     MOV EBX,dword ptr [EBP + 0x18]      ; 004e84a9
-    MOV EDX,dword ptr [0x02d832fc]      ; 004e84ac | DAT_02d832fc
+    MOV EDX,dword ptr [0x02d832fc]      ; 004e84ac | INT_02d832fc
     MOV ESI,dword ptr [EBP + 0x14]      ; 004e84b2
     PUSH EDX                            ; 004e84b5
     ADD ESI,0x158                       ; 004e84b6

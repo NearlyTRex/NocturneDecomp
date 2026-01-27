@@ -89,7 +89,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xfb);
     cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_c4);
     cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00487990(&local_c4,0,0,0x13,9);
-    local_24 = PTR_core_baron_cpp_FUN_00412b41_006703e4;
+    local_24 = g_CBaronStaticInitFunc;
     iVar2 = g_WindowHeight / 2 + 0x66;
     iVar3 = g_WindowHeight - iVar2;
     iVar1 = test_font->current_max_width;

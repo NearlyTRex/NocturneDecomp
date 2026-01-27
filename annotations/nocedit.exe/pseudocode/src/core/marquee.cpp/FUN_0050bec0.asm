@@ -22,7 +22,7 @@
 ;   core_marquee.cpp_FUN_0050c050 at 0050c2e1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00661020
+;   float FLOAT_00661020 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -46,13 +46,13 @@ section .text
     LEA EBX,[ESP + 0x28]                ; 0050bed1
     MOV ESI,dword ptr [ESI]             ; 0050bed5 | g_CDemonRendererInstance
     FLD float ptr [EAX]                 ; 0050bed7
-    FMUL float ptr [0x00661020]         ; 0050bed9 | DAT_00661020
+    FMUL float ptr [0x00661020]         ; 0050bed9 | FLOAT_00661020
     FISTP dword ptr [EBX]               ; 0050bedf
     FLD float ptr [EAX + 0x4]           ; 0050bee1
-    FMUL float ptr [0x00661020]         ; 0050bee4 | DAT_00661020
+    FMUL float ptr [0x00661020]         ; 0050bee4 | FLOAT_00661020
     FISTP dword ptr [EBX + 0x4]         ; 0050beea
     FLD float ptr [EAX + 0x8]           ; 0050beed
-    FMUL float ptr [0x00661020]         ; 0050bef0 | DAT_00661020
+    FMUL float ptr [0x00661020]         ; 0050bef0 | FLOAT_00661020
     FISTP dword ptr [EBX + 0x8]         ; 0050bef6
     LEA EAX,[ESP + 0x28]                ; 0050bef9
     PUSH EAX                            ; 0050befd

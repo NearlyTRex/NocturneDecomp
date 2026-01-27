@@ -148,17 +148,15 @@ LAB_004a811d:
     core_emitter_cpp_FUN_004a8d20();
     core_fire_cpp_CFireEffect_FUN_004c8ef0(g_CFireEffectPtr);
     this_ptr = g_HeroActors[g_LocalHeroIndex];
-    local_ac = (this_ptr->base_character).base_actor.location.position.x -
+    local_ac = (this_ptr->base).base.location.position.x -
                ((CVector3f *)(in_stack_00000004 + 0x20))->x;
-    local_a8 = (this_ptr->base_character).base_actor.location.position.y -
-               *(float *)(in_stack_00000004 + 0x24);
-    local_a4 = (this_ptr->base_character).base_actor.location.position.z -
-               *(float *)(in_stack_00000004 + 0x28);
+    local_a8 = (this_ptr->base).base.location.position.y - *(float *)(in_stack_00000004 + 0x24);
+    local_a4 = (this_ptr->base).base.location.position.z - *(float *)(in_stack_00000004 + 0x28);
     if (SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8) <
         (float)2.5) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                 ((CDemonActor *)this_ptr,&local_a0,(CVector3f *)(in_stack_00000004 + 0x20));
-      core_charactr_cpp_CCharacter_FUN_0042b5b0(&g_HeroActors[g_LocalHeroIndex]->base_character);
+      core_charactr_cpp_CCharacter_FUN_0042b5b0(&g_HeroActors[g_LocalHeroIndex]->base);
     }
     break;
   case 6:

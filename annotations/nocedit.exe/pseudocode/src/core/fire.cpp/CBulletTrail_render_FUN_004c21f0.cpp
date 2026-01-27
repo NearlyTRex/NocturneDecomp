@@ -31,10 +31,10 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
   float fStack_1c;
   int local_18;
   
-  local_64.y = *(float *)(this_ptr->field0_0x0 + 0xc) - *(float *)this_ptr->field0_0x0;
-  local_64.z = *(float *)(this_ptr->field0_0x0 + 0x10) - *(float *)(this_ptr->field0_0x0 + 4);
-  local_58 = *(float *)(this_ptr->field0_0x0 + 0x14) - *(float *)(this_ptr->field0_0x0 + 8);
-  iVar3 = *(int *)(this_ptr->field0_0x0 + 0x18);
+  local_64.y = *(float *)(this_ptr->unk + 0xc) - *(float *)this_ptr->unk;
+  local_64.z = *(float *)(this_ptr->unk + 0x10) - *(float *)(this_ptr->unk + 4);
+  local_58 = *(float *)(this_ptr->unk + 0x14) - *(float *)(this_ptr->unk + 8);
+  iVar3 = *(int *)(this_ptr->unk + 0x18);
   local_6c = *(float *)(iVar3 + 0x5684) - *(float *)(iVar3 + 0x5678);
   local_68 = *(float *)(iVar3 + 0x5688) - *(float *)(iVar3 + 0x567c);
   local_64.x = *(float *)(iVar3 + 0x568c) - *(float *)(iVar3 + 0x5680);
@@ -42,9 +42,9 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
                local_64.x;
   if (0.0 < local_7c.x) {
     local_20 = 2;
-    if (0.0 < *(float *)(this_ptr->field0_0x0 + 0x1c)) {
-      dVar4 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(local_7c.x / *(float *)(this_ptr->field0_0x0 + 0x1c)));
+    if (0.0 < *(float *)(this_ptr->unk + 0x1c)) {
+      dVar4 = crt_math_c_round_FUN_005fe6b0((double)(local_7c.x / *(float *)(this_ptr->unk + 0x1c)))
+      ;
       local_24 = (int)ROUND(dVar4);
       if (local_24 < 2) {
         local_24 = 2;
@@ -71,9 +71,9 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
           local_34 = local_58 * fStack_1c;
           local_30 = local_54 * fStack_1c;
           local_2c = local_50 * fStack_1c;
-          local_40.x = *(float *)this_ptr->field0_0x0 + local_34;
-          local_40.y = *(float *)(this_ptr->field0_0x0 + 4) + local_30;
-          local_40.z = *(float *)(this_ptr->field0_0x0 + 8) + local_2c;
+          local_40.x = *(float *)this_ptr->unk + local_34;
+          local_40.y = *(float *)(this_ptr->unk + 4) + local_30;
+          local_40.z = *(float *)(this_ptr->unk + 8) + local_2c;
           local_18 = iVar1;
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr2,&local_40);
@@ -85,8 +85,8 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
           dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
           fStack_1c = (float)(int)ROUND(dVar4);
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                    (*(CKeyFramedModel **)(this_ptr->field0_0x0 + 0x18),
-                     (CKeyFramedModelInstance *)0x0,0,(int)fStack_1c);
+                    (*(CKeyFramedModel **)(this_ptr->unk + 0x18),(CKeyFramedModelInstance *)0x0,0,
+                     (int)fStack_1c);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
           iVar3 = iVar3 + 1;
           if ((int)local_28 <= iVar3) {

@@ -12,8 +12,8 @@ typedef struct SHuffmanTable {
     int linbits; // 0xc
     int max_value; // 0x10
     int reference_index; // 0x14
-    int field_24; // 0x18
-    int field_28; // 0x1c
+    int unk1; // 0x18
+    int unk2; // 0x1c
     char huffman_data[2052]; // 0x20
     int table_size; // 0x824
 } SHuffmanTable;

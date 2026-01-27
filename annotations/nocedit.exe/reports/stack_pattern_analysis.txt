@@ -120,7 +120,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00601729: MOV ESI,ESP
 
   crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0
-    File: crt/unknown.c, Suspects: 8
+    File: crt/unknown.c, Suspects: 7
     - [alt_frame_pointer] at 0060e8f8: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e913: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e91c: MOV EDI,ESP
@@ -147,7 +147,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00605189: MOV ESI,ESP
 
   crt_stdio.c_FormatWideString_FUN_006031c0
-    File: crt/stdio.c, Suspects: 2
+    File: crt/stdio.c, Suspects: 1
     - [alt_frame_pointer] at 006031ff: MOV EDI,ESP
 
   support_trisock.cpp_connectSocket_FUN_005e1bd0
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 24.1 suspects/function
-  Without stack patterns: avg 5.8 suspects/function
+  With stack patterns:    avg 23.8 suspects/function
+  Without stack patterns: avg 5.6 suspects/function

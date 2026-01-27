@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_waypoint.cpp_staticInit_FUN_005ebd10(void)
+; __cdecl void core_waypoint.cpp_staticInit_FUN_005ebd10(void)
 ;
 ;
 ; Referenced Globals:

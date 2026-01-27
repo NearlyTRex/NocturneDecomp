@@ -83,7 +83,7 @@ void core_flies_cpp_FUN_004cbf00(void)
        in_stack_00000004[0x1f].validation_magic = (int)fVar1, fVar1 <= 0.0)) {
       if (*(int *)(in_stack_00000004[1].actor_name + 0xc) < 200) {
         core_flies_cpp_FUN_004cc760();
-        iVar9 = in_stack_00000004[0x1f].field7_0x6c;
+        iVar9 = in_stack_00000004[0x1f].unk1;
         iVar2 = in_stack_00000004[0x1f].health;
         *(int *)(in_stack_00000004[1].actor_name + 0xc) =
              *(int *)(in_stack_00000004[1].actor_name + 0xc) + 1;

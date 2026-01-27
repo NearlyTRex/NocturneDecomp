@@ -4,37 +4,25 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_game_cpp_PleaseEnterValidInteger_FUN_004d7730()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "'_DAT_02d831bc' was not declared in this scope; did you mean 'DAT_02d831ec'?"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 20,
+        "line": 17,
         "message": "lvalue required as unary '&' operand"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 25,
-        "message": "'g_DebugRecordingParams' was not declared in this scope; did you mean 'g_DebugRecording'?"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 28,
+        "line": 25,
         "message": "lvalue required as unary '&' operand"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 31,
+        "line": 28,
         "message": "lvalue required as unary '&' operand"
       }
     ],
@@ -48,24 +36,28 @@
       },
       {
         "category": "other",
+        "column": 42,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
         "column": 40,
-        "line": 35,
+        "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 47,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 14,
-    "pseudocode_lines": 32,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 116
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 114
   },
   "cross_references": [],
   "function": {
@@ -173,13 +165,13 @@
     {
       "addr": "02d831b8",
       "name": "g_DebugRecordingParams",
-      "type": "undefined4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d831bc",
-      "name": "DAT_02d831bc",
-      "type": "undefined4",
+      "name": "FLOAT_02d831bc",
+      "type": "float",
       "value": null
     }
   ],
@@ -221,13 +213,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

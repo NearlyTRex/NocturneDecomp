@@ -2,20 +2,18 @@
 // Address: 00449610
 // Address Range: [[00449610, 0044965b]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_curtain.cpp_staticInit_FUN_00449610(void)
+// Signature: void core_curtain.cpp_staticInit_FUN_00449610(void)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_curtain_cpp_staticInit_FUN_00449610(void)
+void __cdecl core_curtain_cpp_staticInit_FUN_00449610(void)
 
 {
-  CDemonActorType *pCVar1;
-  
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_008879c0,100,&g_CVectorTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
             (DAT_00887e70,100,&g_SCollisionInfoTypeInfo);
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CCurtainClassInfo,"CCurtain",core_curtain_cpp_FUN_00449660,
-                      &g_CCurtainClassVersion,6,&g_CDemonActorClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CCurtainClassInfo,"CCurtain",core_curtain_cpp_factoryFunc_FUN_00449660,
+             &g_CCurtainClassVersion,6,&g_CDemonActorClassInfo);
+  return;
 }

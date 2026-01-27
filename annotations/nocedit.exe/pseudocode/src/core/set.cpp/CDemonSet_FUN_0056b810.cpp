@@ -94,7 +94,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
           pCVar6 = this_ptr;
           do {
             pCVar5 = *(CDemonActor **)pCVar6->actor_list_data;
-            if (pCVar5->field17_0x104 == 0) {
+            if (pCVar5->unk7 == 0) {
               iVar8 = pCVar5->health;
               if (iVar8 == local_24) {
                 local_68 = (CDemonActor *)(pCVar5->orient).pitch;
@@ -151,7 +151,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                              (*(CDemonActor **)pCVar6->actor_list_data,
                               g_CCharacterClassInfo.name_hash);
         if ((local_34 != (CCharacter *)0x0) &&
-           (fVar4 = (float)(*(((local_34->base_actor).vtable._uc)->_uc).isDamageable)(local_34),
+           (fVar4 = (float)(*(((local_34->base).vtable._uc)->_uc).isDamageable)(local_34),
            fVar4 == 0.0)) {
           damage_info = (CPathMap *)&fStack_48;
           fStack_48 = fVar4;
@@ -165,7 +165,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
               pCStack_8c = local_50;
             }
             damage_info = (CPathMap *)&stack0xffffff60;
-            (*(((pCStack_30->base_actor).vtable._uc)->_uc).processDamage)
+            (*(((pCStack_30->base).vtable._uc)->_uc).processDamage)
                       (pCStack_30,(SDamageInfo *)damage_info);
           }
         }

@@ -21,22 +21,21 @@ void __cdecl core_weapon_cpp_FUN_005ee740(CWeapon *this_ptr)
   float fStack_8;
   
   if (((this_ptr->model).model_ptr != (CKeyFramedModel *)0x0) &&
-     ((int *)(this_ptr->base_actor).validation_magic == &g_ActorMagicNumber)) {
-    (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-              (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);
+     ((int *)(this_ptr->base).validation_magic == &g_ActorMagicNumber)) {
+    (*((this_ptr->base).vtable._ub)->getBoundingBox)
+              (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
     fStack_8 = fStack_44 + fStack_38;
     CStack_14.x = fStack_8 * 0.5f;
     CStack_14.y = (fStack_40 + fStack_34) * 0.5f;
     CStack_14.z = (fStack_3c + fStack_30) * 0.5f;
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&this_ptr->base_actor,&CStack_2c,&CStack_14);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(&this_ptr->base,&CStack_2c,&CStack_14)
+    ;
     CStack_20.x = fStack_38 - fStack_44;
     CStack_20.y = fStack_34 - fStack_40;
     CStack_20.z = fStack_30 - fStack_3c;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)(this_ptr->field9_0x305 + 3),&CStack_2c,
-               (CVector3f *)&(this_ptr->base_actor).orient,&CStack_20,
-               *(float *)(this_ptr->field9_0x305 + 0x25f));
+              ((CBox *)(this_ptr->unk3 + 3),&CStack_2c,(CVector3f *)&(this_ptr->base).orient,
+               &CStack_20,*(float *)(this_ptr->unk3 + 0x25f));
     return;
   }
   return;

@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_flame.cpp_FUN_004ca110(uint param_1) */
-
 float core_flame_cpp_FUN_004ca110(void)
 
 {
@@ -58,14 +55,14 @@ float core_flame_cpp_FUN_004ca110(void)
   
   bVar5 = 0;
   if (((in_stack_00000004[1].orient_matrix.m[2].z != 0.0) ||
-      (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0)) &&
+      (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0)) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
-    if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-       (in_stack_00000004 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {
+    if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
+       (in_stack_00000004 == *(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c))) {
       core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
                 ((CDemonGlobe *)
-                 ((*(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))[1].actor_name + 0x10));
+                 ((*(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c))[1].actor_name + 0x10));
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
     if (in_stack_00000004[1].previous_transform_state.dirty_flags != 0) {
@@ -119,27 +116,27 @@ float core_flame_cpp_FUN_004ca110(void)
           fStack_74 = *(float *)in_stack_00000004[1].actor_name * 0.5f;
           fStack_70 = 0.0;
           fStack_6c = 0.0;
-          CStack_d4.x = (int)ROUND(fStack_74 * _DAT_0065e010);
-          CStack_d4.y = (int)ROUND(_DAT_0065e010 * 0.0);
-          CStack_d4.z = (int)ROUND(_DAT_0065e010 * 0.0);
+          CStack_d4.x = (int)ROUND(fStack_74 * 256.0f);
+          CStack_d4.y = (int)ROUND(256.0f * 0.0);
+          CStack_d4.z = (int)ROUND(256.0f * 0.0);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_d4);
           fStack_70 = *(float *)(in_stack_00000004[1].actor_name + 4);
-          CStack_c8.x = (int)ROUND(fStack_74 * _DAT_0065e010);
-          CStack_c8.y = (int)ROUND(fStack_70 * _DAT_0065e010);
-          CStack_c8.z = (int)ROUND(fStack_6c * _DAT_0065e010);
+          CStack_c8.x = (int)ROUND(fStack_74 * 256.0f);
+          CStack_c8.y = (int)ROUND(fStack_70 * 256.0f);
+          CStack_c8.z = (int)ROUND(fStack_6c * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_c8);
           fStack_74 = -fStack_74;
-          CStack_b0.x = (int)ROUND(fStack_74 * _DAT_0065e010);
-          CStack_b0.y = (int)ROUND(fStack_70 * _DAT_0065e010);
-          CStack_b0.z = (int)ROUND(fStack_6c * _DAT_0065e010);
+          CStack_b0.x = (int)ROUND(fStack_74 * 256.0f);
+          CStack_b0.y = (int)ROUND(fStack_70 * 256.0f);
+          CStack_b0.z = (int)ROUND(fStack_6c * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_b0);
           fStack_70 = 0.0;
-          CStack_2c.x = (int)ROUND(fStack_74 * _DAT_0065e010);
-          CStack_2c.y = (int)ROUND(_DAT_0065e010 * 0.0);
-          CStack_2c.z = (int)ROUND(fStack_6c * _DAT_0065e010);
+          CStack_2c.x = (int)ROUND(fStack_74 * 256.0f);
+          CStack_2c.y = (int)ROUND(256.0f * 0.0);
+          CStack_2c.z = (int)ROUND(fStack_6c * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_2c);
           (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
@@ -224,28 +221,28 @@ float core_flame_cpp_FUN_004ca110(void)
       fStack_44 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.98,1.02);
       fStack_44 = fStack_44 * fStack_14;
       fStack_3c = 0.0;
-      CStack_bc.x = (int)ROUND(fStack_44 * _DAT_0065e010);
-      CStack_bc.y = (int)ROUND(fStack_44 * _DAT_0065e010);
-      CStack_bc.z = (int)ROUND(_DAT_0065e010 * 0.0);
+      CStack_bc.x = (int)ROUND(fStack_44 * 256.0f);
+      CStack_bc.y = (int)ROUND(fStack_44 * 256.0f);
+      CStack_bc.z = (int)ROUND(256.0f * 0.0);
       fStack_40 = fStack_44;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_bc);
       fStack_44 = -fStack_44;
-      CStack_68.x = (int)ROUND(fStack_44 * _DAT_0065e010);
-      CStack_68.y = (int)ROUND(fStack_40 * _DAT_0065e010);
-      CStack_68.z = (int)ROUND(fStack_3c * _DAT_0065e010);
+      CStack_68.x = (int)ROUND(fStack_44 * 256.0f);
+      CStack_68.y = (int)ROUND(fStack_40 * 256.0f);
+      CStack_68.z = (int)ROUND(fStack_3c * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_68);
       fStack_40 = -fStack_40;
-      CStack_8c.x = (int)ROUND(fStack_44 * _DAT_0065e010);
-      CStack_8c.y = (int)ROUND(fStack_40 * _DAT_0065e010);
-      CStack_8c.z = (int)ROUND(fStack_3c * _DAT_0065e010);
+      CStack_8c.x = (int)ROUND(fStack_44 * 256.0f);
+      CStack_8c.y = (int)ROUND(fStack_40 * 256.0f);
+      CStack_8c.z = (int)ROUND(fStack_3c * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_8c);
       fStack_44 = -fStack_44;
-      CStack_38.x = (int)ROUND(fStack_44 * _DAT_0065e010);
-      CStack_38.y = (int)ROUND(fStack_40 * _DAT_0065e010);
-      CStack_38.z = (int)ROUND(fStack_3c * _DAT_0065e010);
+      CStack_38.x = (int)ROUND(fStack_44 * 256.0f);
+      CStack_38.y = (int)ROUND(fStack_40 * 256.0f);
+      CStack_38.z = (int)ROUND(fStack_3c * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_38);
       iVar3 = 0;

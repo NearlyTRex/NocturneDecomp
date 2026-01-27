@@ -2,17 +2,15 @@
 // Address: 004f47d0
 // Address Range: [[004f47d0, 004f47f3]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_hostage.cpp_staticInit_FUN_004f47d0(void)
+// Signature: void core_hostage.cpp_staticInit_FUN_004f47d0(void)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_hostage_cpp_staticInit_FUN_004f47d0(void)
+void __cdecl core_hostage_cpp_staticInit_FUN_004f47d0(void)
 
 {
-  CDemonActorType *pCVar1;
-  
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CHostageClassInfo,"CHostage",core_hostage_cpp_FUN_004f4800,
-                      &g_CHostageClassVersion,0xc,&g_CNPCClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CHostageClassInfo,"CHostage",core_hostage_cpp_factoryFunc_FUN_004f4800,
+             &g_CHostageClassVersion,0xc,&g_CNPCClassInfo);
+  return;
 }

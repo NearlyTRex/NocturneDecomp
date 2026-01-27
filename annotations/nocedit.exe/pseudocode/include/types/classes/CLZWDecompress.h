@@ -8,7 +8,7 @@
 // Structure: CLZWDecompress
 // Ghidra size: 0x30 (48 bytes)
 typedef struct CLZWDecompress {
-    CCodec base_codec; // 0x0
+    CCodec base; // 0x0
     CLZWDictionary lzw_dict; // 0x4
     int buffer_size; // 0x20
     int num_bits; // 0x24

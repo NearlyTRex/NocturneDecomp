@@ -1,0 +1,217 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 28,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 87,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 42,
+    "suspect_count": 4,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "004cb120",
+      "from_addr": "004cb13a",
+      "name": "core_flamecan.cpp_factoryFunc_FUN_004cb120",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cb160",
+    "address_range": [
+      [
+        "004cb160",
+        "004cb1f8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160",
+    "signature": "CFlameCan * core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160(CFlameCan * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "00478ce0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "004c9aa0",
+      "is_variadic": false,
+      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a2c7",
+      "name": "s_question_kfm_0062a2c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a2d4",
+      "name": "s_none_0062a2d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a2d5",
+      "name": "s_one_0062a2d5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062a2d6",
+      "name": "s_ne_0062a2d6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062a2d7",
+      "name": "s_e_0062a2d7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065e144",
+      "name": "g_CFlameCanVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cb13a",
+        "call_type": "direct",
+        "caller": "core_flamecan.cpp_factoryFunc_FUN_004cb120",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.181818181818182,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 31,
+      "INT_ADD": 23,
+      "INT_AND": 20,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 15,
+      "LOAD": 8,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 184
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameCan *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar4[-1].",
+      "text": "*(CDemonActor_vtable **)(pCVar4[-1].base.create_event + 0x40) = &g_CFlameCanVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar4[-1].",
+      "text": "((CKeyFramedModelInstance *)(pCVar4[-1].base.create_event + 0x44),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "pCVar4[-1].",
+      "text": "pcVar6 = pCVar4[-1].unk3 + 0x88;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "pCVar4[-2].",
+      "text": "return (CFlameCan *)(pCVar4[-2].unk3 + 0x50);",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlameCan",
+        "offset": 0,
+        "vtable_addr": "0065e234"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

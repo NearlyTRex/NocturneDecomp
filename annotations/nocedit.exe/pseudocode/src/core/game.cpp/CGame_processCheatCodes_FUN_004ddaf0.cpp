@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
 
 {
@@ -318,16 +316,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       if (local_294 == local_298) {
         g_InputHistory[1] = '\0';
-        if (this_ptr->field67_0x208 == 0) {
+        if (this_ptr->unk8 == 0) {
           iVar10 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-          this_ptr->field67_0x208 = 1;
+          this_ptr->unk8 = 1;
           this_ptr->timing_related_flag = iVar10;
           this_ptr->frame_counter = 0;
         }
         else {
           iVar10 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
           dVar7 = (double)(iVar10 - this_ptr->timing_related_flag) * 0.055555555555555601;
-          this_ptr->field67_0x208 = 0;
+          this_ptr->unk8 = 0;
           dVar7 = (double)this_ptr->frame_counter / (dVar7 * 1.52587890625e-05);
           local_2ac._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);
           uVar8 = local_2ac._4_4_;
@@ -541,7 +539,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = this_ptr->aim_mode;
+        *(int *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x13908) = this_ptr->aim_mode;
       }
       pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
                                   ((SEncryptedMessage *)DAT_0062bc80);
@@ -576,7 +574,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = this_ptr->aim_mode;
+        *(int *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x13908) = this_ptr->aim_mode;
       }
       if (this_ptr->velocity_debug_enabled != 0) {
         pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
@@ -607,14 +605,14 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         if (local_25c == local_260) {
           g_InputHistory[1] = '\0';
           g_DebugRecording = 0;
-          _DAT_02d831bc = 0;
+          FLOAT_02d831bc = 0.0;
           iVar10 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                              (g_CEditorToolsPtr,"Enter Movie FPS",
                               &30.0f,1,0.25,240.0,1);
           if ((((iVar10 != 0) &&
                (iVar10 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                                    (g_CEditorToolsPtr,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",
-                                    (int *)&g_DebugRecordingParams,1,0,99999,1), iVar10 != 0)) &&
+                                    &g_DebugRecordingParams,1,0,99999,1), iVar10 != 0)) &&
               (iVar10 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                                   (g_CEditorToolsPtr,"Enter image width",&0x00000040,1,1,
                                    9999,1), iVar10 != 0)) &&
@@ -655,7 +653,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
         if (local_254 == local_258) {
           g_InputHistory[1] = '\0';
-          this_ptr->field72_0x21c = (uint)(this_ptr->field72_0x21c == 0);
+          this_ptr->unk10 = (uint)(this_ptr->unk10 == 0);
         }
       }
       pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
@@ -739,8 +737,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       if (iStack_244 == iStack_248) {
         g_InputHistory[1] = '\0';
-        uVar12 = (uint)(this_ptr->field53_0x1d0 == 0);
-        this_ptr->field53_0x1d0 = uVar12;
+        uVar12 = (uint)(this_ptr->unk2 == 0);
+        this_ptr->unk2 = uVar12;
         if (uVar12 == 0) {
           fVar22 = 5.0;
           pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode disabled")
@@ -751,7 +749,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           fVar22 = 5.0;
           pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode enabled");
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
-          (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points = 100.0;
+          (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
         }
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
@@ -783,8 +781,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       if (iVar10 == iStack_240) {
         g_InputHistory[1] = '\0';
-        uVar12 = (uint)(this_ptr->field54_0x1d4 == 0);
-        this_ptr->field54_0x1d4 = uVar12;
+        uVar12 = (uint)(this_ptr->unk3 == 0);
+        this_ptr->unk3 = uVar12;
         if (uVar12 == 0) {
           pcVar11 = "Enemies thawed";
         }
@@ -1125,9 +1123,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
                             ("You've got all the weapons");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
         iVar10 = g_LocalHeroIndex;
-        this_ptr->field53_0x1d0 = 1;
+        this_ptr->unk2 = 1;
         this_ptr_00 = g_CSoundPtr;
-        (g_HeroActors[iVar10]->base_character).hit_points = 100.0;
+        (g_HeroActors[iVar10]->base).hit_points = 100.0;
         core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr_00,(void *)0x0,"cheat-1.wav")
         ;
       }
@@ -1249,16 +1247,12 @@ LAB_004df408:
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
         iStack_6c = 0;
-        for (iVar10 = 0; iVar10 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
-            iVar10 = iVar10 + 1) {
-          iVar17 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_6c + 8000);
+        for (iVar10 = 0; iVar10 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar10 = iVar10 + 1) {
+          iVar17 = *(int *)(g_CDemonSetPtr->unk4 + iStack_6c + 8000);
           pCVar6 = g_HeroActors[g_LocalHeroIndex];
-          fStack_2b8 = (pCVar6->base_character).base_actor.location.position.x -
-                       *(float *)(iVar17 + 0x20);
-          local_2b4 = (pCVar6->base_character).base_actor.location.position.y -
-                      *(float *)(iVar17 + 0x24);
-          fStack_2b0 = (pCVar6->base_character).base_actor.location.position.z -
-                       *(float *)(iVar17 + 0x28);
+          fStack_2b8 = (pCVar6->base).base.location.position.x - *(float *)(iVar17 + 0x20);
+          local_2b4 = (pCVar6->base).base.location.position.y - *(float *)(iVar17 + 0x24);
+          fStack_2b0 = (pCVar6->base).base.location.position.z - *(float *)(iVar17 + 0x28);
           if (SQRT(fStack_2b0 * fStack_2b0 + fStack_2b8 * fStack_2b8 + local_2b4 * local_2b4) <=
               (float)50) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_2f4);
@@ -1295,8 +1289,8 @@ LAB_004df408:
       }
       if (iStack_198 == iStack_19c) {
         g_InputHistory[1] = '\0';
-        uVar12 = (uint)(this_ptr->field57_0x1e0 == 0);
-        this_ptr->field57_0x1e0 = uVar12;
+        uVar12 = (uint)(this_ptr->unk4 == 0);
+        this_ptr->unk4 = uVar12;
         if (uVar12 == 0) {
           pcVar11 = "Gratuitous dismemberment disabled";
         }
@@ -1403,7 +1397,7 @@ LAB_004df408:
         g_InputHistory[1] = '\0';
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        this_ptr->field62_0x1f4 = (uint)(this_ptr->field62_0x1f4 == 0);
+        this_ptr->unk6 = (uint)(this_ptr->unk6 == 0);
       }
       pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
                                   ((SEncryptedMessage *)DAT_0062c445);
@@ -1434,15 +1428,14 @@ LAB_004df408:
         g_InputHistory[1] = (byte)iStack_178 ^ (byte)iStack_17c;
         pCVar5 = (g_HeroActors[g_LocalHeroIndex]->inventory).selected_weapon;
         if (pCVar5 != (CWeapon *)0x0) {
-          if (*(int *)(pCVar5->field9_0x305 + 0x25b + 0xc) == 5) {
+          if (*(int *)(pCVar5->unk3 + 0x25b + 0xc) == 5) {
             fVar22 = 5.0;
-            *(int *)(pCVar5->field9_0x305 + 0x25b + 0xc) = 0;
+            *(int *)(pCVar5->unk3 + 0x25b + 0xc) = 0;
             pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Flaming ammo disabled");
           }
           else {
-            iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0(&pCVar5->base_actor,"CCrossbow")
-            ;
+            iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0(&pCVar5->base,"CCrossbow");
             if (iVar10 == 0) {
               fVar22 = 5.0;
               pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -1450,7 +1443,7 @@ LAB_004df408:
             }
             else {
               fVar22 = 5.0;
-              *(int *)(pCVar5->field9_0x305 + 0x25b + 0xc) = 5;
+              *(int *)(pCVar5->unk3 + 0x25b + 0xc) = 5;
               pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                   ("Flaming ammo enabled.");
             }
@@ -1688,9 +1681,9 @@ LAB_004df408:
       }
       if (iStack_140 == iStack_144) {
         g_InputHistory[1] = '\0';
-        uVar12 = (uint)(this_ptr->field66_0x204 == 0);
+        uVar12 = (uint)(this_ptr->unk7 == 0);
         fStack_13c = 0.25;
-        this_ptr->field66_0x204 = uVar12;
+        this_ptr->unk7 = uVar12;
         if (uVar12 == 0) {
           pcVar11 = "burp1.wav";
         }
@@ -1703,9 +1696,8 @@ LAB_004df408:
         for (iStack_14 = 0; iStack_14 < g_CDemonSetPtr->damage_listener_count;
             iStack_14 = iStack_14 + 1) {
           pCStack_138 = (CDeformableModelInstance *)
-                        (*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_38 + -4) + 0x158);
-          if (*(char *)(*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_38 + -4) + 0x23b8) !=
-              '\0') {
+                        (*(int *)(g_CDemonSetPtr->unk4 + iStack_38 + -4) + 0x158);
+          if (*(char *)(*(int *)(g_CDemonSetPtr->unk4 + iStack_38 + -4) + 0x23b8) != '\0') {
             pCVar16 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                                 (pCStack_138);
             pCStack_134 = pCVar16;
@@ -1778,8 +1770,8 @@ LAB_004df408:
                             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                              g_CStrangerClassInfo.name_hash);
         if (pCVar15 != (CDemonActor *)0x0) {
-          pfVar2 = &pCVar15[0x17a].field12_0xe0.z;
-          if (this_ptr->field66_0x204 == 0) {
+          pfVar2 = &pCVar15[0x17a].unk3.z;
+          if (this_ptr->unk7 == 0) {
             pcVar11 = "stranger-hat.kfm";
           }
           else {
@@ -1819,7 +1811,7 @@ LAB_004df408:
         }
         if (iStack_108 == iStack_10c) {
           g_InputHistory[1] = '\0';
-          this_ptr->field71_0x218 = (uint)(this_ptr->field71_0x218 == 0);
+          this_ptr->unk9 = (uint)(this_ptr->unk9 == 0);
         }
       }
       pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
@@ -1856,9 +1848,9 @@ LAB_004df408:
           this_ptr_03 = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_02);
         }
         core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-        (*((this_ptr_03->base_actor).vtable._ub)->setup)(&this_ptr_03->base_actor);
+        (*((this_ptr_03->base).vtable._ub)->setup)(&this_ptr_03->base);
         core_inv_cpp_CInventory_addItem_FUN_004fd600
-                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_03->base_actor,1);
+                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_03->base,1);
         fVar22 = 5.0;
         pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You've got a gasmask!");
@@ -1892,7 +1884,7 @@ LAB_004df408:
       if (iStack_f8 == iStack_fc) {
         fVar22 = 5.0;
         g_InputHistory[1] = '\0';
-        (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points = 100.0;
+        (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
         pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Health restored.");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
       }
@@ -1927,7 +1919,7 @@ LAB_004df408:
                             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                              g_CStrangerClassInfo.name_hash);
         if (pCVar15 != (CDemonActor *)0x0) {
-          pfVar2 = &pCVar15[0x17a].field12_0xe0.z;
+          pfVar2 = &pCVar15[0x17a].unk3.z;
           core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
                     ((CKeyFramedModelInstance *)pfVar2,"oldhat.kfm");
           core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
@@ -2051,7 +2043,7 @@ LAB_004df408:
         }
         if (local_d0 == local_d4) {
           g_InputHistory[1] = '\0';
-          _DAT_02d831c0 = (uint)(_DAT_02d831c0 == 0);
+          INT_02d831c0 = (int)(INT_02d831c0 == 0);
         }
       }
     }

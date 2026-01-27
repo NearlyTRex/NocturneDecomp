@@ -128,7 +128,7 @@ LAB_0055a34a:
       return 1;
     }
     iVar3 = core_script_cpp_CScript_StepThroughWholeScript_FUN_0055a4b0();
-    shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&DAT_0310f4b0);
+    shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);
     if (iVar3 == 0) goto LAB_0055a34a;
     while( true ) {
       crt_stdio_c_sprintf_FUN_005fdbd0

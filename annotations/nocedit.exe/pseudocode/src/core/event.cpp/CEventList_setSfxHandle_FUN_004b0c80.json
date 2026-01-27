@@ -2,22 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 29,
-        "line": 39,
-        "message": "no matching function for call to 'CEvent::CEvent(int)'"
+        "category": "other",
+        "column": 15,
+        "line": 53,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 49,
-        "message": "no matching function for call to 'CEvent::CEvent(int)'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 29,
+        "category": "other",
+        "column": 22,
         "line": 54,
-        "message": "no matching function for call to 'CEvent::CEvent(int)'"
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -31,42 +25,55 @@
       {
         "category": "other",
         "column": 27,
-        "line": 25,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 27,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 41,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 43,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 53,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 54,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 148,
+    "complexity_score": 174,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 48,
-    "suspect_count": 9,
+    "pseudocode_lines": 49,
+    "suspect_count": 11,
     "suspect_types": [
       "format_string_mismatch",
+      "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 141
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -194,58 +201,72 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "CEvent *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 11,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
       "match": "in_stack_0000000c",
-      "text": "uint in_stack_0000000c;",
+      "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 27,
       "match": "in_stack_00000008",
-      "text": "pCVar4 = in_stack_00000008;",
+      "text": "pcVar4 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 41,
       "match": "in_stack_00000008",
-      "text": "CVar1 = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000008",
-      "text": "CVar1 = in_stack_00000008[1];",
+      "text": "cVar1 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "text": "cVar1 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 45,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 45,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)",
+      "text": "piVar5 = (int *)((int)piVar5 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr[1].event_list + iVar2 * 0x120) = in_stack_0000000c;",
+      "text": "this_ptr[1].event_list[iVar2 * 0x48] = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -254,7 +275,7 @@
       "expected_args": 2,
       "format_string": "CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 36,
+      "line_number": 37,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CEventList::setSfxHandle - sfx handle name %s is too l",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"

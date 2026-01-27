@@ -7,7 +7,7 @@
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_boxactor.cpp_FUN_004226e0 at 00422867
+;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422867
 ;   core_charactr.cpp_CCharacter_FUN_0042f730 at 0042f7a0
 ;   core_dest.cpp_FUN_0046fe80 at 0046febf
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 004814c2

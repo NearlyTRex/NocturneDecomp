@@ -39,11 +39,11 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void)
       iVar5 = iVar8;
     } while (iVar8 != 0x200);
     uVar4 = 0xff >> ((byte)g_RedBitCount & 0x1f);
-    g_RedMask16 = uVar4 << ((byte)g_RedBitPosition & 0x1f);
+    g_RedMask16._0_4_ = uVar4 << ((byte)g_RedBitPosition & 0x1f);
     uVar7 = 0xff >> ((byte)g_GreenBitCount & 0x1f);
-    g_GreenMask16 = uVar7 << ((byte)g_GreenBitPosition & 0x1f);
+    g_GreenMask16._0_4_ = uVar7 << ((byte)g_GreenBitPosition & 0x1f);
     uVar9 = 0xff >> ((byte)g_BlueBitCount & 0x1f);
-    g_BlueMask16 = uVar9 << ((byte)g_BlueBitPosition & 0x1f);
+    g_BlueMask16._0_4_ = uVar9 << ((byte)g_BlueBitPosition & 0x1f);
     g_RedMask32._0_4_ = (uVar4 << ((byte)g_RedBitCount & 0x1f)) << 0x10;
     g_GreenMask32._0_4_ = (uVar7 << ((byte)g_GreenBitCount & 0x1f)) << 8;
     g_BlueBitShift._0_4_ = g_BlueBitCount;

@@ -20,7 +20,6 @@ shape_edittool_cpp_CPickList_insert_FUN_004a5670(CPickList *this_ptr,int insert_
     g_CurrentLineNumber = 0x1074;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::insert - can't do this after setting hotkeys (yet)");
   }
-  shape_edittool_cpp_CStrList_insert_FUN_004a2bc0
-            (&this_ptr->base_strlist,insert_index,(char *)item_data);
+  shape_edittool_cpp_CStrList_insert_FUN_004a2bc0(&this_ptr->base,insert_index,(char *)item_data);
   return;
 }

@@ -61,41 +61,37 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
   
   bVar16 = 0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (&this_ptr->base_actor,&local_a8,in_stack_00000008);
-  if ((this_ptr->base_actor).field11_0xdc != 0) {
-    (this_ptr->base_actor).location.position.y =
-         (this_ptr->base_actor).field12_0xe0.y + (this_ptr->base_actor).location.position.y;
-    local_a8.x = local_a8.x + (this_ptr->base_actor).field12_0xe0.x;
-    local_a8.z = local_a8.z + (this_ptr->base_actor).field12_0xe0.z;
-    (this_ptr->base_actor).field12_0xe0.z = 0.0;
-    pCVar2 = &(this_ptr->base_actor).orient;
-    (this_ptr->base_actor).field12_0xe0.y = (this_ptr->base_actor).field12_0xe0.z;
-    (this_ptr->base_actor).field12_0xe0.x = (this_ptr->base_actor).field12_0xe0.y;
-    pCVar11 = &(this_ptr->base_actor).field13_0xec;
+            (&this_ptr->base,&local_a8,in_stack_00000008);
+  if ((this_ptr->base).unk2 != 0) {
+    (this_ptr->base).location.position.y =
+         (this_ptr->base).unk3.y + (this_ptr->base).location.position.y;
+    local_a8.x = local_a8.x + (this_ptr->base).unk3.x;
+    local_a8.z = local_a8.z + (this_ptr->base).unk3.z;
+    (this_ptr->base).unk3.z = 0.0;
+    pCVar2 = &(this_ptr->base).orient;
+    (this_ptr->base).unk3.y = (this_ptr->base).unk3.z;
+    (this_ptr->base).unk3.x = (this_ptr->base).unk3.y;
+    pCVar11 = &(this_ptr->base).unk4;
     pCVar2->pitch = pCVar11->x + pCVar2->pitch;
-    (this_ptr->base_actor).orient.bank =
-         (this_ptr->base_actor).field13_0xec.y + (this_ptr->base_actor).orient.bank;
-    (this_ptr->base_actor).orient.heading =
-         (this_ptr->base_actor).field13_0xec.z + (this_ptr->base_actor).orient.heading;
-    (this_ptr->base_actor).field13_0xec.z = 0.0;
-    (this_ptr->base_actor).field13_0xec.y = (this_ptr->base_actor).field13_0xec.z;
-    pCVar11->x = (this_ptr->base_actor).field13_0xec.y;
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
+    (this_ptr->base).orient.bank = (this_ptr->base).unk4.y + (this_ptr->base).orient.bank;
+    (this_ptr->base).orient.heading = (this_ptr->base).unk4.z + (this_ptr->base).orient.heading;
+    (this_ptr->base).unk4.z = 0.0;
+    (this_ptr->base).unk4.y = (this_ptr->base).unk4.z;
+    pCVar11->x = (this_ptr->base).unk4.y;
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   }
   DAT_00823c50 = (CDemonActor *)0x0;
   if ((((ABS(in_stack_00000008->z) == 0.0) && (ABS(in_stack_00000008->x) == 0.0)) &&
       (in_stack_00000008->y <= 0.0)) &&
-     (((this_ptr->base_actor).field11_0xdc == 0 &&
-      ((this_ptr->base_actor).location.position.y == *(float *)(this_ptr->field2_0x240c + 8))))) {
+     (((this_ptr->base).unk2 == 0 &&
+      ((this_ptr->base).location.position.y == *(float *)(this_ptr->unk1 + 8))))) {
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-    this_ptr->field2_0x240c[0x24] = '\0';
-    this_ptr->field2_0x240c[0x25] = '\0';
-    this_ptr->field2_0x240c[0x26] = '\0';
-    this_ptr->field2_0x240c[0x27] = '\0';
-    *(uint *)(this_ptr->field2_0x240c + 0x20) =
-         *(uint *)(this_ptr->field2_0x240c + 0x24);
-    *(uint *)(this_ptr->field2_0x240c + 0x1c) =
-         *(uint *)(this_ptr->field2_0x240c + 0x20);
+    this_ptr->unk1[0x24] = '\0';
+    this_ptr->unk1[0x25] = '\0';
+    this_ptr->unk1[0x26] = '\0';
+    this_ptr->unk1[0x27] = '\0';
+    *(uint *)(this_ptr->unk1 + 0x20) = *(uint *)(this_ptr->unk1 + 0x24);
+    *(uint *)(this_ptr->unk1 + 0x1c) = *(uint *)(this_ptr->unk1 + 0x20);
     return;
   }
   if ((this_ptr->model).model_name[0] != '\0') {
@@ -123,14 +119,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
       do {
         iVar8 = crt_string_c_strnicmp_FUN_005ff070(str1->motion_name,local_84,0xb);
         if (iVar8 == 0) {
-          this_ptr->field2_0x240c[0x24] = '\0';
-          this_ptr->field2_0x240c[0x25] = '\0';
-          this_ptr->field2_0x240c[0x26] = '\0';
-          this_ptr->field2_0x240c[0x27] = '\0';
-          *(uint *)(this_ptr->field2_0x240c + 0x20) =
-               *(uint *)(this_ptr->field2_0x240c + 0x24);
-          *(uint *)(this_ptr->field2_0x240c + 0x1c) =
-               *(uint *)(this_ptr->field2_0x240c + 0x20);
+          this_ptr->unk1[0x24] = '\0';
+          this_ptr->unk1[0x25] = '\0';
+          this_ptr->unk1[0x26] = '\0';
+          this_ptr->unk1[0x27] = '\0';
+          *(uint *)(this_ptr->unk1 + 0x20) = *(uint *)(this_ptr->unk1 + 0x24);
+          *(uint *)(this_ptr->unk1 + 0x1c) = *(uint *)(this_ptr->unk1 + 0x20);
           return;
         }
         iVar13 = iVar13 + 1;
@@ -165,9 +159,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
     local_44 = local_44 + 0x24;
     local_48 = local_48 + 0x24;
   } while (iVar13 < 5);
-  pCVar1 = &(this_ptr->base_actor).location;
+  pCVar1 = &(this_ptr->base).location;
   fVar7 = (pCVar1->position).x;
-  core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base_actor);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
   local_38 = 0;
   local_54 = in_stack_00000008->y;
   local_4c = this_ptr->cloth_data + 0x278;
@@ -189,12 +183,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
       local_34 = this_ptr->size_scale * (float)0.5 + fVar9;
     }
     local_14 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
-                         (g_CDemonSetPtr,(this_ptr->base_actor).location.position.x,
-                          (this_ptr->base_actor).location.position.z,local_a8.x,local_a8.z,
+                         (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                          (this_ptr->base).location.position.z,local_a8.x,local_a8.z,
                           *(float *)(this_ptr->cloth_data + 0x348) * this_ptr->size_scale,
                           (void *)(*(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale +
-                                  (this_ptr->base_actor).location.position.y),
-                          (void *)((this_ptr->base_actor).location.position.y + local_34));
+                                  (this_ptr->base).location.position.y),
+                          (void *)((this_ptr->base).location.position.y + local_34));
     if (DAT_00823c50 == (CDemonActor *)0x0) {
       DAT_00823c50 = g_CDemonSetPtr->collision_actor;
     }
@@ -229,11 +223,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
       afStack_80[2] = (pCVar4->collision_normal).x;
       afStack_80[3] = (pCVar4->collision_normal).y;
       local_70 = (pCVar4->collision_normal).z;
-      fVar9 = (*((this_ptr->base_actor).vtable._ub)->cylinderGroundCheck)
-                        (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),&local_9c);
+      fVar9 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                        (&this_ptr->base,*(float *)(this_ptr->cloth_data + 0x344),&local_9c);
       bVar3 = false;
       pCVar6 = (CVector3f *)((int)local_2c * 0x24 + (int)local_40);
-      *(float *)(this_ptr->field2_0x240c + 8) = fVar9;
+      *(float *)(this_ptr->unk1 + 8) = fVar9;
       if (pCVar6 != &g_TempNormal0) {
         pCVar6->x = g_TempNormal0.x;
         pCVar6->y = g_TempNormal0.y;
@@ -249,9 +243,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
         pCVar11->y = g_TempNormal2.y;
         pCVar11->z = g_TempNormal2.z;
       }
-      if ((this_ptr->base_actor).location.position.y < *(float *)(this_ptr->field2_0x240c + 8)) {
-        (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field2_0x240c + 8);
-        local_a8.y = (this_ptr->base_actor).location.position.y;
+      if ((this_ptr->base).location.position.y < *(float *)(this_ptr->unk1 + 8)) {
+        (this_ptr->base).location.position.y = *(float *)(this_ptr->unk1 + 8);
+        local_a8.y = (this_ptr->base).location.position.y;
       }
       if ((float)0.90000000000000002 < fVar7) break;
       fVar9 = SQRT(fStack_64 * fStack_64 + fStack_6c * fStack_6c);
@@ -293,33 +287,32 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
     local_38 = local_38 + 1;
   } while (local_38 < 3);
   if (bVar3) {
-    fVar7 = (*((this_ptr->base_actor).vtable._ub)->cylinderGroundCheck)
-                      (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),
-                       (CVector3f *)0x0);
-    *(float *)(this_ptr->field2_0x240c + 8) = fVar7;
+    fVar7 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                      (&this_ptr->base,*(float *)(this_ptr->cloth_data + 0x344),(CVector3f *)0x0);
+    *(float *)(this_ptr->unk1 + 8) = fVar7;
   }
-  fVar7 = (this_ptr->base_actor).location.position.y + (float)local_48;
-  (this_ptr->base_actor).location.position.y = fVar7;
-  if (*(float *)(this_ptr->field2_0x240c + 8) <= fVar7) {
-    if ((*(int *)(this_ptr->field2_0x240c + 4) != 0) &&
-       ((this_ptr->base_actor).location.position.y <
-        *(float *)(this_ptr->field2_0x240c + 8) + (float)0.5)) {
-      (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field2_0x240c + 8);
-      local_a8.y = (this_ptr->base_actor).location.position.y;
+  fVar7 = (this_ptr->base).location.position.y + (float)local_48;
+  (this_ptr->base).location.position.y = fVar7;
+  if (*(float *)(this_ptr->unk1 + 8) <= fVar7) {
+    if ((*(int *)(this_ptr->unk1 + 4) != 0) &&
+       ((this_ptr->base).location.position.y <
+        *(float *)(this_ptr->unk1 + 8) + (float)0.5)) {
+      (this_ptr->base).location.position.y = *(float *)(this_ptr->unk1 + 8);
+      local_a8.y = (this_ptr->base).location.position.y;
     }
   }
   else {
-    (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field2_0x240c + 8);
+    (this_ptr->base).location.position.y = *(float *)(this_ptr->unk1 + 8);
   }
-  this_ptr->field2_0x240c[0x24] = '\0';
-  this_ptr->field2_0x240c[0x25] = '\0';
-  this_ptr->field2_0x240c[0x26] = '\0';
-  this_ptr->field2_0x240c[0x27] = '\0';
-  *(uint *)(this_ptr->field2_0x240c + 0x20) = *(uint *)(this_ptr->field2_0x240c + 0x24);
-  *(uint *)(this_ptr->field2_0x240c + 0x1c) = *(uint *)(this_ptr->field2_0x240c + 0x20);
+  this_ptr->unk1[0x24] = '\0';
+  this_ptr->unk1[0x25] = '\0';
+  this_ptr->unk1[0x26] = '\0';
+  this_ptr->unk1[0x27] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x20) = *(uint *)(this_ptr->unk1 + 0x24);
+  *(uint *)(this_ptr->unk1 + 0x1c) = *(uint *)(this_ptr->unk1 + 0x20);
   pCVar4 = g_CDemonSetPtr;
-  *(float *)(this_ptr->field2_0x240c + 0x20) =
-       ((this_ptr->base_actor).location.position.y - local_a8.y) / g_CGamePtr->delta_time_float;
+  *(float *)(this_ptr->unk1 + 0x20) =
+       ((this_ptr->base).location.position.y - local_a8.y) / g_CGamePtr->delta_time_float;
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(pCVar4);
   return;
 }

@@ -20,12 +20,12 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 239,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 19,
-    "suspect_count": 21,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data"
@@ -62,25 +62,25 @@
   "globals": [
     {
       "addr": "0310fcd8",
-      "name": "DAT_0310fcd8",
-      "type": "undefined4",
+      "name": "CEdScrollBar_0310fcd8",
+      "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "0310fce0",
-      "name": "DAT_0310fce0",
+      "name": "CEdScrollBar_0310fcd8.max_value",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310fd0c",
-      "name": "DAT_0310fd0c",
-      "type": "undefined4",
+      "name": "CEdScrollBar_0310fd0c",
+      "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "0310fd14",
-      "name": "DAT_0310fd14",
+      "name": "CEdScrollBar_0310fd0c.max_value",
       "type": "undefined4",
       "value": null
     },
@@ -154,141 +154,57 @@
     {
       "description": "Undefined global data reference",
       "line": 8,
-      "match": "DAT_0310fcd8",
-      "text": "if (DAT_0310fcd8 + DAT_0310fce0 <= DAT_0310fd48) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0310fce0",
-      "text": "if (DAT_0310fcd8 + DAT_0310fce0 <= DAT_0310fd48) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
       "match": "DAT_0310fd48",
-      "text": "if (DAT_0310fcd8 + DAT_0310fce0 <= DAT_0310fd48) {",
+      "text": "if (CEdScrollBar_0310fcd8.scroll_position + CEdScrollBar_0310fcd8.max_value <= DAT_0310fd48) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 9,
       "match": "DAT_0310fd48",
-      "text": "DAT_0310fd48 = DAT_0310fcd8 + DAT_0310fce0 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0310fcd8",
-      "text": "DAT_0310fd48 = DAT_0310fcd8 + DAT_0310fce0 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0310fce0",
-      "text": "DAT_0310fd48 = DAT_0310fcd8 + DAT_0310fce0 + -1;",
+      "text": "DAT_0310fd48 = CEdScrollBar_0310fcd8.scroll_position + CEdScrollBar_0310fcd8.max_value + -1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_0310fd48",
-      "text": "if (DAT_0310fd48 < DAT_0310fcd8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0310fcd8",
-      "text": "if (DAT_0310fd48 < DAT_0310fcd8) {",
+      "text": "if (DAT_0310fd48 < CEdScrollBar_0310fcd8.scroll_position) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_0310fd48",
-      "text": "DAT_0310fd48 = DAT_0310fcd8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0310fcd8",
-      "text": "DAT_0310fd48 = DAT_0310fcd8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0310fd0c",
-      "text": "if (DAT_0310fd0c + DAT_0310fd14 <= DAT_0310fd44) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0310fd14",
-      "text": "if (DAT_0310fd0c + DAT_0310fd14 <= DAT_0310fd44) {",
+      "text": "DAT_0310fd48 = CEdScrollBar_0310fcd8.scroll_position;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_0310fd44",
-      "text": "if (DAT_0310fd0c + DAT_0310fd14 <= DAT_0310fd44) {",
+      "text": "if (CEdScrollBar_0310fd0c.scroll_position + CEdScrollBar_0310fd0c.max_value <= DAT_0310fd44) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_0310fd44",
-      "text": "DAT_0310fd44 = DAT_0310fd0c + DAT_0310fd14 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_0310fd0c",
-      "text": "DAT_0310fd44 = DAT_0310fd0c + DAT_0310fd14 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_0310fd14",
-      "text": "DAT_0310fd44 = DAT_0310fd0c + DAT_0310fd14 + -1;",
+      "text": "DAT_0310fd44 = CEdScrollBar_0310fd0c.scroll_position + CEdScrollBar_0310fd0c.max_value + -1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_0310fd44",
-      "text": "if (DAT_0310fd44 < DAT_0310fd0c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0310fd0c",
-      "text": "if (DAT_0310fd44 < DAT_0310fd0c) {",
+      "text": "if (DAT_0310fd44 < CEdScrollBar_0310fd0c.scroll_position) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_0310fd44",
-      "text": "DAT_0310fd44 = DAT_0310fd0c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0310fd0c",
-      "text": "DAT_0310fd44 = DAT_0310fd0c;",
+      "text": "DAT_0310fd44 = CEdScrollBar_0310fd0c.scroll_position;",
       "type": "undefined_data"
     },
     {

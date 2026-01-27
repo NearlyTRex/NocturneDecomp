@@ -1,0 +1,189 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 46,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 61,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 61,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 119
+  },
+  "cross_references": [
+    {
+      "addr": "00441c60",
+      "from_addr": "00441c7a",
+      "name": "core_conveyor.cpp_factoryFunc_FUN_00441c60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00441ca0",
+    "address_range": [
+      [
+        "00441ca0",
+        "00441d56"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0",
+    "signature": "CConveyor * core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0(CConveyor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054c850",
+      "is_variadic": false,
+      "name": "core_platfrm.cpp_CPlatform_ctor_FUN_0054c850"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00618e3a",
+      "name": "s_none_00618e3a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618e3b",
+      "name": "s_one_00618e3b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618e3c",
+      "name": "s_ne_00618e3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618e3d",
+      "name": "s_e_00618e3d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618e3f",
+      "name": "s_none_00618e3f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618e40",
+      "name": "s_one_00618e40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618e41",
+      "name": "s_ne_00618e41",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618e42",
+      "name": "s_e_00618e42",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065bf34",
+      "name": "g_CConveyorVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00441c7a",
+        "call_type": "direct",
+        "caller": "core_conveyor.cpp_factoryFunc_FUN_00441c60",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7916666666666665,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 37,
+      "INT_ADD": 26,
+      "INT_AND": 18,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 10,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 182
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConveyor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConveyor",
+        "offset": 0,
+        "vtable_addr": "0065c024"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

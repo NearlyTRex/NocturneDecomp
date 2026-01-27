@@ -16,7 +16,7 @@
 ;   core_script.cpp_FUN_005677a0 at 005679e5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0310fcdc
+;   undefined4 CEdScrollBar_0310fcd8.current_value
 ;   undefined4 DAT_0310fd44
 ;   undefined4 DAT_0310fd48
 ;
@@ -38,9 +38,9 @@ section .text
     CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 0056691a
         ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
     ADD EAX,0x2                         ; 0056691f
-    MOV [0x0310fcdc],EAX                ; 00566922 | DAT_0310fcdc
+    MOV [0x0310fcdc],EAX                ; 00566922 | CEdScrollBar_0310fcd8.current_value
     MOV EAX,[0x0310fd48]                ; 00566927 | DAT_0310fd48
-    MOV EDX,dword ptr [0x0310fcdc]      ; 0056692c | DAT_0310fcdc
+    MOV EDX,dword ptr [0x0310fcdc]      ; 0056692c | CEdScrollBar_0310fcd8.current_value
     ADD ESP,0x4                         ; 00566932
     CMP EAX,EDX                         ; 00566935
     JGE 0x0056697f                      ; 00566937

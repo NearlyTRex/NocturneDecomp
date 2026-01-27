@@ -358,10 +358,10 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           pCVar19 = this_ptr;
           sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,(uint)num_bits);
         }
-        local_74 = (this_ptr->field8_0x534c - uVar8) - (int)auStack_4dc;
+        local_74 = (this_ptr->unk1 - uVar8) - (int)auStack_4dc;
         if (0x1000 < uVar8) {
           num_bits = (CMP3Decoder *)0x1000;
-          this_ptr->field8_0x534c = this_ptr->field8_0x534c + -0x1000;
+          this_ptr->unk1 = this_ptr->unk1 + -0x1000;
           bit_stream = (CMP3Decoder *)0x5356da;
           pCVar19 = this_ptr;
           sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_0052f320(this_ptr,0x1000);
@@ -381,7 +381,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         frame_info_00.js_bound = (int)pCVar19;
         frame_info_00.sblimit = (int)num_bits;
         iVar3 = sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(frame_info_00);
-        this_ptr->field8_0x534c = this_ptr->field8_0x534c + iVar3;
+        this_ptr->unk1 = this_ptr->unk1 + iVar3;
         if (local_74 < 0) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
           g_CurrentLineNumber = 0xf9a;
@@ -398,7 +398,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
             iVar3 = 0;
             if (0 < local_bc) {
               local_5c = SStack_4ecc.channels;
-              pSVar13 = (SMpegLayer3Granule *)(SStack_4c4.field2_0x8 + local_38 + -8);
+              pSVar13 = (SMpegLayer3Granule *)(SStack_4c4.unk3 + local_38 + -8);
               do {
                 local_6c = (SMpegFrame *)
                            sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
@@ -428,7 +428,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                        (SMpegLayer3Granule **)auStack_e4);
             local_20 = 0;
             if (0 < local_bc) {
-              local_50 = (SMpegFrame *)(SStack_4c4.field2_0x8 + local_38 + -8);
+              local_50 = (SMpegFrame *)(SStack_4c4.unk3 + local_38 + -8);
               local_4c = local_60cc.channels;
               local_44 = asStack_33cc;
               local_48 = local_50;

@@ -19,7 +19,7 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_CheatFlags
 ;   int g_DebugRecording
-;   undefined4 g_DebugRecordingParams
+;   int g_DebugRecordingParams
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -79,14 +79,14 @@ section .text
     TEST EBP,EBP                        ; 004d7871
     JLE 0x004d7881                      ; 004d7873
         ;   XREF to: 004d7881 (CONDITIONAL_JUMP)  ; LAB_004d7881
-    CMP EBP,dword ptr [0x02d831bc]      ; 004d7875 | DAT_02d831bc
+    CMP EBP,dword ptr [0x02d831bc]      ; 004d7875 | FLOAT_02d831bc
     JLE 0x004d7b2d                      ; 004d787b
         ;   XREF to: 004d7b2d (CONDITIONAL_JUMP)  ; LAB_004d7b2d
     CMP dword ptr [0x02d831b4],0x0      ; 004d7881 | g_DebugRecording
         ;   Label: LAB_004d7881
     JZ 0x004d7823                       ; 004d7888
         ;   XREF to: 004d7823 (CONDITIONAL_JUMP)  ; LAB_004d7823
-    MOV EBX,dword ptr [0x02d831bc]      ; 004d788a | DAT_02d831bc
+    MOV EBX,dword ptr [0x02d831bc]      ; 004d788a | FLOAT_02d831bc
     PUSH EBX                            ; 004d7890
     PUSH 0x62b201                       ; 004d7891 | = "noc%05d.raw"
     LEA EAX,[ESP + 0xd0]                ; 004d7896
@@ -272,10 +272,10 @@ section .text
     PUSH EAX                            ; 004d7af6
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004d7af7
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-    MOV EBX,dword ptr [0x02d831bc]      ; 004d7afc | DAT_02d831bc
+    MOV EBX,dword ptr [0x02d831bc]      ; 004d7afc | FLOAT_02d831bc
     INC EBX                             ; 004d7b02
     ADD ESP,0xc                         ; 004d7b03
-    MOV dword ptr [0x02d831bc],EBX      ; 004d7b06 | DAT_02d831bc
+    MOV dword ptr [0x02d831bc],EBX      ; 004d7b06 | FLOAT_02d831bc
     ADD ESP,0x150                       ; 004d7b0c
     POP EBP                             ; 004d7b12
     POP EDI                             ; 004d7b13
@@ -284,7 +284,7 @@ section .text
     RET                                 ; 004d7b16
     MOV ESI,0x1                         ; 004d7b17
         ;   Label: LAB_004d7b17
-    MOV dword ptr [0x02d831bc],ECX      ; 004d7b1c | DAT_02d831bc
+    MOV dword ptr [0x02d831bc],ECX      ; 004d7b1c | FLOAT_02d831bc
     MOV dword ptr [0x02d831b4],ESI      ; 004d7b22 | g_DebugRecording
     JMP 0x004d786b                      ; 004d7b28
         ;   XREF to: 004d786b (UNCONDITIONAL_JUMP)  ; LAB_004d786b

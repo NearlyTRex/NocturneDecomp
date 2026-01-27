@@ -13,8 +13,8 @@ void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CChar
   int iVar2;
   CCharacter *pCVar3;
   
-  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
-  if (*(float *)(this_ptr->field2_0x240c + 8) == 9999.0f) {
+  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
+  if (*(float *)(this_ptr->unk1 + 8) == 9999.0f) {
     iVar2 = 0;
     pCVar3 = this_ptr;
     do {
@@ -22,12 +22,11 @@ void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CChar
         core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(this_ptr);
       }
       iVar2 = iVar2 + 1;
-      pCVar3 = (CCharacter *)&(pCVar3->base_actor).orient_matrix.m[0].z;
+      pCVar3 = (CCharacter *)&(pCVar3->base).orient_matrix.m[0].z;
     } while (iVar2 < 2);
-    fVar1 = (*((this_ptr->base_actor).vtable._ub)->cylinderGroundCheck)
-                      (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),
-                       (CVector3f *)0x0);
-    *(float *)(this_ptr->field2_0x240c + 8) = fVar1;
+    fVar1 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                      (&this_ptr->base,*(float *)(this_ptr->cloth_data + 0x344),(CVector3f *)0x0);
+    *(float *)(this_ptr->unk1 + 8) = fVar1;
   }
   core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);

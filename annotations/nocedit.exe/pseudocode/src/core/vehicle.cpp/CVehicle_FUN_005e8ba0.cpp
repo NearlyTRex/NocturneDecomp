@@ -16,11 +16,11 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e8ba0(CVehicle *this_ptr)
   char *local_10;
   char *local_c;
   
-  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
+  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
   iVar1 = 0;
   if (0 < this_ptr->tire_count) {
-    local_c = this_ptr->field3_0x93c;
+    local_c = this_ptr->unk2;
     iVar2 = 0;
     do {
       crt_stdio_c_sprintf_FUN_005fdbd0

@@ -17,7 +17,7 @@ core_hero_cpp_CHero_dtor_FUN_004f2470
   uint unaff_EBX;
   uint unaff_retaddr;
   
-  (this_ptr->base_character).base_actor.vtable._ub = &g_CHeroVTable;
+  (this_ptr->base).base.vtable._ub = &g_CHeroVTable;
   iVar1 = 0;
   do {
     if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {

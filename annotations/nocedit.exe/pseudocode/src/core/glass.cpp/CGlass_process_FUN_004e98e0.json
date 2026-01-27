@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 22,
-        "line": 23,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_108'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -40,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_glass.cpp_CGlass_process_FUN_004e98e0",
-    "signature": "void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr)"
+    "signature": "void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr, float delta_time)"
   },
   "function_calls": [
     {
@@ -72,8 +65,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.9545454545454546,
@@ -99,10 +92,10 @@
     "pcode_op_count": 87
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -111,6 +104,13 @@
         "offset": 4,
         "size": 4,
         "type": "CGlass *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },

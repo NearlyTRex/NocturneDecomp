@@ -28,7 +28,7 @@
 ;   int g_GreenBitPosition
 ;   int g_BlueBitPosition
 ;   float g_PerspectiveReciprocal
-;   int g_SolidColorMode
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 

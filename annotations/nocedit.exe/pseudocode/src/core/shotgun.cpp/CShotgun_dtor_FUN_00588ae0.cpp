@@ -20,7 +20,7 @@ CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00588ae0(CShotgun *this_pt
     return this_ptr;
   }
   ptr = (CShotgun *)
-        core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base_weapon,1,unaff_EBX,unaff_retaddr);
+        core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base,1,unaff_EBX,unaff_retaddr);
   if ((d1 & 2) == 0) {
     return ptr;
   }

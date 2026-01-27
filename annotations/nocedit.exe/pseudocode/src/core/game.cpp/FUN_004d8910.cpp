@@ -19,12 +19,12 @@ void core_game_cpp_FUN_004d8910(void)
   pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(in_stack_00000004);
   crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"%s = %s",pcVar1,in_stack_00000008);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_ThemeFont,local_110,DAT_02d831c4,DAT_02d831c8,7,-1);
-  DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
-  if (DAT_02d831c8 <= g_WindowHeight + DAT_02d831cc * -4) {
+            (g_ThemeFont,local_110,INT_02d831c4,INT_02d831c8,7,-1);
+  INT_02d831c8 = INT_02d831c8 + INT_02d831cc;
+  if (INT_02d831c8 <= g_WindowHeight + INT_02d831cc * -4) {
     return;
   }
-  DAT_02d831c8 = DAT_02d831cc * 6;
-  DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
+  INT_02d831c8 = INT_02d831cc * 6;
+  INT_02d831c4 = INT_02d831c4 + g_WindowWidth / 3;
   return;
 }

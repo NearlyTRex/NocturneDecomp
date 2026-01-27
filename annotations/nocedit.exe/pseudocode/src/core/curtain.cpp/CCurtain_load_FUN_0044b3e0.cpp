@@ -32,7 +32,7 @@ void core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
       in_stack_00000004[1].orient.pitch = (float)(uint)((local_8 & 8) != 0);
     }
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[0x4ba].field23_0x124,"weight");
+              ((float *)&in_stack_00000004[0x4ba].unk12,"weight");
     core_actor_cpp_serializeFloat_FUN_0040b770
               ((float *)&in_stack_00000004[0x4ba].previous_transform_state,"dampen");
     core_actor_cpp_serializeFloat_FUN_0040b770

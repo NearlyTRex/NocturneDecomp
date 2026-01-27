@@ -29,7 +29,7 @@ void core_dracbrid_cpp_FUN_00486070(void)
     iVar4 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,&local_30,(CVector3f *)(in_stack_00000008 + 0x1c));
+              (&in_stack_00000004->base,&local_30,(CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
@@ -44,7 +44,7 @@ void core_dracbrid_cpp_FUN_00486070(void)
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&in_stack_00000004->model,&local_3c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,&local_24,input_local_point);
+              (&in_stack_00000004->base,&local_24,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_dracbrid_cpp_ShotThruHeart_FUN_00486020();
@@ -60,8 +60,8 @@ void core_dracbrid_cpp_FUN_00486070(void)
       if (bVar2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr->motion_controller,7,1);
-        (*((in_stack_00000004->base_actor).vtable._ub)->playAmbientSound)
-                  (&in_stack_00000004->base_actor,"bride-launch.wav");
+        (*((in_stack_00000004->base).vtable._ub)->playAmbientSound)
+                  (&in_stack_00000004->base,"bride-launch.wav");
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

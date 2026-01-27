@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   line_number
 ;
 ; XREF[147]:
-;   core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80 at 00410d8c
+;   core_ammo.cpp_factoryFunc_FUN_00410d80 at 00410d8c
 ;   core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700 at 00411752
-;   core_ammobox.cpp_constructor_FUN_00411560 at 0041156c
-;   core_anvil.cpp_constructor_FUN_00411ca0 at 00411cac
-;   core_armour.cpp_constructor_FUN_00412160 at 0041216c
-;   core_backgnd.cpp_FUN_00412770 at 0041277c
-;   core_baron.cpp_FUN_00412b80 at 00412b8c
-;   core_baron.cpp_constructor_FUN_00413d00 at 00413d0f
-;   core_barrier.cpp_constructor_FUN_00414180 at 0041418c
-;   core_bat.cpp_FUN_00414790 at 0041479c
+;   core_ammobox.cpp_factoryFunc_FUN_00411560 at 0041156c
+;   core_anvil.cpp_factoryFunc_FUN_00411ca0 at 00411cac
+;   core_armour.cpp_factoryFunc_FUN_00412160 at 0041216c
+;   core_backgnd.cpp_factoryFunc_FUN_00412770 at 0041277c
+;   core_baron.cpp_factoryFunc_FUN_00412b80 at 00412b8c
+;   core_baron.cpp_factoryFunc_FUN_00413d00 at 00413d0f
+;   core_barrier.cpp_factoryFunc_FUN_00414180 at 0041418c
+;   core_bat.cpp_factoryFunc_FUN_00414790 at 0041479c
 ;   ... and 137 more
 ;
 ; Called Functions:

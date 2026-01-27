@@ -50,11 +50,9 @@ engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    iVar3 = (*((this_ptr->base_font).vtable)->getStringWidth)
-                      (&this_ptr->base_font,(char *)x_position);
+    iVar3 = (*((this_ptr->base).vtable)->getStringWidth)(&this_ptr->base,(char *)x_position);
     this_ptr->cached_string_width = iVar3;
-    iVar3 = (*((this_ptr->base_font).vtable)->getStringHeight)
-                      (&this_ptr->base_font,(char *)x_position);
+    iVar3 = (*((this_ptr->base).vtable)->getStringHeight)(&this_ptr->base,(char *)x_position);
     this_ptr->cached_string_height = iVar3;
     uVar6 = 0xffffffff;
     pcVar7 = this_ptr->text_cache;
@@ -65,11 +63,11 @@ engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
       pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
     } while (cVar1 != '\0');
     if (in_stack_0000002c != -1) {
-      (*g_SetTextColorFunc)(this_ptr->deviceContextHandle,CStack_18);
-      (*g_TextOutAFunc)(this_ptr->deviceContextHandle,1,1,(LPCSTR)x_position,~uVar6 - 1);
+      (*g_SetTextColorFunc)(this_ptr->device_context_handle,CStack_18);
+      (*g_TextOutAFunc)(this_ptr->device_context_handle,1,1,(LPCSTR)x_position,~uVar6 - 1);
     }
-    (*g_SetTextColorFunc)(this_ptr->deviceContextHandle,CStack_24);
-    (*g_TextOutAFunc)(this_ptr->deviceContextHandle,0,0,(LPCSTR)x_position,~uVar6 - 1);
+    (*g_SetTextColorFunc)(this_ptr->device_context_handle,CStack_24);
+    (*g_TextOutAFunc)(this_ptr->device_context_handle,0,0,(LPCSTR)x_position,~uVar6 - 1);
   }
   if (this_ptr->right + y_position < g_WindowWidth) {
     iVar3 = this_ptr->right;
@@ -94,14 +92,14 @@ engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
     if (0 < (int)CStack_24) {
       pcStack_1c = text_string;
       do {
-        pcVar7 = pcStack_1c + this_ptr->yOffset1;
+        pcVar7 = pcStack_1c + this_ptr->y_offset1;
         if ((-1 < (int)pcVar7) && ((int)pcVar7 < g_WindowHeight)) {
           iVar4 = 0;
           if (0 < iVar3) {
             puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar7] + y_position * 2);
             do {
               uVar2 = *(ushort *)
-                       ((int)this_ptr->ppvBits + (CStack_18 * this_ptr->right + iVar4) * 2);
+                       ((int)this_ptr->ppv_bits + (CStack_18 * this_ptr->right + iVar4) * 2);
               if (uVar2 != 0x7c1f) {
                 *puVar8 = (ushort)((byte)((char)uVar2 << 3) >> ((byte)g_BlueBitCount & 0x1f)) <<
                           ((byte)g_BlueBitPosition & 0x1f) |
@@ -126,15 +124,15 @@ engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
     if (0 < (int)CStack_24) {
       pcStack_20 = text_string;
       do {
-        pcVar7 = pcStack_20 + this_ptr->yOffset1;
+        pcVar7 = pcStack_20 + this_ptr->y_offset1;
         if ((-1 < (int)pcVar7) && ((int)pcVar7 < g_WindowHeight)) {
           iVar5 = 0;
           if (0 < iVar3) {
             piVar9 = (int *)(y_position * 4 + (int)g_ScreenBufferArray[(int)pcVar7]);
             do {
-              if (this_ptr->ppvBits[this_ptr->right * iVar4 + iVar5] !=
+              if (this_ptr->ppv_bits[this_ptr->right * iVar4 + iVar5] !=
                   g_LightBufferPool[0xd] + 0x6ef7) {
-                *piVar9 = (int)this_ptr->ppvBits[this_ptr->right * iVar4 + iVar5];
+                *piVar9 = (int)this_ptr->ppv_bits[this_ptr->right * iVar4 + iVar5];
               }
               iVar5 = iVar5 + 1;
               piVar9 = piVar9 + 1;

@@ -14,7 +14,7 @@ float * __cdecl core_simbox_cpp_CSimBox_FUN_00589160(CSimBox *this_ptr)
   float *in_stack_00000008;
   
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+                     ((CKeyFramedModelInstance *)this_ptr->unk);
   pCVar1 = pCVar2->frame_bounds;
   *in_stack_00000008 = pCVar1->x;
   in_stack_00000008[1] = pCVar1->y;

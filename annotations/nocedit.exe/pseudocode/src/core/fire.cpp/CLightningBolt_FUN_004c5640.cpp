@@ -13,20 +13,20 @@ void __cdecl core_fire_cpp_CLightningBolt_FUN_004c5640(CLightningBolt *this_ptr)
   uint in_stack_0000000c;
   uint in_stack_00000010;
   
-  if (this_ptr->field0_0x0 + 4 != (char *)in_stack_00000008) {
-    *(uint *)(this_ptr->field0_0x0 + 4) = *in_stack_00000008;
-    *(uint *)(this_ptr->field0_0x0 + 8) = in_stack_00000008[1];
-    *(uint *)(this_ptr->field0_0x0 + 0xc) = in_stack_00000008[2];
+  if (this_ptr->unk + 4 != (char *)in_stack_00000008) {
+    *(uint *)(this_ptr->unk + 4) = *in_stack_00000008;
+    *(uint *)(this_ptr->unk + 8) = in_stack_00000008[1];
+    *(uint *)(this_ptr->unk + 0xc) = in_stack_00000008[2];
   }
-  this_ptr->field0_0x0[0x14] = '\0';
-  this_ptr->field0_0x0[0x15] = '\0';
-  this_ptr->field0_0x0[0x16] = -0x80;
-  this_ptr->field0_0x0[0x17] = '>';
-  this_ptr->field0_0x0[0] = '\0';
-  this_ptr->field0_0x0[1] = '\0';
-  this_ptr->field0_0x0[2] = '\0';
-  this_ptr->field0_0x0[3] = '\0';
-  *(uint *)(this_ptr->field0_0x0 + 0x10) = in_stack_0000000c;
-  *(uint *)(this_ptr->field0_0x0 + 0x18) = in_stack_00000010;
+  this_ptr->unk[0x14] = '\0';
+  this_ptr->unk[0x15] = '\0';
+  this_ptr->unk[0x16] = -0x80;
+  this_ptr->unk[0x17] = '>';
+  this_ptr->unk[0] = '\0';
+  this_ptr->unk[1] = '\0';
+  this_ptr->unk[2] = '\0';
+  this_ptr->unk[3] = '\0';
+  *(uint *)(this_ptr->unk + 0x10) = in_stack_0000000c;
+  *(uint *)(this_ptr->unk + 0x18) = in_stack_00000010;
   return;
 }

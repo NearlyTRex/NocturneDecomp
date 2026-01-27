@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 19,
-        "message": "'PTR_core_gasmask_cpp_CGasMask_FUN_004e5d50_0065ebf4' was not declared in this scope; did you mean 'core_gasmask_cpp_CGasMask_FUN_004e5d50'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -19,23 +12,23 @@
       {
         "category": "other",
         "column": 26,
-        "line": 21,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 39,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 13,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 38
+    "total_lines": 37
   },
   "cross_references": [
     {
@@ -47,7 +40,7 @@
     {
       "addr": "004e5cc0",
       "from_addr": "004e5cda",
-      "name": "core_gasmask.cpp_FUN_004e5cc0",
+      "name": "core_gasmask.cpp_factoryFunc_FUN_004e5cc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,7 +82,7 @@
     },
     {
       "addr": "0065ebf4",
-      "name": "PTR_core_gasmask.cpp_CGasMask_FUN_004e5d50_0065ebf4",
+      "name": "g_CGasMaskVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -135,12 +128,12 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 11,
       "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr =",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CGasMaskVTable;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 15,
       "match": "this_ptr_00[-1].",
       "text": "return (CGasMask *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"

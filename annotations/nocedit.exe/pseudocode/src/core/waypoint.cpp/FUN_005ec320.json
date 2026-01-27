@@ -8,40 +8,16 @@
         "message": "ambiguating new declaration of 'int core_waypoint_cpp_FUN_005ec320()'"
       },
       {
-        "category": "missing_member",
-        "column": 56,
-        "line": 35,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 44,
-        "line": 39,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
         "category": "other",
         "column": 41,
-        "line": 62,
+        "line": 61,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 70,
+        "line": 69,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 60,
-        "line": 82,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 46,
-        "line": 84,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
       }
     ],
     "success": false,
@@ -60,79 +36,85 @@
       },
       {
         "category": "other",
+        "column": 10,
+        "line": 38,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 8,
-        "line": 43,
+        "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 51,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 53,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 53,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 54,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 56,
+        "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 58,
+        "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 62,
+        "line": 61,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 76,
+        "line": 75,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 85,
+        "line": 83,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 87,
+        "line": 85,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 257,
+    "complexity_score": 255,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 85,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
@@ -140,7 +122,7 @@
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 259
+    "total_lines": 257
   },
   "cross_references": [
     {
@@ -343,70 +325,70 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_00000008",
       "text": "DAT_03f939a4 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_03f939a4",
       "text": "DAT_03f939a4 = in_stack_00000008;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_00000008",
       "text": "*(uint *)(in_stack_00000008 + 0x554) = 0;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 37,
       "match": "DAT_03f939a4",
       "text": "iVar7 = DAT_03f939a4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_03f939a4",
       "text": "crt_string_c_memmove_FUN_005fe5e0(&DAT_03f939a4,&DAT_03f939a8,n);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_03f939a8",
       "text": "crt_string_c_memmove_FUN_005fe5e0(&DAT_03f939a4,&DAT_03f939a8,n);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(int *)((int)",
       "text": "if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar4)) break;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 54,
       "match": "DAT_03f939a4",
       "text": "if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar4)) break;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 62,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_03f939a4 + n) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 62,
       "match": "DAT_03f939a4",
       "text": "*(int *)((int)&DAT_03f939a4 + n) = iVar1;",
       "type": "undefined_data"

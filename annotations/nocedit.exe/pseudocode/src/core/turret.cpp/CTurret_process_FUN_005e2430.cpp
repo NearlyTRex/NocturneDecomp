@@ -37,25 +37,25 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   
   bVar10 = 0;
   iVar5 = this_ptr->state;
-  (this_ptr->base_weapon).field7_0x2f4[0] = -1;
-  (this_ptr->base_weapon).field7_0x2f4[1] = -1;
-  (this_ptr->base_weapon).field7_0x2f4[2] = -1;
-  (this_ptr->base_weapon).field7_0x2f4[3] = -1;
+  (this_ptr->base).unk2[0] = -1;
+  (this_ptr->base).unk2[1] = -1;
+  (this_ptr->base).unk2[2] = -1;
+  (this_ptr->base).unk2[3] = -1;
   switch(iVar5) {
   case 0:
-    pCVar1 = &(this_ptr->base_weapon).base_actor.orient;
-    if (pCVar1 != (COrientation *)this_ptr->field1_0x578) {
-      pCVar1->pitch = *(float *)this_ptr->field1_0x578;
-      (this_ptr->base_weapon).base_actor.orient.bank = *(float *)(this_ptr->field1_0x578 + 4);
-      (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
+    pCVar1 = &(this_ptr->base).base.orient;
+    if (pCVar1 != (COrientation *)this_ptr->unk1) {
+      pCVar1->pitch = *(float *)this_ptr->unk1;
+      (this_ptr->base).base.orient.bank = *(float *)(this_ptr->unk1 + 4);
+      (this_ptr->base).base.orient.heading = *(float *)(this_ptr->unk1 + 8);
     }
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                      (g_CEventListPtr,this_ptr->field3_0x704);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,this_ptr->unk2)
+    ;
     if (iVar5 == 0) {
       this_ptr->timer = 0.0;
       break;
     }
-    uVar2 = *(uint *)(this_ptr->field12_0x85c + 0x5c);
+    uVar2 = *(uint *)(this_ptr->unk4 + 0x5c);
     this_ptr->state = 1;
     this_ptr->timer = this_ptr->charge_time;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
@@ -67,27 +67,27 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     if (fVar4 <= 0.0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
-      (this_ptr->base_weapon).field7_0x2f4[0xc] = '\0';
-      (this_ptr->base_weapon).field7_0x2f4[0xd] = '\0';
-      (this_ptr->base_weapon).field7_0x2f4[0xe] = '\0';
-      (this_ptr->base_weapon).field7_0x2f4[0xf] = '\0';
+      (this_ptr->base).unk2[0xc] = '\0';
+      (this_ptr->base).unk2[0xd] = '\0';
+      (this_ptr->base).unk2[0xe] = '\0';
+      (this_ptr->base).unk2[0xf] = '\0';
     }
     break;
   case 2:
-    (this_ptr->base_weapon).field7_0x2f4[0] = -1;
+    (this_ptr->base).unk2[0] = -1;
     pCVar3 = g_CEventListPtr;
-    (this_ptr->base_weapon).field7_0x2f4[1] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[2] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[3] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[4] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[5] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[6] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[7] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[8] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[9] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[10] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[0xb] = '\0';
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->field3_0x704);
+    (this_ptr->base).unk2[1] = '\0';
+    (this_ptr->base).unk2[2] = '\0';
+    (this_ptr->base).unk2[3] = '\0';
+    (this_ptr->base).unk2[4] = '\0';
+    (this_ptr->base).unk2[5] = '\0';
+    (this_ptr->base).unk2[6] = '\0';
+    (this_ptr->base).unk2[7] = '\0';
+    (this_ptr->base).unk2[8] = '\0';
+    (this_ptr->base).unk2[9] = '\0';
+    (this_ptr->base).unk2[10] = '\0';
+    (this_ptr->base).unk2[0xb] = '\0';
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->unk2);
     if (iVar5 == 0) {
       this_ptr->state = 3;
       this_ptr->timer = this_ptr->patrol_time;
@@ -98,27 +98,27 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     }
     break;
   case 3:
-    (this_ptr->base_weapon).field7_0x2f4[0] = '\0';
+    (this_ptr->base).unk2[0] = '\0';
     pCVar3 = g_CEventListPtr;
-    (this_ptr->base_weapon).field7_0x2f4[1] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[2] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[3] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[4] = -1;
-    (this_ptr->base_weapon).field7_0x2f4[5] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[6] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[7] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[8] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[9] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[10] = '\0';
-    (this_ptr->base_weapon).field7_0x2f4[0xb] = '\0';
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->field3_0x704);
+    (this_ptr->base).unk2[1] = '\0';
+    (this_ptr->base).unk2[2] = '\0';
+    (this_ptr->base).unk2[3] = '\0';
+    (this_ptr->base).unk2[4] = -1;
+    (this_ptr->base).unk2[5] = '\0';
+    (this_ptr->base).unk2[6] = '\0';
+    (this_ptr->base).unk2[7] = '\0';
+    (this_ptr->base).unk2[8] = '\0';
+    (this_ptr->base).unk2[9] = '\0';
+    (this_ptr->base).unk2[10] = '\0';
+    (this_ptr->base).unk2[0xb] = '\0';
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->unk2);
     if (iVar5 != 0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
-      (this_ptr->base_weapon).field7_0x2f4[0xc] = '\0';
-      (this_ptr->base_weapon).field7_0x2f4[0xd] = '\0';
-      (this_ptr->base_weapon).field7_0x2f4[0xe] = '\0';
-      (this_ptr->base_weapon).field7_0x2f4[0xf] = '\0';
+      (this_ptr->base).unk2[0xc] = '\0';
+      (this_ptr->base).unk2[0xd] = '\0';
+      (this_ptr->base).unk2[0xe] = '\0';
+      (this_ptr->base).unk2[0xf] = '\0';
       break;
     }
     fVar4 = this_ptr->timer - delta_time;
@@ -127,20 +127,19 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       core_turret_cpp_FUN_005e3560();
       break;
     }
-    uVar2 = *(uint *)(this_ptr->field12_0x85c + 0x5c);
+    uVar2 = *(uint *)(this_ptr->unk4 + 0x5c);
     this_ptr->state = 4;
     this_ptr->timer = this_ptr->power_down_time;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
     sound_name = "turret-ani?.wav";
 LAB_005e24c7:
-    uVar7 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->playSound)
-                      ((CDemonActor *)this_ptr,sound_name);
-    *(uint *)(this_ptr->field12_0x85c + 0x5c) = uVar7;
+    uVar7 = (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
+    *(uint *)(this_ptr->unk4 + 0x5c) = uVar7;
     break;
   case 4:
-    local_1c = (CVector3f *)this_ptr->field1_0x578;
+    local_1c = (CVector3f *)this_ptr->unk1;
     this_ptr->timer = this_ptr->timer - delta_time;
-    local_18 = (CVector3f *)&(this_ptr->base_weapon).base_actor.orient;
+    local_18 = (CVector3f *)&(this_ptr->base).base.orient;
     if (0.0 < this_ptr->timer) {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_18,&local_40);
       local_90.w = local_40.w;
@@ -185,8 +184,8 @@ LAB_005e24c7:
       this_ptr->timer = 0.0;
       if (local_18 != local_1c) {
         ((COrientation *)local_18)->pitch = *(float *)local_1c;
-        (this_ptr->base_weapon).base_actor.orient.bank = *(float *)(this_ptr->field1_0x578 + 4);
-        (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
+        (this_ptr->base).base.orient.bank = *(float *)(this_ptr->unk1 + 4);
+        (this_ptr->base).base.orient.heading = *(float *)(this_ptr->unk1 + 8);
       }
     }
     break;
@@ -195,33 +194,32 @@ LAB_005e24c7:
     g_CurrentLineNumber = 0x15a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
-  if (-1 < *(int *)(this_ptr->base_weapon).field7_0x2f4) {
-    (*(((this_ptr->base_weapon).base_actor.vtable._uc)->_uc).cfunc7)();
+  if (-1 < *(int *)(this_ptr->base).unk2) {
+    (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc7)();
   }
-  fVar4 = *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc);
-  iVar5 = *(int *)(this_ptr->field12_0x85c + 0x54);
-  *(float *)(this_ptr->field12_0x85c + 0x10) =
-       *(float *)(this_ptr->field12_0x85c + 0x10) - delta_time;
-  *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc) = fVar4 - delta_time;
-  if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->field12_0x85c + 0x10))) {
-    *(int *)(this_ptr->field12_0x85c + 0x54) = *(int *)(this_ptr->field12_0x85c + 0x54) + -1;
+  fVar4 = *(float *)((this_ptr->base).unk2 + 0xc);
+  iVar5 = *(int *)(this_ptr->unk4 + 0x54);
+  *(float *)(this_ptr->unk4 + 0x10) = *(float *)(this_ptr->unk4 + 0x10) - delta_time;
+  *(float *)((this_ptr->base).unk2 + 0xc) = fVar4 - delta_time;
+  if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->unk4 + 0x10))) {
+    *(int *)(this_ptr->unk4 + 0x54) = *(int *)(this_ptr->unk4 + 0x54) + -1;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
     local_14 = fVar4;
     iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
-                      (*(uint *)(this_ptr->field12_0x85c + 0x58),fVar4);
+                      (*(uint *)(this_ptr->unk4 + 0x58),fVar4);
     if (iVar5 == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"turret-loop.wav * %f",(double)fVar4);
-      uVar7 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->playAmbientSound)
+      uVar7 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
-      *(uint *)(this_ptr->field12_0x85c + 0x58) = uVar7;
+      *(uint *)(this_ptr->unk4 + 0x58) = uVar7;
       return;
     }
   }
   else {
     local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);
     if (0.0 <= (double)local_30._12_8_) {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field12_0x85c + 0x58));
-      (*((this_ptr->base_weapon).base_actor.vtable._ub)->playSound)
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 0x58));
+      (*((this_ptr->base).base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");
       return;
     }

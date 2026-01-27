@@ -12,14 +12,14 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00422990(CLightActo
   CBoxActor *pCVar1;
   CDemonLight *pCVar2;
   
-  pCVar1 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(&this_ptr->base_boxactor);
+  pCVar1 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(&this_ptr->base);
   pCVar2 = core_dlight_cpp_CDemonLight_ctor_FUN_004726a0
-                     ((CDemonLight *)(pCVar1[1].base_actor.actor_name + 4));
-  pCVar2[-1].saved_screen_buffer_rows[0x36f] = &PTR_core_box_cpp_FUN_0065b2a4;
+                     ((CDemonLight *)(pCVar1[1].base.actor_name + 4));
+  pCVar2[-1].saved_screen_buffer_rows[0x36f] = &g_CLightActorVTable;
   pCVar2->light_enabled_flag = 1;
   pCVar2[1].base.base.position.y = 0;
   pCVar2[1].base.base.position.x = pCVar2[1].base.base.position.y;
-  pCVar2[1].base.base.field0_0x0 = (void *)pCVar2[1].base.base.position.x;
+  pCVar2[1].base.base.unk1 = (void *)pCVar2[1].base.base.position.x;
   pCVar2[1].base.base.rotation_matrix.m[0].y = 0;
   pCVar2[1].base.base.rotation_matrix.m[0].x = pCVar2[1].base.base.rotation_matrix.m[0].y;
   pCVar2[1].base.base.position.z = pCVar2[1].base.base.rotation_matrix.m[0].x;

@@ -58,10 +58,9 @@ void core_platfrm_cpp_FUN_0054ea00(void)
   int local_18;
   
   bVar11 = 0;
-  if (in_stack_00000004[5].field7_0x6c != 4) {
+  if (in_stack_00000004[5].unk1 != 4) {
     if (*(char *)&in_stack_00000004[2].orient_matrix.m[0].y == '\0') {
-      local_4c.w = (float)in_stack_00000004[2].field7_0x6c -
-                   *(float *)in_stack_00000004[2].create_event;
+      local_4c.w = (float)in_stack_00000004[2].unk1 - *(float *)in_stack_00000004[2].create_event;
       local_4c.x = (float)in_stack_00000004[2].was_created -
                    *(float *)(in_stack_00000004[2].create_event + 4);
       local_4c.y = in_stack_00000004[2].create_prob -
@@ -77,8 +76,8 @@ void core_platfrm_cpp_FUN_0054ea00(void)
           *(float *)(in_stack_00000004[2].create_event + 8) =
                (in_stack_00000004->location).position.z;
         }
-        if (&in_stack_00000004[2].field7_0x6c != (int *)pcVar1) {
-          in_stack_00000004[2].field7_0x6c = *(int *)pcVar1;
+        if (&in_stack_00000004[2].unk1 != (int *)pcVar1) {
+          in_stack_00000004[2].unk1 = *(int *)pcVar1;
           in_stack_00000004[2].was_created = *(int *)(in_stack_00000004[2].create_event + 4);
           in_stack_00000004[2].create_prob = *(float *)(in_stack_00000004[2].create_event + 8);
         }
@@ -105,10 +104,10 @@ void core_platfrm_cpp_FUN_0054ea00(void)
       if (iVar2 != 0) {
         core_platfrm_cpp_FUN_0054e480();
       }
-      switch(in_stack_00000004[5].field7_0x6c) {
+      switch(in_stack_00000004[5].unk1) {
       case 1:
-        if ((int *)auStack_ec != &in_stack_00000004[2].field7_0x6c) {
-          auStack_ec._0_4_ = in_stack_00000004[2].field7_0x6c;
+        if ((int *)auStack_ec != &in_stack_00000004[2].unk1) {
+          auStack_ec._0_4_ = in_stack_00000004[2].unk1;
           auStack_ec._4_4_ = in_stack_00000004[2].was_created;
           auStack_ec._8_4_ = in_stack_00000004[2].create_prob;
         }
@@ -121,8 +120,8 @@ void core_platfrm_cpp_FUN_0054ea00(void)
           fStack_d8 = pCVar3->z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_ec);
-        if (&in_stack_00000004[2].field7_0x6c != (int *)auStack_ec) {
-          in_stack_00000004[2].field7_0x6c = auStack_ec._0_4_;
+        if (&in_stack_00000004[2].unk1 != (int *)auStack_ec) {
+          in_stack_00000004[2].unk1 = auStack_ec._0_4_;
           in_stack_00000004[2].was_created = auStack_ec._4_4_;
           in_stack_00000004[2].create_prob = (float)auStack_ec._8_4_;
         }
@@ -172,7 +171,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
                    (CVector3f *)&in_stack_00000004->orient);
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_28,(CVector3f *)(in_stack_00000004[2].create_event + 0xc));
-        position = &in_stack_00000004[2].field7_0x6c;
+        position = &in_stack_00000004[2].unk1;
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                   (&CStack_29c,(CVector3f *)position,pCVar3);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_29c,&CStack_17c,&CStack_14c);

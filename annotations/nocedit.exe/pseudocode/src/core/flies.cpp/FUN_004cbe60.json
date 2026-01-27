@@ -6,12 +6,6 @@
         "column": 6,
         "line": 9,
         "message": "ambiguating new declaration of 'void core_flies_cpp_FUN_004cbe60()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 50,
-        "line": 28,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
       }
     ],
     "success": false,
@@ -38,6 +32,12 @@
         "category": "other",
         "column": 48,
         "line": 26,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -217,7 +217,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
-      "text": "((float *)&in_stack_00000004[0x1f].field7_0x6c,\"gatherTime\");",
+      "text": "((float *)&in_stack_00000004[0x1f].unk1,\"gatherTime\");",
       "type": "stack_param"
     },
     {

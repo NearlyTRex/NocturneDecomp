@@ -25,8 +25,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
     return;
   }
   if ((this_ptr->is_paused == 0) && (this_ptr->allow_hero_controls_flag == 0)) {
-    ctrl = (SPlayerControl *)
-           core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(g_CNetGameInstance);
+    ctrl = (SPlayerControl *)core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(g_CNetGamePtr);
     uVar1 = this_ptr->game_control;
     if (uVar1 == 0) {
       core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(this_ptr,ctrl);

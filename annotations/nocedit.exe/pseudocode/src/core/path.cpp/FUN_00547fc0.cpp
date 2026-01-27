@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_path_cpp_FUN_00547fc0(void)
 
 {
@@ -67,18 +65,18 @@ void core_path_cpp_FUN_00547fc0(void)
   DAT_030d4fd0.surface_normal.B = 0;
   DAT_030d4fd0.surface_normal.C = 0;
   DAT_030d4fd0.surface_normal.D = 0;
-  _DAT_030d4fe8 = 0;
-  _DAT_030d4ff4 = 1;
-  _DAT_030d5000 = 2;
-  _DAT_030d4fec = 0x800000;
-  _DAT_030d4ff0 = 0x800000;
-  _DAT_030d4ff8 = 0x800000;
-  _DAT_030d4ffc = 0x800000;
-  _DAT_030d5004 = 0x800000;
-  _DAT_030d5008 = 0x800000;
-  _DAT_030d5010 = 0x800000;
-  _DAT_030d5014 = 0x800000;
-  _DAT_030d500c = 3;
+  INT_030d4fe8 = 0;
+  INT_030d4ff4 = 1;
+  INT_030d5000 = 2;
+  INT_030d4fec = 0x800000;
+  INT_030d4ff0 = 0x800000;
+  INT_030d4ff8 = 0x800000;
+  INT_030d4ffc = 0x800000;
+  INT_030d5004 = 0x800000;
+  INT_030d5008 = 0x800000;
+  INT_030d5010 = 0x800000;
+  INT_030d5014 = 0x800000;
+  INT_030d500c = 3;
   iStack_7c = 0x5480c6;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
   local_20 = in_stack_00000008 << 8;

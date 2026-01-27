@@ -68,8 +68,8 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
               (&g_CDemonRaytraceInstance,(SCapsuleCollision *)local_14c);
   }
   this_ptr->ground_type = 1;
-  this_ptr->field11_0x14d148 = -1;
-  this_ptr->field12_0x14d14c = -1;
+  this_ptr->unk1 = -1;
+  this_ptr->unk2 = -1;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   if (-1 < this_ptr->ignore_list_count) {
     CStack_a8.max.y = local_13c.min.x - local_13c.max.y;
@@ -92,15 +92,15 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
     }
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)local_f0);
     local_f0._0_4_ = this_ptr->ray_type;
-    local_f0._4_4_ = this_ptr->field60_0x15f684;
-    local_f0._8_4_ = this_ptr->field61_0x15f688;
-    local_e4 = this_ptr->field62_0x15f68c;
-    local_e0 = this_ptr->field63_0x15f690;
+    local_f0._4_4_ = this_ptr->unk8;
+    local_f0._8_4_ = this_ptr->unk9;
+    local_e4 = this_ptr->unk10;
+    local_e0 = this_ptr->unk11;
     local_14 = 0;
-    if (0 < *(int *)(this_ptr->field19_0x14f0a0 + 0x7d08)) {
+    if (0 < *(int *)(this_ptr->unk4 + 0x7d08)) {
       local_18 = this_ptr;
       do {
-        actor = *(CDemonActor **)(local_18->field19_0x14f0a0 + 0x7d0c);
+        actor = *(CDemonActor **)(local_18->unk4 + 0x7d0c);
         pvVar8 = (void *)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,actor);
         if ((pvVar8 == (void *)0x0) &&
            (local_d0 = pvVar8, local_cc = pvVar8,
@@ -251,7 +251,7 @@ LAB_00573d6f:
         }
         local_18 = (CDemonSet *)local_18->cameras;
         local_14 = local_14 + 1;
-      } while (local_14 < *(int *)(this_ptr->field19_0x14f0a0 + 0x7d08));
+      } while (local_14 < *(int *)(this_ptr->unk4 + 0x7d08));
     }
   }
   if ((float)local_14c <= 1.0) {

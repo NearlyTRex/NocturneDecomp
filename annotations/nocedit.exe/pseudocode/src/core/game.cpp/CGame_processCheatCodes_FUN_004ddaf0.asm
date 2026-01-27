@@ -834,7 +834,7 @@ section .text
     MOV byte ptr [0x02d831d8],DH        ; 004de351 | CHAR_ARRAY_02d831d8
     PUSH EDI                            ; 004de357 | g_CEditorToolsInstance
     MOV dword ptr [0x02d831b4],EBX      ; 004de358 | g_DebugRecording
-    MOV dword ptr [0x02d831bc],EBX      ; 004de35e | DAT_02d831bc
+    MOV dword ptr [0x02d831bc],EBX      ; 004de35e | FLOAT_02d831bc
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004de364
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004de369
@@ -2368,7 +2368,7 @@ section .text
     MOV dword ptr [ESP + 0x3ec],EDI     ; 004df4a8
     MOV EAX,[0x006810c8]                ; 004df4af | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004df4af
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004df4b4 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004df4b4 | g_CDemonSetInstance.unk4[7996]
     JGE 0x004df592                      ; 004df4ba
         ;   XREF to: 004df592 (CONDITIONAL_JUMP)  ; LAB_004df592
     ADD EAX,dword ptr [ESP + 0x3ec]     ; 004df4c0
@@ -4018,12 +4018,12 @@ section .text
     JNZ 0x004ddb9f                      ; 004e0757
         ;   XREF to: 004ddb9f (CONDITIONAL_JUMP)  ; LAB_004ddb9f
     XOR DL,DL                           ; 004e075d
-    MOV EBX,dword ptr [0x02d831c0]      ; 004e075f | DAT_02d831c0
+    MOV EBX,dword ptr [0x02d831c0]      ; 004e075f | INT_02d831c0
     MOV byte ptr [0x02d831d8],DL        ; 004e0765 | CHAR_ARRAY_02d831d8
     TEST EBX,EBX                        ; 004e076b
     SETZ AL                             ; 004e076d
     AND EAX,0xff                        ; 004e0770
-    MOV [0x02d831c0],EAX                ; 004e0775 | DAT_02d831c0
+    MOV [0x02d831c0],EAX                ; 004e0775 | INT_02d831c0
     JMP 0x004ddb9f                      ; 004e077a
         ;   XREF to: 004ddb9f (UNCONDITIONAL_JUMP)  ; LAB_004ddb9f
     PUSH 0x62c6ff                       ; 004e077f | = "stranger-hat.kfm"

@@ -362,7 +362,7 @@ LAB_00592a67:
         }
         iVar13 = core_skeledit_cpp_FUN_0058b200();
         if (iVar13 == 0) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2ca8.base_strlist,local_fc);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2ca8.base,local_fc);
         }
         iVar13 = (in_stack_00000004->motion_list).motion_count;
         local_f8[iVar13].frame_start = (int)local_10c;
@@ -381,21 +381,20 @@ LAB_00592a67:
           g_CurrentLineNumber = 0x1159;
           core_main_c_displayErrorAndQuit_FUN_00506f10("No motions defined in %s");
         }
-        if (0 < local_2ca8.base_strlist.item_count) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2ca8.base_strlist,local_1e74);
+        if (0 < local_2ca8.base.item_count) {
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2ca8.base,local_1e74);
           iVar13 = 0;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_2ca8.base_strlist,"(Dump this list to the clipboard)");
+                    (&local_2ca8.base,"(Dump this list to the clipboard)");
           while( true ) {
             crt_stdio_c_sprintf_FUN_005fdbd0(local_2360,"The following motions do not have the same skeleton\nheirarchy as the home pose file\n%s\nPress Enter to view heirarchy, or ESC when done viewing list.\n");
             iVar13 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_2ca8,local_2360,iVar13,0);
             if (iVar13 < 0) break;
-            if (iVar13 == local_2ca8.base_strlist.item_count + -1) {
+            if (iVar13 == local_2ca8.base.item_count + -1) {
               pcVar11 = &DAT_0366b650;
-              for (iVar3 = 0; iVar3 < local_2ca8.base_strlist.item_count + -1; iVar3 = iVar3 + 1) {
-                shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_2ca8.base_strlist,iVar3)
-                ;
+              for (iVar3 = 0; iVar3 < local_2ca8.base.item_count + -1; iVar3 = iVar3 + 1) {
+                shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_2ca8.base,iVar3);
                 iVar4 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar11,"%s\r\n");
                 pcVar11 = pcVar11 + iVar4;
               }
@@ -404,8 +403,8 @@ LAB_00592a67:
             }
             else {
               pCVar7 = (CBoneStructure *)
-                       shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                                 (&local_2ca8.base_strlist,iVar13);
+                       shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_2ca8.base,iVar13)
+              ;
               core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0
                         (pCVar7,(char *)in_stack_fffeec08);
               core_skeledit_cpp_FUN_0058afe0();

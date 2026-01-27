@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Master_frame_0_g_0062abdf
-;   undefined4 DAT_0065e670
+;   float FLOAT_0065e670 = 2300
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e160
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 004d2513
     SUB ESP,0x8                         ; 004d2516
-    FLD float ptr [0x0065e670]          ; 004d2519 | DAT_0065e670
+    FLD float ptr [0x0065e670]          ; 004d2519 | FLOAT_0065e670
     FSTP double ptr [ESP]               ; 004d251f
     PUSH 0x62abdf                       ; 004d2522 | = "Master frame (%0..%g)"
     LEA EAX,[ESP + 0xc]                 ; 004d2527

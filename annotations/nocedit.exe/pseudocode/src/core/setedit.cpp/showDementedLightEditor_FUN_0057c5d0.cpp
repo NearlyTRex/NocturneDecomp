@@ -153,8 +153,8 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
               piVar1 = (int *)((int)g_MasterLightList + iVar7);
               iVar7 = iVar7 + 4;
               iVar5 = iVar5 + 1;
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                        (&local_4dc.base_strlist,(char *)(*piVar1 + 0x40));
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4dc.base,(char *)(*piVar1 + 0x40))
+              ;
             } while (iVar5 < g_MasterLightCount);
           }
           iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -176,8 +176,8 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
               piVar1 = (int *)((int)g_MasterLightList + iVar7);
               iVar7 = iVar7 + 4;
               iVar5 = iVar5 + 1;
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                        (&local_884.base_strlist,(char *)(*piVar1 + 0x40));
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_884.base,(char *)(*piVar1 + 0x40))
+              ;
             } while (iVar5 < g_MasterLightCount);
           }
           iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -218,7 +218,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
             do {
               iVar5 = iVar5 + 1;
               pCVar4->cameras[0].ambient_value = this_ptr->min_ambient_value;
-              pCVar4 = (CDemonSet *)&pCVar4->cameras[0].field17_0x1a0;
+              pCVar4 = (CDemonSet *)&pCVar4->cameras[0].unk4;
             } while (iVar5 < this_ptr->camera_count);
           }
         }
@@ -232,8 +232,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
             piVar1 = (int *)((int)g_MasterLightList + iVar7);
             iVar7 = iVar7 + 4;
             iVar5 = iVar5 + 1;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                      (&local_c2c.base_strlist,(char *)(*piVar1 + 0x40));
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c2c.base,(char *)(*piVar1 + 0x40));
           } while (iVar5 < g_MasterLightCount);
         }
         iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

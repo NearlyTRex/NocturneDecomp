@@ -45,8 +45,7 @@ core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFil
        iVar2 != 0)) {
       local_14 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_598,(char *)0x0,"rt","..\\core\\fileman.cpp",0xb9);
-      engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10
-                (&this_ptr->base_filemanager);
+      engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(&this_ptr->base);
 LAB_004bdb2c:
       do {
         do {
@@ -54,10 +53,9 @@ LAB_004bdb2c:
           iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(local_14," %[^\n]\n",local_798);
           if (iVar2 != 1) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\fileman.cpp",0x12d);
-            engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60
-                      (&this_ptr->base_filemanager);
+            engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base);
             engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-                      (&this_ptr->base_filemanager,local_140,(char *)0x0);
+                      (&this_ptr->base,local_140,(char *)0x0);
             return;
           }
           pcVar3 = crt_string_c_strstr_FUN_005fedd0(local_798,"//");
@@ -160,8 +158,7 @@ LAB_004bdb2c:
         if (iVar2 != 0) {
           iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"file");
           if (iVar2 == 0) {
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      ((this_ptr->base_filemanager).file_ptr,"%s\n",local_3a5 + 1);
+            crt_stdio_c_fprintf_FUN_005fe6d0((this_ptr->base).file_ptr,"%s\n",local_3a5 + 1);
           }
           else {
             iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"msn");
@@ -172,7 +169,7 @@ LAB_004bdb2c:
               core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
               core_mission_cpp_CDemonMission_FUN_00523cf0(g_CDemonMissionPtr);
               crt_stdio_c_fprintf_FUN_005fe6d0
-                        ((this_ptr->base_filemanager).file_ptr,"WORLD\\%s\n",local_3a5 + 1);
+                        ((this_ptr->base).file_ptr,"WORLD\\%s\n",local_3a5 + 1);
               crt_string_c_splitpath_FUN_005ff178
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_dc,(char *)0x0);
               pcVar6 = ".scr";
@@ -199,7 +196,7 @@ LAB_004bdb2c:
               iVar2 = engine_dosio_c_getFileSize_FUN_00481880("world",local_dc);
               if (0 < iVar2) {
                 crt_stdio_c_fprintf_FUN_005fe6d0
-                          ((this_ptr->base_filemanager).file_ptr,"WORLD\\%s\n",local_dc);
+                          ((this_ptr->base).file_ptr,"WORLD\\%s\n",local_dc);
               }
               crt_string_c_splitpath_FUN_005ff178
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_78,(char *)0x0);
@@ -227,7 +224,7 @@ LAB_004bdb2c:
               iVar2 = engine_dosio_c_getFileSize_FUN_00481880("world",local_78);
               if (0 < iVar2) {
                 crt_stdio_c_fprintf_FUN_005fe6d0
-                          ((this_ptr->base_filemanager).file_ptr,"WORLD\\%s\n",local_78);
+                          ((this_ptr->base).file_ptr,"WORLD\\%s\n",local_78);
               }
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Adding to file list.");

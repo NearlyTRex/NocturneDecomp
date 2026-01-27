@@ -979,8 +979,8 @@ section .text
     TEST EAX,EAX                        ; 004ae8df
     JNZ 0x004aea62                      ; 004ae8e1
         ;   XREF to: 004aea62 (CONDITIONAL_JUMP)  ; LAB_004aea62
-    MOV EAX,[0x00680a00]                ; 004ae8e7 | g_CNetGameInstance
-    CMP dword ptr [EAX],0x0             ; 004ae8ec | DAT_02f7c740
+    MOV EAX,[0x00680a00]                ; 004ae8e7 | g_CNetGamePtr
+    CMP dword ptr [EAX],0x0             ; 004ae8ec | g_CNetGameInstance
     JNZ 0x004ae9a4                      ; 004ae8ef
         ;   XREF to: 004ae9a4 (CONDITIONAL_JUMP)  ; LAB_004ae9a4
     LEA EAX,[ESP + 0x9d8]               ; 004ae8f5
@@ -1331,8 +1331,8 @@ section .text
     TEST EAX,EAX                        ; 004aec63
     JNZ 0x004aeddf                      ; 004aec65
         ;   XREF to: 004aeddf (CONDITIONAL_JUMP)  ; LAB_004aeddf
-    MOV EAX,[0x00680a00]                ; 004aec6b | g_CNetGameInstance
-    CMP dword ptr [EAX],0x0             ; 004aec70 | DAT_02f7c740
+    MOV EAX,[0x00680a00]                ; 004aec6b | g_CNetGamePtr
+    CMP dword ptr [EAX],0x0             ; 004aec70 | g_CNetGameInstance
     JNZ 0x004aed1f                      ; 004aec73
         ;   XREF to: 004aed1f (CONDITIONAL_JUMP)  ; LAB_004aed1f
     LEA EAX,[ESP + 0x9ec]               ; 004aec79
@@ -3082,7 +3082,7 @@ section .text
     MOV dword ptr [ESP + 0x9d0],EAX     ; 004afdce
     MOV EAX,[0x006810c8]                ; 004afdd5 | g_CDemonSetPtr
         ;   Label: LAB_004afdd5
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004afdda | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004afdda | g_CDemonSetInstance.unk4[7996]
     JGE 0x004afeab                      ; 004afde0
         ;   XREF to: 004afeab (CONDITIONAL_JUMP)  ; LAB_004afeab
     ADD EAX,dword ptr [ESP + 0x9d0]     ; 004afde6

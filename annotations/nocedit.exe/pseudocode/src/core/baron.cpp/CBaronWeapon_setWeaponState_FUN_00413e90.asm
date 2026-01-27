@@ -13,9 +13,9 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
+;   core_baron.cpp_CBaron_FUN_004135a0
+;   core_baron.cpp_CBaronWeapon_FUN_00413f20
 ;   core_baron.cpp_FUN_00413470
-;   core_baron.cpp_FUN_004135a0
-;   core_baron.cpp_FUN_00413f20
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_weapon.cpp_CWeapon_FUN_005ee640
 ;
@@ -56,14 +56,14 @@ section .text
     ADD ESP,0x4                         ; 00413ee5
     PUSH EBX                            ; 00413ee8
         ;   Label: LAB_00413ee8
-    CALL core_baron.cpp_FUN_00413f20    ; 00413ee9
-        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_00413f20()
+    CALL core_baron.cpp_CBaronWeapon_FUN_00413f20 ; 00413ee9
+        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon * this_ptr)
     ADD ESP,0x4                         ; 00413eee
     PUSH ESI                            ; 00413ef1
     MOV EDX,dword ptr [EBX + 0x578]     ; 00413ef2
     PUSH EDX                            ; 00413ef8
     CALL core_baron.cpp_FUN_00413470    ; 00413ef9
-        ;   XREF to: 00413470 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_00413470()
+        ;   XREF to: 00413470 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_FUN_00413470(int param_1, CDemonActor * param_2)
     ADD ESP,0x8                         ; 00413efe
     POP EBP                             ; 00413f01
         ;   Label: LAB_00413f01
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 00413f01 (CONDITIONAL_JUMP)  ; LAB_00413f01
     PUSH EAX                            ; 00413f0f
     PUSH ESI                            ; 00413f10
-    CALL core_baron.cpp_FUN_004135a0    ; 00413f11
-        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_004135a0()
+    CALL core_baron.cpp_CBaron_FUN_004135a0 ; 00413f11
+        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_004135a0(CBaron * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00413f16
     POP EBP                             ; 00413f19
     POP ESI                             ; 00413f1a

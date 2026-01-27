@@ -22,8 +22,8 @@ core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint d1,uint d2,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_hero).base_character.base_actor.vtable._ub = &g_CMolochVTable;
-  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field5_0x21e94 + 200));
+  (this_ptr->base).base.base.vtable._ub = &g_CMolochVTable;
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->unk2 + 200));
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(extraout_EAX + -0x2388),0,unaff_EBX,unaff_retaddr
                       ,(uint)this_ptr);

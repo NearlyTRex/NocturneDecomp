@@ -18,11 +18,11 @@ typedef struct C3DSLight {
     float aspect; // 0x120
     float intensity; // 0x124
     char visible_flags[246]; // 0x128
-    char field_542[4006]; // 0x21e
+    char unk1[4006]; // 0x21e
     CColor3f color; // 0x11c4
     float atten_start; // 0x11d0
     float atten_end; // 0x11d4
-    char field_4568[8]; // 0x11d8
+    char unk2[8]; // 0x11d8
     float on_time; // 0x11e0
     float cycle_time; // 0x11e4
     float cycle_elapsed; // 0x11e8

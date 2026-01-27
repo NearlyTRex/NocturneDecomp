@@ -328,7 +328,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                   } while (iVar16 < tri_count);
                 }
               }
-              if (this_ptr->field40_0x15ae84 == 0) {
+              if (this_ptr->unk5 == 0) {
                 if (0 < vertex_count) {
                   pCVar19 = g_VertexNormalArray;
                   local_68 = g_TransformedVertexArray;
@@ -662,25 +662,25 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
         do {
           this_ptr = (CDemonSet *)(pCVar9->cameras[0].name + 0x2c);
           pCVar8 = pCVar9[4].lights;
-          pCVar8[0x97].field8_0x21e[0x88e] = '\0';
-          pCVar8[0x97].field8_0x21e[0x88f] = '\0';
-          pCVar8[0x97].field8_0x21e[0x890] = '\0';
-          pCVar8[0x97].field8_0x21e[0x891] = '\0';
+          pCVar8[0x97].unk1[0x88e] = '\0';
+          pCVar8[0x97].unk1[0x88f] = '\0';
+          pCVar8[0x97].unk1[0x890] = '\0';
+          pCVar8[0x97].unk1[0x891] = '\0';
           pCVar8 = pCVar9[4].lights;
-          pCVar8[0x97].field8_0x21e[0x892] = '\0';
-          pCVar8[0x97].field8_0x21e[0x893] = '\0';
-          pCVar8[0x97].field8_0x21e[0x894] = '\0';
-          pCVar8[0x97].field8_0x21e[0x895] = '\0';
+          pCVar8[0x97].unk1[0x892] = '\0';
+          pCVar8[0x97].unk1[0x893] = '\0';
+          pCVar8[0x97].unk1[0x894] = '\0';
+          pCVar8[0x97].unk1[0x895] = '\0';
           pCVar8 = pCVar9[4].lights;
-          pCVar8[0x97].field8_0x21e[0x896] = '\0';
-          pCVar8[0x97].field8_0x21e[0x897] = '\0';
-          pCVar8[0x97].field8_0x21e[0x898] = '\0';
-          pCVar8[0x97].field8_0x21e[0x899] = '\0';
+          pCVar8[0x97].unk1[0x896] = '\0';
+          pCVar8[0x97].unk1[0x897] = '\0';
+          pCVar8[0x97].unk1[0x898] = '\0';
+          pCVar8[0x97].unk1[0x899] = '\0';
           pCVar8 = pCVar9[4].lights;
-          pCVar8[0x97].field8_0x21e[0x89a] = '\0';
-          pCVar8[0x97].field8_0x21e[0x89b] = '\0';
-          pCVar8[0x97].field8_0x21e[0x89c] = '\0';
-          pCVar8[0x97].field8_0x21e[0x89d] = '\0';
+          pCVar8[0x97].unk1[0x89a] = '\0';
+          pCVar8[0x97].unk1[0x89b] = '\0';
+          pCVar8[0x97].unk1[0x89c] = '\0';
+          pCVar8[0x97].unk1[0x89d] = '\0';
           pCVar9 = this_ptr;
         } while ((int)this_ptr < iVar16);
       }

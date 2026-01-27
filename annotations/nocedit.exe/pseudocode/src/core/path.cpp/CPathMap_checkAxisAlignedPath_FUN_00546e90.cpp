@@ -47,7 +47,7 @@ core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90
     local_40 = 1;
   }
   iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                    (this_ptr,end_x,start_height,this_ptr->field3_0x1c);
+                    (this_ptr,end_x,start_height,this_ptr->unk2);
   iVar5 = start_height;
   if (0 < local_2c) {
     do {
@@ -102,7 +102,7 @@ core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90
   local_18 = start_height;
   local_34 = (uVar2 ^ uVar7) - uVar7;
   iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                    (this_ptr,end_x,start_height,this_ptr->field3_0x1c);
+                    (this_ptr,end_x,start_height,this_ptr->unk2);
   if (0 < local_34) {
     do {
       iVar3 = local_40 + end_x;

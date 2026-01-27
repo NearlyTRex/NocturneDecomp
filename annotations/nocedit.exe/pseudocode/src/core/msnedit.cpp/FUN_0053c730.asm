@@ -17,7 +17,7 @@
 ;   undefined4 DAT_02f79820
 ;   undefined4 DAT_02f79c20
 ;   undefined4 DAT_02f7a024
-;   undefined4 DAT_02f7a028
+;   int INT_02f7a028
 ;   undefined4 DAT_02f7a02c
 ;   undefined4 DAT_02f7a030
 ;   undefined4 DAT_02f7a031
@@ -77,7 +77,7 @@ section .text
     XOR ESI,ESI                         ; 0053c79b
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 0053c79d
         ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
-    MOV ECX,dword ptr [0x02f7a028]      ; 0053c7a2 | DAT_02f7a028
+    MOV ECX,dword ptr [0x02f7a028]      ; 0053c7a2 | INT_02f7a028
     ADD ESP,0x4                         ; 0053c7a8
     TEST ECX,ECX                        ; 0053c7ab
     JLE 0x0053c807                      ; 0053c7ad
@@ -108,7 +108,7 @@ section .text
     ADD EDI,0xec                        ; 0053c7ef
     CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0053c7f5
         ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-    MOV EDX,dword ptr [0x02f7a028]      ; 0053c7fa | DAT_02f7a028
+    MOV EDX,dword ptr [0x02f7a028]      ; 0053c7fa | INT_02f7a028
     ADD ESP,0x8                         ; 0053c800
     CMP ESI,EDX                         ; 0053c803
     JL 0x0053c7b7                       ; 0053c805

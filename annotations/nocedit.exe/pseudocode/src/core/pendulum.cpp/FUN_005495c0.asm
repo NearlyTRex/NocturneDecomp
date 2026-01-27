@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0063ec9d = 0.5
-;   undefined4 DAT_00662138
+;   float FLOAT_00662138 = 0.00390625
 ;   CGore* g_CGorePtr = 02d83364
 ;   CGore g_CGoreInstance
 ;
@@ -228,13 +228,13 @@ section .text
         ;   Label: LAB_0054983c
     MOV EAX,ESI                         ; 00549840
     FILD dword ptr [EAX]                ; 00549842
-    FMUL float ptr [0x00662138]         ; 00549844 | DAT_00662138
+    FMUL float ptr [0x00662138]         ; 00549844 | FLOAT_00662138
     FSTP float ptr [EBX]                ; 0054984a
     FILD dword ptr [EAX + 0x4]          ; 0054984c
-    FMUL float ptr [0x00662138]         ; 0054984f | DAT_00662138
+    FMUL float ptr [0x00662138]         ; 0054984f | FLOAT_00662138
     FSTP float ptr [EBX + 0x4]          ; 00549855
     FILD dword ptr [EAX + 0x8]          ; 00549858
-    FMUL float ptr [0x00662138]         ; 0054985b | DAT_00662138
+    FMUL float ptr [0x00662138]         ; 0054985b | FLOAT_00662138
     FSTP float ptr [EBX + 0x8]          ; 00549861
     LEA EAX,[ESP + 0x70]                ; 00549864
     PUSH EAX                            ; 00549868

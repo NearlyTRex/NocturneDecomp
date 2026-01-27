@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_flame.cpp_staticInit_FUN_004c9a30(void)
+; __cdecl void core_flame.cpp_staticInit_FUN_004c9a30(void)
 ;
 ;
 ; Referenced Globals:

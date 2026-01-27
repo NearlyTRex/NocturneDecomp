@@ -19,8 +19,19 @@ extern CNetGame g_CNetGameInstance;
 // SChatHistory[400]
 extern SChatHistory g_ChatHistory[400];
 
+// float
+extern float FLOAT_02f7c540;
+extern float FLOAT_02f7c630;
+
 // int
+extern int INT_02f797e8;
+extern int INT_02f797ec;
+extern int INT_02f797f0;
 extern int g_DisableMouseHitOnBarrier;
+extern int INT_02f7a028;
+extern int INT_02f7c510;
+extern int INT_02f7c52c;
+extern int INT_02f7c530;
 extern int g_LastPingTime;
 extern int g_RemoteSyncStage;
 extern int g_ChatHistoryCount;
@@ -34,10 +45,7 @@ extern undefined1 DAT_02f79818;
 // undefined4
 extern undefined4 DAT_02f797e0;
 extern undefined4 DAT_02f797e4;
-extern undefined4 DAT_02f7c510;
 extern undefined4 DAT_02f7c528;
-extern undefined4 DAT_02f7c52c;
-extern undefined4 DAT_02f7c530;
 extern undefined4 DAT_02f7c538;
 extern undefined4 DAT_02f7c53c;
 extern undefined4 DAT_02f7c634;

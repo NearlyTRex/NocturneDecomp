@@ -9,8 +9,8 @@
 // Structure: CPickList
 // Ghidra size: 0x3a8 (936 bytes)
 typedef struct CPickList {
-    CStrList base_strlist; // 0x0
-    char field_16[44]; // 0x10
+    CStrList base; // 0x0
+    char unk1[44]; // 0x10
     int selected_index; // 0x3c
     int state_flag; // 0x40
     char ok_button_text[100]; // 0x44
@@ -18,7 +18,7 @@ typedef struct CPickList {
     char search_text_buffer[100]; // 0x10c
     int confirmed_flag; // 0x170
     int character_width; // 0x174
-    int field_376; // 0x178
+    int unk2; // 0x178
     int current_index; // 0x17c
     int scroll_top; // 0x180
     int page_size; // 0x184

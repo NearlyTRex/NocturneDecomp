@@ -8,18 +8,6 @@
         "message": "ambiguating new declaration of 'uint core_charactr_cpp_CCharacter_FUN_0042f3e0()'"
       },
       {
-        "category": "missing_member",
-        "column": 47,
-        "line": 55,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 48,
-        "line": 62,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
         "column": 31,
         "line": 75,
@@ -94,79 +82,73 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 105,
+        "line": 104,
         "message": "'stack0xfffff6d8' was not declared in this scope; did you mean 'in_stack_fffff6d8'?"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 117,
+        "line": 116,
         "message": "'void*' is not a pointer-to-object type"
-      },
-      {
-        "category": "missing_member",
-        "column": 67,
-        "line": 122,
-        "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 138,
+        "line": 137,
         "message": "cast from 'byte*' {aka 'unsigned char*'} to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 138,
+        "line": 137,
         "message": "cast from 'CCharacter*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 139,
+        "line": 138,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 139,
+        "line": 138,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 139,
+        "line": 138,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 141,
+        "line": 140,
         "message": "cast from 'byte*' {aka 'unsigned char*'} to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 141,
+        "line": 140,
         "message": "cast from 'CCharacter*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 141,
+        "line": 140,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 142,
+        "line": 141,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 142,
+        "line": 141,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -200,17 +182,17 @@
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 504,
+    "complexity_score": 503,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 16,
-    "pseudocode_lines": 134,
+    "pseudocode_lines": 133,
     "suspect_count": 36,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 427
+    "total_lines": 426
   },
   "cross_references": [
     {
@@ -669,119 +651,119 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
+      "line": 97,
       "match": "&stack0xfffff6d8",
       "text": "puVar9 = &stack0xfffff6d8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 99,
       "match": "&stack0xfffff6d8",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6d8,(char *)pCVar6);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 102,
       "match": "in_stack_fffff6d0",
       "text": "in_stack_fffff6d0 = puVar9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 103,
       "match": "in_stack_fffff6d4",
       "text": "in_stack_fffff6d4 = pCVar6;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 107,
       "match": "&stack0xfffff6d0",
       "text": "((CPickList *)&stack0xfffff6d0,\"Select actor to carry.\",local_14,0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 112,
+      "line": 111,
       "match": "&stack0xfffff6d0",
       "text": "shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff6d0,iVar7);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 130,
       "match": "in_stack_fffff6d0",
       "text": "((CPickList *)&stack0xfffff6d0,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 130,
       "match": "in_stack_fffff6d4",
       "text": "((CPickList *)&stack0xfffff6d0,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 130,
       "match": "&stack0xfffff6d0",
       "text": "((CPickList *)&stack0xfffff6d0,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 131,
       "match": "in_stack_fffff6d8",
       "text": "(uint)in_stack_fffff6d8,(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 131,
       "match": "in_stack_fffff6dc",
       "text": "(uint)in_stack_fffff6d8,(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 131,
       "match": "in_stack_fffff6e0",
       "text": "(uint)in_stack_fffff6d8,(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_fffff6d0",
       "text": "(&local_588,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,(uint)in_stack_fffff6d8,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_fffff6d4",
       "text": "(&local_588,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,(uint)in_stack_fffff6d8,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_fffff6d8",
       "text": "(&local_588,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,(uint)in_stack_fffff6d8,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 134,
       "match": "in_stack_fffff6dc",
       "text": "(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 134,
       "match": "in_stack_fffff6e0",
       "text": "(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);",
       "type": "stack_param"

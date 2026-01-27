@@ -46,7 +46,7 @@ void core_icepick_cpp_FUN_004f8810(void)
     iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),iVar2,0.0,
-               *(float *)(in_stack_00000004 + 0x1fbfc),DAT_02db89b0,
+               *(float *)(in_stack_00000004 + 0x1fbfc),INT_02db89b0,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     fVar1 = *(float *)(in_stack_00000004 + 0xbe54) * (float)3.1415926535000001 * (float)2
             * in_stack_00000008 + *(float *)(in_stack_00000004 + 0x1fc00);
@@ -65,7 +65,7 @@ void core_icepick_cpp_FUN_004f8810(void)
     puVar3 = (uint *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     *(uint *)((int)&local_20 + (uint)bVar5 * -8 + 4) =
          *(uint *)((int)&local_30 + (uint)bVar5 * -8 + 4);
-    iVar2 = DAT_02db89b0;
+    iVar2 = INT_02db89b0;
     *puVar4 = *puVar3;
     puVar4[(uint)bVar5 * -2 + 1] = puVar3[(uint)bVar5 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20

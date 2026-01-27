@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_mimic.cpp_staticInit_FUN_0051f100(void)
+; __cdecl void core_mimic.cpp_staticInit_FUN_0051f100(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_lightgun.cpp_staticInit_FUN_00505890(void)
+; __cdecl void core_lightgun.cpp_staticInit_FUN_00505890(void)
 ;
 ;
 ; Referenced Globals:

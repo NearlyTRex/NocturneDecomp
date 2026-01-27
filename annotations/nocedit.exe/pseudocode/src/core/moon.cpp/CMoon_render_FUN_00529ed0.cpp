@@ -99,10 +99,10 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   }
   g_CDemonSetPtr->rendering_mode = 0;
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(&g_MoonCloudTexture);
-  pcVar2 = g_MoonCloudTexture.ptrRaw;
+  pcVar2 = g_MoonCloudTexture.raw;
   local_30 = g_MoonCloudScrollX >> 0x10;
   local_24 = g_MoonCloudScrollY >> 0x10;
-  local_2c = g_MoonCloudTexture.ptrRaw;
+  local_2c = g_MoonCloudTexture.raw;
   local_28 = 0;
   do {
     local_20 = g_ScreenBufferArray[local_28];

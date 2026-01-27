@@ -25,8 +25,7 @@ void core_msnedit_cpp_FUN_0053d7b0(void)
                 (g_CEditorToolsPtr,"Rebuilding waypoint connectivity in set %s");
       core_mission_cpp_CDemonMission_FUN_00523fb0(in_stack_00000004);
       core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
-      for (iVar1 = 0; iVar1 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x5dc4); iVar1 = iVar1 + 1
-          ) {
+      for (iVar1 = 0; iVar1 < *(int *)(g_CDemonSetPtr->unk4 + 0x5dc4); iVar1 = iVar1 + 1) {
         core_waypoint_cpp_FUN_005ec4f0();
       }
       iVar2 = iVar2 + 1;

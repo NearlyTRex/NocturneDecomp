@@ -9,6 +9,6 @@
 void __cdecl core_stranger_cpp_CStranger_FUN_005c68f0(CStranger *this_ptr)
 
 {
-  core_hero_cpp_CHero_FUN_004f3f20(&this_ptr->base_hero);
+  core_hero_cpp_CHero_FUN_004f3f20(&this_ptr->base);
   return;
 }

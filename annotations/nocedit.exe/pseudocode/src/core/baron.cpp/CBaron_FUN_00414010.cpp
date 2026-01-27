@@ -11,7 +11,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_00414010(CBaron *this_ptr)
 {
   CActorPropertyList *in_stack_00000008;
   
-  core_hero_cpp_CHero_FUN_004f3f20(&this_ptr->field0_0x0);
+  core_hero_cpp_CHero_FUN_004f3f20(&this_ptr->base);
   core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);

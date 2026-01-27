@@ -31,10 +31,10 @@ engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20
         iVar7 = iVar3 + iVar6;
         do {
           iVar1 = local_14 * this_ptr->width * scaleFactorY + iVar5;
-          this_ptr->ptrRaw[iVar6] = this_ptr->ptrRaw[iVar1];
-          pcVar2 = this_ptr->ptrOpa + iVar6;
+          this_ptr->raw[iVar6] = this_ptr->raw[iVar1];
+          pcVar2 = this_ptr->opa + iVar6;
           iVar6 = iVar6 + 1;
-          *pcVar2 = this_ptr->ptrOpa[iVar1];
+          *pcVar2 = this_ptr->opa[iVar1];
           iVar5 = iVar5 + scaleFactorX;
         } while (iVar6 < iVar7);
       }

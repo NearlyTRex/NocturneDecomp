@@ -60,7 +60,7 @@ void core_curtain_cpp_FUN_00449810(void)
     iVar11 = (int)ROUND(dVar22);
     iVar6 = iVar11 + 1;
     in_stack_00000004[0x152].is_transparent = local_20;
-    in_stack_00000004[0x152].field16_0x100 = iVar11;
+    in_stack_00000004[0x152].unk6 = iVar11;
     iVar7 = (iVar10 + 1) * iVar6;
     *(int *)(in_stack_00000004[1].create_event + 0x34) = iVar7;
     if (iVar7 < 0x3e9) break;
@@ -182,10 +182,10 @@ void core_curtain_cpp_FUN_00449810(void)
       pfVar8 = pfVar8 + 0x1d;
     } while (iVar10 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
-  piVar9 = &in_stack_00000004[0x175].field11_0xdc;
+  piVar9 = &in_stack_00000004[0x175].unk2;
   pCVar15 = in_stack_00000004[0x318].orient_matrix.m + 2;
   local_30 = 0;
-  if (0 < in_stack_00000004[0x152].field16_0x100) {
+  if (0 < in_stack_00000004[0x152].unk6) {
     do {
       local_20 = 0;
       if (0 < in_stack_00000004[0x152].is_transparent) {
@@ -282,7 +282,7 @@ void core_curtain_cpp_FUN_00449810(void)
         } while (local_20 < in_stack_00000004[0x152].is_transparent);
       }
       local_30 = local_30 + 1;
-    } while (local_30 < in_stack_00000004[0x152].field16_0x100);
+    } while (local_30 < in_stack_00000004[0x152].unk6);
   }
   core_curtain_cpp_FUN_00449e40();
   in_stack_00000004->is_transparent = (uint)((int)in_stack_00000004[1].location.position.y < 0xfde9)

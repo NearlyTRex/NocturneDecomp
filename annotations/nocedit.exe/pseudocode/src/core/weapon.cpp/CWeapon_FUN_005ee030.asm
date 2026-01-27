@@ -7,7 +7,7 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_CBaronWeapon_00413de0 at 00413de5
+;   core_baron.cpp_CBaronWeapon_FUN_00413de0 at 00413de5
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

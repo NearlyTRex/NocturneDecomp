@@ -32,14 +32,14 @@ engine_fileio_cpp_parseTimestampRecord_FUN_004b2270
     return 0;
   }
   *(byte *)&output_record->record_start = 0;
-  *(uint *)(output_record->field1_0x4 + 0xfc) = local_24;
+  *(uint *)(output_record->unk1 + 0xfc) = local_24;
   output_record->year = local_18 + -0x76c;
   output_record->month = local_20 + -1;
   output_record->time_3 = local_1c;
   output_record->time_2 = local_14;
   output_record->time_1 = local_10;
   pcVar2 = local_224;
-  pcVar3 = output_record->field8_0x11c + 0xc;
+  pcVar3 = output_record->unk2 + 0xc;
   output_record->chars_read = local_c;
   do {
     cVar1 = *pcVar2;

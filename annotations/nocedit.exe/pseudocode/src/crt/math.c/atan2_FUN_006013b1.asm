@@ -18,7 +18,7 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   int g_UseSoftwareMath = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_00608e14

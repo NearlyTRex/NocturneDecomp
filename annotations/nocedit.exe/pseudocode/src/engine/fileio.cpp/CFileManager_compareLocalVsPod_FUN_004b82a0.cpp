@@ -83,33 +83,33 @@ engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_234);
       if (iVar3 == 0) {
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8,"%s\tNo local file",&local_234);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base,&stack0xffffedf8);
         local_20 = local_20 + 1;
       }
       else if (*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) + 2U <
                local_234.timestamp) {
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (&stack0xffffedf8,"%s\tLocal file is newer",&local_234);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base,&stack0xffffedf8);
         local_10 = local_10 + 1;
       }
       else if (local_234.timestamp <
                *(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) - 2U) {
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (&stack0xffffedf8,"%s\tLocal file is older",&local_234);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base,&stack0xffffedf8);
         local_18 = local_18 + 1;
       }
       else if (local_234.file_size == *(uint *)((int)&(local_a08.directory_entries)->size + iVar2))
       {
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8,"%s\tsame",&local_234);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base,&stack0xffffedf8);
         local_14 = local_14 + 1;
       }
       else {
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (&stack0xffffedf8,"%s\tLocal file has different size",&local_234);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base,&stack0xffffedf8);
         local_1c = local_1c + 1;
       }
       iVar4 = iVar4 + 1;

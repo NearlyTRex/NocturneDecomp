@@ -55,7 +55,7 @@ uint core_turret_cpp_FUN_005e3750(void)
                core_actor_cpp_castToClassHash_FUN_0040c790
                          (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr != (CCharacter *)0x0) &&
-       (iVar3 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr), 0 < iVar3)) {
+       (iVar3 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr), 0 < iVar3)) {
       this_ptr = (CCharacter *)0x0;
     }
     pCStack_20 = (CGlass *)
@@ -102,7 +102,7 @@ uint core_turret_cpp_FUN_005e3750(void)
     }
     else {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_e0);
-      SStack_e0.unknown = g_CDemonSetPtr->field11_0x14d148;
+      SStack_e0.unknown = g_CDemonSetPtr->unk1;
       local_5c.wielder = (CDemonActor *)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc6)();
       uStack_e8 = (double)CONCAT44(0x3ecccccd,local_5c.wielder);
       CStack_98.x = (g_CDemonSetPtr->collision_result_vec2).x -
@@ -124,8 +124,7 @@ uint core_turret_cpp_FUN_005e3750(void)
         SStack_e0.damage_flags = local_5c.damage_flags;
       }
       pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&this_ptr->base_actor,aCStack_8c,
-                          &g_CDemonSetPtr->collision_impact_position);
+                         (&this_ptr->base,aCStack_8c,&g_CDemonSetPtr->collision_impact_position);
       if ((CVector3f *)&SStack_e0.impact_point.y != pCVar2) {
         SStack_e0.impact_point.y = pCVar2->x;
         SStack_e0.impact_point.z = pCVar2->y;
@@ -137,8 +136,7 @@ uint core_turret_cpp_FUN_005e3750(void)
       SStack_e0.impact_direction.z = 1.41531e-43;
       SStack_e0.damage_type =
            (int)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);
-      (*(((this_ptr->base_actor).vtable._uc)->_uc).processDamage)
-                (this_ptr,(SDamageInfo *)&uStack_e8);
+      (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,(SDamageInfo *)&uStack_e8);
       if (in_stack_00000004[2].orient.bank == 0.0) break;
       pCVar4 = g_CDemonSetPtr->collision_actor;
 LAB_005e3ae2:

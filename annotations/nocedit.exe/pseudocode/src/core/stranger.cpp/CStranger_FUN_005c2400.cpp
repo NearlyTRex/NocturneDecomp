@@ -57,7 +57,7 @@ uint core_stranger_cpp_CStranger_FUN_005c2400(void)
   
   in_stack_00000004[0x17a].orient.heading = 0.0;
   local_18 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
-  if ((((float)0.98999999999999999 <= local_18) && (in_stack_00000004[0x1b].field7_0x6c == 0)) &&
+  if ((((float)0.98999999999999999 <= local_18) && (in_stack_00000004[0x1b].unk1 == 0)) &&
      (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0)) {
     local_28 = &(in_stack_00000004->location).position;
     local_20 = 0;
@@ -143,15 +143,15 @@ uint core_stranger_cpp_CStranger_FUN_005c2400(void)
               if ((float *)piVar1 != &fStack_5c) {
                 *piVar1 = (int)fStack_5c;
                 in_stack_00000004[0x17b].scale.z = (int)fStack_58;
-                in_stack_00000004[0x17b].field19_0x114 = (int)fStack_54;
+                in_stack_00000004[0x17b].unk8 = (int)fStack_54;
               }
               CStack_44.x = (float)local_d0._8_4_ - (in_stack_00000004->location).position.x;
               CStack_44.y = fStack_c4 - (in_stack_00000004->location).position.y;
               CStack_44.z = fStack_c0 - (in_stack_00000004->location).position.z;
               pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_bc,&CStack_44);
-              in_stack_00000004[0x17b].field20_0x118 = (int)pCVar4->y;
-              in_stack_00000004[0x17b].field21_0x11c = 0x3f800000;
+              in_stack_00000004[0x17b].unk9 = (int)pCVar4->y;
+              in_stack_00000004[0x17b].unk10 = 0x3f800000;
               return 1;
             }
           }

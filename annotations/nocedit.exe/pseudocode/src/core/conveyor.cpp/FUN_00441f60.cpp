@@ -16,7 +16,7 @@ uint core_conveyor_cpp_FUN_00441f60(void)
   CDemonActor *in_stack_00000004;
   float fStack_20;
   
-  if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
+  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
@@ -27,7 +27,7 @@ uint core_conveyor_cpp_FUN_00441f60(void)
       fStack_20 = 6.256194e-39;
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
       if (iVar1 != 0) {
-        if (in_stack_00000004 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c)) {
+        if (in_stack_00000004 == *(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c)) {
           fStack_20 = 1.79366e-43;
         }
         else {

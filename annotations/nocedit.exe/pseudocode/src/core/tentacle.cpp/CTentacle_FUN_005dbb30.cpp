@@ -15,7 +15,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb30(CTentacle *this_ptr)
   
   str2 = "wait";
   str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                   (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                   (&(this_ptr->base).base.model.motion_controller);
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->motion_name,str2);
   if (iVar1 == 0) {
     return 1;

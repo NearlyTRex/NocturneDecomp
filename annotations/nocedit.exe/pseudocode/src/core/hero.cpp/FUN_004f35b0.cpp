@@ -27,7 +27,7 @@ uint core_hero_cpp_FUN_004f35b0(void)
   CDemonActor *local_14;
   
   local_20 = in_stack_00000004[0x176].create_event + 0x30;
-  in_stack_00000004[0x179].field21_0x11c = 0;
+  in_stack_00000004[0x179].unk10 = 0;
   iVar5 = 0;
   local_18 = 0;
   do {
@@ -35,7 +35,7 @@ uint core_hero_cpp_FUN_004f35b0(void)
       iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         (*(CDemonActor **)(local_20 + 0x334),"CTrap");
       if (iVar5 != 0) {
-        in_stack_00000004[0x179].field21_0x11c = *(int *)(local_20 + 0x334);
+        in_stack_00000004[0x179].unk10 = *(int *)(local_20 + 0x334);
       }
       return 0;
     }
@@ -56,11 +56,11 @@ uint core_hero_cpp_FUN_004f35b0(void)
           pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_48,&local_3c);
           if ((ABS(pCVar3->y) <= (float)60) &&
-             (iVar2 = *(int *)pCVar1[1].actor_name, in_stack_00000004[0x179].field21_0x11c = iVar2,
+             (iVar2 = *(int *)pCVar1[1].actor_name, in_stack_00000004[0x179].unk10 = iVar2,
              iVar2 != 0)) {
-            if ((CLocation *)&in_stack_00000004[0x179].field22_0x120 != local_1c) {
-              in_stack_00000004[0x179].field22_0x120 = (int)(local_1c->position).x;
-              in_stack_00000004[0x179].field23_0x124 = (int)(local_1c->position).y;
+            if ((CLocation *)&in_stack_00000004[0x179].unk11 != local_1c) {
+              in_stack_00000004[0x179].unk11 = (int)(local_1c->position).x;
+              in_stack_00000004[0x179].unk12 = (int)(local_1c->position).y;
               in_stack_00000004[0x179].previous_transform_state.position.x = (local_1c->position).z;
             }
             pfVar4 = &in_stack_00000004[0x179].previous_transform_state.position.y;

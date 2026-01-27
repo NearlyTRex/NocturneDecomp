@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 795
-Signature accuracy rate: 57.2%
+Parameter mismatches detected: 790
+Signature accuracy rate: 57.5%
 
 Mismatches by confidence:
   High confidence:   77 (multiple call sites agree)
   Medium confidence: 105 (some agreement)
-  Low confidence:    613 (limited data)
+  Low confidence:    608 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -325,7 +325,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_charactr.cpp_CCharacter_F at 0042f7a0: 0 reg [], 3 stack
       core_door.cpp_CDoor_getPropert at 004814c2: 0 reg [], 3 stack
-      core_boxactor.cpp_FUN_004226e0 at 00422867: 0 reg [], 3 stack
+      core_boxactor.cpp_CBoxActor_ge at 00422867: 0 reg [], 3 stack
 
   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
     Declared: 1 params, Estimated: 3 params (+2)
@@ -353,7 +353,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/cloth.cpp
     Signature: undefined core_cloth.cpp_FUN_0043bf80()
     Sample call sites:
-      core_hiram.cpp_FUN_004f4450 at 004f44c3: 0 reg [], 2 stack
+      core_hiram.cpp_CHiram_dtor_FUN at 004f44c3: 0 reg [], 2 stack
       core_beast.cpp_CBeast_dtor_FUN at 004184e9: 0 reg [], 2 stack
       core_boneguy.cpp_CBoneGuy_dtor at 0041daa9: 0 reg [], 2 stack
 
@@ -473,7 +473,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/backgnd.cpp
     Signature: int core_backgnd.cpp_cleanupVector_FUN_004126e0(CVector3f * * objs)
     Sample call sites:
-      core_hiram.cpp_FUN_004f4450 at 004f44a3: 0 reg [], 2 stack
+      core_hiram.cpp_CHiram_dtor_FUN at 004f44a3: 0 reg [], 2 stack
       core_armour.cpp_CArmour_dtor_F at 00412549: 0 reg [], 2 stack
       core_enemy.cpp_CEnemy_dtor_FUN at 00412609: 0 reg [], 2 stack
 
@@ -808,7 +808,6 @@ MEDIUM CONFIDENCE MISMATCHES
   core_morph.cpp_FUN_0052b580                        declared:0 est:6 (+6) [8 calls]
   core_script.cpp_FUN_00567310                       declared:0 est:6 (+6) [2 calls]
   core_set.cpp_CDemonSet_FUN_00570040                declared:1 est:7 (+6) [2 calls]
-  core_boxactor.cpp_FUN_004226e0                     declared:0 est:5 (+5) [2 calls]
   core_morph.cpp_FUN_0052b640                        declared:0 est:5 (+5) [9 calls]
   core_script.cpp_FUN_005677a0                       declared:0 est:5 (+5) [7 calls]
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
@@ -841,6 +840,7 @@ MEDIUM CONFIDENCE MISMATCHES
   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FU declared:4 est:6 (+2) [2 calls]
   core_actor.cpp_CDemonActor_getPropertyList_FUN_004 declared:2 est:4 (+2) [46 calls]
   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU declared:3 est:1 (-2) [2 calls]
+  core_boxactor.cpp_CLightActor_FUN_00423110         declared:1 est:3 (+2) [2 calls]
   core_bugs.cpp_FUN_00425fe0                         declared:0 est:2 (+2) [2 calls]
   core_cloth.cpp_FUN_0043a420                        declared:0 est:2 (+2) [2 calls]
   core_course.cpp_CCourse_importMatrices_FUN_00442ea declared:1 est:3 (+2) [2 calls]
@@ -858,7 +858,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  613 functions with low-confidence mismatches
+  608 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -878,7 +878,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 93
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 702
+Functions where declaration has FEWER params than estimated: 697
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -891,9 +891,9 @@ Distribution of differences (estimated - declared):
   -1 params: 57 functions
   +1 params: 262 functions
   +2 params: 151 functions
-  +3 params: 99 functions
+  +3 params: 96 functions
   +4 params: 111 functions
-  +5 params: 26 functions
+  +5 params: 24 functions
   +6 params: 23 functions
   +7 params: 10 functions
   +8 params: 2 functions

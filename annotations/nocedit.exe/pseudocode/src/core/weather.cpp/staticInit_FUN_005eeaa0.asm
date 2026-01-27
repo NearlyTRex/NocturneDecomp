@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_weather.cpp_staticInit_FUN_005eeaa0()
+; __cdecl void core_weather.cpp_staticInit_FUN_005eeaa0(void)
 ;
 ;
 ; Referenced Globals:

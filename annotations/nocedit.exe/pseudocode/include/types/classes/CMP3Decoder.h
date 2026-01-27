@@ -16,12 +16,12 @@ typedef struct CMP3Decoder {
     short decode_buffer[2304]; // 0x110
     CMemoryBitStream memory_bitstream; // 0x1310
     CFileBitStream file_bitstream; // 0x5320
-    int field_21324; // 0x534c
+    int unk1; // 0x534c
     float synthesis_v_buffer[2][1024]; // 0x5350
     int synthesis_buffer_index[2]; // 0x7350
     int layer3_scalefactors[45]; // 0x7358
-    char field_29708[36]; // 0x740c
+    char unk2[36]; // 0x740c
     float synthesis_history[2][16][18]; // 0x7430
-    char field_32048[2304]; // 0x7d30
+    char unk3[2304]; // 0x7d30
 } CMP3Decoder;
 

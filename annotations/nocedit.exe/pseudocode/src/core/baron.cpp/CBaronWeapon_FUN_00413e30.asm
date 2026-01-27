@@ -10,7 +10,7 @@
 ;   void* switchdataD_00413e20 = 00413e65
 ;
 ; Called Functions:
-;   core_baron.cpp_FUN_00413f20
+;   core_baron.cpp_CBaronWeapon_FUN_00413f20
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_baron.cpp_CBaronWeapon_FUN_00413e30
     MOV EBX,dword ptr [ESP + 0x8]       ; 00413e31
     PUSH EBX                            ; 00413e35
-    CALL core_baron.cpp_FUN_00413f20    ; 00413e36
-        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_00413f20()
+    CALL core_baron.cpp_CBaronWeapon_FUN_00413f20 ; 00413e36
+        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon * this_ptr)
     MOV EDX,dword ptr [EBX + 0x578]     ; 00413e3b
     ADD ESP,0x4                         ; 00413e41
     TEST EDX,EDX                        ; 00413e44

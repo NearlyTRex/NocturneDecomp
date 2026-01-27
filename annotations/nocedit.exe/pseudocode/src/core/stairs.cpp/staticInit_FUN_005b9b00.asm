@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_stairs.cpp_staticInit_FUN_005b9b00(void)
+; __cdecl void core_stairs.cpp_staticInit_FUN_005b9b00(void)
 ;
 ;
 ; Referenced Globals:

@@ -25,7 +25,7 @@ void core_msnedit_cpp_ReallyDeleteActorQuestion_FUN_0053bc80(void)
         return;
       }
     }
-    if (in_stack_00000008 == *(int *)(in_stack_00000004->field2_0xc + 0x1c)) {
+    if (in_stack_00000008 == *(int *)(in_stack_00000004->unk2 + 0x1c)) {
       core_msnedit_cpp_FUN_0053bcf0();
     }
     core_msnedit_cpp_FUN_00538ea0();

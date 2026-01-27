@@ -4,26 +4,8 @@
       {
         "category": "other",
         "column": 6,
-        "line": 12,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_bride_cpp_FUN_00423810()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 31,
-        "message": "'_DAT_00822cf8' was not declared in this scope; did you mean 'DAT_00822cf4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 33,
-        "message": "'_DAT_00822cfc' was not declared in this scope; did you mean 'DAT_00822cf4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 45,
-        "message": "'_DAT_00822d04' was not declared in this scope; did you mean 'DAT_00822d0c'?"
       }
     ],
     "success": false,
@@ -37,66 +19,72 @@
       {
         "category": "other",
         "column": 41,
-        "line": 26,
+        "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 28,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 30,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 32,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 34,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 36,
+        "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 38,
+        "line": 31,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 40,
+        "line": 33,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 42,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 44,
+        "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 70,
+        "column": 41,
+        "line": 39,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 41,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 43,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
         "line": 46,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -132,7 +120,7 @@
       },
       {
         "category": "other",
-        "column": 34,
+        "column": 41,
         "line": 64,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -147,29 +135,22 @@
         "column": 41,
         "line": 70,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 73,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 325,
+    "complexity_score": 308,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 31,
-    "pseudocode_lines": 70,
-    "suspect_count": 24,
+    "pseudocode_lines": 68,
+    "suspect_count": 23,
     "suspect_types": [
       "stack_param",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 240
+    "total_lines": 238
   },
   "cross_references": [],
   "function": {
@@ -386,14 +367,14 @@
     },
     {
       "addr": "00822cf8",
-      "name": "DAT_00822cf8",
-      "type": "undefined4",
+      "name": "INT_00822cf8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00822cfc",
-      "name": "DAT_00822cfc",
-      "type": "undefined4",
+      "name": "INT_00822cfc",
+      "type": "int",
       "value": null
     },
     {
@@ -404,8 +385,8 @@
     },
     {
       "addr": "00822d04",
-      "name": "DAT_00822d04",
-      "type": "undefined4",
+      "name": "INT_00822d04",
+      "type": "int",
       "value": null
     }
   ],
@@ -455,171 +436,164 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "CEnemy *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_00000004",
-      "text": "this_ptr = &(in_stack_00000004->base_character).model;",
+      "text": "this_ptr = &(in_stack_00000004->base).model;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 15,
       "match": "DAT_00822cdc",
       "text": "DAT_00822cdc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 17,
       "match": "DAT_00822ce8",
       "text": "DAT_00822ce8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 19,
       "match": "DAT_00822cec",
       "text": "DAT_00822cec = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 25,
       "match": "DAT_00822ce0",
       "text": "DAT_00822ce0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 27,
       "match": "DAT_00822ce4",
       "text": "DAT_00822ce4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 29,
       "match": "DAT_00822cf0",
       "text": "DAT_00822cf0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 31,
       "match": "DAT_00822cf4",
       "text": "DAT_00822cf4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 33,
       "match": "DAT_00822d00",
       "text": "DAT_00822d00 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004[1].base.base.actor_name + 8) = iVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) = iVar1;",
+      "text": "*(int *)(in_stack_00000004[1].base.base.actor_name + 0xc) = iVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) = iVar1;",
+      "text": "*(int *)(in_stack_00000004[1].base.base.actor_name + 0x10) = iVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = iVar1;",
+      "text": "*(int *)(in_stack_00000004[1].base.base.actor_name + 0x14) = iVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14) = iVar1;",
+      "text": "*(int *)(in_stack_00000004[1].base.base.actor_name + 0x18) = iVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18) = iVar1;",
+      "text": "*(int *)(in_stack_00000004[1].base.base.actor_name + 0x1c) = iVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x1c) = iVar1;",
+      "text": "in_stack_00000004[1].base.base.location.position.x = fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_character.base_actor.location.position.x = fVar2;",
+      "text": "in_stack_00000004[1].base.base.location.position.y = fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_character.base_actor.location.position.y = fVar2;",
+      "text": "in_stack_00000004[1].base.base.location.position.z = fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_character.base_actor.location.position.z = fVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 65,
       "match": "in_stack_00000004",
       "text": "core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 67,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_character.base_actor.orient.pitch = 0.0;",
+      "text": "in_stack_00000004[1].base.base.orient.pitch = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 68,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_character.base_actor.orient.bank = 0.0;",
+      "text": "in_stack_00000004[1].base.base.orient.bank = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 69,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_character.base_actor.location.area_id = (int)fVar2;",
+      "text": "in_stack_00000004[1].base.base.location.area_id = (int)fVar2;",
       "type": "stack_param"
     }
   ],

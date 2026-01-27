@@ -47,7 +47,7 @@ section .text
     SUB ESP,0x78                        ; 004d1a42
     MOV ESI,dword ptr [ESP + 0x84]      ; 004d1a45
     MOV EAX,dword ptr [ESI + 0x15c]     ; 004d1a4c
-    MOV [0x02d7b7f0],EAX                ; 004d1a52 | DAT_02d7b7f0
+    MOV [0x02d7b7f0],EAX                ; 004d1a52 | FLOAT_02d7b7f0
     CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d1a57
         ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
     CMP EAX,ESI                         ; 004d1a5c
@@ -55,16 +55,16 @@ section .text
         ;   XREF to: 004d1d83 (CONDITIONAL_JUMP)  ; LAB_004d1d83
     MOV EDX,dword ptr [EAX + 0x15c]     ; 004d1a64
     MOV dword ptr [ESI + 0x15c],EDX     ; 004d1a6a
-    FLD float ptr [0x02d7b7f0]          ; 004d1a70 | DAT_02d7b7f0
+    FLD float ptr [0x02d7b7f0]          ; 004d1a70 | FLOAT_02d7b7f0
         ;   Label: LAB_004d1a70
     FCOMP float ptr [ESI + 0x15c]       ; 004d1a76
     FNSTSW AX                           ; 004d1a7c
     SAHF                                ; 004d1a7e
     JBE 0x004d1a93                      ; 004d1a7f
         ;   XREF to: 004d1a93 (CONDITIONAL_JUMP)  ; LAB_004d1a93
-    FLD float ptr [0x0065e670]          ; 004d1a81 | DAT_0065e670
-    FSUBR float ptr [0x02d7b7f0]        ; 004d1a87 | DAT_02d7b7f0
-    FSTP float ptr [0x02d7b7f0]         ; 004d1a8d | DAT_02d7b7f0
+    FLD float ptr [0x0065e670]          ; 004d1a81 | FLOAT_0065e670
+    FSUBR float ptr [0x02d7b7f0]        ; 004d1a87 | FLOAT_02d7b7f0
+    FSTP float ptr [0x02d7b7f0]         ; 004d1a8d | FLOAT_02d7b7f0
     PUSH ESI                            ; 004d1a93
         ;   Label: LAB_004d1a93
     CALL core_frankgen.cpp_LoadModel_FUN_004d2190 ; 004d1a94
@@ -305,12 +305,12 @@ section .text
     FMUL float ptr [0x0065e66c]         ; 004d1d8a | FLOAT_0065e66c
     FADD float ptr [ESI + 0x15c]        ; 004d1d90
     FST float ptr [ESI + 0x15c]         ; 004d1d96
-    FCOMP float ptr [0x0065e670]        ; 004d1d9c | DAT_0065e670
+    FCOMP float ptr [0x0065e670]        ; 004d1d9c | FLOAT_0065e670
     FNSTSW AX                           ; 004d1da2
     SAHF                                ; 004d1da4
     JC 0x004d1a70                       ; 004d1da5
         ;   XREF to: 004d1a70 (CONDITIONAL_JUMP)  ; LAB_004d1a70
-    FLD float ptr [0x0065e670]          ; 004d1dab | DAT_0065e670
+    FLD float ptr [0x0065e670]          ; 004d1dab | FLOAT_0065e670
     FSUBR float ptr [ESI + 0x15c]       ; 004d1db1
     FSTP float ptr [ESI + 0x15c]        ; 004d1db7
     JMP 0x004d1a70                      ; 004d1dbd

@@ -15,8 +15,8 @@
 ;   void* switchdataD_004f1944 = 004f19a4
 ;   TerminatedCString s_box_swing_wav_0062e9b3
 ;   TerminatedCString s_box_punch_wav_0062e9c2
-;   undefined4 DAT_02db8734
-;   undefined4 DAT_02db8738
+;   int INT_02db8734
+;   int INT_02db8738
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 004f1a97 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x4f1944]  ; 004f199d | caseD_65 | caseD_66 | caseD_69
         ;   Label: switchD
-    MOV EDI,dword ptr [0x02db8734]      ; 004f19a4 | DAT_02db8734
+    MOV EDI,dword ptr [0x02db8734]      ; 004f19a4 | INT_02db8734
         ;   Label: caseD_65
     PUSH EDI                            ; 004f19aa
     PUSH EBX                            ; 004f19ab
@@ -79,7 +79,7 @@ section .text
     POP ESI                             ; 004f19da
     POP EBX                             ; 004f19db
     RET                                 ; 004f19dc
-    MOV EDX,dword ptr [0x02db8738]      ; 004f19dd | DAT_02db8738
+    MOV EDX,dword ptr [0x02db8738]      ; 004f19dd | INT_02db8738
         ;   Label: caseD_66
     PUSH EDX                            ; 004f19e3
     PUSH EBX                            ; 004f19e4

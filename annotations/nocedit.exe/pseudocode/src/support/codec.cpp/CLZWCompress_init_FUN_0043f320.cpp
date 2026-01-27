@@ -13,8 +13,8 @@ void __cdecl support_codec_cpp_CLZWCompress_init_FUN_0043f320(CLZWCompress *this
   int unaff_retaddr;
   
   support_codec_cpp_CLZWDictionary_init_FUN_0043ee60
-            (&this_ptr->dictionary,*(int *)this_ptr->field2_0x20,*(int *)(this_ptr->field2_0x20 + 4)
-             ,unaff_EBX,unaff_retaddr);
+            (&this_ptr->dictionary,*(int *)this_ptr->unk,*(int *)(this_ptr->unk + 4),unaff_EBX,
+             unaff_retaddr);
   support_codec_cpp_resetDictionary_FUN_0043e510
             ((CLZWDictionary *)&(this_ptr->dictionary).bit_state);
   this_ptr->current_code = -1;

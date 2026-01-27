@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_msnedit.cpp_FUN_00536cd0(uint sSomeString, uint param_2,
-   uint param_3, uint param_4, uint param_5) */
-
 uint core_msnedit_cpp_FUN_00536cd0(void)
 
 {
@@ -50,8 +46,8 @@ uint core_msnedit_cpp_FUN_00536cd0(void)
     engine_2d_c_drawLine_FUN_004011b0(iVar2,in_stack_0000000c,iVar2,y1);
   }
   uVar3 = g_MouseButtonFlags & 1;
-  if (((in_stack_00000010 == 0) && (0.0 < _DAT_02f7c630)) &&
-     (_DAT_02f7c630 < (float)0.29999999999999999)) {
+  if (((in_stack_00000010 == 0) && (0.0 < FLOAT_02f7c630)) &&
+     (FLOAT_02f7c630 < (float)0.29999999999999999)) {
     uVar3 = 0;
   }
   if ((bVar1) && (uVar3 != 0)) {

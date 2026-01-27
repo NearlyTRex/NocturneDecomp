@@ -19,13 +19,13 @@ core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360
     return 0;
   }
   if (interaction_state->stop_flag == 0) {
-    pCVar1 = &(this_ptr->base_actor).orient;
+    pCVar1 = &(this_ptr->base).orient;
     if (pCVar1 != user_orientation) {
       pCVar1->pitch = user_orientation->pitch;
-      (this_ptr->base_actor).orient.bank = user_orientation->bank;
-      (this_ptr->base_actor).orient.heading = user_orientation->heading;
+      (this_ptr->base).orient.bank = user_orientation->bank;
+      (this_ptr->base).orient.heading = user_orientation->heading;
     }
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
     return 1;
   }
   interaction_state->stop_flag = 0;

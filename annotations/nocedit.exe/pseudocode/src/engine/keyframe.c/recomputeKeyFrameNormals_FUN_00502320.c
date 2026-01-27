@@ -25,8 +25,7 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void)
     pSVar3 = in_stack_00000004;
     if (((iVar1 == 0x18) || (iVar1 == 0x29)) || (iVar1 == 0x19)) break;
     uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);
-    in_stack_00000004 =
-         (SSurfaceNormal *)(in_stack_00000004->field7_0x1c + ((uVar2 & 0xfffffffc) - 0x1c));
+    in_stack_00000004 = (SSurfaceNormal *)(in_stack_00000004->unk1 + ((uVar2 & 0xfffffffc) - 0x1c));
     iVar1 = ((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type;
   }
   if (vertex_data == (CVector3i *)0x0) {
@@ -53,8 +52,7 @@ LAB_0050237f:
     }
     else if (uVar2 == 0x29) goto LAB_0050237f;
     uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);
-    in_stack_00000004 =
-         (SSurfaceNormal *)(in_stack_00000004->field7_0x1c + ((uVar2 & 0xfffffffc) - 0x1c));
+    in_stack_00000004 = (SSurfaceNormal *)(in_stack_00000004->unk1 + ((uVar2 & 0xfffffffc) - 0x1c));
     if (in_stack_00000004->unknown == 0) {
       return;
     }

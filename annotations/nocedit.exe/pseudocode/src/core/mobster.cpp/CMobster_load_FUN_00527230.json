@@ -24,7 +24,7 @@
       },
       {
         "category": "other",
-        "column": 57,
+        "column": 47,
         "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -36,66 +36,66 @@
       },
       {
         "category": "other",
-        "column": 75,
+        "column": 65,
         "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 79,
+        "column": 69,
         "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 33,
+        "column": 75,
+        "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 36,
+        "column": 83,
+        "line": 34,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 80,
+        "line": 39,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 62,
         "line": 41,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 78,
-        "line": 43,
+        "column": 65,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 50,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 53,
+        "column": 70,
+        "line": 49,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 179,
+    "complexity_score": 175,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 40,
     "suspect_count": 13,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 146
+    "total_lines": 142
   },
   "cross_references": [],
   "function": {
@@ -293,7 +293,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "(&(in_stack_00000004->base_character).model,\"modelName\");",
+      "text": "(&(in_stack_00000004->base).model,\"modelName\");",
       "type": "stack_param"
     },
     {
@@ -307,56 +307,56 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
-      "text": "(&(in_stack_00000004->base_character).model.motion_controller,\"motion state\");",
+      "text": "(&(in_stack_00000004->base).model.motion_controller,\"motion state\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
-      "text": "((CClothList *)&(in_stack_00000004->base_character).cloth_count,\"clothList\");",
+      "text": "((CClothList *)&(in_stack_00000004->base).cloth_count,\"clothList\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.location.position.y,",
+      "text": "((int *)&in_stack_00000004[1].base.base.location.position.y,\"postMode\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
-      "text": "((CDemonActor *)&in_stack_00000004[1].base_character.base_actor.location.position.z,",
+      "text": "((CDemonActor *)&in_stack_00000004[1].base.base.location.position.z,\"ourPost\"",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 32,
       "match": "in_stack_00000004",
-      "text": "((CDemonActor *)&in_stack_00000004[1].base_character.base_actor.location.area_id,",
+      "text": "((CDemonActor *)&in_stack_00000004[1].base.base.location.area_id,\"vehicle\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.orient,\"sideOfCar\");",
+      "text": "((int *)&in_stack_00000004[1].base.base.orient,\"sideOfCar\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000004",
+      "text": "((int *)&in_stack_00000004[1].base.base.orient.bank,\"holdPosFlag\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.orient.bank,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.orient.heading,",
+      "text": "((char **)&in_stack_00000004[1].base.base.orient.heading,\"holdPosCond\");",
       "type": "stack_param"
     }
   ],

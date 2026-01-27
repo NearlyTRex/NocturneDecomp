@@ -4,14 +4,14 @@
       {
         "category": "incompatible_types",
         "column": 48,
-        "line": 15,
-        "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'CDemonActor* (**)()'"
+        "line": 13,
+        "message": "cannot convert 'CBoxActor* (*)()' to 'void* (**)()'"
       },
       {
         "category": "incompatible_types",
-        "column": 61,
-        "line": 21,
-        "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'CDemonActor* (**)()'"
+        "column": 14,
+        "line": 20,
+        "message": "cannot convert 'CLightActor* (*)()' to 'void* (**)()'"
       }
     ],
     "success": false,
@@ -25,13 +25,13 @@
       {
         "category": "other",
         "column": 36,
-        "line": 15,
+        "line": 13,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 21,
+        "column": 38,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
@@ -60,7 +60,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_boxactor.cpp_staticInit_FUN_00421650",
-    "signature": "CDemonActorType * core_boxactor.cpp_staticInit_FUN_00421650(void)"
+    "signature": "void core_boxactor.cpp_staticInit_FUN_00421650(void)"
   },
   "function_calls": [
     {
@@ -179,7 +179,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 10,
       "match": "DAT_0066e5cc",
       "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0066e5cc);",
       "type": "undefined_data"

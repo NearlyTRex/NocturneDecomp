@@ -11,7 +11,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet *this_
 {
   this_ptr->ignore_list_count = 0;
   this_ptr->collision_flag = 0;
-  this_ptr->field71_0x15f6dc = 0;
+  this_ptr->unk12 = 0;
   this_ptr->ray_type = 0;
   return;
 }

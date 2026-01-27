@@ -11,9 +11,9 @@ int __cdecl core_bodypart_cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0(
 {
   int iVar1;
   
-  if (*(int *)this_ptr->field1_0x158 != 0) {
+  if (*(int *)this_ptr->unk != 0) {
     return 0;
   }
-  iVar1 = core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(&this_ptr->base_actor);
+  iVar1 = core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(&this_ptr->base);
   return iVar1;
 }

@@ -812,8 +812,8 @@ section .text
     CALL support_newmsg.cpp_CMouse_load_FUN_00544420 ; 005081bc
         ;   XREF to: 00544420 (UNCONDITIONAL_CALL)  ; void support_newmsg.cpp_CMouse_load_FUN_00544420(CMouse * this_ptr)
     ADD ESP,0x4                         ; 005081c1
-    MOV ECX,dword ptr [0x00680a00]      ; 005081c4 | DAT_02f7c740 | g_CNetGameInstance
-    PUSH ECX                            ; 005081ca | DAT_02f7c740
+    MOV ECX,dword ptr [0x00680a00]      ; 005081c4 | g_CNetGameInstance | g_CNetGamePtr
+    PUSH ECX                            ; 005081ca | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053f780 ; 005081cb
         ;   XREF to: 0053f780 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_0053f780()
     ADD ESP,0x4                         ; 005081d0

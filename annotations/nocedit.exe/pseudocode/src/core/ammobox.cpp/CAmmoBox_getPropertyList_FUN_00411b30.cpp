@@ -11,7 +11,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30(CAmmoBox *th
 {
   CActorPropertyList *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
+  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
   if (this_ptr->item == (char *)0x0) {
     core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);

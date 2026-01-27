@@ -43,7 +43,7 @@ engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
         }
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
         g_RenderStateFlags = RENDER_ENGINE_CORE_ULTRA;
-        if ((this_ptr->field8_0x20 == 0) && (iVar4 = 0, 0 < (polygon_info->base).count)) {
+        if ((this_ptr->unk == 0) && (iVar4 = 0, 0 < (polygon_info->base).count)) {
           iVar3 = 0;
           pSVar2 = polygon_info;
           do {

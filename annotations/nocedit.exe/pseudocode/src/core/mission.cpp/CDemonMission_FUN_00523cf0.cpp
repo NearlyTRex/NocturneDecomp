@@ -52,10 +52,10 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523cf0(CDemonMission *this_ptr
       pCVar3 = pCVar3->next_actor;
     } while (pCVar3 != (CDemonActor *)0x0);
   }
-  this_ptr->field6_0x54c[0x338] = '\x01';
-  this_ptr->field6_0x54c[0x339] = '\0';
-  this_ptr->field6_0x54c[0x33a] = '\0';
-  this_ptr->field6_0x54c[0x33b] = '\0';
+  this_ptr->unk4[0x338] = '\x01';
+  this_ptr->unk4[0x339] = '\0';
+  this_ptr->unk4[0x33a] = '\0';
+  this_ptr->unk4[0x33b] = '\0';
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x350);
   return;
 }

@@ -11,6 +11,6 @@ void __cdecl core_door_cpp_CDoor_FUN_00480de0(CDoor *this_ptr)
 {
   uint in_stack_00000008;
   
-  *(uint *)this_ptr->field19_0x9cc = in_stack_00000008;
+  *(uint *)this_ptr->unk4 = in_stack_00000008;
   return;
 }

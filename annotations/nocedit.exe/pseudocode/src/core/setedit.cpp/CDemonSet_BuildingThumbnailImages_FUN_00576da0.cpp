@@ -96,12 +96,12 @@ LAB_00576e23:
       local_14 = iVar3;
       shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                 (g_CEditorToolsPtr,(float)iVar3,(float)this_ptr->camera_count);
-      local_18 = (CDemonSet *)&local_18->cameras[0].field17_0x1a0;
+      local_18 = (CDemonSet *)&local_18->cameras[0].unk4;
       iVar3 = iVar3 + 1;
     } while (iVar3 < this_ptr->camera_count);
   }
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-  if (0 < CPickList_03653fc0.base_strlist.item_count) {
+  if (0 < CPickList_03653fc0.base.item_count) {
     shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(&CPickList_03653fc0,(char *)0x0);
     shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
               (&CPickList_03653fc0,"Can't open the following background images.",-1,0);

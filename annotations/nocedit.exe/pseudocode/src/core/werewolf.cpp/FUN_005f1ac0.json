@@ -20,27 +20,15 @@
         "message": "invalid cast from type 'CDemonActor*' to type 'float'"
       },
       {
-        "category": "missing_member",
-        "column": 36,
-        "line": 54,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
-      },
-      {
         "category": "other",
         "column": 25,
-        "line": 68,
+        "line": 67,
         "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 74,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 116,
+        "line": 115,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -91,30 +79,30 @@
       {
         "category": "other",
         "column": 44,
-        "line": 68,
+        "line": 67,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 116,
+        "line": 115,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 483,
+    "complexity_score": 482,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 112,
     "suspect_count": 36,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 418
+    "total_lines": 417
   },
   "cross_references": [],
   "function": {
@@ -442,138 +430,138 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004[0x8d].field25_0x144 == 0) &&",
+      "text": "if ((in_stack_00000004[0x8d].unk13 == 0) && (g_CDemonSetPtr->last_switch_area_invalid != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "fVar1 = (in_stack_00000004->location).position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).bank = 1.5707964;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).bank = -1.5707964;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 58,
       "match": "in_stack_00000004",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_00000004",
       "text": "uVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,\"werewolf-die?.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 61,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10) = uVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->vtable)._ub)->spawnFlies)(in_stack_00000004,0x32,25.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->vtable)._ub)->spawnFlies)(in_stack_00000004,0x32,25.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[0x8d].field25_0x144 != 2) {",
+      "text": "if (in_stack_00000004[0x8d].unk13 != 2) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),9,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),10,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 84,
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),iVar5,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 92,
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),0x10,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
+      "line": 96,
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),0x11,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
+      "line": 105,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000004",
       "text": "uVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 108,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,\"werewolf-hurt?.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 109,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10) = uVar4;",
       "type": "stack_param"

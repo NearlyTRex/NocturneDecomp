@@ -9,5 +9,5 @@
 CDemonActor * __cdecl core_bodypart_cpp_CBodyPart_getCarrier_FUN_0041a040(CBodyPart *this_ptr)
 
 {
-  return *(CDemonActor **)(this_ptr->field1_0x158 + 0xdd0);
+  return *(CDemonActor **)(this_ptr->unk + 0xdd0);
 }

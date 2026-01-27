@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_filmreel.cpp_staticInit_FUN_004be620(void)
+; __cdecl void core_filmreel.cpp_staticInit_FUN_004be620(void)
 ;
 ;
 ; Referenced Globals:

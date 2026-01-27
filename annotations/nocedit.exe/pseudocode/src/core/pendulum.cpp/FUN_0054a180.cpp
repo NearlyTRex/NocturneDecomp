@@ -57,7 +57,7 @@ void core_pendulum_cpp_FUN_0054a180(void)
       if (g_CDemonSetPtr->damage_listener_count <= iVar1) {
         return;
       }
-      pCVar3 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar4 + -4);
+      pCVar3 = *(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar4 + -4);
       if ((*(int *)(in_stack_00000004 + 0x428) == 0) ||
          (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar3,g_CHeroClassInfo.name_hash),
          pCVar2 == (CDemonActor *)0x0)) break;

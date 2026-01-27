@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_tommygun.cpp_staticInit_FUN_005dda20(void)
+; __cdecl void core_tommygun.cpp_staticInit_FUN_005dda20(void)
 ;
 ;
 ; Referenced Globals:

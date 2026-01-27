@@ -16,8 +16,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CChara
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(&this_ptr->model);
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr);
-  if (*(int *)this_ptr->field13_0x2620 == 0) {
-    iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr);
+  if (*(int *)this_ptr->unk3 == 0) {
+    iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr);
     if (iVar1 != 1) {
       return;
     }

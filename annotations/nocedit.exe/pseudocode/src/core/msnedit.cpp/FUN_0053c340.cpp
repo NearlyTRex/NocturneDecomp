@@ -48,10 +48,10 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
     actor_ptr = (CDemonActor *)in_stack_00000004[0x152];
     local_14 = 1.01;
     for (; actor_ptr != (CDemonActor *)0x0; actor_ptr = actor_ptr->next_actor) {
-      if (((*in_stack_00000004 == (actor_ptr->location).area_id) && (actor_ptr->field26_0x148 == 0))
-         && ((g_DisableMouseHitOnBarrier == 0 ||
-             (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBarrier"),
-             iVar1 == 0)))) {
+      if (((*in_stack_00000004 == (actor_ptr->location).area_id) && (actor_ptr->unk14 == 0)) &&
+         ((g_DisableMouseHitOnBarrier == 0 ||
+          (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBarrier"), iVar1 == 0)
+          ))) {
         (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_68 + 4));
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(actor_ptr,&CStack_38,&local_20);
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0

@@ -4,37 +4,13 @@
       {
         "category": "other",
         "column": 6,
-        "line": 11,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_game_cpp_FUN_004d7810()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 41,
-        "message": "'_DAT_02d831bc' was not declared in this scope; did you mean 'DAT_02d831ec'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 48,
-        "message": "'_g_DebugRecordingParams' was not declared in this scope; did you mean 'g_DebugRecording'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 48,
-        "message": "'_DAT_02d831bc' was not declared in this scope; did you mean 'DAT_02d831ec'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 53,
-        "message": "'_DAT_02d831bc' was not declared in this scope; did you mean 'DAT_02d831ec'?"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 77,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -48,53 +24,58 @@
       },
       {
         "category": "other",
+        "column": 51,
+        "line": 52,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
         "column": 52,
-        "line": 54,
+        "line": 53,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 55,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 55,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 78,
+        "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 78,
+        "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 102,
+        "line": 101,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 129,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 17,
     "pseudocode_lines": 99,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 363
   },
@@ -226,13 +207,13 @@
     {
       "addr": "02d831b8",
       "name": "g_DebugRecordingParams",
-      "type": "undefined4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d831bc",
-      "name": "DAT_02d831bc",
-      "type": "undefined4",
+      "name": "FLOAT_02d831bc",
+      "type": "float",
       "value": null
     },
     {
@@ -298,17 +279,10 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(int *)((int)",
-      "text": "puVar6 = (uint *)(iVar3 * 4 + *(int *)((int)g_ScreenBufferArray + iVar2));",
+      "text": "puVar7 = (uint *)(iVar3 * 4 + *(int *)((int)g_ScreenBufferArray + iVar2));",
       "type": "pointer_cast"
     }
   ]

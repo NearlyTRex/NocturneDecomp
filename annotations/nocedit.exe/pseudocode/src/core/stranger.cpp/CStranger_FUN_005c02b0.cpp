@@ -62,8 +62,8 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
   
   bVar6 = 0;
   if (in_stack_00000008 == 0) {
-    local_24 = DAT_03f6bad8;
-    local_28 = DAT_03f6bae0;
+    local_24 = INT_03f6bad8;
+    local_28 = INT_03f6bae0;
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(1.5707964,&local_11c);
     local_1cc.w = local_11c.w;
     puVar4 = (uint *)((int)&local_1cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -77,8 +77,8 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
     pCVar2 = &local_1ac;
   }
   else {
-    local_24 = DAT_03f6badc;
-    local_28 = DAT_03f6bae4;
+    local_24 = INT_03f6badc;
+    local_28 = INT_03f6bae4;
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-1.5707964,&local_1dc);
     local_1cc.w = local_1dc.w;
     puVar4 = (uint *)((int)&local_1cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

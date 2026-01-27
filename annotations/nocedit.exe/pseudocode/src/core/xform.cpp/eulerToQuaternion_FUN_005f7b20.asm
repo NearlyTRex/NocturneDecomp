@@ -21,7 +21,7 @@
 ;   core_gabriela.cpp_FUN_004d4d80 at 004d4dcb
 ;   core_haystack.cpp_FUN_004f0e40 at 004f10b6
 ;   core_icepick.cpp_FUN_004f80b0 at 004f838e
-;   core_platfrm.cpp_FUN_0054c850 at 0054c92f
+;   core_platfrm.cpp_CPlatform_ctor_FUN_0054c850 at 0054c92f
 ;   core_platfrm.cpp_FUN_0054ea00 at 0054eb07
 ;   ... and 4 more
 ;

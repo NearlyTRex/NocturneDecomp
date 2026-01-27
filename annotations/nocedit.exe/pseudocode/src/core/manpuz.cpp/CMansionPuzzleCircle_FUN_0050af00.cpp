@@ -16,13 +16,11 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af00(CMansionPuzzleCir
   float in_stack_0000000c;
   
   iVar3 = in_stack_00000008 * 0x60;
-  if (*(int *)(this_ptr->field6_0x5f4 + *(int *)(this_ptr->field10_0x648 + iVar3 + 0xd54) * 100 + -4
-              ) == 0) {
-    fVar2 = in_stack_0000000c / 2.0f + *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10)
-    ;
-    *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10) = fVar2;
+  if (*(int *)(this_ptr->unk2 + *(int *)(this_ptr->unk3 + iVar3 + 0xd54) * 100 + -4) == 0) {
+    fVar2 = in_stack_0000000c / 2.0f + *(float *)(this_ptr->unk3 + iVar3 + 0xd10);
+    *(float *)(this_ptr->unk3 + iVar3 + 0xd10) = fVar2;
     if (1.0 < fVar2) {
-      pcVar1 = this_ptr->field10_0x648 + iVar3 + 0xd10;
+      pcVar1 = this_ptr->unk3 + iVar3 + 0xd10;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = -0x80;
@@ -31,11 +29,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af00(CMansionPuzzleCir
     }
   }
   else {
-    fVar2 = *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10) - in_stack_0000000c / 2.0f
-    ;
-    *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10) = fVar2;
+    fVar2 = *(float *)(this_ptr->unk3 + iVar3 + 0xd10) - in_stack_0000000c / 2.0f;
+    *(float *)(this_ptr->unk3 + iVar3 + 0xd10) = fVar2;
     if (fVar2 < 0.0) {
-      pcVar1 = this_ptr->field10_0x648 + iVar3 + 0xd10;
+      pcVar1 = this_ptr->unk3 + iVar3 + 0xd10;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';

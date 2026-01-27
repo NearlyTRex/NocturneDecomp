@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_door.cpp_CDoor_ctor_FUN_0047fad0 at 0047faf5
 ;   core_door.cpp_FUN_00481650 at 00481656
-;   core_lever.cpp_FUN_005047d0 at 005047f3
+;   core_lever.cpp_CLever_ctor_FUN_005047d0 at 005047f3
 ;
 ; *****************************************************************************
 

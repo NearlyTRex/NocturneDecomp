@@ -39,11 +39,11 @@ int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_004a3f20(CPickList *thi
   if (iVar2 != 0) {
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
     if (iVar2 != 0) {
-      shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(&this_ptr->base_strlist);
+      shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(&this_ptr->base);
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
     if (iVar2 != 0) {
-      shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(&this_ptr->base_strlist);
+      shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(&this_ptr->base);
     }
   }
   iVar5 = 0;
@@ -111,7 +111,7 @@ LAB_004a402a:
               }
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
               if (iVar2 != 0) {
-                iVar2 = (this_ptr->base_strlist).item_count;
+                iVar2 = (this_ptr->base).item_count;
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = iVar2;
               }
@@ -161,14 +161,14 @@ LAB_004a402a:
           }
         } while (this_ptr->search_text_buffer[0] == '\0');
         pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                           (&this_ptr->base_strlist,this_ptr->current_index);
+                           (&this_ptr->base,this_ptr->current_index);
         iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,pcVar3);
         if (iVar2 < 1) {
           this_ptr->current_index = 0;
         }
-        while (this_ptr->current_index < (this_ptr->base_strlist).item_count) {
+        while (this_ptr->current_index < (this_ptr->base).item_count) {
           pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                             (&this_ptr->base_strlist,this_ptr->current_index);
+                             (&this_ptr->base,this_ptr->current_index);
           iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,pcVar3);
           if (iVar2 < 1) break;
           this_ptr->current_index = this_ptr->current_index + 1;

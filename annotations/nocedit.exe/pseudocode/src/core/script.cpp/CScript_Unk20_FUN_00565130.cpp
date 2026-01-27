@@ -52,8 +52,8 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910();
   core_script_cpp_CScript_Unk18_FUN_005669a0();
   core_script_cpp_FUN_00564500();
-  shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fd0c);
-  shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fcd8);
+  shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&CEdScrollBar_0310fd0c);
+  shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&CEdScrollBar_0310fcd8);
   core_script_cpp_FUN_00566880();
   bVar2 = false;
   iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
@@ -208,7 +208,7 @@ LAB_00565363:
       in_stack_00000094 = (char *)0x64;
       in_stack_00000090 = &DAT_0310fd58;
       in_stack_0000008c = "Find";
-      in_stack_00000088 = &g_CEditorToolsPtr->field0_0x0;
+      in_stack_00000088 = &g_CEditorToolsPtr->unk;
       in_stack_00000084 = (char *)0x5655a5;
       shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                 (g_CEditorToolsPtr,"Find",&DAT_0310fd58,100,1);

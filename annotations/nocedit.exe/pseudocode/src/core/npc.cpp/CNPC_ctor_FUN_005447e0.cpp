@@ -12,7 +12,7 @@ CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_005447e0(CNPC *this_ptr)
   CCharacter *pCVar1;
   CPathMap *pCVar2;
   
-  pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base_character);
+  pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
   pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450((CPathMap *)(pCVar1 + 1));
   pCVar2[-1].height_cache[0x4f][0x1b] = (int)&g_CNPCVTable;
   pCVar2[-1].height_cache_tags[7][0x4d] = 0x3f19999a;

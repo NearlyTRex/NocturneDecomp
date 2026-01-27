@@ -16,24 +16,24 @@ core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float d
   int iVar3;
   double dVar4;
   
-  iVar2 = *(int *)(this_ptr->field21_0x298 + 0x2af94);
+  iVar2 = *(int *)(this_ptr->unk5 + 0x2af94);
   dVar4 = crt_math_c_round_FUN_005fe6b0
                     ((double)(delta_time * (float)65536 * (float)8));
   iVar2 = iVar2 + (int)ROUND(dVar4);
-  *(int *)(this_ptr->field21_0x298 + 0x2af94) = iVar2;
+  *(int *)(this_ptr->unk5 + 0x2af94) = iVar2;
   if (0x10000 < iVar2) {
-    iVar3 = *(int *)(this_ptr->field21_0x298 + 0x2af90) + 1;
-    *(int *)(this_ptr->field21_0x298 + 0x2af94) = iVar2 + -0x10000;
-    *(int *)(this_ptr->field21_0x298 + 0x2af90) = iVar3;
+    iVar3 = *(int *)(this_ptr->unk5 + 0x2af90) + 1;
+    *(int *)(this_ptr->unk5 + 0x2af94) = iVar2 + -0x10000;
+    *(int *)(this_ptr->unk5 + 0x2af90) = iVar3;
     if (0xf < iVar3) {
-      this_ptr->field21_0x298[0x2af90] = '\0';
-      this_ptr->field21_0x298[0x2af91] = '\0';
-      this_ptr->field21_0x298[0x2af92] = '\0';
-      this_ptr->field21_0x298[0x2af93] = '\0';
+      this_ptr->unk5[0x2af90] = '\0';
+      this_ptr->unk5[0x2af91] = '\0';
+      this_ptr->unk5[0x2af92] = '\0';
+      this_ptr->unk5[0x2af93] = '\0';
     }
   }
   this_ptr_00 = g_CEventListPtr;
-  *(float *)(this_ptr->field21_0x298 + 0x7d04) = 1.0 / (float)this_ptr;
+  *(float *)(this_ptr->unk5 + 0x7d04) = 1.0 / (float)this_ptr;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (this_ptr_00,(char *)&this_ptr->move_event);
   if (iVar2 != 0) {
@@ -66,7 +66,7 @@ core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float d
     g_CurrentLineNumber = 0x1a5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CWaterActor::process - Bad state");
   }
-  (this_ptr->base_actor).location.position.y =
-       this_ptr->height_delta * this_ptr->param + *(float *)(this_ptr->field21_0x298 + 0x2af98);
+  (this_ptr->base).location.position.y =
+       this_ptr->height_delta * this_ptr->param + *(float *)(this_ptr->unk5 + 0x2af98);
   return;
 }

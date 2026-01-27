@@ -16,18 +16,17 @@ void core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
   core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
-  model_ptr = &(in_stack_00000004->base_character).model;
+  model_ptr = &(in_stack_00000004->base).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
             (&model_ptr->motion_controller,"motion state");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            (&in_stack_00000004[1].base_character.model.motion_controller.in_transition,
-             "morphing");
+            (&in_stack_00000004[1].base.model.motion_controller.in_transition,"morphing");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)in_stack_00000004[1].base_character.model.motion_controller.
-                      current_motion_name,"morphTimer");
+            ((float *)in_stack_00000004[1].base.model.motion_controller.current_motion_name,
+             "morphTimer");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[1].base_character.model.bone_transform.bone_rotations +
-                      0x5b),"morphEvent");
+            ((char **)(in_stack_00000004[1].base.model.bone_transform.bone_rotations + 0x5b),
+             "morphEvent");
   return;
 }

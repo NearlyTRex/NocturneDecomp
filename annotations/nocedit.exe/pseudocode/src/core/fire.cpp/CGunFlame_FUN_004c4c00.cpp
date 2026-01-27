@@ -25,18 +25,14 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
     local_20 = 0;
     do {
       this_ptr_00 = *(CCharacter **)((int)&DAT_02d13eb8 + local_20);
-      if (((*(int *)(this_ptr->field0_0x0 + 0x20) == 2) ||
-          (*(int *)(this_ptr_00->field13_0x2620 + 4) != 0)) &&
-         (fVar2 = (this_ptr_00->base_actor).location.position.x -
-                  ((CVector3f *)(this_ptr->field0_0x0 + 4))->x,
-         fVar4 = (this_ptr_00->base_actor).location.position.y -
-                 *(float *)(this_ptr->field0_0x0 + 8),
-         fVar3 = (this_ptr_00->base_actor).location.position.z -
-                 *(float *)(this_ptr->field0_0x0 + 0xc),
+      if (((*(int *)(this_ptr->unk + 0x20) == 2) || (*(int *)(this_ptr_00->unk3 + 4) != 0)) &&
+         (fVar2 = (this_ptr_00->base).location.position.x - ((CVector3f *)(this_ptr->unk + 4))->x,
+         fVar4 = (this_ptr_00->base).location.position.y - *(float *)(this_ptr->unk + 8),
+         fVar3 = (this_ptr_00->base).location.position.z - *(float *)(this_ptr->unk + 0xc),
          fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= 25.0f)) {
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(&this_ptr_00->model);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                  (&this_ptr_00->base_actor,local_40,(CVector3f *)(this_ptr->field0_0x0 + 4));
+                  (&this_ptr_00->base,local_40,(CVector3f *)(this_ptr->unk + 4));
         core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr_00);
       }
       local_20 = local_20 + 4;
@@ -45,7 +41,7 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
   }
   iVar5 = 0;
   if (0 < DAT_02d13f80) {
-    local_24 = this_ptr->field0_0x0 + 4;
+    local_24 = this_ptr->unk + 4;
     iVar6 = 0;
     do {
       iVar1 = *(int *)((int)&DAT_02d13f84 + iVar6);

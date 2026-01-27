@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_enemy.cpp_staticInit_FUN_004a94d0(void)
+; __cdecl void core_enemy.cpp_staticInit_FUN_004a94d0(void)
 ;
 ;
 ; Referenced Globals:

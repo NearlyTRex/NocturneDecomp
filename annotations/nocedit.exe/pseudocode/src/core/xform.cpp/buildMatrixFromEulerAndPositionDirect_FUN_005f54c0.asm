@@ -17,7 +17,7 @@
 ; XREF[35]:
 ;   core_bodypart.cpp_FUN_0041a630 at 0041a9ba
 ;   core_boneguy.cpp_FUN_0041ca40 at 0041ca9b
-;   core_boxactor.cpp_FUN_00422a50 at 00422be1
+;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422be1
 ;   core_bugs.cpp_FUN_00425fe0 at 004260cb
 ;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d181
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cede

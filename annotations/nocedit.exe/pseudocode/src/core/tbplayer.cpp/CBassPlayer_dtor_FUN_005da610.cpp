@@ -23,7 +23,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlaye
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)&(this_ptr->base_npc).model_name);
+  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)&(this_ptr->base).model_name);
   iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720
                     ((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));
   iVar2 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar2 + -0x4b0));

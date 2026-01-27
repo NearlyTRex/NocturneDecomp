@@ -10,7 +10,7 @@
 ;   crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068 at 0060d0bd
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00684acc
+;   byte BYTE_00684acc = 0x0
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
     SUB ESP,0x4                         ; 0060e8e2
     MOV EBX,dword ptr [ESP + 0x14]      ; 0060e8e5
     XOR EDX,EDX                         ; 0060e8e9
-    MOV AH,byte ptr [0x00684acc]        ; 0060e8eb | DAT_00684acc
+    MOV AH,byte ptr [0x00684acc]        ; 0060e8eb | BYTE_00684acc
     MOV dword ptr [ESP],EDX             ; 0060e8f1
     TEST AH,AH                          ; 0060e8f4
     JZ 0x0060e922                       ; 0060e8f6

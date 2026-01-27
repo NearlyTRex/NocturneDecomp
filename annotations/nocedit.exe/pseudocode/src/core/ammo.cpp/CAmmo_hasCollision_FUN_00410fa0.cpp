@@ -2,11 +2,12 @@
 // Address: 00410fa0
 // Address Range: [[00410fa0, 00410fa2]]
 // Convention: __cdecl
-// Signature: int core_ammo.cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo * this_ptr)
+// Signature: int core_ammo.cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo * this_ptr, SCollisionInfo * collision_info)
 
 #include "nocturne.h"
 
-int __cdecl core_ammo_cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo *this_ptr)
+int __cdecl
+core_ammo_cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

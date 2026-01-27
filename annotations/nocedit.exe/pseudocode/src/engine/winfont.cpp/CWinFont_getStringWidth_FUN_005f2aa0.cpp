@@ -31,7 +31,8 @@ engine_winfont_cpp_CWinFont_getStringWidth_FUN_005f2aa0(CWinFont *this_ptr,char 
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  BVar3 = (*g_GetTextExtentPoint32A)(this_ptr->deviceContextHandle,text_string,~uVar4 - 1,&local_c);
+  BVar3 = (*g_GetTextExtentPoint32A)
+                    (this_ptr->device_context_handle,text_string,~uVar4 - 1,&local_c);
   if (BVar3 == 0) {
     local_c.cx = 0;
   }

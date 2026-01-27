@@ -98,17 +98,17 @@ void core_spike_cpp_FUN_005b8950(void)
   iStack_1c = 0;
   while( true ) {
     if (g_CDemonSetPtr->damage_listener_count <= iStack_14) break;
-    this_ptr = *(CCharacter **)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_1c + -4);
-    input_world_point = &(this_ptr->base_actor).location;
+    this_ptr = *(CCharacter **)(g_CDemonSetPtr->unk4 + iStack_1c + -4);
+    input_world_point = &(this_ptr->base).location;
     fVar1 = (pCStack_18->position).x - (input_world_point->position).x;
-    fVar3 = (pCStack_18->position).y - (this_ptr->base_actor).location.position.y;
-    fVar2 = (pCStack_18->position).z - (this_ptr->base_actor).location.position.z;
+    fVar3 = (pCStack_18->position).y - (this_ptr->base).location.position.y;
+    fVar2 = (pCStack_18->position).z - (this_ptr->base).location.position.z;
     if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= fStack_24) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_15c + 0x34));
       auStack_15c._52_4_ = (CDemonActor *)0x0;
       pCStack_18 = (CLocation *)
-                   (*((this_ptr->base_actor).vtable._ub)->hasCollision)
-                             (&this_ptr->base_actor,(SCollisionInfo *)(auStack_15c + 0x34));
+                   (*((this_ptr->base).vtable._ub)->hasCollision)
+                             (&this_ptr->base,(SCollisionInfo *)(auStack_15c + 0x34));
       if (pCStack_18 != (CLocation *)0x0) {
         SStack_120.cylinder_bottom_y = 0.0;
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -129,7 +129,7 @@ void core_spike_cpp_FUN_005b8950(void)
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   (in_stack_00000004,(CVector3f *)auStack_70,&CStack_58);
         fStack_1c0 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                               (&this_ptr->base_actor,(CVector3f *)auStack_70,&CStack_88,&CStack_f8,
+                               (&this_ptr->base,(CVector3f *)auStack_70,&CStack_88,&CStack_f8,
                                 &SStack_120,(int)pCStack_18,(CBoundingBox3D *)(auStack_cc + 8));
         auStack_1c8 = (byte  [8])(double)fStack_1c0;
         if ((0.0 <= (double)auStack_1c8) && ((double)auStack_1c8 <= 1.0)) {
@@ -140,9 +140,9 @@ void core_spike_cpp_FUN_005b8950(void)
           CStack_a0.y = (float)auStack_70._4_4_ + CStack_48.x;
           CStack_a0.z = fStack_68 + CStack_48.y;
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                    (&this_ptr->base_actor,(CVector3f *)auStack_94,&CStack_a0);
+                    (&this_ptr->base,(CVector3f *)auStack_94,&CStack_a0);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_15c);
-          auStack_15c._4_4_ = in_stack_00000004[3].field28_0x150;
+          auStack_15c._4_4_ = in_stack_00000004[3].unk15;
           auStack_15c._48_4_ = 0x67;
           if (auStack_15c + 0x1c != auStack_94) {
             auStack_15c._28_4_ = auStack_94._0_4_;
@@ -151,8 +151,8 @@ void core_spike_cpp_FUN_005b8950(void)
           }
           auStack_15c._52_4_ = in_stack_00000004;
           pCStack_124 = in_stack_00000004;
-          (*(((this_ptr->base_actor).vtable._uc)->_uc).processDamage)
-                    (this_ptr,(SDamageInfo *)auStack_15c);
+          (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,(SDamageInfo *)auStack_15c)
+          ;
         }
       }
     }

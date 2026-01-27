@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_other_flame.cpp_FUN_004cb920(uint param_1) */
 
 uint core_flamegun_cpp_FUN_004cb920(void)
@@ -25,7 +24,7 @@ uint core_flamegun_cpp_FUN_004cb920(void)
             (in_stack_00000004,&CStack_10,input_local_point);
   core_fire_cpp_CFireEffect_FUN_004c8ef0(g_CFireEffectPtr);
   if (in_stack_00000004[4].location.position.x == 0.0) {
-    fVar1 = 1.0 / _DAT_0065e270;
+    fVar1 = 1.0 / 4.0f;
     *(int *)(in_stack_00000004[4].actor_name + 8) =
          *(int *)(in_stack_00000004[4].actor_name + 8) + -1;
     in_stack_00000004[4].location.position.y = fVar1;

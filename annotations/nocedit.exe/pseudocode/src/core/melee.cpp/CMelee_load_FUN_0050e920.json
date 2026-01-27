@@ -6,12 +6,6 @@
         "column": 6,
         "line": 11,
         "message": "ambiguating new declaration of 'void core_melee_cpp_CMelee_load_FUN_0050e920()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 56,
-        "line": 53,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field13_0xec'"
       }
     ],
     "success": false,
@@ -30,13 +24,13 @@
       },
       {
         "category": "other",
-        "column": 74,
+        "column": 68,
         "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 74,
+        "column": 68,
         "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -48,31 +42,37 @@
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 70,
         "line": 31,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 37,
+        "column": 69,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 76,
-        "line": 41,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 48,
+        "column": 70,
+        "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
+        "line": 46,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 49,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 57,
         "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -80,16 +80,16 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 169,
+    "complexity_score": 167,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 42,
     "suspect_count": 12,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 143
+    "total_lines": 141
   },
   "cross_references": [],
   "function": {
@@ -260,14 +260,14 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
-      "text": "((float *)(in_stack_00000004[1].base_actor.actor_name + 4),\"strengthLo\");",
+      "text": "((float *)(in_stack_00000004[1].base.actor_name + 4),\"strengthLo\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
-      "text": "((float *)(in_stack_00000004[1].base_actor.actor_name + 8),\"strengthHi\");",
+      "text": "((float *)(in_stack_00000004[1].base.actor_name + 8),\"strengthHi\");",
       "type": "stack_param"
     },
     {
@@ -281,42 +281,42 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000004",
-      "text": "((float *)(in_stack_00000004[1].base_actor.actor_name + 0xc),\"dismemberProb\")",
+      "text": "((float *)(in_stack_00000004[1].base.actor_name + 0xc),\"dismemberProb\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000004",
-      "text": "((int *)(in_stack_00000004[1].base_actor.actor_name + 0x10),",
+      "text": "((int *)(in_stack_00000004[1].base.actor_name + 0x10),\"canGoInInventory\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[1].base_actor.location.position.y,\"ammoType\");",
+      "text": "((int *)&in_stack_00000004[1].base.location.position.y,\"ammoType\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 38,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_actor.location.position.z,",
+      "text": "((char **)&in_stack_00000004[1].base.location.position.z,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 41,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_actor.create_event + 0x14),",
+      "text": "((char **)(in_stack_00000004[1].base.create_event + 0x14),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 44,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_actor.field13_0xec.y,\"hitOtherSound\");",
+      "text": "((char **)&in_stack_00000004[1].base.unk4.y,\"hitOtherSound\");",
       "type": "stack_param"
     }
   ],

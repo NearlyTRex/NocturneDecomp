@@ -297,24 +297,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 44,
-        "line": 356,
-        "message": "'_g_BlueMask16' was not declared in this scope; did you mean 'g_BlueMask16'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 357,
-        "message": "'_g_GreenMask16' was not declared in this scope; did you mean 'g_GreenMask16'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 358,
-        "message": "'_g_RedMask16' was not declared in this scope; did you mean 'g_RedMask16'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 17,
         "line": 360,
         "message": "'uVar7' was not declared in this scope; did you mean 'uVar27'?"
@@ -414,24 +396,6 @@
         "column": 13,
         "line": 493,
         "message": "'uVar36' was not declared in this scope; did you mean 'uVar39'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 493,
-        "message": "'_g_BlueMask16' was not declared in this scope; did you mean 'g_BlueMask16'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 494,
-        "message": "'_g_GreenMask16' was not declared in this scope; did you mean 'g_GreenMask16'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 495,
-        "message": "'_g_RedMask16' was not declared in this scope; did you mean 'g_RedMask16'?"
       },
       {
         "category": "undeclared_identifier",
@@ -1230,19 +1194,19 @@
     {
       "addr": "00682748",
       "name": "g_RedMask16",
-      "type": "uint",
+      "type": "ulonglong",
       "value": "0xf800"
     },
     {
       "addr": "00682750",
       "name": "g_GreenMask16",
-      "type": "uint",
+      "type": "ulonglong",
       "value": "0x7e0"
     },
     {
       "addr": "00682758",
       "name": "g_BlueMask16",
-      "type": "uint",
+      "type": "ulonglong",
       "value": "0x1f"
     },
     {
@@ -1368,7 +1332,7 @@
     {
       "addr": "02d052a8",
       "name": "g_SolidColorMode",
-      "type": "int",
+      "type": "ulong",
       "value": null
     }
   ],
@@ -1971,21 +1935,21 @@
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 349,
       "match": "uint7",
-      "text": "uVar36 = (uint7)((uVar15 & _g_BlueMask16) << g_BlueBitShift) |",
+      "text": "uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 350,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & _g_GreenMask16) << g_GreenBlueBits) |",
+      "text": "(uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 351,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & _g_RedMask16) << g_TotalColorBits);",
+      "text": "(uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);",
       "type": "nonstandard_int"
     },
     {
@@ -2251,21 +2215,21 @@
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 486,
       "match": "uint7",
-      "text": "uVar36 = (uint7)((uVar15 & _g_BlueMask16) << g_BlueBitShift) |",
+      "text": "uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 487,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & _g_GreenMask16) << g_GreenBlueBits) |",
+      "text": "(uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 488,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & _g_RedMask16) << g_TotalColorBits);",
+      "text": "(uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);",
       "type": "nonstandard_int"
     },
     {

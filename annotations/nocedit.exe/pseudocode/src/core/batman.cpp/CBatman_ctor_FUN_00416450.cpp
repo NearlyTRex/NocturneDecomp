@@ -17,26 +17,26 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr)
   char *pcVar6;
   char *pcVar7;
   
-  pCVar5 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
+  pCVar5 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   pcVar6 = "none";
-  (pCVar5->base_enemy).base_character.base_actor.vtable._ub = &g_CBatmanVTable;
-  pcVar7 = pCVar5->field1_0xbeb4 + 8;
+  (pCVar5->base).base.base.vtable._ub = &g_CBatmanVTable;
+  pcVar7 = pCVar5->unk1 + 8;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar5->base_enemy).base_character.model,"batman.dfm");
+            (&(pCVar5->base).base.model,"batman.dfm");
   fVar3 = 50.0f;
-  pCVar2 = &pCVar5->base_enemy;
-  (pCVar2->base_character).cloth_data[0x344] = -0x66;
+  pCVar2 = &pCVar5->base;
+  (pCVar2->base).cloth_data[0x344] = -0x66;
   fVar4 = 100.0f;
-  (pCVar2->base_character).cloth_data[0x345] = -0x67;
-  (pCVar2->base_character).cloth_data[0x346] = '\x19';
-  (pCVar2->base_character).cloth_data[0x347] = '?';
-  pCVar2 = &pCVar5->base_enemy;
-  (pCVar2->base_character).cloth_data[0x348] = '\0';
-  (pCVar2->base_character).cloth_data[0x349] = '\0';
-  (pCVar2->base_character).cloth_data[0x34a] = '\0';
-  (pCVar2->base_character).cloth_data[0x34b] = '@';
-  *(float *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = fVar3;
-  *(float *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = fVar4;
+  (pCVar2->base).cloth_data[0x345] = -0x67;
+  (pCVar2->base).cloth_data[0x346] = '\x19';
+  (pCVar2->base).cloth_data[0x347] = '?';
+  pCVar2 = &pCVar5->base;
+  (pCVar2->base).cloth_data[0x348] = '\0';
+  (pCVar2->base).cloth_data[0x349] = '\0';
+  (pCVar2->base).cloth_data[0x34a] = '\0';
+  (pCVar2->base).cloth_data[0x34b] = '@';
+  *(float *)((pCVar5->base).base.cloth_data + 0x34c) = fVar3;
+  *(float *)((pCVar5->base).base.cloth_data + 0x350) = fVar4;
   do {
     cVar1 = *pcVar6;
     *pcVar7 = cVar1;

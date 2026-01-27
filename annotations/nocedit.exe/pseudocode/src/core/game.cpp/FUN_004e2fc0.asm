@@ -13,11 +13,11 @@
 ;   TerminatedCString s_s_10_0_0_105_0067b868
 ;   undefined4 s_.0.105_0067b86c
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEditorTools g_CEditorToolsInstance
 ;   char g_CurrentSaveFile
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f7c740
+;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 005e1700 (UNCONDITIONAL_CALL)  ; uint support_trisock.cpp_parseIPAddress_FUN_005e1700(uint * result_ptr, char * dotted_decimal_string)
     ADD ESP,0x8                         ; 004e300b
     PUSH EAX                            ; 004e300e
-    MOV ECX,dword ptr [0x00680a00]      ; 004e300f | g_CNetGameInstance | DAT_02f7c740
-    PUSH ECX                            ; 004e3015 | DAT_02f7c740
+    MOV ECX,dword ptr [0x00680a00]      ; 004e300f | g_CNetGamePtr | g_CNetGameInstance
+    PUSH ECX                            ; 004e3015 | g_CNetGameInstance
     CALL core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900 ; 004e3016
         ;   XREF to: 0053f900 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900()
     ADD ESP,0x8                         ; 004e301b
@@ -77,9 +77,9 @@ section .text
         ;   XREF to: 004e304e (CONDITIONAL_JUMP)  ; LAB_004e304e
     XOR AH,AH                           ; 004e3022
     MOV byte ptr [0x02d82c80],AH        ; 004e3024 | g_CurrentSaveFile
-    MOV ESI,dword ptr [0x00680a00]      ; 004e302a | g_CNetGameInstance
+    MOV ESI,dword ptr [0x00680a00]      ; 004e302a | g_CNetGamePtr
         ;   Label: LAB_004e302a
-    PUSH ESI                            ; 004e3030 | DAT_02f7c740
+    PUSH ESI                            ; 004e3030 | g_CNetGameInstance
     CALL core_netgame.cpp_FUN_00541390  ; 004e3031
         ;   XREF to: 00541390 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_00541390()
     ADD ESP,0x4                         ; 004e3036
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 004e304e
         ;   Label: LAB_004e304e
     PUSH EAX                            ; 004e304f
-    MOV EBX,dword ptr [0x00680a00]      ; 004e3050 | g_CNetGameInstance
-    PUSH EBX                            ; 004e3056 | DAT_02f7c740
+    MOV EBX,dword ptr [0x00680a00]      ; 004e3050 | g_CNetGamePtr
+    PUSH EBX                            ; 004e3056 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 004e3057
         ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
     ADD ESP,0x8                         ; 004e305c
@@ -109,8 +109,8 @@ section .text
     RET                                 ; 004e3066
     PUSH 0x1                            ; 004e3067
         ;   Label: LAB_004e3067
-    MOV EDI,dword ptr [0x00680a00]      ; 004e3069 | g_CNetGameInstance
-    PUSH EDI                            ; 004e306f | DAT_02f7c740
+    MOV EDI,dword ptr [0x00680a00]      ; 004e3069 | g_CNetGamePtr
+    PUSH EDI                            ; 004e306f | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 004e3070
         ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
     ADD ESP,0x8                         ; 004e3075

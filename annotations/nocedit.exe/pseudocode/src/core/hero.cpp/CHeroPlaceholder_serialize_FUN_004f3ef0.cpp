@@ -9,7 +9,7 @@
 void __cdecl core_hero_cpp_CHeroPlaceholder_serialize_FUN_004f3ef0(CHeroPlaceholder *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
-  core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->field1_0x158,"index");
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
+  core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->unk,"index");
   return;
 }

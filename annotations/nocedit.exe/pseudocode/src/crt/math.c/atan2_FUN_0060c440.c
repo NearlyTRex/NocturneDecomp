@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
 
 {

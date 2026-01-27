@@ -2,64 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 14,
-        "message": "'_DAT_02c6d040' was not declared in this scope; did you mean 'DAT_02c6d0a0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 15,
-        "message": "'_DAT_02c6d044' was not declared in this scope; did you mean 'DAT_02c6d0b4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 16,
-        "message": "'_DAT_02c6d048' was not declared in this scope; did you mean 'DAT_02c6d0a8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "'_DAT_02c6d04c' was not declared in this scope; did you mean 'DAT_02c6d0bc'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "'_DAT_02c6d050' was not declared in this scope; did you mean 'DAT_02c6d0a0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 19,
-        "message": "'_DAT_02c6d054' was not declared in this scope; did you mean 'DAT_02c6d0b4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 20,
-        "message": "'_DAT_02c6d058' was not declared in this scope; did you mean 'DAT_02c6d0a8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "'_DAT_02c6d05c' was not declared in this scope; did you mean 'DAT_02c6d0bc'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "'_DAT_02c6d060' was not declared in this scope; did you mean 'DAT_02c6d0a0'?"
-      },
-      {
         "category": "incompatible_types",
-        "column": 56,
-        "line": 24,
-        "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'CDemonActor* (**)()'"
+        "column": 14,
+        "line": 23,
+        "message": "cannot convert 'CDraculaBride* (*)()' to 'void* (**)()'"
       }
     ],
     "success": false,
@@ -73,22 +19,21 @@
       {
         "category": "other",
         "column": 40,
-        "line": 24,
+        "line": 22,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 50,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 16,
     "pseudocode_lines": 20,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
     "total_lines": 56
   },
@@ -149,56 +94,56 @@
     },
     {
       "addr": "02c6d040",
-      "name": "DAT_02c6d040",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d040",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d044",
-      "name": "DAT_02c6d044",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d044",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d048",
-      "name": "DAT_02c6d048",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d048",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d04c",
-      "name": "DAT_02c6d04c",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d04c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d050",
-      "name": "DAT_02c6d050",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d050",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d054",
-      "name": "DAT_02c6d054",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d054",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d058",
-      "name": "DAT_02c6d058",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d058",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d05c",
-      "name": "DAT_02c6d05c",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d05c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02c6d060",
-      "name": "DAT_02c6d060",
-      "type": "undefined4",
+      "name": "FLOAT_02c6d060",
+      "type": "float",
       "value": null
     },
     {
@@ -258,15 +203,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
       "match": "DAT_006703a0",
       "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_006703a0);",
       "type": "undefined_data"

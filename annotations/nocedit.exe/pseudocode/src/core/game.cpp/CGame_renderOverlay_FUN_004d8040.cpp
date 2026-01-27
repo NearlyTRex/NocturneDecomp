@@ -118,7 +118,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     iVar3 = local_64 - local_5c / 0x50;
     local_20 = (char *)0x0;
     if (0 < this_ptr->status_display_count) {
-      local_1c = this_ptr->field101_0x38c;
+      local_1c = this_ptr->unk13;
       local_50 = ((int)local_44 * 3) / 2;
       local_18 = this_ptr;
       do {
@@ -126,7 +126,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         local_34 = iVar3 - (int)local_44;
         local_28 = local_58;
         iVar5 = 2;
-        fVar1 = *(float *)(local_18->field101_0x38c + 0x500);
+        fVar1 = *(float *)(local_18->unk13 + 0x500);
         if (fVar1 < (float)0.59999999999999998) {
           iVar5 = 0xfb;
         }

@@ -42,11 +42,10 @@ void core_mimic_cpp_FUN_00520500(void)
       piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
     }
   }
-  frame_number = (g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller.
-                 current_frame_number;
+  frame_number = (g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.current_frame_number
+  ;
   motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                          (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller
-                          );
+                          (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
             ((CMotionController *)(in_stack_00000004 + 0x158),motion_name->motion_name,frame_number)
   ;

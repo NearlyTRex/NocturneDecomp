@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00615091 = 65000
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   undefined4 DAT_008224dc
+;   float FLOAT_008224dc
 ;   CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02f43978
@@ -112,7 +112,7 @@ section .text
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00413b8c
     XOR EDX,EDX                         ; 00413b8f
-    MOV EAX,[0x008224dc]                ; 00413b91 | DAT_008224dc
+    MOV EAX,[0x008224dc]                ; 00413b91 | FLOAT_008224dc
     PUSH EDX                            ; 00413b96
     MOV dword ptr [ESP + 0x28],EAX      ; 00413b97
     LEA EAX,[ESP + 0x24]                ; 00413b9b

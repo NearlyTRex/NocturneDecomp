@@ -11,18 +11,18 @@ CBarrier * __cdecl core_barrier_cpp_CBarrier_ctor_FUN_004141c0(CBarrier *this_pt
 {
   CBarrier *pCVar1;
   
-  pCVar1 = (CBarrier *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
-  (pCVar1->base_actor).vtable._ub = &g_CBarrierVTable;
-  pCVar1->field1_0x158[8] = '\0';
-  pCVar1->field1_0x158[9] = '\0';
-  pCVar1->field1_0x158[10] = -0x60;
-  pCVar1->field1_0x158[0xb] = '@';
-  pCVar1->field1_0x158[0x10] = '\0';
-  pCVar1->field1_0x158[0xc] = '\x01';
-  pCVar1->field1_0x158[0xd] = '\0';
-  pCVar1->field1_0x158[0xe] = '\0';
-  pCVar1->field1_0x158[0xf] = '\0';
-  *(uint *)(pCVar1->field1_0x158 + 4) = *(uint *)(pCVar1->field1_0x158 + 8);
-  *(uint *)pCVar1->field1_0x158 = *(uint *)(pCVar1->field1_0x158 + 4);
+  pCVar1 = (CBarrier *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  (pCVar1->base).vtable._ub = &g_CBarrierVTable;
+  pCVar1->unk[8] = '\0';
+  pCVar1->unk[9] = '\0';
+  pCVar1->unk[10] = -0x60;
+  pCVar1->unk[0xb] = '@';
+  pCVar1->unk[0x10] = '\0';
+  pCVar1->unk[0xc] = '\x01';
+  pCVar1->unk[0xd] = '\0';
+  pCVar1->unk[0xe] = '\0';
+  pCVar1->unk[0xf] = '\0';
+  *(uint *)(pCVar1->unk + 4) = *(uint *)(pCVar1->unk + 8);
+  *(uint *)pCVar1->unk = *(uint *)(pCVar1->unk + 4);
   return pCVar1;
 }

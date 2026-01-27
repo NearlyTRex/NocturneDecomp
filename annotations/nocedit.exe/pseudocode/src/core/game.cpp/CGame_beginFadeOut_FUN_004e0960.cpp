@@ -29,8 +29,8 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
   DAT_02d831f4 = g_WindowWidth / 2;
   DAT_02d831f8 = g_WindowHeight / 2;
   DAT_02d831f0 = (float)g_WindowWidth;
-  if (g_CScriptPtr->focusActor != 0) {
-    pfVar1 = (float *)(**(code **)(*(int *)(g_CScriptPtr->focusActor + 0x154) + 0x14))();
+  if (g_CScriptPtr->focus_actor != 0) {
+    pfVar1 = (float *)(**(code **)(*(int *)(g_CScriptPtr->focus_actor + 0x154) + 0x14))();
     fStack_18 = *pfVar1 + pfVar1[3];
     fStack_14 = pfVar1[1] + pfVar1[4];
     CStack_3c.x = fStack_18 * 0.5f;
@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
     CStack_3c.y = fStack_14 * 0.5f;
     CStack_3c.z = fStack_10 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)g_CScriptPtr->focusActor,&CStack_48,&CStack_3c);
+              ((CDemonActor *)g_CScriptPtr->focus_actor,&CStack_48,&CStack_3c);
     CStack_54.x = (int)ROUND(CStack_48.x * 256.0f);
     CStack_54.y = (int)ROUND(CStack_48.y * 256.0f);
     CStack_54.z = (int)ROUND(CStack_48.z * 256.0f);

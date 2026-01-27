@@ -24,7 +24,7 @@ void __cdecl core_gore_cpp_FUN_004ed830(CGore *this_ptr)
       if (0 < DAT_02d873d8) {
         iVar2 = 0;
         do {
-          if (*(int *)(DAT_02d873dc[0].field0_0x0 + iVar2) == 0) {
+          if (*(int *)(DAT_02d873dc[0].unk + iVar2) == 0) {
             core_gore_cpp_FUN_004ec500();
             uVar1 = extraout_EDX;
           }
@@ -49,7 +49,7 @@ void __cdecl core_gore_cpp_FUN_004ed830(CGore *this_ptr)
       if (0 < DAT_02da8720) {
         iVar2 = 0;
         do {
-          if (*(int *)(DAT_02da8724[0].field0_0x0 + iVar2) == 0) {
+          if (*(int *)(DAT_02da8724[0].unk + iVar2) == 0) {
             core_gore_cpp_FUN_004ecce0();
           }
           iVar3 = iVar3 + 1;
@@ -71,7 +71,7 @@ void __cdecl core_gore_cpp_FUN_004ed830(CGore *this_ptr)
       if (0 < DAT_02da8c28) {
         iVar2 = 0;
         do {
-          if (*(int *)(DAT_02da8c2c[0].field0_0x0 + iVar2) == 0) {
+          if (*(int *)(DAT_02da8c2c[0].unk + iVar2) == 0) {
             core_gore_cpp_FUN_004ed3c0();
           }
           iVar3 = iVar3 + 1;

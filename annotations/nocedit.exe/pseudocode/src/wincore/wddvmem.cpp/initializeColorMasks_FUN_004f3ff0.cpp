@@ -36,11 +36,11 @@ ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
     iVar7 = iVar8;
   } while (iVar8 != 0x200);
   uVar9 = 0xff >> ((byte)g_RedBitCount & 0x1f);
-  g_RedMask16 = uVar9 << ((byte)g_RedBitPosition & 0x1f);
+  g_RedMask16._0_4_ = uVar9 << ((byte)g_RedBitPosition & 0x1f);
   uVar6 = 0xff >> ((byte)g_GreenBitCount & 0x1f);
-  g_GreenMask16 = uVar6 << ((byte)g_GreenBitPosition & 0x1f);
+  g_GreenMask16._0_4_ = uVar6 << ((byte)g_GreenBitPosition & 0x1f);
   uVar4 = 0xff >> ((byte)g_BlueBitCount & 0x1f);
-  g_BlueMask16 = uVar4 << ((byte)g_BlueBitPosition & 0x1f);
+  g_BlueMask16._0_4_ = uVar4 << ((byte)g_BlueBitPosition & 0x1f);
   g_BlueMask32._0_4_ = uVar4 << ((byte)g_BlueBitCount & 0x1f);
   g_RedMask32._0_4_ = (uVar9 << ((byte)g_RedBitCount & 0x1f)) << 0x10;
   g_GreenMask32._0_4_ = (uVar6 << ((byte)g_GreenBitCount & 0x1f)) << 8;

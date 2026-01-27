@@ -27,6 +27,6 @@ void core_script_cpp_CScript_FreeSomething1_FUN_00559870(void)
     *(uint *)(in_stack_00000004 + 0x2c) = 0;
   }
   *(uint *)(in_stack_00000004 + 0x28) = 0;
-  shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&DAT_0310f4b0);
+  shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);
   return;
 }

@@ -11,13 +11,13 @@ void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_004c1a00(CMuzzleFlash *this_
 {
   int iVar1;
   
-  iVar1 = *(int *)this_ptr->field0_0x0 + -1;
-  *(int *)this_ptr->field0_0x0 = iVar1;
+  iVar1 = *(int *)this_ptr->unk + -1;
+  *(int *)this_ptr->unk = iVar1;
   if (iVar1 < 0) {
-    this_ptr->field0_0x0[0] = '\0';
-    this_ptr->field0_0x0[1] = '\0';
-    this_ptr->field0_0x0[2] = '\0';
-    this_ptr->field0_0x0[3] = '\0';
+    this_ptr->unk[0] = '\0';
+    this_ptr->unk[1] = '\0';
+    this_ptr->unk[2] = '\0';
+    this_ptr->unk[3] = '\0';
     return;
   }
   if (iVar1 != 1) {

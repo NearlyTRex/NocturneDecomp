@@ -2,28 +2,27 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CEvent.h"
 
 // Structure: CEventList
 // Ghidra size: 0x3ac8 (15048 bytes)
 typedef struct CEventList {
     int event_count; // 0x0
-    CEvent event_list[100]; // 0x4
-    char field_104[3100]; // 0x68
+    int event_list[25]; // 0x4
+    char unk1[3100]; // 0x68
     int current_event_count; // 0xc84
-    CEvent current_event_list[100]; // 0xc88
-    char field_3308[3100]; // 0xcec
+    int current_event_list[25]; // 0xc88
+    char unk2[3100]; // 0xcec
     int game_flag_count; // 0x1908
-    CEvent game_flag_list[100]; // 0x190c
-    char field_6512[3100]; // 0x1970
+    int game_flag_list[25]; // 0x190c
+    char unk3[3100]; // 0x1970
     int persistent_event_count; // 0x258c
-    CEvent persistent_event_list[100]; // 0x2590
-    char field_9716[3100]; // 0x25f4
+    int persistent_event_list[25]; // 0x2590
+    char unk4[3100]; // 0x25f4
     int timer_count; // 0x3210
     int timer_list; // 0x3214
-    char field_12824[356]; // 0x3218
+    char unk5[356]; // 0x3218
     int counter_count; // 0x337c
-    char field_13184[360]; // 0x3380
+    char unk6[360]; // 0x3380
     int actor_var_count; // 0x34e8
     char variablesVarName1[30]; // 0x34ec
     char variablesVarName2[30]; // 0x350a

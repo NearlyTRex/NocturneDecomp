@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_boxactor.cpp_FUN_00422a50 at 00422b74
+;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422b74
 ;   core_emitter.cpp_FUN_004a8070 at 004a81f9
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0be1
 ;   core_fire.cpp_FUN_004c1940 at 004c1983

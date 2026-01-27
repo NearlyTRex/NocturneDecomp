@@ -33,7 +33,7 @@ void core_set_cpp_FUN_005702b0(void)
   
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_006813e4);
-  if (g_CGamePtr->field62_0x1f4 == 2) {
+  if (g_CGamePtr->unk6 == 2) {
     in_stack_00000010 = g_CurrentAlphaValue << 8;
   }
   else {
@@ -56,35 +56,35 @@ void core_set_cpp_FUN_005702b0(void)
       SStack_118.vertex_index_2 = (uint)in_stack_00000008[1];
       SStack_118.vertex_index_3 = (uint)in_stack_00000008[2];
       iVar3 = (uint)in_stack_00000008[3] << 8;
-      SStack_118.field7_0x1c[0] = (char)iVar3;
-      SStack_118.field7_0x1c[1] = (char)((uint)iVar3 >> 8);
-      SStack_118.field7_0x1c[2] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.field7_0x1c[3] = (char)((uint)iVar3 >> 0x18);
+      SStack_118.unk1[0] = (char)iVar3;
+      SStack_118.unk1[1] = (char)((uint)iVar3 >> 8);
+      SStack_118.unk1[2] = (char)((uint)iVar3 >> 0x10);
+      SStack_118.unk1[3] = (char)((uint)iVar3 >> 0x18);
       iVar3 = (uint)in_stack_00000008[4] << 8;
-      SStack_118.field9_0x28[0] = (char)iVar3;
-      SStack_118.field9_0x28[1] = (char)((uint)iVar3 >> 8);
-      SStack_118.field9_0x28[2] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.field9_0x28[3] = (char)((uint)iVar3 >> 0x18);
+      SStack_118.unk2[0] = (char)iVar3;
+      SStack_118.unk2[1] = (char)((uint)iVar3 >> 8);
+      SStack_118.unk2[2] = (char)((uint)iVar3 >> 0x10);
+      SStack_118.unk2[3] = (char)((uint)iVar3 >> 0x18);
       iVar3 = (uint)in_stack_00000008[5] << 8;
-      SStack_118.field11_0x34[0] = (char)iVar3;
-      SStack_118.field11_0x34[1] = (char)((uint)iVar3 >> 8);
-      SStack_118.field11_0x34[2] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.field11_0x34[3] = (char)((uint)iVar3 >> 0x18);
+      SStack_118.unk3[0] = (char)iVar3;
+      SStack_118.unk3[1] = (char)((uint)iVar3 >> 8);
+      SStack_118.unk3[2] = (char)((uint)iVar3 >> 0x10);
+      SStack_118.unk3[3] = (char)((uint)iVar3 >> 0x18);
       iVar3 = (uint)in_stack_00000008[6] << 8;
-      SStack_118.field7_0x1c[4] = (char)iVar3;
-      SStack_118.field7_0x1c[5] = (char)((uint)iVar3 >> 8);
-      SStack_118.field7_0x1c[6] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.field7_0x1c[7] = (char)((uint)iVar3 >> 0x18);
+      SStack_118.unk1[4] = (char)iVar3;
+      SStack_118.unk1[5] = (char)((uint)iVar3 >> 8);
+      SStack_118.unk1[6] = (char)((uint)iVar3 >> 0x10);
+      SStack_118.unk1[7] = (char)((uint)iVar3 >> 0x18);
       iVar3 = (uint)in_stack_00000008[7] << 8;
-      SStack_118.field9_0x28[4] = (char)iVar3;
-      SStack_118.field9_0x28[5] = (char)((uint)iVar3 >> 8);
-      SStack_118.field9_0x28[6] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.field9_0x28[7] = (char)((uint)iVar3 >> 0x18);
+      SStack_118.unk2[4] = (char)iVar3;
+      SStack_118.unk2[5] = (char)((uint)iVar3 >> 8);
+      SStack_118.unk2[6] = (char)((uint)iVar3 >> 0x10);
+      SStack_118.unk2[7] = (char)((uint)iVar3 >> 0x18);
       iVar3 = (uint)in_stack_00000008[8] << 8;
-      SStack_118.field11_0x34[4] = (char)iVar3;
-      SStack_118.field11_0x34[5] = (char)((uint)iVar3 >> 8);
-      SStack_118.field11_0x34[6] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.field11_0x34[7] = (char)((uint)iVar3 >> 0x18);
+      SStack_118.unk3[4] = (char)iVar3;
+      SStack_118.unk3[5] = (char)((uint)iVar3 >> 8);
+      SStack_118.unk3[6] = (char)((uint)iVar3 >> 0x10);
+      SStack_118.unk3[7] = (char)((uint)iVar3 >> 0x18);
       if (*(int *)(in_stack_00000004 + 0x15ae84) != 0) {
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(g_TransformedVertexArray,&SStack_118);
       }
@@ -93,7 +93,7 @@ void core_set_cpp_FUN_005702b0(void)
         local_28[3] = 0;
         local_28[5] = 0;
         do {
-          iVar3 = *(int *)(SStack_118.field7_0x1c + local_28[3] + -4);
+          iVar3 = *(int *)(SStack_118.unk1 + local_28[3] + -4);
           if ((((*(int *)(in_stack_00000004 + 0x15ae84) == 0) ||
                (1.0 <= ABS(g_VertexNormalArray[iVar3].x))) ||
               (1.0 <= ABS(g_VertexNormalArray[iVar3].y))) ||
@@ -149,8 +149,8 @@ void core_set_cpp_FUN_005702b0(void)
         iVar4 = 0;
         iVar5 = 0;
         do {
-          *(int *)(SStack_118.field7_0x1c + iVar5) = *(int *)((int)&local_d0 + iVar4) << 8;
-          *(int *)(SStack_118.field7_0x1c + iVar5 + 4) = *(int *)((int)&local_90 + iVar4) << 8;
+          *(int *)(SStack_118.unk1 + iVar5) = *(int *)((int)&local_d0 + iVar4) << 8;
+          *(int *)(SStack_118.unk1 + iVar5 + 4) = *(int *)((int)&local_90 + iVar4) << 8;
           iVar3 = iVar3 + 1;
           iVar4 = iVar4 + 4;
           iVar5 = iVar5 + 0xc;

@@ -18,7 +18,7 @@ CDemonPod* g_CDemonPodPtr = (CDemonPod*)&g_CDemonPodInstance;
 CDemonSet* g_CDemonSetPtr = (CDemonSet*)&g_CDemonSetInstance;
 
 // CNetGame*
-CNetGame* g_CNetGameInstance = (CNetGame*)0x02F7C740; // DAT_02f7c740
+CNetGame* g_CNetGamePtr = (CNetGame*)&g_CNetGameInstance;
 
 // CScript*
 CScript* g_CScriptPtr = (CScript*)&g_CScriptInstance;
@@ -3496,7 +3496,7 @@ WatcomStaticDestructorNode DAT_006809f0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00661c70,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x02F7C740
+    .object_instance = (void *)&g_CNetGameInstance
 };
 WatcomStaticDestructorNode g_CMouseDestructorNode = {
     .next = nullptr,
@@ -3532,13 +3532,13 @@ WatcomStaticDestructorNode DAT_00680d30 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662608,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x0310FCD8
+    .object_instance = (void *)&CEdScrollBar_0310fcd8
 };
 WatcomStaticDestructorNode DAT_00680d40 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662614,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x0310FD0C
+    .object_instance = (void *)&CEdScrollBar_0310fd0c
 };
 WatcomStaticDestructorNode g_CDemonSetDestructorNode = {
     .next = nullptr,
@@ -3580,7 +3580,7 @@ WatcomStaticDestructorNode DAT_006816b0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662a1c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x03364CE0
+    .object_instance = (void *)&INT_03364ce0
 };
 WatcomStaticDestructorNode DAT_00681850 = {
     .next = nullptr,
@@ -3647,7 +3647,11 @@ WatcomStaticDestructorNode g_CWaterDestructorNode = {
 WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 
 // byte
+byte BYTE_00684acc = 0x0;
+byte BYTE_00684acd = 0x0;
+byte BYTE_00684d05 = 0x0;
 byte g_WindowsMajorVersion = 0x0;
+byte g_UseSoftwareMath = 0x0;
 byte g_TimezoneInitFlags = 0x1;
 byte g_DebuggerIsAttached = 0x0;
 byte g_ConsoleHandlerRegistered = 0x0;
@@ -3795,10 +3799,11 @@ int g_ForceMessagePump = 0x1;
 int g_PreviousActiveState = 0x2D;
 int g_CZombieClassVersion = 0xb;
 int g_MaxErrnoValue = 0x28;
+int INT_00684ccc = 0x0;
+int INT_00684cd0 = 0x1;
 int g_SpecialExitHandler = 0x0;
 int DAT_00684f30 = 0x0;
 int g_ConsoleInitializationFlag = 0x0;
-int g_UseSoftwareMath = 0x0;
 int g_DstTransitionSecond = 0x0;
 int g_DstTransitionMinute = 0x0;
 int g_DstTransitionHour = 0x1;
@@ -3829,9 +3834,6 @@ int g_PathfindingDeltaZ[9] = {
 short g_PureVirtualCallFlag = 0x0;
 
 // uint
-uint g_RedMask16 = 0xf800;
-uint g_GreenMask16 = 0x7e0;
-uint g_BlueMask16 = 0x1f;
 uint g_WindowsPlatformVersionExt = 0x0;
 uint g_WindowsVersionLow = 0x0;
 uint g_WindowsVersionMid = 0x0;
@@ -3844,6 +3846,9 @@ ulonglong g_TextureShift1 = 0x10;
 ulonglong g_TextureShift2 = 0x8;
 ulonglong g_TextureMask1 = 0xff;
 ulonglong g_TextureMask2 = 0xff00;
+ulonglong g_RedMask16 = 0xf800;
+ulonglong g_GreenMask16 = 0x7e0;
+ulonglong g_BlueMask16 = 0x1f;
 ulonglong g_RedMask32 = 0xf80000;
 ulonglong g_GreenMask32 = 0xfc00;
 ulonglong g_BlueMask32 = 0xf8;
@@ -3852,9 +3857,6 @@ ulonglong g_GreenBlueBits = 0x5;
 ulonglong g_BlueBitShift = 0x3;
 
 // undefined1
-undefined1 DAT_00684acc = 0;
-undefined1 DAT_00684acd = 0;
-undefined1 DAT_00684d05 = 0;
 undefined1 DAT_0068500c = 0;
 undefined1 DAT_006852db = 0;
 
@@ -3875,7 +3877,6 @@ undefined4 DAT_0068105c = 0x00000001;
 undefined4 DAT_0068125c = 0;
 undefined4 DAT_00681260 = 0;
 undefined4 DAT_00681a00 = 0;
-undefined4 DAT_00684ccc = 0;
 undefined4 DAT_00684edc = 0;
 undefined4 DAT_00684fd0 = 0;
 undefined4 DAT_00685094 = 0;

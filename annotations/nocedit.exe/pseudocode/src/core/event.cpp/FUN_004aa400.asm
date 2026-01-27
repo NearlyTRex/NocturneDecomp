@@ -21,7 +21,7 @@
 ;   undefined4 DAT_0065d95c
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEventList g_CEventListInstance
 ;   undefined1 DAT_02d0a460
 ;   undefined1 DAT_02d0a461
@@ -106,8 +106,8 @@ section .text
     TEST EAX,EAX                        ; 004aa470
     JNZ 0x004aa4cd                      ; 004aa472
         ;   XREF to: 004aa4cd (CONDITIONAL_JUMP)  ; LAB_004aa4cd
-    MOV EAX,[0x00680a00]                ; 004aa474 | DAT_02f7c740 | g_CNetGameInstance
-    CMP dword ptr [EAX],0x0             ; 004aa479 | DAT_02f7c740
+    MOV EAX,[0x00680a00]                ; 004aa474 | g_CNetGameInstance | g_CNetGamePtr
+    CMP dword ptr [EAX],0x0             ; 004aa479 | g_CNetGameInstance
     JNZ 0x004aa4b4                      ; 004aa47c
         ;   XREF to: 004aa4b4 (CONDITIONAL_JUMP)  ; LAB_004aa4b4
     MOV ESI,dword ptr [0x02db87d0]      ; 004aa47e | g_LocalHeroIndex

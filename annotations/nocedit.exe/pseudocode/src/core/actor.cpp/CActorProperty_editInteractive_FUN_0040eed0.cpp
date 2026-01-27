@@ -11,29 +11,27 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
           (CActorProperty *this_ptr,CDemonActor *actor)
 
 {
-  CClothList CVar1;
-  char cVar2;
-  float *pfVar3;
-  CVector3f *pCVar4;
-  int *piVar5;
+  char cVar1;
+  float *pfVar2;
+  CVector3f *pCVar3;
+  int *piVar4;
   int extraout_EAX;
-  SMotion *pSVar6;
-  char *pcVar7;
-  uint uVar8;
-  SIZE_T SVar9;
-  void *pvVar10;
-  byte *pbVar11;
-  CClothList *pCVar12;
-  char *pcVar13;
-  int iVar14;
-  byte *pbVar15;
-  SMotion *pSVar16;
-  CClothList *pCVar17;
-  char *pcVar18;
-  CRuleList *pCVar19;
-  int iVar20;
-  int iVar21;
-  byte bVar22;
+  SMotion *pSVar5;
+  char *pcVar6;
+  uint uVar7;
+  SIZE_T SVar8;
+  void *pvVar9;
+  byte *pbVar10;
+  char *pcVar11;
+  int iVar12;
+  byte *pbVar13;
+  SMotion *pSVar14;
+  CClothList *pCVar15;
+  char *pcVar16;
+  CRuleList *pCVar17;
+  int iVar18;
+  int iVar19;
+  byte bVar20;
   uint in_stack_ffffc814;
   uint in_stack_ffffc818;
   char **in_stack_ffffc81c;
@@ -59,7 +57,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   char local_980 [300];
   char local_854 [260];
   byte local_750 [260];
-  CClothList local_64c [260];
+  char local_64c [260];
   char local_548 [260];
   char local_444 [220];
   char local_368 [200];
@@ -81,21 +79,21 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   CMotionList *local_18;
   char *local_14;
   
-  bVar22 = 0;
+  bVar20 = 0;
   if (this_ptr->enabled_flag == 0) {
     return 0;
   }
-  pcVar7 = this_ptr->name;
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_2a0,"Enter %s for %s",pcVar7,actor);
+  pcVar6 = this_ptr->name;
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_2a0,"Enter %s for %s",pcVar6,actor);
   switch(this_ptr->type) {
   case 0:
     local_2c = *(int *)this_ptr->data_ptr;
-    while (iVar14 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
+    while (iVar12 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                               (g_CEditorToolsPtr,local_2a0,&local_2c,this_ptr->min_or_index,
                                (int)this_ptr->min_ptr_or_choice,this_ptr->max_or_param,1),
-          iVar14 != 0) {
+          iVar12 != 0) {
       if ((this_ptr->validator_or_callback == (void *)0x0) ||
-         (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 != 0)) {
+         (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 != 0)) {
         *(int *)this_ptr->data_ptr = local_2c;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
@@ -106,12 +104,12 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     break;
   case 1:
     local_30 = *(float *)this_ptr->data_ptr;
-    while (iVar14 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+    while (iVar12 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                               (g_CEditorToolsPtr,local_2a0,&local_30,this_ptr->min_or_index,
                                (float)this_ptr->min_ptr_or_choice,(float)this_ptr->max_or_param,1),
-          iVar14 != 0) {
+          iVar12 != 0) {
       if ((this_ptr->validator_or_callback == (void *)0x0) ||
-         (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 != 0)) {
+         (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 != 0)) {
         *(float *)this_ptr->data_ptr = local_30;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
@@ -121,63 +119,63 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     }
     break;
   case 2:
-    pfVar3 = this_ptr->data_ptr;
-    local_48.x = *pfVar3;
-    local_48.y = pfVar3[1];
-    local_48.z = pfVar3[2];
+    pfVar2 = this_ptr->data_ptr;
+    local_48.x = *pfVar2;
+    local_48.y = pfVar2[1];
+    local_48.z = pfVar2[2];
     do {
-      iVar14 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
+      iVar12 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                          (g_CEditorToolsPtr,local_2a0,&local_48,1);
-      if (iVar14 == 0) {
+      if (iVar12 == 0) {
         return 0;
       }
       if (this_ptr->validator_or_callback == (void *)0x0) break;
       local_3c = local_48.x;
       local_38 = local_48.y;
       local_34 = local_48.z;
-      iVar14 = (*this_ptr->validator_or_callback)();
-    } while (iVar14 == 0);
-    pCVar4 = this_ptr->data_ptr;
-    if (pCVar4 != &local_48) {
-      pCVar4->x = local_48.x;
-      pCVar4->y = local_48.y;
-      pCVar4->z = local_48.z;
+      iVar12 = (*this_ptr->validator_or_callback)();
+    } while (iVar12 == 0);
+    pCVar3 = this_ptr->data_ptr;
+    if (pCVar3 != &local_48) {
+      pCVar3->x = local_48.x;
+      pCVar3->y = local_48.y;
+      pCVar3->z = local_48.z;
     }
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case 3:
-    pcVar7 = local_aac;
-    pcVar13 = this_ptr->data_ptr;
+    pcVar6 = local_aac;
+    pcVar11 = this_ptr->data_ptr;
     do {
-      cVar2 = *pcVar13;
-      *pcVar7 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar13[1];
-      pcVar13 = pcVar13 + 2;
-      pcVar7[1] = cVar2;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar11;
+      *pcVar6 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
+    } while (cVar1 != '\0');
     do {
-      iVar14 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+      iVar12 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                          (g_CEditorToolsPtr,local_2a0,local_aac,this_ptr->max_or_param,1);
-      if (iVar14 == 0) {
+      if (iVar12 == 0) {
         return 0;
       }
     } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 == 0));
-    pcVar7 = local_aac;
-    pcVar13 = this_ptr->data_ptr;
+            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
+    pcVar6 = local_aac;
+    pcVar11 = this_ptr->data_ptr;
     do {
-      cVar2 = *pcVar7;
-      *pcVar13 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      pcVar13[1] = cVar2;
-      pcVar13 = pcVar13 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar6;
+      *pcVar11 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar6[1];
+      pcVar6 = pcVar6 + 2;
+      pcVar11[1] = cVar1;
+      pcVar11 = pcVar11 + 2;
+    } while (cVar1 != '\0');
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
@@ -187,8 +185,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     return 1;
   case 5:
     local_28 = *(uint *)this_ptr->data_ptr;
-    iVar14 = core_msnedit_cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0();
-    if (iVar14 != 0) {
+    iVar12 = core_msnedit_cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0();
+    if (iVar12 != 0) {
       *(uint *)this_ptr->data_ptr = local_28;
       if (this_ptr->auto_update_flag == 0) {
         return 1;
@@ -200,17 +198,17 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   case 6:
     crt_stdio_c_sprintf_FUN_005fdbd0
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor,(int)this_ptr->data_ptr + 0x78);
-    pcVar7 = local_854;
-    pcVar13 = (char *)((int)this_ptr->data_ptr + 0x78);
+    pcVar6 = local_854;
+    pcVar11 = (char *)((int)this_ptr->data_ptr + 0x78);
     do {
-      cVar2 = *pcVar13;
-      *pcVar7 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar13[1];
-      pcVar13 = pcVar13 + 2;
-      pcVar7[1] = cVar2;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar11;
+      *pcVar6 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
+    } while (cVar1 != '\0');
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffc814);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               ((CStrList *)&stack0xffffc814,"models","*.kfm");
@@ -219,26 +217,26 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffc814,"(none)");
     }
     do {
-      pcVar7 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+      pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  ((CPickList *)&stack0xffffc814,local_2a0,-1,0);
-      if ((int)pcVar7 < 0) {
+      if ((int)pcVar6 < 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                   ((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,
                    (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
         return 0;
       }
-      if ((this_ptr->min_or_index == 0) || (pcVar7 != (char *)(in_stack_ffffc814 - 1))) {
+      if ((this_ptr->min_or_index == 0) || (pcVar6 != (char *)(in_stack_ffffc814 - 1))) {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  ((CStrList *)&stack0xffffc814,(int)local_18ac,pcVar7,0);
+                  ((CStrList *)&stack0xffffc814,(int)local_18ac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  ((CStrList *)&stack0xffffc814,(int)local_eac,pcVar7,1);
+                  ((CStrList *)&stack0xffffc814,(int)local_eac,pcVar6,1);
         crt_file_c_makepath_FUN_005febfc(local_854,(char *)0x0,(char *)0x0,local_18ac,local_eac);
       }
       else {
         local_854[0] = '\0';
       }
     } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 == 0));
+            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr->data_ptr,local_854);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
@@ -251,46 +249,45 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     crt_stdio_c_sprintf_FUN_005fdbd0
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor,(int)this_ptr->data_ptr + 0x2260)
     ;
-    pcVar7 = local_548;
-    pcVar13 = (char *)((int)this_ptr->data_ptr + 0x2260);
+    pcVar6 = local_548;
+    pcVar11 = (char *)((int)this_ptr->data_ptr + 0x2260);
     do {
-      cVar2 = *pcVar13;
-      *pcVar7 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar13[1];
-      pcVar13 = pcVar13 + 2;
-      pcVar7[1] = cVar2;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar11;
+      *pcVar6 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
+    } while (cVar1 != '\0');
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_2cf4);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
-              (&local_2cf4.base_strlist,"models","*.dfm");
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_2cf4.base_strlist);
+              (&local_2cf4.base,"models","*.dfm");
+    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_2cf4.base);
     if (this_ptr->min_or_index != 0) {
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2cf4.base_strlist,"(none)");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2cf4.base,"(none)");
     }
     do {
-      pcVar7 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+      pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  (&local_2cf4,local_2a0,-1,0);
-      if ((int)pcVar7 < 0) {
+      if ((int)pcVar6 < 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                   (&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                    (uint)in_stack_ffffc820,in_stack_ffffc824);
         return 0;
       }
-      if ((this_ptr->min_or_index == 0) ||
-         (pcVar7 != (char *)(local_2cf4.base_strlist.item_count + -1))) {
+      if ((this_ptr->min_or_index == 0) || (pcVar6 != (char *)(local_2cf4.base.item_count + -1))) {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  (&local_2cf4.base_strlist,(int)local_12ac,pcVar7,0);
+                  (&local_2cf4.base,(int)local_12ac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  (&local_2cf4.base_strlist,(int)local_1aac,pcVar7,1);
+                  (&local_2cf4.base,(int)local_1aac,pcVar6,1);
         crt_file_c_makepath_FUN_005febfc(local_548,(char *)0x0,(char *)0x0,local_12ac,local_1aac);
       }
       else {
         local_548[0] = '\0';
       }
     } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 == 0));
+            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr->data_ptr,local_548);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
@@ -303,17 +300,17 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     core_sound_cpp_editSoundName_FUN_005b3de0(this_ptr->data_ptr,local_2a0);
     return extraout_EAX;
   case 9:
-    iVar14 = 0;
+    iVar12 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_3444);
     do {
-      pcVar7 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar14);
-      iVar14 = iVar14 + 1;
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_3444,pcVar7);
-    } while (iVar14 < 0xe);
-    iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+      pcVar6 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar12);
+      iVar12 = iVar12 + 1;
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_3444,pcVar6);
+    } while (iVar12 < 0xe);
+    iVar12 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                        ((CPickList *)local_3444,local_2a0,*(int *)this_ptr->data_ptr,0);
-    if (-1 < iVar14) {
-      *(int *)this_ptr->data_ptr = iVar14;
+    if (-1 < iVar12) {
+      *(int *)this_ptr->data_ptr = iVar12;
       if (this_ptr->auto_update_flag != 0) {
         (*((actor->vtable)._ub)->setup)(actor);
       }
@@ -327,59 +324,58 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                ,(uint)in_stack_ffffc820,in_stack_ffffc824);
     return 0;
   case 10:
-    pbVar15 = local_750;
-    pbVar11 = this_ptr->data_ptr;
+    pbVar13 = local_750;
+    pbVar10 = this_ptr->data_ptr;
     do {
-      bVar22 = *pbVar11;
-      *pbVar15 = bVar22;
-      if (bVar22 == 0) break;
-      bVar22 = pbVar11[1];
-      pbVar11 = pbVar11 + 2;
-      pbVar15[1] = bVar22;
-      pbVar15 = pbVar15 + 2;
-    } while (bVar22 != 0);
+      bVar20 = *pbVar10;
+      *pbVar13 = bVar20;
+      if (bVar20 == 0) break;
+      bVar20 = pbVar10[1];
+      pbVar10 = pbVar10 + 2;
+      pbVar13[1] = bVar20;
+      pbVar13 = pbVar13 + 2;
+    } while (bVar20 != 0);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_309c);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
-              (&local_309c.base_strlist,this_ptr->field8_0x6c + 4,this_ptr->field8_0x6c + 0x18);
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_309c.base_strlist);
+              (&local_309c.base,this_ptr->unknown + 4,this_ptr->unknown + 0x18);
+    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_309c.base);
     if (this_ptr->min_or_index != 0) {
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_309c.base_strlist,"(none)");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_309c.base,"(none)");
     }
     do {
-      pcVar7 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+      pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  (&local_309c,local_2a0,-1,0);
-      if ((int)pcVar7 < 0) {
+      if ((int)pcVar6 < 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                   (&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                    (uint)in_stack_ffffc820,in_stack_ffffc824);
         return 0;
       }
-      if ((this_ptr->min_or_index == 0) ||
-         (pcVar7 != (char *)(local_309c.base_strlist.item_count + -1))) {
+      if ((this_ptr->min_or_index == 0) || (pcVar6 != (char *)(local_309c.base.item_count + -1))) {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  (&local_309c.base_strlist,(int)local_cac,pcVar7,0);
+                  (&local_309c.base,(int)local_cac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  (&local_309c.base_strlist,(int)local_10ac,pcVar7,1);
+                  (&local_309c.base,(int)local_10ac,pcVar6,1);
         crt_file_c_makepath_FUN_005febfc
                   ((char *)local_750,(char *)0x0,(char *)0x0,local_cac,local_10ac);
       }
       else {
-        local_750[0] = (byte)((uint)pcVar7 >> 8) ^
-                       (byte)((uint)(local_309c.base_strlist.item_count + -1) >> 8);
+        local_750[0] = (byte)((uint)pcVar6 >> 8) ^
+                       (byte)((uint)(local_309c.base.item_count + -1) >> 8);
       }
     } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 == 0));
-    pbVar15 = local_750;
-    pbVar11 = this_ptr->data_ptr;
+            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
+    pbVar13 = local_750;
+    pbVar10 = this_ptr->data_ptr;
     do {
-      bVar22 = *pbVar15;
-      *pbVar11 = bVar22;
-      if (bVar22 == 0) break;
-      bVar22 = pbVar15[1];
-      pbVar15 = pbVar15 + 2;
-      pbVar11[1] = bVar22;
-      pbVar11 = pbVar11 + 2;
-    } while (bVar22 != 0);
+      bVar20 = *pbVar13;
+      *pbVar10 = bVar20;
+      if (bVar20 == 0) break;
+      bVar20 = pbVar13[1];
+      pbVar13 = pbVar13 + 2;
+      pbVar10[1] = bVar20;
+      pbVar10 = pbVar10 + 2;
+    } while (bVar20 != 0);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
@@ -388,75 +384,75 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                (uint)in_stack_ffffc820,in_stack_ffffc824);
     return 1;
   case 0xb:
-    pcVar7 = local_ac;
-    pcVar13 = this_ptr->data_ptr;
+    pcVar6 = local_ac;
+    pcVar11 = this_ptr->data_ptr;
     do {
-      cVar2 = *pcVar13;
-      *pcVar7 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar13[1];
-      pcVar13 = pcVar13 + 2;
-      pcVar7[1] = cVar2;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar11;
+      *pcVar6 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
+    } while (cVar1 != '\0');
     while( true ) {
-      iVar14 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+      iVar12 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                          (g_CEditorToolsPtr,local_2a0,local_ac,100,1);
-      if (iVar14 == 0) {
+      if (iVar12 == 0) {
         return 0;
       }
-      pcVar7 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
-      if (pcVar7 == (char *)0x0) break;
-      shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
+      pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
+      if (pcVar6 == (char *)0x0) break;
+      shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     }
-    pcVar7 = local_ac;
-    pcVar13 = this_ptr->data_ptr;
+    pcVar6 = local_ac;
+    pcVar11 = this_ptr->data_ptr;
     do {
-      cVar2 = *pcVar7;
-      *pcVar13 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      pcVar13[1] = cVar2;
-      pcVar13 = pcVar13 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar6;
+      *pcVar11 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar6[1];
+      pcVar6 = pcVar6 + 2;
+      pcVar11[1] = cVar1;
+      pcVar11 = pcVar11 + 2;
+    } while (cVar1 != '\0');
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case 0xc:
-    pcVar7 = local_110;
-    pcVar13 = this_ptr->data_ptr;
+    pcVar6 = local_110;
+    pcVar11 = this_ptr->data_ptr;
     do {
-      cVar2 = *pcVar13;
-      *pcVar7 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar13[1];
-      pcVar13 = pcVar13 + 2;
-      pcVar7[1] = cVar2;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar11;
+      *pcVar6 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
+    } while (cVar1 != '\0');
     while( true ) {
-      iVar14 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+      iVar12 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                          (g_CEditorToolsPtr,local_2a0,local_110,100,1);
-      if (iVar14 == 0) {
+      if (iVar12 == 0) {
         return 0;
       }
-      pcVar7 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
-      if (pcVar7 == (char *)0x0) break;
-      shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
+      pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
+      if (pcVar6 == (char *)0x0) break;
+      shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     }
-    pcVar7 = local_110;
-    pcVar13 = this_ptr->data_ptr;
+    pcVar6 = local_110;
+    pcVar11 = this_ptr->data_ptr;
     do {
-      cVar2 = *pcVar7;
-      *pcVar13 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      pcVar13[1] = cVar2;
-      pcVar13 = pcVar13 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar6;
+      *pcVar11 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar6[1];
+      pcVar6 = pcVar6 + 2;
+      pcVar11[1] = cVar1;
+      pcVar11 = pcVar11 + 2;
+    } while (cVar1 != '\0');
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
@@ -464,30 +460,30 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   case 0xd:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_21fc);
     local_18 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr->data_ptr);
-    iVar14 = 0;
+    iVar12 = 0;
     local_20 = -1;
     if (0 < local_18->motion_count) {
       local_1c = local_18->state_names;
-      pSVar16 = local_18->motions;
+      pSVar14 = local_18->motions;
       local_24 = local_18;
       do {
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_980,"%s\t%s",pSVar16,local_1c + local_24->motions[0].state_index);
+                  (local_980,"%s\t%s",pSVar14,local_1c + local_24->motions[0].state_index);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_21fc,local_980);
-        pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr->data_ptr)
+        pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr->data_ptr)
         ;
-        if (pSVar6 == pSVar16) {
-          local_20 = iVar14;
+        if (pSVar5 == pSVar14) {
+          local_20 = iVar12;
         }
         local_24 = (CMotionList *)(local_24->state_names[0x2d] + 2);
-        iVar14 = iVar14 + 1;
-        pSVar16 = pSVar16 + 1;
-      } while (iVar14 < local_18->motion_count);
+        iVar12 = iVar12 + 1;
+        pSVar14 = pSVar14 + 1;
+      } while (iVar12 < local_18->motion_count);
     }
-    iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+    iVar12 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                        ((CPickList *)local_21fc,local_2a0,local_20,0);
-    if (-1 < iVar14) {
-      core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0(this_ptr->data_ptr,iVar14,0.0);
+    if (-1 < iVar12) {
+      core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0(this_ptr->data_ptr,iVar12,0.0);
       if (this_ptr->auto_update_flag != 0) {
         (*((actor->vtable)._ub)->setup)(actor);
       }
@@ -507,48 +503,47 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)local_294c);
     if (this_ptr->min_or_index < *(int *)this_ptr->data_ptr) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_2a0,"Select %s for actor %s.  Current is %s.",pcVar7,actor,
+                (local_2a0,"Select %s for actor %s.  Current is %s.",pcVar6,actor,
                  (int *)((int)this_ptr->data_ptr + (this_ptr->min_or_index * 10 + 1) * 4));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_294c,"(remove cloth)");
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_2a0,"Add %s for actor %s.",pcVar7,actor);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_2a0,"Add %s for actor %s.",pcVar6,actor);
     }
-    pcVar7 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+    pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                ((CPickList *)local_294c,local_2a0,-1,0);
-    if ((int)pcVar7 < 0) {
+    if ((int)pcVar6 < 0) {
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)local_294c,0,in_stack_ffffc814,in_stack_ffffc818,
                  (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
       return 0;
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              ((CStrList *)local_294c,(int)local_16ac,pcVar7,0);
+              ((CStrList *)local_294c,(int)local_16ac,pcVar6,0);
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              ((CStrList *)local_294c,(int)local_14ac,pcVar7,1);
-    crt_file_c_makepath_FUN_005febfc
-              ((char *)local_64c,(char *)0x0,(char *)0x0,local_16ac,local_14ac);
-    pCVar17 = this_ptr->data_ptr;
-    if (this_ptr->min_or_index < *(int *)pCVar17) {
-      if (pcVar7 == (char *)(local_294c._0_4_ + -1)) {
-        core_cloth_cpp_CClothList_remove_FUN_0043c170(pCVar17);
+              ((CStrList *)local_294c,(int)local_14ac,pcVar6,1);
+    crt_file_c_makepath_FUN_005febfc(local_64c,(char *)0x0,(char *)0x0,local_16ac,local_14ac);
+    pCVar15 = this_ptr->data_ptr;
+    if (this_ptr->min_or_index < pCVar15->unk) {
+      if (pcVar6 == (char *)(local_294c._0_4_ + -1)) {
+        core_cloth_cpp_CClothList_remove_FUN_0043c170(pCVar15);
       }
       else {
-        pCVar12 = local_64c;
-        pCVar17 = pCVar17 + this_ptr->min_or_index * 0x28 + 4;
+        pcVar6 = local_64c;
+        pCVar15 = pCVar15 + this_ptr->min_or_index * 10 + 1;
         do {
-          CVar1 = *pCVar12;
-          *pCVar17 = CVar1;
-          if (CVar1 == (CClothList)0x0) break;
-          CVar1 = pCVar12[1];
-          pCVar12 = pCVar12 + 2;
-          pCVar17[1] = CVar1;
-          pCVar17 = pCVar17 + 2;
-        } while (CVar1 != (CClothList)0x0);
+          cVar1 = *pcVar6;
+          *(char *)&pCVar15->unk = cVar1;
+          if (cVar1 == '\0') break;
+          cVar1 = pcVar6[1];
+          pcVar6 = pcVar6 + 2;
+          *(char *)((int)&pCVar15->unk + 1) = cVar1;
+          pCVar15 = (CClothList *)((int)&pCVar15->unk + 2);
+        } while (cVar1 != '\0');
       }
     }
     else {
-      core_cloth_cpp_CClothList_add_FUN_0043c0f0(pCVar17);
+      core_cloth_cpp_CClothList_add_FUN_0043c0f0(pCVar15);
     }
     (*((actor->vtable)._ub)->setup)(actor);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -556,167 +551,167 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                (uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);
     return 1;
   case 0xf:
-    iVar14 = -1;
-    iVar21 = 0;
+    iVar12 = -1;
+    iVar19 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1e54);
     if (0 < this_ptr->min_or_index) {
-      iVar20 = 0;
+      iVar18 = 0;
       do {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_1e54.base_strlist,*(char **)(iVar20 + (int)this_ptr->min_ptr_or_choice));
-        if (*(int *)this_ptr->data_ptr == *(int *)((int)this_ptr->min_ptr_or_choice + iVar20 + 4)) {
-          iVar14 = iVar21;
+                  (&local_1e54.base,*(char **)(iVar18 + (int)this_ptr->min_ptr_or_choice));
+        if (*(int *)this_ptr->data_ptr == *(int *)((int)this_ptr->min_ptr_or_choice + iVar18 + 4)) {
+          iVar12 = iVar19;
         }
-        iVar21 = iVar21 + 1;
-        iVar20 = iVar20 + 8;
-      } while (iVar21 < this_ptr->min_or_index);
+        iVar19 = iVar19 + 1;
+        iVar18 = iVar18 + 8;
+      } while (iVar19 < this_ptr->min_or_index);
     }
-    if ((this_ptr->min_or_index == 2) && (-1 < iVar14)) {
-      pvVar10 = this_ptr->min_ptr_or_choice;
-      iVar14 = (1 - iVar14) * 8;
+    if ((this_ptr->min_or_index == 2) && (-1 < iVar12)) {
+      pvVar9 = this_ptr->min_ptr_or_choice;
+      iVar12 = (1 - iVar12) * 8;
     }
     else {
-      iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                         (&local_1e54,local_2a0,iVar14,0);
-      if (iVar14 < 0) goto LAB_00410163;
-      iVar14 = iVar14 << 3;
-      pvVar10 = this_ptr->min_ptr_or_choice;
+      iVar12 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                         (&local_1e54,local_2a0,iVar12,0);
+      if (iVar12 < 0) goto LAB_00410163;
+      iVar12 = iVar12 << 3;
+      pvVar9 = this_ptr->min_ptr_or_choice;
     }
-    *(uint *)this_ptr->data_ptr = *(uint *)((int)pvVar10 + iVar14 + 4);
+    *(uint *)this_ptr->data_ptr = *(uint *)((int)pvVar9 + iVar12 + 4);
 LAB_00410163:
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               (&local_1e54,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                (uint)in_stack_ffffc820,in_stack_ffffc824);
     return 0;
   case 0x10:
-    piVar5 = this_ptr->data_ptr;
-    iVar14 = this_ptr->min_or_index;
-    if (iVar14 < *piVar5) {
+    piVar4 = this_ptr->data_ptr;
+    iVar12 = this_ptr->min_or_index;
+    if (iVar12 < *piVar4) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_444,"%s => %s",piVar5 + iVar14 * 0x19 + 1,piVar5 + iVar14 * 0x19 + 0x7e);
+                (local_444,"%s => %s",piVar4 + iVar12 * 0x19 + 1,piVar4 + iVar12 * 0x19 + 0x7e);
     }
     else {
-      pcVar13 = "Condition => Event";
-      pcVar7 = local_444;
+      pcVar11 = "Condition => Event";
+      pcVar6 = local_444;
       do {
-        cVar2 = *pcVar13;
-        *pcVar7 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar13[1];
-        pcVar13 = pcVar13 + 2;
-        pcVar7[1] = cVar2;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+        cVar1 = *pcVar11;
+        *pcVar6 = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = pcVar11[1];
+        pcVar11 = pcVar11 + 2;
+        pcVar6[1] = cVar1;
+        pcVar6 = pcVar6 + 2;
+      } while (cVar1 != '\0');
     }
 LAB_0040fdd3:
-    iVar14 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+    iVar12 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                        (g_CEditorToolsPtr,local_2a0,local_444,0xdc,1);
-    if (iVar14 != 0) {
+    if (iVar12 != 0) {
       if (local_444[0] == '\0') {
         if (this_ptr->min_or_index < this_ptr->data_ptr->list_size) {
           core_event_cpp_CRuleList_remove_FUN_004b17c0(this_ptr->data_ptr);
         }
         return 1;
       }
-      pcVar7 = crt_string_c_strstr_FUN_005fedd0(local_444,"=>");
-      if (pcVar7 == (char *)0x0) {
+      pcVar6 = crt_string_c_strstr_FUN_005fedd0(local_444,"=>");
+      if (pcVar6 == (char *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Please input rule as \"<condition> => <event>\"");
       }
       else {
-        pcVar13 = local_444;
-        pcVar18 = acStack_1d9 + 1;
-        *pcVar7 = '\0';
+        pcVar11 = local_444;
+        pcVar16 = acStack_1d9 + 1;
+        *pcVar6 = '\0';
         do {
-          cVar2 = *pcVar13;
-          *pcVar18 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar13[1];
-          pcVar13 = pcVar13 + 2;
-          pcVar18[1] = cVar2;
-          pcVar18 = pcVar18 + 2;
-        } while (cVar2 != '\0');
-        uVar8 = 0xffffffff;
-        pcVar13 = acStack_1d9 + 1;
+          cVar1 = *pcVar11;
+          *pcVar16 = cVar1;
+          if (cVar1 == '\0') break;
+          cVar1 = pcVar11[1];
+          pcVar11 = pcVar11 + 2;
+          pcVar16[1] = cVar1;
+          pcVar16 = pcVar16 + 2;
+        } while (cVar1 != '\0');
+        uVar7 = 0xffffffff;
+        pcVar11 = acStack_1d9 + 1;
         do {
-          if (uVar8 == 0) break;
-          uVar8 = uVar8 - 1;
-          cVar2 = *pcVar13;
-          pcVar13 = pcVar13 + (uint)bVar22 * -2 + 1;
-        } while (cVar2 != '\0');
-        SVar9 = ~uVar8 - 1;
-        if (0 < (int)SVar9) {
-          pcVar13 = acStack_1d9 + ~uVar8;
+          if (uVar7 == 0) break;
+          uVar7 = uVar7 - 1;
+          cVar1 = *pcVar11;
+          pcVar11 = pcVar11 + (uint)bVar20 * -2 + 1;
+        } while (cVar1 != '\0');
+        SVar8 = ~uVar7 - 1;
+        if (0 < (int)SVar8) {
+          pcVar11 = acStack_1d9 + ~uVar7;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar13[-1] + 1)] & 2U) == 0) break;
-            SVar9 = SVar9 - 1;
-            pcVar13 = pcVar13 + -1;
-          } while (0 < (int)SVar9);
+            if ((g_CharacterClassificationTable[(byte)(pcVar11[-1] + 1)] & 2U) == 0) break;
+            SVar8 = SVar8 - 1;
+            pcVar11 = pcVar11 + -1;
+          } while (0 < (int)SVar8);
         }
-        (acStack_1d9 + 1)[SVar9] = '\0';
+        (acStack_1d9 + 1)[SVar8] = '\0';
         local_14 = acStack_1d9 + 2;
         while ((g_CharacterClassificationTable[(byte)(acStack_1d9[1] + 1)] & 2U) != 0) {
-          crt_string_c_memmove_FUN_005fe5e0(acStack_1d9 + 1,local_14,SVar9);
-          SVar9 = SVar9 - 1;
+          crt_string_c_memmove_FUN_005fe5e0(acStack_1d9 + 1,local_14,SVar8);
+          SVar8 = SVar8 - 1;
         }
-        pcVar13 = local_175 + 1;
-        *pcVar7 = '=';
+        pcVar11 = local_175 + 1;
+        *pcVar6 = '=';
         do {
-          cVar2 = pcVar7[2];
-          *pcVar13 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar7[3];
-          pcVar13[1] = cVar2;
-          pcVar13 = pcVar13 + 2;
-          pcVar7 = pcVar7 + 2;
-        } while (cVar2 != '\0');
-        uVar8 = 0xffffffff;
-        pcVar7 = local_175 + 1;
+          cVar1 = pcVar6[2];
+          *pcVar11 = cVar1;
+          if (cVar1 == '\0') break;
+          cVar1 = pcVar6[3];
+          pcVar11[1] = cVar1;
+          pcVar11 = pcVar11 + 2;
+          pcVar6 = pcVar6 + 2;
+        } while (cVar1 != '\0');
+        uVar7 = 0xffffffff;
+        pcVar6 = local_175 + 1;
         do {
-          if (uVar8 == 0) break;
-          uVar8 = uVar8 - 1;
-          cVar2 = *pcVar7;
-          pcVar7 = pcVar7 + (uint)bVar22 * -2 + 1;
-        } while (cVar2 != '\0');
-        SVar9 = ~uVar8 - 1;
-        if (0 < (int)SVar9) {
-          pcVar7 = local_175 + ~uVar8;
+          if (uVar7 == 0) break;
+          uVar7 = uVar7 - 1;
+          cVar1 = *pcVar6;
+          pcVar6 = pcVar6 + (uint)bVar20 * -2 + 1;
+        } while (cVar1 != '\0');
+        SVar8 = ~uVar7 - 1;
+        if (0 < (int)SVar8) {
+          pcVar6 = local_175 + ~uVar7;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2U) == 0) break;
-            SVar9 = SVar9 - 1;
-            pcVar7 = pcVar7 + -1;
-          } while (0 < (int)SVar9);
+            if ((g_CharacterClassificationTable[(byte)(pcVar6[-1] + 1)] & 2U) == 0) break;
+            SVar8 = SVar8 - 1;
+            pcVar6 = pcVar6 + -1;
+          } while (0 < (int)SVar8);
         }
-        (local_175 + 1)[SVar9] = '\0';
+        (local_175 + 1)[SVar8] = '\0';
         while ((g_CharacterClassificationTable[(byte)(local_175[1] + 1)] & 2U) != 0) {
-          crt_string_c_memmove_FUN_005fe5e0(local_175 + 1,local_175 + 2,SVar9);
-          SVar9 = SVar9 - 1;
+          crt_string_c_memmove_FUN_005fe5e0(local_175 + 1,local_175 + 2,SVar8);
+          SVar8 = SVar8 - 1;
         }
-        pcVar7 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
-        if (pcVar7 == (char *)0x0) {
-          pcVar7 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
-          if (pcVar7 == (char *)0x0) {
-            pCVar19 = this_ptr->data_ptr;
-            if (pCVar19->list_size <= this_ptr->min_or_index) {
-              core_event_cpp_CRuleList_insert_FUN_004b1680(pCVar19);
+        pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
+        if (pcVar6 == (char *)0x0) {
+          pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
+          if (pcVar6 == (char *)0x0) {
+            pCVar17 = this_ptr->data_ptr;
+            if (pCVar17->list_size <= this_ptr->min_or_index) {
+              core_event_cpp_CRuleList_insert_FUN_004b1680(pCVar17);
               return 1;
             }
-            pCVar19 = pCVar19 + this_ptr->min_or_index * 0x19 + 1;
-            pcVar7 = acStack_1d9 + 1;
+            pCVar17 = pCVar17 + this_ptr->min_or_index * 0x19 + 1;
+            pcVar6 = acStack_1d9 + 1;
             goto LAB_00410083;
           }
-          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
         }
         else {
-          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
         }
       }
       goto LAB_0040fdd3;
     }
     break;
   case 0x11:
-    iVar14 = (*this_ptr->validator_or_callback)();
-    if (iVar14 != 0) {
+    iVar12 = (*this_ptr->validator_or_callback)();
+    if (iVar12 != 0) {
       if (this_ptr->auto_update_flag == 0) {
         return 1;
       }
@@ -725,25 +720,25 @@ LAB_0040fdd3:
     }
     break;
   case 0x12:
-    iVar14 = 0;
+    iVar12 = 0;
     while( true ) {
-      iVar21 = 0;
+      iVar19 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_25a4);
       do {
-        pcVar7 = "disabled";
-        if ((*(uint *)this_ptr->data_ptr & *(uint *)((int)&0x00000001 + iVar21)) != 0) {
-          pcVar7 = "enable";
+        pcVar6 = "disabled";
+        if ((*(uint *)this_ptr->data_ptr & *(uint *)((int)&0x00000001 + iVar19)) != 0) {
+          pcVar6 = "enable";
         }
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_368,"%s\t%s",*(uint *)((int)&PTR_s_thrust_0066e310 + iVar21),
-                   pcVar7);
-        iVar21 = iVar21 + 8;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_25a4.base_strlist,local_368);
-      } while (iVar21 != 0x10);
-      iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                         (&local_25a4,local_2a0,iVar14,0);
-      if (iVar14 < 0) break;
-      *(uint *)this_ptr->data_ptr = *(uint *)this_ptr->data_ptr ^ (&0x00000001)[iVar14 * 2];
+                  (local_368,"%s\t%s",*(uint *)((int)&PTR_s_thrust_0066e310 + iVar19),
+                   pcVar6);
+        iVar19 = iVar19 + 8;
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_25a4.base,local_368);
+      } while (iVar19 != 0x10);
+      iVar12 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                         (&local_25a4,local_2a0,iVar12,0);
+      if (iVar12 < 0) break;
+      *(uint *)this_ptr->data_ptr = *(uint *)this_ptr->data_ptr ^ (&0x00000001)[iVar12 * 2];
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 (&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                  (uint)in_stack_ffffc820,in_stack_ffffc824);
@@ -761,28 +756,28 @@ LAB_0040fdd3:
   }
   return 0;
   while( true ) {
-    cVar2 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    *(char *)((int)&pCVar19->list_size + 1) = cVar2;
-    pCVar19 = (CRuleList *)((int)&pCVar19->list_size + 2);
-    if (cVar2 == '\0') break;
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    *(char *)((int)&pCVar17->list_size + 1) = cVar1;
+    pCVar17 = (CRuleList *)((int)&pCVar17->list_size + 2);
+    if (cVar1 == '\0') break;
 LAB_00410083:
-    cVar2 = *pcVar7;
-    *(char *)&pCVar19->list_size = cVar2;
-    if (cVar2 == '\0') break;
+    cVar1 = *pcVar6;
+    *(char *)&pCVar17->list_size = cVar1;
+    if (cVar1 == '\0') break;
   }
-  pcVar7 = local_175 + 1;
-  pcVar13 = (char *)((int)this_ptr->data_ptr + this_ptr->min_or_index * 100 + 0x1f8);
+  pcVar6 = local_175 + 1;
+  pcVar11 = (char *)((int)this_ptr->data_ptr + this_ptr->min_or_index * 100 + 0x1f8);
   do {
-    cVar2 = *pcVar7;
-    *pcVar13 = cVar2;
-    if (cVar2 == '\0') {
+    cVar1 = *pcVar6;
+    *pcVar11 = cVar1;
+    if (cVar1 == '\0') {
       return 1;
     }
-    cVar2 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    pcVar13[1] = cVar2;
-    pcVar13 = pcVar13 + 2;
-  } while (cVar2 != '\0');
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    pcVar11[1] = cVar1;
+    pcVar11 = pcVar11 + 2;
+  } while (cVar1 != '\0');
   return 1;
 }

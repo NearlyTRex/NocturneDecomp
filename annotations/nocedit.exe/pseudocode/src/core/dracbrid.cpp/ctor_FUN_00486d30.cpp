@@ -12,6 +12,6 @@ SFreaky * __cdecl core_dracbrid_cpp_ctor_FUN_00486d30(SFreaky *this_ptr)
   void *pvVar1;
   
   pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->field1_0x20,4,&g_CVectorTypeInfo);
+                     (this_ptr->unk2,4,&g_CVectorTypeInfo);
   return (SFreaky *)((int)pvVar1 + -0x20);
 }

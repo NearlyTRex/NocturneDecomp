@@ -20,6 +20,6 @@ shape_edittool_cpp_CPickList_swap_FUN_004a5870(CPickList *this_ptr,int index1,in
     g_CurrentLineNumber = 0x1094;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::swap - can't do this after setting hotkeys (yet)");
   }
-  shape_edittool_cpp_CStrList_swap_FUN_004a31f0(&this_ptr->base_strlist,index1,index2);
+  shape_edittool_cpp_CStrList_swap_FUN_004a31f0(&this_ptr->base,index1,index2);
   return;
 }

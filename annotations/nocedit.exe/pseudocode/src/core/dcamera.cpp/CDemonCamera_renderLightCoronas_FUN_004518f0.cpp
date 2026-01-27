@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl
 core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
           (CDemonCamera *this_ptr,void *p1,int p2)
@@ -90,7 +88,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
       } while (iVar5 < this_ptr->display_height);
     }
     if (((p2 == 0) && (*(int *)((int)p1 + 0x20) != 0)) &&
-       (_DAT_0066ed68 = 0xffffffff, *(int *)((int)p1 + 0x20) == 2)) {
+       (INT_0066ed68 = -1, *(int *)((int)p1 + 0x20) == 2)) {
       if (g_LightBufferPool[0x18]._0_4_ != 0) {
         iVar5 = 0;
         do {
@@ -98,7 +96,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
             iVar11 = 0;
             iVar3 = iVar5 + 0x132220c;
             if (this_ptr->display_height < 1) {
-              _DAT_0066ed68 = 0xffffffff;
+              INT_0066ed68 = -1;
               return;
             }
             do {

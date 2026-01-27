@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_baron.cpp_FUN_004136b0 at 004139af
+;   core_baron.cpp_CBaron_FUN_004136b0 at 004139af
 ;   core_emitter.cpp_FUN_004a8070 at 004a8763
 ;
 ; Referenced Globals:

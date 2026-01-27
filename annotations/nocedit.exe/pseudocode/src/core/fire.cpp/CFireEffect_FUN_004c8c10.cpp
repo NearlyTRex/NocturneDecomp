@@ -12,7 +12,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8c10(CFireEffect *this_ptr)
   CVector3f *in_stack_00000008;
   
   core_fire_cpp_CExplosion_FUN_004c3970(g_ExplosionPool + (int)g_LaserBeamActiveListHead);
-  g_LaserBeamActiveListHead = (CLaserBeam *)(g_LaserBeamActiveListHead->field0_0x0 + 1);
+  g_LaserBeamActiveListHead = (CLaserBeam *)(g_LaserBeamActiveListHead->unk + 1);
   if (9 < (int)g_LaserBeamActiveListHead) {
     g_LaserBeamActiveListHead = (CLaserBeam *)0x0;
   }

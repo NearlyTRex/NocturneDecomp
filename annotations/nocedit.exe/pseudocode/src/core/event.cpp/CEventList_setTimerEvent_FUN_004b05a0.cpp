@@ -30,7 +30,7 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
         g_CurrentLineNumber = 0xa7e;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setTimerEvent - too many timers!");
       }
-      pcVar5 = this_ptr->field14_0x3218 + this_ptr->timer_count * 0x20 + -4;
+      pcVar5 = this_ptr->unk5 + this_ptr->timer_count * 0x20 + -4;
       do {
         cVar2 = *in_stack_00000008;
         *pcVar5 = cVar2;
@@ -40,7 +40,7 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
         pcVar5[1] = cVar2;
         pcVar5 = pcVar5 + 2;
       } while (cVar2 != '\0');
-      *(float *)(this_ptr->field16_0x3380 + this_ptr->timer_count * 4 + -0x2c) = in_stack_0000000c;
+      *(float *)(this_ptr->unk6 + this_ptr->timer_count * 4 + -0x2c) = in_stack_0000000c;
       this_ptr->timer_count = this_ptr->timer_count + 1;
       return;
     }
@@ -51,14 +51,14 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
       iVar4 = this_ptr->timer_count + -1;
       this_ptr->timer_count = iVar4;
       crt_string_c_memmove_FUN_005fe5e0
-                (this_ptr->field14_0x3218 + iVar3 * 0x20 + -4,
-                 this_ptr->field14_0x3218 + iVar3 * 0x20 + 0x1c,(iVar4 - iVar3) * 0x20);
+                (this_ptr->unk5 + iVar3 * 0x20 + -4,this_ptr->unk5 + iVar3 * 0x20 + 0x1c,
+                 (iVar4 - iVar3) * 0x20);
       crt_string_c_memmove_FUN_005fe5e0
-                (this_ptr->field16_0x3380 + iVar1 + -0x2c,this_ptr->field16_0x3380 + iVar1 + -0x28,
+                (this_ptr->unk6 + iVar1 + -0x2c,this_ptr->unk6 + iVar1 + -0x28,
                  (this_ptr->timer_count - iVar3) * 4);
       return;
     }
-    *(float *)(this_ptr->field16_0x3380 + iVar1 + -0x2c) = in_stack_0000000c;
+    *(float *)(this_ptr->unk6 + iVar1 + -0x2c) = in_stack_0000000c;
   }
   return;
 }

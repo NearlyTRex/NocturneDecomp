@@ -10,7 +10,7 @@ void __cdecl
 core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CActorPropertyList *property_list)
 
 {
-  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,property_list);
+  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e3b0(property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e640(property_list);
   if (this_ptr->door_type == 2) {

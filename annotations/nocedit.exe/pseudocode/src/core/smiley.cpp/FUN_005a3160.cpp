@@ -21,7 +21,7 @@ uint core_smiley_cpp_FUN_005a3160(void)
   if (in_stack_00000008 == 0) {
     return 0;
   }
-  iVar1 = (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).isDamageable)(in_stack_00000004);
+  iVar1 = (*(((in_stack_00000004->base).vtable._uc)->_uc).isDamageable)(in_stack_00000004);
   if (iVar1 != 0) {
     (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x104))();
     return 1;
@@ -29,9 +29,9 @@ uint core_smiley_cpp_FUN_005a3160(void)
   input_local_point =
        core_xform_cpp_transformVector3x4_FUN_005f4dc0
                  ((CVector3f *)&stack0xfffffff0,&g_ZeroVector,
-                  (in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_03f48fa8);
+                  (in_stack_00000004->model).bone_transform.bone_world_matrices + INT_03f48fa8);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (&in_stack_00000004->base_actor,&CStack_1c,input_local_point);
+            (&in_stack_00000004->base,&CStack_1c,input_local_point);
   CStack_1c.y = CStack_1c.y + -4.0f;
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();
   return 1;

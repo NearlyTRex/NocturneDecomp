@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_npc.cpp_staticInit_FUN_00544770(void)
+; __cdecl void core_npc.cpp_staticInit_FUN_00544770(void)
 ;
 ;
 ; Referenced Globals:

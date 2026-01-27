@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 14,
-        "message": "'_DAT_02d7a7b4' was not declared in this scope; did you mean 'DAT_02d7a7b8'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,19 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 78,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 8,
-    "suspect_count": 5,
-    "suspect_types": [
-      "decompiler_intrinsic",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 21
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
   },
   "cross_references": [],
   "function": {
@@ -43,22 +31,22 @@
         "004cbcdf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_flamegun.cpp_staticInit_FUN_004cbcb0",
-    "signature": "undefined core_flamegun.cpp_staticInit_FUN_004cbcb0()"
+    "signature": "void core_flamegun.cpp_staticInit_FUN_004cbcb0(void)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "02d7a7b4",
-      "name": "DAT_02d7a7b4",
-      "type": "undefined4",
+      "name": "INT_02d7a7b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d7a7b8",
-      "name": "DAT_02d7a7b8",
-      "type": "undefined4",
+      "name": "INT_02d7a7b8",
+      "type": "int",
       "value": null
     },
     {
@@ -113,41 +101,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "text": "ulonglong core_flamegun_cpp_staticInit_FUN_004cbcb0(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_02d7a7b8",
-      "text": "DAT_02d7a7b8 = 0x1fc00000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "text": "return CONCAT44(0x1fc00000,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
-      "match": "CONCAT44",
-      "text": "return CONCAT44(0x1fc00000,param_1);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

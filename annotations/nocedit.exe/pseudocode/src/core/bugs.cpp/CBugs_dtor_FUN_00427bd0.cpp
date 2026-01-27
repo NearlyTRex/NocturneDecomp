@@ -23,7 +23,7 @@ core_bugs_cpp_CBugs_dtor_FUN_00427bd0
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  iVar1 = core_bugs_cpp_FUN_00427cc0((SBug **)this_ptr->field3_0xbec4);
+  iVar1 = core_bugs_cpp_FUN_00427cc0((SBug **)this_ptr->unk2);
   iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(iVar1 + -0x8af8));
   iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
   iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));

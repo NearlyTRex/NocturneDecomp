@@ -9,9 +9,6 @@
 void __cdecl core_trap_cpp_CTrap_FUN_005de750(CTrap *this_ptr)
 
 {
-  this_ptr->field2_0x15c[0x178] = '\0';
-  this_ptr->field2_0x15c[0x179] = '\0';
-  this_ptr->field2_0x15c[0x17a] = '\0';
-  this_ptr->field2_0x15c[0x17b] = '\0';
+  this_ptr->unk = 0;
   return;
 }

@@ -9,40 +9,38 @@
 void __cdecl core_zombie_cpp_CZombie_serialize_FUN_005fbfd0(CZombie *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base_enemy);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base_enemy).speed,"speed");
+  core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base);
+  core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base).speed,"speed");
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
-            (&(this_ptr->base_enemy).base_character.model,"modelName");
+            (&(this_ptr->base).base.model,"modelName");
   if (1 < g_CZombieClassVersion) {
     if (g_CZombieClassVersion < 0xb) {
       core_actor_cpp_serializeFloat_FUN_0040b770
-                (&(this_ptr->base_enemy).guard_distance,"guardDistance");
+                (&(this_ptr->base).guard_distance,"guardDistance");
     }
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (&(this_ptr->base_enemy).base_character.model.motion_controller,
-               "motion state");
+              (&(this_ptr->base).base.model.motion_controller,"motion state");
   }
   if (2 < g_CZombieClassVersion) {
     core_actor_cpp_serializePartStatus_FUN_0040bae0
-              (&(this_ptr->base_enemy).base_character.model,"partStatus");
+              (&(this_ptr->base).base.model,"partStatus");
     if (g_CZombieClassVersion < 7) {
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)&(this_ptr->base_enemy).base_character.carry_hands[1].carry_actor,
+                ((CDemonActor *)&(this_ptr->base).base.carry_hands[1].carry_actor,
                  "carriedActor");
     }
   }
   if (3 < g_CZombieClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(this_ptr->field1_0xbeb4 + 0x28),"riseFromGraveCondition");
+              ((char **)(this_ptr->unk1 + 0x28),"riseFromGraveCondition");
   }
   if (4 < g_CZombieClassVersion) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->field1_0xbeb4 + 0x20),"graveActor");
+              ((CDemonActor *)(this_ptr->unk1 + 0x20),"graveActor");
   }
   if ((5 < g_CZombieClassVersion) && (g_CZombieClassVersion < 9)) {
     core_actor_cpp_serializeClothList_FUN_0040be60
-              ((CClothList *)&(this_ptr->base_enemy).base_character.cloth_count,"clothList"
-              );
+              ((CClothList *)&(this_ptr->base).base.cloth_count,"clothList");
   }
   if (7 < g_CZombieClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0

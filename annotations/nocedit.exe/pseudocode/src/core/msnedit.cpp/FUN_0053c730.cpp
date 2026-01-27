@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_msnedit.cpp_FUN_0053c730(uint param_1) */
-
 void core_msnedit_cpp_FUN_0053c730(void)
 
 {
@@ -44,7 +41,7 @@ void core_msnedit_cpp_FUN_0053c730(void)
       (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();
       iVar2 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);
-      if (0 < _DAT_02f7a028) {
+      if (0 < INT_02f7a028) {
         puVar5 = &DAT_02f7a030;
         do {
           core_actor_cpp_CActorProperty_FUN_0040ea50();
@@ -52,7 +49,7 @@ void core_msnedit_cpp_FUN_0053c730(void)
           iVar2 = iVar2 + 1;
           puVar5 = puVar5 + 0xec;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);
-        } while (iVar2 < _DAT_02f7a028);
+        } while (iVar2 < INT_02f7a028);
       }
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (acStack_198,"Edit %s properties",*(uint *)(in_stack_00000004 + 0x28))

@@ -63,7 +63,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     iVar2 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%s\n",this_ptr->field2_0xc + 0x38);
+  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%s\n",this_ptr->unk2 + 0x38);
   do {
     iVar2 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
     if (iVar2 < 0) break;
@@ -71,7 +71,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   iVar2 = 0;
   crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n",&this_ptr->set_list);
   if (0 < (int)this_ptr->set_list) {
-    pcVar8 = this_ptr->field4_0x148;
+    pcVar8 = this_ptr->unk3;
     do {
       iVar2 = iVar2 + 1;
       crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%s\n",pcVar8);
@@ -120,10 +120,10 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n",&local_28);
   local_24 = 0;
   if (this_ptr->mission_version_num < 6) {
-    this_ptr->field2_0xc[0] = '\0';
-    this_ptr->field2_0xc[1] = '\0';
-    this_ptr->field2_0xc[2] = '\0';
-    this_ptr->field2_0xc[3] = '\0';
+    this_ptr->unk2[0] = '\0';
+    this_ptr->unk2[1] = '\0';
+    this_ptr->unk2[2] = '\0';
+    this_ptr->unk2[3] = '\0';
   }
   else {
     do {
@@ -132,20 +132,20 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     } while (iVar2 != 10);
                     /* this pulls the inventory actor count */
     crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n",&local_24);
-    this_ptr->field2_0xc[0] = '\x01';
-    this_ptr->field2_0xc[1] = '\0';
-    this_ptr->field2_0xc[2] = '\0';
-    this_ptr->field2_0xc[3] = '\0';
+    this_ptr->unk2[0] = '\x01';
+    this_ptr->unk2[1] = '\0';
+    this_ptr->unk2[2] = '\0';
+    this_ptr->unk2[3] = '\0';
   }
   do {
     iVar2 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
   this_ptr->actorCountMaybe = 0;
-  this_ptr->field6_0x54c[0x33c] = '\0';
-  this_ptr->field6_0x54c[0x33d] = '\0';
-  this_ptr->field6_0x54c[0x33e] = '\0';
-  this_ptr->field6_0x54c[0x33f] = '\0';
+  this_ptr->unk4[0x33c] = '\0';
+  this_ptr->unk4[0x33d] = '\0';
+  this_ptr->unk4[0x33e] = '\0';
+  this_ptr->unk4[0x33f] = '\0';
   local_14 = 0;
   while (local_14 < local_28 + local_24) {
     puVar7 = &DAT_0067d5c0;
@@ -179,7 +179,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     } while (cVar1 != '\0');
     core_mission_cpp_CDemonMission_FUN_00523b70(this_ptr);
     if (local_14 == local_28) {
-      *(CDemonActor **)(this_ptr->field6_0x54c + 0x33c) = pCVar4;
+      *(CDemonActor **)(this_ptr->unk4 + 0x33c) = pCVar4;
     }
                     /* looks like the max actor count is 1999 */
     if (1999 < this_ptr->actorCountMaybe) {
@@ -187,7 +187,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
       g_CurrentLineNumber = 0x135;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Too many actors");
     }
-    *(CDemonActor **)(this_ptr->field8_0x890 + this_ptr->actorCountMaybe * 4) = local_18;
+    *(CDemonActor **)(this_ptr->unk5 + this_ptr->actorCountMaybe * 4) = local_18;
     local_14 = local_14 + 1;
     this_ptr->actorCountMaybe = this_ptr->actorCountMaybe + 1;
   }
@@ -209,7 +209,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
       pCVar6 = pCVar6->next_actor;
     } while (iVar2 < local_28);
   }
-  if (*(int *)this_ptr->field2_0xc != 0) {
+  if (*(int *)this_ptr->unk2 != 0) {
     pCVar6 = this_ptr->first_actor;
     iVar2 = 0;
     if (0 < local_28) {
@@ -228,24 +228,24 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
         pCVar6 = pCVar6->next_actor;
       } while (iVar2 < local_28);
     }
-    this_ptr->field2_0xc[0] = '\0';
-    this_ptr->field2_0xc[1] = '\0';
-    this_ptr->field2_0xc[2] = '\0';
-    this_ptr->field2_0xc[3] = '\0';
+    this_ptr->unk2[0] = '\0';
+    this_ptr->unk2[1] = '\0';
+    this_ptr->unk2[2] = '\0';
+    this_ptr->unk2[3] = '\0';
   }
   if (pCVar6 != (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x155;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::load - actor list count mismatch #3!");
   }
-  if (*(int *)(this_ptr->field6_0x54c + 0x33c) != 0) {
+  if (*(int *)(this_ptr->unk4 + 0x33c) != 0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x156;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::load - actor list count mismatch #4!");
   }
   this_ptr->actorCountMaybe = 0;
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x15f);
-  if (*(int *)(this_ptr->field2_0xc + 0x30) == 0) {
+  if (*(int *)(this_ptr->unk2 + 0x30) == 0) {
     if (this_ptr->mission_version_num < 4) {
       do {
         iVar2 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
@@ -256,10 +256,10 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
         if (iVar2 < 0) break;
       } while (iVar2 != 10);
     }
-    this_ptr->field0_0x0[0] = -1;
-    this_ptr->field0_0x0[1] = -1;
-    this_ptr->field0_0x0[2] = -1;
-    this_ptr->field0_0x0[3] = -1;
+    this_ptr->unk1[0] = -1;
+    this_ptr->unk1[1] = -1;
+    this_ptr->unk1[2] = -1;
+    this_ptr->unk1[3] = -1;
     core_gore_cpp_FUN_004ed760();
     if (6 < this_ptr->mission_version_num) {
       core_gore_cpp_FUN_004ee1e0();

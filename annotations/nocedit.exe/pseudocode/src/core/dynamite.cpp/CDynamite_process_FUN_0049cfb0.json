@@ -1,0 +1,247 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 67,
+        "line": 57,
+        "message": "'stack0xfffffff8' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 137,
+    "complexity_score": 74,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 7,
+    "pseudocode_lines": 59,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 196
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0049cfb0",
+    "address_range": [
+      [
+        "0049cfb0",
+        "0049d11a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dynamite.cpp_CDynamite_process_FUN_0049cfb0",
+    "signature": "void core_dynamite.cpp_CDynamite_process_FUN_0049cfb0(CDynamite * this_ptr, float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "004c79d0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
+    },
+    {
+      "addr": "005b3b90",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_killSound_FUN_005b3b90"
+    },
+    {
+      "addr": "005ee110",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622ea2",
+      "name": "DOUBLE_00622ea2",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "addr": "00622eaa",
+      "name": "FLOAT_00622eaa",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065d30c",
+      "name": "FLOAT_0065d30c",
+      "type": "float",
+      "value": "3.5"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.229508196721311,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 275,
+      "FLOAT2FLOAT": 24,
+      "FLOAT_ADD": 3,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 5,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 53,
+      "INT_AND": 36,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 24,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 12,
+      "INT_SUB": 31,
+      "INT_ZEXT": 8,
+      "LOAD": 31,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 43
+    },
+    "pcode_op_count": 638
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDynamite *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0049cfb8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 50,
+      "match": "&stack0xfffffff8",
+      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff8,&CStack_20);",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "0065d314"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

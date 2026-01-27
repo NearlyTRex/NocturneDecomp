@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_pendulum.cpp_staticInit_FUN_00549320(void)
+; __cdecl void core_pendulum.cpp_staticInit_FUN_00549320(void)
 ;
 ;
 ; Referenced Globals:

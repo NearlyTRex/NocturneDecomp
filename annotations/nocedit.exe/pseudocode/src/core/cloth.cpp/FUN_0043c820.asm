@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065bb3c
+;   float FLOAT_0065bb3c = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
@@ -28,13 +28,13 @@ section .text
     MOV EBX,ESP                         ; 0043c828
     MOV EDX,dword ptr [0x006703ec]      ; 0043c82a | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 0043c830
-    FMUL float ptr [0x0065bb3c]         ; 0043c832 | DAT_0065bb3c
+    FMUL float ptr [0x0065bb3c]         ; 0043c832 | FLOAT_0065bb3c
     FISTP dword ptr [EBX]               ; 0043c838
     FLD float ptr [EAX + 0x4]           ; 0043c83a
-    FMUL float ptr [0x0065bb3c]         ; 0043c83d | DAT_0065bb3c
+    FMUL float ptr [0x0065bb3c]         ; 0043c83d | FLOAT_0065bb3c
     FISTP dword ptr [EBX + 0x4]         ; 0043c843
     FLD float ptr [EAX + 0x8]           ; 0043c846
-    FMUL float ptr [0x0065bb3c]         ; 0043c849 | DAT_0065bb3c
+    FMUL float ptr [0x0065bb3c]         ; 0043c849 | FLOAT_0065bb3c
     FISTP dword ptr [EBX + 0x8]         ; 0043c84f
     MOV EBX,ESP                         ; 0043c852
     MOV EDX,dword ptr [EDX]             ; 0043c854 | g_CDemonRendererInstance

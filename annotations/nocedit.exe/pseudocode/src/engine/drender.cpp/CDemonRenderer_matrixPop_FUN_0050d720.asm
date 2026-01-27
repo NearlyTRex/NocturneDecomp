@@ -11,8 +11,8 @@
 ;   core_battery.cpp_FUN_00417f80 at 00417fd7
 ;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610 at 004196c2
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 at 0041959f
-;   core_boxactor.cpp_CBoxActor_FUN_00421ef0 at 00421fc9
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421eb7
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421fc9
 ;   core_bugs.cpp_FUN_004251b0 at 004252f3
 ;   core_charactr.cpp_CCharacter_FUN_0042a420 at 0042a507
 ;   ... and 59 more

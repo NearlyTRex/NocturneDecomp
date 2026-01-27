@@ -48,7 +48,7 @@ uint core_hero_cpp_FUN_004f3120(void)
         pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar1),
                             g_CBoxActorClassInfo.name_hash);
-        if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2[2].field7_0x6c != 0)) &&
+        if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2[2].unk1 != 0)) &&
            (pCVar2[2].was_created == 0)) {
           (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)&local_80);
           fStack_60 = fStack_78 + fStack_6c;
@@ -59,7 +59,7 @@ uint core_hero_cpp_FUN_004f3120(void)
           CStack_48.z = fStack_58 * 0.5f;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar2,&CStack_54,&CStack_48);
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                    (&in_stack_00000004->base_actor,&CStack_30,&CStack_54);
+                    (&in_stack_00000004->base,&CStack_30,&CStack_54);
           fStack_18 = fStack_6c - fStack_78;
           fStack_3c = fStack_18 * 0.5f;
           fStack_34 = (fStack_64 - fStack_70) * 0.5f;

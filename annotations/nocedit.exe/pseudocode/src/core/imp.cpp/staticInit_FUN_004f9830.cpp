@@ -2,17 +2,15 @@
 // Address: 004f9830
 // Address Range: [[004f9830, 004f9853]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_imp.cpp_staticInit_FUN_004f9830(void)
+// Signature: void core_imp.cpp_staticInit_FUN_004f9830(void)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_imp_cpp_staticInit_FUN_004f9830(void)
+void __cdecl core_imp_cpp_staticInit_FUN_004f9830(void)
 
 {
-  CDemonActorType *pCVar1;
-  
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CImpClassInfo,"CImp",core_imp_cpp_FUN_004f9860,&g_CImpClassVersion
-                      ,1,&g_CEnemyClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CImpClassInfo,"CImp",core_imp_cpp_factoryFunc_FUN_004f9860,
+             &g_CImpClassVersion,1,&g_CEnemyClassInfo);
+  return;
 }

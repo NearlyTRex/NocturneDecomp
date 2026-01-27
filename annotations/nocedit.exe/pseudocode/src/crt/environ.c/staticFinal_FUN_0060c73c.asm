@@ -8,7 +8,7 @@
 ;   FreeEnvironmentStringsA* g_FreeEnvironmentStringsAFunc = 00211dba
 ;   char* g_EnvironmentStrings = 00000000
 ;   char** g_EnvironmentBlock
-;   undefined4 DAT_03f9c150
+;   int INT_03f9c150
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_00601cd0
@@ -33,7 +33,7 @@ section .text
     XOR ECX,ECX                         ; 0060c753
     ADD ESP,0x4                         ; 0060c755
     MOV dword ptr [0x03f9b864],ECX      ; 0060c758 | g_EnvironmentBlock
-    MOV ESI,dword ptr [0x03f9c150]      ; 0060c75e | DAT_03f9c150
+    MOV ESI,dword ptr [0x03f9c150]      ; 0060c75e | INT_03f9c150
         ;   Label: LAB_0060c75e
     TEST ESI,ESI                        ; 0060c764
     JZ 0x0060c779                       ; 0060c766
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_00601cd0(void * ptr)
     XOR EBP,EBP                         ; 0060c76e
     ADD ESP,0x4                         ; 0060c770
-    MOV dword ptr [0x03f9c150],EBP      ; 0060c773 | DAT_03f9c150
+    MOV dword ptr [0x03f9c150],EBP      ; 0060c773 | INT_03f9c150
     MOV EAX,[0x00685011]                ; 0060c779 | g_EnvironmentStrings
         ;   Label: LAB_0060c779
     TEST EAX,EAX                        ; 0060c77e

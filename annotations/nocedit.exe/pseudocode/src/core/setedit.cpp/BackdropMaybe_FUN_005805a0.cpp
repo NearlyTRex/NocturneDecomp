@@ -36,7 +36,7 @@ void core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
         shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0x1059);
         pCVar2->cameras[0].pvs_list = (int *)0x0;
       }
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].field17_0x1a0;
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
       iVar3 = iVar3 + 1;
       pCVar4 = pCVar4 + 1;
     } while (iVar3 < in_stack_00000004->camera_count);

@@ -17,18 +17,18 @@ engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this
   char *pcVar5;
   
   iVar4 = 0;
-  if (0 < this_ptr->field0_0x0) {
+  if (0 < this_ptr->unk1) {
     iVar3 = 0;
     do {
-      iVar2 = crt_string_c_strcmp_FUN_005fef20((char *)(this_ptr->field1_0x4 + iVar3),filename);
+      iVar2 = crt_string_c_strcmp_FUN_005fef20((char *)(this_ptr->unk2 + iVar3),filename);
       if (iVar2 == 0) {
         return;
       }
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 0x40;
-    } while (iVar4 < this_ptr->field0_0x0);
+    } while (iVar4 < this_ptr->unk1);
   }
-  pcVar5 = (char *)(this_ptr->field1_0x4 + this_ptr->field0_0x0 * 0x40);
+  pcVar5 = (char *)(this_ptr->unk2 + this_ptr->unk1 * 0x40);
   do {
     cVar1 = *filename;
     *pcVar5 = cVar1;
@@ -38,8 +38,8 @@ engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar4 = this_ptr->field0_0x0 + 1;
-  this_ptr->field0_0x0 = iVar4;
+  iVar4 = this_ptr->unk1 + 1;
+  this_ptr->unk1 = iVar4;
   if (iVar4 < 0x400) {
     return;
   }

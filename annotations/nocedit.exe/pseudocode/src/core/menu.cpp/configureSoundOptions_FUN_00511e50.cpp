@@ -778,7 +778,7 @@ LAB_00512b46:
         sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar3,&local_560);
         uVar21 = CONCAT44(uVar23,&local_560);
         iVar3 = iVar3 + 1;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a20.base_strlist,local_560.device_name);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a20.base,local_560.device_name);
       }
       lVar22 = (ulonglong)uVar23 << 0x20;
       iVar3 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();

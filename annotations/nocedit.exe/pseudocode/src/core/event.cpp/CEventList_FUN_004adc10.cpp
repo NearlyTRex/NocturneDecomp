@@ -11,7 +11,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004adc10(CEventList *this_ptr,char *st
 {
   int iVar1;
   int iVar2;
-  CEvent *str1;
+  int *str1;
   
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str,"TRUE");
   if (iVar1 != 0) {
@@ -24,7 +24,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004adc10(CEventList *this_ptr,char *st
           return 1;
         }
         iVar1 = iVar1 + 1;
-        str1 = str1 + 0x20;
+        str1 = str1 + 8;
       } while (iVar1 < this_ptr->current_event_count);
     }
     iVar1 = core_event_cpp_CEventList_FUN_004b0860(this_ptr);

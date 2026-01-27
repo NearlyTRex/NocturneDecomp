@@ -71,90 +71,86 @@ core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzle
   }
   else if (DAT_02f0cb1c == 3) {
     core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);
-    if (auStack_74 != this_ptr->field10_0x648 + 0xcf8) {
-      auStack_74._0_4_ = *(uint *)(this_ptr->field10_0x648 + 0xcf8);
-      auStack_74._4_4_ = *(uint *)(this_ptr->field10_0x648 + 0xcfc);
-      auStack_74._8_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd00);
+    if (auStack_74 != this_ptr->unk3 + 0xcf8) {
+      auStack_74._0_4_ = *(uint *)(this_ptr->unk3 + 0xcf8);
+      auStack_74._4_4_ = *(uint *)(this_ptr->unk3 + 0xcfc);
+      auStack_74._8_4_ = *(uint *)(this_ptr->unk3 + 0xd00);
     }
-    if (auStack_74 + 0xc != this_ptr->field10_0x648 + 0xd20) {
-      auStack_74._12_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd20);
-      auStack_74._16_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd24);
-      auStack_74._20_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd28);
+    if (auStack_74 + 0xc != this_ptr->unk3 + 0xd20) {
+      auStack_74._12_4_ = *(uint *)(this_ptr->unk3 + 0xd20);
+      auStack_74._16_4_ = *(uint *)(this_ptr->unk3 + 0xd24);
+      auStack_74._20_4_ = *(uint *)(this_ptr->unk3 + 0xd28);
     }
     core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_74);
-    if (this_ptr->field10_0x648 + 0xcf8 != auStack_74) {
-      *(uint *)(this_ptr->field10_0x648 + 0xcf8) = auStack_74._0_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xcfc) = auStack_74._4_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xd00) = auStack_74._8_4_;
+    if (this_ptr->unk3 + 0xcf8 != auStack_74) {
+      *(uint *)(this_ptr->unk3 + 0xcf8) = auStack_74._0_4_;
+      *(uint *)(this_ptr->unk3 + 0xcfc) = auStack_74._4_4_;
+      *(uint *)(this_ptr->unk3 + 0xd00) = auStack_74._8_4_;
     }
-    if (this_ptr->field10_0x648 + 0xd20 != auStack_74 + 0xc) {
-      *(uint *)(this_ptr->field10_0x648 + 0xd20) = auStack_74._12_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xd24) = auStack_74._16_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xd28) = auStack_74._20_4_;
+    if (this_ptr->unk3 + 0xd20 != auStack_74 + 0xc) {
+      *(uint *)(this_ptr->unk3 + 0xd20) = auStack_74._12_4_;
+      *(uint *)(this_ptr->unk3 + 0xd24) = auStack_74._16_4_;
+      *(uint *)(this_ptr->unk3 + 0xd28) = auStack_74._20_4_;
     }
-    this_ptr->field10_0x648[0xd10] = '\0';
-    this_ptr->field10_0x648[0xd11] = '\0';
-    this_ptr->field10_0x648[0xd12] = '\0';
-    this_ptr->field10_0x648[0xd13] = '\0';
-    *(uint *)(this_ptr->field10_0x648 + 0xd04) =
-         *(uint *)(this_ptr->field10_0x648 + 0xcf8);
-    *(uint *)(this_ptr->field10_0x648 + 0xd0c) =
-         *(uint *)(this_ptr->field10_0x648 + 0xd00);
+    this_ptr->unk3[0xd10] = '\0';
+    this_ptr->unk3[0xd11] = '\0';
+    this_ptr->unk3[0xd12] = '\0';
+    this_ptr->unk3[0xd13] = '\0';
+    *(uint *)(this_ptr->unk3 + 0xd04) = *(uint *)(this_ptr->unk3 + 0xcf8);
+    *(uint *)(this_ptr->unk3 + 0xd0c) = *(uint *)(this_ptr->unk3 + 0xd00);
   }
   else if (DAT_02f0cb1c == 4) {
     core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_74 + 0x18));
-    if (auStack_58 != this_ptr->field10_0x648 + 0xd04) {
-      auStack_58._0_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd04);
-      auStack_58._4_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd08);
-      auStack_58._8_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd0c);
+    if (auStack_58 != this_ptr->unk3 + 0xd04) {
+      auStack_58._0_4_ = *(uint *)(this_ptr->unk3 + 0xd04);
+      auStack_58._4_4_ = *(uint *)(this_ptr->unk3 + 0xd08);
+      auStack_58._8_4_ = *(uint *)(this_ptr->unk3 + 0xd0c);
     }
-    if (auStack_58 + 0xc != this_ptr->field10_0x648 + 0xd20) {
-      auStack_58._12_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd20);
-      auStack_58._16_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd24);
-      auStack_58._20_4_ = *(uint *)(this_ptr->field10_0x648 + 0xd28);
+    if (auStack_58 + 0xc != this_ptr->unk3 + 0xd20) {
+      auStack_58._12_4_ = *(uint *)(this_ptr->unk3 + 0xd20);
+      auStack_58._16_4_ = *(uint *)(this_ptr->unk3 + 0xd24);
+      auStack_58._20_4_ = *(uint *)(this_ptr->unk3 + 0xd28);
     }
     core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_58);
-    if (this_ptr->field10_0x648 + 0xd04 != auStack_58) {
-      *(uint *)(this_ptr->field10_0x648 + 0xd04) = auStack_58._0_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xd08) = auStack_58._4_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xd0c) = auStack_58._8_4_;
+    if (this_ptr->unk3 + 0xd04 != auStack_58) {
+      *(uint *)(this_ptr->unk3 + 0xd04) = auStack_58._0_4_;
+      *(uint *)(this_ptr->unk3 + 0xd08) = auStack_58._4_4_;
+      *(uint *)(this_ptr->unk3 + 0xd0c) = auStack_58._8_4_;
     }
-    if (this_ptr->field10_0x648 + 0xd20 != auStack_58 + 0xc) {
-      *(uint *)(this_ptr->field10_0x648 + 0xd20) = auStack_58._12_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xd24) = auStack_58._16_4_;
-      *(uint *)(this_ptr->field10_0x648 + 0xd28) = auStack_58._20_4_;
+    if (this_ptr->unk3 + 0xd20 != auStack_58 + 0xc) {
+      *(uint *)(this_ptr->unk3 + 0xd20) = auStack_58._12_4_;
+      *(uint *)(this_ptr->unk3 + 0xd24) = auStack_58._16_4_;
+      *(uint *)(this_ptr->unk3 + 0xd28) = auStack_58._20_4_;
     }
-    this_ptr->field10_0x648[0xd10] = '\0';
-    this_ptr->field10_0x648[0xd11] = '\0';
-    this_ptr->field10_0x648[0xd12] = -0x80;
-    this_ptr->field10_0x648[0xd13] = '?';
-    *(uint *)(this_ptr->field10_0x648 + 0xcf8) =
-         *(uint *)(this_ptr->field10_0x648 + 0xd04);
-    *(uint *)(this_ptr->field10_0x648 + 0xd00) =
-         *(uint *)(this_ptr->field10_0x648 + 0xd0c);
+    this_ptr->unk3[0xd10] = '\0';
+    this_ptr->unk3[0xd11] = '\0';
+    this_ptr->unk3[0xd12] = -0x80;
+    this_ptr->unk3[0xd13] = '?';
+    *(uint *)(this_ptr->unk3 + 0xcf8) = *(uint *)(this_ptr->unk3 + 0xd04);
+    *(uint *)(this_ptr->unk3 + 0xd00) = *(uint *)(this_ptr->unk3 + 0xd0c);
   }
   else {
     DAT_02f0cb1c = 0;
-    core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
-  uVar1 = *(uint *)(this_ptr->field10_0x648 + 0xcfc);
-  fVar2 = *(float *)(this_ptr->field10_0x648 + 0xcf8);
-  uVar3 = *(uint *)(this_ptr->field10_0x648 + 0xd00);
-  uVar4 = *(uint *)(this_ptr->field10_0x648 + 0xd08);
-  fVar5 = *(float *)(this_ptr->field10_0x648 + 0xd04);
-  uVar6 = *(uint *)(this_ptr->field10_0x648 + 0xd0c);
-  uVar7 = *(uint *)(this_ptr->field10_0x648 + 0xd10);
-  (this_ptr->base_actor).orient.heading = 0.0;
-  *(uint *)(this_ptr->field10_0x648 + 0xd5c) = uVar1;
-  *(uint *)(this_ptr->field10_0x648 + 0xd60) = uVar3;
-  *(uint *)(this_ptr->field10_0x648 + 0xd68) = uVar4;
-  *(uint *)(this_ptr->field10_0x648 + 0xd6c) = uVar6;
-  *(uint *)(this_ptr->field10_0x648 + 0xd70) = uVar7;
-  fVar8 = (this_ptr->base_actor).orient.heading;
-  *(float *)(this_ptr->field10_0x648 + 0xd58) = -fVar2;
-  *(float *)(this_ptr->field10_0x648 + 0xd64) = -fVar5;
-  (this_ptr->base_actor).orient.pitch = fVar8;
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
-  (*((this_ptr->base_actor).vtable._ub)->setup)(&this_ptr->base_actor);
+  uVar1 = *(uint *)(this_ptr->unk3 + 0xcfc);
+  fVar2 = *(float *)(this_ptr->unk3 + 0xcf8);
+  uVar3 = *(uint *)(this_ptr->unk3 + 0xd00);
+  uVar4 = *(uint *)(this_ptr->unk3 + 0xd08);
+  fVar5 = *(float *)(this_ptr->unk3 + 0xd04);
+  uVar6 = *(uint *)(this_ptr->unk3 + 0xd0c);
+  uVar7 = *(uint *)(this_ptr->unk3 + 0xd10);
+  (this_ptr->base).orient.heading = 0.0;
+  *(uint *)(this_ptr->unk3 + 0xd5c) = uVar1;
+  *(uint *)(this_ptr->unk3 + 0xd60) = uVar3;
+  *(uint *)(this_ptr->unk3 + 0xd68) = uVar4;
+  *(uint *)(this_ptr->unk3 + 0xd6c) = uVar6;
+  *(uint *)(this_ptr->unk3 + 0xd70) = uVar7;
+  fVar8 = (this_ptr->base).orient.heading;
+  *(float *)(this_ptr->unk3 + 0xd58) = -fVar2;
+  *(float *)(this_ptr->unk3 + 0xd64) = -fVar5;
+  (this_ptr->base).orient.pitch = fVar8;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
+  (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
   return;
 }

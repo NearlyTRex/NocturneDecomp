@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 62,
-        "line": 27,
-        "message": "'C3DSCamera' {aka 'struct C3DSCamera'} has no member named 'field17_0x1a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 49,
-        "line": 28,
-        "message": "'C3DSCamera' {aka 'struct C3DSCamera'} has no member named 'field17_0x1a0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -45,22 +32,28 @@
         "column": 54,
         "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 26,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 102,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 77
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -218,9 +211,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%d\\n\",pCVar2->cameras[0].field17_0x1a0);",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\",pCVar2->cameras[0].unk4);",
       "type": "stack_param"
     },
     {

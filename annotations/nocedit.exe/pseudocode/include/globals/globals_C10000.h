@@ -15,6 +15,7 @@ extern SRGBColorPalette g_CameraImagePaletteData;
 extern char g_LightBufferPool[25][307200];
 
 // int
+extern int INT_00c199f8;
 extern int g_CoronaMaxDepth;
 extern int g_CoronaDepthShift;
 extern int g_LightBufferPoolIndex;

@@ -10,7 +10,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec5e0(CWayPoint *this_ptr)
 
 {
   core_waypoint_cpp_FUN_005ec4f0();
-  core_trigger_cpp_CTrigger_FUN_005e1180(&this_ptr->base_trigger);
-  (*((this_ptr->base_trigger).base_actor.vtable._ub)->setup)((CDemonActor *)this_ptr);
+  core_trigger_cpp_CTrigger_FUN_005e1180(&this_ptr->base);
+  (*((this_ptr->base).base.vtable._ub)->setup)((CDemonActor *)this_ptr);
   return;
 }

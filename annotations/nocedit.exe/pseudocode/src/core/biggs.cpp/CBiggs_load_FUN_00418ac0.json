@@ -36,36 +36,36 @@
       },
       {
         "category": "other",
+        "column": 79,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
         "column": 14,
-        "line": 25,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 31,
+        "column": 14,
+        "line": 30,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 97,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 7,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 68
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -211,28 +211,28 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "model_ptr = &(in_stack_00000004->base_character).model;",
+      "text": "model_ptr = &(in_stack_00000004->base).model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].base_character.model.motion_controller.in_transition,",
+      "text": "(&in_stack_00000004[1].base.model.motion_controller.in_transition,\"morphing\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
-      "text": "((float *)in_stack_00000004[1].base_character.model.motion_controller.",
+      "text": "((float *)in_stack_00000004[1].base.model.motion_controller.current_motion_name,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_character.model.bone_transform.bone_rotations +",
+      "text": "((char **)(in_stack_00000004[1].base.model.bone_transform.bone_rotations + 0x5b),",
       "type": "stack_param"
     }
   ],

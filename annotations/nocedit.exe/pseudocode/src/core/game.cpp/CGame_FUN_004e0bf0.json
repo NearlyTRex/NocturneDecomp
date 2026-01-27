@@ -1,44 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 24,
-        "line": 23,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field101_0x38c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 28,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field101_0x38c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 32,
-        "line": 29,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field101_0x38c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 37,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field101_0x38c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 47,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field101_0x38c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 49,
-        "message": "'CGame' {aka 'struct CGame'} has no member named 'field101_0x38c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -50,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 201,
+    "complexity_score": 200,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 45,
     "suspect_count": 15,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 144
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -215,14 +178,14 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr->field101_0x38c + iVar3 * 4 + 0x500) = in_stack_0000000c;",
+      "text": "*(uint *)(this_ptr->unk13 + iVar3 * 4 + 0x500) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000010",
-      "text": "*(float *)(this_ptr->field101_0x38c + iVar3 * 4 + 0x514) = in_stack_00000010;",
+      "text": "*(float *)(this_ptr->unk13 + iVar3 * 4 + 0x514) = in_stack_00000010;",
       "type": "stack_param"
     },
     {
@@ -262,9 +225,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 42,
       "match": "in_stack_00000010",
-      "text": "in_stack_00000010;",
+      "text": "*(float *)(this_ptr->unk13 + this_ptr->status_display_count * 4 + 0x514) = in_stack_00000010;",
       "type": "stack_param"
     }
   ]

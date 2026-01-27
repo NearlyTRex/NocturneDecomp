@@ -31,9 +31,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
     *in_stack_00000014 = 3;
     return;
   }
-  local_50.x = *(float *)(in_stack_00000008 + 0x20) - (this_ptr->base_actor).location.position.x;
-  local_50.y = *(float *)(in_stack_00000008 + 0x24) - (this_ptr->base_actor).location.position.y;
-  local_50.z = *(float *)(in_stack_00000008 + 0x28) - (this_ptr->base_actor).location.position.z;
+  local_50.x = *(float *)(in_stack_00000008 + 0x20) - (this_ptr->base).location.position.x;
+  local_50.y = *(float *)(in_stack_00000008 + 0x24) - (this_ptr->base).location.position.y;
+  local_50.z = *(float *)(in_stack_00000008 + 0x28) - (this_ptr->base).location.position.z;
   if (0.0 <= in_stack_0000000c) {
     if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))
        || ((float)40 < ABS(local_50.z))) {
@@ -83,34 +83,34 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
   }
   local_50.y = 0.0;
   pCVar1 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                     (&this_ptr->base_actor,&local_44,&local_50);
+                     (&this_ptr->base,&local_44,&local_50);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar1);
-  *(float *)(this_ptr->field2_0x240c + 0xc) = pCVar1->y;
+  *(float *)(this_ptr->unk1 + 0xc) = pCVar1->y;
   if (*in_stack_00000014 == 0) {
-    if ((float)0.17453292519444399 < ABS(*(float *)(this_ptr->field2_0x240c + 0xc))) goto LAB_0042c771;
+    if ((float)0.17453292519444399 < ABS(*(float *)(this_ptr->unk1 + 0xc))) goto LAB_0042c771;
     if (*in_stack_00000014 != 1) goto LAB_0042c80e;
   }
   else {
-    if (ABS(*(float *)(this_ptr->field2_0x240c + 0xc)) < (float)0.034906585038888903) {
+    if (ABS(*(float *)(this_ptr->unk1 + 0xc)) < (float)0.034906585038888903) {
       *in_stack_00000014 = 0;
 LAB_0042c80e:
-      this_ptr->field2_0x240c[0xc] = '\0';
-      this_ptr->field2_0x240c[0xd] = '\0';
-      this_ptr->field2_0x240c[0xe] = '\0';
-      this_ptr->field2_0x240c[0xf] = '\0';
+      this_ptr->unk1[0xc] = '\0';
+      this_ptr->unk1[0xd] = '\0';
+      this_ptr->unk1[0xe] = '\0';
+      this_ptr->unk1[0xf] = '\0';
       goto LAB_0042c7cc;
     }
 LAB_0042c771:
     *in_stack_00000014 = 1;
   }
-  local_1c = *(float *)(this_ptr->field2_0x240c + 0xc);
-  local_18 = *(float *)(this_ptr->field2_0x240c + 0x2c);
+  local_1c = *(float *)(this_ptr->unk1 + 0xc);
+  local_18 = *(float *)(this_ptr->unk1 + 0x2c);
   fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_1c);
   fVar3 = -local_18;
   if ((fVar3 <= fVar2) && (fVar3 = fVar2, local_18 < fVar2)) {
     fVar3 = local_18;
   }
-  *(float *)(this_ptr->field2_0x240c + 0xc) = fVar3;
+  *(float *)(this_ptr->unk1 + 0xc) = fVar3;
 LAB_0042c7cc:
   (this_ptr->model).accumulated_root_motion.z = 0.0;
   (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;

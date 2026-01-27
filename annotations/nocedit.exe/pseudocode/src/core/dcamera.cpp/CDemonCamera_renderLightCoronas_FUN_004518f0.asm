@@ -44,7 +44,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c3e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0066ed68
+;   int INT_0066ed68 = -0x1
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CVector3i[15360] g_PrecomputedWorldPositions
 ;   undefined4 DAT_00902f78
@@ -154,7 +154,7 @@ section .text
     CMP dword ptr [EAX + 0x20],0x0      ; 004519ff
     JZ 0x00451ad6                       ; 00451a03
         ;   XREF to: 00451ad6 (CONDITIONAL_JUMP)  ; LAB_00451ad6
-    MOV dword ptr [0x0066ed68],0xffffffff ; 00451a09 | DAT_0066ed68
+    MOV dword ptr [0x0066ed68],0xffffffff ; 00451a09 | INT_0066ed68
     MOV EAX,dword ptr [ESP + 0x9c]      ; 00451a13
     CMP dword ptr [EAX + 0x20],0x2      ; 00451a1a
     JNZ 0x00451ad6                      ; 00451a1e

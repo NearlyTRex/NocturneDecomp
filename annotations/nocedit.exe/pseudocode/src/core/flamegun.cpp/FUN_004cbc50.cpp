@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_weapon_flamegun.cpp_FUN_004cbc50() */
-
 uint core_flamegun_cpp_FUN_004cbc50(void)
 
 {

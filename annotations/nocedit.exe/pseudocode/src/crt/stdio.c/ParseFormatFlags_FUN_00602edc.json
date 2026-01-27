@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 86,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 41,
-    "suspect_count": 3,
+    "pseudocode_lines": 46,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "special_crt_function",
-      "warning_struct_overlap"
+      "special_crt_function"
     ],
-    "total_lines": 103
+    "total_lines": 108
   },
   "cross_references": [
     {
@@ -101,13 +100,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Struct has overlapping fields",
-      "line": 2,
-      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
-      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
-      "type": "warning_struct_overlap"
-    },
     {
       "call_site_count": 1,
       "declared_params": 2,

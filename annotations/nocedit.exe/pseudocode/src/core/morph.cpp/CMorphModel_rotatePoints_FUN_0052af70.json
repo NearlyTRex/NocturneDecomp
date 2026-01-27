@@ -2,18 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 42,
-        "line": 43,
-        "message": "'CMorphModel' {aka 'struct CMorphModel'} has no member named 'field2_0x58'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 46,
-        "message": "'CMorphModel' {aka 'struct CMorphModel'} has no member named 'field2_0x58'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
         "column": 19,
         "line": 55,
@@ -24,18 +12,6 @@
         "column": 25,
         "line": 57,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 69,
-        "line": 77,
-        "message": "'CMorphModel' {aka 'struct CMorphModel'} has no member named 'field2_0x58'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 41,
-        "line": 78,
-        "message": "'CMorphModel' {aka 'struct CMorphModel'} has no member named 'field2_0x58'; did you mean 'field_0'?"
       }
     ],
     "success": false,
@@ -57,6 +33,12 @@
         "column": 50,
         "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -484,7 +466,7 @@
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_0000000c",
-      "text": "iVar8 = *(int *)(*(int *)this_ptr->field2_0x58 + iVar9) * 0x10 + in_stack_0000000c;",
+      "text": "iVar8 = *(int *)(*(int *)this_ptr->unk2 + iVar9) * 0x10 + in_stack_0000000c;",
       "type": "stack_param"
     },
     {

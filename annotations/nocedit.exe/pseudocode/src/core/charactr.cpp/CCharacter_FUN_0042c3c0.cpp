@@ -55,7 +55,7 @@ LAB_0042c50c:
 LAB_0042c429:
   if (*(int *)(in_stack_00000008 + 0x28) == 5) {
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&this_ptr->base_actor,&local_28,(CVector3f *)(in_stack_00000008 + 0x1c));
+              (&this_ptr->base,&local_28,(CVector3f *)(in_stack_00000008 + 0x1c));
     core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr);
   }
   if (0.0 < *(float *)(in_stack_00000008 + 8)) {
@@ -66,7 +66,7 @@ LAB_0042c429:
                                *(float *)(in_stack_00000008 + 8)));
     local_1c.z = (float)(int)ROUND(dVar2);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&this_ptr->base_actor,output_world_point,input_local_point);
+              (&this_ptr->base,output_world_point,input_local_point);
     core_gore_cpp_FUN_004edbb0();
   }
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {

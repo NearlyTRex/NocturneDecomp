@@ -2,14 +2,8 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 25,
-        "line": 25,
-        "message": "'CBaron' {aka 'struct CBaron'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
-        "column": 62,
+        "column": 56,
         "line": 25,
         "message": "cast from 'CBaron*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
@@ -166,14 +160,14 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000010",
-      "text": "(&this_ptr->field0_0x0,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
+      "text": "(&this_ptr->base,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_EBX",
-      "text": "(&this_ptr->field0_0x0,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
+      "text": "(&this_ptr->base,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
       "type": "unaffected_reg"
     },
     {

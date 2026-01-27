@@ -13,7 +13,7 @@ core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290
 {
   int iVar1;
   
-  property_list->field0_0x0 = (int)this_ptr;
+  property_list->unk = (int)this_ptr;
   core_actor_cpp_CActorPropertyList_FUN_0040e290(property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e260(property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e260(property_list);

@@ -9,6 +9,24 @@
       },
       {
         "category": "other",
+        "column": 15,
+        "line": 39,
+        "message": "request for member '_0_4_' in 'g_RedMask16', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 41,
+        "message": "request for member '_0_4_' in 'g_GreenMask16', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 43,
+        "message": "request for member '_0_4_' in 'g_BlueMask16', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
+      },
+      {
+        "category": "other",
         "column": 16,
         "line": 44,
         "message": "request for member '_0_4_' in 'g_BlueMask32', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
@@ -62,12 +80,12 @@
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 136,
+    "complexity_score": 166,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 25,
     "pseudocode_lines": 41,
-    "suspect_count": 8,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -93,19 +111,19 @@
     {
       "addr": "00682748",
       "name": "g_RedMask16",
-      "type": "uint",
+      "type": "ulonglong",
       "value": "0xf800"
     },
     {
       "addr": "00682750",
       "name": "g_GreenMask16",
-      "type": "uint",
+      "type": "ulonglong",
       "value": "0x7e0"
     },
     {
       "addr": "00682758",
       "name": "g_BlueMask16",
-      "type": "uint",
+      "type": "ulonglong",
       "value": "0x1f"
     },
     {
@@ -311,6 +329,27 @@
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_ColorTable16 + iVar7) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "text": "g_RedMask16._0_4_ = uVar9 << ((byte)g_RedBitPosition & 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 34,
+      "match": "._0_4_",
+      "text": "g_GreenMask16._0_4_ = uVar6 << ((byte)g_GreenBitPosition & 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._0_4_",
+      "text": "g_BlueMask16._0_4_ = uVar4 << ((byte)g_BlueBitPosition & 0x1f);",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",

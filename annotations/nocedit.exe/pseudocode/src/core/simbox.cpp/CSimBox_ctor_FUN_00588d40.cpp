@@ -16,7 +16,7 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00588d40(CSimBox *this_ptr)
   char *pcVar5;
   float *pfVar6;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)(pCVar3[1].model_name + 0xc));

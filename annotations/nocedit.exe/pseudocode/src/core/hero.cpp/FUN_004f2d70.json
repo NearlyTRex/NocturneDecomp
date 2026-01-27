@@ -8,44 +8,14 @@
         "message": "ambiguating new declaration of 'int core_hero_cpp_FUN_004f2d70()'"
       },
       {
-        "category": "missing_member",
-        "column": 28,
-        "line": 27,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_108'?"
-      },
-      {
         "category": "other",
         "column": 9,
         "line": 29,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 78,
-        "line": 36,
-        "message": "'CDoor' {aka 'struct CDoor'} has no member named 'field17_0x9bc'"
-      },
-      {
-        "category": "missing_member",
-        "column": 36,
-        "line": 38,
-        "message": "'CDoor' {aka 'struct CDoor'} has no member named 'field17_0x9bc'"
-      },
-      {
-        "category": "missing_member",
-        "column": 79,
-        "line": 39,
-        "message": "'CDoor' {aka 'struct CDoor'} has no member named 'field17_0x9bc'"
-      },
-      {
-        "category": "missing_member",
-        "column": 36,
-        "line": 55,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_108'?"
-      },
-      {
         "category": "other",
-        "column": 52,
+        "column": 43,
         "line": 55,
         "message": "cast from 'CDoor*' to 'int' loses precision [-fpermissive]"
       }
@@ -311,14 +281,14 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x179].field17_0x104 = 0;",
+      "text": "in_stack_00000004[0x179].unk7 = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "fVar3 = (in_stack_00000004->location).position.x - *(float *)this_ptr->field17_0x9bc;",
+      "text": "fVar3 = (in_stack_00000004->location).position.x - *(float *)this_ptr->unk3;",
       "type": "stack_param"
     },
     {
@@ -332,14 +302,14 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
-      "text": "fVar4 = (in_stack_00000004->location).position.z - *(float *)(this_ptr->field17_0x9bc + 8);",
+      "text": "fVar4 = (in_stack_00000004->location).position.z - *(float *)(this_ptr->unk3 + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&local_24,&(this_ptr->base_actor).location.position);",
+      "text": "(in_stack_00000004,&local_24,&(this_ptr->base).location.position);",
       "type": "stack_param"
     },
     {
@@ -360,7 +330,7 @@
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x179].field17_0x104 = (int)this_ptr;",
+      "text": "in_stack_00000004[0x179].unk7 = (int)this_ptr;",
       "type": "stack_param"
     }
   ]

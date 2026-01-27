@@ -37,6 +37,9 @@ SCollisionInfo DAT_03f8fae8[100] = {};
 SMRGLTextureBasic g_CurrentTexture = {};
 
 // float
+float FLOAT_03f875f0 = {};
+float FLOAT_03f875f4 = {};
+float FLOAT_03f875f8 = {};
 float g_WaterAnimationPhase = {};
 
 // int
@@ -49,6 +52,7 @@ int g_CurrentTextureIndex = {};
 int g_WaterAnimationTimer = {};
 int g_WaterCurrentFrame = {};
 int g_VisibleWaterTileCount = {};
+int INT_03f8f62c = {};
 
 // int[4096]
 int g_VisibleWaterTilesX[4096] = {};

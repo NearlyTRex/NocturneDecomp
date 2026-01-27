@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_other_lever.cpp_FUN_00504dd0(uint param_1, uint param_2)
-    */
-
 CVector3f * core_lever_cpp_FUN_00504dd0(void)
 
 {

@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428e30(CCharacter *this_ptr)
   float fStack_30;
   float fStack_2c;
   
-  iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr);
+  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr);
   if (0 < iVar1) {
     return;
   }
@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428e30(CCharacter *this_ptr)
     fStack_30 = in_stack_0000000c[1];
     fStack_2c = in_stack_0000000c[2];
   }
-  (*(((this_ptr->base_actor).vtable._uc)->_uc).processDamage)(this_ptr,(SDamageInfo *)&iStack_40);
+  (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,(SDamageInfo *)&iStack_40);
   iStack_40 = 0x428ed0;
   core_charactr_cpp_CCharacter_FUN_0042d060(this_ptr);
   return;

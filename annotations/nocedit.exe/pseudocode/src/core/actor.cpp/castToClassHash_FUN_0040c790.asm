@@ -14,9 +14,9 @@
 ;   core_ammo.cpp_FUN_004112b0 at 004112bc
 ;   core_ammobox.cpp_FUN_00411a30 at 00411a42
 ;   core_ammobox.cpp_FUN_00411ab0 at 00411abc
+;   core_baron.cpp_CBaronWeapon_FUN_00413f20 at 00413f5f
+;   core_baron.cpp_CBaron_FUN_004135e0 at 00413667
 ;   core_baron.cpp_FUN_00413470 at 004134a1
-;   core_baron.cpp_FUN_004135e0 at 00413667
-;   core_baron.cpp_FUN_00413f20 at 00413f5f
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 004170f6
 ;   ... and 141 more
 ;

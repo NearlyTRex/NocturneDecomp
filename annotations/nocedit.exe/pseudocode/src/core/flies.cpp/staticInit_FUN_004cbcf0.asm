@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_flies.cpp_staticInit_FUN_004cbcf0(void)
+; __cdecl void core_flies.cpp_staticInit_FUN_004cbcf0(void)
 ;
 ;
 ; Referenced Globals:

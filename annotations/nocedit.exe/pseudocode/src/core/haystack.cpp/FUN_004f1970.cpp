@@ -34,24 +34,24 @@ LAB_004f19bc:
     case 0x69:
     case 0x6b:
       iVar1 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
-                        ((double)(in_stack_00000004->base_actor).location.position.x,
-                         (double)(in_stack_00000004->base_actor).location.position.y,
-                         (double)(in_stack_00000004->base_actor).location.position.z,40.0);
+                        ((double)(in_stack_00000004->base).location.position.x,
+                         (double)(in_stack_00000004->base).location.position.y,
+                         (double)(in_stack_00000004->base).location.position.z,40.0);
       if (iVar1 != 0) {
-        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                  (&in_stack_00000004->base_actor,"box-swing?.wav");
+        (*((in_stack_00000004->base).vtable._ub)->playSound)
+                  (&in_stack_00000004->base,"box-swing?.wav");
       }
       break;
     case 0x68:
     case 0x6a:
     case 0x6c:
       iVar1 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
-                        ((double)(in_stack_00000004->base_actor).location.position.x,
-                         (double)(in_stack_00000004->base_actor).location.position.y,
-                         (double)(in_stack_00000004->base_actor).location.position.z,40.0);
+                        ((double)(in_stack_00000004->base).location.position.x,
+                         (double)(in_stack_00000004->base).location.position.y,
+                         (double)(in_stack_00000004->base).location.position.z,40.0);
       if ((iVar1 != 0) && (iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.4), iVar1 != 0)) {
-        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                  (&in_stack_00000004->base_actor,"box-punch?.wav");
+        (*((in_stack_00000004->base).vtable._ub)->playSound)
+                  (&in_stack_00000004->base,"box-punch?.wav");
       }
       break;
     default:

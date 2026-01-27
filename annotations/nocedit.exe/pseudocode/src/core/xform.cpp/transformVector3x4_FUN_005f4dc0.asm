@@ -9,8 +9,8 @@
 ; CMatrix3x4f *    Stack[0xc]:4   matrix
 ;
 ; XREF[52]:
+;   core_baron.cpp_CBaron_FUN_004136b0 at 00413972
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 0041326b
-;   core_baron.cpp_FUN_004136b0 at 00413972
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041579c
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416f9e
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c67e

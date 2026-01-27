@@ -13,7 +13,7 @@ void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor *this_ptr
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x23f);
-  this_ptr->field19_0x114 = 0;
+  this_ptr->unk8 = 0;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr);
   this_ptr_00 = (*((this_ptr->vtable)._ub)->getPathMap)(this_ptr);
   if (this_ptr_00 == (CPathMap *)0x0) {

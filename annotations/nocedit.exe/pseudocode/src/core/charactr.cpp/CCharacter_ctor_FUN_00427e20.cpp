@@ -16,7 +16,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   uint local_c [3];
   float *pfVar5;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
             ((CDeformableModelInstance *)(pCVar1 + 1));
   iVar2 = core_cloth_cpp_FUN_0043bf40();
@@ -65,15 +65,15 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   *(uint *)((int)pvVar3 + -0xde8) = 0xffffffff;
   pCVar4 = (CCharacter *)((int)pvVar3 + -0x33cc);
   do {
-    pfVar5 = &(pCVar4->base_actor).orient_matrix.m[0].z;
-    pCVar4->carry_hands[0].field0_0x0[0] = -1;
-    pCVar4->carry_hands[0].field0_0x0[1] = -1;
-    pCVar4->carry_hands[0].field0_0x0[2] = -1;
-    pCVar4->carry_hands[0].field0_0x0[3] = -1;
-    pCVar4->carry_hands[0].field0_0x0[4] = -1;
-    pCVar4->carry_hands[0].field0_0x0[5] = -1;
-    pCVar4->carry_hands[0].field0_0x0[6] = -1;
-    pCVar4->carry_hands[0].field0_0x0[7] = -1;
+    pfVar5 = &(pCVar4->base).orient_matrix.m[0].z;
+    pCVar4->carry_hands[0].unk1[0] = -1;
+    pCVar4->carry_hands[0].unk1[1] = -1;
+    pCVar4->carry_hands[0].unk1[2] = -1;
+    pCVar4->carry_hands[0].unk1[3] = -1;
+    pCVar4->carry_hands[0].unk1[4] = -1;
+    pCVar4->carry_hands[0].unk1[5] = -1;
+    pCVar4->carry_hands[0].unk1[6] = -1;
+    pCVar4->carry_hands[0].unk1[7] = -1;
     pCVar4->carry_hands[0].carry_actor = (CDemonActor *)0x0;
     pCVar4 = (CCharacter *)pfVar5;
   } while (pfVar5 != (float *)((int)pvVar3 + -0x3344));

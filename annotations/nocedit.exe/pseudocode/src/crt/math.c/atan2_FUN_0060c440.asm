@@ -15,14 +15,14 @@
 ; Referenced Globals:
 ;   undefined4 DAT_006874d4
 ;   void* PTR_FUN_006874e4 = 0060c5a0
-;   undefined4 DAT_00687518
-;   undefined4 DAT_0068751c
-;   undefined4 DAT_00687520
-;   undefined4 DAT_0068752a
-;   undefined4 DAT_00687534
-;   undefined4 DAT_0068753e
-;   undefined4 DAT_00687548
-;   undefined4 DAT_00687552
+;   float FLOAT_00687518 = 16
+;   float FLOAT_0068751c = 0.0625
+;   float10 FLOAT10_00687520 = -0.3333333333333333333
+;   float10 FLOAT10_0068752a = 0.1999999999999994471
+;   float10 FLOAT10_00687534 = -0.1428571428555127940
+;   float10 FLOAT10_0068753e = 0.1111111089064621512
+;   float10 FLOAT10_00687548 = -0.09090758475228815823
+;   float10 FLOAT10_00687552 = 0.07641690805844016167
 ;   undefined4 DAT_0068755c
 ;
 ; Called Functions:
@@ -87,13 +87,13 @@ section .text
     CALL crt_math.c_function_dispatch_FUN_00606a77 ; 0060c4d6
         ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
     POP EAX                             ; 0060c4db
-    FLD float ptr [0x00687518]          ; 0060c4dc | DAT_00687518
+    FLD float ptr [0x00687518]          ; 0060c4dc | FLOAT_00687518
     FMUL ST1                            ; 0060c4e2
     FISTP dword ptr [ESP + 0x20]        ; 0060c4e4
     MOV ECX,dword ptr [ESP + 0x20]      ; 0060c4e8
     SHL ECX,0x4                         ; 0060c4ec
     FILD dword ptr [ESP + 0x20]         ; 0060c4ef
-    FMUL float ptr [0x0068751c]         ; 0060c4f3 | DAT_0068751c
+    FMUL float ptr [0x0068751c]         ; 0060c4f3 | FLOAT_0068751c
     FLD ST1                             ; 0060c4f9
     FSUB ST0,ST1                        ; 0060c4fb
     FXCH                                ; 0060c4fd
@@ -111,23 +111,23 @@ section .text
     FMUL ST1                            ; 0060c51b
     FLD ST0                             ; 0060c51d
     FMUL ST1                            ; 0060c51f
-    FLD extended double ptr [0x00687552] ; 0060c521 | DAT_00687552
-    FLD extended double ptr [0x00687548] ; 0060c527 | DAT_00687548
+    FLD extended double ptr [0x00687552] ; 0060c521 | FLOAT10_00687552
+    FLD extended double ptr [0x00687548] ; 0060c527 | FLOAT10_00687548
     FXCH                                ; 0060c52d
     FMUL ST2                            ; 0060c52f
-    FLD extended double ptr [0x0068753e] ; 0060c531 | DAT_0068753e
+    FLD extended double ptr [0x0068753e] ; 0060c531 | FLOAT10_0068753e
     FXCH ST2                            ; 0060c537
     FMUL ST3                            ; 0060c539
-    FLD extended double ptr [0x00687534] ; 0060c53b | DAT_00687534
+    FLD extended double ptr [0x00687534] ; 0060c53b | FLOAT10_00687534
     FXCH ST2                            ; 0060c541
     FMUL ST5                            ; 0060c543
     FXCH ST3                            ; 0060c545
     FMULP ST4                           ; 0060c547
-    FLD extended double ptr [0x0068752a] ; 0060c549 | DAT_0068752a
+    FLD extended double ptr [0x0068752a] ; 0060c549 | FLOAT10_0068752a
     FXCH ST3                            ; 0060c54f
     FADDP ST4,ST0                       ; 0060c551
     MOV EAX,dword ptr [ESP + 0x14]      ; 0060c553
-    FLD extended double ptr [0x00687520] ; 0060c557 | DAT_00687520
+    FLD extended double ptr [0x00687520] ; 0060c557 | FLOAT10_00687520
     FXCH                                ; 0060c55d
     SHL EAX,0x10                        ; 0060c55f
     FMUL ST6                            ; 0060c562

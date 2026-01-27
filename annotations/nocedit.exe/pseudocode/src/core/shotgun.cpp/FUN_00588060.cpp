@@ -116,8 +116,7 @@ uint core_shotgun_cpp_FUN_00588060(void)
                    core_actor_cpp_castToClassHash_FUN_0040c790
                              (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
         if ((this_ptr != (CCharacter *)0x0) &&
-           (iVar2 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr), 0 < iVar2)
-           ) {
+           (iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr), 0 < iVar2)) {
           this_ptr = (CCharacter *)0x0;
         }
         pCStack_20 = (CGlass *)
@@ -164,11 +163,11 @@ uint core_shotgun_cpp_FUN_00588060(void)
           }
         }
         else {
-          iVar2 = (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc3)();
+          iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).cfunc3)();
           if (iVar2 != 0) break;
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_128);
           auStack_128._4_4_ = pCStack_34;
-          auStack_128._0_4_ = g_CDemonSetPtr->field11_0x14d148;
+          auStack_128._0_4_ = g_CDemonSetPtr->unk1;
           fStack_120 = 0.4;
           fStack_a4 = (g_CDemonSetPtr->collision_result_vec2).x -
                       (g_CDemonSetPtr->collision_result_vec1).x;
@@ -187,8 +186,8 @@ uint core_shotgun_cpp_FUN_00588060(void)
             fStack_114 = fStack_e4;
           }
           pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                             (&this_ptr->base_actor,aCStack_e0,
-                              &g_CDemonSetPtr->collision_impact_position);
+                             (&this_ptr->base,aCStack_e0,&g_CDemonSetPtr->collision_impact_position)
+          ;
           if (&CStack_10c != pCVar1) {
             CStack_10c.x = pCVar1->x;
             CStack_10c.y = pCVar1->y;
@@ -199,7 +198,7 @@ uint core_shotgun_cpp_FUN_00588060(void)
           fStack_fc = 0.15;
           pCStack_f4 = in_stack_00000004;
           pCStack_ec = (*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);
-          (*(((this_ptr->base_actor).vtable._uc)->_uc).processDamage)
+          (*(((this_ptr->base).vtable._uc)->_uc).processDamage)
                     (this_ptr,(SDamageInfo *)(auStack_128 + 4));
           if (in_stack_00000004[2].orient.bank == 0.0) break;
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0

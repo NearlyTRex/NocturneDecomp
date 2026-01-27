@@ -122,12 +122,6 @@
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 47,
-        "line": 211,
-        "message": "'CEditorTools' {aka 'struct CEditorTools'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 43,
         "line": 214,
@@ -524,12 +518,12 @@
   },
   "complexity": {
     "assembly_lines": 979,
-    "complexity_score": 3602,
+    "complexity_score": 3582,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 35,
     "pseudocode_lines": 472,
-    "suspect_count": 310,
+    "suspect_count": 308,
     "suspect_types": [
       "format_string_mismatch",
       "param_count_too_few",
@@ -808,14 +802,14 @@
     },
     {
       "addr": "0310fcd8",
-      "name": "DAT_0310fcd8",
-      "type": "undefined4",
+      "name": "CEdScrollBar_0310fcd8",
+      "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "0310fd0c",
-      "name": "DAT_0310fd0c",
-      "type": "undefined4",
+      "name": "CEdScrollBar_0310fd0c",
+      "type": "CEdScrollBar",
       "value": null
     },
     {
@@ -1128,20 +1122,6 @@
       "line": 44,
       "match": "DAT_0310fd40",
       "text": "DAT_0310fd40 = DAT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_0310fd0c",
-      "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fd0c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0310fcd8",
-      "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fcd8);",
       "type": "undefined_data"
     },
     {
@@ -1575,7 +1555,7 @@
       "description": "Unresolved stack parameter",
       "line": 204,
       "match": "in_stack_00000088",
-      "text": "in_stack_00000088 = &g_CEditorToolsPtr->field0_0x0;",
+      "text": "in_stack_00000088 = &g_CEditorToolsPtr->unk;",
       "type": "stack_param"
     },
     {

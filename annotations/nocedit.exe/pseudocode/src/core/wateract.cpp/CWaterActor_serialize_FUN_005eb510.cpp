@@ -9,7 +9,7 @@
 void __cdecl core_wateract_cpp_CWaterActor_serialize_FUN_005eb510(CWaterActor *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->size,"size");
   core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->opacity,"opacity");
   if (g_CWaterActorVersion == 2) {

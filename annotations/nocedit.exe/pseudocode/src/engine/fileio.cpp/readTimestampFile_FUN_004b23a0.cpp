@@ -90,7 +90,7 @@ LAB_004b246f:
     }
     new_size = new_size + 0x148;
     pSVar6 = &local_160;
-    pcVar2 = pSVar4->field1_0x4 + local_14 + -4;
+    pcVar2 = pSVar4->unk1 + local_14 + -4;
     for (iVar3 = 0x52; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(int *)pcVar2 = pSVar6->record_start;
       pSVar6 = (STimestampRecord *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);

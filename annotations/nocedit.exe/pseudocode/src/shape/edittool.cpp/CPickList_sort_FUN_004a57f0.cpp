@@ -20,6 +20,6 @@ shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,int sort_type
     g_CurrentLineNumber = 0x108e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::sort - can't do this after setting hotkeys (yet)");
   }
-  shape_edittool_cpp_CStrList_sort_FUN_004a2f00(&this_ptr->base_strlist,sort_type,sort_order);
+  shape_edittool_cpp_CStrList_sort_FUN_004a2f00(&this_ptr->base,sort_type,sort_order);
   return;
 }

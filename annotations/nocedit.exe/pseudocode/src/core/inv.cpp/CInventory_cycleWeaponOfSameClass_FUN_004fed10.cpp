@@ -47,7 +47,7 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
                               (this_ptr->items[iVar2],g_CWeaponClassInfo.name_hash);
       if (this_ptr_01 != (CWeapon *)0x0) {
         str2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
-                         (&this_ptr->selected_weapon->base_actor);
+                         (&this_ptr->selected_weapon->base);
         str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)this_ptr_01)
         ;
         iVar1 = crt_string_c_strcmp_FUN_005fef20(str1,str2);
@@ -57,7 +57,7 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
             return;
           }
           if (this_ptr_00 != (CWeapon *)0x0) {
-            (*((this_ptr_00->base_actor).vtable._ub)->process)(&this_ptr_00->base_actor,0.1);
+            (*((this_ptr_00->base).vtable._ub)->process)(&this_ptr_00->base,0.1);
           }
           this_ptr->selected_weapon = unaff_EDI;
           core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);

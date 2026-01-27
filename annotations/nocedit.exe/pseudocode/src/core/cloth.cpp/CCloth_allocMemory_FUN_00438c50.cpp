@@ -13,8 +13,8 @@ void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_00438c50(CCloth *this_ptr)
   
   core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0();
   pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                     (*(int *)(this_ptr->padding_0x0 + 0x104) << 2,"..\\core\\cloth.cpp",0x76);
-  *(void **)(this_ptr->padding_0x0 + 0x3fe3c) = pvVar1;
+                     (*(int *)(this_ptr->unk + 0x104) << 2,"..\\core\\cloth.cpp",0x76);
+  *(void **)(this_ptr->unk + 0x3fe3c) = pvVar1;
   if (pvVar1 != (void *)0x0) {
     return;
   }

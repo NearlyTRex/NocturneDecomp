@@ -33,8 +33,8 @@
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02f37ed0
-;   undefined4 DAT_02f37ef0
+;   int INT_02f37ed0
+;   int INT_02f37ef0
 ;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
@@ -120,7 +120,7 @@ section .text
     JZ 0x0052683f                       ; 00526836
         ;   XREF to: 0052683f (CONDITIONAL_JUMP)  ; LAB_0052683f
     MOV dword ptr [ESP],0x3fc90fdb      ; 00526838
-    MOV EDX,dword ptr [0x02f37ed0]      ; 0052683f | DAT_02f37ed0
+    MOV EDX,dword ptr [0x02f37ed0]      ; 0052683f | INT_02f37ed0
         ;   Label: LAB_0052683f
     LEA EAX,[EDX*0x4 + 0x0]             ; 00526845
     SUB EAX,EDX                         ; 0052684c
@@ -266,7 +266,7 @@ section .text
     JZ 0x00526ae0                       ; 005269d2
         ;   XREF to: 00526ae0 (CONDITIONAL_JUMP)  ; LAB_00526ae0
     PUSH 0x59ddb0                       ; 005269d8
-    MOV ECX,dword ptr [0x02f37ef0]      ; 005269dd | DAT_02f37ef0
+    MOV ECX,dword ptr [0x02f37ef0]      ; 005269dd | INT_02f37ef0
     PUSH ECX                            ; 005269e3
     PUSH dword ptr [EBX + 0xbf8c]       ; 005269e4
     PUSH 0x40c00000                     ; 005269ea
@@ -288,7 +288,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00526a14
     MOVSD ES:EDI,ESI                    ; 00526a15
     PUSH 0x59ddb0                       ; 00526a16
-    MOV ESI,dword ptr [0x02f37ef0]      ; 00526a1b | DAT_02f37ef0
+    MOV ESI,dword ptr [0x02f37ef0]      ; 00526a1b | INT_02f37ef0
     PUSH ESI                            ; 00526a21
     LEA EAX,[ESP + 0x10]                ; 00526a22
     PUSH dword ptr [EBX + 0xbf8c]       ; 00526a26
@@ -306,7 +306,7 @@ section .text
     ADD ESP,0x4                         ; 00526a50
     LEA EDI,[ESP + 0x8]                 ; 00526a53
     PUSH 0x59ddb0                       ; 00526a57
-    MOV EAX,[0x02f37ef0]                ; 00526a5c | DAT_02f37ef0
+    MOV EAX,[0x02f37ef0]                ; 00526a5c | INT_02f37ef0
     LEA ESI,[ESP + 0x1c]                ; 00526a61
     PUSH EAX                            ; 00526a65
     MOVSD ES:EDI,ESI                    ; 00526a66
@@ -358,7 +358,7 @@ section .text
         ;   XREF to: 00526962 (UNCONDITIONAL_JUMP)  ; LAB_00526962
     PUSH 0x59ddb0                       ; 00526ae0
         ;   Label: LAB_00526ae0
-    MOV EDX,dword ptr [0x02f37ef0]      ; 00526ae5 | DAT_02f37ef0
+    MOV EDX,dword ptr [0x02f37ef0]      ; 00526ae5 | INT_02f37ef0
     PUSH EDX                            ; 00526aeb
     PUSH dword ptr [EBX + 0xbf8c]       ; 00526aec
     PUSH 0x40c00000                     ; 00526af2

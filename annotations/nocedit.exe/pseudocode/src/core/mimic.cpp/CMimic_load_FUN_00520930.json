@@ -6,12 +6,6 @@
         "column": 6,
         "line": 11,
         "message": "ambiguating new declaration of 'void core_mimic_cpp_CMimic_load_FUN_00520930()'"
-      },
-      {
-        "category": "missing_member",
-        "column": 71,
-        "line": 22,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
       }
     ],
     "success": false,
@@ -36,48 +30,54 @@
       },
       {
         "category": "other",
-        "column": 79,
-        "line": 25,
+        "column": 60,
+        "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 69,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 29,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
+        "line": 35,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 73,
         "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 40,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 47,
+        "column": 71,
+        "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 133,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 9,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 34,
     "suspect_count": 9,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 114
+    "total_lines": 110
   },
   "cross_references": [],
   "function": {
@@ -249,42 +249,42 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "model_ptr = &(in_stack_00000004->base_character).model;",
+      "text": "model_ptr = &(in_stack_00000004->base).model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.field7_0x6c,",
+      "text": "((char **)&in_stack_00000004[1].base.base.unk1,\"attackCondition\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
-      "text": "((int *)(in_stack_00000004[6].base_character.cloth_data + 0x1b24),\"attackMode\")",
+      "text": "((int *)(in_stack_00000004[6].base.cloth_data + 0x1b24),\"attackMode\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000004",
-      "text": "((CDemonActor *)(in_stack_00000004[6].base_character.cloth_data + 0x1b28),",
+      "text": "((CDemonActor *)(in_stack_00000004[6].base.cloth_data + 0x1b28),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[6].base_character.cloth_data + 0x1b2c),",
+      "text": "((char **)(in_stack_00000004[6].base.cloth_data + 0x1b2c),\"morphActorType\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 36,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.actor_name + 8),",
+      "text": "((char **)(in_stack_00000004[1].base.base.actor_name + 8),\"mirrorCondition\");",
       "type": "stack_param"
     }
   ],

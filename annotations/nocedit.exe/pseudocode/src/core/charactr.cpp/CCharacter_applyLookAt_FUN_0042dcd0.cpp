@@ -24,14 +24,13 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *t
   CQuaternion4f local_14;
   
   bVar4 = 0;
-  if (0.0 < *(float *)(this_ptr->field11_0x25a0 + 0x40)) {
-    if (*(int *)(this_ptr->field11_0x25a0 + 0x44) < 0) {
+  if (0.0 < *(float *)(this_ptr->unk2 + 0x40)) {
+    if (*(int *)(this_ptr->unk2 + 0x44) < 0) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
       g_CurrentLineNumber = 0xde5;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::applyLookAt - never set lookAtHeadBone for actor %s",this_ptr);
     }
-    core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
-              (*(float *)(this_ptr->field11_0x25a0 + 0x3c),&local_24);
+    core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(*(float *)(this_ptr->unk2 + 0x3c),&local_24);
     local_44.w = local_24.w;
     puVar2 = (uint *)((int)&local_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     puVar1 = (uint *)((int)&local_24 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
@@ -40,8 +39,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *t
     *puVar2 = *puVar1;
     puVar2[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
     pCVar5 = &local_44;
-    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
-              (*(float *)(this_ptr->field11_0x25a0 + 0x38),&local_14);
+    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(*(float *)(this_ptr->unk2 + 0x38),&local_14);
     local_54.w = local_14.w;
     puVar2 = (uint *)((int)&local_54 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     puVar1 = (uint *)((int)&local_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
@@ -58,11 +56,9 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *t
     *puVar2 = *puVar1;
     puVar2[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((this_ptr->model).bone_transform.bone_rotations +
-               *(int *)(this_ptr->field11_0x25a0 + 0x44),&local_64,
-               *(float *)(this_ptr->field11_0x25a0 + 0x40),&local_34);
-    pCVar5 = (this_ptr->model).bone_transform.bone_rotations +
-             *(int *)(this_ptr->field11_0x25a0 + 0x44);
+              ((this_ptr->model).bone_transform.bone_rotations + *(int *)(this_ptr->unk2 + 0x44),
+               &local_64,*(float *)(this_ptr->unk2 + 0x40),&local_34);
+    pCVar5 = (this_ptr->model).bone_transform.bone_rotations + *(int *)(this_ptr->unk2 + 0x44);
     puVar2 = (uint *)((int)pCVar5 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar5->w = local_34.w;
     puVar3 = puVar2 + (uint)bVar4 * -2 + 1;

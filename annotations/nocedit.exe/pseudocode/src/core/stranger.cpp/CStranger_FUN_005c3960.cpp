@@ -63,7 +63,7 @@ void core_stranger_cpp_CStranger_FUN_005c3960(void)
   
   local_24 = (int *)(in_stack_00000004[0x17a].actor_name + 0x18);
   if (in_stack_00000008 == 1) {
-    local_24 = &in_stack_00000004[0x179].field28_0x150;
+    local_24 = &in_stack_00000004[0x179].unk15;
   }
   fVar8 = in_stack_00000004[0x17a].orient_matrix.m[0].x;
   if (fVar8 == 0.0) {
@@ -90,12 +90,12 @@ void core_stranger_cpp_CStranger_FUN_005c3960(void)
     }
     local_30 = (CDemonActor_vtable *)0xbfa78d36;
     local_2c = (CDemonActor_vtable *)0x3f060a92;
-    iVar6 = DAT_03f6bb00;
-    iVar7 = DAT_03f6bad8;
+    iVar6 = INT_03f6bb00;
+    iVar7 = INT_03f6bad8;
   }
   else {
-    iVar6 = DAT_03f6bb04;
-    iVar7 = DAT_03f6badc;
+    iVar6 = INT_03f6bb04;
+    iVar7 = INT_03f6badc;
     if (local_48 == 0) {
       local_2c = (CDemonActor_vtable *)0x3fa78d36;
       local_30 = (CDemonActor_vtable *)0xbf060a92;
@@ -105,8 +105,8 @@ void core_stranger_cpp_CStranger_FUN_005c3960(void)
       local_30 = (CDemonActor_vtable *)0xbf060a92;
     }
   }
-  fVar8 = (float)in_stack_00000004[0x8d].field11_0xdc * (float)3.1415926535000001 *
-          (float)2 * in_stack_0000000c + (float)*local_24;
+  fVar8 = (float)in_stack_00000004[0x8d].unk2 * (float)3.1415926535000001 * (float)2 *
+          in_stack_0000000c + (float)*local_24;
   ((CDemonActor_union_vtable *)(local_24 + 1))->_ub = (CDemonActor_vtable *)0x0;
   *local_24 = (int)fVar8;
   if (fVar8 < -1.047198f) {
@@ -177,17 +177,17 @@ void core_stranger_cpp_CStranger_FUN_005c3960(void)
               (&CStack_128,(CVector3f *)(auStack_d4 + 4),(CVector3f *)(auStack_b0 + 4));
     iStack_20 = 0x7149f2ca;
     iStack_3c = 0;
-    for (iStack_40 = 0; iStack_40 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 16000);
+    for (iStack_40 = 0; iStack_40 < *(int *)(g_CDemonSetPtr->unk4 + 16000);
         iStack_40 = iStack_40 + 1) {
       this_ptr = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_3c + 0x3e84)
-                            ,g_CCharacterClassInfo.name_hash);
+                           (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iStack_3c + 0x3e84),
+                            g_CCharacterClassInfo.name_hash);
       if ((this_ptr == (CCharacter *)0x0) ||
-         ((iVar6 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr), iVar6 == 0
-          && (iVar6 = (*((this_ptr->base_actor).vtable._ub)->shouldIgnoreForTargeting)
-                                ((CDemonActor *)this_ptr), iVar6 == 0)))) {
-        pCStack_1c = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_3c + 0x3e84);
+         ((iVar6 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr), iVar6 == 0 &&
+          (iVar6 = (*((this_ptr->base).vtable._ub)->shouldIgnoreForTargeting)
+                             ((CDemonActor *)this_ptr), iVar6 == 0)))) {
+        pCStack_1c = *(CDemonActor **)(g_CDemonSetPtr->unk4 + iStack_3c + 0x3e84);
         crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                   (auStack_1a0,10,&g_CVectorTypeInfo);
         iStack_20 = (*((pCStack_1c->vtable)._ub)->getTargetPoints)

@@ -8,9 +8,9 @@
 // Structure: CCurtain
 // Ghidra size: 0x65b38 (416568 bytes)
 typedef struct CCurtain {
-    CDemonActor base_actor; // 0x0
+    CDemonActor base; // 0x0
     CVector3f curtain_size; // 0x158
-    char field_356[8]; // 0x164
+    char unk1[8]; // 0x164
     char curtain_texture[16]; // 0x16c
     int opacity; // 0x17c
     int cinched_top; // 0x180
@@ -22,14 +22,14 @@ typedef struct CCurtain {
     int simulate_me; // 0x1f8
     float patch_size; // 0x1fc
     int block_virtual_director_flag; // 0x200
-    char field_516[416016]; // 0x204
+    char unk2[416016]; // 0x204
     float weight; // 0x65b14
     float dampen; // 0x65b18
     float spring; // 0x65b1c
     float friction; // 0x65b20
     float gravity; // 0x65b24
-    char field_416552[4]; // 0x65b28
+    char unk3[4]; // 0x65b28
     int hit_floor; // 0x65b2c
-    char field_416560[8]; // 0x65b30
+    char unk4[8]; // 0x65b30
 } CCurtain;
 

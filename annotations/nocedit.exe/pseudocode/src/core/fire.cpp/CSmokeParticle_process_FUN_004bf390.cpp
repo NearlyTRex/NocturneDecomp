@@ -34,9 +34,9 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *t
   (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar3;
   pCVar4 = g_CDemonSetPtr;
   (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar3;
-  fVar5 = *(float *)(pCVar4->field19_0x14f0a0 + 0xbbc4);
-  fVar2 = *(float *)(pCVar4->field19_0x14f0a0 + 0xbbc8);
-  pCVar1->x = pCVar1->x + *(float *)(pCVar4->field19_0x14f0a0 + 0xbbc0) * fVar3;
+  fVar5 = *(float *)(pCVar4->unk4 + 0xbbc4);
+  fVar2 = *(float *)(pCVar4->unk4 + 0xbbc8);
+  pCVar1->x = pCVar1->x + *(float *)(pCVar4->unk4 + 0xbbc0) * fVar3;
   (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar3;
   (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar3;
   return;

@@ -3,21 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 57,
+        "column": 51,
         "line": 26,
         "message": "'stack0xffffffb4' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 35,
-        "line": 37,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field9_0x305'"
-      },
-      {
-        "category": "missing_member",
-        "column": 37,
-        "line": 39,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field9_0x305'"
       }
     ],
     "success": false,
@@ -38,17 +26,17 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 63,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 32,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref"
     ],
-    "total_lines": 114
+    "total_lines": 113
   },
   "cross_references": [
     {
@@ -162,7 +150,7 @@
       "description": "Direct stack address reference",
       "line": 19,
       "match": "&stack0xffffffb4",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);",
       "type": "stack_ref"
     },
     {

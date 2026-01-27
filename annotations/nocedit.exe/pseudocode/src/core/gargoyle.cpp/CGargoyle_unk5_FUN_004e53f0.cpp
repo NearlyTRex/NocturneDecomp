@@ -16,12 +16,12 @@ void core_gargoyle_cpp_CGargoyle_unk5_FUN_004e53f0(void)
   CCharacter *in_stack_00000004;
   
   pCVar2 = g_CDemonSetPtr;
-  if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
+  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
     iVar1 = g_CDemonSetPtr->lighting_quality_mode;
     g_CDemonSetPtr->lighting_quality_mode = 3;
-    pCVar2->light_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) << 8;
-    pCVar2->color_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54) << 8;
-    pCVar2->fog_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x58) << 8;
+    pCVar2->light_scale_factor = *(int *)(in_stack_00000004[1].base.create_event + 0x50) << 8;
+    pCVar2->color_scale_factor = *(int *)(in_stack_00000004[1].base.create_event + 0x54) << 8;
+    pCVar2->fog_scale_factor = *(int *)(in_stack_00000004[1].base.create_event + 0x58) << 8;
     core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);
     g_CDemonSetPtr->lighting_quality_mode = iVar1;
     return;

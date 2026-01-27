@@ -28,7 +28,7 @@ int core_ghoul_cpp_FUN_004e8bc0(void)
   int local_18;
   
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,DAT_02d83320);
+            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,INT_02d83320);
   if (&local_30 != in_stack_00000008) {
     in_stack_00000008->x = local_30.x;
     in_stack_00000008->y = local_30.y;
@@ -42,7 +42,7 @@ int core_ghoul_cpp_FUN_004e8bc0(void)
     case 0:
       if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbee0) * 4) != 0) {
         pCVar1 = &local_24;
-        bone_index = DAT_02d83310;
+        bone_index = INT_02d83310;
 LAB_004e8c4c:
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr,pCVar1,bone_index);
@@ -66,14 +66,14 @@ LAB_004e8cce:
     case 1:
       if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbee8) * 4) != 0) {
         pCVar1 = &local_54;
-        bone_index = DAT_02d83314;
+        bone_index = INT_02d83314;
         goto LAB_004e8c4c;
       }
       break;
     case 2:
       if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf08) * 4) != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr,&local_3c,DAT_02d832fc);
+                           (this_ptr,&local_3c,INT_02d832fc);
         pCVar2 = in_stack_00000008 + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;
@@ -86,7 +86,7 @@ LAB_004e8cce:
     case 3:
       if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf04) * 4) != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr,&local_60,DAT_02d83324);
+                           (this_ptr,&local_60,INT_02d83324);
         pCVar2 = in_stack_00000008 + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;

@@ -2,100 +2,34 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 30,
-        "line": 56,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 42,
-        "line": 58,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 41,
-        "line": 60,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 53,
-        "line": 61,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field26_0x148'; did you mean 'field_108'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 62,
-        "line": 105,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
-      },
-      {
-        "category": "missing_member",
-        "column": 52,
-        "line": 108,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 111,
+        "line": 108,
         "message": "'stack0xffffff78' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 121,
+        "line": 118,
         "message": "invalid cast from type 'CHero*' to type 'float'"
-      },
-      {
-        "category": "missing_member",
-        "column": 44,
-        "line": 131,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
       },
       {
         "category": "incompatible_types",
         "column": 64,
-        "line": 133,
+        "line": 130,
         "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'QSORT_COMPARATOR' {aka 'int (**)(void*, void*)'}"
       },
       {
-        "category": "missing_member",
-        "column": 28,
-        "line": 143,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field73_0x15f6e4'"
-      },
-      {
         "category": "other",
-        "column": 24,
-        "line": 144,
+        "column": 51,
+        "line": 140,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 27,
-        "line": 153,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field73_0x15f6e4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 159,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field73_0x15f6e4'"
-      },
-      {
         "category": "other",
-        "column": 24,
-        "line": 160,
+        "column": 51,
+        "line": 155,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 24,
-        "line": 167,
-        "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field73_0x15f6e4'"
       }
     ],
     "success": false,
@@ -108,31 +42,31 @@
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 144,
+        "column": 42,
+        "line": 140,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 160,
+        "column": 42,
+        "line": 155,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 174,
+        "line": 169,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 423,
+    "complexity_score": 418,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 24,
-    "pseudocode_lines": 168,
+    "pseudocode_lines": 163,
     "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
@@ -141,7 +75,7 @@
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 533
+    "total_lines": 528
   },
   "cross_references": [
     {
@@ -580,140 +514,140 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0xffffffff) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_00000008",
       "text": "*piVar6 = *piVar6 | in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 101,
       "match": "&stack0xffffff78",
       "text": "((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 110,
       "match": "DAT_03342b4c",
       "text": "SVar10 = DAT_03342b4c + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 111,
       "match": "DAT_03342b4c",
       "text": "(&g_VertexNormalArray[20000].y)[DAT_03342b4c * 2] = (float)this_ptr_00;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 112,
       "match": "DAT_03342b4c",
       "text": "DAT_03342b4c = SVar10;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 113,
       "match": "DAT_03342b4c",
       "text": "(&DAT_03342b4c)[SVar10 * 2] =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 123,
       "match": "DAT_03342b50",
       "text": "crt_stdlib_c_qsort_FUN_005fdf38(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 123,
       "match": "DAT_03342b4c",
       "text": "crt_stdlib_c_qsort_FUN_005fdf38(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_03342b4c",
+      "text": "SVar10 = DAT_03342b4c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 128,
       "match": "DAT_03342b4c",
-      "text": "SVar10 = DAT_03342b4c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_03342b4c",
       "text": "if (0 < (int)DAT_03342b4c) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 133,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_03342b50 + iVar11);",
+      "text": "*(uint *)(pCVar12->unk13 + 4) = *(uint *)((int)&DAT_03342b50 + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 133,
       "match": "DAT_03342b50",
-      "text": "*(uint *)((int)&DAT_03342b50 + iVar11);",
+      "text": "*(uint *)(pCVar12->unk13 + 4) = *(uint *)((int)&DAT_03342b50 + iVar11);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 135,
       "match": "DAT_03342b4c",
       "text": "SVar10 = DAT_03342b4c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 137,
       "match": "DAT_03342b4c",
       "text": "} while (iVar7 < (int)DAT_03342b4c);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 148,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_03342b50 + iVar11);",
+      "text": "*(uint *)(pCVar12->unk13 + 8) = *(uint *)((int)&DAT_03342b50 + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 153,
+      "line": 148,
       "match": "DAT_03342b50",
-      "text": "*(uint *)((int)&DAT_03342b50 + iVar11);",
+      "text": "*(uint *)(pCVar12->unk13 + 8) = *(uint *)((int)&DAT_03342b50 + iVar11);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 151,
       "match": "DAT_03342b4c",
       "text": "} while (iVar7 < (int)DAT_03342b4c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 153,
       "match": "DAT_03342b4c",
       "text": "SVar10 = DAT_03342b4c + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 162,
       "match": "DAT_03342b4c",
       "text": "(g_CConsolePtr,\"buildDispList %d items : %3.2f ms\\n\",DAT_03342b4c,",
       "type": "undefined_data"

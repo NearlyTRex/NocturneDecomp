@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 55,
-        "line": 18,
-        "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'CDemonActor* (**)()'"
+        "column": 46,
+        "line": 16,
+        "message": "cannot convert 'CCurtain* (*)()' to 'void* (**)()'"
       }
     ],
     "success": false,
@@ -18,24 +18,24 @@
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 18,
+        "column": 35,
+        "line": 16,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 36,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 10,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 34
+    "total_lines": 33
   },
   "cross_references": [],
   "function": {
@@ -48,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_curtain.cpp_staticInit_FUN_00449610",
-    "signature": "CDemonActorType * core_curtain.cpp_staticInit_FUN_00449610(void)"
+    "signature": "void core_curtain.cpp_staticInit_FUN_00449610(void)"
   },
   "function_calls": [
     {
@@ -150,14 +150,14 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 5,
       "match": "DAT_008879c0",
       "text": "crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_008879c0,100,&g_CVectorTypeInfo);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 7,
       "match": "DAT_00887e70",
       "text": "(DAT_00887e70,100,&g_SCollisionInfoTypeInfo);",
       "type": "undefined_data"

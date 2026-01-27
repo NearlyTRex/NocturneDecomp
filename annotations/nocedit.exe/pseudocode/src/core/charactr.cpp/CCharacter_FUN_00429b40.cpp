@@ -100,7 +100,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0xffff;
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&this_ptr->base_actor,&local_90,pCVar11);
+                         (&this_ptr->base,&local_90,pCVar11);
       if (&local_84 != pCVar7) {
         local_84.x = pCVar7->x;
         local_84.y = pCVar7->y;
@@ -135,7 +135,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0xffff;
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&this_ptr->base_actor,&local_9c,pCVar11);
+                         (&this_ptr->base,&local_9c,pCVar11);
       if (&local_84 != pCVar7) {
         local_84.x = pCVar7->x;
         local_84.y = pCVar7->y;

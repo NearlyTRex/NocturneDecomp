@@ -2,82 +2,40 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 51,
-        "line": 62,
-        "message": "'C3DSCamera' {aka 'struct C3DSCamera'} has no member named 'field17_0x1a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 74,
-        "line": 67,
-        "message": "'DAT_03364ce0' was not declared in this scope; did you mean 'DAT_03f6bae0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 71,
-        "message": "'DAT_03364ce0' was not declared in this scope; did you mean 'DAT_03f6bae0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 73,
-        "message": "'_DAT_03364ce8' was not declared in this scope; did you mean 'DAT_03365cb8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 76,
-        "message": "'_DAT_03364ce4' was not declared in this scope; did you mean 'DAT_03364d14'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 98,
-        "message": "'_DAT_03364ce0' was not declared in this scope; did you mean 'DAT_03f6bae0'?"
-      },
-      {
         "category": "other",
         "column": 53,
-        "line": 123,
+        "line": 120,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 127,
+        "line": 124,
         "message": "'DAT_03365cc0' was not declared in this scope; did you mean 'DAT_03365cbc'?"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 144,
+        "line": 141,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 148,
+        "line": 145,
         "message": "'DAT_03365cc0' was not declared in this scope; did you mean 'DAT_03365cbc'?"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 163,
+        "line": 160,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 168,
+        "line": 165,
         "message": "'DAT_03365cc0' was not declared in this scope; did you mean 'DAT_03365cbc'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 57,
-        "line": 200,
-        "message": "'C3DSCamera' {aka 'struct C3DSCamera'} has no member named 'field17_0x1a0'"
       }
     ],
     "success": false,
@@ -91,56 +49,55 @@
       {
         "category": "other",
         "column": 45,
-        "line": 123,
+        "line": 120,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 123,
+        "line": 120,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 144,
+        "line": 141,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 143,
+        "line": 140,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 163,
+        "line": 160,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 163,
+        "line": 160,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 409,
+    "complexity_score": 352,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 18,
-    "pseudocode_lines": 209,
-    "suspect_count": 18,
+    "pseudocode_lines": 207,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 750
+    "total_lines": 748
   },
   "cross_references": [
     {
@@ -296,20 +253,20 @@
     },
     {
       "addr": "03364ce0",
-      "name": "DAT_03364ce0",
-      "type": "undefined4",
+      "name": "INT_03364ce0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03364ce4",
-      "name": "DAT_03364ce4",
-      "type": "undefined4",
+      "name": "INT_03364ce4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03364ce8",
-      "name": "DAT_03364ce8",
-      "type": "undefined4",
+      "name": "INT_03364ce8",
+      "type": "int",
       "value": null
     },
     {
@@ -647,29 +604,29 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_03364d14",
       "text": "if ((DAT_03364d14 & 1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
+      "match": "DAT_03364d14",
+      "text": "DAT_03364d14 = DAT_03364d14 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
       "match": "DAT_03364d14",
       "text": "DAT_03364d14 = DAT_03364d14 | 1;",
       "type": "undefined_data"
@@ -677,97 +634,62 @@
     {
       "description": "Undefined global data reference",
       "line": 59,
-      "match": "DAT_03364d14",
-      "text": "DAT_03364d14 = DAT_03364d14 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_03364ce0",
-      "text": "shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&DAT_03364ce0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
       "match": "DAT_006816b0",
       "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_006816b0);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_03364ce0",
-      "text": "((CEdScrollBar *)&DAT_03364ce0,0,g_WindowHeight + -10,g_WindowWidth + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_03364ce0",
-      "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_03364ce0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_03364ce0",
-      "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_03364ce0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 77,
       "match": "in_stack_00000008",
       "text": "local_8c = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 98,
+      "line": 95,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 != (int *)0x0) && (*local_8c != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 113,
       "match": "(int *)((int)",
       "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 117,
       "match": "DAT_03365cc0",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 134,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)g_ScreenBufferArray + local_2c) + iVar9 * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 138,
       "match": "DAT_03365cc0",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 153,
       "match": "(int *)((int)",
       "text": "puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar9 * 4)",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 161,
+      "line": 158,
       "match": "DAT_03365cc0",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"

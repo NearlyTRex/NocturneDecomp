@@ -12,6 +12,6 @@ SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_0043e420(SClothVerte
   void *pvVar1;
   
   pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr[0xd].field0_0x0 + 0xf,3,&g_CVectorTypeInfo);
+                     (this_ptr[0xd].unk + 0xf,3,&g_CVectorTypeInfo);
   return (SClothVertex *)((int)pvVar1 + -0xec);
 }

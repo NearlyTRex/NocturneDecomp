@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   class_name
 ;
 ; XREF[15]:
-;   core_baron.cpp_FUN_00413f20 at 00413f7c
+;   core_baron.cpp_CBaronWeapon_FUN_00413f20 at 00413f7c
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de56e
 ;   core_game.cpp_giveHeroWeapon_FUN_004dd870 at 004dd879
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 at 004f3da6

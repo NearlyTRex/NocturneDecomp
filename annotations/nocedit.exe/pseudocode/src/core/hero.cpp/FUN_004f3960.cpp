@@ -32,28 +32,26 @@ float core_hero_cpp_FUN_004f3960
   local_14 = param_5 + 0x20;
   local_1c = 0.0;
   while( true ) {
-    if (*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c) <= iVar5) break;
-    this_ptr = *(CCharacter **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar4 + 8000);
+    if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= iVar5) break;
+    this_ptr = *(CCharacter **)(g_CDemonSetPtr->unk4 + iVar4 + 8000);
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (&this_ptr->base_actor,g_CVehicleClassInfo.name_hash);
+                       (&this_ptr->base,g_CVehicleClassInfo.name_hash);
     if (pCVar2 == (CDemonActor *)0x0) {
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (&this_ptr->base_actor,g_CMobsterClassInfo.name_hash);
+                         (&this_ptr->base,g_CMobsterClassInfo.name_hash);
       if ((pCVar2 == (CDemonActor *)0x0) || (*(int *)(pCVar2[0x8e].actor_name + 0x10) == 0)) {
-        iVar3 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr);
+        iVar3 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr);
         if (iVar3 == 0) {
-          iVar3 = (*((this_ptr->base_actor).vtable._ub)->shouldIgnoreForTargeting)
-                            (&this_ptr->base_actor);
+          iVar3 = (*((this_ptr->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr->base);
           if (iVar3 == 0) {
             crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                       (aCStack_a0,10,&g_CVectorTypeInfo);
-            iVar3 = (*((this_ptr->base_actor).vtable._ub)->getTargetPoints)
-                              (&this_ptr->base_actor,aCStack_a0);
+            iVar3 = (*((this_ptr->base).vtable._ub)->getTargetPoints)(&this_ptr->base,aCStack_a0);
             if (0 < iVar3) {
-              fStack_20 = *unaff_EBX - (this_ptr->base_actor).location.position.x;
-              local_1c = (unaff_EBX[1] - (this_ptr->base_actor).location.position.y) *
+              fStack_20 = *unaff_EBX - (this_ptr->base).location.position.x;
+              local_1c = (unaff_EBX[1] - (this_ptr->base).location.position.y) *
                          (float)2;
-              fStack_18 = unaff_EBX[2] - (this_ptr->base_actor).location.position.z;
+              fStack_18 = unaff_EBX[2] - (this_ptr->base).location.position.z;
               fVar1 = fStack_18 * fStack_18 + fStack_20 * fStack_20 + local_1c * local_1c;
               if (fVar1 < *param_6) {
                 *param_6 = fVar1;

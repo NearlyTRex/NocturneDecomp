@@ -17,11 +17,11 @@ void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
   int in_stack_00000008;
   int desired_state_index;
   
-  fVar1 = (this_ptr->base_enemy).base_character.hit_points - *(float *)(in_stack_00000008 + 4);
-  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
-  (this_ptr->base_enemy).base_character.hit_points = fVar1;
+  fVar1 = (this_ptr->base).base.hit_points - *(float *)(in_stack_00000008 + 4);
+  this_ptr_00 = &(this_ptr->base).base.model;
+  (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (this_ptr->base_enemy).base_character.hit_points = 0.0;
+    (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_0047f855;
@@ -33,15 +33,14 @@ void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&this_ptr_00->motion_controller,desired_state_index,1);
 LAB_0047f855:
-  core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
-            (g_CSoundPtr,*(uint *)(this_ptr->field1_0xbeb4 + 0x10));
+  core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)(this_ptr->unk + 0x10));
   if (extraout_EAX != 0) {
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
-  uVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
+  uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"dog2.wav");
-  *(uint *)(this_ptr->field1_0xbeb4 + 0x10) = uVar3;
+  *(uint *)(this_ptr->unk + 0x10) = uVar3;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }

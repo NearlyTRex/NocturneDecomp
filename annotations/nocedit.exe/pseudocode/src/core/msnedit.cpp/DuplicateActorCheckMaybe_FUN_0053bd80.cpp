@@ -39,7 +39,7 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
   
   bVar11 = 0;
   pcVar10 = &stack0xffffff5c;
-  if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) == 0) {
+  if (*(int *)(in_stack_00000004->unk2 + 0x1c) == 0) {
     return;
   }
   local_20 = (char  [4])"DUPACTOR.TMP"._0_4_;
@@ -55,10 +55,10 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
     return;
   }
   core_actor_cpp_CDemonActor_save_FUN_0040af30
-            (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),pFVar2);
+            (*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),pFVar2);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\msnedit.cpp",0x96b);
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
-                     (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c));
+                     (*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c));
   this_ptr = core_actor_cpp_createActorByName_FUN_0040c430(pcVar3);
   pFVar2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
@@ -70,7 +70,7 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
   core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr,pFVar2);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\msnedit.cpp",0x976);
   crt_io_c_deleteFile_FUN_005ff9d0(local_20);
-  pcVar3 = *(char **)(in_stack_00000004->field2_0xc + 0x1c);
+  pcVar3 = *(char **)(in_stack_00000004->unk2 + 0x1c);
   do {
     cVar1 = *pcVar3;
     *pcVar10 = cVar1;
@@ -149,7 +149,7 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
     pCVar6 = pCVar5;
     do {
       pfVar7 = &(pCVar6->orient_matrix).m[0].z;
-      pCVar6[0x1b].field7_0x6c = 0;
+      pCVar6[0x1b].unk1 = 0;
       pCVar6 = (CDemonActor *)pfVar7;
     } while (pfVar7 != (float *)(pCVar5->create_event + 0x10));
   }

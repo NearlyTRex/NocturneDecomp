@@ -46,10 +46,10 @@ section .text
     MOV EAX,0xf80000                    ; 004ecc5d | DAT_00f80000
     XOR ECX,ECX                         ; 004ecc62
     MOV dword ptr [0x02d8336c],EDX      ; 004ecc64 | DAT_02d83368.base.count
-    MOV dword ptr [0x02d83380],ECX      ; 004ecc6a | DAT_02d83380
-    MOV dword ptr [0x02d83384],EBX      ; 004ecc70 | DAT_02d83384
-    MOV dword ptr [0x02d83388],ESI      ; 004ecc76 | DAT_02d83388
-    MOV dword ptr [0x02d8338c],EDI      ; 004ecc7c | DAT_02d8338c
+    MOV dword ptr [0x02d83380],ECX      ; 004ecc6a | INT_02d83380
+    MOV dword ptr [0x02d83384],EBX      ; 004ecc70 | INT_02d83384
+    MOV dword ptr [0x02d83388],ESI      ; 004ecc76 | INT_02d83388
+    MOV dword ptr [0x02d8338c],EDI      ; 004ecc7c | INT_02d8338c
     MOV dword ptr [0x0068802c],EBP      ; 004ecc82 | g_RenderVertexBuffer[0].u
     MOV [0x00688030],EAX                ; 004ecc88 | g_RenderVertexBuffer[0].v
     MOV [0x0068805c],EAX                ; 004ecc8d | g_RenderVertexBuffer[1].u

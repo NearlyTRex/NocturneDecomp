@@ -1,0 +1,185 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 27,
+        "line": 18,
+        "message": "cast from 'CDemonActor_vtable*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 94,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 49,
+    "suspect_count": 4,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "00448c30",
+      "from_addr": "00448c4a",
+      "name": "core_crossbow.cpp_factoryFunc_FUN_00448c30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00448c70",
+    "address_range": [
+      [
+        "00448c70",
+        "00448d21"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70",
+    "signature": "CCrossbow * core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70(CCrossbow * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "004c9aa0",
+      "is_variadic": false,
+      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0"
+    },
+    {
+      "addr": "005ede70",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619b79",
+      "name": "s_crossbow_kfm_00619b79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065c394",
+      "name": "g_CCrossbowVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00448c4a",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_factoryFunc_FUN_00448c30",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 23,
+      "INT_ADD": 21,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 111
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrossbow *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].base.unk11 = (int)&g_CCrossbowVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar3[-2].",
+      "text": "((CKeyFramedModelInstance *)&pCVar3[-2].base.unk12,\"crossbow.kfm\");",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "pCVar3[-1].",
+      "text": "pCVar3[-1].base.location.position.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 51,
+      "match": "pCVar3[-3].",
+      "text": "return (CCrossbow *)(pCVar3[-3].unk3 + 0xb8);",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCrossbow",
+        "offset": 0,
+        "vtable_addr": "0065c4a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

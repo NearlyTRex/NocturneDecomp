@@ -30,7 +30,7 @@
 ;
 ; XREF[8]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 004095af
-;   core_boxactor.cpp_FUN_00422390 at 00422413
+;   core_boxactor.cpp_CBoxActor_FUN_00422390 at 00422413
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 at 0047821d
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 at 005096a4
 ;   core_msnedit.cpp_FUN_0053c340 at 0053c493

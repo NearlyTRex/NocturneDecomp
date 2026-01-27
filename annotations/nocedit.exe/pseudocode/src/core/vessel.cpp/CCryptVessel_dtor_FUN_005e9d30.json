@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 49,
-        "line": 23,
-        "message": "'CCryptVessel' {aka 'struct CCryptVessel'} has no member named 'field14_0x3c0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 37,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 69
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -143,7 +136,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 18,
       "match": "pCVar1[-3].",
       "text": "((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);",
       "type": "negative_offset"

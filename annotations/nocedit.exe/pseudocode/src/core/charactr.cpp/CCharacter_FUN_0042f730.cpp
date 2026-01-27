@@ -13,15 +13,15 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042f730(CCharacter *this_ptr)
   int iVar2;
   CActorPropertyList *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
+  core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e500();
   iVar2 = 0;
-  iVar1 = *(int *)this_ptr->carry_hands[0].field0_0x0;
+  iVar1 = *(int *)this_ptr->carry_hands[0].unk1;
   while (iVar1 < 0) {
     iVar2 = iVar2 + 1;
     if (1 < iVar2) goto LAB_0042f793;
-    iVar1 = *(int *)this_ptr->carry_hands[1].field0_0x0;
-    this_ptr = (CCharacter *)&(this_ptr->base_actor).orient_matrix.m[0].z;
+    iVar1 = *(int *)this_ptr->carry_hands[1].unk1;
+    this_ptr = (CCharacter *)&(this_ptr->base).orient_matrix.m[0].z;
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e670(in_stack_00000008);
 LAB_0042f793:

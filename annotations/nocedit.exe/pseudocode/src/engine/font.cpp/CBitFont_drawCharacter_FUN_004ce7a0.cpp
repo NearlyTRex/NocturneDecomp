@@ -84,7 +84,7 @@ engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
   }
   iVar6 = local_c8;
   local_c4 = iVar12 - ((local_d0 - x_pos) + 1);
-  if ((this_ptr->field21_0x318c != 0) && (g_UseExternalRenderer != 0)) {
+  if ((this_ptr->unk != 0) && (g_UseExternalRenderer != 0)) {
     engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0
               (this_ptr,character_code,x_pos,y_pos,local_d0,local_cc,color_mode,color_mode_00);
     return color_mode_00;
@@ -205,22 +205,23 @@ engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
                   uVar9 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
                   *puVar11 = (ushort)(((((this_ptr->palettes_display[local_c8][uVar3] &
-                                         g_GreenMask16) >> ((byte)g_GreenBitPosition & 0x1f)) <<
-                                        ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar6 +
-                                       (((g_GreenMask16 & uVar9) >>
+                                         (uint)g_GreenMask16) >> ((byte)g_GreenBitPosition & 0x1f))
+                                        << ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar6 +
+                                       ((((uint)g_GreenMask16 & uVar9) >>
                                         ((byte)g_GreenBitPosition & 0x1f)) <<
                                         ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                       (uint)g_GreenScaleFactor << ((byte)g_GreenBitPosition & 0x1f))
                              | (ushort)(((((this_ptr->palettes_display[local_c8][uVar3] &
-                                           g_RedMask16) >> ((byte)g_RedBitPosition & 0x1f)) <<
+                                           (uint)g_RedMask16) >> ((byte)g_RedBitPosition & 0x1f)) <<
                                           ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar6 +
-                                         (((g_RedMask16 & uVar9) >> ((byte)g_RedBitPosition & 0x1f))
-                                          << ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
+                                         ((((uint)g_RedMask16 & uVar9) >>
+                                          ((byte)g_RedBitPosition & 0x1f)) <<
+                                          ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                         (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f)) |
-                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar3] & g_BlueMask16
-                                         ) >> ((byte)g_BlueBitPosition & 0x1f)) <<
+                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar3] &
+                                         (uint)g_BlueMask16) >> ((byte)g_BlueBitPosition & 0x1f)) <<
                                         ((byte)g_BlueBitCount & 0x1f) & 0xff) * iVar6 +
-                                       iVar8 * (((g_BlueMask16 & uVar9) >>
+                                       iVar8 * ((((uint)g_BlueMask16 & uVar9) >>
                                                 ((byte)g_BlueBitPosition & 0x1f)) <<
                                                 ((byte)g_BlueBitCount & 0x1f) & 0xff) >> 8) /
                                       (uint)g_BlueScaleFactor << ((byte)g_BlueBitPosition & 0x1f));
@@ -269,21 +270,24 @@ engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
                   uVar3 = (uint)g_ShadowColor16;
                   uVar9 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((g_GreenMask16 & uVar3) >>
+                  *puVar11 = (ushort)((((((uint)g_GreenMask16 & uVar3) >>
                                         ((byte)g_GreenBitPosition & 0x1f)) <<
                                         ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar6 +
-                                       (((g_GreenMask16 & uVar9) >>
+                                       ((((uint)g_GreenMask16 & uVar9) >>
                                         ((byte)g_GreenBitPosition & 0x1f)) <<
                                         ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                       (uint)g_GreenScaleFactor << ((byte)g_GreenBitPosition & 0x1f))
-                             | (ushort)(((((g_RedMask16 & uVar3) >> ((byte)g_RedBitPosition & 0x1f))
-                                          << ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar6 +
-                                         (((g_RedMask16 & uVar9) >> ((byte)g_RedBitPosition & 0x1f))
-                                          << ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
+                             | (ushort)((((((uint)g_RedMask16 & uVar3) >>
+                                          ((byte)g_RedBitPosition & 0x1f)) <<
+                                          ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar6 +
+                                         ((((uint)g_RedMask16 & uVar9) >>
+                                          ((byte)g_RedBitPosition & 0x1f)) <<
+                                          ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                         (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f)) |
-                             (ushort)(((((g_BlueMask16 & uVar3) >> ((byte)g_BlueBitPosition & 0x1f))
-                                        << ((byte)g_BlueBitCount & 0x1f) & 0xff) * iVar6 +
-                                       iVar8 * (((g_BlueMask16 & uVar9) >>
+                             (ushort)((((((uint)g_BlueMask16 & uVar3) >>
+                                        ((byte)g_BlueBitPosition & 0x1f)) <<
+                                        ((byte)g_BlueBitCount & 0x1f) & 0xff) * iVar6 +
+                                       iVar8 * ((((uint)g_BlueMask16 & uVar9) >>
                                                 ((byte)g_BlueBitPosition & 0x1f)) <<
                                                 ((byte)g_BlueBitCount & 0x1f) & 0xff) >> 8) /
                                       (uint)g_BlueScaleFactor << ((byte)g_BlueBitPosition & 0x1f));
@@ -331,23 +335,24 @@ engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
                 if (iVar6 != 0) {
                   uVar3 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((g_DefaultTextColor & g_RedMask16) >>
+                  *puVar11 = (ushort)(((((g_DefaultTextColor & (uint)g_RedMask16) >>
                                         ((byte)g_RedBitPosition & 0x1f)) <<
                                         ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar6 +
-                                       (((uVar3 & g_RedMask16) >> ((byte)g_RedBitPosition & 0x1f))
-                                        << ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
+                                       (((uVar3 & (uint)g_RedMask16) >>
+                                        ((byte)g_RedBitPosition & 0x1f)) <<
+                                        ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                       (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f)) |
-                             (ushort)(((((g_GreenMask16 & g_DefaultTextColor) >>
+                             (ushort)((((((uint)g_GreenMask16 & g_DefaultTextColor) >>
                                         ((byte)g_GreenBitPosition & 0x1f)) <<
                                         ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar6 +
-                                       (((uVar3 & g_GreenMask16) >>
+                                       (((uVar3 & (uint)g_GreenMask16) >>
                                         ((byte)g_GreenBitPosition & 0x1f)) <<
                                         ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                       (uint)g_GreenScaleFactor << ((byte)g_GreenBitPosition & 0x1f))
-                             | (ushort)(((((g_DefaultTextColor & g_BlueMask16) >>
+                             | (ushort)(((((g_DefaultTextColor & (uint)g_BlueMask16) >>
                                           ((byte)g_BlueBitPosition & 0x1f)) <<
                                           ((byte)g_BlueBitCount & 0x1f) & 0xff) * iVar6 +
-                                         iVar8 * (((uVar3 & g_BlueMask16) >>
+                                         iVar8 * (((uVar3 & (uint)g_BlueMask16) >>
                                                   ((byte)g_BlueBitPosition & 0x1f)) <<
                                                   ((byte)g_BlueBitCount & 0x1f) & 0xff) >> 8) /
                                         (uint)g_BlueScaleFactor << ((byte)g_BlueBitPosition & 0x1f))
@@ -394,22 +399,24 @@ engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
                   uVar3 = (uint)uVar1;
                   uVar9 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((g_GreenMask16 & uVar3) >>
+                  *puVar11 = (ushort)((((((uint)g_GreenMask16 & uVar3) >>
                                         ((byte)g_GreenBitPosition & 0x1f)) <<
                                         ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar6 +
-                                       (((g_GreenMask16 & uVar9) >>
+                                       ((((uint)g_GreenMask16 & uVar9) >>
                                         ((byte)g_GreenBitPosition & 0x1f)) <<
                                         ((byte)g_GreenBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                       (uint)g_GreenScaleFactor << ((byte)g_GreenBitPosition & 0x1f))
-                             | (ushort)(((((g_RedMask16 & uVar3) >> ((byte)g_RedBitPosition & 0x1f))
-                                          << ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar6 +
-                                         (((g_RedMask16 & uVar9) >> ((byte)g_RedBitPosition & 0x1f))
-                                          << ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
+                             | (ushort)((((((uint)g_RedMask16 & uVar3) >>
+                                          ((byte)g_RedBitPosition & 0x1f)) <<
+                                          ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar6 +
+                                         ((((uint)g_RedMask16 & uVar9) >>
+                                          ((byte)g_RedBitPosition & 0x1f)) <<
+                                          ((byte)g_RedBitCount & 0x1f) & 0xff) * iVar8 >> 8) /
                                         (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f)) |
-                             (ushort)((iVar6 * (((uVar3 & g_BlueMask16) >>
+                             (ushort)((iVar6 * (((uVar3 & (uint)g_BlueMask16) >>
                                                 ((byte)g_BlueBitPosition & 0x1f)) <<
                                                 ((byte)g_BlueBitCount & 0x1f) & 0xff) +
-                                       iVar8 * (((g_BlueMask16 & uVar9) >>
+                                       iVar8 * ((((uint)g_BlueMask16 & uVar9) >>
                                                 ((byte)g_BlueBitPosition & 0x1f)) <<
                                                 ((byte)g_BlueBitCount & 0x1f) & 0xff) >> 8) /
                                       (uint)g_BlueScaleFactor << ((byte)g_BlueBitPosition & 0x1f));

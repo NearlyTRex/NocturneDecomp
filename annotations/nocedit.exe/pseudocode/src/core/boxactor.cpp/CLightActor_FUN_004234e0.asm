@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e260
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e330
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e670
-;   core_boxactor.cpp_FUN_004226e0
+;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004234e6
     PUSH EBX                            ; 004234ea
     PUSH ESI                            ; 004234eb
-    CALL core_boxactor.cpp_FUN_004226e0 ; 004234ec
-        ;   XREF to: 004226e0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_004226e0()
+    CALL core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 ; 004234ec
+        ;   XREF to: 004226e0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 004234f1
     PUSH 0x423380                       ; 004234f4
     PUSH 0x423310                       ; 004234f9

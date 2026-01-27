@@ -43,7 +43,7 @@ engine_drender_cpp_CDemonRenderer_renderEnhancedQualityWithIndices_FUN_0048b730
         }
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
         g_RenderStateFlags = 999;
-        if ((this_ptr->field8_0x20 == 0) && (iVar4 = 0, 0 < (prim->base).count)) {
+        if ((this_ptr->unk == 0) && (iVar4 = 0, 0 < (prim->base).count)) {
           iVar3 = 0;
           pSVar2 = prim;
           do {

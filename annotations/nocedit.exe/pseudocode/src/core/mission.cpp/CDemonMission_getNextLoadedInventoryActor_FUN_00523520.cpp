@@ -13,21 +13,20 @@ core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMi
   int iVar1;
   char *in_stack_00000008;
   
-  if (*(int *)(this_ptr->field6_0x54c + 0x33c) == 0) {
+  if (*(int *)(this_ptr->unk4 + 0x33c) == 0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x186;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::getNextLoadedInventoryActor - no more!");
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                    (*(char **)(this_ptr->field6_0x54c + 0x33c),in_stack_00000008);
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(*(char **)(this_ptr->unk4 + 0x33c),in_stack_00000008);
   if (iVar1 != 0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x18b;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",in_stack_00000008,
-               *(uint *)(this_ptr->field6_0x54c + 0x33c));
+               *(uint *)(this_ptr->unk4 + 0x33c));
   }
-  *(uint *)(this_ptr->field6_0x54c + 0x33c) =
-       *(uint *)(*(int *)(this_ptr->field6_0x54c + 0x33c) + 0x14c);
+  *(uint *)(this_ptr->unk4 + 0x33c) =
+       *(uint *)(*(int *)(this_ptr->unk4 + 0x33c) + 0x14c);
   return;
 }

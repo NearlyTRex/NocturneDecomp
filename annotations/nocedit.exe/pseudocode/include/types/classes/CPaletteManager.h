@@ -6,9 +6,9 @@
 // Structure: CPaletteManager
 // Ghidra size: 0x10 (16 bytes)
 typedef struct CPaletteManager {
-    int field_0; // 0x0
-    int field_4; // 0x4
-    int field_8; // 0x8
-    int field_12; // 0xc
+    int unk1; // 0x0
+    int unk2; // 0x4
+    int unk3; // 0x8
+    int unk4; // 0xc
 } CPaletteManager;
 

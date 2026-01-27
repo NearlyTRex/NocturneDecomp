@@ -107,8 +107,7 @@ uint core_tommygun_cpp_FUN_005ddb30(void)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_00 != (CCharacter *)0x0) &&
-       (iVar4 = (*(((this_ptr_00->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr_00),
-       0 < iVar4)) {
+       (iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00), 0 < iVar4)) {
       this_ptr_00 = (CCharacter *)0x0;
     }
     pCStack_1c = (CGlass *)
@@ -153,7 +152,7 @@ uint core_tommygun_cpp_FUN_005ddb30(void)
       }
     }
     else {
-      iVar4 = (*(((this_ptr_00->base_actor).vtable._uc)->_uc).cfunc3)();
+      iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).cfunc3)();
       if ((iVar4 != 0) &&
          (pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
                              ((CDemonActor *)in_stack_00000004[2].orient_matrix.m[2].x,
@@ -168,7 +167,7 @@ uint core_tommygun_cpp_FUN_005ddb30(void)
         goto LAB_005ddd4e;
       }
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_148);
-      SStack_148.unknown = g_CDemonSetPtr->field11_0x14d148;
+      SStack_148.unknown = g_CDemonSetPtr->unk1;
       pCStack_24 = (CDemonActor *)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc6)();
       _pCStack_150 = (double)CONCAT44(0x3ecccccd,pCStack_24);
       auStack_78._24_4_ =
@@ -190,7 +189,7 @@ uint core_tommygun_cpp_FUN_005ddb30(void)
         SStack_148.damage_flags = auStack_78._8_4_;
       }
       pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&this_ptr_00->base_actor,(CVector3f *)(auStack_78 + 0x30),
+                         (&this_ptr_00->base,(CVector3f *)(auStack_78 + 0x30),
                           &g_CDemonSetPtr->collision_impact_position);
       if ((CVector3f *)&SStack_148.impact_point.y != pCVar3) {
         SStack_148.impact_point.y = pCVar3->x;
@@ -203,7 +202,7 @@ uint core_tommygun_cpp_FUN_005ddb30(void)
       SStack_148.ammo_type = (int)in_stack_00000004;
       SStack_148.damage_type =
            (int)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);
-      (*(((this_ptr_00->base_actor).vtable._uc)->_uc).processDamage)
+      (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_00,(SDamageInfo *)&pCStack_150);
       if (in_stack_00000004[2].orient.bank == 0.0) goto LAB_005ddd4e;
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0

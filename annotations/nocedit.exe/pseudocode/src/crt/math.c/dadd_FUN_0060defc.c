@@ -44,7 +44,7 @@ double crt_math_c_dadd_FUN_0060defc(double a,double b)
     }
     uVar8 = uVar8 & 0x7fffffff | (uint)CARRY4(uVar8,uVar8) << 0x1f;
   }
-  if (DAT_00684acd != '\0') {
+  if (BYTE_00684acd != 0) {
     dVar17 = (double)CONCAT44(uVar8,uVar13) + (double)CONCAT44(uVar5,uVar12);
     if ((int)((ulonglong)dVar17 >> 0x20) == -0x80000000) {
       dVar17 = 0.0;

@@ -15,7 +15,7 @@ support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490
   CLZWDictionary *pCVar2;
   int *piVar3;
   
-  pCVar1 = support_codec_cpp_CCodec_ctor_FUN_0043e9a0(&this_ptr->base_codec);
+  pCVar1 = support_codec_cpp_CCodec_ctor_FUN_0043e9a0(&this_ptr->base);
   pCVar2 = support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0((CLZWDictionary *)(pCVar1 + 1));
   piVar3 = &pCVar2[-1].bit_state.accumulated_bits;
   *piVar3 = (int)&g_CLZWDecompressVTable;

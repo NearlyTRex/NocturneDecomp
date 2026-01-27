@@ -39,7 +39,7 @@ void core_chain_cpp_FUN_0042fed0(void)
     local_30 = in_stack_00000008[2] - in_stack_0000000c[2];
   }
   fVar6 = (float)(((int)(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) >> 1) +
-                 DAT_02d7a7b8);
+                 INT_02d7a7b8);
   if (fVar6 <= *(float *)(in_stack_00000004 + 0x160)) {
     return;
   }

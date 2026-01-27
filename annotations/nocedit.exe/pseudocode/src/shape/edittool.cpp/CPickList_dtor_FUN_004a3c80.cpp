@@ -22,7 +22,7 @@ shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_strlist).vtable = &g_CPickListVTable;
+  (this_ptr->base).vtable = &g_CPickListVTable;
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(this_ptr);
   pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&this_ptr->cancel_button);
   pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(pCVar1 + -1);

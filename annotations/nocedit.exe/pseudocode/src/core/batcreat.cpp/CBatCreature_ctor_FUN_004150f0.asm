@@ -7,7 +7,7 @@
 ; CBatCreature *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_batcreat.cpp_constructor_FUN_004150b0 at 004150ca
+;   core_batcreat.cpp_factoryFunc_FUN_004150b0 at 004150ca
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_batcreat_dfm_0061546b

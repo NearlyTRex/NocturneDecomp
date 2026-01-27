@@ -33,16 +33,15 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
   float fStack_1c;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (&this_ptr->base_actor,&local_48,in_stack_00000008);
+            (&this_ptr->base,&local_48,in_stack_00000008);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (&this_ptr->base_actor,(CVector3f *)local_54,in_stack_0000000c);
-  iVar2 = (*((this_ptr->base_actor).vtable._ub)->testLineIntersection)
-                    (&this_ptr->base_actor,&local_48,(CVector3f *)local_54,(CVector3f *)local_60);
+            (&this_ptr->base,(CVector3f *)local_54,in_stack_0000000c);
+  iVar2 = (*((this_ptr->base).vtable._ub)->testLineIntersection)
+                    (&this_ptr->base,&local_48,(CVector3f *)local_54,(CVector3f *)local_60);
   if (iVar2 != 0) {
     if (in_stack_00000014 != (CVector3f *)0x0) {
       pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                         (&this_ptr->base_actor,(CVector3f *)(local_60 + 4),
-                          (CVector3f *)(local_54 + 4));
+                         (&this_ptr->base,(CVector3f *)(local_60 + 4),(CVector3f *)(local_54 + 4));
       if (in_stack_00000014 != pCVar3) {
         in_stack_00000014->x = pCVar3->x;
         in_stack_00000014->y = pCVar3->y;
@@ -71,7 +70,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
       fStack_2c = fStack_68 * 10.0f;
       fStack_28 = fStack_64 * 10.0f;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                (&this_ptr->base_actor,(CVector3f *)&stack0xffffffe8,(CVector3f *)local_54);
+                (&this_ptr->base,(CVector3f *)&stack0xffffffe8,(CVector3f *)local_54);
       core_gore_cpp_FUN_004edbb0();
     }
     fStack_24 = (fStack_3c + local_48.x) * 0.5f;
@@ -82,7 +81,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
       (in_stack_00000010->impact_direction).y = fStack_20;
       (in_stack_00000010->impact_direction).z = fStack_1c;
     }
-    (*(((this_ptr->base_actor).vtable._uc)->_uc).processDamage)(this_ptr,in_stack_00000010);
+    (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,in_stack_00000010);
     return 1;
   }
   in_stack_00000010->damage_amount = 0.0;

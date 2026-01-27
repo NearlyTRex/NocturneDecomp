@@ -18,7 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429aa0(CCharacter *this_ptr)
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
-    if (*(int *)(this_ptr->field11_0x25a0 + 0x74) == 0) {
+    if (*(int *)(this_ptr->unk2 + 0x74) == 0) {
       core_charactr_cpp_CCharacter_FUN_0042ad00(this_ptr);
     }
     if (0.0 < *(float *)(this_ptr->cloth_data + 0x8d48)) {
@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429aa0(CCharacter *this_ptr)
     }
   }
   core_charactr_cpp_CCharacter_FUN_0042a420(this_ptr);
-  if (g_CGamePtr->field72_0x21c == 0) {
+  if (g_CGamePtr->unk10 == 0) {
     return;
   }
   core_charactr_cpp_CCharacter_FUN_00429b40(this_ptr);

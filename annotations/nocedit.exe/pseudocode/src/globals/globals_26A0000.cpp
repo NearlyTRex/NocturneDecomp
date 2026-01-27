@@ -7,6 +7,11 @@
 // CKeyFramedModel[256]
 CKeyFramedModel g_CKeyFramedModelPool[256] = {};
 
+// float
+float FLOAT_026a72d8 = {};
+float FLOAT_026a72dc = {};
+float FLOAT_026a72e0 = {};
+
 // int
 int g_BackgroundSceneNestingCount = {};
 int g_DirtySpanCount = {};
@@ -22,11 +27,6 @@ int g_DirtySpanEnds[256] = {};
 
 // uint
 uint g_ShadowRestoreAllocator = {};
-
-// undefined4
-undefined4 DAT_026a72d8 = {};
-undefined4 DAT_026a72dc = {};
-undefined4 DAT_026a72e0 = {};
 
 // void*[1200]
 void* g_SavedScreenBufferArray[1200] = {};

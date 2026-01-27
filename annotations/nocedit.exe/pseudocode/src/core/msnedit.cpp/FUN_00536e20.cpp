@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte core_msnedit.cpp_FUN_00536e20() */
-
 void core_msnedit_cpp_FUN_00536e20(void)
 
 {
@@ -31,15 +28,15 @@ void core_msnedit_cpp_FUN_00536e20(void)
   uint local_14;
   
   DAT_02f7c538 = 0;
-  if ((((*(int *)(g_CDemonMissionPtr->field2_0xc + 0x1c) != 0) && (-1 < DAT_02f7c52c)) &&
-      (DAT_02f7c52c < _DAT_02f7a028)) &&
-     ((*(int *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec) == 0xd &&
-      (this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + DAT_02f7c52c * 0xec),
+  if ((((*(int *)(g_CDemonMissionPtr->unk2 + 0x1c) != 0) && (-1 < INT_02f7c52c)) &&
+      (INT_02f7c52c < INT_02f7a028)) &&
+     ((*(int *)(&DAT_02f7a02c + INT_02f7c52c * 0xec) == 0xd &&
+      (this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),
       this_ptr != (CDeformableModelInstance *)0x0)))) {
     local_14 = 0x9b;
-    y1 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -0x38;
-    iVar1 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -1;
-    local_20 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -0x33;
+    y1 = *(int *)(g_CDemonMissionPtr->unk2 + 0x14) + -0x38;
+    iVar1 = *(int *)(g_CDemonMissionPtr->unk2 + 0x14) + -1;
+    local_20 = *(int *)(g_CDemonMissionPtr->unk2 + 0x14) + -0x33;
     local_24 = 4;
     if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (y1 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
       DAT_02f7c538 = 1;
@@ -54,12 +51,12 @@ void core_msnedit_cpp_FUN_00536e20(void)
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
-                ((CActorProperty *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec),
-                 *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c));
+                ((CActorProperty *)(&DAT_02f7a02c + INT_02f7c52c * 0xec),
+                 *(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c));
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      DAT_02f7c52c = -1;
+      INT_02f7c52c = -1;
     }
     crt_stdio_c_sprintf_FUN_005fdbd0
               (local_f4,"%6.2f",SUB84((double)local_f8,0),
@@ -73,7 +70,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     local_1c = local_20 + 0x21;
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      DAT_02f7c530 = 0;
+      INT_02f7c530 = 0;
       local_f8 = 0.0;
     }
     frame_number = 0.0;
@@ -82,23 +79,23 @@ void core_msnedit_cpp_FUN_00536e20(void)
       dVar3 = crt_math_c_ceil_FUN_006001b2((double)local_f8);
       uStack_30 = SUB84(dVar3,0);
       local_2c = (uint)((ulonglong)dVar3 >> 0x20);
-      frame_number = (float)((float10)dVar3 + (float10)_DAT_0063b73c);
-      if ((float10)dVar3 + (float10)_DAT_0063b73c < (float10)0) {
+      frame_number = (float)((float10)dVar3 + (float10)-1);
+      if ((float10)dVar3 + (float10)-1 < (float10)0) {
         local_1c = motion_name->frame_count + -1;
         frame_number = (float)local_1c;
       }
-      DAT_02f7c530 = 0;
+      INT_02f7c530 = 0;
     }
-    if (DAT_02f7c530 == 0) {
+    if (INT_02f7c530 == 0) {
       iVar1 = core_msnedit_cpp_FUN_00536cd0();
       if (iVar1 != 0) {
-        DAT_02f7c530 = 1;
+        INT_02f7c530 = 1;
       }
     }
     else {
       iVar1 = core_msnedit_cpp_FUN_00536cd0();
       if (iVar1 != 0) {
-        DAT_02f7c530 = 0;
+        INT_02f7c530 = 0;
       }
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
@@ -106,15 +103,15 @@ void core_msnedit_cpp_FUN_00536e20(void)
       dVar3 = crt_math_c_floor_FUN_005feb90((double)frame_number);
       uStack_34 = SUB84(dVar3,0);
       uStack_30 = (uint)((ulonglong)dVar3 >> 0x20);
-      DAT_02f7c530 = 0;
+      INT_02f7c530 = 0;
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       local_1c = motion_name->frame_count + -1;
-      DAT_02f7c530 = 0;
+      INT_02f7c530 = 0;
       frame_number = (float)local_1c;
     }
-    if ((DAT_02f7c530 != 0) &&
+    if ((INT_02f7c530 != 0) &&
        (frame_number = g_CGamePtr->delta_time_float * motion_name->fps + frame_number,
        (float)motion_name->frame_count <= frame_number)) {
       frame_number = 0.0;

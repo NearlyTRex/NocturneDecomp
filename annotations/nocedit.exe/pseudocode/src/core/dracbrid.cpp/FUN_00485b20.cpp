@@ -23,8 +23,8 @@ void core_dracbrid_cpp_FUN_00485b20(void)
     core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
     core_bodypart_cpp_FUN_0041a050();
     *(int *)(in_stack_00000004[1].model.motion_controller.current_motion_name +
-            in_stack_00000004[1].base_actor.field25_0x144 * 4 + -0x40) = iVar2;
-    piVar1 = &in_stack_00000004[1].base_actor.field25_0x144;
+            in_stack_00000004[1].base.unk13 * 4 + -0x40) = iVar2;
+    piVar1 = &in_stack_00000004[1].base.unk13;
     *piVar1 = *piVar1 + 1;
     *(uint *)(iVar2 + 0xfc) = 1;
     *(uint *)(iVar2 + 0xcb4) = 1;

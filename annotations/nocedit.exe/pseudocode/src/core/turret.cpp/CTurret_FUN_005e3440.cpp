@@ -20,13 +20,13 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e3440(CTurret *this_ptr)
     return;
   }
   in_stack_00000008->can_interact = 1;
-  iVar2 = *(int *)this_ptr->field12_0x85c;
+  iVar2 = *(int *)this_ptr->unk4;
   in_stack_00000008->yaw_min = 6.2831855;
   in_stack_00000008->yaw_max = -6.2831855;
   in_stack_00000008->reference_data = iVar2;
   fVar3 = -0.5235988f;
-  in_stack_00000008->pitch_min = 1.22173f - (this_ptr->base_weapon).base_actor.orient.pitch;
-  fVar1 = (this_ptr->base_weapon).base_actor.orient.pitch;
+  in_stack_00000008->pitch_min = 1.22173f - (this_ptr->base).base.orient.pitch;
+  fVar1 = (this_ptr->base).base.orient.pitch;
   in_stack_00000008->distance_min = -4.0;
   in_stack_00000008->pitch_max = fVar3 - fVar1;
   in_stack_00000008->distance_max = 0.0;

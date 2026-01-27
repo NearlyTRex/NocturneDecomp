@@ -7,7 +7,7 @@
 ; CSmiley *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_smiley.cpp_FUN_005a23f0 at 005a240a
+;   core_smiley.cpp_factorFunc_FUN_005a23f0 at 005a240a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_smiley_dfm_0064f165

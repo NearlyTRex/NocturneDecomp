@@ -64,17 +64,17 @@ void core_setedit_cpp_FUN_0057b600(void)
       pcVar11 = pcVar11 + 4;
     }
     *(ushort *)pcVar11 = *(ushort *)pcVar5;
-    *(uint *)(pCVar3->field8_0x21e + 6) = *(uint *)(pCVar1->field8_0x21e + 6);
-    *(uint *)(pCVar3->field8_0x21e + 10) = *(uint *)(pCVar1->field8_0x21e + 10);
-    *(uint *)(pCVar3->field8_0x21e + 0xe) = *(uint *)(pCVar1->field8_0x21e + 0xe);
-    *(uint *)(pCVar3->field8_0x21e + 0x12) = *(uint *)(pCVar1->field8_0x21e + 0x12);
+    *(uint *)(pCVar3->unk1 + 6) = *(uint *)(pCVar1->unk1 + 6);
+    *(uint *)(pCVar3->unk1 + 10) = *(uint *)(pCVar1->unk1 + 10);
+    *(uint *)(pCVar3->unk1 + 0xe) = *(uint *)(pCVar1->unk1 + 0xe);
+    *(uint *)(pCVar3->unk1 + 0x12) = *(uint *)(pCVar1->unk1 + 0x12);
     (pCVar3->color).r = (pCVar1->color).r;
     (pCVar3->color).g = (pCVar1->color).g;
     (pCVar3->color).b = (pCVar1->color).b;
     pCVar3->atten_start = pCVar1->atten_start;
     pCVar3->atten_end = pCVar1->atten_end;
-    *(uint *)pCVar3->field12_0x11d8 = *(uint *)pCVar1->field12_0x11d8;
-    *(uint *)(pCVar3->field12_0x11d8 + 4) = *(uint *)(pCVar1->field12_0x11d8 + 4);
+    *(uint *)pCVar3->unk2 = *(uint *)pCVar1->unk2;
+    *(uint *)(pCVar3->unk2 + 4) = *(uint *)(pCVar1->unk2 + 4);
     pCVar3->on_time = pCVar1->on_time;
     pCVar3->cycle_time = pCVar1->cycle_time;
     pCVar3->cycle_elapsed = pCVar1->cycle_elapsed;

@@ -42,7 +42,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
   }
   iVar2 = 0;
   if (0 < (int)in_stack_0000000c[8].create_prob) {
-    pfVar5 = (float *)&in_stack_0000000c[2].field11_0xdc;
+    pfVar5 = (float *)&in_stack_0000000c[2].unk2;
     iVar3 = 0;
     do {
       iStack_8 = (int)ROUND(*pfVar5 * 256.0f);

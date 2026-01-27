@@ -32,11 +32,10 @@ int core_waypoint_cpp_FUN_005ec320(void)
     }
     if (0 < *(int *)(in_stack_00000008 + 0x370)) {
       iVar3 = 0;
-      for (iVar7 = 0; iVar7 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x5dc4); iVar7 = iVar7 + 1
-          ) {
+      for (iVar7 = 0; iVar7 < *(int *)(g_CDemonSetPtr->unk4 + 0x5dc4); iVar7 = iVar7 + 1) {
         iVar8 = iVar3 + 0x5dc8;
         iVar3 = iVar3 + 4;
-        *(uint *)(*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iVar8) + 0x554) = 0x7149f2ca;
+        *(uint *)(*(int *)(g_CDemonSetPtr->unk4 + iVar8) + 0x554) = 0x7149f2ca;
       }
       iVar3 = 1;
       DAT_03f939a4 = in_stack_00000008;
@@ -79,9 +78,8 @@ int core_waypoint_cpp_FUN_005ec320(void)
           iVar3 = 0;
           local_18 = 1e+29;
           iVar7 = 0;
-          for (iVar8 = 0; iVar8 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x5dc4);
-              iVar8 = iVar8 + 1) {
-            iVar1 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iVar7 + 0x5dc8);
+          for (iVar8 = 0; iVar8 < *(int *)(g_CDemonSetPtr->unk4 + 0x5dc4); iVar8 = iVar8 + 1) {
+            iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar7 + 0x5dc8);
             if ((*(float *)(iVar1 + 0x554) < local_18) &&
                (iVar5 = core_waypoint_cpp_FUN_005ebd40(), iVar5 != 0)) {
               local_18 = *(float *)(iVar1 + 0x554);

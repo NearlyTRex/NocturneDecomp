@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_gasmask.cpp_staticInit_FUN_004e5c90(void)
+; __cdecl void core_gasmask.cpp_staticInit_FUN_004e5c90(void)
 ;
 ;
 ; Referenced Globals:

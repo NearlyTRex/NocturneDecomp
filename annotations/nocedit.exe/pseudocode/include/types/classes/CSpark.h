@@ -11,7 +11,7 @@ typedef struct CSpark {
     int intensity_current; // 0x38
     int intensity_target; // 0x3c
     int first_update_flag; // 0x40
-    int field_68; // 0x44
+    int unk; // 0x44
     int fade_rate; // 0x48
 } CSpark;
 

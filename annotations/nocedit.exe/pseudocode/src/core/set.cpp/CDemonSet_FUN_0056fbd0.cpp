@@ -53,61 +53,58 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr)
   }
   local_24 = 0;
   pCVar12 = this_ptr;
-  if (0 < *(int *)(this_ptr->field19_0x14f0a0 + 0x9c4c)) {
+  if (0 < *(int *)(this_ptr->unk4 + 0x9c4c)) {
     do {
-      this_ptr_00 = *(CHero **)(pCVar12->field19_0x14f0a0 + 0x9c50);
+      this_ptr_00 = *(CHero **)(pCVar12->unk4 + 0x9c50);
       if ((this_ptr_00 != g_HeroActors[g_LocalHeroIndex]) &&
-         ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0 ||
-          ((this_ptr_00->base_character).base_actor.field26_0x148 == 0)))) {
+         ((*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0 || ((this_ptr_00->base).base.unk14 == 0)))) {
         if (in_stack_00000008 == 0xffffffff) {
-          (this_ptr_00->base_character).base_actor.previous_transform_state.dirty_flags = -1;
+          (this_ptr_00->base).base.previous_transform_state.dirty_flags = -1;
         }
-        pCVar3 = &(this_ptr_00->base_character).base_actor.previous_transform_state;
+        pCVar3 = &(this_ptr_00->base).base.previous_transform_state;
         iVar8 = core_set_cpp_CDemonSet_isCameraPanning_FUN_00571320(this_ptr);
-        pCVar1 = &(this_ptr_00->base_character).base_actor.location;
-        pCVar5 = &(this_ptr_00->base_character).base_actor.previous_transform_state.orientation;
-        pCVar2 = &(this_ptr_00->base_character).base_actor.orient;
+        pCVar1 = &(this_ptr_00->base).base.location;
+        pCVar5 = &(this_ptr_00->base).base.previous_transform_state.orientation;
+        pCVar2 = &(this_ptr_00->base).base.orient;
         if (iVar8 == 0) {
           if (((((pCVar1->position).x == (pCVar3->position).x) &&
-               ((this_ptr_00->base_character).base_actor.location.position.y ==
-                (this_ptr_00->base_character).base_actor.previous_transform_state.position.y)) &&
-              ((this_ptr_00->base_character).base_actor.location.position.z ==
-               (this_ptr_00->base_character).base_actor.previous_transform_state.position.z)) &&
+               ((this_ptr_00->base).base.location.position.y ==
+                (this_ptr_00->base).base.previous_transform_state.position.y)) &&
+              ((this_ptr_00->base).base.location.position.z ==
+               (this_ptr_00->base).base.previous_transform_state.position.z)) &&
              (((pCVar2->pitch == pCVar5->x &&
-               ((this_ptr_00->base_character).base_actor.orient.bank ==
-                (this_ptr_00->base_character).base_actor.previous_transform_state.orientation.y)) &&
-              ((this_ptr_00->base_character).base_actor.orient.heading ==
-               (this_ptr_00->base_character).base_actor.previous_transform_state.orientation.z)))) {
-            if (((this_ptr_00->base_character).base_actor.previous_transform_state.dirty_flags &
-                local_28) == 0) goto LAB_0056fc73;
+               ((this_ptr_00->base).base.orient.bank ==
+                (this_ptr_00->base).base.previous_transform_state.orientation.y)) &&
+              ((this_ptr_00->base).base.orient.heading ==
+               (this_ptr_00->base).base.previous_transform_state.orientation.z)))) {
+            if (((this_ptr_00->base).base.previous_transform_state.dirty_flags & local_28) == 0)
+            goto LAB_0056fc73;
           }
           else {
-            piVar6 = &(this_ptr_00->base_character).base_actor.previous_transform_state.dirty_flags;
+            piVar6 = &(this_ptr_00->base).base.previous_transform_state.dirty_flags;
             *piVar6 = *piVar6 | in_stack_00000008;
           }
-          uVar4 = (this_ptr_00->base_character).base_actor.previous_transform_state.dirty_flags &
-                  local_28;
+          uVar4 = (this_ptr_00->base).base.previous_transform_state.dirty_flags & local_28;
 joined_r0x0056fede:
           if (uVar4 == 0) goto LAB_0056fc73;
         }
         else {
           if ((((pCVar1->position).x == (pCVar3->position).x) &&
-              ((this_ptr_00->base_character).base_actor.location.position.y ==
-               (this_ptr_00->base_character).base_actor.previous_transform_state.position.y)) &&
-             (((this_ptr_00->base_character).base_actor.location.position.z ==
-               (this_ptr_00->base_character).base_actor.previous_transform_state.position.z &&
+              ((this_ptr_00->base).base.location.position.y ==
+               (this_ptr_00->base).base.previous_transform_state.position.y)) &&
+             (((this_ptr_00->base).base.location.position.z ==
+               (this_ptr_00->base).base.previous_transform_state.position.z &&
               (((pCVar2->pitch == pCVar5->x &&
-                ((this_ptr_00->base_character).base_actor.orient.bank ==
-                 (this_ptr_00->base_character).base_actor.previous_transform_state.orientation.y))
-               && ((this_ptr_00->base_character).base_actor.orient.heading ==
-                   (this_ptr_00->base_character).base_actor.previous_transform_state.orientation.z))
-              )))) {
-            uVar4 = (this_ptr_00->base_character).base_actor.field25_0x144;
+                ((this_ptr_00->base).base.orient.bank ==
+                 (this_ptr_00->base).base.previous_transform_state.orientation.y)) &&
+               ((this_ptr_00->base).base.orient.heading ==
+                (this_ptr_00->base).base.previous_transform_state.orientation.z)))))) {
+            uVar4 = (this_ptr_00->base).base.unk13;
             goto joined_r0x0056fede;
           }
-          (this_ptr_00->base_character).base_actor.field25_0x144 = 1;
+          (this_ptr_00->base).base.unk13 = 1;
         }
-        pCVar9 = (*((this_ptr_00->base_character).base_actor.vtable._ub)->getBoundingBox)
+        pCVar9 = (*((this_ptr_00->base).base.vtable._ub)->getBoundingBox)
                            ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);
         fStack_44 = (pCVar9->min).x + (pCVar9->max).x;
         fStack_40 = (pCVar9->min).y + (pCVar9->max).y;
@@ -128,7 +125,7 @@ joined_r0x0056fede:
 LAB_0056fc73:
       local_24 = local_24 + 1;
       pCVar12 = (CDemonSet *)pCVar12->cameras;
-    } while (local_24 < *(int *)(this_ptr->field19_0x14f0a0 + 0x9c4c));
+    } while (local_24 < *(int *)(this_ptr->unk4 + 0x9c4c));
   }
   crt_stdlib_c_qsort_FUN_005fdf38(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);
   iVar8 = local_2c;
@@ -140,8 +137,7 @@ LAB_0056fc73:
       pCVar12 = this_ptr;
       do {
         iVar7 = iVar7 + 1;
-        *(uint *)(pCVar12->field73_0x15f6e4 + 4) =
-             *(uint *)((int)&DAT_03342b50 + iVar11);
+        *(uint *)(pCVar12->unk13 + 4) = *(uint *)((int)&DAT_03342b50 + iVar11);
         iVar11 = iVar11 + 8;
         SVar10 = DAT_03342b4c;
         pCVar12 = (CDemonSet *)pCVar12->cameras;
@@ -150,21 +146,20 @@ LAB_0056fc73:
   }
   else {
     iVar7 = 0;
-    *(CHero **)(this_ptr->field73_0x15f6e4 + 4) = g_HeroActors[g_LocalHeroIndex];
+    *(CHero **)(this_ptr->unk13 + 4) = g_HeroActors[g_LocalHeroIndex];
     if (0 < (int)SVar10) {
       iVar11 = 0;
       pCVar12 = this_ptr;
       do {
         iVar7 = iVar7 + 1;
-        *(uint *)(pCVar12->field73_0x15f6e4 + 8) =
-             *(uint *)((int)&DAT_03342b50 + iVar11);
+        *(uint *)(pCVar12->unk13 + 8) = *(uint *)((int)&DAT_03342b50 + iVar11);
         iVar11 = iVar11 + 8;
         pCVar12 = (CDemonSet *)pCVar12->cameras;
       } while (iVar7 < (int)DAT_03342b4c);
     }
     SVar10 = DAT_03342b4c + 1;
   }
-  *(SIZE_T *)this_ptr->field73_0x15f6e4 = SVar10;
+  *(SIZE_T *)this_ptr->unk13 = SVar10;
   if (g_CGamePtr->profile_mode == 0) {
     return;
   }

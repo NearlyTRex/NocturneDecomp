@@ -13,7 +13,7 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(CBodyPart *thi
   void *pvVar2;
   CBox *pCVar3;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                      (&pCVar1[1].previous_transform_state.orientation.y,3,&g_SBodyPartModelTypeInfo)
   ;

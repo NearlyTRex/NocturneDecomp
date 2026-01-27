@@ -22,7 +22,7 @@
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 DAT_0310ec9c
 ;   undefined4 DAT_0310f4ac
-;   undefined4 DAT_0310f4b0
+;   CPickList DAT_0310f4b0
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:

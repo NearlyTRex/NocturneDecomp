@@ -14,9 +14,9 @@ void __cdecl core_hero_cpp_CHero_FUN_004f29b0(CHero *this_ptr)
   int desired_state_index;
   float fVar1;
   
-  if (((int *)(this_ptr->base_character).base_actor.validation_magic == &g_ActorMagicNumber) &&
-     ((this_ptr->base_character).model.model_ptr != (CDeformableModel *)0x0)) {
-    this_ptr_00 = &(this_ptr->base_character).model;
+  if (((int *)(this_ptr->base).base.validation_magic == &g_ActorMagicNumber) &&
+     ((this_ptr->base).model.model_ptr != (CDeformableModel *)0x0)) {
+    this_ptr_00 = &(this_ptr->base).model;
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             (&this_ptr_00->motion_controller);
     desired_state_index = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_01);
@@ -29,6 +29,6 @@ void __cdecl core_hero_cpp_CHero_FUN_004f29b0(CHero *this_ptr)
       }
     }
   }
-  core_charactr_cpp_CCharacter_FUN_0042bf40(&this_ptr->base_character);
+  core_charactr_cpp_CCharacter_FUN_0042bf40(&this_ptr->base);
   return;
 }

@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 20,
-        "message": "'_DAT_00c199f8' was not declared in this scope; did you mean 'DAT_0041B9F8'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 37,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 22,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 76
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -77,8 +68,8 @@
     },
     {
       "addr": "00c199f8",
-      "name": "DAT_00c199f8",
-      "type": "undefined4",
+      "name": "INT_00c199f8",
+      "type": "int",
       "value": null
     },
     {
@@ -167,13 +158,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

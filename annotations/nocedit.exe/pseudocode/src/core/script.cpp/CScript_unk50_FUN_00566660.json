@@ -4,32 +4,26 @@
       {
         "category": "other",
         "column": 6,
-        "line": 13,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_script_cpp_CScript_unk50_FUN_00566660()'"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 24,
+        "line": 20,
         "message": "invalid conversion from 'CBitFont*' to 'undefined4' {aka 'unsigned int'} [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 62,
-        "line": 26,
+        "line": 22,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 70,
-        "line": 28,
+        "line": 24,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 36,
-        "message": "'_DAT_031141fc' was not declared in this scope; did you mean 'DAT_031141f8'?"
       }
     ],
     "success": false,
@@ -42,33 +36,31 @@
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 52,
+        "column": 59,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 55,
+        "line": 51,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 671,
+    "complexity_score": 558,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 22,
-    "pseudocode_lines": 51,
-    "suspect_count": 60,
+    "pseudocode_lines": 48,
+    "suspect_count": 50,
     "suspect_types": [
       "stack_param",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 180
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -152,37 +144,37 @@
     },
     {
       "addr": "0310fcd8",
-      "name": "DAT_0310fcd8",
-      "type": "undefined4",
+      "name": "CEdScrollBar_0310fcd8",
+      "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "0310fcdc",
-      "name": "DAT_0310fcdc",
+      "name": "CEdScrollBar_0310fcd8.current_value",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310fce0",
-      "name": "DAT_0310fce0",
+      "name": "CEdScrollBar_0310fcd8.max_value",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310fd0c",
-      "name": "DAT_0310fd0c",
-      "type": "undefined4",
+      "name": "CEdScrollBar_0310fd0c",
+      "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "0310fd10",
-      "name": "DAT_0310fd10",
+      "name": "CEdScrollBar_0310fd0c.current_value",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310fd14",
-      "name": "DAT_0310fd14",
+      "name": "CEdScrollBar_0310fd0c.max_value",
       "type": "undefined4",
       "value": null
     },
@@ -254,8 +246,8 @@
     },
     {
       "addr": "031141fc",
-      "name": "DAT_031141fc",
-      "type": "undefined4",
+      "name": "INT_031141fc",
+      "type": "int",
       "value": null
     },
     {
@@ -322,421 +314,351 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "text": "uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "text": "uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "text": "uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 7,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 9,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 10,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 11,
       "match": "in_stack_00000014",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 13,
       "match": "DAT_03114200",
       "text": "DAT_03114200 = g_ConsoleFont;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 15,
       "match": "DAT_03114200",
       "text": "iVar2 = shape_edittool_cpp_getFontCharSpacing_FUN_004a6f00(DAT_03114200);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 16,
       "match": "DAT_03114204",
       "text": "DAT_03114204 = iVar1 + iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 17,
       "match": "DAT_03114208",
       "text": "DAT_03114208 = shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(DAT_03114200);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 17,
       "match": "DAT_03114200",
       "text": "DAT_03114208 = shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(DAT_03114200);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 18,
       "match": "in_stack_0000000c",
       "text": "DAT_031141d4 = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 18,
       "match": "DAT_031141d4",
       "text": "DAT_031141d4 = in_stack_0000000c;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 19,
       "match": "in_stack_00000010",
       "text": "DAT_031141d8 = in_stack_00000010 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 19,
       "match": "DAT_031141d8",
       "text": "DAT_031141d8 = in_stack_00000010 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 20,
       "match": "in_stack_00000014",
       "text": "DAT_031141dc = in_stack_00000014 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 20,
       "match": "DAT_031141dc",
       "text": "DAT_031141dc = in_stack_00000014 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "DAT_031141d0 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 21,
       "match": "DAT_031141d0",
       "text": "DAT_031141d0 = in_stack_00000008;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 22,
       "match": "DAT_031141f4",
       "text": "DAT_031141f4 = DAT_031141dc - DAT_03114208;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 22,
       "match": "DAT_031141dc",
       "text": "DAT_031141f4 = DAT_031141dc - DAT_03114208;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 22,
       "match": "DAT_03114208",
       "text": "DAT_031141f4 = DAT_031141dc - DAT_03114208;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "DAT_031141f0 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 23,
       "match": "DAT_031141f0",
       "text": "DAT_031141f0 = in_stack_00000008;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 24,
       "match": "DAT_031141f8",
       "text": "DAT_031141f8 = DAT_031141d8;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 24,
       "match": "DAT_031141d8",
       "text": "DAT_031141f8 = DAT_031141d8;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 25,
       "match": "DAT_031141dc",
-      "text": "_DAT_031141fc = DAT_031141dc;",
+      "text": "INT_031141fc = DAT_031141dc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 28,
       "match": "DAT_031141e0",
       "text": "DAT_031141e0 = DAT_031141d0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 28,
       "match": "DAT_031141d0",
       "text": "DAT_031141e0 = DAT_031141d0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 29,
       "match": "DAT_031141e4",
       "text": "DAT_031141e4 = DAT_031141d4 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 29,
       "match": "DAT_031141d4",
       "text": "DAT_031141e4 = DAT_031141d4 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 30,
       "match": "DAT_031141e8",
       "text": "DAT_031141e8 = DAT_031141d8 - iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 30,
       "match": "DAT_031141d8",
       "text": "DAT_031141e8 = DAT_031141d8 - iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 31,
       "match": "DAT_031141ec",
       "text": "DAT_031141ec = DAT_031141f4 - iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 31,
       "match": "DAT_031141f4",
       "text": "DAT_031141ec = DAT_031141f4 - iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0310fd0c",
-      "text": "((CEdScrollBar *)&DAT_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
+      "line": 33,
       "match": "DAT_031141d0",
-      "text": "((CEdScrollBar *)&DAT_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
+      "text": "(&CEdScrollBar_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 33,
       "match": "DAT_031141ec",
-      "text": "((CEdScrollBar *)&DAT_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
+      "text": "(&CEdScrollBar_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 33,
       "match": "DAT_031141e8",
-      "text": "((CEdScrollBar *)&DAT_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
+      "text": "(&CEdScrollBar_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 33,
       "match": "DAT_031141f4",
-      "text": "((CEdScrollBar *)&DAT_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
+      "text": "(&CEdScrollBar_0310fd0c,DAT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0310fcd8",
-      "text": "((CEdScrollBar *)&DAT_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
+      "line": 35,
       "match": "DAT_031141e8",
-      "text": "((CEdScrollBar *)&DAT_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
+      "text": "(&CEdScrollBar_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 35,
       "match": "DAT_031141e4",
-      "text": "((CEdScrollBar *)&DAT_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
+      "text": "(&CEdScrollBar_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 35,
       "match": "DAT_031141d8",
-      "text": "((CEdScrollBar *)&DAT_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
+      "text": "(&CEdScrollBar_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 35,
       "match": "DAT_031141ec",
-      "text": "((CEdScrollBar *)&DAT_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
+      "text": "(&CEdScrollBar_0310fcd8,DAT_031141e8,DAT_031141e4,DAT_031141d8,DAT_031141ec);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0310fce0",
-      "text": "DAT_0310fce0 = (DAT_031141ec - DAT_031141e4) / DAT_03114208;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
+      "line": 36,
       "match": "DAT_031141ec",
-      "text": "DAT_0310fce0 = (DAT_031141ec - DAT_031141e4) / DAT_03114208;",
+      "text": "CEdScrollBar_0310fcd8.max_value = (DAT_031141ec - DAT_031141e4) / DAT_03114208;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 36,
       "match": "DAT_031141e4",
-      "text": "DAT_0310fce0 = (DAT_031141ec - DAT_031141e4) / DAT_03114208;",
+      "text": "CEdScrollBar_0310fcd8.max_value = (DAT_031141ec - DAT_031141e4) / DAT_03114208;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 36,
       "match": "DAT_03114208",
-      "text": "DAT_0310fce0 = (DAT_031141ec - DAT_031141e4) / DAT_03114208;",
+      "text": "CEdScrollBar_0310fcd8.max_value = (DAT_031141ec - DAT_031141e4) / DAT_03114208;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_0310fd14",
-      "text": "DAT_0310fd14 = (DAT_031141e8 - DAT_031141e0) / DAT_03114204;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
+      "line": 37,
       "match": "DAT_031141e8",
-      "text": "DAT_0310fd14 = (DAT_031141e8 - DAT_031141e0) / DAT_03114204;",
+      "text": "CEdScrollBar_0310fd0c.max_value = (DAT_031141e8 - DAT_031141e0) / DAT_03114204;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 37,
       "match": "DAT_031141e0",
-      "text": "DAT_0310fd14 = (DAT_031141e8 - DAT_031141e0) / DAT_03114204;",
+      "text": "CEdScrollBar_0310fd0c.max_value = (DAT_031141e8 - DAT_031141e0) / DAT_03114204;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 37,
       "match": "DAT_03114204",
-      "text": "DAT_0310fd14 = (DAT_031141e8 - DAT_031141e0) / DAT_03114204;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_0310fd10",
-      "text": "DAT_0310fd10 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_0310fcdc",
-      "text": "DAT_0310fcdc = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0",
+      "text": "CEdScrollBar_0310fd0c.max_value = (DAT_031141e8 - DAT_031141e0) / DAT_03114204;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 41,
       "match": "in_stack_00000004",
-      "text": "((CBitFont *)(in_stack_00000004 + 0x38));",
+      "text": "shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(in_stack_00000004 + 0x38));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "((CBitFont *)(in_stack_00000004 + 0x38));",
       "type": "stack_param"

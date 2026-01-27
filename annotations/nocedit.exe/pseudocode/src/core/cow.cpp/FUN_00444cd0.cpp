@@ -24,7 +24,7 @@ core_cow_cpp_FUN_00444cd0
     return this_ptr;
   }
   iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720
-                    ((CFlame **)((this_ptr->base_enemy).base_character.cloth_data + 0x934));
+                    ((CFlame **)((this_ptr->base).base.cloth_data + 0x934));
   iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
   iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));

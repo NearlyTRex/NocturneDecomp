@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_0062b835
 ;   TerminatedCString s_CGame_playerControls_unk_0062b846
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   int g_MouseButtonFlags
 ;   char[256] g_KeyboardState
@@ -24,7 +24,7 @@
 ;   int g_CheatSystemEnabled
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02f7c740
+;   CNetGame g_CNetGameInstance
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -108,8 +108,8 @@ section .text
         ;   XREF to: 004dbdbb (UNCONDITIONAL_JUMP)  ; LAB_004dbdbb
     PUSH EDI                            ; 004dbe0d
         ;   Label: LAB_004dbe0d
-    MOV EDI,dword ptr [0x00680a00]      ; 004dbe0e | g_CNetGameInstance
-    PUSH EDI                            ; 004dbe14 | DAT_02f7c740
+    MOV EDI,dword ptr [0x00680a00]      ; 004dbe0e | g_CNetGamePtr
+    PUSH EDI                            ; 004dbe14 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0 ; 004dbe15
         ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; void * * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
     MOV EDX,EAX                         ; 004dbe1a

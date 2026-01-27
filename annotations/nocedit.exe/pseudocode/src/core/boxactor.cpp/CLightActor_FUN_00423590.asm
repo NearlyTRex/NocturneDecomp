@@ -8,7 +8,7 @@
 ;   TerminatedCString s_Select_type_of_light_to__00616a47
 ;
 ; Called Functions:
-;   core_boxactor.cpp_FUN_00423110
+;   core_boxactor.cpp_CLightActor_FUN_00423110
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_boxactor.cpp_CLightActor_FUN_00423590
     PUSH 0x0                            ; 00423592
     PUSH 0x616a47                       ; 00423594 | = "Select type of light to fill in initi..."
-    CALL core_boxactor.cpp_FUN_00423110 ; 00423599
-        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00423110()
+    CALL core_boxactor.cpp_CLightActor_FUN_00423110 ; 00423599
+        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)  ; int core_boxactor.cpp_CLightActor_FUN_00423110(CLightActor * this_ptr)
     ADD ESP,0xc                         ; 0042359e
     TEST EAX,EAX                        ; 004235a1
     JL 0x004235b5                       ; 004235a3

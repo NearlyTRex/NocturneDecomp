@@ -1,0 +1,159 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 61,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 46,
+    "suspect_count": 1,
+    "suspect_types": [
+      "suspect_float"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [
+    {
+      "addr": "004cb840",
+      "from_addr": "004cb85a",
+      "name": "core_flamegun.cpp_factoryFunc_FUN_004cb840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cb880",
+    "address_range": [
+      [
+        "004cb880",
+        "004cb91d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880",
+    "signature": "CFlameThrower * core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880(CFlameThrower * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005ede70",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a38e",
+      "name": "s_flamegun_kfm_0062a38e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065e26c",
+      "name": "DAT_0065e26c",
+      "type": "float",
+      "value": "8"
+    },
+    {
+      "addr": "0065e284",
+      "name": "g_CFlameThrowerVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cb85a",
+        "call_type": "direct",
+        "caller": "core_flamegun.cpp_factoryFunc_FUN_004cb840",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.148148148148148,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 38,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 18,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 112
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameThrower *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 37,
+      "match": "1.4013e-45",
+      "text": "(pCVar2->base).fire_cooldown = 1.4013e-45;",
+      "type": "suspect_float"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlameThrower",
+        "offset": 0,
+        "vtable_addr": "0065e394"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

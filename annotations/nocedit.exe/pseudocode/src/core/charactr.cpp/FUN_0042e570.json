@@ -2,28 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 30,
-        "line": 16,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
+        "category": "incompatible_types",
         "column": 50,
-        "line": 18,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 40,
-        "line": 19,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 35,
         "line": 20,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
+        "message": "cannot convert 'float (*)(int, int, float, int, CDeformableModelInstance*)' to 'float (**)(int, int, float, int, CDeformableModelInstance*)'"
       }
     ],
     "success": false,
@@ -38,16 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 58,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 12,
     "suspect_count": 4,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 42
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -150,14 +132,14 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->field13_0x2620 + 0x470),in_stack_00000008,in_stack_0000000c,",
+      "text": "in_stack_00000008,in_stack_0000000c,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_0000000c",
-      "text": "*(float *)(this_ptr->field13_0x2620 + 0x470),in_stack_00000008,in_stack_0000000c,",
+      "text": "in_stack_00000008,in_stack_0000000c,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
       "type": "stack_param"
     }
   ]

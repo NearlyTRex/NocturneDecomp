@@ -9,10 +9,10 @@
 ; XREF[7]:
 ;   core_bat.cpp_CBat_ctor_FUN_004147d0 at 004147e6
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e23f
-;   core_frankgen.cpp_FUN_004d1720 at 004d1741
+;   core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004d1720 at 004d1741
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050783a
-;   core_marquee.cpp_FUN_0050bb60 at 0050bb75
-;   core_platfrm.cpp_FUN_0054c850 at 0054c877
+;   core_marquee.cpp_CMarquee_ctor_FUN_0050bb60 at 0050bb75
+;   core_platfrm.cpp_CPlatform_ctor_FUN_0054c850 at 0054c877
 ;   core_vehicle.cpp_CVehicle_ctor_FUN_005e7940 at 005e798e
 ;
 ; *****************************************************************************

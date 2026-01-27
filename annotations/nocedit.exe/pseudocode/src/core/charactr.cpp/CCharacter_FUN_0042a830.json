@@ -44,45 +44,39 @@
         "message": "expected primary-expression before ')' token"
       },
       {
-        "category": "missing_member",
-        "column": 27,
-        "line": 158,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
         "category": "other",
         "column": 16,
-        "line": 161,
+        "line": 160,
         "message": "invalid cast from type 'float' to type 'CDeformableModel*'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 166,
+        "line": 165,
         "message": "invalid cast from type 'CDeformableModel*' to type 'float'"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 167,
+        "line": 166,
         "message": "cast from 'CSkeleton*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 167,
+        "line": 166,
         "message": "cast from 'CSkeleton*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 169,
+        "line": 168,
         "message": "cast from 'CSkeleton*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 206,
+        "line": 205,
         "message": "cast from 'CSkeleton*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -114,13 +108,13 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 44,
         "line": 110,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 40,
+        "column": 34,
         "line": 122,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -133,66 +127,66 @@
       {
         "category": "other",
         "column": 20,
-        "line": 167,
+        "line": 166,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 167,
+        "line": 166,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 169,
+        "line": 168,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 172,
+        "line": 171,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 174,
+        "line": 173,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 175,
+        "line": 174,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 190,
+        "line": 189,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 196,
+        "line": 195,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 206,
+        "line": 205,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 426,
+    "complexity_score": 425,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
-    "pseudocode_lines": 201,
+    "pseudocode_lines": 200,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
@@ -201,7 +195,7 @@
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 623
+    "total_lines": 622
   },
   "cross_references": [
     {
@@ -618,63 +612,63 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 154,
+      "line": 153,
       "match": "in_stack_00000008",
       "text": "local_34 = (CDeformableModel *)(in_stack_00000008 * 2.0f);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 159,
       "match": "(float *)((int)",
       "text": "*(float *)((int)local_18 + 0x14), *(float *)((int)local_18 + 0x14) = fVar1,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 159,
       "match": "(float *)((int)",
       "text": "*(float *)((int)local_18 + 0x14), *(float *)((int)local_18 + 0x14) = fVar1,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 161,
       "match": "(float *)((int)",
       "text": "*(float *)((int)local_18 + 0x14) = 3.0f;",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 164,
+      "line": 163,
       "match": "unaff_EBP",
       "text": "iVar9 = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 165,
+      "line": 164,
       "match": "unaff_EBP",
       "text": "if (0 < *(int *)(unaff_EBP + 0x28558)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 183,
+      "line": 182,
       "match": "unaff_EBP",
       "text": "} while (iVar5 < *(int *)(unaff_EBP + 0x28558));",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 189,
+      "line": 188,
       "match": "unaff_EBP",
       "text": "if (*(int *)(*(int *)(pcStack_14 + 4) * 0x24 + unaff_EBP + 0x2857c) ==",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 198,
       "match": "(CSkeleton *)((int)",
       "text": "local_18 = (CSkeleton *)((int)local_18 + 0x18);",
       "type": "pointer_cast"

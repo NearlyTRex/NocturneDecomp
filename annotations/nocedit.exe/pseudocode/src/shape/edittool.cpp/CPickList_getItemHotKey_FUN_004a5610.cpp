@@ -9,7 +9,7 @@
 int __cdecl shape_edittool_cpp_CPickList_getItemHotKey_FUN_004a5610(CPickList *this_ptr,int index)
 
 {
-  if ((index < 0) || ((this_ptr->base_strlist).item_count <= index)) {
+  if ((index < 0) || ((this_ptr->base).item_count <= index)) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 0x1066;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::getItemHotKey - invalid index");

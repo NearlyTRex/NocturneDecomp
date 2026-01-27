@@ -32,7 +32,7 @@
 ;
 ; XREF[26]:
 ;   core_bodypart.cpp_FUN_0041a630 at 0041a9eb
-;   core_boxactor.cpp_FUN_00422a50 at 00422c34
+;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c34
 ;   core_charactr.cpp_CCharacter_FUN_0042a420 at 0042a4b6
 ;   core_charactr.cpp_CCharacter_FUN_0042bd30 at 0042beb6
 ;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d1f4

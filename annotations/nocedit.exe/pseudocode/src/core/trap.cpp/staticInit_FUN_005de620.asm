@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_trap.cpp_staticInit_FUN_005de620(void)
+; __cdecl void core_trap.cpp_staticInit_FUN_005de620(void)
 ;
 ;
 ; Referenced Globals:

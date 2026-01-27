@@ -15,23 +15,17 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 17,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 110,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "pseudocode_lines": 15,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param"
     ],
@@ -74,7 +68,7 @@
     {
       "addr": "004226e0",
       "is_variadic": false,
-      "name": "core_boxactor.cpp_FUN_004226e0"
+      "name": "core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0"
     }
   ],
   "globals": [
@@ -157,7 +151,7 @@
       "description": "Unresolved stack parameter",
       "line": 5,
       "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
+      "text": "CBoxActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -165,6 +159,20 @@
       "line": 6,
       "match": "in_stack_00000008",
       "text": "CActorPropertyList *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     },
     {
@@ -178,7 +186,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0x66c) == 0) {",
+      "text": "if (*(int *)in_stack_00000004[1].base.actor_name == 0) {",
       "type": "stack_param"
     },
     {
@@ -220,7 +228,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CLightActor",
         "offset": 212,
         "vtable_addr": "0065b2a4"
       }

@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 64,
+        "column": 58,
         "line": 18,
         "message": "'stack0xffffffc0' was not declared in this scope"
       }
@@ -20,16 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 33,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 17,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -135,7 +135,7 @@
       "description": "Direct stack address reference",
       "line": 11,
       "match": "&stack0xffffffc0",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffc0);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc0);",
       "type": "stack_ref"
     }
   ]

@@ -1,7 +1,7 @@
 // Name: core_mmx.c_detectIntelProcessor_FUN_00524f4c
 // Address: 00524f4c
 // Address Range: [[00524f4c, 00524ff8]]
-// Convention: __watcallRegister
+// Convention: __cdecl
 // Signature: void core_mmx.c_detectIntelProcessor_FUN_00524f4c(void)
 
 #include "nocturne.h"
@@ -10,7 +10,7 @@
 /* WARNING: Removing unreachable block (ram,0x00524f8f) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_mmx_c_detectIntelProcessor_FUN_00524f4c(void)
+void __cdecl core_mmx_c_detectIntelProcessor_FUN_00524f4c(void)
 
 {
   char cVar1;

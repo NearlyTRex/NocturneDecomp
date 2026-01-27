@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boxactor.cpp_FUN_0042307e()
+; __cdecl char * core_boxactor.cpp_FUN_0042307e(int param_1)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00423068 = 00423090

@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   }
   iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
   INT_00823a94 = iVar2 % 6;
-  g_CDemonRendererPtr2->field8_0x20 = 1;
+  g_CDemonRendererPtr2->unk = 1;
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
@@ -50,7 +50,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
     iVar2 = iVar3;
   } while (iVar3 != 96000);
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model);
-  g_CDemonRendererPtr2->field8_0x20 = 0;
+  g_CDemonRendererPtr2->unk = 0;
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
             (&this_ptr->model,(SBoneTransformData *)&stack0xffffe550);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);

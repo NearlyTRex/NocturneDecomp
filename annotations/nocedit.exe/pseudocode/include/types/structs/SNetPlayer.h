@@ -11,8 +11,8 @@ typedef struct SNetPlayer {
     uint last_ping_sent; // 0x2c
     uint last_ping_response; // 0x30
     int player_id; // 0x34
-    char field_56[36]; // 0x38
+    char unk1[36]; // 0x38
     int sync_stage; // 0x5c
-    char field_96[24]; // 0x60
+    char unk2[24]; // 0x60
 } SNetPlayer;
 

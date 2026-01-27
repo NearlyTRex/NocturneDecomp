@@ -62,10 +62,10 @@ section .text
     CMP dword ptr [EBX + 0x20c],0x0     ; 004e319b
     JNZ 0x004e363d                      ; 004e31a2
         ;   XREF to: 004e363d (CONDITIONAL_JUMP)  ; LAB_004e363d
-    MOV EAX,[0x00680a00]                ; 004e31a8 | DAT_02f7c740 | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 004e31a8 | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_004e31a8
     MOV dword ptr [EBX + 0x23c],0x1     ; 004e31ad
-    CMP dword ptr [EAX],0x0             ; 004e31b7 | DAT_02f7c740
+    CMP dword ptr [EAX],0x0             ; 004e31b7 | g_CNetGameInstance
     JNZ 0x004e3649                      ; 004e31ba
         ;   XREF to: 004e3649 (CONDITIONAL_JUMP)  ; LAB_004e3649
     CALL crt_stdlib.c_rand_FUN_005feb5c ; 004e31c0

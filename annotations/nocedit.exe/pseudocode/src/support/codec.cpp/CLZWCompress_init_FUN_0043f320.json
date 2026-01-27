@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 16,
-        "message": "'CLZWCompress' {aka 'struct CLZWCompress'} has no member named 'field2_0x20'; did you mean 'field_32'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 85,
-        "line": 16,
-        "message": "'CLZWCompress' {aka 'struct CLZWCompress'} has no member named 'field2_0x20'; did you mean 'field_32'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -148,9 +135,9 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_EBX",
-      "text": ",unaff_EBX,unaff_retaddr);",
+      "text": "(&this_ptr->dictionary,*(int *)this_ptr->unk,*(int *)(this_ptr->unk + 4),unaff_EBX,",
       "type": "unaffected_reg"
     }
   ],

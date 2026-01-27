@@ -23,8 +23,8 @@
 ;   TerminatedCString s_No_enemies_matched_crite_0063bbfd
 ;   TerminatedCString s_d_enemy_speeds_randomize_0063bc30
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   undefined4 DAT_006804b0
-;   undefined4 DAT_006804b4
+;   float FLOAT_006804b0 = 0.9000000
+;   float FLOAT_006804b4 = 1.100000
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -176,7 +176,7 @@ section .text
     PUSH 0x42c80000                     ; 00537b2f
     PUSH 0x3c23d70a                     ; 00537b34
     PUSH EDI                            ; 00537b39
-    PUSH 0x6804b0                       ; 00537b3a | DAT_006804b0
+    PUSH 0x6804b0                       ; 00537b3a | FLOAT_006804b0
     PUSH 0x63bb43                       ; 00537b3f | = "Enter minimum random speed"
     MOV EAX,[0x00678a60]                ; 00537b44 | g_CEditorToolsPtr
     PUSH EAX                            ; 00537b49 | g_CEditorToolsInstance
@@ -197,9 +197,9 @@ section .text
     PUSH EDI                            ; 00537b6c
         ;   Label: LAB_00537b6c
     PUSH 0x42c80000                     ; 00537b6d
-    PUSH dword ptr [0x006804b0]         ; 00537b72 | DAT_006804b0
+    PUSH dword ptr [0x006804b0]         ; 00537b72 | FLOAT_006804b0
     PUSH EDI                            ; 00537b78
-    PUSH 0x6804b4                       ; 00537b79 | DAT_006804b4
+    PUSH 0x6804b4                       ; 00537b79 | FLOAT_006804b4
     PUSH 0x63bb5e                       ; 00537b7e | = "Enter maximum random speed"
     MOV EDX,dword ptr [0x00678a60]      ; 00537b83 | g_CEditorToolsPtr
     PUSH EDX                            ; 00537b89 | g_CEditorToolsInstance
@@ -336,8 +336,8 @@ section .text
     TEST EAX,EAX                        ; 00537ce7
     JZ 0x00537c3c                       ; 00537ce9
         ;   XREF to: 00537c3c (CONDITIONAL_JUMP)  ; LAB_00537c3c
-    PUSH dword ptr [0x006804b4]         ; 00537cef | DAT_006804b4
-    PUSH dword ptr [0x006804b0]         ; 00537cf5 | DAT_006804b0
+    PUSH dword ptr [0x006804b4]         ; 00537cef | FLOAT_006804b4
+    PUSH dword ptr [0x006804b0]         ; 00537cf5 | FLOAT_006804b0
     CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00537cfb
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     CMP dword ptr [EAX + 0xbe2c],0x0    ; 00537d5f

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
 
 {
@@ -107,20 +105,20 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   
   bVar13 = 0;
   crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
-  in_stack_00000004->field0_0x0[4] = '\x01';
-  in_stack_00000004->field0_0x0[5] = '\0';
-  in_stack_00000004->field0_0x0[6] = '\0';
-  in_stack_00000004->field0_0x0[7] = '\0';
+  in_stack_00000004->unk1[4] = '\x01';
+  in_stack_00000004->unk1[5] = '\0';
+  in_stack_00000004->unk1[6] = '\0';
+  in_stack_00000004->unk1[7] = '\0';
   core_actor_cpp_FUN_0040e150();
   this_ptr = g_CGamePtr;
-  in_stack_00000004->field2_0xc[0x1c] = '\0';
-  in_stack_00000004->field2_0xc[0x1d] = '\0';
-  in_stack_00000004->field2_0xc[0x1e] = '\0';
-  in_stack_00000004->field2_0xc[0x1f] = '\0';
-  in_stack_00000004->field2_0xc[0x20] = '\0';
-  in_stack_00000004->field2_0xc[0x21] = '\0';
-  in_stack_00000004->field2_0xc[0x22] = '\0';
-  in_stack_00000004->field2_0xc[0x23] = '\0';
+  in_stack_00000004->unk2[0x1c] = '\0';
+  in_stack_00000004->unk2[0x1d] = '\0';
+  in_stack_00000004->unk2[0x1e] = '\0';
+  in_stack_00000004->unk2[0x1f] = '\0';
+  in_stack_00000004->unk2[0x20] = '\0';
+  in_stack_00000004->unk2[0x21] = '\0';
+  in_stack_00000004->unk2[0x22] = '\0';
+  in_stack_00000004->unk2[0x23] = '\0';
   core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
@@ -137,21 +135,21 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
             (g_CEditorToolsPtr,"Setting initial camera view.");
   if (in_stack_00000008 != 0) {
     DAT_02f7c53c = 0;
-    in_stack_00000004->field2_0xc[4] = '\0';
-    in_stack_00000004->field2_0xc[5] = '\0';
-    in_stack_00000004->field2_0xc[6] = '\0';
-    in_stack_00000004->field2_0xc[7] = '\0';
+    in_stack_00000004->unk2[4] = '\0';
+    in_stack_00000004->unk2[5] = '\0';
+    in_stack_00000004->unk2[6] = '\0';
+    in_stack_00000004->unk2[7] = '\0';
     DAT_02f7c634 = 0;
     g_CEdCheckInstance.checked_state = 1;
   }
-  _DAT_02f7c540 = 5.0f;
+  FLOAT_02f7c540 = 5.0f;
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
-            (g_CDemonSetPtr,*(int *)(in_stack_00000004->field2_0xc + 4));
-  in_stack_00000004->field2_0xc[0x18] = -1;
-  in_stack_00000004->field2_0xc[0x19] = -1;
-  in_stack_00000004->field2_0xc[0x1a] = -1;
-  in_stack_00000004->field2_0xc[0x1b] = -1;
+            (g_CDemonSetPtr,*(int *)(in_stack_00000004->unk2 + 4));
+  in_stack_00000004->unk2[0x18] = -1;
+  in_stack_00000004->unk2[0x19] = -1;
+  in_stack_00000004->unk2[0x1a] = -1;
+  in_stack_00000004->unk2[0x1b] = -1;
   core_msnedit_cpp_CalltoCallToDemonCameraInit_FUN_00539060();
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -181,7 +179,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   local_74 = 0.0;
   local_18 = 10.0;
   local_48 = g_CDemonSetPtr->selected_camera_index;
-  local_4c = in_stack_00000004->field2_0xc + 0x38;
+  local_4c = in_stack_00000004->unk2 + 0x38;
   local_28 = 0.0;
   local_24 = 0.0;
   local_60 = 0;
@@ -207,7 +205,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       case 0:
         if ((g_CEdCheckInstance.checked_state != 0) && (g_MouseButtonFlags == 0)) {
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-                    (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),0);
+                    (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),0);
         }
         crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Static cam: %s");
         local_10c = g_CDemonCameraInstance.base.position.x;
@@ -266,16 +264,16 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         break;
       case 3:
         crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"1st person cam");
-        if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
-          pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) +
-                                                 0x154) + 0x14))();
+        if (*(int *)(in_stack_00000004->unk2 + 0x1c) != 0) {
+          pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x154)
+                                        + 0x14))();
           local_f4 = *pfVar3 + pfVar3[3];
           local_f0 = pfVar3[1] + pfVar3[4];
           local_100 = local_f4 * 0.5f;
           local_ec = pfVar3[2] + pfVar3[5];
           local_fc = local_f0 * 0.5f;
           local_f8 = local_ec * 0.5f;
-          iVar10 = *(int *)(in_stack_00000004->field2_0xc + 0x1c);
+          iVar10 = *(int *)(in_stack_00000004->unk2 + 0x1c);
           local_ac = *(float *)(iVar10 + 0x20) + local_100;
           local_a8 = *(float *)(iVar10 + 0x24) + local_fc;
           local_a4 = *(float *)(iVar10 + 0x28) + local_f8;
@@ -284,7 +282,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
             local_170._4_4_ = local_a8;
             local_170._8_4_ = local_a4;
           }
-          iVar10 = *(int *)(in_stack_00000004->field2_0xc + 0x1c);
+          iVar10 = *(int *)(in_stack_00000004->unk2 + 0x1c);
           if ((float *)(local_170 + 0xc) != (float *)(iVar10 + 0x30)) {
             local_170._12_4_ = *(float *)(iVar10 + 0x30);
             local_160 = *(float *)(iVar10 + 0x34);
@@ -304,28 +302,28 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         break;
       case 4:
         crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Chase/spot cam");
-        if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
+        if (*(int *)(in_stack_00000004->unk2 + 0x1c) != 0) {
           if ((float *)(local_170 + 0xc) != &local_7c) {
             local_170._12_4_ = local_7c;
             local_160 = local_78;
             local_15c = local_74;
           }
-          local_160 = local_160 + *(float *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x34);
+          local_160 = local_160 + *(float *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x34);
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                     (&local_198,(CVector3f *)(local_170 + 0xc));
           local_94.z = -local_18;
           local_94.x = local_28;
           local_94.y = local_24;
           local_68 = local_94.z;
-          pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) +
-                                                 0x154) + 0x14))();
+          pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x154)
+                                        + 0x14))();
           local_e8 = *pfVar3 + pfVar3[3];
           local_e4 = pfVar3[1] + pfVar3[4];
           local_d0 = local_e8 * 0.5f;
           local_e0 = pfVar3[2] + pfVar3[5];
           local_cc = local_e4 * 0.5f;
           local_c8 = local_e0 * 0.5f;
-          iVar10 = *(int *)(in_stack_00000004->field2_0xc + 0x1c);
+          iVar10 = *(int *)(in_stack_00000004->unk2 + 0x1c);
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              (&local_198,&local_a0,&local_94);
           local_88 = pCVar5->x + *(float *)(iVar10 + 0x20);
@@ -357,12 +355,12 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid cameraMode!");
       }
       core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
-      if (*(int *)(in_stack_00000004->field2_0xc + 0x18) != 0) {
+      if (*(int *)(in_stack_00000004->unk2 + 0x18) != 0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
       }
       pCVar1 = g_CDemonSetPtr;
       if (DAT_02f7c53c == 0) {
-        if (*(int *)(in_stack_00000004->field2_0xc + 0x2c) == 0) {
+        if (*(int *)(in_stack_00000004->unk2 + 0x2c) == 0) {
           g_CDemonCameraInstance.corona_blend_factor = local_5c;
           g_CDemonSetPtr->lighting_quality_mode = 0;
           pCVar1->unk_lighting_param1 = 0;
@@ -373,9 +371,8 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           pCVar1->unk_lighting_param1 = 1;
         }
         pCVar1 = g_CDemonSetPtr;
-        g_CDemonSetPtr->unk_lighting_param3 =
-             (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x24) == 0);
-        pCVar1->unk_lighting_param4 = (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x28) == 0);
+        g_CDemonSetPtr->unk_lighting_param3 = (uint)(*(int *)(in_stack_00000004->unk2 + 0x24) == 0);
+        pCVar1->unk_lighting_param4 = (uint)(*(int *)(in_stack_00000004->unk2 + 0x28) == 0);
         core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar1);
         core_set_cpp_CDemonSet_FUN_0056be80(g_CDemonSetPtr);
         core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(&g_CDemonCameraInstance);
@@ -385,7 +382,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         pCVar1->unk_lighting_param3 = 0;
         pCVar1->unk_lighting_param4 = 0;
         g_CDemonRaytraceInstance.rendering_mode = g_DynamicRenderMode;
-        if (*(int *)(in_stack_00000004->field2_0xc + 0x18) == 0) {
+        if (*(int *)(in_stack_00000004->unk2 + 0x18) == 0) {
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
         }
         wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
@@ -400,7 +397,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       }
       iVar10 = local_14;
-      if ((((*(int *)(in_stack_00000004->field2_0xc + 0x18) != 0) &&
+      if ((((*(int *)(in_stack_00000004->unk2 + 0x18) != 0) &&
            (iVar6 = DAT_02f7c634, DAT_02f7c634 == 0)) &&
           (local_38 = core_setedit_cpp_CDemonSet_FUN_00577af0(g_CDemonSetPtr), iVar10 = local_14,
           -1 < local_38)) &&
@@ -418,29 +415,28 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
       if ((DAT_02f7c538 == 0) && (g_ActiveButton == (CEdButton *)0x0)) {
         iVar10 = core_msnedit_cpp_FUN_0053c340();
-        *(int *)(in_stack_00000004->field2_0xc + 0x20) = iVar10;
+        *(int *)(in_stack_00000004->unk2 + 0x20) = iVar10;
         if (iVar10 != 0) {
           uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-                    (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x20),
+                    (*(CDemonActor **)(in_stack_00000004->unk2 + 0x20),
                      CONCAT31(extraout_var_01,uVar2));
         }
       }
       else {
-        in_stack_00000004->field2_0xc[0x20] = '\0';
-        in_stack_00000004->field2_0xc[0x21] = '\0';
-        in_stack_00000004->field2_0xc[0x22] = '\0';
-        in_stack_00000004->field2_0xc[0x23] = '\0';
+        in_stack_00000004->unk2[0x20] = '\0';
+        in_stack_00000004->unk2[0x21] = '\0';
+        in_stack_00000004->unk2[0x22] = '\0';
+        in_stack_00000004->unk2[0x23] = '\0';
       }
-      if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
+      if (*(int *)(in_stack_00000004->unk2 + 0x1c) != 0) {
         uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                           (g_CEditorToolsPtr);
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-                  (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),
-                   CONCAT31(extraout_var,uVar2));
-        pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) +
-                                               0x154) + 0x14))();
+                  (*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),CONCAT31(extraout_var,uVar2));
+        pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x154) +
+                                      0x14))();
         local_c4 = pfVar3[3] - *pfVar3;
         local_c0 = pfVar3[4] - pfVar3[1];
         local_bc = pfVar3[5] - pfVar3[2];
@@ -449,8 +445,8 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         if (local_40 < (float)0.5) {
           local_40 = 0.5;
         }
-        param5 = (void *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x30);
-        label_offset = (CQuaternion4f *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x20);
+        param5 = (void *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x30);
+        label_offset = (CQuaternion4f *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x20);
         uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                           (g_CEditorToolsPtr);
         shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
@@ -460,11 +456,11 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
       core_msnedit_cpp_FUN_0053c4f0();
-      if (*(char **)(in_stack_00000004->field2_0xc + 0x20) != (char *)0x0) {
+      if (*(char **)(in_stack_00000004->unk2 + 0x20) != (char *)0x0) {
         engine_2d_c_drawText_FUN_00401fd0
-                  (*(char **)(in_stack_00000004->field2_0xc + 0x20),g_MouseX,g_MouseY);
+                  (*(char **)(in_stack_00000004->unk2 + 0x20),g_MouseX,g_MouseY);
       }
-      if (0.0 < _DAT_02f7c540) {
+      if (0.0 < FLOAT_02f7c540) {
         engine_2d_c_drawText_FUN_00401fd0(local_2b0,0,0);
         if (DAT_02f7c53c == 0) {
           if (g_CEdCheckInstance.checked_state == 0) {
@@ -475,12 +471,12 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           }
           engine_2d_c_drawText_FUN_00401fd0(pcVar14,0,0xb);
         }
-        _DAT_02f7c540 = _DAT_02f7c540 - g_CGamePtr->delta_time_float;
-        if (_DAT_02f7c540 < 0.0) {
-          _DAT_02f7c540 = 0.0;
+        FLOAT_02f7c540 = FLOAT_02f7c540 - g_CGamePtr->delta_time_float;
+        if (FLOAT_02f7c540 < 0.0) {
+          FLOAT_02f7c540 = 0.0;
         }
       }
-      if (*(int *)(in_stack_00000004->field2_0xc + 0x18) != 0) {
+      if (*(int *)(in_stack_00000004->unk2 + 0x18) != 0) {
         iVar10 = core_msnedit_cpp_FUN_00536cd0();
         if (iVar10 != 0) {
           local_64 = 1;
@@ -625,10 +621,10 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       if (DAT_02f7c53c == 2) {
         core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_170);
       }
-      else if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
-        (**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x154) + 0xd0))();
+      else if (*(int *)(in_stack_00000004->unk2 + 0x1c) != 0) {
+        (**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x154) + 0xd0))();
         core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-                  (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c));
+                  (*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c));
       }
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xe);
       if (iVar10 != 0) {
@@ -700,7 +696,7 @@ LAB_00539d68:
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
       if (iVar10 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403260();
-        if (in_stack_00000004->field2_0xc[0x38] == '\0') {
+        if (in_stack_00000004->unk2[0x38] == '\0') {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"No mission name!");
         }
@@ -748,7 +744,7 @@ LAB_00539e00:
           local_64 = 1;
           local_14 = 0;
         }
-        _DAT_02f7c540 = 5.0f;
+        FLOAT_02f7c540 = 5.0f;
       }
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x17);
       if (iVar10 != 0) {
@@ -782,24 +778,24 @@ LAB_00539e00:
         iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
         pCVar1 = g_CDemonSetPtr;
         if (iVar10 == 0) {
-          iVar10 = *(int *)(in_stack_00000004->field2_0xc + 4) + 1;
-          *(int *)(in_stack_00000004->field2_0xc + 4) = iVar10;
+          iVar10 = *(int *)(in_stack_00000004->unk2 + 4) + 1;
+          *(int *)(in_stack_00000004->unk2 + 4) = iVar10;
           if (pCVar1->camera_count <= iVar10) {
-            in_stack_00000004->field2_0xc[4] = '\0';
-            in_stack_00000004->field2_0xc[5] = '\0';
-            in_stack_00000004->field2_0xc[6] = '\0';
-            in_stack_00000004->field2_0xc[7] = '\0';
+            in_stack_00000004->unk2[4] = '\0';
+            in_stack_00000004->unk2[5] = '\0';
+            in_stack_00000004->unk2[6] = '\0';
+            in_stack_00000004->unk2[7] = '\0';
           }
         }
         else {
-          iVar10 = *(int *)(in_stack_00000004->field2_0xc + 4) + -1;
-          *(int *)(in_stack_00000004->field2_0xc + 4) = iVar10;
+          iVar10 = *(int *)(in_stack_00000004->unk2 + 4) + -1;
+          *(int *)(in_stack_00000004->unk2 + 4) = iVar10;
           if (iVar10 < 0) {
-            *(int *)(in_stack_00000004->field2_0xc + 4) = g_CDemonSetPtr->camera_count + -1;
+            *(int *)(in_stack_00000004->unk2 + 4) = g_CDemonSetPtr->camera_count + -1;
           }
         }
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
-                  (g_CDemonSetPtr,*(int *)(in_stack_00000004->field2_0xc + 4));
+                  (g_CDemonSetPtr,*(int *)(in_stack_00000004->unk2 + 4));
         local_14 = 0;
         local_64 = 0;
       }
@@ -807,8 +803,8 @@ LAB_00539e00:
       if (iVar10 != 0) {
         iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
         if (iVar10 == 0) {
-          if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
-            *(uint *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x148) = 1;
+          if (*(int *)(in_stack_00000004->unk2 + 0x1c) != 0) {
+            *(uint *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x148) = 1;
             core_msnedit_cpp_FUN_0053bcf0();
           }
         }
@@ -826,7 +822,7 @@ LAB_00539e00:
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);
             for (pCVar4 = in_stack_00000004->first_actor; pCVar4 != (CDemonActor *)0x0;
                 pCVar4 = pCVar4->next_actor) {
-              if (pCVar4->field26_0x148 != 0) {
+              if (pCVar4->unk14 != 0) {
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
                           ((CStrList *)&stack0xfffff64c,pCVar4->actor_name);
               }
@@ -866,7 +862,7 @@ LAB_0053a88c:
         else {
           for (pCVar4 = in_stack_00000004->first_actor; pCVar4 != (CDemonActor *)0x0;
               pCVar4 = pCVar4->next_actor) {
-            pCVar4->field26_0x148 = 0;
+            pCVar4->unk14 = 0;
           }
         }
       }
@@ -906,7 +902,7 @@ LAB_0053a88c:
       }
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
       if (iVar10 != 0) {
-        *(int *)(in_stack_00000004->field2_0xc + 4) = local_48;
+        *(int *)(in_stack_00000004->unk2 + 4) = local_48;
         local_64 = 0;
         local_14 = 0;
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(g_CDemonSetPtr,local_48);
@@ -933,7 +929,7 @@ LAB_0053a88c:
       case 0:
         if (local_64 != 0) {
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-                    (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),2);
+                    (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),2);
         }
         core_msnedit_cpp_CalltoCallToDemonCameraInit_FUN_00539060();
         break;
@@ -950,23 +946,23 @@ LAB_0053a88c:
         g_CurrentLineNumber = 0x78b;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid cameraMode!");
       }
-      _DAT_02f7c540 = 5.0f;
+      FLOAT_02f7c540 = 5.0f;
     }
     pCVar1 = g_CDemonSetPtr;
     if (-1 < local_38) {
       g_CEdCheckInstance.checked_state = 0;
-      *(int *)(in_stack_00000004->field2_0xc + 4) = local_38;
+      *(int *)(in_stack_00000004->unk2 + 4) = local_38;
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(pCVar1,local_38);
-      _DAT_02f7c540 = 5.0f;
+      FLOAT_02f7c540 = 5.0f;
     }
     if (((((g_MouseButtonFlags & 1U) == 0) && ((local_30 & 1) != 0)) && (DAT_02f7c538 == 0)) &&
        (g_ActiveButton == (CEdButton *)0x0)) {
-      if ((*(int *)(in_stack_00000004->field2_0xc + 0x1c) == 0) || (DAT_02f7c528 < 0)) {
-        if (*(int *)(in_stack_00000004->field2_0xc + 0x20) != 0) {
+      if ((*(int *)(in_stack_00000004->unk2 + 0x1c) == 0) || (DAT_02f7c528 < 0)) {
+        if (*(int *)(in_stack_00000004->unk2 + 0x20) != 0) {
           iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
           if (iVar10 == 0) {
-            if (*(int *)(in_stack_00000004->field2_0xc + 0x20) ==
-                *(int *)(in_stack_00000004->field2_0xc + 0x1c)) {
+            if (*(int *)(in_stack_00000004->unk2 + 0x20) == *(int *)(in_stack_00000004->unk2 + 0x1c)
+               ) {
               if ((local_30 != 0) || (0x3e999999 < (int)DAT_00680818)) goto LAB_0053aea7;
               core_msnedit_cpp_FUN_0053c730();
               engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -997,7 +993,7 @@ LAB_0053aea7:
               if (*(int *)(&DAT_02f7a080 + iVar6) == 0) goto LAB_0053ad72;
               core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                         ((CActorProperty *)(&DAT_02f7a02c + iVar6),
-                         *(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c));
+                         *(CDemonActor **)(in_stack_00000004->unk2 + 0x1c));
               engine_2d_c_clearInputAndWait_FUN_00403260();
               local_30 = 0;
               DAT_00680818 = 1e+10;
@@ -1027,10 +1023,10 @@ LAB_0053ad72:
       DAT_00680818 = g_CGamePtr->delta_time_float + DAT_00680818;
     }
     if (((g_MouseButtonFlags & 1U) == 0) || ((local_30 & 1) == 0)) {
-      _DAT_02f7c630 = 0.0;
+      FLOAT_02f7c630 = 0.0;
     }
     else {
-      _DAT_02f7c630 = g_CGamePtr->delta_time_float + _DAT_02f7c630;
+      FLOAT_02f7c630 = g_CGamePtr->delta_time_float + FLOAT_02f7c630;
     }
     if (local_44 != g_CDemonSetPtr->selected_camera_index) {
       local_48 = local_44;

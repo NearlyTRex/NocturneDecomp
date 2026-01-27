@@ -111,7 +111,7 @@ void core_curtain_cpp_FUN_0044a920(void)
       DAT_008879bc = 0;
       for (iStack_20 = 0; iVar3 = DAT_008879bc, iStack_20 < g_CDemonSetPtr->damage_listener_count;
           iStack_20 = iStack_20 + 1) {
-        iVar6 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_28 + -4);
+        iVar6 = *(int *)(g_CDemonSetPtr->unk4 + iStack_28 + -4);
         pSVar7 = DAT_00887e70 + DAT_008879bc;
         if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar6 + 0x20)) {
           DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar6 + 0x20))->x;

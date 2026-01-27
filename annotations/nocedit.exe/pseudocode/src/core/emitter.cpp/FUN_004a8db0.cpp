@@ -39,7 +39,7 @@ void core_emitter_cpp_FUN_004a8db0(void)
     core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
-  if (in_stack_00000004[2].field20_0x118 != 0) {
+  if (in_stack_00000004[2].unk9 != 0) {
     core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);
   }
   if (*(int *)in_stack_00000004[1].actor_name == 9) {

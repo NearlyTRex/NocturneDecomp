@@ -2,15 +2,13 @@
 // Address: 004d2910
 // Address Range: [[004d2910, 004d29e9]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_gabriela.cpp_staticInit_FUN_004d2910(void)
+// Signature: void core_gabriela.cpp_staticInit_FUN_004d2910(void)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void)
+void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void)
 
 {
-  CDemonActorType *pCVar1;
-  
   FLOAT_02d7b808 = 0.1414286f * 30.0f;
   FLOAT_02d7b80c = 0.4074074f * 30.0f;
   FLOAT_02d7b810 = 0.1052632f * 20.0f;
@@ -26,8 +24,8 @@ CDemonActorType * __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void)
   FLOAT_02d7b834 = 0.35;
   FLOAT_02d7b838 = 2.3;
   FLOAT_02d7b83c = 4.4;
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CGabriellaClassInfo,"CGabriella",core_gabriela_cpp_FUN_004d2ae0,
-                      &g_CGabriellaClassVersion,3,&g_CHeroClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CGabriellaClassInfo,"CGabriella",core_gabriela_cpp_factoryFunc_FUN_004d2ae0
+             ,&g_CGabriellaClassVersion,3,&g_CHeroClassInfo);
+  return;
 }

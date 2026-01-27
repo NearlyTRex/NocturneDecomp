@@ -18,8 +18,7 @@ CConveyor * __cdecl core_conveyor_cpp_dtor_FUN_00442310(CConveyor *this_ptr,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0
-                     ((CCourse *)((this_ptr->base_platform).field9_0x2f0 + 0x20));
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)((this_ptr->base).unk1 + 0x20));
   ptr = (CConveyor *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-0x42].loop,1);
   if ((d1 & 2) == 0) {

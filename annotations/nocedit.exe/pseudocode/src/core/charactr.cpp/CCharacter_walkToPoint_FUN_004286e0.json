@@ -1,116 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 32,
-        "line": 54,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 35,
-        "line": 55,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 47,
-        "line": 90,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 105,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
-        "line": 106,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 113,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 70,
-        "line": 113,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 123,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 124,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 74,
-        "line": 126,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 155,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 157,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 158,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 159,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 160,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 162,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 163,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 172,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -134,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 527,
-    "complexity_score": 548,
+    "complexity_score": 544,
     "cross_reference_count": 27,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 168,
+    "pseudocode_lines": 164,
     "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 695
+    "total_lines": 691
   },
   "cross_references": [
     {
@@ -963,7 +854,7 @@
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_00000008",
-      "text": "(&this_ptr->base_actor,&local_bc,in_stack_00000008);",
+      "text": "(&this_ptr->base,&local_bc,in_stack_00000008);",
       "type": "stack_param"
     },
     {
@@ -1089,54 +980,54 @@
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,&(this_ptr->base_actor).location.position,&local_74,",
+      "text": "(in_stack_0000000c,&(this_ptr->base).location.position,&local_74,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 121,
+      "line": 119,
       "match": "in_stack_00000010",
-      "text": "(&this_ptr->base_actor,&local_f8,in_stack_00000010);",
+      "text": "(&this_ptr->base,&local_f8,in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 120,
       "match": "in_stack_00000008",
       "text": "local_a4 = in_stack_00000008->x - pCVar4->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 123,
+      "line": 121,
       "match": "in_stack_00000008",
       "text": "local_a0 = in_stack_00000008->y - pCVar4->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 125,
+      "line": 123,
       "match": "in_stack_00000008",
       "text": "local_9c = in_stack_00000008->z - pCVar4->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 136,
       "match": "in_stack_00000010",
       "text": "local_e0 = local_bc.x - in_stack_00000010->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 137,
       "match": "in_stack_00000010",
       "text": "local_d8 = local_bc.z - in_stack_00000010->z;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 140,
+      "line": 138,
       "match": "SQRT",
       "text": "local_60 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"

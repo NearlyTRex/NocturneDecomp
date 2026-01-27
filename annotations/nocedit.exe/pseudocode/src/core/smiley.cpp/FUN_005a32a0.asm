@@ -17,7 +17,7 @@
 ;   double DOUBLE_0064f372 = 2.5
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field57_0x1e0
+;   undefined4 g_CGameInstance.unk4
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_005a3348
     MOV dword ptr [ESP + 0x8],EAX       ; 005a334b
     MOV EAX,[0x0067b654]                ; 005a334f | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x1e0],0x0     ; 005a3354 | g_CGameInstance.field57_0x1e0
+    CMP dword ptr [EAX + 0x1e0],0x0     ; 005a3354 | g_CGameInstance.unk4
     JZ 0x005a3365                       ; 005a335b
         ;   XREF to: 005a3365 (CONDITIONAL_JUMP)  ; LAB_005a3365
     MOV dword ptr [ESP + 0x8],0x3f800000 ; 005a335d

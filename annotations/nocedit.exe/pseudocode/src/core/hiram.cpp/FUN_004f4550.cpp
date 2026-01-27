@@ -59,7 +59,7 @@ void core_hiram_cpp_FUN_004f4550(void)
     }
   }
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr);
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&in_stack_00000004->base_actor);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&in_stack_00000004->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   return;

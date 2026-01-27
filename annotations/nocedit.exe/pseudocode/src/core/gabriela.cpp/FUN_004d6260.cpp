@@ -45,7 +45,7 @@ uint core_gabriela_cpp_FUN_004d6260(void)
                     (in_stack_00000008,(CVector3f *)(auStack_fc + 4));
   if ((iVar1 != 0) &&
      (((this_ptr == (CCharacter *)0x0 ||
-       (iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr), iVar1 < 1)) &&
+       (iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr), iVar1 < 1)) &&
       (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                  (in_stack_00000004,(CVector3f *)(auStack_48 + 4),
                   &(in_stack_00000008->location).position), 0.0 < fStack_3c)))) {

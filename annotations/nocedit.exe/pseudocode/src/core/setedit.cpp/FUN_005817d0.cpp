@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_setedit_cpp_FUN_005817d0(void *unk)
 
 {
@@ -36,7 +34,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   int local_18;
   
   SStack_64.base.type = 0x5817ea;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * _DAT_00648b39));
+  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * 65535.0f));
   local_18 = (int)ROUND(dVar5);
   if (local_18 < 0) {
     local_18 = 0;

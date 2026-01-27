@@ -14,32 +14,36 @@ void core_script_cpp_CScript_Unk18_FUN_005669a0(void)
   int iVar1;
   
   core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910();
-  if (DAT_0310fcdc - DAT_0310fce0 < DAT_0310fcd8) {
-    DAT_0310fcd8 = DAT_0310fcdc - DAT_0310fce0;
+  if (CEdScrollBar_0310fcd8.current_value - CEdScrollBar_0310fcd8.max_value <
+      CEdScrollBar_0310fcd8.scroll_position) {
+    CEdScrollBar_0310fcd8.scroll_position =
+         CEdScrollBar_0310fcd8.current_value - CEdScrollBar_0310fcd8.max_value;
   }
-  if (DAT_0310fd48 < DAT_0310fcd8) {
-    DAT_0310fcd8 = DAT_0310fd48;
+  if (DAT_0310fd48 < CEdScrollBar_0310fcd8.scroll_position) {
+    CEdScrollBar_0310fcd8.scroll_position = DAT_0310fd48;
   }
-  iVar1 = (DAT_0310fd48 - DAT_0310fce0) + 1;
-  if (DAT_0310fcd8 < iVar1) {
-    DAT_0310fcd8 = iVar1;
+  iVar1 = (DAT_0310fd48 - CEdScrollBar_0310fcd8.max_value) + 1;
+  if (CEdScrollBar_0310fcd8.scroll_position < iVar1) {
+    CEdScrollBar_0310fcd8.scroll_position = iVar1;
   }
-  if (DAT_0310fcd8 < 0) {
-    DAT_0310fcd8 = 0;
+  if (CEdScrollBar_0310fcd8.scroll_position < 0) {
+    CEdScrollBar_0310fcd8.scroll_position = 0;
   }
-  if (DAT_0310fd10 - DAT_0310fd14 < DAT_0310fd0c) {
-    DAT_0310fd0c = DAT_0310fd10 - DAT_0310fd14;
+  if (CEdScrollBar_0310fd0c.current_value - CEdScrollBar_0310fd0c.max_value <
+      CEdScrollBar_0310fd0c.scroll_position) {
+    CEdScrollBar_0310fd0c.scroll_position =
+         CEdScrollBar_0310fd0c.current_value - CEdScrollBar_0310fd0c.max_value;
   }
-  if (DAT_0310fd44 < DAT_0310fd0c) {
-    DAT_0310fd0c = DAT_0310fd44;
+  if (DAT_0310fd44 < CEdScrollBar_0310fd0c.scroll_position) {
+    CEdScrollBar_0310fd0c.scroll_position = DAT_0310fd44;
   }
-  iVar1 = (DAT_0310fd44 - DAT_0310fd14) + 1;
-  if (DAT_0310fd0c < iVar1) {
-    DAT_0310fd0c = iVar1;
+  iVar1 = (DAT_0310fd44 - CEdScrollBar_0310fd0c.max_value) + 1;
+  if (CEdScrollBar_0310fd0c.scroll_position < iVar1) {
+    CEdScrollBar_0310fd0c.scroll_position = iVar1;
   }
-  if (-1 < DAT_0310fd0c) {
+  if (-1 < CEdScrollBar_0310fd0c.scroll_position) {
     return;
   }
-  DAT_0310fd0c = 0;
+  CEdScrollBar_0310fd0c.scroll_position = 0;
   return;
 }

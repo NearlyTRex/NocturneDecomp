@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Struct "FormatSpec": ignoring multiple overlapping fields */
-
 char * __cdecl
 crt_stdio_c_ScanFormatSpec_FUN_00602d78(char *format,va_list_t *args,FormatSpec *spec_info)
 
@@ -28,7 +26,7 @@ crt_stdio_c_ScanFormatSpec_FUN_00602d78(char *format,va_list_t *args,FormatSpec 
     spec_info->width = iVar3;
     if (iVar3 < 0) {
       spec_info->width = -iVar3;
-      *(byte *)&spec_info->flags = (char)spec_info->flags | LEFT_ALIGN;
+      spec_info->flags = spec_info->flags | LEFT_ALIGN;
     }
     pbVar4 = pbVar4 + 1;
   }
@@ -66,39 +64,39 @@ crt_stdio_c_ScanFormatSpec_FUN_00602d78(char *format,va_list_t *args,FormatSpec 
   if (bVar1 < 0x4e) {
     if (bVar1 < 0x49) {
       if (bVar1 == 0x46) {
-        *(byte *)&spec_info->flags = (char)spec_info->flags | FAR_PTR;
+        spec_info->flags = spec_info->flags | FAR_PTR;
         return (char *)pbVar5;
       }
       return (char *)pbVar4;
     }
     if (0x49 < bVar1) {
       if (bVar1 == 0x4c) {
-        *(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;
+        spec_info->length_flags = spec_info->length_flags | BASIC_I64_FLAG;
         return (char *)pbVar5;
       }
       return (char *)pbVar4;
     }
     pbVar5 = pbVar4;
     if ((pbVar4[1] == 0x36) && (pbVar4[2] == 0x34)) {
-      *(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;
+      spec_info->length_flags = spec_info->length_flags | BASIC_I64_FLAG;
       return (char *)(pbVar4 + 3);
     }
   }
   else if (bVar1 < 0x4f) {
-    *(byte *)&spec_info->flags = (char)spec_info->flags | NEAR_PTR;
+    spec_info->flags = spec_info->flags | NEAR_PTR;
   }
   else {
     if (0x6b < bVar1) {
       if ((0x6c < bVar1) && (bVar1 != 0x77)) {
         return (char *)pbVar4;
       }
-      *(byte *)&spec_info->flags = (char)spec_info->flags | LONG_MODIFIER;
+      spec_info->flags = spec_info->flags | LONG_MODIFIER;
       return (char *)(pbVar4 + 1);
     }
     if (bVar1 != 0x68) {
       return (char *)pbVar4;
     }
-    *(byte *)&spec_info->flags = (char)spec_info->flags | SHORT_MODIFIER;
+    spec_info->flags = spec_info->flags | SHORT_MODIFIER;
   }
   return (char *)pbVar5;
 }

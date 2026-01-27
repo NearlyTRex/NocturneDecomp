@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field19_0x14f0a0[7996]
+;   undefined4 g_CDemonSetInstance.unk4[7996]
 ;   undefined4 DAT_03265258
 ;   undefined4 g_CWerewolfClassInfo.name_hash
 ;
@@ -51,7 +51,7 @@ section .text
     ADD ESP,0x8                         ; 005de7a7
     MOV EBX,dword ptr [0x006810c8]      ; 005de7aa | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005de7aa
-    CMP EBP,dword ptr [EBX + 0x150fdc]  ; 005de7b0 | g_CDemonSetInstance.field19_0x14f0a0[7996]
+    CMP EBP,dword ptr [EBX + 0x150fdc]  ; 005de7b0 | g_CDemonSetInstance.unk4[7996]
     JL 0x005de7f9                       ; 005de7b6
         ;   XREF to: 005de7f9 (CONDITIONAL_JUMP)  ; LAB_005de7f9
     ADD ESP,0x88                        ; 005de7b8

@@ -17,8 +17,8 @@ void core_dest_cpp_FUN_0046f970(void)
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   pCVar2 = g_CDemonMissionPtr;
-  in_stack_00000004->field14_0xf8 = 0;
-  iVar1 = *(int *)(pCVar2->field0_0x0 + 4);
+  in_stack_00000004->unk5 = 0;
+  iVar1 = *(int *)(pCVar2->unk1 + 4);
   in_stack_00000004[1].location.area_id = 0;
   in_stack_00000004[1].create_event[0x20] = '\x01';
   in_stack_00000004[1].create_event[0x21] = '\0';

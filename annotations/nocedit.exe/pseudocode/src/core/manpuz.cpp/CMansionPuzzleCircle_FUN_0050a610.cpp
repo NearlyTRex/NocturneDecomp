@@ -33,9 +33,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a610(CMansionPuzzleCir
   
   local_28 = in_stack_0000000c * 255.0f;
   local_14 = local_28 / 2.0f;
-  pcVar10 = this_ptr->field10_0x648 + in_stack_00000008 * 0xb8 + 0x458;
+  pcVar10 = this_ptr->unk3 + in_stack_00000008 * 0xb8 + 0x458;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (&this_ptr->base_actor,&local_3c,(CVector3f *)(pcVar10 + 0x24));
+            (&this_ptr->base,&local_3c,(CVector3f *)(pcVar10 + 0x24));
   uVar5 = core_manpuz_cpp_FUN_0050a4f0(pcVar10 + 0xc);
   uVar6 = core_manpuz_cpp_FUN_0050a4f0(pcVar10 + 0x10);
   uVar7 = core_manpuz_cpp_FUN_0050a4f0(pcVar10 + 0x14);
@@ -92,7 +92,7 @@ LAB_0050a76e:
   bVar2 = 0;
 LAB_0050a7a0:
   if ((((((bool)(bVar4 & bVar3 & bVar2)) && ((uVar5 & 1 & uVar6 & uVar7) != 0)) &&
-       (pcVar9 = this_ptr->field6_0x5f4 + in_stack_00000008 * 100 + -4, *(int *)pcVar9 != 0)) &&
+       (pcVar9 = this_ptr->unk2 + in_stack_00000008 * 100 + -4, *(int *)pcVar9 != 0)) &&
       (((*(uint *)(pcVar9 + 8) & 0x7fffffff) == 0 && ((*(uint *)(pcVar9 + 4) & 0x7fffffff) == 0))))
      && (((float)*(int *)(pcVar9 + 0x4c) == *(float *)(pcVar10 + 0xc) &&
          (((float)*(int *)(pcVar9 + 0x50) == *(float *)(pcVar10 + 0x10) &&

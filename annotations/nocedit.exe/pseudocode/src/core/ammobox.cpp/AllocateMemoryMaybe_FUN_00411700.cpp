@@ -43,20 +43,20 @@ void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
   core_ammo_cpp_CAmmo_FUN_00410fd0();
   core_ammo_cpp_CAmmo_FUN_004111b0();
   this_ptr->ammo_type = *(int *)(in_stack_00000004 + 0x318);
-  (*((this_ptr->base_actor).vtable._ub)->setup)(&this_ptr->base_actor);
+  (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
   core_ammo_cpp_CAmmo_FUN_00410fd0();
   pcVar3 = "Some_ammo";
   pCVar2 = this_ptr;
   do {
     cVar1 = *pcVar3;
-    (pCVar2->base_actor).actor_name[0] = cVar1;
+    (pCVar2->base).actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    (pCVar2->base_actor).actor_name[1] = cVar1;
-    pCVar2 = (CAmmo *)((pCVar2->base_actor).actor_name + 2);
+    (pCVar2->base).actor_name[1] = cVar1;
+    pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_0000000c,&this_ptr->base_actor,1);
+  core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_0000000c,&this_ptr->base,1);
   *(uint *)(in_stack_00000004 + 0x314) = 0;
   return;
 }

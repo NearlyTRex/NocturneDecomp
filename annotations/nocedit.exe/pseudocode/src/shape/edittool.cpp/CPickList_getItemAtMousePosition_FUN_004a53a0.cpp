@@ -19,7 +19,7 @@ shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_004a53a0
   if ((((iVar1 < 0) || (this_ptr->vertical_page_size <= iVar1)) || (iVar2 < 0)) ||
      (((this_ptr->column_count <= iVar2 ||
        (iVar1 = iVar2 * this_ptr->vertical_page_size + this_ptr->scroll_top + iVar1, iVar1 < 0)) ||
-      ((this_ptr->base_strlist).item_count <= iVar1)))) {
+      ((this_ptr->base).item_count <= iVar1)))) {
     iVar1 = -1;
   }
   return iVar1;

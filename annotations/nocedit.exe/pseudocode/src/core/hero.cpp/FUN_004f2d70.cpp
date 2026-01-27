@@ -24,7 +24,7 @@ int core_hero_cpp_FUN_004f2d70(void)
   
   iVar7 = 0;
   local_14 = 0;
-  in_stack_00000004[0x179].field17_0x104 = 0;
+  in_stack_00000004[0x179].unk7 = 0;
   do {
     if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar7) {
       return 0;
@@ -33,12 +33,12 @@ int core_hero_cpp_FUN_004f2d70(void)
                                   (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_14),
                                    g_CDoorClassInfo.name_hash);
     if ((this_ptr != (CDoor *)0x0) && (this_ptr->door_state == 0)) {
-      fVar3 = (in_stack_00000004->location).position.x - *(float *)this_ptr->field17_0x9bc;
+      fVar3 = (in_stack_00000004->location).position.x - *(float *)this_ptr->unk3;
       fVar1 = (in_stack_00000004->location).position.y;
-      fVar2 = *(float *)(this_ptr->field17_0x9bc + 4);
-      fVar4 = (in_stack_00000004->location).position.z - *(float *)(this_ptr->field17_0x9bc + 8);
+      fVar2 = *(float *)(this_ptr->unk3 + 4);
+      fVar4 = (in_stack_00000004->location).position.z - *(float *)(this_ptr->unk3 + 8);
       pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (in_stack_00000004,&local_24,&(this_ptr->base_actor).location.position);
+                         (in_stack_00000004,&local_24,&(this_ptr->base).location.position);
       if ((0.0 < pCVar5->z) &&
          ((ABS(fVar1 - fVar2) <= (float)5 &&
           (SQRT(fVar4 * fVar4 + fVar3 * fVar3) < (float)4)))) {
@@ -52,7 +52,7 @@ int core_hero_cpp_FUN_004f2d70(void)
             core_door_cpp_FUN_0047fcf0();
             return local_18;
           }
-          in_stack_00000004[0x179].field17_0x104 = (int)this_ptr;
+          in_stack_00000004[0x179].unk7 = (int)this_ptr;
           return local_18;
         }
       }

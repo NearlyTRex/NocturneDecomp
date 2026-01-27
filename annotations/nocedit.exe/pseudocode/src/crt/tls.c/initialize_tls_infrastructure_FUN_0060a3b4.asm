@@ -77,7 +77,7 @@ section .text
     MOV ECX,0x60a1dc                    ; 0060a46f
     MOV EBP,dword ptr [0x03f9b22c]      ; 0060a474 | g_CurrentThreadTlsBlock
     MOV [0x03f9bfd0],EAX                ; 0060a47a | g_GlobalInitLock
-    MOV dword ptr [0x03f9bfd4],EBX      ; 0060a47f | DAT_03f9bfd4
+    MOV dword ptr [0x03f9bfd4],EBX      ; 0060a47f | INT_03f9bfd4
     PUSH EBP                            ; 0060a485
     MOV EDX,dword ptr [EBP + 0xda]      ; 0060a486
     MOV dword ptr [0x00684f1c],ESI      ; 0060a48c | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c

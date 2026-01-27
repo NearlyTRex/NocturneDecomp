@@ -7,12 +7,12 @@
 ; CShotgun *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_shotgun.cpp_FUN_00587ea0 at 00587eba
+;   core_shotgun.cpp_factoryFunc_FUN_00587ea0 at 00587eba
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_kfm_00649afc
 ;   float FLOAT_00662a7c = 8
-;   CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_00662a84
+;   CDemonActor_vtable g_CShotgunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -33,7 +33,7 @@ section .text
     MOV EBX,EAX                         ; 00587ef3
     ADD EAX,0x158                       ; 00587ef5
     PUSH EAX                            ; 00587efa
-    MOV dword ptr [EAX + -0x4],0x662a84 ; 00587efb | PTR_core_weapon.cpp_ActorModelSomething_FUN_00662a84
+    MOV dword ptr [EAX + -0x4],0x662a84 ; 00587efb | g_CShotgunVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00587f02
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x578],0x41200000 ; 00587f07

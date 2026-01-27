@@ -19,8 +19,8 @@ void __cdecl core_gore_cpp_CGore_FUN_004ed7b0(CGore *this_ptr)
     pCVar2 = DAT_02d833d4;
     core_gore_cpp_FUN_004eb9d0();
     do {
-      if (0.0 < *(float *)(pCVar2->field0_0x0 + 0x18)) {
-        (**(code **)(*(int *)(pCVar2->field0_0x0 + 0x34) + 8))();
+      if (0.0 < *(float *)(pCVar2->unk + 0x18)) {
+        (**(code **)(*(int *)(pCVar2->unk + 0x34) + 8))();
       }
       pCVar2 = pCVar2 + 1;
     } while (pCVar2 != (CBloodParticle *)&DAT_02d873d4);

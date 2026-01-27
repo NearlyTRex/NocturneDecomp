@@ -22,12 +22,12 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
   float local_18;
   float local_14;
   
-  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   iVar8 = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+            ((CKeyFramedModelInstance *)this_ptr->unk1);
   if (0 < this_ptr->tire_count) {
-    this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr->field3_0x93c + 0x14);
+    this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr->unk2 + 0x14);
     do {
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr_00);
       iVar8 = iVar8 + 1;
@@ -35,79 +35,79 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
     } while (iVar8 < this_ptr->tire_count);
   }
   pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+                     ((CKeyFramedModelInstance *)this_ptr->unk1);
   pCVar1 = pCVar4->frame_bounds;
   local_1c = pCVar1[1].x - pCVar1->x;
   local_18 = pCVar1[1].y - pCVar1->y;
   local_14 = pCVar1[1].z - pCVar1->z;
-  if ((float *)(this_ptr->field1_0x158 + 0x7d4) != &local_1c) {
-    *(float *)(this_ptr->field1_0x158 + 0x7d4) = local_1c;
-    *(float *)(this_ptr->field1_0x158 + 0x7d8) = local_18;
-    *(float *)(this_ptr->field1_0x158 + 0x7dc) = local_14;
+  if ((float *)(this_ptr->unk1 + 0x7d4) != &local_1c) {
+    *(float *)(this_ptr->unk1 + 0x7d4) = local_1c;
+    *(float *)(this_ptr->unk1 + 0x7d8) = local_18;
+    *(float *)(this_ptr->unk1 + 0x7dc) = local_14;
   }
-  fVar2 = *(float *)(this_ptr->field1_0x158 + 0x7c0) * (float)0.03125;
-  *(float *)(this_ptr->field1_0x158 + 0x7c4) = fVar2;
+  fVar2 = *(float *)(this_ptr->unk1 + 0x7c0) * (float)0.03125;
+  *(float *)(this_ptr->unk1 + 0x7c4) = fVar2;
   fVar3 = (float)0.083333333333333301;
-  *(float *)(this_ptr->field1_0x158 + 0x7c8) =
+  *(float *)(this_ptr->unk1 + 0x7c8) =
        fVar2 * fVar3 *
-       (*(float *)(this_ptr->field1_0x158 + 0x7dc) * *(float *)(this_ptr->field1_0x158 + 0x7dc) +
-       *(float *)(this_ptr->field1_0x158 + 0x7d8) * *(float *)(this_ptr->field1_0x158 + 0x7d8));
-  *(float *)(this_ptr->field1_0x158 + 0x7cc) =
-       *(float *)(this_ptr->field1_0x158 + 0x7c4) * fVar3 *
-       (*(float *)(this_ptr->field1_0x158 + 0x7dc) * *(float *)(this_ptr->field1_0x158 + 0x7dc) +
-       *(float *)(this_ptr->field1_0x158 + 0x7d4) * *(float *)(this_ptr->field1_0x158 + 0x7d4));
-  *(float *)(this_ptr->field1_0x158 + 2000) =
-       (*(float *)(this_ptr->field1_0x158 + 0x7d8) * *(float *)(this_ptr->field1_0x158 + 0x7d8) +
-       *(float *)(this_ptr->field1_0x158 + 0x7d4) * *(float *)(this_ptr->field1_0x158 + 0x7d4)) *
-       *(float *)(this_ptr->field1_0x158 + 0x7c4) * fVar3;
-  this_ptr->field1_0x158[0x798] = '\0';
-  this_ptr->field1_0x158[0x799] = '\0';
-  this_ptr->field1_0x158[0x79a] = '\0';
-  this_ptr->field1_0x158[0x79b] = '\0';
-  *(uint *)(this_ptr->field1_0x158 + 0x794) = *(uint *)(this_ptr->field1_0x158 + 0x798);
-  *(uint *)(this_ptr->field1_0x158 + 0x790) = *(uint *)(this_ptr->field1_0x158 + 0x794);
-  this_ptr->field1_0x158[0x7bc] = '\0';
-  this_ptr->field1_0x158[0x7bd] = '\0';
-  this_ptr->field1_0x158[0x7be] = '\0';
-  this_ptr->field1_0x158[0x7bf] = '\0';
-  *(uint *)(this_ptr->field1_0x158 + 0x7b8) = *(uint *)(this_ptr->field1_0x158 + 0x7bc);
-  *(uint *)(this_ptr->field1_0x158 + 0x7b4) = *(uint *)(this_ptr->field1_0x158 + 0x7b8);
-  this_ptr->field1_0x158[0x780] = '\0';
-  this_ptr->field1_0x158[0x781] = '\0';
-  this_ptr->field1_0x158[0x782] = '\0';
-  this_ptr->field1_0x158[0x783] = '\0';
-  *(uint *)(this_ptr->field1_0x158 + 0x77c) = *(uint *)(this_ptr->field1_0x158 + 0x780);
-  *(uint *)(this_ptr->field1_0x158 + 0x778) = *(uint *)(this_ptr->field1_0x158 + 0x77c);
-  this_ptr->field1_0x158[0x7a4] = '\0';
-  this_ptr->field1_0x158[0x7a5] = '\0';
-  this_ptr->field1_0x158[0x7a6] = '\0';
-  this_ptr->field1_0x158[0x7a7] = '\0';
-  *(uint *)(this_ptr->field1_0x158 + 0x7a0) = *(uint *)(this_ptr->field1_0x158 + 0x7a4);
-  *(uint *)(this_ptr->field1_0x158 + 0x79c) = *(uint *)(this_ptr->field1_0x158 + 0x7a0);
-  this_ptr->field1_0x158[0x78c] = '\0';
-  this_ptr->field1_0x158[0x78d] = '\0';
-  this_ptr->field1_0x158[0x78e] = '\0';
-  this_ptr->field1_0x158[0x78f] = '\0';
-  *(uint *)(this_ptr->field1_0x158 + 0x788) = *(uint *)(this_ptr->field1_0x158 + 0x78c);
-  *(uint *)(this_ptr->field1_0x158 + 0x784) = *(uint *)(this_ptr->field1_0x158 + 0x788);
-  this_ptr->field1_0x158[0x7b0] = '\0';
-  this_ptr->field1_0x158[0x7b1] = '\0';
-  this_ptr->field1_0x158[0x7b2] = '\0';
-  this_ptr->field1_0x158[0x7b3] = '\0';
-  *(uint *)(this_ptr->field1_0x158 + 0x7ac) = *(uint *)(this_ptr->field1_0x158 + 0x7b0);
-  *(uint *)(this_ptr->field1_0x158 + 0x7a8) = *(uint *)(this_ptr->field1_0x158 + 0x7ac);
-  this_ptr->field1_0x158[0x774] = '\0';
-  this_ptr->field1_0x158[0x775] = '\0';
-  this_ptr->field1_0x158[0x776] = '\0';
-  this_ptr->field1_0x158[0x777] = '\0';
-  *(uint *)(this_ptr->field1_0x158 + 0x770) = *(uint *)(this_ptr->field1_0x158 + 0x774);
-  *(uint *)(this_ptr->field1_0x158 + 0x76c) = *(uint *)(this_ptr->field1_0x158 + 0x770);
+       (*(float *)(this_ptr->unk1 + 0x7dc) * *(float *)(this_ptr->unk1 + 0x7dc) +
+       *(float *)(this_ptr->unk1 + 0x7d8) * *(float *)(this_ptr->unk1 + 0x7d8));
+  *(float *)(this_ptr->unk1 + 0x7cc) =
+       *(float *)(this_ptr->unk1 + 0x7c4) * fVar3 *
+       (*(float *)(this_ptr->unk1 + 0x7dc) * *(float *)(this_ptr->unk1 + 0x7dc) +
+       *(float *)(this_ptr->unk1 + 0x7d4) * *(float *)(this_ptr->unk1 + 0x7d4));
+  *(float *)(this_ptr->unk1 + 2000) =
+       (*(float *)(this_ptr->unk1 + 0x7d8) * *(float *)(this_ptr->unk1 + 0x7d8) +
+       *(float *)(this_ptr->unk1 + 0x7d4) * *(float *)(this_ptr->unk1 + 0x7d4)) *
+       *(float *)(this_ptr->unk1 + 0x7c4) * fVar3;
+  this_ptr->unk1[0x798] = '\0';
+  this_ptr->unk1[0x799] = '\0';
+  this_ptr->unk1[0x79a] = '\0';
+  this_ptr->unk1[0x79b] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x794) = *(uint *)(this_ptr->unk1 + 0x798);
+  *(uint *)(this_ptr->unk1 + 0x790) = *(uint *)(this_ptr->unk1 + 0x794);
+  this_ptr->unk1[0x7bc] = '\0';
+  this_ptr->unk1[0x7bd] = '\0';
+  this_ptr->unk1[0x7be] = '\0';
+  this_ptr->unk1[0x7bf] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x7b8) = *(uint *)(this_ptr->unk1 + 0x7bc);
+  *(uint *)(this_ptr->unk1 + 0x7b4) = *(uint *)(this_ptr->unk1 + 0x7b8);
+  this_ptr->unk1[0x780] = '\0';
+  this_ptr->unk1[0x781] = '\0';
+  this_ptr->unk1[0x782] = '\0';
+  this_ptr->unk1[0x783] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x77c) = *(uint *)(this_ptr->unk1 + 0x780);
+  *(uint *)(this_ptr->unk1 + 0x778) = *(uint *)(this_ptr->unk1 + 0x77c);
+  this_ptr->unk1[0x7a4] = '\0';
+  this_ptr->unk1[0x7a5] = '\0';
+  this_ptr->unk1[0x7a6] = '\0';
+  this_ptr->unk1[0x7a7] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x7a0) = *(uint *)(this_ptr->unk1 + 0x7a4);
+  *(uint *)(this_ptr->unk1 + 0x79c) = *(uint *)(this_ptr->unk1 + 0x7a0);
+  this_ptr->unk1[0x78c] = '\0';
+  this_ptr->unk1[0x78d] = '\0';
+  this_ptr->unk1[0x78e] = '\0';
+  this_ptr->unk1[0x78f] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x788) = *(uint *)(this_ptr->unk1 + 0x78c);
+  *(uint *)(this_ptr->unk1 + 0x784) = *(uint *)(this_ptr->unk1 + 0x788);
+  this_ptr->unk1[0x7b0] = '\0';
+  this_ptr->unk1[0x7b1] = '\0';
+  this_ptr->unk1[0x7b2] = '\0';
+  this_ptr->unk1[0x7b3] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x7ac) = *(uint *)(this_ptr->unk1 + 0x7b0);
+  *(uint *)(this_ptr->unk1 + 0x7a8) = *(uint *)(this_ptr->unk1 + 0x7ac);
+  this_ptr->unk1[0x774] = '\0';
+  this_ptr->unk1[0x775] = '\0';
+  this_ptr->unk1[0x776] = '\0';
+  this_ptr->unk1[0x777] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x770) = *(uint *)(this_ptr->unk1 + 0x774);
+  *(uint *)(this_ptr->unk1 + 0x76c) = *(uint *)(this_ptr->unk1 + 0x770);
   iVar8 = 0;
   if (0 < this_ptr->tire_count) {
-    pcVar7 = this_ptr->field3_0x93c + 0x19c;
-    pcVar5 = this_ptr->field3_0x93c + 400;
+    pcVar7 = this_ptr->unk2 + 0x19c;
+    pcVar5 = this_ptr->unk2 + 400;
     do {
-      pcVar6 = this_ptr->field3_0x93c + iVar8 * 0x1b4;
+      pcVar6 = this_ptr->unk2 + iVar8 * 0x1b4;
       if (pcVar7 != pcVar6) {
         *(uint *)pcVar7 = *(uint *)pcVar6;
         *(uint *)(pcVar7 + 4) = *(uint *)(pcVar6 + 4);
@@ -130,39 +130,38 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
       pcVar5 = pcVar5 + 0x1b4;
     } while (iVar8 < this_ptr->tire_count);
   }
-  this_ptr->field3_0x93c[0x6d0] = '\0';
-  this_ptr->field3_0x93c[0x6d1] = '\0';
-  this_ptr->field3_0x93c[0x6d2] = '\0';
-  this_ptr->field3_0x93c[0x6d3] = '\0';
-  this_ptr->field3_0x93c[0x6d4] = '\0';
-  this_ptr->field3_0x93c[0x6d5] = '\0';
-  this_ptr->field3_0x93c[0x6d6] = -0x80;
-  this_ptr->field3_0x93c[0x6d7] = '?';
-  this_ptr->field3_0x93c[0x6d8] = '\0';
-  this_ptr->field3_0x93c[0x6d9] = '\0';
-  this_ptr->field3_0x93c[0x6da] = '\0';
-  this_ptr->field3_0x93c[0x6db] = '\0';
-  this_ptr->field3_0x93c[0x6dc] = '\0';
-  this_ptr->field3_0x93c[0x6dd] = '\0';
-  this_ptr->field3_0x93c[0x6de] = '\0';
-  this_ptr->field3_0x93c[0x6df] = '\0';
-  core_course_cpp_CCourse_load_FUN_00442580
-            ((CCourse *)(this_ptr->field3_0x93c + 0x6e4),this_ptr->field6_0x1034);
-  this_ptr->field6_0x1034[0x38] = '\x01';
-  this_ptr->field6_0x1034[0x39] = '\0';
-  this_ptr->field6_0x1034[0x3a] = '\0';
-  this_ptr->field6_0x1034[0x3b] = '\0';
-  this_ptr->field6_0x1034[0x20] = '\0';
-  this_ptr->field6_0x1034[0x21] = '\0';
-  this_ptr->field6_0x1034[0x22] = '\0';
-  this_ptr->field6_0x1034[0x23] = '\0';
-  this_ptr->field6_0x1034[0x24] = '\0';
-  this_ptr->field6_0x1034[0x25] = '\0';
-  this_ptr->field6_0x1034[0x26] = '\0';
-  this_ptr->field6_0x1034[0x27] = '\0';
-  this_ptr->field6_0x1034[0x28] = '\0';
-  this_ptr->field6_0x1034[0x29] = '\0';
-  this_ptr->field6_0x1034[0x2a] = '\0';
-  this_ptr->field6_0x1034[0x2b] = '\0';
+  this_ptr->unk2[0x6d0] = '\0';
+  this_ptr->unk2[0x6d1] = '\0';
+  this_ptr->unk2[0x6d2] = '\0';
+  this_ptr->unk2[0x6d3] = '\0';
+  this_ptr->unk2[0x6d4] = '\0';
+  this_ptr->unk2[0x6d5] = '\0';
+  this_ptr->unk2[0x6d6] = -0x80;
+  this_ptr->unk2[0x6d7] = '?';
+  this_ptr->unk2[0x6d8] = '\0';
+  this_ptr->unk2[0x6d9] = '\0';
+  this_ptr->unk2[0x6da] = '\0';
+  this_ptr->unk2[0x6db] = '\0';
+  this_ptr->unk2[0x6dc] = '\0';
+  this_ptr->unk2[0x6dd] = '\0';
+  this_ptr->unk2[0x6de] = '\0';
+  this_ptr->unk2[0x6df] = '\0';
+  core_course_cpp_CCourse_load_FUN_00442580((CCourse *)(this_ptr->unk2 + 0x6e4),this_ptr->unk3);
+  this_ptr->unk3[0x38] = '\x01';
+  this_ptr->unk3[0x39] = '\0';
+  this_ptr->unk3[0x3a] = '\0';
+  this_ptr->unk3[0x3b] = '\0';
+  this_ptr->unk3[0x20] = '\0';
+  this_ptr->unk3[0x21] = '\0';
+  this_ptr->unk3[0x22] = '\0';
+  this_ptr->unk3[0x23] = '\0';
+  this_ptr->unk3[0x24] = '\0';
+  this_ptr->unk3[0x25] = '\0';
+  this_ptr->unk3[0x26] = '\0';
+  this_ptr->unk3[0x27] = '\0';
+  this_ptr->unk3[0x28] = '\0';
+  this_ptr->unk3[0x29] = '\0';
+  this_ptr->unk3[0x2a] = '\0';
+  this_ptr->unk3[0x2b] = '\0';
   return;
 }

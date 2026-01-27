@@ -2,28 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 26,
-        "line": 22,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field6_0x54c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 71,
-        "line": 32,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
         "category": "other",
         "column": 11,
         "line": 36,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 24,
-        "line": 37,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field4_0x148'"
       },
       {
         "category": "other",
@@ -36,18 +18,6 @@
         "column": 24,
         "line": 51,
         "message": "cast from 'CDemonActorType**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 82,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field8_0x890'"
-      },
-      {
-        "category": "missing_member",
-        "column": 37,
-        "line": 95,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field8_0x890'"
       }
     ],
     "success": false,
@@ -86,6 +56,12 @@
         "category": "other",
         "column": 54,
         "line": 31,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -199,24 +175,24 @@
       {
         "category": "other",
         "column": 54,
-        "line": 104,
+        "line": 103,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 334,
-    "complexity_score": 321,
+    "complexity_score": 320,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 33,
-    "pseudocode_lines": 101,
+    "pseudocode_lines": 100,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 435
+    "total_lines": 434
   },
   "cross_references": [
     {
@@ -591,7 +567,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%s\\n\",this_ptr->field2_0xc + 0x38);",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%s\\n\",this_ptr->unk2 + 0x38);",
       "type": "stack_param"
     },
     {
@@ -687,21 +663,21 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 94,
+      "line": 93,
       "match": "in_stack_00000008",
       "text": "((CInventory *)(pCVar3[0x176].create_event + 0x30),in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
+      "line": 96,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// actor data list\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 98,
       "match": "in_stack_00000008",
       "text": "core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar2,in_stack_00000008);",
       "type": "stack_param"

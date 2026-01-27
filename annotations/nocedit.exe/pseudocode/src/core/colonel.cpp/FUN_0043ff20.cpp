@@ -51,14 +51,9 @@ void core_colonel_cpp_FUN_0043ff20(void)
   crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0xbe2c),0,0x2c);
   if (*(int *)(in_stack_00000004 + 130000) != 0) {
     pCVar2 = g_HeroActors[g_LocalHeroIndex];
-    local_54._0_4_ =
-         *(float *)(in_stack_00000004 + 0x20) -
-         (pCVar2->base_character).base_actor.location.position.x;
-    local_54._4_4_ =
-         *(float *)(in_stack_00000004 + 0x24) -
-         (pCVar2->base_character).base_actor.location.position.y;
-    local_4c = *(float *)(in_stack_00000004 + 0x28) -
-               (pCVar2->base_character).base_actor.location.position.z;
+    local_54._0_4_ = *(float *)(in_stack_00000004 + 0x20) - (pCVar2->base).base.location.position.x;
+    local_54._4_4_ = *(float *)(in_stack_00000004 + 0x24) - (pCVar2->base).base.location.position.y;
+    local_4c = *(float *)(in_stack_00000004 + 0x28) - (pCVar2->base).base.location.position.z;
     local_2c = SQRT(local_4c * local_4c +
                     (float)local_54._0_4_ * (float)local_54._0_4_ +
                     (float)local_54._4_4_ * (float)local_54._4_4_);
@@ -69,12 +64,9 @@ void core_colonel_cpp_FUN_0043ff20(void)
       bVar1 = true;
       pCVar7 = pCVar2;
     }
-    CStack_68.z = (pCVar7->base_character).base_actor.location.position.x -
-                  *(float *)(in_stack_00000004 + 0x20);
-    local_5c = (pCVar7->base_character).base_actor.location.position.y -
-               *(float *)(in_stack_00000004 + 0x24);
-    local_58 = (pCVar7->base_character).base_actor.location.position.z -
-               *(float *)(in_stack_00000004 + 0x28);
+    CStack_68.z = (pCVar7->base).base.location.position.x - *(float *)(in_stack_00000004 + 0x20);
+    local_5c = (pCVar7->base).base.location.position.y - *(float *)(in_stack_00000004 + 0x24);
+    local_58 = (pCVar7->base).base.location.position.z - *(float *)(in_stack_00000004 + 0x28);
     if ((float *)local_54 != &CStack_68.z) {
       local_54._0_4_ = CStack_68.z;
       local_54._4_4_ = local_5c;
@@ -86,8 +78,8 @@ void core_colonel_cpp_FUN_0043ff20(void)
     if ((float)6 <= local_30) {
       this_ptr = (CPathMap *)0x0;
       if (!bVar1) {
-        this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._ub)->
-                     getPathMap)((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
+        this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
+                             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr == (CPathMap *)0x0) {
         this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
@@ -154,12 +146,9 @@ void core_colonel_cpp_FUN_0043ff20(void)
         }
       }
     }
-    local_74 = (pCVar7->base_character).base_actor.location.position.x -
-               *(float *)(in_stack_00000004 + 0x20);
-    local_70 = (pCVar7->base_character).base_actor.location.position.y -
-               *(float *)(in_stack_00000004 + 0x24);
-    local_6c = (pCVar7->base_character).base_actor.location.position.z -
-               *(float *)(in_stack_00000004 + 0x28);
+    local_74 = (pCVar7->base).base.location.position.x - *(float *)(in_stack_00000004 + 0x20);
+    local_70 = (pCVar7->base).base.location.position.y - *(float *)(in_stack_00000004 + 0x24);
+    local_6c = (pCVar7->base).base.location.position.z - *(float *)(in_stack_00000004 + 0x28);
     if ((float *)(local_54 + 4) != &local_74) {
       local_54._4_4_ = local_74;
       local_4c = local_70;

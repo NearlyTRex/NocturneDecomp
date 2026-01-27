@@ -20,10 +20,10 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_00576710(CDemonSet *this_ptr)
   pCVar4 = this_ptr;
   if (0 < this_ptr->vdir_box_count) {
     do {
-      pCVar4->vdir_boxes[0].field3_0x3c[4] = -1;
-      pCVar4->vdir_boxes[0].field3_0x3c[5] = -1;
-      pCVar4->vdir_boxes[0].field3_0x3c[6] = -1;
-      pCVar4->vdir_boxes[0].field3_0x3c[7] = -1;
+      pCVar4->vdir_boxes[0].unk[4] = -1;
+      pCVar4->vdir_boxes[0].unk[5] = -1;
+      pCVar4->vdir_boxes[0].unk[6] = -1;
+      pCVar4->vdir_boxes[0].unk[7] = -1;
       iVar1 = iVar1 + 1;
       pCVar4 = (CDemonSet *)(pCVar4->cameras[0].name + 0x40);
     } while (iVar1 < this_ptr->vdir_box_count);
@@ -39,7 +39,7 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_00576710(CDemonSet *this_ptr)
           if ((iVar2 != iVar1) &&
              ((iVar3 = core_setdir_cpp_FUN_005763a0(), iVar3 != 0 ||
               (iVar3 = core_setdir_cpp_FUN_005763a0(), iVar3 != 0)))) {
-            *(int *)(this_ptr->vdir_boxes[iVar2].field3_0x3c + 4) = iVar1;
+            *(int *)(this_ptr->vdir_boxes[iVar2].unk + 4) = iVar1;
           }
           iVar5 = iVar5 + 1;
         } while (iVar5 < this_ptr->vdir_box_count);

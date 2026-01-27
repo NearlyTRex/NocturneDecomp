@@ -8,7 +8,7 @@
 ;   crt_fpu.c_staticInit_FUN_006047e0 at 00604804
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00684acd
+;   byte BYTE_00684acd = 0x0
 ;   ENTER_CRITICAL_SECTION_FUNC* PTR_crt_thread.c_EnterCriticalSection_FUN_0060b180_00685464 = 0060b180
 ;   EXIT_CRITICAL_SECTION_FUNC* PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468 = 0060b180
 ;   undefined2 DAT_0068546c
@@ -22,7 +22,7 @@ section .text
 
     PUSH EBX                            ; 006047a4
         ;   Label: crt_unknown.c_FUN_006047a4
-    CMP byte ptr [0x00684acd],0x0       ; 006047a5 | DAT_00684acd
+    CMP byte ptr [0x00684acd],0x0       ; 006047a5 | BYTE_00684acd
     JZ 0x006047c4                       ; 006047ac
         ;   XREF to: 006047c4 (CONDITIONAL_JUMP)  ; LAB_006047c4
     MOV EDX,0x604790                    ; 006047ae | LAB_00604790

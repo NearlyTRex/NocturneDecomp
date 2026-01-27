@@ -14,7 +14,7 @@
 ;   int g_GreenBitPosition
 ;   int g_BlueBitPosition
 ;   int g_UseExternalRenderer
-;   int g_SolidColorMode
+;   ulong g_SolidColorMode
 ;   int g_SolidRedComponent
 ;   int g_SolidGreenComponent
 ;   int g_SolidBlueComponent

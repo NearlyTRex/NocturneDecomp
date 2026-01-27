@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 26,
-        "line": 16,
-        "message": "'CTeleport' {aka 'struct CTeleport'} has no member named 'field1_0x158'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 66,
-        "line": 22,
+        "column": 60,
+        "line": 21,
         "message": "'stack0xffffffd4' was not declared in this scope"
       }
     ],
@@ -26,16 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 37,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 102
+    "total_lines": 101
   },
   "cross_references": [],
   "function": {
@@ -163,9 +157,9 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 15,
+      "line": 14,
       "match": "&stack0xffffffd4",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd4);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);",
       "type": "stack_ref"
     }
   ],

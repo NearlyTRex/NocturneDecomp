@@ -1,56 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 19,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field6_0x5f4'; did you mean 'field_1524'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 60,
-        "line": 19,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 61,
-        "line": 21,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 23,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 25,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 34,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 36,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 26,
-        "line": 38,
-        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -62,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 92,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 34,
     "suspect_count": 5,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 82
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -180,16 +131,16 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_0000000c",
-      "text": "fVar2 = in_stack_0000000c / 2.0f + *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10)",
+      "text": "fVar2 = in_stack_0000000c / 2.0f + *(float *)(this_ptr->unk3 + iVar3 + 0xd10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_0000000c",
-      "text": "fVar2 = *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10) - in_stack_0000000c / 2.0f",
+      "text": "fVar2 = *(float *)(this_ptr->unk3 + iVar3 + 0xd10) - in_stack_0000000c / 2.0f;",
       "type": "stack_param"
     }
   ]

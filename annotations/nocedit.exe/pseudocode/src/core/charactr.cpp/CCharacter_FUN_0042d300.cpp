@@ -18,9 +18,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d300(CCharacter *this_ptr)
   
   bVar3 = 0;
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)this_ptr->carry_hands[in_stack_00000008].field2_0xc,
+            ((CMatrix3x4f *)this_ptr->carry_hands[in_stack_00000008].unk2,
              (this_ptr->model).bone_transform.bone_world_matrices +
-             *(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,&local_38);
+             *(int *)this_ptr->carry_hands[in_stack_00000008].unk1,&local_38);
   pCVar2 = &local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = pCVar2->m[0].w;

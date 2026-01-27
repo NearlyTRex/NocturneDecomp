@@ -8,12 +8,6 @@
         "message": "ambiguating new declaration of 'uint core_stranger_cpp_CStranger_FUN_005c1680()'"
       },
       {
-        "category": "missing_member",
-        "column": 33,
-        "line": 63,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
-      },
-      {
         "category": "other",
         "column": 37,
         "line": 70,
@@ -42,12 +36,6 @@
         "column": 65,
         "line": 72,
         "message": "cast from 'C3DSCamera*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 37,
-        "line": 78,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
       },
       {
         "category": "other",
@@ -302,12 +290,12 @@
   },
   "complexity": {
     "assembly_lines": 692,
-    "complexity_score": 1327,
+    "complexity_score": 1302,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 26,
     "pseudocode_lines": 277,
-    "suspect_count": 100,
+    "suspect_count": 98,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -315,7 +303,6 @@
       "stack_param",
       "suspect_float",
       "unaffected_reg",
-      "undefined_data",
       "unknown_field",
       "unnamed_param",
       "unresolved_funcptr"
@@ -542,14 +529,14 @@
     },
     {
       "addr": "03f6badc",
-      "name": "DAT_03f6badc",
-      "type": "undefined4",
+      "name": "INT_03f6badc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03f6bb04",
-      "name": "DAT_03f6bb04",
-      "type": "undefined4",
+      "name": "INT_03f6bb04",
+      "type": "int",
       "value": null
     }
   ],
@@ -746,7 +733,7 @@
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[0x1b].field7_0x6c != 0)) ||",
+      "text": "(in_stack_00000004[0x1b].unk1 != 0)) ||",
       "type": "stack_param"
     },
     {
@@ -781,7 +768,7 @@
       "description": "Unresolved stack parameter",
       "line": 71,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[0x1b].field7_0x6c == 0) {",
+      "text": "if (in_stack_00000004[0x1b].unk1 == 0) {",
       "type": "stack_param"
     },
     {
@@ -1168,20 +1155,6 @@
       "match": "in_stack_00000004",
       "text": "iVar5 = in_stack_00000004[0x179].scale.x;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 216,
-      "match": "DAT_03f6bb04",
-      "text": "(this_ptr,&CStack_b8,DAT_03f6bb04);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 218,
-      "match": "DAT_03f6badc",
-      "text": "(this_ptr,aCStack_ac,DAT_03f6badc);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

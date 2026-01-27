@@ -57,7 +57,7 @@ void core_gore_cpp_FUN_004ebac0(void)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,in_stack_00000004);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-            (g_CDemonRendererPtr2,(CVector3i *)&DAT_02d83390,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,(CVector3i *)&INT_02d83390,(CVector3i *)0x0);
   local_4c = -0.1;
   local_48 = -0.1;
   local_44 = 0;
@@ -105,7 +105,7 @@ void core_gore_cpp_FUN_004ebac0(void)
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
   g_RenderVertexBuffer[3].v = g_RenderVertexBuffer[2].v;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-            (g_CDemonSetPtr,&local_88,(CVector3i *)&DAT_02d8339c,0,4);
+            (g_CDemonSetPtr,&local_88,(CVector3i *)&INT_02d8339c,0,4);
   fVar1 = in_stack_00000004[4].z;
   if (fVar1 != 0.0) {
     if ((uint)fVar1 < 2) {
@@ -163,7 +163,7 @@ LAB_004ebdb7:
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&CStack_e8);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-              (g_CDemonRendererPtr2,(CVector3i *)&DAT_02d83390,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,(CVector3i *)&INT_02d83390,(CVector3i *)0x0);
     local_4c = fStack_f0 * (float)-0.10000000000000001;
     local_44 = 0;
     CStack_dc.x = (int)ROUND(local_4c * 256.0f);
@@ -202,7 +202,7 @@ LAB_004ebdb7:
     local_88.y = (int)ROUND(CStack_e8.y * 256.0f);
     local_88.z = (int)ROUND(CStack_e8.z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-              (g_CDemonSetPtr,&local_88,(CVector3i *)&DAT_02d8339c,0,4);
+              (g_CDemonSetPtr,&local_88,(CVector3i *)&INT_02d8339c,0,4);
     iVar4 = 0;
     do {
       lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].light + iVar4);

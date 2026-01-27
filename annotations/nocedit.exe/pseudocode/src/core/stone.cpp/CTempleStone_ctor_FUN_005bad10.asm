@@ -7,7 +7,7 @@
 ; CTempleStone *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stone.cpp_FUN_005bacd0 at 005bacea
+;   core_stone.cpp_factoryFunc_FUN_005bacd0 at 005bacea
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CTempleStoneVTable

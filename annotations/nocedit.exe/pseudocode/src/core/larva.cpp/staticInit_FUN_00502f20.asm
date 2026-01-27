@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_larva.cpp_staticInit_FUN_00502f20(void)
+; __cdecl void core_larva.cpp_staticInit_FUN_00502f20(void)
 ;
 ;
 ; Referenced Globals:

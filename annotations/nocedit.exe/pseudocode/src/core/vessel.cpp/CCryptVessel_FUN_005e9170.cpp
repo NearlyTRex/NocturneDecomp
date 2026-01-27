@@ -9,5 +9,5 @@
 int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9170(CCryptVessel *this_ptr)
 
 {
-  return this_ptr->field3_0x2d4;
+  return this_ptr->unk2;
 }

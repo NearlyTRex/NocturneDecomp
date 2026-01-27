@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d7a7b8
+;   int INT_02d7a7b8
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     FADDP                               ; 0043e367
     FSTP float ptr [ESP]                ; 0043e369
     MOV EAX,dword ptr [ESP]             ; 0043e36c
-    MOV EDX,dword ptr [0x02d7a7b8]      ; 0043e36f | DAT_02d7a7b8
+    MOV EDX,dword ptr [0x02d7a7b8]      ; 0043e36f | INT_02d7a7b8
     SAR EAX,0x1                         ; 0043e375
     ADD EAX,EDX                         ; 0043e377
     ADD ESP,0x4                         ; 0043e379

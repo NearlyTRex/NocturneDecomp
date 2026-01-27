@@ -11,12 +11,12 @@
 ;   TerminatedCString s_Select_mission_to_play_0062d390
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CNetGame* g_CNetGameInstance = 02f7c740
+;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEditorTools g_CEditorToolsInstance
 ;   char g_CurrentSaveFile
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f7c740
-;   undefined4 DAT_02f7c858
+;   CNetGame g_CNetGameInstance
+;   undefined4 g_CNetGameInstance.unk[0]
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
@@ -34,18 +34,18 @@ section .text
         ;   Label: core_game.cpp_FUN_004e2f10
     PUSH EDI                            ; 004e2f11
     PUSH EBP                            ; 004e2f12
-    MOV EDX,dword ptr [0x00680a00]      ; 004e2f13 | g_CNetGameInstance | DAT_02f7c740
-    PUSH EDX                            ; 004e2f19 | DAT_02f7c740
+    MOV EDX,dword ptr [0x00680a00]      ; 004e2f13 | g_CNetGamePtr | g_CNetGameInstance
+    PUSH EDX                            ; 004e2f19 | g_CNetGameInstance
     CALL core_netgame.cpp_initializeNetworkToHost_FUN_0053f860 ; 004e2f1a
         ;   XREF to: 0053f860 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_initializeNetworkToHost_FUN_0053f860()
     ADD ESP,0x4                         ; 004e2f1f
     TEST EAX,EAX                        ; 004e2f22
     JZ 0x004e2f81                       ; 004e2f24
         ;   XREF to: 004e2f81 (CONDITIONAL_JUMP)  ; LAB_004e2f81
-    MOV EAX,[0x00680a00]                ; 004e2f26 | g_CNetGameInstance
+    MOV EAX,[0x00680a00]                ; 004e2f26 | g_CNetGamePtr
     PUSH 0x0                            ; 004e2f2b
     ADD EAX,0x118                       ; 004e2f2d
-    PUSH EAX                            ; 004e2f32 | DAT_02f7c858
+    PUSH EAX                            ; 004e2f32 | g_CNetGameInstance.unk[0]
     PUSH 0x62d384                       ; 004e2f33 | = "*.msn"
     PUSH 0x62d38a                       ; 004e2f38 | = "world"
     PUSH 0x62d390                       ; 004e2f3d | = "Select mission to play"
@@ -59,9 +59,9 @@ section .text
         ;   XREF to: 004e2fab (CONDITIONAL_JUMP)  ; LAB_004e2fab
     XOR AH,AH                           ; 004e2f55
     MOV byte ptr [0x02d82c80],AH        ; 004e2f57 | g_CurrentSaveFile
-    MOV EDI,dword ptr [0x00680a00]      ; 004e2f5d | g_CNetGameInstance
+    MOV EDI,dword ptr [0x00680a00]      ; 004e2f5d | g_CNetGamePtr
         ;   Label: LAB_004e2f5d
-    PUSH EDI                            ; 004e2f63 | DAT_02f7c740
+    PUSH EDI                            ; 004e2f63 | g_CNetGameInstance
     CALL core_netgame.cpp_FUN_00541390  ; 004e2f64
         ;   XREF to: 00541390 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_00541390()
     ADD ESP,0x4                         ; 004e2f69
@@ -78,8 +78,8 @@ section .text
     PUSH EBX                            ; 004e2f81
         ;   Label: LAB_004e2f81
     PUSH EAX                            ; 004e2f82
-    MOV ECX,dword ptr [0x00680a00]      ; 004e2f83 | g_CNetGameInstance
-    PUSH ECX                            ; 004e2f89 | DAT_02f7c740
+    MOV ECX,dword ptr [0x00680a00]      ; 004e2f83 | g_CNetGamePtr
+    PUSH ECX                            ; 004e2f89 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 004e2f8a
         ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
     ADD ESP,0x8                         ; 004e2f8f
@@ -96,8 +96,8 @@ section .text
     RET                                 ; 004e2faa
     PUSH 0x1                            ; 004e2fab
         ;   Label: LAB_004e2fab
-    MOV EAX,[0x00680a00]                ; 004e2fad | g_CNetGameInstance
-    PUSH EAX                            ; 004e2fb2 | DAT_02f7c740
+    MOV EAX,[0x00680a00]                ; 004e2fad | g_CNetGamePtr
+    PUSH EAX                            ; 004e2fb2 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 004e2fb3
         ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
     ADD ESP,0x8                         ; 004e2fb8

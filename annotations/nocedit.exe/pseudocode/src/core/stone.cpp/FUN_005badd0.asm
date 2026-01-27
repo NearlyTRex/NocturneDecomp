@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e350
-;   core_boxactor.cpp_FUN_004226e0
+;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH EDX                            ; 005badd5
     MOV ECX,dword ptr [ESP + 0xc]       ; 005badd6
     PUSH ECX                            ; 005badda
-    CALL core_boxactor.cpp_FUN_004226e0 ; 005baddb
-        ;   XREF to: 004226e0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_004226e0()
+    CALL core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 ; 005baddb
+        ;   XREF to: 004226e0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 005bade0
     PUSH 0x0                            ; 005bade3
     PUSH 0x65316a                       ; 005bade5 | = "CActorDestination"

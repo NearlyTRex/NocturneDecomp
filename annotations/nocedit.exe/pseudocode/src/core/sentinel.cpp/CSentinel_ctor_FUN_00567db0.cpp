@@ -14,27 +14,27 @@ CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *thi
   float fVar3;
   CSentinel *pCVar4;
   
-  pCVar4 = (CSentinel *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.vtable._ub = &g_CSentinelVTable;
+  pCVar4 = (CSentinel *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  (pCVar4->base).base.base.vtable._ub = &g_CSentinelVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model,"sentinel.dfm");
+            (&(pCVar4->base).base.model,"sentinel.dfm");
   fVar2 = 50.0f;
-  pCVar1 = &pCVar4->base_enemy;
-  (pCVar1->base_character).cloth_data[0x344] = -0x66;
+  pCVar1 = &pCVar4->base;
+  (pCVar1->base).cloth_data[0x344] = -0x66;
   fVar3 = 100.0f;
-  (pCVar1->base_character).cloth_data[0x345] = -0x67;
-  (pCVar1->base_character).cloth_data[0x346] = '\x19';
-  (pCVar1->base_character).cloth_data[0x347] = '?';
-  pCVar1 = &pCVar4->base_enemy;
-  (pCVar1->base_character).cloth_data[0x348] = '\0';
-  (pCVar1->base_character).cloth_data[0x349] = '\0';
-  (pCVar1->base_character).cloth_data[0x34a] = '\0';
-  (pCVar1->base_character).cloth_data[0x34b] = '@';
-  pCVar4->field1_0xbeb4[0xc] = '\0';
-  pCVar4->field1_0xbeb4[0xd] = '\0';
-  pCVar4->field1_0xbeb4[0xe] = '\0';
-  pCVar4->field1_0xbeb4[0xf] = '\0';
-  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = fVar2;
-  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = fVar3;
+  (pCVar1->base).cloth_data[0x345] = -0x67;
+  (pCVar1->base).cloth_data[0x346] = '\x19';
+  (pCVar1->base).cloth_data[0x347] = '?';
+  pCVar1 = &pCVar4->base;
+  (pCVar1->base).cloth_data[0x348] = '\0';
+  (pCVar1->base).cloth_data[0x349] = '\0';
+  (pCVar1->base).cloth_data[0x34a] = '\0';
+  (pCVar1->base).cloth_data[0x34b] = '@';
+  pCVar4->unk[0xc] = '\0';
+  pCVar4->unk[0xd] = '\0';
+  pCVar4->unk[0xe] = '\0';
+  pCVar4->unk[0xf] = '\0';
+  *(float *)((pCVar4->base).base.cloth_data + 0x34c) = fVar2;
+  *(float *)((pCVar4->base).base.cloth_data + 0x350) = fVar3;
   return pCVar4;
 }

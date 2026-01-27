@@ -21,9 +21,9 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
   
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar3 == 0) {
-    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
-                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffdc);
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
+    this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                            (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffdc);
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar3 != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
@@ -31,10 +31,10 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
       iVar6 = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,&DAT_006846f0 + *(int *)(this_ptr->field21_0x298 + 0x2af90));
-      if (0 < *(int *)this_ptr->field21_0x298) {
+                (g_CDemonRendererPtr2,&DAT_006846f0 + *(int *)(this_ptr->unk5 + 0x2af90));
+      if (0 < *(int *)this_ptr->unk5) {
         piVar4 = &DAT_03f90a88;
-        pcVar5 = this_ptr->field21_0x298 + 4;
+        pcVar5 = this_ptr->unk5 + 4;
         do {
           *piVar4 = (int)ROUND(*(float *)pcVar5 * 256.0f);
           piVar4[1] = (int)ROUND(*(float *)(pcVar5 + 4) * 256.0f);
@@ -42,12 +42,12 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
           iVar6 = iVar6 + 1;
           pcVar5 = pcVar5 + 0x20;
           piVar4 = piVar4 + 3;
-        } while (iVar6 < *(int *)this_ptr->field21_0x298);
+        } while (iVar6 < *(int *)this_ptr->unk5);
       }
       iVar6 = 0;
       core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-                (g_CDemonSetPtr,*(int *)this_ptr->field21_0x298,&DAT_03f90a88);
-      if (0 < *(int *)this_ptr->field21_0x298) {
+                (g_CDemonSetPtr,*(int *)this_ptr->unk5,&DAT_03f90a88);
+      if (0 < *(int *)this_ptr->unk5) {
         iVar7 = 0;
         do {
           core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
@@ -65,27 +65,27 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
           iVar6 = iVar6 + 1;
           iVar7 = iVar7 + 0x30;
-        } while (iVar6 < *(int *)this_ptr->field21_0x298);
+        } while (iVar6 < *(int *)this_ptr->unk5);
       }
-      primitive_array = (SMRGLPrimitiveQuad *)(this_ptr->field21_0x298 + 0x7d10);
+      primitive_array = (SMRGLPrimitiveQuad *)(this_ptr->unk5 + 0x7d10);
       if ((int)this_ptr->opacity < 0xfde9) {
         iVar6 = 0;
-        if (0 < *(int *)(this_ptr->field21_0x298 + 0x2af9c)) {
+        if (0 < *(int *)(this_ptr->unk5 + 0x2af9c)) {
           do {
             iVar6 = iVar6 + 1;
             engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                       (g_CDemonRendererPtr2,&primitive_array->base,0x267);
             primitive_array = primitive_array + 1;
-          } while (iVar6 < *(int *)(this_ptr->field21_0x298 + 0x2af9c));
+          } while (iVar6 < *(int *)(this_ptr->unk5 + 0x2af9c));
         }
       }
       else {
         core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
-                  (g_CDemonSetPtr,primitive_array,*(int *)(this_ptr->field21_0x298 + 0x2af9c),-1);
+                  (g_CDemonSetPtr,primitive_array,*(int *)(this_ptr->unk5 + 0x2af9c),-1);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
     }
-    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
     return iVar3;
   }
   return 0;

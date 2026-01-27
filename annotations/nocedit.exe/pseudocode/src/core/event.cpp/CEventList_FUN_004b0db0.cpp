@@ -9,11 +9,11 @@
 void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
 
 {
-  CEvent CVar1;
+  char cVar1;
   int iVar2;
-  CEvent *dest;
-  CEvent *pCVar3;
-  CEvent *pCVar4;
+  int *dest;
+  char *pcVar3;
+  int *piVar4;
   double dVar5;
   uint in_stack_fffffe90;
   uint local_20;
@@ -24,30 +24,30 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
   local_14 = 0;
   if (0 < this_ptr[1].event_count) {
     dest = this_ptr[1].event_list;
-    local_18 = this_ptr[1].field2_0x68 + 0xbc;
+    local_18 = this_ptr[1].unk1 + 0xbc;
     do {
       dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,in_stack_fffffe90);
       local_20 = SUB84(dVar5,0);
-      *(uint *)(dest + 0x118) = local_20;
+      dest[0x46] = local_20;
       local_1c = (uint)((ulonglong)dVar5 >> 0x20);
-      *(uint *)(dest + 0x11c) = local_1c;
-      if (0.0 <= *(double *)(dest + 0x118)) {
+      dest[0x47] = local_1c;
+      if (0.0 <= *(double *)(dest + 0x46)) {
         sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);
         iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
-                          (*(uint *)dest,(CSfxSample *)&stack0xfffffe90);
+                          (*dest,(CSfxSample *)&stack0xfffffe90);
         if (iVar2 == 0) goto LAB_004b0e30;
-        pCVar4 = dest + 0x18;
-        pCVar3 = (CEvent *)&stack0xfffffe90;
+        piVar4 = dest + 6;
+        pcVar3 = &stack0xfffffe90;
         do {
-          CVar1 = *pCVar3;
-          *pCVar4 = CVar1;
-          if (CVar1 == (CEvent)0x0) break;
-          CVar1 = pCVar3[1];
-          pCVar3 = pCVar3 + 2;
-          pCVar4[1] = CVar1;
-          pCVar4 = pCVar4 + 2;
-        } while (CVar1 != (CEvent)0x0);
-        dest = dest + 0x120;
+          cVar1 = *pcVar3;
+          *(char *)piVar4 = cVar1;
+          if (cVar1 == '\0') break;
+          cVar1 = pcVar3[1];
+          pcVar3 = pcVar3 + 2;
+          *(char *)((int)piVar4 + 1) = cVar1;
+          piVar4 = (int *)((int)piVar4 + 2);
+        } while (cVar1 != '\0');
+        dest = dest + 0x48;
         local_18 = local_18 + 0x120;
         local_14 = local_14 + 1;
       }

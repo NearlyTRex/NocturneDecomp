@@ -45,8 +45,8 @@ void core_script_cpp_FUN_00566800(void)
         }
         pcVar3[iVar2] = '\0';
       }
-      if (DAT_0310fd10 < iVar2) {
-        DAT_0310fd10 = iVar2;
+      if (CEdScrollBar_0310fd0c.current_value < iVar2) {
+        CEdScrollBar_0310fd0c.current_value = iVar2;
         return;
       }
     }

@@ -24,14 +24,14 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  iVar2 = *(int *)(this_ptr->field1_0x1f708 + 0x108);
-  (this_ptr->base_npc).base_character.base_actor.vtable._ub = &g_CPassengerVTable;
+  iVar2 = *(int *)(this_ptr->unk + 0x108);
+  (this_ptr->base).base.base.vtable._ub = &g_CPassengerVTable;
   if (iVar2 != 0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";
     (**(code **)(*(int *)(iVar2 + 0x154) + 0xe4))();
   }
-  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field1_0x1f708 + 0x10c));
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->unk + 0x10c));
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(extraout_EAX + -0x139f0));
   iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720
                     ((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));

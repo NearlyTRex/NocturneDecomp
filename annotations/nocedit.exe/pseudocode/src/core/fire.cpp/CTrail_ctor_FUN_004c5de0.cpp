@@ -9,9 +9,9 @@
 void __cdecl core_fire_cpp_CTrail_ctor_FUN_004c5de0(CTrail *this_ptr)
 
 {
-  this_ptr->field0_0x0[0x10] = '\0';
-  this_ptr->field0_0x0[0x11] = '\0';
-  this_ptr->field0_0x0[0x12] = '\0';
-  this_ptr->field0_0x0[0x13] = '\0';
+  this_ptr->unk[0x10] = '\0';
+  this_ptr->unk[0x11] = '\0';
+  this_ptr->unk[0x12] = '\0';
+  this_ptr->unk[0x13] = '\0';
   return;
 }

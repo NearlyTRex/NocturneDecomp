@@ -14,7 +14,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d060(CCharacter *this_ptr)
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;
-    (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc21)();
+    (*(((this_ptr->base).vtable._uc)->_uc).cfunc21)();
   } while (iVar1 < 2);
   return;
 }

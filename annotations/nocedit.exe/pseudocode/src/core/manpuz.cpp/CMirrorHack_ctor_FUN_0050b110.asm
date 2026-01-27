@@ -7,7 +7,7 @@
 ; CMirrorHack *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_CMirrorHack_factoryFunc_FUN_0050b0d0 at 0050b0ed
+;   core_manpuz.cpp_factoryFunc_FUN_0050b0d0 at 0050b0ed
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mirrhack_kfm_00635918

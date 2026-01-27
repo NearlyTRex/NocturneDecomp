@@ -18,11 +18,11 @@ uint core_gore_cpp_CGore_process_FUN_004ed9e0(void)
   
   pCVar4 = DAT_02d833d4;
   do {
-    fVar1 = *(float *)(pCVar4->field0_0x0 + 0x18);
+    fVar1 = *(float *)(pCVar4->unk + 0x18);
     uVar3 = (uint)(ushort)((ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |
                           (ushort)(fVar1 == 0.0) << 0xe);
     if (0.0 < fVar1) {
-      uVar3 = (**(code **)(*(int *)(pCVar4->field0_0x0 + 0x34) + 4))();
+      uVar3 = (**(code **)(*(int *)(pCVar4->unk + 0x34) + 4))();
     }
     uVar6 = CONCAT44(DAT_02d873d8,uVar3);
     pCVar4 = pCVar4 + 1;

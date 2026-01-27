@@ -11,9 +11,9 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004aa0c0(CEnemy *this_ptr)
 {
   int in_stack_00000008;
   
-  if (in_stack_00000008 != *(int *)(this_ptr->field6_0xbe38 + 4)) {
+  if (in_stack_00000008 != *(int *)(this_ptr->unk2 + 4)) {
     return;
   }
-  (*(((this_ptr->base_character).base_actor.vtable._uc)->_uc).cfunc9)();
+  (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc9)();
   return;
 }

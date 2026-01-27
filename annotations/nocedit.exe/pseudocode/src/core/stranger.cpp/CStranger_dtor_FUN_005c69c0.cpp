@@ -21,7 +21,7 @@ core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint d1,uint d
     return this_ptr;
   }
   core_hero_cpp_CHero_dtor_FUN_004f2470
-            (&this_ptr->base_hero,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,d4);
+            (&this_ptr->base,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,d4);
   if ((d1 & 2) == 0) {
     return ptr;
   }

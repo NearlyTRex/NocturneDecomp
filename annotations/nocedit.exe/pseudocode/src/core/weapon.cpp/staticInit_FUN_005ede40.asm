@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_weapon.cpp_staticInit_FUN_005ede40(void)
+; __cdecl void core_weapon.cpp_staticInit_FUN_005ede40(void)
 ;
 ;
 ; Referenced Globals:

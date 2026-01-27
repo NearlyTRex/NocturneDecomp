@@ -3,21 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 71,
+        "column": 65,
         "line": 26,
         "message": "'stack0xffffffdc' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 74,
-        "line": 34,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 35,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
       },
       {
         "category": "incompatible_types",
@@ -26,28 +14,10 @@
         "message": "invalid conversion from 'undefined4*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 28,
-        "line": 37,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 44,
-        "line": 45,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 51,
+        "category": "incompatible_types",
+        "column": 56,
         "line": 49,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 33,
-        "line": 50,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
+        "message": "invalid conversion from 'undefined4*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
       },
       {
         "category": "other",
@@ -84,36 +54,6 @@
         "column": 21,
         "line": 64,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 44,
-        "line": 68,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 58,
-        "line": 70,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 36,
-        "line": 73,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 47,
-        "line": 79,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
-      },
-      {
-        "category": "missing_member",
-        "column": 70,
-        "line": 84,
-        "message": "'CWaterActor' {aka 'struct CWaterActor'} has no member named 'field21_0x298'"
       }
     ],
     "success": false,
@@ -400,14 +340,14 @@
       "description": "Direct stack address reference",
       "line": 19,
       "match": "&stack0xffffffdc",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffdc);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffdc);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_006846f0",
-      "text": "(g_CDemonRendererPtr2,&DAT_006846f0 + *(int *)(this_ptr->field21_0x298 + 0x2af90));",
+      "text": "(g_CDemonRendererPtr2,&DAT_006846f0 + *(int *)(this_ptr->unk5 + 0x2af90));",
       "type": "undefined_data"
     },
     {
@@ -442,7 +382,7 @@
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_03f90a88",
-      "text": "(g_CDemonSetPtr,*(int *)this_ptr->field21_0x298,&DAT_03f90a88);",
+      "text": "(g_CDemonSetPtr,*(int *)this_ptr->unk5,&DAT_03f90a88);",
       "type": "undefined_data"
     },
     {

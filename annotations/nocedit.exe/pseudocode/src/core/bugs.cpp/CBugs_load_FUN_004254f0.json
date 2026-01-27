@@ -10,7 +10,7 @@
       {
         "category": "undeclared_identifier",
         "column": 81,
-        "line": 29,
+        "line": 27,
         "message": "'DAT_00616d44' was not declared in this scope; did you mean 'DAT_00610D44'?"
       }
     ],
@@ -24,68 +24,68 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 22,
+        "column": 71,
+        "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 79,
-        "line": 24,
+        "column": 69,
+        "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 39,
+        "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 15,
+        "line": 42,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 26,
         "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 38,
+        "column": 27,
         "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 38,
+        "column": 27,
         "line": 54,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 57,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 223,
+    "complexity_score": 220,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 10,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 45,
     "suspect_count": 16,
     "suspect_types": [
       "stack_param",
       "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 146
+    "total_lines": 143
   },
   "cross_references": [],
   "function": {
@@ -257,91 +257,91 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "((int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc),",
+      "text": "((int *)(in_stack_00000004[1].base.base.actor_name + 0xc),\"count\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000004",
-      "text": "((int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978),\"modelCount\")",
+      "text": "((int *)(in_stack_00000004[1].base.cloth_data + 0x3978),\"modelCount\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (CKeyFramedModelInstance *)(in_stack_00000004[1].base_character.cloth_data + 0x397c);",
+      "text": "pCVar1 = (CKeyFramedModelInstance *)(in_stack_00000004[1].base.cloth_data + 0x397c);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 20,
       "match": "DAT_00616d44",
       "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(pCVar1,&DAT_00616d44);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "} while (pCVar1 != (CKeyFramedModelInstance *)(in_stack_00000004[1].base.cloth_data + 0x3f6c));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[1].base_character.cloth_data + 0x3f6c));",
+      "text": "if (0 < *(int *)(in_stack_00000004[1].base.cloth_data + 0x3978)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 26,
       "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978)) {",
+      "text": "pCVar1 = (CKeyFramedModelInstance *)(in_stack_00000004[1].base.cloth_data + 0x397c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 31,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (CKeyFramedModelInstance *)(in_stack_00000004[1].base_character.cloth_data + 0x397c);",
+      "text": "} while (iVar2 < *(int *)(in_stack_00000004[1].base.cloth_data + 0x3978));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "} while (iVar2 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978));",
+      "text": "((int *)&in_stack_00000004[2].base.model.bone_transform.bone_world_matrices[0x3c].m[1].y",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices",
+      "text": "((int *)&in_stack_00000004[2].base.model.bone_transform.bone_world_matrices[0x3c].m[1].z",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000004",
-      "text": "((int *)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices",
+      "text": "((char **)(in_stack_00000004[2].base.model.bone_transform.bone_world_matrices[0x3c].m +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices",
+      "text": "((char **)&in_stack_00000004[2].base.model.bone_transform.bone_world_matrices[0x3e].m[2]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices",
+      "text": "((char **)&in_stack_00000004[2].base.model.bone_transform.bone_world_matrices[0x40].m[2]",
       "type": "stack_param"
     }
   ],

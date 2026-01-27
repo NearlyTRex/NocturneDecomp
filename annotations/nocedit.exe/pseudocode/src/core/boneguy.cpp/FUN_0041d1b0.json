@@ -8,14 +8,8 @@
         "message": "ambiguating new declaration of 'int core_boneguy_cpp_FUN_0041d1b0()'"
       },
       {
-        "category": "missing_member",
-        "column": 34,
-        "line": 19,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 75,
+        "column": 69,
         "line": 24,
         "message": "'stack0xffffffe0' was not declared in this scope"
       }
@@ -186,35 +180,35 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "if (*(int *)in_stack_00000004->field2_0x240c != 0) {",
+      "text": "if (*(int *)in_stack_00000004->unk1 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
-      "text": "this_ptr = (*((in_stack_00000004->base_actor).vtable._ub)->getBoundingBox)",
+      "text": "this_ptr = (*((in_stack_00000004->base).vtable._ub)->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,(CBoundingBox3D *)&stack0xffffffe0);",
+      "text": "(&in_stack_00000004->base,(CBoundingBox3D *)&stack0xffffffe0);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 17,
       "match": "&stack0xffffffe0",
-      "text": "(&in_stack_00000004->base_actor,(CBoundingBox3D *)&stack0xffffffe0);",
+      "text": "(&in_stack_00000004->base,(CBoundingBox3D *)&stack0xffffffe0);",
       "type": "stack_ref"
     },
     {
@@ -228,7 +222,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&in_stack_00000004->base_actor);",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&in_stack_00000004->base);",
       "type": "stack_param"
     }
   ],

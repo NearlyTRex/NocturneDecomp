@@ -53,7 +53,7 @@ LAB_005ffe01:
         if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))
         goto LAB_005ffe88;
         fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64(uVar7,uVar6),exponent);
-        if (((byte)g_UseSoftwareMath & 1) == 0) {
+        if ((g_UseSoftwareMath & 1) == 0) {
           fVar3 = (float10)1 / fVar4;
           fVar4 = exp;
         }

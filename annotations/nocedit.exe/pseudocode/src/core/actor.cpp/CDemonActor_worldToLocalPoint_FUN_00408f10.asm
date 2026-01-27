@@ -15,9 +15,9 @@
 ; XREF[76]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a645
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 00409558
-;   core_baron.cpp_FUN_004136b0 at 004136ed
-;   core_boxactor.cpp_FUN_00422390 at 004223ab
-;   core_boxactor.cpp_FUN_00422590 at 004225b1
+;   core_baron.cpp_CBaron_FUN_004136b0 at 004136ed
+;   core_boxactor.cpp_CBoxActor_FUN_00422390 at 004223ab
+;   core_boxactor.cpp_CBoxActor_FUN_00422590 at 004225b1
 ;   core_chain.cpp_FUN_00430eb0 at 00430fa4
 ;   core_charactr.cpp_CCharacter_FUN_00428d80 at 00428d93
 ;   core_charactr.cpp_CCharacter_FUN_00429b40 at 00429c84

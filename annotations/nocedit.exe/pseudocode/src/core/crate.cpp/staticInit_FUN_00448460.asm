@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_crate.cpp_staticInit_FUN_00448460(void)
+; __cdecl void core_crate.cpp_staticInit_FUN_00448460(void)
 ;
 ;
 ; Referenced Globals:

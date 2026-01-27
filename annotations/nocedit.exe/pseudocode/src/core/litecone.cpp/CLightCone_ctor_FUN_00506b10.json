@@ -1,0 +1,189 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 43,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 47,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
+  },
+  "cross_references": [
+    {
+      "addr": "00506ad0",
+      "from_addr": "00506aea",
+      "name": "core_litecone.cpp_factoryFunc_FUN_00506ad0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00506b10",
+    "address_range": [
+      [
+        "00506b10",
+        "00506ba1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_litecone.cpp_CLightCone_ctor_FUN_00506b10",
+    "signature": "CLightCone * core_litecone.cpp_CLightCone_ctor_FUN_00506b10(CLightCone * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00631556",
+      "name": "s_none_00631556",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631557",
+      "name": "s_one_00631557",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631558",
+      "name": "s_ne_00631558",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631559",
+      "name": "s_e_00631559",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063155b",
+      "name": "s_none_0063155b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063155c",
+      "name": "s_one_0063155c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063155d",
+      "name": "s_ne_0063155d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063155e",
+      "name": "s_e_0063155e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00660bb4",
+      "name": "g_CLightConeVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00506aea",
+        "call_type": "direct",
+        "caller": "core_litecone.cpp_factoryFunc_FUN_00506ad0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8636363636363638,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 33,
+      "INT_ADD": 22,
+      "INT_AND": 18,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 10,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 170
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightCone *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLightCone",
+        "offset": 0,
+        "vtable_addr": "00660ca4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

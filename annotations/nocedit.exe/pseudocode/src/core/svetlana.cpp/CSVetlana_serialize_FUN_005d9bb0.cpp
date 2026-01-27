@@ -9,6 +9,6 @@
 void __cdecl core_svetlana_cpp_CSVetlana_serialize_FUN_005d9bb0(CSvetlana *this_ptr)
 
 {
-  core_hero_cpp_CHero_serialize_FUN_004f2610(&this_ptr->base_hero);
+  core_hero_cpp_CHero_serialize_FUN_004f2610(&this_ptr->base);
   return;
 }

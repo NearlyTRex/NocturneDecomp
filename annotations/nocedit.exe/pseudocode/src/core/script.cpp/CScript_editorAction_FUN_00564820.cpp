@@ -67,12 +67,14 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
     DAT_0310fd48 = DAT_0310fd48 + 1;
     break;
   case 4:
-    DAT_0310fd48 = DAT_0310fd48 - DAT_0310fce0;
-    DAT_0310fcd8 = DAT_0310fcd8 - DAT_0310fce0;
+    DAT_0310fd48 = DAT_0310fd48 - CEdScrollBar_0310fcd8.max_value;
+    CEdScrollBar_0310fcd8.scroll_position =
+         CEdScrollBar_0310fcd8.scroll_position - CEdScrollBar_0310fcd8.max_value;
     break;
   case 5:
-    DAT_0310fd48 = DAT_0310fd48 + DAT_0310fce0;
-    DAT_0310fcd8 = DAT_0310fcd8 + DAT_0310fce0;
+    DAT_0310fd48 = DAT_0310fd48 + CEdScrollBar_0310fcd8.max_value;
+    CEdScrollBar_0310fcd8.scroll_position =
+         CEdScrollBar_0310fcd8.scroll_position + CEdScrollBar_0310fcd8.max_value;
     break;
   case 6:
     DAT_0310fd44 = 0;

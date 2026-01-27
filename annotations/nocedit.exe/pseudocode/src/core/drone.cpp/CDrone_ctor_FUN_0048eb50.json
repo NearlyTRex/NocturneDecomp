@@ -1,0 +1,155 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
+  },
+  "cross_references": [
+    {
+      "addr": "0048eb10",
+      "from_addr": "0048eb2a",
+      "name": "core_drone.cpp_factoryFunc_FUN_0048eb10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048eb50",
+    "address_range": [
+      [
+        "0048eb50",
+        "0048ebbf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_drone.cpp_CDrone_ctor_FUN_0048eb50",
+    "signature": "CDrone * core_drone.cpp_CDrone_ctor_FUN_0048eb50(CDrone * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9500",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062236d",
+      "name": "s_drone_dfm_0062236d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065d0ac",
+      "name": "FLOAT_0065d0ac",
+      "type": "float",
+      "value": "50"
+    },
+    {
+      "addr": "0065d0b0",
+      "name": "FLOAT_0065d0b0",
+      "type": "float",
+      "value": "100"
+    },
+    {
+      "addr": "0065d0c4",
+      "name": "g_CDroneVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0048eb2a",
+        "call_type": "direct",
+        "caller": "core_drone.cpp_factoryFunc_FUN_0048eb10",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 54,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 13,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 120
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrone *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDrone",
+        "offset": 0,
+        "vtable_addr": "0065d234"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

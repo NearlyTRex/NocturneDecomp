@@ -21,7 +21,7 @@ core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint d1,uint d
     return this_ptr;
   }
   ptr = (CTommyGun *)
-        core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base_weapon,1,unaff_EBX,unaff_retaddr);
+        core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base,1,unaff_EBX,unaff_retaddr);
   if ((d1 & 2) == 0) {
     return ptr;
   }

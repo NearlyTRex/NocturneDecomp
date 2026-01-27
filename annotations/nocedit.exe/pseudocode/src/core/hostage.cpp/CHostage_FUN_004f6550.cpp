@@ -42,10 +42,10 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
   CVector3f local_24 [2];
   
   bVar4 = 0;
-  if ((*(int *)this_ptr->field4_0x1fab8 == 1) &&
+  if ((*(int *)this_ptr->unk2 == 1) &&
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                        ((this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].
-                         carry_actor,"CShotgun"), iVar1 != 0)) {
+                        ((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor,
+                         "CShotgun"), iVar1 != 0)) {
     local_84.x = 0.269;
     local_84.y = -0.012;
     local_54.x = -0.287;
@@ -56,12 +56,11 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
               (&local_204,&local_84,&local_54);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_204,
-               (this_ptr->base_npc).base_character.model.bone_transform.bone_world_matrices +
-               *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               ,local_1d4);
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,local_1d4);
     pCVar2 = local_1d4;
   }
-  else if (*(int *)this_ptr->field4_0x1fab8 == 3) {
+  else if (*(int *)this_ptr->unk2 == 3) {
     local_3c.x = 0.265971;
     local_3c.y = -0.200311;
     local_3c.z = 0.0324051;
@@ -81,12 +80,11 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_e4,&local_a8,local_9c);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_e4,
-               (this_ptr->base_npc).base_character.model.bone_transform.bone_world_matrices +
-               *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               ,local_264);
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,local_264);
     pCVar2 = local_264;
   }
-  else if (*(int *)this_ptr->field4_0x1fab8 == 5) {
+  else if (*(int *)this_ptr->unk2 == 5) {
     local_78[0].x = 0.265971;
     local_78[0].y = -0.200311;
     local_78[0].z = 0.0324051;
@@ -107,9 +105,8 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
               (&local_114,&local_30,&local_48);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_114,
-               (this_ptr->base_npc).base_character.model.bone_transform.bone_world_matrices +
-               *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               ,&local_174);
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,&local_174);
     pCVar2 = &local_174;
   }
   else {

@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: byte actors_enemy_bugs.cpp_FUN_004268e0(uint param_1, uint param_2,
-   uint param_3) */
-
 void core_bugs_cpp_FUN_004268e0(void)
 
 {
@@ -71,9 +67,9 @@ void core_bugs_cpp_FUN_004268e0(void)
   if (*(int *)(in_stack_00000008 + 0x2c) < 0) {
     piVar5 = (int *)(*(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234) +
                     *(int *)(in_stack_00000008 + 0x30) * 0xc);
-    local_6c.x = (float)*piVar5 * _DAT_0065b5b8;
-    local_6c.y = (float)piVar5[1] * _DAT_0065b5b8;
-    local_6c.z = (float)piVar5[2] * _DAT_0065b5b8;
+    local_6c.x = (float)*piVar5 * 0.00390625f;
+    local_6c.y = (float)piVar5[1] * 0.00390625f;
+    local_6c.z = (float)piVar5[2] * 0.00390625f;
     core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20
               (&local_6c,(CMatrix3x4f *)(in_stack_00000004 + 0x12b00));
     iVar9 = core_bugs_cpp_FUN_00426420();
@@ -111,14 +107,14 @@ void core_bugs_cpp_FUN_004268e0(void)
     }
     piVar5 = (int *)(*(int *)(in_stack_00000008 + 0x2c) * 0xc +
                     *(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234));
-    local_84 = (float)*piVar5 * _DAT_0065b5b8;
-    local_80 = (float)piVar5[1] * _DAT_0065b5b8;
-    local_7c = (float)piVar5[2] * _DAT_0065b5b8;
+    local_84 = (float)*piVar5 * 0.00390625f;
+    local_80 = (float)piVar5[1] * 0.00390625f;
+    local_7c = (float)piVar5[2] * 0.00390625f;
     piVar5 = (int *)(*(int *)(in_stack_00000008 + 0x30) * 0xc +
                     *(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234));
-    local_30 = (float)*piVar5 * _DAT_0065b5b8;
-    local_2c = (float)piVar5[1] * _DAT_0065b5b8;
-    local_28 = (float)piVar5[2] * _DAT_0065b5b8;
+    local_30 = (float)*piVar5 * 0.00390625f;
+    local_2c = (float)piVar5[1] * 0.00390625f;
+    local_28 = (float)piVar5[2] * 0.00390625f;
     pfVar1 = (float *)(in_stack_00000008 + 0x34);
     local_b4 = local_30 * *pfVar1;
     local_b0 = local_2c * *pfVar1;
@@ -147,19 +143,19 @@ void core_bugs_cpp_FUN_004268e0(void)
     puVar8 = (ushort *)(*(int *)((int)pCVar7->tri_data_ptr + local_18) + iVar9 * 0x12);
     piVar5 = (int *)((uint)*puVar8 * 0xc + *(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234))
     ;
-    local_84 = (float)*piVar5 * _DAT_0065b5b8;
-    local_80 = (float)piVar5[1] * _DAT_0065b5b8;
-    local_7c = (float)piVar5[2] * _DAT_0065b5b8;
+    local_84 = (float)*piVar5 * 0.00390625f;
+    local_80 = (float)piVar5[1] * 0.00390625f;
+    local_7c = (float)piVar5[2] * 0.00390625f;
     piVar5 = (int *)(*(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234) +
                     (uint)puVar8[1] * 0xc);
-    local_30 = (float)*piVar5 * _DAT_0065b5b8;
-    local_2c = (float)piVar5[1] * _DAT_0065b5b8;
-    local_28 = (float)piVar5[2] * _DAT_0065b5b8;
+    local_30 = (float)*piVar5 * 0.00390625f;
+    local_2c = (float)piVar5[1] * 0.00390625f;
+    local_28 = (float)piVar5[2] * 0.00390625f;
     piVar5 = (int *)((uint)puVar8[2] * 0xc +
                     *(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234));
-    local_60 = (float)*piVar5 * _DAT_0065b5b8;
-    local_5c = (float)piVar5[1] * _DAT_0065b5b8;
-    local_58 = (float)piVar5[2] * _DAT_0065b5b8;
+    local_60 = (float)*piVar5 * 0.00390625f;
+    local_5c = (float)piVar5[1] * 0.00390625f;
+    local_58 = (float)piVar5[2] * 0.00390625f;
     local_50 = local_2c - local_80;
     local_94 = local_58 - local_28;
     local_4c = local_28 - local_7c;

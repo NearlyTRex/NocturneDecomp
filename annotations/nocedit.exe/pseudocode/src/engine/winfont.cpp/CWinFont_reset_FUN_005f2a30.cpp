@@ -9,13 +9,13 @@
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(CWinFont *this_ptr)
 
 {
-  if (this_ptr->deviceContextHandle != (HDC)0x0) {
-    (*g_SelectObjectFunc)(this_ptr->deviceContextHandle,this_ptr->objectHandle);
-    this_ptr->objectHandle = (HGDIOBJ)0x0;
-    (*g_DeleteDCFunc)(this_ptr->deviceContextHandle);
-    this_ptr->deviceContextHandle = (HDC)0x0;
-    this_ptr->dibHandle = (HBITMAP)0x0;
-    this_ptr->ppvBits = (void **)0x0;
+  if (this_ptr->device_context_handle != (HDC)0x0) {
+    (*g_SelectObjectFunc)(this_ptr->device_context_handle,this_ptr->object_handle);
+    this_ptr->object_handle = (HGDIOBJ)0x0;
+    (*g_DeleteDCFunc)(this_ptr->device_context_handle);
+    this_ptr->device_context_handle = (HDC)0x0;
+    this_ptr->dib_handle = (HBITMAP)0x0;
+    this_ptr->ppv_bits = (void **)0x0;
   }
   this_ptr->bpp = 0;
   this_ptr->top = this_ptr->bpp;

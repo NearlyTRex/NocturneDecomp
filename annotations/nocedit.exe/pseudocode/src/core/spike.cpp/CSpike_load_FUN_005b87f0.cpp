@@ -39,11 +39,11 @@ void core_spike_cpp_CSpike_load_FUN_005b87f0(void)
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)(in_stack_00000004[3].create_event + 0xc),"extendSound");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)&in_stack_00000004[3].field12_0xe0.z,"retractSound");
+            ((char **)&in_stack_00000004[3].unk3.z,"retractSound");
   core_actor_cpp_serializeFloat_FUN_0040b770
             ((float *)&in_stack_00000004[3].next_actor,"period");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)&in_stack_00000004[3].field28_0x150,"damageStrength");
+            ((float *)&in_stack_00000004[3].unk15,"damageStrength");
   core_actor_cpp_serializeFloat_FUN_0040b770((float *)&in_stack_00000004[3].vtable,"param")
   ;
   return;

@@ -28,7 +28,7 @@
 ;   double DOUBLE_0062ec36 = 5
 ;   double DOUBLE_0062ec3e = 3
 ;   double DOUBLE_0062ec46 = 1.04719755116667
-;   undefined4 DAT_0062ec4e
+;   float FLOAT_0062ec4e = -0.5
 ;   float FLOAT_0062ec52 = -2
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CLeverClassInfo.name_hash
@@ -155,7 +155,7 @@ section .text
     JZ 0x004f30b3                       ; 004f305f
         ;   XREF to: 004f30b3 (CONDITIONAL_JUMP)  ; LAB_004f30b3
     FLD float ptr [ESP + 0x14]          ; 004f3061
-    FADD float ptr [0x0062ec4e]         ; 004f3065 | DAT_0062ec4e
+    FADD float ptr [0x0062ec4e]         ; 004f3065 | FLOAT_0062ec4e
     FMUL ST0                            ; 004f306b
     FLD float ptr [ESP + 0x1c]          ; 004f306d
     FADD float ptr [0x0062ec52]         ; 004f3071 | FLOAT_0062ec52

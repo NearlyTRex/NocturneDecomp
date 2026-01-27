@@ -8,10 +8,10 @@
 ;   core_script.cpp_CScript_Unk20_FUN_00565130 at 00565197
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0310fcd8
-;   undefined4 DAT_0310fce0
-;   undefined4 DAT_0310fd0c
-;   undefined4 DAT_0310fd14
+;   CEdScrollBar CEdScrollBar_0310fcd8
+;   undefined4 CEdScrollBar_0310fcd8.max_value
+;   CEdScrollBar CEdScrollBar_0310fd0c
+;   undefined4 CEdScrollBar_0310fd0c.max_value
 ;   undefined4 DAT_0310fd44
 ;   undefined4 DAT_0310fd48
 ;
@@ -31,23 +31,23 @@ section .text
     PUSH EDX                            ; 00566888
     CALL core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910 ; 00566889
         ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910()
-    MOV EAX,[0x0310fcd8]                ; 0056688e | DAT_0310fcd8
-    MOV ECX,dword ptr [0x0310fce0]      ; 00566893 | DAT_0310fce0
+    MOV EAX,[0x0310fcd8]                ; 0056688e | CEdScrollBar_0310fcd8
+    MOV ECX,dword ptr [0x0310fce0]      ; 00566893 | CEdScrollBar_0310fcd8.max_value
     MOV EBX,dword ptr [0x0310fd48]      ; 00566899 | DAT_0310fd48
     ADD EAX,ECX                         ; 0056689f
     ADD ESP,0x4                         ; 005668a1
     CMP EAX,EBX                         ; 005668a4
     JLE 0x005668ff                      ; 005668a6
         ;   XREF to: 005668ff (CONDITIONAL_JUMP)  ; LAB_005668ff
-    MOV ESI,dword ptr [0x0310fcd8]      ; 005668a8 | DAT_0310fcd8
+    MOV ESI,dword ptr [0x0310fcd8]      ; 005668a8 | CEdScrollBar_0310fcd8
         ;   Label: LAB_005668a8
     CMP ESI,dword ptr [0x0310fd48]      ; 005668ae | DAT_0310fd48
     JLE 0x005668bc                      ; 005668b4
         ;   XREF to: 005668bc (CONDITIONAL_JUMP)  ; LAB_005668bc
     MOV dword ptr [0x0310fd48],ESI      ; 005668b6 | DAT_0310fd48
-    MOV EDI,dword ptr [0x0310fd14]      ; 005668bc | DAT_0310fd14
+    MOV EDI,dword ptr [0x0310fd14]      ; 005668bc | CEdScrollBar_0310fd0c.max_value
         ;   Label: LAB_005668bc
-    MOV EAX,[0x0310fd0c]                ; 005668c2 | DAT_0310fd0c
+    MOV EAX,[0x0310fd0c]                ; 005668c2 | CEdScrollBar_0310fd0c
     MOV EBP,dword ptr [0x0310fd44]      ; 005668c7 | DAT_0310fd44
     ADD EAX,EDI                         ; 005668cd
     CMP EAX,EBP                         ; 005668cf
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005668d9 (CONDITIONAL_JUMP)  ; LAB_005668d9
     DEC EAX                             ; 005668d3
     MOV [0x0310fd44],EAX                ; 005668d4 | DAT_0310fd44
-    MOV EDX,dword ptr [0x0310fd0c]      ; 005668d9 | DAT_0310fd0c
+    MOV EDX,dword ptr [0x0310fd0c]      ; 005668d9 | CEdScrollBar_0310fd0c
         ;   Label: LAB_005668d9
     CMP EDX,dword ptr [0x0310fd44]      ; 005668df | DAT_0310fd44
     JLE 0x005668ed                      ; 005668e5

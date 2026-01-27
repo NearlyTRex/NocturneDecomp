@@ -331,5 +331,4 @@
 #include "types/classes/CZombie.h"
 #include "types/classes/CZombieCow.h"
 #include "types/classes/CZombieDog.h"
-#include "types/classes/SMirrorReflection.h"
 

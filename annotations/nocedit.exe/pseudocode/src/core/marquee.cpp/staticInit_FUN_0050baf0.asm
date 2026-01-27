@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_marquee.cpp_staticInit_FUN_0050baf0(void)
+; __cdecl void core_marquee.cpp_staticInit_FUN_0050baf0(void)
 ;
 ;
 ; Referenced Globals:

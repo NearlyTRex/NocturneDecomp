@@ -159,7 +159,7 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
         pacVar2 = local_4c;
         if (0 < local_18->filter_count) {
           do {
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base_strlist,*pacVar2);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,*pacVar2);
             iVar7 = iVar7 + 1;
             pacVar2 = pacVar2 + 1;
           } while (iVar7 < local_18->filter_count);

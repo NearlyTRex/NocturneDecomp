@@ -7,7 +7,7 @@
 ; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_00556e90 at 00556ead
+;   core_scat.cpp_factoryFunc_FUN_00556e90 at 00556ead
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_scat_dfm_00641211

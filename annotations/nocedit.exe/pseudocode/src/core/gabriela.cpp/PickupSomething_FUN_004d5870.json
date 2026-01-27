@@ -20,21 +20,9 @@
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 58,
-        "line": 81,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 82,
-        "line": 99,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
-      },
-      {
         "category": "other",
         "column": 46,
-        "line": 107,
+        "line": 106,
         "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -49,43 +37,43 @@
       {
         "category": "other",
         "column": 10,
-        "line": 121,
+        "line": 120,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 124,
+        "line": 123,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 129,
+        "line": 128,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 131,
+        "line": 130,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 360,
+    "complexity_score": 359,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 135,
+    "pseudocode_lines": 134,
     "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 461
+    "total_lines": 460
   },
   "cross_references": [
     {
@@ -518,7 +506,7 @@
       "description": "Unresolved stack parameter",
       "line": 74,
       "match": "in_stack_00000004",
-      "text": "if ((uStack_14 == 1) && (in_stack_00000004[0x1b].field7_0x6c == 0)) {",
+      "text": "if ((uStack_14 == 1) && (in_stack_00000004[0x1b].unk1 == 0)) {",
       "type": "stack_param"
     },
     {
@@ -532,75 +520,75 @@
       "description": "Unresolved stack parameter",
       "line": 92,
       "match": "in_stack_00000004",
-      "text": "else if (((uStack_14 < 3) || (uStack_14 == 3)) && (in_stack_00000004[0x1b].field7_0x6c == 0))",
+      "text": "else if (((uStack_14 < 3) || (uStack_14 == 3)) && (in_stack_00000004[0x1b].unk1 == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 97,
       "match": "ABS",
       "text": "if ((ABS(local_38.y) <= (float)2) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 100,
+      "line": 99,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].scale.x = (int)this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000004",
       "text": "iVar5 = in_stack_00000004[0x179].scale.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 111,
       "match": "in_stack_00000004",
       "text": "iVar1 = in_stack_00000004[0x179].scale.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 112,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.x =",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 114,
+      "line": 113,
       "match": "&stack0xffffff44",
       "text": "(*(float *)(iVar5 + 0x20) - *(float *)(&stack0xffffff44 + local_28 * 0xc)) +",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 114,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 116,
+      "line": 115,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.z =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 117,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 136,
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),iVar5,1);",
       "type": "stack_param"

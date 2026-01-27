@@ -7,7 +7,7 @@
 ; CBride *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_bride.cpp_FUN_00423760 at 0042377a
+;   core_bride.cpp_factoryFunc_FUN_00423760 at 0042377a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bride_dfm_00616ab6

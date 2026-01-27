@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_armour.cpp_staticInit_FUN_00412130(void)
+; __cdecl void core_armour.cpp_staticInit_FUN_00412130(void)
 ;
 ;
 ; Referenced Globals:

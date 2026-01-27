@@ -74,14 +74,14 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   if (0 < local_cf8) {
     do {
       crt_stdio_c_sprintf_FUN_005fdbd0(local_120,"%s\t%d");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8dc.base_strlist,local_120);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8dc.base,local_120);
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_cf8);
   }
   output_buffer = (char *)0xffffffff;
-  while (0 < local_8dc.base_strlist.item_count) {
-    if (local_8dc.base_strlist.item_count <= (int)output_buffer) {
-      output_buffer = (char *)(local_8dc.base_strlist.item_count + -1);
+  while (0 < local_8dc.base.item_count) {
+    if (local_8dc.base.item_count <= (int)output_buffer) {
+      output_buffer = (char *)(local_8dc.base.item_count + -1);
     }
     output_buffer =
          (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -89,7 +89,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
     if ((int)output_buffer < 0) break;
     this_ptr_00 = &local_8dc;
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              (&this_ptr_00->base_strlist,(int)local_120,output_buffer,0);
+              (&this_ptr_00->base,(int)local_120,output_buffer,0);
     this_ptr_01 = (CPodFile *)&stack0xffffeef8;
     file_offset = 0x4b7851;
     iVar2 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(this_ptr_01,local_120);
@@ -159,8 +159,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
                   (g_CEditorToolsPtr,"Unable to extract file:\n%s");
       }
       else {
-        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0
-                  (&local_8dc.base_strlist,(int)output_buffer);
+        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_8dc.base,(int)output_buffer);
       }
     }
   }

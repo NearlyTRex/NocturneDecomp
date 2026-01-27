@@ -24,27 +24,18 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   this_ptr->mirror_glass_count = 0;
   core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0044c0f0(&g_CDemonCameraInstance);
   core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00453640
-            (&g_CDemonCameraInstance,(SFog *)(this_ptr->field19_0x14f0a0 + 0xbb90));
-  *(int *)(this_ptr->field19_0x14f0a0 + 0xbbb4) =
-       (((SFog *)(this_ptr->field19_0x14f0a0 + 0xbb90))->color_index).r;
-  *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbb8) =
-       *(uint *)(this_ptr->field19_0x14f0a0 + 0xbb94);
-  *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbbc) =
-       *(uint *)(this_ptr->field19_0x14f0a0 + 0xbb98);
-  if (this_ptr->field19_0x14f0a0 + 0xbbc0 != this_ptr->field19_0x14f0a0 + 0xbb9c) {
-    *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbc0) =
-         *(uint *)(this_ptr->field19_0x14f0a0 + 0xbb9c);
-    *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbc4) =
-         *(uint *)(this_ptr->field19_0x14f0a0 + 0xbba0);
-    *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbc8) =
-         *(uint *)(this_ptr->field19_0x14f0a0 + 0xbba4);
+            (&g_CDemonCameraInstance,(SFog *)(this_ptr->unk4 + 0xbb90));
+  *(int *)(this_ptr->unk4 + 0xbbb4) = (((SFog *)(this_ptr->unk4 + 0xbb90))->color_index).r;
+  *(uint *)(this_ptr->unk4 + 0xbbb8) = *(uint *)(this_ptr->unk4 + 0xbb94);
+  *(uint *)(this_ptr->unk4 + 0xbbbc) = *(uint *)(this_ptr->unk4 + 0xbb98);
+  if (this_ptr->unk4 + 0xbbc0 != this_ptr->unk4 + 0xbb9c) {
+    *(uint *)(this_ptr->unk4 + 0xbbc0) = *(uint *)(this_ptr->unk4 + 0xbb9c);
+    *(uint *)(this_ptr->unk4 + 0xbbc4) = *(uint *)(this_ptr->unk4 + 0xbba0);
+    *(uint *)(this_ptr->unk4 + 0xbbc8) = *(uint *)(this_ptr->unk4 + 0xbba4);
   }
-  *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbcc) =
-       *(uint *)(this_ptr->field19_0x14f0a0 + 0xbba8);
-  *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbd0) =
-       *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbac);
-  *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbd4) =
-       *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbb0);
+  *(uint *)(this_ptr->unk4 + 0xbbcc) = *(uint *)(this_ptr->unk4 + 0xbba8);
+  *(uint *)(this_ptr->unk4 + 0xbbd0) = *(uint *)(this_ptr->unk4 + 0xbbac);
+  *(uint *)(this_ptr->unk4 + 0xbbd4) = *(uint *)(this_ptr->unk4 + 0xbbb0);
   iVar4 = 0;
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
             (&g_CDemonCameraInstance,this_ptr->min_ambient_value);
@@ -73,7 +64,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
         }
       }
       iVar4 = iVar4 + 1;
-      pCVar3 = (CDemonSet *)&pCVar3->cameras[0xe].field16_0x19c;
+      pCVar3 = (CDemonSet *)&pCVar3->cameras[0xe].unk3;
     } while (iVar4 < this_ptr->light_count);
   }
   iVar4 = 0;
@@ -104,8 +95,8 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
     do {
       iVar2 = iVar2 + 1;
       iVar4 = core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
-      pCVar3->cameras[0].field16_0x19c = iVar4;
-      pCVar3 = (CDemonSet *)&pCVar3->cameras[0].field17_0x1a0;
+      pCVar3->cameras[0].unk3 = iVar4;
+      pCVar3 = (CDemonSet *)&pCVar3->cameras[0].unk4;
     } while (iVar2 < this_ptr->camera_count);
   }
   core_weather_cpp_CWeather_FUN_005ef8c0(iVar4);

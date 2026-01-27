@@ -13,9 +13,9 @@ core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0
 {
   int iVar1;
   
-  core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(&this_ptr->base_actor,out_info);
+  core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(&this_ptr->base,out_info);
   out_info->can_interact = 1;
-  iVar1 = *(int *)(this_ptr->field1_0x158 + 0x17c);
+  iVar1 = *(int *)(this_ptr->unk + 0x17c);
   out_info->yaw_min = 6.2831855;
   out_info->yaw_max = -6.2831855;
   out_info->distance_min = -1.0;

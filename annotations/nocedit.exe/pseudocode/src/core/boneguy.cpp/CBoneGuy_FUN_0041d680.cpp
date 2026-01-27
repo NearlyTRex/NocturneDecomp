@@ -37,7 +37,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
   this_ptr->blown_up = 1;
   this_ptr->param = 0.0;
   local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                       (&(this_ptr->base_enemy).base_character.model);
+                       (&(this_ptr->base).base.model);
   iVar1 = local_24->num_parts;
   this_ptr->box_count = iVar1;
   if (0x14 < iVar1) {
@@ -48,8 +48,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
   local_18 = 0;
   if (0 < local_24->num_parts) {
     local_20 = &this_ptr->box_list_pos;
-    local_2c = &(this_ptr->base_enemy).base_character.base_actor.orient;
-    local_28 = &(this_ptr->base_enemy).base_character.base_actor.location;
+    local_2c = &(this_ptr->base).base.base.orient;
+    local_28 = &(this_ptr->base).base.base.location;
     pCVar4 = &this_ptr->box_list_orient;
     local_1c = this_ptr;
     do {
@@ -63,7 +63,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
       core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
       *(uint *)(iVar1 + 0xcc4) = 1;
       core_bodypart_cpp_FUN_0041a050();
-      *(int *)local_1c->field9_0xbf80 = iVar1;
+      *(int *)local_1c->unk2 = iVar1;
       pCVar2 = local_20 + local_18 * 6;
       if (pCVar2 != (CVector3f *)(iVar1 + 0x20)) {
         pCVar2->x = *(float *)(iVar1 + 0x20);
@@ -77,7 +77,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
       }
       pCVar4 = pCVar4 + 6;
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(iVar1 + 0x30),&local_48);
-      pCVar3 = (CBoneGuy *)((local_1c->base_enemy).base_character.base_actor.orient_matrix.m + 1);
+      pCVar3 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
       puVar6 = (uint *)((int)local_1c + (uint)bVar8 * -8 + 49000);
       (local_1c->box_list_start_orient).w = local_48.w;
@@ -89,7 +89,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
       local_1c = pCVar3;
     } while (local_18 < local_24->num_parts);
   }
-  (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
+  (*((this_ptr->base).base.base.vtable._ub)->playSound)
             ((CDemonActor *)this_ptr,"boneguy-fallapart.wav");
   return;
 }

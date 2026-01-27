@@ -9,7 +9,7 @@
 void __cdecl core_baron_cpp_CBaronWeapon_FUN_00413da0(CBaronWeapon *this_ptr)
 
 {
-  core_weapon_cpp_CWeapon_FUN_005edff0(&this_ptr->base_weapon);
+  core_weapon_cpp_CWeapon_FUN_005edff0(&this_ptr->base);
   core_skeleton_cpp_getDeformableModel_FUN_005a1cf0("baron.dfm");
   return;
 }

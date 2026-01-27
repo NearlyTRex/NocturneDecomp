@@ -30,13 +30,12 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   int local_1c;
   int local_18;
   
-  if ((*(uint *)(this_ptr->field0_0x0 + 0xc) & 0x7fffffff) == 0) {
+  if ((*(uint *)(this_ptr->unk + 0xc) & 0x7fffffff) == 0) {
     return;
   }
   iStack_98 = 0x4c3b45;
   dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)((1.0 - *(float *)(this_ptr->field0_0x0 + 0xc)) *
-                             (float)27));
+                    ((double)((1.0 - *(float *)(this_ptr->unk + 0xc)) * (float)27));
   local_20 = (int)ROUND(dVar4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_FireEffectExplosionTextures + local_20 * 2);
@@ -46,12 +45,11 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
             (g_CDemonRendererPtr2,(float *)local_5c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)local_5c,(CVector3i *)0x0);
-  fVar3 = -*(float *)(this_ptr->field0_0x0 + 0x10) * 108.0f;
+  fVar3 = -*(float *)(this_ptr->unk + 0x10) * 108.0f;
   fVar2 = (float)0.00390625;
-  iVar1 = *(int *)(this_ptr->field0_0x0 + 0x18);
+  iVar1 = *(int *)(this_ptr->unk + 0x18);
   dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(*(float *)(this_ptr->field0_0x0 + 0x10) * (float)148 *
-                             fVar2));
+                    ((double)(*(float *)(this_ptr->unk + 0x10) * (float)148 * fVar2));
   dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar3 * fVar2));
   local_1c = (int)ROUND(dVar4);
   local_20 = (int)ROUND(dVar5);
@@ -61,7 +59,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   }
   local_18 = local_20;
   local_40 = (float)local_20;
-  local_3c = *(float *)(this_ptr->field0_0x0 + 0x10) * 143.0f * (float)0.00390625;
+  local_3c = *(float *)(this_ptr->unk + 0x10) * 143.0f * (float)0.00390625;
   local_38 = 0.0;
   local_34.x = (int)ROUND(local_40 * 256.0f);
   local_34.y = (int)ROUND(local_3c * 256.0f);
@@ -77,8 +75,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)(local_5c + 4));
-  local_3c = -*(float *)(this_ptr->field0_0x0 + 0x10) * (float)113 *
-             (float)0.00390625;
+  local_3c = -*(float *)(this_ptr->unk + 0x10) * (float)113 * (float)0.00390625;
   local_4c.x = (int)ROUND(local_40 * 256.0f);
   local_4c.y = (int)ROUND(local_3c * 256.0f);
   local_4c.z = (int)ROUND(local_38 * 256.0f);

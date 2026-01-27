@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00684acd
-;   int g_UseSoftwareMath = 0x0
+;   byte BYTE_00684acd = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_dadd_FUN_0060defc
@@ -30,7 +30,7 @@ section .text
     MOV dword ptr [ESP + 0xc],0x4150017e ; 0060be8c
     MOV dword ptr [ESP],0x80000000      ; 0060be94
     MOV dword ptr [ESP + 0x4],0x4147ffff ; 0060be9b
-    CMP byte ptr [0x00684acd],0x3       ; 0060bea3 | DAT_00684acd
+    CMP byte ptr [0x00684acd],0x3       ; 0060bea3 | BYTE_00684acd
     JC 0x0060bef5                       ; 0060beaa
         ;   XREF to: 0060bef5 (CONDITIONAL_JUMP)  ; LAB_0060bef5
     MOV EAX,dword ptr [ESP + 0x8]       ; 0060beac

@@ -47,7 +47,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
   g_LastPingTime = iVar2;
   if (this_ptr->connection_type == 0) {
     seed_value = crt_stdlib_c_rand_FUN_005feb5c();
-    *(uint *)(this_ptr->field7_0x118 + 0x54) = seed_value;
+    *(uint *)(this_ptr->unk + 0x54) = seed_value;
     core_actor_cpp_setRandomSeed_FUN_0040cb90(seed_value);
     return;
   }
@@ -75,12 +75,12 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
     pCVar6 = this_ptr;
     if (0 < this_ptr->player_count) {
       do {
-        iVar3 = *(int *)(pCVar6->players[0].field5_0x38 + 0x10);
+        iVar3 = *(int *)(pCVar6->players[0].unk1 + 0x10);
         if (iVar3 < local_18) {
           local_18 = iVar3;
         }
         iVar2 = iVar2 + 1;
-        pCVar6 = (CNetGame *)(pCVar6->players[0].field5_0x38 + 0x20);
+        pCVar6 = (CNetGame *)(pCVar6->players[0].unk1 + 0x20);
       } while (iVar2 < this_ptr->player_count);
     }
     iVar2 = 0;
@@ -102,7 +102,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
       } while (iVar2 < g_SimFrameCount);
     }
     iVar3 = 0;
-    iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].field5_0x38 + 0x10);
+    iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10);
     if (0 < g_SimFrameCount) {
       iVar4 = 0;
       do {
@@ -137,7 +137,7 @@ LAB_005432f5:
     piVar7 = dest;
     if (0 < iVar2) {
       do {
-        pcVar8 = pCVar5->players[0].field5_0x38 + 0x14;
+        pcVar8 = pCVar5->players[0].unk1 + 0x14;
         piVar11 = piVar7 + 3;
         for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
           *piVar11 = *(int *)pcVar8;
@@ -145,7 +145,7 @@ LAB_005432f5:
           piVar11 = piVar11 + (uint)bVar13 * -2 + 1;
         }
         iVar3 = iVar3 + 1;
-        pCVar6 = (CNetGame *)(pCVar5->players[0].field5_0x38 + 0x20);
+        pCVar6 = (CNetGame *)(pCVar5->players[0].unk1 + 0x20);
         pCVar5 = pCVar6;
         piVar7 = piVar7 + 0xb;
       } while (iVar3 < this_ptr->player_count);
@@ -160,8 +160,8 @@ LAB_005432f5:
       do {
         pSVar1 = local_14;
         if (local_24 != this_ptr->local_player_index) {
-          iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].field5_0x38 + 0x10) -
-                  *(int *)(local_14->field5_0x38 + 0x10);
+          iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10) -
+                  *(int *)(local_14->unk1 + 0x10);
           if (iVar2 < 1) {
             g_CurrentFilename = "..\\core\\netgame.cpp";
             g_CurrentLineNumber = 0x93b;
@@ -170,7 +170,7 @@ LAB_005432f5:
           if (5 < iVar2) {
             iVar2 = 5;
           }
-          local_20 = *(int *)(pSVar1->field5_0x38 + 0x10);
+          local_20 = *(int *)(pSVar1->unk1 + 0x10);
           for (; 0 < iVar2; iVar2 = iVar2 + -1) {
             iVar3 = 0;
             if (0 < g_SimFrameCount) {

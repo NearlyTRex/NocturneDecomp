@@ -4,44 +4,20 @@
       {
         "category": "other",
         "column": 6,
-        "line": 11,
+        "line": 9,
         "message": "ambiguating new declaration of 'void core_msnedit_cpp_FUN_0053c4f0()'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 27,
+        "line": 25,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 14,
-        "line": 27,
+        "line": 25,
         "message": "expected primary-expression before ')' token"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 40,
-        "message": "'_DAT_02f797ec' was not declared in this scope; did you mean 'DAT_02f7c7ec'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 41,
-        "message": "'_DAT_02f797e8' was not declared in this scope; did you mean 'DAT_02f797e4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 42,
-        "message": "'_DAT_02f797f0' was not declared in this scope; did you mean 'DAT_02f797e0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 42,
-        "message": "'_DAT_02f7a028' was not declared in this scope; did you mean 'DAT_02f7c528'?"
       }
     ],
     "success": false,
@@ -55,58 +31,57 @@
       {
         "category": "other",
         "column": 8,
-        "line": 24,
+        "line": 22,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 27,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 27,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 34,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 60,
+        "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 60,
+        "line": 58,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 325,
+    "complexity_score": 289,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 55,
-    "suspect_count": 24,
+    "pseudocode_lines": 54,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "unaffected_reg",
       "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 254
+    "total_lines": 253
   },
   "cross_references": [
     {
@@ -272,20 +247,20 @@
     },
     {
       "addr": "02f797e8",
-      "name": "DAT_02f797e8",
-      "type": "undefined4",
+      "name": "INT_02f797e8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f797ec",
-      "name": "DAT_02f797ec",
-      "type": "undefined4",
+      "name": "INT_02f797ec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f797f0",
-      "name": "DAT_02f797f0",
-      "type": "undefined4",
+      "name": "INT_02f797f0",
+      "type": "int",
       "value": null
     },
     {
@@ -302,14 +277,14 @@
     },
     {
       "addr": "02f7a028",
-      "name": "DAT_02f7a028",
-      "type": "undefined4",
+      "name": "INT_02f7a028",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f7c510",
-      "name": "DAT_02f7c510",
-      "type": "undefined4",
+      "name": "INT_02f7c510",
+      "type": "int",
       "value": null
     },
     {
@@ -392,106 +367,99 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_EDI",
       "text": "CDemonRenderer *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_02f7c528",
       "text": "DAT_02f7c528 = 0xffffffff;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 14,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x28) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 18,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 19,
       "match": "DAT_02f79818",
       "text": "if ((DAT_02f79818 & 1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 20,
       "match": "DAT_02f79818",
       "text": "DAT_02f79818 = DAT_02f79818 | 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 20,
       "match": "DAT_02f79818",
       "text": "DAT_02f79818 = DAT_02f79818 | 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 21,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&DAT_02f797e4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 22,
       "match": "DAT_0068064c",
       "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0068064c);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x24) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 30,
       "match": "DAT_02f797e4",
       "text": "((CEdScrollBar *)&DAT_02f797e4,iVar1 + -0xb,1,iVar1 + -1,0xee);",
       "type": "undefined_data"
@@ -499,55 +467,41 @@
     {
       "description": "Undefined global data reference",
       "line": 34,
-      "match": "DAT_02f7c510",
-      "text": "_DAT_02f797e8 = DAT_02f7c510;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_02f7c510",
-      "text": "_DAT_02f797f0 = DAT_02f7c510 / _DAT_02f7a028;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_02f797e4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 38,
       "match": "DAT_02f7c528",
       "text": "DAT_02f7c528 = core_actor_cpp_CActorPropertyList_FUN_0040e9c0();",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 41,
       "match": "unaff_EDI",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_02f797e4);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "(acStack_13c,\"Selected: %s\",*(uint *)(in_stack_00000004 + 0x28));",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 54,
       "match": "DAT_02f797e4",
       "text": "((CEdScrollBar *)&DAT_02f797e4);",
       "type": "undefined_data"

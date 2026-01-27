@@ -2,46 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 54,
-        "line": 32,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 80,
-        "line": 35,
-        "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
-      },
-      {
         "category": "other",
         "column": 32,
-        "line": 43,
+        "line": 41,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 44,
+        "line": 42,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 53,
-        "line": 68,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 58,
-        "line": 69,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
-      },
-      {
-        "category": "missing_member",
-        "column": 56,
-        "line": 72,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
       }
     ],
     "success": false,
@@ -55,29 +25,29 @@
       {
         "category": "other",
         "column": 16,
-        "line": 43,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 44,
+        "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 88,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 0,
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 61,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 203
+    "total_lines": 201
   },
   "cross_references": [],
   "function": {
@@ -369,14 +339,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"

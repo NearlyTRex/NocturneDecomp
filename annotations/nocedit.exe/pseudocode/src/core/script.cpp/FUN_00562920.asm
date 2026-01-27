@@ -608,10 +608,10 @@ section .text
     SHL EDI,0x2                         ; 00562e0a
     MOV EAX,[0x00680d50]                ; 00562e0d | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00562e0d
-    CMP ESI,dword ptr [EAX + 0x28]      ; 00562e12 | g_CScriptInstance.padding_0x18[16]
+    CMP ESI,dword ptr [EAX + 0x28]      ; 00562e12 | g_CScriptInstance.unk4[16]
     JGE 0x00562e4a                      ; 00562e15
         ;   XREF to: 00562e4a (CONDITIONAL_JUMP)  ; LAB_00562e4a
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 00562e17 | g_CScriptInstance.padding_0x18[20]
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 00562e17 | g_CScriptInstance.unk4[20]
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 00562e1a
     CMP EAX,0xa                         ; 00562e21
     JNC 0x00562e41                      ; 00562e24
@@ -1085,10 +1085,10 @@ section .text
     ADD ESP,0x4                         ; 005632d2
     MOV EAX,[0x00680d50]                ; 005632d5 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_005632d5
-    CMP ESI,dword ptr [EAX + 0x28]      ; 005632da | g_CScriptInstance.padding_0x18[16]
+    CMP ESI,dword ptr [EAX + 0x28]      ; 005632da | g_CScriptInstance.unk4[16]
     JGE 0x00563312                      ; 005632dd
         ;   XREF to: 00563312 (CONDITIONAL_JUMP)  ; LAB_00563312
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 005632df | g_CScriptInstance.padding_0x18[20]
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 005632df | g_CScriptInstance.unk4[20]
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 005632e2
     CMP EAX,0x8                         ; 005632e9
     JNC 0x00563309                      ; 005632ec
@@ -1184,10 +1184,10 @@ section .text
     XOR ESI,ESI                         ; 005633aa
     MOV EAX,[0x00680d50]                ; 005633ac | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_005633ac
-    CMP ESI,dword ptr [EAX + 0x28]      ; 005633b1 | g_CScriptInstance.padding_0x18[16]
+    CMP ESI,dword ptr [EAX + 0x28]      ; 005633b1 | g_CScriptInstance.unk4[16]
     JGE 0x005633e8                      ; 005633b4
         ;   XREF to: 005633e8 (CONDITIONAL_JUMP)  ; LAB_005633e8
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 005633b6 | g_CScriptInstance.padding_0x18[20]
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 005633b6 | g_CScriptInstance.unk4[20]
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 005633b9
     CMP EAX,0x5                         ; 005633c0
     JNC 0x005633df                      ; 005633c3
@@ -1496,10 +1496,10 @@ section .text
     ADD ESP,0x4                         ; 00563694
     MOV EAX,[0x00680d50]                ; 00563697 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00563697
-    CMP ESI,dword ptr [EAX + 0x28]      ; 0056369c | g_CScriptInstance.padding_0x18[16]
+    CMP ESI,dword ptr [EAX + 0x28]      ; 0056369c | g_CScriptInstance.unk4[16]
     JGE 0x005636d1                      ; 0056369f
         ;   XREF to: 005636d1 (CONDITIONAL_JUMP)  ; LAB_005636d1
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 005636a1 | g_CScriptInstance.padding_0x18[20]
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 005636a1 | g_CScriptInstance.unk4[20]
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 005636a4
     CMP EAX,0x4                         ; 005636ab
     JBE 0x005636ca                      ; 005636ae
@@ -1550,10 +1550,10 @@ section .text
     XOR ESI,ESI                         ; 0056370d
     MOV EAX,[0x00680d50]                ; 0056370f | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_0056370f
-    CMP ESI,dword ptr [EAX + 0x28]      ; 00563714 | g_CScriptInstance.padding_0x18[16]
+    CMP ESI,dword ptr [EAX + 0x28]      ; 00563714 | g_CScriptInstance.unk4[16]
     JGE 0x00563747                      ; 00563717
         ;   XREF to: 00563747 (CONDITIONAL_JUMP)  ; LAB_00563747
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563719 | g_CScriptInstance.padding_0x18[20]
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563719 | g_CScriptInstance.unk4[20]
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 0056371c
     TEST EAX,EAX                        ; 00563723
     JBE 0x0056372c                      ; 00563725
@@ -1605,10 +1605,10 @@ section .text
     ADD ESP,0x4                         ; 00563782
     MOV EAX,[0x00680d50]                ; 00563785 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00563785
-    CMP ESI,dword ptr [EAX + 0x28]      ; 0056378a | g_CScriptInstance.padding_0x18[16]
+    CMP ESI,dword ptr [EAX + 0x28]      ; 0056378a | g_CScriptInstance.unk4[16]
     JGE 0x005637bd                      ; 0056378d
         ;   XREF to: 005637bd (CONDITIONAL_JUMP)  ; LAB_005637bd
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 0056378f | g_CScriptInstance.padding_0x18[20]
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 0056378f | g_CScriptInstance.unk4[20]
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 00563792
     TEST EAX,EAX                        ; 00563799
     JBE 0x005637a2                      ; 0056379b
@@ -1901,7 +1901,7 @@ section .text
     RET                                 ; 00563a4f
     MOV EAX,[0x00680d50]                ; 00563a50 | g_CScriptInstance | g_CScriptPtr
         ;   Label: caseD_19
-    CMP dword ptr [EAX + 0x1c],0x1      ; 00563a55 | g_CScriptInstance.padding_0x18[4]
+    CMP dword ptr [EAX + 0x1c],0x1      ; 00563a55 | g_CScriptInstance.unk4[4]
     JL 0x00563aba                       ; 00563a59
         ;   XREF to: 00563aba (CONDITIONAL_JUMP)  ; LAB_00563aba
     LEA EAX,[ESP + 0x3ac]               ; 00563a5b
@@ -1913,10 +1913,10 @@ section .text
     ADD ESP,0x4                         ; 00563a6c
     MOV EAX,[0x00680d50]                ; 00563a6f | g_CScriptPtr
         ;   Label: LAB_00563a6f
-    CMP EDI,dword ptr [EAX + 0x1c]      ; 00563a74 | g_CScriptInstance.padding_0x18[4]
+    CMP EDI,dword ptr [EAX + 0x1c]      ; 00563a74 | g_CScriptInstance.unk4[4]
     JGE 0x00563ad9                      ; 00563a77
         ;   XREF to: 00563ad9 (CONDITIONAL_JUMP)  ; LAB_00563ad9
-    MOV EAX,dword ptr [EAX + 0x20]      ; 00563a79 | g_CScriptInstance.padding_0x18[8]
+    MOV EAX,dword ptr [EAX + 0x20]      ; 00563a79 | g_CScriptInstance.unk4[8]
     ADD EAX,ESI                         ; 00563a7c
     LEA EBX,[EAX + 0x96]                ; 00563a7e
     PUSH EBX                            ; 00563a84
@@ -1989,7 +1989,7 @@ section .text
         ;   XREF to: 00563ba1 (CONDITIONAL_JUMP)  ; LAB_00563ba1
     IMUL EBX,EAX,0x226                  ; 00563b2a
     MOV ESI,dword ptr [0x00680d50]      ; 00563b30 | g_CScriptPtr
-    MOV ESI,dword ptr [ESI + 0x20]      ; 00563b36 | g_CScriptInstance.padding_0x18[8]
+    MOV ESI,dword ptr [ESI + 0x20]      ; 00563b36 | g_CScriptInstance.unk4[8]
     MOV EDI,dword ptr [EBP + 0x14]      ; 00563b39
     ADD ESI,EBX                         ; 00563b3c
     PUSH EDI                            ; 00563b3e
@@ -2009,7 +2009,7 @@ section .text
     POP EDI                             ; 00563b57
         ;   Label: LAB_00563b57
     MOV EAX,[0x00680d50]                ; 00563b58 | g_CScriptPtr
-    MOV ESI,dword ptr [EAX + 0x20]      ; 00563b5d | g_CScriptInstance.padding_0x18[8]
+    MOV ESI,dword ptr [EAX + 0x20]      ; 00563b5d | g_CScriptInstance.unk4[8]
     MOV EDI,0x310a9e8                   ; 00563b60 | DAT_0310a9e8
     ADD ESI,EBX                         ; 00563b65
     PUSH EDI                            ; 00563b67 | DAT_0310a9e8
@@ -2190,10 +2190,10 @@ section .text
     ADD ESP,0x4                         ; 00563d05
     MOV EAX,[0x00680d50]                ; 00563d08 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00563d08
-    CMP ESI,dword ptr [EAX + 0x28]      ; 00563d0d | g_CScriptInstance.padding_0x18[16]
+    CMP ESI,dword ptr [EAX + 0x28]      ; 00563d0d | g_CScriptInstance.unk4[16]
     JGE 0x00563d40                      ; 00563d10
         ;   XREF to: 00563d40 (CONDITIONAL_JUMP)  ; LAB_00563d40
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563d12 | g_CScriptInstance.padding_0x18[20]
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563d12 | g_CScriptInstance.unk4[20]
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 00563d15
     TEST EAX,EAX                        ; 00563d1c
     JBE 0x00563d25                      ; 00563d1e

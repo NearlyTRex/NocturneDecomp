@@ -7,8 +7,8 @@
 ; undefined2       Stack[-0x8]:2  local_8
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00684acc
-;   undefined1 DAT_00684acd
+;   byte BYTE_00684acc = 0x0
+;   byte BYTE_00684acd = 0x0
 ;   undefined1 DAT_0068500c
 ;
 ; Called Functions:
@@ -20,11 +20,11 @@ section .text
 
     PUSH EBX                            ; 006047e0
         ;   Label: crt_fpu.c_staticInit_FUN_006047e0
-    MOV AH,byte ptr [0x00684acc]        ; 006047e1 | DAT_00684acc
+    MOV AH,byte ptr [0x00684acc]        ; 006047e1 | BYTE_00684acc
     TEST AH,AH                          ; 006047e7
     JNZ 0x00604822                      ; 006047e9
         ;   XREF to: 00604822 (CONDITIONAL_JUMP)  ; LAB_00604822
-    MOV byte ptr [0x00684acd],AH        ; 006047eb | DAT_00684acd
+    MOV byte ptr [0x00684acd],AH        ; 006047eb | BYTE_00684acd
     XOR BH,BH                           ; 006047f1
     SUB EAX,EAX                         ; 006047f3
     PUSH EAX                            ; 006047f5
@@ -44,8 +44,8 @@ section .text
         ;   Label: LAB_0060480d
     JNZ 0x00604822                      ; 00604814
         ;   XREF to: 00604822 (CONDITIONAL_JUMP)  ; LAB_00604822
-    MOV byte ptr [0x00684acc],BH        ; 00604816 | DAT_00684acc
-    MOV byte ptr [0x00684acd],BL        ; 0060481c | DAT_00684acd
+    MOV byte ptr [0x00684acc],BH        ; 00604816 | BYTE_00684acc
+    MOV byte ptr [0x00684acd],BL        ; 0060481c | BYTE_00684acd
     POP EBX                             ; 00604822
         ;   Label: LAB_00604822
     RET                                 ; 00604823

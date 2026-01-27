@@ -24,7 +24,7 @@ CVector3f * core_ghoul_cpp_FUN_004e84a0(void)
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d832fc,&local_4c);
+            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),INT_02d832fc,&local_4c);
   pCVar2 = &local_4c;
   pCVar3 = &local_7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

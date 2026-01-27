@@ -186,7 +186,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
       pCVar10 = local_7c;
       if (0 < this_ptr->camera_count) {
         do {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_f08.base_strlist,pCVar10->name);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_f08.base,pCVar10->name);
           iVar9 = iVar9 + 1;
           pCVar10 = pCVar10 + 1;
         } while (iVar9 < this_ptr->camera_count);
@@ -207,7 +207,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
       pCVar10 = local_78;
       if (0 < this_ptr->camera_count) {
         do {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1658.base_strlist,pCVar10->name);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1658.base,pCVar10->name);
           iVar9 = iVar9 + 1;
           pCVar10 = pCVar10 + 1;
         } while (iVar9 < this_ptr->camera_count);
@@ -291,7 +291,7 @@ LAB_0057eb3b:
         pCVar10 = local_44;
         if (0 < this_ptr->camera_count) {
           do {
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_12b0.base_strlist,pCVar10->name);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_12b0.base,pCVar10->name);
             iVar9 = iVar9 + 1;
             pCVar10 = pCVar10 + 1;
           } while (iVar9 < this_ptr->camera_count);
@@ -385,11 +385,11 @@ LAB_0057eb3b:
             (pCVar11->rotation_matrix).m[2].x = (pCVar7->rotation_matrix).m[2].x;
             (pCVar11->rotation_matrix).m[2].y = (pCVar7->rotation_matrix).m[2].y;
             (pCVar11->rotation_matrix).m[2].z = (pCVar7->rotation_matrix).m[2].z;
-            pCVar11->field4_0x13c = pCVar7->field4_0x13c;
+            pCVar11->unk1 = pCVar7->unk1;
             pCVar11->is_panning = pCVar7->is_panning;
             pCVar11->projection_scale = pCVar7->projection_scale;
             pCVar11->ambient_value = pCVar7->ambient_value;
-            pCVar11->field8_0x14c = pCVar7->field8_0x14c;
+            pCVar11->unk2 = pCVar7->unk2;
             pCVar11->fog_enabled = pCVar7->fog_enabled;
             (pCVar11->fog).color_index.r = (pCVar7->fog).color_index.r;
             (pCVar11->fog).color_index.g = (pCVar7->fog).color_index.g;
@@ -417,8 +417,8 @@ LAB_0057eb3b:
             }
             pCVar11->pvs_count = pCVar7->pvs_count;
             pCVar11->pvs_list = pCVar7->pvs_list;
-            pCVar11->field16_0x19c = pCVar7->field16_0x19c;
-            pCVar11->field17_0x1a0 = pCVar7->field17_0x1a0;
+            pCVar11->unk3 = pCVar7->unk3;
+            pCVar11->unk4 = pCVar7->unk4;
             this_ptr->cameras[this_ptr->camera_count].pvs_count = 0;
             this_ptr->cameras[this_ptr->camera_count].pvs_list = (int *)0x0;
             pbVar17 = abStack_4be;
@@ -521,7 +521,7 @@ LAB_0057eb3b:
           local_14 = iVar9;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                     (g_CEditorToolsPtr,(float)iVar9,(float)this_ptr->camera_count);
-          pCVar12 = (CDemonSet *)&pCVar12->cameras[0].field17_0x1a0;
+          pCVar12 = (CDemonSet *)&pCVar12->cameras[0].unk4;
           local_2c = local_2c + 1;
         } while (iVar9 < this_ptr->camera_count);
       }

@@ -2,46 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 16,
-        "message": "'_DAT_00822c88' was not declared in this scope; did you mean 'DAT_00822ce8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "'_DAT_00822c8c' was not declared in this scope; did you mean 'DAT_00822cec'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "'_DAT_00822c90' was not declared in this scope; did you mean 'DAT_00822cf0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 19,
-        "message": "'_DAT_00822c94' was not declared in this scope; did you mean 'DAT_00822cf4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 20,
-        "message": "'_DAT_00822c98' was not declared in this scope; did you mean 'DAT_00822ce8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "'_DAT_00822c9c' was not declared in this scope; did you mean 'DAT_00822cec'?"
-      },
-      {
         "category": "incompatible_types",
-        "column": 51,
-        "line": 23,
-        "message": "cannot convert 'undefined (*)()' {aka 'unsigned char (*)()'} to 'CDemonActor* (**)()'"
+        "column": 42,
+        "line": 19,
+        "message": "cannot convert 'CBride* (*)()' to 'void* (**)()'"
       }
     ],
     "success": false,
@@ -54,24 +18,22 @@
       },
       {
         "category": "other",
-        "column": 42,
-        "line": 23,
+        "column": 33,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 30,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 10,
-    "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 37
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [],
   "function": {
@@ -84,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bride.cpp_staticInit_FUN_00423700",
-    "signature": "CDemonActorType * core_bride.cpp_staticInit_FUN_00423700(void)"
+    "signature": "void core_bride.cpp_staticInit_FUN_00423700(void)"
   },
   "function_calls": [
     {
@@ -108,38 +70,38 @@
     },
     {
       "addr": "00822c88",
-      "name": "DAT_00822c88",
-      "type": "undefined4",
+      "name": "FLOAT_00822c88",
+      "type": "float",
       "value": null
     },
     {
       "addr": "00822c8c",
-      "name": "DAT_00822c8c",
-      "type": "undefined4",
+      "name": "FLOAT_00822c8c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "00822c90",
-      "name": "DAT_00822c90",
-      "type": "undefined4",
+      "name": "FLOAT_00822c90",
+      "type": "float",
       "value": null
     },
     {
       "addr": "00822c94",
-      "name": "DAT_00822c94",
-      "type": "undefined4",
+      "name": "FLOAT_00822c94",
+      "type": "float",
       "value": null
     },
     {
       "addr": "00822c98",
-      "name": "DAT_00822c98",
-      "type": "undefined4",
+      "name": "FLOAT_00822c98",
+      "type": "float",
       "value": null
     },
     {
       "addr": "00822c9c",
-      "name": "DAT_00822c9c",
-      "type": "undefined4",
+      "name": "FLOAT_00822c9c",
+      "type": "float",
       "value": null
     },
     {
@@ -191,13 +153,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

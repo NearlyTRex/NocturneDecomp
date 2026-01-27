@@ -172,7 +172,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     crt_stdio_c_fflush_FUN_00600e29((FILE *)local_14c);
     crt_stdio_c_fflush_FUN_00600e29((FILE *)local_cc);
     support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&local_50.dictionary);
-    support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_50.base_codec,1);
+    support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_50.base,1);
     crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
               ((ofstream *)local_cc,0,in_stack_fffffaa8,in_stack_fffffaac,in_stack_fffffab0);
     crt_fstream_cpp_ifstream_dtor_FUN_005ff856

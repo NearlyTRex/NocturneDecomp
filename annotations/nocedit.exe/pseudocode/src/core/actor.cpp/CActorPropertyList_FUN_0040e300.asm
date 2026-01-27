@@ -8,7 +8,7 @@
 ;
 ; XREF[7]:
 ;   core_backgnd.cpp_CBackgroundActor_FUN_00412a40 at 00412a9a
-;   core_boxactor.cpp_FUN_004226e0 at 004227fe
+;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 004227fe
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481498
 ;   core_ladder.cpp_CLadder_FUN_00502ca0 at 00502cf3
 ;   core_pendulum.cpp_FUN_0054a5f0 at 0054a762

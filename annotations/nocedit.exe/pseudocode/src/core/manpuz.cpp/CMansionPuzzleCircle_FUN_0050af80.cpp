@@ -15,7 +15,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af80(CMansionPuzzleCir
   int in_stack_00000008;
   float local_1c [7];
   
-  pcVar3 = this_ptr->field10_0x648 + in_stack_00000008 * 0x60 + 0xcf8;
+  pcVar3 = this_ptr->unk3 + in_stack_00000008 * 0x60 + 0xcf8;
   pcVar1 = pcVar3 + 0x18;
   fVar2 = 1.0 - *(float *)(pcVar3 + 0x18);
   if ((float *)(pcVar3 + 0x1c) == local_1c) {

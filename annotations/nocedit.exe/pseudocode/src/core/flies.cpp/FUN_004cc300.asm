@@ -10,7 +10,7 @@
 ;   double DOUBLE_0062a42e = 0.015625
 ;   float FLOAT_0062a436 = 64
 ;   double DOUBLE_0062a43e = 0.5
-;   undefined4 DAT_0065e500
+;   float FLOAT_0065e500 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
@@ -217,13 +217,13 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 004cc53e
     MOV EDX,dword ptr [0x006703ec]      ; 004cc542 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004cc548
-    FMUL float ptr [0x0065e500]         ; 004cc54a | DAT_0065e500
+    FMUL float ptr [0x0065e500]         ; 004cc54a | FLOAT_0065e500
     FISTP dword ptr [EBX]               ; 004cc550
     FLD float ptr [EAX + 0x4]           ; 004cc552
-    FMUL float ptr [0x0065e500]         ; 004cc555 | DAT_0065e500
+    FMUL float ptr [0x0065e500]         ; 004cc555 | FLOAT_0065e500
     FISTP dword ptr [EBX + 0x4]         ; 004cc55b
     FLD float ptr [EAX + 0x8]           ; 004cc55e
-    FMUL float ptr [0x0065e500]         ; 004cc561 | DAT_0065e500
+    FMUL float ptr [0x0065e500]         ; 004cc561 | FLOAT_0065e500
     FISTP dword ptr [EBX + 0x8]         ; 004cc567
     LEA EAX,[ESP + 0x6c]                ; 004cc56a
     PUSH EAX                            ; 004cc56e

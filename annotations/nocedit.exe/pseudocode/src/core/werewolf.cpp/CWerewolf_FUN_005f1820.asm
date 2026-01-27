@@ -16,8 +16,8 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CVector3f g_ZeroVector
-;   undefined4 DAT_03f96b44
-;   undefined4 DAT_03f96b50
+;   float FLOAT_03f96b44
+;   float FLOAT_03f96b50
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -104,12 +104,12 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005f18f2
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 005f18f7
-    PUSH 0x3f96b44                      ; 005f18fa | DAT_03f96b44
+    PUSH 0x3f96b44                      ; 005f18fa | FLOAT_03f96b44
     PUSH EBX                            ; 005f18ff
     CALL core_werewolf.cpp_FUN_005f1230 ; 005f1900
         ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f1230()
     ADD ESP,0x8                         ; 005f1905
-    PUSH 0x3f96b50                      ; 005f1908 | DAT_03f96b50
+    PUSH 0x3f96b50                      ; 005f1908 | FLOAT_03f96b50
     PUSH EBX                            ; 005f190d
     CALL core_werewolf.cpp_FUN_005f1230 ; 005f190e
         ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f1230()

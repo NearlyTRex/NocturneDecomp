@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_bat.cpp_staticInit_FUN_004146c0(void)
+; __cdecl void core_bat.cpp_staticInit_FUN_004146c0(void)
 ;
 ;
 ; Referenced Globals:

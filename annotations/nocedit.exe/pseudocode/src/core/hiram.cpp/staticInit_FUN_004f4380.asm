@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_hiram.cpp_staticInit_FUN_004f4380(void)
+; __cdecl void core_hiram.cpp_staticInit_FUN_004f4380(void)
 ;
 ;
 ; Referenced Globals:

@@ -147,7 +147,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,FI
       }
     }
     if (local_20 != 0) {
-      local_24 = this_ptr->field8_0x21e + 6;
+      local_24 = this_ptr->unk1 + 6;
       local_20 = local_20 << 4;
       iVar4 = 0;
       pCVar3 = this_ptr;
@@ -155,22 +155,22 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,FI
         if (g_CDemonSetPtr->set_file_version < 2) {
           crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",local_44);
           pCVar3->visible_flags[0] = local_44[0];
-          pcVar1 = this_ptr->field8_0x21e + iVar4 + 6;
+          pcVar1 = this_ptr->unk1 + iVar4 + 6;
           pcVar1[0] = '\x01';
           pcVar1[1] = '\0';
           pcVar1[2] = '\0';
           pcVar1[3] = '\0';
-          pcVar1 = this_ptr->field8_0x21e + iVar4 + 10;
+          pcVar1 = this_ptr->unk1 + iVar4 + 10;
           pcVar1[0] = '>';
           pcVar1[1] = '\x01';
           pcVar1[2] = '\0';
           pcVar1[3] = '\0';
-          pcVar1 = this_ptr->field8_0x21e + iVar4 + 0xe;
+          pcVar1 = this_ptr->unk1 + iVar4 + 0xe;
           pcVar1[0] = '\x01';
           pcVar1[1] = '\0';
           pcVar1[2] = '\0';
           pcVar1[3] = '\0';
-          pcVar1 = this_ptr->field8_0x21e + iVar4 + 0x12;
+          pcVar1 = this_ptr->unk1 + iVar4 + 0x12;
           pcVar1[0] = -0x12;
           pcVar1[1] = '\0';
           pcVar1[2] = '\0';
@@ -190,7 +190,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,FI
   }
   else {
     crt_memory_c_memset_FUN_005fde40(this_ptr->visible_flags,0,0xfa);
-    crt_memory_c_memset_FUN_005fde40(this_ptr->field8_0x21e + 6,0,4000);
+    crt_memory_c_memset_FUN_005fde40(this_ptr->unk1 + 6,0,4000);
     crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_48);
     iVar4 = 0;
     if (0 < local_48) {
@@ -204,15 +204,15 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,FI
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid camera number in visiblilty list!");
         }
         this_ptr->visible_flags[local_3c] = '\x01';
-        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 6) = local_38;
-        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 10) = local_30;
-        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 0xe) = local_34;
-        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 0x12) = local_2c;
+        *(uint *)(this_ptr->unk1 + local_3c * 0x10 + 6) = local_38;
+        *(uint *)(this_ptr->unk1 + local_3c * 0x10 + 10) = local_30;
+        *(uint *)(this_ptr->unk1 + local_3c * 0x10 + 0xe) = local_34;
+        *(uint *)(this_ptr->unk1 + local_3c * 0x10 + 0x12) = local_2c;
         iVar4 = iVar4 + 1;
       } while (iVar4 < local_48);
     }
   }
-  *(float *)this_ptr->field12_0x11d8 = this_ptr->atten_end * this_ptr->atten_end;
-  *(float *)(this_ptr->field12_0x11d8 + 4) = 1.0 / this_ptr->atten_end;
+  *(float *)this_ptr->unk2 = this_ptr->atten_end * this_ptr->atten_end;
+  *(float *)(this_ptr->unk2 + 4) = 1.0 / this_ptr->atten_end;
   return;
 }

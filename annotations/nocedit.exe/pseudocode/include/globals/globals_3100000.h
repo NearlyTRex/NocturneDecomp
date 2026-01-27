@@ -24,8 +24,30 @@ extern CPickList DAT_0310f4b0;
 // CScript
 extern CScript g_CScriptInstance;
 
+// float
+extern float FLOAT_0310f4a0;
+
 // int
 extern int g_QuantizeCurrentLineNumber;
+extern int INT_0310615c;
+extern int INT_03106160;
+extern int INT_03106164;
+extern int INT_03106168;
+extern int INT_0310616c;
+extern int INT_03106170;
+extern int INT_03106174;
+extern int INT_03106178;
+extern int INT_0310617c;
+extern int INT_03106180;
+extern int INT_03106184;
+extern int INT_03106188;
+extern int INT_0310618c;
+extern int INT_03106190;
+extern int INT_03106194;
+extern int INT_03106198;
+extern int INT_0310619c;
+extern int INT_031061a0;
+extern int INT_031061e0;
 
 // undefined1
 extern undefined1 DAT_031091e8;
@@ -47,14 +69,6 @@ extern undefined1 DAT_0310fdc2;
 extern undefined1 DAT_0310fdc3;
 
 // undefined4
-extern undefined4 DAT_0310615c;
-extern undefined4 DAT_03106168;
-extern undefined4 DAT_0310616c;
-extern undefined4 DAT_03106170;
-extern undefined4 DAT_03106174;
-extern undefined4 DAT_03106194;
-extern undefined4 DAT_0310619c;
-extern undefined4 DAT_031061e0;
 extern undefined4 DAT_0310ec9c;
 extern undefined4 DAT_0310f4a4;
 extern undefined4 DAT_0310f4a8;

@@ -25,7 +25,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
     iVar2 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffdc,
+              (&in_stack_00000004->base,(CVector3f *)&stack0xffffffdc,
                (CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar2 = iVar2 + 1;
@@ -85,12 +85,12 @@ void core_vampboss_cpp_FUN_005e7030(void)
       iVar2 = 5;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004[1].base_actor.create_event + 0x20),iVar2,1);
+              ((CMotionController *)(in_stack_00000004[1].base.create_event + 0x20),iVar2,1);
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04));
     if (iVar2 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
-                        (&in_stack_00000004->base_actor,"voicuhurt.wav");
+      uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
+                        (&in_stack_00000004->base,"voicuhurt.wav");
       *(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04) = uVar3;
       return;
     }

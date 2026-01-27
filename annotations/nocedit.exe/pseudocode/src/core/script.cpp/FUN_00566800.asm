@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   char[256] g_CharacterClassificationTable
-;   undefined4 DAT_0310fd10
+;   undefined4 CEdScrollBar_0310fd0c.current_value
 ;   undefined4 DAT_0310fd48
 ;
 ; Called Functions:
@@ -85,11 +85,11 @@ section .text
         ;   XREF to: 0056684d (UNCONDITIONAL_JUMP)  ; LAB_0056684d
     MOV byte ptr [EAX + EBP*0x1],0x0    ; 00566867
         ;   Label: LAB_00566867
-    CMP EAX,dword ptr [0x0310fd10]      ; 0056686b | DAT_0310fd10
+    CMP EAX,dword ptr [0x0310fd10]      ; 0056686b | CEdScrollBar_0310fd0c.current_value
         ;   Label: LAB_0056686b
     JLE 0x0056680c                      ; 00566871
         ;   XREF to: 0056680c (CONDITIONAL_JUMP)  ; LAB_0056680c
-    MOV [0x0310fd10],EAX                ; 00566873 | DAT_0310fd10
+    MOV [0x0310fd10],EAX                ; 00566873 | CEdScrollBar_0310fd0c.current_value
     POP EBP                             ; 00566878
     POP EDI                             ; 00566879
     POP ESI                             ; 0056687a

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_staticInit_FUN_005591b0()
+; __cdecl void core_script.cpp_staticInit_FUN_005591b0(void)
 ;
 ;
 ; Referenced Globals:
@@ -9,10 +9,10 @@
 ;   WatcomStaticDestructorNode DAT_00680d20
 ;   WatcomStaticDestructorNode DAT_00680d30
 ;   WatcomStaticDestructorNode DAT_00680d40
-;   undefined4 DAT_0310f4b0
+;   CPickList DAT_0310f4b0
 ;   CScript g_CScriptInstance
-;   undefined4 DAT_0310fcd8
-;   undefined4 DAT_0310fd0c
+;   CEdScrollBar CEdScrollBar_0310fcd8
+;   CEdScrollBar CEdScrollBar_0310fd0c
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_ctor_FUN_005597f0
@@ -41,7 +41,7 @@ section .text
     CALL crt_stdlib.c_atexit_FUN_005ff060 ; 005591dc
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005591e1
-    PUSH 0x310fcd8                      ; 005591e4 | DAT_0310fcd8
+    PUSH 0x310fcd8                      ; 005591e4 | CEdScrollBar_0310fcd8
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0 ; 005591e9
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 005591ee
@@ -49,7 +49,7 @@ section .text
     CALL crt_stdlib.c_atexit_FUN_005ff060 ; 005591f6
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005591fb
-    PUSH 0x310fd0c                      ; 005591fe | DAT_0310fd0c
+    PUSH 0x310fd0c                      ; 005591fe | CEdScrollBar_0310fd0c
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0 ; 00559203
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00559208

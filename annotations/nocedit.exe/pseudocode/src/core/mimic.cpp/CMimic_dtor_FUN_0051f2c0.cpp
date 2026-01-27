@@ -21,18 +21,18 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint d
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  iVar1 = *(int *)(this_ptr->field3_0x4bdf8 + 0xc5c);
-  (this_ptr->field0_0x0).base_character.base_actor.vtable._ub = &g_CMimicVTable;
+  iVar1 = *(int *)(this_ptr->unk2 + 0xc5c);
+  (this_ptr->base).base.base.vtable._ub = &g_CMimicVTable;
   g_CurrentDebugFilename = "..\\core\\mimic.cpp";
   g_CurrentDebugLine = 0xa9;
   if (iVar1 != 0) {
     (**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))();
   }
-  this_ptr->field3_0x4bdf8[0xc5c] = '\0';
-  this_ptr->field3_0x4bdf8[0xc5d] = '\0';
-  this_ptr->field3_0x4bdf8[0xc5e] = '\0';
-  this_ptr->field3_0x4bdf8[0xc5f] = '\0';
-  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field3_0x4bdf8 + 0x2c));
+  this_ptr->unk2[0xc5c] = '\0';
+  this_ptr->unk2[0xc5d] = '\0';
+  this_ptr->unk2[0xc5e] = '\0';
+  this_ptr->unk2[0xc5f] = '\0';
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->unk2 + 0x2c));
   iVar1 = core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
   iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(iVar1 + -0x8bb8));
   iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));

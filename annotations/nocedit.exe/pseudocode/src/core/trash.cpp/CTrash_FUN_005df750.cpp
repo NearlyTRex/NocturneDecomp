@@ -11,13 +11,13 @@ void __cdecl core_trash_cpp_CTrash_FUN_005df750(CTrash *this_ptr)
 {
   CLocation *pCVar1;
   
-  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
-  pCVar1 = &(this_ptr->base_actor).location;
+  core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
+  pCVar1 = &(this_ptr->base).location;
   if ((CLocation *)&this_ptr->home_pos == pCVar1) {
     return;
   }
   (this_ptr->home_pos).x = (pCVar1->position).x;
-  (this_ptr->home_pos).y = (this_ptr->base_actor).location.position.y;
-  (this_ptr->home_pos).z = (this_ptr->base_actor).location.position.z;
+  (this_ptr->home_pos).y = (this_ptr->base).location.position.y;
+  (this_ptr->home_pos).z = (this_ptr->base).location.position.z;
   return;
 }

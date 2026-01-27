@@ -24,7 +24,7 @@ void core_flame_cpp_FUN_004caa80(void)
   int in_stack_00000008;
   
   this_ptr = g_CDemonRendererPtr2;
-  in_stack_00000004[1].field26_0x148 = 0;
+  in_stack_00000004[1].unk14 = 0;
   in_stack_00000004[1].previous_transform_state.dirty_flags = 0;
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr);
   if ((iVar3 == 0) && (in_stack_00000008 != 0)) {
@@ -47,7 +47,7 @@ void core_flame_cpp_FUN_004caa80(void)
       iVar6 = 0;
       while( true ) {
         if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar6) {
-          in_stack_00000004[1].field26_0x148 = 1;
+          in_stack_00000004[1].unk14 = 1;
           return;
         }
         pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
@@ -58,7 +58,7 @@ void core_flame_cpp_FUN_004caa80(void)
             fVar1 = (in_stack_00000004->location).position.y - (pCVar5->location).position.y,
             fVar2 = (in_stack_00000004->location).position.z - (pCVar5->location).position.z,
             SQRT(fVar2 * fVar2 + fVar4 * fVar4 + fVar1 * fVar1) < (float)5)) &&
-           (pCVar5[1].field26_0x148 == 1)) break;
+           (pCVar5[1].unk14 == 1)) break;
         iVar6 = iVar6 + 1;
         iVar3 = iVar3 + 4;
       }

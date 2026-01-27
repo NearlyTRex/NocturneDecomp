@@ -32,8 +32,8 @@ uint core_hero_cpp_FUN_004f2c40(void)
     if (g_CDemonSetPtr->damage_listener_count <= iVar3) {
       return 0;
     }
-    pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + local_14 + -4);
-    if ((*(char *)&pCVar1[0x1b].field13_0xec.x != '\0') && (pCVar1 != in_stack_00000004)) {
+    pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->unk4 + local_14 + -4);
+    if ((*(char *)&pCVar1[0x1b].unk4.x != '\0') && (pCVar1 != in_stack_00000004)) {
       local_20.x = (pCVar1->location).position.x - (in_stack_00000004->location).position.x;
       local_20.z = (pCVar1->location).position.z - (in_stack_00000004->location).position.z;
       if (ABS((pCVar1->location).position.y - (in_stack_00000004->location).position.y) <=

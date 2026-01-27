@@ -8,40 +8,10 @@
         "message": "ambiguating new declaration of 'int core_platfrm_cpp_FUN_0054d720()'"
       },
       {
-        "category": "missing_member",
-        "column": 39,
-        "line": 42,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 60,
         "line": 51,
         "message": "'stack0xffffffac' was not declared in this scope; did you mean 'in_stack_ffffffac'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 30,
-        "line": 54,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_108'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 38,
-        "line": 70,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 55,
-        "line": 73,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 65,
-        "line": 81,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
       }
     ],
     "success": false,
@@ -324,7 +294,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[3].field17_0x104 != 0) {",
+      "text": "if (in_stack_00000004[3].unk7 != 0) {",
       "type": "stack_param"
     },
     {
@@ -385,16 +355,16 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004 == pCVar2 && (*(char *)&pCVar2[2].orient_matrix.m[0].y == '\\0')))) {",
+      "text": "((pCVar2 = *(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c), in_stack_00000004 == pCVar2 &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 74,
       "match": "in_stack_00000004",
-      "text": "(pCVar2->location).position.x = (float)in_stack_00000004[2].field7_0x6c;",
+      "text": "(pCVar2->location).position.x = (float)in_stack_00000004[2].unk1;",
       "type": "stack_param"
     },
     {
@@ -567,7 +537,7 @@
         "vtable_addr": "006622a4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CMinecar",
         "offset": 8,
         "vtable_addr": "006615d4"
       }

@@ -18,32 +18,29 @@ void core_passngr_cpp_CPassenger_load_FUN_00546190(void)
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)(in_stack_00000004 + 1),"transformEvent");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)&in_stack_00000004[1].base_character.base_actor.health,
-             "wolfModelName");
+            ((char **)&in_stack_00000004[1].base.base.health,"wolfModelName");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            (&in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].w,
+            (&in_stack_00000004[1].base.model.bone_transform.bone_rotations[0x53].w,
              "morphTime");
   if ((1 < g_CPassengerClassVersion) && (g_CPassengerClassVersion < 5)) {
-    model_ptr = &(in_stack_00000004->base_character).model;
+    model_ptr = &(in_stack_00000004->base).model;
     core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
               (&model_ptr->motion_controller,"motion state");
   }
   if (2 < g_CPassengerClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770
-              (&in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].x,
+              (&in_stack_00000004[1].base.model.bone_transform.bone_rotations[0x53].x,
                "wolfSize");
   }
   if (3 < g_CPassengerClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0xc),
-               "nameOfWolf");
+              ((char **)(in_stack_00000004[1].base.base.create_event + 0xc),"nameOfWolf");
   }
   if (g_CPassengerClassVersion < 6) {
     return;
   }
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0x2c),
-             "transformWav");
+            ((char **)(in_stack_00000004[1].base.base.create_event + 0x2c),"transformWav");
   return;
 }

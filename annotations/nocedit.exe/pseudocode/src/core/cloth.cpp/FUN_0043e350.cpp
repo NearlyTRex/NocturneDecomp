@@ -13,5 +13,5 @@ int core_cloth_cpp_FUN_0043e350(void)
   
   return ((int)(in_stack_00000004[2] * in_stack_00000004[2] +
                *in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]
-               ) >> 1) + DAT_02d7a7b8;
+               ) >> 1) + INT_02d7a7b8;
 }

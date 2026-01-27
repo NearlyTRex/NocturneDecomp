@@ -21,7 +21,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720
   float local_10;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
+                     ((CKeyFramedModelInstance *)this_ptr->unk1);
   local_24 = (pCVar1->bounds_min).x;
   local_20 = (pCVar1->bounds_min).y;
   local_1c = (pCVar1->bounds_min).z;
@@ -35,11 +35,11 @@ core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720
                 (g_CDemonSetPtr,(CBoundingBox3D *)cylinder,(CMatrix3x3f *)&local_24,
                  (SIntersectXZCylinder *)(piVar2 + 3),(SIntersectXZCylinder *)(piVar2 + 9));
       piVar2 = piVar2 + 0x19;
-      if (piVar2 == (int *)(this_ptr->field10_0x648 + 0x458)) {
+      if (piVar2 == (int *)(this_ptr->unk3 + 0x458)) {
         return;
       }
     }
     piVar2 = piVar2 + 0x19;
-  } while (piVar2 != (int *)(this_ptr->field10_0x648 + 0x458));
+  } while (piVar2 != (int *)(this_ptr->unk3 + 0x458));
   return;
 }

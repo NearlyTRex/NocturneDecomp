@@ -2,16 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 25,
-        "message": "no matching function for call to 'CClothList::CClothList(int)'"
+        "category": "other",
+        "column": 15,
+        "line": 28,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "incompatible_types",
-        "column": 33,
-        "line": 30,
-        "message": "no matching function for call to 'CClothList::CClothList(int)'"
+        "category": "other",
+        "column": 29,
+        "line": 29,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -33,19 +33,32 @@
         "column": 50,
         "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 28,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 29,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 94,
+    "complexity_score": 119,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_param"
     ],
     "total_lines": 74
@@ -186,21 +199,21 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000008",
-      "text": "CClothList *in_stack_00000008;",
+      "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "CVar1 = *in_stack_00000008;",
+      "text": "cVar1 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
-      "text": "CVar1 = in_stack_00000008[1];",
+      "text": "cVar1 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
@@ -216,6 +229,20 @@
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)&pCVar2->unk + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(CClothList *)((int)",
+      "text": "pCVar2 = (CClothList *)((int)&pCVar2->unk + 2);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

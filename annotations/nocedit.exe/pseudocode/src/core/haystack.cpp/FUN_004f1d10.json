@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 61,
+        "column": 56,
         "line": 25,
         "message": "cast from 'CHaystack*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
@@ -160,14 +160,14 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000010",
-      "text": "(&this_ptr->base_hero,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
+      "text": "(&this_ptr->base,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_EBX",
-      "text": "(&this_ptr->base_hero,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
+      "text": "(&this_ptr->base,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,",
       "type": "unaffected_reg"
     },
     {
@@ -181,7 +181,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CHaystack",
         "offset": 8,
         "vtable_addr": "0065f564"
       },

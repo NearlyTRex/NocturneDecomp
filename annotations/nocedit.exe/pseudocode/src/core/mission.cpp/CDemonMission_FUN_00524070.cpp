@@ -11,9 +11,9 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524070(CDemonMission *this_ptr
 {
   uint *in_stack_00000008;
   
-  *(uint *)(this_ptr->field6_0x54c + 4) = *in_stack_00000008;
-  *(uint *)(this_ptr->field6_0x54c + 8) = in_stack_00000008[1];
-  *(uint *)(this_ptr->field6_0x54c + 0xc) = in_stack_00000008[2];
-  *(uint *)(this_ptr->field6_0x54c + 0x10) = in_stack_00000008[3];
+  *(uint *)(this_ptr->unk4 + 4) = *in_stack_00000008;
+  *(uint *)(this_ptr->unk4 + 8) = in_stack_00000008[1];
+  *(uint *)(this_ptr->unk4 + 0xc) = in_stack_00000008[2];
+  *(uint *)(this_ptr->unk4 + 0x10) = in_stack_00000008[3];
   return;
 }

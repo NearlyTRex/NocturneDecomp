@@ -235,9 +235,9 @@ section .text
     RET                                 ; 0056dd42
     PUSH 0x32c1c98                      ; 0056dd43 | DAT_032c1c98
         ;   Label: LAB_0056dd43
-    PUSH 0x32c1c8c                      ; 0056dd48 | DAT_032c1c8c
-    PUSH 0x32c1c80                      ; 0056dd4d | DAT_032c1c80
-    PUSH 0x32c1c74                      ; 0056dd52 | DAT_032c1c74
+    PUSH 0x32c1c8c                      ; 0056dd48 | FLOAT_032c1c8c
+    PUSH 0x32c1c80                      ; 0056dd4d | FLOAT_032c1c80
+    PUSH 0x32c1c74                      ; 0056dd52 | FLOAT_032c1c74
     PUSH 0x32c1c68                      ; 0056dd57 | DAT_032c1c68
     MOV EBX,dword ptr [ESP + 0x60]      ; 0056dd5c
     PUSH EBX                            ; 0056dd60

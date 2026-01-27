@@ -14,8 +14,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1df0(CWerewolf *this_ptr)
   CVector3f local_10;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base_enemy).base_character.model,&local_10,
-                      *(int *)this_ptr->field4_0xbec0);
+                     (&(this_ptr->base).base.model,&local_10,*(int *)this_ptr->unk3);
   if (in_stack_00000008 == pCVar1) {
     return 1;
   }

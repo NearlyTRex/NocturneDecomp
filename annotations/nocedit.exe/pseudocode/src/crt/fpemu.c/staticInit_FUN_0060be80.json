@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 121,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 21,
-    "suspect_count": 8,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "special_crt_function",
-      "undefined_data",
-      "unknown_field"
+      "special_crt_function"
     ],
     "total_lines": 58
   },
@@ -53,14 +51,14 @@
   "globals": [
     {
       "addr": "00684acd",
-      "name": "DAT_00684acd",
-      "type": "undefined1",
-      "value": null
+      "name": "BYTE_00684acd",
+      "type": "byte",
+      "value": "0x0"
     },
     {
       "addr": "00685060",
       "name": "g_UseSoftwareMath",
-      "type": "int",
+      "type": "byte",
       "value": "0x0"
     }
   ],
@@ -139,36 +137,8 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "SBORROW1",
-      "text": "cVar3 = SBORROW1(DAT_00684acd,'\\x03');",
+      "text": "cVar3 = SBORROW1(BYTE_00684acd,'\\x03');",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00684acd",
-      "text": "cVar3 = SBORROW1(DAT_00684acd,'\\x03');",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00684acd",
-      "text": "cVar2 = (char)(DAT_00684acd - 3) < '\\0';",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_00684acd",
-      "text": "uVar1 = DAT_00684acd == 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00684acd",
-      "text": "if (2 < DAT_00684acd) {",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -176,13 +146,6 @@
       "match": "SUB84",
       "text": "crt_unknown_c_FUN_0060e256(SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),0xe2308c3a,0x3e45798e)",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 20,
-      "match": "._0_1_",
-      "text": "g_UseSoftwareMath._0_1_ = (byte)g_UseSoftwareMath | 1;",
-      "type": "unknown_field"
     },
     {
       "address": "0060be80",

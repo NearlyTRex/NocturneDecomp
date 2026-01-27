@@ -21,22 +21,22 @@ void core_imp_cpp_FUN_004fab60(void)
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
     switch(iVar1 % 6) {
     case 0:
-      iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);
+      iVar1 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);
       break;
     case 1:
-      iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x30);
+      iVar1 = *(int *)(in_stack_00000004[1].base.create_event + 0x30);
       break;
     case 2:
-      iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x34);
+      iVar1 = *(int *)(in_stack_00000004[1].base.create_event + 0x34);
       break;
     case 3:
-      iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x38);
+      iVar1 = *(int *)(in_stack_00000004[1].base.create_event + 0x38);
       break;
     case 4:
-      iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54);
+      iVar1 = *(int *)(in_stack_00000004[1].base.create_event + 0x54);
       break;
     case 5:
-      iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50);
+      iVar1 = *(int *)(in_stack_00000004[1].base.create_event + 0x50);
       break;
     default:
       goto switchD_004fab96_default;
@@ -45,20 +45,20 @@ void core_imp_cpp_FUN_004fab60(void)
   }
 switchD_004fab96_default:
   iVar1 = *in_stack_00000008;
-  if (((((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c)) ||
-        (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x30))) ||
-       (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x34))) ||
-      ((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x38) ||
-       (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50))))) ||
-     (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54))) {
+  if (((((iVar1 == *(int *)(in_stack_00000004[1].base.create_event + 0x2c)) ||
+        (iVar1 == *(int *)(in_stack_00000004[1].base.create_event + 0x30))) ||
+       (iVar1 == *(int *)(in_stack_00000004[1].base.create_event + 0x34))) ||
+      ((iVar1 == *(int *)(in_stack_00000004[1].base.create_event + 0x38) ||
+       (iVar1 == *(int *)(in_stack_00000004[1].base.create_event + 0x50))))) ||
+     (iVar1 == *(int *)(in_stack_00000004[1].base.create_event + 0x54))) {
     local_14 = (float)in_stack_00000008[0xb];
-    if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x54) == *in_stack_00000008) {
+    if (*(int *)(in_stack_00000004[1].base.create_event + 0x54) == *in_stack_00000008) {
       local_14 = 0.05;
     }
-    if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) == *in_stack_00000008) {
+    if (*(int *)(in_stack_00000004[1].base.create_event + 0x50) == *in_stack_00000008) {
       local_14 = 0.02;
     }
-    if (g_CGamePtr->field57_0x1e0 != 0) {
+    if (g_CGamePtr->unk4 != 0) {
       local_14 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {
@@ -68,13 +68,13 @@ switchD_004fab96_default:
     if (iVar1 != 0) {
       core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-      if (*in_stack_00000008 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c)) {
+      if (*in_stack_00000008 == *(int *)(in_stack_00000004[1].base.create_event + 0x2c)) {
         core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       }
-      if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x34) == *in_stack_00000008) {
+      if (*(int *)(in_stack_00000004[1].base.create_event + 0x34) == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       }
-      if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) == *in_stack_00000008) {
+      if (*(int *)(in_stack_00000004[1].base.create_event + 0x50) == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
@@ -87,12 +87,12 @@ switchD_004fab96_default:
     }
   }
   iVar1 = *in_stack_00000008;
-  if (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54)) {
+  if (iVar1 == *(int *)(in_stack_00000004[1].base.create_event + 0x54)) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);
     return;
   }
-  if ((iVar1 != *(int *)(in_stack_00000004[1].base_actor.create_event + 0x4c)) &&
-     (iVar1 != *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50))) {
+  if ((iVar1 != *(int *)(in_stack_00000004[1].base.create_event + 0x4c)) &&
+     (iVar1 != *(int *)(in_stack_00000004[1].base.create_event + 0x50))) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);
     return;
   }

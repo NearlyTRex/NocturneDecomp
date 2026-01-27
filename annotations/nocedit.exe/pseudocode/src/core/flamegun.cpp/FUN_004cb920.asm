@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065e270
+;   float FLOAT_0065e270 = 4
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CFireEffect g_CFireEffectInstance
 ;
@@ -60,7 +60,7 @@ section .text
     TEST ESI,ESI                        ; 004cb97f
     JNZ 0x004cb999                      ; 004cb981
         ;   XREF to: 004cb999 (CONDITIONAL_JUMP)  ; LAB_004cb999
-    FLD float ptr [0x0065e270]          ; 004cb983 | DAT_0065e270
+    FLD float ptr [0x0065e270]          ; 004cb983 | FLOAT_0065e270
     FLD1                                ; 004cb989
     FDIVRP                              ; 004cb98b
     DEC dword ptr [EBX + 0x568]         ; 004cb98d

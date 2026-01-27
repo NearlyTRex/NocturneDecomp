@@ -20,6 +20,6 @@ shape_edittool_cpp_CPickList_remove_FUN_004a56f0(CPickList *this_ptr,int start_i
     g_CurrentLineNumber = 0x107a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::removeRange - can't do this after setting hotkeys (yet)");
   }
-  shape_edittool_cpp_CStrList_remove_FUN_004a2e00(&this_ptr->base_strlist,start_index,end_index);
+  shape_edittool_cpp_CStrList_remove_FUN_004a2e00(&this_ptr->base,start_index,end_index);
   return;
 }

@@ -3,39 +3,15 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 64,
+        "column": 58,
         "line": 30,
         "message": "'stack0xffffffa4' was not declared in this scope; did you mean 'in_stack_ffffffb4'?"
       },
       {
-        "category": "missing_member",
-        "column": 53,
-        "line": 48,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 55,
-        "line": 51,
-        "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 83,
-        "line": 71,
-        "message": "'CDoor' {aka 'struct CDoor'} has no member named 'field17_0x9bc'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 63,
-        "line": 82,
+        "column": 57,
+        "line": 80,
         "message": "'stack0xffffffe8' was not declared in this scope; did you mean 'in_stack_ffffffb8'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 50,
-        "line": 83,
-        "message": "'CDoor' {aka 'struct CDoor'} has no member named 'field17_0x9bc'"
       }
     ],
     "success": false,
@@ -50,18 +26,18 @@
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 197,
+    "complexity_score": 195,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 9,
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 80,
     "suspect_count": 10,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 288
+    "total_lines": 286
   },
   "cross_references": [],
   "function": {
@@ -295,49 +271,49 @@
       "description": "Direct stack address reference",
       "line": 23,
       "match": "&stack0xffffffa4",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffa4);",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffa4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_ffffffb0",
       "text": "(pCVar2,(int)in_stack_ffffffb0,(int)in_stack_ffffffb4,(int)in_stack_ffffffb8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_ffffffb4",
       "text": "(pCVar2,(int)in_stack_ffffffb0,(int)in_stack_ffffffb4,(int)in_stack_ffffffb8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_ffffffb8",
       "text": "(pCVar2,(int)in_stack_ffffffb0,(int)in_stack_ffffffb4,(int)in_stack_ffffffb8);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 60,
+      "line": 58,
       "match": "2.8026e-45",
       "text": "fVar6 = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 71,
+      "line": 69,
       "match": "2.8026e-45",
       "text": "fVar6 = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 75,
+      "line": 73,
       "match": "&stack0xffffffe8",
-      "text": "(&this_ptr->base_actor,(CVector3f *)&stack0xffffffe8,",
+      "text": "(&this_ptr->base,(CVector3f *)&stack0xffffffe8,(CVector3f *)this_ptr->unk3)",
       "type": "stack_ref"
     }
   ],

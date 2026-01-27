@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_tvbat.cpp_staticInit_FUN_005e3e50(void)
+; __cdecl void core_tvbat.cpp_staticInit_FUN_005e3e50(void)
 ;
 ;
 ; Referenced Globals:

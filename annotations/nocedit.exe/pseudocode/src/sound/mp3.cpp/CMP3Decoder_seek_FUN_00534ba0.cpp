@@ -22,7 +22,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder *this_ptr,in
   (this_ptr->file_bitstream).end_of_stream_flag = 0;
   (this_ptr->file_bitstream).error_flag = 0;
   (this_ptr->file_bitstream).bytes_remaining = (this_ptr->file_bitstream).stream_length;
-  this_ptr->field8_0x534c = 0;
+  this_ptr->unk1 = 0;
   (this_ptr->memory_bitstream).buffer_size_limit = 0;
   (this_ptr->memory_bitstream).total_bits_read = 0;
   (this_ptr->memory_bitstream).current_dword_index = 0;

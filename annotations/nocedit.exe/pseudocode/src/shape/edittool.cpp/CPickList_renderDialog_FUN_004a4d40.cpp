@@ -41,7 +41,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
       if (0 < this_ptr->vertical_page_size) {
         do {
           iVar8 = local_1c;
-          if ((this_ptr->base_strlist).item_count <= local_24) break;
+          if ((this_ptr->base).item_count <= local_24) break;
           if (local_24 == this_ptr->current_index) {
             iVar3 = local_28 + this_ptr->total_content_width + -1;
             iVar5 = local_1c + this_ptr->character_width + -1;
@@ -57,15 +57,14 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
           }
           iVar8 = local_24;
           local_18 = 0;
-          pcVar7 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                             (&this_ptr->base_strlist,local_24);
-          local_14 = local_28 + this_ptr->field9_0x178;
+          pcVar7 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&this_ptr->base,local_24);
+          local_14 = local_28 + this_ptr->unk2;
           local_20 = g_EnabledTextColor;
           iVar8 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(this_ptr,iVar8);
           if (iVar8 == 0) {
             local_20 = g_BackgroundColor1;
           }
-          pcVar10 = this_ptr->field1_0x10 + local_18 * 4 + -0x10;
+          pcVar10 = this_ptr->unk1 + local_18 * 4 + -0x10;
           do {
             cVar1 = *pcVar7;
             pcVar2 = pcVar7;
@@ -114,14 +113,14 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   }
   if (this_ptr->dialog_result == 1) {
     (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top;
-    (this_ptr->scrollbar).current_value = (this_ptr->base_strlist).item_count;
+    (this_ptr->scrollbar).current_value = (this_ptr->base).item_count;
     (this_ptr->scrollbar).max_value = this_ptr->vertical_page_size;
   }
   else {
     if (this_ptr->dialog_result != 2) goto LAB_004a4f19;
     (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top / this_ptr->vertical_page_size;
     (this_ptr->scrollbar).current_value =
-         ((this_ptr->base_strlist).item_count + this_ptr->vertical_page_size + -1) /
+         ((this_ptr->base).item_count + this_ptr->vertical_page_size + -1) /
          this_ptr->vertical_page_size;
     (this_ptr->scrollbar).max_value = this_ptr->column_count;
   }

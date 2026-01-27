@@ -294,11 +294,19 @@ const float FLOAT_00684174 = 1.0f;
 const float g_IEEE754NormalScaleFactor = 0.9375f;
 const float g_IEEE754SubnormalScaleFactor = 1.0625f;
 const float g_IEEE754RenormScaleFactor = 9.223372e+18f;
+const float FLOAT_00687518 = 16.0f;
+const float FLOAT_0068751c = 0.0625f;
 
 // float10 constants
 const float10 g_PiOver2 = 1.5707963f;
 const float10 g_CalculatedPi = 3.1415927f;
 const float10 g_HalfCalculatedPi = 1.5707963f;
+const float10 FLOAT10_00687520 = -0.33333333f;
+const float10 FLOAT10_0068752a = 0.2f;
+const float10 FLOAT10_00687534 = -0.14285714f;
+const float10 FLOAT10_0068753e = 0.11111111f;
+const float10 FLOAT10_00687548 = -0.090907585f;
+const float10 FLOAT10_00687552 = 0.076416908f;
 
 // int constants
 const int DAT_00684f34 = 0x2D;

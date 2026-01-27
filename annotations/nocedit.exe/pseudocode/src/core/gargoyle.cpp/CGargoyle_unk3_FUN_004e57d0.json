@@ -36,7 +36,7 @@
       },
       {
         "category": "other",
-        "column": 55,
+        "column": 49,
         "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -48,13 +48,13 @@
       },
       {
         "category": "other",
-        "column": 59,
+        "column": 53,
         "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 51,
+        "column": 45,
         "line": 61,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -254,21 +254,21 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,&local_1c,(CVector3f *)((int)in_stack_00000008 + 0x1c));",
+      "text": "(&in_stack_00000004->base,&local_1c,(CVector3f *)((int)in_stack_00000008 + 0x1c));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
-      "text": "(&in_stack_00000004->base_actor,&local_1c,(CVector3f *)((int)in_stack_00000008 + 0x1c));",
+      "text": "(&in_stack_00000004->base,&local_1c,(CVector3f *)((int)in_stack_00000008 + 0x1c));",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(CVector3f *)((int)",
-      "text": "(&in_stack_00000004->base_actor,&local_1c,(CVector3f *)((int)in_stack_00000008 + 0x1c));",
+      "text": "(&in_stack_00000004->base,&local_1c,(CVector3f *)((int)in_stack_00000008 + 0x1c));",
       "type": "pointer_cast"
     },
     {
@@ -310,28 +310,28 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
-      "text": "(*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x60));",
+      "text": "(*(uint *)(in_stack_00000004[1].base.create_event + 0x60));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
+      "text": "uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,\"gargoyle-hurt?.wav\");",
+      "text": "(&in_stack_00000004->base,\"gargoyle-hurt?.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x60) = uVar3;",
+      "text": "*(uint *)(in_stack_00000004[1].base.create_event + 0x60) = uVar3;",
       "type": "stack_param"
     },
     {
@@ -352,7 +352,7 @@
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
-      "text": "(*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x60));",
+      "text": "(*(uint *)(in_stack_00000004[1].base.create_event + 0x60));",
       "type": "stack_param"
     },
     {
@@ -366,14 +366,14 @@
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
+      "text": "(*((in_stack_00000004->base).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,\"gargoyle-shatter.wav\");",
+      "text": "(&in_stack_00000004->base,\"gargoyle-shatter.wav\");",
       "type": "stack_param"
     },
     {

@@ -11,6 +11,6 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e8d00(CVehicle *this_ptr)
 {
   FILE *in_stack_00000008;
   
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"data\\%s\n",this_ptr->field6_0x1034);
+  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"data\\%s\n",this_ptr->unk3);
   return;
 }

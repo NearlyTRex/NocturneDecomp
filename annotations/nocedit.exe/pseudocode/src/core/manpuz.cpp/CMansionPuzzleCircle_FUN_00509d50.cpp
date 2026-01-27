@@ -31,10 +31,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCir
   int local_20;
   int local_1c;
   
-  pcVar4 = this_ptr->field10_0x648 + in_stack_00000008 * 0xb8 + 0x458;
+  pcVar4 = this_ptr->unk3 + in_stack_00000008 * 0xb8 + 0x458;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)(pcVar4 + 0x30),(CVector3i *)(pcVar4 + 0x24));
-  if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
+  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     if (DAT_02f0cb1c == 2) {
@@ -53,7 +53,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCir
   local_20 = (int)ROUND(dVar7);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-            ((CKeyFramedModelInstance *)(this_ptr->field1_0x158 + 0x17c),0.0,-1);
+            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x17c),0.0,-1);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar3 == 0) &&
@@ -114,7 +114,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCir
     this_ptr_00->vertex_buffer_ptr[3].fog = local_30;
     this_ptr_00->vertex_buffer_ptr[3].w_recip = 9.18341e-41;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (this_ptr_00,(SMRGLTextureBasic *)(this_ptr->field10_0x648 + 0xe78));
+              (this_ptr_00,(SMRGLTextureBasic *)(this_ptr->unk3 + 0xe78));
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0

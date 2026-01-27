@@ -26,7 +26,7 @@ void core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190(void)
   }
   core_mission_cpp_CDemonMission_save_FUN_00522e30(in_stack_00000004);
   crt_file_c_makepath_FUN_005febfc
-            (local_10c,(char *)0x0,(char *)0x0,in_stack_00000004->field2_0xc + 0x38,"scr");
+            (local_10c,(char *)0x0,(char *)0x0,in_stack_00000004->unk2 + 0x38,"scr");
   core_script_cpp_FUN_00566180();
   return;
 }

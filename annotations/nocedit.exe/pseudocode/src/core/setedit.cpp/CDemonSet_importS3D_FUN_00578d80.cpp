@@ -315,9 +315,9 @@ LAB_0057981a:
       }
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_be0);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_be0.base_strlist,"Edit the gound types now.");
+                (&local_be0.base,"Edit the gound types now.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                (&local_be0.base_strlist,"Just leave the default assignments for now.  I can always fix this later.");
+                (&local_be0.base,"Just leave the default assignments for now.  I can always fix this later.");
       iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_be0,local_838,-1,0);
       if (iVar1 < 0) {
@@ -468,7 +468,7 @@ LAB_00579173:
           dest = dest + 1;
           pCVar9 = pCVar9 + 1;
           iVar1 = iVar1 + 1;
-          pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].field16_0x19c;
+          pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].unk3;
         }
         else {
           iVar2 = in_stack_00000004->light_count + -1;
@@ -537,7 +537,7 @@ LAB_00579173:
           }
           *(ushort *)pcVar11 = *(ushort *)puVar13;
           puVar13 = (uint *)((int)pCVar9 + (uint)bVar19 * -8 + 0x228);
-          *(char (*) [4])(pCVar9->field8_0x21e + 6) = local_2254;
+          *(char (*) [4])(pCVar9->unk1 + 6) = local_2254;
           puVar14 = puVar13 + (uint)bVar19 * -2 + 1;
           *puVar13 = auStack_2250[(uint)bVar19 * -2];
           *puVar14 = auStack_2250[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1];
@@ -548,8 +548,8 @@ LAB_00579173:
           (pCVar9->color).b = local_12ac;
           pCVar9->atten_start = local_12a8;
           pCVar9->atten_end = local_12a4;
-          *(char (*) [4])pCVar9->field12_0x11d8 = local_12a0;
-          *(char (*) [4])(pCVar9->field12_0x11d8 + 4) = local_129c;
+          *(char (*) [4])pCVar9->unk2 = local_12a0;
+          *(char (*) [4])(pCVar9->unk2 + 4) = local_129c;
           pCVar9->on_time = local_1298;
           pCVar9->cycle_time = local_1294;
           pCVar9->cycle_elapsed = local_1290;
@@ -698,7 +698,7 @@ LAB_0057a07e:
           shape_memdbg_cpp_debugFree_FUN_0050f460(piVar5,"..\\core\\setedit.cpp",0x634);
           pCVar7->cameras[0].pvs_list = (int *)0x0;
         }
-        pCVar7 = (CDemonSet *)&pCVar7->cameras[0].field17_0x1a0;
+        pCVar7 = (CDemonSet *)&pCVar7->cameras[0].unk4;
         iVar1 = iVar1 + 1;
         pCVar6 = pCVar6 + 1;
       } while (iVar1 < in_stack_00000004->camera_count);
