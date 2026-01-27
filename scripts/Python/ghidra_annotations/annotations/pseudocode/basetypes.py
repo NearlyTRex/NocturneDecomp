@@ -14,6 +14,7 @@ def get_all_basetypes():
         'byte', 'uchar', 'ushort', 'uint', 'ulong', 'longlong', 'ulonglong',
         'dword', 'word', 'bool',
         'undefined', 'undefined1', 'undefined2', 'undefined4', 'undefined8',
+        'unkbyte10',  # 10-byte unknown type (often x87 80-bit float returns)
         'pointer',
         # Ghidra string types
         'TerminatedCString', 'TerminatedUnicode', 'string',
@@ -60,6 +61,7 @@ def get_primitive_types():
         'byte', 'uchar', 'ushort', 'uint', 'ulong', 'longlong', 'ulonglong',
         'dword', 'word', 'bool',
         'undefined', 'undefined1', 'undefined2', 'undefined4', 'undefined8',
+        'unkbyte10',  # 10-byte unknown type (often x87 80-bit float returns)
         'pointer',
         # Ghidra string types
         'TerminatedCString', 'TerminatedUnicode', 'string',
