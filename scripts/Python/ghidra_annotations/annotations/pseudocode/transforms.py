@@ -319,6 +319,109 @@ def transform_register_params(code):
     return code
 
 
+# =============================================================================
+# CRT FUNCTION TRANSFORMS
+# =============================================================================
+#
+# Maps CRT wrapper function calls to their standard C library equivalents.
+# Pattern: crt_{category}_c_{funcname}_FUN_{addr} -> {funcname}
+#
+# Only well-known standard library functions are transformed.
+# Internal CRT implementation functions are left as-is.
+
+# Standard library functions to transform (by category)
+CRT_STANDARD_FUNCTIONS = {
+    # stdio.h
+    'stdio': {
+        'fread', 'fwrite', 'fopen', 'fclose', 'fseek', 'ftell', 'fflush', 'rewind',
+        'fprintf', 'printf', 'sprintf', 'snprintf', 'vsprintf', 'vfprintf', 'vsnprintf',
+        'fgetc', 'fputc', 'fgets', 'fputs', 'getc', 'putc', 'getchar', 'putchar',
+        'scanf', 'sscanf', 'fscanf', 'vfscanf', 'vsscanf',
+        'remove', 'rename', 'tmpfile', 'tmpnam',
+        'setvbuf', 'setbuf', 'ungetc', 'feof', 'ferror', 'clearerr', 'perror',
+    },
+    # string.h
+    'string': {
+        'strlen', 'strcpy', 'strncpy', 'strcat', 'strncat',
+        'strcmp', 'strncmp', 'stricmp', 'strnicmp', '_stricmp', '_strnicmp',
+        'strchr', 'strrchr', 'strstr', 'strpbrk', 'strspn', 'strcspn', 'strtok',
+        'memcpy', 'memset', 'memmove', 'memcmp', 'memchr',
+        'strdup', '_strdup', 'strlwr', 'strupr', '_strlwr', '_strupr',
+    },
+    # stdlib.h
+    'stdlib': {
+        'malloc', 'free', 'realloc', 'calloc',
+        'atoi', 'atol', 'atof', 'strtol', 'strtoul', 'strtod',
+        'abs', 'labs', 'div', 'ldiv',
+        'rand', 'srand',
+        'exit', 'atexit', 'abort', 'getenv', 'system',
+        'qsort', 'bsearch',
+    },
+    # math.h
+    'math': {
+        'sin', 'cos', 'tan', 'asin', 'acos', 'atan', 'atan2',
+        'sinh', 'cosh', 'tanh',
+        'sqrt', 'pow', 'exp', 'log', 'log10',
+        'ceil', 'floor', 'round', 'fabs', 'fmod',
+        'ldexp', 'frexp', 'modf',
+    },
+    # ctype.h
+    'ctype': {
+        'isalpha', 'isdigit', 'isalnum', 'isspace', 'isupper', 'islower',
+        'isprint', 'isgraph', 'iscntrl', 'ispunct', 'isxdigit',
+        'toupper', 'tolower',
+    },
+    # memory.h (often same as string.h but some compilers separate)
+    'memory': {
+        'memcpy', 'memset', 'memmove', 'memcmp', 'memchr',
+    },
+    # time.h
+    'time': {
+        'time', 'clock', 'difftime', 'mktime',
+        'localtime', 'gmtime', 'asctime', 'ctime', 'strftime',
+    },
+    # io.h / unistd.h
+    'io': {
+        'open', 'close', 'read', 'write', 'lseek',
+        'access', 'chmod', 'unlink', 'dup', 'dup2',
+        'isatty', 'filelength', 'tell', 'eof',
+    },
+}
+
+# Build a flat set of all standard function names for quick lookup
+_ALL_CRT_STANDARD_FUNCTIONS = set()
+for funcs in CRT_STANDARD_FUNCTIONS.values():
+    _ALL_CRT_STANDARD_FUNCTIONS.update(funcs)
+
+
+def transform_crt_functions(code):
+    """Transform CRT wrapper function calls to clean function names.
+
+    Converts patterns like:
+        crt_stdio_c_fread_FUN_005fd990(buffer, size, count, file)
+    To:
+        fread(buffer, size, count, file)
+
+    Transforms ALL CRT function calls, removing the crt_{category}_c_ prefix
+    and _FUN_{addr} suffix to produce clean, readable function names.
+
+    Args:
+        code: Decompiled code string
+
+    Returns:
+        Transformed code with CRT wrappers replaced by clean names
+    """
+    # Pattern matches: crt_{category}_c_{funcname}_FUN_{hexaddr}
+    # Captures the function name to use as replacement
+    pattern = r'\bcrt_[a-z]+_c_([a-zA-Z_][a-zA-Z0-9_]*)_FUN_[0-9a-fA-F]+\b'
+
+    def replace_crt_call(match):
+        func_name = match.group(1)
+        return func_name
+
+    return re.sub(pattern, replace_crt_call, code)
+
+
 def apply_all_transforms(code, transforms=None):
     """Apply all or specified transforms to decompiled code.
 
@@ -334,6 +437,7 @@ def apply_all_transforms(code, transforms=None):
     default_transforms = [
         ('undefined_ptr_cast', transform_undefined_pointer_casts),
         ('undefined_type', transform_undefined_types),
+        ('crt_functions', transform_crt_functions),
     ]
 
     if transforms is None:

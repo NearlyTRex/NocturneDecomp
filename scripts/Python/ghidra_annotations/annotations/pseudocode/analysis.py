@@ -1713,7 +1713,7 @@ def generate_param_mismatch_report(functions, output_path):
             lines.append("    Declared: %d params, Estimated: %d params (%s)" % (m['declared'], m['estimated'], diff_str))
             lines.append("    Call sites: %d, Confidence: %s" % (m['call_sites'], m['confidence']))
             lines.append("    File: %s" % vfile)
-            lines.append("    Signature: %s" % signature[:80])
+            lines.append("    Signature: %s" % signature)
 
             # Show sample call site details
             call_sites = m['func'].get('param_estimates', {}).get('call_sites', [])

@@ -1,6 +1,7 @@
 # Globals and constants extraction for pseudocode export
 # Provides extraction of global variables and constants from the program
 
+import os
 import re
 from ghidra_annotations.util import resolve_data_type_name, load_json_files
 from ghidra_annotations.util.string import is_string_data_type_obj
@@ -2421,3 +2422,130 @@ def get_function_address_ranges(functions_list, referenced_funcs):
                 pass
 
     return needed_ranges
+
+
+# =============================================================================
+# CRT HEADER GENERATION
+# =============================================================================
+
+# Mapping of CRT categories to standard C/C++ headers
+CRT_CATEGORY_HEADERS = {
+    'stdio': '<cstdio>',
+    'stdlib': '<cstdlib>',
+    'string': '<cstring>',
+    'memory': '<cstring>',  # memory.h functions are typically in string.h
+    'math': '<cmath>',
+    'ctype': '<cctype>',
+    'time': '<ctime>',
+    'io': '<cstdio>',  # Most io.h functions have stdio equivalents
+}
+
+
+def generate_crt_header(functions_to_process):
+    """Generate system/crt.h with appropriate C library includes.
+
+    Analyzes the CRT functions in the program to determine which standard
+    C library headers are needed, then generates a header that includes them.
+
+    Args:
+        functions_to_process: List of Ghidra Function objects to analyze
+
+    Returns:
+        String content of the system/crt.h header
+    """
+    # Collect CRT categories used in the program
+    categories_used = set()
+
+    for func in functions_to_process:
+        func_name = func.getName()
+        # Pattern: crt_{category}_c_{funcname}_FUN_{addr}
+        if func_name.startswith('crt_'):
+            parts = func_name.split('_')
+            if len(parts) >= 4:
+                category = parts[1]  # e.g., 'stdio', 'string', etc.
+                categories_used.add(category)
+
+    # Generate header content
+    lines = []
+    lines.append("#pragma once")
+    lines.append("")
+    lines.append("// =============================================================================")
+    lines.append("// C RUNTIME LIBRARY HEADERS")
+    lines.append("// =============================================================================")
+    lines.append("//")
+    lines.append("// Auto-generated header that includes standard C library headers based on")
+    lines.append("// which CRT functions are used in the decompiled code.")
+    lines.append("//")
+    lines.append("// The CRT function transform in transforms.py converts CRT wrapper calls")
+    lines.append("// like crt_stdio_c_fread_FUN_005fd990() to standard calls like fread().")
+    lines.append("// This header provides the declarations for those standard functions.")
+    lines.append("//")
+    lines.append("// =============================================================================")
+    lines.append("")
+
+    # Determine which headers to include based on categories used
+    headers_to_include = set()
+    for category in categories_used:
+        if category in CRT_CATEGORY_HEADERS:
+            headers_to_include.add(CRT_CATEGORY_HEADERS[category])
+
+    # Always include these common headers that most programs need
+    common_headers = {
+        '<cstdio>',
+        '<cstdlib>',
+        '<cstring>',
+        '<cmath>',
+        '<cctype>',
+        '<ctime>',
+        '<cerrno>',
+    }
+    headers_to_include.update(common_headers)
+
+    # Sort and add includes
+    lines.append("// Standard C library headers (C++ style)")
+    for header in sorted(headers_to_include):
+        lines.append("#include %s" % header)
+
+    lines.append("")
+    lines.append("// =============================================================================")
+    lines.append("// MSVC/WINDOWS CRT COMPATIBILITY")
+    lines.append("// =============================================================================")
+    lines.append("// These macros map MSVC-specific CRT functions to POSIX equivalents")
+    lines.append("")
+    lines.append("#ifndef _MSC_VER")
+    lines.append("// Case-insensitive string comparison")
+    lines.append("#define stricmp strcasecmp")
+    lines.append("#define _stricmp strcasecmp")
+    lines.append("#define strnicmp strncasecmp")
+    lines.append("#define _strnicmp strncasecmp")
+    lines.append("")
+    lines.append("// String case conversion")
+    lines.append("inline char* strupr(char* s) { for (char* p = s; *p; ++p) *p = toupper(*p); return s; }")
+    lines.append("inline char* strlwr(char* s) { for (char* p = s; *p; ++p) *p = tolower(*p); return s; }")
+    lines.append("#define _strupr strupr")
+    lines.append("#define _strlwr strlwr")
+    lines.append("")
+    lines.append("// Path manipulation (simplified implementations)")
+    lines.append("inline void splitpath(const char* path, char* drive, char* dir, char* fname, char* ext) {")
+    lines.append("    // Simplified: just copy path to fname, leave others empty")
+    lines.append("    if (drive) drive[0] = 0;")
+    lines.append("    if (dir) dir[0] = 0;")
+    lines.append("    if (fname) strcpy(fname, path);")
+    lines.append("    if (ext) ext[0] = 0;")
+    lines.append("}")
+    lines.append("inline void makepath(char* path, const char* drive, const char* dir, const char* fname, const char* ext) {")
+    lines.append("    path[0] = 0;")
+    lines.append("    if (drive && drive[0]) { strcat(path, drive); strcat(path, \":\"); }")
+    lines.append("    if (dir && dir[0]) strcat(path, dir);")
+    lines.append("    if (fname && fname[0]) strcat(path, fname);")
+    lines.append("    if (ext && ext[0]) { strcat(path, \".\"); strcat(path, ext); }")
+    lines.append("}")
+    lines.append("#define _splitpath splitpath")
+    lines.append("#define _makepath makepath")
+    lines.append("#endif // _MSC_VER")
+    lines.append("")
+
+    log_info("Generated CRT header with %d includes for %d categories" % (
+        len(headers_to_include), len(categories_used)))
+
+    return "\n".join(lines)

@@ -29,10 +29,11 @@ from ghidra_annotations.annotations.pseudocode.globals import (
     generate_globals_file, generate_globals_header_file,
     split_data_by_address_range, generate_globals_cpp_file,
     build_write_xref_addresses, generate_prototypes_header_file,
-    extract_function_references_from_constants, get_function_address_ranges
+    extract_function_references_from_constants, get_function_address_ranges,
+    generate_crt_header
 )
 from ghidra_annotations.annotations.pseudocode.headers import (
-    export_header_files, write_header_file
+    export_header_files, write_header_file, generate_system_aggregate
 )
 from ghidra_annotations.annotations.pseudocode.output import (
     export_function_prototypes, generate_function_file_contents
@@ -787,6 +788,19 @@ def export_pseudocode(currentProgram, path, strict=False):
     prototypes_path = os.path.join(pseudocode_include_dir, "prototypes.h")
     write_header_file(prototypes_path, "\n".join(main_prototypes_content))
     log_info("Created master prototypes file: %s" % prototypes_path)
+    timer.end_phase()
+
+    # Generate system/crt.h for C runtime library includes
+    timer.start_phase("Generate CRT header")
+    system_dir = os.path.join(pseudocode_include_dir, "system")
+    make_dirs(system_dir)
+    crt_content = generate_crt_header(functions_to_process)
+    if crt_content:
+        crt_path = os.path.join(system_dir, "crt.h")
+        write_header_file(crt_path, crt_content)
+        log_info("Created CRT header: %s" % crt_path)
+        # Regenerate system.h to include crt.h (it was generated before crt.h existed)
+        generate_system_aggregate(pseudocode_include_dir)
     timer.end_phase()
 
     # Generate constants files (split by address range) in constants/

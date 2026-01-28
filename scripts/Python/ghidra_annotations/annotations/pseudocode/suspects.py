@@ -57,8 +57,8 @@ _SUSPECT_PATTERN_DEFS = [
     (r'WARNING:\s*Struct .* ignoring multiple overlapping fields', 'warning_struct_overlap', 'Struct has overlapping fields'),
     # uRamXXXX - Undefined RAM references (Ghidra couldn't resolve memory location)
     (r'\b[pu]?uRam[0-9a-fA-F]+\b', 'undefined_ram', 'Undefined RAM reference'),
-    # param_N - Unnamed function parameters (need meaningful names)
-    (r'\bparam_\d+\b', 'unnamed_param', 'Unnamed function parameter'),
+    # param_N or paramN - Unnamed function parameters (need meaningful names)
+    (r'\bparam_?\d+\b', 'unnamed_param', 'Unnamed function parameter'),
     # local_XX - Unnamed local variables (need meaningful names)
     (r'\blocal_[0-9a-fA-F]+\b', 'unnamed_local', 'Unnamed local variable'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)

@@ -40,6 +40,10 @@ def get_all_basetypes():
         # PE resource types
         'IconResource', 'MenuResource', 'GroupIconResource', 'VS_VERSION_INFO',
         'StringFileInfo', 'StringInfo', 'StringTable', 'Var', 'VarFileInfo',
+        # PE resource directory entry types (from Ghidra /System)
+        'IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct',
+        'IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion',
+        'ImageBaseOffset32',
     }
 
 
