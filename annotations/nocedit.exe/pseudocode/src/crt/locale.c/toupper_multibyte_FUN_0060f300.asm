@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack wchar_t crt_locale.c_toupper_multibyte_FUN_0060f300(char * mb_char, char * output_buffer)
+; __watcallStack wchar_t __watcallStack crt_locale_c_toupper_multibyte_FUN_0060f300(char *mb_char,char *output_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   mb_char

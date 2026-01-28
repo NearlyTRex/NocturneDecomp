@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format, ...)
+; __cdecl void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,char *format,...)
 ;
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00402c10
 // Address Range: [[00402c10, 00402c41]]
 // Convention: __cdecl
-// Signature: int engine_2d.c_computeOutcode_FUN_00402c10(int x, int y, int x_min, int y_min, int x_max, int y_max)
+// Signature: int __cdecl engine_2d_c_computeOutcode_FUN_00402c10(int x,int y,int x_min,int y_min,int x_max,int y_max)
 
 #include "nocturne.h"
 

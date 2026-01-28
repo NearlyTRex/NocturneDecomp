@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_game.cpp_FUN_004dc2a0()
+; unknown void core_game_cpp_FUN_004dc2a0(void)
 ;
 ;
 ; Referenced Globals:

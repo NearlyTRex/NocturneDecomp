@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_allocSimFrame_FUN_0053f5a0()
+; unknown int * core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
 ;
 ;
 ; Referenced Globals:

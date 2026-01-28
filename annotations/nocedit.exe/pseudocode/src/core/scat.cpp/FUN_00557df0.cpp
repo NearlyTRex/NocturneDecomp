@@ -2,7 +2,7 @@
 // Address: 00557df0
 // Address Range: [[00557df0, 00557e9b]]
 // Convention: unknown
-// Signature: undefined core_scat.cpp_FUN_00557df0()
+// Signature: undefined4 core_scat_cpp_FUN_00557df0(void)
 
 #include "nocturne.h"
 

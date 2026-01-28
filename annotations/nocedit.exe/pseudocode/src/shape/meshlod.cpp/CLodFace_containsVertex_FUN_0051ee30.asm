@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_meshlod.cpp_CLodFace_containsVertex_FUN_0051ee30(CLodFace * this_ptr, int vertex_index)
+; __cdecl int __cdecl shape_meshlod_cpp_CLodFace_containsVertex_FUN_0051ee30(CLodFace *this_ptr,int vertex_index)
 ;
 ; Parameters:
 ; CLodFace *       Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 005ab6e0
 // Address Range: [[005ab6e0, 005ab71d]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)
+// Signature: void __cdecl sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0 (float orient_right_x,float orient_right_y,float orient_right_z)
 
 #include "nocturne.h"
 

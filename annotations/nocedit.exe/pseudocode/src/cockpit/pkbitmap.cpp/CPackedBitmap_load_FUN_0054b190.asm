@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap * this_ptr, uchar * bitmap_data, int width, int height, int stride_bytes, uchar transparency_color)
+; __cdecl void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190 (CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int stride_bytes, uchar transparency_color)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr

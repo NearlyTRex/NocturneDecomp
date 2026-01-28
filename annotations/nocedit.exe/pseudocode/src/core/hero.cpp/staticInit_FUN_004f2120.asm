@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_hero.cpp_staticInit_FUN_004f2120(void)
+; __cdecl void __cdecl core_hero_cpp_staticInit_FUN_004f2120(void)
 ;
 ;
 ; Referenced Globals:

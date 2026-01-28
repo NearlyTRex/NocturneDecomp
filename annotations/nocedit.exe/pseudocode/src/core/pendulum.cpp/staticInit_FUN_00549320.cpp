@@ -2,7 +2,7 @@
 // Address: 00549320
 // Address Range: [[00549320, 00549343]]
 // Convention: __cdecl
-// Signature: void core_pendulum.cpp_staticInit_FUN_00549320(void)
+// Signature: void __cdecl core_pendulum_cpp_staticInit_FUN_00549320(void)
 
 #include "nocturne.h"
 

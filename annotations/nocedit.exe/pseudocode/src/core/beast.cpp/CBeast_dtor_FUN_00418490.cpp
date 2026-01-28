@@ -2,7 +2,7 @@
 // Address: 00418490
 // Address Range: [[00418490, 00418548]]
 // Convention: __cdecl
-// Signature: CBeast * core_beast.cpp_CBeast_dtor_FUN_00418490(CBeast * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CBeast * __cdecl core_beast_cpp_CBeast_dtor_FUN_00418490 (CBeast *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a6f00
 // Address Range: [[005a6f00, 005a7067]]
 // Convention: __cdecl
-// Signature: float sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot * this_ptr)
+// Signature: float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot *this_ptr)
 
 #include "nocturne.h"
 

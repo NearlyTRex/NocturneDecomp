@@ -2,7 +2,7 @@
 // Address: 0050e320
 // Address Range: [[0050e320, 0050e479]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_pushViewport_FUN_0050e320(int x, int y, int width, int height)
+// Signature: void __cdecl engine_matrix_c_pushViewport_FUN_0050e320(int x,int y,int width,int height)
 
 #include "nocturne.h"
 

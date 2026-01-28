@@ -2,7 +2,7 @@
 // Address: 0042dfc0
 // Address Range: [[0042dfc0, 0042e046]]
 // Convention: __cdecl
-// Signature: void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr)
 
 #include "nocturne.h"
 

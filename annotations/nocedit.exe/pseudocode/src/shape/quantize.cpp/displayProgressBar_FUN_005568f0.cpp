@@ -2,7 +2,7 @@
 // Address: 005568f0
 // Address Range: [[005568f0, 005569fb]]
 // Convention: __cdecl
-// Signature: int shape_quantize.cpp_displayProgressBar_FUN_005568f0(char * label, int total_count, int current_index)
+// Signature: int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index)
 
 #include "nocturne.h"
 

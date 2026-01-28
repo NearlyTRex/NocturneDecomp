@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_FreeSomething2_FUN_005598f0()
+; unknown void core_script_cpp_CScript_FreeSomething2_FUN_005598f0(void)
 ;
 ;
 ; XREF[2]:

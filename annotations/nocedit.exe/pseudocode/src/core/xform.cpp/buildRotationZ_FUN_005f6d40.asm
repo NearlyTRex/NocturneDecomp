@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CMatrix3x4f * core_xform.cpp_buildRotationZ_FUN_005f6d40(float angle_radians, CMatrix3x4f * matrix_out)
+; __stack_esi CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationZ_FUN_005f6d40(float angle_radians,CMatrix3x4f *matrix_out)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   angle_radians

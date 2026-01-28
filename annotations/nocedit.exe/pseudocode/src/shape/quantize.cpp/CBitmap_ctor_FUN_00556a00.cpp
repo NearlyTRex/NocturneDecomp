@@ -2,7 +2,7 @@
 // Address: 00556a00
 // Address Range: [[00556a00, 00556c1d]]
 // Convention: __cdecl
-// Signature: CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr)
+// Signature: CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr)
 
 #include "nocturne.h"
 

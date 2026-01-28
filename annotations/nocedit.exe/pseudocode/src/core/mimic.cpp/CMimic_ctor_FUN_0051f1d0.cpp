@@ -2,7 +2,7 @@
 // Address: 0051f1d0
 // Address Range: [[0051f1d0, 0051f2b6]]
 // Convention: __cdecl
-// Signature: CMimic * core_mimic.cpp_CMimic_ctor_FUN_0051f1d0(CMimic * this_ptr)
+// Signature: CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGargoyle * core_gargoyle.cpp_factoryFunc_FUN_004e44a0(void)
+; __cdecl CGargoyle * __cdecl core_gargoyle_cpp_factoryFunc_FUN_004e44a0(void)
 ;
 ;
 ; XREF[1]:

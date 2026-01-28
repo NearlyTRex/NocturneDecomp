@@ -2,7 +2,7 @@
 // Address: 0043f7a0
 // Address Range: [[0043f7a0, 0043f7c2]]
 // Convention: __cdecl
-// Signature: CColonel * core_colonel.cpp_factoryFunc_FUN_0043f7a0(void)
+// Signature: CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void)
 
 #include "nocturne.h"
 

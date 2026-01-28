@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, int bitmap_stride)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20 (CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

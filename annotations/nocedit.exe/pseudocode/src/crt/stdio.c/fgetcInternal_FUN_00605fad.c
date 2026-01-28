@@ -2,7 +2,7 @@
 // Address: 00605fad
 // Address Range: [[00605fad, 0060601f]]
 // Convention: __watcallStack
-// Signature: FILE * crt_stdio.c_fgetcInternal_FUN_00605fad(FILE * stream, byte * output_byte)
+// Signature: FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_00605fad(FILE *stream,byte *output_byte)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0050eef0
 // Address Range: [[0050eef0, 0050ef1b]]
 // Convention: __cdecl
-// Signature: void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * header)
+// Signature: void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 006027ac
 // Address Range: [[006027ac, 006027b6]]
 // Convention: __cdecl
-// Signature: void crt_math.c_set_range_error_errno_FUN_006027ac(void)
+// Signature: void __cdecl crt_math_c_set_range_error_errno_FUN_006027ac(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_skeledit.cpp_FUN_00589f40()
+; unknown void core_skeledit_cpp_FUN_00589f40(void)
 ;
 ;
 ; Referenced Globals:

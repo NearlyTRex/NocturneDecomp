@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_sizeModelToYFeet_FUN_00467010(void)
+; __cdecl void __cdecl shape_design_c_sizeModelToYFeet_FUN_00467010(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x7c]:1  local_7c

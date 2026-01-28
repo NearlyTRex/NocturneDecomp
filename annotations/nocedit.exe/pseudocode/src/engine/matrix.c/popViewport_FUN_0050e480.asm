@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+; __cdecl void __cdecl engine_matrix_c_popViewport_FUN_0050e480(CDemonRenderer *this_ptr)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

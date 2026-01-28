@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl undefined core_morph.cpp_FUN_0052aa30()
+; __cdecl void __cdecl core_morph_cpp_FUN_0052aa30 (CMorphModel *param_1,undefined4 param_2,CDeformableModelInstance *param_3)
 ;
 ;
 ; XREF[1]:

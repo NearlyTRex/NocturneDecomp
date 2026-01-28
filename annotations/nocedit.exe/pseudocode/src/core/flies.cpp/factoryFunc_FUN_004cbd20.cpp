@@ -2,7 +2,7 @@
 // Address: 004cbd20
 // Address Range: [[004cbd20, 004cbd42]]
 // Convention: __cdecl
-// Signature: CFlies * core_flies.cpp_factoryFunc_FUN_004cbd20(void)
+// Signature: CFlies * __cdecl core_flies_cpp_factoryFunc_FUN_004cbd20(void)
 
 #include "nocturne.h"
 

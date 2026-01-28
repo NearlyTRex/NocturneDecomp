@@ -2,7 +2,7 @@
 // Address: 0057c550
 // Address Range: [[0057c550, 0057c5cc]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
+// Signature: int core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
 
 #include "nocturne.h"
 

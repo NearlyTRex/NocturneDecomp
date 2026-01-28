@@ -2,7 +2,7 @@
 // Address: 0060c0c0
 // Address Range: [[0060c0c0, 0060c180]]
 // Convention: __cdecl
-// Signature: int crt_string.c_wcstombs_FUN_0060c0c0(char * dest, wchar_t * src, SIZE_T dest_size)
+// Signature: int __cdecl crt_string_c_wcstombs_FUN_0060c0c0(char *dest,wchar_t *src,SIZE_T dest_size)
 
 #include "nocturne.h"
 

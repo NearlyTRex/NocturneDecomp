@@ -2,7 +2,7 @@
 // Address: 005f8550
 // Address Range: [[005f8550, 005f8c84]]
 // Convention: __cdecl
-// Signature: SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
+// Signature: SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)
 
 #include "nocturne.h"
 

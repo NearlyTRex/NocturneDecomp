@@ -2,7 +2,7 @@
 // Address: 004e5bd0
 // Address Range: [[004e5bd0, 004e5c88]]
 // Convention: __cdecl
-// Signature: CGargoyle * core_gargoyle.cpp_CGargoyle_dtor_FUN_004e5bd0(CGargoyle * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004e5bd0 (CGargoyle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

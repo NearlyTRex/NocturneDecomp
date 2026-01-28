@@ -2,7 +2,7 @@
 // Address: 005e0a50
 // Address Range: [[005e0a50, 005e0a9c]]
 // Convention: __cdecl
-// Signature: void core_trigger.cpp_CTrigger_FUN_005e0a50(CTrigger * this_ptr)
+// Signature: void __cdecl core_trigger_cpp_CTrigger_FUN_005e0a50(CTrigger *this_ptr)
 
 #include "nocturne.h"
 

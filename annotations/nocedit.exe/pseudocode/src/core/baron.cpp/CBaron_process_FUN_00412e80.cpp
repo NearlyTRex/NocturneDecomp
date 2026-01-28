@@ -2,7 +2,7 @@
 // Address: 00412e80
 // Address Range: [[00412e80, 00413463]]
 // Convention: __cdecl
-// Signature: void core_baron.cpp_CBaron_process_FUN_00412e80(CBaron * this_ptr, float delta_time)
+// Signature: void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

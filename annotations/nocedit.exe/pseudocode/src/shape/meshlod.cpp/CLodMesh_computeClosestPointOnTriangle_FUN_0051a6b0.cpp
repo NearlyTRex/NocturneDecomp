@@ -2,7 +2,7 @@
 // Address: 0051a6b0
 // Address Range: [[0051a6b0, 0051a8bd]]
 // Convention: __cdecl
-// Signature: CVector3f * shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0(CLodMesh * this_ptr, CVector3f * output_point, CVector3f * target_point, CLodFace * triangle_ptr)
+// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (CLodMesh *this_ptr,CVector3f *output_point,CVector3f *target_point,CLodFace *triangle_ptr )
 
 #include "nocturne.h"
 

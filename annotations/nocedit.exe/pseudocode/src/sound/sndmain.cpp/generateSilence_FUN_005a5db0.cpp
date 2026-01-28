@@ -2,7 +2,7 @@
 // Address: 005a5db0
 // Address Range: [[005a5db0, 005a5e03]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_generateSilence_FUN_005a5db0(void * buffer, uint bits_per_sample, uint num_samples)
+// Signature: void __cdecl sound_sndmain_cpp_generateSilence_FUN_005a5db0(void *buffer,uint bits_per_sample,uint num_samples)
 
 #include "nocturne.h"
 

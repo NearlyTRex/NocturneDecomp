@@ -2,7 +2,7 @@
 // Address: 005742b0
 // Address Range: [[005742b0, 005743b4]]
 // Convention: __cdecl
-// Signature: void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet * this_ptr, SDamageInfo * damage_info, CVector3f * actor_position, void * unknown_param)
+// Signature: void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position, void *unknown_param)
 
 #include "nocturne.h"
 

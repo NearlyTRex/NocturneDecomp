@@ -2,7 +2,7 @@
 // Address: 0049d120
 // Address Range: [[0049d120, 0049d16d]]
 // Convention: __cdecl
-// Signature: CDynamite * core_dynamite.cpp_CDynamite_dtor_FUN_0049d120(CDynamite * this_ptr, uint d1, uint d2)
+// Signature: CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0049d120(CDynamite *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

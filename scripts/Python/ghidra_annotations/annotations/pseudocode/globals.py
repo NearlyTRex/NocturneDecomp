@@ -2153,9 +2153,11 @@ def extract_all_function_prototypes(currentProgram):
         func_addr = str(func.getEntryPoint())
         func_signature = func.getPrototypeString(True, False)
 
-        # Get calling convention
+        # Get calling convention (skip "unknown" as it's not a valid C convention)
         calling_convention = func.getCallingConventionName()
-        if calling_convention and not calling_convention.startswith("__"):
+        if calling_convention and calling_convention.lower() == "unknown":
+            calling_convention = None
+        elif calling_convention and not calling_convention.startswith("__"):
             calling_convention = "__" + calling_convention
 
         # Generate the C-compatible name (dots replaced with underscores)
@@ -2166,6 +2168,18 @@ def extract_all_function_prototypes(currentProgram):
             c_signature = func_signature.replace(func_name, c_name)
         else:
             c_signature = "void %s(void)" % c_name
+
+        # Normalize prototype for C compatibility:
+        # 1. Remove "__unknown" calling convention (not valid C)
+        # 2. Change empty params "()" to "(void)" for proper C declaration
+        # Note: Keep "undefined" return type as-is - it means unknown, not void
+        if c_signature:
+            # Remove __unknown calling convention if present
+            c_signature = c_signature.replace('__unknown ', '')
+            # Normalize empty parameter list to (void) for proper C declaration
+            # Match funcname() but not funcname(void) or funcname(params)
+            c_signature = re.sub(r'(\w+)\(\)$', r'\1(void)', c_signature)
+            c_signature = re.sub(r'(\w+)\(\);$', r'\1(void);', c_signature)
 
         # Insert calling convention into signature after return type
         # Signature format: "return_type function_name(params)"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * core_actor.cpp_createActorByName_FUN_0040c430(char * class_name)
+; __cdecl CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c430(char *class_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   class_name

@@ -2,7 +2,7 @@
 // Address: 005dd760
 // Address Range: [[005dd760, 005dd794]]
 // Convention: __cdecl
-// Signature: CTextureCache * engine_texture.cpp_initTextureCache_FUN_005dd760(void)
+// Signature: CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005dd760(void)
 
 #include "nocturne.h"
 

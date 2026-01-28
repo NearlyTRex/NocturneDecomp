@@ -2,7 +2,7 @@
 // Address: 00457b60
 // Address Range: [[00457b60, 00457c9d]]
 // Convention: __cdecl
-// Signature: int core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60(CDemonCube * this_ptr, CVector3f * cylinder_position, float cylinder_radius, CVector3f * output_height, CVector3f * output_normal, uint * output_material)
+// Signature: int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60 (CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius, CVector3f *output_height,CVector3f *output_normal,uint *output_material)
 
 #include "nocturne.h"
 

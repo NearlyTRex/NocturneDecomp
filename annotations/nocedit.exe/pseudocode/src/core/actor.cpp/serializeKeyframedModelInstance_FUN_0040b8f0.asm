@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0(CKeyFramedModelInstance * model_ptr, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0 (CKeyFramedModelInstance *model_ptr,char *property_name)
 ;
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   model_ptr

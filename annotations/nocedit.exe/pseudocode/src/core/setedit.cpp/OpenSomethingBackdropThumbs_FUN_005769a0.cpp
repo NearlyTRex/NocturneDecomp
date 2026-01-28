@@ -2,7 +2,7 @@
 // Address: 005769a0
 // Address Range: [[005769a0, 00576d90]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
+// Signature: void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
 
 #include "nocturne.h"
 

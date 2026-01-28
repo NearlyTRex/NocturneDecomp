@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
+; __cdecl int __cdecl crt_stdio_c_fputc_FUN_005ff2d7(FILE *stream,int character)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream

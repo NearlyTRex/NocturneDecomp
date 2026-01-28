@@ -2,7 +2,7 @@
 // Address: 005bb0e0
 // Address Range: [[005bb0e0, 005bb105]]
 // Convention: __cdecl
-// Signature: CStranger * core_stranger.cpp_factoryFunc_FUN_005bb0e0(void)
+// Signature: CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_005bb0e0(void)
 
 #include "nocturne.h"
 

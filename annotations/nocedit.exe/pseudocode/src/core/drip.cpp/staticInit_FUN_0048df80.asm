@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_drip.cpp_staticInit_FUN_0048df80(void)
+; __cdecl void __cdecl core_drip_cpp_staticInit_FUN_0048df80(void)
 ;
 ;
 ; Referenced Globals:

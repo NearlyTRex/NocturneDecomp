@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpustack float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
+; __fpustack float10 __fpustack crt_math_c_asin_FUN_00600b94(float10 sine_value)
 ;
 ;
 ; XREF[5]:

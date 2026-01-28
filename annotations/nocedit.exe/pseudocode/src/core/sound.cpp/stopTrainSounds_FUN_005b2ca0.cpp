@@ -2,7 +2,7 @@
 // Address: 005b2ca0
 // Address Range: [[005b2ca0, 005b2cdc]]
 // Convention: __watcallRegister
-// Signature: void core_sound.cpp_stopTrainSounds_FUN_005b2ca0(void)
+// Signature: void core_sound_cpp_stopTrainSounds_FUN_005b2ca0(void)
 
 #include "nocturne.h"
 

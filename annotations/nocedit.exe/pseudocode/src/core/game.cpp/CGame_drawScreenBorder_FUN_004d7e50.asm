@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50(CGame * this_ptr)
+; __cdecl void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(CGame *this_ptr)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

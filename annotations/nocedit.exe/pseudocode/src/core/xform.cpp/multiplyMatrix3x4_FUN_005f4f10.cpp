@@ -2,7 +2,7 @@
 // Address: 005f4f10
 // Address Range: [[005f4f10, 005f50b8]]
 // Convention: __stack2_esi
-// Signature: CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
+// Signature: CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10 (CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 

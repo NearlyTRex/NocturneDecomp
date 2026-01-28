@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndwav.cpp_CWavOutDevice_setSfxPos_FUN_005b1700(CWavOutDevice * this_ptr, CSfxSlot * slot, int update_flags)
+; __cdecl int __cdecl sound_sndwav_cpp_CWavOutDevice_setSfxPos_FUN_005b1700 (CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr

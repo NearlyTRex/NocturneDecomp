@@ -2,7 +2,7 @@
 // Address: 0050ee5e
 // Address Range: [[0050ee5e, 0050ee8d]]
 // Convention: __cdecl
-// Signature: void shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e(void)
+// Signature: void __cdecl shape_memdbg_cpp_acquireDebugMutex_FUN_0050ee5e(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005e2320
 // Address Range: [[005e2320, 005e240d]]
 // Convention: __cdecl
-// Signature: int core_turret.cpp_CTurret_FUN_005e2320(CTurret * this_ptr)
+// Signature: int __cdecl core_turret_cpp_CTurret_FUN_005e2320(CTurret *this_ptr)
 
 #include "nocturne.h"
 

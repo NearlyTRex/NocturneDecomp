@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
+; __cdecl time_t __cdecl crt_time_c_time_with_rounding_FUN_006001f0(time_t *optional_output)
 ;
 ; Parameters:
 ; time_t *         Stack[0x4]:4   optional_output

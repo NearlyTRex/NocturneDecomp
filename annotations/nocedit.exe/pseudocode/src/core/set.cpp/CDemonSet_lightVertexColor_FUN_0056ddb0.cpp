@@ -2,7 +2,7 @@
 // Address: 0056ddb0
 // Address Range: [[0056ddb0, 0056e10e]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, int skip_lighting_calculation)
+// Signature: void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index, int skip_lighting_calculation)
 
 #include "nocturne.h"
 

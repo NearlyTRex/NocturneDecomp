@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_lever.cpp_FUN_00504dd0()
+; unknown CVector3f * core_lever_cpp_FUN_00504dd0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

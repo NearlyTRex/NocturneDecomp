@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_stdio.c_ParseFormatFlags_FUN_00602edc(char * format, FormatSpec * spec_info)
+; __cdecl char * __cdecl crt_stdio_c_ParseFormatFlags_FUN_00602edc(char *format,FormatSpec *spec_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_restoreVideoModeX_FUN_005b7ede(void)
+; __cdecl int __cdecl wincore_windll_cpp_restoreVideoModeX_FUN_005b7ede(void)
 ;
 ;
 ; Referenced Globals:

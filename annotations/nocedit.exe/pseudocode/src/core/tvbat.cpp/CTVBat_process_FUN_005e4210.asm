@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tvbat.cpp_CTVBat_process_FUN_005e4210(CTVBat * this_ptr, float delta_time)
+; __cdecl void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

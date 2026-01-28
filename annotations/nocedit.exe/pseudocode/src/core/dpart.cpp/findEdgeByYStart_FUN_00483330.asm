@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SEdgeData * core_dpart.cpp_findEdgeByYStart_FUN_00483330(int scanline_y, SEdgeData * exclude_edge)
+; __cdecl SEdgeData * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SEdgeData *exclude_edge)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   scanline_y

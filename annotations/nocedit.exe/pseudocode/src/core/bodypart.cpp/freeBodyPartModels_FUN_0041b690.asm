@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_bodypart.cpp_freeBodyPartModels_FUN_0041b690(SBodyPartModel * * objs)
+; __cdecl int __cdecl core_bodypart_cpp_freeBodyPartModels_FUN_0041b690(SBodyPartModel **objs)
 ;
 ; Parameters:
 ; SBodyPartModel * * Stack[0x4]:4   objs

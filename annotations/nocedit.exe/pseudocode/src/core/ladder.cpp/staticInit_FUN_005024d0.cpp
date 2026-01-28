@@ -2,7 +2,7 @@
 // Address: 005024d0
 // Address Range: [[005024d0, 005024f3]]
 // Convention: __cdecl
-// Signature: void core_ladder.cpp_staticInit_FUN_005024d0(void)
+// Signature: void __cdecl core_ladder_cpp_staticInit_FUN_005024d0(void)
 
 #include "nocturne.h"
 

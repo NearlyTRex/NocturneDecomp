@@ -2,7 +2,7 @@
 // Address: 004ffff0
 // Address Range: [[004ffff0, 0050001b]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004ffff0(CInventory * this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004ffff0(CInventory *this_ptr)
 
 #include "nocturne.h"
 

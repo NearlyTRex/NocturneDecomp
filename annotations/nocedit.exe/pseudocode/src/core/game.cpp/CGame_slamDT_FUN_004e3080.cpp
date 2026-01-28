@@ -2,7 +2,7 @@
 // Address: 004e3080
 // Address Range: [[004e3080, 004e30e5]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CGame_slamDT_FUN_004e3080(CGame * this_ptr, float delta_time)
+// Signature: void __cdecl core_game_cpp_CGame_slamDT_FUN_004e3080(CGame *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

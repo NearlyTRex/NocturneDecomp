@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
+; __cdecl CVector3f * __cdecl core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 (CDemonActor *this_ptr,CVector3f *output_vector,CVector3f *input_vector)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

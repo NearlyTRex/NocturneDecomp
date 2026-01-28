@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_applyActPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
+; __cdecl void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0 (char *filename,void *bitmap_buffer,int bitmap_size,int palette_index)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

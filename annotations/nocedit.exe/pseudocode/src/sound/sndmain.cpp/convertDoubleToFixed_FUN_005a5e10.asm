@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10(double input, int * out_integer_part, int * out_fractional_part)
+; __cdecl void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10 (double input,int *out_integer_part,int *out_fractional_part)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   input

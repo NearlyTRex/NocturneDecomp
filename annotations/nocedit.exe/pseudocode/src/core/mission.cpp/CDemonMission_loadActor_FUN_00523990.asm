@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * core_mission.cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission * this_ptr, FILE * file, CDemonActor * current_actor, char * property_description)
+; __cdecl CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990 (CDemonMission *this_ptr,FILE *file,CDemonActor *current_actor,char *property_description)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

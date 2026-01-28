@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_prim.c_replaceWWithDepth_FUN_00552110(SRenderVertex * vertices, int vertex_count)
+; __cdecl void __cdecl engine_prim_c_replaceWWithDepth_FUN_00552110(SRenderVertex *vertices,int vertex_count)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertices

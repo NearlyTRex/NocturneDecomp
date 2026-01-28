@@ -2,7 +2,7 @@
 // Address: 005e5590
 // Address Range: [[005e5590, 005e56bf]]
 // Convention: __cdecl
-// Signature: CVampireBoss * core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590(CVampireBoss * this_ptr)
+// Signature: CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampireBoss *this_ptr)
 
 #include "nocturne.h"
 

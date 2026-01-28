@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_realignObject_FUN_0045ee70(int rotation_x, int rotation_y, int rotation_z)
+; __cdecl void __cdecl shape_design_c_realignObject_FUN_0045ee70(int rotation_x,int rotation_y,int rotation_z)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   rotation_x

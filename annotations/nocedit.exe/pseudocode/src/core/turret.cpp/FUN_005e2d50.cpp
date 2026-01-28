@@ -2,7 +2,7 @@
 // Address: 005e2d50
 // Address Range: [[005e2d50, 005e3273]]
 // Convention: unknown
-// Signature: undefined core_turret.cpp_FUN_005e2d50()
+// Signature: void core_turret_cpp_FUN_005e2d50(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CKeyFramedModel * core_dmodel.cpp_copyModels_FUN_0047efa0(CKeyFramedModel * * first, CKeyFramedModel * * second)
+; __cdecl CKeyFramedModel * __cdecl core_dmodel_cpp_copyModels_FUN_0047efa0(CKeyFramedModel **first,CKeyFramedModel **second)
 ;
 ; Parameters:
 ; CKeyFramedModel * * Stack[0x4]:4   first

@@ -2,7 +2,7 @@
 // Address: 00419be0
 // Address Range: [[00419be0, 00419db9]]
 // Convention: __cdecl
-// Signature: void core_bodypart.cpp_CBodyPart_process_FUN_00419be0(CBodyPart * this_ptr, float delta_time)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

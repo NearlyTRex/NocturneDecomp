@@ -2,7 +2,7 @@
 // Address: 00401460
 // Address Range: [[00401460, 0040158f] [00401591, 0040159c]]
 // Convention: __cdecl
-// Signature: int engine_2d.c_findBestPaletteMatch_FUN_00401460(int red, int green, int blue, int start_index, int end_index)
+// Signature: int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401460 (int red,int green,int blue,int start_index,int end_index)
 
 #include "nocturne.h"
 

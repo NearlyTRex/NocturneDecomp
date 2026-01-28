@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+; __cdecl CVector3f * __cdecl core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 (CVector3f *out_euler_angles,CVector3f *in_direction_vector)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   out_euler_angles

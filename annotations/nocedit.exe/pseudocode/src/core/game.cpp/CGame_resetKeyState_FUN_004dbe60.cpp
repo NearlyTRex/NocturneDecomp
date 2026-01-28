@@ -2,7 +2,7 @@
 // Address: 004dbe60
 // Address Range: [[004dbe60, 004dc22d]]
 // Convention: unknown
-// Signature: undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+// Signature: void core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_displayMemoryStatus_FUN_0046e6f0(int line_number)
+; __cdecl void __cdecl shape_design_c_displayMemoryStatus_FUN_0046e6f0(int line_number)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   line_number

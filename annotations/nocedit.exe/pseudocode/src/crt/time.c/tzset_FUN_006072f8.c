@@ -2,7 +2,7 @@
 // Address: 006072f8
 // Address Range: [[006071fc, 006072f5] [006072f8, 00607316]]
 // Convention: __cdecl
-// Signature: void crt_time.c_tzset_FUN_006072f8(void)
+// Signature: void __cdecl crt_time_c_tzset_FUN_006072f8(void)
 
 #include "nocturne.h"
 

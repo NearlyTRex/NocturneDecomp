@@ -2,7 +2,7 @@
 // Address: 005fde40
 // Address Range: [[005fde40, 005fde5f]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
+// Signature: void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count)
 
 #include "nocturne.h"
 

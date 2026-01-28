@@ -2,7 +2,7 @@
 // Address: 005a9d90
 // Address Range: [[005a9d90, 005a9dd7]]
 // Convention: __cdecl
-// Signature: float sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
+// Signature: float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
 
 #include "nocturne.h"
 

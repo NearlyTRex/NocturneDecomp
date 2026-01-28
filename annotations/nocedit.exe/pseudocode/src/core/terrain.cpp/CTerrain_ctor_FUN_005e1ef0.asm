@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTerrain * core_terrain.cpp_CTerrain_ctor_FUN_005e1ef0(CTerrain * this_ptr)
+; __cdecl CTerrain * __cdecl core_terrain_cpp_CTerrain_ctor_FUN_005e1ef0(CTerrain *this_ptr)
 ;
 ; Parameters:
 ; CTerrain *       Stack[0x4]:4   this_ptr

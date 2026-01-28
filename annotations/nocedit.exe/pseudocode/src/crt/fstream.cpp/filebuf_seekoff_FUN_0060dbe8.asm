@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8(filebuf * this_ptr, long offset, int direction, int mode)
+; __watcallStack int __watcallStack crt_fstream_cpp_filebuf_seekoff_FUN_0060dbe8(filebuf *this_ptr,long offset,int direction,int mode)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

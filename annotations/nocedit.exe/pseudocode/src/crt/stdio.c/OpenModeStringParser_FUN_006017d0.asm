@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_OpenModeStringParser_FUN_006017d0(char * mode_string, char * output_flags)
+; __cdecl int __cdecl crt_stdio_c_OpenModeStringParser_FUN_006017d0(char *mode_string,char *output_flags)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   mode_string

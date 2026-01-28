@@ -2,7 +2,7 @@
 // Address: 005d86d0
 // Address Range: [[005d86d0, 005d8706]]
 // Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d86d0()
+// Signature: double shape_superopt_cpp_FUN_005d86d0(void)
 
 #include "nocturne.h"
 

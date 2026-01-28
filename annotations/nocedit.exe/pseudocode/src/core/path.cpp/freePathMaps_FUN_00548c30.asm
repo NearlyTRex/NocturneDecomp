@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_path.cpp_freePathMaps_FUN_00548c30(CPathMap * * array)
+; __cdecl void __cdecl core_path_cpp_freePathMaps_FUN_00548c30(CPathMap **array)
 ;
 ; Parameters:
 ; CPathMap * *     Stack[0x4]:4   array

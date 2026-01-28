@@ -2,7 +2,7 @@
 // Address: 00453e50
 // Address Range: [[00453e50, 00453f07]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_loadCameraFog_FUN_00453e50(SFog * fog, FILE * file_handle, int file_version)
+// Signature: void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,FILE *file_handle,int file_version)
 
 #include "nocturne.h"
 

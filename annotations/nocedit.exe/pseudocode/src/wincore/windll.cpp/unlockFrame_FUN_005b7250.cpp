@@ -2,7 +2,7 @@
 // Address: 005b7250
 // Address Range: [[005b7250, 005b727b]]
 // Convention: __cdecl
-// Signature: void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+// Signature: void __cdecl wincore_windll_cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_sizeModelToXFeet_FUN_00466e40(void)
+; __cdecl void __cdecl shape_design_c_sizeModelToXFeet_FUN_00466e40(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x7c]:1  local_7c

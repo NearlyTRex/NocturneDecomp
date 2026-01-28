@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_turret.cpp_CTurret_getActorType_FUN_005e20e0(CTurret * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_turret_cpp_CTurret_getActorType_FUN_005e20e0(CTurret *this_ptr)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr

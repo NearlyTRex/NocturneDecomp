@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_podmain.cpp_CDemonPod_load_FUN_005519c0(CDemonPod * this_ptr)
+; __cdecl void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
 ;
 ; Parameters:
 ; CDemonPod *      Stack[0x4]:4   this_ptr

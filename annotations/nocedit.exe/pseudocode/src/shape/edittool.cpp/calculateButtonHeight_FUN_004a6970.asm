@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_calculateButtonHeight_FUN_004a6970(char * button_text)
+; __cdecl int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_004a6970(char *button_text)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   button_text

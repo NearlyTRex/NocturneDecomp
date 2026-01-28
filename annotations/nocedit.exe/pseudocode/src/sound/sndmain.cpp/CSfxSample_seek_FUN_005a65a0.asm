@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample * this_ptr, int playback_position, int dest_buffer_offset)
+; __cdecl void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0 (CSfxSample *this_ptr,int playback_position,int dest_buffer_offset)
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr

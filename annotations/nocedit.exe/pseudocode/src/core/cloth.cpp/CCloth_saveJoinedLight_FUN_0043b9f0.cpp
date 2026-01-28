@@ -2,7 +2,7 @@
 // Address: 0043b9f0
 // Address Range: [[0043b9f0, 0043bad4]]
 // Convention: __cdecl
-// Signature: int core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth * this_ptr)
+// Signature: int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr)
 
 #include "nocturne.h"
 

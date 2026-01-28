@@ -2,7 +2,7 @@
 // Address: 005996c0
 // Address Range: [[005996c0, 005996d8]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_skipToEndOfLine_FUN_005996c0(FILE * file_ptr)
+// Signature: void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_005996c0(FILE *file_ptr)
 
 #include "nocturne.h"
 

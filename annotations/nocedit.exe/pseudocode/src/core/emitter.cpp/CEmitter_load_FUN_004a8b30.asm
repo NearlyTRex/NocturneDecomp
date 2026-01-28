@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_emitter.cpp_CEmitter_load_FUN_004a8b30()
+; unknown void core_emitter_cpp_CEmitter_load_FUN_004a8b30(void)
 ;
 ;
 ; Referenced Globals:

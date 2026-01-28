@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_ImportA3DBroken_FUN_00578c60()
+; unknown void core_setedit_cpp_ImportA3DBroken_FUN_00578c60(void)
 ;
 ;
 ; XREF[1]:

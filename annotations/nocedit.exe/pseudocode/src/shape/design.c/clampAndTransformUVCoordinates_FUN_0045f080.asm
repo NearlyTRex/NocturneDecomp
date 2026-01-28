@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_clampAndTransformUVCoordinates_FUN_0045f080(void)
+; __cdecl void __cdecl shape_design_c_clampAndTransformUVCoordinates_FUN_0045f080(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

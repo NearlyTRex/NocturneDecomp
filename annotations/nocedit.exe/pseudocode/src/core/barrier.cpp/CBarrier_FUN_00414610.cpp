@@ -2,7 +2,7 @@
 // Address: 00414610
 // Address Range: [[00414610, 0041466c]]
 // Convention: __cdecl
-// Signature: void core_barrier.cpp_CBarrier_FUN_00414610(CBarrier * this_ptr)
+// Signature: void __cdecl core_barrier_cpp_CBarrier_FUN_00414610(CBarrier *this_ptr)
 
 #include "nocturne.h"
 

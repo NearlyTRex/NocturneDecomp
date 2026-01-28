@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_curtain.cpp_FindCurtainTextures_FUN_0044b960()
+; unknown void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x108]:1  local_108

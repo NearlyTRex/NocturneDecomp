@@ -2,7 +2,7 @@
 // Address: 00521480
 // Address Range: [[00521480, 005214be]]
 // Convention: __cdecl
-// Signature: void core_mirror.cpp_setupMirrorCamera_FUN_00521480(SMirrorReflection * reflection)
+// Signature: void __cdecl core_mirror_cpp_setupMirrorCamera_FUN_00521480(SMirrorReflection *reflection)
 
 #include "nocturne.h"
 

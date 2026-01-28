@@ -2,7 +2,7 @@
 // Address: 005a5b80
 // Address Range: [[005a5b80, 005a5cf7]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80(float * input_samples, void * output_buffer, int bits_per_sample, int num_samples, int output_stride)
+// Signature: void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80 (float *input_samples,void *output_buffer,int bits_per_sample,int num_samples, int output_stride)
 
 #include "nocturne.h"
 

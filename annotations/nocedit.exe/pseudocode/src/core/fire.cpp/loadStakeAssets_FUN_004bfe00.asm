@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_loadStakeAssets_FUN_004bfe00(void)
+; __cdecl void __cdecl core_fire_cpp_loadStakeAssets_FUN_004bfe00(void)
 ;
 ;
 ; XREF[1]:

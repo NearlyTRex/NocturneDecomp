@@ -2,7 +2,7 @@
 // Address: 005af320
 // Address Range: [[005af320, 005af401]]
 // Convention: __cdecl
-// Signature: void sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320(CDirectSoundDevice * this_ptr, int buffer_id)
+// Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_005af320 (CDirectSoundDevice *this_ptr,int buffer_id)
 
 #include "nocturne.h"
 

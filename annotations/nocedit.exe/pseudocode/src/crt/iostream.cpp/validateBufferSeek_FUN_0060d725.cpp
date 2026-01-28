@@ -2,7 +2,7 @@
 // Address: 0060d725
 // Address Range: [[0060d725, 0060d78c]]
 // Convention: __watcallStack
-// Signature: int crt_iostream.cpp_validateBufferSeek_FUN_0060d725(int seek_distance, int whence, char * buffer_start, char * current_ptr, char * buffer_end1, char * buffer_end2)
+// Signature: int __watcallStack crt_iostream_cpp_validateBufferSeek_FUN_0060d725 (int seek_distance,int whence,char *buffer_start,char *current_ptr,char *buffer_end1, char *buffer_end2)
 
 #include "nocturne.h"
 

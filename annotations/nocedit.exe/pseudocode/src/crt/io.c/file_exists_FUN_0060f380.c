@@ -2,7 +2,7 @@
 // Address: 0060f380
 // Address Range: [[0060f380, 0060f399]]
 // Convention: __watcallStack
-// Signature: BOOL crt_io.c_file_exists_FUN_0060f380(char * filename)
+// Signature: BOOL __watcallStack crt_io_c_file_exists_FUN_0060f380(char *filename)
 
 #include "nocturne.h"
 

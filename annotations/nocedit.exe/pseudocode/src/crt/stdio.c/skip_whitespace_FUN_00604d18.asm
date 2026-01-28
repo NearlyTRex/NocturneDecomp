@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_skip_whitespace_FUN_00604d18(scanf_state_t * state)
+; __cdecl int __cdecl crt_stdio_c_skip_whitespace_FUN_00604d18(scanf_state_t *state)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

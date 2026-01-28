@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HeapBlock * crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0(HeapBlock * new_block)
+; __cdecl HeapBlock * __cdecl crt_heap_c_InsertHeapBlockInOrder_FUN_006095f0(HeapBlock *new_block)
 ;
 ; Parameters:
 ; HeapBlock *      Stack[0x4]:4   new_block

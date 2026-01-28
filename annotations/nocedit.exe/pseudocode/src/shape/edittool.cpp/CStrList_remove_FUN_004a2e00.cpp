@@ -2,7 +2,7 @@
 // Address: 004a2e00
 // Address Range: [[004a2e00, 004a2ebb]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CStrList_remove_FUN_004a2e00(CStrList * this_ptr, int start_index, int end_index)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,int start_index,int end_index)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, tm * time_ptr)
+; __cdecl uint __cdecl crt_time_c_strftime_FUN_006002d4 (char *dest_buffer,uint buffer_size,char *format_string,tm *time_ptr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest_buffer

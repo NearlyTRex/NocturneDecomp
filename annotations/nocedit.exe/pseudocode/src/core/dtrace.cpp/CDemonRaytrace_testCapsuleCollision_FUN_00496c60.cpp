@@ -2,7 +2,7 @@
 // Address: 00496c60
 // Address Range: [[00496c60, 00496e65]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60(CDemonRaytrace * this_ptr, SCapsuleCollision * capsule_data)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60 (CDemonRaytrace *this_ptr,SCapsuleCollision *capsule_data)
 
 #include "nocturne.h"
 

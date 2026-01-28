@@ -2,7 +2,7 @@
 // Address: 004ef970
 // Address Range: [[004ef970, 004ef989]]
 // Convention: __cdecl
-// Signature: void core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970(CGround * this_ptr, SMRGLHeaderPrimitive * primitive)
+// Signature: void __cdecl core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970 (CGround *this_ptr,SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 

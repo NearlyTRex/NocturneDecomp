@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_main.c_drawCenteredText_FUN_00508250(char * text, int y_pos, int color)
+; __cdecl void __cdecl core_main_c_drawCenteredText_FUN_00508250(char *text,int y_pos,int color)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text

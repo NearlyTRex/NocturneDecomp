@@ -2,7 +2,7 @@
 // Address: 005375d0
 // Address Range: [[005375d0, 00537654]]
 // Convention: __cdecl
-// Signature: void core_msnedit.cpp_writeIni_FUN_005375d0(CDemonMission * mission, CIniFile * ini_file)
+// Signature: void __cdecl core_msnedit_cpp_writeIni_FUN_005375d0(CDemonMission *mission,CIniFile *ini_file)
 
 #include "nocturne.h"
 

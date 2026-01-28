@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CShotgun * core_shotgun.cpp_factoryFunc_FUN_00587ea0(void)
+; __cdecl CShotgun * __cdecl core_shotgun_cpp_factoryFunc_FUN_00587ea0(void)
 ;
 ;
 ; XREF[1]:

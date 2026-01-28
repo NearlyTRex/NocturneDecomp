@@ -2,7 +2,7 @@
 // Address: 005ca590
 // Address Range: [[005ca590, 005cb395]]
 // Convention: unknown
-// Signature: undefined shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
+// Signature: undefined4 shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_renderCoronaDepthScanline_FUN_00450320(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+; __cdecl void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ; Parameters:
 ; SEdgeData *      Stack[0x4]:4   left_edge

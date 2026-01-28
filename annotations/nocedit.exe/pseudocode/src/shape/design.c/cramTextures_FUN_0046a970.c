@@ -2,7 +2,7 @@
 // Address: 0046a970
 // Address Range: [[0046a970, 0046abec]]
 // Convention: __cdecl
-// Signature: void shape_design.c_cramTextures_FUN_0046a970(char * texture_filename, int min_u, int min_v, int max_u, int max_v)
+// Signature: void __cdecl shape_design_c_cramTextures_FUN_0046a970 (char *texture_filename,int min_u,int min_v,int max_u,int max_v)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeClothList_FUN_0040be60(CClothList * cloth_list, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *property_name)
 ;
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   cloth_list

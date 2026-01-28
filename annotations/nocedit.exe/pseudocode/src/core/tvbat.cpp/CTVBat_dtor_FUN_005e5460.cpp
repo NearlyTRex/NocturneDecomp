@@ -2,7 +2,7 @@
 // Address: 005e5460
 // Address Range: [[005e5460, 005e5518]]
 // Convention: __cdecl
-// Signature: CTVBat * core_tvbat.cpp_CTVBat_dtor_FUN_005e5460(CTVBat * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CTVBat * __cdecl core_tvbat_cpp_CTVBat_dtor_FUN_005e5460 (CTVBat *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

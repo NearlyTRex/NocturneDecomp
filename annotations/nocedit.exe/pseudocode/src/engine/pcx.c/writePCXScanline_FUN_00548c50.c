@@ -2,7 +2,7 @@
 // Address: 00548c50
 // Address Range: [[00548c50, 00548d1f]]
 // Convention: __cdecl
-// Signature: void engine_pcx.c_writePCXScanline_FUN_00548c50(int row_index, FILE * pcx_file)
+// Signature: void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,FILE *pcx_file)
 
 #include "nocturne.h"
 

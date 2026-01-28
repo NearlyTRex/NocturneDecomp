@@ -2,7 +2,7 @@
 // Address: 005b7b80
 // Address Range: [[005b7b80, 005b7bb9]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
+// Signature: int __cdecl wincore_windll_cpp_setFogColor_FUN_005b7b80(int red,int green,int blue)
 
 #include "nocturne.h"
 

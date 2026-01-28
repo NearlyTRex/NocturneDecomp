@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70(uint flags)
+; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(uint flags)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   flags

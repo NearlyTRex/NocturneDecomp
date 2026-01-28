@@ -2,7 +2,7 @@
 // Address: 005ce3e0
 // Address Range: [[005ce3e0, 005ce57d]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0(CPoly * this_ptr, CVector3d * out_min, CVector3d * out_max)
+// Signature: void __cdecl shape_superopt_cpp_CPoly_getBounds_FUN_005ce3e0 (CPoly *this_ptr,CVector3d *out_min,CVector3d *out_max)
 
 #include "nocturne.h"
 

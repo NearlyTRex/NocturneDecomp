@@ -2,7 +2,7 @@
 // Address: 00508340
 // Address Range: [[00508340, 00508569]]
 // Convention: __cdecl
-// Signature: void core_main.c_showPromoScreen_FUN_00508340(void)
+// Signature: void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
 
 #include "nocturne.h"
 

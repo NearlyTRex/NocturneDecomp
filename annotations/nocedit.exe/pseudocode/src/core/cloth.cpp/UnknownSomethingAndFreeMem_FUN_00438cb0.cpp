@@ -2,7 +2,7 @@
 // Address: 00438cb0
 // Address Range: [[00438cb0, 00438ced]]
 // Convention: unknown
-// Signature: undefined core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0()
+// Signature: void core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
 
 #include "nocturne.h"
 

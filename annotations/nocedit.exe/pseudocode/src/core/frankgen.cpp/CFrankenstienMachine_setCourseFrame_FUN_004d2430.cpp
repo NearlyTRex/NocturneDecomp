@@ -2,7 +2,7 @@
 // Address: 004d2430
 // Address Range: [[004d2430, 004d24e4]]
 // Convention: unknown
-// Signature: undefined core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430()
+// Signature: void core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(void)
 
 #include "nocturne.h"
 

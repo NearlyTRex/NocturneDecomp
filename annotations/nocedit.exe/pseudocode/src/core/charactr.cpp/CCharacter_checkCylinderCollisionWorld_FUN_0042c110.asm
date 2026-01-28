@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110(CCharacter * this_ptr, CVector3f * world_point, float tolerance, SDamageInfo * damage_info)
+; __cdecl int __cdecl core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110 (CCharacter *this_ptr,CVector3f *world_point,float tolerance,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

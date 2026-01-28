@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlame * core_flame.cpp_factoryFunc_FUN_004c9a60(void)
+; __cdecl CFlame * __cdecl core_flame_cpp_factoryFunc_FUN_004c9a60(void)
 ;
 ;
 ; XREF[1]:

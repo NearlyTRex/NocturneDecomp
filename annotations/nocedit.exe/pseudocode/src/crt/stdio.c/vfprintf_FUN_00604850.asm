@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
+; __watcallStack int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_list_t args)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file

@@ -3,12 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 6,
-        "line": 12,
-        "message": "ambiguating new declaration of 'void core_bugs_cpp_FUN_00425fe0()'"
-      },
-      {
-        "category": "other",
         "column": 30,
         "line": 64,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
@@ -30,6 +24,12 @@
         "column": 31,
         "line": 78,
         "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 81,
+        "message": "void value not ignored as it ought to be"
       },
       {
         "category": "other",
@@ -96,12 +96,6 @@
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 81,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 27,
         "line": 135,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -162,7 +156,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_bugs.cpp_FUN_00425fe0",
-    "signature": "undefined core_bugs.cpp_FUN_00425fe0()"
+    "signature": "void core_bugs_cpp_FUN_00425fe0(void)"
   },
   "function_calls": [
     {

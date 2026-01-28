@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor * this_ptr)
+; __cdecl float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

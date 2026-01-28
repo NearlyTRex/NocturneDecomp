@@ -2,7 +2,7 @@
 // Address: 005a5530
 // Address Range: [[005a5530, 005a561b]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)
+// Signature: void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)
 
 #include "nocturne.h"
 

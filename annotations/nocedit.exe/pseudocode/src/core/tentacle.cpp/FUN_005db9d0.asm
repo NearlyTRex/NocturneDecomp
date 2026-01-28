@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_tentacle.cpp_FUN_005db9d0()
+; unknown undefined4 core_tentacle_cpp_FUN_005db9d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1cc]:1  local_1cc

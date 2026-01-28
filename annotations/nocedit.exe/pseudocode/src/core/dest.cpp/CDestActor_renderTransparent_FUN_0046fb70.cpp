@@ -2,7 +2,7 @@
 // Address: 0046fb70
 // Address Range: [[0046fb70, 0046fcb8]]
 // Convention: unknown
-// Signature: undefined core_dest.cpp_CDestActor_renderTransparent_FUN_0046fb70()
+// Signature: undefined4 core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
 
 #include "nocturne.h"
 

@@ -5,8 +5,8 @@
 
 // Original: crt_environ.c_staticInit_FUN_0060c650
 // Address: 0060c650
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: crt_environ.c_staticFinal_FUN_0060c73c
 // Address: 0060c73c
-void staticFinal(void);
+void __cdecl staticFinal(void);

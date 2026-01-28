@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190()
+; unknown void core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x10c]:1  local_10c

@@ -2,7 +2,7 @@
 // Address: 004c6be0
 // Address Range: [[004c6be0, 004c6c0d]]
 // Convention: __cdecl
-// Signature: CSmokeParticle * core_fire.cpp_allocateSmokeParticle_FUN_004c6be0(void)
+// Signature: CSmokeParticle * __cdecl core_fire_cpp_allocateSmokeParticle_FUN_004c6be0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a6df0
 // Address Range: [[005a6df0, 005a6efa]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSlot * this_ptr)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSlot *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005d4070
 // Address Range: [[005d4070, 005d4101]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070(CObj * this_ptr)
+// Signature: int __cdecl shape_superopt_cpp_CObj_isClosedManifold_FUN_005d4070(CObj *this_ptr)
 
 #include "nocturne.h"
 

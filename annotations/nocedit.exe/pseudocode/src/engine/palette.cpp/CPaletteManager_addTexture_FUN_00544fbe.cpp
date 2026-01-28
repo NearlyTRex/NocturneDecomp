@@ -2,7 +2,7 @@
 // Address: 00544fbe
 // Address Range: [[00544fbe, 00544fbf]]
 // Convention: __cdecl
-// Signature: void engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager * this_ptr, char * filename)
+// Signature: void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this_ptr,char *filename)
 
 #include "nocturne.h"
 

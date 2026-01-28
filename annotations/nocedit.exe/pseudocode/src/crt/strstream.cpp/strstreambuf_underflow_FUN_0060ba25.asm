@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_strstream.cpp_strstreambuf_underflow_FUN_0060ba25(strstreambuf * this_ptr)
+; __watcallStack int __watcallStack crt_strstream_cpp_strstreambuf_underflow_FUN_0060ba25(strstreambuf *this_ptr)
 ;
 ; Parameters:
 ; strstreambuf *   Stack[0x4]:4   this_ptr

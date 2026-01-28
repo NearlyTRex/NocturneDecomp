@@ -2,7 +2,7 @@
 // Address: 00470730
 // Address Range: [[00470730, 004708d3]]
 // Convention: __cdecl
-// Signature: void core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx * this_ptr, char * filename)
+// Signature: void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_ptr,char *filename)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex * point)
+; __cdecl void __cdecl engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex *point)
 ;
 ; Parameters:
 ; SProjectedVertex * Stack[0x4]:4   point

@@ -2,7 +2,7 @@
 // Address: 005ff130
 // Address Range: [[005ff130, 005ff177]]
 // Convention: __watcallStack
-// Signature: void crt_string.c_strncpy_safe_FUN_005ff130(char * dest, char * src, int length, int maxlen)
+// Signature: void __watcallStack crt_string_c_strncpy_safe_FUN_005ff130(char *dest,char *src,int length,int maxlen)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_remove_FUN_00606600(char * filename)
+; __watcallStack int __watcallStack crt_stdio_c_remove_FUN_00606600(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

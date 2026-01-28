@@ -2,7 +2,7 @@
 // Address: 004b53a0
 // Address Range: [[004b53a0, 004b53c2]]
 // Convention: __cdecl
-// Signature: CFileManager * engine_fileio.cpp_CFileManager_ctor_FUN_004b53a0(CFileManager * this_ptr)
+// Signature: CFileManager * __cdecl engine_fileio_cpp_CFileManager_ctor_FUN_004b53a0(CFileManager *this_ptr)
 
 #include "nocturne.h"
 

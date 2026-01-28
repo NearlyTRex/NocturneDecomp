@@ -2,7 +2,7 @@
 // Address: 0051a9d0
 // Address Range: [[0051a9d0, 0051aa58]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_importFromFile_FUN_0051a9d0(CLodMesh * this_ptr, char * filename)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_importFromFile_FUN_0051a9d0(CLodMesh *this_ptr,char *filename)
 
 #include "nocturne.h"
 

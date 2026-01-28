@@ -2,7 +2,7 @@
 // Address: 005f7000
 // Address Range: [[005f7000, 005f713c]]
 // Convention: __stack2_esi
-// Signature: CMatrix3x4f * core_xform.cpp_buildMirrorTransform_FUN_005f7000(CVector3f * axis_vector, float distance, CMatrix3x4f * matrix_out)
+// Signature: CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000 (CVector3f *axis_vector,float distance,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 

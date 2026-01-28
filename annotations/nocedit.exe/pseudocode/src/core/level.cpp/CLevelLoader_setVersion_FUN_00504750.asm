@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_level.cpp_CLevelLoader_setVersion_FUN_00504750(CLevelLoader * this_ptr, int value)
+; __cdecl void __cdecl core_level_cpp_CLevelLoader_setVersion_FUN_00504750(CLevelLoader *this_ptr,int value)
 ;
 ; Parameters:
 ; CLevelLoader *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice * this_ptr, CSfxSlot * slot)
+; __cdecl int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80 (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr

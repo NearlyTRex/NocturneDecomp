@@ -2,7 +2,7 @@
 // Address: 004313f0
 // Address Range: [[004313f0, 00431404]]
 // Convention: __cdecl
-// Signature: int core_chain.cpp_FUN_004313f0(SChainVertex * * objs)
+// Signature: int __cdecl core_chain_cpp_FUN_004313f0(SChainVertex **objs)
 
 #include "nocturne.h"
 

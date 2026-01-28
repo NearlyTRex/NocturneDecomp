@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_addCustomKeyBinding_FUN_00513460(int * key_code_ptr, char * key_name)
+; __cdecl void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_00513460(int *key_code_ptr,char *key_name)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   key_code_ptr

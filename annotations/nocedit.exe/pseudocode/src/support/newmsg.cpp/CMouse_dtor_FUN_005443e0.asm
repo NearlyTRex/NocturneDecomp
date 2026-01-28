@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMouse * support_newmsg.cpp_CMouse_dtor_FUN_005443e0(CMouse * this_ptr)
+; __cdecl CMouse * __cdecl support_newmsg_cpp_CMouse_dtor_FUN_005443e0(CMouse *this_ptr)
 ;
 ; Parameters:
 ; CMouse *         Stack[0x4]:4   this_ptr

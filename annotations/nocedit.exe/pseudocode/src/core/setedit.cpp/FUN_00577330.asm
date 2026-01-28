@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_FUN_00577330()
+; unknown void core_setedit_cpp_FUN_00577330(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

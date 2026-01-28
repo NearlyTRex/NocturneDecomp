@@ -2,7 +2,7 @@
 // Address: 004d1300
 // Address Range: [[004d1300, 004d1335]]
 // Convention: __cdecl
-// Signature: SHardwareEdge * engine_3d.c_findHardwareEdgeByYMin_FUN_004d1300(int y_min, SHardwareEdge * exclude_edge)
+// Signature: SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_004d1300(int y_min,SHardwareEdge *exclude_edge)
 
 #include "nocturne.h"
 

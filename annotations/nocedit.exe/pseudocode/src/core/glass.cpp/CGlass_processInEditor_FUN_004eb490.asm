@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_glass.cpp_CGlass_processInEditor_FUN_004eb490(CGlass * this_ptr)
+; __cdecl void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr

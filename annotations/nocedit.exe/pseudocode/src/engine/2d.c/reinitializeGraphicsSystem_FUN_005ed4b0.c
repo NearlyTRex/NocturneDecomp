@@ -2,7 +2,7 @@
 // Address: 00402a80
 // Address Range: [[00402a80, 00402a84]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
+// Signature: void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
 
 #include "nocturne.h"
 

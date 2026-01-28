@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_succubus.cpp_CSuccubus_process_FUN_005c6e90(CSuccubus * this_ptr, float delta_time)
+; __cdecl void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CSuccubus *      Stack[0x4]:4   this_ptr

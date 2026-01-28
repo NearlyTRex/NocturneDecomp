@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBattery * core_battery.cpp_factoryFunc_FUN_00417e50(void)
+; __cdecl CBattery * __cdecl core_battery_cpp_factoryFunc_FUN_00417e50(void)
 ;
 ;
 ; XREF[1]:

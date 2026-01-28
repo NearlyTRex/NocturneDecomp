@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stairs.cpp_FUN_005b9be0()
+; unknown undefined4 core_stairs_cpp_FUN_005b9be0(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_transformAndStoreVertex_FUN_00452110(int vertex_index, float x, float y, float z)
+; __cdecl void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_index,float x,float y,float z)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_index

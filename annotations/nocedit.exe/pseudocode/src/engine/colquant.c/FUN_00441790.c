@@ -2,7 +2,7 @@
 // Address: 00441790
 // Address Range: [[00441790, 004417d6]]
 // Convention: unknown
-// Signature: undefined engine_colquant.c_FUN_00441790()
+// Signature: undefined8 engine_colquant_c_FUN_00441790(void)
 
 #include "nocturne.h"
 

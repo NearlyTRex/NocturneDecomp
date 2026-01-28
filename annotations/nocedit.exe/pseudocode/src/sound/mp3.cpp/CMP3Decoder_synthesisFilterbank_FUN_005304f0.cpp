@@ -2,7 +2,7 @@
 // Address: 005304f0
 // Address Range: [[005304f0, 0053079d]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0(CMP3Decoder * this_ptr, float * subband_samples, int channel_index, short * pcm_output)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0 (CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output)
 
 #include "nocturne.h"
 

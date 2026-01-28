@@ -2,7 +2,7 @@
 // Address: 005ff710
 // Address Range: [[005ff710, 005ff78d]]
 // Convention: __cdecl
-// Signature: void crt_fstream.cpp_ofstream_constructor_FUN_005ff710(ofstream * this_ptr, int ctor_flags, int fd, int mode, char * buffer, SIZE_T buffer_size)
+// Signature: void __cdecl crt_fstream_cpp_ofstream_constructor_FUN_005ff710 (ofstream *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size)
 
 #include "nocturne.h"
 

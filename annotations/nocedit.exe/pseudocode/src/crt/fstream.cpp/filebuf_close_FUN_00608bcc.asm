@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack filebuf * crt_fstream.cpp_filebuf_close_FUN_00608bcc(filebuf * this_ptr)
+; __watcallStack filebuf * __watcallStack crt_fstream_cpp_filebuf_close_FUN_00608bcc(filebuf *this_ptr)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

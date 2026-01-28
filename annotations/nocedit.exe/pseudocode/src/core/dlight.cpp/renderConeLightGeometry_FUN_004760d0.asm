@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float param_3, float max_distance)
+; __cdecl void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float param_3,float max_distance)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   position

@@ -2,7 +2,7 @@
 // Address: 00556d40
 // Address Range: [[00556d40, 00556d54]]
 // Convention: __cdecl
-// Signature: void shape_quantize.cpp_freeMemory_FUN_00556d40(void * ptr)
+// Signature: void __cdecl shape_quantize_cpp_freeMemory_FUN_00556d40(void *ptr)
 
 #include "nocturne.h"
 

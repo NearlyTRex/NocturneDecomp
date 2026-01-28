@@ -2,7 +2,7 @@
 // Address: 004f41c0
 // Address Range: [[004f41c0, 004f4372]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void)
 
 #include "nocturne.h"
 

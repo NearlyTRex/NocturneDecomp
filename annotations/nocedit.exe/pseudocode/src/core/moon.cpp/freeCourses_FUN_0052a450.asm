@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_moon.cpp_freeCourses_FUN_0052a450(CCourse * * array)
+; __cdecl void __cdecl core_moon_cpp_freeCourses_FUN_0052a450(CCourse **array)
 ;
 ; Parameters:
 ; CCourse * *      Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 005e3ec0
 // Address Range: [[005e3ec0, 005e3ed1]]
 // Convention: __cdecl
-// Signature: float core_tvbat.cpp_FUN_005e3ec0(float param_1)
+// Signature: float __cdecl core_tvbat_cpp_FUN_005e3ec0(float param_1)
 
 #include "nocturne.h"
 

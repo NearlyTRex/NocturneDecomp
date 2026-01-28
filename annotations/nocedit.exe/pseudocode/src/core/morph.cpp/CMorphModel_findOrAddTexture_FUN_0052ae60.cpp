@@ -2,7 +2,7 @@
 // Address: 0052ae60
 // Address Range: [[0052ae60, 0052af22]]
 // Convention: __cdecl
-// Signature: int core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel * this_ptr, char * filename)
+// Signature: int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel *this_ptr,char *filename)
 
 #include "nocturne.h"
 

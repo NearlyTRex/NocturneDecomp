@@ -2,7 +2,7 @@
 // Address: 0054f3a0
 // Address Range: [[0054f3a0, 0054f3d3]]
 // Convention: __cdecl
-// Signature: uint engine_pod.cpp_crc32UpdateBuffer_FUN_0054f3a0(uchar * data_buffer, uint byte_count, uint initial_crc)
+// Signature: uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_0054f3a0(uchar *data_buffer,uint byte_count,uint initial_crc)
 
 #include "nocturne.h"
 

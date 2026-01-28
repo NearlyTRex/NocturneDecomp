@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CElephantGun * core_elephant.cpp_factoryFunc_FUN_004a6fa0(void)
+; __cdecl CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004a6fa0(void)
 ;
 ;
 ; XREF[1]:

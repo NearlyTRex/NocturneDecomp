@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_texlist.cpp_CTextureList_setCurrentMasterIndex_FUN_005dc6a0(CTextureList * this_ptr, uint master_index)
+; __cdecl void __cdecl core_texlist_cpp_CTextureList_setCurrentMasterIndex_FUN_005dc6a0 (CTextureList *this_ptr,uint master_index)
 ;
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr

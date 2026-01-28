@@ -2,7 +2,7 @@
 // Address: 0050edf0
 // Address Range: [[0050edf0, 0050ee3d]]
 // Convention: __cdecl
-// Signature: CMelee * core_melee.cpp_CMelee_dtor_FUN_0050edf0(CMelee * this_ptr, uint d1, uint d2)
+// Signature: CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_0050edf0(CMelee *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

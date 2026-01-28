@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_getc_helper_FUN_005fe700(scanf_state_t * state)
+; __cdecl int __cdecl crt_stdio_c_getc_helper_FUN_005fe700(scanf_state_t *state)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_SkipCinematic_FUN_005602e0()
+; unknown undefined4 core_script_cpp_CScript_SkipCinematic_FUN_005602e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

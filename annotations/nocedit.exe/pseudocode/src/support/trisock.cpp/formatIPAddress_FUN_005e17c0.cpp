@@ -2,7 +2,7 @@
 // Address: 005e17c0
 // Address Range: [[005e17c0, 005e17f0]]
 // Convention: __cdecl
-// Signature: void support_trisock.cpp_formatIPAddress_FUN_005e17c0(char * output_buffer, uchar * ip_bytes)
+// Signature: void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(char *output_buffer,uchar *ip_bytes)
 
 #include "nocturne.h"
 

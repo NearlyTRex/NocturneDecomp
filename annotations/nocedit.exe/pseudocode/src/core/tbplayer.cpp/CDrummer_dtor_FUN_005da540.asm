@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrummer * core_tbplayer.cpp_CDrummer_dtor_FUN_005da540(CDrummer * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9)
+; __cdecl CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_005da540 (CDrummer *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9)
 ;
 ; Parameters:
 ; CDrummer *       Stack[0x4]:4   this_ptr

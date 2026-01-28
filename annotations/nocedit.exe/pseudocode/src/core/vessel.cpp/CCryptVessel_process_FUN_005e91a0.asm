@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_vessel.cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel * this_ptr, float delta_time)
+; __cdecl void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

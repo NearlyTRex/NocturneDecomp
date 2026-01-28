@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dynamite.cpp_CDynamite_process_FUN_0049cfb0(CDynamite * this_ptr, float delta_time)
+; __cdecl void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CDynamite *      Stack[0x4]:4   this_ptr

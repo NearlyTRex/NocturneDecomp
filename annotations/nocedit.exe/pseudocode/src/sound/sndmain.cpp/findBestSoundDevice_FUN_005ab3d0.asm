@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_findBestSoundDevice_FUN_005ab3d0(void)
+; __cdecl int __cdecl sound_sndmain_cpp_findBestSoundDevice_FUN_005ab3d0(void)
 ;
 ; Local Variables:
 ; undefined1[280]  Stack[-0x464]:280  device_info2

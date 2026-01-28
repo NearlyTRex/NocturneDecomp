@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_motion.cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570(CMotionController * this_ptr, float start_frame, float end_frame, float scale_factor)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570 (CMotionController *this_ptr,float start_frame,float end_frame,float scale_factor)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

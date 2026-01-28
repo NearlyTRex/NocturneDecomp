@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_staticInit_FUN_00408320(void)
+; __cdecl void __cdecl core_actor_cpp_staticInit_FUN_00408320(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_pod.cpp_CPod_remount_FUN_00550af0(CPod * this_ptr)
+; __cdecl void __cdecl engine_pod_cpp_CPod_remount_FUN_00550af0(CPod *this_ptr)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic * tex_to_load, SMRGLTextureBasic * tex_to_update, SRGBColorPalette * palette_data)
+; __cdecl void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930 (SMRGLTextureBasic *tex_to_load,SMRGLTextureBasic *tex_to_update, SRGBColorPalette *palette_data)
 ;
 ; Parameters:
 ; SMRGLTextureBasic * Stack[0x4]:4   tex_to_load

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_00472760(CDemonLight * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr

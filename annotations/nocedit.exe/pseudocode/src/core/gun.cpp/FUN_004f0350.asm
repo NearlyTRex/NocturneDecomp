@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gun.cpp_FUN_004f0350()
+; unknown undefined4 core_gun_cpp_FUN_004f0350(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60

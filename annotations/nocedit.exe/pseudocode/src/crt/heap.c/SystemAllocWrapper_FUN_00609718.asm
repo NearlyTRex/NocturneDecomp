@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_heap.c_SystemAllocWrapper_FUN_00609718(ulong size)
+; __cdecl void * __cdecl crt_heap_c_SystemAllocWrapper_FUN_00609718(ulong size)
 ;
 ; Parameters:
 ; ulong            Stack[0x4]:4   size

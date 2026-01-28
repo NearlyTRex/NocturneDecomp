@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470(SMRGLHeaderPrimitive * polygon_data, int line_color)
+; __cdecl void __cdecl shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470 (SMRGLHeaderPrimitive *polygon_data,int line_color)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_data

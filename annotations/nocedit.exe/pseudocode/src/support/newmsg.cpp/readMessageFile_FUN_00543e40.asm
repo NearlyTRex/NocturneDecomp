@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void support_newmsg.cpp_readMessageFile_FUN_00543e40(char * message_file)
+; __cdecl void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   message_file

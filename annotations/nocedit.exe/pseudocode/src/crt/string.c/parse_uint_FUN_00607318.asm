@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_string.c_parse_uint_FUN_00607318(char * str, int * result)
+; __cdecl char * __cdecl crt_string_c_parse_uint_FUN_00607318(char *str,int *result)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPodFile * engine_pod.cpp_CPod_locateFile_FUN_005512f0(CPod * this_ptr, char * base_path, char * filename, int * file_index_out)
+; __cdecl CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_005512f0 (CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr

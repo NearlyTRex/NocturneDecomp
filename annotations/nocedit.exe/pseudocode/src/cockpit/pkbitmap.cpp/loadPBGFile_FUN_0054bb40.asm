@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40(CPackedBitmapSet * bitmap_set, char * pbg_filename, char * palette_filename, int param3, int param4, int selected_bitmap_index)
+; __cdecl int __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40 (CPackedBitmapSet *bitmap_set,char *pbg_filename,char *palette_filename,int param3, int param4,int selected_bitmap_index)
 ;
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   bitmap_set

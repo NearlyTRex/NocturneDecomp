@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cow.cpp_FUN_00444310()
+; unknown void core_cow_cpp_FUN_00444310(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xc0]:1  local_c0

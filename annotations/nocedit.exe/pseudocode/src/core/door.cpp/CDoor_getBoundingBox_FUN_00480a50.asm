@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * core_door.cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor * this_ptr, CBoundingBox3D * out_box)
+; __cdecl CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr

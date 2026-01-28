@@ -2,7 +2,7 @@
 // Address: 005073a0
 // Address Range: [[005073a0, 00507a46]]
 // Convention: __cdecl
-// Signature: void core_main.c_showDeveloperToolsMenu_FUN_005073a0(void)
+// Signature: void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
 
 #include "nocturne.h"
 

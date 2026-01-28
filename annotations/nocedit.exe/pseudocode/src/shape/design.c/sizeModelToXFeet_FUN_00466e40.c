@@ -2,7 +2,7 @@
 // Address: 00466e40
 // Address Range: [[00466e40, 00467000]]
 // Convention: __cdecl
-// Signature: void shape_design.c_sizeModelToXFeet_FUN_00466e40(void)
+// Signature: void __cdecl shape_design_c_sizeModelToXFeet_FUN_00466e40(void)
 
 #include "nocturne.h"
 

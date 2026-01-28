@@ -2,7 +2,7 @@
 // Address: 0049a530
 // Address Range: [[0049a530, 0049a596]]
 // Convention: __cdecl
-// Signature: void core_dtri.cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

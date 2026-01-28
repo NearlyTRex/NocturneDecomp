@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_validateModelTextures_FUN_00459a20(char * directory_path, int mode)
+; __cdecl int __cdecl shape_design_c_validateModelTextures_FUN_00459a20(char *directory_path,int mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   directory_path

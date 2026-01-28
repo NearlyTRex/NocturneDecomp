@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_freeSkeletons_FUN_005a1fb0(CSkeleton * * array)
+; __cdecl void __cdecl core_skeleton_cpp_freeSkeletons_FUN_005a1fb0(CSkeleton **array)
 ;
 ; Parameters:
 ; CSkeleton * *    Stack[0x4]:4   array

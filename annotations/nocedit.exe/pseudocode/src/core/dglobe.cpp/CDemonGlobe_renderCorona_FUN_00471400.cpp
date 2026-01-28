@@ -2,7 +2,7 @@
 // Address: 00471400
 // Address Range: [[00471400, 004715d0]]
 // Convention: __cdecl
-// Signature: void core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe * this_ptr)
+// Signature: void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00438420
 // Address Range: [[00438420, 00438b7f]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_clipPolygonToViewport_FUN_00438420(int vertex_count, int * vertex_indices)
+// Signature: void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_count,int *vertex_indices)
 
 #include "nocturne.h"
 

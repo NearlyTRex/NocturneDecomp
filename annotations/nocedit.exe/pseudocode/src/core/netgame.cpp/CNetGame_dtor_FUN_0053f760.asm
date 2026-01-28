@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CNetGame * core_netgame.cpp_CNetGame_dtor_FUN_0053f760(CNetGame * this_ptr)
+; __cdecl CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr)
 ;
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr

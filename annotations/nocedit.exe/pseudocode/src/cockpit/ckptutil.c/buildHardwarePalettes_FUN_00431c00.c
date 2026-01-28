@@ -2,7 +2,7 @@
 // Address: 00431c00
 // Address Range: [[00431c00, 00431cf9]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00(char * rgb_palette_data)
+// Signature: void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_palette_data)
 
 #include "nocturne.h"
 

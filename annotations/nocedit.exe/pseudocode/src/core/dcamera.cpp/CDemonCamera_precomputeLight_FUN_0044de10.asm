@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera * this_ptr, CDemonLight * light_source, CRect * rect)
+; __cdecl void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10 (CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

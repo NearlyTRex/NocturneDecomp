@@ -2,7 +2,7 @@
 // Address: 00544270
 // Address Range: [[00544270, 00544356]]
 // Convention: __cdecl
-// Signature: char * support_newmsg.cpp_decryptMessage_FUN_00544270(SEncryptedMessage * encrypted_msg)
+// Signature: char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(SEncryptedMessage *encrypted_msg)
 
 #include "nocturne.h"
 

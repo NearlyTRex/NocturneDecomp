@@ -2,7 +2,7 @@
 // Address: 0044b960
 // Address Range: [[0044b960, 0044ba2f]]
 // Convention: unknown
-// Signature: undefined core_curtain.cpp_FindCurtainTextures_FUN_0044b960()
+// Signature: void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)
 
 #include "nocturne.h"
 

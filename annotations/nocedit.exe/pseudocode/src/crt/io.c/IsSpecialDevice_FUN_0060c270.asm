@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_io.c_IsSpecialDevice_FUN_0060c270(int handle_index)
+; __cdecl int __cdecl crt_io_c_IsSpecialDevice_FUN_0060c270(int handle_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   handle_index

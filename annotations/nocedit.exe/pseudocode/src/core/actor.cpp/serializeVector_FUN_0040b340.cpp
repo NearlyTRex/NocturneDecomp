@@ -2,7 +2,7 @@
 // Address: 0040b340
 // Address Range: [[0040b340, 0040b3d0]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeVector_FUN_0040b340(CVector3f * vector_ptr, char * property_name)
+// Signature: void __cdecl core_actor_cpp_serializeVector_FUN_0040b340(CVector3f *vector_ptr,char *property_name)
 
 #include "nocturne.h"
 

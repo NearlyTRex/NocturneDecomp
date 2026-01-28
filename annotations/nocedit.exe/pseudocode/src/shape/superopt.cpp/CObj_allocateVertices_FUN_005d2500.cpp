@@ -2,7 +2,7 @@
 // Address: 005d2500
 // Address Range: [[005d2500, 005d2577]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500(CObj * this_ptr, int vertex_count)
+// Signature: int __cdecl shape_superopt_cpp_CObj_allocateVertices_FUN_005d2500(CObj *this_ptr,int vertex_count)
 
 #include "nocturne.h"
 

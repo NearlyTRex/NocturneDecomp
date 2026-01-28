@@ -2,7 +2,7 @@
 // Address: 00457cf0
 // Address Range: [[00457cf0, 00457eaa]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams * params)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams *params)
 
 #include "nocturne.h"
 

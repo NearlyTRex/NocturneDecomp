@@ -2,7 +2,7 @@
 // Address: 0050c640
 // Address Range: [[0050c640, 0050c919]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_invertTransformMatrix_FUN_0050c640(void)
+// Signature: void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
 
 #include "nocturne.h"
 

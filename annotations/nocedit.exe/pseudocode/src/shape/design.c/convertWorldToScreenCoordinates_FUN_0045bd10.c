@@ -2,7 +2,7 @@
 // Address: 0045bd10
 // Address Range: [[0045bd10, 0045be3d]]
 // Convention: __stack_esi
-// Signature: SVertexData * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)
+// Signature: SVertexData * __stack_esi shape_design_c_convertWorldToScreenCoordinates_FUN_0045bd10 (SScreenCoord *input_coords,SVertexData *output_vertex)
 
 #include "nocturne.h"
 

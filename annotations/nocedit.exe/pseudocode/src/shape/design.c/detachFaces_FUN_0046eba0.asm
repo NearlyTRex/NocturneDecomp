@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_detachFaces_FUN_0046eba0(void)
+; __cdecl void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

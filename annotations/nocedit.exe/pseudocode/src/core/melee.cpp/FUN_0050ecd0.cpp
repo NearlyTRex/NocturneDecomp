@@ -2,7 +2,7 @@
 // Address: 0050ecd0
 // Address Range: [[0050ecd0, 0050ecec]]
 // Convention: unknown
-// Signature: undefined core_melee.cpp_FUN_0050ecd0()
+// Signature: void core_melee_cpp_FUN_0050ecd0(void)
 
 #include "nocturne.h"
 

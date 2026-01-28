@@ -2,7 +2,7 @@
 // Address: 005b0d70
 // Address Range: [[005b0d70, 005b0e10]]
 // Convention: __cdecl
-// Signature: int sound_sndwav.cpp_CWavInDevice_close_FUN_005b0d70(CWavInDevice * this_ptr)
+// Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_005b0d70(CWavInDevice *this_ptr)
 
 #include "nocturne.h"
 

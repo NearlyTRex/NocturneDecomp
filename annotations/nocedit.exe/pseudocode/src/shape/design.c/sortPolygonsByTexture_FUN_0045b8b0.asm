@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_sortPolygonsByTexture_FUN_0045b8b0(void)
+; __cdecl void __cdecl shape_design_c_sortPolygonsByTexture_FUN_0045b8b0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x19c]:1  local_19c

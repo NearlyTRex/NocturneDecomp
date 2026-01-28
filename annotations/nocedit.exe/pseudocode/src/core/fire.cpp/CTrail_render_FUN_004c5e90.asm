@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CTrail_render_FUN_004c5e90(CTrail * this_ptr)
+; __cdecl void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
 ;
 ; Parameters:
 ; CTrail *         Stack[0x4]:4   this_ptr

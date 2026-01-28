@@ -2,7 +2,7 @@
 // Address: 00402870
 // Address Range: [[00402870, 0040292a]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_buildColorLookupTable_FUN_00402870(void)
+// Signature: void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402870(void)
 
 #include "nocturne.h"
 

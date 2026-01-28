@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_quantize.cpp_quantizeRawPixelData_FUN_00556490(uchar * src_pixel_data, uchar * * out_pixel_data, uchar * * out_palette, short width, short height, uint bit_depth, int line_number, int show_progress)
+; __cdecl int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490 (uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height ,uint bit_depth,int line_number,int show_progress)
 ;
 ; Parameters:
 ; uchar *          Stack[0x4]:4   src_pixel_data

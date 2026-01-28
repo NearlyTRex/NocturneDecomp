@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this_ptr, int enable_extended)
+; __cdecl void __cdecl engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys *this_ptr,int enable_extended)
 ;
 ; Parameters:
 ; CKeys *          Stack[0x4]:4   this_ptr

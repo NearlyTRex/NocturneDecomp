@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTeleport * core_teleport.cpp_CTeleport_dtor_FUN_005dae50(CTeleport * this_ptr, uint d1, uint d2)
+; __cdecl CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_005dae50(CTeleport *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr

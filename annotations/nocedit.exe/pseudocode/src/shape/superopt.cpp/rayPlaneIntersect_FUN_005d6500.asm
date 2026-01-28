@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)
+; __cdecl double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500 (CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point,CVector3d *plane_normal)
 ;
 ; Parameters:
 ; CVector3d *      Stack[0x8]:4   ray_origin

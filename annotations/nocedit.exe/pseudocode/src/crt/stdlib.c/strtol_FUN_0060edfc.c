@@ -2,7 +2,7 @@
 // Address: 0060edfc
 // Address Range: [[0060edfc, 0060ee17]]
 // Convention: __cdecl
-// Signature: long crt_stdlib.c_strtol_FUN_0060edfc(char * str, char * * endptr, int base)
+// Signature: long __cdecl crt_stdlib_c_strtol_FUN_0060edfc(char *str,char **endptr,int base)
 
 #include "nocturne.h"
 

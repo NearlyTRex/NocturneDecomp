@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_string.c_mb_get_last_char_FUN_00605aa0(char * start, char * end)
+; __cdecl char * __cdecl crt_string_c_mb_get_last_char_FUN_00605aa0(char *start,char *end)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   start

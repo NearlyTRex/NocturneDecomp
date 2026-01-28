@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBattery * core_battery.cpp_CBattery_dtor_FUN_00418160(CBattery * this_ptr, uint d1, uint d2)
+; __cdecl CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_00418160(CBattery *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

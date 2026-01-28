@@ -2,7 +2,7 @@
 // Address: 004a3d90
 // Address Range: [[004a3d90, 004a3e01]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004a3d90(CPickList * this_ptr, char * text)
+// Signature: void __cdecl shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(CPickList *this_ptr,char *text)
 
 #include "nocturne.h"
 

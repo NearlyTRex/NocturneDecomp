@@ -2,7 +2,7 @@
 // Address: 0050c530
 // Address Range: [[0050c530, 0050c5af]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_initializeTrigTables_FUN_0050c530(void)
+// Signature: void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
 
 #include "nocturne.h"
 

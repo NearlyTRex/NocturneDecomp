@@ -2,7 +2,7 @@
 // Address: 005ff524
 // Address Range: [[005ff524, 005ff59b]]
 // Convention: __cdecl
-// Signature: istrstream * crt_strstream.cpp_istrstream_constructor_FUN_005ff524(istrstream * this_ptr, int ctor_flags, char * buffer, int size)
+// Signature: istrstream * __cdecl crt_strstream_cpp_istrstream_constructor_FUN_005ff524 (istrstream *this_ptr,int ctor_flags,char *buffer,int size)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_frankgen.cpp_CFrankenstienMachine_load_FUN_004d19e0()
+; unknown void core_frankgen_cpp_CFrankenstienMachine_load_FUN_004d19e0(void)
 ;
 ;
 ; Referenced Globals:

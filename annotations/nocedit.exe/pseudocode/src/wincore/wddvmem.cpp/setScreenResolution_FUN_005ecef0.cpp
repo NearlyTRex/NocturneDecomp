@@ -2,7 +2,7 @@
 // Address: 005ecef0
 // Address Range: [[005ecef0, 005ed29e]]
 // Convention: __cdecl
-// Signature: int wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0(int width, int height, int bits_per_pixel)
+// Signature: int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int height,int bits_per_pixel)
 
 #include "nocturne.h"
 

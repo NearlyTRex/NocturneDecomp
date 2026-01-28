@@ -2,7 +2,7 @@
 // Address: 00445820
 // Address Range: [[00445820, 004460ff]]
 // Convention: __cdecl
-// Signature: void shape_cramtex.cpp_generateTextureAtlas_FUN_00445820(void)
+// Signature: void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void)
 
 #include "nocturne.h"
 

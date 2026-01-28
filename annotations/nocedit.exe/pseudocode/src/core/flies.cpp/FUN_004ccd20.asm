@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SFly * core_flies.cpp_FUN_004ccd20(SFly * this_ptr)
+; __cdecl SFly * __cdecl core_flies_cpp_FUN_004ccd20(SFly *this_ptr)
 ;
 ; Parameters:
 ; SFly *           Stack[0x4]:4   this_ptr

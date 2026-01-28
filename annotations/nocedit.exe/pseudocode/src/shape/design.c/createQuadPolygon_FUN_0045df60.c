@@ -2,7 +2,7 @@
 // Address: 0045df60
 // Address Range: [[0045df60, 0045e03f]]
 // Convention: unknown
-// Signature: undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+// Signature: void shape_design_c_createQuadPolygon_FUN_0045df60(void)
 
 #include "nocturne.h"
 

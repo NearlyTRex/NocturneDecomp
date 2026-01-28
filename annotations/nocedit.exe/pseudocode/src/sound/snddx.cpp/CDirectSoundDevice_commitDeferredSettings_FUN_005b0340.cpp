@@ -2,7 +2,7 @@
 // Address: 005b0340
 // Address Range: [[005b0340, 005b038c]]
 // Convention: __cdecl
-// Signature: void sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340(CDirectSoundDevice * this_ptr)
+// Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340(CDirectSoundDevice *this_ptr)
 
 #include "nocturne.h"
 

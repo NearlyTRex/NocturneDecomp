@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290 (CDemonActor *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

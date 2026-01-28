@@ -2,7 +2,7 @@
 // Address: 0047b1e0
 // Address Range: [[0047b1e0, 0047bbb4]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(CKeyFramedModel * this_ptr, float angle_threshold_radians)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (CKeyFramedModel *this_ptr,float angle_threshold_radians)
 
 #include "nocturne.h"
 

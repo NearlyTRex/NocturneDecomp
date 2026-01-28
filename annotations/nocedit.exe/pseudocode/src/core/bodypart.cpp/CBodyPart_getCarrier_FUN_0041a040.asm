@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040(CBodyPart * this_ptr)
+; __cdecl CDemonActor * __cdecl core_bodypart_cpp_CBodyPart_getCarrier_FUN_0041a040(CBodyPart *this_ptr)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

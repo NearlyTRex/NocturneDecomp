@@ -2,7 +2,7 @@
 // Address: 005adff0
 // Address Range: [[005adff0, 005ae1b6]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_fillStreamBuffer_FUN_005adff0(void)
+// Signature: int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
 
 #include "nocturne.h"
 

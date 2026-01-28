@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int x_max, int y_max, int color)
+; __cdecl void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00401f40 (char *text,int x_start,int y_start,int x_max,int y_max,int color)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text

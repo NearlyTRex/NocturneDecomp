@@ -2,7 +2,7 @@
 // Address: 00466250
 // Address Range: [[00466250, 0046660c]]
 // Convention: __cdecl
-// Signature: int shape_design.c_findClosestPolygonToMouse_FUN_00466250(void)
+// Signature: int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0040b520
 // Address Range: [[0040b520, 0040b5bd]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f * quat_ptr, char * property_type)
+// Signature: void __cdecl core_actor_cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *property_type)
 
 #include "nocturne.h"
 

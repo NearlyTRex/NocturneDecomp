@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_svetlana.cpp_FUN_005d9260()
+; unknown void core_svetlana_cpp_FUN_005d9260(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_killSfxByName_FUN_005aa2f0(char * sample_name)
+; __cdecl void __cdecl sound_sndmain_cpp_killSfxByName_FUN_005aa2f0(char *sample_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   sample_name

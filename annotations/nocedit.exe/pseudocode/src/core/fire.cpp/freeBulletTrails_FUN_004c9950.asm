@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeBulletTrails_FUN_004c9950(CBulletTrail * * array)
+; __cdecl void __cdecl core_fire_cpp_freeBulletTrails_FUN_004c9950(CBulletTrail **array)
 ;
 ; Parameters:
 ; CBulletTrail * * Stack[0x4]:4   array

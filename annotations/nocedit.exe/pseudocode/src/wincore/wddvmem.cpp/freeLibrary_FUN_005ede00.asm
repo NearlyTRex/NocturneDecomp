@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl BOOL wincore_wddvmem.cpp_freeLibrary_FUN_005ede00(HMODULE hLibModule)
+; __cdecl BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_005ede00(HMODULE hLibModule)
 ;
 ; Parameters:
 ; HMODULE          Stack[0x4]:4   hLibModule

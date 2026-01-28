@@ -2,7 +2,7 @@
 // Address: 00471770
 // Address Range: [[00471770, 00471842]]
 // Convention: __cdecl
-// Signature: int core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770(CDemonGlobe * this_ptr, CVector3f * reference_position, CMatrix3x3f * rotation_matrix, CVector3f * aabb_min, CVector3f * aabb_max)
+// Signature: int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770 (CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix, CVector3f *aabb_min,CVector3f *aabb_max)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTVBat * core_tvbat.cpp_factoryFunc_FUN_005e3e80(void)
+; __cdecl CTVBat * __cdecl core_tvbat_cpp_factoryFunc_FUN_005e3e80(void)
 ;
 ;
 ; XREF[1]:

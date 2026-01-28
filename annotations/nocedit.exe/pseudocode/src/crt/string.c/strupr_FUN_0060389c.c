@@ -2,7 +2,7 @@
 // Address: 0060389c
 // Address Range: [[0060389c, 006038be]]
 // Convention: __cdecl
-// Signature: char * crt_string.c_strupr_FUN_0060389c(char * string)
+// Signature: char * __cdecl crt_string_c_strupr_FUN_0060389c(char *string)
 
 #include "nocturne.h"
 

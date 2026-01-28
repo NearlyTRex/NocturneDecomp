@@ -2,7 +2,7 @@
 // Address: 0053ccf0
 // Address Range: [[0053ccf0, 0053d183]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0()
+// Signature: void core_msnedit_cpp_UserInputTempMission_FUN_0053ccf0(void)
 
 #include "nocturne.h"
 

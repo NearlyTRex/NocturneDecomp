@@ -2,7 +2,7 @@
 // Address: 00418b50
 // Address Range: [[00418b50, 00418c03]]
 // Convention: unknown
-// Signature: undefined core_biggs.cpp_FUN_00418b50()
+// Signature: void core_biggs_cpp_FUN_00418b50(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_fire.cpp_CRainDrop_onCollision_FUN_004c64b0(CRainDrop * this_ptr, CVector3f * collision_normal)
+; __cdecl int __cdecl core_fire_cpp_CRainDrop_onCollision_FUN_004c64b0(CRainDrop *this_ptr,CVector3f *collision_normal)
 ;
 ; Parameters:
 ; CRainDrop *      Stack[0x4]:4   this_ptr

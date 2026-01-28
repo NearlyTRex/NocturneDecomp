@@ -2,7 +2,7 @@
 // Address: 00469140
 // Address Range: [[00469140, 00469219]]
 // Convention: __cdecl
-// Signature: void shape_design.c_addVertexFromSphericalCoordsOctant_FUN_00469140(float heading_angle, float pitch_angle, float radius)
+// Signature: void __cdecl shape_design_c_addVertexFromSphericalCoordsOctant_FUN_00469140 (float heading_angle,float pitch_angle,float radius)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004e5d00
 // Address Range: [[004e5d00, 004e5d4d]]
 // Convention: __cdecl
-// Signature: CGasMask * core_gasmask.cpp_CGasMask_ctor_FUN_004e5d00(CGasMask * this_ptr)
+// Signature: CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(CGasMask *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_freeAllModels_FUN_00478cb0(void)
+; __cdecl void __cdecl core_dmodel_cpp_freeAllModels_FUN_00478cb0(void)
 ;
 ;
 ; XREF[5]:

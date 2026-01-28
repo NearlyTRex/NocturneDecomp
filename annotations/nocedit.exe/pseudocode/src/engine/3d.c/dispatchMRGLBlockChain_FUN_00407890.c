@@ -2,7 +2,7 @@
 // Address: 00407890
 // Address Range: [[00407890, 00407910]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended * chain)
+// Signature: void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended *chain)
 
 #include "nocturne.h"
 

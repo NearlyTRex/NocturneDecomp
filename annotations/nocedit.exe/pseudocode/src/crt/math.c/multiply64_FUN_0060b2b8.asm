@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister ulonglong crt_math.c_multiply64_FUN_0060b2b8(ulonglong a, ulonglong b)
+; __watcallRegister ulonglong crt_math_c_multiply64_FUN_0060b2b8(ulonglong a,ulonglong b)
 ;
 ;
 ; XREF[1]:

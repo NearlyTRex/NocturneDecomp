@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_gore.cpp_staticInit_FUN_004eb8c0(void)
+; __cdecl void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void)
 ;
 ;
 ; Referenced Globals:

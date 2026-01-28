@@ -2,7 +2,7 @@
 // Address: 0045b990
 // Address Range: [[0045b990, 0045ba57]]
 // Convention: __cdecl
-// Signature: void shape_design.c_handleEditorHotkeys_FUN_0045b990(void)
+// Signature: void __cdecl shape_design_c_handleEditorHotkeys_FUN_0045b990(void)
 
 #include "nocturne.h"
 

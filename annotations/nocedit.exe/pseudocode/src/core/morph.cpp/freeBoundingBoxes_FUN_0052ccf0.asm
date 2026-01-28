@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_morph.cpp_freeBoundingBoxes_FUN_0052ccf0(CBoundingBox3D * * array)
+; __cdecl void __cdecl core_morph_cpp_freeBoundingBoxes_FUN_0052ccf0(CBoundingBox3D **array)
 ;
 ; Parameters:
 ; CBoundingBox3D * * Stack[0x4]:4   array

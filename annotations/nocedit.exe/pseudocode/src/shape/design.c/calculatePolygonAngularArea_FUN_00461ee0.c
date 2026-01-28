@@ -2,7 +2,7 @@
 // Address: 00461ee0
 // Address Range: [[00461ee0, 00462048]]
 // Convention: __cdecl
-// Signature: double shape_design.c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon * polygon_ptr)
+// Signature: double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *polygon_ptr)
 
 #include "nocturne.h"
 

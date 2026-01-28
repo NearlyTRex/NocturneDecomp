@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
+; __cdecl CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041dd00(CBox *this_ptr)
 ;
 ; Parameters:
 ; CBox *           Stack[0x4]:4   this_ptr

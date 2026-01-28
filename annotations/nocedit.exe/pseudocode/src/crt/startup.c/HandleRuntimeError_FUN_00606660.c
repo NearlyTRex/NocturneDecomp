@@ -2,7 +2,7 @@
 // Address: 00606660
 // Address Range: [[00606660, 0060668d]]
 // Convention: __cdecl
-// Signature: void crt_startup.c_HandleRuntimeError_FUN_00606660(char * error_message, int error_level)
+// Signature: void __cdecl crt_startup_c_HandleRuntimeError_FUN_00606660(char *error_message,int error_level)
 
 #include "nocturne.h"
 

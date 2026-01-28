@@ -2,7 +2,7 @@
 // Address: 005d3380
 // Address Range: [[005d3380, 005d33c4]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_findPolygonIndex_FUN_005d3380(CObj * this_ptr, CPoly * poly_ptr)
+// Signature: int __cdecl shape_superopt_cpp_CObj_findPolygonIndex_FUN_005d3380(CObj *this_ptr,CPoly *poly_ptr)
 
 #include "nocturne.h"
 

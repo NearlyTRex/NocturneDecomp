@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_drone.cpp_FUN_0048ec70()
+; unknown void core_drone_cpp_FUN_0048ec70(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xfc]:8  local_fc

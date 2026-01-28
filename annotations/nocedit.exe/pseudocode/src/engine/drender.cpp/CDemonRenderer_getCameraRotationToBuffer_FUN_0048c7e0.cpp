@@ -2,7 +2,7 @@
 // Address: 0048c7e0
 // Address Range: [[0048c7e0, 0048c7fc]]
 // Convention: __stack_esi
-// Signature: CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
+// Signature: CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 (CDemonRenderer *this_ptr,CVector3i *output)
 
 #include "nocturne.h"
 

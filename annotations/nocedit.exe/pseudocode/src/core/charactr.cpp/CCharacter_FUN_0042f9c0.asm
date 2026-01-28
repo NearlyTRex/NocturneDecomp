@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_charactr.cpp_CCharacter_FUN_0042f9c0(CCharacter * this_ptr)
+; __cdecl int __cdecl core_charactr_cpp_CCharacter_FUN_0042f9c0(CCharacter *this_ptr)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

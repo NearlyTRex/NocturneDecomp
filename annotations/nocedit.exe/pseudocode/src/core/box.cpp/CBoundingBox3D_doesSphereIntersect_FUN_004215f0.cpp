@@ -2,7 +2,7 @@
 // Address: 004215f0
 // Address Range: [[004215f0, 00421647]]
 // Convention: __cdecl
-// Signature: int core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0(CBoundingBox3D * this_ptr, CVector3f * sphere_center, float radius)
+// Signature: int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0 (CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius)
 
 #include "nocturne.h"
 

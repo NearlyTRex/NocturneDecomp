@@ -2,7 +2,7 @@
 // Address: 0049cd40
 // Address Range: [[0049cd40, 0049cd7c]]
 // Convention: __cdecl
-// Signature: void core_dynamite.cpp_staticInit_FUN_0049cd40(void)
+// Signature: void __cdecl core_dynamite_cpp_staticInit_FUN_0049cd40(void)
 
 #include "nocturne.h"
 

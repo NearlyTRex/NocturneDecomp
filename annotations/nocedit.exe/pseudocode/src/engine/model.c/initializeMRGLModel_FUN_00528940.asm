@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_model.c_initializeMRGLModel_FUN_00528940(SMRGLHeaderExtended * mrgl)
+; __cdecl void __cdecl engine_model_c_initializeMRGLModel_FUN_00528940(SMRGLHeaderExtended *mrgl)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl

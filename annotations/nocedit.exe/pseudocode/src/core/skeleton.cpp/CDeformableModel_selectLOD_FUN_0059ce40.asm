@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)
+; __cdecl int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40 (CDeformableModel *this_ptr,CBoundingBox3D *bounding_box)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

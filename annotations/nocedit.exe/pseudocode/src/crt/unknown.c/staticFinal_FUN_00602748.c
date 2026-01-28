@@ -2,7 +2,7 @@
 // Address: 00602748
 // Address Range: [[00602748, 00602782]]
 // Convention: __cdecl
-// Signature: void crt_unknown.c_staticFinal_FUN_00602748(void)
+// Signature: void __cdecl crt_unknown_c_staticFinal_FUN_00602748(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0054a9b0
 // Address Range: [[0054a9b0, 0054aa1b]]
 // Convention: __cdecl
-// Signature: int cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0(CPackedBitmap * this_ptr, int x_coordinate, int row_index)
+// Signature: int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 (CPackedBitmap *this_ptr,int x_coordinate,int row_index)
 
 #include "nocturne.h"
 

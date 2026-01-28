@@ -2,7 +2,7 @@
 // Address: 00459360
 // Address Range: [[00459360, 0045939f]]
 // Convention: __cdecl
-// Signature: void shape_design.c_skipLines_FUN_00459360(FILE * file, int line_count)
+// Signature: void __cdecl shape_design_c_skipLines_FUN_00459360(FILE *file,int line_count)
 
 #include "nocturne.h"
 

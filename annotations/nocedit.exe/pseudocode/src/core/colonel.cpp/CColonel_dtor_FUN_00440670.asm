@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CColonel * core_colonel.cpp_CColonel_dtor_FUN_00440670(CColonel * this_ptr, uint d1, uint d2)
+; __cdecl CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CColonel *       Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00543800
 // Address Range: [[00543800, 005438b7]]
 // Convention: unknown
-// Signature: undefined core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800()
+// Signature: void core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
 
 #include "nocturne.h"
 

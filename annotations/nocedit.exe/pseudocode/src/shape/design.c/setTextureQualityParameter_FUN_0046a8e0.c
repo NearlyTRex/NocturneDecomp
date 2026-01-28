@@ -2,7 +2,7 @@
 // Address: 0046a8e0
 // Address Range: [[0046a8e0, 0046a925]]
 // Convention: __cdecl
-// Signature: void shape_design.c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
+// Signature: void __cdecl shape_design_c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
 
 #include "nocturne.h"
 

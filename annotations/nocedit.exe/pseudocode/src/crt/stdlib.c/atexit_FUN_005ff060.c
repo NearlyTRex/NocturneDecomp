@@ -2,7 +2,7 @@
 // Address: 005ff060
 // Address Range: [[005ff060, 005ff06d]]
 // Convention: __cdecl
-// Signature: void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+// Signature: void __cdecl crt_stdlib_c_atexit_FUN_005ff060(WatcomStaticDestructorNode *exit_node)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0060cfe4
 // Address Range: [[0060cfe4, 0060d018]]
 // Convention: unknown
-// Signature: undefined crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4()
+// Signature: bool crt_signal_c_unregisterConsoleHandler_FUN_0060cfe4(void)
 
 #include "nocturne.h"
 

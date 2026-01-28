@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0(uint flag_mask)
+; __cdecl void __cdecl sound_sndmain_cpp_clearNextSfxFlagBits_FUN_005a8bb0(uint flag_mask)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   flag_mask

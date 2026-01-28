@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_texlist.cpp_CTextureList_setMasterTextureSelection_FUN_005dc6c0(CTextureList * this_ptr, char * filename)
+; __cdecl void __cdecl core_texlist_cpp_CTextureList_setMasterTextureSelection_FUN_005dc6c0 (CTextureList *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 006082e0
 // Address Range: [[006082e0, 00608351]]
 // Convention: __cdecl
-// Signature: DWORD crt_file.c_get_file_attributes_FUN_006082e0(char * filename)
+// Signature: DWORD __cdecl crt_file_c_get_file_attributes_FUN_006082e0(char *filename)
 
 #include "nocturne.h"
 

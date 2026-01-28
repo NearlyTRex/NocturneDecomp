@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c(int character, scanf_state_t * state)
+; __cdecl int __cdecl crt_stdio_c_scanf_ungetc_wrapper_FUN_0060493c(int character,scanf_state_t *state)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character

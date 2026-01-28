@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_sentinel.cpp_FUN_00568ef0()
+; unknown void core_sentinel_cpp_FUN_00568ef0(void)
 ;
 ;
 ; Called Functions:

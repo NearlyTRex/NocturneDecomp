@@ -2,7 +2,7 @@
 // Address: 0050f150
 // Address Range: [[0050f150, 0050f172]]
 // Convention: __cdecl
-// Signature: void shape_memdbg.cpp_traceMemory_FUN_0050f150(char * format, ...)
+// Signature: void __cdecl shape_memdbg_cpp_traceMemory_FUN_0050f150(char *format,...)
 
 #include "nocturne.h"
 

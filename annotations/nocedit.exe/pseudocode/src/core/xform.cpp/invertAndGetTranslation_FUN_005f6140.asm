@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_xform.cpp_invertAndGetTranslation_FUN_005f6140(CMatrix3x4f * matrix_in, CVector3f * vector_out)
+; __cdecl CVector3f * __cdecl core_xform_cpp_invertAndGetTranslation_FUN_005f6140(CMatrix3x4f *matrix_in,CVector3f *vector_out)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_in

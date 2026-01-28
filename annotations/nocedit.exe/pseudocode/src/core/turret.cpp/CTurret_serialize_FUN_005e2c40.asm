@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_turret.cpp_CTurret_serialize_FUN_005e2c40(CTurret * this_ptr)
+; __cdecl void __cdecl core_turret_cpp_CTurret_serialize_FUN_005e2c40(CTurret *this_ptr)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr

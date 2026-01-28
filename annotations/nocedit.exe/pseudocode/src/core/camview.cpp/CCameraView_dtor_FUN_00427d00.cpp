@@ -2,7 +2,7 @@
 // Address: 00427d00
 // Address Range: [[00427d00, 00427d1f] [00427d21, 00427d48]]
 // Convention: __cdecl
-// Signature: CCameraView * core_camview.cpp_CCameraView_dtor_FUN_00427d00(CCameraView * this_ptr, uint d1)
+// Signature: CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView *this_ptr,uint d1)
 
 #include "nocturne.h"
 

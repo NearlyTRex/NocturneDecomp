@@ -2,7 +2,7 @@
 // Address: 004fcf00
 // Address Range: [[004fcf00, 004fcf6b]]
 // Convention: __cdecl
-// Signature: char * core_inv.cpp_getItemDisplayName_FUN_004fcf00(CDemonActor * actor_ptr)
+// Signature: char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004fcf00(CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 

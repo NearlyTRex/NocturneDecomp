@@ -2,7 +2,7 @@
 // Address: 004c81f0
 // Address Range: [[004c81f0, 004c822d]]
 // Convention: __cdecl
-// Signature: SLaserInfo * core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo * this_ptr)
+// Signature: SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo *this_ptr)
 
 #include "nocturne.h"
 

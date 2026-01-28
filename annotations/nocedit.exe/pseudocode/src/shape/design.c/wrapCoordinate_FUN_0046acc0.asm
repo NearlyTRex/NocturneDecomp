@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_wrapCoordinate_FUN_0046acc0(int coordinate, int dimension)
+; __cdecl int __cdecl shape_design_c_wrapCoordinate_FUN_0046acc0(int coordinate,int dimension)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   coordinate

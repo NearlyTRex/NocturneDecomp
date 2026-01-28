@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCheckOutList * engine_fileio.cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList * this_ptr)
+; __cdecl CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr)
 ;
 ; Parameters:
 ; CCheckOutList *  Stack[0x4]:4   this_ptr

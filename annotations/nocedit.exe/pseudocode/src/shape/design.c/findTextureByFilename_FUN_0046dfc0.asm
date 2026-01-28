@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_findTextureByFilename_FUN_0046dfc0(char * filename)
+; __cdecl int __cdecl shape_design_c_findTextureByFilename_FUN_0046dfc0(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

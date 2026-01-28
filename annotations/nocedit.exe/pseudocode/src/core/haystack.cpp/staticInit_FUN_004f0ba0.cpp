@@ -2,7 +2,7 @@
 // Address: 004f0ba0
 // Address Range: [[004f0ba0, 004f0bc3]]
 // Convention: __cdecl
-// Signature: void core_haystack.cpp_staticInit_FUN_004f0ba0(void)
+// Signature: void __cdecl core_haystack_cpp_staticInit_FUN_004f0ba0(void)
 
 #include "nocturne.h"
 

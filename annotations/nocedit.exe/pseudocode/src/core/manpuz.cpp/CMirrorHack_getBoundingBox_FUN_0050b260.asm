@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_0050b260(CMirrorHack * this_ptr, CBoundingBox3D * out_box)
+; __cdecl CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260 (CMirrorHack *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

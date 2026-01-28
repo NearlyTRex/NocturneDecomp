@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000(CDemonActor * this_ptr, CDemonActor * deleted_actor)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_onActorDeleted_FUN_0040d000 (CDemonActor *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

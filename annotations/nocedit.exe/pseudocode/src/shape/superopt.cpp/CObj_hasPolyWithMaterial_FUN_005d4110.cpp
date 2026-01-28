@@ -2,7 +2,7 @@
 // Address: 005d4110
 // Address Range: [[005d4110, 005d4155]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110(CObj * this_ptr, int material_id)
+// Signature: int __cdecl shape_superopt_cpp_CObj_hasPolyWithMaterial_FUN_005d4110(CObj *this_ptr,int material_id)
 
 #include "nocturne.h"
 

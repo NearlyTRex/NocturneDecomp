@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_pendulum.cpp_FUN_00549aa0()
+; unknown bool core_pendulum_cpp_FUN_00549aa0(void)
 ;
 ;
 ; Referenced Globals:

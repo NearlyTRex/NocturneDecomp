@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples * input_lr_samples, SMpegStereoSubbandSamples * output_samples, SMpegScalefactorBandData * scalefactor_data, SMpegFrame * frame_info, SMpegLayer3Granule * * granule_array)
+; __cdecl void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0 (SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples, SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info, SMpegLayer3Granule **granule_array)
 ;
 ; Parameters:
 ; SMpegStereoSubbandSamples * Stack[0x4]:4   input_lr_samples

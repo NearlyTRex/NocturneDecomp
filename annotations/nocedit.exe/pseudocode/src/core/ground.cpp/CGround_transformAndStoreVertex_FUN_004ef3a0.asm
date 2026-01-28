@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround * this_ptr, int column, int row)
+; __cdecl void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround *this_ptr,int column,int row)
 ;
 ; Parameters:
 ; CGround *        Stack[0x4]:4   this_ptr

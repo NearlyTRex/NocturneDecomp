@@ -2,7 +2,7 @@
 // Address: 00502460
 // Address Range: [[00502460, 0050246a]]
 // Convention: __cdecl
-// Signature: int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this_ptr)
+// Signature: int __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_00502460(CKeys *this_ptr)
 
 #include "nocturne.h"
 

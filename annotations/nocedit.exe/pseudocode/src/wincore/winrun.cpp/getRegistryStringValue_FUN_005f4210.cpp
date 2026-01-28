@@ -2,7 +2,7 @@
 // Address: 005f4210
 // Address Range: [[005f4210, 005f4285]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210(char * key_path, char * value_name, char * output_buffer, uint * buffer_size)
+// Signature: void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210 (char *key_path,char *value_name,char *output_buffer,uint *buffer_size)
 
 #include "nocturne.h"
 

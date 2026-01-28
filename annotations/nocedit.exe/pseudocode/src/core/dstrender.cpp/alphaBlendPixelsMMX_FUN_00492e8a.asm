@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a(uint * output_buffer, uint * source1_buffer, uint * source2_buffer, uint alpha1, uint alpha2, int pixel_count)
+; __cdecl void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00492e8a (uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2, int pixel_count)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   output_buffer

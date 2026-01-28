@@ -2,7 +2,7 @@
 // Address: 0060a6a0
 // Address Range: [[0060a6a0, 0060a708]]
 // Convention: __cdecl
-// Signature: void crt_memory.c_GetMemoryBounds_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)
+// Signature: void __cdecl crt_memory_c_GetMemoryBounds_FUN_0060a6a0(ThreadData *pStackBound,uint *pHeapBound)
 
 #include "nocturne.h"
 

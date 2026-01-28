@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_crossbow.cpp_staticInit_FUN_00448c00(void)
+; __cdecl void __cdecl core_crossbow_cpp_staticInit_FUN_00448c00(void)
 ;
 ;
 ; Referenced Globals:

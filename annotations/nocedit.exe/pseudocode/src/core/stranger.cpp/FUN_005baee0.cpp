@@ -2,7 +2,7 @@
 // Address: 005baee0
 // Address Range: [[005baee0, 005baf1d]]
 // Convention: __cdecl
-// Signature: float core_stranger.cpp_FUN_005baee0(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance)
+// Signature: float __cdecl core_stranger_cpp_FUN_005baee0 (int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance, CDeformableModelInstance *instance)
 
 #include "nocturne.h"
 

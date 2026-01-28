@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ulong crt_heap.c_GetBlockSize_FUN_00609790(void * ptr)
+; __cdecl ulong __cdecl crt_heap_c_GetBlockSize_FUN_00609790(void *ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

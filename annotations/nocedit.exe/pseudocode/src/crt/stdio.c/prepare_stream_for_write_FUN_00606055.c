@@ -2,7 +2,7 @@
 // Address: 00606055
 // Address Range: [[00606055, 006060ba]]
 // Convention: __cdecl
-// Signature: BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
+// Signature: BOOL __cdecl crt_stdio_c_prepare_stream_for_write_FUN_00606055(FILE *stream)
 
 #include "nocturne.h"
 

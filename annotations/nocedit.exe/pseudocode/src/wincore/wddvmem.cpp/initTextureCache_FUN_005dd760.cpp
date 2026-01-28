@@ -2,7 +2,7 @@
 // Address: 00403790
 // Address Range: [[00403790, 00403794]]
 // Convention: __cdecl
-// Signature: CTextureCache * wincore_wddvmem.cpp_initTextureCache_FUN_005dd760(void)
+// Signature: CTextureCache * __cdecl wincore_wddvmem_cpp_initTextureCache_FUN_005dd760(void)
 
 #include "nocturne.h"
 

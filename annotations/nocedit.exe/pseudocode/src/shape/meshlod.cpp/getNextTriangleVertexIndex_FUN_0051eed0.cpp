@@ -2,7 +2,7 @@
 // Address: 0051eed0
 // Address Range: [[0051eed0, 0051eedc]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_getNextTriangleVertexIndex_FUN_0051eed0(int vertex_index)
+// Signature: int __cdecl shape_meshlod_cpp_getNextTriangleVertexIndex_FUN_0051eed0(int vertex_index)
 
 #include "nocturne.h"
 

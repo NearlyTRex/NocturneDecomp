@@ -2,7 +2,7 @@
 // Address: 004900b0
 // Address Range: [[004900b0, 004901ea]]
 // Convention: __cdecl
-// Signature: void core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0(float * light_color, int u_coord, int v_coord, float * uv_offset)
+// Signature: void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0 (float *light_color,int u_coord,int v_coord,float *uv_offset)
 
 #include "nocturne.h"
 

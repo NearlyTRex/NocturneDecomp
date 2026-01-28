@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_ini.cpp_getProfileString_FUN_004fb960(char * section, char * key, char * default_value, char * output_buffer, int buffer_size, char * filename)
+; __cdecl void __cdecl engine_ini_cpp_getProfileString_FUN_004fb960 (char *section,char *key,char *default_value,char *output_buffer,int buffer_size, char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   section

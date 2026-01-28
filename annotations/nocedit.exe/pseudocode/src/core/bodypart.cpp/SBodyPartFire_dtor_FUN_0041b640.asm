@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBodyPartFire * core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyPartFire * this_ptr)
+; __cdecl SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyPartFire *this_ptr)
 ;
 ; Parameters:
 ; SBodyPartFire *  Stack[0x4]:4   this_ptr

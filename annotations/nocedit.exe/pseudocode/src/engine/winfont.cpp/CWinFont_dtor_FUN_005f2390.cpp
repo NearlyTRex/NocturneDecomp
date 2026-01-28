@@ -2,7 +2,7 @@
 // Address: 005f2390
 // Address Range: [[005f2390, 005f23ec]]
 // Convention: __cdecl
-// Signature: CWinFont * engine_winfont.cpp_CWinFont_dtor_FUN_005f2390(CWinFont * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00598ee0
 // Address Range: [[00598ee0, 00598f0e]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0(CDeformableModelInstance * this_ptr, char * filename)
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0 (CDeformableModelInstance *this_ptr,char *filename)
 
 #include "nocturne.h"
 

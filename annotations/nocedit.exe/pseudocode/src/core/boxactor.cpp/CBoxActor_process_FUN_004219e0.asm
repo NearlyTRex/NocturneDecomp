@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_boxactor.cpp_CBoxActor_process_FUN_004219e0(CBoxActor * this_ptr, float delta_time)
+; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

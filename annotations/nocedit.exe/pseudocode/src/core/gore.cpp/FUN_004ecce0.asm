@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gore.cpp_FUN_004ecce0()
+; unknown void core_gore_cpp_FUN_004ecce0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50

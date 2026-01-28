@@ -2,7 +2,7 @@
 // Address: 0060cd90
 // Address Range: [[0060cd90, 0060cdb8]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90(_INPUT_RECORD * pInputRecord)
+// Signature: int __watcallStack crt_stdio_c_IsRelevantKeyEvent_FUN_0060cd90(_INPUT_RECORD *pInputRecord)
 
 #include "nocturne.h"
 

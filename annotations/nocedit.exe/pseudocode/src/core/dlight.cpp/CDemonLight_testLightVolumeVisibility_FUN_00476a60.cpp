@@ -2,7 +2,7 @@
 // Address: 00476a60
 // Address Range: [[00476a60, 00476c13]]
 // Convention: __cdecl
-// Signature: int core_dlight.cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight * this_ptr)
+// Signature: int __cdecl core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 

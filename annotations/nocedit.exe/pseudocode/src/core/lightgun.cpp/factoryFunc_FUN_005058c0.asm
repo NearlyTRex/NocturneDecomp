@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightGun * core_lightgun.cpp_factoryFunc_FUN_005058c0(void)
+; __cdecl CLightGun * __cdecl core_lightgun_cpp_factoryFunc_FUN_005058c0(void)
 ;
 ;
 ; XREF[1]:

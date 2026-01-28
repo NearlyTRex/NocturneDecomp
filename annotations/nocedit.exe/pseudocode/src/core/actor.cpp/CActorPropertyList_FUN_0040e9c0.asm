@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_actor.cpp_CActorPropertyList_FUN_0040e9c0()
+; unknown int core_actor_cpp_CActorPropertyList_FUN_0040e9c0(void)
 ;
 ;
 ; XREF[1]:

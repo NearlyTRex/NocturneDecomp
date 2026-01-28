@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0()
+; unknown undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x9b4]:4  local_9b4

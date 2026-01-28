@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_pod.cpp_CPodFile_populateFileInfo_FUN_005501b0(CPodFile * this_ptr, int file_index, SFoundFileInfo * output_info)
+; __cdecl void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_005501b0 (CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info)
 ;
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr

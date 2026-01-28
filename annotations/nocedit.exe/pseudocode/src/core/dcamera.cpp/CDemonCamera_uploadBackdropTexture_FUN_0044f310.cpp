@@ -2,7 +2,7 @@
 // Address: 0044f310
 // Address Range: [[0044f310, 0044f3de]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

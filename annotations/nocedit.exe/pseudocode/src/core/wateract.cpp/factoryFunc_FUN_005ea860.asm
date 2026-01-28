@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWaterActor * core_wateract.cpp_factoryFunc_FUN_005ea860(void)
+; __cdecl CWaterActor * __cdecl core_wateract_cpp_factoryFunc_FUN_005ea860(void)
 ;
 ;
 ; XREF[1]:

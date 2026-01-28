@@ -2,7 +2,7 @@
 // Address: 0045c2f0
 // Address Range: [[0045c2f0, 0045c4e5]]
 // Convention: __cdecl
-// Signature: void shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int polygon_index)
+// Signature: void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int polygon_index)
 
 #include "nocturne.h"
 

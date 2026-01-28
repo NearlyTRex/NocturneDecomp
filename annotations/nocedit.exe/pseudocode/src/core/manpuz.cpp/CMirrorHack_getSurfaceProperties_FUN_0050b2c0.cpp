@@ -2,7 +2,7 @@
 // Address: 0050b2c0
 // Address Range: [[0050b2c0, 0050b2eb]]
 // Convention: __cdecl
-// Signature: void core_manpuz.cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0(CMirrorHack * this_ptr, SSurfaceInfo * surface_info)
+// Signature: void __cdecl core_manpuz_cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0 (CMirrorHack *this_ptr,SSurfaceInfo *surface_info)
 
 #include "nocturne.h"
 

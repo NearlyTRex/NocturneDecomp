@@ -2,7 +2,7 @@
 // Address: 00504720
 // Address Range: [[00504720, 0050474f]]
 // Convention: __cdecl
-// Signature: void core_level.cpp_CLevelLoader_cleanup_FUN_00504720(CLevelLoader * this_ptr)
+// Signature: void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_00504720(CLevelLoader *this_ptr)
 
 #include "nocturne.h"
 

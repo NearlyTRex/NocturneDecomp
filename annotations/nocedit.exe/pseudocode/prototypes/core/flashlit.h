@@ -5,8 +5,8 @@
 
 // Original: core_flashlit.cpp_staticInit_FUN_004cbb50
 // Address: 004cbb50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flashlit.cpp_factoryFunc_FUN_004cbb80
 // Address: 004cbb80
-CFlashlight * factoryFunc(void);
+CFlashlight * __cdecl factoryFunc(void);

@@ -2,7 +2,7 @@
 // Address: 0046ac70
 // Address Range: [[0046ac70, 0046acb6]]
 // Convention: __cdecl
-// Signature: int shape_design.c_checkNonFFBytes_FUN_0046ac70(char * buffer_ptr, int buffer_length)
+// Signature: int __cdecl shape_design_c_checkNonFFBytes_FUN_0046ac70(char *buffer_ptr,int buffer_length)
 
 #include "nocturne.h"
 

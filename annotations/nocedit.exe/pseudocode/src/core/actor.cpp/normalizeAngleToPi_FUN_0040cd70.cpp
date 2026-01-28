@@ -2,7 +2,7 @@
 // Address: 0040cd70
 // Address Range: [[0040cd70, 0040ce24]]
 // Convention: __cdecl
-// Signature: float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
+// Signature: float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
 
 #include "nocturne.h"
 

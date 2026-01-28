@@ -2,7 +2,7 @@
 // Address: 00478e10
 // Address Range: [[00478e10, 0047925a]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10(CKeyFramedModel * this_ptr, char * output_filename)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(CKeyFramedModel *this_ptr,char *output_filename)
 
 #include "nocturne.h"
 

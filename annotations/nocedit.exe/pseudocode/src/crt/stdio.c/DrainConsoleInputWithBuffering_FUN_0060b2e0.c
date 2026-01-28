@@ -2,7 +2,7 @@
 // Address: 0060b2e0
 // Address Range: [[0060b2e0, 0060b3f7]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0060b2e0(HANDLE hConsoleInput)
+// Signature: int __watcallStack crt_stdio_c_DrainConsoleInputWithBuffering_FUN_0060b2e0(HANDLE hConsoleInput)
 
 #include "nocturne.h"
 

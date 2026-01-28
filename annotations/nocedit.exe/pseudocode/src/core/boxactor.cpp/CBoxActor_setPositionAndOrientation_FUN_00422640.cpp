@@ -2,7 +2,7 @@
 // Address: 00422640
 // Address Range: [[00422640, 004226c2]]
 // Convention: __cdecl
-// Signature: void core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640(CBoxActor * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 (CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 
 #include "nocturne.h"
 

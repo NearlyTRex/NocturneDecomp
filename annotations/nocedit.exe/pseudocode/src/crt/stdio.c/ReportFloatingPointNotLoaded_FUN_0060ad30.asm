@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30(void)
+; __cdecl void __cdecl crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30(void)
 ;
 ;
 ; XREF[2]:

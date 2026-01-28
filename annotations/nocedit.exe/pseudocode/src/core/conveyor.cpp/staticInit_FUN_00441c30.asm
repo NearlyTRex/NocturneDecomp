@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_conveyor.cpp_staticInit_FUN_00441c30(void)
+; __cdecl void __cdecl core_conveyor_cpp_staticInit_FUN_00441c30(void)
 ;
 ;
 ; Referenced Globals:

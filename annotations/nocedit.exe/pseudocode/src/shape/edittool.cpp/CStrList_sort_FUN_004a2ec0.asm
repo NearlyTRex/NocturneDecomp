@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+; __cdecl void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(CStrList *this_ptr)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

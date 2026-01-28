@@ -2,7 +2,7 @@
 // Address: 00545d30
 // Address Range: [[00545d30, 00545ee7]]
 // Convention: unknown
-// Signature: undefined core_passngr.cpp_FUN_00545d30()
+// Signature: void core_passngr_cpp_FUN_00545d30(void)
 
 #include "nocturne.h"
 

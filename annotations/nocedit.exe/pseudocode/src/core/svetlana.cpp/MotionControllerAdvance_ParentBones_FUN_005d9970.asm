@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970()
+; unknown void core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(void)
 ;
 ;
 ; XREF[1]:

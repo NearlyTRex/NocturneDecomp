@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_sentinel.cpp_SentinelBehavior_FUN_00568cd0()
+; unknown void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
 ;
 ;
 ; Referenced Globals:

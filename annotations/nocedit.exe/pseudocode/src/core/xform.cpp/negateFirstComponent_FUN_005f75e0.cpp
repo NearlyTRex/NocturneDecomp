@@ -2,7 +2,7 @@
 // Address: 005f75e0
 // Address Range: [[005f75e0, 005f7614]]
 // Convention: __stack_esi
-// Signature: CQuaternion4f * core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * vector_in, CQuaternion4f * vector_out)
+// Signature: CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f *vector_in,CQuaternion4f *vector_out)
 
 #include "nocturne.h"
 

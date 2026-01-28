@@ -2,7 +2,7 @@
 // Address: 00409e70
 // Address Range: [[00409e70, 00409eb2]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_spawnFlies_FUN_00409e70(CDemonActor * this_ptr, int fly_count, float spawn_radius)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70 (CDemonActor *this_ptr,int fly_count,float spawn_radius)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 006093b0
 // Address Range: [[006093b0, 006093e6]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_DeallocateFileStruct_FUN_006093b0(FILE * file_struct)
+// Signature: void __cdecl crt_stdio_c_DeallocateFileStruct_FUN_006093b0(FILE *file_struct)
 
 #include "nocturne.h"
 

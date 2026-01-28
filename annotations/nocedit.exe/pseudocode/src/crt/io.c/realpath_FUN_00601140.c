@@ -2,7 +2,7 @@
 // Address: 00601140
 // Address Range: [[00601140, 006011ff]]
 // Convention: __cdecl
-// Signature: char * crt_io.c_realpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
+// Signature: char * __cdecl crt_io_c_realpath_FUN_00601140(char *buffer,char *path,SIZE_T buffer_size)
 
 #include "nocturne.h"
 

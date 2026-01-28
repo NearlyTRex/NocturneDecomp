@@ -2,7 +2,7 @@
 // Address: 00475210
 // Address Range: [[00475210, 00475878] [00475894, 004758c3]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemonLight * this_ptr)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 

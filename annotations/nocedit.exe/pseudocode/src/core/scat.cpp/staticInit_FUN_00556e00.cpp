@@ -2,7 +2,7 @@
 // Address: 00556e00
 // Address Range: [[00556e00, 00556e23]]
 // Convention: __cdecl
-// Signature: void core_scat.cpp_staticInit_FUN_00556e00(void)
+// Signature: void __cdecl core_scat_cpp_staticInit_FUN_00556e00(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_setLineBlendingDisabled_FUN_00434670(int disabled)
+; __cdecl void __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_00434670(int disabled)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   disabled

@@ -2,7 +2,7 @@
 // Address: 004b1e60
 // Address Range: [[004b1e60, 004b1f01]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_buildCheckoutFilePath_FUN_004b1e60(char * dest_buffer)
+// Signature: void __cdecl engine_fileio_cpp_buildCheckoutFilePath_FUN_004b1e60(char *dest_buffer)
 
 #include "nocturne.h"
 

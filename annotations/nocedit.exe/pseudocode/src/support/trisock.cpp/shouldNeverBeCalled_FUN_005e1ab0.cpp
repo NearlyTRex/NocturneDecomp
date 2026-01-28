@@ -2,7 +2,7 @@
 // Address: 005e1ab0
 // Address Range: [[005e1ab0, 005e1ad7]]
 // Convention: __cdecl
-// Signature: int support_trisock.cpp_shouldNeverBeCalled_FUN_005e1ab0(int unknown1, int unknown2)
+// Signature: int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1ab0(int unknown1,int unknown2)
 
 #include "nocturne.h"
 

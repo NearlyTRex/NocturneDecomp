@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+; __cdecl int __cdecl crt_string_c_strcmp_FUN_005fef20(char *str1,char *str2)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1

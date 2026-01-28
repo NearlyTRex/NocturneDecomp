@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeLocation_FUN_0040b480(CLocation * location_ptr, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeLocation_FUN_0040b480(CLocation *location_ptr,char *property_name)
 ;
 ; Parameters:
 ; CLocation *      Stack[0x4]:4   location_ptr

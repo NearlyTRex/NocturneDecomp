@@ -2,7 +2,7 @@
 // Address: 00547320
 // Address Range: [[00547320, 00547bfe]]
 // Convention: __cdecl
-// Signature: int core_path.cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
+// Signature: int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320 (CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint)
 
 #include "nocturne.h"
 

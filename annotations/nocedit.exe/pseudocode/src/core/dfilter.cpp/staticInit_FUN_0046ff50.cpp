@@ -2,7 +2,7 @@
 // Address: 0046ff50
 // Address Range: [[0046ff50, 0046ffc6]]
 // Convention: __cdecl
-// Signature: void core_dfilter.cpp_staticInit_FUN_0046ff50(void)
+// Signature: void __cdecl core_dfilter_cpp_staticInit_FUN_0046ff50(void)
 
 #include "nocturne.h"
 

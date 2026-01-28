@@ -2,7 +2,7 @@
 // Address: 005895f0
 // Address Range: [[005895f0, 005896a1]]
 // Convention: __cdecl
-// Signature: int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)
+// Signature: int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,FILE *file,int require_content)
 
 #include "nocturne.h"
 

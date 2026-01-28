@@ -2,7 +2,7 @@
 // Address: 005708e0
 // Address Range: [[005708e0, 00570959]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 (CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count)
 
 #include "nocturne.h"
 

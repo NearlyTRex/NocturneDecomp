@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_removeDegeneratePolygons_FUN_00465310(void)
+; __cdecl void __cdecl shape_design_c_removeDegeneratePolygons_FUN_00465310(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

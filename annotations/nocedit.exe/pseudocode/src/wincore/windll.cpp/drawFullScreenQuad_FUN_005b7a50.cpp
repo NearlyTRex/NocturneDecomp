@@ -2,7 +2,7 @@
 // Address: 005b7a50
 // Address Range: [[005b7a50, 005b7b00]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50(int color)
+// Signature: int __cdecl wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50(int color)
 
 #include "nocturne.h"
 

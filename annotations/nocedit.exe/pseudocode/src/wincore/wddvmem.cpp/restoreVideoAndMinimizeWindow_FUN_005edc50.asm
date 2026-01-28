@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50(void)
+; __cdecl void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005edc50(void)
 ;
 ;
 ; XREF[1]:

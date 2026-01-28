@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void support_trisock.cpp_formatSocketAddress_FUN_005e1a30(char * output_buffer, SNetworkAddr * network_addr)
+; __cdecl void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_buffer

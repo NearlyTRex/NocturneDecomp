@@ -2,7 +2,7 @@
 // Address: 0050dad0
 // Address Range: [[0050dad0, 0050dafb]]
 // Convention: __cdecl
-// Signature: int engine_matrix.c_vectorLength3DToInt_FUN_0050dad0(CVector3i * vector_ptr)
+// Signature: int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_0050dad0(CVector3i *vector_ptr)
 
 #include "nocturne.h"
 

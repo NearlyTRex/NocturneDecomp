@@ -2,7 +2,7 @@
 // Address: 00601450
 // Address Range: [[00601450, 00601459]]
 // Convention: unknown
-// Signature: undefined crt_errno.c_errno_FUN_00601450()
+// Signature: int * crt_errno_c_errno_FUN_00601450(void)
 
 #include "nocturne.h"
 

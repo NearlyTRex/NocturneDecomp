@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_updateTexture_FUN_005b72fb(SMRGLTextureBasic * texture_info)
+; __cdecl int __cdecl wincore_windll_cpp_updateTexture_FUN_005b72fb(SMRGLTextureBasic *texture_info)
 ;
 ; Parameters:
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info

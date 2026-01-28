@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl STriangleRef * core_dtrace.cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef * this_ptr)
+; __cdecl STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr)
 ;
 ; Parameters:
 ; STriangleRef *   Stack[0x4]:4   this_ptr

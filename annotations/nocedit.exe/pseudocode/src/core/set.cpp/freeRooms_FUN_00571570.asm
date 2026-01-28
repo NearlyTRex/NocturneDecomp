@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_set.cpp_freeRooms_FUN_00571570(SRoom * * array)
+; __cdecl void __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom **array)
 ;
 ; Parameters:
 ; SRoom * *        Stack[0x4]:4   array

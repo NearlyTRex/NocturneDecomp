@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CEditorTools * shape_edittool.cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools * this_ptr)
+; __cdecl CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools *this_ptr)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

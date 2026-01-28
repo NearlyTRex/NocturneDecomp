@@ -2,7 +2,7 @@
 // Address: 00570770
 // Address Range: [[00570770, 0057086c]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770 (CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count, int render_flags)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CZombieCow * core_cow.cpp_factoryFunc_FUN_00444100(void)
+; __cdecl CZombieCow * __cdecl core_cow_cpp_factoryFunc_FUN_00444100(void)
 ;
 ;
 ; XREF[1]:

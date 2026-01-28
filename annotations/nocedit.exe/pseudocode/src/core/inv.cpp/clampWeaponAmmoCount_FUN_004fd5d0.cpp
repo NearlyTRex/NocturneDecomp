@@ -2,7 +2,7 @@
 // Address: 004fd5d0
 // Address Range: [[004fd5d0, 004fd5ff]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_clampWeaponAmmoCount_FUN_004fd5d0(CDemonActor * actor_ptr)
+// Signature: void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004fd5d0(CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005ffa70
 // Address Range: [[005ffa70, 005ffab3]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_seek_within_buffer_FUN_005ffa70(int offset, FILE * file)
+// Signature: int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,FILE *file)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0044ba30
 // Address Range: [[0044ba30, 0044ba94]]
 // Convention: __cdecl
-// Signature: CCurtain * core_curtain.cpp_FUN_0044ba30(CCurtain * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CCurtain * __cdecl core_curtain_cpp_FUN_0044ba30(CCurtain *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

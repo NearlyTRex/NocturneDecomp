@@ -5,216 +5,216 @@
 
 // Original: core_gore.cpp_staticInit_FUN_004eb8c0
 // Address: 004eb8c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gore.cpp_FUN_004eb950
 // Address: 004eb950
-undefined FUN_004eb950();
+void FUN_004eb950(void);
 
 // Original: core_gore.cpp_FUN_004eb9a0
 // Address: 004eb9a0
-undefined FUN_004eb9a0();
+void FUN_004eb9a0(void);
 
 // Original: core_gore.cpp_FUN_004eb9d0
 // Address: 004eb9d0
-undefined FUN_004eb9d0();
+void FUN_004eb9d0(void);
 
 // Original: core_gore.cpp_FUN_004ebac0
 // Address: 004ebac0
-undefined FUN_004ebac0();
+void FUN_004ebac0(void);
 
 // Original: core_gore.cpp_FUN_004ec290
 // Address: 004ec290
-undefined FUN_004ec290();
+undefined4 FUN_004ec290(void);
 
 // Original: core_gore.cpp_FUN_004ec2f0
 // Address: 004ec2f0
-undefined FUN_004ec2f0();
+void FUN_004ec2f0(void);
 
 // Original: core_gore.cpp_FUN_004ec390
 // Address: 004ec390
-undefined FUN_004ec390();
+void FUN_004ec390(void);
 
 // Original: core_gore.cpp_FUN_004ec470
 // Address: 004ec470
-undefined FUN_004ec470();
+void FUN_004ec470(void);
 
 // Original: core_gore.cpp_FUN_004ec500
 // Address: 004ec500
-undefined FUN_004ec500();
+void FUN_004ec500(void);
 
 // Original: core_gore.cpp_FUN_004ecad0
 // Address: 004ecad0
-undefined FUN_004ecad0();
+void FUN_004ecad0(void);
 
 // Original: core_gore.cpp_FUN_004ecb00
 // Address: 004ecb00
-undefined FUN_004ecb00();
+void FUN_004ecb00(void);
 
 // Original: core_gore.cpp_FUN_004ecb90
 // Address: 004ecb90
-undefined FUN_004ecb90();
+void FUN_004ecb90(void);
 
 // Original: core_gore.cpp_FUN_004ecc40
 // Address: 004ecc40
-undefined FUN_004ecc40();
+void FUN_004ecc40(void);
 
 // Original: core_gore.cpp_FUN_004ecce0
 // Address: 004ecce0
-undefined FUN_004ecce0();
+void FUN_004ecce0(void);
 
 // Original: core_gore.cpp_FUN_004ed0a0
 // Address: 004ed0a0
-undefined FUN_004ed0a0();
+void FUN_004ed0a0(void);
 
 // Original: core_gore.cpp_FUN_004ed0d0
 // Address: 004ed0d0
-undefined FUN_004ed0d0();
+void FUN_004ed0d0(void);
 
 // Original: core_gore.cpp_FUN_004ed160
 // Address: 004ed160
-undefined FUN_004ed160();
+void FUN_004ed160(void);
 
 // Original: core_gore.cpp_FUN_004ed1c0
 // Address: 004ed1c0
-undefined FUN_004ed1c0();
+void FUN_004ed1c0(void);
 
 // Original: core_gore.cpp_FUN_004ed240
 // Address: 004ed240
-undefined FUN_004ed240();
+void FUN_004ed240(void);
 
 // Original: core_gore.cpp_FUN_004ed3c0
 // Address: 004ed3c0
-undefined FUN_004ed3c0();
+void FUN_004ed3c0(void);
 
 // Original: core_gore.cpp_FUN_004ed730
 // Address: 004ed730
-CGore * FUN_004ed730(CGore * this_ptr);
+CGore * __cdecl FUN_004ed730(CGore *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ed750
 // Address: 004ed750
-CGore * FUN_004ed750(CGore * this_ptr);
+CGore * __cdecl FUN_004ed750(CGore *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ed760
 // Address: 004ed760
-undefined FUN_004ed760();
+void FUN_004ed760(void);
 
 // Original: core_gore.cpp_CGore_FUN_004ed7b0
 // Address: 004ed7b0
-void CGore(CGore * this_ptr);
+void __cdecl CGore(CGore *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ed830
 // Address: 004ed830
-void FUN_004ed830(CGore * this_ptr);
+void __cdecl FUN_004ed830(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_process_FUN_004ed9e0
 // Address: 004ed9e0
-undefined CGore::process();
+undefined4 CGore::process(void);
 
 // Original: core_gore.cpp_FUN_004edaa0
 // Address: 004edaa0
-undefined FUN_004edaa0();
+void FUN_004edaa0(void);
 
 // Original: core_gore.cpp_FUN_004edaf0
 // Address: 004edaf0
-undefined FUN_004edaf0();
+CBloodSplat * FUN_004edaf0(void);
 
 // Original: core_gore.cpp_FUN_004edb40
 // Address: 004edb40
-undefined FUN_004edb40();
+void FUN_004edb40(void);
 
 // Original: core_gore.cpp_FUN_004edb70
 // Address: 004edb70
-undefined FUN_004edb70();
+void FUN_004edb70(void);
 
 // Original: core_gore.cpp_FUN_004edbb0
 // Address: 004edbb0
-undefined FUN_004edbb0();
+void FUN_004edbb0(void);
 
 // Original: core_gore.cpp_FUN_004edde0
 // Address: 004edde0
-undefined FUN_004edde0();
+CBloodPool * FUN_004edde0(void);
 
 // Original: core_gore.cpp_FUN_004ede30
 // Address: 004ede30
-undefined FUN_004ede30();
+void FUN_004ede30(void);
 
 // Original: core_gore.cpp_CGore_FUN_004ede60
 // Address: 004ede60
-void CGore(CGore * this_ptr);
+void __cdecl CGore(CGore *this_ptr);
 
 // Original: core_gore.cpp_CreateFlies_FUN_004edf30
 // Address: 004edf30
-undefined CreateFlies();
+CFlies * CreateFlies(void);
 
 // Original: core_gore.cpp_CGore_FUN_004ee030
 // Address: 004ee030
-void CGore(CGore * this_ptr, CDemonActor * actor);
+void __cdecl CGore(CGore *this_ptr,CDemonActor *actor);
 
 // Original: core_gore.cpp_CGore_FUN_004ee070
 // Address: 004ee070
-void CGore(CGore * this_ptr);
+void __cdecl CGore(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_FUN_004ee0f0
 // Address: 004ee0f0
-int CGore(CGore * this_ptr);
+int __cdecl CGore(CGore *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee1e0
 // Address: 004ee1e0
-undefined FUN_004ee1e0();
+int FUN_004ee1e0(void);
 
 // Original: core_gore.cpp_FUN_004ee290
 // Address: 004ee290
-int FUN_004ee290(CGore * this_ptr);
+int __cdecl FUN_004ee290(CGore *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee340
 // Address: 004ee340
-undefined FUN_004ee340();
+void FUN_004ee340(void);
 
 // Original: core_gore.cpp_FUN_004ee370
 // Address: 004ee370
-CFootstep * FUN_004ee370(CFootstep * this_ptr);
+CFootstep * __cdecl FUN_004ee370(CFootstep *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee390
 // Address: 004ee390
-CFootstep * FUN_004ee390(CFootstep * this_ptr);
+CFootstep * __cdecl FUN_004ee390(CFootstep *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee3b0
 // Address: 004ee3b0
-CBloodPool * FUN_004ee3b0(CBloodPool * this_ptr);
+CBloodPool * __cdecl FUN_004ee3b0(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee3c0
 // Address: 004ee3c0
-CBloodPool * FUN_004ee3c0(CBloodPool * this_ptr);
+CBloodPool * __cdecl FUN_004ee3c0(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee3d0
 // Address: 004ee3d0
-CBloodSplat * FUN_004ee3d0(CBloodSplat * this_ptr);
+CBloodSplat * __cdecl FUN_004ee3d0(CBloodSplat *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee3e0
 // Address: 004ee3e0
-CBloodSplat * FUN_004ee3e0(CBloodSplat * this_ptr);
+CBloodSplat * __cdecl FUN_004ee3e0(CBloodSplat *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee3f0
 // Address: 004ee3f0
-CBloodParticle * FUN_004ee3f0(CBloodParticle * this_ptr);
+CBloodParticle * __cdecl FUN_004ee3f0(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee410
 // Address: 004ee410
-CBloodParticle * FUN_004ee410(CBloodParticle * this_ptr);
+CBloodParticle * __cdecl FUN_004ee410(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_FUN_004ee420
 // Address: 004ee420
-undefined FUN_004ee420();
+void FUN_004ee420(void);
 
 // Original: core_gore.cpp_FUN_004ee440
 // Address: 004ee440
-undefined FUN_004ee440();
+void FUN_004ee440(void);
 
 // Original: core_gore.cpp_FUN_004ee460
 // Address: 004ee460
-undefined FUN_004ee460();
+void FUN_004ee460(void);
 
 // Original: core_gore.cpp_cleanupBloodParticles_FUN_004ee480
 // Address: 004ee480
-int cleanupBloodParticles(CBloodParticle * ptr);
+int __cdecl cleanupBloodParticles(CBloodParticle *ptr);

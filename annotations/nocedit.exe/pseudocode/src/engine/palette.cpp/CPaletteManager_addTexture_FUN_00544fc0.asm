@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
+; unknown void engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
 ;
 ;
 ; XREF[1]:

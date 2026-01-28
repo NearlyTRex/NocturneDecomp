@@ -2,7 +2,7 @@
 // Address: 00403260
 // Address Range: [[00403260, 004032b7]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_clearInputAndWait_FUN_00403260(void)
+// Signature: void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void)
 
 #include "nocturne.h"
 

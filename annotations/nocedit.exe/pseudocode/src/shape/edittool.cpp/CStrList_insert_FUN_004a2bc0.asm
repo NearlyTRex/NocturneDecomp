@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CStrList_insert_FUN_004a2bc0(CStrList * this_ptr, int insert_index, char * string_data)
+; __cdecl void __cdecl shape_edittool_cpp_CStrList_insert_FUN_004a2bc0 (CStrList *this_ptr,int insert_index,char *string_data)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

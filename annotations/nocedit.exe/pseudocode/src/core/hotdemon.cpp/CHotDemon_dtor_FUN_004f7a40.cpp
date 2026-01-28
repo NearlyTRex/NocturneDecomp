@@ -2,7 +2,7 @@
 // Address: 004f7a40
 // Address Range: [[004f7a40, 004f7af8]]
 // Convention: __cdecl
-// Signature: CDemonActor * core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40 (CHotDemon *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

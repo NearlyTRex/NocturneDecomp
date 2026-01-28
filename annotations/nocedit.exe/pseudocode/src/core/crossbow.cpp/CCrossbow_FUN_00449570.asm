@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_crossbow.cpp_CCrossbow_FUN_00449570(CCrossbow * this_ptr)
+; __cdecl float __cdecl core_crossbow_cpp_CCrossbow_FUN_00449570(CCrossbow *this_ptr)
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr

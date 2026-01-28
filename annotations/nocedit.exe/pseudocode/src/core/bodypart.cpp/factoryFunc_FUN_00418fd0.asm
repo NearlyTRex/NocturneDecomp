@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBodyPart * core_bodypart.cpp_factoryFunc_FUN_00418fd0(void)
+; __cdecl CBodyPart * __cdecl core_bodypart_cpp_factoryFunc_FUN_00418fd0(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_game.cpp_PleaseEnterValidInteger_FUN_004d7730()
+; unknown void core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void)
 ;
 ;
 ; Referenced Globals:

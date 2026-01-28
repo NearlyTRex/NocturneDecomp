@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_showPointEditor_FUN_0045c6c0(void)
+; __cdecl void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xa8]:8  local_a8

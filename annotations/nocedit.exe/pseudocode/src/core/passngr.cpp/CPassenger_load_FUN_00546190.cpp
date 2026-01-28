@@ -2,7 +2,7 @@
 // Address: 00546190
 // Address Range: [[00546190, 00546269]]
 // Convention: unknown
-// Signature: undefined core_passngr.cpp_CPassenger_load_FUN_00546190()
+// Signature: void core_passngr_cpp_CPassenger_load_FUN_00546190(void)
 
 #include "nocturne.h"
 

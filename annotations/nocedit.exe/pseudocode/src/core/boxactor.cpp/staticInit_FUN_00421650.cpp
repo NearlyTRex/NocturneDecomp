@@ -2,7 +2,7 @@
 // Address: 00421650
 // Address Range: [[00421650, 004216b7]]
 // Convention: __cdecl
-// Signature: void core_boxactor.cpp_staticInit_FUN_00421650(void)
+// Signature: void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void)
 
 #include "nocturne.h"
 

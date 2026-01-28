@@ -2,7 +2,7 @@
 // Address: 0057ae50
 // Address Range: [[0057ae50, 0057b402]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
+// Signature: undefined4 core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50 (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,CDemonSet *param_5 ,int param_6,undefined4 param_7,undefined4 param_8)
 
 #include "nocturne.h"
 

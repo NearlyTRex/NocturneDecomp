@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_fire.cpp_FUN_004c9400()
+; unknown void core_fire_cpp_FUN_004c9400(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

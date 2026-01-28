@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_texture.cpp_getTextureCacheStats_FUN_005dd970(char * output_buffer)
+; __cdecl void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_005dd970(char *output_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_buffer

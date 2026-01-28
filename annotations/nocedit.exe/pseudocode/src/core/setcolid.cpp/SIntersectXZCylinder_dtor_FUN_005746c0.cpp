@@ -2,7 +2,7 @@
 // Address: 005746c0
 // Address Range: [[005746c0, 005746c4]]
 // Convention: __cdecl
-// Signature: SIntersectXZCylinder * core_setcolid.cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder * this_ptr)
+// Signature: SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder *this_ptr)
 
 #include "nocturne.h"
 

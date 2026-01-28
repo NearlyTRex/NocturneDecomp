@@ -2,7 +2,7 @@
 // Address: 00413a00
 // Address Range: [[00413a00, 00413a68]]
 // Convention: __cdecl
-// Signature: void core_baron.cpp_CBaron_FUN_00413a00(CBaron * this_ptr, float param_2)
+// Signature: void __cdecl core_baron_cpp_CBaron_FUN_00413a00(CBaron *this_ptr,float param_2)
 
 #include "nocturne.h"
 

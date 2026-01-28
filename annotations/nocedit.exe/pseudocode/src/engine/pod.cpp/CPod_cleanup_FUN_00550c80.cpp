@@ -2,7 +2,7 @@
 // Address: 00550c80
 // Address Range: [[00550c80, 00550cdf]]
 // Convention: __cdecl
-// Signature: void engine_pod.cpp_CPod_cleanup_FUN_00550c80(CPod * this_ptr)
+// Signature: void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00550c80(CPod *this_ptr)
 
 #include "nocturne.h"
 

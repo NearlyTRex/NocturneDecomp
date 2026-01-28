@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeLightningBolts_FUN_004c9850(CLightningBolt * * array)
+; __cdecl void __cdecl core_fire_cpp_freeLightningBolts_FUN_004c9850(CLightningBolt **array)
 ;
 ; Parameters:
 ; CLightningBolt * * Stack[0x4]:4   array

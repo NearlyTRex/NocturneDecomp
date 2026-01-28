@@ -5,224 +5,224 @@
 
 // Original: core_cloth.cpp_staticInit_FUN_00438b80
 // Address: 00438b80
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_cloth.cpp_FUN_00438ba0
 // Address: 00438ba0
-undefined FUN_00438ba0();
+int FUN_00438ba0(void);
 
 // Original: core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00
 // Address: 00438c00
-undefined CallToUnknownSomethingFreeMem();
+void CallToUnknownSomethingFreeMem(void);
 
 // Original: core_cloth.cpp_CCloth_allocMemory_FUN_00438c50
 // Address: 00438c50
-void CCloth::allocMemory(CCloth * this_ptr);
+void __cdecl CCloth::allocMemory(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0
 // Address: 00438cb0
-undefined UnknownSomethingAndFreeMem();
+void UnknownSomethingAndFreeMem(void);
 
 // Original: core_cloth.cpp_CCloth_load_FUN_00438cf0
 // Address: 00438cf0
-int CCloth::load(CCloth * this_ptr, char * filename);
+int __cdecl CCloth::load(CCloth *this_ptr,char *filename);
 
 // Original: core_cloth.cpp_ParseClothFile_FUN_00439260
 // Address: 00439260
-undefined ParseClothFile();
+void ParseClothFile(void);
 
 // Original: core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0
 // Address: 004394e0
-undefined ConnectingVerticesCheck();
+void ConnectingVerticesCheck(void);
 
 // Original: core_cloth.cpp_FUN_00439710
 // Address: 00439710
-undefined FUN_00439710();
+void FUN_00439710(void);
 
 // Original: core_cloth.cpp_OrientBoneCheck_FUN_0043a110
 // Address: 0043a110
-undefined OrientBoneCheck();
+void OrientBoneCheck(void);
 
 // Original: core_cloth.cpp_FUN_0043a2b0
 // Address: 0043a2b0
-undefined FUN_0043a2b0();
+void FUN_0043a2b0(void);
 
 // Original: core_cloth.cpp_FUN_0043a420
 // Address: 0043a420
-undefined FUN_0043a420();
+void FUN_0043a420(void);
 
 // Original: core_cloth.cpp_FUN_0043ab80
 // Address: 0043ab80
-undefined FUN_0043ab80();
+void FUN_0043ab80(void);
 
 // Original: core_cloth.cpp_FUN_0043abb0
 // Address: 0043abb0
-undefined FUN_0043abb0();
+void FUN_0043abb0(void);
 
 // Original: core_cloth.cpp_FUN_0043b790
 // Address: 0043b790
-undefined FUN_0043b790();
+void FUN_0043b790(void);
 
 // Original: core_cloth.cpp_FUN_0043b7e0
 // Address: 0043b7e0
-undefined FUN_0043b7e0();
+void FUN_0043b7e0(void);
 
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0
 // Address: 0043b9f0
-int CCloth::saveJoinedLight(CCloth * this_ptr);
+int __cdecl CCloth::saveJoinedLight(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043bae0
 // Address: 0043bae0
-undefined FUN_0043bae0();
+void FUN_0043bae0(void);
 
 // Original: core_cloth.cpp_FUN_0043bf40
 // Address: 0043bf40
-undefined FUN_0043bf40();
+undefined4 * FUN_0043bf40(void);
 
 // Original: core_cloth.cpp_FUN_0043bf80
 // Address: 0043bf80
-undefined FUN_0043bf80();
+undefined4 FUN_0043bf80(void);
 
 // Original: core_cloth.cpp_CClothList_load_FUN_0043bfa0
 // Address: 0043bfa0
-void CClothList::load(CClothList * this_ptr);
+void __cdecl CClothList::load(CClothList *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043c070
 // Address: 0043c070
-undefined FUN_0043c070();
+void FUN_0043c070(void);
 
 // Original: core_cloth.cpp_CClothList_add_FUN_0043c0f0
 // Address: 0043c0f0
-void CClothList::add(CClothList * this_ptr);
+void __cdecl CClothList::add(CClothList *this_ptr);
 
 // Original: core_cloth.cpp_CClothList_remove_FUN_0043c170
 // Address: 0043c170
-void CClothList::remove(CClothList * this_ptr);
+void __cdecl CClothList::remove(CClothList *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043c290
 // Address: 0043c290
-undefined FUN_0043c290();
+void FUN_0043c290(void);
 
 // Original: core_cloth.cpp_FUN_0043c2d0
 // Address: 0043c2d0
-undefined FUN_0043c2d0();
+void FUN_0043c2d0(void);
 
 // Original: core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320
 // Address: 0043c320
-undefined MultipleCallSaveJoinedLight();
+int MultipleCallSaveJoinedLight(int param_1);
 
 // Original: core_cloth.cpp_FUN_0043c3a0
 // Address: 0043c3a0
-undefined FUN_0043c3a0();
+void FUN_0043c3a0(void);
 
 // Original: core_cloth.cpp_FUN_0043c3e0
 // Address: 0043c3e0
-undefined FUN_0043c3e0();
+void FUN_0043c3e0(void);
 
 // Original: core_cloth.cpp_FUN_0043c430
 // Address: 0043c430
-undefined FUN_0043c430();
+void FUN_0043c430(void);
 
 // Original: core_cloth.cpp_FUN_0043c6b0
 // Address: 0043c6b0
-undefined FUN_0043c6b0();
+void FUN_0043c6b0(void);
 
 // Original: core_cloth.cpp_FUN_0043c6e0
 // Address: 0043c6e0
-undefined FUN_0043c6e0();
+void FUN_0043c6e0(void);
 
 // Original: core_cloth.cpp_FUN_0043c820
 // Address: 0043c820
-undefined FUN_0043c820();
+void FUN_0043c820(void);
 
 // Original: core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
 // Address: 0043c880
-undefined BoneAndClothEditor();
+void BoneAndClothEditor(void);
 
 // Original: core_cloth.cpp_LockVerticesMaybe_FUN_0043d590
 // Address: 0043d590
-undefined LockVerticesMaybe();
+void LockVerticesMaybe(void);
 
 // Original: core_cloth.cpp_FUN_0043dcc0
 // Address: 0043dcc0
-undefined FUN_0043dcc0();
+void FUN_0043dcc0(void);
 
 // Original: core_cloth.cpp_FUN_0043ddf0
 // Address: 0043ddf0
-undefined FUN_0043ddf0();
+void FUN_0043ddf0(void);
 
 // Original: core_cloth.cpp_FUN_0043e0a0
 // Address: 0043e0a0
-undefined FUN_0043e0a0();
+void FUN_0043e0a0(void);
 
 // Original: core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
 // Address: 0043e0d0
-void CCloth::grabCloth(CCloth * this_ptr);
+void __cdecl CCloth::grabCloth(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043e170
 // Address: 0043e170
-undefined FUN_0043e170();
+void FUN_0043e170(void);
 
 // Original: core_cloth.cpp_FUN_0043e1a0
 // Address: 0043e1a0
-undefined FUN_0043e1a0();
+void FUN_0043e1a0(void);
 
 // Original: core_cloth.cpp_FUN_0043e2a0
 // Address: 0043e2a0
-undefined FUN_0043e2a0();
+int FUN_0043e2a0(void);
 
 // Original: core_cloth.cpp_FUN_0043e2c0
 // Address: 0043e2c0
-undefined FUN_0043e2c0();
+float FUN_0043e2c0(void);
 
 // Original: core_cloth.cpp_FUN_0043e2f0
 // Address: 0043e2f0
-undefined FUN_0043e2f0();
+void FUN_0043e2f0(void);
 
 // Original: core_cloth.cpp_FUN_0043e320
 // Address: 0043e320
-undefined FUN_0043e320();
+float FUN_0043e320(void);
 
 // Original: core_cloth.cpp_FUN_0043e350
 // Address: 0043e350
-undefined FUN_0043e350();
+int FUN_0043e350(void);
 
 // Original: core_cloth.cpp_FUN_0043e380
 // Address: 0043e380
-undefined FUN_0043e380();
+void FUN_0043e380(void);
 
 // Original: core_cloth.cpp_FUN_0043e3d0
 // Address: 0043e3d0
-undefined FUN_0043e3d0();
+void FUN_0043e3d0(void);
 
 // Original: core_cloth.cpp_SClothBone_ctor_FUN_0043e400
 // Address: 0043e400
-SClothBone * SClothBone::ctor(SClothBone * this_ptr);
+SClothBone * __cdecl SClothBone::ctor(SClothBone *this_ptr);
 
 // Original: core_cloth.cpp_SClothBone_dtor_FUN_0043e410
 // Address: 0043e410
-SClothBone * SClothBone::dtor(SClothBone * this_ptr);
+SClothBone * __cdecl SClothBone::dtor(SClothBone *this_ptr);
 
 // Original: core_cloth.cpp_SClothVertex_ctor_FUN_0043e420
 // Address: 0043e420
-SClothVertex * SClothVertex::ctor(SClothVertex * this_ptr);
+SClothVertex * __cdecl SClothVertex::ctor(SClothVertex *this_ptr);
 
 // Original: core_cloth.cpp_SClothVertex_dtor_FUN_0043e440
 // Address: 0043e440
-SClothVertex * SClothVertex::dtor(SClothVertex * this_ptr);
+SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr);
 
 // Original: core_cloth.cpp_freeVectors_FUN_0043e460
 // Address: 0043e460
-int freeVectors(CVector3f * * array);
+int __cdecl freeVectors(CVector3f **array);
 
 // Original: core_cloth.cpp_freeClothVertices_FUN_0043e480
 // Address: 0043e480
-int freeClothVertices(SClothVertex * * array);
+int __cdecl freeClothVertices(SClothVertex **array);
 
 // Original: core_cloth.cpp_freeClothBones_FUN_0043e4a0
 // Address: 0043e4a0
-void freeClothBones(SClothBone * * array);
+void __cdecl freeClothBones(SClothBone **array);
 
 // Original: core_cloth.cpp_FUN_0043e4c0
 // Address: 0043e4c0
-undefined FUN_0043e4c0();
+uint FUN_0043e4c0(void);

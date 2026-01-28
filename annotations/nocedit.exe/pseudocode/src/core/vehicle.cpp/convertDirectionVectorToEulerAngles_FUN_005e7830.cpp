@@ -2,7 +2,7 @@
 // Address: 005e7830
 // Address Range: [[005e7830, 005e78c8]]
 // Convention: __cdecl
-// Signature: CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+// Signature: CVector3f * __cdecl core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 (CVector3f *out_euler_angles,CVector3f *in_direction_vector)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00502320
 // Address Range: [[00502320, 0050240f]]
 // Convention: __cdecl
-// Signature: void engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320(void)
+// Signature: void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void)
 
 #include "nocturne.h"
 

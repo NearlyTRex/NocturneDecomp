@@ -2,7 +2,7 @@
 // Address: 00472f80
 // Address Range: [[00472f80, 0047326c]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemonLight * this_ptr)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 

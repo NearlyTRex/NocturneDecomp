@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640(char * filename)
+; __cdecl int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

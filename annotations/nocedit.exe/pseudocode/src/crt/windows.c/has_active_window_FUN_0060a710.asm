@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl BOOL crt_windows.c_has_active_window_FUN_0060a710(void)
+; __cdecl BOOL __cdecl crt_windows_c_has_active_window_FUN_0060a710(void)
 ;
 ;
 ; XREF[1]:

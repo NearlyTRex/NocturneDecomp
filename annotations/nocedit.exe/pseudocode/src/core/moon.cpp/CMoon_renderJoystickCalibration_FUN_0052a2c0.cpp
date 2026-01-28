@@ -2,7 +2,7 @@
 // Address: 0052a2c0
 // Address Range: [[0052a2c0, 0052a3e0]]
 // Convention: __cdecl
-// Signature: void core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(CMoon * this_ptr)
+// Signature: void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(CMoon *this_ptr)
 
 #include "nocturne.h"
 

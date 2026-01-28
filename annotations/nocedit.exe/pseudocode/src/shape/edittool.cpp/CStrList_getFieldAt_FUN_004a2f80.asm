@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+; __cdecl void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80 (CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

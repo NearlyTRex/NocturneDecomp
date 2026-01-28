@@ -2,7 +2,7 @@
 // Address: 00450440
 // Address Range: [[00450440, 004505dc]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+// Signature: void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 

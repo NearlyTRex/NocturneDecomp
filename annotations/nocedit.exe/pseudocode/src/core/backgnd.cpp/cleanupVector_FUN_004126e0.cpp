@@ -2,7 +2,7 @@
 // Address: 004126e0
 // Address Range: [[004126e0, 004126f4]]
 // Convention: __cdecl
-// Signature: int core_backgnd.cpp_cleanupVector_FUN_004126e0(CVector3f * * objs)
+// Signature: int __cdecl core_backgnd_cpp_cleanupVector_FUN_004126e0(CVector3f **objs)
 
 #include "nocturne.h"
 

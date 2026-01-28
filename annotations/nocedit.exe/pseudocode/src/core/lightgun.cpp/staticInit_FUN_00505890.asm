@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_lightgun.cpp_staticInit_FUN_00505890(void)
+; __cdecl void __cdecl core_lightgun_cpp_staticInit_FUN_00505890(void)
 ;
 ;
 ; Referenced Globals:

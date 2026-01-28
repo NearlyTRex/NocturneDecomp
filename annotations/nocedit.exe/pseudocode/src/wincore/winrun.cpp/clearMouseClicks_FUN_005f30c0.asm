@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0(void)
+; __cdecl void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0(void)
 ;
 ;
 ; XREF[2]:

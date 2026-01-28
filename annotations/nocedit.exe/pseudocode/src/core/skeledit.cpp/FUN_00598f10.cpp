@@ -2,7 +2,7 @@
 // Address: 00598f10
 // Address Range: [[00598f10, 00598fbb]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_FUN_00598f10(void)
+// Signature: void __cdecl core_skeledit_cpp_FUN_00598f10(void)
 
 #include "nocturne.h"
 

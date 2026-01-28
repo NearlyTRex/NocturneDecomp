@@ -2,7 +2,7 @@
 // Address: 0050e5b0
 // Address Range: [[0050e5b0, 0050e63a]]
 // Convention: __cdecl
-// Signature: int engine_matrix.c_projectToScreen_FUN_0050e5b0(int input_value)
+// Signature: int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
 
 #include "nocturne.h"
 

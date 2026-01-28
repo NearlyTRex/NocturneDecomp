@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_StepThroughWholeScript_FUN_0055a4b0()
+; unknown undefined1 * core_script_cpp_CScript_StepThroughWholeScript_FUN_0055a4b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

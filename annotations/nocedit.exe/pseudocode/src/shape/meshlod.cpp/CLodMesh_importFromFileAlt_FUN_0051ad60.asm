@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_CLodMesh_importFromFileAlt_FUN_0051ad60(CLodMesh * this_ptr, char * filename)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_importFromFileAlt_FUN_0051ad60(CLodMesh *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

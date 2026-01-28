@@ -2,7 +2,7 @@
 // Address: 0060ba70
 // Address Range: [[0060ba70, 0060ba7f]]
 // Convention: __watcallStack
-// Signature: strstreambuf * crt_strstream.cpp_strstreambuf_setbuf_FUN_0060ba70(strstreambuf * this_ptr, char * ignored_buffer, int allocation_size)
+// Signature: strstreambuf * __watcallStack crt_strstream_cpp_strstreambuf_setbuf_FUN_0060ba70 (strstreambuf *this_ptr,char *ignored_buffer,int allocation_size)
 
 #include "nocturne.h"
 

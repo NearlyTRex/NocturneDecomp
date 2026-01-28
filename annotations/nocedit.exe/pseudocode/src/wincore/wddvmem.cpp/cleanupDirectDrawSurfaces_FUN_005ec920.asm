@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_005ec920(void)
+; __cdecl void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_005ec920(void)
 ;
 ;
 ; Referenced Globals:

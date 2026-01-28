@@ -2,7 +2,7 @@
 // Address: 00478650
 // Address Range: [[00478650, 0047873e]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00478650(CKeyFramedModel * this_ptr, int frame_index, SIntersectXZCylinder * cylinder, CVector3f * transform_vector)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00478650 (CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder, CVector3f *transform_vector)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005b2ce0
 // Address Range: [[005b2ce0, 005b2cfd]]
 // Convention: __cdecl
-// Signature: CSound * core_sound.cpp_CSound_ctor_FUN_005b2ce0(CSound * this_ptr)
+// Signature: CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_005b2ce0(CSound *this_ptr)
 
 #include "nocturne.h"
 

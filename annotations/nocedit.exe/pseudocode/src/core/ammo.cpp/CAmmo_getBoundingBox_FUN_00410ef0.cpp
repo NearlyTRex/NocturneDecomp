@@ -2,7 +2,7 @@
 // Address: 00410ef0
 // Address Range: [[00410ef0, 00410f3d]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * core_ammo.cpp_CAmmo_getBoundingBox_FUN_00410ef0(CAmmo * this_ptr, CBoundingBox3D * out_box)
+// Signature: CBoundingBox3D * __cdecl core_ammo_cpp_CAmmo_getBoundingBox_FUN_00410ef0(CAmmo *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005edc50
 // Address Range: [[005edc50, 005edc7a]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005edc50(void)
 
 #include "nocturne.h"
 

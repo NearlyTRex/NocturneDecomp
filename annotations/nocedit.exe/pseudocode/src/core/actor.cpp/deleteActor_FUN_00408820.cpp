@@ -2,7 +2,7 @@
 // Address: 00408820
 // Address Range: [[00408820, 0040886b]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_deleteActor_FUN_00408820(CDemonActor * actor_ptr)
+// Signature: void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00404570
 // Address Range: [[00404570, 004045ff]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_drawLineStrip2D_FUN_00404570(SLineStrip * line_strip)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStrip *line_strip)
 
 #include "nocturne.h"
 

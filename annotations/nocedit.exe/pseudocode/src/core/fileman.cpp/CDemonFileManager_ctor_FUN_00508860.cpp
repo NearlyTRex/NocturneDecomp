@@ -2,7 +2,7 @@
 // Address: 00508860
 // Address Range: [[00508860, 00508877]]
 // Convention: __cdecl
-// Signature: CDemonFileManager * core_fileman.cpp_CDemonFileManager_ctor_FUN_00508860(CDemonFileManager * this_ptr)
+// Signature: CDemonFileManager * __cdecl core_fileman_cpp_CDemonFileManager_ctor_FUN_00508860(CDemonFileManager *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00433160
 // Address Range: [[00433160, 004331ef]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160(void * bitmap_data, int width, int height)
+// Signature: void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(void *bitmap_data,int width,int height)
 
 #include "nocturne.h"
 

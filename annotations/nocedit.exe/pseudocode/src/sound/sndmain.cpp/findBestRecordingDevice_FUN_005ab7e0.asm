@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0(void)
+; __cdecl int __cdecl sound_sndmain_cpp_findBestRecordingDevice_FUN_005ab7e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x118]:4  local_118

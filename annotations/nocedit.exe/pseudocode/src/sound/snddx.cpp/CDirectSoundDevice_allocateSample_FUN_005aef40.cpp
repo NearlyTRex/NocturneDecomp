@@ -2,7 +2,7 @@
 // Address: 005aef40
 // Address Range: [[005aef40, 005af14b]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice * this_ptr, int bits_per_sample, int channel_count, int sample_rate, int sample_count)
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40 (CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate, int sample_count)
 
 #include "nocturne.h"
 

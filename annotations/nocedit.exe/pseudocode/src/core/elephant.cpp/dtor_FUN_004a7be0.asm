@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * core_elephant.cpp_dtor_FUN_004a7be0(CElephantGun * this_ptr, uint d1, uint d2)
+; __cdecl void * __cdecl core_elephant_cpp_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CElephantGun *   Stack[0x4]:4   this_ptr

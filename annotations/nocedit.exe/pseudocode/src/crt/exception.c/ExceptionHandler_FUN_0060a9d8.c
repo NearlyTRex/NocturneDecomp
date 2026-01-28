@@ -2,7 +2,7 @@
 // Address: 0060a9d8
 // Address Range: [[0060a9d8, 0060aba5]]
 // Convention: __cdecl
-// Signature: EXCEPTION_DISPOSITION crt_exception.c_ExceptionHandler_FUN_0060a9d8(EXCEPTION_RECORD * ExceptionRecord, void * EstablisherFrame, CONTEXT * ContextRecord, void * DispatcherContext)
+// Signature: EXCEPTION_DISPOSITION __cdecl crt_exception_c_ExceptionHandler_FUN_0060a9d8 (EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord, void *DispatcherContext)
 
 #include "nocturne.h"
 

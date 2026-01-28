@@ -2,7 +2,7 @@
 // Address: 0060c440
 // Address Range: [[0060c440, 0060c59f] [0060c630, 0060c63f]]
 // Convention: __fpustack
-// Signature: float10 crt_math.c_atan2_FUN_0060c440(float10 y, float10 x)
+// Signature: float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004f7b30
 // Address Range: [[004f7b30, 004f7b52]]
 // Convention: __cdecl
-// Signature: CHighPriestOfGardath * core_hpriest.cpp_factoryFunc_FUN_004f7b30(void)
+// Signature: CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFunc_FUN_004f7b30(void)
 
 #include "nocturne.h"
 

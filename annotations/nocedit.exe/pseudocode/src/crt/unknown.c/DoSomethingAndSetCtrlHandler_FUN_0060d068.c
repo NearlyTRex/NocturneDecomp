@@ -2,7 +2,7 @@
 // Address: 0060d068
 // Address Range: [[0060d068, 0060d0f4]]
 // Convention: unknown
-// Signature: undefined crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068()
+// Signature: SIGNAL_HANDLER_TYPE crt_unknown_c_DoSomethingAndSetCtrlHandler_FUN_0060d068(void)
 
 #include "nocturne.h"
 

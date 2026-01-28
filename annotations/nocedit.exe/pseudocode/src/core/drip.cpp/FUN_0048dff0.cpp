@@ -2,7 +2,7 @@
 // Address: 0048dff0
 // Address Range: [[0048dff0, 0048dff5]]
 // Convention: unknown
-// Signature: undefined core_drip.cpp_FUN_0048dff0()
+// Signature: CDemonActorType * core_drip_cpp_FUN_0048dff0(void)
 
 #include "nocturne.h"
 

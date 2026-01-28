@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680()
+; unknown void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114

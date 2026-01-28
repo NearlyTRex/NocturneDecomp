@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap * this_ptr)
+; __cdecl void __cdecl core_path_cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap *this_ptr)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

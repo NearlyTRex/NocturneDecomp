@@ -2,7 +2,7 @@
 // Address: 00506aa0
 // Address Range: [[00506aa0, 00506ac3]]
 // Convention: __cdecl
-// Signature: void core_litecone.cpp_staticInit_FUN_00506aa0(void)
+// Signature: void __cdecl core_litecone_cpp_staticInit_FUN_00506aa0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00419810
 // Address Range: [[00419810, 0041981c]]
 // Convention: __cdecl
-// Signature: void core_bodypart.cpp_CBodyPart_setup_FUN_00419810(CBodyPart * this_ptr)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_setup_FUN_00419810(CBodyPart *this_ptr)
 
 #include "nocturne.h"
 

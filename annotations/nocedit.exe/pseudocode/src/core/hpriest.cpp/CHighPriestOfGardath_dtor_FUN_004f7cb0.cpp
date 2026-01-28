@@ -2,7 +2,7 @@
 // Address: 004f7cb0
 // Address Range: [[004f7cb0, 004f7d78]]
 // Convention: __cdecl
-// Signature: CHighPriestOfGardath * core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0(CHighPriestOfGardath * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9)
+// Signature: CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0 (CHighPriestOfGardath *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7, uint d8,uint d9)
 
 #include "nocturne.h"
 

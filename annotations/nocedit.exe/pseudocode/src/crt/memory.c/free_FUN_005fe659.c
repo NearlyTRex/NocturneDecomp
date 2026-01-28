@@ -2,7 +2,7 @@
 // Address: 005fe659
 // Address Range: [[005fe659, 005fe666]]
 // Convention: __cdecl
-// Signature: void crt_memory.c_free_FUN_005fe659(void * ptr)
+// Signature: void __cdecl crt_memory_c_free_FUN_005fe659(void *ptr)
 
 #include "nocturne.h"
 

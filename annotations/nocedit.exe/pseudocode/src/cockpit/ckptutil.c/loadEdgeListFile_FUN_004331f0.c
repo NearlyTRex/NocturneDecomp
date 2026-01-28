@@ -2,7 +2,7 @@
 // Address: 004331f0
 // Address Range: [[004331f0, 0043343d]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0(char * filename, SEdgeList * edge_lists, int expected_count)
+// Signature: void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0 (char *filename,SEdgeList *edge_lists,int expected_count)
 
 #include "nocturne.h"
 

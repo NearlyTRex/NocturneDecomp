@@ -2,7 +2,7 @@
 // Address: 006021c0
 // Address Range: [[006021c0, 006021d9]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_fprintf_FUN_006021c0(FILE * stream, char * format, ...)
+// Signature: void __cdecl crt_stdio_c_fprintf_FUN_006021c0(FILE *stream,char *format,...)
 
 #include "nocturne.h"
 

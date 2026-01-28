@@ -2,7 +2,7 @@
 // Address: 0040d330
 // Address Range: [[0040d330, 0040d469]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_draw3DLineSegment_FUN_0040d330(CVector3i * start_point, CVector3f * direction_offset)
+// Signature: void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
 
 #include "nocturne.h"
 

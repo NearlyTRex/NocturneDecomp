@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_weather.cpp_FUN_005efb50()
+; unknown void core_weather_cpp_FUN_005efb50(void)
 ;
 ;
 ; Referenced Globals:

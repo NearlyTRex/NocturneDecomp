@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CStrList_qsortByString_FUN_004a2ee0(char * a, char * b)
+; __cdecl int __cdecl shape_edittool_cpp_CStrList_qsortByString_FUN_004a2ee0(char *a,char *b)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   a

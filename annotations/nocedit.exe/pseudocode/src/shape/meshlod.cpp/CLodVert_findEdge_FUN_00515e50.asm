@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_meshlod.cpp_CLodVert_findEdge_FUN_00515e50(CLodVert * this_ptr, int edge_index)
+; __cdecl int __cdecl shape_meshlod_cpp_CLodVert_findEdge_FUN_00515e50(CLodVert *this_ptr,int edge_index)
 ;
 ; Parameters:
 ; CLodVert *       Stack[0x4]:4   this_ptr

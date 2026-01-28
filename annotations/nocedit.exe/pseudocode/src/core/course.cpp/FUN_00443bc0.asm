@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_course.cpp_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
+; __cdecl void __cdecl core_course_cpp_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *param_2)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr

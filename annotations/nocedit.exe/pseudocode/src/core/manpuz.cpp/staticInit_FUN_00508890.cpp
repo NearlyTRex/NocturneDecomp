@@ -2,7 +2,7 @@
 // Address: 00508890
 // Address Range: [[00508890, 005088d6]]
 // Convention: __cdecl
-// Signature: void core_manpuz.cpp_staticInit_FUN_00508890(void)
+// Signature: void __cdecl core_manpuz_cpp_staticInit_FUN_00508890(void)
 
 #include "nocturne.h"
 

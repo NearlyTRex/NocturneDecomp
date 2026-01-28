@@ -2,7 +2,7 @@
 // Address: 00602700
 // Address Range: [[00602700, 00602745]]
 // Convention: __cdecl
-// Signature: void crt_exit.c_ExitProcess_FUN_00602700(int exit_code)
+// Signature: void __cdecl crt_exit_c_ExitProcess_FUN_00602700(int exit_code)
 
 #include "nocturne.h"
 

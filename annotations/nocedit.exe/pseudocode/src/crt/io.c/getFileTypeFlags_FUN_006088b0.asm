@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+; __watcallStack uint __watcallStack crt_io_c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index

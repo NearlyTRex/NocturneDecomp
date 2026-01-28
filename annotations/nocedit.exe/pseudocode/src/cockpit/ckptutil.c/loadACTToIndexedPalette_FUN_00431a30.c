@@ -2,7 +2,7 @@
 // Address: 00431a30
 // Address Range: [[00431a30, 00431ab5]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30(char * filename, char * output_palette)
+// Signature: void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,char *output_palette)
 
 #include "nocturne.h"
 

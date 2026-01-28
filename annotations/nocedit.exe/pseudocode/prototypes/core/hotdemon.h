@@ -5,56 +5,56 @@
 
 // Original: core_hotdemon.cpp_staticInit_FUN_004f6c30
 // Address: 004f6c30
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hotdemon.cpp_factoryFunc_FUN_004f6c60
 // Address: 004f6c60
-CHotDemon * factoryFunc(void);
+CHotDemon * __cdecl factoryFunc(void);
 
 // Original: core_hotdemon.cpp_FUN_004f6c90
 // Address: 004f6c90
-undefined FUN_004f6c90();
+CDemonActorType * FUN_004f6c90(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0
 // Address: 004f6ca0
-CHotDemon * CHotDemon::ctor(CHotDemon * this_ptr);
+CHotDemon * __cdecl CHotDemon::ctor(CHotDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_FUN_004f6d00
 // Address: 004f6d00
-undefined FUN_004f6d00();
+void FUN_004f6d00(void);
 
 // Original: core_hotdemon.cpp_FUN_004f6f20
 // Address: 004f6f20
-undefined FUN_004f6f20();
+void FUN_004f6f20(void);
 
 // Original: core_hotdemon.cpp_FUN_004f7680
 // Address: 004f7680
-undefined FUN_004f7680();
+undefined4 FUN_004f7680(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0
 // Address: 004f76c0
-undefined CHotDemon::load();
+void CHotDemon::load(void);
 
 // Original: core_hotdemon.cpp_FUN_004f7720
 // Address: 004f7720
-undefined FUN_004f7720();
+void FUN_004f7720(void);
 
 // Original: core_hotdemon.cpp_FUN_004f78f0
 // Address: 004f78f0
-undefined FUN_004f78f0();
+undefined4 FUN_004f78f0(void);
 
 // Original: core_hotdemon.cpp_FUN_004f79b0
 // Address: 004f79b0
-undefined FUN_004f79b0();
+void FUN_004f79b0(void);
 
 // Original: core_hotdemon.cpp_FUN_004f79d0
 // Address: 004f79d0
-undefined FUN_004f79d0();
+void FUN_004f79d0(void);
 
 // Original: core_hotdemon.cpp_FUN_004f7a10
 // Address: 004f7a10
-undefined FUN_004f7a10();
+void FUN_004f7a10(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40
 // Address: 004f7a40
-CDemonActor * CHotDemon::dtor(CHotDemon * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
+CDemonActor * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_validatePolygonNormals_FUN_00461d80(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance)
+; __cdecl int __cdecl shape_design_c_validatePolygonNormals_FUN_00461d80 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double cos_tolerance)
 ;
 ; Parameters:
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon1

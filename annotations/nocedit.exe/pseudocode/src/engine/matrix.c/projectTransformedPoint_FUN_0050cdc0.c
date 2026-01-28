@@ -2,7 +2,7 @@
 // Address: 0050cdc0
 // Address Range: [[0050cdc0, 0050ce5d]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex * point)
+// Signature: void __cdecl engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex *point)
 
 #include "nocturne.h"
 

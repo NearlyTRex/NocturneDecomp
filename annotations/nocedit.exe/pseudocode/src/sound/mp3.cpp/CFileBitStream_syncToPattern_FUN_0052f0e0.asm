@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_0052f0e0(CFileBitStream * this_ptr, uint sync_pattern, uint pattern_bits)
+; __cdecl int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_0052f0e0 (CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 006083fc
 // Address Range: [[006083fc, 0060840c]]
 // Convention: __cdecl
-// Signature: DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc(void)
+// Signature: DWORD __cdecl crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc(void)
 
 #include "nocturne.h"
 

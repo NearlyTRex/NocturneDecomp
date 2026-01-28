@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int x_max, int y_max)
+; __cdecl void __cdecl engine_2d_c_drawTextMultiline_FUN_00401cf0(char *text,int x_start,int y_start,int x_max,int y_max)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text

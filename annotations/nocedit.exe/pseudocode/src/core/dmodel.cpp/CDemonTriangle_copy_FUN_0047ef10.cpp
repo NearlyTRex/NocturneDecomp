@@ -2,7 +2,7 @@
 // Address: 0047ef10
 // Address Range: [[0047ef10, 0047ef54]]
 // Convention: __cdecl
-// Signature: int core_dmodel.cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle * this_ptr, CDemonTriangle * other)
+// Signature: int __cdecl core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other)
 
 #include "nocturne.h"
 

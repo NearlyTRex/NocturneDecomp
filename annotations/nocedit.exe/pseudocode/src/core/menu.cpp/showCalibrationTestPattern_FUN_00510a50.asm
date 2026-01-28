@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_showCalibrationTestPattern_FUN_00510a50(char * message_text)
+; __cdecl void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_00510a50(char *message_text)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   message_text

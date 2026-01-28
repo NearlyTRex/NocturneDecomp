@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeInteger_FUN_0040b7f0(int *int_ptr,char *property_name)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   int_ptr

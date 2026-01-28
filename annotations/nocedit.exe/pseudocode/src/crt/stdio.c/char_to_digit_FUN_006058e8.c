@@ -2,7 +2,7 @@
 // Address: 006058e8
 // Address Range: [[006058e8, 00605916]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_char_to_digit_FUN_006058e8(int ch)
+// Signature: int __cdecl crt_stdio_c_char_to_digit_FUN_006058e8(int ch)
 
 #include "nocturne.h"
 

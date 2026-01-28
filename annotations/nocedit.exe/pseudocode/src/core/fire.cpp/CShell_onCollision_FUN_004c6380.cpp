@@ -2,7 +2,7 @@
 // Address: 004c6380
 // Address Range: [[004c6380, 004c63c1]]
 // Convention: __cdecl
-// Signature: int core_fire.cpp_CShell_onCollision_FUN_004c6380(CShell * this_ptr, CVector3f * collision_normal)
+// Signature: int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collision_normal)
 
 #include "nocturne.h"
 

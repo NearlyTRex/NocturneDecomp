@@ -2,7 +2,7 @@
 // Address: 004a6e20
 // Address Range: [[004a6e20, 004a6ec1]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20(char * pattern, char * target_string, int case_sensitive)
+// Signature: int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20 (char *pattern,char *target_string,int case_sensitive)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004840b0
 // Address Range: [[004840b0, 004842f2] [00484329, 00484390]]
 // Convention: unknown
-// Signature: undefined core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0()
+// Signature: void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
 
 #include "nocturne.h"
 

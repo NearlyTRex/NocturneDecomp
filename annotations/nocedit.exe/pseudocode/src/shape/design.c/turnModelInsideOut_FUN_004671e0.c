@@ -2,7 +2,7 @@
 // Address: 004671e0
 // Address Range: [[004671e0, 0046734e]]
 // Convention: __cdecl
-// Signature: void shape_design.c_turnModelInsideOut_FUN_004671e0(void)
+// Signature: void __cdecl shape_design_c_turnModelInsideOut_FUN_004671e0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_weapon.cpp_CWeapon_serialize_FUN_005ee250(CWeapon * this_ptr)
+; __cdecl void __cdecl core_weapon_cpp_CWeapon_serialize_FUN_005ee250(CWeapon *this_ptr)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

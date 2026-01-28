@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inv.cpp_freeInventory_FUN_004fd510(void)
+; __cdecl void __cdecl core_inv_cpp_freeInventory_FUN_004fd510(void)
 ;
 ;
 ; XREF[1]:

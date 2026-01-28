@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_clearZBuffer_FUN_005b7be0(void)
+; __cdecl int __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b7be0(void)
 ;
 ;
 ; XREF[2]:

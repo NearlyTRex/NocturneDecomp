@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_motion.cpp_CMotionController_reset_FUN_0052dad0(CMotionController * this_ptr)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_reset_FUN_0052dad0(CMotionController *this_ptr)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

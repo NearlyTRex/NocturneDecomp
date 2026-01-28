@@ -2,7 +2,7 @@
 // Address: 00424c70
 // Address Range: [[00424c70, 00424c92]]
 // Convention: __cdecl
-// Signature: CBugs * core_bugs.cpp_factoryFunc_FUN_00424c70(void)
+// Signature: CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00424c70(void)
 
 #include "nocturne.h"
 

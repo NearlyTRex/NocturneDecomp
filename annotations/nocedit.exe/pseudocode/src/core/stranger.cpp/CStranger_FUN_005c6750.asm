@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stranger.cpp_CStranger_FUN_005c6750()
+; unknown void core_stranger_cpp_CStranger_FUN_005c6750(void)
 ;
 ;
 ; Referenced Globals:

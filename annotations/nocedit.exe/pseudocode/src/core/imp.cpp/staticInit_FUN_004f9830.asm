@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_imp.cpp_staticInit_FUN_004f9830(void)
+; __cdecl void __cdecl core_imp_cpp_staticInit_FUN_004f9830(void)
 ;
 ;
 ; Referenced Globals:

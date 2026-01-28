@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData * vertex_a, SEdgeData * vertex_b)
+; __cdecl void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData *vertex_a,SEdgeData *vertex_b)
 ;
 ; Parameters:
 ; SEdgeData *      Stack[0x4]:4   vertex_a

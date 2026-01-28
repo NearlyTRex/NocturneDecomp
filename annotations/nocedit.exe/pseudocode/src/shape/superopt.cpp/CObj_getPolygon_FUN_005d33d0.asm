@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPoly * shape_superopt.cpp_CObj_getPolygon_FUN_005d33d0(CObj * this_ptr, uint index)
+; __cdecl CPoly * __cdecl shape_superopt_cpp_CObj_getPolygon_FUN_005d33d0(CObj *this_ptr,uint index)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

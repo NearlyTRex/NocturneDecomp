@@ -2,7 +2,7 @@
 // Address: 0060d028
 // Address Range: [[0060d028, 0060d066]]
 // Convention: __cdecl
-// Signature: int crt_signal.c_raiseFPE_FUN_0060d028(int fpe_code)
+// Signature: int __cdecl crt_signal_c_raiseFPE_FUN_0060d028(int fpe_code)
 
 #include "nocturne.h"
 

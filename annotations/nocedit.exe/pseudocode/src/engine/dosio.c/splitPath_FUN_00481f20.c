@@ -2,7 +2,7 @@
 // Address: 00481f20
 // Address Range: [[00481f20, 00481f47]]
 // Convention: __cdecl
-// Signature: void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, char * extension)
+// Signature: void __cdecl engine_dosio_c_splitPath_FUN_00481f20 (char *full_path,char *drive,char *directory,char *filename,char *extension)
 
 #include "nocturne.h"
 

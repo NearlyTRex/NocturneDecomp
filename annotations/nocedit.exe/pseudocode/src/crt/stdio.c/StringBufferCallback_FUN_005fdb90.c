@@ -2,7 +2,7 @@
 // Address: 005fdb90
 // Address Range: [[005fdb90, 005fdba6]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_StringBufferCallback_FUN_005fdb90(StringOutputContext * context, char character)
+// Signature: void __cdecl crt_stdio_c_StringBufferCallback_FUN_005fdb90(StringOutputContext *context,char character)
 
 #include "nocturne.h"
 

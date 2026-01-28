@@ -2,7 +2,7 @@
 // Address: 00464870
 // Address Range: [[00464870, 004648d6]]
 // Convention: __cdecl
-// Signature: int shape_design.c_detectMouseButtonClick_FUN_00464870(int mouse_button_mask)
+// Signature: int __cdecl shape_design_c_detectMouseButtonClick_FUN_00464870(int mouse_button_mask)
 
 #include "nocturne.h"
 

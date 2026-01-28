@@ -2,7 +2,7 @@
 // Address: 005e7700
 // Address Range: [[005e7700, 005e7808]]
 // Convention: __cdecl
-// Signature: CVampireBoss * core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700(CVampireBoss * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9, uint d10, uint d11, uint d12, uint d13)
+// Signature: CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700 (CVampireBoss *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9,uint d10,uint d11,uint d12,uint d13)
 
 #include "nocturne.h"
 

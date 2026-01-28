@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0(void)
+; __cdecl void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x28]:1  local_28

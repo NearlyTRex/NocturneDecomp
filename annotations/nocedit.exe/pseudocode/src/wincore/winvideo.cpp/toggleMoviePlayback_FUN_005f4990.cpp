@@ -2,7 +2,7 @@
 // Address: 005f4990
 // Address Range: [[005f4990, 005f49f8]]
 // Convention: __cdecl
-// Signature: void wincore_winvideo.cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window, int play_state)
+// Signature: void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window,int play_state)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0043e170
 // Address Range: [[0043e170, 0043e19f]]
 // Convention: unknown
-// Signature: undefined core_cloth.cpp_FUN_0043e170()
+// Signature: void core_cloth_cpp_FUN_0043e170(void)
 
 #include "nocturne.h"
 

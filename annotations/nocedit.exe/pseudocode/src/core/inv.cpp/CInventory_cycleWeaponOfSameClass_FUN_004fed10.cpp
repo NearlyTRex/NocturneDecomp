@@ -2,7 +2,7 @@
 // Address: 004fed10
 // Address Range: [[004fed10, 004fedfe]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory * this_ptr, int direction)
+// Signature: void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr,int direction)
 
 #include "nocturne.h"
 

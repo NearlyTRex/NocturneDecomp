@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCrate * core_crate.cpp_factoryFunc_FUN_00448490(void)
+; __cdecl CCrate * __cdecl core_crate_cpp_factoryFunc_FUN_00448490(void)
 ;
 ;
 ; XREF[1]:

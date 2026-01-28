@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSkeleton * core_skeleton.cpp_CSkeleton_ctor_FUN_00599880(CSkeleton * this_ptr)
+; __cdecl CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *this_ptr)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr

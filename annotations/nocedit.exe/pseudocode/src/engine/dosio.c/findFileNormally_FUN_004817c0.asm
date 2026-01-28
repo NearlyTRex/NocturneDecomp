@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+; __cdecl int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info)
 ;
 ; Parameters:
 ; SFoundFileInfo * Stack[0x4]:4   info

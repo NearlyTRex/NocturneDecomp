@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_staticInit_FUN_0049d170(void)
+; __cdecl void __cdecl shape_edittool_cpp_staticInit_FUN_0049d170(void)
 ;
 ;
 ; Referenced Globals:

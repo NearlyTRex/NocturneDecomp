@@ -2,7 +2,7 @@
 // Address: 005ede40
 // Address Range: [[005ede40, 005ede60]]
 // Convention: __cdecl
-// Signature: void core_weapon.cpp_staticInit_FUN_005ede40(void)
+// Signature: void __cdecl core_weapon_cpp_staticInit_FUN_005ede40(void)
 
 #include "nocturne.h"
 

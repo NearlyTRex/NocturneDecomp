@@ -2,7 +2,7 @@
 // Address: 004f2340
 // Address Range: [[004f2340, 004f2467]]
 // Convention: __cdecl
-// Signature: CHero * core_hero.cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr)
+// Signature: CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
 
 #include "nocturne.h"
 

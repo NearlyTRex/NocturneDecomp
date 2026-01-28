@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int vertex_count, int * vertex_indices)
+; __cdecl int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int vertex_count,int *vertex_indices)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_count

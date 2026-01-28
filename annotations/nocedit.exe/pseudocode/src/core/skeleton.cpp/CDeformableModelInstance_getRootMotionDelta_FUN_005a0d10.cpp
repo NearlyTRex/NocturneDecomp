@@ -2,7 +2,7 @@
 // Address: 005a0d10
 // Address Range: [[005a0d10, 005a0f46]]
 // Convention: __cdecl
-// Signature: CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)
+// Signature: CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame, float end_frame)
 
 #include "nocturne.h"
 

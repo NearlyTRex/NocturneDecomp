@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HANDLE crt_io.c_CreateFallbackHandle_FUN_00608b88(void)
+; __cdecl HANDLE __cdecl crt_io_c_CreateFallbackHandle_FUN_00608b88(void)
 ;
 ;
 ; XREF[2]:

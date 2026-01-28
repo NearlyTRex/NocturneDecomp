@@ -2,7 +2,7 @@
 // Address: 00439260
 // Address Range: [[00439260, 004394df]]
 // Convention: unknown
-// Signature: undefined core_cloth.cpp_ParseClothFile_FUN_00439260()
+// Signature: void core_cloth_cpp_ParseClothFile_FUN_00439260(void)
 
 #include "nocturne.h"
 

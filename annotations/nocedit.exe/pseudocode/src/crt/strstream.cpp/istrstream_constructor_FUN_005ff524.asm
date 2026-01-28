@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl istrstream * crt_strstream.cpp_istrstream_constructor_FUN_005ff524(istrstream * this_ptr, int ctor_flags, char * buffer, int size)
+; __cdecl istrstream * __cdecl crt_strstream_cpp_istrstream_constructor_FUN_005ff524 (istrstream *this_ptr,int ctor_flags,char *buffer,int size)
 ;
 ; Parameters:
 ; istrstream *     Stack[0x4]:4   this_ptr

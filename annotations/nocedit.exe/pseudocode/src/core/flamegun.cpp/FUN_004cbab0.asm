@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flamegun.cpp_FUN_004cbab0()
+; unknown float core_flamegun_cpp_FUN_004cbab0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

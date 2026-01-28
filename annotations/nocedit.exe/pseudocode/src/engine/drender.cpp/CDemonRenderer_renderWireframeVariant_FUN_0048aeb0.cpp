@@ -2,7 +2,7 @@
 // Address: 0048aeb0
 // Address Range: [[0048aeb0, 0048b021]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)
 
 #include "nocturne.h"
 

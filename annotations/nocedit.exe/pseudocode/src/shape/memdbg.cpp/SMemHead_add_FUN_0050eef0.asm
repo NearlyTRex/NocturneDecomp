@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * header)
+; __cdecl void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header)
 ;
 ; Parameters:
 ; SMemHead *       Stack[0x4]:4   header

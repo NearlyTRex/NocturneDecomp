@@ -2,7 +2,7 @@
 // Address: 00554a50
 // Address Range: [[00554a50, 00554cb0]]
 // Convention: __cdecl
-// Signature: int shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQuantizer * this_ptr, CBitmap * bitmap)
+// Signature: int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50 (CColorQuantizer *this_ptr,CBitmap *bitmap)
 
 #include "nocturne.h"
 

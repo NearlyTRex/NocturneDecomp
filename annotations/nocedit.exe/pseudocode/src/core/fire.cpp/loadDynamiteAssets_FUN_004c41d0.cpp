@@ -2,7 +2,7 @@
 // Address: 004c41d0
 // Address Range: [[004c41d0, 004c41dd]]
 // Convention: __cdecl
-// Signature: undefined core_fire.cpp_loadDynamiteAssets_FUN_004c41d0()
+// Signature: void __cdecl core_fire_cpp_loadDynamiteAssets_FUN_004c41d0(void)
 
 #include "nocturne.h"
 

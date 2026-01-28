@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_WriteConsoleChar_FUN_0060b490(int character)
+; __watcallStack int __watcallStack crt_stdio_c_WriteConsoleChar_FUN_0060b490(int character)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character

@@ -2,7 +2,7 @@
 // Address: 005d3df0
 // Address Range: [[005d3df0, 005d3e3a]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0(CObj * this_ptr, uint flag_mask)
+// Signature: void __cdecl shape_superopt_cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0(CObj *this_ptr,uint flag_mask)
 
 #include "nocturne.h"
 

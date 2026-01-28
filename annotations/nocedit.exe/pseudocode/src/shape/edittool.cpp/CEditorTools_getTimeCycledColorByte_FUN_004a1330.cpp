@@ -2,7 +2,7 @@
 // Address: 004a1330
 // Address Range: [[004a1330, 004a1377]]
 // Convention: __cdecl
-// Signature: uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+// Signature: uchar __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
 
 #include "nocturne.h"
 

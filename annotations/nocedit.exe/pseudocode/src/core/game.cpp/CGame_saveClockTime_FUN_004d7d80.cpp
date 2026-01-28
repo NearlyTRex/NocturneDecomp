@@ -2,7 +2,7 @@
 // Address: 004d7d80
 // Address Range: [[004d7d80, 004d7d8f]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+// Signature: void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004d7d80(CGame *n1,CGame *n2)
 
 #include "nocturne.h"
 

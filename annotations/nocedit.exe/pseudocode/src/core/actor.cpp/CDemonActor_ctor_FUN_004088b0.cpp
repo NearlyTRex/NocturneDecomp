@@ -2,7 +2,7 @@
 // Address: 004088b0
 // Address Range: [[004088b0, 00408a23]]
 // Convention: __cdecl
-// Signature: CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
+// Signature: CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 

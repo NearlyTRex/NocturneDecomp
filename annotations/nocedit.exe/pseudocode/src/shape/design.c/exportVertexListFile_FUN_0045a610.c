@@ -2,7 +2,7 @@
 // Address: 0045a610
 // Address Range: [[0045a610, 0045a7aa]]
 // Convention: __cdecl
-// Signature: void shape_design.c_exportVertexListFile_FUN_0045a610(void)
+// Signature: void __cdecl shape_design_c_exportVertexListFile_FUN_0045a610(void)
 
 #include "nocturne.h"
 

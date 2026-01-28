@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_processAudio_FUN_005abe20(void)
+; __cdecl void __cdecl sound_sndmain_cpp_processAudio_FUN_005abe20(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8

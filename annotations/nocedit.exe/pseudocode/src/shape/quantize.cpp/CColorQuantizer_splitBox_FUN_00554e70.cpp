@@ -2,7 +2,7 @@
 // Address: 00554e70
 // Address Range: [[00554e70, 00554fef]]
 // Convention: __cdecl
-// Signature: void shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70(CColorQuantizer * this_ptr, int source_box_index, int dest_box_index)
+// Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_splitBox_FUN_00554e70 (CColorQuantizer *this_ptr,int source_box_index,int dest_box_index)
 
 #include "nocturne.h"
 

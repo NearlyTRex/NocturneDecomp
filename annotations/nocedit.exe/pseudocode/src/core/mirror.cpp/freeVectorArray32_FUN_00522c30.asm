@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_mirror.cpp_freeVectorArray32_FUN_00522c30(CVector3f * * array_ptr)
+; __cdecl void __cdecl core_mirror_cpp_freeVectorArray32_FUN_00522c30(CVector3f **array_ptr)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array_ptr

@@ -2,7 +2,7 @@
 // Address: 00574e30
 // Address Range: [[00574e30, 00574e61]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(CZThumb * this_ptr)
+// Signature: void __cdecl core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(CZThumb *this_ptr)
 
 #include "nocturne.h"
 

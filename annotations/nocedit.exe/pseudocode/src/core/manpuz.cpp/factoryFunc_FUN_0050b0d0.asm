@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMirrorHack * core_manpuz.cpp_factoryFunc_FUN_0050b0d0(void)
+; __cdecl CMirrorHack * __cdecl core_manpuz_cpp_factoryFunc_FUN_0050b0d0(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 005f6f40
 // Address Range: [[005f6f40, 005f6f9c]]
 // Convention: __stack_esi
-// Signature: CMatrix3x4f * core_xform.cpp_buildYFlipMatrix_FUN_005f6f40(float y_offset, CMatrix3x4f * matrix_out)
+// Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildYFlipMatrix_FUN_005f6f40(float y_offset,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 

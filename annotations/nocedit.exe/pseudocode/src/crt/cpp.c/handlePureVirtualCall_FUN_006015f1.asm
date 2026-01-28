@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_cpp.c_handlePureVirtualCall_FUN_006015f1()
+; unknown void crt_cpp_c_handlePureVirtualCall_FUN_006015f1(void)
 ;
 ;
 ; Referenced Globals:

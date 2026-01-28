@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_showTextInputDialog_FUN_0049db10(int dialog_mode, char * prompt_text, char * input_buffer, int buffer_size, int dialog_flags)
+; __cdecl int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10 (int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   dialog_mode

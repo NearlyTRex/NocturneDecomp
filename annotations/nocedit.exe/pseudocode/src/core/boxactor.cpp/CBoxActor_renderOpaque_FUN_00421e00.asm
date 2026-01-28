@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00(CBoxActor * this_ptr)
+; __cdecl int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_00421e00(CBoxActor *this_ptr)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

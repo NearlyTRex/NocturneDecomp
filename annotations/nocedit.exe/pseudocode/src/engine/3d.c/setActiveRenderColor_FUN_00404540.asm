@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_3d.c_setActiveRenderColor_FUN_00404540(void)
+; __cdecl void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404540(void)
 ;
 ;
 ; XREF[3]:

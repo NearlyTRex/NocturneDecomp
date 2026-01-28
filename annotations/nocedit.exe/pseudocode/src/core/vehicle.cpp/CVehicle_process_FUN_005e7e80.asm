@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_vehicle.cpp_CVehicle_process_FUN_005e7e80(CVehicle * this_ptr, float delta_time)
+; __cdecl void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr

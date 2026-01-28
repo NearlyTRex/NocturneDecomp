@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_stdio.c_formatTwoDigits_FUN_006002a0(char * buffer, int value)
+; __cdecl void __cdecl crt_stdio_c_formatTwoDigits_FUN_006002a0(char *buffer,int value)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

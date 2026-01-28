@@ -2,7 +2,7 @@
 // Address: 005b9670
 // Address Range: [[005b9670, 005b994c]]
 // Convention: __cdecl
-// Signature: void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)
+// Signature: void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9670(CSpotView *this_ptr)
 
 #include "nocturne.h"
 

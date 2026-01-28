@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boxactor.cpp_CLightActor_FUN_00423400()
+; unknown void core_boxactor_cpp_CLightActor_FUN_00423400 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,undefined4 param_6,char *param_7)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xc]:8  local_c

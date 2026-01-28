@@ -2,7 +2,7 @@
 // Address: 0048c8d0
 // Address Range: [[0048c8d0, 0048c957]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, RenderScanlineFunc * scanline_renderer)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer )
 
 #include "nocturne.h"
 

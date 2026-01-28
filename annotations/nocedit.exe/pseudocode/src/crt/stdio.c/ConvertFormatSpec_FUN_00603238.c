@@ -2,7 +2,7 @@
 // Address: 00603238
 // Address Range: [[00603238, 0060389b]]
 // Convention: __cdecl
-// Signature: char * crt_stdio.c_ConvertFormatSpec_FUN_00603238(char * output_buffer, va_list_t * args, FormatSpec * spec_info)
+// Signature: char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238 (char *output_buffer,va_list_t *args,FormatSpec *spec_info)
 
 #include "nocturne.h"
 

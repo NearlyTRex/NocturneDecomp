@@ -2,7 +2,7 @@
 // Address: 0059c5e0
 // Address Range: [[0059c5e0, 0059cb9a]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformableModel * this_ptr, int lod_index, CBodyPart * body_part_ptr, int part_index, int num_parts_to_dismember, int texture_set_index, CVector3i * skinned_vertices)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0 (CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index, int num_parts_to_dismember,int texture_set_index,CVector3i *skinned_vertices)
 
 #include "nocturne.h"
 

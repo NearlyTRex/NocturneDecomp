@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleCollision * out_data, float start_x, float start_z, float dir_x, float dir_z, float radius, void * user_data1, void * user_data2)
+; __cdecl void __cdecl core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90 (SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z, float radius,void *user_data1,void *user_data2)
 ;
 ; Parameters:
 ; SCapsuleCollision * Stack[0x4]:4   out_data

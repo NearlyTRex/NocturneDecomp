@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c(void * pThreadData)
+; __cdecl void * __cdecl crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(void *pThreadData)
 ;
 ; Parameters:
 ; void *           Stack[0x8]:4   pThreadData

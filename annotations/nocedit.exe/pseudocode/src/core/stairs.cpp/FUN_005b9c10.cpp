@@ -2,7 +2,7 @@
 // Address: 005b9c10
 // Address Range: [[005b9c10, 005ba486]]
 // Convention: __cdecl
-// Signature: int core_stairs.cpp_FUN_005b9c10(CDemonActor * param_1, undefined4 param_2, CDemonActor * param_3)
+// Signature: int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,undefined4 param_2,CDemonActor *param_3)
 
 #include "nocturne.h"
 

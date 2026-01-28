@@ -2,7 +2,7 @@
 // Address: 005857b0
 // Address Range: [[005857b0, 00585864]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

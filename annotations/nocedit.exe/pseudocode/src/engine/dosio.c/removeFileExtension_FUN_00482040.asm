@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_dosio.c_removeFileExtension_FUN_00482040(char * source_path, char * destination_buffer)
+; __cdecl void __cdecl engine_dosio_c_removeFileExtension_FUN_00482040(char *source_path,char *destination_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   source_path

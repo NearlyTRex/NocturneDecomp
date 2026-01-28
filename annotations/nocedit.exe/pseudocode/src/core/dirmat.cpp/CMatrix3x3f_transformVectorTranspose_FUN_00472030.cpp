@@ -2,7 +2,7 @@
 // Address: 00472030
 // Address Range: [[00472030, 00472084]]
 // Convention: __cdecl
-// Signature: CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
+// Signature: CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 (CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input)
 
 #include "nocturne.h"
 

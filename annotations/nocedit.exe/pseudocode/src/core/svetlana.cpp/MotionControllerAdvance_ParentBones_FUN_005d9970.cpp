@@ -2,7 +2,7 @@
 // Address: 005d9970
 // Address Range: [[005d9970, 005d9a07]]
 // Convention: unknown
-// Signature: undefined core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970()
+// Signature: void core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(void)
 
 #include "nocturne.h"
 

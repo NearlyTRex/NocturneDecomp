@@ -2,7 +2,7 @@
 // Address: 00513720
 // Address Range: [[00513720, 0051385d]]
 // Convention: __cdecl
-// Signature: int core_menu.cpp_isKeyCodeValidForMode_FUN_00513720(int * key_code_ptr, char * description)
+// Signature: int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(int *key_code_ptr,char *description)
 
 #include "nocturne.h"
 

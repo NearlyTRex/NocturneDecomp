@@ -2,7 +2,7 @@
 // Address: 00588ba0
 // Address Range: [[00588ba0, 00588c1d]]
 // Convention: __cdecl
-// Signature: CShovel * core_shovel.cpp_CShovel_ctor_FUN_00588ba0(CShovel * this_ptr)
+// Signature: CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00588ba0(CShovel *this_ptr)
 
 #include "nocturne.h"
 

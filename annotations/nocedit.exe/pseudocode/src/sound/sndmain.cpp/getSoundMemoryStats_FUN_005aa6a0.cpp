@@ -2,7 +2,7 @@
 // Address: 005aa6a0
 // Address Range: [[005aa6a0, 005aa7ac]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_getSoundMemoryStats_FUN_005aa6a0(int * out_referenced_count, int * out_total_bytes_referenced, int * out_unreferenced_count, int * out_total_bytes_unreferenced, int * out_free_slots, int * out_available_memory)
+// Signature: void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0 (int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count, int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory)
 
 #include "nocturne.h"
 

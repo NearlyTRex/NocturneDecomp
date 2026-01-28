@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl wchar_t crt_file.c_normalize_path_separator_FUN_005febe0(wchar_t ch, wchar_t * preferred_separator)
+; __cdecl wchar_t __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(wchar_t ch,wchar_t *preferred_separator)
 ;
 ; Parameters:
 ; wchar_t          Stack[0x4]:2   ch

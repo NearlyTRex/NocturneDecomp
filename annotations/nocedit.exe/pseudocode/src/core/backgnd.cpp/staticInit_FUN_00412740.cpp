@@ -2,7 +2,7 @@
 // Address: 00412740
 // Address Range: [[00412740, 00412763]]
 // Convention: __cdecl
-// Signature: void core_backgnd.cpp_staticInit_FUN_00412740(void)
+// Signature: void __cdecl core_backgnd_cpp_staticInit_FUN_00412740(void)
 
 #include "nocturne.h"
 

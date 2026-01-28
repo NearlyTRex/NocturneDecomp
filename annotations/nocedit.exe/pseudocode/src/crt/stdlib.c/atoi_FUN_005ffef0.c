@@ -2,7 +2,7 @@
 // Address: 005ffef0
 // Address Range: [[005ffef0, 005fff46]]
 // Convention: __cdecl
-// Signature: int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
+// Signature: int __cdecl crt_stdlib_c_atoi_FUN_005ffef0(char *string_ptr)
 
 #include "nocturne.h"
 

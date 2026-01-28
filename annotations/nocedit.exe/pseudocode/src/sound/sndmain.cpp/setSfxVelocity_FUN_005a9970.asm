@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_setSfxVelocity_FUN_005a9970(uint sfx_handle, double vel_x, double vel_y, double vel_z)
+; __cdecl int __cdecl sound_sndmain_cpp_setSfxVelocity_FUN_005a9970 (uint sfx_handle,double vel_x,double vel_y,double vel_z)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

@@ -2,7 +2,7 @@
 // Address: 00463830
 // Address Range: [[00463830, 00463a1f]]
 // Convention: __cdecl
-// Signature: void shape_design.c_removeUnusedVertices_FUN_00463830(void)
+// Signature: void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
 
 #include "nocturne.h"
 

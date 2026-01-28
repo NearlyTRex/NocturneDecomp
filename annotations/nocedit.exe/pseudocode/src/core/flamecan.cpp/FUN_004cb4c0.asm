@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flamecan.cpp_FUN_004cb4c0()
+; unknown int core_flamecan_cpp_FUN_004cb4c0(void)
 ;
 ;
 ; Referenced Globals:

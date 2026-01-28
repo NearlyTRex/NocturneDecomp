@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80(CAmmo * this_ptr)
+; __cdecl int __cdecl core_ammo_cpp_CAmmo_renderOpaque_FUN_00410e80(CAmmo *this_ptr)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

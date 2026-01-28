@@ -2,7 +2,7 @@
 // Address: 005307a0
 // Address Range: [[005307a0, 00530d19]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0(CMP3Decoder * this_ptr, CFileBitStream * bit_stream, SMpegLayer3Granule * side_info_array, SMpegFrame * frame)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0 (CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3Granule *side_info_array, SMpegFrame *frame)
 
 #include "nocturne.h"
 

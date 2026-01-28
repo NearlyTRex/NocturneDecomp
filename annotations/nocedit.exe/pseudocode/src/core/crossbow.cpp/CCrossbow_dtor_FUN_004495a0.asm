@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCrossbow * core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr

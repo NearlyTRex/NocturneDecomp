@@ -2,7 +2,7 @@
 // Address: 00494710
 // Address Range: [[00494710, 0049479e]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710(CDemonRaytrace * this_ptr, void * callback_data, int linear_index, void * user_data)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710 (CDemonRaytrace *this_ptr,void *callback_data,int linear_index,void *user_data)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004c41e0
 // Address Range: [[004c41e0, 004c41f8]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CCrater_ctor_FUN_004c41e0(CCrater * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CCrater_ctor_FUN_004c41e0(CCrater *this_ptr)
 
 #include "nocturne.h"
 

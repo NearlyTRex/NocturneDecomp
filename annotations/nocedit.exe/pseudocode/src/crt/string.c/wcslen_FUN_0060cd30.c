@@ -2,7 +2,7 @@
 // Address: 0060cd30
 // Address Range: [[0060cd30, 0060cd50]]
 // Convention: __cdecl
-// Signature: ulong crt_string.c_wcslen_FUN_0060cd30(LPWSTR str)
+// Signature: ulong __cdecl crt_string_c_wcslen_FUN_0060cd30(LPWSTR str)
 
 #include "nocturne.h"
 

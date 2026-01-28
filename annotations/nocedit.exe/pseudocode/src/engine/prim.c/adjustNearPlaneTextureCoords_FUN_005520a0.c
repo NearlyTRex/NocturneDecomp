@@ -2,7 +2,7 @@
 // Address: 005520a0
 // Address Range: [[005520a0, 00552106]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_adjustNearPlaneTextureCoords_FUN_005520a0(SRenderVertex * vertices, int vertex_count)
+// Signature: void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_005520a0(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 

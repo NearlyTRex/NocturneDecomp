@@ -2,7 +2,7 @@
 // Address: 00471360
 // Address Range: [[00471360, 004713f9]]
 // Convention: __cdecl
-// Signature: void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe * this_ptr, float radius)
+// Signature: void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe *this_ptr,float radius)
 
 #include "nocturne.h"
 

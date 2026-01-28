@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_iostream.cpp_validateBufferSeek_FUN_0060d725(int seek_distance, int whence, char * buffer_start, char * current_ptr, char * buffer_end1, char * buffer_end2)
+; __watcallStack int __watcallStack crt_iostream_cpp_validateBufferSeek_FUN_0060d725 (int seek_distance,int whence,char *buffer_start,char *current_ptr,char *buffer_end1, char *buffer_end2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   seek_distance

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCurtain * core_curtain.cpp_FUN_0044ba30(CCurtain * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CCurtain * __cdecl core_curtain_cpp_FUN_0044ba30(CCurtain *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr

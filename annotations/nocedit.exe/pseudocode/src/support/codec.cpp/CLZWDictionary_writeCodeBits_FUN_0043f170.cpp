@@ -2,7 +2,7 @@
 // Address: 0043f170
 // Address Range: [[0043f170, 0043f1f2]]
 // Convention: __cdecl
-// Signature: void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, FILE * output_stream)
+// Signature: void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 (CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,FILE *output_stream)
 
 #include "nocturne.h"
 

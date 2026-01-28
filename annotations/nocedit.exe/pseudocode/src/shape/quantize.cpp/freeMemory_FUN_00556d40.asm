@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_quantize.cpp_freeMemory_FUN_00556d40(void * ptr)
+; __cdecl void __cdecl shape_quantize_cpp_freeMemory_FUN_00556d40(void *ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_clipper.c_setNearPlaneDistance_FUN_004359d0(int distance)
+; __cdecl void __cdecl engine_clipper_c_setNearPlaneDistance_FUN_004359d0(int distance)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   distance

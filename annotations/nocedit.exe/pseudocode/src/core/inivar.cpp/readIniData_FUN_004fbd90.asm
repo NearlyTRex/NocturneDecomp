@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inivar.cpp_readIniData_FUN_004fbd90(void)
+; __cdecl void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x204]:1  local_204

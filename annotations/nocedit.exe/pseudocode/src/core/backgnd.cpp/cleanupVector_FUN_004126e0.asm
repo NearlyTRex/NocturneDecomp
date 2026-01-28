@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_backgnd.cpp_cleanupVector_FUN_004126e0(CVector3f * * objs)
+; __cdecl int __cdecl core_backgnd_cpp_cleanupVector_FUN_004126e0(CVector3f **objs)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   objs

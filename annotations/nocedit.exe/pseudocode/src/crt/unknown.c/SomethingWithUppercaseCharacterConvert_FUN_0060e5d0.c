@@ -2,7 +2,7 @@
 // Address: 0060e5d0
 // Address Range: [[0060e5d0, 0060e636]]
 // Convention: unknown
-// Signature: undefined crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0()
+// Signature: char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(void)
 
 #include "nocturne.h"
 

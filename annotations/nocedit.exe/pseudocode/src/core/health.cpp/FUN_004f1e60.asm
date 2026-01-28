@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_health.cpp_FUN_004f1e60()
+; unknown int core_health_cpp_FUN_004f1e60(void)
 ;
 ;
 ; Called Functions:

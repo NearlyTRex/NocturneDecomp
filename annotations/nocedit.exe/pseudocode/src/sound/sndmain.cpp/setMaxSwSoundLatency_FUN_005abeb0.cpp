@@ -2,7 +2,7 @@
 // Address: 005abeb0
 // Address Range: [[005abeb0, 005abf1f]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setMaxSwSoundLatency_FUN_005abeb0(float latency)
+// Signature: void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_005abeb0(float latency)
 
 #include "nocturne.h"
 

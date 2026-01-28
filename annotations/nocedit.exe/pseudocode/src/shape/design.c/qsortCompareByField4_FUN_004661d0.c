@@ -2,7 +2,7 @@
 // Address: 004661d0
 // Address Range: [[004661d0, 00466200]]
 // Convention: __cdecl
-// Signature: int shape_design.c_qsortCompareByField4_FUN_004661d0(void * element_a, void * element_b)
+// Signature: int __cdecl shape_design_c_qsortCompareByField4_FUN_004661d0(void *element_a,void *element_b)
 
 #include "nocturne.h"
 

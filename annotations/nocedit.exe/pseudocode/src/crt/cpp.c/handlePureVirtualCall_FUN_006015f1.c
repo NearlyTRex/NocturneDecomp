@@ -2,7 +2,7 @@
 // Address: 006015f1
 // Address Range: [[006015f1, 00601619]]
 // Convention: unknown
-// Signature: undefined crt_cpp.c_handlePureVirtualCall_FUN_006015f1()
+// Signature: void crt_cpp_c_handlePureVirtualCall_FUN_006015f1(void)
 
 #include "nocturne.h"
 

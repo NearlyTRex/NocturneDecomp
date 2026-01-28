@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80()
+; unknown void core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2478]:4  local_2478

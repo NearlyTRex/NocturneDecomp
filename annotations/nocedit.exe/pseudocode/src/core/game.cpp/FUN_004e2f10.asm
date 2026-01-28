@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_game.cpp_FUN_004e2f10()
+; unknown void core_game_cpp_FUN_004e2f10(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX)
 ;
 ;
 ; Referenced Globals:

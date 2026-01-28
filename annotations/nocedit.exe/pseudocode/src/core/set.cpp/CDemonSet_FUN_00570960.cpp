@@ -2,7 +2,7 @@
 // Address: 00570960
 // Address Range: [[00570960, 0057096f]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_FUN_00570960(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim, int count)
+// Signature: void __cdecl core_set_cpp_CDemonSet_FUN_00570960(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim,int count)
 
 #include "nocturne.h"
 

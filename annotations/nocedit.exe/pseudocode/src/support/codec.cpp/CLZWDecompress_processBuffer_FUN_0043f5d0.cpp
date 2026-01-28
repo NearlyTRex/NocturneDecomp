@@ -2,7 +2,7 @@
 // Address: 0043f5d0
 // Address Range: [[0043f5d0, 0043f68f]]
 // Convention: __cdecl
-// Signature: int support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress * this_ptr, byte * input, int * input_length, byte * output, int * output_length, int enable_callback)
+// Signature: int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0 (CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length, int enable_callback)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_lockSound_FUN_005abd30(void)
+; __cdecl void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void)
 ;
 ;
 ; XREF[20]:

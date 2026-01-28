@@ -2,7 +2,7 @@
 // Address: 004226d0
 // Address Range: [[004226d0, 004226da]]
 // Convention: __cdecl
-// Signature: int core_boxactor.cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_004226d0(CBoxActor * this_ptr)
+// Signature: int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_004226d0(CBoxActor *this_ptr)
 
 #include "nocturne.h"
 

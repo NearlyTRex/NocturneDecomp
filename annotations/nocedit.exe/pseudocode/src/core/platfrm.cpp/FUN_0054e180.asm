@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_platfrm.cpp_FUN_0054e180()
+; unknown undefined4 core_platfrm_cpp_FUN_0054e180(void)
 ;
 ;
 ; Called Functions:

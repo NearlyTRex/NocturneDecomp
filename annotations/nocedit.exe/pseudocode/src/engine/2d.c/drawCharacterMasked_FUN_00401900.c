@@ -2,7 +2,7 @@
 // Address: 00401900
 // Address Range: [[00401900, 00401a0c]]
 // Convention: __cdecl
-// Signature: int engine_2d.c_drawCharacterMasked_FUN_00401900(int char_code, int x_pos, int y_pos)
+// Signature: int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401900(int char_code,int x_pos,int y_pos)
 
 #include "nocturne.h"
 

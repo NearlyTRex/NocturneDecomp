@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void * crt_iostream.cpp_streambuf_allocBuffer_FUN_0060d790(uint size)
+; __watcallStack void * __watcallStack crt_iostream_cpp_streambuf_allocBuffer_FUN_0060d790(uint size)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   size

@@ -2,7 +2,7 @@
 // Address: 005b5a25
 // Address Range: [[005b5a25, 005b5ced]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+// Signature: int __cdecl wincore_windll_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
 
 #include "nocturne.h"
 

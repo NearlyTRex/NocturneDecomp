@@ -2,7 +2,7 @@
 // Address: 0046a860
 // Address Range: [[0046a860, 0046a87d]]
 // Convention: __cdecl
-// Signature: int shape_design.c_getLastTextureProcessIndex_FUN_0046a860(void)
+// Signature: int __cdecl shape_design_c_getLastTextureProcessIndex_FUN_0046a860(void)
 
 #include "nocturne.h"
 

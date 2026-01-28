@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90(void * dest_buffer, int src_x, int src_y, int start_row, int bytes_per_row, int height)
+; __cdecl void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90 (void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest_buffer

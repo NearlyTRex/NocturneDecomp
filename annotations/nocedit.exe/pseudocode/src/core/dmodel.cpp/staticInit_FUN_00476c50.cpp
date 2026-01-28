@@ -2,7 +2,7 @@
 // Address: 00476c50
 // Address Range: [[00476c50, 00476c74]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_staticInit_FUN_00476c50(void)
+// Signature: void __cdecl core_dmodel_cpp_staticInit_FUN_00476c50(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0060c260
 // Address Range: [[0060c260, 0060c26e]]
 // Convention: __cdecl
-// Signature: int crt_stack.c_GetStackUsage_FUN_0060c260(void)
+// Signature: int __cdecl crt_stack_c_GetStackUsage_FUN_0060c260(void)
 
 #include "nocturne.h"
 

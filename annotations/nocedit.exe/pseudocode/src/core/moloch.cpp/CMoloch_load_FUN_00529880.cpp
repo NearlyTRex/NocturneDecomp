@@ -2,7 +2,7 @@
 // Address: 00529880
 // Address Range: [[00529880, 005298f3]]
 // Convention: unknown
-// Signature: undefined core_moloch.cpp_CMoloch_load_FUN_00529880()
+// Signature: void core_moloch_cpp_CMoloch_load_FUN_00529880(void)
 
 #include "nocturne.h"
 

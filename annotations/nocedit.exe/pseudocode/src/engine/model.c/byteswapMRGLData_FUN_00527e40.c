@@ -2,7 +2,7 @@
 // Address: 00527e40
 // Address Range: [[00527e40, 00527eb2]]
 // Convention: __cdecl
-// Signature: void engine_model.c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended * mrgl_data, int data_size)
+// Signature: void __cdecl engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int data_size)
 
 #include "nocturne.h"
 

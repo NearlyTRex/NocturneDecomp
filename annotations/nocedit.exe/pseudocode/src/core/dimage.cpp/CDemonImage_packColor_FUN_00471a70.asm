@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ushort core_dimage.cpp_CDemonImage_packColor_FUN_00471a70(CDemonImage * this_ptr, uint red, uint green, uint blue)
+; __cdecl ushort __cdecl core_dimage_cpp_CDemonImage_packColor_FUN_00471a70 (CDemonImage *this_ptr,uint red,uint green,uint blue)
 ;
 ; Parameters:
 ; CDemonImage *    Stack[0x4]:4   this_ptr

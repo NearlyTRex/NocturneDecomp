@@ -2,7 +2,7 @@
 // Address: 004bd930
 // Address Range: [[004bd930, 004bd9a1]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager * this_ptr)
+// Signature: void __cdecl core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager *this_ptr)
 
 #include "nocturne.h"
 

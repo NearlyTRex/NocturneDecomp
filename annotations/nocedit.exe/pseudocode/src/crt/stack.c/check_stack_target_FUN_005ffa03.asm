@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void crt_stack.c_check_stack_target_FUN_005ffa03(void * target_stack_ptr)
+; __watcallRegister void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 004b1f10
 // Address Range: [[004b1f10, 004b1fde]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_buildHistoryFilePath_FUN_004b1f10(char * filename, char * extension, char * dest_buffer)
+// Signature: void __cdecl engine_fileio_cpp_buildHistoryFilePath_FUN_004b1f10 (char *filename,char *extension,char *dest_buffer)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00602300
 // Address Range: [[00602300, 00602377]]
 // Convention: __cdecl
-// Signature: int crt_io.c_findNextFileWrapper_FUN_00602300(HANDLE find_handle, LPWIN32_FIND_DATAA find_data)
+// Signature: int __cdecl crt_io_c_findNextFileWrapper_FUN_00602300(HANDLE find_handle,LPWIN32_FIND_DATAA find_data)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004495a0
 // Address Range: [[004495a0, 00449604]]
 // Convention: __cdecl
-// Signature: CCrossbow * core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

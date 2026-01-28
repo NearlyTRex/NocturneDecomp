@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_actor.cpp_CDemonActor_canPickup_FUN_00409000(CDemonActor * this_ptr, CDemonActor * picker)
+; __cdecl int __cdecl core_actor_cpp_CDemonActor_canPickup_FUN_00409000(CDemonActor *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

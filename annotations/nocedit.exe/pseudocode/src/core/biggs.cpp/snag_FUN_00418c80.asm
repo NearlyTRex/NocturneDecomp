@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_biggs.cpp_snag_FUN_00418c80()
+; unknown void core_biggs_cpp_snag_FUN_00418c80(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBat * core_bat.cpp_CBat_dtor_FUN_00414fe0(CBat * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_00414fe0(CBat *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr

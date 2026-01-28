@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl undefined crt_thread.c_exit_thread_FUN_0060fa58()
+; __cdecl void __cdecl crt_thread_c_exit_thread_FUN_0060fa58(void)
 ;
 ;
 ; XREF[1]:

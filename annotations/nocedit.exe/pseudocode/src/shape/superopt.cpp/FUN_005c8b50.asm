@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_superopt.cpp_FUN_005c8b50()
+; unknown int shape_superopt_cpp_FUN_005c8b50(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xe4]:4  local_e4

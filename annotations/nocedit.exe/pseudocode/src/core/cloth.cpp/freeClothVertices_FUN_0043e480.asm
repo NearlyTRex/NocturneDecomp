@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_cloth.cpp_freeClothVertices_FUN_0043e480(SClothVertex * * array)
+; __cdecl int __cdecl core_cloth_cpp_freeClothVertices_FUN_0043e480(SClothVertex **array)
 ;
 ; Parameters:
 ; SClothVertex * * Stack[0x4]:4   array

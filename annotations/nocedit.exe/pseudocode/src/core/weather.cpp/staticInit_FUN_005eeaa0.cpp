@@ -2,7 +2,7 @@
 // Address: 005eeaa0
 // Address Range: [[005eeaa0, 005eeac4]]
 // Convention: __cdecl
-// Signature: void core_weather.cpp_staticInit_FUN_005eeaa0(void)
+// Signature: void __cdecl core_weather_cpp_staticInit_FUN_005eeaa0(void)
 
 #include "nocturne.h"
 

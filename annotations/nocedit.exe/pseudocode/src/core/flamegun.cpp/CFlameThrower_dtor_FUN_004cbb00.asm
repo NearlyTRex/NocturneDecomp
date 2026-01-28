@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlameThrower * core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower * this_ptr, uint d1, uint d2)
+; __cdecl CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CFlameThrower *  Stack[0x4]:4   this_ptr

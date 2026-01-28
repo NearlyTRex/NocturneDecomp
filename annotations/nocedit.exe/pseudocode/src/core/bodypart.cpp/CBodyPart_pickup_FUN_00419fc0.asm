@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_bodypart.cpp_CBodyPart_pickup_FUN_00419fc0(CBodyPart * this_ptr, CDemonActor * carrier)
+; __cdecl void __cdecl core_bodypart_cpp_CBodyPart_pickup_FUN_00419fc0(CBodyPart *this_ptr,CDemonActor *carrier)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

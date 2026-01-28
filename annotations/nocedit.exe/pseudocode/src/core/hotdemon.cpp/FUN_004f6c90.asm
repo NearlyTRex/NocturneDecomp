@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hotdemon.cpp_FUN_004f6c90()
+; unknown CDemonActorType * core_hotdemon_cpp_FUN_004f6c90(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 005d2880
 // Address Range: [[005d2880, 005d28c9]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_translate_FUN_005d2880(CObj * this_ptr, CVector3d * offset)
+// Signature: void __cdecl shape_superopt_cpp_CObj_translate_FUN_005d2880(CObj *this_ptr,CVector3d *offset)
 
 #include "nocturne.h"
 

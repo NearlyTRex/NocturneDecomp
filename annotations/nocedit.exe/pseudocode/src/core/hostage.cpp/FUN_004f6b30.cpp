@@ -2,7 +2,7 @@
 // Address: 004f6b30
 // Address Range: [[004f6b30, 004f6b5b]]
 // Convention: unknown
-// Signature: undefined core_hostage.cpp_FUN_004f6b30()
+// Signature: void core_hostage_cpp_FUN_004f6b30(void)
 
 #include "nocturne.h"
 

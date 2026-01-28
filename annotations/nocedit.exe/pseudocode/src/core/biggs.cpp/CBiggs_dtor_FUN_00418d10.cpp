@@ -2,7 +2,7 @@
 // Address: 00418d10
 // Address Range: [[00418d10, 00418dd8]]
 // Convention: __cdecl
-// Signature: CBiggs * core_biggs.cpp_CBiggs_dtor_FUN_00418d10(CBiggs * this_ptr, uint d1)
+// Signature: CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint d1)
 
 #include "nocturne.h"
 

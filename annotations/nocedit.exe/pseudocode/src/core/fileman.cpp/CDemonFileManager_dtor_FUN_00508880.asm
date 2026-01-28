@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonFileManager * core_fileman.cpp_CDemonFileManager_dtor_FUN_00508880(CDemonFileManager * this_ptr)
+; __cdecl CDemonFileManager * __cdecl core_fileman_cpp_CDemonFileManager_dtor_FUN_00508880(CDemonFileManager *this_ptr)
 ;
 ; Parameters:
 ; CDemonFileManager * Stack[0x4]:4   this_ptr

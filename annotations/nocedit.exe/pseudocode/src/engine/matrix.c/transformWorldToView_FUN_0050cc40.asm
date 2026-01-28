@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi void engine_matrix.c_transformWorldToView_FUN_0050cc40(CVector3i * input_coords, CVector3i * output_coords)
+; __stack_esi void __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *input_coords,CVector3i *output_coords)
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   input_coords

@@ -2,7 +2,7 @@
 // Address: 00606aaf
 // Address Range: [[00606aaf, 00606aca]]
 // Convention: __watcallRegister
-// Signature: float10 crt_math.c_dispatch_divide_FUN_00606aaf(void)
+// Signature: float10 crt_math_c_dispatch_divide_FUN_00606aaf(void)
 
 #include "nocturne.h"
 

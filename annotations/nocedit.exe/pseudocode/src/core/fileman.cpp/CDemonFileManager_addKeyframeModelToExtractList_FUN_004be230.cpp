@@ -2,7 +2,7 @@
 // Address: 004be230
 // Address Range: [[004be230, 004be261]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230(CDemonFileManager * this_ptr, char * filename)
+// Signature: void __cdecl core_fileman_cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230 (CDemonFileManager *this_ptr,char *filename)
 
 #include "nocturne.h"
 

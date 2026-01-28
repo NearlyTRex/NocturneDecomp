@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10(void * sprite_data, void * unused_param, int start_x, int start_y, int end_x, int end_y)
+; __cdecl void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_00432a10 (void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   sprite_data

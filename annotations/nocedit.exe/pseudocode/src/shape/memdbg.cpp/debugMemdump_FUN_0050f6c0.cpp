@@ -2,7 +2,7 @@
 // Address: 0050f6c0
 // Address Range: [[0050f6c0, 0050f791]]
 // Convention: __cdecl
-// Signature: void shape_memdbg.cpp_debugMemdump_FUN_0050f6c0(FILE * output_file)
+// Signature: void __cdecl shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(FILE *output_file)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a1fb0
 // Address Range: [[005a1fb0, 005a1fc4]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_freeSkeletons_FUN_005a1fb0(CSkeleton * * array)
+// Signature: void __cdecl core_skeleton_cpp_freeSkeletons_FUN_005a1fb0(CSkeleton **array)
 
 #include "nocturne.h"
 

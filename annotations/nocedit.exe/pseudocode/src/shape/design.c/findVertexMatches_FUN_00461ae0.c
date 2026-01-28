@@ -2,7 +2,7 @@
 // Address: 00461ae0
 // Address Range: [[00461ae0, 00461b66]]
 // Convention: __cdecl
-// Signature: int shape_design.c_findVertexMatches_FUN_00461ae0(int * vertices1, int * vertices2, int count1, int count2)
+// Signature: int __cdecl shape_design_c_findVertexMatches_FUN_00461ae0(int *vertices1,int *vertices2,int count1,int count2)
 
 #include "nocturne.h"
 

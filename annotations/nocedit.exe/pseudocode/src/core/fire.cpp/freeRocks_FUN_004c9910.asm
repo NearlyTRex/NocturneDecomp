@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeRocks_FUN_004c9910(CRock * * array)
+; __cdecl void __cdecl core_fire_cpp_freeRocks_FUN_004c9910(CRock **array)
 ;
 ; Parameters:
 ; CRock * *        Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 0054a820
 // Address Range: [[0054a820, 0054a83e]]
 // Convention: __cdecl
-// Signature: CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_0054a820(CPackedBitmap * this_ptr)
+// Signature: CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_0054a820(CPackedBitmap *this_ptr)
 
 #include "nocturne.h"
 

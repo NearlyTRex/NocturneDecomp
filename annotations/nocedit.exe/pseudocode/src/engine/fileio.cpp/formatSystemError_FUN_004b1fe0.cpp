@@ -2,7 +2,7 @@
 // Address: 004b1fe0
 // Address Range: [[004b1fe0, 004b2025]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_formatSystemError_FUN_004b1fe0(char * dest_buffer)
+// Signature: void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
 
 #include "nocturne.h"
 

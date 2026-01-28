@@ -2,7 +2,7 @@
 // Address: 005f50c0
 // Address Range: [[005f50c0, 005f50f1]]
 // Convention: __cdecl
-// Signature: CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+// Signature: CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
 
 #include "nocturne.h"
 

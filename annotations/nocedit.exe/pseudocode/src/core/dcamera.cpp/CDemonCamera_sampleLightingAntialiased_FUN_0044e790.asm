@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, int intensity)
+; __cdecl int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 (CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

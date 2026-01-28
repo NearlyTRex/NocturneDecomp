@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CEmitter * core_emitter.cpp_CEmitter_dtor_FUN_004a93c0(CEmitter * this_ptr, uint d1, uint d2)
+; __cdecl CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

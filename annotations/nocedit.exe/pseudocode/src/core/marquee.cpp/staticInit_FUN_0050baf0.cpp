@@ -2,7 +2,7 @@
 // Address: 0050baf0
 // Address Range: [[0050baf0, 0050bb13]]
 // Convention: __cdecl
-// Signature: void core_marquee.cpp_staticInit_FUN_0050baf0(void)
+// Signature: void __cdecl core_marquee_cpp_staticInit_FUN_0050baf0(void)
 
 #include "nocturne.h"
 

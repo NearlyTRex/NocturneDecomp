@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(FILE * file)
+; __cdecl STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *file)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file

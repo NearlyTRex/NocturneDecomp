@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+; __cdecl void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   p1

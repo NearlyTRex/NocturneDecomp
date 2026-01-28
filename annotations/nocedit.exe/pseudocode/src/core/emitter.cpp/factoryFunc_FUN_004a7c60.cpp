@@ -2,7 +2,7 @@
 // Address: 004a7c60
 // Address Range: [[004a7c60, 004a7c82]]
 // Convention: __cdecl
-// Signature: CEmitter * core_emitter.cpp_factoryFunc_FUN_004a7c60(void)
+// Signature: CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_004a7c60(void)
 
 #include "nocturne.h"
 

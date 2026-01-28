@@ -2,7 +2,7 @@
 // Address: 004a6450
 // Address Range: [[004a6450, 004a6485]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450(CEdScrollBar * this_ptr, int * selection_index_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CEdScrollBar_updateWithSelection_FUN_004a6450 (CEdScrollBar *this_ptr,int *selection_index_ptr)
 
 #include "nocturne.h"
 

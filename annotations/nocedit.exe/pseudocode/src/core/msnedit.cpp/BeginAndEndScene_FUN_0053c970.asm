@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
+; unknown void core_msnedit_cpp_BeginAndEndScene_FUN_0053c970(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_ini.cpp_writeProfileString_FUN_004fba40(char * section, char * key, char * value, char * filename)
+; __cdecl void __cdecl engine_ini_cpp_writeProfileString_FUN_004fba40(char *section,char *key,char *value,char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   section

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00(void)
+; __cdecl void __cdecl sound_sndmain_cpp_resetSoundSystemDefaults_FUN_005aae00(void)
 ;
 ;
 ; XREF[1]:

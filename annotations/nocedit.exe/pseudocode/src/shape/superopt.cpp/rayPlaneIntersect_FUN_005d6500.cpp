@@ -2,7 +2,7 @@
 // Address: 005d6500
 // Address Range: [[005d6500, 005d663c]]
 // Convention: __cdecl
-// Signature: double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)
+// Signature: double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500 (CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point,CVector3d *plane_normal)
 
 #include "nocturne.h"
 

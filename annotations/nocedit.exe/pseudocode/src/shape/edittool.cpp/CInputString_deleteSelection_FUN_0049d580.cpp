@@ -2,7 +2,7 @@
 // Address: 0049d580
 // Address Range: [[0049d580, 0049d5ca]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CInputString_deleteSelection_FUN_0049d580(CInputString * this_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580(CInputString *this_ptr)
 
 #include "nocturne.h"
 

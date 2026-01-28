@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_time.c_determine_dst_status_FUN_006079b4(tm * timeptr)
+; __cdecl int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
 ;
 ; Parameters:
 ; tm *             Stack[0x4]:4   timeptr

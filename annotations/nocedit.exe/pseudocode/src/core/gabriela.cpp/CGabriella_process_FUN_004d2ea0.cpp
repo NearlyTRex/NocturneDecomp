@@ -2,7 +2,7 @@
 // Address: 004d2ea0
 // Address Range: [[004d2ea0, 004d418f]]
 // Convention: __cdecl
-// Signature: void core_gabriela.cpp_CGabriella_process_FUN_004d2ea0(CGabriella * this_ptr, float delta_time)
+// Signature: void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

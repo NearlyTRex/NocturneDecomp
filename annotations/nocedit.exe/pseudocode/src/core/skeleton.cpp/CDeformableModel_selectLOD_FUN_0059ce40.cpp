@@ -2,7 +2,7 @@
 // Address: 0059ce40
 // Address Range: [[0059ce40, 0059cebc]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40 (CDeformableModel *this_ptr,CBoundingBox3D *bounding_box)
 
 #include "nocturne.h"
 

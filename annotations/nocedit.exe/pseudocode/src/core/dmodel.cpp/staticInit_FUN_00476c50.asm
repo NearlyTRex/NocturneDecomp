@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_staticInit_FUN_00476c50(void)
+; __cdecl void __cdecl core_dmodel_cpp_staticInit_FUN_00476c50(void)
 ;
 ;
 ; Referenced Globals:

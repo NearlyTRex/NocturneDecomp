@@ -2,7 +2,7 @@
 // Address: 004bee30
 // Address Range: [[004bee30, 004bee79]]
 // Convention: unknown
-// Signature: undefined core_filmreel.cpp_CFilmReel_FUN_004bee30()
+// Signature: void core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
 
 #include "nocturne.h"
 

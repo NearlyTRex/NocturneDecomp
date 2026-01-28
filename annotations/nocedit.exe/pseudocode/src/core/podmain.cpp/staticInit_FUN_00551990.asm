@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_podmain.cpp_staticInit_FUN_00551990(void)
+; __cdecl void __cdecl core_podmain_cpp_staticInit_FUN_00551990(void)
 ;
 ;
 ; Referenced Globals:

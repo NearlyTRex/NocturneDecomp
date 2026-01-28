@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_draw3DLineSegment_FUN_0040d330(CVector3i * start_point, CVector3f * direction_offset)
+; __cdecl void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   start_point

@@ -2,7 +2,7 @@
 // Address: 00599bb0
 // Address Range: [[00599bb0, 00599fb6]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

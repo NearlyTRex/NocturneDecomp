@@ -2,7 +2,7 @@
 // Address: 0058e690
 // Address Range: [[0058e690, 0058ea9a]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableModel * this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

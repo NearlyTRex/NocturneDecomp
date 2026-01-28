@@ -2,7 +2,7 @@
 // Address: 0050fe70
 // Address Range: [[0050fe70, 0050fffb]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center, int y_top, int height_half)
+// Signature: void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int height_half)
 
 #include "nocturne.h"
 

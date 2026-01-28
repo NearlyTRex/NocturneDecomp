@@ -2,7 +2,7 @@
 // Address: 005f79b0
 // Address Range: [[005f79b0, 005f79e9]]
 // Convention: __stack_esi
-// Signature: CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_005f79b0(float angle_radians, CQuaternion4f * quat_out)
+// Signature: CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(float angle_radians,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 

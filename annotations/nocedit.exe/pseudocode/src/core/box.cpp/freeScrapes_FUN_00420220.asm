@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_box.cpp_freeScrapes_FUN_00420220(SScrape * * array)
+; __cdecl int __cdecl core_box_cpp_freeScrapes_FUN_00420220(SScrape **array)
 ;
 ; Parameters:
 ; SScrape * *      Stack[0x4]:4   array

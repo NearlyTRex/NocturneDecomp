@@ -2,7 +2,7 @@
 // Address: 00476670
 // Address Range: [[00476670, 00476a5e]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDemonLight * this_ptr, int screen_x, int screen_y, int brightness_offset)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset)
 
 #include "nocturne.h"
 

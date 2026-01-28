@@ -2,7 +2,7 @@
 // Address: 004daf80
 // Address Range: [[004daf80, 004dbbbb]]
 // Convention: __cdecl
-// Signature: int core_game.cpp_CGame_runGameSession_FUN_004daf80(CGame * this_ptr)
+// Signature: int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a0250
 // Address Range: [[005a0250, 005a0290]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(CDeformableModelInstance * this_ptr, int lod_index)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250 (CDeformableModelInstance *this_ptr,int lod_index)
 
 #include "nocturne.h"
 

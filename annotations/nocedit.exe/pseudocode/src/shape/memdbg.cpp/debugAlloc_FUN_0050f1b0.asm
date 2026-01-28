@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+; __cdecl void * __cdecl shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(int size,char *filename,int line_number)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   size

@@ -2,7 +2,7 @@
 // Address: 0060a3b4
 // Address Range: [[0060a3b4, 0060a4cb]]
 // Convention: __cdecl
-// Signature: void crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4(void)
+// Signature: void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void)
 
 #include "nocturne.h"
 

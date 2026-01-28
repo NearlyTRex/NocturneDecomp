@@ -2,7 +2,7 @@
 // Address: 00506f10
 // Address Range: [[00506f10, 00507030] [0050703b, 005070ea]]
 // Convention: __cdecl
-// Signature: void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format, ...)
+// Signature: void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 
 #include "nocturne.h"
 

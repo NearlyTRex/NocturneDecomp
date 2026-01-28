@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpustack float10 crt_math.c_atan2_FUN_0060c440(float10 y, float10 x)
+; __fpustack float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
 ;
 ; Local Variables:
 ; undefined1[12]   Stack[-0x30]:12  local_30

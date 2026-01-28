@@ -2,7 +2,7 @@
 // Address: 0045f080
 // Address Range: [[0045f080, 0045f1c3]]
 // Convention: __cdecl
-// Signature: void shape_design.c_clampAndTransformUVCoordinates_FUN_0045f080(void)
+// Signature: void __cdecl shape_design_c_clampAndTransformUVCoordinates_FUN_0045f080(void)
 
 #include "nocturne.h"
 

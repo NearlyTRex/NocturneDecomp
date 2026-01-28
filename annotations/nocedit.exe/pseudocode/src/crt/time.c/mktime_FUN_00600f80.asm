@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
+; __cdecl time_t __cdecl crt_time_c_mktime_FUN_00600f80(tm *timeptr)
 ;
 ; Parameters:
 ; tm *             Stack[0x4]:4   timeptr

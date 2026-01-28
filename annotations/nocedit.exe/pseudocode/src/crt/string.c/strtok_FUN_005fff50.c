@@ -2,7 +2,7 @@
 // Address: 005fff50
 // Address Range: [[005fff50, 00600001]]
 // Convention: __cdecl
-// Signature: char * crt_string.c_strtok_FUN_005fff50(char * str, char * delimiters)
+// Signature: char * __cdecl crt_string_c_strtok_FUN_005fff50(char *str,char *delimiters)
 
 #include "nocturne.h"
 

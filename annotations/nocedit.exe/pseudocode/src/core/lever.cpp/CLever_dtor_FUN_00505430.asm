@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLever * core_lever.cpp_CLever_dtor_FUN_00505430(CLever * this_ptr, uint d1, uint d2)
+; __cdecl CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_00505430(CLever *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 0040e9c0
 // Address Range: [[0040e9c0, 0040e9fe]]
 // Convention: unknown
-// Signature: undefined core_actor.cpp_CActorPropertyList_FUN_0040e9c0()
+// Signature: int core_actor_cpp_CActorPropertyList_FUN_0040e9c0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740()
+; unknown void core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
 ;
 ;
 ; XREF[1]:

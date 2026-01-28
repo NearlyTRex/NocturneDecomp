@@ -2,7 +2,7 @@
 // Address: 0042fb40
 // Address Range: [[0042fb40, 0042fb62]]
 // Convention: __cdecl
-// Signature: CChain * core_chain.cpp_factoryFunc_FUN_0042fb40(void)
+// Signature: CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void)
 
 #include "nocturne.h"
 

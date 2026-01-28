@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00408870(CDemonActorTransformState * transform_cache)
+; __cdecl CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408870(CDemonActorTransformState *transform_cache)
 ;
 ; Parameters:
 ; CDemonActorTransformState * Stack[0x4]:4   transform_cache

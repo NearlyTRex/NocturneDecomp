@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cloth.cpp_BoneAndClothEditor_FUN_0043c880()
+; unknown void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x558]:4  local_558

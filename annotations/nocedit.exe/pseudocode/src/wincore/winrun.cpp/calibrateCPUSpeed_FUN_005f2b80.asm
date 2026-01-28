@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80(void)
+; __cdecl void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20

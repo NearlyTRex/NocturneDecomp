@@ -2,7 +2,7 @@
 // Address: 00604e4c
 // Address Range: [[00604e4c, 00604faf]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_scanf_string_FUN_00604e4c(scanf_state_t * state, va_list_t * args)
+// Signature: int __cdecl crt_stdio_c_scanf_string_FUN_00604e4c(scanf_state_t *state,va_list_t *args)
 
 #include "nocturne.h"
 

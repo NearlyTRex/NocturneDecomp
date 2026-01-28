@@ -2,7 +2,7 @@
 // Address: 0040c7f0
 // Address Range: [[0040c7f0, 0040c827]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0(void)
+// Signature: void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c7f0(void)
 
 #include "nocturne.h"
 

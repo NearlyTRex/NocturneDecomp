@@ -2,7 +2,7 @@
 // Address: 0053d190
 // Address Range: [[0053d190, 0053d21a]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190()
+// Signature: void core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190(void)
 
 #include "nocturne.h"
 

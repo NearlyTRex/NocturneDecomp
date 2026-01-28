@@ -2,7 +2,7 @@
 // Address: 00444cd0
 // Address Range: [[00444cd0, 00444d88]]
 // Convention: __cdecl
-// Signature: CZombieCow * core_cow.cpp_FUN_00444cd0(CZombieCow * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CZombieCow * __cdecl core_cow_cpp_FUN_00444cd0 (CZombieCow *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

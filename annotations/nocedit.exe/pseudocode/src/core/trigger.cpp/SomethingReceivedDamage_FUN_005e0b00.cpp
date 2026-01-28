@@ -2,7 +2,7 @@
 // Address: 005e0b00
 // Address Range: [[005e0b00, 005e0b76]]
 // Convention: unknown
-// Signature: undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+// Signature: void core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,float param_6)
 
 #include "nocturne.h"
 

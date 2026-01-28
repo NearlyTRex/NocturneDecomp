@@ -2,7 +2,7 @@
 // Address: 00545af0
 // Address Range: [[00545af0, 00545b12]]
 // Convention: __cdecl
-// Signature: CPassenger * core_passngr.cpp_factoryFunc_FUN_00545af0(void)
+// Signature: CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_00545af0(void)
 
 #include "nocturne.h"
 

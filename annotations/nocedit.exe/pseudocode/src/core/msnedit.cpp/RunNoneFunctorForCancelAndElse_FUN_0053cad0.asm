@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0()
+; unknown bool core_msnedit_cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3b8]:4  local_3b8

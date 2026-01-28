@@ -2,7 +2,7 @@
 // Address: 005f3680
 // Address Range: [[005f3680, 005f3915]]
 // Convention: __stdcall
-// Signature: int wincore_winrun.cpp_winMain_FUN_005f3680(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow1, int nCmdShow2)
+// Signature: int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680 (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void crt_memory.c_BulkDwordFill_FUN_00603b37(void * dest, uint replicated_value, uint dword_count)
+; __watcallRegister void crt_memory_c_BulkDwordFill_FUN_00603b37(void *dest,uint replicated_value,uint dword_count)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 005303a0
 // Address Range: [[005303a0, 005303f7]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float * sample_array, int * scalefactor_indices, SMpegFrame * frame_info)
+// Signature: void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_005303a0 (float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)
 
 #include "nocturne.h"
 

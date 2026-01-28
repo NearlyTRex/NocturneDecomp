@@ -5,4 +5,4 @@
 
 // Original: crt_strtod.c_staticInit_FUN_00603bb0
 // Address: 00603bb0
-void staticInit(void);
+void __cdecl staticInit(void);

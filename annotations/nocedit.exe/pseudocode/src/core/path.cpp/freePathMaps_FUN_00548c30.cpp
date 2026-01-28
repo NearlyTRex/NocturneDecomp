@@ -2,7 +2,7 @@
 // Address: 00548c30
 // Address Range: [[00548c30, 00548c44]]
 // Convention: __cdecl
-// Signature: void core_path.cpp_freePathMaps_FUN_00548c30(CPathMap * * array)
+// Signature: void __cdecl core_path_cpp_freePathMaps_FUN_00548c30(CPathMap **array)
 
 #include "nocturne.h"
 

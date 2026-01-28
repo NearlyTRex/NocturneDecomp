@@ -2,7 +2,7 @@
 // Address: 005d38b0
 // Address Range: [[005d38b0, 005d395c]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0(CObj * this_ptr, uint flag_mask)
+// Signature: void __cdecl shape_superopt_cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0(CObj *this_ptr,uint flag_mask)
 
 #include "nocturne.h"
 

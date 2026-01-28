@@ -2,7 +2,7 @@
 // Address: 004eeb40
 // Address Range: [[004eeb40, 004eeb8d]]
 // Convention: __cdecl
-// Signature: CGrave * core_grave.cpp_CGrave_dtor_FUN_004eeb40(CGrave * this_ptr, uint d1, uint d2)
+// Signature: CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004eeb40(CGrave *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

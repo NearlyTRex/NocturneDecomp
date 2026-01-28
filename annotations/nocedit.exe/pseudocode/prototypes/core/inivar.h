@@ -5,8 +5,8 @@
 
 // Original: core_inivar.cpp_readIniData_FUN_004fbd90
 // Address: 004fbd90
-void readIniData(void);
+void __cdecl readIniData(void);
 
 // Original: core_inivar.cpp_writeIniData_FUN_004fc510
 // Address: 004fc510
-void writeIniData(void);
+void __cdecl writeIniData(void);

@@ -2,7 +2,7 @@
 // Address: 00520fb0
 // Address Range: [[00520fb0, 00520fd8]]
 // Convention: __cdecl
-// Signature: void core_mirror.cpp_staticInit_FUN_00520fb0(void)
+// Signature: void __cdecl core_mirror_cpp_staticInit_FUN_00520fb0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005fdc00
 // Address Range: [[005fdc00, 005fde38]]
 // Convention: __cdecl
-// Signature: SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+// Signature: SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,FILE *file)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00609ff4
 // Address Range: [[00609ff4, 0060a04b]]
 // Convention: unknown
-// Signature: undefined crt_unknown.c_DeleteCritcalSectionsMaybe_FUN_00609ff4()
+// Signature: void crt_unknown_c_DeleteCritcalSectionsMaybe_FUN_00609ff4(void)
 
 #include "nocturne.h"
 

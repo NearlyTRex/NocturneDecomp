@@ -2,7 +2,7 @@
 // Address: 0050b940
 // Address Range: [[0050b940, 0050b95a]]
 // Convention: __cdecl
-// Signature: SGem * core_manpuz.cpp_SGem_ctor_FUN_0050b940(SGem * this_ptr)
+// Signature: SGem * __cdecl core_manpuz_cpp_SGem_ctor_FUN_0050b940(SGem *this_ptr)
 
 #include "nocturne.h"
 

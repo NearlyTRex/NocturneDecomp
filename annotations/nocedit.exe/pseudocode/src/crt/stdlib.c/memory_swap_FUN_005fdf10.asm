@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void crt_stdlib.c_memory_swap_FUN_005fdf10(void * ptr1, void * ptr2, SIZE_T bytes)
+; __watcallRegister void crt_stdlib_c_memory_swap_FUN_005fdf10(void *ptr1,void *ptr2,SIZE_T bytes)
 ;
 ;
 ; XREF[1]:

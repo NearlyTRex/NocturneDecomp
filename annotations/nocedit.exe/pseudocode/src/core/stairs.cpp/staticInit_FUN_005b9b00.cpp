@@ -2,7 +2,7 @@
 // Address: 005b9b00
 // Address Range: [[005b9b00, 005b9b23]]
 // Convention: __cdecl
-// Signature: void core_stairs.cpp_staticInit_FUN_005b9b00(void)
+// Signature: void __cdecl core_stairs_cpp_staticInit_FUN_005b9b00(void)
 
 #include "nocturne.h"
 

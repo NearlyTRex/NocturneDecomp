@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CKeyActor core_keyactor.cpp_factoryFunc_FUN_00501650(void)
+; __cdecl CKeyActor * __cdecl core_keyactor_cpp_factoryFunc_FUN_00501650(CKeyActor *__return_storage_ptr__)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   __return_storage_ptr__

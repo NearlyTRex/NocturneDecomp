@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_font.cpp_setDefaultTextColor_FUN_004ce230(int text_color)
+; __cdecl void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004ce230(int text_color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   text_color

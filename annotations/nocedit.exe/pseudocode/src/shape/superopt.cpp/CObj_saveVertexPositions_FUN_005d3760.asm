@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760(CObj * this_ptr)
+; __cdecl void __cdecl shape_superopt_cpp_CObj_saveVertexPositions_FUN_005d3760(CObj *this_ptr)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

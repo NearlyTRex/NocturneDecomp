@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_platfrm.cpp_FUN_0054e7d0()
+; unknown void core_platfrm_cpp_FUN_0054e7d0(void)
 ;
 ;
 ; Referenced Globals:

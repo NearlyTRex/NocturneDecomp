@@ -2,7 +2,7 @@
 // Address: 00437bf0
 // Address Range: [[00437bf0, 00437c5b]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_perspectiveDivideVertices_FUN_00437bf0(void)
+// Signature: void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_00437bf0(void)
 
 #include "nocturne.h"
 

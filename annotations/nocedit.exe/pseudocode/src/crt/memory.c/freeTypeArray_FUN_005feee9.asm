@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+; __cdecl int __cdecl crt_memory_c_freeTypeArray_FUN_005feee9(void **obj_array,int obj_count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void * *         Stack[0x4]:4   obj_array

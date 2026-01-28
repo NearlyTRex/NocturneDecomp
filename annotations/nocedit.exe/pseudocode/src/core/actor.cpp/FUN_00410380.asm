@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_actor.cpp_FUN_00410380()
+; unknown float core_actor_cpp_FUN_00410380(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

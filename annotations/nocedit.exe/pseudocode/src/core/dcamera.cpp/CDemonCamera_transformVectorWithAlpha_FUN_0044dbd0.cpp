@@ -2,7 +2,7 @@
 // Address: 0044dbd0
 // Address Range: [[0044dbd0, 0044dddc]]
 // Convention: __stack2_esi
-// Signature: CVector3i * core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)
+// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0 (CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 
 #include "nocturne.h"
 

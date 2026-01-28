@@ -2,7 +2,7 @@
 // Address: 004328d0
 // Address Range: [[004328d0, 00432a0a]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0(void * sprite_data, int start_x, int dest_y, int end_x, int max_height, int unused_param, int src_y_offset, int src_stride)
+// Signature: void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_004328d0 (void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param, int src_y_offset,int src_stride)
 
 #include "nocturne.h"
 

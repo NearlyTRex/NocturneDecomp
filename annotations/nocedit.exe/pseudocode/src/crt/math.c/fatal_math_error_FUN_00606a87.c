@@ -2,7 +2,7 @@
 // Address: 00606a87
 // Address Range: [[00606a87, 00606a8b]]
 // Convention: __watcallRegister
-// Signature: void crt_math.c_fatal_math_error_FUN_00606a87(void)
+// Signature: void crt_math_c_fatal_math_error_FUN_00606a87(void)
 
 #include "nocturne.h"
 

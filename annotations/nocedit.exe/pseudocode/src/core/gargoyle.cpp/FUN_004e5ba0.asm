@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gargoyle.cpp_FUN_004e5ba0()
+; unknown void core_gargoyle_cpp_FUN_004e5ba0(void)
 ;
 ;
 ; Called Functions:

@@ -2,7 +2,7 @@
 // Address: 00413e30
 // Address Range: [[00413e30, 00413e5f] [00413e61, 00413e89]]
 // Convention: __cdecl
-// Signature: int core_baron.cpp_CBaronWeapon_FUN_00413e30(CBaronWeapon * this_ptr)
+// Signature: int __cdecl core_baron_cpp_CBaronWeapon_FUN_00413e30(CBaronWeapon *this_ptr)
 
 #include "nocturne.h"
 

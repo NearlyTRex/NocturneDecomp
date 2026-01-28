@@ -2,7 +2,7 @@
 // Address: 00488c90
 // Address Range: [[00488c90, 00488ccd]]
 // Convention: __cdecl
-// Signature: void cockpit_drawsurf.cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90(CDrawSurface * this_ptr, int x_offset, int y_offset, CPackedBitmap * bitmap_ptr)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90 (CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr)
 
 #include "nocturne.h"
 

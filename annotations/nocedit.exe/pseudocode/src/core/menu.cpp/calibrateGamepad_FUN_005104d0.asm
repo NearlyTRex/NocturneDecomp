@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_menu.cpp_calibrateGamepad_FUN_005104d0(void)
+; __cdecl int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x224]:1  local_224

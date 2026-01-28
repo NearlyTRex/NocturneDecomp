@@ -2,7 +2,7 @@
 // Address: 004027a0
 // Address Range: [[004027a0, 004027eb]]
 // Convention: __cdecl
-// Signature: int engine_2d.c_getStringWidthFormatted_FUN_004027a0(char * format_string, ...)
+// Signature: int __cdecl engine_2d_c_getStringWidthFormatted_FUN_004027a0(char *format_string,...)
 
 #include "nocturne.h"
 

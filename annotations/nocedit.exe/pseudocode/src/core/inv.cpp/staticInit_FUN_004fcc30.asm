@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inv.cpp_staticInit_FUN_004fcc30(void)
+; __cdecl void __cdecl core_inv_cpp_staticInit_FUN_004fcc30(void)
 ;
 ;
 ; Referenced Globals:

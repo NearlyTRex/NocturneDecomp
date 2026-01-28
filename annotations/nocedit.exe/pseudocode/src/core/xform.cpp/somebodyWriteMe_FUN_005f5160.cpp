@@ -2,7 +2,7 @@
 // Address: 005f5160
 // Address Range: [[005f5160, 005f5183]]
 // Convention: __cdecl
-// Signature: void core_xform.cpp_somebodyWriteMe_FUN_005f5160(void)
+// Signature: void __cdecl core_xform_cpp_somebodyWriteMe_FUN_005f5160(void)
 
 #include "nocturne.h"
 

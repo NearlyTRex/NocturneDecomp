@@ -2,7 +2,7 @@
 // Address: 0046e340
 // Address Range: [[0046e340, 0046e4c8]]
 // Convention: __cdecl
-// Signature: void shape_design.c_normalizeUVCoordinates_FUN_0046e340(void)
+// Signature: void __cdecl shape_design_c_normalizeUVCoordinates_FUN_0046e340(void)
 
 #include "nocturne.h"
 

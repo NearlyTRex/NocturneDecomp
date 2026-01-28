@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+; __cdecl char * __cdecl crt_string_c_strncpy_FUN_00600f40(char *dest,char *src,SIZE_T count)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

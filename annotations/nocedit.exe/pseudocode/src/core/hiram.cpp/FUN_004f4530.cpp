@@ -2,7 +2,7 @@
 // Address: 004f4530
 // Address Range: [[004f4530, 004f454b]]
 // Convention: unknown
-// Signature: undefined core_hiram.cpp_FUN_004f4530()
+// Signature: void core_hiram_cpp_FUN_004f4530(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004fba70
 // Address Range: [[004fba70, 004fba94]]
 // Convention: __cdecl
-// Signature: CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
+// Signature: CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,int read_mode)
 
 #include "nocturne.h"
 

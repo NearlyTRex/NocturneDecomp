@@ -2,7 +2,7 @@
 // Address: 00455ed0
 // Address Range: [[00455ed0, 0045603c]]
 // Convention: __cdecl
-// Signature: uint core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00455ed0(CVector3f * segment_start, CVector3f * segment_end, float radius, float * out_height)
+// Signature: uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00455ed0 (CVector3f *segment_start,CVector3f *segment_end,float radius,float *out_height)
 
 #include "nocturne.h"
 

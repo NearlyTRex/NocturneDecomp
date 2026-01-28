@@ -2,7 +2,7 @@
 // Address: 00519680
 // Address Range: [[00519680, 0051970e]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh * this_ptr)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh *this_ptr)
 
 #include "nocturne.h"
 

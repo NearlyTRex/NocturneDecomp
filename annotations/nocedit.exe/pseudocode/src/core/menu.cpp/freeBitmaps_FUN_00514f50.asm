@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_freeBitmaps_FUN_00514f50(CAlphaBitmap * * array)
+; __cdecl void __cdecl core_menu_cpp_freeBitmaps_FUN_00514f50(CAlphaBitmap **array)
 ;
 ; Parameters:
 ; CAlphaBitmap * * Stack[0x4]:4   array

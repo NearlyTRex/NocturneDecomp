@@ -2,7 +2,7 @@
 // Address: 004204f0
 // Address Range: [[004204f0, 00420679]]
 // Convention: __cdecl
-// Signature: int core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D * this_ptr)
+// Signature: int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D *this_ptr)
 
 #include "nocturne.h"
 

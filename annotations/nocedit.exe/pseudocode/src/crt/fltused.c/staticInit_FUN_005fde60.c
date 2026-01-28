@@ -2,7 +2,7 @@
 // Address: 005fde60
 // Address Range: [[005fde60, 005fde90]]
 // Convention: __cdecl
-// Signature: void crt_fltused.c_staticInit_FUN_005fde60(void)
+// Signature: void __cdecl crt_fltused_c_staticInit_FUN_005fde60(void)
 
 #include "nocturne.h"
 

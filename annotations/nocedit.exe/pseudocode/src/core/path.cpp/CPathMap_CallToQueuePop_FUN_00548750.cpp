@@ -2,7 +2,7 @@
 // Address: 00548750
 // Address Range: [[00548750, 00548799]]
 // Convention: __cdecl
-// Signature: void core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap * this_ptr)
+// Signature: void __cdecl core_path_cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap *this_ptr)
 
 #include "nocturne.h"
 

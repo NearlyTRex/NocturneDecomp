@@ -2,7 +2,7 @@
 // Address: 00431250
 // Address Range: [[00431250, 0043132c]]
 // Convention: unknown
-// Signature: undefined core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250()
+// Signature: void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)
 
 #include "nocturne.h"
 

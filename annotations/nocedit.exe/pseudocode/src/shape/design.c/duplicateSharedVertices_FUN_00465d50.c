@@ -2,7 +2,7 @@
 // Address: 00465d50
 // Address Range: [[00465d50, 00465e8e]]
 // Convention: __cdecl
-// Signature: void shape_design.c_duplicateSharedVertices_FUN_00465d50(int polygon_index)
+// Signature: void __cdecl shape_design_c_duplicateSharedVertices_FUN_00465d50(int polygon_index)
 
 #include "nocturne.h"
 

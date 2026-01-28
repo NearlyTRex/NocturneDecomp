@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_switchRenderer_FUN_005b8140(char * new_dll_name, int renderer_handle)
+; __cdecl int __cdecl wincore_windll_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,int renderer_handle)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   new_dll_name

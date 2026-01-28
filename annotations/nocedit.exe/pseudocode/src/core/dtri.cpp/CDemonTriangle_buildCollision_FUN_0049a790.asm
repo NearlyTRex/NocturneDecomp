@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
+; __cdecl void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790 (CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr

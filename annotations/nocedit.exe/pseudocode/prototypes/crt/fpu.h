@@ -5,8 +5,8 @@
 
 // Original: crt_fpu.c_staticInit_FUN_006047e0
 // Address: 006047e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: crt_fpu.c_ClearFPUExceptions_FUN_0060ce50
 // Address: 0060ce50
-void ClearFPUExceptions(void);
+void __cdecl ClearFPUExceptions(void);

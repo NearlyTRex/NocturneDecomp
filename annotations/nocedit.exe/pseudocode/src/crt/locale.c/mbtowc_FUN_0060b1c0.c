@@ -2,7 +2,7 @@
 // Address: 0060b1c0
 // Address Range: [[0060b1c0, 0060b26b]]
 // Convention: __watcallStack
-// Signature: int crt_locale.c_mbtowc_FUN_0060b1c0(wchar_t * wide_char, char * mb_string, SIZE_T max_bytes)
+// Signature: int __watcallStack crt_locale_c_mbtowc_FUN_0060b1c0(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes)
 
 #include "nocturne.h"
 

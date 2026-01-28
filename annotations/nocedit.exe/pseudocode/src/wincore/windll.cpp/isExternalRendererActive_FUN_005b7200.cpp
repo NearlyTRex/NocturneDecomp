@@ -2,7 +2,7 @@
 // Address: 005b7200
 // Address Range: [[005b7200, 005b7205]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_isExternalRendererActive_FUN_005b7200(void)
+// Signature: int __cdecl wincore_windll_cpp_isExternalRendererActive_FUN_005b7200(void)
 
 #include "nocturne.h"
 

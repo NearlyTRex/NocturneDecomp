@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CStake * core_fire.cpp_CStake_ctor_FUN_004c9740(CStake * this_ptr)
+; __cdecl CStake * __cdecl core_fire_cpp_CStake_ctor_FUN_004c9740(CStake *this_ptr)
 ;
 ; Parameters:
 ; CStake *         Stack[0x4]:4   this_ptr

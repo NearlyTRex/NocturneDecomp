@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_editorAction_FUN_00564820()
+; unknown void core_script_cpp_CScript_editorAction_FUN_00564820(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c

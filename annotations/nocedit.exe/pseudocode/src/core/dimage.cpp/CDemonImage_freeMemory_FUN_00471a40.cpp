@@ -2,7 +2,7 @@
 // Address: 00471a40
 // Address Range: [[00471a40, 00471a6c]]
 // Convention: __cdecl
-// Signature: void core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40(CDemonImage * this_ptr)
+// Signature: void __cdecl core_dimage_cpp_CDemonImage_freeMemory_FUN_00471a40(CDemonImage *this_ptr)
 
 #include "nocturne.h"
 

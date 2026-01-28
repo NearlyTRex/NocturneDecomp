@@ -2,7 +2,7 @@
 // Address: 005ff178
 // Address Range: [[005ff178, 005ff244]]
 // Convention: __cdecl
-// Signature: void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, char * ext)
+// Signature: void __cdecl crt_string_c_splitpath_FUN_005ff178(char *path,char *drive,char *dir,char *fname,char *ext)
 
 #include "nocturne.h"
 

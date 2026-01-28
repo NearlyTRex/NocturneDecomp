@@ -2,7 +2,7 @@
 // Address: 00601232
 // Address Range: [[00601232, 00601257]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_constructTypedObjectArray_FUN_00601232(void * dest, int element_count, WatcomTypeInfo * type_info)
+// Signature: void * __cdecl crt_memory_c_constructTypedObjectArray_FUN_00601232 (void *dest,int element_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 

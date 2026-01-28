@@ -2,7 +2,7 @@
 // Address: 00600e64
 // Address Range: [[00600e64, 00600e84]]
 // Convention: __cdecl
-// Signature: uint crt_stdio.c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData * embedded_data, uint error_code)
+// Signature: uint __cdecl crt_stdio_c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData *embedded_data,uint error_code)
 
 #include "nocturne.h"
 

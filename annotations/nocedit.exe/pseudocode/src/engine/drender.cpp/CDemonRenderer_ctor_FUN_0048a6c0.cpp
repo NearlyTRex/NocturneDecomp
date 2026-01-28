@@ -2,7 +2,7 @@
 // Address: 0048a6c0
 // Address Range: [[0048a6c0, 0048a6fb]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer * this_ptr)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr)
 
 #include "nocturne.h"
 

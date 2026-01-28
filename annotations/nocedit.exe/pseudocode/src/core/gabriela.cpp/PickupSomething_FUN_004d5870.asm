@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gabriela.cpp_PickupSomething_FUN_004d5870()
+; unknown undefined4 core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xbc]:1  local_bc

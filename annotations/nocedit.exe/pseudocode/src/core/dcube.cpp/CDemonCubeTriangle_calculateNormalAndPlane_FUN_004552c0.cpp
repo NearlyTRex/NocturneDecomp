@@ -2,7 +2,7 @@
 // Address: 004552c0
 // Address Range: [[004552c0, 00455424]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCubeTriangle * this_ptr)
+// Signature: void __cdecl core_dcube_cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCubeTriangle *this_ptr)
 
 #include "nocturne.h"
 

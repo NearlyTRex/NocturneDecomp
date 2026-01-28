@@ -2,7 +2,7 @@
 // Address: 0052b550
 // Address Range: [[0052b550, 0052b579]]
 // Convention: unknown
-// Signature: undefined core_morph.cpp_FUN_0052b550()
+// Signature: void core_morph_cpp_FUN_0052b550(void)
 
 #include "nocturne.h"
 

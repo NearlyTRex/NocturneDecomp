@@ -2,7 +2,7 @@
 // Address: 00431760
 // Address Range: [[00431760, 0043176f]]
 // Convention: __cdecl
-// Signature: ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760(void)
+// Signature: ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760(void)
 
 #include "nocturne.h"
 

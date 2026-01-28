@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
+; unknown undefined4 core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50 (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,CDemonSet *param_5 ,int param_6,undefined4 param_7,undefined4 param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

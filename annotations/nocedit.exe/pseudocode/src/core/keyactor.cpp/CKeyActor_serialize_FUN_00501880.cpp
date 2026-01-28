@@ -2,7 +2,7 @@
 // Address: 00501880
 // Address Range: [[00501880, 005018eb]]
 // Convention: __cdecl
-// Signature: void core_keyactor.cpp_CKeyActor_serialize_FUN_00501880(CKeyActor * this_ptr)
+// Signature: void __cdecl core_keyactor_cpp_CKeyActor_serialize_FUN_00501880(CKeyActor *this_ptr)
 
 #include "nocturne.h"
 

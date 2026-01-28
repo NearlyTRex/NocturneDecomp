@@ -2,7 +2,7 @@
 // Address: 005a5180
 // Address Range: [[005a5180, 005a51fb]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_isStreamableFile_FUN_005a5180(char * filename, char * filepath)
+// Signature: int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_005a5180(char *filename,char *filepath)
 
 #include "nocturne.h"
 

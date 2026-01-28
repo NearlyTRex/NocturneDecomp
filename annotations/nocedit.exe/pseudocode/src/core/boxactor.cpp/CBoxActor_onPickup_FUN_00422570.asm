@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_boxactor.cpp_CBoxActor_onPickup_FUN_00422570(CBoxActor * this_ptr, CDemonActor * owner)
+; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_onPickup_FUN_00422570(CBoxActor *this_ptr,CDemonActor *owner)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

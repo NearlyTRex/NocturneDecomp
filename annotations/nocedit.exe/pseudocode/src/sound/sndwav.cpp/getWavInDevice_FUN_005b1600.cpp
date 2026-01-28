@@ -2,7 +2,7 @@
 // Address: 005b1600
 // Address Range: [[005b1600, 005b1646]]
 // Convention: __cdecl
-// Signature: CWavInDevice * sound_sndwav.cpp_getWavInDevice_FUN_005b1600(UINT device_id)
+// Signature: CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_005b1600(UINT device_id)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_trigger.cpp_CTrigger_process_FUN_005dfac0(CTrigger * this_ptr, float delta_time)
+; __cdecl void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

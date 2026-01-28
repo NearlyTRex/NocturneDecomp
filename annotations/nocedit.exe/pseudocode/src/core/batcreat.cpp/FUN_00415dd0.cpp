@@ -2,7 +2,7 @@
 // Address: 00415dd0
 // Address Range: [[00415dd0, 0041602e]]
 // Convention: unknown
-// Signature: undefined core_batcreat.cpp_FUN_00415dd0()
+// Signature: void core_batcreat_cpp_FUN_00415dd0(void)
 
 #include "nocturne.h"
 

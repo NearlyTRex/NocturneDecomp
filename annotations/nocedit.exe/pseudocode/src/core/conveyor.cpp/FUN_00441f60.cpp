@@ -2,7 +2,7 @@
 // Address: 00441f60
 // Address Range: [[00441f60, 00442018]]
 // Convention: unknown
-// Signature: undefined core_conveyor.cpp_FUN_00441f60()
+// Signature: undefined4 core_conveyor_cpp_FUN_00441f60(void)
 
 #include "nocturne.h"
 

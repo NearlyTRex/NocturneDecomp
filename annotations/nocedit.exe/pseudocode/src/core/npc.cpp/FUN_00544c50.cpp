@@ -2,7 +2,7 @@
 // Address: 00544c50
 // Address Range: [[00544c50, 00544d28]]
 // Convention: unknown
-// Signature: undefined core_npc.cpp_FUN_00544c50()
+// Signature: undefined4 core_npc_cpp_FUN_00544c50(void)
 
 #include "nocturne.h"
 

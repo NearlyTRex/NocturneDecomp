@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart * this_ptr)
+; __cdecl int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *this_ptr)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

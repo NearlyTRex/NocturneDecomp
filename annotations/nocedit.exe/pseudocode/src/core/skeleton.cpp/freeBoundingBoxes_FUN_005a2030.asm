@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030(CBoundingBox3D * * array)
+; __cdecl void __cdecl core_skeleton_cpp_freeBoundingBoxes_FUN_005a2030(CBoundingBox3D **array)
 ;
 ; Parameters:
 ; CBoundingBox3D * * Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 0060305c
 // Address Range: [[0060305c, 0060315e]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_FormatFixedPoint_FUN_0060305c(char * buffer, int fixed_point_value, FormatSpec * spec_info)
+// Signature: void __cdecl crt_stdio_c_FormatFixedPoint_FUN_0060305c(char *buffer,int fixed_point_value,FormatSpec *spec_info)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00504790
 // Address Range: [[00504790, 005047b2]]
 // Convention: __cdecl
-// Signature: CLever * core_lever.cpp_factoryFunc_FUN_00504790(void)
+// Signature: CLever * __cdecl core_lever_cpp_factoryFunc_FUN_00504790(void)
 
 #include "nocturne.h"
 

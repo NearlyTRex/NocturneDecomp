@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_emitter.cpp_FUN_004a8070()
+; unknown void core_emitter_cpp_FUN_004a8070(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x108]:8  local_108

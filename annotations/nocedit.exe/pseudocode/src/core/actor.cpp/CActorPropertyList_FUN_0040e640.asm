@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList * this_ptr)
+; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList *this_ptr)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

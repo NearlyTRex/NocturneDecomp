@@ -2,7 +2,7 @@
 // Address: 004cbbc0
 // Address Range: [[004cbbc0, 004cbc3f]]
 // Convention: __cdecl
-// Signature: CFlashlight * core_flamegun.cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight * this_ptr)
+// Signature: CFlashlight * __cdecl core_flamegun_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight *this_ptr)
 
 #include "nocturne.h"
 

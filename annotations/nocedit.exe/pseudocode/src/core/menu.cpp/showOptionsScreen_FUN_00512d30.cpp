@@ -2,7 +2,7 @@
 // Address: 00512d30
 // Address Range: [[00512d30, 00512f26]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_showOptionsScreen_FUN_00512d30(int initialize_systems)
+// Signature: void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems)
 
 #include "nocturne.h"
 

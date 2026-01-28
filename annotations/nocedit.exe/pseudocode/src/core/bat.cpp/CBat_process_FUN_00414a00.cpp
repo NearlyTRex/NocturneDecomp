@@ -2,7 +2,7 @@
 // Address: 00414a00
 // Address Range: [[00414a00, 00414bce]]
 // Convention: __cdecl
-// Signature: void core_bat.cpp_CBat_process_FUN_00414a00(CBat * this_ptr, float delta_time)
+// Signature: void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

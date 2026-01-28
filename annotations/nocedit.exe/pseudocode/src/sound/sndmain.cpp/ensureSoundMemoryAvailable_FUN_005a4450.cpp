@@ -2,7 +2,7 @@
 // Address: 005a4450
 // Address Range: [[005a4450, 005a4525]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450(int requested_bytes)
+// Signature: int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450(int requested_bytes)
 
 #include "nocturne.h"
 

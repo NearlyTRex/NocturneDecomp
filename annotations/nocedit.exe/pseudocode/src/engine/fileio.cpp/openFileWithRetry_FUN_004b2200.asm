@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * engine_fileio.cpp_openFileWithRetry_FUN_004b2200(char * filename, char * mode)
+; __cdecl FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,char *mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

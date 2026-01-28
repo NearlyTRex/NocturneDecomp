@@ -2,7 +2,7 @@
 // Address: 0041db80
 // Address Range: [[0041db80, 0041dba5]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041db80(SMRGLHeaderExtended * header)
+// Signature: SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041db80(SMRGLHeaderExtended *header)
 
 #include "nocturne.h"
 

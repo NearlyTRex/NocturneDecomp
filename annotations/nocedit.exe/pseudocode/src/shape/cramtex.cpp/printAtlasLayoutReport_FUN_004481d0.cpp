@@ -2,7 +2,7 @@
 // Address: 004481d0
 // Address Range: [[004481d0, 00448251]]
 // Convention: __cdecl
-// Signature: void shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0(FILE * output_file)
+// Signature: void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_file)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00515d60
 // Address Range: [[00515d60, 00515d8c]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60(CLodEdge * this_ptr, int tri_index)
+// Signature: int __cdecl shape_meshlod_cpp_CLodEdge_findFace_FUN_00515d60(CLodEdge *this_ptr,int tri_index)
 
 #include "nocturne.h"
 

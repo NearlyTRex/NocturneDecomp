@@ -2,7 +2,7 @@
 // Address: 00600ad0
 // Address Range: [[00600ad0, 00600b93]]
 // Convention: __cdecl
-// Signature: undefined crt_watcom.c_heapchk_FUN_00600ad0()
+// Signature: int __cdecl crt_watcom_c_heapchk_FUN_00600ad0(void)
 
 #include "nocturne.h"
 

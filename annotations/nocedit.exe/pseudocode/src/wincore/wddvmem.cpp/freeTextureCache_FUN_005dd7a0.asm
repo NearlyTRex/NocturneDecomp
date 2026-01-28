@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_wddvmem.cpp_freeTextureCache_FUN_005dd7a0(void)
+; __cdecl void __cdecl wincore_wddvmem_cpp_freeTextureCache_FUN_005dd7a0(void)
 ;
 ;
 ; XREF[1]:

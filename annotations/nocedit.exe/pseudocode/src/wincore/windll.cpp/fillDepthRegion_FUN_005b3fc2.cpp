@@ -2,7 +2,7 @@
 // Address: 005b3fc2
 // Address Range: [[005b3fc2, 005b4030]]
 // Convention: __cdecl
-// Signature: void wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2(int left, int right, int top, int bottom)
+// Signature: void __cdecl wincore_windll_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,int top,int bottom)
 
 #include "nocturne.h"
 

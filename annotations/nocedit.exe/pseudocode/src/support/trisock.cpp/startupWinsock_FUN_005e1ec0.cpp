@@ -2,7 +2,7 @@
 // Address: 005e1ec0
 // Address Range: [[005e1ec0, 005e1ed9]]
 // Convention: __cdecl
-// Signature: int support_trisock.cpp_startupWinsock_FUN_005e1ec0(void)
+// Signature: int __cdecl support_trisock_cpp_startupWinsock_FUN_005e1ec0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dimage.cpp_CDemonImage_allocMemory_FUN_004719e0(CDemonImage * this_ptr)
+; __cdecl void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_004719e0(CDemonImage *this_ptr)
 ;
 ; Parameters:
 ; CDemonImage *    Stack[0x4]:4   this_ptr

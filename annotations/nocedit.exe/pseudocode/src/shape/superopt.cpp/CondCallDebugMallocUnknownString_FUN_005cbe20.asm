@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20()
+; unknown void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
 ;
 ;
 ; XREF[1]:

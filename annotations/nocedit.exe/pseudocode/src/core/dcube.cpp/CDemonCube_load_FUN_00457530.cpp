@@ -2,7 +2,7 @@
 // Address: 00457530
 // Address Range: [[00457530, 0045762d]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCube_load_FUN_00457530(CDemonCube * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

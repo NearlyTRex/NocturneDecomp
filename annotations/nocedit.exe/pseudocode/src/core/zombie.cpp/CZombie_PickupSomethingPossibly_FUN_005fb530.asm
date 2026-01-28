@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530()
+; unknown undefined4 core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

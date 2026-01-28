@@ -2,7 +2,7 @@
 // Address: 00608d20
 // Address Range: [[00608d20, 00608dc7]]
 // Convention: __cdecl
-// Signature: char * crt_io.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
+// Signature: char * __cdecl crt_io_c_getcwd_FUN_00608d20(char *buffer,SIZE_T size)
 
 #include "nocturne.h"
 

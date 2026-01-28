@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freePopcorn_FUN_004c97f0(CPopcorn * * array)
+; __cdecl void __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn **array)
 ;
 ; Parameters:
 ; CPopcorn * *     Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 00601200
 // Address Range: [[00601200, 00601231]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200(void * array_ptr, int element_count, WatcomTypeInfo * type_info)
+// Signature: void * __cdecl crt_memory_c_dispatchObjectArrayConstructor_FUN_00601200 (void *array_ptr,int element_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 

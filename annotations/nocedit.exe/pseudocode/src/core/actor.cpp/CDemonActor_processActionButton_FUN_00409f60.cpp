@@ -2,7 +2,7 @@
 // Address: 00409f60
 // Address Range: [[00409f60, 00409fa1]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_processActionButton_FUN_00409f60(CDemonActor * this_ptr)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 

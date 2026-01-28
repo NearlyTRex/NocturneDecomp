@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_werewolf.cpp_CWerewolf_serialize_FUN_005f1980(CWerewolf * this_ptr)
+; __cdecl void __cdecl core_werewolf_cpp_CWerewolf_serialize_FUN_005f1980(CWerewolf *this_ptr)
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr

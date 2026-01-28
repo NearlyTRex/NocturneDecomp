@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
+; __cdecl CVector3f * __cdecl core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0 (CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr

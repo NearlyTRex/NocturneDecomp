@@ -2,7 +2,7 @@
 // Address: 004f6c60
 // Address Range: [[004f6c60, 004f6c82]]
 // Convention: __cdecl
-// Signature: CHotDemon * core_hotdemon.cpp_factoryFunc_FUN_004f6c60(void)
+// Signature: CHotDemon * __cdecl core_hotdemon_cpp_factoryFunc_FUN_004f6c60(void)
 
 #include "nocturne.h"
 

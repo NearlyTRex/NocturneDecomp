@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_cloth.cpp_freeClothBones_FUN_0043e4a0(SClothBone * * array)
+; __cdecl void __cdecl core_cloth_cpp_freeClothBones_FUN_0043e4a0(SClothBone **array)
 ;
 ; Parameters:
 ; SClothBone * *   Stack[0x4]:4   array

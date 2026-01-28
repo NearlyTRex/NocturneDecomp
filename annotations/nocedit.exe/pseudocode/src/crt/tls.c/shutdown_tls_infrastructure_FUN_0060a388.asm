@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl BOOL crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388(void)
+; __cdecl BOOL __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void)
 ;
 ;
 ; XREF[1]:

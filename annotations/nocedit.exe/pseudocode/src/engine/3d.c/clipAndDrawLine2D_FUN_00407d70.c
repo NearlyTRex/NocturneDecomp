@@ -2,7 +2,7 @@
 // Address: 00407d70
 // Address Range: [[00407d70, 00407fed]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
+// Signature: void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1,SRenderVertex vertex2)
 
 #include "nocturne.h"
 

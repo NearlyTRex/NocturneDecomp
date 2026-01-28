@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_fltused.c_staticInit_FUN_005fde60(void)
+; __cdecl void __cdecl crt_fltused_c_staticInit_FUN_005fde60(void)
 ;
 ;
 ; Referenced Globals:

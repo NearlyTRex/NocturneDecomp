@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_centerObject_FUN_00466610(void)
+; __cdecl void __cdecl shape_design_c_centerObject_FUN_00466610(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xc4]:8  local_c4

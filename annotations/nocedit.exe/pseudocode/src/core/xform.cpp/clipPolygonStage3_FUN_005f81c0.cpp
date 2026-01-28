@@ -2,7 +2,7 @@
 // Address: 005f81c0
 // Address Range: [[005f81c0, 005f831d]]
 // Convention: __cdecl
-// Signature: void core_xform.cpp_clipPolygonStage3_FUN_005f81c0(void)
+// Signature: void __cdecl core_xform_cpp_clipPolygonStage3_FUN_005f81c0(void)
 
 #include "nocturne.h"
 

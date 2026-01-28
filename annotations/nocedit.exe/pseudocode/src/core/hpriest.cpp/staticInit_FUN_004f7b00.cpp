@@ -2,7 +2,7 @@
 // Address: 004f7b00
 // Address Range: [[004f7b00, 004f7b23]]
 // Convention: __cdecl
-// Signature: void core_hpriest.cpp_staticInit_FUN_004f7b00(void)
+// Signature: void __cdecl core_hpriest_cpp_staticInit_FUN_004f7b00(void)
 
 #include "nocturne.h"
 

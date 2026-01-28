@@ -2,7 +2,7 @@
 // Address: 00505830
 // Address Range: [[00505830, 00505849]]
 // Convention: __cdecl
-// Signature: int engine_light.cpp_calculateVertexLighting_FUN_00505830(int unused_param, CVector3i * vertex_position)
+// Signature: int __cdecl engine_light_cpp_calculateVertexLighting_FUN_00505830(int unused_param,CVector3i *vertex_position)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_crc32ProcessInt_FUN_0040cf50(uint * crc_state, int value)
+; __cdecl void __cdecl core_actor_cpp_crc32ProcessInt_FUN_0040cf50(uint *crc_state,int value)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   crc_state

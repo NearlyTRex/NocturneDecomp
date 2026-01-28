@@ -2,7 +2,7 @@
 // Address: 005ff45d
 // Address Range: [[005ff45d, 005ff489]]
 // Convention: __cdecl
-// Signature: int crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d(ostrstream * this_ptr)
+// Signature: int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(ostrstream *this_ptr)
 
 #include "nocturne.h"
 

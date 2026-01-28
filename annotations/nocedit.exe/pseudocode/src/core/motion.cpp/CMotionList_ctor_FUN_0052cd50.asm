@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_motion.cpp_CMotionList_ctor_FUN_0052cd50(CMotionList * this_ptr)
+; __cdecl void __cdecl core_motion_cpp_CMotionList_ctor_FUN_0052cd50(CMotionList *this_ptr)
 ;
 ; Parameters:
 ; CMotionList *    Stack[0x4]:4   this_ptr

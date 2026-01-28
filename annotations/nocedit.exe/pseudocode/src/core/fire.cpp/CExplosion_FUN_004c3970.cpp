@@ -2,7 +2,7 @@
 // Address: 004c3970
 // Address Range: [[004c3970, 004c39eb]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CExplosion_FUN_004c3970(CExplosion * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CExplosion_FUN_004c3970(CExplosion *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_process.c_execv_FUN_006101f0(int argc, char * program, char * * argv)
+; __cdecl int __cdecl crt_process_c_execv_FUN_006101f0(int argc,char *program,char **argv)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   argc

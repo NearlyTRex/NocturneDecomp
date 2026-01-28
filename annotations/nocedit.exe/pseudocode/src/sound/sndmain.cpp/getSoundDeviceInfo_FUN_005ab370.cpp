@@ -2,7 +2,7 @@
 // Address: 005ab370
 // Address Range: [[005ab370, 005ab3cc]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370(int device_id, SSoundDeviceInfo * device_info)
+// Signature: void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(int device_id,SSoundDeviceInfo *device_info)
 
 #include "nocturne.h"
 

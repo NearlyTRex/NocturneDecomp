@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPopcorn * core_fire.cpp_CPopcorn_ctor_FUN_004c94c0(CPopcorn * this_ptr)
+; __cdecl CPopcorn * __cdecl core_fire_cpp_CPopcorn_ctor_FUN_004c94c0(CPopcorn *this_ptr)
 ;
 ; Parameters:
 ; CPopcorn *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_freeMixBuffers_FUN_005a5900(void)
+; __cdecl void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_005a5900(void)
 ;
 ;
 ; XREF[1]:

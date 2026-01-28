@@ -2,7 +2,7 @@
 // Address: 0060a0c4
 // Address Range: [[0060a0c4, 0060a0ea]]
 // Convention: __cdecl
-// Signature: void crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4(ReentrantCriticalSection * rcs)
+// Signature: void __cdecl crt_sync_c_leave_reentrant_critical_section_FUN_0060a0c4(ReentrantCriticalSection *rcs)
 
 #include "nocturne.h"
 

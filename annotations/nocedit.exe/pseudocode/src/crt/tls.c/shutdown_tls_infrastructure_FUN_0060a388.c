@@ -2,7 +2,7 @@
 // Address: 0060a388
 // Address Range: [[0060a388, 0060a393]]
 // Convention: __cdecl
-// Signature: BOOL crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388(void)
+// Signature: BOOL __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void)
 
 #include "nocturne.h"
 

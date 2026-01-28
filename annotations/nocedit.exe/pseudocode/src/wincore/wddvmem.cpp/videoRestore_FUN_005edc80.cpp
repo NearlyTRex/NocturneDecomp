@@ -2,7 +2,7 @@
 // Address: 005edc80
 // Address Range: [[005edc80, 005edd7f] [005edd81, 005eddf1]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_videoRestore_FUN_005edc80(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
 
 #include "nocturne.h"
 

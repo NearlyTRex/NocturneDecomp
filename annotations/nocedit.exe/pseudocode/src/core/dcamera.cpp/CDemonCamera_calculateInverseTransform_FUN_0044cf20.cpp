@@ -2,7 +2,7 @@
 // Address: 0044cf20
 // Address Range: [[0044cf20, 0044d1b6]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

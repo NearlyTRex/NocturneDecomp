@@ -2,7 +2,7 @@
 // Address: 00601a7c
 // Address Range: [[00601a7c, 00601a92]]
 // Convention: __cdecl
-// Signature: FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
+// Signature: FILE * __cdecl crt_stdio_c_fopen_FUN_00601a7c(char *filename,char *mode)
 
 #include "nocturne.h"
 

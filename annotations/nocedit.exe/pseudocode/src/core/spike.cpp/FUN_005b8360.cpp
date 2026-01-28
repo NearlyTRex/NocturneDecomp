@@ -2,7 +2,7 @@
 // Address: 005b8360
 // Address Range: [[005b8360, 005b837c]]
 // Convention: unknown
-// Signature: undefined core_spike.cpp_FUN_005b8360()
+// Signature: void core_spike_cpp_FUN_005b8360(void)
 
 #include "nocturne.h"
 

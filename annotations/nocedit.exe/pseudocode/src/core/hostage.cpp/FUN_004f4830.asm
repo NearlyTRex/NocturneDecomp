@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hostage.cpp_FUN_004f4830()
+; unknown CDemonActorType * core_hostage_cpp_FUN_004f4830(void)
 ;
 ;
 ; Referenced Globals:

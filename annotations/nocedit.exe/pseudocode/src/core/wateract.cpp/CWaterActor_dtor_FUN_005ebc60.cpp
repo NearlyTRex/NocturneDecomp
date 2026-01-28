@@ -2,7 +2,7 @@
 // Address: 005ebc60
 // Address Range: [[005ebc60, 005ebcc4]]
 // Convention: __cdecl
-// Signature: CWaterActor * core_wateract.cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

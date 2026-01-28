@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005724e0(CDemonSet * this_ptr, CVector3f * world_position)
+; __cdecl float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_005724e0 (CDemonSet *this_ptr,CVector3f *world_position)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

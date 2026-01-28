@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_showPolygonDetailsList_FUN_0045d9c0()
+; unknown void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x11c]:1  local_11c

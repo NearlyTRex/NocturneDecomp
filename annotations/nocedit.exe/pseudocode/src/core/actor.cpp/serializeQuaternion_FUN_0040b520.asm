@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f * quat_ptr, char * property_type)
+; __cdecl void __cdecl core_actor_cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *property_type)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat_ptr

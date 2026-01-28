@@ -2,7 +2,7 @@
 // Address: 005b9230
 // Address Range: [[005b9230, 005b9269]]
 // Convention: unknown
-// Signature: undefined core_spline.cpp_FUN_005b9230()
+// Signature: float core_spline_cpp_FUN_005b9230(void)
 
 #include "nocturne.h"
 

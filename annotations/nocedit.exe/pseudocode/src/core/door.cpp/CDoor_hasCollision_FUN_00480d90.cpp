@@ -2,7 +2,7 @@
 // Address: 00480d90
 // Address Range: [[00480d90, 00480dc7]]
 // Convention: __cdecl
-// Signature: int core_door.cpp_CDoor_hasCollision_FUN_00480d90(CDoor * this_ptr, SCollisionInfo * collision_info)
+// Signature: int __cdecl core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 

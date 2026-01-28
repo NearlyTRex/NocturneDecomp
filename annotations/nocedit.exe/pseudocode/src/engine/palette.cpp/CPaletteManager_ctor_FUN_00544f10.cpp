@@ -2,7 +2,7 @@
 // Address: 00544f10
 // Address Range: [[00544f10, 00544f75]]
 // Convention: __cdecl
-// Signature: CPaletteManager * engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager * this_ptr)
+// Signature: CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr)
 
 #include "nocturne.h"
 

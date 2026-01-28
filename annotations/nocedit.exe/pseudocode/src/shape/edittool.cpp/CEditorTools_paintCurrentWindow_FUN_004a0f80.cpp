@@ -2,7 +2,7 @@
 // Address: 004a0f80
 // Address Range: [[004a0f80, 004a1221]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00403170
 // Address Range: [[00403170, 004031ff]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, int color)
+// Signature: void __cdecl engine_2d_c_fillRectColor_FUN_00403170(int x1,int y1,int x2,int y2,int color)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)
+; __cdecl void __cdecl sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0 (float orient_right_x,float orient_right_y,float orient_right_z)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   orient_right_x

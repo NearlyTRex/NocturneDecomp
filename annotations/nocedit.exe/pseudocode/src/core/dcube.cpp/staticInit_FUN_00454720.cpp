@@ -2,7 +2,7 @@
 // Address: 00454720
 // Address Range: [[00454720, 004547ac]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_staticInit_FUN_00454720(void)
+// Signature: void __cdecl core_dcube_cpp_staticInit_FUN_00454720(void)
 
 #include "nocturne.h"
 

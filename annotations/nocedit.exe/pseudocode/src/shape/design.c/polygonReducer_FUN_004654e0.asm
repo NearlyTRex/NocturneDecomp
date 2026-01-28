@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_polygonReducer_FUN_004654e0(void)
+; __cdecl void __cdecl shape_design_c_polygonReducer_FUN_004654e0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x64]:1  local_64

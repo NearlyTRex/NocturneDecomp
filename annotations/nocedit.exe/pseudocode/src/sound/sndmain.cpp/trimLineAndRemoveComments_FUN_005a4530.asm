@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530(char * line)
+; __cdecl void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_005a4530(char *line)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   line

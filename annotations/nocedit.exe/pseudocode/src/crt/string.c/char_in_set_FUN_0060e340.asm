@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_string.c_char_in_set_FUN_0060e340(char * charset, wchar_t wc)
+; __cdecl char * __cdecl crt_string_c_char_in_set_FUN_0060e340(char *charset,wchar_t wc)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   charset

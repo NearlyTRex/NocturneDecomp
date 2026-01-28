@@ -2,7 +2,7 @@
 // Address: 00605b9b
 // Address Range: [[00605b9b, 00605d5c]]
 // Convention: __cdecl
-// Signature: int crt_string.c_parseFloatString_FUN_00605b9b(char * str, void * result, char * * endptr)
+// Signature: int __cdecl crt_string_c_parseFloatString_FUN_00605b9b(char *str,void *result,char **endptr)
 
 #include "nocturne.h"
 

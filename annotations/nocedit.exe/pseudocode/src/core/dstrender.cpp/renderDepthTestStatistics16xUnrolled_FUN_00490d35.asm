@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dstrender.cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+; __cdecl void __cdecl core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_litecone.cpp_FUN_00506c20()
+; unknown int core_litecone_cpp_FUN_00506c20(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1c]:1  local_1c

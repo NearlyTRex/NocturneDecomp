@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_platfrm.cpp_staticInit_FUN_0054c7e0(void)
+; __cdecl void __cdecl core_platfrm_cpp_staticInit_FUN_0054c7e0(void)
 ;
 ;
 ; Referenced Globals:

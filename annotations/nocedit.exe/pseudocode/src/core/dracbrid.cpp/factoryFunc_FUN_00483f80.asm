@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDraculaBride * core_dracbrid.cpp_factoryFunc_FUN_00483f80(void)
+; __cdecl CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00483f80(void)
 ;
 ;
 ; XREF[1]:

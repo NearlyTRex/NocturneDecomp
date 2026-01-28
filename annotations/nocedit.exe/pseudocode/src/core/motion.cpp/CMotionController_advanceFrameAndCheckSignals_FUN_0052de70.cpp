@@ -2,7 +2,7 @@
 // Address: 0052de70
 // Address Range: [[0052de70, 0052e01e]]
 // Convention: __cdecl
-// Signature: int core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70(CMotionController * this_ptr, int * inout_motion_index, float * inout_frame_number, float delta_time, float scale_factor)
+// Signature: int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70 (CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number, float delta_time,float scale_factor)
 
 #include "nocturne.h"
 

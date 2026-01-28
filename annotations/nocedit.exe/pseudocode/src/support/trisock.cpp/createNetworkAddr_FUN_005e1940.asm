@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void support_trisock.cpp_createNetworkAddr_FUN_005e1940(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
+; __cdecl void __cdecl support_trisock_cpp_createNetworkAddr_FUN_005e1940 (SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port)
 ;
 ; Parameters:
 ; SNetworkAddr *   Stack[0x4]:4   dest_addr

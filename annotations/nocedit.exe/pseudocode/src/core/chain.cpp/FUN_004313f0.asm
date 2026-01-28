@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_chain.cpp_FUN_004313f0(SChainVertex * * objs)
+; __cdecl int __cdecl core_chain_cpp_FUN_004313f0(SChainVertex **objs)
 ;
 ; Parameters:
 ; SChainVertex * * Stack[0x4]:4   objs

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_crc32UpdateDword_FUN_0051c480(uint * crc_ptr, uint dword_value)
+; __cdecl void __cdecl shape_meshlod_cpp_crc32UpdateDword_FUN_0051c480(uint *crc_ptr,uint dword_value)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   crc_ptr

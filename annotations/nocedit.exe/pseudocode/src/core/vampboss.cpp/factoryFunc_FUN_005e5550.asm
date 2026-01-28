@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVampireBoss * core_vampboss.cpp_factoryFunc_FUN_005e5550(void)
+; __cdecl CVampireBoss * __cdecl core_vampboss_cpp_factoryFunc_FUN_005e5550(void)
 ;
 ;
 ; XREF[1]:

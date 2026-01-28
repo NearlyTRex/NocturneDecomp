@@ -2,7 +2,7 @@
 // Address: 004039c0
 // Address Range: [[004039c0, 004039f6]]
 // Convention: __cdecl
-// Signature: uint engine_3d.c_makeGrayscaleColor_FUN_004039c0(int intensity)
+// Signature: uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int intensity)
 
 #include "nocturne.h"
 

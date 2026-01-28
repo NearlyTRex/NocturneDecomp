@@ -2,7 +2,7 @@
 // Address: 005a86f0
 // Address Range: [[005a86f0, 005a87c6]]
 // Convention: __cdecl
-// Signature: double sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
+// Signature: double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 (CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
 
 #include "nocturne.h"
 

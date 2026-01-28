@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_ungetc_helper_FUN_005fe720(int character, scanf_state_t * state)
+; __watcallStack int __watcallStack crt_stdio_c_ungetc_helper_FUN_005fe720(int character,scanf_state_t *state)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character

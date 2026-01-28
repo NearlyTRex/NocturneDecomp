@@ -2,7 +2,7 @@
 // Address: 005abb10
 // Address Range: [[005abb10, 005abb53]]
 // Convention: __cdecl
-// Signature: HRESULT sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps)
+// Signature: HRESULT __cdecl sound_sndmain_cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps)
 
 #include "nocturne.h"
 

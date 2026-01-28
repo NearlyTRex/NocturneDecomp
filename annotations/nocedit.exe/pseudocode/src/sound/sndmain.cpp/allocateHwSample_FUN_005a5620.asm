@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_allocateHwSample_FUN_005a5620(int bits_per_sample, int channel_count, int sample_rate, int sample_count)
+; __cdecl int __cdecl sound_sndmain_cpp_allocateHwSample_FUN_005a5620 (int bits_per_sample,int channel_count,int sample_rate,int sample_count)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   bits_per_sample

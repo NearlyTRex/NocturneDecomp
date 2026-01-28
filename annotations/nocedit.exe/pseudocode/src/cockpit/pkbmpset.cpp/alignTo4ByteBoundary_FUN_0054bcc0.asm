@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int cockpit_pkbmpset.cpp_alignTo4ByteBoundary_FUN_0054bcc0(int value)
+; __cdecl int __cdecl cockpit_pkbmpset_cpp_alignTo4ByteBoundary_FUN_0054bcc0(int value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   value

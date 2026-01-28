@@ -2,7 +2,7 @@
 // Address: 0060ba25
 // Address Range: [[0060ba25, 0060ba6f]]
 // Convention: __watcallStack
-// Signature: int crt_strstream.cpp_strstreambuf_underflow_FUN_0060ba25(strstreambuf * this_ptr)
+// Signature: int __watcallStack crt_strstream_cpp_strstreambuf_underflow_FUN_0060ba25(strstreambuf *this_ptr)
 
 #include "nocturne.h"
 

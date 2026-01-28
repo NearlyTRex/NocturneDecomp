@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920(void)
+; __cdecl void __cdecl shape_design_c_renderEditorBackgroundOverlay_FUN_0045d920(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x20]:1  local_20

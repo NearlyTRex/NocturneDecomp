@@ -5,96 +5,96 @@
 
 // Original: core_frankgen.cpp_staticInit_FUN_004d16b0
 // Address: 004d16b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_frankgen.cpp_factoryFunc_FUN_004d16e0
 // Address: 004d16e0
-CFrankenstienMachine * factoryFunc(void);
+CFrankenstienMachine * __cdecl factoryFunc(void);
 
 // Original: core_frankgen.cpp_FUN_004d1710
 // Address: 004d1710
-undefined FUN_004d1710();
+CDemonActorType * FUN_004d1710(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004d1720
 // Address: 004d1720
-CFrankenstienMachine * CFrankenstienMachine::ctor(CFrankenstienMachine * this_ptr);
+CFrankenstienMachine * __cdecl CFrankenstienMachine::ctor(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_FUN_004d17b0
 // Address: 004d17b0
-undefined FUN_004d17b0();
+void FUN_004d17b0(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_load_FUN_004d19e0
 // Address: 004d19e0
-undefined CFrankenstienMachine::load();
+void CFrankenstienMachine::load(void);
 
 // Original: core_frankgen.cpp_PlaySounds_FUN_004d1a40
 // Address: 004d1a40
-undefined PlaySounds();
+void PlaySounds(void);
 
 // Original: core_frankgen.cpp_FUN_004d1ec0
 // Address: 004d1ec0
-undefined FUN_004d1ec0();
+void FUN_004d1ec0(void);
 
 // Original: core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20
 // Address: 004d1f20
-undefined SoundPushPlayPopAgain();
+void SoundPushPlayPopAgain(void);
 
 // Original: core_frankgen.cpp_FUN_004d1f70
 // Address: 004d1f70
-undefined FUN_004d1f70();
+int FUN_004d1f70(void);
 
 // Original: core_frankgen.cpp_FUN_004d20f0
 // Address: 004d20f0
-undefined FUN_004d20f0();
+float * FUN_004d20f0(void);
 
 // Original: core_frankgen.cpp_LoadModel_FUN_004d2190
 // Address: 004d2190
-undefined LoadModel();
+void LoadModel(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
 // Address: 004d2330
-undefined CFrankenstienMachine::findLeader();
+CDemonActor * CFrankenstienMachine::findLeader(void);
 
 // Original: core_frankgen.cpp_FUN_004d23a0
 // Address: 004d23a0
-undefined FUN_004d23a0();
+void FUN_004d23a0(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430
 // Address: 004d2430
-undefined CFrankenstienMachine::setCourseFrame();
+void CFrankenstienMachine::setCourseFrame(void);
 
 // Original: core_frankgen.cpp_FUN_004d24f0
 // Address: 004d24f0
-undefined FUN_004d24f0();
+undefined4 FUN_004d24f0(void);
 
 // Original: core_frankgen.cpp_FUN_004d2500
 // Address: 004d2500
-undefined FUN_004d2500();
+void FUN_004d2500(void);
 
 // Original: core_frankgen.cpp_FUN_004d2560
 // Address: 004d2560
-undefined FUN_004d2560();
+void FUN_004d2560(void);
 
 // Original: core_frankgen.cpp_FUN_004d25f0
 // Address: 004d25f0
-undefined FUN_004d25f0();
+void FUN_004d25f0(void);
 
 // Original: core_frankgen.cpp_FUN_004d2740
 // Address: 004d2740
-undefined FUN_004d2740();
+void FUN_004d2740(void);
 
 // Original: core_frankgen.cpp_FUN_004d2770
 // Address: 004d2770
-undefined FUN_004d2770();
+undefined4 FUN_004d2770(void);
 
 // Original: core_frankgen.cpp_FUN_004d2880
 // Address: 004d2880
-undefined FUN_004d2880();
+undefined4 FUN_004d2880(void);
 
 // Original: core_frankgen.cpp_FUN_004d2890
 // Address: 004d2890
-undefined FUN_004d2890();
+undefined4 FUN_004d2890(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0
 // Address: 004d28a0
-CFrankenstienMachine * CFrankenstienMachine::dtor(CFrankenstienMachine * this_ptr, uint d1, uint d2, uint d3);
+CFrankenstienMachine * __cdecl CFrankenstienMachine::dtor(CFrankenstienMachine *this_ptr,uint d1,uint d2,uint d3);

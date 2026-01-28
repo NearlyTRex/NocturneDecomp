@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hero.cpp_CallInventorySelectHealth_FUN_004f3760()
+; unknown int core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
 ;
 ;
 ; XREF[1]:

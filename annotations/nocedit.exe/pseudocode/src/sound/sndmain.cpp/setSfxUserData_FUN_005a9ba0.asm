@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0(uint sfx_handle, int index, void * value)
+; __cdecl int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_005a9ba0(uint sfx_handle,int index,void *value)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

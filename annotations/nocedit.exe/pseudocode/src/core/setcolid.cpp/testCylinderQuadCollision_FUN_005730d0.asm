@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0(SIntersectXZCylinder * cylinder, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, CVector3f * vertex4)
+; __cdecl void __cdecl core_setcolid_cpp_testCylinderQuadCollision_FUN_005730d0 (SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, CVector3f *vertex4)
 ;
 ; Parameters:
 ; SIntersectXZCylinder * Stack[0x4]:4   cylinder

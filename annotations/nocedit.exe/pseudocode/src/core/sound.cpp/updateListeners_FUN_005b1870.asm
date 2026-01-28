@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_updateListeners_FUN_005b1870(void)
+; __cdecl void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1b8]:8  local_1b8

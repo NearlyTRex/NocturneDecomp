@@ -2,7 +2,7 @@
 // Address: 004093f0
 // Address Range: [[004093f0, 0040946a]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_hit_normal, void * unused)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0 (CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,void *unused)
 
 #include "nocturne.h"
 

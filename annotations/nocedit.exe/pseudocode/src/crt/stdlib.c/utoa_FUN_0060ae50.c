@@ -2,7 +2,7 @@
 // Address: 0060ae50
 // Address Range: [[0060ae50, 0060aea3]]
 // Convention: __cdecl
-// Signature: char * crt_stdlib.c_utoa_FUN_0060ae50(uint value, char * buffer, int base)
+// Signature: char * __cdecl crt_stdlib_c_utoa_FUN_0060ae50(uint value,char *buffer,int base)
 
 #include "nocturne.h"
 

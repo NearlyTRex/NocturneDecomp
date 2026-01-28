@@ -2,7 +2,7 @@
 // Address: 0057ce80
 // Address Range: [[0057ce80, 0057d335]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+// Signature: void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
 
 #include "nocturne.h"
 

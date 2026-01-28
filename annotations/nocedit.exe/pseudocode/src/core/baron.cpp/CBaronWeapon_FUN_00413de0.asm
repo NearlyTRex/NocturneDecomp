@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_baron.cpp_CBaronWeapon_FUN_00413de0(CBaronWeapon * this_ptr)
+; __cdecl void __cdecl core_baron_cpp_CBaronWeapon_FUN_00413de0(CBaronWeapon *this_ptr)
 ;
 ; Parameters:
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr

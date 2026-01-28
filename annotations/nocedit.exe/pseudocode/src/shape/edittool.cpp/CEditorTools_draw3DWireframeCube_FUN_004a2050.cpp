@@ -2,7 +2,7 @@
 // Address: 004a2050
 // Address Range: [[004a2050, 004a250a]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
 
 #include "nocturne.h"
 

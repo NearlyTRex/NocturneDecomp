@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHeroPlaceholder * core_hero.cpp_factoryFunc_FUN_004f3bc0(void)
+; __cdecl CHeroPlaceholder * __cdecl core_hero_cpp_factoryFunc_FUN_004f3bc0(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 00587ea0
 // Address Range: [[00587ea0, 00587ec2]]
 // Convention: __cdecl
-// Signature: CShotgun * core_shotgun.cpp_factoryFunc_FUN_00587ea0(void)
+// Signature: CShotgun * __cdecl core_shotgun_cpp_factoryFunc_FUN_00587ea0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005e5520
 // Address Range: [[005e5520, 005e5543]]
 // Convention: __cdecl
-// Signature: void core_vampboss.cpp_staticInit_FUN_005e5520(void)
+// Signature: void __cdecl core_vampboss_cpp_staticInit_FUN_005e5520(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_write_FUN_006038c0(int file_handle_index, void * buffer, int bytes_to_write)
+; __watcallStack int __watcallStack crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_write)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index

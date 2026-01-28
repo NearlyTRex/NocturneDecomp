@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_set.cpp_freeVDBoxes_FUN_00571590(SVDBox * * array)
+; __cdecl void __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox **array)
 ;
 ; Parameters:
 ; SVDBox * *       Stack[0x4]:4   array

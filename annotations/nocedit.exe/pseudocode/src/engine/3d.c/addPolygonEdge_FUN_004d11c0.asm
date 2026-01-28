@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_3d.c_addPolygonEdge_FUN_004d11c0(SRenderVertex * vertex1, SRenderVertex * vertex2)
+; __cdecl void __cdecl engine_3d_c_addPolygonEdge_FUN_004d11c0(SRenderVertex *vertex1,SRenderVertex *vertex2)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex1

@@ -2,7 +2,7 @@
 // Address: 004800c0
 // Address Range: [[004800c0, 004807c0]]
 // Convention: __cdecl
-// Signature: void core_door.cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr, float delta_time)
+// Signature: void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

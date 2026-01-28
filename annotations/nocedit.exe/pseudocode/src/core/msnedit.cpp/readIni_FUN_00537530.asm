@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_msnedit.cpp_readIni_FUN_00537530(CDemonMission * mission_ptr, CIniFile * ini_file)
+; __cdecl void __cdecl core_msnedit_cpp_readIni_FUN_00537530(CDemonMission *mission_ptr,CIniFile *ini_file)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   mission_ptr

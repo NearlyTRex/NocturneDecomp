@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_hostage.cpp_CHostage_FUN_004f6450(CHostage * this_ptr)
+; __cdecl void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr

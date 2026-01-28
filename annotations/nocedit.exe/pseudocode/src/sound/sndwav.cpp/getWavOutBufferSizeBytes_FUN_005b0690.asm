@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690(void)
+; __cdecl int __cdecl sound_sndwav_cpp_getWavOutBufferSizeBytes_FUN_005b0690(void)
 ;
 ;
 ; Referenced Globals:

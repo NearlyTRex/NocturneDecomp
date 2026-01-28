@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
+; __stack2_esi CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10 (CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_a

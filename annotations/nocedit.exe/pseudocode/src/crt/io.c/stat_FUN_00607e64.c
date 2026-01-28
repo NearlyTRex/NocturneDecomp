@@ -2,7 +2,7 @@
 // Address: 00607e64
 // Address Range: [[00607e64, 0060815f]]
 // Convention: __cdecl
-// Signature: int crt_io.c_stat_FUN_00607e64(char * filename, stat * file_info)
+// Signature: int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,stat *file_info)
 
 #include "nocturne.h"
 

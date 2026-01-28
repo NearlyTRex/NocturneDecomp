@@ -2,7 +2,7 @@
 // Address: 0054a7d0
 // Address Range: [[0054a7d0, 0054a81d]]
 // Convention: __cdecl
-// Signature: CPendulum * core_pendulum.cpp_CPendulum_dtor_FUN_0054a7d0(CPendulum * this_ptr, uint d1, uint d2)
+// Signature: CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_0054a7d0(CPendulum *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

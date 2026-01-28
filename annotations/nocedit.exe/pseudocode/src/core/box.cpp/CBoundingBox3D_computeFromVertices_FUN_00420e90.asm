@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90(CBoundingBox3D * this_ptr, int vertex_count, CVector3i * vertices)
+; __cdecl void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90 (CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr

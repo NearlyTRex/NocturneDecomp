@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0(void)
+; __cdecl void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c7f0(void)
 ;
 ;
 ; XREF[1]:

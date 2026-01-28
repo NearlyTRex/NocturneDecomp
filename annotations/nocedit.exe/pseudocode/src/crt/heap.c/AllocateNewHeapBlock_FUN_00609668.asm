@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_heap.c_AllocateNewHeapBlock_FUN_00609668(uint size)
+; __cdecl int __cdecl crt_heap_c_AllocateNewHeapBlock_FUN_00609668(uint size)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   size

@@ -2,7 +2,7 @@
 // Address: 005f4700
 // Address Range: [[005f4700, 005f4983]]
 // Convention: __cdecl
-// Signature: void wincore_winvideo.cpp_openMovie_FUN_005f4700(HWND parent_window, char * movie_filename)
+// Signature: void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char *movie_filename)
 
 #include "nocturne.h"
 

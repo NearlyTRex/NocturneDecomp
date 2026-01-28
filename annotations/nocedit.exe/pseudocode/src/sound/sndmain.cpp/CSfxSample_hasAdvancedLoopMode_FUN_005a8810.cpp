@@ -2,7 +2,7 @@
 // Address: 005a8810
 // Address Range: [[005a8810, 005a8828]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_CSfxSample_hasAdvancedLoopMode_FUN_005a8810(CSfxSample * this_ptr)
+// Signature: int __cdecl sound_sndmain_cpp_CSfxSample_hasAdvancedLoopMode_FUN_005a8810(CSfxSample *this_ptr)
 
 #include "nocturne.h"
 

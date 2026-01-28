@@ -2,7 +2,7 @@
 // Address: 0059a3f0
 // Address Range: [[0059a3f0, 0059a50e]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0(CDeformableModel * this_ptr, int num_lods, int num_texture_sets, int num_textures, int num_parts)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0 (CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures, int num_parts)
 
 #include "nocturne.h"
 

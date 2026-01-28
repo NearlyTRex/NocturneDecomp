@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_conveyor.cpp_FUN_00441d60()
+; unknown void core_conveyor_cpp_FUN_00441d60(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1c]:1  local_1c

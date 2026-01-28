@@ -2,7 +2,7 @@
 // Address: 0051f190
 // Address Range: [[0051f190, 0051f1b2]]
 // Convention: __cdecl
-// Signature: CMimic * core_mimic.cpp_factoryFunc_FUN_0051f190(void)
+// Signature: CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void)
 
 #include "nocturne.h"
 

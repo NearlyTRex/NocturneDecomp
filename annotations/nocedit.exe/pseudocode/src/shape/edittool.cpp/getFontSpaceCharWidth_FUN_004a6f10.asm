@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_getFontSpaceCharWidth_FUN_004a6f10(CBitFont * font_ptr)
+; __cdecl int __cdecl shape_edittool_cpp_getFontSpaceCharWidth_FUN_004a6f10(CBitFont *font_ptr)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   font_ptr

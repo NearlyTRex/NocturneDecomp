@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0(CPackedBitmap * this_ptr, int dest_x, int dest_y, int src_left, int src_top, int width, int height)
+; __cdecl void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0 (CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width, int height)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr

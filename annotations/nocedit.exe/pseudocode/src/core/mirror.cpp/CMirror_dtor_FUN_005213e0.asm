@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMirror * core_mirror.cpp_CMirror_dtor_FUN_005213e0(CMirror * this_ptr)
+; __cdecl CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_005213e0(CMirror *this_ptr)
 ;
 ; Parameters:
 ; CMirror *        Stack[0x4]:4   this_ptr

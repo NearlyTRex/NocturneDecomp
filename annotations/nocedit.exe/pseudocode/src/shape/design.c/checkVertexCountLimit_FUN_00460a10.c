@@ -2,7 +2,7 @@
 // Address: 00460a10
 // Address Range: [[00460a10, 00460abd]]
 // Convention: __cdecl
-// Signature: int shape_design.c_checkVertexCountLimit_FUN_00460a10(void)
+// Signature: int __cdecl shape_design_c_checkVertexCountLimit_FUN_00460a10(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_quantize.cpp_getAbsoluteValue_FUN_00556df0(int value)
+; __cdecl int __cdecl shape_quantize_cpp_getAbsoluteValue_FUN_00556df0(int value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   value

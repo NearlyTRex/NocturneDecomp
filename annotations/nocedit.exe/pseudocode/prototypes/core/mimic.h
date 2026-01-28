@@ -5,96 +5,96 @@
 
 // Original: core_mimic.cpp_staticInit_FUN_0051f100
 // Address: 0051f100
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_mimic.cpp_FUN_0051f130
 // Address: 0051f130
-undefined FUN_0051f130();
+void FUN_0051f130(void);
 
 // Original: core_mimic.cpp_factoryFunc_FUN_0051f190
 // Address: 0051f190
-CMimic * factoryFunc(void);
+CMimic * __cdecl factoryFunc(void);
 
 // Original: core_mimic.cpp_CMimic_getActorType_FUN_0051f1c0
 // Address: 0051f1c0
-CDemonActorType * CMimic::getActorType(CMimic * this_ptr);
+CDemonActorType * __cdecl CMimic::getActorType(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
 // Address: 0051f1d0
-CMimic * CMimic::ctor(CMimic * this_ptr);
+CMimic * __cdecl CMimic::ctor(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_dtor_FUN_0051f2c0
 // Address: 0051f2c0
-CMimic * CMimic::dtor(CMimic * this_ptr, uint d1);
+CMimic * __cdecl CMimic::dtor(CMimic *this_ptr,uint d1);
 
 // Original: core_mimic.cpp_CMimic_setup_FUN_0051f3e0
 // Address: 0051f3e0
-undefined CMimic::setup();
+void CMimic::setup(void);
 
 // Original: core_mimic.cpp_CMimic_setup2_FUN_0051f780
 // Address: 0051f780
-undefined CMimic::setup2();
+void CMimic::setup2(void);
 
 // Original: core_mimic.cpp_FUN_0051f930
 // Address: 0051f930
-undefined FUN_0051f930();
+void FUN_0051f930(void);
 
 // Original: core_mimic.cpp_FUN_0051fcc0
 // Address: 0051fcc0
-undefined FUN_0051fcc0();
+void FUN_0051fcc0(void);
 
 // Original: core_mimic.cpp_FUN_00520500
 // Address: 00520500
-undefined FUN_00520500();
+void FUN_00520500(void);
 
 // Original: core_mimic.cpp_CMimic_FUN_005205f0
 // Address: 005205f0
-int CMimic(CMimic * this_ptr);
+int __cdecl CMimic(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderOpaque_FUN_00520870
 // Address: 00520870
-int CMimic::renderOpaque(CMimic * this_ptr);
+int __cdecl CMimic::renderOpaque(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_FUN_00520890
 // Address: 00520890
-undefined FUN_00520890();
+int FUN_00520890(void);
 
 // Original: core_mimic.cpp_FUN_005208a0
 // Address: 005208a0
-undefined FUN_005208a0();
+undefined4 FUN_005208a0(void);
 
 // Original: core_mimic.cpp_FUN_005208b0
 // Address: 005208b0
-undefined FUN_005208b0();
+void FUN_005208b0(void);
 
 // Original: core_mimic.cpp_CMimic_load_FUN_00520930
 // Address: 00520930
-undefined CMimic::load();
+void CMimic::load(void);
 
 // Original: core_mimic.cpp_FUN_00520a00
 // Address: 00520a00
-undefined FUN_00520a00();
+undefined4 FUN_00520a00(void);
 
 // Original: core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
 // Address: 00520a80
-undefined CMimic::beginMorph();
+void CMimic::beginMorph(void);
 
 // Original: core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
 // Address: 00520ba0
-undefined CMimic::processMorph();
+void CMimic::processMorph(void);
 
 // Original: core_mimic.cpp_FUN_00520d10
 // Address: 00520d10
-undefined FUN_00520d10();
+void FUN_00520d10(void);
 
 // Original: core_mimic.cpp_FUN_00520da0
 // Address: 00520da0
-undefined FUN_00520da0();
+void FUN_00520da0(void);
 
 // Original: core_mimic.cpp_FUN_00520dd0
 // Address: 00520dd0
-undefined FUN_00520dd0();
+void FUN_00520dd0(void);
 
 // Original: core_mimic.cpp_FUN_00520e00
 // Address: 00520e00
-undefined FUN_00520e00();
+void FUN_00520e00(void);

@@ -2,7 +2,7 @@
 // Address: 005506c0
 // Address Range: [[005506c0, 005507e3]]
 // Convention: __stack2_esi
-// Signature: CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
+// Signature: CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0 (CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record)
 
 #include "nocturne.h"
 

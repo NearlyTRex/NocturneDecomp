@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_005dd9c0(void)
+; __cdecl SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_005dd9c0(void)
 ;
 ;
 ; XREF[2]:

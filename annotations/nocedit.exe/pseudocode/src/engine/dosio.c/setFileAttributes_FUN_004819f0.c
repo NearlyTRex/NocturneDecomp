@@ -2,7 +2,7 @@
 // Address: 004819f0
 // Address Range: [[004819f0, 00481a1b]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+// Signature: int __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte flags)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_grave.cpp_FUN_004ee710()
+; unknown void core_grave_cpp_FUN_004ee710(void)
 ;
 ;
 ; Called Functions:

@@ -2,7 +2,7 @@
 // Address: 005a0ad0
 // Address Range: [[005a0ad0, 005a0c8f]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance * this_ptr, int motion_index, float animation_time, SBoneTransformData * output_bone_data)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (CDeformableModelInstance *this_ptr,int motion_index,float animation_time, SBoneTransformData *output_bone_data)
 
 #include "nocturne.h"
 

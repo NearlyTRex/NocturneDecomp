@@ -2,7 +2,7 @@
 // Address: 0045bff0
 // Address Range: [[0045bff0, 0045c2e1]]
 // Convention: __cdecl
-// Signature: void shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0(void)
+// Signature: void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
 
 #include "nocturne.h"
 

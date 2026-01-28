@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndwav.cpp_CWavOutDevice_startSfx_FUN_005b1730(CWavOutDevice * this_ptr, CSfxSlot * slot)
+; __cdecl int __cdecl sound_sndwav_cpp_CWavOutDevice_startSfx_FUN_005b1730(CWavOutDevice *this_ptr,CSfxSlot *slot)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr

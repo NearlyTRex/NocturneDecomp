@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4()
+; unknown bool crt_signal_c_unregisterConsoleHandler_FUN_0060cfe4(void)
 ;
 ;
 ; XREF[3]:

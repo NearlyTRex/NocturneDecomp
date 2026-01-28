@@ -2,7 +2,7 @@
 // Address: 006012d0
 // Address Range: [[006012d0, 00601372]]
 // Convention: __cdecl
-// Signature: int crt_heap.c_heapWalk_FUN_006012d0(HeapState * heap_state_ptr, Heap * heap_ptr)
+// Signature: int __cdecl crt_heap_c_heapWalk_FUN_006012d0(HeapState *heap_state_ptr,Heap *heap_ptr)
 
 #include "nocturne.h"
 

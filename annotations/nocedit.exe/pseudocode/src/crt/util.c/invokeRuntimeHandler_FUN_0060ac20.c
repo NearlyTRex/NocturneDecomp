@@ -2,7 +2,7 @@
 // Address: 0060ac20
 // Address Range: [[0060ac20, 0060ac2f]]
 // Convention: __cdecl
-// Signature: void crt_util.c_invokeRuntimeHandler_FUN_0060ac20(RUNTIME_HANDLER_FUNC * * ppHandler)
+// Signature: void __cdecl crt_util_c_invokeRuntimeHandler_FUN_0060ac20(RUNTIME_HANDLER_FUNC **ppHandler)
 
 #include "nocturne.h"
 

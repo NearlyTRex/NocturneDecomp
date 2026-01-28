@@ -2,7 +2,7 @@
 // Address: 004701a0
 // Address Range: [[004701a0, 004701e6]]
 // Convention: __cdecl
-// Signature: CDemonFilter * core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0(CFilterCache * this_ptr, char * filter_name)
+// Signature: CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_004701a0(CFilterCache *this_ptr,char *filter_name)
 
 #include "nocturne.h"
 

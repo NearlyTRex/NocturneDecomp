@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CheckingActorVariableName_FUN_00559220()
+; unknown undefined4 core_script_cpp_CheckingActorVariableName_FUN_00559220(void)
 ;
 ;
 ; XREF[2]:

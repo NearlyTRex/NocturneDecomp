@@ -2,7 +2,7 @@
 // Address: 00515e50
 // Address Range: [[00515e50, 00515e85]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_CLodVert_findEdge_FUN_00515e50(CLodVert * this_ptr, int edge_index)
+// Signature: int __cdecl shape_meshlod_cpp_CLodVert_findEdge_FUN_00515e50(CLodVert *this_ptr,int edge_index)
 
 #include "nocturne.h"
 

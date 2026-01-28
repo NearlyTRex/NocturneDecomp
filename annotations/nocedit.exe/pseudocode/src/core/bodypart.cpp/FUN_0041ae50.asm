@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bodypart.cpp_FUN_0041ae50()
+; unknown void core_bodypart_cpp_FUN_0041ae50(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18

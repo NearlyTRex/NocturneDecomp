@@ -2,7 +2,7 @@
 // Address: 0058abb0
 // Address Range: [[0058abb0, 0058ac24]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure * this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr)
 
 #include "nocturne.h"
 

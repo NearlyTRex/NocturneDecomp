@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_colonel.cpp_FUN_004404a0(CColonel * this_ptr)
+; __cdecl void __cdecl core_colonel_cpp_FUN_004404a0(CColonel *this_ptr)
 ;
 ; Parameters:
 ; CColonel *       Stack[0x4]:4   this_ptr

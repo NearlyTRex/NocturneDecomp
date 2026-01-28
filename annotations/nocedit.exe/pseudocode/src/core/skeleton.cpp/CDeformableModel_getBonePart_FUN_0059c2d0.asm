@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0059c2d0(CDeformableModel * this_ptr, int bone_index)
+; __cdecl int __cdecl core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0 (CDeformableModel *this_ptr,int bone_index)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

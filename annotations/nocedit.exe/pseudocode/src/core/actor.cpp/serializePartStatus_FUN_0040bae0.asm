@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializePartStatus_FUN_0040bae0(void * part, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *property_name)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   part

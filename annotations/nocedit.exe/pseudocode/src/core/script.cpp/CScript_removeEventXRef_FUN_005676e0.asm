@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_removeEventXRef_FUN_005676e0()
+; unknown void core_script_cpp_CScript_removeEventXRef_FUN_005676e0(void)
 ;
 ;
 ; XREF[1]:

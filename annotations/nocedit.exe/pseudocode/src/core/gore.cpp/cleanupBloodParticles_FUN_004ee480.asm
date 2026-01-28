@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_gore.cpp_cleanupBloodParticles_FUN_004ee480(CBloodParticle * ptr)
+; __cdecl int __cdecl core_gore_cpp_cleanupBloodParticles_FUN_004ee480(CBloodParticle *ptr)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   ptr

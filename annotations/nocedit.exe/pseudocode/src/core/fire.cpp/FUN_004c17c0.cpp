@@ -2,7 +2,7 @@
 // Address: 004c17c0
 // Address Range: [[004c17c0, 004c17df]]
 // Convention: unknown
-// Signature: undefined core_fire.cpp_FUN_004c17c0()
+// Signature: void core_fire_cpp_FUN_004c17c0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+; unknown void shape_design_c_createQuadPolygon_FUN_0045df60(void)
 ;
 ;
 ; XREF[3]:

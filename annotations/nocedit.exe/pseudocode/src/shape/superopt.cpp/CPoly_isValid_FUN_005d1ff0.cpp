@@ -2,7 +2,7 @@
 // Address: 005d1ff0
 // Address Range: [[005d1ff0, 005d2224]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0(CPoly * this_ptr)
+// Signature: int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
 
 #include "nocturne.h"
 

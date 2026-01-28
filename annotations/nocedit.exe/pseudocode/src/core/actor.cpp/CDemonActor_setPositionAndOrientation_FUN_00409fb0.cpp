@@ -2,7 +2,7 @@
 // Address: 00409fb0
 // Address Range: [[00409fb0, 0040a008]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(CDemonActor * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0 (CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 
 #include "nocturne.h"
 

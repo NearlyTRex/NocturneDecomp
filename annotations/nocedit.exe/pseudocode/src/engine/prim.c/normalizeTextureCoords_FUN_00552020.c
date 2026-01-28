@@ -2,7 +2,7 @@
 // Address: 00552020
 // Address Range: [[00552020, 0055209e]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_normalizeTextureCoords_FUN_00552020(SRenderVertex * vertices, int vertex_count)
+// Signature: void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00552020(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 

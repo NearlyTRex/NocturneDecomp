@@ -2,7 +2,7 @@
 // Address: 0060a560
 // Address Range: [[0060a560, 0060a603]]
 // Convention: __cdecl
-// Signature: DWORD crt_startup.c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule, LPWSTR lpFilename, DWORD nSize)
+// Signature: DWORD __cdecl crt_startup_c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
 
 #include "nocturne.h"
 

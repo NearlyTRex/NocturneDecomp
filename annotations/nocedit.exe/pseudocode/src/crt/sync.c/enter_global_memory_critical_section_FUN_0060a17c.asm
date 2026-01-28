@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_sync.c_enter_global_memory_critical_section_FUN_0060a17c(void)
+; __cdecl void __cdecl crt_sync_c_enter_global_memory_critical_section_FUN_0060a17c(void)
 ;
 ;
 ; XREF[1]:

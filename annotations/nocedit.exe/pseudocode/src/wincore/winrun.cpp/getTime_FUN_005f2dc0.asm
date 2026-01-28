@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_winrun.cpp_getTime_FUN_005f2dc0(void)
+; __cdecl int __cdecl wincore_winrun_cpp_getTime_FUN_005f2dc0(void)
 ;
 ;
 ; XREF[46]:

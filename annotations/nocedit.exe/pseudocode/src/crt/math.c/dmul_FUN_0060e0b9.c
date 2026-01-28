@@ -2,7 +2,7 @@
 // Address: 0060e0b9
 // Address Range: [[0060e0b9, 0060e255]]
 // Convention: __watcallRegister
-// Signature: double crt_math.c_dmul_FUN_0060e0b9(double a, double b)
+// Signature: double crt_math_c_dmul_FUN_0060e0b9(double a,double b)
 
 #include "nocturne.h"
 

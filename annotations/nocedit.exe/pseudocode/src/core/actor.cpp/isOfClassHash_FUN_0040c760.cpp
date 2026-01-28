@@ -2,7 +2,7 @@
 // Address: 0040c760
 // Address Range: [[0040c760, 0040c787]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_isOfClassHash_FUN_0040c760(CDemonActor * actor_ptr, uint class_name_hash)
+// Signature: int __cdecl core_actor_cpp_isOfClassHash_FUN_0040c760(CDemonActor *actor_ptr,uint class_name_hash)
 
 #include "nocturne.h"
 

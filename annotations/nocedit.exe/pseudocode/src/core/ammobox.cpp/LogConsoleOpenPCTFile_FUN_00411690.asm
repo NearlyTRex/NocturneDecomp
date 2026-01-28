@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690()
+; unknown void core_ammobox_cpp_LogConsoleOpenPCTFile_FUN_00411690 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,float param_6)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xc]:8  local_c

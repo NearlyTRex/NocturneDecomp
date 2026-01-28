@@ -2,7 +2,7 @@
 // Address: 005dbb70
 // Address Range: [[005dbb70, 005dbc5b]]
 // Convention: unknown
-// Signature: undefined core_tentacle.cpp_FUN_005dbb70()
+// Signature: void core_tentacle_cpp_FUN_005dbb70(void)
 
 #include "nocturne.h"
 

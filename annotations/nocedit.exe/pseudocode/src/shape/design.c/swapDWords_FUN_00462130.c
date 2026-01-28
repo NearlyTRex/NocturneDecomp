@@ -2,7 +2,7 @@
 // Address: 00462130
 // Address Range: [[00462130, 0046215c]]
 // Convention: __cdecl
-// Signature: void shape_design.c_swapDWords_FUN_00462130(uint * value1_ptr, uint * value2_ptr)
+// Signature: void __cdecl shape_design_c_swapDWords_FUN_00462130(uint *value1_ptr,uint *value2_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00515110
 // Address Range: [[00515110, 0051514f]]
 // Convention: __cdecl
-// Signature: double shape_meshlod.cpp_computeDistanceSquaredToEdge_FUN_00515110(CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
+// Signature: double __cdecl shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110 (CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1)
 
 #include "nocturne.h"
 

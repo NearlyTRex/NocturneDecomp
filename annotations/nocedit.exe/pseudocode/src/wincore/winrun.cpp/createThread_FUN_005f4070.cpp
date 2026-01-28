@@ -2,7 +2,7 @@
 // Address: 005f4070
 // Address Range: [[005f4070, 005f4090]]
 // Convention: __cdecl
-// Signature: HANDLE wincore_winrun.cpp_createThread_FUN_005f4070(LPTHREAD_START_ROUTINE thread_func, LPVOID thread_param)
+// Signature: HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005f4070(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param)
 
 #include "nocturne.h"
 

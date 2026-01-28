@@ -2,7 +2,7 @@
 // Address: 00404420
 // Address Range: [[00404420, 00404445]]
 // Convention: __watcallRegister
-// Signature: SMRGLHeaderExtended * engine_3d.c_oldFunction_FUN_00404420(SMRGLHeaderExtended * primitive)
+// Signature: SMRGLHeaderExtended * engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive)
 
 #include "nocturne.h"
 

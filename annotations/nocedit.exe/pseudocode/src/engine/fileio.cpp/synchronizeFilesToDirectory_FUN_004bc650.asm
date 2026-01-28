@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650(FILE * file_list_output, char * source_directory, char * file_pattern, char * dest_directory)
+; __cdecl void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650 (FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_list_output

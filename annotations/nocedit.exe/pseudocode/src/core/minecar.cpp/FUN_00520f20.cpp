@@ -2,7 +2,7 @@
 // Address: 00520f20
 // Address Range: [[00520f20, 00520f37]]
 // Convention: __cdecl
-// Signature: CMineCar * core_minecar.cpp_FUN_00520f20(CMineCar * this_ptr)
+// Signature: CMineCar * __cdecl core_minecar_cpp_FUN_00520f20(CMineCar *this_ptr)
 
 #include "nocturne.h"
 

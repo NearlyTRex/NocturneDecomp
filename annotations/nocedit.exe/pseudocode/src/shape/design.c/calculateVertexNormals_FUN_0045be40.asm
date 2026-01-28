@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_calculateVertexNormals_FUN_0045be40(void)
+; __cdecl void __cdecl shape_design_c_calculateVertexNormals_FUN_0045be40(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40

@@ -2,7 +2,7 @@
 // Address: 0040cf50
 // Address Range: [[0040cf50, 0040cf64]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_crc32ProcessInt_FUN_0040cf50(uint * crc_state, int value)
+// Signature: void __cdecl core_actor_cpp_crc32ProcessInt_FUN_0040cf50(uint *crc_state,int value)
 
 #include "nocturne.h"
 

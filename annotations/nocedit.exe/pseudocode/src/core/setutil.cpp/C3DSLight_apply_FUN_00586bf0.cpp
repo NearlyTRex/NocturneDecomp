@@ -2,7 +2,7 @@
 // Address: 00586bf0
 // Address Range: [[00586bf0, 00586c9f] [00586ca1, 00586cae]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_C3DSLight_apply_FUN_00586bf0(C3DSLight * this_ptr, CDemonLight * light)
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_00586bf0(C3DSLight *this_ptr,CDemonLight *light)
 
 #include "nocturne.h"
 

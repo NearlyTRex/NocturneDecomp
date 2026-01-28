@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_FUN_0053c340()
+; unknown CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x64]:1  local_64

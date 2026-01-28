@@ -2,7 +2,7 @@
 // Address: 00606509
 // Address Range: [[00606509, 0060658e]]
 // Convention: __cdecl
-// Signature: fstreambase * crt_fstream.cpp_fstreambase_dtor_FUN_00606509(fstreambase * this_ptr, uint d1, uint d2, uint d3)
+// Signature: fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_00606509(fstreambase *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

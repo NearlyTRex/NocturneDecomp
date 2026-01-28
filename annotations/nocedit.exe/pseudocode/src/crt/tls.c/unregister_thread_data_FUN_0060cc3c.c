@@ -2,7 +2,7 @@
 // Address: 0060cc3c
 // Address Range: [[0060cc3c, 0060cc8f]]
 // Convention: __cdecl
-// Signature: void crt_tls.c_unregister_thread_data_FUN_0060cc3c(void * threadDataKey)
+// Signature: void __cdecl crt_tls_c_unregister_thread_data_FUN_0060cc3c(void *threadDataKey)
 
 #include "nocturne.h"
 

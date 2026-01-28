@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+; __cdecl int __cdecl engine_dosio_c_getFileTimestamp_FUN_00481960(char *directory,char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   directory

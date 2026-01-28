@@ -2,7 +2,7 @@
 // Address: 0047b170
 // Address Range: [[0047b170, 0047b1dd]]
 // Convention: __cdecl
-// Signature: double core_dmodel.cpp_safeAcos_FUN_0047b170(float value)
+// Signature: double __cdecl core_dmodel_cpp_safeAcos_FUN_0047b170(float value)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0050e790
 // Address Range: [[0050e790, 0050e7b2]]
 // Convention: __cdecl
-// Signature: CMelee * core_melee.cpp_factoryFunc_FUN_0050e790(void)
+// Signature: CMelee * __cdecl core_melee_cpp_factoryFunc_FUN_0050e790(void)
 
 #include "nocturne.h"
 

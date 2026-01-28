@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_COptimize_FUN_005d7290(COptimize * this_ptr)
+; __cdecl int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
 ;
 ; Parameters:
 ; COptimize *      Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00547dd0
 // Address Range: [[00547dd0, 00547fb9]]
 // Convention: __cdecl
-// Signature: void core_path.cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x, int grid_y, int grid_z, int color, int fog, float w_recip)
+// Signature: void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0 (int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
 
 #include "nocturne.h"
 

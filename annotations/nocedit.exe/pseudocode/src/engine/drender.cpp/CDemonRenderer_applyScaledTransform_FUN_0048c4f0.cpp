@@ -2,7 +2,7 @@
 // Address: 0048c4f0
 // Address Range: [[0048c4f0, 0048c621]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 (CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
 
 #include "nocturne.h"
 

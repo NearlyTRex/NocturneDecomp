@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setdir.cpp_freeCZThumbs_FUN_00576910(CZThumb * * array)
+; __cdecl void __cdecl core_setdir_cpp_freeCZThumbs_FUN_00576910(CZThumb **array)
 ;
 ; Parameters:
 ; CZThumb * *      Stack[0x4]:4   array

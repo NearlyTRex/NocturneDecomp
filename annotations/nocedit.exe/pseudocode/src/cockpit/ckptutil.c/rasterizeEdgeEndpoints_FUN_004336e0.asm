@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0(void * bitmap_buffer, SEdge * edge_list, int edge_count, int buffer_width, int buffer_height)
+; __cdecl void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0 (void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   bitmap_buffer

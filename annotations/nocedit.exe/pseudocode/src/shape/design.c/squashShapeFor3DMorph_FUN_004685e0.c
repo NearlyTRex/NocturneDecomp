@@ -2,7 +2,7 @@
 // Address: 004685e0
 // Address Range: [[004685e0, 004686dd]]
 // Convention: __cdecl
-// Signature: void shape_design.c_squashShapeFor3DMorph_FUN_004685e0(void)
+// Signature: void __cdecl shape_design_c_squashShapeFor3DMorph_FUN_004685e0(void)
 
 #include "nocturne.h"
 

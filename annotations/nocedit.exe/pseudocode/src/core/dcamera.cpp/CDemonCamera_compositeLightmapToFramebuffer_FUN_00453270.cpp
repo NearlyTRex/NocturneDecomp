@@ -2,7 +2,7 @@
 // Address: 00453270
 // Address Range: [[00453270, 00453632]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

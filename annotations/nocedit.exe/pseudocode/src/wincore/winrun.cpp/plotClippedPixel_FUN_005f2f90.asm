@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_plotClippedPixel_FUN_005f2f90(int x_coord, int y_coord)
+; __cdecl void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005f2f90(int x_coord,int y_coord)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x_coord

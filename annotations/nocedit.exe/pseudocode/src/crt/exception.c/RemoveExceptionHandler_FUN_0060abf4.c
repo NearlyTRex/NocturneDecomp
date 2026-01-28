@@ -2,7 +2,7 @@
 // Address: 0060abf4
 // Address Range: [[0060abf4, 0060ac15]]
 // Convention: __cdecl
-// Signature: void crt_exception.c_RemoveExceptionHandler_FUN_0060abf4(void)
+// Signature: void __cdecl crt_exception_c_RemoveExceptionHandler_FUN_0060abf4(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_werewolf.cpp_CWerewolf_getActorType_FUN_005efc00(CWerewolf * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_werewolf_cpp_CWerewolf_getActorType_FUN_005efc00(CWerewolf *this_ptr)
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr

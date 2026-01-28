@@ -2,7 +2,7 @@
 // Address: 0044d310
 // Address Range: [[0044d310, 0044d36b]]
 // Convention: __stack2_esi
-// Signature: CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
+// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310 (CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 #include "nocturne.h"
 

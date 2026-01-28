@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_doNothing_FUN_005f2f80(void)
+; __cdecl void __cdecl wincore_winrun_cpp_doNothing_FUN_005f2f80(void)
 ;
 ;
 ; XREF[5]:

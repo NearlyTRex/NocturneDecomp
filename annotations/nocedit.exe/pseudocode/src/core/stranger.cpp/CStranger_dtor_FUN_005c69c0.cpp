@@ -2,7 +2,7 @@
 // Address: 005c69c0
 // Address Range: [[005c69c0, 005c6a0d]]
 // Convention: __cdecl
-// Signature: CStranger * core_stranger.cpp_CStranger_dtor_FUN_005c69c0(CStranger * this_ptr, uint d1, uint d2, uint d3, uint d4)
+// Signature: CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint d1,uint d2,uint d3,uint d4)
 
 #include "nocturne.h"
 

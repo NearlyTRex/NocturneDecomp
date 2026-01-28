@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHighPriestOfGardath * core_hpriest.cpp_factoryFunc_FUN_004f7b30(void)
+; __cdecl CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFunc_FUN_004f7b30(void)
 ;
 ;
 ; XREF[1]:

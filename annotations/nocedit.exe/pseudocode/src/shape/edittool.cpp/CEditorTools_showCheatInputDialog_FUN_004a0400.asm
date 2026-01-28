@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, int dialog_flags)
+; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_004a0400 (CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size, int dialog_flags)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

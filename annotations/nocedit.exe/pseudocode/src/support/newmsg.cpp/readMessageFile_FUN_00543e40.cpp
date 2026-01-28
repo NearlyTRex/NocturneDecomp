@@ -2,7 +2,7 @@
 // Address: 00543e40
 // Address Range: [[00543e40, 00544162]]
 // Convention: __cdecl
-// Signature: void support_newmsg.cpp_readMessageFile_FUN_00543e40(char * message_file)
+// Signature: void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
 
 #include "nocturne.h"
 

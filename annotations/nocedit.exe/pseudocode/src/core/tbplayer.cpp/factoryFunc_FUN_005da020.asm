@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBassPlayer * core_tbplayer.cpp_factoryFunc_FUN_005da020(void)
+; __cdecl CBassPlayer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da020(void)
 ;
 ;
 ; XREF[1]:

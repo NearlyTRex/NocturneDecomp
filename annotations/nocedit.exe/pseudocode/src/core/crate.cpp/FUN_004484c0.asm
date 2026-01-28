@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_crate.cpp_FUN_004484c0()
+; unknown CDemonActorType * core_crate_cpp_FUN_004484c0(void)
 ;
 ;
 ; Referenced Globals:

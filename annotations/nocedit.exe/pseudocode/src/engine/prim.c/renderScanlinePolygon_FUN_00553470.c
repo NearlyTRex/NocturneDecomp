@@ -2,7 +2,7 @@
 // Address: 00553470
 // Address Range: [[00553470, 00553ae9]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_renderScanlinePolygon_FUN_00553470(SRenderVertex * vertices, int vertex_count)
+// Signature: void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00553470(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a5620
 // Address Range: [[005a5620, 005a56b2]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_allocateHwSample_FUN_005a5620(int bits_per_sample, int channel_count, int sample_rate, int sample_count)
+// Signature: int __cdecl sound_sndmain_cpp_allocateHwSample_FUN_005a5620 (int bits_per_sample,int channel_count,int sample_rate,int sample_count)
 
 #include "nocturne.h"
 

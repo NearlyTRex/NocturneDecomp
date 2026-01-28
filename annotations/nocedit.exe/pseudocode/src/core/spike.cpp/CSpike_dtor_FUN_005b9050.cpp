@@ -2,7 +2,7 @@
 // Address: 005b9050
 // Address Range: [[005b9050, 005b909d]]
 // Convention: __cdecl
-// Signature: CSpike * core_spike.cpp_CSpike_dtor_FUN_005b9050(CSpike * this_ptr, uint d1, uint d2)
+// Signature: CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005b9050(CSpike *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

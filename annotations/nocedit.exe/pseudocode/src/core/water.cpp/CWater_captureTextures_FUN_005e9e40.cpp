@@ -2,7 +2,7 @@
 // Address: 005e9e40
 // Address Range: [[005e9e40, 005e9e66]]
 // Convention: __cdecl
-// Signature: void core_water.cpp_CWater_captureTextures_FUN_005e9e40(CWater * this_ptr)
+// Signature: void __cdecl core_water_cpp_CWater_captureTextures_FUN_005e9e40(CWater *this_ptr)
 
 #include "nocturne.h"
 

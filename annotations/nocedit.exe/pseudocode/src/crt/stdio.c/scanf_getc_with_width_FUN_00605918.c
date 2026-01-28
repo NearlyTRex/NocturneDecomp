@@ -2,7 +2,7 @@
 // Address: 00605918
 // Address Range: [[00605918, 00605941]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_scanf_getc_with_width_FUN_00605918(scanf_state_t * state)
+// Signature: int __cdecl crt_stdio_c_scanf_getc_with_width_FUN_00605918(scanf_state_t *state)
 
 #include "nocturne.h"
 

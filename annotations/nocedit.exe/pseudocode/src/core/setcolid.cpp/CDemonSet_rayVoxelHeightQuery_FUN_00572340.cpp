@@ -2,7 +2,7 @@
 // Address: 00572340
 // Address Range: [[00572340, 00572457]]
 // Convention: __cdecl
-// Signature: float core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340(CDemonSet * this_ptr, CVector3f * position)
+// Signature: float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340 (CDemonSet *this_ptr,CVector3f *position)
 
 #include "nocturne.h"
 

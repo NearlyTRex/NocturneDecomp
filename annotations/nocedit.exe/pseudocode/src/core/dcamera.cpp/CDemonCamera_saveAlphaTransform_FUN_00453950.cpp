@@ -2,7 +2,7 @@
 // Address: 00453950
 // Address Range: [[00453950, 00453a63]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950(CDemonCamera * this_ptr, int alpha_index)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00453950 (CDemonCamera *this_ptr,int alpha_index)
 
 #include "nocturne.h"
 

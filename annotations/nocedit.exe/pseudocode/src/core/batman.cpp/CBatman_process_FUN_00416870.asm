@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_batman.cpp_CBatman_process_FUN_00416870(CBatman * this_ptr, float delta_time)
+; __cdecl void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

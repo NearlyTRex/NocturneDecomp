@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_scaleXYZ_FUN_00467f30(void)
+; __cdecl void __cdecl shape_design_c_scaleXYZ_FUN_00467f30(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x70]:1  local_70

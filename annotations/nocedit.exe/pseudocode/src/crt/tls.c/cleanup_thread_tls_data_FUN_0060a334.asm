@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_tls.c_cleanup_thread_tls_data_FUN_0060a334(int shutdownMode)
+; __cdecl void __cdecl crt_tls_c_cleanup_thread_tls_data_FUN_0060a334(int shutdownMode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   shutdownMode

@@ -2,7 +2,7 @@
 // Address: 00600b94
 // Address Range: [[00600b94, 00600bae]]
 // Convention: __fpustack
-// Signature: float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
+// Signature: float10 __fpustack crt_math_c_asin_FUN_00600b94(float10 sine_value)
 
 #include "nocturne.h"
 

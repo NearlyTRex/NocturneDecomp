@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_spline.cpp_FUN_005b90a0()
+; unknown void core_spline_cpp_FUN_005b90a0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

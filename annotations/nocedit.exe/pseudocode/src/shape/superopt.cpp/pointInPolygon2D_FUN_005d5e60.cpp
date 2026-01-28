@@ -2,7 +2,7 @@
 // Address: 005d5e60
 // Address Range: [[005d5e60, 005d6019]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60(CVector2d * vertices, uint vertex_count, CVector2d * test_point)
+// Signature: int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60 (CVector2d *vertices,uint vertex_count,CVector2d *test_point)
 
 #include "nocturne.h"
 

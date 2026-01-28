@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_copyVector3_FUN_0049b6a0(CVector3f * dest_ptr, CVector3f * src_ptr)
+; __cdecl void __cdecl core_dtri_cpp_copyVector3_FUN_0049b6a0(CVector3f *dest_ptr,CVector3f *src_ptr)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   dest_ptr

@@ -2,7 +2,7 @@
 // Address: 00510410
 // Address Range: [[00510410, 005104c0]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410(char * instruction_text, char * message_text)
+// Signature: void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_00510410(char *instruction_text,char *message_text)
 
 #include "nocturne.h"
 

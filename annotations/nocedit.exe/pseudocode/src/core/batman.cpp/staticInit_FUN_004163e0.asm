@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_batman.cpp_staticInit_FUN_004163e0(void)
+; __cdecl void __cdecl core_batman_cpp_staticInit_FUN_004163e0(void)
 ;
 ;
 ; Referenced Globals:

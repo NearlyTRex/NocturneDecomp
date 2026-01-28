@@ -2,7 +2,7 @@
 // Address: 00528970
 // Address Range: [[00528970, 00528abb]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_model.c_loadModelChunk_FUN_00528970(char * filename, int model_size)
+// Signature: SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
 
 #include "nocturne.h"
 

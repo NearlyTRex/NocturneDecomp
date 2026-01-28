@@ -2,7 +2,7 @@
 // Address: 00458170
 // Address Range: [[00458170, 004587e3] [004587e9, 00458a0d]]
 // Convention: __cdecl
-// Signature: int shape_design.c_loadModelBinary_FUN_00458170(char * filename)
+// Signature: int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
 
 #include "nocturne.h"
 

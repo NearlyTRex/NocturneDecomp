@@ -2,7 +2,7 @@
 // Address: 004681a0
 // Address Range: [[004681a0, 0046831d]]
 // Convention: __cdecl
-// Signature: void shape_design.c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel * keyframe_model)
+// Signature: void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel *keyframe_model)
 
 #include "nocturne.h"
 

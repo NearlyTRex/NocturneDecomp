@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * * array)
+; __cdecl int __cdecl core_cloth_cpp_freeVectors_FUN_0043e460(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

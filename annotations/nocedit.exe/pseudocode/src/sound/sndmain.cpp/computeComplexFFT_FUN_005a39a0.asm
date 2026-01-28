@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_computeComplexFFT_FUN_005a39a0(float * input_real, float * input_imag, float * output_real, float * output_imag, int size)
+; __cdecl void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0 (float *input_real,float *input_imag,float *output_real,float *output_imag,int size)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   input_real

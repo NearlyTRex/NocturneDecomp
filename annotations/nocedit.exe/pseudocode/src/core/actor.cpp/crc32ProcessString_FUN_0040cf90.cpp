@@ -2,7 +2,7 @@
 // Address: 0040cf90
 // Address Range: [[0040cf90, 0040cfcf]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_crc32ProcessString_FUN_0040cf90(uint * crc_state, char * string)
+// Signature: void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040cf90(uint *crc_state,char *string)
 
 #include "nocturne.h"
 

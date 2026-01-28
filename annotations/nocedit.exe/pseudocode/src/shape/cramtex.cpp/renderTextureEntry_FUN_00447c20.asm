@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_cramtex.cpp_renderTextureEntry_FUN_00447c20(SCramWorkingEntry * texture_entry, int visualization_mode, int draw_x, int draw_y, int draw_width, int draw_height)
+; __cdecl void __cdecl shape_cramtex_cpp_renderTextureEntry_FUN_00447c20 (SCramWorkingEntry *texture_entry,int visualization_mode,int draw_x,int draw_y, int draw_width,int draw_height)
 ;
 ; Parameters:
 ; SCramWorkingEntry * Stack[0x8]:4   texture_entry

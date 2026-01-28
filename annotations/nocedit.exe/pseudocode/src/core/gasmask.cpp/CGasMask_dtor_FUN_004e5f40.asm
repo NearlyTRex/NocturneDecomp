@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGasMask * core_gasmask.cpp_CGasMask_dtor_FUN_004e5f40(CGasMask * this_ptr, uint d1, uint d2)
+; __cdecl CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004e5f40(CGasMask *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CGasMask *       Stack[0x4]:4   this_ptr

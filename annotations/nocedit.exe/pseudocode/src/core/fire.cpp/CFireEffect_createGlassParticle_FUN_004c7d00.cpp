@@ -2,7 +2,7 @@
 // Address: 004c7d00
 // Address Range: [[004c7d00, 004c7d5d]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, SMRGLTextureBasic * texture, int lifetime)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00 (CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex, CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 
 #include "nocturne.h"
 

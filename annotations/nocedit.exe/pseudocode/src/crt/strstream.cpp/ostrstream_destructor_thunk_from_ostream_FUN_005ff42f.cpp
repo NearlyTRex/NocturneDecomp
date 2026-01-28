@@ -2,7 +2,7 @@
 // Address: 005ff42f
 // Address Range: [[005ff42f, 005ff444]]
 // Convention: __cdecl
-// Signature: void crt_strstream.cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f(ostream * this_ptr, int dtor_flags)
+// Signature: void __cdecl crt_strstream_cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f (ostream *this_ptr,int dtor_flags)
 
 #include "nocturne.h"
 

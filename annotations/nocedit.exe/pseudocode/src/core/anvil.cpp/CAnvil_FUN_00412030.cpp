@@ -2,7 +2,7 @@
 // Address: 00412030
 // Address Range: [[00412030, 00412089]]
 // Convention: __cdecl
-// Signature: void core_anvil.cpp_CAnvil_FUN_00412030(CAnvil * this_ptr)
+// Signature: void __cdecl core_anvil_cpp_CAnvil_FUN_00412030(CAnvil *this_ptr)
 
 #include "nocturne.h"
 

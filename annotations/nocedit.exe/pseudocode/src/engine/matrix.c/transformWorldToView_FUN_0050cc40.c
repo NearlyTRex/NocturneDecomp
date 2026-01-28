@@ -2,7 +2,7 @@
 // Address: 0050cc40
 // Address Range: [[0050cc40, 0050cd0c]]
 // Convention: __stack_esi
-// Signature: void engine_matrix.c_transformWorldToView_FUN_0050cc40(CVector3i * input_coords, CVector3i * output_coords)
+// Signature: void __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *input_coords,CVector3i *output_coords)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stdcall uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+; __stdcall uint __stdcall crt_stack_c_stack_probe_FUN_005ff9f3(uint stack_size)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   stack_size

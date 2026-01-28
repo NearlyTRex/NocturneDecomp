@@ -2,7 +2,7 @@
 // Address: 004a68e0
 // Address Range: [[004a68e0, 004a6965]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0(char * button_text)
+// Signature: int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0(char *button_text)
 
 #include "nocturne.h"
 

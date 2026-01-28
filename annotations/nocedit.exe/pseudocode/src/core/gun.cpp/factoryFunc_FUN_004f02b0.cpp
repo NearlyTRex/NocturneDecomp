@@ -2,7 +2,7 @@
 // Address: 004f02b0
 // Address Range: [[004f02b0, 004f02d2]]
 // Convention: __cdecl
-// Signature: CGun * core_gun.cpp_factoryFunc_FUN_004f02b0(void)
+// Signature: CGun * __cdecl core_gun_cpp_factoryFunc_FUN_004f02b0(void)
 
 #include "nocturne.h"
 

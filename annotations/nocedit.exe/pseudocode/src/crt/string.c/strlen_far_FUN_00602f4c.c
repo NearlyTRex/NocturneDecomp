@@ -2,7 +2,7 @@
 // Address: 00602f4c
 // Address Range: [[00602f4c, 00602f78]]
 // Convention: __cdecl
-// Signature: int crt_string.c_strlen_far_FUN_00602f4c(char * string_offset, ushort segment, int max_length)
+// Signature: int __cdecl crt_string_c_strlen_far_FUN_00602f4c(char *string_offset,ushort segment,int max_length)
 
 #include "nocturne.h"
 

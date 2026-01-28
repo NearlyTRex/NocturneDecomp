@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
+; __cdecl int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext *socket_ctx)
 ;
 ; Parameters:
 ; SSocketContext * Stack[0x4]:4   socket_ctx

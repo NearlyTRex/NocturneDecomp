@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80()
+; unknown void core_script_cpp_CScript_RelatedToSubtitles_FUN_00559d80(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xa4]:1  local_a4

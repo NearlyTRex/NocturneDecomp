@@ -2,7 +2,7 @@
 // Address: 00528ac0
 // Address Range: [[00528ac0, 00528ae3]]
 // Convention: __cdecl
-// Signature: void core_moloch.cpp_staticInit_FUN_00528ac0(void)
+// Signature: void __cdecl core_moloch_cpp_staticInit_FUN_00528ac0(void)
 
 #include "nocturne.h"
 

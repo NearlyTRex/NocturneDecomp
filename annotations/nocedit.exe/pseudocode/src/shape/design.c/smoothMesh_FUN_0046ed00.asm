@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_smoothMesh_FUN_0046ed00(void)
+; __cdecl void __cdecl shape_design_c_smoothMesh_FUN_0046ed00(void)
 ;
 ;
 ; XREF[1]:

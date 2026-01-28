@@ -2,7 +2,7 @@
 // Address: 005eafa0
 // Address Range: [[005eafa0, 005eb03a]]
 // Convention: unknown
-// Signature: undefined core_wateract.cpp_FUN_005eafa0()
+// Signature: void core_wateract_cpp_FUN_005eafa0(void)
 
 #include "nocturne.h"
 

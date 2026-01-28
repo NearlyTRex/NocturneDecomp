@@ -2,7 +2,7 @@
 // Address: 004a2590
 // Address Range: [[004a2590, 004a2659]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools * this_ptr, char * output_buffer)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 (CEditorTools *this_ptr,char *output_buffer)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeRules_FUN_0040c000(void * rules, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeRules_FUN_0040c000(void *rules,char *property_name)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   rules

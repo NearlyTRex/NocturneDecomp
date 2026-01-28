@@ -2,7 +2,7 @@
 // Address: 005ddb30
 // Address Range: [[005ddb30, 005ddded] [005ddebf, 005de32f]]
 // Convention: unknown
-// Signature: undefined core_tommygun.cpp_FUN_005ddb30()
+// Signature: undefined4 core_tommygun_cpp_FUN_005ddb30(void)
 
 #include "nocturne.h"
 

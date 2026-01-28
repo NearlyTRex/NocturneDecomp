@@ -2,7 +2,7 @@
 // Address: 004bda20
 // Address Range: [[004bda20, 004be066]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFileManager * this_ptr)
+// Signature: void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFileManager *this_ptr)
 
 #include "nocturne.h"
 

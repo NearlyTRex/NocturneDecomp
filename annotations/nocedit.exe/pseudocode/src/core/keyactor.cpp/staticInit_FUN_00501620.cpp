@@ -2,7 +2,7 @@
 // Address: 00501620
 // Address Range: [[00501620, 00501643]]
 // Convention: __cdecl
-// Signature: void core_keyactor.cpp_staticInit_FUN_00501620(void)
+// Signature: void __cdecl core_keyactor_cpp_staticInit_FUN_00501620(void)
 
 #include "nocturne.h"
 

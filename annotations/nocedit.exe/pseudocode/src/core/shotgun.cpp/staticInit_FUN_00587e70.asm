@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_shotgun.cpp_staticInit_FUN_00587e70(void)
+; __cdecl void __cdecl core_shotgun_cpp_staticInit_FUN_00587e70(void)
 ;
 ;
 ; Referenced Globals:

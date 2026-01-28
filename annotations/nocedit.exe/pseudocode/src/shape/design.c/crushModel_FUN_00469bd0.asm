@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_crushModel_FUN_00469bd0(void)
+; __cdecl void __cdecl shape_design_c_crushModel_FUN_00469bd0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

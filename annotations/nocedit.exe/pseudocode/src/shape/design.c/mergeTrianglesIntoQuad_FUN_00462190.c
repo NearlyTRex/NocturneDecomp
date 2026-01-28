@@ -2,7 +2,7 @@
 // Address: 00462190
 // Address Range: [[00462190, 00462b67]]
 // Convention: __cdecl
-// Signature: uint shape_design.c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index, int second_polygon_index)
+// Signature: uint __cdecl shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index,int second_polygon_index)
 
 #include "nocturne.h"
 

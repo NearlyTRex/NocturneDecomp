@@ -2,7 +2,7 @@
 // Address: 004c93d0
 // Address Range: [[004c93d0, 004c93f9]]
 // Convention: __cdecl
-// Signature: int core_fire.cpp_CFireEffect_FUN_004c93d0(CFireEffect * this_ptr)
+// Signature: int __cdecl core_fire_cpp_CFireEffect_FUN_004c93d0(CFireEffect *this_ptr)
 
 #include "nocturne.h"
 

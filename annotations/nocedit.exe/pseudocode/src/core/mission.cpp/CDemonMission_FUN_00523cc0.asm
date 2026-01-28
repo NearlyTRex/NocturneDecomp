@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_mission.cpp_CDemonMission_FUN_00523cc0(CDemonMission * this_ptr)
+; __cdecl int __cdecl core_mission_cpp_CDemonMission_FUN_00523cc0(CDemonMission *this_ptr)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

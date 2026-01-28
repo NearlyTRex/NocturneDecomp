@@ -2,7 +2,7 @@
 // Address: 005f6690
 // Address Range: [[005f6690, 005f6bd0]]
 // Convention: __cdecl
-// Signature: void core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690(CMatrix3x3f * matrix, int preserve_scale)
+// Signature: void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690(CMatrix3x3f *matrix,int preserve_scale)
 
 #include "nocturne.h"
 

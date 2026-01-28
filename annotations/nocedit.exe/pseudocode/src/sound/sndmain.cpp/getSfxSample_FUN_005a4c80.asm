@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSfxSample * sound_sndmain.cpp_getSfxSample_FUN_005a4c80(char * filename)
+; __cdecl CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

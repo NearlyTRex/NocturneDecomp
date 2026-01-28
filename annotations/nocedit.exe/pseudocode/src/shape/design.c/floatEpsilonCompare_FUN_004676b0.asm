@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_floatEpsilonCompare_FUN_004676b0(float value1, float value2, float epsilon)
+; __cdecl int __cdecl shape_design_c_floatEpsilonCompare_FUN_004676b0(float value1,float value2,float epsilon)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   value1

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gabriela.cpp_FUN_004d7630()
+; unknown void core_gabriela_cpp_FUN_004d7630(void)
 ;
 ;
 ; Called Functions:

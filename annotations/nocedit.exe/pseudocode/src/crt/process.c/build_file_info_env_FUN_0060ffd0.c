@@ -2,7 +2,7 @@
 // Address: 0060ffd0
 // Address Range: [[0060ffd0, 006101ed]]
 // Convention: __cdecl
-// Signature: undefined crt_process.c_build_file_info_env_FUN_0060ffd0()
+// Signature: char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
 
 #include "nocturne.h"
 

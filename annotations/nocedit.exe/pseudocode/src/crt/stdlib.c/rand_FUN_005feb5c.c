@@ -2,7 +2,7 @@
 // Address: 005feb5c
 // Address Range: [[005feb5c, 005feb7e]]
 // Convention: __cdecl
-// Signature: int crt_stdlib.c_rand_FUN_005feb5c(void)
+// Signature: int __cdecl crt_stdlib_c_rand_FUN_005feb5c(void)
 
 #include "nocturne.h"
 

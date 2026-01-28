@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_ReallocSomething_FUN_00567510()
+; unknown void core_script_cpp_CScript_ReallocSomething_FUN_00567510(void)
 ;
 ;
 ; XREF[4]:

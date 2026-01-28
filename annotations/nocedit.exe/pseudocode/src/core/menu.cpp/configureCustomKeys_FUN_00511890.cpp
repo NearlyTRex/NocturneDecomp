@@ -2,7 +2,7 @@
 // Address: 00511890
 // Address Range: [[00511890, 00511dfd]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_configureCustomKeys_FUN_00511890(void)
+// Signature: void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
 
 #include "nocturne.h"
 

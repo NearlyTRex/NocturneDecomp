@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_melee.cpp_FUN_0050eaf0()
+; unknown void core_melee_cpp_FUN_0050eaf0(void)
 ;
 ;
 ; Called Functions:

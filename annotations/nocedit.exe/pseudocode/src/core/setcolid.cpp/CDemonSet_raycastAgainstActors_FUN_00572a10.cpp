@@ -2,7 +2,7 @@
 // Address: 00572a10
 // Address Range: [[00572a10, 00572e16]]
 // Convention: __cdecl
-// Signature: float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, float max_t)
+// Signature: float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 (CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t)
 
 #include "nocturne.h"
 

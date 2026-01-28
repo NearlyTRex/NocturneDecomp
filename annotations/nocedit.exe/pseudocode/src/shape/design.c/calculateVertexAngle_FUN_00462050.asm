@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double shape_design.c_calculateVertexAngle_FUN_00462050(int vertex1_index, int vertex2_index, int vertex3_index)
+; __cdecl double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050 (int vertex1_index,int vertex2_index,int vertex3_index)
 ;
 ; Parameters:
 ; int              Stack[0x8]:4   vertex1_index

@@ -2,7 +2,7 @@
 // Address: 0050f350
 // Address Range: [[0050f350, 0050f45f]]
 // Convention: __cdecl
-// Signature: void * shape_memdbg.cpp_debugCalloc_FUN_0050f350(SIZE_T count, SIZE_T size, char * filename, int line_number)
+// Signature: void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T size,char *filename,int line_number)
 
 #include "nocturne.h"
 

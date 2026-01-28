@@ -2,7 +2,7 @@
 // Address: 0052d170
 // Address Range: [[0052d170, 0052d451]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionList_save_FUN_0052d170(CMotionList * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

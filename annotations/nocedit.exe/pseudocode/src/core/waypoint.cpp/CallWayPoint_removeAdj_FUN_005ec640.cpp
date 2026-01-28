@@ -2,7 +2,7 @@
 // Address: 005ec640
 // Address Range: [[005ec640, 005ec689]]
 // Convention: unknown
-// Signature: undefined core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640()
+// Signature: void core_waypoint_cpp_CallWayPoint_removeAdj_FUN_005ec640(void)
 
 #include "nocturne.h"
 

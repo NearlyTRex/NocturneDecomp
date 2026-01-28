@@ -2,7 +2,7 @@
 // Address: 0056ae50
 // Address Range: [[0056ae50, 0056b789]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
+// Signature: void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_ptr,int index)
 
 #include "nocturne.h"
 

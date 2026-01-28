@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0(CPoly * this_ptr, CVector2d * uv_scale)
+; __cdecl void __cdecl shape_superopt_cpp_CPoly_projectUVPlanar_FUN_005ce0a0(CPoly *this_ptr,CVector2d *uv_scale)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00435c00
 // Address Range: [[00435c00, 00435cf1]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+// Signature: void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00 (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 #include "nocturne.h"
 

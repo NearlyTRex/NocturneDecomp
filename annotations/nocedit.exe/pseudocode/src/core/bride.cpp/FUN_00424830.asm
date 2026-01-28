@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bride.cpp_FUN_00424830()
+; unknown void core_bride_cpp_FUN_00424830(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x3c]:1  local_3c

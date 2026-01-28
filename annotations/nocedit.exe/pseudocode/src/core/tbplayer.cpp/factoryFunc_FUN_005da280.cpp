@@ -2,7 +2,7 @@
 // Address: 005da280
 // Address Range: [[005da280, 005da2a2]]
 // Convention: __cdecl
-// Signature: CDrummer * core_tbplayer.cpp_factoryFunc_FUN_005da280(void)
+// Signature: CDrummer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da280(void)
 
 #include "nocturne.h"
 

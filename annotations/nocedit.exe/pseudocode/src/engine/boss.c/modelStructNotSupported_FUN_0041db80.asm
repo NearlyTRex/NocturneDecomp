@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041db80(SMRGLHeaderExtended * header)
+; __cdecl SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041db80(SMRGLHeaderExtended *header)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   header

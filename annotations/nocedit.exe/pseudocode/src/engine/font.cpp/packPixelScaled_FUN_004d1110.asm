@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint engine_font.cpp_packPixelScaled_FUN_004d1110(int red, int green, int blue)
+; __cdecl uint __cdecl engine_font_cpp_packPixelScaled_FUN_004d1110(int red,int green,int blue)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   red

@@ -2,7 +2,7 @@
 // Address: 005f3fe0
 // Address Range: [[005f3fe0, 005f3fed]]
 // Convention: __cdecl
-// Signature: HANDLE wincore_winrun.cpp_createMutex_FUN_005f3fe0(void)
+// Signature: HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_005f3fe0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005f55c0
 // Address Range: [[005f55c0, 005f568d]]
 // Convention: __cdecl
-// Signature: float core_xform.cpp_atan2Approximation_FUN_005f55c0(double sin_value, double cos_value)
+// Signature: float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,double cos_value)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_lockTexture_FUN_005b7e23(int texture_id)
+; __cdecl int __cdecl wincore_windll_cpp_lockTexture_FUN_005b7e23(int texture_id)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   texture_id

@@ -2,7 +2,7 @@
 // Address: 00494f50
 // Address Range: [[00494f50, 00495030]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

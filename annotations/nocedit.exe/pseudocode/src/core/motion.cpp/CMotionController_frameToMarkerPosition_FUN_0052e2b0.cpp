@@ -2,7 +2,7 @@
 // Address: 0052e2b0
 // Address Range: [[0052e2b0, 0052e391]]
 // Convention: __cdecl
-// Signature: float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionController * this_ptr)
+// Signature: float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionController *this_ptr)
 
 #include "nocturne.h"
 

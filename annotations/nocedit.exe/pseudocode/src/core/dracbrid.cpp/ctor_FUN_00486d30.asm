@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SFreaky * core_dracbrid.cpp_ctor_FUN_00486d30(SFreaky * this_ptr)
+; __cdecl SFreaky * __cdecl core_dracbrid_cpp_ctor_FUN_00486d30(SFreaky *this_ptr)
 ;
 ; Parameters:
 ; SFreaky *        Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 004b17c0
 // Address Range: [[004b17c0, 004b1884]]
 // Convention: __cdecl
-// Signature: void core_event.cpp_CRuleList_remove_FUN_004b17c0(CRuleList * this_ptr)
+// Signature: void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
 
 #include "nocturne.h"
 

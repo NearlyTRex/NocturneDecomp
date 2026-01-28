@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_icepick.cpp_CIcePick_load_FUN_004f9590()
+; unknown void core_icepick_cpp_CIcePick_load_FUN_004f9590(void)
 ;
 ;
 ; Called Functions:

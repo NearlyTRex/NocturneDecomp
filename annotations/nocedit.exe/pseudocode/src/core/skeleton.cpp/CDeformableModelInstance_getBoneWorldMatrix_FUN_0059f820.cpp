@@ -2,7 +2,7 @@
 // Address: 0059f820
 // Address Range: [[0059f820, 0059fa1c]]
 // Convention: __stack2_esi
-// Signature: CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 

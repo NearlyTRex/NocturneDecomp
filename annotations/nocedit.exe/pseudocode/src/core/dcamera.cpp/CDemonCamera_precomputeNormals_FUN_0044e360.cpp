@@ -2,7 +2,7 @@
 // Address: 0044e360
 // Address Range: [[0044e360, 0044e789]]
 // Convention: __cdecl
-// Signature: CDemonCamera * core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera * this_ptr)
+// Signature: CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

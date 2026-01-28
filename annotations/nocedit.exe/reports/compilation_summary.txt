@@ -5,35 +5,27 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6504
-Successful: 3136 (48.2%)
-Failed: 3368
+Successful: 4136 (63.6%)
+Failed: 2368
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          12467
-  incompatible_types              1644
-  undeclared_identifier           1392
+  other                          11150
+  incompatible_types              1692
+  undeclared_identifier           1382
   syntax_error                     537
   missing_member                    33
 
 ====================================================================================================
-CATEGORY: other (12467 errors)
+CATEGORY: other (11150 errors)
 ====================================================================================================
 
-  cockpit_pkbmpset.cpp_FUN_0054c7a0
-    Line 9: ambiguating new declaration of 'uint cockpit_pkbmpset_cpp_FUN_0054c7a0()'...
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
     Line 27: cast from 'char*' to 'int' loses precision [-fpermissive]...
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
     Line 22: cast from 'char*' to 'int' loses precision [-fpermissive]...
-  cockpit_pkbmpset.cpp_FUN_0054c7b0
-    Line 9: ambiguating new declaration of 'uint cockpit_pkbmpset_cpp_FUN_0054c7b0()'...
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
     Line 23: cast from 'char*' to 'int' loses precision [-fpermissive]...
-  cockpit_pkbmpset.cpp_FUN_0054c7c0
-    Line 9: ambiguating new declaration of 'void cockpit_pkbmpset_cpp_FUN_0054c7c0()'...
-  cockpit_pkbmpset.cpp_FUN_0054c7d0
-    Line 9: ambiguating new declaration of 'void cockpit_pkbmpset_cpp_FUN_0054c7d0()'...
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     Line 44: cast from 'void**' to 'int' loses precision [-fpermissive]...
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
@@ -44,11 +36,13 @@ CATEGORY: other (12467 errors)
     Line 15: cast from 'char*' to 'int' loses precision [-fpermissive]...
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
     Line 19: cast from 'void*' to 'int' loses precision [-fpermissive]...
+  cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
+    Line 102: cast from 'int*' to 'int' loses precision [-fpermissive]...
 
-  ... and 12437 more errors
+  ... and 11120 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1644 errors)
+CATEGORY: incompatible_types (1692 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -96,10 +90,10 @@ CATEGORY: incompatible_types (1644 errors)
   support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
     Line 23: invalid conversion from 'void*' to 'FILE*' [-fpermissive]...
 
-  ... and 1614 more errors
+  ... and 1662 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (1392 errors)
+CATEGORY: undeclared_identifier (1382 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -147,7 +141,7 @@ CATEGORY: undeclared_identifier (1392 errors)
   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     Line 22: 'crt_wsock32_c_htons' was not declared in this scope...
 
-  ... and 1362 more errors
+  ... and 1352 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (537 errors)
@@ -219,8 +213,8 @@ CATEGORY: missing_member (33 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.37
-Average suspects in failed compilations: 13.51
+Average suspects in successfully compiled functions: 3.41
+Average suspects in failed compilations: 15.07
 
-Functions that compile but have suspect patterns: 893
+Functions that compile but have suspect patterns: 1793
 (These may have runtime issues even though syntax is valid)

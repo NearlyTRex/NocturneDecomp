@@ -2,7 +2,7 @@
 // Address: 00423a30
 // Address Range: [[00423a30, 00423ace] [00423b02, 00423ce5] [00423d1a, 00423e83] [0042404a, 0042409a] [004242b3, 00424559]]
 // Convention: unknown
-// Signature: undefined core_bride.cpp_FUN_00423a30()
+// Signature: void core_bride_cpp_FUN_00423a30(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30(CPackedBitmap * this_ptr, int dest_x, int dest_y, int clip_left, int start_row, int clip_right, int end_row)
+; __cdecl void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30 (CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right, int end_row)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr

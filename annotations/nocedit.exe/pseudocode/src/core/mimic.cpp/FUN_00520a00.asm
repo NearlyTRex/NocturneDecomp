@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mimic.cpp_FUN_00520a00()
+; unknown undefined4 core_mimic_cpp_FUN_00520a00(void)
 ;
 ;
 ; Referenced Globals:

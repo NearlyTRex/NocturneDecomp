@@ -2,7 +2,7 @@
 // Address: 00609afc
 // Address Range: [[00609afc, 00609bc9]]
 // Convention: __cdecl
-// Signature: undefined crt_io.c_getTempDirectory_FUN_00609afc()
+// Signature: char * __cdecl crt_io_c_getTempDirectory_FUN_00609afc(void)
 
 #include "nocturne.h"
 

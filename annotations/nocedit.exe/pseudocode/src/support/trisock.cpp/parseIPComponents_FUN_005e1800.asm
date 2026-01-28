@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_parseIPComponents_FUN_005e1800(uint * result_ptr, char * dotted_decimal_string)
+; __cdecl int __cdecl support_trisock_cpp_parseIPComponents_FUN_005e1800(uint *result_ptr,char *dotted_decimal_string)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   result_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_dest.cpp_CActorDestination_load_FUN_0046fdb0()
+; unknown void core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104

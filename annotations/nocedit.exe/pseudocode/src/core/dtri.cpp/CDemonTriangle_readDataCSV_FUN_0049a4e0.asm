@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle * this_ptr, FILE * file_handle)
+; __cdecl void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr

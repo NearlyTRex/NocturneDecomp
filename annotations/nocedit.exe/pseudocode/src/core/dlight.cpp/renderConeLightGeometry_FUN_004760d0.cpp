@@ -2,7 +2,7 @@
 // Address: 004760d0
 // Address Range: [[004760d0, 004765b8]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float param_3, float max_distance)
+// Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float param_3,float max_distance)
 
 #include "nocturne.h"
 

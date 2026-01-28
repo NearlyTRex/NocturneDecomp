@@ -2,7 +2,7 @@
 // Address: 00418380
 // Address Range: [[00418380, 00418399]]
 // Convention: unknown
-// Signature: undefined core_beast.cpp_FUN_00418380()
+// Signature: void core_beast_cpp_FUN_00418380(void)
 
 #include "nocturne.h"
 

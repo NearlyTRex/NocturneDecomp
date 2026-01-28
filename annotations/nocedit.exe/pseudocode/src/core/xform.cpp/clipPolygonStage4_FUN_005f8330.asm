@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_xform.cpp_clipPolygonStage4_FUN_005f8330(void)
+; __cdecl void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005f8330(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

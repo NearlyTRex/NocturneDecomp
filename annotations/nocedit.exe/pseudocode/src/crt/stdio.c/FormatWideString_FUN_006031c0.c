@@ -2,7 +2,7 @@
 // Address: 006031c0
 // Address Range: [[006031c0, 00603235]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_FormatWideString_FUN_006031c0(wchar_t * wide_string_offset, ushort segment, FormatSpec * spec_info, OUTPUT_CALLBACK output_func)
+// Signature: void __cdecl crt_stdio_c_FormatWideString_FUN_006031c0 (wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info, OUTPUT_CALLBACK output_func)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005b4823
 // Address Range: [[005b4823, 005b507e] [005b5085, 005b50eb]]
 // Convention: __cdecl
-// Signature: void wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STexturedVertex * left_vertex, STexturedVertex * right_vertex, int scanline_y)
+// Signature: void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 
 #include "nocturne.h"
 

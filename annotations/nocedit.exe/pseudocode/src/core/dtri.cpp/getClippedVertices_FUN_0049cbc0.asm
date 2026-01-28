@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_dtri.cpp_getClippedVertices_FUN_0049cbc0(void)
+; __cdecl CVector3f * __cdecl core_dtri_cpp_getClippedVertices_FUN_0049cbc0(void)
 ;
 ;
 ; Referenced Globals:

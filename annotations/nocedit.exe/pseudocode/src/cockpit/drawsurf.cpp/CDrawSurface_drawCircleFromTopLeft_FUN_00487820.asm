@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopLeft_FUN_00487820(CDrawSurface * this_ptr, int x, int y, int radius)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromTopLeft_FUN_00487820 (CDrawSurface *this_ptr,int x,int y,int radius)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

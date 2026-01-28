@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_removeDegenerateTriangles_FUN_00463a20(void)
+; __cdecl void __cdecl shape_design_c_removeDegenerateTriangles_FUN_00463a20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

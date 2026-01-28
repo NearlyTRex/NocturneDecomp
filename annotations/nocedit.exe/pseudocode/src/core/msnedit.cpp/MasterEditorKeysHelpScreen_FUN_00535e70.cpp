@@ -2,7 +2,7 @@
 // Address: 00535e70
 // Address Range: [[00535e70, 00536bbc]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70()
+// Signature: void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70(void)
 
 #include "nocturne.h"
 

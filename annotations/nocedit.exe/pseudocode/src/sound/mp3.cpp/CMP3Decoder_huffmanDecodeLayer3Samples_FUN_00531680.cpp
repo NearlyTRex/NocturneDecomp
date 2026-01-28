@@ -2,7 +2,7 @@
 // Address: 00531680
 // Address Range: [[00531680, 00531d4d]]
 // Convention: __cdecl
-// Signature: uint sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder * this_ptr, float * spectral_dest, SMpegLayer3Granule * granule_info, int channel, int granule, SMpegFrame * frame, int bit_budget)
+// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel, int granule,SMpegFrame *frame,int bit_budget)
 
 #include "nocturne.h"
 

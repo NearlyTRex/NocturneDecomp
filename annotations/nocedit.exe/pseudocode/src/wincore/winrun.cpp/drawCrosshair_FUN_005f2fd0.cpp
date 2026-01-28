@@ -2,7 +2,7 @@
 // Address: 005f2fd0
 // Address Range: [[005f2fd0, 005f30be]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0(void)
+// Signature: void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0(void)
 
 #include "nocturne.h"
 

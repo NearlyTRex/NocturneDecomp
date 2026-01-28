@@ -2,7 +2,7 @@
 // Address: 00545670
 // Address Range: [[00545670, 0054567b]]
 // Convention: __cdecl
-// Signature: CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
+// Signature: CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_00545670(CParticle *this_ptr)
 
 #include "nocturne.h"
 

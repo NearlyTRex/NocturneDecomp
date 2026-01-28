@@ -2,7 +2,7 @@
 // Address: 0059dbe0
 // Address Range: [[0059dbe0, 0059dc9f]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0(CDeformableModel * this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0 (CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

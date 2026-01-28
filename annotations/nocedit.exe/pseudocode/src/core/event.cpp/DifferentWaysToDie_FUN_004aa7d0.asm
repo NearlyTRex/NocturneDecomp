@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_event.cpp_DifferentWaysToDie_FUN_004aa7d0()
+; unknown undefined4 core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(void)
 ;
 ;
 ; XREF[1]:

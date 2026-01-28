@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CKeyActor * core_keyactor.cpp_CKeyActor_ctor_FUN_00501690(CKeyActor * this_ptr)
+; __cdecl CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_00501690(CKeyActor *this_ptr)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

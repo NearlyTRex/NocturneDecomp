@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f * start_point, CVector3f * end_point)
+; __cdecl void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   start_point

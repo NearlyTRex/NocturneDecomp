@@ -2,7 +2,7 @@
 // Address: 004124d0
 // Address Range: [[004124d0, 004124fb]]
 // Convention: __cdecl
-// Signature: void core_armour.cpp_CArmour_FUN_004124d0(CArmour * this_ptr)
+// Signature: void __cdecl core_armour_cpp_CArmour_FUN_004124d0(CArmour *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004dc230
 // Address Range: [[004dc230, 004dc260]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CallToJoystickStuff_FUN_004dc230(CGame * this_ptr, int unk1, SPlayerControl * unk)
+// Signature: void __cdecl core_game_cpp_CallToJoystickStuff_FUN_004dc230(CGame *this_ptr,int unk1,SPlayerControl *unk)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004216c0
 // Address Range: [[004216c0, 004216e2]]
 // Convention: __cdecl
-// Signature: CBoxActor * core_boxactor.cpp_factoryFunc_FUN_004216c0(void)
+// Signature: CBoxActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_004216c0(void)
 
 #include "nocturne.h"
 

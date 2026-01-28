@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_cloth.cpp_CClothList_remove_FUN_0043c170(CClothList * this_ptr)
+; __cdecl void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043c170(CClothList *this_ptr)
 ;
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   this_ptr

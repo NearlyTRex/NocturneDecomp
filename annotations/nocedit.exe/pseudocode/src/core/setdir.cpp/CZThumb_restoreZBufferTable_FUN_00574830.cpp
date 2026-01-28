@@ -2,7 +2,7 @@
 // Address: 00574830
 // Address Range: [[00574830, 00574891]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830(CZThumb * this_ptr, int count)
+// Signature: void __cdecl core_setdir_cpp_CZThumb_restoreZBufferTable_FUN_00574830(CZThumb *this_ptr,int count)
 
 #include "nocturne.h"
 

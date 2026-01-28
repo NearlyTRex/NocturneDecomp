@@ -2,7 +2,7 @@
 // Address: 005fdea0
 // Address Range: [[005fdea0, 005fdf0f]]
 // Convention: __watcallStack
-// Signature: void * crt_stdlib.c_median_of_3_FUN_005fdea0(void * a, void * b, void * c, QSORT_COMPARATOR compar)
+// Signature: void * __watcallStack crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,QSORT_COMPARATOR compar)
 
 #include "nocturne.h"
 

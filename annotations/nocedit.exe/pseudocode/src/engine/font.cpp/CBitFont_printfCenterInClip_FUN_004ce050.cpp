@@ -2,7 +2,7 @@
 // Address: 004ce050
 // Address Range: [[004ce050, 004ce08e]]
 // Convention: __cdecl
-// Signature: void engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce050(CBitFont * this_ptr, int x, int y, int color, char * format, ...)
+// Signature: void __cdecl engine_font_cpp_CBitFont_printfCenterInClip_FUN_004ce050 (CBitFont *this_ptr,int x,int y,int color,char *format,...)
 
 #include "nocturne.h"
 

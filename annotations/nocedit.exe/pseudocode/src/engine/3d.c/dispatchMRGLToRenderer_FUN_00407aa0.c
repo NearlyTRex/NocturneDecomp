@@ -2,7 +2,7 @@
 // Address: 00407aa0
 // Address Range: [[00407aa0, 00407ce9]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch * cmd)
+// Signature: void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
 
 #include "nocturne.h"
 

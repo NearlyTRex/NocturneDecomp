@@ -2,7 +2,7 @@
 // Address: 0060c2e0
 // Address Range: [[0060c2e0, 0060c331]]
 // Convention: __cdecl
-// Signature: int crt_io.c_close_handle_safe_FUN_0060c2e0(int handle_index)
+// Signature: int __cdecl crt_io_c_close_handle_safe_FUN_0060c2e0(int handle_index)
 
 #include "nocturne.h"
 

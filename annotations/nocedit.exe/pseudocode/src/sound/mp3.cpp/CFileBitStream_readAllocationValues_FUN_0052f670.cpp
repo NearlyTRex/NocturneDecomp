@@ -2,7 +2,7 @@
 // Address: 0052f670
 // Address Range: [[0052f670, 0052f79f]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream * this_ptr, SMpegSubbandAllocation * output_allocation, SBitAllocationTable * alloc_table_info)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation, SBitAllocationTable *alloc_table_info)
 
 #include "nocturne.h"
 

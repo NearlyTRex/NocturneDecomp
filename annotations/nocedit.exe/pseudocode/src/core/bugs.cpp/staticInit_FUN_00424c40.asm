@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_bugs.cpp_staticInit_FUN_00424c40(void)
+; __cdecl void __cdecl core_bugs_cpp_staticInit_FUN_00424c40(void)
 ;
 ;
 ; Referenced Globals:

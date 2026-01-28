@@ -2,7 +2,7 @@
 // Address: 00420680
 // Address Range: [[00420680, 0042083e]]
 // Convention: __cdecl
-// Signature: int core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundingBox3D * this_ptr)
+// Signature: int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundingBox3D *this_ptr)
 
 #include "nocturne.h"
 

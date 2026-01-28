@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20(CEdCheck * this_ptr)
+; __cdecl int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_004a6d20(CEdCheck *this_ptr)
 ;
 ; Parameters:
 ; CEdCheck *       Stack[0x4]:4   this_ptr

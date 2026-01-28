@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_listenSocket_FUN_005e1d60(SOCKET * socket_handle)
+; __cdecl int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(SOCKET *socket_handle)
 ;
 ; Parameters:
 ; SOCKET *         Stack[0x4]:4   socket_handle

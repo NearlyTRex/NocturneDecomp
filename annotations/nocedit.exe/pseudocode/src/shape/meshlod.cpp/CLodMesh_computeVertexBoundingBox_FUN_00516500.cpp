@@ -2,7 +2,7 @@
 // Address: 00516500
 // Address Range: [[00516500, 0051656f]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh * this_ptr, CBoundingBox3D * out_bbox)
+// Signature: CBoundingBox3D * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (CLodMesh *this_ptr,CBoundingBox3D *out_bbox)
 
 #include "nocturne.h"
 

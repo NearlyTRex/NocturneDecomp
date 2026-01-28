@@ -2,7 +2,7 @@
 // Address: 005715d0
 // Address Range: [[005715d0, 005716a0]]
 // Convention: __cdecl
-// Signature: int core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0(float x, float z, CVector3f * out_height, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, CVector3f * vertex4, CVector3f * out_transformed_normal)
+// Signature: int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0 (float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2, CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ghoul.cpp_FUN_004e8dc0()
+; unknown void core_ghoul_cpp_FUN_004e8dc0(void)
 ;
 ;
 ; Referenced Globals:

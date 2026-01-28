@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_frankgen.cpp_FUN_004d23a0()
+; unknown void core_frankgen_cpp_FUN_004d23a0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

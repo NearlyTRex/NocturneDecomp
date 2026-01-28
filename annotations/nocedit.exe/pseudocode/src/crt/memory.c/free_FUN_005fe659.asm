@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_memory.c_free_FUN_005fe659(void * ptr)
+; __cdecl void __cdecl crt_memory_c_free_FUN_005fe659(void *ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

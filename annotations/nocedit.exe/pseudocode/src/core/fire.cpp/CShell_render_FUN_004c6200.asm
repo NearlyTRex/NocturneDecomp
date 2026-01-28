@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CShell_render_FUN_004c6200(CShell * this_ptr)
+; __cdecl void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
 ;
 ; Parameters:
 ; CShell *         Stack[0x4]:4   this_ptr

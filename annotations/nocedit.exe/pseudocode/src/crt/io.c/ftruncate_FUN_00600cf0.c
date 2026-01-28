@@ -2,7 +2,7 @@
 // Address: 00600cf0
 // Address Range: [[00600cf0, 00600e0b]]
 // Convention: __cdecl
-// Signature: int crt_io.c_ftruncate_FUN_00600cf0(int file_handle, long new_size)
+// Signature: int __cdecl crt_io_c_ftruncate_FUN_00600cf0(int file_handle,long new_size)
 
 #include "nocturne.h"
 

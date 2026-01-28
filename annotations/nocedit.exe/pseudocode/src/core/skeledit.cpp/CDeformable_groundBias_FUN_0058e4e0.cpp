@@ -2,7 +2,7 @@
 // Address: 0058e4e0
 // Address Range: [[0058e4e0, 0058e5f9]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableModel * this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

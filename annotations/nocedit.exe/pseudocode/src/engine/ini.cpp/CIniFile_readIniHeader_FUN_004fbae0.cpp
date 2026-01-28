@@ -2,7 +2,7 @@
 // Address: 004fbae0
 // Address Range: [[004fbae0, 004fbb1a]]
 // Convention: __cdecl
-// Signature: void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
+// Signature: void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile *this_ptr,char *section)
 
 #include "nocturne.h"
 

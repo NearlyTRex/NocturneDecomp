@@ -2,7 +2,7 @@
 // Address: 004aa960
 // Address Range: [[004aa960, 004aaa4e]]
 // Convention: unknown
-// Signature: undefined core_event.cpp_DifferentWaysToDie2_FUN_004aa960()
+// Signature: undefined4 core_event_cpp_DifferentWaysToDie2_FUN_004aa960(void)
 
 #include "nocturne.h"
 

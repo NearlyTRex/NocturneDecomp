@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_pendulum.cpp_CPendulum_load_FUN_0054a3b0()
+; unknown void core_pendulum_cpp_CPendulum_load_FUN_0054a3b0(void)
 ;
 ;
 ; Referenced Globals:

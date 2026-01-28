@@ -2,7 +2,7 @@
 // Address: 00471300
 // Address Range: [[00471300, 0047130f]]
 // Convention: __cdecl
-// Signature: void core_dfont.cpp_remapFonts_FUN_00471300(void)
+// Signature: void __cdecl core_dfont_cpp_remapFonts_FUN_00471300(void)
 
 #include "nocturne.h"
 

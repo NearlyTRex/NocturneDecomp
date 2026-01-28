@@ -2,7 +2,7 @@
 // Address: 005ff95c
 // Address Range: [[005ff95c, 005ff9c7]]
 // Convention: __cdecl
-// Signature: ofstream * crt_fstream.cpp_ofstream_ctor_FUN_005ff95c(ofstream * this_ptr, int c1)
+// Signature: ofstream * __cdecl crt_fstream_cpp_ofstream_ctor_FUN_005ff95c(ofstream *this_ptr,int c1)
 
 #include "nocturne.h"
 

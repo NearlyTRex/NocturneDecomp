@@ -2,7 +2,7 @@
 // Address: 00470260
 // Address Range: [[00470260, 004702b6]]
 // Convention: __cdecl
-// Signature: void core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260(CDemonFilter * this_ptr)
+// Signature: void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(CDemonFilter *this_ptr)
 
 #include "nocturne.h"
 

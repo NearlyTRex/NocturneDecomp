@@ -2,7 +2,7 @@
 // Address: 00606020
 // Address Range: [[00606020, 00606054]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
+// Signature: void __cdecl crt_stdio_c_reportStreamError_FUN_00606020(FileEmbeddedData *embedded_data,uint error_flags)
 
 #include "nocturne.h"
 

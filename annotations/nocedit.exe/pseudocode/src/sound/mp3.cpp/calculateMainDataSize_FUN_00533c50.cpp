@@ -2,7 +2,7 @@
 // Address: 00533c50
 // Address Range: [[00533c50, 00533d2b]]
 // Convention: __cdecl
-// Signature: int sound_mp3.cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
+// Signature: int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
 
 #include "nocturne.h"
 

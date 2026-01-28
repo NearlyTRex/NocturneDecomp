@@ -2,7 +2,7 @@
 // Address: 00501940
 // Address Range: [[00501940, 00501984]]
 // Convention: unknown
-// Signature: undefined core_keyactor.cpp_FUN_00501940()
+// Signature: void core_keyactor_cpp_FUN_00501940(void)
 
 #include "nocturne.h"
 

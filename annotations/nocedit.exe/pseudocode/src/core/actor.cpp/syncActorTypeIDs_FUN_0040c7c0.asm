@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0(void)
+; __cdecl void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0(void)
 ;
 ;
 ; XREF[5]:

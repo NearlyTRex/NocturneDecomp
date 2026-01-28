@@ -2,7 +2,7 @@
 // Address: 00442310
 // Address Range: [[00442310, 00442374]]
 // Convention: __cdecl
-// Signature: CConveyor * core_conveyor.cpp_dtor_FUN_00442310(CConveyor * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CConveyor * __cdecl core_conveyor_cpp_dtor_FUN_00442310(CConveyor *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

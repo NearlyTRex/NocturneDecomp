@@ -2,7 +2,7 @@
 // Address: 0052e8d0
 // Address Range: [[0052e8d0, 0052ea0d]]
 // Convention: __cdecl
-// Signature: int sound_mp3.cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame * frame)
+// Signature: int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame *frame)
 
 #include "nocturne.h"
 

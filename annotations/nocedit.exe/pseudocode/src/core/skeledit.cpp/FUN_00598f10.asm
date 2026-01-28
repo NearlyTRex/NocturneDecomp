@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeledit.cpp_FUN_00598f10(void)
+; __cdecl void __cdecl core_skeledit_cpp_FUN_00598f10(void)
 ;
 ;
 ; Referenced Globals:

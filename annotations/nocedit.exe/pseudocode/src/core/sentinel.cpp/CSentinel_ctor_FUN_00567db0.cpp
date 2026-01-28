@@ -2,7 +2,7 @@
 // Address: 00567db0
 // Address Range: [[00567db0, 00567e15]]
 // Convention: __cdecl
-// Signature: CSentinel * core_sentinel.cpp_CSentinel_ctor_FUN_00567db0(CSentinel * this_ptr)
+// Signature: CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *this_ptr)
 
 #include "nocturne.h"
 

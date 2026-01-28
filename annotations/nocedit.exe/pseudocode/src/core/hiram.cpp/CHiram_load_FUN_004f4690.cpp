@@ -2,7 +2,7 @@
 // Address: 004f4690
 // Address Range: [[004f4690, 004f469d]]
 // Convention: unknown
-// Signature: undefined core_hiram.cpp_CHiram_load_FUN_004f4690()
+// Signature: void core_hiram_cpp_CHiram_load_FUN_004f4690(void)
 
 #include "nocturne.h"
 

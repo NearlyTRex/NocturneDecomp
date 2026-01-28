@@ -2,7 +2,7 @@
 // Address: 00601ee4
 // Address Range: [[00601ee4, 00601f09]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4(FILE * file_handle, int close_flags)
+// Signature: int __cdecl crt_stdio_c_closeAndDeallocateFile_FUN_00601ee4(FILE *file_handle,int close_flags)
 
 #include "nocturne.h"
 

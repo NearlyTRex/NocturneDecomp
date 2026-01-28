@@ -2,7 +2,7 @@
 // Address: 00432540
 // Address Range: [[00432540, 00432690]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540(void * sprite_data, int dest_x, int dest_y, int width, int height)
+// Signature: void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540 (void *sprite_data,int dest_x,int dest_y,int width,int height)
 
 #include "nocturne.h"
 

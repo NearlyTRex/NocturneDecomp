@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_font.cpp_setShadowColor_FUN_004ce0f0(uint red, uint green, uint blue)
+; __cdecl void __cdecl engine_font_cpp_setShadowColor_FUN_004ce0f0(uint red,uint green,uint blue)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   red

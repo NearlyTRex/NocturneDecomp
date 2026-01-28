@@ -2,7 +2,7 @@
 // Address: 00403840
 // Address Range: [[00403840, 00403944]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SVertexBatch * vertex_source, SVertexBatch * processing_params)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840 (SVertexBatch *vertex_source,SVertexBatch *processing_params)
 
 #include "nocturne.h"
 

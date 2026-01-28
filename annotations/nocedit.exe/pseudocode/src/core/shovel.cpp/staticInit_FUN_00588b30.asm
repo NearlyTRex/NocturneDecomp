@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_shovel.cpp_staticInit_FUN_00588b30(void)
+; __cdecl void __cdecl core_shovel_cpp_staticInit_FUN_00588b30(void)
 ;
 ;
 ; Referenced Globals:

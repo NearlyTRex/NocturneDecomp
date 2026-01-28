@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_processTimer_FUN_005600c0()
+; unknown undefined4 core_script_cpp_CScript_processTimer_FUN_005600c0(void)
 ;
 ;
 ; XREF[1]:

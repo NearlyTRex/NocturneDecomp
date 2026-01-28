@@ -2,7 +2,7 @@
 // Address: 00504160
 // Address Range: [[00504160, 0050471f]]
 // Convention: __cdecl
-// Signature: void core_level.cpp_CLevelLoader_update_FUN_00504160(CLevelLoader * this_ptr, char * text, int clear_screen)
+// Signature: void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *text,int clear_screen)
 
 #include "nocturne.h"
 

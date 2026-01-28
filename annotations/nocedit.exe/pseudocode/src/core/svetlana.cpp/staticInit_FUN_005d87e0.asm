@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_svetlana.cpp_staticInit_FUN_005d87e0(void)
+; __cdecl void __cdecl core_svetlana_cpp_staticInit_FUN_005d87e0(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 00544ed0
 // Address Range: [[00544ed0, 00544efe]]
 // Convention: __cdecl
-// Signature: void engine_palette.cpp_CFont_drawText_FUN_00544ed0(CFont * this_ptr, int param1, int param2, int param3, int param4, int param5)
+// Signature: void __cdecl engine_palette_cpp_CFont_drawText_FUN_00544ed0 (CFont *this_ptr,int param1,int param2,int param3,int param4,int param5)
 
 #include "nocturne.h"
 

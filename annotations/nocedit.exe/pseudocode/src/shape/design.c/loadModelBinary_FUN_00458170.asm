@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_loadModelBinary_FUN_00458170(char * filename)
+; __cdecl int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

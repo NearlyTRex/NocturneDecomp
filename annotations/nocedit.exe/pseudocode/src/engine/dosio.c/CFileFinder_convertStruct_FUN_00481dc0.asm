@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder * finder, LPWIN32_FIND_DATAA find_data)
+; __cdecl void __cdecl engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0 (CFileFinder *finder,LPWIN32_FIND_DATAA find_data)
 ;
 ; Parameters:
 ; CFileFinder *    Stack[0x4]:4   finder

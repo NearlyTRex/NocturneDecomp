@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_werewolf.cpp_FUN_005f1e40()
+; unknown void core_werewolf_cpp_FUN_005f1e40(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x7c]:8  local_7c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CColonel * core_colonel.cpp_factoryFunc_FUN_0043f7a0(void)
+; __cdecl CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void)
 ;
 ;
 ; XREF[1]:

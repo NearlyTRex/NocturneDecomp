@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70(CCheckOutList * this_ptr, int entry_index)
+; __cdecl int __cdecl engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70(CCheckOutList *this_ptr,int entry_index)
 ;
 ; Parameters:
 ; CCheckOutList *  Stack[0x4]:4   this_ptr

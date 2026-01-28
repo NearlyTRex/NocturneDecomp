@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh * this_ptr, CVector3f * offset)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh *this_ptr,CVector3f *offset)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

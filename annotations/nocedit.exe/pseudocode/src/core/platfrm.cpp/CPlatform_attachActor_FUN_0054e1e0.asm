@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0()
+; unknown void core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xa0]:1  local_a0

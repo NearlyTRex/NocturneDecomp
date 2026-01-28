@@ -2,7 +2,7 @@
 // Address: 005e8da0
 // Address Range: [[005e8da0, 005e8db3]]
 // Convention: __cdecl
-// Signature: CTire * core_vehicle.cpp_CTire_ctor_FUN_005e8da0(CTire * this_ptr)
+// Signature: CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_005e8da0(CTire *this_ptr)
 
 #include "nocturne.h"
 

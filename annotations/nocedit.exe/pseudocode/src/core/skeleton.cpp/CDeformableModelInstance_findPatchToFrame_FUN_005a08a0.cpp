@@ -2,7 +2,7 @@
 // Address: 005a08a0
 // Address Range: [[005a08a0, 005a0ac3]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0(CMotionController * this_ptr, int source_motion_index, float source_frame, int target_motion_index)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0 (CMotionController *this_ptr,int source_motion_index,float source_frame, int target_motion_index)
 
 #include "nocturne.h"
 

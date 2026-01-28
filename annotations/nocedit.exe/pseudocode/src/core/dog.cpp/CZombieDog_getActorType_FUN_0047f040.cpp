@@ -2,7 +2,7 @@
 // Address: 0047f040
 // Address Range: [[0047f040, 0047f045]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_dog.cpp_CZombieDog_getActorType_FUN_0047f040(CZombieDog * this_ptr)
+// Signature: CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_0047f040(CZombieDog *this_ptr)
 
 #include "nocturne.h"
 

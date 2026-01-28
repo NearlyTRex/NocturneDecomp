@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_processTrainSounds_FUN_005b2770(void)
+; __cdecl void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x128]:8  local_128

@@ -2,7 +2,7 @@
 // Address: 005b81b0
 // Address Range: [[005b81b0, 005b81d3]]
 // Convention: __cdecl
-// Signature: void core_spike.cpp_staticInit_FUN_005b81b0(void)
+// Signature: void __cdecl core_spike_cpp_staticInit_FUN_005b81b0(void)
 
 #include "nocturne.h"
 

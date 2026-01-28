@@ -2,7 +2,7 @@
 // Address: 0049d480
 // Address Range: [[0049d480, 0049d502]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CInputString_insertChar_FUN_0049d480(CInputString * this_ptr, char character, int advance_cursor)
+// Signature: void __cdecl shape_edittool_cpp_CInputString_insertChar_FUN_0049d480 (CInputString *this_ptr,char character,int advance_cursor)
 
 #include "nocturne.h"
 

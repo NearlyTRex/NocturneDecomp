@@ -2,7 +2,7 @@
 // Address: 005e9ed0
 // Address Range: [[005e9ed0, 005e9ed0]]
 // Convention: __cdecl
-// Signature: void core_water.cpp_CWater_process_FUN_005e9ed0(void)
+// Signature: void __cdecl core_water_cpp_CWater_process_FUN_005e9ed0(void)
 
 #include "nocturne.h"
 

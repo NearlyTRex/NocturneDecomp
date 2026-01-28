@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_Unk20_FUN_00565130()
+; unknown void core_script_cpp_CScript_Unk20_FUN_00565130(void)
 ;
 ;
 ; XREF[1]:

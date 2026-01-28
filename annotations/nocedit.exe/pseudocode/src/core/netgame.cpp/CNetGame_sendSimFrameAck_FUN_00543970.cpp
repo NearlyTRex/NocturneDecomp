@@ -2,7 +2,7 @@
 // Address: 00543970
 // Address Range: [[00543970, 00543aa8]]
 // Convention: unknown
-// Signature: undefined core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970()
+// Signature: void core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
 
 #include "nocturne.h"
 

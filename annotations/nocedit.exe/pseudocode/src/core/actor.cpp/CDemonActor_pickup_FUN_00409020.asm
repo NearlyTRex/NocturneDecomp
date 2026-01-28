@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CDemonActor_pickup_FUN_00409020(CDemonActor * this_ptr, CDemonActor * carrier)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_pickup_FUN_00409020(CDemonActor *this_ptr,CDemonActor *carrier)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00420940
 // Address Range: [[00420940, 00420d69]]
 // Convention: __cdecl
-// Signature: float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
+// Signature: float __cdecl core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940 (CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal)
 
 #include "nocturne.h"
 

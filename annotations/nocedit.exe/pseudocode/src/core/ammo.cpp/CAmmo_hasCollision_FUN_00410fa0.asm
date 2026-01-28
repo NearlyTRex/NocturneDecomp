@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_ammo.cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo * this_ptr, SCollisionInfo * collision_info)
+; __cdecl int __cdecl core_ammo_cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

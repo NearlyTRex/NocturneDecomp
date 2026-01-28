@@ -2,7 +2,7 @@
 // Address: 0050e6f0
 // Address Range: [[0050e6f0, 0050e755]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_popMatrixRelativeOffset_FUN_0050e6f0(void)
+// Signature: void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_0050e6f0(void)
 
 #include "nocturne.h"
 

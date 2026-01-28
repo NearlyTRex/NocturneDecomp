@@ -2,7 +2,7 @@
 // Address: 006109f0
 // Address Range: [[006109f0, 00610a1f]]
 // Convention: __cdecl
-// Signature: undefined crt_io.c_get_handle_FUN_006109f0(int fd)
+// Signature: HANDLE __cdecl crt_io_c_get_handle_FUN_006109f0(int fd)
 
 #include "nocturne.h"
 

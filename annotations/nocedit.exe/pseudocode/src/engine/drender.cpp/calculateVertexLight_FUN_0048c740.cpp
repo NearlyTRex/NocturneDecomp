@@ -2,7 +2,7 @@
 // Address: 0048c740
 // Address Range: [[0048c740, 0048c752]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_calculateVertexLight_FUN_0048c740(int vertex_index, CVector3i * vertex_position)
+// Signature: void __cdecl engine_drender_cpp_calculateVertexLight_FUN_0048c740(int vertex_index,CVector3i *vertex_position)
 
 #include "nocturne.h"
 

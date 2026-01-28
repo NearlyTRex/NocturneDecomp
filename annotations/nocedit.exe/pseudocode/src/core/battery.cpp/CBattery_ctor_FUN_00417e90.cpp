@@ -2,7 +2,7 @@
 // Address: 00417e90
 // Address Range: [[00417e90, 00417ee7]]
 // Convention: __cdecl
-// Signature: CBattery * core_battery.cpp_CBattery_ctor_FUN_00417e90(CBattery * this_ptr)
+// Signature: CBattery * __cdecl core_battery_cpp_CBattery_ctor_FUN_00417e90(CBattery *this_ptr)
 
 #include "nocturne.h"
 

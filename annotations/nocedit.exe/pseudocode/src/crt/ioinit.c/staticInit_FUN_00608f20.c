@@ -2,7 +2,7 @@
 // Address: 00608f20
 // Address Range: [[00608f20, 00608fbb]]
 // Convention: __cdecl
-// Signature: void crt_ioinit.c_staticInit_FUN_00608f20(void)
+// Signature: void __cdecl crt_ioinit_c_staticInit_FUN_00608f20(void)
 
 #include "nocturne.h"
 

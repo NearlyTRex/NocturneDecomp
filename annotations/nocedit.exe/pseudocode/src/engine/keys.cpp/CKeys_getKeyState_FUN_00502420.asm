@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_keys.cpp_CKeys_getKeyState_FUN_00502420(CKeys * this_ptr, int key_code)
+; __cdecl int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_00502420(CKeys *this_ptr,int key_code)
 ;
 ; Parameters:
 ; CKeys *          Stack[0x4]:4   this_ptr

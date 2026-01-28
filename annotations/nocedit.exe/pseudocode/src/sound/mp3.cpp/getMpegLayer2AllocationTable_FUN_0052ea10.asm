@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_0052ea10(int layer, int mode_extension)
+; __cdecl void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_0052ea10(int layer,int mode_extension)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   layer

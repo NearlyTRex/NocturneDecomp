@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_loadPalette_FUN_0046e810()
+; unknown void shape_design_c_loadPalette_FUN_0046e810(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xb8]:1  local_b8

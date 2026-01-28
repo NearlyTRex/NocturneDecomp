@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290(char * key_path, char * value_name, char * value_data)
+; __cdecl void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290 (char *key_path,char *value_name,char *value_data)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   key_path

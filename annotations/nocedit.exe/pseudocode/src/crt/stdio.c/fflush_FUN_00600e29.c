@@ -2,7 +2,7 @@
 // Address: 00600e29
 // Address Range: [[00600e29, 00600e63]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)
+// Signature: int __cdecl crt_stdio_c_fflush_FUN_00600e29(FILE *stream)
 
 #include "nocturne.h"
 

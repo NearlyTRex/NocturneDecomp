@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_skeledit.cpp_FUN_0058b260()
+; unknown void core_skeledit_cpp_FUN_0058b260(void)
 ;
 ;
 ; Called Functions:

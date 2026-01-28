@@ -2,7 +2,7 @@
 // Address: 00603b00
 // Address Range: [[00603b00, 00603b30]]
 // Convention: __watcallRegister
-// Signature: void crt_memory.c_OptimizedMemFill_FUN_00603b00(void * dest, uint replicated_value, uint count)
+// Signature: void crt_memory_c_OptimizedMemFill_FUN_00603b00(void *dest,uint replicated_value,uint count)
 
 #include "nocturne.h"
 

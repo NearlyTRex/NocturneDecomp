@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_string_ungetc_FUN_006000f8(int ch, scanf_state_t * state)
+; __cdecl int __cdecl crt_stdio_c_string_ungetc_FUN_006000f8(int ch,scanf_state_t *state)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   ch

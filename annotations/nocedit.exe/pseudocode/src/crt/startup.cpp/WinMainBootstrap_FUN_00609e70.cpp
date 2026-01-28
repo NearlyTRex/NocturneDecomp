@@ -2,7 +2,7 @@
 // Address: 00609e70
 // Address Range: [[00609e70, 00609f1f]]
 // Convention: __watcallRegister
-// Signature: void crt_startup.cpp_WinMainBootstrap_FUN_00609e70(void)
+// Signature: void crt_startup_cpp_WinMainBootstrap_FUN_00609e70(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_FUN_00537230()
+; unknown void core_msnedit_cpp_FUN_00537230(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x124]:1  local_124

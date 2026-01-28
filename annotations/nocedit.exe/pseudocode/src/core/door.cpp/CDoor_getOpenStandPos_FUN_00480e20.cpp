@@ -2,7 +2,7 @@
 // Address: 00480e20
 // Address Range: [[00480e20, 00481014]]
 // Convention: __cdecl
-// Signature: float * core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor * this_ptr)
+// Signature: float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)
 
 #include "nocturne.h"
 

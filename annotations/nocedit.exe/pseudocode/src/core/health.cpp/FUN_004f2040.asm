@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_health.cpp_FUN_004f2040()
+; unknown void core_health_cpp_FUN_004f2040(void)
 ;
 ;
 ; Referenced Globals:

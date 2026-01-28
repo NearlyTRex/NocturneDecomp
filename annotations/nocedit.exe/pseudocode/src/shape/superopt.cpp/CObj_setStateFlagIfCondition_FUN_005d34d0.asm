@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0(CObj * this_ptr, uint flag_to_set, uint condition_mask)
+; __cdecl void __cdecl shape_superopt_cpp_CObj_setStateFlagIfCondition_FUN_005d34d0 (CObj *this_ptr,uint flag_to_set,uint condition_mask)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

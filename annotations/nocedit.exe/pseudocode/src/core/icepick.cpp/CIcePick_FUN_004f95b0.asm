@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_icepick.cpp_CIcePick_FUN_004f95b0()
+; unknown void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
 ;
 ;
 ; Referenced Globals:

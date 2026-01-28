@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stdcall void crt_stack.c_ProbeStackSpace_FUN_005ffa2f(uint size)
+; __stdcall void __stdcall crt_stack_c_ProbeStackSpace_FUN_005ffa2f(uint size)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   size

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_copyVector_FUN_00410360(CVector3f * dst_ptr, CVector3f * src_ptr)
+; __cdecl void __cdecl core_actor_cpp_copyVector_FUN_00410360(CVector3f *dst_ptr,CVector3f *src_ptr)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   dst_ptr

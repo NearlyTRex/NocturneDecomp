@@ -2,7 +2,7 @@
 // Address: 005b0440
 // Address Range: [[005b0440, 005b066a]]
 // Convention: __cdecl
-// Signature: CDirectSoundDevice * sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440(UINT device_id)
+// Signature: CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(UINT device_id)
 
 #include "nocturne.h"
 

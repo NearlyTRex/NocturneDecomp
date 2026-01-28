@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_writeBinaryTreeNode_FUN_00457fd0(STreeNode * node, FILE * file, int depth)
+; __cdecl void __cdecl shape_design_c_writeBinaryTreeNode_FUN_00457fd0(STreeNode *node,FILE *file,int depth)
 ;
 ; Parameters:
 ; STreeNode *      Stack[0x4]:4   node

@@ -2,7 +2,7 @@
 // Address: 0059b970
 // Address Range: [[0059b970, 0059c1ea]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970(CDeformableModel * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970 (CDeformableModel *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

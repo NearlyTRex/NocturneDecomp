@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_WideStringToMultiByteLen_FUN_00602f7c(wchar_t * wide_string_offset, ushort segment, int max_chars)
+; __cdecl int __cdecl crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c (wchar_t *wide_string_offset,ushort segment,int max_chars)
 ;
 ; Parameters:
 ; wchar_t *        Stack[0x4]:4   wide_string_offset

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj * this_ptr, double coplanar_threshold, CPoly * search_polygon)
+; __cdecl int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800 (CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

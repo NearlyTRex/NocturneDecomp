@@ -2,7 +2,7 @@
 // Address: 00489ce0
 // Address Range: [[00489ce0, 00489cf6]]
 // Convention: __cdecl
-// Signature: int cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(CDrawSurface * this_ptr)
+// Signature: int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(CDrawSurface *this_ptr)
 
 #include "nocturne.h"
 

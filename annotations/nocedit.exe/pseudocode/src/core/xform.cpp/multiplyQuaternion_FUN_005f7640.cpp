@@ -2,7 +2,7 @@
 // Address: 005f7640
 // Address Range: [[005f7640, 005f76f1]]
 // Convention: __stack2_esi
-// Signature: CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
+// Signature: CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_005f7640 (CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * core_batcreat.cpp_CBatCreature_dtor_FUN_00416320(CBatCreature * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+; __cdecl CDemonActor * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00416320 (CBatCreature *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr

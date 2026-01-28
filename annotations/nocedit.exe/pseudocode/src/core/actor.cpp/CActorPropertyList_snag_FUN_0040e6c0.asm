@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList * this_ptr, int property_type, char * property_name, void * data_ptr, void * callback_or_extra)
+; __cdecl int __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,int property_type,char *property_name,void *data_ptr, void *callback_or_extra)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00572e20
 // Address Range: [[00572e20, 00572e7d]]
 // Convention: __cdecl
-// Signature: int core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00572e20(CDemonSet * this_ptr, CDemonActor * actor)
+// Signature: int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(CDemonSet *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 

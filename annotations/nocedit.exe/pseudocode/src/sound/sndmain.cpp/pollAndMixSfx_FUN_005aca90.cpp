@@ -2,7 +2,7 @@
 // Address: 005aca90
 // Address Range: [[005aca90, 005acda2]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, int samples_per_block, int block_align)
+// Signature: void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90 (LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec, int samples_per_block,int block_align)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont * this_ptr, int character_code, int x_pos, int y_pos, int z_pos, int width, int height, int color_mode)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x_pos,int y_pos,int z_pos,int width,int height, int color_mode)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

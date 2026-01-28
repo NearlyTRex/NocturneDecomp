@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_process.c_spawnvp_with_path_search_FUN_0060e6a0(int mode, char * program, char * * argv)
+; __cdecl int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *program,char **argv)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mode

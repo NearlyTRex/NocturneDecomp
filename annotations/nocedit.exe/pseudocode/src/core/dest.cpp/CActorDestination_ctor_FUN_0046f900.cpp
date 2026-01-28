@@ -2,7 +2,7 @@
 // Address: 0046f900
 // Address Range: [[0046f900, 0046f969]]
 // Convention: __cdecl
-// Signature: CActorDestination * core_dest.cpp_CActorDestination_ctor_FUN_0046f900(CActorDestination * this_ptr)
+// Signature: CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0046f900(CActorDestination *this_ptr)
 
 #include "nocturne.h"
 

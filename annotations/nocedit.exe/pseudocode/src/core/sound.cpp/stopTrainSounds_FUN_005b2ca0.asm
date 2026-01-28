@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void core_sound.cpp_stopTrainSounds_FUN_005b2ca0(void)
+; __watcallRegister void core_sound_cpp_stopTrainSounds_FUN_005b2ca0(void)
 ;
 ;
 ; Referenced Globals:

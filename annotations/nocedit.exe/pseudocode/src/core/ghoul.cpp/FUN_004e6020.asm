@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ghoul.cpp_FUN_004e6020()
+; unknown CDemonActorType * core_ghoul_cpp_FUN_004e6020(void)
 ;
 ;
 ; Referenced Globals:

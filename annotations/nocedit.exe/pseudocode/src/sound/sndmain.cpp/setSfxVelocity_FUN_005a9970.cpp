@@ -2,7 +2,7 @@
 // Address: 005a9970
 // Address Range: [[005a9970, 005a99fb]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_setSfxVelocity_FUN_005a9970(uint sfx_handle, double vel_x, double vel_y, double vel_z)
+// Signature: int __cdecl sound_sndmain_cpp_setSfxVelocity_FUN_005a9970 (uint sfx_handle,double vel_x,double vel_y,double vel_z)
 
 #include "nocturne.h"
 

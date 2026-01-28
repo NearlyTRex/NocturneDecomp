@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_zombie.cpp_staticInit_FUN_005f8c90(void)
+; __cdecl void __cdecl core_zombie_cpp_staticInit_FUN_005f8c90(void)
 ;
 ;
 ; Referenced Globals:

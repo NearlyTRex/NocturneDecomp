@@ -2,7 +2,7 @@
 // Address: 004f3ef0
 // Address Range: [[004f3ef0, 004f3f14]]
 // Convention: __cdecl
-// Signature: void core_hero.cpp_CHeroPlaceholder_serialize_FUN_004f3ef0(CHeroPlaceholder * this_ptr)
+// Signature: void __cdecl core_hero_cpp_CHeroPlaceholder_serialize_FUN_004f3ef0(CHeroPlaceholder *this_ptr)
 
 #include "nocturne.h"
 

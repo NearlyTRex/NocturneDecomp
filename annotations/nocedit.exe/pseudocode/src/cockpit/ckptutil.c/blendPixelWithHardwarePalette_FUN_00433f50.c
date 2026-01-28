@@ -2,7 +2,7 @@
 // Address: 00433f50
 // Address Range: [[00433f50, 004342e1]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
+// Signature: void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x,int y,float alpha,int color)
 
 #include "nocturne.h"
 

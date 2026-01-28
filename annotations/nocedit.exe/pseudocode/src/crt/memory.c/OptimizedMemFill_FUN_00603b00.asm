@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void crt_memory.c_OptimizedMemFill_FUN_00603b00(void * dest, uint replicated_value, uint count)
+; __watcallRegister void crt_memory_c_OptimizedMemFill_FUN_00603b00(void *dest,uint replicated_value,uint count)
 ;
 ;
 ; XREF[1]:

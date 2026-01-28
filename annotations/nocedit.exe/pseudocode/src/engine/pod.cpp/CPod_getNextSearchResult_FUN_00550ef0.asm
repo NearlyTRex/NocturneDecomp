@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod * this_ptr, CPodSearchContext * search_context)
+; __cdecl int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0 (CPod *this_ptr,CPodSearchContext *search_context)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr

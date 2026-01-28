@@ -2,7 +2,7 @@
 // Address: 0053f310
 // Address Range: [[0053f310, 0053f354]]
 // Convention: __cdecl
-// Signature: void core_netgame.cpp_staticInit_FUN_0053f310(void)
+// Signature: void __cdecl core_netgame_cpp_staticInit_FUN_0053f310(void)
 
 #include "nocturne.h"
 

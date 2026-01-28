@@ -2,7 +2,7 @@
 // Address: 004fb180
 // Address Range: [[004fb180, 004fb238]]
 // Convention: __cdecl
-// Signature: CImp * core_imp.cpp_CImp_dtor_FUN_004fb180(CImp * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004fb180 (CImp *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

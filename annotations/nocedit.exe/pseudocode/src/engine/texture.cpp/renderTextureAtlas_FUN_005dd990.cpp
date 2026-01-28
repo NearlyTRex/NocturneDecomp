@@ -2,7 +2,7 @@
 // Address: 005dd990
 // Address Range: [[005dd990, 005dd9bf]]
 // Convention: __cdecl
-// Signature: void engine_texture.cpp_renderTextureAtlas_FUN_005dd990(void)
+// Signature: void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_005dd990(void)
 
 #include "nocturne.h"
 

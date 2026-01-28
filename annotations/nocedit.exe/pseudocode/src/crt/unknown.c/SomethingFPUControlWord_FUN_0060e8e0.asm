@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0()
+; unknown uint crt_unknown_c_SomethingFPUControlWord_FUN_0060e8e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

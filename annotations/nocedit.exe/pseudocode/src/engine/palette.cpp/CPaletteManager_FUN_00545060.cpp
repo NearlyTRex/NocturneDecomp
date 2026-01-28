@@ -2,7 +2,7 @@
 // Address: 00545060
 // Address Range: [[00545060, 00545172]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_palette.cpp_CPaletteManager_FUN_00545060(CPaletteManager * this_ptr, SMRGLHeaderExtended * unk)
+// Signature: SMRGLHeaderExtended * __cdecl engine_palette_cpp_CPaletteManager_FUN_00545060(CPaletteManager *this_ptr,SMRGLHeaderExtended *unk)
 
 #include "nocturne.h"
 

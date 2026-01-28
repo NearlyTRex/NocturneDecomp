@@ -2,7 +2,7 @@
 // Address: 004a01f0
 // Address Range: [[004a01f0, 004a02f3]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, int enable_range_check, double min_value, double max_value, int show_current_value)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check, double min_value,double max_value,int show_current_value)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0048dc30
 // Address Range: [[0048dc30, 0048dc42]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30 (CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette)
 
 #include "nocturne.h"
 

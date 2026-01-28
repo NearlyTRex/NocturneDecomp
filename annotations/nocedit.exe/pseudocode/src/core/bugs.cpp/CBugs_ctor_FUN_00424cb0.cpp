@@ -2,7 +2,7 @@
 // Address: 00424cb0
 // Address Range: [[00424cb0, 00424e4f]]
 // Convention: __cdecl
-// Signature: CBugs * core_bugs.cpp_CBugs_ctor_FUN_00424cb0(CBugs * this_ptr)
+// Signature: CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00()
+; unknown void shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_light.cpp_setSpecularEnabled_FUN_00505500(int enabled)
+; __cdecl void __cdecl engine_light_cpp_setSpecularEnabled_FUN_00505500(int enabled)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   enabled

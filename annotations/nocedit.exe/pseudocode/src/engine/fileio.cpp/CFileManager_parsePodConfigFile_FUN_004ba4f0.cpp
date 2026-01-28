@@ -2,7 +2,7 @@
 // Address: 004ba4f0
 // Address Range: [[004ba4f0, 004ba614]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0(CFileManager * this_ptr, CStrList * pod_list)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0 (CFileManager *this_ptr,CStrList *pod_list)
 
 #include "nocturne.h"
 

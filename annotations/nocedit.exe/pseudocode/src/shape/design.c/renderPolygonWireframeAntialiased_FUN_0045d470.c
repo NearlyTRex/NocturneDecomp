@@ -2,7 +2,7 @@
 // Address: 0045d470
 // Address Range: [[0045d470, 0045d5c7]]
 // Convention: __cdecl
-// Signature: void shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470(SMRGLHeaderPrimitive * polygon_data, int line_color)
+// Signature: void __cdecl shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470 (SMRGLHeaderPrimitive *polygon_data,int line_color)
 
 #include "nocturne.h"
 

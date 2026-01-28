@@ -2,7 +2,7 @@
 // Address: 005af720
 // Address Range: [[005af720, 005af748]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_isValidSfxHandle_FUN_005af720(int sfx_handle)
+// Signature: int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_005af720(int sfx_handle)
 
 #include "nocturne.h"
 

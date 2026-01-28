@@ -2,7 +2,7 @@
 // Address: 005f7700
 // Address Range: [[005f7700, 005f772e]]
 // Convention: __cdecl
-// Signature: CQuaternion4f * core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700(CQuaternion4f * quat1_inout, CQuaternion4f * quat2_ptr)
+// Signature: CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_005f7700 (CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)
 
 #include "nocturne.h"
 

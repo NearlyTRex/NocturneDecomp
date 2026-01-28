@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_interactiveGlobalWeld_FUN_00466040(float tolerance)
+; __cdecl void __cdecl shape_design_c_interactiveGlobalWeld_FUN_00466040(float tolerance)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   tolerance

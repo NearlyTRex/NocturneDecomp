@@ -2,7 +2,7 @@
 // Address: 004d2a80
 // Address Range: [[004d2a80, 004d2adf]]
 // Convention: __cdecl
-// Signature: float core_gabriela.cpp_FUN_004d2a80(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance)
+// Signature: float __cdecl core_gabriela_cpp_FUN_004d2a80 (int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance, CDeformableModelInstance *instance)
 
 #include "nocturne.h"
 

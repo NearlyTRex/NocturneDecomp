@@ -2,7 +2,7 @@
 // Address: 00570b70
 // Address Range: [[00570b70, 00570c36] [00570c3a, 00570c53]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70(CDemonSet * this_ptr)
+// Signature: void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00570b70(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

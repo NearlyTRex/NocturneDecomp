@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mobster.cpp_FUN_00525110()
+; unknown CVector3f * core_mobster_cpp_FUN_00525110(void)
 ;
 ;
 ; Referenced Globals:

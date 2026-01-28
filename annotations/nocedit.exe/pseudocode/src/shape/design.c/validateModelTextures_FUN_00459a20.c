@@ -2,7 +2,7 @@
 // Address: 00459a20
 // Address Range: [[00459a20, 00459dd9]]
 // Convention: __cdecl
-// Signature: int shape_design.c_validateModelTextures_FUN_00459a20(char * directory_path, int mode)
+// Signature: int __cdecl shape_design_c_validateModelTextures_FUN_00459a20(char *directory_path,int mode)
 
 #include "nocturne.h"
 

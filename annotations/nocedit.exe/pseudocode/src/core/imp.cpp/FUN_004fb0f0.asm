@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_imp.cpp_FUN_004fb0f0()
+; unknown void core_imp_cpp_FUN_004fb0f0(void)
 ;
 ;
 ; Called Functions:

@@ -2,7 +2,7 @@
 // Address: 00556df0
 // Address Range: [[00556df0, 00556dfb]]
 // Convention: __cdecl
-// Signature: int shape_quantize.cpp_getAbsoluteValue_FUN_00556df0(int value)
+// Signature: int __cdecl shape_quantize_cpp_getAbsoluteValue_FUN_00556df0(int value)
 
 #include "nocturne.h"
 

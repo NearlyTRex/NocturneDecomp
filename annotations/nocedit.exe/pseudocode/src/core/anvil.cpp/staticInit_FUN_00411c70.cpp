@@ -2,7 +2,7 @@
 // Address: 00411c70
 // Address Range: [[00411c70, 00411c93]]
 // Convention: __cdecl
-// Signature: void core_anvil.cpp_staticInit_FUN_00411c70(void)
+// Signature: void __cdecl core_anvil_cpp_staticInit_FUN_00411c70(void)
 
 #include "nocturne.h"
 

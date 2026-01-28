@@ -2,7 +2,7 @@
 // Address: 00602ff8
 // Address Range: [[00602ff8, 0060305a]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_FormatHexWithPadding_FUN_00602ff8(int value, char * buffer, int width)
+// Signature: void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffer,int width)
 
 #include "nocturne.h"
 

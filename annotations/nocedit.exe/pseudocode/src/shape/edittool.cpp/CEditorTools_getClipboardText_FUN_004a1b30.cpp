@@ -2,7 +2,7 @@
 // Address: 004a1b30
 // Address Range: [[004a1b30, 004a1bb9]]
 // Convention: __cdecl
-// Signature: char * shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools * this_ptr)
+// Signature: char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools *this_ptr)
 
 #include "nocturne.h"
 

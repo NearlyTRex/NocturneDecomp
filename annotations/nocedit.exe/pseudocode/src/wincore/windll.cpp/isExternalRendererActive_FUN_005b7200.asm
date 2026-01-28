@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_isExternalRendererActive_FUN_005b7200(void)
+; __cdecl int __cdecl wincore_windll_cpp_isExternalRendererActive_FUN_005b7200(void)
 ;
 ;
 ; Referenced Globals:

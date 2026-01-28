@@ -2,7 +2,7 @@
 // Address: 0060a710
 // Address Range: [[0060a710, 0060a745]]
 // Convention: __cdecl
-// Signature: BOOL crt_windows.c_has_active_window_FUN_0060a710(void)
+// Signature: BOOL __cdecl crt_windows_c_has_active_window_FUN_0060a710(void)
 
 #include "nocturne.h"
 

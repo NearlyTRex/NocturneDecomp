@@ -2,7 +2,7 @@
 // Address: 00471310
 // Address Range: [[00471310, 0047135c]]
 // Convention: __cdecl
-// Signature: void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+// Signature: void __cdecl core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe *this_ptr,CColor3f *color)
 
 #include "nocturne.h"
 

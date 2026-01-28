@@ -2,7 +2,7 @@
 // Address: 0058adb0
 // Address Range: [[0058adb0, 0058aea1]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure * this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure *this_ptr)
 
 #include "nocturne.h"
 

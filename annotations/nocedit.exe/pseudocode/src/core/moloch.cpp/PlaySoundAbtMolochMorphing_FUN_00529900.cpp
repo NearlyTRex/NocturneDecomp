@@ -2,7 +2,7 @@
 // Address: 00529900
 // Address Range: [[00529900, 00529947]]
 // Convention: unknown
-// Signature: undefined core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900()
+// Signature: void core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void)
 
 #include "nocturne.h"
 

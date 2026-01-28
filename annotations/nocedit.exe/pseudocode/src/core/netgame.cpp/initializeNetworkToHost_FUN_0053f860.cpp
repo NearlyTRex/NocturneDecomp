@@ -2,7 +2,7 @@
 // Address: 0053f860
 // Address Range: [[0053f860, 0053f8fd]]
 // Convention: unknown
-// Signature: undefined core_netgame.cpp_initializeNetworkToHost_FUN_0053f860()
+// Signature: undefined4 core_netgame_cpp_initializeNetworkToHost_FUN_0053f860(void)
 
 #include "nocturne.h"
 

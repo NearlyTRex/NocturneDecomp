@@ -2,7 +2,7 @@
 // Address: 0051c350
 // Address Range: [[0051c350, 0051c470]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_crc32UpdateBuffer_FUN_0051c350(uint * crc_ptr, uchar * data_ptr, int byte_count)
+// Signature: void __cdecl shape_meshlod_cpp_crc32UpdateBuffer_FUN_0051c350(uint *crc_ptr,uchar *data_ptr,int byte_count)
 
 #include "nocturne.h"
 

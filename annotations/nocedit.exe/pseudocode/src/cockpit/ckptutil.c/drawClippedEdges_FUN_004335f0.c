@@ -2,7 +2,7 @@
 // Address: 004335f0
 // Address Range: [[004335f0, 004336d4]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_drawClippedEdges_FUN_004335f0(SEdge * edges, int count, int x_offset, int y_offset)
+// Signature: void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_004335f0(SEdge *edges,int count,int x_offset,int y_offset)
 
 #include "nocturne.h"
 

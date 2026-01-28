@@ -2,7 +2,7 @@
 // Address: 00483370
 // Address Range: [[00483370, 004839e1]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_renderTriangleTextured_FUN_00483370(int * vertex_indices, int vertex_count)
+// Signature: void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_indices,int vertex_count)
 
 #include "nocturne.h"
 

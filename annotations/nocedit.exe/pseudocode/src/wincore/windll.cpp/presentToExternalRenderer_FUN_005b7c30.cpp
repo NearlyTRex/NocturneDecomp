@@ -2,7 +2,7 @@
 // Address: 005b7c30
 // Address Range: [[005b7c30, 005b7cfb]]
 // Convention: __cdecl
-// Signature: void wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
+// Signature: void __cdecl wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
 
 #include "nocturne.h"
 

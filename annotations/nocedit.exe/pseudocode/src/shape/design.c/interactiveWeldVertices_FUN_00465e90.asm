@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_interactiveWeldVertices_FUN_00465e90(int polygon_index, float tolerance)
+; __cdecl void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_index,float tolerance)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index

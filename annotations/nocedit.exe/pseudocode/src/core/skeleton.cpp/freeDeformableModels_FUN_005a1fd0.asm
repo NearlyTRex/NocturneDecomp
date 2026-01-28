@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel * * array)
+; __cdecl void __cdecl core_skeleton_cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel **array)
 ;
 ; Parameters:
 ; CDeformableModel * * Stack[0x4]:4   array

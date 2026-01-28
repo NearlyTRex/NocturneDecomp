@@ -2,7 +2,7 @@
 // Address: 0049e9d0
 // Address Range: [[0049e9d0, 0049f055]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList * str_list, char * dialog_title, int dialog_mode)
+// Signature: int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0 (CStrList *str_list,char *dialog_title,int dialog_mode)
 
 #include "nocturne.h"
 

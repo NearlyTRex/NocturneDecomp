@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_enableTextWrap_FUN_00402810(void)
+; __cdecl void __cdecl engine_2d_c_enableTextWrap_FUN_00402810(void)
 ;
 ;
 ; Called Functions:

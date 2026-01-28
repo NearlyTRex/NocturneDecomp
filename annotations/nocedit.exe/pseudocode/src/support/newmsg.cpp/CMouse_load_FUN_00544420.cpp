@@ -2,7 +2,7 @@
 // Address: 00544420
 // Address Range: [[00544420, 005444ff]]
 // Convention: __cdecl
-// Signature: void support_newmsg.cpp_CMouse_load_FUN_00544420(CMouse * this_ptr)
+// Signature: void __cdecl support_newmsg_cpp_CMouse_load_FUN_00544420(CMouse *this_ptr)
 
 #include "nocturne.h"
 

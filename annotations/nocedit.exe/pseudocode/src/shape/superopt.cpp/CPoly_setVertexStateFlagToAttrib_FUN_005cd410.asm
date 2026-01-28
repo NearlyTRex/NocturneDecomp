@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_superopt.cpp_CPoly_setVertexStateFlagToAttrib_FUN_005cd410(CPoly * this_ptr, uint set_mask, uint attrib_test)
+; __cdecl void __cdecl shape_superopt_cpp_CPoly_setVertexStateFlagToAttrib_FUN_005cd410 (CPoly *this_ptr,uint set_mask,uint attrib_test)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

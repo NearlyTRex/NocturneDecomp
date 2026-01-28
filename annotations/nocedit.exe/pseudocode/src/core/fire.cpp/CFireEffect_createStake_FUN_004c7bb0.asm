@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect * this_ptr, CVector3f * impact_position, CVector3f * orientation_angles, CVector3f * surface_normal, int material_type)
+; __cdecl void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0 (CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles, CVector3f *surface_normal,int material_type)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr

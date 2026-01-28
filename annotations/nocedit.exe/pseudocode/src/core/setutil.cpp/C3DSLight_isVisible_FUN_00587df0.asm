@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0(C3DSLight * this_ptr)
+; __cdecl int __cdecl core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(C3DSLight *this_ptr)
 ;
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
+; __cdecl void __cdecl engine_matrix_c_transformToCache_FUN_0050cd70(int cacheIndex,CVector3i *inputPoint)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   cacheIndex

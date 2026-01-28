@@ -2,7 +2,7 @@
 // Address: 004cda20
 // Address Range: [[004cda20, 004cda7d]]
 // Convention: __cdecl
-// Signature: int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, int bitmap_stride)
+// Signature: int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20 (CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride)
 
 #include "nocturne.h"
 

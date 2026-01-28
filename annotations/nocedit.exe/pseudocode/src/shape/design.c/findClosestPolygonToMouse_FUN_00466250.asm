@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_findClosestPolygonToMouse_FUN_00466250(void)
+; __cdecl int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x104]:4  local_104

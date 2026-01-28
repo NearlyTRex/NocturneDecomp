@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl BOOL crt_tls.c_allocate_tls_index_FUN_0060a27c(void)
+; __cdecl BOOL __cdecl crt_tls_c_allocate_tls_index_FUN_0060a27c(void)
 ;
 ;
 ; XREF[1]:

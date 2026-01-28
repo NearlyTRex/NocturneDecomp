@@ -2,7 +2,7 @@
 // Address: 005ff0f3
 // Address Range: [[005ff0f3, 005ff122]]
 // Convention: __cdecl
-// Signature: double crt_string.c_strtod_FUN_005ff0f3(char * str)
+// Signature: double __cdecl crt_string_c_strtod_FUN_005ff0f3(char *str)
 
 #include "nocturne.h"
 

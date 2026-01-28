@@ -2,7 +2,7 @@
 // Address: 004c96e0
 // Address Range: [[004c96e0, 004c96f4]]
 // Convention: __cdecl
-// Signature: CFireball * core_fire.cpp_CFireball_ctor_FUN_004c96e0(CFireball * this_ptr)
+// Signature: CFireball * __cdecl core_fire_cpp_CFireball_ctor_FUN_004c96e0(CFireball *this_ptr)
 
 #include "nocturne.h"
 

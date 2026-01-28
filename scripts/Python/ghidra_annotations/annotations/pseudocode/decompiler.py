@@ -6,6 +6,73 @@ from ghidra.util.task import ConsoleTaskMonitor
 from ghidra_annotations.util.log import log_info
 
 
+def extract_signature_from_decompiled_code(decompiled_code):
+    """Extract the function signature from decompiled C code.
+
+    The decompiled output contains the actual signature the decompiler used,
+    which may differ from func.getPrototypeString(). This extracts it directly.
+
+    Args:
+        decompiled_code: The decompiled C code string
+
+    Returns:
+        The function signature string (without trailing '{'), or None if not found
+    """
+    if not decompiled_code:
+        return None
+
+    # Find the opening brace that starts the function body
+    # The signature is everything on the line(s) before it
+    brace_idx = decompiled_code.find('\n{')
+    if brace_idx == -1:
+        # Try without newline (compact format)
+        brace_idx = decompiled_code.find('){')
+        if brace_idx != -1:
+            brace_idx += 1  # Include the ')'
+
+    if brace_idx == -1:
+        return None
+
+    # Get everything before the brace
+    before_brace = decompiled_code[:brace_idx].strip()
+
+    # Skip any leading comments (/* WARNING: ... */) and blank lines
+    lines = before_brace.split('\n')
+    sig_lines = []
+    in_comment = False
+
+    for line in reversed(lines):
+        line_stripped = line.strip()
+        if not line_stripped:
+            if sig_lines:
+                break  # Empty line before signature means we're done
+            continue
+
+        # Skip comment lines
+        if line_stripped.endswith('*/'):
+            in_comment = True
+            continue
+        if in_comment:
+            if line_stripped.startswith('/*'):
+                in_comment = False
+            continue
+        if line_stripped.startswith('//'):
+            continue
+
+        # This should be part of the signature
+        sig_lines.insert(0, line_stripped)
+
+    if not sig_lines:
+        return None
+
+    signature = ' '.join(sig_lines)
+
+    # Clean up extra whitespace
+    signature = re.sub(r'\s+', ' ', signature).strip()
+
+    return signature
+
+
 def decompile_function_raw(interface, func, symbol_table, string_map, timeout=60):
     """Decompile a function and return raw code with minimal processing.
 

@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "other",
-        "column": 8,
-        "line": 12,
-        "message": "ambiguating new declaration of 'char* core_script_cpp_FUN_005593f0()'"
+        "column": 48,
+        "line": 24,
+        "message": "void value not ignored as it ought to be"
       },
       {
         "category": "other",
@@ -18,6 +18,12 @@
         "column": 28,
         "line": 35,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 48,
+        "message": "void value not ignored as it ought to be"
       }
     ],
     "success": false,
@@ -27,12 +33,6 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -117,7 +117,7 @@
     ],
     "convention": "unknown",
     "name": "core_script.cpp_FUN_005593f0",
-    "signature": "undefined core_script.cpp_FUN_005593f0()"
+    "signature": "char * core_script_cpp_FUN_005593f0(void)"
   },
   "function_calls": [
     {

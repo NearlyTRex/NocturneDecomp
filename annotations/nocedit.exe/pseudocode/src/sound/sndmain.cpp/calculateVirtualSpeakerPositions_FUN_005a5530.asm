@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)
+; __cdecl void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)
 ;
 ;
 ; XREF[2]:

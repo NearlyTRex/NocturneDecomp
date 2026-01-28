@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_dracbrid.cpp_FUN_00486320()
+; unknown undefined4 core_dracbrid_cpp_FUN_00486320(void)
 ;
 ;
 ; Referenced Globals:

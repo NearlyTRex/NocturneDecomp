@@ -2,7 +2,7 @@
 // Address: 00401d80
 // Address Range: [[00401d80, 00401ea0]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_wrapTextToWidth_FUN_00401d80(char * input_text, int max_width, char * output_buffer)
+// Signature: void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_width,char *output_buffer)
 
 #include "nocturne.h"
 

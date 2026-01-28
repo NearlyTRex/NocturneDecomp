@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_pendulum.cpp_FUN_0054a2f0()
+; unknown int core_pendulum_cpp_FUN_0054a2f0(void)
 ;
 ;
 ; Called Functions:

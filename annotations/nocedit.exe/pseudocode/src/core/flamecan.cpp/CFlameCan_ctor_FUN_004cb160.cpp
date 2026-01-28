@@ -2,7 +2,7 @@
 // Address: 004cb160
 // Address Range: [[004cb160, 004cb1f8]]
 // Convention: __cdecl
-// Signature: CFlameCan * core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160(CFlameCan * this_ptr)
+// Signature: CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004cb160(CFlameCan *this_ptr)
 
 #include "nocturne.h"
 

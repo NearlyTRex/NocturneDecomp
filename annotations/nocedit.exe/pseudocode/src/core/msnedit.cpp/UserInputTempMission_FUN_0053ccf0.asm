@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0()
+; unknown void core_msnedit_cpp_UserInputTempMission_FUN_0053ccf0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x448]:4  local_448

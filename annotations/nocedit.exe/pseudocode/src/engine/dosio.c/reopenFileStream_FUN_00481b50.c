@@ -2,7 +2,7 @@
 // Address: 00481b50
 // Address Range: [[00481b50, 00481c24]]
 // Convention: __cdecl
-// Signature: void engine_dosio.c_reopenFileStream_FUN_00481b50(char * directory_path, char * filename, byte file_mode_flags, ifstream * file_stream)
+// Signature: void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50 (char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
 
 #include "nocturne.h"
 

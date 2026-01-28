@@ -2,7 +2,7 @@
 // Address: 00456840
 // Address Range: [[00456840, 004569ae]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCube * this_ptr)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCube *this_ptr)
 
 #include "nocturne.h"
 

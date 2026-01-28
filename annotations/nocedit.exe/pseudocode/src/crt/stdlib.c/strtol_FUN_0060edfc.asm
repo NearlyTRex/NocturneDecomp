@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl long crt_stdlib.c_strtol_FUN_0060edfc(char * str, char * * endptr, int base)
+; __cdecl long __cdecl crt_stdlib_c_strtol_FUN_0060edfc(char *str,char **endptr,int base)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

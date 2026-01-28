@@ -2,7 +2,7 @@
 // Address: 00556ce0
 // Address Range: [[00556ce0, 00556d05]]
 // Convention: __cdecl
-// Signature: void shape_quantize.cpp_showError_FUN_00556ce0(char * error)
+// Signature: void __cdecl shape_quantize_cpp_showError_FUN_00556ce0(char *error)
 
 #include "nocturne.h"
 

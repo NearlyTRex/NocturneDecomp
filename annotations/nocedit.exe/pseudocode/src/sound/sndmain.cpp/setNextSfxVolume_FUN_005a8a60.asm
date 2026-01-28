@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60(float volume)
+; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(float volume)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   volume

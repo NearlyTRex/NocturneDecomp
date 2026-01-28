@@ -2,7 +2,7 @@
 // Address: 005b1fd0
 // Address Range: [[005b1fd0, 005b26e9]]
 // Convention: __cdecl
-// Signature: uint core_sound.cpp_playSfxInternal_FUN_005b1fd0(void * user_data, char * sound_name, float x, float y, float z, CVector3f * position_tracker, uint flags)
+// Signature: uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0 (void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker, uint flags)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a2060
 // Address Range: [[005a2060, 005a209f]]
 // Convention: __cdecl
-// Signature: void core_slew.cpp_CSlew_init_FUN_005a2060(CSlew * this_ptr)
+// Signature: void __cdecl core_slew_cpp_CSlew_init_FUN_005a2060(CSlew *this_ptr)
 
 #include "nocturne.h"
 

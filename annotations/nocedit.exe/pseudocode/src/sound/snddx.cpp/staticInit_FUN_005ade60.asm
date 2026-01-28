@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_snddx.cpp_staticInit_FUN_005ade60(void)
+; __cdecl void __cdecl sound_snddx_cpp_staticInit_FUN_005ade60(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 005aa2f0
 // Address Range: [[005aa2f0, 005aa33c]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_killSfxByName_FUN_005aa2f0(char * sample_name)
+// Signature: void __cdecl sound_sndmain_cpp_killSfxByName_FUN_005aa2f0(char *sample_name)
 
 #include "nocturne.h"
 

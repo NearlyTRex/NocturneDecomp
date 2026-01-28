@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_manpuz.cpp_freePanels_FUN_0050ba90(SPanel * * objs)
+; __cdecl void __cdecl core_manpuz_cpp_freePanels_FUN_0050ba90(SPanel **objs)
 ;
 ; Parameters:
 ; SPanel * *       Stack[0x4]:4   objs

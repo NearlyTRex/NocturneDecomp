@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __softfp_double double crt_math.c_ceil_FUN_006001b2(double value)
+; __softfp_double double __softfp_double crt_math_c_ceil_FUN_006001b2(double value)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   value

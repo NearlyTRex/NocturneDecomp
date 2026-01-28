@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHealthItem * core_health.cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem * this_ptr, uint d1, uint d2)
+; __cdecl CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr

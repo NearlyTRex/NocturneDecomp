@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_ammobox.cpp_CAmmoBox_getActorType_FUN_00411590(CAmmoBox * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_ammobox_cpp_CAmmoBox_getActorType_FUN_00411590(CAmmoBox *this_ptr)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr

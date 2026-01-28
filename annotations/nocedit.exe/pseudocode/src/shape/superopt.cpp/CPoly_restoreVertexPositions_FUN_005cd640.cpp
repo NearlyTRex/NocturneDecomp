@@ -2,7 +2,7 @@
 // Address: 005cd640
 // Address Range: [[005cd640, 005cd6e9]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640(CPoly * this_ptr)
+// Signature: void __cdecl shape_superopt_cpp_CPoly_restoreVertexPositions_FUN_005cd640(CPoly *this_ptr)
 
 #include "nocturne.h"
 

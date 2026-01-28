@@ -2,7 +2,7 @@
 // Address: 005a2030
 // Address Range: [[005a2030, 005a2044]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030(CBoundingBox3D * * array)
+// Signature: void __cdecl core_skeleton_cpp_freeBoundingBoxes_FUN_005a2030(CBoundingBox3D **array)
 
 #include "nocturne.h"
 

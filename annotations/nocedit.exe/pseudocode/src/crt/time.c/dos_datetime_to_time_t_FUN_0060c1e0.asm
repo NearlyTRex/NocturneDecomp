@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl time_t crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0(WORD dos_date, WORD dos_time)
+; __cdecl time_t __cdecl crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(WORD dos_date,WORD dos_time)
 ;
 ; Parameters:
 ; WORD             Stack[0x4]:2   dos_date

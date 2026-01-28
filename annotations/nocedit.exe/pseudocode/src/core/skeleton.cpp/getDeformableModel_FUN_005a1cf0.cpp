@@ -2,7 +2,7 @@
 // Address: 005a1cf0
 // Address Range: [[005a1cf0, 005a1dbb]]
 // Convention: __cdecl
-// Signature: CDeformableModel * core_skeleton.cpp_getDeformableModel_FUN_005a1cf0(char * model_filename)
+// Signature: CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(char *model_filename)
 
 #include "nocturne.h"
 

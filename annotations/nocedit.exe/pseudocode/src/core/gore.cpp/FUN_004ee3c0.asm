@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBloodPool * core_gore.cpp_FUN_004ee3c0(CBloodPool * this_ptr)
+; __cdecl CBloodPool * __cdecl core_gore_cpp_FUN_004ee3c0(CBloodPool *this_ptr)
 ;
 ; Parameters:
 ; CBloodPool *     Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00471d30
 // Address Range: [[00471d30, 00471e08]]
 // Convention: __cdecl
-// Signature: void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+// Signature: void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 (CMatrix3x3f *this_ptr,CVector3f *euler_angles)
 
 #include "nocturne.h"
 

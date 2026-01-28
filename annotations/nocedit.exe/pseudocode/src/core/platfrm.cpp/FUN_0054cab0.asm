@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_platfrm.cpp_FUN_0054cab0()
+; unknown void core_platfrm_cpp_FUN_0054cab0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74

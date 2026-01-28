@@ -2,7 +2,7 @@
 // Address: 005f5bd0
 // Address Range: [[005f5bd0, 005f610a]]
 // Convention: __cdecl
-// Signature: CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f * matrix_ptr, CVector3f * euler_out)
+// Signature: CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVector3f *euler_out)
 
 #include "nocturne.h"
 

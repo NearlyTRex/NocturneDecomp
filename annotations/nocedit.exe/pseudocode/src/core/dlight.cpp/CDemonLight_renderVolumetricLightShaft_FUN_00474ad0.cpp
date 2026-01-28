@@ -2,7 +2,7 @@
 // Address: 00474ad0
 // Address Range: [[00474ad0, 0047520c]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight * this_ptr)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 

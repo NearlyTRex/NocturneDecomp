@@ -2,7 +2,7 @@
 // Address: 004189b0
 // Address Range: [[004189b0, 00418abc]]
 // Convention: __cdecl
-// Signature: int core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs * this_ptr)
+// Signature: int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
 
 #include "nocturne.h"
 

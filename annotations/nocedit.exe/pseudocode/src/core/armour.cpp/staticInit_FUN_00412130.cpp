@@ -2,7 +2,7 @@
 // Address: 00412130
 // Address Range: [[00412130, 00412153]]
 // Convention: __cdecl
-// Signature: void core_armour.cpp_staticInit_FUN_00412130(void)
+// Signature: void __cdecl core_armour_cpp_staticInit_FUN_00412130(void)
 
 #include "nocturne.h"
 

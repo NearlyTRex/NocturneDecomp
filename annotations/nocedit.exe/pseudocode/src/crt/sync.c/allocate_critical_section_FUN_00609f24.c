@@ -2,7 +2,7 @@
 // Address: 00609f24
 // Address Range: [[00609f24, 00609fc6]]
 // Convention: __cdecl
-// Signature: LPCRITICAL_SECTION crt_sync.c_allocate_critical_section_FUN_00609f24(void)
+// Signature: LPCRITICAL_SECTION __cdecl crt_sync_c_allocate_critical_section_FUN_00609f24(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CStrList_appendRange_FUN_004a2ba0(CStrList * this_ptr, CStrList * source_list)
+; __cdecl void __cdecl shape_edittool_cpp_CStrList_appendRange_FUN_004a2ba0(CStrList *this_ptr,CStrList *source_list)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

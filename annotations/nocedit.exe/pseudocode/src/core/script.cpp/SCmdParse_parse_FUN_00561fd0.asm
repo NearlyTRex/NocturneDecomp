@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_SCmdParse_parse_FUN_00561fd0()
+; unknown undefined4 core_script_cpp_SCmdParse_parse_FUN_00561fd0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x154]:1  local_154

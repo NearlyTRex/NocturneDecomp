@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_io.c_ftruncate_FUN_00600cf0(int file_handle, long new_size)
+; __cdecl int __cdecl crt_io_c_ftruncate_FUN_00600cf0(int file_handle,long new_size)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle

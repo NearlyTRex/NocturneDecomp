@@ -2,7 +2,7 @@
 // Address: 005ebcd0
 // Address Range: [[005ebcd0, 005ebcd4]]
 // Convention: __cdecl
-// Signature: SWaterVertex * core_wateract.cpp_SWaterVertex_ctor_FUN_005ebcd0(SWaterVertex * this_ptr)
+// Signature: SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_005ebcd0(SWaterVertex *this_ptr)
 
 #include "nocturne.h"
 

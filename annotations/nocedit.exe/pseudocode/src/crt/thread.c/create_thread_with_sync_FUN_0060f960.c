@@ -2,7 +2,7 @@
 // Address: 0060f960
 // Address Range: [[0060f960, 0060fa54]]
 // Convention: __cdecl
-// Signature: HANDLE crt_thread.c_create_thread_with_sync_FUN_0060f960(LPVOID thread_param, SIZE_T stack_size_hint, LPVOID sync_param, HANDLE * out_thread_handle)
+// Signature: HANDLE __cdecl crt_thread_c_create_thread_with_sync_FUN_0060f960 (LPVOID thread_param,SIZE_T stack_size_hint,LPVOID sync_param,HANDLE *out_thread_handle)
 
 #include "nocturne.h"
 

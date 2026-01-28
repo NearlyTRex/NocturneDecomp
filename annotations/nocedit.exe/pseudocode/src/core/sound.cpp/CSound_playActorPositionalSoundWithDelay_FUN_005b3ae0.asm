@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, float delay)
+; __cdecl uint __cdecl core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0 (CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position,float delay)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 005d64a0
 // Address Range: [[005d64a0, 005d64f7]]
 // Convention: __cdecl
-// Signature: double shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d * segStart, CVector3d * segEnd, CVector3d * point)
+// Signature: double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0 (CVector3d *segStart,CVector3d *segEnd,CVector3d *point)
 
 #include "nocturne.h"
 

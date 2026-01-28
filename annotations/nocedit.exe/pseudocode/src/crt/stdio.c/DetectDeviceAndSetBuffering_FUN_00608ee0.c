@@ -2,7 +2,7 @@
 // Address: 00608ee0
 // Address Range: [[00608ee0, 00608f12]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)
+// Signature: void __cdecl crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE *file)
 
 #include "nocturne.h"
 

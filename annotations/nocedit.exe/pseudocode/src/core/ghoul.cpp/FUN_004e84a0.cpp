@@ -2,7 +2,7 @@
 // Address: 004e84a0
 // Address Range: [[004e84a0, 004e8502]]
 // Convention: unknown
-// Signature: undefined core_ghoul.cpp_FUN_004e84a0()
+// Signature: CVector3f * core_ghoul_cpp_FUN_004e84a0(void)
 
 #include "nocturne.h"
 

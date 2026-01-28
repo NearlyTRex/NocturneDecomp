@@ -2,7 +2,7 @@
 // Address: 004111c0
 // Address Range: [[004111c0, 004111db]]
 // Convention: __cdecl
-// Signature: int core_ammo.cpp_CAmmo_canPickup_FUN_004111c0(CAmmo * this_ptr, CDemonActor * picker)
+// Signature: int __cdecl core_ammo_cpp_CAmmo_canPickup_FUN_004111c0(CAmmo *this_ptr,CDemonActor *picker)
 
 #include "nocturne.h"
 

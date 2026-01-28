@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_shotgun.cpp_CShotgun_FUN_005887a0()
+; unknown void core_shotgun_cpp_CShotgun_FUN_005887a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x64]:1  local_64

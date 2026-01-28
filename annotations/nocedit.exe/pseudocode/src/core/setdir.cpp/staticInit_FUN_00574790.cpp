@@ -2,7 +2,7 @@
 // Address: 00574790
 // Address Range: [[00574790, 005747cb]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_staticInit_FUN_00574790(void)
+// Signature: void __cdecl core_setdir_cpp_staticInit_FUN_00574790(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_ammobox.cpp_staticInit_FUN_00411530(void)
+; __cdecl void __cdecl core_ammobox_cpp_staticInit_FUN_00411530(void)
 ;
 ;
 ; Referenced Globals:

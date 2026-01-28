@@ -2,7 +2,7 @@
 // Address: 0060fa90
 // Address Range: [[0060fa90, 0060fab7]]
 // Convention: unknown
-// Signature: undefined crt_unknown.c_FUN_0060fa90()
+// Signature: int crt_unknown_c_FUN_0060fa90(void)
 
 #include "nocturne.h"
 

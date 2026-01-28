@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeRainDrops_FUN_004c97d0(CRainDrop * * array)
+; __cdecl void __cdecl core_fire_cpp_freeRainDrops_FUN_004c97d0(CRainDrop **array)
 ;
 ; Parameters:
 ; CRainDrop * *    Stack[0x4]:4   array

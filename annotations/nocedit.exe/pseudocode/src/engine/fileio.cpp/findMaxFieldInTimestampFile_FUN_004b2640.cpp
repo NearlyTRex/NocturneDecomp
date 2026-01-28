@@ -2,7 +2,7 @@
 // Address: 004b2640
 // Address Range: [[004b2640, 004b2760]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640(char * filename)
+// Signature: int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00515190
 // Address Range: [[00515190, 005151b0]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_initializeLogDirectory_FUN_00515190(void)
+// Signature: int __cdecl shape_meshlod_cpp_initializeLogDirectory_FUN_00515190(void)
 
 #include "nocturne.h"
 

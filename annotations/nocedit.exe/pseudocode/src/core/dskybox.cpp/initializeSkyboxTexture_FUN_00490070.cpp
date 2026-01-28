@@ -2,7 +2,7 @@
 // Address: 00490070
 // Address Range: [[00490070, 004900a3]]
 // Convention: __cdecl
-// Signature: SMRGLTextureBasic * core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic * texture)
+// Signature: SMRGLTextureBasic * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic *texture)
 
 #include "nocturne.h"
 

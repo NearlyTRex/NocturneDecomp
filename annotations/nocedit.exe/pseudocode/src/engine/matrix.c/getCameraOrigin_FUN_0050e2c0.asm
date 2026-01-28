@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
+; __cdecl void __cdecl engine_matrix_c_getCameraOrigin_FUN_0050e2c0(CVector3i *output)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

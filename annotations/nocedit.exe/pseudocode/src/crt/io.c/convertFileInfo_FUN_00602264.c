@@ -2,7 +2,7 @@
 // Address: 00602264
 // Address Range: [[00602264, 006022f3]]
 // Convention: __watcallStack
-// Signature: void crt_io.c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data, find_t * dos_info)
+// Signature: void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,find_t *dos_info)
 
 #include "nocturne.h"
 

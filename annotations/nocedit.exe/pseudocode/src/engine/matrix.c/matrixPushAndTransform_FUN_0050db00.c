@@ -2,7 +2,7 @@
 // Address: 0050db00
 // Address Range: [[0050db00, 0050e269]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_matrixPushAndTransform_FUN_0050db00(int rotation_x, int rotation_y, int rotation_z)
+// Signature: void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_0050db00(int rotation_x,int rotation_y,int rotation_z)
 
 #include "nocturne.h"
 

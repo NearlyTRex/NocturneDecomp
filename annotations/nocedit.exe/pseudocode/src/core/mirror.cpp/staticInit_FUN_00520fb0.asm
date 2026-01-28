@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_mirror.cpp_staticInit_FUN_00520fb0(void)
+; __cdecl void __cdecl core_mirror_cpp_staticInit_FUN_00520fb0(void)
 ;
 ;
 ; Referenced Globals:

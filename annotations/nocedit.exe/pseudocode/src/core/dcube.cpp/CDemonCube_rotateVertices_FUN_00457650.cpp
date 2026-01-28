@@ -2,7 +2,7 @@
 // Address: 00457650
 // Address Range: [[00457650, 004578b6]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube * this_ptr, uint rendering_mode)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint rendering_mode)
 
 #include "nocturne.h"
 

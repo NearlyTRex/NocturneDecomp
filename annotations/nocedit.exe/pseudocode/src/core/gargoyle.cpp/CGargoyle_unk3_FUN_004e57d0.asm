@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gargoyle.cpp_CGargoyle_unk3_FUN_004e57d0()
+; unknown void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1c]:1  local_1c

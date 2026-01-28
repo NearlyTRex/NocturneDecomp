@@ -2,7 +2,7 @@
 // Address: 00545760
 // Address Range: [[00545760, 00545a7f]]
 // Convention: __cdecl
-// Signature: void core_particle.cpp_CParticle_process_FUN_00545760(CParticle * this_ptr)
+// Signature: void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_ptr)
 
 #include "nocturne.h"
 

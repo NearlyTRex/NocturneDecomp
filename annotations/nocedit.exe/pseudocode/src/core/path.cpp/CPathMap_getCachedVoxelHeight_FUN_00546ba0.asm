@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
+; __cdecl int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0 (CPathMap *this_ptr,int grid_z,int grid_x,int current_height)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

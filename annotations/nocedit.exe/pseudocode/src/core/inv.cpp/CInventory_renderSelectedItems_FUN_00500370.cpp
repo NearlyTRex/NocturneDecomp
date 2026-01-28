@@ -2,7 +2,7 @@
 // Address: 00500370
 // Address Range: [[00500370, 00500688]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory * this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory *this_ptr)
 
 #include "nocturne.h"
 

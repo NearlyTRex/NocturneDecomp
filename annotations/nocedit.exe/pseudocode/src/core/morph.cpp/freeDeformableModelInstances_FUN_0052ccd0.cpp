@@ -2,7 +2,7 @@
 // Address: 0052ccd0
 // Address Range: [[0052ccd0, 0052cce4]]
 // Convention: __cdecl
-// Signature: void core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance * * array)
+// Signature: void __cdecl core_morph_cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance **array)
 
 #include "nocturne.h"
 

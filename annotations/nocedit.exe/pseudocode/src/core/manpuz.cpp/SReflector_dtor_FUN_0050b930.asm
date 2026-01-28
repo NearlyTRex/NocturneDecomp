@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SReflector * core_manpuz.cpp_SReflector_dtor_FUN_0050b930(SReflector * this_ptr)
+; __cdecl SReflector * __cdecl core_manpuz_cpp_SReflector_dtor_FUN_0050b930(SReflector *this_ptr)
 ;
 ; Parameters:
 ; SReflector *     Stack[0x4]:4   this_ptr

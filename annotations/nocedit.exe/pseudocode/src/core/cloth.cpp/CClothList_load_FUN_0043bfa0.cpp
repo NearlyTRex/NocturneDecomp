@@ -2,7 +2,7 @@
 // Address: 0043bfa0
 // Address Range: [[0043bfa0, 0043c06e]]
 // Convention: __cdecl
-// Signature: void core_cloth.cpp_CClothList_load_FUN_0043bfa0(CClothList * this_ptr)
+// Signature: void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
 
 #include "nocturne.h"
 

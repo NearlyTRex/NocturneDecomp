@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4(FILE * file_handle, int close_flags)
+; __cdecl int __cdecl crt_stdio_c_closeAndDeallocateFile_FUN_00601ee4(FILE *file_handle,int close_flags)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

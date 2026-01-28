@@ -2,7 +2,7 @@
 // Address: 004b5950
 // Address Range: [[004b5950, 004b5a44]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFileManager * this_ptr, CPodAuditRecord * audit_data, char * filename_path)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950 (CFileManager *this_ptr,CPodAuditRecord *audit_data,char *filename_path)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_generateOctant_FUN_00469420(void)
+; __cdecl int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xa0]:4  local_a0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_zombie.cpp_CZombie_FUN_005fc920()
+; unknown int core_zombie_cpp_CZombie_FUN_005fc920(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 00589270
 // Address Range: [[00589270, 005892c8]]
 // Convention: __cdecl
-// Signature: void core_simbox.cpp_FUN_00589270(CSimBox * this_ptr)
+// Signature: void __cdecl core_simbox_cpp_FUN_00589270(CSimBox *this_ptr)
 
 #include "nocturne.h"
 

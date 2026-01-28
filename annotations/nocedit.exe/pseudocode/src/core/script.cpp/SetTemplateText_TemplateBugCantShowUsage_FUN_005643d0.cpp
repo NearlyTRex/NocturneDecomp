@@ -2,7 +2,7 @@
 // Address: 005643d0
 // Address Range: [[005643d0, 0056449a]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0()
+// Signature: void core_script_cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0(void)
 
 #include "nocturne.h"
 

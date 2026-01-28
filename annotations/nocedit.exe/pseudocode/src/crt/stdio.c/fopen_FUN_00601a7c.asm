@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
+; __cdecl FILE * __cdecl crt_stdio_c_fopen_FUN_00601a7c(char *filename,char *mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

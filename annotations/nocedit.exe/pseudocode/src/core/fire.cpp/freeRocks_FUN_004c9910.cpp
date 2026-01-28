@@ -2,7 +2,7 @@
 // Address: 004c9910
 // Address Range: [[004c9910, 004c9924]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_freeRocks_FUN_004c9910(CRock * * array)
+// Signature: void __cdecl core_fire_cpp_freeRocks_FUN_004c9910(CRock **array)
 
 #include "nocturne.h"
 

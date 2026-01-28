@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_005747d0(CZThumb * this_ptr, int count)
+; __cdecl void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_005747d0(CZThumb *this_ptr,int count)
 ;
 ; Parameters:
 ; CZThumb *        Stack[0x4]:4   this_ptr

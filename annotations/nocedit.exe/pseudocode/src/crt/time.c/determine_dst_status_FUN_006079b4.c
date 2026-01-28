@@ -2,7 +2,7 @@
 // Address: 006079b4
 // Address Range: [[006079b4, 00607c87]]
 // Convention: __cdecl
-// Signature: int crt_time.c_determine_dst_status_FUN_006079b4(tm * timeptr)
+// Signature: int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
 
 #include "nocturne.h"
 

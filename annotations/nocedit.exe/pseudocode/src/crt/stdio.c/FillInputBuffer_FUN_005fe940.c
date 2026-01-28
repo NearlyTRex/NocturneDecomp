@@ -2,7 +2,7 @@
 // Address: 005fe940
 // Address Range: [[005fe940, 005fea06]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_FillInputBuffer_FUN_005fe940(FILE * file)
+// Signature: int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(FILE *file)
 
 #include "nocturne.h"
 

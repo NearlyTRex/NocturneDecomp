@@ -2,7 +2,7 @@
 // Address: 004a6fa0
 // Address Range: [[004a6fa0, 004a6fc2]]
 // Convention: __cdecl
-// Signature: CElephantGun * core_elephant.cpp_factoryFunc_FUN_004a6fa0(void)
+// Signature: CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004a6fa0(void)
 
 #include "nocturne.h"
 

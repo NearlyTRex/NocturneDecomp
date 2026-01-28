@@ -2,7 +2,7 @@
 // Address: 005b2770
 // Address Range: [[005b2770, 005b2c93]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_processTrainSounds_FUN_005b2770(void)
+// Signature: void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
 
 #include "nocturne.h"
 

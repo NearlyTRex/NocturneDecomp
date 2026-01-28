@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_mirror.cpp_CMirror_setupCorners_FUN_00521400(CMirror * this_ptr, CVector3f * corner1, CVector3f * corner2, CVector3f * corner3, CVector3f * corner4)
+; __cdecl void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_00521400 (CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3, CVector3f *corner4)
 ;
 ; Parameters:
 ; CMirror *        Stack[0x4]:4   this_ptr

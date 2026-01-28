@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_2d.c_getStringWidth_FUN_004018a0(char * text)
+; __cdecl int __cdecl engine_2d_c_getStringWidth_FUN_004018a0(char *text)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text

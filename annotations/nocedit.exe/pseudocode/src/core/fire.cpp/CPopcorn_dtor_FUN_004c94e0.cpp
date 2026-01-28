@@ -2,7 +2,7 @@
 // Address: 004c94e0
 // Address Range: [[004c94e0, 004c94ef]]
 // Convention: __cdecl
-// Signature: CPopcorn * core_fire.cpp_CPopcorn_dtor_FUN_004c94e0(CPopcorn * this_ptr)
+// Signature: CPopcorn * __cdecl core_fire_cpp_CPopcorn_dtor_FUN_004c94e0(CPopcorn *this_ptr)
 
 #include "nocturne.h"
 

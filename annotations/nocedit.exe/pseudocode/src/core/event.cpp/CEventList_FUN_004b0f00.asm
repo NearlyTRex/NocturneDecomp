@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_event.cpp_CEventList_FUN_004b0f00(CEventList * this_ptr)
+; __cdecl void __cdecl core_event_cpp_CEventList_FUN_004b0f00(CEventList *this_ptr)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

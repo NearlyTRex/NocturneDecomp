@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel * this_ptr, int lod_index, int render_flags)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50 (CDeformableModel *this_ptr,int lod_index,int render_flags)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_cramtex.cpp_setupTextureForPlacement_FUN_004483e0(SCramWorkingEntry * destination, SCramWorkingEntry * source)
+; __cdecl void __cdecl shape_cramtex_cpp_setupTextureForPlacement_FUN_004483e0 (SCramWorkingEntry *destination,SCramWorkingEntry *source)
 ;
 ; Parameters:
 ; SCramWorkingEntry * Stack[0x4]:4   destination

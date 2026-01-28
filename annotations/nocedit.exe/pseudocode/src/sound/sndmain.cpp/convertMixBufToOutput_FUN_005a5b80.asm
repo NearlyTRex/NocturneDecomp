@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80(float * input_samples, void * output_buffer, int bits_per_sample, int num_samples, int output_stride)
+; __cdecl void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80 (float *input_samples,void *output_buffer,int bits_per_sample,int num_samples, int output_stride)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   input_samples

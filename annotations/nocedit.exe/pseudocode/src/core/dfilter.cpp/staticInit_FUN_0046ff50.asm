@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dfilter.cpp_staticInit_FUN_0046ff50(void)
+; __cdecl void __cdecl core_dfilter_cpp_staticInit_FUN_0046ff50(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_wateract.cpp_FUN_005ebcf0()
+; unknown void core_wateract_cpp_FUN_005ebcf0(void)
 ;
 ;
 ; XREF[1]:

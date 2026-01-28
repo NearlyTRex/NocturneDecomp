@@ -2,7 +2,7 @@
 // Address: 005eeaf0
 // Address Range: [[005eeaf0, 005eec56] [005eec84, 005eede0] [005eee7c, 005eeeae]]
 // Convention: unknown
-// Signature: undefined core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0()
+// Signature: void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
 
 #include "nocturne.h"
 

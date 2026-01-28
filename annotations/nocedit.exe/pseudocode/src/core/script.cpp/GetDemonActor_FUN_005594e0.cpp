@@ -2,7 +2,7 @@
 // Address: 005594e0
 // Address Range: [[005594e0, 0055965d]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_GetDemonActor_FUN_005594e0()
+// Signature: CHero * core_script_cpp_GetDemonActor_FUN_005594e0(void)
 
 #include "nocturne.h"
 

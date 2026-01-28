@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpustack_safe float10 crt_math.c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend, float10 divisor)
+; __fpustack_safe float10 __fpustack_safe crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend,float10 divisor)
 ;
 ; Local Variables:
 ; undefined1[10]   Stack[-0x2c]:10  local_2c

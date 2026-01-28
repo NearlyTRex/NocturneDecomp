@@ -2,7 +2,7 @@
 // Address: 005f7af0
 // Address Range: [[005f7af0, 005f7b1e]]
 // Convention: __cdecl
-// Signature: CVector3f * core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0(CQuaternion4f * quat_in, CVector3f * vector_out)
+// Signature: CVector3f * __cdecl core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005f7af0(CQuaternion4f *quat_in,CVector3f *vector_out)
 
 #include "nocturne.h"
 

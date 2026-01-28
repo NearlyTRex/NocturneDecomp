@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_removeChatOut_FUN_0053f4b0()
+; unknown void core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLZWCompress * support_codec.cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress * this_ptr, uint d1, uint d2, uint d3, uint d4)
+; __cdecl CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710 (CLZWCompress *this_ptr,uint d1,uint d2,uint d3,uint d4)
 ;
 ; Parameters:
 ; CLZWCompress *   Stack[0x4]:4   this_ptr

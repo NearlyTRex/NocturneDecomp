@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_math.c_print_error_message_FUN_0060e298(int errorType, char * errorData)
+; __cdecl void __cdecl crt_math_c_print_error_message_FUN_0060e298(int errorType,char *errorData)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   errorType

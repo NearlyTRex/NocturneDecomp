@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gargoyle.cpp_CGargoyle_FUN_004e45e0()
+; unknown void core_gargoyle_cpp_CGargoyle_FUN_004e45e0(void)
 ;
 ;
 ; Referenced Globals:

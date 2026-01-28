@@ -2,7 +2,7 @@
 // Address: 0040a0f0
 // Address Range: [[0040a0f0, 0040a202]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor * this_ptr)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 

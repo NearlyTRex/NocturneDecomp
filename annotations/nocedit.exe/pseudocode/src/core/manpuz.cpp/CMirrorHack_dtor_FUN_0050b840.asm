@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMirrorHack * core_manpuz.cpp_CMirrorHack_dtor_FUN_0050b840(CMirrorHack * this_ptr, uint d1, uint d2)
+; __cdecl CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_dtor_FUN_0050b840(CMirrorHack *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 0048b890
 // Address Range: [[0048b890, 0048b961]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_renderUltraPremiumDirect_FUN_0048b890(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderUltraPremiumDirect_FUN_0048b890 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 

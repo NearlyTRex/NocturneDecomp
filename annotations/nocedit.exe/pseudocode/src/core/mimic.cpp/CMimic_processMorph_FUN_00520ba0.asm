@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mimic.cpp_CMimic_processMorph_FUN_00520ba0()
+; unknown void core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

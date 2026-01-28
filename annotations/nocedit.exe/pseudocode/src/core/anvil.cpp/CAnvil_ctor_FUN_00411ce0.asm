@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAnvil * core_anvil.cpp_CAnvil_ctor_FUN_00411ce0(CAnvil * this_ptr)
+; __cdecl CAnvil * __cdecl core_anvil_cpp_CAnvil_ctor_FUN_00411ce0(CAnvil *this_ptr)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr

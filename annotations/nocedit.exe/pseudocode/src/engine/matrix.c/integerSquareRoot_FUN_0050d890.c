@@ -2,7 +2,7 @@
 // Address: 0050d890
 // Address Range: [[0050d890, 0050d960]]
 // Convention: __cdecl
-// Signature: int engine_matrix.c_integerSquareRoot_FUN_0050d890(int value)
+// Signature: int __cdecl engine_matrix_c_integerSquareRoot_FUN_0050d890(int value)
 
 #include "nocturne.h"
 

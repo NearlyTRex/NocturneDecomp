@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878()
+; unknown void crt_unknown_c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878(void)
 ;
 ;
 ; XREF[1]:

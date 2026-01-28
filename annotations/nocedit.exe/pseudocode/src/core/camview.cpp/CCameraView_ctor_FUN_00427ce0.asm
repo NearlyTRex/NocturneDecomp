@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCameraView * core_camview.cpp_CCameraView_ctor_FUN_00427ce0(CCameraView * this_ptr)
+; __cdecl CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_00427ce0(CCameraView *this_ptr)
 ;
 ; Parameters:
 ; CCameraView *    Stack[0x4]:4   this_ptr

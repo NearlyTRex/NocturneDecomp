@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_manpuz.cpp_CMansionPuzzleCircle_writeDependencies_FUN_0050b7d0(CMansionPuzzleCircle * this_ptr, FILE * file_handle)
+; __cdecl void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_writeDependencies_FUN_0050b7d0 (CMansionPuzzleCircle *this_ptr,FILE *file_handle)
 ;
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr

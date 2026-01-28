@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_dest.cpp_FUN_0046f8f0()
+; unknown CDemonActorType * core_dest_cpp_FUN_0046f8f0(void)
 ;
 ;
 ; Referenced Globals:

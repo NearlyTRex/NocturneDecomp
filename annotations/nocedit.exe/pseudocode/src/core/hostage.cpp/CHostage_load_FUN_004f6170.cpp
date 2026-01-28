@@ -2,7 +2,7 @@
 // Address: 004f6170
 // Address Range: [[004f6170, 004f638c]]
 // Convention: unknown
-// Signature: undefined core_hostage.cpp_CHostage_load_FUN_004f6170()
+// Signature: void core_hostage_cpp_CHostage_load_FUN_004f6170(void)
 
 #include "nocturne.h"
 

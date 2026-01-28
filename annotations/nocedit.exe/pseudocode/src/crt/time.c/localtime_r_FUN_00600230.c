@@ -2,7 +2,7 @@
 // Address: 00600230
 // Address Range: [[00600230, 00600285]]
 // Convention: __cdecl
-// Signature: tm * crt_time.c_localtime_r_FUN_00600230(time_t * timer, tm * result)
+// Signature: tm * __cdecl crt_time_c_localtime_r_FUN_00600230(time_t *timer,tm *result)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a88e0
 // Address Range: [[005a88e0, 005a8939]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0(double pos_x, double pos_y, double pos_z)
+// Signature: void __cdecl sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(double pos_x,double pos_y,double pos_z)
 
 #include "nocturne.h"
 

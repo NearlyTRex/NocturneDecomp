@@ -2,7 +2,7 @@
 // Address: 0046e4d0
 // Address Range: [[0046e4d0, 0046e6a4]]
 // Convention: unknown
-// Signature: undefined shape_design.c_triangulateDSE_FUN_0046e4d0()
+// Signature: void shape_design_c_triangulateDSE_FUN_0046e4d0(void)
 
 #include "nocturne.h"
 

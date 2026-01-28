@@ -2,7 +2,7 @@
 // Address: 004cbcb0
 // Address Range: [[004cbcb0, 004cbcdf]]
 // Convention: __cdecl
-// Signature: void core_flamegun.cpp_staticInit_FUN_004cbcb0(void)
+// Signature: void __cdecl core_flamegun_cpp_staticInit_FUN_004cbcb0(void)
 
 #include "nocturne.h"
 

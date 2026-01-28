@@ -2,7 +2,7 @@
 // Address: 0046eba0
 // Address Range: [[0046eba0, 0046ecf1]]
 // Convention: __cdecl
-// Signature: void shape_design.c_detachFaces_FUN_0046eba0(void)
+// Signature: void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
 
 #include "nocturne.h"
 

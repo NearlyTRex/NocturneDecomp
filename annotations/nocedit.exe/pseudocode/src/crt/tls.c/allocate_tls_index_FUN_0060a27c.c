@@ -2,7 +2,7 @@
 // Address: 0060a27c
 // Address Range: [[0060a27c, 0060a2d5]]
 // Convention: __cdecl
-// Signature: BOOL crt_tls.c_allocate_tls_index_FUN_0060a27c(void)
+// Signature: BOOL __cdecl crt_tls_c_allocate_tls_index_FUN_0060a27c(void)
 
 #include "nocturne.h"
 

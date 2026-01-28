@@ -2,7 +2,7 @@
 // Address: 0058f040
 // Address Range: [[0058f040, 0058f119]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel * this_ptr, char * filename)
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,char *filename)
 
 #include "nocturne.h"
 

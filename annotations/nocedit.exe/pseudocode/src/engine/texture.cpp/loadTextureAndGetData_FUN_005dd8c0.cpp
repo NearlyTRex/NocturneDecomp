@@ -2,7 +2,7 @@
 // Address: 005dd8c0
 // Address Range: [[005dd8c0, 005dd8d4]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0(SMRGLTextureBasic * texture_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_005dd8c0(SMRGLTextureBasic *texture_info)
 
 #include "nocturne.h"
 

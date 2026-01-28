@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_filmreel.cpp_FUN_004be910()
+; unknown float * core_filmreel_cpp_FUN_004be910(void)
 ;
 ;
 ; Called Functions:

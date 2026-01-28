@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_setFogColorFromPalette_FUN_005b7b01(int palette_index)
+; __cdecl int __cdecl wincore_windll_cpp_setFogColorFromPalette_FUN_005b7b01(int palette_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   palette_index

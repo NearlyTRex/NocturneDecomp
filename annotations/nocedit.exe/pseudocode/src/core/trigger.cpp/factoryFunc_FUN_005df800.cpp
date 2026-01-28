@@ -2,7 +2,7 @@
 // Address: 005df800
 // Address Range: [[005df800, 005df822]]
 // Convention: __cdecl
-// Signature: CTrigger * core_trigger.cpp_factoryFunc_FUN_005df800(void)
+// Signature: CTrigger * __cdecl core_trigger_cpp_factoryFunc_FUN_005df800(void)
 
 #include "nocturne.h"
 

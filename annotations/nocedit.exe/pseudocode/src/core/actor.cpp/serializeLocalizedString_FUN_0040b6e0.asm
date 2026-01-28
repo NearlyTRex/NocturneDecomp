@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeLocalizedString_FUN_0040b6e0(char * * string_buffer, char * localization_key)
+; __cdecl void __cdecl core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(char **string_buffer,char *localization_key)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   string_buffer

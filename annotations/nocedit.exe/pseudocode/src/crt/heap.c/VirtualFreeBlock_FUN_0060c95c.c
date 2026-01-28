@@ -2,7 +2,7 @@
 // Address: 0060c95c
 // Address Range: [[0060c95c, 0060c9ba]]
 // Convention: __cdecl
-// Signature: int crt_heap.c_VirtualFreeBlock_FUN_0060c95c(HeapBlock * block)
+// Signature: int __cdecl crt_heap_c_VirtualFreeBlock_FUN_0060c95c(HeapBlock *block)
 
 #include "nocturne.h"
 

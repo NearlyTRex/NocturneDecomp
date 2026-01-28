@@ -2,7 +2,7 @@
 // Address: 005a8be0
 // Address Range: [[005a8be0, 005a8c0d]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+// Signature: void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time,int trigger_id)
 
 #include "nocturne.h"
 

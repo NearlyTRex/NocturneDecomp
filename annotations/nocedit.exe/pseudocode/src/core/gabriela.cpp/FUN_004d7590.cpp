@@ -2,7 +2,7 @@
 // Address: 004d7590
 // Address Range: [[004d7590, 004d75a3]]
 // Convention: unknown
-// Signature: undefined core_gabriela.cpp_FUN_004d7590()
+// Signature: bool core_gabriela_cpp_FUN_004d7590(void)
 
 #include "nocturne.h"
 

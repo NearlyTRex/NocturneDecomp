@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDynamite * core_dynamite.cpp_factoryFunc_FUN_0049cd80(void)
+; __cdecl CDynamite * __cdecl core_dynamite_cpp_factoryFunc_FUN_0049cd80(void)
 ;
 ;
 ; XREF[1]:

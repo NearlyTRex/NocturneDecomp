@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0()
+; unknown void core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0(void)
 ;
 ;
 ; XREF[4]:

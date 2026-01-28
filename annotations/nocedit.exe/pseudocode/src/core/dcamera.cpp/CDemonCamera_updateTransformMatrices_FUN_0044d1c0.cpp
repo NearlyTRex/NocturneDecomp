@@ -2,7 +2,7 @@
 // Address: 0044d1c0
 // Address Range: [[0044d1c0, 0044d295]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

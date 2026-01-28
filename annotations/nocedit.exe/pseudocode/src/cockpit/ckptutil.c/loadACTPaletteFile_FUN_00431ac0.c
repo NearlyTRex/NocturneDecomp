@@ -2,7 +2,7 @@
 // Address: 00431ac0
 // Address Range: [[00431ac0, 00431bff]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0(char * base_filename, char * output_buffer)
+// Signature: void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900()
+; unknown undefined4 core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60

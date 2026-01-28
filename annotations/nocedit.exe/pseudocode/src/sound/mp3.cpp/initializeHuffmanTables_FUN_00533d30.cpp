@@ -2,7 +2,7 @@
 // Address: 00533d30
 // Address Range: [[00533d30, 00533f7f]]
 // Convention: __cdecl
-// Signature: int sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30(void)
+// Signature: int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void)
 
 #include "nocturne.h"
 

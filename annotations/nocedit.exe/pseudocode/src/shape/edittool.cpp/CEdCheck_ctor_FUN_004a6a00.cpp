@@ -2,7 +2,7 @@
 // Address: 004a6a00
 // Address Range: [[004a6a00, 004a6a3d]]
 // Convention: __cdecl
-// Signature: CEdCheck * shape_edittool.cpp_CEdCheck_ctor_FUN_004a6a00(CEdCheck * this_ptr)
+// Signature: CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_ctor_FUN_004a6a00(CEdCheck *this_ptr)
 
 #include "nocturne.h"
 

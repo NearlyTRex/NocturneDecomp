@@ -2,7 +2,7 @@
 // Address: 00402820
 // Address Range: [[00402820, 0040282a]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_disableTextWrap_FUN_00402820(void)
+// Signature: void __cdecl engine_2d_c_disableTextWrap_FUN_00402820(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inv.cpp_CInventory_selectWeapon_FUN_004feb10(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+; __cdecl void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10 (CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

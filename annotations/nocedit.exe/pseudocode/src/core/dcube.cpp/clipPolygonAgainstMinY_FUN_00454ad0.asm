@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0(float min_y_plane)
+; __cdecl void __cdecl core_dcube_cpp_clipPolygonAgainstMinY_FUN_00454ad0(float min_y_plane)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   min_y_plane

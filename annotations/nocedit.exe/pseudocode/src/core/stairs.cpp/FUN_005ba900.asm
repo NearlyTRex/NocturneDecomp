@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stairs.cpp_FUN_005ba900()
+; unknown void core_stairs_cpp_FUN_005ba900(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

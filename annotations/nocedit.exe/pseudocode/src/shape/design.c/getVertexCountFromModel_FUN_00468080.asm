@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended * model_ptr)
+; __cdecl int __cdecl shape_design_c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended *model_ptr)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   model_ptr

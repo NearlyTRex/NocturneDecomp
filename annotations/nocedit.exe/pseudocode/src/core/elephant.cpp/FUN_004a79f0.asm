@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_elephant.cpp_FUN_004a79f0()
+; unknown void core_elephant_cpp_FUN_004a79f0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x44]:1  local_44

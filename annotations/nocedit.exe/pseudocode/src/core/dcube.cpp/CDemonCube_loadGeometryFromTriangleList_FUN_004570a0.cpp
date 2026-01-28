@@ -2,7 +2,7 @@
 // Address: 004570a0
 // Address Range: [[004570a0, 00457427]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube * this_ptr, void * triangle_data, int triangle_count, CVector3f * min_bounds, CVector3f * max_bounds, uchar * ground_types, uint * voxel_data)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 (CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds, CVector3f *max_bounds,uchar *ground_types,uint *voxel_data)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0()
+; unknown void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8c]:4  local_8c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670(CWavOutDevice * this_ptr, double x_front, double y_front, double z_front, double x_top, double y_top, double z_top)
+; __cdecl void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670 (CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top, double y_top,double z_top)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr

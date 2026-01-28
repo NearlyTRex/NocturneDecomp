@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCodec * support_codec.cpp_CCodec_ctor_FUN_0043e9a0(CCodec * this_ptr)
+; __cdecl CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_0043e9a0(CCodec *this_ptr)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr

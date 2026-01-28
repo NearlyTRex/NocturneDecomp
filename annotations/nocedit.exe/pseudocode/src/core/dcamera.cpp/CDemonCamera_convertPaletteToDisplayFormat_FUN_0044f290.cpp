@@ -2,7 +2,7 @@
 // Address: 0044f290
 // Address Range: [[0044f290, 0044f303]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044f290(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044f290(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

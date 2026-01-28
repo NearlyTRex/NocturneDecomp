@@ -2,7 +2,7 @@
 // Address: 005519c0
 // Address Range: [[005519c0, 00551af2]]
 // Convention: __cdecl
-// Signature: void core_podmain.cpp_CDemonPod_load_FUN_005519c0(CDemonPod * this_ptr)
+// Signature: void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
 
 #include "nocturne.h"
 

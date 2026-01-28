@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SCollisionReturnInfo * core_setcolid.cpp_SCollisionReturnInfo_dtor_FUN_00574760(SCollisionReturnInfo * this_ptr)
+; __cdecl SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00574760(SCollisionReturnInfo *this_ptr)
 ;
 ; Parameters:
 ; SCollisionReturnInfo * Stack[0x4]:4   this_ptr

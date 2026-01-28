@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_startup.c_initialize_runtime_FUN_0060245c(HMODULE hModule, void * pThreadParam, int unused)
+; __cdecl void __cdecl crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam,int unused)
 ;
 ; Parameters:
 ; HMODULE          Stack[0x14]:4   hModule

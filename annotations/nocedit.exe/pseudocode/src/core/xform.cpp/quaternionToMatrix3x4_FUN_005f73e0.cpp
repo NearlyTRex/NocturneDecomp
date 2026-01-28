@@ -2,7 +2,7 @@
 // Address: 005f73e0
 // Address Range: [[005f73e0, 005f7418]]
 // Convention: __stack_esi
-// Signature: CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out)
+// Signature: CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 

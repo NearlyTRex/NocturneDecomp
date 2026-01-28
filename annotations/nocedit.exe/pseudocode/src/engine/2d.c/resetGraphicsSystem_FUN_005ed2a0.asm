@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_resetGraphicsSystem_FUN_005ed2a0(void)
+; __cdecl void __cdecl engine_2d_c_resetGraphicsSystem_FUN_005ed2a0(void)
 ;
 ;
 ; XREF[2]:

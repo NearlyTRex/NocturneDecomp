@@ -2,7 +2,7 @@
 // Address: 00578420
 // Address Range: [[00578420, 00578624]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
+// Signature: void core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
 
 #include "nocturne.h"
 

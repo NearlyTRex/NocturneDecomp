@@ -2,7 +2,7 @@
 // Address: 00457ed0
 // Address Range: [[00457ed0, 00457efd]]
 // Convention: __cdecl
-// Signature: STreeNode * shape_design.c_allocateSpatialTreeNode_FUN_00457ed0(void)
+// Signature: STreeNode * __cdecl shape_design_c_allocateSpatialTreeNode_FUN_00457ed0(void)
 
 #include "nocturne.h"
 

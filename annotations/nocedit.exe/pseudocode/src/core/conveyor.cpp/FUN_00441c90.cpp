@@ -2,7 +2,7 @@
 // Address: 00441c90
 // Address Range: [[00441c90, 00441c95]]
 // Convention: unknown
-// Signature: undefined core_conveyor.cpp_FUN_00441c90()
+// Signature: CDemonActorType * core_conveyor_cpp_FUN_00441c90(void)
 
 #include "nocturne.h"
 

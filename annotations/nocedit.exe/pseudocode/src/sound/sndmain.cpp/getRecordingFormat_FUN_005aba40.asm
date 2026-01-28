@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_getRecordingFormat_FUN_005aba40(int * out_bits_per_sample, int * out_channels, int * out_sample_rate, int * out_signed)
+; __cdecl void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_005aba40 (int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   out_bits_per_sample

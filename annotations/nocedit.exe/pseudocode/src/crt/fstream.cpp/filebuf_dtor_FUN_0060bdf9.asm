@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack filebuf * crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9(filebuf * this_ptr, uint d1, uint d2, uint d3)
+; __watcallStack filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

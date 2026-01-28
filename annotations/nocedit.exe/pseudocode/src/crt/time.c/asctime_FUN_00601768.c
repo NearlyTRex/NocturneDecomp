@@ -2,7 +2,7 @@
 // Address: 00601768
 // Address Range: [[00601768, 0060177f]]
 // Convention: __watcallStack
-// Signature: char * crt_time.c_asctime_FUN_00601768(tm * timeptr)
+// Signature: char * __watcallStack crt_time_c_asctime_FUN_00601768(tm *timeptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00496b90
 // Address Range: [[00496b90, 00496c51]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleCollision * out_data, float start_x, float start_z, float dir_x, float dir_z, float radius, void * user_data1, void * user_data2)
+// Signature: void __cdecl core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90 (SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z, float radius,void *user_data1,void *user_data2)
 
 #include "nocturne.h"
 

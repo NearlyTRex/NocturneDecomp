@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+; __cdecl void __cdecl wincore_windll_cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   clear_lock_flag

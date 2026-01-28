@@ -2,7 +2,7 @@
 // Address: 00515160
 // Address Range: [[00515160, 00515187]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_skipLines_FUN_00515160(FILE * file_handle, int line_count)
+// Signature: void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(FILE *file_handle,int line_count)
 
 #include "nocturne.h"
 

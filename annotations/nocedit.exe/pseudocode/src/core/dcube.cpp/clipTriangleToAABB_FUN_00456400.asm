@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint core_dcube.cpp_clipTriangleToAABB_FUN_00456400(CVector3f * * triangle_vertices, CVector3f * aabb_min, CVector3f * aabb_max)
+; __cdecl uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00456400 (CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   triangle_vertices

@@ -2,7 +2,7 @@
 // Address: 00552210
 // Address Range: [[00552210, 005522fb]]
 // Convention: __cdecl
-// Signature: int engine_prim.c_getTriangleWindingFromIndices_FUN_00552210(STriangleIndices * triangle)
+// Signature: int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(STriangleIndices *triangle)
 
 #include "nocturne.h"
 

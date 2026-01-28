@@ -2,7 +2,7 @@
 // Address: 00552150
 // Address Range: [[00552150, 00552200]]
 // Convention: __cdecl
-// Signature: int engine_prim.c_calculateTriangleWindingOrder_FUN_00552150(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
+// Signature: int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00552150 (SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2)
 
 #include "nocturne.h"
 

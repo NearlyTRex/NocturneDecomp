@@ -2,7 +2,7 @@
 // Address: 00528d20
 // Address Range: [[00528d20, 005293a1]]
 // Convention: __cdecl
-// Signature: void core_moloch.cpp_CMoloch_process_FUN_00528d20(CMoloch * this_ptr, float delta_time)
+// Signature: void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

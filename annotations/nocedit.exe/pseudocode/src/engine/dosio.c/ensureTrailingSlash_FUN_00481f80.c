@@ -2,7 +2,7 @@
 // Address: 00481f80
 // Address Range: [[00481f80, 00482030]]
 // Convention: __cdecl
-// Signature: void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
+// Signature: void __cdecl engine_dosio_c_ensureTrailingSlash_FUN_00481f80(char *input_path,char *drive,char *output_path)
 
 #include "nocturne.h"
 

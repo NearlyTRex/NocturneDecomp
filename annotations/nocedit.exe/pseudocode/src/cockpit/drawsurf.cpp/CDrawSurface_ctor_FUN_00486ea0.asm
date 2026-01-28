@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, int height, CDrawSurface * parent_surface)
+; __cdecl CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0 (CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

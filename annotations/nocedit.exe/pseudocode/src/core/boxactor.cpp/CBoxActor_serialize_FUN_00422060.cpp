@@ -2,7 +2,7 @@
 // Address: 00422060
 // Address Range: [[00422060, 0042232f]]
 // Convention: __cdecl
-// Signature: void core_boxactor.cpp_CBoxActor_serialize_FUN_00422060(CBoxActor * this_ptr)
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_serialize_FUN_00422060(CBoxActor *this_ptr)
 
 #include "nocturne.h"
 

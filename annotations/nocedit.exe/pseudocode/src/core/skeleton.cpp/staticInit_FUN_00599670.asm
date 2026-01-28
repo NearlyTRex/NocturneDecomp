@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_staticInit_FUN_00599670(void)
+; __cdecl void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void)
 ;
 ;
 ; Referenced Globals:

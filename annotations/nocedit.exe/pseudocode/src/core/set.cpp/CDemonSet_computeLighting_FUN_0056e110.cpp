@@ -2,7 +2,7 @@
 // Address: 0056e110
 // Address Range: [[0056e110, 0056e173]]
 // Convention: __cdecl
-// Signature: int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, int vertex_count)
+// Signature: int __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0056e110 (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal, int start_vertex_index,int vertex_count)
 
 #include "nocturne.h"
 

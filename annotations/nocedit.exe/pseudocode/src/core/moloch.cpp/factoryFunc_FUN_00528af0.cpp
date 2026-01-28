@@ -2,7 +2,7 @@
 // Address: 00528af0
 // Address Range: [[00528af0, 00528b12]]
 // Convention: __cdecl
-// Signature: CMoloch * core_moloch.cpp_factoryFunc_FUN_00528af0(void)
+// Signature: CMoloch * __cdecl core_moloch_cpp_factoryFunc_FUN_00528af0(void)
 
 #include "nocturne.h"
 

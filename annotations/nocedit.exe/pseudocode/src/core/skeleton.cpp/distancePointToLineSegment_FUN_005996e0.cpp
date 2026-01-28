@@ -2,7 +2,7 @@
 // Address: 005996e0
 // Address Range: [[005996e0, 0059987d]]
 // Convention: __cdecl
-// Signature: float core_skeleton.cpp_distancePointToLineSegment_FUN_005996e0(CVector3f * line_start, CVector3f * line_end, CVector3f * test_point)
+// Signature: float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005996e0 (CVector3f *line_start,CVector3f *line_end,CVector3f *test_point)
 
 #include "nocturne.h"
 

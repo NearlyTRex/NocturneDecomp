@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40(float max_x_plane)
+; __cdecl void __cdecl core_dcube_cpp_clipPolygonAgainstMaxX_FUN_00454c40(float max_x_plane)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   max_x_plane

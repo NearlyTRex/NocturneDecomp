@@ -2,7 +2,7 @@
 // Address: 004a0ea0
 // Address Range: [[004a0ea0, 004a0f79]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditorTools * this_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditorTools *this_ptr)
 
 #include "nocturne.h"
 

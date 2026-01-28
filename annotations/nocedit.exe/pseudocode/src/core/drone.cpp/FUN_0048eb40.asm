@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_drone.cpp_FUN_0048eb40()
+; unknown CDemonActorType * core_drone_cpp_FUN_0048eb40(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_filmreel.cpp_CFilmReel_getActorType_FUN_004be6a0(CFilmReel * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_004be6a0(CFilmReel *this_ptr)
 ;
 ; Parameters:
 ; CFilmReel *      Stack[0x4]:4   this_ptr

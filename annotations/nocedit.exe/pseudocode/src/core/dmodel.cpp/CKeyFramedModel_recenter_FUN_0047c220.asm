@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_CKeyFramedModel_recenter_FUN_0047c220(CKeyFramedModel * this_ptr, int frame_index)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_recenter_FUN_0047c220(CKeyFramedModel *this_ptr,int frame_index)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

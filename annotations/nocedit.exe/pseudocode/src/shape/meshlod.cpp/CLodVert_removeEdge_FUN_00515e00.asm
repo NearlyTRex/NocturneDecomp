@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00(CLodVert * this_ptr, int edge_index)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodVert_removeEdge_FUN_00515e00(CLodVert *this_ptr,int edge_index)
 ;
 ; Parameters:
 ; CLodVert *       Stack[0x4]:4   this_ptr

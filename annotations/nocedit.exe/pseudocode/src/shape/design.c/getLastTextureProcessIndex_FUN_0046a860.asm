@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_getLastTextureProcessIndex_FUN_0046a860(void)
+; __cdecl int __cdecl shape_design_c_getLastTextureProcessIndex_FUN_0046a860(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

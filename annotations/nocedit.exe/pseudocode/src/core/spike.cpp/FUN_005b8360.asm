@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_spike.cpp_FUN_005b8360()
+; unknown void core_spike_cpp_FUN_005b8360(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c

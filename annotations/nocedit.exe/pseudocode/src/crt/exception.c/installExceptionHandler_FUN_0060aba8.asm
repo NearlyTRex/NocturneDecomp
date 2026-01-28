@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_exception.c_installExceptionHandler_FUN_0060aba8(ExceptionFrame * pExceptionFrame)
+; __cdecl void __cdecl crt_exception_c_installExceptionHandler_FUN_0060aba8(ExceptionFrame *pExceptionFrame)
 ;
 ;
 ; XREF[2]:

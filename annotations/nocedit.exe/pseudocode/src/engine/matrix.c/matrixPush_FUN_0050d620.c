@@ -2,7 +2,7 @@
 // Address: 0050d620
 // Address Range: [[0050d620, 0050d71e]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_matrixPush_FUN_0050d620(void)
+// Signature: void __cdecl engine_matrix_c_matrixPush_FUN_0050d620(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0060d677
 // Address Range: [[0060d677, 0060d6a7]]
 // Convention: __watcallStack
-// Signature: int crt_iostream.cpp_doallocate_FUN_0060d677(streambuf * this_ptr)
+// Signature: int __watcallStack crt_iostream_cpp_doallocate_FUN_0060d677(streambuf *this_ptr)
 
 #include "nocturne.h"
 

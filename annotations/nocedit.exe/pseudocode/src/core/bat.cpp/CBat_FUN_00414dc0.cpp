@@ -2,7 +2,7 @@
 // Address: 00414dc0
 // Address Range: [[00414dc0, 00414ebe]]
 // Convention: __cdecl
-// Signature: void core_bat.cpp_CBat_FUN_00414dc0(CBat * this_ptr)
+// Signature: void __cdecl core_bat_cpp_CBat_FUN_00414dc0(CBat *this_ptr)
 
 #include "nocturne.h"
 

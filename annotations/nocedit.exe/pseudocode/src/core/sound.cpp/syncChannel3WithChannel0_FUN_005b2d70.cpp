@@ -2,7 +2,7 @@
 // Address: 005b2d70
 // Address Range: [[005b2d70, 005b2dc7]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70(void)
+// Signature: void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_005b2d70(void)
 
 #include "nocturne.h"
 

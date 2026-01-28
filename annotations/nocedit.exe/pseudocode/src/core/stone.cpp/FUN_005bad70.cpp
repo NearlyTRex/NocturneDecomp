@@ -2,7 +2,7 @@
 // Address: 005bad70
 // Address Range: [[005bad70, 005badc8]]
 // Convention: unknown
-// Signature: undefined core_stone.cpp_FUN_005bad70()
+// Signature: undefined4 core_stone_cpp_FUN_005bad70(void)
 
 #include "nocturne.h"
 

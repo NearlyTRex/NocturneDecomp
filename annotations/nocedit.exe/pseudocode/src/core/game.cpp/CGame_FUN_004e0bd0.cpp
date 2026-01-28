@@ -2,7 +2,7 @@
 // Address: 004e0bd0
 // Address Range: [[004e0bd0, 004e0bea]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CGame_FUN_004e0bd0(CGame * this_ptr)
+// Signature: void __cdecl core_game_cpp_CGame_FUN_004e0bd0(CGame *this_ptr)
 
 #include "nocturne.h"
 

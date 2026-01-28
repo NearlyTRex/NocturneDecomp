@@ -2,7 +2,7 @@
 // Address: 004e87e0
 // Address Range: [[004e87e0, 004e896d] [004e89a9, 004e8ba1]]
 // Convention: unknown
-// Signature: undefined core_ghoul.cpp_FUN_004e87e0()
+// Signature: void core_ghoul_cpp_FUN_004e87e0(void)
 
 #include "nocturne.h"
 

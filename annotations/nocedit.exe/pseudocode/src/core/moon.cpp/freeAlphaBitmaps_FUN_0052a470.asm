@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_moon.cpp_freeAlphaBitmaps_FUN_0052a470(CAlphaBitmap * * array)
+; __cdecl void __cdecl core_moon_cpp_freeAlphaBitmaps_FUN_0052a470(CAlphaBitmap **array)
 ;
 ; Parameters:
 ; CAlphaBitmap * * Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 005cbe20
 // Address Range: [[005cbe20, 005cbeb2]]
 // Convention: unknown
-// Signature: undefined shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20()
+// Signature: void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
 
 #include "nocturne.h"
 

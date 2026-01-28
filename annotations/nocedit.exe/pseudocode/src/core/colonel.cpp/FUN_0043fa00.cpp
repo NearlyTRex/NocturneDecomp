@@ -2,7 +2,7 @@
 // Address: 0043fa00
 // Address Range: [[0043fa00, 0043ff16]]
 // Convention: unknown
-// Signature: undefined core_colonel.cpp_FUN_0043fa00()
+// Signature: void core_colonel_cpp_FUN_0043fa00(void)
 
 #include "nocturne.h"
 

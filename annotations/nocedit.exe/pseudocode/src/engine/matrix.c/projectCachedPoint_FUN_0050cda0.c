@@ -2,7 +2,7 @@
 // Address: 0050cda0
 // Address Range: [[0050cda0, 0050cdbe]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_projectCachedPoint_FUN_0050cda0(int cacheIndex)
+// Signature: void __cdecl engine_matrix_c_projectCachedPoint_FUN_0050cda0(int cacheIndex)
 
 #include "nocturne.h"
 

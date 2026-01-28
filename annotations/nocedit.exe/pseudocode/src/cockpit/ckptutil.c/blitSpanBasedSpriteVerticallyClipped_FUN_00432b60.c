@@ -2,7 +2,7 @@
 // Address: 00432b60
 // Address Range: [[00432b60, 00432cf6]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60(void * sprite_data, void * span_data)
+// Signature: void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60 (void *sprite_data,void *span_data)
 
 #include "nocturne.h"
 

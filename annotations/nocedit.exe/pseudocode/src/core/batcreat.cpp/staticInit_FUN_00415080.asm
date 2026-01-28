@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_batcreat.cpp_staticInit_FUN_00415080(void)
+; __cdecl void __cdecl core_batcreat_cpp_staticInit_FUN_00415080(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 004b0c80
 // Address Range: [[004b0c80, 004b0d5d]]
 // Convention: __cdecl
-// Signature: void core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList * this_ptr)
+// Signature: void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr)
 
 #include "nocturne.h"
 

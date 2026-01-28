@@ -2,7 +2,7 @@
 // Address: 0059c240
 // Address Range: [[0059c240, 0059c2c5]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240 (CDeformableModel *this_ptr,char *part_name,int error_if_not_found)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00610400
 // Address Range: [[00610400, 0061045f]]
 // Convention: __cdecl
-// Signature: char * crt_file.c_extract_path_component_FUN_00610400(char * * component_ptr, char * buffer, char * source, char * buffer_end)
+// Signature: char * __cdecl crt_file_c_extract_path_component_FUN_00610400 (char **component_ptr,char *buffer,char *source,char *buffer_end)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004bf390
 // Address Range: [[004bf390, 004bf3e9]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *this_ptr)
 
 #include "nocturne.h"
 

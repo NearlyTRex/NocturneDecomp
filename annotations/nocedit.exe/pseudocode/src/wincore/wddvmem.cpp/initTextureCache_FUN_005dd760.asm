@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTextureCache * wincore_wddvmem.cpp_initTextureCache_FUN_005dd760(void)
+; __cdecl CTextureCache * __cdecl wincore_wddvmem_cpp_initTextureCache_FUN_005dd760(void)
 ;
 ;
 ; XREF[1]:

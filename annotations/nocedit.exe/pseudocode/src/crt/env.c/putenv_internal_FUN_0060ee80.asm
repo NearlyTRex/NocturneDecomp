@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_env.c_putenv_internal_FUN_0060ee80(char * envstr)
+; __cdecl int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   envstr

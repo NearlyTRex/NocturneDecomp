@@ -2,7 +2,7 @@
 // Address: 00550230
 // Address Range: [[00550230, 0055058e]]
 // Convention: __cdecl
-// Signature: int engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile * this_ptr)
+// Signature: int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_ptr)
 
 #include "nocturne.h"
 

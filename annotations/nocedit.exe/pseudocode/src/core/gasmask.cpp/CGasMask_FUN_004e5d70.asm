@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gasmask.cpp_CGasMask_FUN_004e5d70()
+; unknown undefined4 core_gasmask_cpp_CGasMask_FUN_004e5d70(void)
 ;
 ;
 ; Referenced Globals:

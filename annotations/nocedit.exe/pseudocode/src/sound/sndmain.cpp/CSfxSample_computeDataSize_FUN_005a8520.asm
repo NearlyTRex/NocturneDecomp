@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_CSfxSample_computeDataSize_FUN_005a8520(CSfxSample * this_ptr)
+; __cdecl int __cdecl sound_sndmain_cpp_CSfxSample_computeDataSize_FUN_005a8520(CSfxSample *this_ptr)
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr

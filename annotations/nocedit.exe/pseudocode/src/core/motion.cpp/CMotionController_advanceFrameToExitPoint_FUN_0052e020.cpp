@@ -2,7 +2,7 @@
 // Address: 0052e020
 // Address Range: [[0052e020, 0052e1cc]]
 // Convention: __cdecl
-// Signature: int core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController * this_ptr, int motion_index, float current_frame, float * inout_delta_time, SMotionTransition * out_transition)
+// Signature: int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020 (CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time, SMotionTransition *out_transition)
 
 #include "nocturne.h"
 

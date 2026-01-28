@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, int version, CDemonActorType * parent_class_info)
+; __cdecl CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0 (CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func, int *max_version,int version,CDemonActorType *parent_class_info)
 ;
 ; Parameters:
 ; CDemonActorType * Stack[0x4]:4   this_ptr

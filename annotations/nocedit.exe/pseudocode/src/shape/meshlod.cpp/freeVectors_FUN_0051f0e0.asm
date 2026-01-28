@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_freeVectors_FUN_0051f0e0(CVector3f * * array)
+; __cdecl void __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

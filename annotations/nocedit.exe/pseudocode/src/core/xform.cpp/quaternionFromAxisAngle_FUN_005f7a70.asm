@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi CQuaternion4f * core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70(float angle_radians, CVector3f * axis_ptr, CQuaternion4f * quat_out)
+; __stack2_esi CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70 (float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   angle_radians

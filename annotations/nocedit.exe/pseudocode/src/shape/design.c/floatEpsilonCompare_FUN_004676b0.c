@@ -2,7 +2,7 @@
 // Address: 004676b0
 // Address Range: [[004676b0, 004676eb]]
 // Convention: __cdecl
-// Signature: int shape_design.c_floatEpsilonCompare_FUN_004676b0(float value1, float value2, float epsilon)
+// Signature: int __cdecl shape_design_c_floatEpsilonCompare_FUN_004676b0(float value1,float value2,float epsilon)
 
 #include "nocturne.h"
 

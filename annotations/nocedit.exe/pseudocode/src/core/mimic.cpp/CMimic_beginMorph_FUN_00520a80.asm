@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mimic.cpp_CMimic_beginMorph_FUN_00520a80()
+; unknown void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
 ;
 ;
 ; XREF[1]:

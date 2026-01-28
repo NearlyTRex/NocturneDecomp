@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_netgame.cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer * this_ptr, SNetPlayer * other)
+; __cdecl void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer *this_ptr,SNetPlayer *other)
 ;
 ; Parameters:
 ; SNetPlayer *     Stack[0x4]:4   this_ptr

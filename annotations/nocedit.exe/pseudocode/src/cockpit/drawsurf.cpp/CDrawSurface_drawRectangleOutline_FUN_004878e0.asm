@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0(CDrawSurface * this_ptr, int x, int y, int width, int height)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0 (CDrawSurface *this_ptr,int x,int y,int width,int height)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_batman.cpp_CBatman_FUN_00417bb0(CBatman * this_ptr)
+; __cdecl int __cdecl core_batman_cpp_CBatman_FUN_00417bb0(CBatman *this_ptr)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

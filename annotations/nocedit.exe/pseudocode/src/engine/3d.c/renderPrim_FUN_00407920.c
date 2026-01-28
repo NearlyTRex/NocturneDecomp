@@ -2,7 +2,7 @@
 // Address: 00407920
 // Address Range: [[00407920, 004079b4]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive * primitive)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 

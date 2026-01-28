@@ -2,7 +2,7 @@
 // Address: 0060632c
 // Address Range: [[0060632c, 00606375]]
 // Convention: __cdecl
-// Signature: ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint d1, uint d2)
+// Signature: ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

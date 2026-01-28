@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
+; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   channel_index

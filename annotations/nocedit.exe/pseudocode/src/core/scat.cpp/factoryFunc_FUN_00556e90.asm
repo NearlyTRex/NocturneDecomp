@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CScat * core_scat.cpp_factoryFunc_FUN_00556e90(void)
+; __cdecl CScat * __cdecl core_scat_cpp_factoryFunc_FUN_00556e90(void)
 ;
 ;
 ; XREF[1]:

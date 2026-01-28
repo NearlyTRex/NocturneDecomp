@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_configureSpatialSplittingPlane_FUN_004617c0(STreeNode * node)
+; __cdecl void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNode *node)
 ;
 ; Parameters:
 ; STreeNode *      Stack[0x4]:4   node

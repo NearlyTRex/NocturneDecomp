@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMineCar * core_minecar.cpp_FUN_00520f40(CMineCar * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CMineCar * __cdecl core_minecar_cpp_FUN_00520f40(CMineCar *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CMineCar *       Stack[0x4]:4   this_ptr

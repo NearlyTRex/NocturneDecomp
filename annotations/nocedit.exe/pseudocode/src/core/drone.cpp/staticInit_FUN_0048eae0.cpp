@@ -2,7 +2,7 @@
 // Address: 0048eae0
 // Address Range: [[0048eae0, 0048eb03]]
 // Convention: __cdecl
-// Signature: void core_drone.cpp_staticInit_FUN_0048eae0(void)
+// Signature: void __cdecl core_drone_cpp_staticInit_FUN_0048eae0(void)
 
 #include "nocturne.h"
 

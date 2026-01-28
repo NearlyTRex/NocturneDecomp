@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_larva.cpp_FUN_00503c50()
+; unknown void core_larva_cpp_FUN_00503c50(void)
 ;
 ;
 ; Referenced Globals:

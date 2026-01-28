@@ -2,7 +2,7 @@
 // Address: 004a2660
 // Address Range: [[004a2660, 004a2894]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004a2660(CEditorTools * this_ptr, int start_x, int start_y, int length)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004a2660 (CEditorTools *this_ptr,int start_x,int start_y,int length)
 
 #include "nocturne.h"
 

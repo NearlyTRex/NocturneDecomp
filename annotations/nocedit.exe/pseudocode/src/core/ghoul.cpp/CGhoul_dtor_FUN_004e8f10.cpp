@@ -2,7 +2,7 @@
 // Address: 004e8f10
 // Address Range: [[004e8f10, 004e8fc8]]
 // Convention: __cdecl
-// Signature: CGhoul * core_ghoul.cpp_CGhoul_dtor_FUN_004e8f10(CGhoul * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004e8f10 (CGhoul *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

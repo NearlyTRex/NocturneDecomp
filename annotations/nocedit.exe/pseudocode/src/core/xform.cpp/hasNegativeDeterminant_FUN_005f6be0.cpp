@@ -2,7 +2,7 @@
 // Address: 005f6be0
 // Address Range: [[005f6be0, 005f6c39]]
 // Convention: __cdecl
-// Signature: int core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0(CMatrix3x4f * matrix)
+// Signature: int __cdecl core_xform_cpp_hasNegativeDeterminant_FUN_005f6be0(CMatrix3x4f *matrix)
 
 #include "nocturne.h"
 

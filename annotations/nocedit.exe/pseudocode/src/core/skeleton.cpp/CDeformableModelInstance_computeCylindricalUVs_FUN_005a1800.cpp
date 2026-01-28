@@ -2,7 +2,7 @@
 // Address: 005a1800
 // Address Range: [[005a1800, 005a194d]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance * this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 

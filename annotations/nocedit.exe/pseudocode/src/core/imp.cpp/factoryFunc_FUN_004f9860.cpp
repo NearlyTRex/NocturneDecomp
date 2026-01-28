@@ -2,7 +2,7 @@
 // Address: 004f9860
 // Address Range: [[004f9860, 004f9882]]
 // Convention: __cdecl
-// Signature: CImp * core_imp.cpp_factoryFunc_FUN_004f9860(void)
+// Signature: CImp * __cdecl core_imp_cpp_factoryFunc_FUN_004f9860(void)
 
 #include "nocturne.h"
 

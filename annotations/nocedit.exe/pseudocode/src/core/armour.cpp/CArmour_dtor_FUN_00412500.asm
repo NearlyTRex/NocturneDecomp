@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CArmour * core_armour.cpp_CArmour_dtor_FUN_00412500(CArmour * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+; __cdecl CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_00412500 (CArmour *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr

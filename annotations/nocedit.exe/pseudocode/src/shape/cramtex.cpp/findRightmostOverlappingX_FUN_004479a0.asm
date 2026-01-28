@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry * bounds_entry)
+; __cdecl int __cdecl shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry *bounds_entry)
 ;
 ; Parameters:
 ; SCramWorkingEntry * Stack[0xc]:4   bounds_entry

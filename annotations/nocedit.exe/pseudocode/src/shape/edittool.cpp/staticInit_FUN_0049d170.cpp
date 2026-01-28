@@ -2,7 +2,7 @@
 // Address: 0049d170
 // Address Range: [[0049d170, 0049d18a]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_staticInit_FUN_0049d170(void)
+// Signature: void __cdecl shape_edittool_cpp_staticInit_FUN_0049d170(void)
 
 #include "nocturne.h"
 

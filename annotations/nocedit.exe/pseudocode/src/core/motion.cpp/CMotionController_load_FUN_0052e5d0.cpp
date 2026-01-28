@@ -2,7 +2,7 @@
 // Address: 0052e5d0
 // Address Range: [[0052e5d0, 0052e663]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionController_load_FUN_0052e5d0(CMotionController * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

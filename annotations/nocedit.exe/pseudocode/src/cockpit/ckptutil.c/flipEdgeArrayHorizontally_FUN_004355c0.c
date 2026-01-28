@@ -2,7 +2,7 @@
 // Address: 004355c0
 // Address Range: [[004355c0, 00435720]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_flipEdgeArrayHorizontally_FUN_004355c0(SEdge * edge_array, int edge_count, int flip_width)
+// Signature: void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004355c0 (SEdge *edge_array,int edge_count,int flip_width)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00554620
 // Address Range: [[00554620, 00554660]]
 // Convention: unknown
-// Signature: undefined core_procedur.cpp_FUN_00554620()
+// Signature: float core_procedur_cpp_FUN_00554620(void)
 
 #include "nocturne.h"
 

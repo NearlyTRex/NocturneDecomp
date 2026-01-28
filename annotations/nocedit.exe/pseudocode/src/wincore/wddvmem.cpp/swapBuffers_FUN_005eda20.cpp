@@ -2,7 +2,7 @@
 // Address: 005eda20
 // Address Range: [[005eda20, 005edc4e]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
 
 #include "nocturne.h"
 

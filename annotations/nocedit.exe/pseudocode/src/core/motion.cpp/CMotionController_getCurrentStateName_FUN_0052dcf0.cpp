@@ -2,7 +2,7 @@
 // Address: 0052dcf0
 // Address Range: [[0052dcf0, 0052dd14]]
 // Convention: __cdecl
-// Signature: char * core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(CMotionController * this_ptr)
+// Signature: char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(CMotionController *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int * shape_edittool.cpp_assignInt_FUN_004a6f40(int * dest_ptr, int * src_ptr)
+; __cdecl int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f40(int *dest_ptr,int *src_ptr)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   dest_ptr

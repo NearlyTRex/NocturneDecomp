@@ -2,7 +2,7 @@
 // Address: 00501500
 // Address Range: [[00501500, 00501563]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_toggleDetailView_FUN_00501500(CInventory * this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_00501500(CInventory *this_ptr)
 
 #include "nocturne.h"
 

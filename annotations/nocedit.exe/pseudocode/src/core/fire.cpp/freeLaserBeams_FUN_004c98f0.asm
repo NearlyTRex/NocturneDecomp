@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeLaserBeams_FUN_004c98f0(CLaserBeam * * array)
+; __cdecl void __cdecl core_fire_cpp_freeLaserBeams_FUN_004c98f0(CLaserBeam **array)
 ;
 ; Parameters:
 ; CLaserBeam * *   Stack[0x4]:4   array

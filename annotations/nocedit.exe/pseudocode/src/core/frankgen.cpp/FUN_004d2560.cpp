@@ -2,7 +2,7 @@
 // Address: 004d2560
 // Address Range: [[004d2560, 004d25c4]]
 // Convention: unknown
-// Signature: undefined core_frankgen.cpp_FUN_004d2560()
+// Signature: void core_frankgen_cpp_FUN_004d2560(void)
 
 #include "nocturne.h"
 

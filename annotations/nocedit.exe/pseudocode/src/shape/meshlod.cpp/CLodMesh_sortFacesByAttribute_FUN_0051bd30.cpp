@@ -2,7 +2,7 @@
 // Address: 0051bd30
 // Address Range: [[0051bd30, 0051c068]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh * this_ptr, int attribute_index)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,int attribute_index)
 
 #include "nocturne.h"
 

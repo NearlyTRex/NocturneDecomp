@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_icepick.cpp_FUN_004f8ad0()
+; unknown undefined4 core_icepick_cpp_FUN_004f8ad0(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 004b1a78
 // Address Range: [[004b1a78, 004b1a95] [004b1a98, 004b1ab2] [004b1ab4, 004b1ad1] [004b1ad4, 004b1ae9] [004b1aec, 004b1b13]]
 // Convention: __cdecl
-// Signature: void core_event.cpp_FUN_004b1a78(void)
+// Signature: void __cdecl core_event_cpp_FUN_004b1a78(void)
 
 #include "nocturne.h"
 

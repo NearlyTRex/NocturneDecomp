@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_weather.cpp_CWeather_FUN_005ef8c0()
+; unknown void core_weather_cpp_CWeather_FUN_005ef8c0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

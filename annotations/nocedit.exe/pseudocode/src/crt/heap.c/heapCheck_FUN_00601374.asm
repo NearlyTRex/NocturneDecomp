@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_heap.c_heapCheck_FUN_00601374(void * heap_state_ptr)
+; __cdecl int __cdecl crt_heap_c_heapCheck_FUN_00601374(void *heap_state_ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   heap_state_ptr

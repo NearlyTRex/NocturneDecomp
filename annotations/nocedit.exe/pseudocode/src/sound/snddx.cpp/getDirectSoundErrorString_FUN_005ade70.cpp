@@ -2,7 +2,7 @@
 // Address: 005ade70
 // Address Range: [[005ade70, 005adf8c]]
 // Convention: __cdecl
-// Signature: char * sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70(uint error_code)
+// Signature: char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uint error_code)
 
 #include "nocturne.h"
 

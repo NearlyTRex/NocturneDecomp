@@ -2,7 +2,7 @@
 // Address: 00435730
 // Address Range: [[00435730, 0043597e]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730(void * bitmap_buffer, char * filename, int width, int height, void * span_data_buffer, int transparent_color_index)
+// Signature: void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730 (void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer, int transparent_color_index)
 
 #include "nocturne.h"
 

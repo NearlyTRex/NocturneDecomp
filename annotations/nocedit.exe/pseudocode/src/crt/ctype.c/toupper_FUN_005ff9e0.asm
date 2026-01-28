@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_ctype.c_toupper_FUN_005ff9e0(int c)
+; __cdecl int __cdecl crt_ctype_c_toupper_FUN_005ff9e0(int c)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   c

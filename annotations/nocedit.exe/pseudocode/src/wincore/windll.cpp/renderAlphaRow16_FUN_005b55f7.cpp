@@ -2,7 +2,7 @@
 // Address: 005b55f7
 // Address Range: [[005b55f7, 005b570f]]
 // Convention: __cdecl
-// Signature: void wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, int pixelCount)
+// Signature: void __cdecl wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7 (ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 
 #include "nocturne.h"
 

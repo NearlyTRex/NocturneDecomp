@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CInputString_calcX_FUN_0049d8f0(CInputString * this_ptr, int char_index)
+; __cdecl int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(CInputString *this_ptr,int char_index)
 ;
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gabriela.cpp_CGabriella_load_FUN_004d6090()
+; unknown void core_gabriela_cpp_CGabriella_load_FUN_004d6090(void)
 ;
 ;
 ; Referenced Globals:

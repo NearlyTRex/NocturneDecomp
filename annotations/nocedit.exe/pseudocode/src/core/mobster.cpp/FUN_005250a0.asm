@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mobster.cpp_FUN_005250a0()
+; unknown float * core_mobster_cpp_FUN_005250a0(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 00574b50
 // Address Range: [[00574b50, 00574b91]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_CZThumb_free_FUN_00574b50(CZThumb * this_ptr)
+// Signature: void __cdecl core_setdir_cpp_CZThumb_free_FUN_00574b50(CZThumb *this_ptr)
 
 #include "nocturne.h"
 

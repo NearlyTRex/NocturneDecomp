@@ -2,7 +2,7 @@
 // Address: 005ec610
 // Address Range: [[005ec610, 005ec639]]
 // Convention: __cdecl
-// Signature: void core_waypoint.cpp_CWayPoint_FUN_005ec610(CWayPoint * this_ptr)
+// Signature: void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec610(CWayPoint *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004c9850
 // Address Range: [[004c9850, 004c9864]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_freeLightningBolts_FUN_004c9850(CLightningBolt * * array)
+// Signature: void __cdecl core_fire_cpp_freeLightningBolts_FUN_004c9850(CLightningBolt **array)
 
 #include "nocturne.h"
 

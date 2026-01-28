@@ -2,7 +2,7 @@
 // Address: 005f4290
 // Address Range: [[005f4290, 005f4304]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290(char * key_path, char * value_name, char * value_data)
+// Signature: void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290 (char *key_path,char *value_name,char *value_data)
 
 #include "nocturne.h"
 

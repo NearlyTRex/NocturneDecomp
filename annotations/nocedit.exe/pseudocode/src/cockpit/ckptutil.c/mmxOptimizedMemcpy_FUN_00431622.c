@@ -2,7 +2,7 @@
 // Address: 00431622
 // Address Range: [[00431622, 00431727]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00431622(void * dest_buffer, void * src_buffer, int byte_count)
+// Signature: void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00431622 (void *dest_buffer,void *src_buffer,int byte_count)
 
 #include "nocturne.h"
 

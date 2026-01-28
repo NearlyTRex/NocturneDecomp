@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_cloth.cpp_staticInit_FUN_00438b80(void)
+; __cdecl void __cdecl core_cloth_cpp_staticInit_FUN_00438b80(void)
 ;
 ;
 ; Referenced Globals:

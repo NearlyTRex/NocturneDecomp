@@ -2,7 +2,7 @@
 // Address: 00500050
 // Address Range: [[00500050, 005001d4]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_drawWeaponIconBackground_FUN_00500050(int x1, int y1, int x2, int y2, int alpha)
+// Signature: void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,int x2,int y2,int alpha)
 
 #include "nocturne.h"
 

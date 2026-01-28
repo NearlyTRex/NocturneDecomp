@@ -2,7 +2,7 @@
 // Address: 005a5d00
 // Address Range: [[005a5d00, 005a5da1]]
 // Convention: __cdecl
-// Signature: CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle, int check_hardware_playback)
+// Signature: CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle,int check_hardware_playback)
 
 #include "nocturne.h"
 

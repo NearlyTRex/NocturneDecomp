@@ -2,7 +2,7 @@
 // Address: 0060b932
 // Address Range: [[0060b932, 0060b9b6]]
 // Convention: __watcallStack
-// Signature: int crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932(streambuf * buffer, void * output_buffer, SIZE_T bytes_to_read)
+// Signature: int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932 (streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
 
 #include "nocturne.h"
 

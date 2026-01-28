@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlameCan * core_flamecan.cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr

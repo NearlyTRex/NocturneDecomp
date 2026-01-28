@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_keyactor.cpp_CKeyActor_serialize_FUN_00501880(CKeyActor * this_ptr)
+; __cdecl void __cdecl core_keyactor_cpp_CKeyActor_serialize_FUN_00501880(CKeyActor *this_ptr)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

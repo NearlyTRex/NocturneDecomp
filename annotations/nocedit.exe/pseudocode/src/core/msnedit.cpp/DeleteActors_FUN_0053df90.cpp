@@ -2,7 +2,7 @@
 // Address: 0053df90
 // Address Range: [[0053df90, 0053e21c]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_DeleteActors_FUN_0053df90()
+// Signature: void core_msnedit_cpp_DeleteActors_FUN_0053df90(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004e0b90
 // Address Range: [[004e0b90, 004e0ba7]]
 // Convention: __cdecl
-// Signature: undefined4 core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)
+// Signature: undefined4 __cdecl core_game_cpp_CGame_fadeIn_FUN_004e0b90(CGame *this_ptr)
 
 #include "nocturne.h"
 

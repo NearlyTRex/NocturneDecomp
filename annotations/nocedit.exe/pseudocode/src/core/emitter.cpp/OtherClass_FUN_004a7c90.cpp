@@ -2,7 +2,7 @@
 // Address: 004a7c90
 // Address Range: [[004a7c90, 004a7c95]]
 // Convention: unknown
-// Signature: undefined core_emitter.cpp_OtherClass_FUN_004a7c90()
+// Signature: CDemonActorType * core_emitter_cpp_OtherClass_FUN_004a7c90(void)
 
 #include "nocturne.h"
 

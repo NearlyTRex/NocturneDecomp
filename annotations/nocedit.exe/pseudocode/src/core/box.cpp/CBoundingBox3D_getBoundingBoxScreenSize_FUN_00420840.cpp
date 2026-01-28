@@ -2,7 +2,7 @@
 // Address: 00420840
 // Address Range: [[00420840, 00420937]]
 // Convention: __cdecl
-// Signature: float core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(CBoundingBox3D * this_ptr)
+// Signature: float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(CBoundingBox3D *this_ptr)
 
 #include "nocturne.h"
 

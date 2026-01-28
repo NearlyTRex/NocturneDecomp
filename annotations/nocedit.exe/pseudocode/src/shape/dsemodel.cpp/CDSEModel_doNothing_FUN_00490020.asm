@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_dsemodel.cpp_CDSEModel_doNothing_FUN_00490020(CDSEModel * this_ptr)
+; __cdecl void __cdecl shape_dsemodel_cpp_CDSEModel_doNothing_FUN_00490020(CDSEModel *this_ptr)
 ;
 ; Parameters:
 ; CDSEModel *      Stack[0x4]:4   this_ptr

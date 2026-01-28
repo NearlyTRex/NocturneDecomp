@@ -2,7 +2,7 @@
 // Address: 0060f8c0
 // Address Range: [[0060f8c0, 0060f95c]]
 // Convention: __cdecl
-// Signature: void crt_thread.c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo * info)
+// Signature: void __cdecl crt_thread_c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo *info)
 
 #include "nocturne.h"
 

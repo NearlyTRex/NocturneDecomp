@@ -2,7 +2,7 @@
 // Address: 005ab9a0
 // Address Range: [[005ab9a0, 005aba3a]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sample, int channels, int sample_rate, int signed_samples)
+// Signature: int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0 (int bits_per_sample,int channels,int sample_rate,int signed_samples)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0060242c
 // Address Range: [[0060242c, 00602433]]
 // Convention: __cdecl
-// Signature: ThreadData * crt_thread.c_GetTLS_FUN_0060242c(void)
+// Signature: ThreadData * __cdecl crt_thread_c_GetTLS_FUN_0060242c(void)
 
 #include "nocturne.h"
 

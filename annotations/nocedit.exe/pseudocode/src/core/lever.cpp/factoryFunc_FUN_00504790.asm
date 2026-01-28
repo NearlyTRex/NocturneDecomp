@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLever * core_lever.cpp_factoryFunc_FUN_00504790(void)
+; __cdecl CLever * __cdecl core_lever_cpp_factoryFunc_FUN_00504790(void)
 ;
 ;
 ; XREF[1]:

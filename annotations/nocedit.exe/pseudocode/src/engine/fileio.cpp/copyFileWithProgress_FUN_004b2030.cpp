@@ -2,7 +2,7 @@
 // Address: 004b2030
 // Address Range: [[004b2030, 004b21f6]]
 // Convention: __cdecl
-// Signature: char * engine_fileio.cpp_copyFileWithProgress_FUN_004b2030(FILE * source_file, FILE * dest_file, char * source_filename, char * dest_filename, int file_size_bytes)
+// Signature: char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030 (FILE *source_file,FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes)
 
 #include "nocturne.h"
 

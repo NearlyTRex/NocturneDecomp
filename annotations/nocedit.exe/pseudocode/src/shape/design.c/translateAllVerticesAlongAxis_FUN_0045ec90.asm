@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90()
+; unknown void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x54]:4  local_54

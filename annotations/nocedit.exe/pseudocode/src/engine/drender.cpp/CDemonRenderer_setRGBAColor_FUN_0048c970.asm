@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970 (CDemonRenderer *this_ptr,int red_component,int green_component,int blue_component)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

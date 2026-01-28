@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_chain.cpp_staticInit_FUN_0042fb10(void)
+; __cdecl void __cdecl core_chain_cpp_staticInit_FUN_0042fb10(void)
 ;
 ;
 ; Referenced Globals:

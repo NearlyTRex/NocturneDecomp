@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_bodypart.cpp_staticInit_FUN_00418de0(void)
+; __cdecl void __cdecl core_bodypart_cpp_staticInit_FUN_00418de0(void)
 ;
 ;
 ; Referenced Globals:

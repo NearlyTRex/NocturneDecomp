@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_haystack.cpp_CHaystack_load_FUN_004f1b50()
+; unknown void core_haystack_cpp_CHaystack_load_FUN_004f1b50(void)
 ;
 ;
 ; Called Functions:

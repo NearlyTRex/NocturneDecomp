@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CEdCheck * shape_edittool.cpp_CEdCheck_ctor_FUN_004a6a00(CEdCheck * this_ptr)
+; __cdecl CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_ctor_FUN_004a6a00(CEdCheck *this_ptr)
 ;
 ; Parameters:
 ; CEdCheck *       Stack[0x4]:4   this_ptr

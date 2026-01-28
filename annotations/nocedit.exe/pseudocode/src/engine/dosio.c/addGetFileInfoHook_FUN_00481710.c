@@ -2,7 +2,7 @@
 // Address: 00481710
 // Address Range: [[00481710, 0048175b]]
 // Convention: __cdecl
-// Signature: void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandler * handler)
+// Signature: void __cdecl engine_dosio_c_addGetFileInfoHook_FUN_00481710(FileSearchHandler *handler)
 
 #include "nocturne.h"
 

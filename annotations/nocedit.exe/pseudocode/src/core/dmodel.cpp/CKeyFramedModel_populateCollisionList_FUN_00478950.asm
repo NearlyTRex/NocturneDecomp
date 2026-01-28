@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

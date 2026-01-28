@@ -2,7 +2,7 @@
 // Address: 005aaeb0
 // Address Range: [[005aaeb0, 005aaee3]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0(void)
+// Signature: void __cdecl sound_sndmain_cpp_shutdownSoundSystem_FUN_005aaeb0(void)
 
 #include "nocturne.h"
 

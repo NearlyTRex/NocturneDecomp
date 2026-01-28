@@ -2,7 +2,7 @@
 // Address: 00441a80
 // Address Range: [[00441a80, 00441afa]]
 // Convention: __cdecl
-// Signature: void engine_console.cpp_CConsole_scrollUp_FUN_00441a80(CConsole * this_ptr)
+// Signature: void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_ptr)
 
 #include "nocturne.h"
 

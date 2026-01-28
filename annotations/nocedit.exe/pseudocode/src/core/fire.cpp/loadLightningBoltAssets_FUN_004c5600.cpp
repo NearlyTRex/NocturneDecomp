@@ -2,7 +2,7 @@
 // Address: 004c5600
 // Address Range: [[004c5600, 004c5626]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_loadLightningBoltAssets_FUN_004c5600(void)
+// Signature: void __cdecl core_fire_cpp_loadLightningBoltAssets_FUN_004c5600(void)
 
 #include "nocturne.h"
 

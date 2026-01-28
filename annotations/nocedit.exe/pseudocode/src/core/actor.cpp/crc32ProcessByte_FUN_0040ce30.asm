@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_crc32ProcessByte_FUN_0040ce30(uint * crc_state, byte input_byte)
+; __cdecl void __cdecl core_actor_cpp_crc32ProcessByte_FUN_0040ce30(uint *crc_state,byte input_byte)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   crc_state

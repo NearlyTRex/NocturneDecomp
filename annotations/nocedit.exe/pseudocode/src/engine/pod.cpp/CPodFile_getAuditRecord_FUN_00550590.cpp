@@ -2,7 +2,7 @@
 // Address: 00550590
 // Address Range: [[00550590, 005506ba]]
 // Convention: __cdecl
-// Signature: void engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)
+// Signature: void __cdecl engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590 (CPodFile *this_ptr,int record_index,void *output_buffer)
 
 #include "nocturne.h"
 

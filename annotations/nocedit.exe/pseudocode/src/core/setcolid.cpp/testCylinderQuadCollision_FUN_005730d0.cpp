@@ -2,7 +2,7 @@
 // Address: 005730d0
 // Address Range: [[005730d0, 00573132]]
 // Convention: __cdecl
-// Signature: void core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0(SIntersectXZCylinder * cylinder, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, CVector3f * vertex4)
+// Signature: void __cdecl core_setcolid_cpp_testCylinderQuadCollision_FUN_005730d0 (SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, CVector3f *vertex4)
 
 #include "nocturne.h"
 

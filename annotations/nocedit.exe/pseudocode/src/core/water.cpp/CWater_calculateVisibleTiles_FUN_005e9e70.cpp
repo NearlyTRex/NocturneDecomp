@@ -2,7 +2,7 @@
 // Address: 005e9e70
 // Address Range: [[005e9e70, 005e9ecf] [005e9ed1, 005ea31e]]
 // Convention: __cdecl
-// Signature: int core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater * this_ptr)
+// Signature: int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr)
 
 #include "nocturne.h"
 

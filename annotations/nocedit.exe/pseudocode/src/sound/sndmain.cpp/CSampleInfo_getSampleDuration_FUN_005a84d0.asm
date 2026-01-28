@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo * this_ptr)
+; __cdecl double __cdecl sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo *this_ptr)
 ;
 ; Parameters:
 ; CSampleInfo *    Stack[0x8]:4   this_ptr

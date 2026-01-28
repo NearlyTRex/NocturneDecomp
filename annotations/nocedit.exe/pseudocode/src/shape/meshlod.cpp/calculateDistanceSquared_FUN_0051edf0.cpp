@@ -2,7 +2,7 @@
 // Address: 0051edf0
 // Address Range: [[0051edf0, 0051ee22]]
 // Convention: __cdecl
-// Signature: float shape_meshlod.cpp_calculateDistanceSquared_FUN_0051edf0(CVector3f * point1, CVector3f * point2)
+// Signature: float __cdecl shape_meshlod_cpp_calculateDistanceSquared_FUN_0051edf0(CVector3f *point1,CVector3f *point2)
 
 #include "nocturne.h"
 

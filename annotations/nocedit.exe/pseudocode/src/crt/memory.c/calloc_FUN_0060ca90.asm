@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_memory.c_calloc_FUN_0060ca90(ulong count, ulong size)
+; __cdecl void * __cdecl crt_memory_c_calloc_FUN_0060ca90(ulong count,ulong size)
 ;
 ; Parameters:
 ; ulong            Stack[0x4]:4   count

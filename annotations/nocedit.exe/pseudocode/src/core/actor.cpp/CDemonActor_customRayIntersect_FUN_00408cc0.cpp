@@ -2,7 +2,7 @@
 // Address: 00408cc0
 // Address Range: [[00408cc0, 00408d05]]
 // Convention: __cdecl
-// Signature: float core_actor.cpp_CDemonActor_customRayIntersect_FUN_00408cc0(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
+// Signature: float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0 (CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal)
 
 #include "nocturne.h"
 

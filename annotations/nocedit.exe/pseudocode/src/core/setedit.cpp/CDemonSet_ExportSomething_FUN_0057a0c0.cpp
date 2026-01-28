@@ -2,7 +2,7 @@
 // Address: 0057a0c0
 // Address Range: [[0057a0c0, 0057a26f]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0(CDemonSet * this_ptr)
+// Signature: void __cdecl core_setedit_cpp_CDemonSet_ExportSomething_FUN_0057a0c0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

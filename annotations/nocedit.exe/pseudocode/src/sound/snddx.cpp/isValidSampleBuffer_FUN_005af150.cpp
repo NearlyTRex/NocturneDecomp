@@ -2,7 +2,7 @@
 // Address: 005af150
 // Address Range: [[005af150, 005af182]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_isValidSampleBuffer_FUN_005af150(int buffer_id)
+// Signature: int __cdecl sound_snddx_cpp_isValidSampleBuffer_FUN_005af150(int buffer_id)
 
 #include "nocturne.h"
 

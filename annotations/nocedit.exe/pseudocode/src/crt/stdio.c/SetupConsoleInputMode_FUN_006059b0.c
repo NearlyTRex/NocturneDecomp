@@ -2,7 +2,7 @@
 // Address: 006059b0
 // Address Range: [[006059b0, 006059d5]]
 // Convention: unknown
-// Signature: undefined crt_stdio.c_SetupConsoleInputMode_FUN_006059b0()
+// Signature: int crt_stdio_c_SetupConsoleInputMode_FUN_006059b0(void)
 
 #include "nocturne.h"
 

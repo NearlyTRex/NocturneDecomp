@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int * user_choice_ptr, char * dialog_message)
+; __cdecl int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90 (int *user_choice_ptr,char *dialog_message)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   user_choice_ptr

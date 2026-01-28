@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_staticInit_FUN_0050fdb0(void)
+; __cdecl void __cdecl core_menu_cpp_staticInit_FUN_0050fdb0(void)
 ;
 ;
 ; Referenced Globals:

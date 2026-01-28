@@ -2,7 +2,7 @@
 // Address: 00420180
 // Address Range: [[00420180, 004201fe]]
 // Convention: __cdecl
-// Signature: void core_box.cpp_CBox_setupVelocities_FUN_00420180(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
+// Signature: void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420180 (CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity)
 
 #include "nocturne.h"
 

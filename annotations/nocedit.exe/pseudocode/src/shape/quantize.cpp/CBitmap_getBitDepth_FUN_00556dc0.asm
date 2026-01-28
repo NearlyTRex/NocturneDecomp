@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uchar shape_quantize.cpp_CBitmap_getBitDepth_FUN_00556dc0(CBitmap * this_ptr)
+; __cdecl uchar __cdecl shape_quantize_cpp_CBitmap_getBitDepth_FUN_00556dc0(CBitmap *this_ptr)
 ;
 ; Parameters:
 ; CBitmap *        Stack[0x4]:4   this_ptr

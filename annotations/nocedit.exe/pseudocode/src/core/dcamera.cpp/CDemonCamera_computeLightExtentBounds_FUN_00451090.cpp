@@ -2,7 +2,7 @@
 // Address: 00451090
 // Address Range: [[00451090, 00451122]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera * this_ptr, CDemonLight * light, CRect * out_bounds)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090 (CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
 
 #include "nocturne.h"
 

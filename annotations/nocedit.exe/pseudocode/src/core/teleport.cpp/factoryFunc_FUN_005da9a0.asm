@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTeleport * core_teleport.cpp_factoryFunc_FUN_005da9a0(void)
+; __cdecl CTeleport * __cdecl core_teleport_cpp_factoryFunc_FUN_005da9a0(void)
 ;
 ;
 ; XREF[1]:

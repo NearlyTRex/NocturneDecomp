@@ -2,7 +2,7 @@
 // Address: 004ea190
 // Address Range: [[004ea190, 004ea1b8]]
 // Convention: __cdecl
-// Signature: int core_glass.cpp_CGlass_hasCollision_FUN_004ea190(CGlass * this_ptr, SCollisionInfo * collision_info)
+// Signature: int __cdecl core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 

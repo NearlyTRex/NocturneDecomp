@@ -2,7 +2,7 @@
 // Address: 0040d240
 // Address Range: [[0040d240, 0040d268]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
+// Signature: void __cdecl core_actor_cpp_drawTextLine_FUN_0040d240(int *y_position,char *text)
 
 #include "nocturne.h"
 

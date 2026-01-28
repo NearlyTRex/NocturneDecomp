@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80(float base_frequency)
+; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(float base_frequency)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   base_frequency

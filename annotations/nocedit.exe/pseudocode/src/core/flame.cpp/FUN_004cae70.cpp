@@ -2,7 +2,7 @@
 // Address: 004cae70
 // Address Range: [[004cae70, 004caf50]]
 // Convention: unknown
-// Signature: undefined core_flame.cpp_FUN_004cae70()
+// Signature: void core_flame_cpp_FUN_004cae70(void)
 
 #include "nocturne.h"
 

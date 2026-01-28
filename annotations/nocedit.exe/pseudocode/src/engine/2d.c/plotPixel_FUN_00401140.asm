@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_plotPixel_FUN_00401140(int x, int y)
+; __cdecl void __cdecl engine_2d_c_plotPixel_FUN_00401140(int x,int y)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

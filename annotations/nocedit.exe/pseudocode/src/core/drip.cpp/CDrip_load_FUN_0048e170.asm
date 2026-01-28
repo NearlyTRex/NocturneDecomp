@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_drip.cpp_CDrip_load_FUN_0048e170()
+; unknown void core_drip_cpp_CDrip_load_FUN_0048e170(void)
 ;
 ;
 ; Referenced Globals:

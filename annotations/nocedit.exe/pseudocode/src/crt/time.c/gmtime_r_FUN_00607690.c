@@ -2,7 +2,7 @@
 // Address: 00607690
 // Address Range: [[00607690, 006077d5]]
 // Convention: __cdecl
-// Signature: undefined crt_time.c_gmtime_r_FUN_00607690(time_t days, time_t seconds, time_t timezone_offset, undefined1 result)
+// Signature: undefined4 * __cdecl crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,undefined4 *param_4)
 
 #include "nocturne.h"
 

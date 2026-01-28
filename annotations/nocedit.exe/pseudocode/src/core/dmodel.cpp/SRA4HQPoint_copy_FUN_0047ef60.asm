@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint * this_ptr, SRA4HQPoint * other)
+; __cdecl void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr,SRA4HQPoint *other)
 ;
 ; Parameters:
 ; SRA4HQPoint *    Stack[0x4]:4   this_ptr

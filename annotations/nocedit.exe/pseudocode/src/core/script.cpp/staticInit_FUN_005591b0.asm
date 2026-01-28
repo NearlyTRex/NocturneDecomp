@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_script.cpp_staticInit_FUN_005591b0(void)
+; __cdecl void __cdecl core_script_cpp_staticInit_FUN_005591b0(void)
 ;
 ;
 ; Referenced Globals:

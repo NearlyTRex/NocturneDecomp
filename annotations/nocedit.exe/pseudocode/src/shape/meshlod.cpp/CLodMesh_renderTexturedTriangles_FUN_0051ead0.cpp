@@ -2,7 +2,7 @@
 // Address: 0051ead0
 // Address Range: [[0051ead0, 0051ecc9]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh * this_ptr, int enable_texture_lookup, int use_atlas_mode)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0(CBitFont * font_ptr)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_004874c0(CBitFont *font_ptr)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   font_ptr

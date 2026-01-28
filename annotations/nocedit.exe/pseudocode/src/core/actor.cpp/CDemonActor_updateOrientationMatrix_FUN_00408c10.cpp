@@ -2,7 +2,7 @@
 // Address: 00408c10
 // Address Range: [[00408c10, 00408c6e]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 

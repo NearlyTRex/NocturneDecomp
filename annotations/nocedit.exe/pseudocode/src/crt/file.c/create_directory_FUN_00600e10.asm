@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_file.c_create_directory_FUN_00600e10(char * path)
+; __cdecl int __cdecl crt_file_c_create_directory_FUN_00600e10(char *path)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   path

@@ -2,7 +2,7 @@
 // Address: 004c1be0
 // Address Range: [[004c1be0, 004c1bff]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_loadGunFlashAssets_FUN_004c1be0(void)
+// Signature: void __cdecl core_fire_cpp_loadGunFlashAssets_FUN_004c1be0(void)
 
 #include "nocturne.h"
 

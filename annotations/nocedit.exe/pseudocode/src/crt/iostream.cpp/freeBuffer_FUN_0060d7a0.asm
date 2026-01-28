@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_iostream.cpp_freeBuffer_FUN_0060d7a0(void * buffer)
+; __watcallStack void __watcallStack crt_iostream_cpp_freeBuffer_FUN_0060d7a0(void *buffer)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   buffer

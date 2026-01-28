@@ -2,7 +2,7 @@
 // Address: 0048c420
 // Address Range: [[0048c420, 0048c449]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3f * input_point)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 (CDemonRenderer *this_ptr,CVector3f *input_point)
 
 #include "nocturne.h"
 

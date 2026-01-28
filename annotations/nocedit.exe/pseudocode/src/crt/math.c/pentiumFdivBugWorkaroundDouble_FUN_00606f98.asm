@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpustack float10 crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0, double param1)
+; __fpustack float10 __fpustack crt_math_c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0,double param1)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   param1

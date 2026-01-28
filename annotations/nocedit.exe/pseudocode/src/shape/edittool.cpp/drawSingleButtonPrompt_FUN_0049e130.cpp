@@ -2,7 +2,7 @@
 // Address: 0049e130
 // Address Range: [[0049e130, 0049e404]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130(char * title, char * message, int color)
+// Signature: void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,char *message,int color)
 
 #include "nocturne.h"
 

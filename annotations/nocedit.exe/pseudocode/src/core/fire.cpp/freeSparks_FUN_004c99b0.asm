@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeSparks_FUN_004c99b0(CSpark * * array)
+; __cdecl void __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark **array)
 ;
 ; Parameters:
 ; CSpark * *       Stack[0x4]:4   array

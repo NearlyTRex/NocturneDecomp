@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_io.c_parseFileInfo_FUN_0060e3b0(void)
+; __cdecl void __cdecl crt_io_c_parseFileInfo_FUN_0060e3b0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20

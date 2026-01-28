@@ -2,7 +2,7 @@
 // Address: 00499330
 // Address Range: [[00499330, 004997c9]]
 // Convention: __cdecl
-// Signature: int core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRaytrace * this_ptr, CVector3f * start_position, CVector3f * end_position)
+// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330 (CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position)
 
 #include "nocturne.h"
 

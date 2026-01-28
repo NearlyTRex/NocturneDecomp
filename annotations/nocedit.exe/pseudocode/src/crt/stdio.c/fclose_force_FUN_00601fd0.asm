@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_fclose_force_FUN_00601fd0(FILE * file_handle, int force_close_flag)
+; __cdecl int __cdecl crt_stdio_c_fclose_force_FUN_00601fd0(FILE *file_handle,int force_close_flag)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

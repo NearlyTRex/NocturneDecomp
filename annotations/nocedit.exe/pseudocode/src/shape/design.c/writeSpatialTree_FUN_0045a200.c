@@ -2,7 +2,7 @@
 // Address: 0045a200
 // Address Range: [[0045a200, 0045a310]]
 // Convention: __cdecl
-// Signature: void shape_design.c_writeSpatialTree_FUN_0045a200(STreeNode * node, FILE * output_file, int node_index)
+// Signature: void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,FILE *output_file,int node_index)
 
 #include "nocturne.h"
 

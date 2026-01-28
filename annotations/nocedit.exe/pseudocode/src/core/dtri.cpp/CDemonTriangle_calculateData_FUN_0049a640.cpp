@@ -2,7 +2,7 @@
 // Address: 0049a640
 // Address Range: [[0049a640, 0049a78b]]
 // Convention: __cdecl
-// Signature: void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * triangle)
+// Signature: void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle *triangle)
 
 #include "nocturne.h"
 

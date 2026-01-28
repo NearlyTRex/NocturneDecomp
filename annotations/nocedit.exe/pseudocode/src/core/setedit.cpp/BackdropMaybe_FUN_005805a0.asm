@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_BackdropMaybe_FUN_005805a0()
+; unknown void core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x174]:1  local_174

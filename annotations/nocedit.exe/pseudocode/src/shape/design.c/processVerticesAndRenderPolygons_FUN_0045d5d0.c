@@ -2,7 +2,7 @@
 // Address: 0045d5d0
 // Address Range: [[0045d5d0, 0045d918]]
 // Convention: __cdecl
-// Signature: void shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
+// Signature: void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
 
 #include "nocturne.h"
 

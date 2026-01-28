@@ -2,7 +2,7 @@
 // Address: 00412690
 // Address Range: [[00412690, 004126dd]]
 // Convention: __cdecl
-// Signature: CFlame * core_backgnd.cpp_CFlame_dtor_FUN_00412690(CFlame * this_ptr, uint d1, uint d2)
+// Signature: CFlame * __cdecl core_backgnd_cpp_CFlame_dtor_FUN_00412690(CFlame *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

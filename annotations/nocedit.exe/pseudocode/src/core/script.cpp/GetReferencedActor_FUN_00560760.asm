@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_GetReferencedActor_FUN_00560760()
+; unknown void core_script_cpp_GetReferencedActor_FUN_00560760(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xd0]:1  local_d0

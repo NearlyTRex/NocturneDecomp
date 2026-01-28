@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAmmo * core_ammo.cpp_CAmmo_dtor_FUN_004114e0(CAmmo * this_ptr, uint d1, uint d2)
+; __cdecl CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_004114e0(CAmmo *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

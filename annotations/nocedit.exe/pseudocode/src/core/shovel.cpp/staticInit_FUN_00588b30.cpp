@@ -2,7 +2,7 @@
 // Address: 00588b30
 // Address Range: [[00588b30, 00588b53]]
 // Convention: __cdecl
-// Signature: void core_shovel.cpp_staticInit_FUN_00588b30(void)
+// Signature: void __cdecl core_shovel_cpp_staticInit_FUN_00588b30(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004079c0
 // Address Range: [[004079c0, 00407a22]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_addFaceIfVisible_FUN_004079c0(SMRGLHeaderPrimitive * cull_reference, SMRGLHeaderPrimitive * face_to_queue)
+// Signature: void __cdecl engine_3d_c_addFaceIfVisible_FUN_004079c0 (SMRGLHeaderPrimitive *cull_reference,SMRGLHeaderPrimitive *face_to_queue)
 
 #include "nocturne.h"
 

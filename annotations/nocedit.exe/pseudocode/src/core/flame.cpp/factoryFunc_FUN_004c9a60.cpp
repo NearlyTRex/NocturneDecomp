@@ -2,7 +2,7 @@
 // Address: 004c9a60
 // Address Range: [[004c9a60, 004c9a82]]
 // Convention: __cdecl
-// Signature: CFlame * core_flame.cpp_factoryFunc_FUN_004c9a60(void)
+// Signature: CFlame * __cdecl core_flame_cpp_factoryFunc_FUN_004c9a60(void)
 
 #include "nocturne.h"
 

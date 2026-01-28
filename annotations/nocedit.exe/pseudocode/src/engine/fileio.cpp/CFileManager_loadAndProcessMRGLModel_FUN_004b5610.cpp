@@ -2,7 +2,7 @@
 // Address: 004b5610
 // Address Range: [[004b5610, 004b5638]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610(CFileManager * this_ptr, char * filename)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610 (CFileManager *this_ptr,char *filename)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0047a820
 // Address Range: [[0047a820, 0047a9fa]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel * model_ptr)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *model_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00476f20
 // Address Range: [[00476f20, 00477109]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20(CKeyFramedModel * this_ptr, FILE * file)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20(CKeyFramedModel *this_ptr,FILE *file)
 
 #include "nocturne.h"
 

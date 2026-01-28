@@ -2,7 +2,7 @@
 // Address: 005cd560
 // Address Range: [[005cd560, 005cd630]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CPoly_saveVertexPositionsWithFlag_FUN_005cd560(CPoly * this_ptr, uint flag_mask)
+// Signature: void __cdecl shape_superopt_cpp_CPoly_saveVertexPositionsWithFlag_FUN_005cd560(CPoly *this_ptr,uint flag_mask)
 
 #include "nocturne.h"
 

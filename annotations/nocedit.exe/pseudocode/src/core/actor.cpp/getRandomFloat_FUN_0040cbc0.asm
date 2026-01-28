@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_actor.cpp_getRandomFloat_FUN_0040cbc0(void)
+; __cdecl float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cbc0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

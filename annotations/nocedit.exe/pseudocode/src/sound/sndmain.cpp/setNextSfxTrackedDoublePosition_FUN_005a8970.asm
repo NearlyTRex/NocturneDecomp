@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(CVector3d * position_source_ptr)
+; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(CVector3d *position_source_ptr)
 ;
 ; Parameters:
 ; CVector3d *      Stack[0x4]:4   position_source_ptr

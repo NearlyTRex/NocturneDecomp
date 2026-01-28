@@ -2,7 +2,7 @@
 // Address: 00404450
 // Address Range: [[00404450, 00404493]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_setRelativeCoord_FUN_00404450(SMRGLHeaderPrimitive * primitive)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404450(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 

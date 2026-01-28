@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDraculaBride * core_dracbrid.cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride * this_ptr)
+; __cdecl CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride *this_ptr)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr

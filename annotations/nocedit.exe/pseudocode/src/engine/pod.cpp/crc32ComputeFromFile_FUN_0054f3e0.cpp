@@ -2,7 +2,7 @@
 // Address: 0054f3e0
 // Address Range: [[0054f3e0, 0054f487]]
 // Convention: __cdecl
-// Signature: uint engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE * file_stream, uint total_bytes)
+// Signature: uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE *file_stream,uint total_bytes)
 
 #include "nocturne.h"
 

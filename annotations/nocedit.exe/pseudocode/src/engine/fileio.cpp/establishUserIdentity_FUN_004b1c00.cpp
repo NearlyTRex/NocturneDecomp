@@ -2,7 +2,7 @@
 // Address: 004b1c00
 // Address Range: [[004b1c00, 004b1d3f]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_establishUserIdentity_FUN_004b1c00(void)
+// Signature: int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
 
 #include "nocturne.h"
 

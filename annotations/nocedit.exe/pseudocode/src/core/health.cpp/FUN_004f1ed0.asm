@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_health.cpp_FUN_004f1ed0()
+; unknown float * core_health_cpp_FUN_004f1ed0(void)
 ;
 ;
 ; Called Functions:

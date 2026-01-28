@@ -5,4 +5,4 @@
 
 // Original: crt_fltused.c_staticInit_FUN_005fde60
 // Address: 005fde60
-void staticInit(void);
+void __cdecl staticInit(void);

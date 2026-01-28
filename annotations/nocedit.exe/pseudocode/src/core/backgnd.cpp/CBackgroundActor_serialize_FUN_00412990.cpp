@@ -2,7 +2,7 @@
 // Address: 00412990
 // Address Range: [[00412990, 004129e8]]
 // Convention: __cdecl
-// Signature: void core_backgnd.cpp_CBackgroundActor_serialize_FUN_00412990(CBackgroundActor * this_ptr)
+// Signature: void __cdecl core_backgnd_cpp_CBackgroundActor_serialize_FUN_00412990(CBackgroundActor *this_ptr)
 
 #include "nocturne.h"
 

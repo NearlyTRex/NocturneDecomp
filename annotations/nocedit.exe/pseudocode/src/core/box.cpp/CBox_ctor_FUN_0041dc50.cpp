@@ -2,7 +2,7 @@
 // Address: 0041dc50
 // Address Range: [[0041dc50, 0041dcfd]]
 // Convention: __cdecl
-// Signature: CBox * core_box.cpp_CBox_ctor_FUN_0041dc50(CBox * this_ptr)
+// Signature: CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041dc50(CBox *this_ptr)
 
 #include "nocturne.h"
 

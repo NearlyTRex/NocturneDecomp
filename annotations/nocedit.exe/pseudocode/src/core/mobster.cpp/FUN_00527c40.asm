@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mobster.cpp_FUN_00527c40()
+; unknown void core_mobster_cpp_FUN_00527c40(void)
 ;
 ;
 ; Called Functions:

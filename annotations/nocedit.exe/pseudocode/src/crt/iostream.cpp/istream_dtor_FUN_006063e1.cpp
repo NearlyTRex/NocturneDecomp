@@ -2,7 +2,7 @@
 // Address: 006063e1
 // Address Range: [[006063e1, 00606455]]
 // Convention: __cdecl
-// Signature: istream * crt_iostream.cpp_istream_dtor_FUN_006063e1(istream * this_ptr, uint d1, uint d2)
+// Signature: istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(istream *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0047bbc0
 // Address Range: [[0047bbc0, 0047bda0]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0(CKeyFramedModel * this_ptr)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0(CKeyFramedModel *this_ptr)
 
 #include "nocturne.h"
 

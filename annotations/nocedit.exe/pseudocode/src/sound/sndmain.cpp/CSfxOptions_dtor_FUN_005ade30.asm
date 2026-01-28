@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSfxOptions * sound_sndmain.cpp_CSfxOptions_dtor_FUN_005ade30(CSfxOptions * this_ptr)
+; __cdecl CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_005ade30(CSfxOptions *this_ptr)
 ;
 ; Parameters:
 ; CSfxOptions *    Stack[0x4]:4   this_ptr

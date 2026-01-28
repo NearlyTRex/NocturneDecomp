@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager * this_ptr, char * filename)
+; __cdecl void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CPaletteManager * Stack[0x4]:4   this_ptr

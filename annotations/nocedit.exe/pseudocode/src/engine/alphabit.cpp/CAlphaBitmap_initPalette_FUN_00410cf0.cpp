@@ -2,7 +2,7 @@
 // Address: 00410cf0
 // Address Range: [[00410cf0, 00410d15]]
 // Convention: __cdecl
-// Signature: void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap * this_ptr)
+// Signature: void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap *this_ptr)
 
 #include "nocturne.h"
 

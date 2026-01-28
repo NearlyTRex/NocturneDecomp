@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0(CBoundingBox3D * this_ptr, CVector3f * sphere_center, float radius)
+; __cdecl int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0 (CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr

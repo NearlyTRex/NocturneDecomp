@@ -2,7 +2,7 @@
 // Address: 0047aa30
 // Address Range: [[0047aa30, 0047ad95]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(CKeyFramedModel * this_ptr)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(CKeyFramedModel *this_ptr)
 
 #include "nocturne.h"
 

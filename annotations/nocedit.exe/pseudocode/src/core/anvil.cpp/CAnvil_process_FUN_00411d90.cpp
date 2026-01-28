@@ -2,7 +2,7 @@
 // Address: 00411d90
 // Address Range: [[00411d90, 00411eb4]]
 // Convention: __cdecl
-// Signature: void core_anvil.cpp_CAnvil_process_FUN_00411d90(CAnvil * this_ptr, float delta_time)
+// Signature: void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

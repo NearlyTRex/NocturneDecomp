@@ -2,7 +2,7 @@
 // Address: 005097e0
 // Address Range: [[005097e0, 005098e4]]
 // Convention: __cdecl
-// Signature: void core_manpuz.cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0(CMansionPuzzleCircle * this_ptr, SSurfaceInfo * surface_info)
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0 (CMansionPuzzleCircle *this_ptr,SSurfaceInfo *surface_info)
 
 #include "nocturne.h"
 

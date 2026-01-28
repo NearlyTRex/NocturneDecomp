@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCharacter * core_charactr.cpp_CCharacter_setActorNameMaybe_FUN_0042faf0(CCharacter * this_ptr, char * * actor_name)
+; __cdecl CCharacter * __cdecl core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042faf0(CCharacter *this_ptr,char **actor_name)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

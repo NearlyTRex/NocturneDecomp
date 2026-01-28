@@ -2,7 +2,7 @@
 // Address: 00481a20
 // Address Range: [[00481a20, 00481a46]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_truncateFile_FUN_00481a20(FILE * file_handle, long new_size_bytes)
+// Signature: int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(FILE *file_handle,long new_size_bytes)
 
 #include "nocturne.h"
 

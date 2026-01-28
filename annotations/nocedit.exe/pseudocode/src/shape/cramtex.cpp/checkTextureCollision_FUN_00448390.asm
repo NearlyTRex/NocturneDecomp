@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_cramtex.cpp_checkTextureCollision_FUN_00448390(SCramWorkingEntry * placed_texture, SCramWorkingEntry * test_texture)
+; __cdecl int __cdecl shape_cramtex_cpp_checkTextureCollision_FUN_00448390 (SCramWorkingEntry *placed_texture,SCramWorkingEntry *test_texture)
 ;
 ; Parameters:
 ; SCramWorkingEntry * Stack[0x4]:4   placed_texture

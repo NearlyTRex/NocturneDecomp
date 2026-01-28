@@ -2,7 +2,7 @@
 // Address: 004d11c0
 // Address Range: [[004d11c0, 004d12f4]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_addPolygonEdge_FUN_004d11c0(SRenderVertex * vertex1, SRenderVertex * vertex2)
+// Signature: void __cdecl engine_3d_c_addPolygonEdge_FUN_004d11c0(SRenderVertex *vertex1,SRenderVertex *vertex2)
 
 #include "nocturne.h"
 

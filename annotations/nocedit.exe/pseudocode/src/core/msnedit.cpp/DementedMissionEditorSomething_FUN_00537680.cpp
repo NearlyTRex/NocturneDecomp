@@ -2,7 +2,7 @@
 // Address: 00537680
 // Address Range: [[00537680, 005379da]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680()
+// Signature: void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
 
 #include "nocturne.h"
 

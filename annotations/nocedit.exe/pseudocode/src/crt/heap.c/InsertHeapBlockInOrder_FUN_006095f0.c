@@ -2,7 +2,7 @@
 // Address: 006095f0
 // Address Range: [[006095f0, 00609666]]
 // Convention: __cdecl
-// Signature: HeapBlock * crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0(HeapBlock * new_block)
+// Signature: HeapBlock * __cdecl crt_heap_c_InsertHeapBlockInOrder_FUN_006095f0(HeapBlock *new_block)
 
 #include "nocturne.h"
 

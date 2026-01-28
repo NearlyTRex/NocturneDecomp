@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_CSound_shutdown_FUN_005b2f70(CSound * this_ptr)
+; __cdecl void __cdecl core_sound_cpp_CSound_shutdown_FUN_005b2f70(CSound *this_ptr)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

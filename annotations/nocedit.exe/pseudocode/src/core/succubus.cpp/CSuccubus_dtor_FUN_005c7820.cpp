@@ -2,7 +2,7 @@
 // Address: 005c7820
 // Address Range: [[005c7820, 005c7908]]
 // Convention: __cdecl
-// Signature: CSuccubus * core_succubus.cpp_CSuccubus_dtor_FUN_005c7820(CSuccubus * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9, uint d10, uint d11)
+// Signature: CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820 (CSuccubus *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9,uint d10,uint d11)
 
 #include "nocturne.h"
 

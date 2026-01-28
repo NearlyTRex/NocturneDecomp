@@ -2,7 +2,7 @@
 // Address: 005f4eb0
 // Address Range: [[005f4eb0, 005f4f04]]
 // Convention: __cdecl
-// Signature: CVector3f * core_xform.cpp_transformVector3x3_FUN_005f4eb0(CMatrix3x3f * matrix, CVector3f * output_vector, CVector3f * input_vector)
+// Signature: CVector3f * __cdecl core_xform_cpp_transformVector3x3_FUN_005f4eb0 (CMatrix3x3f *matrix,CVector3f *output_vector,CVector3f *input_vector)
 
 #include "nocturne.h"
 

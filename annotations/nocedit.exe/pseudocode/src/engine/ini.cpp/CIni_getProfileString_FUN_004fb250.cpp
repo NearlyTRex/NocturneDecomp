@@ -2,7 +2,7 @@
 // Address: 004fb250
 // Address Range: [[004fb250, 004fb46a]]
 // Convention: __cdecl
-// Signature: int engine_ini.cpp_CIni_getProfileString_FUN_004fb250(CIni * this_ptr, char * section, char * key, char * default_value, char * output_buffer, int buffer_size, char * filename)
+// Signature: int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250 (CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer, int buffer_size,char *filename)
 
 #include "nocturne.h"
 

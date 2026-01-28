@@ -2,7 +2,7 @@
 // Address: 00608dc8
 // Address Range: [[00608dc8, 00608e11]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_constructObjectArray_FlaggedCtor_FUN_00608dc8(void * array_start, int element_count, WatcomTypeInfo * type_info)
+// Signature: void * __cdecl crt_memory_c_constructObjectArray_FlaggedCtor_FUN_00608dc8 (void *array_start,int element_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 

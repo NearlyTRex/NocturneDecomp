@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack FILE * crt_stdio.c_stream_flush_FUN_006060bb(FILE * stream)
+; __watcallStack FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(FILE *stream)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream

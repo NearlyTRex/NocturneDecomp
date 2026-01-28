@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl LPVOID crt_tls.c_get_thread_local_data_FUN_0060a1fc(void)
+; __cdecl LPVOID __cdecl crt_tls_c_get_thread_local_data_FUN_0060a1fc(void)
 ;
 ;
 ; XREF[1]:

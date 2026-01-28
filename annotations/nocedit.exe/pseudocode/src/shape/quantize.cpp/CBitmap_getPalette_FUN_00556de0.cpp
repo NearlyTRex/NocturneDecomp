@@ -2,7 +2,7 @@
 // Address: 00556de0
 // Address Range: [[00556de0, 00556de7]]
 // Convention: __cdecl
-// Signature: void * shape_quantize.cpp_CBitmap_getPalette_FUN_00556de0(CBitmap * this_ptr)
+// Signature: void * __cdecl shape_quantize_cpp_CBitmap_getPalette_FUN_00556de0(CBitmap *this_ptr)
 
 #include "nocturne.h"
 

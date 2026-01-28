@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFrankenstienMachine * core_frankgen.cpp_factoryFunc_FUN_004d16e0(void)
+; __cdecl CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFunc_FUN_004d16e0(void)
 ;
 ;
 ; XREF[1]:

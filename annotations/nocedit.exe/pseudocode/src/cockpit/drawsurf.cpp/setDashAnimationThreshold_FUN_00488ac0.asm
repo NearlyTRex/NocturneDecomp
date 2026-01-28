@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_drawsurf.cpp_setDashAnimationThreshold_FUN_00488ac0(float threshold)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_setDashAnimationThreshold_FUN_00488ac0(float threshold)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   threshold

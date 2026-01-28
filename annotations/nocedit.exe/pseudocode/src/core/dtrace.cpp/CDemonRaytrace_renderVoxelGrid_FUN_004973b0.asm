@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtrace.cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonRaytrace * this_ptr, uchar * voxel_data, int grid_x, int grid_y, int grid_z)
+; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0 (CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

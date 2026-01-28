@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_backgnd.cpp_staticInit_FUN_00412740(void)
+; __cdecl void __cdecl core_backgnd_cpp_staticInit_FUN_00412740(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 004901f0
 // Address Range: [[004901f0, 004906a3]]
 // Convention: __cdecl
-// Signature: void core_dskybox.cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic * sky_texture, char * texture_name, float brightness_factor)
+// Signature: void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0 (SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)
 
 #include "nocturne.h"
 

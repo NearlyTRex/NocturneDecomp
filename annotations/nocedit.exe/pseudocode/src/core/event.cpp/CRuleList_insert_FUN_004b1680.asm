@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_event.cpp_CRuleList_insert_FUN_004b1680(CRuleList * this_ptr)
+; __cdecl void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
 ;
 ; Parameters:
 ; CRuleList *      Stack[0x4]:4   this_ptr

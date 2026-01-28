@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGun * core_gun.cpp_factoryFunc_FUN_004f02b0(void)
+; __cdecl CGun * __cdecl core_gun_cpp_factoryFunc_FUN_004f02b0(void)
 ;
 ;
 ; XREF[1]:

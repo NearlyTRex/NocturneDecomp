@@ -2,7 +2,7 @@
 // Address: 005d9fd0
 // Address Range: [[005d9fd0, 005da016]]
 // Convention: __cdecl
-// Signature: void core_tbplayer.cpp_staticInit_FUN_005d9fd0(void)
+// Signature: void __cdecl core_tbplayer_cpp_staticInit_FUN_005d9fd0(void)
 
 #include "nocturne.h"
 

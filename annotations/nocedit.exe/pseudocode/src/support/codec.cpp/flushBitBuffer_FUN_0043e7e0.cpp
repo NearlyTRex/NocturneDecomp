@@ -2,7 +2,7 @@
 // Address: 0043e7e0
 // Address Range: [[0043e7e0, 0043e83d]]
 // Convention: __cdecl
-// Signature: void support_codec.cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer * bit_buffer, FILE * output_stream)
+// Signature: void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,FILE *output_stream)
 
 #include "nocturne.h"
 

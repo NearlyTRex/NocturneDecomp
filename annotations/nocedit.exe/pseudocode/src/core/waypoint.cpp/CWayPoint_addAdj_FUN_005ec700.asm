@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700()
+; unknown void core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

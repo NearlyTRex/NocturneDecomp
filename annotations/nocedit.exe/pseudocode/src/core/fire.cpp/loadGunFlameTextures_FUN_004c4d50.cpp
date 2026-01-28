@@ -2,7 +2,7 @@
 // Address: 004c4d50
 // Address Range: [[004c4d50, 004c4d9a]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_loadGunFlameTextures_FUN_004c4d50(void)
+// Signature: void __cdecl core_fire_cpp_loadGunFlameTextures_FUN_004c4d50(void)
 
 #include "nocturne.h"
 

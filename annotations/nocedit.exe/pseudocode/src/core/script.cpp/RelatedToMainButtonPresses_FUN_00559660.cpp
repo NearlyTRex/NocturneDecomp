@@ -2,7 +2,7 @@
 // Address: 00559660
 // Address Range: [[00559660, 0055972d]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_RelatedToMainButtonPresses_FUN_00559660()
+// Signature: int core_script_cpp_RelatedToMainButtonPresses_FUN_00559660(void)
 
 #include "nocturne.h"
 

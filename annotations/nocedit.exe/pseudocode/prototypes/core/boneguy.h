@@ -5,112 +5,112 @@
 
 // Original: core_boneguy.cpp_staticInit_FUN_0041b6d0
 // Address: 0041b6d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_boneguy.cpp_FUN_0041b700
 // Address: 0041b700
-undefined FUN_0041b700();
+float * FUN_0041b700(void);
 
 // Original: core_boneguy.cpp_FUN_0041b770
 // Address: 0041b770
-undefined FUN_0041b770();
+CVector3f * FUN_0041b770(void);
 
 // Original: core_boneguy.cpp_factoryFunc_FUN_0041b820
 // Address: 0041b820
-CBoneGuy * factoryFunc(void);
+CBoneGuy * __cdecl factoryFunc(void);
 
 // Original: core_boneguy.cpp_FUN_0041b850
 // Address: 0041b850
-undefined FUN_0041b850();
+CDemonActorType * FUN_0041b850(void);
 
 // Original: core_boneguy.cpp_FUN_0041b860
 // Address: 0041b860
-undefined FUN_0041b860();
+float * FUN_0041b860(void);
 
 // Original: core_boneguy.cpp_FUN_0041ba10
 // Address: 0041ba10
-undefined FUN_0041ba10();
+float * FUN_0041ba10(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0
 // Address: 0041bbc0
-CBoneGuy * CBoneGuy::ctor(CBoneGuy * this_ptr);
+CBoneGuy * __cdecl CBoneGuy::ctor(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90
 // Address: 0041bd90
-void CBoneGuy::explode(CBoneGuy * this_ptr);
+void __cdecl CBoneGuy::explode(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_0041bf90
 // Address: 0041bf90
-undefined FUN_0041bf90();
+void FUN_0041bf90(void);
 
 // Original: core_boneguy.cpp_FUN_0041ca40
 // Address: 0041ca40
-undefined FUN_0041ca40();
+void FUN_0041ca40(void);
 
 // Original: core_boneguy.cpp_FUN_0041cc40
 // Address: 0041cc40
-undefined FUN_0041cc40();
+undefined4 FUN_0041cc40(void);
 
 // Original: core_boneguy.cpp_FUN_0041d180
 // Address: 0041d180
-undefined FUN_0041d180();
+void FUN_0041d180(void);
 
 // Original: core_boneguy.cpp_FUN_0041d1b0
 // Address: 0041d1b0
-undefined FUN_0041d1b0();
+int FUN_0041d1b0(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_load_FUN_0041d270
 // Address: 0041d270
-undefined CBoneGuy::load();
+void CBoneGuy::load(void);
 
 // Original: core_boneguy.cpp_FUN_0041d4c0
 // Address: 0041d4c0
-undefined FUN_0041d4c0();
+undefined4 FUN_0041d4c0(void);
 
 // Original: core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0
 // Address: 0041d4d0
-undefined ExplodeAndSoundSomething();
+void ExplodeAndSoundSomething(void);
 
 // Original: core_boneguy.cpp_FUN_0041d550
 // Address: 0041d550
-undefined FUN_0041d550();
+undefined4 FUN_0041d550(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_FUN_0041d680
 // Address: 0041d680
-void CBoneGuy(CBoneGuy * this_ptr);
+void __cdecl CBoneGuy(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_0041d8a0
 // Address: 0041d8a0
-undefined FUN_0041d8a0();
+void FUN_0041d8a0(void);
 
 // Original: core_boneguy.cpp_FUN_0041d970
 // Address: 0041d970
-undefined FUN_0041d970();
+int FUN_0041d970(void);
 
 // Original: core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990
 // Address: 0041d990
-undefined SnagRelated::ModelStateDeath();
+void SnagRelated::ModelStateDeath(void);
 
 // Original: core_boneguy.cpp_FUN_0041da00
 // Address: 0041da00
-undefined FUN_0041da00();
+void FUN_0041da00(void);
 
 // Original: core_boneguy.cpp_FUN_0041da10
 // Address: 0041da10
-undefined FUN_0041da10();
+void FUN_0041da10(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40
 // Address: 0041da40
-CBoneGuy * CBoneGuy::dtor(CBoneGuy * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9);
+CBoneGuy * __cdecl CBoneGuy::dtor(CBoneGuy *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9);
 
 // Original: core_boneguy.cpp_SBoneGuyBox_ctor_FUN_0041db10
 // Address: 0041db10
-SBoneGuyBox * SBoneGuyBox::ctor(SBoneGuyBox * this_ptr);
+SBoneGuyBox * __cdecl SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);
 
 // Original: core_boneguy.cpp_SBoneGuyBox_dtor_FUN_0041db20
 // Address: 0041db20
-SBoneGuyBox * SBoneGuyBox::dtor(SBoneGuyBox * this_ptr);
+SBoneGuyBox * __cdecl SBoneGuyBox::dtor(SBoneGuyBox *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_0041db30
 // Address: 0041db30
-int FUN_0041db30(SBoneGuyBox * * objs);
+int __cdecl FUN_0041db30(SBoneGuyBox **objs);

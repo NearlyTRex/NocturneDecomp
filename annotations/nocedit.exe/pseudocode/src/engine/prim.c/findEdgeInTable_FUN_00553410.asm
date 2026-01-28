@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SSoftwareEdge * engine_prim.c_findEdgeInTable_FUN_00553410(int scanline, SSoftwareEdge * target_edge)
+; __cdecl SSoftwareEdge * __cdecl engine_prim_c_findEdgeInTable_FUN_00553410(int scanline,SSoftwareEdge *target_edge)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   scanline

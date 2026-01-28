@@ -2,7 +2,7 @@
 // Address: 00610460
 // Address Range: [[00610460, 00610597]]
 // Convention: __cdecl
-// Signature: void crt_file.c_splitpath_s_FUN_00610460(char * path, char * buffer, char * drive, char * dir, char * fname, char * ext)
+// Signature: void __cdecl crt_file_c_splitpath_s_FUN_00610460 (char *path,char *buffer,char *drive,char *dir,char *fname,char *ext)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00548510
 // Address Range: [[00548510, 00548580]]
 // Convention: __cdecl
-// Signature: void core_path.cpp_CPathMap_reset_FUN_00548510(CPathMap * this_ptr)
+// Signature: void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a6d80
 // Address Range: [[005a6d80, 005a6dec]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot * this_ptr)
+// Signature: int __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)
 
 #include "nocturne.h"
 

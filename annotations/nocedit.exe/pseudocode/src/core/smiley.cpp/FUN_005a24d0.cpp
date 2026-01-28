@@ -2,7 +2,7 @@
 // Address: 005a24d0
 // Address Range: [[005a24d0, 005a27cf]]
 // Convention: unknown
-// Signature: undefined core_smiley.cpp_FUN_005a24d0()
+// Signature: void core_smiley_cpp_FUN_005a24d0(void)
 
 #include "nocturne.h"
 

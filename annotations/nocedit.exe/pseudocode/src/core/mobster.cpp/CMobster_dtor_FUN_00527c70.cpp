@@ -2,7 +2,7 @@
 // Address: 00527c70
 // Address Range: [[00527c70, 00527d28]]
 // Convention: __cdecl
-// Signature: CMobster * core_mobster.cpp_CMobster_dtor_FUN_00527c70(CMobster * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70 (CMobster *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

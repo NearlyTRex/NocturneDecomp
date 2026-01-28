@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0(char * wildcard_pattern)
+; __cdecl void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_005b17d0(char *wildcard_pattern)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   wildcard_pattern

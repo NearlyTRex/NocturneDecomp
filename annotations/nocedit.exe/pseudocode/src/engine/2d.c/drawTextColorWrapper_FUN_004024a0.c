@@ -2,7 +2,7 @@
 // Address: 004024a0
 // Address Range: [[004024a0, 004024b9]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_drawTextColorWrapper_FUN_004024a0(int x_pos, int y_pos, char * text)
+// Signature: void __cdecl engine_2d_c_drawTextColorWrapper_FUN_004024a0(int x_pos,int y_pos,char *text)
 
 #include "nocturne.h"
 

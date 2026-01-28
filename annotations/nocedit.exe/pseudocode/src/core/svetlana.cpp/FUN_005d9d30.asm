@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_svetlana.cpp_FUN_005d9d30()
+; unknown void core_svetlana_cpp_FUN_005d9d30(void)
 ;
 ;
 ; Referenced Globals:

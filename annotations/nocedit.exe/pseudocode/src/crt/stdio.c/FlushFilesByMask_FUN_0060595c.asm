@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)
+; __watcallStack int __watcallStack crt_stdio_c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   file_mode_mask

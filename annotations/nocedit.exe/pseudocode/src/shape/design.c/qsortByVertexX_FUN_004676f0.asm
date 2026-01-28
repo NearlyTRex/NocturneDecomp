@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_qsortByVertexX_FUN_004676f0(SVertexPair * a, SVertexPair * b)
+; __cdecl int __cdecl shape_design_c_qsortByVertexX_FUN_004676f0(SVertexPair *a,SVertexPair *b)
 ;
 ; Parameters:
 ; SVertexPair *    Stack[0x4]:4   a

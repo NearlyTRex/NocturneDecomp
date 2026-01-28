@@ -2,7 +2,7 @@
 // Address: 00600940
 // Address Range: [[00600940, 00600984]]
 // Convention: unknown
-// Signature: undefined crt_watcom.c_memmax_FUN_00600940()
+// Signature: uint crt_watcom_c_memmax_FUN_00600940(void)
 
 #include "nocturne.h"
 

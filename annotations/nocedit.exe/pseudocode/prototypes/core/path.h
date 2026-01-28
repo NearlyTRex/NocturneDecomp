@@ -5,100 +5,100 @@
 
 // Original: core_path.cpp_FUN_00546310
 // Address: 00546310
-undefined FUN_00546310();
+void FUN_00546310(void);
 
 // Original: core_path.cpp_FUN_00546330
 // Address: 00546330
-undefined FUN_00546330();
+bool FUN_00546330(void);
 
 // Original: core_path.cpp_FUN_00546350
 // Address: 00546350
-undefined FUN_00546350();
+void FUN_00546350(void);
 
 // Original: core_path.cpp_FUN_005463d0
 // Address: 005463d0
-undefined FUN_005463d0();
+void FUN_005463d0(void);
 
 // Original: core_path.cpp_CPathMap_ctor_FUN_00546450
 // Address: 00546450
-CPathMap * CPathMap::ctor(CPathMap * this_ptr);
+CPathMap * __cdecl CPathMap::ctor(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_dtor_FUN_005464d0
 // Address: 005464d0
-CPathMap * CPathMap::dtor(CPathMap * this_ptr);
+CPathMap * __cdecl CPathMap::dtor(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_getDirection_FUN_005465b0
 // Address: 005465b0
-float CPathMap::getDirection(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, CVector3f * dest_position);
+float __cdecl CPathMap::getDirection(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction, CVector3f *dest_position);
 
 // Original: core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
 // Address: 00546a60
-void CPathMap::updateIfNeeded(CPathMap * this_ptr, CVector3f * source_position, int force_update);
+void __cdecl CPathMap::updateIfNeeded(CPathMap *this_ptr,CVector3f *source_position,int force_update);
 
 // Original: core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
 // Address: 00546ba0
-int CPathMap::getCachedVoxelHeight(CPathMap * this_ptr, int grid_z, int grid_x, int current_height);
+int __cdecl CPathMap::getCachedVoxelHeight(CPathMap *this_ptr,int grid_z,int grid_x,int current_height);
 
 // Original: core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40
 // Address: 00546c40
-int CPathMap::isLineWalkable(CPathMap * this_ptr, int start_x, int start_z, int start_height, int end_x, int end_z, int end_height);
+int __cdecl CPathMap::isLineWalkable(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z, int end_height);
 
 // Original: core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90
 // Address: 00546e90
-int CPathMap::checkAxisAlignedPath(CPathMap * this_ptr, int start_x, int start_z, int start_height, int end_x, int end_z);
+int __cdecl CPathMap::checkAxisAlignedPath(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z);
 
 // Original: core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
 // Address: 00547320
-int CPathMap::findPathToDestination(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint);
+int __cdecl CPathMap::findPathToDestination(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint);
 
 // Original: core_path.cpp_CPathMap_previewPathfinding_FUN_00547c00
 // Address: 00547c00
-void CPathMap::previewPathfinding(CPathMap * this_ptr);
+void __cdecl CPathMap::previewPathfinding(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 // Address: 00547d00
-int CPathMap::findPathWithRetry(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint);
+int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint);
 
 // Original: core_path.cpp_debugRenderGridQuad_FUN_00547dd0
 // Address: 00547dd0
-void debugRenderGridQuad(int grid_x, int grid_y, int grid_z, int color, int fog, float w_recip);
+void __cdecl debugRenderGridQuad(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip);
 
 // Original: core_path.cpp_FUN_00547fc0
 // Address: 00547fc0
-undefined FUN_00547fc0();
+void FUN_00547fc0(void);
 
 // Original: core_path.cpp_FUN_00548390
 // Address: 00548390
-undefined FUN_00548390();
+CPathMap * FUN_00548390(void);
 
 // Original: core_path.cpp_FUN_00548500
 // Address: 00548500
-undefined FUN_00548500();
+void FUN_00548500(void);
 
 // Original: core_path.cpp_CPathMap_reset_FUN_00548510
 // Address: 00548510
-void CPathMap::reset(CPathMap * this_ptr);
+void __cdecl CPathMap::reset(CPathMap *this_ptr);
 
 // Original: core_path.cpp_GlobalPathmapListCorruption_FUN_00548590
 // Address: 00548590
-undefined GlobalPathmapListCorruption();
+void GlobalPathmapListCorruption(void);
 
 // Original: core_path.cpp_FUN_005485f0
 // Address: 005485f0
-undefined FUN_005485f0();
+void FUN_005485f0(void);
 
 // Original: core_path.cpp_FUN_00548680
 // Address: 00548680
-undefined FUN_00548680();
+void FUN_00548680(void);
 
 // Original: core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750
 // Address: 00548750
-void CPathMap::CallToQueuePop(CPathMap * this_ptr);
+void __cdecl CPathMap::CallToQueuePop(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_queuePop_FUN_005487a0
 // Address: 005487a0
-uint CPathMap::queuePop(CPathMap * this_ptr, int start_height);
+uint __cdecl CPathMap::queuePop(CPathMap *this_ptr,int start_height);
 
 // Original: core_path.cpp_freePathMaps_FUN_00548c30
 // Address: 00548c30
-void freePathMaps(CPathMap * * array);
+void __cdecl freePathMaps(CPathMap **array);

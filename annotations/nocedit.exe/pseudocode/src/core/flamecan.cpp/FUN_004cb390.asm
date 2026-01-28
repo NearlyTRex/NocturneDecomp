@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flamecan.cpp_FUN_004cb390()
+; unknown void core_flamecan_cpp_FUN_004cb390(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x40]:1  local_40

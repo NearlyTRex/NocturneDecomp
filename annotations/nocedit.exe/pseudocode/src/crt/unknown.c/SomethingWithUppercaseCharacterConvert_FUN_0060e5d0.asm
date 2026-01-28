@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0()
+; unknown char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(void)
 ;
 ;
 ; XREF[1]:

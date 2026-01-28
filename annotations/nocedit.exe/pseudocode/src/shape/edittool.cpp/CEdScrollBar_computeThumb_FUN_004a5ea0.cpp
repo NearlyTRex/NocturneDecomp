@@ -2,7 +2,7 @@
 // Address: 004a5ea0
 // Address Range: [[004a5ea0, 004a5fa7]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar * this_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar *this_ptr)
 
 #include "nocturne.h"
 

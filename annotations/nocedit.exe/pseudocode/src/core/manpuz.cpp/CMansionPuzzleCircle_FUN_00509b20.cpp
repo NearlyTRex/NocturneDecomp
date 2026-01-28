@@ -2,7 +2,7 @@
 // Address: 00509b20
 // Address Range: [[00509b20, 00509beb]]
 // Convention: __cdecl
-// Signature: void core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509b20(CMansionPuzzleCircle * this_ptr)
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509b20(CMansionPuzzleCircle *this_ptr)
 
 #include "nocturne.h"
 

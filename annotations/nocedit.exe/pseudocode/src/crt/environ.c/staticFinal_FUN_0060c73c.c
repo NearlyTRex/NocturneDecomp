@@ -2,7 +2,7 @@
 // Address: 0060c73c
 // Address Range: [[0060c73c, 0060c78c]]
 // Convention: __cdecl
-// Signature: void crt_environ.c_staticFinal_FUN_0060c73c(void)
+// Signature: void __cdecl crt_environ_c_staticFinal_FUN_0060c73c(void)
 
 #include "nocturne.h"
 

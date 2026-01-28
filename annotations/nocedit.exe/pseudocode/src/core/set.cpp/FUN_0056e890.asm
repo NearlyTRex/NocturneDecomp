@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_set.cpp_FUN_0056e890()
+; unknown void core_set_cpp_FUN_0056e890(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

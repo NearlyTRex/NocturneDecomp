@@ -2,7 +2,7 @@
 // Address: 00472090
 // Address Range: [[00472090, 0047215d]]
 // Convention: __cdecl
-// Signature: float core_dirmat.cpp_atan2Custom_FUN_00472090(double y, double x)
+// Signature: float __cdecl core_dirmat_cpp_atan2Custom_FUN_00472090(double y,double x)
 
 #include "nocturne.h"
 

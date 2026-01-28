@@ -2,7 +2,7 @@
 // Address: 00501d40
 // Address Range: [[00501d40, 00501f24]]
 // Convention: __cdecl
-// Signature: void engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKeyframeModel * keyframe_model)
+// Signature: void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKeyframeModel *keyframe_model)
 
 #include "nocturne.h"
 

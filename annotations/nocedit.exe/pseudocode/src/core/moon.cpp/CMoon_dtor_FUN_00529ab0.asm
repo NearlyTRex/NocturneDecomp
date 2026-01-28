@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMoon * core_moon.cpp_CMoon_dtor_FUN_00529ab0(CMoon * this_ptr)
+; __cdecl CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00529ab0(CMoon *this_ptr)
 ;
 ; Parameters:
 ; CMoon *          Stack[0x4]:4   this_ptr

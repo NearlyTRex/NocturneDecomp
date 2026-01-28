@@ -2,7 +2,7 @@
 // Address: 0054bf40
 // Address Range: [[0054bf40, 0054c1d1]]
 // Convention: __cdecl
-// Signature: void cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CPackedBitmapSet * this_ptr, char * filename, int bitmap_width, int bitmap_height, int total_bitmaps, int unknown_param)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40 (CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height, int total_bitmaps,int unknown_param)
 
 #include "nocturne.h"
 

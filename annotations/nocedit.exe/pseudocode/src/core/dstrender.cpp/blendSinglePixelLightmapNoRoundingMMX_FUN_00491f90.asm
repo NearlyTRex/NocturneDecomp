@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90(uint * output_pixel, uint * texture_pixel, byte * texture_index, byte * lightmap_index)
+; __cdecl void __cdecl core_dstrender_cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90 (uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   output_pixel

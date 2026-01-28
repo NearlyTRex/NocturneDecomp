@@ -2,7 +2,7 @@
 // Address: 00588c40
 // Address Range: [[00588c40, 00588c51]]
 // Convention: unknown
-// Signature: undefined core_shovel.cpp_FUN_00588c40()
+// Signature: float core_shovel_cpp_FUN_00588c40(void)
 
 #include "nocturne.h"
 

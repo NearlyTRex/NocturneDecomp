@@ -2,7 +2,7 @@
 // Address: 004e5470
 // Address Range: [[004e5470, 004e5515]]
 // Convention: unknown
-// Signature: undefined core_gargoyle.cpp_CGargoyle_load_FUN_004e5470()
+// Signature: void core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
 
 #include "nocturne.h"
 

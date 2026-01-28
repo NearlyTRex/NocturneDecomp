@@ -2,7 +2,7 @@
 // Address: 004677c0
 // Address Range: [[004677c0, 00467841]]
 // Convention: __cdecl
-// Signature: int shape_design.c_qsortByOriginalIndex_FUN_004677c0(SVertexPair * vertex_pair1, SVertexPair * vertex_pair2)
+// Signature: int __cdecl shape_design_c_qsortByOriginalIndex_FUN_004677c0 (SVertexPair *vertex_pair1,SVertexPair *vertex_pair2)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CScat * core_scat.cpp_CScat_dtor_FUN_00559160(CScat * this_ptr, uint d1, uint d2)
+; __cdecl CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00559160(CScat *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_promptForModelNameAndLoad_FUN_00458a10(void)
+; __cdecl int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x64]:1  local_64

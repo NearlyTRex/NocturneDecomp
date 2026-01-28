@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hero.cpp_FUN_004f2f50()
+; unknown undefined4 core_hero_cpp_FUN_004f2f50(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x50]:8  local_50

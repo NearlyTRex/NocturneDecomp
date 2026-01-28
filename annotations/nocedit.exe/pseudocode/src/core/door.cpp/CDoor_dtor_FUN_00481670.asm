@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDoor * core_door.cpp_CDoor_dtor_FUN_00481670(CDoor * this_ptr, uint d1, uint d2)
+; __cdecl CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr

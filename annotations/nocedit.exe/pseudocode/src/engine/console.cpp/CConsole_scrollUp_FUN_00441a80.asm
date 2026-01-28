@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_console.cpp_CConsole_scrollUp_FUN_00441a80(CConsole * this_ptr)
+; __cdecl void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_ptr)
 ;
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr

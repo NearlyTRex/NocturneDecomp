@@ -2,7 +2,7 @@
 // Address: 0049dfb0
 // Address Range: [[0049dfb0, 0049e010]]
 // Convention: __cdecl
-// Signature: CEditorTools * shape_edittool.cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools * this_ptr)
+// Signature: CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools *this_ptr)
 
 #include "nocturne.h"
 

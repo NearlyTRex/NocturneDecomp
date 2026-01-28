@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_skipToEndOfLine_FUN_005996c0(FILE * file_ptr)
+; __cdecl void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_005996c0(FILE *file_ptr)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_ptr

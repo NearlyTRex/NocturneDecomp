@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl undefined4 core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)
+; __cdecl undefined4 __cdecl core_game_cpp_CGame_fadeIn_FUN_004e0b90(CGame *this_ptr)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

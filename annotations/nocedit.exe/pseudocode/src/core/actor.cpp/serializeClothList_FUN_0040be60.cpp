@@ -2,7 +2,7 @@
 // Address: 0040be60
 // Address Range: [[0040be60, 0040bff7]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeClothList_FUN_0040be60(CClothList * cloth_list, char * property_name)
+// Signature: void __cdecl core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *property_name)
 
 #include "nocturne.h"
 

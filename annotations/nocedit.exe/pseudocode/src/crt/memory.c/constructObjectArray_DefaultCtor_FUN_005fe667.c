@@ -2,7 +2,7 @@
 // Address: 005fe667
 // Address Range: [[005fe667, 005fe6ae]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+// Signature: void * __cdecl crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667 (void *array_start,int element_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 

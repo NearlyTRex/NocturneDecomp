@@ -2,7 +2,7 @@
 // Address: 00603ccc
 // Address Range: [[00603ccc, 00603d5f]]
 // Convention: unknown
-// Signature: undefined crt_unknown.c_CondCallDoNothing_FUN_00603ccc()
+// Signature: void crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
 
 #include "nocturne.h"
 

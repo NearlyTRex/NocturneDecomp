@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_io.c_stat_thunk_00600c18(char * filename, stat * file_info)
+; __cdecl int __cdecl crt_io_c_stat_thunk_00600c18(char *filename,stat *file_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

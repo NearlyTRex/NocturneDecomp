@@ -2,7 +2,7 @@
 // Address: 0048c970
 // Address Range: [[0048c970, 0048c9eb]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970 (CDemonRenderer *this_ptr,int red_component,int green_component,int blue_component)
 
 #include "nocturne.h"
 

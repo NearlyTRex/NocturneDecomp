@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_dracbrid.cpp_FUN_00486d00()
+; unknown void core_dracbrid_cpp_FUN_00486d00(void)
 ;
 ;
 ; Called Functions:

@@ -2,7 +2,7 @@
 // Address: 0047ee30
 // Address Range: [[0047ee30, 0047eeed]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_writeModelDependencies_FUN_0047ee30(FILE * dependency_file, char * model_filename)
+// Signature: void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(FILE *dependency_file,char *model_filename)
 
 #include "nocturne.h"
 

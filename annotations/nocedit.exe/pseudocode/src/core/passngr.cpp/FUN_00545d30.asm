@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_passngr.cpp_FUN_00545d30()
+; unknown void core_passngr_cpp_FUN_00545d30(void)
 ;
 ;
 ; Referenced Globals:

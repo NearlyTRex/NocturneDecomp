@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_wddvmem.cpp_shutdownDirectDraw_FUN_005eca30(void)
+; __cdecl int __cdecl wincore_wddvmem_cpp_shutdownDirectDraw_FUN_005eca30(void)
 ;
 ;
 ; Referenced Globals:

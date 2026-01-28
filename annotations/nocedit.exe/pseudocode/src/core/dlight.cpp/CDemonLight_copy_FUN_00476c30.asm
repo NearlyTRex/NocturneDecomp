@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonLight * core_dlight.cpp_CDemonLight_copy_FUN_00476c30(CDemonLight * this_ptr, CDemonLight * other)
+; __cdecl CDemonLight * __cdecl core_dlight_cpp_CDemonLight_copy_FUN_00476c30(CDemonLight *this_ptr,CDemonLight *other)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr

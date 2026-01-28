@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double crt_math.c_set_math_errno_FUN_0060befa(int errorFlags, double * valuePtr)
+; __cdecl double __cdecl crt_math_c_set_math_errno_FUN_0060befa(int errorFlags,double *valuePtr)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   errorFlags

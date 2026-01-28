@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_displayPalette_FUN_00461560()
+; unknown void shape_design_c_displayPalette_FUN_00461560(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x7c]:1  local_7c

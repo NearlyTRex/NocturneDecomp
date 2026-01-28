@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CStairs * core_stairs.cpp_CStairs_dtor_FUN_005bac10(CStairs * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_005bac10(CStairs *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDoor * core_door.cpp_factoryFunc_FUN_0047fa90(void)
+; __cdecl CDoor * __cdecl core_door_cpp_factoryFunc_FUN_0047fa90(void)
 ;
 ;
 ; XREF[1]:

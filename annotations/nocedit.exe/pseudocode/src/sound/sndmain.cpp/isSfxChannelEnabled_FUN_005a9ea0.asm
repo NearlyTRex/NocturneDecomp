@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0(int channel_index)
+; __cdecl int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(int channel_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   channel_index

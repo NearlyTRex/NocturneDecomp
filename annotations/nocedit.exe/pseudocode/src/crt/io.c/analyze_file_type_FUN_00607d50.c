@@ -2,7 +2,7 @@
 // Address: 00607d50
 // Address Range: [[00607d50, 00607e61]]
 // Convention: __watcallStack
-// Signature: uint crt_io.c_analyze_file_type_FUN_00607d50(uint open_flags, char * filename)
+// Signature: uint __watcallStack crt_io_c_analyze_file_type_FUN_00607d50(uint open_flags,char *filename)
 
 #include "nocturne.h"
 

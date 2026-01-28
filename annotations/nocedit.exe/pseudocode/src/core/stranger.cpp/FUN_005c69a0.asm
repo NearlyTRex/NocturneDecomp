@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stranger.cpp_FUN_005c69a0()
+; unknown int core_stranger_cpp_FUN_005c69a0(void)
 ;
 ;
 ; Called Functions:

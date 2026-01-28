@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLarva * core_larva.cpp_factoryFunc_FUN_00502f50(void)
+; __cdecl CLarva * __cdecl core_larva_cpp_factoryFunc_FUN_00502f50(void)
 ;
 ;
 ; XREF[1]:

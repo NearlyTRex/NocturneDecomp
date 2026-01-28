@@ -2,7 +2,7 @@
 // Address: 004925c5
 // Address Range: [[004925c5, 004926e0]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004925c5(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_004925c5 (ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 

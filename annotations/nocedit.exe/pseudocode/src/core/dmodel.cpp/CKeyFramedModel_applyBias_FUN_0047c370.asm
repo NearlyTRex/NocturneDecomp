@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370(CKeyFramedModel * this_ptr, CVector3f * bias_offset)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370 (CKeyFramedModel *this_ptr,CVector3f *bias_offset)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

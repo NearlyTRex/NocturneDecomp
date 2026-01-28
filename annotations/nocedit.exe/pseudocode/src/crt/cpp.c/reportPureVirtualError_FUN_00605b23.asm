@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_cpp.c_reportPureVirtualError_FUN_00605b23(char * error_message, int exit_code)
+; __watcallStack void __watcallStack crt_cpp_c_reportPureVirtualError_FUN_00605b23(char *error_message,int exit_code)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   error_message

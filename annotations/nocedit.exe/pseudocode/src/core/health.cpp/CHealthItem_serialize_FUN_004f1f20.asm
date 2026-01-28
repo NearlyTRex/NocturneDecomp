@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_health.cpp_CHealthItem_serialize_FUN_004f1f20()
+; unknown void core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x104]:1  local_104

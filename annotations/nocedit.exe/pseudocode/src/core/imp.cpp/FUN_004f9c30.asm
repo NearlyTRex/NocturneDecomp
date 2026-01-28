@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_imp.cpp_FUN_004f9c30()
+; unknown void core_imp_cpp_FUN_004f9c30(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1a0]:1  local_1a0

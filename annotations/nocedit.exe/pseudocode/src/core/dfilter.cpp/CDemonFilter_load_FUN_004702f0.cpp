@@ -2,7 +2,7 @@
 // Address: 004702f0
 // Address Range: [[004702f0, 00470500]]
 // Convention: __cdecl
-// Signature: void core_dfilter.cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter * this_ptr, char * filename)
+// Signature: void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_ptr,char *filename)
 
 #include "nocturne.h"
 

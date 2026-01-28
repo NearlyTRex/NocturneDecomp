@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+; __cdecl int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 (CPickList *this_ptr,char *dialog_title,int config_param1,int config_param2)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr

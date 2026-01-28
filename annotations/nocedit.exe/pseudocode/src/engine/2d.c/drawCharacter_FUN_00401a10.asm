@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_2d.c_drawCharacter_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
+; __cdecl int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y_pos,int color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   char_code

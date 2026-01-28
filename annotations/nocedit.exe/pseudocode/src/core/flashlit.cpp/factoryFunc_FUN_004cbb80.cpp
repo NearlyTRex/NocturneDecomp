@@ -2,7 +2,7 @@
 // Address: 004cbb80
 // Address Range: [[004cbb80, 004cbba2]]
 // Convention: __cdecl
-// Signature: CFlashlight * core_flashlit.cpp_factoryFunc_FUN_004cbb80(void)
+// Signature: CFlashlight * __cdecl core_flashlit_cpp_factoryFunc_FUN_004cbb80(void)
 
 #include "nocturne.h"
 

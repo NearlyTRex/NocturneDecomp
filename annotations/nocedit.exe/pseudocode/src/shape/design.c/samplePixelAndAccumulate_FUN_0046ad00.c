@@ -2,7 +2,7 @@
 // Address: 0046ad00
 // Address Range: [[0046ad00, 0046adba]]
 // Convention: __cdecl
-// Signature: void shape_design.c_samplePixelAndAccumulate_FUN_0046ad00(void * rgb_buffer, void * alpha_buffer, int atlas_width, int atlas_height, int pixel_x, int pixel_y, double weight, double * red_accumulator, double * green_accumulator, double * blue_accumulator, double * alpha_accumulator)
+// Signature: void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00 (void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x, int pixel_y,double weight,double *red_accumulator,double *green_accumulator, double *blue_accumulator,double *alpha_accumulator)
 
 #include "nocturne.h"
 

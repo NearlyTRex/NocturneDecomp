@@ -2,7 +2,7 @@
 // Address: 00601e08
 // Address Range: [[00601e08, 00601e9b]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_realloc_implementation_FUN_00601e08(void * ptr, ulong new_size)
+// Signature: void * __cdecl crt_memory_c_realloc_implementation_FUN_00601e08(void *ptr,ulong new_size)
 
 #include "nocturne.h"
 

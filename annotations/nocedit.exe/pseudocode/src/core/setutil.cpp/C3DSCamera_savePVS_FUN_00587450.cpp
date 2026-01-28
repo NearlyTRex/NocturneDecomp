@@ -2,7 +2,7 @@
 // Address: 00587450
 // Address Range: [[00587450, 005874c7]]
 // Convention: __cdecl
-// Signature: int core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450(C3DSCamera * this_ptr, FILE * file_handle)
+// Signature: int __cdecl core_setutil_cpp_C3DSCamera_savePVS_FUN_00587450(C3DSCamera *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

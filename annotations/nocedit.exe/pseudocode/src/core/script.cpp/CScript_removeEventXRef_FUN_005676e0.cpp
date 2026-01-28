@@ -2,7 +2,7 @@
 // Address: 005676e0
 // Address Range: [[005676e0, 0056776b]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CScript_removeEventXRef_FUN_005676e0()
+// Signature: void core_script_cpp_CScript_removeEventXRef_FUN_005676e0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dfilter.cpp_freeFilters_FUN_00470980(CDemonFilter * * array)
+; __cdecl void __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter **array)
 ;
 ; Parameters:
 ; CDemonFilter * * Stack[0x4]:4   array

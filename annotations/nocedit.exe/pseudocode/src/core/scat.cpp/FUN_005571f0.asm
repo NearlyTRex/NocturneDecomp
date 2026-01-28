@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_scat.cpp_FUN_005571f0()
+; unknown void core_scat_cpp_FUN_005571f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88

@@ -2,7 +2,7 @@
 // Address: 0051ecd0
 // Address Range: [[0051ecd0, 0051ed2b]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh * this_ptr, int vertex_index)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh *this_ptr,int vertex_index)
 
 #include "nocturne.h"
 

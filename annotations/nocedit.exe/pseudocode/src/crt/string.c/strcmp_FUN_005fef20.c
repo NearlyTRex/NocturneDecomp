@@ -2,7 +2,7 @@
 // Address: 005fef20
 // Address Range: [[005fef20, 005fefcb]]
 // Convention: __cdecl
-// Signature: int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+// Signature: int __cdecl crt_string_c_strcmp_FUN_005fef20(char *str1,char *str2)
 
 #include "nocturne.h"
 

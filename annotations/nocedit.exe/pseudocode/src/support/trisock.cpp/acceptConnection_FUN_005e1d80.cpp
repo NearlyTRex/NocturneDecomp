@@ -2,7 +2,7 @@
 // Address: 005e1d80
 // Address Range: [[005e1d80, 005e1de8]]
 // Convention: __cdecl
-// Signature: int support_trisock.cpp_acceptConnection_FUN_005e1d80(SOCKET * listen_socket, SNetworkAddr * client_addr, SOCKET * new_socket)
+// Signature: int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80 (SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_clipper.c_perspectiveDivideVertices_FUN_00437bf0(void)
+; __cdecl void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_00437bf0(void)
 ;
 ;
 ; Referenced Globals:

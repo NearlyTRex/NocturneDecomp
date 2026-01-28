@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inv.cpp_drawWeaponIconBackground_FUN_00500050(int x1, int y1, int x2, int y2, int alpha)
+; __cdecl void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,int x2,int y2,int alpha)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x1

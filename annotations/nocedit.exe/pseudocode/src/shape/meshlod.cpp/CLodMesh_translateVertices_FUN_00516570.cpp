@@ -2,7 +2,7 @@
 // Address: 00516570
 // Address Range: [[00516570, 005165bf]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh * this_ptr, CVector3f * offset)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh *this_ptr,CVector3f *offset)
 
 #include "nocturne.h"
 

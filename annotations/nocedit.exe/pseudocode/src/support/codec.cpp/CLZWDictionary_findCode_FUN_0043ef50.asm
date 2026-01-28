@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50(CLZWDictionary * this_ptr, int search_code, int start_index)
+; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_0043ef50 (CLZWDictionary *this_ptr,int search_code,int start_index)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

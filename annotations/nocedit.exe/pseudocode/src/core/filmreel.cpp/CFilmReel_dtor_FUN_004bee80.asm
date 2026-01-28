@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFilmReel * core_filmreel.cpp_CFilmReel_dtor_FUN_004bee80(CFilmReel * this_ptr, uint d1, uint d2)
+; __cdecl CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004bee80(CFilmReel *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CFilmReel *      Stack[0x4]:4   this_ptr

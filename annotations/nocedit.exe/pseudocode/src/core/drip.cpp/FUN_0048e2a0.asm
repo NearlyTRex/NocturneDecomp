@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_drip.cpp_FUN_0048e2a0()
+; unknown void core_drip_cpp_FUN_0048e2a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x78]:1  local_78

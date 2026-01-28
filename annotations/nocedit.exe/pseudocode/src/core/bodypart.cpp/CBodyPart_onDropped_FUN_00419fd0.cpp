@@ -2,7 +2,7 @@
 // Address: 00419fd0
 // Address Range: [[00419fd0, 0041a03a]]
 // Convention: __cdecl
-// Signature: void core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0(CBodyPart * this_ptr, CVector3f * drop_position)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_onDropped_FUN_00419fd0(CBodyPart *this_ptr,CVector3f *drop_position)
 
 #include "nocturne.h"
 

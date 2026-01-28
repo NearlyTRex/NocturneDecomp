@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_allocMixBuffers_FUN_005a5730(int requested_size, int num_buffers)
+; __cdecl void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,int num_buffers)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   requested_size

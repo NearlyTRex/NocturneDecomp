@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CActorPropertyList_FUN_0040e500(void)
+; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xd8]:1  local_d8

@@ -2,7 +2,7 @@
 // Address: 00466040
 // Address Range: [[00466040, 004661c9]]
 // Convention: __cdecl
-// Signature: void shape_design.c_interactiveGlobalWeld_FUN_00466040(float tolerance)
+// Signature: void __cdecl shape_design_c_interactiveGlobalWeld_FUN_00466040(float tolerance)
 
 #include "nocturne.h"
 

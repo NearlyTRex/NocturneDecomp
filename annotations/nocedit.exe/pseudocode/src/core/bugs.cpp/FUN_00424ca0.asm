@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bugs.cpp_FUN_00424ca0()
+; unknown CDemonActorType * core_bugs_cpp_FUN_00424ca0(void)
 ;
 ;
 ; Referenced Globals:

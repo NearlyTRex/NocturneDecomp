@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples * quantized_samples, SMpegSubbandSamples * output_samples, int * scalefactor_data, SMpegLayer3Granule * granule_info, int channel_index, SMpegLayer3Granule * * granule_array)
+; __cdecl void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50 (SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples, int *scalefactor_data,SMpegLayer3Granule *granule_info,int channel_index, SMpegLayer3Granule **granule_array)
 ;
 ; Parameters:
 ; SMpegSubbandQuantizedSamples * Stack[0x4]:4   quantized_samples

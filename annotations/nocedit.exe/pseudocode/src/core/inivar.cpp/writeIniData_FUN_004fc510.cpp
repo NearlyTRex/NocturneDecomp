@@ -2,7 +2,7 @@
 // Address: 004fc510
 // Address Range: [[004fc510, 004fcc22]]
 // Convention: __cdecl
-// Signature: void core_inivar.cpp_writeIniData_FUN_004fc510(void)
+// Signature: void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void)
 
 #include "nocturne.h"
 

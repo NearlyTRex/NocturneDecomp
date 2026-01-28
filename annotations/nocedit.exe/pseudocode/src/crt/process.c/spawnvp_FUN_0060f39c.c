@@ -2,7 +2,7 @@
 // Address: 0060f39c
 // Address Range: [[0060f39c, 0060f863]]
 // Convention: __cdecl
-// Signature: int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv)
+// Signature: int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **argv)
 
 #include "nocturne.h"
 

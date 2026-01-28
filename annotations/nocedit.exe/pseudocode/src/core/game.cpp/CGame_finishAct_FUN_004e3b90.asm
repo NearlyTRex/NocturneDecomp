@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_game.cpp_CGame_finishAct_FUN_004e3b90()
+; unknown void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x550]:4  local_550

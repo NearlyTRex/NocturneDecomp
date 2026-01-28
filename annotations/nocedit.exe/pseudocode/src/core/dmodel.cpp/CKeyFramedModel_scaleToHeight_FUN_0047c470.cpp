@@ -2,7 +2,7 @@
 // Address: 0047c470
 // Address Range: [[0047c470, 0047c49e]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_scaleToHeight_FUN_0047c470(CKeyFramedModel * this_ptr, float desired_height)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_scaleToHeight_FUN_0047c470 (CKeyFramedModel *this_ptr,float desired_height)
 
 #include "nocturne.h"
 

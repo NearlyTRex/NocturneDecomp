@@ -2,7 +2,7 @@
 // Address: 00574770
 // Address Range: [[00574770, 00574784]]
 // Convention: __cdecl
-// Signature: void core_setcolid.cpp_freeRaytraceState_FUN_00574770(SRaytraceState * * array)
+// Signature: void __cdecl core_setcolid_cpp_freeRaytraceState_FUN_00574770(SRaytraceState **array)
 
 #include "nocturne.h"
 

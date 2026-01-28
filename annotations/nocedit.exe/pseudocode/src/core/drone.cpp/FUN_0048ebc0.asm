@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_drone.cpp_FUN_0048ebc0()
+; unknown void core_drone_cpp_FUN_0048ebc0(void)
 ;
 ;
 ; Referenced Globals:

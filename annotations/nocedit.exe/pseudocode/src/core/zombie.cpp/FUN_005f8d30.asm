@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_zombie.cpp_FUN_005f8d30()
+; unknown float * core_zombie_cpp_FUN_005f8d30(void)
 ;
 ;
 ; Referenced Globals:

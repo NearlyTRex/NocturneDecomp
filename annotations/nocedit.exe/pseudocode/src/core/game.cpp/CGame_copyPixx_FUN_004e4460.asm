@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGame * core_game.cpp_CGame_copyPixx_FUN_004e4460(CGame * this_ptr, CGame * other)
+; __cdecl CGame * __cdecl core_game_cpp_CGame_copyPixx_FUN_004e4460(CGame *this_ptr,CGame *other)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

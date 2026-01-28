@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_freeLodFaces_FUN_0051f0c0(CLodFace * * array)
+; __cdecl void __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace **array)
 ;
 ; Parameters:
 ; CLodFace * *     Stack[0x4]:4   array

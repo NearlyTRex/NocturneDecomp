@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_clipPolygonToBottom_FUN_0049b9c0(float y_min)
+; __cdecl void __cdecl core_dtri_cpp_clipPolygonToBottom_FUN_0049b9c0(float y_min)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   y_min

@@ -2,7 +2,7 @@
 // Address: 0050fbc0
 // Address Range: [[0050fbc0, 0050fdac]]
 // Convention: __cdecl
-// Signature: CLeakChecker * shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChecker * this_ptr, uint d1, uint d2, uint d3, uint d4)
+// Signature: CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0 (CLeakChecker *this_ptr,uint d1,uint d2,uint d3,uint d4)
 
 #include "nocturne.h"
 

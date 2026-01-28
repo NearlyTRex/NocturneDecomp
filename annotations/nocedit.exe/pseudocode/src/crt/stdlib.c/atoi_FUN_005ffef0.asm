@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
+; __cdecl int __cdecl crt_stdlib_c_atoi_FUN_005ffef0(char *string_ptr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   string_ptr

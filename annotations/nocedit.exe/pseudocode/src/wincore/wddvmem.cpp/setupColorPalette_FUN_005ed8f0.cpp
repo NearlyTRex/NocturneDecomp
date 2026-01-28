@@ -2,7 +2,7 @@
 // Address: 005ed8f0
 // Address Range: [[005ed8f0, 005eda17]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0(void)
 
 #include "nocturne.h"
 

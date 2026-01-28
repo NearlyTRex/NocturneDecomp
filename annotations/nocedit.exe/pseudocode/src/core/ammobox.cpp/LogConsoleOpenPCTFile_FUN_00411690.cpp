@@ -2,7 +2,7 @@
 // Address: 00411690
 // Address Range: [[00411690, 004116f2]]
 // Convention: unknown
-// Signature: undefined core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690()
+// Signature: void core_ammobox_cpp_LogConsoleOpenPCTFile_FUN_00411690 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,float param_6)
 
 #include "nocturne.h"
 

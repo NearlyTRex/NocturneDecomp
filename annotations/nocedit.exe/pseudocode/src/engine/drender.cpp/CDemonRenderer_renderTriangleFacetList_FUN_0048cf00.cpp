@@ -2,7 +2,7 @@
 // Address: 0048cf00
 // Address Range: [[0048cf00, 0048d16d]]
 // Convention: __cdecl
-// Signature: int engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags, int primitive_stride)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags,int primitive_stride)
 
 #include "nocturne.h"
 

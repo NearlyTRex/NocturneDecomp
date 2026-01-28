@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_saveCurrentModel_FUN_00459de0(void)
+; __cdecl void __cdecl shape_design_c_saveCurrentModel_FUN_00459de0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60

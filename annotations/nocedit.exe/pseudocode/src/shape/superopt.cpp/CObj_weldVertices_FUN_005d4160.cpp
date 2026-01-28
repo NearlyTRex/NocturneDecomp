@@ -2,7 +2,7 @@
 // Address: 005d4160
 // Address Range: [[005d4160, 005d44cc]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_weldVertices_FUN_005d4160(CObj * this_ptr, double weld_tolerance, int remove_degenerate)
+// Signature: int __cdecl shape_superopt_cpp_CObj_weldVertices_FUN_005d4160 (CObj *this_ptr,double weld_tolerance,int remove_degenerate)
 
 #include "nocturne.h"
 

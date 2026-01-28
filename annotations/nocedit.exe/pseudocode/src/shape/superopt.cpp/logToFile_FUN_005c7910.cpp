@@ -2,7 +2,7 @@
 // Address: 005c7910
 // Address Range: [[005c7910, 005c7994]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_logToFile_FUN_005c7910(char * format, ...)
+// Signature: void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
 
 #include "nocturne.h"
 

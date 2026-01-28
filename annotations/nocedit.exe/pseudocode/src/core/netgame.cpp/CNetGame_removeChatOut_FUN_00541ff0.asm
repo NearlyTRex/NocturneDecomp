@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0()
+; unknown void core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x158]:4  local_158

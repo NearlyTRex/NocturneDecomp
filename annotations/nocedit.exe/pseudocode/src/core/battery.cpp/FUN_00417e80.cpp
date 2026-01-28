@@ -2,7 +2,7 @@
 // Address: 00417e80
 // Address Range: [[00417e80, 00417e85]]
 // Convention: unknown
-// Signature: undefined core_battery.cpp_FUN_00417e80()
+// Signature: CDemonActorType * core_battery_cpp_FUN_00417e80(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004d7e50
 // Address Range: [[004d7e50, 004d7f1f]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50(CGame * this_ptr)
+// Signature: void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(CGame *this_ptr)
 
 #include "nocturne.h"
 

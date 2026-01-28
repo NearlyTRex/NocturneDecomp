@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0 (CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

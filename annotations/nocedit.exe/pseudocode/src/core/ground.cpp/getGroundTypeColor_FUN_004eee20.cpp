@@ -2,7 +2,7 @@
 // Address: 004eee20
 // Address Range: [[004eee20, 004eee78]]
 // Convention: __cdecl
-// Signature: uint core_ground.cpp_getGroundTypeColor_FUN_004eee20(int type)
+// Signature: uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(int type)
 
 #include "nocturne.h"
 

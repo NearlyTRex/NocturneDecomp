@@ -2,7 +2,7 @@
 // Address: 006084ec
 // Address Range: [[006084ec, 006088a0]]
 // Convention: __cdecl
-// Signature: int crt_io.c_write_FUN_006084ec(int fd, void * buffer, SIZE_T count)
+// Signature: int __cdecl crt_io_c_write_FUN_006084ec(int fd,void *buffer,SIZE_T count)
 
 #include "nocturne.h"
 

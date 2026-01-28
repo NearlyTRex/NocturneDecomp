@@ -2,7 +2,7 @@
 // Address: 004e44a0
 // Address Range: [[004e44a0, 004e44c2]]
 // Convention: __cdecl
-// Signature: CGargoyle * core_gargoyle.cpp_factoryFunc_FUN_004e44a0(void)
+// Signature: CGargoyle * __cdecl core_gargoyle_cpp_factoryFunc_FUN_004e44a0(void)
 
 #include "nocturne.h"
 

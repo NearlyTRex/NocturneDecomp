@@ -2,7 +2,7 @@
 // Address: 0048f5a0
 // Address Range: [[0048f5a0, 0048f658]]
 // Convention: __cdecl
-// Signature: CDrone * core_drone.cpp_dtor_FUN_0048f5a0(CDrone * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CDrone * __cdecl core_drone_cpp_dtor_FUN_0048f5a0 (CDrone *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

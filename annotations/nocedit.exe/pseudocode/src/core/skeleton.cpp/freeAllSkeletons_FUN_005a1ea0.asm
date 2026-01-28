@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0(void)
+; __cdecl void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0(void)
 ;
 ;
 ; XREF[5]:

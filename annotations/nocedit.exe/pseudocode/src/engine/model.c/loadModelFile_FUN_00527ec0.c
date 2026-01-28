@@ -2,7 +2,7 @@
 // Address: 00527ec0
 // Address Range: [[00527ec0, 005280a1]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_00527ec0(char * filename)
+// Signature: SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *filename)
 
 #include "nocturne.h"
 

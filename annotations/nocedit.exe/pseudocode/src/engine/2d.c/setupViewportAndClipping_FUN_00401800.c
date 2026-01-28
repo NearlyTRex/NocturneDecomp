@@ -2,7 +2,7 @@
 // Address: 00401800
 // Address Range: [[00401800, 00401896]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_setupViewportAndClipping_FUN_00401800(int left, int top, int right, int bottom)
+// Signature: void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401800(int left,int top,int right,int bottom)
 
 #include "nocturne.h"
 

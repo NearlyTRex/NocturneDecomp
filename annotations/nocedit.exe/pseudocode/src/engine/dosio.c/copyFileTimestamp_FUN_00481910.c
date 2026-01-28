@@ -2,7 +2,7 @@
 // Address: 00481910
 // Address Range: [[00481910, 0048195a]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+// Signature: int __cdecl engine_dosio_c_copyFileTimestamp_FUN_00481910(char *source_file,char *dest_file)
 
 #include "nocturne.h"
 

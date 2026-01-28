@@ -2,7 +2,7 @@
 // Address: 0054a990
 // Address Range: [[0054a990, 0054a9ac]]
 // Convention: __cdecl
-// Signature: void cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990(CPackedBitmap * this_ptr, char * filename)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0054a990(CPackedBitmap *this_ptr,char *filename)
 
 #include "nocturne.h"
 

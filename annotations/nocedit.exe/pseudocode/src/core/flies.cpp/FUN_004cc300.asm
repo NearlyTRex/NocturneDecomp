@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flies.cpp_FUN_004cc300()
+; unknown int core_flies_cpp_FUN_004cc300(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x58]:1  local_58

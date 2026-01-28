@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_string.c_mbstring_termination_check_FUN_0060b630(char * str)
+; __watcallStack int __watcallStack crt_string_c_mbstring_termination_check_FUN_0060b630(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

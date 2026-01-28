@@ -2,7 +2,7 @@
 // Address: 004e5d90
 // Address Range: [[004e5d90, 004e5d90]]
 // Convention: unknown
-// Signature: undefined core_gasmask.cpp_FUN_004e5d90()
+// Signature: void core_gasmask_cpp_FUN_004e5d90(void)
 
 #include "nocturne.h"
 

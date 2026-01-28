@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 (CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
 ;
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr

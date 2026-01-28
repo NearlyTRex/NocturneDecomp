@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_strstream.cpp_strstreambuf_sync_FUN_0060bb7c(void)
+; __watcallStack int __watcallStack crt_strstream_cpp_strstreambuf_sync_FUN_0060bb7c(void)
 ;
 ;
 ; *****************************************************************************

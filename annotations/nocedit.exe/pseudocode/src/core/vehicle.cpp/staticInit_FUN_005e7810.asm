@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_vehicle.cpp_staticInit_FUN_005e7810(void)
+; __cdecl void __cdecl core_vehicle_cpp_staticInit_FUN_005e7810(void)
 ;
 ;
 ; Referenced Globals:

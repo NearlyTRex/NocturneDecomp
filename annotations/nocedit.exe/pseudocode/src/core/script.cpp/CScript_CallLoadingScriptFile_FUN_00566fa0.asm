@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_CallLoadingScriptFile_FUN_00566fa0()
+; unknown void core_script_cpp_CScript_CallLoadingScriptFile_FUN_00566fa0(void)
 ;
 ;
 ; XREF[1]:

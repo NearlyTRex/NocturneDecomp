@@ -2,7 +2,7 @@
 // Address: 00462b70
 // Address Range: [[00462b70, 004635a2]]
 // Convention: __cdecl
-// Signature: void shape_design.c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_index, int polygon2_index)
+// Signature: void __cdecl shape_design_c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_index,int polygon2_index)
 
 #include "nocturne.h"
 

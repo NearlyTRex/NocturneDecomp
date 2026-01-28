@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_startupWinsock_FUN_005e1ec0(void)
+; __cdecl int __cdecl support_trisock_cpp_startupWinsock_FUN_005e1ec0(void)
 ;
 ;
 ; XREF[1]:

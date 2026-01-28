@@ -2,7 +2,7 @@
 // Address: 005feeaf
 // Address Range: [[005feeaf, 005feee8]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_destroyTypeArray_FUN_005feeaf(WatcomTypeArrayInfo * destroy_info)
+// Signature: void * __cdecl crt_memory_c_destroyTypeArray_FUN_005feeaf(WatcomTypeArrayInfo *destroy_info)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0048ea90
 // Address Range: [[0048ea90, 0048eadd]]
 // Convention: __cdecl
-// Signature: CDrip * core_drip.cpp_dtor_FUN_0048ea90(CDrip * this_ptr, uint d1, uint d2)
+// Signature: CDrip * __cdecl core_drip_cpp_dtor_FUN_0048ea90(CDrip *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

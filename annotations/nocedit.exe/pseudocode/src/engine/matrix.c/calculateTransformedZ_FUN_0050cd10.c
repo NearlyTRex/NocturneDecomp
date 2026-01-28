@@ -2,7 +2,7 @@
 // Address: 0050cd10
 // Address Range: [[0050cd10, 0050cd67]]
 // Convention: __cdecl
-// Signature: int engine_matrix.c_calculateTransformedZ_FUN_0050cd10(int * input_coords)
+// Signature: int __cdecl engine_matrix_c_calculateTransformedZ_FUN_0050cd10(int *input_coords)
 
 #include "nocturne.h"
 

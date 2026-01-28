@@ -2,7 +2,7 @@
 // Address: 00401f40
 // Address Range: [[00401f40, 00401fcf]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int x_max, int y_max, int color)
+// Signature: void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00401f40 (char *text,int x_start,int y_start,int x_max,int y_max,int color)
 
 #include "nocturne.h"
 

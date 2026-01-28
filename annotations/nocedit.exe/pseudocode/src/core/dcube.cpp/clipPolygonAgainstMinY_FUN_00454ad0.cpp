@@ -2,7 +2,7 @@
 // Address: 00454ad0
 // Address Range: [[00454ad0, 00454c20]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0(float min_y_plane)
+// Signature: void __cdecl core_dcube_cpp_clipPolygonAgainstMinY_FUN_00454ad0(float min_y_plane)
 
 #include "nocturne.h"
 

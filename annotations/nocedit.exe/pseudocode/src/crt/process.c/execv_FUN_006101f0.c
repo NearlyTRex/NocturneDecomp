@@ -2,7 +2,7 @@
 // Address: 006101f0
 // Address Range: [[006101f0, 0061022c]]
 // Convention: __cdecl
-// Signature: int crt_process.c_execv_FUN_006101f0(int argc, char * program, char * * argv)
+// Signature: int __cdecl crt_process_c_execv_FUN_006101f0(int argc,char *program,char **argv)
 
 #include "nocturne.h"
 

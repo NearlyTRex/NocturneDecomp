@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0(int x, int y, float blend_factor, int palette_index)
+; __cdecl void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0 (int x,int y,float blend_factor,int palette_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

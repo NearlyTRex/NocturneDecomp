@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(CLodMesh * this_ptr, uint * out_crc)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(CLodMesh *this_ptr,uint *out_crc)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

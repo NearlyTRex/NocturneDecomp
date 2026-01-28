@@ -2,7 +2,7 @@
 // Address: 005711b0
 // Address Range: [[005711b0, 0057122a]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSet * this_ptr)
+// Signature: void __cdecl core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

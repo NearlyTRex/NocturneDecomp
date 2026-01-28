@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820(CAmmoBox * this_ptr)
+; __cdecl int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_00411820(CAmmoBox *this_ptr)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 0054f630
 // Address Range: [[0054f630, 0054f646]]
 // Convention: __cdecl
-// Signature: int engine_pod.cpp_qsortByFilename_FUN_0054f630(char * * filename1_ptr, char * * filename2_ptr)
+// Signature: int __cdecl engine_pod_cpp_qsortByFilename_FUN_0054f630(char **filename1_ptr,char **filename2_ptr)
 
 #include "nocturne.h"
 

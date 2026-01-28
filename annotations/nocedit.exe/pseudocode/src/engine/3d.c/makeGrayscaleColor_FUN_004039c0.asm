@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint engine_3d.c_makeGrayscaleColor_FUN_004039c0(int intensity)
+; __cdecl uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int intensity)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   intensity

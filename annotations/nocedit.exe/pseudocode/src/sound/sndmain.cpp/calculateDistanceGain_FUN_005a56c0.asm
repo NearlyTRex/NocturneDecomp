@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float sound_sndmain.cpp_calculateDistanceGain_FUN_005a56c0(float distance, float reference_distance, float min_distance, float max_distance)
+; __cdecl float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_005a56c0 (float distance,float reference_distance,float min_distance,float max_distance)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   distance

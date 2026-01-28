@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setAudioSampleRate_FUN_005ab2c0(int sample_rate)
+; __cdecl void __cdecl sound_sndmain_cpp_setAudioSampleRate_FUN_005ab2c0(int sample_rate)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   sample_rate

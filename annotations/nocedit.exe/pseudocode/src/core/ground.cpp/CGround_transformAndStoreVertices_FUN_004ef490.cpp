@@ -2,7 +2,7 @@
 // Address: 004ef490
 // Address Range: [[004ef490, 004ef87d]]
 // Convention: __cdecl
-// Signature: void core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGround * this_ptr)
+// Signature: void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGround *this_ptr)
 
 #include "nocturne.h"
 

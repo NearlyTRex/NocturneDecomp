@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_windll.cpp_clearScreen_FUN_005b3f37(int color)
+; __cdecl void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   color

@@ -2,7 +2,7 @@
 // Address: 004b2200
 // Address Range: [[004b2200, 004b2265]]
 // Convention: __cdecl
-// Signature: FILE * engine_fileio.cpp_openFileWithRetry_FUN_004b2200(char * filename, char * mode)
+// Signature: FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,char *mode)
 
 #include "nocturne.h"
 

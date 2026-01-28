@@ -2,7 +2,7 @@
 // Address: 004f4380
 // Address Range: [[004f4380, 004f43a3]]
 // Convention: __cdecl
-// Signature: void core_hiram.cpp_staticInit_FUN_004f4380(void)
+// Signature: void __cdecl core_hiram_cpp_staticInit_FUN_004f4380(void)
 
 #include "nocturne.h"
 

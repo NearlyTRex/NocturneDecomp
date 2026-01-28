@@ -2,7 +2,7 @@
 // Address: 005e5100
 // Address Range: [[005e5100, 005e512e]]
 // Convention: unknown
-// Signature: undefined core_tvbat.cpp_FUN_005e5100()
+// Signature: int core_tvbat_cpp_FUN_005e5100(void)
 
 #include "nocturne.h"
 

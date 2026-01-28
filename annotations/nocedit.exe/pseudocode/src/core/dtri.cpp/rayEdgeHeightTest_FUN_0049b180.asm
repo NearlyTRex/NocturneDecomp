@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f * vertex1, CVector3f * vertex2, float rayRadius, float * outHeight)
+; __cdecl int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180 (CVector3f *vertex1,CVector3f *vertex2,float rayRadius,float *outHeight)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   vertex1

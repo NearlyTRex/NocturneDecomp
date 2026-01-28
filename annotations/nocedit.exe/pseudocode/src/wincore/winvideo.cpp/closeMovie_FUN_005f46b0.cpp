@@ -2,7 +2,7 @@
 // Address: 005f46b0
 // Address Range: [[005f46b0, 005f46f3]]
 // Convention: __cdecl
-// Signature: void wincore_winvideo.cpp_closeMovie_FUN_005f46b0(HWND window_handle)
+// Signature: void __cdecl wincore_winvideo_cpp_closeMovie_FUN_005f46b0(HWND window_handle)
 
 #include "nocturne.h"
 

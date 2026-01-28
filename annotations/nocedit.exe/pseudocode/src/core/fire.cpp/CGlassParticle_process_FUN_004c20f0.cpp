@@ -2,7 +2,7 @@
 // Address: 004c20f0
 // Address Range: [[004c20f0, 004c215d]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CGlassParticle_process_FUN_004c20f0(CGlassParticle * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004c20f0(CGlassParticle *this_ptr)
 
 #include "nocturne.h"
 

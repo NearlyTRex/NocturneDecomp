@@ -2,7 +2,7 @@
 // Address: 00600c30
 // Address Range: [[00600c30, 00600c72]]
 // Convention: __cdecl
-// Signature: DWORD crt_file.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
+// Signature: DWORD __cdecl crt_file_c_setReadonlyAttribute_FUN_00600c30(char *filename,DWORD file_attributes)
 
 #include "nocturne.h"
 

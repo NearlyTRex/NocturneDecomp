@@ -2,7 +2,7 @@
 // Address: 00449660
 // Address Range: [[00449660, 00449682]]
 // Convention: __cdecl
-// Signature: CCurtain * core_curtain.cpp_factoryFunc_FUN_00449660(void)
+// Signature: CCurtain * __cdecl core_curtain_cpp_factoryFunc_FUN_00449660(void)
 
 #include "nocturne.h"
 

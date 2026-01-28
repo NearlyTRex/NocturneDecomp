@@ -2,7 +2,7 @@
 // Address: 00448c00
 // Address Range: [[00448c00, 00448c23]]
 // Convention: __cdecl
-// Signature: void core_crossbow.cpp_staticInit_FUN_00448c00(void)
+// Signature: void __cdecl core_crossbow_cpp_staticInit_FUN_00448c00(void)
 
 #include "nocturne.h"
 

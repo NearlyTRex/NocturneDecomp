@@ -2,7 +2,7 @@
 // Address: 004feb10
 // Address Range: [[004feb10, 004fec0a]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_selectWeapon_FUN_004feb10(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+// Signature: void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10 (CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0040a210
 // Address Range: [[0040a210, 0040abb6]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor * this_ptr, int hit_type)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
 
 #include "nocturne.h"
 

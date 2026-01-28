@@ -2,7 +2,7 @@
 // Address: 004c4f60
 // Address Range: [[004c4f60, 004c50a9]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CGunFlame_process_FUN_004c4f60(CGunFlame * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
 
 #include "nocturne.h"
 

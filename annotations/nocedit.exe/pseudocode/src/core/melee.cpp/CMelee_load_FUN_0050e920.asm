@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_melee.cpp_CMelee_load_FUN_0050e920()
+; unknown void core_melee_cpp_CMelee_load_FUN_0050e920(void)
 ;
 ;
 ; Referenced Globals:

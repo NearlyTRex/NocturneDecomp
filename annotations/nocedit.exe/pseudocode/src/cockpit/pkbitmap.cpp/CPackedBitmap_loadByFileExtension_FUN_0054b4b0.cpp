@@ -2,7 +2,7 @@
 // Address: 0054b4b0
 // Address Range: [[0054b4b0, 0054b51e]]
 // Convention: __cdecl
-// Signature: void cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap * this_ptr, int processing_flags)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0 (CPackedBitmap *this_ptr,int processing_flags)
 
 #include "nocturne.h"
 

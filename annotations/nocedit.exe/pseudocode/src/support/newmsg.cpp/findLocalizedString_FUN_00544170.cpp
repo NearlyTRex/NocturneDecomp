@@ -2,7 +2,7 @@
 // Address: 00544170
 // Address Range: [[00544170, 005441e5]]
 // Convention: __cdecl
-// Signature: char * support_newmsg.cpp_findLocalizedString_FUN_00544170(char * key, int lower_bound, int upper_bound)
+// Signature: char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int lower_bound,int upper_bound)
 
 #include "nocturne.h"
 

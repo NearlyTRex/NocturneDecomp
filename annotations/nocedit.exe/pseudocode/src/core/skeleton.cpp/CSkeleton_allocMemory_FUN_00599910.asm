@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton * this_ptr, int bone_count, int frame_count)
+; __cdecl void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910 (CSkeleton *this_ptr,int bone_count,int frame_count)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr

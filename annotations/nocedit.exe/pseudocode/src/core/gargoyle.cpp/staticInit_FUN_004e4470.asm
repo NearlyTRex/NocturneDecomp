@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_gargoyle.cpp_staticInit_FUN_004e4470(void)
+; __cdecl void __cdecl core_gargoyle_cpp_staticInit_FUN_004e4470(void)
 ;
 ;
 ; Referenced Globals:

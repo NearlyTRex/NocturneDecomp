@@ -2,7 +2,7 @@
 // Address: 0060f04c
 // Address Range: [[0060f04c, 0060f1ee]]
 // Convention: __cdecl
-// Signature: int crt_env.c_updateEnvironTable_FUN_0060f04c(char * envstr)
+// Signature: int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
 
 #include "nocturne.h"
 

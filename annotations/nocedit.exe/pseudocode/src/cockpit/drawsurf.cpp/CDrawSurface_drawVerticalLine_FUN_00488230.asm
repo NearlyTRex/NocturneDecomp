@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230(CDrawSurface * this_ptr, int x, int start_y, int end_y)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230 (CDrawSurface *this_ptr,int x,int start_y,int end_y)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_xform.cpp_computeOrthogonalityError_FUN_005f6460(CMatrix3x4f * matrix)
+; __cdecl float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_005f6460(CMatrix3x4f *matrix)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix

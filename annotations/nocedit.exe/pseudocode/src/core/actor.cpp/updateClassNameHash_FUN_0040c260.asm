@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint core_actor.cpp_updateClassNameHash_FUN_0040c260(uint current_hash, int character)
+; __cdecl uint __cdecl core_actor_cpp_updateClassNameHash_FUN_0040c260(uint current_hash,int character)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   current_hash

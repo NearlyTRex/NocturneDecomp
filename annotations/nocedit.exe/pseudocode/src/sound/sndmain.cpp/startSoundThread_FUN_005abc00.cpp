@@ -2,7 +2,7 @@
 // Address: 005abc00
 // Address Range: [[005abc00, 005abcab]]
 // Convention: __cdecl
-// Signature: HANDLE sound_sndmain.cpp_startSoundThread_FUN_005abc00(double latency_seconds)
+// Signature: HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds)
 
 #include "nocturne.h"
 

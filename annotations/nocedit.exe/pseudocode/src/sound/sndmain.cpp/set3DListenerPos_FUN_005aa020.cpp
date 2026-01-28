@@ -2,7 +2,7 @@
 // Address: 005aa020
 // Address Range: [[005aa020, 005aa093]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_set3DListenerPos_FUN_005aa020(double pos_x, double pos_y, double pos_z)
+// Signature: void __cdecl sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(double pos_x,double pos_y,double pos_z)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_CSampleInfo_getBitDepth_FUN_005addd0(CSampleInfo * this_ptr)
+; __cdecl int __cdecl sound_sndmain_cpp_CSampleInfo_getBitDepth_FUN_005addd0(CSampleInfo *this_ptr)
 ;
 ; Parameters:
 ; CSampleInfo *    Stack[0x4]:4   this_ptr

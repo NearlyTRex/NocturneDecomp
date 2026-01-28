@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_string.c_compare_mb_chars_ci_FUN_0060c790(char * str1, char * str2)
+; __cdecl int __cdecl crt_string_c_compare_mb_chars_ci_FUN_0060c790(char *str1,char *str2)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1

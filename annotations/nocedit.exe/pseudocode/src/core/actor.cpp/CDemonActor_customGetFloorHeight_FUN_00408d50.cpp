@@ -2,7 +2,7 @@
 // Address: 00408d50
 // Address Range: [[00408d50, 00408d8e]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor * this_ptr, float x_pos, float z_pos, float * out_floor_height)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50 (CDemonActor *this_ptr,float x_pos,float z_pos,float *out_floor_height)
 
 #include "nocturne.h"
 

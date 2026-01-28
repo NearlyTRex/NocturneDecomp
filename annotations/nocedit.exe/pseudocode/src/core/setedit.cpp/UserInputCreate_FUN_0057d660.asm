@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_UserInputCreate_FUN_0057d660()
+; unknown int core_setedit_cpp_UserInputCreate_FUN_0057d660 (undefined4 param_1,undefined4 param_2,void *unaff_EBX,undefined4 param_4, CDemonSet *param_5,int param_6)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1f0]:1  local_1f0

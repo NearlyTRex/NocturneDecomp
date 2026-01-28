@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gasmask.cpp_CGasMask_FUN_004e5d50()
+; unknown void core_gasmask_cpp_CGasMask_FUN_004e5d50(void)
 ;
 ;
 ; Called Functions:

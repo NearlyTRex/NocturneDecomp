@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * engine_3d.c_renderPolygonUVVertexLitNormalized_FUN_00405510(SMRGLHeaderPrimitive * polygon_info)
+; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVVertexLitNormalized_FUN_00405510(SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info

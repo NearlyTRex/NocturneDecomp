@@ -2,7 +2,7 @@
 // Address: 004889b0
 // Address Range: [[004889b0, 00488a21]]
 // Convention: __cdecl
-// Signature: void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedCenteredRectangle_FUN_004889b0(CDrawSurface * this_ptr, int center_x, int center_y, int width, int height)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedCenteredRectangle_FUN_004889b0 (CDrawSurface *this_ptr,int center_x,int center_y,int width,int height)
 
 #include "nocturne.h"
 

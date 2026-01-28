@@ -2,7 +2,7 @@
 // Address: 005229b0
 // Address Range: [[005229b0, 00522a4e]]
 // Convention: __stack2_esi
-// Signature: CVector3f * core_mirror.cpp_transformMirrorVertex_FUN_005229b0(SMirrorReflection * reflection, CVector3f * input_vertex, CVector3f * output_vertex)
+// Signature: CVector3f * __stack2_esi core_mirror_cpp_transformMirrorVertex_FUN_005229b0 (SMirrorReflection *reflection,CVector3f *input_vertex,CVector3f *output_vertex)
 
 #include "nocturne.h"
 

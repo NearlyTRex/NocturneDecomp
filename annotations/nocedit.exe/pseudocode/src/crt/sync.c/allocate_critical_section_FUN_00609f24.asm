@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl LPCRITICAL_SECTION crt_sync.c_allocate_critical_section_FUN_00609f24(void)
+; __cdecl LPCRITICAL_SECTION __cdecl crt_sync_c_allocate_critical_section_FUN_00609f24(void)
 ;
 ;
 ; XREF[2]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_freeAllSamples_FUN_005aa660(void)
+; __cdecl void __cdecl sound_sndmain_cpp_freeAllSamples_FUN_005aa660(void)
 ;
 ;
 ; XREF[2]:

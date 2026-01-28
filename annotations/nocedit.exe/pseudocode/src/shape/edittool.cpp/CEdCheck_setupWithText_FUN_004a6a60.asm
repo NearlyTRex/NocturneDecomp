@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60(CEdCheck * this_ptr, int x_pos, int y_pos, char * checkbox_text)
+; __cdecl void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60 (CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text)
 ;
 ; Parameters:
 ; CEdCheck *       Stack[0x4]:4   this_ptr

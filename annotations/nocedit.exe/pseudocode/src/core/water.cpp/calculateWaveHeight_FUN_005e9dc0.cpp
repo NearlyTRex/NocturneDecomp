@@ -2,7 +2,7 @@
 // Address: 005e9dc0
 // Address Range: [[005e9dc0, 005e9e04]]
 // Convention: __cdecl
-// Signature: float core_water.cpp_calculateWaveHeight_FUN_005e9dc0(int x, int y)
+// Signature: float __cdecl core_water_cpp_calculateWaveHeight_FUN_005e9dc0(int x,int y)
 
 #include "nocturne.h"
 

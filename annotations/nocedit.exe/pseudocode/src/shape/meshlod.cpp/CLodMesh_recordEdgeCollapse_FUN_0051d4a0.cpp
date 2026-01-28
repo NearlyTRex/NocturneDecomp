@@ -2,7 +2,7 @@
 // Address: 0051d4a0
 // Address Range: [[0051d4a0, 0051d51e]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0(CLodMesh * this_ptr, CLodEdge * edge_data)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0(CLodMesh *this_ptr,CLodEdge *edge_data)
 
 #include "nocturne.h"
 

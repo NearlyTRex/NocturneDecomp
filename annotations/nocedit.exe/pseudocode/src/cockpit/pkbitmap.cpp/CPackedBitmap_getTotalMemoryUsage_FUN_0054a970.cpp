@@ -2,7 +2,7 @@
 // Address: 0054a970
 // Address Range: [[0054a970, 0054a98e]]
 // Convention: __cdecl
-// Signature: int cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_0054a970(CPackedBitmap * this_ptr)
+// Signature: int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_0054a970(CPackedBitmap *this_ptr)
 
 #include "nocturne.h"
 

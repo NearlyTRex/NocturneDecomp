@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_npc.cpp_CNPC_serialize_FUN_00544ba0(CNPC * this_ptr)
+; __cdecl void __cdecl core_npc_cpp_CNPC_serialize_FUN_00544ba0(CNPC *this_ptr)
 ;
 ; Parameters:
 ; CNPC *           Stack[0x4]:4   this_ptr

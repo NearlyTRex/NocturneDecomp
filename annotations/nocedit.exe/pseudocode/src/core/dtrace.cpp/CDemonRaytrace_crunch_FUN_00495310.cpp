@@ -2,7 +2,7 @@
 // Address: 00495310
 // Address Range: [[00495310, 00495a98]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace * this_ptr, float cube_size)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,float cube_size)
 
 #include "nocturne.h"
 

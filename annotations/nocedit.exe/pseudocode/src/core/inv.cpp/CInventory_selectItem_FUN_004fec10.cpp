@@ -2,7 +2,7 @@
 // Address: 004fec10
 // Address Range: [[004fec10, 004fed04]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_selectItem_FUN_004fec10(CInventory * this_ptr, int direction)
+// Signature: void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004fec10(CInventory *this_ptr,int direction)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005cd3c0
 // Address Range: [[005cd3c0, 005cd40f]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CPoly_clearVertexStateFlags_FUN_005cd3c0(CPoly * this_ptr, uint mask)
+// Signature: void __cdecl shape_superopt_cpp_CPoly_clearVertexStateFlags_FUN_005cd3c0(CPoly *this_ptr,uint mask)
 
 #include "nocturne.h"
 

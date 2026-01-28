@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format, ...)
+; __cdecl void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

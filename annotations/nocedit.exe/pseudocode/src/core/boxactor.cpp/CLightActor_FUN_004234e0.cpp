@@ -2,7 +2,7 @@
 // Address: 004234e0
 // Address Range: [[004234e0, 0042358b]]
 // Convention: unknown
-// Signature: undefined core_boxactor.cpp_CLightActor_FUN_004234e0()
+// Signature: void core_boxactor_cpp_CLightActor_FUN_004234e0(void)
 
 #include "nocturne.h"
 

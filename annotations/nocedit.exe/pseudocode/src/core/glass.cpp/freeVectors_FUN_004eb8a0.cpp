@@ -2,7 +2,7 @@
 // Address: 004eb8a0
 // Address Range: [[004eb8a0, 004eb8b4]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_freeVectors_FUN_004eb8a0(CVector3f * * array)
+// Signature: void __cdecl core_glass_cpp_freeVectors_FUN_004eb8a0(CVector3f **array)
 
 #include "nocturne.h"
 

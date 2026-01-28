@@ -2,7 +2,7 @@
 // Address: 004b9f40
 // Address Range: [[004b9f40, 004ba4ec]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40(CFileManager * this_ptr, char * pod_filename)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (CFileManager *this_ptr,char *pod_filename)
 
 #include "nocturne.h"
 

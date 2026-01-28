@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+; unknown void core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,float param_6)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice * this_ptr, CSfxSlot * slot)
+; __cdecl double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x8]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 0040ac30
 // Address Range: [[0040ac30, 0040ac73]]
 // Convention: __cdecl
-// Signature: char * core_actor.cpp_copyToActorDebugBuffer_FUN_0040ac30(char * source_string)
+// Signature: char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040ac30(char *source_string)
 
 #include "nocturne.h"
 

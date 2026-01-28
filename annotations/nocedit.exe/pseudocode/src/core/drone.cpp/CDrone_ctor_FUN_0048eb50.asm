@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrone * core_drone.cpp_CDrone_ctor_FUN_0048eb50(CDrone * this_ptr)
+; __cdecl CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0048eb50(CDrone *this_ptr)
 ;
 ; Parameters:
 ; CDrone *         Stack[0x4]:4   this_ptr

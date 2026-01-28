@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_actor.cpp_FUN_0040fffe()
+; unknown undefined4 core_actor_cpp_FUN_0040fffe(undefined4 param_1,undefined4 param_2,int unaff_EBX)
 ;
 ;
 ; XREF[1]:

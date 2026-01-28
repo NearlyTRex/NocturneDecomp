@@ -2,7 +2,7 @@
 // Address: 004708e0
 // Address Range: [[004708e0, 00470970]]
 // Convention: __cdecl
-// Signature: void core_dfilter.cpp_CFilterFX_process_FUN_004708e0(CFilterFx * this_ptr)
+// Signature: void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr)
 
 #include "nocturne.h"
 

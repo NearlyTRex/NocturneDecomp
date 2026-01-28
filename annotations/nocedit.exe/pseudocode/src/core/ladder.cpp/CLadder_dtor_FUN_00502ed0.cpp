@@ -2,7 +2,7 @@
 // Address: 00502ed0
 // Address Range: [[00502ed0, 00502f1d]]
 // Convention: __cdecl
-// Signature: CLadder * core_ladder.cpp_CLadder_dtor_FUN_00502ed0(CLadder * this_ptr, uint d1, uint d2)
+// Signature: CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_00502ed0(CLadder *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

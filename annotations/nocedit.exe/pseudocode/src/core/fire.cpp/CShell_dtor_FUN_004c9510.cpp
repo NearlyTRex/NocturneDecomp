@@ -2,7 +2,7 @@
 // Address: 004c9510
 // Address Range: [[004c9510, 004c951f]]
 // Convention: __cdecl
-// Signature: CShell * core_fire.cpp_CShell_dtor_FUN_004c9510(CShell * this_ptr)
+// Signature: CShell * __cdecl core_fire_cpp_CShell_dtor_FUN_004c9510(CShell *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070(CDemonFileManager * file_manager_ptr, char * model_filename)
+; __cdecl void __cdecl core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 (CDemonFileManager *file_manager_ptr,char *model_filename)
 ;
 ; Parameters:
 ; CDemonFileManager * Stack[0x4]:4   file_manager_ptr

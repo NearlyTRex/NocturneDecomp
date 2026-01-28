@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_event.cpp_FUN_004aa2a0()
+; unknown undefined4 core_event_cpp_FUN_004aa2a0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

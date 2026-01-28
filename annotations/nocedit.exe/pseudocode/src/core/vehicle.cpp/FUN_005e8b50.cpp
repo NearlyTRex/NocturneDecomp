@@ -2,7 +2,7 @@
 // Address: 005e8b50
 // Address Range: [[005e8b50, 005e8b97]]
 // Convention: unknown
-// Signature: undefined core_vehicle.cpp_FUN_005e8b50()
+// Signature: uint core_vehicle_cpp_FUN_005e8b50(void)
 
 #include "nocturne.h"
 

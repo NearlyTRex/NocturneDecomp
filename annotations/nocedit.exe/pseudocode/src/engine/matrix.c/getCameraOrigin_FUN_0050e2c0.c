@@ -2,7 +2,7 @@
 // Address: 0050e2c0
 // Address Range: [[0050e2c0, 0050e2ee]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
+// Signature: void __cdecl engine_matrix_c_getCameraOrigin_FUN_0050e2c0(CVector3i *output)
 
 #include "nocturne.h"
 

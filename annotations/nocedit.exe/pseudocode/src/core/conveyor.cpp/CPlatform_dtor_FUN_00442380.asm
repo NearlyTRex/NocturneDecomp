@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPlatform * core_conveyor.cpp_CPlatform_dtor_FUN_00442380(CPlatform * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00442380(CPlatform *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

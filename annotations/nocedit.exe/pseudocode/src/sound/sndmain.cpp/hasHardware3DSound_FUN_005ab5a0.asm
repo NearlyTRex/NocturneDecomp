@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0(void)
+; __cdecl uint __cdecl sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0(void)
 ;
 ;
 ; XREF[7]:

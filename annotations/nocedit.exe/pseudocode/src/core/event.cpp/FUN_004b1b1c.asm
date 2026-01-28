@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_event.cpp_FUN_004b1b1c()
+; unknown void core_event_cpp_FUN_004b1b1c (undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4)
 ;
 ;
 ; *****************************************************************************

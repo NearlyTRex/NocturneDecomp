@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_wateract.cpp_FUN_005eb040()
+; unknown void core_wateract_cpp_FUN_005eb040(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30

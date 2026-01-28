@@ -2,7 +2,7 @@
 // Address: 006027e0
 // Address Range: [[006027e0, 00602870]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+// Signature: void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(FILE *file)
 
 #include "nocturne.h"
 

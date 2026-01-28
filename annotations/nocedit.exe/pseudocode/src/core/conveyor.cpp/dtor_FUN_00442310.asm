@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CConveyor * core_conveyor.cpp_dtor_FUN_00442310(CConveyor * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CConveyor * __cdecl core_conveyor_cpp_dtor_FUN_00442310(CConveyor *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr

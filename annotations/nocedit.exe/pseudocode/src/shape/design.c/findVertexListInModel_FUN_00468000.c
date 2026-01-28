@@ -2,7 +2,7 @@
 // Address: 00468000
 // Address Range: [[00468000, 00468075]]
 // Convention: __cdecl
-// Signature: CVector3i * shape_design.c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended * model_ptr)
+// Signature: CVector3i * __cdecl shape_design_c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended *model_ptr)
 
 #include "nocturne.h"
 

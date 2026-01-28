@@ -2,7 +2,7 @@
 // Address: 00578290
 // Address Range: [[00578290, 0057841d]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_DefineTexturesMaybe_FUN_00578290()
+// Signature: void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
 
 #include "nocturne.h"
 

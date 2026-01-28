@@ -2,7 +2,7 @@
 // Address: 004eb3c0
 // Address Range: [[004eb3c0, 004eb480]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0(CGlass * this_ptr, CActorPropertyList * property_list)
+// Signature: void __cdecl core_glass_cpp_CGlass_getPropertyList_FUN_004eb3c0 (CGlass *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_stairs.cpp_FUN_005b9c10(CDemonActor * param_1, undefined4 param_2, CDemonActor * param_3)
+; __cdecl int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,undefined4 param_2,CDemonActor *param_3)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   param_1

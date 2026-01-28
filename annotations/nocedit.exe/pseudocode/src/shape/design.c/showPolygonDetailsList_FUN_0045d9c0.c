@@ -2,7 +2,7 @@
 // Address: 0045d9c0
 // Address Range: [[0045d9c0, 0045dbdc]]
 // Convention: unknown
-// Signature: undefined shape_design.c_showPolygonDetailsList_FUN_0045d9c0()
+// Signature: void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
 
 #include "nocturne.h"
 

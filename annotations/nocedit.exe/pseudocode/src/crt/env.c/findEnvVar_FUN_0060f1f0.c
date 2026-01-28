@@ -2,7 +2,7 @@
 // Address: 0060f1f0
 // Address Range: [[0060f1f0, 0060f2f2]]
 // Convention: __cdecl
-// Signature: int crt_env.c_findEnvVar_FUN_0060f1f0(char * name, int delete_flag)
+// Signature: int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag)
 
 #include "nocturne.h"
 

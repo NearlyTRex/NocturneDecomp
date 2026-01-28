@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+; __watcallStack int __watcallStack crt_stdio_c_fflushInternal_FUN_006039d0(FILE *file_handle)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

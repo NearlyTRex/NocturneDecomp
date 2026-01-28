@@ -2,7 +2,7 @@
 // Address: 0047fa90
 // Address Range: [[0047fa90, 0047fab2]]
 // Convention: __cdecl
-// Signature: CDoor * core_door.cpp_factoryFunc_FUN_0047fa90(void)
+// Signature: CDoor * __cdecl core_door_cpp_factoryFunc_FUN_0047fa90(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005d3280
 // Address Range: [[005d3280, 005d32d9]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_removeVerticesByFlag_FUN_005d3280(CObj * this_ptr, uint flag_mask)
+// Signature: void __cdecl shape_superopt_cpp_CObj_removeVerticesByFlag_FUN_005d3280(CObj *this_ptr,uint flag_mask)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005e1f50
 // Address Range: [[005e1f50, 005e2047]]
 // Convention: __cdecl
-// Signature: void core_terrain.cpp_CTerrain_render_FUN_005e1f50(CTerrain * this_ptr)
+// Signature: void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004d1170
 // Address Range: [[004d1170, 004d11bc]]
 // Convention: __cdecl
-// Signature: uint engine_font.cpp_packPixelNative_FUN_004d1170(int red, int green, int blue)
+// Signature: uint __cdecl engine_font_cpp_packPixelNative_FUN_004d1170(int red,int green,int blue)
 
 #include "nocturne.h"
 

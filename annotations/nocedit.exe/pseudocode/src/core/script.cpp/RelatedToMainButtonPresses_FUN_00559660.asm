@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_RelatedToMainButtonPresses_FUN_00559660()
+; unknown int core_script_cpp_RelatedToMainButtonPresses_FUN_00559660(void)
 ;
 ;
 ; XREF[1]:

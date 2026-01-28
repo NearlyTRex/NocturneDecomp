@@ -2,7 +2,7 @@
 // Address: 00448490
 // Address Range: [[00448490, 004484b2]]
 // Convention: __cdecl
-// Signature: CCrate * core_crate.cpp_factoryFunc_FUN_00448490(void)
+// Signature: CCrate * __cdecl core_crate_cpp_factoryFunc_FUN_00448490(void)
 
 #include "nocturne.h"
 

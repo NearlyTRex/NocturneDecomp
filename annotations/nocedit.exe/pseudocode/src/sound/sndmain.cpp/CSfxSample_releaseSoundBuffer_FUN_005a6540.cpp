@@ -2,7 +2,7 @@
 // Address: 005a6540
 // Address Range: [[005a6540, 005a6597]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSample * sample)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSample *sample)
 
 #include "nocturne.h"
 

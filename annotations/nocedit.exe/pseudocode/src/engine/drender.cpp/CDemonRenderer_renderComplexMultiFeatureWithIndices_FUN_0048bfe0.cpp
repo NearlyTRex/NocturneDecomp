@@ -2,7 +2,7 @@
 // Address: 0048bfe0
 // Address Range: [[0048bfe0, 0048c121]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 

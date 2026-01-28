@@ -2,7 +2,7 @@
 // Address: 004bd730
 // Address Range: [[004bd730, 004bd741]]
 // Convention: __cdecl
-// Signature: CCheckOutList * engine_fileio.cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList * this_ptr)
+// Signature: CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr)
 
 #include "nocturne.h"
 

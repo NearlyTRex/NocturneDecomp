@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hero.cpp_closestHeroToPoint_FUN_004f2170()
+; unknown int core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

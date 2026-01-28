@@ -2,7 +2,7 @@
 // Address: 005f3150
 // Address Range: [[005f3150, 005f35d9]]
 // Convention: __stdcall
-// Signature: LRESULT wincore_winrun.cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+// Signature: LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
 
 #include "nocturne.h"
 

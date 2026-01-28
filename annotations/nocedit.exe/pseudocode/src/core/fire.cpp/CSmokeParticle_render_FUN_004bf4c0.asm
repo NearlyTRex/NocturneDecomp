@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle * this_ptr)
+; __cdecl void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *this_ptr)
 ;
 ; Parameters:
 ; CSmokeParticle * Stack[0x4]:4   this_ptr

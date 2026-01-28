@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_editorIndex2X_FUN_00566b30()
+; unknown uint core_script_cpp_CScript_editorIndex2X_FUN_00566b30(void)
 ;
 ;
 ; XREF[7]:

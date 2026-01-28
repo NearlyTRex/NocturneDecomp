@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SVert * core_skeleton.cpp_SVert_dtor_FUN_005a1f90(SVert * this_ptr)
+; __cdecl SVert * __cdecl core_skeleton_cpp_SVert_dtor_FUN_005a1f90(SVert *this_ptr)
 ;
 ; Parameters:
 ; SVert *          Stack[0x4]:4   this_ptr

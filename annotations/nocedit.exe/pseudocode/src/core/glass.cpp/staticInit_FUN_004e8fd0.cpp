@@ -2,7 +2,7 @@
 // Address: 004e8fd0
 // Address Range: [[004e8fd0, 004e8ff3]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_staticInit_FUN_004e8fd0(void)
+// Signature: void __cdecl core_glass_cpp_staticInit_FUN_004e8fd0(void)
 
 #include "nocturne.h"
 

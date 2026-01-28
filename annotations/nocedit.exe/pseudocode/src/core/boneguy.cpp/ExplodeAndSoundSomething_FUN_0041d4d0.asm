@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0()
+; unknown void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 ;
 ;
 ; Called Functions:

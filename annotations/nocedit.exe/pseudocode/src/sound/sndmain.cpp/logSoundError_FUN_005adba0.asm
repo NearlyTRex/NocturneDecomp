@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format, ...)
+; __cdecl void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

@@ -2,7 +2,7 @@
 // Address: 00534210
 // Address Range: [[00534210, 005344ea]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210(void)
+// Signature: void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
 
 #include "nocturne.h"
 

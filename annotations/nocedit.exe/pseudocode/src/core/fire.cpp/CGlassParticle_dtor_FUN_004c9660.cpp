@@ -2,7 +2,7 @@
 // Address: 004c9660
 // Address Range: [[004c9660, 004c9680]]
 // Convention: __cdecl
-// Signature: CGlassParticle * core_fire.cpp_CGlassParticle_dtor_FUN_004c9660(CGlassParticle * this_ptr)
+// Signature: CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_dtor_FUN_004c9660(CGlassParticle *this_ptr)
 
 #include "nocturne.h"
 

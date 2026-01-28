@@ -2,7 +2,7 @@
 // Address: 00524f10
 // Address Range: [[00524f10, 00524f40]]
 // Convention: __cdecl
-// Signature: void core_mmx.c_detectCPUFeatures_FUN_00524f10(void)
+// Signature: void __cdecl core_mmx_c_detectCPUFeatures_FUN_00524f10(void)
 
 #include "nocturne.h"
 

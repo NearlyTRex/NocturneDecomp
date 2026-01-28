@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_005ae1c0(int sfx_handle)
+; __cdecl int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_005ae1c0(int sfx_handle)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   sfx_handle

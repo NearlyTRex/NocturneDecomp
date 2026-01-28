@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_prim.c_setMaxViewportScanline_FUN_00551b80(int max)
+; __cdecl void __cdecl engine_prim_c_setMaxViewportScanline_FUN_00551b80(int max)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   max

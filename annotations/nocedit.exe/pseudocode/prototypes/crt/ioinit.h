@@ -5,4 +5,4 @@
 
 // Original: crt_ioinit.c_staticInit_FUN_00608f20
 // Address: 00608f20
-void staticInit(void);
+void __cdecl staticInit(void);

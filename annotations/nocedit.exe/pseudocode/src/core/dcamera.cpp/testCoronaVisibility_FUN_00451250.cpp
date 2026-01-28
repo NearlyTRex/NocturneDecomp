@@ -2,7 +2,7 @@
 // Address: 00451250
 // Address Range: [[00451250, 0045133b]]
 // Convention: __cdecl
-// Signature: int core_dcamera.cpp_testCoronaVisibility_FUN_00451250(int start_x, int start_y, int depth_reciprocal)
+// Signature: int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_00451250(int start_x,int start_y,int depth_reciprocal)
 
 #include "nocturne.h"
 

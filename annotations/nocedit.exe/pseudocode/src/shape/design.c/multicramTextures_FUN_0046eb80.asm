@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_multicramTextures_FUN_0046eb80(void)
+; __cdecl void __cdecl shape_design_c_multicramTextures_FUN_0046eb80(void)
 ;
 ;
 ; XREF[1]:

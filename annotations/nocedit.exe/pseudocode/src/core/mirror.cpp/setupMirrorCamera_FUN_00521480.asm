@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_mirror.cpp_setupMirrorCamera_FUN_00521480(SMirrorReflection * reflection)
+; __cdecl void __cdecl core_mirror_cpp_setupMirrorCamera_FUN_00521480(SMirrorReflection *reflection)
 ;
 ; Parameters:
 ; SMirrorReflection * Stack[0x4]:4   reflection

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMoloch * core_moloch.cpp_factoryFunc_FUN_00528af0(void)
+; __cdecl CMoloch * __cdecl core_moloch_cpp_factoryFunc_FUN_00528af0(void)
 ;
 ;
 ; XREF[1]:

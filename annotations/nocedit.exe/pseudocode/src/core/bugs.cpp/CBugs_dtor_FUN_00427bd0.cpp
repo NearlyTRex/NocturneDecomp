@@ -2,7 +2,7 @@
 // Address: 00427bd0
 // Address Range: [[00427bd0, 00427c98]]
 // Convention: __cdecl
-// Signature: CBugs * core_bugs.cpp_CBugs_dtor_FUN_00427bd0(CBugs * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9)
+// Signature: CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00427bd0 (CBugs *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8,uint d9)
 
 #include "nocturne.h"
 

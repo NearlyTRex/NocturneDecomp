@@ -2,7 +2,7 @@
 // Address: 005fefd0
 // Address Range: [[005fefd0, 005ff05f]]
 // Convention: __cdecl
-// Signature: char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+// Signature: char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,FILE *stream)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00602880
 // Address Range: [[00602880, 00602948]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880(int file_handle_index, void * buffer, int bytes_to_read)
+// Signature: int __watcallStack crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880 (int file_handle_index,void *buffer,int bytes_to_read)
 
 #include "nocturne.h"
 

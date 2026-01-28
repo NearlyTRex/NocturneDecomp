@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_beast.cpp_FUN_004183b0()
+; unknown undefined4 core_beast_cpp_FUN_004183b0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x10]:1  local_10

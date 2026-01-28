@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_box.cpp_CBox_processPhysics_FUN_0041e350(CBox * this_ptr, float delta_time)
+; __cdecl void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBox *           Stack[0x4]:4   this_ptr

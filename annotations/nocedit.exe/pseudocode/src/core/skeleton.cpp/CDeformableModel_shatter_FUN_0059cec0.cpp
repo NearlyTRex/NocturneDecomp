@@ -2,7 +2,7 @@
 // Address: 0059cec0
 // Address Range: [[0059cec0, 0059d454]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformableModel * this_ptr, CVector3f * center_position, CVector3f * orientation_vector, int lod_index, CVector3i * skinned_vertices, int * part_visibility_flags, int * texture_set_indices, int particle_lifetime)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0 (CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector, int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags, int *texture_set_indices,int particle_lifetime)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl istream * crt_iostream.cpp_istream_ctor_FUN_00606376(istream * this_ptr, uint c1)
+; __cdecl istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(istream *this_ptr,uint c1)
 ;
 ; Parameters:
 ; istream *        Stack[0x4]:4   this_ptr

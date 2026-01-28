@@ -2,7 +2,7 @@
 // Address: 0060618a
 // Address Range: [[0060618a, 006061a1]]
 // Convention: __cdecl
-// Signature: void crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0060618a(ios * this_ptr, int dtor_flags)
+// Signature: void __cdecl crt_strstream_cpp_strstreambase_destructor_thunk_FUN_0060618a(ios *this_ptr,int dtor_flags)
 
 #include "nocturne.h"
 

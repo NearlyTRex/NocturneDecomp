@@ -2,7 +2,7 @@
 // Address: 00467850
 // Address Range: [[00467850, 00467e64]]
 // Convention: __cdecl
-// Signature: void shape_design.c_vertexReducer_FUN_00467850(float tolerance, float angle_tolerance, int display_progress)
+// Signature: void __cdecl shape_design_c_vertexReducer_FUN_00467850 (float tolerance,float angle_tolerance,int display_progress)
 
 #include "nocturne.h"
 

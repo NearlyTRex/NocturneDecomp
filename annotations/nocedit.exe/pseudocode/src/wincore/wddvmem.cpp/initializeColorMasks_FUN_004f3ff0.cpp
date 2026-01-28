@@ -2,7 +2,7 @@
 // Address: 004f3ff0
 // Address Range: [[004f3ff0, 004f4130]]
 // Convention: __cdecl
-// Signature: ulonglong wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0(void)
+// Signature: ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
 
 #include "nocturne.h"
 

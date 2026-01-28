@@ -2,7 +2,7 @@
 // Address: 004d1a40
 // Address Range: [[004d1a40, 004d1eb0]]
 // Convention: unknown
-// Signature: undefined core_frankgen.cpp_PlaySounds_FUN_004d1a40()
+// Signature: void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
 
 #include "nocturne.h"
 

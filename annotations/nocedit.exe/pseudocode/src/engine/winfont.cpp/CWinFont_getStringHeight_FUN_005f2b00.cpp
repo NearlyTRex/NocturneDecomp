@@ -2,7 +2,7 @@
 // Address: 005f2b00
 // Address Range: [[005f2b00, 005f2b65]]
 // Convention: __cdecl
-// Signature: int engine_winfont.cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont * this_ptr, char * text_string)
+// Signature: int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont *this_ptr,char *text_string)
 
 #include "nocturne.h"
 

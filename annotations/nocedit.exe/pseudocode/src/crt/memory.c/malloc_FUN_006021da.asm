@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
+; __cdecl void * __cdecl crt_memory_c_malloc_FUN_006021da(SIZE_T size)
 ;
 ; Parameters:
 ; SIZE_T           Stack[0x4]:4   size

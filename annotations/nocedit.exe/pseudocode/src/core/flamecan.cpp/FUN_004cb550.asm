@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flamecan.cpp_FUN_004cb550()
+; unknown undefined4 core_flamecan_cpp_FUN_004cb550(void)
 ;
 ;
 ; Called Functions:

@@ -2,7 +2,7 @@
 // Address: 00464c90
 // Address Range: [[00464c90, 00464e24] [00464e3c, 00464f08] [00464f20, 00465041] [00465058, 00465156]]
 // Convention: __cdecl
-// Signature: int shape_design.c_polygonToolModeManager_FUN_00464c90(int input_parameter)
+// Signature: int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_parameter)
 
 #include "nocturne.h"
 

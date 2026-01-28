@@ -2,7 +2,7 @@
 // Address: 004b7c90
 // Address Range: [[004b7c90, 004b7d42]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CFileManager_verifyPodCRC_FUN_004b7c90(CFileManager * this_ptr, char * pod_filename)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90(CFileManager *this_ptr,char *pod_filename)
 
 #include "nocturne.h"
 

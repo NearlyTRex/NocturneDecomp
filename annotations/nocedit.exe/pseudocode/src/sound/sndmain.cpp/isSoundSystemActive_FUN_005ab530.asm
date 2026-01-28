@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530(void)
+; __cdecl uint __cdecl sound_sndmain_cpp_isSoundSystemActive_FUN_005ab530(void)
 ;
 ;
 ; XREF[5]:

@@ -2,7 +2,7 @@
 // Address: 0050bb60
 // Address Range: [[0050bb60, 0050bc24]]
 // Convention: __cdecl
-// Signature: CMarquee * core_marquee.cpp_CMarquee_ctor_FUN_0050bb60(CMarquee * this_ptr)
+// Signature: CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_0050bb60(CMarquee *this_ptr)
 
 #include "nocturne.h"
 

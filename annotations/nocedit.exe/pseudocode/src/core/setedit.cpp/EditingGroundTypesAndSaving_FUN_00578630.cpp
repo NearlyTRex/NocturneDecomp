@@ -2,7 +2,7 @@
 // Address: 00578630
 // Address Range: [[00578630, 005789f5]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
+// Signature: void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
 
 #include "nocturne.h"
 

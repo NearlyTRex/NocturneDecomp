@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_memory.c_GetMemoryBounds_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)
+; __cdecl void __cdecl crt_memory_c_GetMemoryBounds_FUN_0060a6a0(ThreadData *pStackBound,uint *pHeapBound)
 ;
 ; Parameters:
 ; ThreadData *     Stack[0x4]:4   pStackBound

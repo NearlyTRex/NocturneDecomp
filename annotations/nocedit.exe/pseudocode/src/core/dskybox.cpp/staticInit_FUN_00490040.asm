@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dskybox.cpp_staticInit_FUN_00490040(void)
+; __cdecl void __cdecl core_dskybox_cpp_staticInit_FUN_00490040(void)
 ;
 ;
 ; Referenced Globals:

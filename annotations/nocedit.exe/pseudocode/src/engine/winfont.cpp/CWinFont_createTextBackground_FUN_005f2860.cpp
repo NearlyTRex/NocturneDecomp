@@ -2,7 +2,7 @@
 // Address: 005f2860
 // Address Range: [[005f2860, 005f2a24]]
 // Convention: __cdecl
-// Signature: int engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860(CWinFont * this_ptr, int width, int height)
+// Signature: int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860 (CWinFont *this_ptr,int width,int height)
 
 #include "nocturne.h"
 

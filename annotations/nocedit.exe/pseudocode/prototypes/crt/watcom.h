@@ -9,8 +9,8 @@ uint memavl(void);
 
 // Original: crt_watcom.c_memmax_FUN_00600940
 // Address: 00600940
-undefined memmax();
+uint memmax(void);
 
 // Original: crt_watcom.c_heapchk_FUN_00600ad0
 // Address: 00600ad0
-undefined heapchk();
+int __cdecl heapchk(void);

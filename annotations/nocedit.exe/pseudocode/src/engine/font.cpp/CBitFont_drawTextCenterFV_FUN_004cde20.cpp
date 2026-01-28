@@ -2,7 +2,7 @@
 // Address: 004cde20
 // Address Range: [[004cde20, 004cde63]]
 // Convention: __cdecl
-// Signature: int engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20(CBitFont * this_ptr, int x_pos, int y_pos, int color_mode, int color_value, char * format_string, ...)
+// Signature: int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004cde20 (CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string ,...)
 
 #include "nocturne.h"
 

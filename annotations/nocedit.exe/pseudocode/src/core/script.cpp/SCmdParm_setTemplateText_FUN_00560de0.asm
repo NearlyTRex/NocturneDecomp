@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0()
+; unknown undefined4 core_script_cpp_SCmdParm_setTemplateText_FUN_00560de0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970()
+; unknown void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 ;
 ;
 ; Referenced Globals:

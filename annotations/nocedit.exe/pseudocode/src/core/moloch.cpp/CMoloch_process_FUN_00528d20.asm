@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_moloch.cpp_CMoloch_process_FUN_00528d20(CMoloch * this_ptr, float delta_time)
+; __cdecl void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CMoloch *        Stack[0x4]:4   this_ptr

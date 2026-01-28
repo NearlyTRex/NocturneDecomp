@@ -2,7 +2,7 @@
 // Address: 0050bb20
 // Address Range: [[0050bb20, 0050bb42]]
 // Convention: __cdecl
-// Signature: CMarquee * core_marquee.cpp_factoryFunc_FUN_0050bb20(void)
+// Signature: CMarquee * __cdecl core_marquee_cpp_factoryFunc_FUN_0050bb20(void)
 
 #include "nocturne.h"
 

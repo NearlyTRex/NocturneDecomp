@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_projectCachedPoint_FUN_0050cda0(int cacheIndex)
+; __cdecl void __cdecl engine_matrix_c_projectCachedPoint_FUN_0050cda0(int cacheIndex)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   cacheIndex

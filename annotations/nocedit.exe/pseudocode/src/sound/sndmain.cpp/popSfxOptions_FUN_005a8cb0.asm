@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0(void)
+; __cdecl void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0(void)
 ;
 ;
 ; XREF[31]:

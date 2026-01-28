@@ -2,7 +2,7 @@
 // Address: 005600c0
 // Address Range: [[005600c0, 0056013f]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CScript_processTimer_FUN_005600c0()
+// Signature: undefined4 core_script_cpp_CScript_processTimer_FUN_005600c0(void)
 
 #include "nocturne.h"
 

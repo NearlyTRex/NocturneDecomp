@@ -2,7 +2,7 @@
 // Address: 00408870
 // Address Range: [[00408870, 004088a2]]
 // Convention: __cdecl
-// Signature: CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00408870(CDemonActorTransformState * transform_cache)
+// Signature: CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408870(CDemonActorTransformState *transform_cache)
 
 #include "nocturne.h"
 

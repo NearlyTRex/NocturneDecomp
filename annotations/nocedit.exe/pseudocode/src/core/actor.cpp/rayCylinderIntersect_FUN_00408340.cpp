@@ -2,7 +2,7 @@
 // Address: 00408340
 // Address Range: [[00408340, 004087a1]]
 // Convention: __cdecl
-// Signature: float core_actor.cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
+// Signature: float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340 (SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal)
 
 #include "nocturne.h"
 

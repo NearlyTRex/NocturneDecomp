@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, int * out_device_ids)
+; __cdecl int __cdecl wincore_windll_cpp_buildCardList_FUN_005b7db0 (int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids, int *out_device_ids)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   out_card_count

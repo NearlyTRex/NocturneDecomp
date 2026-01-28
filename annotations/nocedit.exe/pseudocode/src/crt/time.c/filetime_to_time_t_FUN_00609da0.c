@@ -2,7 +2,7 @@
 // Address: 00609da0
 // Address Range: [[00609da0, 00609e65]]
 // Convention: __cdecl
-// Signature: time_t crt_time.c_filetime_to_time_t_FUN_00609da0(FILETIME * filetime)
+// Signature: time_t __cdecl crt_time_c_filetime_to_time_t_FUN_00609da0(FILETIME *filetime)
 
 #include "nocturne.h"
 

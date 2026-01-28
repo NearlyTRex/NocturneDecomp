@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0()
+; unknown void core_hostage_cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c4]:4  local_1c4

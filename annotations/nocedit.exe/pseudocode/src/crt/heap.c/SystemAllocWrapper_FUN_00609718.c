@@ -2,7 +2,7 @@
 // Address: 00609718
 // Address Range: [[00609718, 0060972a]]
 // Convention: __cdecl
-// Signature: void * crt_heap.c_SystemAllocWrapper_FUN_00609718(ulong size)
+// Signature: void * __cdecl crt_heap_c_SystemAllocWrapper_FUN_00609718(ulong size)
 
 #include "nocturne.h"
 

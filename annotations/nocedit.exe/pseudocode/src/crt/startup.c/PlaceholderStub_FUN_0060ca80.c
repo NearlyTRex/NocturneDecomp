@@ -2,7 +2,7 @@
 // Address: 0060ca80
 // Address Range: [[0060ca80, 0060ca80]]
 // Convention: __cdecl
-// Signature: undefined crt_startup.c_PlaceholderStub_FUN_0060ca80()
+// Signature: void __cdecl crt_startup_c_PlaceholderStub_FUN_0060ca80(void)
 
 #include "nocturne.h"
 

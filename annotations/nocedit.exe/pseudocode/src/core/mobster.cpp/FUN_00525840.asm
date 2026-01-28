@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mobster.cpp_FUN_00525840()
+; unknown void core_mobster_cpp_FUN_00525840(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x19c]:1  local_19c

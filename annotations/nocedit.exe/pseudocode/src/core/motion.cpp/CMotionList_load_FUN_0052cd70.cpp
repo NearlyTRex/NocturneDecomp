@@ -2,7 +2,7 @@
 // Address: 0052cd70
 // Address Range: [[0052cd70, 0052d169]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionList_load_FUN_0052cd70(CMotionList * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

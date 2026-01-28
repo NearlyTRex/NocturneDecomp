@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
+; unknown int core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(int param_1)
 ;
 ;
 ; XREF[2]:

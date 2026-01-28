@@ -2,7 +2,7 @@
 // Address: 0044b3e0
 // Address Range: [[0044b3e0, 0044b5f9]]
 // Convention: unknown
-// Signature: undefined core_curtain.cpp_CCurtain_load_FUN_0044b3e0()
+// Signature: void core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
 
 #include "nocturne.h"
 

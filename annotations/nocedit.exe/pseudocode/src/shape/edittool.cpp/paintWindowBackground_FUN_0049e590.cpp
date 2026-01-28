@@ -2,7 +2,7 @@
 // Address: 0049e590
 // Address Range: [[0049e590, 0049e69f]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_paintWindowBackground_FUN_0049e590(void)
+// Signature: void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
 
 #include "nocturne.h"
 

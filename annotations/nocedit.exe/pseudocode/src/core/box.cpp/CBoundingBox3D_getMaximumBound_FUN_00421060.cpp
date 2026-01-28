@@ -2,7 +2,7 @@
 // Address: 00421060
 // Address Range: [[00421060, 004210a6]]
 // Convention: __cdecl
-// Signature: float core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_00421060(CBoundingBox3D * this_ptr)
+// Signature: float __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_00421060(CBoundingBox3D *this_ptr)
 
 #include "nocturne.h"
 

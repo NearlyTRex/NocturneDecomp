@@ -2,7 +2,7 @@
 // Address: 0059dd60
 // Address Range: [[0059dd60, 0059dda0]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60(CDeformableModel * this_ptr)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

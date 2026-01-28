@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)
+; __cdecl double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 (CLodMesh *this_ptr,SLodSamplePoint *sample_point,CLodFace *face)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x8]:4   this_ptr

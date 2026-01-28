@@ -2,7 +2,7 @@
 // Address: 006012a0
 // Address Range: [[006012a0, 006012b6]]
 // Convention: __cdecl
-// Signature: int crt_io.c_chdir_FUN_006012a0(char * path)
+// Signature: int __cdecl crt_io_c_chdir_FUN_006012a0(char *path)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister WCHAR * crt_string.c_wcsdup_FUN_0060a660(WCHAR * str)
+; __watcallRegister WCHAR * crt_string_c_wcsdup_FUN_0060a660(WCHAR *str)
 ;
 ;
 ; XREF[1]:

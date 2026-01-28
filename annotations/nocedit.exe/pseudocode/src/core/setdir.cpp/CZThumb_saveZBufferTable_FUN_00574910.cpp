@@ -2,7 +2,7 @@
 // Address: 00574910
 // Address Range: [[00574910, 00574b1c]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb * this_ptr, CVector3f * camera_pos, CVector3f * look_at_pos, int width, int height, float unknown_scale, FILE * file_handle)
+// Signature: void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,FILE *file_handle)
 
 #include "nocturne.h"
 

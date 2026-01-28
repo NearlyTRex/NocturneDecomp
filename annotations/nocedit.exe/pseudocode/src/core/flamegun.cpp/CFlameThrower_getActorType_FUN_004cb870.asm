@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_flamegun.cpp_CFlameThrower_getActorType_FUN_004cb870(CFlameThrower * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_flamegun_cpp_CFlameThrower_getActorType_FUN_004cb870(CFlameThrower *this_ptr)
 ;
 ; Parameters:
 ; CFlameThrower *  Stack[0x4]:4   this_ptr

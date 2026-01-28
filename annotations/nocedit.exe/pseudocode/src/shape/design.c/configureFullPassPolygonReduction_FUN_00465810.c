@@ -2,7 +2,7 @@
 // Address: 00465810
 // Address Range: [[00465810, 004658db]]
 // Convention: __cdecl
-// Signature: void shape_design.c_configureFullPassPolygonReduction_FUN_00465810(int ui_mode)
+// Signature: void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int ui_mode)
 
 #include "nocturne.h"
 

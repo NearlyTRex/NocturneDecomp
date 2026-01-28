@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_prim.c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex * vertex0, SRenderVertex * vertex1)
+; __cdecl void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *vertex0,SRenderVertex *vertex1)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex0

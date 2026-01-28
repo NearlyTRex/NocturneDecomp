@@ -2,7 +2,7 @@
 // Address: 0049bdf0
 // Address Range: [[0049bdf0, 0049bf40]]
 // Convention: __cdecl
-// Signature: void core_dtri.cpp_clipPolygonToNear_FUN_0049bdf0(float z_near)
+// Signature: void __cdecl core_dtri_cpp_clipPolygonToNear_FUN_0049bdf0(float z_near)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_stdio.c_CalculateZeroPadding_FUN_0060317c(FormatSpec * spec_info)
+; __cdecl void __cdecl crt_stdio_c_CalculateZeroPadding_FUN_0060317c(FormatSpec *spec_info)
 ;
 ; Parameters:
 ; FormatSpec *     Stack[0x4]:4   spec_info

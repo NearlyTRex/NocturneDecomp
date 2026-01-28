@@ -2,7 +2,7 @@
 // Address: 0045c5b0
 // Address Range: [[0045c5b0, 0045c6bf]]
 // Convention: __cdecl
-// Signature: void shape_design.c_selectVertexToDelete_FUN_0045c5b0(void)
+// Signature: void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CScript * core_script.cpp_CScript_ctor_FUN_005597f0(CScript * this_ptr)
+; __cdecl CScript * __cdecl core_script_cpp_CScript_ctor_FUN_005597f0(CScript *this_ptr)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

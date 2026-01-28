@@ -2,7 +2,7 @@
 // Address: 005401e0
 // Address Range: [[005401e0, 0054054a]]
 // Convention: __cdecl
-// Signature: int core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame * this_ptr, int sync_stage)
+// Signature: int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_ptr,int sync_stage)
 
 #include "nocturne.h"
 

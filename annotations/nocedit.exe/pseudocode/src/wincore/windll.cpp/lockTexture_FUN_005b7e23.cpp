@@ -2,7 +2,7 @@
 // Address: 005b7e23
 // Address Range: [[005b7e23, 005b7e4a]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_lockTexture_FUN_005b7e23(int texture_id)
+// Signature: int __cdecl wincore_windll_cpp_lockTexture_FUN_005b7e23(int texture_id)
 
 #include "nocturne.h"
 

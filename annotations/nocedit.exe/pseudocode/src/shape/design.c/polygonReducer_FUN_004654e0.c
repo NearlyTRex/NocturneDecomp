@@ -2,7 +2,7 @@
 // Address: 004654e0
 // Address Range: [[004654e0, 0046555f]]
 // Convention: __cdecl
-// Signature: void shape_design.c_polygonReducer_FUN_004654e0(void)
+// Signature: void __cdecl shape_design_c_polygonReducer_FUN_004654e0(void)
 
 #include "nocturne.h"
 

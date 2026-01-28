@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle * * rect_a, SCramRectangle * * rect_b)
+; __cdecl int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140 (SCramRectangle **rect_a,SCramRectangle **rect_b)
 ;
 ; Parameters:
 ; SCramRectangle * * Stack[0xc]:4   rect_a

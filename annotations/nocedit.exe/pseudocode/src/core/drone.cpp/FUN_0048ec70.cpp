@@ -2,7 +2,7 @@
 // Address: 0048ec70
 // Address Range: [[0048ec70, 0048f2ea]]
 // Convention: unknown
-// Signature: undefined core_drone.cpp_FUN_0048ec70()
+// Signature: void core_drone_cpp_FUN_0048ec70(void)
 
 #include "nocturne.h"
 

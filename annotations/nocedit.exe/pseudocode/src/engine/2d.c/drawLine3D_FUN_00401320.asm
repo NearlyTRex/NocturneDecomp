@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawLine3D_FUN_00401320(int x1, int y1, uint z1, int x2, int y2, uint z2)
+; __cdecl void __cdecl engine_2d_c_drawLine3D_FUN_00401320(int x1,int y1,uint z1,int x2,int y2,uint z2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x1

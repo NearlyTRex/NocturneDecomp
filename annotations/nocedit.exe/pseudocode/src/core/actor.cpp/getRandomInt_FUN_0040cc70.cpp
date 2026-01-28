@@ -2,7 +2,7 @@
 // Address: 0040cc70
 // Address Range: [[0040cc70, 0040cd0a]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
+// Signature: int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value)
 
 #include "nocturne.h"
 

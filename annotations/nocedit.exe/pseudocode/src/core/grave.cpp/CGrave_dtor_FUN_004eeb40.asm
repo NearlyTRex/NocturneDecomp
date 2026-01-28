@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGrave * core_grave.cpp_CGrave_dtor_FUN_004eeb40(CGrave * this_ptr, uint d1, uint d2)
+; __cdecl CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004eeb40(CGrave *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 005d66e0
 // Address Range: [[005d66e0, 005d6c04]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0(CVector3d * vec1, CVector3d * vec2)
+// Signature: int __cdecl shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(CVector3d *vec1,CVector3d *vec2)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004c56e0
 // Address Range: [[004c56e0, 004c5717]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CLightningBolt_process_FUN_004c56e0(CLightningBolt * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CLightningBolt_process_FUN_004c56e0(CLightningBolt *this_ptr)
 
 #include "nocturne.h"
 

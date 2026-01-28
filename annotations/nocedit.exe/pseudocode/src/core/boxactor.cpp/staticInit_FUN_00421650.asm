@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_boxactor.cpp_staticInit_FUN_00421650(void)
+; __cdecl void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void)
 ;
 ;
 ; Referenced Globals:

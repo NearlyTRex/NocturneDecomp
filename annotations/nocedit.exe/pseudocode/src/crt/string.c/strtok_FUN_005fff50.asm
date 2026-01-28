@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_string.c_strtok_FUN_005fff50(char * str, char * delimiters)
+; __cdecl char * __cdecl crt_string_c_strtok_FUN_005fff50(char *str,char *delimiters)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

@@ -2,7 +2,7 @@
 // Address: 0040b970
 // Address Range: [[0040b970, 0040b9ea]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)
+// Signature: void __cdecl core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970 (CDeformableModelInstance *model_ptr,char *property_name)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004be150
 // Address Range: [[004be150, 004be228]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150(CDemonFileManager * file_manager_ptr, char * cloth_filename)
+// Signature: void __cdecl core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 (CDemonFileManager *file_manager_ptr,char *cloth_filename)
 
 #include "nocturne.h"
 

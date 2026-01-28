@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_configureCustomKeyBindings_FUN_005138e0(void)
+; __cdecl void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xa7c]:1  local_a7c

@@ -2,7 +2,7 @@
 // Address: 00408d10
 // Address Range: [[00408d10, 00408d4c]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10(CDemonActor * this_ptr, SIntersectXZCylinder * cylinder)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10 (CDemonActor *this_ptr,SIntersectXZCylinder *cylinder)
 
 #include "nocturne.h"
 

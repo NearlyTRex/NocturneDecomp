@@ -2,7 +2,7 @@
 // Address: 00424560
 // Address Range: [[00424560, 004245e7]]
 // Convention: unknown
-// Signature: undefined core_bride.cpp_CBride_load_FUN_00424560()
+// Signature: void core_bride_cpp_CBride_load_FUN_00424560(void)
 
 #include "nocturne.h"
 

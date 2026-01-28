@@ -2,7 +2,7 @@
 // Address: 00606600
 // Address Range: [[00606600, 00606616]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_remove_FUN_00606600(char * filename)
+// Signature: int __watcallStack crt_stdio_c_remove_FUN_00606600(char *filename)
 
 #include "nocturne.h"
 

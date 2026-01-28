@@ -2,7 +2,7 @@
 // Address: 004ee4d0
 // Address Range: [[004ee4d0, 004ee4f2]]
 // Convention: __cdecl
-// Signature: CGrave * core_grave.cpp_factoryFunc_FUN_004ee4d0(void)
+// Signature: CGrave * __cdecl core_grave_cpp_factoryFunc_FUN_004ee4d0(void)
 
 #include "nocturne.h"
 

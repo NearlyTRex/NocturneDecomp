@@ -2,7 +2,7 @@
 // Address: 00482050
 // Address Range: [[00482050, 004820b2]]
 // Convention: __cdecl
-// Signature: void engine_dosio.c_changeFileExtension_FUN_00482050(char * source_path, char * destination_buffer, char * new_extension)
+// Signature: void __cdecl engine_dosio_c_changeFileExtension_FUN_00482050 (char *source_path,char *destination_buffer,char *new_extension)
 
 #include "nocturne.h"
 

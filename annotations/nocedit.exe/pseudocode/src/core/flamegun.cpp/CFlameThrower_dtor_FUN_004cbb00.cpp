@@ -2,7 +2,7 @@
 // Address: 004cbb00
 // Address Range: [[004cbb00, 004cbb4d]]
 // Convention: __cdecl
-// Signature: CFlameThrower * core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower * this_ptr, uint d1, uint d2)
+// Signature: CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

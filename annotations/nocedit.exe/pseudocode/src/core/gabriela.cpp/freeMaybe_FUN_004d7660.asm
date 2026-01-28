@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGabriella * core_gabriela.cpp_freeMaybe_FUN_004d7660(CGabriella * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CGabriella * __cdecl core_gabriela_cpp_freeMaybe_FUN_004d7660(CGabriella *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00487e20
 // Address Range: [[00487e20, 00488100]]
 // Convention: __cdecl
-// Signature: int cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface * this_ptr, int * x1, int * y1, int * x2, int * y2, int clip_left, int clip_top, int clip_right, int clip_bottom)
+// Signature: int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20 (CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top, int clip_right,int clip_bottom)
 
 #include "nocturne.h"
 

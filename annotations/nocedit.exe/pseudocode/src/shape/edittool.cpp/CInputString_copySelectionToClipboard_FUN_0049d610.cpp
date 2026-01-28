@@ -2,7 +2,7 @@
 // Address: 0049d610
 // Address Range: [[0049d610, 0049d65c]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0049d610(CInputString * this_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0049d610(CInputString *this_ptr)
 
 #include "nocturne.h"
 

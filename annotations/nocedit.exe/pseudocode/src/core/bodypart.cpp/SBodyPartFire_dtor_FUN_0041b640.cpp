@@ -2,7 +2,7 @@
 // Address: 0041b640
 // Address Range: [[0041b640, 0041b655]]
 // Convention: __cdecl
-// Signature: SBodyPartFire * core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyPartFire * this_ptr)
+// Signature: SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyPartFire *this_ptr)
 
 #include "nocturne.h"
 

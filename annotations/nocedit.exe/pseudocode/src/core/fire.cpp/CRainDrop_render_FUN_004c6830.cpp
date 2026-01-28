@@ -2,7 +2,7 @@
 // Address: 004c6830
 // Address Range: [[004c6830, 004c6bc3]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CRainDrop_render_FUN_004c6830(CRainDrop * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
 
 #include "nocturne.h"
 

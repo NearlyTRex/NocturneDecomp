@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gore.cpp_CreateFlies_FUN_004edf30()
+; unknown CFlies * core_gore_cpp_CreateFlies_FUN_004edf30(void)
 ;
 ;
 ; XREF[1]:

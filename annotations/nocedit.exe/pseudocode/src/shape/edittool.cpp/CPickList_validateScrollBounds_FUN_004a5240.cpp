@@ -2,7 +2,7 @@
 // Address: 004a5240
 // Address Range: [[004a5240, 004a539b]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CPickList_validateScrollBounds_FUN_004a5240(CPickList * this_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPickList *this_ptr)
 
 #include "nocturne.h"
 

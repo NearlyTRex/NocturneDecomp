@@ -2,7 +2,7 @@
 // Address: 00504760
 // Address Range: [[00504760, 00504783]]
 // Convention: __cdecl
-// Signature: void core_lever.cpp_staticInit_FUN_00504760(void)
+// Signature: void __cdecl core_lever_cpp_staticInit_FUN_00504760(void)
 
 #include "nocturne.h"
 

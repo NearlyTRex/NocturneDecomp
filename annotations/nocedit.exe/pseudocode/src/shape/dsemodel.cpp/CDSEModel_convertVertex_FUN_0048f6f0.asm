@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_dsemodel.cpp_CDSEModel_convertVertex_FUN_0048f6f0(CDSEModel * this_ptr, int vertex_id)
+; __cdecl int __cdecl shape_dsemodel_cpp_CDSEModel_convertVertex_FUN_0048f6f0(CDSEModel *this_ptr,int vertex_id)
 ;
 ; Parameters:
 ; CDSEModel *      Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00432d00
 // Address Range: [[00432d00, 00432d8d]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00(void * src_data, int width, int height, void * background_base, int dest_x, int dest_y)
+// Signature: void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00432d00 (void *src_data,int width,int height,void *background_base,int dest_x,int dest_y)
 
 #include "nocturne.h"
 

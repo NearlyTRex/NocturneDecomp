@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
+; __cdecl int __cdecl crt_stdio_c_setvbuf_FUN_00601490 (FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream_ptr

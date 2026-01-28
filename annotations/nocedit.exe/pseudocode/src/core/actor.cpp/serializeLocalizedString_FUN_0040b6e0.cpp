@@ -2,7 +2,7 @@
 // Address: 0040b6e0
 // Address Range: [[0040b6e0, 0040b765]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeLocalizedString_FUN_0040b6e0(char * * string_buffer, char * localization_key)
+// Signature: void __cdecl core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(char **string_buffer,char *localization_key)
 
 #include "nocturne.h"
 

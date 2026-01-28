@@ -2,7 +2,7 @@
 // Address: 00554880
 // Address Range: [[00554880, 005548f9]]
 // Convention: unknown
-// Signature: undefined core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880()
+// Signature: void core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
 
 #include "nocturne.h"
 

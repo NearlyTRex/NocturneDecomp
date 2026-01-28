@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_filmreel.cpp_CFilmProjector_load_FUN_004beb40()
+; unknown void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 ;
 ;
 ; Referenced Globals:

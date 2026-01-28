@@ -2,7 +2,7 @@
 // Address: 00559960
 // Address Range: [[00559960, 00559ab9]]
 // Convention: __cdecl
-// Signature: void core_script.cpp_CScript_process_FUN_00559960(CScript * this_ptr)
+// Signature: void __cdecl core_script_cpp_CScript_process_FUN_00559960(CScript *this_ptr)
 
 #include "nocturne.h"
 

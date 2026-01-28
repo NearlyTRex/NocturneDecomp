@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_io.c_realpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
+; __cdecl char * __cdecl crt_io_c_realpath_FUN_00601140(char *buffer,char *path,SIZE_T buffer_size)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

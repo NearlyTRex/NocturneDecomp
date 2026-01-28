@@ -2,7 +2,7 @@
 // Address: 00417e20
 // Address Range: [[00417e20, 00417e43]]
 // Convention: __cdecl
-// Signature: void core_battery.cpp_staticInit_FUN_00417e20(void)
+// Signature: void __cdecl core_battery_cpp_staticInit_FUN_00417e20(void)
 
 #include "nocturne.h"
 

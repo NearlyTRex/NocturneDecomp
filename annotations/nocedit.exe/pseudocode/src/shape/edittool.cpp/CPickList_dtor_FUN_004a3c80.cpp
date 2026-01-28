@@ -2,7 +2,7 @@
 // Address: 004a3c80
 // Address Range: [[004a3c80, 004a3d12]]
 // Convention: __cdecl
-// Signature: CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6)
+// Signature: CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004a3c80 (CPickList *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00403670
 // Address Range: [[00403670, 0040373b]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_unmapFrameBuffer_FUN_00403670(void)
+// Signature: void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void)
 
 #include "nocturne.h"
 

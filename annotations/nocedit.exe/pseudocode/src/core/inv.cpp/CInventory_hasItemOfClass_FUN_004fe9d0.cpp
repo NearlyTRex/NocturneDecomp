@@ -2,7 +2,7 @@
 // Address: 004fea20
 // Address Range: [[004fea20, 004fea63]]
 // Convention: __cdecl
-// Signature: int core_inv.cpp_CInventory_hasItemOfClass_FUN_004fe9d0(CInventory * this_ptr, char * class_name)
+// Signature: int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004fe9d0(CInventory *this_ptr,char *class_name)
 
 #include "nocturne.h"
 

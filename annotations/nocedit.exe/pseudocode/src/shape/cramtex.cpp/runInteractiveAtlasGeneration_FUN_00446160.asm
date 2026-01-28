@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160(SCramWorkingEntry * current_texture_entry)
+; __cdecl int __cdecl shape_cramtex_cpp_runInteractiveAtlasGeneration_FUN_00446160 (SCramWorkingEntry *current_texture_entry)
 ;
 ; Parameters:
 ; SCramWorkingEntry * Stack[0xc]:4   current_texture_entry

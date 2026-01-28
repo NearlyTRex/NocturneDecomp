@@ -2,7 +2,7 @@
 // Address: 004f2170
 // Address Range: [[004f2170, 004f221e]]
 // Convention: unknown
-// Signature: undefined core_hero.cpp_closestHeroToPoint_FUN_004f2170()
+// Signature: int core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
 
 #include "nocturne.h"
 

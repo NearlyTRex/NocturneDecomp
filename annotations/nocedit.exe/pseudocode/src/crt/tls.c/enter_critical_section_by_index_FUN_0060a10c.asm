@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_tls.c_enter_critical_section_by_index_FUN_0060a10c(int sectionIndex)
+; __cdecl void __cdecl crt_tls_c_enter_critical_section_by_index_FUN_0060a10c(int sectionIndex)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   sectionIndex

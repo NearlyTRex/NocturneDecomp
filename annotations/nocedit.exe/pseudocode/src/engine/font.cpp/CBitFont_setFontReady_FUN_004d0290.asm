@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_font.cpp_CBitFont_setFontReady_FUN_004d0290(CBitFont * this_ptr, int value)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004d0290(CBitFont *this_ptr,int value)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

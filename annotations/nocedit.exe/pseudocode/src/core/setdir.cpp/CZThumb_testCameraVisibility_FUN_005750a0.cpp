@@ -2,7 +2,7 @@
 // Address: 005750a0
 // Address Range: [[005750a0, 005751c8]]
 // Convention: __cdecl
-// Signature: float core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb * this_ptr)
+// Signature: float __cdecl core_setdir_cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb *this_ptr)
 
 #include "nocturne.h"
 

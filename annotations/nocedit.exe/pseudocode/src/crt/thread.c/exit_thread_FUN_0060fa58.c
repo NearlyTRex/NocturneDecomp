@@ -2,7 +2,7 @@
 // Address: 0060fa58
 // Address Range: [[0060fa58, 0060fa7e]]
 // Convention: __cdecl
-// Signature: undefined crt_thread.c_exit_thread_FUN_0060fa58()
+// Signature: void __cdecl crt_thread_c_exit_thread_FUN_0060fa58(void)
 
 #include "nocturne.h"
 

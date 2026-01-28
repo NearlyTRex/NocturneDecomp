@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_superopt.cpp_TriListSomething_FUN_005d77a0()
+; unknown void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x180]:8  local_180

@@ -2,7 +2,7 @@
 // Address: 00510ba0
 // Address Range: [[00510ba0, 00510c4c]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_showCalibrationTest_FUN_00510ba0(void)
+// Signature: void __cdecl core_menu_cpp_showCalibrationTest_FUN_00510ba0(void)
 
 #include "nocturne.h"
 

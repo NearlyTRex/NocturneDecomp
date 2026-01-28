@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_manpuz.cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack * this_ptr)
+; __cdecl int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack *this_ptr)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

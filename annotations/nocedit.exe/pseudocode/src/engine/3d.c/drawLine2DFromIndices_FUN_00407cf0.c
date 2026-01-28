@@ -2,7 +2,7 @@
 // Address: 00407cf0
 // Address Range: [[00407cf0, 00407d62]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_drawLine2DFromIndices_FUN_00407cf0(int vertex_index1, int vertex_index2)
+// Signature: void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(int vertex_index1,int vertex_index2)
 
 #include "nocturne.h"
 

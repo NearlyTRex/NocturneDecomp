@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * shape_multicrm.cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram * this_ptr, CDSEModel * * dest_array)
+; __cdecl void * __cdecl shape_multicrm_cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram *this_ptr,CDSEModel **dest_array)
 ;
 ; Parameters:
 ; CMultiCram *     Stack[0x4]:4   this_ptr

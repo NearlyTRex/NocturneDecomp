@@ -2,7 +2,7 @@
 // Address: 004a5b60
 // Address Range: [[004a5b60, 004a5c0c]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60(CEdScrollBar * this_ptr, int left_pos, int top_pos, int right_pos, int bottom_pos)
+// Signature: void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60 (CEdScrollBar *this_ptr,int left_pos,int top_pos,int right_pos,int bottom_pos)
 
 #include "nocturne.h"
 

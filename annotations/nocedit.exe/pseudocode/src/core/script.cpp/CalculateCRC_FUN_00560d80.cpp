@@ -2,7 +2,7 @@
 // Address: 00560d80
 // Address Range: [[00560d80, 00560dd5]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CalculateCRC_FUN_00560d80()
+// Signature: uint core_script_cpp_CalculateCRC_FUN_00560d80(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00450e30
 // Address Range: [[00450e30, 00450fba]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDemonCamera * this_ptr, CDemonLight * light_source)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30 (CDemonCamera *this_ptr,CDemonLight *light_source)
 
 #include "nocturne.h"
 

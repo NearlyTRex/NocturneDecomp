@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl short shape_quantize.cpp_CBitmap_getHeight_FUN_00556da0(CBitmap * this_ptr)
+; __cdecl short __cdecl shape_quantize_cpp_CBitmap_getHeight_FUN_00556da0(CBitmap *this_ptr)
 ;
 ; Parameters:
 ; CBitmap *        Stack[0x4]:4   this_ptr

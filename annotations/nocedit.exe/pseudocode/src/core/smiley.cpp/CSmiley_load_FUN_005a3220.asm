@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_smiley.cpp_CSmiley_load_FUN_005a3220()
+; unknown void core_smiley_cpp_CSmiley_load_FUN_005a3220(void)
 ;
 ;
 ; Referenced Globals:

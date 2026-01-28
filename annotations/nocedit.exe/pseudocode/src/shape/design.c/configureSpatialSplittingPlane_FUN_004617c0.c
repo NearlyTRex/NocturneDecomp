@@ -2,7 +2,7 @@
 // Address: 004617c0
 // Address Range: [[004617c0, 00461a99]]
 // Convention: __cdecl
-// Signature: void shape_design.c_configureSpatialSplittingPlane_FUN_004617c0(STreeNode * node)
+// Signature: void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNode *node)
 
 #include "nocturne.h"
 

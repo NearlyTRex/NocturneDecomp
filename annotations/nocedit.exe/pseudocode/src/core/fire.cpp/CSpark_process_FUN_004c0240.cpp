@@ -2,7 +2,7 @@
 // Address: 004c0240
 // Address Range: [[004c0240, 004c02f6]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CSpark_process_FUN_004c0240(CSpark * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CSpark_process_FUN_004c0240(CSpark *this_ptr)
 
 #include "nocturne.h"
 

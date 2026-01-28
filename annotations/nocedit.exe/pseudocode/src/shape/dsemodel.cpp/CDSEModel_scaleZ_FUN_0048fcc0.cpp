@@ -2,7 +2,7 @@
 // Address: 0048fcc0
 // Address Range: [[0048fcc0, 0048fd68]]
 // Convention: __cdecl
-// Signature: void shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0(CDSEModel * this_ptr, float scale_factor)
+// Signature: void __cdecl shape_dsemodel_cpp_CDSEModel_scaleZ_FUN_0048fcc0(CDSEModel *this_ptr,float scale_factor)
 
 #include "nocturne.h"
 

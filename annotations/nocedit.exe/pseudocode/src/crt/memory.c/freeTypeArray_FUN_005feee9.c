@@ -2,7 +2,7 @@
 // Address: 005feee9
 // Address Range: [[005feee9, 005fef15]]
 // Convention: __cdecl
-// Signature: int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+// Signature: int __cdecl crt_memory_c_freeTypeArray_FUN_005feee9(void **obj_array,int obj_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 

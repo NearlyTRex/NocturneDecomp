@@ -2,7 +2,7 @@
 // Address: 004509b0
 // Address Range: [[004509b0, 00450a85]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

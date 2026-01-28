@@ -2,7 +2,7 @@
 // Address: 005325e0
 // Address Range: [[005325e0, 005334a8]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples * input_lr_samples, SMpegStereoSubbandSamples * output_samples, SMpegScalefactorBandData * scalefactor_data, SMpegFrame * frame_info, SMpegLayer3Granule * * granule_array)
+// Signature: void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0 (SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples, SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info, SMpegLayer3Granule **granule_array)
 
 #include "nocturne.h"
 

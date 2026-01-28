@@ -2,7 +2,7 @@
 // Address: 0044bb10
 // Address Range: [[0044bb10, 0044bb48]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_staticInit_FUN_0044bb10(void)
+// Signature: void __cdecl core_dcamera_cpp_staticInit_FUN_0044bb10(void)
 
 #include "nocturne.h"
 

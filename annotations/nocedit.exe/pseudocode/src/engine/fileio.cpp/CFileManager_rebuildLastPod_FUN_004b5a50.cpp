@@ -2,7 +2,7 @@
 // Address: 004b5a50
 // Address Range: [[004b5a50, 004b6bf8]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileManager * this_ptr, char * pod_filename, char * volume_name)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (CFileManager *this_ptr,char *pod_filename,char *volume_name)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0054c850
 // Address Range: [[0054c850, 0054ca1c]]
 // Convention: __cdecl
-// Signature: CPlatform * core_platfrm.cpp_CPlatform_ctor_FUN_0054c850(CPlatform * this_ptr)
+// Signature: CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this_ptr)
 
 #include "nocturne.h"
 

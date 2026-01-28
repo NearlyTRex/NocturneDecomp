@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index)
+; __cdecl int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   buffer_index

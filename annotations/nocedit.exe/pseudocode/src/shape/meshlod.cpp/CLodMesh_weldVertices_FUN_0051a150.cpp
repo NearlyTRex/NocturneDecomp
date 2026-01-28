@@ -2,7 +2,7 @@
 // Address: 0051a150
 // Address Range: [[0051a150, 0051a2f2]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh *this_ptr,float weld_threshold)
 
 #include "nocturne.h"
 

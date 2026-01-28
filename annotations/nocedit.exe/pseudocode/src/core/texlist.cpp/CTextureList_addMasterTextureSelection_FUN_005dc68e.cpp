@@ -2,7 +2,7 @@
 // Address: 005dc68e
 // Address Range: [[005dc68e, 005dc69f]]
 // Convention: __cdecl
-// Signature: void core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc68e(CTextureList * this_ptr)
+// Signature: void __cdecl core_texlist_cpp_CTextureList_addMasterTextureSelection_FUN_005dc68e(CTextureList *this_ptr)
 
 #include "nocturne.h"
 

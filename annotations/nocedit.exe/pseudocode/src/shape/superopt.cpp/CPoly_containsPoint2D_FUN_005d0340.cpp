@@ -2,7 +2,7 @@
 // Address: 005d0340
 // Address Range: [[005d0340, 005d0cd2]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly * this_ptr, CVector2d * point)
+// Signature: int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_ptr,CVector2d *point)
 
 #include "nocturne.h"
 

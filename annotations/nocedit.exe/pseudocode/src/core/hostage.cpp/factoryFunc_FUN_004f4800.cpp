@@ -2,7 +2,7 @@
 // Address: 004f4800
 // Address Range: [[004f4800, 004f4822]]
 // Convention: __cdecl
-// Signature: CHostage * core_hostage.cpp_factoryFunc_FUN_004f4800(void)
+// Signature: CHostage * __cdecl core_hostage_cpp_factoryFunc_FUN_004f4800(void)
 
 #include "nocturne.h"
 

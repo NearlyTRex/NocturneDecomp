@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_path.cpp_CPathMap_getDirection_FUN_005465b0(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, CVector3f * dest_position)
+; __cdecl float __cdecl core_path_cpp_CPathMap_getDirection_FUN_005465b0 (CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction, CVector3f *dest_position)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

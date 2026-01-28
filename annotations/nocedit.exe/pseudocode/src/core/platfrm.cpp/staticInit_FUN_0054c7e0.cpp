@@ -2,7 +2,7 @@
 // Address: 0054c7e0
 // Address Range: [[0054c7e0, 0054c803]]
 // Convention: __cdecl
-// Signature: void core_platfrm.cpp_staticInit_FUN_0054c7e0(void)
+// Signature: void __cdecl core_platfrm_cpp_staticInit_FUN_0054c7e0(void)
 
 #include "nocturne.h"
 

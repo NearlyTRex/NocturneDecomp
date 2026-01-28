@@ -2,7 +2,7 @@
 // Address: 0060ede0
 // Address Range: [[0060ede0, 0060edfb]]
 // Convention: __cdecl
-// Signature: ulong crt_stdlib.c_strtoul_FUN_0060ede0(char * str, char * * endptr, int base)
+// Signature: ulong __cdecl crt_stdlib_c_strtoul_FUN_0060ede0(char *str,char **endptr,int base)
 
 #include "nocturne.h"
 

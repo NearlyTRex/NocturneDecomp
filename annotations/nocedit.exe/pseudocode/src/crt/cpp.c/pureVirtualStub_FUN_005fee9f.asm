@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_cpp.c_pureVirtualStub_FUN_005fee9f(void)
+; __watcallStack void __watcallStack crt_cpp_c_pureVirtualStub_FUN_005fee9f(void)
 ;
 ;
 ; Referenced Globals:

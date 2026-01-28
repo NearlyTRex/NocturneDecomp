@@ -2,7 +2,7 @@
 // Address: 004922c8
 // Address Range: [[004922c8, 004923fe]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulonglong * output_buffer, ulonglong * input_buffer, int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8 (ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 
 #include "nocturne.h"
 

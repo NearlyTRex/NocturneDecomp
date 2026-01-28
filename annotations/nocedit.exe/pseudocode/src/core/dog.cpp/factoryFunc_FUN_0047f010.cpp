@@ -2,7 +2,7 @@
 // Address: 0047f010
 // Address Range: [[0047f010, 0047f032]]
 // Convention: __cdecl
-// Signature: CZombieDog * core_dog.cpp_factoryFunc_FUN_0047f010(void)
+// Signature: CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_0047f010(void)
 
 #include "nocturne.h"
 

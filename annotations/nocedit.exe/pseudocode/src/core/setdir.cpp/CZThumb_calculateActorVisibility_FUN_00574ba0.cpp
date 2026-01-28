@@ -2,7 +2,7 @@
 // Address: 00574ba0
 // Address Range: [[00574ba0, 00574e2e]]
 // Convention: __cdecl
-// Signature: float core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0(CZThumb * this_ptr, CDemonActor * actor, CVector3i * bounding_box_vertices, SMRGLHeaderPrimitive * primitives, int apply_scaling)
+// Signature: float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (CZThumb *this_ptr,CDemonActor *actor,CVector3i *bounding_box_vertices, SMRGLHeaderPrimitive *primitives,int apply_scaling)
 
 #include "nocturne.h"
 

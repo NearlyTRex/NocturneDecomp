@@ -2,7 +2,7 @@
 // Address: 005eca30
 // Address Range: [[005eca30, 005ecab4]]
 // Convention: __cdecl
-// Signature: int wincore_wddvmem.cpp_shutdownDirectDraw_FUN_005eca30(void)
+// Signature: int __cdecl wincore_wddvmem_cpp_shutdownDirectDraw_FUN_005eca30(void)
 
 #include "nocturne.h"
 

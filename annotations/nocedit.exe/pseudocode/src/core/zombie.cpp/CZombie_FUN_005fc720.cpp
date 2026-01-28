@@ -2,7 +2,7 @@
 // Address: 005fc720
 // Address Range: [[005fc720, 005fc916]]
 // Convention: __cdecl
-// Signature: int core_zombie.cpp_CZombie_FUN_005fc720(CZombie * this_ptr)
+// Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fc720(CZombie *this_ptr)
 
 #include "nocturne.h"
 

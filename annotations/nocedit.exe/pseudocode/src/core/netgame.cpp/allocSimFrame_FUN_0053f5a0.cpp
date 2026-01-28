@@ -2,7 +2,7 @@
 // Address: 0053f5a0
 // Address Range: [[0053f5a0, 0053f64b]]
 // Convention: unknown
-// Signature: undefined core_netgame.cpp_allocSimFrame_FUN_0053f5a0()
+// Signature: int * core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
 
 #include "nocturne.h"
 

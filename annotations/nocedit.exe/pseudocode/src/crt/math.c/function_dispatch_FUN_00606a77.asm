@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
+; __watcallRegister void crt_math_c_function_dispatch_FUN_00606a77(int function_index)
 ;
 ;
 ; XREF[2]:

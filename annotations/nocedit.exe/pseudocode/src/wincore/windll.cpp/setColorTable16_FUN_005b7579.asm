@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_setColorTable16_FUN_005b7579(void)
+; __cdecl int __cdecl wincore_windll_cpp_setColorTable16_FUN_005b7579(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_manpuz.cpp_CMirrorHack_hasCollision_FUN_0050b2b0(CMirrorHack * this_ptr, SCollisionInfo * collision_info)
+; __cdecl int __cdecl core_manpuz_cpp_CMirrorHack_hasCollision_FUN_0050b2b0 (CMirrorHack *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

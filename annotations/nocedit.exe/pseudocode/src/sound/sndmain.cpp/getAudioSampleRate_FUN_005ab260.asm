@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260(void)
+; __cdecl int __cdecl sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260(void)
 ;
 ;
 ; XREF[5]:

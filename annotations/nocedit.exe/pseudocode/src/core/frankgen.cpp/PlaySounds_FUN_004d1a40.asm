@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_frankgen.cpp_PlaySounds_FUN_004d1a40()
+; unknown void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x80]:1  local_80

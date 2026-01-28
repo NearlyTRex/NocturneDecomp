@@ -2,7 +2,7 @@
 // Address: 005fcf80
 // Address Range: [[005fcf80, 005fcfb5]]
 // Convention: unknown
-// Signature: undefined core_zombie.cpp_FUN_005fcf80()
+// Signature: SEdgeData * core_zombie_cpp_FUN_005fcf80(void)
 
 #include "nocturne.h"
 

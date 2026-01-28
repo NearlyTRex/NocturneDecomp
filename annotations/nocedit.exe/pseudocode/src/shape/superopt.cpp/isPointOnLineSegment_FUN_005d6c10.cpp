@@ -2,7 +2,7 @@
 // Address: 005d6c10
 // Address Range: [[005d6c10, 005d6f80]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * segStart, CVector3d * segEnd)
+// Signature: int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10 (CVector3d *point,CVector3d *segStart,CVector3d *segEnd)
 
 #include "nocturne.h"
 

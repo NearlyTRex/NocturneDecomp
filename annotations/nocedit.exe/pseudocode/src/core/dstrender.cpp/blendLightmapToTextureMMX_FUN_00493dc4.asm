@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, int pixel_count)
+; __cdecl void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4 (ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count)
 ;
 ; Parameters:
 ; ulonglong *      Stack[0x4]:4   output_buffer

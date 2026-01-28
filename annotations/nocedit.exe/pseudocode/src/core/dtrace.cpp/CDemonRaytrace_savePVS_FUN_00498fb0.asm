@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array, int * * output_indices_array)
+; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0 (CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array, int **output_indices_array)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tvbat.cpp_staticInit_FUN_005e3e50(void)
+; __cdecl void __cdecl core_tvbat_cpp_staticInit_FUN_005e3e50(void)
 ;
 ;
 ; Referenced Globals:

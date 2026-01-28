@@ -2,7 +2,7 @@
 // Address: 00606cc7
 // Address Range: [[00606cc7, 00606ce6]]
 // Convention: __fpu_thunk
-// Signature: float10 crt_math.c_fdiv_thunk_FUN_00606cc7(void)
+// Signature: float10 __fpu_thunk crt_math_c_fdiv_thunk_FUN_00606cc7(void)
 
 #include "nocturne.h"
 

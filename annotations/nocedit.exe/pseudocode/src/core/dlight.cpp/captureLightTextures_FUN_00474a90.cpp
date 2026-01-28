@@ -2,7 +2,7 @@
 // Address: 00474a90
 // Address Range: [[00474a90, 00474aca]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_captureLightTextures_FUN_00474a90(void)
+// Signature: void __cdecl core_dlight_cpp_captureLightTextures_FUN_00474a90(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_keys.cpp_staticInit_FUN_00502410(void)
+; __cdecl void __cdecl engine_keys_cpp_staticInit_FUN_00502410(void)
 ;
 ;
 ; Referenced Globals:

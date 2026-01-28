@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hiram.cpp_CHiram_load_FUN_004f4690()
+; unknown void core_hiram_cpp_CHiram_load_FUN_004f4690(void)
 ;
 ;
 ; Called Functions:

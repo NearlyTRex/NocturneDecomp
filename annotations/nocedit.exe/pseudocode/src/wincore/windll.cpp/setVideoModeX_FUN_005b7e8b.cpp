@@ -2,7 +2,7 @@
 // Address: 005b7e8b
 // Address Range: [[005b7e8b, 005b7edd]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_setVideoModeX_FUN_005b7e8b(int width, int height, int bits_per_pixel, int flags)
+// Signature: int __cdecl wincore_windll_cpp_setVideoModeX_FUN_005b7e8b(int width,int height,int bits_per_pixel,int flags)
 
 #include "nocturne.h"
 

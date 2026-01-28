@@ -2,7 +2,7 @@
 // Address: 0059eb50
 // Address Range: [[0059eb50, 0059f221]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, int bone_index, CDeformableModel_MotionBlendWeightFunc * callback_func)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (CDeformableModelInstance *this_ptr,int target_motion_index,float target_frame_number, float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *callback_func)
 
 #include "nocturne.h"
 

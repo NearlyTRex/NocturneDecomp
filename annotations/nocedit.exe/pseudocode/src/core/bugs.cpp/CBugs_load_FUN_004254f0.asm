@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bugs.cpp_CBugs_load_FUN_004254f0()
+; unknown void core_bugs_cpp_CBugs_load_FUN_004254f0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter * this_ptr, int layer_flag)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

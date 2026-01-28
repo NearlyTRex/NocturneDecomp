@@ -2,7 +2,7 @@
 // Address: 005da7d0
 // Address Range: [[005da7d0, 005da844]]
 // Convention: __cdecl
-// Signature: int core_teleport.cpp_CTeleportDest_FUN_005da7d0(CTeleportDest * this_ptr)
+// Signature: int __cdecl core_teleport_cpp_CTeleportDest_FUN_005da7d0(CTeleportDest *this_ptr)
 
 #include "nocturne.h"
 

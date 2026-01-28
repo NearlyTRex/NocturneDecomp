@@ -2,7 +2,7 @@
 // Address: 005adf90
 // Address Range: [[005adf90, 005adfe4]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code, char * operation_description)
+// Signature: int __cdecl sound_snddx_cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code,char *operation_description)
 
 #include "nocturne.h"
 

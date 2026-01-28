@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont * this_ptr, int screen_width, int screen_height)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850 (CBitFont *this_ptr,int screen_width,int screen_height)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

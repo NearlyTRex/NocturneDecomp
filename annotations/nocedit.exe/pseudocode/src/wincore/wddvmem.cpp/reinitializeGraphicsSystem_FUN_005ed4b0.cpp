@@ -2,7 +2,7 @@
 // Address: 005ed4b0
 // Address Range: [[005ed4b0, 005ed57d]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005ed4b0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0()
+; unknown void core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

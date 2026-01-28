@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_keyactor.cpp_FUN_005017c0()
+; unknown int core_keyactor_cpp_FUN_005017c0(void)
 ;
 ;
 ; Called Functions:

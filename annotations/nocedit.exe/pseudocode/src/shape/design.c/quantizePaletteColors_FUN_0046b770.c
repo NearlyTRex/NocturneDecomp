@@ -2,7 +2,7 @@
 // Address: 0046b770
 // Address Range: [[0046b770, 0046b991]]
 // Convention: __cdecl
-// Signature: void shape_design.c_quantizePaletteColors_FUN_0046b770(byte * image_data, int pixel_count, int stride, byte * palette_data, int mode_flag, char * bit_mask)
+// Signature: void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770 (byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag, char *bit_mask)
 
 #include "nocturne.h"
 

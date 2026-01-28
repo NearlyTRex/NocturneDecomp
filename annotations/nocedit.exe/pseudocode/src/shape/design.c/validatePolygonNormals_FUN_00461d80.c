@@ -2,7 +2,7 @@
 // Address: 00461d80
 // Address Range: [[00461d80, 00461de7]]
 // Convention: __cdecl
-// Signature: int shape_design.c_validatePolygonNormals_FUN_00461d80(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance)
+// Signature: int __cdecl shape_design_c_validatePolygonNormals_FUN_00461d80 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double cos_tolerance)
 
 #include "nocturne.h"
 

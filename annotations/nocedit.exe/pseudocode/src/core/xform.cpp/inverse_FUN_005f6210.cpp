@@ -2,7 +2,7 @@
 // Address: 005f6210
 // Address Range: [[005f6210, 005f6458]]
 // Convention: __stack_esi
-// Signature: CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
+// Signature: CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 

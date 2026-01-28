@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220()
+; unknown void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc8]:4  local_c8

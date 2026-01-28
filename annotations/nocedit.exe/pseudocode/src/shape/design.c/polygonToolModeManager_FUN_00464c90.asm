@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_polygonToolModeManager_FUN_00464c90(int input_parameter)
+; __cdecl int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_parameter)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   input_parameter

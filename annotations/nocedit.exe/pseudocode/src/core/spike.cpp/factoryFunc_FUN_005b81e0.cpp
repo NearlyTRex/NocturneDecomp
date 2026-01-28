@@ -2,7 +2,7 @@
 // Address: 005b81e0
 // Address Range: [[005b81e0, 005b8202]]
 // Convention: __cdecl
-// Signature: CSpike * core_spike.cpp_factoryFunc_FUN_005b81e0(void)
+// Signature: CSpike * __cdecl core_spike_cpp_factoryFunc_FUN_005b81e0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flame.cpp_FUN_004cb0a0()
+; unknown void core_flame_cpp_FUN_004cb0a0(void)
 ;
 ;
 ; Referenced Globals:

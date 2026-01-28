@@ -2,7 +2,7 @@
 // Address: 00505900
 // Address Range: [[00505900, 005059b5]]
 // Convention: __cdecl
-// Signature: CLightGun * core_lightgun.cpp_CLightGun_ctor_FUN_00505900(CLightGun * this_ptr)
+// Signature: CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_00505900(CLightGun *this_ptr)
 
 #include "nocturne.h"
 

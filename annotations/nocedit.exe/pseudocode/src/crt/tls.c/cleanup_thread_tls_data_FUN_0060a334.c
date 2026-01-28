@@ -2,7 +2,7 @@
 // Address: 0060a334
 // Address Range: [[0060a334, 0060a387]]
 // Convention: __cdecl
-// Signature: void crt_tls.c_cleanup_thread_tls_data_FUN_0060a334(int shutdownMode)
+// Signature: void __cdecl crt_tls_c_cleanup_thread_tls_data_FUN_0060a334(int shutdownMode)
 
 #include "nocturne.h"
 

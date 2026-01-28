@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_codec.cpp_CCodec_process_FUN_0043ea10(CCodec * this_ptr, FILE * input_file, int byte_count, FILE * output_file)
+; __cdecl int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,FILE *input_file,int byte_count,FILE *output_file)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr

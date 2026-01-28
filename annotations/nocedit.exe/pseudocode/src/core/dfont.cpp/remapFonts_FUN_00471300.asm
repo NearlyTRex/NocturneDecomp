@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dfont.cpp_remapFonts_FUN_00471300(void)
+; __cdecl void __cdecl core_dfont_cpp_remapFonts_FUN_00471300(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 00580560
 // Address Range: [[00580560, 00580591]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_CallToFreeSomeMemory_FUN_00580560(CDemonSet * this_ptr)
+// Signature: void __cdecl core_setedit_cpp_CallToFreeSomeMemory_FUN_00580560(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

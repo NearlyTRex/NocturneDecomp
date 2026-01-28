@@ -2,7 +2,7 @@
 // Address: 0045ee70
 // Address Range: [[0045ee70, 0045f07e]]
 // Convention: __cdecl
-// Signature: void shape_design.c_realignObject_FUN_0045ee70(int rotation_x, int rotation_y, int rotation_z)
+// Signature: void __cdecl shape_design_c_realignObject_FUN_0045ee70(int rotation_x,int rotation_y,int rotation_z)
 
 #include "nocturne.h"
 

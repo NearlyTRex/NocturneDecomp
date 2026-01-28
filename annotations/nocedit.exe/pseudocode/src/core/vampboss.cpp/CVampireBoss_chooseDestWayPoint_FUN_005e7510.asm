@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510()
+; unknown void core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

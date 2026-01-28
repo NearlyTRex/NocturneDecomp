@@ -2,7 +2,7 @@
 // Address: 005a5e10
 // Address Range: [[005a5e10, 005a5e6e]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10(double input, int * out_integer_part, int * out_fractional_part)
+// Signature: void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10 (double input,int *out_integer_part,int *out_fractional_part)
 
 #include "nocturne.h"
 

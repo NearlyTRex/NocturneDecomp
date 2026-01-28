@@ -2,7 +2,7 @@
 // Address: 004087b0
 // Address Range: [[004087b0, 00408814]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_trimActorName_FUN_004087b0(CDemonActor * actor_ptr)
+// Signature: void __cdecl core_actor_cpp_trimActorName_FUN_004087b0(CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SSocketContext * support_trisock.cpp_bindSocketWrapper_FUN_005e1af0(SSocketContext * socket_ctx)
+; __cdecl SSocketContext * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SSocketContext *socket_ctx)
 ;
 ; Parameters:
 ; SSocketContext * Stack[0x4]:4   socket_ctx

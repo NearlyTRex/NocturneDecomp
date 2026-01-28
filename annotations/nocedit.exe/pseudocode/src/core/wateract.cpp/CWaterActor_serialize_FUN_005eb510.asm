@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_wateract.cpp_CWaterActor_serialize_FUN_005eb510(CWaterActor * this_ptr)
+; __cdecl void __cdecl core_wateract_cpp_CWaterActor_serialize_FUN_005eb510(CWaterActor *this_ptr)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

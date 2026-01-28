@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_quantize.cpp_reallocMemory_FUN_00556d20(void * ptr, int new_size)
+; __cdecl void __cdecl shape_quantize_cpp_reallocMemory_FUN_00556d20(void *ptr,int new_size)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

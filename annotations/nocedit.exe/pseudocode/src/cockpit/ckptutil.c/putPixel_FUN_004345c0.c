@@ -2,7 +2,7 @@
 // Address: 004345c0
 // Address Range: [[004345c0, 00434641]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_putPixel_FUN_004345c0(int x, int y, int color)
+// Signature: void __cdecl cockpit_ckptutil_c_putPixel_FUN_004345c0(int x,int y,int color)
 
 #include "nocturne.h"
 

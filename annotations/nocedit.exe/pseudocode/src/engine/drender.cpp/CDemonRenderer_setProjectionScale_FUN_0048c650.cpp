@@ -2,7 +2,7 @@
 // Address: 0048c650
 // Address Range: [[0048c650, 0048c66b]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(CDemonRenderer * this_ptr, float field_of_view)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650 (CDemonRenderer *this_ptr,float field_of_view)
 
 #include "nocturne.h"
 

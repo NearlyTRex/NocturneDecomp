@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_stdio.c_ScanFormatSpec_FUN_00602d78(char * format, va_list_t * args, FormatSpec * spec_info)
+; __cdecl char * __cdecl crt_stdio_c_ScanFormatSpec_FUN_00602d78(char *format,va_list_t *args,FormatSpec *spec_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

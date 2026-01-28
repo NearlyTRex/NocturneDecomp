@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * core_boxactor.cpp_FUN_0042307e(int param_1)
+; __cdecl char * __cdecl core_boxactor_cpp_FUN_0042307e(int param_1)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   param_1

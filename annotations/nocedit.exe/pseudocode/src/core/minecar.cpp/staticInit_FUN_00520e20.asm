@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_minecar.cpp_staticInit_FUN_00520e20(void)
+; __cdecl void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void)
 ;
 ;
 ; Referenced Globals:

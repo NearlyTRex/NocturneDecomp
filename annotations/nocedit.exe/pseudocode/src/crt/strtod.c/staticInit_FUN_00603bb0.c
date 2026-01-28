@@ -2,7 +2,7 @@
 // Address: 00603bb0
 // Address Range: [[00603bb0, 00603bc8]]
 // Convention: __cdecl
-// Signature: void crt_strtod.c_staticInit_FUN_00603bb0(void)
+// Signature: void __cdecl crt_strtod_c_staticInit_FUN_00603bb0(void)
 
 #include "nocturne.h"
 

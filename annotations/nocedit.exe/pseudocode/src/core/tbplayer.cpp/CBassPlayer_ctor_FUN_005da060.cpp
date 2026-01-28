@@ -2,7 +2,7 @@
 // Address: 005da060
 // Address Range: [[005da060, 005da08d]]
 // Convention: __cdecl
-// Signature: CBassPlayer * core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060(CBassPlayer * this_ptr)
+// Signature: CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_005da060(CBassPlayer *this_ptr)
 
 #include "nocturne.h"
 

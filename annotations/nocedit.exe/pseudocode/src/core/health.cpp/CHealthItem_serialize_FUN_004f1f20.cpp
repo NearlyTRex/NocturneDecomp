@@ -2,7 +2,7 @@
 // Address: 004f1f20
 // Address Range: [[004f1f20, 004f1f9f]]
 // Convention: unknown
-// Signature: undefined core_health.cpp_CHealthItem_serialize_FUN_004f1f20()
+// Signature: void core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
 
 #include "nocturne.h"
 

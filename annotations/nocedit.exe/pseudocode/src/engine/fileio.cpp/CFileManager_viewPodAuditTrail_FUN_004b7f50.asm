@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFileManager * this_ptr, char * pod_filename)
+; __cdecl void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (CFileManager *this_ptr,char *pod_filename)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

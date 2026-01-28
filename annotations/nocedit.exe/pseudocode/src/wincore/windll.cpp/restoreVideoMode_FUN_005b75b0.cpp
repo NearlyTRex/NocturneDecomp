@@ -2,7 +2,7 @@
 // Address: 005b75b0
 // Address Range: [[005b75b0, 005b75d7]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_restoreVideoMode_FUN_005b75b0(void)
+// Signature: int __cdecl wincore_windll_cpp_restoreVideoMode_FUN_005b75b0(void)
 
 #include "nocturne.h"
 

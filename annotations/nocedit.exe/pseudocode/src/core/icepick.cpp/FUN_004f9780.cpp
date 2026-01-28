@@ -2,7 +2,7 @@
 // Address: 004f9780
 // Address Range: [[004f9780, 004f9792]]
 // Convention: unknown
-// Signature: undefined core_icepick.cpp_FUN_004f9780()
+// Signature: void core_icepick_cpp_FUN_004f9780(void)
 
 #include "nocturne.h"
 

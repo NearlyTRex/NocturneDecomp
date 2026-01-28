@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_particle.cpp_CParticle_render_FUN_00545a80(CParticle * this_ptr)
+; __cdecl void __cdecl core_particle_cpp_CParticle_render_FUN_00545a80(CParticle *this_ptr)
 ;
 ; Parameters:
 ; CParticle *      Stack[0x4]:4   this_ptr

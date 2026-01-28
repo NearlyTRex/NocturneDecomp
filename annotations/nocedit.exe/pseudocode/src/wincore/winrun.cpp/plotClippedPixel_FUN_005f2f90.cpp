@@ -2,7 +2,7 @@
 // Address: 005f2f90
 // Address Range: [[005f2f90, 005f2fc3]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_plotClippedPixel_FUN_005f2f90(int x_coord, int y_coord)
+// Signature: void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005f2f90(int x_coord,int y_coord)
 
 #include "nocturne.h"
 

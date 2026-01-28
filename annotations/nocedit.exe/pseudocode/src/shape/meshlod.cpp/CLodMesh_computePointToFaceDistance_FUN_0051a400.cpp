@@ -2,7 +2,7 @@
 // Address: 0051a400
 // Address Range: [[0051a400, 0051a690]]
 // Convention: __cdecl
-// Signature: double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)
+// Signature: double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 (CLodMesh *this_ptr,SLodSamplePoint *sample_point,CLodFace *face)
 
 #include "nocturne.h"
 

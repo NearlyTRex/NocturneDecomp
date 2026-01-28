@@ -2,7 +2,7 @@
 // Address: 005b9b70
 // Address Range: [[005b9b70, 005b9bd2]]
 // Convention: __cdecl
-// Signature: CStairs * core_stairs.cpp_CStairs_ctor_FUN_005b9b70(CStairs * this_ptr)
+// Signature: CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005b9b70(CStairs *this_ptr)
 
 #include "nocturne.h"
 

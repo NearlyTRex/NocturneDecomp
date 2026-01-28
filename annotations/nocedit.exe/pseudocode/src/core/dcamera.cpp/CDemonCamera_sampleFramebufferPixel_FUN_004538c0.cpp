@@ -2,7 +2,7 @@
 // Address: 004538c0
 // Address Range: [[004538c0, 00453944]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera * this_ptr, SRenderVertex * vertex)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0 (CDemonCamera *this_ptr,SRenderVertex *vertex)
 
 #include "nocturne.h"
 

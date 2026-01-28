@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_crc32ProcessVector_FUN_0040cf70(uint * crc_state, CVector3f * vector)
+; __cdecl void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040cf70(uint *crc_state,CVector3f *vector)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   crc_state

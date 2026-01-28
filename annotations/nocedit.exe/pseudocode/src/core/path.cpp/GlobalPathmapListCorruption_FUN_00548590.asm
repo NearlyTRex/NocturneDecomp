@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()
+; unknown void core_path_cpp_GlobalPathmapListCorruption_FUN_00548590(void)
 ;
 ;
 ; XREF[4]:

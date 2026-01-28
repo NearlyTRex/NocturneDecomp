@@ -2,7 +2,7 @@
 // Address: 005225a0
 // Address Range: [[005225a0, 005225d2]]
 // Convention: __cdecl
-// Signature: void core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
+// Signature: void __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_005225a0 (CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 

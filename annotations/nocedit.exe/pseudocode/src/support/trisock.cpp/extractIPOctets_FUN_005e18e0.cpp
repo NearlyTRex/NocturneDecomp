@@ -2,7 +2,7 @@
 // Address: 005e18e0
 // Address Range: [[005e18e0, 005e192b]]
 // Convention: __cdecl
-// Signature: void support_trisock.cpp_extractIPOctets_FUN_005e18e0(uchar * ip_bytes, uint * octet1_ptr, uint * octet2_ptr, uint * octet3_ptr, uint * octet4_ptr)
+// Signature: void __cdecl support_trisock_cpp_extractIPOctets_FUN_005e18e0 (uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr)
 
 #include "nocturne.h"
 

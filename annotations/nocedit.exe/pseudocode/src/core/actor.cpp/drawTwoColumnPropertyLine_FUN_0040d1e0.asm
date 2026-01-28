@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0(int * y_position, char * left_text, char * right_text)
+; __cdecl void __cdecl core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 (int *y_position,char *left_text,char *right_text)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   y_position

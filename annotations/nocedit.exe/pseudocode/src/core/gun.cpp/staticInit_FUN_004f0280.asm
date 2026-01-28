@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_gun.cpp_staticInit_FUN_004f0280(void)
+; __cdecl void __cdecl core_gun_cpp_staticInit_FUN_004f0280(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * wincore_windll.cpp_getCurrentRenderer_FUN_005b8185(int * renderer)
+; __cdecl char * __cdecl wincore_windll_cpp_getCurrentRenderer_FUN_005b8185(int *renderer)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   renderer

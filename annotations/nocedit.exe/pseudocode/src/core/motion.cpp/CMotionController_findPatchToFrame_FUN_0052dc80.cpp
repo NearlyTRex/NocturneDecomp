@@ -2,7 +2,7 @@
 // Address: 0052dc80
 // Address Range: [[0052dc80, 0052dca5]]
 // Convention: __cdecl
-// Signature: int core_motion.cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController * this_ptr)
+// Signature: int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr)
 
 #include "nocturne.h"
 

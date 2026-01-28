@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0(void)
+; __cdecl int __cdecl sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0(void)
 ;
 ;
 ; XREF[8]:

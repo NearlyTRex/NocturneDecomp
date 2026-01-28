@@ -2,7 +2,7 @@
 // Address: 0060ac30
 // Address Range: [[0060ac30, 0060ac85]]
 // Convention: __cdecl
-// Signature: void crt_init.c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)
+// Signature: void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)
 
 #include "nocturne.h"
 

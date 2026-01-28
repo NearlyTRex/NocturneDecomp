@@ -2,7 +2,7 @@
 // Address: 0041cc40
 // Address Range: [[0041cc40, 0041ccd1] [0041ccf1, 0041d170]]
 // Convention: unknown
-// Signature: undefined core_boneguy.cpp_FUN_0041cc40()
+// Signature: undefined4 core_boneguy_cpp_FUN_0041cc40(void)
 
 #include "nocturne.h"
 

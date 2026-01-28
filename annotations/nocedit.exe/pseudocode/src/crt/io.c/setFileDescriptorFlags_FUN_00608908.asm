@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)
+; __watcallStack void __watcallStack crt_io_c_setFileDescriptorFlags_FUN_00608908(int file_handle_index,uint flags)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index

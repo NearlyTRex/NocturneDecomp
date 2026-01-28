@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, int color)
+; __cdecl void __cdecl engine_2d_c_fillRectColor_FUN_00403170(int x1,int y1,int x2,int y2,int color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x1

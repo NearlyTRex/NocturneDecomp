@@ -2,7 +2,7 @@
 // Address: 004bc2b0
 // Address Range: [[004bc2b0, 004bc591]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager * this_ptr, CCheckOutItem * checkout_item)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0 (CFileManager *this_ptr,CCheckOutItem *checkout_item)
 
 #include "nocturne.h"
 

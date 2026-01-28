@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dirmat.cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f * this_ptr)
+; __cdecl void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_ptr)
 ;
 ; Parameters:
 ; CMatrix3x3f *    Stack[0x4]:4   this_ptr

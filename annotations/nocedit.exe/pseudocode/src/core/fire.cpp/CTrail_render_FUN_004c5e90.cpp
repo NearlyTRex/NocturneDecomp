@@ -2,7 +2,7 @@
 // Address: 004c5e90
 // Address Range: [[004c5e90, 004c6149]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CTrail_render_FUN_004c5e90(CTrail * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
 
 #include "nocturne.h"
 

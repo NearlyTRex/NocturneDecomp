@@ -2,7 +2,7 @@
 // Address: 00409150
 // Address Range: [[00409150, 00409266]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor * this_ptr, CVector3f * line_start, CVector3f * line_end, CVector3f * out_intersection_point)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150 (CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point)
 
 #include "nocturne.h"
 

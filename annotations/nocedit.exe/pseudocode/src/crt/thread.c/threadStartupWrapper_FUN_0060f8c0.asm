@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_thread.c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo * info)
+; __cdecl void __cdecl crt_thread_c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo *info)
 ;
 ; Parameters:
 ; ThreadStartupInfo * Stack[0x4]:4   info

@@ -2,7 +2,7 @@
 // Address: 005b79d3
 // Address Range: [[005b79d3, 005b7a08]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_add3dLine_FUN_005b79d3(void * start_point, void * end_point, int line_style)
+// Signature: int __cdecl wincore_windll_cpp_add3dLine_FUN_005b79d3(void *start_point,void *end_point,int line_style)
 
 #include "nocturne.h"
 

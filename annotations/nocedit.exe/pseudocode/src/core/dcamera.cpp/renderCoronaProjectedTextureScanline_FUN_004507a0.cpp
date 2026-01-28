@@ -2,7 +2,7 @@
 // Address: 004507a0
 // Address Range: [[004507a0, 004509a2]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y, int x_start, int x_end)
+// Signature: void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0 (int scanline_y,int x_start,int x_end)
 
 #include "nocturne.h"
 

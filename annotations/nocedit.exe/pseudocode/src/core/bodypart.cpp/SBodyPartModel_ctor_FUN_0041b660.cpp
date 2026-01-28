@@ -2,7 +2,7 @@
 // Address: 0041b660
 // Address Range: [[0041b660, 0041b673]]
 // Convention: __cdecl
-// Signature: SBodyPartModel * core_bodypart.cpp_SBodyPartModel_ctor_FUN_0041b660(SBodyPartModel * this_ptr)
+// Signature: SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_0041b660(SBodyPartModel *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_matrix.c_integerSquareRoot_FUN_0050d890(int value)
+; __cdecl int __cdecl engine_matrix_c_integerSquareRoot_FUN_0050d890(int value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   value

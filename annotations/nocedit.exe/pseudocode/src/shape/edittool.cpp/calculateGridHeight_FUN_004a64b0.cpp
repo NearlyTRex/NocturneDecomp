@@ -2,7 +2,7 @@
 // Address: 004a64b0
 // Address Range: [[004a64b0, 004a64de]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_calculateGridHeight_FUN_004a64b0(void)
+// Signature: int __cdecl shape_edittool_cpp_calculateGridHeight_FUN_004a64b0(void)
 
 #include "nocturne.h"
 

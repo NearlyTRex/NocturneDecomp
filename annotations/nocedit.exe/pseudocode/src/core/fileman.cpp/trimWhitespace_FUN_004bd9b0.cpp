@@ -2,7 +2,7 @@
 // Address: 004bd9b0
 // Address Range: [[004bd9b0, 004bda14]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_trimWhitespace_FUN_004bd9b0(char * str)
+// Signature: void __cdecl core_fileman_cpp_trimWhitespace_FUN_004bd9b0(char *str)
 
 #include "nocturne.h"
 

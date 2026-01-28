@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_texlist.cpp_staticInit_FUN_005dbdb0(void)
+; __cdecl void __cdecl core_texlist_cpp_staticInit_FUN_005dbdb0(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 0051e830
 // Address Range: [[0051e830, 0051e983]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh * this_ptr, int backface_culling_enabled)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 (CLodMesh *this_ptr,int backface_culling_enabled)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005aa7d0
 // Address Range: [[005aa7d0, 005aa7ef]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0(short * buffer, int num_samples)
+// Signature: void __cdecl sound_sndmain_cpp_convert16BitAudioSignedness_FUN_005aa7d0(short *buffer,int num_samples)
 
 #include "nocturne.h"
 

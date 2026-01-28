@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_calculateGridWidth_FUN_004a6490(void)
+; __cdecl int __cdecl shape_edittool_cpp_calculateGridWidth_FUN_004a6490(void)
 ;
 ;
 ; XREF[6]:

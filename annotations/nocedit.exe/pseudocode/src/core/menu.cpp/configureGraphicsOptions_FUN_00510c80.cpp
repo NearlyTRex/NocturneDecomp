@@ -2,7 +2,7 @@
 // Address: 00510c80
 // Address Range: [[00510c80, 00511839]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_configureGraphicsOptions_FUN_00510c80(void)
+// Signature: void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
 
 #include "nocturne.h"
 

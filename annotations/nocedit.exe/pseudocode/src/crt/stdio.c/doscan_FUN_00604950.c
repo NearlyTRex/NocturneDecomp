@@ -2,7 +2,7 @@
 // Address: 00604950
 // Address Range: [[00604950, 00604c1a]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_doscan_FUN_00604950(scanf_state_t * state, char * * format_ptr, va_list_t * args)
+// Signature: int __cdecl crt_stdio_c_doscan_FUN_00604950(scanf_state_t *state,char **format_ptr,va_list_t *args)
 
 #include "nocturne.h"
 

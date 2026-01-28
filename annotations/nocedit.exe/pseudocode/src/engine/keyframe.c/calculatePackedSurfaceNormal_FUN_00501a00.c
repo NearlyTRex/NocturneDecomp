@@ -2,7 +2,7 @@
 // Address: 00501a00
 // Address Range: [[00501a00, 00501bbb]]
 // Convention: __cdecl
-// Signature: void engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i * vertex_data, SSurfacePackedNormal * data)
+// Signature: void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00 (CVector3i *vertex_data,SSurfacePackedNormal *data)
 
 #include "nocturne.h"
 

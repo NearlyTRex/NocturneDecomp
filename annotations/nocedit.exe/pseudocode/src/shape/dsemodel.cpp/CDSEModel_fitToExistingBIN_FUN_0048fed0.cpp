@@ -2,7 +2,7 @@
 // Address: 0048fed0
 // Address Range: [[0048fed0, 00490016]]
 // Convention: __cdecl
-// Signature: int shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel * this_ptr, char * filename)
+// Signature: int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,char *filename)
 
 #include "nocturne.h"
 

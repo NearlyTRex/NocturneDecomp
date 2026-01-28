@@ -2,7 +2,7 @@
 // Address: 005a98b0
 // Address Range: [[005a98b0, 005a990b]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0(uint sfx_handle, CVector3f * position_source_ptr)
+// Signature: int __cdecl sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_005a98b0 (uint sfx_handle,CVector3f *position_source_ptr)
 
 #include "nocturne.h"
 

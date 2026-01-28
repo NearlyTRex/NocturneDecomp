@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hiram.cpp_FUN_004f43e0()
+; unknown CDemonActorType * core_hiram_cpp_FUN_004f43e0(void)
 ;
 ;
 ; Referenced Globals:

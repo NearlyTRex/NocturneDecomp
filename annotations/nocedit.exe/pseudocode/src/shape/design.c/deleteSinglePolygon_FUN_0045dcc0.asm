@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_deleteSinglePolygon_FUN_0045dcc0()
+; unknown void shape_design_c_deleteSinglePolygon_FUN_0045dcc0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c

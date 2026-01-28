@@ -2,7 +2,7 @@
 // Address: 0040c2e0
 // Address Range: [[0040c2e0, 0040c3b3]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, int version, CDemonActorType * parent_class_info)
+// Signature: CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0 (CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func, int *max_version,int version,CDemonActorType *parent_class_info)
 
 #include "nocturne.h"
 

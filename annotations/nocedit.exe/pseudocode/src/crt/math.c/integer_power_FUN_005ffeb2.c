@@ -2,7 +2,7 @@
 // Address: 005ffeb2
 // Address Range: [[005ffeb2, 005ffed4]]
 // Convention: __fpureg
-// Signature: float10 crt_math.c_integer_power_FUN_005ffeb2(float10 base, ushort exponent)
+// Signature: float10 __fpureg crt_math_c_integer_power_FUN_005ffeb2(float10 base,ushort exponent)
 
 #include "nocturne.h"
 

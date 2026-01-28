@@ -5,52 +5,52 @@
 
 // Original: core_larva.cpp_staticInit_FUN_00502f20
 // Address: 00502f20
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_larva.cpp_factoryFunc_FUN_00502f50
 // Address: 00502f50
-CLarva * factoryFunc(void);
+CLarva * __cdecl factoryFunc(void);
 
 // Original: core_larva.cpp_FUN_00502f80
 // Address: 00502f80
-undefined FUN_00502f80();
+CDemonActorType * FUN_00502f80(void);
 
 // Original: core_larva.cpp_CLarva_ctor_FUN_00502f90
 // Address: 00502f90
-CLarva * CLarva::ctor(CLarva * this_ptr);
+CLarva * __cdecl CLarva::ctor(CLarva *this_ptr);
 
 // Original: core_larva.cpp_FUN_00503020
 // Address: 00503020
-undefined FUN_00503020();
+void FUN_00503020(void);
 
 // Original: core_larva.cpp_FUN_00503080
 // Address: 00503080
-undefined FUN_00503080();
+void FUN_00503080(void);
 
 // Original: core_larva.cpp_CLarva_load_FUN_00503960
 // Address: 00503960
-undefined CLarva::load();
+void CLarva::load(void);
 
 // Original: core_larva.cpp_FUN_005039d0
 // Address: 005039d0
-undefined FUN_005039d0();
+char * FUN_005039d0(void);
 
 // Original: core_larva.cpp_FUN_00503a20
 // Address: 00503a20
-undefined FUN_00503a20();
+void FUN_00503a20(void);
 
 // Original: core_larva.cpp_FUN_00503c00
 // Address: 00503c00
-undefined FUN_00503c00();
+undefined4 FUN_00503c00(void);
 
 // Original: core_larva.cpp_FUN_00503c50
 // Address: 00503c50
-undefined FUN_00503c50();
+void FUN_00503c50(void);
 
 // Original: core_larva.cpp_FUN_00503c90
 // Address: 00503c90
-undefined FUN_00503c90();
+void FUN_00503c90(void);
 
 // Original: core_larva.cpp_CLarva_dtor_FUN_00503cc0
 // Address: 00503cc0
-CDemonActor * CLarva::dtor(CLarva * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
+CDemonActor * __cdecl CLarva::dtor(CLarva *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);

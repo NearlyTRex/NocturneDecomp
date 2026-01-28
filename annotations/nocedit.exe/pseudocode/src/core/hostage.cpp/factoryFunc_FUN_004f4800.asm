@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHostage * core_hostage.cpp_factoryFunc_FUN_004f4800(void)
+; __cdecl CHostage * __cdecl core_hostage_cpp_factoryFunc_FUN_004f4800(void)
 ;
 ;
 ; XREF[1]:

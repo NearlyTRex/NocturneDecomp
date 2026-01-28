@@ -2,7 +2,7 @@
 // Address: 00487630
 // Address Range: [[00487630, 00487720]]
 // Convention: __cdecl
-// Signature: void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630(int start_x, int end_x, int y)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (int start_x,int end_x,int y)
 
 #include "nocturne.h"
 

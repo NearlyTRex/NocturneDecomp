@@ -2,7 +2,7 @@
 // Address: 0045ba60
 // Address Range: [[0045ba60, 0045bbb3]]
 // Convention: __cdecl
-// Signature: void shape_design.c_setupViewMatrix_FUN_0045ba60(void)
+// Signature: void __cdecl shape_design_c_setupViewMatrix_FUN_0045ba60(void)
 
 #include "nocturne.h"
 

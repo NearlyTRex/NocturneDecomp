@@ -2,7 +2,7 @@
 // Address: 005817d0
 // Address Range: [[005817d0, 00581a96]]
 // Convention: __watcallRegister
-// Signature: void core_setedit.cpp_FUN_005817d0(void * unk)
+// Signature: void core_setedit_cpp_FUN_005817d0(void *unk)
 
 #include "nocturne.h"
 

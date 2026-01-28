@@ -2,7 +2,7 @@
 // Address: 0046b9a0
 // Address Range: [[0046b9a0, 0046bb7a]]
 // Convention: __cdecl
-// Signature: void shape_design.c_embedCopyrightWatermark_FUN_0046b9a0(void * image_buffer, char * output_filename, int texture_size)
+// Signature: void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0 (void *image_buffer,char *output_filename,int texture_size)
 
 #include "nocturne.h"
 

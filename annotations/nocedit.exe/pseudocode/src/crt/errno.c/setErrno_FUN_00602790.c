@@ -2,7 +2,7 @@
 // Address: 00602790
 // Address Range: [[00602790, 0060279d]]
 // Convention: __cdecl
-// Signature: void crt_errno.c_setErrno_FUN_00602790(int error_code)
+// Signature: void __cdecl crt_errno_c_setErrno_FUN_00602790(int error_code)
 
 #include "nocturne.h"
 

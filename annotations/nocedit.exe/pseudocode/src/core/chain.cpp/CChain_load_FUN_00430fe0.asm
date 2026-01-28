@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_chain.cpp_CChain_load_FUN_00430fe0()
+; unknown void core_chain_cpp_CChain_load_FUN_00430fe0(void)
 ;
 ;
 ; Referenced Globals:

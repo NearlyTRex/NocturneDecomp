@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_scanf_float_FUN_00605178(scanf_state_t * state, va_list_t * args)
+; __cdecl int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t *args)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

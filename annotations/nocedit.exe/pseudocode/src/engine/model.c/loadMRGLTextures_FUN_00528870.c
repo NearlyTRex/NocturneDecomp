@@ -2,7 +2,7 @@
 // Address: 00528870
 // Address Range: [[00528870, 00528931]]
 // Convention: __cdecl
-// Signature: void engine_model.c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended * block)
+// Signature: void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *block)
 
 #include "nocturne.h"
 

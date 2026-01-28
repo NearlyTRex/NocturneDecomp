@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_haystack.cpp_FUN_004f0e40()
+; unknown void core_haystack_cpp_FUN_004f0e40(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x90]:4  local_90

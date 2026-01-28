@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_clipper.c_clipAndRasterize_FUN_004371b0(int vertex_count, int * vertex_indices)
+; __cdecl void __cdecl engine_clipper_c_clipAndRasterize_FUN_004371b0(int vertex_count,int *vertex_indices)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_count

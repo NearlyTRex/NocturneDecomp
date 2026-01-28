@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_procedur.cpp_FUN_00554670()
+; unknown void core_procedur_cpp_FUN_00554670(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40

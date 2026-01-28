@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0(CObj * this_ptr, CVert * vert_ptr)
+; __cdecl int __cdecl shape_superopt_cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0 (CObj *this_ptr,CVert *vert_ptr)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

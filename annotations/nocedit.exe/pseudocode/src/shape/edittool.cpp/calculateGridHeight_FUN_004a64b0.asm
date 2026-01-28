@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_calculateGridHeight_FUN_004a64b0(void)
+; __cdecl int __cdecl shape_edittool_cpp_calculateGridHeight_FUN_004a64b0(void)
 ;
 ;
 ; XREF[3]:

@@ -2,7 +2,7 @@
 // Address: 00418550
 // Address Range: [[00418550, 00418573]]
 // Convention: __cdecl
-// Signature: void core_biggs.cpp_staticInit_FUN_00418550(void)
+// Signature: void __cdecl core_biggs_cpp_staticInit_FUN_00418550(void)
 
 #include "nocturne.h"
 

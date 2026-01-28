@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_dlight.cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonLight * this_ptr, CRect * rect)
+; __cdecl int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonLight *this_ptr,CRect *rect)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr

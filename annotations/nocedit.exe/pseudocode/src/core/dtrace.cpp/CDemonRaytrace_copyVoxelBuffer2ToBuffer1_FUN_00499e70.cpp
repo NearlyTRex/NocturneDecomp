@@ -2,7 +2,7 @@
 // Address: 00499e70
 // Address Range: [[00499e70, 00499f06]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace * this_ptr)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace *this_ptr)
 
 #include "nocturne.h"
 

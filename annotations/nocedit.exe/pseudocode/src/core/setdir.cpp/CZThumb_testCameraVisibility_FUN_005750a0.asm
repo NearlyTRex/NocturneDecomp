@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb * this_ptr)
+; __cdecl float __cdecl core_setdir_cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb *this_ptr)
 ;
 ; Parameters:
 ; CZThumb *        Stack[0x4]:4   this_ptr

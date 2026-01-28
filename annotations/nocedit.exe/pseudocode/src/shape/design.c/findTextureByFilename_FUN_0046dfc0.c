@@ -2,7 +2,7 @@
 // Address: 0046dfc0
 // Address Range: [[0046dfc0, 0046e024]]
 // Convention: __cdecl
-// Signature: int shape_design.c_findTextureByFilename_FUN_0046dfc0(char * filename)
+// Signature: int __cdecl shape_design_c_findTextureByFilename_FUN_0046dfc0(char *filename)
 
 #include "nocturne.h"
 

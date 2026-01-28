@@ -2,7 +2,7 @@
 // Address: 0043edf0
 // Address Range: [[0043edf0, 0043ee01]]
 // Convention: __cdecl
-// Signature: CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr)
+// Signature: CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary *this_ptr)
 
 #include "nocturne.h"
 

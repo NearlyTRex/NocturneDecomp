@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint sound_sndmain.cpp_startNonPositionalSfx_FUN_005a9550(char * filename)
+; __cdecl uint __cdecl sound_sndmain_cpp_startNonPositionalSfx_FUN_005a9550(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

@@ -2,7 +2,7 @@
 // Address: 0060b560
 // Address Range: [[0060b560, 0060b585]]
 // Convention: __cdecl
-// Signature: void crt_exit.c_FinalExitHandler_FUN_0060b560(int exit_code)
+// Signature: void __cdecl crt_exit_c_FinalExitHandler_FUN_0060b560(int exit_code)
 
 #include "nocturne.h"
 

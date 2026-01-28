@@ -2,7 +2,7 @@
 // Address: 00499ba0
 // Address Range: [[00499ba0, 00499c1a]]
 // Convention: __cdecl
-// Signature: CVector3f * core_dtrace.cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0(CDemonRaytrace * this_ptr, CVector3f * output_position, int cube_index)
+// Signature: CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0 (CDemonRaytrace *this_ptr,CVector3f *output_position,int cube_index)
 
 #include "nocturne.h"
 

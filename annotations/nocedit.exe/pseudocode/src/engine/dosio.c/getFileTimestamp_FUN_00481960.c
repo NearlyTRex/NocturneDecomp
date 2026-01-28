@@ -2,7 +2,7 @@
 // Address: 00481960
 // Address Range: [[00481960, 004819ed]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+// Signature: int __cdecl engine_dosio_c_getFileTimestamp_FUN_00481960(char *directory,char *filename)
 
 #include "nocturne.h"
 

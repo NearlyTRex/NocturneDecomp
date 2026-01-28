@@ -2,7 +2,7 @@
 // Address: 0043e530
 // Address Range: [[0043e530, 0043e6b8]]
 // Convention: __cdecl
-// Signature: int support_codec.cpp_readBitsFromStream_FUN_0043e530(SBitBuffer * bit_buffer, int bit_count, FILE * file_stream, int * bytes_remaining)
+// Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,FILE *file_stream,int *bytes_remaining)
 
 #include "nocturne.h"
 

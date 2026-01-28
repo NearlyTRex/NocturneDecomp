@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_batcreat.cpp_FUN_00415dd0()
+; unknown void core_batcreat_cpp_FUN_00415dd0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

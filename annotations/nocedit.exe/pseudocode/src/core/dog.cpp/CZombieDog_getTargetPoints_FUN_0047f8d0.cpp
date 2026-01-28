@@ -2,7 +2,7 @@
 // Address: 0047f8d0
 // Address Range: [[0047f8d0, 0047f91e]]
 // Convention: __cdecl
-// Signature: int core_dog.cpp_CZombieDog_getTargetPoints_FUN_0047f8d0(CZombieDog * this_ptr, CVector3f * out_points_array)
+// Signature: int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_0047f8d0 (CZombieDog *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 

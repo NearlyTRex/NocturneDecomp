@@ -2,7 +2,7 @@
 // Address: 00606620
 // Address Range: [[00606620, 0060665c]]
 // Convention: __cdecl
-// Signature: void crt_startup.c_WriteErrorAndExit_FUN_00606620(char * error_message, int exit_code)
+// Signature: void __cdecl crt_startup_c_WriteErrorAndExit_FUN_00606620(char *error_message,int exit_code)
 
 #include "nocturne.h"
 

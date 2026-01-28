@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_game.cpp_CGame_setGameRes_FUN_004dade0(CGame * this_ptr)
+; __cdecl void __cdecl core_game_cpp_CGame_setGameRes_FUN_004dade0(CGame *this_ptr)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

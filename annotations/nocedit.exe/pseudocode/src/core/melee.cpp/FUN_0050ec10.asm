@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_melee.cpp_FUN_0050ec10()
+; unknown void core_melee_cpp_FUN_0050ec10(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x24]:1  local_24

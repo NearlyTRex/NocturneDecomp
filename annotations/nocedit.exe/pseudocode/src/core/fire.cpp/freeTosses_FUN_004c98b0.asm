@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeTosses_FUN_004c98b0(CToss * * array)
+; __cdecl void __cdecl core_fire_cpp_freeTosses_FUN_004c98b0(CToss **array)
 ;
 ; Parameters:
 ; CToss * *        Stack[0x4]:4   array

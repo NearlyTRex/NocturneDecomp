@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawRect_FUN_00403120(int x1, int y1, int x2, int y2)
+; __cdecl void __cdecl engine_2d_c_drawRect_FUN_00403120(int x1,int y1,int x2,int y2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x1

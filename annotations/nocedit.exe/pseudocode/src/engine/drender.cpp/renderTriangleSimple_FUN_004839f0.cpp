@@ -2,7 +2,7 @@
 // Address: 004839f0
 // Address Range: [[004839f0, 00483ee0]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(CVector3i * vertex_indices, int vertex_count)
+// Signature: void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count)
 
 #include "nocturne.h"
 

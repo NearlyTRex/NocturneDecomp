@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonSet * core_setdir.cpp_copySet_FUN_005768c0(CDemonSet * * set1, CDemonSet * * set2)
+; __cdecl CDemonSet * __cdecl core_setdir_cpp_copySet_FUN_005768c0(CDemonSet **set1,CDemonSet **set2)
 ;
 ; Parameters:
 ; CDemonSet * *    Stack[0x4]:4   set1

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920(char * message)
+; __cdecl void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(char *message)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   message

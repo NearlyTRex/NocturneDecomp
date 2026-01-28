@@ -2,7 +2,7 @@
 // Address: 00440490
 // Address Range: [[00440490, 0044049d]]
 // Convention: __cdecl
-// Signature: void core_colonel.cpp_CColonel_serialize_FUN_00440490(CColonel * this_ptr)
+// Signature: void __cdecl core_colonel_cpp_CColonel_serialize_FUN_00440490(CColonel *this_ptr)
 
 #include "nocturne.h"
 

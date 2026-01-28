@@ -2,7 +2,7 @@
 // Address: 005f2dc0
 // Address Range: [[005f2dc0, 005f2e6f]]
 // Convention: __cdecl
-// Signature: int wincore_winrun.cpp_getTime_FUN_005f2dc0(void)
+// Signature: int __cdecl wincore_winrun_cpp_getTime_FUN_005f2dc0(void)
 
 #include "nocturne.h"
 

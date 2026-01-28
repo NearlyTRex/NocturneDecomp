@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_emitter.cpp_FUN_004a9390()
+; unknown void core_emitter_cpp_FUN_004a9390(void)
 ;
 ;
 ; Called Functions:

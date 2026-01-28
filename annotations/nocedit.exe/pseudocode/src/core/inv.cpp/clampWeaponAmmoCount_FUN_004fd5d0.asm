@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inv.cpp_clampWeaponAmmoCount_FUN_004fd5d0(CDemonActor * actor_ptr)
+; __cdecl void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004fd5d0(CDemonActor *actor_ptr)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   actor_ptr

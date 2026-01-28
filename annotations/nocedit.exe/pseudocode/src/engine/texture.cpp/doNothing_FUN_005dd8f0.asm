@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_texture.cpp_doNothing_FUN_005dd8f0(void)
+; __cdecl void __cdecl engine_texture_cpp_doNothing_FUN_005dd8f0(void)
 ;
 ;
 ; XREF[1]:

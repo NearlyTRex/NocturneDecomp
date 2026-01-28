@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHotDemon * core_hotdemon.cpp_factoryFunc_FUN_004f6c60(void)
+; __cdecl CHotDemon * __cdecl core_hotdemon_cpp_factoryFunc_FUN_004f6c60(void)
 ;
 ;
 ; XREF[1]:

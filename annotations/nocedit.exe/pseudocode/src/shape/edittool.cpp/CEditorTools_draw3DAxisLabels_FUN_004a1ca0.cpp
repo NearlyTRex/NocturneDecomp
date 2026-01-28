@@ -2,7 +2,7 @@
 // Address: 004a1ca0
 // Address Range: [[004a1ca0, 004a1e8d]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools * this_ptr, float scale_factor, int text_color)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (CEditorTools *this_ptr,float scale_factor,int text_color)
 
 #include "nocturne.h"
 

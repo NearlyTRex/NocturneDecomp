@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_biggs.cpp_FUN_00418ce0()
+; unknown void core_biggs_cpp_FUN_00418ce0(void)
 ;
 ;
 ; Called Functions:

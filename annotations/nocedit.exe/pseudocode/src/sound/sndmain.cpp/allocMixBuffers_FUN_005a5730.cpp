@@ -2,7 +2,7 @@
 // Address: 005a5730
 // Address Range: [[005a5730, 005a58fe]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_allocMixBuffers_FUN_005a5730(int requested_size, int num_buffers)
+// Signature: void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,int num_buffers)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0043e840
 // Address Range: [[0043e840, 0043e997]]
 // Convention: __cdecl
-// Signature: int support_codec.cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer * bit_state, int bit_count, byte * * output_pos, int * bytes_remaining)
+// Signature: int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840 (SBitBuffer *bit_state,int bit_count,byte **output_pos,int *bytes_remaining)
 
 #include "nocturne.h"
 

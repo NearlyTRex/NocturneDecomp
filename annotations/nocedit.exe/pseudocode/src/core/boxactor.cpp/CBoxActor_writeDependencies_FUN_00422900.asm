@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_boxactor.cpp_CBoxActor_writeDependencies_FUN_00422900(CBoxActor * this_ptr, FILE * file_handle)
+; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_writeDependencies_FUN_00422900(CBoxActor *this_ptr,FILE *file_handle)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

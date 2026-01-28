@@ -2,7 +2,7 @@
 // Address: 00545180
 // Address Range: [[00545180, 00545643]]
 // Convention: unknown
-// Signature: undefined engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180()
+// Signature: undefined4 engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlame * core_backgnd.cpp_CFlame_dtor_FUN_00412690(CFlame * this_ptr, uint d1, uint d2)
+; __cdecl CFlame * __cdecl core_backgnd_cpp_CFlame_dtor_FUN_00412690(CFlame *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 005f2b80
 // Address Range: [[005f2b80, 005f2da8]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80(void)
+// Signature: void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void)
 
 #include "nocturne.h"
 

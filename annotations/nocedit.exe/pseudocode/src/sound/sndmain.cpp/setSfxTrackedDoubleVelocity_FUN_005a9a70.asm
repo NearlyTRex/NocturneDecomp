@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70(uint sfx_handle, CVector3d * velocity_source_ptr)
+; __cdecl int __cdecl sound_sndmain_cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70 (uint sfx_handle,CVector3d *velocity_source_ptr)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_keyactor.cpp_FUN_00501900()
+; unknown undefined4 core_keyactor_cpp_FUN_00501900(void)
 ;
 ;
 ; Referenced Globals:

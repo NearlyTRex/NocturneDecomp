@@ -2,7 +2,7 @@
 // Address: 004a3e20
 // Address Range: [[004a3e20, 004a3eed]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+// Signature: int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 (CPickList *this_ptr,char *dialog_title,int config_param1,int config_param2)
 
 #include "nocturne.h"
 

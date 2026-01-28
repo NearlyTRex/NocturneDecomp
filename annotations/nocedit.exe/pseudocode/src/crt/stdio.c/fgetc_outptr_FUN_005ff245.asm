@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
+; __cdecl int __cdecl crt_stdio_c_fgetc_outptr_FUN_005ff245(FILE *stream,uchar *output_byte)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CGlassParticle_process_FUN_004c20f0(CGlassParticle * this_ptr)
+; __cdecl void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004c20f0(CGlassParticle *this_ptr)
 ;
 ; Parameters:
 ; CGlassParticle * Stack[0x4]:4   this_ptr

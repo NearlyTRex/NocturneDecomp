@@ -2,7 +2,7 @@
 // Address: 0049d190
 // Address Range: [[0049d190, 0049d1e2]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_plotPixelWithClipping_FUN_0049d190(int x_coord, int y_coord, int use_clipping)
+// Signature: void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0049d190(int x_coord,int y_coord,int use_clipping)
 
 #include "nocturne.h"
 

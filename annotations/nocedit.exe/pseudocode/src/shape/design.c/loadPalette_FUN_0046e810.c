@@ -2,7 +2,7 @@
 // Address: 0046e810
 // Address Range: [[0046e810, 0046eb7d]]
 // Convention: unknown
-// Signature: undefined shape_design.c_loadPalette_FUN_0046e810()
+// Signature: void shape_design_c_loadPalette_FUN_0046e810(void)
 
 #include "nocturne.h"
 

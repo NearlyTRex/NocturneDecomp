@@ -2,7 +2,7 @@
 // Address: 004114e0
 // Address Range: [[004114e0, 0041152d]]
 // Convention: __cdecl
-// Signature: CAmmo * core_ammo.cpp_CAmmo_dtor_FUN_004114e0(CAmmo * this_ptr, uint d1, uint d2)
+// Signature: CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_004114e0(CAmmo *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

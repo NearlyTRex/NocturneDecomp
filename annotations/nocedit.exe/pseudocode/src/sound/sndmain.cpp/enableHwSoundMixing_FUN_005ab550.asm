@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550(int enable)
+; __cdecl void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_005ab550(int enable)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   enable

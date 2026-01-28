@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CStake_init_FUN_004bfe20(CStake * this_ptr, CVector3f * position, CVector3f * orientation)
+; __cdecl void __cdecl core_fire_cpp_CStake_init_FUN_004bfe20(CStake *this_ptr,CVector3f *position,CVector3f *orientation)
 ;
 ; Parameters:
 ; CStake *         Stack[0x4]:4   this_ptr

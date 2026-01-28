@@ -2,7 +2,7 @@
 // Address: 004658e0
 // Address Range: [[004658e0, 00465b3d]]
 // Convention: __cdecl
-// Signature: void shape_design.c_optimizePolygonMesh_FUN_004658e0(float angle_tolerance, int strict_mode, int display_progress)
+// Signature: void __cdecl shape_design_c_optimizePolygonMesh_FUN_004658e0 (float angle_tolerance,int strict_mode,int display_progress)
 
 #include "nocturne.h"
 

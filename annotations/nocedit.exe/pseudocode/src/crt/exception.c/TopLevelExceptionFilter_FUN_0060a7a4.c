@@ -2,7 +2,7 @@
 // Address: 0060a7a4
 // Address Range: [[0060a7a4, 0060a9ba]]
 // Convention: __cdecl
-// Signature: long crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS * ExceptionInfo)
+// Signature: long __cdecl crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *ExceptionInfo)
 
 #include "nocturne.h"
 

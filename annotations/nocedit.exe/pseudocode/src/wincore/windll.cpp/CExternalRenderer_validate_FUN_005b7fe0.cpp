@@ -2,7 +2,7 @@
 // Address: 005b7fe0
 // Address Range: [[005b7fe0, 005b8116]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)
+// Signature: int __cdecl wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0 (CExternalRenderer *this_ptr,CExternalRenderer *capabilities)
 
 #include "nocturne.h"
 

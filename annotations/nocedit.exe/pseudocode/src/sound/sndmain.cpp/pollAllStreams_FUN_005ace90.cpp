@@ -2,7 +2,7 @@
 // Address: 005ace90
 // Address Range: [[005ace90, 005acf13]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_pollAllStreams_FUN_005ace90(int paused_mode)
+// Signature: void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005ace90(int paused_mode)
 
 #include "nocturne.h"
 

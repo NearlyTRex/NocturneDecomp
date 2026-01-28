@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_scat.cpp_FUN_00557ea0()
+; unknown void core_scat_cpp_FUN_00557ea0(void)
 ;
 ;
 ; Referenced Globals:

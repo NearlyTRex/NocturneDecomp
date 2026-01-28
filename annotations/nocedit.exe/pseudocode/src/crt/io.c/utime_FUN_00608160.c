@@ -2,7 +2,7 @@
 // Address: 00608160
 // Address Range: [[00608160, 006082d5]]
 // Convention: __cdecl
-// Signature: int crt_io.c_utime_FUN_00608160(char * filename, utimbuf * timestamps)
+// Signature: int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
 
 #include "nocturne.h"
 

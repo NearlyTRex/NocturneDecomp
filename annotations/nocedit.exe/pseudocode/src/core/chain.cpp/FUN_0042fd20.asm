@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_chain.cpp_FUN_0042fd20()
+; unknown void core_chain_cpp_FUN_0042fd20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMimic * core_mimic.cpp_factoryFunc_FUN_0051f190(void)
+; __cdecl CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void)
 ;
 ;
 ; XREF[1]:

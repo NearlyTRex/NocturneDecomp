@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fileman.cpp_preprocessMusicFiles_FUN_004bd750(char * source_directory)
+; __cdecl void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_directory)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   source_directory

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_door.cpp_CDoor_writeDependencies_FUN_00481630(CDoor * this_ptr, FILE * file_handle)
+; __cdecl void __cdecl core_door_cpp_CDoor_writeDependencies_FUN_00481630(CDoor *this_ptr,FILE *file_handle)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr

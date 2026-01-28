@@ -2,7 +2,7 @@
 // Address: 00550ef0
 // Address Range: [[00550ef0, 00550ff5]]
 // Convention: __cdecl
-// Signature: int engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod * this_ptr, CPodSearchContext * search_context)
+// Signature: int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0 (CPod *this_ptr,CPodSearchContext *search_context)
 
 #include "nocturne.h"
 

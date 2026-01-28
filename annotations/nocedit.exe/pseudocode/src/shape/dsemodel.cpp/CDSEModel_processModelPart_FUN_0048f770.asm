@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEModel * this_ptr, uint part_index)
+; __cdecl void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEModel *this_ptr,uint part_index)
 ;
 ; Parameters:
 ; CDSEModel *      Stack[0x4]:4   this_ptr

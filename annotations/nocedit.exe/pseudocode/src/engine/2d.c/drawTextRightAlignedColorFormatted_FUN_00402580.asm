@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580(int y_pos, int right_x, char * format_string, ...)
+; __cdecl void __cdecl engine_2d_c_drawTextRightAlignedColorFormatted_FUN_00402580 (int y_pos,int right_x,char *format_string,...)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   y_pos

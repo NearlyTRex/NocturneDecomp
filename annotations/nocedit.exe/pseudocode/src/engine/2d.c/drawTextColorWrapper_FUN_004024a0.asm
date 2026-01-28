@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextColorWrapper_FUN_004024a0(int x_pos, int y_pos, char * text)
+; __cdecl void __cdecl engine_2d_c_drawTextColorWrapper_FUN_004024a0(int x_pos,int y_pos,char *text)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x_pos

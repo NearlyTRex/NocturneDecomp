@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTrap * core_trap.cpp_factoryFunc_FUN_005de650(void)
+; __cdecl CTrap * __cdecl core_trap_cpp_factoryFunc_FUN_005de650(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 005f4140
 // Address Range: [[005f4140, 005f4208]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140(char * buffer)
+// Signature: void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer)
 
 #include "nocturne.h"
 

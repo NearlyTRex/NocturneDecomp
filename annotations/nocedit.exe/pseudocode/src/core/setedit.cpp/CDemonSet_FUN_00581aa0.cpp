@@ -2,7 +2,7 @@
 // Address: 00581aa0
 // Address Range: [[00581aa0, 00581db8] [00581dd8, 00582920]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_CDemonSet_FUN_00581aa0(CDemonSet * this_ptr)
+// Signature: void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

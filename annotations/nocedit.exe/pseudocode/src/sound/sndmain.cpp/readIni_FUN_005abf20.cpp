@@ -2,7 +2,7 @@
 // Address: 005abf20
 // Address Range: [[005abf20, 005ac21a]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_readIni_FUN_005abf20(CIniFile * ini_file)
+// Signature: void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
 
 #include "nocturne.h"
 

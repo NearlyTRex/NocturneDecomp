@@ -2,7 +2,7 @@
 // Address: 004ff210
 // Address Range: [[004ff210, 004ff3a8]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_save_FUN_004ff210(CInventory * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

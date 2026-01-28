@@ -2,7 +2,7 @@
 // Address: 004a7160
 // Address Range: [[004a7160, 004a71ff] [004a7406, 004a74a4]]
 // Convention: unknown
-// Signature: undefined core_elephant.cpp_FUN_004a7160()
+// Signature: undefined4 core_elephant_cpp_FUN_004a7160(void)
 
 #include "nocturne.h"
 

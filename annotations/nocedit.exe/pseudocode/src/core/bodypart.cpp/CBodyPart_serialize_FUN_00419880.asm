@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_bodypart.cpp_CBodyPart_serialize_FUN_00419880(CBodyPart * this_ptr)
+; __cdecl void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_ptr)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

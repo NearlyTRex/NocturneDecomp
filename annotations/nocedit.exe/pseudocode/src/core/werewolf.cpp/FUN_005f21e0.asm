@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_werewolf.cpp_FUN_005f21e0()
+; unknown void core_werewolf_cpp_FUN_005f21e0(void)
 ;
 ;
 ; Called Functions:

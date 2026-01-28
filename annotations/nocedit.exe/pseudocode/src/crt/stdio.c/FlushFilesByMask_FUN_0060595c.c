@@ -2,7 +2,7 @@
 // Address: 0060595c
 // Address Range: [[0060595c, 006059a0]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)
+// Signature: int __watcallStack crt_stdio_c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 006092f0
 // Address Range: [[006092f0, 006093ad]]
 // Convention: __cdecl
-// Signature: FILE * crt_stdio.c_AllocateFileStruct_FUN_006092f0(int unused_param)
+// Signature: FILE * __cdecl crt_stdio_c_AllocateFileStruct_FUN_006092f0(int unused_param)
 
 #include "nocturne.h"
 

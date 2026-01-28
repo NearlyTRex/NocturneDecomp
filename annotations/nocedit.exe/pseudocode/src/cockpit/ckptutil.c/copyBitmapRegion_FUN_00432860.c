@@ -2,7 +2,7 @@
 // Address: 00432860
 // Address Range: [[00432860, 004328cd]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860(void * src_buffer, int src_stride, void * dest_buffer, int copy_width, int copy_height, int src_x, int src_y)
+// Signature: void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860 (void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height, int src_x,int src_y)
 
 #include "nocturne.h"
 

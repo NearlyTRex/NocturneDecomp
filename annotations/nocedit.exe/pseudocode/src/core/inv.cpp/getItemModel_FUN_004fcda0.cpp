@@ -2,7 +2,7 @@
 // Address: 004fcda0
 // Address Range: [[004fcda0, 004fcef4]]
 // Convention: __cdecl
-// Signature: CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004fcda0(CDemonActor * actor_ptr)
+// Signature: CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004fcda0(CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 

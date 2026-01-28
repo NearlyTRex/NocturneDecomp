@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
+; __cdecl int __cdecl engine_dosio_c_getFullPath_FUN_004820c0(char *output_path,char *input_path)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_path

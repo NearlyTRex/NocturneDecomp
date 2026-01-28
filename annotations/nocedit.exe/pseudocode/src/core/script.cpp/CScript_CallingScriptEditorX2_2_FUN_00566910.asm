@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910()
+; unknown void core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910(void)
 ;
 ;
 ; XREF[9]:

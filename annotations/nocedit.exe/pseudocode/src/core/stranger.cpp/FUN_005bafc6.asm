@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stranger.cpp_FUN_005bafc6()
+; unknown undefined4 core_stranger_cpp_FUN_005bafc6(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_boxactor.cpp_freeFilters_FUN_004236e0(CDemonFilter * * objs)
+; __cdecl int __cdecl core_boxactor_cpp_freeFilters_FUN_004236e0(CDemonFilter **objs)
 ;
 ; Parameters:
 ; CDemonFilter * * Stack[0x4]:4   objs

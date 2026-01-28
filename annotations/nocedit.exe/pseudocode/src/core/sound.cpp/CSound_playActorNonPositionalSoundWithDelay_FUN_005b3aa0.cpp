@@ -2,7 +2,7 @@
 // Address: 005b3aa0
 // Address Range: [[005b3aa0, 005b3ade]]
 // Convention: __cdecl
-// Signature: uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0(CSound * this_ptr, CDemonActor * actor, char * sound_name, float delay)
+// Signature: uint __cdecl core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0 (CSound *this_ptr,CDemonActor *actor,char *sound_name,float delay)
 
 #include "nocturne.h"
 

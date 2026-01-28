@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930(void)
+; __cdecl int __cdecl sound_sndmain_cpp_releaseRecordingDevice_FUN_005ab930(void)
 ;
 ;
 ; XREF[3]:

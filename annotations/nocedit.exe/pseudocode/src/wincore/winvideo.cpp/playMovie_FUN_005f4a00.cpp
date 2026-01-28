@@ -2,7 +2,7 @@
 // Address: 005f4a00
 // Address Range: [[005f4a00, 005f4dbf]]
 // Convention: __cdecl
-// Signature: int wincore_winvideo.cpp_playMovie_FUN_005f4a00(char * directory_path, char * movie_filename)
+// Signature: int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,char *movie_filename)
 
 #include "nocturne.h"
 

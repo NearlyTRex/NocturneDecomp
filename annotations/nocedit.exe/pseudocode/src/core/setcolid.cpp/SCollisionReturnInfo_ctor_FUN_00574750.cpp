@@ -2,7 +2,7 @@
 // Address: 00574750
 // Address Range: [[00574750, 00574754]]
 // Convention: __cdecl
-// Signature: SCollisionReturnInfo * core_setcolid.cpp_SCollisionReturnInfo_ctor_FUN_00574750(SCollisionReturnInfo * this_ptr)
+// Signature: SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00574750(SCollisionReturnInfo *this_ptr)
 
 #include "nocturne.h"
 

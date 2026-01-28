@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_char_to_digit_FUN_006058e8(int ch)
+; __cdecl int __cdecl crt_stdio_c_char_to_digit_FUN_006058e8(int ch)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   ch

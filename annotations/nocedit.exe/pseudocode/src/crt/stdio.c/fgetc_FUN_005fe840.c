@@ -2,7 +2,7 @@
 // Address: 005fe840
 // Address Range: [[005fe840, 005fe90d]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+// Signature: int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
 
 #include "nocturne.h"
 

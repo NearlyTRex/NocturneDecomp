@@ -2,7 +2,7 @@
 // Address: 0058a3d0
 // Address Range: [[0058a3d0, 0058a49f]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure * this_ptr, char * filename)
+// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename)
 
 #include "nocturne.h"
 

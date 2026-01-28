@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_staticInit_FUN_005b1760(void)
+; __cdecl void __cdecl core_sound_cpp_staticInit_FUN_005b1760(void)
 ;
 ;
 ; Referenced Globals:

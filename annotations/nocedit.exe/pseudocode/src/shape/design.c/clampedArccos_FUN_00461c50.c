@@ -2,7 +2,7 @@
 // Address: 00461c50
 // Address Range: [[00461c50, 00461cab]]
 // Convention: __cdecl
-// Signature: double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)
+// Signature: double __cdecl shape_design_c_clampedArccos_FUN_00461c50(double dot_product)
 
 #include "nocturne.h"
 

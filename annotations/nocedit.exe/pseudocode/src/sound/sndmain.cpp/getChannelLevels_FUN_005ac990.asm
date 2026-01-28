@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_getChannelLevels_FUN_005ac990(int channel, float * out_peak, float * out_average)
+; __cdecl void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,float *out_average)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   channel

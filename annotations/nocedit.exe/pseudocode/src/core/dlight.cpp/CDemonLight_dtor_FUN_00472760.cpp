@@ -2,7 +2,7 @@
 // Address: 00472760
 // Address Range: [[00472760, 004727bd]]
 // Convention: __cdecl
-// Signature: CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_00472760(CDemonLight * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

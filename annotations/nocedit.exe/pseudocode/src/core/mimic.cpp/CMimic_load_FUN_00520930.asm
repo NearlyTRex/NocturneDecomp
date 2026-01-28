@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mimic.cpp_CMimic_load_FUN_00520930()
+; unknown void core_mimic_cpp_CMimic_load_FUN_00520930(void)
 ;
 ;
 ; Referenced Globals:

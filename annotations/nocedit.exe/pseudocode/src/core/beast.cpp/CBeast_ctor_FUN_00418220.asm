@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBeast * core_beast.cpp_CBeast_ctor_FUN_00418220(CBeast * this_ptr)
+; __cdecl CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00418220(CBeast *this_ptr)
 ;
 ; Parameters:
 ; CBeast *         Stack[0x4]:4   this_ptr

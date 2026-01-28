@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_trash.cpp_CTrash_serialize_FUN_005dec80(CTrash * this_ptr)
+; __cdecl void __cdecl core_trash_cpp_CTrash_serialize_FUN_005dec80(CTrash *this_ptr)
 ;
 ; Parameters:
 ; CTrash *         Stack[0x4]:4   this_ptr

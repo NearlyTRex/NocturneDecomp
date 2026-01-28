@@ -2,7 +2,7 @@
 // Address: 00478830
 // Address Range: [[00478830, 00478946]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(CKeyFramedModel * this_ptr)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(CKeyFramedModel *this_ptr)
 
 #include "nocturne.h"
 

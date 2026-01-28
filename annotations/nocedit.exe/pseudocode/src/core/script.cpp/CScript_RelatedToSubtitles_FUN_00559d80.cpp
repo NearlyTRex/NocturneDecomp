@@ -2,7 +2,7 @@
 // Address: 00559d80
 // Address Range: [[00559d80, 00559f76]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80()
+// Signature: void core_script_cpp_CScript_RelatedToSubtitles_FUN_00559d80(void)
 
 #include "nocturne.h"
 

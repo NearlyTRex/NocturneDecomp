@@ -2,7 +2,7 @@
 // Address: 005dd7a0
 // Address Range: [[005dd7a0, 005dd7fb]]
 // Convention: __cdecl
-// Signature: void engine_texture.cpp_freeTextureCache_FUN_005dd7a0(void)
+// Signature: void __cdecl engine_texture_cpp_freeTextureCache_FUN_005dd7a0(void)
 
 #include "nocturne.h"
 

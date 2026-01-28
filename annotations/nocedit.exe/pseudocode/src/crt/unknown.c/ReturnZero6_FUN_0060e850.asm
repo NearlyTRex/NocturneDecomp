@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_ReturnZero6_FUN_0060e850()
+; unknown undefined4 crt_unknown_c_ReturnZero6_FUN_0060e850(void)
 ;
 ;
 ; XREF[1]:

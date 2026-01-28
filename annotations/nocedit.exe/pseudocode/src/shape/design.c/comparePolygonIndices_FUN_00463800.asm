@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_comparePolygonIndices_FUN_00463800(int * first_value_ptr, int * second_value_ptr)
+; __cdecl int __cdecl shape_design_c_comparePolygonIndices_FUN_00463800(int *first_value_ptr,int *second_value_ptr)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   first_value_ptr

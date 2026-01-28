@@ -2,7 +2,7 @@
 // Address: 006021da
 // Address Range: [[006021da, 006021e7]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
+// Signature: void * __cdecl crt_memory_c_malloc_FUN_006021da(SIZE_T size)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_dbLoad_FUN_005603c0()
+; unknown void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x334]:1  local_334

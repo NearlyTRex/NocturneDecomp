@@ -2,7 +2,7 @@
 // Address: 00452730
 // Address Range: [[00452730, 004528da]]
 // Convention: __cdecl
-// Signature: int core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730(CDemonCamera * this_ptr, CVector3f * position, float radius)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730 (CDemonCamera *this_ptr,CVector3f *position,float radius)
 
 #include "nocturne.h"
 

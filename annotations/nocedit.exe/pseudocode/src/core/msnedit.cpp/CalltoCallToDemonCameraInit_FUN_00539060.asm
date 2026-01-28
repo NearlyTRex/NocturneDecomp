@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060()
+; unknown void core_msnedit_cpp_CalltoCallToDemonCameraInit_FUN_00539060(void)
 ;
 ;
 ; XREF[2]:

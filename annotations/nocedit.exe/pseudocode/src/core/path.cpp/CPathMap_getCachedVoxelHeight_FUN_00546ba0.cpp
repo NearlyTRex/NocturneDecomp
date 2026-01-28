@@ -2,7 +2,7 @@
 // Address: 00546ba0
 // Address Range: [[00546ba0, 00546c34]]
 // Convention: __cdecl
-// Signature: int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
+// Signature: int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0 (CPathMap *this_ptr,int grid_z,int grid_x,int current_height)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_pcx.c_writePCXScanline_FUN_00548c50(int row_index, FILE * pcx_file)
+; __cdecl void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,FILE *pcx_file)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   row_index

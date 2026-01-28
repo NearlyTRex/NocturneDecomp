@@ -2,7 +2,7 @@
 // Address: 005efcc0
 // Address Range: [[005efcc0, 005efd71]]
 // Convention: __cdecl
-// Signature: void core_werewolf.cpp_CWerewolf_FUN_005efcc0(CWerewolf * this_ptr)
+// Signature: void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
 
 #include "nocturne.h"
 

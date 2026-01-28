@@ -2,7 +2,7 @@
 // Address: 0060d510
 // Address Range: [[0060d510, 0060d575]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_fgetc_buffered_FUN_0060d510(FILE * stream)
+// Signature: int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(FILE *stream)
 
 #include "nocturne.h"
 

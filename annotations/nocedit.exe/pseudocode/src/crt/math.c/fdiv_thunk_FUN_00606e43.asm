@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpu_thunk float10 crt_math.c_fdiv_thunk_FUN_00606e43(void)
+; __fpu_thunk float10 __fpu_thunk crt_math_c_fdiv_thunk_FUN_00606e43(void)
 ;
 ; Parameters:
 ; undefined1[10]   Stack[0x0]:10   local_res0

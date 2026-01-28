@@ -2,7 +2,7 @@
 // Address: 005a1160
 // Address Range: [[005a1160, 005a14a2]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160(CDeformableModelInstance * this_ptr, CVector3f * point)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160 (CDeformableModelInstance *this_ptr,CVector3f *point)
 
 #include "nocturne.h"
 

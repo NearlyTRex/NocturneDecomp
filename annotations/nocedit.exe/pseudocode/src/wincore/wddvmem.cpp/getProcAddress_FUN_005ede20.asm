@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_005ede20(HMODULE hModule, LPCSTR lpProcName)
+; __cdecl FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_005ede20(HMODULE hModule,LPCSTR lpProcName)
 ;
 ; Parameters:
 ; HMODULE          Stack[0x4]:4   hModule

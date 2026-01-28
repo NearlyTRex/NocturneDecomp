@@ -2,7 +2,7 @@
 // Address: 00567510
 // Address Range: [[00567510, 00567595]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CScript_ReallocSomething_FUN_00567510()
+// Signature: void core_script_cpp_CScript_ReallocSomething_FUN_00567510(void)
 
 #include "nocturne.h"
 

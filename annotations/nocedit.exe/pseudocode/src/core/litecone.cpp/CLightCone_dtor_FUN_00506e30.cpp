@@ -2,7 +2,7 @@
 // Address: 00506e30
 // Address Range: [[00506e30, 00506e7d]]
 // Convention: __cdecl
-// Signature: CLightCone * core_litecone.cpp_CLightCone_dtor_FUN_00506e30(CLightCone * this_ptr, uint d1, uint d2)
+// Signature: CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_00506e30(CLightCone *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

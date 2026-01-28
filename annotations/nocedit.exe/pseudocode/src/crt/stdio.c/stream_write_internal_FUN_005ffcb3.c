@@ -2,7 +2,7 @@
 // Address: 005ffcb3
 // Address Range: [[005ffcb3, 005ffd74]]
 // Convention: __cdecl
-// Signature: FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(FILE * stream, void * buffer, SIZE_T count)
+// Signature: FILE * __cdecl crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T count)
 
 #include "nocturne.h"
 

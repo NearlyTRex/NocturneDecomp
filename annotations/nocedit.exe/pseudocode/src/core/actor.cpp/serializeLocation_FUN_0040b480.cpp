@@ -2,7 +2,7 @@
 // Address: 0040b480
 // Address Range: [[0040b480, 0040b51a]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeLocation_FUN_0040b480(CLocation * location_ptr, char * property_name)
+// Signature: void __cdecl core_actor_cpp_serializeLocation_FUN_0040b480(CLocation *location_ptr,char *property_name)
 
 #include "nocturne.h"
 

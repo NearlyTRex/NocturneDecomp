@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtrace.cpp_freeVectors_FUN_0049a410(CVector3f * * array)
+; __cdecl void __cdecl core_dtrace_cpp_freeVectors_FUN_0049a410(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

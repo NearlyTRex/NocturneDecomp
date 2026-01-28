@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cow.cpp_FUN_00444130()
+; unknown CDemonActorType * core_cow_cpp_FUN_00444130(void)
 ;
 ;
 ; Referenced Globals:

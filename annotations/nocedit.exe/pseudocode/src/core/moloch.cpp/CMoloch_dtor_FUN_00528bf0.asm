@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMoloch * core_moloch.cpp_CMoloch_dtor_FUN_00528bf0(CMoloch * this_ptr, uint d1, uint d2, uint d3, uint d4)
+; __cdecl CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint d1,uint d2,uint d3,uint d4)
 ;
 ; Parameters:
 ; CMoloch *        Stack[0x4]:4   this_ptr

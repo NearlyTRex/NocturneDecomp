@@ -2,7 +2,7 @@
 // Address: 005a8970
 // Address Range: [[005a8970, 005a8993]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(CVector3d * position_source_ptr)
+// Signature: void __cdecl sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(CVector3d *position_source_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00468080
 // Address Range: [[00468080, 004680ef]]
 // Convention: __cdecl
-// Signature: int shape_design.c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended * model_ptr)
+// Signature: int __cdecl shape_design_c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended *model_ptr)
 
 #include "nocturne.h"
 

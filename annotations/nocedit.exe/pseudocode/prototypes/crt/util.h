@@ -5,4 +5,4 @@
 
 // Original: crt_util.c_invokeRuntimeHandler_FUN_0060ac20
 // Address: 0060ac20
-void invokeRuntimeHandler(RUNTIME_HANDLER_FUNC * * ppHandler);
+void __cdecl invokeRuntimeHandler(RUNTIME_HANDLER_FUNC **ppHandler);

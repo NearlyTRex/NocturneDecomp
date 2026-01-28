@@ -2,7 +2,7 @@
 // Address: 005f7d40
 // Address Range: [[005f7d40, 005f7df7]]
 // Convention: __cdecl
-// Signature: void core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
+// Signature: void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_005f7d40 (SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
 
 #include "nocturne.h"
 

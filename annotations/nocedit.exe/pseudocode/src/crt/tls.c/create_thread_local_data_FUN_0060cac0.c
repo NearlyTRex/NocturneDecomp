@@ -2,7 +2,7 @@
 // Address: 0060cac0
 // Address Range: [[0060cac0, 0060caf6]]
 // Convention: __watcallRegister
-// Signature: LPVOID crt_tls.c_create_thread_local_data_FUN_0060cac0(void)
+// Signature: LPVOID crt_tls_c_create_thread_local_data_FUN_0060cac0(void)
 
 #include "nocturne.h"
 

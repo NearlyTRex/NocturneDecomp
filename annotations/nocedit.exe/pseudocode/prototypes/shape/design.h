@@ -5,652 +5,652 @@
 
 // Original: shape_design.c_allocateSpatialTreeNode_FUN_00457ed0
 // Address: 00457ed0
-STreeNode * allocateSpatialTreeNode(void);
+STreeNode * __cdecl allocateSpatialTreeNode(void);
 
 // Original: shape_design.c_showHelpFile_FUN_00457f00
 // Address: 00457f00
-void showHelpFile(char * help_filename);
+void __cdecl showHelpFile(char *help_filename);
 
 // Original: shape_design.c_writeBinaryTreeNode_FUN_00457fd0
 // Address: 00457fd0
-void writeBinaryTreeNode(STreeNode * node, FILE * file, int depth);
+void __cdecl writeBinaryTreeNode(STreeNode *node,FILE *file,int depth);
 
 // Original: shape_design.c_parseSpatialTreeFromFile_FUN_004580a0
 // Address: 004580a0
-STreeNode * parseSpatialTreeFromFile(FILE * file);
+STreeNode * __cdecl parseSpatialTreeFromFile(FILE *file);
 
 // Original: shape_design.c_loadModelBinary_FUN_00458170
 // Address: 00458170
-int loadModelBinary(char * filename);
+int __cdecl loadModelBinary(char *filename);
 
 // Original: shape_design.c_promptForModelNameAndLoad_FUN_00458a10
 // Address: 00458a10
-int promptForModelNameAndLoad(void);
+int __cdecl promptForModelNameAndLoad(void);
 
 // Original: shape_design.c_loadModelFile_FUN_00458ac0
 // Address: 00458ac0
-int loadModelFile(char * filename);
+int __cdecl loadModelFile(char *filename);
 
 // Original: shape_design.c_skipLines_FUN_00459360
 // Address: 00459360
-void skipLines(FILE * file, int line_count);
+void __cdecl skipLines(FILE *file,int line_count);
 
 // Original: shape_design.c_loadS3DModelFile_FUN_004593a0
 // Address: 004593a0
-int loadS3DModelFile(char * filename);
+int __cdecl loadS3DModelFile(char *filename);
 
 // Original: shape_design.c_validateModelTextures_FUN_00459a20
 // Address: 00459a20
-int validateModelTextures(char * directory_path, int mode);
+int __cdecl validateModelTextures(char *directory_path,int mode);
 
 // Original: shape_design.c_saveCurrentModel_FUN_00459de0
 // Address: 00459de0
-void saveCurrentModel(void);
+void __cdecl saveCurrentModel(void);
 
 // Original: shape_design.c_exportModelToMDL_FUN_00459e80
 // Address: 00459e80
-void exportModelToMDL(char * mdl_filename);
+void __cdecl exportModelToMDL(char *mdl_filename);
 
 // Original: shape_design.c_writeSpatialTree_FUN_0045a200
 // Address: 0045a200
-void writeSpatialTree(STreeNode * node, FILE * output_file, int node_index);
+void __cdecl writeSpatialTree(STreeNode *node,FILE *output_file,int node_index);
 
 // Original: shape_design.c_writePolygonModel_FUN_0045a320
 // Address: 0045a320
-void writePolygonModel(int polygon_index, FILE * output_file, float scale_factor);
+void __cdecl writePolygonModel(int polygon_index,FILE *output_file,float scale_factor);
 
 // Original: shape_design.c_exportVertexListFile_FUN_0045a610
 // Address: 0045a610
-void exportVertexListFile(void);
+void __cdecl exportVertexListFile(void);
 
 // Original: shape_design.c_modelExportWizard_FUN_0045a7b0
 // Address: 0045a7b0
-void modelExportWizard(int export_format_type);
+void __cdecl modelExportWizard(int export_format_type);
 
 // Original: shape_design.c_exportModelToBIN_FUN_0045aa80
 // Address: 0045aa80
-void exportModelToBIN(char * filename, int depth_mode, int scale_mode, int export_format, int include_textures);
+void __cdecl exportModelToBIN(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures);
 
 // Original: shape_design.c_polygonTextureNameComparator_FUN_0045b850
 // Address: 0045b850
-int polygonTextureNameComparator(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2);
+int __cdecl polygonTextureNameComparator(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2);
 
 // Original: shape_design.c_sortPolygonsByTexture_FUN_0045b8b0
 // Address: 0045b8b0
-void sortPolygonsByTexture(void);
+void __cdecl sortPolygonsByTexture(void);
 
 // Original: shape_design.c_handleEditorHotkeys_FUN_0045b990
 // Address: 0045b990
-void handleEditorHotkeys(void);
+void __cdecl handleEditorHotkeys(void);
 
 // Original: shape_design.c_setupViewMatrix_FUN_0045ba60
 // Address: 0045ba60
-void setupViewMatrix(void);
+void __cdecl setupViewMatrix(void);
 
 // Original: shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0
 // Address: 0045bbc0
-void drawMouseCoordinatesAndReferenceLine(void);
+void __cdecl drawMouseCoordinatesAndReferenceLine(void);
 
 // Original: shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
 // Address: 0045bd10
-SVertexData * convertWorldToScreenCoordinates(SScreenCoord * input_coords, SVertexData * output_vertex);
+SVertexData * __stack_esi convertWorldToScreenCoordinates(SScreenCoord *input_coords,SVertexData *output_vertex);
 
 // Original: shape_design.c_calculateVertexNormals_FUN_0045be40
 // Address: 0045be40
-void calculateVertexNormals(void);
+void __cdecl calculateVertexNormals(void);
 
 // Original: shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0
 // Address: 0045bff0
-void renderVertexPointsWithLabels(void);
+void __cdecl renderVertexPointsWithLabels(void);
 
 // Original: shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0
 // Address: 0045c2f0
-void renderPolygonVerticesWithLabels(int polygon_index);
+void __cdecl renderPolygonVerticesWithLabels(int polygon_index);
 
 // Original: shape_design.c_doNothing_FUN_0045c4f0
 // Address: 0045c4f0
-void doNothing(void);
+void __cdecl doNothing(void);
 
 // Original: shape_design.c_doNothing_FUN_0045c510
 // Address: 0045c510
-void doNothing(void);
+void __cdecl doNothing(void);
 
 // Original: shape_design.c_selectVertexToMove_FUN_0045c530
 // Address: 0045c530
-void selectVertexToMove(void);
+void __cdecl selectVertexToMove(void);
 
 // Original: shape_design.c_selectVertexToDelete_FUN_0045c5b0
 // Address: 0045c5b0
-void selectVertexToDelete(void);
+void __cdecl selectVertexToDelete(void);
 
 // Original: shape_design.c_showPointEditor_FUN_0045c6c0
 // Address: 0045c6c0
-void showPointEditor(void);
+void __cdecl showPointEditor(void);
 
 // Original: shape_design.c_calculatePolygonNormal_FUN_0045caa0
 // Address: 0045caa0
-void calculatePolygonNormal(SShapeEditorPolygon * polygon);
+void __cdecl calculatePolygonNormal(SShapeEditorPolygon *polygon);
 
 // Original: shape_design.c_createPolygonFromVertexList_FUN_0045cc80
 // Address: 0045cc80
-undefined createPolygonFromVertexList();
+void createPolygonFromVertexList(void);
 
 // Original: shape_design.c_doNothing_FUN_0045ce00
 // Address: 0045ce00
-undefined doNothing();
+void doNothing(void);
 
 // Original: shape_design.c_renderSinglePolygon_FUN_0045ce20
 // Address: 0045ce20
-void renderSinglePolygon(int polygon_index);
+void __cdecl renderSinglePolygon(int polygon_index);
 
 // Original: shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0
 // Address: 0045d1d0
-void renderSinglePolygonWithColorOverlay(int polygon_index, int * color_value);
+void __cdecl renderSinglePolygonWithColorOverlay(int polygon_index,int *color_value);
 
 // Original: shape_design.c_renderPolygonWireframe_FUN_0045d300
 // Address: 0045d300
-void renderPolygonWireframe(SMRGLHeaderPrimitive * polygon_data);
+void __cdecl renderPolygonWireframe(SMRGLHeaderPrimitive *polygon_data);
 
 // Original: shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470
 // Address: 0045d470
-void renderPolygonWireframeAntialiased(SMRGLHeaderPrimitive * polygon_data, int line_color);
+void __cdecl renderPolygonWireframeAntialiased(SMRGLHeaderPrimitive *polygon_data,int line_color);
 
 // Original: shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0
 // Address: 0045d5d0
-void processVerticesAndRenderPolygons(void);
+void __cdecl processVerticesAndRenderPolygons(void);
 
 // Original: shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920
 // Address: 0045d920
-void renderEditorBackgroundOverlay(void);
+void __cdecl renderEditorBackgroundOverlay(void);
 
 // Original: shape_design.c_showPolygonDetailsList_FUN_0045d9c0
 // Address: 0045d9c0
-undefined showPolygonDetailsList();
+void showPolygonDetailsList(void);
 
 // Original: shape_design.c_showModelPartsList_FUN_0045dbe0
 // Address: 0045dbe0
-undefined showModelPartsList();
+void showModelPartsList(void);
 
 // Original: shape_design.c_deleteSinglePolygon_FUN_0045dcc0
 // Address: 0045dcc0
-undefined deleteSinglePolygon();
+void deleteSinglePolygon(void);
 
 // Original: shape_design.c_deletePolygonRange_FUN_0045dd70
 // Address: 0045dd70
-undefined deletePolygonRange();
+void deletePolygonRange(void);
 
 // Original: shape_design.c_selectModelPart_FUN_0045de80
 // Address: 0045de80
-undefined selectModelPart();
+void selectModelPart(void);
 
 // Original: shape_design.c_createQuadPolygon_FUN_0045df60
 // Address: 0045df60
-undefined createQuadPolygon();
+void createQuadPolygon(void);
 
 // Original: shape_design.c_createReversedQuadPolygon_FUN_0045e040
 // Address: 0045e040
-undefined createReversedQuadPolygon();
+void createReversedQuadPolygon(void);
 
 // Original: shape_design.c_createRotationalSweepGeometry_FUN_0045e070
 // Address: 0045e070
-undefined createRotationalSweepGeometry();
+void createRotationalSweepGeometry(void);
 
 // Original: shape_design.c_createBoxPrimitive_FUN_0045e520
 // Address: 0045e520
-undefined createBoxPrimitive();
+void createBoxPrimitive(void);
 
 // Original: shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
 // Address: 0045ea90
-undefined centerVerticesAroundPoint();
+void centerVerticesAroundPoint(void);
 
 // Original: shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 // Address: 0045ec90
-undefined translateAllVerticesAlongAxis();
+void translateAllVerticesAlongAxis(void);
 
 // Original: shape_design.c_realignObject_FUN_0045ee70
 // Address: 0045ee70
-void realignObject(int rotation_x, int rotation_y, int rotation_z);
+void __cdecl realignObject(int rotation_x,int rotation_y,int rotation_z);
 
 // Original: shape_design.c_clampAndTransformUVCoordinates_FUN_0045f080
 // Address: 0045f080
-void clampAndTransformUVCoordinates(void);
+void __cdecl clampAndTransformUVCoordinates(void);
 
 // Original: shape_design.c_showFacetPartEditor_FUN_0045f1d0
 // Address: 0045f1d0
-void showFacetPartEditor(void);
+void __cdecl showFacetPartEditor(void);
 
 // Original: shape_design.c_checkVertexCountLimit_FUN_00460a10
 // Address: 00460a10
-int checkVertexCountLimit(void);
+int __cdecl checkVertexCountLimit(void);
 
 // Original: shape_design.c_showFacetPartEditorHelp_FUN_00460ac0
 // Address: 00460ac0
-undefined showFacetPartEditorHelp();
+void showFacetPartEditorHelp(void);
 
 // Original: shape_design.c_displayPalette_FUN_00461560
 // Address: 00461560
-undefined displayPalette();
+void displayPalette(void);
 
 // Original: shape_design.c_renderPolygonsByPart_FUN_004616a0
 // Address: 004616a0
-void renderPolygonsByPart(int part_id);
+void __cdecl renderPolygonsByPart(int part_id);
 
 // Original: shape_design.c_traverseSpatialTree_FUN_004616f0
 // Address: 004616f0
-void traverseSpatialTree(SSpatialTreeNode * tree_node);
+void __cdecl traverseSpatialTree(SSpatialTreeNode *tree_node);
 
 // Original: shape_design.c_configureSpatialSplittingPlane_FUN_004617c0
 // Address: 004617c0
-void configureSpatialSplittingPlane(STreeNode * node);
+void __cdecl configureSpatialSplittingPlane(STreeNode *node);
 
 // Original: shape_design.c_showModelEditor_FUN_00461aa0
 // Address: 00461aa0
-void showModelEditor(void);
+void __cdecl showModelEditor(void);
 
 // Original: shape_design.c_findVertexMatches_FUN_00461ae0
 // Address: 00461ae0
-int findVertexMatches(int * vertices1, int * vertices2, int count1, int count2);
+int __cdecl findVertexMatches(int *vertices1,int *vertices2,int count1,int count2);
 
 // Original: shape_design.c_arePolygonsCoplanar_FUN_00461b70
 // Address: 00461b70
-int arePolygonsCoplanar(SShapeEditorPolygon * polygon1_ptr, SShapeEditorPolygon * polygon2_ptr, float scale_factor, int tolerance);
+int __cdecl arePolygonsCoplanar(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor, int tolerance);
 
 // Original: shape_design.c_clampedArccos_FUN_00461c50
 // Address: 00461c50
-double clampedArccos(double dot_product);
+double __cdecl clampedArccos(double dot_product);
 
 // Original: shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
 // Address: 00461cb0
-double calculateAngleBetweenPolygonNormals(SShapeEditorPolygon * normal1_ptr, SShapeEditorPolygon * normal2_ptr);
+double __cdecl calculateAngleBetweenPolygonNormals(SShapeEditorPolygon *normal1_ptr,SShapeEditorPolygon *normal2_ptr);
 
 // Original: shape_design.c_isAngleBelowThreshold_FUN_00461d30
 // Address: 00461d30
-int isAngleBelowThreshold(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double angle_threshold);
+int __cdecl isAngleBelowThreshold(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold);
 
 // Original: shape_design.c_validatePolygonNormals_FUN_00461d80
 // Address: 00461d80
-int validatePolygonNormals(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance);
+int __cdecl validatePolygonNormals(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double cos_tolerance);
 
 // Original: shape_design.c_isNormalDotProductBelowThreshold_FUN_00461df0
 // Address: 00461df0
-int isNormalDotProductBelowThreshold(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double threshold);
+int __cdecl isNormalDotProductBelowThreshold(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold);
 
 // Original: shape_design.c_normalizeVertex_FUN_00461e60
 // Address: 00461e60
-void normalizeVertex(CVector3f * vertex);
+void __cdecl normalizeVertex(CVector3f *vertex);
 
 // Original: shape_design.c_calculatePolygonAngularArea_FUN_00461ee0
 // Address: 00461ee0
-double calculatePolygonAngularArea(SShapeEditorPolygon * polygon_ptr);
+double __cdecl calculatePolygonAngularArea(SShapeEditorPolygon *polygon_ptr);
 
 // Original: shape_design.c_calculateVertexAngle_FUN_00462050
 // Address: 00462050
-double calculateVertexAngle(int vertex1_index, int vertex2_index, int vertex3_index);
+double __cdecl calculateVertexAngle(int vertex1_index,int vertex2_index,int vertex3_index);
 
 // Original: shape_design.c_swapDWords_FUN_00462130
 // Address: 00462130
-void swapDWords(uint * value1_ptr, uint * value2_ptr);
+void __cdecl swapDWords(uint *value1_ptr,uint *value2_ptr);
 
 // Original: shape_design.c_swapFloats_FUN_00462160
 // Address: 00462160
-void swapFloats(float * value1_ptr, float * value2_ptr);
+void __cdecl swapFloats(float *value1_ptr,float *value2_ptr);
 
 // Original: shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
 // Address: 00462190
-uint mergeTrianglesIntoQuad(int first_polygon_index, int second_polygon_index);
+uint __cdecl mergeTrianglesIntoQuad(int first_polygon_index,int second_polygon_index);
 
 // Original: shape_design.c_mergeAdjacentPolygons_FUN_00462b70
 // Address: 00462b70
-void mergeAdjacentPolygons(int polygon1_index, int polygon2_index);
+void __cdecl mergeAdjacentPolygons(int polygon1_index,int polygon2_index);
 
 // Original: shape_design.c_findSharedEdge_FUN_004635b0
 // Address: 004635b0
-int findSharedEdge(int * edge1_vertices, int * edge2_vertices, int vertex_count, int * shared_edge_type);
+int __cdecl findSharedEdge(int *edge1_vertices,int *edge2_vertices,int vertex_count,int *shared_edge_type);
 
 // Original: shape_design.c_comparePolygonIndices_FUN_00463800
 // Address: 00463800
-int comparePolygonIndices(int * first_value_ptr, int * second_value_ptr);
+int __cdecl comparePolygonIndices(int *first_value_ptr,int *second_value_ptr);
 
 // Original: shape_design.c_removeUnusedVertices_FUN_00463830
 // Address: 00463830
-void removeUnusedVertices(void);
+void __cdecl removeUnusedVertices(void);
 
 // Original: shape_design.c_removeDegenerateTriangles_FUN_00463a20
 // Address: 00463a20
-void removeDegenerateTriangles(void);
+void __cdecl removeDegenerateTriangles(void);
 
 // Original: shape_design.c_complexPolygonReduction_FUN_00463b30
 // Address: 00463b30
-int complexPolygonReduction(int selected_polygon_index);
+int __cdecl complexPolygonReduction(int selected_polygon_index);
 
 // Original: shape_design.c_detectMouseButtonClick_FUN_00464870
 // Address: 00464870
-int detectMouseButtonClick(int mouse_button_mask);
+int __cdecl detectMouseButtonClick(int mouse_button_mask);
 
 // Original: shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
 // Address: 004648e0
-int mouseWheelPolygonReducer(int selected_polygon_index);
+int __cdecl mouseWheelPolygonReducer(int selected_polygon_index);
 
 // Original: shape_design.c_polygonToolModeManager_FUN_00464c90
 // Address: 00464c90
-int polygonToolModeManager(int input_parameter);
+int __cdecl polygonToolModeManager(int input_parameter);
 
 // Original: shape_design.c_polygonMergerSelectAndProcess_FUN_00465160
 // Address: 00465160
-void polygonMergerSelectAndProcess(int polygon_index, float tolerance);
+void __cdecl polygonMergerSelectAndProcess(int polygon_index,float tolerance);
 
 // Original: shape_design.c_removeDuplicatePolygons_FUN_004651b0
 // Address: 004651b0
-void removeDuplicatePolygons(int respect_part_assignments);
+void __cdecl removeDuplicatePolygons(int respect_part_assignments);
 
 // Original: shape_design.c_removeDegeneratePolygons_FUN_00465310
 // Address: 00465310
-void removeDegeneratePolygons(void);
+void __cdecl removeDegeneratePolygons(void);
 
 // Original: shape_design.c_polygonReducer_FUN_004654e0
 // Address: 004654e0
-void polygonReducer(void);
+void __cdecl polygonReducer(void);
 
 // Original: shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
 // Address: 00465560
-void configureSinglePassPolygonReduction(int ui_mode);
+void __cdecl configureSinglePassPolygonReduction(int ui_mode);
 
 // Original: shape_design.c_configureFullPassPolygonReduction_FUN_00465810
 // Address: 00465810
-void configureFullPassPolygonReduction(int ui_mode);
+void __cdecl configureFullPassPolygonReduction(int ui_mode);
 
 // Original: shape_design.c_optimizePolygonMesh_FUN_004658e0
 // Address: 004658e0
-void optimizePolygonMesh(float angle_tolerance, int strict_mode, int display_progress);
+void __cdecl optimizePolygonMesh(float angle_tolerance,int strict_mode,int display_progress);
 
 // Original: shape_design.c_mergePolygonsWithValidation_FUN_00465b40
 // Address: 00465b40
-void mergePolygonsWithValidation(int polygon1_index, int polygon2_index, float tolerance, int enforce_part_match);
+void __cdecl mergePolygonsWithValidation(int polygon1_index,int polygon2_index,float tolerance,int enforce_part_match);
 
 // Original: shape_design.c_weldNearbyVertices_FUN_00465c50
 // Address: 00465c50
-void weldNearbyVertices(int polygon_index, float tolerance);
+void __cdecl weldNearbyVertices(int polygon_index,float tolerance);
 
 // Original: shape_design.c_duplicateSharedVertices_FUN_00465d50
 // Address: 00465d50
-void duplicateSharedVertices(int polygon_index);
+void __cdecl duplicateSharedVertices(int polygon_index);
 
 // Original: shape_design.c_interactiveWeldVertices_FUN_00465e90
 // Address: 00465e90
-void interactiveWeldVertices(int polygon_index, float tolerance);
+void __cdecl interactiveWeldVertices(int polygon_index,float tolerance);
 
 // Original: shape_design.c_interactiveGlobalWeld_FUN_00466040
 // Address: 00466040
-void interactiveGlobalWeld(float tolerance);
+void __cdecl interactiveGlobalWeld(float tolerance);
 
 // Original: shape_design.c_qsortCompareByField4_FUN_004661d0
 // Address: 004661d0
-int qsortCompareByField4(void * element_a, void * element_b);
+int __cdecl qsortCompareByField4(void *element_a,void *element_b);
 
 // Original: shape_design.c_qsortCompareByField4Wrapper_FUN_00466210
 // Address: 00466210
-int qsortCompareByField4Wrapper(void * element_a, void * element_b);
+int __cdecl qsortCompareByField4Wrapper(void *element_a,void *element_b);
 
 // Original: shape_design.c_findClosestPolygonToMouse_FUN_00466250
 // Address: 00466250
-int findClosestPolygonToMouse(void);
+int __cdecl findClosestPolygonToMouse(void);
 
 // Original: shape_design.c_centerObject_FUN_00466610
 // Address: 00466610
-void centerObject(void);
+void __cdecl centerObject(void);
 
 // Original: shape_design.c_groundCenterObject_FUN_00466a30
 // Address: 00466a30
-void groundCenterObject(void);
+void __cdecl groundCenterObject(void);
 
 // Original: shape_design.c_sizeModelToZFeet_FUN_00466c70
 // Address: 00466c70
-void sizeModelToZFeet(void);
+void __cdecl sizeModelToZFeet(void);
 
 // Original: shape_design.c_sizeModelToXFeet_FUN_00466e40
 // Address: 00466e40
-void sizeModelToXFeet(void);
+void __cdecl sizeModelToXFeet(void);
 
 // Original: shape_design.c_sizeModelToYFeet_FUN_00467010
 // Address: 00467010
-void sizeModelToYFeet(void);
+void __cdecl sizeModelToYFeet(void);
 
 // Original: shape_design.c_turnModelInsideOut_FUN_004671e0
 // Address: 004671e0
-void turnModelInsideOut(void);
+void __cdecl turnModelInsideOut(void);
 
 // Original: shape_design.c_simpleTexture_FUN_00467350
 // Address: 00467350
-void simpleTexture(void);
+void __cdecl simpleTexture(void);
 
 // Original: shape_design.c_floatEpsilonCompare_FUN_004676b0
 // Address: 004676b0
-int floatEpsilonCompare(float value1, float value2, float epsilon);
+int __cdecl floatEpsilonCompare(float value1,float value2,float epsilon);
 
 // Original: shape_design.c_qsortByVertexX_FUN_004676f0
 // Address: 004676f0
-int qsortByVertexX(SVertexPair * a, SVertexPair * b);
+int __cdecl qsortByVertexX(SVertexPair *a,SVertexPair *b);
 
 // Original: shape_design.c_qsortByOriginalIndex_FUN_004677c0
 // Address: 004677c0
-int qsortByOriginalIndex(SVertexPair * vertex_pair1, SVertexPair * vertex_pair2);
+int __cdecl qsortByOriginalIndex(SVertexPair *vertex_pair1,SVertexPair *vertex_pair2);
 
 // Original: shape_design.c_vertexReducer_FUN_00467850
 // Address: 00467850
-void vertexReducer(float tolerance, float angle_tolerance, int display_progress);
+void __cdecl vertexReducer(float tolerance,float angle_tolerance,int display_progress);
 
 // Original: shape_design.c_scaleModel_FUN_00467e70
 // Address: 00467e70
-void scaleModel(void);
+void __cdecl scaleModel(void);
 
 // Original: shape_design.c_scaleXYZ_FUN_00467f30
 // Address: 00467f30
-void scaleXYZ(void);
+void __cdecl scaleXYZ(void);
 
 // Original: shape_design.c_findVertexListInModel_FUN_00468000
 // Address: 00468000
-CVector3i * findVertexListInModel(SMRGLHeaderExtended * model_ptr);
+CVector3i * __cdecl findVertexListInModel(SMRGLHeaderExtended *model_ptr);
 
 // Original: shape_design.c_getVertexCountFromModel_FUN_00468080
 // Address: 00468080
-int getVertexCountFromModel(SMRGLHeaderExtended * model_ptr);
+int __cdecl getVertexCountFromModel(SMRGLHeaderExtended *model_ptr);
 
 // Original: shape_design.c_applyVertexCentering_FUN_004680f0
 // Address: 004680f0
-void applyVertexCentering(SMRGLHeaderExtended * target_model, CVector3i * reference_vertex_list, int reference_vertex_id);
+void __cdecl applyVertexCentering(SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list, int reference_vertex_id);
 
 // Original: shape_design.c_centerKeyframeModels_FUN_004681a0
 // Address: 004681a0
-void centerKeyframeModels(SMRGLKeyframeModel * keyframe_model);
+void __cdecl centerKeyframeModels(SMRGLKeyframeModel *keyframe_model);
 
 // Original: shape_design.c_createKeyframeModel_FUN_00468320
 // Address: 00468320
-void createKeyframeModel(void);
+void __cdecl createKeyframeModel(void);
 
 // Original: shape_design.c_squashShapeFor3DMorph_FUN_004685e0
 // Address: 004685e0
-void squashShapeFor3DMorph(void);
+void __cdecl squashShapeFor3DMorph(void);
 
 // Original: shape_design.c_addVertexFromSphericalCoords_FUN_004686e0
 // Address: 004686e0
-void addVertexFromSphericalCoords(float latitude_degrees, float longitude_degrees, float radius);
+void __cdecl addVertexFromSphericalCoords(float latitude_degrees,float longitude_degrees,float radius);
 
 // Original: shape_design.c_addQuadPolygon_FUN_004687c0
 // Address: 004687c0
-void addQuadPolygon(int vertex_index_0, int vertex_index_1, int vertex_index_2, int vertex_index_3);
+void __cdecl addQuadPolygon(int vertex_index_0,int vertex_index_1,int vertex_index_2,int vertex_index_3);
 
 // Original: shape_design.c_generateGlobe_FUN_00468910
 // Address: 00468910
-void generateGlobe(void);
+void __cdecl generateGlobe(void);
 
 // Original: shape_design.c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40
 // Address: 00468c40
-void addVertexFromSphericalCoordsHalfSphere(float latitude_degrees, float longitude_degrees, float radius);
+void __cdecl addVertexFromSphericalCoordsHalfSphere(float latitude_degrees,float longitude_degrees,float radius);
 
 // Original: shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
 // Address: 00468d20
-void addQuadPolygonHalfSphere(int vertex_index_1, int vertex_index_2, int vertex_index_3, int vertex_index_4);
+void __cdecl addQuadPolygonHalfSphere(int vertex_index_1,int vertex_index_2,int vertex_index_3,int vertex_index_4);
 
 // Original: shape_design.c_generateShell_FUN_00468f20
 // Address: 00468f20
-void generateShell(void);
+void __cdecl generateShell(void);
 
 // Original: shape_design.c_addVertexFromSphericalCoordsOctant_FUN_00469140
 // Address: 00469140
-void addVertexFromSphericalCoordsOctant(float heading_angle, float pitch_angle, float radius);
+void __cdecl addVertexFromSphericalCoordsOctant(float heading_angle,float pitch_angle,float radius);
 
 // Original: shape_design.c_addQuadPolygonOctant_FUN_00469220
 // Address: 00469220
-void addQuadPolygonOctant(uint vertex_index_1, uint vertex_index_2, uint vertex_index_3, uint vertex_index_4);
+void __cdecl addQuadPolygonOctant(uint vertex_index_1,uint vertex_index_2,uint vertex_index_3,uint vertex_index_4);
 
 // Original: shape_design.c_generateOctant_FUN_00469420
 // Address: 00469420
-int generateOctant(void);
+int __cdecl generateOctant(void);
 
 // Original: shape_design.c_createCenterVertex_FUN_00469690
 // Address: 00469690
-void createCenterVertex(void);
+void __cdecl createCenterVertex(void);
 
 // Original: shape_design.c_sizeModelInOneDimension_FUN_00469850
 // Address: 00469850
-void sizeModelInOneDimension(void);
+void __cdecl sizeModelInOneDimension(void);
 
 // Original: shape_design.c_crushModel_FUN_00469bd0
 // Address: 00469bd0
-void crushModel(void);
+void __cdecl crushModel(void);
 
 // Original: shape_design.c_sizeForStadium_FUN_00469c70
 // Address: 00469c70
-void sizeForStadium(void);
+void __cdecl sizeForStadium(void);
 
 // Original: shape_design.c_combineTextureMaps_FUN_00469ee0
 // Address: 00469ee0
-void combineTextureMaps(void);
+void __cdecl combineTextureMaps(void);
 
 // Original: shape_design.c_tileTextureMaps_FUN_0046a180
 // Address: 0046a180
-void tileTextureMaps(char * model_name, int prompt_for_model);
+void __cdecl tileTextureMaps(char *model_name,int prompt_for_model);
 
 // Original: shape_design.c_getLastTextureProcessIndex_FUN_0046a860
 // Address: 0046a860
-int getLastTextureProcessIndex(void);
+int __cdecl getLastTextureProcessIndex(void);
 
 // Original: shape_design.c_initializeTextureManager_FUN_0046a880
 // Address: 0046a880
-void initializeTextureManager(int initialization_mode);
+void __cdecl initializeTextureManager(int initialization_mode);
 
 // Original: shape_design.c_setTextureQualityParameter_FUN_0046a8e0
 // Address: 0046a8e0
-void setTextureQualityParameter(int texture_quality_param);
+void __cdecl setTextureQualityParameter(int texture_quality_param);
 
 // Original: shape_design.c_calculateTextureQualityLevel_FUN_0046a930
 // Address: 0046a930
-int calculateTextureQualityLevel(int texture_parameter);
+int __cdecl calculateTextureQualityLevel(int texture_parameter);
 
 // Original: shape_design.c_cramTextures_FUN_0046a970
 // Address: 0046a970
-void cramTextures(char * texture_filename, int min_u, int min_v, int max_u, int max_v);
+void __cdecl cramTextures(char *texture_filename,int min_u,int min_v,int max_u,int max_v);
 
 // Original: shape_design.c_readPixelRowFromFile_FUN_0046abf0
 // Address: 0046abf0
-void readPixelRowFromFile(FILE * file_handle, byte * rgb_buffer, byte * alpha_buffer, int pixel_count, int file_flags);
+void __cdecl readPixelRowFromFile(FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags);
 
 // Original: shape_design.c_checkNonFFBytes_FUN_0046ac70
 // Address: 0046ac70
-int checkNonFFBytes(char * buffer_ptr, int buffer_length);
+int __cdecl checkNonFFBytes(char *buffer_ptr,int buffer_length);
 
 // Original: shape_design.c_wrapCoordinate_FUN_0046acc0
 // Address: 0046acc0
-int wrapCoordinate(int coordinate, int dimension);
+int __cdecl wrapCoordinate(int coordinate,int dimension);
 
 // Original: shape_design.c_samplePixelAndAccumulate_FUN_0046ad00
 // Address: 0046ad00
-void samplePixelAndAccumulate(void * rgb_buffer, void * alpha_buffer, int atlas_width, int atlas_height, int pixel_x, int pixel_y, double weight, double * red_accumulator, double * green_accumulator, double * blue_accumulator, double * alpha_accumulator);
+void __cdecl samplePixelAndAccumulate(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x, int pixel_y,double weight,double *red_accumulator,double *green_accumulator, double *blue_accumulator,double *alpha_accumulator);
 
 // Original: shape_design.c_calculateSamplingWeight_FUN_0046adc0
 // Address: 0046adc0
-double calculateSamplingWeight(double current_pos, double start_coord, double end_coord);
+double __cdecl calculateSamplingWeight(double current_pos,double start_coord,double end_coord);
 
 // Original: shape_design.c_sampleAndFilterPixel_FUN_0046ae20
 // Address: 0046ae20
-void sampleAndFilterPixel(void * rgb_buffer, void * alpha_buffer, int col_coord, int row_coord, double coord_x1, double coord_y1, double coord_x2, double coord_y2, int atlas_width, int atlas_height, byte * red_out, byte * green_out, byte * blue_out, byte * alpha_out);
+void __cdecl sampleAndFilterPixel(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1, double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height, byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out);
 
 // Original: shape_design.c_loadTextureData_FUN_0046b060
 // Address: 0046b060
-void loadTextureData(STextureLoadConfig * config_ptr, void * rgb_buffer, void * alpha_buffer, int atlas_width, int atlas_height);
+void __cdecl loadTextureData(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width, int atlas_height);
 
 // Original: shape_design.c_initializeCramConfig_FUN_0046b6e0
 // Address: 0046b6e0
-void initializeCramConfig(SCramConfig * cram_config);
+void __cdecl initializeCramConfig(SCramConfig *cram_config);
 
 // Original: shape_design.c_quantizePaletteColors_FUN_0046b770
 // Address: 0046b770
-void quantizePaletteColors(byte * image_data, int pixel_count, int stride, byte * palette_data, int mode_flag, char * bit_mask);
+void __cdecl quantizePaletteColors(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag, char *bit_mask);
 
 // Original: shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
 // Address: 0046b9a0
-void embedCopyrightWatermark(void * image_buffer, char * output_filename, int texture_size);
+void __cdecl embedCopyrightWatermark(void *image_buffer,char *output_filename,int texture_size);
 
 // Original: shape_design.c_cramTextureList_FUN_0046bb80
 // Address: 0046bb80
-int cramTextureList(SCramConfig * cram_config);
+int __cdecl cramTextureList(SCramConfig *cram_config);
 
 // Original: shape_design.c_findTextureByFilename_FUN_0046dfc0
 // Address: 0046dfc0
-int findTextureByFilename(char * filename);
+int __cdecl findTextureByFilename(char *filename);
 
 // Original: shape_design.c_getAtlasMapIndex_FUN_0046e030
 // Address: 0046e030
-int getAtlasMapIndex(int texture_entry_index);
+int __cdecl getAtlasMapIndex(int texture_entry_index);
 
 // Original: shape_design.c_getTextureName_FUN_0046e060
 // Address: 0046e060
-char * getTextureName(int texture_index);
+char * __cdecl getTextureName(int texture_index);
 
 // Original: shape_design.c_fixupCramUV_FUN_0046e090
 // Address: 0046e090
-void fixupCramUV(int atlas_texture_index, float * u_coord, float * v_coord);
+void __cdecl fixupCramUV(int atlas_texture_index,float *u_coord,float *v_coord);
 
 // Original: shape_design.c_normalizeUVCoordinates_FUN_0046e340
 // Address: 0046e340
-void normalizeUVCoordinates(void);
+void __cdecl normalizeUVCoordinates(void);
 
 // Original: shape_design.c_triangulateDSE_FUN_0046e4d0
 // Address: 0046e4d0
-undefined triangulateDSE();
+void triangulateDSE(void);
 
 // Original: shape_design.c_clearAllTextureNames_FUN_0046e6b0
 // Address: 0046e6b0
-void clearAllTextureNames(void);
+void __cdecl clearAllTextureNames(void);
 
 // Original: shape_design.c_displayMemoryStatus_FUN_0046e6f0
 // Address: 0046e6f0
-void displayMemoryStatus(int line_number);
+void __cdecl displayMemoryStatus(int line_number);
 
 // Original: shape_design.c_displayHeapStatus_FUN_0046e760
 // Address: 0046e760
-void displayHeapStatus(int line_number);
+void __cdecl displayHeapStatus(int line_number);
 
 // Original: shape_design.c_loadPalette_FUN_0046e810
 // Address: 0046e810
-undefined loadPalette();
+void loadPalette(void);
 
 // Original: shape_design.c_multicramTextures_FUN_0046eb80
 // Address: 0046eb80
-void multicramTextures(void);
+void __cdecl multicramTextures(void);
 
 // Original: shape_design.c_detachFaces_FUN_0046eba0
 // Address: 0046eba0
-void detachFaces(void);
+void __cdecl detachFaces(void);
 
 // Original: shape_design.c_smoothMesh_FUN_0046ed00
 // Address: 0046ed00
-void smoothMesh(void);
+void __cdecl smoothMesh(void);
 
 // Original: shape_design.c_bisectMesh_FUN_0046ed50
 // Address: 0046ed50
-void bisectMesh(void);
+void __cdecl bisectMesh(void);
 
 // Original: shape_design.c_showShapeEditorMenu_FUN_0046f290
 // Address: 0046f290
-void showShapeEditorMenu(void);
+void __cdecl showShapeEditorMenu(void);

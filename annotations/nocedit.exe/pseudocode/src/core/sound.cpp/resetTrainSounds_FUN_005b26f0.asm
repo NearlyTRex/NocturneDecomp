@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_resetTrainSounds_FUN_005b26f0(void)
+; __cdecl void __cdecl core_sound_cpp_resetTrainSounds_FUN_005b26f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

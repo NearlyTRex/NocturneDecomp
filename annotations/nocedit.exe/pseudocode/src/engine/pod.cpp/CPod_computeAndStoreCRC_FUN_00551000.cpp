@@ -2,7 +2,7 @@
 // Address: 00551000
 // Address Range: [[00551000, 00551279]]
 // Convention: __cdecl
-// Signature: void engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod * this_ptr, char * pod_filename)
+// Signature: void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,char *pod_filename)
 
 #include "nocturne.h"
 

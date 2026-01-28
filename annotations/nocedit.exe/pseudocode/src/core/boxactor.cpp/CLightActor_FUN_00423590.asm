@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boxactor.cpp_CLightActor_FUN_00423590()
+; unknown undefined4 core_boxactor_cpp_CLightActor_FUN_00423590(void)
 ;
 ;
 ; Referenced Globals:

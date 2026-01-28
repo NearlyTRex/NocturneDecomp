@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera * this_ptr, CVector3f * output_ray, CVector3i * screen_coords, int depth)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900 (CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_crossbow.cpp_FUN_00449540()
+; unknown float core_crossbow_cpp_FUN_00449540(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

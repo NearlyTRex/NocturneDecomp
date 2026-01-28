@@ -2,7 +2,7 @@
 // Address: 0048d410
 // Address Range: [[0048d410, 0048d6b2]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer * this_ptr, int * vertex_indices, int face_count, int vertices_per_face, int render_mode)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face, int render_mode)
 
 #include "nocturne.h"
 

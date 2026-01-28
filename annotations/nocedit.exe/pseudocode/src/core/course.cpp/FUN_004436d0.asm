@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_course.cpp_FUN_004436d0()
+; unknown void core_course_cpp_FUN_004436d0(void)
 ;
 ;
 ; Referenced Globals:

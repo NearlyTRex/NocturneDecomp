@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_meshlod.cpp_CLodFace_containsEdge_FUN_005151c0(CLodFace * this_ptr, int edge_index)
+; __cdecl int __cdecl shape_meshlod_cpp_CLodFace_containsEdge_FUN_005151c0(CLodFace *this_ptr,int edge_index)
 ;
 ; Parameters:
 ; CLodFace *       Stack[0x4]:4   this_ptr

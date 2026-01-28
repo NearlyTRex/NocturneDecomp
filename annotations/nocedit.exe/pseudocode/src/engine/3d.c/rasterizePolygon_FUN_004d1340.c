@@ -2,7 +2,7 @@
 // Address: 004d1340
 // Address Range: [[004d1340, 004d16a3]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_rasterizePolygon_FUN_004d1340(SRenderVertex * * vertices, int vertex_count)
+// Signature: void __cdecl engine_3d_c_rasterizePolygon_FUN_004d1340(SRenderVertex **vertices,int vertex_count)
 
 #include "nocturne.h"
 

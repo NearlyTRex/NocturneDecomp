@@ -2,7 +2,7 @@
 // Address: 005bacd0
 // Address Range: [[005bacd0, 005bacf2]]
 // Convention: __cdecl
-// Signature: CTempleStone * core_stone.cpp_factoryFunc_FUN_005bacd0(void)
+// Signature: CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_005bacd0(void)
 
 #include "nocturne.h"
 

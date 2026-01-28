@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_tbplayer.cpp_FUN_005da120()
+; unknown void core_tbplayer_cpp_FUN_005da120(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xa8]:1  local_a8

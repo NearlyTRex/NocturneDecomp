@@ -2,7 +2,7 @@
 // Address: 00521400
 // Address Range: [[00521400, 00521479]]
 // Convention: __cdecl
-// Signature: void core_mirror.cpp_CMirror_setupCorners_FUN_00521400(CMirror * this_ptr, CVector3f * corner1, CVector3f * corner2, CVector3f * corner3, CVector3f * corner4)
+// Signature: void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_00521400 (CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3, CVector3f *corner4)
 
 #include "nocturne.h"
 

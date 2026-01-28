@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawVLine_FUN_00402ff0(int x, int y1, int y2)
+; __cdecl void __cdecl engine_2d_c_drawVLine_FUN_00402ff0(int x,int y1,int y2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

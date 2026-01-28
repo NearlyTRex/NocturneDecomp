@@ -2,7 +2,7 @@
 // Address: 0060a2d8
 // Address Range: [[0060a2d8, 0060a333]]
 // Convention: __cdecl
-// Signature: BOOL crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8(void * init_param)
+// Signature: BOOL __cdecl crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(void *init_param)
 
 #include "nocturne.h"
 

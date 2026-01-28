@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_gasmask.cpp_staticInit_FUN_004e5c90(void)
+; __cdecl void __cdecl core_gasmask_cpp_staticInit_FUN_004e5c90(void)
 ;
 ;
 ; Referenced Globals:

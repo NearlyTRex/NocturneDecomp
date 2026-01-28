@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cloth.cpp_ParseClothFile_FUN_00439260()
+; unknown void core_cloth_cpp_ParseClothFile_FUN_00439260(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58

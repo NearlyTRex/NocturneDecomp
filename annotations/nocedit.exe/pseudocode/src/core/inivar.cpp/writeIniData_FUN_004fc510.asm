@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inivar.cpp_writeIniData_FUN_004fc510(void)
+; __cdecl void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x210]:1  local_210

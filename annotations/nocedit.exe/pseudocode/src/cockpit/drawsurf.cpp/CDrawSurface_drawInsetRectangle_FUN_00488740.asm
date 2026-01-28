@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_00488740(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2, int inset_x, int inset_y)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawInsetRectangle_FUN_00488740 (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int inset_x,int inset_y)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

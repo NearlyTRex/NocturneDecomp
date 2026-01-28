@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_skipWhitespace_FUN_0040c4d0(char * * parse_pos)
+; __cdecl void __cdecl core_actor_cpp_skipWhitespace_FUN_0040c4d0(char **parse_pos)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   parse_pos

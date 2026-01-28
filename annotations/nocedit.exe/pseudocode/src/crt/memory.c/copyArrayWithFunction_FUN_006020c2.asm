@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, void * copy_func)
+; __cdecl void * __cdecl crt_memory_c_copyArrayWithFunction_FUN_006020c2 (void *dest,void *source,int count,int element_size,void *copy_func)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

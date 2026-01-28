@@ -2,7 +2,7 @@
 // Address: 005d3650
 // Address Range: [[005d3650, 005d36a1]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_setStateFlagToAttrib_FUN_005d3650(CObj * this_ptr, uint set_mask, uint attrib_test)
+// Signature: void __cdecl shape_superopt_cpp_CObj_setStateFlagToAttrib_FUN_005d3650 (CObj *this_ptr,uint set_mask,uint attrib_test)
 
 #include "nocturne.h"
 

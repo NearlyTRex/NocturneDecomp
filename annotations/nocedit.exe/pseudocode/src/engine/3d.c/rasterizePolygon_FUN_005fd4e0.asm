@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_3d.c_rasterizePolygon_FUN_005fd4e0(SRenderVertex * vertex_buffer, int vertex_count, RenderScanlineFunc * scanline_renderer)
+; __cdecl void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0 (SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_buffer

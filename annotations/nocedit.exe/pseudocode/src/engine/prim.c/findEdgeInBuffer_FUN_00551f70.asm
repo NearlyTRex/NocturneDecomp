@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_00551f70(int y_value, SSoftwareEdge * edge_ptr)
+; __cdecl SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_00551f70(int y_value,SSoftwareEdge *edge_ptr)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   y_value

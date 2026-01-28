@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFilmProjector * core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector * this_ptr)
+; __cdecl CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr)
 ;
 ; Parameters:
 ; CFilmProjector * Stack[0x4]:4   this_ptr

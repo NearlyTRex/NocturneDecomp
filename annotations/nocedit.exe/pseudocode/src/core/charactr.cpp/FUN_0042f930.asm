@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_charactr.cpp_FUN_0042f930()
+; unknown void core_charactr_cpp_FUN_0042f930(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

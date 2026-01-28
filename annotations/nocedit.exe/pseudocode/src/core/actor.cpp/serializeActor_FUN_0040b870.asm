@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeActor_FUN_0040b870(CDemonActor *actor_ptr,char *property_name)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   actor_ptr

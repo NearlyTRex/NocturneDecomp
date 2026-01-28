@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_barrier.cpp_CBarrier_serialize_FUN_00414340(CBarrier * this_ptr)
+; __cdecl void __cdecl core_barrier_cpp_CBarrier_serialize_FUN_00414340(CBarrier *this_ptr)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr

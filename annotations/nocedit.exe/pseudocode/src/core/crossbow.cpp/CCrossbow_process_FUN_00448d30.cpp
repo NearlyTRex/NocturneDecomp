@@ -2,7 +2,7 @@
 // Address: 00448d30
 // Address Range: [[00448d30, 00448df3]]
 // Convention: __cdecl
-// Signature: void core_crossbow.cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr, float delta_time)
+// Signature: void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

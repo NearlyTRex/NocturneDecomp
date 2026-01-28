@@ -2,7 +2,7 @@
 // Address: 004687c0
 // Address Range: [[004687c0, 0046890f]]
 // Convention: __cdecl
-// Signature: void shape_design.c_addQuadPolygon_FUN_004687c0(int vertex_index_0, int vertex_index_1, int vertex_index_2, int vertex_index_3)
+// Signature: void __cdecl shape_design_c_addQuadPolygon_FUN_004687c0 (int vertex_index_0,int vertex_index_1,int vertex_index_2,int vertex_index_3)
 
 #include "nocturne.h"
 

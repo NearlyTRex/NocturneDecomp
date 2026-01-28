@@ -2,7 +2,7 @@
 // Address: 0043ea80
 // Address Range: [[0043ea80, 0043eb20]]
 // Convention: __cdecl
-// Signature: int support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec * this_ptr, void * input_param, void * context_param, char * output_buffer, int * output_size, int enable_finalize)
+// Signature: int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80 (CCodec *this_ptr,void *input_param,void *context_param,char *output_buffer, int *output_size,int enable_finalize)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl STrainNoise * core_sound.cpp_STrainNoise_ctor_FUN_005b3e00(STrainNoise * this_ptr)
+; __cdecl STrainNoise * __cdecl core_sound_cpp_STrainNoise_ctor_FUN_005b3e00(STrainNoise *this_ptr)
 ;
 ; Parameters:
 ; STrainNoise *    Stack[0x4]:4   this_ptr

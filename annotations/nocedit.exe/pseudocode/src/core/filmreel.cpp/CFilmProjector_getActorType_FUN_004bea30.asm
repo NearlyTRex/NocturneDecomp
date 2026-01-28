@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_filmreel.cpp_CFilmProjector_getActorType_FUN_004bea30(CFilmProjector * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004bea30(CFilmProjector *this_ptr)
 ;
 ; Parameters:
 ; CFilmProjector * Stack[0x4]:4   this_ptr

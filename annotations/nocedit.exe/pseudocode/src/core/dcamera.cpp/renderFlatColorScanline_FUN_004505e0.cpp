@@ -2,7 +2,7 @@
 // Address: 004505e0
 // Address Range: [[004505e0, 0045079c]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+// Signature: void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 

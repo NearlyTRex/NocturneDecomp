@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHaystack * core_haystack.cpp_factoryFunc_FUN_004f0bd0(void)
+; __cdecl CHaystack * __cdecl core_haystack_cpp_factoryFunc_FUN_004f0bd0(void)
 ;
 ;
 ; XREF[1]:

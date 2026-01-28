@@ -2,7 +2,7 @@
 // Address: 004ccd20
 // Address Range: [[004ccd20, 004ccd3a]]
 // Convention: __cdecl
-// Signature: SFly * core_flies.cpp_FUN_004ccd20(SFly * this_ptr)
+// Signature: SFly * __cdecl core_flies_cpp_FUN_004ccd20(SFly *this_ptr)
 
 #include "nocturne.h"
 

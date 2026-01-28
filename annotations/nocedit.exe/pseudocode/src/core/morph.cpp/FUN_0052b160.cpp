@@ -2,7 +2,7 @@
 // Address: 0052b160
 // Address Range: [[0052b160, 0052b270]]
 // Convention: __cdecl
-// Signature: void core_morph.cpp_FUN_0052b160(void)
+// Signature: void __cdecl core_morph_cpp_FUN_0052b160(void)
 
 #include "nocturne.h"
 

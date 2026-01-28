@@ -2,7 +2,7 @@
 // Address: 005e7940
 // Address Range: [[005e7940, 005e7b8a]]
 // Convention: __cdecl
-// Signature: CVehicle * core_vehicle.cpp_CVehicle_ctor_FUN_005e7940(CVehicle * this_ptr)
+// Signature: CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005e7940(CVehicle *this_ptr)
 
 #include "nocturne.h"
 

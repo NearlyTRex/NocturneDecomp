@@ -2,7 +2,7 @@
 // Address: 004be270
 // Address Range: [[004be270, 004be58e]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager * this_ptr)
+// Signature: void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager *this_ptr)
 
 #include "nocturne.h"
 

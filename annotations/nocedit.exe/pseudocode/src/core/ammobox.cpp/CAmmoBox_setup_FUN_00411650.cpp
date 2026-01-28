@@ -2,7 +2,7 @@
 // Address: 00411650
 // Address Range: [[00411650, 00411650]]
 // Convention: __cdecl
-// Signature: void core_ammobox.cpp_CAmmoBox_setup_FUN_00411650(CAmmoBox * this_ptr)
+// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_setup_FUN_00411650(CAmmoBox *this_ptr)
 
 #include "nocturne.h"
 

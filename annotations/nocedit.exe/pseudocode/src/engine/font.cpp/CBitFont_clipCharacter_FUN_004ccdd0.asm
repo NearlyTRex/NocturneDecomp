@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_font.cpp_CBitFont_clipCharacter_FUN_004ccdd0(int * bitmap_offset, int * left_x, int * top_y, int * right_x, int * bottom_y, int bitmap_width)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_clipCharacter_FUN_004ccdd0 (int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   bitmap_offset

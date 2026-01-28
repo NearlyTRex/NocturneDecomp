@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0(void)
+; __cdecl void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005ecac0(void)
 ;
 ;
 ; Referenced Globals:

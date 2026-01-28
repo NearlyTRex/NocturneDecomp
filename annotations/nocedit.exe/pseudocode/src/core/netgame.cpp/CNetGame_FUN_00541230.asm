@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_FUN_00541230()
+; unknown void core_netgame_cpp_CNetGame_FUN_00541230(void)
 ;
 ;
 ; XREF[4]:

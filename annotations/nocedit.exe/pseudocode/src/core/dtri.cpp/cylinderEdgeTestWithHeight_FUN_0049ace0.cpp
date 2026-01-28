@@ -2,7 +2,7 @@
 // Address: 0049ace0
 // Address Range: [[0049ace0, 0049ad76]]
 // Convention: __cdecl
-// Signature: void core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_0049ace0(SIntersectXZCylinder * cylinder, CVector3f * vertex1, CVector3f * vertex2)
+// Signature: void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0 (SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2)
 
 #include "nocturne.h"
 

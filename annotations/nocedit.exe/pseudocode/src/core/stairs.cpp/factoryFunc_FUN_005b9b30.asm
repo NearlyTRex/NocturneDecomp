@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CStairs * core_stairs.cpp_factoryFunc_FUN_005b9b30(void)
+; __cdecl CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_005b9b30(void)
 ;
 ;
 ; XREF[1]:

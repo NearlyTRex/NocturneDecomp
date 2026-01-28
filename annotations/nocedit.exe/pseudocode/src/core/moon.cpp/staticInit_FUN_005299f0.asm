@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_moon.cpp_staticInit_FUN_005299f0(void)
+; __cdecl void __cdecl core_moon_cpp_staticInit_FUN_005299f0(void)
 ;
 ;
 ; Referenced Globals:

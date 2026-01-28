@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_cleanupMenuTransition_FUN_0050fe60(void)
+; __cdecl void __cdecl core_menu_cpp_cleanupMenuTransition_FUN_0050fe60(void)
 ;
 ;
 ; Called Functions:

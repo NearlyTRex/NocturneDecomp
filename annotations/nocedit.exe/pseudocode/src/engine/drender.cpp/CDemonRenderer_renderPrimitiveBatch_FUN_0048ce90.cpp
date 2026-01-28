@@ -2,7 +2,7 @@
 // Address: 0048ce90
 // Address Range: [[0048ce90, 0048cef7]]
 // Convention: __cdecl
-// Signature: int engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags)
 
 #include "nocturne.h"
 

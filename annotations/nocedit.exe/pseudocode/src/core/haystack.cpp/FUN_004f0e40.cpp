@@ -2,7 +2,7 @@
 // Address: 004f0e40
 // Address Range: [[004f0e40, 004f13e7]]
 // Convention: unknown
-// Signature: undefined core_haystack.cpp_FUN_004f0e40()
+// Signature: void core_haystack_cpp_FUN_004f0e40(void)
 
 #include "nocturne.h"
 

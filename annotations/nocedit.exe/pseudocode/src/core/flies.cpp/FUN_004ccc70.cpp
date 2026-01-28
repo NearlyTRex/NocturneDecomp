@@ -2,7 +2,7 @@
 // Address: 004ccc70
 // Address Range: [[004ccc70, 004cccab]]
 // Convention: unknown
-// Signature: undefined core_flies.cpp_FUN_004ccc70()
+// Signature: void core_flies_cpp_FUN_004ccc70(void)
 
 #include "nocturne.h"
 

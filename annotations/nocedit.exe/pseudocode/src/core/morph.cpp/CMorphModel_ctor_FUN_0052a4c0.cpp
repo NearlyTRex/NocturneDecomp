@@ -2,7 +2,7 @@
 // Address: 0052a4c0
 // Address Range: [[0052a4c0, 0052a4ed]]
 // Convention: __cdecl
-// Signature: CMorphModel * core_morph.cpp_CMorphModel_ctor_FUN_0052a4c0(CMorphModel * this_ptr)
+// Signature: CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_0052a4c0(CMorphModel *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gore.cpp_FUN_004ee1e0()
+; unknown int core_gore_cpp_FUN_004ee1e0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110

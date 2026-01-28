@@ -2,7 +2,7 @@
 // Address: 00422570
 // Address Range: [[00422570, 00422582]]
 // Convention: __cdecl
-// Signature: void core_boxactor.cpp_CBoxActor_onPickup_FUN_00422570(CBoxActor * this_ptr, CDemonActor * owner)
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_onPickup_FUN_00422570(CBoxActor *this_ptr,CDemonActor *owner)
 
 #include "nocturne.h"
 

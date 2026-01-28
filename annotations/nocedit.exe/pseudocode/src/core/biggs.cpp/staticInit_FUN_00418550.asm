@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_biggs.cpp_staticInit_FUN_00418550(void)
+; __cdecl void __cdecl core_biggs_cpp_staticInit_FUN_00418550(void)
 ;
 ;
 ; Referenced Globals:

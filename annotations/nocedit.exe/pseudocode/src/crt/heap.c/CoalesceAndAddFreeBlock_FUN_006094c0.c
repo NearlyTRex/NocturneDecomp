@@ -2,7 +2,7 @@
 // Address: 006094c0
 // Address Range: [[006094c0, 006095ed]]
 // Convention: __watcallRegister
-// Signature: void crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0(void * ptr, HeapBlock * heap_block, ushort segment)
+// Signature: void crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(void *ptr,HeapBlock *heap_block,ushort segment)
 
 #include "nocturne.h"
 

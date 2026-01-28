@@ -2,7 +2,7 @@
 // Address: 0040cf10
 // Address Range: [[0040cf10, 0040cf43]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10(uint * crc_state, byte * buffer, int buffer_length)
+// Signature: void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040cf10(uint *crc_state,byte *buffer,int buffer_length)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00483fc0
 // Address Range: [[00483fc0, 004840ae]]
 // Convention: __cdecl
-// Signature: CDraculaBride * core_dracbrid.cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride * this_ptr)
+// Signature: CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride *this_ptr)
 
 #include "nocturne.h"
 

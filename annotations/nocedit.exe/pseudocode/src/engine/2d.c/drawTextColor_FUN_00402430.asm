@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+; __cdecl void __cdecl engine_2d_c_drawTextColor_FUN_00402430(char *text,int x_pos,int y_pos)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text

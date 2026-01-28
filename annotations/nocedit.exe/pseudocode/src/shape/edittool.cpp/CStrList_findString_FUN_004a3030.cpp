@@ -2,7 +2,7 @@
 // Address: 004a3030
 // Address Range: [[004a3030, 004a306e]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CStrList_findString_FUN_004a3030(CStrList * this_ptr, char * search_string)
+// Signature: int __cdecl shape_edittool_cpp_CStrList_findString_FUN_004a3030(CStrList *this_ptr,char *search_string)
 
 #include "nocturne.h"
 

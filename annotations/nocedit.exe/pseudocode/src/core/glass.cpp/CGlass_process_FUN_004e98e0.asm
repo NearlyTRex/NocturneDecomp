@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr, float delta_time)
+; __cdecl void __cdecl core_glass_cpp_CGlass_process_FUN_004e98e0(CGlass *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr

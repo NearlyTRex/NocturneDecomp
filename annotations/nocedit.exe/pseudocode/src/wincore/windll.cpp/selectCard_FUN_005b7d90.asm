@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_selectCard_FUN_005b7d90(int card_index)
+; __cdecl int __cdecl wincore_windll_cpp_selectCard_FUN_005b7d90(int card_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   card_index

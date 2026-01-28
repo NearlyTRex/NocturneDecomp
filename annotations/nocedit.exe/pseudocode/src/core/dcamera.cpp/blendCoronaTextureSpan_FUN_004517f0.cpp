@@ -2,7 +2,7 @@
 // Address: 004517f0
 // Address Range: [[004517f0, 004518e3]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y, int x_start, int x_end, int source_buffer_offset)
+// Signature: void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0 (int scanline_y,int x_start,int x_end,int source_buffer_offset)
 
 #include "nocturne.h"
 

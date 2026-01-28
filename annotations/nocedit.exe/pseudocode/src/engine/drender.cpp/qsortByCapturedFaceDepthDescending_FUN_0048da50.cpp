@@ -2,7 +2,7 @@
 // Address: 0048da50
 // Address Range: [[0048da50, 0048da7a]]
 // Convention: __cdecl
-// Signature: int engine_drender.cpp_qsortByCapturedFaceDepthDescending_FUN_0048da50(SFace * * face_ptr_a, SFace * * face_ptr_b)
+// Signature: int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_0048da50 (SFace **face_ptr_a,SFace **face_ptr_b)
 
 #include "nocturne.h"
 

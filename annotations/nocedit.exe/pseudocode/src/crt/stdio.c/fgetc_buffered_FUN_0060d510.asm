@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_fgetc_buffered_FUN_0060d510(FILE * stream)
+; __watcallStack int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(FILE *stream)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(CDeformableModelInstance * this_ptr, CDeformableModel * model_ptr)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 (CDeformableModelInstance *this_ptr,CDeformableModel *model_ptr)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

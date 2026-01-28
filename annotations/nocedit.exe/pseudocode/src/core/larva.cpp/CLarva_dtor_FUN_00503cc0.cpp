@@ -2,7 +2,7 @@
 // Address: 00503cc0
 // Address Range: [[00503cc0, 00503d78]]
 // Convention: __cdecl
-// Signature: CDemonActor * core_larva.cpp_CLarva_dtor_FUN_00503cc0(CLarva * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CDemonActor * __cdecl core_larva_cpp_CLarva_dtor_FUN_00503cc0 (CLarva *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

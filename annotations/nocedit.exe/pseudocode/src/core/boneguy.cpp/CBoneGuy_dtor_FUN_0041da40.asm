@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoneGuy * core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40(CBoneGuy * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9)
+; __cdecl CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041da40 (CBoneGuy *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

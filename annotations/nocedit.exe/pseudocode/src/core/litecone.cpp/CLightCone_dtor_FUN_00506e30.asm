@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightCone * core_litecone.cpp_CLightCone_dtor_FUN_00506e30(CLightCone * this_ptr, uint d1, uint d2)
+; __cdecl CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_00506e30(CLightCone *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CLightCone *     Stack[0x4]:4   this_ptr

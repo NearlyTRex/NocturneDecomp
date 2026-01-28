@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_console.cpp_CConsole_writeChar_FUN_00441970(CConsole * this_ptr, char character)
+; __cdecl void __cdecl engine_console_cpp_CConsole_writeChar_FUN_00441970(CConsole *this_ptr,char character)
 ;
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr

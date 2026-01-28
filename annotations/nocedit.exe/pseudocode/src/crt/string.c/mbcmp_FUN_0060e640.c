@@ -2,7 +2,7 @@
 // Address: 0060e640
 // Address Range: [[0060e640, 0060e69b]]
 // Convention: __cdecl
-// Signature: int crt_string.c_mbcmp_FUN_0060e640(char * str1, char * str2)
+// Signature: int __cdecl crt_string_c_mbcmp_FUN_0060e640(char *str1,char *str2)
 
 #include "nocturne.h"
 

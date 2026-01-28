@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrip * core_drip.cpp_factoryFunc_FUN_0048dfc0(void)
+; __cdecl CDrip * __cdecl core_drip_cpp_factoryFunc_FUN_0048dfc0(void)
 ;
 ;
 ; XREF[1]:

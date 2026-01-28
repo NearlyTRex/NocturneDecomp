@@ -2,7 +2,7 @@
 // Address: 00601f1c
 // Address Range: [[00601f1c, 00601fcc]]
 // Convention: __watcallStack
-// Signature: void crt_io.c_generateTempFilename_FUN_00601f1c(char * buffer, int file_handle)
+// Signature: void __watcallStack crt_io_c_generateTempFilename_FUN_00601f1c(char *buffer,int file_handle)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00506ad0
 // Address Range: [[00506ad0, 00506af2]]
 // Convention: __cdecl
-// Signature: CLightCone * core_litecone.cpp_factoryFunc_FUN_00506ad0(void)
+// Signature: CLightCone * __cdecl core_litecone_cpp_factoryFunc_FUN_00506ad0(void)
 
 #include "nocturne.h"
 

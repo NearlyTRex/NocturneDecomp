@@ -2,7 +2,7 @@
 // Address: 004fb9a0
 // Address Range: [[004fb9a0, 004fba3c]]
 // Convention: __cdecl
-// Signature: int engine_ini.cpp_getProfileInteger_FUN_004fb9a0(char * section, char * key, char * default_value, char * filename)
+// Signature: int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0 (char *section,char *key,char *default_value,char *filename)
 
 #include "nocturne.h"
 

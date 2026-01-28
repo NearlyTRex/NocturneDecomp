@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970(CEditorTools * this_ptr, int left, int top, int right, int bottom, char * text_content, int window_flags)
+; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970 (CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content, int window_flags)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

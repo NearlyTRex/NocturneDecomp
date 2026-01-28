@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_step_FUN_0055a810()
+; unknown int core_script_cpp_CScript_step_FUN_0055a810(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3fb8]:4  local_3fb8

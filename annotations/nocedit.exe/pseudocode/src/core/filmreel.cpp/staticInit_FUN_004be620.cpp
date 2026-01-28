@@ -2,7 +2,7 @@
 // Address: 004be620
 // Address Range: [[004be620, 004be666]]
 // Convention: __cdecl
-// Signature: void core_filmreel.cpp_staticInit_FUN_004be620(void)
+// Signature: void __cdecl core_filmreel_cpp_staticInit_FUN_004be620(void)
 
 #include "nocturne.h"
 

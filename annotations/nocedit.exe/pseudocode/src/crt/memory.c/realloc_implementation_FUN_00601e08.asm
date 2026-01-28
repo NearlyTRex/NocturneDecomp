@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_memory.c_realloc_implementation_FUN_00601e08(void * ptr, ulong new_size)
+; __cdecl void * __cdecl crt_memory_c_realloc_implementation_FUN_00601e08(void *ptr,ulong new_size)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

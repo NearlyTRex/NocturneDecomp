@@ -2,7 +2,7 @@
 // Address: 0047c370
 // Address Range: [[0047c370, 0047c46e]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370(CKeyFramedModel * this_ptr, CVector3f * bias_offset)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370 (CKeyFramedModel *this_ptr,CVector3f *bias_offset)
 
 #include "nocturne.h"
 

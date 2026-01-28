@@ -2,7 +2,7 @@
 // Address: 00403ad0
 // Address Range: [[00403ad0, 00403b98]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0(SMRGLHeaderPrimitive * primitive)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 

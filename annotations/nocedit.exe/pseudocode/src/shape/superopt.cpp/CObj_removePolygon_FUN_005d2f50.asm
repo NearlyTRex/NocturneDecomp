@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50(CObj * this_ptr, uint index)
+; __cdecl int __cdecl shape_superopt_cpp_CObj_removePolygon_FUN_005d2f50(CObj *this_ptr,uint index)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

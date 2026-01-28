@@ -2,7 +2,7 @@
 // Address: 005bfb60
 // Address Range: [[005bfb60, 005bfe1c] [005bfe53, 005c02ae]]
 // Convention: unknown
-// Signature: undefined core_stranger.cpp_CStranger_FUN_005bfb60()
+// Signature: void core_stranger_cpp_CStranger_FUN_005bfb60(void)
 
 #include "nocturne.h"
 

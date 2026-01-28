@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_calculateTextureQualityLevel_FUN_0046a930(int texture_parameter)
+; __cdecl int __cdecl shape_design_c_calculateTextureQualityLevel_FUN_0046a930(int texture_parameter)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   texture_parameter

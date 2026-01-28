@@ -2,7 +2,7 @@
 // Address: 00609d5c
 // Address Range: [[00609d5c, 00609d93]]
 // Convention: __cdecl
-// Signature: int crt_io.c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile, DWORD dwAttributeMask, LPWIN32_FIND_DATAA lpFindFileData)
+// Signature: int __cdecl crt_io_c_findNextWithAttributes_FUN_00609d5c (HANDLE hFindFile,DWORD dwAttributeMask,LPWIN32_FIND_DATAA lpFindFileData)
 
 #include "nocturne.h"
 

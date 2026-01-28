@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_selectVertexToDelete_FUN_0045c5b0(void)
+; __cdecl void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x30]:1  local_30

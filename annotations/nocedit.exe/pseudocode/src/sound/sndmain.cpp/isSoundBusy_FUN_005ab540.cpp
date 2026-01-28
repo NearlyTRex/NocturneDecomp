@@ -2,7 +2,7 @@
 // Address: 005ab540
 // Address Range: [[005ab540, 005ab54e]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_isSoundBusy_FUN_005ab540(void)
+// Signature: int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_005ab540(void)
 
 #include "nocturne.h"
 

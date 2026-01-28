@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTommyGun * core_tommygun.cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun * this_ptr, uint d1, uint d2)
+; __cdecl CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CTommyGun *      Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 004b1db0
 // Address Range: [[004b1db0, 004b1dd7]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_safeCloseFile_FUN_004b1db0(FILE * * file_ptr)
+// Signature: void __cdecl engine_fileio_cpp_safeCloseFile_FUN_004b1db0(FILE **file_ptr)
 
 #include "nocturne.h"
 

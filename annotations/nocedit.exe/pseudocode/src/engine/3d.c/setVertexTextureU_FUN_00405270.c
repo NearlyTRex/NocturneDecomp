@@ -2,7 +2,7 @@
 // Address: 00405270
 // Address Range: [[00405270, 004052ad]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_setVertexTextureU_FUN_00405270(SVertexBatch * vertex_batch)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_00405270(SVertexBatch *vertex_batch)
 
 #include "nocturne.h"
 

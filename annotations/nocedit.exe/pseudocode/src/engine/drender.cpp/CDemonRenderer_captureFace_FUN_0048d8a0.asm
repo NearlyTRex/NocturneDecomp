@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0 (CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

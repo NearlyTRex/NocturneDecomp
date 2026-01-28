@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CIcePick * core_icepick.cpp_CIcePick_dtor_FUN_004f97e0(CIcePick * this_ptr, uint d1, uint d2)
+; __cdecl CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004f97e0(CIcePick *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr

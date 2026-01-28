@@ -2,7 +2,7 @@
 // Address: 00566b30
 // Address Range: [[00566b30, 00566bbe]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CScript_editorIndex2X_FUN_00566b30()
+// Signature: uint core_script_cpp_CScript_editorIndex2X_FUN_00566b30(void)
 
 #include "nocturne.h"
 

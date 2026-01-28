@@ -2,7 +2,7 @@
 // Address: 004479a0
 // Address Range: [[004479a0, 00447a00]]
 // Convention: __cdecl
-// Signature: int shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry * bounds_entry)
+// Signature: int __cdecl shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry *bounds_entry)
 
 #include "nocturne.h"
 

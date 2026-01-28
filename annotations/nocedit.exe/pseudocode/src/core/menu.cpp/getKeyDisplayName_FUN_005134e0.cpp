@@ -2,7 +2,7 @@
 // Address: 005134e0
 // Address Range: [[005134e0, 00513718]]
 // Convention: __cdecl
-// Signature: char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+// Signature: char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(int key_code)
 
 #include "nocturne.h"
 

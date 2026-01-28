@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, int border_style_flag)
+; __cdecl void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0 (int left,int top,int width,int height,int border_style_flag)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left

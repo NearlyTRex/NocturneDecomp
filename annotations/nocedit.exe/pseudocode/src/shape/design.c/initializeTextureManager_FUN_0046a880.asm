@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_initializeTextureManager_FUN_0046a880(int initialization_mode)
+; __cdecl void __cdecl shape_design_c_initializeTextureManager_FUN_0046a880(int initialization_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   initialization_mode

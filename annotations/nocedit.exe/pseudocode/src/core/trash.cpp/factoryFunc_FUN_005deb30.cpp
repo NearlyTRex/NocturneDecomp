@@ -2,7 +2,7 @@
 // Address: 005deb30
 // Address Range: [[005deb30, 005deb52]]
 // Convention: __cdecl
-// Signature: CTrash * core_trash.cpp_factoryFunc_FUN_005deb30(void)
+// Signature: CTrash * __cdecl core_trash_cpp_factoryFunc_FUN_005deb30(void)
 
 #include "nocturne.h"
 

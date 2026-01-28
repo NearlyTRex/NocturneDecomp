@@ -2,7 +2,7 @@
 // Address: 004a6f70
 // Address Range: [[004a6f70, 004a6f93]]
 // Convention: __cdecl
-// Signature: void core_elephant.cpp_staticInit_FUN_004a6f70(void)
+// Signature: void __cdecl core_elephant_cpp_staticInit_FUN_004a6f70(void)
 
 #include "nocturne.h"
 

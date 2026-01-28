@@ -2,7 +2,7 @@
 // Address: 005b8140
 // Address Range: [[005b8140, 005b8184]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_switchRenderer_FUN_005b8140(char * new_dll_name, int renderer_handle)
+// Signature: int __cdecl wincore_windll_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,int renderer_handle)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonCube * core_dcube.cpp_CDemonCube_ctor_FUN_00456750(CDemonCube * this_ptr)
+; __cdecl CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_00456750(CDemonCube *this_ptr)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr

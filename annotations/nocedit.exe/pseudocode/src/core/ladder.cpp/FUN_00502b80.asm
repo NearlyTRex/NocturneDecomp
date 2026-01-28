@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ladder.cpp_FUN_00502b80()
+; unknown void core_ladder_cpp_FUN_00502b80(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xe4]:1  local_e4

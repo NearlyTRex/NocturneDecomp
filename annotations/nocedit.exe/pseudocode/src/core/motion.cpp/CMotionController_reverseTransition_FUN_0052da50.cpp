@@ -2,7 +2,7 @@
 // Address: 0052da50
 // Address Range: [[0052da50, 0052daaf]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionController_reverseTransition_FUN_0052da50(CMotionController * this_ptr)
+// Signature: void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_0052da50(CMotionController *this_ptr)
 
 #include "nocturne.h"
 

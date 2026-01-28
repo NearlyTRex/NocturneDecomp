@@ -2,7 +2,7 @@
 // Address: 0058a260
 // Address Range: [[0058a260, 0058a2a3]]
 // Convention: unknown
-// Signature: undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
+// Signature: void core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,FILE *param_6)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00574e70
 // Address Range: [[00574e70, 00574eee]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70(CZThumb * this_ptr)
+// Signature: void __cdecl core_setdir_cpp_CZThumb_pushRenderingContext_FUN_00574e70(CZThumb *this_ptr)
 
 #include "nocturne.h"
 

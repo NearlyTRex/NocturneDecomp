@@ -2,7 +2,7 @@
 // Address: 005d2720
 // Address Range: [[005d2720, 005d2871]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_appendTo_FUN_005d2720(CObj * this_ptr, CObj * dest_obj)
+// Signature: int __cdecl shape_superopt_cpp_CObj_appendTo_FUN_005d2720(CObj *this_ptr,CObj *dest_obj)
 
 #include "nocturne.h"
 

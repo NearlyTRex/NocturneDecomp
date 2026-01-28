@@ -2,7 +2,7 @@
 // Address: 004f4140
 // Address Range: [[004f4140, 004f41be]]
 // Convention: __cdecl
-// Signature: ulonglong wincore_wddvmem.cpp_populateColorTable_FUN_004f4140(void)
+// Signature: ulonglong __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void)
 
 #include "nocturne.h"
 

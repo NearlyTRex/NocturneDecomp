@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0(void * sprite_data, int start_x, int dest_y, int end_x, int max_height, int unused_param, int src_y_offset, int src_stride)
+; __cdecl void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_004328d0 (void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param, int src_y_offset,int src_stride)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   sprite_data

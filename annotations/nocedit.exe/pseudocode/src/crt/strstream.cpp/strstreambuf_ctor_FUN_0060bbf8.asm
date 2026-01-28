@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl strstreambuf * crt_strstream.cpp_strstreambuf_ctor_FUN_0060bbf8(strstreambuf * this_ptr)
+; __cdecl strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_ctor_FUN_0060bbf8(strstreambuf *this_ptr)
 ;
 ; Parameters:
 ; strstreambuf *   Stack[0x4]:4   this_ptr

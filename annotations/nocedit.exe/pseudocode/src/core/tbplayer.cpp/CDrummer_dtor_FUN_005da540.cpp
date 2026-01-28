@@ -2,7 +2,7 @@
 // Address: 005da540
 // Address Range: [[005da540, 005da608]]
 // Convention: __cdecl
-// Signature: CDrummer * core_tbplayer.cpp_CDrummer_dtor_FUN_005da540(CDrummer * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9)
+// Signature: CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_005da540 (CDrummer *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9)
 
 #include "nocturne.h"
 

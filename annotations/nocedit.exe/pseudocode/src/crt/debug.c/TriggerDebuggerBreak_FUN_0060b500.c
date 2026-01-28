@@ -2,7 +2,7 @@
 // Address: 0060b500
 // Address Range: [[0060b500, 0060b516] [0060b528, 0060b52a]]
 // Convention: __cdecl
-// Signature: int crt_debug.c_TriggerDebuggerBreak_FUN_0060b500(char * error_message, ushort flags)
+// Signature: int __cdecl crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(char *error_message,ushort flags)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005448b0
 // Address Range: [[005448b0, 00544b6d]]
 // Convention: __cdecl
-// Signature: void core_npc.cpp_CNPC_process_FUN_005448b0(CNPC * this_ptr, float delta_time)
+// Signature: void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

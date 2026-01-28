@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_system.c_sleep_FUN_00600790(DWORD milliseconds)
+; __cdecl void __cdecl crt_system_c_sleep_FUN_00600790(DWORD milliseconds)
 ;
 ; Parameters:
 ; DWORD            Stack[0x4]:4   milliseconds

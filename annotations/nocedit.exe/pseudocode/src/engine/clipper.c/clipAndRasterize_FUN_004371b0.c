@@ -2,7 +2,7 @@
 // Address: 004371b0
 // Address Range: [[004371b0, 004371f8]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_clipAndRasterize_FUN_004371b0(int vertex_count, int * vertex_indices)
+// Signature: void __cdecl engine_clipper_c_clipAndRasterize_FUN_004371b0(int vertex_count,int *vertex_indices)
 
 #include "nocturne.h"
 

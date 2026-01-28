@@ -2,7 +2,7 @@
 // Address: 005a8a30
 // Address Range: [[005a8a30, 005a8a53]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a30(CVector3d * velocity_source_ptr)
+// Signature: void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a30(CVector3d *velocity_source_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005d12d0
 // Address Range: [[005d12d0, 005d1386]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CPoly_hasColinearEdge_FUN_005d12d0(CPoly * this_ptr, CPoly * other)
+// Signature: int __cdecl shape_superopt_cpp_CPoly_hasColinearEdge_FUN_005d12d0(CPoly *this_ptr,CPoly *other)
 
 #include "nocturne.h"
 

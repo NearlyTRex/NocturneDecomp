@@ -2,7 +2,7 @@
 // Address: 00483f80
 // Address Range: [[00483f80, 00483fa2]]
 // Convention: __cdecl
-// Signature: CDraculaBride * core_dracbrid.cpp_factoryFunc_FUN_00483f80(void)
+// Signature: CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00483f80(void)
 
 #include "nocturne.h"
 

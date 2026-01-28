@@ -2,7 +2,7 @@
 // Address: 00409ec0
 // Address Range: [[00409ec0, 00409f10]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0(CDemonActor * this_ptr, uint * out_crc)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(CDemonActor *this_ptr,uint *out_crc)
 
 #include "nocturne.h"
 

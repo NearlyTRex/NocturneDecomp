@@ -2,7 +2,7 @@
 // Address: 004a39e0
 // Address Range: [[004a39e0, 004a3b81]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0(CStrList * this_ptr, char * base_path, char * search_path)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0 (CStrList *this_ptr,char *base_path,char *search_path)
 
 #include "nocturne.h"
 

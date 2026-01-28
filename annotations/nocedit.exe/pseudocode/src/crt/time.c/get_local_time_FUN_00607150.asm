@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_time.c_get_local_time_FUN_00607150(tm * tm_output)
+; __watcallStack void __watcallStack crt_time_c_get_local_time_FUN_00607150(tm *tm_output)
 ;
 ; Parameters:
 ; tm *             Stack[0x4]:4   tm_output

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
+; __cdecl int __cdecl engine_3d_c_isVisiblePlane_FUN_00403950(SClipPlane *plane)
 ;
 ; Parameters:
 ; SClipPlane *     Stack[0x4]:4   plane

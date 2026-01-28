@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_loadLightningBoltAssets_FUN_004c5600(void)
+; __cdecl void __cdecl core_fire_cpp_loadLightningBoltAssets_FUN_004c5600(void)
 ;
 ;
 ; XREF[1]:

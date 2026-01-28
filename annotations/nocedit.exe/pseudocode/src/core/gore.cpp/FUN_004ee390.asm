@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFootstep * core_gore.cpp_FUN_004ee390(CFootstep * this_ptr)
+; __cdecl CFootstep * __cdecl core_gore_cpp_FUN_004ee390(CFootstep *this_ptr)
 ;
 ; Parameters:
 ; CFootstep *      Stack[0x4]:4   this_ptr

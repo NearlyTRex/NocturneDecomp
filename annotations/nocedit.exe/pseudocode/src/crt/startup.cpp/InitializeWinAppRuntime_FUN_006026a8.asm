@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8(void * pParam)
+; __watcallRegister void crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
 ;
 ;
 ; XREF[1]:

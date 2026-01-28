@@ -2,7 +2,7 @@
 // Address: 004c3ed0
 // Address Range: [[004c3ed0, 004c3ede]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CToss_init_FUN_004c3ed0(CToss * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CToss_init_FUN_004c3ed0(CToss *this_ptr)
 
 #include "nocturne.h"
 

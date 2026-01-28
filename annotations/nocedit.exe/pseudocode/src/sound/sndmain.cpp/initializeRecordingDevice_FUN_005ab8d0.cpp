@@ -2,7 +2,7 @@
 // Address: 005ab8d0
 // Address Range: [[005ab8d0, 005ab92b]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0(void)
+// Signature: int __cdecl sound_sndmain_cpp_initializeRecordingDevice_FUN_005ab8d0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlashlight * core_flamegun.cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight * this_ptr)
+; __cdecl CFlashlight * __cdecl core_flamegun_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight *this_ptr)
 ;
 ; Parameters:
 ; CFlashlight *    Stack[0x4]:4   this_ptr

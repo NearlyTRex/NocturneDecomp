@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_trigger.cpp_CTrigger_FUN_005df990(CTrigger * this_ptr)
+; __cdecl void __cdecl core_trigger_cpp_CTrigger_FUN_005df990(CTrigger *this_ptr)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 0060ee80
 // Address Range: [[0060ee80, 0060f04b]]
 // Convention: __cdecl
-// Signature: int crt_env.c_putenv_internal_FUN_0060ee80(char * envstr)
+// Signature: int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
 
 #include "nocturne.h"
 

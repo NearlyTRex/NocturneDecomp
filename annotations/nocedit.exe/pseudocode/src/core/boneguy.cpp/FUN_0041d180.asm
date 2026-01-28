@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boneguy.cpp_FUN_0041d180()
+; unknown void core_boneguy_cpp_FUN_0041d180(void)
 ;
 ;
 ; Referenced Globals:

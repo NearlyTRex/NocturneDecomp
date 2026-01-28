@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCryptVessel * core_vessel.cpp_CCryptVessel_dtor_FUN_005e9d30(CCryptVessel * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_005e9d30(CCryptVessel *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

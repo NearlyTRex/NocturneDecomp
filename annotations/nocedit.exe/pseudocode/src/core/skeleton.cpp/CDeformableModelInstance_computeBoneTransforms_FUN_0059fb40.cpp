@@ -2,7 +2,7 @@
 // Address: 0059fb40
 // Address Range: [[0059fb40, 0059fd5d]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 (CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 

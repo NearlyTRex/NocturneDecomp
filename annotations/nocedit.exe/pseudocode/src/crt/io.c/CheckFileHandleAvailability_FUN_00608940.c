@@ -2,7 +2,7 @@
 // Address: 00608940
 // Address Range: [[00608940, 0060898c]]
 // Convention: __cdecl
-// Signature: int crt_io.c_CheckFileHandleAvailability_FUN_00608940(void)
+// Signature: int __cdecl crt_io_c_CheckFileHandleAvailability_FUN_00608940(void)
 
 #include "nocturne.h"
 

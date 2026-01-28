@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hiram.cpp_FUN_004f4550()
+; unknown void core_hiram_cpp_FUN_004f4550(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

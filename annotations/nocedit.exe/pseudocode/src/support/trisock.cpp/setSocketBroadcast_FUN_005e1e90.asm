@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_setSocketBroadcast_FUN_005e1e90(SOCKET * socket_handle, int broadcast_flag)
+; __cdecl int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(SOCKET *socket_handle,int broadcast_flag)
 ;
 ; Parameters:
 ; SOCKET *         Stack[0x4]:4   socket_handle

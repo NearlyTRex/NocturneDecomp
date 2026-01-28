@@ -2,7 +2,7 @@
 // Address: 004fd220
 // Address Range: [[004fd220, 004fd502]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_loadInventory_FUN_004fd220(void)
+// Signature: void __cdecl core_inv_cpp_loadInventory_FUN_004fd220(void)
 
 #include "nocturne.h"
 

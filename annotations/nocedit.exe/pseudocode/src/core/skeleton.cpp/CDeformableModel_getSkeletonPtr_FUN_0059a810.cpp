@@ -2,7 +2,7 @@
 // Address: 0059a810
 // Address Range: [[0059a810, 0059a857]]
 // Convention: __cdecl
-// Signature: CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(CDeformableModel * this_ptr)
+// Signature: CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

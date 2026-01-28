@@ -2,7 +2,7 @@
 // Address: 00423760
 // Address Range: [[00423760, 00423782]]
 // Convention: __cdecl
-// Signature: CBride * core_bride.cpp_factoryFunc_FUN_00423760(void)
+// Signature: CBride * __cdecl core_bride_cpp_factoryFunc_FUN_00423760(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100(CDemonRaytrace * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, uchar triangle_flags)
+; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_addTriangle_FUN_00495100 (CDemonRaytrace *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar triangle_flags)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

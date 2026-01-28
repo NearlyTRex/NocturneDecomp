@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_FUN_0060b190()
+; unknown ushort crt_unknown_c_FUN_0060b190(void)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0x2]:2  local_2

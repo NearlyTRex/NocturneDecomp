@@ -2,7 +2,7 @@
 // Address: 005d3960
 // Address Range: [[005d3960, 005d3da1]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj * this_ptr, int update_adjacency)
+// Signature: void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj *this_ptr,int update_adjacency)
 
 #include "nocturne.h"
 

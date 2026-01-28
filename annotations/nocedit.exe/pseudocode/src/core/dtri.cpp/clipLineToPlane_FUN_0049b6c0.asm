@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_clipLineToPlane_FUN_0049b6c0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, double plane_ny, double plane_nz, double plane_d)
+; __cdecl void __cdecl core_dtri_cpp_clipLineToPlane_FUN_0049b6c0 (CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx, double plane_ny,double plane_nz,double plane_d)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   point1_ptr

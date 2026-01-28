@@ -2,7 +2,7 @@
 // Address: 0060c340
 // Address Range: [[0060c340, 0060c431]]
 // Convention: __cdecl
-// Signature: int crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340(char * filename, int * iostream_mode, int permissions)
+// Signature: int __cdecl crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340 (char *filename,int *iostream_mode,int permissions)
 
 #include "nocturne.h"
 

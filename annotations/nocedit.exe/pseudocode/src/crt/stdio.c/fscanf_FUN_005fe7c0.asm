@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format, ...)
+; __cdecl int __cdecl crt_stdio_c_fscanf_FUN_005fe7c0(FILE *file,char *format,...)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file

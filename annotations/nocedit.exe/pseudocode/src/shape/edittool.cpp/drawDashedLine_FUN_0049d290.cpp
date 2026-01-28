@@ -2,7 +2,7 @@
 // Address: 0049d290
 // Address Range: [[0049d290, 0049d3c6]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_drawDashedLine_FUN_0049d290(int x1, int y1, int x2, int y2, int dash_length)
+// Signature: void __cdecl shape_edittool_cpp_drawDashedLine_FUN_0049d290(int x1,int y1,int x2,int y2,int dash_length)
 
 #include "nocturne.h"
 

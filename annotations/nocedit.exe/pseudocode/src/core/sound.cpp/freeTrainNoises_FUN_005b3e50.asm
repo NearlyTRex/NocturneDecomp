@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_freeTrainNoises_FUN_005b3e50(STrainNoise * * array)
+; __cdecl void __cdecl core_sound_cpp_freeTrainNoises_FUN_005b3e50(STrainNoise **array)
 ;
 ; Parameters:
 ; STrainNoise * *  Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 0050efa0
 // Address Range: [[0050efa0, 0050efdb]]
 // Convention: __cdecl
-// Signature: SMemHead * shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void * user_ptr)
+// Signature: SMemHead * __cdecl shape_memdbg_cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void *user_ptr)
 
 #include "nocturne.h"
 

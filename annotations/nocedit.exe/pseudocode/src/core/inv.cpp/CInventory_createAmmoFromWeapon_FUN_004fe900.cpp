@@ -2,7 +2,7 @@
 // Address: 004fe900
 // Address Range: [[004fe900, 004fe9cd]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventory * this_ptr, CWeapon * weapon)
+// Signature: void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventory *this_ptr,CWeapon *weapon)
 
 #include "nocturne.h"
 

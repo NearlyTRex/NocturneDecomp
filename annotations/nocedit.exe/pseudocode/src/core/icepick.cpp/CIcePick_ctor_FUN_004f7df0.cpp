@@ -2,7 +2,7 @@
 // Address: 004f7df0
 // Address Range: [[004f7df0, 004f7e71]]
 // Convention: __cdecl
-// Signature: CIcePick * core_icepick.cpp_CIcePick_ctor_FUN_004f7df0(CIcePick * this_ptr)
+// Signature: CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(CIcePick *this_ptr)
 
 #include "nocturne.h"
 

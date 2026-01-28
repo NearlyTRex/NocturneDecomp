@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_freeTriangles_FUN_0049cd20(CDemonTriangle * * array)
+; __cdecl void __cdecl core_dtri_cpp_freeTriangles_FUN_0049cd20(CDemonTriangle **array)
 ;
 ; Parameters:
 ; CDemonTriangle * * Stack[0x4]:4   array

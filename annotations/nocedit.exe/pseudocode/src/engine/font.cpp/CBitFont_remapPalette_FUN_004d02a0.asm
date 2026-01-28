@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0(CBitFont * this_ptr)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004d02a0(CBitFont *this_ptr)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

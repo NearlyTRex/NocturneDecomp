@@ -2,7 +2,7 @@
 // Address: 0044ef30
 // Address Range: [[0044ef30, 0044f1de]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30(CDemonCamera * this_ptr, CVector3f * new_position, CMatrix3x3f * rotation_matrix, CMatrix3x3f * transform_matrix)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30 (CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix, CMatrix3x3f *transform_matrix)
 
 #include "nocturne.h"
 

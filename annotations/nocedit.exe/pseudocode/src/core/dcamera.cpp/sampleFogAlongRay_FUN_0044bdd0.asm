@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
+; __cdecl uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0 (SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length)
 ;
 ; Parameters:
 ; SFogGrid *       Stack[0x4]:4   fog_ptr

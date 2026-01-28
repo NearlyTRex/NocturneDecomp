@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_game.cpp_CGame_loadSaveGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode, char * chapter_name)
+; __cdecl void __cdecl core_game_cpp_CGame_loadSaveGame_FUN_004e12b0 (CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

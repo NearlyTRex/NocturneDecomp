@@ -2,7 +2,7 @@
 // Address: 0060e2e5
 // Address Range: [[0060e2e5, 0060e338]]
 // Convention: __cdecl
-// Signature: double crt_math.c_report_math_error_FUN_0060e2e5(MathErrorContext * errorCtx)
+// Signature: double __cdecl crt_math_c_report_math_error_FUN_0060e2e5(MathErrorContext *errorCtx)
 
 #include "nocturne.h"
 

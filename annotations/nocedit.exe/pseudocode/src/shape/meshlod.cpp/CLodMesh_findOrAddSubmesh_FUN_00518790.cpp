@@ -2,7 +2,7 @@
 // Address: 00518790
 // Address Range: [[00518790, 00518863]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh *this_ptr,char *texture_filename)
 
 #include "nocturne.h"
 

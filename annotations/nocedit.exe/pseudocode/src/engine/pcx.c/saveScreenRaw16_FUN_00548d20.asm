@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_pcx.c_saveScreenRaw16_FUN_00548d20(char * filename)
+; __cdecl void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

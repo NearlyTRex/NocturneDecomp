@@ -2,7 +2,7 @@
 // Address: 0049ad80
 // Address Range: [[0049ad80, 0049b17c]]
 // Convention: __cdecl
-// Signature: void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
+// Signature: void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80 (CDemonTriangle *triangle,SIntersectXZCylinder *cylinder)
 
 #include "nocturne.h"
 

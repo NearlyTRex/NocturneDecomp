@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_crossbow.cpp_CCrossbow_getActorType_FUN_00448c60(CCrossbow * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_crossbow_cpp_CCrossbow_getActorType_FUN_00448c60(CCrossbow *this_ptr)
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr

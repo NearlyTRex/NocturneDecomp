@@ -2,7 +2,7 @@
 // Address: 005014a0
 // Address Range: [[005014a0, 005014fb]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory * this_ptr, uint key_mask)
+// Signature: void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory *this_ptr,uint key_mask)
 
 #include "nocturne.h"
 

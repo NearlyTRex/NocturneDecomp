@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMemHead * shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void * user_ptr)
+; __cdecl SMemHead * __cdecl shape_memdbg_cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void *user_ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   user_ptr

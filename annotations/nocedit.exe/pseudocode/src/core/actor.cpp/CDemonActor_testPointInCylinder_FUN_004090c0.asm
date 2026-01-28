@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance)
+; __cdecl int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0 (CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

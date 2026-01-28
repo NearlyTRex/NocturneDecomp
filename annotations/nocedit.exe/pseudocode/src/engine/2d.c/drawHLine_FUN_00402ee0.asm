@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
+; __cdecl void __cdecl engine_2d_c_drawHLine_FUN_00402ee0(int x1,int y,int x2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x1

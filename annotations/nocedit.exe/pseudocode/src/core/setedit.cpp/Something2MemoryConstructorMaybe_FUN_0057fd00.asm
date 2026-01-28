@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00()
+; unknown void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x50]:1  local_50

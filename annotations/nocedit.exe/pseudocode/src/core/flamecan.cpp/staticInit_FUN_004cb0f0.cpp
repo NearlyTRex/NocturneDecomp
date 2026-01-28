@@ -2,7 +2,7 @@
 // Address: 004cb0f0
 // Address Range: [[004cb0f0, 004cb113]]
 // Convention: __cdecl
-// Signature: void core_flamecan.cpp_staticInit_FUN_004cb0f0(void)
+// Signature: void __cdecl core_flamecan_cpp_staticInit_FUN_004cb0f0(void)
 
 #include "nocturne.h"
 

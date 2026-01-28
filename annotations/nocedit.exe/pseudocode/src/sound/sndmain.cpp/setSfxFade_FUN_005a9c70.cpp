@@ -2,7 +2,7 @@
 // Address: 005a9c70
 // Address Range: [[005a9c70, 005a9cbb]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_setSfxFade_FUN_005a9c70(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
+// Signature: int __cdecl sound_sndmain_cpp_setSfxFade_FUN_005a9c70 (uint sfx_handle,float target_volume,float fade_duration,int stop_after_fade)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_dracbrid.cpp_FUN_004858f0()
+; unknown void core_dracbrid_cpp_FUN_004858f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_smiley.cpp_CSmiley_getActorType_FUN_005a2420(CSmiley * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_smiley_cpp_CSmiley_getActorType_FUN_005a2420(CSmiley *this_ptr)
 ;
 ; Parameters:
 ; CSmiley *        Stack[0x4]:4   this_ptr

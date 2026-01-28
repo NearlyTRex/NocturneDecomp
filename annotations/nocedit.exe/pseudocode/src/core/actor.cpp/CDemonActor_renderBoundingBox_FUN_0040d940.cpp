@@ -2,7 +2,7 @@
 // Address: 0040d940
 // Address Range: [[0040d940, 0040deba]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor * this_ptr, uint32_t color)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
 
 #include "nocturne.h"
 

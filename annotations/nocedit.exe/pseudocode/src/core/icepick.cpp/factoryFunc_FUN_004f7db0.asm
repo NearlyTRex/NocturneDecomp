@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CIcePick * core_icepick.cpp_factoryFunc_FUN_004f7db0(void)
+; __cdecl CIcePick * __cdecl core_icepick_cpp_factoryFunc_FUN_004f7db0(void)
 ;
 ;
 ; XREF[1]:

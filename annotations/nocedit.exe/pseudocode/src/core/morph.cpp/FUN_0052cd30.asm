@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_morph.cpp_FUN_0052cd30()
+; unknown void core_morph_cpp_FUN_0052cd30(void)
 ;
 ;
 ; Called Functions:

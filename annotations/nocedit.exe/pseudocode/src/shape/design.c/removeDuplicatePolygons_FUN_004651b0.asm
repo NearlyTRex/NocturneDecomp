@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_removeDuplicatePolygons_FUN_004651b0(int respect_part_assignments)
+; __cdecl void __cdecl shape_design_c_removeDuplicatePolygons_FUN_004651b0(int respect_part_assignments)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   respect_part_assignments

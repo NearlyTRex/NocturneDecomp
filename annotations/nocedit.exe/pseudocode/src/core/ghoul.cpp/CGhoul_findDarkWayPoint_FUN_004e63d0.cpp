@@ -2,7 +2,7 @@
 // Address: 004e63d0
 // Address Range: [[004e63d0, 004e6413]]
 // Convention: unknown
-// Signature: undefined core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0()
+// Signature: void core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
 
 #include "nocturne.h"
 

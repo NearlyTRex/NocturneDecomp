@@ -2,7 +2,7 @@
 // Address: 005251f0
 // Address Range: [[005251f0, 005251f5]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_mobster.cpp_CMobster_getActorType_FUN_005251f0(CMobster * this_ptr)
+// Signature: CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_005251f0(CMobster *this_ptr)
 
 #include "nocturne.h"
 

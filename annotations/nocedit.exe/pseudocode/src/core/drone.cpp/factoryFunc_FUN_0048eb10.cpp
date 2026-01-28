@@ -2,7 +2,7 @@
 // Address: 0048eb10
 // Address Range: [[0048eb10, 0048eb32]]
 // Convention: __cdecl
-// Signature: CDrone * core_drone.cpp_factoryFunc_FUN_0048eb10(void)
+// Signature: CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_0048eb10(void)
 
 #include "nocturne.h"
 

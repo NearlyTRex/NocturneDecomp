@@ -2,7 +2,7 @@
 // Address: 004bcea0
 // Address Range: [[004bcea0, 004bcea4]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770(void)
+// Signature: int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770(void)
 
 #include "nocturne.h"
 

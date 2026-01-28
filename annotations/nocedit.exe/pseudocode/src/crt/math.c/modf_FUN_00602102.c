@@ -2,7 +2,7 @@
 // Address: 00602102
 // Address Range: [[00602102, 00602121]]
 // Convention: __softfp_double
-// Signature: double crt_math.c_modf_FUN_00602102(double value, double * integer_part)
+// Signature: double __softfp_double crt_math_c_modf_FUN_00602102(double value,double *integer_part)
 
 #include "nocturne.h"
 

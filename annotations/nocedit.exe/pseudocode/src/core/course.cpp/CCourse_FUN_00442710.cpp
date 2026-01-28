@@ -2,7 +2,7 @@
 // Address: 00442710
 // Address Range: [[00442710, 00442794]]
 // Convention: __cdecl
-// Signature: void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
+// Signature: void __cdecl core_course_cpp_CCourse_FUN_00442710(CCourse *this_ptr)
 
 #include "nocturne.h"
 

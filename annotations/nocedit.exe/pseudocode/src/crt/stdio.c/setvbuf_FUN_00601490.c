@@ -2,7 +2,7 @@
 // Address: 00601490
 // Address Range: [[00601490, 0060153d]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
+// Signature: int __cdecl crt_stdio_c_setvbuf_FUN_00601490 (FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
 
 #include "nocturne.h"
 

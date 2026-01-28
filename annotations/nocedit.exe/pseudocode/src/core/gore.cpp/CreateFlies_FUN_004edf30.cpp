@@ -2,7 +2,7 @@
 // Address: 004edf30
 // Address Range: [[004edf30, 004ee021]]
 // Convention: unknown
-// Signature: undefined core_gore.cpp_CreateFlies_FUN_004edf30()
+// Signature: CFlies * core_gore_cpp_CreateFlies_FUN_004edf30(void)
 
 #include "nocturne.h"
 

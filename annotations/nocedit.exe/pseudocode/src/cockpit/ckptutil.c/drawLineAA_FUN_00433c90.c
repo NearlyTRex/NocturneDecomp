@@ -2,7 +2,7 @@
 // Address: 00433c90
 // Address Range: [[00433c90, 00433f41]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_drawLineAA_FUN_00433c90(int x0, int y0, int x1, int y1, int color)
+// Signature: void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00433c90(int x0,int y0,int x1,int y1,int color)
 
 #include "nocturne.h"
 

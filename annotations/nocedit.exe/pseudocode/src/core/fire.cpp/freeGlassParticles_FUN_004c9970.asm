@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeGlassParticles_FUN_004c9970(CGlassParticle * * array)
+; __cdecl void __cdecl core_fire_cpp_freeGlassParticles_FUN_004c9970(CGlassParticle **array)
 ;
 ; Parameters:
 ; CGlassParticle * * Stack[0x4]:4   array

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_hpriest.cpp_staticInit_FUN_004f7b00(void)
+; __cdecl void __cdecl core_hpriest_cpp_staticInit_FUN_004f7b00(void)
 ;
 ;
 ; Referenced Globals:

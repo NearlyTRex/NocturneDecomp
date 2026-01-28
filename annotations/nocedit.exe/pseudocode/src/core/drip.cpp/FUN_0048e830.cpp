@@ -2,7 +2,7 @@
 // Address: 0048e830
 // Address Range: [[0048e830, 0048e8cb]]
 // Convention: unknown
-// Signature: undefined core_drip.cpp_FUN_0048e830()
+// Signature: void core_drip_cpp_FUN_0048e830(void)
 
 #include "nocturne.h"
 

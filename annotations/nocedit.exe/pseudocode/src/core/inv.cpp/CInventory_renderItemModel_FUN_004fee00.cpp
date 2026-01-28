@@ -2,7 +2,7 @@
 // Address: 004fee00
 // Address Range: [[004fee00, 004ff183] [004ff1ba, 004ff201]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_renderItemModel_FUN_004fee00(CInventory * this_ptr, CDemonActor * item, int viewport_x, int viewport_y, int viewport_size, int rotation_y, int alpha)
+// Signature: void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00 (CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size, int rotation_y,int alpha)
 
 #include "nocturne.h"
 

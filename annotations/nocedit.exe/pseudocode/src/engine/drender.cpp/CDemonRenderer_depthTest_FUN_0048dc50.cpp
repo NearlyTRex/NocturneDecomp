@@ -2,7 +2,7 @@
 // Address: 0048dc50
 // Address Range: [[0048dc50, 0048dcbd]]
 // Convention: __cdecl
-// Signature: int engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRenderer * this_ptr, SRenderVertex * vertex_ptr)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50 (CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr)
 
 #include "nocturne.h"
 

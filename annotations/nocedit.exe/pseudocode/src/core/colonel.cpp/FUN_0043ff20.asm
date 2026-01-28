@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_colonel.cpp_FUN_0043ff20()
+; unknown void core_colonel_cpp_FUN_0043ff20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xac]:4  local_ac

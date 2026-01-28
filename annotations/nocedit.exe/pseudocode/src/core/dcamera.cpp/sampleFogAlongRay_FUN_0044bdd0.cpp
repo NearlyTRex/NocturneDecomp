@@ -2,7 +2,7 @@
 // Address: 0044bdd0
 // Address Range: [[0044bdd0, 0044bfa2]]
 // Convention: __cdecl
-// Signature: uint core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
+// Signature: uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0 (SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length)
 
 #include "nocturne.h"
 

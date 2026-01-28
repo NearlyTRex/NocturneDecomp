@@ -2,7 +2,7 @@
 // Address: 004050c0
 // Address Range: [[004050c0, 00405164]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture * anim_texture)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)
 
 #include "nocturne.h"
 

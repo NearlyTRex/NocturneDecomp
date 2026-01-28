@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(CMoon * this_ptr)
+; __cdecl int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(CMoon *this_ptr)
 ;
 ; Parameters:
 ; CMoon *          Stack[0x4]:4   this_ptr

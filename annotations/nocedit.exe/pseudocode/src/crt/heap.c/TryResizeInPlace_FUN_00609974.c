@@ -2,7 +2,7 @@
 // Address: 00609974
 // Address Range: [[00609974, 006099bd]]
 // Convention: __cdecl
-// Signature: void * crt_heap.c_TryResizeInPlace_FUN_00609974(void * ptr, ulong new_size)
+// Signature: void * __cdecl crt_heap_c_TryResizeInPlace_FUN_00609974(void *ptr,ulong new_size)
 
 #include "nocturne.h"
 

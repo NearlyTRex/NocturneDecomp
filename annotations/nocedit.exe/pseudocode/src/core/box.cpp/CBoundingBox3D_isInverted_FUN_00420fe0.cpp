@@ -2,7 +2,7 @@
 // Address: 00420fe0
 // Address Range: [[00420fe0, 0042100c]]
 // Convention: __cdecl
-// Signature: int core_box.cpp_CBoundingBox3D_isInverted_FUN_00420fe0(CBoundingBox3D * this_ptr)
+// Signature: int __cdecl core_box_cpp_CBoundingBox3D_isInverted_FUN_00420fe0(CBoundingBox3D *this_ptr)
 
 #include "nocturne.h"
 

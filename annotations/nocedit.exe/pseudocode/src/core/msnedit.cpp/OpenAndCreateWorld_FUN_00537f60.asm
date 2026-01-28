@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60()
+; unknown void core_msnedit_cpp_OpenAndCreateWorld_FUN_00537f60(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x420]:1  local_420

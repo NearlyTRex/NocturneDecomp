@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi CVector3f * core_mirror.cpp_transformMirrorVertex_FUN_005229b0(SMirrorReflection * reflection, CVector3f * input_vertex, CVector3f * output_vertex)
+; __stack2_esi CVector3f * __stack2_esi core_mirror_cpp_transformMirrorVertex_FUN_005229b0 (SMirrorReflection *reflection,CVector3f *input_vertex,CVector3f *output_vertex)
 ;
 ; Parameters:
 ; SMirrorReflection * Stack[0x4]:4   reflection

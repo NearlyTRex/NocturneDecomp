@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_door.cpp_CDoor_processInEditor_FUN_00481590(CDoor * this_ptr)
+; __cdecl void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr

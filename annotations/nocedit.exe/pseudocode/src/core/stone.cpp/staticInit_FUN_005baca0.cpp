@@ -2,7 +2,7 @@
 // Address: 005baca0
 // Address Range: [[005baca0, 005bacc3]]
 // Convention: __cdecl
-// Signature: void core_stone.cpp_staticInit_FUN_005baca0(void)
+// Signature: void __cdecl core_stone_cpp_staticInit_FUN_005baca0(void)
 
 #include "nocturne.h"
 

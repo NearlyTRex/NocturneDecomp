@@ -2,7 +2,7 @@
 // Address: 005ff384
 // Address Range: [[005ff384, 005ff42e]]
 // Convention: __cdecl
-// Signature: ostrstream * crt_strstream.cpp_ostrstream_ctor_FUN_005ff384(ostrstream * this_ptr, int flags, char * buffer, int buffer_size, int mode)
+// Signature: ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_005ff384 (ostrstream *this_ptr,int flags,char *buffer,int buffer_size,int mode)
 
 #include "nocturne.h"
 

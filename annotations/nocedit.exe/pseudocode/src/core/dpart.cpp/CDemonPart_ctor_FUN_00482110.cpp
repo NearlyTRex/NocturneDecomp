@@ -2,7 +2,7 @@
 // Address: 00482110
 // Address Range: [[00482110, 00482152]]
 // Convention: __cdecl
-// Signature: CDemonPart * core_dpart.cpp_CDemonPart_ctor_FUN_00482110(CDemonPart * this_ptr)
+// Signature: CDemonPart * __cdecl core_dpart_cpp_CDemonPart_ctor_FUN_00482110(CDemonPart *this_ptr)
 
 #include "nocturne.h"
 

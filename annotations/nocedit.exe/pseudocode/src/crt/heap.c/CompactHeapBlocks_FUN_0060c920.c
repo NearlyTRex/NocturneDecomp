@@ -2,7 +2,7 @@
 // Address: 0060c920
 // Address Range: [[0060c920, 0060c95b]]
 // Convention: __cdecl
-// Signature: void crt_heap.c_CompactHeapBlocks_FUN_0060c920(void)
+// Signature: void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void)
 
 #include "nocturne.h"
 

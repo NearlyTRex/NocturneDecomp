@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFilmReel * core_filmreel.cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel * this_ptr)
+; __cdecl CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel *this_ptr)
 ;
 ; Parameters:
 ; CFilmReel *      Stack[0x4]:4   this_ptr

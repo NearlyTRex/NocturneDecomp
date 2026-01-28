@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
+; __cdecl void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80 (CDemonTriangle *triangle,SIntersectXZCylinder *cylinder)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   triangle

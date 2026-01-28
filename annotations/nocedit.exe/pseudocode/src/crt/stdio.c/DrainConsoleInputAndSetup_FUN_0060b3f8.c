@@ -2,7 +2,7 @@
 // Address: 0060b3f8
 // Address Range: [[0060b3f8, 0060b480]]
 // Convention: unknown
-// Signature: undefined crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8()
+// Signature: int crt_stdio_c_DrainConsoleInputAndSetup_FUN_0060b3f8(void)
 
 #include "nocturne.h"
 

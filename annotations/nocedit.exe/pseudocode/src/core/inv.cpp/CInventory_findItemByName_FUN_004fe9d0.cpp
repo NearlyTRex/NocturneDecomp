@@ -2,7 +2,7 @@
 // Address: 004fe9d0
 // Address Range: [[004fe9d0, 004fea11]]
 // Convention: __cdecl
-// Signature: CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0(CInventory * this_ptr, char * item_name)
+// Signature: CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0(CInventory *this_ptr,char *item_name)
 
 #include "nocturne.h"
 

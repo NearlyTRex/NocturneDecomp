@@ -2,7 +2,7 @@
 // Address: 005f5100
 // Address Range: [[005f5100, 005f5157]]
 // Convention: __cdecl
-// Signature: void core_xform.cpp_setIdentityMatrix3x4_FUN_005f5100(CMatrix3x4f * matrix)
+// Signature: void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(CMatrix3x4f *matrix)
 
 #include "nocturne.h"
 

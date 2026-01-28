@@ -2,7 +2,7 @@
 // Address: 00605f20
 // Address Range: [[00605f20, 00605fac]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_stream_setup_FUN_00605f20(FILE * stream, int operation_type)
+// Signature: int __watcallStack crt_stdio_c_stream_setup_FUN_00605f20(FILE *stream,int operation_type)
 
 #include "nocturne.h"
 

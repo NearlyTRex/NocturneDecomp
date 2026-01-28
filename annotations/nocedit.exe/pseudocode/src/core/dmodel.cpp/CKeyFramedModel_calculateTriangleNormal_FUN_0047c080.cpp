@@ -2,7 +2,7 @@
 // Address: 0047c080
 // Address Range: [[0047c080, 0047c213]]
 // Convention: __cdecl
-// Signature: CVector3f * core_dmodel.cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080(CKeyFramedModel * this_ptr, CVector3f * output_normal, int frame_index, int poly_index)
+// Signature: CVector3f * __cdecl core_dmodel_cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080 (CKeyFramedModel *this_ptr,CVector3f *output_normal,int frame_index,int poly_index)
 
 #include "nocturne.h"
 

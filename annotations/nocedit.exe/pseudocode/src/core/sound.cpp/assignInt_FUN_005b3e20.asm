@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int * core_sound.cpp_assignInt_FUN_005b3e20(int * dest_ptr, int * src_ptr)
+; __cdecl int * __cdecl core_sound_cpp_assignInt_FUN_005b3e20(int *dest_ptr,int *src_ptr)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   dest_ptr

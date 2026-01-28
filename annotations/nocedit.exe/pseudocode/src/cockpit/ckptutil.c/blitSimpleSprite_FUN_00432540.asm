@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540(void * sprite_data, int dest_x, int dest_y, int width, int height)
+; __cdecl void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540 (void *sprite_data,int dest_x,int dest_y,int width,int height)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   sprite_data

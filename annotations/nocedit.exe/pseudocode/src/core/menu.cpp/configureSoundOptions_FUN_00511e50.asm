@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_configureSoundOptions_FUN_00511e50(void)
+; __cdecl void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xa50]:4  local_a50

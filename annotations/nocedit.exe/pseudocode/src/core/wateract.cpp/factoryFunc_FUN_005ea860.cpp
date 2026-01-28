@@ -2,7 +2,7 @@
 // Address: 005ea860
 // Address Range: [[005ea860, 005ea882]]
 // Convention: __cdecl
-// Signature: CWaterActor * core_wateract.cpp_factoryFunc_FUN_005ea860(void)
+// Signature: CWaterActor * __cdecl core_wateract_cpp_factoryFunc_FUN_005ea860(void)
 
 #include "nocturne.h"
 

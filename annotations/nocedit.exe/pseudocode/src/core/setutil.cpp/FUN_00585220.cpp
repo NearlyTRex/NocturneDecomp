@@ -2,7 +2,7 @@
 // Address: 00585220
 // Address Range: [[00585220, 00585239]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_FUN_00585220(void)
+// Signature: void __cdecl core_setutil_cpp_FUN_00585220(void)
 
 #include "nocturne.h"
 

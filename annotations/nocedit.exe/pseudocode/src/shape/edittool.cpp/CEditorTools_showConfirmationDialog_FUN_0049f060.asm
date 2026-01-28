@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string, ...)
+; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 (CEditorTools *this_ptr,char *format_string,...)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

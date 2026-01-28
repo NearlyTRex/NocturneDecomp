@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_setTextWrapEnabled_FUN_00402800(int enabled)
+; __cdecl void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402800(int enabled)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   enabled

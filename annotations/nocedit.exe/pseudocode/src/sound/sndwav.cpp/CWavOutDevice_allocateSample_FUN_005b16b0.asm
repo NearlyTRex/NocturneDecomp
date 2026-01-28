@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndwav.cpp_CWavOutDevice_allocateSample_FUN_005b16b0(CWavOutDevice * this_ptr, int bits_per_sample, int channel_count, int sample_rate, int sample_count)
+; __cdecl int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSample_FUN_005b16b0 (CWavOutDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate, int sample_count)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_battery.cpp_FUN_00417e80()
+; unknown CDemonActorType * core_battery_cpp_FUN_00417e80(void)
 ;
 ;
 ; Referenced Globals:

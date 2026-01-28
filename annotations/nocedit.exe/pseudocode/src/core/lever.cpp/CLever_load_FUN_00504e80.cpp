@@ -2,7 +2,7 @@
 // Address: 00504e80
 // Address Range: [[00504e80, 0050505a]]
 // Convention: unknown
-// Signature: undefined core_lever.cpp_CLever_load_FUN_00504e80()
+// Signature: void core_lever_cpp_CLever_load_FUN_00504e80(void)
 
 #include "nocturne.h"
 

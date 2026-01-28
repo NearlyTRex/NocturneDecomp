@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_manpuz.cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0(CMirrorHack * this_ptr, SSurfaceInfo * surface_info)
+; __cdecl void __cdecl core_manpuz_cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0 (CMirrorHack *this_ptr,SSurfaceInfo *surface_info)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

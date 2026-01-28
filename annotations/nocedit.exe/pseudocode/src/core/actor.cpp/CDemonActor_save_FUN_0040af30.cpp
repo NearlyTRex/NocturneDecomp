@@ -2,7 +2,7 @@
 // Address: 0040af30
 // Address Range: [[0040af30, 0040b041]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

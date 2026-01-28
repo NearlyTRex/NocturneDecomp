@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winvideo.cpp_closeMovie_FUN_005f46b0(HWND window_handle)
+; __cdecl void __cdecl wincore_winvideo_cpp_closeMovie_FUN_005f46b0(HWND window_handle)
 ;
 ; Parameters:
 ; HWND             Stack[0x4]:4   window_handle

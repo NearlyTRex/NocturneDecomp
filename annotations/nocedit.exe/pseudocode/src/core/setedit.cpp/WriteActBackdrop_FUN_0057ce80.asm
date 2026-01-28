@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+; unknown void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2670]:4  local_2670

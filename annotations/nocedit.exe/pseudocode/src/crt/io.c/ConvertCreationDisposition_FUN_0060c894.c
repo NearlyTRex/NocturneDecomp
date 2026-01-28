@@ -2,7 +2,7 @@
 // Address: 0060c894
 // Address Range: [[0060c894, 0060c8f3]]
 // Convention: __cdecl
-// Signature: void crt_io.c_ConvertCreationDisposition_FUN_0060c894(DWORD mode_flags, DWORD * creation_disposition)
+// Signature: void __cdecl crt_io_c_ConvertCreationDisposition_FUN_0060c894(DWORD mode_flags,DWORD *creation_disposition)
 
 #include "nocturne.h"
 

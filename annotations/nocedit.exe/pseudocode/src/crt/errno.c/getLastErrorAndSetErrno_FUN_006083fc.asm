@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc(void)
+; __cdecl DWORD __cdecl crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc(void)
 ;
 ;
 ; XREF[22]:

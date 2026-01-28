@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrip * core_drip.cpp_dtor_FUN_0048ea90(CDrip * this_ptr, uint d1, uint d2)
+; __cdecl CDrip * __cdecl core_drip_cpp_dtor_FUN_0048ea90(CDrip *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr

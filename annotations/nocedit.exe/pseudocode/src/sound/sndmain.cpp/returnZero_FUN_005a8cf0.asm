@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_returnZero_FUN_005a8cf0(void)
+; __cdecl int __cdecl sound_sndmain_cpp_returnZero_FUN_005a8cf0(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 005d32e0
 // Address Range: [[005d32e0, 005d3313]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_findVertexIndex_FUN_005d32e0(CObj * this_ptr, CVert * vertex_ptr)
+// Signature: int __cdecl shape_superopt_cpp_CObj_findVertexIndex_FUN_005d32e0(CObj *this_ptr,CVert *vertex_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_melee.cpp_staticInit_FUN_0050e760(void)
+; __cdecl void __cdecl core_melee_cpp_staticInit_FUN_0050e760(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 0048c1b0
 // Address Range: [[0048c1b0, 0048c1c9]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0(CDemonRenderer * this_ptr, CVector3i * rotation)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0 (CDemonRenderer *this_ptr,CVector3i *rotation)
 
 #include "nocturne.h"
 

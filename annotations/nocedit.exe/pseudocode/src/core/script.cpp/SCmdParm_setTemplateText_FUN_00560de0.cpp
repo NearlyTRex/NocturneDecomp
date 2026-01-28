@@ -2,7 +2,7 @@
 // Address: 00560de0
 // Address Range: [[00560de0, 0056160a]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0()
+// Signature: undefined4 core_script_cpp_SCmdParm_setTemplateText_FUN_00560de0(void)
 
 #include "nocturne.h"
 

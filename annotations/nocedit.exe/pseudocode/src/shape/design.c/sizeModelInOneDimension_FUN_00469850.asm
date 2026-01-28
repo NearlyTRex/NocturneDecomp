@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_sizeModelInOneDimension_FUN_00469850(void)
+; __cdecl void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xfc]:4  local_fc

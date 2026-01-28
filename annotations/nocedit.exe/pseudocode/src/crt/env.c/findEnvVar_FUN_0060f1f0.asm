@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_env.c_findEnvVar_FUN_0060f1f0(char * name, int delete_flag)
+; __cdecl int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   name

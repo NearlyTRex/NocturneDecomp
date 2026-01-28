@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_curtain.cpp_FUN_0044b610()
+; unknown void core_curtain_cpp_FUN_0044b610(void)
 ;
 ;
 ; Referenced Globals:

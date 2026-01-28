@@ -2,7 +2,7 @@
 // Address: 0059fd60
 // Address Range: [[0059fd60, 0059fdce]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60(CDeformableModelInstance * this_ptr, CVector3f * offset_vector)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60 (CDeformableModelInstance *this_ptr,CVector3f *offset_vector)
 
 #include "nocturne.h"
 

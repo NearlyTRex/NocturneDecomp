@@ -2,7 +2,7 @@
 // Address: 004f6120
 // Address Range: [[004f6120, 004f616e]]
 // Convention: unknown
-// Signature: undefined core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120()
+// Signature: void core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
 
 #include "nocturne.h"
 

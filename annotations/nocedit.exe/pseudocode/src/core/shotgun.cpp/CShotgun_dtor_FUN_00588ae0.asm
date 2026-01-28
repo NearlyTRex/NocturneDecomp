@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CShotgun * core_shotgun.cpp_CShotgun_dtor_FUN_00588ae0(CShotgun * this_ptr, uint d1, uint d2)
+; __cdecl CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00588ae0(CShotgun *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CShotgun *       Stack[0x4]:4   this_ptr

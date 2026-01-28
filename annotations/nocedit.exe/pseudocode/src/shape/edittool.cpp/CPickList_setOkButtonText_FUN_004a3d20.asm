@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CPickList_setOkButtonText_FUN_004a3d20(CPickList * this_ptr, char * text)
+; __cdecl void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_004a3d20(CPickList *this_ptr,char *text)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr

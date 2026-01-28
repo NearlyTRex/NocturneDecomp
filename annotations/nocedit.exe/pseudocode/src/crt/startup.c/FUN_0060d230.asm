@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_startup.c_FUN_0060d230(UINT cp)
+; __cdecl int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
 ;
 ; Parameters:
 ; UINT             Stack[0x4]:4   cp

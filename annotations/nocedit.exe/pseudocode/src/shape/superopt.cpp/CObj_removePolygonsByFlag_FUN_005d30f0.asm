@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_CObj_removePolygonsByFlag_FUN_005d30f0(CObj * this_ptr, uint flag_mask)
+; __cdecl int __cdecl shape_superopt_cpp_CObj_removePolygonsByFlag_FUN_005d30f0(CObj *this_ptr,uint flag_mask)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00457fd0
 // Address Range: [[00457fd0, 00458093]]
 // Convention: __cdecl
-// Signature: void shape_design.c_writeBinaryTreeNode_FUN_00457fd0(STreeNode * node, FILE * file, int depth)
+// Signature: void __cdecl shape_design_c_writeBinaryTreeNode_FUN_00457fd0(STreeNode *node,FILE *file,int depth)
 
 #include "nocturne.h"
 

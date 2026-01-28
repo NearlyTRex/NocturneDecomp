@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_sync.c_CriticalSectionStub_FUN_00602434(void)
+; __cdecl void __cdecl crt_sync_c_CriticalSectionStub_FUN_00602434(void)
 ;
 ;
 ; XREF[47]:

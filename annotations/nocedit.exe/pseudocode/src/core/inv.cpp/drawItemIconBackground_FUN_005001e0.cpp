@@ -2,7 +2,7 @@
 // Address: 005001e0
 // Address Range: [[005001e0, 00500364]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_drawItemIconBackground_FUN_005001e0(int x1, int y1, int x2, int y2, int alpha)
+// Signature: void __cdecl core_inv_cpp_drawItemIconBackground_FUN_005001e0(int x1,int y1,int x2,int y2,int alpha)
 
 #include "nocturne.h"
 

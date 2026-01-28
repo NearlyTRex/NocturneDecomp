@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380 (CEditorTools *this_ptr,int use_clipping)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

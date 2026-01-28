@@ -2,7 +2,7 @@
 // Address: 00505430
 // Address Range: [[00505430, 0050547d]]
 // Convention: __cdecl
-// Signature: CLever * core_lever.cpp_CLever_dtor_FUN_00505430(CLever * this_ptr, uint d1, uint d2)
+// Signature: CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_00505430(CLever *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

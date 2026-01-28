@@ -2,7 +2,7 @@
 // Address: 0058ec60
 // Address Range: [[0058ec60, 0058edd7]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformableModel * this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

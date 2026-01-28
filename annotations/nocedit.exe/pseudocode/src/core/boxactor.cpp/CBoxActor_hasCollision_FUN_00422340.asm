@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_boxactor.cpp_CBoxActor_hasCollision_FUN_00422340(CBoxActor * this_ptr, SCollisionInfo * collision_info)
+; __cdecl int __cdecl core_boxactor_cpp_CBoxActor_hasCollision_FUN_00422340 (CBoxActor *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00607820
 // Address Range: [[00607820, 00607857]]
 // Convention: __cdecl
-// Signature: int crt_time.c_is_leap_year_FUN_00607820(int year)
+// Signature: int __cdecl crt_time_c_is_leap_year_FUN_00607820(int year)
 
 #include "nocturne.h"
 

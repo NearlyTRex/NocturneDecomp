@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_model.c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended * header)
+; __cdecl int __cdecl engine_model_c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended *header)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   header

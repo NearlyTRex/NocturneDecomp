@@ -2,7 +2,7 @@
 // Address: 00418fd0
 // Address Range: [[00418fd0, 00418ff2]]
 // Convention: __cdecl
-// Signature: CBodyPart * core_bodypart.cpp_factoryFunc_FUN_00418fd0(void)
+// Signature: CBodyPart * __cdecl core_bodypart_cpp_factoryFunc_FUN_00418fd0(void)
 
 #include "nocturne.h"
 

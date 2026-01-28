@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_frankgen.cpp_LoadModel_FUN_004d2190()
+; unknown void core_frankgen_cpp_LoadModel_FUN_004d2190(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x38]:1  local_38

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
+; unknown void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x98]:4  local_98

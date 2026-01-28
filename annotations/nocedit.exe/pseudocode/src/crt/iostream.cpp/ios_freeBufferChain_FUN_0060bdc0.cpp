@@ -2,7 +2,7 @@
 // Address: 0060bdc0
 // Address Range: [[0060bdc0, 0060bddc]]
 // Convention: __cdecl
-// Signature: void crt_iostream.cpp_ios_freeBufferChain_FUN_0060bdc0(ios * stream_ptr)
+// Signature: void __cdecl crt_iostream_cpp_ios_freeBufferChain_FUN_0060bdc0(ios *stream_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004d6140
 // Address Range: [[004d6140, 004d6198] [004d619e, 004d6223]]
 // Convention: __cdecl
-// Signature: int core_gabriela.cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella * this_ptr)
+// Signature: int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *this_ptr)
 
 #include "nocturne.h"
 

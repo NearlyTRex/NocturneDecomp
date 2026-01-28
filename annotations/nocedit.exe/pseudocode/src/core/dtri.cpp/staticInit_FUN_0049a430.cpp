@@ -2,7 +2,7 @@
 // Address: 0049a430
 // Address Range: [[0049a430, 0049a4d0]]
 // Convention: __cdecl
-// Signature: void core_dtri.cpp_staticInit_FUN_0049a430(void)
+// Signature: void __cdecl core_dtri_cpp_staticInit_FUN_0049a430(void)
 
 #include "nocturne.h"
 

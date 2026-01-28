@@ -2,7 +2,7 @@
 // Address: 00520ba0
 // Address Range: [[00520ba0, 00520d07]]
 // Convention: unknown
-// Signature: undefined core_mimic.cpp_CMimic_processMorph_FUN_00520ba0()
+// Signature: void core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
 
 #include "nocturne.h"
 

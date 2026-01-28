@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_elephant.cpp_CElephantGun_FUN_004a7070(CElephantGun * this_ptr, float delta_time)
+; __cdecl void __cdecl core_elephant_cpp_CElephantGun_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CElephantGun *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stranger.cpp_CStranger_FUN_005c51c0()
+; unknown CVector3f * core_stranger_cpp_CStranger_FUN_005c51c0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x48]:1  local_48

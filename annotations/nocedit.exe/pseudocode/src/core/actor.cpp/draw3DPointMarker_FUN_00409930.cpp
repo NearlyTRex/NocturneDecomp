@@ -2,7 +2,7 @@
 // Address: 00409930
 // Address Range: [[00409930, 00409b81]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_draw3DPointMarker_FUN_00409930(CVector3f * world_position, int marker_color)
+// Signature: void __cdecl core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_position,int marker_color)
 
 #include "nocturne.h"
 

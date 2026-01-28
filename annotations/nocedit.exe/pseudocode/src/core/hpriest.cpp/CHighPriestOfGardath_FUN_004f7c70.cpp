@@ -2,7 +2,7 @@
 // Address: 004f7c70
 // Address Range: [[004f7c70, 004f7ca0]]
 // Convention: unknown
-// Signature: undefined core_hpriest.cpp_CHighPriestOfGardath_FUN_004f7c70()
+// Signature: void core_hpriest_cpp_CHighPriestOfGardath_FUN_004f7c70(void)
 
 #include "nocturne.h"
 

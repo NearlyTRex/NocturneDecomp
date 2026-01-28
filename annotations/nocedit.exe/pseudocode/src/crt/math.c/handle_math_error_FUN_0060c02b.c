@@ -2,7 +2,7 @@
 // Address: 0060c02b
 // Address Range: [[0060c02b, 0060c0ba]]
 // Convention: __mathinternal
-// Signature: double crt_math.c_handle_math_error_FUN_0060c02b(void)
+// Signature: double __mathinternal crt_math_c_handle_math_error_FUN_0060c02b(void)
 
 #include "nocturne.h"
 

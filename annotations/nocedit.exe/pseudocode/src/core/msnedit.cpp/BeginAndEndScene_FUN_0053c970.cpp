@@ -2,7 +2,7 @@
 // Address: 0053c970
 // Address Range: [[0053c970, 0053c9f9]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
+// Signature: void core_msnedit_cpp_BeginAndEndScene_FUN_0053c970(void)
 
 #include "nocturne.h"
 

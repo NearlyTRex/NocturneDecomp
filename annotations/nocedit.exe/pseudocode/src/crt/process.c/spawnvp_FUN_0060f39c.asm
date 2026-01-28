@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv)
+; __cdecl int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **argv)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mode

@@ -2,7 +2,7 @@
 // Address: 004111b0
 // Address Range: [[004111b0, 004111be]]
 // Convention: unknown
-// Signature: undefined core_ammo.cpp_CAmmo_FUN_004111b0()
+// Signature: void core_ammo_cpp_CAmmo_FUN_004111b0(void)
 
 #include "nocturne.h"
 

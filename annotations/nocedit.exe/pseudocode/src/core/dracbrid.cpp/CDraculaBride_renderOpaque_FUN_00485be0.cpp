@@ -2,7 +2,7 @@
 // Address: 00485be0
 // Address Range: [[00485be0, 00485dc0]]
 // Convention: __cdecl
-// Signature: int core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBride * this_ptr)
+// Signature: int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBride *this_ptr)
 
 #include "nocturne.h"
 

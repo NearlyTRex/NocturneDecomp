@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void support_newmsg.cpp_freeBitmap_FUN_00544730(CAlphaBitmap * * objs)
+; __cdecl void __cdecl support_newmsg_cpp_freeBitmap_FUN_00544730(CAlphaBitmap **objs)
 ;
 ; Parameters:
 ; CAlphaBitmap * * Stack[0x4]:4   objs

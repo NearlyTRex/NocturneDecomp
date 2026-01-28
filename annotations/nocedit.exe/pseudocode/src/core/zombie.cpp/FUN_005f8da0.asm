@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_zombie.cpp_FUN_005f8da0()
+; unknown CVector3f * core_zombie_cpp_FUN_005f8da0(void)
 ;
 ;
 ; Referenced Globals:

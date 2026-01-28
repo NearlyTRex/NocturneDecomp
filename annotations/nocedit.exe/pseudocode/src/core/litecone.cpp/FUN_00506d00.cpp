@@ -2,7 +2,7 @@
 // Address: 00506d00
 // Address Range: [[00506d00, 00506d80]]
 // Convention: unknown
-// Signature: undefined core_litecone.cpp_FUN_00506d00()
+// Signature: void core_litecone_cpp_FUN_00506d00(void)
 
 #include "nocturne.h"
 

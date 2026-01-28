@@ -2,7 +2,7 @@
 // Address: 00453640
 // Address Range: [[00453640, 004536fe]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640(CDemonCamera * this_ptr, SFog * fog_config)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00453640(CDemonCamera *this_ptr,SFog *fog_config)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hero.cpp_FUN_004f3120()
+; unknown undefined4 core_hero_cpp_FUN_004f3120(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x80]:1  local_80

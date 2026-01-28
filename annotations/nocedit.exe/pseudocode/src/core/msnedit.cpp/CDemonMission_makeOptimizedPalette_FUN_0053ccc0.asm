@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0()
+; unknown void core_msnedit_cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0(void)
 ;
 ;
 ; Referenced Globals:

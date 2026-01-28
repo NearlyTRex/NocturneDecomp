@@ -2,7 +2,7 @@
 // Address: 00402860
 // Address Range: [[00402860, 00402860]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_doNothing_FUN_00402860(void)
+// Signature: void __cdecl engine_2d_c_doNothing_FUN_00402860(void)
 
 #include "nocturne.h"
 

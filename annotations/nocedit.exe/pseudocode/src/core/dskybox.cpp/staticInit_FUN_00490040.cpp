@@ -2,7 +2,7 @@
 // Address: 00490040
 // Address Range: [[00490040, 00490061]]
 // Convention: __cdecl
-// Signature: void core_dskybox.cpp_staticInit_FUN_00490040(void)
+// Signature: void __cdecl core_dskybox_cpp_staticInit_FUN_00490040(void)
 
 #include "nocturne.h"
 

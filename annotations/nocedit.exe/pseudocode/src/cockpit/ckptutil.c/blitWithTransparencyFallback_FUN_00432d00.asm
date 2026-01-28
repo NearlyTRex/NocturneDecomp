@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00(void * src_data, int width, int height, void * background_base, int dest_x, int dest_y)
+; __cdecl void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00432d00 (void *src_data,int width,int height,void *background_base,int dest_x,int dest_y)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   src_data

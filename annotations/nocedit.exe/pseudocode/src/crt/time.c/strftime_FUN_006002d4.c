@@ -2,7 +2,7 @@
 // Address: 006002d4
 // Address Range: [[006002d4, 00600762]]
 // Convention: __cdecl
-// Signature: uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, tm * time_ptr)
+// Signature: uint __cdecl crt_time_c_strftime_FUN_006002d4 (char *dest_buffer,uint buffer_size,char *format_string,tm *time_ptr)
 
 #include "nocturne.h"
 

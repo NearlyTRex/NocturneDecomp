@@ -2,7 +2,7 @@
 // Address: 0042a390
 // Address Range: [[0042a390, 0042a3e2]]
 // Convention: __cdecl
-// Signature: void core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter * this_ptr, int layer_flag)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter *this_ptr,int layer_flag)
 
 #include "nocturne.h"
 

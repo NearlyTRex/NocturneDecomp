@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlameThrower * core_flamegun.cpp_factoryFunc_FUN_004cb840(void)
+; __cdecl CFlameThrower * __cdecl core_flamegun_cpp_factoryFunc_FUN_004cb840(void)
 ;
 ;
 ; XREF[1]:

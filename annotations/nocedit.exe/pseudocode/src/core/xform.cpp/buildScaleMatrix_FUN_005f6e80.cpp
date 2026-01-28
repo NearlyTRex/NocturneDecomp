@@ -2,7 +2,7 @@
 // Address: 005f6e80
 // Address Range: [[005f6e80, 005f6ed6]]
 // Convention: __stack_esi
-// Signature: CMatrix3x4f * core_xform.cpp_buildScaleMatrix_FUN_005f6e80(CVector3f * scale_vector, CMatrix3x4f * matrix_out)
+// Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildScaleMatrix_FUN_005f6e80(CVector3f *scale_vector,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 

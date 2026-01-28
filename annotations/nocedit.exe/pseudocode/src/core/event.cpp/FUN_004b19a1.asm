@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_event.cpp_FUN_004b19a1()
+; unknown undefined4 * core_event_cpp_FUN_004b19a1 (undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4, undefined4 *param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

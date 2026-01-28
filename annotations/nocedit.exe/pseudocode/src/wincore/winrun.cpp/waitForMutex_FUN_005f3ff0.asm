@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_winrun.cpp_waitForMutex_FUN_005f3ff0(HANDLE mutex_handle)
+; __cdecl int __cdecl wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(HANDLE mutex_handle)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   mutex_handle

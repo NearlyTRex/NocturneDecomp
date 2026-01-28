@@ -2,7 +2,7 @@
 // Address: 004efd30
 // Address Range: [[004efd30, 004effaf]]
 // Convention: __cdecl
-// Signature: int core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround * this_ptr, int world_x, int world_z)
+// Signature: int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround *this_ptr,int world_x,int world_z)
 
 #include "nocturne.h"
 

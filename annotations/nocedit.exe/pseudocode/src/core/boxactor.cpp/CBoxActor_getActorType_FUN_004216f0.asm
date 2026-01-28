@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_boxactor.cpp_CBoxActor_getActorType_FUN_004216f0(void)
+; __cdecl CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(void)
 ;
 ;
 ; Referenced Globals:

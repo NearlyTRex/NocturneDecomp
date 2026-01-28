@@ -2,7 +2,7 @@
 // Address: 00409270
 // Address Range: [[00409270, 004093ee]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor * this_ptr, CBoundingBox3D * output_bbox, SCollisionInfo * collision_info, int bounding_box_type)
+// Signature: CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 (CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info, int bounding_box_type)
 
 #include "nocturne.h"
 

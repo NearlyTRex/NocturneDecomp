@@ -2,7 +2,7 @@
 // Address: 005ac220
 // Address Range: [[005ac220, 005ac3fa]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_writeIni_FUN_005ac220(CIniFile * ini_file)
+// Signature: void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file)
 
 #include "nocturne.h"
 

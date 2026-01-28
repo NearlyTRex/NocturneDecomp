@@ -2,7 +2,7 @@
 // Address: 00416510
 // Address Range: [[00416510, 004167e1]]
 // Convention: __cdecl
-// Signature: void core_batman.cpp_CBatman_FUN_00416510(CBatman * this_ptr)
+// Signature: void __cdecl core_batman_cpp_CBatman_FUN_00416510(CBatman *this_ptr)
 
 #include "nocturne.h"
 

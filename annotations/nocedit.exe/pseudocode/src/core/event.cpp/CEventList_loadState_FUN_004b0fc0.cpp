@@ -2,7 +2,7 @@
 // Address: 004b0fc0
 // Address Range: [[004b0fc0, 004b1377]]
 // Convention: __cdecl
-// Signature: int core_event.cpp_CEventList_loadState_FUN_004b0fc0(CEventList * this_ptr)
+// Signature: int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr)
 
 #include "nocturne.h"
 

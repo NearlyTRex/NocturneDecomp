@@ -2,7 +2,7 @@
 // Address: 0060be80
 // Address Range: [[0060be80, 0060bef9]]
 // Convention: __cdecl
-// Signature: void crt_fpemu.c_staticInit_FUN_0060be80(void)
+// Signature: void __cdecl crt_fpemu_c_staticInit_FUN_0060be80(void)
 
 #include "nocturne.h"
 

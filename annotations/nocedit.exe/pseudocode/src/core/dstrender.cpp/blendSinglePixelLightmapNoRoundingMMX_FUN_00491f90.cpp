@@ -2,7 +2,7 @@
 // Address: 00491f90
 // Address Range: [[00491f90, 00492000]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90(uint * output_pixel, uint * texture_pixel, byte * texture_index, byte * lightmap_index)
+// Signature: void __cdecl core_dstrender_cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90 (uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 
 #include "nocturne.h"
 

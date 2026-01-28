@@ -2,7 +2,7 @@
 // Address: 005a97e0
 // Address Range: [[005a97e0, 005a981b]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle, CSfxOptions * output_options)
+// Signature: int __cdecl sound_sndmain_cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle,CSfxOptions *output_options)
 
 #include "nocturne.h"
 

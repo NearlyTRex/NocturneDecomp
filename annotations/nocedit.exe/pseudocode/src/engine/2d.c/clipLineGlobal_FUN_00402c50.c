@@ -2,7 +2,7 @@
 // Address: 00402c50
 // Address Range: [[00402c50, 00402c90]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_clipLineGlobal_FUN_00402c50(int x1, int y1, int x2, int y2)
+// Signature: void __cdecl engine_2d_c_clipLineGlobal_FUN_00402c50(int x1,int y1,int x2,int y2)
 
 #include "nocturne.h"
 

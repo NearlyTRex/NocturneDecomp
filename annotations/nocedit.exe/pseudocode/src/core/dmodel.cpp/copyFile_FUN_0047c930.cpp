@@ -2,7 +2,7 @@
 // Address: 0047c930
 // Address Range: [[0047c930, 0047ca40]]
 // Convention: __cdecl
-// Signature: int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
+// Signature: int __cdecl core_dmodel_cpp_copyFile_FUN_0047c930 (char *source_filename,char *destination_filename,int show_error_if_missing)
 
 #include "nocturne.h"
 

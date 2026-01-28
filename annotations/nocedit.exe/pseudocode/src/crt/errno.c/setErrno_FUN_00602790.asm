@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_errno.c_setErrno_FUN_00602790(int error_code)
+; __cdecl void __cdecl crt_errno_c_setErrno_FUN_00602790(int error_code)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   error_code

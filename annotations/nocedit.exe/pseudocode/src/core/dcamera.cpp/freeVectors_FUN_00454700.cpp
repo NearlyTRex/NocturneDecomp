@@ -2,7 +2,7 @@
 // Address: 00454700
 // Address Range: [[00454700, 00454717]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_freeVectors_FUN_00454700(CVector3f * * array)
+// Signature: void __cdecl core_dcamera_cpp_freeVectors_FUN_00454700(CVector3f **array)
 
 #include "nocturne.h"
 

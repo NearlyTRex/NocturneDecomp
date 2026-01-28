@@ -2,7 +2,7 @@
 // Address: 005ff48a
 // Address Range: [[005ff48a, 005ff523]]
 // Convention: __cdecl
-// Signature: ostrstream * crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a(ostrstream * this_ptr, int d1)
+// Signature: ostrstream * __cdecl crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a(ostrstream *this_ptr,int d1)
 
 #include "nocturne.h"
 

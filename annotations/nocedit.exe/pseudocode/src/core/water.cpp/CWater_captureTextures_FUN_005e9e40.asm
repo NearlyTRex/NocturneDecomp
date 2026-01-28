@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_water.cpp_CWater_captureTextures_FUN_005e9e40(CWater * this_ptr)
+; __cdecl void __cdecl core_water_cpp_CWater_captureTextures_FUN_005e9e40(CWater *this_ptr)
 ;
 ; Parameters:
 ; CWater *         Stack[0x4]:4   this_ptr

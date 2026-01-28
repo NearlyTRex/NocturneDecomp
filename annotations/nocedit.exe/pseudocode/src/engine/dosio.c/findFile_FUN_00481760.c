@@ -2,7 +2,7 @@
 // Address: 00481760
 // Address Range: [[00481760, 004817b7]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_findFile_FUN_00481760(SFoundFileInfo * context)
+// Signature: int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context)
 
 #include "nocturne.h"
 

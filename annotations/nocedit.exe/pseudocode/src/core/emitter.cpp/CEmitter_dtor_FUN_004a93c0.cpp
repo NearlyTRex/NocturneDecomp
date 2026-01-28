@@ -2,7 +2,7 @@
 // Address: 004a93c0
 // Address Range: [[004a93c0, 004a940d]]
 // Convention: __cdecl
-// Signature: CEmitter * core_emitter.cpp_CEmitter_dtor_FUN_004a93c0(CEmitter * this_ptr, uint d1, uint d2)
+// Signature: CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

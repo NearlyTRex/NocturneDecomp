@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_pod.cpp_findFileInPod_FUN_00551960(SFoundFileInfo * info)
+; __cdecl int __cdecl engine_pod_cpp_findFileInPod_FUN_00551960(SFoundFileInfo *info)
 ;
 ; Parameters:
 ; SFoundFileInfo * Stack[0x4]:4   info

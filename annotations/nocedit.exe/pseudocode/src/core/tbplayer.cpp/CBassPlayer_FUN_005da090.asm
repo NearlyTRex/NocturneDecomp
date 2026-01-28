@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tbplayer.cpp_CBassPlayer_FUN_005da090(CBassPlayer * this_ptr)
+; __cdecl void __cdecl core_tbplayer_cpp_CBassPlayer_FUN_005da090(CBassPlayer *this_ptr)
 ;
 ; Parameters:
 ; CBassPlayer *    Stack[0x4]:4   this_ptr

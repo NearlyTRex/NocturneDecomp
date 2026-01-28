@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_vampboss.cpp_VoicuSummonWavFile_FUN_005e7320()
+; unknown void core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 005ec830
 // Address Range: [[005ec830, 005ec8ce]]
 // Convention: unknown
-// Signature: undefined core_waypoint.cpp_FUN_005ec830()
+// Signature: void core_waypoint_cpp_FUN_005ec830(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_unmapFrameBuffer_FUN_00403670(void)
+; __cdecl void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void)
 ;
 ;
 ; Referenced Globals:

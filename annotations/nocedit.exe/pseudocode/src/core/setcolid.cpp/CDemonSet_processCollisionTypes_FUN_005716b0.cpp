@@ -2,7 +2,7 @@
 // Address: 005716b0
 // Address Range: [[005716b0, 0057233f]]
 // Convention: __cdecl
-// Signature: float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet * this_ptr, CVector3f * position, float radius)
+// Signature: float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (CDemonSet *this_ptr,CVector3f *position,float radius)
 
 #include "nocturne.h"
 

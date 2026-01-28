@@ -209,6 +209,12 @@ class DecompileWorker:
                 interface, func, self.symbol_table, self.string_map, timeout=60)
             result.decompile_time = time.time() - decompile_start
 
+            # Extract actual signature from decompiled code (more accurate than getPrototypeString)
+            from ghidra_annotations.annotations.pseudocode.decompiler import extract_signature_from_decompiled_code
+            extracted_sig = extract_signature_from_decompiled_code(result.raw_decompiled_code)
+            if extracted_sig:
+                result.func_signature = extracted_sig
+
             # === JAVA-HEAVY: Assembly generation (GIL released during JVM calls) ===
             assembly_start = time.time()
             result.assembly_code = generate_assembly_code_rich(

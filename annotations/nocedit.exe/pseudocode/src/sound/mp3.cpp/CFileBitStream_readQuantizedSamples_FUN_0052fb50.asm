@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream * this_ptr, SMpegSubbandScalefactors * quantized_samples, SMpegSubbandAllocation * allocation, SBitAllocationTable * alloc_table)
+; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 (CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples, SMpegSubbandAllocation *allocation,SBitAllocationTable *alloc_table)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr

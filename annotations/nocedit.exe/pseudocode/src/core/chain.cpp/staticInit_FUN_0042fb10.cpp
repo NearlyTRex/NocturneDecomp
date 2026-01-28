@@ -2,7 +2,7 @@
 // Address: 0042fb10
 // Address Range: [[0042fb10, 0042fb33]]
 // Convention: __cdecl
-// Signature: void core_chain.cpp_staticInit_FUN_0042fb10(void)
+// Signature: void __cdecl core_chain_cpp_staticInit_FUN_0042fb10(void)
 
 #include "nocturne.h"
 

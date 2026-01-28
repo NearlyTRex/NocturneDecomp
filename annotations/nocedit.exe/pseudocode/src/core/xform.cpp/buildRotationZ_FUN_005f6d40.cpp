@@ -2,7 +2,7 @@
 // Address: 005f6d40
 // Address Range: [[005f6d40, 005f6db7]]
 // Convention: __stack_esi
-// Signature: CMatrix3x4f * core_xform.cpp_buildRotationZ_FUN_005f6d40(float angle_radians, CMatrix3x4f * matrix_out)
+// Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationZ_FUN_005f6d40(float angle_radians,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 

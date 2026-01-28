@@ -2,7 +2,7 @@
 // Address: 005e4210
 // Address Range: [[005e4210, 005e4d46]]
 // Convention: __cdecl
-// Signature: void core_tvbat.cpp_CTVBat_process_FUN_005e4210(CTVBat * this_ptr, float delta_time)
+// Signature: void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

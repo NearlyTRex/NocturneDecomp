@@ -2,7 +2,7 @@
 // Address: 0044c360
 // Address Range: [[0044c360, 0044c3d8]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_free_FUN_0044c360(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_0044c360(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

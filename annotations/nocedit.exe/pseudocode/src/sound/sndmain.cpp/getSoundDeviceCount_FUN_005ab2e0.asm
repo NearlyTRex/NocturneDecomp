@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0(void)
+; __cdecl int __cdecl sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(void)
 ;
 ;
 ; XREF[6]:

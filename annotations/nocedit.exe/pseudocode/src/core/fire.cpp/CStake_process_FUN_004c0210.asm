@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CStake_process_FUN_004c0210(CStake * this_ptr)
+; __cdecl void __cdecl core_fire_cpp_CStake_process_FUN_004c0210(CStake *this_ptr)
 ;
 ; Parameters:
 ; CStake *         Stack[0x4]:4   this_ptr

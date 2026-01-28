@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_setTextColor_FUN_00402840(int color)
+; __cdecl void __cdecl engine_2d_c_setTextColor_FUN_00402840(int color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   color

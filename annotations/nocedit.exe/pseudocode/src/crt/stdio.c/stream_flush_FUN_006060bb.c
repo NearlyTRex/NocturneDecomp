@@ -2,7 +2,7 @@
 // Address: 006060bb
 // Address Range: [[006060bb, 006060fd]]
 // Convention: __watcallStack
-// Signature: FILE * crt_stdio.c_stream_flush_FUN_006060bb(FILE * stream)
+// Signature: FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(FILE *stream)
 
 #include "nocturne.h"
 

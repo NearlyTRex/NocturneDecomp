@@ -2,7 +2,7 @@
 // Address: 004616f0
 // Address Range: [[004616f0, 004617bd]]
 // Convention: __cdecl
-// Signature: void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
+// Signature: void __cdecl shape_design_c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode *tree_node)
 
 #include "nocturne.h"
 

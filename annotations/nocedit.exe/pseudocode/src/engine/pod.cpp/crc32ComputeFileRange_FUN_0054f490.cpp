@@ -2,7 +2,7 @@
 // Address: 0054f490
 // Address Range: [[0054f490, 0054f590]]
 // Convention: __cdecl
-// Signature: uint engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490(char * filename, int start_offset)
+// Signature: uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,int start_offset)
 
 #include "nocturne.h"
 

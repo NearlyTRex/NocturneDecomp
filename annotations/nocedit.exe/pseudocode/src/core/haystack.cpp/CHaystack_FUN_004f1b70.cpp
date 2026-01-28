@@ -2,7 +2,7 @@
 // Address: 004f1b70
 // Address Range: [[004f1b70, 004f1c8e]]
 // Convention: __cdecl
-// Signature: void core_haystack.cpp_CHaystack_FUN_004f1b70(CHaystack * this_ptr)
+// Signature: void __cdecl core_haystack_cpp_CHaystack_FUN_004f1b70(CHaystack *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00437230
 // Address Range: [[00437230, 00437355]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
+// Signature: void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437230 (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 #include "nocturne.h"
 

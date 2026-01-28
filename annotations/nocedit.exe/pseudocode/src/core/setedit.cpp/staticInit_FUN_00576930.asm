@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setedit.cpp_staticInit_FUN_00576930(void)
+; __cdecl void __cdecl core_setedit_cpp_staticInit_FUN_00576930(void)
 ;
 ;
 ; Referenced Globals:

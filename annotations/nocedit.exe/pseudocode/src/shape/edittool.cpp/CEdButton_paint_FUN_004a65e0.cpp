@@ -2,7 +2,7 @@
 // Address: 004a65e0
 // Address Range: [[004a65e0, 004a6826]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEdButton_paint_FUN_004a65e0(CEdButton * this_ptr, int draw_border_flag)
+// Signature: void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr,int draw_border_flag)
 
 #include "nocturne.h"
 

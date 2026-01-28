@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
+; __cdecl double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 (CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
 ;
 ; Parameters:
 ; CSampleInfo *    Stack[0x8]:4   this_ptr

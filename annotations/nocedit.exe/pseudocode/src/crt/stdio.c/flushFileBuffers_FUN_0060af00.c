@@ -2,7 +2,7 @@
 // Address: 0060af00
 // Address Range: [[0060af00, 0060af5c]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_flushFileBuffers_FUN_0060af00(int file_handle_index)
+// Signature: int __watcallStack crt_stdio_c_flushFileBuffers_FUN_0060af00(int file_handle_index)
 
 #include "nocturne.h"
 

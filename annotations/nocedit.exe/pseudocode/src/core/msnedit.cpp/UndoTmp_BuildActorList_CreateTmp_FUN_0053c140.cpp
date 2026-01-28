@@ -2,7 +2,7 @@
 // Address: 0053c140
 // Address Range: [[0053c140, 0053c203]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140()
+// Signature: void core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140(void)
 
 #include "nocturne.h"
 

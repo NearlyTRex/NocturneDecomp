@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_moon.cpp_freeBats_FUN_0052a430(SBat * * array)
+; __cdecl void __cdecl core_moon_cpp_freeBats_FUN_0052a430(SBat **array)
 ;
 ; Parameters:
 ; SBat * *         Stack[0x4]:4   array

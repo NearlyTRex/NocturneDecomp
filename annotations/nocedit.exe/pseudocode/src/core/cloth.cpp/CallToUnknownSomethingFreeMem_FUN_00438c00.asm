@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+; unknown void core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00(void)
 ;
 ;
 ; XREF[8]:

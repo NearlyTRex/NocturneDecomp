@@ -2,7 +2,7 @@
 // Address: 00520fe0
 // Address Range: [[00520fe0, 00521157]]
 // Convention: __cdecl
-// Signature: void core_mirror.cpp_computePlaneFromTriangle_FUN_00520fe0(SClipPlane * out_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * vertex_c)
+// Signature: void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0 (SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c)
 
 #include "nocturne.h"
 

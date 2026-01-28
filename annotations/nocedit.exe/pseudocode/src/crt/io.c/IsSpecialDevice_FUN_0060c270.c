@@ -2,7 +2,7 @@
 // Address: 0060c270
 // Address Range: [[0060c270, 0060c2db]]
 // Convention: __cdecl
-// Signature: int crt_io.c_IsSpecialDevice_FUN_0060c270(int handle_index)
+// Signature: int __cdecl crt_io_c_IsSpecialDevice_FUN_0060c270(int handle_index)
 
 #include "nocturne.h"
 

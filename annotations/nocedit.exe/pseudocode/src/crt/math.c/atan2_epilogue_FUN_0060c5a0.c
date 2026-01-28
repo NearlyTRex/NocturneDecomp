@@ -2,7 +2,7 @@
 // Address: 0060c5a0
 // Address Range: [[0060c5a0, 0060c5aa]]
 // Convention: __watcallRegister
-// Signature: float10 crt_math.c_atan2_epilogue_FUN_0060c5a0(void)
+// Signature: float10 crt_math_c_atan2_epilogue_FUN_0060c5a0(void)
 
 #include "nocturne.h"
 

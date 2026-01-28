@@ -2,7 +2,7 @@
 // Address: 0054b930
 // Address Range: [[0054b930, 0054b9a9]]
 // Convention: unknown
-// Signature: undefined cockpit_pkbitmap.cpp_FUN_0054b930()
+// Signature: void cockpit_pkbitmap_cpp_FUN_0054b930 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,FILE *param_6)
 
 #include "nocturne.h"
 

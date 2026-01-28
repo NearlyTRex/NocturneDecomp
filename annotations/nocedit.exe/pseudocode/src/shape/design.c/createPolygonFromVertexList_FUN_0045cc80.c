@@ -2,7 +2,7 @@
 // Address: 0045cc80
 // Address Range: [[0045cc80, 0045cdf6]]
 // Convention: unknown
-// Signature: undefined shape_design.c_createPolygonFromVertexList_FUN_0045cc80()
+// Signature: void shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
 
 #include "nocturne.h"
 

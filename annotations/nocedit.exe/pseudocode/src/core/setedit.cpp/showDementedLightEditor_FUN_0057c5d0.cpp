@@ -2,7 +2,7 @@
 // Address: 0057c5d0
 // Address Range: [[0057c5d0, 0057ce71]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet * this_ptr)
+// Signature: void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

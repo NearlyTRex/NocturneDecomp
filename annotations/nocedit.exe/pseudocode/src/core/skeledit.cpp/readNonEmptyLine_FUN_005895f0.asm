@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)
+; __cdecl int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,FILE *file,int require_content)
 ;
 ; Parameters:
 ; char *           Stack[0x8]:4   buffer

@@ -2,7 +2,7 @@
 // Address: 005b0030
 // Address Range: [[005b0030, 005b0119]]
 // Convention: __cdecl
-// Signature: void sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoundDevice * this_ptr, CSfxSlot * slot)
+// Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 #include "nocturne.h"
 

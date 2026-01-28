@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_boneguy.cpp_FUN_0041db30(SBoneGuyBox * * objs)
+; __cdecl int __cdecl core_boneguy_cpp_FUN_0041db30(SBoneGuyBox **objs)
 ;
 ; Parameters:
 ; SBoneGuyBox * *  Stack[0x4]:4   objs

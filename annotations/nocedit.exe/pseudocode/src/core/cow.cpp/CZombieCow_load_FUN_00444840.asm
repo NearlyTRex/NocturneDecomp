@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cow.cpp_CZombieCow_load_FUN_00444840()
+; unknown void core_cow_cpp_CZombieCow_load_FUN_00444840(void)
 ;
 ;
 ; Referenced Globals:

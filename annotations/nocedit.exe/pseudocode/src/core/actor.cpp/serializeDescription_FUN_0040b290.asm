@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeDescription_FUN_0040b290(char * property_description, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeDescription_FUN_0040b290(char *property_description,char *property_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   property_description

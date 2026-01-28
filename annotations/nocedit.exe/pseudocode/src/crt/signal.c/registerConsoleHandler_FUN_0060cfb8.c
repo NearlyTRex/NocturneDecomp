@@ -2,7 +2,7 @@
 // Address: 0060cfb8
 // Address Range: [[0060cfb8, 0060cfe1]]
 // Convention: __watcallRegister
-// Signature: BOOL crt_signal.c_registerConsoleHandler_FUN_0060cfb8(void)
+// Signature: BOOL crt_signal_c_registerConsoleHandler_FUN_0060cfb8(void)
 
 #include "nocturne.h"
 

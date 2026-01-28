@@ -2,7 +2,7 @@
 // Address: 00500020
 // Address Range: [[00500020, 00500041]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(CInventory * this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(CInventory *this_ptr)
 
 #include "nocturne.h"
 

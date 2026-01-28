@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_NotGoingtoAddToList_CantAdd_FUN_00538d60()
+; unknown void core_msnedit_cpp_NotGoingtoAddToList_CantAdd_FUN_00538d60(void)
 ;
 ;
 ; XREF[1]:

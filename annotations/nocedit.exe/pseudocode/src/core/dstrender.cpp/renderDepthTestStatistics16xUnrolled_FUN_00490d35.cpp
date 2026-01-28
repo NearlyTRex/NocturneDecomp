@@ -2,7 +2,7 @@
 // Address: 00490d35
 // Address Range: [[00490d35, 00490ebf]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 

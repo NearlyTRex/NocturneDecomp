@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450()
+; unknown void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

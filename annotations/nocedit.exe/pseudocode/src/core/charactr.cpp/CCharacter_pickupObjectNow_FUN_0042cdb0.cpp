@@ -2,7 +2,7 @@
 // Address: 0042cdb0
 // Address Range: [[0042cdb0, 0042ce78]]
 // Convention: __cdecl
-// Signature: void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter *this_ptr)
 
 #include "nocturne.h"
 

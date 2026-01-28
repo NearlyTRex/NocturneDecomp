@@ -2,7 +2,7 @@
 // Address: 0046fdb0
 // Address Range: [[0046fdb0, 0046fe6c]]
 // Convention: unknown
-// Signature: undefined core_dest.cpp_CActorDestination_load_FUN_0046fdb0()
+// Signature: void core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void)
 
 #include "nocturne.h"
 

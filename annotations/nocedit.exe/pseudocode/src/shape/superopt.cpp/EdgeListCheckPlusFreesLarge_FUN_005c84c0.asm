@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0()
+; unknown undefined4 shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x15c]:8  local_15c

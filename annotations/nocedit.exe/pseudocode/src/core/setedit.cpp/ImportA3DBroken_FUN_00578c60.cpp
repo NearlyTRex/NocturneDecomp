@@ -2,7 +2,7 @@
 // Address: 00578c60
 // Address Range: [[00578c60, 00578c83]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_ImportA3DBroken_FUN_00578c60()
+// Signature: void core_setedit_cpp_ImportA3DBroken_FUN_00578c60(void)
 
 #include "nocturne.h"
 

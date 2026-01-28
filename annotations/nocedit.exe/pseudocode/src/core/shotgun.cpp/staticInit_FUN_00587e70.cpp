@@ -2,7 +2,7 @@
 // Address: 00587e70
 // Address Range: [[00587e70, 00587e93]]
 // Convention: __cdecl
-// Signature: void core_shotgun.cpp_staticInit_FUN_00587e70(void)
+// Signature: void __cdecl core_shotgun_cpp_staticInit_FUN_00587e70(void)
 
 #include "nocturne.h"
 

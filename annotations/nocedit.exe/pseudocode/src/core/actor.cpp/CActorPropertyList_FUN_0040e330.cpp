@@ -2,7 +2,7 @@
 // Address: 0040e330
 // Address Range: [[0040e330, 0040e34d]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+// Signature: void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList *this_ptr)
 
 #include "nocturne.h"
 

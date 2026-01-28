@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void support_newmsg.cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap * bitmap)
+; __cdecl void __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *bitmap)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   bitmap

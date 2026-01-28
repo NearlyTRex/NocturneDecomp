@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_spike.cpp_CSpike_getActorType_FUN_005b8210(CSpike * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_spike_cpp_CSpike_getActorType_FUN_005b8210(CSpike *this_ptr)
 ;
 ; Parameters:
 ; CSpike *         Stack[0x4]:4   this_ptr

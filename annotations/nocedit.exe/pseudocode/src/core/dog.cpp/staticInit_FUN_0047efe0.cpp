@@ -2,7 +2,7 @@
 // Address: 0047efe0
 // Address Range: [[0047efe0, 0047f003]]
 // Convention: __cdecl
-// Signature: void core_dog.cpp_staticInit_FUN_0047efe0(void)
+// Signature: void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void)
 
 #include "nocturne.h"
 

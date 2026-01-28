@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_bugs.cpp_FUN_00427cc0(SBug * * objs)
+; __cdecl int __cdecl core_bugs_cpp_FUN_00427cc0(SBug **objs)
 ;
 ; Parameters:
 ; SBug * *         Stack[0x4]:4   objs

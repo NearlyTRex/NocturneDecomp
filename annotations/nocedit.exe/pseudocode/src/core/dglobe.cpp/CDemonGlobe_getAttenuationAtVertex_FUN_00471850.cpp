@@ -2,7 +2,7 @@
 // Address: 00471850
 // Address Range: [[00471850, 004719a9]]
 // Convention: __cdecl
-// Signature: int core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850(CDemonGlobe * this_ptr, CVector3i * vertex_position, CVector3i * surface_normal)
+// Signature: int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850 (CDemonGlobe *this_ptr,CVector3i *vertex_position,CVector3i *surface_normal)
 
 #include "nocturne.h"
 

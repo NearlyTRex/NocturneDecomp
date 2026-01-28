@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_CGunFlame_render_FUN_004c50b0(CGunFlame * this_ptr)
+; __cdecl void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
 ;
 ; Parameters:
 ; CGunFlame *      Stack[0x4]:4   this_ptr

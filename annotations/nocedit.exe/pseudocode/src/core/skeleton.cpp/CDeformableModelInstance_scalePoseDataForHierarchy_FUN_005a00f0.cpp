@@ -2,7 +2,7 @@
 // Address: 005a00f0
 // Address Range: [[005a00f0, 005a0144]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0(CDeformableModelInstance * this_ptr, float scale_factor, int target_bone_index)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0 (CDeformableModelInstance *this_ptr,float scale_factor,int target_bone_index)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_larva.cpp_FUN_00503080()
+; unknown void core_larva_cpp_FUN_00503080(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x200]:8  local_200

@@ -2,7 +2,7 @@
 // Address: 00466a30
 // Address Range: [[00466a30, 00466c60]]
 // Convention: __cdecl
-// Signature: void shape_design.c_groundCenterObject_FUN_00466a30(void)
+// Signature: void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
 
 #include "nocturne.h"
 

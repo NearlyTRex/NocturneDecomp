@@ -2,7 +2,7 @@
 // Address: 005b5710
 // Address Range: [[005b5710, 005b5715]]
 // Convention: __edi_esi_ebx
-// Signature: void wincore_windll.cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y)
+// Signature: void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(void *left_data,void *right_data,int scanline_y)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004037e0
 // Address Range: [[004037e0, 00403839]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point)
 
 #include "nocturne.h"
 

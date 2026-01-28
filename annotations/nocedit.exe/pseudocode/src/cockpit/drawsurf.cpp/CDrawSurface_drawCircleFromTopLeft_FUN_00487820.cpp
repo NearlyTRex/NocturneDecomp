@@ -2,7 +2,7 @@
 // Address: 00487820
 // Address Range: [[00487820, 00487840]]
 // Convention: __cdecl
-// Signature: void cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopLeft_FUN_00487820(CDrawSurface * this_ptr, int x, int y, int radius)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromTopLeft_FUN_00487820 (CDrawSurface *this_ptr,int x,int y,int radius)
 
 #include "nocturne.h"
 

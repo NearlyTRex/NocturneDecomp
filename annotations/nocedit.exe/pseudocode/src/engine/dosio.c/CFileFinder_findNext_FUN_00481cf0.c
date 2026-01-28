@@ -2,7 +2,7 @@
 // Address: 00481cf0
 // Address Range: [[00481cf0, 00481d6f]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
+// Signature: int __cdecl engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(CFileFinder *this_ptr)
 
 #include "nocturne.h"
 

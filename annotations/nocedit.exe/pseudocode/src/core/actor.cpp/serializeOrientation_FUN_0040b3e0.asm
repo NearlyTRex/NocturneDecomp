@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeOrientation_FUN_0040b3e0(COrientation * orient_ptr, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *property_name)
 ;
 ; Parameters:
 ; COrientation *   Stack[0x4]:4   orient_ptr

@@ -2,7 +2,7 @@
 // Address: 005f2e90
 // Address Range: [[005f2e90, 005f2ef6]]
 // Convention: __cdecl
-// Signature: int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90(void)
+// Signature: int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005f2e90(void)
 
 #include "nocturne.h"
 

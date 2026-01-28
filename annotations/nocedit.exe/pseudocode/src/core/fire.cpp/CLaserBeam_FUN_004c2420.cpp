@@ -2,7 +2,7 @@
 // Address: 004c2420
 // Address Range: [[004c2420, 004c24c0]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CLaserBeam_FUN_004c2420(CLaserBeam * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CLaserBeam_FUN_004c2420(CLaserBeam *this_ptr)
 
 #include "nocturne.h"
 

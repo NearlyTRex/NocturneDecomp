@@ -2,7 +2,7 @@
 // Address: 005d9ef0
 // Address Range: [[005d9ef0, 005d9f02]]
 // Convention: __cdecl
-// Signature: void core_svetlana.cpp_CSvetlana_FUN_005d9ef0(CSvetlana * this_ptr)
+// Signature: void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ef0(CSvetlana *this_ptr)
 
 #include "nocturne.h"
 

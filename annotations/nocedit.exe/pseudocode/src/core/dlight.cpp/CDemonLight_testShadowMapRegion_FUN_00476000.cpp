@@ -2,7 +2,7 @@
 // Address: 00476000
 // Address Range: [[00476000, 004760c4]]
 // Convention: __cdecl
-// Signature: int core_dlight.cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonLight * this_ptr, CRect * rect)
+// Signature: int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonLight *this_ptr,CRect *rect)
 
 #include "nocturne.h"
 

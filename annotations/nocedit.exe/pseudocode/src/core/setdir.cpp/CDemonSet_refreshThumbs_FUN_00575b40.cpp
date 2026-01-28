@@ -2,7 +2,7 @@
 // Address: 00575b40
 // Address Range: [[00575b40, 00575b9c]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet * this_ptr, char * filename)
+// Signature: void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet *this_ptr,char *filename)
 
 #include "nocturne.h"
 

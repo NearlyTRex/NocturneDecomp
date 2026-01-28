@@ -2,7 +2,7 @@
 // Address: 0043f490
 // Address Range: [[0043f490, 0043f4c0]]
 // Convention: __cdecl
-// Signature: CLZWDecompress * support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490(CLZWDecompress * this_ptr, int buffer_size, int initial_bits)
+// Signature: CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490 (CLZWDecompress *this_ptr,int buffer_size,int initial_bits)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005805a0
 // Address Range: [[005805a0, 00580722]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_BackdropMaybe_FUN_005805a0()
+// Signature: void core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
 
 #include "nocturne.h"
 

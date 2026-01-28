@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_skipLines_FUN_00476c80(FILE * file_handle, int line_count)
+; __cdecl void __cdecl core_dmodel_cpp_skipLines_FUN_00476c80(FILE *file_handle,int line_count)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

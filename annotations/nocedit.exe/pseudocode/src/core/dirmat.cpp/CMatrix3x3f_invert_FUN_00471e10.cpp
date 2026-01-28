@@ -2,7 +2,7 @@
 // Address: 00471e10
 // Address Range: [[00471e10, 00471fc2]]
 // Convention: __cdecl
-// Signature: void core_dirmat.cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f * this_ptr)
+// Signature: void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_ptr)
 
 #include "nocturne.h"
 

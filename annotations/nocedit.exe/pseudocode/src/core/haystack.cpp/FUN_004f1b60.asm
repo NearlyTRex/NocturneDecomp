@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_haystack.cpp_FUN_004f1b60()
+; unknown void core_haystack_cpp_FUN_004f1b60(void)
 ;
 ;
 ; Called Functions:

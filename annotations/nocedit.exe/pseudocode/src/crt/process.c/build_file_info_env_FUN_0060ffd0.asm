@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl undefined crt_process.c_build_file_info_env_FUN_0060ffd0()
+; __cdecl char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x44]:1  local_44

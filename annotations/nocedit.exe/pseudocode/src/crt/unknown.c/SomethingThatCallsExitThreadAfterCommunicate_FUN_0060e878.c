@@ -2,7 +2,7 @@
 // Address: 0060e878
 // Address Range: [[0060e878, 0060e87e]]
 // Convention: unknown
-// Signature: undefined crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878()
+// Signature: void crt_unknown_c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878(void)
 
 #include "nocturne.h"
 

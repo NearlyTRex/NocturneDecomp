@@ -2,7 +2,7 @@
 // Address: 00456400
 // Address Range: [[00456400, 004566d0]]
 // Convention: __cdecl
-// Signature: uint core_dcube.cpp_clipTriangleToAABB_FUN_00456400(CVector3f * * triangle_vertices, CVector3f * aabb_min, CVector3f * aabb_max)
+// Signature: uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00456400 (CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max)
 
 #include "nocturne.h"
 

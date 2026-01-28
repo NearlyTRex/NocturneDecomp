@@ -2,7 +2,7 @@
 // Address: 004224f0
 // Address Range: [[004224f0, 00422546]]
 // Convention: __cdecl
-// Signature: void core_boxactor.cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor * this_ptr, CVector3f * drop_position)
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor *this_ptr,CVector3f *drop_position)
 
 #include "nocturne.h"
 

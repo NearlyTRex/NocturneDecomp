@@ -2,7 +2,7 @@
 // Address: 0054e1e0
 // Address Range: [[0054e1e0, 0054e2d5]]
 // Convention: unknown
-// Signature: undefined core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0()
+// Signature: void core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(void)
 
 #include "nocturne.h"
 

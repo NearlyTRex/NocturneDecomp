@@ -2,7 +2,7 @@
 // Address: 00469420
 // Address Range: [[00469420, 00469687]]
 // Convention: __cdecl
-// Signature: int shape_design.c_generateOctant_FUN_00469420(void)
+// Signature: int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
 
 #include "nocturne.h"
 

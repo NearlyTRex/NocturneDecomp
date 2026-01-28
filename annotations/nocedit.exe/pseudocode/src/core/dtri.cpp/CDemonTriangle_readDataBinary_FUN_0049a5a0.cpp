@@ -2,7 +2,7 @@
 // Address: 0049a5a0
 // Address Range: [[0049a5a0, 0049a5ed]]
 // Convention: __cdecl
-// Signature: void core_dtri.cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0(CDemonTriangle * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0(CDemonTriangle *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

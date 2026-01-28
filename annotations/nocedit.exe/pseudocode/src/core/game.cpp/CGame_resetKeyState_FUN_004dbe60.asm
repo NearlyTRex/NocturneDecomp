@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+; unknown void core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

@@ -2,7 +2,7 @@
 // Address: 004765e0
 // Address Range: [[004765e0, 00476666]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 (CDemonLight *this_ptr,float intensity)
 
 #include "nocturne.h"
 

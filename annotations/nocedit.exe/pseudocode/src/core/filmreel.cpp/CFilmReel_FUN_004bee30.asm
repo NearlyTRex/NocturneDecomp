@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_filmreel.cpp_CFilmReel_FUN_004bee30()
+; unknown void core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
 ;
 ;
 ; Referenced Globals:

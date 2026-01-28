@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cloth.cpp_LockVerticesMaybe_FUN_0043d590()
+; unknown void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x84]:4  local_84

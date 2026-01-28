@@ -2,7 +2,7 @@
 // Address: 005de5d0
 // Address Range: [[005de5d0, 005de61d]]
 // Convention: __cdecl
-// Signature: CTommyGun * core_tommygun.cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun * this_ptr, uint d1, uint d2)
+// Signature: CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

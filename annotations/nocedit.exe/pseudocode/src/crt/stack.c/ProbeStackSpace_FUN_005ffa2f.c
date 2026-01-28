@@ -2,7 +2,7 @@
 // Address: 005ffa2f
 // Address Range: [[005ffa2f, 005ffa4e]]
 // Convention: __stdcall
-// Signature: void crt_stack.c_ProbeStackSpace_FUN_005ffa2f(uint size)
+// Signature: void __stdcall crt_stack_c_ProbeStackSpace_FUN_005ffa2f(uint size)
 
 #include "nocturne.h"
 

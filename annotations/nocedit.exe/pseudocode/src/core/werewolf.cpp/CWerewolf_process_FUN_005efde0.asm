@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_werewolf.cpp_CWerewolf_process_FUN_005efde0(CWerewolf * this_ptr, float delta_time)
+; __cdecl void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr

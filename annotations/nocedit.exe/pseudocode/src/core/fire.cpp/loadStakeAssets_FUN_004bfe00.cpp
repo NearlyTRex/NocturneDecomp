@@ -2,7 +2,7 @@
 // Address: 004bfe00
 // Address Range: [[004bfe00, 004bfe1f]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_loadStakeAssets_FUN_004bfe00(void)
+// Signature: void __cdecl core_fire_cpp_loadStakeAssets_FUN_004bfe00(void)
 
 #include "nocturne.h"
 

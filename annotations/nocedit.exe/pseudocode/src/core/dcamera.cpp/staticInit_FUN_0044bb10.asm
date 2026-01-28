@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_staticInit_FUN_0044bb10(void)
+; __cdecl void __cdecl core_dcamera_cpp_staticInit_FUN_0044bb10(void)
 ;
 ;
 ; Referenced Globals:

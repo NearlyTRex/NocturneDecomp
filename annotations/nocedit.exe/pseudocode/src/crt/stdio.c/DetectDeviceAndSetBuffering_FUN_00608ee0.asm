@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)
+; __cdecl void __cdecl crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE *file)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file

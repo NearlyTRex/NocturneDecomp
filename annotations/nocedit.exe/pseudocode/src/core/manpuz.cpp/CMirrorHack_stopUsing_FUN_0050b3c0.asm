@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_manpuz.cpp_CMirrorHack_stopUsing_FUN_0050b3c0(CMirrorHack * this_ptr, CDemonActor * user)
+; __cdecl void __cdecl core_manpuz_cpp_CMirrorHack_stopUsing_FUN_0050b3c0(CMirrorHack *this_ptr,CDemonActor *user)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

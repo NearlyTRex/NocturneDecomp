@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint * support_trisock.cpp_copyIPAddress_FUN_005e16f0(uint * dest_ip, uint * src_ip)
+; __cdecl uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_005e16f0(uint *dest_ip,uint *src_ip)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   dest_ip

@@ -2,7 +2,7 @@
 // Address: 004f3760
 // Address Range: [[004f3760, 004f37ce]]
 // Convention: unknown
-// Signature: undefined core_hero.cpp_CallInventorySelectHealth_FUN_004f3760()
+// Signature: int core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
 
 #include "nocturne.h"
 

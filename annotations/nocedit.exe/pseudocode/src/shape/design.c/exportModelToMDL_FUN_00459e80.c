@@ -2,7 +2,7 @@
 // Address: 00459e80
 // Address Range: [[00459e80, 0045a1fe]]
 // Convention: __cdecl
-// Signature: void shape_design.c_exportModelToMDL_FUN_00459e80(char * mdl_filename)
+// Signature: void __cdecl shape_design_c_exportModelToMDL_FUN_00459e80(char *mdl_filename)
 
 #include "nocturne.h"
 

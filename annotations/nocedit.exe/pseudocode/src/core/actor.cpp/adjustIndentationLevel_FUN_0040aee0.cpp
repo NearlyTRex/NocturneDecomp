@@ -2,7 +2,7 @@
 // Address: 0040aee0
 // Address Range: [[0040aee0, 0040af25]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_adjustIndentationLevel_FUN_0040aee0(int indent_delta)
+// Signature: int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(int indent_delta)
 
 #include "nocturne.h"
 

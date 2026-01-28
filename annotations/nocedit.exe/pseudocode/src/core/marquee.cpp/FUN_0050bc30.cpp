@@ -2,7 +2,7 @@
 // Address: 0050bc30
 // Address Range: [[0050bc30, 0050bd53]]
 // Convention: unknown
-// Signature: undefined core_marquee.cpp_FUN_0050bc30()
+// Signature: void core_marquee_cpp_FUN_0050bc30(void)
 
 #include "nocturne.h"
 

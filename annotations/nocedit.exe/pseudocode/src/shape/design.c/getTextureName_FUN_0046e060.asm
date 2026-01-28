@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * shape_design.c_getTextureName_FUN_0046e060(int texture_index)
+; __cdecl char * __cdecl shape_design_c_getTextureName_FUN_0046e060(int texture_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   texture_index

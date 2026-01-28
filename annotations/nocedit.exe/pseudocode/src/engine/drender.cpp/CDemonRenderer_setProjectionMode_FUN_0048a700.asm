@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer * this_ptr, int mode)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer *this_ptr,int mode)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

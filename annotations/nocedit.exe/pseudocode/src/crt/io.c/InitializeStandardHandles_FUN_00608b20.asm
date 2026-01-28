@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_io.c_InitializeStandardHandles_FUN_00608b20(void)
+; __cdecl int __cdecl crt_io_c_InitializeStandardHandles_FUN_00608b20(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hotdemon.cpp_FUN_004f6d00()
+; unknown void core_hotdemon_cpp_FUN_004f6d00(void)
 ;
 ;
 ; Referenced Globals:

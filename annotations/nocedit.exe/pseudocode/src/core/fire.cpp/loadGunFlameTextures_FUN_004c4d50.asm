@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_loadGunFlameTextures_FUN_004c4d50(void)
+; __cdecl void __cdecl core_fire_cpp_loadGunFlameTextures_FUN_004c4d50(void)
 ;
 ;
 ; XREF[1]:

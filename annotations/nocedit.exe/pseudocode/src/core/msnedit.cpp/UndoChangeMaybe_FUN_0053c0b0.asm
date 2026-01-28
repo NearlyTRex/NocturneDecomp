@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_UndoChangeMaybe_FUN_0053c0b0()
+; unknown void core_msnedit_cpp_UndoChangeMaybe_FUN_0053c0b0(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+; __watcallStack int __watcallStack crt_io_c_deleteFile_FUN_005ff9d0(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

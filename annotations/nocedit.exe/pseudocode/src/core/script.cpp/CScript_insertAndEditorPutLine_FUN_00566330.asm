@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_insertAndEditorPutLine_FUN_00566330()
+; unknown void core_script_cpp_CScript_insertAndEditorPutLine_FUN_00566330(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_ammobox.cpp_CAmmoBox_FUN_00411c00(CAmmoBox * this_ptr)
+; __cdecl void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411c00(CAmmoBox *this_ptr)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr

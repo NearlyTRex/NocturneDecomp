@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_zombie.cpp_CZombie_FUN_005fb1f0()
+; unknown void core_zombie_cpp_CZombie_FUN_005fb1f0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x16c]:1  local_16c

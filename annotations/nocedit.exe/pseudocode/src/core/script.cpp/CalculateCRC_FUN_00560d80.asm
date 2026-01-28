@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CalculateCRC_FUN_00560d80()
+; unknown uint core_script_cpp_CalculateCRC_FUN_00560d80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

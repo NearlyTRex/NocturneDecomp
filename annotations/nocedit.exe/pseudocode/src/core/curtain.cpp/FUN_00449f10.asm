@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_curtain.cpp_FUN_00449f10()
+; unknown void core_curtain_cpp_FUN_00449f10(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30

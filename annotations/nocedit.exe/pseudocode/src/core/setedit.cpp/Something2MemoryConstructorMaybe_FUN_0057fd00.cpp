@@ -2,7 +2,7 @@
 // Address: 0057fd00
 // Address Range: [[0057fd00, 0057ff02]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00()
+// Signature: void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
 
 #include "nocturne.h"
 

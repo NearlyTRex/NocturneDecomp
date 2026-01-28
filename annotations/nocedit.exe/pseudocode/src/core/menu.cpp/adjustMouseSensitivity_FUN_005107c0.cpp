@@ -2,7 +2,7 @@
 // Address: 005107c0
 // Address Range: [[005107c0, 00510a4f]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_adjustMouseSensitivity_FUN_005107c0(int * sensitivity_value_ptr, char * window_title)
+// Signature: void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00604d18
 // Address Range: [[00604d18, 00604d53]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_skip_whitespace_FUN_00604d18(scanf_state_t * state)
+// Signature: int __cdecl crt_stdio_c_skip_whitespace_FUN_00604d18(scanf_state_t *state)
 
 #include "nocturne.h"
 

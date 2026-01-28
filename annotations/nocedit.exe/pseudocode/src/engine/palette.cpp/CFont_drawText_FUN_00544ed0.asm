@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_palette.cpp_CFont_drawText_FUN_00544ed0(CFont * this_ptr, int param1, int param2, int param3, int param4, int param5)
+; __cdecl void __cdecl engine_palette_cpp_CFont_drawText_FUN_00544ed0 (CFont *this_ptr,int param1,int param2,int param3,int param4,int param5)
 ;
 ; Parameters:
 ; CFont *          Stack[0x4]:4   this_ptr

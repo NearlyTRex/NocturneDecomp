@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_time.c_parse_dst_rule_FUN_00607464(char * rule_string, dst_rule * rule)
+; __cdecl char * __cdecl crt_time_c_parse_dst_rule_FUN_00607464(char *rule_string,dst_rule *rule)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   rule_string

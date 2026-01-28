@@ -2,7 +2,7 @@
 // Address: 004aa260
 // Address Range: [[004aa260, 004aa26d]]
 // Convention: __cdecl
-// Signature: void core_event.cpp_staticInit_FUN_004aa260(void)
+// Signature: void __cdecl core_event_cpp_staticInit_FUN_004aa260(void)
 
 #include "nocturne.h"
 

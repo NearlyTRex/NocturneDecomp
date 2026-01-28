@@ -2,7 +2,7 @@
 // Address: 0050bab0
 // Address Range: [[0050bab0, 0050bac4]]
 // Convention: __cdecl
-// Signature: void core_manpuz.cpp_freeGems_FUN_0050bab0(SGem * * objs)
+// Signature: void __cdecl core_manpuz_cpp_freeGems_FUN_0050bab0(SGem **objs)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_HideActors_FUN_0053dcf0()
+; unknown void core_msnedit_cpp_HideActors_FUN_0053dcf0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x760]:1  local_760

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cloth.cpp_FUN_00439710()
+; unknown void core_cloth_cpp_FUN_00439710(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xfc]:4  local_fc

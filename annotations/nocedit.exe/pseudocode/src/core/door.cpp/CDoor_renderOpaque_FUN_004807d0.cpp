@@ -2,7 +2,7 @@
 // Address: 004807d0
 // Address Range: [[004807d0, 004809dc]]
 // Convention: __cdecl
-// Signature: int core_door.cpp_CDoor_renderOpaque_FUN_004807d0(CDoor * this_ptr)
+// Signature: int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
 
 #include "nocturne.h"
 

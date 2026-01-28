@@ -2,7 +2,7 @@
 // Address: 0048c6e0
 // Address Range: [[0048c6e0, 0048c736]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_scaleAndSetDirectionalLight_FUN_0048c6e0(CVector3f * light_direction)
+// Signature: void __cdecl engine_drender_cpp_scaleAndSetDirectionalLight_FUN_0048c6e0(CVector3f *light_direction)
 
 #include "nocturne.h"
 

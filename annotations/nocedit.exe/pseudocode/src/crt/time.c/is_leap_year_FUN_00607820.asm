@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_time.c_is_leap_year_FUN_00607820(int year)
+; __cdecl int __cdecl crt_time_c_is_leap_year_FUN_00607820(int year)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   year

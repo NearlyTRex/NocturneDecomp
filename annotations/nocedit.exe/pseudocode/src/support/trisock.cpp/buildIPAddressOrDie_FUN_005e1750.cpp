@@ -2,7 +2,7 @@
 // Address: 005e1750
 // Address Range: [[005e1750, 005e17b4]]
 // Convention: __cdecl
-// Signature: uint8_t * support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750(uchar * dest_ip, int octet1, int octet2, int octet3, int octet4)
+// Signature: uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_005e1750 (uchar *dest_ip,int octet1,int octet2,int octet3,int octet4)
 
 #include "nocturne.h"
 

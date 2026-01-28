@@ -2,7 +2,7 @@
 // Address: 004bca50
 // Address Range: [[004bca50, 004bcb64]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50(CFileManager * this_ptr, char * pod_filename)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50 (CFileManager *this_ptr,char *pod_filename)
 
 #include "nocturne.h"
 

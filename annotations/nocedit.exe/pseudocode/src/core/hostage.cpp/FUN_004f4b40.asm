@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hostage.cpp_FUN_004f4b40()
+; unknown int core_hostage_cpp_FUN_004f4b40(void)
 ;
 ;
 ; Referenced Globals:

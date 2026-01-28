@@ -2,7 +2,7 @@
 // Address: 00600e10
 // Address Range: [[00600e10, 00600e28]]
 // Convention: __cdecl
-// Signature: int crt_file.c_create_directory_FUN_00600e10(char * path)
+// Signature: int __cdecl crt_file_c_create_directory_FUN_00600e10(char *path)
 
 #include "nocturne.h"
 

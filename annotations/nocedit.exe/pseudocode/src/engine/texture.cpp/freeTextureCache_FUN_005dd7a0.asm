@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_texture.cpp_freeTextureCache_FUN_005dd7a0(void)
+; __cdecl void __cdecl engine_texture_cpp_freeTextureCache_FUN_005dd7a0(void)
 ;
 ;
 ; XREF[1]:

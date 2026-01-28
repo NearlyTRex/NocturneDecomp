@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_passngr.cpp_FUN_00545ef0()
+; unknown void core_passngr_cpp_FUN_00545ef0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

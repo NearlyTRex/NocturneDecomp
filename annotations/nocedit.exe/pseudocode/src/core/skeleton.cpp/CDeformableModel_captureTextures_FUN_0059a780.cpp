@@ -2,7 +2,7 @@
 // Address: 0059a780
 // Address Range: [[0059a780, 0059a803]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel * this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00401140
 // Address Range: [[00401140, 004011aa]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_plotPixel_FUN_00401140(int x, int y)
+// Signature: void __cdecl engine_2d_c_plotPixel_FUN_00401140(int x,int y)
 
 #include "nocturne.h"
 

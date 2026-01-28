@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_wddvmem.cpp_analyzePixelFormat_FUN_005ed730(void)
+; __cdecl void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x70]:4  local_70

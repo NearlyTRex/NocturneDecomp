@@ -2,7 +2,7 @@
 // Address: 00512f40
 // Address Range: [[00512f40, 0051345b]]
 // Convention: __cdecl
-// Signature: int core_menu.cpp_showMainGameMenu_FUN_00512f40(void)
+// Signature: int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
 
 #include "nocturne.h"
 

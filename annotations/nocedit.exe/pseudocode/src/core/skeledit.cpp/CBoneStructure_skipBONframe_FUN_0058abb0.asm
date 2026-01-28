@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure * this_ptr)
+; __cdecl void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr)
 ;
 ; Parameters:
 ; CBoneStructure * Stack[0x8]:4   this_ptr

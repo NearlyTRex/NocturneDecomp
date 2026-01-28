@@ -2,7 +2,7 @@
 // Address: 00492f03
 // Address Range: [[00492f03, 0049333c] [00493340, 0049344f]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03 (uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 

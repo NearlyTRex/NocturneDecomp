@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
+; __cdecl int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

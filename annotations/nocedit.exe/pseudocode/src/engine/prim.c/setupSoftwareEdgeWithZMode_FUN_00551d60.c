@@ -2,7 +2,7 @@
 // Address: 00551d60
 // Address Range: [[00551d60, 00551f6f]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_setupSoftwareEdgeWithZMode_FUN_00551d60(SRenderVertex * start_vertex, SRenderVertex * end_vertex)
+// Signature: void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_00551d60 (SRenderVertex *start_vertex,SRenderVertex *end_vertex)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004aa400
 // Address Range: [[004aa400, 004aa52c]]
 // Convention: unknown
-// Signature: undefined core_event.cpp_FUN_004aa400()
+// Signature: CHero * core_event_cpp_FUN_004aa400(void)
 
 #include "nocturne.h"
 

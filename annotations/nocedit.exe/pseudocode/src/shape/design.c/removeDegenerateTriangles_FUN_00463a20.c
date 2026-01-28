@@ -2,7 +2,7 @@
 // Address: 00463a20
 // Address Range: [[00463a20, 00463b2b]]
 // Convention: __cdecl
-// Signature: void shape_design.c_removeDegenerateTriangles_FUN_00463a20(void)
+// Signature: void __cdecl shape_design_c_removeDegenerateTriangles_FUN_00463a20(void)
 
 #include "nocturne.h"
 

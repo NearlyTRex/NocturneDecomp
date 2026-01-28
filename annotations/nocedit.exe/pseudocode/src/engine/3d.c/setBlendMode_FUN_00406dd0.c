@@ -2,7 +2,7 @@
 // Address: 00406dd0
 // Address Range: [[00406dd0, 00406dd9]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_setBlendMode_FUN_00406dd0(int blend_mode)
+// Signature: void __cdecl engine_3d_c_setBlendMode_FUN_00406dd0(int blend_mode)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0040b5c0
 // Address Range: [[0040b5c0, 0040b6d3]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
+// Signature: void __cdecl core_actor_cpp_serializeString_FUN_0040b5c0(char **string_buffer,char *property_type)
 
 #include "nocturne.h"
 

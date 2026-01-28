@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_FUN_0060ced8()
+; unknown SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_0060ced8 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,int param_5 )
 ;
 ;
 ; XREF[1]:

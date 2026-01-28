@@ -2,7 +2,7 @@
 // Address: 0050b180
 // Address Range: [[0050b180, 0050b1ce]]
 // Convention: __cdecl
-// Signature: int core_manpuz.cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack * this_ptr)
+// Signature: int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack *this_ptr)
 
 #include "nocturne.h"
 

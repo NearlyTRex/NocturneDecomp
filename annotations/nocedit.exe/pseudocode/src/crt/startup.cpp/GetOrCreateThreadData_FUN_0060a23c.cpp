@@ -2,7 +2,7 @@
 // Address: 0060a23c
 // Address Range: [[0060a23c, 0060a278]]
 // Convention: __cdecl
-// Signature: void * crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c(void * pThreadData)
+// Signature: void * __cdecl crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(void *pThreadData)
 
 #include "nocturne.h"
 

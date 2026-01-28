@@ -2,7 +2,7 @@
 // Address: 00479330
 // Address Range: [[00479330, 00479f25]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel * this_ptr, char * filename)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this_ptr,char *filename)
 
 #include "nocturne.h"
 

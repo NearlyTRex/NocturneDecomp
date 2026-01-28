@@ -2,7 +2,7 @@
 // Address: 006017d0
 // Address Range: [[006017d0, 0060190b]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_OpenModeStringParser_FUN_006017d0(char * mode_string, char * output_flags)
+// Signature: int __cdecl crt_stdio_c_OpenModeStringParser_FUN_006017d0(char *mode_string,char *output_flags)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004885d0
 // Address Range: [[004885d0, 00488626]]
 // Convention: __cdecl
-// Signature: void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleBetweenPoints_FUN_004885d0(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2, int border_width, int border_height)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleBetweenPoints_FUN_004885d0 (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int border_width,int border_height)
 
 #include "nocturne.h"
 

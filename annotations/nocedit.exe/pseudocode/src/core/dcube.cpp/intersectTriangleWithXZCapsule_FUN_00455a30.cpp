@@ -2,7 +2,7 @@
 // Address: 00455a30
 // Address Range: [[00455a30, 00455ec5]]
 // Convention: __cdecl
-// Signature: uint core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30(CVector3f * * triangle_vertices, SIntersectXZCylinder * cylinder)
+// Signature: uint __cdecl core_dcube_cpp_intersectTriangleWithXZCapsule_FUN_00455a30 (CVector3f **triangle_vertices,SIntersectXZCylinder *cylinder)
 
 #include "nocturne.h"
 

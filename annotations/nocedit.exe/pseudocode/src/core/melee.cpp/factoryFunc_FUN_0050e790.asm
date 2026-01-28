@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMelee * core_melee.cpp_factoryFunc_FUN_0050e790(void)
+; __cdecl CMelee * __cdecl core_melee_cpp_factoryFunc_FUN_0050e790(void)
 ;
 ;
 ; XREF[1]:

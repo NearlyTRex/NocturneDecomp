@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SGem * core_manpuz.cpp_SGem_dtor_FUN_0050b960(SGem * this_ptr)
+; __cdecl SGem * __cdecl core_manpuz_cpp_SGem_dtor_FUN_0050b960(SGem *this_ptr)
 ;
 ; Parameters:
 ; SGem *           Stack[0x4]:4   this_ptr

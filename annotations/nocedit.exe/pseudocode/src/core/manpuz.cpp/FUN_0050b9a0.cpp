@@ -2,7 +2,7 @@
 // Address: 0050b9a0
 // Address Range: [[0050b9a0, 0050ba60]]
 // Convention: unknown
-// Signature: undefined core_manpuz.cpp_FUN_0050b9a0()
+// Signature: void core_manpuz_cpp_FUN_0050b9a0(void)
 
 #include "nocturne.h"
 

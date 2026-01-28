@@ -2,7 +2,7 @@
 // Address: 0053ccc0
 // Address Range: [[0053ccc0, 0053cce3]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0()
+// Signature: void core_msnedit_cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0(void)
 
 #include "nocturne.h"
 

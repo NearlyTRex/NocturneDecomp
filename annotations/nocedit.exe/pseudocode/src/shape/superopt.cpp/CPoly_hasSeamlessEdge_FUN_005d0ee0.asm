@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_CPoly_hasSeamlessEdge_FUN_005d0ee0(CPoly * this_ptr, CPoly * other)
+; __cdecl int __cdecl shape_superopt_cpp_CPoly_hasSeamlessEdge_FUN_005d0ee0(CPoly *this_ptr,CPoly *other)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

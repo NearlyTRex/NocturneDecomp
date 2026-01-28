@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer * this_ptr, int bitmap_count, CBitmap * * bitmap_array)
+; __cdecl int __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0 (CColorQuantizer *this_ptr,int bitmap_count,CBitmap **bitmap_array)
 ;
 ; Parameters:
 ; CColorQuantizer * Stack[0x4]:4   this_ptr

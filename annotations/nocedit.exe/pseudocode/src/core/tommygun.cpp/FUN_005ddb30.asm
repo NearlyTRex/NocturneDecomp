@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_tommygun.cpp_FUN_005ddb30()
+; unknown undefined4 core_tommygun_cpp_FUN_005ddb30(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60

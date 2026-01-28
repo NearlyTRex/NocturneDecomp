@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_weather.cpp_CWeather_FUN_005ef190()
+; unknown void core_weather_cpp_CWeather_FUN_005ef190(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xf0]:1  local_f0

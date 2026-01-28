@@ -2,7 +2,7 @@
 // Address: 005f2a30
 // Address Range: [[005f2a30, 005f2a90]]
 // Convention: __cdecl
-// Signature: void engine_winfont.cpp_CWinFont_reset_FUN_005f2a30(CWinFont * this_ptr)
+// Signature: void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(CWinFont *this_ptr)
 
 #include "nocturne.h"
 

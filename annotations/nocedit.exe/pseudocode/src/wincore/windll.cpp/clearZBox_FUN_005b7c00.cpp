@@ -2,7 +2,7 @@
 // Address: 005b7c00
 // Address Range: [[005b7c00, 005b7c2f]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_clearZBox_FUN_005b7c00(int left, int top, int right, int bottom)
+// Signature: int __cdecl wincore_windll_cpp_clearZBox_FUN_005b7c00(int left,int top,int right,int bottom)
 
 #include "nocturne.h"
 

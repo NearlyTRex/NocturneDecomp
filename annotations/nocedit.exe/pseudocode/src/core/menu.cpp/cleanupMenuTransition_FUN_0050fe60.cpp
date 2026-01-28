@@ -2,7 +2,7 @@
 // Address: 0050fe60
 // Address Range: [[0050fe60, 0050fe69]]
 // Convention: __cdecl
-// Signature: void core_menu.cpp_cleanupMenuTransition_FUN_0050fe60(void)
+// Signature: void __cdecl core_menu_cpp_cleanupMenuTransition_FUN_0050fe60(void)
 
 #include "nocturne.h"
 

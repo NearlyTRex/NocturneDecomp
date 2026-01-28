@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializeFloat_FUN_0040b770(float * float_ptr, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializeFloat_FUN_0040b770(float *float_ptr,char *property_name)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   float_ptr

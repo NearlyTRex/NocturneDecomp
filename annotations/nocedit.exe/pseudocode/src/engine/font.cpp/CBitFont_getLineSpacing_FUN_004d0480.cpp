@@ -2,7 +2,7 @@
 // Address: 004d0480
 // Address Range: [[004d0480, 004d04aa]]
 // Convention: __cdecl
-// Signature: int engine_font.cpp_CBitFont_getLineSpacing_FUN_004d0480(CBitFont * this_ptr, char character)
+// Signature: int __cdecl engine_font_cpp_CBitFont_getLineSpacing_FUN_004d0480(CBitFont *this_ptr,char character)
 
 #include "nocturne.h"
 

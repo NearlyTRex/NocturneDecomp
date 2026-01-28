@@ -2,7 +2,7 @@
 // Address: 0043e420
 // Address Range: [[0043e420, 0043e43e]]
 // Convention: __cdecl
-// Signature: SClothVertex * core_cloth.cpp_SClothVertex_ctor_FUN_0043e420(SClothVertex * this_ptr)
+// Signature: SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_0043e420(SClothVertex *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double crt_math.c_report_math_error_FUN_0060e2e5(MathErrorContext * errorCtx)
+; __cdecl double __cdecl crt_math_c_report_math_error_FUN_0060e2e5(MathErrorContext *errorCtx)
 ;
 ; Parameters:
 ; MathErrorContext * Stack[0x4]:4   errorCtx

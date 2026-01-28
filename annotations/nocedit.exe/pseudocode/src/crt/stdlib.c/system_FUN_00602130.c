@@ -2,7 +2,7 @@
 // Address: 00602130
 // Address Range: [[00602130, 006021b4]]
 // Convention: __watcallStack
-// Signature: int crt_stdlib.c_system_FUN_00602130(char * command)
+// Signature: int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command)
 
 #include "nocturne.h"
 

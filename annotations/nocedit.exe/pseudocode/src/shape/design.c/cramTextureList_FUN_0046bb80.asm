@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
+; __cdecl int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config)
 ;
 ; Parameters:
 ; SCramConfig *    Stack[0x4]:4   cram_config

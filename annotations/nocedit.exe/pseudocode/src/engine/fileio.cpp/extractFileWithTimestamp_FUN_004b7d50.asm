@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50(FILE * source_file, char * dest_filename, char * name_or_offset, int file_size, int file_offset, int checksum, int timestamp)
+; __cdecl int __cdecl engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50 (FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset, int checksum,int timestamp)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   source_file

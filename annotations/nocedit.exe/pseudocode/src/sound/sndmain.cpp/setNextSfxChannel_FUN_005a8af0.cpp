@@ -2,7 +2,7 @@
 // Address: 005a8af0
 // Address Range: [[005a8af0, 005a8b3a]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
+// Signature: void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
 
 #include "nocturne.h"
 

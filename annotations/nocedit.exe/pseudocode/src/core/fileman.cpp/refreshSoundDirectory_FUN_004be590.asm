@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fileman.cpp_refreshSoundDirectory_FUN_004be590(FILE * file_list_output, char * source_directory)
+; __cdecl void __cdecl core_fileman_cpp_refreshSoundDirectory_FUN_004be590(FILE *file_list_output,char *source_directory)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_list_output

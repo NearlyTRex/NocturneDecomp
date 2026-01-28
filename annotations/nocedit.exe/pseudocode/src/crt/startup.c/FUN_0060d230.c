@@ -2,7 +2,7 @@
 // Address: 0060d230
 // Address Range: [[0060d230, 0060d397]]
 // Convention: __cdecl
-// Signature: int crt_startup.c_FUN_0060d230(UINT cp)
+// Signature: int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
 
 #include "nocturne.h"
 

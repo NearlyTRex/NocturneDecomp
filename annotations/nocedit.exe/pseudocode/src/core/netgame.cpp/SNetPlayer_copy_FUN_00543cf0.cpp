@@ -2,7 +2,7 @@
 // Address: 00543cf0
 // Address Range: [[00543cf0, 00543dad]]
 // Convention: __cdecl
-// Signature: void core_netgame.cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer * this_ptr, SNetPlayer * other)
+// Signature: void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer *this_ptr,SNetPlayer *other)
 
 #include "nocturne.h"
 

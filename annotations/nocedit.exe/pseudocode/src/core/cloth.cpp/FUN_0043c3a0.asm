@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_cloth.cpp_FUN_0043c3a0()
+; unknown void core_cloth_cpp_FUN_0043c3a0(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, int render_mode)
+; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500 (CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

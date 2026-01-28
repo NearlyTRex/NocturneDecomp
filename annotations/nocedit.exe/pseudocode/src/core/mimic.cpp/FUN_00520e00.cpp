@@ -2,7 +2,7 @@
 // Address: 00520e00
 // Address Range: [[00520e00, 00520e1e]]
 // Convention: unknown
-// Signature: undefined core_mimic.cpp_FUN_00520e00()
+// Signature: void core_mimic_cpp_FUN_00520e00(void)
 
 #include "nocturne.h"
 

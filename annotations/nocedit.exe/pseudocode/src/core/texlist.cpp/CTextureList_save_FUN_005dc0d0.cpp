@@ -2,7 +2,7 @@
 // Address: 005dc0d0
 // Address Range: [[005dc0d0, 005dc22c]]
 // Convention: __cdecl
-// Signature: void core_texlist.cpp_CTextureList_save_FUN_005dc0d0(CTextureList * this_ptr, char * filename)
+// Signature: void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_ptr,char *filename)
 
 #include "nocturne.h"
 

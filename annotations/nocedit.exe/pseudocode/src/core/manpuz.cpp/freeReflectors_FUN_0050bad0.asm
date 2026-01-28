@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_manpuz.cpp_freeReflectors_FUN_0050bad0(SReflector * * objs)
+; __cdecl void __cdecl core_manpuz_cpp_freeReflectors_FUN_0050bad0(SReflector **objs)
 ;
 ; Parameters:
 ; SReflector * *   Stack[0x4]:4   objs

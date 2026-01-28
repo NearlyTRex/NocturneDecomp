@@ -2,7 +2,7 @@
 // Address: 00480aa0
 // Address Range: [[00480aa0, 00480d8e]]
 // Convention: __cdecl
-// Signature: void core_door.cpp_CDoor_serialize_FUN_00480aa0(CDoor * this_ptr)
+// Signature: void __cdecl core_door_cpp_CDoor_serialize_FUN_00480aa0(CDoor *this_ptr)
 
 #include "nocturne.h"
 

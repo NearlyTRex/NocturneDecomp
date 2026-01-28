@@ -2,7 +2,7 @@
 // Address: 00533690
 // Address Range: [[00533690, 00533b95]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690(float * input_samples, float * output_samples, int mpeg_block_type)
+// Signature: void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690 (float *input_samples,float *output_samples,int mpeg_block_type)
 
 #include "nocturne.h"
 

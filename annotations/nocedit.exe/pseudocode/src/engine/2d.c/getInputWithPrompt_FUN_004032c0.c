@@ -2,7 +2,7 @@
 // Address: 004032c0
 // Address Range: [[004032c0, 00403396]]
 // Convention: __cdecl
-// Signature: int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, char * prompt)
+// Signature: int __cdecl engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_length,int x,int y,char *prompt)
 
 #include "nocturne.h"
 

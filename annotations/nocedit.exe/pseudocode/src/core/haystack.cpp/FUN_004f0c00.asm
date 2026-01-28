@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_haystack.cpp_FUN_004f0c00()
+; unknown CDemonActorType * core_haystack_cpp_FUN_004f0c00(void)
 ;
 ;
 ; Referenced Globals:

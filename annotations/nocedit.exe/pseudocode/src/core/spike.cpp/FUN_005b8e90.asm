@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_spike.cpp_FUN_005b8e90()
+; unknown void core_spike_cpp_FUN_005b8e90(void)
 ;
 ;
 ; Referenced Globals:

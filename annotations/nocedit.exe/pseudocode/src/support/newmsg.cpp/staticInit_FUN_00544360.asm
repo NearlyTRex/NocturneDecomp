@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void support_newmsg.cpp_staticInit_FUN_00544360(void)
+; __cdecl void __cdecl support_newmsg_cpp_staticInit_FUN_00544360(void)
 ;
 ;
 ; Referenced Globals:

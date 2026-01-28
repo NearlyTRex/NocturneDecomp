@@ -2,7 +2,7 @@
 // Address: 0053cad0
 // Address Range: [[0053cad0, 0053cc20]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0()
+// Signature: bool core_msnedit_cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0(void)
 
 #include "nocturne.h"
 

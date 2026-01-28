@@ -5,64 +5,64 @@
 
 // Original: core_gargoyle.cpp_staticInit_FUN_004e4470
 // Address: 004e4470
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gargoyle.cpp_factoryFunc_FUN_004e44a0
 // Address: 004e44a0
-CGargoyle * factoryFunc(void);
+CGargoyle * __cdecl factoryFunc(void);
 
 // Original: core_gargoyle.cpp_FUN_004e44d0
 // Address: 004e44d0
-undefined FUN_004e44d0();
+CDemonActorType * FUN_004e44d0(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_ctor_FUN_004e44e0
 // Address: 004e44e0
-CGargoyle * CGargoyle::ctor(CGargoyle * this_ptr);
+CGargoyle * __cdecl CGargoyle::ctor(CGargoyle *this_ptr);
 
 // Original: core_gargoyle.cpp_CGargoyle_FUN_004e45e0
 // Address: 004e45e0
-undefined CGargoyle();
+void CGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_FUN_004e48a0
 // Address: 004e48a0
-undefined CGargoyle();
+undefined4 CGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00
 // Address: 004e4a00
-undefined CGargoyle::unk6();
+void CGargoyle::unk6(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_unk5_FUN_004e53f0
 // Address: 004e53f0
-undefined CGargoyle::unk5();
+void CGargoyle::unk5(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_load_FUN_004e5470
 // Address: 004e5470
-undefined CGargoyle::load();
+void CGargoyle::load(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530
 // Address: 004e5530
-undefined CGargoyle::unk4();
+void CGargoyle::unk4(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_unk3_FUN_004e57d0
 // Address: 004e57d0
-undefined CGargoyle::unk3();
+void CGargoyle::unk3(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_FUN_004e5930
 // Address: 004e5930
-undefined CGargoyle();
+int CGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_FUN_004e5ad0
 // Address: 004e5ad0
-undefined CGargoyle();
+void CGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0
 // Address: 004e5af0
-undefined CGargoyle::getPropertyList();
+void CGargoyle::getPropertyList(void);
 
 // Original: core_gargoyle.cpp_FUN_004e5ba0
 // Address: 004e5ba0
-undefined FUN_004e5ba0();
+void FUN_004e5ba0(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_dtor_FUN_004e5bd0
 // Address: 004e5bd0
-CGargoyle * CGargoyle::dtor(CGargoyle * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
+CGargoyle * __cdecl CGargoyle::dtor(CGargoyle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);

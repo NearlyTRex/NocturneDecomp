@@ -2,7 +2,7 @@
 // Address: 0052500f
 // Address Range: [[0052500f, 00525062]]
 // Convention: __cdecl
-// Signature: int core_mmx.c_getCPUInfo_FUN_0052500f(SCPUInfo * cpu_info)
+// Signature: int __cdecl core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo *cpu_info)
 
 #include "nocturne.h"
 

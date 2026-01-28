@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20(CDemonRenderer * this_ptr, SCameraViewportState * output_state)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20 (CDemonRenderer *this_ptr,SCameraViewportState *output_state)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

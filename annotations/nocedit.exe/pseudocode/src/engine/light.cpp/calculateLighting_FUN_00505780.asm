@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_light.cpp_calculateLighting_FUN_00505780(int normal_x, int normal_y, int normal_z)
+; __cdecl int __cdecl engine_light_cpp_calculateLighting_FUN_00505780(int normal_x,int normal_y,int normal_z)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   normal_x

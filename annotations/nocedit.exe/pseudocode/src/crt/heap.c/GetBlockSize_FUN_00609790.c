@@ -2,7 +2,7 @@
 // Address: 00609790
 // Address Range: [[00609790, 0060979e]]
 // Convention: __cdecl
-// Signature: ulong crt_heap.c_GetBlockSize_FUN_00609790(void * ptr)
+// Signature: ulong __cdecl crt_heap_c_GetBlockSize_FUN_00609790(void *ptr)
 
 #include "nocturne.h"
 

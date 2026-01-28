@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_snddx.cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code, char * operation_description)
+; __cdecl int __cdecl sound_snddx_cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code,char *operation_description)
 ;
 ; Parameters:
 ; HRESULT          Stack[0x4]:4   error_code

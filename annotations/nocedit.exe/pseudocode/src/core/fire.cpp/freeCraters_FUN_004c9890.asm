@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeCraters_FUN_004c9890(CCrater * * array)
+; __cdecl void __cdecl core_fire_cpp_freeCraters_FUN_004c9890(CCrater **array)
 ;
 ; Parameters:
 ; CCrater * *      Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 0059abf0
 // Address Range: [[0059abf0, 0059b598]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel * this_ptr, int lod_index, byte * part_visibility_flags, int * texture_set_indices, int render_flags, int special_render_mode)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0 (CDeformableModel *this_ptr,int lod_index,byte *part_visibility_flags, int *texture_set_indices,int render_flags,int special_render_mode)
 
 #include "nocturne.h"
 

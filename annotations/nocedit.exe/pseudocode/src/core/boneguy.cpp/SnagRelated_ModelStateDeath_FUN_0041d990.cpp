@@ -2,7 +2,7 @@
 // Address: 0041d990
 // Address Range: [[0041d990, 0041d9fa]]
 // Convention: unknown
-// Signature: undefined core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990()
+// Signature: void core_boneguy_cpp_SnagRelated_ModelStateDeath_FUN_0041d990(void)
 
 #include "nocturne.h"
 

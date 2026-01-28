@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_imp.cpp_CImp_load_FUN_004fab00()
+; unknown void core_imp_cpp_CImp_load_FUN_004fab00(void)
 ;
 ;
 ; Referenced Globals:

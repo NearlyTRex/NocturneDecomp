@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)
+; __cdecl int __cdecl wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0 (CExternalRenderer *this_ptr,CExternalRenderer *capabilities)
 ;
 ; Parameters:
 ; CExternalRenderer * Stack[0x4]:4   this_ptr

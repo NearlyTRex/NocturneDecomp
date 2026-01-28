@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_dracbrid.cpp_FUN_00484410()
+; unknown void core_dracbrid_cpp_FUN_00484410 (uint param_1,int param_2,undefined4 param_3,int param_4,CEnemy *param_5, float param_6)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x494]:1  local_494

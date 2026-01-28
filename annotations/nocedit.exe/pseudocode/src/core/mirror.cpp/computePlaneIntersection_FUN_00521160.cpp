@@ -2,7 +2,7 @@
 // Address: 00521160
 // Address Range: [[00521160, 00521273]]
 // Convention: __cdecl
-// Signature: void core_mirror.cpp_computePlaneIntersection_FUN_00521160(SClipPlane * clip_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * out_intersection)
+// Signature: void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_00521160 (SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b, CVector3f *out_intersection)
 
 #include "nocturne.h"
 

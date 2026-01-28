@@ -5,4 +5,4 @@
 
 // Original: crt_fpemu.c_staticInit_FUN_0060be80
 // Address: 0060be80
-void staticInit(void);
+void __cdecl staticInit(void);

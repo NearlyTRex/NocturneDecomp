@@ -2,7 +2,7 @@
 // Address: 0049b2f0
 // Address Range: [[0049b2f0, 0049b690]]
 // Convention: __cdecl
-// Signature: int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
+// Signature: int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0 (CDemonTriangle *triangle,float x,float z,float *out_height)
 
 #include "nocturne.h"
 

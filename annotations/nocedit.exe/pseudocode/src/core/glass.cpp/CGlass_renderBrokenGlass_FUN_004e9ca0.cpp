@@ -2,7 +2,7 @@
 // Address: 004e9ca0
 // Address Range: [[004e9ca0, 004e9e88]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass * this_ptr)
+// Signature: void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_ptr)
 
 #include "nocturne.h"
 

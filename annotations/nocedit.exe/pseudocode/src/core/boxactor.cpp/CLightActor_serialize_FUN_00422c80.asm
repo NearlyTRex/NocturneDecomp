@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_boxactor.cpp_CLightActor_serialize_FUN_00422c80(CLightActor * this_ptr)
+; __cdecl void __cdecl core_boxactor_cpp_CLightActor_serialize_FUN_00422c80(CLightActor *this_ptr)
 ;
 ; Parameters:
 ; CLightActor *    Stack[0x4]:4   this_ptr

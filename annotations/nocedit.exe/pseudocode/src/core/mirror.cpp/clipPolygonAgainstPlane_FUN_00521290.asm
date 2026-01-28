@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, int * output_count)
+; __cdecl void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290 (SClipPlane *clip_plane,CVector3f *input_vertices,int input_count, CVector3f *output_vertices,int *output_count)
 ;
 ; Parameters:
 ; SClipPlane *     Stack[0x4]:4   clip_plane

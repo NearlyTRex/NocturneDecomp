@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_fileio.cpp_CFileManager_findPodInList_FUN_004ba6c0(CFileManager * this_ptr, CStrList * pod_list, char * target_filename)
+; __cdecl int __cdecl engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0 (CFileManager *this_ptr,CStrList *pod_list,char *target_filename)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

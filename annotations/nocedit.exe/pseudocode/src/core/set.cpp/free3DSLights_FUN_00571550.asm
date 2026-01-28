@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_set.cpp_free3DSLights_FUN_00571550(C3DSLight * * array)
+; __cdecl void __cdecl core_set_cpp_free3DSLights_FUN_00571550(C3DSLight **array)
 ;
 ; Parameters:
 ; C3DSLight * *    Stack[0x4]:4   array

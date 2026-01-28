@@ -2,7 +2,7 @@
 // Address: 004a63e0
 // Address Range: [[004a63e0, 004a641d]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEdScrollBar_clampToVisibleRange_FUN_004a63e0(CEdScrollBar * this_ptr, int * value_ptr)
+// Signature: void __cdecl shape_edittool_cpp_CEdScrollBar_clampToVisibleRange_FUN_004a63e0 (CEdScrollBar *this_ptr,int *value_ptr)
 
 #include "nocturne.h"
 

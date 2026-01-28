@@ -2,7 +2,7 @@
 // Address: 0053ca30
 // Address Range: [[0053ca30, 0053ca7e]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_FUN_0053ca30()
+// Signature: void core_msnedit_cpp_FUN_0053ca30(void)
 
 #include "nocturne.h"
 

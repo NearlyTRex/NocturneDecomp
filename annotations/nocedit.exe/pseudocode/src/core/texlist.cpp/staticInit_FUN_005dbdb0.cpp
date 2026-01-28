@@ -2,7 +2,7 @@
 // Address: 005dbdb0
 // Address Range: [[005dbdb0, 005dbdca]]
 // Convention: __cdecl
-// Signature: void core_texlist.cpp_staticInit_FUN_005dbdb0(void)
+// Signature: void __cdecl core_texlist_cpp_staticInit_FUN_005dbdb0(void)
 
 #include "nocturne.h"
 

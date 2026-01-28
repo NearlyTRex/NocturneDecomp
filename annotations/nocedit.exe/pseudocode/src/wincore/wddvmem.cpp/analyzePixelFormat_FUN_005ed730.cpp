@@ -2,7 +2,7 @@
 // Address: 005ed730
 // Address Range: [[005ed730, 005ed8e4]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_analyzePixelFormat_FUN_005ed730(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
 
 #include "nocturne.h"
 

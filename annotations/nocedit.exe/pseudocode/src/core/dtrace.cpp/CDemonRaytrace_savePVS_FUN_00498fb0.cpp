@@ -2,7 +2,7 @@
 // Address: 00498fb0
 // Address Range: [[00498fb0, 004990e8]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array, int * * output_indices_array)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0 (CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array, int **output_indices_array)
 
 #include "nocturne.h"
 

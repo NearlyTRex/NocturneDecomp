@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_turnModelInsideOut_FUN_004671e0(void)
+; __cdecl void __cdecl shape_design_c_turnModelInsideOut_FUN_004671e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

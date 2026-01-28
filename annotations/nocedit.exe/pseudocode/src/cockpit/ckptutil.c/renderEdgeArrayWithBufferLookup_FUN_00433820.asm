@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_renderEdgeArrayWithBufferLookup_FUN_00433820(uchar * color_buffer, SEdge * edge_array, int edge_count, int offset_x, int offset_y, int buffer_width)
+; __cdecl void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_00433820 (uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y, int buffer_width)
 ;
 ; Parameters:
 ; uchar *          Stack[0x4]:4   color_buffer

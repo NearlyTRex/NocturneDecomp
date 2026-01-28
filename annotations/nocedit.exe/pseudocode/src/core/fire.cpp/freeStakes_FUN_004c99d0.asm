@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeStakes_FUN_004c99d0(CStake * * array)
+; __cdecl void __cdecl core_fire_cpp_freeStakes_FUN_004c99d0(CStake **array)
 ;
 ; Parameters:
 ; CStake * *       Stack[0x4]:4   array

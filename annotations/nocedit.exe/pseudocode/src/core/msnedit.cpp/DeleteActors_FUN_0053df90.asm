@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_DeleteActors_FUN_0053df90()
+; unknown void core_msnedit_cpp_DeleteActors_FUN_0053df90(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x764]:1  local_764

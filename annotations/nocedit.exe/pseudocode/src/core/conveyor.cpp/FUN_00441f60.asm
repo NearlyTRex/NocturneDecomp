@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_conveyor.cpp_FUN_00441f60()
+; unknown undefined4 core_conveyor_cpp_FUN_00441f60(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 005ab270
 // Address Range: [[005ab270, 005ab275]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270(void)
+// Signature: int __cdecl sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270(void)
 
 #include "nocturne.h"
 

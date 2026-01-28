@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CInputString_backspace_FUN_0049d5d0(CInputString * this_ptr)
+; __cdecl void __cdecl shape_edittool_cpp_CInputString_backspace_FUN_0049d5d0(CInputString *this_ptr)
 ;
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr

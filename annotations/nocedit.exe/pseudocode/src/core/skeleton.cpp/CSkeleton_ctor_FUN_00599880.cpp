@@ -2,7 +2,7 @@
 // Address: 00599880
 // Address Range: [[00599880, 005998dd]]
 // Convention: __cdecl
-// Signature: CSkeleton * core_skeleton.cpp_CSkeleton_ctor_FUN_00599880(CSkeleton * this_ptr)
+// Signature: CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *this_ptr)
 
 #include "nocturne.h"
 

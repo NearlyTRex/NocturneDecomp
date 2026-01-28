@@ -2,7 +2,7 @@
 // Address: 00468f20
 // Address Range: [[00468f20, 0046913b]]
 // Convention: __cdecl
-// Signature: void shape_design.c_generateShell_FUN_00468f20(void)
+// Signature: void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
 
 #include "nocturne.h"
 

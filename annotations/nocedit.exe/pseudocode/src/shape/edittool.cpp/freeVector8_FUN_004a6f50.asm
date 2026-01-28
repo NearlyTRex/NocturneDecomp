@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_freeVector8_FUN_004a6f50(CVector3f * * array)
+; __cdecl void __cdecl shape_edittool_cpp_freeVector8_FUN_004a6f50(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

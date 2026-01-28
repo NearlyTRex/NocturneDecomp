@@ -2,7 +2,7 @@
 // Address: 00483ef0
 // Address Range: [[00483ef0, 00483f7c]]
 // Convention: __cdecl
-// Signature: void core_dracbrid.cpp_staticInit_FUN_00483ef0(void)
+// Signature: void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void)
 
 #include "nocturne.h"
 

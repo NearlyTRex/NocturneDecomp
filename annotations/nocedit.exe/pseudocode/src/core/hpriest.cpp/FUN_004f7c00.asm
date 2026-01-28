@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hpriest.cpp_FUN_004f7c00()
+; unknown void core_hpriest_cpp_FUN_004f7c00(void)
 ;
 ;
 ; Referenced Globals:

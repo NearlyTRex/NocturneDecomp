@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, byte * output_stream, int * bytes_remaining, int code_value)
+; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0 (CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,byte *output_stream,int *bytes_remaining, int code_value)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

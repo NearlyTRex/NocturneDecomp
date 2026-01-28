@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int font_width)
+; __cdecl CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0 (CWinFont *this_ptr,char *font_name,int font_height,int font_width)
 ;
 ; Parameters:
 ; CWinFont *       Stack[0x4]:4   this_ptr

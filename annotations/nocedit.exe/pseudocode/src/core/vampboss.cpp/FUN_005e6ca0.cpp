@@ -2,7 +2,7 @@
 // Address: 005e6ca0
 // Address Range: [[005e6ca0, 005e6d9b]]
 // Convention: unknown
-// Signature: undefined core_vampboss.cpp_FUN_005e6ca0()
+// Signature: void core_vampboss_cpp_FUN_005e6ca0(void)
 
 #include "nocturne.h"
 

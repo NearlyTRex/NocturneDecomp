@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
+; __cdecl void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
 ;
 ;
 ; XREF[1]:

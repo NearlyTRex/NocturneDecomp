@@ -2,7 +2,7 @@
 // Address: 0040c700
 // Address Range: [[0040c700, 0040c71f]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_checkNameHash_FUN_0040c700(CDemonActorType * type_ptr, uint name_hash)
+// Signature: int __cdecl core_actor_cpp_checkNameHash_FUN_0040c700(CDemonActorType *type_ptr,uint name_hash)
 
 #include "nocturne.h"
 

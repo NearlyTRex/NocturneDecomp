@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_renderPolygonsByPart_FUN_004616a0(int part_id)
+; __cdecl void __cdecl shape_design_c_renderPolygonsByPart_FUN_004616a0(int part_id)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   part_id

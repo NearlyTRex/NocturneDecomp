@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_duplicateSharedVertices_FUN_00465d50(int polygon_index)
+; __cdecl void __cdecl shape_design_c_duplicateSharedVertices_FUN_00465d50(int polygon_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index

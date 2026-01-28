@@ -2,7 +2,7 @@
 // Address: 004236e0
 // Address Range: [[004236e0, 004236f4]]
 // Convention: __cdecl
-// Signature: int core_boxactor.cpp_freeFilters_FUN_004236e0(CDemonFilter * * objs)
+// Signature: int __cdecl core_boxactor_cpp_freeFilters_FUN_004236e0(CDemonFilter **objs)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_flamegun.cpp_initializeFlamegun_FUN_004cbce0(void)
+; __cdecl void __cdecl core_flamegun_cpp_initializeFlamegun_FUN_004cbce0(void)
 ;
 ;
 ; XREF[1]:

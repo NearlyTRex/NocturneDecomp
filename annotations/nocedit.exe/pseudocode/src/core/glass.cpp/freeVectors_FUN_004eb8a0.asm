@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_glass.cpp_freeVectors_FUN_004eb8a0(CVector3f * * array)
+; __cdecl void __cdecl core_glass_cpp_freeVectors_FUN_004eb8a0(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

@@ -2,7 +2,7 @@
 // Address: 00544fc0
 // Address Range: [[00544fc0, 00545051]]
 // Convention: unknown
-// Signature: undefined engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
+// Signature: void engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
 
 #include "nocturne.h"
 

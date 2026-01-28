@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_stdio.c_SetupConsoleInputMode_FUN_006059b0()
+; unknown int crt_stdio_c_SetupConsoleInputMode_FUN_006059b0(void)
 ;
 ;
 ; XREF[1]:

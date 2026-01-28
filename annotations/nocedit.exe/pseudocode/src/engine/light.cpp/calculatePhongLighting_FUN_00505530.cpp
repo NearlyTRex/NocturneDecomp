@@ -2,7 +2,7 @@
 // Address: 00505530
 // Address Range: [[00505530, 00505770]]
 // Convention: __cdecl
-// Signature: int engine_light.cpp_calculatePhongLighting_FUN_00505530(int world_x, int world_y, int world_z)
+// Signature: int __cdecl engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int world_z)
 
 #include "nocturne.h"
 

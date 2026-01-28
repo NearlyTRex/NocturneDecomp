@@ -2,7 +2,7 @@
 // Address: 0045d300
 // Address Range: [[0045d300, 0045d462]]
 // Convention: __cdecl
-// Signature: void shape_design.c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive * polygon_data)
+// Signature: void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
 
 #include "nocturne.h"
 

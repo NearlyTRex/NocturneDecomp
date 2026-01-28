@@ -2,7 +2,7 @@
 // Address: 005251c0
 // Address Range: [[005251c0, 005251e5]]
 // Convention: __cdecl
-// Signature: CMobster * core_mobster.cpp_factoryFunc_FUN_005251c0(void)
+// Signature: CMobster * __cdecl core_mobster_cpp_factoryFunc_FUN_005251c0(void)
 
 #include "nocturne.h"
 

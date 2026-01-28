@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_crate.cpp_FUN_004489d0()
+; unknown undefined4 core_crate_cpp_FUN_004489d0(void)
 ;
 ;
 ; Referenced Globals:

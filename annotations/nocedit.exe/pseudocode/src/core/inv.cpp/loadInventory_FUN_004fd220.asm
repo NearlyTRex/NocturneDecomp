@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inv.cpp_loadInventory_FUN_004fd220(void)
+; __cdecl void __cdecl core_inv_cpp_loadInventory_FUN_004fd220(void)
 ;
 ;
 ; XREF[3]:

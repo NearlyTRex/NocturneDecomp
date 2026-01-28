@@ -2,7 +2,7 @@
 // Address: 0049d250
 // Address Range: [[0049d250, 0049d281]]
 // Convention: __cdecl
-// Signature: char * shape_edittool.cpp_extractTabDelimitedField_FUN_0049d250(char * source_str, char * dest_buffer)
+// Signature: char * __cdecl shape_edittool_cpp_extractTabDelimitedField_FUN_0049d250(char *source_str,char *dest_buffer)
 
 #include "nocturne.h"
 

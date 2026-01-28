@@ -2,7 +2,7 @@
 // Address: 0043e9a0
 // Address Range: [[0043e9a0, 0043e9aa]]
 // Convention: __cdecl
-// Signature: CCodec * support_codec.cpp_CCodec_ctor_FUN_0043e9a0(CCodec * this_ptr)
+// Signature: CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_0043e9a0(CCodec *this_ptr)
 
 #include "nocturne.h"
 

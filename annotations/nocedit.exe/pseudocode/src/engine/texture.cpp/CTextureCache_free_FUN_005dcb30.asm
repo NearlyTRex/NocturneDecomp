@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_texture.cpp_CTextureCache_free_FUN_005dcb30(CTextureCache * cache)
+; __cdecl void __cdecl engine_texture_cpp_CTextureCache_free_FUN_005dcb30(CTextureCache *cache)
 ;
 ; Parameters:
 ; CTextureCache *  Stack[0x4]:4   cache

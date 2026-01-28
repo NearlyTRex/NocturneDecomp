@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140()
+; unknown void core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140(void)
 ;
 ;
 ; XREF[12]:

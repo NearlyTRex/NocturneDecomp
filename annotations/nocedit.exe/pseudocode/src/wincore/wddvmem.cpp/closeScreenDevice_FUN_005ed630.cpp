@@ -2,7 +2,7 @@
 // Address: 005ed630
 // Address Range: [[005ed630, 005ed707]]
 // Convention: __cdecl
-// Signature: void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630(void)
 
 #include "nocturne.h"
 

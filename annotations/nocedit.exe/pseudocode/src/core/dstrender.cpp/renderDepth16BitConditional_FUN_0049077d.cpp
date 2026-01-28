@@ -2,7 +2,7 @@
 // Address: 0049077d
 // Address Range: [[0049077d, 004907d0] [004907e0, 004907e6]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 

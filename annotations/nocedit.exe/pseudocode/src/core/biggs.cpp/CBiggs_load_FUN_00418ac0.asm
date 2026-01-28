@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_biggs.cpp_CBiggs_load_FUN_00418ac0()
+; unknown void core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
 ;
 ;
 ; Referenced Globals:

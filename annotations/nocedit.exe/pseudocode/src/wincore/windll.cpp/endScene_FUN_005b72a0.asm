@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_endScene_FUN_005b72a0(void)
+; __cdecl int __cdecl wincore_windll_cpp_endScene_FUN_005b72a0(void)
 ;
 ;
 ; XREF[2]:

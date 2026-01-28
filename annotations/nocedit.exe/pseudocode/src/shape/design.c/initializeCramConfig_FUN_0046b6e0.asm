@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
+; __cdecl void __cdecl shape_design_c_initializeCramConfig_FUN_0046b6e0(SCramConfig *cram_config)
 ;
 ; Parameters:
 ; SCramConfig *    Stack[0x4]:4   cram_config

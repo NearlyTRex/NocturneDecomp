@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_larva.cpp_staticInit_FUN_00502f20(void)
+; __cdecl void __cdecl core_larva_cpp_staticInit_FUN_00502f20(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 00587b50
 // Address Range: [[00587b50, 00587de0]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DSLight * this_ptr)
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DSLight *this_ptr)
 
 #include "nocturne.h"
 

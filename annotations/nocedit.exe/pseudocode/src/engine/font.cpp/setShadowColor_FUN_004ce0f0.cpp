@@ -2,7 +2,7 @@
 // Address: 004ce0f0
 // Address Range: [[004ce0f0, 004ce210]]
 // Convention: __cdecl
-// Signature: void engine_font.cpp_setShadowColor_FUN_004ce0f0(uint red, uint green, uint blue)
+// Signature: void __cdecl engine_font_cpp_setShadowColor_FUN_004ce0f0(uint red,uint green,uint blue)
 
 #include "nocturne.h"
 

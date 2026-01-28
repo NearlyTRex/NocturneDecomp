@@ -2,7 +2,7 @@
 // Address: 004b5350
 // Address Range: [[004b5350, 004b5391]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_remountAllPods_FUN_004b5350(void)
+// Signature: void __cdecl engine_fileio_cpp_remountAllPods_FUN_004b5350(void)
 
 #include "nocturne.h"
 

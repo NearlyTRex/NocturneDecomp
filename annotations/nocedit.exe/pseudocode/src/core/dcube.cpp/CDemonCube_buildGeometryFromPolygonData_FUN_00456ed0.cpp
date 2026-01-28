@@ -2,7 +2,7 @@
 // Address: 00456ed0
 // Address Range: [[00456ed0, 0045709d]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube * this_ptr)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube *this_ptr)
 
 #include "nocturne.h"
 

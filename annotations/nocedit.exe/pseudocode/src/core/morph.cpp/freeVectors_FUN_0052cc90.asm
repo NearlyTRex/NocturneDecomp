@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_morph.cpp_freeVectors_FUN_0052cc90(CVector3f * * array)
+; __cdecl void __cdecl core_morph_cpp_freeVectors_FUN_0052cc90(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

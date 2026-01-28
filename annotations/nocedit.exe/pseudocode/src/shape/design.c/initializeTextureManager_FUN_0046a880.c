@@ -2,7 +2,7 @@
 // Address: 0046a880
 // Address Range: [[0046a880, 0046a8d6]]
 // Convention: __cdecl
-// Signature: void shape_design.c_initializeTextureManager_FUN_0046a880(int initialization_mode)
+// Signature: void __cdecl shape_design_c_initializeTextureManager_FUN_0046a880(int initialization_mode)
 
 #include "nocturne.h"
 

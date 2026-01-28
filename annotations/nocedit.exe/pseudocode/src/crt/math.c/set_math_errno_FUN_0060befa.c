@@ -2,7 +2,7 @@
 // Address: 0060befa
 // Address Range: [[0060befa, 0060bf2c]]
 // Convention: __cdecl
-// Signature: double crt_math.c_set_math_errno_FUN_0060befa(int errorFlags, double * valuePtr)
+// Signature: double __cdecl crt_math_c_set_math_errno_FUN_0060befa(int errorFlags,double *valuePtr)
 
 #include "nocturne.h"
 

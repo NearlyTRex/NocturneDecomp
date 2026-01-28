@@ -2,7 +2,7 @@
 // Address: 00441890
 // Address Range: [[00441890, 00441969]]
 // Convention: __cdecl
-// Signature: void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format, ...)
+// Signature: void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,char *format,...)
 
 #include "nocturne.h"
 

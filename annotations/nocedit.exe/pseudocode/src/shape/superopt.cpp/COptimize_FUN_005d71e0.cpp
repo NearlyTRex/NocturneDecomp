@@ -2,7 +2,7 @@
 // Address: 005d71e0
 // Address Range: [[005d71e0, 005d7284]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_COptimize_FUN_005d71e0(COptimize * this_ptr)
+// Signature: int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr)
 
 #include "nocturne.h"
 

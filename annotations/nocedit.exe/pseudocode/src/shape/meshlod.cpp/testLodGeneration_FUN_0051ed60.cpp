@@ -2,7 +2,7 @@
 // Address: 0051ed60
 // Address Range: [[0051ed60, 0051edc7]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_testLodGeneration_FUN_0051ed60(void)
+// Signature: void __cdecl shape_meshlod_cpp_testLodGeneration_FUN_0051ed60(void)
 
 #include "nocturne.h"
 

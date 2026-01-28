@@ -2,7 +2,7 @@
 // Address: 005f7730
 // Address Range: [[005f7730, 005f77da]]
 // Convention: __cdecl
-// Signature: void core_xform.cpp_quaternionToAxisAngle_FUN_005f7730(CQuaternion4f * quat_in, float * angle_out, CVector3f * axis_out)
+// Signature: void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_005f7730 (CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out)
 
 #include "nocturne.h"
 

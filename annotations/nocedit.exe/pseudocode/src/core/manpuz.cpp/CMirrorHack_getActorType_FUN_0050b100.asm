@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_manpuz.cpp_CMirrorHack_getActorType_FUN_0050b100(CMirrorHack * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_manpuz_cpp_CMirrorHack_getActorType_FUN_0050b100(CMirrorHack *this_ptr)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

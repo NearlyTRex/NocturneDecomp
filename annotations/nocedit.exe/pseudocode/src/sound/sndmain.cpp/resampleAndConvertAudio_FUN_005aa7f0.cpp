@@ -2,7 +2,7 @@
 // Address: 005aa7f0
 // Address Range: [[005aa7f0, 005aadfc]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0(int src_bit_depth, int src_channels, int src_sample_rate, int src_signed, short * src_buffer, int dst_bit_depth, int dst_channels, int dst_sample_rate, int dst_signed, short * dst_buffer, int num_output_samples)
+// Signature: void __cdecl sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0 (int src_bit_depth,int src_channels,int src_sample_rate,int src_signed,short *src_buffer, int dst_bit_depth,int dst_channels,int dst_sample_rate,int dst_signed,short *dst_buffer, int num_output_samples)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00543150
 // Address Range: [[00543150, 00543594]]
 // Convention: __cdecl
-// Signature: void core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame * this_ptr)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20(CLodFace * this_ptr, CLodFace * other)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodFace_copy_FUN_0051ef20(CLodFace *this_ptr,CLodFace *other)
 ;
 ; Parameters:
 ; CLodFace *       Stack[0x4]:4   this_ptr

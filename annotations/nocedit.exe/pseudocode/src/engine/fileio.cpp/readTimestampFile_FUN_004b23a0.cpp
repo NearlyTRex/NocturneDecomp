@@ -2,7 +2,7 @@
 // Address: 004b23a0
 // Address Range: [[004b23a0, 004b2631]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_readTimestampFile_FUN_004b23a0(FILE * file, STimestampRecord * * records, int * count)
+// Signature: int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(FILE *file,STimestampRecord **records,int *count)
 
 #include "nocturne.h"
 

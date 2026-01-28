@@ -2,7 +2,7 @@
 // Address: 0060ad40
 // Address Range: [[0060ad40, 0060addc]]
 // Convention: __cdecl
-// Signature: char * crt_stdlib.c_i64toa_FUN_0060ad40(longlong * value, char * buffer, int base)
+// Signature: char * __cdecl crt_stdlib_c_i64toa_FUN_0060ad40(longlong *value,char *buffer,int base)
 
 #include "nocturne.h"
 

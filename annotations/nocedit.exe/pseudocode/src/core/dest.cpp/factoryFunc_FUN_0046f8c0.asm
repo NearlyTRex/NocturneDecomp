@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorDestination * core_dest.cpp_factoryFunc_FUN_0046f8c0(void)
+; __cdecl CActorDestination * __cdecl core_dest_cpp_factoryFunc_FUN_0046f8c0(void)
 ;
 ;
 ; XREF[1]:

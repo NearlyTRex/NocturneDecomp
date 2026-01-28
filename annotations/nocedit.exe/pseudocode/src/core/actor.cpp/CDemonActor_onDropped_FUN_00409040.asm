@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CDemonActor_onDropped_FUN_00409040(CDemonActor * this_ptr, CVector3f * drop_position)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_onDropped_FUN_00409040(CDemonActor *this_ptr,CVector3f *drop_position)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

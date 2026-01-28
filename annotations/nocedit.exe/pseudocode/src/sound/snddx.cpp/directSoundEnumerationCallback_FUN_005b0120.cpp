@@ -2,7 +2,7 @@
 // Address: 005b0120
 // Address Range: [[005b0120, 005b033e]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid, LPCSTR description, LPCSTR module, LPVOID context)
+// Signature: int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120 (LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005438c0
 // Address Range: [[005438c0, 0054392a]]
 // Convention: __cdecl
-// Signature: void * * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
+// Signature: void ** __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame *this_ptr)
 
 #include "nocturne.h"
 

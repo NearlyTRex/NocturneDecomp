@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_drone.cpp_FUN_0048f4d0()
+; unknown undefined4 core_drone_cpp_FUN_0048f4d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x10]:1  local_10

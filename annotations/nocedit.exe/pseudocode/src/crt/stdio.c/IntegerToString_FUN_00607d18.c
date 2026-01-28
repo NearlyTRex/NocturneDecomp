@@ -2,7 +2,7 @@
 // Address: 00607d18
 // Address Range: [[00607d18, 00607d46]]
 // Convention: __cdecl
-// Signature: char * crt_stdio.c_IntegerToString_FUN_00607d18(int value, char * buffer, int base)
+// Signature: char * __cdecl crt_stdio_c_IntegerToString_FUN_00607d18(int value,char *buffer,int base)
 
 #include "nocturne.h"
 

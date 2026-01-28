@@ -2,7 +2,7 @@
 // Address: 004c96b0
 // Address Range: [[004c96b0, 004c96c4]]
 // Convention: __cdecl
-// Signature: CRock * core_fire.cpp_CRock_ctor_FUN_004c96b0(CRock * this_ptr)
+// Signature: CRock * __cdecl core_fire_cpp_CRock_ctor_FUN_004c96b0(CRock *this_ptr)
 
 #include "nocturne.h"
 

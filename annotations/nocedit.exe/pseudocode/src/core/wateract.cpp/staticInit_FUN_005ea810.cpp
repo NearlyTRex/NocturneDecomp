@@ -2,7 +2,7 @@
 // Address: 005ea810
 // Address Range: [[005ea810, 005ea85b]]
 // Convention: __cdecl
-// Signature: void core_wateract.cpp_staticInit_FUN_005ea810(void)
+// Signature: void __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void)
 
 #include "nocturne.h"
 

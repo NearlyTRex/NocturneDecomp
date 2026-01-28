@@ -2,7 +2,7 @@
 // Address: 005ce580
 // Address Range: [[005ce580, 005d0004]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580(CPoly * this_ptr, CPoly * other_poly, CPolyIntersectResult * out_result)
+// Signature: int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580 (CPoly *this_ptr,CPoly *other_poly,CPolyIntersectResult *out_result)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00585ff0
 // Address Range: [[00585ff0, 00586149]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

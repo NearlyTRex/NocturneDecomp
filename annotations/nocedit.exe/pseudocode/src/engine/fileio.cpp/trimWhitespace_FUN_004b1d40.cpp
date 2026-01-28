@@ -2,7 +2,7 @@
 // Address: 004b1d40
 // Address Range: [[004b1d40, 004b1da4]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_trimWhitespace_FUN_004b1d40(char * string)
+// Signature: void __cdecl engine_fileio_cpp_trimWhitespace_FUN_004b1d40(char *string)
 
 #include "nocturne.h"
 

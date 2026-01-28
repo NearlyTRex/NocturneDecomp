@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620(void)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_matrixPush_FUN_0050d620(void)
 ;
 ;
 ; XREF[1]:

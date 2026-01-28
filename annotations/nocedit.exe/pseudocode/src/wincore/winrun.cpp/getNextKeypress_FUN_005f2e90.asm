@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90(void)
+; __cdecl int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005f2e90(void)
 ;
 ;
 ; XREF[65]:

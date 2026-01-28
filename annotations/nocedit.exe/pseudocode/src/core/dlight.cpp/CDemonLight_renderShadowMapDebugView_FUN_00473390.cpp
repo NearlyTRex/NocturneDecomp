@@ -2,7 +2,7 @@
 // Address: 00473390
 // Address Range: [[00473390, 004735b8]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390(CDemonLight * this_ptr, int screen_x, int screen_y, int display_size)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390 (CDemonLight *this_ptr,int screen_x,int screen_y,int display_size)
 
 #include "nocturne.h"
 

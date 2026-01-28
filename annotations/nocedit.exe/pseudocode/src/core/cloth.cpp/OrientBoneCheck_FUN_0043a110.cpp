@@ -2,7 +2,7 @@
 // Address: 0043a110
 // Address Range: [[0043a110, 0043a2af]]
 // Convention: unknown
-// Signature: undefined core_cloth.cpp_OrientBoneCheck_FUN_0043a110()
+// Signature: void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
 
 #include "nocturne.h"
 

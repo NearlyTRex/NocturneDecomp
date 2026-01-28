@@ -2,7 +2,7 @@
 // Address: 00458a10
 // Address Range: [[00458a10, 00458ab3]]
 // Convention: __cdecl
-// Signature: int shape_design.c_promptForModelNameAndLoad_FUN_00458a10(void)
+// Signature: int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
 
 #include "nocturne.h"
 

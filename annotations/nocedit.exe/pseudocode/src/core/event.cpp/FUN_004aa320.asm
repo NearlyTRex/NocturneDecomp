@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_event.cpp_FUN_004aa320()
+; unknown undefined4 core_event_cpp_FUN_004aa320(void)
 ;
 ;
 ; Referenced Globals:

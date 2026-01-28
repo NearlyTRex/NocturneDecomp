@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_string.c_parseFloatString_FUN_00605b9b(char * str, void * result, char * * endptr)
+; __cdecl int __cdecl crt_string_c_parseFloatString_FUN_00605b9b(char *str,void *result,char **endptr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

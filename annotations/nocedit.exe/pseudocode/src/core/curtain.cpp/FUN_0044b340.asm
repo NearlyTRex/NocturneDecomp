@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_curtain.cpp_FUN_0044b340()
+; unknown undefined4 core_curtain_cpp_FUN_0044b340(void)
 ;
 ;
 ; Called Functions:

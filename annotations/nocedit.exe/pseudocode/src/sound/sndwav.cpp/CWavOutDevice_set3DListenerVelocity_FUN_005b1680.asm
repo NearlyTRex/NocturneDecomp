@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680(CWavOutDevice * this_ptr, double x_velocity, double y_velocity, double z_velocity)
+; __cdecl void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (CWavOutDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr

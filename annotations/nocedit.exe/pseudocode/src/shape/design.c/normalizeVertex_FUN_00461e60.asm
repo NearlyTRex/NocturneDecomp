@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
+; __cdecl void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3f *vertex)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   vertex

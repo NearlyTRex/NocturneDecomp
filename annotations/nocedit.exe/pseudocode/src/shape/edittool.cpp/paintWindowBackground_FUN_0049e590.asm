@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_paintWindowBackground_FUN_0049e590(void)
+; __cdecl void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

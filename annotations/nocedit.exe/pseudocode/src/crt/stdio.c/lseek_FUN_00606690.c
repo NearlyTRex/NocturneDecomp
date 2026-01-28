@@ -2,7 +2,7 @@
 // Address: 00606690
 // Address Range: [[00606690, 00606719]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_lseek_FUN_00606690(int file_handle_index, long distance_to_move, int move_method)
+// Signature: int __watcallStack crt_stdio_c_lseek_FUN_00606690(int file_handle_index,long distance_to_move,int move_method)
 
 #include "nocturne.h"
 

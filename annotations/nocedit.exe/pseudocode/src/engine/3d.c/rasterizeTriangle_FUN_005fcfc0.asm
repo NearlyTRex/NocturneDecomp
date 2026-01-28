@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count, int triangle_count)
+; __cdecl void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0 (SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_buffer

@@ -2,7 +2,7 @@
 // Address: 00404600
 // Address Range: [[00404600, 0040468f]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_drawLineStrip3D_FUN_00404600(SLineStrip * line_strip)
+// Signature: void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 
 #include "nocturne.h"
 

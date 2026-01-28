@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint sound_sndmain.cpp_getFirstActiveSfx_FUN_005a9ef0(void)
+; __cdecl uint __cdecl sound_sndmain_cpp_getFirstActiveSfx_FUN_005a9ef0(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 005279f0
 // Address Range: [[005279f0, 00527b66]]
 // Convention: unknown
-// Signature: undefined core_mobster.cpp_FUN_005279f0()
+// Signature: void core_mobster_cpp_FUN_005279f0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005a6430
 // Address Range: [[005a6430, 005a6530]]
 // Convention: __cdecl
-// Signature: void * sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430(CSfxSample * this_ptr, int lock_offset, int lock_length)
+// Signature: void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr,int lock_offset,int lock_length)
 
 #include "nocturne.h"
 

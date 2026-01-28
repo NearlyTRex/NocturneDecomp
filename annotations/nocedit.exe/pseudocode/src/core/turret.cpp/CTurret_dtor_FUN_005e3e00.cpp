@@ -2,7 +2,7 @@
 // Address: 005e3e00
 // Address Range: [[005e3e00, 005e3e4d]]
 // Convention: __cdecl
-// Signature: CTurret * core_turret.cpp_CTurret_dtor_FUN_005e3e00(CTurret * this_ptr, uint d1, uint d2)
+// Signature: CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_005e3e00(CTurret *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

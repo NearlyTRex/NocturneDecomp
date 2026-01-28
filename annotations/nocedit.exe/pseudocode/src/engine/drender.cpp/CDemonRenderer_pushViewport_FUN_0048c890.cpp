@@ -2,7 +2,7 @@
 // Address: 0048c890
 // Address Range: [[0048c890, 0048c8b0]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer * this_ptr, int x, int y, int width, int height)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890 (CDemonRenderer *this_ptr,int x,int y,int width,int height)
 
 #include "nocturne.h"
 

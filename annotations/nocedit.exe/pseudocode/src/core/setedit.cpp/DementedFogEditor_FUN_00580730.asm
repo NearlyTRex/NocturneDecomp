@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setedit.cpp_DementedFogEditor_FUN_00580730(void * unk)
+; __cdecl void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   unk

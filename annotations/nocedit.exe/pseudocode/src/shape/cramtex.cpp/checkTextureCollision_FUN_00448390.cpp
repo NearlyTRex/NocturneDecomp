@@ -2,7 +2,7 @@
 // Address: 00448390
 // Address Range: [[00448390, 004483d3]]
 // Convention: __cdecl
-// Signature: int shape_cramtex.cpp_checkTextureCollision_FUN_00448390(SCramWorkingEntry * placed_texture, SCramWorkingEntry * test_texture)
+// Signature: int __cdecl shape_cramtex_cpp_checkTextureCollision_FUN_00448390 (SCramWorkingEntry *placed_texture,SCramWorkingEntry *test_texture)
 
 #include "nocturne.h"
 

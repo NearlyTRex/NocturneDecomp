@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * core_ground.cpp_openFileWithExtension_FUN_004eebc0(char * base_filename, char * file_extension, char * open_mode)
+; __cdecl FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   base_filename

@@ -2,7 +2,7 @@
 // Address: 004a0890
 // Address Range: [[004a0890, 004a0962]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, int modal_flags)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890 (CEditorTools *this_ptr,int min_width,int min_height,char *text_content,int modal_flags)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_npc.cpp_CNPC_FUN_00544e30(CNPC * this_ptr)
+; __cdecl int __cdecl core_npc_cpp_CNPC_FUN_00544e30(CNPC *this_ptr)
 ;
 ; Parameters:
 ; CNPC *           Stack[0x4]:4   this_ptr

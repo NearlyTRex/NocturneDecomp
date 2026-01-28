@@ -2,7 +2,7 @@
 // Address: 0060cdbc
 // Address Range: [[0060cdbc, 0060ce2c]]
 // Convention: __watcallRegister
-// Signature: void crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc(void)
+// Signature: void crt_stdio_c_InitializeConsoleHandles_FUN_0060cdbc(void)
 
 #include "nocturne.h"
 

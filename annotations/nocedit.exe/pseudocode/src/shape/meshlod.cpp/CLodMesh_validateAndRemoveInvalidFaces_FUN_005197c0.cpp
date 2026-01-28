@@ -2,7 +2,7 @@
 // Address: 005197c0
 // Address Range: [[005197c0, 00519821]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh * this_ptr)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh *this_ptr)
 
 #include "nocturne.h"
 

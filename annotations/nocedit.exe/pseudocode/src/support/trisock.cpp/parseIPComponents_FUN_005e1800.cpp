@@ -2,7 +2,7 @@
 // Address: 005e1800
 // Address Range: [[005e1800, 005e1861]]
 // Convention: __cdecl
-// Signature: int support_trisock.cpp_parseIPComponents_FUN_005e1800(uint * result_ptr, char * dotted_decimal_string)
+// Signature: int __cdecl support_trisock_cpp_parseIPComponents_FUN_005e1800(uint *result_ptr,char *dotted_decimal_string)
 
 #include "nocturne.h"
 

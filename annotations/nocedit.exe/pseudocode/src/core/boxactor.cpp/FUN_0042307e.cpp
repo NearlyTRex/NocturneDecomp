@@ -2,7 +2,7 @@
 // Address: 0042307e
 // Address Range: [[0042307e, 004230ad]]
 // Convention: __cdecl
-// Signature: char * core_boxactor.cpp_FUN_0042307e(int param_1)
+// Signature: char * __cdecl core_boxactor_cpp_FUN_0042307e(int param_1)
 
 #include "nocturne.h"
 

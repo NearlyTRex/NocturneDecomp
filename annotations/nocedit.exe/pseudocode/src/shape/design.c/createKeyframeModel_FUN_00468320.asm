@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_createKeyframeModel_FUN_00468320(void)
+; __cdecl void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x26c]:8  local_26c

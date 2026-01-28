@@ -2,7 +2,7 @@
 // Address: 00556d70
 // Address Range: [[00556d70, 00556d84]]
 // Convention: __cdecl
-// Signature: void shape_quantize.cpp_copyString_FUN_00556d70(char * dest, char * src)
+// Signature: void __cdecl shape_quantize_cpp_copyString_FUN_00556d70(char *dest,char *src)
 
 #include "nocturne.h"
 

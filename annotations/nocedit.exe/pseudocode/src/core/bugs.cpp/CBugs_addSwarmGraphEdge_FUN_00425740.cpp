@@ -2,7 +2,7 @@
 // Address: 00425740
 // Address Range: [[00425740, 004257e7]]
 // Convention: unknown
-// Signature: undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740()
+// Signature: void core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0040d470
 // Address Range: [[0040d470, 0040d936]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D * bbox, int line_color)
+// Signature: void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
 
 #include "nocturne.h"
 

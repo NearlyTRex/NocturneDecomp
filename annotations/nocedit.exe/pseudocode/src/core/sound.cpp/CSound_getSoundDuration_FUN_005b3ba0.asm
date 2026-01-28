@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0(CSound * this_ptr, char * sound_name)
+; __cdecl float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(CSound *this_ptr,char *sound_name)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

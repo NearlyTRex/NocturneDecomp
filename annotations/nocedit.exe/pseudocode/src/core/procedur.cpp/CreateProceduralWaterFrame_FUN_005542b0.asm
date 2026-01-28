@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0()
+; unknown void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x134]:4  local_134

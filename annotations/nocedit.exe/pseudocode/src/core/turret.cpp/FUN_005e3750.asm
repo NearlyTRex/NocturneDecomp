@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_turret.cpp_FUN_005e3750()
+; unknown undefined4 core_turret_cpp_FUN_005e3750(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x5c]:1  local_5c

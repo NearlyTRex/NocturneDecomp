@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_mirror.cpp_freeClipPlaneArray_FUN_00522c10(SClipPlane * * array_ptr)
+; __cdecl void __cdecl core_mirror_cpp_freeClipPlaneArray_FUN_00522c10(SClipPlane **array_ptr)
 ;
 ; Parameters:
 ; SClipPlane * *   Stack[0x4]:4   array_ptr

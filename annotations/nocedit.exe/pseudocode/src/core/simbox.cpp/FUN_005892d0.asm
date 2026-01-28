@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_simbox.cpp_FUN_005892d0(CSimBox * this_ptr)
+; __cdecl int __cdecl core_simbox_cpp_FUN_005892d0(CSimBox *this_ptr)
 ;
 ; Parameters:
 ; CSimBox *        Stack[0x4]:4   this_ptr

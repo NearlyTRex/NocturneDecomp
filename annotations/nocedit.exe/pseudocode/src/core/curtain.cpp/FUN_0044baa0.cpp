@@ -2,7 +2,7 @@
 // Address: 0044baa0
 // Address Range: [[0044baa0, 0044baa4]]
 // Convention: __cdecl
-// Signature: SCurtainVertex * core_curtain.cpp_FUN_0044baa0(SCurtainVertex * this_ptr)
+// Signature: SCurtainVertex * __cdecl core_curtain_cpp_FUN_0044baa0(SCurtainVertex *this_ptr)
 
 #include "nocturne.h"
 

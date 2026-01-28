@@ -2,7 +2,7 @@
 // Address: 0049ce70
 // Address Range: [[0049ce70, 0049cedd]]
 // Convention: unknown
-// Signature: undefined core_dynamite.cpp_FUN_0049ce70()
+// Signature: undefined4 core_dynamite_cpp_FUN_0049ce70(void)
 
 #include "nocturne.h"
 

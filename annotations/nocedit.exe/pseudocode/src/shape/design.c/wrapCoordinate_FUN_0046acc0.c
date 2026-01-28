@@ -2,7 +2,7 @@
 // Address: 0046acc0
 // Address Range: [[0046acc0, 0046acff]]
 // Convention: __cdecl
-// Signature: int shape_design.c_wrapCoordinate_FUN_0046acc0(int coordinate, int dimension)
+// Signature: int __cdecl shape_design_c_wrapCoordinate_FUN_0046acc0(int coordinate,int dimension)
 
 #include "nocturne.h"
 

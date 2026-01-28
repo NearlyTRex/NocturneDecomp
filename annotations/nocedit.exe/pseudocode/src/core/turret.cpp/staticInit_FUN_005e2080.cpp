@@ -2,7 +2,7 @@
 // Address: 005e2080
 // Address Range: [[005e2080, 005e20a3]]
 // Convention: __cdecl
-// Signature: void core_turret.cpp_staticInit_FUN_005e2080(void)
+// Signature: void __cdecl core_turret_cpp_staticInit_FUN_005e2080(void)
 
 #include "nocturne.h"
 

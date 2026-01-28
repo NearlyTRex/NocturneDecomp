@@ -2,7 +2,7 @@
 // Address: 0045dbe0
 // Address Range: [[0045dbe0, 0045dcbd]]
 // Convention: unknown
-// Signature: undefined shape_design.c_showModelPartsList_FUN_0045dbe0()
+// Signature: void shape_design_c_showModelPartsList_FUN_0045dbe0(void)
 
 #include "nocturne.h"
 

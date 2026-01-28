@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_battery.cpp_CBattery_load_FUN_00418000()
+; unknown void core_battery_cpp_CBattery_load_FUN_00418000(void)
 ;
 ;
 ; Referenced Globals:

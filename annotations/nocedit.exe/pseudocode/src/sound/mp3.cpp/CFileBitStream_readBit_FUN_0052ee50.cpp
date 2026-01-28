@@ -2,7 +2,7 @@
 // Address: 0052ee50
 // Address Range: [[0052ee50, 0052ef3b]]
 // Convention: __cdecl
-// Signature: uint sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50(CFileBitStream * this_ptr)
+// Signature: uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_0052ee50(CFileBitStream *this_ptr)
 
 #include "nocturne.h"
 

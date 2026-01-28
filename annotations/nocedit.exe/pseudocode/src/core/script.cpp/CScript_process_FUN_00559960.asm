@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_script.cpp_CScript_process_FUN_00559960(CScript * this_ptr)
+; __cdecl void __cdecl core_script_cpp_CScript_process_FUN_00559960(CScript *this_ptr)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

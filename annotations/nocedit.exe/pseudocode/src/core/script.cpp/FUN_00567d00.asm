@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_FUN_00567d00()
+; unknown CVector3f * core_script_cpp_FUN_00567d00(void)
 ;
 ;
 ; Called Functions:

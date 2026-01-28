@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int cockpit_drawsurf.cpp_getDashLength_FUN_00488a90(void)
+; __cdecl int __cdecl cockpit_drawsurf_cpp_getDashLength_FUN_00488a90(void)
 ;
 ;
 ; Referenced Globals:

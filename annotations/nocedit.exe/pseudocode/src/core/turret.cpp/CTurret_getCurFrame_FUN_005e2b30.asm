@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30()
+; unknown float core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20

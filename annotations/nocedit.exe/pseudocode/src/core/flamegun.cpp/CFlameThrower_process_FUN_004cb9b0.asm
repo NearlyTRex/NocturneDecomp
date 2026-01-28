@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower * this_ptr, float delta_time)
+; __cdecl void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CFlameThrower *  Stack[0x4]:4   this_ptr

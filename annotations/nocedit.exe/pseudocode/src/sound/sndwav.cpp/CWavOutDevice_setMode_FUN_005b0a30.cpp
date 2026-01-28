@@ -2,7 +2,7 @@
 // Address: 005b0a30
 // Address Range: [[005b0a30, 005b0c05]]
 // Convention: __cdecl
-// Signature: int sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice * this_ptr, int bits_per_sample, int channels, int sample_rate, int * out_samples_per_block)
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30 (CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005e98b0
 // Address Range: [[005e98b0, 005e99ff] [005e9a01, 005e9a79]]
 // Convention: __cdecl
-// Signature: int core_vessel.cpp_FUN_005e98b0(CCryptVessel * this_ptr)
+// Signature: int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
 
 #include "nocturne.h"
 

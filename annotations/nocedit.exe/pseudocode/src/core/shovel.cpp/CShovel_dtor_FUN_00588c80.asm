@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CShovel * core_shovel.cpp_CShovel_dtor_FUN_00588c80(CShovel * this_ptr, uint d1, uint d2)
+; __cdecl CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_00588c80(CShovel *this_ptr,uint d1,uint d2)
 ;
 ; Parameters:
 ; CShovel *        Stack[0x4]:4   this_ptr

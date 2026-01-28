@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlashlight * core_flashlit.cpp_factoryFunc_FUN_004cbb80(void)
+; __cdecl CFlashlight * __cdecl core_flashlit_cpp_factoryFunc_FUN_004cbb80(void)
 ;
 ;
 ; XREF[1]:

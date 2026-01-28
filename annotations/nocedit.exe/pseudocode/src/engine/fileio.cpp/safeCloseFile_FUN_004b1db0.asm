@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_fileio.cpp_safeCloseFile_FUN_004b1db0(FILE * * file_ptr)
+; __cdecl void __cdecl engine_fileio_cpp_safeCloseFile_FUN_004b1db0(FILE **file_ptr)
 ;
 ; Parameters:
 ; FILE * *         Stack[0x4]:4   file_ptr

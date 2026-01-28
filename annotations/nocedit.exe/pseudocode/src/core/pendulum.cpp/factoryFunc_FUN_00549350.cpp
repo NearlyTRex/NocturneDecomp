@@ -2,7 +2,7 @@
 // Address: 00549350
 // Address Range: [[00549350, 00549372]]
 // Convention: __cdecl
-// Signature: CPendulum * core_pendulum.cpp_factoryFunc_FUN_00549350(void)
+// Signature: CPendulum * __cdecl core_pendulum_cpp_factoryFunc_FUN_00549350(void)
 
 #include "nocturne.h"
 

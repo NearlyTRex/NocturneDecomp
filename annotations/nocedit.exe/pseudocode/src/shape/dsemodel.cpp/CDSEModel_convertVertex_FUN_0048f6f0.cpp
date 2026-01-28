@@ -2,7 +2,7 @@
 // Address: 0048f6f0
 // Address Range: [[0048f6f0, 0048f762]]
 // Convention: __cdecl
-// Signature: int shape_dsemodel.cpp_CDSEModel_convertVertex_FUN_0048f6f0(CDSEModel * this_ptr, int vertex_id)
+// Signature: int __cdecl shape_dsemodel_cpp_CDSEModel_convertVertex_FUN_0048f6f0(CDSEModel *this_ptr,int vertex_id)
 
 #include "nocturne.h"
 

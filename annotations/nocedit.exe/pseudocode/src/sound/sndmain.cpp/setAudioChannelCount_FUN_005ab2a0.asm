@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setAudioChannelCount_FUN_005ab2a0(int channel_count)
+; __cdecl void __cdecl sound_sndmain_cpp_setAudioChannelCount_FUN_005ab2a0(int channel_count)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   channel_count

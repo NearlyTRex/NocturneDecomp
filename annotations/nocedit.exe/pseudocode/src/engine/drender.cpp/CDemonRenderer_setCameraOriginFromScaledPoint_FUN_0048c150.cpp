@@ -2,7 +2,7 @@
 // Address: 0048c150
 // Address Range: [[0048c150, 0048c1a6]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 (CDemonRenderer *this_ptr,CVector3i *point_ptr)
 
 #include "nocturne.h"
 

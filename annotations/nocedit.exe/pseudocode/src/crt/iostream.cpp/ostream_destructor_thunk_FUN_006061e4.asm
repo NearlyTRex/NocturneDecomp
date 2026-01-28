@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_iostream.cpp_ostream_destructor_thunk_FUN_006061e4(ios * this_ptr, int dtor_flags)
+; __cdecl void __cdecl crt_iostream_cpp_ostream_destructor_thunk_FUN_006061e4(ios *this_ptr,int dtor_flags)
 ;
 ; Parameters:
 ; ios *            Stack[0x4]:4   this_ptr

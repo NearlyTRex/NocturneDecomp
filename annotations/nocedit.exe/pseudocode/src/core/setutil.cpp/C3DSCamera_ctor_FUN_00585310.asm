@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl C3DSCamera * core_setutil.cpp_C3DSCamera_ctor_FUN_00585310(C3DSCamera * this_ptr)
+; __cdecl C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_00585310(C3DSCamera *this_ptr)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr

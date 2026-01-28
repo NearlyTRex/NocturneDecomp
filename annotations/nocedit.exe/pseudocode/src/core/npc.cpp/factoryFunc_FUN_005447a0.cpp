@@ -2,7 +2,7 @@
 // Address: 005447a0
 // Address Range: [[005447a0, 005447c2]]
 // Convention: __cdecl
-// Signature: CNPC * core_npc.cpp_factoryFunc_FUN_005447a0(void)
+// Signature: CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_005447a0(void)
 
 #include "nocturne.h"
 

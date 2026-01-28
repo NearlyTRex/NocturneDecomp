@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tommygun.cpp_staticInit_FUN_005dda20(void)
+; __cdecl void __cdecl core_tommygun_cpp_staticInit_FUN_005dda20(void)
 ;
 ;
 ; Referenced Globals:

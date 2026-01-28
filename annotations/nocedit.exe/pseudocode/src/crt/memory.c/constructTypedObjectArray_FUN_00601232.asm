@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_memory.c_constructTypedObjectArray_FUN_00601232(void * dest, int element_count, WatcomTypeInfo * type_info)
+; __cdecl void * __cdecl crt_memory_c_constructTypedObjectArray_FUN_00601232 (void *dest,int element_count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

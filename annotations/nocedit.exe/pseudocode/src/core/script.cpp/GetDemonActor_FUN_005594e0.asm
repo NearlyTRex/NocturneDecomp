@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_GetDemonActor_FUN_005594e0()
+; unknown CHero * core_script_cpp_GetDemonActor_FUN_005594e0(void)
 ;
 ;
 ; XREF[3]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_loadState_FUN_00560820()
+; unknown int core_script_cpp_CScript_loadState_FUN_00560820(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x118]:1  local_118

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBride * core_bride.cpp_CBride_dtor_FUN_00424b80(CBride * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+; __cdecl CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_00424b80 (CBride *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 ;
 ; Parameters:
 ; CBride *         Stack[0x4]:4   this_ptr

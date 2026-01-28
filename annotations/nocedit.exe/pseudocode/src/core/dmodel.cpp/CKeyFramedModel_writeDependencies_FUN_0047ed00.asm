@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 (CKeyFramedModel *this_ptr,FILE *dependency_file,int skip_raw_files)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

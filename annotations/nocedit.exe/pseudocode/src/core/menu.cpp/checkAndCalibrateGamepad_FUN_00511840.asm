@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840(void)
+; __cdecl int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
 ;
 ;
 ; Referenced Globals:

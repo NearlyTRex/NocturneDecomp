@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_string.c_mbstrnlen_FUN_00605e50(char * str, int max_bytes)
+; __watcallStack int __watcallStack crt_string_c_mbstrnlen_FUN_00605e50(char *str,int max_bytes)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

@@ -2,7 +2,7 @@
 // Address: 005dda50
 // Address Range: [[005dda50, 005dda72]]
 // Convention: __cdecl
-// Signature: CTommyGun * core_tommygun.cpp_factoryFunc_FUN_005dda50(void)
+// Signature: CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void)
 
 #include "nocturne.h"
 

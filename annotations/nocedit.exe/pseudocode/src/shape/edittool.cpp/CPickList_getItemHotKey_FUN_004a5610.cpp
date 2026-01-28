@@ -2,7 +2,7 @@
 // Address: 004a5610
 // Address Range: [[004a5610, 004a5669]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CPickList_getItemHotKey_FUN_004a5610(CPickList * this_ptr, int index)
+// Signature: int __cdecl shape_edittool_cpp_CPickList_getItemHotKey_FUN_004a5610(CPickList *this_ptr,int index)
 
 #include "nocturne.h"
 

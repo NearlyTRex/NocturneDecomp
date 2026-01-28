@@ -2,7 +2,7 @@
 // Address: 00505490
 // Address Range: [[00505490, 005054b1]]
 // Convention: __cdecl
-// Signature: void engine_light.cpp_setAmbientLightLevel_FUN_00505490(int light_level)
+// Signature: void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_00505490(int light_level)
 
 #include "nocturne.h"
 

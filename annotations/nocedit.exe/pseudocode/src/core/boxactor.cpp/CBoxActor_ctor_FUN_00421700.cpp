@@ -2,7 +2,7 @@
 // Address: 00421700
 // Address Range: [[00421700, 00421825]]
 // Convention: __cdecl
-// Signature: CBoxActor * core_boxactor.cpp_CBoxActor_ctor_FUN_00421700(CBoxActor * this_ptr)
+// Signature: CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *this_ptr)
 
 #include "nocturne.h"
 

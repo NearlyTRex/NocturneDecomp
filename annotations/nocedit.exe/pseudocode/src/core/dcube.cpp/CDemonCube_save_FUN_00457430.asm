@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcube.cpp_CDemonCube_save_FUN_00457430(CDemonCube * this_ptr, FILE * file_handle)
+; __cdecl void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr

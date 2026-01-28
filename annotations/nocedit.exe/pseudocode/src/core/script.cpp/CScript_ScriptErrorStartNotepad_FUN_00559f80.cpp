@@ -2,7 +2,7 @@
 // Address: 00559f80
 // Address Range: [[00559f80, 0055a364]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80()
+// Signature: undefined4 core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80(void)
 
 #include "nocturne.h"
 

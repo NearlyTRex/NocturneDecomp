@@ -2,7 +2,7 @@
 // Address: 0050a4f0
 // Address Range: [[0050a4f0, 0050a60e]]
 // Convention: __cdecl
-// Signature: int core_manpuz.cpp_FUN_0050a4f0(void * ptr)
+// Signature: int __cdecl core_manpuz_cpp_FUN_0050a4f0(void *ptr)
 
 #include "nocturne.h"
 

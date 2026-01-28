@@ -2,7 +2,7 @@
 // Address: 0053ee70
 // Address Range: [[0053ee70, 0053f309]]
 // Convention: __cdecl
-// Signature: void shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70(CMultiCram * this_ptr)
+// Signature: void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_inv.cpp_CInventory_selectItem_FUN_004fec10(CInventory * this_ptr, int direction)
+; __cdecl void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004fec10(CInventory *this_ptr,int direction)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

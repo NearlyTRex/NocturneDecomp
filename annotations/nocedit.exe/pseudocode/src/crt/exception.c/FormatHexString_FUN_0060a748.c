@@ -2,7 +2,7 @@
 // Address: 0060a748
 // Address Range: [[0060a748, 0060a7a3]]
 // Convention: __cdecl
-// Signature: void crt_exception.c_FormatHexString_FUN_0060a748(char * dest, char * format, DWORD value)
+// Signature: void __cdecl crt_exception_c_FormatHexString_FUN_0060a748(char *dest,char *format,DWORD value)
 
 #include "nocturne.h"
 

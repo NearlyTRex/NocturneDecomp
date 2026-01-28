@@ -2,7 +2,7 @@
 // Address: 00609668
 // Address Range: [[00609668, 00609716]]
 // Convention: __cdecl
-// Signature: int crt_heap.c_AllocateNewHeapBlock_FUN_00609668(uint size)
+// Signature: int __cdecl crt_heap_c_AllocateNewHeapBlock_FUN_00609668(uint size)
 
 #include "nocturne.h"
 

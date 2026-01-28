@@ -2,7 +2,7 @@
 // Address: 00539060
 // Address Range: [[00539060, 005390c4]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060()
+// Signature: void core_msnedit_cpp_CalltoCallToDemonCameraInit_FUN_00539060(void)
 
 #include "nocturne.h"
 

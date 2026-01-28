@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_ammo.cpp_CAmmo_writeDependencies_FUN_004113e0(CAmmo * this_ptr, FILE * file_handle)
+; __cdecl void __cdecl core_ammo_cpp_CAmmo_writeDependencies_FUN_004113e0(CAmmo *this_ptr,FILE *file_handle)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

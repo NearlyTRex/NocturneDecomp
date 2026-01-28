@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
+; __cdecl int __cdecl wincore_windll_cpp_getVideoMemory_FUN_005b7d60 (int *total_memory,int *available_memory,int *memory_type)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   total_memory

@@ -2,7 +2,7 @@
 // Address: 004f7b60
 // Address Range: [[004f7b60, 004f7b65]]
 // Convention: unknown
-// Signature: undefined core_hpriest.cpp_FUN_004f7b60()
+// Signature: CDemonActorType * core_hpriest_cpp_FUN_004f7b60(void)
 
 #include "nocturne.h"
 

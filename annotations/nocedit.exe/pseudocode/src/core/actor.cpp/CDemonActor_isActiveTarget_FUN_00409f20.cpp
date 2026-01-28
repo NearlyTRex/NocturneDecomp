@@ -2,7 +2,7 @@
 // Address: 00409f20
 // Address Range: [[00409f20, 00409f39]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_isActiveTarget_FUN_00409f20(CDemonActor * this_ptr)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_isActiveTarget_FUN_00409f20(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00424b80
 // Address Range: [[00424b80, 00424c38]]
 // Convention: __cdecl
-// Signature: CBride * core_bride.cpp_CBride_dtor_FUN_00424b80(CBride * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_00424b80 (CBride *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

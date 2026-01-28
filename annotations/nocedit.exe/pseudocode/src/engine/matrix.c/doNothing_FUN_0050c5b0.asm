@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_doNothing_FUN_0050c5b0(void)
+; __cdecl void __cdecl engine_matrix_c_doNothing_FUN_0050c5b0(void)
 ;
 ;
 ; XREF[1]:

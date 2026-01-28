@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGlassParticle * core_fire.cpp_CGlassParticle_ctor_FUN_004c9630(CGlassParticle * this_ptr)
+; __cdecl CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_ctor_FUN_004c9630(CGlassParticle *this_ptr)
 ;
 ; Parameters:
 ; CGlassParticle * Stack[0x4]:4   this_ptr

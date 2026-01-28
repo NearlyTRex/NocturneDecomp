@@ -2,7 +2,7 @@
 // Address: 0040a090
 // Address Range: [[0040a090, 0040a0a9]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_startInteraction_FUN_0040a090(CDemonActor * this_ptr, CDemonActor * user)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090(CDemonActor *this_ptr,CDemonActor *user)
 
 #include "nocturne.h"
 

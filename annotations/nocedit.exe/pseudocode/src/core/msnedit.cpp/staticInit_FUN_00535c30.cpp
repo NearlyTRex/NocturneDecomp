@@ -2,7 +2,7 @@
 // Address: 00535c30
 // Address Range: [[00535c30, 00535c57]]
 // Convention: __cdecl
-// Signature: void core_msnedit.cpp_staticInit_FUN_00535c30(void)
+// Signature: void __cdecl core_msnedit_cpp_staticInit_FUN_00535c30(void)
 
 #include "nocturne.h"
 

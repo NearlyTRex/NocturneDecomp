@@ -2,7 +2,7 @@
 // Address: 004ffab0
 // Address Range: [[004ffab0, 004ffacd]]
 // Convention: __cdecl
-// Signature: CLightGun * core_inv.cpp_CInventory_getActiveLightGun_FUN_004ffab0(CInventory * this_ptr)
+// Signature: CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(CInventory *this_ptr)
 
 #include "nocturne.h"
 

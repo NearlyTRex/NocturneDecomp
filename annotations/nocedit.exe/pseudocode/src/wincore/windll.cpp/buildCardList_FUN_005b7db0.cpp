@@ -2,7 +2,7 @@
 // Address: 005b7db0
 // Address Range: [[005b7db0, 005b7de7]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, int * out_device_ids)
+// Signature: int __cdecl wincore_windll_cpp_buildCardList_FUN_005b7db0 (int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids, int *out_device_ids)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_slew.cpp_CSlew_processInput_FUN_005a20b0(CSlew * this_ptr)
+; __cdecl void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
 ;
 ; Parameters:
 ; CSlew *          Stack[0x4]:4   this_ptr

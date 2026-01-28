@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint core_ground.cpp_getGroundTypeColor_FUN_004eee20(int type)
+; __cdecl uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(int type)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   type

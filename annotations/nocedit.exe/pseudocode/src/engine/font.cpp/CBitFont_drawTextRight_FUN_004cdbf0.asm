@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, int color_mode, int color_value)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004cdbf0 (CBitFont *this_ptr,char *text_string,int x_pos,int y_pos,int color_mode,int color_value)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

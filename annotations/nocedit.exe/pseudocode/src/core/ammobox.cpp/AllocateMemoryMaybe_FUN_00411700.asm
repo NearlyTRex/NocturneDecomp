@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700()
+; unknown void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
 ;
 ;
 ; XREF[2]:

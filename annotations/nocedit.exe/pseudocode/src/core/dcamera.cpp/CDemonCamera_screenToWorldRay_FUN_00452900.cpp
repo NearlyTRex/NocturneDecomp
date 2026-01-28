@@ -2,7 +2,7 @@
 // Address: 00452900
 // Address Range: [[00452900, 00452994]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera * this_ptr, CVector3f * output_ray, CVector3i * screen_coords, int depth)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900 (CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth)
 
 #include "nocturne.h"
 

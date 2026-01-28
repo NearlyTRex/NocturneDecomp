@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_ParseCounterUsed_FUN_00567490()
+; unknown void core_script_cpp_CScript_ParseCounterUsed_FUN_00567490(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x2134]:1  local_2134

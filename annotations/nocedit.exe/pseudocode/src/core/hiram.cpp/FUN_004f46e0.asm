@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hiram.cpp_FUN_004f46e0()
+; unknown void core_hiram_cpp_FUN_004f46e0(void)
 ;
 ;
 ; Called Functions:

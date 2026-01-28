@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20(int vertex_index_1, int vertex_index_2, int vertex_index_3, int vertex_index_4)
+; __cdecl void __cdecl shape_design_c_addQuadPolygonHalfSphere_FUN_00468d20 (int vertex_index_1,int vertex_index_2,int vertex_index_3,int vertex_index_4)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_index_1

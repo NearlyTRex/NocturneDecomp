@@ -2,7 +2,7 @@
 // Address: 005c4370
 // Address Range: [[005c4370, 005c48ae]]
 // Convention: unknown
-// Signature: undefined core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370()
+// Signature: void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
 
 #include "nocturne.h"
 

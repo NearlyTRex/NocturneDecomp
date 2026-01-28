@@ -2,7 +2,7 @@
 // Address: 005b0670
 // Address Range: [[005b0670, 005b0686]]
 // Convention: __cdecl
-// Signature: void sound_sndwav.cpp_staticInit_FUN_005b0670(void)
+// Signature: void __cdecl sound_sndwav_cpp_staticInit_FUN_005b0670(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00402930
 // Address Range: [[00402930, 00402a68]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * palette_filename)
+// Signature: void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename)
 
 #include "nocturne.h"
 

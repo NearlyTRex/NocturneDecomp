@@ -2,7 +2,7 @@
 // Address: 00502b80
 // Address Range: [[00502b80, 00502c89]]
 // Convention: unknown
-// Signature: undefined core_ladder.cpp_FUN_00502b80()
+// Signature: void core_ladder_cpp_FUN_00502b80(void)
 
 #include "nocturne.h"
 

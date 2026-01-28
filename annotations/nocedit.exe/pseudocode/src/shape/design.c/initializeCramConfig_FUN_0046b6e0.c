@@ -2,7 +2,7 @@
 // Address: 0046b6e0
 // Address Range: [[0046b6e0, 0046b760]]
 // Convention: __cdecl
-// Signature: void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
+// Signature: void __cdecl shape_design_c_initializeCramConfig_FUN_0046b6e0(SCramConfig *cram_config)
 
 #include "nocturne.h"
 

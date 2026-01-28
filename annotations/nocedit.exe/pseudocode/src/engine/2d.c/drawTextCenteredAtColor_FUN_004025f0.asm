@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextCenteredAtColor_FUN_004025f0(char * text, int center_x, int y_pos)
+; __cdecl void __cdecl engine_2d_c_drawTextCenteredAtColor_FUN_004025f0(char *text,int center_x,int y_pos)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text

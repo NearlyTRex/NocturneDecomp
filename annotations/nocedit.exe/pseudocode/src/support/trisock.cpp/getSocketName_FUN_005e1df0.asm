@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_getSocketName_FUN_005e1df0(SOCKET * socket_handle, SNetworkAddr * param_2)
+; __cdecl int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2)
 ;
 ; Parameters:
 ; SOCKET *         Stack[0x4]:4   socket_handle

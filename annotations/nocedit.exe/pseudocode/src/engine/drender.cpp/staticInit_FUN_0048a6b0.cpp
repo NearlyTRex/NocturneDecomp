@@ -2,7 +2,7 @@
 // Address: 0048a6b0
 // Address Range: [[0048a6b0, 0048a6bd]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_staticInit_FUN_0048a6b0(void)
+// Signature: void __cdecl engine_drender_cpp_staticInit_FUN_0048a6b0(void)
 
 #include "nocturne.h"
 

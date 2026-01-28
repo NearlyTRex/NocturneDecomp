@@ -2,7 +2,7 @@
 // Address: 005441f0
 // Address Range: [[005441f0, 0054426f]]
 // Convention: __cdecl
-// Signature: char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
+// Signature: char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key)
 
 #include "nocturne.h"
 

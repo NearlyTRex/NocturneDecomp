@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0()
+; unknown void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x11c]:1  local_11c

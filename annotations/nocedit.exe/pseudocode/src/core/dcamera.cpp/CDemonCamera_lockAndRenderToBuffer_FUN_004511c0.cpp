@@ -2,7 +2,7 @@
 // Address: 004511c0
 // Address Range: [[004511c0, 0045124e]]
 // Convention: __cdecl
-// Signature: int core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDemonCamera * this_ptr)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

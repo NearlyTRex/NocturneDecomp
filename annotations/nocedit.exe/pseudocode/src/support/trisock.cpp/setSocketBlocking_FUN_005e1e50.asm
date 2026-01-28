@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_setSocketBlocking_FUN_005e1e50(SOCKET * socket_handle, int blocking_mode)
+; __cdecl int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blocking_mode)
 ;
 ; Parameters:
 ; SOCKET *         Stack[0x4]:4   socket_handle

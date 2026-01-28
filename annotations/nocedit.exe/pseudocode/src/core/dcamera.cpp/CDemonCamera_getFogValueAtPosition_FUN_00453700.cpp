@@ -2,7 +2,7 @@
 // Address: 00453700
 // Address Range: [[00453700, 004537cd]]
 // Convention: __cdecl
-// Signature: int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera * this_ptr, CVector3i * world_position)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700 (CDemonCamera *this_ptr,CVector3i *world_position)
 
 #include "nocturne.h"
 

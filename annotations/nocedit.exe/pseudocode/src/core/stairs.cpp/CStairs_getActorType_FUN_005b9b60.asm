@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_stairs.cpp_CStairs_getActorType_FUN_005b9b60(CStairs * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_stairs_cpp_CStairs_getActorType_FUN_005b9b60(CStairs *this_ptr)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr

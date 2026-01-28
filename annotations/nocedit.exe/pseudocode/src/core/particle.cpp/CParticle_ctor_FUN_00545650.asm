@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CParticle * core_particle.cpp_CParticle_ctor_FUN_00545650(CParticle * this_ptr)
+; __cdecl CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_00545650(CParticle *this_ptr)
 ;
 ; Parameters:
 ; CParticle *      Stack[0x4]:4   this_ptr

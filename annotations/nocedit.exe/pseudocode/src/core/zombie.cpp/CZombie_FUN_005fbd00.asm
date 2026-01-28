@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+; unknown undefined4 core_zombie_cpp_CZombie_FUN_005fbd00(void)
 ;
 ;
 ; XREF[3]:

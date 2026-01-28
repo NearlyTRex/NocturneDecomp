@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_FUN_00604104()
+; unknown void crt_unknown_c_FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX)
 ;
 ;
 ; XREF[1]:

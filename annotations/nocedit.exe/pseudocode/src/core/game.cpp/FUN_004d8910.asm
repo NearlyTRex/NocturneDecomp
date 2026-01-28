@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_game.cpp_FUN_004d8910()
+; unknown void core_game_cpp_FUN_004d8910(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110

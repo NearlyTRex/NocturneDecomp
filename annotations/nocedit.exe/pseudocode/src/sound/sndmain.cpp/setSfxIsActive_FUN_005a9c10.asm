@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_setSfxIsActive_FUN_005a9c10(uint sfx_handle, int active)
+; __cdecl int __cdecl sound_sndmain_cpp_setSfxIsActive_FUN_005a9c10(uint sfx_handle,int active)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

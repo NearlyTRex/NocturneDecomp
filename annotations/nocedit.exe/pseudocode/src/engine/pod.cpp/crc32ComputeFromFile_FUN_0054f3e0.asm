@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE * file_stream, uint total_bytes)
+; __cdecl uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE *file_stream,uint total_bytes)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_stream

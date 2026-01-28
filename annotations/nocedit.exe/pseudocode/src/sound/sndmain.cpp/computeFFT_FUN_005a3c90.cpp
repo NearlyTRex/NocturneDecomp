@@ -2,7 +2,7 @@
 // Address: 005a3c90
 // Address Range: [[005a3c90, 005a3fd0]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_computeFFT_FUN_005a3c90(float * input, int size, float * output_real, float * output_imag)
+// Signature: void __cdecl sound_sndmain_cpp_computeFFT_FUN_005a3c90 (float *input,int size,float *output_real,float *output_imag)
 
 #include "nocturne.h"
 

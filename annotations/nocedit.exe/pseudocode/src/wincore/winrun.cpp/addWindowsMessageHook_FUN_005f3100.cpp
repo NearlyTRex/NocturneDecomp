@@ -2,7 +2,7 @@
 // Address: 005f3100
 // Address Range: [[005f3100, 005f314b]]
 // Convention: unknown
-// Signature: undefined wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100()
+// Signature: void wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, WNDPROC param_5)
 
 #include "nocturne.h"
 

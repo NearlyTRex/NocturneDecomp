@@ -2,7 +2,7 @@
 // Address: 006047e0
 // Address Range: [[006047e0, 00604823]]
 // Convention: __cdecl
-// Signature: void crt_fpu.c_staticInit_FUN_006047e0(void)
+// Signature: void __cdecl crt_fpu_c_staticInit_FUN_006047e0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_env.c_getenv_FUN_006013f0(char * name)
+; __cdecl char * __cdecl crt_env_c_getenv_FUN_006013f0(char *name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   name

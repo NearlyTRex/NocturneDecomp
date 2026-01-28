@@ -2,7 +2,7 @@
 // Address: 004022c0
 // Address Range: [[004022c0, 004022d9]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_drawTextCenteredAtWrapper_FUN_004022c0(int x_pos, int y_pos, char * text)
+// Signature: void __cdecl engine_2d_c_drawTextCenteredAtWrapper_FUN_004022c0(int x_pos,int y_pos,char *text)
 
 #include "nocturne.h"
 

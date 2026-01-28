@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00437700(void)
+; __cdecl void __cdecl engine_clipper_c_clipPolygonLeftPlaneGlobal_FUN_00437700(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

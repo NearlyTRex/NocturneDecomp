@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_skeledit.cpp_FUN_0058e240()
+; unknown void core_skeledit_cpp_FUN_0058e240(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x46]:1  local_46

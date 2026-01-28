@@ -2,7 +2,7 @@
 // Address: 005183e0
 // Address Range: [[005183e0, 00518481]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh * this_ptr, int tri_index, int edge_index)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0 (CLodMesh *this_ptr,int tri_index,int edge_index)
 
 #include "nocturne.h"
 

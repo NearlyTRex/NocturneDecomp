@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBiggs * core_biggs.cpp_factoryFunc_FUN_00418580(void)
+; __cdecl CBiggs * __cdecl core_biggs_cpp_factoryFunc_FUN_00418580(void)
 ;
 ;
 ; XREF[1]:

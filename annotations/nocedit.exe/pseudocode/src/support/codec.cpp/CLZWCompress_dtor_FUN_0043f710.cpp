@@ -2,7 +2,7 @@
 // Address: 0043f710
 // Address Range: [[0043f710, 0043f76e]]
 // Convention: __cdecl
-// Signature: CLZWCompress * support_codec.cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress * this_ptr, uint d1, uint d2, uint d3, uint d4)
+// Signature: CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710 (CLZWCompress *this_ptr,uint d1,uint d2,uint d3,uint d4)
 
 #include "nocturne.h"
 

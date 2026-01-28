@@ -2,7 +2,7 @@
 // Address: 005b7436
 // Address Range: [[005b7436, 005b745a]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_setMipMapLevel_FUN_005b7436(int mipmap_level)
+// Signature: int __cdecl wincore_windll_cpp_setMipMapLevel_FUN_005b7436(int mipmap_level)
 
 #include "nocturne.h"
 

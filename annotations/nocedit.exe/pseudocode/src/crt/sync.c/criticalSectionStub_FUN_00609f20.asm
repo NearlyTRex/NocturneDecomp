@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_sync.c_criticalSectionStub_FUN_00609f20()
+; unknown void crt_sync_c_criticalSectionStub_FUN_00609f20(void)
 ;
 ;
 ; XREF[1]:

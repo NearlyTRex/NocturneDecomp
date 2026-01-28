@@ -2,7 +2,7 @@
 // Address: 0058f810
 // Address Range: [[0058f810, 0059251f]]
 // Convention: __cdecl
-// Signature: int core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel * this_ptr)
+// Signature: int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 

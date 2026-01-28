@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_smiley.cpp_staticInit_FUN_005a23c0(void)
+; __cdecl void __cdecl core_smiley_cpp_staticInit_FUN_005a23c0(void)
 ;
 ;
 ; Referenced Globals:

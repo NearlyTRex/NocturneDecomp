@@ -2,7 +2,7 @@
 // Address: 005f6460
 // Address Range: [[005f6460, 005f6686]]
 // Convention: __cdecl
-// Signature: float core_xform.cpp_computeOrthogonalityError_FUN_005f6460(CMatrix3x4f * matrix)
+// Signature: float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_005f6460(CMatrix3x4f *matrix)
 
 #include "nocturne.h"
 

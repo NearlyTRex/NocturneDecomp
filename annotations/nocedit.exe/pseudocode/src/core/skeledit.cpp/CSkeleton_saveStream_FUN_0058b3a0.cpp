@@ -2,7 +2,7 @@
 // Address: 0058b3a0
 // Address Range: [[0058b3a0, 0058b658]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

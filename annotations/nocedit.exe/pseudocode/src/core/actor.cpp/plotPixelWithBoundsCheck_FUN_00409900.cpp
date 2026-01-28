@@ -2,7 +2,7 @@
 // Address: 00409900
 // Address Range: [[00409900, 0040992b]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_plotPixelWithBoundsCheck_FUN_00409900(int x, int y)
+// Signature: void __cdecl core_actor_cpp_plotPixelWithBoundsCheck_FUN_00409900(int x,int y)
 
 #include "nocturne.h"
 

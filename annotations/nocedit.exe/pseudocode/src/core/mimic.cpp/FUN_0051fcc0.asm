@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_mimic.cpp_FUN_0051fcc0()
+; unknown void core_mimic_cpp_FUN_0051fcc0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1e4]:1  local_1e4

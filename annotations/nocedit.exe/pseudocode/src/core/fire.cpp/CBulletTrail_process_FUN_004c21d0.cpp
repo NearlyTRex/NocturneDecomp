@@ -2,7 +2,7 @@
 // Address: 004c21d0
 // Address Range: [[004c21d0, 004c21e7]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CBulletTrail_process_FUN_004c21d0(CBulletTrail * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CBulletTrail_process_FUN_004c21d0(CBulletTrail *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0(void)
+; __cdecl void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0(void)
 ;
 ;
 ; XREF[2]:

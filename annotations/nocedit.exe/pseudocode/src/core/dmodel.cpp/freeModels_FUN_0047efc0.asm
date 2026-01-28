@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dmodel.cpp_freeModels_FUN_0047efc0(CKeyFramedModel * * array)
+; __cdecl void __cdecl core_dmodel_cpp_freeModels_FUN_0047efc0(CKeyFramedModel **array)
 ;
 ; Parameters:
 ; CKeyFramedModel * * Stack[0x4]:4   array

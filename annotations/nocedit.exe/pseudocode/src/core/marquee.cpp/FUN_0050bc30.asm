@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_marquee.cpp_FUN_0050bc30()
+; unknown void core_marquee_cpp_FUN_0050bc30(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

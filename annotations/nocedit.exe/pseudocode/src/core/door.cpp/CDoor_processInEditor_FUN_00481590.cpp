@@ -2,7 +2,7 @@
 // Address: 00481590
 // Address Range: [[00481590, 00481620]]
 // Convention: __cdecl
-// Signature: void core_door.cpp_CDoor_processInEditor_FUN_00481590(CDoor * this_ptr)
+// Signature: void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr)
 
 #include "nocturne.h"
 

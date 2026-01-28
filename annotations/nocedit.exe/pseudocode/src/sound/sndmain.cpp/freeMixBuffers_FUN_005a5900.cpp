@@ -2,7 +2,7 @@
 // Address: 005a5900
 // Address Range: [[005a5900, 005a59b9]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_freeMixBuffers_FUN_005a5900(void)
+// Signature: void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_005a5900(void)
 
 #include "nocturne.h"
 

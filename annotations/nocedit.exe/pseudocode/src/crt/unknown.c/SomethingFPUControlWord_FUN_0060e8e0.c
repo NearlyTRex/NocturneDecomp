@@ -2,7 +2,7 @@
 // Address: 0060e8e0
 // Address Range: [[0060e8e0, 0060e92d]]
 // Convention: unknown
-// Signature: undefined crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0()
+// Signature: uint crt_unknown_c_SomethingFPUControlWord_FUN_0060e8e0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005add90
 // Address Range: [[005add90, 005adda8]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample * this_ptr)
+// Signature: int __cdecl sound_sndmain_cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample *this_ptr)
 
 #include "nocturne.h"
 

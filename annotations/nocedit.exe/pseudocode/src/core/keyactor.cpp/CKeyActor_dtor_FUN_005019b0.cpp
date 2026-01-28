@@ -2,7 +2,7 @@
 // Address: 005019b0
 // Address Range: [[005019b0, 005019fd]]
 // Convention: __cdecl
-// Signature: CKeyActor * core_keyactor.cpp_CKeyActor_dtor_FUN_005019b0(CKeyActor * this_ptr, uint d1)
+// Signature: CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_005019b0(CKeyActor *this_ptr,uint d1)
 
 #include "nocturne.h"
 

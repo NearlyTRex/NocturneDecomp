@@ -2,7 +2,7 @@
 // Address: 0053f4b0
 // Address Range: [[0053f4b0, 0053f541]]
 // Convention: unknown
-// Signature: undefined core_netgame.cpp_removeChatOut_FUN_0053f4b0()
+// Signature: void core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)
 
 #include "nocturne.h"
 

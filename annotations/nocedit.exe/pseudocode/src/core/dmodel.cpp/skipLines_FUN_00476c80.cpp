@@ -2,7 +2,7 @@
 // Address: 00476c80
 // Address Range: [[00476c80, 00476ca7]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_skipLines_FUN_00476c80(FILE * file_handle, int line_count)
+// Signature: void __cdecl core_dmodel_cpp_skipLines_FUN_00476c80(FILE *file_handle,int line_count)
 
 #include "nocturne.h"
 

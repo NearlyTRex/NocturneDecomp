@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_math.c_FUN_00606c83()
+; unknown float10 crt_math_c_FUN_00606c83(void)
 ;
 ; Parameters:
 ; undefined1[10]   Stack[0x0]:10   local_res0

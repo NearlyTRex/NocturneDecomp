@@ -28,8 +28,7 @@ from ghidra_annotations.annotations.pseudocode.globals import (
     extract_globals_and_constants, generate_constants_file,
     generate_globals_file, generate_globals_header_file,
     split_data_by_address_range, generate_globals_cpp_file,
-    build_write_xref_addresses,
-    extract_all_function_prototypes, generate_prototypes_header_file,
+    build_write_xref_addresses, generate_prototypes_header_file,
     extract_function_references_from_constants, get_function_address_ranges
 )
 from ghidra_annotations.annotations.pseudocode.headers import (
@@ -229,6 +228,90 @@ def register_pcode_overrides(src_dir):
             except (json.JSONDecodeError, ValueError, IOError):
                 continue
     return override_count
+
+
+def build_prototypes_from_decompile_results(decompile_results, functions_to_process):
+    """Build function prototype list from decompilation results.
+
+    Uses the signatures extracted from actual decompiled code, which are more
+    accurate than getPrototypeString(). Falls back to getPrototypeString() for
+    functions that failed to decompile.
+
+    Args:
+        decompile_results: List of successful DecompileResult objects
+        functions_to_process: List of all Ghidra Function objects (for fallback)
+
+    Returns:
+        List of function prototype dictionaries with keys:
+        - name: Original function name
+        - c_name: C-compatible name (dots replaced with underscores)
+        - address: Function address as string
+        - signature: Function signature string
+        - convention: Calling convention name
+    """
+    import re
+    from ghidra_annotations.annotations.pseudocode.globals import insert_calling_convention
+
+    # Build a map of address -> decompile result for quick lookup
+    result_by_addr = {}
+    for result in decompile_results:
+        result_by_addr[result.func_addr] = result
+
+    functions_list = []
+    for func in functions_to_process:
+        func_name = func.getName()
+        func_addr = str(func.getEntryPoint())
+        c_name = func_name.replace('.', '_')
+
+        # Get calling convention
+        calling_convention = func.getCallingConventionName()
+        if calling_convention and calling_convention.lower() == "unknown":
+            calling_convention = None
+        elif calling_convention and not calling_convention.startswith("__"):
+            calling_convention = "__" + calling_convention
+
+        # Try to get signature from decompile result first (includes calling convention)
+        signature = None
+        used_decompiled_sig = False
+        if func_addr in result_by_addr:
+            result = result_by_addr[func_addr]
+            signature = result.func_signature
+            if signature:
+                used_decompiled_sig = True
+
+        # Fall back to getPrototypeString if no decompile result
+        if not signature:
+            signature = func.getPrototypeString(True, False)
+
+        # Build the C-compatible signature
+        if signature:
+            c_signature = signature.replace(func_name, c_name)
+        else:
+            c_signature = "void %s(void)" % c_name
+
+        # Normalize prototype for C compatibility
+        if c_signature:
+            # Remove __unknown calling convention if present
+            c_signature = c_signature.replace('__unknown ', '')
+            # Normalize empty parameter list to (void) for proper C declaration
+            c_signature = re.sub(r'(\w+)\(\)$', r'\1(void)', c_signature)
+            c_signature = re.sub(r'(\w+)\(\);$', r'\1(void);', c_signature)
+
+        # Insert calling convention for fallback signatures (decompiled signatures already have it)
+        if not used_decompiled_sig and calling_convention and c_signature:
+            c_signature = insert_calling_convention(c_signature, calling_convention)
+
+        functions_list.append({
+            'name': func_name,
+            'c_name': c_name,
+            'address': func_addr,
+            'signature': c_signature,
+            'convention': calling_convention
+        })
+
+    log_info("Built %d function prototypes from decompile results" % len(functions_list))
+    return functions_list
+
 
 def process_decompile_result(result, pseudocode_src_dir, constants_map):
     """Process a decompilation result in the main thread.
@@ -516,10 +599,163 @@ def export_pseudocode(currentProgram, path, strict=False):
     globals_list, constants_list = extract_globals_and_constants(currentProgram, string_map, write_xref_addrs)
     timer.end_phase()
 
-    # Extract function prototypes for use in constants headers
-    timer.start_phase("Extract function prototypes")
-    log_info("Extracting function prototypes")
-    all_functions = extract_all_function_prototypes(currentProgram)
+    # =========================================================================
+    # DECOMPILATION PHASE (moved before prototype generation for accurate signatures)
+    # =========================================================================
+
+    # Get program managers
+    function_manager = currentProgram.getFunctionManager()
+    reference_manager = currentProgram.getReferenceManager()
+    symbol_table = currentProgram.getSymbolTable()
+
+    # Build global symbols map once (expensive operation - don't do per-function)
+    timer.start_phase("Build global symbols map")
+    log_info("Building global symbols map for assembly annotations")
+    global_symbols = build_global_symbols_map(symbol_table)
+    log_info("Built global symbols map with %d symbols" % len(global_symbols))
+    timer.end_phase()
+
+    # Load vtable data
+    timer.start_phase("Load vtable data")
+    vtables_dir = os.path.join(path, "vtables")
+    vtable_data = None
+    if os.path.isdir(vtables_dir):
+        vtable_data = load_vtable_data(vtables_dir)
+        vtable_func_count = len(vtable_data.get('func_to_vtables', {}))
+        log_info("Loaded vtable data: %d vtable addresses, %d functions in vtables" % (
+            len(vtable_data.get('vtable_addrs', set())), vtable_func_count))
+    else:
+        log_info("No vtables directory found at %s - skipping vtable analysis" % vtables_dir)
+    timer.end_phase()
+
+    # Load switch table data for CFG-aware ESP tracking
+    timer.start_phase("Load switch table data")
+    switch_tables_json_path = os.path.join(path, "switch_tables", "switch_tables.json")
+    switch_targets = None
+    if os.path.exists(switch_tables_json_path):
+        switch_targets = load_switch_table_data(switch_tables_json_path)
+        log_info("Loaded switch table data: %d switch statements" % len(switch_targets))
+    else:
+        log_info("No switch_tables.json found at %s - switch target tracking disabled" % switch_tables_json_path)
+    timer.end_phase()
+
+    # Load noreturn function data for CFG-aware ESP tracking
+    timer.start_phase("Load noreturn function data")
+    functions_dir = os.path.join(path, "functions")
+    noreturn_addrs = None
+    if os.path.exists(functions_dir):
+        noreturn_addrs = load_noreturn_functions(functions_dir)
+        log_info("Loaded noreturn function data: %d noreturn functions" % len(noreturn_addrs))
+    else:
+        log_info("No functions directory found at %s - noreturn tracking disabled" % functions_dir)
+    timer.end_phase()
+
+    # Load function conventions for CALLIND stdcall handling
+    timer.start_phase("Load function conventions")
+    func_conventions_path = os.path.join(path, "func_conventions", "func_conventions.json")
+    func_conventions = None
+    if os.path.exists(func_conventions_path):
+        try:
+            with open(func_conventions_path, 'r') as f:
+                func_conventions = json.load(f)
+            log_info("Loaded function conventions: %d function definitions" % len(func_conventions))
+        except Exception as e:
+            log_info("Failed to load func_conventions.json: %s" % str(e))
+    else:
+        log_info("No func_conventions.json found at %s - CALLIND convention tracking disabled" % func_conventions_path)
+    timer.end_phase()
+
+    # Collect all non-external functions first
+    timer.start_phase("Collect functions")
+    log_info("Collecting functions for parallel processing")
+    functions_to_process = []
+    for func in function_manager.getFunctions(True):
+        if not is_function_external(currentProgram, func):
+            functions_to_process.append(func)
+    log_info("Found %d functions to process" % len(functions_to_process))
+    timer.end_phase()
+
+    # Determine number of threads
+    num_threads = min(DEFAULT_NUM_THREADS, max(1, len(functions_to_process)))
+    log_info("Using %d worker threads for parallel decompilation" % num_threads)
+
+    # Create thread-local decompiler storage
+    decompiler_tls = DecompilerThreadLocal(currentProgram)
+
+    # Register per-function decompiler fixes (e.g., MULTIEQUAL stack trace fix)
+    # This uses the C++ global registry, so we only need to call it once
+    fixes_interface = decompiler_tls.get()  # Get/create an interface for registration
+    decompiler_fixes_count = register_decompiler_fixes(fixes_interface)
+    if decompiler_fixes_count > 0:
+        log_info("Registered decompiler fixes for %d functions" % decompiler_fixes_count)
+
+    # Create Python thread pool executor
+    executor = ThreadPoolExecutor(max_workers=num_threads)
+
+    # Parallel decompilation (Java-heavy, GIL released)
+    timer.start_phase("Parallel decompilation (%d threads)" % num_threads)
+    log_info("Submitting %d decompilation tasks" % len(functions_to_process))
+    total_tasks = len(functions_to_process)
+    futures = []
+    for func in functions_to_process:
+        worker = DecompileWorker(
+            func, currentProgram, decompiler_tls,
+            symbol_table, reference_manager, program_listing,
+            string_map, global_symbols, vtable_data, switch_targets, noreturn_addrs,
+            func_conventions)
+        futures.append(executor.submit(worker))
+
+    # Collect raw decompilation results
+    decompile_results = []
+    decompile_errors = []
+    log_info("Waiting for %d decompilation tasks..." % total_tasks)
+    decompile_start = time.time()
+    decompiled_count = 0
+    total_decompile_time = 0.0
+    total_assembly_time = 0.0
+    total_pcode_time = 0.0
+
+    for future in as_completed(futures):
+        try:
+            result = future.result()
+            decompiled_count += 1
+            total_decompile_time += result.decompile_time
+            total_assembly_time += result.assembly_time
+            total_pcode_time += result.pcode_time
+
+            if result.success:
+                decompile_results.append(result)
+            else:
+                decompile_errors.append("Decompile failed %s: %s" % (result.func_name, result.error))
+
+            # Progress logging
+            if decompiled_count % 100 == 0:
+                elapsed = time.time() - decompile_start
+                rate = decompiled_count / elapsed if elapsed > 0 else 0
+                remaining = total_tasks - decompiled_count
+                eta = remaining / rate if rate > 0 else 0
+                log_info("Decompiled: %d/%d (%.1f/sec, ETA: %.0fs)" % (
+                    decompiled_count, total_tasks, rate, eta))
+        except Exception as e:
+            decompile_errors.append("Decompile exception: %s" % str(e))
+
+    executor.shutdown(wait=True)
+    timer.end_phase()
+
+    # Clear decompiler fixes registry now that decompilation is done
+    if decompiler_fixes_count > 0:
+        clear_decompiler_fixes(fixes_interface)
+
+    log_info("Decompilation complete: %d succeeded, %d failed" % (
+        len(decompile_results), len(decompile_errors)))
+
+    # =========================================================================
+    # BUILD PROTOTYPES FROM DECOMPILATION RESULTS
+    # =========================================================================
+
+    # Build function prototypes from decompiled signatures (more accurate than getPrototypeString)
+    timer.start_phase("Build function prototypes")
+    all_functions = build_prototypes_from_decompile_results(decompile_results, functions_to_process)
     func_ranges = split_data_by_address_range(all_functions)
     timer.end_phase()
 
@@ -666,161 +902,12 @@ def export_pseudocode(currentProgram, path, strict=False):
         if strict:
             raise RuntimeError("Globals compilation failed. See reports/globals_compilation.txt for details.")
 
-    # Get program managers
-    function_manager = currentProgram.getFunctionManager()
-    program_listing = currentProgram.getListing()
-    reference_manager = currentProgram.getReferenceManager()
-    symbol_table = currentProgram.getSymbolTable()
-
     # Build constants map for inline replacement of constant values
     timer.start_phase("Build constants map")
     log_info("Building constants map for inline replacement")
     constants_map = build_constants_map(constants_list)
     log_info("Built constants map with %d inline-able constants" % len(constants_map))
     timer.end_phase()
-
-    # Build global symbols map once (expensive operation - don't do per-function)
-    timer.start_phase("Build global symbols map")
-    log_info("Building global symbols map for assembly annotations")
-    global_symbols = build_global_symbols_map(symbol_table)
-    log_info("Built global symbols map with %d symbols" % len(global_symbols))
-    timer.end_phase()
-
-    # Load vtable data
-    timer.start_phase("Load vtable data")
-    vtables_dir = os.path.join(path, "vtables")
-    vtable_data = None
-    if os.path.isdir(vtables_dir):
-        vtable_data = load_vtable_data(vtables_dir)
-        vtable_func_count = len(vtable_data.get('func_to_vtables', {}))
-        log_info("Loaded vtable data: %d vtable addresses, %d functions in vtables" % (
-            len(vtable_data.get('vtable_addrs', set())), vtable_func_count))
-    else:
-        log_info("No vtables directory found at %s - skipping vtable analysis" % vtables_dir)
-    timer.end_phase()
-
-    # Load switch table data for CFG-aware ESP tracking
-    timer.start_phase("Load switch table data")
-    switch_tables_json_path = os.path.join(path, "switch_tables", "switch_tables.json")
-    switch_targets = None
-    if os.path.exists(switch_tables_json_path):
-        switch_targets = load_switch_table_data(switch_tables_json_path)
-        log_info("Loaded switch table data: %d switch statements" % len(switch_targets))
-    else:
-        log_info("No switch_tables.json found at %s - switch target tracking disabled" % switch_tables_json_path)
-    timer.end_phase()
-
-    # Load noreturn function data for CFG-aware ESP tracking
-    timer.start_phase("Load noreturn function data")
-    functions_dir = os.path.join(path, "functions")
-    noreturn_addrs = None
-    if os.path.exists(functions_dir):
-        noreturn_addrs = load_noreturn_functions(functions_dir)
-        log_info("Loaded noreturn function data: %d noreturn functions" % len(noreturn_addrs))
-    else:
-        log_info("No functions directory found at %s - noreturn tracking disabled" % functions_dir)
-    timer.end_phase()
-
-    # Load function conventions for CALLIND stdcall handling
-    timer.start_phase("Load function conventions")
-    func_conventions_path = os.path.join(path, "func_conventions", "func_conventions.json")
-    func_conventions = None
-    if os.path.exists(func_conventions_path):
-        try:
-            with open(func_conventions_path, 'r') as f:
-                func_conventions = json.load(f)
-            log_info("Loaded function conventions: %d function definitions" % len(func_conventions))
-        except Exception as e:
-            log_info("Failed to load func_conventions.json: %s" % str(e))
-    else:
-        log_info("No func_conventions.json found at %s - CALLIND convention tracking disabled" % func_conventions_path)
-    timer.end_phase()
-
-    # Collect all non-external functions first
-    timer.start_phase("Collect functions")
-    log_info("Collecting functions for parallel processing")
-    functions_to_process = []
-    for func in function_manager.getFunctions(True):
-        if not is_function_external(currentProgram, func):
-            functions_to_process.append(func)
-    log_info("Found %d functions to process" % len(functions_to_process))
-    timer.end_phase()
-
-    # Determine number of threads
-    num_threads = min(DEFAULT_NUM_THREADS, max(1, len(functions_to_process)))
-    log_info("Using %d worker threads for parallel decompilation" % num_threads)
-
-    # Create thread-local decompiler storage
-    decompiler_tls = DecompilerThreadLocal(currentProgram)
-
-    # Register per-function decompiler fixes (e.g., MULTIEQUAL stack trace fix)
-    # This uses the C++ global registry, so we only need to call it once
-    fixes_interface = decompiler_tls.get()  # Get/create an interface for registration
-    decompiler_fixes_count = register_decompiler_fixes(fixes_interface)
-    if decompiler_fixes_count > 0:
-        log_info("Registered decompiler fixes for %d functions" % decompiler_fixes_count)
-
-    # Create Python thread pool executor
-    executor = ThreadPoolExecutor(max_workers=num_threads)
-
-    # =========================================================================
-    # PHASE 1: Parallel decompilation (Java-heavy, GIL released)
-    # =========================================================================
-    timer.start_phase("Parallel decompilation (%d threads)" % num_threads)
-    log_info("Submitting %d decompilation tasks" % len(functions_to_process))
-    total_tasks = len(functions_to_process)
-    futures = []
-    for func in functions_to_process:
-        worker = DecompileWorker(
-            func, currentProgram, decompiler_tls,
-            symbol_table, reference_manager, program_listing,
-            string_map, global_symbols, vtable_data, switch_targets, noreturn_addrs,
-            func_conventions)
-        futures.append(executor.submit(worker))
-
-    # Collect raw decompilation results
-    decompile_results = []
-    decompile_errors = []
-    log_info("Waiting for %d decompilation tasks..." % total_tasks)
-    decompile_start = time.time()
-    decompiled_count = 0
-    total_decompile_time = 0.0
-    total_assembly_time = 0.0
-    total_pcode_time = 0.0
-
-    for future in as_completed(futures):
-        try:
-            result = future.result()
-            decompiled_count += 1
-            total_decompile_time += result.decompile_time
-            total_assembly_time += result.assembly_time
-            total_pcode_time += result.pcode_time
-
-            if result.success:
-                decompile_results.append(result)
-            else:
-                decompile_errors.append("Decompile failed %s: %s" % (result.func_name, result.error))
-
-            # Progress logging
-            if decompiled_count % 100 == 0:
-                elapsed = time.time() - decompile_start
-                rate = decompiled_count / elapsed if elapsed > 0 else 0
-                remaining = total_tasks - decompiled_count
-                eta = remaining / rate if rate > 0 else 0
-                log_info("Decompiled: %d/%d (%.1f/sec, ETA: %.0fs)" % (
-                    decompiled_count, total_tasks, rate, eta))
-        except Exception as e:
-            decompile_errors.append("Decompile exception: %s" % str(e))
-
-    executor.shutdown(wait=True)
-    timer.end_phase()
-
-    # Clear decompiler fixes registry now that decompilation is done
-    if decompiler_fixes_count > 0:
-        clear_decompiler_fixes(fixes_interface)
-
-    log_info("Decompilation complete: %d succeeded, %d failed" % (
-        len(decompile_results), len(decompile_errors)))
 
     # =========================================================================
     # PHASE 2: Sequential Python processing (main thread, no GIL contention)

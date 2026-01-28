@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
+; unknown CDemonActor * core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(void)
 ;
 ;
 ; XREF[4]:

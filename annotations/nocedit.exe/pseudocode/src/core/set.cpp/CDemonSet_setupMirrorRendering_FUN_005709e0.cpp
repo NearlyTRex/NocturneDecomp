@@ -2,7 +2,7 @@
 // Address: 005709e0
 // Address Range: [[005709e0, 00570aea]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+// Signature: void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 (CDemonSet *this_ptr,int mirror_index,int enable_flag)
 
 #include "nocturne.h"
 

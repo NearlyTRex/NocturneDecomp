@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dynamite.cpp_staticInit_FUN_0049cd40(void)
+; __cdecl void __cdecl core_dynamite_cpp_staticInit_FUN_0049cd40(void)
 ;
 ;
 ; Referenced Globals:

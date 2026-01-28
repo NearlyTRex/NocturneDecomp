@@ -2,7 +2,7 @@
 // Address: 004daed0
 // Address Range: [[004daed0, 004daf74]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(CGame * this_ptr)
+// Signature: void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(CGame *this_ptr)
 
 #include "nocturne.h"
 

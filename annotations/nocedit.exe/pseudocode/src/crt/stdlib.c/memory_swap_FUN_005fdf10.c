@@ -2,7 +2,7 @@
 // Address: 005fdf10
 // Address Range: [[005fdf10, 005fdf35]]
 // Convention: __watcallRegister
-// Signature: void crt_stdlib.c_memory_swap_FUN_005fdf10(void * ptr1, void * ptr2, SIZE_T bytes)
+// Signature: void crt_stdlib_c_memory_swap_FUN_005fdf10(void *ptr1,void *ptr2,SIZE_T bytes)
 
 #include "nocturne.h"
 

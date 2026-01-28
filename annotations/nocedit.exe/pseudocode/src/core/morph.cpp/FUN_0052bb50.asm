@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_morph.cpp_FUN_0052bb50()
+; unknown void core_morph_cpp_FUN_0052bb50(void)
 ;
 ;
 ; Referenced Globals:

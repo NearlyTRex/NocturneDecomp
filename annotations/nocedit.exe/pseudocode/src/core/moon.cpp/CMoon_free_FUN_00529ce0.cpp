@@ -2,7 +2,7 @@
 // Address: 00529ce0
 // Address Range: [[00529ce0, 00529d50]]
 // Convention: __cdecl
-// Signature: void core_moon.cpp_CMoon_free_FUN_00529ce0(CMoon * this_ptr)
+// Signature: void __cdecl core_moon_cpp_CMoon_free_FUN_00529ce0(CMoon *this_ptr)
 
 #include "nocturne.h"
 

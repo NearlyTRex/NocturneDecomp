@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_fire.cpp_CGlassParticle_onCollision_FUN_004c2160(CGlassParticle * this_ptr, CVector3f * collision_normal)
+; __cdecl int __cdecl core_fire_cpp_CGlassParticle_onCollision_FUN_004c2160 (CGlassParticle *this_ptr,CVector3f *collision_normal)
 ;
 ; Parameters:
 ; CGlassParticle * Stack[0x4]:4   this_ptr

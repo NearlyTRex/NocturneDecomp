@@ -2,7 +2,7 @@
 // Address: 00571510
 // Address Range: [[00571510, 00571527]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_freeVectors_FUN_00571510(CVector3f * * array)
+// Signature: void __cdecl core_set_cpp_freeVectors_FUN_00571510(CVector3f **array)
 
 #include "nocturne.h"
 

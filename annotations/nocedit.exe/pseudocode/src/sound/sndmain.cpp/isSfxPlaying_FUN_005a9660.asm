@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
+; __cdecl int __cdecl sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

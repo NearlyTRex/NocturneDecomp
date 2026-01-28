@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdlib.c_system_FUN_00602130(char * command)
+; __watcallStack int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   command

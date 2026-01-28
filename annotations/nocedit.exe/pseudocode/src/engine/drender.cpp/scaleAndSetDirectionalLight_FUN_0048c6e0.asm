@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_scaleAndSetDirectionalLight_FUN_0048c6e0(CVector3f * light_direction)
+; __cdecl void __cdecl engine_drender_cpp_scaleAndSetDirectionalLight_FUN_0048c6e0(CVector3f *light_direction)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   light_direction

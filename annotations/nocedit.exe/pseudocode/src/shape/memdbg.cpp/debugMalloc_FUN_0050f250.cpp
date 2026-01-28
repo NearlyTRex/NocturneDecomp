@@ -2,7 +2,7 @@
 // Address: 0050f250
 // Address Range: [[0050f250, 0050f347]]
 // Convention: __cdecl
-// Signature: void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
+// Signature: void * __cdecl shape_memdbg_cpp_debugMalloc_FUN_0050f250(int size,char *filename,int line_number)
 
 #include "nocturne.h"
 

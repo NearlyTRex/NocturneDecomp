@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLaserBeam * core_fire.cpp_CLaserBeam_dtor_FUN_004c9600(CLaserBeam * this_ptr)
+; __cdecl CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_dtor_FUN_004c9600(CLaserBeam *this_ptr)
 ;
 ; Parameters:
 ; CLaserBeam *     Stack[0x4]:4   this_ptr

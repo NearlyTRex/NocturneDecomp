@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CStranger * core_stranger.cpp_factoryFunc_FUN_005bb0e0(void)
+; __cdecl CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_005bb0e0(void)
 ;
 ;
 ; XREF[1]:

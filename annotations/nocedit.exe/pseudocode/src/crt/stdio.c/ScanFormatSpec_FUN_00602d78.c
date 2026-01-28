@@ -2,7 +2,7 @@
 // Address: 00602d78
 // Address Range: [[00602d78, 00602eda]]
 // Convention: __cdecl
-// Signature: char * crt_stdio.c_ScanFormatSpec_FUN_00602d78(char * format, va_list_t * args, FormatSpec * spec_info)
+// Signature: char * __cdecl crt_stdio_c_ScanFormatSpec_FUN_00602d78(char *format,va_list_t *args,FormatSpec *spec_info)
 
 #include "nocturne.h"
 

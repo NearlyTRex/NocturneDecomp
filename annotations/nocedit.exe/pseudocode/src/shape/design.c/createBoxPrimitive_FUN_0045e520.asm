@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_createBoxPrimitive_FUN_0045e520()
+; unknown void shape_design_c_createBoxPrimitive_FUN_0045e520(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x88]:1  local_88

@@ -2,7 +2,7 @@
 // Address: 005ee640
 // Address Range: [[005ee640, 005ee64e]]
 // Convention: __cdecl
-// Signature: void core_weapon.cpp_CWeapon_FUN_005ee640(CWeapon * this_ptr)
+// Signature: void __cdecl core_weapon_cpp_CWeapon_FUN_005ee640(CWeapon *this_ptr)
 
 #include "nocturne.h"
 

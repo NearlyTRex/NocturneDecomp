@@ -2,7 +2,7 @@
 // Address: 005f1db0
 // Address Range: [[005f1db0, 005f1dea]]
 // Convention: unknown
-// Signature: undefined core_werewolf.cpp_FUN_005f1db0()
+// Signature: undefined4 core_werewolf_cpp_FUN_005f1db0(void)
 
 #include "nocturne.h"
 

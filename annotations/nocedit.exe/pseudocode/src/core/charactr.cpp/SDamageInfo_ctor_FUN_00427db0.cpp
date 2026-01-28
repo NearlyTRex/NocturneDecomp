@@ -2,7 +2,7 @@
 // Address: 00427db0
 // Address Range: [[00427db0, 00427e15]]
 // Convention: __cdecl
-// Signature: SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
+// Signature: SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00432b30
 // Address Range: [[00432b30, 00432b58]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_blitFullScreen_FUN_00432b30(void * sprite_data, void * span_data)
+// Signature: void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_00432b30(void *sprite_data,void *span_data)
 
 #include "nocturne.h"
 

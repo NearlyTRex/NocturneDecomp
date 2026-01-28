@@ -2,7 +2,7 @@
 // Address: 0042b0e0
 // Address Range: [[0042b0e0, 0042b10f]]
 // Convention: __cdecl
-// Signature: int core_charactr.cpp_CCharacter_FUN_0042b0e0(CCharacter * this_ptr)
+// Signature: int __cdecl core_charactr_cpp_CCharacter_FUN_0042b0e0(CCharacter *this_ptr)
 
 #include "nocturne.h"
 

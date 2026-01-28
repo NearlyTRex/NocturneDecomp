@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_exception.c_FormatHexString_FUN_0060a748(char * dest, char * format, DWORD value)
+; __cdecl void __cdecl crt_exception_c_FormatHexString_FUN_0060a748(char *dest,char *format,DWORD value)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

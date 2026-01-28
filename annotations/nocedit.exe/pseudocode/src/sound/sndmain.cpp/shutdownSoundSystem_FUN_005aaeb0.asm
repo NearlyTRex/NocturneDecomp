@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0(void)
+; __cdecl void __cdecl sound_sndmain_cpp_shutdownSoundSystem_FUN_005aaeb0(void)
 ;
 ;
 ; XREF[1]:

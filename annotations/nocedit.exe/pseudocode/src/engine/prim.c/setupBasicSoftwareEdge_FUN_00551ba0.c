@@ -2,7 +2,7 @@
 // Address: 00551ba0
 // Address Range: [[00551ba0, 00551d5b]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_setupBasicSoftwareEdge_FUN_00551ba0(SRenderVertex * start_vertex, SRenderVertex * end_vertex)
+// Signature: void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_00551ba0 (SRenderVertex *start_vertex,SRenderVertex *end_vertex)
 
 #include "nocturne.h"
 

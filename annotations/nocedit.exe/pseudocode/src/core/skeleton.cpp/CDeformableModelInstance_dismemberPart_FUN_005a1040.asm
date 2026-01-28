@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040(CDeformableModelInstance * this_ptr, CBodyPart * body_part, int part_index)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040 (CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

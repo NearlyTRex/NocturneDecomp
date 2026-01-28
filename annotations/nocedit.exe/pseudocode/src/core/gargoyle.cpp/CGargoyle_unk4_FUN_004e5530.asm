@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530()
+; unknown void core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

@@ -2,7 +2,7 @@
 // Address: 0040bd70
 // Address Range: [[0040bd70, 0040be5b]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeSimBox_FUN_0040bd70(CSimBox * simbox_ptr, char * property_name)
+// Signature: void __cdecl core_actor_cpp_serializeSimBox_FUN_0040bd70(CSimBox *simbox_ptr,char *property_name)
 
 #include "nocturne.h"
 

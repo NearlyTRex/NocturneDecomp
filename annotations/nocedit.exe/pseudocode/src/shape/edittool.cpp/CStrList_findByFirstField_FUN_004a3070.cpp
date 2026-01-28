@@ -2,7 +2,7 @@
 // Address: 004a3070
 // Address Range: [[004a3070, 004a3116]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CStrList_findByFirstField_FUN_004a3070(CStrList * this_ptr, char * search_field)
+// Signature: int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(CStrList *this_ptr,char *search_field)
 
 #include "nocturne.h"
 

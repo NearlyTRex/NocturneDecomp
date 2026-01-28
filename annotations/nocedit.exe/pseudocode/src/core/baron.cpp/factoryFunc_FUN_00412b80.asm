@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBaron * core_baron.cpp_factoryFunc_FUN_00412b80(void)
+; __cdecl CBaron * __cdecl core_baron_cpp_factoryFunc_FUN_00412b80(void)
 ;
 ;
 ; XREF[1]:

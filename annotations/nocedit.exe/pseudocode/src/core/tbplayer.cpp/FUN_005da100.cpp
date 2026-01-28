@@ -2,7 +2,7 @@
 // Address: 005da100
 // Address Range: [[005da100, 005da118]]
 // Convention: unknown
-// Signature: undefined core_tbplayer.cpp_FUN_005da100()
+// Signature: void core_tbplayer_cpp_FUN_005da100(void)
 
 #include "nocturne.h"
 

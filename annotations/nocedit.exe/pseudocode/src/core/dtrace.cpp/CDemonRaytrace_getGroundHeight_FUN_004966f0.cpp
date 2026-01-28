@@ -2,7 +2,7 @@
 // Address: 004966f0
 // Address Range: [[004966f0, 00496943]]
 // Convention: __cdecl
-// Signature: float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
+// Signature: float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0 (CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)
 
 #include "nocturne.h"
 

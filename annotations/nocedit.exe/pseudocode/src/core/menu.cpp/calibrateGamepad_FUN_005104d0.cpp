@@ -2,7 +2,7 @@
 // Address: 005104d0
 // Address Range: [[005104d0, 005107b6]]
 // Convention: __cdecl
-// Signature: int core_menu.cpp_calibrateGamepad_FUN_005104d0(void)
+// Signature: int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
 
 #include "nocturne.h"
 

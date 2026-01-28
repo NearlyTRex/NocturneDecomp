@@ -2,7 +2,7 @@
 // Address: 00414ce0
 // Address Range: [[00414ce0, 00414db6]]
 // Convention: unknown
-// Signature: undefined core_bat.cpp_FUN_00414ce0()
+// Signature: void core_bat_cpp_FUN_00414ce0(void)
 
 #include "nocturne.h"
 

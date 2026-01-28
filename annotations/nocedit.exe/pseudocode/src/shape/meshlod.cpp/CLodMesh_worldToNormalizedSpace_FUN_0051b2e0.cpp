@@ -2,7 +2,7 @@
 // Address: 0051b2e0
 // Address Range: [[0051b2e0, 0051b32e]]
 // Convention: __cdecl
-// Signature: CVector3f * shape_meshlod.cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0(CLodMesh * this_ptr, CVector3f * output_point, CVector3f * input_point)
+// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0 (CLodMesh *this_ptr,CVector3f *output_point,CVector3f *input_point)
 
 #include "nocturne.h"
 

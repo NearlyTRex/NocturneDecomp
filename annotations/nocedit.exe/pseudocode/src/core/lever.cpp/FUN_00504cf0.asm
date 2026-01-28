@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_lever.cpp_FUN_00504cf0()
+; unknown int core_lever_cpp_FUN_00504cf0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x2c]:1  local_2c

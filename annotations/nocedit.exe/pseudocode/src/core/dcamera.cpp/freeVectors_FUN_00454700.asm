@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_freeVectors_FUN_00454700(CVector3f * * array)
+; __cdecl void __cdecl core_dcamera_cpp_freeVectors_FUN_00454700(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

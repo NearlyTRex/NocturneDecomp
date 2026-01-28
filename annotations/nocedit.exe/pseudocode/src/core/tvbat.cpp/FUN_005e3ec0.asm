@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float core_tvbat.cpp_FUN_005e3ec0(float param_1)
+; __cdecl float __cdecl core_tvbat_cpp_FUN_005e3ec0(float param_1)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   param_1

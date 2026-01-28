@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_dtri.cpp_getClippedVertexCount_FUN_0049cbb0(void)
+; __cdecl int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_0049cbb0(void)
 ;
 ;
 ; Referenced Globals:

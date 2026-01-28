@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_backgnd.cpp_freeFires_FUN_00412700(SFire * * objs)
+; __cdecl int __cdecl core_backgnd_cpp_freeFires_FUN_00412700(SFire **objs)
 ;
 ; Parameters:
 ; SFire * *        Stack[0x4]:4   objs

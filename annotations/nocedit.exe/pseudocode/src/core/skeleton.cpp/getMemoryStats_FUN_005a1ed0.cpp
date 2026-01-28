@@ -2,7 +2,7 @@
 // Address: 005a1ed0
 // Address Range: [[005a1ed0, 005a1f66]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_getMemoryStats_FUN_005a1ed0(char * output_buffer)
+// Signature: void __cdecl core_skeleton_cpp_getMemoryStats_FUN_005a1ed0(char *output_buffer)
 
 #include "nocturne.h"
 

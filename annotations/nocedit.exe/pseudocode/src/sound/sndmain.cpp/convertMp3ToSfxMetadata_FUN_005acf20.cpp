@@ -2,7 +2,7 @@
 // Address: 005acf20
 // Address Range: [[005acf20, 005ad3a1]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20(char * mp3_filename)
+// Signature: void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_filename)
 
 #include "nocturne.h"
 

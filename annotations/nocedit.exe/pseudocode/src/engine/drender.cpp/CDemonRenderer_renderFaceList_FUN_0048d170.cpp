@@ -2,7 +2,7 @@
 // Address: 0048d170
 // Address Range: [[0048d170, 0048d404]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags)
 
 #include "nocturne.h"
 

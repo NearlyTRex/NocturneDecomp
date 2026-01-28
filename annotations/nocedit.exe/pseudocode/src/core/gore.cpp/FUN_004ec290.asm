@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gore.cpp_FUN_004ec290()
+; unknown undefined4 core_gore_cpp_FUN_004ec290(void)
 ;
 ;
 ; Referenced Globals:

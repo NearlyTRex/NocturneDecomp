@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flame.cpp_FUN_004c9c00()
+; unknown void core_flame_cpp_FUN_004c9c00(void)
 ;
 ; Local Variables:
 ; undefined1[12]   Stack[-0x114]:12  local_114

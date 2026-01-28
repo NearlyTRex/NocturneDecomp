@@ -2,7 +2,7 @@
 // Address: 0050f540
 // Address Range: [[0050f540, 0050f6b0]]
 // Convention: __cdecl
-// Signature: void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
+// Signature: void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size,char *filename,int line_number)
 
 #include "nocturne.h"
 

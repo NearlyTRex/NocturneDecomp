@@ -2,7 +2,7 @@
 // Address: 0040cfe0
 // Address Range: [[0040cfe0, 0040cff8]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0(CDemonActor * this_ptr, int deleted_area_index)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0(CDemonActor *this_ptr,int deleted_area_index)
 
 #include "nocturne.h"
 

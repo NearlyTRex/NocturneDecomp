@@ -2,7 +2,7 @@
 // Address: 004d2b10
 // Address Range: [[004d2b10, 004d2b15]]
 // Convention: unknown
-// Signature: undefined core_gabriela.cpp_FUN_004d2b10()
+// Signature: CDemonActorType * core_gabriela_cpp_FUN_004d2b10(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ulong crt_string.c_wcslen_FUN_0060cd30(LPWSTR str)
+; __cdecl ulong __cdecl crt_string_c_wcslen_FUN_0060cd30(LPWSTR str)
 ;
 ; Parameters:
 ; LPWSTR           Stack[0x4]:4   str

@@ -2,7 +2,7 @@
 // Address: 005e7810
 // Address Range: [[005e7810, 005e7824]]
 // Convention: __cdecl
-// Signature: void core_vehicle.cpp_staticInit_FUN_005e7810(void)
+// Signature: void __cdecl core_vehicle_cpp_staticInit_FUN_005e7810(void)
 
 #include "nocturne.h"
 

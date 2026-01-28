@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeExplosions_FUN_004c98d0(CExplosion * * array)
+; __cdecl void __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion **array)
 ;
 ; Parameters:
 ; CExplosion * *   Stack[0x4]:4   array

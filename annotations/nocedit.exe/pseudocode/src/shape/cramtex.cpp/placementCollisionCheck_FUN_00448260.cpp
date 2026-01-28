@@ -2,7 +2,7 @@
 // Address: 00448260
 // Address Range: [[00448260, 00448381]]
 // Convention: __cdecl
-// Signature: void shape_cramtex.cpp_placementCollisionCheck_FUN_00448260(int layer_id, int start_x, int start_y, int width, int height)
+// Signature: void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260 (int layer_id,int start_x,int start_y,int width,int height)
 
 #include "nocturne.h"
 

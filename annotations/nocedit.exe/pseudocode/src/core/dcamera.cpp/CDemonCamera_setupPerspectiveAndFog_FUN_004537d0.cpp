@@ -2,7 +2,7 @@
 // Address: 004537d0
 // Address Range: [[004537d0, 004538bd]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, float max_distance)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0 (CDemonCamera *this_ptr,CVector3f *position,float max_distance)
 
 #include "nocturne.h"
 

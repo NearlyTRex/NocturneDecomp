@@ -2,7 +2,7 @@
 // Address: 0052d460
 // Address Range: [[0052d460, 0052d4e2]]
 // Convention: __cdecl
-// Signature: int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+// Signature: int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr)
 
 #include "nocturne.h"
 

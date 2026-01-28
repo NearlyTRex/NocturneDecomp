@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_AnotherFunctorCall2_FUN_00601258()
+; unknown void crt_unknown_c_AnotherFunctorCall2_FUN_00601258(void)
 ;
 ;
 ; Called Functions:

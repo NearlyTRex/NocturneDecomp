@@ -2,7 +2,7 @@
 // Address: 005556f0
 // Address Range: [[005556f0, 00555a36]]
 // Convention: __cdecl
-// Signature: void shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer * this_ptr, uchar * src_pixels, uchar * dest_indices, short start_x, short end_x, short num_palette_entries)
+// Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 (CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x ,short num_palette_entries)
 
 #include "nocturne.h"
 

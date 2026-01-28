@@ -2,7 +2,7 @@
 // Address: 005ad3b0
 // Address Range: [[005ad3b0, 005ad5b8]]
 // Convention: __cdecl
-// Signature: char * sound_sndmain.cpp_testSoundFile_FUN_005ad3b0(char * sample_name)
+// Signature: char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
 
 #include "nocturne.h"
 

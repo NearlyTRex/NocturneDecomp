@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20(char * mp3_filename)
+; __cdecl void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   mp3_filename

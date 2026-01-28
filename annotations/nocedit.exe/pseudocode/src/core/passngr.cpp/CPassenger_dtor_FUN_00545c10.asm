@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPassenger * core_passngr.cpp_CPassenger_dtor_FUN_00545c10(CPassenger * this_ptr, uint d1)
+; __cdecl CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *this_ptr,uint d1)
 ;
 ; Parameters:
 ; CPassenger *     Stack[0x4]:4   this_ptr

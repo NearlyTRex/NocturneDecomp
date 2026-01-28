@@ -2,7 +2,7 @@
 // Address: 00501f30
 // Address Range: [[00501f30, 0050231e]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended * header)
+// Signature: SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *header)
 
 #include "nocturne.h"
 

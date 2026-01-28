@@ -2,7 +2,7 @@
 // Address: 004417e0
 // Address Range: [[004417e0, 00441802]]
 // Convention: __cdecl
-// Signature: void engine_console.cpp_staticInit_FUN_004417e0(void)
+// Signature: void __cdecl engine_console_cpp_staticInit_FUN_004417e0(void)
 
 #include "nocturne.h"
 

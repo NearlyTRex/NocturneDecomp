@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format, ...)
+; __cdecl int __cdecl crt_stdio_c_sprintf_FUN_005fdbd0(char *buffer,char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

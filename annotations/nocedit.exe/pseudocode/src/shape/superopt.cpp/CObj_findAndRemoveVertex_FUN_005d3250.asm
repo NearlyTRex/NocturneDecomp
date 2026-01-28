@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_CObj_findAndRemoveVertex_FUN_005d3250(CObj * this_ptr, CVert * vertex_ptr)
+; __cdecl int __cdecl shape_superopt_cpp_CObj_findAndRemoveVertex_FUN_005d3250(CObj *this_ptr,CVert *vertex_ptr)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

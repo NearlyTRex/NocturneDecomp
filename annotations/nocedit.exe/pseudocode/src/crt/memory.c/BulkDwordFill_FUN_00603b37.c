@@ -2,7 +2,7 @@
 // Address: 00603b37
 // Address Range: [[00603b37, 00603ba2]]
 // Convention: __watcallRegister
-// Signature: void crt_memory.c_BulkDwordFill_FUN_00603b37(void * dest, uint replicated_value, uint dword_count)
+// Signature: void crt_memory_c_BulkDwordFill_FUN_00603b37(void *dest,uint replicated_value,uint dword_count)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005d3020
 // Address Range: [[005d3020, 005d3049]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_findAndRemovePolygon_FUN_005d3020(CObj * this_ptr, CPoly * poly_ptr)
+// Signature: int __cdecl shape_superopt_cpp_CObj_findAndRemovePolygon_FUN_005d3020(CObj *this_ptr,CPoly *poly_ptr)
 
 #include "nocturne.h"
 

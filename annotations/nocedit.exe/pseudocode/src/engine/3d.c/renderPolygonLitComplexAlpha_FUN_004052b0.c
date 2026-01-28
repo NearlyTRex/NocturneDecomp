@@ -2,7 +2,7 @@
 // Address: 004052b0
 // Address Range: [[004052b0, 00405343]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_renderPolygonLitComplexAlpha_FUN_004052b0(SMRGLHeaderPrimitive * polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitComplexAlpha_FUN_004052b0(SMRGLHeaderPrimitive *polygon_info)
 
 #include "nocturne.h"
 

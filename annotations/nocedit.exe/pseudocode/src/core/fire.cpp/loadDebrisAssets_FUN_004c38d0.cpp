@@ -2,7 +2,7 @@
 // Address: 004c38d0
 // Address Range: [[004c38d0, 004c396b]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_loadDebrisAssets_FUN_004c38d0(void)
+// Signature: void __cdecl core_fire_cpp_loadDebrisAssets_FUN_004c38d0(void)
 
 #include "nocturne.h"
 

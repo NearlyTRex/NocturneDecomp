@@ -2,7 +2,7 @@
 // Address: 0052cc50
 // Address Range: [[0052cc50, 0052cc6a]]
 // Convention: __cdecl
-// Signature: SMorphControlPoint * core_morph.cpp_SMorphControlPoint_ctor_FUN_0052cc50(SMorphControlPoint * this_ptr)
+// Signature: SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_ctor_FUN_0052cc50(SMorphControlPoint *this_ptr)
 
 #include "nocturne.h"
 

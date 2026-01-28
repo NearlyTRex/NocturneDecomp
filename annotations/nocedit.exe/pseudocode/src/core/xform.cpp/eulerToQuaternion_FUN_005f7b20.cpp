@@ -2,7 +2,7 @@
 // Address: 005f7b20
 // Address Range: [[005f7b20, 005f7b68]]
 // Convention: __stack_esi
-// Signature: CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)
+// Signature: CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_005f7b20(CVector3f *euler_angles,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 

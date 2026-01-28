@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_waypoint.cpp_FUN_005ec4f0()
+; unknown void core_waypoint_cpp_FUN_005ec4f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

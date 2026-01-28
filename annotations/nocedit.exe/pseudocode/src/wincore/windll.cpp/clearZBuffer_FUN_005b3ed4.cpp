@@ -2,7 +2,7 @@
 // Address: 005b3ed4
 // Address Range: [[005b3ed4, 005b3f36]]
 // Convention: __cdecl
-// Signature: void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4(void)
+// Signature: void __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b3ed4(void)
 
 #include "nocturne.h"
 

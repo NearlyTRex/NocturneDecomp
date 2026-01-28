@@ -2,7 +2,7 @@
 // Address: 0042f800
 // Address Range: [[0042f800, 0042f893]]
 // Convention: __cdecl
-// Signature: void core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800(CCharacter * this_ptr)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CCharacter *this_ptr)
 
 #include "nocturne.h"
 

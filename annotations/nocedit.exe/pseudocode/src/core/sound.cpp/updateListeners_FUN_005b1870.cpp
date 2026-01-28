@@ -2,7 +2,7 @@
 // Address: 005b1870
 // Address Range: [[005b1870, 005b1ec6]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_updateListeners_FUN_005b1870(void)
+// Signature: void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
 
 #include "nocturne.h"
 

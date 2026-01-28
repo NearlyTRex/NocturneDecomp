@@ -2,7 +2,7 @@
 // Address: 005d2940
 // Address Range: [[005d2940, 005d2ab6]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_scale_FUN_005d2940(CObj * this_ptr, CVector3d * scale, CVector3d * pivot)
+// Signature: void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVector3d *scale,CVector3d *pivot)
 
 #include "nocturne.h"
 

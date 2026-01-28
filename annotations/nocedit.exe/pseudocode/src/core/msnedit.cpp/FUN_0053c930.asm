@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_FUN_0053c930()
+; unknown void core_msnedit_cpp_FUN_0053c930(void)
 ;
 ;
 ; Called Functions:

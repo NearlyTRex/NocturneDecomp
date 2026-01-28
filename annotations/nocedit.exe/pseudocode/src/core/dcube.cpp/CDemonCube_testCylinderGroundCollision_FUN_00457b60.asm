@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60(CDemonCube * this_ptr, CVector3f * cylinder_position, float cylinder_radius, CVector3f * output_height, CVector3f * output_normal, uint * output_material)
+; __cdecl int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60 (CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius, CVector3f *output_height,CVector3f *output_normal,uint *output_material)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr

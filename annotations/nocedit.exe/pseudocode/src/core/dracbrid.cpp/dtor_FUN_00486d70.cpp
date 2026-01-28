@@ -2,7 +2,7 @@
 // Address: 00486d70
 // Address Range: [[00486d70, 00486e28]]
 // Convention: __cdecl
-// Signature: CDraculaBride * core_dracbrid.cpp_dtor_FUN_00486d70(CDraculaBride * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CDraculaBride * __cdecl core_dracbrid_cpp_dtor_FUN_00486d70 (CDraculaBride *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

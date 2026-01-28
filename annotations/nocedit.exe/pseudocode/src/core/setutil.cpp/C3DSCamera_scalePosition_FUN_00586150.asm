@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setutil.cpp_C3DSCamera_scalePosition_FUN_00586150(C3DSCamera * this_ptr, float scale)
+; __cdecl void __cdecl core_setutil_cpp_C3DSCamera_scalePosition_FUN_00586150(C3DSCamera *this_ptr,float scale)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr

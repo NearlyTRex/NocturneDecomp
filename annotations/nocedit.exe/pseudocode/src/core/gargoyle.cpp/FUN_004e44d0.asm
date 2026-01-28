@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gargoyle.cpp_FUN_004e44d0()
+; unknown CDemonActorType * core_gargoyle_cpp_FUN_004e44d0(void)
 ;
 ;
 ; Referenced Globals:

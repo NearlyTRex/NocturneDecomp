@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_trash.cpp_CTrash_process_FUN_005decf0(CTrash * this_ptr, float delta_time)
+; __cdecl void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CTrash *         Stack[0x4]:4   this_ptr

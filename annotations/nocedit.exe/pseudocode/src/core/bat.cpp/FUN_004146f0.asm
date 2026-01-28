@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bat.cpp_FUN_004146f0()
+; unknown float core_bat_cpp_FUN_004146f0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20

@@ -2,7 +2,7 @@
 // Address: 005a2010
 // Address Range: [[005a2010, 005a2027]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_freeVectors_FUN_005a2010(CVector3f * * array)
+// Signature: void __cdecl core_skeleton_cpp_freeVectors_FUN_005a2010(CVector3f **array)
 
 #include "nocturne.h"
 

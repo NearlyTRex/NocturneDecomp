@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_io.c_CheckFileHandleAvailability_FUN_00608940(void)
+; __cdecl int __cdecl crt_io_c_CheckFileHandleAvailability_FUN_00608940(void)
 ;
 ;
 ; XREF[1]:

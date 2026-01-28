@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeMuzzleFlashes_FUN_004c9990(CMuzzleFlash * * array)
+; __cdecl void __cdecl core_fire_cpp_freeMuzzleFlashes_FUN_004c9990(CMuzzleFlash **array)
 ;
 ; Parameters:
 ; CMuzzleFlash * * Stack[0x4]:4   array

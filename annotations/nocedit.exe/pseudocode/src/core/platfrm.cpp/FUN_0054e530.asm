@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_platfrm.cpp_FUN_0054e530()
+; unknown int core_platfrm_cpp_FUN_0054e530(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x544]:1  local_544

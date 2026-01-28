@@ -2,7 +2,7 @@
 // Address: 00515d10
 // Address Range: [[00515d10, 00515d50]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge * this_ptr, int tri_index)
+// Signature: void __cdecl shape_meshlod_cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge *this_ptr,int tri_index)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CRainDrop * core_fire.cpp_CRainDrop_ctor_FUN_004c9490(CRainDrop * this_ptr)
+; __cdecl CRainDrop * __cdecl core_fire_cpp_CRainDrop_ctor_FUN_004c9490(CRainDrop *this_ptr)
 ;
 ; Parameters:
 ; CRainDrop *      Stack[0x4]:4   this_ptr

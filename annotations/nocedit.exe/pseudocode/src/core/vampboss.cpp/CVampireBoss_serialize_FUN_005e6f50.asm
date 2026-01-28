@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_vampboss.cpp_CVampireBoss_serialize_FUN_005e6f50(CVampireBoss * this_ptr)
+; __cdecl void __cdecl core_vampboss_cpp_CVampireBoss_serialize_FUN_005e6f50(CVampireBoss *this_ptr)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

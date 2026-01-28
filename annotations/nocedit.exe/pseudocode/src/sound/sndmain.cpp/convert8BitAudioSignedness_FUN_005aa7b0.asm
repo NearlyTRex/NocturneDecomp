@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_convert8BitAudioSignedness_FUN_005aa7b0(byte * buffer, int num_bytes)
+; __cdecl void __cdecl sound_sndmain_cpp_convert8BitAudioSignedness_FUN_005aa7b0(byte *buffer,int num_bytes)
 ;
 ; Parameters:
 ; byte *           Stack[0x4]:4   buffer

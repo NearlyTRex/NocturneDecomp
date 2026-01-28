@@ -2,7 +2,7 @@
 // Address: 0044bfb0
 // Address Range: [[0044bfb0, 0044c02e]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0(SFogGrid * fog_ptr, int time_major, int time_minor)
+// Signature: void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0044bfb0(SFogGrid *fog_ptr,int time_major,int time_minor)
 
 #include "nocturne.h"
 

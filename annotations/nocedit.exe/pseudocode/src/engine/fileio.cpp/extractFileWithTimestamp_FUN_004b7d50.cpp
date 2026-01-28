@@ -2,7 +2,7 @@
 // Address: 004b7d50
 // Address Range: [[004b7d50, 004b7f42]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50(FILE * source_file, char * dest_filename, char * name_or_offset, int file_size, int file_offset, int checksum, int timestamp)
+// Signature: int __cdecl engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50 (FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset, int checksum,int timestamp)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004d2910
 // Address Range: [[004d2910, 004d29e9]]
 // Convention: __cdecl
-// Signature: void core_gabriela.cpp_staticInit_FUN_004d2910(void)
+// Signature: void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void)
 
 #include "nocturne.h"
 

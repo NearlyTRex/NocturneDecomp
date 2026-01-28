@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWayPoint * core_waypoint.cpp_factoryFunc_FUN_005ebe30(void)
+; __cdecl CWayPoint * __cdecl core_waypoint_cpp_factoryFunc_FUN_005ebe30(void)
 ;
 ;
 ; XREF[1]:

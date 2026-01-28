@@ -2,7 +2,7 @@
 // Address: 0051efe0
 // Address Range: [[0051efe0, 0051f079]]
 // Convention: __cdecl
-// Signature: CLodFace * shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0(CLodFace * destination, CLodFace * source)
+// Signature: CLodFace * __cdecl shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *destination,CLodFace *source)
 
 #include "nocturne.h"
 

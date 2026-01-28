@@ -2,7 +2,7 @@
 // Address: 00601bc0
 // Address Range: [[00601bc0, 00601ccd]]
 // Convention: __cdecl
-// Signature: void * crt_heap.c_InternalHeapAlloc_FUN_00601bc0(ulong size)
+// Signature: void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
 
 #include "nocturne.h"
 

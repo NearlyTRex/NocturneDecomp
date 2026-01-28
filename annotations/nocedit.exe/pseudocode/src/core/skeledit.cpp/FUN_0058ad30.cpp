@@ -2,7 +2,7 @@
 // Address: 0058ad30
 // Address Range: [[0058ad30, 0058adac]]
 // Convention: unknown
-// Signature: undefined core_skeledit.cpp_FUN_0058ad30()
+// Signature: void core_skeledit_cpp_FUN_0058ad30(void)
 
 #include "nocturne.h"
 

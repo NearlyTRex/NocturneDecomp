@@ -2,7 +2,7 @@
 // Address: 0048bad0
 // Address Range: [[0048bad0, 0048bb99]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 #include "nocturne.h"
 

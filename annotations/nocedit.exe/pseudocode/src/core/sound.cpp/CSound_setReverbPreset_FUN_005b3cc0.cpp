@@ -2,7 +2,7 @@
 // Address: 005b3cc0
 // Address Range: [[005b3cc0, 005b3d18]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound * this_ptr, int index)
+// Signature: void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound *this_ptr,int index)
 
 #include "nocturne.h"
 

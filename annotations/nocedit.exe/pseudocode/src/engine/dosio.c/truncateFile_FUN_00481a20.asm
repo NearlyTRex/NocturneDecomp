@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_dosio.c_truncateFile_FUN_00481a20(FILE * file_handle, long new_size_bytes)
+; __cdecl int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(FILE *file_handle,long new_size_bytes)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

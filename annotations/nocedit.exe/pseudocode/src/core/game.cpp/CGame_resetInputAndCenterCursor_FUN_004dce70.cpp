@@ -2,7 +2,7 @@
 // Address: 004dce70
 // Address Range: [[004dce70, 004dcede]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame * this_ptr)
+// Signature: void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame *this_ptr)
 
 #include "nocturne.h"
 

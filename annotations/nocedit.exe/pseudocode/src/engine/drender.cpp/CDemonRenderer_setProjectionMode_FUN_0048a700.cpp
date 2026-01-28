@@ -2,7 +2,7 @@
 // Address: 0048a700
 // Address Range: [[0048a700, 0048a734]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer * this_ptr, int mode)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer *this_ptr,int mode)
 
 #include "nocturne.h"
 

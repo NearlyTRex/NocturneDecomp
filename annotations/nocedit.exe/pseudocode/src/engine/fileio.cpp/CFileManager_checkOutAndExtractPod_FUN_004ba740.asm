@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CFileManager * this_ptr, CCheckOutItem * checkout_item, FILE * optional_pod_file)
+; __cdecl int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (CFileManager *this_ptr,CCheckOutItem *checkout_item,FILE *optional_pod_file)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

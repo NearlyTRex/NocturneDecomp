@@ -2,7 +2,7 @@
 // Address: 00436420
 // Address Range: [[00436420, 00436618]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_clipPolygonNearPlane_FUN_00436420(void)
+// Signature: void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
 
 #include "nocturne.h"
 

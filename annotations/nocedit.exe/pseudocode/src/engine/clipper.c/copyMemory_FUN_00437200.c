@@ -2,7 +2,7 @@
 // Address: 00437200
 // Address Range: [[00437200, 00437220]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_copyMemory_FUN_00437200(void * dest_ptr, void * src_ptr, int byte_count)
+// Signature: void __cdecl engine_clipper_c_copyMemory_FUN_00437200(void *dest_ptr,void *src_ptr,int byte_count)
 
 #include "nocturne.h"
 

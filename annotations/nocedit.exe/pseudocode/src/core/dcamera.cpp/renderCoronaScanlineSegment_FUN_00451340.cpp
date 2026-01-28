@@ -2,7 +2,7 @@
 // Address: 00451340
 // Address Range: [[00451340, 004514a4]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index, int column_start, int column_end)
+// Signature: void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340 (int row_index,int column_start,int column_end)
 
 #include "nocturne.h"
 

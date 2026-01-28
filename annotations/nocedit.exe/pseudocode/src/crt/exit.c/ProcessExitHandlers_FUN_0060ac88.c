@@ -2,7 +2,7 @@
 // Address: 0060ac88
 // Address Range: [[0060ac88, 0060acea]]
 // Convention: __cdecl
-// Signature: void crt_exit.c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority, uchar max_priority)
+// Signature: void __cdecl crt_exit_c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority,uchar max_priority)
 
 #include "nocturne.h"
 

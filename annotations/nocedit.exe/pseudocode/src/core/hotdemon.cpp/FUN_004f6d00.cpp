@@ -2,7 +2,7 @@
 // Address: 004f6d00
 // Address Range: [[004f6d00, 004f6ede]]
 // Convention: unknown
-// Signature: undefined core_hotdemon.cpp_FUN_004f6d00()
+// Signature: void core_hotdemon_cpp_FUN_004f6d00(void)
 
 #include "nocturne.h"
 

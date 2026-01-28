@@ -2,7 +2,7 @@
 // Address: 004f20d0
 // Address Range: [[004f20d0, 004f211d]]
 // Convention: __cdecl
-// Signature: CHealthItem * core_health.cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem * this_ptr, uint d1, uint d2)
+// Signature: CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

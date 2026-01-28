@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860(int device_id)
+; __cdecl void __cdecl sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(int device_id)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   device_id

@@ -2,7 +2,7 @@
 // Address: 0041d680
 // Address Range: [[0041d680, 0041d72f] [0041d853, 0041d89c]]
 // Convention: __cdecl
-// Signature: void core_boneguy.cpp_CBoneGuy_FUN_0041d680(CBoneGuy * this_ptr)
+// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 

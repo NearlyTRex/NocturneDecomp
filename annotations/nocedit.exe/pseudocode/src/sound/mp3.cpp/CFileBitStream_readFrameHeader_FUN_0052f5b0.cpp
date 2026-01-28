@@ -2,7 +2,7 @@
 // Address: 0052f5b0
 // Address Range: [[0052f5b0, 0052f66a]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream * this_ptr, SMpegFrameHeader * header_out)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0 (CFileBitStream *this_ptr,SMpegFrameHeader *header_out)
 
 #include "nocturne.h"
 

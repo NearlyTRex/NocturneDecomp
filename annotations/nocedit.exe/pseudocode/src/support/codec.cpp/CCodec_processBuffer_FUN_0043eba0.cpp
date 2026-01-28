@@ -2,7 +2,7 @@
 // Address: 0043eba0
 // Address Range: [[0043eba0, 0043ec24]]
 // Convention: __cdecl
-// Signature: int support_codec.cpp_CCodec_processBuffer_FUN_0043eba0(CCodec * this_ptr, byte * input, int * input_length, byte * output, int * output_length, int enable_callback)
+// Signature: int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0 (CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length, int enable_callback)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004ffda0
 // Address Range: [[004ffda0, 004ffe0c]]
 // Convention: __cdecl
-// Signature: float core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory * inventory_ptr, float max_charge)
+// Signature: float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0 (CInventory *inventory_ptr,float max_charge)
 
 #include "nocturne.h"
 

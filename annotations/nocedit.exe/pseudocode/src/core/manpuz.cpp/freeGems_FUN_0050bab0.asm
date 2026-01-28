@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_manpuz.cpp_freeGems_FUN_0050bab0(SGem * * objs)
+; __cdecl void __cdecl core_manpuz_cpp_freeGems_FUN_0050bab0(SGem **objs)
 ;
 ; Parameters:
 ; SGem * *         Stack[0x4]:4   objs

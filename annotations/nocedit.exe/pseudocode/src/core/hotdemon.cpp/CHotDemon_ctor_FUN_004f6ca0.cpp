@@ -2,7 +2,7 @@
 // Address: 004f6ca0
 // Address Range: [[004f6ca0, 004f6cfb]]
 // Convention: __cdecl
-// Signature: CHotDemon * core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon * this_ptr)
+// Signature: CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon *this_ptr)
 
 #include "nocturne.h"
 

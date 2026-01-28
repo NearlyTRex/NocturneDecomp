@@ -2,7 +2,7 @@
 // Address: 00414090
 // Address Range: [[00414090, 0041409e]]
 // Convention: unknown
-// Signature: undefined core_baron.cpp_FUN_00414090()
+// Signature: void core_baron_cpp_FUN_00414090(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004ea030
 // Address Range: [[004ea030, 004ea083]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * core_glass.cpp_CGlass_getBoundingBox_FUN_004ea030(CGlass * this_ptr, CBoundingBox3D * out_box)
+// Signature: CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004ea030(CGlass *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00588c20
 // Address Range: [[00588c20, 00588c3b]]
 // Convention: unknown
-// Signature: undefined core_shovel.cpp_fire_FUN_00588c20()
+// Signature: undefined4 core_shovel_cpp_fire_FUN_00588c20(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880()
+; unknown void core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
 ;
 ;
 ; XREF[1]:

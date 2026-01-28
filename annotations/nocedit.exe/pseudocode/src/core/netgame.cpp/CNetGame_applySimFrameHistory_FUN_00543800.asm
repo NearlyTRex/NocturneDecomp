@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800()
+; unknown void core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
 ;
 ;
 ; XREF[2]:

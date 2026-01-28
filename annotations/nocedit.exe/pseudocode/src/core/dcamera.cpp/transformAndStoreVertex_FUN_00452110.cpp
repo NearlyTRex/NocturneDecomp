@@ -2,7 +2,7 @@
 // Address: 00452110
 // Address Range: [[00452110, 0045217e]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_transformAndStoreVertex_FUN_00452110(int vertex_index, float x, float y, float z)
+// Signature: void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_index,float x,float y,float z)
 
 #include "nocturne.h"
 

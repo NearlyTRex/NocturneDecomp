@@ -2,7 +2,7 @@
 // Address: 0045ec90
 // Address Range: [[0045ec90, 0045ee61]]
 // Convention: unknown
-// Signature: undefined shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90()
+// Signature: void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
 
 #include "nocturne.h"
 

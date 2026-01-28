@@ -2,7 +2,7 @@
 // Address: 004616a0
 // Address Range: [[004616a0, 004616ec]]
 // Convention: __cdecl
-// Signature: void shape_design.c_renderPolygonsByPart_FUN_004616a0(int part_id)
+// Signature: void __cdecl shape_design_c_renderPolygonsByPart_FUN_004616a0(int part_id)
 
 #include "nocturne.h"
 

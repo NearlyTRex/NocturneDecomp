@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_path.cpp_FUN_00548390()
+; unknown CPathMap * core_path_cpp_FUN_00548390(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34

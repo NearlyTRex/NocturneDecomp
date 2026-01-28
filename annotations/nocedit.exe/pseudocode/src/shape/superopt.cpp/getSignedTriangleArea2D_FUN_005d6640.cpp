@@ -2,7 +2,7 @@
 // Address: 005d6640
 // Address Range: [[005d6640, 005d66d6]]
 // Convention: __cdecl
-// Signature: double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)
+// Signature: double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3)
 
 #include "nocturne.h"
 

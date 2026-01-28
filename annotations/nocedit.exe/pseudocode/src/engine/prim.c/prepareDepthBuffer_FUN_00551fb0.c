@@ -2,7 +2,7 @@
 // Address: 00551fb0
 // Address Range: [[00551fb0, 0055201d]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_prepareDepthBuffer_FUN_00551fb0(SRenderVertex * vertices, int vertex_count)
+// Signature: void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00551fb0(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 

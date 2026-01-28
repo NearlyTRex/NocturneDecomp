@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_battery.cpp_FUN_00417ef0()
+; unknown void core_battery_cpp_FUN_00417ef0(void)
 ;
 ;
 ; Called Functions:

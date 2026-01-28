@@ -2,7 +2,7 @@
 // Address: 005f3980
 // Address Range: [[005f3980, 005f3fd9]]
 // Convention: __cdecl
-// Signature: char * wincore_winrun.cpp_getKeyName_FUN_005f3980(int keycode)
+// Signature: char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(int keycode)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00601620
 // Address Range: [[00601620, 00601627]]
 // Convention: __watcallRegister
-// Signature: void crt_startup.c_notifyAbnormalTermination_FUN_00601620(void)
+// Signature: void crt_startup_c_notifyAbnormalTermination_FUN_00601620(void)
 
 #include "nocturne.h"
 

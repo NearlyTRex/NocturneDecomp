@@ -2,7 +2,7 @@
 // Address: 00465c50
 // Address Range: [[00465c50, 00465d48]]
 // Convention: __cdecl
-// Signature: void shape_design.c_weldNearbyVertices_FUN_00465c50(int polygon_index, float tolerance)
+// Signature: void __cdecl shape_design_c_weldNearbyVertices_FUN_00465c50(int polygon_index,float tolerance)
 
 #include "nocturne.h"
 

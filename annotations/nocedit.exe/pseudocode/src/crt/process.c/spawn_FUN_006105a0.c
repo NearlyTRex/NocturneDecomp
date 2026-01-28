@@ -2,7 +2,7 @@
 // Address: 006105a0
 // Address Range: [[006105a0, 00610752]]
 // Convention: __cdecl
-// Signature: int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved)
+// Signature: int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)
 
 #include "nocturne.h"
 

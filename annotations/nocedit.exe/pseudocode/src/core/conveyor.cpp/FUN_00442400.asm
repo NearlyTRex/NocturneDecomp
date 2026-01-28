@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_conveyor.cpp_FUN_00442400()
+; unknown float core_conveyor_cpp_FUN_00442400(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20

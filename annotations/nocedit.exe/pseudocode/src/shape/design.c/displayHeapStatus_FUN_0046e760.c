@@ -2,7 +2,7 @@
 // Address: 0046e760
 // Address Range: [[0046e760, 0046e7d6] [0046e7e8, 0046e800]]
 // Convention: __cdecl
-// Signature: void shape_design.c_displayHeapStatus_FUN_0046e760(int line_number)
+// Signature: void __cdecl shape_design_c_displayHeapStatus_FUN_0046e760(int line_number)
 
 #include "nocturne.h"
 

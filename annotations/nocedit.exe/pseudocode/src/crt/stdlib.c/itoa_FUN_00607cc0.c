@@ -2,7 +2,7 @@
 // Address: 00607cc0
 // Address Range: [[00607cc0, 00607d14]]
 // Convention: __cdecl
-// Signature: char * crt_stdlib.c_itoa_FUN_00607cc0(int value, char * buffer, int base)
+// Signature: char * __cdecl crt_stdlib_c_itoa_FUN_00607cc0(int value,char *buffer,int base)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0040a010
 // Address Range: [[0040a010, 0040a027]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor * this_ptr, CDemonActor * owner)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor *this_ptr,CDemonActor *owner)
 
 #include "nocturne.h"
 

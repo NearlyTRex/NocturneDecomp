@@ -2,7 +2,7 @@
 // Address: 00575f70
 // Address Range: [[00575f70, 005761f9]]
 // Convention: __cdecl
-// Signature: void core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemonSet * this_ptr)
+// Signature: void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

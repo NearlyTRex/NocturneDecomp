@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_swapDWords_FUN_00462130(uint * value1_ptr, uint * value2_ptr)
+; __cdecl void __cdecl shape_design_c_swapDWords_FUN_00462130(uint *value1_ptr,uint *value2_ptr)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   value1_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_stdlib.c_utoa_FUN_0060ae50(uint value, char * buffer, int base)
+; __cdecl char * __cdecl crt_stdlib_c_utoa_FUN_0060ae50(uint value,char *buffer,int base)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   value

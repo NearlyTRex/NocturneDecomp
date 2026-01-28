@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_flame.cpp_CFlame_load_FUN_004cac60()
+; unknown void core_flame_cpp_CFlame_load_FUN_004cac60(void)
 ;
 ;
 ; Referenced Globals:

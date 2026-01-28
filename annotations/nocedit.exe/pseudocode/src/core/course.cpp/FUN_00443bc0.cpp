@@ -2,7 +2,7 @@
 // Address: 00443bc0
 // Address Range: [[00443bc0, 00443f2b] [00443f2f, 004440c9]]
 // Convention: __cdecl
-// Signature: void core_course.cpp_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
+// Signature: void __cdecl core_course_cpp_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *param_2)
 
 #include "nocturne.h"
 

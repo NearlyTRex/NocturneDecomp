@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_initializeNetwork_FUN_0053fbc0()
+; unknown undefined4 core_netgame_cpp_initializeNetwork_FUN_0053fbc0(void)
 ;
 ;
 ; XREF[2]:

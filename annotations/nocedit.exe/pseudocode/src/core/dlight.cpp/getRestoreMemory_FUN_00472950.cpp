@@ -2,7 +2,7 @@
 // Address: 00472950
 // Address Range: [[00472950, 004729b7]]
 // Convention: __cdecl
-// Signature: int core_dlight.cpp_getRestoreMemory_FUN_00472950(int pixel_count)
+// Signature: int __cdecl core_dlight_cpp_getRestoreMemory_FUN_00472950(int pixel_count)
 
 #include "nocturne.h"
 

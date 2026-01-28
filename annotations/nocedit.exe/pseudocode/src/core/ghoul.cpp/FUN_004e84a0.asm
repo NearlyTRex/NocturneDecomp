@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ghoul.cpp_FUN_004e84a0()
+; unknown CVector3f * core_ghoul_cpp_FUN_004e84a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x7c]:1  local_7c

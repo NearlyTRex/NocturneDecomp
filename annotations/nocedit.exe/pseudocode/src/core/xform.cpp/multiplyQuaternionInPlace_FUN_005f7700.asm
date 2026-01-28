@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CQuaternion4f * core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700(CQuaternion4f * quat1_inout, CQuaternion4f * quat2_ptr)
+; __cdecl CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_005f7700 (CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat1_inout

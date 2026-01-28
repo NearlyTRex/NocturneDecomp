@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_fstream.cpp_filebuf_sync_FUN_0060dc5e(filebuf * this_ptr)
+; __watcallStack int __watcallStack crt_fstream_cpp_filebuf_sync_FUN_0060dc5e(filebuf *this_ptr)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 004d02a0
 // Address Range: [[004d02a0, 004d0471]]
 // Convention: __cdecl
-// Signature: void engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0(CBitFont * this_ptr)
+// Signature: void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004d02a0(CBitFont *this_ptr)
 
 #include "nocturne.h"
 

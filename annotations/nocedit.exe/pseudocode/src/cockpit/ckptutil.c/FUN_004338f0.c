@@ -2,7 +2,7 @@
 // Address: 004338f0
 // Address Range: [[004338f0, 004339b6]]
 // Convention: unknown
-// Signature: undefined cockpit_ckptutil.c_FUN_004338f0()
+// Signature: void cockpit_ckptutil_c_FUN_004338f0(void)
 
 #include "nocturne.h"
 

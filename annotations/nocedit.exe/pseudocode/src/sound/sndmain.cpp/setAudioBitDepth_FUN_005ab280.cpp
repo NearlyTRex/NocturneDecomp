@@ -2,7 +2,7 @@
 // Address: 005ab280
 // Address Range: [[005ab280, 005ab299]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setAudioBitDepth_FUN_005ab280(int bit_depth)
+// Signature: void __cdecl sound_sndmain_cpp_setAudioBitDepth_FUN_005ab280(int bit_depth)
 
 #include "nocturne.h"
 

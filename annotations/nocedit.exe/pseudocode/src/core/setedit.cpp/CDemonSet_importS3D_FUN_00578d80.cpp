@@ -2,7 +2,7 @@
 // Address: 00578d80
 // Address Range: [[00578d80, 0057a0b4]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80()
+// Signature: void core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
 
 #include "nocturne.h"
 

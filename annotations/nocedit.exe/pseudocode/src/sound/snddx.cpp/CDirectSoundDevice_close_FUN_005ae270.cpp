@@ -2,7 +2,7 @@
 // Address: 005ae270
 // Address Range: [[005ae270, 005ae33c]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_CDirectSoundDevice_close_FUN_005ae270(CDirectSoundDevice * this_ptr)
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_005ae270(CDirectSoundDevice *this_ptr)
 
 #include "nocturne.h"
 

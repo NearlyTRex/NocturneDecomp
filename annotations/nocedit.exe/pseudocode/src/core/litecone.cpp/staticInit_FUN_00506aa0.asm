@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_litecone.cpp_staticInit_FUN_00506aa0(void)
+; __cdecl void __cdecl core_litecone_cpp_staticInit_FUN_00506aa0(void)
 ;
 ;
 ; Referenced Globals:

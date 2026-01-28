@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_stdlib.c_itoa_FUN_00607cc0(int value, char * buffer, int base)
+; __cdecl char * __cdecl crt_stdlib_c_itoa_FUN_00607cc0(int value,char *buffer,int base)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   value

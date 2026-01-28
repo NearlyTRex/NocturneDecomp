@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWaterActor * core_wateract.cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

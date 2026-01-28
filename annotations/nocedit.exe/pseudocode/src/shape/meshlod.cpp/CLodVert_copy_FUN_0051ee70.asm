@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLodVert * shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70(CLodVert * destination, CLodVert * source)
+; __cdecl CLodVert * __cdecl shape_meshlod_cpp_CLodVert_copy_FUN_0051ee70(CLodVert *destination,CLodVert *source)
 ;
 ; Parameters:
 ; CLodVert *       Stack[0x4]:4   destination

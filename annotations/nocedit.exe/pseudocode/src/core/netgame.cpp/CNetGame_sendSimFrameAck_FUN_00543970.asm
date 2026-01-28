@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970()
+; unknown void core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48

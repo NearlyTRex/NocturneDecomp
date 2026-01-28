@@ -2,7 +2,7 @@
 // Address: 00608908
 // Address Range: [[00608908, 00608930]]
 // Convention: __watcallStack
-// Signature: void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)
+// Signature: void __watcallStack crt_io_c_setFileDescriptorFlags_FUN_00608908(int file_handle_index,uint flags)
 
 #include "nocturne.h"
 

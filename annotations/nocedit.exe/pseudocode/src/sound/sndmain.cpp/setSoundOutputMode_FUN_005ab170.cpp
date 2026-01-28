@@ -2,7 +2,7 @@
 // Address: 005ab170
 // Address Range: [[005ab170, 005ab20d]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample, int channels, int sample_rate)
+// Signature: int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample,int channels,int sample_rate)
 
 #include "nocturne.h"
 

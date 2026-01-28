@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int polygon_index)
+; __cdecl void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int polygon_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index

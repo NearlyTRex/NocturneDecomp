@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined engine_colquant.c_FUN_004406c0()
+; unknown int * engine_colquant_c_FUN_004406c0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x160]:8  local_160

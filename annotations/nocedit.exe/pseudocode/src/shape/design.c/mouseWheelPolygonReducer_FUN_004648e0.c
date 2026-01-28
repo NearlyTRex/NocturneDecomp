@@ -2,7 +2,7 @@
 // Address: 004648e0
 // Address Range: [[004648e0, 00464c83]]
 // Convention: __cdecl
-// Signature: int shape_design.c_mouseWheelPolygonReducer_FUN_004648e0(int selected_polygon_index)
+// Signature: int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_polygon_index)
 
 #include "nocturne.h"
 

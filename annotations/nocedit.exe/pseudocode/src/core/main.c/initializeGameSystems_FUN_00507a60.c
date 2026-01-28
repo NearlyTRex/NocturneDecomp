@@ -2,7 +2,7 @@
 // Address: 00507a60
 // Address Range: [[00507a60, 00508244]]
 // Convention: __cdecl
-// Signature: void core_main.c_initializeGameSystems_FUN_00507a60(void)
+// Signature: void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
 
 #include "nocturne.h"
 

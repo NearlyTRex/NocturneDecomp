@@ -2,7 +2,7 @@
 // Address: 00568cd0
 // Address Range: [[00568cd0, 00568dc9]]
 // Convention: unknown
-// Signature: undefined core_sentinel.cpp_SentinelBehavior_FUN_00568cd0()
+// Signature: void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0(double x_velocity, double y_velocity, double z_velocity)
+; __cdecl void __cdecl sound_sndmain_cpp_set3DListenerVelocity_FUN_005aa1c0 (double x_velocity,double y_velocity,double z_velocity)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   x_velocity

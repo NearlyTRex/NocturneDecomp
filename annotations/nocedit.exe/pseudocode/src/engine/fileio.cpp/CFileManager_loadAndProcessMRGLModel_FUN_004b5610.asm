@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610(CFileManager * this_ptr, char * filename)
+; __cdecl void __cdecl engine_fileio_cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610 (CFileManager *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

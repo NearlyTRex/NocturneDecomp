@@ -2,7 +2,7 @@
 // Address: 00432df0
 // Address Range: [[00432df0, 00433022]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0(void * bitmap_data, int end_x, int start_x, int bitmap_height, int * height_output, int num_height_rows, int transparency_color)
+// Signature: void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0 (void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output, int num_height_rows,int transparency_color)
 
 #include "nocturne.h"
 

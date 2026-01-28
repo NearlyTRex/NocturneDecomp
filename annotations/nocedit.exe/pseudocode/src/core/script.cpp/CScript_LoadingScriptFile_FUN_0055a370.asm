@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370()
+; unknown void core_script_cpp_CScript_LoadingScriptFile_FUN_0055a370(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

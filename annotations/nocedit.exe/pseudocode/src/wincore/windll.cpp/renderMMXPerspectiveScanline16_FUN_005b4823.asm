@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STexturedVertex * left_vertex, STexturedVertex * right_vertex, int scanline_y)
+; __cdecl void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 ;
 ;
 ; XREF[77]:

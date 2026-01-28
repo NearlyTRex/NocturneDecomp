@@ -2,7 +2,7 @@
 // Address: 004906e9
 // Address Range: [[004906e9, 0049072e]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 

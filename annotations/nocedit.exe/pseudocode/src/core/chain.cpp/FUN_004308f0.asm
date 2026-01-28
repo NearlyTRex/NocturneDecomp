@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_chain.cpp_FUN_004308f0()
+; unknown undefined4 core_chain_cpp_FUN_004308f0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x90]:1  local_90

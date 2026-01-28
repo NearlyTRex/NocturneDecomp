@@ -2,7 +2,7 @@
 // Address: 00545680
 // Address Range: [[00545680, 005456eb]]
 // Convention: __cdecl
-// Signature: void core_particle.cpp_CParticle_setup_FUN_00545680(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
+// Signature: void __cdecl core_particle_cpp_CParticle_setup_FUN_00545680 (CParticle *this_ptr,CVector3f *position,CVector3f *velocity)
 
 #include "nocturne.h"
 

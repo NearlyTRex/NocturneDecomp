@@ -2,7 +2,7 @@
 // Address: 00408fd0
 // Address Range: [[00408fd0, 00408ff3]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0(CDemonActor * this_ptr, char * sound_name, float volume)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0 (CDemonActor *this_ptr,char *sound_name,float volume)
 
 #include "nocturne.h"
 

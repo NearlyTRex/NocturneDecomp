@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0(CMotionController * this_ptr, char * motion_name, float frame_number)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0 (CMotionController *this_ptr,char *motion_name,float frame_number)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

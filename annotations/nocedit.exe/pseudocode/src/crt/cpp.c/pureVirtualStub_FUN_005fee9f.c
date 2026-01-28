@@ -2,7 +2,7 @@
 // Address: 005fee9f
 // Address Range: [[005fee9f, 005feeae]]
 // Convention: __watcallStack
-// Signature: void crt_cpp.c_pureVirtualStub_FUN_005fee9f(void)
+// Signature: void __watcallStack crt_cpp_c_pureVirtualStub_FUN_005fee9f(void)
 
 #include "nocturne.h"
 

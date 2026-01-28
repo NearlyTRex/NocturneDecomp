@@ -2,7 +2,7 @@
 // Address: 005542b0
 // Address Range: [[005542b0, 00554610]]
 // Convention: unknown
-// Signature: undefined core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0()
+// Signature: void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
 
 #include "nocturne.h"
 

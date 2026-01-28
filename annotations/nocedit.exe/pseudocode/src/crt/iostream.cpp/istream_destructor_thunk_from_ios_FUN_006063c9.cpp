@@ -2,7 +2,7 @@
 // Address: 006063c9
 // Address Range: [[006063c9, 006063e0]]
 // Convention: __cdecl
-// Signature: void crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9(ios * this_ptr, int dtor_flags)
+// Signature: void __cdecl crt_iostream_cpp_istream_destructor_thunk_from_ios_FUN_006063c9(ios *this_ptr,int dtor_flags)
 
 #include "nocturne.h"
 

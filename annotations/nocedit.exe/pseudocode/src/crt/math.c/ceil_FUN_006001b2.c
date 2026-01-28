@@ -2,7 +2,7 @@
 // Address: 006001b2
 // Address Range: [[006001b2, 006001e2]]
 // Convention: __softfp_double
-// Signature: double crt_math.c_ceil_FUN_006001b2(double value)
+// Signature: double __softfp_double crt_math_c_ceil_FUN_006001b2(double value)
 
 #include "nocturne.h"
 

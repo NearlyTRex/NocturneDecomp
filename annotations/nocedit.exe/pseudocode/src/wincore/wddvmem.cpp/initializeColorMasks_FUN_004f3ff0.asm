@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ulonglong wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0(void)
+; __cdecl ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

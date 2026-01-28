@@ -2,7 +2,7 @@
 // Address: 0044c0f0
 // Address Range: [[0044c0f0, 0044c187]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0044c0f0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_createReversedQuadPolygon_FUN_0045e040()
+; unknown void shape_design_c_createReversedQuadPolygon_FUN_0045e040(void)
 ;
 ;
 ; XREF[1]:

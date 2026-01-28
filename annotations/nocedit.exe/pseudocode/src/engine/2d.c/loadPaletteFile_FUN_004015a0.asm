@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_loadPaletteFile_FUN_004015a0(char * filename)
+; __cdecl void __cdecl engine_2d_c_loadPaletteFile_FUN_004015a0(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_matrix.c_calculateTransformedZ_FUN_0050cd10(int * input_coords)
+; __cdecl int __cdecl engine_matrix_c_calculateTransformedZ_FUN_0050cd10(int *input_coords)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   input_coords

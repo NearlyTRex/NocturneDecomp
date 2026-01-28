@@ -2,7 +2,7 @@
 // Address: 005dda20
 // Address Range: [[005dda20, 005dda43]]
 // Convention: __cdecl
-// Signature: void core_tommygun.cpp_staticInit_FUN_005dda20(void)
+// Signature: void __cdecl core_tommygun_cpp_staticInit_FUN_005dda20(void)
 
 #include "nocturne.h"
 

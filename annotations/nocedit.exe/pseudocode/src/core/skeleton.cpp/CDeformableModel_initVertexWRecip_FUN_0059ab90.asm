@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 (CDeformableModel *this_ptr,int lod_index)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

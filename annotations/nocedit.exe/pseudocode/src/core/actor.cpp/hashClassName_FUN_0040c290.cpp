@@ -2,7 +2,7 @@
 // Address: 0040c290
 // Address Range: [[0040c290, 0040c2d6]]
 // Convention: __cdecl
-// Signature: uint core_actor.cpp_hashClassName_FUN_0040c290(char * class_name)
+// Signature: uint __cdecl core_actor_cpp_hashClassName_FUN_0040c290(char *class_name)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 006038c0
 // Address Range: [[006038c0, 006039c9]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_write_FUN_006038c0(int file_handle_index, void * buffer, int bytes_to_write)
+// Signature: int __watcallStack crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_write)
 
 #include "nocturne.h"
 

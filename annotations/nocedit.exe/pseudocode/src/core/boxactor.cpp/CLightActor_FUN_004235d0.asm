@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_boxactor.cpp_CLightActor_FUN_004235d0(CLightActor * this_ptr)
+; __cdecl int __cdecl core_boxactor_cpp_CLightActor_FUN_004235d0(CLightActor *this_ptr)
 ;
 ; Parameters:
 ; CLightActor *    Stack[0x4]:4   this_ptr

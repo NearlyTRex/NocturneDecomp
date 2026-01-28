@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_font.cpp_CBitFont_getLineSpacing_FUN_004d0480(CBitFont * this_ptr, char character)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_getLineSpacing_FUN_004d0480(CBitFont *this_ptr,char character)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 00423700
 // Address Range: [[00423700, 00423755]]
 // Convention: __cdecl
-// Signature: void core_bride.cpp_staticInit_FUN_00423700(void)
+// Signature: void __cdecl core_bride_cpp_staticInit_FUN_00423700(void)
 
 #include "nocturne.h"
 

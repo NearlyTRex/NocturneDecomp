@@ -2,7 +2,7 @@
 // Address: 0060da87
 // Address Range: [[0060da87, 0060db8b]]
 // Convention: __watcallStack
-// Signature: int crt_fstream.cpp_filebuf_underflow_FUN_0060da87(filebuf * this_ptr)
+// Signature: int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_0060da87(filebuf *this_ptr)
 
 #include "nocturne.h"
 

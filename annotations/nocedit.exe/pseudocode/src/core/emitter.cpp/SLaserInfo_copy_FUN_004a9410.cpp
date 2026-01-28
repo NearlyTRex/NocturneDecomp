@@ -2,7 +2,7 @@
 // Address: 004a9410
 // Address Range: [[004a9410, 004a94b7]]
 // Convention: __cdecl
-// Signature: void core_emitter.cpp_SLaserInfo_copy_FUN_004a9410(SLaserInfo * this_ptr, SLaserInfo * copy)
+// Signature: void __cdecl core_emitter_cpp_SLaserInfo_copy_FUN_004a9410(SLaserInfo *this_ptr,SLaserInfo *copy)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_isSoundBusy_FUN_005ab540(void)
+; __cdecl int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_005ab540(void)
 ;
 ;
 ; XREF[8]:

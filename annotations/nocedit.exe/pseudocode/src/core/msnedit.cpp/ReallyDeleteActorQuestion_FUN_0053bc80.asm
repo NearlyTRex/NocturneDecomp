@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80()
+; unknown void core_msnedit_cpp_ReallyDeleteActorQuestion_FUN_0053bc80(void)
 ;
 ;
 ; XREF[2]:

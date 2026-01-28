@@ -2,7 +2,7 @@
 // Address: 005f5190
 // Address Range: [[005f5190, 005f51d2]]
 // Convention: __cdecl
-// Signature: void core_xform.cpp_setRotationScaleIdentity_FUN_005f5190(CMatrix3x4f * matrix)
+// Signature: void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_005f5190(CMatrix3x4f *matrix)
 
 #include "nocturne.h"
 

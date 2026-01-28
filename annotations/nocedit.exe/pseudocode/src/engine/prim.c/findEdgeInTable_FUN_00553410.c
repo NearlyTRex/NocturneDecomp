@@ -2,7 +2,7 @@
 // Address: 00553410
 // Address Range: [[00553410, 00553445]]
 // Convention: __cdecl
-// Signature: SSoftwareEdge * engine_prim.c_findEdgeInTable_FUN_00553410(int scanline, SSoftwareEdge * target_edge)
+// Signature: SSoftwareEdge * __cdecl engine_prim_c_findEdgeInTable_FUN_00553410(int scanline,SSoftwareEdge *target_edge)
 
 #include "nocturne.h"
 

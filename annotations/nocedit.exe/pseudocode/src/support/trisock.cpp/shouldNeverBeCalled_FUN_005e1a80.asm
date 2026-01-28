@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1, int unknown2)
+; __cdecl int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1,int unknown2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   unknown1

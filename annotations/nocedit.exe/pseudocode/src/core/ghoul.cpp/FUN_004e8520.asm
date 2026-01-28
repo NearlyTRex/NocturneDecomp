@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_ghoul.cpp_FUN_004e8520()
+; unknown void core_ghoul_cpp_FUN_004e8520(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

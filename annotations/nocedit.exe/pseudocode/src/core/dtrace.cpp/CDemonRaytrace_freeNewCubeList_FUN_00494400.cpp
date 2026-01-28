@@ -2,7 +2,7 @@
 // Address: 00494400
 // Address Range: [[00494400, 0049444f]]
 // Convention: __cdecl
-// Signature: void core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400(CDemonRaytrace * this_ptr)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400(CDemonRaytrace *this_ptr)
 
 #include "nocturne.h"
 

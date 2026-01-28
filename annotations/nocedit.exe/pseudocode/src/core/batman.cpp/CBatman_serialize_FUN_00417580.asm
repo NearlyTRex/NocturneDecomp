@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_batman.cpp_CBatman_serialize_FUN_00417580(CBatman * this_ptr)
+; __cdecl void __cdecl core_batman_cpp_CBatman_serialize_FUN_00417580(CBatman *this_ptr)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

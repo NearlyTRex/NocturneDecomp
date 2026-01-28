@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HANDLE sound_sndmain.cpp_startSoundThread_FUN_005abc00(double latency_seconds)
+; __cdecl HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   latency_seconds

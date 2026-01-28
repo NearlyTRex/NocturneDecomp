@@ -2,7 +2,7 @@
 // Address: 00408d90
 // Address Range: [[00408d90, 00408da9]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_getGroundType_FUN_00408d90(CDemonActor * this_ptr)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+; __cdecl long __cdecl crt_stdio_c_ftell_FUN_00601560(FILE *file_handle)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

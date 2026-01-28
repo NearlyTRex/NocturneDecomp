@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTempleStone * core_stone.cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone * this_ptr, uint d1, uint d2, uint d3)
+; __cdecl CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint d1,uint d2,uint d3)
 ;
 ; Parameters:
 ; CTempleStone *   Stack[0x4]:4   this_ptr

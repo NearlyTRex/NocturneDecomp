@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_FUN_00582f30()
+; unknown void core_setedit_cpp_FUN_00582f30(void)
 ;
 ;
 ; Referenced Globals:

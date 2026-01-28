@@ -2,7 +2,7 @@
 // Address: 005a8170
 // Address Range: [[005a8170, 005a8382]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot * this_ptr, double hardware_playback_pos)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170 (CSfxSlot *this_ptr,double hardware_playback_pos)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice * this_ptr, int bits_per_sample, int channel_count, int sample_rate, int sample_count)
+; __cdecl int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40 (CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate, int sample_count)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr

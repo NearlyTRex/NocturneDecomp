@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0()
+; unknown void core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc8]:4  local_c8

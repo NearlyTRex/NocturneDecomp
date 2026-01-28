@@ -2,7 +2,7 @@
 // Address: 00420020
 // Address Range: [[00420020, 00420172]]
 // Convention: __cdecl
-// Signature: void core_box.cpp_CBox_saveToFile_FUN_00420020(CBox * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00447e80
 // Address Range: [[00447e80, 00447f15]]
 // Convention: __cdecl
-// Signature: double shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80(void)
+// Signature: double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
 
 #include "nocturne.h"
 

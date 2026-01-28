@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_cramtex.cpp_generateTextureAtlas_FUN_00445820(void)
+; __cdecl void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40

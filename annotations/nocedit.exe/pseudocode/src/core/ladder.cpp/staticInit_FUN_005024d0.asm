@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_ladder.cpp_staticInit_FUN_005024d0(void)
+; __cdecl void __cdecl core_ladder_cpp_staticInit_FUN_005024d0(void)
 ;
 ;
 ; Referenced Globals:

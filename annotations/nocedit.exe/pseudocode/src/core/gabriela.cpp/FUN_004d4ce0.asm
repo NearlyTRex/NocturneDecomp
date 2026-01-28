@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gabriela.cpp_FUN_004d4ce0()
+; unknown undefined4 core_gabriela_cpp_FUN_004d4ce0(void)
 ;
 ;
 ; XREF[2]:

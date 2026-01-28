@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_drender.cpp_CDemonRenderer_renderUltraPremiumDirect_FUN_0048b890(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderUltraPremiumDirect_FUN_0048b890 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 004dd870
 // Address Range: [[004dd870, 004dd924]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+// Signature: void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
 
 #include "nocturne.h"
 

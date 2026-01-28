@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint core_actor.cpp_generateRandomValue_FUN_0040cba0(void)
+; __cdecl uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cba0(void)
 ;
 ;
 ; XREF[4]:

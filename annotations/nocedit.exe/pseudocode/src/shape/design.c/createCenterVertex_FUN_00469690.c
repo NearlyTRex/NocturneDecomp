@@ -2,7 +2,7 @@
 // Address: 00469690
 // Address Range: [[00469690, 00469849]]
 // Convention: __cdecl
-// Signature: void shape_design.c_createCenterVertex_FUN_00469690(void)
+// Signature: void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
 
 #include "nocturne.h"
 

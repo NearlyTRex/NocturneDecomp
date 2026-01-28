@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double crt_math.c_process_math_error_FUN_0060bf2d(int errorFlags, double * value1, double * value2)
+; __cdecl double __cdecl crt_math_c_process_math_error_FUN_0060bf2d(int errorFlags,double *value1,double *value2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   errorFlags

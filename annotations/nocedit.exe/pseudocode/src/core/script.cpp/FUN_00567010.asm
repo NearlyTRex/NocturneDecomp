@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_FUN_00567010()
+; unknown void core_script_cpp_FUN_00567010(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x200]:1  local_200

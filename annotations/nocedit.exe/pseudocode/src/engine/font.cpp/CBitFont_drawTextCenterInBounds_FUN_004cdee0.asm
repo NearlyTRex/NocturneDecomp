@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y_pos, int color_mode, int color_value, char * text_string)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0 (CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value, char *text_string)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_teleport.cpp_staticInit_FUN_005da6e0(void)
+; __cdecl void __cdecl core_teleport_cpp_staticInit_FUN_005da6e0(void)
 ;
 ;
 ; Referenced Globals:

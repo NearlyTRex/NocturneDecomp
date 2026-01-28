@@ -2,7 +2,7 @@
 // Address: 0055a4b0
 // Address Range: [[0055a4b0, 0055a537]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_CScript_StepThroughWholeScript_FUN_0055a4b0()
+// Signature: undefined1 * core_script_cpp_CScript_StepThroughWholeScript_FUN_0055a4b0(void)
 
 #include "nocturne.h"
 

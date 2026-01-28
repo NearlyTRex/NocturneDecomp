@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_menu.cpp_configureCustomKeys_FUN_00511890(void)
+; __cdecl void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x11c]:8  local_11c

@@ -2,7 +2,7 @@
 // Address: 0048d7a0
 // Address Range: [[0048d7a0, 0048d89c]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * quad_primitive, int render_flags)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags)
 
 #include "nocturne.h"
 

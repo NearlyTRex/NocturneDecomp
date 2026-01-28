@@ -2,7 +2,7 @@
 // Address: 006027c8
 // Address Range: [[006027c8, 006027d5]]
 // Convention: __cdecl
-// Signature: void crt_errno.c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)
+// Signature: void __cdecl crt_errno_c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_time.c_parse_tz_string_FUN_0060756c(char * tz_string)
+; __cdecl void __cdecl crt_time_c_parse_tz_string_FUN_0060756c(char *tz_string)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   tz_string

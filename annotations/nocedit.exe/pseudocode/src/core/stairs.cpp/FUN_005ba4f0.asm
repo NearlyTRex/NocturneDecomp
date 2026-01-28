@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stairs.cpp_FUN_005ba4f0()
+; unknown void core_stairs_cpp_FUN_005ba4f0(void)
 ;
 ;
 ; Referenced Globals:

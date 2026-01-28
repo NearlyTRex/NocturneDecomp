@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CPickList_swap_FUN_004a5870(CPickList * this_ptr, int index1, int index2)
+; __cdecl void __cdecl shape_edittool_cpp_CPickList_swap_FUN_004a5870(CPickList *this_ptr,int index1,int index2)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr

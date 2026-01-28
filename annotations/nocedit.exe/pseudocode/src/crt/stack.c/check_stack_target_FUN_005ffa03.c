@@ -2,7 +2,7 @@
 // Address: 005ffa03
 // Address Range: [[005ffa03, 005ffa21]]
 // Convention: __watcallRegister
-// Signature: void crt_stack.c_check_stack_target_FUN_005ffa03(void * target_stack_ptr)
+// Signature: void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)
 
 #include "nocturne.h"
 

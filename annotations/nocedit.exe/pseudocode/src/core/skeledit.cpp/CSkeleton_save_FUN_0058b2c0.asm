@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton * this_ptr, FILE * file_handle)
+; __cdecl void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,FILE *file_handle)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0xc]:4   this_ptr

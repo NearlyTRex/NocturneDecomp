@@ -2,7 +2,7 @@
 // Address: 005e9da0
 // Address Range: [[005e9da0, 005e9dba]]
 // Convention: __cdecl
-// Signature: void core_water.cpp_staticInit_FUN_005e9da0(void)
+// Signature: void __cdecl core_water_cpp_staticInit_FUN_005e9da0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180()
+; unknown undefined4 engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c

@@ -2,7 +2,7 @@
 // Address: 005ff9d0
 // Address Range: [[005ff9d0, 005ff9dd]]
 // Convention: __watcallStack
-// Signature: int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+// Signature: int __watcallStack crt_io_c_deleteFile_FUN_005ff9d0(char *filename)
 
 #include "nocturne.h"
 

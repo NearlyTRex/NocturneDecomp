@@ -2,7 +2,7 @@
 // Address: 004033a0
 // Address Range: [[004033a0, 00403422]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_setSolidColor_FUN_004033a0(int red_component, int green_component, int blue_component)
+// Signature: void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_component,int blue_component)
 
 #include "nocturne.h"
 

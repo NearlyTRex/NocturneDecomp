@@ -2,7 +2,7 @@
 // Address: 004a00f0
 // Address Range: [[004a00f0, 004a01e2]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, float min_value, float max_value, int show_current_value)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 (CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check, float min_value,float max_value,int show_current_value)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00406d80
 // Address Range: [[00406d80, 00406dc4]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+// Signature: void __cdecl engine_3d_c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
 
 #include "nocturne.h"
 

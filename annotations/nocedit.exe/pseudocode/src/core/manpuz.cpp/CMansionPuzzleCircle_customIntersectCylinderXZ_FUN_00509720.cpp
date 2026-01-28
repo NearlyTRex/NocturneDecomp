@@ -2,7 +2,7 @@
 // Address: 00509720
 // Address Range: [[00509720, 005097c1]]
 // Convention: __cdecl
-// Signature: void core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720(CMansionPuzzleCircle * this_ptr, SIntersectXZCylinder * cylinder)
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720 (CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder)
 
 #include "nocturne.h"
 

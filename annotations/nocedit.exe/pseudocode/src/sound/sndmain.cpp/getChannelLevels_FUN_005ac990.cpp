@@ -2,7 +2,7 @@
 // Address: 005ac990
 // Address Range: [[005ac990, 005aca8f]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_getChannelLevels_FUN_005ac990(int channel, float * out_peak, float * out_average)
+// Signature: void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,float *out_average)
 
 #include "nocturne.h"
 

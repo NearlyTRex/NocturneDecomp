@@ -2,7 +2,7 @@
 // Address: 005092e0
 // Address Range: [[005092e0, 0050931f]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * core_manpuz.cpp_CMansionPuzzleCircle_getBoundingBox_FUN_005092e0(CMansionPuzzleCircle * this_ptr, CBoundingBox3D * out_box)
+// Signature: CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_005092e0 (CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 

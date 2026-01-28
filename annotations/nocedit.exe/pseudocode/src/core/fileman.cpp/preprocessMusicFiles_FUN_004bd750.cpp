@@ -2,7 +2,7 @@
 // Address: 004bd750
 // Address Range: [[004bd750, 004bd8d0]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_preprocessMusicFiles_FUN_004bd750(char * source_directory)
+// Signature: void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_directory)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005d0d30
 // Address Range: [[005d0d30, 005d0e1e]]
 // Convention: __stack_esi
-// Signature: CVector3d * shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30(CPoly * this_ptr, CVector3d * out_centroid)
+// Signature: CVector3d * __stack_esi shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out_centroid)
 
 #include "nocturne.h"
 

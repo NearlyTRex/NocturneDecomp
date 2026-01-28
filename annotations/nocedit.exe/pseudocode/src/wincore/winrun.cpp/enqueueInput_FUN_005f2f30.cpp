@@ -2,7 +2,7 @@
 // Address: 005f2f30
 // Address Range: [[005f2f30, 005f2f69]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_enqueueInput_FUN_005f2f30(int input_value)
+// Signature: void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005f2f30(int input_value)
 
 #include "nocturne.h"
 

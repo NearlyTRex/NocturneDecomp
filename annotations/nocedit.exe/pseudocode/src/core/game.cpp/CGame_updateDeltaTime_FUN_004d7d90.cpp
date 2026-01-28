@@ -2,7 +2,7 @@
 // Address: 004d7d90
 // Address Range: [[004d7d90, 004d7e46]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+// Signature: void __cdecl core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame *this_ptr)
 
 #include "nocturne.h"
 

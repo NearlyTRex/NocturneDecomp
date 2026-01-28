@@ -2,7 +2,7 @@
 // Address: 00411360
 // Address Range: [[00411360, 004113d5]]
 // Convention: __cdecl
-// Signature: void core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360(CAmmo * this_ptr, CActorPropertyList * property_list)
+// Signature: void __cdecl core_ammo_cpp_CAmmo_getPropertyList_FUN_00411360(CAmmo *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 

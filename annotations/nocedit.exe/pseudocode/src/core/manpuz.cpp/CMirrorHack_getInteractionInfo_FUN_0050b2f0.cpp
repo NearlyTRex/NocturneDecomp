@@ -2,7 +2,7 @@
 // Address: 0050b2f0
 // Address Range: [[0050b2f0, 0050b333]]
 // Convention: __cdecl
-// Signature: void core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack * this_ptr, SInteractionInfo * out_info)
+// Signature: void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0 (CMirrorHack *this_ptr,SInteractionInfo *out_info)
 
 #include "nocturne.h"
 

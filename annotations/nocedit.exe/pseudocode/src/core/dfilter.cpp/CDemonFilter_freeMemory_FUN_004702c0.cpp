@@ -2,7 +2,7 @@
 // Address: 004702c0
 // Address Range: [[004702c0, 004702e9]]
 // Convention: __cdecl
-// Signature: void core_dfilter.cpp_CDemonFilter_freeMemory_FUN_004702c0(CDemonFilter * this_ptr)
+// Signature: void __cdecl core_dfilter_cpp_CDemonFilter_freeMemory_FUN_004702c0(CDemonFilter *this_ptr)
 
 #include "nocturne.h"
 

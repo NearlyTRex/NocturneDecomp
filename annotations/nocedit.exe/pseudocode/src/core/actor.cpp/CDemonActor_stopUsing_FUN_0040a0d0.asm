@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CDemonActor_stopUsing_FUN_0040a0d0(CDemonActor * this_ptr, CDemonActor * user)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0(CDemonActor *this_ptr,CDemonActor *user)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

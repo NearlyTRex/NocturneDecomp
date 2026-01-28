@@ -2,7 +2,7 @@
 // Address: 0054c7b0
 // Address Range: [[0054c7b0, 0054c7b7]]
 // Convention: unknown
-// Signature: undefined cockpit_pkbmpset.cpp_FUN_0054c7b0()
+// Signature: undefined4 cockpit_pkbmpset_cpp_FUN_0054c7b0(void)
 
 #include "nocturne.h"
 

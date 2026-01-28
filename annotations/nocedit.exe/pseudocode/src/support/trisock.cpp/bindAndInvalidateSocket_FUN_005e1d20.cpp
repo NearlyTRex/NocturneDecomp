@@ -2,7 +2,7 @@
 // Address: 005e1d20
 // Address Range: [[005e1d20, 005e1d52]]
 // Convention: __cdecl
-// Signature: int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
+// Signature: int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext *socket_ctx)
 
 #include "nocturne.h"
 

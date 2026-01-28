@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_generateFogGrid_FUN_0044bba0(SFogGrid * fog)
+; __cdecl void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
 ;
 ; Parameters:
 ; SFogGrid *       Stack[0x4]:4   fog

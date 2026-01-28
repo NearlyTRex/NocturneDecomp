@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_dynamite.cpp_FUN_0049ce70()
+; unknown undefined4 core_dynamite_cpp_FUN_0049ce70(void)
 ;
 ;
 ; Referenced Globals:

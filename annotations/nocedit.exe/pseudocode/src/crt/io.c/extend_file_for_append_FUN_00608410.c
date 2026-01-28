@@ -2,7 +2,7 @@
 // Address: 00608410
 // Address Range: [[00608410, 006084e8]]
 // Convention: __cdecl
-// Signature: int crt_io.c_extend_file_for_append_FUN_00608410(int fd)
+// Signature: int __cdecl crt_io_c_extend_file_for_append_FUN_00608410(int fd)
 
 #include "nocturne.h"
 

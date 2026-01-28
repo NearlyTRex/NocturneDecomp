@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_stranger.cpp_CStranger_process_FUN_005bb830(CStranger * this_ptr, float delta_time)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

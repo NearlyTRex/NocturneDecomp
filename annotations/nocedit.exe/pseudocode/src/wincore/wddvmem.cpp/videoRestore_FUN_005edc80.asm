@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_wddvmem.cpp_videoRestore_FUN_005edc80(void)
+; __cdecl void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
 ;
 ;
 ; XREF[2]:

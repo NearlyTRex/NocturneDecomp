@@ -2,7 +2,7 @@
 // Address: 0054a790
 // Address Range: [[0054a790, 0054a7ac]]
 // Convention: unknown
-// Signature: undefined core_pendulum.cpp_FUN_0054a790()
+// Signature: void core_pendulum_cpp_FUN_0054a790(void)
 
 #include "nocturne.h"
 

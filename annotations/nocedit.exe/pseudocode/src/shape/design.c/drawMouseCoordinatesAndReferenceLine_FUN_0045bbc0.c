@@ -2,7 +2,7 @@
 // Address: 0045bbc0
 // Address Range: [[0045bbc0, 0045bd0a]]
 // Convention: __cdecl
-// Signature: void shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0(void)
+// Signature: void __cdecl shape_design_c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0(void)
 
 #include "nocturne.h"
 

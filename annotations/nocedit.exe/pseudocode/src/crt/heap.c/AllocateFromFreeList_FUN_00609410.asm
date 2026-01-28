@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void * crt_heap.c_AllocateFromFreeList_FUN_00609410(ulong size, HeapBlock * free_block, ushort ds_segment)
+; __watcallRegister void * crt_heap_c_AllocateFromFreeList_FUN_00609410 (ulong size,HeapBlock *free_block,ushort ds_segment)
 ;
 ; Parameters:
 ; ushort           Stack[0x4]:2   ds_segment

@@ -2,7 +2,7 @@
 // Address: 00453db0
 // Address Range: [[00453db0, 00453e4a]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0 (CDemonCamera *this_ptr,int screen_x,int screen_y,int offset)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004181e0
 // Address Range: [[004181e0, 00418202]]
 // Convention: __cdecl
-// Signature: CBeast * core_beast.cpp_factoryFunc_FUN_004181e0(void)
+// Signature: CBeast * __cdecl core_beast_cpp_factoryFunc_FUN_004181e0(void)
 
 #include "nocturne.h"
 

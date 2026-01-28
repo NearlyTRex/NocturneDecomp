@@ -2,7 +2,7 @@
 // Address: 0053ee00
 // Address Range: [[0053ee00, 0053ee23]]
 // Convention: __cdecl
-// Signature: void * shape_multicrm.cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram * this_ptr, CDSEModel * * dest_array)
+// Signature: void * __cdecl shape_multicrm_cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram *this_ptr,CDSEModel **dest_array)
 
 #include "nocturne.h"
 

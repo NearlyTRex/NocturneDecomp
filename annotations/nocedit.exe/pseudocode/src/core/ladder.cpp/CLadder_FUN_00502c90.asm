@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_ladder.cpp_CLadder_FUN_00502c90(CLadder * this_ptr)
+; __cdecl int __cdecl core_ladder_cpp_CLadder_FUN_00502c90(CLadder *this_ptr)
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr

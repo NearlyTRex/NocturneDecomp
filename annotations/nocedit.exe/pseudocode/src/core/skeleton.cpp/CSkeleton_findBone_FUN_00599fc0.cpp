@@ -2,7 +2,7 @@
 // Address: 00599fc0
 // Address Range: [[00599fc0, 0059a045]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+// Signature: int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name)
 
 #include "nocturne.h"
 

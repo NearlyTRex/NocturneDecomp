@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
+; __cdecl int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70 (CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

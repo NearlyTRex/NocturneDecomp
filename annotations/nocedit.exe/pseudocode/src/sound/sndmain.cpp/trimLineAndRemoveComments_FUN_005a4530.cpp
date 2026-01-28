@@ -2,7 +2,7 @@
 // Address: 005a4530
 // Address Range: [[005a4530, 005a45bd]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530(char * line)
+// Signature: void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_005a4530(char *line)
 
 #include "nocturne.h"
 

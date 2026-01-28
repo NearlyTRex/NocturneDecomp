@@ -2,7 +2,7 @@
 // Address: 005a8b40
 // Address Range: [[005a8b40, 005a8b63]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40(double delay_seconds)
+// Signature: void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40(double delay_seconds)
 
 #include "nocturne.h"
 

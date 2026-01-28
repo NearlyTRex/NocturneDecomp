@@ -2,7 +2,7 @@
 // Address: 0046abf0
 // Address Range: [[0046abf0, 0046ac6a]]
 // Convention: __cdecl
-// Signature: void shape_design.c_readPixelRowFromFile_FUN_0046abf0(FILE * file_handle, byte * rgb_buffer, byte * alpha_buffer, int pixel_count, int file_flags)
+// Signature: void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0 (FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags)
 
 #include "nocturne.h"
 

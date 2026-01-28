@@ -2,7 +2,7 @@
 // Address: 00469ee0
 // Address Range: [[00469ee0, 0046a17c]]
 // Convention: __cdecl
-// Signature: void shape_design.c_combineTextureMaps_FUN_00469ee0(void)
+// Signature: void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
 
 #include "nocturne.h"
 

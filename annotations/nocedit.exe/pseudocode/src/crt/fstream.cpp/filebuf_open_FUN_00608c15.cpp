@@ -2,7 +2,7 @@
 // Address: 00608c15
 // Address Range: [[00608c15, 00608cd0]]
 // Convention: __cdecl
-// Signature: int crt_fstream.cpp_filebuf_open_FUN_00608c15(filebuf * this_ptr, char * filename, int mode, int permissions)
+// Signature: int __cdecl crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *filename,int mode,int permissions)
 
 #include "nocturne.h"
 

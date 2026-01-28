@@ -2,7 +2,7 @@
 // Address: 00457eb0
 // Address Range: [[00457eb0, 00457ec4]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_freeVectors_FUN_00457eb0(CVector3f * * array)
+// Signature: void __cdecl core_dcube_cpp_freeVectors_FUN_00457eb0(CVector3f **array)
 
 #include "nocturne.h"
 

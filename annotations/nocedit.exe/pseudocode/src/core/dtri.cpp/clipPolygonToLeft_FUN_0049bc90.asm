@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_clipPolygonToLeft_FUN_0049bc90(float x_min)
+; __cdecl void __cdecl core_dtri_cpp_clipPolygonToLeft_FUN_0049bc90(float x_min)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   x_min

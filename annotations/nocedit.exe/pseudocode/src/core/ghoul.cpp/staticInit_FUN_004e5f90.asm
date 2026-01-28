@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_ghoul.cpp_staticInit_FUN_004e5f90(void)
+; __cdecl void __cdecl core_ghoul_cpp_staticInit_FUN_004e5f90(void)
 ;
 ;
 ; Referenced Globals:

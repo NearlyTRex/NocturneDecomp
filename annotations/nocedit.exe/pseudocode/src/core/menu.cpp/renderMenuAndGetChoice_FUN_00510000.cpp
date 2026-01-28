@@ -2,7 +2,7 @@
 // Address: 00510000
 // Address Range: [[00510000, 0051040d]]
 // Convention: __cdecl
-// Signature: int core_menu.cpp_renderMenuAndGetChoice_FUN_00510000(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, int spacing_flag)
+// Signature: int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000 (char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position, int spacing_flag)
 
 #include "nocturne.h"
 

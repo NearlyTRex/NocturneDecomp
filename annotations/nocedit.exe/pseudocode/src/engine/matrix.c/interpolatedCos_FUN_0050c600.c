@@ -2,7 +2,7 @@
 // Address: 0050c600
 // Address Range: [[0050c600, 0050c638]]
 // Convention: __cdecl
-// Signature: int engine_matrix.c_interpolatedCos_FUN_0050c600(int angle)
+// Signature: int __cdecl engine_matrix_c_interpolatedCos_FUN_0050c600(int angle)
 
 #include "nocturne.h"
 

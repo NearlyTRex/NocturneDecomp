@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0()
+; unknown void core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c

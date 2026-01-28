@@ -2,7 +2,7 @@
 // Address: 00502f90
 // Address Range: [[00502f90, 00503013]]
 // Convention: __cdecl
-// Signature: CLarva * core_larva.cpp_CLarva_ctor_FUN_00502f90(CLarva * this_ptr)
+// Signature: CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva *this_ptr)
 
 #include "nocturne.h"
 

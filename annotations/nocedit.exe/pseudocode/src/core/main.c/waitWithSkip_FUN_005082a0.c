@@ -2,7 +2,7 @@
 // Address: 005082a0
 // Address Range: [[005082a0, 00508339]]
 // Convention: __cdecl
-// Signature: void core_main.c_waitWithSkip_FUN_005082a0(int duration_ms)
+// Signature: void __cdecl core_main_c_waitWithSkip_FUN_005082a0(int duration_ms)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004f4970
 // Address Range: [[004f4970, 004f4b38]]
 // Convention: unknown
-// Signature: undefined core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970()
+// Signature: void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 
 #include "nocturne.h"
 

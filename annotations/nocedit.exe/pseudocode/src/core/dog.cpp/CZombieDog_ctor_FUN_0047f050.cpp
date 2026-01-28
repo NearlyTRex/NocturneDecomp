@@ -2,7 +2,7 @@
 // Address: 0047f050
 // Address Range: [[0047f050, 0047f0b5]]
 // Convention: __cdecl
-// Signature: CZombieDog * core_dog.cpp_CZombieDog_ctor_FUN_0047f050(CZombieDog * this_ptr)
+// Signature: CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0047f050(CZombieDog *this_ptr)
 
 #include "nocturne.h"
 

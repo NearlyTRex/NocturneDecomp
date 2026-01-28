@@ -2,7 +2,7 @@
 // Address: 005abba0
 // Address Range: [[005abba0, 005abbf0]]
 // Convention: __cdecl
-// Signature: DWORD sound_sndmain.cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
+// Signature: DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00601ce0
 // Address Range: [[00601ce0, 00601de5]]
 // Convention: __cdecl
-// Signature: void crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0(void * ptr)
+// Signature: void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004c9690
 // Address Range: [[004c9690, 004c9694]]
 // Convention: __cdecl
-// Signature: CMuzzleFlash * core_fire.cpp_CMuzzleFlash_ctor_FUN_004c9690(CMuzzleFlash * this_ptr)
+// Signature: CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_ctor_FUN_004c9690(CMuzzleFlash *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0043c320
 // Address Range: [[0043c320, 0043c394]]
 // Convention: unknown
-// Signature: undefined core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
+// Signature: int core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(int param_1)
 
 #include "nocturne.h"
 

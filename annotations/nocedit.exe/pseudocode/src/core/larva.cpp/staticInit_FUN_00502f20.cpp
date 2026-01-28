@@ -2,7 +2,7 @@
 // Address: 00502f20
 // Address Range: [[00502f20, 00502f43]]
 // Convention: __cdecl
-// Signature: void core_larva.cpp_staticInit_FUN_00502f20(void)
+// Signature: void __cdecl core_larva_cpp_staticInit_FUN_00502f20(void)
 
 #include "nocturne.h"
 

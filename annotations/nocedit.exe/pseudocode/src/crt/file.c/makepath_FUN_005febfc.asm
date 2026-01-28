@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, char * extension)
+; __cdecl void __cdecl crt_file_c_makepath_FUN_005febfc (char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   path_buffer

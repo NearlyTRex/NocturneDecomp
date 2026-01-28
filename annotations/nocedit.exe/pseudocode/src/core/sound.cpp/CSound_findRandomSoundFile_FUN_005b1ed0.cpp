@@ -2,7 +2,7 @@
 // Address: 005b1ed0
 // Address Range: [[005b1ed0, 005b1fc8]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0(CSound * this_ptr, char * out_result, char * wildcard_pattern)
+// Signature: void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0 (CSound *this_ptr,char *out_result,char *wildcard_pattern)
 
 #include "nocturne.h"
 

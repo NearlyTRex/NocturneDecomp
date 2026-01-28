@@ -2,7 +2,7 @@
 // Address: 004781d0
 // Address Range: [[004781d0, 0047864a]]
 // Convention: __cdecl
-// Signature: float core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0(CKeyFramedModel * this_ptr, int frame_index, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * output_normal)
+// Signature: float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *output_normal)
 
 #include "nocturne.h"
 

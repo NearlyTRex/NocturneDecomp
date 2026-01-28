@@ -2,7 +2,7 @@
 // Address: 005b7340
 // Address Range: [[005b7340, 005b737d]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, byte * palette_data)
+// Signature: int __cdecl wincore_windll_cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic *tex,byte *palette_data)
 
 #include "nocturne.h"
 

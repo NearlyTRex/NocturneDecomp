@@ -2,7 +2,7 @@
 // Address: 004fbd30
 // Address Range: [[004fbd30, 004fbd67]]
 // Convention: __cdecl
-// Signature: void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this_ptr, char * key, float value)
+// Signature: void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile *this_ptr,char *key,float value)
 
 #include "nocturne.h"
 

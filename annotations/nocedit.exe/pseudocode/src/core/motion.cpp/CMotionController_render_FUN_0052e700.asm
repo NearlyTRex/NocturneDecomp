@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_motion.cpp_CMotionController_render_FUN_0052e700(CMotionController * this_ptr, CDemonActor * actor)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700 (CMotionController *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_showHelpFile_FUN_00457f00(char * help_filename)
+; __cdecl void __cdecl shape_design_c_showHelpFile_FUN_00457f00(char *help_filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   help_filename

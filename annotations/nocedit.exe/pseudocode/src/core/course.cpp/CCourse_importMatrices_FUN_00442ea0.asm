@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_course.cpp_CCourse_importMatrices_FUN_00442ea0(CCourse * this_ptr)
+; __cdecl void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr

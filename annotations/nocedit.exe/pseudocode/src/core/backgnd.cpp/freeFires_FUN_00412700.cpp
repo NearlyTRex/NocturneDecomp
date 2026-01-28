@@ -2,7 +2,7 @@
 // Address: 00412700
 // Address Range: [[00412700, 00412714]]
 // Convention: __cdecl
-// Signature: int core_backgnd.cpp_freeFires_FUN_00412700(SFire * * objs)
+// Signature: int __cdecl core_backgnd_cpp_freeFires_FUN_00412700(SFire **objs)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00523be0
 // Address Range: [[00523be0, 00523cb0]]
 // Convention: __cdecl
-// Signature: void core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0 (CDemonMission *this_ptr,CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 

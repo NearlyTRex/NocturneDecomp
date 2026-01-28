@@ -2,7 +2,7 @@
 // Address: 0060aba8
 // Address Range: [[0060aba8, 0060abf3]]
 // Convention: __cdecl
-// Signature: void crt_exception.c_installExceptionHandler_FUN_0060aba8(ExceptionFrame * pExceptionFrame)
+// Signature: void __cdecl crt_exception_c_installExceptionHandler_FUN_0060aba8(ExceptionFrame *pExceptionFrame)
 
 #include "nocturne.h"
 

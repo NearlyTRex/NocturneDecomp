@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hostage.cpp_FUN_004f6b30()
+; unknown void core_hostage_cpp_FUN_004f6b30(void)
 ;
 ;
 ; Called Functions:

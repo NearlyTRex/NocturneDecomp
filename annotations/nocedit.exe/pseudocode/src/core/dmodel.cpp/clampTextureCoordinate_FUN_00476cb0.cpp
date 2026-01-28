@@ -2,7 +2,7 @@
 // Address: 00476cb0
 // Address Range: [[00476cb0, 00476ce7]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_clampTextureCoordinate_FUN_00476cb0(float * value)
+// Signature: void __cdecl core_dmodel_cpp_clampTextureCoordinate_FUN_00476cb0(float *value)
 
 #include "nocturne.h"
 

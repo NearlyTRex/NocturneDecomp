@@ -2,7 +2,7 @@
 // Address: 0044c860
 // Address Range: [[0044c860, 0044cb7b]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(CDemonCamera * this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 

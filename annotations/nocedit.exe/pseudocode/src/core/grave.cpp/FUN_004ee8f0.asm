@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_grave.cpp_FUN_004ee8f0()
+; unknown CVector3f * core_grave_cpp_FUN_004ee8f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

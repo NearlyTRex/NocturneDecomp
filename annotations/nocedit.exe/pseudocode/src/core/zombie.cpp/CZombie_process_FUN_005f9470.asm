@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_zombie.cpp_CZombie_process_FUN_005f9470(CZombie * this_ptr, float delta_time)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr

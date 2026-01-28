@@ -2,7 +2,7 @@
 // Address: 004a1f40
 // Address Range: [[004a1f40, 004a204e]]
 // Convention: __cdecl
-// Signature: void shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f * start_point, CVector3f * end_point)
+// Signature: void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
 
 #include "nocturne.h"
 

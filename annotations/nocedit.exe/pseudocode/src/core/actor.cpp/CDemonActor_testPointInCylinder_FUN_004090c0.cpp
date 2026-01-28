@@ -2,7 +2,7 @@
 // Address: 004090c0
 // Address Range: [[004090c0, 00409148]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0 (CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 
 #include "nocturne.h"
 

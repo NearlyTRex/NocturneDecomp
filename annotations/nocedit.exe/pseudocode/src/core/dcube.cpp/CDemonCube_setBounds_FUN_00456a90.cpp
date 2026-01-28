@@ -2,7 +2,7 @@
 // Address: 00456a90
 // Address Range: [[00456a90, 00456aef]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90(CDemonCube * this_ptr, CVector3f * min_bounds, CVector3f * max_bounds)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_setBounds_FUN_00456a90 (CDemonCube *this_ptr,CVector3f *min_bounds,CVector3f *max_bounds)
 
 #include "nocturne.h"
 

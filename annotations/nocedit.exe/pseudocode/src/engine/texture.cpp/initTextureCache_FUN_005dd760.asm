@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTextureCache * engine_texture.cpp_initTextureCache_FUN_005dd760(void)
+; __cdecl CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005dd760(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 0040d1e0
 // Address Range: [[0040d1e0, 0040d235]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0(int * y_position, char * left_text, char * right_text)
+// Signature: void __cdecl core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 (int *y_position,char *left_text,char *right_text)
 
 #include "nocturne.h"
 

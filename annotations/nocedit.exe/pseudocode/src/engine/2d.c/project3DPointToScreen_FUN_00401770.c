@@ -2,7 +2,7 @@
 // Address: 00401770
 // Address Range: [[00401770, 004017b6]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_project3DPointToScreen_FUN_00401770(int x_3d, int y_3d, int z_depth)
+// Signature: void __cdecl engine_2d_c_project3DPointToScreen_FUN_00401770(int x_3d,int y_3d,int z_depth)
 
 #include "nocturne.h"
 

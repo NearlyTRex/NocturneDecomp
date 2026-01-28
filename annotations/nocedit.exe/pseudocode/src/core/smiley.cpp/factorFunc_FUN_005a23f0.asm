@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSmiley * core_smiley.cpp_factorFunc_FUN_005a23f0(void)
+; __cdecl CSmiley * __cdecl core_smiley_cpp_factorFunc_FUN_005a23f0(void)
 ;
 ;
 ; XREF[1]:

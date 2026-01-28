@@ -2,7 +2,7 @@
 // Address: 004d8750
 // Address Range: [[004d8750, 004d8881]]
 // Convention: __cdecl
-// Signature: int core_game.cpp_adjustFudgePosition_FUN_004d8750(CGame * this_ptr, float delta_time, int additional_param)
+// Signature: int __cdecl core_game_cpp_adjustFudgePosition_FUN_004d8750 (CGame *this_ptr,float delta_time,int additional_param)
 
 #include "nocturne.h"
 

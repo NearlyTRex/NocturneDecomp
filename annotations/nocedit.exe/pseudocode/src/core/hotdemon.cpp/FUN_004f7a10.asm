@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hotdemon.cpp_FUN_004f7a10()
+; unknown void core_hotdemon_cpp_FUN_004f7a10(void)
 ;
 ;
 ; Called Functions:

@@ -2,7 +2,7 @@
 // Address: 005feb90
 // Address Range: [[005feb90, 005febd4]]
 // Convention: __softfp_double
-// Signature: double crt_math.c_floor_FUN_005feb90(double input_value)
+// Signature: double __softfp_double crt_math_c_floor_FUN_005feb90(double input_value)
 
 #include "nocturne.h"
 

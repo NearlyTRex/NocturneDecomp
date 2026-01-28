@@ -2,7 +2,7 @@
 // Address: 005b26f0
 // Address Range: [[005b26f0, 005b2759]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_resetTrainSounds_FUN_005b26f0(void)
+// Signature: void __cdecl core_sound_cpp_resetTrainSounds_FUN_005b26f0(void)
 
 #include "nocturne.h"
 

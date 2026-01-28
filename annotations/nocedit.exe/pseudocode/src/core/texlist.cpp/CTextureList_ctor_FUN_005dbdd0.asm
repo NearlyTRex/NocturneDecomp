@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTextureList * core_texlist.cpp_CTextureList_ctor_FUN_005dbdd0(CTextureList * this_ptr)
+; __cdecl CTextureList * __cdecl core_texlist_cpp_CTextureList_ctor_FUN_005dbdd0(CTextureList *this_ptr)
 ;
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr

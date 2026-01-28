@@ -2,7 +2,7 @@
 // Address: 005a59c0
 // Address Range: [[005a59c0, 005a5a59] [005a5b49, 005a5b70]]
 // Convention: __cdecl
-// Signature: undefined sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0()
+// Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
 
 #include "nocturne.h"
 

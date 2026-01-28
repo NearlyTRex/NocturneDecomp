@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_quantize.cpp_showError_FUN_00556cb0(char * error)
+; __cdecl void __cdecl shape_quantize_cpp_showError_FUN_00556cb0(char *error)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   error

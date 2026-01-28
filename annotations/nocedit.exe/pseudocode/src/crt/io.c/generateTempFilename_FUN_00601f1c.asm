@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_io.c_generateTempFilename_FUN_00601f1c(char * buffer, int file_handle)
+; __watcallStack void __watcallStack crt_io_c_generateTempFilename_FUN_00601f1c(char *buffer,int file_handle)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

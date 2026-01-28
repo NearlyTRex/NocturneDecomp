@@ -2,7 +2,7 @@
 // Address: 0060e3b0
 // Address Range: [[0060e3b0, 0060e4ed]]
 // Convention: __cdecl
-// Signature: void crt_io.c_parseFileInfo_FUN_0060e3b0(void)
+// Signature: void __cdecl crt_io_c_parseFileInfo_FUN_0060e3b0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_FUN_005644e0()
+; unknown undefined4 core_script_cpp_FUN_005644e0(undefined4 param_1)
 ;
 ;
 ; XREF[8]:

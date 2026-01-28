@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_game.cpp_FUN_004dd930(char * p1, int p2)
+; __cdecl void __cdecl core_game_cpp_FUN_004dd930(char *p1,int p2)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   p1

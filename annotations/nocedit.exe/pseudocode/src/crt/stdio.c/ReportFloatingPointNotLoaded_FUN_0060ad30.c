@@ -2,7 +2,7 @@
 // Address: 0060ad30
 // Address Range: [[0060ad30, 0060ad3f]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30(void)
+// Signature: void __cdecl crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30(void)
 
 #include "nocturne.h"
 

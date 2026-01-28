@@ -2,7 +2,7 @@
 // Address: 00418000
 // Address Range: [[00418000, 0041804b]]
 // Convention: unknown
-// Signature: undefined core_battery.cpp_CBattery_load_FUN_00418000()
+// Signature: void core_battery_cpp_CBattery_load_FUN_00418000(void)
 
 #include "nocturne.h"
 

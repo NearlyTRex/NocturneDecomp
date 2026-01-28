@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGasMask * core_gasmask.cpp_factoryFunc_FUN_004e5cc0(void)
+; __cdecl CGasMask * __cdecl core_gasmask_cpp_factoryFunc_FUN_004e5cc0(void)
 ;
 ;
 ; XREF[1]:

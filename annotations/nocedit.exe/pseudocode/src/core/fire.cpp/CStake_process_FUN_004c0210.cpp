@@ -2,7 +2,7 @@
 // Address: 004c0210
 // Address Range: [[004c0210, 004c0231]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CStake_process_FUN_004c0210(CStake * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CStake_process_FUN_004c0210(CStake *this_ptr)
 
 #include "nocturne.h"
 

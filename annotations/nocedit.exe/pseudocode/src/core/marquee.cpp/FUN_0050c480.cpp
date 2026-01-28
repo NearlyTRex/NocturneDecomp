@@ -2,7 +2,7 @@
 // Address: 0050c480
 // Address Range: [[0050c480, 0050c4b0]]
 // Convention: unknown
-// Signature: undefined core_marquee.cpp_FUN_0050c480()
+// Signature: void core_marquee_cpp_FUN_0050c480 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,FILE *param_6)
 
 #include "nocturne.h"
 

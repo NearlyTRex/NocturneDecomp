@@ -2,7 +2,7 @@
 // Address: 00560760
 // Address Range: [[00560760, 005607df]]
 // Convention: unknown
-// Signature: undefined core_script.cpp_GetReferencedActor_FUN_00560760()
+// Signature: void core_script_cpp_GetReferencedActor_FUN_00560760(void)
 
 #include "nocturne.h"
 

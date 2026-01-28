@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20(CDemonActor * this_ptr, int attack_flags, SDamageInfo * damage_info, CDemonActor * victim)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20 (CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

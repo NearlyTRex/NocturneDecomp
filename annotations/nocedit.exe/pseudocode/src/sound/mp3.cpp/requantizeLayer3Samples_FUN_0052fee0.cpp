@@ -2,7 +2,7 @@
 // Address: 0052fee0
 // Address Range: [[0052fee0, 005301ac]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0(int * scalefactor_indices, uint * quantized_samples, float * dequantized_output, SMpegFrame * frame_info)
+// Signature: void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0 (int *scalefactor_indices,uint *quantized_samples,float *dequantized_output, SMpegFrame *frame_info)
 
 #include "nocturne.h"
 

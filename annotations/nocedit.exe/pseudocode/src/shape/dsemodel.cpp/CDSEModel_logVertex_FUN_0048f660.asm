@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_dsemodel.cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel * this_ptr, int vertex_id)
+; __cdecl void __cdecl shape_dsemodel_cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel *this_ptr,int vertex_id)
 ;
 ; Parameters:
 ; CDSEModel *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40()
+; unknown void core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
 ;
 ;
 ; XREF[1]:

@@ -2,7 +2,7 @@
 // Address: 005ffa22
 // Address Range: [[005ffa22, 005ffa2e]]
 // Convention: __watcallStack
-// Signature: void crt_stack.c_stack_overflow_handler_FUN_005ffa22(SIZE_T required_bytes)
+// Signature: void __watcallStack crt_stack_c_stack_overflow_handler_FUN_005ffa22(SIZE_T required_bytes)
 
 #include "nocturne.h"
 

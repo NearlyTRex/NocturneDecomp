@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_flushLineList_FUN_005b7a09(void)
+; __cdecl int __cdecl wincore_windll_cpp_flushLineList_FUN_005b7a09(void)
 ;
 ;
 ; Referenced Globals:

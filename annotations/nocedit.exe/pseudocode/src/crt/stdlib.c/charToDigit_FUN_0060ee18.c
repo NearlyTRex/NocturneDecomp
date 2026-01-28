@@ -2,7 +2,7 @@
 // Address: 0060ee18
 // Address Range: [[0060ee18, 0060ee74]]
 // Convention: __cdecl
-// Signature: int crt_stdlib.c_charToDigit_FUN_0060ee18(char ch)
+// Signature: int __cdecl crt_stdlib_c_charToDigit_FUN_0060ee18(char ch)
 
 #include "nocturne.h"
 

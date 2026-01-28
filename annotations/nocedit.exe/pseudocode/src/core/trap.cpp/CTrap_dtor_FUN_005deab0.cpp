@@ -2,7 +2,7 @@
 // Address: 005deab0
 // Address Range: [[005deab0, 005deafd]]
 // Convention: __cdecl
-// Signature: CTrap * core_trap.cpp_CTrap_dtor_FUN_005deab0(CTrap * this_ptr, uint d1, uint d2)
+// Signature: CTrap * __cdecl core_trap_cpp_CTrap_dtor_FUN_005deab0(CTrap *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

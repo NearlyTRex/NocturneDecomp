@@ -2,7 +2,7 @@
 // Address: 005ea320
 // Address Range: [[005ea320, 005ea80a]]
 // Convention: __cdecl
-// Signature: void core_water.cpp_CWater_render_FUN_005ea320(CWater * this_ptr, int render_mode)
+// Signature: void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int render_mode)
 
 #include "nocturne.h"
 

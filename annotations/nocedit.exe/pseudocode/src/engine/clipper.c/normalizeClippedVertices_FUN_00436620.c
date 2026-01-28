@@ -2,7 +2,7 @@
 // Address: 00436620
 // Address Range: [[00436620, 0043668b]]
 // Convention: __cdecl
-// Signature: void engine_clipper.c_normalizeClippedVertices_FUN_00436620(void)
+// Signature: void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00436620(void)
 
 #include "nocturne.h"
 

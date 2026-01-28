@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_fileio.cpp_checkFileOverwriteCondition_FUN_004b3120(char * target_filename, char * source_directory)
+; __cdecl int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120 (char *target_filename,char *source_directory)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   target_filename

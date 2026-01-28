@@ -2,7 +2,7 @@
 // Address: 005fc920
 // Address Range: [[005fc920, 005fc950]]
 // Convention: unknown
-// Signature: undefined core_zombie.cpp_CZombie_FUN_005fc920()
+// Signature: int core_zombie_cpp_CZombie_FUN_005fc920(void)
 
 #include "nocturne.h"
 

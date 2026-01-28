@@ -2,7 +2,7 @@
 // Address: 005e7480
 // Address Range: [[005e7480, 005e74b4]]
 // Convention: unknown
-// Signature: undefined core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480()
+// Signature: void core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004a6f31
 // Address Range: [[004a6f31, 004a6f3e]]
 // Convention: __cdecl
-// Signature: int * shape_edittool.cpp_assignInt_FUN_004a6f31(int * dest_ptr, int * src_ptr)
+// Signature: int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f31(int *dest_ptr,int *src_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_wddvmem.cpp_findMostSignificantBit_FUN_005ed710(uint value)
+; __cdecl int __cdecl wincore_wddvmem_cpp_findMostSignificantBit_FUN_005ed710(uint value)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   value

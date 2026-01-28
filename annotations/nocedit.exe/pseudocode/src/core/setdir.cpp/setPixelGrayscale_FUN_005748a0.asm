@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setdir.cpp_setPixelGrayscale_FUN_005748a0(int x, int y, int grayscale_value)
+; __cdecl void __cdecl core_setdir_cpp_setPixelGrayscale_FUN_005748a0(int x,int y,int grayscale_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

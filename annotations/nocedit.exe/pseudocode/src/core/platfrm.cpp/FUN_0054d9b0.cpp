@@ -2,7 +2,7 @@
 // Address: 0054d9b0
 // Address Range: [[0054d9b0, 0054db69]]
 // Convention: unknown
-// Signature: undefined core_platfrm.cpp_FUN_0054d9b0()
+// Signature: void core_platfrm_cpp_FUN_0054d9b0(void)
 
 #include "nocturne.h"
 

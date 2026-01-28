@@ -2,7 +2,7 @@
 // Address: 0060bddd
 // Address Range: [[0060bddd, 0060bdf8]]
 // Convention: __cdecl
-// Signature: filebuf * crt_fstream.cpp_filebuf_ctor_FUN_0060bddd(filebuf * this_ptr)
+// Signature: filebuf * __cdecl crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(filebuf *this_ptr)
 
 #include "nocturne.h"
 

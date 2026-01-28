@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_morph.cpp_FUN_0052bb80()
+; unknown void core_morph_cpp_FUN_0052bb80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

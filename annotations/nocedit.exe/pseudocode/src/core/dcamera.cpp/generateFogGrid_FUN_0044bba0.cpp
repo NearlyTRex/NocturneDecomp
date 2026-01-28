@@ -2,7 +2,7 @@
 // Address: 0044bba0
 // Address Range: [[0044bba0, 0044bdc8]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_generateFogGrid_FUN_0044bba0(SFogGrid * fog)
+// Signature: void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
 
 #include "nocturne.h"
 

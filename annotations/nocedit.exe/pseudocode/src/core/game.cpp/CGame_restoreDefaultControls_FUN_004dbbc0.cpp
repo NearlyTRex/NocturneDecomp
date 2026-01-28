@@ -2,7 +2,7 @@
 // Address: 004dbbc0
 // Address Range: [[004dbbc0, 004dbd77]]
 // Convention: unknown
-// Signature: undefined core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+// Signature: void core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void)
 
 #include "nocturne.h"
 

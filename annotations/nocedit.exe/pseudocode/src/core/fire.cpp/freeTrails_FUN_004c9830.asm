@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeTrails_FUN_004c9830(CTrail * * array)
+; __cdecl void __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail **array)
 ;
 ; Parameters:
 ; CTrail * *       Stack[0x4]:4   array

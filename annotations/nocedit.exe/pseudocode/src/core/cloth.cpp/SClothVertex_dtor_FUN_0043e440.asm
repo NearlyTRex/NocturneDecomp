@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SClothVertex * core_cloth.cpp_SClothVertex_dtor_FUN_0043e440(SClothVertex * this_ptr)
+; __cdecl SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVertex *this_ptr)
 ;
 ; Parameters:
 ; SClothVertex *   Stack[0x4]:4   this_ptr

@@ -2,7 +2,7 @@
 // Address: 006015d0
 // Address Range: [[006015d0, 006015f0]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_rename_FUN_006015d0(char * old_filename, char * new_filename)
+// Signature: int __watcallStack crt_stdio_c_rename_FUN_006015d0(char *old_filename,char *new_filename)
 
 #include "nocturne.h"
 

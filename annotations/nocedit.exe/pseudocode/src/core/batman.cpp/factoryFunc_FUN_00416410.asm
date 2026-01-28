@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBatman * core_batman.cpp_factoryFunc_FUN_00416410(void)
+; __cdecl CBatman * __cdecl core_batman_cpp_factoryFunc_FUN_00416410(void)
 ;
 ;
 ; XREF[1]:

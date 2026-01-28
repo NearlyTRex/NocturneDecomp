@@ -2,7 +2,7 @@
 // Address: 00489d30
 // Address Range: [[00489d30, 0048a690]]
 // Convention: __cdecl
-// Signature: void cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30(CBitFont * test_font)
+// Signature: void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test_font)
 
 #include "nocturne.h"
 

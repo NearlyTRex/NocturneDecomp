@@ -2,7 +2,7 @@
 // Address: 005fe700
 // Address Range: [[005fe700, 005fe71b]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_getc_helper_FUN_005fe700(scanf_state_t * state)
+// Signature: int __cdecl crt_stdio_c_getc_helper_FUN_005fe700(scanf_state_t *state)
 
 #include "nocturne.h"
 

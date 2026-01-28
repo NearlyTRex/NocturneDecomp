@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_ioinit.c_staticInit_FUN_00608f20(void)
+; __cdecl void __cdecl crt_ioinit_c_staticInit_FUN_00608f20(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_gore.cpp_CGore_process_FUN_004ed9e0()
+; unknown undefined4 core_gore_cpp_CGore_process_FUN_004ed9e0(void)
 ;
 ;
 ; XREF[3]:

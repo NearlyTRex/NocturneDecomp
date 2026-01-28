@@ -2,7 +2,7 @@
 // Address: 004bea40
 // Address Range: [[004bea40, 004beaf9]]
 // Convention: __cdecl
-// Signature: CFilmProjector * core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector * this_ptr)
+// Signature: CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr)
 
 #include "nocturne.h"
 

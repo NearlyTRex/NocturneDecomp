@@ -2,7 +2,7 @@
 // Address: 0060a1fc
 // Address Range: [[0060a1fc, 0060a23b]]
 // Convention: __cdecl
-// Signature: LPVOID crt_tls.c_get_thread_local_data_FUN_0060a1fc(void)
+// Signature: LPVOID __cdecl crt_tls_c_get_thread_local_data_FUN_0060a1fc(void)
 
 #include "nocturne.h"
 

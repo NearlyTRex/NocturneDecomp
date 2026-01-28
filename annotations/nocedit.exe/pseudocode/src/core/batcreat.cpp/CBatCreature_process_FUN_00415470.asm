@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_batcreat.cpp_CBatCreature_process_FUN_00415470(CBatCreature * this_ptr, float delta_time)
+; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr

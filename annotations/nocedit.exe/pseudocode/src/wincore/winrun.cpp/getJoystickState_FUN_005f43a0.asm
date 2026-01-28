@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_getJoystickState_FUN_005f43a0(void)
+; __cdecl void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005f43a0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50

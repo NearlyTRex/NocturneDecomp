@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * crt_stdio.c_AllocateFileStruct_FUN_006092f0(int unused_param)
+; __cdecl FILE * __cdecl crt_stdio_c_AllocateFileStruct_FUN_006092f0(int unused_param)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   unused_param

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_design.c_triangulateDSE_FUN_0046e4d0()
+; unknown void shape_design_c_triangulateDSE_FUN_0046e4d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28

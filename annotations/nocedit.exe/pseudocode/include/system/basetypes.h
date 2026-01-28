@@ -89,6 +89,9 @@ typedef const char* string;  // Ghidra's generic string type
 // Extended precision float (x87 80-bit)
 typedef long double float10;
 
+// Unknown byte types (Ghidra's unkbyteN = N bytes of unknown data)
+typedef long double unkbyte10;  // 10-byte, typically x87 80-bit float returns
+
 // =============================================================================
 // Windows Primitive Types
 // =============================================================================

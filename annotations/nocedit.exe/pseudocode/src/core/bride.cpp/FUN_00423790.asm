@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bride.cpp_FUN_00423790()
+; unknown CDemonActorType * core_bride_cpp_FUN_00423790(void)
 ;
 ;
 ; Referenced Globals:

@@ -3,12 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 7,
-        "line": 12,
-        "message": "ambiguating new declaration of 'float core_script_cpp_FUN_0055ff00()'"
-      },
-      {
-        "category": "other",
         "column": 18,
         "line": 32,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
@@ -24,6 +18,12 @@
         "column": 27,
         "line": 57,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 53,
+        "line": 59,
+        "message": "invalid conversion from 'CHero*' to 'int' [-fpermissive]"
       },
       {
         "category": "other",
@@ -234,7 +234,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_script.cpp_FUN_0055ff00",
-    "signature": "undefined core_script.cpp_FUN_0055ff00()"
+    "signature": "float core_script_cpp_FUN_0055ff00(void)"
   },
   "function_calls": [
     {

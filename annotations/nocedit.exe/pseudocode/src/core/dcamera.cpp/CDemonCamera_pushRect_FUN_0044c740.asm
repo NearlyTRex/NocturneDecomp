@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740(CDemonCamera * this_ptr, int left, int top, int right, int bottom)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_pushRect_FUN_0044c740 (CDemonCamera *this_ptr,int left,int top,int right,int bottom)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

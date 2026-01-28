@@ -2,7 +2,7 @@
 // Address: 005e7510
 // Address Range: [[005e7510, 005e75ec]]
 // Convention: unknown
-// Signature: undefined core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510()
+// Signature: void core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
 
 #include "nocturne.h"
 

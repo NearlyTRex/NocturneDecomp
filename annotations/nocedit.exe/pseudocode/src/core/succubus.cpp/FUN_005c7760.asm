@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_succubus.cpp_FUN_005c7760()
+; unknown void core_succubus_cpp_FUN_005c7760(void)
 ;
 ;
 ; Called Functions:

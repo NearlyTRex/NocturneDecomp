@@ -2,7 +2,7 @@
 // Address: 004816c0
 // Address Range: [[004816c0, 00481706]]
 // Convention: __cdecl
-// Signature: void engine_dosio.c_getRelativeFilePath_FUN_004816c0(char * dest_path, char * directory, char * filename)
+// Signature: void __cdecl engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename)
 
 #include "nocturne.h"
 

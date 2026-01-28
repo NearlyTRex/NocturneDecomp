@@ -2,7 +2,7 @@
 // Address: 0050d720
 // Address Range: [[0050d720, 0050d828]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_pop_FUN_0050d720(void)
+// Signature: void __cdecl engine_matrix_c_pop_FUN_0050d720(void)
 
 #include "nocturne.h"
 

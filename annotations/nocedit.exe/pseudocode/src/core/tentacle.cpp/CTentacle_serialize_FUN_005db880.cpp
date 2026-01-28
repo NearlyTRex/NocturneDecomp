@@ -2,7 +2,7 @@
 // Address: 005db880
 // Address Range: [[005db880, 005db8fc]]
 // Convention: __cdecl
-// Signature: void core_tentacle.cpp_CTentacle_serialize_FUN_005db880(CTentacle * this_ptr)
+// Signature: void __cdecl core_tentacle_cpp_CTentacle_serialize_FUN_005db880(CTentacle *this_ptr)
 
 #include "nocturne.h"
 

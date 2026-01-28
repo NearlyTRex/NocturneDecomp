@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
+; __cdecl int __cdecl crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
 ;
 ; Parameters:
 ; DWORD            Stack[0x4]:4   windows_error

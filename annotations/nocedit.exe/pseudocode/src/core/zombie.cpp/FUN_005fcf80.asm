@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_zombie.cpp_FUN_005fcf80()
+; unknown SEdgeData * core_zombie_cpp_FUN_005fcf80(void)
 ;
 ;
 ; Referenced Globals:

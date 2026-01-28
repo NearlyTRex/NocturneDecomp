@@ -2,7 +2,7 @@
 // Address: 00585970
 // Address Range: [[00585970, 00585a36]]
 // Convention: __cdecl
-// Signature: int core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00585970(C3DSCamera * this_ptr, CVector3f * world_position, float radius)
+// Signature: int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_00585970 (C3DSCamera *this_ptr,CVector3f *world_position,float radius)
 
 #include "nocturne.h"
 

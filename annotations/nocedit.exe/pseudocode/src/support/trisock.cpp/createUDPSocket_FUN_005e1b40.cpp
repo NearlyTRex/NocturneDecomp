@@ -2,7 +2,7 @@
 // Address: 005e1b40
 // Address Range: [[005e1b40, 005e1b67]]
 // Convention: __cdecl
-// Signature: int support_trisock.cpp_createUDPSocket_FUN_005e1b40(SSocketContext * socket_ctx)
+// Signature: int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SSocketContext *socket_ctx)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0060245c
 // Address Range: [[0060245c, 006026a5]]
 // Convention: __cdecl
-// Signature: void crt_startup.c_initialize_runtime_FUN_0060245c(HMODULE hModule, void * pThreadParam, int unused)
+// Signature: void __cdecl crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam,int unused)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004824f0
 // Address Range: [[004824f0, 004825b8]]
 // Convention: __cdecl
-// Signature: void core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0(CDemonPart * this_ptr)
+// Signature: void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_004824f0(CDemonPart *this_ptr)
 
 #include "nocturne.h"
 

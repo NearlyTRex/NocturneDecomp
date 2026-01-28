@@ -2,7 +2,7 @@
 // Address: 00441a40
 // Address Range: [[00441a40, 00441a7a]]
 // Convention: __cdecl
-// Signature: void engine_console.cpp_CConsole_reset_FUN_00441a40(CConsole * this_ptr)
+// Signature: void __cdecl engine_console_cpp_CConsole_reset_FUN_00441a40(CConsole *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00580730
 // Address Range: [[00580730, 0058131d]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_DementedFogEditor_FUN_00580730(void * unk)
+// Signature: void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 
 #include "nocturne.h"
 

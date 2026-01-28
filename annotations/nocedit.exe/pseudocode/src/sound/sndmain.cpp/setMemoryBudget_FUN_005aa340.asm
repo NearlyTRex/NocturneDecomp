@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setMemoryBudget_FUN_005aa340(int min_bytes, int max_bytes)
+; __cdecl void __cdecl sound_sndmain_cpp_setMemoryBudget_FUN_005aa340(int min_bytes,int max_bytes)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   min_bytes

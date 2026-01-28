@@ -2,7 +2,7 @@
 // Address: 00600002
 // Address Range: [[00600002, 006000ce]]
 // Convention: __cdecl
-// Signature: double crt_math.c_ldexp_FUN_00600002(double x, int exp)
+// Signature: double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
 
 #include "nocturne.h"
 

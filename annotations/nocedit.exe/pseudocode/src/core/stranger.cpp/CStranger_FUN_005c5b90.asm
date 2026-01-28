@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stranger.cpp_CStranger_FUN_005c5b90()
+; unknown void core_stranger_cpp_CStranger_FUN_005c5b90(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

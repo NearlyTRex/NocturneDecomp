@@ -2,7 +2,7 @@
 // Address: 00543b50
 // Address Range: [[00543b50, 00543b5e]]
 // Convention: unknown
-// Signature: undefined core_netgame.cpp_FUN_00543b50()
+// Signature: void core_netgame_cpp_FUN_00543b50(void)
 
 #include "nocturne.h"
 

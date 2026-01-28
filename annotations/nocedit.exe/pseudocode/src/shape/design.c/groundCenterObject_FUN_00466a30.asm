@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_groundCenterObject_FUN_00466a30(void)
+; __cdecl void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x64]:8  local_64

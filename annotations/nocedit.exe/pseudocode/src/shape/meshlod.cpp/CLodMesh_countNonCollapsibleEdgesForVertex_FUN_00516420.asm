@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420(CLodMesh * this_ptr, int vertex_index)
+; __cdecl int __cdecl shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420 (CLodMesh *this_ptr,int vertex_index)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

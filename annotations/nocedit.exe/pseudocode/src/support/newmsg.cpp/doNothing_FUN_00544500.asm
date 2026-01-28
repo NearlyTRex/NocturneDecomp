@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void support_newmsg.cpp_doNothing_FUN_00544500(void)
+; __cdecl void __cdecl support_newmsg_cpp_doNothing_FUN_00544500(void)
 ;
 ;
 ; XREF[1]:

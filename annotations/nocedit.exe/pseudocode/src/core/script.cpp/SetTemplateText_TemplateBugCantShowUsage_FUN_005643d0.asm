@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0()
+; unknown void core_script_cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x33c]:1  local_33c

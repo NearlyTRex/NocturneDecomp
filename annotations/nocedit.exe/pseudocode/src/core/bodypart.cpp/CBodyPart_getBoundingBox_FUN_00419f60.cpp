@@ -2,7 +2,7 @@
 // Address: 00419f60
 // Address Range: [[00419f60, 00419f9e]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419f60(CBodyPart * this_ptr, CBoundingBox3D * out_box)
+// Signature: CBoundingBox3D * __cdecl core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00419f60(CBodyPart *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 

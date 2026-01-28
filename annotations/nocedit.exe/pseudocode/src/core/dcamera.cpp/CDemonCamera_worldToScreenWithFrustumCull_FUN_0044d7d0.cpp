@@ -2,7 +2,7 @@
 // Address: 0044d7d0
 // Address Range: [[0044d7d0, 0044da86]]
 // Convention: __cdecl
-// Signature: CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)
+// Signature: CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0 (CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)
 
 #include "nocturne.h"
 

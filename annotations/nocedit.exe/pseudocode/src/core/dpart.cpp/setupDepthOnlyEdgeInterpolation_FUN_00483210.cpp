@@ -2,7 +2,7 @@
 // Address: 00483210
 // Address Range: [[00483210, 00483321]]
 // Convention: __cdecl
-// Signature: void core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData * vertex_a, SEdgeData * vertex_b)
+// Signature: void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData *vertex_a,SEdgeData *vertex_b)
 
 #include "nocturne.h"
 

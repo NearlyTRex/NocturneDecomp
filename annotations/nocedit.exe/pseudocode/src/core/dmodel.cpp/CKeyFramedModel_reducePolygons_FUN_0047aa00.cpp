@@ -2,7 +2,7 @@
 // Address: 0047aa00
 // Address Range: [[0047aa00, 0047aa22]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00(CKeyFramedModel * this_ptr, float weld_tolerance, float angle_threshold_radians)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00 (CKeyFramedModel *this_ptr,float weld_tolerance,float angle_threshold_radians)
 
 #include "nocturne.h"
 

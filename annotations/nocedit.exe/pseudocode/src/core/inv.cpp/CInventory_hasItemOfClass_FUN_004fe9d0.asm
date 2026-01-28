@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_inv.cpp_CInventory_hasItemOfClass_FUN_004fe9d0(CInventory * this_ptr, char * class_name)
+; __cdecl int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004fe9d0(CInventory *this_ptr,char *class_name)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

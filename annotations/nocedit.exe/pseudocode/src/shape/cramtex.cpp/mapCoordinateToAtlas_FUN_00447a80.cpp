@@ -2,7 +2,7 @@
 // Address: 00447a80
 // Address Range: [[00447a80, 00447aae]]
 // Convention: __cdecl
-// Signature: int shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80(int min_coord, int max_coord, int pixel_offset)
+// Signature: int __cdecl shape_cramtex_cpp_mapCoordinateToAtlas_FUN_00447a80(int min_coord,int max_coord,int pixel_offset)
 
 #include "nocturne.h"
 

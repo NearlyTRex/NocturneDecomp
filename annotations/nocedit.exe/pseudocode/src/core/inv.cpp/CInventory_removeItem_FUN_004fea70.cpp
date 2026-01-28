@@ -2,7 +2,7 @@
 // Address: 004fea70
 // Address Range: [[004fea70, 004feb06]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_removeItem_FUN_004fea70(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+// Signature: void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004fea70 (CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)
 
 #include "nocturne.h"
 

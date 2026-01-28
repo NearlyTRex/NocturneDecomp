@@ -2,7 +2,7 @@
 // Address: 0060e298
 // Address Range: [[0060e298, 0060e2e4]]
 // Convention: __cdecl
-// Signature: void crt_math.c_print_error_message_FUN_0060e298(int errorType, char * errorData)
+// Signature: void __cdecl crt_math_c_print_error_message_FUN_0060e298(int errorType,char *errorData)
 
 #include "nocturne.h"
 

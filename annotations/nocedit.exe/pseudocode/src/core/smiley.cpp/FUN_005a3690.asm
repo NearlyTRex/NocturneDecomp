@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_smiley.cpp_FUN_005a3690()
+; unknown undefined4 core_smiley_cpp_FUN_005a3690(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x48]:1  local_48

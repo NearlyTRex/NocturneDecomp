@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHaystack * core_haystack.cpp_CHaystack_ctor_FUN_004f0c10(CHaystack * this_ptr)
+; __cdecl CHaystack * __cdecl core_haystack_cpp_CHaystack_ctor_FUN_004f0c10(CHaystack *this_ptr)
 ;
 ; Parameters:
 ; CHaystack *      Stack[0x4]:4   this_ptr

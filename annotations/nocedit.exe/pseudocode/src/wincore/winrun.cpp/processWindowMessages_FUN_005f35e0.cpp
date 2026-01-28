@@ -2,7 +2,7 @@
 // Address: 005f35e0
 // Address Range: [[005f35e0, 005f3670]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0(void)
+// Signature: void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(void)
 
 #include "nocturne.h"
 

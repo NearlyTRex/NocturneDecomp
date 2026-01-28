@@ -2,7 +2,7 @@
 // Address: 005feb50
 // Address Range: [[005feb50, 005feb59]]
 // Convention: __watcallRegister
-// Signature: uint * crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50(void)
+// Signature: uint * crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50(void)
 
 #include "nocturne.h"
 

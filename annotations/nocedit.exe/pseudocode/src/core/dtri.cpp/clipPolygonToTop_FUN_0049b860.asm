@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dtri.cpp_clipPolygonToTop_FUN_0049b860(float y_max)
+; __cdecl void __cdecl core_dtri_cpp_clipPolygonToTop_FUN_0049b860(float y_max)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   y_max

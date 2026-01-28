@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_svetlana.cpp_CSVetlana_serialize_FUN_005d9bb0(CSvetlana * this_ptr)
+; __cdecl void __cdecl core_svetlana_cpp_CSVetlana_serialize_FUN_005d9bb0(CSvetlana *this_ptr)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr

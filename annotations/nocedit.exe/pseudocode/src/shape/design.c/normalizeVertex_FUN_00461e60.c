@@ -2,7 +2,7 @@
 // Address: 00461e60
 // Address Range: [[00461e60, 00461ed3]]
 // Convention: __cdecl
-// Signature: void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
+// Signature: void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3f *vertex)
 
 #include "nocturne.h"
 

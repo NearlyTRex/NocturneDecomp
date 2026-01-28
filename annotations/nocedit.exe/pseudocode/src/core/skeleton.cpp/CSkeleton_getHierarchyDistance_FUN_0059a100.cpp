@@ -2,7 +2,7 @@
 // Address: 0059a100
 // Address Range: [[0059a100, 0059a136]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+// Signature: int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 (CSkeleton *this_ptr,int start_bone_index,int target_bone_index)
 
 #include "nocturne.h"
 

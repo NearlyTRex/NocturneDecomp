@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * crt_stdio.c_IntegerToString_FUN_00607d18(int value, char * buffer, int base)
+; __cdecl char * __cdecl crt_stdio_c_IntegerToString_FUN_00607d18(int value,char *buffer,int base)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   value

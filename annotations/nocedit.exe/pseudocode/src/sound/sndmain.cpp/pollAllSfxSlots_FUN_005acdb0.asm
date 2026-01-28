@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0(void)
+; __cdecl void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

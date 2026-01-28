@@ -2,7 +2,7 @@
 // Address: 0060ceb4
 // Address Range: [[0060ceb4, 0060ced7]]
 // Convention: __watcallStack
-// Signature: SIGNAL_HANDLER_TYPE crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
+// Signature: SIGNAL_HANDLER_TYPE __watcallStack crt_signal_c_getSignalHandler_FUN_0060ceb4(int signal_number)
 
 #include "nocturne.h"
 

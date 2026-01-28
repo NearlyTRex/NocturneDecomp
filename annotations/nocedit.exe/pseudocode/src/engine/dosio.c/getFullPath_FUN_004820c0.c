@@ -2,7 +2,7 @@
 // Address: 004820c0
 // Address Range: [[004820c0, 00482103]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
+// Signature: int __cdecl engine_dosio_c_getFullPath_FUN_004820c0(char *output_path,char *input_path)
 
 #include "nocturne.h"
 

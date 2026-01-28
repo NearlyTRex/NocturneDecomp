@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
+; unknown void core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x19c]:1  local_19c

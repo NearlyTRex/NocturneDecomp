@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined support_newmsg.cpp_FUN_005445a0()
+; unknown void support_newmsg_cpp_FUN_005445a0(void)
 ;
 ;
 ; Referenced Globals:

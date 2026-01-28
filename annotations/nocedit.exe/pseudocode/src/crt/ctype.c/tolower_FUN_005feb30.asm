@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_ctype.c_tolower_FUN_005feb30(int character)
+; __cdecl int __cdecl crt_ctype_c_tolower_FUN_005feb30(int character)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character

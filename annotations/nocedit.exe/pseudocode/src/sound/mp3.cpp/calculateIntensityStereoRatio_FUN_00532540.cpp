@@ -2,7 +2,7 @@
 // Address: 00532540
 // Address Range: [[00532540, 005325d2]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int unused_param3, int sample_index, float * output_buffer)
+// Signature: void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540 (int intensity_position,double ratio,int unused_param3,int sample_index, float *output_buffer)
 
 #include "nocturne.h"
 

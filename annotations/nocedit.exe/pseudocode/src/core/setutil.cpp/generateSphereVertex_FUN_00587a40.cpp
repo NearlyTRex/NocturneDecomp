@@ -2,7 +2,7 @@
 // Address: 00587a40
 // Address Range: [[00587a40, 00587b26]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_generateSphereVertex_FUN_00587a40(int longitude_index, int latitude_index, int vertex_buffer_index, float radius)
+// Signature: void __cdecl core_setutil_cpp_generateSphereVertex_FUN_00587a40 (int longitude_index,int latitude_index,int vertex_buffer_index,float radius)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00486d30
 // Address Range: [[00486d30, 00486d4a]]
 // Convention: __cdecl
-// Signature: SFreaky * core_dracbrid.cpp_ctor_FUN_00486d30(SFreaky * this_ptr)
+// Signature: SFreaky * __cdecl core_dracbrid_cpp_ctor_FUN_00486d30(SFreaky *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00585240
 // Address Range: [[00585240, 0058528d]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_CSlew_copy_FUN_00585240(CSlew * this_ptr, CSlew * other)
+// Signature: void __cdecl core_setutil_cpp_CSlew_copy_FUN_00585240(CSlew *this_ptr,CSlew *other)
 
 #include "nocturne.h"
 

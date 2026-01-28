@@ -2,7 +2,7 @@
 // Address: 0050e640
 // Address Range: [[0050e640, 0050e6e0]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x, int offset_y, int offset_z)
+// Signature: void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x,int offset_y,int offset_z)
 
 #include "nocturne.h"
 

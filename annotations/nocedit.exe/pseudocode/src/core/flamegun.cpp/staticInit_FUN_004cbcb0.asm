@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_flamegun.cpp_staticInit_FUN_004cbcb0(void)
+; __cdecl void __cdecl core_flamegun_cpp_staticInit_FUN_004cbcb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

@@ -2,7 +2,7 @@
 // Address: 005f4310
 // Address Range: [[005f4310, 005f437f] [005f4381, 005f439d]]
 // Convention: __cdecl
-// Signature: void wincore_winrun.cpp_initJoystick_FUN_005f4310(void)
+// Signature: void __cdecl wincore_winrun_cpp_initJoystick_FUN_005f4310(void)
 
 #include "nocturne.h"
 

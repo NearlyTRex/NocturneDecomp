@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl time_t crt_time.c_filetime_to_time_t_FUN_00609da0(FILETIME * filetime)
+; __cdecl time_t __cdecl crt_time_c_filetime_to_time_t_FUN_00609da0(FILETIME *filetime)
 ;
 ; Parameters:
 ; FILETIME *       Stack[0x4]:4   filetime

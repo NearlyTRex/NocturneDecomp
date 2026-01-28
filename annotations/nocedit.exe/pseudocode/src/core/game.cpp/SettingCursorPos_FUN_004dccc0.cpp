@@ -2,7 +2,7 @@
 // Address: 004dccc0
 // Address Range: [[004dccc0, 004dce6e]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_SettingCursorPos_FUN_004dccc0(CGame * game, SPlayerControl * ctrl)
+// Signature: void __cdecl core_game_cpp_SettingCursorPos_FUN_004dccc0(CGame *game,SPlayerControl *ctrl)
 
 #include "nocturne.h"
 

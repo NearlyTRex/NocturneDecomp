@@ -2,7 +2,7 @@
 // Address: 004635b0
 // Address Range: [[004635b0, 004637c2] [004637d8, 004637fa]]
 // Convention: __cdecl
-// Signature: int shape_design.c_findSharedEdge_FUN_004635b0(int * edge1_vertices, int * edge2_vertices, int vertex_count, int * shared_edge_type)
+// Signature: int __cdecl shape_design_c_findSharedEdge_FUN_004635b0 (int *edge1_vertices,int *edge2_vertices,int vertex_count,int *shared_edge_type)
 
 #include "nocturne.h"
 

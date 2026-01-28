@@ -2,7 +2,7 @@
 // Address: 004d28a0
 // Address Range: [[004d28a0, 004d2904]]
 // Convention: __cdecl
-// Signature: CFrankenstienMachine * core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0 (CFrankenstienMachine *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

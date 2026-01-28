@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char wincore_winrun.cpp_getValue_FUN_005f2f20(void)
+; __cdecl char __cdecl wincore_winrun_cpp_getValue_FUN_005f2f20(void)
 ;
 ;
 ; Referenced Globals:

@@ -2,7 +2,7 @@
 // Address: 0057e7c0
 // Address Range: [[0057e7c0, 0057fcf2]]
 // Convention: __cdecl
-// Signature: void core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet * this_ptr)
+// Signature: void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

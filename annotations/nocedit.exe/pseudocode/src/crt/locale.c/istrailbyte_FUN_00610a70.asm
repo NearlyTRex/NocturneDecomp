@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_locale.c_istrailbyte_FUN_00610a70(uchar byte_value)
+; __watcallStack int __watcallStack crt_locale_c_istrailbyte_FUN_00610a70(uchar byte_value)
 ;
 ; Parameters:
 ; uchar            Stack[0x4]:1   byte_value

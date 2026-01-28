@@ -2,7 +2,7 @@
 // Address: 005feb30
 // Address Range: [[005feb30, 005feb41]]
 // Convention: __cdecl
-// Signature: int crt_ctype.c_tolower_FUN_005feb30(int character)
+// Signature: int __cdecl crt_ctype_c_tolower_FUN_005feb30(int character)
 
 #include "nocturne.h"
 

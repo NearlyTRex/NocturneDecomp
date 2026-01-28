@@ -2,7 +2,7 @@
 // Address: 005fe632
 // Address Range: [[005fe632, 005fe658]]
 // Convention: __cdecl
-// Signature: void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+// Signature: void * __cdecl crt_memory_c_freeSingleInstance_FUN_005fe632(void *object_ptr,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 

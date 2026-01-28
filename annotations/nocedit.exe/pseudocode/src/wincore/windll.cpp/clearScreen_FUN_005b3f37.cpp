@@ -2,7 +2,7 @@
 // Address: 005b3f37
 // Address Range: [[005b3f37, 005b3fc1]]
 // Convention: __cdecl
-// Signature: void wincore_windll.cpp_clearScreen_FUN_005b3f37(int color)
+// Signature: void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color)
 
 #include "nocturne.h"
 

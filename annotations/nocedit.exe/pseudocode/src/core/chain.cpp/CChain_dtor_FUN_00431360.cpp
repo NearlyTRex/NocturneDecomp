@@ -2,7 +2,7 @@
 // Address: 00431360
 // Address Range: [[00431360, 004313c4]]
 // Convention: __cdecl
-// Signature: CChain * core_chain.cpp_CChain_dtor_FUN_00431360(CChain * this_ptr, uint d1, uint d2, uint d3)
+// Signature: CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00431360(CChain *this_ptr,uint d1,uint d2,uint d3)
 
 #include "nocturne.h"
 

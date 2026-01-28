@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_superopt.cpp_CPoly_transform_FUN_005ccc30(CPoly * this_ptr, CMatrix3x3d * matrix, CVector3d * pivot)
+; __cdecl void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30 (CPoly *this_ptr,CMatrix3x3d *matrix,CVector3d *pivot)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setcolid.cpp_freeRaytraceState_FUN_00574770(SRaytraceState * * array)
+; __cdecl void __cdecl core_setcolid_cpp_freeRaytraceState_FUN_00574770(SRaytraceState **array)
 ;
 ; Parameters:
 ; SRaytraceState * * Stack[0x4]:4   array

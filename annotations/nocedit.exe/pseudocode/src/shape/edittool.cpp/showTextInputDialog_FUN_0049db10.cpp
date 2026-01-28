@@ -2,7 +2,7 @@
 // Address: 0049db10
 // Address Range: [[0049db10, 0049df72]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_showTextInputDialog_FUN_0049db10(int dialog_mode, char * prompt_text, char * input_buffer, int buffer_size, int dialog_flags)
+// Signature: int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10 (int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
 
 #include "nocturne.h"
 

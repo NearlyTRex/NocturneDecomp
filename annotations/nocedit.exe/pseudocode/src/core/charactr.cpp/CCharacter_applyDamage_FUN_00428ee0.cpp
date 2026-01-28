@@ -2,7 +2,7 @@
 // Address: 00428ee0
 // Address Range: [[00428ee0, 00428f33]]
 // Convention: __cdecl
-// Signature: void core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0(CCharacter * this_ptr, int damage_type, float damage_amount)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0 (CCharacter *this_ptr,int damage_type,float damage_amount)
 
 #include "nocturne.h"
 

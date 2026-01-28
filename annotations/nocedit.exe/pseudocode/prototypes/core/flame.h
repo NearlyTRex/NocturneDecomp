@@ -5,64 +5,64 @@
 
 // Original: core_flame.cpp_staticInit_FUN_004c9a30
 // Address: 004c9a30
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flame.cpp_factoryFunc_FUN_004c9a60
 // Address: 004c9a60
-CFlame * factoryFunc(void);
+CFlame * __cdecl factoryFunc(void);
 
 // Original: core_flame.cpp_CFlame_getActorType_FUN_004c9a90
 // Address: 004c9a90
-CDemonActorType * CFlame::getActorType(CFlame * this_ptr);
+CDemonActorType * __cdecl CFlame::getActorType(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_ctor_FUN_004c9aa0
 // Address: 004c9aa0
-CFlame * CFlame::ctor(CFlame * this_ptr);
+CFlame * __cdecl CFlame::ctor(CFlame *this_ptr);
 
 // Original: core_flame.cpp_FUN_004c9b90
 // Address: 004c9b90
-undefined FUN_004c9b90();
+void FUN_004c9b90(void);
 
 // Original: core_flame.cpp_FUN_004c9c00
 // Address: 004c9c00
-undefined FUN_004c9c00();
+void FUN_004c9c00(void);
 
 // Original: core_flame.cpp_FUN_004ca110
 // Address: 004ca110
-undefined FUN_004ca110();
+float FUN_004ca110(void);
 
 // Original: core_flame.cpp_FUN_004caa70
 // Address: 004caa70
-undefined FUN_004caa70();
+void FUN_004caa70(void);
 
 // Original: core_flame.cpp_FUN_004caa80
 // Address: 004caa80
-undefined FUN_004caa80();
+void FUN_004caa80(void);
 
 // Original: core_flame.cpp_FUN_004cac00
 // Address: 004cac00
-undefined FUN_004cac00();
+void FUN_004cac00(void);
 
 // Original: core_flame.cpp_CFlame_load_FUN_004cac60
 // Address: 004cac60
-undefined CFlame::load();
+void CFlame::load(void);
 
 // Original: core_flame.cpp_FUN_004cad80
 // Address: 004cad80
-undefined FUN_004cad80();
+undefined4 FUN_004cad80(void);
 
 // Original: core_flame.cpp_FUN_004cae70
 // Address: 004cae70
-undefined FUN_004cae70();
+void FUN_004cae70(void);
 
 // Original: core_flame.cpp_FUN_004caf60
 // Address: 004caf60
-undefined FUN_004caf60();
+void FUN_004caf60(void);
 
 // Original: core_flame.cpp_FUN_004cb0a0
 // Address: 004cb0a0
-undefined FUN_004cb0a0();
+void FUN_004cb0a0(void);
 
 // Original: core_flame.cpp_FUN_004cb0e0
 // Address: 004cb0e0
-undefined FUN_004cb0e0();
+void FUN_004cb0e0(void);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
+; __cdecl void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x5c]:1  local_5c

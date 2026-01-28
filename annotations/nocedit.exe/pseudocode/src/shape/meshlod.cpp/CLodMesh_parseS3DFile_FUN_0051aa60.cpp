@@ -2,7 +2,7 @@
 // Address: 0051aa60
 // Address Range: [[0051aa60, 0051ad52]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh * this_ptr, FILE * file_handle)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

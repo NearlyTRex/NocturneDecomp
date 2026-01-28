@@ -2,7 +2,7 @@
 // Address: 00501570
 // Address Range: [[00501570, 0050161c]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570(CInventory * this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_00501570(CInventory *this_ptr)
 
 #include "nocturne.h"
 

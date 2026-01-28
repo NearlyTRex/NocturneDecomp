@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __mathinternal double crt_math.c_handle_math_error_FUN_0060c02b(void)
+; __mathinternal double __mathinternal crt_math_c_handle_math_error_FUN_0060c02b(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

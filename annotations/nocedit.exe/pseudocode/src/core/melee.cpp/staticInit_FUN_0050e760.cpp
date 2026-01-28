@@ -2,7 +2,7 @@
 // Address: 0050e760
 // Address Range: [[0050e760, 0050e783]]
 // Convention: __cdecl
-// Signature: void core_melee.cpp_staticInit_FUN_0050e760(void)
+// Signature: void __cdecl core_melee_cpp_staticInit_FUN_0050e760(void)
 
 #include "nocturne.h"
 

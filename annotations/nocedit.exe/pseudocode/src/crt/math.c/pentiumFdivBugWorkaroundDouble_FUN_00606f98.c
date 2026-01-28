@@ -2,7 +2,7 @@
 // Address: 00606f98
 // Address Range: [[00606f98, 00606fe3]]
 // Convention: __fpustack
-// Signature: float10 crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0, double param1)
+// Signature: float10 __fpustack crt_math_c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0,double param1)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_scat.cpp_CSCat_load_FUN_00557db0()
+; unknown void core_scat_cpp_CSCat_load_FUN_00557db0(void)
 ;
 ;
 ; Called Functions:

@@ -2,7 +2,7 @@
 // Address: 004b41c0
 // Address Range: [[004b41c0, 004b421d]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CCheckOutItem_revert_FUN_004b41c0(CCheckOutItem * this_ptr, char * output_buffer)
+// Signature: void __cdecl engine_fileio_cpp_CCheckOutItem_revert_FUN_004b41c0(CCheckOutItem *this_ptr,char *output_buffer)
 
 #include "nocturne.h"
 

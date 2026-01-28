@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_filmreel.cpp_serialize_FUN_004bede0()
+; unknown void core_filmreel_cpp_serialize_FUN_004bede0(void)
 ;
 ;
 ; Referenced Globals:

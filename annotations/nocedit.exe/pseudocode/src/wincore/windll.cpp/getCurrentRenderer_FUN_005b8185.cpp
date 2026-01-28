@@ -2,7 +2,7 @@
 // Address: 005b8185
 // Address Range: [[005b8185, 005b81a0]]
 // Convention: __cdecl
-// Signature: char * wincore_windll.cpp_getCurrentRenderer_FUN_005b8185(int * renderer)
+// Signature: char * __cdecl wincore_windll_cpp_getCurrentRenderer_FUN_005b8185(int *renderer)
 
 #include "nocturne.h"
 

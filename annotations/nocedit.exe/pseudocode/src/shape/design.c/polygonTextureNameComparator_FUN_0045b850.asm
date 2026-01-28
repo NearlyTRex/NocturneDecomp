@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_design.c_polygonTextureNameComparator_FUN_0045b850(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2)
+; __cdecl int __cdecl shape_design_c_polygonTextureNameComparator_FUN_0045b850 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2)
 ;
 ; Parameters:
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon1

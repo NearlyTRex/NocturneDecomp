@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_drawsurf.cpp_setDashLength_FUN_00488ab0(int length)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_setDashLength_FUN_00488ab0(int length)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   length

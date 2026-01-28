@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90()
+; unknown int core_msnedit_cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x3b8]:1  local_3b8

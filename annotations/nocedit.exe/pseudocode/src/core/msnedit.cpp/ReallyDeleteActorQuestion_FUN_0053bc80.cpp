@@ -2,7 +2,7 @@
 // Address: 0053bc80
 // Address Range: [[0053bc80, 0053bce0]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80()
+// Signature: void core_msnedit_cpp_ReallyDeleteActorQuestion_FUN_0053bc80(void)
 
 #include "nocturne.h"
 

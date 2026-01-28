@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_fileio.cpp_writeArtFileEntries_FUN_004bc9f0(char * filename, FILE * * raw_file, FILE * * act_file)
+; __cdecl void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,FILE **raw_file,FILE **act_file)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

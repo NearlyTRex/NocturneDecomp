@@ -2,7 +2,7 @@
 // Address: 004b3220
 // Address Range: [[004b3220, 004b3591]]
 // Convention: __cdecl
-// Signature: int engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220(char * base_directory, char * filename)
+// Signature: int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,char *filename)
 
 #include "nocturne.h"
 

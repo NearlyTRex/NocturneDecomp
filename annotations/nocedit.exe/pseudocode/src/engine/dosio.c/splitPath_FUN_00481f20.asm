@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, char * extension)
+; __cdecl void __cdecl engine_dosio_c_splitPath_FUN_00481f20 (char *full_path,char *drive,char *directory,char *filename,char *extension)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   full_path

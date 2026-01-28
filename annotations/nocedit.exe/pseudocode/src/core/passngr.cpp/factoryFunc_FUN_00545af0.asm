@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPassenger * core_passngr.cpp_factoryFunc_FUN_00545af0(void)
+; __cdecl CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_00545af0(void)
 ;
 ;
 ; XREF[1]:

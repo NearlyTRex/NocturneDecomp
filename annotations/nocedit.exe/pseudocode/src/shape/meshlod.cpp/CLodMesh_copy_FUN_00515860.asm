@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLodMesh * shape_meshlod.cpp_CLodMesh_copy_FUN_00515860(CLodMesh * this_ptr, CLodMesh * other)
+; __cdecl CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copy_FUN_00515860(CLodMesh *this_ptr,CLodMesh *other)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

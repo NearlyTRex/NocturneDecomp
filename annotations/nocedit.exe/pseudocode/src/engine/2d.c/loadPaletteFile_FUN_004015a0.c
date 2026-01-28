@@ -2,7 +2,7 @@
 // Address: 004015a0
 // Address Range: [[004015a0, 0040160e]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_loadPaletteFile_FUN_004015a0(char * filename)
+// Signature: void __cdecl engine_2d_c_loadPaletteFile_FUN_004015a0(char *filename)
 
 #include "nocturne.h"
 

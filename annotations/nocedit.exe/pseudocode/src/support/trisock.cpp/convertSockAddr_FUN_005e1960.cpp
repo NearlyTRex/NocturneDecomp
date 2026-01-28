@@ -2,7 +2,7 @@
 // Address: 005e1960
 // Address Range: [[005e1960, 005e19c4]]
 // Convention: __cdecl
-// Signature: SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN * dest_addr, SOCKADDR * src_addr)
+// Signature: SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN *dest_addr,SOCKADDR *src_addr)
 
 #include "nocturne.h"
 

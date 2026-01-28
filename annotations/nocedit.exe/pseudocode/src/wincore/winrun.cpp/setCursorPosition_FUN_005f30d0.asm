@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_setCursorPosition_FUN_005f30d0(int x, int y)
+; __cdecl void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005f30d0(int x,int y)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

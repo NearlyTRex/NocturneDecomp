@@ -2,7 +2,7 @@
 // Address: 0047efc0
 // Address Range: [[0047efc0, 0047efd7]]
 // Convention: __cdecl
-// Signature: void core_dmodel.cpp_freeModels_FUN_0047efc0(CKeyFramedModel * * array)
+// Signature: void __cdecl core_dmodel_cpp_freeModels_FUN_0047efc0(CKeyFramedModel **array)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005aa240
 // Address Range: [[005aa240, 005aa280]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240(double distance_in_feet)
+// Signature: void __cdecl sound_sndmain_cpp_set3DListenerDistanceFactor_FUN_005aa240(double distance_in_feet)
 
 #include "nocturne.h"
 

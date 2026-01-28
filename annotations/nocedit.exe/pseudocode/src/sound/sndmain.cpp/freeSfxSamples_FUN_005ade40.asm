@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_freeSfxSamples_FUN_005ade40(CSfxSample * * array)
+; __cdecl void __cdecl sound_sndmain_cpp_freeSfxSamples_FUN_005ade40(CSfxSample **array)
 ;
 ; Parameters:
 ; CSfxSample * *   Stack[0x4]:4   array

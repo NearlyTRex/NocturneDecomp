@@ -2,7 +2,7 @@
 // Address: 004eaef0
 // Address Range: [[004eaef0, 004eb247]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_CGlass_shatter_FUN_004eaef0(CGlass * this_ptr, CVector3f * location)
+// Signature: void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector3f *location)
 
 #include "nocturne.h"
 

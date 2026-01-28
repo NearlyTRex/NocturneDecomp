@@ -2,7 +2,7 @@
 // Address: 004ef030
 // Address Range: [[004ef030, 004ef370]]
 // Convention: __cdecl
-// Signature: int core_ground.cpp_CGround_load_FUN_004ef030(CGround * this_ptr, char * filename)
+// Signature: int __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename)
 
 #include "nocturne.h"
 

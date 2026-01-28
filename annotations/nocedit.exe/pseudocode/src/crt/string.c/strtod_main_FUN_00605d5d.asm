@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double crt_string.c_strtod_main_FUN_00605d5d(char * str, char * * endptr)
+; __cdecl double __cdecl crt_string_c_strtod_main_FUN_00605d5d(char *str,char **endptr)
 ;
 ; Parameters:
 ; char *           Stack[0x8]:4   str

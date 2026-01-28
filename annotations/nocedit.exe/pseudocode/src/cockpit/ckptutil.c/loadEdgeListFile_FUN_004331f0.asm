@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0(char * filename, SEdgeList * edge_lists, int expected_count)
+; __cdecl void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0 (char *filename,SEdgeList *edge_lists,int expected_count)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

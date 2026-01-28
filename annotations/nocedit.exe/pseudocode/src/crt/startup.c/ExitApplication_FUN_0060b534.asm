@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_startup.c_ExitApplication_FUN_0060b534(int exit_code)
+; __cdecl void __cdecl crt_startup_c_ExitApplication_FUN_0060b534(int exit_code)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   exit_code

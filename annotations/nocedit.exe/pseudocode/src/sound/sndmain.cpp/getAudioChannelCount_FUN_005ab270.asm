@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270(void)
+; __cdecl int __cdecl sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270(void)
 ;
 ;
 ; XREF[4]:

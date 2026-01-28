@@ -2,7 +2,7 @@
 // Address: 0052db00
 // Address Range: [[0052db00, 0052db87]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
+// Signature: void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00 (CMotionController *this_ptr,int desired_state_index,int force_immediate)
 
 #include "nocturne.h"
 

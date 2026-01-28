@@ -2,7 +2,7 @@
 // Address: 005fdf38
 // Address Range: [[005fdf38, 005fe5de]]
 // Convention: __cdecl
-// Signature: void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+// Signature: void __cdecl crt_stdlib_c_qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
 
 #include "nocturne.h"
 

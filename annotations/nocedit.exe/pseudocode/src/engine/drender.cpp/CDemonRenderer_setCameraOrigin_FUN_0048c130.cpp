@@ -2,7 +2,7 @@
 // Address: 0048c130
 // Address Range: [[0048c130, 0048c149]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(CDemonRenderer * this_ptr, CVector3i * origin)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130 (CDemonRenderer *this_ptr,CVector3i *origin)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_manpuz.cpp_freeTriangles_FUN_0050ba70(CDemonTriangle * * objs)
+; __cdecl void __cdecl core_manpuz_cpp_freeTriangles_FUN_0050ba70(CDemonTriangle **objs)
 ;
 ; Parameters:
 ; CDemonTriangle * * Stack[0x4]:4   objs

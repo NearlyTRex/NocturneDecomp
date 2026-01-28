@@ -2,7 +2,7 @@
 // Address: 0046e090
 // Address Range: [[0046e090, 0046e33e]]
 // Convention: __cdecl
-// Signature: void shape_design.c_fixupCramUV_FUN_0046e090(int atlas_texture_index, float * u_coord, float * v_coord)
+// Signature: void __cdecl shape_design_c_fixupCramUV_FUN_0046e090(int atlas_texture_index,float *u_coord,float *v_coord)
 
 #include "nocturne.h"
 

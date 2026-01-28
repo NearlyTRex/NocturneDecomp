@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_add3dLine_FUN_005b79d3(void * start_point, void * end_point, int line_style)
+; __cdecl int __cdecl wincore_windll_cpp_add3dLine_FUN_005b79d3(void *start_point,void *end_point,int line_style)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   start_point

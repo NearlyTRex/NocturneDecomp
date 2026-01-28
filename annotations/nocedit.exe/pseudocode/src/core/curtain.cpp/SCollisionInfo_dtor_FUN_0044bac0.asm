@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SCollisionInfo * core_curtain.cpp_SCollisionInfo_dtor_FUN_0044bac0(SCollisionInfo * this_ptr)
+; __cdecl SCollisionInfo * __cdecl core_curtain_cpp_SCollisionInfo_dtor_FUN_0044bac0(SCollisionInfo *this_ptr)
 ;
 ; Parameters:
 ; SCollisionInfo * Stack[0x4]:4   this_ptr

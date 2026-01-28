@@ -2,7 +2,7 @@
 // Address: 0052dd20
 // Address Range: [[0052dd20, 0052dda7]]
 // Convention: __cdecl
-// Signature: float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(CMotionController * this_ptr, int desired_state_index)
+// Signature: float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20 (CMotionController *this_ptr,int desired_state_index)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_freeVectors_FUN_005a2010(CVector3f * * array)
+; __cdecl void __cdecl core_skeleton_cpp_freeVectors_FUN_005a2010(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

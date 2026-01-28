@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CShovel * core_shovel.cpp_factoryFunc_FUN_00588b60(void)
+; __cdecl CShovel * __cdecl core_shovel_cpp_factoryFunc_FUN_00588b60(void)
 ;
 ;
 ; XREF[1]:

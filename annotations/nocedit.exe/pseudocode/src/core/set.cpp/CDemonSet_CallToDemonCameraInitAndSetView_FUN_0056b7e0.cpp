@@ -2,7 +2,7 @@
 // Address: 0056b7e0
 // Address Range: [[0056b7e0, 0056b806]]
 // Convention: unknown
-// Signature: undefined core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0()
+// Signature: void core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0(void)
 
 #include "nocturne.h"
 

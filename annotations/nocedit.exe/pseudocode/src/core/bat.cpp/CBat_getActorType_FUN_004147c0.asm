@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_bat.cpp_CBat_getActorType_FUN_004147c0(CBat * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_bat_cpp_CBat_getActorType_FUN_004147c0(CBat *this_ptr)
 ;
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_prim.c_setupSoftwareEdgeWithZMode_FUN_00551d60(SRenderVertex * start_vertex, SRenderVertex * end_vertex)
+; __cdecl void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_00551d60 (SRenderVertex *start_vertex,SRenderVertex *end_vertex)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   start_vertex

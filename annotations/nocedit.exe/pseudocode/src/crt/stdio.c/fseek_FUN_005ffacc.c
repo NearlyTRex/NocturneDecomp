@@ -2,7 +2,7 @@
 // Address: 005ffacc
 // Address Range: [[005ffacc, 005ffcb2]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+// Signature: int __cdecl crt_stdio_c_fseek_FUN_005ffacc(FILE *file,long offset,int whence)
 
 #include "nocturne.h"
 

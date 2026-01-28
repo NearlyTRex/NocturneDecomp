@@ -2,7 +2,7 @@
 // Address: 0045a7b0
 // Address Range: [[0045a7b0, 0045aa7a]]
 // Convention: __cdecl
-// Signature: void shape_design.c_modelExportWizard_FUN_0045a7b0(int export_format_type)
+// Signature: void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_type)
 
 #include "nocturne.h"
 

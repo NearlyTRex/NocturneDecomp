@@ -2,7 +2,7 @@
 // Address: 0048eb40
 // Address Range: [[0048eb40, 0048eb45]]
 // Convention: unknown
-// Signature: undefined core_drone.cpp_FUN_0048eb40()
+// Signature: CDemonActorType * core_drone_cpp_FUN_0048eb40(void)
 
 #include "nocturne.h"
 

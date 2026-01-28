@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+; __cdecl void __cdecl shape_memdbg_cpp_debugFree_FUN_0050f210(void *ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

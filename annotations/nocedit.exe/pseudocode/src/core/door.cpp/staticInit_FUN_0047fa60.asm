@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_door.cpp_staticInit_FUN_0047fa60(void)
+; __cdecl void __cdecl core_door_cpp_staticInit_FUN_0047fa60(void)
 ;
 ;
 ; Referenced Globals:

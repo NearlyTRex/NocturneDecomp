@@ -2,7 +2,7 @@
 // Address: 00538f90
 // Address Range: [[00538f90, 00539052]]
 // Convention: unknown
-// Signature: undefined core_msnedit.cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90()
+// Signature: int core_msnedit_cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_batman.cpp_FUN_004179a0()
+; unknown void core_batman_cpp_FUN_004179a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x3c]:1  local_3c

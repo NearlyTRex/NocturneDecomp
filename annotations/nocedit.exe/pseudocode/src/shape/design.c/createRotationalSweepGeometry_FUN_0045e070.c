@@ -2,7 +2,7 @@
 // Address: 0045e070
 // Address Range: [[0045e070, 0045e512]]
 // Convention: unknown
-// Signature: undefined shape_design.c_createRotationalSweepGeometry_FUN_0045e070()
+// Signature: void shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
 
 #include "nocturne.h"
 

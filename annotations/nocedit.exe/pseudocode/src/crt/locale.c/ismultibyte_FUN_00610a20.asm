@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_locale.c_ismultibyte_FUN_00610a20(wchar_t character)
+; __watcallStack int __watcallStack crt_locale_c_ismultibyte_FUN_00610a20(wchar_t character)
 ;
 ; Parameters:
 ; wchar_t          Stack[0x4]:2   character

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_FUN_00543bb0()
+; unknown void core_netgame_cpp_FUN_00543bb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74

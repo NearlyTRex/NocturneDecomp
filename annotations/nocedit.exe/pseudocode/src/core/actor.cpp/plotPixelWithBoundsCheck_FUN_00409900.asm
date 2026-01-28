@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_plotPixelWithBoundsCheck_FUN_00409900(int x, int y)
+; __cdecl void __cdecl core_actor_cpp_plotPixelWithBoundsCheck_FUN_00409900(int x,int y)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

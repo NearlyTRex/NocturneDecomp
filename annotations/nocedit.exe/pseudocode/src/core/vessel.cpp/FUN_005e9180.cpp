@@ -2,7 +2,7 @@
 // Address: 005e9180
 // Address Range: [[005e9180, 005e9190]]
 // Convention: unknown
-// Signature: undefined core_vessel.cpp_FUN_005e9180()
+// Signature: undefined4 core_vessel_cpp_FUN_005e9180(void)
 
 #include "nocturne.h"
 

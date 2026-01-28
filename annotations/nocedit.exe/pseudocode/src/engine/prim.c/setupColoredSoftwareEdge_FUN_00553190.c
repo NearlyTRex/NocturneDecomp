@@ -2,7 +2,7 @@
 // Address: 00553190
 // Address Range: [[00553190, 0055340b]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex * vertex0, SRenderVertex * vertex1)
+// Signature: void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *vertex0,SRenderVertex *vertex1)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005dc760
 // Address Range: [[005dc760, 005dca24]]
 // Convention: __cdecl
-// Signature: void core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760(CTextureList * this_ptr)
+// Signature: void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureList *this_ptr)
 
 #include "nocturne.h"
 

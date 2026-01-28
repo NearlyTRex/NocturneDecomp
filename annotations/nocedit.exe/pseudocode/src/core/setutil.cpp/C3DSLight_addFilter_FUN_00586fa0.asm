@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0(C3DSLight * this_ptr, char * filter_name, float duration, int filter_mode)
+; __cdecl void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0 (C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
 ;
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr

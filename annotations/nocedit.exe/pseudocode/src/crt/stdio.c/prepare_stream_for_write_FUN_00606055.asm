@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
+; __cdecl BOOL __cdecl crt_stdio_c_prepare_stream_for_write_FUN_00606055(FILE *stream)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream

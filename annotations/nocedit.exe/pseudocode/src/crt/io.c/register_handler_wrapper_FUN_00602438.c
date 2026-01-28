@@ -2,7 +2,7 @@
 // Address: 00602438
 // Address Range: [[00602438, 00602445]]
 // Convention: __cdecl
-// Signature: int crt_io.c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)
+// Signature: int __cdecl crt_io_c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)
 
 #include "nocturne.h"
 

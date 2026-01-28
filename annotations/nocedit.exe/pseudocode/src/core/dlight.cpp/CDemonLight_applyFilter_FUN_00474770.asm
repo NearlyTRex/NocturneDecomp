@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, int filter_pos_y)
+; __cdecl void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770 (CDemonLight *this_ptr,CDemonFilter *filter_ptr,int filter_index,int filter_pos_x, int filter_pos_y)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr

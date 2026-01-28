@@ -2,7 +2,7 @@
 // Address: 00587950
 // Address Range: [[00587950, 005879a2]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_C3DSLight_scalePosition_FUN_00587950(C3DSLight * this_ptr, float scale)
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_scalePosition_FUN_00587950(C3DSLight *this_ptr,float scale)
 
 #include "nocturne.h"
 

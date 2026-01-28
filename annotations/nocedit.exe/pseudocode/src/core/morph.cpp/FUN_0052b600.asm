@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_morph.cpp_FUN_0052b600()
+; unknown void core_morph_cpp_FUN_0052b600 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,int param_6,undefined4 param_7,undefined4 param_8)
 ;
 ;
 ; XREF[6]:

@@ -2,7 +2,7 @@
 // Address: 005a56c0
 // Address Range: [[005a56c0, 005a5723]]
 // Convention: __cdecl
-// Signature: float sound_sndmain.cpp_calculateDistanceGain_FUN_005a56c0(float distance, float reference_distance, float min_distance, float max_distance)
+// Signature: float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_005a56c0 (float distance,float reference_distance,float min_distance,float max_distance)
 
 #include "nocturne.h"
 

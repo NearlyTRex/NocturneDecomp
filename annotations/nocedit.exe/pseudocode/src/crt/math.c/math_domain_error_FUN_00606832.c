@@ -2,7 +2,7 @@
 // Address: 00606832
 // Address Range: [[00606832, 006068d7]]
 // Convention: __cdecl
-// Signature: double crt_math.c_math_domain_error_FUN_00606832(double x, double y, uchar error_type)
+// Signature: double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar error_type)
 
 #include "nocturne.h"
 

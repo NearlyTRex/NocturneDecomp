@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_draw3DPointMarker_FUN_00409930(CVector3f * world_position, int marker_color)
+; __cdecl void __cdecl core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_position,int marker_color)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   world_position

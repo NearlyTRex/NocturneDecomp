@@ -2,7 +2,7 @@
 // Address: 005b0690
 // Address Range: [[005b0690, 005b06b3]]
 // Convention: __cdecl
-// Signature: int sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690(void)
+// Signature: int __cdecl sound_sndwav_cpp_getWavOutBufferSizeBytes_FUN_005b0690(void)
 
 #include "nocturne.h"
 

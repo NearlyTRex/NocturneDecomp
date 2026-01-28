@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_stdio.c_DeallocateFileStruct_FUN_006093b0(FILE * file_struct)
+; __cdecl void __cdecl crt_stdio_c_DeallocateFileStruct_FUN_006093b0(FILE *file_struct)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_struct

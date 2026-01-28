@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_box.cpp_CBox_setupN_FUN_0041df50(CBox * this_ptr, CVector3f * position, CVector3f * orientation, int point_count, CVector3f * point_array, float volume)
+; __cdecl void __cdecl core_box_cpp_CBox_setupN_FUN_0041df50 (CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count, CVector3f *point_array,float volume)
 ;
 ; Parameters:
 ; CBox *           Stack[0x4]:4   this_ptr

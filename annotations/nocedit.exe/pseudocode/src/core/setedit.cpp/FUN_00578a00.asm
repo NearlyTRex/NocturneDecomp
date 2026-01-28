@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_setedit.cpp_FUN_00578a00()
+; unknown void core_setedit_cpp_FUN_00578a00(void)
 ;
 ;
 ; Called Functions:

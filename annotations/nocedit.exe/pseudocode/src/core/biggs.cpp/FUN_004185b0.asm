@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_biggs.cpp_FUN_004185b0()
+; unknown CDemonActorType * core_biggs_cpp_FUN_004185b0(void)
 ;
 ;
 ; Referenced Globals:

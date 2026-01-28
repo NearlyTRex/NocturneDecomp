@@ -2,7 +2,7 @@
 // Address: 0060190c
 // Address Range: [[0060190c, 00601a1d]]
 // Convention: __cdecl
-// Signature: FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, int additional_flags, FILE * file_struct)
+// Signature: FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,FILE *file_struct)
 
 #include "nocturne.h"
 

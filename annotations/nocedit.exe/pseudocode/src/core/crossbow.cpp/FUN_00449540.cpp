@@ -2,7 +2,7 @@
 // Address: 00449540
 // Address Range: [[00449540, 00449568]]
 // Convention: unknown
-// Signature: undefined core_crossbow.cpp_FUN_00449540()
+// Signature: float core_crossbow_cpp_FUN_00449540(void)
 
 #include "nocturne.h"
 

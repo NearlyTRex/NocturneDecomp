@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setAudioBitDepth_FUN_005ab280(int bit_depth)
+; __cdecl void __cdecl sound_sndmain_cpp_setAudioBitDepth_FUN_005ab280(int bit_depth)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   bit_depth

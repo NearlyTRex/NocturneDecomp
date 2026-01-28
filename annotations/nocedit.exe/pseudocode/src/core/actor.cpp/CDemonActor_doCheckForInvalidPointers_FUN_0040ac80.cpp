@@ -2,7 +2,7 @@
 // Address: 0040ac80
 // Address Range: [[0040ac80, 0040aed8]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (CDemonActor *this_ptr,char *context_file,int context_line)
 
 #include "nocturne.h"
 

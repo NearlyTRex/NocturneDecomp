@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_FUN_0060403f()
+; unknown void crt_unknown_c_FUN_0060403f(undefined4 param_1,float10 *param_2)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0xc]:2  local_c

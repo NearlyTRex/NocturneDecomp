@@ -2,7 +2,7 @@
 // Address: 00610a70
 // Address Range: [[00610a70, 00610aa8]]
 // Convention: __watcallStack
-// Signature: int crt_locale.c_istrailbyte_FUN_00610a70(uchar byte_value)
+// Signature: int __watcallStack crt_locale_c_istrailbyte_FUN_00610a70(uchar byte_value)
 
 #include "nocturne.h"
 

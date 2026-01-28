@@ -2,7 +2,7 @@
 // Address: 0052f350
 // Address Range: [[0052f350, 0052f5a7]]
 // Convention: __cdecl
-// Signature: int sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder * this_ptr, SHuffmanTable * huffman_table, int * x_out, int * y_out, int * v_out, int * w_out)
+// Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350 (CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out, int *w_out)
 
 #include "nocturne.h"
 

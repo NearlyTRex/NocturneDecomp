@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boneguy.cpp_FUN_0041b770()
+; unknown CVector3f * core_boneguy_cpp_FUN_0041b770(void)
 ;
 ;
 ; Referenced Globals:

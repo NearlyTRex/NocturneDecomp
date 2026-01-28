@@ -2,7 +2,7 @@
 // Address: 00548d20
 // Address Range: [[00548d20, 00548ef1]]
 // Convention: __cdecl
-// Signature: void engine_pcx.c_saveScreenRaw16_FUN_00548d20(char * filename)
+// Signature: void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
 
 #include "nocturne.h"
 

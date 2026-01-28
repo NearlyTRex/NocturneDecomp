@@ -2,7 +2,7 @@
 // Address: 004366e0
 // Address Range: [[004366e0, 004371ac]]
 // Convention: __cdecl
-// Signature: int engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count, int * vertex_indices)
+// Signature: int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *vertex_indices)
 
 #include "nocturne.h"
 

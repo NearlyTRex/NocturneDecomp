@@ -2,7 +2,7 @@
 // Address: 00411700
 // Address Range: [[00411700, 00411813]]
 // Convention: unknown
-// Signature: undefined core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700()
+// Signature: void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
 
 #include "nocturne.h"
 

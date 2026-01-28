@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_inv.cpp_CInventory_dtor_FUN_004fd0c0(CInventory * this_ptr)
+; __cdecl int __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

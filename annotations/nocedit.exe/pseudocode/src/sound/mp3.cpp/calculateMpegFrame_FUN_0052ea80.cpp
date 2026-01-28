@@ -2,7 +2,7 @@
 // Address: 0052ea80
 // Address Range: [[0052ea80, 0052ec37]]
 // Convention: __cdecl
-// Signature: void sound_mp3.cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame * frame)
+// Signature: void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
 
 #include "nocturne.h"
 

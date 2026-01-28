@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_superopt.cpp_CObj_copyFrom_FUN_005d2650(CObj * this_ptr, CObj * source)
+; __cdecl int __cdecl shape_superopt_cpp_CObj_copyFrom_FUN_005d2650(CObj *this_ptr,CObj *source)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

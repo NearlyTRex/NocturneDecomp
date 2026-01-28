@@ -2,7 +2,7 @@
 // Address: 005ffd76
 // Address Range: [[005ffd76, 005ffeb1]]
 // Convention: __fpustack
-// Signature: float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
+// Signature: float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
 
 #include "nocturne.h"
 

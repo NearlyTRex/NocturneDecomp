@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_loadGunFlashAssets_FUN_004c1be0(void)
+; __cdecl void __cdecl core_fire_cpp_loadGunFlashAssets_FUN_004c1be0(void)
 ;
 ;
 ; XREF[1]:

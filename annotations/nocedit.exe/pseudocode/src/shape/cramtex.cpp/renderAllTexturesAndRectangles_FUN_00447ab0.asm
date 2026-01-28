@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0(int x, int y, int width, int height, int render_mode)
+; __cdecl void __cdecl shape_cramtex_cpp_renderAllTexturesAndRectangles_FUN_00447ab0 (int x,int y,int width,int height,int render_mode)
 ;
 ; Parameters:
 ; int              Stack[0x8]:4   x

@@ -2,7 +2,7 @@
 // Address: 00551f70
 // Address Range: [[00551f70, 00551fa5]]
 // Convention: __cdecl
-// Signature: SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_00551f70(int y_value, SSoftwareEdge * edge_ptr)
+// Signature: SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_00551f70(int y_value,SSoftwareEdge *edge_ptr)
 
 #include "nocturne.h"
 

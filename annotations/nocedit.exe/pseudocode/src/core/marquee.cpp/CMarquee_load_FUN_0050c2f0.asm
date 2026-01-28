@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_marquee.cpp_CMarquee_load_FUN_0050c2f0()
+; unknown void core_marquee_cpp_CMarquee_load_FUN_0050c2f0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_enemy.cpp_FUN_004a9930()
+; unknown undefined4 core_enemy_cpp_FUN_004a9930(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20

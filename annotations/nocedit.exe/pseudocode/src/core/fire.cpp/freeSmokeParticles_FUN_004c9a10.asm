@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeSmokeParticles_FUN_004c9a10(CSmokeParticle * * array)
+; __cdecl void __cdecl core_fire_cpp_freeSmokeParticles_FUN_004c9a10(CSmokeParticle **array)
 ;
 ; Parameters:
 ; CSmokeParticle * * Stack[0x4]:4   array

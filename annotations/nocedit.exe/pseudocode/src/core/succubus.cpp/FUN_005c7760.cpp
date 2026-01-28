@@ -2,7 +2,7 @@
 // Address: 005c7760
 // Address Range: [[005c7760, 005c7779]]
 // Convention: unknown
-// Signature: undefined core_succubus.cpp_FUN_005c7760()
+// Signature: void core_succubus_cpp_FUN_005c7760(void)
 
 #include "nocturne.h"
 

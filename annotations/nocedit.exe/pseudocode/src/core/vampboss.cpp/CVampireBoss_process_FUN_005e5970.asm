@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_vampboss.cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss * this_ptr, float delta_time)
+; __cdecl void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcube.cpp_freeVectors_FUN_00457eb0(CVector3f * * array)
+; __cdecl void __cdecl core_dcube_cpp_freeVectors_FUN_00457eb0(CVector3f **array)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   array

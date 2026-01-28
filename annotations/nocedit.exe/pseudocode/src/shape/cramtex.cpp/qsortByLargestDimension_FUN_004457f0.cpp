@@ -2,7 +2,7 @@
 // Address: 004457f0
 // Address Range: [[004457f0, 0044581d]]
 // Convention: __cdecl
-// Signature: int shape_cramtex.cpp_qsortByLargestDimension_FUN_004457f0(SCramWorkingEntry * entry_a, SCramWorkingEntry * entry_b)
+// Signature: int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0 (SCramWorkingEntry *entry_a,SCramWorkingEntry *entry_b)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tbplayer.cpp_staticInit_FUN_005d9fd0(void)
+; __cdecl void __cdecl core_tbplayer_cpp_staticInit_FUN_005d9fd0(void)
 ;
 ;
 ; Referenced Globals:

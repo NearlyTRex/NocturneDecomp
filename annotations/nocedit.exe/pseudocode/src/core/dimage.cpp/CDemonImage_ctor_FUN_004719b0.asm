@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonImage * core_dimage.cpp_CDemonImage_ctor_FUN_004719b0(CDemonImage * this_ptr)
+; __cdecl CDemonImage * __cdecl core_dimage_cpp_CDemonImage_ctor_FUN_004719b0(CDemonImage *this_ptr)
 ;
 ; Parameters:
 ; CDemonImage *    Stack[0x4]:4   this_ptr

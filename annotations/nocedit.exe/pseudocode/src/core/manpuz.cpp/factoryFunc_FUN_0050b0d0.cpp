@@ -2,7 +2,7 @@
 // Address: 0050b0d0
 // Address Range: [[0050b0d0, 0050b0f5]]
 // Convention: __cdecl
-// Signature: CMirrorHack * core_manpuz.cpp_factoryFunc_FUN_0050b0d0(void)
+// Signature: CMirrorHack * __cdecl core_manpuz_cpp_factoryFunc_FUN_0050b0d0(void)
 
 #include "nocturne.h"
 

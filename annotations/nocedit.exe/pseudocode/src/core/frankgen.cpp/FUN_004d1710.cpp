@@ -2,7 +2,7 @@
 // Address: 004d1710
 // Address Range: [[004d1710, 004d1715]]
 // Convention: unknown
-// Signature: undefined core_frankgen.cpp_FUN_004d1710()
+// Signature: CDemonActorType * core_frankgen_cpp_FUN_004d1710(void)
 
 #include "nocturne.h"
 

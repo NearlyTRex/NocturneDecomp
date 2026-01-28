@@ -2,7 +2,7 @@
 // Address: 004eb250
 // Address Range: [[004eb250, 004eb385]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass * this_ptr, SSurfaceInfo * surface_info)
+// Signature: void __cdecl core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfaceInfo *surface_info)
 
 #include "nocturne.h"
 

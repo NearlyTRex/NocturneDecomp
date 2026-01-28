@@ -2,7 +2,7 @@
 // Address: 005ff9f3
 // Address Range: [[005ff9f3, 005ffa02]]
 // Convention: __stdcall
-// Signature: uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+// Signature: uint __stdcall crt_stack_c_stack_probe_FUN_005ff9f3(uint stack_size)
 
 #include "nocturne.h"
 

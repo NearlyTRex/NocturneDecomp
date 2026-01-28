@@ -2,7 +2,7 @@
 // Address: 0060e6a0
 // Address Range: [[0060e6a0, 0060e847]]
 // Convention: __cdecl
-// Signature: int crt_process.c_spawnvp_with_path_search_FUN_0060e6a0(int mode, char * program, char * * argv)
+// Signature: int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *program,char **argv)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_005a89a0(double vel_x, double vel_y, double vel_z)
+; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxStaticVelocity_FUN_005a89a0(double vel_x,double vel_y,double vel_z)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   vel_x

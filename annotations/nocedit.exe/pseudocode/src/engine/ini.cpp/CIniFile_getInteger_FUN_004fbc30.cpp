@@ -2,7 +2,7 @@
 // Address: 004fbc30
 // Address Range: [[004fbc30, 004fbc83]]
 // Convention: __cdecl
-// Signature: void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
+// Signature: void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile *this_ptr,char *key_name,int *value_ptr)
 
 #include "nocturne.h"
 

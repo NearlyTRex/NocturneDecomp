@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_fileio.cpp_buildFilePath_FUN_004b1de0(char * base_dir, char * filename, char * dest_path)
+; __cdecl void __cdecl engine_fileio_cpp_buildFilePath_FUN_004b1de0(char *base_dir,char *filename,char *dest_path)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   base_dir

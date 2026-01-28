@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_light.cpp_setLightingMultipliers_FUN_00505510(int diffuse_multiplier, int specular_multiplier)
+; __cdecl void __cdecl engine_light_cpp_setLightingMultipliers_FUN_00505510(int diffuse_multiplier,int specular_multiplier)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   diffuse_multiplier

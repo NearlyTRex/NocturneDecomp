@@ -2,7 +2,7 @@
 // Address: 00546c40
 // Address Range: [[00546c40, 00546e84]]
 // Convention: __cdecl
-// Signature: int core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap * this_ptr, int start_x, int start_z, int start_height, int end_x, int end_z, int end_height)
+// Signature: int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40 (CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z, int end_height)
 
 #include "nocturne.h"
 

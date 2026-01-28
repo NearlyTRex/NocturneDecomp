@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * wincore_winrun.cpp_getKeyName_FUN_005f3980(int keycode)
+; __cdecl char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(int keycode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   keycode

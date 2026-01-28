@@ -2,7 +2,7 @@
 // Address: 0050f9b0
 // Address Range: [[0050f9b0, 0050fb94]]
 // Convention: __cdecl
-// Signature: int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+// Signature: int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int line_number)
 
 #include "nocturne.h"
 

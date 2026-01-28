@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_WriteScriptFile_FUN_00560b50()
+; unknown void core_script_cpp_CScript_WriteScriptFile_FUN_00560b50(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18

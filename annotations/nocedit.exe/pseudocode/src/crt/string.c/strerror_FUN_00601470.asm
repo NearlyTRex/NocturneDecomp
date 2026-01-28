@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack char * crt_string.c_strerror_FUN_00601470(int errnum)
+; __watcallStack char * __watcallStack crt_string_c_strerror_FUN_00601470(int errnum)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   errnum

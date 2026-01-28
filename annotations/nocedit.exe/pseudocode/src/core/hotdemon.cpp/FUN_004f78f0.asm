@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_hotdemon.cpp_FUN_004f78f0()
+; unknown undefined4 core_hotdemon_cpp_FUN_004f78f0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34

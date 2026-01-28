@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3i * shape_design.c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended * model_ptr)
+; __cdecl CVector3i * __cdecl shape_design_c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended *model_ptr)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   model_ptr

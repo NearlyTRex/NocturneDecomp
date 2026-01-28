@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int visualization_mode, int completion_mode, int display_mode)
+; __cdecl void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20 (int visualization_mode,int completion_mode,int display_mode)
 ;
 ; Parameters:
 ; int              Stack[0x8]:4   visualization_mode

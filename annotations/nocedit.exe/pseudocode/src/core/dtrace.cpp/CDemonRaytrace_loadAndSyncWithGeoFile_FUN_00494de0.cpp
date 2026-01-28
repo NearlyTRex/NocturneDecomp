@@ -2,7 +2,7 @@
 // Address: 00494de0
 // Address Range: [[00494de0, 00494f44]]
 // Convention: __cdecl
-// Signature: int core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(CDemonRaytrace * this_ptr, char * filename)
+// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0 (CDemonRaytrace *this_ptr,char *filename)
 
 #include "nocturne.h"
 

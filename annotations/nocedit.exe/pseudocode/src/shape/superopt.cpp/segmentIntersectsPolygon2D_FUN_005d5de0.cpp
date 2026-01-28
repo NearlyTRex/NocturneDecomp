@@ -2,7 +2,7 @@
 // Address: 005d5de0
 // Address Range: [[005d5de0, 005d5e50]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0(CVector2d * polyVerts, uint vertCount, CVector2d * segStart, CVector2d * segEnd, CVector2d * segStart2)
+// Signature: int __cdecl shape_superopt_cpp_segmentIntersectsPolygon2D_FUN_005d5de0 (CVector2d *polyVerts,uint vertCount,CVector2d *segStart,CVector2d *segEnd, CVector2d *segStart2)
 
 #include "nocturne.h"
 

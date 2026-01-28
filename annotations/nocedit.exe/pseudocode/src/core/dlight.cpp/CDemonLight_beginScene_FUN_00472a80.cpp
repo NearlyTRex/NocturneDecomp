@@ -2,7 +2,7 @@
 // Address: 00472a80
 // Address Range: [[00472a80, 00472c68]]
 // Convention: __cdecl
-// Signature: void core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight * this_ptr, int skip_clear_buffers)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int skip_clear_buffers)
 
 #include "nocturne.h"
 

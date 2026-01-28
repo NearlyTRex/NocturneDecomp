@@ -2,7 +2,7 @@
 // Address: 0060dc5e
 // Address Range: [[0060dc5e, 0060dcf4]]
 // Convention: __watcallStack
-// Signature: int crt_fstream.cpp_filebuf_sync_FUN_0060dc5e(filebuf * this_ptr)
+// Signature: int __watcallStack crt_fstream_cpp_filebuf_sync_FUN_0060dc5e(filebuf *this_ptr)
 
 #include "nocturne.h"
 

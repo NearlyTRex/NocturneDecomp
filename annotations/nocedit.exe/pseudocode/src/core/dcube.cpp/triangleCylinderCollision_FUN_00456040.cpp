@@ -2,7 +2,7 @@
 // Address: 00456040
 // Address Range: [[00456040, 004563f6]]
 // Convention: __cdecl
-// Signature: uint core_dcube.cpp_triangleCylinderCollision_FUN_00456040(CDemonCubeTriangle * triangle, CVector3f * cylinder_center, float cylinder_radius, float * out_height)
+// Signature: uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456040 (CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius, float *out_height)
 
 #include "nocturne.h"
 

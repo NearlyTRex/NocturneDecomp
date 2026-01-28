@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_design.c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
+; __cdecl void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index

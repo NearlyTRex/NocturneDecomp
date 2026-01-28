@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_minecar.cpp_CMinecar_getActorType_FUN_00520e80(CMineCar * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_minecar_cpp_CMinecar_getActorType_FUN_00520e80(CMineCar *this_ptr)
 ;
 ; Parameters:
 ; CMineCar *       Stack[0x4]:4   this_ptr

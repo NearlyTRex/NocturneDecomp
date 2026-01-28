@@ -2,7 +2,7 @@
 // Address: 0059df80
 // Address Range: [[0059df80, 0059dffd]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(CDeformableModelInstance * this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80 (CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 

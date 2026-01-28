@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0(int enable)
+; __cdecl int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(int enable)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   enable

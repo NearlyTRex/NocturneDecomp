@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
+; __cdecl void __cdecl core_actor_cpp_drawTextLine_FUN_0040d240(int *y_position,char *text)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   y_position

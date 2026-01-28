@@ -2,7 +2,7 @@
 // Address: 00403950
 // Address Range: [[00403950, 004039ba]]
 // Convention: __cdecl
-// Signature: int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
+// Signature: int __cdecl engine_3d_c_isVisiblePlane_FUN_00403950(SClipPlane *plane)
 
 #include "nocturne.h"
 

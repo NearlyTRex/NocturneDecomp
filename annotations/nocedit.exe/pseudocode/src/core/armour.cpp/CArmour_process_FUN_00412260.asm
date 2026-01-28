@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_armour.cpp_CArmour_process_FUN_00412260(CArmour * this_ptr, float delta_time)
+; __cdecl void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr

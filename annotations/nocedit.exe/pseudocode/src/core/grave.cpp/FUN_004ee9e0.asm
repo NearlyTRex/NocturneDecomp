@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_grave.cpp_FUN_004ee9e0()
+; unknown void core_grave_cpp_FUN_004ee9e0(void)
 ;
 ;
 ; Referenced Globals:

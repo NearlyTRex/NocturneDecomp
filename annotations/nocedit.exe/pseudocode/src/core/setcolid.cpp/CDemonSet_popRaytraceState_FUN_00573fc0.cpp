@@ -2,7 +2,7 @@
 // Address: 00573fc0
 // Address Range: [[00573fc0, 0057416e]]
 // Convention: __cdecl
-// Signature: void core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet * this_ptr)
+// Signature: void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 

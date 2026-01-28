@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_teleport.cpp_CTeleport_getActorType_FUN_005da9d0(CTeleport * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_teleport_cpp_CTeleport_getActorType_FUN_005da9d0(CTeleport *this_ptr)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr

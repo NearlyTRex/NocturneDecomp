@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_tommygun.cpp_FUN_005de5a0()
+; unknown void core_tommygun_cpp_FUN_005de5a0(void)
 ;
 ;
 ; Called Functions:

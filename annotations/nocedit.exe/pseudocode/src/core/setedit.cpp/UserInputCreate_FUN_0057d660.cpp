@@ -2,7 +2,7 @@
 // Address: 0057d660
 // Address Range: [[0057d660, 0057e425]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_UserInputCreate_FUN_0057d660()
+// Signature: int core_setedit_cpp_UserInputCreate_FUN_0057d660 (undefined4 param_1,undefined4 param_2,void *unaff_EBX,undefined4 param_4, CDemonSet *param_5,int param_6)
 
 #include "nocturne.h"
 

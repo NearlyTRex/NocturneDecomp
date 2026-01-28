@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_vsscanf_FUN_00600100(char * str, char * format, va_list_t args)
+; __cdecl int __cdecl crt_stdio_c_vsscanf_FUN_00600100(char *str,char *format,va_list_t args)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

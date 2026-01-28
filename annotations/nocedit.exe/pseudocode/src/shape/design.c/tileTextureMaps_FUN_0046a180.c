@@ -2,7 +2,7 @@
 // Address: 0046a180
 // Address Range: [[0046a180, 0046a850]]
 // Convention: __cdecl
-// Signature: void shape_design.c_tileTextureMaps_FUN_0046a180(char * model_name, int prompt_for_model)
+// Signature: void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int prompt_for_model)
 
 #include "nocturne.h"
 

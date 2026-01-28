@@ -2,7 +2,7 @@
 // Address: 00503c90
 // Address Range: [[00503c90, 00503cbb]]
 // Convention: unknown
-// Signature: undefined core_larva.cpp_FUN_00503c90()
+// Signature: void core_larva_cpp_FUN_00503c90(void)
 
 #include "nocturne.h"
 

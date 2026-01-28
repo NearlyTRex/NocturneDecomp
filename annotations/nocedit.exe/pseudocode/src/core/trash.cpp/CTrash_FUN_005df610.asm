@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * core_trash.cpp_CTrash_FUN_005df610(CTrash * this_ptr)
+; __cdecl float * __cdecl core_trash_cpp_CTrash_FUN_005df610(CTrash *this_ptr)
 ;
 ; Parameters:
 ; CTrash *         Stack[0x4]:4   this_ptr

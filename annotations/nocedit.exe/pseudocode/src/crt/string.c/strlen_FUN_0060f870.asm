@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_string.c_strlen_FUN_0060f870(char * str)
+; __cdecl int __cdecl crt_string_c_strlen_FUN_0060f870(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

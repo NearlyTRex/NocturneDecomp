@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * crt_heap.c_TryResizeInPlace_FUN_00609974(void * ptr, ulong new_size)
+; __cdecl void * __cdecl crt_heap_c_TryResizeInPlace_FUN_00609974(void *ptr,ulong new_size)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

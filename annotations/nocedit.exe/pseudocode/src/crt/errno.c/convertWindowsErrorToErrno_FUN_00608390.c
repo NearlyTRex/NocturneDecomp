@@ -2,7 +2,7 @@
 // Address: 00608390
 // Address Range: [[00608390, 006083fb]]
 // Convention: __cdecl
-// Signature: int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
+// Signature: int __cdecl crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
 
 #include "nocturne.h"
 

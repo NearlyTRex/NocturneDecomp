@@ -2,7 +2,7 @@
 // Address: 005743c0
 // Address Range: [[005743c0, 005743d8]]
 // Convention: __cdecl
-// Signature: SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
+// Signature: SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo *this_ptr)
 
 #include "nocturne.h"
 

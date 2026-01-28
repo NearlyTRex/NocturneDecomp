@@ -2,7 +2,7 @@
 // Address: 00431830
 // Address Range: [[00431830, 0043186e]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_applyColorPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
+// Signature: void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_004319b0 (char *filename,void *bitmap_buffer,int bitmap_size,int palette_index)
 
 #include "nocturne.h"
 

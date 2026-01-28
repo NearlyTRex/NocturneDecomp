@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double core_xform.cpp_determinant_FUN_005f61c0(CMatrix3x4f * matrix)
+; __cdecl double __cdecl core_xform_cpp_determinant_FUN_005f61c0(CMatrix3x4f *matrix)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix

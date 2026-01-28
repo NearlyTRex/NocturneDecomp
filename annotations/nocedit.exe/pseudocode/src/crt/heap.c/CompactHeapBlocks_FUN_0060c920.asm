@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_heap.c_CompactHeapBlocks_FUN_0060c920(void)
+; __cdecl void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void)
 ;
 ;
 ; XREF[2]:

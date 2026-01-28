@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)
+; __watcallStack SIGNAL_HANDLER_TYPE __watcallStack crt_signal_c_setSignalHandler_FUN_0060ce60(int signal_number,SIGNAL_HANDLER_TYPE new_handler_type)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   signal_number

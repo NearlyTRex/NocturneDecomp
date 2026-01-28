@@ -2,7 +2,7 @@
 // Address: 004044a0
 // Address Range: [[004044a0, 00404536]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureNormalized_FUN_004044a0(SMRGLHeaderPrimitive * primitive)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureNormalized_FUN_004044a0(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 

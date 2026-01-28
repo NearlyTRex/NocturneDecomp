@@ -2,7 +2,7 @@
 // Address: 005853b0
 // Address Range: [[005853b0, 0058541f]]
 // Convention: __cdecl
-// Signature: void core_setutil.cpp_C3DSCamera_reset_FUN_005853b0(C3DSCamera * this_ptr)
+// Signature: void __cdecl core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(C3DSCamera *this_ptr)
 
 #include "nocturne.h"
 

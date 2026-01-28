@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined cockpit_ckptutil.c_FUN_004338f0()
+; unknown void cockpit_ckptutil_c_FUN_004338f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_testLodGeneration_FUN_0051ed60(void)
+; __cdecl void __cdecl shape_meshlod_cpp_testLodGeneration_FUN_0051ed60(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74

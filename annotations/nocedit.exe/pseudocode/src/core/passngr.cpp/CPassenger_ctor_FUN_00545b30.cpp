@@ -2,7 +2,7 @@
 // Address: 00545b30
 // Address Range: [[00545b30, 00545c01]]
 // Convention: __cdecl
-// Signature: CPassenger * core_passngr.cpp_CPassenger_ctor_FUN_00545b30(CPassenger * this_ptr)
+// Signature: CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00545b30(CPassenger *this_ptr)
 
 #include "nocturne.h"
 

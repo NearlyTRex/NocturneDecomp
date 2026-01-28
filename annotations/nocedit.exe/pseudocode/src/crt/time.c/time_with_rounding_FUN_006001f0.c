@@ -2,7 +2,7 @@
 // Address: 006001f0
 // Address Range: [[006001f0, 00600226]]
 // Convention: __cdecl
-// Signature: time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
+// Signature: time_t __cdecl crt_time_c_time_with_rounding_FUN_006001f0(time_t *optional_output)
 
 #include "nocturne.h"
 

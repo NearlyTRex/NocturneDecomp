@@ -2,7 +2,7 @@
 // Address: 00541c80
 // Address Range: [[00541c80, 00541e34]]
 // Convention: __cdecl
-// Signature: void core_netgame.cpp_CNetGame_updatePing_FUN_00541c80(CNetGame * this_ptr, int player_index, float max_ping)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80 (CNetGame *this_ptr,int player_index,float max_ping)
 
 #include "nocturne.h"
 

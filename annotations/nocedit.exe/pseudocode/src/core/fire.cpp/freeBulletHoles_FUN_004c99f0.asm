@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_fire.cpp_freeBulletHoles_FUN_004c99f0(CBulletHole * * array)
+; __cdecl void __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole **array)
 ;
 ; Parameters:
 ; CBulletHole * *  Stack[0x4]:4   array

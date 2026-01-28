@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0(CVector3f * * triangle_vertex_pointers, CVector3f * vertex_buffer)
+; __cdecl void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0 (CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
 ;
 ; Parameters:
 ; CVector3f * *    Stack[0x4]:4   triangle_vertex_pointers

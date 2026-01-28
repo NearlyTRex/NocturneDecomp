@@ -2,7 +2,7 @@
 // Address: 00432a10
 // Address Range: [[00432a10, 00432ae7]]
 // Convention: __cdecl
-// Signature: void cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10(void * sprite_data, void * unused_param, int start_x, int start_y, int end_x, int end_y)
+// Signature: void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_00432a10 (void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y)
 
 #include "nocturne.h"
 

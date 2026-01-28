@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70()
+; unknown void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110

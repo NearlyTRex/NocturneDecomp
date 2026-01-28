@@ -2,7 +2,7 @@
 // Address: 004125c0
 // Address Range: [[004125c0, 00412678]]
 // Convention: __cdecl
-// Signature: CEnemy * core_enemy.cpp_CEnemy_dtor_FUN_004125c0(CEnemy * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+// Signature: CEnemy * __cdecl core_enemy_cpp_CEnemy_dtor_FUN_004125c0 (CEnemy *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 
 #include "nocturne.h"
 

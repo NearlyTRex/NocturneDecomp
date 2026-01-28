@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SVertexBatch * vertex_source, SVertexBatch * processing_params)
+; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840 (SVertexBatch *vertex_source,SVertexBatch *processing_params)
 ;
 ; Parameters:
 ; SVertexBatch *   Stack[0x4]:4   vertex_source

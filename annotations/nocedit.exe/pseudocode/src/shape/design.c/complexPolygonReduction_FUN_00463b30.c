@@ -2,7 +2,7 @@
 // Address: 00463b30
 // Address Range: [[00463b30, 0046486c]]
 // Convention: __cdecl
-// Signature: int shape_design.c_complexPolygonReduction_FUN_00463b30(int selected_polygon_index)
+// Signature: int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_polygon_index)
 
 #include "nocturne.h"
 

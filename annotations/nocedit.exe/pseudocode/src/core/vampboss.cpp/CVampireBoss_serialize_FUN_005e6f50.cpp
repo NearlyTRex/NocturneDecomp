@@ -2,7 +2,7 @@
 // Address: 005e6f50
 // Address Range: [[005e6f50, 005e7023]]
 // Convention: __cdecl
-// Signature: void core_vampboss.cpp_CVampireBoss_serialize_FUN_005e6f50(CVampireBoss * this_ptr)
+// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_serialize_FUN_005e6f50(CVampireBoss *this_ptr)
 
 #include "nocturne.h"
 

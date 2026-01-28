@@ -2,7 +2,7 @@
 // Address: 0060acf0
 // Address Range: [[0060acf0, 0060ad24]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char, char * output_buffer)
+// Signature: int __cdecl crt_stdio_c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char,char *output_buffer)
 
 #include "nocturne.h"
 

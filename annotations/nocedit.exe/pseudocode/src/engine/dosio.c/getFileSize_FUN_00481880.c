@@ -2,7 +2,7 @@
 // Address: 00481880
 // Address Range: [[00481880, 004818cb]]
 // Convention: __cdecl
-// Signature: int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+// Signature: int __cdecl engine_dosio_c_getFileSize_FUN_00481880(char *directory,char *filename)
 
 #include "nocturne.h"
 

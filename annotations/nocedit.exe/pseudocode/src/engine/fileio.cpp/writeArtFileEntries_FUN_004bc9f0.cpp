@@ -2,7 +2,7 @@
 // Address: 004bc9f0
 // Address Range: [[004bc9f0, 004bca4d]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_writeArtFileEntries_FUN_004bc9f0(char * filename, FILE * * raw_file, FILE * * act_file)
+// Signature: void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,FILE **raw_file,FILE **act_file)
 
 #include "nocturne.h"
 

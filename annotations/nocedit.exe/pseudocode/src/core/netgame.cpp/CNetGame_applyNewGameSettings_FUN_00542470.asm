@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470()
+; unknown undefined4 core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x167]:4  local_167

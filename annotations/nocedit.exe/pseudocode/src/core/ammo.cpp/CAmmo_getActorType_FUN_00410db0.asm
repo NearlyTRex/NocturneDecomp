@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_ammo.cpp_CAmmo_getActorType_FUN_00410db0(CAmmo * this_ptr)
+; __cdecl CDemonActorType * __cdecl core_ammo_cpp_CAmmo_getActorType_FUN_00410db0(CAmmo *this_ptr)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

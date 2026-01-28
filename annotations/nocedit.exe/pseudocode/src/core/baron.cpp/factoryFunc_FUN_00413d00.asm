@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBaronWeapon * core_baron.cpp_factoryFunc_FUN_00413d00(void)
+; __cdecl CBaronWeapon * __cdecl core_baron_cpp_factoryFunc_FUN_00413d00(void)
 ;
 ;
 ; XREF[1]:

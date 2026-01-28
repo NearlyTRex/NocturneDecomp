@@ -2,7 +2,7 @@
 // Address: 004551d0
 // Address Range: [[004551d0, 0045524d]]
 // Convention: __cdecl
-// Signature: void core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0(CDemonCubeTriangle * this_ptr, FILE * file_handle, CVector3f * vertex_buffer_base)
+// Signature: void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0 (CDemonCubeTriangle *this_ptr,FILE *file_handle,CVector3f *vertex_buffer_base)
 
 #include "nocturne.h"
 

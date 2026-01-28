@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CConsole * engine_console.cpp_CConsole_dtor_FUN_00441880(CConsole * this_ptr)
+; __cdecl CConsole * __cdecl engine_console_cpp_CConsole_dtor_FUN_00441880(CConsole *this_ptr)
 ;
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr

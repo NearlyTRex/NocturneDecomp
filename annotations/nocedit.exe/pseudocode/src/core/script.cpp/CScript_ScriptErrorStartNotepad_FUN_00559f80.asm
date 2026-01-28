@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80()
+; unknown undefined4 core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x790]:1  local_790

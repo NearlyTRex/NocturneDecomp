@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSmiley * core_smiley.cpp_CSmiley_dtor_FUN_005a3880(CSmiley * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)
+; __cdecl CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_005a3880 (CSmiley *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
 ;
 ; Parameters:
 ; CSmiley *        Stack[0x4]:4   this_ptr

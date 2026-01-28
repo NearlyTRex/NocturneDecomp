@@ -2,7 +2,7 @@
 // Address: 005e8e20
 // Address Range: [[005e8e20, 005e8e42]]
 // Convention: __cdecl
-// Signature: CCryptVessel * core_vessel.cpp_factoryFunc_FUN_005e8e20(void)
+// Signature: CCryptVessel * __cdecl core_vessel_cpp_factoryFunc_FUN_005e8e20(void)
 
 #include "nocturne.h"
 

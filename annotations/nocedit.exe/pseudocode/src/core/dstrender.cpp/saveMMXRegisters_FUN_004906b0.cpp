@@ -2,7 +2,7 @@
 // Address: 004906b0
 // Address Range: [[004906b0, 004906e8]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_saveMMXRegisters_FUN_004906b0(void)
+// Signature: void __cdecl core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(void)
 
 #include "nocturne.h"
 

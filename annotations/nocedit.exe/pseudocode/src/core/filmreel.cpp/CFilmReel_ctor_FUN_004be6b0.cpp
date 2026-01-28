@@ -2,7 +2,7 @@
 // Address: 004be6b0
 // Address Range: [[004be6b0, 004be71c]]
 // Convention: __cdecl
-// Signature: CFilmReel * core_filmreel.cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel * this_ptr)
+// Signature: CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel *this_ptr)
 
 #include "nocturne.h"
 

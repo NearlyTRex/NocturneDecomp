@@ -2,7 +2,7 @@
 // Address: 0049a800
 // Address Range: [[0049a800, 0049a9fe]]
 // Convention: __cdecl
-// Signature: float core_dtri.cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
+// Signature: float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800 (CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection)
 
 #include "nocturne.h"
 

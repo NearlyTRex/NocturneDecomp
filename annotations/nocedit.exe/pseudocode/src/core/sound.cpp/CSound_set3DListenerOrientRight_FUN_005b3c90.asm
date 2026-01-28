@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)
+; __cdecl void __cdecl core_sound_cpp_CSound_set3DListenerOrientRight_FUN_005b3c90 (CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

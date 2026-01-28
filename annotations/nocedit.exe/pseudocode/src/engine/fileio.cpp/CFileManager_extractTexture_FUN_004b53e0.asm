@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0(CFileManager * this_ptr, char * texture_filename)
+; __cdecl void __cdecl engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0 (CFileManager *this_ptr,char *texture_filename)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

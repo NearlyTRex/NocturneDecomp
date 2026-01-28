@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_icepick.cpp_FUN_004f8c70()
+; unknown void core_icepick_cpp_FUN_004f8c70(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c

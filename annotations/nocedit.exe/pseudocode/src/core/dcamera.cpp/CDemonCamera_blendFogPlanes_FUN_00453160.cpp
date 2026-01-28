@@ -2,7 +2,7 @@
 // Address: 00453160
 // Address Range: [[00453160, 0045326a]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160(CDemonCamera * this_ptr, int plane_index, uint blend_alpha)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160 (CDemonCamera *this_ptr,int plane_index,uint blend_alpha)
 
 #include "nocturne.h"
 

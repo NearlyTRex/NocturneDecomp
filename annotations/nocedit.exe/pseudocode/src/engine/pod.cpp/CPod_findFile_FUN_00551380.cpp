@@ -2,7 +2,7 @@
 // Address: 00551380
 // Address Range: [[00551380, 005513cf]]
 // Convention: __cdecl
-// Signature: int engine_pod.cpp_CPod_findFile_FUN_00551380(CPod * this_ptr, SFoundFileInfo * found_file_info)
+// Signature: int __cdecl engine_pod_cpp_CPod_findFile_FUN_00551380(CPod *this_ptr,SFoundFileInfo *found_file_info)
 
 #include "nocturne.h"
 

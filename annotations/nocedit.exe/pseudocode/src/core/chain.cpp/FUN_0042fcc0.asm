@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_chain.cpp_FUN_0042fcc0()
+; unknown CVector3f * core_chain_cpp_FUN_0042fcc0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14

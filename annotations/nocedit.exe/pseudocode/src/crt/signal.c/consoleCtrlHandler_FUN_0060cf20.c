@@ -2,7 +2,7 @@
 // Address: 0060cf20
 // Address Range: [[0060cf20, 0060cf7e]]
 // Convention: __stdcall
-// Signature: BOOL crt_signal.c_consoleCtrlHandler_FUN_0060cf20(DWORD dwCtrlType)
+// Signature: BOOL __stdcall crt_signal_c_consoleCtrlHandler_FUN_0060cf20(DWORD dwCtrlType)
 
 #include "nocturne.h"
 

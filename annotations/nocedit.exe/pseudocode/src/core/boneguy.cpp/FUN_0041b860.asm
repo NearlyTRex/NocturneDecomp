@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boneguy.cpp_FUN_0041b860()
+; unknown float * core_boneguy_cpp_FUN_0041b860(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30

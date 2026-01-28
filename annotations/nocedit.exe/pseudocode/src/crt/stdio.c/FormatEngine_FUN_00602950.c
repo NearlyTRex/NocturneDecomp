@@ -2,7 +2,7 @@
 // Address: 00602950
 // Address Range: [[00602950, 00602d76]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_FormatEngine_FUN_00602950(void * output_context, char * format, va_list_t args, OUTPUT_CALLBACK callback)
+// Signature: int __cdecl crt_stdio_c_FormatEngine_FUN_00602950 (void *output_context,char *format,va_list_t args,OUTPUT_CALLBACK callback)
 
 #include "nocturne.h"
 

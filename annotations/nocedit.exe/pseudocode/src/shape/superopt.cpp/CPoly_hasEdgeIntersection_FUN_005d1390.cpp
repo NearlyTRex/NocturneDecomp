@@ -2,7 +2,7 @@
 // Address: 005d1390
 // Address Range: [[005d1390, 005d1f9a]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390(CPoly * this_ptr, CPoly * other)
+// Signature: int __cdecl shape_superopt_cpp_CPoly_hasEdgeIntersection_FUN_005d1390(CPoly *this_ptr,CPoly *other)
 
 #include "nocturne.h"
 

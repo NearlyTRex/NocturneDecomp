@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bugs.cpp_FUN_00424e50()
+; unknown void core_bugs_cpp_FUN_00424e50(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40

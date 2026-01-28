@@ -2,7 +2,7 @@
 // Address: 00403a20
 // Address Range: [[00403a20, 00403a7c]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * engine_3d.c_processVertexLighting_FUN_00403a20(SVertexBatch * vertex_batch)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00403a20(SVertexBatch *vertex_batch)
 
 #include "nocturne.h"
 

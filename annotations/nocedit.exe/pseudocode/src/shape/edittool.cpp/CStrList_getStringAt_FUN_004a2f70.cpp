@@ -2,7 +2,7 @@
 // Address: 004a2f70
 // Address Range: [[004a2f70, 004a2f7e]]
 // Convention: __cdecl
-// Signature: char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
+// Signature: char * __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(CStrList *this_ptr,int index)
 
 #include "nocturne.h"
 

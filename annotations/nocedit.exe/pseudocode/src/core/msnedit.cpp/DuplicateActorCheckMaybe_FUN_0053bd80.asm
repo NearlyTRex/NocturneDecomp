@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80()
+; unknown void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xa4]:1  local_a4

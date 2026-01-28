@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int * core_bat.cpp_CBat_FUN_00414c60(CBat * this_ptr)
+; __cdecl int * __cdecl core_bat_cpp_CBat_FUN_00414c60(CBat *this_ptr)
 ;
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr

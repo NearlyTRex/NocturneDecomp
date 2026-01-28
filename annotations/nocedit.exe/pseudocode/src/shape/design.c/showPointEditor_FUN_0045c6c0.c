@@ -2,7 +2,7 @@
 // Address: 0045c6c0
 // Address Range: [[0045c6c0, 0045c841] [0045c844, 0045ca46] [0045ca49, 0045ca9e]]
 // Convention: __cdecl
-// Signature: void shape_design.c_showPointEditor_FUN_0045c6c0(void)
+// Signature: void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
 
 #include "nocturne.h"
 

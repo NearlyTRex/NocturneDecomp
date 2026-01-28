@@ -2,7 +2,7 @@
 // Address: 00601b14
 // Address Range: [[00601b14, 00601ba5]]
 // Convention: __cdecl
-// Signature: FILE * crt_stdio.c_fopenThreadSafe_FUN_00601b14(char * filename, char * mode, FILE * * output_file_ptr)
+// Signature: FILE * __cdecl crt_stdio_c_fopenThreadSafe_FUN_00601b14(char *filename,char *mode,FILE **output_file_ptr)
 
 #include "nocturne.h"
 

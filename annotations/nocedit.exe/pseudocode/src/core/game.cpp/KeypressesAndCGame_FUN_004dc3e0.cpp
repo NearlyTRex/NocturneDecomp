@@ -2,7 +2,7 @@
 // Address: 004dc3e0
 // Address Range: [[004dc3e0, 004dccb4]]
 // Convention: __cdecl
-// Signature: void core_game.cpp_KeypressesAndCGame_FUN_004dc3e0(CGame * game, SPlayerControl * ctrl)
+// Signature: void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerControl *ctrl)
 
 #include "nocturne.h"
 

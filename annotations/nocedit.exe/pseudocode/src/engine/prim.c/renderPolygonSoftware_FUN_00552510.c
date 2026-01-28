@@ -2,7 +2,7 @@
 // Address: 00552510
 // Address Range: [[00552510, 00552a30]]
 // Convention: __cdecl
-// Signature: void engine_prim.c_renderPolygonSoftware_FUN_00552510(SRenderVertex * vertices, int vertex_count)
+// Signature: void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 00470000
 // Address Range: [[00470000, 0047005b]]
 // Convention: __cdecl
-// Signature: void core_dfilter.cpp_CFilterCache_free_FUN_00470000(CFilterCache * this_ptr)
+// Signature: void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_00470000(CFilterCache *this_ptr)
 
 #include "nocturne.h"
 

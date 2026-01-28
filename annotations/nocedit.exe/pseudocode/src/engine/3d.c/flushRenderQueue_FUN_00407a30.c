@@ -2,7 +2,7 @@
 // Address: 00407a30
 // Address Range: [[00407a30, 00407a99]]
 // Convention: __cdecl
-// Signature: void engine_3d.c_flushRenderQueue_FUN_00407a30(void)
+// Signature: void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void)
 
 #include "nocturne.h"
 

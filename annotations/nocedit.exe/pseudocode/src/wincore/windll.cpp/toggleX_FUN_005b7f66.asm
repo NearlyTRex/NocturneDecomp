@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int wincore_windll.cpp_toggleX_FUN_005b7f66(void)
+; __cdecl int __cdecl wincore_windll_cpp_toggleX_FUN_005b7f66(void)
 ;
 ;
 ; Referenced Globals:

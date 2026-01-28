@@ -2,7 +2,7 @@
 // Address: 004179a0
 // Address Range: [[004179a0, 00417bac]]
 // Convention: unknown
-// Signature: undefined core_batman.cpp_FUN_004179a0()
+// Signature: void core_batman_cpp_FUN_004179a0(void)
 
 #include "nocturne.h"
 

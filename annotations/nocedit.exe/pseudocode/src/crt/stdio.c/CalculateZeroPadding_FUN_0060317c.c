@@ -2,7 +2,7 @@
 // Address: 0060317c
 // Address Range: [[0060317c, 006031be]]
 // Convention: __cdecl
-// Signature: void crt_stdio.c_CalculateZeroPadding_FUN_0060317c(FormatSpec * spec_info)
+// Signature: void __cdecl crt_stdio_c_CalculateZeroPadding_FUN_0060317c(FormatSpec *spec_info)
 
 #include "nocturne.h"
 

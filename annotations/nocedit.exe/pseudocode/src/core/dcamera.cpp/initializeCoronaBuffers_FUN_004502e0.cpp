@@ -2,7 +2,7 @@
 // Address: 004502e0
 // Address Range: [[004502e0, 00450313]]
 // Convention: __cdecl
-// Signature: void core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0(void)
+// Signature: void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_morph.cpp_freeMorphModels_FUN_0052cd10(CMorphModel * * array)
+; __cdecl void __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel **array)
 ;
 ; Parameters:
 ; CMorphModel * *  Stack[0x4]:4   array

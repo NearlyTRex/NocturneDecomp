@@ -2,7 +2,7 @@
 // Address: 005a23f0
 // Address Range: [[005a23f0, 005a2412]]
 // Convention: __cdecl
-// Signature: CSmiley * core_smiley.cpp_factorFunc_FUN_005a23f0(void)
+// Signature: CSmiley * __cdecl core_smiley_cpp_factorFunc_FUN_005a23f0(void)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0057bbe0
 // Address Range: [[0057bbe0, 0057c544]]
 // Convention: unknown
-// Signature: undefined core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0()
+// Signature: void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
 
 #include "nocturne.h"
 

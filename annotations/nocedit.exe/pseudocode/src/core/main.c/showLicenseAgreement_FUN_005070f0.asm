@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_main.c_showLicenseAgreement_FUN_005070f0(void)
+; __cdecl int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x410]:1  local_410

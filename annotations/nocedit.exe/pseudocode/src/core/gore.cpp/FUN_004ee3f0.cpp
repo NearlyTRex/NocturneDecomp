@@ -2,7 +2,7 @@
 // Address: 004ee3f0
 // Address Range: [[004ee3f0, 004ee404]]
 // Convention: __cdecl
-// Signature: CBloodParticle * core_gore.cpp_FUN_004ee3f0(CBloodParticle * this_ptr)
+// Signature: CBloodParticle * __cdecl core_gore_cpp_FUN_004ee3f0(CBloodParticle *this_ptr)
 
 #include "nocturne.h"
 

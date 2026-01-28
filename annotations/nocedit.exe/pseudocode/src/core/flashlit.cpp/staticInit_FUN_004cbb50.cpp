@@ -2,7 +2,7 @@
 // Address: 004cbb50
 // Address Range: [[004cbb50, 004cbb73]]
 // Convention: __cdecl
-// Signature: void core_flashlit.cpp_staticInit_FUN_004cbb50(void)
+// Signature: void __cdecl core_flashlit_cpp_staticInit_FUN_004cbb50(void)
 
 #include "nocturne.h"
 

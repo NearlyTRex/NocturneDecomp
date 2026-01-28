@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_winrun.cpp_initJoystick_FUN_005f4310(void)
+; __cdecl void __cdecl wincore_winrun_cpp_initJoystick_FUN_005f4310(void)
 ;
 ;
 ; XREF[1]:

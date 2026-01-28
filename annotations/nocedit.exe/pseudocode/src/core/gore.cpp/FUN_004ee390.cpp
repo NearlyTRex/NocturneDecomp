@@ -2,7 +2,7 @@
 // Address: 004ee390
 // Address Range: [[004ee390, 004ee3a5]]
 // Convention: __cdecl
-// Signature: CFootstep * core_gore.cpp_FUN_004ee390(CFootstep * this_ptr)
+// Signature: CFootstep * __cdecl core_gore_cpp_FUN_004ee390(CFootstep *this_ptr)
 
 #include "nocturne.h"
 

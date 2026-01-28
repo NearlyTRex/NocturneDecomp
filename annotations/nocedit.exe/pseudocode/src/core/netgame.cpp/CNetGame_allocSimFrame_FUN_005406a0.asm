@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0(CNetGame * this_ptr, SNetworkAddr * source_addr, char * packet_data)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0 (CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)
 ;
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr

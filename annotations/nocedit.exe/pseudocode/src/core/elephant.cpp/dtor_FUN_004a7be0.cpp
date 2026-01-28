@@ -2,7 +2,7 @@
 // Address: 004a7be0
 // Address Range: [[004a7be0, 004a7c2d]]
 // Convention: __cdecl
-// Signature: void * core_elephant.cpp_dtor_FUN_004a7be0(CElephantGun * this_ptr, uint d1, uint d2)
+// Signature: void * __cdecl core_elephant_cpp_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint d1,uint d2)
 
 #include "nocturne.h"
 

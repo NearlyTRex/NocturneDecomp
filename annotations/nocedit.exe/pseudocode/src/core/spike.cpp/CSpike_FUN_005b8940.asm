@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_spike.cpp_CSpike_FUN_005b8940(CSpike * this_ptr)
+; __cdecl int __cdecl core_spike_cpp_CSpike_FUN_005b8940(CSpike *this_ptr)
 ;
 ; Parameters:
 ; CSpike *         Stack[0x4]:4   this_ptr

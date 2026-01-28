@@ -2,7 +2,7 @@
 // Address: 004fd0e0
 // Address Range: [[004fd0e0, 004fd180]]
 // Convention: __cdecl
-// Signature: void core_inv.cpp_CInventory_clear_FUN_004fd0e0(CInventory * this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_clear_FUN_004fd0e0(CInventory *this_ptr)
 
 #include "nocturne.h"
 

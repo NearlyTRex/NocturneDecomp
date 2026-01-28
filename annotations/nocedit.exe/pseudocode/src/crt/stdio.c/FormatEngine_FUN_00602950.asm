@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int crt_stdio.c_FormatEngine_FUN_00602950(void * output_context, char * format, va_list_t args, OUTPUT_CALLBACK callback)
+; __cdecl int __cdecl crt_stdio_c_FormatEngine_FUN_00602950 (void *output_context,char *format,va_list_t args,OUTPUT_CALLBACK callback)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   output_context

@@ -2,7 +2,7 @@
 // Address: 0045d1d0
 // Address Range: [[0045d1d0, 0045d2fb]]
 // Convention: __cdecl
-// Signature: void shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index, int * color_value)
+// Signature: void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)
 
 #include "nocturne.h"
 

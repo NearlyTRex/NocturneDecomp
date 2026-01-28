@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * core_glass.cpp_CGlass_getBoundingBox_FUN_004ea030(CGlass * this_ptr, CBoundingBox3D * out_box)
+; __cdecl CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004ea030(CGlass *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr

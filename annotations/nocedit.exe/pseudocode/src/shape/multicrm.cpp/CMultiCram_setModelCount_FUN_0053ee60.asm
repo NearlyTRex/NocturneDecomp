@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int * shape_multicrm.cpp_CMultiCram_setModelCount_FUN_0053ee60(CMultiCram * this_ptr, int * model_count)
+; __cdecl int * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount_FUN_0053ee60(CMultiCram *this_ptr,int *model_count)
 ;
 ; Parameters:
 ; CMultiCram *     Stack[0x4]:4   this_ptr

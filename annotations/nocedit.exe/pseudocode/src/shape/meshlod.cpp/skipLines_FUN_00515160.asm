@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_meshlod.cpp_skipLines_FUN_00515160(FILE * file_handle, int line_count)
+; __cdecl void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(FILE *file_handle,int line_count)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

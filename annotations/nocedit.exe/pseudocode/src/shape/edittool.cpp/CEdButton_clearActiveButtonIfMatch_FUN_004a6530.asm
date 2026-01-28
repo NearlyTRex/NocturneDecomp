@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(CEdButton * this_ptr)
+; __cdecl void __cdecl shape_edittool_cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(CEdButton *this_ptr)
 ;
 ; Parameters:
 ; CEdButton *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)
+; __cdecl void __cdecl core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970 (CDeformableModelInstance *model_ptr,char *property_name)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   model_ptr

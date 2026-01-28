@@ -2,7 +2,7 @@
 // Address: 00487450
 // Address Range: [[00487450, 00487464]]
 // Convention: __cdecl
-// Signature: void cockpit_drawsurf.cpp_CDrawSurface_setColorCyan_FUN_00487450(void)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColorCyan_FUN_00487450(void)
 
 #include "nocturne.h"
 

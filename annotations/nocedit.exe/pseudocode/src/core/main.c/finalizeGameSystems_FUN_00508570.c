@@ -2,7 +2,7 @@
 // Address: 00508570
 // Address Range: [[00508570, 0050885a]]
 // Convention: unknown
-// Signature: undefined core_main.c_finalizeGameSystems_FUN_00508570()
+// Signature: void core_main_c_finalizeGameSystems_FUN_00508570(void)
 
 #include "nocturne.h"
 

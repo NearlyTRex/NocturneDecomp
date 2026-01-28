@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290(double pos_x, double pos_y, double pos_z, double radius)
+; __cdecl int __cdecl sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290 (double pos_x,double pos_y,double pos_z,double radius)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   pos_x

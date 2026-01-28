@@ -2,7 +2,7 @@
 // Address: 0040c610
 // Address Range: [[0040c610, 0040c6c1]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_matchClassExpression_FUN_0040c610(CDemonActorType * type_ptr, char * * parse_pos)
+// Signature: int __cdecl core_actor_cpp_matchClassExpression_FUN_0040c610(CDemonActorType *type_ptr,char **parse_pos)
 
 #include "nocturne.h"
 

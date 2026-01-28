@@ -2,7 +2,7 @@
 // Address: 0049cfb0
 // Address Range: [[0049cfb0, 0049d11a]]
 // Convention: __cdecl
-// Signature: void core_dynamite.cpp_CDynamite_process_FUN_0049cfb0(CDynamite * this_ptr, float delta_time)
+// Signature: void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

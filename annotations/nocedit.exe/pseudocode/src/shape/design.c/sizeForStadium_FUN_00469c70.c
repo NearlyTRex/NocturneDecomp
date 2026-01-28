@@ -2,7 +2,7 @@
 // Address: 00469c70
 // Address Range: [[00469c70, 00469edd]]
 // Convention: __cdecl
-// Signature: void shape_design.c_sizeForStadium_FUN_00469c70(void)
+// Signature: void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
 
 #include "nocturne.h"
 

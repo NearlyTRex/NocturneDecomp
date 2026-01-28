@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+; __cdecl FILE * __cdecl engine_dosio_c_getFile_FUN_00481a50(char *directory,char *filename,char *mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   directory

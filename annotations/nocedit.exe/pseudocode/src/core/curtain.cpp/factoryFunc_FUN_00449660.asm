@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCurtain * core_curtain.cpp_factoryFunc_FUN_00449660(void)
+; __cdecl CCurtain * __cdecl core_curtain_cpp_factoryFunc_FUN_00449660(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_script.cpp_CScript_unk50_FUN_00566660()
+; unknown void core_script_cpp_CScript_unk50_FUN_00566660(void)
 ;
 ;
 ; XREF[2]:

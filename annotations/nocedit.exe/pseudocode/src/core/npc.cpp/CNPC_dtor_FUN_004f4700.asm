@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CNPC * core_npc.cpp_CNPC_dtor_FUN_004f4700(CNPC * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9)
+; __cdecl CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_004f4700 (CNPC *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8,uint d9)
 ;
 ; Parameters:
 ; CNPC *           Stack[0x4]:4   this_ptr

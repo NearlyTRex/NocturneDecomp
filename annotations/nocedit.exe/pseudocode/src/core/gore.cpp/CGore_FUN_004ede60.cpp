@@ -2,7 +2,7 @@
 // Address: 004ede60
 // Address Range: [[004ede60, 004edf2a]]
 // Convention: __cdecl
-// Signature: void core_gore.cpp_CGore_FUN_004ede60(CGore * this_ptr)
+// Signature: void __cdecl core_gore_cpp_CGore_FUN_004ede60(CGore *this_ptr)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 004edde0
 // Address Range: [[004edde0, 004ede22]]
 // Convention: unknown
-// Signature: undefined core_gore.cpp_FUN_004edde0()
+// Signature: CBloodPool * core_gore_cpp_FUN_004edde0(void)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0(void)
+; __cdecl void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
 ;
 ;
 ; XREF[1]:

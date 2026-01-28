@@ -2,7 +2,7 @@
 // Address: 004be590
 // Address Range: [[004be590, 004be616]]
 // Convention: __cdecl
-// Signature: void core_fileman.cpp_refreshSoundDirectory_FUN_004be590(FILE * file_list_output, char * source_directory)
+// Signature: void __cdecl core_fileman_cpp_refreshSoundDirectory_FUN_004be590(FILE *file_list_output,char *source_directory)
 
 #include "nocturne.h"
 

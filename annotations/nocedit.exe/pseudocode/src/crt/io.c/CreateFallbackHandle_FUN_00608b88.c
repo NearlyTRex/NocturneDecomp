@@ -2,7 +2,7 @@
 // Address: 00608b88
 // Address Range: [[00608b88, 00608bac]]
 // Convention: __cdecl
-// Signature: HANDLE crt_io.c_CreateFallbackHandle_FUN_00608b88(void)
+// Signature: HANDLE __cdecl crt_io_c_CreateFallbackHandle_FUN_00608b88(void)
 
 #include "nocturne.h"
 

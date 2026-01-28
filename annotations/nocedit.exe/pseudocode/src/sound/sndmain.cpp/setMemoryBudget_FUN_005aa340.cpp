@@ -2,7 +2,7 @@
 // Address: 005aa340
 // Address Range: [[005aa340, 005aa35c]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setMemoryBudget_FUN_005aa340(int min_bytes, int max_bytes)
+// Signature: void __cdecl sound_sndmain_cpp_setMemoryBudget_FUN_005aa340(int min_bytes,int max_bytes)
 
 #include "nocturne.h"
 

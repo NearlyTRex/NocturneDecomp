@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBride * this_ptr)
+; __cdecl int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBride *this_ptr)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr

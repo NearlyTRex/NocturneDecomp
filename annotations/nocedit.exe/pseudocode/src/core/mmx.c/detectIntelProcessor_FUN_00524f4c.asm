@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_mmx.c_detectIntelProcessor_FUN_00524f4c(void)
+; __cdecl void __cdecl core_mmx_c_detectIntelProcessor_FUN_00524f4c(void)
 ;
 ;
 ; XREF[2]:

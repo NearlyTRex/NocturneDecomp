@@ -2,7 +2,7 @@
 // Address: 00505890
 // Address Range: [[00505890, 005058b3]]
 // Convention: __cdecl
-// Signature: void core_lightgun.cpp_staticInit_FUN_00505890(void)
+// Signature: void __cdecl core_lightgun_cpp_staticInit_FUN_00505890(void)
 
 #include "nocturne.h"
 

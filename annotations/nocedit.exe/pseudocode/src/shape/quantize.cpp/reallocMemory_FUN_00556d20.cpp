@@ -2,7 +2,7 @@
 // Address: 00556d20
 // Address Range: [[00556d20, 00556d39]]
 // Convention: __cdecl
-// Signature: void shape_quantize.cpp_reallocMemory_FUN_00556d20(void * ptr, int new_size)
+// Signature: void __cdecl shape_quantize_cpp_reallocMemory_FUN_00556d20(void *ptr,int new_size)
 
 #include "nocturne.h"
 

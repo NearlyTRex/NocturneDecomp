@@ -2,7 +2,7 @@
 // Address: 004b53e0
 // Address Range: [[004b53e0, 004b54d0]]
 // Convention: __cdecl
-// Signature: void engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0(CFileManager * this_ptr, char * texture_filename)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0 (CFileManager *this_ptr,char *texture_filename)
 
 #include "nocturne.h"
 

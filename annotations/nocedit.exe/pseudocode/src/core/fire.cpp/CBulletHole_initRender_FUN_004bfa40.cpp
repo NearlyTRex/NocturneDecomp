@@ -2,7 +2,7 @@
 // Address: 004bfa40
 // Address Range: [[004bfa40, 004bfabf]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole * this_ptr)
+// Signature: void __cdecl core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole *this_ptr)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_morph.cpp_freeMorphControlPoints_FUN_0052ccb0(SMorphControlPoint * * array)
+; __cdecl void __cdecl core_morph_cpp_freeMorphControlPoints_FUN_0052ccb0(SMorphControlPoint **array)
 ;
 ; Parameters:
 ; SMorphControlPoint * * Stack[0x4]:4   array

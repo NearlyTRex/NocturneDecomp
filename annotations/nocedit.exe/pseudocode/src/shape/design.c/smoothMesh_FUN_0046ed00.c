@@ -2,7 +2,7 @@
 // Address: 0046ed00
 // Address Range: [[0046ed00, 0046ed4a]]
 // Convention: __cdecl
-// Signature: void shape_design.c_smoothMesh_FUN_0046ed00(void)
+// Signature: void __cdecl shape_design_c_smoothMesh_FUN_0046ed00(void)
 
 #include "nocturne.h"
 

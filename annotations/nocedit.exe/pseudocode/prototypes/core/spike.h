@@ -5,60 +5,60 @@
 
 // Original: core_spike.cpp_staticInit_FUN_005b81b0
 // Address: 005b81b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spike.cpp_factoryFunc_FUN_005b81e0
 // Address: 005b81e0
-CSpike * factoryFunc(void);
+CSpike * __cdecl factoryFunc(void);
 
 // Original: core_spike.cpp_CSpike_getActorType_FUN_005b8210
 // Address: 005b8210
-CDemonActorType * CSpike::getActorType(CSpike * this_ptr);
+CDemonActorType * __cdecl CSpike::getActorType(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_ctor_FUN_005b8220
 // Address: 005b8220
-CSpike * CSpike::ctor(CSpike * this_ptr);
+CSpike * __cdecl CSpike::ctor(CSpike *this_ptr);
 
 // Original: core_spike.cpp_FUN_005b8360
 // Address: 005b8360
-undefined FUN_005b8360();
+void FUN_005b8360(void);
 
 // Original: core_spike.cpp_FUN_005b8410
 // Address: 005b8410
-undefined FUN_005b8410();
+void FUN_005b8410(void);
 
 // Original: core_spike.cpp_FUN_005b8730
 // Address: 005b8730
-undefined FUN_005b8730();
+int FUN_005b8730(void);
 
 // Original: core_spike.cpp_FUN_005b87a0
 // Address: 005b87a0
-undefined FUN_005b87a0();
+float * FUN_005b87a0(void);
 
 // Original: core_spike.cpp_CSpike_load_FUN_005b87f0
 // Address: 005b87f0
-undefined CSpike::load();
+void CSpike::load(void);
 
 // Original: core_spike.cpp_CSpike_FUN_005b8940
 // Address: 005b8940
-int CSpike(CSpike * this_ptr);
+int __cdecl CSpike(CSpike *this_ptr);
 
 // Original: core_spike.cpp_FUN_005b8950
 // Address: 005b8950
-undefined FUN_005b8950();
+void FUN_005b8950(void);
 
 // Original: core_spike.cpp_FUN_005b8e90
 // Address: 005b8e90
-undefined FUN_005b8e90();
+void FUN_005b8e90(void);
 
 // Original: core_spike.cpp_CSpike_FUN_005b9020
 // Address: 005b9020
-void CSpike(CSpike * this_ptr);
+void __cdecl CSpike(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_FUN_005b9030
 // Address: 005b9030
-void CSpike(CSpike * this_ptr);
+void __cdecl CSpike(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_dtor_FUN_005b9050
 // Address: 005b9050
-CSpike * CSpike::dtor(CSpike * this_ptr, uint d1, uint d2);
+CSpike * __cdecl CSpike::dtor(CSpike *this_ptr,uint d1,uint d2);

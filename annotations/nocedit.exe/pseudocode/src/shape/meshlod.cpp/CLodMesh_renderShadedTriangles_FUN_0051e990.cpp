@@ -2,7 +2,7 @@
 // Address: 0051e990
 // Address Range: [[0051e990, 0051eac3]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodMesh * this_ptr, int use_palette_coloring)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (CLodMesh *this_ptr,int use_palette_coloring)
 
 #include "nocturne.h"
 

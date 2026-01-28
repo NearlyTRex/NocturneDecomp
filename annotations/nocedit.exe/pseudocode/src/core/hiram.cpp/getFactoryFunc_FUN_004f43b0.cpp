@@ -2,7 +2,7 @@
 // Address: 004f43b0
 // Address Range: [[004f43b0, 004f43d2]]
 // Convention: __cdecl
-// Signature: CHiram * core_hiram.cpp_getFactoryFunc_FUN_004f43b0(void)
+// Signature: CHiram * __cdecl core_hiram_cpp_getFactoryFunc_FUN_004f43b0(void)
 
 #include "nocturne.h"
 

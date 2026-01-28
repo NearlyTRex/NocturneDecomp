@@ -2,7 +2,7 @@
 // Address: 0059f260
 // Address Range: [[0059f260, 0059f6dc]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, CVector3f * source_position, float blend_weight, int bone_index, CDeformableModel_MotionBlendWeightFunc * blend_callback)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions, CVector3f *source_position,float blend_weight,int bone_index, CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 #include "nocturne.h"
 

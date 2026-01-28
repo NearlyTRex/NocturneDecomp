@@ -2,7 +2,7 @@
 // Address: 0048de20
 // Address Range: [[0048de20, 0048df73]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20(CDemonRenderer * this_ptr, SCameraViewportState * output_state)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20 (CDemonRenderer *this_ptr,SCameraViewportState *output_state)
 
 #include "nocturne.h"
 

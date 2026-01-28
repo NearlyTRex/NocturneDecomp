@@ -2,7 +2,7 @@
 // Address: 0040c1c0
 // Address Range: [[0040c1c0, 0040c25a]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0(CDemonActor * this_ptr)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 

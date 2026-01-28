@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_npc.cpp_FUN_00544c50()
+; unknown undefined4 core_npc_cpp_FUN_00544c50(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xd8]:1  local_d8

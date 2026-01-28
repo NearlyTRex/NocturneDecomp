@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_frankgen.cpp_staticInit_FUN_004d16b0(void)
+; __cdecl void __cdecl core_frankgen_cpp_staticInit_FUN_004d16b0(void)
 ;
 ;
 ; Referenced Globals:

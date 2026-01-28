@@ -2,7 +2,7 @@
 // Address: 005447e0
 // Address Range: [[005447e0, 00544869]]
 // Convention: __cdecl
-// Signature: CNPC * core_npc.cpp_CNPC_ctor_FUN_005447e0(CNPC * this_ptr)
+// Signature: CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_005447e0(CNPC *this_ptr)
 
 #include "nocturne.h"
 

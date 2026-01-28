@@ -2,7 +2,7 @@
 // Address: 004eb690
 // Address Range: [[004eb690, 004eb812]]
 // Convention: __cdecl
-// Signature: void core_glass.cpp_CGlass_writeDependencies_FUN_004eb690(CGlass * this_ptr, FILE * file_handle)
+// Signature: void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,FILE *file_handle)
 
 #include "nocturne.h"
 

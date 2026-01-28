@@ -2,7 +2,7 @@
 // Address: 004907e7
 // Address Range: [[004907e7, 00490901]]
 // Convention: __cdecl
-// Signature: void core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 

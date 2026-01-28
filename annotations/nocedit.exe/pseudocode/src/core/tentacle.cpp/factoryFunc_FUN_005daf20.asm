@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTentacle * core_tentacle.cpp_factoryFunc_FUN_005daf20(void)
+; __cdecl CTentacle * __cdecl core_tentacle_cpp_factoryFunc_FUN_005daf20(void)
 ;
 ;
 ; XREF[1]:

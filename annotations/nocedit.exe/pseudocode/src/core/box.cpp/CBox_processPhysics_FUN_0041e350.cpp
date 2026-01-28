@@ -2,7 +2,7 @@
 // Address: 0041e350
 // Address Range: [[0041e350, 0041effe]]
 // Convention: __cdecl
-// Signature: void core_box.cpp_CBox_processPhysics_FUN_0041e350(CBox * this_ptr, float delta_time)
+// Signature: void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float delta_time)
 
 #include "nocturne.h"
 

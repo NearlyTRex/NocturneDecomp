@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_bride.cpp_FUN_00424800()
+; unknown void core_bride_cpp_FUN_00424800(undefined4 param_1,undefined4 param_2,int unaff_EBX)
 ;
 ;
 ; Referenced Globals:

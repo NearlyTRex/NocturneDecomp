@@ -2,7 +2,7 @@
 // Address: 00600162
 // Address Range: [[00600162, 0060019e]]
 // Convention: __fpustack
-// Signature: double crt_math.c_acos_FUN_00600162(double x)
+// Signature: double __fpustack crt_math_c_acos_FUN_00600162(double x)
 
 #include "nocturne.h"
 

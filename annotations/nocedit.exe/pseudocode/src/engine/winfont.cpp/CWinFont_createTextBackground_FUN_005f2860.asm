@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860(CWinFont * this_ptr, int width, int height)
+; __cdecl int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860 (CWinFont *this_ptr,int width,int height)
 ;
 ; Parameters:
 ; CWinFont *       Stack[0x4]:4   this_ptr

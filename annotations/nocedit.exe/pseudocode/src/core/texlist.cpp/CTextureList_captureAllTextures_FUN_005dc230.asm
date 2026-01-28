@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_texlist.cpp_CTextureList_captureAllTextures_FUN_005dc230(CTextureList * this_ptr)
+; __cdecl void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_005dc230(CTextureList *this_ptr)
 ;
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr

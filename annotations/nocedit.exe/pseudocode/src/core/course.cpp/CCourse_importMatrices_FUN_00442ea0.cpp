@@ -2,7 +2,7 @@
 // Address: 00442ea0
 // Address Range: [[00442ea0, 0044303c]]
 // Convention: __cdecl
-// Signature: void core_course.cpp_CCourse_importMatrices_FUN_00442ea0(CCourse * this_ptr)
+// Signature: void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr)
 
 #include "nocturne.h"
 

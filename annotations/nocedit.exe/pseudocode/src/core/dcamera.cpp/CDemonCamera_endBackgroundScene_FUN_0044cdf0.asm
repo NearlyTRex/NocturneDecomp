@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera * this_ptr, int restore_zbuffer)
+; __cdecl int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 (CDemonCamera *this_ptr,int restore_zbuffer)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

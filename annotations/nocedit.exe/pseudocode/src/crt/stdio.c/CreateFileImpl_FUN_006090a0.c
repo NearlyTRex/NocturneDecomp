@@ -2,7 +2,7 @@
 // Address: 006090a0
 // Address Range: [[006090a0, 006092e0]]
 // Convention: __cdecl
-// Signature: HANDLE crt_stdio.c_CreateFileImpl_FUN_006090a0(char * filename, dword access_mode, dword share_mode, va_list_t * extra_args)
+// Signature: HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_006090a0 (char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
 
 #include "nocturne.h"
 

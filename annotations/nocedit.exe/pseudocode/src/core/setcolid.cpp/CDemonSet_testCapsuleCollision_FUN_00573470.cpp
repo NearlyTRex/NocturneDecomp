@@ -2,7 +2,7 @@
 // Address: 00573470
 // Address Range: [[00573470, 00573e04]]
 // Convention: __cdecl
-// Signature: float core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, float dir_z, float radius, void * user_data1, void * user_data2)
+// Signature: float __cdecl core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470 (CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius, void *user_data1,void *user_data2)
 
 #include "nocturne.h"
 

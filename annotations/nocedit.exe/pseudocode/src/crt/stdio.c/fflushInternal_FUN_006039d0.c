@@ -2,7 +2,7 @@
 // Address: 006039d0
 // Address Range: [[006039d0, 00603af6]]
 // Convention: __watcallStack
-// Signature: int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+// Signature: int __watcallStack crt_stdio_c_fflushInternal_FUN_006039d0(FILE *file_handle)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 0052f170
 // Address Range: [[0052f170, 0052f24e]]
 // Convention: __cdecl
-// Signature: uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170(CMP3Decoder * this_ptr, uint num_bits)
+// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(CMP3Decoder *this_ptr,uint num_bits)
 
 #include "nocturne.h"
 

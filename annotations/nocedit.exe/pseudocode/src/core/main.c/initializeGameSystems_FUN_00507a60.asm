@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_main.c_initializeGameSystems_FUN_00507a60(void)
+; __cdecl void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
 ;
 ; Local Variables:
 ; char[512]        Stack[-0x528]:512  low_memory_message

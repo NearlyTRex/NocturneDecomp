@@ -2,7 +2,7 @@
 // Address: 00431870
 // Address Range: [[00431870, 004319a8]]
 // Convention: __cdecl
-// Signature: void * cockpit_ckptutil.c_readBitmapFile_FUN_00431870(char * filename, void * buffer, int size)
+// Signature: void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,void *buffer,int size)
 
 #include "nocturne.h"
 

@@ -2,7 +2,7 @@
 // Address: 005dd970
 // Address Range: [[005dd970, 005dd984]]
 // Convention: __cdecl
-// Signature: void engine_texture.cpp_getTextureCacheStats_FUN_005dd970(char * output_buffer)
+// Signature: void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_005dd970(char *output_buffer)
 
 #include "nocturne.h"
 

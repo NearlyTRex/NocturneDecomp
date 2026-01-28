@@ -2,7 +2,7 @@
 // Address: 0042bc20
 // Address Range: [[0042bc20, 0042bcb0]]
 // Convention: __cdecl
-// Signature: int core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter * this_ptr, SCollisionInfo * collision_info)
+// Signature: int __cdecl core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20 (CCharacter *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 

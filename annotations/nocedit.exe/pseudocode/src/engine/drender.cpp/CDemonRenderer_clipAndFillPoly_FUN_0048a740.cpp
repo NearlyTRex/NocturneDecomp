@@ -2,7 +2,7 @@
 // Address: 0048a740
 // Address Range: [[0048a740, 0048a817]]
 // Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 (CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)
 
 #include "nocturne.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_set.cpp_free3DSCameras_FUN_00571530(C3DSCamera * * array)
+; __cdecl void __cdecl core_set_cpp_free3DSCameras_FUN_00571530(C3DSCamera **array)
 ;
 ; Parameters:
 ; C3DSCamera * *   Stack[0x4]:4   array

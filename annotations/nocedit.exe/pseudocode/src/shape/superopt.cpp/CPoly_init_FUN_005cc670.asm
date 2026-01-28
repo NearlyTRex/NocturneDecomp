@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_superopt.cpp_CPoly_init_FUN_005cc670(CPoly * this_ptr, CObj * parent_obj)
+; __cdecl void __cdecl shape_superopt_cpp_CPoly_init_FUN_005cc670(CPoly *this_ptr,CObj *parent_obj)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

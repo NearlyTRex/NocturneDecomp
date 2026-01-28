@@ -2,7 +2,7 @@
 // Address: 0060d128
 // Address Range: [[0060d128, 0060d1a4]]
 // Convention: __watcallStack
-// Signature: int crt_signal.c_processSignal_FUN_0060d128(int signal_number)
+// Signature: int __watcallStack crt_signal_c_processSignal_FUN_0060d128(int signal_number)
 
 #include "nocturne.h"
 

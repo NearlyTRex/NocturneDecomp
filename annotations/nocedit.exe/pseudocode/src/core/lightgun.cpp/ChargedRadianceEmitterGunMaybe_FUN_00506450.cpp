@@ -2,7 +2,7 @@
 // Address: 00506450
 // Address Range: [[00506450, 00506663]]
 // Convention: unknown
-// Signature: undefined core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450()
+// Signature: void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 
 #include "nocturne.h"
 
