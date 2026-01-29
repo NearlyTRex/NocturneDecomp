@@ -5,7 +5,7 @@
         "category": "other",
         "column": 21,
         "line": 37,
-        "message": "request for member '_1_1_' in 'DAT_0310fd40', which is of non-class type 'undefined4' {aka 'unsigned int'}"
+        "message": "request for member '_1_1_' in 'INT_0310fd40', which is of non-class type 'int'"
       },
       {
         "category": "undeclared_identifier",
@@ -38,12 +38,12 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 497,
+    "complexity_score": 487,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
     "pseudocode_lines": 47,
-    "suspect_count": 43,
+    "suspect_count": 42,
     "suspect_types": [
       "stack_param",
       "stack_ref",
@@ -466,15 +466,8 @@
       "description": "Unknown/mangled field access",
       "line": 30,
       "match": "._1_1_",
-      "text": "if ((DAT_0310fd40._1_1_ & 0x40) == 0) {",
+      "text": "if ((INT_0310fd40._1_1_ & 0x40) == 0) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0310fd40",
-      "text": "if ((DAT_0310fd40._1_1_ & 0x40) == 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

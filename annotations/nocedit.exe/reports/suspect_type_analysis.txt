@@ -4,11 +4,11 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    28947 ( 54.6%)
-  pointer_cast                    5849 ( 11.0%)
+  stack_param                    28947 ( 54.7%)
+  pointer_cast                    5847 ( 11.0%)
   decompiler_intrinsic            4954 (  9.4%)
-  unknown_field                   2087 (  3.9%)
-  undefined_data                  2019 (  3.8%)
+  unknown_field                   2085 (  3.9%)
+  undefined_data                  1993 (  3.8%)
   unnamed_param                   1612 (  3.0%)
   stack_ref                       1427 (  2.7%)
   unaffected_reg                  1151 (  2.2%)
@@ -102,12 +102,12 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: pointer_cast (5849 occurrences)
+TYPE: pointer_cast (5847 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2212x  (uint *)((int)
-  1238x  (int *)((int)
+  1237x  (int *)((int)
    417x  (float *)((int)
    336x  (SRenderVertex *)((int)
    248x  (CMatrix3x4f *)((int)
@@ -192,11 +192,11 @@ Example functions:
     uVar12 = SUB84(b,0);...
 
 ====================================================================================================
-TYPE: unknown_field (2087 occurrences)
+TYPE: unknown_field (2085 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   746x  ._0_4_
+   744x  ._0_4_
    692x  ._4_4_
    156x  ._8_4_
     84x  ._12_4_
@@ -236,7 +236,7 @@ Example functions:
     *value._4_4_ = dVar1;...
 
 ====================================================================================================
-TYPE: undefined_data (2019 occurrences)
+TYPE: undefined_data (1993 occurrences)
 ====================================================================================================
 
 Unique patterns:

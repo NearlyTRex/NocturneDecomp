@@ -22,7 +22,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
   SRenderVertex *v1;
   int *piVar8;
   SRenderVertex *pSVar9;
-  longlong *plVar10;
+  int *piVar10;
   SRenderVertex *pSVar11;
   byte bVar12;
   
@@ -40,37 +40,39 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
       } while (iVar5 < g_ClippedVertexCount * 0x30);
     }
     if (g_NearPlaneDistance <= iVar7) {
-      DAT_008254a8 = g_ClippedVertexCount;
+      g_SecondaryClipVertexCount = g_ClippedVertexCount;
       iVar5 = 0;
-      plVar10 = (longlong *)((int)&DAT_008254ac + 4);
+      piVar10 = &g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_y;
       piVar8 = &g_ClippedVertexBuffer[0].projected_vertex.transformed_y;
-      DAT_008254ac._0_4_ = g_ClippedVertexBuffer[0].projected_vertex.transformed_x;
+      g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_x =
+           g_ClippedVertexBuffer[0].projected_vertex.transformed_x;
       iVar7 = g_ClippedVertexCount * 0x30 + -4;
       if (iVar7 != 0 && 3 < g_ClippedVertexCount * 0x30) {
         while (7 < iVar7) {
           lVar1 = *(longlong *)piVar8;
           piVar8 = piVar8 + 2;
-          *plVar10 = (longlong)ROUND((float10)lVar1);
-          plVar10 = plVar10 + 1;
+          *(longlong *)piVar10 = (longlong)ROUND((float10)lVar1);
+          piVar10 = piVar10 + 2;
           iVar7 = iVar7 + -8;
         }
         if (iVar7 != 0 && -9 < iVar7 + -8) {
-          *(int *)plVar10 = *piVar8;
+          *piVar10 = *piVar8;
           if (4 < iVar7) {
-            *(int *)((int)plVar10 + 4) = piVar8[1];
+            piVar10[1] = piVar8[1];
           }
         }
       }
       g_ClippedVertexCount = 0;
-      if (0 < (int)DAT_008254a8) {
-        v1 = (SRenderVertex *)&DAT_008254ac;
+      if (0 < g_SecondaryClipVertexCount) {
+        v1 = g_SecondaryClipVertexBuffer;
         do {
           uVar6 = iVar5 + 1;
-          if (uVar6 == DAT_008254a8) {
-            uVar6 = uVar6 ^ DAT_008254a8;
+          if (uVar6 == g_SecondaryClipVertexCount) {
+            uVar6 = uVar6 ^ g_SecondaryClipVertexCount;
           }
           bVar4 = g_NearPlaneDistance <= (v1->projected_vertex).transformed_z;
-          if (g_NearPlaneDistance <= *(int *)(&DAT_008254b4 + uVar6 * 0x30)) {
+          if (g_NearPlaneDistance <=
+              g_SecondaryClipVertexBuffer[uVar6].projected_vertex.transformed_z) {
             bVar4 = bVar4 | 2;
           }
           switch(bVar4) {
@@ -99,7 +101,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
             break;
           case 1:
             engine_clipper_c_interpolateVertexNearClip_FUN_00435e00
-                      ((SRenderVertex *)(&DAT_008254ac + uVar6 * 6),v1,
+                      (g_SecondaryClipVertexBuffer + uVar6,v1,
                        g_ClippedVertexBuffer + g_ClippedVertexCount);
             g_ClippedVertexCount = g_ClippedVertexCount + 1;
             break;
@@ -126,13 +128,13 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
             }
             g_ClippedVertexCount = g_ClippedVertexCount + 1;
             engine_clipper_c_interpolateVertexNearClip_FUN_00435e00
-                      (v1,(SRenderVertex *)(&DAT_008254ac + uVar6 * 6),
+                      (v1,g_SecondaryClipVertexBuffer + uVar6,
                        g_ClippedVertexBuffer + g_ClippedVertexCount);
             g_ClippedVertexCount = g_ClippedVertexCount + 1;
           }
           iVar5 = iVar5 + 1;
           v1 = v1 + 1;
-        } while (iVar5 < (int)DAT_008254a8);
+        } while (iVar5 < g_SecondaryClipVertexCount);
       }
     }
   }

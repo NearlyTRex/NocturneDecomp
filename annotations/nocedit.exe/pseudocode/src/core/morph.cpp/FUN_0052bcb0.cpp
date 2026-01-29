@@ -74,7 +74,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   float local_84;
   int local_80;
   int local_7c;
-  int local_78;
+  uint local_78;
   int local_74;
   int local_70;
   int local_6c;

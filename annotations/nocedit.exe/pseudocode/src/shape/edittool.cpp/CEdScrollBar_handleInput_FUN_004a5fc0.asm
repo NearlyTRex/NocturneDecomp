@@ -28,7 +28,7 @@
 ;   int g_DragStartThumbPos
 ;   int g_MouseX
 ;   int g_MouseY
-;   int g_MouseButtonFlags
+;   uint g_MouseButtonFlags
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380

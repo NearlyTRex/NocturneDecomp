@@ -34,7 +34,7 @@ void core_script_cpp_FUN_005645d0(void)
       iVar1 = iVar1 + 1) {
     core_script_cpp_FUN_005664d0();
   }
-  if ((DAT_0310fd40._1_1_ & 0x40) == 0) {
+  if ((INT_0310fd40._1_1_ & 0x40) == 0) {
     g_ActiveRenderColor = 0xff;
     iVar1 = (DAT_0310fd48 - CEdScrollBar_0310fcd8.scroll_position) * DAT_03114208 + DAT_031141e4;
     x1 = DAT_03114204 * (DAT_0310fd44 - CEdScrollBar_0310fd0c.scroll_position) + DAT_031141e0;

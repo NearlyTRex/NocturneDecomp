@@ -84,10 +84,12 @@ int g_GlobalDeltaTimeInt = {};
 int g_AnimationTimerValue = {};
 int g_MouseX = {};
 int g_MouseY = {};
-int g_MouseButtonFlags = {};
 
 // uchar[32768]
 uchar g_ColorCubeLookup[32768] = {};
+
+// uint
+uint g_MouseButtonFlags = {};
 
 // uint*[1200]
 uint* g_ZBufferScanlineArray[1200] = {};

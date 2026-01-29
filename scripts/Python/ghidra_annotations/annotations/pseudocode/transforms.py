@@ -189,6 +189,13 @@ UNDEFINED_PTR_CAST_REPLACEMENTS = {
     '(undefined*)': '(byte*)',
 }
 
+# Suspect types that can be automatically fixed by transforms
+# Used by count_auto_fixable_suspects() and get_remaining_suspects_after_transforms()
+AUTO_FIXABLE_SUSPECT_TYPES = {
+    'undefined_ptr_cast',
+    'undefined_type',
+}
+
 
 def transform_undefined_pointer_casts(code):
     """Replace undefined pointer casts with proper typed casts.
@@ -463,13 +470,338 @@ def transform_file_pointer_casts(code):
     return result
 
 
-def apply_all_transforms(code, transforms=None):
+# =============================================================================
+# PARTIAL ACCESS TRANSFORMS (split by access type)
+# =============================================================================
+#
+# Ghidra generates patterns like variable._1_2_ when accessing a portion of a
+# larger variable. The pattern ._X_Y_ means: access Y bytes starting at byte
+# offset X.
+#
+# These transforms are split by access type to ensure valid code generation:
+# - Read transforms can produce any rvalue (casts are safe)
+# - Write transforms must produce lvalues (no casts on LHS)
+# - Compound transforms handle read-modify-write patterns
+#
+# SAFETY (applies to all):
+# - Skips struct member access (e.g., struct.field._0_1_)
+# - Skips array variables (requires pointer arithmetic, not bit shifts)
+# - If access exceeds declared size, pattern is left unchanged
+
+
+def _get_partial_read_expr(var, offset, size):
+    """Generate a read expression for partial variable access.
+
+    Produces an rvalue expression - casts are safe here since this is
+    only used in read contexts.
+
+    Args:
+        var: Variable name
+        offset: Byte offset into the variable
+        size: Access size in bytes
+
+    Returns:
+        C expression string for reading the partial value
+    """
+    shift = offset * 8
+
+    # Special case: offset 0, can use simple cast
+    if offset == 0:
+        if size == 1:
+            return '((byte)(%s))' % var
+        elif size == 2:
+            return '((ushort)(%s))' % var
+        elif size == 4:
+            return '((uint)(%s))' % var
+        else:
+            # Unusual size, use mask
+            mask = (1 << (size * 8)) - 1
+            return '((%s) & 0x%X)' % (var, mask)
+
+    # Non-zero offset: use shift and mask
+    if size == 1:
+        return '(((uint)(%s) >> %d) & 0xFF)' % (var, shift)
+    elif size == 2:
+        return '(((uint)(%s) >> %d) & 0xFFFF)' % (var, shift)
+    elif size == 4:
+        return '(((uint)(%s) >> %d))' % (var, shift)
+    else:
+        mask = (1 << (size * 8)) - 1
+        return '(((uint)(%s) >> %d) & 0x%X)' % (var, shift, mask)
+
+
+def _get_partial_write_expr(var, offset, size, value_expr):
+    """Generate a write expression for partial variable access.
+
+    Uses mask-and-or pattern to preserve other bytes:
+        var = (var & clear_mask) | ((value & value_mask) << shift)
+
+    This produces valid lvalue code - the variable itself is assigned,
+    not a cast expression.
+
+    Args:
+        var: Variable name
+        offset: Byte offset into the variable
+        size: Access size in bytes
+        value_expr: The expression being assigned (the RHS value)
+
+    Returns:
+        C expression string for the RHS of the assignment
+    """
+    shift = offset * 8
+    value_mask = (1 << (size * 8)) - 1
+    clear_mask = ~(value_mask << shift) & 0xFFFFFFFF  # 32-bit assumption
+
+    if offset == 0:
+        # No shift needed for offset 0
+        return '((%s) & 0x%X) | ((%s) & 0x%X)' % (var, clear_mask, value_expr, value_mask)
+    else:
+        return '((%s) & 0x%X) | (((%s) & 0x%X) << %d)' % (
+            var, clear_mask, value_expr, value_mask, shift)
+
+
+def _check_partial_access_safety(var, offset, size, var_info):
+    """Check if a partial access transform is safe to apply.
+
+    Args:
+        var: Variable name
+        offset: Byte offset
+        size: Access size in bytes
+        var_info: Optional dict mapping variable names to info dicts
+
+    Returns:
+        True if safe to transform, False if should be skipped
+    """
+    # Heuristic checks based on Ghidra naming conventions
+    # These apply even without var_info
+
+    # Skip array variables - Ghidra prefixes: au (auto unsigned), ac (auto char),
+    # a followed by uppercase (generic array)
+    # Pattern: auStack_, acStack_, aStack_, auLocal_, etc.
+    if re.match(r'^a[uc]?[A-Z]', var):
+        return False
+
+    # Skip float/double variables - Ghidra prefixes: f (float), d (double)
+    # Pattern: fStack_, fLocal_, dStack_, dLocal_, etc.
+    if re.match(r'^[fd][A-Z]', var):
+        return False
+
+    # Sanity check: offset should be reasonable for 32-bit operations
+    # Shift amounts >= 32 are undefined behavior in C for 32-bit types
+    if offset >= 4:
+        return False
+
+    # Check var_info if provided
+    if var_info is not None:
+        info = var_info.get(var)
+        if info is not None:
+            # Skip array variables - bit shifting doesn't work for arrays
+            if info.get('is_array'):
+                return False
+
+            # Check if access is within bounds
+            declared_size = info.get('size', 0)
+            access_end = offset + size
+            if declared_size > 0 and access_end > declared_size:
+                # Access exceeds declared size - real type mismatch
+                return False
+
+    return True
+
+
+def _check_value_expr_safety(value_expr):
+    """Check if a value expression is safe for bitwise operations.
+
+    Args:
+        value_expr: The expression string being assigned
+
+    Returns:
+        True if safe to use in bitwise ops, False if should be skipped
+    """
+    # Skip float literals (contain decimal point or scientific notation)
+    if re.search(r'\d+\.\d*|\d*\.\d+|[eE][+-]?\d+', value_expr):
+        return False
+
+    # Skip float/double variable references
+    # Pattern: fStack_, fLocal_, dStack_, dLocal_, fVar, dVar, etc.
+    if re.search(r'\b[fd][A-Z]\w*', value_expr):
+        return False
+
+    # Skip pointer casts that suggest non-integer types
+    if re.search(r'\(\s*(?:float|double|CVector|CMatrix)', value_expr):
+        return False
+
+    return True
+
+
+def transform_partial_read(code, var_info=None):
+    """Transform partial access READS to bit operations.
+
+    Only transforms read contexts - expressions that are NOT on the left side
+    of any assignment. Safe to produce rvalue expressions including casts.
+
+    Examples:
+        x = var._0_1_  -> x = ((byte)(var))
+        x = var._1_1_  -> x = (((uint)(var) >> 8) & 0xFF)
+        x = var._2_2_  -> x = (((uint)(var) >> 16) & 0xFFFF)
+
+    Args:
+        code: Decompiled code string
+        var_info: Optional dict mapping variable names to info dicts
+
+    Returns:
+        Transformed code with partial reads converted to bit operations
+    """
+    # Pattern: var._X_Y_ NOT followed by any assignment operator
+    # Negative lookbehind: not preceded by '.' (skip struct.field._X_Y_)
+    # Negative lookahead: not followed by =, +=, -=, etc.
+    assignment_ops = r'(?:\+|-|\*|/|%|&|\||\^|<<|>>)?'
+    pattern = rf'(?<!\.)(\b\w+)\._(\d+)_(\d+)_(?!\s*{assignment_ops}=(?!=))'
+
+    def replace_read(match):
+        var = match.group(1)
+        offset = int(match.group(2))
+        size = int(match.group(3))
+
+        if not _check_partial_access_safety(var, offset, size, var_info):
+            return match.group(0)
+
+        return _get_partial_read_expr(var, offset, size)
+
+    return re.sub(pattern, replace_read, code)
+
+
+def transform_partial_write(code, var_info=None):
+    """Transform partial access WRITES to mask-and-or operations.
+
+    Only transforms simple assignments: var._X_Y_ = expr
+    Produces valid lvalue code - assigns to the variable, not a cast.
+
+    Examples:
+        var._0_1_ = x  -> var = ((var) & 0xFFFFFF00) | ((x) & 0xFF)
+        var._1_1_ = x  -> var = ((var) & 0xFFFF00FF) | (((x) & 0xFF) << 8)
+
+    Args:
+        code: Decompiled code string
+        var_info: Optional dict mapping variable names to info dicts
+
+    Returns:
+        Transformed code with partial writes converted to mask-and-or
+    """
+    # Pattern: var._X_Y_ = expr; (simple assignment only, not compound)
+    # The (?<![+\-*/%&|^]) prevents matching += -= etc.
+    # We also need to handle <<= and >>= specially
+    pattern = r'(?<!\.)(\b\w+)\._(\d+)_(\d+)_\s*(?<![+\-*/%&|^<>])=(?!=)\s*([^;]+);'
+
+    def replace_write(match):
+        var = match.group(1)
+        offset = int(match.group(2))
+        size = int(match.group(3))
+        value_expr = match.group(4).strip()
+
+        if not _check_partial_access_safety(var, offset, size, var_info):
+            return match.group(0)
+
+        # Check if value expression is safe for bitwise operations
+        if not _check_value_expr_safety(value_expr):
+            return match.group(0)
+
+        rhs = _get_partial_write_expr(var, offset, size, value_expr)
+        return '%s = %s;' % (var, rhs)
+
+    return re.sub(pattern, replace_write, code)
+
+
+def transform_partial_compound(code, var_info=None):
+    """Transform partial access COMPOUND assignments to read-modify-write.
+
+    Transforms patterns like: var._X_Y_ op= expr
+    Into: var = (var & clear_mask) | (((read_expr op value) & value_mask) << shift)
+
+    Examples:
+        var._0_1_ += x  -> var = ((var) & 0xFFFFFF00) | (((((byte)(var)) + x) & 0xFF))
+        var._1_1_ |= x  -> var = ((var) & 0xFFFF00FF) | ((((((uint)(var) >> 8) & 0xFF) | x) & 0xFF) << 8)
+
+    Args:
+        code: Decompiled code string
+        var_info: Optional dict mapping variable names to info dicts
+
+    Returns:
+        Transformed code with compound assignments converted
+    """
+    # Pattern: var._X_Y_ op= expr; where op is +, -, *, /, %, &, |, ^, <<, >>
+    pattern = r'(?<!\.)(\b\w+)\._(\d+)_(\d+)_\s*(\+|-|\*|/|%|&|\||\^|<<|>>)=\s*([^;]+);'
+
+    def replace_compound(match):
+        var = match.group(1)
+        offset = int(match.group(2))
+        size = int(match.group(3))
+        op = match.group(4)
+        value_expr = match.group(5).strip()
+
+        if not _check_partial_access_safety(var, offset, size, var_info):
+            return match.group(0)
+
+        # Check if value expression is safe for bitwise operations
+        if not _check_value_expr_safety(value_expr):
+            return match.group(0)
+
+        shift = offset * 8
+        value_mask = (1 << (size * 8)) - 1
+        clear_mask = ~(value_mask << shift) & 0xFFFFFFFF
+
+        # Read the current partial value
+        read_expr = _get_partial_read_expr(var, offset, size)
+
+        # Combine: (read_expr op value_expr), masked and shifted back
+        if offset == 0:
+            rhs = '((%s) & 0x%X) | (((%s %s %s) & 0x%X))' % (
+                var, clear_mask, read_expr, op, value_expr, value_mask)
+        else:
+            rhs = '((%s) & 0x%X) | ((((%s %s %s) & 0x%X) << %d))' % (
+                var, clear_mask, read_expr, op, value_expr, value_mask, shift)
+
+        return '%s = %s;' % (var, rhs)
+
+    return re.sub(pattern, replace_compound, code)
+
+
+def transform_partial_access(code, var_info=None):
+    """Transform all partial access patterns (reads, writes, compounds).
+
+    This is the main entry point that applies all three transform types
+    in the correct order: compound -> write -> read.
+
+    The order matters because:
+    - Compound (most specific) must run first to avoid write pattern matching op=
+    - Write runs next to handle simple assignments
+    - Read runs last for remaining (non-assignment) contexts
+
+    Args:
+        code: Decompiled code string
+        var_info: Optional dict mapping variable names to info dicts with:
+                  - 'size': declared size in bytes
+                  - 'is_array': True if variable is an array type
+
+    Returns:
+        Transformed code with all partial accesses converted
+    """
+    result = transform_partial_compound(code, var_info)
+    result = transform_partial_write(result, var_info)
+    result = transform_partial_read(result, var_info)
+    return result
+
+
+def apply_all_transforms(code, transforms=None, var_info=None):
     """Apply all or specified transforms to decompiled code.
 
     Args:
         code: Decompiled code string
         transforms: Optional list of transform names to apply.
                    If None, applies all safe transforms.
+        var_info: Optional dict mapping variable names to info dicts with
+                  'size' and 'is_array' keys. Used by transform_partial_access
+                  for safety checks.
 
     Returns:
         Transformed code
@@ -492,7 +824,11 @@ def apply_all_transforms(code, transforms=None):
 
     result = code
     for name, transform_func in transforms_to_apply:
-        result = transform_func(result)
+        # Special handling for transforms that need extra context
+        if name == 'partial_access':
+            result = transform_func(result, var_info=var_info)
+        else:
+            result = transform_func(result)
 
     return result
 
@@ -506,15 +842,7 @@ def count_auto_fixable_suspects(suspects):
     Returns:
         Tuple of (auto_fixable_count, total_count)
     """
-    auto_fixable_types = {
-        'undefined_ptr_cast',
-        'undefined_type',
-        'concat_artifact',
-        'sub_artifact',
-        'sborrow_artifact',
-    }
-
-    auto_fixable = sum(1 for s in suspects if s.get('type') in auto_fixable_types)
+    auto_fixable = sum(1 for s in suspects if s.get('type') in AUTO_FIXABLE_SUSPECT_TYPES)
     return (auto_fixable, len(suspects))
 
 
@@ -527,15 +855,7 @@ def get_remaining_suspects_after_transforms(suspects):
     Returns:
         List of suspects that cannot be auto-fixed
     """
-    auto_fixable_types = {
-        'undefined_ptr_cast',
-        'undefined_type',
-        'concat_artifact',
-        'sub_artifact',
-        'sborrow_artifact',
-    }
-
-    return [s for s in suspects if s.get('type') not in auto_fixable_types]
+    return [s for s in suspects if s.get('type') not in AUTO_FIXABLE_SUSPECT_TYPES]
 
 
 def apply_custom_replacements(code, replacements):

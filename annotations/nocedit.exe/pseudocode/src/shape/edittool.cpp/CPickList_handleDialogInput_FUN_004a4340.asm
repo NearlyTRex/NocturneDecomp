@@ -17,7 +17,7 @@
 ;   CEdButton* g_ActiveButton
 ;   int g_MouseX
 ;   int g_MouseY
-;   int g_MouseButtonFlags
+;   uint g_MouseButtonFlags
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830

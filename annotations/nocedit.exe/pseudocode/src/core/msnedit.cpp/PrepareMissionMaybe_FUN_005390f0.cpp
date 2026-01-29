@@ -955,7 +955,7 @@ LAB_0053a88c:
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(pCVar1,local_38);
       FLOAT_02f7c540 = 5.0f;
     }
-    if (((((g_MouseButtonFlags & 1U) == 0) && ((local_30 & 1) != 0)) && (DAT_02f7c538 == 0)) &&
+    if (((((g_MouseButtonFlags & 1) == 0) && ((local_30 & 1) != 0)) && (DAT_02f7c538 == 0)) &&
        (g_ActiveButton == (CEdButton *)0x0)) {
       if ((*(int *)(in_stack_00000004->unk2 + 0x1c) == 0) || (DAT_02f7c528 < 0)) {
         if (*(int *)(in_stack_00000004->unk2 + 0x20) != 0) {
@@ -1022,7 +1022,7 @@ LAB_0053ad72:
     else {
       DAT_00680818 = g_CGamePtr->delta_time_float + DAT_00680818;
     }
-    if (((g_MouseButtonFlags & 1U) == 0) || ((local_30 & 1) == 0)) {
+    if (((g_MouseButtonFlags & 1) == 0) || ((local_30 & 1) == 0)) {
       FLOAT_02f7c630 = 0.0;
     }
     else {

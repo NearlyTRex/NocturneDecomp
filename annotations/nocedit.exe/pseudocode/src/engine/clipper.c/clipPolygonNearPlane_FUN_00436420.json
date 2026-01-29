@@ -9,74 +9,50 @@
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 45,
-        "message": "cast from 'undefined8*' {aka 'long long unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 47,
-        "message": "request for member '_0_4_' in 'DAT_008254ac', which is of non-class type 'undefined8' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 60,
-        "message": "cast from 'longlong*' {aka 'long long int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 73,
-        "message": "'DAT_008254b4' was not declared in this scope; did you mean 'DAT_008254bc'?"
-      },
-      {
-        "category": "other",
         "column": 21,
-        "line": 82,
+        "line": 84,
         "message": "request for member '_0_4_' in 'lVar2', which is of non-class type 'longlong' {aka 'long long int'}"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 83,
+        "line": 85,
         "message": "request for member '_4_4_' in 'lVar2', which is of non-class type 'longlong' {aka 'long long int'}"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 94,
+        "line": 96,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 95,
+        "line": 97,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 111,
+        "line": 113,
         "message": "request for member '_0_4_' in 'lVar1', which is of non-class type 'longlong' {aka 'long long int'}"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 112,
+        "line": 114,
         "message": "request for member '_4_4_' in 'lVar1', which is of non-class type 'longlong' {aka 'long long int'}"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 123,
+        "line": 125,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 124,
+        "line": 126,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -96,52 +72,45 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 60,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 18,
-        "line": 94,
+        "line": 96,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 95,
+        "line": 97,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 123,
+        "line": 125,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 124,
+        "line": 126,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 454,
+    "complexity_score": 311,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 19,
-    "pseudocode_lines": 129,
-    "suspect_count": 30,
+    "pseudocode_lines": 131,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "undefined_data",
       "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 352
+    "total_lines": 354
   },
   "cross_references": [],
   "function": {
@@ -226,25 +195,25 @@
     },
     {
       "addr": "008254a8",
-      "name": "DAT_008254a8",
-      "type": "undefined4",
+      "name": "g_SecondaryClipVertexCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "008254ac",
-      "name": "DAT_008254ac",
-      "type": "undefined8",
+      "name": "g_SecondaryClipVertexBuffer",
+      "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "008254b0",
-      "name": "DAT_008254ac+4",
+      "name": "g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "008254b4",
-      "name": "DAT_008254b4",
+      "name": "g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
@@ -268,13 +237,13 @@
     },
     {
       "addr": "0082550c",
-      "name": "DAT_0082550c",
+      "name": "g_SecondaryClipVertexBuffer[2].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00825514",
-      "name": "DAT_00825514",
+      "name": "g_SecondaryClipVertexBuffer[2].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     }
@@ -364,193 +333,95 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_008254a8",
-      "text": "DAT_008254a8 = g_ClippedVertexCount;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(longlong *)((int)",
-      "text": "plVar10 = (longlong *)((int)&DAT_008254ac + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_008254ac",
-      "text": "plVar10 = (longlong *)((int)&DAT_008254ac + 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 40,
-      "match": "._0_4_",
-      "text": "DAT_008254ac._0_4_ = g_ClippedVertexBuffer[0].projected_vertex.transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_008254ac",
-      "text": "DAT_008254ac._0_4_ = g_ClippedVertexBuffer[0].projected_vertex.transformed_x;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 47,
       "match": "ROUND",
-      "text": "*plVar10 = (longlong)ROUND((float10)lVar1);",
+      "text": "*(longlong *)piVar10 = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)plVar10 + 4) = piVar8[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_008254a8",
-      "text": "if (0 < (int)DAT_008254a8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_008254ac",
-      "text": "v1 = (SRenderVertex *)&DAT_008254ac;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_008254a8",
-      "text": "if (uVar6 == DAT_008254a8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_008254a8",
-      "text": "uVar6 = uVar6 ^ DAT_008254a8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_008254b4",
-      "text": "if (g_NearPlaneDistance <= *(int *)(&DAT_008254b4 + uVar6 * 0x30)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 77,
       "match": "._0_4_",
       "text": "lVar2._0_4_ = (pSVar9->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 76,
+      "line": 78,
       "match": "._4_4_",
       "text": "lVar2._4_4_ = (pSVar9->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 80,
       "match": "ROUND",
       "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 82,
       "match": "ROUND",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 89,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 90,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_008254ac",
-      "text": "((SRenderVertex *)(&DAT_008254ac + uVar6 * 6),v1,",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 104,
+      "line": 106,
       "match": "._0_4_",
       "text": "lVar1._0_4_ = (pSVar9->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 105,
+      "line": 107,
       "match": "._4_4_",
       "text": "lVar1._4_4_ = (pSVar9->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 109,
       "match": "ROUND",
       "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 111,
       "match": "ROUND",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 118,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 119,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_008254ac",
-      "text": "(v1,(SRenderVertex *)(&DAT_008254ac + uVar6 * 6),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_008254a8",
-      "text": "} while (iVar5 < (int)DAT_008254a8);",
-      "type": "undefined_data"
     }
   ]
 }

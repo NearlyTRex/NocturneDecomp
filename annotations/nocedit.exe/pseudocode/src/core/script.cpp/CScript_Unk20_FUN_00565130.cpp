@@ -48,7 +48,7 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   
   bVar11 = 0;
   (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-  DAT_0310fd40 = DAT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;
+  INT_0310fd40 = INT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;
   core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910();
   core_script_cpp_CScript_Unk18_FUN_005669a0();
   core_script_cpp_FUN_00564500();
@@ -282,7 +282,7 @@ LAB_00565363:
   }
   pCVar3 = g_ActiveButton;
   if (in_stack_00000004 == g_ActiveButton) {
-    if ((g_MouseButtonFlags & 1U) == 0) {
+    if ((g_MouseButtonFlags & 1) == 0) {
       g_ActiveButton = (CEdButton *)0x0;
     }
     else {
@@ -325,14 +325,14 @@ LAB_00565363:
     }
   }
   else if (g_ActiveButton == (CEdButton *)0x0) {
-    if ((g_MouseButtonFlags & 1U) == 0) {
-      if ((g_MouseButtonFlags & 2U) != 0) {
+    if ((g_MouseButtonFlags & 1) == 0) {
+      if ((g_MouseButtonFlags & 2) != 0) {
         in_stack_000000b0 = &DAT_0310fd48;
         in_stack_000000ac = &DAT_0310fd44;
         in_stack_000000a8 = (CEdButton *)g_MouseY;
         in_stack_000000a4 = (CKeys *)g_MouseX;
         in_stack_000000a0 = in_stack_00000004;
-        g_MouseButtonFlags = (int)g_ActiveButton;
+        g_MouseButtonFlags = (uint)g_ActiveButton;
         in_stack_0000009c = (CKeys *)0x5658f6;
         iVar6 = core_script_cpp_FUN_00566c20();
         if (iVar6 != 0) {
@@ -365,7 +365,7 @@ LAB_00565363:
           in_stack_000000b0 = &in_stack_00000004->enabled;
           in_stack_000000ac = (int *)0x5658ae;
           core_script_cpp_FUN_00565ae0();
-          g_MouseButtonFlags = (int)pCVar3;
+          g_MouseButtonFlags = (uint)pCVar3;
           pCVar4 = g_ActiveButton;
         }
       }
@@ -400,7 +400,7 @@ LAB_00565363:
                   DAT_0310fd4c = in_stack_000000d4;
                   DAT_0310fd50 = in_stack_000000d0;
                 }
-                DAT_0310fd40 = 0;
+                INT_0310fd40 = 0;
               }
               in_stack_000000b0 = (int *)in_stack_000000d0;
               in_stack_000000ac = &in_stack_00000004->enabled;

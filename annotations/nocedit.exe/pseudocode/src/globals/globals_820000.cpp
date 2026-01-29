@@ -59,6 +59,7 @@ SRenderVertex g_ClipperTempBuffer[12] = {};
 
 // SRenderVertex[16]
 SRenderVertex g_ClippedVertexBuffer[16] = {};
+SRenderVertex g_SecondaryClipVertexBuffer[16] = {};
 SRenderVertex g_ClipperOutputBuffer[16] = {};
 SRenderVertex g_ClipperInputBuffer[16] = {};
 SRenderVertex g_ClipperWorkingBuffer[16] = {};
@@ -135,6 +136,7 @@ int INT_00823a90 = {};
 int INT_00823a94 = {};
 int g_LineBlendingDisabled = {};
 int g_ClippedVertexCount = {};
+int g_SecondaryClipVertexCount = {};
 int g_ClipperTempCount = {};
 int g_InputVertexCount = {};
 int g_OutputVertexCount = {};
@@ -177,12 +179,6 @@ undefined4 DAT_00822f50 = {};
 undefined4 DAT_00823c50 = {};
 undefined4 DAT_00823c54 = {};
 undefined4 DAT_00823c58 = {};
-undefined4 DAT_008254a8 = {};
-undefined4 DAT_008254b8 = {};
-undefined4 DAT_008254bc = {};
-undefined4 DAT_008254dc = {};
-undefined4 DAT_008254e8 = {};
-undefined4 DAT_00825514 = {};
 undefined4 DAT_00827504 = {};
 undefined4 DAT_00827518 = {};
 undefined4 DAT_0082751c = {};
@@ -191,8 +187,4 @@ undefined4 DAT_00827524 = {};
 undefined4 DAT_00827528 = {};
 undefined4 DAT_0082752c = {};
 undefined4 DAT_0082754c = {};
-
-// undefined8
-undefined8 DAT_008254ac = {};
-undefined8 DAT_008254e0 = {};
 

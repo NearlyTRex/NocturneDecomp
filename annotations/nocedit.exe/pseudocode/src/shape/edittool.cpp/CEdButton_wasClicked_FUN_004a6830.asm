@@ -18,7 +18,7 @@
 ;   CEdButton* g_ActiveButton
 ;   int g_MouseX
 ;   int g_MouseY
-;   int g_MouseButtonFlags
+;   uint g_MouseButtonFlags
 ;
 ; *****************************************************************************
 

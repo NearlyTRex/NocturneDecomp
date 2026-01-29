@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_MouseButtonFlags
+;   uint g_MouseButtonFlags
 ;
 ; *****************************************************************************
 

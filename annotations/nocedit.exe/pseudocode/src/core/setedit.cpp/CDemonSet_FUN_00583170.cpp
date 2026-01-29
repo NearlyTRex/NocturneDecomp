@@ -989,7 +989,7 @@ LAB_00583c6f:
       engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    if (((local_68 & 1) != 0) && ((g_MouseButtonFlags & 1U) == 0)) {
+    if (((local_68 & 1) != 0) && ((g_MouseButtonFlags & 1) == 0)) {
       local_188 = g_CDemonCameraInstance.base.position.x;
       local_184 = *local_6c;
       local_180 = *local_70;

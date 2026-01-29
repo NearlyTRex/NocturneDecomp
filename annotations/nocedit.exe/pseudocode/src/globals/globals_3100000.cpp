@@ -41,6 +41,7 @@ int INT_03106198 = {};
 int INT_0310619c = {};
 int INT_031061a0 = {};
 int INT_031061e0 = {};
+int INT_0310fd40 = {};
 
 // undefined1
 undefined1 DAT_031091e8 = {};
@@ -66,7 +67,6 @@ undefined4 DAT_0310ec9c = {};
 undefined4 DAT_0310f4a4 = {};
 undefined4 DAT_0310f4a8 = {};
 undefined4 DAT_0310f4ac = {};
-undefined4 DAT_0310fd40 = {};
 undefined4 DAT_0310fd44 = {};
 undefined4 DAT_0310fd48 = {};
 undefined4 DAT_0310fd4c = {};

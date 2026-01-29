@@ -48,6 +48,7 @@ extern int INT_03106198;
 extern int INT_0310619c;
 extern int INT_031061a0;
 extern int INT_031061e0;
+extern int INT_0310fd40;
 
 // undefined1
 extern undefined1 DAT_031091e8;
@@ -73,7 +74,6 @@ extern undefined4 DAT_0310ec9c;
 extern undefined4 DAT_0310f4a4;
 extern undefined4 DAT_0310f4a8;
 extern undefined4 DAT_0310f4ac;
-extern undefined4 DAT_0310fd40;
 extern undefined4 DAT_0310fd44;
 extern undefined4 DAT_0310fd48;
 extern undefined4 DAT_0310fd4c;

@@ -62,11 +62,11 @@ section .text
     ADD ESP,0x8                         ; 00565147
     MOV EDX,dword ptr [0x02cf6a80]      ; 0056514a | g_GlobalDeltaTimeInt
     MOV dword ptr [ESP + 0x24],EAX      ; 00565150
-    MOV EAX,[0x0310fd40]                ; 00565154 | DAT_0310fd40
+    MOV EAX,[0x0310fd40]                ; 00565154 | INT_0310fd40
     ADD EAX,EDX                         ; 00565159
     AND EAX,0xfffff                     ; 0056515b
     PUSH EBP                            ; 00565160
-    MOV [0x0310fd40],EAX                ; 00565161 | DAT_0310fd40
+    MOV [0x0310fd40],EAX                ; 00565161 | INT_0310fd40
     CALL core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910 ; 00565166
         ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910()
     ADD ESP,0x4                         ; 0056516b
@@ -986,7 +986,7 @@ section .text
         ;   XREF to: 00565a77 (CONDITIONAL_JUMP)  ; LAB_00565a77
     XOR ECX,ECX                         ; 00565a3f
         ;   Label: LAB_00565a3f
-    MOV dword ptr [0x0310fd40],ECX      ; 00565a41 | DAT_0310fd40
+    MOV dword ptr [0x0310fd40],ECX      ; 00565a41 | INT_0310fd40
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00565a47
         ;   Label: LAB_00565a47
     PUSH ESI                            ; 00565a4b

@@ -56,7 +56,7 @@
 ;   WatcomStaticDestructorNode DAT_006816b0
 ;   int g_MouseX
 ;   int g_MouseY
-;   int g_MouseButtonFlags
+;   uint g_MouseButtonFlags
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   uchar[32768] g_ColorCubeLookup

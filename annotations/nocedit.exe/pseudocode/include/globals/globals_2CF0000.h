@@ -93,10 +93,12 @@ extern int g_GlobalDeltaTimeInt;
 extern int g_AnimationTimerValue;
 extern int g_MouseX;
 extern int g_MouseY;
-extern int g_MouseButtonFlags;
 
 // uchar[32768]
 extern uchar g_ColorCubeLookup[32768];
+
+// uint
+extern uint g_MouseButtonFlags;
 
 // uint*[1200]
 extern uint* g_ZBufferScanlineArray[1200];

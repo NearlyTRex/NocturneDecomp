@@ -29,7 +29,7 @@
 ;   int g_StoredWorldYCoordinate
 ;   int g_MouseX
 ;   int g_MouseY
-;   int g_MouseButtonFlags
+;   uint g_MouseButtonFlags
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
