@@ -308,8 +308,13 @@ def analyze_function(program, func):
 # Convention scoring
 # ------------------------------------------------------------
 
-def suggest_convention(patterns):
-    """Suggest the most likely calling convention based on detected patterns."""
+def suggest_convention(patterns, declared_param_count=None):
+    """Suggest the most likely calling convention based on detected patterns.
+
+    Args:
+        patterns: Dict of detected patterns from analyze_function
+        declared_param_count: Optional parameter count from Ghidra function signature
+    """
     scores = defaultdict(int)
 
     early_reads = patterns['early_reg_reads']
@@ -329,8 +334,15 @@ def suggest_convention(patterns):
     # Check for __stack_esi / __stack2_esi / __stack3_esi / __stack_esi_edi patterns
     # --------------------------------------------------
 
-    # Strong signal: ESI saved to local variable OR to callee-saved register
-    if 'ESI' in saved_inputs:
+    # ONLY use strong signal: ESI saved to local variable OR to callee-saved register
+    # The weaker "early read" signal causes too many false positives because:
+    # - ESI might be read incidentally (e.g., string ops, loop counters)
+    # - A 1-param function shouldn't have ESI as an additional register param
+    #
+    # For stack_esi conventions, we require:
+    # 1. ESI explicitly saved (strong evidence it's an input)
+    # 2. At least 1 stack parameter (otherwise it would be pure register convention)
+    if 'ESI' in saved_inputs and stack_param_count >= 1:
         if 'EDI' in saved_inputs:
             # ESI + EDI + stack params
             if stack_param_count >= 2:
@@ -345,21 +357,6 @@ def suggest_convention(patterns):
                 scores['__stack2_esi'] += 40
             else:
                 scores['__stack_esi'] += 40
-
-    # Weaker signal: ESI read early but not pushed in prologue
-    elif 'ESI' in likely_inputs and stack_offsets:
-        if 'EDI' in likely_inputs:
-            if stack_param_count >= 2:
-                scores['__stack2_esi_edi'] += 25
-            else:
-                scores['__stack_esi_edi'] += 25
-        else:
-            if stack_param_count >= 3:
-                scores['__stack3_esi'] += 25
-            elif stack_param_count >= 2:
-                scores['__stack2_esi'] += 25
-            else:
-                scores['__stack_esi'] += 25
 
     # --------------------------------------------------
     # Check for __watcallRegister pattern
@@ -442,10 +439,12 @@ def analyze_single_function(program, address):
     print("=" * 80)
 
     current = func.getCallingConventionName()
+    declared_params = func.getParameterCount()
     print("\nCurrent calling convention: %s" % current)
+    print("Declared parameter count: %d" % declared_params)
 
     patterns = analyze_function(program, func)
-    conv, scores = suggest_convention(patterns)
+    conv, scores = suggest_convention(patterns, declared_param_count=declared_params)
 
     print("\n--- Register Usage Analysis ---")
     print("Prologue-pushed (callee-saved): %s" % (patterns.get('prologue_pushed_regs') or 'none'))
@@ -513,7 +512,8 @@ def analyze_all_functions(program, mismatches_only=False, skip_unknown=False):
 
         patterns = analyze_function(program, func)
         current = func.getCallingConventionName()
-        suggested, scores = suggest_convention(patterns)
+        declared_params = func.getParameterCount()
+        suggested, scores = suggest_convention(patterns, declared_param_count=declared_params)
 
         convention_counts[current] += 1
         suggestion_counts[suggested] += 1
@@ -523,6 +523,8 @@ def analyze_all_functions(program, mismatches_only=False, skip_unknown=False):
             'address': str(func.getEntryPoint()),
             'current_convention': current,
             'suggested_convention': suggested,
+            'declared_param_count': declared_params,
+            'detected_stack_params': len(patterns['stack_param_offsets']),
             'scores': scores,
             'regs_saved_to_local': list(patterns.get('regs_saved_to_local', set())),
             'regs_saved_to_reg': list(patterns.get('regs_saved_to_reg', set())),
@@ -546,6 +548,8 @@ def analyze_all_functions(program, mismatches_only=False, skip_unknown=False):
                 'current': current,
                 'suggested': suggested,
                 'confidence': max_score,
+                'declared_param_count': declared_params,
+                'detected_stack_params': len(patterns['stack_param_offsets']),
                 'scores': scores,
                 'regs_saved_to_local': list(patterns.get('regs_saved_to_local', set())),
                 'regs_saved_to_reg': list(patterns.get('regs_saved_to_reg', set())),

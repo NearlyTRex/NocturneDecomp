@@ -2,32 +2,35 @@
   "summary": {
     "total_functions": 7180,
     "convention_counts": {
-      "unknown": 1965,
-      "__cdecl": 4996,
-      "__watcallRegister": 51,
+      "unknown": 136,
+      "__cdecl": 6806,
+      "__watcallRegister": 50,
+      "__stack3_esi": 4,
+      "__stack2_esi": 13,
+      "__stack_esi": 25,
+      "__edi_esi_ebx": 1,
       "__stdcall": 25,
-      "__stack2_esi": 4,
-      "__stack_esi": 18,
-      "__stack3_esi": 1,
       "__watcallStack": 93,
-      "__fpureg": 4,
+      "__fpureg_safe": 1,
       "__softfp_double": 3,
-      "__fpustack": 8,
+      "__fpustack": 6,
+      "__fpureg": 3,
+      "__fpustack_safe": 2,
       "__fpu_thunk": 11,
       "__mathinternal": 1
     },
     "suggestion_counts": {
-      "__cdecl": 6858,
-      "__watcallRegister": 91,
-      "__stack_esi": 96,
-      "__stack_esi_edi": 58,
+      "__cdecl": 6975,
+      "__watcallRegister": 99,
       "__stack3_esi": 19,
       "__stack2_esi": 35,
       "__fpureg": 14,
+      "__stack_esi_edi": 2,
+      "__stack_esi": 27,
       "__stdcall": 8,
       "__fpustack": 1
     },
-    "high_confidence_mismatches": 304
+    "high_confidence_mismatches": 327
   },
   "mismatches": [
     {
@@ -36,6 +39,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 5,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -50,20 +55,6 @@
         "EAX",
         "EDX"
       ]
-    },
-    {
-      "name": "engine_2d.c_loadPaletteFile_FUN_004015a0",
-      "address": "004015a0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "engine_2d.c_drawCharacterHighlighted_FUN_00401b70",
@@ -71,6 +62,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -83,104 +76,6 @@
       "saved_inputs": [
         "EDX"
       ]
-    },
-    {
-      "name": "engine_3d.c_processTextureCoordinates_FUN_00403a80",
-      "address": "00403a80",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_3d.c_processPolygonColor_FUN_00403e30",
-      "address": "00403e30",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_3d.c_setVertexTextureU_FUN_00405270",
-      "address": "00405270",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_3d.c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0",
-      "address": "00406de0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_3d.c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20",
-      "address": "00406f20",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0",
-      "address": "004070c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_3d.c_renderPrim_FUN_00407920",
-      "address": "00407920",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70",
@@ -188,6 +83,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -204,84 +101,16 @@
       ]
     },
     {
-      "name": "core_anvil.cpp_CAnvil_FUN_00411ec0",
-      "address": "00411ec0",
+      "name": "core_actor.cpp_FUN_0040fffe",
+      "address": "0040fffe",
       "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_backgnd.cpp_CBackgroundActor_FUN_004128d0",
-      "address": "004128d0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_barrier.cpp_CBarrier_FUN_00414240",
-      "address": "00414240",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0",
-      "address": "004189b0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0",
-      "address": "0041bbc0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_boss.c_modelStructNotSupported_FUN_0041dbe0",
-      "address": "0041dbe0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
+      "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
       "scores": {
-        "__stack_esi": 40,
-        "__cdecl": 20
+        "__stack3_esi": 40,
+        "__cdecl": 30
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [
@@ -292,11 +121,63 @@
       ]
     },
     {
+      "name": "core_bat.cpp_FUN_00414ce0",
+      "address": "00414ce0",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 25,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "EDX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "EDX"
+      ]
+    },
+    {
+      "name": "core_boneguy.cpp_FUN_0041ca40",
+      "address": "0041ca40",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 28,
+      "scores": {
+        "__stack3_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [
+        "EDX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "EDX",
+        "ECX",
+        "ESI"
+      ]
+    },
+    {
       "name": "core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_00420320",
       "address": "00420320",
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__watcallRegister": 20,
@@ -310,24 +191,10 @@
         "ESI"
       ],
       "saved_inputs": [
-        "ESI",
         "EAX",
-        "EDX"
+        "EDX",
+        "ESI"
       ]
-    },
-    {
-      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0",
-      "address": "0042a2c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "core_charactr.cpp_CCharacter_FUN_0042b810",
@@ -335,6 +202,8 @@
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 4,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 30
@@ -353,6 +222,8 @@
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__cdecl": 30
@@ -366,57 +237,13 @@
       ]
     },
     {
-      "name": "core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0",
-      "address": "0042d3d0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EAX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EAX"
-      ]
-    },
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d530",
-      "address": "0042d530",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0",
-      "address": "0042dcd0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0",
       "address": "004317b0",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 6,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -432,6 +259,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -453,6 +282,8 @@
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 7,
+      "detected_stack_params": 5,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 30
@@ -468,25 +299,13 @@
       ]
     },
     {
-      "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0",
-      "address": "0043eef0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200",
       "address": "0043f200",
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 30
@@ -505,6 +324,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -526,6 +347,8 @@
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 38,
       "scores": {
         "__stack3_esi": 40,
         "__watcallRegister": 20,
@@ -539,87 +362,19 @@
         "ESI"
       ],
       "saved_inputs": [
-        "ESI",
         "EAX",
-        "EDX"
+        "EDX",
+        "ESI"
       ]
-    },
-    {
-      "name": "shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0",
-      "address": "004478c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930",
-      "address": "00447930",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0",
-      "address": "004479a0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10",
-      "address": "00447a10",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0",
-      "address": "004481d0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0",
       "address": "0044d2a0",
-      "current": "__cdecl",
+      "current": "__stack3_esi",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 4,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__cdecl": 30
@@ -636,32 +391,34 @@
       ]
     },
     {
-      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310",
-      "address": "0044d310",
-      "current": "__cdecl",
-      "suggested": "__stack2_esi",
-      "confidence": 40,
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370",
+      "address": "0044d370",
+      "current": "__stack2_esi",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 3,
+      "detected_stack_params": 10,
       "scores": {
-        "__stack2_esi": 40,
-        "__cdecl": 30
+        "__cdecl": 50,
+        "__stdcall": 5,
+        "__watcallStack": 15
       },
       "regs_saved_to_local": [
         "EAX"
       ],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
+      "regs_saved_to_reg": [],
       "saved_inputs": [
-        "EAX",
-        "ESI"
+        "EAX"
       ]
     },
     {
       "name": "core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600",
       "address": "0044d600",
-      "current": "__cdecl",
+      "current": "__stack2_esi",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 3,
+      "detected_stack_params": 9,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 35,
@@ -678,25 +435,23 @@
       ]
     },
     {
-      "name": "core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90",
-      "address": "0044da90",
-      "current": "__cdecl",
-      "suggested": "__stack2_esi",
-      "confidence": 40,
+      "name": "core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0",
+      "address": "0044dbd0",
+      "current": "__stack2_esi",
+      "suggested": "__cdecl",
+      "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
-        "__stack2_esi": 40,
+        "__watcallRegister": 20,
         "__cdecl": 30
       },
       "regs_saved_to_local": [
-        "EAX",
-        "ESI"
+        "EAX"
       ],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
+      "regs_saved_to_reg": [],
       "saved_inputs": [
-        "EAX",
-        "ESI"
+        "EAX"
       ]
     },
     {
@@ -705,24 +460,12 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
         "__watcallStack": 15
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
-      "address": "00451130",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
@@ -734,6 +477,8 @@
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 4,
+      "detected_stack_params": 3,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 30
@@ -750,120 +495,47 @@
       ]
     },
     {
-      "name": "core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0",
-      "address": "004567b0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
+      "name": "shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10",
+      "address": "0045bd10",
+      "current": "__stack_esi",
+      "suggested": "__cdecl",
+      "confidence": 40,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
+        "__cdecl": 40,
+        "__stdcall": 5,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
       "saved_inputs": []
     },
     {
-      "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260",
-      "address": "00470260",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dfilter.cpp_CFilterFX_process_FUN_004708e0",
-      "address": "004708e0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_004719e0",
-      "address": "004719e0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540",
-      "address": "00472540",
+      "name": "core_dest.cpp_FUN_0046fcc0",
+      "address": "0046fcc0",
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
+        "__watcallRegister": 20,
         "__cdecl": 30
       },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [
+      "regs_saved_to_local": [
+        "EAX",
+        "ECX",
         "ESI"
       ],
+      "regs_saved_to_reg": [],
       "saved_inputs": [
+        "EAX",
+        "ECX",
         "ESI"
       ]
-    },
-    {
-      "name": "core_dlight.cpp_getRestoreMemory_FUN_00472950",
-      "address": "00472950",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0",
-      "address": "004729d0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00472f30",
-      "address": "00472f30",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720",
@@ -871,6 +543,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -885,18 +559,20 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
       },
       "regs_saved_to_local": [
-        "ECX",
-        "EDX"
+        "EDX",
+        "ECX"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
-        "ECX",
-        "EDX"
+        "EDX",
+        "ECX"
       ]
     },
     {
@@ -905,6 +581,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -919,81 +597,13 @@
       ]
     },
     {
-      "name": "core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190",
-      "address": "00478190",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80",
-      "address": "00478d80",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10",
-      "address": "0047ea10",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_dosio.c_findFileNormally_FUN_004817c0",
-      "address": "004817c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_dosio.c_CFileFinder_findNext_FUN_00481cf0",
-      "address": "00481cf0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0",
       "address": "004824f0",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1007,11 +617,13 @@
       ]
     },
     {
-      "name": "core_dracbrid.cpp_ctor_FUN_00483fc0",
+      "name": "core_dracbrid.cpp_CDraculaBride_ctor_FUN_00483fc0",
       "address": "00483fc0",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1026,55 +638,21 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 4,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
         "__stdcall": 5
       },
       "regs_saved_to_local": [
-        "ECX",
-        "EDX"
+        "EDX",
+        "ECX"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
-        "ECX",
-        "EDX"
-      ]
-    },
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760",
-      "address": "0048c760",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 40,
-      "scores": {
-        "__stack_esi": 40,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
-      "saved_inputs": [
-        "ESI"
-      ]
-    },
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0",
-      "address": "0048c7e0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 40,
-      "scores": {
-        "__stack_esi": 40,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
-      "saved_inputs": [
-        "ESI"
+        "EDX",
+        "ECX"
       ]
     },
     {
@@ -1083,6 +661,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1097,6 +677,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1111,6 +693,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1125,22 +709,10 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380",
-      "address": "00494380",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
         "__cdecl": 20
       },
       "regs_saved_to_local": [],
@@ -1153,6 +725,8 @@
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__watcallRegister": 20,
@@ -1166,9 +740,9 @@
         "ESI"
       ],
       "saved_inputs": [
-        "ESI",
         "EAX",
-        "EDX"
+        "EDX",
+        "ESI"
       ]
     },
     {
@@ -1177,6 +751,8 @@
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__watcallRegister": 20,
@@ -1190,9 +766,9 @@
         "ESI"
       ],
       "saved_inputs": [
-        "ESI",
         "EAX",
-        "EDX"
+        "EDX",
+        "ESI"
       ]
     },
     {
@@ -1201,6 +777,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1216,72 +794,13 @@
       ]
     },
     {
-      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0",
-      "address": "004a0dd0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__watcallRegister": 20,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EDX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EDX"
-      ]
-    },
-    {
-      "name": "shape_edittool.cpp_CStrList_clear_FUN_004a2b10",
-      "address": "004a2b10",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0",
-      "address": "004a68e0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_004a6970",
-      "address": "004a6970",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "shape_edittool.cpp_CEdCheck_render_FUN_004a6c00",
       "address": "004a6c00",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1302,6 +821,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1316,9 +837,45 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1a49",
+      "address": "004b1a49",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__fpureg": 30,
+        "__stdcall": 30,
+        "__watcallRegister": 10
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1a59",
+      "address": "004b1a59",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__fpureg": 30,
+        "__stdcall": 30,
+        "__watcallRegister": 10
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
@@ -1330,6 +887,88 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1b1c",
+      "address": "004b1b1c",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__stdcall": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1b31",
+      "address": "004b1b31",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__stdcall": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1b41",
+      "address": "004b1b41",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__stdcall": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1b54",
+      "address": "004b1b54",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__stdcall": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1b5c",
+      "address": "004b1b5c",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1344,6 +983,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1362,6 +1003,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1376,6 +1019,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -1395,19 +1040,21 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
         "__stdcall": 5
       },
       "regs_saved_to_local": [
-        "ECX",
-        "EDX"
+        "EDX",
+        "ECX"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
-        "ECX",
-        "EDX"
+        "EDX",
+        "ECX"
       ]
     },
     {
@@ -1416,54 +1063,10 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50",
-      "address": "004bca50",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EAX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EAX"
-      ]
-    },
-    {
-      "name": "core_fire.cpp_CMuzzleFlash_process_FUN_004c1a00",
-      "address": "004c1a00",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30",
-      "address": "004c1a30",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
         "__cdecl": 20
       },
       "regs_saved_to_local": [],
@@ -1476,33 +1079,21 @@
       "current": "__cdecl",
       "suggested": "__stack_esi_edi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__stack_esi_edi": 40,
         "__cdecl": 20
       },
       "regs_saved_to_local": [
-        "ESI",
-        "EDI"
+        "EDI",
+        "ESI"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
-        "ESI",
-        "EDI"
+        "EDI",
+        "ESI"
       ]
-    },
-    {
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8ea0",
-      "address": "004c8ea0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "core_gabriela.cpp_CGabriella_FUN_004d7120",
@@ -1510,6 +1101,8 @@
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__watcallRegister": 20,
@@ -1530,25 +1123,13 @@
       ]
     },
     {
-      "name": "core_hero.cpp_CHeroPlaceholder_FUN_004f3c90",
-      "address": "004f3c90",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "core_hostage.cpp_CHostage_FUN_004f6550",
       "address": "004f6550",
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__watcallRegister": 20,
@@ -1556,17 +1137,72 @@
       },
       "regs_saved_to_local": [
         "EAX",
+        "EDX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "EAX",
+        "EDX",
         "ECX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_icepick.cpp_FUN_004f8b20",
+      "address": "004f8b20",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "EDX",
+        "ECX",
+        "ESI"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "EDX",
+        "ECX",
+        "EAX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_imp.cpp_FUN_004fa920",
+      "address": "004fa920",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EAX",
         "EDX"
       ],
       "regs_saved_to_reg": [
         "ESI"
       ],
       "saved_inputs": [
-        "ESI",
         "EAX",
-        "ECX",
-        "EDX"
+        "EDX",
+        "ESI"
       ]
     },
     {
@@ -1575,50 +1211,10 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_inv.cpp_CInventory_clear_FUN_004fd0e0",
-      "address": "004fd0e0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_inv.cpp_CInventory_loadItems_FUN_004ff740",
-      "address": "004ff740",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10",
-      "address": "004ffe10",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
         "__cdecl": 20
       },
       "regs_saved_to_local": [],
@@ -1631,6 +1227,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1644,78 +1242,41 @@
       ]
     },
     {
-      "name": "core_manpuz.cpp_FUN_00508920",
-      "address": "00508920",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
+      "name": "engine_matrix.c_normalizeVector3DFixed_FUN_0050d970",
+      "address": "0050d970",
+      "current": "__stack_esi",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [
+        "EAX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX"
+      ]
+    },
+    {
+      "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0",
+      "address": "0050d9f0",
+      "current": "__stack_esi",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 2,
+      "detected_stack_params": 5,
+      "scores": {
+        "__cdecl": 35,
+        "__stdcall": 5
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
       "saved_inputs": []
-    },
-    {
-      "name": "engine_matrix.c_transformWorldToView_FUN_0050cc40",
-      "address": "0050cc40",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 40,
-      "scores": {
-        "__stack_esi": 40,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
-      "saved_inputs": [
-        "ESI"
-      ]
-    },
-    {
-      "name": "engine_matrix.c_getCameraOrigin_FUN_0050e2c0",
-      "address": "0050e2c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 40,
-      "scores": {
-        "__stack_esi": 40,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EDX"
-      ],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
-      "saved_inputs": [
-        "ESI",
-        "EDX"
-      ]
-    },
-    {
-      "name": "engine_matrix.c_getCameraRotation_FUN_0050e2f0",
-      "address": "0050e2f0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 40,
-      "scores": {
-        "__stack_esi": 40,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EDX"
-      ],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
-      "saved_inputs": [
-        "ESI",
-        "EDX"
-      ]
     },
     {
       "name": "shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e",
@@ -1723,38 +1284,11 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20",
-      "address": "0050ef20",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70",
-      "address": "0050fe70",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 25,
-        "__stdcall": 5
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
@@ -1766,6 +1300,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 5,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -1787,26 +1323,10 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EDX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EDX"
-      ]
-    },
-    {
-      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30",
-      "address": "00512d30",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
         "__cdecl": 20
       },
       "regs_saved_to_local": [
@@ -1823,6 +1343,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -1830,43 +1352,15 @@
       },
       "regs_saved_to_local": [
         "EAX",
-        "ECX",
-        "EDX"
+        "EDX",
+        "ECX"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
         "EAX",
-        "ECX",
-        "EDX"
+        "EDX",
+        "ECX"
       ]
-    },
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
-      "address": "00516d50",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0",
-      "address": "0051ecd0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560",
@@ -1874,6 +1368,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1888,6 +1384,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1897,18 +1395,64 @@
       "saved_inputs": []
     },
     {
-      "name": "core_mission.cpp_CDemonMission_FUN_00523f50",
-      "address": "00523f50",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
+      "name": "core_mirror.cpp_transformMirrorVertex_FUN_005229b0",
+      "address": "005229b0",
+      "current": "__stack2_esi",
+      "suggested": "__cdecl",
+      "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EAX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX"
+      ]
+    },
+    {
+      "name": "core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50",
+      "address": "00522a50",
+      "current": "__stack3_esi",
+      "suggested": "__cdecl",
+      "confidence": 30,
+      "declared_param_count": 4,
+      "detected_stack_params": 3,
+      "scores": {
+        "__cdecl": 30
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
       "saved_inputs": []
+    },
+    {
+      "name": "core_mobster.cpp_FUN_00526b20",
+      "address": "00526b20",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "EAX",
+        "ECX",
+        "ESI"
+      ]
     },
     {
       "name": "engine_model.c_getMRGLBounds_FUN_00528140",
@@ -1916,6 +1460,8 @@
       "current": "__cdecl",
       "suggested": "__stack_esi",
       "confidence": 40,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
         "__stack_esi": 40,
         "__watcallRegister": 20,
@@ -1923,29 +1469,15 @@
       },
       "regs_saved_to_local": [
         "EAX",
-        "ESI",
-        "EDX"
+        "EDX",
+        "ESI"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
         "EAX",
-        "ESI",
-        "EDX"
+        "EDX",
+        "ESI"
       ]
-    },
-    {
-      "name": "core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750",
-      "address": "00529750",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
     },
     {
       "name": "core_moon.cpp_CMoon_init_FUN_00529ae0",
@@ -1953,6 +1485,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -1966,25 +1500,13 @@
       ]
     },
     {
-      "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50",
-      "address": "0052ee50",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0",
       "address": "0052f7a0",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -2006,6 +1528,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 4,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -2022,161 +1546,38 @@
       ]
     },
     {
-      "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0",
-      "address": "005438c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "support_newmsg.cpp_readMessageFile_FUN_00543e40",
-      "address": "00543e40",
+      "name": "core_msnedit.cpp_FUN_00535e70",
+      "address": "00535e70",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
-      "scores": {
-        "__watcallRegister": 30,
-        "__cdecl": 25,
-        "__stdcall": 5
-      },
-      "regs_saved_to_local": [
-        "EDX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EDX"
-      ]
-    },
-    {
-      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0",
-      "address": "005441f0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_path.cpp_CPathMap_ctor_FUN_00546450",
-      "address": "00546450",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40",
-      "address": "00546c40",
-      "current": "__cdecl",
-      "suggested": "__watcallRegister",
-      "confidence": 30,
-      "scores": {
-        "__watcallRegister": 30,
-        "__cdecl": 25,
-        "__stdcall": 5
-      },
-      "regs_saved_to_local": [
-        "EAX",
-        "ECX",
-        "EDX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EAX",
-        "ECX",
-        "EDX"
-      ]
-    },
-    {
-      "name": "core_path.cpp_CPathMap_previewPathfinding_FUN_00547c00",
-      "address": "00547c00",
-      "current": "__cdecl",
-      "suggested": "__watcallRegister",
-      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
       },
       "regs_saved_to_local": [
         "EAX",
-        "ECX"
+        "EDX"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
         "EAX",
-        "ECX"
+        "EDX"
       ]
     },
     {
-      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_005490c0",
-      "address": "005490c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteOrReload_FUN_0054c660",
-      "address": "0054c660",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_platfrm.cpp_FUN_0054c850",
-      "address": "0054c850",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590",
-      "address": "00550590",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_00538df0",
+      "address": "00538df0",
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
-        "__cdecl": 35,
-        "__stdcall": 5
+        "__cdecl": 30
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [
@@ -2187,11 +1588,146 @@
       ]
     },
     {
-      "name": "engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0",
-      "address": "005506c0",
+      "name": "core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0",
+      "address": "00541ff0",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 25,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "ECX"
+      ]
+    },
+    {
+      "name": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0",
+      "address": "00542ff0",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [
+        "ECX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "ECX"
+      ]
+    },
+    {
+      "name": "support_newmsg.cpp_readMessageFile_FUN_00543e40",
+      "address": "00543e40",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 25,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [
+        "EDX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EDX"
+      ]
+    },
+    {
+      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180",
+      "address": "00545180",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__stack3_esi": 40,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "ESI"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40",
+      "address": "00546c40",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 7,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 25,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "EDX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "EDX",
+        "ECX"
+      ]
+    },
+    {
+      "name": "core_path.cpp_CPathMap_previewPathfinding_FUN_00547c00",
+      "address": "00547c00",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "ECX"
+      ]
+    },
+    {
+      "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590",
+      "address": "00550590",
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__cdecl": 35,
@@ -2211,6 +1747,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -2227,18 +1765,27 @@
       ]
     },
     {
-      "name": "core_set.cpp_CDemonSet_FUN_0056d140",
-      "address": "0056d140",
+      "name": "core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0",
+      "address": "005643d0",
       "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
+        "__watcallRegister": 30,
+        "__cdecl": 25,
+        "__stdcall": 5
       },
-      "regs_saved_to_local": [],
+      "regs_saved_to_local": [
+        "EDX",
+        "ECX"
+      ],
       "regs_saved_to_reg": [],
-      "saved_inputs": []
+      "saved_inputs": [
+        "EDX",
+        "ECX"
+      ]
     },
     {
       "name": "core_set.cpp_CDemonSet_FUN_0056e5d0",
@@ -2246,6 +1793,8 @@
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 4,
       "scores": {
         "__stack3_esi": 40,
         "__watcallRegister": 20,
@@ -2265,11 +1814,58 @@
       ]
     },
     {
+      "name": "core_set.cpp_FUN_0056e890",
+      "address": "0056e890",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__stack_esi": 40,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [
+        "EDX"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "EDX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_set.cpp_FUN_0056e960",
+      "address": "0056e960",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__stack_esi": 40,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [
+        "ESI"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
       "name": "core_set.cpp_CDemonSet_FUN_00570040",
       "address": "00570040",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -2286,39 +1882,13 @@
       ]
     },
     {
-      "name": "core_set.cpp_CDemonSet_isCameraPanning_FUN_00571320",
-      "address": "00571320",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30",
-      "address": "00574e30",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "core_setedit.cpp_FUN_005817d0",
       "address": "005817d0",
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 1,
+      "detected_stack_params": 6,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -2333,44 +1903,165 @@
       ]
     },
     {
-      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0",
-      "address": "0058b2c0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__watcallRegister": 20,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040",
-      "address": "0058f040",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__watcallRegister": 20,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_skeledit.cpp_FUN_00598f10",
-      "address": "00598f10",
+      "name": "core_shotgun.cpp_CShotgun_FUN_005887a0",
+      "address": "005887a0",
       "current": "__cdecl",
       "suggested": "__stack_esi_edi",
-      "confidence": 25,
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
-        "__stack_esi_edi": 25,
+        "__stack_esi_edi": 40,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [
+        "EDI",
+        "ECX",
+        "ESI"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EDI",
+        "ECX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589450",
+      "address": "00589450",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__stack_esi": 40,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589a40",
+      "address": "00589a40",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058af40",
+      "address": "0058af40",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 8,
+      "scores": {
+        "__stack3_esi": 40,
         "__watcallRegister": 20,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EDX",
+        "EBX",
+        "ESI"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EDX",
+        "EBX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b160",
+      "address": "0058b160",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__stack3_esi": 40,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "ESI"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b200",
+      "address": "0058b200",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058eaa0",
+      "address": "0058eaa0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 11,
+      "scores": {
+        "__stack3_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EDX",
+        "ECX",
+        "ESI"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EDX",
+        "ECX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_005925c0",
+      "address": "005925c0",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
         "__cdecl": 20
       },
       "regs_saved_to_local": [],
@@ -2383,6 +2074,8 @@
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 5,
+      "detected_stack_params": 5,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 35,
@@ -2397,18 +2090,23 @@
       ]
     },
     {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40",
-      "address": "0059df40",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820",
+      "address": "0059f820",
+      "current": "__stack2_esi",
+      "suggested": "__cdecl",
+      "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
+        "__cdecl": 30
       },
-      "regs_saved_to_local": [],
+      "regs_saved_to_local": [
+        "EAX"
+      ],
       "regs_saved_to_reg": [],
-      "saved_inputs": []
+      "saved_inputs": [
+        "EAX"
+      ]
     },
     {
       "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40",
@@ -2416,6 +2114,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -2431,96 +2131,13 @@
       ]
     },
     {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0",
-      "address": "005a03b0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0",
-      "address": "005a07a0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0",
-      "address": "005a63b0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540",
-      "address": "005a6540",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070",
-      "address": "005a7070",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10",
-      "address": "005abb10",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__watcallRegister": 20,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
       "name": "sound_sndmain.cpp_lockSound_FUN_005abd30",
       "address": "005abd30",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -2535,6 +2152,8 @@
       "current": "__cdecl",
       "suggested": "__stdcall",
       "confidence": 30,
+      "declared_param_count": 4,
+      "detected_stack_params": 2,
       "scores": {
         "__stdcall": 30,
         "__cdecl": 25,
@@ -2554,173 +2173,90 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
       },
       "regs_saved_to_local": [
-        "ECX",
+        "EDX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EDX",
+        "ECX"
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_CStranger_FUN_005c07b0",
+      "address": "005c07b0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 159,
+      "scores": {
+        "__stack3_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "ESI"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_CStranger_FUN_005c1fe0",
+      "address": "005c1fe0",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 25,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [
+        "EAX",
         "EDX"
       ],
       "regs_saved_to_reg": [],
       "saved_inputs": [
-        "ECX",
+        "EAX",
         "EDX"
       ]
     },
     {
-      "name": "wincore_windll.cpp_selectTexture_FUN_005b72b3",
-      "address": "005b72b3",
+      "name": "core_stranger.cpp_CStranger_FUN_005c2400",
+      "address": "005c2400",
       "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
+        "__watcallRegister": 30,
+        "__cdecl": 25,
+        "__stdcall": 5
       },
-      "regs_saved_to_local": [],
+      "regs_saved_to_local": [
+        "EAX",
+        "EDX"
+      ],
       "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_updateTexture_FUN_005b72fb",
-      "address": "005b72fb",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0",
-      "address": "005b75e0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_drawPolygon2_FUN_005b7610",
-      "address": "005b7610",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_add3dLine_FUN_005b79d3",
-      "address": "005b79d3",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_setFogColorFromPalette_FUN_005b7b01",
-      "address": "005b7b01",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_clearZBox_FUN_005b7c00",
-      "address": "005b7c00",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_restoreZBuffer_FUN_005b7d20",
-      "address": "005b7d20",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_getVideoMemory_FUN_005b7d60",
-      "address": "005b7d60",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_buildCardList_FUN_005b7db0",
-      "address": "005b7db0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_windll.cpp_setVideoModeX_FUN_005b7e8b",
-      "address": "005b7e8b",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
+      "saved_inputs": [
+        "EAX",
+        "EDX"
+      ]
     },
     {
       "name": "core_stranger.cpp_CStranger_FUN_005c5170",
@@ -2728,6 +2264,8 @@
       "current": "__cdecl",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__cdecl": 30
@@ -2741,51 +2279,13 @@
       ]
     },
     {
-      "name": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590",
-      "address": "005c7590",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EAX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EAX"
-      ]
-    },
-    {
-      "name": "shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30",
-      "address": "005d0d30",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 40,
-      "scores": {
-        "__stack_esi": 40,
-        "__cdecl": 25,
-        "__stdcall": 5
-      },
-      "regs_saved_to_local": [
-        "ECX"
-      ],
-      "regs_saved_to_reg": [
-        "ESI"
-      ],
-      "saved_inputs": [
-        "ESI",
-        "ECX"
-      ]
-    },
-    {
       "name": "shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020",
       "address": "005d6020",
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 35,
@@ -2798,23 +2298,249 @@
         "ESI"
       ],
       "saved_inputs": [
-        "ESI",
-        "ECX"
+        "ECX",
+        "ESI"
       ]
     },
     {
-      "name": "core_texlist.cpp_CTextureList_captureAllTextures_FUN_005dc230",
-      "address": "005dc230",
+      "name": "shape_superopt.cpp_FUN_005d8350",
+      "address": "005d8350",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d8390",
+      "address": "005d8390",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d83d0",
+      "address": "005d83d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d84d0",
+      "address": "005d84d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d8520",
+      "address": "005d8520",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d85a0",
+      "address": "005d85a0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d85f0",
+      "address": "005d85f0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d8630",
+      "address": "005d8630",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_tbplayer.cpp_FUN_005da120",
+      "address": "005da120",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "EAX",
+        "ECX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_tbplayer.cpp_FUN_005da370",
+      "address": "005da370",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__stack2_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "EDX"
+      ],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "EAX",
+        "EDX",
+        "ESI"
+      ]
+    },
+    {
+      "name": "core_tentacle.cpp_FUN_005dbb70",
+      "address": "005dbb70",
       "current": "__cdecl",
       "suggested": "__stack_esi",
-      "confidence": 25,
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
-        "__stack_esi": 25,
+        "__stack_esi": 40,
         "__cdecl": 20
       },
       "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
+      "saved_inputs": [
+        "ESI"
+      ]
     },
     {
       "name": "core_texlist.cpp_CTextureList_renderTexture_FUN_005dca30",
@@ -2822,6 +2548,8 @@
       "current": "__cdecl",
       "suggested": "__stack_esi",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__stack_esi": 40,
         "__cdecl": 20
@@ -2840,6 +2568,8 @@
       "current": "__cdecl",
       "suggested": "__stack_esi",
       "confidence": 40,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
         "__stack_esi": 40,
         "__cdecl": 20
@@ -2853,35 +2583,30 @@
       ]
     },
     {
-      "name": "core_terrain.cpp_CTerrain_process_FUN_005e2050",
-      "address": "005e2050",
+      "name": "core_vampboss.cpp_FUN_005e6b80",
+      "address": "005e6b80",
       "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0",
-      "address": "005e6da0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
+        "__stack2_esi": 40,
+        "__watcallRegister": 20,
+        "__cdecl": 30
       },
       "regs_saved_to_local": [
-        "EAX"
+        "EAX",
+        "ECX",
+        "ESI"
       ],
-      "regs_saved_to_reg": [],
+      "regs_saved_to_reg": [
+        "ESI"
+      ],
       "saved_inputs": [
-        "EAX"
+        "EAX",
+        "ECX",
+        "ESI"
       ]
     },
     {
@@ -2890,6 +2615,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -2899,65 +2626,13 @@
       "saved_inputs": []
     },
     {
-      "name": "wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ece60",
-      "address": "005ece60",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__watcallRegister": 20,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EAX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EAX"
-      ]
-    },
-    {
-      "name": "core_werewolf.cpp_CWerewolf_FUN_005f1820",
-      "address": "005f1820",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0",
-      "address": "005f2dc0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi_edi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi_edi": 25,
-        "__watcallRegister": 20,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [
-        "EAX",
-        "ECX"
-      ],
-      "regs_saved_to_reg": [],
-      "saved_inputs": [
-        "EAX",
-        "ECX"
-      ]
-    },
-    {
       "name": "wincore_winrun.cpp_sleep_FUN_005f40e0",
       "address": "005f40e0",
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -2978,6 +2653,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -2987,25 +2664,13 @@
       "saved_inputs": []
     },
     {
-      "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0",
-      "address": "005f46b0",
-      "current": "__cdecl",
-      "suggested": "__stack_esi",
-      "confidence": 25,
-      "scores": {
-        "__stack_esi": 25,
-        "__cdecl": 20
-      },
-      "regs_saved_to_local": [],
-      "regs_saved_to_reg": [],
-      "saved_inputs": []
-    },
-    {
-      "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0",
-      "address": "005f77e0",
+      "name": "core_zombie.cpp_CZombie_FUN_005fb1f0",
+      "address": "005fb1f0",
       "current": "__cdecl",
       "suggested": "__stack3_esi",
       "confidence": 40,
+      "declared_param_count": 0,
+      "detected_stack_params": 32,
       "scores": {
         "__stack3_esi": 40,
         "__cdecl": 35,
@@ -3023,15 +2688,51 @@
       ]
     },
     {
+      "name": "core_zombie.cpp_CZombie_FUN_005fc920",
+      "address": "005fc920",
+      "current": "__cdecl",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
       "name": "crt_stdlib.c_median_of_3_FUN_005fdea0",
       "address": "005fdea0",
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 25,
+      "declared_param_count": 4,
+      "detected_stack_params": 0,
       "scores": {
         "__cdecl": 25,
         "__stdcall": 5,
         "__watcallRegister": 10
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0",
+      "address": "005fe6b0",
+      "current": "__fpureg_safe",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
+      "scores": {
+        "__fpureg": 35,
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
@@ -3043,6 +2744,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3058,6 +2761,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3073,6 +2778,8 @@
       "current": "__softfp_double",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -3083,11 +2790,34 @@
       "saved_inputs": []
     },
     {
+      "name": "crt_unknown.c_FUN_005ff0d0",
+      "address": "005ff0d0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [
+        "EAX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX"
+      ]
+    },
+    {
       "name": "crt_string.c_strncpy_safe_FUN_005ff130",
       "address": "005ff130",
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 4,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3097,11 +2827,13 @@
       "saved_inputs": []
     },
     {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0",
+      "name": "crt_stdio.c_remove_FUN_005ff9d0",
       "address": "005ff9d0",
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3117,6 +2849,8 @@
       "current": "__fpustack",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -3132,6 +2866,8 @@
       "current": "__fpustack",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -3147,6 +2883,8 @@
       "current": "__softfp_double",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -3162,6 +2900,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 4,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -3178,15 +2918,98 @@
       ]
     },
     {
+      "name": "crt_unknown.c_FUN_00600990",
+      "address": "00600990",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00600a64",
+      "address": "00600a64",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
       "name": "crt_math.c_asin_FUN_00600b94",
       "address": "00600b94",
       "current": "__fpustack",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
         "__watcallRegister": 10
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00600c80",
+      "address": "00600c80",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00600ee4",
+      "address": "00600ee4",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
+      "address": "00601258",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
@@ -3198,6 +3021,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3213,6 +3038,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 30
       },
@@ -3226,6 +3053,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3240,6 +3069,25 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94",
+      "address": "00601a94",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3255,6 +3103,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3265,11 +3115,13 @@
       "saved_inputs": []
     },
     {
-      "name": "crt_io.c_generateTempFilename_FUN_00601f1c",
+      "name": "crt_io.c__tempnam_FUN_00601f1c",
       "address": "00601f1c",
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -3283,6 +3135,8 @@
       "current": "__softfp_double",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3297,6 +3151,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 25,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 25,
         "__stdcall": 5,
@@ -3312,6 +3168,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3326,6 +3184,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -3339,6 +3199,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3353,6 +3215,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3367,9 +3231,153 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00603bc9",
+      "address": "00603bc9",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00603bf5",
+      "address": "00603bf5",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [
+        "EAX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX"
+      ]
+    },
+    {
+      "name": "crt_unknown.c_FUN_00603c74",
+      "address": "00603c74",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_CondCallDoNothing_FUN_00603ccc",
+      "address": "00603ccc",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00603d60",
+      "address": "00603d60",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00603dc8",
+      "address": "00603dc8",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 5,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00604267",
+      "address": "00604267",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 5,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [
+        "ECX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "ECX"
+      ]
+    },
+    {
+      "name": "crt_unknown.c_FUN_00604478",
+      "address": "00604478",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 5,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3382,6 +3390,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3396,6 +3406,24 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060501c",
+      "address": "0060501c",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3410,6 +3438,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3425,6 +3455,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3440,6 +3472,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3454,6 +3488,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3469,6 +3505,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3484,6 +3522,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -3497,6 +3537,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -3510,6 +3552,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -3523,6 +3567,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -3536,6 +3582,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3550,6 +3598,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3564,6 +3614,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3579,6 +3631,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 4,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3593,6 +3647,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3608,6 +3664,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3626,6 +3684,8 @@
       "current": "__fpureg",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 25,
@@ -3638,9 +3698,11 @@
     {
       "name": "crt_math.c_fdiv_FUN_00606960",
       "address": "00606960",
-      "current": "__fpustack",
+      "current": "__fpustack_safe",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 8,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3659,6 +3721,8 @@
       "current": "__watcallRegister",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -3674,6 +3738,8 @@
       "current": "__watcallRegister",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -3689,6 +3755,8 @@
       "current": "__watcallRegister",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -3704,6 +3772,8 @@
       "current": "__watcallRegister",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -3719,6 +3789,8 @@
       "current": "__watcallRegister",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -3734,6 +3806,8 @@
       "current": "__watcallRegister",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -3749,8 +3823,27 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606ad0",
+      "address": "00606ad0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3763,8 +3856,27 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606b07",
+      "address": "00606b07",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3777,6 +3889,58 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606b2b",
+      "address": "00606b2b",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606b3b",
+      "address": "00606b3b",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606b60",
+      "address": "00606b60",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3792,8 +3956,27 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606b9f",
+      "address": "00606b9f",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3806,6 +3989,158 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606bcb",
+      "address": "00606bcb",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606bdf",
+      "address": "00606bdf",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606c04",
+      "address": "00606c04",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606c23",
+      "address": "00606c23",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606c43",
+      "address": "00606c43",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606c57",
+      "address": "00606c57",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606c6f",
+      "address": "00606c6f",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606c83",
+      "address": "00606c83",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606ca8",
+      "address": "00606ca8",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3821,8 +4156,27 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606ce7",
+      "address": "00606ce7",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3835,6 +4189,58 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606d13",
+      "address": "00606d13",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606d27",
+      "address": "00606d27",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606d4c",
+      "address": "00606d4c",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3850,8 +4256,27 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606d8b",
+      "address": "00606d8b",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3864,6 +4289,58 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606db7",
+      "address": "00606db7",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606dcb",
+      "address": "00606dcb",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606df0",
+      "address": "00606df0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3879,8 +4356,27 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606e2f",
+      "address": "00606e2f",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3893,6 +4389,91 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606e5b",
+      "address": "00606e5b",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606e6f",
+      "address": "00606e6f",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606e94",
+      "address": "00606e94",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606eb3",
+      "address": "00606eb3",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606ed3",
+      "address": "00606ed3",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3908,6 +4489,25 @@
       "current": "__fpu_thunk",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_math.c_FUN_00606eff",
+      "address": "00606eff",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3923,9 +4523,27 @@
       "current": "__fpustack",
       "suggested": "__stdcall",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 3,
       "scores": {
         "__stdcall": 30,
         "__cdecl": 25,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00607080",
+      "address": "00607080",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3938,6 +4556,8 @@
       "current": "__fpureg",
       "suggested": "__cdecl",
       "confidence": 25,
+      "declared_param_count": 1,
+      "detected_stack_params": 0,
       "scores": {
         "__cdecl": 25,
         "__stdcall": 5,
@@ -3953,9 +4573,66 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00607858",
+      "address": "00607858",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__watcallRegister": 20,
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "ECX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "ECX"
+      ]
+    },
+    {
+      "name": "crt_unknown.c_FUN_00607958",
+      "address": "00607958",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00607c88",
+      "address": "00607c88",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -3968,6 +4645,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -3982,6 +4661,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -3997,6 +4678,24 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c",
+      "address": "00608a1c",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4011,6 +4710,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4026,8 +4727,27 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00608fdc",
+      "address": "00608fdc",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
@@ -4039,6 +4759,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 4,
+      "detected_stack_params": 4,
       "scores": {
         "__watcallRegister": 20,
         "__cdecl": 45,
@@ -4060,6 +4782,8 @@
       "current": "__cdecl",
       "suggested": "__watcallRegister",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 20
@@ -4074,6 +4798,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 6,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4089,6 +4815,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 25,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__cdecl": 25,
         "__stdcall": 5,
@@ -4104,6 +4832,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -4117,6 +4847,8 @@
       "current": "__cdecl",
       "suggested": "__stdcall",
       "confidence": 30,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__stdcall": 30,
         "__watcallRegister": 10
@@ -4126,15 +4858,139 @@
       "saved_inputs": []
     },
     {
+      "name": "crt_unknown.c_FUN_0060ade0",
+      "address": "0060ade0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__watcallRegister": 20,
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "EDX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "EDX"
+      ]
+    },
+    {
       "name": "crt_stdio.c_flushFileBuffers_FUN_0060af00",
       "address": "0060af00",
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
         "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060af5d",
+      "address": "0060af5d",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060b07a",
+      "address": "0060b07a",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060b0c8",
+      "address": "0060b0c8",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060b106",
+      "address": "0060b106",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 5,
+      "scores": {
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060b142",
+      "address": "0060b142",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 5,
+      "scores": {
+        "__cdecl": 35,
+        "__stdcall": 5
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060b190",
+      "address": "0060b190",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__fpureg": 35,
+        "__cdecl": 20,
+        "__watcallRegister": 10
       },
       "regs_saved_to_local": [],
       "regs_saved_to_reg": [],
@@ -4146,6 +5002,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -4161,6 +5019,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4176,9 +5036,27 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060b670",
+      "address": "0060b670",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__cdecl": 45,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -4191,6 +5069,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4205,6 +5085,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4220,6 +5102,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 4,
+      "detected_stack_params": 4,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4234,6 +5118,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 4,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4248,6 +5134,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4266,6 +5154,8 @@
       "current": "__watcallStack",
       "suggested": "__stack2_esi",
       "confidence": 40,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__stack2_esi": 40,
         "__cdecl": 30
@@ -4284,6 +5174,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4299,6 +5191,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4313,6 +5207,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 4,
+      "detected_stack_params": 4,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -4332,6 +5228,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 4,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4346,6 +5244,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__watcallRegister": 30,
         "__cdecl": 35,
@@ -4367,6 +5267,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 4,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4381,6 +5283,8 @@
       "current": "__mathinternal",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -4396,6 +5300,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4411,6 +5317,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4426,6 +5334,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4441,6 +5351,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4456,6 +5368,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4471,6 +5385,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4486,6 +5402,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4501,6 +5419,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4511,11 +5431,30 @@
       "saved_inputs": []
     },
     {
-      "name": "crt_io.c_check_file_access_FUN_0060c9f0",
+      "name": "crt_unknown.c_FUN_0060c640",
+      "address": "0060c640",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_io.c_access_FUN_0060c9f0",
       "address": "0060c9f0",
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 30
       },
@@ -4529,6 +5468,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 3,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4544,6 +5485,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4559,6 +5502,8 @@
       "current": "__cdecl",
       "suggested": "__fpureg",
       "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
       "scores": {
         "__fpureg": 30,
         "__cdecl": 20,
@@ -4574,6 +5519,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4588,9 +5535,61 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060ced8",
+      "address": "0060ced8",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068",
+      "address": "0060d068",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060d48c",
+      "address": "0060d48c",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 50,
+      "declared_param_count": 0,
+      "detected_stack_params": 7,
+      "scores": {
+        "__cdecl": 50,
+        "__stdcall": 5,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -4603,6 +5602,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4617,6 +5618,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4632,6 +5635,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 30,
+      "declared_param_count": 4,
+      "detected_stack_params": 4,
       "scores": {
         "__cdecl": 30
       },
@@ -4645,6 +5650,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 6,
+      "detected_stack_params": 6,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4659,6 +5666,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4674,6 +5683,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4689,6 +5700,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -4704,6 +5717,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -4719,6 +5734,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 40,
         "__stdcall": 5,
@@ -4735,6 +5752,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 3,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 45,
         "__watcallStack": 15
@@ -4749,6 +5768,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 50,
+      "declared_param_count": 4,
+      "detected_stack_params": 3,
       "scores": {
         "__cdecl": 50,
         "__stdcall": 5,
@@ -4764,6 +5785,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 40,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 40,
         "__stdcall": 5,
@@ -4780,6 +5803,8 @@
       "current": "__watcallRegister",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 2,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4790,13 +5815,208 @@
       "saved_inputs": []
     },
     {
+      "name": "crt_unknown.c_FUN_0060e256",
+      "address": "0060e256",
+      "current": "unknown",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_CallReturnZero6_FUN_0060e880",
+      "address": "0060e880",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0",
+      "address": "0060e8e0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__watcallRegister": 20,
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [
+        "EAX",
+        "EDX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX",
+        "EDX"
+      ]
+    },
+    {
+      "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930",
+      "address": "0060e930",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 25,
+      "declared_param_count": 0,
+      "detected_stack_params": 0,
+      "scores": {
+        "__cdecl": 25,
+        "__stdcall": 5,
+        "__watcallRegister": 10
+      },
+      "regs_saved_to_local": [
+        "EAX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EAX"
+      ]
+    },
+    {
       "name": "crt_locale.c_toupper_multibyte_FUN_0060f300",
       "address": "0060f300",
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 45,
+      "declared_param_count": 2,
+      "detected_stack_params": 2,
       "scores": {
         "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060fac0",
+      "address": "0060fac0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__cdecl": 30
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060fb40",
+      "address": "0060fb40",
+      "current": "unknown",
+      "suggested": "__watcallRegister",
+      "confidence": 30,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__watcallRegister": 30,
+        "__cdecl": 20
+      },
+      "regs_saved_to_local": [
+        "EDX"
+      ],
+      "regs_saved_to_reg": [],
+      "saved_inputs": [
+        "EDX"
+      ]
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060fcf4",
+      "address": "0060fcf4",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_0060fe94",
+      "address": "0060fe94",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_006107c0",
+      "address": "006107c0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 2,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_006107f0",
+      "address": "006107f0",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 45,
+      "declared_param_count": 0,
+      "detected_stack_params": 3,
+      "scores": {
+        "__cdecl": 45,
+        "__watcallStack": 15
+      },
+      "regs_saved_to_local": [],
+      "regs_saved_to_reg": [],
+      "saved_inputs": []
+    },
+    {
+      "name": "crt_unknown.c_FUN_00610970",
+      "address": "00610970",
+      "current": "unknown",
+      "suggested": "__cdecl",
+      "confidence": 35,
+      "declared_param_count": 0,
+      "detected_stack_params": 1,
+      "scores": {
+        "__cdecl": 35,
+        "__watcallRegister": 10,
         "__watcallStack": 15
       },
       "regs_saved_to_local": [],
@@ -4809,6 +6029,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4824,6 +6046,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
@@ -4839,6 +6063,8 @@
       "current": "__watcallStack",
       "suggested": "__cdecl",
       "confidence": 35,
+      "declared_param_count": 1,
+      "detected_stack_params": 1,
       "scores": {
         "__cdecl": 35,
         "__watcallRegister": 10,
