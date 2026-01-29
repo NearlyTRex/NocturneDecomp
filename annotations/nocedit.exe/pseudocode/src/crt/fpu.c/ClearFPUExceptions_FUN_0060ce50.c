@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_fpu_c_ClearFPUExceptions_FUN_0060ce50(void)
+void __cdecl ClearFPUExceptions(void)
 
 {
   return;

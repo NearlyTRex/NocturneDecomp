@@ -50,7 +50,7 @@ section .text
     PUSH ESI                            ; 0054f4be
     MOV EBX,EAX                         ; 0054f4bf
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0054f4c1
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0054f4c6
     PUSH 0x0                            ; 0054f4c9
     PUSH EDI                            ; 0054f4cb
@@ -60,7 +60,7 @@ section .text
     MOV EBP,EAX                         ; 0054f4d4
     MOV dword ptr [ESP + 0xc],EAX       ; 0054f4d6
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 0054f4da
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     MOV EDI,EBX                         ; 0054f4df
     ADD ESP,0xc                         ; 0054f4e1
     CMP EBX,0x10000                     ; 0054f4e4
@@ -73,7 +73,7 @@ section .text
     PUSH 0x30d5090                      ; 0054f4f4 | g_FileIOBuffer
     MOV EBX,0x30d5090                   ; 0054f4f9 | g_FileIOBuffer
     CALL crt_stdio.c_fread_FUN_005fd990 ; 0054f4fe
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0054f503
     MOV EAX,ESI                         ; 0054f506
     XOR ESI,ESI                         ; 0054f508
@@ -103,7 +103,7 @@ section .text
     MOV EBX,0x30d5090                   ; 0054f53b | g_FileIOBuffer
     MOV EBP,ESI                         ; 0054f540
     CALL crt_stdio.c_fread_FUN_005fd990 ; 0054f542
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0054f547
     XOR ESI,ESI                         ; 0054f54a
     MOV dword ptr [ESP + 0x4],EDI       ; 0054f54c
@@ -132,7 +132,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 0054f57a
     PUSH ECX                            ; 0054f57e
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0054f57f
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0054f584
     MOV EAX,EBP                         ; 0054f587
     ADD ESP,0x8                         ; 0054f589

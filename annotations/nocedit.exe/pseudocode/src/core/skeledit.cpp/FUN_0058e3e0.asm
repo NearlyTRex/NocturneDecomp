@@ -12,7 +12,7 @@
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597f44
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
 
     PUSH 0x1c                           ; 0058e3e0
         ;   Label: core_skeledit.cpp_FUN_0058e3e0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058e3e5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058e3e5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH ESI                            ; 0058e3ea
     PUSH EDI                            ; 0058e3eb
     PUSH EBP                            ; 0058e3ec

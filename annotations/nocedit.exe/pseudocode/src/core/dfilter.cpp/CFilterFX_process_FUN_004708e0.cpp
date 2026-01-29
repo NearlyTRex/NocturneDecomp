@@ -26,7 +26,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr
     if ((float)this_ptr->frame_count <= (float)this_ptr->current_frame) {
       this_ptr->current_frame = 0;
     }
-    dVar6 = crt_math_c_round_FUN_005fe6b0((double)(float)this_ptr->current_frame);
+    dVar6 = round((double)(float)this_ptr->current_frame);
     puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);
     puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);
     for (iVar2 = 0x800; iVar2 != 0; iVar2 = iVar2 + -1) {

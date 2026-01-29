@@ -9,6 +9,6 @@
 void __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,4,&g_CDemonFilterTypeInfo);
+  __arrfini(array,4,&g_CDemonFilterTypeInfo);
   return;
 }

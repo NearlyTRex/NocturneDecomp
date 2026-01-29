@@ -37,7 +37,7 @@ void core_script_cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0(void)
     }
     iVar2 = core_script_cpp_SCmdParm_setTemplateText_FUN_00560de0();
     if (iVar2 == 0) break;
-    iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar3,"<%s>",local_7c);
+    iVar2 = sprintf(in_stack_00000004 + iVar3,"<%s>",local_7c);
     iVar3 = iVar3 + iVar2;
   }
   pcVar4 = "Template bug, can't show usage";

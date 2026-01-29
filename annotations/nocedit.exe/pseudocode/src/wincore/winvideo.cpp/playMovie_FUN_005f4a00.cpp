@@ -11,7 +11,7 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
 {
   byte *pbVar1;
   byte bVar2;
-  FILE *file_ptr;
+  _FILE *file_ptr;
   MCIERROR MVar3;
   byte *pbVar4;
   HANDLE hThread;
@@ -26,10 +26,10 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
   tagRECT tStack_24;
   tagRECT tStack_14;
   
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_74,"%s\\%s",directory_path,movie_filename);
+  sprintf(local_74,"%s\\%s",directory_path,movie_filename);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_74,(char *)0x0,"rb","..\\wincore\\winvideo.cpp",0x12e);
-  if (file_ptr == (FILE *)0x0) {
+  if (file_ptr == (_FILE *)0x0) {
     return 0;
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\wincore\\winvideo.cpp",0x132);
@@ -39,13 +39,13 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
   if (g_MoviePlaying != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_005f46b0(g_MainWindowHandle);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
+  sprintf(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
   MVar3 = (*g_mciSendStringAFunc)(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar3 == 0) {
     g_MoviePlaying = 1;
     MVar3 = (*g_mciSendStringAFunc)("status mov window handle",local_1f8,0x104,(HWND)0x0);
     if (MVar3 == 0) {
-      g_MovieWindowHandle = (HWND)crt_stdlib_c_atoi_FUN_005ffef0(local_1f8);
+      g_MovieWindowHandle = (HWND)atoi(local_1f8);
     }
     else {
       (*g_mciGetErrorStringAFunc)(MVar3,local_1f8,0x104);

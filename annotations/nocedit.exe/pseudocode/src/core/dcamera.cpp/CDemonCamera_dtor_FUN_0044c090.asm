@@ -19,9 +19,9 @@
 ; Called Functions:
 ;   core_camview.cpp_CCameraView_dtor_FUN_00427d00
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0044c360
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -54,12 +54,12 @@ section .text
     PUSH 0x65c690                       ; 0044c0c6 | g_CDemonCamera
         ;   Label: LAB_0044c0c6
     PUSH EBX                            ; 0044c0cb
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0044c0cc
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0044c0cc
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0044c0d1
     PUSH EAX                            ; 0044c0d4
-    CALL crt_memory.c_free_FUN_005fe659 ; 0044c0d5
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0044c0d5
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0044c0da
     MOV EAX,EBX                         ; 0044c0dd
     POP EBX                             ; 0044c0df

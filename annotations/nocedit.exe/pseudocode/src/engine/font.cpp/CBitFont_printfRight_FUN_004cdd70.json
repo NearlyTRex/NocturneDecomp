@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "incompatible_types",
+        "column": 41,
+        "line": 18,
+        "message": "cannot convert 'char**' to '__va_list_tag*'"
+      },
+      {
         "category": "other",
         "column": 74,
         "line": 19,
@@ -174,14 +180,14 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000018",
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(local_1010,in_stack_00000018,in_stack_0000001c);",
+      "text": "vsprintf(local_1010,in_stack_00000018,in_stack_0000001c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_0000001c",
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(local_1010,in_stack_00000018,in_stack_0000001c);",
+      "text": "vsprintf(local_1010,in_stack_00000018,in_stack_0000001c);",
       "type": "stack_param"
     },
     {

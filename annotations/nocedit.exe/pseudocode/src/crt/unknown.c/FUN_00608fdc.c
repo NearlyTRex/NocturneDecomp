@@ -10,7 +10,7 @@ int crt_unknown_c_FUN_00608fdc(void)
 
 {
   FileListNode *pFVar1;
-  FILE *file_handle;
+  _FILE *file_handle;
   FileListNode *pFVar2;
   int close_flags;
   int iVar3;
@@ -30,13 +30,13 @@ joined_r0x00609003:
   goto code_r0x0060901c;
   goto LAB_00609029;
 code_r0x0060901c:
-  if ((FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {
-    if (file_handle < (FILE *)&DAT_00684d12) {
+  if ((_FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {
+    if (file_handle < (_FILE *)&DAT_00684d12) {
       close_flags = 0;
     }
 LAB_00609029:
     iVar3 = iVar3 + 1;
-    crt_stdio_c_closeAndDeallocateFile_FUN_00601ee4(file_handle,close_flags);
+    __CClose(file_handle,close_flags);
   }
   goto joined_r0x00609003;
 }

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(char *error_message,ushort flags)
+int __cdecl TriggerDebuggerBreak(char *error_message,ushort flags)
 
 {
   code *pcVar1;

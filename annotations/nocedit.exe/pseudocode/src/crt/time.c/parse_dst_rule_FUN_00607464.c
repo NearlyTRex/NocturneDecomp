@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_time_c_parse_dst_rule_FUN_00607464(char *rule_string,dst_rule *rule)
+char * __cdecl parse_dst_rule(char *rule_string,dst_rule *rule)
 
 {
   char *pcVar1;
@@ -26,14 +26,14 @@ char * __cdecl crt_time_c_parse_dst_rule_FUN_00607464(char *rule_string,dst_rule
     iVar2 = 0;
   }
   rule[1].seconds = iVar2;
-  pcVar1 = crt_string_c_parse_uint_FUN_00607318(rule_string,&local_c);
+  pcVar1 = parse_uint(rule_string,&local_c);
   if (iVar2 == 0) {
     rule->month = local_c + -1;
     if (*pcVar1 == '.') {
-      pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_c);
+      pcVar1 = parse_uint(pcVar1 + 1,&local_c);
       rule->day = local_c;
       if (*pcVar1 == '.') {
-        pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_c);
+        pcVar1 = parse_uint(pcVar1 + 1,&local_c);
         rule->day_of_year = local_c;
       }
     }
@@ -46,11 +46,11 @@ char * __cdecl crt_time_c_parse_dst_rule_FUN_00607464(char *rule_string,dst_rule
   local_18 = 0;
   local_14 = 0;
   if (*pcVar1 == '/') {
-    pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_10);
+    pcVar1 = parse_uint(pcVar1 + 1,&local_10);
     if (*pcVar1 == ':') {
-      pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_14);
+      pcVar1 = parse_uint(pcVar1 + 1,&local_14);
       if (*pcVar1 == ':') {
-        pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_18);
+        pcVar1 = parse_uint(pcVar1 + 1,&local_18);
       }
     }
   }

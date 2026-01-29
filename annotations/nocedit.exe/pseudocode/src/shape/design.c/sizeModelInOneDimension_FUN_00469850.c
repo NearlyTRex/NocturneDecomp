@@ -66,9 +66,9 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-  local_48 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
+  local_48 = toupper(uVar2 & 0xff);
   if ((0x57 < (int)local_48) && ((int)local_48 < 0x5b)) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"Enter %c distance in feet (,min,max for user-defined min/max points) : ",local_48);
+    sprintf(local_f4,"Enter %c distance in feet (,min,max for user-defined min/max points) : ",local_48);
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,local_f4);
     iVar3 = -1;
     pcVar4 = local_a4;
@@ -79,7 +79,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     } while (cVar1 != '\0');
     if (iVar3 != -2) {
-      local_54 = crt_stdio_c_sscanf_FUN_0060013c
+      local_54 = sscanf
                            (local_a4,"%f,%d,%d",local_20,&local_4c,&local_50);
       if (1 < local_54) {
         if (local_54 != 3) {

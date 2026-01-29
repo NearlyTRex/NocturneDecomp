@@ -56,7 +56,7 @@ section .text
     MOV EAX,0x61aedf                    ; 0045a628 | = "models"
     PUSH EAX                            ; 0045a62d | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0045a62e
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0045a633
     MOV dword ptr [EBP + -0x4],EAX      ; 0045a636
     CMP dword ptr [EBP + -0x4],0x0      ; 0045a639
@@ -76,7 +76,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a66d
     PUSH EAX                            ; 0045a670
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a671
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0045a676
     MOV dword ptr [EBP + -0xc],0x0      ; 0045a679
     JMP 0x0045a688                      ; 0045a680
@@ -106,7 +106,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a6c9
     PUSH EAX                            ; 0045a6cc
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a6cd
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x20                        ; 0045a6d2
     JMP 0x0045a682                      ; 0045a6d5
         ;   XREF to: 0045a682 (UNCONDITIONAL_JUMP)  ; LAB_0045a682
@@ -117,7 +117,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a6e3
     PUSH EAX                            ; 0045a6e6
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a6e7
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0045a6ec
     MOV dword ptr [EBP + -0xc],0x0      ; 0045a6ef
     JMP 0x0045a6fe                      ; 0045a6f6
@@ -137,7 +137,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a720
     PUSH EAX                            ; 0045a723
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a724
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0045a729
     MOV dword ptr [EBP + -0x8],0x0      ; 0045a72c
     JMP 0x0045a73b                      ; 0045a733
@@ -161,7 +161,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a768
     PUSH EAX                            ; 0045a76b
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a76c
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0045a771
     JMP 0x0045a735                      ; 0045a774
         ;   XREF to: 0045a735 (UNCONDITIONAL_JUMP)  ; LAB_0045a735
@@ -171,7 +171,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a77c
     PUSH EAX                            ; 0045a77f
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a780
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0045a785
     JMP 0x0045a6f8                      ; 0045a788
         ;   XREF to: 0045a6f8 (UNCONDITIONAL_JUMP)  ; LAB_0045a6f8
@@ -182,7 +182,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a798
     PUSH EAX                            ; 0045a79b
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0045a79c
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0045a7a1
     MOV ESP,EBP                         ; 0045a7a4
     POP EBP                             ; 0045a7a6

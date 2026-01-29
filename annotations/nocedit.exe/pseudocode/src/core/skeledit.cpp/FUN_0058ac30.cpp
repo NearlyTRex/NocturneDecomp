@@ -15,12 +15,12 @@ int core_skeledit_cpp_FUN_0058ac30(void)
   int *in_stack_00000004;
   char *in_stack_00000008;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x1c);
+  __STK(0x1c);
   iVar2 = 0;
   if (0 < *in_stack_00000004) {
     str1 = in_stack_00000004 + 1;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,in_stack_00000008);
+      iVar1 = stricmp((char *)str1,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_stdio_c_formatTwoDigits_FUN_006002a0(char *buffer,int value)
+void __cdecl formatTwoDigits(char *buffer,int value)
 
 {
   *buffer = (char)((longlong)value / 10) + '0';

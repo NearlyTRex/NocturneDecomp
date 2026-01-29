@@ -25,7 +25,7 @@ void __cdecl CFileBitStream::reset(CFileBitStream *this_ptr);
 
 // Original: sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0
 // Address: 0052ecf0
-void __cdecl CFileBitStream::init(CFileBitStream *this_ptr,FILE *file_handle,int buffer_size,int stream_length);
+void __cdecl CFileBitStream::init(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 
 // Original: sound_mp3.cpp_CFileBitStream_close_FUN_0052edf0
 // Address: 0052edf0
@@ -209,7 +209,7 @@ void __cdecl CMP3Decoder::openFile(CMP3Decoder *this_ptr,char *filename);
 
 // Original: sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630
 // Address: 00534630
-int __cdecl CMP3Decoder::parseHeader(CMP3Decoder *this_ptr,FILE *file_handle,int file_size);
+int __cdecl CMP3Decoder::parseHeader(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size);
 
 // Original: sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
 // Address: 005349e0

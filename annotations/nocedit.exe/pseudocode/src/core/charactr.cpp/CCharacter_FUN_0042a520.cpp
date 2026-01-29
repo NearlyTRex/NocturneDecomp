@@ -67,7 +67,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a520(CCharacter *this_ptr)
       fVar2 = pCVar5->x - pCVar8->x;
       fVar3 = pCVar5->y - pCVar8->y;
       local_6c.x = pCVar5->z - pCVar8->z;
-      dVar11 = crt_math_c_round_FUN_005fe6b0
+      dVar11 = round
                          ((double)(SQRT(local_6c.x * local_6c.x + fVar2 * fVar2 + fVar3 * fVar3) *
                                   (float)0.5));
       local_1c = (int)ROUND(dVar11);

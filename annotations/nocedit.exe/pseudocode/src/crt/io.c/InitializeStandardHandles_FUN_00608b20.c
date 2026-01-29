@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_InitializeStandardHandles_FUN_00608b20(void)
+int __cdecl InitializeStandardHandles(void)
 
 {
   HANDLE pvVar1;
@@ -14,18 +14,18 @@ int __cdecl crt_io_c_InitializeStandardHandles_FUN_00608b20(void)
   
   pvVar1 = (*g_GetStdHandleFunc)(SYSTEM_STD_ERROR_HANDLE);
   if ((pvVar1 == (HANDLE)0x0) || (pvVar1 == (HANDLE)0xffffffff)) {
-    pvVar1 = crt_io_c_CreateFallbackHandle_FUN_00608b88();
+    pvVar1 = CreateFallbackHandle();
   }
-  crt_io_c_register_handle_FUN_00608990(pvVar1);
+  register_handle(pvVar1);
   pvVar1 = (*g_GetStdHandleFunc)(SYSTEM_STD_OUTPUT_HANDLE);
   if ((pvVar1 == (HANDLE)0x0) || (pvVar1 == (HANDLE)0xffffffff)) {
-    pvVar1 = crt_io_c_CreateFallbackHandle_FUN_00608b88();
+    pvVar1 = CreateFallbackHandle();
   }
-  crt_io_c_register_handle_FUN_00608990(pvVar1);
+  register_handle(pvVar1);
   pvVar1 = (*g_GetStdHandleFunc)(SYSTEM_STD_INPUT_HANDLE);
   if ((pvVar1 == (HANDLE)0x0) || (pvVar1 == (HANDLE)0xffffffff)) {
-    pvVar1 = crt_io_c_CreateFallbackHandle_FUN_00608b88();
+    pvVar1 = CreateFallbackHandle();
   }
-  iVar2 = crt_io_c_register_handle_FUN_00608990(pvVar1);
+  iVar2 = register_handle(pvVar1);
   return iVar2;
 }

@@ -27,7 +27,7 @@ int __cdecl shape_superopt_cpp_FUN_005c7a90(void)
     in_stack_00000004[10] = in_stack_00000008[0x15];
     in_stack_00000004[4] = in_stack_00000008[0x17];
   }
-  pvVar2 = crt_memory_c_realloc_FUN_00601df0
+  pvVar2 = realloc
                      ((void *)in_stack_00000004[1],(*in_stack_00000004 + 1) * 4);
   if (pvVar2 != (void *)0x0) {
     in_stack_00000004[1] = (int)pvVar2;

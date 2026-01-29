@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 37,
+        "column": 12,
         "line": 63,
         "message": "'stack0xfffffd8c' was not declared in this scope; did you mean 'in_stack_fffffd8c'?"
       },
@@ -12,6 +12,12 @@
         "column": 40,
         "line": 69,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 76,
+        "message": "'stream_write_internal' was not declared in this scope"
       },
       {
         "category": "other",
@@ -815,7 +821,7 @@
       "description": "Direct stack address reference",
       "line": 56,
       "match": "&stack0xfffffd8c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffd8c,\"%s.fog\",this_ptr->camera_name);",
+      "text": "sprintf(&stack0xfffffd8c,\"%s.fog\",this_ptr->camera_name);",
       "type": "stack_ref"
     },
     {
@@ -829,7 +835,7 @@
       "description": "Direct stack address reference",
       "line": 60,
       "match": "&stack0xfffffd8c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_f8,\"backdrop\\\\%s\",&stack0xfffffd8c);",
+      "text": "sprintf(local_f8,\"backdrop\\\\%s\",&stack0xfffffd8c);",
       "type": "stack_ref"
     },
     {

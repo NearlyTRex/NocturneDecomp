@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0 (FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags)
+; __cdecl void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0 (_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ; byte *           Stack[0x8]:4   rgb_buffer
 ; byte *           Stack[0xc]:4   alpha_buffer
 ; int              Stack[0x10]:4   pixel_count
@@ -34,7 +34,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac02
     PUSH EAX                            ; 0046ac05
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac06
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0046ac0b
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046ac0e
     INC dword ptr [EBP + 0x18]          ; 0046ac11
@@ -42,7 +42,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac16
     PUSH EAX                            ; 0046ac19
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac1a
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0046ac1f
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046ac22
     INC dword ptr [EBP + 0x18]          ; 0046ac25
@@ -50,7 +50,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac2a
     PUSH EAX                            ; 0046ac2d
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac2e
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0046ac33
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046ac36
     INC dword ptr [EBP + 0x18]          ; 0046ac39
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac44
     PUSH EAX                            ; 0046ac47
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac48
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0046ac4d
     MOV EDX,dword ptr [EBP + 0x1c]      ; 0046ac50
     MOV byte ptr [EDX],AL               ; 0046ac53

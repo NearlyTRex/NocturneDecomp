@@ -84,7 +84,7 @@ void core_cloth_cpp_FUN_0043ddf0(void)
                         (g_CEditorToolsPtr,"Create cloth file from KFM","models",
                          "*.kfm",(int)local_78);
       if (iVar3 != 0) {
-        crt_string_c_splitpath_FUN_005ff178(local_78,(char *)0x0,(char *)0x0,local_178,(char *)0x0);
+        splitpath(local_78,(char *)0x0,(char *)0x0,local_178,(char *)0x0);
         pcVar4 = ".cth";
         iVar3 = -1;
         pcVar6 = local_178;

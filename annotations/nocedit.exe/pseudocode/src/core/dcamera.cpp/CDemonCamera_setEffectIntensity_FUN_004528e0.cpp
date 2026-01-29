@@ -13,7 +13,7 @@ core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     ((double)(intensity * (float)65535));
   this_ptr->corona_blend_factor = (int)ROUND(dVar1);
   return;

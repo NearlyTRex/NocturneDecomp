@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_SomethingWithUppercaseCharacterConvert(uint param_1) */
 
-char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(void)
+char * SomethingWithUppercaseCharacterConvert(void)
 
 {
   wchar_t wVar1;
@@ -20,16 +20,16 @@ char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(void)
   
   str = in_stack_00000004;
   while( true ) {
-    iVar2 = crt_string_c_mbstring_termination_check_FUN_0060b630(str);
+    iVar2 = mbstring_termination_check(str);
     if (iVar2 != 0) break;
-    wVar1 = crt_string_c_mbtowc_peek_FUN_006059e0(str);
-    wVar1 = crt_locale_c_toupper_multibyte_FUN_0060f300
+    wVar1 = mbtowc_peek(str);
+    wVar1 = toupper_multibyte
                       ((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);
-    crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar1,&stack0xfffffff4);
-    iVar2 = crt_locale_c_mblen_FUN_00605a40(&stack0xfffffff4);
+    wchar_to_bytes(wVar1,&stack0xfffffff4);
+    iVar2 = mblen(&stack0xfffffff4);
     (&stack0xfffffff4)[iVar2] = 0;
-    crt_mbstring_c_copyMbChar_FUN_0060e590(str,&stack0xfffffff4);
-    str = crt_string_c_mbtowc_next_FUN_00605a70(str);
+    copyMbChar(str,&stack0xfffffff4);
+    str = mbtowc_next(str);
   }
   return in_stack_00000004;
 }

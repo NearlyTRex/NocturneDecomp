@@ -57,7 +57,7 @@ shape_design_c_vertexReducer_FUN_00467850
       pbVar6 = pbVar6 + (uint)bVar7 * -2 + 1;
     } while (bVar1 != 0);
     if (iVar2 != -2) {
-      dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);
+      dVar9 = _strtod(in_stack_fffffebc);
       tolerance = (float)dVar9;
     }
     if (display_progress < 1) {
@@ -68,7 +68,7 @@ shape_design_c_vertexReducer_FUN_00467850
     else {
       engine_2d_c_getInputWithPrompt_FUN_004032c0
                 ((char *)local_134,0x14,0,0x16,"Check normals? [n] : ");
-      iVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_134[0]);
+      iVar2 = toupper((uint)local_134[0]);
       if (iVar2 == 0x59) {
         local_20 = 1;
       }
@@ -85,7 +85,7 @@ shape_design_c_vertexReducer_FUN_00467850
           pbVar6 = pbVar6 + (uint)bVar7 * -2 + 1;
         } while (bVar1 != 0);
         if (iVar2 != -2) {
-          dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);
+          dVar9 = _strtod(in_stack_fffffebc);
           angle_tolerance = (float)dVar9;
         }
       }
@@ -110,7 +110,7 @@ shape_design_c_vertexReducer_FUN_00467850
         *(int *)((int)local_18 + local_34 * 8) = local_34;
         *(int *)((int)local_18 + local_34 * 8 + 4) = local_34;
       }
-      crt_stdlib_c_qsort_FUN_005fdf38
+      qsort
                 (local_18,g_VertexCount,8,shape_design_c_qsortByVertexX_FUN_004676f0);
       if (local_20 != 0) {
         local_14 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
@@ -170,7 +170,7 @@ LAB_00467ba8:
         }
 LAB_00467b49:
       }
-      crt_stdlib_c_qsort_FUN_005fdf38
+      qsort
                 (local_18,g_VertexCount,8,shape_design_c_qsortByOriginalIndex_FUN_004677c0);
       for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
         local_2c = g_ModelPolygonData + local_34;
@@ -188,7 +188,7 @@ LAB_00467b49:
     } while (g_VertexCount != local_28);
     shape_design_c_removeDegenerateTriangles_FUN_00463a20();
     g_VertexOptimizationPasses = g_VertexOptimizationPasses + 1;
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               ((char *)local_134,"Original vertices: %d    New total: %d\n\nTotal passes: %d\n\nPolys removed: %d",local_24,g_VertexCount,
                g_VertexOptimizationPasses);
     if (0 < display_progress) {

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_exception_c_FormatHexString_FUN_0060a748(char *dest,char *format,DWORD value)
+void __cdecl FormatHexString(char *dest,char *format,DWORD value)
 
 {
   char cVar1;

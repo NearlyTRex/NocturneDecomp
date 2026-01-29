@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_locale_c_istrailbyte_FUN_00610a70(uchar byte_value)
+int __watcallStack istrailbyte(uchar byte_value)
 
 {
   undefined3 in_stack_00000005;

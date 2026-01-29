@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack crt_io_c_setFileDescriptorFlags_FUN_00608908(int file_handle_index,uint flags)
+void __watcallStack setFileDescriptorFlags(int file_handle_index,uint flags)
 
 {
   FileDescriptor *pFVar1;

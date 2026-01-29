@@ -33,7 +33,7 @@ void core_msnedit_cpp_FUN_00538df0(void)
     }
     pvVar3 = (void *)((int)in_stack_00000004->set_list + -1);
     in_stack_00000004->set_list = pvVar3;
-    crt_string_c_memmove_FUN_005fe5e0
+    memmove
               (in_stack_00000004->unk3 + in_stack_00000008 * 0x100,
                in_stack_00000004->unk3 + in_stack_00000008 * 0x100,
                ((int)pvVar3 - in_stack_00000008) * 0x100);

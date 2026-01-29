@@ -54,7 +54,7 @@ section .text
     PUSH ESI                            ; 0043349f
     PUSH 0x617d4d                       ; 004334a0 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004334a5
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004334aa
     MOV EDI,EAX                         ; 004334ad
     TEST EAX,EAX                        ; 004334af
@@ -81,7 +81,7 @@ section .text
     PUSH 0x617d8a                       ; 004334e7 | = "%d\n"
     PUSH EDI                            ; 004334ec
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004334ed
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004334f2
     TEST EBX,EBX                        ; 004334f5
     JLE 0x004335ce                      ; 004334f7
@@ -100,7 +100,7 @@ section .text
     PUSH EDI                            ; 0043351f
     XOR EBX,EBX                         ; 00433520
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00433522
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00433527
     XOR ESI,ESI                         ; 0043352a
     MOV EBP,dword ptr [ESP + 0x58]      ; 0043352c
@@ -134,7 +134,7 @@ section .text
     ADD ESI,0x8                         ; 00433576
     INC EBX                             ; 00433579
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0043357a
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x1c                        ; 0043357f
     JMP 0x00433530                      ; 00433582
         ;   XREF to: 00433530 (UNCONDITIONAL_JUMP)  ; LAB_00433530
@@ -165,7 +165,7 @@ section .text
     PUSH 0x617da6                       ; 004335d3 | = "..\\cockpit\\ckptutil.c"
     PUSH EDI                            ; 004335d8
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004335d9
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004335de
     ADD ESP,0x5c                        ; 004335e1
     POP EBP                             ; 004335e4

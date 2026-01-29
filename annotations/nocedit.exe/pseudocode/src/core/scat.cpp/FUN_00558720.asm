@@ -45,7 +45,7 @@
 ;   core_scat.cpp_FUN_00558cf0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -301,8 +301,8 @@ section .text
     PUSH 0xa                            ; 00558a93
     LEA EAX,[ESP + 0x10]                ; 00558a95
     PUSH EAX                            ; 00558a99
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00558a9a
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00558a9a
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00558a9f
     LEA EDI,[ESP + 0x8]                 ; 00558aa2
     MOV EAX,dword ptr [ESI + 0x1fbf8]   ; 00558aa6

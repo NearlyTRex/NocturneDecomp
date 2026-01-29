@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
+void __cdecl ValidateHeapIntegrity(void *ptr)
 
 {
   Heap *pHVar1;
@@ -40,7 +40,7 @@ void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
     }
     else {
 LAB_00601d9c:
-      crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);
+      CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);
       if ((pHVar2 < g_SecondaryHeap) && (DAT_00684edc < pHVar2[1].next_heap_block)) {
         DAT_00684edc = pHVar2[1].next_heap_block;
       }

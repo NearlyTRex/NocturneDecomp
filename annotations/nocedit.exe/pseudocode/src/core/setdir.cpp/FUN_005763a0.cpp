@@ -49,7 +49,7 @@ uint core_setdir_cpp_FUN_005763a0(void)
     local_c8.max.y = in_stack_00000008[4];
     local_c8.max.z = in_stack_00000008[5];
   }
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(local_128,8,&g_CVectorTypeInfo);
+  __arrinit(local_128,8,&g_CVectorTypeInfo);
   local_28 = (CMatrix3x3f *)(in_stack_00000008 + 6);
   uVar3 = 0;
   local_24 = (CMatrix3x3f *)(in_stack_00000004 + 6);

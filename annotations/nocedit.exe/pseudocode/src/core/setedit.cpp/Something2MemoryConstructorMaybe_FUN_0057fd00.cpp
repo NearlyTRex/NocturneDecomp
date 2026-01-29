@@ -35,7 +35,7 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
   
   bVar6 = 0;
   core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310();
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);
+  memset(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);
   local_2c = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                        (g_CDemonCameraInstance.framebuffer_height *
                         g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",
@@ -119,6 +119,6 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
   core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
   g_CurrentDebugLine = 0xf73;
   g_CurrentDebugFilename = "..\\core\\setedit.cpp";
-  crt_memory_c_free_FUN_005fe659(local_2c);
+  shape_memdbg_cpp_free_FUN_005fe659(local_2c);
   return;
 }

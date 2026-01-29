@@ -11,7 +11,7 @@ engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590
           (CPodFile *this_ptr,int record_index,void *output_buffer)
 
 {
-  FILE *file;
+  _FILE *file;
   int iVar1;
   uint *puVar2;
   byte bVar3;
@@ -25,14 +25,14 @@ engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x30c);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x30d;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CPodFile::getAuditRecord - can't open %s",this_ptr->filename);
   }
-  crt_stdio_c_fseek_FUN_005ffacc(file,record_index * 0x138 + this_ptr->total_file_size,0);
-  crt_stdio_c_fread_FUN_005fd990(local_144,0x138,1,file);
+  _fseek(file,record_index * 0x138 + this_ptr->total_file_size,0);
+  _fread(local_144,0x138,1,file);
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x31b;

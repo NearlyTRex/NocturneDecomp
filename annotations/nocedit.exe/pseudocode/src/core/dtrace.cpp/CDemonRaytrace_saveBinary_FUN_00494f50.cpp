@@ -2,25 +2,25 @@
 // Address: 00494f50
 // Address Range: [[00494f50, 00495030]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,FILE *file_handle)
+core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
   int iVar2;
   
-  crt_stdio_c_fwrite_FUN_005fdc00(&g_GeoFileFormatVersion,4,1,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->grid_coord,4,1,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&(this_ptr->grid_coord).y,4,1,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&(this_ptr->grid_coord).z,4,1,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->bbox_min,0xc,1,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->bbox_max,0xc,1,file_handle);
+  _fwrite(&g_GeoFileFormatVersion,4,1,file_handle);
+  _fwrite(&this_ptr->grid_coord,4,1,file_handle);
+  _fwrite(&(this_ptr->grid_coord).y,4,1,file_handle);
+  _fwrite(&(this_ptr->grid_coord).z,4,1,file_handle);
+  _fwrite(&this_ptr->bbox_min,0xc,1,file_handle);
+  _fwrite(&this_ptr->bbox_max,0xc,1,file_handle);
   iVar1 = 0;
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->cell_size,0xc,1,file_handle);
+  _fwrite(&this_ptr->cell_size,0xc,1,file_handle);
   for (iVar2 = 0;
       iVar2 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z;
       iVar2 = iVar2 + 1) {

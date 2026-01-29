@@ -1,7 +1,56 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 19,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 26,
+        "line": 19,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 16,
+        "line": 34,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 20,
+        "line": 35,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 46,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 28,
+        "line": 46,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 54,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 36,
+        "line": 54,
+        "message": "invalid conversion from 'int' to '_FILE*' [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -13,14 +62,14 @@
   },
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 51,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 50,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 175
+    "total_lines": 174
   },
   "cross_references": [
     {
@@ -40,7 +89,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_writeBitsToStream_FUN_0043e6c0",
-    "signature": "void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0 (SBitBuffer *bit_buffer,int bit_count,int bit_value,FILE *output_stream)"
+    "signature": "void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0 (SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)"
   },
   "function_calls": [
     {
@@ -147,7 +196,7 @@
         "name": "output_stream",
         "offset": 16,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },

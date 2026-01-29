@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_memory_c_free_FUN_00601cd0(void *ptr)
+void __cdecl free(void *ptr)
 
 {
-  crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(ptr);
+  ValidateHeapIntegrity(ptr);
   return;
 }

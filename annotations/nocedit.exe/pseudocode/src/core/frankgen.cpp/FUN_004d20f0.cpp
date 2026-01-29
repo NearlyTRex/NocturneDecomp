@@ -18,7 +18,7 @@ float * core_frankgen_cpp_FUN_004d20f0(void)
   int in_stack_00000004;
   float *in_stack_00000008;
   
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(in_stack_00000004 + 0x180));
+  dVar3 = round((double)*(float *)(in_stack_00000004 + 0x180));
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x184));
   pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3) * 2;

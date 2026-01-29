@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_stack.c_stack_probe_FUN_005ff9f3 at 005ff9f7
+;   crt_stack.c___STK_FUN_005ff9f3 at 005ff9f7
 ;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c

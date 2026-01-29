@@ -25,7 +25,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005ae4b0(CDirectSoundDe
     uVar1 = (*g_DirectSoundSecondaryBuffer->vtable->Stop)(g_DirectSoundSecondaryBuffer);
     if (uVar1 != 0) {
       pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (acStack_1a4,"DirectSux: Unable to %s.  (%s)","Stop secondary sound buffer",
                  pcVar2);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1a4);
@@ -36,7 +36,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005ae4b0(CDirectSoundDe
     uVar1 = (*g_DirectSoundPrimaryBuffer->vtable->Stop)(g_DirectSoundPrimaryBuffer);
     if (uVar1 != 0) {
       pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (acStack_334,"DirectSux: Unable to %s.  (%s)","Stop primary sound buffer",
                  pcVar2);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_334);
@@ -63,7 +63,7 @@ LAB_005ae500:
       uVar1 = (**(code **)(**(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar4) + 0x48))();
       if (uVar1 == 0) goto LAB_005ae500;
       pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (acStack_4c4,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer",
                  pcVar2);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_4c4);

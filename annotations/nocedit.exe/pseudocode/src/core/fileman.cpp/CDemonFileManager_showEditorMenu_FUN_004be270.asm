@@ -369,7 +369,7 @@ section .text
     PUSH EAX                            ; 004be536
     PUSH ESI                            ; 004be537
     CALL core_fileman.cpp_refreshSoundDirectory_FUN_004be590 ; 004be538
-        ;   XREF to: 004be590 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_refreshSoundDirectory_FUN_004be590(FILE * file_list_output, char * source_directory)
+        ;   XREF to: 004be590 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_refreshSoundDirectory_FUN_004be590(_FILE * file_list_output, char * source_directory)
     ADD ESP,0x8                         ; 004be53d
     PUSH ESI                            ; 004be540
     CALL engine_fileio.cpp_CFileManager_closeExtractFile_FUN_004b7c60 ; 004be541

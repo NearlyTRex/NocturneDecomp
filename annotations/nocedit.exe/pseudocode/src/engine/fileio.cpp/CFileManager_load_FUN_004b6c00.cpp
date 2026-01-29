@@ -10,7 +10,7 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
 
 {
   char cVar1;
-  FILE *file;
+  _FILE *file;
   int iVar2;
   int iVar3;
   uint uVar4;
@@ -34,13 +34,13 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("level.lst",(char *)0x0,"rt","..\\engine\\fileio.cpp",
                     0x906);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0x907;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to open read level.lst");
   }
 LAB_004b6c3c:
-  iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(file," %[^\n]\n",local_224);
+  iVar2 = _fscanf(file," %[^\n]\n",local_224);
   if (iVar2 != -1) {
     uVar5 = 0;
     do {
@@ -53,7 +53,7 @@ LAB_004b6c3c:
         pbVar8 = (byte *)((char *)pbVar8 + (uint)bVar10 * -2 + 1);
       } while (cVar1 != '\0');
       if (~uVar4 - 1 <= uVar5) goto LAB_004b6ca0;
-      iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_224[uVar5]);
+      iVar3 = toupper((uint)local_224[uVar5]);
       local_224[uVar5] = (byte)iVar3;
       uVar5 = uVar5 + 1;
     } while( true );
@@ -77,7 +77,7 @@ LAB_004b6cb3:
         str2 = local_18 + local_14;
         do {
           str1 = *local_18 + local_1c;
-          iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,*str2);
+          iVar2 = stricmp(str1,*str2);
           pcVar6 = str1;
           pbVar8 = local_224;
           if (0 < iVar2) {

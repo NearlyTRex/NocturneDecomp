@@ -10,7 +10,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH 0x4                            ; 004ccd29
     ADD EAX,0x4                         ; 004ccd2b
     PUSH EAX                            ; 004ccd2e
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004ccd2f
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004ccd2f
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004ccd34
     SUB EAX,0x4                         ; 004ccd37
     RET                                 ; 004ccd3a

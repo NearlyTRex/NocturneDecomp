@@ -115,7 +115,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
   float local_18;
   uint local_14;
   
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_1e4,4,&g_CVectorTypeInfo);
+  __arrinit(&local_1e4,4,&g_CVectorTypeInfo);
   local_14 = (uint)(subdivision_level < 4);
   if (((subdivision_level < 3) ||
       (iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5), iVar1 == 0)) && (local_14 != 0)) {

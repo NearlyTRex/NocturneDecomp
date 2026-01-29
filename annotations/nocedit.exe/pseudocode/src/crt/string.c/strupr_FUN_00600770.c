@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_strupr_FUN_00600770(char *string)
+char * __cdecl strupr(char *string)
 
 {
   char cVar1;

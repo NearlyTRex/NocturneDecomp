@@ -30,7 +30,7 @@ engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860
     engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(this_ptr);
     pHVar2 = (*g_CreateCompatibleDCFunc)((HDC)0x0);
     this_ptr->device_context_handle = pHVar2;
-    crt_memory_c_memset_FUN_005fde40(&BStack_48,0,0x2c);
+    memset(&BStack_48,0,0x2c);
     BStack_48.bmiHeader.biSize = 0x28;
     BStack_48.bmiHeader.biPlanes = 1;
     BStack_48.bmiHeader.biSizeImage = 0;

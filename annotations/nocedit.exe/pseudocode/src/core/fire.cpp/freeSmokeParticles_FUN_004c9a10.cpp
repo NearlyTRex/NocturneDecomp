@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeSmokeParticles_FUN_004c9a10(CSmokeParticle **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x800,&g_CSmokeParticleTypeInfo);
+  __arrfini(array,0x800,&g_CSmokeParticleTypeInfo);
   return;
 }

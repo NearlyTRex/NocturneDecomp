@@ -11,7 +11,7 @@ engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0
           (CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record)
 
 {
-  FILE *file;
+  _FILE *file;
   int iVar1;
   uint *puVar2;
   CPodDependencyRecord *pCVar3;
@@ -26,15 +26,14 @@ engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x332);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x333;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CPodFile::getDependencyRecord - can't open %s",this_ptr->filename);
   }
-  crt_stdio_c_fseek_FUN_005ffacc
-            (file,dependency_index * 0x108 + this_ptr->dependency_records_offset,0);
-  crt_stdio_c_fread_FUN_005fd990(local_114,0x108,1,file);
+  _fseek(file,dependency_index * 0x108 + this_ptr->dependency_records_offset,0);
+  _fread(local_114,0x108,1,file);
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x341;

@@ -13,9 +13,9 @@
 ;   crt_fstream.cpp_filebuf_pbackfail_FUN_0060d7ae at 0060d85e
 ;   crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8 at 0060dc1f
 ;   crt_fstream.cpp_filebuf_sync_FUN_0060dc5e at 0060dcc7
+;   crt_io.c_chsize_FUN_00600cf0 at 00600d3a
 ;   crt_io.c_extend_file_for_append_FUN_00608410 at 00608425
-;   crt_io.c_ftruncate_FUN_00600cf0 at 00600d3a
-;   crt_stdio.c_fclose_force_FUN_00601fd0 at 00602028
+;   crt_stdio.c__fclose_FUN_00601fd0 at 00602028
 ;   crt_stdio.c_fflushInternal_FUN_006039d0 at 00603a99
 ;   crt_stdio.c_fseek_FUN_005ffacc at 005ffb57
 ;   crt_unknown.c_FUN_00600c80 at 00600ca2
@@ -29,7 +29,7 @@
 ;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_getFileTypeFlags_FUN_006088b0
 ;   crt_io.c_setFileDescriptorFlags_FUN_00608908
@@ -98,8 +98,8 @@ section .text
     CMP ESI,-0x1                        ; 0060670a
     JNZ 0x00606714                      ; 0060670d
         ;   XREF to: 00606714 (CONDITIONAL_JUMP)  ; LAB_00606714
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 0060670f
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 0060670f
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     MOV EAX,ESI                         ; 00606714
         ;   Label: LAB_00606714
     POP EDI                             ; 00606716

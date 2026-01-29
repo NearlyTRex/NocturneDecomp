@@ -39,7 +39,7 @@ shape_design_c_loadTextureData_FUN_0046b060
   void *local_28;
   void *local_24;
   int local_20;
-  FILE *local_1c;
+  _FILE *local_1c;
   uint local_18;
   int local_14;
   
@@ -51,13 +51,13 @@ shape_design_c_loadTextureData_FUN_0046b060
   else {
     local_1c = engine_dosio_c_getFile_FUN_00481a50("art",config_ptr->unk1,"rb");
   }
-  if (local_1c == (FILE *)0x0) {
+  if (local_1c == (_FILE *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x27a4;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to load input");
   }
-  crt_stdio_c_fseek_FUN_005ffacc(local_1c,0x11,0);
-  local_18 = crt_stdio_c_fgetc_FUN_005fe840(local_1c);
+  _fseek(local_1c,0x11,0);
+  local_18 = _fgetc(local_1c);
   local_20 = config_ptr->source_width * config_ptr->source_height * 3;
   local_28 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(local_20,"..\\shape\\design.c",0x27ad);
   local_24 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
@@ -87,7 +87,7 @@ shape_design_c_loadTextureData_FUN_0046b060
     }
   }
   if ((local_1c->_flag & 0x20) != 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_148,"Unable to read file (%s).",config_ptr);
+    sprintf(local_148,"Unable to read file (%s).",config_ptr);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",0x27c2);
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x27c3;
@@ -101,26 +101,26 @@ shape_design_c_loadTextureData_FUN_0046b060
   }
   iVar1 = config_ptr->source_width * config_ptr->source_height;
   if (iVar1 - local_44 == 0 || iVar1 < local_44) {
-    crt_memory_c_memset_FUN_005fde40
+    memset
               (local_24,0xff,config_ptr->source_width * config_ptr->source_height);
   }
-  dVar2 = crt_math_c_round_FUN_005fe6b0
+  dVar2 = round
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_x2) /
                      (double)atlas_height + 0.5);
   local_38 = (int)ROUND(dVar2);
-  dVar2 = crt_math_c_round_FUN_005fe6b0
+  dVar2 = round
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_y2) /
                      (double)in_stack_00000018 + 0.5);
   local_34 = (int)ROUND(dVar2);
   config_ptr->scaled_dest_x = local_38;
   config_ptr->scaled_dest_y = local_34;
   alpha_out = (byte *)0x46b3a9;
-  dVar2 = crt_math_c_round_FUN_005fe6b0
+  dVar2 = round
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_x1) /
                      (double)atlas_height + 0.5);
   local_30 = (int)ROUND(dVar2);
   blue_out = (byte *)0x46b3cd;
-  dVar2 = crt_math_c_round_FUN_005fe6b0
+  dVar2 = round
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_y1) /
                      (double)in_stack_00000018 + 0.5);
   local_2c = (int)ROUND(dVar2);

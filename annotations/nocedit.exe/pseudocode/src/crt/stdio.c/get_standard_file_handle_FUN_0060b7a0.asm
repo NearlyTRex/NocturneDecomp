@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(int fd)
+; __cdecl _FILE * __cdecl crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(int fd)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   fd
@@ -11,7 +11,7 @@
 ;   crt_stdio.c_prepare_stream_for_write_FUN_00606055 at 006060a8
 ;
 ; Referenced Globals:
-;   FILE* g_StaticFilePoolStart = 00000000
+;   _FILE* g_StaticFilePoolStart = 00000000
 ;
 ; *****************************************************************************
 

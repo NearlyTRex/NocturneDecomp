@@ -39,7 +39,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
   for (iVar2 = 0; iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(), iVar2 < iVar1;
       iVar2 = iVar2 + 1) {
     sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,(SSoundDeviceInfo *)&stack0xfffffc4c);
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xfffffc4c,local_194);
+    iVar1 = stricmp(&stack0xfffffc4c,local_194);
     if (iVar1 == 0) {
       sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar2);
       break;
@@ -73,11 +73,11 @@ LAB_005ac012:
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(local_20);
       if (0 < g_MaxSoundChannels) {
         do {
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_94,"SfxChannel%dEnabled",iVar2);
+          sprintf(local_94,"SfxChannel%dEnabled",iVar2);
           local_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(iVar2);
           engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,local_94,&local_1c);
           sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar2,local_1c);
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_94,"SfxChannel%dVol",iVar2);
+          sprintf(local_94,"SfxChannel%dVol",iVar2);
           local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(iVar2);
           local_14 = local_18;
           engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(ini_file,local_94,&local_18);
@@ -88,7 +88,7 @@ LAB_005ac012:
       return;
     }
     sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(iVar2,&local_29c);
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_29c.device_name,local_194);
+    iVar1 = stricmp(local_29c.device_name,local_194);
     if (iVar1 == 0) {
       sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(iVar2);
       goto LAB_005ac012;

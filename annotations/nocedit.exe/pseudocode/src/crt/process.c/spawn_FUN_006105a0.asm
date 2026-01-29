@@ -31,8 +31,8 @@
 ; Called Functions:
 ;   CloseHandle
 ;   CreateProcessA
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_process.c_build_command_line_FUN_006103a4
 ;   DuplicateHandle
@@ -141,8 +141,8 @@ section .text
     TEST EAX,EAX                        ; 0061069c
     JNZ 0x00610678                      ; 0061069e
         ;   XREF to: 00610678 (CONDITIONAL_JUMP)  ; LAB_00610678
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006106a0
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 006106a0
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     ADD ESP,0x5c                        ; 006106a5
     POP EBP                             ; 006106a8
     POP EDI                             ; 006106a9
@@ -164,8 +164,8 @@ section .text
     CALL dword ptr CS:[0x611590]        ; 006106c9 | g_GetExitCodeProcessFunc
     JMP 0x006106db                      ; 006106d0
         ;   XREF to: 006106db (UNCONDITIONAL_JUMP)  ; LAB_006106db
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006106d2
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 006106d2
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
         ;   Label: LAB_006106d2
     MOV dword ptr [ESP + 0x54],EAX      ; 006106d7
     MOV EDX,dword ptr [ESP + 0x44]      ; 006106db

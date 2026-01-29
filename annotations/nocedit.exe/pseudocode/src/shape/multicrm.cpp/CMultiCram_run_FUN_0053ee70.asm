@@ -318,7 +318,7 @@ section .text
     MOV EAX,0x63d1a2                    ; 0053f14b | = "models"
     PUSH EAX                            ; 0053f150 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0053f151
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0053f156
     MOV dword ptr [EBP + 0xfffffeec],EAX ; 0053f159
     CMP dword ptr [EBP + 0xfffffeec],0x0 ; 0053f15f
@@ -330,7 +330,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0xfffffeec] ; 0053f177
     PUSH EAX                            ; 0053f17d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0053f17e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0053f183
     LEA EAX,[EBP + 0xfffffef4]          ; 0053f186
     PUSH EAX                            ; 0053f18c

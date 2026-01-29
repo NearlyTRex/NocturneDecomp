@@ -20,7 +20,7 @@ engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this
   if (0 < this_ptr->unk1) {
     iVar3 = 0;
     do {
-      iVar2 = crt_string_c_strcmp_FUN_005fef20((char *)(this_ptr->unk2 + iVar3),filename);
+      iVar2 = strcmp((char *)(this_ptr->unk2 + iVar3),filename);
       if (iVar2 == 0) {
         return;
       }

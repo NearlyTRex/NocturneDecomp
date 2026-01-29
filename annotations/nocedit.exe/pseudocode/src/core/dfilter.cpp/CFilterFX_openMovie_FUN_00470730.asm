@@ -73,7 +73,7 @@ section .text
     PUSH EAX                            ; 00470775
     PUSH EBX                            ; 00470776
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00470777
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0047077c
     MOV EDI,EAX                         ; 0047077f
     TEST EAX,EAX                        ; 00470781
@@ -93,13 +93,13 @@ section .text
     PUSH 0x61e7d8                       ; 004707aa | = "%d\n"
     PUSH EDI                            ; 004707af
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004707b0
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004707b5
     PUSH 0x15c                          ; 004707b8
     PUSH 0x61e7dc                       ; 004707bd | = "..\\core\\dfilter.cpp"
     PUSH EDI                            ; 004707c2
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004707c3
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004707c8
     PUSH 0x160                          ; 004707cb
     MOV EAX,dword ptr [ESI]             ; 004707d0
@@ -122,7 +122,7 @@ section .text
     PUSH EAX                            ; 00470802
     PUSH EBX                            ; 00470803
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00470804
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00470809
     MOV EDI,EAX                         ; 0047080c
     TEST EAX,EAX                        ; 0047080e
@@ -136,13 +136,13 @@ section .text
     MOV ECX,dword ptr [ESI + 0x4]       ; 0047081f
     PUSH ECX                            ; 00470822
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00470823
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00470828
     PUSH 0x168                          ; 0047082b
     PUSH 0x61e83a                       ; 00470830 | = "..\\core\\dfilter.cpp"
     PUSH EDI                            ; 00470835
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00470836
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0047083b
     XOR ECX,ECX                         ; 0047083e
     POP EDI                             ; 00470840

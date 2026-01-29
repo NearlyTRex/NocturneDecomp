@@ -32,7 +32,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_p
             (g_CDemonRendererPtr2,&local_28,(CVector3i *)0x0);
   g_CDemonSetPtr->lighting_quality_mode = 1;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  uVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+  uVar1 = rand();
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,(uVar1 & 0x3fff) + 0x1800);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20

@@ -32,13 +32,13 @@ engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
     fVar3 = (float10)32768;
     fVar4 = (float10)(float)position->z * fVar2 * fVar3;
     iVar14 = 0x48c533;
-    dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)(float)position->y * fVar2 * fVar3));
+    dVar9 = round((double)((float10)(float)position->y * fVar2 * fVar3));
     fVar5 = (float10)dVar9;
     iVar13 = 0x48c53a;
-    dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+    dVar9 = round((double)fVar4);
     iVar11 = (int)ROUND(fVar5);
     iVar12 = 0x48c554;
-    dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar2 * fVar3));
+    dVar10 = round((double)((float10)fVar1 * fVar2 * fVar3));
     engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
               ((int)ROUND(dVar10),(int)ROUND(dVar9),iVar12,iVar11,iVar13,iVar14);
     return;
@@ -51,18 +51,18 @@ engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
   fVar5 = (float10)32768;
   fVar6 = (float10)(float)position->z * fVar4 * fVar5;
   fVar7 = (float10)(float)position->x * fVar4 * fVar5;
-  crt_math_c_round_FUN_005fe6b0((double)((float10)(float)rotation->z * fVar2));
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  round((double)((float10)(float)rotation->z * fVar2));
+  dVar9 = round((double)fVar3);
   fVar2 = (float10)dVar9;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  dVar9 = round((double)fVar8);
   iVar11 = (int)ROUND(fVar2);
   iVar12 = (int)ROUND(dVar9);
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar4 * fVar5));
+  dVar9 = round((double)((float10)fVar1 * fVar4 * fVar5));
   fVar2 = (float10)dVar9;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
+  dVar9 = round((double)fVar6);
   iVar13 = (int)ROUND(fVar2);
   iVar14 = 0x48c608;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+  dVar10 = round((double)fVar7);
   engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
             ((int)ROUND(dVar10),(int)ROUND(dVar9),iVar14,iVar13,iVar12,iVar11);
   return;

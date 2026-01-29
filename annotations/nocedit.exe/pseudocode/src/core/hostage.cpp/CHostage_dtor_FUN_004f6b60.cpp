@@ -21,8 +21,8 @@ core_hostage_cpp_CHostage_dtor_FUN_004f6b60
   uint unaff_retaddr;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CHostageTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CHostageTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)&(this_ptr->base).model_name);

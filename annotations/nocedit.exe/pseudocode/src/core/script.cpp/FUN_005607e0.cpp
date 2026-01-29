@@ -11,13 +11,13 @@
 void core_script_cpp_FUN_005607e0(void)
 
 {
-  FILE *in_stack_00000004;
+  _FILE *in_stack_00000004;
   int *in_stack_00000008;
   
   if (*in_stack_00000008 == 0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000004,"\"%s\"\n","(none)");
+    _fprintf(in_stack_00000004,"\"%s\"\n","(none)");
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000004,"\"%s\"\n",*in_stack_00000008);
+  _fprintf(in_stack_00000004,"\"%s\"\n",*in_stack_00000008);
   return;
 }

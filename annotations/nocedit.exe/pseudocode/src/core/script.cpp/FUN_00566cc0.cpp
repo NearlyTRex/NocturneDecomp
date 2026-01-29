@@ -94,7 +94,7 @@ uint core_script_cpp_FUN_00566cc0(void)
           }
           pcVar4 = pcVar4 + iVar2;
           for (; 0 < iVar2; iVar2 = iVar2 + -1) {
-            iVar3 = crt_string_c_strnicmp_FUN_005ff070(pcVar4,in_stack_00000008,count);
+            iVar3 = strnicmp(pcVar4,in_stack_00000008,count);
             if (iVar3 == 0) {
               uVar5 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30();
               *in_stack_00000014 = uVar5;
@@ -129,7 +129,7 @@ uint core_script_cpp_FUN_00566cc0(void)
           } while (cVar1 != '\0');
           pcVar4 = pcVar4 + iVar2;
           for (iVar2 = iVar2 + count; iVar2 <= (int)(~uVar6 - 1); iVar2 = iVar2 + 1) {
-            iVar3 = crt_string_c_strnicmp_FUN_005ff070(pcVar4,in_stack_00000008,count);
+            iVar3 = strnicmp(pcVar4,in_stack_00000008,count);
             if (iVar3 == 0) {
               uVar5 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30();
               *in_stack_00000014 = uVar5;

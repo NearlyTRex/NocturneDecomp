@@ -9,19 +9,12 @@
 void __cdecl core_dcube_cpp_staticInit_FUN_00454720(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CubeInputTriangleBuffer,0x10,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_ClipStageMaxYBuffer,0x10,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_ClipStageMinYBuffer,0x10,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_ClipStageMaxXBuffer,0x10,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_ClipStageMinXBuffer,0x10,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_ClipStageMinZBuffer,0x10,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CubeClippedTriangleBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_CubeInputTriangleBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMaxYBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMinYBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMaxXBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMinXBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_ClipStageMinZBuffer,0x10,&g_CVectorTypeInfo);
+  __arrinit(g_CubeClippedTriangleBuffer,0x10,&g_CVectorTypeInfo);
   return;
 }

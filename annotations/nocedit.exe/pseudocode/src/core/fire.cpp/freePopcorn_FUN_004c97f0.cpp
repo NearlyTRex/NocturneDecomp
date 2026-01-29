@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x100,&g_CPopcornTypeInfo);
+  __arrfini(array,0x100,&g_CPopcornTypeInfo);
   return;
 }

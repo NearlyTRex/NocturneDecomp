@@ -24,7 +24,7 @@ void core_script_cpp_CScript_CallLoadingScriptFile_FUN_00566fa0(void)
   if (0 < *(int *)(in_stack_00000004 + 0x30)) {
     iVar3 = 0;
     do {
-      iVar1 = crt_stdio_c_sscanf_FUN_0060013c
+      iVar1 = sscanf
                         (*(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34)),": %s",
                          acStack_d8);
       if (iVar1 == 1) {

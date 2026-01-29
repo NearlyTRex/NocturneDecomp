@@ -52,7 +52,7 @@ section .text
     PUSH EDX                            ; 00575e50
     PUSH 0x646529                       ; 00575e51 | = "data"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00575e56
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00575e5b
     MOV EBP,EAX                         ; 00575e5e
     TEST EAX,EAX                        ; 00575e60
@@ -88,7 +88,7 @@ section .text
     PUSH EBX                            ; 00575ea6 | g_CZThumbPool | DAT_03347130 | DAT_033471f8
     INC ESI                             ; 00575ea7
     CALL core_setdir.cpp_CZThumb_write_FUN_00574b20 ; 00575ea8
-        ;   XREF to: 00574b20 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_write_FUN_00574b20(CZThumb * this_ptr, FILE * file_handle)
+        ;   XREF to: 00574b20 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_write_FUN_00574b20(CZThumb * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00575ead
     ADD EBX,0x28                        ; 00575eb0 | DAT_03347130
     CMP ESI,EDI                         ; 00575eb3
@@ -118,7 +118,7 @@ section .text
     PUSH 0x646575                       ; 00575eef | = "..\\core\\setdir.cpp"
     PUSH EBP                            ; 00575ef4
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00575ef5
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00575efa
     ADD ESP,0xc                         ; 00575efd
     POP EBP                             ; 00575f00

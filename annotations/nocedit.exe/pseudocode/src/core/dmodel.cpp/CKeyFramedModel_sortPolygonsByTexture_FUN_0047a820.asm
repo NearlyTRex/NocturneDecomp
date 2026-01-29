@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40
-;   crt_memory.c_copyObjectArray_FUN_00600bc2
+;   crt_memory.c___arrcopy_FUN_00600bc2
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     PUSH EAX                            ; 0047a912
     LEA EAX,[ESP + 0x24]                ; 0047a913
     PUSH EAX                            ; 0047a917
-    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0047a918
-        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrcopy_FUN_00600bc2 ; 0047a918
+        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrcopy_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
     ADD ESP,0x10                        ; 0047a91d
     MOV ECX,0x12                        ; 0047a920
     MOV ESI,dword ptr [ESP + 0x48]      ; 0047a925

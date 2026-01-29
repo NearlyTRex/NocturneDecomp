@@ -39,16 +39,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
     iVar6 = 0;
     do {
       ppCVar2 = this_ptr->vertex_list;
-      dVar10 = crt_math_c_round_FUN_005fe6b0
+      dVar10 = round
                          ((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5) * dVar4);
       unaff_EDI = (int)ROUND(dVar10);
       *(int *)((int)ppCVar2 + iVar6) = unaff_EDI;
       ppCVar2 = this_ptr->vertex_list;
-      dVar10 = crt_math_c_round_FUN_005fe6b0
+      dVar10 = round
                          ((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5) * dVar4);
       *(int *)((int)ppCVar2 + iVar6 + 4) = (int)ROUND(dVar10);
       ppCVar2 = this_ptr->vertex_list;
-      dVar10 = crt_math_c_round_FUN_005fe6b0
+      dVar10 = round
                          ((double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) * dVar4);
       iVar5 = iVar5 + 0x14;
       *(int *)((int)ppCVar2 + iVar6 + 8) = (int)ROUND(dVar10);
@@ -73,12 +73,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
         do {
           *(uint *)((int)this_ptr->poly_vert_list + iVar5 + local_14 + 0x18) =
                *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar7);
-          dVar10 = crt_math_c_round_FUN_005fe6b0
+          dVar10 = round
                              ((double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar7) * dVar4);
           iVar11 = (int)ROUND(dVar10);
           *(int *)(unaff_EDI + 0x1c) = iVar11;
           ppSVar3 = this_ptr->poly_vert_list;
-          dVar10 = crt_math_c_round_FUN_005fe6b0
+          dVar10 = round
                              ((double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar7) * dVar4);
           *(int *)((int)ppSVar3 + iVar5 + local_14 + 0x20) = (int)ROUND(dVar10);
           iVar7 = iVar7 + 4;
@@ -91,7 +91,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
       if (0 < this_ptr->texture_count) {
         pcVar8 = this_ptr->texture_list[0].base.texture_name;
         do {
-          iVar5 = crt_string_c_stricmp_FUN_005fe7f0(pcVar8,local_18);
+          iVar5 = stricmp(pcVar8,local_18);
           if (iVar5 == 0) break;
           iVar7 = iVar7 + 1;
           pcVar8 = pcVar8 + 0x48;

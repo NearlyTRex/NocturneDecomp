@@ -19,7 +19,7 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
   
   bVar5 = 0;
   this_ptr->poly_count = poly_count;
-  pCVar1 = crt_memory_c_malloc_FUN_00601bb0(poly_count * 0x68);
+  pCVar1 = malloc(poly_count * 0x68);
   this_ptr->poly_array = pCVar1;
   if (pCVar1 != (CPoly *)0x0) {
     shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78);
@@ -49,7 +49,7 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
     return 1;
   }
   if (this_ptr->vertex_data != (CVert *)0x0) {
-    crt_memory_c_free_FUN_00601cd0(this_ptr->vertex_data);
+    free(this_ptr->vertex_data);
   }
   this_ptr->vertex_data = (CVert *)0x0;
   shape_superopt_cpp_logToFile_FUN_005c7910("Unable to allocate RAM for object polygons");

@@ -21,7 +21,7 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char
   if (g_MoviePlaying != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_005f46b0(parent_window);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (local_1b4,"open \"%s\" alias mov style child parent %d",movie_filename,parent_window);
   MVar2 = (*g_mciSendStringAFunc)(local_1b4,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar2 != 0) {
@@ -32,7 +32,7 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char
   g_MoviePlaying = 1;
   MVar2 = (*g_mciSendStringAFunc)("status mov window handle",local_1b4,0x104,(HWND)0x0);
   if (MVar2 == 0) {
-    g_MovieWindowHandle = (HWND)crt_stdlib_c_atoi_FUN_005ffef0(local_1b4);
+    g_MovieWindowHandle = (HWND)atoi(local_1b4);
   }
   else {
     (*g_mciGetErrorStringAFunc)(MVar2,local_1b4,0x104);

@@ -37,10 +37,10 @@
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00477e60
 ;   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_free_FUN_005fe659
 ;   crt_memory.c_memset_FUN_005fde40
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -361,8 +361,8 @@ section .text
     PUSH ESI                            ; 0047ad58
     MOV dword ptr [0x0067d20c],ECX      ; 0047ad59 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EBX      ; 0047ad5f | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0047ad65
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0047ad65
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0047ad6a
     MOV EDI,dword ptr [ESP + 0x30]      ; 0047ad6d
     PUSH EDI                            ; 0047ad71

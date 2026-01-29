@@ -16,7 +16,7 @@ void core_dynamite_cpp_FUN_0049cf20(void)
   char local_68 [100];
   
   *(float *)(in_stack_00000004 + 0x578) = 3.5f;
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_68,"fuse.wav");
+  sprintf(local_68,"fuse.wav");
   uVar1 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
   *(uint *)(in_stack_00000004 + 0x588) = uVar1;
   return;

@@ -92,7 +92,7 @@ void core_gabriela_cpp_FUN_004d6540(void)
       fVar2 = in_stack_00000004[0x17a].location.position.x - in_stack_00000008 / 0.3f;
     }
     else {
-      crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(local_134,10,&g_CVectorTypeInfo);
+      __arrinit(local_134,10,&g_CVectorTypeInfo);
       iVar5 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x154) +
                           0x4c))();
       if (iVar5 < 1) {

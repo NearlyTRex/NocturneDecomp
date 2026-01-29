@@ -26,7 +26,7 @@ void core_flamecan_cpp_FUN_004cad90(void)
   local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                        (-*(float *)(in_stack_00000004 + 0x284),*(float *)(in_stack_00000004 + 0x284)
                        );
-  dVar3 = crt_math_c_round_FUN_005fe6b0
+  dVar3 = round
                     ((double)((local_14 + *(float *)(in_stack_00000004 + 0x280)) *
                              (float)65535));
   iStack_18 = (int)ROUND(dVar3);

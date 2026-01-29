@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_stdio_c_reportStreamError_FUN_00606020(FileEmbeddedData *embedded_data,uint error_flags)
+reportStreamError(FileEmbeddedData *embedded_data,uint error_flags)
 
 {
   uint uVar1;
@@ -19,6 +19,6 @@ crt_stdio_c_reportStreamError_FUN_00606020(FileEmbeddedData *embedded_data,uint 
   if (uVar1 == 0) {
     return;
   }
-  crt_stdio_c_storeErrorState_FUN_0060b78e(&local_8,uVar1);
+  storeErrorState(&local_8,uVar1);
   return;
 }

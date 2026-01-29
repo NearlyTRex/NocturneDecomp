@@ -43,8 +43,8 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
     while( true ) {
       fVar4 = 1.0 / this_ptr->patch_size;
       fVar1 = (this_ptr->size).x;
-      dVar19 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->size).z * fVar4));
-      dVar20 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * fVar4));
+      dVar19 = round((double)((this_ptr->size).z * fVar4));
+      dVar20 = round((double)(fVar1 * fVar4));
       *(int *)(this_ptr->unk5 + 0x7d08) = (int)ROUND(dVar20);
       iVar11 = (int)ROUND(dVar20) + 1;
       *(uint *)(this_ptr->unk5 + 0x7d0c) = uStack_4c;
@@ -69,13 +69,13 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
             *pfVar6 = 0.0;
             pfVar6[2] = local_2c;
             fVar18 = (float10)(this_ptr->size).x;
-            dVar19 = crt_math_c_round_FUN_005fe6b0
+            dVar19 = round
                                ((double)(((fVar18 * fVar17 + (float10)*pfVar6) / fVar18) * fVar15 *
                                         fVar16));
             pfVar6[6] = (float)((int)ROUND(dVar19) + 0x20000);
             iVar5 = iVar5 + 1;
             iVar8 = iVar8 + 1;
-            dVar19 = crt_math_c_round_FUN_005fe6b0
+            dVar19 = round
                                ((double)(((float10)1 -
                                          (float10)pfVar6[2] / (float10)(this_ptr->size).z) * fVar15
                                         * fVar16));
@@ -186,12 +186,12 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
         *(float *)(this_ptr->unk5 + *(int *)this_ptr->unk5 * 0x20 + 0xc) =
              (float)(fVar18 * (float10)(this_ptr->size).z * (float10)0.70699999999999996);
         iVar11 = *(int *)this_ptr->unk5 * 0x20;
-        dVar19 = crt_math_c_round_FUN_005fe6b0
+        dVar19 = round
                            ((double)(((float10)*(float *)(this_ptr->unk5 + iVar11 + 4) /
                                      (float10)(this_ptr->size).x) * fVar17 * fVar16 + fVar15));
         *(int *)(this_ptr->unk5 + iVar11 + 0x1c) = (int)ROUND(dVar19);
         iVar11 = *(int *)this_ptr->unk5 * 0x20;
-        dVar19 = crt_math_c_round_FUN_005fe6b0
+        dVar19 = round
                            ((double)(((float10)*(float *)(this_ptr->unk5 + iVar11 + 0xc) /
                                      (float10)(this_ptr->size).z) * fVar17 * fVar16 + fVar15));
         *(int *)(this_ptr->unk5 + iVar11 + 0x20) = (int)ROUND(dVar19);

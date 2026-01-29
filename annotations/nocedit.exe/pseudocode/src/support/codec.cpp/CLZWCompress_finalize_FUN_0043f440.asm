@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress *this_ptr,FILE *output_file)
+; __cdecl int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress *this_ptr,_FILE *output_file)
 ;
 ; Parameters:
 ; CLZWCompress *   Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   output_file
+; _FILE *          Stack[0x8]:4   output_file
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452f2e
@@ -33,7 +33,7 @@ section .text
     ADD EBX,0x18                        ; 0043f452
     PUSH EBX                            ; 0043f455
     CALL support_codec.cpp_flushBitBuffer_FUN_0043e7e0 ; 0043f456
-        ;   XREF to: 0043e7e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer * bit_buffer, FILE * output_stream)
+        ;   XREF to: 0043e7e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer * bit_buffer, _FILE * output_stream)
     MOV EAX,0x1                         ; 0043f45b
     ADD ESP,0x8                         ; 0043f460
     POP EDI                             ; 0043f463
@@ -48,7 +48,7 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 0043f470
     PUSH EAX                            ; 0043f473
     CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 ; 0043f474
-        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, FILE * output_stream)
+        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, _FILE * output_stream)
     ADD ESP,0x10                        ; 0043f479
     MOV dword ptr [EBX + 0x30],0xffffffff ; 0043f47c
     JMP 0x0043f44d                      ; 0043f483

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdlib_c_atoi_FUN_005ffef0(char *string_ptr)
+int __cdecl atoi(char *string_ptr)
 
 {
   byte bVar1;

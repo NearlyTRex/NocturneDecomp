@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0xc]:4   this_ptr
-; FILE *           Stack[0x10]:4   file_handle
+; _FILE *          Stack[0x10]:4   file_handle
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_already_exists_in_a__0064a0c6
@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -40,8 +40,8 @@ section .text
 
     PUSH 0x24                           ; 0058b2c0
         ;   Label: core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058b2c5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b2c5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058b2ca
     PUSH ESI                            ; 0058b2cb
     PUSH EBP                            ; 0058b2cc
@@ -79,7 +79,7 @@ section .text
     PUSH EBX                            ; 0058b324
     PUSH 0x64a5ef                       ; 0058b325 | = "data"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0058b32a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0058b32f
     MOV ESI,EAX                         ; 0058b332
     TEST EAX,EAX                        ; 0058b334
@@ -90,13 +90,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 0058b339
     PUSH EAX                            ; 0058b33d
     CALL core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 ; 0058b33e
-        ;   XREF to: 0058b3a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton * this_ptr, FILE * file_handle)
+        ;   XREF to: 0058b3a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0058b343
     PUSH 0x459                          ; 0058b346
     PUSH 0x64a62b                       ; 0058b34b | = "..\\core\\skeledit.cpp"
     PUSH ESI                            ; 0058b350
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058b351
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0058b356
     PUSH EBX                            ; 0058b359
     PUSH 0x64a640                       ; 0058b35a | = "Saved skeleton to %s OK"

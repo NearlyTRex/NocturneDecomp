@@ -10,14 +10,14 @@
 ; XREF[4]:
 ;   crt_io.c_getTempDirectory_FUN_00609afc at 00609b68
 ;   crt_io.c_getcwd_wrapper_FUN_00608d20 at 0060128c
-;   crt_io.c_realpath_FUN_00601140 at 00601189
 ;   crt_io.c_stat_FUN_00607e64 at 00607eb7
+;   crt_stdlib.c__fullpath_FUN_00601140 at 00601189
 ;
 ; Referenced Globals:
 ;   GetCurrentDirectoryA* g_GetCurrentDirectoryAFunc = 00211e42
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_memory.c_malloc_FUN_00601bb0
 ;   GetCurrentDirectoryA
@@ -41,8 +41,8 @@ section .text
     TEST EAX,EAX                        ; 00608d48
     JNZ 0x00608d55                      ; 00608d4a
         ;   XREF to: 00608d55 (CONDITIONAL_JUMP)  ; LAB_00608d55
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00608d4c
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00608d4c
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     XOR EAX,EAX                         ; 00608d51
     JMP 0x00608dbe                      ; 00608d53
         ;   XREF to: 00608dbe (UNCONDITIONAL_JUMP)  ; LAB_00608dbe

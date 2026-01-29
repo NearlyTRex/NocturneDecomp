@@ -69,10 +69,10 @@ engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
   engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_334);
   engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_334,local_220);
   while (local_334.filename[0] != '\0') {
-    iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(local_4c4,"%s\t",&local_334);
+    iVar2 = sprintf(local_4c4,"%s\t",&local_334);
     iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,local_334.filename);
     if (-1 < iVar3) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_4c4 + iVar2,"Checked out by %s",local_1c.items[iVar3].value);
     }
     shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff794,local_4c4);
@@ -97,7 +97,7 @@ engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
     iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,output_filename_buffer)
     ;
     if (iVar2 < 0) break;
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0
+    iVar3 = stricmp
                       (local_1c.items[iVar2].value,g_VersionControlSession.primary_username);
     pCVar4 = local_1c.items + iVar2;
     if (iVar3 == 0) {

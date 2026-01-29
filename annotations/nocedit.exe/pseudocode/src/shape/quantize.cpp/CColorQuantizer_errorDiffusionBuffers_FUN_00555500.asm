@@ -25,9 +25,9 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
 ;   crt_memory.c_memset_FUN_005fde40
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 00555544
     MOV dword ptr [0x0067d20c],EDX      ; 00555545 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ECX      ; 0055554b | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00555551
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00555551
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00555556
     MOV EBP,dword ptr [EBX + 0x18]      ; 00555559
         ;   Label: LAB_00555559
@@ -71,8 +71,8 @@ section .text
     PUSH EBP                            ; 0055556a
     MOV [0x0067d20c],EAX                ; 0055556b | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDX      ; 00555570 | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00555576
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00555576
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0055557b
     MOV ESI,dword ptr [EBX + 0x1c]      ; 0055557e
         ;   Label: LAB_0055557e
@@ -84,8 +84,8 @@ section .text
     PUSH ESI                            ; 0055558f
     MOV dword ptr [0x0067d20c],EBP      ; 00555590 | g_CurrentDebugFilename
     MOV [0x02f0d944],EAX                ; 00555596 | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0055559b
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0055559b
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005555a0
     MOV ECX,dword ptr [EBX + 0x8]       ; 005555a3
         ;   Label: LAB_005555a3
@@ -97,8 +97,8 @@ section .text
     PUSH ECX                            ; 005555b4
     MOV dword ptr [0x0067d20c],ESI      ; 005555b5 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EBP      ; 005555bb | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 005555c1
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 005555c1
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005555c6
     PUSH 0x28d                          ; 005555c9
         ;   Label: LAB_005555c9
@@ -124,8 +124,8 @@ section .text
     PUSH EDX                            ; 005555f9
     MOV dword ptr [0x0067d20c],ECX      ; 005555fa | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ESI      ; 00555600 | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00555606
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00555606
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0055560b
     JMP 0x00555533                      ; 0055560e
         ;   XREF to: 00555533 (UNCONDITIONAL_JUMP)  ; LAB_00555533

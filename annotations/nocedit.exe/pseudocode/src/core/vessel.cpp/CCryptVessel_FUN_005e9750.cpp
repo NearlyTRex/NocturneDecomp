@@ -37,7 +37,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
               ((CKeyFramedModelInstance *)&this_ptr->model_name,0.0,-1);
   }
   else {
-    dVar2 = crt_math_c_round_FUN_005fe6b0(65535 - local_30[0] * 65535);
+    dVar2 = round(65535 - local_30[0] * 65535);
     iStack_14 = (int)ROUND(dVar2);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iStack_14);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,0);

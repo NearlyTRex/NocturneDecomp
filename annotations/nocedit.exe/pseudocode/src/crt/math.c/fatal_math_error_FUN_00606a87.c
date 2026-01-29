@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_math_c_fatal_math_error_FUN_00606a87(void)
+void fatal_math_error(void)
 
 {
   code *pcVar1;

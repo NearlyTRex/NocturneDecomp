@@ -9,6 +9,6 @@
 void __cdecl core_moon_cpp_freeCourses_FUN_0052a450(CCourse **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,3,&g_CCourseTypeInfo);
+  __arrfini(array,3,&g_CCourseTypeInfo);
   return;
 }

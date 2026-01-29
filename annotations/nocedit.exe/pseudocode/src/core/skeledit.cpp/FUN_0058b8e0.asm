@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_005febfc
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_string.c_splitpath_FUN_005ff178
@@ -28,8 +28,8 @@ section .text
 
     PUSH 0x22c                          ; 0058b8e0
         ;   Label: core_skeledit.cpp_FUN_0058b8e0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058b8e5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b8e5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058b8ea
     PUSH ESI                            ; 0058b8eb
     PUSH EDI                            ; 0058b8ec
@@ -42,7 +42,7 @@ section .text
     PUSH ESI                            ; 0058b909
         ;   Label: LAB_0058b909
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058b90a
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0058b90f
     TEST EAX,EAX                        ; 0058b912
     JL 0x0058b920                       ; 0058b914
@@ -67,7 +67,7 @@ section .text
     PUSH 0x64a8c3                       ; 0058b935 | = "%[^\n]\n"
     PUSH EBP                            ; 0058b93a
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058b93b
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0058b940
     CMP EAX,0x1                         ; 0058b943
     JZ 0x0058b955                       ; 0058b946

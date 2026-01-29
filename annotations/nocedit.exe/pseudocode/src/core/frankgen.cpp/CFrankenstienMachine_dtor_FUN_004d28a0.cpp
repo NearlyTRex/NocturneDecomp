@@ -16,8 +16,8 @@ core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0
   void *ptr_00;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CFrankenstienMachineTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CFrankenstienMachineTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)(this_ptr->unk + 0x1a0));

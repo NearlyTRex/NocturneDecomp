@@ -4,8 +4,8 @@
       {
         "category": "other",
         "column": 24,
-        "line": 43,
-        "message": "cast from 'FILE*' to 'int' loses precision [-fpermissive]"
+        "line": 41,
+        "message": "cast from '_FILE*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -30,42 +30,30 @@
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
+        "column": 25,
         "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 37,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 50,
-        "line": 39,
+        "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 60,
+    "complexity_score": 58,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 33,
     "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 129
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -103,7 +91,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_save_FUN_0040af30",
-    "signature": "void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -178,7 +166,7 @@
     {
       "addr": "00822034",
       "name": "g_ActorDataFile",
-      "type": "FILE*",
+      "type": "_FILE*",
       "value": null
     },
     {
@@ -265,7 +253,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -274,12 +262,12 @@
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_EBP",
-      "text": "FILE *unaff_EBP;",
+      "text": "_FILE *unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 32,
       "match": "unaff_EBP",
       "text": "g_ActorDataFile = unaff_EBP;",
       "type": "unaffected_reg"

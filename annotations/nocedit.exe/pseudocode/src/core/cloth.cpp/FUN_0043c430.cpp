@@ -73,12 +73,12 @@ void core_cloth_cpp_FUN_0043c430(void)
     } while (cVar1 != '\0');
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               (local_124,10,0,local_14,"Enter in X radius : ");
-    local_24 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffb34);
+    local_24 = _strtod(in_stack_fffffb34);
     local_1c = (float)local_24;
     local_14 = iVar6 + 0xb;
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               (local_124,10,0,local_14,"Enter in Y radius : ");
-    local_24 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffb34);
+    local_24 = _strtod(in_stack_fffffb34);
     local_18 = (float)local_24;
     *(float *)(*(int *)(in_stack_00000004 + 0x3ce8c) * 0xac + in_stack_00000004 + 0x3cea4) =
          local_1c;

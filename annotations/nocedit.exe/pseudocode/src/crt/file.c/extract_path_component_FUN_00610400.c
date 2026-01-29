@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 char * __cdecl
-crt_file_c_extract_path_component_FUN_00610400
+extract_path_component
           (char **component_ptr,char *buffer,char *source,char *buffer_end)
 
 {
@@ -21,11 +21,11 @@ crt_file_c_extract_path_component_FUN_00610400
     if (0x106 < max_bytes) {
       max_bytes = 0x106;
     }
-    iVar1 = crt_string_c_mbstrnlen_FUN_00605e50(source,max_bytes);
-    crt_string_c_mbstrncpy_FUN_00605e90(buffer,source,iVar1);
-    iVar2 = crt_string_c_mbstrnbytes_FUN_00605ec0(buffer,iVar1);
+    iVar1 = mbstrnlen(source,max_bytes);
+    mbstrncpy(buffer,source,iVar1);
+    iVar2 = mbstrnbytes(buffer,iVar1);
     buffer[iVar2] = '\0';
-    iVar1 = crt_string_c_mbstrnbytes_FUN_00605ec0(buffer,iVar1);
+    iVar1 = mbstrnbytes(buffer,iVar1);
     buffer = buffer + iVar1 + 1;
   }
   return buffer;

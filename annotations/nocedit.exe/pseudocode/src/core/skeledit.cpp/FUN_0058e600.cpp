@@ -16,7 +16,7 @@ void core_skeledit_cpp_FUN_0058e600(void)
   CDeformableModel *in_stack_00000004;
   float *in_stack_00000008;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x18);
+  __STK(0x18);
   pCVar1 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);
   iVar3 = 0;
   if (0 < pCVar1->bone_count) {

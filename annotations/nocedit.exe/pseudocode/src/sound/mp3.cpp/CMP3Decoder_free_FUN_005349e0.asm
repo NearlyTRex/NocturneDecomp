@@ -51,7 +51,7 @@ section .text
     PUSH 0x63ace1                       ; 00534a1c | = "..\\sound\\mp3.cpp"
     PUSH EDX                            ; 00534a21
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00534a22
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00534a27
     MOV dword ptr [EBX],0x0             ; 00534a2a
     MOV EBX,dword ptr [ESI + 0x4]       ; 00534a30

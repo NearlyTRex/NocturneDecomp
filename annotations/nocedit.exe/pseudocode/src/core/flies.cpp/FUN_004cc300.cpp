@@ -79,7 +79,7 @@ int core_flies_cpp_FUN_004cc300(void)
     if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {
       pcStack_18 = in_stack_00000004[1].actor_name + 0x10;
       do {
-        dVar10 = crt_math_c_round_FUN_005fe6b0((double)(*(float *)pcStack_18 * 64.0f));
+        dVar10 = round((double)(*(float *)pcStack_18 * 64.0f));
         pcStack_18 = (char *)(int)ROUND(dVar10);
         if ((int)pcStack_18 < 0) {
           pcStack_18 = (char *)0x0;

@@ -57,7 +57,7 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
       iVar8 = *in_stack_00000004 + -1;
       local_14 = iVar8;
       if (in_stack_00000008 < (float)iVar8) {
-        dVar10 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000008);
+        dVar10 = round((double)in_stack_00000008);
         local_1c = (int)ROUND(dVar10);
         local_18 = local_1c;
         local_7c = in_stack_00000008 - (float)local_1c;
@@ -75,13 +75,13 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
     local_88 = SUB84(dVar10,0);
     fStack_84 = (float)((ulonglong)dVar10 >> 0x20);
     if (0.0 <= dVar10) {
-      local_28 = crt_math_c_floor_FUN_005feb90
+      local_28 = floor
                            ((double)(in_stack_00000008 / (float)*in_stack_00000004));
       local_80 = (float)(double)CONCAT44(local_88,uStack_8c) - (float)local_28 * fStack_84;
       in_stack_0000000c = extraout_EBX_00;
     }
     else {
-      local_28 = crt_math_c_floor_FUN_005feb90
+      local_28 = floor
                            ((double)(-in_stack_00000008 / (float)*in_stack_00000004));
       local_80 = (float)local_28 * fStack_84 + (float)(double)CONCAT44(local_88,uStack_8c);
       in_stack_0000000c = extraout_EBX;
@@ -89,7 +89,7 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
         local_80 = local_80 + fStack_84;
       }
     }
-    dVar10 = crt_math_c_round_FUN_005fe6b0((double)local_80);
+    dVar10 = round((double)local_80);
     fStack_20 = (float)(int)ROUND(dVar10);
     local_1c = (int)fStack_20;
     iVar8 = (int)fStack_20 + 1;

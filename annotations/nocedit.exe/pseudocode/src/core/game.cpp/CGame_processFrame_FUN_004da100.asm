@@ -1045,7 +1045,7 @@ section .text
     PUSH EAX                            ; 004dabdc
     PUSH 0x62b231                       ; 004dabdd | = "movie"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004dabe2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004dabe7
     MOV dword ptr [EBP + 0x5a],EAX      ; 004dabea
     TEST EAX,EAX                        ; 004dabed
@@ -1171,13 +1171,13 @@ section .text
     PUSH EAX                            ; 004dad30
     PUSH EBX                            ; 004dad31
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 004dad32
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 004dad37
     MOV EDX,dword ptr [EBP + 0x5a]      ; 004dad3a
     PUSH EDX                            ; 004dad3d
     PUSH ESI                            ; 004dad3e
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 004dad3f
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 004dad44
     MOV ECX,dword ptr [EBP + 0x5a]      ; 004dad47
     PUSH ECX                            ; 004dad4a
@@ -1186,7 +1186,7 @@ section .text
     PUSH EBX                            ; 004dad51
     INC ESI                             ; 004dad52
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 004dad53
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     MOV dword ptr [EBP + 0x5e],ESI      ; 004dad58
     MOV EDI,dword ptr [0x0067b664]      ; 004dad5b | DAT_0067b664
     ADD ESP,0x8                         ; 004dad61
@@ -1207,7 +1207,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x5a]      ; 004dad8b
     PUSH EBX                            ; 004dad8e
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004dad8f
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004dad94
     PUSH 0x0                            ; 004dad97
     PUSH 0x0                            ; 004dad99

@@ -32,17 +32,17 @@ section .text
     PUSH 0x64607b                       ; 005711bb | = "// Set state version\n"
     PUSH EDI                            ; 005711c0
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005711c1
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 005711c6
     PUSH 0x646091                       ; 005711c9 | = "1\n"
     PUSH EDI                            ; 005711ce
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005711cf
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 005711d4
     PUSH 0x646094                       ; 005711d7 | = "// Camera count, enabled list\n"
     PUSH EDI                            ; 005711dc
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005711dd
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 005711e2
     MOV EDX,dword ptr [EBP]             ; 005711e5
     PUSH EDX                            ; 005711e8
@@ -50,7 +50,7 @@ section .text
     PUSH EDI                            ; 005711ee
     XOR EBX,EBX                         ; 005711ef
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005711f1
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ECX,dword ptr [EBP]             ; 005711f6
     ADD ESP,0xc                         ; 005711f9
     TEST ECX,ECX                        ; 005711fc
@@ -66,7 +66,7 @@ section .text
     ADD ESI,0x1a4                       ; 00571210
     INC EBX                             ; 00571216
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00571217
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 0057121c
     ADD ESP,0xc                         ; 0057121f
     CMP EBX,EDX                         ; 00571222

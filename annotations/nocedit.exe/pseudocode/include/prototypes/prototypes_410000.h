@@ -83,7 +83,7 @@ int __cdecl core_ammo_cpp_CAmmo_canPickup_FUN_004111c0(CAmmo *this_ptr,CDemonAct
 void core_ammo_cpp_FUN_00411200(void);
 undefined4 core_ammo_cpp_FUN_004112b0(void);
 void __cdecl core_ammo_cpp_CAmmo_getPropertyList_FUN_00411360(CAmmo *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_ammo_cpp_CAmmo_writeDependencies_FUN_004113e0(CAmmo *this_ptr,FILE *file_handle);
+void __cdecl core_ammo_cpp_CAmmo_writeDependencies_FUN_004113e0(CAmmo *this_ptr,_FILE *file_handle);
 CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_004114e0(CAmmo *this_ptr,uint d1,uint d2);
 void __cdecl core_ammobox_cpp_staticInit_FUN_00411530(void);
 CAmmoBox * __cdecl core_ammobox_cpp_factoryFunc_FUN_00411560(void);
@@ -378,5 +378,5 @@ void __cdecl core_box_cpp_CBox_setupN_FUN_0041df50 (CBox *this_ptr,CVector3f *po
 void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0 (CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 void __cdecl core_box_cpp_CBox_process_FUN_0041e2f0(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float delta_time);
-void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041fe90(CBox *this_ptr,FILE *file_handle);
+void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041fe90(CBox *this_ptr,_FILE *file_handle);
 

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(FILE *file)
+; __cdecl void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[8]:
 ;   crt_stdio.c_FillInputBuffer_FUN_005fe940 at 005fe952
@@ -30,7 +30,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 006027e2
     PUSH EBX                            ; 006027e6
     CALL crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0 ; 006027e7
-        ;   XREF to: 00608ee0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)
+        ;   XREF to: 00608ee0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(_FILE * file)
     MOV EDX,dword ptr [EBX + 0x14]      ; 006027ec
     ADD ESP,0x4                         ; 006027ef
     TEST EDX,EDX                        ; 006027f2

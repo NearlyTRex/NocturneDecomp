@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint crt_watcom_c_memavl_FUN_006008f0(void)
+uint memavl(void)
 
 {
   int *piVar1;

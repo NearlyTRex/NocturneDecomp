@@ -28,16 +28,16 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
        (g_ModelPolygonData[polygon_index].part_assignment == g_CurrentPartIndex)))))) {
     shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + polygon_index);
     local_c4.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
     local_c4.surface_normal.A = (int)ROUND(dVar4);
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));
     local_c4.surface_normal.B = (int)ROUND(dVar4);
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));
     local_c4.surface_normal.C = (int)ROUND(dVar4);
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_ModelPolygonData[polygon_index].plane_distance *
                                 65535.0f * 256.0f));
     local_c4.surface_normal.D = (int)ROUND(dVar4);
@@ -64,11 +64,11 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
       for (local_18 = 0; local_18 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
           local_18 = local_18 + 1) {
         local_14 = g_ModelPolygonData[polygon_index].vertex_indices[local_18];
-        dVar4 = crt_math_c_round_FUN_005fe6b0
+        dVar4 = round
                           ((double)(g_ModelPolygonData[polygon_index].uv_u[local_18] *
                                    (float)65536));
         g_RenderVertexBuffer[local_14].u = (float)(int)ROUND(dVar4);
-        dVar4 = crt_math_c_round_FUN_005fe6b0
+        dVar4 = round
                           ((double)(g_ModelPolygonData[polygon_index].uv_v[local_18] *
                                    (float)65536));
         g_RenderVertexBuffer[local_14].v = (float)(int)ROUND(dVar4);

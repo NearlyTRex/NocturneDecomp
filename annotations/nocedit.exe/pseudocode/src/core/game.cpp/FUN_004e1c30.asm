@@ -46,7 +46,7 @@ section .text
     PUSH EDX                            ; 004e1c63
     PUSH 0x62cc74                       ; 004e1c64 | = "world"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e1c69
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e1c6e
     TEST EAX,EAX                        ; 004e1c71
     JNZ 0x004e1c82                      ; 004e1c73
@@ -64,7 +64,7 @@ section .text
     PUSH 0x62cc7a                       ; 004e1c87 | = "..\\core\\game.cpp"
     PUSH EAX                            ; 004e1c8c
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e1c8d
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e1c92
     INC EBX                             ; 004e1c95
         ;   Label: LAB_004e1c95

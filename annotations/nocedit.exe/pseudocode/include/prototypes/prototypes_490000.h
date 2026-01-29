@@ -71,9 +71,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00494450(CDem
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710 (CDemonRaytrace *this_ptr,void *callback_data,int linear_index,void *user_data);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,FILE *file_handle);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,_FILE *file_handle);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0 (CDemonRaytrace *this_ptr,char *filename);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,FILE *file_handle);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,_FILE *file_handle);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_save_FUN_00495040(CDemonRaytrace *this_ptr,char *filename);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTris_FUN_004950b0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_addTriangle_FUN_00495100 (CDemonRaytrace *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar triangle_flags);
@@ -112,10 +112,10 @@ STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleR
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr);
 void __cdecl core_dtrace_cpp_freeVectors_FUN_0049a410(CVector3f **array);
 void __cdecl core_dtri_cpp_staticInit_FUN_0049a430(void);
-void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,FILE *file_handle);
-void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,FILE *file_handle);
-void __cdecl core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0(CDemonTriangle *this_ptr,FILE *file_handle);
-void __cdecl core_dtri_cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0 (CDemonTriangle *this_ptr,FILE *file_handle);
+void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,_FILE *file_handle);
+void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,_FILE *file_handle);
+void __cdecl core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0 (CDemonTriangle *this_ptr,_FILE *file_handle);
+void __cdecl core_dtri_cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0 (CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle *triangle);
 void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790 (CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3);
 float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800 (CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection);

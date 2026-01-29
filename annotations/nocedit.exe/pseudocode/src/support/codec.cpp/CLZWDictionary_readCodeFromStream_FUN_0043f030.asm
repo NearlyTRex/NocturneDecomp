@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 (CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,FILE *input_file,int *bytes_remaining)
+; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 (CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_FILE *input_file,int *bytes_remaining)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr
 ; SBitBuffer *     Stack[0x8]:4   bit_buffer
-; FILE *           Stack[0xc]:4   input_file
+; _FILE *          Stack[0xc]:4   input_file
 ; int *            Stack[0x10]:4   bytes_remaining
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -51,7 +51,7 @@ section .text
     PUSH 0x1                            ; 0043f066
     PUSH EDI                            ; 0043f068
     CALL support_codec.cpp_readBitsFromStream_FUN_0043e530 ; 0043f069
-        ;   XREF to: 0043e530 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_readBitsFromStream_FUN_0043e530(SBitBuffer * bit_buffer, int bit_count, FILE * file_stream, int * bytes_remaining)
+        ;   XREF to: 0043e530 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_readBitsFromStream_FUN_0043e530(SBitBuffer * bit_buffer, int bit_count, _FILE * file_stream, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043f06e
     TEST EAX,EAX                        ; 0043f071
     JL 0x0043f087                       ; 0043f073
@@ -100,7 +100,7 @@ section .text
     PUSH 0x1                            ; 0043f0aa
     PUSH EDI                            ; 0043f0ac
     CALL support_codec.cpp_readBitsFromStream_FUN_0043e530 ; 0043f0ad
-        ;   XREF to: 0043e530 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_readBitsFromStream_FUN_0043e530(SBitBuffer * bit_buffer, int bit_count, FILE * file_stream, int * bytes_remaining)
+        ;   XREF to: 0043e530 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_readBitsFromStream_FUN_0043e530(SBitBuffer * bit_buffer, int bit_count, _FILE * file_stream, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043f0b2
     TEST EAX,EAX                        ; 0043f0b5
     JL 0x0043f087                       ; 0043f0b7

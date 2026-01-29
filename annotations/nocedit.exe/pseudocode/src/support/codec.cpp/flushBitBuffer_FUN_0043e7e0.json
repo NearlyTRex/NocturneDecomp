@@ -1,7 +1,32 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 17,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 26,
+        "line": 17,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 10,
+        "line": 25,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 24,
+        "line": 25,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -40,7 +65,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_flushBitBuffer_FUN_0043e7e0",
-    "signature": "void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,FILE *output_stream)"
+    "signature": "void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream)"
   },
   "function_calls": [
     {
@@ -98,7 +123,7 @@
         "name": "output_stream",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },

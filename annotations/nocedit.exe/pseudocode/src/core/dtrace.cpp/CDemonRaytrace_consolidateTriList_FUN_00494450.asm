@@ -28,10 +28,10 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600
 ;   core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690
-;   crt_memory.c_free_FUN_005fe659
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -134,8 +134,8 @@ section .text
         ;   XREF to: 00494550 (CONDITIONAL_JUMP)  ; LAB_00494550
     SUB EAX,0x4                         ; 00494544
     PUSH EAX                            ; 00494547
-    CALL crt_memory.c_free_FUN_005fe659 ; 00494548
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00494548
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0049454d
     MOV EDI,0x6226ad                    ; 00494550 | = "..\\core\\dtrace.cpp"
         ;   Label: LAB_00494550
@@ -144,8 +144,8 @@ section .text
     PUSH EDX                            ; 0049455d
     MOV dword ptr [0x0067d20c],EDI      ; 0049455e | g_CurrentDebugFilename
     MOV [0x02f0d944],EAX                ; 00494564 | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00494569
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00494569
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0049456e
     MOV ECX,dword ptr [ESP + 0x8]       ; 00494571
     IMUL EAX,ECX,0x38                   ; 00494575

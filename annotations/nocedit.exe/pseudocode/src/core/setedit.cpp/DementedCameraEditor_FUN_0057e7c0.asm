@@ -1068,7 +1068,7 @@ section .text
     PUSH EAX                            ; 0057f270
     PUSH 0x648245                       ; 0057f271 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f276
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f27b
     MOV ESI,EAX                         ; 0057f27e
     TEST EAX,EAX                        ; 0057f280
@@ -1088,7 +1088,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057f2ad
     PUSH EAX                            ; 0057f2b4
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f2b5
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     MOV EAX,0xffffffff                  ; 0057f2ba
     ADD ESP,0xc                         ; 0057f2bf
     MOV dword ptr [ESP + 0x471c],EAX    ; 0057f2c2
@@ -1097,7 +1097,7 @@ section .text
     PUSH 0x648273                       ; 0057f2d1 | = "%d\n"
     PUSH ESI                            ; 0057f2d6
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0057f2d7
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0057f2dc
     MOV EDX,dword ptr [ESP + 0x471c]    ; 0057f2df
     CMP EDX,0x1                         ; 0057f2e6
@@ -1118,7 +1118,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057f315
     PUSH EAX                            ; 0057f31c
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f31d
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0057f322
     LEA EAX,[ESP + 0x4724]              ; 0057f325
     PUSH EAX                            ; 0057f32c
@@ -1127,14 +1127,14 @@ section .text
     PUSH 0x6482aa                       ; 0057f335 | = "%d,%d\n"
     PUSH ESI                            ; 0057f33a
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0057f33b
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0057f340
     PUSH ESI                            ; 0057f343
     PUSH 0xff                           ; 0057f344
     LEA EAX,[ESP + 0x42d4]              ; 0057f349
     PUSH EAX                            ; 0057f350
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f351
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0057f356
     MOV EAX,dword ptr [ESP + 0x4720]    ; 0057f359
     XOR EDI,EDI                         ; 0057f360
@@ -1151,7 +1151,7 @@ section .text
     LEA EAX,[ESP + 0x189c]              ; 0057f377
     PUSH EAX                            ; 0057f37e
     CALL core_setutil.cpp_C3DSLight_importS3D_FUN_00587710 ; 0057f37f
-        ;   XREF to: 00587710 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight * this_ptr, FILE * file_handle)
+        ;   XREF to: 00587710 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0057f384
     INC EDI                             ; 0057f387
     CMP EDI,dword ptr [ESP + 0x4720]    ; 0057f388
@@ -1163,7 +1163,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057f397
     PUSH EAX                            ; 0057f39e
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f39f
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0057f3a4
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057f3a7
     CMP dword ptr [EAX],0xfa            ; 0057f3aa
@@ -1181,7 +1181,7 @@ section .text
     ADD EAX,EDX                         ; 0057f3d8
     PUSH EAX                            ; 0057f3da
     CALL core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0 ; 0057f3db
-        ;   XREF to: 00585ff0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera * this_ptr, FILE * file_handle)
+        ;   XREF to: 00585ff0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0057f3e0
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057f3e3
     MOV ECX,dword ptr [EAX]             ; 0057f3e6
@@ -1225,7 +1225,7 @@ section .text
     PUSH 0x6482cc                       ; 0057f458 | = "..\\core\\setedit.cpp"
     PUSH ESI                            ; 0057f45d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057f45e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057f463
     PUSH 0x1                            ; 0057f466
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057f468
@@ -1266,8 +1266,8 @@ section .text
     ADD ESP,0xc                         ; 0057f4e5
     LEA EAX,[ESP + 0x43cc]              ; 0057f4e8
     PUSH EAX                            ; 0057f4ef
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0057f4f0
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0057f4f0
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 0057f4f5
     MOV EAX,dword ptr [EBX + 0x19c]     ; 0057f4f8
     MOV dword ptr [EBX + 0x198],0x0     ; 0057f4fe
@@ -1348,7 +1348,7 @@ section .text
     PUSH EAX                            ; 0057f60a
     PUSH 0x648332                       ; 0057f60b | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f610
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f615
     MOV dword ptr [ESP + 0x4730],EAX    ; 0057f618
     TEST EAX,EAX                        ; 0057f61f
@@ -1369,7 +1369,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057f653
     PUSH EAX                            ; 0057f65a
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f65b
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     MOV EAX,0xffffffff                  ; 0057f660
     ADD ESP,0xc                         ; 0057f665
     MOV dword ptr [ESP + 0x4734],EAX    ; 0057f668
@@ -1378,7 +1378,7 @@ section .text
     PUSH 0x648360                       ; 0057f677 | = "%d\n"
     PUSH EDI                            ; 0057f67c
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0057f67d
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0057f682
     MOV ECX,dword ptr [ESP + 0x4734]    ; 0057f685
     CMP ECX,0x1                         ; 0057f68c
@@ -1400,7 +1400,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057f6c2
     PUSH EAX                            ; 0057f6c9
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f6ca
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0057f6cf
     LEA EAX,[ESP + 0x473c]              ; 0057f6d2
     PUSH EAX                            ; 0057f6d9
@@ -1410,7 +1410,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x473c]    ; 0057f6e7
     PUSH EDX                            ; 0057f6ee
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0057f6ef
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0057f6f4
     MOV ECX,dword ptr [ESP + 0x4730]    ; 0057f6f7
     PUSH ECX                            ; 0057f6fe
@@ -1418,7 +1418,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057f704
     PUSH EAX                            ; 0057f70b
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f70c
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0057f711
     MOV EBX,dword ptr [ESP + 0x4738]    ; 0057f714
     XOR EDI,EDI                         ; 0057f71b
@@ -1436,7 +1436,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0057f734
     PUSH EAX                            ; 0057f738
     CALL core_setutil.cpp_C3DSLight_importS3D_FUN_00587710 ; 0057f739
-        ;   XREF to: 00587710 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight * this_ptr, FILE * file_handle)
+        ;   XREF to: 00587710 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0057f73e
     INC EDI                             ; 0057f741
     CMP EDI,dword ptr [ESP + 0x4738]    ; 0057f742
@@ -1449,7 +1449,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057f758
     PUSH EAX                            ; 0057f75f
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0057f760
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0057f765
     CMP dword ptr [ESP + 0x473c],0x0    ; 0057f768
     JLE 0x0057fa44                      ; 0057f770
@@ -1465,7 +1465,7 @@ section .text
     LEA EAX,[ESP + 0x3c2c]              ; 0057f78e
     PUSH EAX                            ; 0057f795
     CALL core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0 ; 0057f796
-        ;   XREF to: 00585ff0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera * this_ptr, FILE * file_handle)
+        ;   XREF to: 00585ff0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0057f79b
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057f79e
     MOV EDI,dword ptr [EAX]             ; 0057f7a1
@@ -1539,7 +1539,7 @@ section .text
     PUSH EAX                            ; 0057f8bc
     PUSH 0x6483a8                       ; 0057f8bd | = "backdrop"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f8c2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f8c7
     PUSH ESI                            ; 0057f8ca
     PUSH 0x6483b1                       ; 0057f8cb | = "%s.raw"
@@ -1555,7 +1555,7 @@ section .text
     PUSH 0x6483bb                       ; 0057f8f4 | = "backdrop"
     XOR ESI,ESI                         ; 0057f8f9
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f8fb
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f900
     MOV EDI,EAX                         ; 0057f903
     PUSH EDI                            ; 0057f905
@@ -1563,12 +1563,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4744]    ; 0057f906
     PUSH EAX                            ; 0057f90d
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0057f90e
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0057f913
     PUSH EAX                            ; 0057f916
     INC ESI                             ; 0057f917
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0057f918
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 0057f91d
     CMP ESI,0x4b000                     ; 0057f920
     JL 0x0057f905                       ; 0057f926
@@ -1579,13 +1579,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4748]    ; 0057f938
     PUSH EDX                            ; 0057f93f
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057f940
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057f945
     PUSH 0xece                          ; 0057f948
     PUSH 0x6483d8                       ; 0057f94d | = "..\\core\\setedit.cpp"
     PUSH EDI                            ; 0057f952
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057f953
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057f958
     LEA EAX,[ESP + 0x3c28]              ; 0057f95b
     PUSH EAX                            ; 0057f962
@@ -1600,7 +1600,7 @@ section .text
     PUSH EAX                            ; 0057f984
     PUSH 0x6483f6                       ; 0057f985 | = "backdrop"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f98a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f98f
     ADD EBX,dword ptr [ESP + 0x4744]    ; 0057f992
     PUSH EBX                            ; 0057f999
@@ -1617,7 +1617,7 @@ section .text
     PUSH 0x648409                       ; 0057f9c3 | = "backdrop"
     XOR EBX,EBX                         ; 0057f9c8
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f9ca
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f9cf
     MOV EDI,EAX                         ; 0057f9d2
     MOV ESI,dword ptr [ESP + 0x4740]    ; 0057f9d4
@@ -1625,12 +1625,12 @@ section .text
         ;   Label: LAB_0057f9db
     PUSH ESI                            ; 0057f9dc
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0057f9dd
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0057f9e2
     PUSH EAX                            ; 0057f9e5
     INC EBX                             ; 0057f9e6
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0057f9e7
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 0057f9ec
     CMP EBX,0x300                       ; 0057f9ef
     JL 0x0057f9db                       ; 0057f9f5
@@ -1639,13 +1639,13 @@ section .text
     PUSH 0x648412                       ; 0057f9fc | = "..\\core\\setedit.cpp"
     PUSH ESI                            ; 0057fa01
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057fa02
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057fa07
     PUSH 0xed7                          ; 0057fa0a
     PUSH 0x648426                       ; 0057fa0f | = "..\\core\\setedit.cpp"
     PUSH EDI                            ; 0057fa14
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057fa15
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057fa1a
     PUSH 0x0                            ; 0057fa1d
         ;   Label: LAB_0057fa1d
@@ -1664,7 +1664,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4738]    ; 0057fa4e
     PUSH ECX                            ; 0057fa55
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057fa56
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057fa5b
     PUSH 0x1                            ; 0057fa5e
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057fa60
@@ -1741,7 +1741,7 @@ section .text
     PUSH EAX                            ; 0057fb4b
     PUSH 0x64847f                       ; 0057fb4c | = "backdrop"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fb51
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fb56
     PUSH 0x648488                       ; 0057fb59 | = "wb"
     MOV EDI,EAX                         ; 0057fb5e
@@ -1750,19 +1750,19 @@ section .text
     PUSH 0x64848b                       ; 0057fb68 | = "backdrop"
     XOR EBX,EBX                         ; 0057fb6d
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fb6f
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fb74
     MOV ESI,EAX                         ; 0057fb77
     PUSH ESI                            ; 0057fb79
         ;   Label: LAB_0057fb79
     PUSH EDI                            ; 0057fb7a
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0057fb7b
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0057fb80
     PUSH EAX                            ; 0057fb83
     INC EBX                             ; 0057fb84
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0057fb85
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 0057fb8a
     CMP EBX,0x4b000                     ; 0057fb8d
     JL 0x0057fb79                       ; 0057fb93
@@ -1771,13 +1771,13 @@ section .text
     PUSH 0x648494                       ; 0057fb9a | = "..\\core\\setedit.cpp"
     PUSH EDI                            ; 0057fb9f
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057fba0
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057fba5
     PUSH 0xef6                          ; 0057fba8
     PUSH 0x6484a8                       ; 0057fbad | = "..\\core\\setedit.cpp"
     PUSH ESI                            ; 0057fbb2
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057fbb3
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057fbb8
     MOV EDI,dword ptr [ESP + 0x4764]    ; 0057fbbb
     PUSH EDI                            ; 0057fbc2
@@ -1803,7 +1803,7 @@ section .text
     PUSH EAX                            ; 0057fc0a
     PUSH 0x6484cf                       ; 0057fc0b | = "backdrop"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fc10
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fc15
     PUSH 0x6484d8                       ; 0057fc18 | = "wb"
     MOV EDI,EAX                         ; 0057fc1d
@@ -1812,19 +1812,19 @@ section .text
     PUSH 0x6484db                       ; 0057fc27 | = "backdrop"
     XOR EBX,EBX                         ; 0057fc2c
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fc2e
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fc33
     MOV ESI,EAX                         ; 0057fc36
     PUSH ESI                            ; 0057fc38
         ;   Label: LAB_0057fc38
     PUSH EDI                            ; 0057fc39
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0057fc3a
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0057fc3f
     PUSH EAX                            ; 0057fc42
     INC EBX                             ; 0057fc43
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0057fc44
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 0057fc49
     CMP EBX,0x300                       ; 0057fc4c
     JL 0x0057fc38                       ; 0057fc52
@@ -1833,13 +1833,13 @@ section .text
     PUSH 0x6484e4                       ; 0057fc59 | = "..\\core\\setedit.cpp"
     PUSH EDI                            ; 0057fc5e
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057fc5f
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057fc64
     PUSH 0xeff                          ; 0057fc67
     PUSH 0x6484f8                       ; 0057fc6c | = "..\\core\\setedit.cpp"
     PUSH ESI                            ; 0057fc71
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057fc72
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057fc77
     MOV EBX,dword ptr [ESP + 0x4770]    ; 0057fc7a
     INC EBX                             ; 0057fc81

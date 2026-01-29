@@ -3,13 +3,13 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 14,
         "line": 49,
         "message": "'stack0xfffffbc4' was not declared in this scope; did you mean 'in_stack_fffffbc4'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 14,
         "line": 57,
         "message": "'stack0xfffffbc4' was not declared in this scope; did you mean 'in_stack_fffffbc4'?"
       }
@@ -411,7 +411,7 @@
       "description": "Direct stack address reference",
       "line": 42,
       "match": "&stack0xfffffbc4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffbc4,\"Invalid font file size (%s).\",filename);",
+      "text": "sprintf(&stack0xfffffbc4,\"Invalid font file size (%s).\",filename);",
       "type": "stack_ref"
     },
     {
@@ -425,7 +425,7 @@
       "description": "Direct stack address reference",
       "line": 50,
       "match": "&stack0xfffffbc4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffbc4,\"Unable to allocate memory for font bitmap (%s).\",filename);",
+      "text": "sprintf(&stack0xfffffbc4,\"Unable to allocate memory for font bitmap (%s).\",filename);",
       "type": "stack_ref"
     },
     {

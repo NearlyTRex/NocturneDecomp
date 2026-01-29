@@ -30,7 +30,7 @@ void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
   uint local_14;
   
   iVar6 = 0;
-  crt_memory_c_memset_FUN_005fde40(fog,0,0x1000);
+  memset(fog,0,0x1000);
   local_3c = 0x1000;
   do {
     iVar9 = 0;
@@ -39,7 +39,7 @@ void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
       pcVar5 = fog->planes[0].grid[iVar9] + iVar6;
       do {
         pcVar4 = pcVar5 + 0x100;
-        iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+        iVar2 = rand();
         *pcVar5 = (char)iVar2;
         pcVar5 = pcVar4;
       } while (pcVar4 != pcVar7);

@@ -19,11 +19,11 @@ core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe *this_ptr,CColor3f
     (this_ptr->position).z = color->b;
   }
   dVar2 = 256;
-  dVar1 = crt_math_c_round_FUN_005fe6b0((double)color->r * 256);
+  dVar1 = round((double)color->r * 256);
   (this_ptr->color).r = (int)ROUND(dVar1);
-  dVar1 = crt_math_c_round_FUN_005fe6b0((double)color->g * dVar2);
+  dVar1 = round((double)color->g * dVar2);
   (this_ptr->color).g = (int)ROUND(dVar1);
-  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2 * (double)color->b);
+  dVar2 = round(dVar2 * (double)color->b);
   (this_ptr->color).b = (int)ROUND(dVar2);
   return;
 }

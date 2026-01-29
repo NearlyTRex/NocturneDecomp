@@ -39,7 +39,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_errno.c_errno_FUN_00601450
+;   crt_errno.c__errno_FUN_00601450
 ;   crt_stdio.c_setvbuf_FUN_00601490
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
 ;   engine_dosio.c_makePath_FUN_00481f50
@@ -121,7 +121,7 @@ section .text
     PUSH 0x0                            ; 004b2934
     PUSH EDI                            ; 004b2936
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b2937
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 004b293c
     ADD ESP,0x14                        ; 004b293e
     TEST EAX,EAX                        ; 004b2941
@@ -132,7 +132,7 @@ section .text
     PUSH 0x0                            ; 004b2950
     PUSH EAX                            ; 004b2952
     CALL crt_stdio.c_setvbuf_FUN_00601490 ; 004b2953
-        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
+        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_setvbuf_FUN_00601490(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 004b2958
     MOV dword ptr [ESP + 0x204],EBX     ; 004b295b
         ;   Label: LAB_004b295b
@@ -144,7 +144,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x224]     ; 004b2972
     PUSH EAX                            ; 004b2979
     CALL engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 ; 004b297a
-        ;   XREF to: 004b2a60 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList * this_ptr, FILE * * file)
+        ;   XREF to: 004b2a60 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList * this_ptr, _FILE * * file)
     ADD ESP,0x8                         ; 004b297f
     MOV EDX,dword ptr [ESP + 0x204]     ; 004b2982
     MOV EBX,EAX                         ; 004b2989
@@ -156,7 +156,7 @@ section .text
     PUSH EDX                            ; 004b2999
     XOR ESI,ESI                         ; 004b299a
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b299c
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b29a1
     MOV dword ptr [ESP + 0x204],ESI     ; 004b29a4
     MOV EAX,EBX                         ; 004b29ab
@@ -186,8 +186,8 @@ section .text
     ADD ESP,0x4                         ; 004b29e8
     JMP 0x004b28c0                      ; 004b29eb
         ;   XREF to: 004b28c0 (UNCONDITIONAL_JUMP)  ; LAB_004b28c0
-    CALL crt_errno.c_errno_FUN_00601450 ; 004b29f0
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 004b29f0
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
         ;   Label: LAB_004b29f0
     CMP dword ptr [EAX],0x6             ; 004b29f5
     JNZ 0x004b2a10                      ; 004b29f8
@@ -202,8 +202,8 @@ section .text
         ;   Label: LAB_004b2a10
     JMP 0x004b295b                      ; 004b2a12
         ;   XREF to: 004b295b (UNCONDITIONAL_JUMP)  ; LAB_004b295b
-    CALL crt_errno.c_errno_FUN_00601450 ; 004b2a17
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 004b2a17
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
         ;   Label: LAB_004b2a17
     MOV EDI,dword ptr [EAX]             ; 004b2a1c
     CMP EDI,0x1                         ; 004b2a1e

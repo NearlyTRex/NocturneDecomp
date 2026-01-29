@@ -9,9 +9,7 @@
 void __cdecl core_mirror_cpp_staticInit_FUN_00520fb0(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_MirrorInputVertices,0x20,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_MirrorOutputVertices,0x20,&g_CVectorTypeInfo);
+  __arrinit(g_MirrorInputVertices,0x20,&g_CVectorTypeInfo);
+  __arrinit(g_MirrorOutputVertices,0x20,&g_CVectorTypeInfo);
   return;
 }

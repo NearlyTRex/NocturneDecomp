@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 (CLZWDictionary *this_ptr,int code,FILE *output_file)
+; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 (CLZWDictionary *this_ptr,int code,_FILE *output_file)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   code
-; FILE *           Stack[0xc]:4   output_file
+; _FILE *          Stack[0xc]:4   output_file
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590 at 0043f5ad
@@ -38,7 +38,7 @@ section .text
     PUSH EDX                            ; 0043f220
     PUSH EDI                            ; 0043f221
     CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 ; 0043f222
-        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)
+        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, _FILE * output_file)
     MOV ESI,EAX                         ; 0043f227
     MOV EAX,dword ptr [EDI + 0x10]      ; 0043f229
     ADD EBX,EAX                         ; 0043f22c
@@ -48,7 +48,7 @@ section .text
     PUSH EAX                            ; 0043f235
     PUSH EBP                            ; 0043f236
     CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043f237
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(_FILE * stream, int character)
     ADD ESP,0x8                         ; 0043f23c
     MOV EAX,ESI                         ; 0043f23f
     POP ESI                             ; 0043f241
@@ -62,7 +62,7 @@ section .text
     PUSH EAX                            ; 0043f24d
     PUSH EBP                            ; 0043f24e
     CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043f24f
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(_FILE * stream, int character)
     MOV EAX,dword ptr [EDI + 0x10]      ; 0043f254
     ADD ESP,0x8                         ; 0043f257
     MOV EAX,dword ptr [EBX + EAX*0x1]   ; 0043f25a

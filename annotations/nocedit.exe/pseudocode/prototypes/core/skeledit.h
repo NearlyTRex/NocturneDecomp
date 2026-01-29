@@ -21,7 +21,7 @@ void FUN_00589530(void);
 
 // Original: core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
 // Address: 005895f0
-int __cdecl readNonEmptyLine(char *buffer,FILE *file,int require_content);
+int __cdecl readNonEmptyLine(char *buffer,_FILE *file,int require_content);
 
 // Original: core_skeledit.cpp_FUN_005896b0
 // Address: 005896b0
@@ -77,7 +77,7 @@ undefined4 FUN_0058a1b0(void);
 
 // Original: core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
 // Address: 0058a260
-void GetModelPtrOfFile(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,FILE *param_6);
+void GetModelPtrOfFile(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,_FILE *param_6);
 
 // Original: core_skeledit.cpp_FUN_0058a2b0
 // Address: 0058a2b0
@@ -89,11 +89,11 @@ void __cdecl CBoneStructure::importBON(CBoneStructure *this_ptr,char *filename);
 
 // Original: core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
 // Address: 0058a4a0
-void __cdecl CBoneStructure::readBONheader(CBoneStructure *this_ptr,FILE *file,int *frame_count_out);
+void __cdecl CBoneStructure::readBONheader(CBoneStructure *this_ptr,_FILE *file,int *frame_count_out);
 
 // Original: core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 // Address: 0058aa10
-void __cdecl CBoneStructure::readBONframe(CBoneStructure *this_ptr,FILE *file,int mirror_flag);
+void __cdecl CBoneStructure::readBONframe(CBoneStructure *this_ptr,_FILE *file,int mirror_flag);
 
 // Original: core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
 // Address: 0058abb0
@@ -141,11 +141,11 @@ void FUN_0058b260(void);
 
 // Original: core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0
 // Address: 0058b2c0
-void __cdecl CSkeleton::save(CSkeleton *this_ptr,FILE *file_handle);
+void __cdecl CSkeleton::save(CSkeleton *this_ptr,_FILE *file_handle);
 
 // Original: core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
 // Address: 0058b3a0
-void __cdecl CSkeleton::saveStream(CSkeleton *this_ptr,FILE *file_handle);
+void __cdecl CSkeleton::saveStream(CSkeleton *this_ptr,_FILE *file_handle);
 
 // Original: core_skeledit.cpp_FUN_0058b660
 // Address: 0058b660

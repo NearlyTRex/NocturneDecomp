@@ -16,8 +16,8 @@ core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint d1,uint d2,uint d3
   void *ptr_00;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CGlassTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CGlassTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   core_glass_cpp_freeVectors_FUN_004eb8a0((CVector3f **)this_ptr->broken_vertices);

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char,char *output_buffer)
+int __cdecl WideCharToSingleByte(wchar_t wide_char,char *output_buffer)
 
 {
   int iVar1;

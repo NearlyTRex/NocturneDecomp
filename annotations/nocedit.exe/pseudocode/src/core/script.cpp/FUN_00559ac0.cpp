@@ -11,7 +11,7 @@ int core_script_cpp_FUN_00559ac0(void)
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
                              FLOAT_0310f4a0));
   return (int)ROUND(dVar1);

@@ -10,6 +10,6 @@ void __cdecl
 core_morph_cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,2,&g_CDeformableModelInstanceTypeInfo);
+  __arrfini(array,2,&g_CDeformableModelInstanceTypeInfo);
   return;
 }

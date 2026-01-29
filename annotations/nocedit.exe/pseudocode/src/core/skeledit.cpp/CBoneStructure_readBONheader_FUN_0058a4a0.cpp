@@ -2,13 +2,13 @@
 // Address: 0058a4a0
 // Address Range: [[0058a4a0, 0058aa01]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (CBoneStructure *this_ptr,FILE *file,int *frame_count_out)
+// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
 
 #include "nocturne.h"
 
 void __cdecl
 core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-          (CBoneStructure *this_ptr,FILE *file,int *frame_count_out)
+          (CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
 
 {
   char cVar1;
@@ -64,13 +64,13 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   int local_14;
   
   bVar14 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x25c);
+  __STK(0x25c);
   iVar5 = 1;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
+    iVar4 = _fgetc((_FILE *)this_ptr);
     if (iVar4 < 0) break;
   } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr,"%d,%d\n",in_stack_00000004,file);
+  _fscanf((_FILE *)this_ptr,"%d,%d\n",in_stack_00000004,file);
   if (100 < *in_stack_00000004) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x2a6;
@@ -78,7 +78,7 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   }
   iVar5 = 1;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
+    iVar4 = _fgetc((_FILE *)this_ptr);
     if (iVar4 < 0) break;
   } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   iVar5 = 0;
@@ -88,7 +88,7 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
     pcVar11 = g_BoneNameBuffer[0];
     do {
       piVar9 = local_34 + iVar5 * 0x21;
-      crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr,"\"%[^\"]\",%d\n",piVar9,local_2c);
+      _fscanf((_FILE *)this_ptr,"\"%[^\"]\",%d\n",piVar9,local_2c);
       pcVar6 = pcVar11 + 0x1e;
       do {
         iVar4 = *piVar9;
@@ -106,7 +106,7 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   }
   iVar5 = 1;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
+    iVar4 = _fgetc((_FILE *)this_ptr);
     if (iVar4 < 0) break;
   } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   if ((this_ptr->bones[0].name[8] & 0x20U) != 0) {
@@ -142,7 +142,7 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
           puVar8 = piVar9 + 1;
           iVar5 = local_248[local_14] - local_248[local_14 + 1];
           if (iVar5 == 0) {
-            iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)local_20,(char *)local_1c);
+            iVar5 = stricmp((char *)local_20,(char *)local_1c);
           }
           if (0 < iVar5) {
             piVar13 = local_28 + local_14 * 0x21;

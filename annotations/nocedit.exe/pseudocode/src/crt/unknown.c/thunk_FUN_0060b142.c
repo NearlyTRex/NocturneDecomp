@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_thunk_FUN_0060b142(void)
+void thunk(void)
 
 {
   uint uVar1;

@@ -12,7 +12,7 @@ engine_matrix_c_calculate3DDistance_FUN_0050d830(int x1,int y1,int z1,int x2,int
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     (SQRT((double)(z1 - z2) * (double)(z1 - z2) +
                           (double)(y1 - y2) * (double)(y1 - y2) +
                           (double)(x1 - x2) * (double)(x1 - x2)));

@@ -22,7 +22,7 @@
 ;   ... and 128 more
 ;
 ; Called Functions:
-;   crt_memory.c_OptimizedMemFill_FUN_00603b00
+;   crt_memory.c___memfill_FUN_00603b00
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV DL,DH                           ; 005fde52
     SHL EDX,0x8                         ; 005fde54
     MOV DL,DH                           ; 005fde57
-    CALL crt_memory.c_OptimizedMemFill_FUN_00603b00 ; 005fde59
-        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; void crt_memory.c_OptimizedMemFill_FUN_00603b00(void * dest, uint replicated_value, uint count)
+    CALL crt_memory.c___memfill_FUN_00603b00 ; 005fde59
+        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; void crt_memory.c___memfill_FUN_00603b00(void * dest, uint replicated_value, uint count)
     POP EAX                             ; 005fde5e
     RET                                 ; 005fde5f
 

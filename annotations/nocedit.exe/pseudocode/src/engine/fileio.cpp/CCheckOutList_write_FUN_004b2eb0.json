@@ -11,12 +11,6 @@
       },
       {
         "category": "other",
-        "column": 55,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 32,
         "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -82,13 +76,13 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0",
-    "signature": "int __cdecl engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(CCheckOutList *this_ptr,FILE **file_handle)"
+    "signature": "int __cdecl engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(CCheckOutList *this_ptr,_FILE **file_handle)"
   },
   "function_calls": [
     {
       "addr": "00600cf0",
       "is_variadic": false,
-      "name": "crt_io.c_ftruncate_FUN_00600cf0"
+      "name": "crt_io.c_chsize_FUN_00600cf0"
     },
     {
       "addr": "00601540",
@@ -199,7 +193,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE * *"
+        "type": "_FILE * *"
       }
     ]
   },

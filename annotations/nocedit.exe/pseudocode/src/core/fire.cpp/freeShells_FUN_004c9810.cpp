@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeShells_FUN_004c9810(CShell **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x32,&g_CShellTypeInfo);
+  __arrfini(array,0x32,&g_CShellTypeInfo);
   return;
 }

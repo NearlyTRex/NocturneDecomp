@@ -11,60 +11,30 @@
       },
       {
         "category": "other",
-        "column": 34,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 26,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 33,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 39,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 41,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 54,
+    "complexity_score": 50,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 35,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 156
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -90,7 +60,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0",
-    "signature": "void __cdecl core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -264,14 +234,14 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
       "match": "fptan",
       "text": "fVar2 = (float10)fptan((float10)this_ptr->projection_scale * (float10)0.5);",
       "type": "decompiler_intrinsic"

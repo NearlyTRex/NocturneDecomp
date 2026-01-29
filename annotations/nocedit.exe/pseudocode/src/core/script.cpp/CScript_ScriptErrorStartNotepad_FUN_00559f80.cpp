@@ -15,7 +15,7 @@ uint core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80(void)
   uint *puVar1;
   char cVar2;
   int iVar3;
-  FILE *pFVar4;
+  _FILE *p_Var4;
   long lVar5;
   long lVar6;
   int iVar7;
@@ -47,7 +47,7 @@ uint core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80(void)
     if (iVar3 < 1) {
       return 1;
     }
-    crt_string_c_splitpath_FUN_005ff178
+    splitpath
               (in_stack_00000008,(char *)0x0,(char *)0x0,local_1e8,(char *)0x0);
     pcVar9 = ".txt";
     iVar8 = -1;
@@ -71,21 +71,21 @@ uint core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80(void)
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_005603c0();
-    pFVar4 = engine_dosio_c_getFile_FUN_00481a50("world",in_stack_00000008,"rt");
-    if (pFVar4 == (FILE *)0x0) {
+    p_Var4 = engine_dosio_c_getFile_FUN_00481a50("world",in_stack_00000008,"rt");
+    if (p_Var4 == (_FILE *)0x0) {
       return 1;
     }
-    lVar5 = crt_stdio_c_ftell_FUN_00601560(pFVar4);
+    lVar5 = _ftell(p_Var4);
     local_14 = 1;
     do {
       iVar8 = 0;
-      while (lVar6 = crt_stdio_c_ftell_FUN_00601560(pFVar4), lVar6 < iVar3 + lVar5) {
-        iVar7 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
+      while (lVar6 = _ftell(p_Var4), lVar6 < iVar3 + lVar5) {
+        iVar7 = _fgetc(p_Var4);
         if (iVar7 == -1) goto LAB_0055a085;
         if (iVar7 != 0xd) {
           if (iVar7 == 10) goto LAB_0055a085;
           if (iVar7 == 0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\script.cpp",0x31b);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\script.cpp",0x31b);
             iVar3 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
                               ((CBitFont *)(in_stack_00000004 + 0x38));
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -103,10 +103,10 @@ LAB_0055a085:
       local_3e8[iVar8] = '\0';
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(local_18,local_3e8);
     } while (local_14 != 0);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\script.cpp",0x32d);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\script.cpp",0x32d);
     core_script_cpp_CScript_LoadingScriptFile_FUN_0055a370();
     iVar3 = 0;
-    pFVar4 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+    p_Var4 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("script.txt",(char *)0x0,"wt","..\\core\\script.cpp",
                         0x336);
     if (0 < *(int *)(in_stack_00000004 + 0x30)) {
@@ -116,12 +116,11 @@ LAB_0055a085:
         puVar1 = (uint *)(iVar8 + *(int *)(in_stack_00000004 + 0x34));
         iVar8 = iVar8 + 8;
         iVar3 = iVar3 + 1;
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (pFVar4,"%4d | %s\n",*puVar1,
+        _fprintf(p_Var4,"%4d | %s\n",*puVar1,
                    *(uint *)(iVar7 + *(int *)(in_stack_00000004 + 0x34)));
       } while (iVar3 < *(int *)(in_stack_00000004 + 0x30));
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\script.cpp",0x33a);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\script.cpp",0x33a);
     if (in_stack_0000000c != 0) {
 LAB_0055a34a:
       core_script_cpp_FUN_0055a540();
@@ -131,7 +130,7 @@ LAB_0055a34a:
     shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);
     if (iVar3 == 0) goto LAB_0055a34a;
     while( true ) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (&DAT_031089e8,"Syntax error on %s line %d:\n%s",in_stack_00000008,local_1c + 1,
                  iVar3);
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff870);
@@ -160,8 +159,8 @@ LAB_0055a34a:
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"Note: This only works in NT.\nWhen you are done editing the script, close notepad\nand ALT-TAB back to Nocturne.\nThen you can try to reload the script.");
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_e4,"start notepad world\\%s",in_stack_00000008);
-      crt_stdlib_c_system_FUN_00602130(local_e4);
+      sprintf(local_e4,"start notepad world\\%s",in_stack_00000008);
+      system(local_e4);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,

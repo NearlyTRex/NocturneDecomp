@@ -10,7 +10,7 @@ void core_skeledit_cpp_FUN_0058bd00(void)
 
 {
   float fVar1;
-  FILE *file;
+  _FILE *file;
   uint uVar2;
   CVector3f *pCVar3;
   byte *dest;
@@ -39,7 +39,7 @@ void core_skeledit_cpp_FUN_0058bd00(void)
   float local_34;
   int local_30;
   int local_2c;
-  FILE *local_28;
+  _FILE *local_28;
   int local_24;
   byte *local_20;
   byte *local_1c;
@@ -47,19 +47,19 @@ void core_skeledit_cpp_FUN_0058bd00(void)
   SIZE_T local_14;
   
   bVar9 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x448);
+  __STK(0x448);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing vertex assignments from %s...");
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (in_stack_00000008,(char *)0x0,"rb","..\\core\\skeledit.cpp",
                         0x593);
-  if (local_28 == (FILE *)0x0) {
+  if (local_28 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x594;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDeformableModel::importVertexAssignmentsVPH can't open %s",in_stack_00000008);
   }
-  crt_stdio_c_fread_FUN_005fd990(local_110,0x36,1,local_28);
+  _fread(local_110,0x36,1,local_28);
   if (200 < local_10e) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x59b;
@@ -71,30 +71,30 @@ void core_skeledit_cpp_FUN_0058bd00(void)
     dest = &DAT_0365a3e8;
     iVar7 = 0;
     do {
-      crt_stdio_c_fread_FUN_005fd990(&local_14,4,1,local_28);
-      crt_memory_c_memset_FUN_005fde40(dest,0,0x32);
-      crt_stdio_c_fread_FUN_005fd990(dest,local_14,1,local_28);
+      _fread(&local_14,4,1,local_28);
+      memset(dest,0,0x32);
+      _fread(dest,local_14,1,local_28);
       uVar2 = core_skeledit_cpp_FUN_0058ac30();
       *(uint *)((int)aiStack_430 + iVar7) = uVar2;
       iVar7 = iVar7 + 4;
-      crt_stdio_c_fseek_FUN_005ffacc(local_28,0x102,1);
+      _fseek(local_28,0x102,1);
       iVar5 = iVar5 + 1;
       dest = dest + 0x32;
     } while (iVar5 < local_10e);
   }
-  crt_stdio_c_fread_FUN_005fd990(local_40,4,1,local_28);
+  _fread(local_40,4,1,local_28);
   file = local_28;
-  crt_stdio_c_fread_FUN_005fd990(&local_3c,4,1,local_28);
-  crt_stdio_c_fseek_FUN_005ffacc(file,local_3c,1);
-  crt_stdio_c_fseek_FUN_005ffacc(file,0x30,1);
-  crt_stdio_c_fread_FUN_005fd990(&local_38,4,1,file);
+  _fread(&local_3c,4,1,local_28);
+  _fseek(file,local_3c,1);
+  _fseek(file,0x30,1);
+  _fread(&local_38,4,1,file);
   local_2c = 0;
   if (0 < local_38) {
     local_24 = in_stack_0000000c + 4;
     local_30 = 0;
     do {
       local_20 = (byte *)(local_30 + *(int *)(in_stack_00000004 + 0x40));
-      crt_stdio_c_fread_FUN_005fd990(local_78,0x20,1,local_28);
+      _fread(local_78,0x20,1,local_28);
       if (local_68 == 0) {
         iVar7 = 0;
       }

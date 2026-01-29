@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,100,&g_CTrailTypeInfo);
+  __arrfini(array,100,&g_CTrailTypeInfo);
   return;
 }

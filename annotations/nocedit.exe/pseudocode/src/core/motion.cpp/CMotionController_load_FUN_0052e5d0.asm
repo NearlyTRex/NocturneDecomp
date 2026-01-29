@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_actor.cpp_serializeMotionState_FUN_0040b9f0 at 0040ba29
@@ -37,7 +37,7 @@ section .text
     PUSH 0x63ab2f                       ; 0052e5db | = " "
     PUSH EDI                            ; 0052e5e0
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0052e5e1
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0052e5e6
     LEA ESI,[EBX + 0x8]                 ; 0052e5e9
     PUSH ESI                            ; 0052e5ec
@@ -48,7 +48,7 @@ section .text
     PUSH EDI                            ; 0052e5fa
     MOV dword ptr [EBX + 0x4],0xffffffff ; 0052e5fb
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0052e602
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0052e607
     CMP EAX,0x2                         ; 0052e60a
     JNZ 0x0052e627                      ; 0052e60d
@@ -59,7 +59,7 @@ section .text
     PUSH EBX                            ; 0052e612
         ;   Label: LAB_0052e612
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0052e613
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0052e618
     TEST EAX,EAX                        ; 0052e61b
     JL 0x0052e624                       ; 0052e61d
@@ -78,7 +78,7 @@ section .text
     PUSH 0x63ab37                       ; 0052e62c | = "\"%[^\"]\" , %f"
     PUSH EDI                            ; 0052e631
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0052e632
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0052e637
     CMP EAX,0x2                         ; 0052e63a
     JZ 0x0052e60f                       ; 0052e63d

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,FILE *file,int require_content)
+; __cdecl int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int require_content)
 ;
 ; Parameters:
 ; char *           Stack[0x8]:4   buffer
-; FILE *           Stack[0xc]:4   file
+; _FILE *          Stack[0xc]:4   file
 ; int              Stack[0x10]:4   require_content
 ;
 ; XREF[1]:
@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_string.c_strstr_FUN_005fedd0
 ;
@@ -31,8 +31,8 @@ section .text
 
     PUSH 0x1c                           ; 005895f0
         ;   Label: core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 005895f5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005895f5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 005895fa
     PUSH ESI                            ; 005895fb
     PUSH EDI                            ; 005895fc
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 00589608
         ;   Label: LAB_00589608
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00589609
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0058960e
     MOV EBX,EAX                         ; 00589611
     CMP EAX,-0x1                        ; 00589613
@@ -79,7 +79,7 @@ section .text
     MOV byte ptr [ESI],BL               ; 0058965a
     INC ESI                             ; 0058965c
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058965d
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 00589662
     MOV EBX,EAX                         ; 00589665
     CMP EAX,-0x1                        ; 00589667

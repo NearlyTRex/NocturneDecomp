@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl engine_dosio_c_getFile_FUN_00481a50(char *directory,char *filename,char *mode)
+; __cdecl _FILE * __cdecl engine_dosio_c_getFile_FUN_00481a50(char *directory,char *filename,char *mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   directory
@@ -33,8 +33,8 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_file.c_create_directory_FUN_00600e10
 ;   crt_stdio.c_fseek_FUN_005ffacc
+;   crt_watcom.c__mkdir_FUN_00600e10
 ;   engine_dosio.c_findFile_FUN_00481760
 ;   engine_dosio.c_getRelativeFilePath_FUN_004816c0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -77,8 +77,8 @@ section .text
     JZ 0x00481aa4                       ; 00481a99
         ;   XREF to: 00481aa4 (CONDITIONAL_JUMP)  ; LAB_00481aa4
     PUSH EDI                            ; 00481a9b
-    CALL crt_file.c_create_directory_FUN_00600e10 ; 00481a9c
-        ;   XREF to: 00600e10 (UNCONDITIONAL_CALL)  ; int crt_file.c_create_directory_FUN_00600e10(char * path)
+    CALL crt_watcom.c__mkdir_FUN_00600e10 ; 00481a9c
+        ;   XREF to: 00600e10 (UNCONDITIONAL_CALL)  ; int crt_watcom.c__mkdir_FUN_00600e10(char * path)
     ADD ESP,0x4                         ; 00481aa1
     PUSH 0x198                          ; 00481aa4
         ;   Label: LAB_00481aa4
@@ -88,7 +88,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 00481ab1
     PUSH EAX                            ; 00481ab5
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00481ab6
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00481abb
     ADD ESP,0x214                       ; 00481abe
         ;   Label: LAB_00481abe
@@ -123,7 +123,7 @@ section .text
         ;   Label: LAB_00481af6
     PUSH EAX                            ; 00481afd
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00481afe
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00481b03
     MOV EBX,EAX                         ; 00481b06
     TEST EBX,EBX                        ; 00481b08
@@ -137,7 +137,7 @@ section .text
     PUSH ESI                            ; 00481b19
     PUSH EBX                            ; 00481b1a
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 00481b1b
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00481b20
     MOV EAX,EBX                         ; 00481b23
         ;   Label: LAB_00481b23

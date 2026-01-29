@@ -30,7 +30,7 @@ section .text
     PUSH 0x6433e6                       ; 005607f3 | = "\"%s\"\n"
     PUSH EDX                            ; 005607f8
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005607f9
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005607fe
     RET                                 ; 00560801
     PUSH EAX                            ; 00560802
@@ -38,7 +38,7 @@ section .text
     PUSH 0x6433ec                       ; 00560803 | = "\"%s\"\n"
     PUSH EDX                            ; 00560808
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00560809
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0056080e
     RET                                 ; 00560811
 

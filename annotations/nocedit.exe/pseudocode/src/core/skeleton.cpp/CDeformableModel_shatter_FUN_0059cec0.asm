@@ -70,7 +70,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -178,8 +178,8 @@ section .text
     PUSH 0x3                            ; 0059d002
     LEA EAX,[ESP + 0x30]                ; 0059d004
     PUSH EAX                            ; 0059d008
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0059d009
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0059d009
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059d00e
     MOV EDX,dword ptr [ESP + 0xe4]      ; 0059d011
     XOR EAX,EAX                         ; 0059d018
@@ -369,8 +369,8 @@ section .text
     OR DL,0x1                           ; 0059d309
     PUSH 0x3683be0                      ; 0059d30c | g_ShatterVertexArray
     MOV byte ptr [0x0368c880],DL        ; 0059d311 | g_ShatterVertexArrayInitialized
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0059d317
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0059d317
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059d31c
     JMP 0x0059cefa                      ; 0059d31f
         ;   XREF to: 0059cefa (UNCONDITIONAL_JUMP)  ; LAB_0059cefa

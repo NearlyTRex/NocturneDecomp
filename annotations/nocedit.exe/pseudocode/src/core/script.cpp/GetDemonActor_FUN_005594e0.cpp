@@ -46,29 +46,29 @@ CHero * core_script_cpp_GetDemonActor_FUN_005594e0(void)
     DAT_0310f4ac = 1;
     actor_ptr = (CHero *)core_event_cpp_CEventList_FUN_004b0b80(g_CEventListPtr);
     if (actor_ptr == (CHero *)0x0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (&DAT_0310eca0,"Actor variable %s not defined, or doesn't reference an existing actor",in_stack_00000004);
       return (CHero *)0x0;
     }
   }
   else {
-    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"$");
+    iVar2 = stricmp(in_stack_00000004,"$");
     if (iVar2 == 0) {
       if (g_CNetGamePtr->connection_type != 0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,"Can't use '$' actor specifier in multi-player");
+        sprintf(&DAT_0310eca0,"Can't use '$' actor specifier in multi-player");
         return (CHero *)0x0;
       }
       actor_ptr = g_HeroActors[g_LocalHeroIndex];
       if (actor_ptr == (CHero *)0x0) {
         DAT_0310f4ac = 1;
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,"Hero doesn't exist!!?!");
+        sprintf(&DAT_0310eca0,"Hero doesn't exist!!?!");
         return (CHero *)0x0;
       }
     }
     else {
       actor_ptr = (CHero *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
       if (actor_ptr == (CHero *)0x0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (&DAT_0310eca0,"Actor \"%s\" does not exist.",in_stack_00000004);
         return (CHero *)0x0;
       }
@@ -77,7 +77,7 @@ CHero * core_script_cpp_GetDemonActor_FUN_005594e0(void)
   iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,in_stack_00000008);
   if (iVar2 == 0) {
     pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)actor_ptr);
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (&DAT_0310eca0,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",in_stack_00000004,pcVar3,
                in_stack_0000000c);
     return (CHero *)0x0;

@@ -42,7 +42,7 @@ shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *destination,CLodFace *so
     (destination->normal).z = (source->normal).z;
   }
   destination->plane_distance = source->plane_distance;
-  crt_memory_c_copyArrayWithFunction_FUN_006020c2
+  __arr_op
             (destination->edge_perpendiculars,source->edge_perpendiculars,3,0xc,
              core_actor_cpp_copyVector_FUN_00410360);
   puVar5 = (uint *)((int)destination + (uint)bVar6 * -8 + 0x7c);

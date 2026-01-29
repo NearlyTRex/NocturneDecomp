@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_FUN_00522c60(FILE *file_handle)
+; __cdecl void __cdecl core_mission_cpp_FUN_00522c60(_FILE *file_handle)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_FUN_005fe840
@@ -19,7 +19,7 @@ section .text
     PUSH EBX                            ; 00522c65
         ;   Label: LAB_00522c65
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00522c66
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 00522c6b
     TEST EAX,EAX                        ; 00522c6e
     JL 0x00522c77                       ; 00522c70

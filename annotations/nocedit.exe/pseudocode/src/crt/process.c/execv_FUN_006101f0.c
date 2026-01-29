@@ -6,14 +6,14 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_process_c_execv_FUN_006101f0(int argc,char *program,char **argv)
+int __cdecl execv(int argc,char *program,char **argv)
 
 {
   UINT uExitCode;
   ThreadData *pTVar1;
   int iVar2;
   
-  uExitCode = crt_process_c_spawnvp_FUN_0060f39c(1,(char *)argc,(char **)program);
+  uExitCode = spawnvp(1,(char *)argc,(char **)program);
   pTVar1 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
   if (pTVar1->errno_value != 0) {
     return -1;

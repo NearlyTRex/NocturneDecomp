@@ -151,14 +151,14 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
               fVar14 = (float10)127.0f;
               fVar15 = (float10)local_30 + fVar14;
               local_12c.base.count = 0x59b303;
-              dVar16 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar5 * fVar12 + fVar14));
+              dVar16 = round((double)((float10)fVar5 * fVar12 + fVar14));
               fVar12 = (float10)dVar16;
               local_12c.base.type = 0x59b30a;
-              dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
+              dVar16 = round((double)fVar15);
               local_28 = (float)(int)ROUND(fVar12);
               iVar9 = 0x59b330;
               local_2c = (float)(int)ROUND(dVar16);
-              dVar17 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 + fVar14));
+              dVar17 = round((double)(fVar13 + fVar14));
               local_30 = (float)(int)ROUND(dVar17);
               engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
                         (g_CDemonRendererPtr2,(int)local_30,(int)ROUND(dVar16),iVar9);

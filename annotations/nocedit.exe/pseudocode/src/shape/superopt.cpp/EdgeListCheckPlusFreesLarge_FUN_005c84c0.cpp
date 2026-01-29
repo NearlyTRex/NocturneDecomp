@@ -68,14 +68,14 @@ uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
       return 0;
     }
     if (*(int *)(in_stack_00000004 + 0x2c) != 0) {
-      puVar3 = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
+      puVar3 = shape_memdbg_cpp_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
       if (puVar3 == (uint *)0x0) {
         return 0;
       }
       local_20 = puVar3;
-      local_24 = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
+      local_24 = shape_memdbg_cpp_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
       if (local_24 == (uint *)0x0) {
-        crt_memory_c_free_FUN_005fe659(puVar3);
+        shape_memdbg_cpp_free_FUN_005fe659(puVar3);
         return 0;
       }
       local_1c = (double *)(in_stack_00000004 + 0x14);
@@ -120,8 +120,8 @@ uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
         local_14 = 0;
         shape_superopt_cpp_FUN_005c9aa0();
         if ((local_18 == 0) || (local_14 == 0)) {
-          crt_memory_c_free_FUN_005fe659(local_20);
-          crt_memory_c_free_FUN_005fe659(local_24);
+          shape_memdbg_cpp_free_FUN_005fe659(local_20);
+          shape_memdbg_cpp_free_FUN_005fe659(local_24);
           return 0;
         }
         iVar2 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
@@ -131,16 +131,16 @@ uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
         if (iVar2 == 0) goto LAB_005c8a6e;
         iVar2 = shape_superopt_cpp_FUN_005c91e0();
         if (iVar2 == 0) {
-          crt_memory_c_free_FUN_005fe659(local_20);
-          crt_memory_c_free_FUN_005fe659(puVar3);
+          shape_memdbg_cpp_free_FUN_005fe659(local_20);
+          shape_memdbg_cpp_free_FUN_005fe659(puVar3);
           return 0;
         }
         iVar2 = shape_superopt_cpp_FUN_005c91e0();
         if (iVar2 == 0) goto LAB_005c8a6e;
         if ((local_18 == 0) && (local_14 == 0)) goto LAB_005c89e6;
         if ((local_18 != 0) && (local_14 != 0)) {
-          crt_memory_c_free_FUN_005fe659(local_20);
-          crt_memory_c_free_FUN_005fe659(local_24);
+          shape_memdbg_cpp_free_FUN_005fe659(local_20);
+          shape_memdbg_cpp_free_FUN_005fe659(local_24);
           return 0;
         }
         if (local_18 == 0) {
@@ -176,8 +176,8 @@ uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
       }
       iVar2 = shape_superopt_cpp_FUN_005c8e70();
       if (iVar2 == 0) {
-        crt_memory_c_free_FUN_005fe659(local_20);
-        crt_memory_c_free_FUN_005fe659(puVar3);
+        shape_memdbg_cpp_free_FUN_005fe659(local_20);
+        shape_memdbg_cpp_free_FUN_005fe659(puVar3);
         return 0;
       }
       puVar3 = (uint *)(iVar2 + 0x10);
@@ -213,8 +213,8 @@ uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
           iVar2 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
           if (iVar2 == 0) {
 LAB_005c8a6e:
-            crt_memory_c_free_FUN_005fe659(local_20);
-            crt_memory_c_free_FUN_005fe659(puVar3);
+            shape_memdbg_cpp_free_FUN_005fe659(local_20);
+            shape_memdbg_cpp_free_FUN_005fe659(puVar3);
             return 0;
           }
           if ((local_28 == 0) || (local_2c == 0)) goto LAB_005c8a2a;
@@ -233,8 +233,8 @@ LAB_005c8a6e:
           *(int *)(in_stack_00000004 + 0x2c) = local_28;
           iVar2 = shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0();
           if (iVar2 == 0) {
-            crt_memory_c_free_FUN_005fe659(local_20);
-            crt_memory_c_free_FUN_005fe659(local_24);
+            shape_memdbg_cpp_free_FUN_005fe659(local_20);
+            shape_memdbg_cpp_free_FUN_005fe659(local_24);
             return 0;
           }
           puVar3 = local_24;
@@ -253,19 +253,19 @@ LAB_005c8a6e:
           iVar2 = shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0();
           if (iVar2 != 0) {
 LAB_005c89e6:
-            crt_memory_c_free_FUN_005fe659(local_20);
-            crt_memory_c_free_FUN_005fe659(local_24);
+            shape_memdbg_cpp_free_FUN_005fe659(local_20);
+            shape_memdbg_cpp_free_FUN_005fe659(local_24);
             return 1;
           }
         }
 LAB_005c8a4c:
-        crt_memory_c_free_FUN_005fe659(local_20);
-        crt_memory_c_free_FUN_005fe659(local_24);
+        shape_memdbg_cpp_free_FUN_005fe659(local_20);
+        shape_memdbg_cpp_free_FUN_005fe659(local_24);
         return 0;
       }
 LAB_005c8a2a:
-      crt_memory_c_free_FUN_005fe659(local_20);
-      crt_memory_c_free_FUN_005fe659(local_24);
+      shape_memdbg_cpp_free_FUN_005fe659(local_20);
+      shape_memdbg_cpp_free_FUN_005fe659(local_24);
       return 0;
     }
   }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fscanf_FUN_005fe7c0(FILE *file,char *format,...)
+; __cdecl int __cdecl crt_stdio_c_fscanf_FUN_005fe7c0(_FILE *file,char *format,...)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -41,7 +41,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 005fe7d3
     PUSH EBX                            ; 005fe7d7
     CALL crt_stdio.c_vfscanf_FUN_005fe738 ; 005fe7d8
-        ;   XREF to: 005fe738 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vfscanf_FUN_005fe738(FILE * file, char * format, va_list_t args)
+        ;   XREF to: 005fe738 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vfscanf_FUN_005fe738(_FILE * file, char * format, va_list_t args)
     ADD ESP,0xc                         ; 005fe7dd
     ADD ESP,0x4                         ; 005fe7e0
     POP EBX                             ; 005fe7e3

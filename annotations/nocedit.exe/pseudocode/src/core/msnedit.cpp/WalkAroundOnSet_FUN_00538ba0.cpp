@@ -64,8 +64,8 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr,"Reloading mission from %s");
     core_mission_cpp_CDemonMission_load_FUN_00522d90(in_stack_00000004,local_18,1);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_11c,"world\\%s",local_18);
-    crt_io_c_deleteFile_FUN_005ff9d0(local_11c);
+    sprintf(local_11c,"world\\%s",local_18);
+    remove(local_11c);
     core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
     return;
   }

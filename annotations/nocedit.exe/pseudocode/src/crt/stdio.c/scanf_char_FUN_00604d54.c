@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_scanf_char_FUN_00604d54(scanf_state_t *state,va_list_t *args)
+int __cdecl scanf_char(scanf_state_t *state,va_list_t *args)
 
 {
   byte bVar1;
@@ -50,7 +50,7 @@ int __cdecl crt_stdio_c_scanf_char_FUN_00604d54(scanf_state_t *state,va_list_t *
     if (iVar7 < 1) {
       return iVar6;
     }
-    uVar4 = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state);
+    uVar4 = scanf_getc_wrapper(state);
     bVar1 = state->flags;
     if ((bVar1 & 2) != 0) break;
     iVar6 = iVar6 + 1;
@@ -64,10 +64,10 @@ int __cdecl crt_stdio_c_scanf_char_FUN_00604d54(scanf_state_t *state,va_list_t *
       else {
         local_18 = cVar3;
         if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[uVar4 & 0xff] & 1U) != 0)) {
-          iVar5 = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state);
+          iVar5 = scanf_getc_wrapper(state);
           local_17 = (byte)iVar5;
         }
-        iVar5 = crt_locale_c_mbtowc_FUN_0060b1c0(local_1c,&local_18,2);
+        iVar5 = mbtowc(local_1c,&local_18,2);
         if (iVar5 == -1) {
           return 0;
         }

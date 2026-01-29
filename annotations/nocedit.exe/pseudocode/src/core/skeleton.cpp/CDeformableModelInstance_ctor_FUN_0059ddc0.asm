@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_ctor_FUN_0052d570
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH 0x64                           ; 0059ddd2
     ADD EAX,0x58                        ; 0059ddd4
     PUSH EAX                            ; 0059ddd7
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0059ddd8
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0059ddd8
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     SUB EAX,0x58                        ; 0059dddd
     MOV dword ptr [EAX + 0x50],0x662ec4 ; 0059dde0 | g_CDeformableModelInstanceVTable
     MOV byte ptr [EAX + 0x2260],0x0     ; 0059dde7

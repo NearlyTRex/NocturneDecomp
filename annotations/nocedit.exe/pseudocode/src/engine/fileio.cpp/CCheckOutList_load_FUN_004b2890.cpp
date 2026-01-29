@@ -19,7 +19,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   byte bVar7;
   char local_21c [260];
   char local_118 [256];
-  FILE *local_18;
+  _FILE *local_18;
   char local_14 [4];
   char *pcVar6;
   
@@ -55,25 +55,25 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   do {
     local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (local_21c,(char *)0x0,"rt","..\\engine\\fileio.cpp",0x153);
-    if (local_18 != (FILE *)0x0) {
-      crt_stdio_c_setvbuf_FUN_00601490(local_18,(char *)0x0,0,0x400);
+    if (local_18 != (_FILE *)0x0) {
+      _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b295b;
     }
-    piVar2 = (int *)crt_errno_c_errno_FUN_00601450();
+    piVar2 = (int *)_errno();
     if (*piVar2 != 6) break;
     iVar3 = iVar3 + 1;
     (*g_SleepFunc)(500);
   } while (iVar3 < 10);
-  local_18 = (FILE *)0x0;
+  local_18 = (_FILE *)0x0;
 LAB_004b295b:
-  if (local_18 != (FILE *)0x0) {
+  if (local_18 != (_FILE *)0x0) {
     iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(this_ptr,&local_18);
-    if (local_18 != (FILE *)0x0) {
+    if (local_18 != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
     }
     return iVar3;
   }
-  piVar2 = (int *)crt_errno_c_errno_FUN_00601450();
+  piVar2 = (int *)_errno();
   if (*piVar2 != 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't access %s.",local_21c);

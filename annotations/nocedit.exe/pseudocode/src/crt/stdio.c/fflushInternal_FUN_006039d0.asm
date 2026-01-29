@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_fflushInternal_FUN_006039d0(FILE *file_handle)
+; __watcallStack int __watcallStack crt_stdio_c_fflushInternal_FUN_006039d0(_FILE *file_handle)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[9]:
 ;   crt_stdio.c_FlushFilesByMask_FUN_0060595c at 00605987
-;   crt_stdio.c_fclose_force_FUN_00601fd0 at 00601ffc
+;   crt_stdio.c__fclose_FUN_00601fd0 at 00601ffc
 ;   crt_stdio.c_fflush_FUN_00601540 at 00601551
 ;   crt_stdio.c_fputc_FUN_006007a0 at 00600861
 ;   crt_stdio.c_fputs_FUN_0060ebb0 at 0060ec37

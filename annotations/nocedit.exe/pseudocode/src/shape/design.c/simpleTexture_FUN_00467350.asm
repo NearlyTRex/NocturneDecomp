@@ -91,7 +91,7 @@ section .text
     MOV EAX,0x61c97c                    ; 00467399 | = "art"
     PUSH EAX                            ; 0046739e | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046739f
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004673a4
     MOV dword ptr [EBP + -0x8],EAX      ; 004673a7
     CMP dword ptr [EBP + -0x8],0x0      ; 004673aa
@@ -121,7 +121,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x8]      ; 004673e6
     PUSH EAX                            ; 004673e9
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004673ea
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004673ef
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004673f2
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

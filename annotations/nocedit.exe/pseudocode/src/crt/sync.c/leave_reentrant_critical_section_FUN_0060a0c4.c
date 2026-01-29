@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_sync_c_leave_reentrant_critical_section_FUN_0060a0c4(ReentrantCriticalSection *rcs)
+void __cdecl leave_reentrant_critical_section(ReentrantCriticalSection *rcs)
 
 {
   int iVar1;

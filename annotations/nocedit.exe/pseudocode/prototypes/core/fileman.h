@@ -41,7 +41,7 @@ void __cdecl CDemonFileManager::showEditorMenu(CDemonFileManager *this_ptr);
 
 // Original: core_fileman.cpp_refreshSoundDirectory_FUN_004be590
 // Address: 004be590
-void __cdecl refreshSoundDirectory(FILE *file_list_output,char *source_directory);
+void __cdecl refreshSoundDirectory(_FILE *file_list_output,char *source_directory);
 
 // Original: core_fileman.cpp_CDemonFileManager_ctor_FUN_00508860
 // Address: 00508860

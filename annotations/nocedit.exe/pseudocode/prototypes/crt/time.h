@@ -3,25 +3,25 @@
 // Function prototypes for crt/time.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_time.c_time_with_rounding_FUN_006001f0
+// Original: crt_time.c_time_FUN_006001f0
 // Address: 006001f0
-time_t __cdecl time::with_rounding(time_t *optional_output);
+time_t __cdecl time(time_t *optional_output);
 
 // Original: crt_time.c_localtime_r_FUN_00600230
 // Address: 00600230
-tm * __cdecl localtime::r(time_t *timer,tm *result);
+_tm * __cdecl localtime::r(time_t *timer,_tm *result);
 
 // Original: crt_time.c_localtime_FUN_00600288
 // Address: 00600288
-tm * __cdecl localtime(time_t *timer);
+_tm * __cdecl localtime(time_t *timer);
 
 // Original: crt_time.c_strftime_FUN_006002d4
 // Address: 006002d4
-uint __cdecl strftime(char *dest_buffer,uint buffer_size,char *format_string,tm *time_ptr);
+uint __cdecl strftime(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr);
 
-// Original: crt_time.c_mktime_FUN_00600f80
+// Original: crt_time.c__mktime_FUN_00600f80
 // Address: 00600f80
-time_t __cdecl mktime(tm *timeptr);
+time_t __cdecl ::mktime(_tm *timeptr);
 
 // Original: crt_time.c_formatTwoDigits_FUN_00601640
 // Address: 00601640
@@ -29,15 +29,15 @@ void __watcallStack formatTwoDigits(int number,int position,char *buffer);
 
 // Original: crt_time.c_asctimeFormat_FUN_00601678
 // Address: 00601678
-char * __watcallStack asctimeFormat(tm *timeptr,char *buffer);
+char * __watcallStack asctimeFormat(_tm *timeptr,char *buffer);
 
 // Original: crt_time.c_asctime_FUN_00601768
 // Address: 00601768
-char * __watcallStack asctime(tm *timeptr);
+char * __watcallStack asctime(_tm *timeptr);
 
 // Original: crt_time.c_get_local_time_FUN_00607150
 // Address: 00607150
-void __watcallStack get::local_time(tm *tm_output);
+void __watcallStack get::local_time(_tm *tm_output);
 
 // Original: crt_time.c_tzset_FUN_006072f8
 // Address: 006072f8
@@ -65,7 +65,7 @@ int __cdecl is::leap_year(int year);
 
 // Original: crt_time.c_determine_dst_status_FUN_006079b4
 // Address: 006079b4
-int __cdecl determine::dst_status(tm *timeptr);
+int __cdecl determine::dst_status(_tm *timeptr);
 
 // Original: crt_time.c_filetime_to_dos_datetime_FUN_00609cb0
 // Address: 00609cb0

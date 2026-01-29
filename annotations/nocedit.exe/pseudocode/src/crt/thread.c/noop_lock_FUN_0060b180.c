@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_thread_c_noop_lock_FUN_0060b180(void)
+void __cdecl noop_lock(void)
 
 {
   return;

@@ -40,7 +40,7 @@ uint core_scat_cpp_FUN_00558cf0(void)
   this_ptr = (CCharacter *)
              core_actor_cpp_castToClassHash_FUN_0040c790
                        (in_stack_00000008,g_CEnemyClassInfo.name_hash);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(auStack_fc + 4,10,&g_CVectorTypeInfo);
+  __arrinit(auStack_fc + 4,10,&g_CVectorTypeInfo);
   iVar1 = (*((in_stack_00000008->vtable)._ub)->getTargetPoints)
                     (in_stack_00000008,(CVector3f *)(auStack_fc + 4));
   if ((iVar1 != 0) &&

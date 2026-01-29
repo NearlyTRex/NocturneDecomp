@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH 0x3e8                          ; 005ea8b4
     ADD EAX,0x29c                       ; 005ea8b9
     PUSH EAX                            ; 005ea8be
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005ea8bf
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005ea8bf
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffd64]          ; 005ea8c4
     MOV dword ptr [EDX + 0x154],0x665334 ; 005ea8ca | g_CWaterActorVTable
     MOV dword ptr [EDX + 0x158],0x40800000 ; 005ea8d4

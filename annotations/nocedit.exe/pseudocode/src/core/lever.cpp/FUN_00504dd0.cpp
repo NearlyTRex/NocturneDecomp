@@ -19,7 +19,7 @@ CVector3f * core_lever_cpp_FUN_00504dd0(void)
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   this_ptr = (CKeyFramedModelInstance *)0x504e18;
-  crt_math_c_round_FUN_005fe6b0
+  round
             ((double)((float)(pCVar1->frame_count + -1) *
                      (float)in_stack_00000004[2].location.area_id));
   core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);

@@ -11,6 +11,6 @@ engine_dosio_c_splitPath_FUN_00481f20
           (char *full_path,char *drive,char *directory,char *filename,char *extension)
 
 {
-  crt_string_c_splitpath_FUN_005ff178(full_path,drive,directory,filename,extension);
+  splitpath(full_path,drive,directory,filename,extension);
   return;
 }

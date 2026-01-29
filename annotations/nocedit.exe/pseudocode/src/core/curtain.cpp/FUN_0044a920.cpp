@@ -68,7 +68,7 @@ void core_curtain_cpp_FUN_0044a920(void)
     if (iVar3 != 0) {
       *(uint *)(in_stack_00000004 + 400) = 1;
     }
-    iVar3 = crt_string_c_strcmp_FUN_005fef20((char *)(in_stack_00000004 + 0x194),"none");
+    iVar3 = strcmp((char *)(in_stack_00000004 + 0x194),"none");
     if ((iVar3 == 0) || (*(int *)(in_stack_00000004 + 400) != 0)) {
       if (*(int *)(in_stack_00000004 + 0x65b2c) != 0) {
         uStack_14 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x38))();

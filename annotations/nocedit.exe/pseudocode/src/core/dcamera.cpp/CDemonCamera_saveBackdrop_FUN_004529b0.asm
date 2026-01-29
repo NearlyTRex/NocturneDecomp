@@ -116,7 +116,7 @@ section .text
     PUSH EAX                            ; 00452a32
     PUSH 0x61a354                       ; 00452a33 | = "backdrop"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00452a38
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00452a3d
     TEST EAX,EAX                        ; 00452a40
     JNZ 0x00452f77                      ; 00452a42
@@ -159,7 +159,7 @@ section .text
     LEA EAX,[ESP + 0x14c]               ; 00452ac5
     PUSH EAX                            ; 00452acc
     CALL crt_stdio.c_stream_write_internal_FUN_005ffcb3 ; 00452acd
-        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(FILE * stream, void * buffer, SIZE_T count)
+        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(_FILE * stream, void * buffer, SIZE_T count)
     MOV EDI,dword ptr [0x0151a3a0]      ; 00452ad2 | g_CameraFogGrid.density_multiplier
     ADD ESP,0xc                         ; 00452ad8
     TEST EDI,EDI                        ; 00452adb
@@ -173,7 +173,7 @@ section .text
     LEA EAX,[ESP + 0x14c]               ; 00452af9
     PUSH EAX                            ; 00452b00
     CALL crt_stdio.c_stream_write_internal_FUN_005ffcb3 ; 00452b01
-        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(FILE * stream, void * buffer, SIZE_T count)
+        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(_FILE * stream, void * buffer, SIZE_T count)
     ADD ESP,0xc                         ; 00452b06
     MOV EAX,dword ptr [ESP + 0x278]     ; 00452b09
     FLD double ptr [0x0061a43a]         ; 00452b10 | g_BackdropColorMultiplier
@@ -441,7 +441,7 @@ section .text
     LEA EAX,[ESP + 0x1e4]               ; 00452f26
     PUSH EAX                            ; 00452f2d
     CALL support_codec.cpp_CLZWCompress_finalize_FUN_0043f440 ; 00452f2e
-        ;   XREF to: 0043f440 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress * this_ptr, FILE * output_file)
+        ;   XREF to: 0043f440 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress * this_ptr, _FILE * output_file)
     ADD ESP,0x8                         ; 00452f33
     PUSH 0x0                            ; 00452f36
     LEA EAX,[ESP + 0x1e8]               ; 00452f38
@@ -474,7 +474,7 @@ section .text
     PUSH 0x61a35d                       ; 00452f7c | = "..\\core\\dcamera.cpp"
     PUSH EAX                            ; 00452f81
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00452f82
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00452f87
     ADD ESP,0x264                       ; 00452f8a
     POP EBP                             ; 00452f90

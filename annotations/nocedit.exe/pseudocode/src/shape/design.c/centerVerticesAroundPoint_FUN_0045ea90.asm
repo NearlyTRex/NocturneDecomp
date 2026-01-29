@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -128,8 +128,8 @@ section .text
     LEA EAX,[EBP + -0x44]               ; 0045eb44
         ;   Label: LAB_0045eb44
     PUSH EAX                            ; 0045eb47
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 0045eb48
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 0045eb48
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + -0x4c],EAX     ; 0045eb4d
     MOV dword ptr [EBP + -0x48],EDX     ; 0045eb50
     FLD double ptr [EBP + -0x4c]        ; 0045eb53

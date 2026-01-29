@@ -36,7 +36,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     (*(((actor_ptr->base).base.vtable._uh)->_uh).herofunc4)();
     core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
     if ((iVar1 == 0) || (DAT_02f35f10 == '\0')) break;
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(g_CDemonSetPtr->geometry_filename,"hq.geo");
+    iVar1 = stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;
     if (bVar2) {
       core_game_cpp_CGame_displayActStats_FUN_004e3800(g_CGamePtr);

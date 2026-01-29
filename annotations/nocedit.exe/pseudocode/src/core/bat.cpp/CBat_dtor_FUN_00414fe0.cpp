@@ -14,8 +14,8 @@ CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_00414fe0(CBat *this_ptr,uint d1,uint d
   void *ptr_00;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CBatTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CBatTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)(this_ptr->course_filename + 0x20));

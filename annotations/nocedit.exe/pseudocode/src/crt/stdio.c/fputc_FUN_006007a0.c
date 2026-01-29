@@ -2,11 +2,11 @@
 // Address: 006007a0
 // Address Range: [[006007a0, 006008e8]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
+// Signature: int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,_FILE *file)
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
+int __cdecl _fputc(int character,_FILE *file)
 
 {
   char *pcVar1;
@@ -25,22 +25,22 @@ int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
     file->_link->__get_base = (char *)0x1;
   }
   if ((file->_flag & 2) == 0) {
-    crt_errno_c_setErrno_FUN_00602790(4);
+    setErrno(4);
     *(byte *)&file->_flag = (byte)file->_flag | 0x20;
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
     return -1;
   }
   if (file->_link->__reserve_end == (char *)0x0) {
-    crt_stdio_c_InitializeFileBuffer_FUN_006027e0(file);
+    InitializeFileBuffer(file);
   }
   uVar4 = 0x400;
-  if ((file == (FILE *)0xa) && (uVar4 = 0x600, (bRam00000016 & 0x40) == 0)) {
+  if ((file == (_FILE *)0xa) && (uVar4 = 0x600, (bRam00000016 & 0x40) == 0)) {
     bRam00000017 = bRam00000017 | 0x10;
     *puRam0000000a = 0xd;
     puRam0000000a = puRam0000000a + 1;
     iRam0000000e = iRam0000000e + 1;
     if (iRam0000000e == iRam0000001e) {
-      iVar2 = crt_stdio_c_fflushInternal_FUN_006039d0((FILE *)0xa);
+      iVar2 = fflushInternal((_FILE *)0xa);
       if (iVar2 != 0) {
         (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(iRam0000001a);
         return -1;
@@ -54,7 +54,7 @@ int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
   uVar3 = file->_cnt + 1;
   file->_cnt = uVar3;
   if (((uVar4 & file->_flag) != 0) || (uVar3 == file->_bufsize)) {
-    iVar2 = crt_stdio_c_fflushInternal_FUN_006039d0(file);
+    iVar2 = fflushInternal(file);
     if (iVar2 != 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
       return -1;

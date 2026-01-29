@@ -137,7 +137,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     g_InMirrorRenderPass = 0;
     core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(&g_CDemonCameraInstance);
     core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0(&g_CDemonCameraInstance);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_124,"%s.raw",this_ptr->cameras + index);
+    sprintf(local_124,"%s.raw",this_ptr->cameras + index);
     core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(&g_CDemonCameraInstance,local_124);
     core_set_cpp_CDemonSet_FUN_0056aca0(this_ptr);
     core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(&g_CDemonCameraInstance,0);

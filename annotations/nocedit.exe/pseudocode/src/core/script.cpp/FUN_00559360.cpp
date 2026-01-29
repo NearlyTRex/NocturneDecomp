@@ -36,7 +36,7 @@ void core_script_cpp_FUN_00559360(void)
   }
   in_stack_00000004[n] = '\0';
   while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {
-    crt_string_c_memmove_FUN_005fe5e0(in_stack_00000004,in_stack_00000004 + 1,n);
+    memmove(in_stack_00000004,in_stack_00000004 + 1,n);
     n = n - 1;
   }
   return;

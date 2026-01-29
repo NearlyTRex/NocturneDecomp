@@ -42,7 +42,7 @@ void shape_design_c_createBoxPrimitive_FUN_0045e520(void)
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
   if ((((iVar3 != -2) &&
-       (crt_stdio_c_sscanf_FUN_0060013c(local_88,"%f,%f,%f",&local_30,&local_2c,&local_28),
+       (sscanf(local_88,"%f,%f,%f",&local_30,&local_2c,&local_28),
        0.0 < local_30)) && (0.0 < local_2c)) && (0.0 < local_28)) {
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               (local_88,0x4f,0,0xb,"Enter in X,Y,Z box center : ");
@@ -55,13 +55,13 @@ void shape_design_c_createBoxPrimitive_FUN_0045e520(void)
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     } while (cVar1 != '\0');
     if ((iVar3 != -2) &&
-       (local_34 = crt_stdio_c_sscanf_FUN_0060013c
+       (local_34 = sscanf
                              (local_88,"%f,%f,%f",&local_24,&local_20,&local_1c),
        local_34 == 3)) {
       engine_2d_c_drawText_FUN_00401fd0("I)nside, O)utside, B)oth ?",0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      local_18 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
+      local_18 = toupper(uVar2 & 0xff);
       iVar3 = g_VertexCount;
       local_14 = g_VertexCount;
       g_VertexCount = g_VertexCount + 8;

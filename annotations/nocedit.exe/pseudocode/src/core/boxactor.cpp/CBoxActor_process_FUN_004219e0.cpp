@@ -36,8 +36,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
   iVar9 = pCVar4->frame_count;
   fVar5 = this_ptr->fps + (float)this_ptr->unk2;
   this_ptr->unk2 = (int)fVar5;
-  local_2c = crt_math_c_floor_FUN_005feb90((double)fVar5);
-  dVar8 = crt_math_c_round_FUN_005fe6b0(local_2c);
+  local_2c = floor((double)fVar5);
+  dVar8 = round(local_2c);
   iStack_24 = (int)ROUND(dVar8);
   fVar5 = (float)this_ptr_00[2].runtime_state - (float)iStack_24;
   local_2c = (double)CONCAT44(fVar5,(uint)local_2c);

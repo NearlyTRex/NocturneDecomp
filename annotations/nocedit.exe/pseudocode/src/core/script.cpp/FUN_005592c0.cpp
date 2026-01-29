@@ -31,7 +31,7 @@ void core_script_cpp_FUN_005592c0(void)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar2 = crt_string_c_strstr_FUN_005fedd0(in_stack_00000008,"//");
+  pcVar2 = strstr(in_stack_00000008,"//");
   pcVar3 = in_stack_00000008;
   if (pcVar2 != (char *)0x0) {
     *pcVar2 = '\0';

@@ -21,19 +21,19 @@ core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370
   int iVar7;
   int iVar8;
   
-  dVar6 = crt_math_c_floor_FUN_005feb90
+  dVar6 = floor
                     ((double)(bias_offset->x * (float)256 + (float)0.5));
   fVar2 = bias_offset->y;
   fVar3 = (float)256;
-  crt_math_c_round_FUN_005fe6b0(dVar6);
-  dVar6 = crt_math_c_floor_FUN_005feb90((double)(fVar2 * fVar3 + (float)0.5));
+  round(dVar6);
+  dVar6 = floor((double)(fVar2 * fVar3 + (float)0.5));
   fVar2 = bias_offset->z;
   iVar8 = SUB84(dVar6,0);
   fVar3 = (float)256;
-  crt_math_c_round_FUN_005fe6b0(dVar6);
-  dVar6 = crt_math_c_floor_FUN_005feb90((double)(fVar2 * fVar3 + (float)0.5));
+  round(dVar6);
+  dVar6 = floor((double)(fVar2 * fVar3 + (float)0.5));
   iVar7 = (int)((ulonglong)dVar6 >> 0x20);
-  dVar6 = crt_math_c_round_FUN_005fe6b0(dVar6);
+  dVar6 = round(dVar6);
   iVar5 = 0;
   for (iVar4 = 0; iVar4 < model_ptr->frame_count * model_ptr->vertex_count; iVar4 = iVar4 + 1) {
     piVar1 = (int *)(iVar5 + (int)model_ptr->vertex_list);

@@ -23,9 +23,9 @@ int __cdecl strcmp(char *str1,char *str2);
 // Address: 005ff070
 int __cdecl strnicmp(char *str1,char *str2,int count);
 
-// Original: crt_string.c_strtod_FUN_005ff0f3
+// Original: crt_string.c__strtod_FUN_005ff0f3
 // Address: 005ff0f3
-double __cdecl strtod(char *str);
+double __cdecl ::strtod(char *str);
 
 // Original: crt_string.c_strncpy_safe_FUN_005ff130
 // Address: 005ff130

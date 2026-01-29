@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_unknown_c_staticFinal_FUN_00608fc0(void)
+void __cdecl staticFinal(void)
 
 {
   crt_unknown_c_FUN_00608fdc();

@@ -42,8 +42,8 @@ crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,ui
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
   }
   else {
-    pvVar3 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_OFStreamTypeInfo);
-    crt_memory_c_free_FUN_005fe659(pvVar3);
+    pvVar3 = __vec_delete(this_ptr,&g_OFStreamTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(pvVar3);
   }
   return this_ptr;
 }

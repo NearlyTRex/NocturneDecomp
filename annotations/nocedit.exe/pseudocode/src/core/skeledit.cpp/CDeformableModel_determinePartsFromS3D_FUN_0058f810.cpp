@@ -17,9 +17,9 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   uint uVar3;
   double dVar4;
   CEditorTools *this_ptr_00;
-  FILE *file;
+  _FILE *file;
   int iVar5;
-  FILE *pFVar6;
+  _FILE *p_Var6;
   float *pfVar7;
   int iVar8;
   uint *puVar9;
@@ -155,9 +155,9 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float local_194;
   byte local_190 [4];
   byte local_18c [4];
-  FILE *local_188;
+  _FILE *local_188;
   void *local_184;
-  FILE *local_180;
+  _FILE *local_180;
   float *local_17c;
   float *local_178;
   void *local_174;
@@ -192,7 +192,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float *local_f8;
   int local_f4;
   int *local_f0;
-  FILE *local_ec;
+  _FILE *local_ec;
   int local_e8;
   int local_e4;
   int local_e0;
@@ -248,7 +248,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   int local_18;
   
   bVar29 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0xa228);
+  __STK(0xa228);
   if (*in_stack_00000004 != 1) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xbc8;
@@ -256,9 +256,9 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Opening %s");
-  local_188 = (FILE *)0x0;
+  local_188 = (_FILE *)0x0;
   local_184 = (void *)0x0;
-  local_180 = (FILE *)0x0;
+  local_180 = (_FILE *)0x0;
   local_17c = (float *)0x0;
   local_178 = (float *)0x0;
   local_174 = (void *)0x0;
@@ -267,40 +267,39 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   local_ec = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (this_ptr->texture_sets[0].textures[4].texture_variants[1].texture_name,
                         (char *)0x0,"rt","..\\core\\skeledit.cpp",0xbde);
-  if (local_ec == (FILE *)0x0) {
+  if (local_ec == (_FILE *)0x0) {
     pcVar16 = "Can't open %s";
   }
   else {
     local_180 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ("parts.log",(char *)0x0,"wt",
                            "..\\core\\skeledit.cpp",0xbee);
-    if (local_180 == (FILE *)0x0) {
+    if (local_180 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
       g_CurrentLineNumber = 0xbef;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create log file!");
     }
-    crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Matching skeleton parts for %s\n");
-    pFVar6 = local_ec;
+    _fprintf(local_180,"Matching skeleton parts for %s\n");
+    p_Var6 = local_ec;
     iVar15 = 1;
     do {
-      iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
+      iVar5 = _fgetc(p_Var6);
       file = local_ec;
       if (iVar5 < 0) break;
     } while ((iVar5 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_ec,"%d\n");
+    _fscanf(local_ec,"%d\n");
     if ((local_e8 < 0x65) || (0x67 < local_e8)) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (&DAT_03670650,"%s has incorrect S3D version %d",
                  this_ptr->texture_sets[0].textures[4].texture_variants[1].texture_name);
       goto LAB_0058f8e7;
     }
     iVar15 = 1;
     do {
-      iVar5 = crt_stdio_c_fgetc_FUN_005fe840(file);
+      iVar5 = _fgetc(file);
       if (iVar5 < 0) break;
     } while ((iVar5 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
-    iVar15 = crt_stdio_c_fscanf_FUN_005fe7c0
-                       (local_ec,"%d,%d,%d,%d,%d,%d,%d\n",&local_e4,&local_16c,&local_168,&local_e0,
+    iVar15 = _fscanf(local_ec,"%d,%d,%d,%d,%d,%d,%d\n",&local_e4,&local_16c,&local_168,&local_e0,
                         local_164,local_dc);
     this_ptr_00 = g_CEditorToolsPtr;
     if (iVar15 == 7) {
@@ -308,11 +307,11 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         in_stack_00000004[0x1c50] = local_e0;
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (this_ptr_00,"Reading part list from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading part list from %s\n");
-        pFVar6 = local_ec;
+        _fprintf(local_180,"Reading part list from %s\n");
+        p_Var6 = local_ec;
         iVar15 = 1;
         do {
-          iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
+          iVar5 = _fgetc(p_Var6);
           if (iVar5 < 0) break;
         } while ((iVar5 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
         iVar15 = 0;
@@ -324,13 +323,11 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
           do {
             local_140 = local_148 + iVar15 * 0x18;
             local_144 = iVar15 * 4;
-            iVar5 = crt_stdio_c_fscanf_FUN_005fe7c0
-                              (local_ec,"%d,%d,%*d,%d,\"%[^\"]\"\n",local_94,local_90,piVar28);
+            iVar5 = _fscanf(local_ec,"%d,%d,%*d,%d,\"%[^\"]\"\n",local_94,local_90,piVar28);
             if (iVar5 != 4) goto LAB_00590a70;
             in_stack_00000004[iVar15 * 0x18 + 0x1c63] = 0;
             piVar28 = piVar28 + 0x18;
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      (local_180,"\t%2d: %s, verts=%d, tris=%d\n",iVar15,local_140,
+            _fprintf(local_180,"\t%2d: %s, verts=%d, tris=%d\n",iVar15,local_140,
                        *(uint *)((int)local_400 + local_144));
             iVar15 = iVar15 + 1;
             local_94 = local_94 + 4;
@@ -339,11 +336,11 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading texture list from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading texture list from %s\n");
-        pFVar6 = local_ec;
+        _fprintf(local_180,"Reading texture list from %s\n");
+        p_Var6 = local_ec;
         iVar15 = 1;
         do {
-          iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
+          iVar5 = _fgetc(p_Var6);
           if (iVar5 < 0) break;
         } while ((iVar5 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
         if (0x96 < local_e4) {
@@ -355,9 +352,9 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         if (0 < local_e4) {
           pcVar16 = &stack0xffff5e14;
           do {
-            iVar5 = crt_stdio_c_fscanf_FUN_005fe7c0(local_ec,"%[^\n]\n");
+            iVar5 = _fscanf(local_ec,"%[^\n]\n");
             if (iVar5 != 1) goto LAB_00590a70;
-            crt_string_c_splitpath_FUN_005ff178
+            splitpath
                       (local_844,(char *)0x0,(char *)0x0,pcVar16,(char *)0x0);
             iVar15 = iVar15 + 1;
             pcVar16 = pcVar16 + 0x100;
@@ -380,9 +377,9 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
           if (0 < in_stack_00000004[0x2f]) {
             piVar28 = in_stack_00000004 + 0x32;
             do {
-              crt_string_c_splitpath_FUN_005ff178
+              splitpath
                         ((char *)piVar28,(char *)0x0,(char *)0x0,local_640,(char *)0x0);
-              iVar5 = crt_string_c_stricmp_FUN_005fe7f0(local_388,local_640);
+              iVar5 = stricmp(local_388,local_640);
               if (iVar5 == 0) break;
               iVar15 = iVar15 + 1;
               piVar28 = piVar28 + 0x12;
@@ -390,16 +387,16 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
           }
           if (in_stack_00000004[0x2f] <= iVar15) {
             if (0x4f < in_stack_00000004[0x2f]) {
-              crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,"Texture list full determining parts");
+              sprintf(&DAT_03670650,"Texture list full determining parts");
               goto LAB_0058f8e7;
             }
-            crt_stdio_c_sprintf_FUN_005fdbd0
+            sprintf
                       ((char *)(in_stack_00000004 + in_stack_00000004[0x2f] * 0x12 + 0x32),
                        "%s.raw");
             in_stack_00000004[0x2f] = in_stack_00000004[0x2f] + 1;
           }
           local_160 = iVar15;
-          crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Automap capped faces is active\n");
+          _fprintf(local_180,"Automap capped faces is active\n");
         }
         local_184 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                               ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
@@ -410,19 +407,18 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading faces from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading faces from %s\n");
-        pFVar6 = local_ec;
+        _fprintf(local_180,"Reading faces from %s\n");
+        p_Var6 = local_ec;
         iVar15 = 1;
         do {
-          iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
+          iVar5 = _fgetc(p_Var6);
           if (iVar5 < 0) break;
         } while ((iVar5 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
         iVar15 = 0;
         pvVar10 = local_184;
         if (0 < (int)local_16c) {
           do {
-            iVar5 = crt_stdio_c_fscanf_FUN_005fe7c0
-                              (local_ec,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",local_13c,&local_278,
+            iVar5 = _fscanf(local_ec,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",local_13c,&local_278,
                                &local_194,local_200,local_274,local_190,local_1fc,local_270,
                                local_18c);
             if (iVar5 != 10) goto LAB_00590a70;
@@ -433,42 +429,42 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
             pvVar12 = pvVar10;
             do {
               *(uint *)((int)pvVar12 + 0x18) = *(uint *)(local_274 + iVar5 + -4);
-              dVar30 = crt_math_c_round_FUN_005fe6b0
+              dVar30 = round
                                  ((double)*(float *)(local_190 + iVar5 + -4) * dVar4);
               local_1c = (float)(int)ROUND(dVar30);
               *(int *)((int)pvVar12 + 0x1c) = (int)ROUND(dVar30);
               in_stack_ffff5e08 = 8.173442e-39;
-              dVar30 = crt_math_c_round_FUN_005fe6b0
+              dVar30 = round
                                  ((double)*(float *)(local_200 + iVar5 + -4) * dVar4);
               local_20 = (int)ROUND(dVar30);
               iVar5 = iVar5 + 4;
               *(int *)((int)pvVar12 + 0x20) = (int)ROUND(dVar30);
               pvVar12 = (void *)((int)pvVar12 + 0xc);
             } while (iVar5 != 0xc);
-            crt_stdio_c_fprintf_FUN_005fe6d0(local_188,"\t%4d: %4d %4d %4d\n");
+            _fprintf(local_188,"\t%4d: %4d %4d %4d\n");
             iVar15 = iVar15 + 1;
             pvVar10 = (void *)((int)pvVar10 + 0x3c);
           } while (iVar15 < (int)local_174);
         }
-        pFVar6 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+        p_Var6 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                            ((int)local_168 * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
-        local_188 = pFVar6;
-        if (pFVar6 != (FILE *)0x0) {
-          local_188 = (FILE *)&pFVar6->_cnt;
-          pFVar6->_ptr = local_168;
+        local_188 = p_Var6;
+        if (p_Var6 != (_FILE *)0x0) {
+          local_188 = (_FILE *)&p_Var6->_cnt;
+          p_Var6->_ptr = local_168;
         }
-        if (local_188 == (FILE *)0x0) {
+        if (local_188 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc7d;
           core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading vertices from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading vertices from %s\n");
-        pFVar6 = local_ec;
+        _fprintf(local_180,"Reading vertices from %s\n");
+        p_Var6 = local_ec;
         iVar15 = 1;
         do {
-          iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
+          iVar5 = _fgetc(p_Var6);
           if (iVar5 < 0) break;
         } while ((iVar5 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
         iVar15 = 0;
@@ -476,18 +472,17 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
           local_8c = &local_188->_link;
           do {
             ppcVar19 = &local_188->_ptr + iVar15 * 3;
-            iVar5 = crt_stdio_c_fscanf_FUN_005fe7c0(local_ec,"%f,%f,%f\n");
+            iVar5 = _fscanf(local_ec,"%f,%f,%f\n");
             if (iVar5 != 3) goto LAB_00590a70;
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      (local_180,"\t%4d: %7.3f %7.3f %7.3f\n",iVar15,(double)(float)*ppcVar19,
+            _fprintf(local_180,"\t%4d: %7.3f %7.3f %7.3f\n",iVar15,(double)(float)*ppcVar19,
                        (double)(float)ppcVar19[1],(double)(float)ppcVar19[2]);
             iVar15 = iVar15 + 1;
             local_8c = local_8c + 3;
           } while (iVar15 < (int)local_168);
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xc8c);
-        local_ec = (FILE *)0x0;
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Removing duplicate faces\n");
+        local_ec = (_FILE *)0x0;
+        _fprintf(local_180,"Removing duplicate faces\n");
         local_28 = 0;
         if (0 < (int)local_16c) {
           local_84 = local_184;
@@ -527,8 +522,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
                       iVar15 = iVar15 + 1;
                     } while (iVar5 < 3);
                     if (iVar5 == 3) {
-                      crt_stdio_c_fprintf_FUN_005fe6d0
-                                (local_180,"Removing face %d, it is dup with face %d\n",local_28);
+                      _fprintf(local_180,"Removing face %d, it is dup with face %d\n",local_28);
                       *(uint *)((int)local_134 + 4) = 0;
                       goto LAB_005902c8;
                     }
@@ -546,24 +540,24 @@ LAB_005902c8:
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Biasing %s");
-        if ((FILE *)local_30c != local_188) {
+        if ((_FILE *)local_30c != local_188) {
           local_30c._0_4_ = local_188->_ptr;
           local_30c._4_4_ = local_188->_cnt;
           local_30c._8_4_ = local_188->_link;
         }
-        if ((FILE *)(local_30c + 0xc) != local_188) {
+        if ((_FILE *)(local_30c + 0xc) != local_188) {
           local_30c._12_4_ = local_188->_ptr;
           local_2fc = (float)local_188->_cnt;
           local_2f8 = local_188->_link;
         }
         iVar15 = 1;
-        pFVar6 = local_188;
+        p_Var6 = local_188;
         if (1 < (int)local_168) {
           do {
             core_box_cpp_CBoundingBox3D_expand_FUN_00420240
-                      ((CBoundingBox3D *)local_30c,(CVector3f *)&pFVar6->_flag);
+                      ((CBoundingBox3D *)local_30c,(CVector3f *)&p_Var6->_flag);
             iVar15 = iVar15 + 1;
-            pFVar6 = (FILE *)&pFVar6->_flag;
+            p_Var6 = (_FILE *)&p_Var6->_flag;
           } while (iVar15 < (int)local_168);
         }
         iVar15 = in_stack_00000004[0x10];
@@ -598,18 +592,18 @@ LAB_005902c8:
         local_2a0 = (float)local_2f8 - (float)local_30c._8_4_;
         local_1d4 = local_264 / local_2a0;
         iVar15 = 0;
-        pFVar6 = local_188;
+        p_Var6 = local_188;
         if (0 < (int)local_168) {
           do {
-            pFVar6->_ptr = (char *)(((float)pFVar6->_ptr - (float)local_30c._0_4_) * local_1dc +
+            p_Var6->_ptr = (char *)(((float)p_Var6->_ptr - (float)local_30c._0_4_) * local_1dc +
                                    local_324.min.x);
-            pFVar6->_cnt = (int)(((float)pFVar6->_cnt - (float)local_30c._4_4_) * local_1d8 +
+            p_Var6->_cnt = (int)(((float)p_Var6->_cnt - (float)local_30c._4_4_) * local_1d8 +
                                 local_324.min.y);
             iVar15 = iVar15 + 1;
-            pFVar6->_link =
+            p_Var6->_link =
                  (streambuf *)
-                 (((float)pFVar6->_link - (float)local_30c._8_4_) * local_1d4 + local_324.min.z);
-            pFVar6 = (FILE *)&pFVar6->_flag;
+                 (((float)p_Var6->_link - (float)local_30c._8_4_) * local_1d4 + local_324.min.z);
+            p_Var6 = (_FILE *)&p_Var6->_flag;
           } while (iVar15 < (int)local_168);
         }
         local_284 = local_2a8;
@@ -624,8 +618,7 @@ LAB_005902c8:
         local_1b8 = local_26c;
         local_1b4 = local_268;
         local_1b0 = local_264;
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (local_180,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1dc,(double)local_1d8,
+        _fprintf(local_180,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1dc,(double)local_1d8,
                    (double)local_1d4);
         pfVar7 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                            ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
@@ -734,7 +727,7 @@ LAB_005902c8:
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                   (g_CEditorToolsPtr,"Matching faces");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Matching faces in %s\n");
+        _fprintf(local_180,"Matching faces in %s\n");
         if (in_stack_00000004[0x15] <= (int)local_16c) {
           local_174 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                 (in_stack_00000004[0x15] * 4,"..\\core\\skeledit.cpp",0xd42);
@@ -843,18 +836,18 @@ LAB_005902c8:
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd1;
           if (local_17c != (float *)0x0) {
-            crt_memory_c_free_FUN_005fe659(local_17c + -1);
+            shape_memdbg_cpp_free_FUN_005fe659(local_17c + -1);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd2;
           local_17c = (float *)0x0;
           if (local_178 != (float *)0x0) {
-            crt_memory_c_free_FUN_005fe659(local_178 + -1);
+            shape_memdbg_cpp_free_FUN_005fe659(local_178 + -1);
           }
           local_178 = (float *)0x0;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd3;
-          crt_memory_c_free_FUN_005fe659(local_174);
+          shape_memdbg_cpp_free_FUN_005fe659(local_174);
           iVar15 = 0;
           local_174 = (void *)0x0;
           local_158 = 0;
@@ -921,7 +914,7 @@ LAB_005902c8:
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xe86;
-          crt_memory_c_free_FUN_005fe659(local_170);
+          shape_memdbg_cpp_free_FUN_005fe659(local_170);
           local_30 = in_stack_00000004[0x15] + -1;
           local_170 = (uint *)0x0;
           piVar28 = local_f0;
@@ -984,7 +977,7 @@ LAB_005902c8:
           if (local_154 != in_stack_00000004[0x15]) {
             local_d8 = in_stack_00000004 + 0x1c51;
             do {
-              crt_stdio_c_sprintf_FUN_005fdbd0(local_540,"There are %d triangles I couldn't match.");
+              sprintf(local_540,"There are %d triangles I couldn't match.");
               if (*(int *)this_ptr->texture_sets[0].textures[8].texture_variants[0].texture_name ==
                   0) {
                 shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_bec);
@@ -1164,7 +1157,7 @@ LAB_00591f48:
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf0c;
-          crt_memory_c_free_FUN_005fe659(local_f0);
+          shape_memdbg_cpp_free_FUN_005fe659(local_f0);
           local_f0 = (int *)0x0;
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Finding capped faces in %s");
@@ -1196,7 +1189,7 @@ LAB_00591f48:
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf1f;
-          crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0x1f]);
+          shape_memdbg_cpp_free_FUN_005fe659((void *)in_stack_00000004[0x1f]);
           in_stack_00000004[0x1f] = (int)puVar9;
           puVar9 = (uint *)in_stack_00000004[0x24];
           puVar22 = local_14c;
@@ -1212,11 +1205,11 @@ LAB_00591f48:
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf24;
-          crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0x24]);
+          shape_memdbg_cpp_free_FUN_005fe659((void *)in_stack_00000004[0x24]);
           g_CurrentDebugLine = 0xf28;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           in_stack_00000004[0x24] = (int)local_14c;
-          crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0x29]);
+          shape_memdbg_cpp_free_FUN_005fe659((void *)in_stack_00000004[0x29]);
           in_stack_00000004[0x29] = 0;
           if (0 < local_158) {
             pvVar10 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
@@ -1252,9 +1245,9 @@ LAB_00591f48:
                       if (0 < in_stack_00000004[0x2f]) {
                         piVar28 = local_a8 + 2;
                         do {
-                          crt_string_c_splitpath_FUN_005ff178
+                          splitpath
                                     ((char *)piVar28,(char *)0x0,(char *)0x0,local_740,(char *)0x0);
-                          iVar8 = crt_string_c_stricmp_FUN_005fe7f0
+                          iVar8 = stricmp
                                             (&stack0xffff5e14 + iVar15 * 0x100,local_740);
                           if (iVar8 == 0) break;
                           iVar5 = iVar5 + 1;
@@ -1268,7 +1261,7 @@ LAB_00591f48:
                           core_main_c_displayErrorAndQuit_FUN_00506f10
                                     ("Too many model textures!");
                         }
-                        crt_stdio_c_sprintf_FUN_005fdbd0
+                        sprintf
                                   ((char *)(local_a4 + in_stack_00000004[0x2f] * 0x12 + 2),
                                    "%s.raw");
                         in_stack_00000004[0x2f] = in_stack_00000004[0x2f] + 1;
@@ -1308,7 +1301,7 @@ LAB_00591f48:
                         } while (iVar15 < in_stack_00000004[0xb]);
                       }
                       if ((float)0.20000000000000001 < fVar31) {
-                        crt_stdio_c_sprintf_FUN_005fdbd0
+                        sprintf
                                   (&DAT_03670650,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
                         goto LAB_0058f8e7;
                       }
@@ -1377,7 +1370,7 @@ LAB_00591f48:
                       } while (local_24 < (int)local_16c);
                     }
                     if (local_ac < 0) {
-                      crt_stdio_c_sprintf_FUN_005fdbd0
+                      sprintf
                                 (&DAT_03670650,"Can't find opposing part for capped face!");
                       goto LAB_0058f8e7;
                     }
@@ -1411,22 +1404,22 @@ LAB_00591835:
           }
           g_CurrentDebugLine = 0xff5;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-          if (local_188 != (FILE *)0x0) {
-            crt_memory_c_free_FUN_005fe659(&local_188[-1]._ungotten);
+          if (local_188 != (_FILE *)0x0) {
+            shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1]._ungotten);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xff6;
-          crt_memory_c_free_FUN_005fe659(local_184);
-          pFVar6 = local_180;
-          if (local_180 != (FILE *)0x0) {
-            crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Determined parts using %s OK!\n");
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\skeledit.cpp",0xffc);
+          shape_memdbg_cpp_free_FUN_005fe659(local_184);
+          p_Var6 = local_180;
+          if (local_180 != (_FILE *)0x0) {
+            _fprintf(local_180,"Determined parts using %s OK!\n");
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\skeledit.cpp",0xffc);
           }
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Determined parts using %s OK!");
           return 1;
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,"Deformable model has more faces than segmented model!");
+        sprintf(&DAT_03670650,"Deformable model has more faces than segmented model!");
         goto LAB_0058f8e7;
       }
       pcVar16 = "Too many parts in %s";
@@ -1437,40 +1430,40 @@ LAB_00590a70:
     }
   }
 LAB_0058f8da:
-  crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,pcVar16);
+  sprintf(&DAT_03670650,pcVar16);
 LAB_0058f8e7:
-  if (local_ec != (FILE *)0x0) {
+  if (local_ec != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xbe2);
   }
-  if (local_180 != (FILE *)0x0) {
+  if (local_180 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_180,"..\\core\\skeledit.cpp",0xbe3);
   }
   g_CurrentDebugLine = 0xbe4;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-  if (local_188 != (FILE *)0x0) {
-    crt_memory_c_free_FUN_005fe659(&local_188[-1]._ungotten);
+  if (local_188 != (_FILE *)0x0) {
+    shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1]._ungotten);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe5;
-  crt_memory_c_free_FUN_005fe659(local_184);
+  shape_memdbg_cpp_free_FUN_005fe659(local_184);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe6;
   if (local_17c != (float *)0x0) {
-    crt_memory_c_free_FUN_005fe659(local_17c + -1);
+    shape_memdbg_cpp_free_FUN_005fe659(local_17c + -1);
   }
   g_CurrentDebugLine = 0xbe7;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   if (local_178 != (float *)0x0) {
-    crt_memory_c_free_FUN_005fe659(local_178 + -1);
+    shape_memdbg_cpp_free_FUN_005fe659(local_178 + -1);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe8;
-  crt_memory_c_free_FUN_005fe659(local_174);
+  shape_memdbg_cpp_free_FUN_005fe659(local_174);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe9;
-  crt_memory_c_free_FUN_005fe659(local_170);
+  shape_memdbg_cpp_free_FUN_005fe659(local_170);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbea;
-  crt_memory_c_free_FUN_005fe659(local_f0);
+  shape_memdbg_cpp_free_FUN_005fe659(local_f0);
   return 0;
 }

@@ -61,7 +61,7 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
     if ((7 < g_CHeroClassVersion) && (g_CHeroClassVersion < 0xb)) {
       iVar1 = 0;
       do {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_70,"keyNameList[%d]",iVar1);
+        sprintf(local_70,"keyNameList[%d]",iVar1);
         iVar1 = iVar1 + 1;
         core_actor_cpp_serializeString_FUN_0040b5c0(local_d4,local_70);
       } while (iVar1 < 0x20);

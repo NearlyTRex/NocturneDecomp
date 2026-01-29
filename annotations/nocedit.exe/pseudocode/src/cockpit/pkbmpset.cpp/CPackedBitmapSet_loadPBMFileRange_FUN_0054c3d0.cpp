@@ -21,7 +21,7 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
   if (start_index <= end_index) {
     iVar1 = 0;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_74,filename_format,start_index);
+      sprintf(local_74,filename_format,start_index);
       start_index = start_index + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860
                 ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),local_74,(int)base_path

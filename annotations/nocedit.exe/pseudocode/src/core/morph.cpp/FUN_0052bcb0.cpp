@@ -104,8 +104,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   int local_c;
   int local_8;
   
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (&stack0xffffb248,2,&g_CDeformableModelInstanceTypeInfo);
+  __arrinit(&stack0xffffb248,2,&g_CDeformableModelInstanceTypeInfo);
   iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select 1st model file","models",
                      "*.dfm",(int)local_228);
@@ -128,8 +127,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
                               ((CDeformableModelInstance *)&stack0xffffb248);
       local_8c[1] = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                               ((CDeformableModelInstance *)local_2b04);
-      crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                (auStack_838 + 0x390,0x14,&g_SMorphControlPointTypeInfo);
+      __arrinit(auStack_838 + 0x390,0x14,&g_SMorphControlPointTypeInfo);
       this_ptr = g_CSpotViewPtr;
       local_80 = g_CDemonSetPtr->lighting_quality_mode;
       g_CDemonSetPtr->lighting_quality_mode = 1;
@@ -143,8 +141,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
       local_70 = -1;
       local_74 = 0;
       while( true ) {
-        crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                  (local_128,2,&g_CBoundingBox3DTypeInfo);
+        __arrinit(local_128,2,&g_CBoundingBox3DTypeInfo);
         local_30 = 0;
         local_3c = local_128;
         local_34 = 0;

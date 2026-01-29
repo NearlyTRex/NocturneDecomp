@@ -233,7 +233,7 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
     if (iVar5 < DAT_031141c8) {
       DAT_031141c8 = iVar5;
     }
-    crt_string_c_memmove_FUN_005fe5e0
+    memmove
               (&DAT_031101c0 + DAT_031141c0,pcVar9 + DAT_031141c8,(iVar5 - DAT_031141c8) + 1);
     core_script_cpp_CScript_editorPutLine_FUN_005662a0();
     iVar5 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
@@ -319,7 +319,7 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
         pcVar9 = pcVar9 + (uint)bVar12 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar5 + -1 < (int)(~uVar10 - 1)) {
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   (&DAT_031101bf + iVar5,&DAT_031101c0 + iVar5,(~uVar10 - 1) - (iVar5 + -1));
         core_script_cpp_CScript_editorPutLine_FUN_005662a0();
       }
@@ -344,7 +344,7 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
     iVar8 = ~uVar10 - 1;
     iVar5 = core_script_cpp_CScript_editorX2Index_FUN_00566a90();
     if (iVar5 < iVar8) {
-      crt_string_c_memmove_FUN_005fe5e0(&DAT_031101c0 + iVar5,&DAT_031101c1 + iVar5,iVar8 - iVar5);
+      memmove(&DAT_031101c0 + iVar5,&DAT_031101c1 + iVar5,iVar8 - iVar5);
       core_script_cpp_CScript_editorPutLine_FUN_005662a0();
     }
     else {

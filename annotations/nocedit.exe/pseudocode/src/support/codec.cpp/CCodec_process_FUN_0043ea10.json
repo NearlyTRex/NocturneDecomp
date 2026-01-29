@@ -2,10 +2,28 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 23,
+        "message": "'fgetc_outptr' was not declared in this scope"
+      },
+      {
         "category": "other",
         "column": 20,
         "line": 24,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 32,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 30,
+        "line": 32,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
       }
     ],
     "success": false,
@@ -66,7 +84,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_process_FUN_0043ea10",
-    "signature": "int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,FILE *input_file,int byte_count,FILE *output_file)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)"
   },
   "function_calls": [
     {
@@ -171,7 +189,7 @@
         "name": "input_file",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -185,7 +203,7 @@
         "name": "output_file",
         "offset": 16,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },

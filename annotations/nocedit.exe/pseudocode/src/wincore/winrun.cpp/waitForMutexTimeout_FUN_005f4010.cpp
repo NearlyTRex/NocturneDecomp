@@ -17,7 +17,7 @@ wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double t
   if (mutex_handle == (HANDLE)0x0) {
     return 0;
   }
-  dVar2 = crt_math_c_round_FUN_005fe6b0(timeout_seconds * 1000);
+  dVar2 = round(timeout_seconds * 1000);
   uStack_c = (DWORD)(longlong)ROUND(dVar2);
   DVar1 = (*g_WaitForSingleObjectFunc)(mutex_handle,uStack_c);
   return (uint)(DVar1 == 0);

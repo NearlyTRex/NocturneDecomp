@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 crt_math_c_generate_nan_FUN_00606a81(void)
+float10 generate_nan(void)
 
 {
   float10 in_ST0;

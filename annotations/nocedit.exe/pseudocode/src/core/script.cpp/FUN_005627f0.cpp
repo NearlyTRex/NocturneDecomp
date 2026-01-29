@@ -17,7 +17,7 @@ uint core_script_cpp_FUN_005627f0(void)
   int local_4;
   
   local_4 = -1;
-  crt_stdio_c_sscanf_FUN_0060013c((char *)(in_stack_00000004 + 0x25c),"%d",&local_4);
+  sscanf((char *)(in_stack_00000004 + 0x25c),"%d",&local_4);
   if ((-1 < local_4) && (local_4 < *(int *)(in_stack_00000008 + 0xcc))) {
     uVar1 = core_script_cpp_GetDemonActor_FUN_005594e0();
     return uVar1;

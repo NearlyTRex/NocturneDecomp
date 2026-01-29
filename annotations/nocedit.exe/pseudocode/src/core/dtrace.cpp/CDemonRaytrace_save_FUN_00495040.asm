@@ -38,7 +38,7 @@ section .text
     PUSH EDX                            ; 0049504b
     PUSH 0x622a49                       ; 0049504c | = "data"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00495051
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00495056
     MOV EBX,EAX                         ; 00495059
     TEST EAX,EAX                        ; 0049505b
@@ -49,13 +49,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 00495060
     PUSH EDI                            ; 00495064
     CALL core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50 ; 00495065
-        ;   XREF to: 00494f50 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace * this_ptr, FILE * file_handle)
+        ;   XREF to: 00494f50 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0049506a
     PUSH 0x261                          ; 0049506d
     PUSH 0x622a8c                       ; 00495072 | = "..\\core\\dtrace.cpp"
     PUSH EBX                            ; 00495077
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00495078
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0049507d
     POP EDI                             ; 00495080
     POP EBX                             ; 00495081

@@ -31,7 +31,7 @@ int core_script_cpp_FUN_00561a30(void)
   bVar6 = 0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0xffffffd0);
   iVar2 = core_script_cpp_FUN_00567310();
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000018,0,0x328);
+  memset(in_stack_00000018,0,0x328);
   if (iVar2 < 0) {
     uVar4 = 0xffffffff;
     pcVar3 = in_stack_00000004;

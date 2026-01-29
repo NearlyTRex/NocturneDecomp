@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_chdir_FUN_006012a0(char *path)
+int __cdecl chdir(char *path)
 
 {
   BOOL BVar1;
@@ -18,6 +18,6 @@ int __cdecl crt_io_c_chdir_FUN_006012a0(char *path)
     return 0;
   }
   windows_error = (*g_GetLastErrorFunc)();
-  iVar2 = crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(windows_error);
+  iVar2 = convertWindowsErrorToErrno(windows_error);
   return iVar2;
 }

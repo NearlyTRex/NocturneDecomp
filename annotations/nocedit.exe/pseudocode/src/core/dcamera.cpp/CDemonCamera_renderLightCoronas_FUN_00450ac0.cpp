@@ -51,7 +51,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   }
   do {
     iVar5 = iVar4 + 4;
-    uVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+    uVar3 = rand();
     *(uint *)((int)g_DitherPatternTable + iVar4) = uVar3 & 0xff;
     iVar4 = iVar5;
   } while (iVar5 != 0x400);
@@ -68,9 +68,9 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(light_source);
   fVar1 = (light_source->base).max_distance * (float)256;
   fVar2 = (float)3.3219280948900001;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+  dVar11 = round((double)fVar1);
   input_ptr = (CVector3i *)0x450b76;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * 0.30103 * fVar2));
+  dVar12 = round((double)(fVar1 * 0.30103 * fVar2));
   local_38 = 0;
   g_CoronaDepthShift = (int)ROUND(dVar12);
   g_CoronaMaxDepth = (int)ROUND(dVar11);

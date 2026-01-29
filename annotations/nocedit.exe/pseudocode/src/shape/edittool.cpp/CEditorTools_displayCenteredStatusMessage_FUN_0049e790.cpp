@@ -21,7 +21,7 @@ shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
   g_FontCharacterHeight = g_EditorFont->max_char_height;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x6a);
   local_14 = &stack0x0000000c;
-  crt_stdio_c_vsprintf_FUN_005fdba8(g_StatusMessageBuffer,message,&local_14);
+  vsprintf(g_StatusMessageBuffer,message,&local_14);
   local_14 = (va_list_t)0x0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);

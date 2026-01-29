@@ -32,7 +32,7 @@ LAB_00402fc2:
           core_main_c_displayErrorAndQuit_FUN_00506f10("hLine - invalid bitsPerPixel");
           return;
         }
-        crt_memory_c_memset_FUN_005fde40
+        memset
                   ((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);
       }
       else if ((uint)g_BitsPerPixel < 0x11) {

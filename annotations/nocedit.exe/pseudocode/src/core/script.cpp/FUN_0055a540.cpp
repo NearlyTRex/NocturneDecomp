@@ -40,7 +40,7 @@ void core_script_cpp_FUN_0055a540(void)
   in_stack_00000004[0x117] = 0;
   DAT_0310f4a8 = 0;
   in_stack_00000004[5] = 0;
-  crt_string_c_splitpath_FUN_005ff178(pcVar6,(char *)0x0,(char *)0x0,local_70,(char *)0x0);
+  splitpath(pcVar6,(char *)0x0,(char *)0x0,local_70,(char *)0x0);
   pcVar4 = ".wav";
   iVar3 = -1;
   pcVar6 = local_70;
@@ -62,7 +62,7 @@ void core_script_cpp_FUN_0055a540(void)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_70,"smill.wav");
+  iVar3 = stricmp(local_70,"smill.wav");
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;
@@ -86,7 +86,7 @@ void core_script_cpp_FUN_0055a540(void)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_70,"town.wav");
+  iVar3 = stricmp(local_70,"town.wav");
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;

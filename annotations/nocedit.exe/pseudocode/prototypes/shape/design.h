@@ -13,11 +13,11 @@ void __cdecl showHelpFile(char *help_filename);
 
 // Original: shape_design.c_writeBinaryTreeNode_FUN_00457fd0
 // Address: 00457fd0
-void __cdecl writeBinaryTreeNode(STreeNode *node,FILE *file,int depth);
+void __cdecl writeBinaryTreeNode(STreeNode *node,_FILE *file,int depth);
 
 // Original: shape_design.c_parseSpatialTreeFromFile_FUN_004580a0
 // Address: 004580a0
-STreeNode * __cdecl parseSpatialTreeFromFile(FILE *file);
+STreeNode * __cdecl parseSpatialTreeFromFile(_FILE *file);
 
 // Original: shape_design.c_loadModelBinary_FUN_00458170
 // Address: 00458170
@@ -33,7 +33,7 @@ int __cdecl loadModelFile(char *filename);
 
 // Original: shape_design.c_skipLines_FUN_00459360
 // Address: 00459360
-void __cdecl skipLines(FILE *file,int line_count);
+void __cdecl skipLines(_FILE *file,int line_count);
 
 // Original: shape_design.c_loadS3DModelFile_FUN_004593a0
 // Address: 004593a0
@@ -53,11 +53,11 @@ void __cdecl exportModelToMDL(char *mdl_filename);
 
 // Original: shape_design.c_writeSpatialTree_FUN_0045a200
 // Address: 0045a200
-void __cdecl writeSpatialTree(STreeNode *node,FILE *output_file,int node_index);
+void __cdecl writeSpatialTree(STreeNode *node,_FILE *output_file,int node_index);
 
 // Original: shape_design.c_writePolygonModel_FUN_0045a320
 // Address: 0045a320
-void __cdecl writePolygonModel(int polygon_index,FILE *output_file,float scale_factor);
+void __cdecl writePolygonModel(int polygon_index,_FILE *output_file,float scale_factor);
 
 // Original: shape_design.c_exportVertexListFile_FUN_0045a610
 // Address: 0045a610
@@ -553,7 +553,7 @@ void __cdecl cramTextures(char *texture_filename,int min_u,int min_v,int max_u,i
 
 // Original: shape_design.c_readPixelRowFromFile_FUN_0046abf0
 // Address: 0046abf0
-void __cdecl readPixelRowFromFile(FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags);
+void __cdecl readPixelRowFromFile(_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags);
 
 // Original: shape_design.c_checkNonFFBytes_FUN_0046ac70
 // Address: 0046ac70

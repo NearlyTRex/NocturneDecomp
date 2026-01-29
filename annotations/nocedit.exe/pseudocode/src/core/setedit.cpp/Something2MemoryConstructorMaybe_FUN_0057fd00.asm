@@ -45,12 +45,12 @@
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310
-;   crt_memory.c_free_FUN_005fe659
 ;   crt_memory.c_memset_FUN_005fde40
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -221,8 +221,8 @@ section .text
     PUSH ESI                            ; 0057fea5
     MOV dword ptr [0x02f0d944],EBX      ; 0057fea6 | g_CurrentDebugLine
     MOV dword ptr [0x0067d20c],ECX      ; 0057feac | g_CurrentDebugFilename
-    CALL crt_memory.c_free_FUN_005fe659 ; 0057feb2
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0057feb2
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0057feb7
     MOV ESP,EBP                         ; 0057feba
     POP EBP                             ; 0057febc

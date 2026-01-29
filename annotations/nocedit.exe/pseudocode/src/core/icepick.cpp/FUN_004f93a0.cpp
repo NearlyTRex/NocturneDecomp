@@ -38,7 +38,7 @@ void core_icepick_cpp_FUN_004f93a0(void)
       core_icepick_cpp_FUN_004f9490();
       break;
     case 0x67:
-      uVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+      uVar2 = rand();
       if ((uVar2 & 3) == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->model).motion_controller,0x15,1);

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-LPVOID __cdecl crt_tls_c_get_thread_local_data_FUN_0060a1fc(void)
+LPVOID __cdecl get_thread_local_data(void)
 
 {
   DWORD dwErrCode;
@@ -15,10 +15,10 @@ LPVOID __cdecl crt_tls_c_get_thread_local_data_FUN_0060a1fc(void)
   dwErrCode = (*g_GetLastErrorFunc)();
   pvVar1 = (*g_TlsGetValueFunc)(g_TLSIndex);
   if (pvVar1 == (LPVOID)0x0) {
-    pvVar1 = crt_tls_c_create_thread_local_data_FUN_0060cac0();
+    pvVar1 = create_thread_local_data();
   }
   else if (*(char *)((int)pvVar1 + 0x53) != '\0') {
-    pvVar1 = crt_tls_c_getThreadLocalData_FUN_0060caf8();
+    pvVar1 = getThreadLocalData();
   }
   (*g_SetLastErrorFunc)(dwErrCode);
   return pvVar1;

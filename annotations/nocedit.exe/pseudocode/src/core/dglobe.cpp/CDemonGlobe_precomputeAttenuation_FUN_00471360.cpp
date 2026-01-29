@@ -19,8 +19,8 @@ core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe *this
   fVar2 = radius * 256.0f;
   fVar1 = (float)65536;
   this_ptr->radius = radius;
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)(radius * radius * fVar1));
+  dVar3 = round((double)fVar2);
+  dVar4 = round((double)(radius * radius * fVar1));
   this_ptr->quadratic_radius_scaled = (int)ROUND(dVar4);
   this_ptr->linear_radius_scaled = (int)ROUND(dVar3);
   if (this_ptr->quadratic_radius_scaled < 0x10000) {
@@ -30,7 +30,7 @@ core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe *this
   dVar3 = (double)(byte)this_ptr->intensity * 65536;
   this_ptr->inverse_radius = 1.0 / unaff_retaddr;
   this_ptr->inverse_radius_squared = 1.0 / (unaff_retaddr * unaff_retaddr);
-  dVar3 = crt_math_c_round_FUN_005fe6b0(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10))
+  dVar3 = round(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10))
   ;
   this_ptr->falloff_value = (int)ROUND(dVar3);
   return;

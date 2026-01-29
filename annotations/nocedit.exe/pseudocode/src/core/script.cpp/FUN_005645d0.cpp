@@ -47,7 +47,7 @@ void core_script_cpp_FUN_005645d0(void)
     }
   }
   engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (&stack0xfffffdfc,"Ln %d, Col %d",DAT_0310fd48 + 1,DAT_0310fd44 + 1);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
             (DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);

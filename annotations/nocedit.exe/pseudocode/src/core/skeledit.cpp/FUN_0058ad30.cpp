@@ -20,7 +20,7 @@ void core_skeledit_cpp_FUN_0058ad30(void)
   int *local_14;
   
   bVar6 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x50);
+  __STK(0x50);
   iVar3 = 0;
   if (0 < *in_stack_00000004) {
     piVar2 = in_stack_00000004 + 1;

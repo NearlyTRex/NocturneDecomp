@@ -4,18 +4,24 @@
       {
         "category": "other",
         "column": 28,
-        "line": 19,
+        "line": 18,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 20,
+        "line": 19,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
+        "line": 20,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 21,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
@@ -33,8 +39,8 @@
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 24,
+        "column": 13,
+        "line": 25,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
@@ -69,14 +75,8 @@
       },
       {
         "category": "other",
-        "column": 13,
-        "line": 31,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 21,
-        "line": 32,
+        "line": 31,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -91,18 +91,24 @@
       {
         "category": "other",
         "column": 4,
-        "line": 19,
+        "line": 18,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 20,
+        "line": 19,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 7,
+        "line": 20,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 6,
         "line": 21,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -120,8 +126,8 @@
       },
       {
         "category": "other",
-        "column": 6,
-        "line": 24,
+        "column": 4,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -156,30 +162,24 @@
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 31,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 10,
-        "line": 32,
+        "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 148,
+    "complexity_score": 147,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 67
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -216,7 +216,7 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     }
   ],
   "globals": [
@@ -324,84 +324,84 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 12,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -4) = 0x14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 13,
       "match": "(uint *)((int)",
       "text": "if ((uint *)((int)pvVar2 + -0x10) != local_c) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 14,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0x10) = 0x40a00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 15,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0xc) = 0x40a00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 16,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -8) = 0x40a00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + 0x28ac) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 19,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + 0x28a8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + 0x28a0) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + 0x28b0) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + 0x28b4) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + 0x28a4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(CFlies *)((int)",
       "text": "return (CFlies *)((int)pvVar2 + -0x168);",
       "type": "pointer_cast"

@@ -26,11 +26,11 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_free_FUN_005fe659
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -135,8 +135,8 @@ section .text
     PUSH EBP                            ; 004a3343
     MOV dword ptr [0x0067d20c],ESI      ; 004a3344 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDI      ; 004a334a | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 004a3350
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004a3350
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004a3355
     ADD ESP,0x4                         ; 004a3358
     POP EBP                             ; 004a335b

@@ -9,6 +9,6 @@
 void __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,200,&g_LodFaceTypeInfo);
+  __arrfini(array,200,&g_LodFaceTypeInfo);
   return;
 }

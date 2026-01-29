@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(FILE *output_file)
+; __cdecl void __cdecl shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(_FILE *output_file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   output_file
+; _FILE *          Stack[0x4]:4   output_file
 ;
 ; XREF[1]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 00507982
@@ -55,19 +55,19 @@ section .text
         ;   Label: LAB_0050f6f3
     PUSH EBP                            ; 0050f6f8
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050f6f9
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0050f6fe
     PUSH 0x636176                       ; 0050f701 | = "memory usage summary\n"
     PUSH EBP                            ; 0050f706
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050f707
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0050f70c
     PUSH 0x63618c                       ; 0050f70f | = "================================\n"
     PUSH EBP                            ; 0050f714
     XOR EDI,EDI                         ; 0050f715
     XOR ESI,ESI                         ; 0050f717
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050f719
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EBX,dword ptr [0x02f0d938]      ; 0050f71e | g_MemoryListHead
     ADD ESP,0x8                         ; 0050f724
     TEST EBX,EBX                        ; 0050f727
@@ -86,7 +86,7 @@ section .text
     PUSH EBP                            ; 0050f741
     INC EDI                             ; 0050f742
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050f743
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EBX,dword ptr [EBX + 0x4]       ; 0050f748
     ADD ESP,0x14                        ; 0050f74b
     TEST EBX,EBX                        ; 0050f74e
@@ -99,14 +99,14 @@ section .text
         ;   Label: LAB_0050f760
     PUSH EBP                            ; 0050f765
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050f766
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0050f76b
     PUSH ESI                            ; 0050f76e
     PUSH EDI                            ; 0050f76f
     PUSH 0x6361e6                       ; 0050f770 | = "Total %d blocks, %d bytes\n"
     PUSH EBP                            ; 0050f775
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050f776
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0050f77b
     MOV EBX,dword ptr [0x02f0d93c]      ; 0050f77e | g_FileMutex
     PUSH EBX                            ; 0050f784

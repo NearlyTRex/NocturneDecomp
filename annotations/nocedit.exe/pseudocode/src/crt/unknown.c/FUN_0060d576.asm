@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 0060d57e
     MOV ESI,0xffffffff                  ; 0060d57f
     CALL crt_stdio.c_stream_valid_FUN_00608cd1 ; 0060d584
-        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(FILE * stream, int operation_type)
+        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(_FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 0060d589
     TEST EAX,EAX                        ; 0060d58c
     JZ 0x0060d5f7                       ; 0060d58e

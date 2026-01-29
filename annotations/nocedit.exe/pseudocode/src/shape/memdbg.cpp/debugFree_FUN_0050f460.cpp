@@ -30,7 +30,7 @@ void __cdecl shape_memdbg_cpp_debugFree_FUN_0050f460(void *ptr,char *filename,in
   header = (SMemHead *)((int)ptr + -0x28);
   shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(header,filename,line_number);
   shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(header);
-  crt_memory_c_free_FUN_00601cd0(header);
+  free(header);
   wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
   return;
 }

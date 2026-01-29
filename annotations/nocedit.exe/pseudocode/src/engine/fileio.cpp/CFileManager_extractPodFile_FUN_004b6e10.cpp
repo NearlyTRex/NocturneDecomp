@@ -13,7 +13,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
 {
   char cVar1;
   int iVar2;
-  tm *ptVar3;
+  _tm *p_Var3;
   int iVar4;
   uint *puVar5;
   time_t *ptVar6;
@@ -25,7 +25,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   int in_stack_0000000c;
   time_t atStackY_2e68 [2034];
   CFileManager *source_file;
-  FILE *dest_filename;
+  _FILE *dest_filename;
   uint file_size;
   char *pcVar12;
   CEditorTools *checksum;
@@ -41,7 +41,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   char *local_44;
   time_t local_40 [4];
   byte local_30 [16];
-  FILE *local_20;
+  _FILE *local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -77,8 +77,8 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   }
   iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);
   if (iVar2 == 0) {
-    ptVar3 = crt_time_c_localtime_FUN_00600288((time_t *)&stack0xfffff280);
-    crt_time_c_strftime_FUN_006002d4(local_444,0x100,"%m/%d/%Y",ptVar3);
+    p_Var3 = localtime((time_t *)&stack0xfffff280);
+    strftime(local_444,0x100,"%m/%d/%Y",p_Var3);
     iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Warning!  This .POD file has an invalid CRC.  If it's date is earlier\nthan 07/28/1998, it has no CRC, and you should ignore this message.\n\n%s %s\n\nDo you wish to continue?");
     if (iVar2 == 0) {
@@ -91,7 +91,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (&stack0xfffff180,(char *)0x0,"rb","..\\engine\\fileio.cpp",
                         0x94f);
-  if (local_20 == (FILE *)0x0) {
+  if (local_20 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s");
     engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);
@@ -133,12 +133,12 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
       iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(pSVar10);
       if ((this_ptr->operation_mode != 0) && (((local_14 == 0 || (local_14 == 1)) && (iVar4 != 0))))
       {
-        ptVar3 = crt_time_c_localtime_FUN_00600288((time_t *)&local_658.timestamp);
-        crt_time_c_strftime_FUN_006002d4(local_344,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",ptVar3);
-        ptVar3 = crt_time_c_localtime_FUN_00600288(local_40 + 2);
-        crt_time_c_strftime_FUN_006002d4(local_144,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",ptVar3);
+        p_Var3 = localtime((time_t *)&local_658.timestamp);
+        strftime(local_344,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
+        p_Var3 = localtime(local_40 + 2);
+        strftime(local_144,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
         file_size = local_658.file_size;
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_a58.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_658.target_path);
         pSVar10 = &local_a58;
         pcVar12 = (char *)0x4b70a5;
@@ -159,18 +159,18 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
         (ptVar7 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1] =
              (ptVar6 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1];
         iVar4 = engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
-                          ((FILE *)source_file,(char *)dest_filename,pcVar8,file_size,(int)pcVar12,
+                          ((_FILE *)source_file,(char *)dest_filename,pcVar8,file_size,(int)pcVar12,
                            (int)checksum,(int)pSVar10);
         if (iVar4 == 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Unable to extract file:\n%s");
         }
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_a58.found_path,"%s %s");
+      sprintf(local_a58.found_path,"%s %s");
       engine_2d_c_drawText_FUN_00401fd0(local_a58.found_path,0,iVar2);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_a58.found_path,"%d");
+      sprintf(local_a58.found_path,"%d");
       engine_2d_c_drawText_FUN_00401fd0(local_a58.found_path,g_WindowWidth / 2,iVar2);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_a58.found_path,"%d");
+      sprintf(local_a58.found_path,"%d");
       pcVar12 = local_a58.found_path;
       file_size = 0x4b73ac;
       engine_2d_c_drawText_FUN_00401fd0

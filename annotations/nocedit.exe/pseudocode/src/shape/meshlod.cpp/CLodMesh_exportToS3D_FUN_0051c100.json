@@ -16,8 +16,14 @@
       {
         "category": "other",
         "column": 30,
-        "line": 40,
+        "line": 39,
         "message": "cast from 'float (*)[2]' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 40,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -27,20 +33,14 @@
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 42,
-        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 30,
-        "line": 43,
+        "line": 42,
         "message": "cast from 'float (*)[2]' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 44,
+        "line": 43,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
@@ -52,19 +52,19 @@
       {
         "category": "other",
         "column": 30,
-        "line": 46,
+        "line": 45,
         "message": "cast from 'float (*)[2]' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 47,
+        "line": 46,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 48,
+        "line": 47,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
@@ -84,54 +84,6 @@
       },
       {
         "category": "other",
-        "column": 45,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 22,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 26,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 29,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 12,
         "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -145,6 +97,12 @@
       {
         "category": "other",
         "column": 21,
+        "line": 39,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 29,
         "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -156,25 +114,25 @@
       },
       {
         "category": "other",
-        "column": 29,
+        "column": 21,
         "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 21,
+        "column": 29,
         "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 44,
+        "column": 21,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 21,
+        "column": 29,
         "line": 46,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -183,35 +141,22 @@
         "column": 29,
         "line": 47,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 48,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 229,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 11,
-    "pseudocode_lines": 64,
-    "suspect_count": 15,
+    "pseudocode_lines": 62,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "format_string_mismatch",
       "pointer_cast"
     ],
-    "total_lines": 216
+    "total_lines": 214
   },
   "cross_references": [
     {
@@ -231,7 +176,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100",
-    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_ptr,FILE *file_ptr)"
+    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_ptr,_FILE *file_ptr)"
   },
   "function_calls": [
     {
@@ -403,7 +348,7 @@
         "name": "file_ptr",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -424,106 +369,73 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -2) + iVar7 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 36,
       "match": "SUB84",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7 + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 58,
       "match": "SUB84",
       "text": "SUB84((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 15,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"0,%d,%d,1,1,0,0\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "0,%d,%d,1,1,0,0\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 18,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"0,%d,%d,1,1,0,0\\n\",iVar6);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"0,%d,0,%d, \\\"TheOnlyPart\\\"\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "0,%d,0,%d, \\\"TheOnlyPart\\\"\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 20,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"0,%d,0,%d, \\\"TheOnlyPart\\\"\\n\",this_ptr->vertex_count)",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

@@ -13,16 +13,16 @@ void __cdecl core_skeleton_cpp_CSkeleton_free_FUN_00599a50(CSkeleton *this_ptr)
   this_ptr->frame_count = 0;
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0xe6;
-  crt_memory_c_free_FUN_005fe659(this_ptr->bone_angle_frames);
+  shape_memdbg_cpp_free_FUN_005fe659(this_ptr->bone_angle_frames);
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0xe7;
   if (this_ptr->frame_positions_1 != (CVector3f *)0x0) {
-    crt_memory_c_free_FUN_005fe659(&this_ptr->frame_positions_1[-1].z);
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_positions_1[-1].z);
   }
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0xe8;
   if (this_ptr->frame_positions_2 != (CVector3f *)0x0) {
-    crt_memory_c_free_FUN_005fe659(&this_ptr->frame_positions_2[-1].z);
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_positions_2[-1].z);
   }
   this_ptr->frame_positions_1 = (CVector3f *)0x0;
   this_ptr->frame_positions_2 = (CVector3f *)0x0;

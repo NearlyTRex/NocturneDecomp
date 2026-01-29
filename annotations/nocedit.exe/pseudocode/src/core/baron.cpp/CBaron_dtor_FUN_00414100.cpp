@@ -17,8 +17,8 @@ CBaron * __cdecl core_baron_cpp_CBaron_dtor_FUN_00414100(CBaron *this_ptr,uint d
   uint in_stack_00000014;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CBaronTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CBaronTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   core_hero_cpp_CHero_dtor_FUN_004f2470

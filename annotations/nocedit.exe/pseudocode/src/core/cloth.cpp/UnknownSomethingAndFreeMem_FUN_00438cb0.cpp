@@ -18,7 +18,7 @@ void core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
   }
   g_CurrentDebugFilename = "..\\core\\cloth.cpp";
   g_CurrentDebugLine = 0x85;
-  crt_memory_c_free_FUN_005fe659(*(void **)(in_stack_00000004 + 0x3fe3c));
+  shape_memdbg_cpp_free_FUN_005fe659(*(void **)(in_stack_00000004 + 0x3fe3c));
   *(uint *)(in_stack_00000004 + 0x3fe3c) = 0;
   return;
 }

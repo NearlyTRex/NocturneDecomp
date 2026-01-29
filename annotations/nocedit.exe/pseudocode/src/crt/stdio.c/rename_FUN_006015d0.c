@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_rename_FUN_006015d0(char *old_filename,char *new_filename)
+int __watcallStack rename(char *old_filename,char *new_filename)
 
 {
   BOOL BVar1;
@@ -14,7 +14,7 @@ int __watcallStack crt_stdio_c_rename_FUN_006015d0(char *old_filename,char *new_
   
   BVar1 = (*g_MoveFileAFunc)(old_filename,new_filename);
   if (BVar1 == 0) {
-    DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+    DVar2 = __set_errno();
     return DVar2;
   }
   return 0;

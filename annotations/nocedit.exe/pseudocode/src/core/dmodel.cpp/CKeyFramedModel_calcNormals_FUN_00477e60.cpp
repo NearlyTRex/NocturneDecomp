@@ -30,7 +30,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
       g_CurrentLineNumber = 0x2f1;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
     }
-    crt_memory_c_memset_FUN_005fde40(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);
+    memset(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);
     local_14 = 0;
     if (0 < this_ptr->poly_count) {
       local_18 = 0;
@@ -67,10 +67,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
         if (0.0 < dVar10) {
           fVar8 = (float10)65535 / (float10)dVar10;
           fVar9 = (float10)piVar7[2] * fVar8;
-          dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)*piVar7 * fVar8));
-          dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)iVar1 * fVar8));
+          dVar10 = round((double)((float10)*piVar7 * fVar8));
+          dVar11 = round((double)((float10)iVar1 * fVar8));
           fVar8 = (float10)dVar11;
-          dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
+          dVar11 = round((double)fVar9);
           *piVar7 = (int)ROUND(dVar10);
           piVar7[1] = (int)ROUND(fVar8);
           piVar7[2] = (int)ROUND(dVar11);

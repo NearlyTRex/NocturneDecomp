@@ -33,7 +33,7 @@ uint core_script_cpp_FUN_00559730(void)
   pcVar4 = local_74;
   while( true ) {
     local_10 = -1;
-    crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000008," %[^ \t),]%n",local_74,&local_10);
+    sscanf(in_stack_00000008," %[^ \t),]%n",local_74,&local_10);
     if (local_10 < 1) {
       return 1;
     }
@@ -43,7 +43,7 @@ uint core_script_cpp_FUN_00559730(void)
     in_stack_0000000c[iVar2] = 1;
   }
   uVar3 = core_script_cpp_FUN_00567d30();
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (&DAT_0310eca0,"Character %s model %s does not have a part '%s'",in_stack_00000004,uVar3,pcVar4);
   return 0;
 }

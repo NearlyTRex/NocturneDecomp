@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(FILE *dependency_file,char *model_filename)
+; __cdecl void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(_FILE *dependency_file,char *model_filename)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   dependency_file
+; _FILE *          Stack[0x4]:4   dependency_file
 ; char *           Stack[0x8]:4   model_filename
 ;
 ; XREF[2]:
@@ -45,7 +45,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 0047ee3c
     PUSH ECX                            ; 0047ee40
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0047ee41
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0047ee46
     PUSH 0xe8a                          ; 0047ee49
     PUSH 0x620f39                       ; 0047ee4e | = "..\\core\\dmodel.cpp"
@@ -85,7 +85,7 @@ section .text
     PUSH EAX                            ; 0047eea5
     PUSH EBX                            ; 0047eea6
     CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0047eea7
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
     MOV EDX,0x620f6e                    ; 0047eeac | = "..\\core\\dmodel.cpp"
     MOV ECX,0xe8e                       ; 0047eeb1
     ADD ESP,0xc                         ; 0047eeb6

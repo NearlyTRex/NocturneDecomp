@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 72,
-        "line": 20,
+        "line": 19,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -19,6 +19,12 @@
       {
         "category": "other",
         "column": 53,
+        "line": 19,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
         "line": 20,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -30,15 +36,15 @@
       },
       {
         "category": "other",
-        "column": 4,
+        "column": 12,
         "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 4,
         "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -48,49 +54,43 @@
       },
       {
         "category": "other",
-        "column": 4,
+        "column": 12,
         "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 4,
         "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 27,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 37,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 38,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 139,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 10,
     "suspect_types": [
       "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 74
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -116,7 +116,7 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     },
     {
       "addr": "005e1ae0",
@@ -223,63 +223,63 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 12,
       "match": "(SSocketContext *)((int)",
       "text": "support_trisock_cpp_invalidateSocket_FUN_005e1ae0((SSocketContext *)((int)pvVar2 + 0x150));",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EAX",
       "text": "((CNetGame *)(extraout_EAX + -0x170))->connection_type = 0;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 14,
       "match": "extraout_EAX",
       "text": "*(uint *)(extraout_EAX + -0x16c) = 0;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
+      "line": 16,
       "match": "extraout_EAX",
       "text": "*(uint *)(extraout_EAX + -0x154) = 0;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
+      "line": 17,
       "match": "extraout_EAX",
       "text": "*(uint *)(extraout_EAX + -0x60) = 0xffffffff;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 18,
       "match": "extraout_EAX",
       "text": "pcVar4 = (char *)(extraout_EAX + -0x168);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_EAX",
       "text": "*(uint *)(extraout_EAX + -0x5c) = 0xffffffff;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
+      "line": 29,
       "match": "extraout_EAX",
       "text": "*(uint *)(extraout_EAX + -8) = 0;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
+      "line": 30,
       "match": "extraout_EAX",
       "text": "return (CNetGame *)(extraout_EAX + -0x170);",
       "type": "extra_output"

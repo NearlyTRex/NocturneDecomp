@@ -2,12 +2,12 @@
 // Address: 00585c90
 // Address Range: [[00585c90, 00585d2b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *file_handle)
+core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;
@@ -36,7 +36,7 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
   
   bVar6 = 0;
   local_20 = this_ptr;
-  crt_stdio_c_fgets_FUN_005fefd0(local_23c,0xff,file_handle);
+  _fgets(local_23c,0xff,file_handle);
   uVar2 = 0xffffffff;
   pcVar4 = local_23c;
   do {
@@ -68,15 +68,14 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
     pCVar5->name[1] = cVar1;
     pCVar5 = (C3DSCamera *)(pCVar5->name + 2);
   } while (cVar1 != '\0');
-  crt_stdio_c_fscanf_FUN_005fe7c0
-            (file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
              &(this_ptr->position).z);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",&fStack_30,&fStack_2c,auStack_28);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",auStack_1c);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&uStack_240);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->projection_scale);
+  _fscanf(file_handle,"%f,%f,%f\n",&fStack_30,&fStack_2c,auStack_28);
+  _fscanf(file_handle,"%f\n",auStack_1c);
+  _fscanf(file_handle,"%f\n",&uStack_240);
+  _fscanf(file_handle,"%f\n",&this_ptr->projection_scale);
   fVar9 = 8.115118e-39;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)uStack_240);
+  dVar8 = round((double)uStack_240);
   auStack_1c[0] = (uint)ROUND(dVar8);
   if (auStack_1c[0] < 0x2e) {
     if (auStack_1c[0] < 0x17) {
@@ -142,7 +141,7 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
       }
     }
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (acStack_140,"Warning! Camera %s has unknown lens : %f",this_ptr,(double)fVar9);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(acStack_140,0,0);
@@ -154,9 +153,9 @@ LAB_00585deb:
   fStack_3c = fStack_30 - (this_ptr->position).y;
   fStack_38 = fStack_2c - (this_ptr->position).z;
   (this_ptr->orientation).z = (float)local_20;
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_40,(float10)fStack_38);
+  fVar7 = atan2((float10)fStack_40,(float10)fStack_38);
   (this_ptr->orientation).y = (float)fVar7;
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_40,x);
+  fVar7 = atan2((float10)fStack_40,x);
   (this_ptr->orientation).x = (float)-fVar7;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&this_ptr->rotation_matrix,&this_ptr->orientation);

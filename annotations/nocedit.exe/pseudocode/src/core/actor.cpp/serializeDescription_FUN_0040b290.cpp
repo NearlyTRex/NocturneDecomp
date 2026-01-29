@@ -14,7 +14,7 @@ core_actor_cpp_serializeDescription_FUN_0040b290(char *property_description,char
   
   if (g_ActorReadingMode == 1) {
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(g_ActorDataFile);
+      iVar1 = _fgetc(g_ActorDataFile);
       if (iVar1 < 0) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
                   (property_description,property_name);
@@ -25,13 +25,13 @@ core_actor_cpp_serializeDescription_FUN_0040b290(char *property_description,char
     }
   }
   else if ((g_IncludeCommentsWhenWriting == 0) && (property_name != (char *)0x0)) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"    // %s\n",property_name);
+    _fprintf(g_ActorDataFile,"    // %s\n",property_name);
     if ((g_ActorDataFile->_flag & 0x20) == 0) {
       return;
     }
   }
   else {
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"\n");
+    _fprintf(g_ActorDataFile,"\n");
     if ((g_ActorDataFile->_flag & 0x20) == 0) {
       return;
     }

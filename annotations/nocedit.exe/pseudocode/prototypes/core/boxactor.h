@@ -105,7 +105,7 @@ void __cdecl CBoxActor::processInEditor(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_writeDependencies_FUN_00422900
 // Address: 00422900
-void __cdecl CBoxActor::writeDependencies(CBoxActor *this_ptr,FILE *file_handle);
+void __cdecl CBoxActor::writeDependencies(CBoxActor *this_ptr,_FILE *file_handle);
 
 // Original: core_boxactor.cpp_factoryFunc_FUN_00422950
 // Address: 00422950

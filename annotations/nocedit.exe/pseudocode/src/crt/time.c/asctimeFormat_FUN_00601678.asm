@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(tm *timeptr,char *buffer)
+; __watcallStack char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(_tm *timeptr,char *buffer)
 ;
 ; Parameters:
-; tm *             Stack[0x4]:4   timeptr
+; _tm *            Stack[0x4]:4   timeptr
 ; char *           Stack[0x8]:4   buffer
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

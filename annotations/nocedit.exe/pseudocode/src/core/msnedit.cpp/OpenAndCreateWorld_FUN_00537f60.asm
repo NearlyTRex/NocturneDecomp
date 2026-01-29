@@ -143,7 +143,7 @@ section .text
     PUSH EAX                            ; 00538060
     PUSH 0x63bd7a                       ; 00538061 | = "world"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00538066
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0053806b
     MOV ESI,EAX                         ; 0053806e
     TEST EAX,EAX                        ; 00538070
@@ -164,7 +164,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x414]     ; 005380a4 | = "world"
     PUSH EDX                            ; 005380ab | = "world"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 005380ac
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005380b1
     MOV EDI,EAX                         ; 005380b4
     TEST EAX,EAX                        ; 005380b6
@@ -177,12 +177,12 @@ section .text
     PUSH EDI                            ; 005380be
     PUSH ESI                            ; 005380bf
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005380c0
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 005380c5
     PUSH EAX                            ; 005380c8
     DEC EBX                             ; 005380c9
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 005380ca
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 005380cf
     JMP 0x005380ba                      ; 005380d2
         ;   XREF to: 005380ba (UNCONDITIONAL_JUMP)  ; LAB_005380ba
@@ -249,13 +249,13 @@ section .text
     PUSH 0x63bd1b                       ; 0053818d | = "..\\core\\msnedit.cpp"
     PUSH ESI                            ; 00538192
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00538193
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00538198
     PUSH 0x2f5                          ; 0053819b
     PUSH 0x63bd2f                       ; 005381a0 | = "..\\core\\msnedit.cpp"
     PUSH EDI                            ; 005381a5
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005381a6
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005381ab
     PUSH EBP                            ; 005381ae
     MOV EBX,dword ptr [ESP + 0x410]     ; 005381af | = "world"

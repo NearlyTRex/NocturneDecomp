@@ -22,7 +22,7 @@ core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
   pCVar2 = this_ptr->motion_list_ptr;
   if ((0.0 < marker_position) &&
      (marker_position < (float)(pCVar2->motions[motion_index].marker_count + 1))) {
-    dVar6 = crt_math_c_round_FUN_005fe6b0((double)marker_position);
+    dVar6 = round((double)marker_position);
     iVar1 = (int)ROUND(dVar6);
     iVar5 = 0;
     if (0 < iVar1) {

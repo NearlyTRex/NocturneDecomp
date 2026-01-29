@@ -215,7 +215,7 @@ section .text
     PUSH EAX                            ; 0057d0ac
     PUSH 0x647d09                       ; 0057d0ad | = "backdrop"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057d0b2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057d0b7
     MOV dword ptr [ESP + 0x265c],EAX    ; 0057d0ba
     TEST EAX,EAX                        ; 0057d0c1
@@ -255,7 +255,7 @@ section .text
     PUSH EDI                            ; 0057d12c
     PUSH EAX                            ; 0057d12d
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0057d12e
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 0057d133
     INC ESI                             ; 0057d136
     MOV EAX,dword ptr [ESP + 0x2680]    ; 0057d137
@@ -278,7 +278,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2664]    ; 0057d16c
     PUSH EBX                            ; 0057d173
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057d174
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057d179
     MOV ESI,dword ptr [ESP + 0x267c]    ; 0057d17c
     PUSH ESI                            ; 0057d183
@@ -293,7 +293,7 @@ section .text
     PUSH EAX                            ; 0057d1a5
     PUSH 0x647d5d                       ; 0057d1a6 | = "backdrop"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057d1ab
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057d1b0
     MOV dword ptr [ESP + 0x265c],EAX    ; 0057d1b3
     TEST EAX,EAX                        ; 0057d1ba
@@ -314,14 +314,14 @@ section .text
     PUSH 0x100                          ; 0057d1eb
     PUSH 0x2d01f48                      ; 0057d1f0 | g_SourcePaletteData
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0057d1f5
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0057d1fa
     PUSH 0xbf1                          ; 0057d1fd
     PUSH 0x647d8e                       ; 0057d202 | = "..\\core\\setedit.cpp"
     MOV EDX,dword ptr [ESP + 0x2664]    ; 0057d207
     PUSH EDX                            ; 0057d20e
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057d20f
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057d214
     MOV ECX,dword ptr [0x006703ec]      ; 0057d217 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0057d21d | g_CDemonRendererInstance

@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH 0x3e8                          ; 004496b4
     ADD EAX,0x208                       ; 004496b9
     PUSH EAX                            ; 004496be
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004496bf
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004496bf
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffdf8]          ; 004496c4
     MOV dword ptr [EDX + 0x154],0x65c4e4 ; 004496ca | g_CCurtainVTable
     MOV ESI,0x619bd7                    ; 004496d4 | = "SGLASS.RAW"

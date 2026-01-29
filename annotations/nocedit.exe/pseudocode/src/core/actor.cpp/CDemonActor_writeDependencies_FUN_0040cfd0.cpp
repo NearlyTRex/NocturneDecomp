@@ -2,12 +2,12 @@
 // Address: 0040cfd0
 // Address Range: [[0040cfd0, 0040cfd0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor *this_ptr,FILE *file_handle)
+core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor *this_ptr,_FILE *file_handle)
 
 {
   return;

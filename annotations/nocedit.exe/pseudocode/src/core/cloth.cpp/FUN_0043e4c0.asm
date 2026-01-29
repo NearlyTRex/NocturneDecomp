@@ -37,7 +37,7 @@ section .text
     PUSH EAX                            ; 0043e4e3
     PUSH ESI                            ; 0043e4e4
     CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043e4e5
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(_FILE * stream, uchar * output_byte)
     MOV EAX,dword ptr [ESI]             ; 0043e4ea
     ADD ESI,dword ptr [EAX + 0x4]       ; 0043e4ec
     MOV EDI,dword ptr [ESI + 0x10]      ; 0043e4ef

@@ -11,45 +11,45 @@
       },
       {
         "category": "other",
-        "column": 49,
-        "line": 47,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 39,
+        "line": 51,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 49,
-        "line": 51,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 24,
+        "line": 87,
+        "message": "format '%c' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 89,
+        "message": "format '%c' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 91,
+        "message": "format '%c' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 93,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 54,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 87,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 89,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 91,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
         "line": 93,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 93,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -61,14 +61,13 @@
   },
   "complexity": {
     "assembly_lines": 372,
-    "complexity_score": 173,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 28,
     "pseudocode_lines": 103,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "format_string_mismatch",
       "warning_unreachable"
     ],
     "total_lines": 475
@@ -511,61 +510,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0045c93b) */",
       "type": "warning_unreachable"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Move point : %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Move point : %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 44,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"Move point : %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%c\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%c",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 80,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%c\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%c\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%c",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 82,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%c\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%c\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%c",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 84,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%c\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d,%d\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d,%d,%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 86,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%d,%d,%d\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

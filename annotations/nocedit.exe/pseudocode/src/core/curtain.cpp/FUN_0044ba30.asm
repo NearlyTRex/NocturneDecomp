@@ -15,9 +15,9 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
 ;   core_curtain.cpp_FUN_0044bad0
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -52,12 +52,12 @@ section .text
     PUSH 0x65c610                       ; 0044ba6d | g_CCurtainTypeInfo
         ;   Label: LAB_0044ba6d
     PUSH EBX                            ; 0044ba72
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0044ba73
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0044ba73
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0044ba78
     PUSH EAX                            ; 0044ba7b
-    CALL crt_memory.c_free_FUN_005fe659 ; 0044ba7c
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0044ba7c
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0044ba81
     MOV EAX,EBX                         ; 0044ba84
     POP EBX                             ; 0044ba86

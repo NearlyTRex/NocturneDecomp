@@ -24,7 +24,7 @@
 ;   undefined4 DAT_0366b650
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -39,8 +39,8 @@ section .text
 
     PUSH 0x4a0                          ; 0058afe0
         ;   Label: core_skeledit.cpp_FUN_0058afe0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058afe5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058afe5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058afea
     PUSH ESI                            ; 0058afeb
     PUSH EDI                            ; 0058afec

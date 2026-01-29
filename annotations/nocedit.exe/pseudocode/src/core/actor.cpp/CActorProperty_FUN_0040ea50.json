@@ -48,9 +48,9 @@
       },
       {
         "category": "other",
-        "column": 56,
+        "column": 33,
         "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -60,21 +60,9 @@
       },
       {
         "category": "other",
-        "column": 34,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 14,
         "line": 34,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -156,9 +144,15 @@
       },
       {
         "category": "other",
-        "column": 34,
+        "column": 36,
         "line": 169,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'SMotion*' [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 169,
+        "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'char (*)[30]' [-Wformat=]"
       },
       {
         "category": "other",
@@ -222,9 +216,15 @@
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 38,
         "line": 231,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int*' [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 231,
+        "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'int*' [-Wformat=]"
       },
       {
         "category": "other",
@@ -246,15 +246,9 @@
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 268,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 57,
+        "column": 34,
         "line": 271,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -272,12 +266,12 @@
   },
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 1184,
+    "complexity_score": 1164,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
     "pseudocode_lines": 274,
-    "suspect_count": 89,
+    "suspect_count": 87,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
@@ -719,7 +713,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,\"%d\");",
+      "text": "sprintf(in_stack_0000000c,\"%d\");",
       "type": "stack_param"
     },
     {
@@ -1295,28 +1289,6 @@
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c < pcVar9) {",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 20,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 264,
-      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar9,\"%s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "actual_args": 0,

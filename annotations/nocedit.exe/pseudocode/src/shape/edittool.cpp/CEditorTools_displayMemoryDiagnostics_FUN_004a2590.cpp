@@ -28,7 +28,7 @@ shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
   local_24 = 0;
   local_28 = 0;
   uVar4 = 0;
-  while (iVar2 = crt_heap_c_heapCheckWrapper_FUN_006012c0(&local_28), iVar2 == 0) {
+  while (iVar2 = _heapwalk(&local_28), iVar2 == 0) {
     if (local_1e == 0) {
       iVar3 = iVar3 + 1;
       iVar6 = iVar6 + local_22;
@@ -44,7 +44,7 @@ shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
   case 4:
     if (0 < iVar3) {
       local_18 = iVar6;
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (output_buffer,"Blocks: %d Total: %.1fk Max: %.1fk",iVar3,
                  (double)iVar6 * 0.0009765625,
                  (double)(int)uVar4 * 0.0009765625);

@@ -10,6 +10,6 @@ void __cdecl core_texlist_cpp_staticInit_FUN_005dbdb0(void)
 
 {
   core_texlist_cpp_CTextureList_ctor_FUN_005dbdd0(&g_CTextureListInstance);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_CTextureListDestructorNode);
+  _atexit(&g_CTextureListDestructorNode);
   return;
 }

@@ -53,7 +53,7 @@ engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     } while (iVar1 < other2 * bitmap_index);
   }
   if (local_20 == this_ptr->load_flags) {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_16c,"No character markers found in font file (%s).",this_ptr->bitmap_files + bitmapcount);
     g_CurrentLineNumber = 0x1cd;
     g_CurrentFilename = "..\\engine\\font.cpp";
@@ -102,7 +102,7 @@ engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
             local_18 = 1;
             local_28 = iVar7;
             if (0xff < iVar1) {
-              crt_stdio_c_sprintf_FUN_005fdbd0
+              sprintf
                         (local_16c,"Too many chars: fontfile %s, chars %d",local_2c,iVar1);
               g_CurrentLineNumber = 0x201;
               g_CurrentFilename = "..\\engine\\font.cpp";
@@ -159,6 +159,6 @@ engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
   this_ptr->current_max_width = this_ptr->max_char_width;
   g_CurrentDebugFilename = "..\\engine\\font.cpp";
   g_CurrentDebugLine = 0x23e;
-  crt_memory_c_free_FUN_005fe659(local_40);
+  shape_memdbg_cpp_free_FUN_005fe659(local_40);
   return;
 }

@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SIZE_T __cdecl crt_stdio_c_fread_FUN_005fd990(void *buffer,SIZE_T size,SIZE_T count,FILE *file)
+; __cdecl SIZE_T __cdecl crt_stdio_c_fread_FUN_005fd990(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   buffer
 ; SIZE_T           Stack[0x8]:4   size
 ; SIZE_T           Stack[0xc]:4   count
-; FILE *           Stack[0x10]:4   file
+; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[51]:
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 at 00431b78
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 005fda08 (CONDITIONAL_JUMP)  ; LAB_005fda08
     PUSH EBX                            ; 005fd9ff
     CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 005fda00
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
     ADD ESP,0x4                         ; 005fda05
     XOR EBP,EBP                         ; 005fda08
         ;   Label: LAB_005fda08
@@ -195,7 +195,7 @@ section .text
     PUSH EBX                            ; 005fdae2
         ;   Label: LAB_005fdae2
     CALL crt_stdio.c_FillInputBuffer_FUN_005fe940 ; 005fdae3
-        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(FILE * file)
+        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(_FILE * file)
     ADD ESP,0x4                         ; 005fdae8
     TEST EAX,EAX                        ; 005fdaeb
     JZ 0x005fdb69                       ; 005fdaed
@@ -212,7 +212,7 @@ section .text
         ;   XREF to: 005fdb12 (CONDITIONAL_JUMP)  ; LAB_005fdb12
     PUSH EBX                            ; 005fdb05
     CALL crt_stdio.c_FillInputBuffer_FUN_005fe940 ; 005fdb06
-        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(FILE * file)
+        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(_FILE * file)
     ADD ESP,0x4                         ; 005fdb0b
     TEST EAX,EAX                        ; 005fdb0e
     JZ 0x005fdb69                       ; 005fdb10
@@ -234,7 +234,7 @@ section .text
         ;   XREF to: 005fdb3e (CONDITIONAL_JUMP)  ; LAB_005fdb3e
     PUSH EBX                            ; 005fdb31
     CALL crt_stdio.c_FillInputBuffer_FUN_005fe940 ; 005fdb32
-        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(FILE * file)
+        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(_FILE * file)
     ADD ESP,0x4                         ; 005fdb37
     TEST EAX,EAX                        ; 005fdb3a
     JZ 0x005fdb69                       ; 005fdb3c

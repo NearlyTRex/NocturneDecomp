@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl crt_stdio_c_fopenThreadSafe_FUN_00601b14(char *filename,char *mode,FILE **output_file_ptr)
+; __cdecl _FILE * __cdecl crt_stdio_c_fopenThreadSafe_FUN_00601b14(char *filename,char *mode,_FILE **output_file_ptr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; char *           Stack[0x8]:4   mode
-; FILE * *         Stack[0xc]:4   output_file_ptr
+; _FILE * *        Stack[0xc]:4   output_file_ptr
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b2e
@@ -79,7 +79,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00601b83
     PUSH EAX                            ; 00601b87
     CALL crt_stdio.c_OpenFileAndInitialize_FUN_0060190c ; 00601b88
-        ;   XREF to: 0060190c (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, ...)
+        ;   XREF to: 0060190c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, ...)
     ADD ESP,0x18                        ; 00601b8d
     MOV ESI,EAX                         ; 00601b90
     PUSH EBX                            ; 00601b92

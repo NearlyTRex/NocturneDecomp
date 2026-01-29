@@ -8,33 +8,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 41,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 47,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 75,
+    "complexity_score": 73,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 21,
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 38,
     "suspect_count": 3,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 101
+    "total_lines": 99
   },
   "cross_references": [],
   "function": {
@@ -47,13 +35,13 @@
     ],
     "convention": "__cdecl",
     "name": "shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0",
-    "signature": "void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_file)"
+    "signature": "void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file)"
   },
   "function_calls": [
     {
       "addr": "005ff9f3",
       "is_variadic": false,
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe6d0",
@@ -234,7 +222,7 @@
         "name": "output_file",
         "offset": 12,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -243,21 +231,21 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
-      "text": "FILE *in_stack_00000004;",
+      "text": "_FILE *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 33,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,\"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\\n\",iVar10,*piVar8,*piVar7,",
+      "text": "_fprintf(in_stack_00000004,\"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\\n\",iVar10,*piVar8,*piVar7,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 38,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,\"%ux%u square found using %u padding.\\n\",g_CramCurrentAcceptableSize,",
+      "text": "_fprintf(in_stack_00000004,\"%ux%u square found using %u padding.\\n\",g_CramCurrentAcceptableSize,",
       "type": "stack_param"
     }
   ]

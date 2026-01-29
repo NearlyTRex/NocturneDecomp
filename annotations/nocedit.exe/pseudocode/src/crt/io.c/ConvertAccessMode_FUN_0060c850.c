@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_io_c_ConvertAccessMode_FUN_0060c850(int access_mode,DWORD *desired_access,DWORD *share_mode)
+ConvertAccessMode(int access_mode,DWORD *desired_access,DWORD *share_mode)
 
 {
   if (access_mode == 2) {

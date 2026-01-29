@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8
 ;   crt_init.c_ProcessInitTermHandlers_FUN_0060ac30
-;   crt_memory.c_GetMemoryBounds_FUN_0060a6a0
+;   crt_memory.c___GetStackLimits_FUN_0060a6a0
 ;   crt_startup.c_initialize_runtime_FUN_0060245c
 ;   crt_sync.c_CriticalSectionStub_FUN_00602458
 ;   crt_thread.c_GetTLS_FUN_0060242c
@@ -40,8 +40,8 @@ section .text
     PUSH 0x684ff4                       ; 006026c2 | DAT_00684ff4
     CALL dword ptr [0x00684ee4]         ; 006026c7 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
     PUSH EAX                            ; 006026cd
-    CALL crt_memory.c_GetMemoryBounds_FUN_0060a6a0 ; 006026ce
-        ;   XREF to: 0060a6a0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_GetMemoryBounds_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)
+    CALL crt_memory.c___GetStackLimits_FUN_0060a6a0 ; 006026ce
+        ;   XREF to: 0060a6a0 (UNCONDITIONAL_CALL)  ; void crt_memory.c___GetStackLimits_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)
     ADD ESP,0x8                         ; 006026d3
     MOV EBX,dword ptr [ESP + 0x8]       ; 006026d6
     PUSH EBX                            ; 006026da

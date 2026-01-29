@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 long __cdecl
-crt_stdlib_c_strtol_internal_FUN_0060ec70(char *str,char **endptr,int base,int is_signed)
+strtol_internal(char *str,char **endptr,int base,int is_signed)
 
 {
   char cVar1;
@@ -43,7 +43,7 @@ crt_stdlib_c_strtol_internal_FUN_0060ec70(char *str,char **endptr,int base,int i
   }
   else {
     if ((base < 2) || (0x24 < base)) {
-      crt_errno_c_setErrno_FUN_00602790(0xd);
+      setErrno(0xd);
       return 0;
     }
     if (base != 0x10) goto LAB_0060ed14;
@@ -55,7 +55,7 @@ LAB_0060ed14:
   bVar2 = false;
   pcVar5 = pcVar4;
   pvVar7 = (void *)0x0;
-  while (iVar3 = crt_stdlib_c_charToDigit_FUN_0060ee18(*pcVar5), iVar3 < base) {
+  while (iVar3 = charToDigit(*pcVar5), iVar3 < base) {
     if ((&PTR_crt_thread_c_exit_thread_FUN_0060fa58_00685598)[base] < pvVar7) {
       bVar2 = true;
     }
@@ -79,7 +79,7 @@ LAB_0060ed14:
     }
     return (long)pvVar7;
   }
-  crt_errno_c_setErrno_FUN_00602790(0xe);
+  setErrno(0xe);
   if (is_signed == 0) {
     return -1;
   }

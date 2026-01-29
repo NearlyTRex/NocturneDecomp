@@ -21,7 +21,7 @@ core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformable
   int *local_18;
   int local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x34);
+  __STK(0x34);
   if (in_stack_00000004[0x2e] != 1) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xa72;
@@ -52,7 +52,7 @@ core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformable
       }
       iVar4 = in_stack_00000004[0x2f];
       in_stack_00000004[0x2f] = iVar4 + -1;
-      crt_string_c_memmove_FUN_005fe5e0(local_1c,local_20,((iVar4 + -1) - iVar3) * 0x48);
+      memmove(local_1c,local_20,((iVar4 + -1) - iVar3) * 0x48);
       local_14 = 0;
       piVar5 = in_stack_00000004;
       if (0 < *in_stack_00000004) {

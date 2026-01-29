@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_sprintf_FUN_005fdbd0(char *buffer,char *format,...)
+int __cdecl sprintf(char *buffer,char *format,...)
 
 {
   int iVar1;
   va_list_t args;
   
   args = &stack0x0000000c;
-  iVar1 = crt_stdio_c_vsprintf_FUN_005fdba8(buffer,format,&args);
+  iVar1 = vsprintf(buffer,format,&args);
   return iVar1;
 }

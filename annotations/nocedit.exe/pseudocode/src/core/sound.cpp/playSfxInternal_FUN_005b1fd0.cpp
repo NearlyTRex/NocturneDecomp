@@ -15,8 +15,8 @@ core_sound_cpp_playSfxInternal_FUN_005b1fd0
   float fVar1;
   int iVar2;
   uint uVar3;
-  FILE *file;
-  tm *timeptr;
+  _FILE *file;
+  _tm *timeptr;
   float fVar4;
   char cVar5;
   char *pcVar6;
@@ -57,16 +57,16 @@ core_sound_cpp_playSfxInternal_FUN_005b1fd0
             && (cVar5 = *local_38, cVar5 != '@')) && (cVar5 != '*'))) {
       if (cVar5 == '[') {
         local_34 = -1;
-        crt_stdio_c_sscanf_FUN_0060013c(local_38,"[%d,%d]%n");
+        sscanf(local_38,"[%d,%d]%n");
         if ((local_34 < 5) || (local_2c < local_30)) {
           g_CurrentFilename = "..\\core\\sound.cpp";
           g_CurrentLineNumber = 0x137;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
         }
-        iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"?");
+        iVar2 = sprintf(pcVar7,"?");
         pcVar6 = pcVar7 + iVar2;
         if (9 < local_2c) {
-          iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,"?");
+          iVar2 = sprintf(pcVar6,"?");
           pcVar6 = pcVar6 + iVar2;
         }
         local_38 = local_38 + local_34;
@@ -187,7 +187,7 @@ LAB_005b20b2:
       if ((g_MissingSoundsInitFlag & 1) == 0) {
         g_MissingSoundsInitFlag = g_MissingSoundsInitFlag | 1;
         shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&g_MissingSoundsList);
-        crt_stdlib_c_atexit_FUN_005ff060(&g_MissingSoundsListDestructorNode);
+        _atexit(&g_MissingSoundsListDestructorNode);
       }
       iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&g_MissingSoundsList,local_114);
       if (iVar2 < 0) {
@@ -195,20 +195,20 @@ LAB_005b20b2:
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          ("\\\\q\\xfer\\fletch\\missingwavs.txt",(char *)0x0,"at",
                           "..\\core\\sound.cpp",0x181);
-        if (file != (FILE *)0x0) {
-          crt_stdio_c_fprintf_FUN_005fe6d0(file,"----------------------------------------------------------------\n");
-          crt_time_c_time_with_rounding_FUN_006001f0(&local_28);
-          crt_stdio_c_fprintf_FUN_005fe6d0(file,"Missing: %s\n");
-          timeptr = crt_time_c_localtime_FUN_00600288(&local_28);
-          crt_time_c_asctime_FUN_00601768(timeptr);
-          crt_stdio_c_fprintf_FUN_005fe6d0(file,"Time: %s");
-          pcVar7 = crt_env_c_getenv_FUN_006013f0("USERNAME");
+        if (file != (_FILE *)0x0) {
+          _fprintf(file,"----------------------------------------------------------------\n");
+          time(&local_28);
+          _fprintf(file,"Missing: %s\n");
+          timeptr = localtime(&local_28);
+          asctime(timeptr);
+          _fprintf(file,"Time: %s");
+          pcVar7 = getenv("USERNAME");
           if (pcVar7 != (char *)0x0) {
-            crt_stdio_c_fprintf_FUN_005fe6d0(file,"USERNAME: %s\n");
+            _fprintf(file,"USERNAME: %s\n");
           }
-          pcVar7 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME");
+          pcVar7 = getenv("COMPUTERNAME");
           if (pcVar7 != (char *)0x0) {
-            crt_stdio_c_fprintf_FUN_005fe6d0(file,"COMPUTERNAME: %s\n");
+            _fprintf(file,"COMPUTERNAME: %s\n");
           }
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\sound.cpp",400);
           return 0;
@@ -223,7 +223,7 @@ LAB_005b20b2:
       if ((g_CharacterClassificationTable[(byte)(*local_38 + 1)] & 2U) == 0) {
         if (*local_38 == '@') {
           local_24 = -1;
-          crt_stdio_c_sscanf_FUN_0060013c(local_38,"@%f%n",&local_17c);
+          sscanf(local_38,"@%f%n",&local_17c);
           if ((local_24 < 2) || (local_17c < 0.0)) {
             g_CurrentFilename = "..\\core\\sound.cpp";
             g_CurrentLineNumber = 0x1a4;
@@ -236,7 +236,7 @@ LAB_005b20b2:
         }
         else if (*local_38 == '*') {
           local_20 = -1;
-          crt_stdio_c_sscanf_FUN_0060013c(local_38,"*%f%n",&local_180);
+          sscanf(local_38,"*%f%n",&local_180);
           if ((local_20 < 2) || (local_180 <= 0.0)) {
             g_CurrentFilename = "..\\core\\sound.cpp";
             g_CurrentLineNumber = 0x1aa;

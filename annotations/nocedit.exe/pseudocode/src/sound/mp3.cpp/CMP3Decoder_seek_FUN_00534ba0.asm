@@ -37,7 +37,7 @@ section .text
     MOV ECX,dword ptr [EDI]             ; 00534bcc
     PUSH ECX                            ; 00534bce
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 00534bcf
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     MOV dword ptr [EDI + 0x10],0x0      ; 00534bd4
     MOV dword ptr [EDI + 0x14],0x0      ; 00534bdb
     MOV dword ptr [EDI + 0xc],0x0       ; 00534be2

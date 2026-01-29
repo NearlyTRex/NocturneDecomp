@@ -45,7 +45,7 @@ void core_msnedit_cpp_FUN_0053ec80(void)
           in_stack_ffffd550 = this_ptr;
           core_actor_cpp_CActorProperty_FUN_0040ea50();
           if (acStack_d0[0] != '\0') {
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1fc,"%s\t%s %s",acStack_d0);
+            sprintf(acStack_1fc,"%s\t%s %s",acStack_d0);
             in_stack_ffffd554 = acStack_1fc;
             in_stack_ffffd550 = (CDemonActor *)(local_5ac + 8);
             shape_edittool_cpp_CStrList_add_FUN_004a2b80

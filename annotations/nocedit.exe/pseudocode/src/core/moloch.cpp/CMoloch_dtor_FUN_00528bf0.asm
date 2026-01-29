@@ -18,9 +18,9 @@
 ;   core_hero.cpp_CHero_dtor_FUN_004f2470
 ;   core_morph.cpp_CMorphModel_FUN_0052b330
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -62,12 +62,12 @@ section .text
     PUSH 0x661ab0                       ; 00528c47 | g_CMolochTypeInfo
         ;   Label: LAB_00528c47
     PUSH EBX                            ; 00528c4c
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 00528c4d
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 00528c4d
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00528c52
     PUSH EAX                            ; 00528c55
-    CALL crt_memory.c_free_FUN_005fe659 ; 00528c56
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00528c56
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00528c5b
     MOV EAX,EBX                         ; 00528c5e
     POP EBX                             ; 00528c60

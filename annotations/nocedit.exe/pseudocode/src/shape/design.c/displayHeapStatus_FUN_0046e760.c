@@ -11,7 +11,7 @@ void __cdecl shape_design_c_displayHeapStatus_FUN_0046e760(int line_number)
 {
   uint uVar1;
   
-  uVar1 = crt_watcom_c_heapchk_FUN_00600ad0();
+  uVar1 = _heapchk();
   switch(uVar1) {
   case 0:
     engine_2d_c_drawText_FUN_00401fd0("OK - heap is good",0,line_number * 0xb);

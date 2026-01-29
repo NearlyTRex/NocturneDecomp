@@ -13,7 +13,7 @@ void crt_unknown_c_FUN_006093e8(void)
   
   while (g_FreeListHeadPointer != (uint *)0x0) {
     puVar1 = (uint *)*g_FreeListHeadPointer;
-    crt_memory_c_free_FUN_00601cd0(g_FreeListHeadPointer);
+    free(g_FreeListHeadPointer);
     g_FreeListHeadPointer = puVar1;
   }
   return;

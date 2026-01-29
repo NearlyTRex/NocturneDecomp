@@ -13,7 +13,7 @@ void core_passngr_cpp_FUN_005462f0(void)
 
 {
   CDemonActor *in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
   return;

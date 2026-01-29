@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_stdio_c_IntegerToString_FUN_00607d18(int value,char *buffer,int base)
+char * __cdecl IntegerToString(int value,char *buffer,int base)
 
 {
   char *buffer_00;
@@ -17,6 +17,6 @@ char * __cdecl crt_stdio_c_IntegerToString_FUN_00607d18(int value,char *buffer,i
     buffer_00 = buffer + 1;
     *buffer = '-';
   }
-  crt_stdlib_c_itoa_FUN_00607cc0(value,buffer_00,base);
+  itoa(value,buffer_00,base);
   return buffer;
 }

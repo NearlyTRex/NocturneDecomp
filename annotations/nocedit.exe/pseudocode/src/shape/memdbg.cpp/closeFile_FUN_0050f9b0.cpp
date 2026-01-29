@@ -2,12 +2,12 @@
 // Address: 0050f9b0
 // Address Range: [[0050f9b0, 0050fb94]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int line_number)
+// Signature: int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source_file,int line_number)
 
 #include "nocturne.h"
 
 int __cdecl
-shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int line_number)
+shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source_file,int line_number)
 
 {
   int iVar1;
@@ -19,7 +19,7 @@ shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int lin
     }
     wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(g_FileMutex);
   }
-  if (file_ptr == (FILE *)0x0) {
+  if (file_ptr == (_FILE *)0x0) {
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
     if (g_RecursiveCallFlag != 0) {
       return 0;
@@ -33,7 +33,7 @@ shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int lin
   if (0 < g_OpenFileCount) {
     iVar1 = 0;
     do {
-      if (file_ptr == *(FILE **)((int)&g_FileRegistry[0].file_ptr + iVar1)) {
+      if (file_ptr == *(_FILE **)((int)&g_FileRegistry[0].file_ptr + iVar1)) {
         if (g_FileRegistry[0].directory[iVar1] == '\0') {
           shape_memdbg_cpp_traceFile_FUN_0050f180
                     ("Closing %s at %s line %d, originally opened for %s at %s line %d",g_FileRegistry[0].filename + iVar1,
@@ -48,11 +48,11 @@ shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int lin
           ;
         }
         g_OpenFileCount = g_OpenFileCount + -1;
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   (g_FileRegistry + iVar2,g_FileRegistry + iVar2 + 1,
                    (g_OpenFileCount - iVar2) * 0x328);
         wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
-        iVar2 = crt_stdio_c_closeTrackedFile_FUN_00601ea0(file_ptr);
+        iVar2 = _fclose(file_ptr);
         return iVar2;
       }
       iVar1 = iVar1 + 0x328;

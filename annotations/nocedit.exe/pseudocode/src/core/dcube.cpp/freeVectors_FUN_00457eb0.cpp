@@ -9,6 +9,6 @@
 void __cdecl core_dcube_cpp_freeVectors_FUN_00457eb0(CVector3f **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x10,&g_CVectorTypeInfo);
+  __arrfini(array,0x10,&g_CVectorTypeInfo);
   return;
 }

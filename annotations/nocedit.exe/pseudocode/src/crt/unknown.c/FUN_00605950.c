@@ -11,6 +11,6 @@
 void crt_unknown_c_FUN_00605950(void)
 
 {
-  crt_stdio_c_FlushFilesByMask_FUN_0060595c(0xffffffff);
+  FlushFilesByMask(0xffffffff);
   return;
 }

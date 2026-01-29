@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_system_c_sleep_FUN_00600790(DWORD milliseconds)
+void __cdecl sleep(DWORD milliseconds)
 
 {
   (*g_SleepFunc)(milliseconds);

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n)
+void * __cdecl memmove(void *dest,void *src,SIZE_T n)
 
 {
   uint uVar1;

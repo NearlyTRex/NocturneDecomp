@@ -20,7 +20,7 @@ shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
     local_40[0] = '\0';
   }
   else {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_40,"%g,%g,%g",(double)result_ptr->x,(double)result_ptr->y,
                (double)result_ptr->z);
   }
@@ -30,7 +30,7 @@ shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
     if (iVar1 == 0) {
       return 0;
     }
-    iVar1 = crt_stdio_c_sscanf_FUN_0060013c(local_40,"%f%*[ ,]%f%*[ ,]%f");
+    iVar1 = sscanf(local_40,"%f%*[ ,]%f%*[ ,]%f");
     if (iVar1 == 3) break;
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (editor_tools,"Please enter a valid vector.");

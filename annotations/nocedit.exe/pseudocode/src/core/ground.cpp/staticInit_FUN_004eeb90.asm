@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_ctor_FUN_004eee80
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
         ;   XREF to: 004eee80 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_ctor_FUN_004eee80(CGround * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004eeba4
     PUSH 0x67cbb8                       ; 004eeba7 | g_CGroundDestructorNode
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 004eebac
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004eebac
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004eebb1
     RET                                 ; 004eebb4
 

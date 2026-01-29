@@ -27,7 +27,7 @@ core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
   else {
     if (frame_number < (float)(pCVar1->motions[motion_index].frame_count + -1)) {
       fVar3 = (float)pCVar1->motions[motion_index].frame_start + frame_number;
-      dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+      dVar4 = round((double)fVar3);
       *out_frame1 = (int)ROUND(dVar4);
       *out_frame2 = *out_frame1 + 1;
       *out_blend_weight = fVar3 - (float)*out_frame1;
@@ -42,7 +42,7 @@ core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
       *out_blend_weight = 0.0;
       return;
     }
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)((float)this_ptr->motion_list_ptr->motions
                                        [pCVar1->motions[motion_index].exit_forward_to_motion].
                                        frame_start +

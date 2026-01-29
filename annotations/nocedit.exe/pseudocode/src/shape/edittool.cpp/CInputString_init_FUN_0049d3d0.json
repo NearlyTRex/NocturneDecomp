@@ -26,14 +26,15 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 50,
+    "complexity_score": 85,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 35,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unnamed_param"
     ],
     "total_lines": 86
   },
@@ -158,11 +159,32 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param4",
+      "text": "(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param5",
+      "text": "(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(CInputString *)((int)",
       "text": "pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param4",
+      "text": "this_ptr->mask_mode = param4;",
+      "type": "unnamed_param"
     }
   ]
 }

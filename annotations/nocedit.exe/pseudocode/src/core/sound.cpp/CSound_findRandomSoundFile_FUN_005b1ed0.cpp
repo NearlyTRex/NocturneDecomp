@@ -42,7 +42,7 @@ core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0
   if (g_SoundMatchCount < 1) {
     return;
   }
-  iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+  iVar2 = rand();
   pcVar3 = g_SoundMatchedFilenames[iVar2 % g_SoundMatchCount];
   do {
     cVar1 = *pcVar3;

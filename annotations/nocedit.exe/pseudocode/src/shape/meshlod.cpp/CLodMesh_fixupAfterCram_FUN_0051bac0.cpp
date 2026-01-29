@@ -53,10 +53,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
           }
           piVar3 = piVar3 + 2;
         } while (piVar3 != piVar5 + 6);
-        dVar6 = crt_math_c_floor_FUN_005feb90((double)((local_18 + 4.0) * (float)0.00390625));
+        dVar6 = floor((double)((local_18 + 4.0) * (float)0.00390625));
         local_34 = (float)((ulonglong)dVar6 >> 0x20);
         local_1c = (float)((float10)dVar6 * (float10)256);
-        dVar6 = crt_math_c_floor_FUN_005feb90
+        dVar6 = floor
                           ((double)((local_18 + local_28) * (float)0.00390625));
         local_1c = (float)((float10)dVar6 * (float10)256);
         piVar3 = piVar5;

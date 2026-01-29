@@ -32,7 +32,7 @@ void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_ind
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
   if ((iVar2 != -2) &&
-     (local_18 = crt_stdio_c_sscanf_FUN_0060013c(local_70,"%d,%d",&local_20,&local_1c),
+     (local_18 = sscanf(local_70,"%d,%d",&local_20,&local_1c),
      local_18 == 2)) {
     if (((int)local_20 < 0) ||
        ((((int)local_1c < 0 || (g_VertexCount + -1 < (int)local_20)) ||

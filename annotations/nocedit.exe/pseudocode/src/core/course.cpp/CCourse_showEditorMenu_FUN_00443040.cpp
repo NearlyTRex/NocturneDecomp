@@ -71,12 +71,12 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
     else {
       pcVar3 = "ON";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_ec,"L. Loop flag is now %s",pcVar3);
+    sprintf(local_ec,"L. Loop flag is now %s",pcVar3);
     engine_2d_c_drawText_FUN_00401fd0(local_ec,0,0xa5);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     uVar4 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    local_1c = crt_ctype_c_toupper_FUN_005ff9e0(uVar4 & 0xff);
+    local_1c = toupper(uVar4 & 0xff);
     if (local_1c < 0x35) {
       if (local_1c < 0x32) {
         if ((local_1c == 0x31) &&
@@ -114,7 +114,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           if (iVar6 == 0) goto LAB_004431bd;
           iVar6 = core_course_cpp_OpeningCourseFile2_FUN_00442d70();
         } while (iVar6 == 0);
-        crt_string_c_splitpath_FUN_005ff178(local_4fc,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
+        splitpath(local_4fc,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
         ;
         pcVar9 = ".pth";
         iVar6 = -1;
@@ -152,7 +152,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           if (iVar6 == 0) goto LAB_004431bd;
           iVar6 = core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0();
         } while (iVar6 == 0);
-        crt_string_c_splitpath_FUN_005ff178(local_3f8,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
+        splitpath(local_3f8,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
         ;
         pcVar9 = ".pth";
         iVar6 = -1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,FILE *file_struct)
+; __cdecl _FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,_FILE *file_struct)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   parsed_mode_flags
 ; int              Stack[0x10]:4   stage1_result
 ; int              Stack[0x14]:4   additional_flags
-; FILE *           Stack[0x18]:4   file_struct
+; _FILE *          Stack[0x18]:4   file_struct
 ;
 ; XREF[2]:
 ;   crt_stdio.c_fopenThreadSafe_FUN_00601b14 at 00601b88
@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005feb30
+;   crt_stdio.c___freefp_FUN_006093b0
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074
-;   crt_stdio.c_DeallocateFileStruct_FUN_006093b0
 ;   crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;
@@ -109,8 +109,8 @@ section .text
     JNZ 0x006019c2                      ; 006019b0
         ;   XREF to: 006019c2 (CONDITIONAL_JUMP)  ; LAB_006019c2
     PUSH EBX                            ; 006019b2
-    CALL crt_stdio.c_DeallocateFileStruct_FUN_006093b0 ; 006019b3
-        ;   XREF to: 006093b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DeallocateFileStruct_FUN_006093b0(FILE * file_struct)
+    CALL crt_stdio.c___freefp_FUN_006093b0 ; 006019b3
+        ;   XREF to: 006093b0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c___freefp_FUN_006093b0(_FILE * file_handle)
     ADD ESP,0x4                         ; 006019b8
     XOR EAX,EAX                         ; 006019bb
     POP EBP                             ; 006019bd
@@ -138,12 +138,12 @@ section .text
     PUSH 0x0                            ; 00601a03
     PUSH EBX                            ; 00601a05
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 00601a06
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00601a0b
     PUSH EBX                            ; 00601a0e
         ;   Label: LAB_00601a0e
     CALL crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0 ; 00601a0f
-        ;   XREF to: 00608ee0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)
+        ;   XREF to: 00608ee0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(_FILE * file)
     ADD ESP,0x4                         ; 00601a14
     MOV EAX,EBX                         ; 00601a17
     POP EBP                             ; 00601a19

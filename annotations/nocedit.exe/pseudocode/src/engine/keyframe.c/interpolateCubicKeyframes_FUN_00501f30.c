@@ -101,18 +101,18 @@ engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *he
   piVar19 = (int *)((&header[0x17].base.count)[iVar20] + 0x14);
   iVar5 = *(int *)(iVar4 + 0x10);
   uVar31 = 0x502101;
-  dVar26 = crt_math_c_round_FUN_005fe6b0
+  dVar26 = round
                      ((double)((fVar23 * (float10)0.5f -
                                fVar22 * (float10)0.5f) * (float10)65536
                               ));
   local_28 = (int *)(int)ROUND(dVar26);
   uVar30 = 0x50210c;
-  dVar26 = crt_math_c_round_FUN_005fe6b0((double)fVar24);
+  dVar26 = round((double)fVar24);
   fVar24 = (float10)dVar26;
   uVar29 = 0x502113;
-  dVar26 = crt_math_c_round_FUN_005fe6b0((double)fVar25);
+  dVar26 = round((double)fVar25);
   uVar28 = 0x50211a;
-  dVar27 = crt_math_c_round_FUN_005fe6b0
+  dVar27 = round
                      ((double)((fVar23 * fVar7 + fVar22 * fVar6 + (float10)(float)(fVar21 * fVar8))
                               * fVar9));
   iVar20 = (int)ROUND(fVar24);

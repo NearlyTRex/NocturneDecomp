@@ -19,7 +19,7 @@ int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList 
   if (0 < this_ptr->state_count) {
     str1 = this_ptr->state_names;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(*str1,in_stack_00000008);
+      iVar1 = stricmp(*str1,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }

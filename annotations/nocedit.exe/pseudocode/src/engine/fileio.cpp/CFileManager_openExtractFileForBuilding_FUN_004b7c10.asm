@@ -36,7 +36,7 @@ section .text
     PUSH 0x0                            ; 004b7c1f
     PUSH 0x628041                       ; 004b7c21 | = "level.lst"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b7c26
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004b7c2b
     MOV EDX,dword ptr [ESP + 0x4]       ; 004b7c2e
     MOV dword ptr [EDX],EAX             ; 004b7c32

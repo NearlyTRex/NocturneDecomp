@@ -23,7 +23,7 @@ void core_skeledit_cpp_FUN_0058ede0(void)
   int local_20;
   int local_1c;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(100);
+  __STK(100);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Searching for duplicate faces.");
   local_50 = 0;
@@ -55,10 +55,10 @@ LAB_0058ee5a:
                 if (iVar2 == 3) {
                   iVar3 = local_54[0x15];
                   local_54[0x15] = iVar3 + -1;
-                  crt_string_c_memmove_FUN_005fe5e0
+                  memmove
                             ((void *)(local_54[0x1f] + local_38),(void *)(local_3c + local_54[0x1f])
                              ,((iVar3 + -1) - local_30) * 0x12);
-                  crt_string_c_memmove_FUN_005fe5e0
+                  memmove
                             ((void *)(local_54[0x24] + local_30 * 4),
                              (void *)(local_40 + local_54[0x24]),(local_54[0x15] - local_30) * 4);
                   goto LAB_0058ee5a;

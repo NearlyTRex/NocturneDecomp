@@ -23,7 +23,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_init_FUN_00515880(CLodMesh *this_ptr)
   this_ptr->lod_level_count = 0;
   this_ptr->lod_levels_ptr = (CLodEdge *)0x0;
   this_ptr->active_attribute_count = 0;
-  crt_memory_c_memset_FUN_005fde40(this_ptr->attribute_enabled_flags,0,0x10);
+  memset(this_ptr->attribute_enabled_flags,0,0x10);
   this_ptr->sort_attribute_count = 0;
   this_ptr->reserved_attribute_count = 0;
   this_ptr->submesh_count = 0;
@@ -34,6 +34,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_init_FUN_00515880(CLodMesh *this_ptr)
   (this_ptr->center_offset).z = 0.0;
   (this_ptr->center_offset).y = (this_ptr->center_offset).z;
   (this_ptr->center_offset).x = (this_ptr->center_offset).y;
-  this_ptr->precompute_file = (FILE *)0x0;
+  this_ptr->precompute_file = (_FILE *)0x0;
   return;
 }

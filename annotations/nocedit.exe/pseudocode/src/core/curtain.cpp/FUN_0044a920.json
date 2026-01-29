@@ -72,15 +72,9 @@
       },
       {
         "category": "other",
-        "column": 46,
+        "column": 20,
         "line": 71,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 82,
-        "line": 71,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -1030,7 +1024,7 @@
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_00000004",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20((char *)(in_stack_00000004 + 0x194),\"none\");",
+      "text": "iVar3 = strcmp((char *)(in_stack_00000004 + 0x194),\"none\");",
       "type": "stack_param"
     },
     {

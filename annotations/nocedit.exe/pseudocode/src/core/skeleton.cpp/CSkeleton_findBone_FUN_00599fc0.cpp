@@ -18,7 +18,7 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_pt
   if (0 < this_ptr->bone_count) {
     str1 = this_ptr->bone_list;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->bone_name,bone_name);
+      iVar1 = stricmp(str1->bone_name,bone_name);
       if (iVar1 == 0) {
         return iVar2;
       }

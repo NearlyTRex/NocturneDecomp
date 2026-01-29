@@ -9,8 +9,8 @@
       },
       {
         "category": "other",
-        "column": 31,
-        "line": 158,
+        "column": 27,
+        "line": 157,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -120,31 +120,31 @@
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 158,
+        "column": 18,
+        "line": 157,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 164,
+        "line": 163,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 341,
-    "complexity_score": 207,
+    "complexity_score": 206,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 21,
-    "pseudocode_lines": 157,
+    "pseudocode_lines": 156,
     "suspect_count": 4,
     "suspect_types": [
       "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 498
+    "total_lines": 497
   },
   "cross_references": [
     {
@@ -524,14 +524,14 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 150,
       "match": "(void *)((int)",
-      "text": "((void *)((int)this_ptr->terrain_data + iVar4 * 4 + 2),1,2,local_1c);",
+      "text": "_fread((void *)((int)this_ptr->terrain_data + iVar4 * 4 + 2),1,2,local_1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 159,
+      "line": 158,
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"

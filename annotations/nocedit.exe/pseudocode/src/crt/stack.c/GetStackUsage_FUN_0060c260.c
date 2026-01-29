@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stack_c_GetStackUsage_FUN_0060c260(void)
+int __cdecl GetStackUsage(void)
 
 {
   ThreadData *pTVar1;

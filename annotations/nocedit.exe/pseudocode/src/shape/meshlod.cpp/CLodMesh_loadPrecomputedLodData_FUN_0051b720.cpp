@@ -9,11 +9,11 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_loadPrecomputedLodData_FUN_0051b720(CLodMesh *this_ptr)
 
 {
-  FILE *file_handle;
+  _FILE *file_handle;
   int iVar1;
   
   file_handle = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(this_ptr,"rt");
-  if (file_handle == (FILE *)0x0) {
+  if (file_handle == (_FILE *)0x0) {
     return 0;
   }
   iVar1 = shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(this_ptr,file_handle);

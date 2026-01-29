@@ -11,11 +11,11 @@ int __cdecl core_gore_cpp_FUN_004ee290(CGore *this_ptr)
 {
   int iVar1;
   int iVar2;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"--- Gore ---\n");
+  _fprintf(in_stack_00000008,"--- Gore ---\n");
   iVar2 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n",DAT_02da8720);
+  _fprintf(in_stack_00000008,"%d\n",DAT_02da8720);
   if (0 < DAT_02da8720) {
     do {
       iVar2 = iVar2 + 1;
@@ -23,7 +23,7 @@ int __cdecl core_gore_cpp_FUN_004ee290(CGore *this_ptr)
     } while (iVar2 < DAT_02da8720);
   }
   iVar1 = 0;
-  iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n",DAT_02d873d8);
+  iVar2 = _fprintf(in_stack_00000008,"%d\n",DAT_02d873d8);
   if (0 < DAT_02d873d8) {
     do {
       iVar1 = iVar1 + 1;

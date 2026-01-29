@@ -29,7 +29,7 @@
         "category": "other",
         "column": 41,
         "line": 40,
-        "message": "cast from 'FILE*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+        "message": "cast from '_FILE*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -47,7 +47,7 @@
         "category": "other",
         "column": 41,
         "line": 45,
-        "message": "cast from 'FILE*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+        "message": "cast from '_FILE*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -65,7 +65,7 @@
         "category": "other",
         "column": 45,
         "line": 54,
-        "message": "cast from 'FILE*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+        "message": "cast from '_FILE*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -250,7 +250,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_fffffef0",
-      "text": "FILE *in_stack_fffffef0;",
+      "text": "_FILE *in_stack_fffffef0;",
       "type": "stack_param"
     },
     {
@@ -285,21 +285,21 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_fffffef0",
-      "text": "in_stack_fffffef0 = (FILE *)(local_90 + 0x48);",
+      "text": "in_stack_fffffef0 = (_FILE *)(local_90 + 0x48);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_fffffef0",
-      "text": "(this_ptr,&FStack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);",
+      "text": "(this_ptr,&_Stack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 27,
       "match": "&stack0xfffffff0",
-      "text": "(this_ptr,&FStack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);",
+      "text": "(this_ptr,&_Stack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);",
       "type": "stack_ref"
     },
     {

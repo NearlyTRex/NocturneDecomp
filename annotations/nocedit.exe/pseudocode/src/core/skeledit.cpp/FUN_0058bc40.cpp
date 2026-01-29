@@ -13,23 +13,22 @@ uint core_skeledit_cpp_FUN_0058bc40(void)
   int iVar2;
   int iVar3;
   int in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   uint local_1c;
   uint local_18;
   uint local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x34);
+  __STK(0x34);
   iVar3 = 1;
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
+    iVar1 = _fgetc(in_stack_00000008);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   iVar3 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0x2c)) {
     iVar1 = 0;
     do {
-      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (in_stack_00000008,"%f,%f,%f\n",&local_1c,&local_18,&local_14);
+      iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",&local_1c,&local_18,&local_14);
       if (iVar2 != 3) {
         return 0;
       }

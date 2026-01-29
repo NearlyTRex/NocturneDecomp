@@ -2,12 +2,12 @@
 // Address: 004b23a0
 // Address Range: [[004b23a0, 004b2631]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(FILE *file,STimestampRecord **records,int *count)
+// Signature: int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file,STimestampRecord **records,int *count)
 
 #include "nocturne.h"
 
 int __cdecl
-engine_fileio_cpp_readTimestampFile_FUN_004b23a0(FILE *file,STimestampRecord **records,int *count)
+engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file,STimestampRecord **records,int *count)
 
 {
   char cVar1;
@@ -27,24 +27,25 @@ engine_fileio_cpp_readTimestampFile_FUN_004b23a0(FILE *file,STimestampRecord **r
   bVar7 = 0;
   new_size = 0x148;
   local_18 = 0;
-  crt_stdio_c_fseek_FUN_005ffacc((FILE *)file->_ptr,0,0);
+  _fseek((_FILE *)file->_ptr,0,0);
   *records = (STimestampRecord *)0x0;
   local_14 = 0;
   do {
-    crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)file->_ptr," ");
-    pcVar2 = crt_stdio_c_fgets_FUN_005fefd0(local_560,0x400,(FILE *)file->_ptr);
+    _fscanf((_FILE *)file->_ptr," ");
+    pcVar2 = _fgets(local_560,0x400,(_FILE *)file->_ptr);
     if (pcVar2 != local_560) {
-      if ((((FILE *)file->_ptr)->_flag & 0x20) == 0) {
+      if ((((_FILE *)file->_ptr)->_flag & 0x20) == 0) {
         return local_18;
       }
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4)
+      ;
       file->_ptr = (char *)0x0;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"Error reading %s",in_stack_00000010);
 LAB_004b246f:
-      if ((FILE *)file->_ptr != (FILE *)0x0) {
+      if ((_FILE *)file->_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                  ((FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4);
+                  ((_FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4);
         file->_ptr = (char *)0x0;
       }
       if (*records != (STimestampRecord *)0x0) {
@@ -55,9 +56,9 @@ LAB_004b246f:
     }
     iVar3 = engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(local_560,&local_160);
     if (iVar3 == 0) {
-      if ((FILE *)file->_ptr != (FILE *)0x0) {
+      if ((_FILE *)file->_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                  ((FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4);
+                  ((_FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4);
         file->_ptr = (char *)0x0;
       }
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -79,9 +80,9 @@ LAB_004b246f:
                        (*records,new_size,"..\\engine\\fileio.cpp",0x1c2);
     *records = pSVar4;
     if (pSVar4 == (STimestampRecord *)0x0) {
-      if ((FILE *)file->_ptr != (FILE *)0x0) {
+      if ((_FILE *)file->_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                  ((FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4);
+                  ((_FILE *)file->_ptr,"..\\engine\\fileio.cpp",0xc4);
         file->_ptr = (char *)0x0;
       }
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

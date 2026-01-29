@@ -24,7 +24,7 @@
 ;   TerminatedCString s_s_00613f30
 ;   char[104] g_PropertyNamePrefix
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   FILE* g_ActorDataFile
+;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;   CDemonActor* g_CurrentActorBeingProcessed
 ;   CDemonMission g_CDemonMissionInstance
@@ -54,7 +54,7 @@ section .text
     MOV ESI,dword ptr [0x0067d550]      ; 0040b88f | g_CDemonMissionPtr
     PUSH ESI                            ; 0040b895 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_loadActor_FUN_00523990 ; 0040b896
-        ;   XREF to: 00523990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission * this_ptr, FILE * file, CDemonActor * current_actor, char * property_description)
+        ;   XREF to: 00523990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission * this_ptr, _FILE * file, CDemonActor * current_actor, char * property_description)
     ADD ESP,0x10                        ; 0040b89b
     MOV EDX,dword ptr [ESP + 0x10]      ; 0040b89e
     MOV dword ptr [EDX],EAX             ; 0040b8a2
@@ -69,7 +69,7 @@ section .text
     MOV ECX,dword ptr [0x00822034]      ; 0040b8b3 | g_ActorDataFile
     PUSH ECX                            ; 0040b8b9
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040b8ba
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b8bf
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040b8c2
     PUSH EBX                            ; 0040b8c6
@@ -83,7 +83,7 @@ section .text
     MOV EAX,[0x0067d550]                ; 0040b8dc | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EAX                            ; 0040b8e1 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_saveActor_FUN_00523af0 ; 0040b8e2
-        ;   XREF to: 00523af0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_saveActor_FUN_00523af0(CDemonMission * this_ptr, CDemonActor * actor_ptr, FILE * file, CDemonActor * current_actor, ...)
+        ;   XREF to: 00523af0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_saveActor_FUN_00523af0(CDemonMission * this_ptr, CDemonActor * actor_ptr, _FILE * file, CDemonActor * current_actor, ...)
     ADD ESP,0x14                        ; 0040b8e7
     POP EDI                             ; 0040b8ea
     POP EBP                             ; 0040b8eb

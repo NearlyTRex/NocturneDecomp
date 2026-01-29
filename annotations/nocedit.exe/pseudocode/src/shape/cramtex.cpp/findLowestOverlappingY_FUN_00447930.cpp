@@ -14,7 +14,7 @@ int __cdecl shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEn
   int iVar3;
   int in_stack_00000004;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
+  __STK(0x14);
   iVar2 = 0;
   iVar3 = g_CramCurrentAcceptableSize;
   if (0 < (int)g_CramTextureCount) {

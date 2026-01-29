@@ -22,10 +22,10 @@
 ; Called Functions:
 ;   crt_iostream.cpp_ios_dtor_FUN_0060632c
 ;   crt_iostream.cpp_ostream_dtor_FUN_00606231
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   crt_strstream.cpp_strstreambase_dtor_FUN_006062a6
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -73,12 +73,12 @@ section .text
     PUSH 0x65bc70                       ; 005ff4ee | g_OStrStreamTypeInfo
         ;   Label: LAB_005ff4ee
     PUSH EBX                            ; 005ff4f3
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 005ff4f4
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 005ff4f4
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005ff4f9
     PUSH EAX                            ; 005ff4fc
-    CALL crt_memory.c_free_FUN_005fe659 ; 005ff4fd
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 005ff4fd
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005ff502
         ;   Label: LAB_005ff502
     MOV EAX,EBX                         ; 005ff505

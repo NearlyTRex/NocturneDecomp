@@ -25,7 +25,7 @@ sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
                     (SUB84((double)playback_position,0),
                      (double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,
                      (uint)((ulonglong)in_stack_ffffffe4 >> 0x20));
-  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2);
+  dVar2 = round(dVar2);
   this_ptr->stream_read_position = (int)ROUND(dVar2);
   if (this_ptr->stream_read_position < 0) {
     this_ptr->stream_read_position = 0;
@@ -38,15 +38,14 @@ sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
   this_ptr->stream_write_position = dest_buffer_offset;
   this_ptr_00 = this_ptr->mp3_data;
   if (this_ptr_00 == (CMP3Decoder *)0x0) {
-    if (this_ptr->file_handle == (FILE *)0x0) {
+    if (this_ptr->file_handle == (_FILE *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7b6;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - no MP3 and no wavFile for sample '%s'",this_ptr);
       return;
     }
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-    crt_stdio_c_fseek_FUN_005ffacc
-              (this_ptr->file_handle,iVar1 * this_ptr->stream_read_position + this_ptr->file_offset,
+    _fseek(this_ptr->file_handle,iVar1 * this_ptr->stream_read_position + this_ptr->file_offset,
                (int)this_ptr_00);
   }
   else {

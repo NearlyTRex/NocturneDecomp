@@ -15,9 +15,9 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
 {
   char cVar1;
   int iVar2;
-  FILE *pFVar3;
+  _FILE *p_Var3;
   int *piVar4;
-  tm *ptVar5;
+  _tm *p_Var5;
   int iVar6;
   uint *puVar7;
   char *pcVar8;
@@ -56,15 +56,15 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   CStrList local_70;
   CCheckOutList local_60;
   time_t local_58;
-  FILE *local_54;
+  _FILE *local_54;
   char *local_50;
   int local_4c;
   int local_48;
-  FILE *local_44;
-  FILE *local_40;
+  _FILE *local_44;
+  _FILE *local_40;
   char *local_3c;
-  FILE *local_38;
-  FILE *local_34;
+  _FILE *local_38;
+  _FILE *local_34;
   int local_30;
   int local_2c;
   int local_28;
@@ -126,7 +126,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
               (&local_1e2c.base,"Oops.  Don't check the POD in.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
               (&local_1e2c.base,"Show local file differences.");
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_eac,"WARNING!\n\nYou are about to check in %s, which is not in sync\nwith your extracted files.  (Perhaps you forget to rebuild the\npod after making changes?)",local_77c);
+    sprintf(local_eac,"WARNING!\n\nYou are about to check in %s, which is not in sync\nwith your extracted files.  (Perhaps you forget to rebuild the\npod after making changes?)",local_77c);
     while( true ) {
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_1e2c,local_eac,1,0);
@@ -154,9 +154,9 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   }
   local_50 = checkout_item_name;
   local_3c = local_77c;
-  local_54 = (FILE *)0x0;
-  local_38 = (FILE *)0x0;
-  local_34 = (FILE *)0x0;
+  local_54 = (_FILE *)0x0;
+  local_38 = (_FILE *)0x0;
+  local_34 = (_FILE *)0x0;
   pcVar8 = g_DefaultCheckOutPath;
   pcVar14 = local_880;
   for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -245,15 +245,15 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
               (&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c
                ,in_stack_ffffda10);
   }
-  local_44 = (FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-                               (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",&local_12b4);
+  local_44 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+                                (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",&local_12b4);
   pcVar8 = local_3c;
   if (g_VersionControlDirectory[0] == '\0') {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0xe7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_b8c,"history\\%s.%s",pcVar8,"history");
+  sprintf(local_b8c,"history\\%s.%s",pcVar8,"history");
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_24,local_170);
   engine_dosio_c_makePath_FUN_00481f50(local_984,local_24,local_170,(char *)0x0,(char *)0x0);
   pcVar8 = local_b8c;
@@ -286,7 +286,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   local_40 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_12b4.found_path,(char *)0x0,"rb","..\\engine\\fileio.cpp"
                         ,0x567);
-  if (local_40 == (FILE *)0x0) {
+  if (local_40 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",&local_12b4);
     goto LAB_004bb1fa;
@@ -299,7 +299,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
     goto LAB_004bb847;
   }
 LAB_004bb723:
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_574,"$$$.%s.$$$",&local_12b4);
+  sprintf(local_574,"$$$.%s.$$$",&local_12b4);
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(local_50,local_1c,local_270);
   engine_dosio_c_makePath_FUN_00481f50(local_880,local_1c,local_270,(char *)0x0,(char *)0x0);
   pcVar8 = local_574;
@@ -326,11 +326,11 @@ LAB_004bb723:
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temporary network file %s...");
   engine_dosio_c_setFileAttributes_FUN_004819f0(local_880,0);
-  crt_io_c_deleteFile_FUN_005ff9d0(local_880);
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  remove(local_880);
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_880,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x591);
-  local_38 = pFVar3;
-  if (local_40 == (FILE *)0x0) {
+  local_38 = p_Var3;
+  if (local_40 == (_FILE *)0x0) {
     pcVar8 = local_880;
     pcVar14 = "Can't create %s.\nGet Fletch.";
 LAB_004bb83f:
@@ -340,15 +340,15 @@ LAB_004bb83f:
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Copying file to temporary network file");
     pcVar8 = engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
-                       (local_40,pFVar3,local_12b4.found_path,"network",
+                       (local_40,p_Var3,local_12b4.found_path,"network",
                         local_12b4.file_size);
-    if (local_40 != (FILE *)0x0) {
+    if (local_40 != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_40,"..\\engine\\fileio.cpp",0xc4);
-      local_40 = (FILE *)0x0;
+      local_40 = (_FILE *)0x0;
     }
-    if (local_38 != (FILE *)0x0) {
+    if (local_38 != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\engine\\fileio.cpp",0xc4);
-      local_38 = (FILE *)0x0;
+      local_38 = (_FILE *)0x0;
     }
     if (pcVar8 != (char *)0x0) {
       pcVar14 = "%s\nGet Fletch.";
@@ -385,26 +385,26 @@ LAB_004bb83f:
     iVar2 = 0;
     local_60.count = 0;
     local_60.items = (CCheckOutItem *)0x0;
-    if (local_44 == (FILE *)0x0) {
+    if (local_44 == (_FILE *)0x0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Grabbing %s...");
       do {
-        pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+        p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_678,(char *)0x0,"r+t","..\\engine\\fileio.cpp",0x153)
         ;
-        if (pFVar3 != (FILE *)0x0) {
-          crt_stdio_c_setvbuf_FUN_00601490(pFVar3,(char *)0x0,0,0x400);
+        if (p_Var3 != (_FILE *)0x0) {
+          _setvbuf(p_Var3,(char *)0x0,0,0x400);
           goto LAB_004bbc40;
         }
-        piVar4 = (int *)crt_errno_c_errno_FUN_00601450();
+        piVar4 = (int *)_errno();
         if (*piVar4 != 6) break;
         iVar2 = iVar2 + 1;
         (*g_SleepFunc)(500);
       } while (iVar2 < 10);
-      pFVar3 = (FILE *)0x0;
+      p_Var3 = (_FILE *)0x0;
 LAB_004bbc40:
-      local_54 = pFVar3;
-      if (pFVar3 == (FILE *)0x0) {
+      local_54 = p_Var3;
+      if (p_Var3 == (_FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't access %s.  Get Fletch.",local_678);
         engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_60);
@@ -415,9 +415,9 @@ LAB_004bbc40:
         local_48 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60
                              (&local_60,local_12b4.found_path);
         if (-1 < local_48) goto LAB_004bba53;
-        if (local_54 != (FILE *)0x0) {
+        if (local_54 != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",0xc4);
-          local_54 = (FILE *)0x0;
+          local_54 = (_FILE *)0x0;
         }
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Hell froze - we no longer have the file checked out!!!!");
@@ -432,13 +432,13 @@ LAB_004bba53:
       engine_2d_c_clearInputAndWait_FUN_00403260();
       while( true ) {
         engine_dosio_c_setFileAttributes_FUN_004819f0(local_16dc.found_path,0);
-        crt_io_c_deleteFile_FUN_005ff9d0(local_16dc.found_path);
-        iVar6 = crt_stdio_c_rename_FUN_006015d0(local_880,local_16dc.found_path);
+        remove(local_16dc.found_path);
+        iVar6 = rename(local_880,local_16dc.found_path);
         if (iVar6 == 0) break;
         if (0x27 < iVar2) {
-          if (local_54 != (FILE *)0x0) {
+          if (local_54 != (_FILE *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",0xc4);
-            local_54 = (FILE *)0x0;
+            local_54 = (_FILE *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Error renaming %s -> %s.\nThe file was not checked in.\nThe most likely cause is that somebody is currently trying to get\nthe file you are checking in.  No file files have been modified,\nand you still have the file checked out.  Wait a little bit and\ntry again.",local_880,&local_16dc);
@@ -448,7 +448,7 @@ LAB_004bba53:
         }
         iVar2 = iVar2 + 1;
         if (iVar2 == 1) {
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (local_d1c,"Waiting for %s to become available.\nPress ESC to cancel check in.",&local_16dc);
           shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                     (g_CEditorToolsPtr,local_d1c);
@@ -468,9 +468,9 @@ LAB_004bba53:
       iVar2 = engine_dosio_c_copyFileTimestamp_FUN_00481910
                         (local_16dc.found_path,(char *)local_12b4.timestamp);
       if (iVar2 == 0) {
-        if (local_54 != (FILE *)0x0) {
+        if (local_54 != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",0xc4);
-          local_54 = (FILE *)0x0;
+          local_54 = (_FILE *)0x0;
         }
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network,\nbut the date on the network file is incorrect.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nAnother possibility is that the time of the file is newer than\nthe current system time on your computer.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",&local_16dc);
@@ -479,9 +479,9 @@ LAB_004bba53:
       else {
         iVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(local_16dc.found_path,8);
         if (iVar2 == 0) {
-          if (local_54 != (FILE *)0x0) {
+          if (local_54 != (_FILE *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",0xc4);
-            local_54 = (FILE *)0x0;
+            local_54 = (_FILE *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",&local_16dc);
@@ -490,35 +490,34 @@ LAB_004bba53:
         else {
           iVar2 = 0;
           do {
-            pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+            p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                (local_984,(char *)0x0,"at","..\\engine\\fileio.cpp",
                                 0x153);
-            if (pFVar3 != (FILE *)0x0) {
-              crt_stdio_c_setvbuf_FUN_00601490(pFVar3,(char *)0x0,0,0x400);
+            if (p_Var3 != (_FILE *)0x0) {
+              _setvbuf(p_Var3,(char *)0x0,0,0x400);
               goto LAB_004bbb45;
             }
-            piVar4 = (int *)crt_errno_c_errno_FUN_00601450();
+            piVar4 = (int *)_errno();
             if (*piVar4 != 6) break;
             iVar2 = iVar2 + 1;
             (*g_SleepFunc)(500);
           } while (iVar2 < 10);
-          pFVar3 = (FILE *)0x0;
+          p_Var3 = (_FILE *)0x0;
 LAB_004bbb45:
-          local_34 = pFVar3;
-          if (pFVar3 != (FILE *)0x0) {
-            local_58 = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
-            ptVar5 = crt_time_c_localtime_FUN_00600288(&local_58);
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      (pFVar3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n",local_4c + 1,
-                       ptVar5->tm_year + 0x76c,ptVar5->tm_mon + 1,ptVar5->tm_mday,ptVar5->tm_hour,
-                       ptVar5->tm_min,ptVar5->tm_sec,&g_VersionControlSession);
-            crt_stdio_c_fflush_FUN_00601540(pFVar3);
-            if ((pFVar3->_flag & 0x20) == 0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\fileio.cpp",0xc4);
-              pFVar3 = local_44;
-              local_34 = (FILE *)0x0;
+          local_34 = p_Var3;
+          if (p_Var3 != (_FILE *)0x0) {
+            local_58 = time((time_t *)0x0);
+            p_Var5 = localtime(&local_58);
+            _fprintf(p_Var3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n",local_4c + 1,
+                       p_Var5->tm_year + 0x76c,p_Var5->tm_mon + 1,p_Var5->tm_mday,p_Var5->tm_hour,
+                       p_Var5->tm_min,p_Var5->tm_sec,&g_VersionControlSession);
+            _fflush(p_Var3);
+            if ((p_Var3->_flag & 0x20) == 0) {
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\fileio.cpp",0xc4);
+              p_Var3 = local_44;
+              local_34 = (_FILE *)0x0;
               engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
-              if (pFVar3 != (FILE *)0x0) {
+              if (p_Var3 != (_FILE *)0x0) {
                 engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_60);
 LAB_004bbfdd:
                 engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
@@ -526,10 +525,10 @@ LAB_004bbfdd:
               }
               iVar2 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70(&local_60,local_48);
               if (iVar2 == 0) {
-                if (local_54 != (FILE *)0x0) {
+                if (local_54 != (_FILE *)0x0) {
                   shape_memdbg_cpp_closeFile_FUN_0050f9b0
                             (local_54,"..\\engine\\fileio.cpp",0xc4);
-                  local_54 = pFVar3;
+                  local_54 = p_Var3;
                 }
                 shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                           (g_CEditorToolsPtr,"Out of memory...Restart the application NOW.\nBetter yet, reboot the computer.");
@@ -537,10 +536,10 @@ LAB_004bbfdd:
               else {
                 iVar2 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(&local_60,&local_54);
                 if (iVar2 != 0) {
-                  if (local_54 != (FILE *)0x0) {
+                  if (local_54 != (_FILE *)0x0) {
                     shape_memdbg_cpp_closeFile_FUN_0050f9b0
                               (local_54,"..\\engine\\fileio.cpp",0xc4);
-                    local_54 = (FILE *)0x0;
+                    local_54 = (_FILE *)0x0;
                   }
                   iVar2 = engine_dosio_c_getFileTimestamp_FUN_00481960
                                     ((char *)0x0,local_12b4.found_path);
@@ -566,7 +565,7 @@ LAB_004bb492:
                               (&local_21d4.base,"Delete local files but don't mount");
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
                               (&local_21d4.base,"Keep files extracted and pod dismounted");
-                    crt_stdio_c_sprintf_FUN_005fdbd0(local_10a0,"%s checked in",local_77c);
+                    sprintf(local_10a0,"%s checked in",local_77c);
                     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                       (&local_21d4,local_10a0,-1,0);
                     if (iVar2 == 0) {
@@ -625,13 +624,13 @@ LAB_004bb492:
               goto LAB_004bb847;
             }
           }
-          if (local_54 != (FILE *)0x0) {
+          if (local_54 != (_FILE *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",0xc4);
-            local_54 = (FILE *)0x0;
+            local_54 = (_FILE *)0x0;
           }
-          if (local_34 != (FILE *)0x0) {
+          if (local_34 != (_FILE *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\engine\\fileio.cpp",0xc4);
-            local_34 = (FILE *)0x0;
+            local_34 = (_FILE *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Error creating history record in %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",local_984);
@@ -641,21 +640,21 @@ LAB_004bb492:
     }
   }
 LAB_004bb847:
-  if (local_54 != (FILE *)0x0) {
+  if (local_54 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",0xc4);
-    local_54 = (FILE *)0x0;
+    local_54 = (_FILE *)0x0;
   }
-  if (local_38 != (FILE *)0x0) {
+  if (local_38 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\engine\\fileio.cpp",0xc4);
   }
-  if (local_40 != (FILE *)0x0) {
+  if (local_40 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_40,"..\\engine\\fileio.cpp",0xc4);
   }
-  if (local_34 != (FILE *)0x0) {
+  if (local_34 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\engine\\fileio.cpp",0xc4);
   }
   if (local_880[0] != '\0') {
-    crt_io_c_deleteFile_FUN_005ff9d0(local_880);
+    remove(local_880);
   }
   engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
 LAB_004bb1fa:

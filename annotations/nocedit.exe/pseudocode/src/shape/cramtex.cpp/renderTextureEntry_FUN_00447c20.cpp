@@ -21,7 +21,7 @@ shape_cramtex_cpp_renderTextureEntry_FUN_00447c20
   int *in_stack_00000004;
   int local_18;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x48);
+  __STK(0x48);
   if (texture_entry == (SCramWorkingEntry *)0x0) {
     if (g_CramMapNumber != in_stack_00000004[4]) {
       return;

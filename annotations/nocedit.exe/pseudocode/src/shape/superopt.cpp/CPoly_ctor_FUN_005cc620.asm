@@ -17,7 +17,7 @@
 ;   WatcomTypeInfo g_CP2DTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   shape_superopt.cpp_CPoly_init_FUN_005cc670
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     PUSH 0x3                            ; 005cc62a
     ADD EBX,0x10                        ; 005cc62c
     PUSH EBX                            ; 005cc62f
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005cc630
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005cc630
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005cc635
     MOV EDX,dword ptr [ESP + 0xc]       ; 005cc638
     PUSH EDX                            ; 005cc63c

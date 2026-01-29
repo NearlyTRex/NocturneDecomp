@@ -58,7 +58,7 @@
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
     PUSH 0x8                            ; 005763fa
     LEA EAX,[EBP + 0xffffff62]          ; 005763fc
     PUSH EAX                            ; 00576402
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00576403
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00576403
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     MOV EAX,dword ptr [EBP + 0x92]      ; 00576408
     ADD EAX,0x18                        ; 0057640e
     XOR ESI,ESI                         ; 00576411

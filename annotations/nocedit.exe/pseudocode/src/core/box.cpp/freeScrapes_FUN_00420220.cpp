@@ -11,6 +11,6 @@ int __cdecl core_box_cpp_freeScrapes_FUN_00420220(SScrape **array)
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(array,8,&g_SScrapeTypeInfo);
+  iVar1 = __arrfini(array,8,&g_SScrapeTypeInfo);
   return iVar1;
 }

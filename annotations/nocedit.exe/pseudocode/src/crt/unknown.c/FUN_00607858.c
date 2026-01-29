@@ -17,10 +17,10 @@ int crt_unknown_c_FUN_00607858(void)
   int iVar4;
   int in_stack_00000004;
   int in_stack_00000008;
-  tm local_34;
+  _tm local_34;
   
   if (*(int *)(in_stack_00000004 + 0x20) == 0) {
-    iVar1 = crt_time_c_is_leap_year_FUN_00607820(in_stack_00000008 + 0x76c);
+    iVar1 = is_leap_year(in_stack_00000008 + 0x76c);
     if (iVar1 == 0) {
       iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(in_stack_00000004 + 0x10));
       iVar2 = *(int *)((int)&INFINITY + *(int *)(in_stack_00000004 + 0x10) * 2 + 6);
@@ -36,7 +36,7 @@ int crt_unknown_c_FUN_00607858(void)
     local_34.tm_mon = *(int *)(in_stack_00000004 + 0x10);
     local_34.tm_year = in_stack_00000008;
     local_34.tm_isdst = 0;
-    crt_time_c_mktime_FUN_00600f80(&local_34);
+    _mktime(&local_34);
     iVar4 = ((*(int *)(in_stack_00000004 + 0x18) - local_34.tm_wday) + 7) % 7;
     if (*(int *)(in_stack_00000004 + 0xc) == 5) {
       iVar3 = 4;

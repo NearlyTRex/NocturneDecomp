@@ -14,7 +14,7 @@ core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *this_ptr,char
   uint uVar2;
   ulonglong uVar3;
   char cVar4;
-  FILE *pFVar5;
+  _FILE *p_Var5;
   int iVar6;
   byte *pbVar7;
   uint uVar8;
@@ -78,7 +78,7 @@ core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *this_ptr,char
   int local_24;
   int local_20;
   int iStack_1c;
-  FILE *local_14;
+  _FILE *local_14;
   
   bVar31 = 0;
   pcVar25 = local_144;
@@ -119,12 +119,12 @@ LAB_0044f429:
     pcVar21[1] = cVar4;
     pcVar21 = pcVar21 + 2;
   } while (cVar4 != '\0');
-  pFVar5 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_144,"rb");
-  if ((pFVar5 != (FILE *)0x0) ||
-     (pFVar5 = engine_dosio_c_getFile_FUN_00481a50("art",local_144,"rb"),
-     pFVar5 != (FILE *)0x0)) {
-    crt_stdio_c_fread_FUN_005fd990(&g_CameraImagePaletteData,0x100,3,pFVar5);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\dcamera.cpp",0x99b);
+  p_Var5 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_144,"rb");
+  if ((p_Var5 != (_FILE *)0x0) ||
+     (p_Var5 = engine_dosio_c_getFile_FUN_00481a50("art",local_144,"rb"),
+     p_Var5 != (_FILE *)0x0)) {
+    _fread(&g_CameraImagePaletteData,0x100,3,p_Var5);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dcamera.cpp",0x99b);
     pcVar21 = local_f4;
     pcVar25 = filename;
     do {
@@ -163,11 +163,11 @@ LAB_0044f4fd:
       pcVar25 = pcVar25 + 2;
     } while (cVar4 != '\0');
     local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f4,"rb");
-    if (local_14 != (FILE *)0x0) {
-      crt_stdio_c_fread_FUN_005fd990(&g_CameraFogGrid,0x1000,1,local_14);
-      pFVar5 = local_14;
+    if (local_14 != (_FILE *)0x0) {
+      _fread(&g_CameraFogGrid,0x1000,1,local_14);
+      p_Var5 = local_14;
       if (g_CameraFogGrid.density_multiplier == 0) {
-        crt_memory_c_memset_FUN_005fde40(g_CameraImageDecompressBuffer,0,0x12c000);
+        memset(g_CameraImageDecompressBuffer,0,0x12c000);
       }
       else {
         g_ImageBytesPerPixel = 0x10;
@@ -175,11 +175,11 @@ LAB_0044f4fd:
             g_CameraFogGrid.scroll_vector.z == 0) {
           g_ImageBytesPerPixel = 1;
         }
-        crt_stdio_c_fread_FUN_005fd990(local_a0,3,1,local_14);
+        _fread(local_a0,3,1,local_14);
         local_9d = 0;
-        iVar6 = crt_string_c_strcmp_FUN_005fef20(local_a0,"LZW");
+        iVar6 = strcmp(local_a0,"LZW");
         if ((iVar6 == 0) ||
-           (iVar6 = crt_string_c_strcmp_FUN_005fef20(local_a0,"EFD"), iVar6 == 0)) {
+           (iVar6 = strcmp(local_a0,"EFD"), iVar6 == 0)) {
           iVar6 = engine_dosio_c_getFileSize_FUN_00481880("backdrop",local_f4);
           local_9c = iVar6 - 0x1003;
           if ((int)local_9c < 1) {
@@ -193,7 +193,7 @@ LAB_0044f4fd:
             core_main_c_displayErrorAndQuit_FUN_00506f10
                       ("%s too big to fit in decompress buffer",local_f4);
           }
-          crt_stdio_c_fread_FUN_005fd990(g_CameraLoadImageReadBuffer,local_9c,1,local_14);
+          _fread(g_CameraLoadImageReadBuffer,local_9c,1,local_14);
           support_codec_cpp_CLZWDecompress_init_FUN_0043f4d0(&g_CLZWDecompressInstance);
           local_98 = g_ImageBytesPerPixel * 0x12c00;
           iVar6 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0
@@ -241,17 +241,16 @@ LAB_0044f4fd:
           }
         }
         else {
-          crt_stdio_c_fseek_FUN_005ffacc(pFVar5,-3,1);
-          crt_stdio_c_fread_FUN_005fd990
-                    (g_CameraImageDecompressBuffer,0x12c00,g_ImageBytesPerPixel,pFVar5);
+          _fseek(p_Var5,-3,1);
+          _fread(g_CameraImageDecompressBuffer,0x12c00,g_ImageBytesPerPixel,p_Var5);
         }
       }
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\dcamera.cpp",0xa09);
     }
-    pFVar5 = engine_dosio_c_getFile_FUN_00481a50("backdrop",filename,"rb");
-    if ((pFVar5 != (FILE *)0x0) ||
-       (pFVar5 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb"),
-       pFVar5 != (FILE *)0x0)) {
+    p_Var5 = engine_dosio_c_getFile_FUN_00481a50("backdrop",filename,"rb");
+    if ((p_Var5 != (_FILE *)0x0) ||
+       (p_Var5 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb"),
+       p_Var5 != (_FILE *)0x0)) {
       iVar18 = 0;
       iVar6 = 0;
       do {
@@ -271,8 +270,8 @@ LAB_0044f4fd:
         *(uint *)((int)g_CameraConvertedPalette + iVar6) = uVar23;
         iVar6 = iVar14;
       } while (iVar14 != 0x400);
-      crt_stdio_c_fread_FUN_005fd990(g_CameraIndexedImageData,0x280,0x1e0,pFVar5);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\dcamera.cpp",0xa20);
+      _fread(g_CameraIndexedImageData,0x280,0x1e0,p_Var5);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dcamera.cpp",0xa20);
       iVar6 = this_ptr->framebuffer_height;
       if (iVar6 == 0xf0) {
         local_20 = 0;

@@ -12,12 +12,12 @@ CBitmap * __cdecl shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(CBitmap *this_ptr
   if (this_ptr->pixel_data != (void *)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x4b6;
-    crt_memory_c_free_FUN_005fe659(this_ptr->pixel_data);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->pixel_data);
   }
   if (this_ptr->row_table != (void **)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x4b7;
-    crt_memory_c_free_FUN_005fe659(this_ptr->row_table);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->row_table);
   }
   if (this_ptr->palette == (void *)0x0) {
     return this_ptr;

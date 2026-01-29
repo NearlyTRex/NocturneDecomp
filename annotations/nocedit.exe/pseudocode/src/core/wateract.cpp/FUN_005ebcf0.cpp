@@ -13,6 +13,6 @@ void core_wateract_cpp_FUN_005ebcf0(void)
 {
   void **in_stack_00000004;
   
-  crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,1000,&g_SWaterVertexTypeInfo);
+  __arrfini(in_stack_00000004,1000,&g_SWaterVertexTypeInfo);
   return;
 }

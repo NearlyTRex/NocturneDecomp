@@ -441,8 +441,8 @@ section .text
     PUSH EDX                            ; 0057adf6
     MOV dword ptr [0x0067d20c],EDI      ; 0057adf7 | g_CurrentDebugFilename
     MOV [0x02f0d944],EAX                ; 0057adfd | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0057ae02
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0057ae02
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0057ae07
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057ae0a
     PUSH ECX                            ; 0057ae0d

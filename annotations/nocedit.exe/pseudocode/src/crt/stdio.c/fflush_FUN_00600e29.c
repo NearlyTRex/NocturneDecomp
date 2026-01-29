@@ -2,11 +2,11 @@
 // Address: 00600e29
 // Address Range: [[00600e29, 00600e63]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fflush_FUN_00600e29(FILE *stream)
+// Signature: int __cdecl crt_stdio_c_fflush_FUN_00600e29(_FILE *stream)
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_fflush_FUN_00600e29(FILE *stream)
+int __cdecl _fflush(_FILE *stream)
 
 {
   filebuf *pfVar1;
@@ -21,6 +21,6 @@ int __cdecl crt_stdio_c_fflush_FUN_00600e29(FILE *stream)
     }
     embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));
   }
-  crt_stdio_c_reportStreamError_FUN_00606020(embedded_data,2);
+  reportStreamError(embedded_data,2);
   return extraout_EAX;
 }

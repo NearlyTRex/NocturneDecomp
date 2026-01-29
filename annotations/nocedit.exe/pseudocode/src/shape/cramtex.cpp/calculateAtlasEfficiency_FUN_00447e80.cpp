@@ -13,7 +13,7 @@ double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
   int iVar2;
   int iVar3;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x20);
+  __STK(0x20);
   iVar2 = 0;
   iVar3 = 0;
   if (0 < (int)g_CramTextureCount) {

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_scanf_string_FUN_00604e4c(scanf_state_t *state,va_list_t *args)
+int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
 
 {
   byte bVar1;
@@ -48,7 +48,7 @@ int __cdecl crt_stdio_c_scanf_string_FUN_00604e4c(scanf_state_t *state,va_list_t
     }
   }
   iVar5 = 0;
-  while (character = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state),
+  while (character = scanf_getc_wrapper(state),
         (g_CharacterClassificationTable[(byte)((char)character + 1)] & 2U) != 0) {
     iVar5 = iVar5 + 1;
   }
@@ -66,10 +66,10 @@ int __cdecl crt_stdio_c_scanf_string_FUN_00604e4c(scanf_state_t *state,va_list_t
           else {
             local_1c = cVar4;
             if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[character & 0xff] & 1U) != 0)) {
-              iVar3 = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state);
+              iVar3 = scanf_getc_wrapper(state);
               local_1b = (byte)iVar3;
             }
-            iVar3 = crt_locale_c_mbtowc_FUN_0060b1c0(local_20,&local_1c,2);
+            iVar3 = mbtowc(local_20,&local_1c,2);
             if (iVar3 == -1) {
               return 0;
             }
@@ -77,11 +77,11 @@ int __cdecl crt_stdio_c_scanf_string_FUN_00604e4c(scanf_state_t *state,va_list_t
           }
           unaff_EDI = unaff_EDI + local_18;
         }
-        character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+        character = scanf_getc_with_width(state);
         if (character == 0xffffffff) goto LAB_00604f88;
       } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 2U) == 0);
     }
-    crt_stdio_c_scanf_ungetc_wrapper_FUN_0060493c(character,state);
+    scanf_ungetc_wrapper(character,state);
   }
   else {
     iVar5 = 0;

@@ -45,11 +45,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
     engine_2d_c_drawText_FUN_00401fd0("A.  Fog editor",0,0x79);
     engine_2d_c_drawText_FUN_00401fd0("C.  Rebuild thumbs",0,0x8f);
     pcVar2 = core_ground_cpp_getGroundTypeName_FUN_004eed80(this_ptr->default_ground_type);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_68,"D.  Default ground type: %s",pcVar2);
+    sprintf(local_68,"D.  Default ground type: %s",pcVar2);
     engine_2d_c_drawText_FUN_00401fd0(local_68,0,0x9a);
     engine_2d_c_drawText_FUN_00401fd0("F.  Export lights/cameras to .LC file",0,0xb0);
     engine_2d_c_drawText_FUN_00401fd0("G.  Virtual director box editor",0,0xbb);
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_68,"H.  Weather: %s",(&PTR_s_None_006817f0)[this_ptr->weather_type]);
     engine_2d_c_drawText_FUN_00401fd0(local_68,0,0xc6);
     engine_2d_c_drawText_FUN_00401fd0("I.  Edit ground types",0,0xd1);
@@ -95,7 +95,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
                 pcVar6[1] = cVar1;
                 pcVar6 = pcVar6 + 2;
               } while (cVar1 != '\0');
-              crt_string_c_strupr_FUN_00600770(local_68);
+              strupr(local_68);
             }
             iVar4 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                               (g_CEditorToolsPtr,"Save set","models",0x648fa3,

@@ -48,9 +48,9 @@
       },
       {
         "category": "other",
-        "column": 48,
+        "column": 25,
         "line": 97,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects argument of type 'int', but argument 3 has type 'char*' [-Wformat=]"
       },
       {
         "category": "other",
@@ -552,7 +552,7 @@
       "description": "Undefined global data reference",
       "line": 90,
       "match": "DAT_02d830a8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_164,\"%d - %s\",g_CurrentDisplayText,&DAT_02d830a8);",
+      "text": "sprintf(local_164,\"%d - %s\",g_CurrentDisplayText,&DAT_02d830a8);",
       "type": "undefined_data"
     },
     {

@@ -16,7 +16,7 @@ void shape_superopt_cpp_FUN_005c79f0(void)
   
   *in_stack_00000004 = 0;
   if ((void *)in_stack_00000004[1] != (void *)0x0) {
-    crt_memory_c_free_FUN_00601cd0((void *)in_stack_00000004[1]);
+    free((void *)in_stack_00000004[1]);
   }
   in_stack_00000004[1] = 0;
   uVar2 = 0;
@@ -26,16 +26,16 @@ void shape_superopt_cpp_FUN_005c79f0(void)
       iVar1 = iVar3 + 4;
       iVar3 = iVar3 + 8;
       uVar2 = uVar2 + 1;
-      crt_memory_c_free_FUN_005fe659(*(void **)(iVar1 + in_stack_00000004[3]));
+      shape_memdbg_cpp_free_FUN_005fe659(*(void **)(iVar1 + in_stack_00000004[3]));
     } while (uVar2 < (uint)in_stack_00000004[2]);
   }
   in_stack_00000004[2] = 0;
   if ((void *)in_stack_00000004[3] != (void *)0x0) {
-    crt_memory_c_free_FUN_00601cd0((void *)in_stack_00000004[3]);
+    free((void *)in_stack_00000004[3]);
   }
   in_stack_00000004[3] = 0;
   in_stack_00000004[0xb] = 0;
-  crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0xc]);
+  shape_memdbg_cpp_free_FUN_005fe659((void *)in_stack_00000004[0xc]);
   in_stack_00000004[0xc] = 0;
   return;
 }

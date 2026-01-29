@@ -17,7 +17,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   uint uVar7;
   CMP3Decoder *this_ptr;
   CMP3Decoder *pCVar8;
-  FILE *pFVar9;
+  _FILE *p_Var9;
   long lVar10;
   CSfxSample *pCVar11;
   uint uVar12;
@@ -103,9 +103,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   if (iVar3 < 0x200001) {
     engine_dosio_c_splitPath_FUN_00481f20
               (&stack0xfffffc70,(char *)0x0,(char *)0x0,(char *)0x0,local_190);
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_190,"mp3");
+    iVar3 = stricmp(local_190,"mp3");
     if ((iVar3 == 0) ||
-       (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_190,".mp3"), iVar3 == 0))
+       (iVar3 = stricmp(local_190,".mp3"), iVar3 == 0))
     goto LAB_005a8fc7;
     pCVar11 = sound_sndmain_cpp_getSfxSample_FUN_005a4c80(&stack0xfffffc70);
   }
@@ -132,9 +132,9 @@ LAB_005a900a:
     if (local_18 != (CSfxSample *)0x0) {
       engine_dosio_c_splitPath_FUN_00481f20
                 (&stack0xfffffc70,(char *)0x0,(char *)0x0,(char *)0x0,local_290);
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_290,"mp3");
+      iVar3 = stricmp(local_290,"mp3");
       if ((iVar3 == 0) ||
-         (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_290,".mp3"), iVar3 == 0)) {
+         (iVar3 = stricmp(local_290,".mp3"), iVar3 == 0)) {
         iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",&stack0xfffffc70);
         if (0 < iVar3) {
           this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
@@ -178,7 +178,7 @@ LAB_005a900a:
           pCVar11->stream_read_position = 0;
           pCVar11->stream_write_position = 0;
           pCVar20 = (CSfxSample *)0x5a93a9;
-          dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+          dVar19 = round((double)fVar1);
           pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
           pCVar11->streaming_slot_index = uVar7;
           iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar20);
@@ -192,12 +192,12 @@ joined_r0x005a94f6:
         }
       }
       else {
-        pFVar9 = engine_dosio_c_getFile_FUN_00481a50
+        p_Var9 = engine_dosio_c_getFile_FUN_00481a50
                            ("sound",&stack0xfffffc70,"rb");
         pCVar11 = local_18;
-        local_18->file_handle = pFVar9;
+        local_18->file_handle = p_Var9;
         pCVar20 = local_18;
-        if (pFVar9 != (FILE *)0x0) {
+        if (p_Var9 != (_FILE *)0x0) {
           do {
             cVar2 = *pcVar15;
             (pCVar20->sample_info).name[0] = cVar2;
@@ -207,7 +207,7 @@ joined_r0x005a94f6:
             (pCVar20->sample_info).name[1] = cVar2;
             pCVar20 = (CSfxSample *)((pCVar20->sample_info).name + 2);
           } while (cVar2 != '\0');
-          lVar10 = crt_stdio_c_ftell_FUN_00601560(local_18->file_handle);
+          lVar10 = _ftell(local_18->file_handle);
           pCVar11->file_offset = lVar10;
           iVar3 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
                             (pCVar11->file_handle,&pCVar11->file_offset,pCVar11);
@@ -219,7 +219,7 @@ joined_r0x005a94f6:
             fVar1 = (float)iVar3 * 2.0f;
             local_18->ref_count = 0;
             local_18->buffer_id = 0;
-            dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+            dVar19 = round((double)fVar1);
             pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
             pCVar11->stream_read_position = 0;
             pCVar11->stream_write_position = 0;

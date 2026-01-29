@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
+char * __cdecl getcwd_wrapper(char *buffer,SIZE_T size)
 
 {
   DWORD DVar1;
@@ -19,7 +19,7 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
   bVar5 = 0;
   DVar1 = (*g_GetCurrentDirectoryAFunc)(0x104,aCStack_110);
   if (DVar1 == 0) {
-    crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+    __set_errno();
     buffer = (char *)0x0;
   }
   else {
@@ -28,14 +28,14 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
       if (DVar1 + 1 < size) {
         uVar2 = size;
       }
-      buffer = crt_memory_c_malloc_FUN_00601bb0(uVar2);
+      buffer = malloc(uVar2);
       if (buffer == (char *)0x0) {
-        crt_errno_c_setErrno_FUN_00602790(5);
+        setErrno(5);
         return (char *)0x0;
       }
     }
     else if (size < DVar1) {
-      crt_errno_c_setErrno_FUN_00602790(0xe);
+      setErrno(0xe);
       return (char *)0x0;
     }
     pcVar3 = aCStack_110;

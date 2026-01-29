@@ -9,13 +9,19 @@
       },
       {
         "category": "incompatible_types",
-        "column": 52,
+        "column": 28,
         "line": 102,
-        "message": "cannot convert 'int*' to 'time_t*' {aka 'long int*'}"
+        "message": "cannot convert 'int*' to 'const time_t*' {aka 'const long int*'}"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 53,
+        "line": 103,
+        "message": "cannot convert '_tm*' to 'const tm*'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 80,
+        "column": 55,
         "line": 136,
         "message": "'stack0xfffff328' was not declared in this scope; did you mean 'in_stack_fffff328'?"
       }
@@ -54,12 +60,6 @@
       },
       {
         "category": "other",
-        "column": 54,
-        "line": 103,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 16,
         "line": 104,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -80,18 +80,6 @@
         "category": "other",
         "column": 18,
         "line": 112,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 116,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 131,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
@@ -565,7 +553,7 @@
       "description": "Direct stack address reference",
       "line": 129,
       "match": "&stack0xfffff328",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_508,\"Viewing audit history for:\\n%s\",&stack0xfffff328);",
+      "text": "sprintf(local_508,\"Viewing audit history for:\\n%s\",&stack0xfffff328);",
       "type": "stack_ref"
     },
     {

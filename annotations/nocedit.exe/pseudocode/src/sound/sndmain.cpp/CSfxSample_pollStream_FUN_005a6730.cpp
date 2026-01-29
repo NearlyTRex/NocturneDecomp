@@ -27,7 +27,7 @@ sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
   char *pcVar10;
   byte bVar11;
   double dVar12;
-  FILE *file;
+  _FILE *file;
   int iVar13;
   uint uVar14;
   int iVar15;
@@ -68,10 +68,10 @@ sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
       goto LAB_005a69e2;
     }
     iVar15 = 0x5a6835;
-    crt_math_c_round_FUN_005fe6b0
+    round
               ((double)((float)(this_ptr->sample_info).sample_rate * time_window));
     uVar14 = 0x5a6858;
-    dVar12 = crt_math_c_round_FUN_005fe6b0
+    dVar12 = round
                        ((double)this_ptr->stream_write_position - *(double *)(local_20 + 0x11c));
     SVar8 = (SIZE_T)ROUND(dVar12);
     if ((int)SVar8 < 0) {
@@ -84,7 +84,7 @@ sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
         iVar3 = (int)(0x3c00 / (longlong)iVar3);
       }
       iVar4 = this_ptr->streaming_buffer_size + -1;
-      dVar12 = crt_math_c_round_FUN_005fe6b0
+      dVar12 = round
                          ((double)((float)(this_ptr->sample_info).sample_rate * (float)this_ptr));
       iVar13 = (int)ROUND(dVar12);
       if (iVar4 < (int)ROUND(dVar12)) {
@@ -151,15 +151,15 @@ LAB_005a6adf:
             core_main_c_displayErrorAndQuit_FUN_00506f10("generateSilence - invalid bit depth!");
           }
           else if (uVar7 < 9) {
-            crt_memory_c_memset_FUN_005fde40(pcVar9,0x80,count);
+            memset(pcVar9,0x80,count);
           }
           else {
             if (uVar7 != 0x10) goto LAB_005a6adf;
-            crt_memory_c_memset_FUN_005fde40(pcVar9,0,count * 2);
+            memset(pcVar9,0,count * 2);
           }
         }
         else if (this_ptr->mp3_data == (CMP3Decoder *)0x0) {
-          if (this_ptr->file_handle == (FILE *)0x0) {
+          if (this_ptr->file_handle == (_FILE *)0x0) {
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
             g_CurrentLineNumber = 0x879;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't stream unless we have mp3 decoder or open wav file!");
@@ -167,7 +167,7 @@ LAB_005a6adf:
           file = this_ptr->file_handle;
           SVar6 = lock_length;
           size = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-          local_20 = crt_stdio_c_fread_FUN_005fd990(pcVar9,size,SVar6,file);
+          local_20 = _fread(pcVar9,size,SVar6,file);
           if ((this_ptr->file_handle->_flag & 0x20) != 0) {
             sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(this_ptr);
             pcVar9 = "Error reading %s while streaming\n";

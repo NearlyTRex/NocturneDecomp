@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-BOOL __cdecl crt_tls_c_allocate_tls_index_FUN_0060a27c(void)
+BOOL __cdecl allocate_tls_index(void)
 
 {
   if (g_TLSIndex == 0xffffffff) {

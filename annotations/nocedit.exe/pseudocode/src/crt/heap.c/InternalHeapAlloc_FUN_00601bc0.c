@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
+void * __cdecl InternalHeapAlloc(ulong size)
 
 {
   Heap *pHVar1;
@@ -45,7 +45,7 @@ void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
         pHVar1 = pHVar5[1].next_heap_block;
         g_SecondaryHeap = pHVar5;
         if ((size <= pHVar1) &&
-           (pvVar6 = crt_heap_c_AllocateFromFreeList_FUN_00609410
+           (pvVar6 = AllocateFromFreeList
                                (size,(HeapBlock *)(uint)in_DS,(ushort)pvVar6), pvVar6 != (void *)0x0
            )) goto LAB_00601cb0;
         if (DAT_00684edc < pHVar1) {
@@ -53,10 +53,10 @@ void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
         }
       }
       if ((bVar2) ||
-         (pvVar3 = crt_heap_c_SystemAllocWrapper_FUN_00609718(size), pvVar3 == (void *)0x0)) break;
+         (pvVar3 = SystemAllocWrapper(size), pvVar3 == (void *)0x0)) break;
       bVar2 = true;
     }
-    iVar4 = crt_heap_c_AllocatorFallbackStub_FUN_00609780(size);
+    iVar4 = AllocatorFallbackStub(size);
     if (iVar4 == 0) break;
     bVar2 = false;
   }

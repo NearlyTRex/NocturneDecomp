@@ -14,8 +14,8 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
   byte bVar3;
   int *ptr;
   CEditorTools *this_ptr_00;
-  FILE *pFVar4;
-  FILE *pFVar5;
+  _FILE *p_Var4;
+  _FILE *p_Var5;
   uint uVar6;
   C3DSCamera *pCVar7;
   CVector3f *pCVar8;
@@ -30,7 +30,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
   byte *pbVar17;
   C3DSCamera *pCVar18;
   byte bVar19;
-  FILE *pFVar20;
+  _FILE *p_Var20;
   uint in_stack_ffffb878;
   uint in_stack_ffffb87c;
   uint in_stack_ffffb880;
@@ -69,11 +69,11 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
   int local_64;
   C3DSCamera *local_60;
   C3DSCamera *local_5c;
-  FILE *local_58;
+  _FILE *local_58;
   int local_54;
   int local_50;
   int local_4c;
-  FILE *local_48;
+  _FILE *local_48;
   C3DSCamera *local_44;
   C3DSCamera *local_40;
   C3DSCamera *local_3c;
@@ -111,7 +111,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
     if (0 < this_ptr->camera_count) {
       local_30 = local_80;
       do {
-        crt_stdio_c_sprintf_FUN_005fdbd0((char *)(abStack_4be + 2),"%s",local_30);
+        sprintf((char *)(abStack_4be + 2),"%s",local_30);
         engine_2d_c_drawText_FUN_00401fd0((char *)(abStack_4be + 2),iVar13,iVar15);
         iVar15 = iVar15 + 0xb;
         if (g_WindowHeight / 2 + -0xb < iVar15) {
@@ -249,7 +249,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
           pbVar16[1] = bVar3;
           pbVar16 = pbVar16 + 2;
         } while (bVar3 != 0);
-        crt_string_c_strupr_FUN_00600770((char *)(abStack_4be + 2));
+        strupr((char *)(abStack_4be + 2));
       }
       iVar9 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                         (g_CEditorToolsPtr,"Save set","models",0x6481d1,
@@ -274,7 +274,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
         pCVar10 = local_70;
         if (0 < this_ptr->camera_count) {
           do {
-            crt_stdio_c_sprintf_FUN_005fdbd0(pCVar10->name,"%s%d",local_bc,iVar9);
+            sprintf(pCVar10->name,"%s%d",local_bc,iVar9);
             core_setedit_cpp_FUN_0057d340();
             iVar9 = iVar9 + 1;
             pCVar10 = pCVar10 + 1;
@@ -327,13 +327,13 @@ LAB_0057eb3b:
               pbVar17 = pbVar17 + -1;
             } while (0 < iVar9);
           }
-          iVar13 = crt_stdlib_c_atoi_FUN_005ffef0((char *)(abStack_4be + iVar9 + 3));
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          iVar13 = atoi((char *)(abStack_4be + iVar9 + 3));
+          sprintf
                     ((char *)(abStack_4be + iVar9 + 3),"%d",iVar13 + 1);
           iVar9 = 0;
           if (0 < this_ptr->camera_count) {
             do {
-              iVar13 = crt_string_c_strcmp_FUN_005fef20
+              iVar13 = strcmp
                                  (local_44[iVar9].name,(char *)(abStack_4be + 2));
               if (iVar13 == 0) {
                 pbVar16 = abStack_4be;
@@ -348,7 +348,7 @@ LAB_0057eb3b:
                   pbVar17 = pbVar17 + 2;
                 } while (bVar3 != 0);
                 iVar9 = -1;
-                crt_stdio_c_sprintf_FUN_005fdbd0((char *)(abStack_4be + 2),"%s1",local_7bc);
+                sprintf((char *)(abStack_4be + 2),"%s1",local_7bc);
               }
               iVar9 = iVar9 + 1;
             } while (iVar9 < this_ptr->camera_count);
@@ -449,38 +449,38 @@ LAB_0057eb3b:
                         (g_CEditorToolsPtr,"Merge .LC","models","*.lc",
                          (int)local_9bc);
       if (iVar9 != 0) {
-        pFVar4 = engine_dosio_c_getFile_FUN_00481a50("models",local_9bc,"rt");
-        if (pFVar4 == (FILE *)0x0) {
+        p_Var4 = engine_dosio_c_getFile_FUN_00481a50("models",local_9bc,"rt");
+        if (p_Var4 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xe68;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,pFVar4);
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
         local_6c = -1;
-        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar4,"%d\n",&local_6c);
+        _fscanf(p_Var4,"%d\n",&local_6c);
         if (local_6c != 1) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xe6c;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file",local_6c)
           ;
         }
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,pFVar4);
-        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar4,"%d,%d\n",&local_68,&local_64);
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,pFVar4);
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
+        _fscanf(p_Var4,"%d,%d\n",&local_68,&local_64);
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
         iVar9 = 0;
         if (0 < local_68) {
           do {
             core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_2ef0);
-            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2ef0,pFVar4);
+            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2ef0,p_Var4);
             iVar9 = iVar9 + 1;
           } while (iVar9 < local_68);
         }
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,pFVar4);
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
         iVar9 = this_ptr->camera_count;
         for (; (iVar9 < 0xfa && (0 < local_64)); local_64 = local_64 + -1) {
           core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0
-                    (local_60 + this_ptr->camera_count,pFVar4);
-          crt_stdio_c_sprintf_FUN_005fdbd0
+                    (local_60 + this_ptr->camera_count,p_Var4);
+          sprintf
                     (local_60[this_ptr->camera_count].name,"ncam%d",this_ptr->camera_count)
           ;
           core_setedit_cpp_FUN_0057d340();
@@ -491,7 +491,7 @@ LAB_0057eb3b:
           }
           iVar9 = this_ptr->camera_count;
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\setedit.cpp",0xe7f);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xe7f);
         goto LAB_0057eb3b;
       }
       break;
@@ -508,8 +508,8 @@ LAB_0057eb3b:
         local_2c = local_5c;
         pCVar12 = this_ptr;
         do {
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_3bc,"backdrop\\%s.pvs",local_2c);
-          crt_io_c_deleteFile_FUN_005ff9d0(local_3bc);
+          sprintf(local_3bc,"backdrop\\%s.pvs",local_2c);
+          remove(local_3bc);
           ptr = pCVar12->cameras[0].pvs_list;
           pCVar12->cameras[0].pvs_count = 0;
           if (ptr != (int *)0x0) {
@@ -537,34 +537,34 @@ LAB_0057eb3b:
                          (int)local_2bc);
       if (iVar9 != 0) {
         local_58 = engine_dosio_c_getFile_FUN_00481a50("models",local_2bc,"rt");
-        if (local_58 == (FILE *)0x0) {
+        if (local_58 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xeae;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
-        pFVar4 = local_58;
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,local_58);
+        p_Var4 = local_58;
+        _fgets((char *)(abStack_4be + 2),0xff,local_58);
         local_54 = -1;
-        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar4,"%d\n",&local_54);
+        _fscanf(p_Var4,"%d\n",&local_54);
         if (local_54 != 1) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xeb2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file",local_54)
           ;
         }
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,local_58);
-        crt_stdio_c_fscanf_FUN_005fe7c0(local_58,"%d,%d\n",&local_50,&local_4c);
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,local_58);
-        pFVar4 = local_58;
+        _fgets((char *)(abStack_4be + 2),0xff,local_58);
+        _fscanf(local_58,"%d,%d\n",&local_50,&local_4c);
+        _fgets((char *)(abStack_4be + 2),0xff,local_58);
+        p_Var4 = local_58;
         iVar9 = 0;
         if (0 < local_50) {
           do {
             core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)&stack0xffffb878);
-            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710((C3DSLight *)&stack0xffffb878,pFVar4);
+            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710((C3DSLight *)&stack0xffffb878,p_Var4);
             iVar9 = iVar9 + 1;
           } while (iVar9 < local_50);
         }
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_4be + 2),0xff,local_58);
+        _fgets((char *)(abStack_4be + 2),0xff,local_58);
         while (0 < local_4c) {
           core_setutil_cpp_C3DSCamera_ctor_FUN_00585310(&local_b60);
           core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(&local_b60,local_58);
@@ -585,37 +585,37 @@ LAB_0057f7c1:
             if ((float)0.10000000000000001 <=
                 SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98))
             goto LAB_0057fa69;
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_6bc,"%s.raw",&local_b60);
+            sprintf(local_6bc,"%s.raw",&local_b60);
             local_48 = engine_dosio_c_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_5bc,"%s.raw",pCVar10);
+            sprintf(local_5bc,"%s.raw",pCVar10);
             iVar13 = 0;
-            pFVar4 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_5bc,"wb");
             do {
-              pFVar5 = pFVar4;
-              iVar15 = crt_stdio_c_fgetc_FUN_005fe840(local_48);
+              p_Var5 = p_Var4;
+              iVar15 = _fgetc(local_48);
               iVar13 = iVar13 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar15,pFVar5);
+              _fputc(iVar15,p_Var5);
             } while (iVar13 < 0x4b000);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\core\\setedit.cpp",0xecd);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\setedit.cpp",0xece);
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_6bc,"%s.act",&local_b60);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xece);
+            sprintf(local_6bc,"%s.act",&local_b60);
             local_48 = engine_dosio_c_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_5bc,"%s.act",local_44 + iVar9);
+            sprintf(local_5bc,"%s.act",local_44 + iVar9);
             iVar9 = 0;
-            pFVar5 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var5 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_5bc,"wb");
-            pFVar4 = local_48;
+            p_Var4 = local_48;
             do {
-              pFVar20 = pFVar5;
-              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
+              p_Var20 = p_Var5;
+              iVar13 = _fgetc(p_Var4);
               iVar9 = iVar9 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar20);
+              _fputc(iVar13,p_Var20);
             } while (iVar9 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\setedit.cpp",0xed6);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xed7);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xed6);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xed7);
           }
 LAB_0057fa1d:
           local_4c = local_4c + -1;
@@ -644,39 +644,39 @@ LAB_0057fa1d:
           local_24 = local_3c;
           local_20 = local_38;
           do {
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_8bc,"%s.raw",local_28);
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_1bc,"%s%d.raw",local_ac,local_18 + 1);
-            pFVar4 = engine_dosio_c_getFile_FUN_00481a50
+            sprintf(local_8bc,"%s.raw",local_28);
+            sprintf(local_1bc,"%s%d.raw",local_ac,local_18 + 1);
+            p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_8bc,"rb");
             iVar9 = 0;
-            pFVar5 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var5 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_1bc,"wb");
             do {
-              pFVar20 = pFVar5;
-              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
+              p_Var20 = p_Var5;
+              iVar13 = _fgetc(p_Var4);
               iVar9 = iVar9 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar20);
+              _fputc(iVar13,p_Var20);
             } while (iVar9 < 0x4b000);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\setedit.cpp",0xef5);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xef6);
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_8bc,"%s.act",local_24);
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_1bc,"%s%d.act",local_ac,local_18 + 1);
-            pFVar4 = engine_dosio_c_getFile_FUN_00481a50
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xef5);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xef6);
+            sprintf(local_8bc,"%s.act",local_24);
+            sprintf(local_1bc,"%s%d.act",local_ac,local_18 + 1);
+            p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_8bc,"rb");
             iVar9 = 0;
-            pFVar5 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var5 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_1bc,"wb");
             do {
-              pFVar20 = pFVar5;
-              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
+              p_Var20 = p_Var5;
+              iVar13 = _fgetc(p_Var4);
               iVar9 = iVar9 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar20);
+              _fputc(iVar13,p_Var20);
             } while (iVar9 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\setedit.cpp",0xefe);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xeff);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xefe);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xeff);
             pCVar10 = local_20;
             iVar9 = local_18 + 1;
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_20->name,"%s%d",local_ac,iVar9);
+            sprintf(local_20->name,"%s%d",local_ac,iVar9);
             local_20 = pCVar10 + 1;
             local_24 = local_24 + 1;
             local_28 = local_28 + 1;

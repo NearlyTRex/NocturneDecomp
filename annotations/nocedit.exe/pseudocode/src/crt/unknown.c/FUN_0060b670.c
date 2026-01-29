@@ -29,7 +29,7 @@ char * crt_unknown_c_FUN_0060b670(void)
     dest[-1] = '\0';
   }
   if (in_stack_0000000c != 0) {
-    crt_memory_c_memset_FUN_005fde40(dest,0,in_stack_0000000c);
+    memset(dest,0,in_stack_0000000c);
   }
   return in_stack_00000004;
 }

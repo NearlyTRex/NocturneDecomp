@@ -25,7 +25,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_string.c_strncpy_FUN_00600f40
-;   crt_time.c_mktime_FUN_00600f80
+;   crt_time.c__mktime_FUN_00600f80
 ;   FileTimeToLocalFileTime
 ;   FileTimeToSystemTime
 ;
@@ -150,8 +150,8 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 00481ef9
     MOV EAX,ESP                         ; 00481efd
     PUSH EAX                            ; 00481eff
-    CALL crt_time.c_mktime_FUN_00600f80 ; 00481f00
-        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
+    CALL crt_time.c__mktime_FUN_00600f80 ; 00481f00
+        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__mktime_FUN_00600f80(_tm * timeptr)
     ADD ESP,0x4                         ; 00481f05
     MOV dword ptr [EBX + 0x108],EAX     ; 00481f08
     ADD ESP,0x3c                        ; 00481f0e

@@ -21,7 +21,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   char local_70 [80];
   int local_20;
   int local_1c;
-  FILE *local_18;
+  _FILE *local_18;
   uint local_14;
   
   bVar5 = 0;
@@ -37,7 +37,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
     local_18 = engine_dosio_c_getFile_FUN_00481a50("art",local_70,"rb");
-    if (local_18 == (FILE *)0x0) {
+    if (local_18 == (_FILE *)0x0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("ERROR! Bad texture name!",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -52,7 +52,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
       engine_2d_c_clearInputAndWait_FUN_00403260();
       local_14 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
       local_14 = local_14 & 0xff;
-      iVar3 = crt_ctype_c_toupper_FUN_005ff9e0(local_14);
+      iVar3 = toupper(local_14);
       if (iVar3 == 0x59) {
         local_74 = 99999.9;
         local_78 = 99999.9;
@@ -96,7 +96,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
           g_ModelPolygonData[local_1c].uv_v[2] = 255.0;
           g_ModelPolygonData[local_1c].uv_v[3] = 255.0;
           g_ModelPolygonData[local_1c].polygon_type = 2;
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (g_ModelPolygonData[local_1c].texture_name,"%s",local_70);
         }
       }

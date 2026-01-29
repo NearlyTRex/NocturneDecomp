@@ -48,11 +48,10 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
     core_fire_cpp_CFireEffect_FUN_004c8ea0(g_CFireEffectPtr);
   }
   else {
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-              (&stack0xfffffeb8,10,&g_CVectorTypeInfo);
+    __arrinit(&stack0xfffffeb8,10,&g_CVectorTypeInfo);
     iVar2 = (*((this_ptr_00->base).vtable._ub)->getTargetPoints)
                       ((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xfffffeb8);
-    iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar3 = rand();
     pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        ((CDemonActor *)this_ptr_00,(CVector3f *)(auStack_c0 + 0x34),
                         aCStack_140 + iVar3 % iVar2);
@@ -61,7 +60,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
       CStack_20.y = pCVar1->y;
       CStack_20.z = pCVar1->z;
     }
-    iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar3 = rand();
     pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        ((CDemonActor *)this_ptr_00,&CStack_50,aCStack_140 + iVar3 % iVar2);
     if ((CVector3f *)auStack_44 != pCVar1) {

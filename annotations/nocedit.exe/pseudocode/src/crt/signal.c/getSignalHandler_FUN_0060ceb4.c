@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-SIGNAL_HANDLER_TYPE __watcallStack crt_signal_c_getSignalHandler_FUN_0060ceb4(int signal_number)
+SIGNAL_HANDLER_TYPE __watcallStack getSignalHandler(int signal_number)
 
 {
   ThreadData *pTVar1;

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_tls_c_unregister_thread_data_FUN_0060cc3c(void *threadDataKey)
+void __cdecl unregister_thread_data(void *threadDataKey)
 
 {
   ThreadRegistryEntry *pTVar1;
@@ -23,10 +23,10 @@ LAB_0060cc86:
     }
     if (threadDataKey == ptr->threadDataKey) {
       if (ptr->shouldFreeData != 0) {
-        crt_memory_c_free_FUN_00601cd0(ptr->dataBuffer);
+        free(ptr->dataBuffer);
       }
       pTVar1->next = ptr->next;
-      crt_memory_c_free_FUN_00601cd0(ptr);
+      free(ptr);
       goto LAB_0060cc86;
     }
     pTVar1 = ptr;

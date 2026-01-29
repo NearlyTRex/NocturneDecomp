@@ -6,10 +6,10 @@
 
 #include "nocturne.h"
 
-char * __watcallStack crt_string_c_mbstrncpy_FUN_00605e90(char *dest,char *src,int char_count)
+char * __watcallStack mbstrncpy(char *dest,char *src,int char_count)
 
 {
-  crt_string_c_mbstrnbytes_FUN_00605ec0(src,char_count);
+  mbstrnbytes(src,char_count);
   crt_unknown_c_FUN_0060b670();
   return dest;
 }

@@ -18,15 +18,9 @@
       },
       {
         "category": "other",
-        "column": 35,
+        "column": 10,
         "line": 20,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 71,
-        "line": 20,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -200,7 +194,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_sscanf_FUN_0060013c((char *)(in_stack_00000004 + 0x25c),\"%d\",&local_4);",
+      "text": "sscanf((char *)(in_stack_00000004 + 0x25c),\"%d\",&local_4);",
       "type": "stack_param"
     },
     {

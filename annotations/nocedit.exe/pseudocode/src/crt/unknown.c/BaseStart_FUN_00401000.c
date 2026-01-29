@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_BaseStart_FUN_00401000(void)
+void BaseStart(void)
 
 {
   code *pcVar1;

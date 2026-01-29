@@ -9,7 +9,7 @@
 void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9d10(CCryptVessel *this_ptr)
 
 {
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(&this_ptr->base,in_stack_00000008);
   return;

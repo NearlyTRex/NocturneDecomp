@@ -44,7 +44,7 @@ int core_waypoint_cpp_FUN_005ec320(void)
         iVar7 = DAT_03f939a4;
         iVar3 = iVar3 + -1;
         n = iVar3 * 4;
-        crt_string_c_memmove_FUN_005fe5e0(&DAT_03f939a4,&DAT_03f939a8,n);
+        memmove(&DAT_03f939a4,&DAT_03f939a8,n);
         local_c = 0;
         iVar8 = iVar7;
         if (0 < *(int *)(iVar7 + 0x370)) {

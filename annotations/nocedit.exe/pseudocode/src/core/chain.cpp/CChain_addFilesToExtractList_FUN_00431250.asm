@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)
+; unknown void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x104]:1  local_104
@@ -50,7 +50,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x118]     ; 00431285
     PUSH EDX                            ; 0043128c
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0043128d
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00431292
     LEA EDI,[ESP + 0x4]                 ; 00431295
     MOV DL,0x2e                         ; 00431299
@@ -117,7 +117,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x118]     ; 00431314
     PUSH ESI                            ; 0043131b
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0043131c
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00431321
     POP EDI                             ; 00431324
     ADD ESP,0x100                       ; 00431325

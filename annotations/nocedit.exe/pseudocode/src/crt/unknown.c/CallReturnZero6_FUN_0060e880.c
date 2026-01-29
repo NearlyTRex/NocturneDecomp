@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_CallReturnZero6(uint param_1) */
 
-void crt_unknown_c_CallReturnZero6_FUN_0060e880(void)
+void CallReturnZero6(void)
 
 {
   (*PTR_unk_ReturnZero6_FUN_0060e850_0068559c)();

@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_DoNothing16() */
 
-void __cdecl crt_exit_c_ExitHookStub_FUN_0060b530(void)
+void __cdecl ExitHookStub(void)
 
 {
   return;

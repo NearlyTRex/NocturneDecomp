@@ -11,6 +11,6 @@ int __cdecl engine_pod_cpp_qsortByFilename_FUN_0054f630(char **filename1_ptr,cha
 {
   int iVar1;
   
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(*filename1_ptr,*filename2_ptr);
+  iVar1 = stricmp(*filename1_ptr,*filename2_ptr);
   return iVar1;
 }

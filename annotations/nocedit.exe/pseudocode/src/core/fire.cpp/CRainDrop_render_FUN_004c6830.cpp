@@ -105,7 +105,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   g_RenderVertexBuffer[3].u = 1.1754944e-38;
   g_RenderVertexBuffer[2].v = (float)((int)g_CameraLoadImageReadBuffer + 0x771b0);
   iStack_10 = iStack_14;
-  dVar3 = crt_math_c_round_FUN_005fe6b0
+  dVar3 = round
                     ((double)((float)iStack_14 *
                              (this_ptr->base).lifetime_remaining * (float)4));
   g_RenderVertexBuffer[0].w_recip = (float)(int)ROUND(dVar3);

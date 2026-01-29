@@ -101,7 +101,7 @@ LAB_004c7785:
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(2);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5c,"ric-%s!?.wav",pcVar3);
+      sprintf(acStack_5c,"ric-%s!?.wav",pcVar3);
       if (acStack_5c[0] == '\0') {
         return;
       }
@@ -113,7 +113,7 @@ LAB_004c7785:
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(3);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5c,"ric-%s.wav",pcVar3);
+      sprintf(acStack_5c,"ric-%s.wav",pcVar3);
       if (acStack_5c[0] == '\0') {
         return;
       }
@@ -124,7 +124,7 @@ LAB_004c7785:
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(5);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5c,"ric-%s!?.wav",pcVar3);
+      sprintf(acStack_5c,"ric-%s!?.wav",pcVar3);
       if (acStack_5c[0] == '\0') {
         return;
       }
@@ -135,7 +135,7 @@ LAB_004c7785:
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(7);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5c,"ric-%s!?.wav",pcVar3);
+      sprintf(acStack_5c,"ric-%s!?.wav",pcVar3);
       if (acStack_5c[0] == '\0') {
         return;
       }

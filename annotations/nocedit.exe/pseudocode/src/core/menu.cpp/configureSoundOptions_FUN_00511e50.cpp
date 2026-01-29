@@ -130,18 +130,18 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     if (iVar9 == 0) {
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound effects : Off");
       iVar3 = local_34;
-      crt_stdio_c_sprintf_FUN_005fdbd0(*pacVar10,pcVar4);
+      sprintf(*pacVar10,pcVar4);
     }
     else {
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound effects : ");
-      crt_stdio_c_sprintf_FUN_005fdbd0(*pacVar10,pcVar4);
+      sprintf(*pacVar10,pcVar4);
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
       uVar21 = CONCAT44(uVar23,0x511fbd);
-      dVar20 = crt_math_c_round_FUN_005fe6b0
+      dVar20 = round
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar20);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_34c,"%d",local_18,uVar21);
+      sprintf(acStack_34c,"%d",local_18,uVar21);
       uVar23 = (uint)((ulonglong)uVar21 >> 0x20);
       pcVar4 = acStack_34c;
       iVar3 = -1;
@@ -192,7 +192,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     local_30 = iVar9;
     if (iVar15 == 0) {
       pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Dialog : Off");
-      crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,pcVar14);
+      sprintf(pcVar4,pcVar14);
     }
     else {
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Dialog : ");
@@ -208,11 +208,11 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       } while (cVar1 != '\0');
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
       uVar21 = CONCAT44(uVar23,0x5120c3);
-      dVar20 = crt_math_c_round_FUN_005fe6b0
+      dVar20 = round
                          ((double)((local_14 * 100.0f) / 1.0f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar20);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_14c,"%d",local_18,uVar21);
+      sprintf(acStack_14c,"%d",local_18,uVar21);
       uVar23 = (uint)((ulonglong)uVar21 >> 0x20);
       pcVar14 = acStack_14c;
       iVar3 = -1;
@@ -263,7 +263,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     if (iVar3 == 0) {
       pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Music Vol : Off");
       local_24 = iVar9 + 1;
-      crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,pcVar14);
+      sprintf(pcVar4,pcVar14);
     }
     else {
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Music Vol : ");
@@ -279,11 +279,11 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       } while (cVar1 != '\0');
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(1);
       uVar21 = CONCAT44(uVar23,0x5121c7);
-      dVar20 = crt_math_c_round_FUN_005fe6b0
+      dVar20 = round
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar20);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 ((char *)&local_560.device_value2,"%d",local_18,uVar21);
       uVar23 = (uint)((ulonglong)uVar21 >> 0x20);
       pDVar11 = &local_560.device_value2;
@@ -342,7 +342,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       pcVar14 = pcVar14 + 2;
     } while (cVar1 != '\0');
     iVar3 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_248,"%d",iVar3);
+    sprintf(local_248,"%d",iVar3);
     pcVar14 = local_248;
     iVar3 = -1;
     pcVar5 = pcVar4;
@@ -400,7 +400,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     } while (cVar1 != '\0');
     local_24 = iVar9;
     iVar9 = sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250();
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_248,"%d",iVar9);
+    sprintf(local_248,"%d",iVar9);
     pcVar14 = local_248;
     iVar9 = -1;
     pcVar5 = pcVar4;
@@ -455,7 +455,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       iVar3 = iVar3 + 3;
     }
     local_24 = iVar3;
-    crt_stdio_c_sprintf_FUN_005fdbd0(g_SoundMenuTextBuffers[iVar9],pcVar4);
+    sprintf(g_SoundMenuTextBuffers[iVar9],pcVar4);
     iVar3 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
     if ((iVar3 < 0) ||
        (iVar9 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(), iVar9 <= iVar3)) {
@@ -534,7 +534,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       fVar7 = (float)((int)((iVar9 + iVar15 * -4) - (uint)(iVar15 << 1 < 0)) >> 2);
       local_20 = iVar3;
       local_14 = fVar7;
-      fVar19 = crt_math_c_pow_FUN_005ffd76
+      fVar19 = pow
                          ((float10)50,(float10)1 / (float10)(int)fVar7);
       iVar9 = 0;
       dVar20 = (double)fVar19;
@@ -557,7 +557,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
                                        (iVar9,(float)dVar20,(float)fVar19);
               y_top = g_WindowHeight + -1;
               uVar24 = 0x512634;
-              dVar20 = crt_math_c_round_FUN_005fe6b0
+              dVar20 = round
                                  ((double)((float)g_WindowHeight -
                                           fVar8 * (float)g_WindowHeight * 0.25f));
               local_14 = (float)(int)ROUND(dVar20);

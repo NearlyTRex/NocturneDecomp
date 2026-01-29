@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-bool crt_signal_c_unregisterConsoleHandler_FUN_0060cfe4(void)
+bool unregisterConsoleHandler(void)
 
 {
   BOOL BVar1;
   
   if (g_ConsoleHandlerRegistered != 0) {
-    BVar1 = (*g_SetConsoleCtrlHandlerFunc)(crt_signal_c_consoleCtrlHandler_FUN_0060cf20,0);
+    BVar1 = (*g_SetConsoleCtrlHandlerFunc)(consoleCtrlHandler,0);
     if (BVar1 != 0) {
       g_ConsoleHandlerRegistered = 0;
     }

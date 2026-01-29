@@ -29,24 +29,6 @@
       },
       {
         "category": "other",
-        "column": 40,
-        "line": 35,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 40,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 45,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 48,
         "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -55,14 +37,13 @@
   },
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 176,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 9,
     "pseudocode_lines": 41,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
-      "format_string_mismatch",
       "unaffected_reg",
       "unnamed_param"
     ],
@@ -308,14 +289,14 @@
       "description": "Unaffected register variable",
       "line": 28,
       "match": "unaff_EBX",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file,\"%d\\n\",local_14,unaff_EBX);",
+      "text": "_fscanf(file,\"%d\\n\",local_14,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_6",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_17c,\"Importing %s\",param_6);",
+      "text": "sprintf(local_17c,\"Importing %s\",param_6);",
       "type": "unnamed_param"
     },
     {
@@ -324,17 +305,6 @@
       "match": "param_5",
       "text": "core_course_cpp_CCourse_importMatrices_FUN_00442ea0(param_5);",
       "type": "unnamed_param"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"%d\\n\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 28,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file,\"%d\\n\",local_14,unaff_EBX);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,0 +1,173 @@
+{
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 97,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 42,
+    "suspect_count": 4,
+    "suspect_types": [
+      "param_count_too_few",
+      "special_crt_function",
+      "undefined_data"
+    ],
+    "total_lines": 131
+  },
+  "cross_references": [
+    {
+      "addr": "0046e760",
+      "from_addr": "0046e76c",
+      "name": "shape_design.c_displayHeapStatus_FUN_0046e760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00600ad0",
+    "address_range": [
+      [
+        "00600ad0",
+        "00600b93"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_watcom.c__heapchk_FUN_00600ad0",
+    "signature": "int __cdecl crt_watcom_c__heapchk_FUN_00600ad0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "006012d0",
+      "is_variadic": false,
+      "name": "crt_heap.c_heapWalk_FUN_006012d0"
+    },
+    {
+      "addr": "00602434",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    },
+    {
+      "addr": "00600990",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00600990"
+    },
+    {
+      "addr": "00600a64",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00600a64"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ed4",
+      "name": "g_MainHeap",
+      "type": "Heap*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00684f00",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00",
+      "type": "void*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684f08",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08",
+      "type": "void*",
+      "value": "00602434"
+    },
+    {
+      "addr": "03f9b850",
+      "name": "DAT_03f9b850",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0046e76c",
+        "call_type": "direct",
+        "caller": "shape_design.c_displayHeapStatus_FUN_0046e760",
+        "estimated_params": 4,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.615384615384615,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CALLIND": 4,
+      "CBRANCH": 9,
+      "COPY": 49,
+      "INT_ADD": 19,
+      "INT_AND": 44,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 40,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 20,
+      "INT_SUB": 19,
+      "INT_XOR": 3,
+      "LOAD": 16,
+      "POPCOUNT": 20,
+      "RETURN": 3,
+      "STORE": 15
+    },
+    "pcode_op_count": 300
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_03f9b850",
+      "text": "if (DAT_03f9b850 != '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_03f9b850",
+      "text": "DAT_03f9b850 = '\\x01';",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "address": "00600ad0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_watcom.c__heapchk_FUN_00600ad0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00600ad0",
+      "type": "special_crt_function"
+    }
+  ]
+}

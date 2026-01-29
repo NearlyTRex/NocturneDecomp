@@ -9,7 +9,7 @@
 /* WARNING: Removing unreachable block (ram,0x005fe232) */
 
 void __cdecl
-crt_stdlib_c_qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
+qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
 
 {
   byte uVar1;
@@ -81,17 +81,17 @@ LAB_005fdfad:
           if (0x2a < num) {
             iVar8 = (num >> 3) * size;
             local_68 = iVar8 * 2;
-            local_5c = crt_stdlib_c_median_of_3_FUN_005fdea0
+            local_5c = median_of_3
                                  (local_48,(void *)((int)local_48 + iVar8),
                                   (void *)((int)local_48 + local_68),local_3c);
-            b = crt_stdlib_c_median_of_3_FUN_005fdea0
+            b = median_of_3
                           ((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_3c);
-            pvVar4 = crt_stdlib_c_median_of_3_FUN_005fdea0
+            pvVar4 = median_of_3
                                ((void *)((int)pvVar4 - local_68),(void *)((int)pvVar4 - iVar8),
                                 pvVar4,local_3c);
           }
           pvVar7 = local_5c;
-          b = crt_stdlib_c_median_of_3_FUN_005fdea0(local_5c,b,pvVar4,local_3c);
+          b = median_of_3(local_5c,b,pvVar4,local_3c);
         }
         pvVar4 = (void *)local_38;
         if (local_38 == 0) {
@@ -100,7 +100,7 @@ LAB_005fdfad:
         }
         else {
           local_44 = local_48;
-          crt_stdlib_c_memory_swap_FUN_005fdf10(local_48,pvVar7,local_38);
+          memory_swap(local_48,pvVar7,local_38);
         }
         local_28 = local_48;
         local_34 = local_48;
@@ -124,7 +124,7 @@ LAB_005fe29f:
             }
             else {
               aiStack_16c[1] = 0x5fe2ec;
-              crt_stdlib_c_memory_swap_FUN_005fdf10((void *)0x0,ptr2_00,(SIZE_T)pvVar4);
+              memory_swap((void *)0x0,ptr2_00,(SIZE_T)pvVar4);
               ptr1 = extraout_EAX;
             }
             local_2c = (void *)((int)local_2c + size);
@@ -145,7 +145,7 @@ LAB_005fe29f:
             }
             else {
               aiStack_16c[1] = 0x5fe38a;
-              crt_stdlib_c_memory_swap_FUN_005fdf10((void *)0x0,ptr2_01,(SIZE_T)bytes);
+              memory_swap((void *)0x0,ptr2_01,(SIZE_T)bytes);
               ptr1 = extraout_EAX_00;
             }
             local_28 = (void *)((int)local_28 - size);
@@ -161,7 +161,7 @@ LAB_005fe29f:
             pvVar7 = local_2c;
           }
           else {
-            crt_stdlib_c_memory_swap_FUN_005fdf10(ptr1,pvVar7,(SIZE_T)pvVar4);
+            memory_swap(ptr1,pvVar7,(SIZE_T)pvVar4);
           }
           SVar3 = local_24;
           local_28 = (void *)((int)local_28 + size);
@@ -276,7 +276,7 @@ LAB_005fe46e:
                   }
                   else {
                     aiStack_16c[1] = 0x5fe04b;
-                    crt_stdlib_c_memory_swap_FUN_005fdf10(pvVar4,ptr2,(SIZE_T)pvVar7);
+                    memory_swap(pvVar4,ptr2,(SIZE_T)pvVar7);
                   }
                   puStack_18 = (uint *)((int)puStack_18 - local_38);
                   pvVar7 = (void *)local_40;

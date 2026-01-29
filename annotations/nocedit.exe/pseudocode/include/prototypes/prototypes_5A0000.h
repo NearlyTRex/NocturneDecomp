@@ -106,7 +106,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_005a3880 (CSmiley *this_ptr,u
 void __cdecl sound_sndmain_cpp_staticInit_FUN_005a3940(void);
 void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0 (float *input_real,float *input_imag,float *output_real,float *output_imag,int size);
 void __cdecl sound_sndmain_cpp_computeFFT_FUN_005a3c90 (float *input,int size,float *output_real,float *output_imag);
-int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0 (FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample);
+int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0 (_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample);
 int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_005a43a0(void);
 CSfxSample * __cdecl sound_sndmain_cpp_findFreeSampleSlot_FUN_005a4400(void);
 int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450(int requested_bytes);

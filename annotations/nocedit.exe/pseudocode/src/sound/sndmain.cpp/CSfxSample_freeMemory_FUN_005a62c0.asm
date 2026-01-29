@@ -113,7 +113,7 @@ section .text
     PUSH 0x64fd2d                       ; 005a638b | = "..\\sound\\sndmain.cpp"
     PUSH EAX                            ; 005a6390
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005a6391
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005a6396
     MOV dword ptr [EBX + 0x174],0x0     ; 005a6399
     JMP 0x005a6337                      ; 005a63a3

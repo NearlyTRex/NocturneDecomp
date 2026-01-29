@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __watcallStack crt_string_c_strerror_FUN_00601470(int errnum)
+char * __watcallStack strerror(int errnum)
 
 {
   if ((-1 < errnum) && (errnum <= g_MaxErrnoValue)) {

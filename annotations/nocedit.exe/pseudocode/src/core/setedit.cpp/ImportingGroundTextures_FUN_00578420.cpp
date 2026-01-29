@@ -10,7 +10,7 @@ void core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
 
 {
   int iVar1;
-  FILE *stream;
+  _FILE *stream;
   char *pcVar2;
   int iVar3;
   int iVar4;
@@ -27,9 +27,9 @@ void core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (in_stack_00000004,(char *)0x0,"rt","..\\core\\setedit.cpp",0x2c3)
   ;
-  if (stream != (FILE *)0x0) {
+  if (stream != (_FILE *)0x0) {
     iVar6 = 0;
-    while (pcVar2 = crt_stdio_c_fgets_FUN_005fefd0(local_19c,200,stream), pcVar2 != (char *)0x0) {
+    while (pcVar2 = _fgets(local_19c,200,stream), pcVar2 != (char *)0x0) {
       pcVar2 = local_19c;
       do {
         pcVar5 = pcVar2;
@@ -62,21 +62,21 @@ LAB_005784e7:
       }
       if (*pcVar2 != '\0') {
         local_c = -1;
-        iVar3 = crt_stdio_c_sscanf_FUN_0060013c(pcVar2,"%[^,], %s",local_70,local_d4);
+        iVar3 = sscanf(pcVar2,"%[^,], %s",local_70,local_d4);
         iVar1 = local_c;
         if ((iVar3 == 2) &&
-           (iVar3 = crt_stdio_c_sscanf_FUN_0060013c(local_d4,"%d",&local_c), iVar1 = local_c
+           (iVar3 = sscanf(local_d4,"%d",&local_c), iVar1 = local_c
            , iVar3 != 1)) {
           iVar3 = 0;
           while( true ) {
             pcVar2 = local_d4;
             pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(iVar3);
-            iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,pcVar2);
+            iVar4 = stricmp(pcVar5,pcVar2);
             iVar1 = iVar3;
             if (iVar4 == 0) break;
             pcVar2 = local_d4;
             pcVar5 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar3);
-            iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,pcVar2);
+            iVar4 = stricmp(pcVar5,pcVar2);
             if ((iVar4 == 0) || (iVar3 = iVar3 + 1, iVar1 = local_c, 0xd < iVar3)) break;
           }
         }

@@ -19,7 +19,7 @@ shape_edittool_cpp_CInputString_insertChar_FUN_0049d480
       this_ptr->current_length = this_ptr->current_length + 1;
     }
     iVar1 = this_ptr->cursor_position;
-    crt_string_c_memmove_FUN_005fe5e0
+    memmove
               (this_ptr->string_data + iVar1 + 1,this_ptr->string_data + iVar1,
                this_ptr->current_length - iVar1);
     this_ptr->string_data[this_ptr->cursor_position] = character;

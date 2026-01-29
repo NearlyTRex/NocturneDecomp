@@ -24,11 +24,11 @@ void __cdecl core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame *this_ptr)
     this_ptr->delta_time_int = 0x4000;
   }
   iVar1 = g_DebugRecording;
-  dVar3 = crt_math_c_round_FUN_005fe6b0
+  dVar3 = round
                     ((double)((float)this_ptr->delta_time_int * this_ptr->time_scale_factor));
   this_ptr->delta_time_int = (int)ROUND(dVar3);
   if (iVar1 != 0) {
-    dVar3 = crt_math_c_round_FUN_005fe6b0
+    dVar3 = round
                       ((double)((65536.0f / 30.0f) *
                                this_ptr->time_scale_factor));
     this_ptr->delta_time_int = (int)ROUND(dVar3);

@@ -35,10 +35,10 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
   fVar4 = (float10)256;
   fVar5 = (float10)(float)local_30.z * fVar4;
   local_20 = iVar3;
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)((float10)(float)local_30.x * fVar4));
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)(float)local_30.y * fVar4));
+  dVar6 = round((double)((float10)(float)local_30.x * fVar4));
+  dVar7 = round((double)((float10)(float)local_30.y * fVar4));
   local_20 = (int)ROUND(dVar7);
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
+  dVar8 = round((double)fVar5);
   local_30.y = (int)ROUND(dVar7) + iVar3;
   local_24 = (int)ROUND(dVar8);
   local_30.z = (iVar2 + local_24) - this_ptr->animation_counter;

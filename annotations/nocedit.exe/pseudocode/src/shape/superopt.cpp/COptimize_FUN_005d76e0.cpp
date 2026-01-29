@@ -14,7 +14,7 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d76e0(COptimize *this_ptr)
   void *pvVar3;
   int in_stack_00000008;
   
-  pvVar2 = crt_memory_c_realloc_FUN_00601df0(this_ptr->unk6,(this_ptr->unk5 + 1) * 4);
+  pvVar2 = realloc(this_ptr->unk6,(this_ptr->unk5 + 1) * 4);
   if (pvVar2 != (void *)0x0) {
     if (in_stack_00000008 == 0) {
       pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34);

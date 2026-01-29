@@ -16,7 +16,7 @@
 ;   MoveFileA* g_MoveFileAFunc = 00212086
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   MoveFileA
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     TEST EAX,EAX                        ; 006015e2
     JNZ 0x006015ed                      ; 006015e4
         ;   XREF to: 006015ed (CONDITIONAL_JUMP)  ; LAB_006015ed
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006015e6
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 006015e6
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     POP EBX                             ; 006015eb
     RET                                 ; 006015ec
     XOR EAX,EAX                         ; 006015ed

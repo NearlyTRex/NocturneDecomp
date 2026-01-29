@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag)
+int __cdecl findEnvVar(char *name,int delete_flag)
 
 {
   char **ppcVar1;
@@ -31,8 +31,8 @@ int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag)
     bVar3 = *name;
     pbVar9 = (byte *)name;
     while (bVar3 != 0) {
-      iVar5 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar8);
-      iVar6 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar9);
+      iVar5 = toupper((uint)*pbVar8);
+      iVar6 = toupper((uint)*pbVar9);
       if (iVar5 != iVar6) break;
       if (*pbVar8 == 0x3d) {
         iVar5 = (int)dest - (int)g_EnvironmentBlock >> 2;
@@ -49,10 +49,10 @@ int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag)
         }
         if (g_EnvironStringArea != (char **)0x0) {
           if (*(char *)(iVar5 + (int)g_EnvironStringArea) != '\0') {
-            crt_memory_c_free_FUN_00601cd0(ptr);
+            free(ptr);
           }
           n = (int)dest - (int)g_EnvironmentBlock >> 2;
-          crt_string_c_memmove_FUN_005fe5e0(dest,g_EnvironStringArea,n);
+          memmove(dest,g_EnvironStringArea,n);
           g_EnvironStringArea = dest;
           if (iVar5 < (int)n) {
             puVar7 = (byte *)(iVar5 + (int)dest);

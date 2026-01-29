@@ -29,7 +29,7 @@
         "category": "incompatible_types",
         "column": 37,
         "line": 143,
-        "message": "cannot convert 'int (*)(SCramRectangle**, SCramRectangle**)' to 'QSORT_COMPARATOR' {aka 'int (**)(void*, void*)'}"
+        "message": "invalid conversion from 'int (*)(SCramRectangle**, SCramRectangle**)' to '__compar_fn_t' {aka 'int (*)(const void*, const void*)'} [-fpermissive]"
       },
       {
         "category": "other",
@@ -118,13 +118,13 @@
       {
         "category": "other",
         "column": 27,
-        "line": 763,
+        "line": 762,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 765,
+        "line": 764,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -750,12 +750,6 @@
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 574,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 57,
         "line": 575,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -780,127 +774,61 @@
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 720,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 722,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 59,
-        "line": 724,
+        "line": 723,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 763,
+        "line": 762,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 765,
+        "line": 764,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 777,
+        "line": 776,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 67,
+        "line": 776,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
         "line": 777,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 778,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 780,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 782,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 784,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 786,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 787,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 788,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 804,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 809,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 825,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 59,
-        "line": 830,
+        "line": 826,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1962,
-    "complexity_score": 1828,
+    "complexity_score": 1824,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 101,
-    "pseudocode_lines": 828,
+    "pseudocode_lines": 824,
     "suspect_count": 99,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 2790
+    "total_lines": 2786
   },
   "cross_references": [
     {
@@ -939,7 +867,7 @@
     {
       "addr": "005ff9f3",
       "is_variadic": false,
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe6d0",
@@ -2652,14 +2580,14 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 756,
+      "line": 755,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar18)) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 758,
+      "line": 757,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar18))) {",
       "type": "pointer_cast"

@@ -22,11 +22,10 @@ core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_00508920(CMansionPuzzleCircle *thi
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(pCVar3 + 1);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(pCVar3 + 1);
-  pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar4 = __arrinit
                      (pCVar3[1].part_visibility_flags + 9,0xc,&g_SPanelTypeInfo);
-  pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)((int)pvVar4 + 0x4b0),0xc,&g_SGemTypeInfo);
-  pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar4 = __arrinit((void *)((int)pvVar4 + 0x4b0),0xc,&g_SGemTypeInfo);
+  pvVar4 = __arrinit
                      ((void *)((int)pvVar4 + 0x8a0),2,&g_SReflectorTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar4 + -0x11ec) = &g_CMansionPuzzleCircleVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

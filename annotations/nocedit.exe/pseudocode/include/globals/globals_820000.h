@@ -57,9 +57,6 @@ extern CDemonFilter CDemonFilter_ARRAY_008229ec[8];
 extern CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance;
 extern CKeyFramedModelInstance DAT_00823a98;
 
-// FILE*
-extern FILE* g_ActorDataFile;
-
 // SEdge[512]
 extern SEdge g_TracedEdgeBuffer[512];
 
@@ -78,6 +75,9 @@ extern SRenderVertex g_ClipperOutputBuffer[16];
 extern SRenderVertex g_ClipperInputBuffer[16];
 extern SRenderVertex g_ClipperWorkingBuffer[16];
 extern SRenderVertex g_ClipperIntermediateBuffer[16];
+
+// _FILE*
+extern _FILE* g_ActorDataFile;
 
 // char[50]
 extern char g_ActorDebugBuffer[50];

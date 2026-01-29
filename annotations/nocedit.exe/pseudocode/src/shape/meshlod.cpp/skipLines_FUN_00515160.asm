@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(FILE *file_handle,int line_count)
+; __cdecl void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(_FILE *file_handle,int line_count)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ; int              Stack[0x8]:4   line_count
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 0051516e
         ;   Label: LAB_0051516e
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0051516f
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 00515174
     TEST EAX,EAX                        ; 00515177
     JL 0x00515185                       ; 00515179

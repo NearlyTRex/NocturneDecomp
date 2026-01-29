@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_string_c_mbstrnlen_FUN_00605e50(char *str,int max_bytes)
+int __watcallStack mbstrnlen(char *str,int max_bytes)
 
 {
   int iVar1;
@@ -14,9 +14,9 @@ int __watcallStack crt_string_c_mbstrnlen_FUN_00605e50(char *str,int max_bytes)
   int iVar3;
   
   iVar3 = 0;
-  for (; (iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str), iVar1 == 0 &&
+  for (; (iVar1 = mbstring_termination_check(str), iVar1 == 0 &&
          (max_bytes != 0)); max_bytes = max_bytes - uVar2) {
-    uVar2 = crt_locale_c_mblen_FUN_00605a40(str);
+    uVar2 = mblen(str);
     if ((uint)max_bytes < uVar2) {
       return iVar3;
     }

@@ -13,12 +13,12 @@ engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0
 {
   BOOL BVar1;
   uint uVar2;
-  tm tStack_4c;
+  _tm _Stack_4c;
   _SYSTEMTIME _Stack_28;
   _FILETIME local_18;
   
-  crt_memory_c_memset_FUN_005fde40(finder,0,0x100);
-  crt_string_c_strncpy_FUN_00600f40(finder->filename,find_data->cFileName,0xff);
+  memset(finder,0,0x100);
+  strncpy(finder->filename,find_data->cFileName,0xff);
   finder->file_size = 0;
   if ((find_data->dwFileAttributes & 0x20) != 0) {
     *(byte *)&finder->file_size = (byte)finder->file_size | 1;
@@ -43,14 +43,14 @@ engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0
   if (BVar1 != 0) {
     BVar1 = (*g_FileTimeToSystemTimeFunc)(&local_18,&_Stack_28);
     if (BVar1 != 0) {
-      tStack_4c.tm_sec = (int)_Stack_28.wSecond;
-      tStack_4c.tm_min = (int)_Stack_28.wMinute;
-      tStack_4c.tm_hour = (int)_Stack_28.wHour;
-      tStack_4c.tm_mday = (int)_Stack_28.wDay;
-      tStack_4c.tm_mon = _Stack_28.wMonth - 1;
-      tStack_4c.tm_year = _Stack_28.wYear - 0x76c;
-      tStack_4c.tm_isdst = 0;
-      uVar2 = crt_time_c_mktime_FUN_00600f80(&tStack_4c);
+      _Stack_4c.tm_sec = (int)_Stack_28.wSecond;
+      _Stack_4c.tm_min = (int)_Stack_28.wMinute;
+      _Stack_4c.tm_hour = (int)_Stack_28.wHour;
+      _Stack_4c.tm_mday = (int)_Stack_28.wDay;
+      _Stack_4c.tm_mon = _Stack_28.wMonth - 1;
+      _Stack_4c.tm_year = _Stack_28.wYear - 0x76c;
+      _Stack_4c.tm_isdst = 0;
+      uVar2 = _mktime(&_Stack_4c);
       finder->attributes = uVar2;
       return;
     }

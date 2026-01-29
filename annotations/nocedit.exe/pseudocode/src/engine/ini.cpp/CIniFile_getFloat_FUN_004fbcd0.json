@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 37,
+        "column": 12,
         "line": 15,
         "message": "'stack0xffffff98' was not declared in this scope; did you mean 'in_stack_ffffff98'?"
       }
@@ -20,14 +20,13 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 85,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 10,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "format_string_mismatch",
       "stack_param",
       "stack_ref"
     ],
@@ -189,7 +188,7 @@
       "description": "Direct stack address reference",
       "line": 8,
       "match": "&stack0xffffff98",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,\"%g\",(double)*output);",
+      "text": "sprintf(&stack0xffffff98,\"%g\",(double)*output);",
       "type": "stack_ref"
     },
     {
@@ -210,19 +209,8 @@
       "description": "Direct stack address reference",
       "line": 11,
       "match": "&stack0xffffff98",
-      "text": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff98,\"%f\");",
+      "text": "sscanf(&stack0xffffff98,\"%f\");",
       "type": "stack_ref"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%f",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 11,
-      "match": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff98,\"%f\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

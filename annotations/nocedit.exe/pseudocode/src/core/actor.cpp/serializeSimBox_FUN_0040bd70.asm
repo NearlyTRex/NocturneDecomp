@@ -17,7 +17,7 @@
 ;   TerminatedCString s_s_s_00614070
 ;   TerminatedCString s_s_0061407b
 ;   char[104] g_PropertyNamePrefix
-;   FILE* g_ActorDataFile
+;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_0040bd84
     PUSH EBP                            ; 0040bd8a
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0040bd8b
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0040bd90
     MOV ESI,EAX                         ; 0040bd93
     TEST EAX,EAX                        ; 0040bd95
@@ -59,13 +59,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0040bda4
     PUSH EDX                            ; 0040bda8
     CALL core_box.cpp_CBox_loadFromFile_FUN_0041fe90 ; 0040bda9
-        ;   XREF to: 0041fe90 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_loadFromFile_FUN_0041fe90(CBox * this_ptr, FILE * file_handle)
+        ;   XREF to: 0041fe90 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_loadFromFile_FUN_0041fe90(CBox * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0040bdae
     MOV ECX,dword ptr [0x00822034]      ; 0040bdb1 | g_ActorDataFile
         ;   Label: LAB_0040bdb1
     PUSH ECX                            ; 0040bdb7
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0040bdb8
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0040bdbd
     MOV ESI,EAX                         ; 0040bdc0
     TEST EAX,EAX                        ; 0040bdc2
@@ -107,7 +107,7 @@ section .text
     MOV ECX,dword ptr [0x00822034]      ; 0040be02 | g_ActorDataFile
     PUSH ECX                            ; 0040be08
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040be09
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040be0e
     PUSH 0x1                            ; 0040be11
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ; 0040be13
@@ -119,7 +119,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040be27
     PUSH ESI                            ; 0040be2b
     CALL core_box.cpp_CBox_saveToFile_FUN_00420020 ; 0040be2c
-        ;   XREF to: 00420020 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_saveToFile_FUN_00420020(CBox * this_ptr, FILE * file_handle)
+        ;   XREF to: 00420020 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_saveToFile_FUN_00420020(CBox * this_ptr, _FILE * file_handle)
     ADD ESP,0xc                         ; 0040be31
     PUSH -0x1                           ; 0040be34
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ; 0040be36
@@ -130,7 +130,7 @@ section .text
     MOV EDI,dword ptr [0x00822034]      ; 0040be48 | g_ActorDataFile
     PUSH EDI                            ; 0040be4e
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040be4f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040be54
     POP EDI                             ; 0040be57
     POP EBP                             ; 0040be58

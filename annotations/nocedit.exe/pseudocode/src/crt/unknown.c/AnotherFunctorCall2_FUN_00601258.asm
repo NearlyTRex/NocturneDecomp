@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200
+;   crt_memory.c___arrinit_dispatch_FUN_00601200
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH ECX                            ; 00601262
     MOV EBX,dword ptr [ESP + 0x10]      ; 00601263
     PUSH EBX                            ; 00601267
-    CALL crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200 ; 00601268
-        ;   XREF to: 00601200 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200(void * array_ptr, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_dispatch_FUN_00601200 ; 00601268
+        ;   XREF to: 00601200 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_dispatch_FUN_00601200(void * array_ptr, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0060126d
     POP EBX                             ; 00601270
     RET                                 ; 00601271

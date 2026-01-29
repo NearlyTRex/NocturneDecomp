@@ -307,7 +307,7 @@ LAB_005be795:
                   ((CVector3f *)local_148,&local_ac);
         local_24 = SQRT(local_128.x * local_128.x + local_130 * local_130 + local_12c * local_12c);
         if (local_24 < 2.7f) {
-          dVar14 = crt_math_c_acos_FUN_00600162((double)(local_24 / 2.7f));
+          dVar14 = acos((double)(local_24 / 2.7f));
           local_20 = (float)dVar14;
           core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_20,&CStack_2d4);
           CStack_2a4.w = CStack_2d4.w;
@@ -433,7 +433,7 @@ LAB_005be795:
             local_18 = (CDeformableModelInstance *)(in_stack_00000004 + 1);
             core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                       (local_18,&local_16c,INT_03f6badc);
-            fVar13 = crt_math_c_atan2_FUN_006013b1
+            fVar13 = atan2
                                ((float10)local_16c.y -
                                 (float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x34),
                                 (float10)2.7f);
@@ -493,7 +493,7 @@ LAB_005be795:
           local_18 = (CDeformableModelInstance *)INT_03f6bb64;
         }
         local_20 = local_20 - (float)INT_03f6bb64;
-        fVar13 = crt_math_c_atan2_FUN_006013b1
+        fVar13 = atan2
                            ((float10)local_c4.y - (float10)local_20,(float10)2.7f);
         core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
                   ((float)fVar13,(CQuaternion4f *)(local_390 + 0xc));

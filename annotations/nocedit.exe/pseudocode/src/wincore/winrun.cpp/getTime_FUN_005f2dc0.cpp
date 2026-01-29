@@ -21,7 +21,7 @@ int __cdecl wincore_winrun_cpp_getTime_FUN_005f2dc0(void)
   g_PreviousCounterHigh = g_PerformanceCounter.s.HighPart;
   (*g_QueryPerformanceCounterFunc)(&g_PerformanceCounter);
   iVar1 = g_AccumulatedGameTime;
-  dVar3 = crt_math_c_round_FUN_005fe6b0
+  dVar3 = round
                     (((((double)g_PerformanceCounter._0_4_ +
                        (double)g_PerformanceCounter.s.HighPart * 4294967296) -
                       ((double)g_PreviousCounterLow +

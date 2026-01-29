@@ -2,11 +2,11 @@
 // Address: 005fe840
 // Address Range: [[005fe840, 005fe90d]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
+// Signature: int __cdecl crt_stdio_c_fgetc_FUN_005fe840(_FILE *file)
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
+int __cdecl _fgetc(_FILE *file)
 
 {
   char *pcVar1;
@@ -24,7 +24,7 @@ int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
     file->_link->__get_base = (char *)0x1;
   }
   if ((file->_flag & 1) == 0) {
-    crt_errno_c_setErrno_FUN_00602790(4);
+    setErrno(4);
     uVar3 = 0xffffffff;
     *(byte *)&file->_flag = (byte)file->_flag | 0x20;
   }
@@ -32,7 +32,7 @@ int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
     iVar2 = file->_cnt + -1;
     file->_cnt = iVar2;
     if (iVar2 < 0) {
-      uVar3 = crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(file);
+      uVar3 = FillBufferAndGetChar(file);
     }
     else {
       uVar3 = (uint)(byte)*file->_ptr;
@@ -44,7 +44,7 @@ int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
       iVar2 = file->_cnt + -1;
       file->_cnt = iVar2;
       if (iVar2 < 0) {
-        uVar3 = crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(file);
+        uVar3 = FillBufferAndGetChar(file);
       }
       else {
         uVar3 = (uint)(byte)*file->_ptr;

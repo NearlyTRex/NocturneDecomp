@@ -2,12 +2,12 @@
 // Address: 005857b0
 // Address Range: [[005857b0, 00585864]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,FILE *file_handle)
+core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
   int *piVar1;
@@ -15,7 +15,7 @@ core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,FILE *file
   int iVar3;
   int iVar4;
   
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&this_ptr->pvs_count);
+  _fscanf(file_handle,"%d\n",&this_ptr->pvs_count);
   piVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->pvs_list,this_ptr->pvs_count << 2,"..\\core\\setutil.cpp",0xe2);
   this_ptr->pvs_list = piVar1;
@@ -33,7 +33,7 @@ core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,FILE *file
         iVar2 = (int)this_ptr->pvs_list + iVar3;
         iVar4 = iVar4 + 1;
         iVar3 = iVar3 + 4;
-        crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"\t%d\n",iVar2);
+        _fscanf(file_handle,"\t%d\n",iVar2);
       } while (iVar4 < this_ptr->pvs_count);
     }
   }

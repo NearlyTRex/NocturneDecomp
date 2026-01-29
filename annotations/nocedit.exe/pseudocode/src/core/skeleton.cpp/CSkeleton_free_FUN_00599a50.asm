@@ -21,7 +21,7 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH ESI                            ; 00599a86
     MOV dword ptr [0x0067d20c],EDX      ; 00599a87 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ECX      ; 00599a8d | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00599a93
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00599a93
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00599a98
     MOV dword ptr [0x0067d20c],EDI      ; 00599a9b | g_CurrentDebugFilename
     MOV EAX,dword ptr [EBX + 0x29374]   ; 00599aa1
@@ -73,16 +73,16 @@ section .text
     SUB EAX,0x4                         ; 00599af3
         ;   Label: LAB_00599af3
     PUSH EAX                            ; 00599af6
-    CALL crt_memory.c_free_FUN_005fe659 ; 00599af7
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00599af7
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00599afc
     JMP 0x00599ab1                      ; 00599aff
         ;   XREF to: 00599ab1 (UNCONDITIONAL_JUMP)  ; LAB_00599ab1
     SUB EAX,0x4                         ; 00599b01
         ;   Label: LAB_00599b01
     PUSH EAX                            ; 00599b04
-    CALL crt_memory.c_free_FUN_005fe659 ; 00599b05
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00599b05
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00599b0a
     JMP 0x00599ad0                      ; 00599b0d
         ;   XREF to: 00599ad0 (UNCONDITIONAL_JUMP)  ; LAB_00599ad0

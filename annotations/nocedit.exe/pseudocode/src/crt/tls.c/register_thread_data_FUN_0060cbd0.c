@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-BOOL __cdecl crt_tls_c_register_thread_data_FUN_0060cbd0(void *tls_data,void *thread_param)
+BOOL __cdecl register_thread_data(void *tls_data,void *thread_param)
 
 {
   ThreadRegistryEntry *ptr;
@@ -15,12 +15,12 @@ BOOL __cdecl crt_tls_c_register_thread_data_FUN_0060cbd0(void *tls_data,void *th
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f10)();
   BVar2 = 1;
-  ptr = crt_memory_c_calloc_FUN_0060ca90(1,0x10);
+  ptr = calloc(1,0x10);
   if (ptr == (ThreadRegistryEntry *)0x0) {
     BVar2 = 0;
   }
   else {
-    iVar1 = crt_unknown_c_CallReturnZero6_FUN_0060e880();
+    iVar1 = CallReturnZero6();
     if (iVar1 == 0) {
       ptr->dataBuffer = thread_param;
       ptr->threadDataKey = tls_data;
@@ -29,7 +29,7 @@ BOOL __cdecl crt_tls_c_register_thread_data_FUN_0060cbd0(void *tls_data,void *th
       g_ThreadDataRegistryList = ptr;
     }
     else {
-      crt_memory_c_free_FUN_00601cd0(ptr);
+      free(ptr);
       BVar2 = 0;
     }
   }

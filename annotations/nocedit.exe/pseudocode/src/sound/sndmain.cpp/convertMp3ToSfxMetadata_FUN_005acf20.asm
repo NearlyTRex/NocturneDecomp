@@ -85,7 +85,7 @@ section .text
     PUSH 0x0                            ; 005acf55
     PUSH EBP                            ; 005acf57
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005acf58
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005acf5d
     MOV EBX,EAX                         ; 005acf60
     TEST EAX,EAX                        ; 005acf62
@@ -124,7 +124,7 @@ section .text
     PUSH EBX                            ; 005acfb8
     PUSH ESI                            ; 005acfb9
     CALL sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 ; 005acfba
-        ;   XREF to: 00534630 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, FILE * file_handle, int file_size)
+        ;   XREF to: 00534630 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, _FILE * file_handle, int file_size)
     MOV EAX,0x200                       ; 005acfbf
     MOV ECX,dword ptr [ESI + 0x104]     ; 005acfc4
     XOR EDX,EDX                         ; 005acfca
@@ -188,7 +188,7 @@ section .text
     LEA EAX,[ESP + 0x53c]               ; 005ad080
     PUSH EAX                            ; 005ad087
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005ad088
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005ad08d
     MOV EBX,EAX                         ; 005ad090
     MOV dword ptr [ESP + 0x844],EAX     ; 005ad092
@@ -208,7 +208,7 @@ section .text
     LEA EAX,[ESP + 0x408]               ; 005ad0bf
     PUSH EAX                            ; 005ad0c6
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 005ad0c7
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005ad0cc
     TEST EAX,EAX                        ; 005ad0cf
     JNZ 0x005ad241                      ; 005ad0d1
@@ -218,7 +218,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x84c]     ; 005ad0e1
     PUSH EBX                            ; 005ad0e8
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005ad0e9
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005ad0ee
     MOV EAX,dword ptr [ESP + 0x840]     ; 005ad0f1
         ;   Label: LAB_005ad0f1
@@ -248,7 +248,7 @@ section .text
     LEA EAX,[ESP + 0x53c]               ; 005ad140
     PUSH EAX                            ; 005ad147
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005ad148
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005ad14d
     MOV ESI,EAX                         ; 005ad150
     TEST EAX,EAX                        ; 005ad152
@@ -281,7 +281,7 @@ section .text
     PUSH 0x65121a                       ; 005ad1a0 | = "%s\n"
     PUSH ESI                            ; 005ad1a5
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005ad1a6
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005ad1ab
     INC EBX                             ; 005ad1ae
     CMP EBX,dword ptr [ESP + 0x830]     ; 005ad1af
@@ -294,7 +294,7 @@ section .text
     PUSH 0x65121e                       ; 005ad1c5 | = "..\\sound\\sndmain.cpp"
     PUSH ESI                            ; 005ad1ca
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005ad1cb
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005ad1d0
     PUSH 0x0                            ; 005ad1d3
     LEA EAX,[ESP + 0x834]               ; 005ad1d5

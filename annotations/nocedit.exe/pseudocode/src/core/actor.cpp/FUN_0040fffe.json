@@ -33,7 +33,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 61,
+        "column": 35,
         "line": 80,
         "message": "'stack0x00003615' was not declared in this scope; did you mean 'in_stack_00003614'?"
       },
@@ -51,7 +51,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 61,
+        "column": 35,
         "line": 113,
         "message": "'stack0x00003679' was not declared in this scope; did you mean 'in_stack_00003678'?"
       },
@@ -388,7 +388,7 @@
       "description": "Direct stack address reference",
       "line": 37,
       "match": "&stack0x000033a8",
-      "text": "pcVar4 = crt_string_c_strstr_FUN_005fedd0(&stack0x000033a8,\"=>\");",
+      "text": "pcVar4 = strstr(&stack0x000033a8,\"=>\");",
       "type": "stack_ref"
     },
     {
@@ -437,14 +437,14 @@
       "description": "Direct stack address reference",
       "line": 73,
       "match": "&stack0x00003614",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003614,&stack0x00003615,SVar6);",
+      "text": "memmove(&stack0x00003614,&stack0x00003615,SVar6);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 73,
       "match": "&stack0x00003615",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003614,&stack0x00003615,SVar6);",
+      "text": "memmove(&stack0x00003614,&stack0x00003615,SVar6);",
       "type": "stack_ref"
     },
     {
@@ -486,14 +486,14 @@
       "description": "Direct stack address reference",
       "line": 106,
       "match": "&stack0x00003678",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003678,&stack0x00003679,SVar6);",
+      "text": "memmove(&stack0x00003678,&stack0x00003679,SVar6);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 106,
       "match": "&stack0x00003679",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003678,&stack0x00003679,SVar6);",
+      "text": "memmove(&stack0x00003678,&stack0x00003679,SVar6);",
       "type": "stack_ref"
     },
     {

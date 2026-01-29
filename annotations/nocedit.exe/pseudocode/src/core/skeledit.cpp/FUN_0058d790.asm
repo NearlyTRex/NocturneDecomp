@@ -55,7 +55,7 @@
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
 ;   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 ;
@@ -65,8 +65,8 @@ section .text
 
     PUSH 0x558                          ; 0058d790
         ;   Label: core_skeledit.cpp_FUN_0058d790
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058d795
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058d795
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058d79a
     PUSH ESI                            ; 0058d79b
     PUSH EDI                            ; 0058d79c

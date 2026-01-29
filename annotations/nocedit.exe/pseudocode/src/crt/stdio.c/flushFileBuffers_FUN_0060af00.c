@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_flushFileBuffers_FUN_0060af00(int file_handle_index)
+int __watcallStack flushFileBuffers(int file_handle_index)
 
 {
   BOOL BVar1;
@@ -17,12 +17,12 @@ int __watcallStack crt_stdio_c_flushFileBuffers_FUN_0060af00(int file_handle_ind
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file_handle_index);
     BVar1 = (*g_FlushFileBuffersFunc)(g_IOControlBlock->standard_handles[file_handle_index]);
     if (BVar1 == 0) {
-      crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+      __set_errno();
       iVar2 = -1;
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
     return iVar2;
   }
-  crt_errno_c_setErrno_FUN_00602790(4);
+  setErrno(4);
   return -1;
 }

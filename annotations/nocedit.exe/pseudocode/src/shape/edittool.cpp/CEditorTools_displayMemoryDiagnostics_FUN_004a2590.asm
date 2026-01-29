@@ -34,7 +34,7 @@
 ;   double g_BytesToKilobytesScale = 0.0009765625
 ;
 ; Called Functions:
-;   crt_heap.c_heapCheckWrapper_FUN_006012c0
+;   crt_heap.c__heapwalk_FUN_006012c0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     MOV EAX,ESP                         ; 004a25ac
         ;   Label: LAB_004a25ac
     PUSH EAX                            ; 004a25ae
-    CALL crt_heap.c_heapCheckWrapper_FUN_006012c0 ; 004a25af
-        ;   XREF to: 006012c0 (UNCONDITIONAL_CALL)  ; int crt_heap.c_heapCheckWrapper_FUN_006012c0(void * heap_state_ptr)
+    CALL crt_heap.c__heapwalk_FUN_006012c0 ; 004a25af
+        ;   XREF to: 006012c0 (UNCONDITIONAL_CALL)  ; int crt_heap.c__heapwalk_FUN_006012c0(void * heap_state_ptr)
     ADD ESP,0x4                         ; 004a25b4
     TEST EAX,EAX                        ; 004a25b7
     JZ 0x004a25f5                       ; 004a25b9

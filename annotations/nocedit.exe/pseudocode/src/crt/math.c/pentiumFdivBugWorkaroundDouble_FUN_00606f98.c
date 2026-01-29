@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 float10 __fpustack
-crt_math_c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0,double param1)
+pentiumFdivBugWorkaroundDouble(float10 param0,double param1)
 
 {
   ushort in_FPUStatusWord;
@@ -20,9 +20,9 @@ crt_math_c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0,double par
     return param0 / (float10)param1;
   }
   if ((in_FPUStatusWord & 0x3800) != 0) {
-    fVar1 = crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(in_ST1,in_ST2);
+    fVar1 = pentiumFdivpWorkaround(in_ST1,in_ST2);
     return fVar1;
   }
-  fVar1 = crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(in_ST2,in_ST3);
+  fVar1 = pentiumFdivpWorkaround(in_ST2,in_ST3);
   return fVar1;
 }

@@ -8,7 +8,6 @@ struct CDemonActorType;
 struct COrientation;
 struct CPathMap;
 struct CVector3f;
-struct FILE;
 struct SCollisionInfo;
 struct SCollisionReturnInfo;
 struct SDamageInfo;
@@ -16,6 +15,7 @@ struct SInteractionInfo;
 struct SInteractionState;
 struct SIntersectXZCylinder;
 struct SSurfaceInfo;
+struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"

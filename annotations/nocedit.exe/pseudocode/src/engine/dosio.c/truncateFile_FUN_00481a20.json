@@ -33,13 +33,13 @@
     ],
     "convention": "__cdecl",
     "name": "engine_dosio.c_truncateFile_FUN_00481a20",
-    "signature": "int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(FILE *file_handle,long new_size_bytes)"
+    "signature": "int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(_FILE *file_handle,long new_size_bytes)"
   },
   "function_calls": [
     {
       "addr": "00600cf0",
       "is_variadic": false,
-      "name": "crt_io.c_ftruncate_FUN_00600cf0"
+      "name": "crt_io.c_chsize_FUN_00600cf0"
     }
   ],
   "globals": [],
@@ -87,7 +87,7 @@
         "name": "file_handle",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,

@@ -13,7 +13,7 @@ int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_in
   int unaff_retaddr;
   int iStack_14;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     ((double)(*(int *)((frame_info.header)->mpeg_version * 0xb4 + 0x67e2d0 +
                                       (frame_info.header)->bitrate_index * 4) * 0x90) /
                      g_MpegSampleRateTable[(frame_info.header)->mpeg_version]

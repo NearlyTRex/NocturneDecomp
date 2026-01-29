@@ -22,7 +22,7 @@ sound_sndmain_cpp_freeSampleByName_FUN_005aa360(char *sample_name,int kill_activ
   do {
     if (*(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + 0x18) == 0) {
       this_ptr = (CSfxSample *)(g_SfxSamples[0].sample_info.name + iVar2);
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)this_ptr,sample_name);
+      iVar1 = stricmp((char *)this_ptr,sample_name);
       if (iVar1 == 0) {
         sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
       }

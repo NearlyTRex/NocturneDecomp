@@ -38,7 +38,7 @@
 ;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_save_FUN_00522e30
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -173,8 +173,8 @@ section .text
     ADD ESP,0xc                         ; 00538d17
     LEA EAX,[ESP + 0x8]                 ; 00538d1a
     PUSH EAX                            ; 00538d1e
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00538d1f
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00538d1f
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00538d24
     MOV EBP,dword ptr [0x006793d0]      ; 00538d27 | g_CEventListPtr
     PUSH EBP                            ; 00538d2d | g_CEventListInstance

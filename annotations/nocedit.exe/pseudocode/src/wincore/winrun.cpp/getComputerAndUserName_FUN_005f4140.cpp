@@ -14,14 +14,14 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer
   LPSTR lpBuffer;
   DWORD local_10;
   
-  crt_memory_c_memset_FUN_005fde40(buffer,0,0x200);
+  memset(buffer,0,0x200);
   lpBuffer = buffer + 0x100;
   local_10 = 0x100;
   (*g_GetComputerNameAFunc)(lpBuffer,&local_10);
   local_10 = 0x100;
   (*g_GetUserNameAFunc)(buffer,&local_10);
   if ((buffer[0x100] == '\0') &&
-     (pcVar2 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME"), pcVar2 != (char *)0x0)) {
+     (pcVar2 = getenv("COMPUTERNAME"), pcVar2 != (char *)0x0)) {
     do {
       cVar1 = *pcVar2;
       *lpBuffer = cVar1;
@@ -38,7 +38,7 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer
   else if (*buffer != '\0') {
     return;
   }
-  pcVar2 = crt_env_c_getenv_FUN_006013f0("USERNAME");
+  pcVar2 = getenv("USERNAME");
   if (pcVar2 == (char *)0x0) {
     return;
   }

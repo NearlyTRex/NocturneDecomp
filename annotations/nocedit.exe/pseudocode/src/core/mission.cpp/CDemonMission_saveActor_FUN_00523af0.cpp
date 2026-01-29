@@ -2,13 +2,13 @@
 // Address: 00523af0
 // Address Range: [[00523af0, 00523b61]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_00523af0 (CDemonMission *this_ptr,CDemonActor *actor_ptr,FILE *file,CDemonActor *current_actor, char *description)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_00523af0 (CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor, char *description)
 
 #include "nocturne.h"
 
 void __cdecl
 core_mission_cpp_CDemonMission_saveActor_FUN_00523af0
-          (CDemonMission *this_ptr,CDemonActor *actor_ptr,FILE *file,CDemonActor *current_actor,
+          (CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,
           char *description)
 
 {
@@ -28,11 +28,11 @@ core_mission_cpp_CDemonMission_saveActor_FUN_00523af0
     format = "%08x";
     pcVar1 = actor_ptr->actor_name;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,format,pcVar1);
+  _fprintf(file,format,pcVar1);
   if (description != (char *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"\t\t// %s\n",description);
+    _fprintf(file,"\t\t// %s\n",description);
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"\n");
+  _fprintf(file,"\n");
   return;
 }

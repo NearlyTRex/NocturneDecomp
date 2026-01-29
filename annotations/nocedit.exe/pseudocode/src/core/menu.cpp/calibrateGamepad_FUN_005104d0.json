@@ -30,22 +30,33 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 27,
         "line": 66,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects argument of type 'int', but argument 3 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 66,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 66,
+        "message": "format '%x' expects a matching 'unsigned int' argument [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 252,
-    "complexity_score": 247,
+    "complexity_score": 232,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 19,
     "pseudocode_lines": 87,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
-      "format_string_mismatch",
       "stack_param",
       "stack_ref",
       "unaffected_reg"
@@ -399,17 +410,6 @@
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = g_JoyYPos;",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%d,%d,%x\" has 3 specifiers but 1 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d,%d,%x",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 59,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_11c,\"%d,%d,%x\",g_JoyXPos);",
-      "text": "Format string expects 3 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

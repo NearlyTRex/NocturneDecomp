@@ -11,7 +11,7 @@ engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
           (CFileManager *this_ptr,CStrList *pod_list)
 
 {
-  FILE *file;
+  _FILE *file;
   int iVar1;
   int iVar2;
   char *pcVar3;
@@ -24,11 +24,11 @@ engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("pod.ini",(char *)0x0,"rt","..\\engine\\fileio.cpp",0xe7c)
   ;
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     return;
   }
   local_8 = -1;
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n",&local_8);
+  _fscanf(file,"%d\n",&local_8);
   if (local_8 < 0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0xe81;
@@ -44,7 +44,7 @@ engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
         pcVar3 = pcVar3 + ((uint)bVar5 * -2 + 1) * 4;
         pcVar4 = pcVar4 + ((uint)bVar5 * -2 + 1) * 4;
       }
-      crt_stdio_c_fscanf_FUN_005fe7c0(file,"%s\n",local_10c);
+      _fscanf(file,"%s\n",local_10c);
       if (local_10c[0] == '\0') {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
         g_CurrentLineNumber = 0xe86;

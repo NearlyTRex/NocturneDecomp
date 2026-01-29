@@ -9,7 +9,7 @@
 void __cdecl core_setedit_cpp_CDemonSet_ExportSomething_FUN_0057a0c0(CDemonSet *this_ptr)
 
 {
-  FILE *file;
+  _FILE *file;
   int iVar1;
   C3DSCamera *this_ptr_00;
   C3DSLight *this_ptr_01;
@@ -22,18 +22,18 @@ void __cdecl core_setedit_cpp_CDemonSet_ExportSomething_FUN_0057a0c0(CDemonSet *
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Exporting lights and cameras to %s");
   file = engine_dosio_c_getFile_FUN_00481a50("models",local_214,"wt");
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x659;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create models\\%s",local_214);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"1\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// lightCount,cameraCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d\n",this_ptr->light_count,this_ptr->camera_count)
+  _fprintf(file,"// version\n");
+  _fprintf(file,"1\n");
+  _fprintf(file,"// lightCount,cameraCount\n");
+  _fprintf(file,"%d,%d\n",this_ptr->light_count,this_ptr->camera_count)
   ;
   iVar1 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// light list\n");
+  _fprintf(file,"// light list\n");
   if (0 < this_ptr->light_count) {
     this_ptr_01 = this_ptr->lights;
     do {
@@ -43,7 +43,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ExportSomething_FUN_0057a0c0(CDemonSet *
     } while (iVar1 < this_ptr->light_count);
   }
   iVar1 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// camera list\n");
+  _fprintf(file,"// camera list\n");
   if (0 < this_ptr->camera_count) {
     this_ptr_00 = this_ptr->cameras;
     do {

@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_file.c_makepath_FUN_005febfc
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_dosio.c_getFileSize_FUN_00481880
@@ -33,8 +33,8 @@ section .text
 
     PUSH 0x334                          ; 0058e0b0
         ;   Label: core_skeledit.cpp_FUN_0058e0b0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058e0b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058e0b5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058e0ba
     PUSH ESI                            ; 0058e0bb
     PUSH EDI                            ; 0058e0bc

@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   digit
 ;
 ; XREF[1]:
-;   crt_io.c_generateTempFilename_FUN_00601f1c at 00601fa9
+;   crt_io.c__tempnam_FUN_00601f1c at 00601fa9
 ;
 ; *****************************************************************************
 

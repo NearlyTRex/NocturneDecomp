@@ -44,7 +44,7 @@ void core_scat_cpp_FUN_005578e0(void)
   if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) == 0) {
     return;
   }
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004[1].base.actor_name + 8,0,0x2c);
+  memset(in_stack_00000004[1].base.actor_name + 8,0,0x2c);
   pCVar3 = g_HeroActors[g_LocalHeroIndex];
   local_3c = (in_stack_00000004->base).location.position.x - (pCVar3->base).base.location.position.x
   ;

@@ -12,7 +12,7 @@ cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40
           int param4,int selected_bitmap_index)
 
 {
-  FILE *file_handle;
+  _FILE *file_handle;
   CPackedBitmap *pCVar1;
   int iVar2;
   uchar auStack_178 [256];
@@ -20,8 +20,8 @@ cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40
   CPackedBitmap *local_14;
   
   file_handle = engine_dosio_c_getFile_FUN_00481a50("art",pbg_filename,"rb");
-  if (file_handle == (FILE *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_78,"Unable to open PBG file %s",pbg_filename);
+  if (file_handle == (_FILE *)0x0) {
+    sprintf(local_78,"Unable to open PBG file %s",pbg_filename);
     g_CurrentLineNumber = 0x595;
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_78);

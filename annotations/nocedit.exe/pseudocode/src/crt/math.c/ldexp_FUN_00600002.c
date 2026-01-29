@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
+double __cdecl ldexp(double x,int exp)
 
 {
   double dVar1;
@@ -37,7 +37,7 @@ double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
       goto LAB_006000b6;
     }
     if (0x7fe < iVar2) {
-      crt_math_c_set_range_error_errno_FUN_006027ac();
+      set_range_error_errno();
       if ((short)uStack_1e < 1) {
         dVar1 = -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);
         local_1c = SUB82(dVar1,0);

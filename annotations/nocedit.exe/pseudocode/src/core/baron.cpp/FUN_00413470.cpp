@@ -43,7 +43,7 @@ void __cdecl core_baron_cpp_FUN_00413470(int param_1,CDemonActor *param_2)
       *(uint *)(param_1 + 0x34) = *(uint *)(iVar2 + 0x34);
       *(uint *)(param_1 + 0x38) = *(uint *)(iVar2 + 0x38);
     }
-    crt_memory_c_memset_FUN_005fde40((void *)(param_1 + 0xbe2c),0,0x2c);
+    memset((void *)(param_1 + 0xbe2c),0,0x2c);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)(param_1 + 0x158),6,1);
     *(uint *)(param_1 + 0x1fccc) = 1;

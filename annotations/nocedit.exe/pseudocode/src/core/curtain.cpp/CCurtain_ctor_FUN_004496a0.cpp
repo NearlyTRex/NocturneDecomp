@@ -16,7 +16,7 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_004496a0(CCurtain *this_pt
   char *pcVar5;
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar3 = __arrinit
                      (pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar3 + -0xb4) = &g_CCurtainVTable;
   pcVar4 = "SGLASS.RAW";

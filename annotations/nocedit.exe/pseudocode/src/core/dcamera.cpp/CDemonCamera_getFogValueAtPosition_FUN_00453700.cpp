@@ -20,7 +20,7 @@ core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700
   fVar1 = (float)(world_position->x - (this_ptr->camera_origin).x) * 0.00390625f;
   fVar2 = (float)(world_position->y - (this_ptr->camera_origin).y) * 0.00390625f;
   fVar3 = (float)(world_position->z - (this_ptr->camera_origin).z) * 0.00390625f;
-  dVar5 = crt_math_c_round_FUN_005fe6b0
+  dVar5 = round
                     ((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *
                              (float)256));
   uVar4 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0

@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_process_c_build_command_line_FUN_006103a4
+build_command_line
           (char *program_name,char **argv,char *buffer,int skip_program_name)
 
 {
@@ -15,7 +15,7 @@ crt_process_c_build_command_line_FUN_006103a4
   char **ppcVar2;
   
   if (skip_program_name == 0) {
-    pcVar1 = crt_string_c_strcpy_advance_FUN_00610240(buffer,program_name);
+    pcVar1 = strcpy_advance(buffer,program_name);
     *pcVar1 = ' ';
     buffer = pcVar1 + 1;
   }
@@ -23,7 +23,7 @@ crt_process_c_build_command_line_FUN_006103a4
     while( true ) {
       pcVar1 = *ppcVar2;
       ppcVar2 = ppcVar2 + 1;
-      buffer = crt_string_c_strcpy_advance_FUN_00610240(buffer,pcVar1);
+      buffer = strcpy_advance(buffer,pcVar1);
       if (*ppcVar2 == (char *)0x0) break;
       *buffer = ' ';
       buffer = buffer + 1;

@@ -43,10 +43,10 @@
 ;   core_netgame.cpp_CNetGame_FUN_0053f780
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_file.c_setReadonlyAttribute_FUN_00600c30
 ;   crt_stdio.c_fopenThreadSafe_FUN_00601b14
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010
+;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -82,7 +82,7 @@ section .text
     PUSH 0x0                            ; 00507abb
     PUSH 0x6352b2                       ; 00507abd | = "stderr.txt"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00507ac2
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00507ac7
     TEST EAX,EAX                        ; 00507aca
     JZ 0x00507b1a                       ; 00507acc
@@ -91,12 +91,12 @@ section .text
     PUSH 0x6352bd                       ; 00507ad3 | = "..\\core\\main.c"
     PUSH EAX                            ; 00507ad8
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00507ad9
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00507ade
     PUSH 0x1c0                          ; 00507ae1
     PUSH 0x6352cc                       ; 00507ae6 | = "stderr.txt"
-    CALL crt_file.c_setReadonlyAttribute_FUN_00600c30 ; 00507aeb
-        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD crt_file.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
+    CALL engine_dosio.c_setReadonlyAttribute_FUN_00600c30 ; 00507aeb
+        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
     ADD ESP,0x8                         ; 00507af0
     TEST EAX,EAX                        ; 00507af3
     JZ 0x00507b1a                       ; 00507af5
@@ -115,7 +115,7 @@ section .text
     PUSH 0x635311                       ; 00507b24 | = "stderr.txt"
     MOV EBX,0x4                         ; 00507b29
     CALL crt_stdio.c_fopenThreadSafe_FUN_00601b14 ; 00507b2e
-        ;   XREF to: 00601b14 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopenThreadSafe_FUN_00601b14(char * filename, char * mode, FILE * * output_file_ptr)
+        ;   XREF to: 00601b14 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopenThreadSafe_FUN_00601b14(char * filename, char * mode, _FILE * * output_file_ptr)
     ADD ESP,0xc                         ; 00507b33
     MOV dword ptr [0x00772628],EBX      ; 00507b36 | g_RenderingMode
     CALL core_flamegun.cpp_initializeFlamegun_FUN_004cbce0 ; 00507b3c

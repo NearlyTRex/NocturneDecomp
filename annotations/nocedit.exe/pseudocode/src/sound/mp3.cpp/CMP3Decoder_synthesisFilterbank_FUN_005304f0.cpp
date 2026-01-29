@@ -52,13 +52,13 @@ sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0
         local_14 = iVar7;
         if (*pfVar8 < 0.0) {
           local_5c[0] = (double)*pfVar8;
-          crt_math_c_modf_FUN_00602102((double)(*pfVar8 + (float)-0.5),local_5c);
+          modf((double)(*pfVar8 + (float)-0.5),local_5c);
           pfVar8 = extraout_EBX_00;
           dVar1 = local_5c[0];
         }
         else {
           local_64 = (double)*pfVar8;
-          crt_math_c_modf_FUN_00602102((double)(*pfVar8 + (float)0.5),&local_64);
+          modf((double)(*pfVar8 + (float)0.5),&local_64);
           pfVar8 = extraout_EBX;
           dVar1 = local_64;
         }

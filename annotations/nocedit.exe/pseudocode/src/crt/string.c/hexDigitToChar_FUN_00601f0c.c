@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char __watcallStack crt_string_c_hexDigitToChar_FUN_00601f0c(int digit)
+char __watcallStack hexDigitToChar(int digit)
 
 {
   int iVar1;

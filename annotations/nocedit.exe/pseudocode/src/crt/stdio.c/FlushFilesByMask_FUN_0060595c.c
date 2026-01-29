@@ -6,10 +6,10 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)
+int __watcallStack FlushFilesByMask(uint file_mode_mask)
 
 {
-  FILE *file_handle;
+  _FILE *file_handle;
   FileListNode *pFVar1;
   int iVar2;
   
@@ -19,7 +19,7 @@ int __watcallStack crt_stdio_c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask
     file_handle = pFVar1->file_struct;
     if (((file_handle->_flag & file_mode_mask) != 0) &&
        (iVar2 = iVar2 + 1, (file_handle->_flag & 0x1000) != 0)) {
-      crt_stdio_c_fflushInternal_FUN_006039d0(file_handle);
+      fflushInternal(file_handle);
     }
   }
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684efc)();

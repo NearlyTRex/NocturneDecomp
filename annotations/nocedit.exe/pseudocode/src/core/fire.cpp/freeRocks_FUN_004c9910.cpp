@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeRocks_FUN_004c9910(CRock **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x40,&g_CRockTypeInfo);
+  __arrfini(array,0x40,&g_CRockTypeInfo);
   return;
 }

@@ -63,18 +63,6 @@
         "column": 64,
         "line": 71,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 76,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 80,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -493,7 +481,7 @@
       "description": "Direct stack address reference",
       "line": 35,
       "match": "&stack0xfffffc4c",
-      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xfffffc4c,local_194);",
+      "text": "iVar1 = stricmp(&stack0xfffffc4c,local_194);",
       "type": "stack_ref"
     },
     {

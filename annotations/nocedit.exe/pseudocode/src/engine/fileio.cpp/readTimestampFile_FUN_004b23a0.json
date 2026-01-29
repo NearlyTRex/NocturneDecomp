@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 25,
-        "line": 73,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 24,
         "line": 74,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 24,
         "line": 75,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 37,
+        "column": 17,
         "line": 76,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 77,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 79,
+        "line": 80,
         "message": "invalid conversion from 'void*' to 'STimestampRecord*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 96,
+        "line": 97,
         "message": "cast from 'STimestampRecord*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -48,51 +48,39 @@
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 34,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 66,
+        "column": 67,
         "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 43,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 47,
+        "column": 40,
+        "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 51,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 60,
+        "column": 40,
+        "line": 61,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 64,
+        "line": 65,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 73,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -102,55 +90,61 @@
       },
       {
         "category": "other",
-        "column": 8,
+        "column": 16,
         "line": 75,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 8,
         "line": 76,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 16,
+        "line": 77,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 43,
-        "line": 79,
+        "line": 80,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 84,
+        "column": 40,
+        "line": 85,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 88,
+        "line": 89,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 96,
+        "line": 97,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 192,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
-    "pseudocode_lines": 92,
+    "pseudocode_lines": 93,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 310
+    "total_lines": 311
   },
   "cross_references": [
     {
@@ -170,7 +164,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_readTimestampFile_FUN_004b23a0",
-    "signature": "int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(FILE *file,STimestampRecord **records,int *count)"
+    "signature": "int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file,STimestampRecord **records,int *count)"
   },
   "function_calls": [
     {
@@ -345,7 +339,7 @@
         "name": "file",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -373,56 +367,56 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 37,
       "match": "in_stack_00000010",
       "text": "(g_CEditorToolsPtr,\"Error reading %s\",in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 58,
       "match": "in_stack_00000010",
       "text": "(g_CEditorToolsPtr,\"Error parsing %s, record %d\",in_stack_00000010,local_18);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 67,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)piVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 68,
       "match": "(int *)((int)",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 69,
       "match": "(char *)((int)",
       "text": "*(char *)((int)&pSVar4->record_start + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(STimestampRecord *)((int)",
       "text": "pSVar4 = (STimestampRecord *)((int)&pSVar4->record_start + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 82,
       "match": "in_stack_00000010",
       "text": "(g_CEditorToolsPtr,\"Out of memory reading %s record %d\",in_stack_00000010,local_18);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 90,
       "match": "(STimestampRecord *)((int)",
       "text": "pSVar6 = (STimestampRecord *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"

@@ -93,10 +93,10 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
       fVar2 = (float)1024;
       local_40 = (float)local_8c.y;
       local_18 = iVar5;
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)((max_distance - local_1c) * local_30 * fVar2))
+      dVar12 = round((double)((max_distance - local_1c) * local_30 * fVar2))
       ;
       local_38 = (int)ROUND(dVar12);
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * fVar2));
+      dVar12 = round((double)(fVar1 * fVar2));
       local_40 = (float)(int)ROUND(dVar12);
       local_8c.z = (int)ROUND(local_90 * 256.0f);
       local_80.x = (int)ROUND((float)local_8c.x * 256.0f);

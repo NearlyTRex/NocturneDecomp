@@ -2,13 +2,13 @@
 // Address: 0054b5c0
 // Address Range: [[0054b5c0, 0054b68c]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 (CPackedBitmap *this_ptr,FILE *file_handle)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 (CPackedBitmap *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
 cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
-          (CPackedBitmap *this_ptr,FILE *file_handle)
+          (CPackedBitmap *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
@@ -35,10 +35,9 @@ cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
   local_2c[4] = 0;
   local_2c[5] = this_ptr->width + -1;
   local_14 = this_ptr->height + -1;
-  crt_stdio_c_fwrite_FUN_005fdc00(local_2c,0x1c,1,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(this_ptr->row_pointers,4,this_ptr->height + 1,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00
-            (this_ptr->packed_data,(SIZE_T)this_ptr->row_pointers[this_ptr->height],1,file_handle);
+  _fwrite(local_2c,0x1c,1,file_handle);
+  _fwrite(this_ptr->row_pointers,4,this_ptr->height + 1,file_handle);
+  _fwrite(this_ptr->packed_data,(SIZE_T)this_ptr->row_pointers[this_ptr->height],1,file_handle);
   if ((file_handle->_flag & 0x20) == 0) {
     return;
   }

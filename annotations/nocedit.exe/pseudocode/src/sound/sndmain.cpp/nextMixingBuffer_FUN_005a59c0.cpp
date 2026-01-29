@@ -45,7 +45,7 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
   if (0 < g_AudioChannelCount) {
     iVar2 = 0;
     do {
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (*(void **)((int)g_ChannelPrimaryBuffers + iVar2),
                  (void *)(g_MixBufferSize * 4 +
                          (int)*(void **)((int)g_ChannelPrimaryBuffers + iVar2)),
@@ -54,7 +54,7 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
       iVar2 = iVar2 + 4;
       iVar5 = iVar5 + 1;
       in_stack_ffffffb0 = 0x5a5a66;
-      crt_memory_c_memset_FUN_005fde40
+      memset
                 ((void *)(*piVar1 + (g_NumMixBuffers + -1) * g_MixBufferSize * 4),0,count);
     } while (iVar5 < g_AudioChannelCount);
   }

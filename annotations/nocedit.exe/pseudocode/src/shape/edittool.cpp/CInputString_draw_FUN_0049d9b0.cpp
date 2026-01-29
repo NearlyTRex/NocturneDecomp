@@ -41,7 +41,7 @@ shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_p
       g_CurrentLineNumber = 0x1dc;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CInputString::draw - string too big for hidden text!");
     }
-    crt_memory_c_memset_FUN_005fde40(g_TempStringBuffer,0x2a,this_ptr->current_length);
+    memset(g_TempStringBuffer,0x2a,this_ptr->current_length);
     iVar3 = g_TextColor;
     this_ptr_00 = g_EditorFont;
     text_string = g_TempStringBuffer;

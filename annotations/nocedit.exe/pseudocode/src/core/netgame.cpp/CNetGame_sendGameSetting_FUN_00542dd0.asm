@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_netgame.cpp_CNetGame_send_FUN_005411c0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
 ; *****************************************************************************
@@ -91,8 +91,8 @@ section .text
     MOV ECX,0xb1                        ; 00542e5a
     PUSH EAX                            ; 00542e5f
     MOV dword ptr [ESP + 0xc],ECX       ; 00542e60
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00542e64
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00542e64
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00542e69
     MOV EAX,dword ptr [ESP + 0xcc]      ; 00542e6c
     MOV EAX,dword ptr [EAX + 0x16c]     ; 00542e73

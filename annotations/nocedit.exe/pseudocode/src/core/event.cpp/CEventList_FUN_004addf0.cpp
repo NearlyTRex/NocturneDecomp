@@ -32,7 +32,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004addf0(CEventList *this_ptr)
     piVar2 = this_ptr->game_flag_list;
     iVar1 = y_pos;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_218,"Game Flag: %s",piVar2);
+      sprintf(local_218,"Game Flag: %s",piVar2);
       iVar3 = iVar3 + 1;
       piVar2 = piVar2 + 8;
       y_pos = iVar1 + 0xb;
@@ -45,7 +45,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004addf0(CEventList *this_ptr)
     piVar2 = this_ptr->persistent_event_list;
     iVar1 = y_pos;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_3a8,"Persistent: %s",piVar2);
+      sprintf(local_3a8,"Persistent: %s",piVar2);
       iVar3 = iVar3 + 1;
       piVar2 = piVar2 + 8;
       y_pos = iVar1 + 0xb;
@@ -58,7 +58,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004addf0(CEventList *this_ptr)
     piVar2 = &this_ptr->timer_list;
     local_24 = this_ptr;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_2e0,"Timer: %5.2f %s",(double)*(float *)(local_24->unk5 + 0x13c),piVar2
                 );
       iVar3 = iVar3 + 1;
@@ -84,7 +84,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004addf0(CEventList *this_ptr)
   if (0 < this_ptr->counter_count) {
     local_1c = this_ptr->unk6;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_88,"%s=%d");
+      sprintf(local_88,"%s=%d");
       engine_2d_c_drawText_FUN_00401fd0(local_88,0,y_pos);
       iVar3 = iVar3 + 1;
       y_pos = y_pos + 0xb;
@@ -95,7 +95,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004addf0(CEventList *this_ptr)
   if (0 < this_ptr->actor_var_count) {
     local_18 = this_ptr->variablesVarName1;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_ec,"%s=%s");
+      sprintf(local_ec,"%s=%s");
       iVar3 = iVar3 + 1;
       engine_2d_c_drawText_FUN_00401fd0(local_ec,0,y_pos);
       y_pos = y_pos + 0xb;
@@ -109,7 +109,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004addf0(CEventList *this_ptr)
     piVar2 = this_ptr[1].event_list + 6;
     pCVar4 = this_ptr;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_150,"%s=%s %.1f",local_20,piVar2,*(uint *)(pCVar4[1].unk1 + 0xb4),
                  *(uint *)(pCVar4[1].unk1 + 0xb8));
       pCVar4 = (CEventList *)(pCVar4->unk1 + 0xb8);

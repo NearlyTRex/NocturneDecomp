@@ -45,7 +45,7 @@ cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_00488ad0
             do {
               piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
               iVar4 = iVar4 + 4;
-              crt_memory_c_memset_FUN_005fde40
+              memset
                         ((void *)(*piVar1 + start_x),g_CurrentDrawColor,(end_x - start_x) + 1);
             } while (iVar4 <= iVar3);
             return;

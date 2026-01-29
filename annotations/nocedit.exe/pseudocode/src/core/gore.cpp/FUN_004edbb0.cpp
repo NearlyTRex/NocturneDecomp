@@ -65,12 +65,12 @@ void core_gore_cpp_FUN_004edbb0(void)
         local_3c.y = local_3c.y * fVar1;
       }
       local_7c.m[0].x = 7.242299e-39;
-      crt_math_c_atan2_FUN_006013b1
+      atan2
                 ((float10)local_3c.x,
                  SQRT((float10)local_40 * (float10)local_40 +
                       (float10)local_3c.y * (float10)local_3c.y));
       local_24 = 0.0;
-      fVar3 = crt_math_c_atan2_FUN_006013b1((float10)local_44,(float10)local_3c.x);
+      fVar3 = atan2((float10)local_44,(float10)local_3c.x);
       iVar2 = 0;
       local_30 = (float)-extraout_ST1;
       local_2c = (float)fVar3;

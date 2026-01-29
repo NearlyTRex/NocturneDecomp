@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_f_f_f_f_f_f_00622dc2
@@ -42,7 +42,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x34]      ; 0049a50b
     PUSH EDX                            ; 0049a50f
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0049a510
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x2c                        ; 0049a515
     PUSH EBX                            ; 0049a518
     CALL core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640 ; 0049a519

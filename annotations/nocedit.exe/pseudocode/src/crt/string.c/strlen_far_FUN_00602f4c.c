@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_string_c_strlen_far_FUN_00602f4c(char *string_offset,ushort segment,int max_length)
+int __cdecl strlen_far(char *string_offset,ushort segment,int max_length)
 
 {
   char cVar1;

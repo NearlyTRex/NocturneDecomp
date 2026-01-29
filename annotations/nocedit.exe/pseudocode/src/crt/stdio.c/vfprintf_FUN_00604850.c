@@ -2,11 +2,11 @@
 // Address: 00604850
 // Address Range: [[00604850, 0060492d]]
 // Convention: __watcallStack
-// Signature: int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_list_t args)
+// Signature: int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(_FILE *file,char *format,va_list_t args)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_list_t args)
+int __watcallStack vfprintf(_FILE *file,char *format,va_list_t args)
 
 {
   char *pcVar1;
@@ -28,7 +28,7 @@ int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_
   uVar2 = file->_flag;
   *(byte *)&file->_flag = (byte)file->_flag & 0xcf;
   if (file->_link->__reserve_end == (char *)0x0) {
-    crt_stdio_c_InitializeFileBuffer_FUN_006027e0(file);
+    InitializeFileBuffer(file);
   }
   bVar4 = *(byte *)((int)&file->_flag + 1);
   bVar5 = (bVar4 & 4) != 0;
@@ -37,13 +37,13 @@ int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_
     *(byte *)((int)&file->_flag + 1) = bVar4;
     *(byte *)((int)&file->_flag + 1) = bVar4 | 1;
   }
-  iVar3 = crt_stdio_c_FormatEngine_FUN_00602950
-                    (file,args,in_stack_00000010,crt_stdio_c_OutputCallback_FUN_00604830);
+  iVar3 = FormatEngine
+                    (file,args,in_stack_00000010,OutputCallback);
   if (bVar5) {
     bVar4 = *(byte *)((int)&file->_flag + 1) & 0xfa;
     *(byte *)((int)&file->_flag + 1) = bVar4;
     *(byte *)((int)&file->_flag + 1) = bVar4 | 4;
-    crt_stdio_c_fflushInternal_FUN_006039d0(file);
+    fflushInternal(file);
   }
   if ((file->_flag & 0x20) != 0) {
     iVar3 = -1;

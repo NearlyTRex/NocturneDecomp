@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x48]:8  local_48
 ; undefined8       Stack[-0x40]:8  local_40
@@ -60,7 +60,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x54]      ; 0049a589
     PUSH EDX                            ; 0049a58d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0049a58e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x50                        ; 0049a593
     RET                                 ; 0049a596
 

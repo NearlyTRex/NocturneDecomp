@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fgetc_outptr_FUN_005ff245(FILE *stream,uchar *output_byte)
+; __cdecl int __cdecl crt_stdio_c_fgetc_outptr_FUN_005ff245(_FILE *stream,uchar *output_byte)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   stream
+; _FILE *          Stack[0x4]:4   stream
 ; uchar *          Stack[0x8]:4   output_byte
 ;
 ; XREF[4]:
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_005ff269
     PUSH EAX                            ; 005ff26b
     CALL crt_stdio.c_stream_setup_FUN_00605f20 ; 005ff26c
-        ;   XREF to: 00605f20 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_setup_FUN_00605f20(FILE * stream, int operation_type)
+        ;   XREF to: 00605f20 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_setup_FUN_00605f20(_FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 005ff271
     TEST EAX,EAX                        ; 005ff274
     JZ 0x005ff2d2                       ; 005ff276
@@ -94,7 +94,7 @@ section .text
     PUSH EBP                            ; 005ff2c6
     PUSH EBX                            ; 005ff2c7
     CALL crt_stdio.c_fgetcInternal_FUN_00605fad ; 005ff2c8
-        ;   XREF to: 00605fad (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fgetcInternal_FUN_00605fad(FILE * stream, byte * output_byte)
+        ;   XREF to: 00605fad (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fgetcInternal_FUN_00605fad(_FILE * stream, byte * output_byte)
     ADD ESP,0x8                         ; 005ff2cd
     JMP 0x005ff2aa                      ; 005ff2d0
         ;   XREF to: 005ff2aa (UNCONDITIONAL_JUMP)  ; LAB_005ff2aa

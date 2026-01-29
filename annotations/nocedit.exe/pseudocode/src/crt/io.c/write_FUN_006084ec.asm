@@ -30,7 +30,7 @@
 ;   SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr = 00000000
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_extend_file_for_append_FUN_00608410
 ;   crt_io.c_getFileTypeFlags_FUN_006088b0
@@ -123,8 +123,8 @@ section .text
     PUSH EDI                            ; 00608588
     CALL dword ptr [0x00684eec]         ; 00608589 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060858f
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00608592
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00608592
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     JMP 0x00608659                      ; 00608597
         ;   XREF to: 00608659 (UNCONDITIONAL_JUMP)  ; LAB_00608659
     TEST byte ptr [EBP + -0x3],0x80     ; 0060859c
@@ -188,8 +188,8 @@ section .text
     PUSH EDI                            ; 0060861a
     CALL dword ptr [0x00684eec]         ; 0060861b | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 00608621
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00608624
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00608624
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     MOV ESP,EBP                         ; 00608629
     POP EBP                             ; 0060862b
     POP EDI                             ; 0060862c
@@ -295,8 +295,8 @@ section .text
     PUSH EDI                            ; 0060870c
     CALL dword ptr [0x00684eec]         ; 0060870d | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 00608713
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00608716
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00608716
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     MOV ESP,EBP                         ; 0060871b
     POP EBP                             ; 0060871d
     POP EDI                             ; 0060871e
@@ -375,8 +375,8 @@ section .text
     PUSH EDI                            ; 006087b8
     CALL dword ptr [0x00684eec]         ; 006087b9 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 006087bf
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006087c2
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 006087c2
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     MOV ESP,EBP                         ; 006087c7
     POP EBP                             ; 006087c9
     POP EDI                             ; 006087ca
@@ -451,8 +451,8 @@ section .text
     PUSH EDI                            ; 0060885c
     CALL dword ptr [0x00684eec]         ; 0060885d | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 00608863
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00608866
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00608866
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     MOV ESP,EBP                         ; 0060886b
     POP EBP                             ; 0060886d
     POP EDI                             ; 0060886e

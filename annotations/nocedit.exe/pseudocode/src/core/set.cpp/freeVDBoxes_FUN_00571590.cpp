@@ -9,6 +9,6 @@
 void __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0xfa,&g_SVDBoxTypeInfo);
+  __arrfini(array,0xfa,&g_SVDBoxTypeInfo);
   return;
 }

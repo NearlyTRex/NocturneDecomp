@@ -19,7 +19,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_FUN_0041af90(CBodyPart *this_ptr)
   if (0 < *(int *)(this_ptr->unk + 0x34)) {
     pcVar4 = this_ptr->unk + 0x40;
     do {
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,in_stack_00000008);
+      iVar2 = stricmp(pcVar4,in_stack_00000008);
       if (iVar2 == 0) {
         return iVar3;
       }
@@ -32,7 +32,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_FUN_0041af90(CBodyPart *this_ptr)
     g_CurrentLineNumber = 0x47a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many body part textures!");
   }
-  crt_memory_c_memset_FUN_005fde40
+  memset
             (this_ptr->unk + *(int *)(this_ptr->unk + 0x34) * 0x18 + 0x38,0,0x18);
   pcVar4 = this_ptr->unk + *(int *)(this_ptr->unk + 0x34) * 0x18 + 0x40;
   do {

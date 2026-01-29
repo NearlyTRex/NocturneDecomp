@@ -38,8 +38,8 @@
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   crt_string.c_strcmp_FUN_005fef20
-;   crt_string.c_strtod_FUN_005ff0f3
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_design.c_findVertexMatches_FUN_00461ae0
@@ -99,8 +99,8 @@ section .text
         ;   XREF to: 004655d4 (CONDITIONAL_JUMP)  ; LAB_004655d4
     LEA EAX,[EBP + -0x64]               ; 004655bc
     PUSH EAX                            ; 004655bf
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 004655c0
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 004655c0
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + -0x6c],EAX     ; 004655c5
     MOV dword ptr [EBP + -0x68],EDX     ; 004655c8
     FLD double ptr [EBP + -0x6c]        ; 004655cb

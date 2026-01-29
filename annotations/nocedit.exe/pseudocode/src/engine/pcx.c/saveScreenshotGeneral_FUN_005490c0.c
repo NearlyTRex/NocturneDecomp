@@ -10,7 +10,7 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
 
 {
   byte bVar1;
-  FILE *file;
+  _FILE *file;
   int iVar2;
   uint character;
   byte local_88;
@@ -35,7 +35,7 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
     engine_pcx_c_saveScreenRaw32_FUN_00548f00(filename);
     return;
   }
-  crt_memory_c_memset_FUN_005fde40(&local_88,0,0x80);
+  memset(&local_88,0,0x80);
   local_88 = 10;
   local_87 = 5;
   local_85 = 8;
@@ -55,13 +55,13 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (filename,(char *)0x0,"wb","..\\engine\\pcx.c",0xec);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
     g_CurrentLineNumber = 0xed;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot write .PCX");
   }
   iVar2 = 0;
-  crt_stdio_c_fwrite_FUN_005fdc00(&local_88,1,0x80,file);
+  _fwrite(&local_88,1,0x80,file);
   if (0 < g_WindowHeight) {
     do {
       engine_pcx_c_writePCXScanline_FUN_00548c50(iVar2,file);
@@ -85,7 +85,7 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
   else {
     iVar2 = 0xc;
   }
-  crt_stdio_c_fputc_FUN_006007a0(iVar2,file);
+  _fputc(iVar2,file);
 LAB_0054923a:
   iVar2 = 0;
   do {
@@ -103,7 +103,7 @@ LAB_0054923a:
     else {
       character = (uint)(byte)g_SourcePaletteData[iVar2];
 LAB_00549250:
-      crt_stdio_c_fputc_FUN_006007a0(character,file);
+      _fputc(character,file);
     }
     iVar2 = iVar2 + 1;
     if (0x2ff < iVar2) {

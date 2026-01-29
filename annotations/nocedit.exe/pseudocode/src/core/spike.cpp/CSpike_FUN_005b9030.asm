@@ -20,7 +20,7 @@ section .text
     ADD EAX,0x158                       ; 005b9039
     PUSH EAX                            ; 005b903e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0 ; 005b903f
-        ;   XREF to: 0047edd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0(CKeyFramedModelInstance * this_ptr, FILE * file_handle)
+        ;   XREF to: 0047edd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0(CKeyFramedModelInstance * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 005b9044
     RET                                 ; 005b9047
 

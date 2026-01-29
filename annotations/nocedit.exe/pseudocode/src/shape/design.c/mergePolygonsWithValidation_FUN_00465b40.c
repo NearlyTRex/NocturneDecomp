@@ -24,7 +24,7 @@ shape_design_c_mergePolygonsWithValidation_FUN_00465b40
                           (int *)g_ModelPolygonData[polygon2_index].vertex_indices,
                           g_ModelPolygonData[polygon1_index].vertex_indices_count,
                           g_ModelPolygonData[polygon2_index].vertex_indices_count), iVar1 != 0)) &&
-     (iVar1 = crt_string_c_strcmp_FUN_005fef20
+     (iVar1 = strcmp
                         (g_ModelPolygonData[polygon1_index].lightmap_name,
                          g_ModelPolygonData[polygon2_index].lightmap_name), iVar1 == 0)) {
     if ((enforce_part_match != 0) &&

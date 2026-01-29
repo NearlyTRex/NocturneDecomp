@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_string_c_mbcmp_FUN_0060e640(char *str1,char *str2)
+int __cdecl mbcmp(char *str1,char *str2)
 
 {
   if (*str1 != *str2) {

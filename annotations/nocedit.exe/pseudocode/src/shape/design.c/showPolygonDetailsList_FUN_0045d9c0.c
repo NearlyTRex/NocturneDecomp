@@ -37,10 +37,10 @@ void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
       if ((((g_WireframeMode == 0) || (g_CurrentPartIndex == -1)) ||
           (g_ModelPolygonData[local_18].part_assignment == g_CurrentPartIndex)) &&
          (local_18 < g_PolygonCount)) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_11c,"Poly %d :",local_18);
+        sprintf(local_11c,"Poly %d :",local_18);
         for (local_14 = 0; local_14 < (int)g_ModelPolygonData[local_18].vertex_indices_count;
             local_14 = local_14 + 1) {
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (local_2c," %d",g_ModelPolygonData[local_18].vertex_indices[local_14]);
           pcVar3 = local_2c;
           iVar2 = -1;
@@ -64,7 +64,7 @@ void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
             pcVar4 = pcVar4 + 2;
           } while (cVar1 != '\0');
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_7c," Part : %s",
                    g_ModelPartNames + g_ModelPolygonData[local_18].part_assignment);
         pcVar3 = local_7c;
@@ -88,7 +88,7 @@ void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
           pcVar4[1] = cVar1;
           pcVar4 = pcVar4 + 2;
         } while (cVar1 != '\0');
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_7c," Color : %d",g_ModelPolygonData[local_18].material_id);
         pcVar3 = local_7c;
         iVar2 = -1;

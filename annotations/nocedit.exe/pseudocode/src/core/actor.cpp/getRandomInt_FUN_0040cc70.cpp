@@ -16,14 +16,14 @@ int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value
   
   dVar4 = (double)(max_value - min_value) + 0.99999000000000005;
   if (g_CGamePtr->is_processing == 0) {
-    iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar2 = rand();
     fVar1 = (float)iVar2 * 3.051851e-05f;
   }
   else {
     uVar3 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
     fVar1 = (float)(int)uVar3 * (float)INT_00614304;
   }
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)((float)min_value + fVar1 * (float)dVar4));
+  dVar4 = round((double)((float)min_value + fVar1 * (float)dVar4));
   iVar2 = (int)ROUND(dVar4);
   if ((min_value <= iVar2) && (min_value = max_value, iVar2 <= max_value)) {
     return iVar2;

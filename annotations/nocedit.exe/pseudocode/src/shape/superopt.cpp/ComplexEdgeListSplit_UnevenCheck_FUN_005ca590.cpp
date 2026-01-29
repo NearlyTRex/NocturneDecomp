@@ -134,7 +134,7 @@ uint shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
   dVar8 = (double)CONCAT44(uStack_30c,local_310);
   bVar17 = 0;
   local_20 = 0;
-  puVar9 = crt_memory_c_malloc_FUN_006021da(*in_stack_0000000c << 2);
+  puVar9 = shape_memdbg_cpp_malloc_FUN_006021da(*in_stack_0000000c << 2);
   local_1c = puVar9;
   if (puVar9 == (uint *)0x0) {
     return 0;
@@ -178,7 +178,7 @@ LAB_005ca66d:
     if (in_stack_00000010 == 0) {
       shape_superopt_cpp_logToFile_FUN_005c7910("Uneven number of edges");
     }
-    crt_memory_c_free_FUN_005fe659(local_1c);
+    shape_memdbg_cpp_free_FUN_005fe659(local_1c);
     return 0;
   }
   if ((local_20 & 1) == 0) {
@@ -449,7 +449,7 @@ LAB_005ca66d:
           if (9.9999999999999995e-08 <= SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar8 * dVar8)) {
             uVar1 = *puVar9;
             uVar13 = uVar1 + 1;
-            crt_string_c_memmove_FUN_005fe5e0
+            memmove
                       ((void *)((uVar1 + 2) * 0x60 + in_stack_00000008),
                        (void *)(uVar13 * 0x60 + in_stack_00000008),
                        (*in_stack_0000000c - uVar13) * 0x60);
@@ -490,14 +490,14 @@ LAB_005ca66d:
           puVar9 = puVar9 + 2;
         } while (puVar9 < local_24);
       }
-      crt_memory_c_free_FUN_005fe659(local_1c);
+      shape_memdbg_cpp_free_FUN_005fe659(local_1c);
       return 1;
     }
     shape_superopt_cpp_logToFile_FUN_005c7910("Complex (split) edge list does not have proper vertex arrangement");
-    crt_memory_c_free_FUN_005fe659(local_1c);
+    shape_memdbg_cpp_free_FUN_005fe659(local_1c);
     return 0;
   }
   shape_superopt_cpp_logToFile_FUN_005c7910("Uneven number of edges");
-  crt_memory_c_free_FUN_005fe659(local_1c);
+  shape_memdbg_cpp_free_FUN_005fe659(local_1c);
   return 0;
 }

@@ -19,14 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 31,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 16,
-    "suspect_count": 1,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_many"
+      "param_count_too_many",
+      "unnamed_param"
     ],
     "total_lines": 54
   },
@@ -162,6 +163,41 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param3",
+      "text": "(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param4",
+      "text": "int param4,int additional_param)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param3",
+      "text": "(this_ptr,pbg_filename,palette_filename,param3,param4,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param4",
+      "text": "(this_ptr,pbg_filename,palette_filename,param3,param4,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param3",
+      "text": "this_ptr->config_param = param3;",
+      "type": "unnamed_param"
+    },
     {
       "call_site_count": 1,
       "declared_params": 6,

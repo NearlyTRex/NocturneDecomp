@@ -39,7 +39,7 @@ void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_pt
     }
     pcVar4 = pcVar4 + GAME_CONSOLE_ROW_STRIDE;
   }
-  crt_memory_c_memset_FUN_005fde40
+  memset
             (this_ptr->console_buffer + iVar1 * 0x50,0,this_ptr->console_width);
   return;
 }

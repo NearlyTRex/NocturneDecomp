@@ -16,13 +16,13 @@
     {
       "addr": "006021f0",
       "from_addr": "0060224f",
-      "name": "crt_io.c_findFirstFileWrapper_FUN_006021f0",
+      "name": "crt_io.c__findfirst_FUN_006021f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00602300",
       "from_addr": "00602366",
-      "name": "crt_io.c_findNextFileWrapper_FUN_00602300",
+      "name": "crt_io.c__findnext_FUN_00602300",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,7 +36,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_io.c_convertFileInfo_FUN_00602264",
-    "signature": "void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,find_t *dos_info)"
+    "signature": "void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info)"
   },
   "function_calls": [
     {
@@ -52,7 +52,7 @@
       {
         "call_addr": "00602366",
         "call_type": "direct",
-        "caller": "crt_io.c_findNextFileWrapper_FUN_00602300",
+        "caller": "crt_io.c__findnext_FUN_00602300",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -61,7 +61,7 @@
       {
         "call_addr": "0060224f",
         "call_type": "direct",
-        "caller": "crt_io.c_findFirstFileWrapper_FUN_006021f0",
+        "caller": "crt_io.c__findfirst_FUN_006021f0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -116,7 +116,7 @@
         "name": "dos_info",
         "offset": 8,
         "size": 4,
-        "type": "find_t *"
+        "type": "_find_t *"
       }
     ]
   },

@@ -163,8 +163,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                 }
                 else if (uVar5 < 2) {
                   if (uVar5 == 1) {
-                    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                              (&stack0xfffffd00,8,&g_CVectorTypeInfo);
+                    __arrinit(&stack0xfffffd00,8,&g_CVectorTypeInfo);
                     pCVar18 = (CVector3f *)&stack0xfffffd00;
                     uVar5 = 0;
                     (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)auStack_128);

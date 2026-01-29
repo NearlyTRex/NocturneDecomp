@@ -42,15 +42,21 @@
       },
       {
         "category": "other",
-        "column": 60,
+        "column": 37,
         "line": 20,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 60,
+        "column": 46,
         "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 24,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -66,21 +72,39 @@
       },
       {
         "category": "other",
+        "column": 48,
+        "line": 30,
+        "message": "format '%lg' expects argument of type 'double', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 30,
+        "message": "format '%lg' expects argument of type 'double', but argument 4 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 30,
+        "message": "format '%lg' expects argument of type 'double', but argument 5 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
         "column": 40,
         "line": 30,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "too many arguments for format [-Wformat-extra-args]"
       },
       {
         "category": "other",
-        "column": 62,
+        "column": 52,
         "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 62,
+        "column": 53,
         "line": 42,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -96,33 +120,39 @@
       },
       {
         "category": "other",
+        "column": 48,
+        "line": 49,
+        "message": "format '%lg' expects argument of type 'double', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 49,
+        "message": "format '%lg' expects argument of type 'double', but argument 4 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 49,
+        "message": "format '%lg' expects argument of type 'double', but argument 5 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
         "column": 40,
         "line": 49,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "too many arguments for format [-Wformat-extra-args]"
       },
       {
         "category": "other",
-        "column": 62,
+        "column": 52,
         "line": 57,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 62,
+        "column": 53,
         "line": 61,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 67,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 72,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -132,22 +162,27 @@
       },
       {
         "category": "other",
+        "column": 38,
+        "line": 79,
+        "message": "format '%lg' expects argument of type 'double', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
         "column": 28,
         "line": 79,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "too many arguments for format [-Wformat-extra-args]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 192,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 11,
     "pseudocode_lines": 72,
-    "suspect_count": 11,
+    "suspect_count": 5,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast"
     ],
     "total_lines": 255
@@ -353,72 +388,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&options->delay_remaining + 4));",
       "type": "pointer_cast"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 13,
-      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\"%s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" channel=%d%s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": " channel=%d%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 17,
-      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" channel=%d%s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" posPtrFloat=%p\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " posPtrFloat=%p",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 31,
-      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" posPtrFloat=%p\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" posPtrDouble=%p\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " posPtrDouble=%p",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 35,
-      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" posPtrDouble=%p\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" velPtrFloat=%p\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " velPtrFloat=%p",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 50,
-      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" velPtrFloat=%p\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" velPtrDouble=%p\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " velPtrDouble=%p",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 54,
-      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" velPtrDouble=%p\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl tm * __cdecl crt_time_c_localtime_FUN_00600288(time_t *timer)
+; __cdecl _tm * __cdecl crt_time_c_localtime_FUN_00600288(time_t *timer)
 ;
 ; Parameters:
 ; time_t *         Stack[0x4]:4   timer
@@ -37,7 +37,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00600292
     PUSH EDX                            ; 00600296
     CALL crt_time.c_localtime_r_FUN_00600230 ; 00600297
-        ;   XREF to: 00600230 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_r_FUN_00600230(time_t * timer, tm * result)
+        ;   XREF to: 00600230 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_r_FUN_00600230(time_t * timer, _tm * result)
     ADD ESP,0x8                         ; 0060029c
     RET                                 ; 0060029f
 

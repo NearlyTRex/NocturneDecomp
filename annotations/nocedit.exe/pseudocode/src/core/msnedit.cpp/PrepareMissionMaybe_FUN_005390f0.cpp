@@ -104,7 +104,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   int local_14;
   
   bVar13 = 0;
-  crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
+  remove("$$UNDO$$.TMP");
   in_stack_00000004->unk1[4] = '\x01';
   in_stack_00000004->unk1[5] = '\0';
   in_stack_00000004->unk1[6] = '\0';
@@ -207,7 +207,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                     (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),0);
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Static cam: %s");
+        sprintf(local_2b0,"Static cam: %s");
         local_10c = g_CDemonCameraInstance.base.position.x;
         local_108 = (float)*local_54;
         local_104 = (float)*local_58;
@@ -239,7 +239,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         local_158 = g_CDemonCameraInstance.base.projection_scale;
         break;
       case 1:
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Custom cam (camera fixed, slew the actor)");
+        sprintf(local_2b0,"Custom cam (camera fixed, slew the actor)");
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
           g_CDemonCameraInstance.base.position.x = local_170._0_4_;
           g_CDemonCameraInstance.base.position.y = local_170._4_4_;
@@ -251,7 +251,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 2:
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Slew cam (actor fixed, slew the camera)");
+        sprintf(local_2b0,"Slew cam (actor fixed, slew the camera)");
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
           g_CDemonCameraInstance.base.position.x = local_170._0_4_;
           g_CDemonCameraInstance.base.position.y = local_170._4_4_;
@@ -263,7 +263,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 3:
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"1st person cam");
+        sprintf(local_2b0,"1st person cam");
         if (*(int *)(in_stack_00000004->unk2 + 0x1c) != 0) {
           pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x154)
                                         + 0x14))();
@@ -301,7 +301,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 4:
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Chase/spot cam");
+        sprintf(local_2b0,"Chase/spot cam");
         if (*(int *)(in_stack_00000004->unk2 + 0x1c) != 0) {
           if ((float *)(local_170 + 0xc) != &local_7c) {
             local_170._12_4_ = local_7c;
@@ -701,7 +701,7 @@ LAB_00539d68:
                     (g_CEditorToolsPtr,"No mission name!");
         }
         else {
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_3b4,"%s.msn");
+          sprintf(local_3b4,"%s.msn");
           in_stack_fffff668 = (CKeys *)0x53a627;
           iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                              (g_CEditorToolsPtr,"Save mission to %s.msn");
@@ -728,7 +728,7 @@ LAB_00539e00:
       pCVar1->unk_lighting_param1 = 0;
       pCVar1->unk_lighting_param3 = 0;
       pCVar1->unk_lighting_param4 = 0;
-      crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
+      remove("$$UNDO$$.TMP");
       if (iVar10 == 0) {
         return 0;
       }

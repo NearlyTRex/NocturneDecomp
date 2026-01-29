@@ -37,14 +37,14 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_get_standard_file_handle_FUN_0060b7a0",
-    "signature": "FILE * __cdecl crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(int fd)"
+    "signature": "_FILE * __cdecl crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(int fd)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "00684cc4",
       "name": "g_StaticFilePoolStart",
-      "type": "FILE*",
+      "type": "_FILE*",
       "value": "00000000"
     }
   ],
@@ -131,8 +131,8 @@
     {
       "description": "Complex pointer cast",
       "line": 8,
-      "match": "(FILE *)((int)",
-      "text": "return (FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);",
+      "match": "(_FILE *)((int)",
+      "text": "return (_FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);",
       "type": "pointer_cast"
     },
     {

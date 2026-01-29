@@ -25,8 +25,8 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_free_FUN_005fe659
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -119,8 +119,8 @@ section .text
     SUB EAX,0x4                         ; 00478936
         ;   Label: LAB_00478936
     PUSH EAX                            ; 00478939
-    CALL crt_memory.c_free_FUN_005fe659 ; 0047893a
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0047893a
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0047893f
     JMP 0x0047885a                      ; 00478942
         ;   XREF to: 0047885a (UNCONDITIONAL_JUMP)  ; LAB_0047885a

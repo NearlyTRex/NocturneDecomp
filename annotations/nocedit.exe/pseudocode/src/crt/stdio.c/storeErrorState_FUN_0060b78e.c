@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack crt_stdio_c_storeErrorState_FUN_0060b78e(uint *destination,uint error_state)
+void __watcallStack storeErrorState(uint *destination,uint error_state)
 
 {
   *destination = error_state;

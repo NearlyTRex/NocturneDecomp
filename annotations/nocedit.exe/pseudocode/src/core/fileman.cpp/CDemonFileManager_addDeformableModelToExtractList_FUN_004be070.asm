@@ -57,7 +57,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 004be096
     PUSH ECX                            ; 004be098
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004be099
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004be09e
     PUSH 0x143                          ; 004be0a1
     PUSH 0x62972c                       ; 004be0a6 | = "..\\core\\fileman.cpp"

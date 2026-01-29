@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;
 ; *****************************************************************************
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x10                           ; 005894c0
         ;   Label: core_skeledit.cpp_FUN_005894c0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 005894c5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005894c5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 005894ca
     PUSH ESI                            ; 005894cb
     MOV ESI,dword ptr [ESP + 0x10]      ; 005894cc
@@ -26,7 +26,7 @@ section .text
     PUSH EBX                            ; 005894d8
         ;   Label: LAB_005894d8
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005894d9
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 005894de
     TEST EAX,EAX                        ; 005894e1
     JL 0x005894ef                       ; 005894e3

@@ -2,11 +2,11 @@
 // Address: 004b2a60
 // Address Range: [[004b2a60, 004b2cf8]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *this_ptr,FILE **file)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *this_ptr,_FILE **file)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *this_ptr,FILE **file)
+int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *this_ptr,_FILE **file)
 
 {
   char cVar1;
@@ -20,18 +20,18 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
   
   bVar6 = 0;
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);
-  iVar2 = crt_stdio_c_fseek_FUN_005ffacc(*file,0,0);
+  iVar2 = _fseek(*file,0,0);
   if (iVar2 == 0) {
     do {
-      crt_stdio_c_fscanf_FUN_005fe7c0(*file," ");
+      _fscanf(*file," ");
       if (((*file)->_flag & 0x10) != 0) {
         return 1;
       }
-      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(*file,"%[^=]= %[^\n]\n",&local_178,local_178.value);
+      iVar2 = _fscanf(*file,"%[^=]= %[^\n]\n",&local_178,local_178.value);
       if (iVar2 != 2) {
-        if (*file != (FILE *)0x0) {
+        if (*file != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
-          *file = (FILE *)0x0;
+          *file = (_FILE *)0x0;
         }
         pcVar7 = "Checkout file is corrupt, or file I/O error.\nGet Fletch, this is a serious situation.";
         goto LAB_004b2acd;
@@ -55,7 +55,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       }
       local_178.name[SVar4] = '\0';
       while ((g_CharacterClassificationTable[(byte)(local_178.name[0] + 1)] & 2U) != 0) {
-        crt_string_c_memmove_FUN_005fe5e0(&local_178,local_178.name + 1,SVar4);
+        memmove(&local_178,local_178.name + 1,SVar4);
         SVar4 = SVar4 - 1;
       }
       uVar3 = 0xffffffff;
@@ -77,14 +77,14 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       }
       local_178.value[SVar4] = '\0';
       while ((g_CharacterClassificationTable[(byte)(local_178.value[0] + 1)] & 2U) != 0) {
-        crt_string_c_memmove_FUN_005fe5e0(local_178.value,local_178.value + 1,SVar4);
+        memmove(local_178.value,local_178.value + 1,SVar4);
         SVar4 = SVar4 - 1;
       }
       iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(this_ptr,local_178.name);
       if (-1 < iVar2) {
-        if (*file != (FILE *)0x0) {
+        if (*file != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
-          *file = (FILE *)0x0;
+          *file = (_FILE *)0x0;
         }
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Multiple checkout detected for %s (users %s and %s).\nCheckout file probably corrupt.\nGet Fletch, this is a serious situation.",&local_178,
@@ -93,9 +93,9 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       }
       iVar2 = engine_fileio_cpp_CCheckOutList_add_FUN_004b2d00(this_ptr,&local_178);
     } while (iVar2 != 0);
-    if (*file != (FILE *)0x0) {
+    if (*file != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
-      *file = (FILE *)0x0;
+      *file = (_FILE *)0x0;
     }
     pcVar7 = "Out of memory reading checkout file...Restart the application NOW.\nBetter yet, reboot the computer.";
   }
@@ -105,9 +105,9 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
 LAB_004b2acd:
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
 LAB_004b2ad5:
-  if (*file != (FILE *)0x0) {
+  if (*file != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
-    *file = (FILE *)0x0;
+    *file = (_FILE *)0x0;
   }
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);
   return 0;

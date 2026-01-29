@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_00613e9e
 ;   TerminatedCString s_anon_00613ea9
-;   FILE* g_ActorDataFile
+;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;   int g_IncludeCommentsWhenWriting
 ;
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_0040b2a5
     PUSH EAX                            ; 0040b2aa
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0040b2ab
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0040b2b0
     MOV EBX,EAX                         ; 0040b2b3
     TEST EAX,EAX                        ; 0040b2b5
@@ -87,7 +87,7 @@ section .text
     MOV EBX,dword ptr [0x00822034]      ; 0040b2ed | g_ActorDataFile
     PUSH EBX                            ; 0040b2f3
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040b2f4
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b2f9
     MOV EAX,[0x00822034]                ; 0040b2fc | g_ActorDataFile
     TEST byte ptr [EAX + 0xc],0x20      ; 0040b301
@@ -103,7 +103,7 @@ section .text
     MOV EBP,dword ptr [0x00822034]      ; 0040b311 | g_ActorDataFile
     PUSH EBP                            ; 0040b317
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040b318
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0040b31d
     MOV EAX,[0x00822034]                ; 0040b320 | g_ActorDataFile
     TEST byte ptr [EAX + 0xc],0x20      ; 0040b325

@@ -40,7 +40,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x84]      ; 0054b536
     PUSH EDX                            ; 0054b53d
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0054b53e
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0054b543
     MOV EBX,EAX                         ; 0054b546
     TEST EAX,EAX                        ; 0054b548
@@ -51,13 +51,13 @@ section .text
     MOV EBP,dword ptr [ESP + 0x74]      ; 0054b54d
     PUSH EBP                            ; 0054b551
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 ; 0054b552
-        ;   XREF to: 0054b5c0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPackedBitmap * this_ptr, FILE * file_handle)
+        ;   XREF to: 0054b5c0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPackedBitmap * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0054b557
     PUSH 0x474                          ; 0054b55a
     PUSH 0x63f0d9                       ; 0054b55f | = "..\\cockpit\\pkbitmap.cpp"
     PUSH EBX                            ; 0054b564
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0054b565
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0054b56a
     ADD ESP,0x64                        ; 0054b56d
     POP EBP                             ; 0054b570

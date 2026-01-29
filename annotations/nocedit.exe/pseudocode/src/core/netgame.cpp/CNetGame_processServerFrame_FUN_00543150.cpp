@@ -46,7 +46,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
   g_LastPingTime = iVar2;
   if (this_ptr->connection_type == 0) {
-    seed_value = crt_stdlib_c_rand_FUN_005feb5c();
+    seed_value = rand();
     *(uint *)(this_ptr->unk + 0x54) = seed_value;
     core_actor_cpp_setRandomSeed_FUN_0040cb90(seed_value);
     return;
@@ -90,7 +90,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
       do {
         if (*(int *)((int)&g_SimFrameHistory + iVar3) < local_18) {
           g_SimFrameCount = g_SimFrameCount + -1;
-          crt_string_c_memmove_FUN_005fe5e0
+          memmove
                     ((void *)((int)&g_SimFrameHistory + iVar3),puVar10,
                      (g_SimFrameCount - iVar2) * 100);
         }
@@ -124,10 +124,10 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
     }
     dest = &g_SimFrameHistory + g_SimFrameCount * 0x19;
     g_SimFrameCount = g_SimFrameCount + 1;
-    crt_memory_c_memset_FUN_005fde40(dest,0,100);
+    memset(dest,0,100);
     *dest = iVar2;
 LAB_005432f5:
-    iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar2 = rand();
     dest[1] = iVar2;
     pCVar6 = (CNetGame *)g_CGamePtr->delta_time_float;
     dest[2] = (int)pCVar6;

@@ -44,6 +44,30 @@
         "message": "cast from 'CPodDirectoryEntry*' to 'int' loses precision [-fpermissive]"
       },
       {
+        "category": "incompatible_types",
+        "column": 27,
+        "line": 129,
+        "message": "cannot convert 'tm*' to '_tm*' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 64,
+        "line": 130,
+        "message": "cannot convert '_tm*' to 'const tm*'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 27,
+        "line": 131,
+        "message": "cannot convert 'tm*' to '_tm*' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 64,
+        "line": 132,
+        "message": "cannot convert '_tm*' to 'const tm*'"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 28,
         "line": 144,
@@ -57,7 +81,7 @@
       },
       {
         "category": "other",
-        "column": 75,
+        "column": 76,
         "line": 155,
         "message": "cast from 'CPickList*' to 'int' loses precision [-fpermissive]"
       },
@@ -108,9 +132,15 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 27,
         "line": 76,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 76,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -156,27 +186,33 @@
       },
       {
         "category": "other",
-        "column": 58,
-        "line": 130,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 132,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 23,
         "line": 133,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 41,
+        "column": 120,
         "line": 135,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 142,
+        "line": 135,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 166,
+        "line": 135,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 188,
+        "line": 135,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -194,14 +230,13 @@
   },
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 397,
+    "complexity_score": 382,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
     "pseudocode_lines": 162,
-    "suspect_count": 21,
+    "suspect_count": 20,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -801,17 +836,6 @@
       "match": "&stack0xffffeef8",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffeef8);",
       "type": "stack_ref"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\t%d\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s\\t%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 69,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_120,\"%s\\t%d\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

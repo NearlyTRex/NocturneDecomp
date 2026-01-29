@@ -10,7 +10,7 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
 
 {
   char cVar1;
-  FILE *file;
+  _FILE *file;
   uint uVar2;
   int iVar3;
   char *pcVar4;
@@ -20,7 +20,7 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
   
   bVar5 = 0;
   local_14 = &stack0x0000000c;
-  crt_stdio_c_vsprintf_FUN_005fdba8(local_1014,format,&local_14);
+  vsprintf(local_1014,format,&local_14);
   iVar3 = 0;
   local_14 = (va_list_t)0x0;
   uVar2 = 0xffffffff;
@@ -43,8 +43,8 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
     file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("console.txt",(char *)0x0,"at","..\\engine\\console.cpp"
                       ,0x4a);
-    if (file != (FILE *)0x0) {
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s",local_1014);
+    if (file != (_FILE *)0x0) {
+      _fprintf(file,"%s",local_1014);
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\console.cpp",0x4d);
       return;
     }

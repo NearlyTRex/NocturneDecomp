@@ -52,7 +52,7 @@
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_qsort_FUN_005fdf38
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_design.c_removeDegenerateTriangles_FUN_00463a20
@@ -124,8 +124,8 @@ section .text
         ;   XREF to: 004678f2 (CONDITIONAL_JUMP)  ; LAB_004678f2
     LEA EAX,[EBP + 0xfffffedc]          ; 004678ce
     PUSH EAX                            ; 004678d4
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 004678d5
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 004678d5
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + 0xfffffed4],EAX ; 004678da
     MOV dword ptr [EBP + 0xfffffed8],EDX ; 004678e0
     FLD double ptr [EBP + 0xfffffed4]   ; 004678e6
@@ -182,8 +182,8 @@ section .text
         ;   XREF to: 00467994 (CONDITIONAL_JUMP)  ; LAB_00467994
     LEA EAX,[EBP + 0xfffffedc]          ; 00467970
     PUSH EAX                            ; 00467976
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00467977
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00467977
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + 0xfffffed4],EAX ; 0046797c
     MOV dword ptr [EBP + 0xfffffed8],EDX ; 00467982
     FLD double ptr [EBP + 0xfffffed4]   ; 00467988

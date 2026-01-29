@@ -24,7 +24,7 @@ int __cdecl shape_superopt_cpp_CObj_removeInvalidPolygons_FUN_005d46f0(CObj *thi
   if (this_ptr->poly_count != 0) {
     do {
       if ((ptr != (void *)0x0) && ((char)index == '\0')) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,"Deleting invalid polygons (%d deleted so far)",iVar3)
+        sprintf(&stack0xffffff94,"Deleting invalid polygons (%d deleted so far)",iVar3)
         ;
       }
       iVar1 = (*(this_ptr->poly_array[index].vtable)->isValid)(this_ptr->poly_array + index);

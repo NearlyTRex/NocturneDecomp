@@ -22,22 +22,22 @@ core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
   uint uVar6;
   
   bVar4 = 0;
-  dVar5 = crt_math_c_floor_FUN_005feb90
+  dVar5 = floor
                     ((double)((world_position->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x
                              ));
   fVar1 = world_position->y;
   fVar2 = (this_ptr->bbox_min).y;
   fVar3 = (this_ptr->cell_size).y;
-  crt_math_c_round_FUN_005fe6b0(dVar5);
-  dVar5 = crt_math_c_floor_FUN_005feb90((double)((fVar1 - fVar2) / fVar3));
+  round(dVar5);
+  dVar5 = floor((double)((fVar1 - fVar2) / fVar3));
   fVar1 = world_position->z;
   fVar2 = (this_ptr->bbox_min).z;
   fVar3 = (this_ptr->cell_size).z;
-  crt_math_c_round_FUN_005fe6b0(dVar5);
+  round(dVar5);
   dVar5 = (double)((fVar1 - fVar2) / fVar3);
-  value = crt_math_c_floor_FUN_005feb90(dVar5);
+  value = floor(dVar5);
   uVar6 = (uint)((ulonglong)dVar5 >> 0x20);
-  crt_math_c_round_FUN_005fe6b0(value);
+  round(value);
   *extraout_EBX = uVar6;
   extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);
   (extraout_EBX + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =

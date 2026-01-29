@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_unknown_c_staticInit_FUN_0060240e(void)
+void __cdecl staticInit(void)
 
 {
   DAT_03f9b874 = DAT_03f9b874 | 2;

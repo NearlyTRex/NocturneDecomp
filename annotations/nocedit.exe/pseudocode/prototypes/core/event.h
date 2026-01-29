@@ -193,7 +193,7 @@ int __cdecl CEventList::loadState(CEventList *this_ptr);
 
 // Original: core_event.cpp_CEventList_saveState_FUN_004b1380
 // Address: 004b1380
-int __cdecl CEventList::saveState(CEventList *this_ptr,FILE *file_handle);
+int __cdecl CEventList::saveState(CEventList *this_ptr,_FILE *file_handle);
 
 // Original: core_event.cpp_FUN_004b1670
 // Address: 004b1670

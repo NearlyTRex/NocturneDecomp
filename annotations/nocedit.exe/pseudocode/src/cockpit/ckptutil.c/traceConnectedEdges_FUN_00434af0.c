@@ -116,7 +116,7 @@ cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0
         iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar1;
         iVar15 = iVar14 + -1;
         if (0x1ff < iVar11) {
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x886;
@@ -250,7 +250,7 @@ LAB_00434df6:
           }
         }
         if (0x1ff < iVar11) {
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x8c0;
@@ -344,7 +344,7 @@ LAB_00434df6:
   pvVar5 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (output_count,iVar13,"..\\cockpit\\ckptutil.c",0x8fc);
   if (pvVar5 == (void *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_1f4,"Unable to allocate %u bytes for edge list.",iVar13);
+    sprintf(local_1f4,"Unable to allocate %u bytes for edge list.",iVar13);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x8ff;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);

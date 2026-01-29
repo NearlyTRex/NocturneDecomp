@@ -9,6 +9,6 @@
 void __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,400,&g_CVectorTypeInfo);
+  __arrfini(array,400,&g_CVectorTypeInfo);
   return;
 }

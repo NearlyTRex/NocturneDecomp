@@ -68,11 +68,11 @@ shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr,int draw_bor
       pbVar10 = (byte *)((char *)pbVar10 + (uint)bVar12 * -2 + 1);
     } while (cVar1 != '\0');
     if (~uVar6 - 1 <= uVar5) break;
-    iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_dc[uVar5]);
+    iVar3 = toupper((uint)local_dc[uVar5]);
     local_dc[uVar5] = (byte)iVar3;
     uVar5 = uVar5 + 1;
   } while( true );
-  iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)this_ptr->shortcut_key);
+  iVar3 = toupper((uint)(byte)this_ptr->shortcut_key);
   do {
     pcVar7 = (char *)pbVar8;
     if (*pbVar8 == (char)iVar3) goto LAB_004a6754;
@@ -100,7 +100,7 @@ LAB_004a6754:
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,(char *)local_dc);
   uVar5 = iVar3 + g_EditorFont->char_spacing;
   bVar12 = this_ptr->button_text[0];
-  uVar6 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)this_ptr->shortcut_key);
+  uVar6 = toupper((uint)(byte)this_ptr->shortcut_key);
   if (uVar6 == bVar12) {
     uVar5 = uVar6 ^ bVar12;
   }

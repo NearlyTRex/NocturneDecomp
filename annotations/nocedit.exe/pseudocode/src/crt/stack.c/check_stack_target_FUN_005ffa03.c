@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)
+void check_stack_target(void *target_stack_ptr)
 
 {
   bool bVar1;
@@ -19,12 +19,12 @@ void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)
     iVar2 = (int)target_stack_ptr - (int)&stack0xfffffffc;
     pTVar3 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
     if (pTVar3->stack_limit < (uint)-iVar2) {
-      crt_stack_c_ProbeStackSpace_FUN_005ffa2f((uint)target_stack_ptr);
+      ProbeStackSpace((uint)target_stack_ptr);
       return;
     }
   }
   iVar2 = 1;
-  crt_startup_c_HandleRuntimeError_FUN_00606660("Stack Overflow!\r\n",1);
+  HandleRuntimeError("Stack Overflow!\r\n",1);
   iVar5 = -4;
   do {
     *(int *)(&stack0xfffffff0 + iVar5) = iVar5;

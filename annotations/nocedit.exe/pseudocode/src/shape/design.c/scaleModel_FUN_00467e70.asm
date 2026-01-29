@@ -20,7 +20,7 @@
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -65,8 +65,8 @@ section .text
     LEA EAX,[EBP + -0x58]               ; 00467eb1
         ;   Label: LAB_00467eb1
     PUSH EAX                            ; 00467eb4
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00467eb5
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00467eb5
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + -0x60],EAX     ; 00467eba
     MOV dword ptr [EBP + -0x5c],EDX     ; 00467ebd
     FLD double ptr [EBP + -0x60]        ; 00467ec0

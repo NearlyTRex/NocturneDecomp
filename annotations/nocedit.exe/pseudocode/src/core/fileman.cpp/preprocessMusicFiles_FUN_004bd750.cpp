@@ -45,9 +45,9 @@ void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_dir
         g_CurrentFilename = "..\\core\\fileman.cpp";
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't access %s",&stack0xfffff9b4);
       }
-      crt_string_c_splitpath_FUN_005ff178(&stack0xfffff9b4,local_14,local_124,local_224,(char *)0x0)
+      splitpath(&stack0xfffff9b4,local_14,local_124,local_224,(char *)0x0)
       ;
-      crt_file_c_makepath_FUN_005febfc
+      makepath
                 (local_438.found_path,local_14,local_124,local_224,"sfx");
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_438);
       if ((iVar3 == 0) || (local_438.timestamp < local_440 - 1)) {

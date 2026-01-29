@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_unknown_c_staticFinal_FUN_00608bb0(void)
+void __cdecl staticFinal(void)
 
 {
   if (g_IOControlBlock != (SIOControlBlock *)0x0) {
-    crt_memory_c_free_FUN_00601cd0(g_IOControlBlock);
+    free(g_IOControlBlock);
     g_IOControlBlock = (SIOControlBlock *)0x0;
   }
   return;

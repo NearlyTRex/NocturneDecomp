@@ -26,7 +26,7 @@ void core_script_cpp_FUN_00567630(void)
     } while (iVar2 < iVar1);
   }
   core_msnedit_cpp_FUN_0053ea30(iVar1);
-  crt_stdlib_c_qsort_FUN_005fdf38
+  qsort
             (*(void **)(in_stack_00000004 + 0x2c),*(SIZE_T *)(in_stack_00000004 + 0x28),0x114,
              core_script_cpp_FUN_005675a0);
   return;

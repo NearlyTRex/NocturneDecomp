@@ -2,13 +2,13 @@
 // Address: 0047ed00
 // Address Range: [[0047ed00, 0047edc7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 (CKeyFramedModel *this_ptr,FILE *dependency_file,int skip_raw_files)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 (CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
 
 #include "nocturne.h"
 
 void __cdecl
 core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
-          (CKeyFramedModel *this_ptr,FILE *dependency_file,int skip_raw_files)
+          (CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
 
 {
   char cVar1;
@@ -51,9 +51,9 @@ LAB_0047ed61:
         *pcVar6 = '\0';
       }
       if (skip_raw_files == 0) {
-        crt_stdio_c_fprintf_FUN_005fe6d0(dependency_file,"ART\\%s.RAW\n",local_d8);
+        _fprintf(dependency_file,"ART\\%s.RAW\n",local_d8);
       }
-      crt_stdio_c_fprintf_FUN_005fe6d0(dependency_file,"ART\\%s.ACT\n",local_d8);
+      _fprintf(dependency_file,"ART\\%s.ACT\n",local_d8);
       iVar3 = iVar3 + 1;
       pcVar4 = pcVar2 + 0x48;
       pcVar6 = local_d8;

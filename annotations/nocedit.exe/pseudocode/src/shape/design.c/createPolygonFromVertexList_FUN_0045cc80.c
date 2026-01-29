@@ -31,7 +31,7 @@ void shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
   
   engine_2d_c_drawText_FUN_00401fd0("Enter in point list going CW, ie 1,2,3",0,0);
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a8,0x3c,0,0xb,(char *)0x0);
-  local_18 = crt_stdio_c_sscanf_FUN_0060013c
+  local_18 = sscanf
                        (local_a8,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d",&local_58,local_54,local_50,
                         local_4c,local_48,local_44,local_40,local_3c,local_38,local_34,local_30,
                         local_2c,local_28,local_24,local_20,local_1c);

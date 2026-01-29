@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int line_number)
+; __cdecl int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source_file,int line_number)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_ptr
+; _FILE *          Stack[0x4]:4   file_ptr
 ; char *           Stack[0x8]:4   source_file
 ; int              Stack[0xc]:4   line_number
 ; Local Variables:
@@ -43,7 +43,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_closeTrackedFile_FUN_00601ea0
+;   crt_stdio.c_fclose_FUN_00601ea0
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   shape_memdbg.cpp_traceFile_FUN_0050f180
 ;   wincore_winrun.cpp_createMutex_FUN_005f3fe0
@@ -126,8 +126,8 @@ section .text
         ;   XREF to: 005f4050 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_releaseMutex_FUN_005f4050(HANDLE mutex_handle)
     ADD ESP,0x4                         ; 0050fa84
     PUSH ESI                            ; 0050fa87
-    CALL crt_stdio.c_closeTrackedFile_FUN_00601ea0 ; 0050fa88
-        ;   XREF to: 00601ea0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)
+    CALL crt_stdio.c_fclose_FUN_00601ea0 ; 0050fa88
+        ;   XREF to: 00601ea0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00601ea0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0050fa8d
     ADD ESP,0x4                         ; 0050fa90
     POP EBP                             ; 0050fa93

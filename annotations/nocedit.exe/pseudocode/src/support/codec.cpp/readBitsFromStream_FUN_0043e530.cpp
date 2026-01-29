@@ -2,13 +2,13 @@
 // Address: 0043e530
 // Address Range: [[0043e530, 0043e6b8]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,FILE *file_stream,int *bytes_remaining)
+// Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)
 
 #include "nocturne.h"
 
 int __cdecl
 support_codec_cpp_readBitsFromStream_FUN_0043e530
-          (SBitBuffer *bit_buffer,int bit_count,FILE *file_stream,int *bytes_remaining)
+          (SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)
 
 {
   int iVar1;
@@ -42,7 +42,7 @@ support_codec_cpp_readBitsFromStream_FUN_0043e530
       if (iVar3 < 8) {
         if (0 < iVar3) {
           if ((*bytes_remaining < 1) ||
-             (crt_stdio_c_fgetc_outptr_FUN_005ff245(file_stream,local_18),
+             (fgetc_outptr(file_stream,local_18),
              *(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) {
             uVar2 = 0xffffffff;
           }
@@ -66,7 +66,7 @@ support_codec_cpp_readBitsFromStream_FUN_0043e530
         return uVar5;
       }
       if ((*bytes_remaining < 1) ||
-         (crt_stdio_c_fgetc_outptr_FUN_005ff245(file_stream,local_14),
+         (fgetc_outptr(file_stream,local_14),
          *(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) break;
       *bytes_remaining = *bytes_remaining + -1;
       uVar5 = uVar5 | (uint)local_14[0] << ((byte)iVar4 & 0x1f);

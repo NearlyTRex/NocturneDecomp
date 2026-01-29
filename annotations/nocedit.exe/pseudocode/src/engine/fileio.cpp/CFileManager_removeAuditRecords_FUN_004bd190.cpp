@@ -16,7 +16,7 @@ engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190
   CPodAuditRecord *pCVar3;
   int iVar4;
   int record_index;
-  FILE *file;
+  _FILE *file;
   int *piVar5;
   char *pcVar6;
   int *piVar7;
@@ -34,7 +34,7 @@ engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190
   char local_104 [100];
   byte local_a0 [92];
   int local_44;
-  tm local_40;
+  _tm local_40;
   int local_1c;
   int local_18;
   int local_14;
@@ -120,7 +120,7 @@ LAB_004bd3c3:
             piVar5 = piVar5 + (uint)bVar10 * -2 + 1;
             pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);
           }
-          crt_memory_c_memset_FUN_005fde40(pCVar3->filename_path,0,0x100);
+          memset(pCVar3->filename_path,0,0x100);
           pcVar6 = local_44c;
           pcVar9 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
           do {
@@ -136,7 +136,7 @@ LAB_004bd3c3:
         record_index = record_index + 1;
       } while (record_index < (int)local_9d8.audit_count);
     }
-    file = (FILE *)0x0;
+    file = (_FILE *)0x0;
     if (iVar2 == 0) {
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"No audit records removed");
@@ -145,24 +145,24 @@ LAB_004bd3c3:
       file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_9d8.filename,(char *)0x0,"r+b","..\\engine\\fileio.cpp",
                         0x1170);
-      if (file == (FILE *)0x0) {
+      if (file == (_FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't open %s to remove audit records");
       }
       else {
-        crt_stdio_c_fread_FUN_005fd990(local_a0,0x60,1,file);
+        _fread(local_a0,0x60,1,file);
         local_44 = g_AuditRecordCount;
-        crt_stdio_c_fseek_FUN_005ffacc(file,0,0);
-        crt_stdio_c_fwrite_FUN_005fdc00(local_a0,0x60,1,file);
-        crt_stdio_c_fseek_FUN_005ffacc(file,local_9d8.total_file_size,0);
-        crt_stdio_c_fwrite_FUN_005fdc00(g_AuditRecordsArray,0x138,g_AuditRecordCount,file);
+        _fseek(file,0,0);
+        _fwrite(local_a0,0x60,1,file);
+        _fseek(file,local_9d8.total_file_size,0);
+        _fwrite(g_AuditRecordsArray,0x138,g_AuditRecordCount,file);
         g_AuditRecordCount = 0;
         if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
           shape_memdbg_cpp_debugFree_FUN_0050f460
                     (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
           g_AuditRecordsArray = (CPodAuditRecord *)0x0;
         }
-        crt_stdio_c_fflush_FUN_00601540(file);
+        _fflush(file);
         if ((file->_flag & 0x20) == 0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x118b);
           engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000((CPod *)g_CDemonPodPtr,local_204);
@@ -173,7 +173,7 @@ LAB_004bd3c3:
                   (g_CEditorToolsPtr,"Error accessing %s.  The POD may have been corrupted.",local_9d8.filename);
       }
     }
-    if (file != (FILE *)0x0) {
+    if (file != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x1169);
     }
     g_AuditRecordCount = 0;
@@ -199,7 +199,7 @@ LAB_004bd3c3:
       engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8);
       return;
     }
-    iVar2 = crt_stdio_c_sscanf_FUN_0060013c
+    iVar2 = sscanf
                       (local_104,"%d %*c %d %*c %d",&local_1c,&local_18,&local_14);
     if (iVar2 == 3) {
       if (local_14 < 0x32) {
@@ -208,7 +208,7 @@ LAB_004bd3c3:
       else if (local_14 < 100) {
         local_14 = local_14 + 0x76c;
       }
-      crt_memory_c_memset_FUN_005fde40(&local_40,0,0x24);
+      memset(&local_40,0,0x24);
       local_40.tm_mday = local_18;
       local_40.tm_mon = local_1c + -1;
       local_40.tm_year = local_14 + -0x76c;
@@ -216,7 +216,7 @@ LAB_004bd3c3:
       local_40.tm_isdst = -1;
       local_40.tm_min = 0;
       local_40.tm_sec = 0;
-      in_stack_0000000c = crt_time_c_mktime_FUN_00600f80(&local_40);
+      in_stack_0000000c = _mktime(&local_40);
       if (in_stack_0000000c != 0xffffffff) goto LAB_004bd3c3;
     }
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

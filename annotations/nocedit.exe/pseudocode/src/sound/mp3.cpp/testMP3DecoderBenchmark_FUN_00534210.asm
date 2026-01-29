@@ -36,9 +36,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_io.c_deleteFile_FUN_005ff9d0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   crt_time.c_time_with_rounding_FUN_006001f0
+;   crt_stdio.c_remove_FUN_005ff9d0
+;   crt_time.c_time_FUN_006001f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -63,8 +63,8 @@ section .text
     SUB ESP,0x28                        ; 00534216
     AND ESP,0xfffffff8                  ; 00534219
     PUSH 0x63b0e2                       ; 0053421c | = "test.raw"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00534221
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00534221
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00534226
     PUSH 0x63b0eb                       ; 00534229 | = "Write file?"
     MOV EDX,dword ptr [0x00678a60]      ; 0053422e | g_CEditorToolsPtr
@@ -127,7 +127,7 @@ section .text
     PUSH 0x63b143                       ; 005342df | = "pixies.raw"
     MOV EDI,EAX                         ; 005342e4
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005342e6
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005342eb
     MOV dword ptr [ESP + 0x10],EAX      ; 005342ee
     TEST EAX,EAX                        ; 005342f2
@@ -148,7 +148,7 @@ section .text
     PUSH 0x0                            ; 00534327
     PUSH 0x63b179                       ; 00534329 | = "pixies2.raw"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0053432e
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00534333
     MOV dword ptr [ESP + 0x8],EAX       ; 00534336
     TEST EAX,EAX                        ; 0053433a
@@ -158,8 +158,8 @@ section .text
         ;   Label: LAB_00534342
     PUSH EAX                            ; 00534344
     XOR EBX,EBX                         ; 00534345
-    CALL crt_time.c_time_with_rounding_FUN_006001f0 ; 00534347
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c_time_FUN_006001f0   ; 00534347
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 0053434c
     PUSH EDI                            ; 0053434f
         ;   Label: LAB_0053434f
@@ -181,7 +181,7 @@ section .text
     PUSH EAX                            ; 00534376
     PUSH 0x2f48188                      ; 00534377 | g_MpegPCMDecodeTestBuffer
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0053437c
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00534381
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00534384
         ;   Label: LAB_00534384
@@ -211,14 +211,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 005343ca
     PUSH EDX                            ; 005343ce
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005343cf
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005343d4
     PUSH 0xde9                          ; 005343d7
     PUSH 0x63b1b3                       ; 005343dc | = "..\\sound\\mp3.cpp"
     MOV ECX,dword ptr [ESP + 0x10]      ; 005343e1
     PUSH ECX                            ; 005343e5
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005343e6
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005343eb
     MOV ESI,0x63b1c4                    ; 005343ee | = "..\\sound\\mp3.cpp"
     PUSH 0x0                            ; 005343f3
@@ -245,8 +245,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0053443e
         ;   Label: LAB_0053443e
     PUSH EAX                            ; 00534442
-    CALL crt_time.c_time_with_rounding_FUN_006001f0 ; 00534443
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c_time_FUN_006001f0   ; 00534443
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 00534448
     MOV EAX,dword ptr [ESP + 0x4]       ; 0053444b
     SUB EAX,dword ptr [ESP]             ; 0053444f

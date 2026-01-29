@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 int __cdecl
-crt_stdio_c_scanf_scanset_FUN_00605064(scanf_state_t *state,va_list_t *args,char **format_ptr)
+scanf_scanset(scanf_state_t *state,va_list_t *args,char **format_ptr)
 
 {
   byte bVar1;
@@ -58,12 +58,12 @@ LAB_0060515e:
       }
       return iVar5;
     }
-    local_18 = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state);
+    local_18 = scanf_getc_wrapper(state);
     uVar3 = local_18;
     if ((state->flags & 2) != 0) goto LAB_0060515e;
     local_20 = (uint)abStack_40[(int)local_18 >> 3];
     if ((((&DAT_00685030)[local_18 & 7] & abStack_40[(int)local_18 >> 3]) == 0) != local_1c) {
-      crt_stdio_c_scanf_ungetc_wrapper_FUN_0060493c(local_18,state);
+      scanf_ungetc_wrapper(local_18,state);
       goto LAB_0060515e;
     }
     iVar5 = iVar5 + 1;

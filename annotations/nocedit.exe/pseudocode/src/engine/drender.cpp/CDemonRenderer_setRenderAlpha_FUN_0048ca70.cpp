@@ -13,7 +13,7 @@ engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0((double)(render_alpha * (float)65535));
+  dVar1 = round((double)(render_alpha * (float)65535));
   engine_3d_c_setRenderAlpha_FUN_00406d80((int)ROUND(dVar1));
   return;
 }

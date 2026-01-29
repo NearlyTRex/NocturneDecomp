@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_strtod_c_staticInit_FUN_00603bb0(void)
+void __cdecl staticInit(void)
 
 {
   PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c = crt_unknown_c_FUN_0060af5d;

@@ -25,7 +25,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
 
     PUSH 0x4c                           ; 0058eaa0
         ;   Label: core_skeledit.cpp_FUN_0058eaa0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058eaa5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058eaa5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058eaaa
     PUSH ESI                            ; 0058eaab
     PUSH EDI                            ; 0058eaac

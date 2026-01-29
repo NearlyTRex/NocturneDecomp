@@ -127,7 +127,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   local_9c = 0;
   local_98 = 0;
   local_94 = 0xffff;
-  dVar9 = crt_math_c_round_FUN_005fe6b0
+  dVar9 = round
                     ((double)((this_ptr->base).max_distance * (float)256));
   local_94 = (int)ROUND(dVar9);
   iVar5 = 0;

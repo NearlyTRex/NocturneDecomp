@@ -9,7 +9,6 @@
 void __cdecl shape_meshlod_cpp_staticInit_FUN_00514f70(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_SamplePointArray,400,&g_CVectorTypeInfo);
+  __arrinit(g_SamplePointArray,400,&g_CVectorTypeInfo);
   return;
 }

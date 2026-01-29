@@ -36,7 +36,7 @@ void core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(void)
     g_CurrentLineNumber = 0x8ae;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::send - invalid player index");
   }
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(local_67,2,&g_SPlayerTypeInfo);
+  __arrinit(local_67,2,&g_SPlayerTypeInfo);
   pcVar7 = local_bb;
   local_6b = in_stack_00000004[7];
   piVar5 = in_stack_00000004 + 0x46;

@@ -236,7 +236,7 @@ LAB_005bde44:
           (*(((local_18->base).vtable._uc)->_uc).processDamage)(local_18,(SDamageInfo *)&local_b0);
           local_b0 = (double)fStack_a4;
           if (0.0 < local_b0) {
-            crt_math_c_round_FUN_005fe6b0(local_b0 * 0.20000000000000001);
+            round(local_b0 * 0.20000000000000001);
             in_stack_ffffff34 = 8.438212e-39;
             core_gore_cpp_FUN_004edbb0();
             (*((in_stack_00000004->base).vtable._ub)->playSound)

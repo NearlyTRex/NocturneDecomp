@@ -102,8 +102,7 @@ LAB_005e2ed6:
     }
     iVar2 = (*((actor_ptr->vtable)._ub)->isActiveTarget)(actor_ptr);
     if (iVar2 == 0) goto LAB_005e2ed6;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-              (&stack0xfffffea8,10,&g_CVectorTypeInfo);
+    __arrinit(&stack0xfffffea8,10,&g_CVectorTypeInfo);
     iVar2 = (*((actor_ptr->vtable)._ub)->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);
     if (iVar2 < 1) {
       pCVar3 = (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,(CBoundingBox3D *)auStack_d8);

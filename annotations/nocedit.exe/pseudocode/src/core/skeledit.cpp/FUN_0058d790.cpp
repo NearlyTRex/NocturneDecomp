@@ -61,7 +61,7 @@ void core_skeledit_cpp_FUN_0058d790(void)
   int local_14;
   
   bVar22 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x558);
+  __STK(0x558);
   pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);
   local_18 = pCVar4->bone_count;
   core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
@@ -106,12 +106,12 @@ void core_skeledit_cpp_FUN_0058d790(void)
           puVar15 = puVar21;
           do {
             *puVar7 = *(ushort *)(puVar12 + 4);
-            dVar23 = crt_math_c_round_FUN_005fe6b0((double)(float)puVar15[7] * dVar3);
+            dVar23 = round((double)(float)puVar15[7] * dVar3);
             puVar7[3] = (short)(int)ROUND(dVar23);
             pfVar18 = (float *)(puVar15 + 8);
             puVar15 = puVar15 + 2;
             puVar8 = puVar7 + 1;
-            dVar23 = crt_math_c_round_FUN_005fe6b0((double)*pfVar18 * dVar3);
+            dVar23 = round((double)*pfVar18 * dVar3);
             local_14 = (int)ROUND(dVar23);
             puVar12 = puVar12 + 1;
             puVar7[6] = (short)local_14;

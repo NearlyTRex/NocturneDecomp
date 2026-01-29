@@ -19,7 +19,7 @@ core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel *this_ptr,c
   if (0 < *(int *)(this_ptr->unk2 + 0xc)) {
     pcVar4 = this_ptr->unk2 + 0x18;
     do {
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,filename);
+      iVar2 = stricmp(pcVar4,filename);
       if (iVar2 == 0) {
         return iVar3;
       }
@@ -32,7 +32,7 @@ core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel *this_ptr,c
     g_CurrentLineNumber = 0x1d0;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::findOrAddTexture - too many textures!");
   }
-  crt_memory_c_memset_FUN_005fde40
+  memset
             (this_ptr->unk2 + *(int *)(this_ptr->unk2 + 0xc) * 0x48 + 0x10,0,0x48);
   pcVar4 = this_ptr->unk2 + *(int *)(this_ptr->unk2 + 0xc) * 0x48 + 0x18;
   do {

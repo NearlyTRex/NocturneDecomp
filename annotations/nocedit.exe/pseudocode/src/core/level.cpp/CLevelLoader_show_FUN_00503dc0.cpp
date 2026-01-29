@@ -42,7 +42,7 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_LoadingMoonGlowTexture);
   if ((image_variant == -1) && (this_ptr->use_custom_viewport == 0)) {
-    iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar1 = rand();
     image_variant = iVar1 % 3;
   }
   if (image_variant == 0) {

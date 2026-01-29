@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void * crt_heap_c_AllocateFromFreeList_FUN_00609410
+void * AllocateFromFreeList
                  (ulong size,HeapBlock *free_block,ushort ds_segment)
 
 {

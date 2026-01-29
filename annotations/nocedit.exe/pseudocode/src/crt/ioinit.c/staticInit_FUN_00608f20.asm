@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Not_enough_memory_to_all_00659070
-;   FILE* g_StaticFilePoolStart = 00000000
+;   _FILE* g_StaticFilePoolStart = 00000000
 ;   int INT_00684ccc = 0x0
 ;   int INT_00684cd0 = 0x1
 ;   undefined4 DAT_00684cea

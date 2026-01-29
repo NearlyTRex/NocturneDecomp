@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x23c]:1  local_23c
 ; undefined1       Stack[-0x23b]:1  local_23b
@@ -35,7 +35,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00585cb3
     PUSH EAX                            ; 00585cb7
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 00585cb8
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00585cbd
     LEA EDI,[ESP + 0x4]                 ; 00585cc0
     SUB ECX,ECX                         ; 00585cc4

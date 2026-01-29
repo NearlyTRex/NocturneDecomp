@@ -2,12 +2,12 @@
 // Address: 00602264
 // Address Range: [[00602264, 006022f3]]
 // Convention: __watcallStack
-// Signature: void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,find_t *dos_info)
+// Signature: void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info)
 
 #include "nocturne.h"
 
 void __watcallStack
-crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,find_t *dos_info)
+convertFileInfo(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info)
 
 {
   char cVar1;
@@ -34,12 +34,12 @@ crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,find_t *dos_
   if ((win32_data->dwFileAttributes & 4) != 0) {
     dos_info->attrib = dos_info->attrib | 4;
   }
-  tVar2 = crt_time_c_filetime_to_time_t_FUN_00609da0(&win32_data->ftCreationTime);
+  tVar2 = filetime_to_time_t(&win32_data->ftCreationTime);
   dos_info->wr_time = tVar2;
-  tVar2 = crt_time_c_filetime_to_time_t_FUN_00609da0(&win32_data->ftLastAccessTime);
+  tVar2 = filetime_to_time_t(&win32_data->ftLastAccessTime);
   dos_info->cr_time = tVar2;
   pcVar4 = dos_info->name;
-  tVar2 = crt_time_c_filetime_to_time_t_FUN_00609da0(&win32_data->ftLastWriteTime);
+  tVar2 = filetime_to_time_t(&win32_data->ftLastWriteTime);
   dos_info->ac_time = tVar2;
   pCVar3 = win32_data->cFileName;
   dos_info->size = win32_data->nFileSizeLow;

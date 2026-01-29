@@ -59,7 +59,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
         g_CGamePtr->game_bpp = 0x10;
         pCVar2->game_pixx = 0x280;
         pCVar2->game_pixy = 0x1e0;
-        iVar5 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tri3dfx.dll");
+        iVar5 = stricmp(g_RendererDllName,"tri3dfx.dll");
         iVar4 = g_GraphicsCardCount;
         if (iVar5 != 0) {
           pcVar8 = "tri3dfx.dll";
@@ -87,7 +87,7 @@ LAB_00510e1f:
         }
       }
       else {
-        iVar5 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tri3dfx.dll");
+        iVar5 = stricmp(g_RendererDllName,"tri3dfx.dll");
         iVar4 = g_GraphicsCardCount;
         if (iVar5 == 0) {
           pcVar8 = "tridx6.dll";
@@ -162,13 +162,13 @@ LAB_00510e1f:
       pcVar8 = "Resolution : 320x240";
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-    crt_stdio_c_sprintf_FUN_005fdbd0(g_GraphicsMenuTextBuffers[0],pcVar8);
+    sprintf(g_GraphicsMenuTextBuffers[0],pcVar8);
     uVar7 = g_CGamePtr->halo_mode;
     if (uVar7 == 0) {
       pcVar8 = "Flashlight halo : Off";
 LAB_00510f71:
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-      crt_stdio_c_sprintf_FUN_005fdbd0(g_GraphicsMenuTextBuffers[1],pcVar8);
+      sprintf(g_GraphicsMenuTextBuffers[1],pcVar8);
     }
     else {
       if (uVar7 < 2) {
@@ -183,27 +183,27 @@ LAB_00510f71:
     g_FullscreenMode = 0;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Acceleration disabled in editor")
     ;
-    crt_stdio_c_sprintf_FUN_005fdbd0(g_GraphicsMenuTextBuffers[2],pcVar8);
+    sprintf(g_GraphicsMenuTextBuffers[2],pcVar8);
     if (g_RendererDllName[0] == '\0') {
       pcVar8 = "3D API : None";
     }
     else {
-      iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"trid3d.dll");
+      iVar4 = stricmp(g_RendererDllName,"trid3d.dll");
       if (iVar4 == 0) {
         pcVar8 = "3D API : DirectX 5";
       }
       else {
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tridx6.dll");
+        iVar4 = stricmp(g_RendererDllName,"tridx6.dll");
         if (iVar4 == 0) {
           pcVar8 = "3D API : DirectX 6";
         }
         else {
-          iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tridx7.dll");
+          iVar4 = stricmp(g_RendererDllName,"tridx7.dll");
           if (iVar4 == 0) {
             pcVar8 = "3D API : DirectX 7";
           }
           else {
-            iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tri3dfx.dll");
+            iVar4 = stricmp(g_RendererDllName,"tri3dfx.dll");
             if (iVar4 == 0) {
               pcVar8 = "3D API : Voodoo Blit Emulation";
             }
@@ -215,11 +215,11 @@ LAB_00510f71:
       }
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-    crt_stdio_c_sprintf_FUN_005fdbd0(g_GraphicsMenuTextBuffers[3],pcVar8);
+    sprintf(g_GraphicsMenuTextBuffers[3],pcVar8);
     if (g_GraphicsCardCount == 0) {
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("No 3D Hardware detected");
-      crt_stdio_c_sprintf_FUN_005fdbd0(g_GraphicsMenuTextBuffers[4],pcVar8);
+      sprintf(g_GraphicsMenuTextBuffers[4],pcVar8);
     }
     else {
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("3D Card : ");
@@ -254,7 +254,7 @@ LAB_00510f71:
         pcVar10[1] = cVar1;
         pcVar10 = pcVar10 + 2;
       } while (cVar1 != '\0');
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_40," (%d)",g_GraphicsCardHandle);
+      sprintf(local_40," (%d)",g_GraphicsCardHandle);
       pcVar8 = local_40;
       iVar4 = -1;
       pacVar6 = g_GraphicsMenuTextBuffers + 4;
@@ -288,7 +288,7 @@ LAB_00510f71:
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec0,"%d",g_CGamePtr->game_bpp);
+    sprintf(&stack0xfffffec0,"%d",g_CGamePtr->game_bpp);
     iVar4 = -1;
     pacVar6 = g_GraphicsMenuTextBuffers + 5;
     do {
@@ -310,7 +310,7 @@ LAB_00510f71:
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Monitor calibration");
-    crt_stdio_c_sprintf_FUN_005fdbd0(g_GraphicsMenuTextBuffers[6],pcVar9);
+    sprintf(g_GraphicsMenuTextBuffers[6],pcVar9);
     if (g_CGamePtr->subtitle_mode == 0) {
       pcVar9 = "Subtitles : Off";
     }
@@ -364,7 +364,7 @@ LAB_00510f71:
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_GraphicsMenuTextPointers,iVar4,&local_20,0xfa,(int)pcVar9);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar5 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"trid3d.dll");
+    iVar5 = stricmp(g_RendererDllName,"trid3d.dll");
     pCVar2 = g_CGamePtr;
     bVar12 = iVar5 != 0;
     if ((!bVar12) && (0x1e0 < g_CGamePtr->game_pixy)) {
@@ -510,7 +510,7 @@ LAB_0051164c:
       break;
     case 3:
       if (g_GraphicsCardVendorIDs[g_GraphicsCardHandle] != 0x121a) {
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"trid3d.dll");
+        iVar4 = stricmp(g_RendererDllName,"trid3d.dll");
         if (iVar4 == 0) {
           pcVar9 = "tridx6.dll";
 LAB_005116c3:
@@ -526,17 +526,17 @@ LAB_005116c3:
           } while (cVar1 != '\0');
         }
         else {
-          iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tridx6.dll");
+          iVar4 = stricmp(g_RendererDllName,"tridx6.dll");
           if (iVar4 == 0) {
             pcVar9 = "tridx7.dll";
             goto LAB_005116c3;
           }
-          iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tridx7.dll");
+          iVar4 = stricmp(g_RendererDllName,"tridx7.dll");
           if (iVar4 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_005116c3;
           }
-          iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_RendererDllName,"tri3dfx.dll");
+          iVar4 = stricmp(g_RendererDllName,"tri3dfx.dll");
           if (iVar4 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_005116c3;

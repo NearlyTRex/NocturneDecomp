@@ -170,7 +170,7 @@ section .text
     PUSH EAX                            ; 00576e56
     PUSH 0x6466eb                       ; 00576e57 | = "data"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00576e5c
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00576e61
     ADD ESP,0xc                         ; 00576e63
     TEST EAX,EAX                        ; 00576e66
@@ -290,7 +290,7 @@ section .text
     PUSH EAX                            ; 00576fc3
     PUSH 0x646756                       ; 00576fc4 | = "data"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00576fc9
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00576fce
     MOV EBX,EAX                         ; 00576fd1
     TEST EAX,EAX                        ; 00576fd3
@@ -310,13 +310,13 @@ section .text
     PUSH 0x2ee000                       ; 00576ffd
     PUSH 0x3365cc0                      ; 00577002 | DAT_03365cc0
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00577007
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0057700c
     PUSH 0x17f                          ; 0057700f
     PUSH 0x646786                       ; 00577014 | = "..\\core\\setedit.cpp"
     PUSH EBX                            ; 00577019
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057701a
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057701f
     MOV EBP,dword ptr [ESP + 0x11c]     ; 00577022
     PUSH EBP                            ; 00577029
@@ -427,13 +427,13 @@ section .text
     PUSH 0x2ee000                       ; 005770d6
     PUSH 0x3365cc0                      ; 005770db | DAT_03365cc0
     CALL crt_stdio.c_fread_FUN_005fd990 ; 005770e0
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005770e5
     PUSH 0x152                          ; 005770e8
     PUSH 0x6466f0                       ; 005770ed | = "..\\core\\setedit.cpp"
     PUSH EBX                            ; 005770f2
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005770f3
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005770f8
     ADD ESP,0x108                       ; 005770fb
     POP EBP                             ; 00577101

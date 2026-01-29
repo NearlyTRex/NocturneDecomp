@@ -39,17 +39,17 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
           } while (iVar1 < g_ActiveLightCount * 4);
         }
         core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,light,local_18);
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_118,"%son",this_ptr_00->name);
+        sprintf(local_118,"%son",this_ptr_00->name);
         iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 1;
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_118,"%soff",this_ptr_00->name);
+        sprintf(local_118,"%soff",this_ptr_00->name);
         iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 0;
         }
-        iVar1 = crt_string_c_strnicmp_FUN_005ff070(this_ptr_00->name,"moon",4);
+        iVar1 = strnicmp(this_ptr_00->name,"moon",4);
         if (iVar1 == 0) {
           if (this_ptr->last_switch_area_invalid == 0) {
             light->light_enabled_flag = 0;

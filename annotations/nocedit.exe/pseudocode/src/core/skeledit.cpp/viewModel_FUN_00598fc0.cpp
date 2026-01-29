@@ -10,7 +10,7 @@ void core_skeledit_cpp_viewModel_FUN_00598fc0(void)
 
 {
   char cVar1;
-  FILE *pFVar2;
+  _FILE *p_Var2;
   int iVar3;
   CDeformableModelInstance *this_ptr;
   CDeformableModelInstance *this_ptr_00;
@@ -21,36 +21,36 @@ void core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   CDeformableModelInstance *in_stack_fffffee8;
   int local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x134);
-  pFVar2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  __STK(0x134);
+  p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("skeledit.ini",(char *)0x0,"rt","..\\core\\skeledit.cpp"
                       ,0x124);
-  if (pFVar2 == (FILE *)0x0) goto LAB_00599119;
+  if (p_Var2 == (_FILE *)0x0) goto LAB_00599119;
   iVar4 = 1;
   do {
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar2,"%d\n",&local_14);
+  _fscanf(p_Var2,"%d\n",&local_14);
   if (local_14 != 1) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\skeledit.cpp",0x12d);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x12d);
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"Deleting old %s file.","skeledit.ini");
-    crt_io_c_deleteFile_FUN_005ff9d0("skeledit.ini");
+    remove("skeledit.ini");
     goto LAB_00599119;
   }
   iVar4 = 1;
   do {
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   DAT_03670848 = 0;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar4 = _fgetc(p_Var2);
     if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_00599080;
     puVar5 = &DAT_03670848;
   } while (iVar4 != 0x22);
-  while ((iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2), -1 < iVar4 && (iVar4 != 10))) {
+  while ((iVar4 = _fgetc(p_Var2), -1 < iVar4 && (iVar4 != 10))) {
     if (iVar4 == 0x22) {
       iVar4 = 1;
       goto LAB_005992fc;
@@ -62,34 +62,34 @@ void core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   goto LAB_00599080;
   while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
 LAB_00599354:
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   }
   goto LAB_005990c3;
   while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
 LAB_005993ac:
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   }
   goto LAB_00599106;
   while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
 LAB_005992fc:
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   }
 LAB_00599080:
   iVar4 = 1;
   do {
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   DAT_03670950 = 0;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar4 = _fgetc(p_Var2);
     if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_005990c3;
     puVar5 = &DAT_03670950;
   } while (iVar4 != 0x22);
-  while ((iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2), -1 < iVar4 && (iVar4 != 10))) {
+  while ((iVar4 = _fgetc(p_Var2), -1 < iVar4 && (iVar4 != 10))) {
     if (iVar4 == 0x22) {
       iVar4 = 1;
       goto LAB_00599354;
@@ -101,16 +101,16 @@ LAB_00599080:
 LAB_005990c3:
   iVar4 = 1;
   do {
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   DAT_03670a58 = 0;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
+    iVar4 = _fgetc(p_Var2);
     if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_00599106;
     puVar5 = &DAT_03670a58;
   } while (iVar4 != 0x22);
-  while ((iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2), -1 < iVar4 && (iVar4 != 10))) {
+  while ((iVar4 = _fgetc(p_Var2), -1 < iVar4 && (iVar4 != 10))) {
     if (iVar4 == 0x22) {
       iVar4 = 1;
       goto LAB_005993ac;
@@ -120,7 +120,7 @@ LAB_005990c3:
     puVar5 = puVar5 + 1;
   }
 LAB_00599106:
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\skeledit.cpp",0x13f);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x13f);
 LAB_00599119:
   pcVar6 = "z:\\meshlod";
   pcVar7 = "meshlod";
@@ -168,19 +168,19 @@ LAB_00599119:
     }
   } while (iVar4 != 0x1b);
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  pFVar2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("skeledit.ini",(char *)0x0,"wt","..\\core\\skeledit.cpp"
                       ,0x144);
-  if (pFVar2 != (FILE *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"// version\n");
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"%d\n",1);
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"// lastPOSimported\n");
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"\"%s\"\n",&DAT_03670848);
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"// lastMOTimported\n");
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"\"%s\"\n",&DAT_03670950);
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"// lastTestSkeletonDir\n");
-    crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,"\"%s\"\n",&DAT_03670a58);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\skeledit.cpp",0x154);
+  if (p_Var2 != (_FILE *)0x0) {
+    _fprintf(p_Var2,"// version\n");
+    _fprintf(p_Var2,"%d\n",1);
+    _fprintf(p_Var2,"// lastPOSimported\n");
+    _fprintf(p_Var2,"\"%s\"\n",&DAT_03670848);
+    _fprintf(p_Var2,"// lastMOTimported\n");
+    _fprintf(p_Var2,"\"%s\"\n",&DAT_03670950);
+    _fprintf(p_Var2,"// lastTestSkeletonDir\n");
+    _fprintf(p_Var2,"\"%s\"\n",&DAT_03670a58);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x154);
     return;
   }
   return;

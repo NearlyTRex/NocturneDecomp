@@ -6,12 +6,12 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_stdlib_c_srand_FUN_005feb80(uint seed)
+void __cdecl srand(uint seed)
 
 {
   uint *puVar1;
   
-  puVar1 = crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50();
+  puVar1 = GetRandomSeedPointer();
   if (puVar1 != (uint *)0x0) {
     *puVar1 = seed;
   }

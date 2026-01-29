@@ -360,12 +360,6 @@
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 107,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 32,
         "line": 124,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -390,9 +384,9 @@
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 41,
         "line": 210,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -405,24 +399,6 @@
         "column": 21,
         "line": 231,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 242,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 254,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 266,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -471,12 +447,6 @@
         "column": 26,
         "line": 289,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 304,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -582,20 +552,14 @@
       },
       {
         "category": "other",
-        "column": 54,
+        "column": 31,
         "line": 704,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 49,
         "line": 707,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 731,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -662,16 +626,15 @@
   },
   "complexity": {
     "assembly_lines": 2710,
-    "complexity_score": 3080,
+    "complexity_score": 3090,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 107,
     "pseudocode_lines": 1025,
-    "suspect_count": 200,
+    "suspect_count": 201,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "format_string_mismatch",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
@@ -679,6 +642,7 @@
       "undefined_data",
       "undefined_type",
       "unknown_field",
+      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 3735
@@ -1053,7 +1017,7 @@
     {
       "addr": "005ff9d0",
       "is_variadic": false,
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+      "name": "crt_stdio.c_remove_FUN_005ff9d0"
     },
     {
       "addr": "005fdbd0",
@@ -2502,6 +2466,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param5",
+      "text": "void *param5;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_fffff668",
@@ -3223,6 +3194,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 441,
+      "match": "param5",
+      "text": "param5 = (void *)(*(int *)(in_stack_00000004->unk2 + 0x1c) + 0x30);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 442,
       "match": "in_stack_00000004",
@@ -3242,6 +3220,13 @@
       "match": "CONCAT31",
       "text": "(g_CEditorToolsPtr,(int)local_40,(CQuaternion4f *)CONCAT31(extraout_var_00,uVar2),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 447,
+      "match": "param5",
+      "text": "label_offset,param5);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3827,28 +3812,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Static cam: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Static cam: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 203,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,\"Static cam: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s.msn\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s.msn",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 697,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3b4,\"%s.msn\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

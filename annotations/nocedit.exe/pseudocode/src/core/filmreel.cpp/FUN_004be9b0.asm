@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 004be9ba
     PUSH EBX                            ; 004be9bb
     CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 004be9bc
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004be9c1
     ADD EBX,0x158                       ; 004be9c4
     PUSH EBX                            ; 004be9ca
@@ -36,7 +36,7 @@ section .text
     PUSH 0x629b1c                       ; 004be9d4 | = "MODELS\\%s\n"
     PUSH ESI                            ; 004be9d9
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004be9da
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004be9df
     PUSH 0x0                            ; 004be9e2
     PUSH ESI                            ; 004be9e4
@@ -46,7 +46,7 @@ section .text
     ADD ESP,0x4                         ; 004be9eb
     PUSH EAX                            ; 004be9ee
     CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 004be9ef
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 004be9f4
     POP ESI                             ; 004be9f7
     POP EBX                             ; 004be9f8

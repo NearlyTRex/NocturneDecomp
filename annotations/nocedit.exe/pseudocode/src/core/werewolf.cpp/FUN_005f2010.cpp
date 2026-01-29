@@ -21,11 +21,11 @@ void core_werewolf_cpp_FUN_005f2010(void)
   }
   else {
     if (pCVar1[0x8d].unk13 != 1) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,"Train Alpha");
+      sprintf(in_stack_0000000c,"Train Alpha");
       return;
     }
     format = "Forest";
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,format);
+  sprintf(in_stack_0000000c,format);
   return;
 }

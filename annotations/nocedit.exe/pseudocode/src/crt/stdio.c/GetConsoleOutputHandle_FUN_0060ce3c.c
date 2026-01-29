@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-HANDLE __cdecl crt_stdio_c_GetConsoleOutputHandle_FUN_0060ce3c(void)
+HANDLE __cdecl GetConsoleOutputHandle(void)
 
 {
-  crt_stdio_c_InitializeConsoleHandles_FUN_0060cdbc();
+  InitializeConsoleHandles();
   return g_ConsoleOutputHandle;
 }

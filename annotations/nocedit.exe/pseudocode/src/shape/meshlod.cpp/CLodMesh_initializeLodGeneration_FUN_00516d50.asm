@@ -16,8 +16,8 @@
 ;   TerminatedCString s_meshlod_simplify_log_0067d4a0
 ;
 ; Called Functions:
-;   crt_file.c_create_directory_FUN_00600e10
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
+;   crt_watcom.c__mkdir_FUN_00600e10
 ;   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
 ;   shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 ;   shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710
@@ -44,12 +44,12 @@ section .text
     RET                                 ; 00516d5e
     PUSH 0x637339                       ; 00516d5f | = "meshlod"
         ;   Label: LAB_00516d5f
-    CALL crt_file.c_create_directory_FUN_00600e10 ; 00516d64
-        ;   XREF to: 00600e10 (UNCONDITIONAL_CALL)  ; int crt_file.c_create_directory_FUN_00600e10(char * path)
+    CALL crt_watcom.c__mkdir_FUN_00600e10 ; 00516d64
+        ;   XREF to: 00600e10 (UNCONDITIONAL_CALL)  ; int crt_watcom.c__mkdir_FUN_00600e10(char * path)
     ADD ESP,0x4                         ; 00516d69
     PUSH 0x67d4a0                       ; 00516d6c | = "meshlod\\simplify.log"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00516d71
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00516d71
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     MOV ECX,dword ptr [EBX + 0x38]      ; 00516d76
     ADD ESP,0x4                         ; 00516d79
     TEST ECX,ECX                        ; 00516d7c
@@ -58,7 +58,7 @@ section .text
     PUSH 0x63766d                       ; 00516d80 | = "wt"
     PUSH EBX                            ; 00516d85
     CALL shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770 ; 00516d86
-        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
+        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; _FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
     ADD ESP,0x8                         ; 00516d8b
     MOV dword ptr [EBX + 0x38],EAX      ; 00516d8e
     PUSH EDI                            ; 00516d91
@@ -82,7 +82,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x34]      ; 00516db5
     PUSH EBP                            ; 00516db8
     CALL shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 ; 00516db9
-        ;   XREF to: 0051d420 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420(CLodMesh * this_ptr, FILE * file_handle)
+        ;   XREF to: 0051d420 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00516dbe
     PUSH EBX                            ; 00516dc1
     CALL shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 ; 00516dc2
@@ -105,7 +105,7 @@ section .text
     PUSH EDX                            ; 00516deb
     PUSH EBX                            ; 00516dec
     CALL shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0 ; 00516ded
-        ;   XREF to: 0051d0e0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0(CLodMesh * this_ptr, FILE * file_handle)
+        ;   XREF to: 0051d0e0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00516df2
     MOV dword ptr [EBX + 0x4c],0x0      ; 00516df5
     POP ESI                             ; 00516dfc

@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_005248e0()
     ADD ESP,0x4                         ; 00538214
     PUSH 0x680800                       ; 00538217 | = "$$UNDO$$.TMP"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0053821c
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0053821c
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00538221
     CALL core_inivar.cpp_readIniData_FUN_004fbd90 ; 00538224
         ;   XREF to: 004fbd90 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004fbd90()
@@ -338,8 +338,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538506
     PUSH 0x680800                       ; 00538509 | = "$$UNDO$$.TMP"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0053850e
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0053850e
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00538513
     PUSH 0x63c215                       ; 00538516 | = "Deleting actors..."
     MOV EDI,dword ptr [0x00678a60]      ; 0053851b | g_CEditorToolsPtr

@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_FUN_00439710
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -174,8 +174,8 @@ section .text
     ADD ESP,0x14                        ; 0043c57e
     LEA EAX,[ESP + 0x3a8]               ; 0043c581
     PUSH EAX                            ; 0043c588
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 0043c589
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 0043c589
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [ESP + 0x4ac],EAX     ; 0043c58e
     MOV dword ptr [ESP + 0x4b0],EDX     ; 0043c595
     FLD double ptr [ESP + 0x4ac]        ; 0043c59c
@@ -194,8 +194,8 @@ section .text
     ADD ESP,0x14                        ; 0043c5ce
     LEA EAX,[ESP + 0x3a8]               ; 0043c5d1
     PUSH EAX                            ; 0043c5d8
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 0043c5d9
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 0043c5d9
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [ESP + 0x4ac],EAX     ; 0043c5de
     MOV dword ptr [ESP + 0x4b0],EDX     ; 0043c5e5
     FLD double ptr [ESP + 0x4ac]        ; 0043c5ec

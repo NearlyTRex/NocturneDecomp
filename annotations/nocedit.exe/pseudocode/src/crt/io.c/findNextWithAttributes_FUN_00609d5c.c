@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 int __cdecl
-crt_io_c_findNextWithAttributes_FUN_00609d5c
+findNextWithAttributes
           (HANDLE hFindFile,DWORD dwAttributeMask,LPWIN32_FIND_DATAA lpFindFileData)
 
 {

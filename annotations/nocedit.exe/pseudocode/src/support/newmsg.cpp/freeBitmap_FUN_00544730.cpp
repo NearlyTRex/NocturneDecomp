@@ -9,6 +9,6 @@
 void __cdecl support_newmsg_cpp_freeBitmap_FUN_00544730(CAlphaBitmap **objs)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(objs,7,&g_CAlphaBitmapTypeInfo);
+  __arrfini(objs,7,&g_CAlphaBitmapTypeInfo);
   return;
 }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_file)
+; __cdecl void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file)
 ;
 ; Parameters:
-; FILE *           Stack[0xc]:4   output_file
+; _FILE *          Stack[0xc]:4   output_file
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_2d_5dx_5d_Page_d_5d_5d_00619753
@@ -25,7 +25,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
 
     PUSH 0x40                           ; 004481d0
         ;   Label: shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 004481d5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 004481d5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 004481da
     PUSH ESI                            ; 004481db
     PUSH EDI                            ; 004481dc
@@ -70,7 +70,7 @@ section .text
     ADD EBX,0x4c                        ; 00448219
     INC ESI                             ; 0044821c
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0044821d
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ECX,dword ptr [0x0084a854]      ; 00448222 | g_CramTextureCount
     ADD ESP,0x2c                        ; 00448228
     CMP ESI,ECX                         ; 0044822b
@@ -86,7 +86,7 @@ section .text
     PUSH 0x619790                       ; 0044823f | = "%ux%u square found using %u padding.\n"
     PUSH EDI                            ; 00448244
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00448245
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0044824a
     POP EBP                             ; 0044824d
     POP EDI                             ; 0044824e

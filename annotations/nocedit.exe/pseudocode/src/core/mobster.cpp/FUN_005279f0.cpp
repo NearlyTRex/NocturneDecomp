@@ -34,7 +34,7 @@ void core_mobster_cpp_FUN_005279f0(void)
       iVar3 = *(int *)(&DAT_02f37eb4 + iVar5);
       *(int *)(&DAT_02f37eb4 + iVar5) = iVar3 + 1;
       if (((pCVar1->foul_language_flag != 0) || (in_stack_00000008 != 1)) || (iVar3 + 1 != 6)) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_80,"mobster-cheese-%c-%c-%d.wav",
                    (uint)*(byte *)(in_stack_00000004 + 0xbed0),local_1c,
                    *(uint *)(&DAT_02f37eb4 + iVar5));

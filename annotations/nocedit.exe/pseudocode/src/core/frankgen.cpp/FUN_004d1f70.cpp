@@ -41,7 +41,7 @@ int core_frankgen_cpp_FUN_004d1f70(void)
          (0x44f9ffff < iVar1)) {
         input_value = (double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000.0f) *
                                (float)3 * 0.005f);
-        dVar4 = crt_math_c_floor_FUN_005feb90(input_value);
+        dVar4 = floor(input_value);
         fVar3 = (float10)(float)((ulonglong)input_value >> 0x20) -
                 (float10)dVar4 * (float10)200;
         fVar5 = (float)fVar3;

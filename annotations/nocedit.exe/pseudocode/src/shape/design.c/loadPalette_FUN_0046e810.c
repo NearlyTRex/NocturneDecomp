@@ -41,7 +41,7 @@ void shape_design_c_loadPalette_FUN_0046e810(void)
     pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_14 = crt_stdlib_c_atoi_FUN_005ffef0(local_b8);
+    local_14 = atoi(local_b8);
   }
   if (local_14 == 1) {
     if (g_LoadedModelName[0] == '\0') {

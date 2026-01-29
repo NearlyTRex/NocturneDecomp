@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 39,
-        "line": 50,
+        "line": 49,
         "message": "cast from 'CPodDependencyRecord*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -55,41 +55,41 @@
       {
         "category": "other",
         "column": 25,
-        "line": 39,
+        "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 42,
+        "line": 41,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 44,
+        "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 50,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 58,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 42,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 145
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -270,7 +270,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(CPodDependencyRecord *)((int)",
       "text": "pCVar3 = (CPodDependencyRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"

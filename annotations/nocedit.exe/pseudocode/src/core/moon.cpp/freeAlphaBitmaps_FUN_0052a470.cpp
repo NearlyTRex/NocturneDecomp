@@ -9,6 +9,6 @@
 void __cdecl core_moon_cpp_freeAlphaBitmaps_FUN_0052a470(CAlphaBitmap **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x1e,&g_CAlphaBitmapTypeInfo);
+  __arrfini(array,0x1e,&g_CAlphaBitmapTypeInfo);
   return;
 }

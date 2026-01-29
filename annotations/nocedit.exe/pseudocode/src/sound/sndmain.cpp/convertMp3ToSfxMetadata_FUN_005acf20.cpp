@@ -11,7 +11,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
 {
   char cVar1;
   int iVar2;
-  FILE *pFVar3;
+  _FILE *p_Var3;
   CMP3Decoder *this_ptr;
   CMP3Decoder *pCVar4;
   int iVar5;
@@ -26,7 +26,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   char local_12c [256];
   CStrList local_2c;
   int local_1c;
-  FILE *local_18;
+  _FILE *local_18;
   char local_14 [4];
   
   bVar9 = 0;
@@ -36,9 +36,9 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
     g_CurrentLineNumber = 0x176c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",mp3_filename);
   }
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (mp3_filename,(char *)0x0,"rb","..\\sound\\sndmain.cpp",0x176e);
-  if (pFVar3 == (FILE *)0x0) {
+  if (p_Var3 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 5999;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",mp3_filename);
@@ -53,7 +53,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
     g_CurrentLineNumber = 0x1774;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(pCVar4,pFVar3,iVar2);
+  sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(pCVar4,p_Var3,iVar2);
   iVar2 = (int)(0x200 / (ulonglong)(uint)pCVar4->num_channels);
   local_1c = 0;
   do {
@@ -64,15 +64,15 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   g_CurrentDebugLine = 0x1784;
   pCVar4 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(pCVar4);
   shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar4);
-  crt_string_c_splitpath_FUN_005ff178(mp3_filename,local_14,local_12c,local_22c,(char *)0x0);
-  crt_file_c_makepath_FUN_005febfc(local_330,local_14,local_12c,local_22c,"sfx");
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  splitpath(mp3_filename,local_14,local_12c,local_22c,(char *)0x0);
+  makepath(local_330,local_14,local_12c,local_22c,"sfx");
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_330,(char *)0x0,"rt","..\\sound\\sndmain.cpp",0x1791);
   iVar2 = -1;
-  local_18 = pFVar3;
+  local_18 = p_Var3;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_2c);
-  if (pFVar3 != (FILE *)0x0) {
-    while (pcVar6 = crt_stdio_c_fgets_FUN_005fefd0(local_45c,300,local_18), pcVar6 != (char *)0x0) {
+  if (p_Var3 != (_FILE *)0x0) {
+    while (pcVar6 = _fgets(local_45c,300,local_18), pcVar6 != (char *)0x0) {
       pcVar6 = local_45c;
       do {
         pcVar8 = pcVar6;
@@ -99,7 +99,7 @@ LAB_005ad285:
         *pcVar8 = '\0';
       }
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c,local_45c);
-      pcVar8 = crt_string_c_strstr_FUN_005fedd0(local_45c,"//");
+      pcVar8 = strstr(local_45c,"//");
       pcVar6 = local_45c;
       if (pcVar8 != (char *)0x0) {
         *pcVar8 = '\0';
@@ -128,9 +128,9 @@ joined_r0x005ad2dc:
           cVar1 = *pcVar6;
           pcVar6 = pcVar6 + (uint)bVar9 * -2 + 1;
         } while (cVar1 != '\0');
-        crt_string_c_memmove_FUN_005fe5e0(local_45c,local_45c + 1,~uVar7 - 1);
+        memmove(local_45c,local_45c + 1,~uVar7 - 1);
       }
-      iVar5 = crt_string_c_strnicmp_FUN_005ff070(local_45c,"length",5);
+      iVar5 = strnicmp(local_45c,"length",5);
       if (iVar5 == 0) {
         if (-1 < iVar2) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -143,16 +143,16 @@ joined_r0x005ad2dc:
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\sound\\sndmain.cpp",0x17a2);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_45c,"length = %d",local_1c);
+  sprintf(local_45c,"length = %d",local_1c);
   if (iVar2 < 0) {
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c,local_45c);
   }
   else {
     shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120(&local_2c,iVar2,local_45c);
   }
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_330,(char *)0x0,"wt","..\\sound\\sndmain.cpp",0x17ac);
-  if (pFVar3 == (FILE *)0x0) {
+  if (p_Var3 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x17ad;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_330);
@@ -161,11 +161,11 @@ joined_r0x005ad2dc:
   if (0 < local_2c.item_count) {
     do {
       pcVar6 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_2c,iVar2);
-      crt_stdio_c_fprintf_FUN_005fe6d0(pFVar3,"%s\n",pcVar6);
+      _fprintf(p_Var3,"%s\n",pcVar6);
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_2c.item_count);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\sound\\sndmain.cpp",0x17b1);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\sound\\sndmain.cpp",0x17b1);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_2c,0,in_stack_fffff7a4);
   return;
 }

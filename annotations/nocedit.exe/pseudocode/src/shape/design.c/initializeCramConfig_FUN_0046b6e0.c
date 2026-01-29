@@ -9,7 +9,7 @@
 void __cdecl shape_design_c_initializeCramConfig_FUN_0046b6e0(SCramConfig *cram_config)
 
 {
-  crt_memory_c_memset_FUN_005fde40(cram_config,0,0x74);
+  memset(cram_config,0,0x74);
   cram_config->filename[0] = '\0';
   cram_config->initial_value = 0;
   cram_config->algorithm_mode = 2;

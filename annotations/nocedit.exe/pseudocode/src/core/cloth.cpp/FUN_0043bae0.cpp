@@ -32,7 +32,7 @@ void core_cloth_cpp_FUN_0043bae0(void)
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  dVar9 = crt_math_c_round_FUN_005fe6b0
+  dVar9 = round
                     ((double)(*(float *)(in_stack_00000004 + 0x3ce88) * (float)65535));
   iVar10 = (int)ROUND(dVar9);
   if (iVar10 < 1000) {

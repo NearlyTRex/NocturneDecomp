@@ -14,7 +14,7 @@ int __cdecl core_actor_cpp_randomChance_FUN_0040cd10(float probability_threshold
   int iVar3;
   
   if (g_CGamePtr->is_processing == 0) {
-    iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar3 = rand();
     fVar1 = (float)iVar3 * (float)INT_00614308;
   }
   else {

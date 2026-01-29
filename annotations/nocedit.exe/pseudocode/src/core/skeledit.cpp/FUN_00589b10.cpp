@@ -15,7 +15,7 @@ void core_skeledit_cpp_FUN_00589b10
   int iVar2;
   int iVar3;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
+  __STK(0x10);
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
   if (param_5 == 0) {

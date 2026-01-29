@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_dmodel.cpp_skipLines_FUN_00476c80
 // Address: 00476c80
-void __cdecl skipLines(FILE *file_handle,int line_count);
+void __cdecl skipLines(_FILE *file_handle,int line_count);
 
 // Original: core_dmodel.cpp_clampTextureCoordinate_FUN_00476cb0
 // Address: 00476cb0
@@ -29,11 +29,11 @@ void __cdecl CKeyFramedModel::load(CKeyFramedModel *this_ptr,char *filename);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20
 // Address: 00476f20
-void __cdecl CKeyFramedModel::readBinaryModel(CKeyFramedModel *this_ptr,FILE *file);
+void __cdecl CKeyFramedModel::readBinaryModel(CKeyFramedModel *this_ptr,_FILE *file);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
 // Address: 00477110
-void __cdecl CKeyFramedModel::readTextModel(CKeyFramedModel *this_ptr,FILE *file);
+void __cdecl CKeyFramedModel::readTextModel(CKeyFramedModel *this_ptr,_FILE *file);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
 // Address: 00477690
@@ -237,15 +237,15 @@ void __cdecl CKeyFramedModel::importFromDSE(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
 // Address: 0047ed00
-void __cdecl CKeyFramedModel::writeDependencies(CKeyFramedModel *this_ptr,FILE *dependency_file,int skip_raw_files);
+void __cdecl CKeyFramedModel::writeDependencies(CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files);
 
 // Original: core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
 // Address: 0047edd0
-void __cdecl CKeyFramedModelInstance::writeDependencies(CKeyFramedModelInstance *this_ptr,FILE *file_handle);
+void __cdecl CKeyFramedModelInstance::writeDependencies(CKeyFramedModelInstance *this_ptr,_FILE *file_handle);
 
 // Original: core_dmodel.cpp_writeModelDependencies_FUN_0047ee30
 // Address: 0047ee30
-void __cdecl writeModelDependencies(FILE *dependency_file,char *model_filename);
+void __cdecl writeModelDependencies(_FILE *dependency_file,char *model_filename);
 
 // Original: core_dmodel.cpp_CDemonTriangle_ctor_FUN_0047eef0
 // Address: 0047eef0

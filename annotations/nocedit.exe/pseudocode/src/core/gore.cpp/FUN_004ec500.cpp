@@ -33,7 +33,7 @@ void core_gore_cpp_FUN_004ec500(void)
   int local_18;
   
   CStack_90.x = 0x4ec529;
-  dVar2 = crt_math_c_round_FUN_005fe6b0
+  dVar2 = round
                     ((double)((float)in_stack_00000004[9] * (float)8 +
                              (float)4));
   local_18 = (int)ROUND(dVar2);

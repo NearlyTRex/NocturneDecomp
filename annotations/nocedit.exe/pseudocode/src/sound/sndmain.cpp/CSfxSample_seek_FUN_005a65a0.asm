@@ -111,7 +111,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x174]     ; 005a6664
     PUSH ESI                            ; 005a666a
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 005a666b
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 005a6670
     ADD ESP,0xc                         ; 005a6673
         ;   Label: LAB_005a6673

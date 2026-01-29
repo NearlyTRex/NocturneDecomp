@@ -18,7 +18,7 @@ core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemon
   (this_ptr->vertex2).x = (other->vertex2).x;
   (this_ptr->vertex2).y = (other->vertex2).y;
   (this_ptr->vertex2).z = (other->vertex2).z;
-  pvVar1 = crt_memory_c_copyObjectArray_FUN_00600bc2
+  pvVar1 = __arrcopy
                      (&this_ptr->vertex3,&other->vertex3,4,&g_RA4HQPointTypeInfo);
   return (int)pvVar1 + -0x18;
 }

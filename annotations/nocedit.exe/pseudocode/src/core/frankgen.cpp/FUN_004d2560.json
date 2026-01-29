@@ -8,28 +8,22 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 161,
+    "complexity_score": 160,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 13,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 69
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -126,7 +120,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "FILE *in_stack_00000008;",
+      "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -166,35 +160,35 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);",
+      "text": "_fprintf(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);",
+      "text": "_fprintf(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[2].create_event[0x5c] == '\\0') {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,in_stack_00000008",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,in_stack_00000008",
       "type": "stack_param"

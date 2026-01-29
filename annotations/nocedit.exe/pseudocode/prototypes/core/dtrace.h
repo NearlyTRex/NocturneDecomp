@@ -49,7 +49,7 @@ void __cdecl CDemonRaytrace::convertLinearIndexToWorldPosAndCallback(CDemonRaytr
 
 // Original: core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
 // Address: 004947a0
-void __cdecl CDemonRaytrace::loadBinary(CDemonRaytrace *this_ptr,FILE *file_handle);
+void __cdecl CDemonRaytrace::loadBinary(CDemonRaytrace *this_ptr,_FILE *file_handle);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0
 // Address: 00494de0
@@ -57,7 +57,7 @@ int __cdecl CDemonRaytrace::loadAndSyncWithGeoFile(CDemonRaytrace *this_ptr,char
 
 // Original: core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50
 // Address: 00494f50
-void __cdecl CDemonRaytrace::saveBinary(CDemonRaytrace *this_ptr,FILE *file_handle);
+void __cdecl CDemonRaytrace::saveBinary(CDemonRaytrace *this_ptr,_FILE *file_handle);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040
 // Address: 00495040

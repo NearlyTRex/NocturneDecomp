@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_marquee_cpp_FUN_0050c480 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,FILE *param_6)
+; unknown void core_marquee_cpp_FUN_0050c480 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,_FILE *param_6)
 ;
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 0050c486
     PUSH ECX                            ; 0050c48a
     CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 0050c48b
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0050c490
     MOV EAX,dword ptr [ESP + 0x8]       ; 0050c493
     ADD EAX,0x158                       ; 0050c497
@@ -31,7 +31,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0050c4a2
     PUSH EBX                            ; 0050c4a6
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050c4a7
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0050c4ac
     POP EBX                             ; 0050c4af
     RET                                 ; 0050c4b0

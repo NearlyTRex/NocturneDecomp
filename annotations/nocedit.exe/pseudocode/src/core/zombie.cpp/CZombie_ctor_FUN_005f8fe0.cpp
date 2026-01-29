@@ -77,7 +77,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   pCVar4->unk2[0x4d] = '\0';
   pCVar4->unk2[0x4e] = '\0';
   pCVar4->unk2[0x4f] = '\0';
-  iVar6 = crt_string_c_stricmp_FUN_005fe7f0(pcVar8,"mine.geo");
+  iVar6 = stricmp(pcVar8,"mine.geo");
   pCVar4->always_chase_fast = 0;
   pCVar4->unk2[0x5c] = '\0';
   pCVar4->unk2[0x5d] = '\0';

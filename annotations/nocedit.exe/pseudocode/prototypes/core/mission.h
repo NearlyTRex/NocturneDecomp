@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_mission.cpp_FUN_00522c60
 // Address: 00522c60
-void __cdecl FUN_00522c60(FILE *file_handle);
+void __cdecl FUN_00522c60(_FILE *file_handle);
 
 // Original: core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80
 // Address: 00522c80
@@ -49,11 +49,11 @@ void __cdecl CDemonMission::writeFile(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_loadActor_FUN_00523990
 // Address: 00523990
-CDemonActor * __cdecl CDemonMission::loadActor(CDemonMission *this_ptr,FILE *file,CDemonActor *current_actor,char *property_description);
+CDemonActor * __cdecl CDemonMission::loadActor(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description);
 
 // Original: core_mission.cpp_CDemonMission_saveActor_FUN_00523af0
 // Address: 00523af0
-void __cdecl CDemonMission::saveActor(CDemonMission *this_ptr,CDemonActor *actor_ptr,FILE *file,CDemonActor *current_actor, char *description);
+void __cdecl CDemonMission::saveActor(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor, char *description);
 
 // Original: core_mission.cpp_CDemonMission_FUN_00523b70
 // Address: 00523b70

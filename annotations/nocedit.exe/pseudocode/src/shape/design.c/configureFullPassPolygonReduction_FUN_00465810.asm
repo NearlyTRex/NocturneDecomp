@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_design.c_optimizePolygonMesh_FUN_004658e0
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -75,8 +75,8 @@ section .text
         ;   XREF to: 00465884 (CONDITIONAL_JUMP)  ; LAB_00465884
     LEA EAX,[EBP + -0x5c]               ; 0046586c
     PUSH EAX                            ; 0046586f
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00465870
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00465870
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + -0x64],EAX     ; 00465875
     MOV dword ptr [EBP + -0x60],EDX     ; 00465878
     FLD double ptr [EBP + -0x64]        ; 0046587b

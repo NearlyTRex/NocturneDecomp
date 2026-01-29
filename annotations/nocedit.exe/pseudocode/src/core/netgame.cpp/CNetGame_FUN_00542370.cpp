@@ -26,7 +26,7 @@ void core_netgame_cpp_CNetGame_FUN_00542370(void)
   bVar6 = 0;
   if (399 < g_ChatHistoryCount) {
     g_ChatHistoryCount = g_ChatHistoryCount + -1;
-    crt_string_c_memmove_FUN_005fe5e0(g_ChatHistory,g_ChatHistory + 1,g_ChatHistoryCount * 0x120);
+    memmove(g_ChatHistory,g_ChatHistory + 1,g_ChatHistoryCount * 0x120);
   }
   iVar2 = g_ChatHistoryCount;
   iVar3 = g_ChatHistoryCount * 0x120;

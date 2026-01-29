@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x20c]:1  local_20c
 ;
 ; XREF[1]:
-;   crt_io.c_ftruncate_FUN_00600cf0 at 00600dca
+;   crt_io.c_chsize_FUN_00600cf0 at 00600dca
 ;
 ; Called Functions:
 ;   crt_io.c_write_FUN_006084ec

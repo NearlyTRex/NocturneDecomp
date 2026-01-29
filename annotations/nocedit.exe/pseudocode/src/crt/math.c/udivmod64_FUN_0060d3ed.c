@@ -8,7 +8,7 @@
 
 /* WARNING: Removing unreachable block (ram,0x0060d441) */
 
-ulonglong crt_math_c_udivmod64_FUN_0060d3ed(ulonglong dividend,ulonglong divisor)
+ulonglong udivmod64(ulonglong dividend,ulonglong divisor)
 
 {
   uint uVar1;

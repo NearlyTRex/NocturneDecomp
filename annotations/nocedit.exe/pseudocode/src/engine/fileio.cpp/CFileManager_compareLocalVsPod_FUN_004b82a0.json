@@ -63,48 +63,6 @@
         "column": 40,
         "line": 103,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 124,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 128,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 132,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 136,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 140,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 143,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 145,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -583,7 +541,7 @@
       "description": "Direct stack address reference",
       "line": 78,
       "match": "&stack0xffffedf8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8,\"%s\\tNo local file\",&local_234);",
+      "text": "sprintf(&stack0xffffedf8,\"%s\\tNo local file\",&local_234);",
       "type": "stack_ref"
     },
     {
@@ -646,7 +604,7 @@
       "description": "Direct stack address reference",
       "line": 98,
       "match": "&stack0xffffedf8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8,\"%s\\tsame\",&local_234);",
+      "text": "sprintf(&stack0xffffedf8,\"%s\\tsame\",&local_234);",
       "type": "stack_ref"
     },
     {
@@ -681,7 +639,7 @@
       "description": "Direct stack address reference",
       "line": 114,
       "match": "&stack0xffffedf8",
-      "text": "iVar4 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8 + iVar2,\"-----------------------\\n\");",
+      "text": "iVar4 = sprintf(&stack0xffffedf8 + iVar2,\"-----------------------\\n\");",
       "type": "stack_ref"
     },
     {

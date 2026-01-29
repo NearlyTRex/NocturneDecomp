@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_DeleteCritcalSectionsMaybe() */
 
-void crt_unknown_c_DeleteCritcalSectionsMaybe_FUN_00609ff4(void)
+void DeleteCritcalSectionsMaybe(void)
 
 {
   uint *puVar1;
@@ -24,11 +24,11 @@ void crt_unknown_c_DeleteCritcalSectionsMaybe_FUN_00609ff4(void)
       puVar1 = (uint *)(iVar2 + (int)g_DynamicCriticalSectionArray);
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
-      crt_memory_c_free_FUN_00601cd0((void *)*puVar1);
+      free((void *)*puVar1);
     } while (iVar3 < (int)g_DynamicCriticalSectionCounter);
   }
   if (g_DynamicCriticalSectionArray != (LPCRITICAL_SECTION *)0x0) {
-    crt_memory_c_free_FUN_00601cd0(g_DynamicCriticalSectionArray);
+    free(g_DynamicCriticalSectionArray);
   }
   return;
 }

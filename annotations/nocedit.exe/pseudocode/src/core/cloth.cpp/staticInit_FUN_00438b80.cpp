@@ -10,6 +10,6 @@ void __cdecl core_cloth_cpp_staticInit_FUN_00438b80(void)
 
 {
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&g_CDeformableModelInstanceInstance);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_CDeformableModelInstanceDestructorNode);
+  _atexit(&g_CDeformableModelInstanceDestructorNode);
   return;
 }

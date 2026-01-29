@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setdir_cpp_CZThumb_write_FUN_00574b20(CZThumb *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_setdir_cpp_CZThumb_write_FUN_00574b20(CZThumb *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CZThumb *        Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40 at 00575ea8
@@ -29,7 +29,7 @@ section .text
     MOV ESI,dword ptr [EDX + 0x24]      ; 00574b33
     PUSH ESI                            ; 00574b36
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00574b37
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00574b3c
     POP ESI                             ; 00574b3f
     RET                                 ; 00574b40

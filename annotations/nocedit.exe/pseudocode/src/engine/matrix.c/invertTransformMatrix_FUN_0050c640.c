@@ -59,27 +59,27 @@ void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
   fVar16 = (float10)-fVar10 * (float10)fVar13;
   fVar17 = (float10)(fVar3 * fVar6 - fVar9 * fVar12) * (float10)fVar13;
   fVar18 = (float10)fVar2 * (float10)fVar13;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * fVar13));
+  dVar20 = round((double)(fVar1 * fVar13));
   g_InverseMatrix.m[0].x = (int)ROUND(dVar20);
   fVar19 = (float10)uStack_54 * (float10)7.418788e-39;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
+  dVar20 = round((double)fVar14);
   g_InverseMatrix.m[0].y = (int)ROUND(dVar20);
   fVar14 = (float10)(float)-((float10)fVar3 * (float10)fVar7 - (float10)fVar8 * (float10)fVar12) *
            (float10)7.418816e-39;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
+  dVar20 = round((double)fVar15);
   fVar15 = (float10)dVar20;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)fVar16);
+  dVar20 = round((double)fVar16);
   fVar16 = (float10)dVar20;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
-  dVar21 = crt_math_c_round_FUN_005fe6b0
+  dVar20 = round((double)fVar17);
+  dVar21 = round
                      ((double)(-((float10)fVar3 * (float10)fVar5 - (float10)fVar9 * (float10)fVar11)
                               * (float10)fVar13));
   fVar17 = (float10)dVar21;
-  dVar21 = crt_math_c_round_FUN_005fe6b0((double)fVar18);
+  dVar21 = round((double)fVar18);
   fVar18 = (float10)dVar21;
-  dVar21 = crt_math_c_round_FUN_005fe6b0((double)fVar19);
+  dVar21 = round((double)fVar19);
   fVar19 = (float10)dVar21;
-  dVar21 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
+  dVar21 = round((double)fVar14);
   g_InverseMatrix.m[0].z = (int)ROUND(fVar15);
   g_InverseMatrix.m[1].x = (int)ROUND(fVar16);
   g_InverseMatrix.m[1].y = (int)ROUND(dVar20);

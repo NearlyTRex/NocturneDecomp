@@ -81,7 +81,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
       scanline_renderer = (RenderScanlineFunc *)local_64;
       iVar1 = iVar1 + 0x24;
       prim = (SMRGLHeaderPrimitive *)0x471588;
-      dVar3 = crt_math_c_round_FUN_005fe6b0
+      dVar3 = round
                         ((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2) *
                                  this_ptr->radius));
       local_54 = (int)ROUND(dVar3);

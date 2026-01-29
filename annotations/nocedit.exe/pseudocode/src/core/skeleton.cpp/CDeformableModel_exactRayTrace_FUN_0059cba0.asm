@@ -52,7 +52,7 @@
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790
 ;   core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -282,8 +282,8 @@ section .text
     OR DL,0x1                           ; 0059ce24
     PUSH 0x367517c                      ; 0059ce27 | g_FloatVertexArray
     MOV byte ptr [0x03683bdc],DL        ; 0059ce2c | g_FloatVertexArrayInitialized
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0059ce32
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0059ce32
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059ce37
     JMP 0x0059cbbb                      ; 0059ce3a
         ;   XREF to: 0059cbbb (UNCONDITIONAL_JUMP)  ; LAB_0059cbbb

@@ -11,25 +11,24 @@
 void core_cloth_cpp_ParseClothFile_FUN_00439260(void)
 
 {
-  FILE *file;
+  _FILE *file;
   int iVar1;
   int iVar2;
   int in_stack_00000004;
   char *in_stack_00000008;
   
   file = engine_dosio_c_getFile_FUN_00481a50("models",in_stack_00000008,"wt");
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0x12d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::save - Unable to open file");
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"model\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"weight,gravity,dampen,spring,bodyFriction,floorFriction,windArea,momInert\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file,"%f,%f,%f,%f,%f,%f,%f,%f\n",(double)*(float *)(in_stack_00000004 + 0x3ce58),
+  _fprintf(file,"version\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"model\n");
+  _fprintf(file,"%s\n");
+  _fprintf(file,"weight,gravity,dampen,spring,bodyFriction,floorFriction,windArea,momInert\n");
+  _fprintf(file,"%f,%f,%f,%f,%f,%f,%f,%f\n",(double)*(float *)(in_stack_00000004 + 0x3ce58),
              (double)*(float *)(in_stack_00000004 + 0x3ce5c),
              (double)*(float *)(in_stack_00000004 + 0x3ce60),
              (double)*(float *)(in_stack_00000004 + 0x3ce64),
@@ -37,30 +36,28 @@ void core_cloth_cpp_ParseClothFile_FUN_00439260(void)
              (double)*(float *)(in_stack_00000004 + 0x3ce6c),
              (double)*(float *)(in_stack_00000004 + 0x3ce70),
              (double)*(float *)(in_stack_00000004 + 0x3ce74));
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"transparency\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file,"%f\n",(double)*(float *)(in_stack_00000004 + 0x3ce88));
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"doubleSided\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"lockedVertexCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  _fprintf(file,"transparency\n");
+  _fprintf(file,"%f\n",(double)*(float *)(in_stack_00000004 + 0x3ce88));
+  _fprintf(file,"doubleSided\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"lockedVertexCount\n");
+  _fprintf(file,"%d\n");
   iVar1 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"lockedVertexList\n");
+  _fprintf(file,"lockedVertexList\n");
   if (0 < *(int *)(in_stack_00000004 + 0x3f028)) {
     do {
       iVar1 = iVar1 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+      _fprintf(file,"%d\n");
     } while (iVar1 < *(int *)(in_stack_00000004 + 0x3f028));
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"collideBoneCount\n");
+  _fprintf(file,"collideBoneCount\n");
   iVar1 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  _fprintf(file,"%d\n");
   if (0 < *(int *)(in_stack_00000004 + 0x3ce8c)) {
     iVar2 = in_stack_00000004 + 0x3ce90;
     do {
       iVar1 = iVar1 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"\"%s\",%g,%g, %g,%g,%g, %g,%g,%g, %g\n",iVar2,(double)*(float *)(iVar2 + 0x14),
+      _fprintf(file,"\"%s\",%g,%g, %g,%g,%g, %g,%g,%g, %g\n",iVar2,(double)*(float *)(iVar2 + 0x14),
                  (double)*(float *)(iVar2 + 0x18),(double)*(float *)(iVar2 + 0x1c),
                  (double)*(float *)(iVar2 + 0x20),(double)*(float *)(iVar2 + 0x24),
                  (double)*(float *)(iVar2 + 0x28),(double)*(float *)(iVar2 + 0x30),

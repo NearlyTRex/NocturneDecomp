@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 HANDLE __cdecl
-crt_thread_c_create_thread_with_sync_FUN_0060f960
+create_thread_with_sync
           (LPVOID thread_param,SIZE_T stack_size_hint,LPVOID sync_param,HANDLE *out_thread_handle)
 
 {
@@ -33,11 +33,11 @@ crt_thread_c_create_thread_with_sync_FUN_0060f960
   
   bVar2 = 0;
   if (g_TLSIndex == 0xffffffff) {
-    BVar1 = crt_tls_c_allocate_tls_index_FUN_0060a27c();
+    BVar1 = allocate_tls_index();
     if (BVar1 == 0) {
       return (HANDLE)0x0;
     }
-    crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4();
+    initialize_tls_infrastructure();
   }
   local_2c = thread_param;
   local_28 = sync_param;
@@ -53,11 +53,11 @@ crt_thread_c_create_thread_with_sync_FUN_0060f960
   acStack_44[(uint)bVar2 * -8 + (uint)bVar2 * -8] =
        "__bgnthd"[(uint)bVar2 * -8 + (uint)bVar2 * -8 + 8];
   value = (*g_GetCurrentThreadIdFunc)();
-  crt_stdio_c_IntegerToString_FUN_00607d18(value,buffer,base);
+  IntegerToString(value,buffer,base);
   pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);
   hObject = (*g_CreateThreadFunc)
                       ((LPSECURITY_ATTRIBUTES)0x0,(stack_size_hint + 0xfff >> 8 & 0xfffff0) << 8,
-                       crt_thread_c_threadStartupWrapper_FUN_0060f8c0,&local_2c,0,&DStack_18);
+                       threadStartupWrapper,&local_2c,0,&DStack_18);
   if (hObject == (HANDLE)0x0) {
     DStack_18 = 0xffffffff;
   }

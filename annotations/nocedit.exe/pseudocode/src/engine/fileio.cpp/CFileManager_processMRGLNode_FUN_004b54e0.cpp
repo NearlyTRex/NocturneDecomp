@@ -26,7 +26,7 @@ engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0
       pSVar2 = mrgl_node + 2;
       do {
         mrgl_node_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)pSVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(this_ptr->file_ptr,"MODELS\\%s\n",pSVar2);
+        _fprintf(this_ptr->file_ptr,"MODELS\\%s\n",pSVar2);
         engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(this_ptr,mrgl_node_00);
         engine_model_c_freeMRGLData_FUN_005280b0(mrgl_node_00);
         iVar3 = iVar3 + 1;

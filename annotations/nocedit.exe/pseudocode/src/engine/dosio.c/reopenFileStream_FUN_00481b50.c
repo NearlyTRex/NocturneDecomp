@@ -15,8 +15,8 @@ engine_dosio_c_reopenFileStream_FUN_00481b50
   undefined3 in_stack_0000000d;
   SFoundFileInfo local_220;
   
-  crt_stdio_c_fflush_FUN_00600e29((FILE *)file_stream);
-  crt_stdio_c_clear_and_preserve_state_FUN_00600e64
+  _fflush((_FILE *)file_stream);
+  clear_and_preserve_state
             ((FileEmbeddedData *)
              ((file_stream->_fstreambase_core)._filebuf.__unbuffered_get_area +
              *(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);
@@ -34,7 +34,7 @@ engine_dosio_c_reopenFileStream_FUN_00481b50
   }
   else {
     if (directory_path != (char *)0x0) {
-      crt_file_c_create_directory_FUN_00600e10(directory_path);
+      _mkdir(directory_path);
     }
     crt_fstream_cpp_openFile_FUN_00600e85
               (file_stream,local_220.found_path,_file_mode_flags,g_DefaultStreamBufferSize);

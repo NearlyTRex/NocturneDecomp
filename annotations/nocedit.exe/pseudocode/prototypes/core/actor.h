@@ -281,11 +281,11 @@ int __cdecl adjustIndentationLevel(int indent_delta);
 
 // Original: core_actor.cpp_CDemonActor_save_FUN_0040af30
 // Address: 0040af30
-void __cdecl CDemonActor::save(CDemonActor *this_ptr,FILE *file_handle);
+void __cdecl CDemonActor::save(CDemonActor *this_ptr,_FILE *file_handle);
 
 // Original: core_actor.cpp_CDemonActor_load_FUN_0040b050
 // Address: 0040b050
-void __cdecl CDemonActor::load(CDemonActor *this_ptr,FILE *file_handle);
+void __cdecl CDemonActor::load(CDemonActor *this_ptr,_FILE *file_handle);
 
 // Original: core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
 // Address: 0040b210
@@ -493,7 +493,7 @@ void __cdecl crc32ProcessString(uint *crc_state,char *string);
 
 // Original: core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0
 // Address: 0040cfd0
-void __cdecl CDemonActor::writeDependencies(CDemonActor *this_ptr,FILE *file_handle);
+void __cdecl CDemonActor::writeDependencies(CDemonActor *this_ptr,_FILE *file_handle);
 
 // Original: core_actor.cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0
 // Address: 0040cfe0

@@ -12,17 +12,17 @@ int __cdecl shape_superopt_cpp_CObj_allocateVertices_FUN_005d2500(CObj *this_ptr
   CVert *pCVar1;
   
   this_ptr->vertex_count = vertex_count;
-  pCVar1 = crt_memory_c_malloc_FUN_00601bb0(vertex_count * 0x38);
+  pCVar1 = malloc(vertex_count * 0x38);
   this_ptr->vertex_data = pCVar1;
   if (pCVar1 == (CVert *)0x0) {
     if (this_ptr->poly_array != (CPoly *)0x0) {
-      crt_memory_c_free_FUN_00601cd0(this_ptr->poly_array);
+      free(this_ptr->poly_array);
     }
     this_ptr->poly_array = (CPoly *)0x0;
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to allocate RAM for object vertices");
     this_ptr->is_valid = 0;
     return 0;
   }
-  crt_memory_c_memset_FUN_005fde40(this_ptr->vertex_data,0,this_ptr->vertex_count * 0x38);
+  memset(this_ptr->vertex_data,0,this_ptr->vertex_count * 0x38);
   return 1;
 }

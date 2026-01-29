@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_locale_c_mblen_FUN_00605a40(char *mb_string)
+int __watcallStack mblen(char *mb_string)
 
 {
   if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*mb_string] & 1U) != 0)) {

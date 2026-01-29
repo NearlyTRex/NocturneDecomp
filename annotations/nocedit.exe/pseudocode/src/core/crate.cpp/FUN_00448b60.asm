@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 00448b6a
     PUSH EBX                            ; 00448b6b
     CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 00448b6c
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00448b71
     ADD EBX,0x158                       ; 00448b74
     PUSH EBX                            ; 00448b7a
@@ -36,7 +36,7 @@ section .text
     PUSH 0x619b4f                       ; 00448b84 | = "MODELS\\%s\n"
     PUSH ESI                            ; 00448b89
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00448b8a
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00448b8f
     PUSH 0x0                            ; 00448b92
     PUSH ESI                            ; 00448b94
@@ -46,7 +46,7 @@ section .text
     ADD ESP,0x4                         ; 00448b9b
     PUSH EAX                            ; 00448b9e
     CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 00448b9f
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 00448ba4
     POP ESI                             ; 00448ba7
     POP EBX                             ; 00448ba8

@@ -15,7 +15,7 @@ float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,do
   
   if ((0.70699999999999996 <= sin_value) || (sin_value <= -0.70699999999999996)) {
     if ((-1 < cos_value) && (cos_value < 1.0)) {
-      dVar2 = crt_math_c_acos_FUN_00600162(cos_value);
+      dVar2 = acos(cos_value);
       local_c = (float)dVar2;
     }
     if (sin_value < 0.0) {
@@ -23,7 +23,7 @@ float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,do
     }
   }
   else {
-    fVar1 = crt_math_c_asin_FUN_00600b94((float10)sin_value);
+    fVar1 = asin((float10)sin_value);
     local_c = (float)fVar1;
     if (cos_value < 0.0) {
       local_c = (float)3.1415926535900001 - local_c;

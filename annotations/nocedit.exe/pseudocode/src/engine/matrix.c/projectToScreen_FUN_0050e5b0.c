@@ -30,7 +30,7 @@ int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
   if (0 < local_50.z) {
     local_1c = input_value;
     local_18 = local_50.z;
-    dVar2 = crt_math_c_round_FUN_005fe6b0
+    dVar2 = round
                       (((-(double)input_value * (double)g_ViewportCenterYFixed) / (double)local_50.z
                        ) / (double)g_ProjectionScale);
     return (int)ROUND(dVar2);

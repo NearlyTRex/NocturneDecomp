@@ -7,13 +7,13 @@
 #include "nocturne.h"
 
 uint __cdecl
-crt_stdio_c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData *embedded_data,uint error_code)
+clear_and_preserve_state(FileEmbeddedData *embedded_data,uint error_code)
 
 {
   uint uVar1;
   
   uVar1 = embedded_data->state_field;
   embedded_data->state_field = 0;
-  crt_stdio_c_reportStreamError_FUN_00606020(embedded_data,error_code);
+  reportStreamError(embedded_data,error_code);
   return uVar1;
 }

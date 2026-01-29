@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_00523af0 (CDemonMission *this_ptr,CDemonActor *actor_ptr,FILE *file,CDemonActor *current_actor, char *description)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_00523af0 (CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor, char *description)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor_ptr
-; FILE *           Stack[0xc]:4   file
+; _FILE *          Stack[0xc]:4   file
 ; CDemonActor *    Stack[0x10]:4   current_actor
 ; char *           Stack[0x14]:4   description
 ;
@@ -54,7 +54,7 @@ section .text
     PUSH ESI                            ; 00523b26
         ;   Label: LAB_00523b26
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00523b27
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00523b2c
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00523b2f
     TEST EDX,EDX                        ; 00523b33
@@ -64,7 +64,7 @@ section .text
     PUSH 0x63907c                       ; 00523b38 | = "\t\t// %s\n"
     PUSH ESI                            ; 00523b3d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00523b3e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00523b43
     POP ESI                             ; 00523b46
     POP EBX                             ; 00523b47
@@ -78,7 +78,7 @@ section .text
         ;   Label: LAB_00523b51
     PUSH ESI                            ; 00523b56
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00523b57
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00523b5c
     POP ESI                             ; 00523b5f
     POP EBX                             ; 00523b60

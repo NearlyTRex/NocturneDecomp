@@ -17,13 +17,13 @@
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 10,
         "line": 19,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 43,
         "line": 29,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -35,13 +35,13 @@
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 10,
         "line": 34,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 34,
+        "column": 38,
         "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -94,14 +94,14 @@
   },
   "function_calls": [
     {
-      "addr": "005fe659",
-      "is_variadic": false,
-      "name": "crt_memory.c_free_FUN_005fe659"
-    },
-    {
       "addr": "00601cd0",
       "is_variadic": false,
       "name": "crt_memory.c_free_FUN_00601cd0"
+    },
+    {
+      "addr": "005fe659",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
     }
   ],
   "globals": [],
@@ -167,7 +167,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "crt_memory_c_free_FUN_00601cd0((void *)in_stack_00000004[1]);",
+      "text": "free((void *)in_stack_00000004[1]);",
       "type": "stack_param"
     },
     {
@@ -188,7 +188,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "crt_memory_c_free_FUN_005fe659(*(void **)(iVar1 + in_stack_00000004[3]));",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(*(void **)(iVar1 + in_stack_00000004[3]));",
       "type": "stack_param"
     },
     {
@@ -216,7 +216,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
-      "text": "crt_memory_c_free_FUN_00601cd0((void *)in_stack_00000004[3]);",
+      "text": "free((void *)in_stack_00000004[3]);",
       "type": "stack_param"
     },
     {
@@ -237,7 +237,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
-      "text": "crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0xc]);",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659((void *)in_stack_00000004[0xc]);",
       "type": "stack_param"
     },
     {

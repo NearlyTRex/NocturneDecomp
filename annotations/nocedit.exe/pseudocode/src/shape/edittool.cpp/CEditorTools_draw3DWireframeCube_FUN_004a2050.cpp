@@ -66,8 +66,7 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
   local_140.fog = 1.12104e-44;
   local_140.color = (int)afStack_110;
   local_140.light = 6.807476e-39;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            ((void *)local_140.color,8,&g_CVectorTypeInfo);
+  __arrinit((void *)local_140.color,8,&g_CVectorTypeInfo);
   pfVar3 = afStack_110;
   uVar1 = 0;
   do {

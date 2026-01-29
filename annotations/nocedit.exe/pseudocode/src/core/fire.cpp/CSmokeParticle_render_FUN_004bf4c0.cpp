@@ -31,7 +31,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
   wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr->projected_vertex,&local_64);
   iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(g_CDemonRendererPtr2,vertex_ptr);
   if (iVar2 != 0) {
-    dVar3 = crt_math_c_round_FUN_005fe6b0((double)this_ptr->age);
+    dVar3 = round((double)this_ptr->age);
     local_1c = (int)ROUND(dVar3);
     if ((local_1c < 0) || (0x27 < local_1c)) {
       g_CurrentFilename = "..\\core\\fire.cpp";

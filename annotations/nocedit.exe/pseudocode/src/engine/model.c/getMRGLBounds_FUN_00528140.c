@@ -81,7 +81,7 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
     }
     iVar5 = (int)(0x7fffffff / (longlong)(header->base).count) * 2;
     if (header->child_count != 2) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea0,"Unable to read verticies in model!");
+      sprintf(&stack0xfffffea0,"Unable to read verticies in model!");
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x176;
       core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);
@@ -136,15 +136,15 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
                (int)((ulonglong)((longlong)iVar5 * (longlong)local_20) >> 0x20) << 0x10;
     local_a8 = uVar3;
     local_9c = uVar2;
-    dVar13 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (1.0 / (float)header[1].base.count)))
+    dVar13 = round((double)(local_14 * (1.0 / (float)header[1].base.count)))
     ;
     local_94 = (uint)((longlong)iVar5 * (longlong)(int)ROUND(dVar13)) >> 0x10 |
                (int)((ulonglong)((longlong)iVar5 * (longlong)(int)ROUND(dVar13)) >> 0x20) << 0x10;
-    dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_1c);
+    dVar13 = round((double)local_1c);
     local_94 = (uint)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar13)) >> 0x10 |
                (int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar13)) >> 0x20) <<
                0x10;
-    dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_24);
+    dVar13 = round((double)local_24);
     local_94 = (uint)((longlong)iStack_38 * (longlong)(int)ROUND(dVar13)) >> 0x10 |
                (int)((ulonglong)((longlong)iStack_38 * (longlong)(int)ROUND(dVar13)) >> 0x20) <<
                0x10;
@@ -164,7 +164,7 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
       local_84 = (uStack_ac ^ uVar2) - uVar2;
     }
     iVar5 = 0xd;
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        (SQRT((double)local_84 * (double)local_84 +
                              (double)local_88 * (double)local_88 +
                              (double)local_8c * (double)local_8c));

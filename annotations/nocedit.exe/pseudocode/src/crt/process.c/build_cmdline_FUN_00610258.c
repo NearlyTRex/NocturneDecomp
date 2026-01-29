@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 int __cdecl
-crt_process_c_build_cmdline_FUN_00610258
+build_cmdline
           (int argc,char **argv,char *program,char **out_cmdline,char **out_environment,
           char **out_buffer,int *out_bufsize,int copy_program_flag)
 
@@ -27,7 +27,7 @@ crt_process_c_build_cmdline_FUN_00610258
     pcVar3 = *argv;
     ppcVar4 = argv;
     while (pcVar3 != (char *)0x0) {
-      iVar2 = crt_string_c_strlen_FUN_0060f870(*ppcVar4);
+      iVar2 = strlen(*ppcVar4);
       ppcVar4 = ppcVar4 + 1;
       iVar5 = iVar5 + iVar2 + 1;
       pcVar3 = *ppcVar4;
@@ -35,17 +35,17 @@ crt_process_c_build_cmdline_FUN_00610258
   }
   iVar5 = iVar5 + 1;
   if (out_bufsize != (int *)0x0) {
-    iVar2 = crt_string_c_strlen_FUN_0060f870(*(char **)argc);
+    iVar2 = strlen(*(char **)argc);
     iVar5 = iVar5 + iVar2 + 3;
   }
   iVar2 = g_HeapFlags;
   uVar6 = iVar5 + 0xf;
   g_HeapFlags = 0x10;
-  pcVar3 = crt_heap_c_InternalHeapAlloc_FUN_00601bc0(uVar6);
+  pcVar3 = InternalHeapAlloc(uVar6);
   if ((pcVar3 == (char *)0x0) &&
-     (pcVar3 = crt_memory_c_malloc_FUN_00601bb0(uVar6), pcVar3 == (char *)0x0)) {
-    crt_errno_c_setErrno_FUN_00602790(5);
-    crt_errno_c_SetWindowsError_FUN_006027c8(8);
+     (pcVar3 = malloc(uVar6), pcVar3 == (char *)0x0)) {
+    setErrno(5);
+    SetWindowsError(8);
     uVar6 = 0xffffffff;
     g_HeapFlags = iVar2;
   }
@@ -59,14 +59,14 @@ crt_process_c_build_cmdline_FUN_00610258
       while (pcVar1 != (char *)0x0) {
         pcVar1 = *argv;
         argv = argv + 1;
-        pcVar3 = crt_string_c_strcpy_advance_FUN_00610240(pcVar3,pcVar1);
+        pcVar3 = strcpy_advance(pcVar3,pcVar1);
         pcVar3 = pcVar3 + 1;
         pcVar1 = *argv;
       }
     }
     *pcVar3 = '\0';
     if (out_bufsize != (int *)0x0) {
-      crt_string_c_strcpy_FUN_00610760(pcVar3 + 3,*(char **)argc);
+      strcpy(pcVar3 + 3,*(char **)argc);
     }
     iVar5 = 0;
     if (*(int *)argc != 0) {
@@ -76,7 +76,7 @@ crt_process_c_build_cmdline_FUN_00610258
         if (iVar5 != 0) {
           iVar5 = iVar5 + 1;
         }
-        iVar2 = crt_string_c_strlen_FUN_0060f870(*(char **)argc);
+        iVar2 = strlen(*(char **)argc);
         iVar5 = iVar5 + iVar2;
       }
     }

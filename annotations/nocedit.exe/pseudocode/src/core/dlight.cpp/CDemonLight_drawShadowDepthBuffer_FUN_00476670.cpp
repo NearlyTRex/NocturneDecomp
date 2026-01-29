@@ -32,7 +32,7 @@ core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
   g_NoiseTableIndex = 0;
   iVar7 = 0;
   do {
-    uVar4 = crt_stdlib_c_rand_FUN_005feb5c();
+    uVar4 = rand();
     iVar6 = iVar7 + 4;
     *(uint *)((int)g_NoiseTable + iVar7) = (uVar4 & 0x1f) - 0x10;
     iVar7 = iVar6;
@@ -45,7 +45,7 @@ core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
       puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);
       iVar6 = iVar6 + 4;
       iVar7 = iVar7 + 1;
-      crt_memory_c_memset_FUN_005fde40
+      memset
                 ((void *)*puVar1,0,
                  (int)((g_WindowWidth * g_BitsPerPixel + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3)
       ;

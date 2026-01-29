@@ -22,7 +22,7 @@ void core_batman_cpp_FUN_00417660(void)
   float local_14;
   
   if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {
-    iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar2 = rand();
     switch(iVar2 % 6) {
     case 0:
       iVar2 = in_stack_00000004[1].base.unk7;

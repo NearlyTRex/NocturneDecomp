@@ -28,7 +28,7 @@ section .text
     PUSH EBX                            ; 0060b6dc
         ;   Label: LAB_0060b6dc
     CALL crt_stdio.c_fgetc_buffered_FUN_0060d510 ; 0060b6dd
-        ;   XREF to: 0060d510 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_buffered_FUN_0060d510(FILE * stream)
+        ;   XREF to: 0060d510 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_buffered_FUN_0060d510(_FILE * stream)
     MOV EDX,EAX                         ; 0060b6e2
     MOV EAX,dword ptr [EBX]             ; 0060b6e4
     MOV EAX,dword ptr [EAX + 0x4]       ; 0060b6e6

@@ -13,7 +13,7 @@ support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
 {
   int iVar1;
   int iVar2;
-  FILE local_44 [2];
+  _FILE local_44 [2];
   
   crt_strstream_cpp_ostrstream_ctor_FUN_005ff384
             ((ostrstream *)&stack0xffffff74,0,buffer_ptr,*buffer_size_ptr,2);

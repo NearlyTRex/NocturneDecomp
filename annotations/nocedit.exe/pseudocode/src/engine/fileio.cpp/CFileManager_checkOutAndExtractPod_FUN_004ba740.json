@@ -9,13 +9,13 @@
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 26,
         "line": 65,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 14,
         "line": 113,
         "message": "'stack0xfffff964' was not declared in this scope"
       }
@@ -102,7 +102,7 @@
       },
       {
         "category": "other",
-        "column": 43,
+        "column": 44,
         "line": 207,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -114,7 +114,7 @@
       },
       {
         "category": "other",
-        "column": 45,
+        "column": 46,
         "line": 219,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -138,7 +138,7 @@
       },
       {
         "category": "other",
-        "column": 41,
+        "column": 42,
         "line": 248,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -156,7 +156,7 @@
       },
       {
         "category": "other",
-        "column": 64,
+        "column": 65,
         "line": 269,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -168,38 +168,38 @@
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 67,
         "line": 279,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 292,
+        "line": 293,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 311,
+        "line": 312,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 382,
+    "complexity_score": 383,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
-    "pseudocode_lines": 307,
+    "pseudocode_lines": 308,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 1037
+    "total_lines": 1038
   },
   "cross_references": [],
   "function": {
@@ -212,7 +212,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
-    "signature": "int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (CFileManager *this_ptr,CCheckOutItem *checkout_item,FILE *optional_pod_file)"
+    "signature": "int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file)"
   },
   "function_calls": [
     {
@@ -223,7 +223,7 @@
     {
       "addr": "00601450",
       "is_variadic": false,
-      "name": "crt_errno.c_errno_FUN_00601450"
+      "name": "crt_errno.c__errno_FUN_00601450"
     },
     {
       "addr": "00601490",
@@ -811,7 +811,7 @@
         "name": "optional_pod_file",
         "offset": 12,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -827,21 +827,21 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)&pFVar6->_ptr + 1);",
+      "text": "cVar1 = *(char *)((int)&p_Var6->_ptr + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 58,
-      "match": "(FILE *)((int)",
-      "text": "pFVar6 = (FILE *)((int)&pFVar6->_ptr + 2);",
+      "match": "(_FILE *)((int)",
+      "text": "p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 106,
       "match": "&stack0xfffff964",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340)",
+      "text": "sprintf(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340)",
       "type": "stack_ref"
     },
     {
@@ -853,7 +853,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 308,
+      "line": 309,
       "match": "in_stack_fffff970",
       "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_30 + 4),0,in_stack_fffff970);",
       "type": "stack_param"

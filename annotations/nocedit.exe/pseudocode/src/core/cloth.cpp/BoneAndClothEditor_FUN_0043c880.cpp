@@ -160,7 +160,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
     if (iVar4 != 0) {
       DAT_0083b10c = DAT_0083b10c + 1;
-      crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0083b110,"noc%d.pcx");
+      sprintf(&DAT_0083b110,"noc%d.pcx");
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_0083b110);
     }
     if (local_3c != (float *)0x0) {
@@ -200,7 +200,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
       } while ((int)fVar6 < *(int *)(iVar1 + 0x3ce8c));
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (acStack_1a0,"Model motion : %s frame %f",local_18,
                (double)g_CDeformableModelInstanceInstance.motion_controller.current_frame_number);
     engine_2d_c_drawText_FUN_00401fd0(acStack_1a0,0,0);
@@ -235,7 +235,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     if (iVar4 != 0) {
       shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (acStack_190,"%f",(double)(1.0 / (float)in_stack_fffffac4));
     engine_2d_c_drawTextRightAligned_FUN_004021c0
               (acStack_190,g_WindowHeight + -0xd,g_WindowWidth + -2);
@@ -281,7 +281,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
       engine_2d_c_drawText_FUN_00401fd0("Use TAB/Shift-TAB to select cylinder",0,0xc6);
       engine_2d_c_drawText_FUN_00401fd0("Use CTRL to slew cylinder",0,0xd1);
       iVar7 = in_stack_0000002c * 0xac + in_stack_00000010;
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_158,"Editing cylinder %d, on bone %s");
+      sprintf(acStack_158,"Editing cylinder %d, on bone %s");
       engine_2d_c_drawText_FUN_00401fd0(acStack_158,0,g_WindowHeight + -0x16);
       iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
       if (iVar4 == 0) {
@@ -327,7 +327,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
         iVar4 = *(int *)(iVar1 + 0x3ce8c) + -1;
         *(int *)(iVar1 + 0x3ce8c) = iVar4;
         in_stack_fffffac4 = (char *)0x43d272;
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   ((void *)(in_stack_00000004 * 0xac + (int)local_18),
                    (void *)((in_stack_00000004 + 1) * 0xac + (int)local_18),
                    (iVar4 - in_stack_00000004) * 0xac);

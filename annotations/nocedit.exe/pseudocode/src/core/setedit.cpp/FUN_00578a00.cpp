@@ -10,10 +10,10 @@ void core_setedit_cpp_FUN_00578a00(void)
 
 {
   int iVar1;
-  FILE *in_stack_00000004;
+  _FILE *in_stack_00000004;
   
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000004);
+    iVar1 = _fgetc(in_stack_00000004);
     if (iVar1 < 0) {
       return;
     }

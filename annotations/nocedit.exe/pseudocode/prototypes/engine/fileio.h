@@ -13,7 +13,7 @@ void __cdecl trimWhitespace(char *string);
 
 // Original: engine_fileio.cpp_safeCloseFile_FUN_004b1db0
 // Address: 004b1db0
-void __cdecl safeCloseFile(FILE **file_ptr);
+void __cdecl safeCloseFile(_FILE **file_ptr);
 
 // Original: engine_fileio.cpp_buildFilePath_FUN_004b1de0
 // Address: 004b1de0
@@ -33,11 +33,11 @@ void __cdecl formatSystemError(char *dest_buffer);
 
 // Original: engine_fileio.cpp_copyFileWithProgress_FUN_004b2030
 // Address: 004b2030
-char * __cdecl copyFileWithProgress(FILE *source_file,FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes);
+char * __cdecl copyFileWithProgress(_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes);
 
 // Original: engine_fileio.cpp_openFileWithRetry_FUN_004b2200
 // Address: 004b2200
-FILE * __cdecl openFileWithRetry(char *filename,char *mode);
+_FILE * __cdecl openFileWithRetry(char *filename,char *mode);
 
 // Original: engine_fileio.cpp_parseTimestampRecord_FUN_004b2270
 // Address: 004b2270
@@ -45,7 +45,7 @@ int __cdecl parseTimestampRecord(char *input_string,STimestampRecord *output_rec
 
 // Original: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
 // Address: 004b23a0
-int __cdecl readTimestampFile(FILE *file,STimestampRecord **records,int *count);
+int __cdecl readTimestampFile(_FILE *file,STimestampRecord **records,int *count);
 
 // Original: engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640
 // Address: 004b2640
@@ -69,7 +69,7 @@ int __cdecl CCheckOutList::load(CCheckOutList *this_ptr);
 
 // Original: engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
 // Address: 004b2a60
-int __cdecl CCheckOutList::parse(CCheckOutList *this_ptr,FILE **file);
+int __cdecl CCheckOutList::parse(CCheckOutList *this_ptr,_FILE **file);
 
 // Original: engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
 // Address: 004b2d00
@@ -85,7 +85,7 @@ int __cdecl CCheckOutList::findEntry(CCheckOutList *this_ptr,char *filename);
 
 // Original: engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0
 // Address: 004b2eb0
-int __cdecl CCheckOutList::write(CCheckOutList *this_ptr,FILE **file_handle);
+int __cdecl CCheckOutList::write(CCheckOutList *this_ptr,_FILE **file_handle);
 
 // Original: engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
 // Address: 004b2f90
@@ -201,7 +201,7 @@ void __cdecl CFileManager::verifyPodCRC(CFileManager *this_ptr,char *pod_filenam
 
 // Original: engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50
 // Address: 004b7d50
-int __cdecl extractFileWithTimestamp(FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset, int checksum,int timestamp);
+int __cdecl extractFileWithTimestamp(_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset ,int checksum,int timestamp);
 
 // Original: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
 // Address: 004b7f50
@@ -233,7 +233,7 @@ int __cdecl CFileManager::findPodInList(CFileManager *this_ptr,CStrList *pod_lis
 
 // Original: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
 // Address: 004ba740
-int __cdecl CFileManager::checkOutAndExtractPod(CFileManager *this_ptr,CCheckOutItem *checkout_item,FILE *optional_pod_file);
+int __cdecl CFileManager::checkOutAndExtractPod(CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file);
 
 // Original: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
 // Address: 004baf00
@@ -253,11 +253,11 @@ void __cdecl CFileManager::setVersionControlCredentials(CFileManager *this_ptr,c
 
 // Original: engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
 // Address: 004bc650
-void __cdecl synchronizeFilesToDirectory(FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory);
+void __cdecl synchronizeFilesToDirectory(_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory);
 
 // Original: engine_fileio.cpp_writeArtFileEntries_FUN_004bc9f0
 // Address: 004bc9f0
-void __cdecl writeArtFileEntries(char *filename,FILE **raw_file,FILE **act_file);
+void __cdecl writeArtFileEntries(char *filename,_FILE **raw_file,_FILE **act_file);
 
 // Original: engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
 // Address: 004bca50

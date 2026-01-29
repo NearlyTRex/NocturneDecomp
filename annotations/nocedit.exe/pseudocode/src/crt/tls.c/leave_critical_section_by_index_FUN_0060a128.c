@@ -6,10 +6,10 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_tls_c_leave_critical_section_by_index_FUN_0060a128(int sectionIndex)
+void __cdecl leave_critical_section_by_index(int sectionIndex)
 
 {
-  crt_sync_c_leave_reentrant_critical_section_FUN_0060a0c4
+  leave_reentrant_critical_section
             ((ReentrantCriticalSection *)(&g_TlsDataBase + (sectionIndex & 0xfU) * 4));
   return;
 }

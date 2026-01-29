@@ -24,7 +24,7 @@ uint core_skeledit_cpp_FUN_0058b9b0(void)
   double dVar9;
   double dVar10;
   int in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   float local_54 [4];
   byte local_44 [4];
   float local_40;
@@ -39,10 +39,10 @@ uint core_skeledit_cpp_FUN_0058b9b0(void)
   float local_18;
   int local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x88);
+  __STK(0x88);
   iVar7 = 1;
   do {
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
+    iVar3 = _fgetc(in_stack_00000008);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar7 = iVar7 + -1, 0 < iVar7));
   iVar7 = 0;
@@ -50,8 +50,7 @@ uint core_skeledit_cpp_FUN_0058b9b0(void)
     iVar3 = 0;
     iVar8 = 0;
     do {
-      iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (in_stack_00000008,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&local_28,local_3c,
+      iVar4 = _fscanf(in_stack_00000008,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&local_28,local_3c,
                          local_54 + 3,local_54,&local_38,local_44,local_54 + 1,&local_34,&local_40,
                          local_54 + 2);
       if (iVar4 != 10) {
@@ -70,11 +69,11 @@ uint core_skeledit_cpp_FUN_0058b9b0(void)
         }
         iVar4 = iVar4 + 4;
       } while (iVar4 != 0xc);
-      dVar9 = crt_math_c_floor_FUN_005feb90((double)((local_24 + 4.0) * (float)0.00390625));
+      dVar9 = floor((double)((local_24 + 4.0) * (float)0.00390625));
       local_34 = SUB84(dVar9,0);
       local_30 = (int)((ulonglong)dVar9 >> 0x20);
       local_28 = (float)((float10)dVar9 * (float10)256);
-      dVar9 = crt_math_c_floor_FUN_005feb90
+      dVar9 = floor
                         ((double)((local_1c + local_20) * (float)0.00390625));
       local_38 = SUB84(dVar9,0);
       local_34 = (uint)((ulonglong)dVar9 >> 0x20);
@@ -94,10 +93,10 @@ uint core_skeledit_cpp_FUN_0058b9b0(void)
         fVar1 = *(float *)((int)local_54 + iVar6 + 8U) - unaff_EBP;
         fVar2 = (float)256;
         local_54[1] = 8.148736e-39;
-        dVar9 = crt_math_c_round_FUN_005fe6b0
+        dVar9 = round
                           ((double)((*(float *)(local_3c + iVar6 + -4) - local_1c) * fVar2));
         local_54[0] = 8.148745e-39;
-        dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * fVar2));
+        dVar10 = round((double)(fVar1 * fVar2));
         local_20 = (float)(int)ROUND(dVar9);
         local_14 = (int)ROUND(dVar10);
         if ((int)local_20 < 0) {

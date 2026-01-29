@@ -26,7 +26,7 @@ void core_msnedit_cpp_FUN_0053c4f0(void)
   if ((DAT_02f79818 & 1) == 0) {
     DAT_02f79818 = DAT_02f79818 | 1;
     shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&DAT_02f797e4);
-    crt_stdlib_c_atexit_FUN_005ff060(&DAT_0068064c);
+    _atexit(&DAT_0068064c);
   }
   iVar1 = g_WindowWidth;
   if (*(int *)(in_stack_00000004 + 0x24) != 0) {
@@ -54,7 +54,7 @@ void core_msnedit_cpp_FUN_0053c4f0(void)
     core_msnedit_cpp_FUN_00536e20();
     return;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (acStack_13c,"Selected: %s",*(uint *)(in_stack_00000004 + 0x28));
   engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0xb);
   shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290(FILE *file_handle,char *output_buffer,int max_length)
+; __cdecl void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290 (_FILE *file_handle,char *output_buffer,int max_length)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ; char *           Stack[0x8]:4   output_buffer
 ; int              Stack[0xc]:4   max_length
 ; Local Variables:
@@ -28,7 +28,7 @@ section .text
     LEA ECX,[ESP + 0x8]                 ; 005852a5
     PUSH ECX                            ; 005852a9
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 005852aa
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005852af
     MOV EDI,ESP                         ; 005852b2
     SUB ECX,ECX                         ; 005852b4

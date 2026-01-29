@@ -307,7 +307,7 @@ section .text
     PUSH 0x0                            ; 005788dc
     PUSH EBP                            ; 005788de
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005788df
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005788e4
     MOV EDI,EAX                         ; 005788e7
     TEST EAX,EAX                        ; 005788e9
@@ -343,7 +343,7 @@ section .text
     INC EBX                             ; 0057893b
     ADD ESI,0x28                        ; 0057893c
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0057893f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EBP,dword ptr [0x03654368]      ; 00578944 | DAT_03654368
     ADD ESP,0x10                        ; 0057894a
     CMP EBX,EBP                         ; 0057894d
@@ -357,7 +357,7 @@ section .text
     PUSH 0x646a74                       ; 00578965 | = "..\\core\\setedit.cpp"
     PUSH EDI                            ; 0057896a
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057896b
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00578970
     PUSH 0x0                            ; 00578973
         ;   Label: LAB_00578973

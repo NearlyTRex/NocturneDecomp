@@ -20,7 +20,7 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
   this_ptr_00 = (CHero *)(extraout_EAX + -0x1f738);
   *(CHero **)(extraout_EAX + 4) = this_ptr_00;
   *(CDemonActor_vtable **)(extraout_EAX + -0x1f5e4) = &g_CHeroVTable;
-  crt_memory_c_memset_FUN_005fde40((void *)(extraout_EAX + -0x1390c),0,0x2c);
+  memset((void *)(extraout_EAX + -0x1390c),0,0x2c);
   *(uint *)(extraout_EAX + -0x13914) = 0;
   *(uint *)(extraout_EAX + -0x1c95c) = 0x3f19999a;
   *(uint *)(extraout_EAX + -0x1c958) = 0x3f666666;

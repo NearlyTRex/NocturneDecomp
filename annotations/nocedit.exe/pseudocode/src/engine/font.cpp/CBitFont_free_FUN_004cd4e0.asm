@@ -16,8 +16,8 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
 ;   engine_font.cpp_CBitFont_reset_FUN_004cced0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EBP                            ; 004cd500
     MOV dword ptr [0x0067d20c],EDX      ; 004cd501 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ECX      ; 004cd507 | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 004cd50d
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004cd50d
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004cd512
     MOV dword ptr [EBX + 0x140],0x0     ; 004cd515
     CMP EBX,ESI                         ; 004cd51f

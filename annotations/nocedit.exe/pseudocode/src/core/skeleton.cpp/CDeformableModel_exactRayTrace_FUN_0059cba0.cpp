@@ -30,8 +30,7 @@ core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
   
   if ((g_FloatVertexArrayInitialized & 1) == 0) {
     g_FloatVertexArrayInitialized = g_FloatVertexArrayInitialized | 1;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-              (g_FloatVertexArray,5000,&g_CVectorTypeInfo);
+    __arrinit(g_FloatVertexArray,5000,&g_CVectorTypeInfo);
   }
   if (5000 < this_ptr->vertex_count[lod_index]) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";

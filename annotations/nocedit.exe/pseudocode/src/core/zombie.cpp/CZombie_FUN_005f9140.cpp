@@ -75,7 +75,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
                     (this_ptr_02,"head01",1);
   *(int *)(this_ptr->unk2 + 0x48) = iVar2;
   (this_ptr->base).base.model.part_visibility_flags[0x1d] = 0;
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0
+  iVar2 = stricmp
                     ((this_ptr->base).base.model.model_name,"newzomb1.dfm");
   if (iVar2 == 0) {
     uVar1 = *(uint *)(this_ptr->unk2 + 0x30);
@@ -109,10 +109,10 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
   this_ptr->unk2[1] = '\0';
   this_ptr->unk2[2] = '\0';
   this_ptr->unk2[3] = '\0';
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"newzchik.dfm");
+  iVar2 = stricmp(str1,"newzchik.dfm");
   if (((iVar2 == 0) ||
-      (iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"zombho1.dfm"), iVar2 == 0)) ||
-     (iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"zombho2.dfm"), iVar2 == 0)) {
+      (iVar2 = stricmp(str1,"zombho1.dfm"), iVar2 == 0)) ||
+     (iVar2 = stricmp(str1,"zombho2.dfm"), iVar2 == 0)) {
     this_ptr->unk2[0] = '\x01';
     this_ptr->unk2[1] = '\0';
     this_ptr->unk2[2] = '\0';

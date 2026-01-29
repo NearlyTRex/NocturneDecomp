@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-ulonglong crt_math_c_multiply64_FUN_0060b2b8(ulonglong a,ulonglong b)
+ulonglong multiply64(ulonglong a,ulonglong b)
 
 {
   if (((int)(a >> 0x20) == 0) && ((int)(b >> 0x20) == 0)) {

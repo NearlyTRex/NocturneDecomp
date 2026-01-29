@@ -23,18 +23,6 @@
       },
       {
         "category": "other",
-        "column": 65,
-        "line": 30,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 86,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 23,
         "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -90,7 +78,7 @@
     {
       "addr": "005ff9f3",
       "is_variadic": false,
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe840",
@@ -211,14 +199,14 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "FILE *in_stack_00000008;",
+      "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);",
+      "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
@@ -239,7 +227,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",local_214);",
+      "text": "iVar1 = _fscanf(in_stack_00000008,\"%[^\\n]\\n\",local_214);",
       "type": "stack_param"
     },
     {

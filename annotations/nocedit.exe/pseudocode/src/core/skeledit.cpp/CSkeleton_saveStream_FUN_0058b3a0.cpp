@@ -2,12 +2,12 @@
 // Address: 0058b3a0
 // Address Range: [[0058b3a0, 0058b658]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,FILE *file_handle)
+core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,_FILE *file_handle)
 
 {
   float *pfVar1;
@@ -24,24 +24,23 @@ core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,FILE *fi
   int local_18;
   int local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x4c);
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// skeleton version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// bonecount, frameCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            ((FILE *)this_ptr,"%d,%d\n",
+  __STK(0x4c);
+  _fprintf((_FILE *)this_ptr,"// skeleton version\n");
+  _fprintf((_FILE *)this_ptr,"%d\n");
+  _fprintf((_FILE *)this_ptr,"// bonecount, frameCount\n");
+  _fprintf((_FILE *)this_ptr,"%d,%d\n",
              *(uint *)(in_stack_00000004[1].state_names[2] + 0x10));
   iVar9 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// boneList\n");
+  _fprintf((_FILE *)this_ptr,"// boneList\n");
   if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {
     pcVar6 = in_stack_00000004[1].state_names[2] + 0x14;
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"\"%s\", %d\n",pcVar6);
+      _fprintf((_FILE *)this_ptr,"\"%s\", %d\n",pcVar6);
       iVar9 = iVar9 + 1;
       pcVar6 = pcVar6 + 0x24;
     } while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// angle list: w,x,y,z\n");
+  _fprintf((_FILE *)this_ptr,"// angle list: w,x,y,z\n");
   pfVar7 = (float *)in_stack_00000004[1].motions[0].signals[0xb].frame_number;
   local_18 = 0;
   if (0 < in_stack_00000004[1].motions[0].signals[10].value) {
@@ -55,43 +54,40 @@ core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,FILE *fi
           fVar4 = *pfVar7;
           pfVar7 = pfVar7 + 4;
           iVar9 = iVar9 + 1;
-          crt_stdio_c_fprintf_FUN_005fe6d0
-                    ((FILE *)this_ptr,"%g,%g,%g,%g\n",(double)fVar4,(double)*pfVar3,
+          _fprintf((_FILE *)this_ptr,"%g,%g,%g,%g\n",(double)fVar4,(double)*pfVar3,
                      (double)*pfVar2,(double)*pfVar1);
         } while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));
       }
       local_18 = local_18 + 1;
     } while (local_18 < in_stack_00000004[1].motions[0].signals[10].value);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// root offset list: x,y,z\n");
+  _fprintf((_FILE *)this_ptr,"// root offset list: x,y,z\n");
   local_1c = 0;
   if (0 < in_stack_00000004[1].motions[0].signals[10].value) {
     iVar9 = 0;
     do {
       iVar5 = in_stack_00000004[1].motions[0].signals[0xb].value;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                ((FILE *)this_ptr,"%g,%g,%g\n",(double)*(float *)(iVar9 + iVar5),
+      _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)*(float *)(iVar9 + iVar5),
                  (double)*(float *)(iVar9 + 4 + iVar5),(double)*(float *)(iVar9 + 8 + iVar5));
       iVar9 = iVar9 + 0xc;
       local_1c = local_1c + 1;
     } while (local_1c < in_stack_00000004[1].motions[0].signals[10].value);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// canceled movement list: x,y,z\n");
+  _fprintf((_FILE *)this_ptr,"// canceled movement list: x,y,z\n");
   local_14 = 0;
   if (0 < in_stack_00000004[1].motions[0].signals[10].value) {
     iVar9 = 0;
     do {
       iVar5 = in_stack_00000004[1].motions[0].signals[0xc].frame_number;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                ((FILE *)this_ptr,"%g,%g,%g\n",(double)*(float *)(iVar9 + iVar5),
+      _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)*(float *)(iVar9 + iVar5),
                  (double)*(float *)(iVar9 + 4 + iVar5),(double)*(float *)(iVar9 + 8 + iVar5));
       iVar9 = iVar9 + 0xc;
       local_14 = local_14 + 1;
     } while (local_14 < in_stack_00000004[1].motions[0].signals[10].value);
   }
-  core_motion_cpp_CMotionList_save_FUN_0052d170(in_stack_00000004,(FILE *)this_ptr);
+  core_motion_cpp_CMotionList_save_FUN_0052d170(in_stack_00000004,(_FILE *)this_ptr);
   iVar9 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// reference bone org list: x,y,z\n");
+  _fprintf((_FILE *)this_ptr,"// reference bone org list: x,y,z\n");
   if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {
     piVar8 = &in_stack_00000004[1].motions[0].signals[0xc].value;
     do {
@@ -100,8 +96,7 @@ core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,FILE *fi
       fVar4 = (float)*piVar8;
       piVar8 = piVar8 + 3;
       iVar9 = iVar9 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                ((FILE *)this_ptr,"%g,%g,%g\n",(double)fVar4,(double)*pfVar1,(double)*pfVar7);
+      _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)fVar4,(double)*pfVar1,(double)*pfVar7);
     } while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));
   }
   if (((this_ptr->motion_list).state_names[0][8] & 0x20U) != 0) {

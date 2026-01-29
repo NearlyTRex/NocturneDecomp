@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setutil_cpp_C3DSCamera_savePVS_FUN_00587450(C3DSCamera *this_ptr,FILE *file_handle)
+; __cdecl int __cdecl core_setutil_cpp_C3DSCamera_savePVS_FUN_00587450(C3DSCamera *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0 at 0057a7fe
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 00587471
     XOR EBX,EBX                         ; 00587472
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00587474
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ESI,dword ptr [EDI + 0x194]     ; 00587479
     ADD ESP,0xc                         ; 0058747f
     TEST ESI,ESI                        ; 00587482
@@ -54,7 +54,7 @@ section .text
     ADD ESI,0x4                         ; 00587498
     INC EBX                             ; 0058749b
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058749c
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ECX,dword ptr [EDI + 0x194]     ; 005874a1
     ADD ESP,0xc                         ; 005874a7
     CMP EBX,ECX                         ; 005874aa
@@ -71,7 +71,7 @@ section .text
         ;   Label: LAB_005874b5
     PUSH EBP                            ; 005874ba
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005874bb
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 005874c0
     POP EBP                             ; 005874c3
     POP EDI                             ; 005874c4

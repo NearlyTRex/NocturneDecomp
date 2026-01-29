@@ -18,7 +18,7 @@ core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
     iVar1 = 0;
   }
   else {
-    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(condition_expression,"none");
+    iVar2 = stricmp(condition_expression,"none");
     iVar1 = 0;
     if (iVar2 != 0) {
       DAT_02d0a45c = 0;

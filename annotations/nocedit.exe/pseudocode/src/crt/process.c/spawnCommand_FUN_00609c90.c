@@ -7,12 +7,12 @@
 #include "nocturne.h"
 
 int __watcallStack
-crt_process_c_spawnCommand_FUN_00609c90
+spawnCommand
           (int mode,char *cmdPath,char *cmdName,char *args,void *envp,int *result)
 
 {
   int iVar1;
   
-  iVar1 = crt_process_c_spawnvp_FUN_0060ca20(mode,cmdPath,&cmdName);
+  iVar1 = spawnvp(mode,cmdPath,&cmdName);
   return iVar1;
 }

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455250 (CDemonCubeTriangle *this_ptr,FILE *file_handle,CVector3f *vertex_buffer_base)
+; __cdecl void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455250 (CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
 ;
 ; Parameters:
 ; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; CVector3f *      Stack[0xc]:4   vertex_buffer_base
 ;
 ; XREF[1]:
@@ -50,7 +50,7 @@ section .text
     PUSH 0x15c4824                      ; 0045528c | g_TempTriangleIndices
     MOV [0x015c482c],EAX                ; 00455291 | g_TempTriangleIndices[2]
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00455296
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045529b
     MOV ECX,dword ptr [ESP + 0x10]      ; 0045529e
     PUSH ECX                            ; 004552a2
@@ -59,7 +59,7 @@ section .text
     ADD EBX,0xc                         ; 004552a7
     PUSH EBX                            ; 004552aa
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 004552ab
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004552b0
     POP ESI                             ; 004552b3
     POP EBX                             ; 004552b4

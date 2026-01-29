@@ -140,7 +140,7 @@ LAB_004f9c99:
         local_164.wielder = (CDemonActor *)in_stack_00000004;
         local_14 = local_164.damage_amount;
         (**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 4) + 0x154) + 0x11c))();
-        dVar14 = crt_math_c_round_FUN_005fe6b0
+        dVar14 = round
                            ((double)(local_164.damage_amount * (float)2.5 *
                                     (float)0.25));
         local_3c = (int)ROUND(dVar14);

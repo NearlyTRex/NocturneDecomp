@@ -54,7 +54,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
       local_60._0_4_ = in_stack_0000000c->z - in_stack_00000008->z;
       fVar1 = SQRT((float)local_60._0_4_ * (float)local_60._0_4_ +
                    fStack_68 * fStack_68 + fStack_64 * fStack_64);
-      crt_math_c_round_FUN_005fe6b0((double)in_stack_00000010->damage_amount * 0.40000000000000002);
+      round((double)in_stack_00000010->damage_amount * 0.40000000000000002);
       if (fVar1 <= 0.0) {
         fStack_68 = 0.0;
         fStack_6c = 0.0;

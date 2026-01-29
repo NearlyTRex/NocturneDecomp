@@ -6,12 +6,12 @@
 
 #include "nocturne.h"
 
-double __softfp_double crt_math_c_modf_FUN_00602102(double value,double *integer_part)
+double __softfp_double modf(double value,double *integer_part)
 
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0(value);
+  dVar1 = round(value);
   *value._4_4_ = dVar1;
   return value - dVar1;
 }

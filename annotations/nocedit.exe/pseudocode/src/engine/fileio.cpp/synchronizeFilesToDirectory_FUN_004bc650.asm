@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650 (FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
+; __cdecl void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650 (_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_list_output
+; _FILE *          Stack[0x4]:4   file_list_output
 ; char *           Stack[0x8]:4   source_directory
 ; char *           Stack[0xc]:4   file_pattern
 ; char *           Stack[0x10]:4   dest_directory
@@ -132,7 +132,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 004bc719
     PUSH EDX                            ; 004bc71b
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004bc71c
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004bc721
     LEA EDI,[ESP + 0x214]               ; 004bc724
     PUSH EDI                            ; 004bc72b
@@ -255,7 +255,7 @@ section .text
     PUSH 0x0                            ; 004bc86a
     PUSH EBP                            ; 004bc86c
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004bc86d
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004bc872
     MOV ESI,EAX                         ; 004bc875
     TEST EAX,EAX                        ; 004bc877
@@ -278,7 +278,7 @@ section .text
     LEA EAX,[ESP + 0x438]               ; 004bc8b0
     PUSH EAX                            ; 004bc8b7
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004bc8b8
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004bc8bd
     MOV EBX,EAX                         ; 004bc8c0
     TEST EAX,EAX                        ; 004bc8c2
@@ -297,7 +297,7 @@ section .text
     PUSH ESI                            ; 004bc8e3
         ;   Label: LAB_004bc8e3
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 004bc8e4
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 004bc8e9
     CMP EAX,-0x1                        ; 004bc8ec
     JZ 0x004bc929                       ; 004bc8ef
@@ -305,7 +305,7 @@ section .text
     PUSH EBX                            ; 004bc8f1
     PUSH EAX                            ; 004bc8f2
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 004bc8f3
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 004bc8f8
     JMP 0x004bc8e3                      ; 004bc8fb
         ;   XREF to: 004bc8e3 (UNCONDITIONAL_JUMP)  ; LAB_004bc8e3
@@ -353,13 +353,13 @@ section .text
     PUSH 0x629192                       ; 004bc988 | = "..\\engine\\fileio.cpp"
     PUSH ESI                            ; 004bc98d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004bc98e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004bc993
     PUSH 0x100e                         ; 004bc996
     PUSH 0x6291a7                       ; 004bc99b | = "..\\engine\\fileio.cpp"
     PUSH EBX                            ; 004bc9a0
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004bc9a1
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004bc9a6
     MOV EBX,dword ptr [ESP + 0x420]     ; 004bc9a9
     PUSH EBX                            ; 004bc9b0

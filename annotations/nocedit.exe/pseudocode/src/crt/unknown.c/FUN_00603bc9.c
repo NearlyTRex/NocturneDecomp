@@ -14,7 +14,7 @@ void crt_unknown_c_FUN_00603bc9(void)
   char **in_stack_fffffff4;
   uint local_8;
   
-  dVar1 = crt_string_c_strtod_main_FUN_00605d5d((char *)0x0,in_stack_fffffff4);
+  dVar1 = strtod_main((char *)0x0,in_stack_fffffff4);
   *in_stack_00000008 = SUB84(dVar1,0);
   local_8 = (uint)((ulonglong)dVar1 >> 0x20);
   in_stack_00000008[1] = local_8;

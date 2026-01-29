@@ -17,7 +17,7 @@
         "category": "incompatible_types",
         "column": 43,
         "line": 114,
-        "message": "cannot convert 'int (*)(SVertexPair*, SVertexPair*)' to 'QSORT_COMPARATOR' {aka 'int (**)(void*, void*)'}"
+        "message": "invalid conversion from 'int (*)(SVertexPair*, SVertexPair*)' to '__compar_fn_t' {aka 'int (*)(const void*, const void*)'} [-fpermissive]"
       },
       {
         "category": "other",
@@ -101,7 +101,7 @@
         "category": "incompatible_types",
         "column": 43,
         "line": 174,
-        "message": "cannot convert 'int (*)(SVertexPair*, SVertexPair*)' to 'QSORT_COMPARATOR' {aka 'int (**)(void*, void*)'}"
+        "message": "invalid conversion from 'int (*)(SVertexPair*, SVertexPair*)' to '__compar_fn_t' {aka 'int (*)(const void*, const void*)'} [-fpermissive]"
       },
       {
         "category": "other",
@@ -288,9 +288,9 @@
       },
       {
         "category": "other",
-        "column": 34,
+        "column": 113,
         "line": 192,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -373,7 +373,7 @@
     {
       "addr": "005ff0f3",
       "is_variadic": false,
-      "name": "crt_string.c_strtod_FUN_005ff0f3"
+      "name": "crt_string.c__strtod_FUN_005ff0f3"
     },
     {
       "addr": "00401fd0",
@@ -814,14 +814,14 @@
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_fffffebc",
-      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
+      "text": "dVar9 = _strtod(in_stack_fffffebc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_fffffebc",
-      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
+      "text": "dVar9 = _strtod(in_stack_fffffebc);",
       "type": "stack_param"
     },
     {

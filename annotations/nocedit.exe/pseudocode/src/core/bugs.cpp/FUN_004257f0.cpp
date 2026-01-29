@@ -49,15 +49,15 @@ void core_bugs_cpp_FUN_004257f0(void)
   fVar7 = local_5c.z * 0.5f;
   local_5c.x = local_50 * 0.5f;
   fVar5 = *(float *)(in_stack_00000004 + 0x24);
-  local_44 = crt_math_c_floor_FUN_005feb90
+  local_44 = floor
                        ((double)((*(float *)(in_stack_00000004 + 0x20) + local_5c.y * 0.5f
                                  ) * local_c));
-  dVar9 = crt_math_c_round_FUN_005fe6b0(local_44);
+  dVar9 = round(local_44);
   iStack_3c = (int)ROUND(dVar9);
-  local_4c = crt_math_c_floor_FUN_005feb90((double)((fVar5 + fVar7) * local_10));
+  local_4c = floor((double)((fVar5 + fVar7) * local_10));
   local_18 = local_44._4_4_;
   fVar5 = (float)local_44._4_4_ * 0.5f;
-  dVar9 = crt_math_c_round_FUN_005fe6b0(local_4c);
+  dVar9 = round(local_4c);
   local_20 = (int)ROUND(dVar9);
   fVar1 = (float)local_20 * 0.5f;
   fVar7 = 0.5f * 11.0f * (float)0.5;

@@ -20,7 +20,7 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   char local_e4 [80];
   char local_94 [80];
   int local_44;
-  FILE *local_40;
+  _FILE *local_40;
   int local_3c;
   int local_38;
   int local_34;
@@ -45,20 +45,19 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   if (iVar4 != -2) {
     local_40 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (local_94,(char *)0x0,"rt","..\\shape\\design.c",0x25a1);
-    if (local_40 == (FILE *)0x0) {
+    if (local_40 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\shape\\design.c";
       g_CurrentLineNumber = 0x25a2;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Bad name");
     }
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%s\n",local_134);
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%f,%f\n",&local_30,local_2c);
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%d\n",&local_44);
+    _fscanf(local_40,"%s\n",local_134);
+    _fscanf(local_40,"%f,%f\n",&local_30,local_2c);
+    _fscanf(local_40,"%d\n",&local_44);
     for (local_38 = 0; local_38 < local_44; local_38 = local_38 + 1) {
-      crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%s\n",local_e4);
-      crt_stdio_c_fscanf_FUN_005fe7c0
-                (local_40,"%f,%f,%f,%f\n",&local_20,&local_1c,&local_18,&local_14);
+      _fscanf(local_40,"%s\n",local_e4);
+      _fscanf(local_40,"%f,%f,%f,%f\n",&local_20,&local_1c,&local_18,&local_14);
       for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
-        iVar4 = crt_string_c_strcmp_FUN_005fef20(g_ModelPolygonData[local_34].texture_name,local_e4)
+        iVar4 = strcmp(g_ModelPolygonData[local_34].texture_name,local_e4)
         ;
         if (iVar4 == 0) {
           pcVar5 = local_134;

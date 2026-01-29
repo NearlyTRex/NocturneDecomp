@@ -54,8 +54,7 @@ core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_e0,orientation_vector);
   if ((g_ShatterVertexArrayInitialized & 1) == 0) {
     g_ShatterVertexArrayInitialized = g_ShatterVertexArrayInitialized | 1;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-              (g_ShatterVertexArray,3000,&g_CVectorTypeInfo);
+    __arrinit(g_ShatterVertexArray,3000,&g_CVectorTypeInfo);
   }
   if (3000 < this_ptr->vertex_count[lod_index]) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
@@ -84,7 +83,7 @@ core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0
       skinned_vertices = skinned_vertices + 1;
     } while (iVar6 < *(int *)(local_5c + 0x2c));
   }
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_b8,3,&g_CVectorTypeInfo);
+  __arrinit(&local_b8,3,&g_CVectorTypeInfo);
   local_24 = 0;
   local_44 = 0;
   if (0 < this_ptr->num_parts) {

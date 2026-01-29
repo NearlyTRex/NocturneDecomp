@@ -11,6 +11,6 @@ int __cdecl core_bugs_cpp_FUN_00427cc0(SBug **objs)
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(objs,400,&g_SBugTypeInfo);
+  iVar1 = __arrfini(objs,400,&g_SBugTypeInfo);
   return iVar1;
 }

@@ -63,7 +63,7 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
     if ((DAT_03364d14 & 1) == 0) {
       DAT_03364d14 = DAT_03364d14 | 1;
       shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&INT_03364ce0);
-      crt_stdlib_c_atexit_FUN_005ff060(&DAT_006816b0);
+      _atexit(&DAT_006816b0);
     }
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
               ((CEdScrollBar *)&INT_03364ce0,0,g_WindowHeight + -10,g_WindowWidth + -1,

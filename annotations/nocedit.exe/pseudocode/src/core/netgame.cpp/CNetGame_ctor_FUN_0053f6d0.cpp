@@ -15,8 +15,7 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame *this_pt
   char *pcVar3;
   char *pcVar4;
   
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->players,2,&g_SNetPlayerTypeInfo);
+  pvVar2 = __arrinit(this_ptr->players,2,&g_SNetPlayerTypeInfo);
   support_trisock_cpp_invalidateSocket_FUN_005e1ae0((SSocketContext *)((int)pvVar2 + 0x150));
   ((CNetGame *)(extraout_EAX + -0x170))->connection_type = 0;
   *(uint *)(extraout_EAX + -0x16c) = 0;

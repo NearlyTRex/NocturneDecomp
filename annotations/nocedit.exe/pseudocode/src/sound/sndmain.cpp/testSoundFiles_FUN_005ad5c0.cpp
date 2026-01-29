@@ -50,10 +50,10 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
       drive = (char *)0x0;
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                          ((CStrList *)(local_34 + 8),iVar4);
-      crt_string_c_splitpath_FUN_005ff178(pcVar2,drive,dir,(char *)ppcVar5,(char *)pCVar1);
-      crt_file_c_makepath_FUN_005febfc
+      splitpath(pcVar2,drive,dir,(char *)ppcVar5,(char *)pCVar1);
+      makepath
                 ((char *)aCStack_444,(char *)0x0,(char *)0x0,(char *)apcStack_23c,"mp3");
-      crt_file_c_makepath_FUN_005febfc
+      makepath
                 ((char *)aCStack_340,(char *)0x0,(char *)0x0,(char *)apcStack_23c,"wav");
       in_stack_fffff0e4 = aCStack_444;
       in_stack_fffff0e0 = "sound";
@@ -64,7 +64,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
         iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",(char *)in_stack_fffff0e4);
         if (iVar3 < 1) {
           shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)(local_34 + 8),iVar4);
-          crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,"Orphaned sfx file %s");
+          sprintf((char *)aCStack_748,"Orphaned sfx file %s");
           in_stack_fffff0e0 = &stack0xfffff0e8;
           in_stack_fffff0e4 = aCStack_748;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -95,25 +95,25 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
                   (g_CEditorToolsPtr,(float)iVar4,(float)(int)CStack_24.data_array);
         shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                   ((CStrList *)&CStack_24.data_array,iVar4);
-        crt_stdio_c_sprintf_FUN_005fdbd0(SStack_95c.found_path,"sound\\%s");
+        sprintf(SStack_95c.found_path,"sound\\%s");
         iVar3 = engine_dosio_c_findFile_FUN_00481760(&SStack_95c);
         if (iVar3 == 0) {
           shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                     ((CStrList *)&CStack_24.data_array,iVar4);
-          crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,"Can't get file info for %s");
+          sprintf((char *)aCStack_748,"Can't get file info for %s");
           in_stack_fffff0e0 = &stack0xfffff0e8;
           in_stack_fffff0e4 = aCStack_748;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     ((CStrList *)&stack0xfffff0e8,(char *)in_stack_fffff0e4);
         }
         else {
-          crt_string_c_splitpath_FUN_005ff178
+          splitpath
                     (SStack_95c.found_path,(char *)0x0,(char *)0x0,acStack_13c,(char *)0x0);
-          crt_file_c_makepath_FUN_005febfc
+          makepath
                     (acStack_548,(char *)0x0,(char *)0x0,acStack_13c,"wav");
           iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_548);
           if (-1 < iVar3) {
-            crt_stdio_c_sprintf_FUN_005fdbd0
+            sprintf
                       ((char *)aCStack_748,"%s found in both wav and mp3 format");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80
                       ((CStrList *)&stack0xfffff0e8,(char *)aCStack_748);
@@ -121,17 +121,17 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
           ppcVar5 = (char **)&stack0xfffff0e8;
           in_stack_fffff0e0 = &stack0xfffff0e8;
           ppcVar6 = (char **)&stack0xfffff0e8;
-          crt_file_c_makepath_FUN_005febfc
+          makepath
                     (SStack_b70.found_path,(char *)0x0,"sound",acStack_13c,"sfx");
           iVar3 = engine_dosio_c_findFile_FUN_00481760(&SStack_b70);
           if (iVar3 == 0) {
-            crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,"No sfx file for %s");
+            sprintf((char *)aCStack_748,"No sfx file for %s");
             in_stack_fffff0e4 = aCStack_748;
             shape_edittool_cpp_CStrList_add_FUN_004a2b80
                       ((CStrList *)&stack0xfffff0e8,(char *)in_stack_fffff0e4);
           }
           else if (SStack_b70.timestamp < SStack_95c.timestamp) {
-            crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,"%s older than %s");
+            sprintf((char *)aCStack_748,"%s older than %s");
             in_stack_fffff0e4 = aCStack_748;
             shape_edittool_cpp_CStrList_add_FUN_004a2b80
                       ((CStrList *)&stack0xfffff0e8,(char *)in_stack_fffff0e4);

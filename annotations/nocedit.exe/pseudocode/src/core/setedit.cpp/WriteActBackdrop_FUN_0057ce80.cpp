@@ -37,7 +37,7 @@ void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
   void *local_20;
   void *local_1c;
   int local_18;
-  FILE *local_14;
+  _FILE *local_14;
   
   local_20 = (void *)0x0;
   local_24 = g_WindowWidth;
@@ -86,9 +86,9 @@ void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_f0,"%s.raw",in_stack_0000000c);
+  sprintf(local_f0,"%s.raw",in_stack_0000000c);
   local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f0,"wb");
-  if (local_14 == (FILE *)0x0) {
+  if (local_14 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xbd9;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write backdrop");
@@ -110,7 +110,7 @@ void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
           else {
             character = 0;
           }
-          crt_stdio_c_fputc_FUN_006007a0(character,local_14);
+          _fputc(character,local_14);
           iVar2 = iVar2 + 1;
           puVar4 = puVar4 + 1;
         } while (iVar2 < in_stack_00000010);
@@ -120,14 +120,14 @@ void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
     } while (iVar5 < in_stack_00000014);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\setedit.cpp",0xbeb);
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_a0,"%s.act",in_stack_0000000c);
+  sprintf(local_a0,"%s.act",in_stack_0000000c);
   local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_a0,"wb");
-  if (local_14 == (FILE *)0x0) {
+  if (local_14 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xbef;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write act");
   }
-  crt_stdio_c_fwrite_FUN_005fdc00(g_SourcePaletteData,0x100,3,local_14);
+  _fwrite(g_SourcePaletteData,0x100,3,local_14);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\setedit.cpp",0xbf1);
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
   if (local_1c != (void *)0x0) {

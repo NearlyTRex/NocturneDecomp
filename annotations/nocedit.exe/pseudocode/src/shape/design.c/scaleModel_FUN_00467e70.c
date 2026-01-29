@@ -33,7 +33,7 @@ void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
-    dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff90);
+    dVar6 = _strtod(in_stack_ffffff90);
     fVar2 = (float)dVar6;
     for (local_18 = 0; local_18 < g_VertexCount; local_18 = local_18 + 1) {
       g_LoadedVertices[local_18].vertex.x = g_LoadedVertices[local_18].vertex.x * fVar2;

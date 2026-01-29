@@ -2297,8 +2297,8 @@ section .text
         ;   XREF to: 0047e41d (CONDITIONAL_JUMP)  ; LAB_0047e41d
     LEA EAX,[EDI + -0x4]                ; 0047e411
     PUSH EAX                            ; 0047e414
-    CALL crt_memory.c_free_FUN_005fe659 ; 0047e415
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0047e415
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0047e41a
     MOV EAX,dword ptr [EBP + 0x92]      ; 0047e41d
         ;   Label: LAB_0047e41d

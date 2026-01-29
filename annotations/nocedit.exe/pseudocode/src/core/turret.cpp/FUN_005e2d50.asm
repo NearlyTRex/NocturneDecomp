@@ -35,7 +35,7 @@
 ;   core_turret.cpp_FUN_005e3280
 ;   core_turret.cpp_FUN_005e3560
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
 ; *****************************************************************************
@@ -220,8 +220,8 @@ section .text
     PUSH 0xa                            ; 005e2f75
     LEA EAX,[ESP + 0x8]                 ; 005e2f77
     PUSH EAX                            ; 005e2f7b
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005e2f7c
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005e2f7c
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005e2f81
     MOV EAX,ESP                         ; 005e2f84
     PUSH EAX                            ; 005e2f86

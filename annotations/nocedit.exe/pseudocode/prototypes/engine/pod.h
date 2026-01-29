@@ -13,7 +13,7 @@ uint __cdecl crc32UpdateBuffer(uchar *data_buffer,uint byte_count,uint initial_c
 
 // Original: engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0
 // Address: 0054f3e0
-uint __cdecl crc32ComputeFromFile(FILE *file_stream,uint total_bytes);
+uint __cdecl crc32ComputeFromFile(_FILE *file_stream,uint total_bytes);
 
 // Original: engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490
 // Address: 0054f490

@@ -32,7 +32,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -72,8 +72,8 @@ section .text
     ADD ESP,0xc                         ; 005805da
     MOV EAX,ESP                         ; 005805dd
     PUSH EAX                            ; 005805df
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 005805e0
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 005805e0
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 005805e5
     PUSH EDI                            ; 005805e8
     PUSH 0x6485c2                       ; 005805e9 | = "backdrop\\%s.pvs"
@@ -84,8 +84,8 @@ section .text
     ADD ESP,0xc                         ; 005805f8
     MOV EAX,ESP                         ; 005805fb
     PUSH EAX                            ; 005805fd
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 005805fe
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 005805fe
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00580603
     MOV EAX,dword ptr [EBX + 0x19c]     ; 00580606
     MOV dword ptr [EBX + 0x198],0x0     ; 0058060c

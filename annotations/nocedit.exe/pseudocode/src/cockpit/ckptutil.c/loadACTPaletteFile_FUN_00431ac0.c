@@ -11,7 +11,7 @@ cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *out
 
 {
   char cVar1;
-  FILE *file;
+  _FILE *file;
   SIZE_T SVar2;
   int iVar3;
   char *pcVar4;
@@ -69,7 +69,7 @@ LAB_00431b33:
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   file = engine_dosio_c_getFile_FUN_00481a50("art",local_ac,"rb");
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     puVar6 = g_DefaultPalette;
     for (iVar3 = 0xc0; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(uint *)output_buffer = *(uint *)puVar6;
@@ -83,9 +83,9 @@ LAB_00431b33:
     }
     return;
   }
-  SVar2 = crt_stdio_c_fread_FUN_005fd990(output_buffer,0x100,3,file);
+  SVar2 = _fread(output_buffer,0x100,3,file);
   if (SVar2 != 3) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_5c,"Error reading %s.",local_ac);
+    sprintf(local_5c,"Error reading %s.",local_ac);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x13d;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_5c);

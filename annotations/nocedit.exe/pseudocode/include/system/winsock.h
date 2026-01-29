@@ -75,6 +75,9 @@ typedef struct WSADATA {
 // Function Definition: WSAStartup
 typedef int (*WSAStartup)(WORD wVersionRequested, LPWSADATA lpWSAData);
 
+// Function Definition: _gethostname
+typedef int (*_gethostname)(char* name, int namelen);
+
 // Function Definition: accept
 typedef SOCKET (*accept)(SOCKET s, struct SOCKADDR* addr, int* addrlen);
 
@@ -89,9 +92,6 @@ typedef int (*connect)(SOCKET s, struct SOCKADDR* name, int namelen);
 
 // Function Definition: gethostbyname
 typedef struct HOSTENT* (*gethostbyname)(char* name);
-
-// Function Definition: gethostname
-typedef int (*gethostname)(char* name, int namelen);
 
 // Function Definition: getservbyport
 typedef struct SERVENT* (*getservbyport)(int port, char* proto);

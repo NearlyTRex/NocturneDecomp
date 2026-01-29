@@ -53,7 +53,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
     return;
   }
   auStack_dc._0_4_ = 0x4c50dc;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->unk + 0x1c));
+  dVar11 = round((double)*(float *)(this_ptr->unk + 0x1c));
   fStack_2c = (float)(int)ROUND(dVar11);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_GunFlameTextures + (int)fStack_2c);
@@ -136,15 +136,15 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   this_ptr_00->vertex_buffer_ptr[1].v = 1.83671e-40;
   this_ptr_00->vertex_buffer_ptr[2].u = 2.3326216e-38;
   pSVar1 = this_ptr_00->vertex_buffer_ptr;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)(((float10)1 - fVar6) * fVar9));
+  dVar11 = round((double)(((float10)1 - fVar6) * fVar9));
   fVar9 = (float10)dVar11;
   pSVar1[2].v = 2.3326216e-38;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+  dVar11 = round((double)fVar4);
   fVar4 = (float10)dVar11;
   pSVar1 = this_ptr_00->vertex_buffer_ptr;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
+  dVar11 = round((double)fVar5);
   pSVar1[3].u = 1.83671e-40;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar8 * (fVar10 * fVar2 + fVar7)));
+  dVar12 = round((double)(fVar8 * (fVar10 * fVar2 + fVar7)));
   fStack_34 = (float)(int)ROUND(fVar4);
   this_ptr_00->vertex_buffer_ptr[3].v = 2.3326216e-38;
   iStack_38 = (int)ROUND(dVar11);

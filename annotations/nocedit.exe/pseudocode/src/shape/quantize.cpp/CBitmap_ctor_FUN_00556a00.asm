@@ -29,11 +29,11 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_free_FUN_005fe659
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -194,8 +194,8 @@ section .text
     PUSH ESI                            ; 00556b88
     MOV dword ptr [0x0067d20c],EDX      ; 00556b89 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ECX      ; 00556b8f | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00556b95
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00556b95
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00556b9a
     MOV EDI,0x640a89                    ; 00556b9d | = "..\\shape\\quantize.cpp"
     MOV EBP,0x67                        ; 00556ba2

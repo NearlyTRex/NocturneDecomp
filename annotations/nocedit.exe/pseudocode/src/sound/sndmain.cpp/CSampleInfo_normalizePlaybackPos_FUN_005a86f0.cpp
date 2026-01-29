@@ -37,7 +37,7 @@ sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
   }
   else {
     this_ptr_00 = position._0_4_;
-    dVar2 = crt_math_c_floor_FUN_005feb90(input_value);
+    dVar2 = floor(input_value);
     dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004) - dVar2;
   }
   this_ptr = (CSampleInfo *)((ulonglong)dVar2 >> 0x20);

@@ -29,8 +29,8 @@ float * core_boneguy_cpp_FUN_0041ba10(void)
   fVar5 = in_stack_00000008[2];
   fVar6 = in_stack_00000008[2];
   if (0.0 < (double)fVar1) {
-    dVar7 = crt_math_c_floor_FUN_005feb90((double)(*in_stack_00000008 * (float)0.023529411764705899));
-    dVar7 = crt_math_c_round_FUN_005fe6b0(dVar7);
+    dVar7 = floor((double)(*in_stack_00000008 * (float)0.023529411764705899));
+    dVar7 = round(dVar7);
     fVar2 = (1.0 - local_38) * fVar1;
     fStack_4c = (float)((ulonglong)(double)fVar1 >> 0x20);
     fStack_4c = fStack_4c - (float)(int)ROUND(dVar7);

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CCodec_finalize_FUN_0043ea00(CCodec *this_ptr,FILE *output_file)
+; __cdecl int __cdecl support_codec_cpp_CCodec_finalize_FUN_0043ea00(CCodec *this_ptr,_FILE *output_file)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   output_file
+; _FILE *          Stack[0x8]:4   output_file
 ;
 ; *****************************************************************************
 

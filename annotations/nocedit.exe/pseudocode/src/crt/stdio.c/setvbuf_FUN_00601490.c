@@ -2,13 +2,12 @@
 // Address: 00601490
 // Address Range: [[00601490, 0060153d]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_setvbuf_FUN_00601490 (FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
+// Signature: int __cdecl crt_stdio_c_setvbuf_FUN_00601490 (_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
 
 #include "nocturne.h"
 
 int __cdecl
-crt_stdio_c_setvbuf_FUN_00601490
-          (FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
+_setvbuf(_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
 
 {
   byte *pbVar1;
@@ -32,7 +31,7 @@ LAB_006014da:
     return -1;
   }
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(stream_ptr->_handle);
-  crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(stream_ptr);
+  DetectDeviceAndSetBuffering(stream_ptr);
   if (buffer_size != 0) {
     stream_ptr->_bufsize = buffer_size;
   }
@@ -42,7 +41,7 @@ LAB_006014da:
   stream_ptr->_ptr = buffer_ptr;
   stream_ptr->_flag = stream_ptr->_flag | buffer_mode;
   if (buffer_ptr == (char *)0x0) {
-    crt_stdio_c_InitializeFileBuffer_FUN_006027e0(stream_ptr);
+    InitializeFileBuffer(stream_ptr);
   }
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(stream_ptr->_handle);
   return 0;

@@ -21,7 +21,7 @@ char * __cdecl getItemIconName(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_loadItem_FUN_004fcfe0
 // Address: 004fcfe0
-int __cdecl loadItem(SInventoryItemInfo *item_info,FILE *file_handle);
+int __cdecl loadItem(SInventoryItemInfo *item_info,_FILE *file_handle);
 
 // Original: core_inv.cpp_CInventory_ctor_FUN_004fd020
 // Address: 004fd020
@@ -89,11 +89,11 @@ void __cdecl CInventory::renderItemModel(CInventory *this_ptr,CDemonActor *item,
 
 // Original: core_inv.cpp_CInventory_save_FUN_004ff210
 // Address: 004ff210
-void __cdecl CInventory::save(CInventory *this_ptr,FILE *file_handle);
+void __cdecl CInventory::save(CInventory *this_ptr,_FILE *file_handle);
 
 // Original: core_inv.cpp_CInventory_saveItems_FUN_004ff3b0
 // Address: 004ff3b0
-void __cdecl CInventory::saveItems(CInventory *this_ptr,FILE *file_handle);
+void __cdecl CInventory::saveItems(CInventory *this_ptr,_FILE *file_handle);
 
 // Original: core_inv.cpp_CInventory_load_FUN_004ff400
 // Address: 004ff400

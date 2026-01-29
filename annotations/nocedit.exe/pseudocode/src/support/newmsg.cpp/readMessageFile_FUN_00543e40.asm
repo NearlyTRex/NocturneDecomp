@@ -82,7 +82,7 @@ section .text
     PUSH EBP                            ; 00543e86
     PUSH 0x63e149                       ; 00543e87 | s_empty_0063e149
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00543e8c
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 00543e91
     ADD ESP,0xc                         ; 00543e93
     MOV EBX,EAX                         ; 00543e96
@@ -91,7 +91,7 @@ section .text
         ;   XREF to: 00543e6e (CONDITIONAL_JUMP)  ; LAB_00543e6e
     PUSH EAX                            ; 00543e9c
     CALL crt_stdio.c_ftell_FUN_00601560 ; 00543e9d
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 00543ea2
     PUSH ESI                            ; 00543ea5
     PUSH 0xff                           ; 00543ea6
@@ -100,27 +100,27 @@ section .text
     PUSH EAX                            ; 00543eb1
     MOV dword ptr [ESP + 0x310],EDI     ; 00543eb2
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 00543eb9
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00543ebe
     LEA EAX,[ESP + 0x300]               ; 00543ec1
     PUSH EAX                            ; 00543ec8
     PUSH 0x63e14a                       ; 00543ec9 | = "%d\n"
     PUSH ESI                            ; 00543ece
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00543ecf
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00543ed4
     PUSH ESI                            ; 00543ed7
     PUSH 0xff                           ; 00543ed8
     LEA EAX,[ESP + 0x8]                 ; 00543edd
     PUSH EAX                            ; 00543ee1
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 00543ee2
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00543ee7
     PUSH 0x2fa8cd0                      ; 00543eea | g_MessageCount
     PUSH 0x63e14e                       ; 00543eef | = "%d\n"
     PUSH ESI                            ; 00543ef4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00543ef5
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00543efa
     CMP dword ptr [ESP + 0x300],0x0     ; 00543efd
     JNZ 0x00544040                      ; 00543f05
@@ -131,23 +131,23 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00543f11
     PUSH EAX                            ; 00543f15
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 00543f16
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00543f1b
     PUSH 0x680a70                       ; 00543f1e | g_OSFontName
     PUSH 0x63e185                       ; 00543f23 | = "\"%[^\"]\"\n"
     PUSH EBX                            ; 00543f28
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00543f29
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00543f2e
     PUSH 0x63e18e                       ; 00543f31 | = " "
         ;   Label: LAB_00543f31
     PUSH EBX                            ; 00543f36
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00543f37
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00543f3c
     PUSH EBX                            ; 00543f3f
     CALL crt_stdio.c_ftell_FUN_00601560 ; 00543f40
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 00543f45
     CMP EAX,dword ptr [ESP + 0x304]     ; 00543f48
     JL 0x00544068                       ; 00543f4f
@@ -156,7 +156,7 @@ section .text
     PUSH 0x63e1f7                       ; 00543f57 | = "..\\support\\newmsg.cpp"
     PUSH EBX                            ; 00543f5c
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00543f5d
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV EBX,dword ptr [0x02fa8cd8]      ; 00543f62 | g_LocalizedStringCount
     ADD ESP,0xc                         ; 00543f68
     TEST EBX,EBX                        ; 00543f6b
@@ -244,7 +244,7 @@ section .text
     PUSH 0x63e190                       ; 00544078 | = "\"%[^\"]\", \"%[^\"]\"\n"
     PUSH EBX                            ; 0054407d
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0054407e
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 00544083
     CMP EAX,0x2                         ; 00544086
     JZ 0x005440af                       ; 00544089

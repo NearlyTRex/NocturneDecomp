@@ -39,11 +39,11 @@ void __cdecl core_game_cpp_CGame_FUN_004d85a0(CGame *this_ptr)
         if (0.0 < fVar2) break;
         iVar3 = this_ptr->status_display_count + -1;
         this_ptr->status_display_count = iVar3;
-        crt_string_c_memmove_FUN_005fe5e0(local_18,local_1c,(iVar3 - iVar4) * 0x100);
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove(local_18,local_1c,(iVar3 - iVar4) * 0x100);
+        memmove
                   (this_ptr->unk13 + iVar1 + 0x500,this_ptr->unk13 + iVar1 + 0x504,
                    (this_ptr->status_display_count - iVar4) * 4);
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   (this_ptr->unk13 + iVar1 + 0x514,this_ptr->unk13 + iVar1 + 0x518,
                    (this_ptr->status_display_count - iVar4) * 4);
         if (this_ptr->status_display_count <= iVar4) {

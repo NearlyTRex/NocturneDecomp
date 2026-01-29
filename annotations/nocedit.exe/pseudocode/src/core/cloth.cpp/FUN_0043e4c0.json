@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 17,
+        "message": "'fgetc_outptr' was not declared in this scope"
+      },
+      {
         "category": "other",
         "column": 18,
         "line": 18,
@@ -112,7 +118,7 @@
       "description": "Unresolved stack parameter",
       "line": 5,
       "match": "in_stack_00000004",
-      "text": "FILE *in_stack_00000004;",
+      "text": "_FILE *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -133,7 +139,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_fgetc_outptr_FUN_005ff245(in_stack_00000004,local_14);",
+      "text": "fgetc_outptr(in_stack_00000004,local_14);",
       "type": "stack_param"
     },
     {

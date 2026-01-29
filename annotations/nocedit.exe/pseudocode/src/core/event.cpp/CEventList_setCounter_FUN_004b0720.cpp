@@ -46,10 +46,10 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
     if (in_stack_0000000c == 0) {
       iVar4 = this_ptr->counter_count + -1;
       this_ptr->counter_count = iVar4;
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (this_ptr->unk6 + iVar3 * 0x20,this_ptr->unk6 + iVar3 * 0x20 + 0x20,
                  (iVar4 - iVar3) * 0x20);
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (this_ptr->variablesVarName1 + iVar1 + -0x2c,
                  this_ptr->variablesVarName1 + iVar1 + -0x28,(this_ptr->counter_count - iVar3) * 4);
       return;

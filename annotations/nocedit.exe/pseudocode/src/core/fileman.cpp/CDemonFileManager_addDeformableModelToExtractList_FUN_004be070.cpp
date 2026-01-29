@@ -16,8 +16,7 @@ core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Adding files for %s to extract list...");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            ((file_manager_ptr->base).file_ptr,"models\\%s\n",model_filename);
+  _fprintf((file_manager_ptr->base).file_ptr,"models\\%s\n",model_filename);
   this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x9000,"..\\core\\fileman.cpp",0x143);
   pCVar1 = (CDeformableModel *)0x0;
   if (this_ptr != (CDeformableModel *)0x0) {

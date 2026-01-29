@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110
 ; undefined1       Stack[-0x10f]:1  local_10f
@@ -49,7 +49,7 @@ section .text
     PUSH 0x62e24c                       ; 004eb6af | = "ART\\%s\n"
     PUSH EBX                            ; 004eb6b4
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004eb6b5
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004eb6ba
     MOV EDI,ESP                         ; 004eb6bd
     MOV DL,0x2e                         ; 004eb6bf
@@ -125,7 +125,7 @@ section .text
     PUSH 0x62e28f                       ; 004eb740 | = "ART\\%s\n"
     PUSH EBX                            ; 004eb745
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004eb746
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ESI,dword ptr [EBP + 0x370]     ; 004eb74b
     ADD ESP,0xc                         ; 004eb751
     TEST ESI,ESI                        ; 004eb754
@@ -143,7 +143,7 @@ section .text
     PUSH 0x62e297                       ; 004eb76a | = "ART\\%s\n"
     PUSH EBX                            ; 004eb76f
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004eb770
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004eb775
     MOV EDI,ESP                         ; 004eb778
     MOV DL,0x2e                         ; 004eb77a | s_change_the_thickness_(z-size)_0062e22e
@@ -219,7 +219,7 @@ section .text
     PUSH 0x62e2da                       ; 004eb7fa | = "ART\\%s\n"
     PUSH EBX                            ; 004eb7ff
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004eb800
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004eb805
     ADD ESP,0x100                       ; 004eb808
     POP EBP                             ; 004eb80e

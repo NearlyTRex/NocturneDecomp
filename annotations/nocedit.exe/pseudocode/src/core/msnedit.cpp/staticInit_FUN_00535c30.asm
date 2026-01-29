@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_0040e130
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;   shape_edittool.cpp_CEdCheck_ctor_FUN_004a6a00
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
         ;   XREF to: 004a6a00 (UNCONDITIONAL_CALL)  ; CEdCheck * shape_edittool.cpp_CEdCheck_ctor_FUN_004a6a00(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 00535c47
     PUSH 0x6804a0                       ; 00535c4a | g_CEdCheckDestructorNode
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00535c4f
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00535c4f
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00535c54
     RET                                 ; 00535c57
 

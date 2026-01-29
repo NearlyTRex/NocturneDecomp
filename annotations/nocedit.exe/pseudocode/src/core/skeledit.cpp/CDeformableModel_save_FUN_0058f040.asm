@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -43,8 +43,8 @@ section .text
 
     PUSH 0x24                           ; 0058f040
         ;   Label: core_skeledit.cpp_CDeformableModel_save_FUN_0058f040
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058f045
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058f045
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058f04a
     PUSH ESI                            ; 0058f04b
     PUSH EBP                            ; 0058f04c
@@ -82,7 +82,7 @@ section .text
     PUSH EBX                            ; 0058f0a4
     PUSH 0x64b180                       ; 0058f0a5 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0058f0aa
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0058f0af
     MOV ESI,EAX                         ; 0058f0b2
     TEST EAX,EAX                        ; 0058f0b4
@@ -99,7 +99,7 @@ section .text
     PUSH 0x64b1c5                       ; 0058f0cb | = "..\\core\\skeledit.cpp"
     PUSH ESI                            ; 0058f0d0
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058f0d1
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0058f0d6
     PUSH EBX                            ; 0058f0d9
     PUSH 0x64b1da                       ; 0058f0da | = "Saved model to %s OK"

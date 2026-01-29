@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x3c]:8  local_3c
 ; undefined8       Stack[-0x34]:8  local_34
@@ -65,7 +65,7 @@ section .text
     PUSH 0x649a2d                       ; 005878aa | = "\"%s\",%d,%g,%g,%g,%g,%g,%g "
     PUSH ESI                            ; 005878af
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005878b0
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ECX,dword ptr [EBX]             ; 005878b5
     ADD ESP,0x40                        ; 005878b7
     TEST ECX,ECX                        ; 005878ba
@@ -83,7 +83,7 @@ section .text
     PUSH 0x649a53                       ; 005878db | = ",%g,%g\n"
     PUSH ESI                            ; 005878e0
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005878e1
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 005878e6
     POP EBP                             ; 005878e9
     POP ESI                             ; 005878ea
@@ -102,7 +102,7 @@ section .text
     PUSH 0x649a48                       ; 00587911 | = ",%g,%g,%g\n"
     PUSH ESI                            ; 00587916
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00587917
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x20                        ; 0058791c
     POP EBP                             ; 0058791f
     POP ESI                             ; 00587920

@@ -20,12 +20,6 @@
         "column": 56,
         "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -60,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_readNonEmptyLine_FUN_005895f0",
-    "signature": "int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,FILE *file,int require_content)"
+    "signature": "int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int require_content)"
   },
   "function_calls": [
     {
@@ -71,7 +65,7 @@
     {
       "addr": "005ff9f3",
       "is_variadic": false,
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe840",
@@ -166,7 +160,7 @@
         "name": "file",
         "offset": 12,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -196,7 +190,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
-      "text": "pcVar2 = crt_string_c_strstr_FUN_005fedd0(in_stack_00000004,\"//\");",
+      "text": "pcVar2 = strstr(in_stack_00000004,\"//\");",
       "type": "stack_param"
     },
     {

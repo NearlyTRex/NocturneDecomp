@@ -162,7 +162,7 @@ section .text
     PUSH EAX                            ; 005a46ed
     PUSH 0x64f59d                       ; 005a46ee | = "sound"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 005a46f3
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005a46f8
     MOV dword ptr [ESP + 0x45c],EAX     ; 005a46fb
     TEST EAX,EAX                        ; 005a4702
@@ -170,7 +170,7 @@ section .text
         ;   XREF to: 005a46da (CONDITIONAL_JUMP)  ; LAB_005a46da
     PUSH EAX                            ; 005a4706
     CALL crt_stdio.c_ftell_FUN_00601560 ; 005a4707
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 005a470c
     ADD EBX,EAX                         ; 005a470f
     MOV EAX,dword ptr [EBP + 0x14]      ; 005a4711
@@ -191,7 +191,7 @@ section .text
         ;   Label: LAB_005a475c
     PUSH EDI                            ; 005a4763
     CALL crt_stdio.c_ftell_FUN_00601560 ; 005a4764
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 005a4769
     CMP EAX,dword ptr [ESP + 0x458]     ; 005a476c
     JGE 0x005a4c5c                      ; 005a4773
@@ -204,7 +204,7 @@ section .text
     PUSH EAX                            ; 005a478b
     MOV dword ptr [ESP + 0x474],EBX     ; 005a478c
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 005a4793
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005a4798
     TEST EAX,EAX                        ; 005a479b
     JZ 0x005a4c5c                       ; 005a479d
@@ -602,7 +602,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x464]     ; 005a4c66
     PUSH ESI                            ; 005a4c6d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005a4c6e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005a4c73
     MOV ESP,EBP                         ; 005a4c76
     POP EBP                             ; 005a4c78

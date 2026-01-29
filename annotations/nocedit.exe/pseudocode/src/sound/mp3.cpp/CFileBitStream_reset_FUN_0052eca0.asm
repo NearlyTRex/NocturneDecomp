@@ -22,7 +22,7 @@ section .text
     MOV ECX,dword ptr [EBX]             ; 0052ecab
     PUSH ECX                            ; 0052ecad
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 0052ecae
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     MOV dword ptr [EBX + 0x10],0x0      ; 0052ecb3
     MOV dword ptr [EBX + 0x14],0x0      ; 0052ecba
     MOV dword ptr [EBX + 0xc],0x0       ; 0052ecc1

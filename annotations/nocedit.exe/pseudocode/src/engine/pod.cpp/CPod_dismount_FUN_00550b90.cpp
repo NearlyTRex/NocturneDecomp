@@ -29,7 +29,7 @@ void __cdecl engine_pod_cpp_CPod_dismount_FUN_00550b90(CPod *this_ptr,char *file
   iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_224);
   if ((iVar2 != 0) && (iVar2 = 0, pCVar4 = this_ptr, 0 < this_ptr->pod_file_count)) {
     do {
-      while (iVar3 = crt_string_c_stricmp_FUN_005fe7f0
+      while (iVar3 = stricmp
                                (pCVar4->pod_files[0]->filename,local_224.target_path), iVar3 == 0) {
         engine_pod_cpp_CPod_dismountPod_FUN_005518c0(this_ptr,iVar2);
         if (this_ptr->pod_file_count <= iVar2) {

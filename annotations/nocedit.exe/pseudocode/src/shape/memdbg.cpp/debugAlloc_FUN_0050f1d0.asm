@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   size
 ;
 ; XREF[8]:
-;   crt_memory.c_malloc_FUN_006021da at 006021df
+;   shape_memdbg.cpp_malloc_FUN_006021da at 006021df
 ;   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960 at 005d3b2b
 ;   shape_superopt.cpp_CObj_removeInvalidPolygons_FUN_005d46f0 at 005d475b
 ;   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 at 005d4d90

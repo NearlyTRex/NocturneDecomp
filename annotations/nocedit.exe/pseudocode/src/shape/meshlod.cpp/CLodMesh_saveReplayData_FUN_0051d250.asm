@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_saveReplayData_FUN_0051d250(CLodMesh *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_saveReplayData_FUN_0051d250(CLodMesh *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;
@@ -44,7 +44,7 @@ section .text
     PUSH EBP                            ; 0051d26c
     XOR EBX,EBX                         ; 0051d26d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d26f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ECX,dword ptr [EDI + 0x4c]      ; 0051d274
     ADD ESP,0xc                         ; 0051d277
     TEST ECX,ECX                        ; 0051d27a
@@ -70,7 +70,7 @@ section .text
     ADD ESI,0xf0                        ; 0051d2a7
     INC EBX                             ; 0051d2ad
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d2ae
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EAX,dword ptr [EDI + 0x4c]      ; 0051d2b3
     ADD ESP,0x20                        ; 0051d2b6
     CMP EBX,EAX                         ; 0051d2b9

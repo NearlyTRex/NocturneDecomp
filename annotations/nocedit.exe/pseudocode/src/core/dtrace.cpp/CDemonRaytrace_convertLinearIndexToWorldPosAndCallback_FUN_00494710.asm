@@ -72,7 +72,7 @@ section .text
     PUSH EDX                            ; 0049478b
     FSTP float ptr [ESP + 0x14]         ; 0049478c
     CALL core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0 ; 00494790
-        ;   XREF to: 004825c0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart * this_ptr, FILE * file_handle, CVector3f * offset_position)
+        ;   XREF to: 004825c0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart * this_ptr, _FILE * file_handle, CVector3f * offset_position)
     ADD ESP,0xc                         ; 00494795
     ADD ESP,0x10                        ; 00494798
     POP EDI                             ; 0049479b

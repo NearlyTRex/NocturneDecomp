@@ -9,6 +9,6 @@
 void __cdecl core_setdir_cpp_freeCZThumbs_FUN_00576910(CZThumb **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x5dc,&g_CZThumbTypeInfo);
+  __arrfini(array,0x5dc,&g_CZThumbTypeInfo);
   return;
 }

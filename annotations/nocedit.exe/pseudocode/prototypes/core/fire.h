@@ -241,11 +241,11 @@ void __cdecl CCrater::render(CCrater *this_ptr);
 
 // Original: core_fire.cpp_CCrater_load_FUN_004c4880
 // Address: 004c4880
-void __cdecl CCrater::load(CCrater *this_ptr,FILE *file_handle);
+void __cdecl CCrater::load(CCrater *this_ptr,_FILE *file_handle);
 
 // Original: core_fire.cpp_CCrater_save_FUN_004c49c0
 // Address: 004c49c0
-void __cdecl CCrater::save(CCrater *this_ptr,FILE *file_handle);
+void __cdecl CCrater::save(CCrater *this_ptr,_FILE *file_handle);
 
 // Original: core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
 // Address: 004c4b00
@@ -489,11 +489,11 @@ void __cdecl CFireEffect(CFireEffect *this_ptr);
 
 // Original: core_fire.cpp_CFireEffect_load_FUN_004c9300
 // Address: 004c9300
-void __cdecl CFireEffect::load(CFireEffect *this_ptr,FILE *file_handle);
+void __cdecl CFireEffect::load(CFireEffect *this_ptr,_FILE *file_handle);
 
 // Original: core_fire.cpp_CFireEffect_save_FUN_004c9380
 // Address: 004c9380
-void __cdecl CFireEffect::save(CFireEffect *this_ptr,FILE *file_handle);
+void __cdecl CFireEffect::save(CFireEffect *this_ptr,_FILE *file_handle);
 
 // Original: core_fire.cpp_CFireEffect_FUN_004c93d0
 // Address: 004c93d0

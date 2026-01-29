@@ -33,7 +33,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
     euler_angles->x = -1.5707964;
   }
   else if ((double)fVar2 < 1.0) {
-    fVar4 = crt_math_c_asin_FUN_00600b94((float10)fVar2);
+    fVar4 = asin((float10)fVar2);
     fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);
     euler_angles->x = (float)fVar4;
     dVar6 = (double)fVar5;
@@ -49,7 +49,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
       if ((0.70699999999999996 <= dVar6) || (dVar6 <= -0.70699999999999996)) {
         if ((-1 < dVar1) && (dVar1 < 1.0)) {
           local_98 = 0x4724df;
-          dVar6 = crt_math_c_acos_FUN_00600162(dVar1);
+          dVar6 = acos(dVar1);
           local_20 = (float)dVar6;
         }
         if ((double)CONCAT44(uStack_84,local_68) < 0.0) {
@@ -58,7 +58,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
       }
       else {
         local_98 = 0x47230f;
-        fVar4 = crt_math_c_asin_FUN_00600b94((float10)fVar2);
+        fVar4 = asin((float10)fVar2);
         local_20 = (float)fVar4;
         if ((double)CONCAT44(uStack_5c,local_80) < 0.0) {
           local_20 = (float)3.1415926535900001 - local_20;
@@ -78,7 +78,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
       if ((0.70699999999999996 <= dVar6) || (dVar6 <= -0.70699999999999996)) {
         if (-1 < dVar1) {
           if (dVar1 < 1.0) {
-            crt_math_c_acos_FUN_00600162(dVar1);
+            acos(dVar1);
           }
           else {
             fStack_24 = 0.0;
@@ -92,7 +92,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
         }
       }
       else {
-        crt_math_c_asin_FUN_00600b94((float10)fVar2);
+        asin((float10)fVar2);
       }
       if (fStack_24 < (float)-3.1415926535900001) {
         fStack_24 = fStack_24 + 6.283185f;
@@ -114,7 +114,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
   if ((0.70699999999999996 <= dVar6) || (dVar6 <= -0.70699999999999996)) {
     if (-1 < dVar1) {
       if (dVar1 < 1.0) {
-        crt_math_c_acos_FUN_00600162(dVar1);
+        acos(dVar1);
       }
       else {
         fStack_24 = 0.0;
@@ -128,7 +128,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
     }
   }
   else {
-    crt_math_c_asin_FUN_00600b94((float10)fVar2);
+    asin((float10)fVar2);
   }
   if (fStack_24 < (float)-3.1415926535900001) {
     fStack_24 = fStack_24 + 6.283185f;

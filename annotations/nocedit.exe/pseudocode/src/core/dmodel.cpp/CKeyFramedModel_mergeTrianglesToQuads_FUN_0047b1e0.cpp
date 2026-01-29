@@ -250,7 +250,7 @@ core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
                                              local_a8 * local_b4 + local_a4 * local_b0);
                             if (dVar21 < 1.0) {
                               if (-1 < dVar21) {
-                                dVar21 = crt_math_c_acos_FUN_00600162(dVar21);
+                                dVar21 = acos(dVar21);
                                 uStack_104 = SUB84(dVar21,0);
                                 local_100 = (uint)((ulonglong)dVar21 >> 0x20);
                               }

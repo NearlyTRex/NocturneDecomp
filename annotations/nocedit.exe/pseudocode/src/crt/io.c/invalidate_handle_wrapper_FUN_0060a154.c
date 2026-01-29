@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_io_c_invalidate_handle_wrapper_FUN_0060a154(int handle_index)
+void __cdecl invalidate_handle_wrapper(int handle_index)
 
 {
-  crt_sync_c_reset_reentrant_critical_section_state_FUN_0060a04c
+  reset_reentrant_critical_section_state
             ((ReentrantCriticalSection *)(&g_TlsDataBase + (handle_index & 0xfU) * 4));
-  crt_io_c_invalidate_handle_FUN_00608af4(handle_index);
+  invalidate_handle(handle_index);
   return;
 }

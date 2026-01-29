@@ -188,8 +188,7 @@ void core_stranger_cpp_CStranger_FUN_005c3960(void)
           (iVar6 = (*((this_ptr->base).vtable._ub)->shouldIgnoreForTargeting)
                              ((CDemonActor *)this_ptr), iVar6 == 0)))) {
         pCStack_1c = *(CDemonActor **)(g_CDemonSetPtr->unk4 + iStack_3c + 0x3e84);
-        crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                  (auStack_1a0,10,&g_CVectorTypeInfo);
+        __arrinit(auStack_1a0,10,&g_CVectorTypeInfo);
         iStack_20 = (*((pCStack_1c->vtable)._ub)->getTargetPoints)
                               (pCStack_1c,(CVector3f *)auStack_1a0);
         if ((0 < iStack_20) && (iVar6 = 0, 0 < iStack_20)) {

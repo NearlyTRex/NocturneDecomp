@@ -39,10 +39,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042f340(CCharacter *this_ptr)
       }
     }
     if (in_stack_0000000c < pcVar4) {
-      iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,", ");
+      iVar3 = sprintf(pcVar4,", ");
       pcVar4 = pcVar4 + iVar3;
     }
-    iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,"%s",pCVar2[0x1b].unk1);
+    iVar3 = sprintf(pcVar4,"%s",pCVar2[0x1b].unk1);
     pcVar4 = pcVar4 + iVar3;
     pCVar2 = (CDemonActor *)&(pCVar2->orient_matrix).m[0].z;
   } while (pCVar2 != (CDemonActor *)(pcVar5 + 0x10));

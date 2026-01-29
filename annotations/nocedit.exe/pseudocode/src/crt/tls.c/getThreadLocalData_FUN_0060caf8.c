@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
+void * getThreadLocalData(void)
 
 {
   ThreadRegistryEntry *pTVar1;
@@ -27,9 +27,9 @@ void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
       pTVar1 = pTVar1->next) {
   }
   if (pTVar1->shouldFreeData == 0) {
-    lpTlsValue = crt_memory_c_calloc_FUN_0060ca90(1,g_RuntimeBufferSize);
+    lpTlsValue = calloc(1,g_RuntimeBufferSize);
     if (lpTlsValue == (uint *)0x0) {
-      crt_startup_c_HandleRuntimeError_FUN_00606660("Unable to resize thread-specific data\r\n",1);
+      HandleRuntimeError("Unable to resize thread-specific data\r\n",1);
     }
     uVar3 = *(uint *)((int)pTVar1->dataBuffer + 0xf0);
     puVar4 = pTVar1->dataBuffer;
@@ -47,9 +47,9 @@ void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
     pTVar1->shouldFreeData = 1;
   }
   else {
-    lpTlsValue = crt_memory_c_realloc_FUN_00601df0(pTVar1->dataBuffer,g_RuntimeBufferSize);
+    lpTlsValue = realloc(pTVar1->dataBuffer,g_RuntimeBufferSize);
     if (lpTlsValue == (void *)0x0) {
-      crt_startup_c_HandleRuntimeError_FUN_00606660("Unable to resize thread-specific data\r\n",1);
+      HandleRuntimeError("Unable to resize thread-specific data\r\n",1);
     }
   }
   pTVar1->dataBuffer = lpTlsValue;

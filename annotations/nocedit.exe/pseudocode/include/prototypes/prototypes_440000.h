@@ -124,7 +124,7 @@ void __cdecl shape_cramtex_cpp_renderAllTexturesAndRectangles_FUN_00447ab0 (int 
 void __cdecl shape_cramtex_cpp_renderTextureEntry_FUN_00447c20 (SCramWorkingEntry *texture_entry,int visualization_mode,int draw_x,int draw_y, int draw_width,int draw_height);
 double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void);
 void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20 (int visualization_mode,int completion_mode,int display_mode);
-void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_file);
+void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file);
 void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260 (int layer_id,int start_x,int start_y,int width,int height);
 int __cdecl shape_cramtex_cpp_checkTextureCollision_FUN_00448390 (SCramWorkingEntry *placed_texture,SCramWorkingEntry *test_texture);
 void __cdecl shape_cramtex_cpp_setupTextureForPlacement_FUN_004483e0 (SCramWorkingEntry *destination,SCramWorkingEntry *source);
@@ -180,7 +180,7 @@ undefined4 core_curtain_cpp_FUN_0044b600(void);
 void core_curtain_cpp_FUN_0044b610(void);
 void core_curtain_cpp_FUN_0044b7a0(void);
 void core_curtain_cpp_FUN_0044b8d0(void);
-void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6);
+void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6);
 CCurtain * __cdecl core_curtain_cpp_FUN_0044ba30(CCurtain *this_ptr,uint d1,uint d2,uint d3);
 SCurtainVertex * __cdecl core_curtain_cpp_FUN_0044baa0(SCurtainVertex *this_ptr);
 SCurtainVertex * __cdecl core_curtain_cpp_FUN_0044bab0(SCurtainVertex *this_ptr);

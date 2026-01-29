@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_skeleton.cpp_skipToEndOfLine_FUN_005996c0
 // Address: 005996c0
-void __cdecl skipToEndOfLine(FILE *file_ptr);
+void __cdecl skipToEndOfLine(_FILE *file_ptr);
 
 // Original: core_skeleton.cpp_distancePointToLineSegment_FUN_005996e0
 // Address: 005996e0
@@ -37,7 +37,7 @@ void __cdecl CSkeleton::load(CSkeleton *this_ptr,char *filename);
 
 // Original: core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
 // Address: 00599bb0
-void __cdecl CSkeleton::loadStream(CSkeleton *this_ptr,FILE *file_handle);
+void __cdecl CSkeleton::loadStream(CSkeleton *this_ptr,_FILE *file_handle);
 
 // Original: core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 // Address: 00599fc0
@@ -137,7 +137,7 @@ void __cdecl CDeformableModel::load(CDeformableModel *this_ptr,char *filename);
 
 // Original: core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
 // Address: 0059b970
-void __cdecl CDeformableModel::loadStream(CDeformableModel *this_ptr,FILE *file_handle);
+void __cdecl CDeformableModel::loadStream(CDeformableModel *this_ptr,_FILE *file_handle);
 
 // Original: core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0
 // Address: 0059c1f0

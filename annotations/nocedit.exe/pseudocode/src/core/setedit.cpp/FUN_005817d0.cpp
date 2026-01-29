@@ -34,7 +34,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   int local_18;
   
   SStack_64.base.type = 0x5817ea;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * 65535.0f));
+  dVar5 = round((double)(in_stack_0000000c * 65535.0f));
   local_18 = (int)ROUND(dVar5);
   if (local_18 < 0) {
     local_18 = 0;
@@ -50,7 +50,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
     SStack_64.base.type = (int)*in_stack_00000008;
     iVar3 = uVar4 * 0x30;
     while( true ) {
-      dVar5 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = round
                         ((double)((float)SStack_64.base.type * (float)256));
       local_38.y = (int)ROUND(dVar5);
       pfVar2 = in_stack_00000008;
@@ -58,7 +58,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
         pfVar2 = in_stack_00000004;
       }
       SStack_64.base.type = (int)pfVar2[1];
-      dVar5 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = round
                         ((double)((float)SStack_64.base.type * (float)256));
       pCVar1 = g_CDemonRendererPtr2;
       local_38.y = (int)ROUND(dVar5);
@@ -67,7 +67,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
         pfVar2 = in_stack_00000004;
       }
       SStack_64.base.type = (int)pfVar2[2];
-      dVar5 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = round
                         ((double)((float)SStack_64.base.type * (float)256));
       local_38.y = (int)ROUND(dVar5);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_stdio_c_ParseFormatFlags_FUN_00602edc(char *format,FormatSpec *spec_info)
+char * __cdecl ParseFormatFlags(char *format,FormatSpec *spec_info)
 
 {
   FormatFlags FVar1;

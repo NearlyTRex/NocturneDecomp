@@ -53,7 +53,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
               psVar7 = dst_buffer;
               if (0 < num_output_samples) {
                 do {
-                  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                  dVar8 = round((double)((float)iVar6 * fVar2));
                   iVar6 = iVar6 + 1;
                   *(byte *)psVar7 = *(byte *)((int)ROUND(dVar8) + (int)src_buffer);
                   psVar7 = (short *)((int)psVar7 + 1);
@@ -65,7 +65,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
               psVar7 = dst_buffer;
               if (0 < num_output_samples) {
                 do {
-                  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                  dVar8 = round((double)((float)iVar6 * fVar2));
                   uVar1 = *(byte *)((int)ROUND(dVar8) + (int)src_buffer);
                   *(byte *)((int)psVar7 + 1) = uVar1;
                   iVar6 = iVar6 + 1;
@@ -80,7 +80,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
             psVar7 = dst_buffer;
             if (0 < num_output_samples) {
               do {
-                dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                dVar8 = round((double)((float)iVar6 * fVar2));
                 local_1c = (byte)
                            ((int)(char)src_buffer[(int)ROUND(dVar8)] +
                             (int)*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) >> 1);
@@ -95,7 +95,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
             psVar7 = dst_buffer;
             if (0 < num_output_samples) {
               do {
-                dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                dVar8 = round((double)((float)iVar6 * fVar2));
                 *(char *)psVar7 = (char)src_buffer[(int)ROUND(dVar8)];
                 iVar6 = iVar6 + 1;
                 *(byte *)((int)psVar7 + 1) =
@@ -111,7 +111,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
             psVar7 = dst_buffer;
             if (0 < num_output_samples) {
               do {
-                dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                dVar8 = round((double)((float)iVar6 * fVar2));
                 iVar6 = iVar6 + 1;
                 *psVar7 = (short)*(char *)((int)ROUND(dVar8) + (int)src_buffer) << 8;
                 psVar7 = psVar7 + 1;
@@ -123,7 +123,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
             psVar7 = dst_buffer;
             if (0 < num_output_samples) {
               do {
-                dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                dVar8 = round((double)((float)iVar6 * fVar2));
                 sVar3 = (short)*(char *)((int)ROUND(dVar8) + (int)src_buffer) << 8;
                 psVar7[1] = sVar3;
                 iVar6 = iVar6 + 1;
@@ -138,7 +138,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
           psVar7 = dst_buffer;
           if (0 < num_output_samples) {
             do {
-              dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+              dVar8 = round((double)((float)iVar6 * fVar2));
               iVar6 = iVar6 + 1;
               *psVar7 = (char)src_buffer[(int)ROUND(dVar8)] * 0x80 +
                         *(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) * 0x80;
@@ -151,7 +151,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
           psVar7 = dst_buffer;
           if (0 < num_output_samples) {
             do {
-              dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+              dVar8 = round((double)((float)iVar6 * fVar2));
               *psVar7 = (short)(char)src_buffer[(int)ROUND(dVar8)] << 8;
               iVar6 = iVar6 + 1;
               psVar7[1] = (short)*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) << 8;
@@ -167,7 +167,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
             psVar7 = dst_buffer;
             if (0 < num_output_samples) {
               do {
-                dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                dVar8 = round((double)((float)iVar6 * fVar2));
                 iVar6 = iVar6 + 1;
                 *(char *)psVar7 = (char)((ushort)src_buffer[(int)ROUND(dVar8)] >> 8);
                 psVar7 = (short *)((int)psVar7 + 1);
@@ -179,7 +179,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
             psVar7 = dst_buffer;
             if (0 < num_output_samples) {
               do {
-                dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+                dVar8 = round((double)((float)iVar6 * fVar2));
                 local_1c = (byte)((ushort)src_buffer[(int)ROUND(dVar8)] >> 8);
                 *(byte *)((int)psVar7 + 1) = local_1c;
                 iVar6 = iVar6 + 1;
@@ -194,7 +194,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
           psVar7 = dst_buffer;
           if (0 < num_output_samples) {
             do {
-              dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+              dVar8 = round((double)((float)iVar6 * fVar2));
               iVar6 = iVar6 + 1;
               *(char *)psVar7 =
                    (char)((int)src_buffer[(int)ROUND(dVar8) * 2] +
@@ -208,7 +208,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
           psVar7 = dst_buffer;
           if (0 < num_output_samples) {
             do {
-              dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+              dVar8 = round((double)((float)iVar6 * fVar2));
               local_1c = (byte)((ushort)src_buffer[(int)ROUND(dVar8) * 2] >> 8);
               *(byte *)psVar7 = local_1c;
               local_1c = (byte)
@@ -226,7 +226,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
           psVar7 = dst_buffer;
           if (0 < num_output_samples) {
             do {
-              dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+              dVar8 = round((double)((float)iVar6 * fVar2));
               iVar6 = iVar6 + 1;
               *psVar7 = src_buffer[(int)ROUND(dVar8)];
               psVar7 = psVar7 + 1;
@@ -238,7 +238,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
           psVar7 = dst_buffer;
           if (0 < num_output_samples) {
             do {
-              dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+              dVar8 = round((double)((float)iVar6 * fVar2));
               sVar3 = src_buffer[(int)ROUND(dVar8)];
               psVar7[1] = sVar3;
               iVar6 = iVar6 + 1;
@@ -253,7 +253,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
         psVar7 = dst_buffer;
         if (0 < num_output_samples) {
           do {
-            dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+            dVar8 = round((double)((float)iVar6 * fVar2));
             iVar6 = iVar6 + 1;
             *psVar7 = (short)((int)src_buffer[(int)ROUND(dVar8) * 2] +
                               (*(int *)(src_buffer + (int)ROUND(dVar8) * 2) >> 0x10) >> 1);
@@ -266,7 +266,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
         psVar7 = dst_buffer;
         if (0 < num_output_samples) {
           do {
-            dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar6 * fVar2));
+            dVar8 = round((double)((float)iVar6 * fVar2));
             *psVar7 = src_buffer[(int)ROUND(dVar8) * 2];
             iVar6 = iVar6 + 1;
             psVar7[1] = src_buffer[(int)ROUND(dVar8) * 2 + 1];

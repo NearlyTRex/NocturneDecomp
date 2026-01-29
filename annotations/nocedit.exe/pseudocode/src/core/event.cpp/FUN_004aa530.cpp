@@ -17,17 +17,17 @@ uint core_event_cpp_FUN_004aa530(void)
   int local_14;
   
   local_14 = -1;
-  crt_stdio_c_sscanf_FUN_0060013c
+  sscanf
             ((char *)(in_stack_00000004 + *in_stack_00000008)," { %f, %f, %f }%n",in_stack_0000000c,
              in_stack_0000000c + 1,in_stack_0000000c + 2,&local_14);
   if (6 < local_14) {
     *in_stack_00000008 = *in_stack_00000008 + local_14;
     return 1;
   }
-  crt_stdio_c_sscanf_FUN_0060013c
+  sscanf
             ((char *)(in_stack_00000004 + *in_stack_00000008)," %[^ ,(){}]%n",local_78,&local_14);
   if (local_14 < 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,"Error parsing vector location");
+    sprintf(&DAT_02d0a460,"Error parsing vector location");
     return 0xffffffff;
   }
   iVar1 = core_event_cpp_FUN_004aa400();

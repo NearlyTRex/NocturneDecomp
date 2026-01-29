@@ -78,7 +78,7 @@ shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870
          vertex0_pos->z * (this_ptr->normal).z +
          vertex0_pos->x * pCVar12->x + vertex0_pos->y * (this_ptr->normal).y) *
          (float)0.33333333333333298;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_84,3,&g_CVectorTypeInfo);
+    __arrinit(&local_84,3,&g_CVectorTypeInfo);
     if (&local_84 != vertex0_pos) {
       local_84.x = vertex0_pos->x;
       local_84.y = vertex0_pos->y;

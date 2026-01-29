@@ -11,7 +11,7 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
 {
   char cVar1;
   int iVar2;
-  FILE *file_ptr;
+  _FILE *file_ptr;
   char *pcVar3;
   char *str1;
   char *pcVar4;
@@ -41,19 +41,19 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
   }
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_3d8,(char *)0x0,"rt","..\\core\\setedit.cpp",0x36c);
-  if (file_ptr != (FILE *)0x0) {
+  if (file_ptr != (_FILE *)0x0) {
     engine_dosio_c_splitPath_FUN_00481f20(local_3d8,(char *)0x0,(char *)0x0,local_2d8,&local_4d8);
     engine_dosio_c_makePath_FUN_00481f50
               (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_2d8,"geo");
     if (local_4d8 == '.') {
       str1 = acStack_4d7;
     }
-    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"a3d");
+    iVar2 = stricmp(str1,"a3d");
     if (iVar2 == 0) {
       core_setedit_cpp_ImportA3DBroken_FUN_00578c60();
     }
     else {
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"s3d");
+      iVar2 = stricmp(str1,"s3d");
       if (iVar2 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x38f);
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -67,13 +67,13 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x399);
     engine_dosio_c_makePath_FUN_00481f50
               (local_1d8,(char *)0x0,"data",local_2d8,"zth");
-    crt_io_c_deleteFile_FUN_005ff9d0(local_1d8);
+    remove(local_1d8);
     engine_dosio_c_makePath_FUN_00481f50
               (local_1d8,(char *)0x0,"data",local_2d8,"thm");
-    crt_io_c_deleteFile_FUN_005ff9d0(local_1d8);
+    remove(local_1d8);
     return;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"Can't open %s",local_3d8);
+  sprintf(local_d8,"Can't open %s",local_3d8);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(local_d8,0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

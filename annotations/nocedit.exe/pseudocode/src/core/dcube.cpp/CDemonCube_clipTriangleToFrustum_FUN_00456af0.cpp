@@ -155,7 +155,7 @@ core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
       g_ModelPolygonData[iVar5].lightmap_name[0] = '\0';
       g_ModelPolygonData[iVar5].vertex_indices_count = 3;
       g_ModelPolygonData[iVar5].polygon_type = 1;
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (g_ModelPolygonData[iVar5].texture_name,"%d",(uint)texture_id);
       iVar10 = iVar10 + 0xc;
       g_ModelPolygonData[g_PolygonCount].part_assignment = 0;

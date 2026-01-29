@@ -317,11 +317,11 @@ void __cdecl CDemonCamera::blendLightmapPixel16(CDemonCamera *this_ptr,int scree
 
 // Original: core_dcamera.cpp_loadCameraFog_FUN_00453e50
 // Address: 00453e50
-void __cdecl loadCameraFog(SFog *fog,FILE *file_handle,int file_version);
+void __cdecl loadCameraFog(SFog *fog,_FILE *file_handle,int file_version);
 
 // Original: core_dcamera.cpp_saveCameraFog_FUN_00453f10
 // Address: 00453f10
-void __cdecl saveCameraFog(SFog *fog,FILE *file_handle);
+void __cdecl saveCameraFog(SFog *fog,_FILE *file_handle);
 
 // Original: core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0
 // Address: 00453fc0

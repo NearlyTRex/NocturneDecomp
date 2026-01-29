@@ -52,7 +52,7 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
                         ((CStrList *)&stack0xfffff844,"Delete local files but don't mount");
               shape_edittool_cpp_CStrList_add_FUN_004a2b80
                         ((CStrList *)&stack0xfffff844,"Keep files extracted and pod dismounted");
-              crt_stdio_c_sprintf_FUN_005fdbd0(local_414,"Undo checkout on %s",local_11c);
+              sprintf(local_414,"Undo checkout on %s",local_11c);
               iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                 ((CPickList *)&stack0xfffff844,local_414,-1,0);
               if (iVar1 == 0) {

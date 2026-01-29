@@ -25,7 +25,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_004bcaa5
     MOV EDI,dword ptr [ESI + EAX*0x1]   ; 004bcaac
     PUSH EDI                            ; 004bcaaf
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 004bcab0
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 004bcab0
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 004bcab5
     MOV EAX,dword ptr [ESP + 0x418]     ; 004bcab8
     MOV dword ptr [ESP + 0x434],EAX     ; 004bcabf

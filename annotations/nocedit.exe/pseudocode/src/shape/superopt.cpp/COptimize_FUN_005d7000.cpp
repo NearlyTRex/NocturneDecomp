@@ -28,7 +28,7 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7000(COptimize *this_ptr)
     } while (uVar2 < (uint)this_ptr->unk5);
   }
   if (this_ptr->unk6 != (void *)0x0) {
-    crt_memory_c_free_FUN_00601cd0(this_ptr->unk6);
+    free(this_ptr->unk6);
   }
   this_ptr->unk6 = (void *)0x0;
   this_ptr->unk5 = 0;

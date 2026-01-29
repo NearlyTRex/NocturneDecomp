@@ -23,7 +23,7 @@ void core_script_cpp_CScript_removeEventXRef_FUN_005676e0(void)
   }
   iVar1 = *(int *)(in_stack_00000004 + 0x28) + -1;
   *(int *)(in_stack_00000004 + 0x28) = iVar1;
-  crt_string_c_memmove_FUN_005fe5e0
+  memmove
             ((void *)(in_stack_00000008 * 0x114 + *(int *)(in_stack_00000004 + 0x2c)),
              (void *)((in_stack_00000008 + 1) * 0x114 + *(int *)(in_stack_00000004 + 0x2c)),
              (iVar1 - in_stack_00000008) * 0x114);

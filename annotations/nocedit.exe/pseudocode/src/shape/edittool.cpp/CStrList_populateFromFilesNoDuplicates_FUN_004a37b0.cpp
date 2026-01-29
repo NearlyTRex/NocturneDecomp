@@ -41,7 +41,7 @@ shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
     } while (cVar1 != '\0');
   }
   else {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"%s\\%s",directory_path,file_pattern);
+    sprintf(local_110,"%s\\%s",directory_path,file_pattern);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_110,&local_844);
@@ -57,7 +57,7 @@ shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
           cVar1 = *pcVar3;
           pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
-        crt_string_c_memmove_FUN_005fe5e0(&local_310,local_30f,~uVar5 - 1);
+        memmove(&local_310,local_30f,~uVar5 - 1);
       }
       engine_dosio_c_makePath_FUN_00481f50(local_414,(char *)0x0,(char *)0x0,local_210,&local_310);
       iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(this_ptr,local_414);
@@ -81,7 +81,7 @@ shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
       do {
         str2 = &local_528;
         pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar3,str2->filename);
+        iVar4 = stricmp(pcVar3,str2->filename);
         if (iVar4 == 0) goto LAB_004a3935;
         index = index + 1;
       } while (index < iVar2);

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_register_handle_FUN_00608990(HANDLE handle)
+int __cdecl register_handle(HANDLE handle)
 
 {
   int iVar1;
@@ -30,7 +30,7 @@ int __cdecl crt_io_c_register_handle_FUN_00608990(HANDLE handle)
     } while (iVar1 < g_CurrentHandleCount * 4);
   }
   g_IOControlBlock =
-       crt_memory_c_realloc_FUN_00601df0(g_IOControlBlock,(g_CurrentHandleCount + 1) * 4);
+       realloc(g_IOControlBlock,(g_CurrentHandleCount + 1) * 4);
   ppvVar2 = g_IOControlBlock->standard_handles + g_CurrentHandleCount;
   g_CurrentHandleCount = g_CurrentHandleCount + 1;
   *ppvVar2 = handle;

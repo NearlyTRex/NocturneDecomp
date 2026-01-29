@@ -42,7 +42,7 @@ void core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
   g_LastPingTime = iVar2 / 0x12;
   (&DAT_02f98ad8)[iVar4 * 0x45] = DAT_02f9c0bc;
   *puVar7 = g_CurrentGameTime;
-  crt_memory_c_memset_FUN_005fde40(&DAT_02f98adc + iVar1,1,2);
+  memset(&DAT_02f98adc + iVar1,1,2);
   if (in_stack_0000000c < 0) {
     iVar4 = 0;
     puVar5 = puVar7;
@@ -62,8 +62,8 @@ void core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
     *(uint *)(&DAT_02f98ae0 + in_stack_0000000c * 4 + iVar1) = g_CurrentGameTime - 0x3c0000;
   }
   *(byte *)(*(int *)(in_stack_00000004 + 0x114) + 8 + (int)puVar7) = 1;
-  crt_memory_c_memset_FUN_005fde40(&DAT_02f98ae8 + iVar1,0,0x100);
-  crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);
+  memset(&DAT_02f98ae8 + iVar1,0,0x100);
+  strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);
   core_netgame_cpp_CNetGame_FUN_00542370();
   return;
 }

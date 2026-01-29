@@ -2,7 +2,7 @@
 // Address: 0044b960
 // Address Range: [[0044b960, 0044ba2f]]
 // Convention: unknown
-// Signature: void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)
+// Signature: void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)
 
 #include "nocturne.h"
 
@@ -11,7 +11,7 @@
 
 void core_curtain_cpp_FindCurtainTextures_FUN_0044b960
                (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               int param_5,FILE *param_6)
+               int param_5,_FILE *param_6)
 
 {
   char cVar1;
@@ -21,7 +21,7 @@ void core_curtain_cpp_FindCurtainTextures_FUN_0044b960
   char local_108 [256];
   
   pcVar2 = (char *)(param_5 + 0x16c);
-  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",pcVar2);
+  _fprintf(param_6,"ART\\%s\n",pcVar2);
   pcVar4 = local_108;
   do {
     cVar1 = *pcVar2;
@@ -59,6 +59,6 @@ LAB_0044b9c3:
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",local_108);
+  _fprintf(param_6,"ART\\%s\n",local_108);
   return;
 }

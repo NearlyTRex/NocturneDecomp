@@ -34,12 +34,12 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   } while (cVar1 != '\0');
   iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe90);
   if (iVar2 == 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (g_SoundTestErrorBuffer,"Can't get sample info for %s",sample_name);
     pcVar3 = g_SoundTestErrorBuffer;
   }
   else if (local_60 < 1) {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (g_SoundTestErrorBuffer,"Sample %s has unknown or invalid length",sample_name);
     pcVar3 = g_SoundTestErrorBuffer;
   }
@@ -52,7 +52,7 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
     sfx_handle = sound_sndmain_cpp_startSfx_FUN_005a8e90(sample_name);
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     if (sfx_handle == 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (g_SoundTestErrorBuffer,"Error playing %s",sample_name);
       pcVar3 = g_SoundTestErrorBuffer;
     }

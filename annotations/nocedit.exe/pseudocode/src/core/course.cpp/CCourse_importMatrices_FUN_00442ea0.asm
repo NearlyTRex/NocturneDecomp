@@ -98,7 +98,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x78]      ; 00442f00
     PUSH EDI                            ; 00442f04
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f05
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f0a
     CMP EAX,0x3                         ; 00442f0d
     JZ 0x00442f35                       ; 00442f10
@@ -124,7 +124,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x78]      ; 00442f49
     PUSH ECX                            ; 00442f4d
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f4e
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f53
     CMP EAX,0x3                         ; 00442f56
     JNZ 0x00442f12                      ; 00442f59
@@ -139,7 +139,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x78]      ; 00442f6f
     PUSH ESI                            ; 00442f73
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f74
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f79
     CMP EAX,0x3                         ; 00442f7c
     JNZ 0x00442f12                      ; 00442f7f
@@ -153,7 +153,7 @@ section .text
     PUSH 0x61918b                       ; 00442f90 | = "%f,%f,%f\n"
     PUSH ESI                            ; 00442f95
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f96
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f9b
     CMP EAX,0x3                         ; 00442f9e
     JNZ 0x00442f12                      ; 00442fa1

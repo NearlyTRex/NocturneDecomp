@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_OpenModeStringParser_FUN_006017d0(char *mode_string,char *output_flags)
+int __cdecl OpenModeStringParser(char *mode_string,char *output_flags)
 
 {
   byte bVar1;
@@ -21,7 +21,7 @@ int __cdecl crt_stdio_c_OpenModeStringParser_FUN_006017d0(char *mode_string,char
   bVar5 = false;
   bVar3 = false;
   if (output_flags != (char *)0x0) {
-    if (DAT_00685280 == 1) {
+    if (INT_00685280 == 1) {
       output_flags[0] = '\x01';
       output_flags[1] = '\0';
       output_flags[2] = '\0';
@@ -38,7 +38,7 @@ int __cdecl crt_stdio_c_OpenModeStringParser_FUN_006017d0(char *mode_string,char
   if (bVar1 < 0x72) {
     if (bVar1 != 0x61) {
 LAB_00601822:
-      crt_errno_c_setErrno_FUN_00602790(SYSTEM_BAD_FILE_DESCRIPTOR);
+      setErrno(SYSTEM_BAD_FILE_DESCRIPTOR);
       return 0;
     }
     uVar6 = 0x82;
@@ -106,7 +106,7 @@ LAB_00601822:
     bVar1 = ((byte *)mode_string)[2];
     mode_string = (char *)((byte *)mode_string + 1);
   }
-  if ((!bVar4) && (0x00000100 == 0x200)) {
+  if ((!bVar4) && (INT_00684ed0 == 0x200)) {
     uVar6 = uVar6 | 0x40;
   }
   return uVar6;

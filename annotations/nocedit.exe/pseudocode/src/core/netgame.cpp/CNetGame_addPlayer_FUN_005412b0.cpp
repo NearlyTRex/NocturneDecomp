@@ -35,7 +35,7 @@ int core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
   iVar2 = *(int *)(in_stack_00000004 + 0x1c);
   dest = (char *)(in_stack_00000004 + 0x20 + iVar2 * 0x78);
   *(int *)(in_stack_00000004 + 0x1c) = iVar2 + 1;
-  crt_memory_c_memset_FUN_005fde40(dest,0,0x78);
+  memset(dest,0,0x78);
   pcVar6 = dest;
   do {
     cVar1 = *in_stack_0000000c;

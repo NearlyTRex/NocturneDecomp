@@ -16,7 +16,7 @@ shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
   va_list_t local_8;
   
   local_8 = &stack0x0000000c;
-  crt_stdio_c_vsprintf_FUN_005fdba8(g_YesNoDialogBuffer,format_string,&local_8);
+  vsprintf(g_YesNoDialogBuffer,format_string,&local_8);
   local_8 = (va_list_t)0x0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0xffffffe8);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffffe8,"^Yes");

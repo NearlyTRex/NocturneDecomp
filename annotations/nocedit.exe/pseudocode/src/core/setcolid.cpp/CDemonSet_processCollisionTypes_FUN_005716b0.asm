@@ -296,8 +296,8 @@ section .text
     PUSH 0x8                            ; 00571a0a
     LEA EAX,[ESP + 0x8]                 ; 00571a0c
     PUSH EAX                            ; 00571a10
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00571a11
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00571a11
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00571a16
     LEA EDX,[ESP + 0x1d8]               ; 00571a19
     PUSH EDX                            ; 00571a20

@@ -26,7 +26,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0330(CEventList *this_ptr)
       if (-1 < iVar2) {
         iVar4 = this_ptr->persistent_event_count + -1;
         this_ptr->persistent_event_count = iVar4;
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   (this_ptr->persistent_event_list + iVar2 * 8,
                    this_ptr->persistent_event_list + iVar2 * 8 + 8,(iVar4 - iVar2) * 0x20);
         return;
@@ -61,7 +61,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0330(CEventList *this_ptr)
         *(char *)((int)piVar6 + 1) = cVar1;
         piVar6 = (int *)((int)piVar6 + 2);
       } while (cVar1 != '\0');
-      crt_string_c_strupr_FUN_00600770
+      strupr
                 ((char *)(this_ptr->persistent_event_list + this_ptr->persistent_event_count * 8));
       this_ptr->persistent_event_count = this_ptr->persistent_event_count + 1;
       return;

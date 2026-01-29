@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_sync_c_enter_global_thread_critical_section_FUN_0060a19c(void)
+void __cdecl enter_global_thread_critical_section(void)
 
 {
-  crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(&g_GlobalThreadCriticalSection);
+  enter_reentrant_critical_section(&g_GlobalThreadCriticalSection);
   return;
 }

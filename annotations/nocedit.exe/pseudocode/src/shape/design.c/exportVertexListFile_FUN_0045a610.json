@@ -41,60 +41,22 @@
       },
       {
         "category": "other",
-        "column": 41,
-        "line": 22,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 29,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 34,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 48,
-        "line": 38,
+        "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 75,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 21,
-    "pseudocode_lines": 30,
-    "suspect_count": 4,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
-    "total_lines": 178
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -368,50 +330,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 15,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 22,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 24,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": ",%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 27,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\",%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

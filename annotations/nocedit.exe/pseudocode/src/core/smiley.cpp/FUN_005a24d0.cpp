@@ -91,12 +91,12 @@ void core_smiley_cpp_FUN_005a24d0(void)
   in_stack_00000004[1].base.base.orient.heading = fVar2;
   in_stack_00000004[1].base.base.orient_matrix.m[0].y = 0.0;
   in_stack_00000004[1].base.base.orient_matrix.m[1].x = 1.4013e-45;
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0
+  iVar1 = stricmp
                     ((in_stack_00000004->base).model.model_name,"smiley2.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base.base.orient_matrix.m[1].x = 2.8026e-45;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0
+  iVar1 = stricmp
                     ((in_stack_00000004->base).model.model_name,"smiley3.dfm");
   if (iVar1 != 0) {
     return;

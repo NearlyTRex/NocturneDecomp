@@ -96,7 +96,7 @@ section .text
     PUSH 0x62d5de                       ; 004e4078 | = "credits.txt"
     PUSH 0x62d5ea                       ; 004e407d | = "data"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e4082
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e4087
     MOV EBP,EAX                         ; 004e408a
     TEST EAX,EAX                        ; 004e408c
@@ -118,7 +118,7 @@ section .text
     LEA EAX,[ESP + 0x1010]              ; 004e40b4
     PUSH EAX                            ; 004e40bb
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 004e40bc
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004e40c1
     PUSH 0x62d5ef                       ; 004e40c4 | = "end\n"
     LEA EAX,[ESP + 0x100c]              ; 004e40c9
@@ -134,7 +134,7 @@ section .text
     PUSH 0x62d639                       ; 004e40e6 | = "..\\core\\game.cpp"
     PUSH EBP                            ; 004e40eb
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e40ec
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e40f1
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130 ; 004e40f4
         ;   XREF to: 005ab130 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_005ab130()

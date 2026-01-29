@@ -7,9 +7,9 @@
 ; int              Stack[0x4]:4   year
 ;
 ; XREF[4]:
+;   crt_time.c__mktime_FUN_00600f80 at 00600feb
 ;   crt_time.c_determine_dst_status_FUN_006079b4 at 00607a14
 ;   crt_time.c_gmtime_r_FUN_00607690 at 00607748
-;   crt_time.c_mktime_FUN_00600f80 at 00600feb
 ;   crt_unknown.c_FUN_00607858 at 00607879
 ;
 ; *****************************************************************************

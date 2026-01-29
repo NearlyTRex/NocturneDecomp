@@ -6,16 +6,16 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_environ_c_staticFinal_FUN_0060c73c(void)
+void __cdecl staticFinal(void)
 
 {
   crt_unknown_c_FUN_0060e4f0();
   if (g_EnvironmentBlock != (char **)0x0) {
-    crt_memory_c_free_FUN_00601cd0(g_EnvironmentBlock);
+    free(g_EnvironmentBlock);
     g_EnvironmentBlock = (char **)0x0;
   }
   if (INT_03f9c150 != 0) {
-    crt_memory_c_free_FUN_00601cd0((void *)INT_03f9c150);
+    free((void *)INT_03f9c150);
     INT_03f9c150 = 0;
   }
   if (g_EnvironmentStrings != (char *)0x0) {

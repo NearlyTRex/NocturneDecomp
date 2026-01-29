@@ -12,9 +12,8 @@ void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void)
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CBoxActorClassInfo,"CBoxActor",core_boxactor_cpp_factoryFunc_FUN_004216c0,
              &g_CBoxActorClassVersion,0xf,&g_CDemonActorClassInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (CDemonFilter_ARRAY_008229ec,8,&g_CDemonFilterTypeInfo);
-  crt_stdlib_c_atexit_FUN_005ff060(&DAT_0066e5cc);
+  __arrinit(CDemonFilter_ARRAY_008229ec,8,&g_CDemonFilterTypeInfo);
+  _atexit(&DAT_0066e5cc);
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CLightActorClassInfo,"CLightActor",
              core_boxactor_cpp_factoryFunc_FUN_00422950,&g_CLightActorClassVersion,2,

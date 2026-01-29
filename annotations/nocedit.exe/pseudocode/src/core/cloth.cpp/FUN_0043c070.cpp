@@ -31,7 +31,7 @@ void core_cloth_cpp_FUN_0043c070(void)
     } while (iVar2 < *in_stack_00000004);
   }
   *in_stack_00000004 = 0;
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 1,0,400);
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x65,0,0x28);
+  memset(in_stack_00000004 + 1,0,400);
+  memset(in_stack_00000004 + 0x65,0,0x28);
   return;
 }

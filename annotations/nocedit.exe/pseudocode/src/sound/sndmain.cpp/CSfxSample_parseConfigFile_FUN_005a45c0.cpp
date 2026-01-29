@@ -14,7 +14,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   char cVar3;
   float fVar4;
   float fVar5;
-  FILE *stream;
+  _FILE *stream;
   int iVar6;
   long lVar7;
   char *pcVar8;
@@ -37,7 +37,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   float *local_30;
   float *local_2c;
   int local_28;
-  FILE *local_24;
+  _FILE *local_24;
   int local_20;
   int local_1c;
   int local_18;
@@ -67,10 +67,10 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_138);
   if ((iVar6 < 1) ||
      (local_24 = engine_dosio_c_getFile_FUN_00481a50("sound",local_138,"rb"),
-     local_24 == (FILE *)0x0)) {
+     local_24 == (_FILE *)0x0)) {
     return;
   }
-  lVar7 = crt_stdio_c_ftell_FUN_00601560(local_24);
+  lVar7 = _ftell(local_24);
   local_28 = iVar6 + lVar7;
   local_30 = &(this_ptr->sample_info).max_distance;
   local_2c = &(this_ptr->sample_info).reference_volume_distance;
@@ -78,11 +78,11 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   local_20 = 0;
   local_34 = &(this_ptr->sample_info).reference_distance;
   local_18 = 0;
-  while (stream = local_24, lVar7 = crt_stdio_c_ftell_FUN_00601560(local_24), lVar7 < local_28) {
+  while (stream = local_24, lVar7 = _ftell(local_24), lVar7 < local_28) {
     local_18 = local_18 + 1;
-    pcVar8 = crt_stdio_c_fgets_FUN_005fefd0(local_464,300,stream);
+    pcVar8 = _fgets(local_464,300,stream);
     if (pcVar8 == (char *)0x0) break;
-    pcVar9 = crt_string_c_strstr_FUN_005fedd0(local_464,"//");
+    pcVar9 = strstr(local_464,"//");
     pcVar8 = local_464;
     if (pcVar9 != (char *)0x0) {
       *pcVar9 = '\0';
@@ -111,10 +111,10 @@ joined_r0x005a47dc:
         cVar3 = *pcVar8;
         pcVar8 = pcVar8 + (uint)bVar11 * -2 + 1;
       } while (cVar3 != '\0');
-      crt_string_c_memmove_FUN_005fe5e0(local_464,local_464 + 1,~uVar10 - 1);
+      memmove(local_464,local_464 + 1,~uVar10 - 1);
     }
     if (local_464[0] != '\0') {
-      iVar6 = crt_stdio_c_sscanf_FUN_0060013c(local_464,"refDist =%f",local_34);
+      iVar6 = sscanf(local_464,"refDist =%f",local_34);
       if (iVar6 == 1) {
         if (local_20 != 0) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -139,7 +139,7 @@ joined_r0x005a47dc:
         }
       }
       else {
-        iVar6 = crt_stdio_c_sscanf_FUN_0060013c(local_464,"minDist =%f",local_2c);
+        iVar6 = sscanf(local_464,"minDist =%f",local_2c);
         if (iVar6 == 1) {
           if (local_1c != 0) {
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -160,9 +160,9 @@ joined_r0x005a47dc:
           }
         }
         else {
-          iVar6 = crt_stdio_c_sscanf_FUN_0060013c(local_464,"maxDist =%f",local_30);
+          iVar6 = sscanf(local_464,"maxDist =%f",local_30);
           if (iVar6 != 1) {
-            iVar6 = crt_stdio_c_sscanf_FUN_0060013c(local_464,"maxVol =%f",&local_468);
+            iVar6 = sscanf(local_464,"maxVol =%f",&local_468);
             if (iVar6 == 1) {
               if (local_20 == 0) {
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -190,7 +190,7 @@ joined_r0x005a47dc:
                    (this_ptr->sample_info).reference_distance / local_468;
             }
             else {
-              iVar6 = crt_stdio_c_sscanf_FUN_0060013c(local_464,"length =%d",&local_38);
+              iVar6 = sscanf(local_464,"length =%d",&local_38);
               if (iVar6 == 1) {
                 if (-1 < (this_ptr->sample_info).sample_count) {
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -207,7 +207,7 @@ joined_r0x005a47dc:
                 (this_ptr->sample_info).sample_count = local_38;
               }
               else {
-                iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_464,"loop");
+                iVar6 = stricmp(local_464,"loop");
                 if (iVar6 == 0) {
                   this_ptr->loop_marker_count = 1;
                   iVar6 = (this_ptr->sample_info).sample_count;

@@ -15,9 +15,8 @@ core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(CDeformableModel *this_ptr)
   CDeformableModel *pCVar3;
   SLod *pSVar4;
   
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->vertex_pool,100,&g_CVectorTypeInfo);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar2 = __arrinit(this_ptr->vertex_pool,100,&g_CVectorTypeInfo);
+  pvVar2 = __arrinit
                      ((void *)((int)pvVar2 + 0x4bc),100,&g_CBoundingBox3DTypeInfo);
   pCVar1 = (CDeformableModel *)((int)pvVar2 + -0x814c);
   pCVar3 = pCVar1;
@@ -34,16 +33,16 @@ core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(CDeformableModel *this_ptr)
   } while (pSVar4 != (SLod *)((int)pvVar2 + -0x8138));
   *(uint *)((int)pvVar2 + -0x8094) = 0;
   *(uint *)((int)pvVar2 + -0x8090) = 0;
-  crt_memory_c_memset_FUN_005fde40((void *)((int)pvVar2 + -0x808c),0,0x7080);
+  memset((void *)((int)pvVar2 + -0x808c),0,0x7080);
   *(uint *)((int)pvVar2 + -0x100c) = 0;
-  crt_memory_c_memset_FUN_005fde40((void *)((int)pvVar2 + -0x1008),0,0xb40);
+  memset((void *)((int)pvVar2 + -0x1008),0,0xb40);
   *(byte *)((int)pvVar2 + 0xe10) = 0;
   *(uint *)((int)pvVar2 + 0xe60) = 0;
   *(uint *)((int)pvVar2 + -0x4c0) = 0x3f800000;
   pCVar1->num_lods = 0;
   *(uint *)((int)pvVar2 + -0x4c4) = *(uint *)((int)pvVar2 + -0x4c0);
   *(uint *)((int)pvVar2 + -0x4c8) = *(uint *)((int)pvVar2 + -0x4c4);
-  crt_memory_c_memset_FUN_005fde40((void *)((int)pvVar2 + -0x8148),0,0x28);
+  memset((void *)((int)pvVar2 + -0x8148),0,0x28);
   *(uint *)((int)pvVar2 + -4) = 0;
   *(uint *)((int)pvVar2 + -8) = *(uint *)((int)pvVar2 + -4);
   *(uint *)((int)pvVar2 + -0xc) = *(uint *)((int)pvVar2 + -8);

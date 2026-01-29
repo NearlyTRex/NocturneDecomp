@@ -8,93 +8,19 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 15,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 18,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 19,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 20,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 32,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 33,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 35,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 39,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 49,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 156,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 41,
-    "suspect_count": 11,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
-    "total_lines": 202
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 201
   },
   "cross_references": [
     {
@@ -114,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_inv.cpp_CInventory_save_FUN_004ff210",
-    "signature": "void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -304,131 +230,9 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
-  "suspects": [
-    {
-      "actual_args": 0,
-      "description": "Format \"%s{ // Inventory\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s{ // Inventory\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 8,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s{ // Inventory\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s// fileVersion\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s// fileVersion\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 11,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// fileVersion\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s%d\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 12,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\",g_PropertyNamePrefix);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s// itemCount\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s// itemCount\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 13,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// itemCount\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s%d\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 14,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\",g_PropertyNamePrefix);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s// currentWeapon\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s// currentWeapon\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 24,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// currentWeapon\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s%d\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 25,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\",g_PropertyNamePrefix);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s// battery strength\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s// battery strength\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 26,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// battery strength\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s// actor name list\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s// actor name list\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 29,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// actor name list\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s// actor data list\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s// actor data list\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 32,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// actor data list\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s} // End inventory\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s} // End inventory\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 42,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s} // End inventory\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_locale_c_islower_multibyte_FUN_00610990(wchar_t character)
+int __watcallStack islower_multibyte(wchar_t character)
 
 {
   int iVar1;
   ushort in_stack_00000006;
   
-  iVar1 = crt_locale_c_ismultibyte_FUN_00610a20(character);
+  iVar1 = ismultibyte(character);
   if (iVar1 == 0) {
     return (uint)(g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x80);
   }

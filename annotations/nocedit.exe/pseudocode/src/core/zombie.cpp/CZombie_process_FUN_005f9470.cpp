@@ -277,7 +277,7 @@ LAB_005f9541:
         (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x11c))();
         local_98 = (double)(float)pCVar12;
         if (0.0 < local_98) {
-          dVar27 = crt_math_c_round_FUN_005fe6b0(local_98 * 2.5 * 0.25);
+          dVar27 = round(local_98 * 2.5 * 0.25);
           local_80 = (int)ROUND(dVar27);
           core_gore_cpp_FUN_004edbb0();
         }

@@ -35,7 +35,7 @@ int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_0060da87(filebuf *this_
       (this_ptr->_streambuf).__get_ptr = this_ptr->__unbuffered_get_area + 4;
       (this_ptr->_streambuf).__get_end = this_ptr->__unbuffered_get_area + 4;
       (this_ptr->_streambuf).__get_base = this_ptr->__unbuffered_get_area;
-      iVar4 = crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930();
+      iVar4 = ReadFileBytesMaybe();
       if (iVar4 < 1) {
         return -1;
       }
@@ -53,7 +53,7 @@ LAB_0060dac1:
     iVar4 = 0;
   }
   else {
-    iVar4 = crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930();
+    iVar4 = ReadFileBytesMaybe();
     if (iVar4 < 1) {
       return -1;
     }

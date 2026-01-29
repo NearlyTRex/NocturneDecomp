@@ -117,7 +117,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
     local_20 = pCVar11;
     if (-1 < (int)pCVar11) {
       do {
-        iVar8 = crt_string_c_strnicmp_FUN_005ff070(str1->motion_name,local_84,0xb);
+        iVar8 = strnicmp(str1->motion_name,local_84,0xb);
         if (iVar8 == 0) {
           this_ptr->unk1[0x24] = '\0';
           this_ptr->unk1[0x25] = '\0';

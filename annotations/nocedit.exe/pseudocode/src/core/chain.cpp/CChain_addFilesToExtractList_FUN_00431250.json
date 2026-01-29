@@ -17,18 +17,6 @@
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -37,18 +25,6 @@
         "category": "other",
         "column": 50,
         "line": 53,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 56,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
@@ -78,7 +54,7 @@
     ],
     "convention": "unknown",
     "name": "core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250",
-    "signature": "void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)"
+    "signature": "void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)"
   },
   "function_calls": [
     {
@@ -246,14 +222,14 @@
       "description": "Unnamed function parameter",
       "line": 7,
       "match": "param_5",
-      "text": "int param_5,FILE *param_6)",
+      "text": "int param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 7,
       "match": "param_6",
-      "text": "int param_5,FILE *param_6)",
+      "text": "int param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -267,7 +243,7 @@
       "description": "Unnamed function parameter",
       "line": 21,
       "match": "param_6",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"ART\\\\%s\\n\",pcVar3);",
+      "text": "_fprintf(param_6,\"ART\\\\%s\\n\",pcVar3);",
       "type": "unnamed_param"
     },
     {
@@ -281,7 +257,7 @@
       "description": "Unnamed function parameter",
       "line": 49,
       "match": "param_6",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"ART\\\\%s\\n\",local_104);",
+      "text": "_fprintf(param_6,\"ART\\\\%s\\n\",local_104);",
       "type": "unnamed_param"
     }
   ],

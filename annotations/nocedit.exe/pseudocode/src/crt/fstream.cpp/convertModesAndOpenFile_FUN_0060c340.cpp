@@ -14,7 +14,7 @@ crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340
   int iVar1;
   uint uVar2;
   uint uVar3;
-  stat sStack_50;
+  _stat _Stack_50;
   
   uVar2 = *iostream_mode;
   if ((uVar2 & 3) == 3) {
@@ -46,7 +46,7 @@ crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340
     uVar3 = uVar3 | 0x200;
   }
   if ((((uVar2 & 0x40) != 0) && ((uVar3 | 0x20) != 0)) &&
-     (iVar1 = crt_io_c_stat_FUN_00607e64(filename,&sStack_50), iVar1 != -1)) {
+     (iVar1 = stat(filename,&_Stack_50), iVar1 != -1)) {
     return -1;
   }
   uVar2 = permissions & 0x7000;
@@ -68,6 +68,6 @@ crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340
     }
   }
   permissions = permissions & 0xffff8fff;
-  iVar1 = crt_stdio_c_CreateFileVariadic_FUN_00609074(filename,uVar3,iVar1,permissions);
+  iVar1 = CreateFileVariadic(filename,uVar3,iVar1,permissions);
   return iVar1;
 }

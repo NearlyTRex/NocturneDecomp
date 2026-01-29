@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(FILE *stream)
+; __watcallStack _FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(_FILE *stream)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   stream
+; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[4]:
 ;   crt_stdio.c_fputc_FUN_005ff2d7 at 005ff37a

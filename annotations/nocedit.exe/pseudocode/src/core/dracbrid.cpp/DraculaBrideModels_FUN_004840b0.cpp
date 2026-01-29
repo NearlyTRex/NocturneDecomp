@@ -21,30 +21,30 @@ void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
   pcVar5 = (in_stack_00000004->base).model.model_name;
   pCVar1 = &(in_stack_00000004->base).model;
   if (g_CGamePtr->nudity_flag == 0) {
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"nbride2.dfm");
+    iVar3 = stricmp(pcVar5,"nbride2.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(pCVar1,"nbride2x.dfm");
     }
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"nbride3.dfm");
+    iVar3 = stricmp(pcVar5,"nbride3.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
                 (&(in_stack_00000004->base).model,"nbride3x.dfm");
     }
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"nbride4.dfm");
+    iVar3 = stricmp(pcVar5,"nbride4.dfm");
     if (iVar3 != 0) goto LAB_00484145;
     pcVar5 = "nbride4x.dfm";
   }
   else {
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"nbride2x.dfm");
+    iVar3 = stricmp(pcVar5,"nbride2x.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(pCVar1,"nbride2.dfm");
     }
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"nbride3x.dfm");
+    iVar3 = stricmp(pcVar5,"nbride3x.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
                 (&(in_stack_00000004->base).model,"nbride3.dfm");
     }
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"nbride4x.dfm");
+    iVar3 = stricmp(pcVar5,"nbride4x.dfm");
     if (iVar3 != 0) goto LAB_00484145;
     pcVar5 = "nbride4.dfm";
   }

@@ -28,7 +28,7 @@ void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
   if (0 < DAT_03654368) {
     pcVar5 = &DAT_03654370;
     do {
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,local_20c);
+      iVar2 = stricmp(pcVar5,local_20c);
       if (iVar2 == 0) {
         if (-1 < iVar4) {
           if ((byte)(&DAT_03659190)[iVar4] != _uStack00000008) {

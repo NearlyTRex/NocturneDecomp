@@ -13,37 +13,37 @@ uint core_event_cpp_DifferentWaysToDie2_FUN_004aa960(void)
   char *in_stack_00000004;
   uint *in_stack_00000008;
   
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"generic");
+  iVar1 = stricmp(in_stack_00000004,"generic");
   if (iVar1 == 0) {
     *in_stack_00000008 = 100;
     return 1;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"bullet");
+  iVar1 = stricmp(in_stack_00000004,"bullet");
   if (iVar1 == 0) {
     *in_stack_00000008 = 0x65;
     return 1;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"Fire");
+  iVar1 = stricmp(in_stack_00000004,"Fire");
   if (iVar1 == 0) {
     *in_stack_00000008 = 0x66;
     return 1;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"Blade");
+  iVar1 = stricmp(in_stack_00000004,"Blade");
   if (iVar1 == 0) {
     *in_stack_00000008 = 0x67;
     return 1;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"Stake");
+  iVar1 = stricmp(in_stack_00000004,"Stake");
   if (iVar1 == 0) {
     *in_stack_00000008 = 0x68;
     return 1;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"Gas");
+  iVar1 = stricmp(in_stack_00000004,"Gas");
   if (iVar1 == 0) {
     *in_stack_00000008 = 0x69;
     return 1;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"electrocute");
+  iVar1 = stricmp(in_stack_00000004,"electrocute");
   if (iVar1 == 0) {
     *in_stack_00000008 = 0x6a;
     return 1;

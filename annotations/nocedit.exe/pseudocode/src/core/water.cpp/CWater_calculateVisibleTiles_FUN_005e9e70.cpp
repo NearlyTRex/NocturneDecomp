@@ -72,7 +72,7 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
     if (local_20 < local_2c) {
       local_20 = local_2c;
     }
-    dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_20 / this_ptr->tile_size + 1.0));
+    dVar8 = round((double)(local_20 / this_ptr->tile_size + 1.0));
     local_20 = (float)(int)ROUND(dVar8);
     g_VisibleWaterTileCount = 0;
     iVar7 = -(int)local_20;

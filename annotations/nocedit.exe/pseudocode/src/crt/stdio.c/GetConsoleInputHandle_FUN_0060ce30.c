@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-HANDLE crt_stdio_c_GetConsoleInputHandle_FUN_0060ce30(void)
+HANDLE GetConsoleInputHandle(void)
 
 {
-  crt_stdio_c_InitializeConsoleHandles_FUN_0060cdbc();
+  InitializeConsoleHandles();
   return g_ConsoleInputHandle;
 }

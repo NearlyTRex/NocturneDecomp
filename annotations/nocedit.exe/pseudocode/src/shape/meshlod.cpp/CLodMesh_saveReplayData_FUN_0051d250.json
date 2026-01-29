@@ -4,6 +4,12 @@
       {
         "category": "other",
         "column": 30,
+        "line": 37,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
         "line": 38,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
@@ -21,14 +27,8 @@
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 41,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 39,
-        "line": 42,
+        "line": 41,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -42,9 +42,9 @@
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 21,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -66,36 +66,24 @@
       },
       {
         "category": "other",
-        "column": 21,
+        "column": 29,
         "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 42,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 37,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 93,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 37,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -115,7 +103,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_saveReplayData_FUN_0051d250(CLodMesh *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_saveReplayData_FUN_0051d250(CLodMesh *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -210,42 +198,42 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar6),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar3),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)pCVar1->adjacent_tri_indices + iVar2));",
       "type": "pointer_cast"

@@ -91,7 +91,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
     if (0 < g_MasterLightCount) {
       local_20 = 0;
       do {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_134,"%2d. %s",iVar8,
                    *(int *)((int)g_MasterLightList + local_20) + 0x40);
         engine_2d_c_drawText_FUN_00401fd0(local_134,iVar5,iVar7);
@@ -296,7 +296,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
             pcVar9[1] = cVar2;
             pcVar9 = pcVar9 + 2;
           } while (cVar2 != '\0');
-          crt_string_c_strupr_FUN_00600770(local_134);
+          strupr(local_134);
         }
         iVar5 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                           (g_CEditorToolsPtr,"Save set","models",0x647c8f,

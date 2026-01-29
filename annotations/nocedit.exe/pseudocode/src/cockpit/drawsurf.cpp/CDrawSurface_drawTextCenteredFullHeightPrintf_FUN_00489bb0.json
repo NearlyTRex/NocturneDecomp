@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 38,
+        "column": 13,
         "line": 18,
         "message": "'stack0xffffeff4' was not declared in this scope; did you mean 'in_stack_ffffeff4'?"
       }
@@ -18,7 +18,7 @@
       },
       {
         "category": "other",
-        "column": 54,
+        "column": 29,
         "line": 18,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -157,7 +157,7 @@
       "description": "Direct stack address reference",
       "line": 11,
       "match": "&stack0xffffeff4",
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)y,(va_list_t *)&local_c);",
+      "text": "vsprintf(&stack0xffffeff4,(char *)y,(va_list_t *)&local_c);",
       "type": "stack_ref"
     },
     {

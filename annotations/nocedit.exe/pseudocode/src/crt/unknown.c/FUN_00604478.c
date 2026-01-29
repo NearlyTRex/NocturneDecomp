@@ -72,7 +72,7 @@ void crt_unknown_c_FUN_00604478(void)
     in_stack_0000000c = in_stack_0000000c - local_14;
     if ((int)local_14 < in_stack_00000004[1]) {
       uVar3 = in_stack_00000004[1] - local_14;
-      crt_memory_c_memset_FUN_005fde40((byte *)((int)in_stack_00000014 + local_14),0x30,uVar3)
+      memset((byte *)((int)in_stack_00000014 + local_14),0x30,uVar3)
       ;
       local_14 = local_14 + uVar3;
     }
@@ -86,7 +86,7 @@ void crt_unknown_c_FUN_00604478(void)
   }
   if (in_stack_00000004[1] < 0) {
     uVar3 = -in_stack_00000004[1];
-    crt_memory_c_memset_FUN_005fde40((byte *)((int)in_stack_00000014 + uVar6),0x30,uVar3);
+    memset((byte *)((int)in_stack_00000014 + uVar6),0x30,uVar3);
     uVar6 = uVar6 + uVar3;
   }
   if (0 < (int)local_18) {

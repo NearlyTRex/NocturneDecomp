@@ -38,7 +38,7 @@ void core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
   }
   iVar1 = *(int *)(in_stack_00000004 + 0x1c) + -1;
   *(int *)(in_stack_00000004 + 0x1c) = iVar1;
-  crt_string_c_memmove_FUN_005fe5e0
+  memmove
             ((void *)(in_stack_00000008 * 0x78 + in_stack_00000004 + 0x20),
              (void *)((in_stack_00000008 + 1) * 0x78 + in_stack_00000004 + 0x20),
              (iVar1 - in_stack_00000008) * 0x78);
@@ -49,11 +49,11 @@ void core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
     local_14 = &DAT_02f98ae4 + in_stack_00000008;
     dest = &DAT_02f98ae0 + in_stack_00000008 * 4;
     do {
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (dest_00,src,*(int *)(in_stack_00000004 + 0x1c) - in_stack_00000008);
       iVar1 = iVar1 + 1;
       src = src + 0x114;
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (dest,local_14,(*(int *)(in_stack_00000004 + 0x1c) - in_stack_00000008) * 4);
       dest_00 = dest_00 + 0x114;
       local_14 = local_14 + 0x45;

@@ -9,6 +9,6 @@
 void __cdecl core_manpuz_cpp_freePanels_FUN_0050ba90(SPanel **objs)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(objs,0xc,&g_SPanelTypeInfo);
+  __arrfini(objs,0xc,&g_SPanelTypeInfo);
   return;
 }

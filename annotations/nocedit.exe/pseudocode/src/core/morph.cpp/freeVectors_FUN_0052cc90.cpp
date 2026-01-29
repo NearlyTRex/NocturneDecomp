@@ -9,6 +9,6 @@
 void __cdecl core_morph_cpp_freeVectors_FUN_0052cc90(CVector3f **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,2,&g_CVectorTypeInfo);
+  __arrfini(array,2,&g_CVectorTypeInfo);
   return;
 }

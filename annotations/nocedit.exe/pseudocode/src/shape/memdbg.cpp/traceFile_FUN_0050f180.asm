@@ -16,7 +16,7 @@
 ;   BOOL g_TraceFileInitialized
 ;
 ; Called Functions:
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     RET                                 ; 0050f189
     PUSH 0x67d1f0                       ; 0050f18a | = "memdbg.txt"
         ;   Label: LAB_0050f18a
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0050f18f
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0050f18f
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     MOV ECX,0x1                         ; 0050f194
     ADD ESP,0x4                         ; 0050f199
     MOV dword ptr [0x02f0d930],ECX      ; 0050f19c | g_TraceFileInitialized

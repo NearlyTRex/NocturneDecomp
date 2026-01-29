@@ -13,7 +13,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   char cVar1;
   int iVar2;
   int iVar3;
-  tm *ptVar4;
+  _tm *p_Var4;
   uint unaff_EBX;
   char *output_buffer;
   uint unaff_ESI;
@@ -25,7 +25,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   byte bVar10;
   time_t atStackY_30f4 [2034];
   CFileManager *source_file;
-  FILE *dest_filename;
+  _FILE *dest_filename;
   CPickList *this_ptr_00;
   int file_offset;
   CPodFile *this_ptr_01;
@@ -43,7 +43,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   char local_120 [256];
   char *local_20;
   time_t local_1c [4];
-  FILE *local_c;
+  _FILE *local_c;
   
   bVar10 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
@@ -63,7 +63,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   local_c = shape_memdbg_cpp_openFile_FUN_0050f7a0
                       (&stack0xffffeefc,(char *)0x0,"rb","..\\engine\\fileio.cpp",0xa00
                       );
-  if (local_c == (FILE *)0x0) {
+  if (local_c == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s");
     engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffeef8);
@@ -73,7 +73,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   iVar2 = 0;
   if (0 < local_cf8) {
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_120,"%s\t%d");
+      sprintf(local_120,"%s\t%d");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8dc.base,local_120);
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_cf8);
@@ -126,12 +126,12 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
       this_ptr_01 = (CPodFile *)0x4b78be;
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(info);
       if (iVar3 != 0) {
-        ptVar4 = crt_time_c_localtime_FUN_00600288((time_t *)&local_534.timestamp);
-        crt_time_c_strftime_FUN_006002d4(local_320,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",ptVar4);
-        ptVar4 = crt_time_c_localtime_FUN_00600288(local_1c + 2);
-        crt_time_c_strftime_FUN_006002d4(local_220,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",ptVar4);
+        p_Var4 = localtime((time_t *)&local_534.timestamp);
+        strftime(local_320,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
+        p_Var4 = localtime(local_1c + 2);
+        strftime(local_220,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
         this_ptr_00 = (CPickList *)local_534.file_size;
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_cdc.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_534.target_path);
         info = &local_cdc;
         file_offset = 0x4b7970;
@@ -152,7 +152,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
       (ptVar6 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] =
            (ptVar5 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
       iVar2 = engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
-                        ((FILE *)source_file,(char *)dest_filename,pcVar7,(int)this_ptr_00,
+                        ((_FILE *)source_file,(char *)dest_filename,pcVar7,(int)this_ptr_00,
                          file_offset,(int)this_ptr_01,(int)info);
       if (iVar2 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

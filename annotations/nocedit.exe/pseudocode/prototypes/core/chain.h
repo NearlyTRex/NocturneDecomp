@@ -57,7 +57,7 @@ void FUN_00431120(void);
 
 // Original: core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250
 // Address: 00431250
-void CChain::addFilesToExtractList(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6);
+void CChain::addFilesToExtractList(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6);
 
 // Original: core_chain.cpp_FUN_00431330
 // Address: 00431330

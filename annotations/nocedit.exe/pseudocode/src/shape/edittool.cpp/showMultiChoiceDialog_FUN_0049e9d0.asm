@@ -55,9 +55,8 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_memory.c_constructTypedObjectArray_FUN_00601272
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
+;   crt_memory.c___vec_new_FUN_00601272
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
@@ -68,6 +67,7 @@
 ;   shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -124,8 +124,8 @@ section .text
         ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0049ea68
     PUSH EAX                            ; 0049ea6b
-    CALL crt_memory.c_constructTypedObjectArray_FUN_00601272 ; 0049ea6c
-        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructTypedObjectArray_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_new_FUN_00601272 ; 0049ea6c
+        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0049ea71
     TEST EAX,EAX                        ; 0049ea74
     PUSH EDI                            ; 0049ea76
@@ -636,12 +636,12 @@ section .text
     PUSH EBP                            ; 0049f00c
     MOV dword ptr [0x0067d20c],EBX      ; 0049f00d | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ESI      ; 0049f013 | g_CurrentDebugLine
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0049f019
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0049f019
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0049f01e
     PUSH EAX                            ; 0049f021
-    CALL crt_memory.c_free_FUN_005fe659 ; 0049f022
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0049f022
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0049f027
     MOV EAX,dword ptr [ESP + 0x110]     ; 0049f02a
     MOV [0x006793a8],EAX                ; 0049f031 | g_InputKeyMask

@@ -11,7 +11,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524e60(CDemonMission *this_ptr
 {
   CDemonActor *actor_ptr;
   int iVar1;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   int in_stack_0000000c;
   
   for (actor_ptr = this_ptr->first_actor; actor_ptr != (CDemonActor *)0x0;

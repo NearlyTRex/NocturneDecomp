@@ -41,13 +41,13 @@ void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int u
     pbVar3 = pbVar3 + (uint)bVar4 * -2 + 1;
   } while (bVar1 != 0);
   if (iVar2 != -2) {
-    dVar5 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff8c);
+    dVar5 = _strtod(in_stack_ffffff8c);
     local_14 = (float)dVar5;
   }
   if (0 < ui_mode) {
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               ((char *)local_6c,0x14,0,0x16,"Ignore different part names? [y] : ");
-    iVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_6c[0]);
+    iVar2 = toupper((uint)local_6c[0]);
     if (iVar2 == 0x4e) {
       local_18 = 1;
     }

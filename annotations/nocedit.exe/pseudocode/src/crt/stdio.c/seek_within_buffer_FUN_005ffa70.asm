@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,FILE *file)
+; __cdecl int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,_FILE *file)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   offset
-; FILE *           Stack[0x8]:4   file
+; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[1]:
 ;   crt_stdio.c_fseek_FUN_005ffacc at 005ffba2

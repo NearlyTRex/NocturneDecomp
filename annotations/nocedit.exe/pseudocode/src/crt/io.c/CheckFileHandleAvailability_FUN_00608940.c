@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_CheckFileHandleAvailability_FUN_00608940(void)
+int __cdecl CheckFileHandleAvailability(void)
 
 {
   int iVar1;

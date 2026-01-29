@@ -24,13 +24,13 @@ void core_gore_cpp_FUN_004ec390(void)
     in_stack_00000004[2] = in_stack_00000008[1];
     in_stack_00000004[3] = in_stack_00000008[2];
   }
-  fVar2 = crt_math_c_atan2_FUN_006013b1
+  fVar2 = atan2
                     ((float10)in_stack_0000000c[1],
                      SQRT((float10)*in_stack_0000000c * (float10)*in_stack_0000000c +
                           (float10)in_stack_0000000c[2] * (float10)in_stack_0000000c[2]));
   in_stack_00000004[8] = 0;
   in_stack_00000004[6] = (float)-fVar2;
-  fVar2 = crt_math_c_atan2_FUN_006013b1((float10)*in_stack_0000000c,(float10)in_stack_0000000c[2]);
+  fVar2 = atan2((float10)*in_stack_0000000c,(float10)in_stack_0000000c[2]);
   in_stack_00000004[7] = (float)fVar2;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
   in_stack_00000004[10] = iVar1;

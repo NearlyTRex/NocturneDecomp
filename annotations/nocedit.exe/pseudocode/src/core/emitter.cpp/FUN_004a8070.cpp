@@ -53,7 +53,7 @@ void core_emitter_cpp_FUN_004a8070(void)
   float local_14;
   
   iVar6 = *(int *)(in_stack_00000004 + 0x48c);
-  iVar2 = crt_string_c_strcmp_FUN_005fef20((char *)(in_stack_00000004 + 0x16c),"none");
+  iVar2 = strcmp((char *)(in_stack_00000004 + 0x16c),"none");
   if ((iVar2 != 0) &&
      (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,(char *)(in_stack_00000004 + 0x16c)),
@@ -75,7 +75,7 @@ void core_emitter_cpp_FUN_004a8070(void)
                        (double)*(float *)(in_stack_00000004 + 0x24),
                        (double)*(float *)(in_stack_00000004 + 0x28),50.0);
     if (((iVar2 == 0) || (iVar6 = 1, g_CGamePtr->foul_language_flag != 0)) ||
-       (iVar2 = crt_string_c_strnicmp_FUN_005ff070
+       (iVar2 = strnicmp
                           ((char *)(in_stack_00000004 + 0x3d4),"mob",3), iVar2 != 0)) {
       if (iVar6 != 0) goto LAB_004a811d;
     }

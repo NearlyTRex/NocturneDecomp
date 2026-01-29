@@ -62,9 +62,9 @@ void core_msnedit_cpp_FUN_0053b510(void)
         } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0U) != 0);
       } while ((CStack_30.data_array == (char **)0x2d) || (CStack_30.data_array == (char **)0x5f));
       *pcVar7 = '\0';
-      iVar4 = crt_string_c_stricmp_FUN_005fe7f0(local_110,"none");
+      iVar4 = stricmp(local_110,"none");
       if ((iVar4 != 0) &&
-         (iVar4 = crt_string_c_stricmp_FUN_005fe7f0(local_110,"true"), iVar4 != 0)) {
+         (iVar4 = stricmp(local_110,"true"), iVar4 != 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_40 + 8),local_110);
       }
     }
@@ -82,7 +82,7 @@ void core_msnedit_cpp_FUN_0053b510(void)
       }
       else {
         shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base);
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (acStack_304,"Actors relevent to \"%s\"",in_stack_00000008 + 4);
         pcVar9 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                    (&local_6ac,acStack_304,-1,0);
@@ -109,9 +109,9 @@ void core_msnedit_cpp_FUN_0053b510(void)
                shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_30,iStack_14);
         in_stack_ffffd450 = str1;
         in_stack_ffffd454 = unaff_EBP;
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,unaff_EBP->actor_name);
+        iVar4 = stricmp((char *)str1,unaff_EBP->actor_name);
         if (iVar4 == 0) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(CStack_2fc.actor_name,"%s\tReferenced by name");
+          sprintf(CStack_2fc.actor_name,"%s\tReferenced by name");
           in_stack_ffffd454 = &CStack_2fc;
           in_stack_ffffd450 = (CStrList *)&local_6ac.base.data_array;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -143,11 +143,11 @@ void core_msnedit_cpp_FUN_0053b510(void)
                     } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0U) != 0);
                   } while ((local_18 == (CDemonActor *)0x2d) || (local_18 == (CDemonActor *)0x5f));
                   *(char *)pfVar8 = '\0';
-                  iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                  iVar5 = stricmp
                                     ((char *)&CStack_2fc.previous_transform_state.position.y,
                                      "none");
                   if ((iVar5 != 0) &&
-                     (iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                     (iVar5 = stricmp
                                         ((char *)&CStack_2fc.previous_transform_state.position.y,
                                          "true"), iVar5 != 0)) {
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -162,9 +162,9 @@ void core_msnedit_cpp_FUN_0053b510(void)
                 do {
                   pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                                      ((CStrList *)auStack_40,iVar5);
-                  iVar6 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,pcVar9);
+                  iVar6 = stricmp((char *)str1,pcVar9);
                   if (iVar6 == 0) {
-                    crt_stdio_c_sprintf_FUN_005fdbd0
+                    sprintf
                               (CStack_2fc.actor_name,"%s\tChecks for \"%s\" in \"%s\"",unaff_EBP);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
                               ((CStrList *)&local_6ac.base.data_array,CStack_2fc.actor_name);

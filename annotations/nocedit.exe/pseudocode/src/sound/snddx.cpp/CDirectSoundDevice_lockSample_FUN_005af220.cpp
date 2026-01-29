@@ -37,7 +37,7 @@ sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220
     return g_DirectSoundBufferMetadata[buffer_id].field1_0x4;
   }
   pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (acStack_19c,"DirectSux: Unable to %s.  (%s)","Lock hw sample buffer",pcVar1)
   ;
   sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_19c);

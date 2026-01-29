@@ -4,10 +4,10 @@
 struct CLodEdge;
 struct CLodFace;
 struct CLodVert;
-struct FILE;
 struct SLodSamplePoint;
 struct SLodSubmesh;
 struct SSpatialGrid;
+struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -27,7 +27,7 @@ typedef struct CLodMesh {
     int reserved_attribute_count; // 0x20
     int attribute_enabled_flags[4]; // 0x24
     struct CLodMesh* next_lod; // 0x34
-    struct FILE* precompute_file; // 0x38
+    struct _FILE* precompute_file; // 0x38
     int max_vertex_count; // 0x3c
     int max_tri_count; // 0x40
     int edge_count; // 0x44

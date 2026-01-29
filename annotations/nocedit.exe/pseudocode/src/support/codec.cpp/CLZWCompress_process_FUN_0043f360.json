@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 27,
+        "message": "'fgetc_outptr' was not declared in this scope"
+      },
+      {
         "category": "other",
         "column": 20,
         "line": 28,
@@ -73,7 +79,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWCompress_process_FUN_0043f360",
-    "signature": "int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360 (CLZWCompress *this_ptr,FILE *input_file,int byte_count,FILE *output_file)"
+    "signature": "int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360 (CLZWCompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)"
   },
   "function_calls": [
     {
@@ -176,7 +182,7 @@
         "name": "input_file",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -190,7 +196,7 @@
         "name": "output_file",
         "offset": 16,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },

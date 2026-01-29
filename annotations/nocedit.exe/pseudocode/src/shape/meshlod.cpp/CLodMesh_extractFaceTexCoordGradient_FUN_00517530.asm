@@ -31,7 +31,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     ADD EBX,EAX                         ; 00517558
     LEA EAX,[ESP + 0x8]                 ; 0051755a
     PUSH EAX                            ; 0051755e
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0051755f
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0051755f
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     IMUL EDX,dword ptr [EBX + 0x10],0x4c4 ; 00517564
     MOV EAX,dword ptr [ESI + 0x4]       ; 0051756b
     ADD EDX,EAX                         ; 0051756e

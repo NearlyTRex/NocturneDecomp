@@ -8,39 +8,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 26,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 82,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 35,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 149
+    "total_lines": 147
   },
   "cross_references": [],
   "function": {
@@ -54,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_writeSpatialTree_FUN_0045a200",
-    "signature": "void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,FILE *output_file,int node_index)"
+    "signature": "void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,_FILE *output_file,int node_index)"
   },
   "function_calls": [
     {
@@ -187,7 +169,7 @@
         "name": "output_file",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -201,28 +183,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "ROUND",
-      "text": "(output_file,\"\\tORDER\\t%d,%d,%d,%d,MODEL%d,MODEL%d\\n\\n\",(int)ROUND(dVar1),(int)ROUND(dVar2)",
+      "text": "_fprintf(output_file,\"\\tORDER\\t%d,%d,%d,%d,MODEL%d,MODEL%d\\n\\n\",(int)ROUND(dVar1),(int)ROUND(dVar2)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "ROUND",
-      "text": "(output_file,\"\\tORDER\\t%d,%d,%d,%d,MODEL%d,MODEL%d\\n\\n\",(int)ROUND(dVar1),(int)ROUND(dVar2)",
+      "text": "_fprintf(output_file,\"\\tORDER\\t%d,%d,%d,%d,MODEL%d,MODEL%d\\n\\n\",(int)ROUND(dVar1),(int)ROUND(dVar2)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 30,
       "match": "ROUND",
       "text": ",(int)ROUND(dVar3),(int)ROUND(dVar4),node_index * 2 + 1,node_index * 2,uVar5,uVar6,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 30,
       "match": "ROUND",
       "text": ",(int)ROUND(dVar3),(int)ROUND(dVar4),node_index * 2 + 1,node_index * 2,uVar5,uVar6,",
       "type": "decompiler_intrinsic"

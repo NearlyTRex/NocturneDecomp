@@ -50,7 +50,7 @@ wincore_winrun_cpp_winMain_FUN_005f3680
     stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);
   } while (iVar6 < (int)stackProbe);
   seed = (*g_timeGetTimeFunc)();
-  crt_stdlib_c_srand_FUN_005feb80(seed);
+  srand(seed);
   pbVar8 = &g_CommandLineBuffer;
   pbVar4 = (byte *)(*g_GetCommandLineAFunc)();
   do {
@@ -125,7 +125,7 @@ LAB_005f37d1:
   (*g_UpdateWindowFunc)(g_MainWindowHandle);
   currentProcess = (*g_GetCurrentProcessFunc)();
   (*g_SetThreadPriorityFunc)(currentProcess,1);
-  crt_memory_c_memset_FUN_005fde40(&memStatus,0,0x20);
+  memset(&memStatus,0,0x20);
   memStatus.dwLength = 0x20;
   (*g_GlobalMemoryStatusFunc)(&memStatus);
   g_TotalPhysicalMemory = memStatus.dwTotalPhys;

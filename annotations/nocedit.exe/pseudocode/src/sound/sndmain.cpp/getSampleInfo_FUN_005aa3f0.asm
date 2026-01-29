@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_ftell_FUN_00601560
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFile_FUN_00481a50
@@ -154,7 +154,7 @@ section .text
     PUSH EBP                            ; 005aa4c5
     PUSH 0x650b62                       ; 005aa4c6 | = "sound"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 005aa4cb
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 005aa4d0
     ADD ESP,0xc                         ; 005aa4d2
     MOV ESI,EAX                         ; 005aa4d5
@@ -169,7 +169,7 @@ section .text
     PUSH 0x650b68                       ; 005aa4e8 | = "..\\sound\\sndmain.cpp"
     PUSH ESI                            ; 005aa4ed
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005aa4ee
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005aa4f3
     XOR EAX,EAX                         ; 005aa4f6
     ADD ESP,0x104                       ; 005aa4f8
@@ -181,7 +181,7 @@ section .text
     PUSH EAX                            ; 005aa503
         ;   Label: LAB_005aa503
     CALL crt_stdio.c_ftell_FUN_00601560 ; 005aa504
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 005aa509
     PUSH EBP                            ; 005aa50c
     MOV dword ptr [ESP + 0x104],EAX     ; 005aa50d
@@ -189,7 +189,7 @@ section .text
     PUSH EAX                            ; 005aa51b
     PUSH EBX                            ; 005aa51c
     CALL sound_sndmain.cpp_parseWavFile_FUN_005a3fe0 ; 005aa51d
-        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
+        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
     ADD ESP,0xc                         ; 005aa522
     TEST EAX,EAX                        ; 005aa525
     JZ 0x005aa4db                       ; 005aa527
@@ -198,7 +198,7 @@ section .text
     PUSH 0x650b7d                       ; 005aa52e | = "..\\sound\\sndmain.cpp"
     PUSH EBX                            ; 005aa533
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005aa534
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005aa539
     PUSH EBP                            ; 005aa53c
         ;   Label: LAB_005aa53c
@@ -238,8 +238,8 @@ section .text
         ;   XREF to: 005344f0 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 005aa59d
     PUSH 0x681af4                       ; 005aa5a0 | g_CMP3DecoderDestructorNode2
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 005aa5a5
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 005aa5a5
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005aa5aa
     PUSH EBP                            ; 005aa5ad
         ;   Label: LAB_005aa5ad

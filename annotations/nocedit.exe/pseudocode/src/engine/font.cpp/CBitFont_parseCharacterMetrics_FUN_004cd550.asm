@@ -45,10 +45,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_free_FUN_005fe659
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -402,8 +402,8 @@ section .text
     MOV ESI,0x23e                       ; 004cd9f9
     MOV dword ptr [0x0067d20c],EBX      ; 004cd9fe | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ESI      ; 004cda04 | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 004cda0a
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004cda0a
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004cda0f
     ADD ESP,0x15c                       ; 004cda12
     POP EBP                             ; 004cda18

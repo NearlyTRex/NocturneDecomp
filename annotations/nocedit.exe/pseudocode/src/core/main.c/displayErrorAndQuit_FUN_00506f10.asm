@@ -42,14 +42,14 @@
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_dtor_FUN_005aaeb0
-;   crt_errno.c_errno_FUN_00601450
+;   crt_errno.c__errno_FUN_00601450
 ;   crt_startup.c_notifyAbnormalTermination_FUN_00601620
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   crt_string.c_strerror_FUN_00601470
 ;   crt_time.c_asctime_FUN_00601768
 ;   crt_time.c_localtime_FUN_00600288
-;   crt_time.c_time_with_rounding_FUN_006001f0
+;   crt_time.c_time_FUN_006001f0
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -142,7 +142,7 @@ section .text
     PUSH 0x0                            ; 00506fab
     PUSH 0x6315d0                       ; 00506fad | = "gtfo.txt"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00506fb2
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV ESI,EAX                         ; 00506fb7
     ADD ESP,0x14                        ; 00506fb9
     TEST EAX,EAX                        ; 00506fbc
@@ -151,13 +151,13 @@ section .text
     PUSH 0x6315d9                       ; 00506fc0 | = "Recursive GTFO!\n"
     PUSH EAX                            ; 00506fc5
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00506fc6
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00506fcb
     PUSH 0x83                           ; 00506fce
     PUSH 0x6315ea                       ; 00506fd3 | = "..\\core\\main.c"
     PUSH ESI                            ; 00506fd8
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00506fd9
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00506fde
     CALL crt_startup.c_notifyAbnormalTermination_FUN_00601620 ; 00506fe1
         ;   XREF to: 00601620 (UNCONDITIONAL_CALL)  ; void crt_startup.c_notifyAbnormalTermination_FUN_00601620()
@@ -171,7 +171,7 @@ section .text
     PUSH ESI                            ; 00506ffa
     PUSH 0x63160b                       ; 00506ffb | = "gtfo.txt"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00507000
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV ESI,EAX                         ; 00507005
     ADD ESP,0x14                        ; 00507007
     TEST EAX,EAX                        ; 0050700a
@@ -195,18 +195,18 @@ section .text
     PUSH 0x631614                       ; 0050703c | = "-------------------------------------..."
     PUSH EAX                            ; 00507041
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00507042
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00507047
     LEA EAX,[ESP + 0x8]                 ; 0050704a
     PUSH EAX                            ; 0050704e
-    CALL crt_time.c_time_with_rounding_FUN_006001f0 ; 0050704f
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c_time_FUN_006001f0   ; 0050704f
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 00507054
     PUSH 0x2dd3130                      ; 00507057 | g_ErrorMessageBuffer_02dd3130
     PUSH 0x631656                       ; 0050705c | = "Msg: %s\n"
     PUSH ESI                            ; 00507061
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00507062
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00507067
     MOV EDI,dword ptr [0x02f0ca4c]      ; 0050706a | g_CurrentLineNumber
     PUSH EDI                            ; 00507070
@@ -215,45 +215,45 @@ section .text
     PUSH 0x63165f                       ; 00507078 | = "File: %s line %d\n"
     PUSH ESI                            ; 0050707d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050707e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 00507083
     LEA EAX,[ESP + 0x8]                 ; 00507086
     PUSH EAX                            ; 0050708a
     CALL crt_time.c_localtime_FUN_00600288 ; 0050708b
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 00507090
     PUSH EAX                            ; 00507093
     CALL crt_time.c_asctime_FUN_00601768 ; 00507094
-        ;   XREF to: 00601768 (UNCONDITIONAL_CALL)  ; char * crt_time.c_asctime_FUN_00601768(tm * timeptr)
+        ;   XREF to: 00601768 (UNCONDITIONAL_CALL)  ; char * crt_time.c_asctime_FUN_00601768(_tm * timeptr)
     ADD ESP,0x4                         ; 00507099
     PUSH EAX                            ; 0050709c
     PUSH 0x631671                       ; 0050709d | = "Time: %s"
     PUSH ESI                            ; 005070a2
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005070a3
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005070a8
-    CALL crt_errno.c_errno_FUN_00601450 ; 005070ab
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 005070ab
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
     MOV EDX,dword ptr [EAX]             ; 005070b0
     PUSH EDX                            ; 005070b2
     CALL crt_string.c_strerror_FUN_00601470 ; 005070b3
         ;   XREF to: 00601470 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strerror_FUN_00601470(int errnum)
     ADD ESP,0x4                         ; 005070b8
     PUSH EAX                            ; 005070bb
-    CALL crt_errno.c_errno_FUN_00601450 ; 005070bc
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 005070bc
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
     MOV ECX,dword ptr [EAX]             ; 005070c1
     PUSH ECX                            ; 005070c3
     PUSH 0x63167a                       ; 005070c4 | = "errno = %d (%s)\n"
     PUSH ESI                            ; 005070c9
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005070ca
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 005070cf
     PUSH 0xad                           ; 005070d2
     PUSH 0x63168b                       ; 005070d7 | = "..\\core\\main.c"
     PUSH ESI                            ; 005070dc
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005070dd
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005070e2
     POP EDI                             ; 005070e5
     JMP 0x0050700e                      ; 005070e6

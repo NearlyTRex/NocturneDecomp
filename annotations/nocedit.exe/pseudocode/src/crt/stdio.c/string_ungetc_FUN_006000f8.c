@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_string_ungetc_FUN_006000f8(int ch,scanf_state_t *state)
+int __cdecl string_ungetc(int ch,scanf_state_t *state)
 
 {
   state->input_ptr = (void *)((int)state->input_ptr + -1);

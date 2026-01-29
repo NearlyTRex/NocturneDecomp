@@ -36,7 +36,7 @@ LAB_005e6cc2:
             local_78 = *(float *)(in_stack_00000004 + 0xce8f0);
           }
           if (0.0 < (double)local_78) {
-            crt_stdio_c_sprintf_FUN_005fdbd0
+            sprintf
                       (local_74,"wing?.wav @%f",(double)local_78 * 2.5);
             goto LAB_005e6d59;
           }

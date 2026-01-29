@@ -11,7 +11,7 @@ cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690
           (char *filename,char *buffer,int width,int height,void *optional_param)
 
 {
-  FILE *file;
+  _FILE *file;
   uint uVar1;
   char *pcVar2;
   int in_stack_00000018;
@@ -25,7 +25,7 @@ cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690
     buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(local_1c,"..\\cockpit\\ckptutil.c",0x7bd)
     ;
     if (buffer == (char *)0x0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).",local_1c,filename);
       g_CurrentLineNumber = 0x7c0;
       g_CurrentFilename = "..\\cockpit\\ckptutil.c";
@@ -33,8 +33,8 @@ cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690
     }
   }
   file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
-  if (file == (FILE *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_6c,"Unable to open bitmap file (%s).",filename);
+  if (file == (_FILE *)0x0) {
+    sprintf(local_6c,"Unable to open bitmap file (%s).",filename);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x7c9;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);
@@ -46,9 +46,9 @@ cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690
       pcVar2 = buffer + (height - local_18) + -1;
       if (width != 0) {
         do {
-          local_14 = crt_stdio_c_fgetc_FUN_005fe840(file);
+          local_14 = _fgetc(file);
           if (local_14 == -1) {
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_6c,"Unable to read bitmap file (%s).",filename);
+            sprintf(local_6c,"Unable to read bitmap file (%s).",filename);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x7d5);
             g_CurrentLineNumber = 0x7d6;
             g_CurrentFilename = "..\\cockpit\\ckptutil.c";

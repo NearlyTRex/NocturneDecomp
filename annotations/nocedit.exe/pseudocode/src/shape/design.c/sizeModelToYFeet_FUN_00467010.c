@@ -39,7 +39,7 @@ void __cdecl shape_design_c_sizeModelToYFeet_FUN_00467010(void)
   if (iVar3 == -2) {
     return;
   }
-  local_2c = crt_stdio_c_sscanf_FUN_0060013c(local_7c,"%f,%d,%d",local_20,&local_24,&local_28)
+  local_2c = sscanf(local_7c,"%f,%d,%d",local_20,&local_24,&local_28)
   ;
   if (local_2c < 2) {
     for (local_2c = 0; local_2c < g_VertexCount; local_2c = local_2c + 1) {

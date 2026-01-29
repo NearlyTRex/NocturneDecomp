@@ -58,7 +58,7 @@ core_dmodel_cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0(CKeyFramed
         if (bVar2) {
           iVar6 = this_ptr->poly_count + -1;
           this_ptr->poly_count = iVar6;
-          crt_string_c_memmove_FUN_005fe5e0
+          memmove
                     ((void *)((int)this_ptr->poly_vert_list + local_1c),
                      (void *)(local_20 + (int)this_ptr->poly_vert_list),(iVar6 - local_18) * 0x48);
           piVar1 = &local_30->part_list[0].poly_count;

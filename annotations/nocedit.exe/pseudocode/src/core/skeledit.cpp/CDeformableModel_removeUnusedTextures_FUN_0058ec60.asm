@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
 
     PUSH 0x34                           ; 0058ec60
         ;   Label: core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058ec65
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058ec65
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058ec6a
     PUSH ESI                            ; 0058ec6b
     PUSH EDI                            ; 0058ec6c

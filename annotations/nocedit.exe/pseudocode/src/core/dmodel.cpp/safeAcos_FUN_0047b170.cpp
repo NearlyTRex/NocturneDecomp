@@ -21,7 +21,7 @@ double __cdecl core_dmodel_cpp_safeAcos_FUN_0047b170(float value)
   }
   else {
     if (-1 < dVar1) {
-      dVar1 = crt_math_c_acos_FUN_00600162(dVar1);
+      dVar1 = acos(dVar1);
       return dVar1;
     }
     local_10 = 0x54411744;

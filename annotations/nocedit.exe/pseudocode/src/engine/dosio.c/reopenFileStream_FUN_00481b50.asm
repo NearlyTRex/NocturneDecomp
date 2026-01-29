@@ -17,11 +17,11 @@
 ;   int g_DefaultStreamBufferSize = 0x1a4
 ;
 ; Called Functions:
-;   crt_file.c_create_directory_FUN_00600e10
 ;   crt_fstream.cpp_openFile_FUN_00600e85
 ;   crt_stdio.c_clear_and_preserve_state_FUN_00600e64
 ;   crt_stdio.c_fflush_FUN_00600e29
 ;   crt_unknown.c_FUN_00600ee4
+;   crt_watcom.c__mkdir_FUN_00600e10
 ;   engine_dosio.c_findFile_FUN_00481760
 ;   engine_dosio.c_getRelativeFilePath_FUN_004816c0
 ;
@@ -38,7 +38,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x230]     ; 00481b60
     PUSH EBX                            ; 00481b67
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 00481b68
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     MOV EAX,dword ptr [EBX]             ; 00481b6d
     ADD ESP,0x4                         ; 00481b6f
     MOV EAX,dword ptr [EAX + 0x4]       ; 00481b72
@@ -63,8 +63,8 @@ section .text
     JZ 0x00481baf                       ; 00481ba4
         ;   XREF to: 00481baf (CONDITIONAL_JUMP)  ; LAB_00481baf
     PUSH ESI                            ; 00481ba6
-    CALL crt_file.c_create_directory_FUN_00600e10 ; 00481ba7
-        ;   XREF to: 00600e10 (UNCONDITIONAL_CALL)  ; int crt_file.c_create_directory_FUN_00600e10(char * path)
+    CALL crt_watcom.c__mkdir_FUN_00600e10 ; 00481ba7
+        ;   XREF to: 00600e10 (UNCONDITIONAL_CALL)  ; int crt_watcom.c__mkdir_FUN_00600e10(char * path)
     ADD ESP,0x4                         ; 00481bac
     MOV EAX,[0x00665c50]                ; 00481baf | g_DefaultStreamBufferSize
         ;   Label: LAB_00481baf

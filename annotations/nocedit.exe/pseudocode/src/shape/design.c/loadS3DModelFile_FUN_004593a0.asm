@@ -83,7 +83,7 @@ section .text
     MOV EAX,0x61ab08                    ; 004593bd | = "models"
     PUSH EAX                            ; 004593c2 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004593c3
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004593c8
     MOV dword ptr [EBP + -0x24],EAX     ; 004593cb
     CMP dword ptr [EBP + -0x24],0x0     ; 004593ce
@@ -133,7 +133,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 0045944d
     PUSH EAX                            ; 00459450
     CALL shape_design.c_skipLines_FUN_00459360 ; 00459451
-        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(FILE * file, int line_count)
+        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(_FILE * file, int line_count)
     ADD ESP,0x8                         ; 00459456
     LEA EAX,[EBP + -0x20]               ; 00459459
     PUSH EAX                            ; 0045945c
@@ -142,7 +142,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 00459463
     PUSH EAX                            ; 00459466
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00459467
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0045946c
     CMP EAX,0x1                         ; 0045946f
     JZ 0x00459539                       ; 00459472
@@ -164,7 +164,7 @@ section .text
     MOV ESI,dword ptr [EBP + -0x24]     ; 0045949c
     PUSH ESI                            ; 0045949f
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004594a0
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004594a5
     PUSH 0x16                           ; 004594a8
     PUSH 0x0                            ; 004594aa
@@ -241,7 +241,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 0045956c
     PUSH EAX                            ; 0045956f
     CALL shape_design.c_skipLines_FUN_00459360 ; 00459570
-        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(FILE * file, int line_count)
+        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(_FILE * file, int line_count)
     ADD ESP,0x8                         ; 00459575
     LEA EAX,[EBP + -0xc]                ; 00459578
     PUSH EAX                            ; 0045957b
@@ -262,7 +262,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 004595a0
     PUSH EAX                            ; 004595a3
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004595a4
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x24                        ; 004595a9
     CMP EAX,0x7                         ; 004595ac
     JZ 0x004595b6                       ; 004595af
@@ -319,7 +319,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 0045964b
     PUSH EAX                            ; 0045964e
     CALL shape_design.c_skipLines_FUN_00459360 ; 0045964f
-        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(FILE * file, int line_count)
+        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(_FILE * file, int line_count)
     ADD ESP,0x8                         ; 00459654
     MOV dword ptr [EBP + -0x30],0x0     ; 00459657
     JMP 0x00459663                      ; 0045965e
@@ -351,7 +351,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 004596a4
     PUSH EAX                            ; 004596a7
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004596a8
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x1c                        ; 004596ad
     CMP EAX,0x5                         ; 004596b0
     JZ 0x004596ba                       ; 004596b3
@@ -366,7 +366,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 004596be
     PUSH EAX                            ; 004596c1
     CALL shape_design.c_skipLines_FUN_00459360 ; 004596c2
-        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(FILE * file, int line_count)
+        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(_FILE * file, int line_count)
     ADD ESP,0x8                         ; 004596c7
     CMP dword ptr [EBP + -0x18],0x0     ; 004596ca
     JLE 0x004597e9                      ; 004596ce
@@ -411,7 +411,7 @@ section .text
     LEA EAX,[EBP + 0xfffff630]          ; 00459734
     PUSH EAX                            ; 0045973a
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 0045973b
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00459740
     TEST EAX,EAX                        ; 00459743
     JNZ 0x0045974c                      ; 00459745
@@ -510,7 +510,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 004597eb
     PUSH EAX                            ; 004597ee
     CALL shape_design.c_skipLines_FUN_00459360 ; 004597ef
-        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(FILE * file, int line_count)
+        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(_FILE * file, int line_count)
     ADD ESP,0x8                         ; 004597f4
     PUSH 0x766880                       ; 004597f7 | DAT_00766880
     PUSH 0x0                            ; 004597fc
@@ -581,7 +581,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 004598c7
     PUSH EAX                            ; 004598ca
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004598cb
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x30                        ; 004598d0
     CMP EAX,0xa                         ; 004598d3
     JZ 0x004598dd                       ; 004598d6
@@ -651,7 +651,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 00459961
     PUSH EAX                            ; 00459964
     CALL shape_design.c_skipLines_FUN_00459360 ; 00459965
-        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(FILE * file, int line_count)
+        ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(_FILE * file, int line_count)
     ADD ESP,0x8                         ; 0045996a
     MOV dword ptr [EBP + -0x30],0x0     ; 0045996d
     JMP 0x00459979                      ; 00459974
@@ -682,7 +682,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 004599b4
     PUSH EAX                            ; 004599b7
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004599b8
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004599bd
     CMP EAX,0x3                         ; 004599c0
     JZ 0x004599ca                       ; 004599c3
@@ -711,7 +711,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x24]     ; 004599f4
     PUSH EAX                            ; 004599f7
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004599f8
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004599fd
     CALL shape_design.c_calculateVertexNormals_FUN_0045be40 ; 00459a00
         ;   XREF to: 0045be40 (UNCONDITIONAL_CALL)  ; void shape_design.c_calculateVertexNormals_FUN_0045be40()

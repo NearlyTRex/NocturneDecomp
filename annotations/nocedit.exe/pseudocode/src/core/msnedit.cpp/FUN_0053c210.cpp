@@ -45,7 +45,7 @@ char * core_msnedit_cpp_FUN_0053c210(void)
     do {
       pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                          ((CStrList *)&stack0xfffffc4c,index);
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,pcVar1);
+      iVar2 = stricmp(in_stack_0000000c,pcVar1);
       iVar3 = index;
       if (iVar2 == 0) break;
       index = index + 1;

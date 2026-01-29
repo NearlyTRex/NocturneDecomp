@@ -81,7 +81,7 @@ shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,
             shape_meshlod_cpp_copyFloat_FUN_0051f0a0(&local_78,(float *)(puVar2 + 0x12));
             shape_meshlod_cpp_copyFloat_FUN_0051f090(&local_74,(float *)(puVar2 + 0x13));
             local_70 = puVar2[0x14];
-            crt_memory_c_copyObjectArray_FUN_00600bc2(local_6c,puVar2 + 0x15,3,&g_CVectorTypeInfo);
+            __arrcopy(local_6c,puVar2 + 0x15,3,&g_CVectorTypeInfo);
             local_48 = puVar2[0x1e];
             aiStack_44[(uint)bVar6 * -2] = puVar2[(uint)bVar6 * -2 + 0x1f];
             aiStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
@@ -119,7 +119,7 @@ shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,
             puVar2[0x14] = puVar4[0x14];
             local_20 = puVar2;
             local_1c = puVar4;
-            crt_memory_c_copyArrayWithFunction_FUN_006020c2
+            __arr_op
                       (puVar2 + 0x15,puVar4 + 0x15,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
             puVar2 = local_14;
             local_20[0x1e] = local_1c[0x1e];
@@ -159,7 +159,7 @@ shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,
               local_14[0x13] = local_74;
             }
             local_14[0x14] = local_70;
-            crt_memory_c_copyArrayWithFunction_FUN_006020c2
+            __arr_op
                       (local_14 + 0x15,local_6c,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
             puVar2[0x1e] = local_48;
             puVar2[(uint)bVar6 * -2 + 0x1f] = aiStack_44[(uint)bVar6 * -2];

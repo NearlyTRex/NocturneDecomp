@@ -58,7 +58,7 @@ section .text
     XOR EBP,EBP                         ; 004fb49b
     MOV dword ptr [EAX],0x1             ; 004fb49d
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004fb4a3
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004fb4a8
     MOV EDI,EAX                         ; 004fb4ab
     TEST EAX,EAX                        ; 004fb4ad
@@ -96,7 +96,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fb4fc
     PUSH EAX                            ; 004fb500
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 004fb501
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004fb506
     TEST EAX,EAX                        ; 004fb509
     JZ 0x004fb5ab                       ; 004fb50b
@@ -185,7 +185,7 @@ section .text
     PUSH 0x62fb70                       ; 004fb5b0 | = "..\\engine\\ini.cpp"
     PUSH EDI                            ; 004fb5b5
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004fb5b6
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004fb5bb
     TEST EBP,EBP                        ; 004fb5be
     JZ 0x004fb645                       ; 004fb5c0
@@ -214,7 +214,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fb601
     PUSH EAX                            ; 004fb605
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 004fb606
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004fb60b
     TEST EAX,EAX                        ; 004fb60e
     JZ 0x004fb4e0                       ; 004fb610

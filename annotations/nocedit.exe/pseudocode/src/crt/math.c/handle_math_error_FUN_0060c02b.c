@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double __mathinternal crt_math_c_handle_math_error_FUN_0060c02b(void)
+double __mathinternal handle_math_error(void)
 
 {
   uint errorFlags;
@@ -36,7 +36,7 @@ LAB_0060c06b:
     }
     errorFlags = in_stack_0000000c | 0x2040;
   }
-  dVar1 = crt_math_c_set_math_errno_FUN_0060befa(errorFlags,&stack0x00000004);
+  dVar1 = set_math_errno(errorFlags,&stack0x00000004);
   local_10 = SUB84(dVar1,0);
   local_18 = local_10;
   local_c = (uint)((ulonglong)dVar1 >> 0x20);

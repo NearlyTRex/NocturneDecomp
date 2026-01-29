@@ -40,7 +40,7 @@ void __cdecl shape_meshlod_cpp_CLodFace_copy_FUN_0051ef20(CLodFace *this_ptr,CLo
   (this_ptr->normal).y = (other->normal).y;
   (this_ptr->normal).z = (other->normal).z;
   this_ptr->plane_distance = other->plane_distance;
-  pvVar1 = crt_memory_c_copyObjectArray_FUN_00600bc2
+  pvVar1 = __arrcopy
                      (this_ptr->edge_perpendiculars,other->edge_perpendiculars,3,&g_CVectorTypeInfo)
   ;
   puVar6 = (uint *)((int)pvVar1 + (uint)bVar7 * -8 + 0x28);

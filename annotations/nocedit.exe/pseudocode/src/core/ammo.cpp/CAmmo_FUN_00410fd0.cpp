@@ -32,7 +32,7 @@ void core_ammo_cpp_CAmmo_FUN_00410fd0(void)
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CGun");
+  iVar2 = strcmp(in_stack_00000008,"CGun");
   if (iVar2 == 0) {
     switch(*(uint *)(in_stack_00000004 + 0x318)) {
     case 1:
@@ -59,12 +59,12 @@ void core_ammo_cpp_CAmmo_FUN_00410fd0(void)
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);
   }
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CShotgun");
+  iVar2 = strcmp(in_stack_00000008,"CShotgun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"shell.kfm");
   }
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CCrossbow");
+  iVar2 = strcmp(in_stack_00000008,"CCrossbow");
   if (iVar2 == 0) {
     if (*(int *)(in_stack_00000004 + 0x318) == 1) {
       pcVar4 = "holystake.kfm";
@@ -75,23 +75,23 @@ void core_ammo_cpp_CAmmo_FUN_00410fd0(void)
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);
   }
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CDynamite");
+  iVar2 = strcmp(in_stack_00000008,"CDynamite");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"dynamitebundle.kfm")
     ;
   }
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CTommyGun");
+  iVar2 = strcmp(in_stack_00000008,"CTommyGun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"tommybullet.kfm");
   }
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CFlameThrower");
+  iVar2 = strcmp(in_stack_00000008,"CFlameThrower");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"fgunammo.kfm");
   }
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CElephantGun");
+  iVar2 = strcmp(in_stack_00000008,"CElephantGun");
   if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));

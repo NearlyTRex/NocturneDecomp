@@ -22,7 +22,7 @@ uint shape_superopt_cpp_FUN_005c8280(void)
   int in_stack_0000000c;
   
   bVar8 = 0;
-  ptr = crt_memory_c_malloc_FUN_006021da(in_stack_0000000c * 0x60);
+  ptr = shape_memdbg_cpp_malloc_FUN_006021da(in_stack_0000000c * 0x60);
   iVar7 = 0;
   if (ptr == (int *)0x0) {
     return 0;
@@ -49,7 +49,7 @@ uint shape_superopt_cpp_FUN_005c8280(void)
         piVar2 = (int *)((int)piVar2 + (uint)bVar8 * -2 + 1);
         in_stack_00000008 = (int *)((int)in_stack_00000008 + (uint)bVar8 * -2 + 1);
       }
-      crt_memory_c_free_FUN_005fe659(ptr);
+      shape_memdbg_cpp_free_FUN_005fe659(ptr);
       return 1;
     }
     piVar2 = in_stack_00000008 + iVar5 * 0x18;

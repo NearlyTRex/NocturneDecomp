@@ -11,7 +11,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_close_FUN_0052edf0(CFileBitStream *thi
 {
   char *ptr;
   
-  if (this_ptr->file_handle == (FILE *)0x0) {
+  if (this_ptr->file_handle == (_FILE *)0x0) {
     ptr = this_ptr->buffer;
     if (ptr == (char *)0x0) {
       return;
@@ -19,7 +19,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_close_FUN_0052edf0(CFileBitStream *thi
   }
   else {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(this_ptr->file_handle,"..\\sound\\mp3.cpp",0x20b);
-    this_ptr->file_handle = (FILE *)0x0;
+    this_ptr->file_handle = (_FILE *)0x0;
     ptr = this_ptr->buffer;
     if (ptr == (char *)0x0) {
       return;

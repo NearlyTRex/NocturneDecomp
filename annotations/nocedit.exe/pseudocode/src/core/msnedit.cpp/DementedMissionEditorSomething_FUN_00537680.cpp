@@ -40,7 +40,7 @@ void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
       } while (cVar1 != '\0');
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"Current mission: %s.msn",local_14);
+      sprintf(local_114,"Current mission: %s.msn",local_14);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x16);
     if (*(int *)(in_stack_00000004 + 0x30) == 0) {
@@ -49,7 +49,7 @@ void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
     else {
       pcVar5 = "ON";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"1. Draw sky in dynamic views: %s",pcVar5);
+    sprintf(local_114,"1. Draw sky in dynamic views: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x2c);
     if (*(int *)(in_stack_00000004 + 0x34) == 0) {
       pcVar5 = "OFF";
@@ -57,7 +57,7 @@ void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
     else {
       pcVar5 = "ON";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"2. Draw water in dynamic views: %s",pcVar5);
+    sprintf(local_114,"2. Draw water in dynamic views: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x37);
     if (*(int *)(in_stack_00000004 + 0x38) == 0) {
       pcVar5 = "OFF";
@@ -65,7 +65,7 @@ void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
     else {
       pcVar5 = "ON";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"3. Force full lighting in static view: %s",pcVar5);
+    sprintf(local_114,"3. Force full lighting in static view: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x42);
     if (g_DisableMouseHitOnBarrier == 0) {
       pcVar5 = "OFF";
@@ -73,7 +73,7 @@ void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
     else {
       pcVar5 = "ON";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"4. Disable mouse selection of CBarriers: %s",pcVar5);
+    sprintf(local_114,"4. Disable mouse selection of CBarriers: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x4d);
     if ((uint)g_DynamicRenderMode < 2) {
 LAB_005377d8:
@@ -87,7 +87,7 @@ LAB_005377d8:
       if (g_DynamicRenderMode != 3) goto LAB_005377d8;
       pcVar5 = "5. Dynamic render mode: ground types";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,pcVar5);
+    sprintf(local_114,pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x58);
     if (g_ConfirmNewActorNames == 0) {
       pcVar5 = "OFF";
@@ -95,7 +95,7 @@ LAB_005377d8:
     else {
       pcVar5 = "ON";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"6. Confirm new actor names: %s",pcVar5);
+    sprintf(local_114,"6. Confirm new actor names: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,99);
     uVar2 = *(uint *)(in_stack_00000004 + 0x40);
     if (uVar2 == 0) {
@@ -110,7 +110,7 @@ LAB_00537848:
       if (uVar2 != 2) goto LAB_00537848;
       pcVar5 = "7. Show waypoint coverage: all";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,pcVar5);
+    sprintf(local_114,pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x6e);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();

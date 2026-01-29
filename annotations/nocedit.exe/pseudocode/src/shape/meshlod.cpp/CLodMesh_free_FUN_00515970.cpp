@@ -41,7 +41,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_free_FUN_00515970(CLodMesh *this_ptr)
   g_CurrentDebugLine = 0x21f;
   g_CurrentDebugFilename = "..\\shape\\meshlod.cpp";
   if (this_ptr->sample_points_ptr != (SLodSamplePoint *)0x0) {
-    crt_memory_c_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);
   }
   g_CurrentDebugLine = 0x220;
   g_CurrentDebugFilename = "..\\shape\\meshlod.cpp";

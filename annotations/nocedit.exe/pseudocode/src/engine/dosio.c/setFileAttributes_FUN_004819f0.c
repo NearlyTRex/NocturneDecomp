@@ -15,6 +15,6 @@ int __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte fl
   if ((flags & 8) != 0) {
     DVar1 = 0x100;
   }
-  DVar1 = crt_file_c_setReadonlyAttribute_FUN_00600c30(filename,DVar1);
+  DVar1 = engine_dosio_c_setReadonlyAttribute_FUN_00600c30(filename,DVar1);
   return (uint)(DVar1 == 0);
 }

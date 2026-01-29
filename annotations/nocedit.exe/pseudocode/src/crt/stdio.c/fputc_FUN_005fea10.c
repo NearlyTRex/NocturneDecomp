@@ -2,11 +2,11 @@
 // Address: 005fea10
 // Address Range: [[005fea10, 005feb2b]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,FILE *stream)
+// Signature: int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,_FILE *stream)
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,FILE *stream)
+int __cdecl _fputc(int character,_FILE *stream)
 
 {
   char *pcVar1;
@@ -34,7 +34,7 @@ LAB_005fea85:
     return -1;
   }
   if (stream->_link->__reserve_end == (char *)0x0) {
-    crt_stdio_c_InitializeFileBuffer_FUN_006027e0(stream);
+    InitializeFileBuffer(stream);
   }
   if (stream->_cnt == 0) {
     stream->_cnt = 1;
@@ -47,7 +47,7 @@ LAB_005fea85:
     pcVar1 = stream->_ptr;
     stream->_cnt = stream->_cnt + 1;
     stream->_ptr = pcVar1 + -1;
-    if ((FILE *)(uint)(byte)pcVar1[-1] != stream) {
+    if ((_FILE *)(uint)(byte)pcVar1[-1] != stream) {
       *(byte *)&stream->_flag = (byte)stream->_flag | 4;
     }
     pcVar1 = stream->_ptr;

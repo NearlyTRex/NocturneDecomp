@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_fltused_c_staticInit_FUN_005fde60(void)
+void __cdecl staticInit(void)
 
 {
   PTR_crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fbc =
@@ -16,6 +16,6 @@ void __cdecl crt_fltused_c_staticInit_FUN_005fde60(void)
   PTR_crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc4 =
        crt_unknown_c_FUN_00603dc8;
   PTR_crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc8 =
-       crt_unknown_c_thunk_FUN_0060b142;
+       thunk;
   return;
 }

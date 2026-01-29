@@ -23,7 +23,7 @@ void core_skeledit_cpp_FUN_0058af40(void)
   int *local_c;
   
   bVar4 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x4c);
+  __STK(0x4c);
   local_10 = 0;
   if (0 < *in_stack_00000004) {
     local_c = in_stack_00000004;

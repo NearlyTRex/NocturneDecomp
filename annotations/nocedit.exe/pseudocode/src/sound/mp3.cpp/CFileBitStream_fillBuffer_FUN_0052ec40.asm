@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 0052ec85
     DEC ESI                             ; 0052ec86
     CALL crt_stdio.c_fread_FUN_005fd990 ; 0052ec87
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0052ec8c
     JMP 0x0052ec66                      ; 0052ec8f
         ;   XREF to: 0052ec66 (UNCONDITIONAL_JUMP)  ; LAB_0052ec66

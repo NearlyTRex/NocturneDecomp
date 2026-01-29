@@ -2,12 +2,12 @@
 // Address: 004eb690
 // Address Range: [[004eb690, 004eb812]]
 // Convention: __cdecl
-// Signature: void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,FILE *file_handle)
+core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;
@@ -18,7 +18,7 @@ core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,FILE *file
   char local_110 [256];
   
   pcVar2 = (this_ptr->glass_texture).texture_name;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"ART\\%s\n",pcVar2);
+  _fprintf(file_handle,"ART\\%s\n",pcVar2);
   pcVar4 = local_110;
   pcVar5 = local_110;
   do {
@@ -57,12 +57,12 @@ LAB_004eb6f5:
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"ART\\%s\n",local_110);
+  _fprintf(file_handle,"ART\\%s\n",local_110);
   if (this_ptr->background_flag == 0) {
     return;
   }
   pcVar2 = (this_ptr->broken_texture).texture_name;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"ART\\%s\n",pcVar2);
+  _fprintf(file_handle,"ART\\%s\n",pcVar2);
   do {
     cVar1 = *pcVar2;
     *pcVar5 = cVar1;
@@ -99,6 +99,6 @@ LAB_004eb7b0:
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"ART\\%s\n",local_110);
+  _fprintf(file_handle,"ART\\%s\n",local_110);
   return;
 }

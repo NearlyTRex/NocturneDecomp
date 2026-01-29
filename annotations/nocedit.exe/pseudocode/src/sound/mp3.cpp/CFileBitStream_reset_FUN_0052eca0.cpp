@@ -9,7 +9,7 @@
 void __cdecl sound_mp3_cpp_CFileBitStream_reset_FUN_0052eca0(CFileBitStream *this_ptr)
 
 {
-  crt_stdio_c_fseek_FUN_005ffacc(this_ptr->file_handle,this_ptr->stream_start_position,0);
+  _fseek(this_ptr->file_handle,this_ptr->stream_start_position,0);
   this_ptr->current_byte_index = 0;
   this_ptr->bits_available = 0;
   this_ptr->total_bits_read = 0;

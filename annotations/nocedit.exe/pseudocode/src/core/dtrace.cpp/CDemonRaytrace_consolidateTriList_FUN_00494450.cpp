@@ -75,11 +75,11 @@ core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00494450(CDemonRaytrace *t
       g_CurrentDebugFilename = "..\\core\\dtrace.cpp";
       g_CurrentDebugLine = 0xe0;
       if (puVar6[1] != 0) {
-        crt_memory_c_free_FUN_005fe659((void *)(puVar6[1] - 4));
+        shape_memdbg_cpp_free_FUN_005fe659((void *)(puVar6[1] - 4));
       }
       g_CurrentDebugFilename = "..\\core\\dtrace.cpp";
       g_CurrentDebugLine = 0xe1;
-      crt_memory_c_free_FUN_005fe659((void *)puVar6[0x15]);
+      shape_memdbg_cpp_free_FUN_005fe659((void *)puVar6[0x15]);
       puVar6[1] = (uint)(this_ptr->triangle_list + local_18);
       puVar8 = this_ptr->triangle_flags + local_18;
       local_18 = local_18 + *puVar6;

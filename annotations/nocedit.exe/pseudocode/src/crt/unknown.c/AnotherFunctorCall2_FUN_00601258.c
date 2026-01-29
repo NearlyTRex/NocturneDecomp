@@ -9,14 +9,14 @@
 /* Signature: byte unk_AnotherFunctorCall2(uint param_1, uint param_2, uint
    param_3) */
 
-void crt_unknown_c_AnotherFunctorCall2_FUN_00601258(void)
+void AnotherFunctorCall2(void)
 
 {
   void *in_stack_00000004;
   int in_stack_00000008;
   WatcomTypeInfo *in_stack_0000000c;
   
-  crt_memory_c_dispatchObjectArrayConstructor_FUN_00601200
+  __arrinit_dispatch
             (in_stack_00000004,in_stack_00000008,in_stack_0000000c);
   return;
 }

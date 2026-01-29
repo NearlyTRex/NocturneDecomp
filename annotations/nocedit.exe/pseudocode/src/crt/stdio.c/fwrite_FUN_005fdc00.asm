@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,FILE *file)
+; __cdecl SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr
 ; SIZE_T           Stack[0x8]:4   size
 ; SIZE_T           Stack[0xc]:4   count
-; FILE *           Stack[0x10]:4   file
+; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[23]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 at 0054b64a
@@ -93,7 +93,7 @@ section .text
         ;   XREF to: 005fdc7d (CONDITIONAL_JUMP)  ; LAB_005fdc7d
     PUSH EBX                            ; 005fdc74
     CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 005fdc75
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
     ADD ESP,0x4                         ; 005fdc7a
     MOV EAX,dword ptr [EBX + 0xc]       ; 005fdc7d
         ;   Label: LAB_005fdc7d
@@ -188,7 +188,7 @@ section .text
     PUSH EBX                            ; 005fdd47
         ;   Label: LAB_005fdd47
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 005fdd48
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005fdd4d
     MOV EAX,dword ptr [ESP + 0x24]      ; 005fdd50
         ;   Label: LAB_005fdd50
@@ -233,7 +233,7 @@ section .text
     PUSH EAX                            ; 005fddbc
     INC EBP                             ; 005fddbd
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 005fddbe
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     MOV DL,byte ptr [EBX + 0xc]         ; 005fddc3
     ADD ESP,0x8                         ; 005fddc6
     TEST DL,0x30                        ; 005fddc9
@@ -260,7 +260,7 @@ section .text
     PUSH EBX                            ; 005fddf7
     MOV byte ptr [EBX + 0xd],CL         ; 005fddf8
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 005fddfb
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005fde00
     TEST byte ptr [EBX + 0xc],0x20      ; 005fde03
         ;   Label: LAB_005fde03

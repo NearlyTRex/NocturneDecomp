@@ -121,7 +121,7 @@ void CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fcc20
 // Address: 005fcc20
-void __cdecl CZombie(CZombie *this_ptr,FILE *file_handle);
+void __cdecl CZombie(CZombie *this_ptr,_FILE *file_handle);
 
 // Original: core_zombie.cpp_CZombie_dtor_FUN_005fcc50
 // Address: 005fcc50

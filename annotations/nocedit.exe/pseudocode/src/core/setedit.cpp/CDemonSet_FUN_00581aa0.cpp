@@ -196,7 +196,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       } while (cVar1 != '\0');
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_194,"Room size: %d");
+      sprintf(local_194,"Room size: %d");
     }
     engine_2d_c_drawText_FUN_00401fd0(local_194,0,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
@@ -439,7 +439,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       iVar5 = this_ptr->room_count + -1;
       this_ptr->room_count = iVar5;
       in_stack_fffff3e4 = (CKeys *)0x582147;
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (local_20 + iVar7,local_20 + iVar7 + 1,(iVar5 - iVar7) * 0x44);
       if (this_ptr->room_count <= iVar7) {
         local_1c = 0;

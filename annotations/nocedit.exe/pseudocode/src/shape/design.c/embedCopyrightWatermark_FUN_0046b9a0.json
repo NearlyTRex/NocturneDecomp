@@ -110,6 +110,18 @@
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
+        "category": "incompatible_types",
+        "column": 23,
+        "line": 57,
+        "message": "cannot convert 'tm*' to '_tm*' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 34,
+        "line": 58,
+        "message": "cannot convert '_tm*' to 'const tm*'"
+      },
+      {
         "category": "other",
         "column": 60,
         "line": 61,
@@ -222,18 +234,6 @@
       },
       {
         "category": "other",
-        "column": 49,
-        "line": 58,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 59,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 14,
         "line": 61,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -299,7 +299,7 @@
     {
       "addr": "006001f0",
       "is_variadic": false,
-      "name": "crt_time.c_time_with_rounding_FUN_006001f0"
+      "name": "crt_time.c_time_FUN_006001f0"
     },
     {
       "addr": "0046b770",

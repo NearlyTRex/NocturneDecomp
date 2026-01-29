@@ -58,7 +58,7 @@ core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30
   (this_ptr->camera_origin).z =
        (int)ROUND((float)(this_ptr->base).position.z * 256.0f);
   iVar3 = (this_ptr->transform_state).saved_source_matrix.m[0].x;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[0].z *
                               rotation_matrix->m[2].x +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[0].x *
@@ -67,55 +67,55 @@ core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30
                              rotation_matrix->m[1].x));
   (this_ptr->source_matrix).m[0].x = (int)ROUND(dVar6);
   iVar4 = (this_ptr->transform_state).saved_source_matrix.m[0].x;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[0].z *
                               rotation_matrix->m[2].y +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[0].y *
                              rotation_matrix->m[1].y + (float)iVar3 * rotation_matrix->m[0].y));
   (this_ptr->source_matrix).m[0].y = (int)ROUND(dVar6);
   iVar3 = (this_ptr->transform_state).saved_source_matrix.m[1].y;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[0].z *
                               rotation_matrix->m[2].z +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[0].y *
                              rotation_matrix->m[1].z + (float)iVar4 * rotation_matrix->m[0].z));
   (this_ptr->source_matrix).m[0].z = (int)ROUND(dVar6);
   iVar4 = (this_ptr->transform_state).saved_source_matrix.m[1].x;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[1].z *
                               rotation_matrix->m[2].x +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[1].x *
                              rotation_matrix->m[0].x + (float)iVar3 * rotation_matrix->m[1].x));
   (this_ptr->source_matrix).m[1].x = (int)ROUND(dVar6);
   iVar3 = (this_ptr->transform_state).saved_source_matrix.m[1].x;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[1].z *
                               rotation_matrix->m[2].y +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[1].y *
                              rotation_matrix->m[1].y + (float)iVar4 * rotation_matrix->m[0].y));
   (this_ptr->source_matrix).m[1].y = (int)ROUND(dVar6);
   iVar4 = (this_ptr->transform_state).saved_source_matrix.m[2].y;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[1].z *
                               rotation_matrix->m[2].z +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[1].y *
                              rotation_matrix->m[1].z + (float)iVar3 * rotation_matrix->m[0].z));
   (this_ptr->source_matrix).m[1].z = (int)ROUND(dVar6);
   iVar3 = (this_ptr->transform_state).saved_source_matrix.m[2].x;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[2].z *
                               rotation_matrix->m[2].x +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[2].x *
                              rotation_matrix->m[0].x + (float)iVar4 * rotation_matrix->m[1].x));
   (this_ptr->source_matrix).m[2].x = (int)ROUND(dVar6);
   iVar4 = (this_ptr->transform_state).saved_source_matrix.m[2].x;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[2].z *
                               rotation_matrix->m[2].y +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[2].y *
                              rotation_matrix->m[1].y + (float)iVar3 * rotation_matrix->m[0].y));
   (this_ptr->source_matrix).m[2].y = (int)ROUND(dVar6);
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[2].z *
                               rotation_matrix->m[2].z +
                              (float)(this_ptr->transform_state).saved_source_matrix.m[2].y *

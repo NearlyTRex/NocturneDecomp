@@ -14,7 +14,7 @@ char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040ac30(char *source_s
   byte bVar3;
   
   bVar3 = 0;
-  crt_memory_c_memset_FUN_005fde40(g_ActorDebugBuffer,0,0x32);
+  memset(g_ActorDebugBuffer,0,0x32);
   if (source_string == (char *)0x0) {
     return g_ActorDebugBuffer;
   }

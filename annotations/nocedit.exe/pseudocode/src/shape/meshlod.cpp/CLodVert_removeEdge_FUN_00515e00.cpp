@@ -18,7 +18,7 @@ void __cdecl shape_meshlod_cpp_CLodVert_removeEdge_FUN_00515e00(CLodVert *this_p
   }
   iVar2 = this_ptr->adjacent_edge_count + -1;
   this_ptr->adjacent_edge_count = iVar2;
-  crt_string_c_memmove_FUN_005fe5e0
+  memmove
             (this_ptr->adjacent_edge_indices + iVar1,this_ptr->adjacent_edge_indices + iVar1 + 1,
              (iVar2 - iVar1) * 4);
   return;

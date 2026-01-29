@@ -2,12 +2,12 @@
 // Address: 00575bc0
 // Address Range: [[00575bc0, 00575bff]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,FILE *file_handle)
+core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;

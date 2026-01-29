@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,10,&g_CExplosionTypeInfo);
+  __arrfini(array,10,&g_CExplosionTypeInfo);
   return;
 }

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_mbstring_c_copyMbChar_FUN_0060e590(char *dest,char *src)
+void __cdecl copyMbChar(char *dest,char *src)
 
 {
   if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*src] & 1U) != 0)) {

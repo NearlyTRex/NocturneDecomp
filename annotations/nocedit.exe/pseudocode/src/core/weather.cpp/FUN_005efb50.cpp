@@ -11,6 +11,6 @@ void core_weather_cpp_FUN_005efb50(void)
 {
   void **in_stack_00000004;
   
-  crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,200,&g_CVectorTypeInfo);
+  __arrfini(in_stack_00000004,200,&g_CVectorTypeInfo);
   return;
 }

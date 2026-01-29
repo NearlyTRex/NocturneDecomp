@@ -19,7 +19,7 @@
 ;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;   SetFilePointer
@@ -65,8 +65,8 @@ section .text
     CMP ESI,-0x1                        ; 00606771
     JNZ 0x0060677b                      ; 00606774
         ;   XREF to: 0060677b (CONDITIONAL_JUMP)  ; LAB_0060677b
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00606776
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00606776
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     MOV EAX,ESI                         ; 0060677b
         ;   Label: LAB_0060677b
     POP ESI                             ; 0060677d

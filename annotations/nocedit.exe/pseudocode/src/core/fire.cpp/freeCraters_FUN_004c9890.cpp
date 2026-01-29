@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeCraters_FUN_004c9890(CCrater **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x14,&g_CCraterTypeInfo);
+  __arrfini(array,0x14,&g_CCraterTypeInfo);
   return;
 }

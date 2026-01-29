@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 17,
+        "line": 59,
+        "message": "cast from 'uint**' {aka 'unsigned int**'} to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 22,
         "line": 60,
         "message": "cast from 'uint**' {aka 'unsigned int**'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 61,
-        "message": "cast from 'uint**' {aka 'unsigned int**'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 17,
-        "line": 82,
+        "line": 81,
         "message": "cast from 'uint**' {aka 'unsigned int**'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 83,
+        "line": 82,
         "message": "cast from 'uint**' {aka 'unsigned int**'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -55,65 +55,65 @@
       {
         "category": "other",
         "column": 25,
-        "line": 52,
+        "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 54,
+        "line": 53,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 8,
+        "line": 59,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 13,
         "line": 60,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 13,
-        "line": 61,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 74,
+        "line": 73,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 76,
+        "line": 75,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 82,
+        "line": 81,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 83,
+        "line": 82,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 125,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 18,
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 79,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 277
+    "total_lines": 276
   },
   "cross_references": [],
   "function": {
@@ -126,7 +126,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910",
-    "signature": "void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,FILE *file_handle)"
+    "signature": "void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -394,35 +394,35 @@
         "name": "file_handle",
         "offset": 28,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);",
       "type": "pointer_cast"

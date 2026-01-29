@@ -21,8 +21,8 @@ void core_frankgen_cpp_FUN_004d1ec0(void)
   
   fVar1 = in_stack_00000008 * in_stack_0000000c + *(float *)(in_stack_00000004 + 0x48c);
   *(float *)(in_stack_00000004 + 0x48c) = fVar1;
-  dVar2 = crt_math_c_floor_FUN_005feb90((double)fVar1);
-  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2);
+  dVar2 = floor((double)fVar1);
+  dVar2 = round(dVar2);
   *(float *)(extraout_EBX + 0x48c) = *(float *)(extraout_EBX + 0x48c) - (float)(int)ROUND(dVar2);
   return;
 }

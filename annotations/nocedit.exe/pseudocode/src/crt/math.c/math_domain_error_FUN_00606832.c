@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar error_type)
+double __cdecl math_domain_error(double x,double y,uchar error_type)
 
 {
   int errorFlags;
@@ -47,7 +47,7 @@ double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar
       errorFlags = 0x8107;
     }
   }
-  dVar1 = crt_math_c_process_math_error_FUN_0060bf2d
+  dVar1 = process_math_error
                     (errorFlags,(double *)&stack0x00000004,(double *)((int)&x + 4));
   local_10._0_4_ = SUB84(dVar1,0);
   local_18 = (uint)local_10;

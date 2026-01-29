@@ -20,7 +20,7 @@ shape_design_c_polygonTextureNameComparator_FUN_0045b850
     local_14 = -1;
   }
   else {
-    local_14 = crt_string_c_stricmp_FUN_005fe7f0(polygon1->texture_name,polygon2->texture_name);
+    local_14 = stricmp(polygon1->texture_name,polygon2->texture_name);
   }
   return local_14;
 }

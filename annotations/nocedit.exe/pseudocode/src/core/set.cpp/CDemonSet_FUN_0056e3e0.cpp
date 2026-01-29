@@ -63,10 +63,10 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr)
     local_38 = 255.0;
   }
   fVar7 = (float10)local_38;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)local_3c);
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)local_40);
+  dVar8 = round((double)local_3c);
+  dVar9 = round((double)local_40);
   g_RenderVertexBuffer[in_stack_00000010].light = (float)((int)ROUND(dVar8) << 8);
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+  dVar8 = round((double)fVar7);
   g_RenderVertexBuffer[in_stack_00000010].color = (int)ROUND(dVar9) << 8;
   g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar8) << 8);
   INT_02d7a7b8 = iVar4;

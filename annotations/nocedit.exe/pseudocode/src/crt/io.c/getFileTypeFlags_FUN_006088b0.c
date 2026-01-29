@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint __watcallStack crt_io_c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+uint __watcallStack getFileTypeFlags(int file_handle_index)
 
 {
   int iVar1;
@@ -18,7 +18,7 @@ uint __watcallStack crt_io_c_getFileTypeFlags_FUN_006088b0(int file_handle_index
     if ((PTR_g_FileDescriptorTable_00685268[file_handle_index].device_flags & 0x40) == 0) {
       PTR_g_FileDescriptorTable_00685268[file_handle_index].device_flags =
            PTR_g_FileDescriptorTable_00685268[file_handle_index].device_flags | 0x40;
-      iVar1 = crt_io_c_IsSpecialDevice_FUN_0060c270(file_handle_index);
+      iVar1 = IsSpecialDevice(file_handle_index);
       if (iVar1 != 0) {
         PTR_g_FileDescriptorTable_00685268[file_handle_index].device_flags =
              PTR_g_FileDescriptorTable_00685268[file_handle_index].device_flags | 0x20;

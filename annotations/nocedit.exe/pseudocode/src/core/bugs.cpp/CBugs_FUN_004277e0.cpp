@@ -29,7 +29,7 @@ void core_bugs_cpp_CBugs_FUN_004277e0(void)
   iVar1 = 0;
   if (0 < iVar2) {
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_6c,"Bug model %d",iVar1);
+      sprintf(acStack_6c,"Bug model %d",iVar1);
       iVar1 = iVar1 + 1;
       core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
     } while (iVar1 < iVar2);

@@ -16,7 +16,7 @@ shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead *header,char *s
   
   fname = header->source_file;
   if (source_filename != (char *)0x0) {
-    crt_string_c_splitpath_FUN_005ff178(source_filename,(char *)0x0,(char *)0x0,fname,(char *)0x0);
+    splitpath(source_filename,(char *)0x0,(char *)0x0,fname,(char *)0x0);
     return;
   }
   pcVar2 = "(unknown)";

@@ -2,17 +2,17 @@
 // Address: 004eebc0
 // Address Range: [[004eebc0, 004eec9e]]
 // Convention: __cdecl
-// Signature: FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode)
+// Signature: _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode)
 
 #include "nocturne.h"
 
-FILE * __cdecl
+_FILE * __cdecl
 core_ground_cpp_openFileWithExtension_FUN_004eebc0
           (char *base_filename,char *file_extension,char *open_mode)
 
 {
   char cVar1;
-  FILE *pFVar2;
+  _FILE *p_Var2;
   char *pcVar3;
   char *pcVar4;
   char *in_stack_00000010;
@@ -55,12 +55,12 @@ LAB_004eec03:
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50(base_filename,local_60,in_stack_00000010);
-  if (pFVar2 == (FILE *)0x0) {
+  p_Var2 = engine_dosio_c_getFile_FUN_00481a50(base_filename,local_60,in_stack_00000010);
+  if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0x44;
     core_main_c_displayErrorAndQuit_FUN_00506f10("eopen - Cannot open file");
-    return (FILE *)0x0;
+    return (_FILE *)0x0;
   }
-  return pFVar2;
+  return p_Var2;
 }

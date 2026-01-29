@@ -9,6 +9,6 @@
 void __cdecl core_cloth_cpp_freeClothBones_FUN_0043e4a0(SClothBone **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x32,&g_SClothBoneTypeInfo);
+  __arrfini(array,0x32,&g_SClothBoneTypeInfo);
   return;
 }

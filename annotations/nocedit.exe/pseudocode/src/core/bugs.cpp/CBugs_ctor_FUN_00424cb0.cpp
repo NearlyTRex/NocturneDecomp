@@ -17,9 +17,9 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
   char *pcVar5;
   
   pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar3 = __arrinit
                      (pCVar2[1].base.base.actor_name + 0x10,400,&g_SBugTypeInfo);
-  this_ptr_00 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  this_ptr_00 = __arrinit
                           ((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);
   this_ptr_00[-0xc3].part_visibility_flags[0] = (int)&g_CBugsVTable;
   this_ptr_00[-0xffffffff00000044].animation_state[8] = '\0';
@@ -30,7 +30,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
   this_ptr_00[-0xffffffff00000044].animation_state[0xd] = '\0';
   this_ptr_00[-0xffffffff00000044].animation_state[0xe] = '\0';
   this_ptr_00[-0xffffffff00000044].animation_state[0xf] = '\0';
-  crt_memory_c_memset_FUN_005fde40(this_ptr_00[-0x44].animation_state + 0x10,0,0x6400);
+  memset(this_ptr_00[-0x44].animation_state + 0x10,0,0x6400);
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x3;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"roach.kfm");

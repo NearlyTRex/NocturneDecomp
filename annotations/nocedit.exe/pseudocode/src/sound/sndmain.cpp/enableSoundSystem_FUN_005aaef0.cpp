@@ -38,7 +38,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
         puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);
         iVar4 = iVar4 + 4;
         iVar3 = iVar3 + 1;
-        crt_memory_c_memset_FUN_005fde40((void *)*puVar1,0,g_MixBufferSize * g_NumMixBuffers * 4);
+        memset((void *)*puVar1,0,g_MixBufferSize * g_NumMixBuffers * 4);
       } while (iVar3 < g_AudioChannelCount);
     }
     g_MixBufferReadIndex = 0;

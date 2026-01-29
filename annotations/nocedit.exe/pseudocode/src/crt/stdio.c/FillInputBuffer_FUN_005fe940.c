@@ -2,27 +2,27 @@
 // Address: 005fe940
 // Address Range: [[005fe940, 005fea06]]
 // Convention: __watcallStack
-// Signature: int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(FILE *file)
+// Signature: int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(_FILE *file)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(FILE *file)
+int __watcallStack FillInputBuffer(_FILE *file)
 
 {
   int iVar1;
   uint bytes_to_read;
   
   if (file->_link->__reserve_end == (char *)0x0) {
-    crt_stdio_c_InitializeFileBuffer_FUN_006027e0(file);
+    InitializeFileBuffer(file);
   }
   if (((file->_flag & 0x2000) != 0) && ((file->_flag & 0x600) != 0)) {
-    crt_stdio_c_FlushFilesByMask_FUN_0060595c(0x2000);
+    FlushFilesByMask(0x2000);
   }
   *(byte *)&file->_flag = (byte)file->_flag & 0xfb;
   file->_ptr = file->_link->__reserve_end;
   if (((file->_flag & 0x2400) == 0x2400) && (file->_handle == 0)) {
     file->_cnt = 0;
-    iVar1 = crt_stdio_c_SetupConsoleInputMode_FUN_006059b0();
+    iVar1 = SetupConsoleInputMode();
     if (iVar1 != -1) {
       *file->_ptr = (char)iVar1;
       file->_cnt = 1;
@@ -36,7 +36,7 @@ int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(FILE *file)
     else {
       bytes_to_read = 1;
     }
-    iVar1 = crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880
+    iVar1 = ReadFileWithDeviceAbstraction
                       (file->_handle,file->_ptr,bytes_to_read);
     file->_cnt = iVar1;
   }

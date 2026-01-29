@@ -45,7 +45,7 @@
 ;   core_hero.cpp_FUN_004f3960
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;
 ; *****************************************************************************
@@ -178,8 +178,8 @@ section .text
     PUSH 0xa                            ; 00413825
     LEA EAX,[ESP + 0x10]                ; 00413827
     PUSH EAX                            ; 0041382b
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041382c
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0041382c
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00413831
     LEA EAX,[ESP + 0x8]                 ; 00413834
     PUSH EAX                            ; 00413838

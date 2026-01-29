@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-long __cdecl crt_stdlib_c_strtol_FUN_0060edfc(char *str,char **endptr,int base)
+long __cdecl strtol(char *str,char **endptr,int base)
 
 {
   long lVar1;
   
-  lVar1 = crt_stdlib_c_strtol_internal_FUN_0060ec70(str,endptr,base,1);
+  lVar1 = strtol_internal(str,endptr,base,1);
   return lVar1;
 }

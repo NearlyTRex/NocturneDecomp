@@ -10,7 +10,7 @@ void __cdecl core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(CDe
 
 {
   char cVar1;
-  FILE *pFVar2;
+  _FILE *p_Var2;
   int iVar3;
   char *pcVar4;
   char *pcVar5;
@@ -73,13 +73,13 @@ LAB_00576e23:
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
   if ((in_stack_00000008 == 0) &&
-     (pFVar2 = engine_dosio_c_getFile_FUN_00481a50("data",local_118,"rb"),
-     pFVar2 != (FILE *)0x0)) {
-    crt_stdio_c_fread_FUN_005fd990(&DAT_03365cc0,0x2ee000,1,pFVar2);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\setedit.cpp",0x152);
+     (p_Var2 = engine_dosio_c_getFile_FUN_00481a50("data",local_118,"rb"),
+     p_Var2 != (_FILE *)0x0)) {
+    _fread(&DAT_03365cc0,0x2ee000,1,p_Var2);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",0x152);
     return;
   }
-  crt_memory_c_memset_FUN_005fde40(&DAT_03365cc0,0,0x2ee000);
+  memset(&DAT_03365cc0,0,0x2ee000);
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&CPickList_03653fc0);
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,"Building thumbnail images");
@@ -107,14 +107,14 @@ LAB_00576e23:
               (&CPickList_03653fc0,"Can't open the following background images.",-1,0);
   }
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&CPickList_03653fc0);
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("data",local_118,"wb");
-  if (pFVar2 == (FILE *)0x0) {
+  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("data",local_118,"wb");
+  if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x17d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write thumbs");
   }
-  crt_stdio_c_fwrite_FUN_005fdc00(&DAT_03365cc0,0x2ee000,1,pFVar2);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\setedit.cpp",0x17f);
+  _fwrite(&DAT_03365cc0,0x2ee000,1,p_Var2);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",0x17f);
   core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
   pcVar6 = this_ptr->geometry_filename;
   do {

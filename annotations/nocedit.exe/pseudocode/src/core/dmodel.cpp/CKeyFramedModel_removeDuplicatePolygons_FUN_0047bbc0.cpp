@@ -74,7 +74,7 @@ core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0(CKeyFramedM
         if (bVar2) {
           iVar5 = this_ptr->poly_count + -1;
           this_ptr->poly_count = iVar5;
-          crt_string_c_memmove_FUN_005fe5e0
+          memmove
                     ((void *)((int)this_ptr->poly_vert_list + local_24),
                      (void *)(local_2c + (int)this_ptr->poly_vert_list),(iVar5 - local_20) * 0x48);
           piVar1 = &local_38->part_list[0].poly_count;

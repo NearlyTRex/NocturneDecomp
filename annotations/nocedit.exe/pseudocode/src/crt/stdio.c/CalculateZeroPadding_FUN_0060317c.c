@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_stdio_c_CalculateZeroPadding_FUN_0060317c(FormatSpec *spec_info)
+void __cdecl CalculateZeroPadding(FormatSpec *spec_info)
 
 {
   int iVar1;

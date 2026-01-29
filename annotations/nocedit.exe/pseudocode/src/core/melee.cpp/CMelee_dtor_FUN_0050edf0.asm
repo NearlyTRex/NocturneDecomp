@@ -13,9 +13,9 @@
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_dtor_FUN_005edf80
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -43,12 +43,12 @@ section .text
     PUSH 0x661280                       ; 0050ee16 | g_CMeleeTypeInfo
         ;   Label: LAB_0050ee16
     PUSH EBX                            ; 0050ee1b
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0050ee1c
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0050ee1c
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0050ee21
     PUSH EAX                            ; 0050ee24
-    CALL crt_memory.c_free_FUN_005fe659 ; 0050ee25
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0050ee25
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0050ee2a
     MOV EAX,EBX                         ; 0050ee2d
     POP EBX                             ; 0050ee2f

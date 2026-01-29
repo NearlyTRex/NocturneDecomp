@@ -6,14 +6,14 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_thread_c_InitializeThreadContext_FUN_0060ccf0(ThreadData *pThreadData)
+void __cdecl InitializeThreadContext(ThreadData *pThreadData)
 
 {
   void *pvVar1;
   
   if (pThreadData != (ThreadData *)0x0) {
     pThreadData->random_seed = 1;
-    crt_memory_c_GetMemoryBounds_FUN_0060a6a0(pThreadData,(uint *)0x0);
+    __GetStackLimits(pThreadData,(uint *)0x0);
     pvVar1 = (void *)(*g_GetCurrentThreadIdFunc)();
     pThreadData->cleanup_data = pvVar1;
   }

@@ -35,7 +35,7 @@ section .text
     PUSH EDX                            ; 00575b4f
     PUSH 0x6464e1                       ; 00575b50 | = "data"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00575b55
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00575b5a
     ADD ESP,0xc                         ; 00575b5c
     TEST EAX,EAX                        ; 00575b5f
@@ -58,13 +58,13 @@ section .text
         ;   Label: LAB_00575b7d
     PUSH ESI                            ; 00575b7e
     CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0 ; 00575b7f
-        ;   XREF to: 00575bc0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet * this_ptr, FILE * file_handle)
+        ;   XREF to: 00575bc0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00575b84
     PUSH 0x363                          ; 00575b87
     PUSH 0x6464e6                       ; 00575b8c | = "..\\core\\setdir.cpp"
     PUSH EBX                            ; 00575b91
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00575b92
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00575b97
     POP ESI                             ; 00575b9a
     POP EBX                             ; 00575b9b

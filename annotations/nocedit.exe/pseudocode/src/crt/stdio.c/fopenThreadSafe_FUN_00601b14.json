@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fopenThreadSafe_FUN_00601b14",
-    "signature": "FILE * __cdecl crt_stdio_c_fopenThreadSafe_FUN_00601b14(char *filename,char *mode,FILE **output_file_ptr)"
+    "signature": "_FILE * __cdecl crt_stdio_c_fopenThreadSafe_FUN_00601b14(char *filename,char *mode,_FILE **output_file_ptr)"
   },
   "function_calls": [
     {
@@ -145,7 +145,7 @@
         "name": "output_file_ptr",
         "offset": 12,
         "size": 4,
-        "type": "FILE * *"
+        "type": "_FILE * *"
       }
     ]
   },
@@ -168,7 +168,7 @@
       "description": "Direct stack address reference",
       "line": 13,
       "match": "&stack0xffffffec",
-      "text": "parsed_mode_flags = crt_stdio_c_OpenModeStringParser_FUN_006017d0(mode,&stack0xffffffec);",
+      "text": "parsed_mode_flags = OpenModeStringParser(mode,&stack0xffffffec);",
       "type": "stack_ref"
     },
     {

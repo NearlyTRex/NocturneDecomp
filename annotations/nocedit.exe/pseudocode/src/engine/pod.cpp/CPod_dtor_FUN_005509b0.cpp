@@ -12,8 +12,8 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_005509b0(CPod *this_ptr,uint d1,uint
   void *ptr;
   
   if ((d1 & 4) != 0) {
-    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CPodTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr);
+    ptr = __vec_delete(this_ptr,&g_CPodTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }
   this_ptr->vtable = &g_CPodVTable;

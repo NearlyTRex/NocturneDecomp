@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fseek_FUN_005ffacc(FILE *file,long offset,int whence)
+; __cdecl int __cdecl crt_stdio_c_fseek_FUN_005ffacc(_FILE *file,long offset,int whence)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ; long             Stack[0x8]:4   offset
 ; int              Stack[0xc]:4   whence
 ;
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 005ffb31 (CONDITIONAL_JUMP)  ; LAB_005ffb31
     PUSH EBX                            ; 005ffafb
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 005ffafc
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005ffb01
     TEST EAX,EAX                        ; 005ffb04
     JZ 0x005ffb48                       ; 005ffb06
@@ -140,7 +140,7 @@ section .text
     PUSH ESI                            ; 005ffb9e
     MOV EBP,dword ptr [EBX + 0x4]       ; 005ffb9f
     CALL crt_stdio.c_seek_within_buffer_FUN_005ffa70 ; 005ffba2
-        ;   XREF to: 005ffa70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffa70(int offset, FILE * file)
+        ;   XREF to: 005ffa70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffa70(int offset, _FILE * file)
     ADD ESP,0x8                         ; 005ffba7
     TEST EAX,EAX                        ; 005ffbaa
     JZ 0x005ffc9f                       ; 005ffbac
@@ -169,7 +169,7 @@ section .text
     PUSH EBX                            ; 005ffbde
         ;   Label: LAB_005ffbde
     CALL crt_stdio.c_seek_within_buffer_FUN_005ffa70 ; 005ffbdf
-        ;   XREF to: 005ffab4 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffa70(FILE * file)
+        ;   XREF to: 005ffab4 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffa70(_FILE * file)
     ADD ESP,0x4                         ; 005ffbe4
     JMP 0x005ffc9f                      ; 005ffbe7
         ;   XREF to: 005ffc9f (UNCONDITIONAL_JUMP)  ; LAB_005ffc9f
@@ -186,7 +186,7 @@ section .text
     SUB EBP,EAX                         ; 005ffc00
     PUSH EBP                            ; 005ffc02
     CALL crt_stdio.c_seek_within_buffer_FUN_005ffa70 ; 005ffc03
-        ;   XREF to: 005ffa70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffa70(int offset, FILE * file)
+        ;   XREF to: 005ffa70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffa70(int offset, _FILE * file)
     ADD ESP,0x8                         ; 005ffc08
     TEST EAX,EAX                        ; 005ffc0b
     JZ 0x005ffc9f                       ; 005ffc0d

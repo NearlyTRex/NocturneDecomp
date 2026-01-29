@@ -33,8 +33,8 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_memory.c___arrinit_FUN_005fe667
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;
 ; *****************************************************************************
 
@@ -136,12 +136,12 @@ section .text
     OR DL,0x1                           ; 00548492
     PUSH 0x2fd9060                      ; 00548495 | DAT_02fd9060
     MOV byte ptr [0x030c3ab0],DL        ; 0054849a | DAT_030c3ab0
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005484a0
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005484a0
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005484a5
     PUSH 0x680bc8                       ; 005484a8 | DAT_00680bc8
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 005484ad
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 005484ad
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005484b2
     JMP 0x005483aa                      ; 005484b5
         ;   XREF to: 005483aa (UNCONDITIONAL_JUMP)  ; LAB_005483aa

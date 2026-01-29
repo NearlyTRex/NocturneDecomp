@@ -2,11 +2,11 @@
 // Address: 006060bb
 // Address Range: [[006060bb, 006060fd]]
 // Convention: __watcallStack
-// Signature: FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(FILE *stream)
+// Signature: _FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(_FILE *stream)
 
 #include "nocturne.h"
 
-FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(FILE *stream)
+_FILE * __watcallStack stream_flush(_FILE *stream)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(FILE *stream)
     iVar1 = (**(code **)(*(int *)(*(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4)) + 0x28)
                         + 0x20))();
     if (iVar1 == -1) {
-      crt_stdio_c_reportStreamError_FUN_00606020
+      reportStreamError
                 ((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);
       return stream;
     }

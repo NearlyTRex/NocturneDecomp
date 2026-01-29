@@ -6,27 +6,27 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_time_c_parse_tz_string_FUN_0060756c(char *tz_string)
+void __cdecl parse_tz_string(char *tz_string)
 
 {
   char *pcVar1;
   int local_14;
   
   g_DaylightSavingActive = 0;
-  pcVar1 = crt_time_c_parse_timezone_spec_FUN_00607348(tz_string,"EST",&g_TimezoneOffset);
+  pcVar1 = parse_timezone_spec(tz_string,"EST",&g_TimezoneOffset);
   if (*pcVar1 == '\0') {
     "EDT"[0] = '\0';
   }
   else {
     local_14 = g_TimezoneOffset + -0xe10;
     g_DaylightSavingActive = 1;
-    pcVar1 = crt_time_c_parse_timezone_spec_FUN_00607348(pcVar1,"EDT",&local_14);
+    pcVar1 = parse_timezone_spec(pcVar1,"EDT",&local_14);
     g_DaylightSavingOffset = g_TimezoneOffset - local_14;
     if (*pcVar1 == ',') {
-      pcVar1 = crt_time_c_parse_dst_rule_FUN_00607464(pcVar1 + 1,&g_DstStartRule);
+      pcVar1 = parse_dst_rule(pcVar1 + 1,&g_DstStartRule);
     }
     if (*pcVar1 == ',') {
-      crt_time_c_parse_dst_rule_FUN_00607464(pcVar1 + 1,(dst_rule *)&g_DstTransitionSecond);
+      parse_dst_rule(pcVar1 + 1,(dst_rule *)&g_DstTransitionSecond);
       g_DstTransitionHour = g_DstTransitionHour - g_DaylightSavingOffset / 0xe10;
       g_DstTransitionMinute =
            g_DstTransitionMinute -

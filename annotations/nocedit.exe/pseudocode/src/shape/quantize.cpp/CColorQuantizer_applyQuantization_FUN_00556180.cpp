@@ -57,7 +57,7 @@ shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180
       pCVar6 = local_20;
       ppCVar9[-3] = local_20;
       ppCVar9[-4] = (CBitmap *)0x556362;
-      crt_string_c_strncpy_FUN_00600f40(ppCVar9[-3]->unk,ppCVar9[-2]->unk,(SIZE_T)ppCVar9[-1]);
+      strncpy(ppCVar9[-3]->unk,ppCVar9[-2]->unk,(SIZE_T)ppCVar9[-1]);
       pcVar14 = pCVar6->palette;
       ppCVar9[-1] = (CBitmap *)pcVar14;
       pcVar12 = this_ptr->output_region;

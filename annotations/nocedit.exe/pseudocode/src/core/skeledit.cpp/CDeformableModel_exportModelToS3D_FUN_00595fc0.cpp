@@ -12,7 +12,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
           )
 
 {
-  FILE *pFVar1;
+  _FILE *p_Var1;
   int *dest;
   ushort *puVar2;
   int iVar3;
@@ -36,7 +36,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
   int local_7c;
   int local_78;
   int local_74;
-  FILE *local_70;
+  _FILE *local_70;
   int local_6c;
   int local_68;
   CDeformableModel *local_64;
@@ -61,11 +61,11 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
   int local_18;
   uint local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x38c);
+  __STK(0x38c);
   local_70 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ((char *)this_ptr,(char *)0x0,"wt","..\\core\\skeledit.cpp",
                         0x155d);
-  if (local_70 == (FILE *)0x0) {
+  if (local_70 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create %s");
     return;
@@ -98,7 +98,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
     local_50 = iVar4;
     local_18 = iVar6;
     do {
-      crt_memory_c_memset_FUN_005fde40(dest,0,*(int *)(local_98 + 0x2c) << 2);
+      memset(dest,0,*(int *)(local_98 + 0x2c) << 2);
       local_44 = local_3c;
       local_68 = local_7c;
       local_24 = local_3c * 0x12;
@@ -150,7 +150,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
             core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
                       (in_stack_00000004,&local_a8,(int)output_filename,local_1c,
                        (CMatrix3x4f *)lod_level);
-            crt_stdio_c_sprintf_FUN_005fdbd0
+            sprintf
                       (&stack0xfffffcc0,"%g,%g,%g",SUB84((double)local_a8.x,0),
                        (int)((ulonglong)(double)local_a8.x >> 0x20),(double)local_a8.y,
                        (double)local_a8.z);
@@ -167,7 +167,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
           iVar4 = iVar4 + 1) {
         puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_50) + local_2c);
         local_14 = (uint)puVar2[3];
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (&stack0xfffffcc0,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                    *(uint *)
                     (*(int *)((int)in_stack_00000004->index_data_ptr + local_50) + local_28),
@@ -194,7 +194,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
             iVar4 = iVar4 + 1) {
           puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_54) + local_38);
           local_14 = (uint)puVar2[3];
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (&stack0xfffffcc0,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                      *(uint *)
                       (*(int *)((int)in_stack_00000004->index_data_ptr + local_54) + local_6c),
@@ -223,15 +223,14 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x15b9;
-  crt_memory_c_free_FUN_005fe659(dest);
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// S3D version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"103\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// numTextures,numTris,numVerts,numParts,numFrames,numLights,numCameras\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (local_70,"%d,%d,%d,%d,1,0,0\n",in_stack_00000004->num_textures,local_c8.item_count,
+  shape_memdbg_cpp_free_FUN_005fe659(dest);
+  _fprintf(local_70,"// S3D version\n");
+  _fprintf(local_70,"103\n");
+  _fprintf(local_70,"// numTextures,numTris,numVerts,numParts,numFrames,numLights,numCameras\n");
+  _fprintf(local_70,"%d,%d,%d,%d,1,0,0\n",in_stack_00000004->num_textures,local_c8.item_count,
              local_b8.item_count);
   local_88 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// partList: firstVert,numVerts,firstTri,numTris,\"name\"\n");
+  _fprintf(local_70,"// partList: firstVert,numVerts,firstTri,numTris,\"name\"\n");
   local_8c = 0;
   iVar6 = 0;
   if (0 < in_stack_00000004->num_parts) {
@@ -242,8 +241,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
       local_9c = *(int *)(iVar3 + 0x7164) + *(int *)(iVar3 + 0x7178);
       iVar3 = iVar3 + 0x60;
       iVar6 = iVar6 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (local_70,"%d,%d,%d,%d,\"%s\"\n",local_88,*(uint *)((int)aiStack_140 + iVar4),
+      _fprintf(local_70,"%d,%d,%d,%d,\"%s\"\n",local_88,*(uint *)((int)aiStack_140 + iVar4),
                  local_8c,local_9c);
       local_88 = local_88 + *(int *)((int)aiStack_140 + iVar4);
       local_8c = local_8c + local_9c;
@@ -251,36 +249,36 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
       iVar4 = iVar4 + 4;
     } while (iVar6 < in_stack_00000004->num_parts);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// texture list: name\n");
+  _fprintf(local_70,"// texture list: name\n");
   iVar6 = 0;
   if (0 < in_stack_00000004->num_textures) {
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"%s\n");
+      _fprintf(local_70,"%s\n");
       iVar6 = iVar6 + 1;
     } while (iVar6 < in_stack_00000004->num_textures);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// triList: materialIndex,vertices(index, texX, texY)\n");
-  pFVar1 = local_70;
+  _fprintf(local_70,"// triList: materialIndex,vertices(index, texX, texY)\n");
+  p_Var1 = local_70;
   iVar6 = 0;
   if (0 < local_c8.item_count) {
     do {
       shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_c8,iVar6);
       iVar6 = iVar6 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"%s\n");
+      _fprintf(p_Var1,"%s\n");
     } while (iVar6 < local_c8.item_count);
   }
   iVar6 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// vertList: x,y,z\n");
-  pFVar1 = local_70;
+  _fprintf(local_70,"// vertList: x,y,z\n");
+  p_Var1 = local_70;
   if (0 < local_b8.item_count) {
     do {
       shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_b8,iVar6);
       iVar6 = iVar6 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"%s\n");
+      _fprintf(p_Var1,"%s\n");
     } while (iVar6 < local_b8.item_count);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
+  _fprintf(local_70,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
+  _fprintf(local_70,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_70,"..\\core\\skeledit.cpp",0x15ea);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_c8,0,in_stack_fffffcc0);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_b8,0,in_stack_fffffcc0);

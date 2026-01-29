@@ -13,11 +13,11 @@ void __cdecl shape_design_c_displayMemoryStatus_FUN_0046e6f0(int line_number)
   uint uVar2;
   char local_60 [80];
   
-  uVar1 = crt_watcom_c_memavl_FUN_006008f0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_60,"Memory available: %d",uVar1);
+  uVar1 = memavl();
+  sprintf(local_60,"Memory available: %d",uVar1);
   engine_2d_c_drawText_FUN_00401fd0(local_60,0,line_number * 0xb);
-  uVar2 = crt_watcom_c_memmax_FUN_00600940();
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_60,"Largest block: %d",uVar2);
+  uVar2 = _memmax();
+  sprintf(local_60,"Largest block: %d",uVar2);
   engine_2d_c_drawText_FUN_00401fd0(local_60,0,(line_number + 1) * 0xb);
   return;
 }

@@ -20,12 +20,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)((float)INT_00823a90 + g_CGamePtr->delta_time_float * 8388608.0f)
                       );
     INT_00823a90 = (int)ROUND(dVar4);
   }
-  iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+  iVar2 = rand();
   INT_00823a94 = iVar2 % 6;
   g_CDemonRendererPtr2->unk = 1;
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);

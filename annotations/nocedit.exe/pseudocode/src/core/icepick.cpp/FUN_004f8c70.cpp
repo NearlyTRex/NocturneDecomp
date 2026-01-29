@@ -47,7 +47,7 @@ void core_icepick_cpp_FUN_004f8c70(void)
   local_1c = (CPathMap *)0x3e800000;
   local_24 = 0.7853982;
   pCVar10 = g_HeroActors[g_LocalHeroIndex];
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004[1].base.actor_name + 8,0,0x2c);
+  memset(in_stack_00000004[1].base.actor_name + 8,0,0x2c);
   if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) != 0) {
     pCVar6 = g_HeroActors[g_LocalHeroIndex];
     local_6c.x = (in_stack_00000004->base).location.position.x -

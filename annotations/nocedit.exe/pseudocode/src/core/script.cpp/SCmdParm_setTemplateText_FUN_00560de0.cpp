@@ -46,70 +46,70 @@ LAB_00560e30:
   *in_stack_0000000c = *in_stack_0000000c + 1;
   pcVar5 = (char *)(in_stack_00000004 + 500);
   pcVar3 = (char *)0x0;
-  iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmInt" + 5,3);
+  iVar2 = strnicmp(pcVar5,"kParmInt" + 5,3);
   if (iVar2 == 0) {
     *(uint *)(in_stack_00000004 + 600) = 0;
     pcVar3 = (char *)(in_stack_00000004 + 0x1f7);
     pcVar5 = "kParmInt" + 5;
   }
   else {
-    iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmFloat" + 5,5);
+    iVar2 = strnicmp(pcVar5,"kParmFloat" + 5,5);
     if (iVar2 == 0) {
       pcVar3 = (char *)(in_stack_00000004 + 0x1f9);
       pcVar5 = "kParmFloat" + 5;
       *(uint *)(in_stack_00000004 + 600) = 1;
     }
     else {
-      iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmText" + 5,4);
+      iVar2 = strnicmp(pcVar5,"kParmText" + 5,4);
       if (iVar2 == 0) {
         pcVar3 = (char *)(in_stack_00000004 + 0x1f8);
         pcVar5 = "kParmText" + 5;
         *(uint *)(in_stack_00000004 + 600) = 2;
       }
       else {
-        iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmActorVariable" + 5,0xd);
+        iVar2 = strnicmp(pcVar5,"kParmActorVariable" + 5,0xd);
         if (iVar2 == 0) {
           pcVar3 = (char *)(in_stack_00000004 + 0x201);
           pcVar5 = "kParmActorVariable" + 5;
           *(uint *)(in_stack_00000004 + 600) = 7;
         }
         else {
-          iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmActorClass" + 5,10);
+          iVar2 = strnicmp(pcVar5,"kParmActorClass" + 5,10);
           if (iVar2 == 0) {
             pcVar3 = (char *)(in_stack_00000004 + 0x1fe);
             pcVar5 = "kParmActorClass" + 5;
             *(uint *)(in_stack_00000004 + 600) = 0x1b;
           }
           else {
-            iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmActor" + 5,5);
+            iVar2 = strnicmp(pcVar5,"kParmActor" + 5,5);
             if (iVar2 == 0) {
               pcVar3 = (char *)(in_stack_00000004 + 0x1f9);
               pcVar5 = "kParmActor" + 5;
               *(uint *)(in_stack_00000004 + 600) = 3;
             }
             else {
-              iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmCondition" + 5,9);
+              iVar2 = strnicmp(pcVar5,"kParmCondition" + 5,9);
               if (iVar2 == 0) {
                 pcVar3 = (char *)(in_stack_00000004 + 0x1fd);
                 pcVar5 = "kParmCondition" + 5;
                 *(uint *)(in_stack_00000004 + 600) = 4;
               }
               else {
-                iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmLabel" + 5,5);
+                iVar2 = strnicmp(pcVar5,"kParmLabel" + 5,5);
                 if (iVar2 == 0) {
                   pcVar3 = (char *)(in_stack_00000004 + 0x1f9);
                   pcVar5 = "kParmLabel" + 5;
                   *(uint *)(in_stack_00000004 + 600) = 5;
                 }
                 else {
-                  iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar5,"kParmCamera" + 5,6);
+                  iVar2 = strnicmp(pcVar5,"kParmCamera" + 5,6);
                   if (iVar2 == 0) {
                     pcVar3 = (char *)(in_stack_00000004 + 0x1fa);
                     pcVar5 = "kParmCamera" + 5;
                     *(uint *)(in_stack_00000004 + 600) = 6;
                   }
                   else {
-                    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                    iVar2 = strnicmp
                                       (pcVar5,"kParmControlButton" + 5,0xd);
                     if (iVar2 == 0) {
                       pcVar3 = (char *)(in_stack_00000004 + 0x201);
@@ -117,7 +117,7 @@ LAB_00560e30:
                       *(uint *)(in_stack_00000004 + 600) = 8;
                     }
                     else {
-                      iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                      iVar2 = strnicmp
                                         (pcVar5,"kParmDamageType" + 5,10);
                       if (iVar2 == 0) {
                         pcVar3 = (char *)(in_stack_00000004 + 0x1fe);
@@ -125,7 +125,7 @@ LAB_00560e30:
                         *(uint *)(in_stack_00000004 + 600) = 9;
                       }
                       else {
-                        iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                        iVar2 = strnicmp
                                           (pcVar5,"kParmDeathType" + 5,9);
                         if (iVar2 == 0) {
                           pcVar3 = (char *)(in_stack_00000004 + 0x1fd);
@@ -133,7 +133,7 @@ LAB_00560e30:
                           *(uint *)(in_stack_00000004 + 600) = 10;
                         }
                         else {
-                          iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                          iVar2 = strnicmp
                                             (pcVar5,"kParmSfxSet" + 5,6);
                           if (iVar2 == 0) {
                             pcVar3 = (char *)(in_stack_00000004 + 0x1fa);
@@ -141,7 +141,7 @@ LAB_00560e30:
                             *(uint *)(in_stack_00000004 + 600) = 0xb;
                           }
                           else {
-                            iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                            iVar2 = strnicmp
                                               (pcVar5,"kParmSfxUsed" + 5,7);
                             if (iVar2 == 0) {
                               pcVar3 = (char *)(in_stack_00000004 + 0x1fb);
@@ -149,7 +149,7 @@ LAB_00560e30:
                               *(uint *)(in_stack_00000004 + 600) = 0xc;
                             }
                             else {
-                              iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                              iVar2 = strnicmp
                                                 (pcVar5,"kParmWav" + 5,3);
                               if (iVar2 == 0) {
                                 pcVar3 = (char *)(in_stack_00000004 + 0x1f7);
@@ -157,7 +157,7 @@ LAB_00560e30:
                                 *(uint *)(in_stack_00000004 + 600) = 0xd;
                               }
                               else {
-                                iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                iVar2 = strnicmp
                                                   (pcVar5,"kParmWeather" + 5,7);
                                 if (iVar2 == 0) {
                                   pcVar3 = (char *)(in_stack_00000004 + 0x1fb);
@@ -165,7 +165,7 @@ LAB_00560e30:
                                   *(uint *)(in_stack_00000004 + 600) = 0xe;
                                 }
                                 else {
-                                  iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                  iVar2 = strnicmp
                                                     (pcVar5,"kParmCounterSet" + 5,10);
                                   if (iVar2 == 0) {
                                     pcVar3 = (char *)(in_stack_00000004 + 0x1fe);
@@ -173,7 +173,7 @@ LAB_00560e30:
                                     *(uint *)(in_stack_00000004 + 600) = 0xf;
                                   }
                                   else {
-                                    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                    iVar2 = strnicmp
                                                       (pcVar5,"kParmCounterUsed" + 5,0xb);
                                     if (iVar2 == 0) {
                                       pcVar3 = (char *)(in_stack_00000004 + 0x1ff);
@@ -181,7 +181,7 @@ LAB_00560e30:
                                       *(uint *)(in_stack_00000004 + 600) = 0x10;
                                     }
                                     else {
-                                      iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                      iVar2 = strnicmp
                                                         (pcVar5,"kParmLetterBoxMode" + 5,
                                                          0xd);
                                       if (iVar2 == 0) {
@@ -190,7 +190,7 @@ LAB_00560e30:
                                         *(uint *)(in_stack_00000004 + 600) = 0x11;
                                       }
                                       else {
-                                        iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                        iVar2 = strnicmp
                                                           (pcVar5,"kParmFilename" + 5,8);
                                         if (iVar2 == 0) {
                                           pcVar3 = (char *)(in_stack_00000004 + 0x1fc);
@@ -198,7 +198,7 @@ LAB_00560e30:
                                           *(uint *)(in_stack_00000004 + 600) = 0x12;
                                         }
                                         else {
-                                          iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                          iVar2 = strnicmp
                                                             (pcVar5,"kParmSpotLight" + 5,9)
                                           ;
                                           if (iVar2 == 0) {
@@ -207,7 +207,7 @@ LAB_00560e30:
                                             *(uint *)(in_stack_00000004 + 600) = 0x13;
                                           }
                                           else {
-                                            iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                            iVar2 = strnicmp
                                                               (pcVar5,"kParmEventCommand" +
                                                                       5,0xc);
                                             if (iVar2 == 0) {
@@ -216,7 +216,7 @@ LAB_00560e30:
                                               *(uint *)(in_stack_00000004 + 600) = 0x14;
                                             }
                                             else {
-                                              iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                              iVar2 = strnicmp
                                                                 (pcVar5,
                                                   "kParmPersistentEventName" + 5,0x13);
                                               if (iVar2 == 0) {
@@ -225,7 +225,7 @@ LAB_00560e30:
                                                 *(uint *)(in_stack_00000004 + 600) = 0x15;
                                               }
                                               else {
-                                                iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                iVar2 = strnicmp
                                                                   (pcVar5,
                                                   "kParmGameFlagName" + 5,0xc);
                                                 if (iVar2 == 0) {
@@ -234,7 +234,7 @@ LAB_00560e30:
                                                   *(uint *)(in_stack_00000004 + 600) = 0x16;
                                                 }
                                                 else {
-                                                  iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                  iVar2 = strnicmp
                                                                     (pcVar5,
                                                   "kParmMotionName" + 5,10);
                                                   if (iVar2 == 0) {
@@ -243,7 +243,7 @@ LAB_00560e30:
                                                     *(uint *)(in_stack_00000004 + 600) = 0x17;
                                                   }
                                                   else {
-                                                    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar2 = strnicmp
                                                                       (pcVar5,
                                                   "kParmMotionState" + 5,0xb);
                                                   if (iVar2 == 0) {
@@ -252,7 +252,7 @@ LAB_00560e30:
                                                     *(uint *)(in_stack_00000004 + 600) = 0x18;
                                                   }
                                                   else {
-                                                    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar2 = strnicmp
                                                                       (pcVar5,"kParmDBTag"
                                                                               + 5,5);
                                                     if (iVar2 == 0) {
@@ -262,7 +262,7 @@ LAB_00560e30:
                                                            0x19;
                                                     }
                                                     else {
-                                                      iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                      iVar2 = strnicmp
                                                                         (pcVar5,
                                                   "kParmHeroTask" + 5,8);
                                                   if (iVar2 == 0) {
@@ -271,7 +271,7 @@ LAB_00560e30:
                                                     *(uint *)(in_stack_00000004 + 600) = 0x1a;
                                                   }
                                                   else {
-                                                    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar2 = strnicmp
                                                                       (pcVar5,"kParmTimer"
                                                                               + 5,5);
                                                     if (iVar2 == 0) {
@@ -281,7 +281,7 @@ LAB_00560e30:
                                                            0x1c;
                                                     }
                                                     else {
-                                                      iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                      iVar2 = strnicmp
                                                                         (pcVar5,
                                                   "kParmRelOp" + 5,5);
                                                   if (iVar2 == 0) {
@@ -290,7 +290,7 @@ LAB_00560e30:
                                                     *(uint *)(in_stack_00000004 + 600) = 0x1d;
                                                   }
                                                   else {
-                                                    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar2 = strnicmp
                                                                       (pcVar5,
                                                   "kParmBodyPartList" + 5,0xc);
                                                   if (iVar2 == 0) {
@@ -299,7 +299,7 @@ LAB_00560e30:
                                                     *(uint *)(in_stack_00000004 + 600) = 0x1e;
                                                   }
                                                   else {
-                                                    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar2 = strnicmp
                                                                       ((char *)(in_stack_00000004 +
                                                                                500),
                                                                        "kParmIniVariable" +

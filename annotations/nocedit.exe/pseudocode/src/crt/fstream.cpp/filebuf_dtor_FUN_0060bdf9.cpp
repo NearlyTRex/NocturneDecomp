@@ -29,8 +29,8 @@ crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint d1,uint d2,uint
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
   }
   else {
-    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_FilebufTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr);
+    ptr = __vec_delete(this_ptr,&g_FilebufTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;
 }

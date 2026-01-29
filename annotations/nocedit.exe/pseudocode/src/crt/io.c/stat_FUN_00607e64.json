@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_io.c_stat_FUN_00607e64",
-    "signature": "int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,stat *file_info)"
+    "signature": "int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,_stat *file_info)"
   },
   "function_calls": [
     {
@@ -47,7 +47,7 @@
     {
       "addr": "006083fc",
       "is_variadic": false,
-      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc"
+      "name": "crt_errno.c___set_errno_FUN_006083fc"
     },
     {
       "addr": "00602790",
@@ -70,14 +70,14 @@
       "name": "crt_io.c_getcwd_FUN_00608d20"
     },
     {
-      "addr": "00601140",
-      "is_variadic": false,
-      "name": "crt_io.c_realpath_FUN_00601140"
-    },
-    {
       "addr": "005fde40",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00601140",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__fullpath_FUN_00601140"
     },
     {
       "addr": "00605a70",
@@ -293,7 +293,7 @@
         "name": "file_info",
         "offset": 8,
         "size": 4,
-        "type": "stat *"
+        "type": "_stat *"
       }
     ]
   },

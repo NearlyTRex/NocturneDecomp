@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x100,&g_CBulletHoleTypeInfo);
+  __arrfini(array,0x100,&g_CBulletHoleTypeInfo);
   return;
 }

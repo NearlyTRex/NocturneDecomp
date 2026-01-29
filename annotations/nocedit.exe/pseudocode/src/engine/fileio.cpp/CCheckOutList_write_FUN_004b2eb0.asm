@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(CCheckOutList *this_ptr,FILE **file_handle)
+; __cdecl int __cdecl engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(CCheckOutList *this_ptr,_FILE **file_handle)
 ;
 ; Parameters:
 ; CCheckOutList *  Stack[0x4]:4   this_ptr
-; FILE * *         Stack[0x8]:4   file_handle
+; _FILE * *        Stack[0x8]:4   file_handle
 ;
 ; XREF[5]:
 ;   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 at 004b3e54
@@ -22,7 +22,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   crt_io.c_ftruncate_FUN_00600cf0
+;   crt_io.c_chsize_FUN_00600cf0
 ;   crt_stdio.c_fflush_FUN_00601540
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fseek_FUN_005ffacc
@@ -46,7 +46,7 @@ section .text
     MOV EDX,dword ptr [EBP]             ; 004b2ec0
     PUSH EDX                            ; 004b2ec3
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 004b2ec4
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 004b2ec9
     TEST EAX,EAX                        ; 004b2ecc
     JNZ 0x004b2f27                      ; 004b2ece
@@ -69,7 +69,7 @@ section .text
     INC EBX                             ; 004b2ef0
     ADD ESI,0x168                       ; 004b2ef1
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004b2ef7
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EDX,dword ptr [EDI]             ; 004b2efc
     ADD ESP,0x10                        ; 004b2efe
     CMP EBX,EDX                         ; 004b2f01
@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_004b2f10
     PUSH ECX                            ; 004b2f13
     CALL crt_stdio.c_fflush_FUN_00601540 ; 004b2f14
-        ;   XREF to: 00601540 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00601540(FILE * stream)
+        ;   XREF to: 00601540 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00601540(_FILE * stream)
     MOV EAX,dword ptr [EBP]             ; 004b2f19
     MOV DL,byte ptr [EAX + 0xc]         ; 004b2f1c
     ADD ESP,0x4                         ; 004b2f1f
@@ -104,7 +104,7 @@ section .text
     PUSH 0x62604b                       ; 004b2f47 | = "..\\engine\\fileio.cpp"
     PUSH EDI                            ; 004b2f4c
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b2f4d
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b2f52
     MOV dword ptr [EBP],0x0             ; 004b2f55
     XOR EAX,EAX                         ; 004b2f5c
@@ -117,7 +117,7 @@ section .text
     PUSH EAX                            ; 004b2f63
         ;   Label: LAB_004b2f63
     CALL crt_stdio.c_ftell_FUN_00601560 ; 004b2f64
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 004b2f69
     TEST EAX,EAX                        ; 004b2f6c
     JL 0x004b2f27                       ; 004b2f6e
@@ -126,8 +126,8 @@ section .text
     MOV EAX,dword ptr [EBP]             ; 004b2f71
     MOV EBX,dword ptr [EAX + 0x10]      ; 004b2f74
     PUSH EBX                            ; 004b2f77
-    CALL crt_io.c_ftruncate_FUN_00600cf0 ; 004b2f78
-        ;   XREF to: 00600cf0 (UNCONDITIONAL_CALL)  ; int crt_io.c_ftruncate_FUN_00600cf0(int file_handle, long new_size)
+    CALL crt_io.c_chsize_FUN_00600cf0   ; 004b2f78
+        ;   XREF to: 00600cf0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chsize_FUN_00600cf0(int file_handle, long new_size)
     ADD ESP,0x8                         ; 004b2f7d
     TEST EAX,EAX                        ; 004b2f80
     JNZ 0x004b2f27                      ; 004b2f82

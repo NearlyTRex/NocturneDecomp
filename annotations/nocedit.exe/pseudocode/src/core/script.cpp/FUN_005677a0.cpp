@@ -102,17 +102,17 @@ uint core_script_cpp_FUN_005677a0(void)
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
       if (*(int *)(local_14 + 0x104) == 0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_e4,"Script\tLn %d",*(uint *)(local_14 + 0x10c));
       }
       else {
         core_actor_cpp_FUN_0040e130();
         (**(code **)(*(int *)(*(int *)(local_14 + 0x104) + 0x154) + 0xd4))();
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_e4,"%s\t%s",*(uint *)(local_14 + 0x104),
                    &stack0xffffd3c0 + *(int *)(local_14 + 0x108) * 0xec);
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_3a0,"\t%s\t%s",local_1ac,local_e4);
+      sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);
       shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar2,(int)local_3a0);
       *(int *)(local_14 + 0x110) = iVar2;
       if (0 < local_18) {

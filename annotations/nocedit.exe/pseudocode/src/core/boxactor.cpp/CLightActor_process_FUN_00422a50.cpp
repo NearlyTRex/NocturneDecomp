@@ -74,7 +74,7 @@ core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float d
   }
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
             ((CDemonGlobe *)(this_ptr->unk + 0x2fcc),(CColor3f *)&(this_ptr->base).base.location);
-  uVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+  uVar2 = rand();
   *(uint *)(this_ptr->unk + 0x3008) = uVar2 & 0x7fff;
   this_ptr->unk[0x2fe8] = (char)((int)(uVar2 & 0x7fff) >> 10);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360

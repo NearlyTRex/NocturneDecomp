@@ -18,7 +18,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_005b0e20(CWavInDevice *this_
   if (0 < g_WaveInNumBuffers) {
     iVar3 = 0;
     do {
-      crt_memory_c_memset_FUN_005fde40(*(void **)((int)g_WaveInHeaders + iVar3),0,0x20);
+      memset(*(void **)((int)g_WaveInHeaders + iVar3),0,0x20);
       **(uint **)((int)g_WaveInHeaders + iVar3) =
            *(uint *)((int)g_WaveInBuffers + iVar3);
       *(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 0xc) = buffer_index;

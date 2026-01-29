@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 crt_math_c_atan2_minus_pi_half_minus_epilogue_FUN_0060c61b(void)
+float10 atan2_minus_pi_half_minus_epilogue(void)
 
 {
   float10 in_ST0;

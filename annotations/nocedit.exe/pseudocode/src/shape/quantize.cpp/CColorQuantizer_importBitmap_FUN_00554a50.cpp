@@ -78,7 +78,7 @@ shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50
         bVar1 = *(byte *)(iVar9 + 1 + (int)pvVar5);
         bVar2 = *(byte *)(iVar9 + 2 + (int)pvVar5);
         local_30 = 0x554c1d;
-        dVar12 = crt_math_c_round_FUN_005fe6b0
+        dVar12 = round
                            (SQRT((double)((uint)bVar2 * (uint)bVar2 +
                                          (uint)bVar1 * (uint)bVar1 +
                                          (uint)*(byte *)(iVar9 + (int)pvVar5) *

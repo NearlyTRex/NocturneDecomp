@@ -55,15 +55,15 @@ LAB_00567250:
     if (pcVar4 == (char *)0x0) {
       pcVar4 = "none";
       pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,index);
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,pcVar4);
+      iVar3 = stricmp(pcVar5,pcVar4);
       if (iVar3 != 0) {
         pcVar4 = "true";
         pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,index);
-        iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,pcVar4);
+        iVar3 = stricmp(pcVar5,pcVar4);
         if (iVar3 != 0) {
           pcVar4 = "false";
           pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,index);
-          iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,pcVar4);
+          iVar3 = stricmp(pcVar5,pcVar4);
           pcVar5 = &stack0xfffffecc;
           if (iVar3 != 0) {
             do {

@@ -9,7 +9,7 @@
 void __cdecl core_spike_cpp_CSpike_FUN_005b9030(CSpike *this_ptr)
 
 {
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
             (&this_ptr->model,in_stack_00000008);

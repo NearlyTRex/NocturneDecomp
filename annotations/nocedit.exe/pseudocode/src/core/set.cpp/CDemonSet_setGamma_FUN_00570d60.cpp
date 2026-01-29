@@ -21,10 +21,10 @@ void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,in
   iVar2 = 0;
   iVar1 = 0;
   do {
-    fVar3 = crt_math_c_pow_FUN_005ffd76((float10)iVar2 * (float10)1.52587890625e-05,(float10)local_18)
+    fVar3 = pow((float10)iVar2 * (float10)1.52587890625e-05,(float10)local_18)
     ;
     local_18 = 7.994614e-39;
-    dVar4 = crt_math_c_round_FUN_005fe6b0((double)(fVar3 * (float10)65536));
+    dVar4 = round((double)(fVar3 * (float10)65536));
     iVar5 = (int)ROUND(dVar4);
     if (iVar5 < 0x100) {
       iVar5 = 0x100;

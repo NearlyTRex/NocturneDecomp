@@ -38,7 +38,7 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   auStack_104._0_4_ = 0.0;
   local_c = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
   auStack_104._0_4_ = 8.647348e-39;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)local_c);
+  dVar7 = round((double)local_c);
   local_10 = (float)(int)ROUND(dVar7);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&(this_ptr->base).model)
   ;
@@ -69,7 +69,7 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   }
   local_10 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
   this_ptr_00 = pCStack_14;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)local_10);
+  dVar7 = round((double)local_10);
   pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
   pCVar2 = pCVar1->frame_bounds + (int)pCStack_14 * 2;

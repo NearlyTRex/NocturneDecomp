@@ -11,7 +11,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_005235b0(CDemonMission *this_ptr
 {
   char local_104 [260];
   
-  crt_file_c_makepath_FUN_005febfc
+  makepath
             (local_104,(char *)0x0,(char *)0x0,this_ptr->unk2 + 0x38,"scr");
   core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80();
   return;

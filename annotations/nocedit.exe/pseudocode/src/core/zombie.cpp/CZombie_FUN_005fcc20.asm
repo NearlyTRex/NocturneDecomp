@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fcc20(CZombie *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0
@@ -22,7 +22,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 005fcc26
     PUSH ECX                            ; 005fcc2a
     CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 005fcc2b
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 005fcc30
     MOV EBX,dword ptr [ESP + 0xc]       ; 005fcc33
     MOV EAX,dword ptr [ESP + 0x8]       ; 005fcc37

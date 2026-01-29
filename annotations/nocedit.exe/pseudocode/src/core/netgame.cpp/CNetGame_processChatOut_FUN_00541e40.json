@@ -27,7 +27,7 @@
       },
       {
         "category": "incompatible_types",
-        "column": 51,
+        "column": 25,
         "line": 66,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       }
@@ -386,7 +386,7 @@
       "description": "Undefined global data reference",
       "line": 38,
       "match": "DAT_02f98adc",
-      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_02f98adc + iVar1,1,2);",
+      "text": "memset(&DAT_02f98adc + iVar1,1,2);",
       "type": "undefined_data"
     },
     {
@@ -456,21 +456,21 @@
       "description": "Undefined global data reference",
       "line": 58,
       "match": "DAT_02f98ae8",
-      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_02f98ae8 + iVar1,0,0x100);",
+      "text": "memset(&DAT_02f98ae8 + iVar1,0,0x100);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 59,
       "match": "in_stack_00000008",
-      "text": "crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
+      "text": "strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 59,
       "match": "DAT_02f98ae8",
-      "text": "crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
+      "text": "strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
       "type": "undefined_data"
     }
   ]

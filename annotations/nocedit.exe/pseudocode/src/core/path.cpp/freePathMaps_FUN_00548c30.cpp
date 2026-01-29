@@ -9,6 +9,6 @@
 void __cdecl core_path_cpp_freePathMaps_FUN_00548c30(CPathMap **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0xc,&g_CPathMapTypeInfo);
+  __arrfini(array,0xc,&g_CPathMapTypeInfo);
   return;
 }

@@ -154,14 +154,14 @@ LAB_005473e0:
     }
     return 1;
   }
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->current_position).x);
+  dVar8 = round((double)(this_ptr->current_position).x);
   local_18 = (int)ROUND(dVar8);
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)dest_position->x);
+  dVar8 = round((double)dest_position->x);
   local_1c = (int)ROUND(dVar8);
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->current_position).z);
+  dVar8 = round((double)(this_ptr->current_position).z);
   iStack_20 = (int)ROUND(dVar8);
   fVar9 = 7.7566e-39;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(unaff_retaddr + 8));
+  dVar8 = round((double)*(float *)(unaff_retaddr + 8));
   iStack_24 = (int)ROUND(dVar8);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                     (this_ptr,g_PathfindingCurrentZ,g_PathfindingCurrentX,this_ptr->unk2);

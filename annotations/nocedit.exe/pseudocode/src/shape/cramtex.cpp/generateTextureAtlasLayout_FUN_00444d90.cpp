@@ -26,7 +26,7 @@ shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90
   int iVar11;
   uint seed;
   SCramWorkingEntry *pSVar12;
-  FILE *pFVar13;
+  _FILE *p_Var13;
   int iVar14;
   int iVar15;
   int iVar16;
@@ -64,10 +64,10 @@ shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90
       iVar14 = iVar11;
     } while (iVar11 < (int)(texture_count * 0x4c));
   }
-  crt_io_c_deleteFile_FUN_005ff9d0("..\\shape\\cramlog.txt");
-  seed = crt_stdlib_c_rand_FUN_005feb5c();
-  crt_stdlib_c_srand_FUN_005feb80(0x16);
-  crt_stdlib_c_qsort_FUN_005fdf38
+  remove("..\\shape\\cramlog.txt");
+  seed = rand();
+  srand(0x16);
+  qsort
             (g_CramSortedTextureEntries,g_CramTextureCount,0x4c,
              shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0);
   g_CramTotalPixelArea = 0;
@@ -88,13 +88,12 @@ shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90
   }
   g_CramPaddingCalculation =
        (g_CramAtlasWidth + -1 + g_CramAtlasHeight * g_CramAcceptableSize) / g_CramAtlasWidth;
-  pFVar13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                       ("..\\shape\\cramlog.txt",(char *)0x0,"at",
                        "..\\shape\\cramtex.cpp",0x1e3);
-  if (pFVar13 != (FILE *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (pFVar13,"initial pad guess = %d\n",g_CramPaddingCalculation);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar13,"..\\shape\\cramtex.cpp",0x1e6);
+  if (p_Var13 != (_FILE *)0x0) {
+    _fprintf(p_Var13,"initial pad guess = %d\n",g_CramPaddingCalculation);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\shape\\cramtex.cpp",0x1e6);
   }
   iVar14 = -1;
   do {
@@ -126,14 +125,14 @@ shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90
       if (iVar15 <= iVar14) {
         iVar15 = iVar11;
       }
-      pFVar13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+      p_Var13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ("..\\shape\\cramlog.txt",(char *)0x0,"at",
                            "..\\shape\\cramtex.cpp",0x206);
-      if (pFVar13 != (FILE *)0x0) {
-        crt_stdio_c_fprintf_FUN_005fe6d0(pFVar13,"Guess #%d\n",iVar18);
-        crt_stdio_c_fprintf_FUN_005fe6d0(pFVar13,"  acceptableSize = %d\n",g_CramAcceptableSize);
-        crt_stdio_c_fprintf_FUN_005fe6d0(pFVar13,"  estimated pad = %d\n",iVar15);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar13,"..\\shape\\cramtex.cpp",0x20b);
+      if (p_Var13 != (_FILE *)0x0) {
+        _fprintf(p_Var13,"Guess #%d\n",iVar18);
+        _fprintf(p_Var13,"  acceptableSize = %d\n",g_CramAcceptableSize);
+        _fprintf(p_Var13,"  estimated pad = %d\n",iVar15);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\shape\\cramtex.cpp",0x20b);
       }
     } while ((iVar15 != g_CramPaddingCalculation) &&
             (g_CramPaddingCalculation = iVar15, iVar18 < 10));
@@ -339,10 +338,10 @@ LAB_00445252:
           pSVar12 = pSVar12 + 1;
         } while (iVar14 < (int)uVar10);
       }
-      pFVar13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+      p_Var13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ("..\\shape\\CramTex.txt",(char *)0x0,"wt",
                            "..\\shape\\cramtex.cpp",0x271);
-      if (pFVar13 != (FILE *)0x0) {
+      if (p_Var13 != (_FILE *)0x0) {
         if (0 < (int)g_CramTextureCount) {
           pSVar12 = g_CramSortedTextureEntries;
           iVar14 = 0;
@@ -357,18 +356,16 @@ LAB_00445252:
             piVar9 = &pSVar12->width;
             pSVar12 = pSVar12 + 1;
             iVar11 = iVar14 + 1;
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      (pFVar13,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar14,*piVar9,*piVar5,*piVar4,
+            _fprintf(p_Var13,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar14,*piVar9,*piVar5,*piVar4,
                        *piVar3,*piVar2,*piVar1,*piVar8,*piVar6);
             iVar14 = iVar11;
           } while (iVar11 < (int)g_CramTextureCount);
         }
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (pFVar13,"%ux%u square found using %u padding.\n",g_CramCurrentAcceptableSize,
+        _fprintf(p_Var13,"%ux%u square found using %u padding.\n",g_CramCurrentAcceptableSize,
                    g_CramCurrentAcceptableSize,g_CramPaddingCalculation);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar13,"..\\shape\\cramtex.cpp",0x274);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\shape\\cramtex.cpp",0x274);
       }
-      crt_stdlib_c_srand_FUN_005feb80(seed);
+      srand(seed);
       iVar14 = 0;
       if (0 < (int)texture_count) {
         pSVar12 = g_CramSortedTextureEntries;
@@ -403,14 +400,13 @@ LAB_00445252:
       g_CramAcceptableSize = g_CramCurrentAcceptableSize;
     }
     g_CramAcceptableSize = g_CramAcceptableSize + 1;
-    pFVar13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+    p_Var13 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                         ("..\\shape\\cramlog.txt",(char *)0x0,"at",
                          "..\\shape\\cramtex.cpp",0x24f);
-    if (pFVar13 != (FILE *)0x0) {
-      crt_stdio_c_fprintf_FUN_005fe6d0(pFVar13,"UNDERESTIMATED PAD!!\n");
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (pFVar13,"acceptableSize now adjusted to %d\n",g_CramAcceptableSize);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar13,"..\\shape\\cramtex.cpp",0x253);
+    if (p_Var13 != (_FILE *)0x0) {
+      _fprintf(p_Var13,"UNDERESTIMATED PAD!!\n");
+      _fprintf(p_Var13,"acceptableSize now adjusted to %d\n",g_CramAcceptableSize);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\shape\\cramtex.cpp",0x253);
     }
   } while( true );
 }

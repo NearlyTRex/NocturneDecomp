@@ -26,10 +26,10 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample *th
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   }
   this_ptr->mp3_data = (CMP3Decoder *)0x0;
-  if (this_ptr->file_handle != (FILE *)0x0) {
+  if (this_ptr->file_handle != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0
               (this_ptr->file_handle,"..\\sound\\sndmain.cpp",0x723);
-    this_ptr->file_handle = (FILE *)0x0;
+    this_ptr->file_handle = (_FILE *)0x0;
   }
   this_ptr->taken = 0;
   this_ptr->streaming_buffer_size = 0;

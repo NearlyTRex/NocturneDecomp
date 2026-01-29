@@ -2,11 +2,11 @@
 // Address: 006079b4
 // Address Range: [[006079b4, 00607c87]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
+// Signature: int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(_tm *timeptr)
 
 #include "nocturne.h"
 
-int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
+int __cdecl determine_dst_status(_tm *timeptr)
 
 {
   uint uVar1;
@@ -32,7 +32,7 @@ int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
     pdVar9 = &g_DstStartRule;
   }
   iVar5 = timeptr->tm_mon;
-  iVar2 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
+  iVar2 = is_leap_year(timeptr->tm_year + 0x76c);
   if (iVar2 == 0) {
     iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);
     iVar4 = *(int *)((int)&INFINITY + iVar5 * 2 + 6);
@@ -67,7 +67,7 @@ LAB_00607b55:
   else {
     local_14 = ((dst_rule *)piVar7)->rule_type;
     if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {
-      iVar4 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
+      iVar4 = is_leap_year(timeptr->tm_year + 0x76c);
       if ((iVar4 != 0) && (0x003B001F >> 0x10 < local_14)) {
         local_14 = local_14 + 1;
       }
@@ -114,7 +114,7 @@ LAB_00607c63:
   else {
     iVar5 = pdVar9->rule_type;
     if (pdVar9[1].seconds == 1) {
-      iVar2 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
+      iVar2 = is_leap_year(timeptr->tm_year + 0x76c);
       if ((iVar2 != 0) && (0x003B001F >> 0x10 < iVar5)) {
         iVar5 = iVar5 + 1;
       }

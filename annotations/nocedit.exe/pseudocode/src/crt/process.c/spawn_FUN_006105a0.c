@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)
+int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
 
 {
   BOOL BVar1;
@@ -22,8 +22,8 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
   HANDLE pvStack_18;
   HANDLE pvStack_14;
   
-  crt_process_c_build_command_line_FUN_006103a4(cmdline,in_stack_00000014,envblock,0);
-  crt_memory_c_memset_FUN_005fde40(&local_6c,0,0x44);
+  build_command_line(cmdline,in_stack_00000014,envblock,0);
+  memset(&local_6c,0,0x44);
   local_6c.wShowWindow = 1;
   BVar1 = (*g_CreateProcessAFunc)
                     ((LPCSTR)0x0,envblock,(LPSECURITY_ATTRIBUTES)0x0,(LPSECURITY_ATTRIBUTES)0x0,1,0,
@@ -33,7 +33,7 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
     if (((DVar2 == 5) || (DVar2 == 0xc1)) || (DVar2 == 0xa1)) {
       DVar2 = 2;
     }
-    pvStack_18 = (HANDLE)crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(DVar2);
+    pvStack_18 = (HANDLE)convertWindowsErrorToErrno(DVar2);
   }
   else {
     if (mode == 0) {
@@ -43,7 +43,7 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
           (*g_GetExitCodeProcessFunc)(local_28.hProcess,(LPDWORD)&pvStack_18);
         }
         else {
-          pvStack_18 = (HANDLE)crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+          pvStack_18 = (HANDLE)__set_errno();
         }
       }
       else {
@@ -53,7 +53,7 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
           (*g_SleepFunc)(100);
           BVar1 = (*g_GetExitCodeProcessFunc)(local_28.hProcess,(LPDWORD)&pvStack_18);
           if (BVar1 == 0) {
-            DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+            DVar2 = __set_errno();
             return DVar2;
           }
         } while (pvStack_18 == (HANDLE)0x103);

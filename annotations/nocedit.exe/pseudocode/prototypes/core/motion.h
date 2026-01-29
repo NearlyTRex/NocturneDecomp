@@ -9,11 +9,11 @@ void __cdecl CMotionList::ctor(CMotionList *this_ptr);
 
 // Original: core_motion.cpp_CMotionList_load_FUN_0052cd70
 // Address: 0052cd70
-void __cdecl CMotionList::load(CMotionList *this_ptr,FILE *file_handle);
+void __cdecl CMotionList::load(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_save_FUN_0052d170
 // Address: 0052d170
-void __cdecl CMotionList::save(CMotionList *this_ptr,FILE *file_handle);
+void __cdecl CMotionList::save(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 // Address: 0052d460
@@ -125,11 +125,11 @@ void __cdecl CMotionController::accumulateScaledRootMotion(CMotionController *th
 
 // Original: core_motion.cpp_CMotionController_load_FUN_0052e5d0
 // Address: 0052e5d0
-void __cdecl CMotionController::load(CMotionController *this_ptr,FILE *file_handle);
+void __cdecl CMotionController::load(CMotionController *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionController_save_FUN_0052e670
 // Address: 0052e670
-void __cdecl CMotionController::save(CMotionController *this_ptr,FILE *file_handle);
+void __cdecl CMotionController::save(CMotionController *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionController_render_FUN_0052e700
 // Address: 0052e700

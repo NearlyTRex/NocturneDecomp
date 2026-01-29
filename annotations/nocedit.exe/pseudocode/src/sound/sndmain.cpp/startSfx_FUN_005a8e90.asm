@@ -526,7 +526,7 @@ section .text
     PUSH ESI                            ; 005a9402
     PUSH 0x64faad                       ; 005a9403 | = "sound"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 005a9408
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005a940d
     MOV EDX,dword ptr [ESP + 0x378]     ; 005a9410
     MOV dword ptr [EDX + 0x174],EAX     ; 005a9417
@@ -553,7 +553,7 @@ section .text
     MOV ECX,dword ptr [EDX + 0x174]     ; 005a9441
     PUSH ECX                            ; 005a9447
     CALL crt_stdio.c_ftell_FUN_00601560 ; 005a9448
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 005a944d
     MOV EDX,EDI                         ; 005a9450
     PUSH EDI                            ; 005a9452
@@ -563,7 +563,7 @@ section .text
     MOV EDI,dword ptr [EDI + 0x174]     ; 005a9460
     PUSH EDI                            ; 005a9466
     CALL sound_sndmain.cpp_parseWavFile_FUN_005a3fe0 ; 005a9467
-        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
+        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
     ADD ESP,0xc                         ; 005a946c
     TEST EAX,EAX                        ; 005a946f
     JZ 0x005a94fc                       ; 005a9471

@@ -19,7 +19,7 @@ void core_mobster_cpp_FUN_00527380(void)
   float local_1c;
   
   if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {
-    iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar1 = rand();
     switch(iVar1 % 6) {
     case 0:
       fVar2 = in_stack_00000004[1].base.previous_transform_state.orientation.z;

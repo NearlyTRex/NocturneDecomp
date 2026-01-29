@@ -14,7 +14,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStr
   int iVar3;
   int *in_stack_00000004;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x18);
+  __STK(0x18);
   iVar3 = 0;
   do {
     if (*in_stack_00000004 * 4 <= iVar3) {
@@ -28,7 +28,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStr
     }
     iVar2 = 1;
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
+      iVar1 = _fgetc((_FILE *)this_ptr);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
     iVar3 = iVar3 + 1;

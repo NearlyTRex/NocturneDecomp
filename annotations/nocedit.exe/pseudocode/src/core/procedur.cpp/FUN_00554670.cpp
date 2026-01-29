@@ -34,7 +34,7 @@ void core_procedur_cpp_FUN_00554670(void)
   }
   iVar6 = 0;
   iVar7 = 0;
-  crt_memory_c_memset_FUN_005fde40(&DAT_030f6158,0,0x10000);
+  memset(&DAT_030f6158,0,0x10000);
   do {
     iVar5 = 0;
     iVar4 = iVar7;
@@ -45,7 +45,7 @@ void core_procedur_cpp_FUN_00554670(void)
       if ((fVar1 <= in_stack_00000010 * in_stack_00000010) && (local_40 * local_40 <= fVar1)) {
         fVar8 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *
                               (float10)0.03125f * (float10)3.1415899999999999);
-        dVar9 = crt_math_c_round_FUN_005fe6b0
+        dVar9 = round
                           ((double)(((float10)128 - (float10)in_stack_00000010) *
                                     fVar8 * (float10)16 * (float10)0.0078125));
         local_18 = (byte)(int)ROUND(dVar9);
@@ -64,8 +64,8 @@ void core_procedur_cpp_FUN_00554670(void)
     iVar6 = local_30;
     iVar7 = local_30;
     do {
-      crt_math_c_round_FUN_005fe6b0((double)((float)iVar4 - in_stack_00000008));
-      dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float)local_28 - in_stack_0000000c));
+      round((double)((float)iVar4 - in_stack_00000008));
+      dVar9 = round((double)((float)local_28 - in_stack_0000000c));
       local_28 = (int)ROUND(dVar9);
       if (iStack_24 < 0) {
         iStack_24 = iStack_24 + 0x100;

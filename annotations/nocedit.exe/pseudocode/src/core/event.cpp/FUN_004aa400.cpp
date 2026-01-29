@@ -38,18 +38,18 @@ CHero * core_event_cpp_FUN_004aa400(void)
     actor_ptr = (CHero *)core_event_cpp_CEventList_FUN_004b0b80(g_CEventListPtr);
   }
   else {
-    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"$");
+    iVar2 = stricmp(in_stack_00000004,"$");
     if (iVar2 != 0) {
       actor_ptr = (CHero *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
       if (actor_ptr == (CHero *)0x0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (&DAT_02d0a460,"Actor \"%s\" does not exist.",in_stack_00000004);
         return (CHero *)0x0;
       }
       goto LAB_004aa48f;
     }
     if (g_CNetGamePtr->connection_type != 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,"Can't use '$' actor specifier in multi-player");
+      sprintf(&DAT_02d0a460,"Can't use '$' actor specifier in multi-player");
       return (CHero *)0x0;
     }
     actor_ptr = g_HeroActors[g_LocalHeroIndex];
@@ -66,7 +66,7 @@ LAB_004aa48f:
     return 0x0FFFFFFF;
   }
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)actor_ptr);
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (&DAT_02d0a460,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",in_stack_00000004,pcVar3,
              in_stack_0000000c);
   return (CHero *)0x0;

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int crt_heap_c_ResizeBlockInPlace_FUN_006097b8
+int ResizeBlockInPlace
               (ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
 
 {
@@ -97,7 +97,7 @@ int crt_heap_c_ResizeBlockInPlace_FUN_006097b8
         }
       }
       ((Heap *)(new_size + 0x18))->heap_size = ((Heap *)(new_size + 0x18))->heap_size + 1;
-      crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0((uint *)(uVar4 + (int)ppHVar1) + 1);
+      ValidateHeapIntegrity((uint *)(uVar4 + (int)ppHVar1) + 1);
     }
 LAB_00609968:
     iVar5 = 0;

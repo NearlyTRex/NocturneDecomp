@@ -37,15 +37,15 @@ core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40
     iVar4 = 0;
     do {
       pCVar1 = this_ptr->vertex_positions;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar6 = round
                         ((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2);
       *(int *)((int)&pCVar1->x + iVar4) = (int)ROUND(dVar6);
       pCVar1 = this_ptr->vertex_positions;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar6 = round
                         ((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2);
       *(int *)((int)&pCVar1->y + iVar4) = (int)ROUND(dVar6);
       pCVar1 = this_ptr->vertex_positions;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar6 = round
                         ((double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar3) * dVar2);
       iVar3 = iVar3 + 0x14;
       *(int *)((int)&pCVar1->z + iVar4) = (int)ROUND(dVar6);

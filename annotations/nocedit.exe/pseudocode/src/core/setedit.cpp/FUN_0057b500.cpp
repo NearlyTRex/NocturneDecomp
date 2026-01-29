@@ -25,7 +25,7 @@ void core_setedit_cpp_FUN_0057b500(void)
         iVar2 = 0;
         do {
           unaff_EDI = *(int *)((int)g_MasterLightList + iVar2);
-          iVar1 = crt_string_c_strcmp_FUN_005fef20
+          iVar1 = strcmp
                             (in_stack_00000004->lights[in_stack_00000008].name,
                              (char *)(unaff_EDI + 0x40));
           if (iVar1 == 0) {

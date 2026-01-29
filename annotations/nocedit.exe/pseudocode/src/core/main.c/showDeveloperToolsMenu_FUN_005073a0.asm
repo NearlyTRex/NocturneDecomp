@@ -578,7 +578,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00507946 | s_ump.txt_0067d064
     MOVSD ES:EDI,ESI                    ; 00507947 | s_txt_0067d068 | DAT_00747874
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00507948
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0050794d
     MOV EBX,EAX                         ; 00507950
     TEST EAX,EAX                        ; 00507952
@@ -597,13 +597,13 @@ section .text
     PUSH EBX                            ; 00507981
         ;   Label: LAB_00507981
     CALL shape_memdbg.cpp_debugMemdump_FUN_0050f6c0 ; 00507982
-        ;   XREF to: 0050f6c0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugMemdump_FUN_0050f6c0(FILE * output_file)
+        ;   XREF to: 0050f6c0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugMemdump_FUN_0050f6c0(_FILE * output_file)
     ADD ESP,0x4                         ; 00507987
     PUSH 0x2c3                          ; 0050798a
     PUSH 0x63525f                       ; 0050798f | = "..\\core\\main.c"
     PUSH EBX                            ; 00507994
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00507995
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0050799a
     LEA EAX,[ESP + 0x508]               ; 0050799d
     PUSH EAX                            ; 005079a4

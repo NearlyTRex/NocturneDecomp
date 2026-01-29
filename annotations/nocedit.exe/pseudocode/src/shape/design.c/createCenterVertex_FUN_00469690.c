@@ -33,7 +33,7 @@ void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
     cVar1 = *pcVar3;
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
-  if (((iVar2 != -2) && (local_18 = crt_stdlib_c_atoi_FUN_005ffef0(local_9c), 0 < local_18)) &&
+  if (((iVar2 != -2) && (local_18 = atoi(local_9c), 0 < local_18)) &&
      (local_18 < 9)) {
     local_28 = 0xb;
     local_24 = 0.0;
@@ -52,7 +52,7 @@ void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
       if (iVar2 == -2) {
         return;
       }
-      local_2c = crt_stdlib_c_atoi_FUN_005ffef0(local_9c);
+      local_2c = atoi(local_9c);
       if (local_2c < 0) {
         return;
       }
@@ -68,7 +68,7 @@ void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
     g_LoadedVertices[g_VertexCount].vertex.y = local_20 / (float)local_18;
     g_LoadedVertices[g_VertexCount].vertex.z = local_1c / (float)local_18;
     local_28 = local_28 + 0xb;
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_9c,"New vertex created : %d.  Press a key...",g_VertexCount);
+    sprintf(local_9c,"New vertex created : %d.  Press a key...",g_VertexCount);
     engine_2d_c_drawText_FUN_00401fd0(local_9c,0,local_28);
     engine_2d_c_clearInputAndWait_FUN_00403260();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

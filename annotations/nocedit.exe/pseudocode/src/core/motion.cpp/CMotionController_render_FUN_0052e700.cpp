@@ -59,11 +59,11 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
       else {
         core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
         core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(this_ptr);
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,"%s -> %s");
+        sprintf(&stack0xffffff58,"%s -> %s");
       }
       engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0x16);
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
-      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,"%s : %5.2f",pSVar4);
+      sprintf(&stack0xffffff58,"%s : %5.2f",pSVar4);
       engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0xb);
       return;
     }

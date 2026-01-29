@@ -11,28 +11,27 @@
       },
       {
         "category": "other",
-        "column": 61,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 33,
+        "line": 42,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 56,
+        "column": 35,
         "line": 42,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 136,
+    "complexity_score": 121,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 36,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "format_string_mismatch",
       "stack_param"
     ],
     "total_lines": 118
@@ -184,14 +183,14 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_0000000c",
-      "text": "iVar2 = crt_string_c_strnicmp_FUN_005ff070(str1->actor_name,in_stack_0000000c,~uVar4 - 1);",
+      "text": "iVar2 = strnicmp(str1->actor_name,in_stack_0000000c,~uVar4 - 1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000008,\"%s%d\");",
+      "text": "sprintf(in_stack_00000008,\"%s%d\");",
       "type": "stack_param"
     },
     {
@@ -200,17 +199,6 @@
       "match": "in_stack_00000004",
       "text": "pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%d\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 35,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000008,\"%s%d\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

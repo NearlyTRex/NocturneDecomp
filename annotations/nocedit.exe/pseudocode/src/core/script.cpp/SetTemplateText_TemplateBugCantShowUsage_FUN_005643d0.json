@@ -29,12 +29,6 @@
       },
       {
         "category": "other",
-        "column": 72,
-        "line": 40,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 12,
         "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -244,7 +238,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
-      "text": "iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar3,\"<%s>\",local_7c);",
+      "text": "iVar2 = sprintf(in_stack_00000004 + iVar3,\"<%s>\",local_7c);",
       "type": "stack_param"
     },
     {

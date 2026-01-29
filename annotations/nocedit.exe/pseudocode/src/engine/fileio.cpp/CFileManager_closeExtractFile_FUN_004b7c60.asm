@@ -35,7 +35,7 @@ section .text
     PUSH 0x628098                       ; 004b7c72 | = "..\\engine\\fileio.cpp"
     PUSH EDX                            ; 004b7c77
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b7c78
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b7c7d
     MOV dword ptr [EBX],0x0             ; 004b7c80
     POP EBX                             ; 004b7c86

@@ -17,7 +17,7 @@ void core_skeledit_cpp_FUN_00599480(void)
   uint *in_stack_00000008;
   
   bVar4 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
+  __STK(0x10);
   puVar2 = in_stack_00000008;
   puVar3 = in_stack_00000004;
   for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {

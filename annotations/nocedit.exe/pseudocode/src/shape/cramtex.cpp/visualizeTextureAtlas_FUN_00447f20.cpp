@@ -31,7 +31,7 @@ shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20
   int in_stack_ffffff00;
   SCramWorkingEntry *local_1c;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x134);
+  __STK(0x134);
   g_CramMapNumber = g_CramMapNumber % g_CramTotalMaps;
   iVar12 = 0;
   iVar9 = 0;
@@ -54,7 +54,7 @@ shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20
   else {
     pcVar6 = "result";
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (&stack0xffffff00,"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\n",pcVar6,g_CramTextureCount,
              g_CramMapNumber + 1,g_CramTotalMaps,
              ((double)iVar12 * 100) /

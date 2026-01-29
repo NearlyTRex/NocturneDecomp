@@ -130,7 +130,7 @@ void __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass *
 void __cdecl core_glass_cpp_CGlass_getPropertyList_FUN_004eb3c0 (CGlass *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_showEditorHelp_FUN_004eb600(CGlass *this_ptr,int *y_pos);
-void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,FILE *file_handle);
+void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle);
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint d1,uint d2,uint d3,uint d4);
 void __cdecl core_glass_cpp_freeVectors_FUN_004eb8a0(CVector3f **array);
 void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void);
@@ -205,7 +205,7 @@ void core_grave_cpp_FUN_004eead0(void);
 void core_grave_cpp_FUN_004eeb10(void);
 CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004eeb40(CGrave *this_ptr,uint d1,uint d2);
 void __cdecl core_ground_cpp_staticInit_FUN_004eeb90(void);
-FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode);
+_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode);
 char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004eece0(int type);
 char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(int type);
 uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(int type);

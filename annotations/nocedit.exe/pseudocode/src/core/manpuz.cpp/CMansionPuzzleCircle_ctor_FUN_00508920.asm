@@ -27,7 +27,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_005098f0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -61,22 +61,22 @@ section .text
     PUSH 0xc                            ; 0050895f
     ADD EAX,0x1a0                       ; 00508961
     PUSH EAX                            ; 00508966
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00508967
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00508967
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0050896c
     PUSH 0x660fa0                       ; 0050896f | g_SGemTypeInfo
     PUSH 0xc                            ; 00508974
     ADD EAX,0x4b0                       ; 00508976
     PUSH EAX                            ; 0050897b
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0050897c
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0050897c
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00508981
     PUSH 0x660fc0                       ; 00508984 | g_SReflectorTypeInfo
     PUSH 0x2                            ; 00508989
     ADD EAX,0x8a0                       ; 0050898b
     PUSH EAX                            ; 00508990
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00508991
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00508991
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00508996
     LEA EBX,[EAX + 0xffffecc0]          ; 00508999
     PUSH 0x6356a1                       ; 0050899f | = "doorpuzz.kfm"

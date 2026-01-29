@@ -73,7 +73,7 @@ section .text
     LEA EAX,[ESP + 0x194]               ; 005f4a3d
     PUSH EAX                            ; 005f4a44
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005f4a45
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005f4a4a
     TEST EAX,EAX                        ; 005f4a4d
     JNZ 0x005f4a59                      ; 005f4a4f
@@ -89,7 +89,7 @@ section .text
     PUSH 0x6582ad                       ; 005f4a61 | = "..\\wincore\\winvideo.cpp"
     PUSH EAX                            ; 005f4a66
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005f4a67
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005f4a6c
     LEA ESI,[ESP + 0x190]               ; 005f4a6f
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005f4a76

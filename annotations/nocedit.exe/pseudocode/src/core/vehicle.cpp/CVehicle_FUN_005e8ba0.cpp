@@ -23,7 +23,7 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e8ba0(CVehicle *this_ptr)
     local_c = this_ptr->unk2;
     iVar2 = 0;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_110,"%s tire",
                  *(uint *)((int)&PTR_s_Left_front_00684480 + iVar2));
       local_10 = local_c + iVar1 * 0x1b4;

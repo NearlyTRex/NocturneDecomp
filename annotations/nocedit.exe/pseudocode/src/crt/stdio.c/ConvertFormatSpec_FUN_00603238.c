@@ -24,7 +24,7 @@
    decompiler display issues. */
 
 char * __cdecl
-crt_stdio_c_ConvertFormatSpec_FUN_00603238
+ConvertFormatSpec
           (char *output_buffer,va_list_t *args,FormatSpec *spec_info)
 
 {
@@ -174,7 +174,7 @@ LAB_006033d5:
         if (bVar1 == 0x43) {
           puVar5 = (ushort *)*args;
           *args = (va_list_t)(puVar5 + 2);
-          iVar9 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
+          iVar9 = WideCharToSingleByte
                             ((wchar_t)output_buffer,(char *)(uint)*puVar5);
           if (iVar9 != -1) {
             spec_info->output_length = iVar9;
@@ -192,14 +192,14 @@ LAB_00603493:
            ALTERNATE_FORM)) {
         piVar3 = (int *)*args;
         *args = (va_list_t)(piVar3 + 1);
-        crt_stdio_c_FormatFixedPoint_FUN_0060305c(output_buffer,*piVar3,spec_info);
-        iVar9 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_ds,-1);
+        FormatFixedPoint(output_buffer,*piVar3,spec_info);
+        iVar9 = strlen_far(output_buffer,segment_ds,-1);
         spec_info->content_length = iVar9;
         return output_buffer;
       }
 LAB_006034c9:
-      crt_stdio_c_FloatingPointStub_FUN_00603160(output_buffer,args,spec_info);
-      crt_stdio_c_CalculateZeroPadding_FUN_0060317c(spec_info);
+      FloatingPointStub(output_buffer,args,spec_info);
+      CalculateZeroPadding(spec_info);
       return output_buffer + 1;
     }
     if (bVar1 < 0x48) goto LAB_006034c9;
@@ -227,15 +227,15 @@ LAB_00603702:
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
              ALTERNATE_FORM)) {
           *args = (va_list_t)(piVar3 + 2);
-          crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(piVar3[1] & 0xffff,output_buffer,4);
+          FormatHexWithPadding(piVar3[1] & 0xffff,output_buffer,4);
           output_buffer[4] = ':';
           pcVar7 = output_buffer + 5;
         }
-        crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(iVar9,pcVar7,8);
+        FormatHexWithPadding(iVar9,pcVar7,8);
         if (spec_info->conversion_char == 'P') {
-          crt_string_c_strupr_FUN_0060389c(output_buffer);
+          strupr(output_buffer);
         }
-        iVar9 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_ds,-1);
+        iVar9 = strlen_far(output_buffer,segment_ds,-1);
         spec_info->output_length = iVar9;
         return output_buffer;
       }
@@ -277,7 +277,7 @@ LAB_006034f3:
         if ((spec_info->flags & SHORT_MODIFIER) ==
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
              ALTERNATE_FORM)) {
-          iVar9 = crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
+          iVar9 = WideStringToMultiByteLen
                             ((wchar_t *)output_buffer,segment_storage,spec_info->precision);
           goto LAB_0060359a;
         }
@@ -287,13 +287,13 @@ LAB_006034f3:
         if ((spec_info->flags & LONG_MODIFIER) !=
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
              ALTERNATE_FORM)) {
-          iVar9 = crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
+          iVar9 = WideStringToMultiByteLen
                             ((wchar_t *)output_buffer,segment_storage,spec_info->precision);
           goto LAB_0060359a;
         }
         iVar9 = spec_info->precision;
       }
-      iVar9 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_storage,iVar9);
+      iVar9 = strlen_far(output_buffer,segment_storage,iVar9);
 LAB_0060359a:
       iVar8 = spec_info->precision;
       spec_info->content_length = iVar9;
@@ -326,7 +326,7 @@ LAB_0060387a:
         }
         puVar5 = (ushort *)*args;
         *args = (va_list_t)(puVar5 + 2);
-        iVar8 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
+        iVar8 = WideCharToSingleByte
                           ((wchar_t)mb_char_buffer,(char *)(uint)*puVar5);
         iVar9 = g_MultibyteLocaleActive;
         if (iVar8 == -1) {
@@ -403,9 +403,9 @@ LAB_00603607:
       iVar9 = 0;
       goto LAB_006036cd;
     }
-    crt_stdlib_c_utoa_FUN_0060ae50(integer_value,output_buffer + spec_info->output_length,iVar9);
+    utoa(integer_value,output_buffer + spec_info->output_length,iVar9);
     if (spec_info->conversion_char == 'X') {
-      crt_string_c_strupr_FUN_0060389c(output_buffer);
+      strupr(output_buffer);
     }
   }
   else {
@@ -414,12 +414,12 @@ LAB_00603607:
       iVar9 = 0;
       goto LAB_006036cd;
     }
-    crt_stdlib_c_i64toa_FUN_0060ad40(&value_64bit,output_buffer + spec_info->output_length,iVar9);
+    i64toa(&value_64bit,output_buffer + spec_info->output_length,iVar9);
     if (spec_info->conversion_char == 'X') {
-      crt_string_c_strupr_FUN_0060389c(output_buffer);
+      strupr(output_buffer);
     }
   }
-  iVar9 = crt_string_c_strlen_far_FUN_00602f4c(pcVar7,segment_ds,-1);
+  iVar9 = strlen_far(pcVar7,segment_ds,-1);
 LAB_006036cd:
   spec_info->content_length = iVar9;
   if (iVar9 < spec_info->precision) {
@@ -428,6 +428,6 @@ LAB_006036cd:
   if (spec_info->precision != -1) {
     return pcVar7;
   }
-  crt_stdio_c_CalculateZeroPadding_FUN_0060317c(spec_info);
+  CalculateZeroPadding(spec_info);
   return pcVar7;
 }

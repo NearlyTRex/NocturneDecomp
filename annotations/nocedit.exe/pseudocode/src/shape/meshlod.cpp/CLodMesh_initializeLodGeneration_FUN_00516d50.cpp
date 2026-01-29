@@ -9,17 +9,17 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(CLodMesh *this_ptr)
 
 {
-  FILE *pFVar1;
+  _FILE *p_Var1;
   CLodMesh *unaff_ESI;
   
   if (this_ptr->next_lod != (CLodMesh *)0x0) {
     return;
   }
-  crt_file_c_create_directory_FUN_00600e10("meshlod");
-  crt_io_c_deleteFile_FUN_005ff9d0("meshlod\\simplify.log");
-  if (this_ptr->precompute_file == (FILE *)0x0) {
-    pFVar1 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(this_ptr,"wt");
-    this_ptr->precompute_file = pFVar1;
+  _mkdir("meshlod");
+  remove("meshlod\\simplify.log");
+  if (this_ptr->precompute_file == (_FILE *)0x0) {
+    p_Var1 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(this_ptr,"wt");
+    this_ptr->precompute_file = p_Var1;
   }
   shape_meshlod_cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10(this_ptr);
   shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(unaff_ESI);

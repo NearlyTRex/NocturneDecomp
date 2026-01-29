@@ -2,11 +2,11 @@
 // Address: 00515160
 // Address Range: [[00515160, 00515187]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(FILE *file_handle,int line_count)
+// Signature: void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(_FILE *file_handle,int line_count)
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(FILE *file_handle,int line_count)
+void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(_FILE *file_handle,int line_count)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(FILE *file_handle,int line
       return;
     }
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) {
         return;
       }

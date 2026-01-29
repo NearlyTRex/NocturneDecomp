@@ -42,18 +42,18 @@ void core_course_cpp_FUN_00443760(void)
     local_48.z = in_stack_00000004->z;
   }
   uStack_a4 = 0x443794;
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->x);
+  dVar6 = round((double)in_stack_00000004->x);
   local_20 = (int)ROUND(dVar6);
   iVar2 = local_20 >> 0x1f;
   iVar5 = local_20 + iVar2 * -0x10;
   SStack_ac.vertex_count = 0x4437b7;
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->y);
+  dVar6 = round((double)in_stack_00000004->y);
   local_20 = ((int)(iVar5 - (uint)(iVar2 << 3 < 0)) >> 4) << 4;
   local_24 = (int)ROUND(dVar6);
   iVar2 = local_24 >> 0x1f;
   iVar5 = local_24 + iVar2 * -0x10;
   SStack_ac.primitive_type = 0x4437e4;
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->z);
+  dVar6 = round((double)in_stack_00000004->z);
   local_20 = (int)ROUND(dVar6);
   in_stack_00000004->x = (float)local_24;
   in_stack_00000004->y = (float)(((int)(iVar5 - (uint)(iVar2 << 3 < 0)) >> 4) << 4);

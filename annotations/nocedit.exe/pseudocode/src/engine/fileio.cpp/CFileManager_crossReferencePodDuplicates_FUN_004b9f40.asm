@@ -50,9 +50,8 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_io.c_getcwd_wrapper_FUN_00608d20
-;   crt_memory.c_constructTypedObjectArray_FUN_00601272
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
+;   crt_memory.c___vec_new_FUN_00601272
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -63,6 +62,7 @@
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
+;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -166,8 +166,8 @@ section .text
         ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004ba04b
     PUSH EAX                            ; 004ba04e
-    CALL crt_memory.c_constructTypedObjectArray_FUN_00601272 ; 004ba04f
-        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructTypedObjectArray_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_new_FUN_00601272 ; 004ba04f
+        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004ba054
     TEST EAX,EAX                        ; 004ba057
     MOV dword ptr [ESP + 0x4c0],EAX     ; 004ba059
@@ -323,12 +323,12 @@ section .text
     PUSH ECX                            ; 004ba288
     MOV [0x0067d20c],EAX                ; 004ba289 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDX      ; 004ba28e | g_CurrentDebugLine
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 004ba294
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 004ba294
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004ba299
     PUSH EAX                            ; 004ba29c
-    CALL crt_memory.c_free_FUN_005fe659 ; 004ba29d
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004ba29d
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004ba2a2
     CMP dword ptr [ESP],0x1             ; 004ba2a5
     JGE 0x004ba48d                      ; 004ba2a9
@@ -404,12 +404,12 @@ section .text
     PUSH EBX                            ; 004ba372
     MOV dword ptr [0x0067d20c],EDX      ; 004ba373 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ECX      ; 004ba379 | g_CurrentDebugLine
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 004ba37f
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 004ba37f
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004ba384
     PUSH EAX                            ; 004ba387
-    CALL crt_memory.c_free_FUN_005fe659 ; 004ba388
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004ba388
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004ba38d
     PUSH 0x0                            ; 004ba390
     LEA EAX,[ESP + 0x4b0]               ; 004ba392

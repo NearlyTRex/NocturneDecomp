@@ -191,7 +191,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
     }
     pCVar8 = &local_14c;
     uVar12 = 0;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_14c,4,&g_CVectorTypeInfo);
+    __arrinit(&local_14c,4,&g_CVectorTypeInfo);
     do {
       local_70.y = 0.0;
       local_70.x = local_ac;

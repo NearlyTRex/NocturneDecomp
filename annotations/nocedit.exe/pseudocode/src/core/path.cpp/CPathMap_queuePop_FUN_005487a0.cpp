@@ -20,7 +20,7 @@ uint __cdecl core_path_cpp_CPathMap_queuePop_FUN_005487a0(CPathMap *this_ptr,int
   int iVar7;
   int iVar8;
   
-  crt_memory_c_memset_FUN_005fde40(g_PathfindingVisited,0,0x2774);
+  memset(g_PathfindingVisited,0,0x2774);
   g_PathfindingNodesExpanded = 1;
   g_PathfindingQueueHead = 0;
   g_PathfindingQueue[0].x = g_PathfindingCurrentX;

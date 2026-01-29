@@ -11,7 +11,7 @@ int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_0050dad0(CVector3i *vector_p
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     (SQRT((double)vector_ptr->z * (double)vector_ptr->z +
                           (double)vector_ptr->y * (double)vector_ptr->y +
                           (double)vector_ptr->x * (double)vector_ptr->x));

@@ -41,7 +41,7 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *outpu
       local_18 = iVar4;
       if (0.0 <= *pfVar3) {
         local_30 = (double)*pfVar3;
-        crt_math_c_modf_FUN_00602102((double)(*pfVar3 + (float)0.5),(double *)&local_30)
+        modf((double)(*pfVar3 + (float)0.5),(double *)&local_30)
         ;
         dVar1 = (double)CONCAT44((uint)local_30,local_38._4_4_);
         pfVar3 = extraout_EBX_00;
@@ -50,7 +50,7 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *outpu
       else {
         local_38 = (double)*pfVar3;
         local_30 = dVar2;
-        crt_math_c_modf_FUN_00602102((double)(*pfVar3 + (float)-0.5),(double *)&local_38)
+        modf((double)(*pfVar3 + (float)-0.5),(double *)&local_38)
         ;
         dVar1 = (double)CONCAT44((uint)local_38,puVar7);
         pfVar3 = extraout_EBX;

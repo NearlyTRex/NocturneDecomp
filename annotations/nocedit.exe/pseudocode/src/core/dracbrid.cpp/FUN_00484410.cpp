@@ -121,7 +121,7 @@ void core_dracbrid_cpp_FUN_00484410
           *(uint *)(iVar12 + 0xfc) = 1;
           *(uint *)(iVar12 + 0xcb4) = 1;
           iVar10 = iVar10 + 1;
-          dVar19 = crt_math_c_round_FUN_005fe6b0
+          dVar19 = round
                              ((double)(((float10)param_5[1].base.base.previous_transform_state.
                                                  orientation.x * fVar18) / fVar17));
           *(int *)(iVar12 + 0xcc0) = (int)ROUND(dVar19);
@@ -255,7 +255,7 @@ LAB_004848f9:
         iVar10 = iVar10 + 4;
       }
       if (iVar12 == *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_430,"bride-%d?.wav",
                    *(uint *)(param_5[1].base.base.create_event + 0x18));
         core_dracbrid_cpp_FUN_004864c0();
@@ -372,7 +372,7 @@ LAB_004848f9:
     break;
   case 9:
     if (*(float *)(param_5[1].base.base.create_event + 0x24) <= 0.0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_3cc,"bride-%d?.wav",
                  *(uint *)(param_5[1].base.base.create_event + 0x18));
       core_dracbrid_cpp_FUN_004864c0();
@@ -457,7 +457,7 @@ LAB_004852f8:
     break;
   case 0xe:
     if (*(float *)(param_5[1].base.base.create_event + 0x24) <= 0.0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_368,"bride-%d?.wav",
                  *(uint *)(param_5[1].base.base.create_event + 0x18));
       core_dracbrid_cpp_FUN_004864c0();
@@ -597,7 +597,7 @@ LAB_004852f8:
     break;
   case 0x17:
     if (*(float *)(param_5[1].base.base.create_event + 0x24) <= 0.0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (&stack0xfffffb6c,"bride-%d?.wav",
                  *(uint *)(param_5[1].base.base.create_event + 0x18));
       core_dracbrid_cpp_FUN_004864c0();

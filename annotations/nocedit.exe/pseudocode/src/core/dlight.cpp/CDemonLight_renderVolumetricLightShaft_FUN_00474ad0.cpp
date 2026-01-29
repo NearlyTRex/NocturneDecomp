@@ -169,7 +169,7 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
             local_130.surface_normal.B = 0;
             local_114 = 0;
             pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-            dVar6 = crt_math_c_round_FUN_005fe6b0
+            dVar6 = round
                               ((double)(((((this_ptr->base).max_distance - fVar2) *
                                          (float)8192) / (this_ptr->base).max_distance) *
                                        (float)local_130.base.type));

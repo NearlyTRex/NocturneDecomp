@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10 (CBoneStructure *this_ptr,FILE *file,int mirror_flag)
+; __cdecl void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10 (CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
 ;
 ; Parameters:
 ; CBoneStructure * Stack[0x8]:4   this_ptr
-; FILE *           Stack[0xc]:4   file
+; _FILE *          Stack[0xc]:4   file
 ; int              Stack[0x10]:4   mirror_flag
 ;
 ; XREF[3]:
@@ -30,7 +30,7 @@
 ;   core_skeledit.cpp_FUN_0058ac80
 ;   core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0
 ;   core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
 
     PUSH 0x28                           ; 0058aa10
         ;   Label: core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058aa15
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058aa15
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058aa1a
     PUSH ESI                            ; 0058aa1b
     PUSH EDI                            ; 0058aa1c
@@ -68,7 +68,7 @@ section .text
     PUSH 0x64a3db                       ; 0058aa53 | = "%f,%f,%f\n"
     PUSH EDI                            ; 0058aa58
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058aa59
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0058aa5e
     CMP EAX,0x3                         ; 0058aa61
     JZ 0x0058aa88                       ; 0058aa64
@@ -92,7 +92,7 @@ section .text
     PUSH 0x64a42a                       ; 0058aa94 | = "%f,%f,%f\n"
     PUSH EDI                            ; 0058aa99
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058aa9a
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0058aa9f
     CMP EAX,0x3                         ; 0058aaa2
     JNZ 0x0058aa66                      ; 0058aaa5
@@ -106,7 +106,7 @@ section .text
     PUSH 0x64a434                       ; 0058aab3 | = "%f,%f,%f\n"
     PUSH EDI                            ; 0058aab8
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058aab9
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0058aabe
     CMP EAX,0x3                         ; 0058aac1
     JNZ 0x0058aa66                      ; 0058aac4
@@ -120,7 +120,7 @@ section .text
     PUSH 0x64a43e                       ; 0058aad2 | = "%f,%f,%f\n"
     PUSH EDI                            ; 0058aad7
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058aad8
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0058aadd
     CMP EAX,0x3                         ; 0058aae0
     JNZ 0x0058aa66                      ; 0058aae3

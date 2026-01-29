@@ -18,7 +18,7 @@ void core_bugs_cpp_FUN_00425660(void)
   
   *(uint *)(in_stack_00000004 + 0x12b34) = 0;
   iVar1 = 0;
-  crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0x12b38),0,28000);
+  memset((void *)(in_stack_00000004 + 0x12b38),0,28000);
   if (0 < in_stack_00000008) {
     do {
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740();

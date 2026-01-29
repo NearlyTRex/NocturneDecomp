@@ -55,12 +55,12 @@ void engine_colquant_c_FUN_00441260(void)
   local_50 = SUB84(dVar11,0);
   uStack_74 = (uint)((ulonglong)dVar10 >> 0x20);
   iVar7 = in_stack_00000004 + in_stack_00000008 * 0x40;
-  dVar11 = crt_math_c_round_FUN_005fe6b0(dVar10 / (double)*(uint *)(iVar7 + 0x4044));
+  dVar11 = round(dVar10 / (double)*(uint *)(iVar7 + 0x4044));
   *(short *)(iVar7 + 0x4008) = (short)(int)ROUND(dVar11);
-  dVar11 = crt_math_c_round_FUN_005fe6b0
+  dVar11 = round
                      ((double)CONCAT44(local_70,uStack_74) / (double)*(uint *)(iVar7 + 0x4044));
   *(short *)(iVar7 + 0x400a) = (short)(int)ROUND(dVar11);
-  dVar11 = crt_math_c_round_FUN_005fe6b0
+  dVar11 = round
                      ((double)CONCAT44(uStack_54,local_58) / (double)*(uint *)(iVar7 + 0x4044));
   *(short *)(iVar7 + 0x400c) = (short)(int)ROUND(dVar11);
   *(uint *)(iVar7 + 0x4018) = 0;
@@ -76,7 +76,7 @@ void engine_colquant_c_FUN_00441260(void)
   local_68 = 0.0;
   *(uint *)(iVar7 + 0x4010) = 0;
   dStack_a0 = 2.20433267273258e-317;
-  dVar12 = crt_math_c_round_FUN_005fe6b0
+  dVar12 = round
                      ((double)CONCAT44(local_50,uStack_54) / (double)*(uint *)(iVar7 + 0x4044));
   *(short *)(iVar7 + 0x400e) = (short)(int)ROUND(dVar12);
   *(uint *)(iVar7 + 0x4014) = 0;

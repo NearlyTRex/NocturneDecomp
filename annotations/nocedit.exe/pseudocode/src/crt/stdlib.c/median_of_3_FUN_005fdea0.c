@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void * __watcallStack
-crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,QSORT_COMPARATOR compar)
+median_of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar)
 
 {
   int iVar1;

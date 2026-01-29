@@ -87,8 +87,8 @@ section .text
     PUSH EBP                            ; 004e12b3
     SUB ESP,0x628                       ; 004e12b4
     PUSH 0x67b670                       ; 004e12ba | = "save\\$$SAVE$$.TMP"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 004e12bf
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 004e12bf
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 004e12c4
     MOV EAX,dword ptr [ESP + 0x63c]     ; 004e12c7
     MOV dword ptr [EAX + 0x234],0x1     ; 004e12ce
@@ -203,12 +203,12 @@ section .text
     PUSH EAX                            ; 004e141e
     PUSH 0x62cab3                       ; 004e141f | = "save"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e1424
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e1429
     PUSH EAX                            ; 004e142c
     MOV EBX,EAX                         ; 004e142d
     CALL crt_stdio.c_ftell_FUN_00601560 ; 004e142f
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 004e1434
     MOV dword ptr [ESP + 0x620],EAX     ; 004e1437
     MOV EAX,ESP                         ; 004e143e
@@ -252,7 +252,7 @@ section .text
     LEA EAX,[ESP + 0x60c]               ; 004e148e
     PUSH EAX                            ; 004e1495
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004e1496
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004e149b
     PUSH 0x0                            ; 004e149e
     MOV EDX,dword ptr [ESP + 0x624]     ; 004e14a0
@@ -260,7 +260,7 @@ section .text
     PUSH EBX                            ; 004e14a8
     MOV EDI,0x67b684                    ; 004e14a9 | g_MagicNumEFD
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 004e14ae
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 004e14b3
     LEA ESI,[ESP + 0x600]               ; 004e14b6
     MOV ECX,0x4                         ; 004e14bd
@@ -292,7 +292,7 @@ section .text
     PUSH 0x62cabc                       ; 004e14fa | = "..\\core\\game.cpp"
     PUSH EBX                            ; 004e14ff
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e1500
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e1505
     MOV EAX,ESP                         ; 004e1508
     PUSH EAX                            ; 004e150a
@@ -375,24 +375,24 @@ section .text
     LEA EAX,[ESP + 0x5d8]               ; 004e1610
     PUSH EAX                            ; 004e1617
     CALL support_codec.cpp_CLZWDecompress_process_FUN_0043f510 ; 004e1618
-        ;   XREF to: 0043f510 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress * this_ptr, FILE * input_file, int byte_count, FILE * output_file)
+        ;   XREF to: 0043f510 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress * this_ptr, _FILE * input_file, int byte_count, _FILE * output_file)
     ADD ESP,0x10                        ; 004e161d
     LEA EAX,[ESP + 0x594]               ; 004e1620
     PUSH EAX                            ; 004e1627
     LEA EAX,[ESP + 0x5d0]               ; 004e1628
     PUSH EAX                            ; 004e162f
     CALL support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590 ; 004e1630
-        ;   XREF to: 0043f590 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompress * this_ptr, FILE * output_file)
+        ;   XREF to: 0043f590 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompress * this_ptr, _FILE * output_file)
     ADD ESP,0x8                         ; 004e1635
     LEA EAX,[ESP + 0x4d0]               ; 004e1638
     PUSH EAX                            ; 004e163f
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 004e1640
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     ADD ESP,0x4                         ; 004e1645
     LEA EAX,[ESP + 0x550]               ; 004e1648
     PUSH EAX                            ; 004e164f
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 004e1650
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     ADD ESP,0x4                         ; 004e1655
     CMP dword ptr [ESP + 0x608],0x0     ; 004e1658
     JNZ 0x004e1879                      ; 004e1660
@@ -403,7 +403,7 @@ section .text
     PUSH ESI                            ; 004e1675
     PUSH 0x67b670                       ; 004e1676 | = "save\\$$SAVE$$.TMP"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004e167b
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004e1680
     MOV EBX,EAX                         ; 004e1683
     TEST EAX,EAX                        ; 004e1685
@@ -449,7 +449,7 @@ section .text
     LEA EAX,[ESP + 0x310]               ; 004e16ff
     PUSH EAX                            ; 004e1706
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 004e1707
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004e170c
     PUSH 0xa                            ; 004e170f
     PUSH 0x62cb8a                       ; 004e1711 | = "CInventory"
@@ -465,7 +465,7 @@ section .text
     PUSH 0x62cb95                       ; 004e1733 | = "..\\core\\game.cpp"
     PUSH EBX                            ; 004e1738
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e1739
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e173e
     MOV EAX,ESP                         ; 004e1741
     PUSH EAX                            ; 004e1743
@@ -512,8 +512,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x63c]     ; 004e17b8
     PUSH 0x67b670                       ; 004e17bf | = "save\\$$SAVE$$.TMP"
     MOV dword ptr [EAX + 0x234],0x0     ; 004e17c4
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 004e17ce
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 004e17ce
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 004e17d3
     ADD ESP,0x628                       ; 004e17d6
         ;   Label: LAB_004e17d6
@@ -627,7 +627,7 @@ section .text
     PUSH 0x62cbd0                       ; 004e18ee | = "%d\n"
     PUSH EBX                            ; 004e18f3
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004e18f4
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004e18f9
     CMP dword ptr [ESP + 0x604],0x3     ; 004e18fc
     JL 0x004e1bc0                       ; 004e1904
@@ -644,7 +644,7 @@ section .text
     LEA EAX,[ESP + 0x310]               ; 004e1921
     PUSH EAX                            ; 004e1928
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 004e1929
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004e192e
     PUSH 0x2db87d0                      ; 004e1931 | g_LocalHeroIndex
     PUSH 0x2db87bc                      ; 004e1936 | g_HeroCount
@@ -652,7 +652,7 @@ section .text
     PUSH EBX                            ; 004e1940
     XOR EBP,EBP                         ; 004e1941
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004e1943
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004e1948
     MOV EAX,[0x02db87bc]                ; 004e194b | g_HeroCount
     MOV dword ptr [ESP + 0x624],EBP     ; 004e1950
@@ -669,7 +669,7 @@ section .text
     PUSH EBX                            ; 004e197d
     MOVSD.REP ES:EDI,ESI                ; 004e197e | = "(file corrupt)" | s_e_corrupt)_0067b68c
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004e1980
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004e1985
     MOV EDX,dword ptr [0x02db880c]      ; 004e1988 | g_CHeroClassInfo.name_hash
     PUSH EDX                            ; 004e198e
@@ -692,7 +692,7 @@ section .text
     PUSH 0x62cc1e                       ; 004e19be | = "..\\core\\game.cpp"
     PUSH EBX                            ; 004e19c3
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e19c4
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e19c9
     LEA EAX,[ESP + 0x408]               ; 004e19cc
     PUSH EAX                            ; 004e19d3
@@ -762,14 +762,14 @@ section .text
     LEA EAX,[ESP + 0x310]               ; 004e1a91
     PUSH EAX                            ; 004e1a98
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 004e1a99
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004e1a9e
     PUSH 0x2d82d84                      ; 004e1aa1 | DAT_02d82d84
     PUSH 0x62cc4b                       ; 004e1aa6 | = "%d\n"
     PUSH EBX                            ; 004e1aab
     MOV EBP,0x1                         ; 004e1aac
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004e1ab1
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EAX,[0x02d82d84]                ; 004e1ab6 | DAT_02d82d84
     ADD ESP,0xc                         ; 004e1abb
     CMP EAX,EBP                         ; 004e1abe
@@ -784,7 +784,7 @@ section .text
     INC EBP                             ; 004e1ad1
     ADD ESI,0x4                         ; 004e1ad2
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004e1ad5
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EAX,[0x02d82d84]                ; 004e1ada | DAT_02d82d84
     ADD ESP,0xc                         ; 004e1adf
     CMP EBP,EAX                         ; 004e1ae2
@@ -801,7 +801,7 @@ section .text
     LEA EAX,[ESP + 0x310]               ; 004e1b00
     PUSH EAX                            ; 004e1b07
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 004e1b08
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004e1b0d
     MOV ESI,dword ptr [ESP + 0x60c]     ; 004e1b10
     PUSH ESI                            ; 004e1b17
@@ -814,7 +814,7 @@ section .text
     PUSH 0x62cc53                       ; 004e1b30 | = "%f,%f,%d,%d\n"
     PUSH EBX                            ; 004e1b35
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004e1b36
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 004e1b3b
     CMP dword ptr [ESP + 0x604],0x9     ; 004e1b3e
         ;   Label: LAB_004e1b3e
@@ -831,7 +831,7 @@ section .text
     PUSH 0x62cc60                       ; 004e1b5d | = "..\\core\\game.cpp"
     PUSH EBX                            ; 004e1b62
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e1b63
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e1b68
     CMP dword ptr [ESP + 0x644],0x0     ; 004e1b6b
     JZ 0x004e17d6                       ; 004e1b73
@@ -856,7 +856,7 @@ section .text
     PUSH 0x62cbd4                       ; 004e1bc5 | = "..\\core\\game.cpp"
     PUSH EBX                            ; 004e1bca
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e1bcb
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e1bd0
     MOV EAX,ESP                         ; 004e1bd3
     PUSH EAX                            ; 004e1bd5
@@ -881,7 +881,7 @@ section .text
     MOV EDX,dword ptr [0x0067a3d0]      ; 004e1c04 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EDX                            ; 004e1c0a | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_load_FUN_004c9300 ; 004e1c0b
-        ;   XREF to: 004c9300 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_load_FUN_004c9300(CFireEffect * this_ptr, FILE * file_handle)
+        ;   XREF to: 004c9300 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_load_FUN_004c9300(CFireEffect * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e1c10
     JMP 0x004e1a7d                      ; 004e1c13
         ;   XREF to: 004e1a7d (UNCONDITIONAL_JUMP)  ; LAB_004e1a7d

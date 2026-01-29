@@ -11,6 +11,6 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_ctor_FUN_0050fba0(CLeakChec
 {
   char local_64 [100];
   
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_64,"ags");
+  sprintf(local_64,"ags");
   return this_ptr;
 }

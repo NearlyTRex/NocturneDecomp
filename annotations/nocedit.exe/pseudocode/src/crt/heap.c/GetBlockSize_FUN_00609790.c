@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-ulong __cdecl crt_heap_c_GetBlockSize_FUN_00609790(void *ptr)
+ulong __cdecl GetBlockSize(void *ptr)
 
 {
   return (*(uint *)((int)ptr + -4) & 0xfffffffe) - 4;

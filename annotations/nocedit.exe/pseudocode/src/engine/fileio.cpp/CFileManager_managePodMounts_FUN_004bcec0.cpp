@@ -62,7 +62,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
           pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar2);
           format = "%s\tMounted";
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_230,format,pcVar1);
+        sprintf(local_230,format,pcVar1);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffa28,local_230);
         iVar2 = iVar2 + 1;
       } while (iVar2 < local_20.item_count);

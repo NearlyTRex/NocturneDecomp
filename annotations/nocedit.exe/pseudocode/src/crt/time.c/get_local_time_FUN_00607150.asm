@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_time_c_get_local_time_FUN_00607150(tm *tm_output)
+; __watcallStack void __watcallStack crt_time_c_get_local_time_FUN_00607150(_tm *tm_output)
 ;
 ; Parameters:
-; tm *             Stack[0x4]:4   tm_output
+; _tm *            Stack[0x4]:4   tm_output
 ;
 ; XREF[1]:
-;   crt_time.c_time_with_rounding_FUN_006001f0 at 006001fb
+;   crt_time.c_time_FUN_006001f0 at 006001fb
 ;
 ; Referenced Globals:
 ;   GetLocalTime* g_GetLocalTimeFunc = 00211f32

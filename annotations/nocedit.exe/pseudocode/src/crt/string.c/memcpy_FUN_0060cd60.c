@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl crt_string_c_memcpy_FUN_0060cd60(void *dest,void *src,SIZE_T count)
+void * __cdecl memcpy(void *dest,void *src,SIZE_T count)
 
 {
   uint uVar1;

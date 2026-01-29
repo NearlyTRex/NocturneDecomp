@@ -101,7 +101,7 @@ LAB_00459b94:
       if ((local_30 == 0xffffffff) || (local_2c != 0)) {
         local_24 = 0;
         for (local_34 = 0; local_34 < local_14; local_34 = local_34 + 1) {
-          iVar2 = crt_string_c_strcmp_FUN_005fef20(local_84,local_3fcc + local_34 * 0x50);
+          iVar2 = strcmp(local_84,local_3fcc + local_34 * 0x50);
           if (iVar2 == 0) {
             local_24 = 1;
             break;
@@ -128,18 +128,18 @@ LAB_00459b94:
           }
           if (local_28 == 0) {
             if (local_30 == 0xffffffff) {
-              crt_stdio_c_sprintf_FUN_005fdbd0
+              sprintf
                         (local_14c,"  %-12s  (texture not found)",local_84);
               engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
             }
             else {
-              crt_stdio_c_sprintf_FUN_005fdbd0
+              sprintf
                         (local_14c,"  %-12s  (invalid texture size)",local_84);
               engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
             }
           }
           else {
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_14c,"  NO TEXTURE    (object not mapped)");
+            sprintf(local_14c,"  NO TEXTURE    (object not mapped)");
             engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
           }
         }

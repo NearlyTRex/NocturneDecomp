@@ -21,7 +21,7 @@
 ;   SPECIAL_DEVICE_READ_FUNC* g_SpecialDeviceReadFuncPtr = 00000000
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_getFileTypeFlags_FUN_006088b0
 ;   crt_stdio.c_lseek_FUN_00606690
@@ -144,8 +144,8 @@ section .text
     CMP EAX,0x6d                        ; 0060ea31
     JZ 0x0060eb2f                       ; 0060ea34
         ;   XREF to: 0060eb2f (CONDITIONAL_JUMP)  ; LAB_0060eb2f
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 0060ea3a
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 0060ea3a
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
         ;   Label: LAB_0060ea3a
     ADD ESP,0x10                        ; 0060ea3f
     POP EBP                             ; 0060ea42

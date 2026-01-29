@@ -30,13 +30,13 @@
 ;   CStrList_vtable g_CPickListVTable
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_edittool.cpp_CEdButton_dtor_FUN_004a6510
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
 ;   shape_edittool.cpp_CPickList_clear_FUN_004a5770
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -88,12 +88,12 @@ section .text
     PUSH 0x659960                       ; 004a3ceb | g_CPickListTypeInfo
         ;   Label: LAB_004a3ceb
     PUSH EBX                            ; 004a3cf0
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 004a3cf1
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 004a3cf1
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004a3cf6
     PUSH EAX                            ; 004a3cf9
-    CALL crt_memory.c_free_FUN_005fe659 ; 004a3cfa
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004a3cfa
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004a3cff
     MOV EAX,EBX                         ; 004a3d02
     POP EBX                             ; 004a3d04

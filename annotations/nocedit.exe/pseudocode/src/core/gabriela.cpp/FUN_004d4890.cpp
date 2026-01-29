@@ -137,7 +137,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
         (*(((local_1c->base).vtable._uc)->_uc).processDamage)(local_1c,(SDamageInfo *)&local_a0);
         local_a0 = (double)fStack_94;
         if (0.0 < local_a0) {
-          dVar5 = crt_math_c_round_FUN_005fe6b0(local_a0 * 0.20000000000000001);
+          dVar5 = round(local_a0 * 0.20000000000000001);
           iStack_14 = (int)ROUND(dVar5);
           in_stack_ffffff44 = 7.098521e-39;
           core_gore_cpp_FUN_004edbb0();

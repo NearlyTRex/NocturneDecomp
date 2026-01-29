@@ -17,7 +17,7 @@ void core_skeledit_cpp_FUN_00589450(void)
   char *in_stack_00000004;
   
   bVar4 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x1c);
+  __STK(0x1c);
   uVar3 = 0xffffffff;
   pcVar2 = in_stack_00000004;
   do {
@@ -37,7 +37,7 @@ void core_skeledit_cpp_FUN_00589450(void)
   }
   in_stack_00000004[n] = '\0';
   while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {
-    crt_string_c_memmove_FUN_005fe5e0(in_stack_00000004,in_stack_00000004 + 1,n);
+    memmove(in_stack_00000004,in_stack_00000004 + 1,n);
     n = n - 1;
   }
   return;

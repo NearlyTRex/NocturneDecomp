@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 int __watcallStack
-crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_write)
+write(int file_handle_index,void *buffer,int bytes_to_write)
 
 {
   HANDLE hFile;
@@ -20,18 +20,18 @@ crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_w
   void *in_stack_00000010;
   
   if ((file_handle_index < 0) || (g_MaxHandleCount < (uint)file_handle_index)) {
-    crt_errno_c_setErrno_FUN_00602790(SYSTEM_WATCOM_EBADF);
+    setErrno(SYSTEM_WATCOM_EBADF);
     unaff_ESI = -1;
   }
   else {
     hFile = g_IOControlBlock->standard_handles[file_handle_index];
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file_handle_index);
-    uVar1 = crt_io_c_getFileTypeFlags_FUN_006088b0(file_handle_index);
+    uVar1 = getFileTypeFlags(file_handle_index);
     if ((uVar1 & 0x80) != 0) {
       DVar2 = (*g_SetFilePointerFunc)(hFile,0,(PLONG)0x0,2);
       if (DVar2 == 0xffffffff) {
         (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
-        DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+        DVar2 = __set_errno();
         return DVar2;
       }
     }
@@ -47,11 +47,11 @@ crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_w
                                (LPOVERLAPPED)0x0);
     if (BVar4 == 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
-      DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+      DVar2 = __set_errno();
       return DVar2;
     }
     if (bytes_to_write != unaff_EDI) {
-      crt_errno_c_setErrno_FUN_00602790(SYSTEM_WATCOM_ENOMEM);
+      setErrno(SYSTEM_WATCOM_ENOMEM);
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
   }

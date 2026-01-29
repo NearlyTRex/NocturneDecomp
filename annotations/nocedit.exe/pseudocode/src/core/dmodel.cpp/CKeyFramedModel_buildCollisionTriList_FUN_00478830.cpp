@@ -18,7 +18,7 @@ core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(CKeyFramedMod
   g_CurrentDebugLine = 0x45e;
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
   if (this_ptr->collision_triangle_list != (CDemonTriangle *)0x0) {
-    crt_memory_c_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);
   }
   this_ptr->collision_triangle_count = 0;
   this_ptr->collision_triangle_list = (CDemonTriangle *)0x0;

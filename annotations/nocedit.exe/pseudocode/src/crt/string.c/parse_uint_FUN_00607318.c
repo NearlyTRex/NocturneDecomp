@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_parse_uint_FUN_00607318(char *str,int *result)
+char * __cdecl parse_uint(char *str,int *result)
 
 {
   byte bVar1;

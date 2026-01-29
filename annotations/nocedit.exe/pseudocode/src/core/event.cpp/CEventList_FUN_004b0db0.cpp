@@ -55,7 +55,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
 LAB_004b0e30:
         iVar2 = this_ptr[1].event_count + -1;
         this_ptr[1].event_count = iVar2;
-        crt_string_c_memmove_FUN_005fe5e0(dest,local_18,(iVar2 - local_14) * 0x120);
+        memmove(dest,local_18,(iVar2 - local_14) * 0x120);
       }
     } while (local_14 < this_ptr[1].event_count);
   }

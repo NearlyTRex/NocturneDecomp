@@ -21,7 +21,7 @@ sound_sndmain_cpp_generateSilence_FUN_005a5db0(void *buffer,uint bits_per_sample
       num_samples = num_samples * 2;
       value = 0;
     }
-    crt_memory_c_memset_FUN_005fde40(buffer,value,num_samples);
+    memset(buffer,value,num_samples);
     return;
   }
 LAB_005a5de0:

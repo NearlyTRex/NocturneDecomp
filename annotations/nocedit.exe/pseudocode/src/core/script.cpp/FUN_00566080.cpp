@@ -57,7 +57,7 @@ void core_script_cpp_FUN_00566080(void)
     return;
   }
   iVar3 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)&DAT_0310f4b0);
-  crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,"%d sound files missing.",iVar3);
+  sprintf(&DAT_0310fdc0,"%d sound files missing.",iVar3);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
             (&DAT_0310f4b0,"The following sound files are missing.",-1,0);
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);

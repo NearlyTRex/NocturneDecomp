@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_strchr_FUN_0060f890(char *str,int ch)
+char * __cdecl strchr(char *str,int ch)
 
 {
   char cVar1;

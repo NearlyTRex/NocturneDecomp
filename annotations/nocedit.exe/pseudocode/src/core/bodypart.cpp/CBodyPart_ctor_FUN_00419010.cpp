@@ -14,10 +14,10 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(CBodyPart *thi
   CBox *pCVar3;
   
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar2 = __arrinit
                      (&pCVar1[1].previous_transform_state.orientation.y,3,&g_SBodyPartModelTypeInfo)
   ;
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar2 = __arrinit
                      ((void *)((int)pvVar2 + 0x4c0),2,&g_SBodyPartFireTypeInfo);
   pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)((int)pvVar2 + 0x57c));
   pCVar3[-5].linear_velocity.x = (float)&g_CBodyPartVTable;

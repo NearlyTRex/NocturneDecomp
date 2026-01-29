@@ -2,16 +2,16 @@
 // Address: 00601a94
 // Address Range: [[00601a94, 00601b12]]
 // Convention: unknown
-// Signature: FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, FILE *param_5)
+// Signature: _FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, _FILE *param_5)
 
 #include "nocturne.h"
 
-FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94
-                 (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-                 FILE *param_5)
+_FILE * MultipleDoNothingCalls
+                  (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
+                  _FILE *param_5)
 
 {
-  FILE *file_handle;
+  _FILE *file_handle;
   FileListNode *pFVar1;
   FileListNode *pFVar2;
   
@@ -20,7 +20,7 @@ FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94
     file_handle = pFVar1->file_struct;
     if (param_5 == file_handle) {
       if ((file_handle->_flag & 3) != 0) {
-        crt_stdio_c_fclose_force_FUN_00601fd0(file_handle,1);
+        _fclose(file_handle,1);
       }
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684efc)();
       return param_5;
@@ -31,9 +31,9 @@ FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94
     pFVar2 = pFVar1;
     pFVar1 = pFVar2->next;
     if (pFVar1 == (FileListNode *)0x0) {
-      crt_errno_c_setErrno_FUN_00602790(4);
+      setErrno(4);
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684efc)();
-      return (FILE *)0x0;
+      return (_FILE *)0x0;
     }
   } while (param_5 != pFVar1->file_struct);
   pFVar2->next = pFVar1->next;

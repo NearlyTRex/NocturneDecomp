@@ -9,6 +9,6 @@
 void __cdecl core_set_cpp_free3DSLights_FUN_00571550(C3DSLight **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,200,&g_C3DSLightTypeInfo);
+  __arrfini(array,200,&g_C3DSLightTypeInfo);
   return;
 }

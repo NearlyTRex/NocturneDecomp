@@ -11,7 +11,7 @@
 ;   WatcomTypeInfo g_RA4HQPointTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_copyObjectArray_FUN_00600bc2
+;   crt_memory.c___arrcopy_FUN_00600bc2
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV ECX,dword ptr [EDX + -0x4]      ; 0047ef42
     PUSH EAX                            ; 0047ef45
     MOV dword ptr [EAX + -0x4],ECX      ; 0047ef46
-    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0047ef49
-        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrcopy_FUN_00600bc2 ; 0047ef49
+        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrcopy_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
     ADD ESP,0x10                        ; 0047ef4e
     SUB EAX,0x18                        ; 0047ef51
     RET                                 ; 0047ef54

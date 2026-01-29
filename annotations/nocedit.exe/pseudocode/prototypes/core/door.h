@@ -105,7 +105,7 @@ void __cdecl CDoor::processInEditor(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_writeDependencies_FUN_00481630
 // Address: 00481630
-void __cdecl CDoor::writeDependencies(CDoor *this_ptr,FILE *file_handle);
+void __cdecl CDoor::writeDependencies(CDoor *this_ptr,_FILE *file_handle);
 
 // Original: core_door.cpp_FUN_00481650
 // Address: 00481650

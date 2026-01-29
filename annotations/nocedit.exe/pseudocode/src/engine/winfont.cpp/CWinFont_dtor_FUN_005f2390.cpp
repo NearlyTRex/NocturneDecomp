@@ -14,8 +14,8 @@ engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr,uint d1,uint d2
   void *ptr_00;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CWinFontTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CWinFontTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).vtable = &g_CWinFontVTable;

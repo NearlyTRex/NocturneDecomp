@@ -67,7 +67,7 @@ void shape_superopt_cpp_FUN_005c7dc0(void)
                 local_38[0xe] = puVar5[0xe];
                 local_38[0xf] = puVar5[0xf];
               }
-              crt_string_c_memmove_FUN_005fe5e0
+              memmove
                         (dest,local_20,((*(int *)(in_stack_00000004 + 0x2c) - local_18) + -1) * 0x60
                         );
               bVar2 = false;

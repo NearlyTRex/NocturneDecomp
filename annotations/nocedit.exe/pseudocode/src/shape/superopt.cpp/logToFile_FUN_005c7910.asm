@@ -30,8 +30,8 @@
 ;   int g_LogInitialized
 ;
 ; Called Functions:
-;   crt_io.c_deleteFile_FUN_005ff9d0
 ;   crt_stdio.c_fprintf_FUN_006021c0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -46,8 +46,8 @@ section .text
     JNZ 0x005c7935                      ; 005c791b
         ;   XREF to: 005c7935 (CONDITIONAL_JUMP)  ; LAB_005c7935
     PUSH 0x6541e2                       ; 005c791d | = "log.txt"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 005c7922
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 005c7922
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     MOV ECX,0x1                         ; 005c7927
     ADD ESP,0x4                         ; 005c792c
     MOV dword ptr [0x03f6bbe0],ECX      ; 005c792f | g_LogInitialized
@@ -58,7 +58,7 @@ section .text
     PUSH 0x0                            ; 005c7941
     PUSH 0x654203                       ; 005c7943 | = "log.txt"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005c7948
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 005c794d
     ADD ESP,0x14                        ; 005c794f
     TEST EAX,EAX                        ; 005c7952
@@ -78,7 +78,7 @@ section .text
     PUSH ESI                            ; 005c796e
     PUSH EBX                            ; 005c796f
     CALL crt_stdio.c_fprintf_FUN_006021c0 ; 005c7970
-        ;   XREF to: 006021c0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_fprintf_FUN_006021c0(FILE * stream, char * format)
+        ;   XREF to: 006021c0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_fprintf_FUN_006021c0(_FILE * stream, char * format)
     ADD ESP,0xc                         ; 005c7975
     PUSH 0x3a                           ; 005c7978
     PUSH 0x65420b                       ; 005c797a | = "..\\shape\\superopt.cpp"
@@ -86,7 +86,7 @@ section .text
     PUSH EBX                            ; 005c7981
     MOV dword ptr [ESP + 0x14],EDI      ; 005c7982
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005c7986
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005c798b
     POP ESI                             ; 005c798e
     POP EDI                             ; 005c798f

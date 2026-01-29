@@ -3,50 +3,50 @@
     "errors": [
       {
         "category": "other",
-        "column": 32,
-        "line": 26,
+        "column": 31,
+        "line": 24,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 27,
+        "line": 25,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 28,
+        "line": 26,
         "message": "'PTR_core_vehicle_cpp_FUN_00665064' was not declared in this scope; did you mean 's_core_vehicle_cpp_00656e60'?"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 63,
+        "line": 61,
         "message": "cast from 'CCourseFrameList*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 66,
+        "line": 64,
         "message": "cast from 'CCourseFrameList*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 70,
+        "line": 68,
         "message": "cast from 'CCourseFrameList*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 80,
+        "line": 78,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 81,
+        "line": 79,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -60,96 +60,96 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 26,
+        "column": 22,
+        "line": 24,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 27,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 30,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 33,
+        "line": 31,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 35,
+        "line": 33,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 37,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 39,
+        "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 62,
+        "line": 60,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 65,
+        "line": 63,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 68,
+        "line": 66,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 69,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 80,
+        "line": 78,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 81,
+        "line": 79,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 122,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 75,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 210
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -195,7 +195,7 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     }
   ],
   "globals": [
@@ -332,28 +332,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(void *)((int)",
-      "text": "((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo);",
+      "text": "pvVar4 = __arrinit((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 18,
       "match": "(CCourse *)((int)",
       "text": "pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)((int)pvVar4 + 0x6e4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 71,
       "match": "(char *)((int)",
       "text": "*(char *)((int)piVar7 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(int *)((int)",
       "text": "piVar7 = (int *)((int)piVar7 + 2);",
       "type": "pointer_cast"

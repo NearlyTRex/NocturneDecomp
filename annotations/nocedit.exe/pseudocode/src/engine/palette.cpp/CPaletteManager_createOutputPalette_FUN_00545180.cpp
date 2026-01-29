@@ -13,7 +13,7 @@ uint engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
   byte bVar2;
   int iVar3;
   byte *pbVar4;
-  FILE *pFVar5;
+  _FILE *p_Var5;
   int iVar6;
   uint uVar7;
   void *ptr;
@@ -105,8 +105,8 @@ LAB_005452ba:
           pcVar10 = "rb";
           pcVar12 = &s_EmptyChar_0063e5a6;
         }
-        pFVar5 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,local_6c,pcVar10);
-        if (pFVar5 == (FILE *)0x0) {
+        p_Var5 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,local_6c,pcVar10);
+        if (p_Var5 == (_FILE *)0x0) {
           puVar11 = g_DefaultPalette;
           puVar13 = (uchar *)&DAT_02fd8d20;
           for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -121,8 +121,8 @@ LAB_005452ba:
           }
         }
         else {
-          crt_stdio_c_fread_FUN_005fd990(&DAT_02fd8d20,0x300,1,pFVar5);
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\engine\\palette.cpp",0xd9);
+          _fread(&DAT_02fd8d20,0x300,1,p_Var5);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\engine\\palette.cpp",0xd9);
         }
         pcVar12 = (char *)(in_stack_00000004[1] + local_10);
         do {
@@ -165,21 +165,21 @@ LAB_0054537a:
           pcVar10 = "rb";
           pcVar12 = &s_EmptyChar_0063e5cc;
         }
-        pFVar5 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,(char *)(iVar3 + local_10),pcVar10);
-        if (pFVar5 == (FILE *)0x0) {
+        p_Var5 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,(char *)(iVar3 + local_10),pcVar10);
+        if (p_Var5 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\palette.cpp";
           g_CurrentLineNumber = 0xf1;
           core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to open texture");
         }
         pcVar12 = (char *)(uVar9 * 4 + (int)local_14);
         while (0 < iVar6) {
-          if ((pFVar5->_cnt < 1) || ((byte)*pFVar5->_ptr - 0xd < 0xfe)) {
-            uVar7 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
+          if ((p_Var5->_cnt < 1) || ((byte)*p_Var5->_ptr - 0xd < 0xfe)) {
+            uVar7 = _fgetc(p_Var5);
           }
           else {
-            pbVar4 = (byte *)pFVar5->_ptr;
-            pFVar5->_cnt = pFVar5->_cnt + -1;
-            pFVar5->_ptr = (char *)(pbVar4 + 1);
+            pbVar4 = (byte *)p_Var5->_ptr;
+            p_Var5->_cnt = p_Var5->_cnt + -1;
+            p_Var5->_ptr = (char *)(pbVar4 + 1);
             uVar7 = (uint)*pbVar4;
           }
           if (uVar7 == 0xffffffff) break;
@@ -202,7 +202,7 @@ LAB_0054537a:
             core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Too many pixels");
           }
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\engine\\palette.cpp",0x110);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\engine\\palette.cpp",0x110);
         local_1c = local_1c + 1;
         local_10 = local_10 + 0x40;
       } while (local_1c < *in_stack_00000004);
@@ -227,14 +227,14 @@ LAB_00545459:
       pcVar10 = "wb";
       pcVar12 = &DAT_0063e68c;
     }
-    pFVar5 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,in_stack_00000008,pcVar10);
-    if (pFVar5 == (FILE *)0x0) {
+    p_Var5 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,in_stack_00000008,pcVar10);
+    if (p_Var5 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\engine\\palette.cpp";
       g_CurrentLineNumber = 0x122;
       core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to create output!");
     }
-    crt_stdio_c_fwrite_FUN_005fdc00(ptr,0x300,1,pFVar5);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\engine\\palette.cpp",0x125);
+    _fwrite(ptr,0x300,1,p_Var5);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\engine\\palette.cpp",0x125);
     shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\engine\\palette.cpp",0x129);
     g_CurrentDebugFilename = "..\\engine\\palette.cpp";
     g_CurrentDebugLine = 0x12a;

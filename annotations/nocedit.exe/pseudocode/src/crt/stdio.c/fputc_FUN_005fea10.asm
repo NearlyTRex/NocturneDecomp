@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,FILE *stream)
+; __cdecl int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,_FILE *stream)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character
-; FILE *           Stack[0x8]:4   stream
+; _FILE *          Stack[0x8]:4   stream
 ;
 ; XREF[4]:
 ;   core_actor.cpp_serializeString_FUN_0040b5c0 at 0040b62a
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 005feaae (CONDITIONAL_JUMP)  ; LAB_005feaae
     PUSH EBX                            ; 005feaa5
     CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 005feaa6
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
     ADD ESP,0x4                         ; 005feaab
     MOV ECX,dword ptr [EBX + 0x4]       ; 005feaae
         ;   Label: LAB_005feaae

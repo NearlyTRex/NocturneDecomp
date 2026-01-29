@@ -17,7 +17,7 @@ core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
   int render_flags_00;
   
   render_flags_00 = 0x478d35;
-  dVar1 = crt_math_c_round_FUN_005fe6b0((double)animation_frame);
+  dVar1 = round((double)animation_frame);
   instance = (CKeyFramedModelInstance *)(int)ROUND(dVar1);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850

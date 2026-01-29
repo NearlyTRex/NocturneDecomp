@@ -11,6 +11,6 @@ int __cdecl core_backgnd_cpp_cleanupVector_FUN_004126e0(CVector3f **objs)
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(objs,0xf,&g_CVectorTypeInfo);
+  iVar1 = __arrfini(objs,0xf,&g_CVectorTypeInfo);
   return iVar1;
 }

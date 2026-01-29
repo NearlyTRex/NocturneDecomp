@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double crt_math_c_dadd_FUN_0060defc(double a,double b)
+double dadd(double a,double b)
 
 {
   byte bVar1;

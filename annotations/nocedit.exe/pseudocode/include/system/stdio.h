@@ -37,20 +37,9 @@ typedef enum ExtendedLengthFlags {
     EXT_PTRDIFF_MODIFIER = 134217728
 } ExtendedLengthFlags;
 
-// Structure: FILE
-typedef struct FILE {
-    char* _ptr;
-    int _cnt;
-    struct streambuf* _link;
-    uint _flag;
-    int _handle;
-    uint _bufsize;
-    ushort _ungotten;
-} FILE;
-
 // Structure: FORMAT_OUTPUT_CONTEXT
 typedef struct FORMAT_OUTPUT_CONTEXT {
-    struct FILE* output_file;
+    struct _FILE* output_file;
     char* format_ptr;
     va_list_t args;
     int field_width;
@@ -84,7 +73,7 @@ typedef struct FileDescriptor {
 // Structure: FileEmbeddedData
 typedef struct FileEmbeddedData {
     uint field_0;
-    struct FILE* stream;
+    struct _FILE* stream;
     uint field_8;
     uint field_c;
     uint state_field;
@@ -94,7 +83,7 @@ typedef struct FileEmbeddedData {
 // Structure: FileListNode
 typedef struct FileListNode {
     struct FileListNode* next;
-    struct FILE* file_struct;
+    struct _FILE* file_struct;
     void* back_pointer;
     uint flags;
     char reserved[17];
@@ -107,7 +96,7 @@ typedef struct FileTrackingEntry {
     char mode[20];
     char source_file[260];
     int line_number;
-    struct FILE* file_ptr;
+    struct _FILE* file_ptr;
 } FileTrackingEntry;
 
 // Enum: FormatFlags
@@ -173,6 +162,17 @@ typedef struct StringOutputContext {
     char unknown[12];
     int chars_written;
 } StringOutputContext;
+
+// Structure: _FILE
+typedef struct _FILE {
+    char* _ptr;
+    int _cnt;
+    struct streambuf* _link;
+    uint _flag;
+    int _handle;
+    uint _bufsize;
+    ushort _ungotten;
+} _FILE;
 
 // Structure: scanf_state_t
 typedef struct scanf_state_t {

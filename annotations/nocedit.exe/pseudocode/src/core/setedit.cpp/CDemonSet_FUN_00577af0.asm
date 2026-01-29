@@ -68,7 +68,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;   engine_2d.c_drawRect_FUN_00403120
 ;   engine_2d.c_drawTextXY_FUN_00402130
 ;   engine_font.cpp_packPixelNative_FUN_004d1170
@@ -267,8 +267,8 @@ section .text
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00577d17
     PUSH 0x6816b0                       ; 00577d1a | DAT_006816b0
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00577d1f
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00577d1f
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00577d24
     JMP 0x00577b88                      ; 00577d27
         ;   XREF to: 00577b88 (UNCONDITIONAL_JUMP)  ; LAB_00577b88

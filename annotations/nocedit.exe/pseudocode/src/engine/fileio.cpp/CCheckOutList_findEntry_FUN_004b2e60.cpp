@@ -18,7 +18,7 @@ engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(CCheckOutList *this_ptr,c
   if (0 < this_ptr->count) {
     iVar3 = 0;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr->items->name + iVar3,filename);
+      iVar1 = stricmp(this_ptr->items->name + iVar3,filename);
       if (iVar1 == 0) {
         return iVar2;
       }

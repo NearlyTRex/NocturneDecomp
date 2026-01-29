@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_heap_c_CalculateHeapBlockSize_FUN_0060972c(uint *pSize)
+int __cdecl CalculateHeapBlockSize(uint *pSize)
 
 {
   uint uVar1;

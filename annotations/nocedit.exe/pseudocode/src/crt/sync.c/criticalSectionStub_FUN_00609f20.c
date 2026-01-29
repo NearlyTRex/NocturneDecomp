@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_sync_c_criticalSectionStub_FUN_00609f20(void)
+void criticalSectionStub(void)
 
 {
   return;

@@ -58,7 +58,7 @@ section .text
     PUSH ESI                            ; 00534575
     PUSH 0x63b252                       ; 00534576 | = "sound"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0053457b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00534580
     MOV EBX,EAX                         ; 00534583
     TEST EAX,EAX                        ; 00534585
@@ -78,7 +78,7 @@ section .text
     PUSH EBX                            ; 005345ad
     PUSH EDI                            ; 005345ae
     CALL sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 ; 005345af
-        ;   XREF to: 00534630 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, FILE * file_handle, int file_size)
+        ;   XREF to: 00534630 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, _FILE * file_handle, int file_size)
     ADD ESP,0xc                         ; 005345b4
     TEST EAX,EAX                        ; 005345b7
     JZ 0x00534603                       ; 005345b9

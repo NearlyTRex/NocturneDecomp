@@ -19,7 +19,7 @@ void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr)
   if (0 < *(int *)(this_ptr->unk + 0x3ce8c)) {
     pcVar3 = this_ptr->unk + 0x3ce90;
     do {
-      iVar1 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,pcVar3);
+      iVar1 = strcmp(in_stack_00000008,pcVar3);
       if (iVar1 == 0) break;
       iVar2 = iVar2 + 1;
       pcVar3 = pcVar3 + 0xac;

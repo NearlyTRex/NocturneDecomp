@@ -46,12 +46,12 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
     str1 = (char *)0x0;
 LAB_0054c582:
     if (str1 != (char *)0x0) {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,".raw");
+      iVar1 = stricmp(str1,".raw");
       if (iVar1 == 0) {
         cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(this_ptr);
         return;
       }
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,".pbg");
+      iVar1 = stricmp(str1,".pbg");
       if (iVar1 == 0) {
         cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(this_ptr,filename);
         return;

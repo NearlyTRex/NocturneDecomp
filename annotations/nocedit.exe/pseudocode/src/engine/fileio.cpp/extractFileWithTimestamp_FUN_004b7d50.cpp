@@ -2,26 +2,26 @@
 // Address: 004b7d50
 // Address Range: [[004b7d50, 004b7f42]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50 (FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset, int checksum,int timestamp)
+// Signature: int __cdecl engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50 (_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset ,int checksum,int timestamp)
 
 #include "nocturne.h"
 
 int __cdecl
 engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
-          (FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset,
-          int checksum,int timestamp)
+          (_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset
+          ,int checksum,int timestamp)
 
 {
   byte bVar1;
   byte *pbVar2;
   char cVar3;
   int iVar4;
-  FILE *file_ptr;
+  _FILE *file_ptr;
   uint uVar6;
   uint uVar7;
   char *pcVar8;
   byte bVar9;
-  FILE *pFVar10;
+  _FILE *p_Var10;
   char local_114 [256];
   byte *local_14;
   int iVar5;
@@ -32,7 +32,7 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
   local_14 = (byte *)name_or_offset;
   while (uVar7 = uVar6, bVar1 != 0x5c) {
     uVar7 = uVar6 + 1;
-    iVar4 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*local_14);
+    iVar4 = toupper((uint)*local_14);
     local_114[uVar6] = (char)iVar4;
     local_14 = local_14 + 1;
     uVar6 = 0xffffffff;
@@ -51,20 +51,20 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
     bVar1 = *local_14;
   }
   local_114[uVar7] = '\0';
-  crt_stdio_c_fseek_FUN_005ffacc((FILE *)dest_filename,file_offset,0);
-  crt_file_c_create_directory_FUN_00600e10(local_114);
+  _fseek((_FILE *)dest_filename,file_offset,0);
+  _mkdir(local_114);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (name_or_offset,(char *)0x0,"wb","..\\engine\\fileio.cpp",0xae4)
   ;
   uVar6 = 0;
-  if (file_ptr != (FILE *)0x0) {
+  if (file_ptr != (_FILE *)0x0) {
     iVar4 = 0;
     if (0 < file_size) {
       do {
-        pFVar10 = file_ptr;
+        p_Var10 = file_ptr;
         if (((file_ptr->_flag & 0x400) == 0) && (1 < file_ptr->_bufsize - file_ptr->_cnt)) {
           if ((*(int *)(dest_filename + 4) < 1) || (**(byte **)dest_filename - 0xd < 0xfe)) {
-            iVar5 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)dest_filename);
+            iVar5 = _fgetc((_FILE *)dest_filename);
             cVar3 = (char)iVar5;
           }
           else {
@@ -85,7 +85,7 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
         }
         else {
           if ((*(int *)(dest_filename + 4) < 1) || (**(byte **)dest_filename - 0xd < 0xfe)) {
-            uVar6 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)dest_filename);
+            uVar6 = _fgetc((_FILE *)dest_filename);
           }
           else {
             pbVar2 = *(byte **)dest_filename;
@@ -94,7 +94,7 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
             uVar6 = (uint)*pbVar2;
           }
 LAB_004b7e34:
-          crt_stdio_c_fputc_FUN_006007a0(uVar6,pFVar10);
+          _fputc(uVar6,p_Var10);
         }
         iVar4 = iVar4 + 1;
       } while (iVar4 < file_size);

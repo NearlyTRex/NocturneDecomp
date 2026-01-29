@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int crt_operation_c_always_zero_FUN_0060fa8b(void)
+int always_zero(void)
 
 {
   return 0;

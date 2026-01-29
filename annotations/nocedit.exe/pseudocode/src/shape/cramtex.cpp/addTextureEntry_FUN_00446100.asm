@@ -11,7 +11,7 @@
 ;   int g_CramPlacedTextureCount
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160
 ;
 ; *****************************************************************************
@@ -20,8 +20,8 @@ section .text
 
     PUSH 0x8                            ; 00446100
         ;   Label: shape_cramtex.cpp_addTextureEntry_FUN_00446100
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00446105
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00446105
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     MOV EDX,dword ptr [0x0084a85c]      ; 0044610a | g_CramPlacedTextureCount
     LEA EAX,[EDX*0x4 + 0x0]             ; 00446110
     ADD EAX,EDX                         ; 00446117

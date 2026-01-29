@@ -102,12 +102,12 @@ core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
     }
     pCVar14 = core_actor_cpp_castToClassHash_FUN_0040c790(item,g_CMeleeClassInfo.name_hash);
     if (pCVar14 != (CDemonActor *)0x0) {
-      iVar11 = crt_string_c_stricmp_FUN_005fe7f0(pCVar14[1].create_event,"axe1.kfm");
+      iVar11 = stricmp(pCVar14[1].create_event,"axe1.kfm");
       if (iVar11 == 0) {
         local_2c.x = (int)((float)local_2c.x + -1.570796f);
         local_2c.z = (int)((float)local_2c.z + -1.570796f);
       }
-      iVar11 = crt_string_c_stricmp_FUN_005fe7f0(pCVar14[1].create_event,"ax.kfm");
+      iVar11 = stricmp(pCVar14[1].create_event,"ax.kfm");
       if (iVar11 == 0) {
         local_2c.x = (int)((float)local_2c.x + -1.570796f);
         local_2c.z = (int)((float)local_2c.z + -1.570796f);

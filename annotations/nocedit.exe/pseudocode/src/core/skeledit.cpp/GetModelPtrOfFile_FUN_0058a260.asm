@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,FILE *param_6)
+; unknown void core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,_FILE *param_6)
 ;
 ;
 ; XREF[25]:
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_skeledit.cpp_FUN_0058a2b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
 
     PUSH 0x14                           ; 0058a260
         ;   Label: core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058a265
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a265
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058a26a
     MOV EAX,dword ptr [ESP + 0x8]       ; 0058a26b
     ADD EAX,0x2260                      ; 0058a26f
@@ -42,7 +42,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0058a27a
     PUSH EDX                            ; 0058a27e
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058a27f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0058a284
     MOV ECX,dword ptr [ESP + 0xc]       ; 0058a287
     PUSH ECX                            ; 0058a28b

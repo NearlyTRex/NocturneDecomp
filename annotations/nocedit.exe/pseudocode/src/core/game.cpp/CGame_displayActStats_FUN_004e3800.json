@@ -36,12 +36,6 @@
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 105,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 63,
         "line": 142,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -54,15 +48,9 @@
       },
       {
         "category": "other",
-        "column": 58,
+        "column": 33,
         "line": 184,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 184,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -568,7 +556,7 @@
       "description": "Unaffected register variable",
       "line": 177,
       "match": "unaff_EDI",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_158,\"%d\\n\\n\",*(uint *)(unaff_EDI + 0x24c));",
+      "text": "sprintf(acStack_158,\"%d\\n\\n\",*(uint *)(unaff_EDI + 0x24c));",
       "type": "unaffected_reg"
     },
     {

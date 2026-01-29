@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 37,
+        "column": 12,
         "line": 23,
         "message": "'stack0xfffffef0' was not declared in this scope"
       }
@@ -281,7 +281,7 @@
       "description": "Direct stack address reference",
       "line": 16,
       "match": "&stack0xfffffef0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,\"load%d\",(uVar2 & 3) + 1);",
+      "text": "sprintf(&stack0xfffffef0,\"load%d\",(uVar2 & 3) + 1);",
       "type": "stack_ref"
     },
     {

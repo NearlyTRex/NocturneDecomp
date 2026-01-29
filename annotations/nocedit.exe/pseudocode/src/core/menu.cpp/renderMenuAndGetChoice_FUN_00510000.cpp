@@ -59,9 +59,9 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
           iVar2 = 0;
           ppcVar11 = ppcVar10;
           do {
-            uVar3 = crt_stdlib_c_rand_FUN_005feb5c();
-            uVar4 = crt_stdlib_c_rand_FUN_005feb5c();
-            iVar5 = crt_stdlib_c_rand_FUN_005feb5c();
+            uVar3 = rand();
+            uVar4 = rand();
+            iVar5 = rand();
             engine_3d_c_setRenderAlpha_FUN_00406d80
                       ((uint)((longlong)iVar5 * 48000) >> 0x10 |
                        (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);

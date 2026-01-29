@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0 (CDemonCubeTriangle *this_ptr,FILE *file_handle,CVector3f *vertex_buffer_base)
+; __cdecl void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0 (CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
 ;
 ; Parameters:
 ; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; CVector3f *      Stack[0xc]:4   vertex_buffer_base
 ;
 ; XREF[1]:
@@ -34,7 +34,7 @@ section .text
     PUSH 0x3                            ; 004551e1
     PUSH 0x15c4824                      ; 004551e3 | g_TempTriangleIndices
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004551e8
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EDX,dword ptr [0x015c4824]      ; 004551ed | g_TempTriangleIndices
     LEA EAX,[EDX*0x4 + 0x0]             ; 004551f3
     SUB EAX,EDX                         ; 004551fa
@@ -61,7 +61,7 @@ section .text
     PUSH EBX                            ; 0045523f
     MOV dword ptr [EBX + -0x4],ESI      ; 00455240
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00455243
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00455248
     POP ESI                             ; 0045524b
     POP EBX                             ; 0045524c

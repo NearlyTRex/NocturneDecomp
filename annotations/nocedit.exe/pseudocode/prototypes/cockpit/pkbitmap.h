@@ -101,11 +101,11 @@ void __cdecl CPackedBitmap::saveToPBMFile(CPackedBitmap *this_ptr,char *filename
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
 // Address: 0054b5c0
-void __cdecl CPackedBitmap::writePBMFile(CPackedBitmap *this_ptr,FILE *file_handle);
+void __cdecl CPackedBitmap::writePBMFile(CPackedBitmap *this_ptr,_FILE *file_handle);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
 // Address: 0054b690
-void __cdecl CPackedBitmap::readPBMFile(CPackedBitmap *this_ptr,FILE *file_handle,int skip_data_load);
+void __cdecl CPackedBitmap::readPBMFile(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860
 // Address: 0054b860
@@ -117,11 +117,11 @@ void __cdecl CPackedBitmap::loadStoredPBMFile(CPackedBitmap *this_ptr,int post_l
 
 // Original: cockpit_pkbitmap.cpp_FUN_0054b930
 // Address: 0054b930
-void FUN_0054b930(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,FILE *param_6);
+void FUN_0054b930(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,_FILE *param_6);
 
 // Original: cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
 // Address: 0054b9b0
-CPackedBitmap * __cdecl parsePBGFile(CPackedBitmapSet *bitmap_set,FILE *file_handle,int param3,int param4, int selected_bitmap_index);
+CPackedBitmap * __cdecl parsePBGFile(CPackedBitmapSet *bitmap_set,_FILE *file_handle,int param3,int param4, int selected_bitmap_index);
 
 // Original: cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40
 // Address: 0054bb40

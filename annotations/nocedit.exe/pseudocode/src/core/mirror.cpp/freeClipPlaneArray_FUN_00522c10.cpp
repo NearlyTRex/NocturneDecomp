@@ -9,6 +9,6 @@
 void __cdecl core_mirror_cpp_freeClipPlaneArray_FUN_00522c10(SClipPlane **array_ptr)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array_ptr,5,&g_SClipPlaneTypeInfo);
+  __arrfini(array_ptr,5,&g_SClipPlaneTypeInfo);
   return;
 }

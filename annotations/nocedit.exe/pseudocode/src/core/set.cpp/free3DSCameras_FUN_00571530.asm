@@ -13,7 +13,7 @@
 ;   WatcomTypeInfo g_C3DSCameraTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_freeTypeArray_FUN_005feee9
+;   crt_memory.c___arrfini_FUN_005feee9
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH 0xfa                           ; 00571535
     MOV EDX,dword ptr [ESP + 0xc]       ; 0057153a
     PUSH EDX                            ; 0057153e
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0057153f
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrfini_FUN_005feee9 ; 0057153f
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00571544
     RET                                 ; 00571547
 

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
+float10 __fpustack pow(float10 base,float10 exp)
 
 {
   double dVar1;
@@ -46,19 +46,19 @@ LAB_005ffe01:
       goto LAB_005ffe88;
       uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);
       if (uStack_6 == 0) {
-        fVar3 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64(uVar7,uVar6),exponent);
+        fVar3 = integer_power((float10)CONCAT64(uVar7,uVar6),exponent);
         fVar4 = exp;
       }
       else {
         if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))
         goto LAB_005ffe88;
-        fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64(uVar7,uVar6),exponent);
+        fVar4 = integer_power((float10)CONCAT64(uVar7,uVar6),exponent);
         if ((g_UseSoftwareMath & 1) == 0) {
           fVar3 = (float10)1 / fVar4;
           fVar4 = exp;
         }
         else {
-          crt_math_c_function_dispatch_FUN_00606a77(0xf);
+          function_dispatch(0xf);
           fVar3 = extraout_ST0;
         }
       }
@@ -72,7 +72,7 @@ LAB_005ffe01:
     else {
       if (fVar4 == exp) goto LAB_005ffe01;
 LAB_005ffe88:
-      fVar3 = crt_math_c_exp_FUN_006068e2((float10)0.6931471805599453 * exp * ABS(base));
+      fVar3 = exp((float10)0.6931471805599453 * exp * ABS(base));
       if (extraout_AL == '\0') {
         if ((exponent & 0x100) != 0) {
           fVar3 = -fVar3;
@@ -86,7 +86,7 @@ LAB_005ffe88:
     error_type = '\0';
   }
 LAB_005ffd8d:
-  dVar5 = crt_math_c_math_domain_error_FUN_00606832(dVar5,(double)exp,error_type);
+  dVar5 = math_domain_error(dVar5,(double)exp,error_type);
   fVar3 = (float10)dVar5;
 LAB_005ffea7:
   return (float10)(double)fVar3;

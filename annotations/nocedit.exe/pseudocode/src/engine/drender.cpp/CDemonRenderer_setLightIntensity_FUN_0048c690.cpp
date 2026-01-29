@@ -13,7 +13,7 @@ engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0((double)(intensity * (float)65536));
+  dVar1 = round((double)(intensity * (float)65536));
   engine_light_cpp_setAmbientLightLevel_FUN_00505490((int)ROUND(dVar1));
   return;
 }

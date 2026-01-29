@@ -80,7 +80,7 @@ wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int height,int bi
     }
     g_UseSoftwareRendering = 1;
   }
-  crt_memory_c_memset_FUN_005fde40(&DStack_84,0,0x6c);
+  memset(&DStack_84,0,0x6c);
   DStack_84.dwSize = 0x6c;
   DStack_84.dwFlags = 0x21;
   DStack_84.ddsCaps.dwCaps = 0x6218;
@@ -100,7 +100,7 @@ wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int height,int bi
       }
     }
   }
-  crt_memory_c_memset_FUN_005fde40(&DStack_18,0,4);
+  memset(&DStack_18,0,4);
   DStack_18.dwCaps = 4;
   HVar3 = (*g_DirectDrawSurface->vtable->GetAttachedSurface)
                     (g_DirectDrawSurface,&DStack_18,&g_SoftwareRenderSurface);

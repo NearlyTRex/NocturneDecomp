@@ -11,6 +11,6 @@ void core_gore_cpp_FUN_004ee420(void)
 {
   void **in_stack_00000004;
   
-  crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,1000,&g_CFootstepTypeInfo);
+  __arrfini(in_stack_00000004,1000,&g_CFootstepTypeInfo);
   return;
 }

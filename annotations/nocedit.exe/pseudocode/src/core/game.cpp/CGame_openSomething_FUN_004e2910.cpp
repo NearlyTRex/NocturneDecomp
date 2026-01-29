@@ -12,7 +12,7 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
   char cVar1;
   int iVar2;
   int iVar3;
-  FILE *pFVar4;
+  _FILE *p_Var4;
   byte *pbVar5;
   void *unaff_EBP;
   char *pcVar6;
@@ -55,7 +55,7 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
     this_ptr->unk13[0x528] = '\0';
     return;
   }
-  crt_string_c_splitpath_FUN_005ff178(pcVar9,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
+  splitpath(pcVar9,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
   pcVar6 = ".act";
   iVar2 = -1;
   pcVar9 = local_130;
@@ -77,14 +77,14 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
     pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  pFVar4 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"rb");
-  if (pFVar4 == (FILE *)0x0) {
+  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"rb");
+  if (p_Var4 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",local_130);
   }
   else {
-    crt_stdio_c_fread_FUN_005fd990(local_630,1,0x300,pFVar4);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\game.cpp",0xfff);
+    _fread(local_630,1,0x300,p_Var4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\game.cpp",0xfff);
     iVar2 = 0;
     iVar3 = 0;
     local_20 = 0;
@@ -125,18 +125,17 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
                          (*(int *)(this_ptr->unk13 + 0x628) * *(int *)(this_ptr->unk13 + 0x62c),
                           "..\\core\\game.cpp",0x1016);
     if (local_18 != (void *)0x0) {
-      pFVar4 = engine_dosio_c_getFile_FUN_00481a50
+      p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                          ("art",this_ptr->unk13 + 0x528,"rb");
-      if (pFVar4 == (FILE *)0x0) {
+      if (p_Var4 == (_FILE *)0x0) {
         g_CurrentFilename = "..\\core\\game.cpp";
         g_CurrentLineNumber = 0x101f;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("Can't open %s",this_ptr->unk13 + 0x528);
       }
-      crt_stdio_c_fread_FUN_005fd990
-                (local_18,*(SIZE_T *)(this_ptr->unk13 + 0x628),*(SIZE_T *)(this_ptr->unk13 + 0x62c),
-                 pFVar4);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\game.cpp",0x1021);
+      _fread(local_18,*(SIZE_T *)(this_ptr->unk13 + 0x628),*(SIZE_T *)(this_ptr->unk13 + 0x62c),
+                 p_Var4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\game.cpp",0x1021);
       local_1c = 0;
       if (0 < g_WindowHeight) {
         local_24 = 0;

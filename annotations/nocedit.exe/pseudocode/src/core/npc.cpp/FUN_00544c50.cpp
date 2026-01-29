@@ -24,7 +24,7 @@ uint core_npc_cpp_FUN_00544c50(void)
   this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(in_stack_00000004);
   pcVar4 = local_d8;
   while( true ) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"%s_%d",in_stack_00000008,iVar3 + 1);
+    sprintf(local_d8,"%s_%d",in_stack_00000008,iVar3 + 1);
     iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
     if (iVar2 < 0) break;
     iVar3 = iVar3 + 1;
@@ -42,7 +42,7 @@ uint core_npc_cpp_FUN_00544c50(void)
   }
   else {
     iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar3);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"%s_%d",in_stack_00000008,iVar3);
+    sprintf(local_d8,"%s_%d",in_stack_00000008,iVar3);
   }
   iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
   if (-1 < iVar3) {

@@ -13,7 +13,7 @@ engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
 {
   double dVar1;
   
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     ((double)((float)65536 / scale_factor));
   g_ProjectionScale = (int)ROUND(dVar1);
   return;

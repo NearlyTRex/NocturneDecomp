@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,FILE *input_file,int byte_count,FILE *output_file)
+; __cdecl int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   input_file
+; _FILE *          Stack[0x8]:4   input_file
 ; int              Stack[0xc]:4   byte_count
-; FILE *           Stack[0x10]:4   output_file
+; _FILE *          Stack[0x10]:4   output_file
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
 ;
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 0043ea46
     PUSH ESI                            ; 0043ea47
     CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043ea48
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(_FILE * stream, uchar * output_byte)
     MOV EAX,dword ptr [ESI]             ; 0043ea4d
     MOV EAX,dword ptr [EAX + 0x4]       ; 0043ea4f
     MOV ECX,dword ptr [ESI + EAX*0x1 + 0x10] ; 0043ea52
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 0043ea6a
     PUSH EBP                            ; 0043ea6b
     CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043ea6c
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(_FILE * stream, int character)
     ADD ESP,0x8                         ; 0043ea71
     JMP 0x0043ea23                      ; 0043ea74
         ;   XREF to: 0043ea23 (UNCONDITIONAL_JUMP)  ; LAB_0043ea23

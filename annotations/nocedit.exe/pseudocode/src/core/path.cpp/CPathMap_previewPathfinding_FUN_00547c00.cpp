@@ -28,7 +28,7 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *th
     local_1c = local_14;
     iVar4 = local_18;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_11c,"%s",g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]])
       ;
       if ((iVar1 == g_PathfindingCurrentX) && (iVar2 == g_PathfindingCurrentZ)) {

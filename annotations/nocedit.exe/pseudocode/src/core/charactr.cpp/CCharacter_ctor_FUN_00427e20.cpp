@@ -20,14 +20,11 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
             ((CDeformableModelInstance *)(pCVar1 + 1));
   iVar2 = core_cloth_cpp_FUN_0043bf40();
-  pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)(iVar2 + 0x1c8),0xf,&g_CVectorTypeInfo);
-  pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)((int)pvVar3 + 0xb4),0xf,&g_CVectorTypeInfo);
-  pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)((int)pvVar3 + 0x20c),0x32,&g_SFireTypeInfo);
-  pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)((int)pvVar3 + 0x4b0),0x32,&g_CFlameTypeInfo);
+  pvVar3 = __arrinit((void *)(iVar2 + 0x1c8),0xf,&g_CVectorTypeInfo);
+  pvVar3 = __arrinit((void *)((int)pvVar3 + 0xb4),0xf,&g_CVectorTypeInfo);
+  pvVar3 = __arrinit((void *)((int)pvVar3 + 0x20c),0x32,&g_SFireTypeInfo);
+  pvVar3 = __arrinit((void *)((int)pvVar3 + 0x4b0),0x32,&g_CFlameTypeInfo)
+  ;
   *(CDemonActor_vtable **)((int)pvVar3 + -0x3278) = &g_CCharacterVTable;
   *(uint *)((int)pvVar3 + -0xfc0) = 0;
   *(uint *)((int)pvVar3 + -0xf9c) = 0;

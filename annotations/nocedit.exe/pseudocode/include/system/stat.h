@@ -8,25 +8,25 @@
 // STAT - System Header
 // =============================================================================
 
-// Structure: stat
-typedef struct stat {
-    int st_dev;
-    uint st_ino;
-    ushort st_mode;
-    short st_nlink;
-    ulong st_uid;
-    short st_gid;
-    int st_rdev;
-    long st_size;
-    time_t st_atime;
-    time_t st_mtime;
-    time_t st_ctime;
-    time_t st_btime;
-    ulong st_attr;
-    ulong st_archivedID;
-    ulong st_updatedID;
-    ushort st_inheritedRightsMask;
-    uchar st_originatingNameSpace;
-    uchar st_name[13];
-} stat;
+// Structure: _stat
+typedef struct _stat {
+    int _st_dev;
+    uint _st_ino;
+    ushort _st_mode;
+    short _st_nlink;
+    ulong _st_uid;
+    short _st_gid;
+    int _st_rdev;
+    long _st_size;
+    time_t _st_atime;
+    time_t _st_mtime;
+    time_t _st_ctime;
+    time_t _st_btime;
+    ulong _st_attr;
+    ulong _st_archivedID;
+    ulong _st_updatedID;
+    ushort _st_inheritedRightsMask;
+    uchar _st_originatingNameSpace;
+    uchar _st_name[13];
+} _stat;
 

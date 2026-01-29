@@ -2,13 +2,14 @@
 // Address: 00523990
 // Address Range: [[00523990, 00523aee]]
 // Convention: __cdecl
-// Signature: CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990 (CDemonMission *this_ptr,FILE *file,CDemonActor *current_actor,char *property_description)
+// Signature: CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990 (CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )
 
 #include "nocturne.h"
 
 CDemonActor * __cdecl
 core_mission_cpp_CDemonMission_loadActor_FUN_00523990
-          (CDemonMission *this_ptr,FILE *file,CDemonActor *current_actor,char *property_description)
+          (CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description
+          )
 
 {
   CDemonActor *pCVar1;
@@ -24,15 +25,15 @@ core_mission_cpp_CDemonMission_loadActor_FUN_00523990
     property_description = "(unknown)";
   }
   do {
-    iVar2 = crt_stdio_c_fgetc_FUN_005fe840(file);
+    iVar2 = _fgetc(file);
   } while ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 2U) != 0);
   if (iVar2 == 0x22) {
-    iVar2 = crt_stdio_c_fgetc_FUN_005fe840(file);
+    iVar2 = _fgetc(file);
     if (iVar2 != 0x22) {
-      crt_stdio_c_fputc_FUN_005fea10(iVar2,file);
-      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(file,"%[^\"]",local_dc);
+      _fputc(iVar2,file);
+      iVar2 = _fscanf(file,"%[^\"]",local_dc);
       if (iVar2 == 1) {
-        iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_dc,"(none)");
+        iVar2 = stricmp(local_dc,"(none)");
         if (iVar2 == 0) {
           unaff_ESI = (CDemonActor *)0x0;
         }
@@ -44,15 +45,15 @@ core_mission_cpp_CDemonMission_loadActor_FUN_00523990
                        property_description);
           }
         }
-        iVar2 = crt_stdio_c_fgetc_FUN_005fe840(file);
+        iVar2 = _fgetc(file);
         pCVar1 = unaff_ESI;
         if (iVar2 == 0x22) goto LAB_00523a18;
       }
     }
   }
   else {
-    crt_stdio_c_fputc_FUN_005fea10(iVar2,file);
-    iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(file,"%x",&local_14);
+    _fputc(iVar2,file);
+    iVar2 = _fscanf(file,"%x",&local_14);
     pCVar1 = local_14;
     if (iVar2 == 1) goto LAB_00523a18;
   }
@@ -63,7 +64,7 @@ core_mission_cpp_CDemonMission_loadActor_FUN_00523990
               ("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description);
     pCVar1 = unaff_ESI;
 LAB_00523a18:
-    while (unaff_ESI = pCVar1, iVar2 = crt_stdio_c_fgetc_FUN_005fe840(file), iVar2 != -1) {
+    while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {
       pCVar1 = unaff_ESI;
       if (iVar2 == 10) {
         return unaff_ESI;

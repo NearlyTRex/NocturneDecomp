@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeLightningBolts_FUN_004c9850(CLightningBolt **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,10,&g_CLightningBoltTypeInfo);
+  __arrfini(array,10,&g_CLightningBoltTypeInfo);
   return;
 }

@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
     PUSH 0xa                            ; 004f3a2c
     LEA EAX,[ESP + 0x8]                 ; 004f3a2e
     PUSH EAX                            ; 004f3a32
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004f3a33
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004f3a33
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004f3a38
     MOV EDX,ESP                         ; 004f3a3b
     PUSH EDX                            ; 004f3a3d

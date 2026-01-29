@@ -17,7 +17,7 @@
 ;   shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330 at 0051b3be
 ;
 ; Called Functions:
-;   crt_memory.c_copyArrayWithFunction_FUN_006020c2
+;   crt_memory.c___arr_op_FUN_006020c2
 ;
 ; *****************************************************************************
 
@@ -163,8 +163,8 @@ section .text
     FLD float ptr [EBX + 0x50]          ; 0051b6ba
     PUSH EAX                            ; 0051b6bd
     FSTP float ptr [EBP + 0x50]         ; 0051b6be
-    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051b6c1
-        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
+    CALL crt_memory.c___arr_op_FUN_006020c2 ; 0051b6c1
+        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arr_op_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
     LEA EDI,[EBP + 0x78]                ; 0051b6c6
     LEA ESI,[EBX + 0x78]                ; 0051b6c9
     MOVSD ES:EDI,ESI                    ; 0051b6cc

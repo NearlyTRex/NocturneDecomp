@@ -23,7 +23,7 @@ void core_game_cpp_FUN_004e0aa0(void)
       iVar3 = g_WindowHeight;
       if (g_BitsPerPixel == 0x20) {
         iVar4 = 0;
-        dVar5 = crt_math_c_round_FUN_005fe6b0((double)(DAT_02d831f0 * DAT_02d831f0));
+        dVar5 = round((double)(DAT_02d831f0 * DAT_02d831f0));
         if (0 < iVar3) {
           iVar3 = 0;
           do {

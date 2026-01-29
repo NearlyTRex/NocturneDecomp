@@ -6,12 +6,12 @@
 
 #include "nocturne.h"
 
-HANDLE __cdecl crt_io_c_get_handle_FUN_006109f0(int fd)
+HANDLE __cdecl get_handle(int fd)
 
 {
   if ((-1 < fd) && ((uint)fd <= g_MaxHandleCount)) {
     return g_IOControlBlock->standard_handles[fd];
   }
-  crt_errno_c_setErrno_FUN_00602790(4);
+  setErrno(4);
   return (HANDLE)0xffffffff;
 }

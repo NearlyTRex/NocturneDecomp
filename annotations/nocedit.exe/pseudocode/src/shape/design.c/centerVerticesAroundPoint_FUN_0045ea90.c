@@ -36,7 +36,7 @@ void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
-    local_2c = crt_stdlib_c_atoi_FUN_005ffef0(local_54);
+    local_2c = atoi(local_54);
     if ((local_2c < -1) || (g_VertexCount + -1 < local_2c)) {
       engine_2d_c_drawText_FUN_00401fd0("Invalid point.",0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -56,7 +56,7 @@ void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
         if (iVar3 == -2) {
           return;
         }
-        dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffffa0);
+        dVar6 = _strtod(in_stack_ffffffa0);
         local_28 = (float)dVar6;
         local_24 = local_28;
         local_20 = local_28;
@@ -70,7 +70,7 @@ void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
       engine_2d_c_drawText_FUN_00401fd0("Which axis to use - X, Y, or Z? : ",0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      uVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
+      uVar2 = toupper(uVar2 & 0xff);
       if (uVar2 < 0x59) {
         if (uVar2 == 0x58) {
           for (local_14 = 0; local_14 < g_VertexCount; local_14 = local_14 + 1) {

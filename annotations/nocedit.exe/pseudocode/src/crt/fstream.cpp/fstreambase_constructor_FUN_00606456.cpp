@@ -35,7 +35,7 @@ crt_fstream_cpp_fstreambase_constructor_FUN_00606456
              unaff_ESI);
   iVar3 = crt_fstream_cpp_filebuf_open_FUN_00608c15(this_ptr_00,(char *)fd,mode,(int)buffer);
   if (iVar3 == 0) {
-    crt_stdio_c_reportStreamError_FUN_00606020
+    reportStreamError
               ((FileEmbeddedData *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),3);
   }
   return;

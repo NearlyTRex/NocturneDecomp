@@ -18,37 +18,24 @@
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 19,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 18,
         "line": 24,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 57,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 27,
-    "suspect_count": 2,
+    "pseudocode_lines": 26,
+    "suspect_count": 1,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast"
     ],
-    "total_lines": 100
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -69,7 +56,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_eqSave_FUN_0051d0e0(CLodMesh *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_eqSave_FUN_0051d0e0(CLodMesh *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -190,7 +177,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -218,17 +205,6 @@
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar4 + -0x28);",
       "type": "pointer_cast"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 12,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

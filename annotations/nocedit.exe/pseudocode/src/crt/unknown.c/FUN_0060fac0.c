@@ -18,9 +18,9 @@ int crt_unknown_c_FUN_0060fac0(void)
   iVar2 = 0;
   if (in_stack_00000004 == (wchar_t *)0x0) {
     while ((iVar1 = iVar2, *in_stack_00000008 != '\0' &&
-           (iVar1 = crt_locale_c_mbtowc_FUN_0060b1c0((wchar_t *)0x0,in_stack_00000008,2),
+           (iVar1 = mbtowc((wchar_t *)0x0,in_stack_00000008,2),
            iVar1 != -1))) {
-      in_stack_00000008 = crt_string_c_mbtowc_next_FUN_00605a70(in_stack_00000008);
+      in_stack_00000008 = mbtowc_next(in_stack_00000008);
       iVar2 = iVar2 + 1;
     }
   }
@@ -30,11 +30,11 @@ int crt_unknown_c_FUN_0060fac0(void)
         *in_stack_00000004 = L'\0';
         return iVar2;
       }
-      iVar1 = crt_locale_c_mbtowc_FUN_0060b1c0(in_stack_00000004,in_stack_00000008,2);
+      iVar1 = mbtowc(in_stack_00000004,in_stack_00000008,2);
       if (iVar1 == -1) {
         return -1;
       }
-      in_stack_00000008 = crt_string_c_mbtowc_next_FUN_00605a70(in_stack_00000008);
+      in_stack_00000008 = mbtowc_next(in_stack_00000008);
       in_stack_00000004 = in_stack_00000004 + 1;
       iVar2 = iVar2 + 1;
     }

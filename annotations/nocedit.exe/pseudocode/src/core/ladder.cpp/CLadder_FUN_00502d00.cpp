@@ -44,7 +44,7 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502d00(CLadder *this_ptr)
       (this_ptr->ladder_size).y = 1.0f;
     }
   }
-  dVar3 = crt_math_c_floor_FUN_005feb90
+  dVar3 = floor
                     ((double)((this_ptr->ladder_size).y / 1.0f + (float)0.5));
   fVar1 = (float)dVar3 * 1.0f;
   *(uint *)(extraout_EBX + 0x2dc) = 0;

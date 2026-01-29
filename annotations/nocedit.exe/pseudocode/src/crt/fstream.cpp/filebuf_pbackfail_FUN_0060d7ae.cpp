@@ -53,7 +53,7 @@ int __watcallStack crt_fstream_cpp_filebuf_pbackfail_FUN_0060d7ae(filebuf *this_
       else {
         distance_to_move = -1;
       }
-      iVar2 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,distance_to_move,1);
+      iVar2 = lseek(this_ptr->__file_handle,distance_to_move,1);
       if (-1 < iVar2) {
         return character;
       }

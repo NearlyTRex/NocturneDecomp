@@ -32,15 +32,15 @@ shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0
     iVar3 = shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(this_ptr);
     if (iVar3 < 0) break;
     fVar7 = 7.477411e-39;
-    dVar5 = crt_math_c_round_FUN_005fe6b0((double)local_30);
+    dVar5 = round((double)local_30);
     iVar1 = (int)ROUND(dVar5);
     edge_data = this_ptr->edges_ptr + iVar3;
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (g_LodMeshProgressBuffer,"Mesh degredation in progress...%d:%02d elapsed",iVar1 / 0x3c,iVar1 % 0x3c
               );
     if ((5 < iVar1) && (iVar3 = this_ptr->next_lod->tri_count - iVar2, 10 < iVar3)) {
       uVar6 = 0x516c6a;
-      dVar5 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = round
                         ((double)(((float)(iVar2 - target_tri_count) * fVar7) / (float)iVar3));
       iVar2 = (int)ROUND(dVar5);
       if (0 < iVar2) {
@@ -55,7 +55,7 @@ shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0
         } while (*buffer != '\0');
         buffer = (char *)0x0;
 LAB_00516cb3:
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (buffer,", est %d:%02d remaining",iVar2 / 0x3c,iVar2 % 0x3c,uVar6);
       }
     }

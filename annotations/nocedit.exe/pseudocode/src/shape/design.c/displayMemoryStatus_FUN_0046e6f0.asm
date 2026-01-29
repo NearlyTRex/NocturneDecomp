@@ -14,8 +14,8 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_watcom.c__memmax_FUN_00600940
 ;   crt_watcom.c_memavl_FUN_006008f0
-;   crt_watcom.c_memmax_FUN_00600940
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e71f
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0046e724
-    CALL crt_watcom.c_memmax_FUN_00600940 ; 0046e727
-        ;   XREF to: 00600940 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c_memmax_FUN_00600940()
+    CALL crt_watcom.c__memmax_FUN_00600940 ; 0046e727
+        ;   XREF to: 00600940 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memmax_FUN_00600940()
     PUSH EAX                            ; 0046e72c
     MOV EAX,0x61debe                    ; 0046e72d | = "Largest block: %d"
     PUSH EAX                            ; 0046e732 | = "Largest block: %d"

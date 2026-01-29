@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_startup_c_ExitApplication_FUN_0060b534(int exit_code)
+void __cdecl ExitApplication(int exit_code)
 
 {
   (*PTR_crt_exit_c_ExitHookStub_FUN_0060b530_00685478)();
   if ((char)g_EmergencyExitFlag == '\0') {
-    crt_exit_c_ProcessExitHandlers_FUN_0060ac88('\x10',0xff);
+    ProcessExitHandlers('\x10',0xff);
   }
-  crt_exit_c_FinalExitHandler_FUN_0060b560(exit_code);
+  FinalExitHandler(exit_code);
   return;
 }

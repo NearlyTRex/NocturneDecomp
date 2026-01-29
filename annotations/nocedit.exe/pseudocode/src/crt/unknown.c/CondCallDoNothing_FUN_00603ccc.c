@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_CondCallDoNothingAgain1(uint param_1, uint param_2) */
 
-void crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
+void CondCallDoNothing(void)
 
 {
   ushort in_FPUControlWord;

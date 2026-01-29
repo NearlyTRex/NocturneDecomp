@@ -9,9 +9,15 @@
       },
       {
         "category": "incompatible_types",
-        "column": 37,
+        "column": 12,
         "line": 18,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 44,
+        "line": 18,
+        "message": "cannot convert 'char**' to '__va_list_tag*'"
       }
     ],
     "success": false,
@@ -132,14 +138,14 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&DAT_02d0a460,in_stack_00000004,&local_4);",
+      "text": "vsprintf(&DAT_02d0a460,in_stack_00000004,&local_4);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_02d0a460",
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&DAT_02d0a460,in_stack_00000004,&local_4);",
+      "text": "vsprintf(&DAT_02d0a460,in_stack_00000004,&local_4);",
       "type": "undefined_data"
     }
   ]

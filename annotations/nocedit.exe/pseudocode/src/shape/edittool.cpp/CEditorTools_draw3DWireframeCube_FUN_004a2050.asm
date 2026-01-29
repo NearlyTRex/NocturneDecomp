@@ -71,7 +71,7 @@
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 ;   engine_matrix.c_transformToCache_FUN_0050cd70
 ;
@@ -91,8 +91,8 @@ section .text
     PUSH 0x8                            ; 004a206d
     LEA EAX,[ESP + 0x8]                 ; 004a206f
     PUSH EAX                            ; 004a2073
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004a2074
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004a2074
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004a2079
     XOR EAX,EAX                         ; 004a207c
     MOV EDX,dword ptr [ESI]             ; 004a207e

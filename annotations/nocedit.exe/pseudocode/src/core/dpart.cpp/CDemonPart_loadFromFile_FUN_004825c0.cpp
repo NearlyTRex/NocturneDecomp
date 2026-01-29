@@ -2,13 +2,13 @@
 // Address: 004825c0
 // Address Range: [[004825c0, 004828aa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0 (CDemonPart *this_ptr,FILE *file_handle,CVector3f *offset_position)
+// Signature: void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0 (CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 
 #include "nocturne.h"
 
 void __cdecl
 core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0
-          (CDemonPart *this_ptr,FILE *file_handle,CVector3f *offset_position)
+          (CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 
 {
   int *piVar1;
@@ -24,34 +24,34 @@ core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0
   double dVar10;
   double dVar11;
   
-  crt_stdio_c_fread_FUN_005fd990(this_ptr,0x20,1,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->vertex_count,4,1,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->face_count,4,1,file_handle);
+  _fread(this_ptr,0x20,1,file_handle);
+  _fread(&this_ptr->vertex_count,4,1,file_handle);
+  _fread(&this_ptr->face_count,4,1,file_handle);
   core_dpart_cpp_CDemonPart_alloc_FUN_00482180(this_ptr);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->bbox1,0xc,1,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->bbox2,0xc,1,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->bbox3,0xc,1,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->bbox4,0xc,1,file_handle);
+  _fread(&this_ptr->bbox1,0xc,1,file_handle);
+  _fread(&this_ptr->bbox2,0xc,1,file_handle);
+  _fread(&this_ptr->bbox3,0xc,1,file_handle);
+  _fread(&this_ptr->bbox4,0xc,1,file_handle);
   iVar7 = 0;
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->mystery_array_size,4,1,file_handle);
+  _fread(&this_ptr->mystery_array_size,4,1,file_handle);
   if (0 < this_ptr->mystery_array_size) {
     buffer = this_ptr->mystery_array;
     do {
       iVar7 = iVar7 + 1;
-      crt_stdio_c_fread_FUN_005fd990(buffer,0x10,1,file_handle);
+      _fread(buffer,0x10,1,file_handle);
       buffer = buffer + 0x18;
     } while (iVar7 < this_ptr->mystery_array_size);
   }
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->vertex_group_size,4,1,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(this_ptr->vertex_positions,0xc,this_ptr->vertex_count,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(this_ptr->vertex_normals,0xc,this_ptr->vertex_count,file_handle);
-  iVar7 = crt_string_c_strcmp_FUN_005fef20(this_ptr->format,"newformat");
+  _fread(&this_ptr->vertex_group_size,4,1,file_handle);
+  _fread(this_ptr->vertex_positions,0xc,this_ptr->vertex_count,file_handle);
+  _fread(this_ptr->vertex_normals,0xc,this_ptr->vertex_count,file_handle);
+  iVar7 = strcmp(this_ptr->format,"newformat");
   if (iVar7 == 0) {
-    crt_stdio_c_fread_FUN_005fd990(this_ptr->face_data,0x20,this_ptr->face_count,file_handle);
+    _fread(this_ptr->face_data,0x20,this_ptr->face_count,file_handle);
   }
   else {
     iVar7 = 0;
-    crt_stdio_c_fread_FUN_005fd990(g_PolyDataConversionBuffer,0x48,this_ptr->face_count,file_handle)
+    _fread(g_PolyDataConversionBuffer,0x48,this_ptr->face_count,file_handle)
     ;
     if (0 < this_ptr->face_count) {
       iVar6 = 0;
@@ -90,10 +90,10 @@ core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0
     fVar9 = (float10)offset_position->z * fVar8;
     iVar7 = this_ptr->vertex_count;
     iVar5 = 0;
-    dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)offset_position->x * fVar8));
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar4 * fVar8));
+    dVar10 = round((double)((float10)offset_position->x * fVar8));
+    dVar11 = round((double)((float10)fVar4 * fVar8));
     fVar8 = (float10)dVar11;
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
+    dVar11 = round((double)fVar9);
     if (0 < iVar7) {
       iVar7 = 0;
       do {

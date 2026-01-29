@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_time_c_filetime_to_dos_datetime_FUN_00609cb0(FILETIME *filetime,WORD *dos_date,WORD *dos_time)
+filetime_to_dos_datetime(FILETIME *filetime,WORD *dos_date,WORD *dos_time)
 
 {
   _FILETIME _Stack_c;

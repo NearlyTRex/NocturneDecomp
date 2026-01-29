@@ -20,10 +20,8 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005e7940(CVehicle *this_pt
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (pCVar3 + 1,4,&g_CKeyFramedModelInstanceTypeInfo);
-  pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo);
+  pvVar4 = __arrinit(pCVar3 + 1,4,&g_CKeyFramedModelInstanceTypeInfo);
+  pvVar4 = __arrinit((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo);
   pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)((int)pvVar4 + 0x6e4));
   pCVar5[-0x13c].frame_list = (CCourseFrameList *)&PTR_core_vehicle_cpp_FUN_00665064;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

@@ -325,7 +325,6 @@ const undefined4 DAT_006819fc = 0xFFFFF100;
 const undefined4 DAT_00681a04 = 0xFFFFF100;
 const undefined4 DAT_006844f4 = 0x00002000;
 const undefined4 DAT_00684cea = 0x00000002;
-const undefined4 DAT_00684ed0 = 0x00000100;
 const undefined4 DAT_006850a4 = 0x00000005;
 const undefined4 DAT_006850a8 = 0x00000009;
 const undefined4 DAT_00685210 = 0xFF010806;

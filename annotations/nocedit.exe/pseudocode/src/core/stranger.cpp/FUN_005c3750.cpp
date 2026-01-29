@@ -19,7 +19,7 @@ void core_stranger_cpp_FUN_005c3750(void)
       (dVar2 = (double)(SQRT(in_stack_00000008 * in_stack_00000008 -
                              in_stack_0000000c * in_stack_0000000c) / in_stack_00000008),
       dVar2 < 1.0)) && (0.0 <= dVar2)) {
-    dVar2 = crt_math_c_acos_FUN_00600162(dVar2);
+    dVar2 = acos(dVar2);
     if (in_stack_0000000c < 0.0) {
       fVar1 = *in_stack_00000004 - (float)dVar2;
     }

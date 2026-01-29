@@ -24,7 +24,7 @@ void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_00586bf0(C3DSLight *this_ptr,C
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)&(light->base).base.rotation_matrix,&this_ptr->orient);
   (light->base).base.projection_scale = this_ptr->fov;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->aspect * (float)65536));
+  dVar5 = round((double)(this_ptr->aspect * (float)65536));
   light->transform_scale_factor = (int)ROUND(dVar5);
   pcVar3 = this_ptr->name;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(light,this_ptr->intensity);

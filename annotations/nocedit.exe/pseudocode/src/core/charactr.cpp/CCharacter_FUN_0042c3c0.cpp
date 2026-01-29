@@ -61,7 +61,7 @@ LAB_0042c429:
   if (0.0 < *(float *)(in_stack_00000008 + 8)) {
     input_local_point = &local_1c;
     output_world_point = (CVector3f *)0x42c47c;
-    dVar2 = crt_math_c_round_FUN_005fe6b0
+    dVar2 = round
                       ((double)(*(float *)(in_stack_00000008 + 4) *
                                *(float *)(in_stack_00000008 + 8)));
     local_1c.z = (float)(int)ROUND(dVar2);

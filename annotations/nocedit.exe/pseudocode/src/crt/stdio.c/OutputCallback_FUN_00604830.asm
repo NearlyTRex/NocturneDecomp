@@ -26,7 +26,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 00604839
     PUSH ECX                            ; 0060483d
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0060483e
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     MOV ESI,dword ptr [EBX + 0x10]      ; 00604843
     INC ESI                             ; 00604846
     ADD ESP,0x8                         ; 00604847

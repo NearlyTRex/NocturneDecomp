@@ -21,7 +21,7 @@
       },
       {
         "category": "other",
-        "column": 55,
+        "column": 56,
         "line": 192,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
@@ -42,24 +42,6 @@
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 59,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 61,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 90,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -74,12 +56,6 @@
         "category": "other",
         "column": 67,
         "line": 93,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 100,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -144,20 +120,8 @@
       },
       {
         "category": "other",
-        "column": 58,
-        "line": 245,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 59,
         "line": 247,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 252,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -168,20 +132,8 @@
       },
       {
         "category": "other",
-        "column": 53,
-        "line": 262,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 22,
         "line": 266,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 273,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -204,44 +156,26 @@
       },
       {
         "category": "other",
-        "column": 55,
-        "line": 309,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 314,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 323,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 61,
-        "line": 328,
+        "line": 327,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 810,
-    "complexity_score": 794,
+    "complexity_score": 793,
     "cross_reference_count": 3,
     "function_call_count": 46,
     "global_count": 72,
-    "pseudocode_lines": 329,
+    "pseudocode_lines": 328,
     "suspect_count": 45,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1139
+    "total_lines": 1138
   },
   "cross_references": [
     {
@@ -377,11 +311,6 @@
       "name": "crt_fstream.cpp_openFile_FUN_00600e85"
     },
     {
-      "addr": "005ff9d0",
-      "is_variadic": false,
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
-    },
-    {
       "addr": "00600e29",
       "is_variadic": false,
       "name": "crt_stdio.c_fflush_FUN_00600e29"
@@ -410,6 +339,11 @@
       "addr": "00601560",
       "is_variadic": false,
       "name": "crt_stdio.c_ftell_FUN_00601560"
+    },
+    {
+      "addr": "005ff9d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_remove_FUN_005ff9d0"
     },
     {
       "addr": "005fdbd0",
@@ -1283,7 +1217,7 @@
       "description": "Direct stack address reference",
       "line": 113,
       "match": "&stack0xfffff9c8",
-      "text": "iVar2 = crt_string_c_stricmp_FUN_005fe7f0(&g_CurrentSaveFile,&stack0xfffff9c8);",
+      "text": "iVar2 = stricmp(&g_CurrentSaveFile,&stack0xfffff9c8);",
       "type": "stack_ref"
     },
     {
@@ -1304,7 +1238,7 @@
       "description": "Direct stack address reference",
       "line": 153,
       "match": "&stack0xfffff9c8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_534,\"%s\\\\%s\",\"save\",&stack0xfffff9c8);",
+      "text": "sprintf(local_534,\"%s\\\\%s\",\"save\",&stack0xfffff9c8);",
       "type": "stack_ref"
     },
     {
@@ -1500,7 +1434,7 @@
       "description": "Undefined global data reference",
       "line": 302,
       "match": "DAT_02d82d84",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\",&DAT_02d82d84);",
+      "text": "_fscanf(file_handle,\"%d\\n\",&DAT_02d82d84);",
       "type": "undefined_data"
     },
     {

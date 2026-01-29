@@ -139,7 +139,7 @@ section .text
     PUSH EAX                            ; 00431b5b
     PUSH 0x617a88                       ; 00431b5c | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00431b61
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00431b66
     MOV ESI,EAX                         ; 00431b69
     TEST EAX,EAX                        ; 00431b6b
@@ -150,7 +150,7 @@ section .text
     PUSH 0x100                          ; 00431b72
     PUSH EBX                            ; 00431b77
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00431b78
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00431b7d
     CMP EAX,0x3                         ; 00431b80
     JZ 0x00431bbd                       ; 00431b83
@@ -177,7 +177,7 @@ section .text
     PUSH 0x617ab4                       ; 00431bc2 | = "..\\cockpit\\ckptutil.c"
     PUSH ESI                            ; 00431bc7
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00431bc8
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00431bcd
     ADD ESP,0xa0                        ; 00431bd0
     POP EDI                             ; 00431bd6

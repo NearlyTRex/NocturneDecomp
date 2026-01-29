@@ -13,7 +13,7 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
 {
   char cVar1;
   int iVar2;
-  tm *time_ptr;
+  _tm *time_ptr;
   uint uVar3;
   uint unaff_EBX;
   int iVar4;
@@ -68,8 +68,8 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
   if (0 < local_8f0) {
     iVar4 = 0;
     do {
-      time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)((int)&local_8ec->timestamp + iVar4));
-      crt_time_c_strftime_FUN_006002d4(local_2c,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
+      time_ptr = localtime((time_t *)((int)&local_8ec->timestamp + iVar4));
+      strftime(local_2c,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
       engine_dosio_c_splitPath_FUN_00481f20
                 (*(char **)((int)&local_8ec->name_or_offset + iVar4),(char *)0x0,local_22c,local_12c
                  ,&local_32c);
@@ -82,18 +82,18 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
           cVar1 = *pcVar5;
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
-        crt_string_c_memmove_FUN_005fe5e0(&local_32c,local_32b,~uVar3 - 1);
+        memmove(&local_32c,local_32b,~uVar3 - 1);
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_52c,"%s\t%s\t%s\t%d\t%s",local_22c,local_12c,&local_32c,
                  *(uint *)((int)&local_8ec->size + iVar4),local_2c);
-      crt_string_c_strupr_FUN_00600770(local_52c);
+      strupr(local_52c);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8d4.base,local_52c);
       iVar2 = iVar2 + 1;
       iVar4 = iVar4 + 0x14;
     } while (iVar2 < local_8f0);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_52c,"Contents of pod file:\n%s",&stack0xfffff304);
+  sprintf(local_52c,"Contents of pod file:\n%s",&stack0xfffff304);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&local_8d4,local_52c,-1,0)
   ;
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80

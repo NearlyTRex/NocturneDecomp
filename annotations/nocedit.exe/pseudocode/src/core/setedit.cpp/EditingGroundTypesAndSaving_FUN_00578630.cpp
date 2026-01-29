@@ -11,7 +11,7 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
 {
   char *pcVar1;
   int iVar2;
-  FILE *file;
+  _FILE *file;
   int iVar3;
   uint unaff_ESI;
   byte *puVar4;
@@ -46,7 +46,7 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
         do {
           pcVar1 = core_ground_cpp_getGroundTypeName_FUN_004eed80
                              ((uint)(byte)(&DAT_03659190)[iVar3]);
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_2fc,"%s\t%s",puVar4,pcVar1);
+          sprintf(local_2fc,"%s\t%s",puVar4,pcVar1);
           iVar3 = iVar3 + 1;
           puVar4 = puVar4 + 0x28;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff424,local_2fc);
@@ -74,7 +74,7 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
           file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (in_stack_00000004,(char *)0x0,"wt","..\\core\\setedit.cpp",
                             0x326);
-          if (file == (FILE *)0x0) {
+          if (file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\setedit.cpp";
             g_CurrentLineNumber = 0x327;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s");
@@ -86,7 +86,7 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
               pcVar5 = core_ground_cpp_getGroundTypeName_FUN_004eed80
                                  ((uint)(byte)(&DAT_03659190)[iVar3]);
               iVar3 = iVar3 + 1;
-              crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s, %s\n",puVar4,pcVar5);
+              _fprintf(file,"%s, %s\n",puVar4,pcVar5);
               puVar4 = puVar4 + 0x28;
             } while (iVar3 < DAT_03654368);
           }
@@ -111,7 +111,7 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
     if (0 < DAT_03654368) {
       pcVar1 = &DAT_03654370;
       do {
-        iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar1,local_16c);
+        iVar2 = stricmp(pcVar1,local_16c);
         if (iVar2 == 0) goto LAB_00578779;
         iVar3 = iVar3 + 1;
         pcVar1 = pcVar1 + 0x28;
@@ -131,7 +131,7 @@ LAB_00578779:
       iVar2 = iVar2 + 1;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff424,pcVar1);
     } while (iVar2 < 0xe);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_48c,"Select ground type for %s",local_6c);
+    sprintf(local_48c,"Select ground type for %s",local_6c);
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       ((CPickList *)&stack0xfffff424,local_48c,(uint)(byte)(&DAT_03659190)[iVar3],0)
     ;

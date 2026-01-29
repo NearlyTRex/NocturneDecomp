@@ -200,7 +200,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
         local_98 = (double)fVar1;
         if ((float)-1 < fVar1) {
           if (local_98 < 1.0) {
-            dVar5 = crt_math_c_acos_FUN_00600162(local_98);
+            dVar5 = acos(local_98);
             local_2c = (float)dVar5;
           }
           else {

@@ -48,19 +48,19 @@ core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0
   fVar1 = local_54.y - local_5c;
   fVar5 = (float10)local_48.x;
   CStack_6c.z = 6.741156e-39;
-  dVar7 = crt_math_c_round_FUN_005fe6b0
+  dVar7 = round
                     ((double)((local_5c - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
   local_24 = (int)ROUND(dVar7);
   fVar5 = fVar5 - (float10)local_58;
   fVar6 = (float10)local_54.y - (float10)local_5c;
   CStack_6c.y = 6.741194e-39;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  dVar7 = round((double)fVar3);
   local_2c = (int)ROUND(dVar7);
   local_3c = (float)fVar6;
   CStack_6c.x = 6.741221e-39;
   local_48.z = fVar1;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+  dVar7 = round((double)fVar4);
+  dVar8 = round((double)fVar2);
   local_3c = (float)(int)ROUND(dVar7);
   local_2c = (int)ROUND(dVar8);
   local_48.z = (float)fVar5;

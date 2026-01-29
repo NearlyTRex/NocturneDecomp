@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_thread_c_staticInit_FUN_0060d214(void)
+void __cdecl staticInit(void)
 
 {
   PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24 = crt_unknown_c_FUN_0060d1a8;

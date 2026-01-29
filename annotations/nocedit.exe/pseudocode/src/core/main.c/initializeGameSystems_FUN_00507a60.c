@@ -15,7 +15,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   float fVar4;
   CGame *pCVar5;
   char *pcVar6;
-  FILE *file_ptr;
+  _FILE *file_ptr;
   DWORD DVar7;
   char *pcVar8;
   int iVar9;
@@ -33,7 +33,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   g_ProcessorType = 0;
   g_SystemMemorySize = 0x10000;
   g_SystemInitialized = 1;
-  pcVar6 = crt_env_c_getenv_FUN_006013f0("PROCESSOR_LEVEL");
+  pcVar6 = getenv("PROCESSOR_LEVEL");
   if (pcVar6 == (char *)0x0) {
     g_RenderingMode = 4;
   }
@@ -44,9 +44,9 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("stderr.txt",(char *)0x0,"rb","..\\core\\main.c",0x3bc
                        );
-  if (file_ptr != (FILE *)0x0) {
+  if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",0x3be);
-    DVar7 = crt_file_c_setReadonlyAttribute_FUN_00600c30("stderr.txt",0x1c0);
+    DVar7 = engine_dosio_c_setReadonlyAttribute_FUN_00600c30("stderr.txt",0x1c0);
     if (DVar7 != 0) {
       g_CurrentFilename = "..\\core\\main.c";
       g_CurrentLineNumber = 0x3c0;
@@ -54,7 +54,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     }
   }
   pcVar6 = &stack0xfffff8d8;
-  crt_stdio_c_fopenThreadSafe_FUN_00601b14("stderr.txt","wt",&g_StderrLogFile);
+  fopenThreadSafe("stderr.txt","wt",&g_StderrLogFile);
   g_RenderingMode = 4;
   core_flamegun_cpp_initializeFlamegun_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
@@ -96,7 +96,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar8[1] = cVar2;
       pcVar8 = pcVar8 + 2;
     } while (cVar2 != '\0');
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (memory_amount_str,"%.1f",
                (double)((float)g_TotalPhysicalMemory * 9.536743e-07f));
     pcVar8 = memory_amount_str;
@@ -326,7 +326,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar6[1] = cVar2;
       pcVar6 = pcVar6 + 2;
     } while (cVar2 != '\0');
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (temp_buffer,"%.1f",
                (double)((float)g_MessageFlags[0] * 9.536743e-07f));
     pcVar6 = temp_buffer;

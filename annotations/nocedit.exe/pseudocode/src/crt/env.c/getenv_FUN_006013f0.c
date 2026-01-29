@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_env_c_getenv_FUN_006013f0(char *name)
+char * __cdecl getenv(char *name)
 
 {
   char cVar1;
@@ -28,7 +28,7 @@ char * __cdecl crt_env_c_getenv_FUN_006013f0(char *name)
     count = ~uVar3 - 1;
     for (ppcVar4 = g_EnvironmentBlock; pcVar5 = *ppcVar4, pcVar5 != (char *)0x0;
         ppcVar4 = ppcVar4 + 1) {
-      iVar2 = crt_string_c_mbstrnicmp_FUN_00608e50(pcVar5,name,count);
+      iVar2 = mbstrnicmp(pcVar5,name,count);
       if ((iVar2 == 0) && (pcVar5[count] == '=')) {
         return pcVar5 + ~uVar3;
       }

@@ -11,42 +11,28 @@
       },
       {
         "category": "other",
-        "column": 61,
-        "line": 16,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 18,
         "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 52,
-        "line": 27,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 34,
+    "complexity_score": 18,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 19,
-    "suspect_count": 1,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
-    "total_lines": 80
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -136,7 +122,7 @@
     {
       "addr": "00822034",
       "name": "g_ActorDataFile",
-      "type": "FILE*",
+      "type": "_FILE*",
       "value": null
     },
     {
@@ -260,17 +246,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "actual_args": 0,
-      "description": "Format \"%f,%f,%f\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%f,%f,%f",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 9,
-      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,\"%f,%f,%f\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
 ;   core_mirror.cpp_CMirror_ctor_FUN_005213c0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH 0x19                           ; 004e9062
     ADD EAX,0x1a0                       ; 004e9064
     PUSH EAX                            ; 004e9069
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004e906a
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004e906a
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffc74]          ; 004e906f
     MOV dword ptr [EDX + 0x154],0x65eef4 ; 004e9075 | g_CGlassVTable
     MOV ESI,0x62df62                    ; 004e907f | = "HEADLITE.RAW"

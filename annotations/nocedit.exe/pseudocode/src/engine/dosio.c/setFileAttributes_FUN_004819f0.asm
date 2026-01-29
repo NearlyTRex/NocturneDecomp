@@ -16,7 +16,7 @@
 ;   engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220 at 004b33ea
 ;
 ; Called Functions:
-;   crt_file.c_setReadonlyAttribute_FUN_00600c30
+;   engine_dosio.c_setReadonlyAttribute_FUN_00600c30
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
         ;   Label: LAB_00481a03
     MOV EDX,dword ptr [ESP + 0x8]       ; 00481a04
     PUSH EDX                            ; 00481a08
-    CALL crt_file.c_setReadonlyAttribute_FUN_00600c30 ; 00481a09
-        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD crt_file.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
+    CALL engine_dosio.c_setReadonlyAttribute_FUN_00600c30 ; 00481a09
+        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
     ADD ESP,0x8                         ; 00481a0e
     TEST EAX,EAX                        ; 00481a11
     SETZ AL                             ; 00481a13

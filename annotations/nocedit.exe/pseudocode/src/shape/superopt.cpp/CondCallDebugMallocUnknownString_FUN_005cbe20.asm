@@ -8,8 +8,8 @@
 ;   shape_superopt.cpp_FUN_005c91e0 at 005c9304
 ;
 ; Called Functions:
-;   crt_memory.c_malloc_FUN_006021da
 ;   crt_memory.c_realloc_FUN_00601df0
+;   shape_memdbg.cpp_malloc_FUN_006021da
 ;   shape_superopt.cpp_FUN_005cbf20
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     MOV ESI,EAX                         ; 005cbe71
     SHL ESI,0x5                         ; 005cbe73
     PUSH ESI                            ; 005cbe76
-    CALL crt_memory.c_malloc_FUN_006021da ; 005cbe77
-        ;   XREF to: 006021da (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
+    CALL shape_memdbg.cpp_malloc_FUN_006021da ; 005cbe77
+        ;   XREF to: 006021da (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_006021da(SIZE_T size)
     ADD ESP,0x4                         ; 005cbe7c
     MOV dword ptr [EBP + 0x4],EAX       ; 005cbe7f
     TEST EAX,EAX                        ; 005cbe82

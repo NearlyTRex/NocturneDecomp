@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_list_t args)
+; __watcallStack int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(_FILE *file,char *format,va_list_t args)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ; char *           Stack[0x8]:4   format
 ; va_list_t        Stack[0xc]:4   args
 ;
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 006048b1 (CONDITIONAL_JUMP)  ; LAB_006048b1
     PUSH EBX                            ; 006048a8
     CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 006048a9
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
     ADD ESP,0x4                         ; 006048ae
     MOV DL,byte ptr [EBX + 0xd]         ; 006048b1
         ;   Label: LAB_006048b1
@@ -107,7 +107,7 @@ section .text
     PUSH EBX                            ; 006048fb
     MOV byte ptr [EBX + 0xd],AL         ; 006048fc
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 006048ff
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00604904
     TEST byte ptr [EBX + 0xc],0x20      ; 00604907
         ;   Label: LAB_00604907

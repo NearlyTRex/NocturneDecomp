@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c2e0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_memory.c___arrinit_FUN_005fe667
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;
 ; *****************************************************************************
 
@@ -38,12 +38,12 @@ section .text
     PUSH 0x65b390                       ; 00421673 | g_CDemonFilterTypeInfo
     PUSH 0x8                            ; 00421678
     PUSH 0x8229ec                       ; 0042167a | CDemonFilter_ARRAY_008229ec
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0042167f
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0042167f
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00421684
     PUSH 0x66e5cc                       ; 00421687 | DAT_0066e5cc
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 0042168c
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0042168c
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00421691
     PUSH 0x8229b0                       ; 00421694 | g_CBoxActorClassInfo
     PUSH 0x2                            ; 00421699

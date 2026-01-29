@@ -19,7 +19,7 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   uint *puVar6;
   uint *puVar7;
   byte bVar8;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   uint auStackY_1804 [1508];
   CMatrix3x3f local_58;
   byte local_34 [4];
@@ -41,8 +41,7 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
     local_c = iVar4;
     shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
               (g_CEditorToolsPtr,(float)iVar4,(float)this_ptr->len);
-    iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                      (in_stack_00000008,"%f,%f,%f\n",&local_58,&local_58.m[1].y,
+    iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",&local_58,&local_58.m[1].y,
                        &local_58.m[2].z,unaff_ESI,unaff_EDI);
     if (iVar2 == 3) goto LAB_00442f35;
     do {
@@ -52,16 +51,13 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
           g_CurrentLineNumber = 0x1c2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CCourse::importMatrices - file is corrupt on frame %d!",iVar4);
 LAB_00442f35:
-          iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                            (in_stack_00000008,"%f,%f,%f\n",&local_58.m[0].y,&local_58.m[1].z,
+          iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",&local_58.m[0].y,&local_58.m[1].z,
                              local_34,unaff_ESI,unaff_EDI);
         } while (iVar2 != 3);
-        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (in_stack_00000008,"%f,%f,%f\n",&local_58.m[0].z,local_58.m + 2,
+        iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",&local_58.m[0].z,local_58.m + 2,
                            local_30,unaff_ESI,unaff_EDI);
       } while (iVar2 != 3);
-      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (in_stack_00000008,"%f,%f,%f\n",local_58.m + 1,&local_58.m[2].y,
+      iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",local_58.m + 1,&local_58.m[2].y,
                          &local_2c);
     } while (iVar2 != 3);
     core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690(&local_58,0);

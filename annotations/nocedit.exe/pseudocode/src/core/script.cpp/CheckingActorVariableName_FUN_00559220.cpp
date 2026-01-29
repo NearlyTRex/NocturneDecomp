@@ -37,15 +37,15 @@ uint core_script_cpp_CheckingActorVariableName_FUN_00559220(void)
       if ((iVar4 != 1) && (*pcVar2 == '\0')) {
         return 1;
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (&DAT_0310eca0,"Actor variable name \"%s\" is not valid",in_stack_00000004);
       return 0;
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (&DAT_0310eca0,"Actor variable name \"%s\" is too long",in_stack_00000004);
   }
   else {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,"Actor variable name must begin with '@'");
+    sprintf(&DAT_0310eca0,"Actor variable name must begin with '@'");
   }
   return 0;
 }

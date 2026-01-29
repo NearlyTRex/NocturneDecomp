@@ -2,19 +2,19 @@
 // Address: 0058b2c0
 // Address Range: [[0058b2c0, 0058b399]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,FILE *file_handle)
+void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,_FILE *file_handle)
 
 {
   CPodFile *pCVar1;
   CSkeleton *this_ptr_00;
-  FILE *unaff_EBP;
+  _FILE *unaff_EBP;
   char *in_stack_00000008;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x24);
+  __STK(0x24);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Saving skeleton to %s...");
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
@@ -34,7 +34,7 @@ void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,F
               ("CSkeleton::save - Can't create %s",in_stack_00000008);
   }
   core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(this_ptr_00,unaff_EBP);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)this_ptr_00,"..\\core\\skeledit.cpp",0x459);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)this_ptr_00,"..\\core\\skeledit.cpp",0x459);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Saved skeleton to %s OK");
   return;

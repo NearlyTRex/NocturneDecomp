@@ -104,7 +104,7 @@ void __cdecl shape_design_c_initializeTextureManager_FUN_0046a880(int initializa
 void __cdecl shape_design_c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param);
 int __cdecl shape_design_c_calculateTextureQualityLevel_FUN_0046a930(int texture_parameter);
 void __cdecl shape_design_c_cramTextures_FUN_0046a970 (char *texture_filename,int min_u,int min_v,int max_u,int max_v);
-void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0 (FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags);
+void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0 (_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags);
 int __cdecl shape_design_c_checkNonFFBytes_FUN_0046ac70(char *buffer_ptr,int buffer_length);
 int __cdecl shape_design_c_wrapCoordinate_FUN_0046acc0(int coordinate,int dimension);
 void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00 (void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x, int pixel_y,double weight,double *red_accumulator,double *green_accumulator, double *blue_accumulator,double *alpha_accumulator);

@@ -48,12 +48,6 @@
       },
       {
         "category": "other",
-        "column": 82,
-        "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 42,
         "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -78,26 +72,8 @@
       },
       {
         "category": "other",
-        "column": 60,
-        "line": 53,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 62,
         "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 61,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 88,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -108,132 +84,64 @@
       },
       {
         "category": "other",
-        "column": 65,
-        "line": 157,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 159,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 72,
-        "line": 161,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 164,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 44,
         "line": 167,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 172,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 24,
-        "line": 175,
+        "line": 174,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 196,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 199,
+        "line": 195,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 203,
+        "line": 201,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 224,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 227,
+        "line": 222,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 230,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 71,
-        "line": 234,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 73,
-        "line": 240,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 75,
-        "line": 246,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 77,
-        "line": 252,
+        "line": 227,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 255,
+        "line": 252,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 257,
+        "line": 254,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 279,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 48,
-    "pseudocode_lines": 264,
-    "suspect_count": 1,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
-    "total_lines": 898
+    "pseudocode_lines": 261,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 895
   },
   "cross_references": [
     {
@@ -902,17 +810,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "actual_args": 2,
-      "description": "Format \" %[^:]:%s\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": " %[^:]:%s",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 81,
-      "match": "iVar2 = crt_stdio_c_sscanf_FUN_0060013c(local_798,\" %[^:]:%s\",local_2a5 + 1,local_3a5 + 1);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

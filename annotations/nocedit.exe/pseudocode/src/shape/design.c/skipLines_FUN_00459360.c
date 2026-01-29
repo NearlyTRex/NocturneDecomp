@@ -2,11 +2,11 @@
 // Address: 00459360
 // Address Range: [[00459360, 0045939f]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_skipLines_FUN_00459360(FILE *file,int line_count)
+// Signature: void __cdecl shape_design_c_skipLines_FUN_00459360(_FILE *file,int line_count)
 
 #include "nocturne.h"
 
-void __cdecl shape_design_c_skipLines_FUN_00459360(FILE *file,int line_count)
+void __cdecl shape_design_c_skipLines_FUN_00459360(_FILE *file,int line_count)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ void __cdecl shape_design_c_skipLines_FUN_00459360(FILE *file,int line_count)
       return;
     }
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
+      iVar1 = _fgetc(file);
       if (iVar1 < 0) {
         return;
       }

@@ -20,7 +20,7 @@ int core_script_cpp_FUN_005675a0(void)
   char *in_stack_00000004;
   char *in_stack_00000008;
   
-  iVar4 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,in_stack_00000008);
+  iVar4 = stricmp(in_stack_00000004,in_stack_00000008);
   if (iVar4 == 0) {
     if (*(int *)(in_stack_00000004 + 0x100) < *(int *)(in_stack_00000008 + 0x100)) {
       return -1;

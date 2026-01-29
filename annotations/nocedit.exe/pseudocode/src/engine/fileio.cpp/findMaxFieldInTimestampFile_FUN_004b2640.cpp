@@ -15,7 +15,7 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *fil
   int iVar4;
   int iVar5;
   char *in_stack_00000008;
-  FILE *local_18;
+  _FILE *local_18;
   STimestampRecord *local_14;
   
   iVar4 = 0;
@@ -23,26 +23,26 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *fil
     local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (in_stack_00000008,(char *)0x0,"rt","..\\engine\\fileio.cpp",
                           0x153);
-    if (local_18 != (FILE *)0x0) {
-      crt_stdio_c_setvbuf_FUN_00601490(local_18,(char *)0x0,0,0x400);
+    if (local_18 != (_FILE *)0x0) {
+      _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b2681;
     }
-    piVar1 = (int *)crt_errno_c_errno_FUN_00601450();
+    piVar1 = (int *)_errno();
     if (*piVar1 != 6) break;
     iVar4 = iVar4 + 1;
     (*g_SleepFunc)(500);
   } while (iVar4 < 10);
-  local_18 = (FILE *)0x0;
+  local_18 = (_FILE *)0x0;
 LAB_004b2681:
-  if (local_18 == (FILE *)0x0) {
+  if (local_18 == (_FILE *)0x0) {
     return 0;
   }
   local_14 = (STimestampRecord *)0x0;
   iVar4 = engine_fileio_cpp_readTimestampFile_FUN_004b23a0
-                    ((FILE *)&local_18,&local_14,(int *)filename);
-  if (local_18 != (FILE *)0x0) {
+                    ((_FILE *)&local_18,&local_14,(int *)filename);
+  if (local_18 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
-    local_18 = (FILE *)0x0;
+    local_18 = (_FILE *)0x0;
   }
   iVar5 = -1;
   if (-1 < iVar4) {

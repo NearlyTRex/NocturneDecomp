@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 46,
+        "column": 50,
         "line": 22,
         "message": "invalid conversion from 'void*' to 'int*' [-fpermissive]"
       },
@@ -384,7 +384,7 @@
       },
       {
         "category": "other",
-        "column": 40,
+        "column": 44,
         "line": 109,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -427,12 +427,12 @@
     {
       "addr": "005fe659",
       "is_variadic": false,
-      "name": "crt_memory.c_free_FUN_005fe659"
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
     },
     {
       "addr": "006021da",
       "is_variadic": false,
-      "name": "crt_memory.c_malloc_FUN_006021da"
+      "name": "shape_memdbg.cpp_malloc_FUN_006021da"
     },
     {
       "addr": "005c7dc0",
@@ -547,7 +547,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
-      "text": "piVar2 = crt_memory_c_malloc_FUN_006021da(*in_stack_00000004 * 0x120);",
+      "text": "piVar2 = shape_memdbg_cpp_malloc_FUN_006021da(*in_stack_00000004 * 0x120);",
       "type": "stack_param"
     },
     {
@@ -589,7 +589,7 @@
       "description": "Unresolved stack parameter",
       "line": 102,
       "match": "in_stack_00000004",
-      "text": "crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0xc]);",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659((void *)in_stack_00000004[0xc]);",
       "type": "stack_param"
     }
   ]

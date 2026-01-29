@@ -37,10 +37,10 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
-;   crt_memory.c_constructTypedObjectArray_FUN_00601272
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
+;   crt_memory.c___vec_new_FUN_00601272
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -77,21 +77,21 @@ section .text
     PUSH 0x662ed0                       ; 0059a55d | g_SVertTypeInfo
     MOV EDX,dword ptr [ESI + EDI*0x4 + 0x40] ; 0059a562
     PUSH EDX                            ; 0059a566
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0059a567
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0059a567
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0059a56c
     PUSH EAX                            ; 0059a56f
     MOV EBX,0x290                       ; 0059a570
-    CALL crt_memory.c_free_FUN_005fe659 ; 0059a575
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0059a575
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     MOV ECX,0x64e6f4                    ; 0059a57a | = "..\\core\\skeleton.cpp"
     MOV dword ptr [0x02f0d944],EBX      ; 0059a57f | g_CurrentDebugLine
     MOV dword ptr [0x0067d20c],ECX      ; 0059a585 | g_CurrentDebugFilename
     ADD ESP,0x4                         ; 0059a58b
     MOV EBP,dword ptr [ESI + EDI*0x4 + 0x7c] ; 0059a58e
     PUSH EBP                            ; 0059a592
-    CALL crt_memory.c_free_FUN_005fe659 ; 0059a593
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0059a593
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     MOV EAX,0x64e709                    ; 0059a598 | = "..\\core\\skeleton.cpp"
     MOV EDX,0x291                       ; 0059a59d
     MOV [0x0067d20c],EAX                ; 0059a5a2 | g_CurrentDebugFilename
@@ -101,15 +101,15 @@ section .text
     PUSH ECX                            ; 0059a5b7
     MOV EBX,0x64e71e                    ; 0059a5b8 | = "..\\core\\skeleton.cpp"
     MOV EBP,0x292                       ; 0059a5bd
-    CALL crt_memory.c_free_FUN_005fe659 ; 0059a5c2
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0059a5c2
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     MOV dword ptr [0x0067d20c],EBX      ; 0059a5c7 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EBP      ; 0059a5cd | g_CurrentDebugLine
     ADD ESP,0x4                         ; 0059a5d3
     MOV EAX,dword ptr [ESI + EDI*0x4 + 0xa4] ; 0059a5d6
     PUSH EAX                            ; 0059a5dd
-    CALL crt_memory.c_free_FUN_005fe659 ; 0059a5de
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0059a5de
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0059a5e3
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0059a5e6
     MOV dword ptr [ESI + EDI*0x4 + 0x2c],EAX ; 0059a5ea
@@ -133,8 +133,8 @@ section .text
         ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059a62c
     PUSH EAX                            ; 0059a62f
-    CALL crt_memory.c_constructTypedObjectArray_FUN_00601272 ; 0059a630
-        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructTypedObjectArray_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_new_FUN_00601272 ; 0059a630
+        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059a635
     TEST EAX,EAX                        ; 0059a638
     LEA EBX,[EDI*0x4 + 0x0]             ; 0059a63a

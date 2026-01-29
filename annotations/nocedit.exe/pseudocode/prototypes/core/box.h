@@ -33,11 +33,11 @@ void __cdecl CBox::processPhysics(CBox *this_ptr,float delta_time);
 
 // Original: core_box.cpp_CBox_loadFromFile_FUN_0041fe90
 // Address: 0041fe90
-void __cdecl CBox::loadFromFile(CBox *this_ptr,FILE *file_handle);
+void __cdecl CBox::loadFromFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_saveToFile_FUN_00420020
 // Address: 00420020
-void __cdecl CBox::saveToFile(CBox *this_ptr,FILE *file_handle);
+void __cdecl CBox::saveToFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_setupVelocities_FUN_00420180
 // Address: 00420180

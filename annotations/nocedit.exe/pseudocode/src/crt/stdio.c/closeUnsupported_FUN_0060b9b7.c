@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_closeUnsupported_FUN_0060b9b7(void)
+int __watcallStack closeUnsupported(void)
 
 {
   return -1;

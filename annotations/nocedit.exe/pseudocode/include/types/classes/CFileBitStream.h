@@ -1,7 +1,7 @@
 #pragma once
 
 // Forward declarations
-struct FILE;
+struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -9,7 +9,7 @@ struct FILE;
 // Structure: CFileBitStream
 // Ghidra size: 0x2c (44 bytes)
 typedef struct CFileBitStream {
-    struct FILE* file_handle; // 0x0
+    struct _FILE* file_handle; // 0x0
     char* buffer; // 0x4
     int buffer_size; // 0x8
     int total_bits_read; // 0xc

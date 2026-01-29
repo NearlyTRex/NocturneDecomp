@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_file_c_splitpath_s_FUN_00610460
+splitpath_s
           (char *path,char *buffer,char *drive,char *dir,char *fname,char *ext)
 
 {
@@ -25,10 +25,10 @@ crt_file_c_splitpath_s_FUN_00610460
     pcVar4 = path + 2;
     while ((((cVar1 != '\0' && (cVar1 = *pcVar4, cVar1 != '\\')) && (cVar1 != '/')) &&
            (cVar1 != '.'))) {
-      pcVar4 = crt_string_c_mbtowc_next_FUN_00605a70(pcVar4);
+      pcVar4 = mbtowc_next(pcVar4);
       cVar1 = *pcVar4;
     }
-    buffer = crt_file_c_extract_path_component_FUN_00610400((char **)drive,buffer,path,pcVar4);
+    buffer = extract_path_component((char **)drive,buffer,path,pcVar4);
     path = pcVar4;
   }
   else if ((*path == '\0') || (path[1] != ':')) {
@@ -58,24 +58,24 @@ crt_file_c_splitpath_s_FUN_00610460
     do {
       while( true ) {
         str = pcVar4;
-        wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(str);
+        wVar2 = mbtowc_peek(str);
         iVar3 = CONCAT22(extraout_var,wVar2);
         if (iVar3 == 0) {
-          pcVar4 = crt_file_c_extract_path_component_FUN_00610400
+          pcVar4 = extract_path_component
                              ((char **)dir,buffer,path,buffer_end);
           if (buffer_end_00 == (char *)0x0) {
             buffer_end_00 = str;
           }
-          pcVar4 = crt_file_c_extract_path_component_FUN_00610400
+          pcVar4 = extract_path_component
                              ((char **)fname,pcVar4,buffer_end,buffer_end_00);
-          crt_file_c_extract_path_component_FUN_00610400((char **)ext,pcVar4,buffer_end_00,str);
+          extract_path_component((char **)ext,pcVar4,buffer_end_00,str);
           return;
         }
         if (iVar3 != 0x2e) break;
         pcVar4 = str + 1;
         buffer_end_00 = str;
       }
-      pcVar4 = crt_string_c_mbtowc_next_FUN_00605a70(str);
+      pcVar4 = mbtowc_next(str);
     } while ((iVar3 != 0x5c) && (iVar3 != 0x2f));
   } while( true );
 }

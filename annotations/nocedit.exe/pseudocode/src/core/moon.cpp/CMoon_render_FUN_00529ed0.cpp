@@ -72,7 +72,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr2,&local_50,(CVector3i *)0x0);
         render_flags = 0x52a0a9;
-        dVar7 = crt_math_c_round_FUN_005fe6b0
+        dVar7 = round
                           ((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar4));
         local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
@@ -90,7 +90,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
           dVar7 = (double)8192.0f - (double)local_18 * (double)16384.0f;
         }
         local_5c.x = 7.588293e-39;
-        dVar7 = crt_math_c_round_FUN_005fe6b0(dVar7);
+        dVar7 = round(dVar7);
         local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
         pCVar1->ambient_base_quick = (int)local_14;
       }
@@ -128,7 +128,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
     local_28 = local_28 + 1;
   } while ((int)local_28 < 0x1e0);
   engine_3d_c_setBlendMode_FUN_00406dd0(1);
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)g_MoonAnimationTimer);
+  dVar7 = round((double)g_MoonAnimationTimer);
   local_1c = (int)ROUND(dVar7);
   if (0x1d < local_1c) {
     local_1c = 0;

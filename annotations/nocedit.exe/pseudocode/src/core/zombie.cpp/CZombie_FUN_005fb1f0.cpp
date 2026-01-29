@@ -79,7 +79,7 @@ void core_zombie_cpp_CZombie_FUN_005fb1f0(void)
     }
   }
   else {
-    iVar2 = crt_string_c_strnicmp_FUN_005ff070
+    iVar2 = strnicmp
                       ((char *)(in_stack_00000004 + 0x23b8),"new",3);
     if (iVar2 == 0) {
       local_94.z = -0.986001;

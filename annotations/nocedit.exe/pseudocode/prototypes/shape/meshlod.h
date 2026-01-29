@@ -17,7 +17,7 @@ double __cdecl computeDistanceSquaredToEdge(CVector3f *query_point,CVector3f *ed
 
 // Original: shape_meshlod.cpp_skipLines_FUN_00515160
 // Address: 00515160
-void __cdecl skipLines(FILE *file_handle,int line_count);
+void __cdecl skipLines(_FILE *file_handle,int line_count);
 
 // Original: shape_meshlod.cpp_initializeLogDirectory_FUN_00515190
 // Address: 00515190
@@ -257,7 +257,7 @@ void __cdecl CLodMesh::importFromFile(CLodMesh *this_ptr,char *filename);
 
 // Original: shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
 // Address: 0051aa60
-void __cdecl CLodMesh::parseS3DFile(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::parseS3DFile(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_importFromFileAlt_FUN_0051ad60
 // Address: 0051ad60
@@ -265,7 +265,7 @@ void __cdecl CLodMesh::importFromFileAlt(CLodMesh *this_ptr,char *filename);
 
 // Original: shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
 // Address: 0051adf0
-void __cdecl CLodMesh::parseS3DFileVariant(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::parseS3DFileVariant(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080
 // Address: 0051b080
@@ -301,7 +301,7 @@ int __cdecl CLodMesh::loadPrecomputedLodData(CLodMesh *this_ptr);
 
 // Original: shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
 // Address: 0051b770
-FILE * __cdecl CLodMesh::openPrecomputeFile(CLodMesh *this_ptr,char *mode);
+_FILE * __cdecl CLodMesh::openPrecomputeFile(CLodMesh *this_ptr,char *mode);
 
 // Original: shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 // Address: 0051b870
@@ -309,7 +309,7 @@ void __cdecl CLodMesh::closePrecomputeFile(CLodMesh *this_ptr);
 
 // Original: shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0
 // Address: 0051b8a0
-int __cdecl CLodMesh::initializeLodGeneration(CLodMesh *this_ptr,FILE *file_handle);
+int __cdecl CLodMesh::initializeLodGeneration(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
 // Address: 0051b920
@@ -333,7 +333,7 @@ void __cdecl CLodMesh::exportToFile(CLodMesh *this_ptr,char *filename);
 
 // Original: shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
 // Address: 0051c100
-int __cdecl CLodMesh::exportToS3D(CLodMesh *this_ptr,FILE *file_ptr);
+int __cdecl CLodMesh::exportToS3D(CLodMesh *this_ptr,_FILE *file_ptr);
 
 // Original: shape_meshlod.cpp_crc32UpdateByte_FUN_0051c270
 // Address: 0051c270
@@ -361,27 +361,27 @@ void __cdecl CLodMesh::computeMeshCRC32(CLodMesh *this_ptr,uint *out_crc);
 
 // Original: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
 // Address: 0051cdf0
-void __cdecl CLodMesh::eqLoad(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::eqLoad(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
 // Address: 0051d0e0
-void __cdecl CLodMesh::eqSave(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::eqSave(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
 // Address: 0051d180
-void __cdecl CLodMesh::loadReplayData(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::loadReplayData(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
 // Address: 0051d250
-void __cdecl CLodMesh::saveReplayData(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::saveReplayData(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
 // Address: 0051d2d0
-void __cdecl CLodMesh::gridLoad(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::gridLoad(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
 // Address: 0051d420
-void __cdecl CLodMesh::gridSave(CLodMesh *this_ptr,FILE *file_handle);
+void __cdecl CLodMesh::gridSave(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0
 // Address: 0051d4a0

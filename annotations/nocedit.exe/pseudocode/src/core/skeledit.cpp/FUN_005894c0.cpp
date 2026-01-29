@@ -10,16 +10,16 @@ void core_skeledit_cpp_FUN_005894c0(void)
 
 {
   int iVar1;
-  FILE *in_stack_00000004;
+  _FILE *in_stack_00000004;
   int in_stack_00000008;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
+  __STK(0x10);
   do {
     if (in_stack_00000008 < 1) {
       return;
     }
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000004);
+      iVar1 = _fgetc(in_stack_00000004);
       if (iVar1 < 0) {
         return;
       }

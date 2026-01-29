@@ -38,7 +38,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x58]      ; 00481922
     PUSH EDX                            ; 00481926
     CALL crt_io.c_stat_thunk_00600c18   ; 00481927
-        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_stat_thunk_00600c18(char * filename, stat * file_info)
+        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_stat_thunk_00600c18(char * filename, _stat * file_info)
     ADD ESP,0x8                         ; 0048192c
     TEST EAX,EAX                        ; 0048192f
     JNZ 0x0048193b                      ; 00481931

@@ -2,12 +2,12 @@
 // Address: 005ffcb3
 // Address Range: [[005ffcb3, 005ffd74]]
 // Convention: __cdecl
-// Signature: FILE * __cdecl crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T count)
+// Signature: _FILE * __cdecl crt_stdio_c_stream_write_internal_FUN_005ffcb3(_FILE *stream,void *buffer,SIZE_T count)
 
 #include "nocturne.h"
 
-FILE * __cdecl
-crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T count)
+_FILE * __cdecl
+stream_write_internal(_FILE *stream,void *buffer,SIZE_T count)
 
 {
   int iVar1;
@@ -21,7 +21,7 @@ crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T 
   if ((*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) &&
      (((*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0 &&
        ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) == 0)) ||
-      (BVar2 = crt_stdio_c_prepare_stream_for_write_FUN_00606055(stream), BVar2 != 0)))) {
+      (BVar2 = prepare_stream_for_write(stream), BVar2 != 0)))) {
     if (count != 0) {
       iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));
       if ((int)count < *(int *)(iVar1 + 0x1c) - (int)*(uint **)(iVar1 + 0x20)) {
@@ -43,12 +43,12 @@ crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T 
         SVar3 = (**(code **)(*(int *)(iVar1 + 0x28) + 4))();
       }
       if (SVar3 != count) {
-        crt_stdio_c_reportStreamError_FUN_00606020
+        reportStreamError
                   ((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);
       }
     }
     if ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x2000) != 0) {
-      crt_stdio_c_stream_flush_FUN_006060bb(stream);
+      stream_flush(stream);
     }
   }
   return stream;

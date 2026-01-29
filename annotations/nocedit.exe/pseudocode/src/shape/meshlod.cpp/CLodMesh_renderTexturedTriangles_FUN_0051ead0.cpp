@@ -63,8 +63,8 @@ shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
           pfVar3 = local_14;
           fVar2 = local_2c[0] * 65535.0f;
           pfVar7 = pfVar7 + 2;
-          dVar9 = crt_math_c_round_FUN_005fe6b0((double)(local_30 * 65535.0f));
-          dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+          dVar9 = round((double)(local_30 * 65535.0f));
+          dVar10 = round((double)fVar2);
           local_30 = (float)(int)ROUND(dVar10);
           *(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);
           pfVar6 = pfVar6 + 1;

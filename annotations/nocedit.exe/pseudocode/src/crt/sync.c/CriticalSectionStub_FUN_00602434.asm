@@ -12,8 +12,8 @@
 ;   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0 at 00601cef
 ;   crt_heap.c_heapCheck_FUN_00601374 at 00601391
 ;   crt_io.c_IsSpecialDevice_FUN_0060c270 at 0060c2cf
+;   crt_io.c_chsize_FUN_00600cf0 at 00600d2c
 ;   crt_io.c_close_handle_safe_FUN_0060c2e0 at 0060c305
-;   crt_io.c_ftruncate_FUN_00600cf0 at 00600d2c
 ;   crt_io.c_invalidate_handle_FUN_00608af4 at 00608b18
 ;   ... and 37 more
 ;

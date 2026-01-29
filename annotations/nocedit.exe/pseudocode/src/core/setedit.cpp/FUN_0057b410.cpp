@@ -21,7 +21,7 @@ void core_setedit_cpp_FUN_0057b410(void)
     return;
   }
   this_ptr = in_stack_00000004->lights + in_stack_00000004->light_count;
-  crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x1898);
+  memset(this_ptr,0,0x1898);
   core_setutil_cpp_C3DSLight_reset_FUN_005879b0(this_ptr);
   this_ptr->light_type = 0;
   in_stack_00000004->light_count = in_stack_00000004->light_count + 1;

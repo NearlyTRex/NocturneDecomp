@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_loadGunFlameTextures_FUN_004c4d50(void)
   buffer = g_GunFlameTextures[0].texture_name;
   do {
     texture = g_GunFlameTextures + iVar1;
-    crt_stdio_c_sprintf_FUN_005fdbd0(buffer,"fr46%03d.raw",iVar2);
+    sprintf(buffer,"fr46%03d.raw",iVar2);
     iVar2 = iVar2 + 1;
     buffer = buffer + 0x18;
     iVar1 = iVar1 + 1;

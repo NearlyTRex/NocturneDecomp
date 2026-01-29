@@ -11,8 +11,7 @@ CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041dc50(CBox *this_ptr)
 {
   void *pvVar1;
   
-  pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->scrape_points,8,&g_SScrapeTypeInfo);
+  pvVar1 = __arrinit(this_ptr->scrape_points,8,&g_SScrapeTypeInfo);
   *(uint *)((int)pvVar1 + -0xac) = 0;
   *(float *)((int)pvVar1 + -0xb0) = *(float *)((int)pvVar1 + -0xac);
   (((CBox *)((int)pvVar1 + -0xb4))->position).x = *(float *)((int)pvVar1 + -0xac);

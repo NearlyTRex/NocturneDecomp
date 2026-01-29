@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl tm * __cdecl crt_time_c_localtime_r_FUN_00600230(time_t *timer,tm *result)
+; __cdecl _tm * __cdecl crt_time_c_localtime_r_FUN_00600230(time_t *timer,_tm *result)
 ;
 ; Parameters:
 ; time_t *         Stack[0x4]:4   timer
-; tm *             Stack[0x8]:4   result
+; _tm *            Stack[0x8]:4   result
 ;
 ; XREF[1]:
 ;   crt_time.c_localtime_FUN_00600288 at 00600297
@@ -41,7 +41,7 @@ section .text
     ADD ESP,0x10                        ; 00600254
     PUSH EBX                            ; 00600257
     CALL crt_time.c_determine_dst_status_FUN_006079b4 ; 00600258
-        ;   XREF to: 006079b4 (UNCONDITIONAL_CALL)  ; int crt_time.c_determine_dst_status_FUN_006079b4(tm * timeptr)
+        ;   XREF to: 006079b4 (UNCONDITIONAL_CALL)  ; int crt_time.c_determine_dst_status_FUN_006079b4(_tm * timeptr)
     ADD ESP,0x4                         ; 0060025d
     TEST EAX,EAX                        ; 00600260
     JZ 0x00600281                       ; 00600262

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(FILE *stream)
+; __watcallStack int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(_FILE *stream)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   stream
+; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[1]:
 ;   crt_string.c_mbstrncpy_core_FUN_0060b670 at 0060b6dd
@@ -24,7 +24,7 @@ section .text
     PUSH 0x1                            ; 0060d516
     PUSH EBX                            ; 0060d518
     CALL crt_stdio.c_stream_valid_FUN_00608cd1 ; 0060d519
-        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(FILE * stream, int operation_type)
+        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(_FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 0060d51e
     TEST EAX,EAX                        ; 0060d521
     JZ 0x0060d56c                       ; 0060d523

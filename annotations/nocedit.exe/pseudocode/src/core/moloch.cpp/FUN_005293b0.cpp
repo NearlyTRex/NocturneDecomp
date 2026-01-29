@@ -39,7 +39,7 @@ void core_moloch_cpp_FUN_005293b0(void)
   local_20 = 0.25;
   local_24 = 0.7853982;
   pCVar2 = g_HeroActors[g_LocalHeroIndex];
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004[1].base.actor_name + 8,0,0x2c);
+  memset(in_stack_00000004[1].base.actor_name + 8,0,0x2c);
   iVar6 = g_LocalHeroIndex;
   if ((*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) != 0) &&
      (*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) == 1)) {

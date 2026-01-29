@@ -56,7 +56,7 @@ section .text
     PUSH 0x0                            ; 004bcd06
     PUSH 0x629262                       ; 004bcd08 | = "pod.ini"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004bcd0d
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004bcd12
     TEST EAX,EAX                        ; 004bcd15
     JNZ 0x004bce5a                      ; 004bcd17
@@ -175,7 +175,7 @@ section .text
     PUSH EAX                            ; 004bce64
     MOV EBX,0x1                         ; 004bce65
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004bce6a
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004bce6f
     MOV EAX,EBX                         ; 004bce72
     ADD ESP,0x4cc                       ; 004bce74

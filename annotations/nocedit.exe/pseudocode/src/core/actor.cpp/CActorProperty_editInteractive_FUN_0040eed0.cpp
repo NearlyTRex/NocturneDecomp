@@ -84,7 +84,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     return 0;
   }
   pcVar6 = this_ptr->name;
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_2a0,"Enter %s for %s",pcVar6,actor);
+  sprintf(local_2a0,"Enter %s for %s",pcVar6,actor);
   switch(this_ptr->type) {
   case 0:
     local_2c = *(int *)this_ptr->data_ptr;
@@ -196,7 +196,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     }
     break;
   case 6:
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor,(int)this_ptr->data_ptr + 0x78);
     pcVar6 = local_854;
     pcVar11 = (char *)((int)this_ptr->data_ptr + 0x78);
@@ -230,7 +230,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                   ((CStrList *)&stack0xffffc814,(int)local_18ac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   ((CStrList *)&stack0xffffc814,(int)local_eac,pcVar6,1);
-        crt_file_c_makepath_FUN_005febfc(local_854,(char *)0x0,(char *)0x0,local_18ac,local_eac);
+        makepath(local_854,(char *)0x0,(char *)0x0,local_18ac,local_eac);
       }
       else {
         local_854[0] = '\0';
@@ -246,7 +246,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
     return 1;
   case 7:
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor,(int)this_ptr->data_ptr + 0x2260)
     ;
     pcVar6 = local_548;
@@ -281,7 +281,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                   (&local_2cf4.base,(int)local_12ac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   (&local_2cf4.base,(int)local_1aac,pcVar6,1);
-        crt_file_c_makepath_FUN_005febfc(local_548,(char *)0x0,(char *)0x0,local_12ac,local_1aac);
+        makepath(local_548,(char *)0x0,(char *)0x0,local_12ac,local_1aac);
       }
       else {
         local_548[0] = '\0';
@@ -356,7 +356,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                   (&local_309c.base,(int)local_cac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   (&local_309c.base,(int)local_10ac,pcVar6,1);
-        crt_file_c_makepath_FUN_005febfc
+        makepath
                   ((char *)local_750,(char *)0x0,(char *)0x0,local_cac,local_10ac);
       }
       else {
@@ -467,7 +467,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pSVar14 = local_18->motions;
       local_24 = local_18;
       do {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_980,"%s\t%s",pSVar14,local_1c + local_24->motions[0].state_index);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_21fc,local_980);
         pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr->data_ptr)
@@ -502,13 +502,13 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               ((CStrList *)local_294c,"models","*.cth");
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)local_294c);
     if (this_ptr->min_or_index < *(int *)this_ptr->data_ptr) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_2a0,"Select %s for actor %s.  Current is %s.",pcVar6,actor,
                  (int *)((int)this_ptr->data_ptr + (this_ptr->min_or_index * 10 + 1) * 4));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_294c,"(remove cloth)");
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_2a0,"Add %s for actor %s.",pcVar6,actor);
+      sprintf(local_2a0,"Add %s for actor %s.",pcVar6,actor);
     }
     pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                ((CPickList *)local_294c,local_2a0,-1,0);
@@ -522,7 +522,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               ((CStrList *)local_294c,(int)local_16ac,pcVar6,0);
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
               ((CStrList *)local_294c,(int)local_14ac,pcVar6,1);
-    crt_file_c_makepath_FUN_005febfc(local_64c,(char *)0x0,(char *)0x0,local_16ac,local_14ac);
+    makepath(local_64c,(char *)0x0,(char *)0x0,local_16ac,local_14ac);
     pCVar15 = this_ptr->data_ptr;
     if (this_ptr->min_or_index < pCVar15->unk) {
       if (pcVar6 == (char *)(local_294c._0_4_ + -1)) {
@@ -587,7 +587,7 @@ LAB_00410163:
     piVar4 = this_ptr->data_ptr;
     iVar12 = this_ptr->min_or_index;
     if (iVar12 < *piVar4) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_444,"%s => %s",piVar4 + iVar12 * 0x19 + 1,piVar4 + iVar12 * 0x19 + 0x7e);
     }
     else {
@@ -613,7 +613,7 @@ LAB_0040fdd3:
         }
         return 1;
       }
-      pcVar6 = crt_string_c_strstr_FUN_005fedd0(local_444,"=>");
+      pcVar6 = strstr(local_444,"=>");
       if (pcVar6 == (char *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Please input rule as \"<condition> => <event>\"");
@@ -651,7 +651,7 @@ LAB_0040fdd3:
         (acStack_1d9 + 1)[SVar8] = '\0';
         local_14 = acStack_1d9 + 2;
         while ((g_CharacterClassificationTable[(byte)(acStack_1d9[1] + 1)] & 2U) != 0) {
-          crt_string_c_memmove_FUN_005fe5e0(acStack_1d9 + 1,local_14,SVar8);
+          memmove(acStack_1d9 + 1,local_14,SVar8);
           SVar8 = SVar8 - 1;
         }
         pcVar11 = local_175 + 1;
@@ -684,7 +684,7 @@ LAB_0040fdd3:
         }
         (local_175 + 1)[SVar8] = '\0';
         while ((g_CharacterClassificationTable[(byte)(local_175[1] + 1)] & 2U) != 0) {
-          crt_string_c_memmove_FUN_005fe5e0(local_175 + 1,local_175 + 2,SVar8);
+          memmove(local_175 + 1,local_175 + 2,SVar8);
           SVar8 = SVar8 - 1;
         }
         pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
@@ -729,7 +729,7 @@ LAB_0040fdd3:
         if ((*(uint *)this_ptr->data_ptr & *(uint *)((int)&0x00000001 + iVar19)) != 0) {
           pcVar6 = "enable";
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_368,"%s\t%s",*(uint *)((int)&PTR_s_thrust_0066e310 + iVar19),
                    pcVar6);
         iVar19 = iVar19 + 8;

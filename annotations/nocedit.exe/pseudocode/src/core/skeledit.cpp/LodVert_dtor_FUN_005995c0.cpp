@@ -10,6 +10,6 @@ CLodVert * __cdecl
 core_skeledit_cpp_LodVert_dtor_FUN_005995c0(CLodVert *this_ptr,CLodVert *other,CLodVert *other2)
 
 {
-  crt_stack_c_stack_probe_FUN_005ff9f3(4);
+  __STK(4);
   return this_ptr;
 }

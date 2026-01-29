@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float crt_math_c_doubleToFloat_FUN_0060b26c(double val)
+float doubleToFloat(double val)
 
 {
   uint uVar1;

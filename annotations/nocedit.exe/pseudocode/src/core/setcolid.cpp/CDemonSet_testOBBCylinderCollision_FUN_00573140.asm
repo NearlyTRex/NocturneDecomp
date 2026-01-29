@@ -45,7 +45,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 00573163
     LEA EBX,[ESP + 0xc]                 ; 00573164
     XOR ESI,ESI                         ; 00573168
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0057316a
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0057316a
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0057316f
     PUSH ESI                            ; 00573172
         ;   Label: LAB_00573172

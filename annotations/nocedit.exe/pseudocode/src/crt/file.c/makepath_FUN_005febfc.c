@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_file_c_makepath_FUN_005febfc
+makepath
           (char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 
 {
@@ -55,18 +55,18 @@ crt_file_c_makepath_FUN_005febfc
   if ((directory != (char *)0x0) && (*directory != '\0')) {
     do {
       pwVar8 = (wchar_t *)&local_18;
-      wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(directory);
-      wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,pwVar8);
-      crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar2,path_buffer);
-      iVar3 = crt_locale_c_mblen_FUN_00605a40(path_buffer);
+      wVar2 = mbtowc_peek(directory);
+      wVar2 = normalize_path_separator(wVar2,pwVar8);
+      wchar_to_bytes(wVar2,path_buffer);
+      iVar3 = mblen(path_buffer);
       ((byte *)path_buffer)[iVar3] = 0;
-      path_buffer = crt_string_c_mbtowc_next_FUN_00605a70(path_buffer);
-      directory = crt_string_c_mbtowc_next_FUN_00605a70(directory);
+      path_buffer = mbtowc_next(path_buffer);
+      directory = mbtowc_next(directory);
     } while (*directory != '\0');
     if (local_18 == 0) {
       local_18 = 0x5c;
     }
-    pbVar4 = (byte *)crt_string_c_mb_get_last_char_FUN_00605aa0(local_14,path_buffer);
+    pbVar4 = (byte *)mb_get_last_char(local_14,path_buffer);
     if (*pbVar4 == local_18) {
       path_buffer = (char *)((byte *)path_buffer + -1);
     }
@@ -83,19 +83,19 @@ crt_file_c_makepath_FUN_005febfc
     }
   }
   else {
-    wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(filename);
-    wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,(wchar_t *)&local_18);
+    wVar2 = mbtowc_peek(filename);
+    wVar2 = normalize_path_separator(wVar2,(wchar_t *)&local_18);
     if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {
       path_buffer = (char *)((byte *)path_buffer + 1);
     }
-    for (; *filename != '\0'; filename = crt_string_c_mbtowc_next_FUN_00605a70(filename)) {
+    for (; *filename != '\0'; filename = mbtowc_next(filename)) {
       pwVar8 = (wchar_t *)&local_18;
-      wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(filename);
-      wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,pwVar8);
-      crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar2,path_buffer);
-      iVar3 = crt_locale_c_mblen_FUN_00605a40(path_buffer);
+      wVar2 = mbtowc_peek(filename);
+      wVar2 = normalize_path_separator(wVar2,pwVar8);
+      wchar_to_bytes(wVar2,path_buffer);
+      iVar3 = mblen(path_buffer);
       ((byte *)path_buffer)[iVar3] = 0;
-      path_buffer = crt_string_c_mbtowc_next_FUN_00605a70(path_buffer);
+      path_buffer = mbtowc_next(path_buffer);
     }
   }
   if ((extension != (char *)0x0) && (*extension != '\0')) {

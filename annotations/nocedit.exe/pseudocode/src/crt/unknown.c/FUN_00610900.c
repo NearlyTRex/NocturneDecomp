@@ -21,11 +21,11 @@ void crt_unknown_c_FUN_00610900(void)
       ppcVar3 = ppcVar3 + 1;
       if (pcVar1 == (char *)0x0) break;
       iVar2 = crt_unknown_c_FUN_0060fa90();
-      ptr = crt_memory_c_malloc_FUN_00601bb0((iVar2 + 1) * 2);
+      ptr = malloc((iVar2 + 1) * 2);
       if (ptr != (void *)0x0) {
         iVar2 = crt_unknown_c_FUN_0060fac0();
         if (iVar2 == -1) {
-          crt_memory_c_free_FUN_00601cd0(ptr);
+          free(ptr);
         }
         else {
           crt_unknown_c_FUN_0060fcf4();

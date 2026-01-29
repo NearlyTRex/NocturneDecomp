@@ -22,7 +22,7 @@ int core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
   if (0 < *(int *)(in_stack_00000004 + 0x19a2c)) {
     str2 = (char *)(in_stack_00000004 + 0x19a34);
     do {
-      iVar1 = crt_string_c_strcmp_FUN_005fef20
+      iVar1 = strcmp
                         ((g_MasterLightList[in_stack_00000008]->base).camera_name,str2);
       if (iVar1 == 0) {
         return iVar2;

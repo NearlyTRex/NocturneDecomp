@@ -30,7 +30,7 @@ void shape_design_c_deleteSinglePolygon_FUN_0045dcc0(void)
     cVar1 = *pcVar4;
     pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  if (((iVar2 != -2) && (local_14 = crt_stdlib_c_atoi_FUN_005ffef0(local_6c), -1 < local_14)) &&
+  if (((iVar2 != -2) && (local_14 = atoi(local_6c), -1 < local_14)) &&
      (iVar2 = local_14, local_14 < g_PolygonCount)) {
     while (local_1c = iVar2, local_1c < g_PolygonCount + -1) {
       pSVar3 = g_ModelPolygonData + local_1c + 1;

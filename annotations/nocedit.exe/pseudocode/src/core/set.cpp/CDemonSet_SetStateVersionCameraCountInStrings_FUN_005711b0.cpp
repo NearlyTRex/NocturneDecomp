@@ -12,18 +12,18 @@ core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSe
 {
   int iVar1;
   CDemonSet *pCVar2;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// Set state version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"1\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// Camera count, enabled list\n");
+  _fprintf(in_stack_00000008,"// Set state version\n");
+  _fprintf(in_stack_00000008,"1\n");
+  _fprintf(in_stack_00000008,"// Camera count, enabled list\n");
   iVar1 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n",this_ptr->camera_count);
+  _fprintf(in_stack_00000008,"%d\n",this_ptr->camera_count);
   pCVar2 = this_ptr;
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n",pCVar2->cameras[0].unk4);
+      _fprintf(in_stack_00000008,"%d\n",pCVar2->cameras[0].unk4);
       pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
     } while (iVar1 < this_ptr->camera_count);
   }

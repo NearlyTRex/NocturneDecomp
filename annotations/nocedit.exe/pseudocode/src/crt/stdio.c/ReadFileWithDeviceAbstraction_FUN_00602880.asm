@@ -22,7 +22,7 @@
 ;   SPECIAL_DEVICE_READ_FUNC* g_SpecialDeviceReadFuncPtr = 00000000
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;   ReadFile
@@ -102,8 +102,8 @@ section .text
     PUSH EBX                            ; 0060291d
     CALL dword ptr [0x00684eec]         ; 0060291e | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 00602924
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00602927
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00602927
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     ADD ESP,0x4                         ; 0060292c
     POP EBP                             ; 0060292f
     POP EDI                             ; 00602930

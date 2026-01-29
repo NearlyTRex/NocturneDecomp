@@ -14,7 +14,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(char 
   CSfxSample *sfx_sample;
   CMP3Decoder *this_ptr;
   CMP3Decoder *pCVar3;
-  FILE *pFVar4;
+  _FILE *p_Var4;
   long lVar5;
   int iVar6;
   double dVar7;
@@ -44,9 +44,9 @@ LAB_005a5242:
   }
   engine_dosio_c_splitPath_FUN_00481f20
             (in_stack_00000008,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
-  iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_114,"mp3");
+  iVar6 = stricmp(local_114,"mp3");
   if ((iVar6 == 0) ||
-     (iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_114,".mp3"), iVar6 == 0)) {
+     (iVar6 = stricmp(local_114,".mp3"), iVar6 == 0)) {
     iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",in_stack_00000008);
     if (iVar6 < 1) goto LAB_005a5505;
     this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\sndmain.cpp",0x3c5);
@@ -87,16 +87,16 @@ LAB_005a5242:
     sfx_sample->stream_read_position = 0;
     sfx_sample->stream_write_position = 0;
     pCVar8 = (CSfxSample *)0x5a53d2;
-    dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+    dVar7 = round((double)fVar2);
     sfx_sample->streaming_buffer_size = (int)ROUND(dVar7);
     sfx_sample->streaming_slot_index = (int)filename;
     iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar8);
   }
   else {
-    pFVar4 = engine_dosio_c_getFile_FUN_00481a50("sound",in_stack_00000008,"rb");
-    sfx_sample->file_handle = pFVar4;
+    p_Var4 = engine_dosio_c_getFile_FUN_00481a50("sound",in_stack_00000008,"rb");
+    sfx_sample->file_handle = p_Var4;
     pCVar8 = sfx_sample;
-    if (pFVar4 == (FILE *)0x0) goto LAB_005a5505;
+    if (p_Var4 == (_FILE *)0x0) goto LAB_005a5505;
     do {
       cVar1 = *in_stack_00000008;
       (pCVar8->sample_info).name[0] = cVar1;
@@ -106,7 +106,7 @@ LAB_005a5242:
       (pCVar8->sample_info).name[1] = cVar1;
       pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);
     } while (cVar1 != '\0');
-    lVar5 = crt_stdio_c_ftell_FUN_00601560(sfx_sample->file_handle);
+    lVar5 = _ftell(sfx_sample->file_handle);
     sfx_sample->file_offset = lVar5;
     iVar6 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
                       (sfx_sample->file_handle,&sfx_sample->file_offset,sfx_sample);
@@ -120,7 +120,7 @@ LAB_005a5242:
     sfx_sample->stream_read_position = 0;
     sfx_sample->stream_write_position = 0;
     pCVar8 = (CSfxSample *)0x5a54e9;
-    dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+    dVar7 = round((double)fVar2);
     sfx_sample->streaming_buffer_size = (int)ROUND(dVar7);
     sfx_sample->streaming_slot_index = (int)filename;
     iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar8);

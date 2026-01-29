@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffer,int width)
+void __cdecl FormatHexWithPadding(int value,char *buffer,int width)
 
 {
   char *pcVar1;
@@ -18,7 +18,7 @@ void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffe
   byte bVar7;
   
   bVar7 = 0;
-  crt_stdio_c_IntegerToString_FUN_00607d18(value,buffer,0x10);
+  IntegerToString(value,buffer,0x10);
   uVar4 = 0xffffffff;
   pcVar5 = buffer;
   do {

@@ -58,7 +58,7 @@ uint shape_superopt_cpp_FUN_005c91e0(void)
       if (iVar5 == 0) {
         return 0;
       }
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (dest,(void *)(iVar4 * 0x60 + (int)dest),
                  (*in_stack_0000000c - (uVar8 + iVar4)) * 0x60);
       *in_stack_0000000c = *in_stack_0000000c - iVar4;

@@ -33,18 +33,18 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
   local_3c = 0.0;
   local_34 = 0.0;
   local_2c = 0.0;
-  dVar1 = crt_math_c_floor_FUN_005feb90(coord_y1);
-  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  dVar1 = floor(coord_y1);
+  dVar1 = round(dVar1);
   local_24 = (int)ROUND(dVar1);
-  dVar1 = crt_math_c_ceil_FUN_006001b2(coord_y2);
-  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  dVar1 = ceil(coord_y2);
+  dVar1 = round(dVar1);
   local_20 = (int)ROUND(dVar1);
-  dVar1 = crt_math_c_floor_FUN_005feb90(coord_x1);
-  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  dVar1 = floor(coord_x1);
+  dVar1 = round(dVar1);
   local_1c = (int)ROUND(dVar1);
-  dVar1 = crt_math_c_ceil_FUN_006001b2(coord_x2);
+  dVar1 = ceil(coord_x2);
   uVar3 = 0x46aef7;
-  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  dVar1 = round(dVar1);
   local_18 = (int)ROUND(dVar1);
   for (local_14 = local_24; local_14 < local_20; local_14 = local_14 + 1) {
     dVar1 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
@@ -70,13 +70,13 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
     local_3c = local_3c / local_2c;
     local_34 = local_34 / local_2c;
   }
-  dVar1 = crt_math_c_round_FUN_005fe6b0(local_4c + 0.5);
+  dVar1 = round(local_4c + 0.5);
   *(int *)atlas_width = (int)ROUND(dVar1);
-  dVar1 = crt_math_c_round_FUN_005fe6b0(local_44 + 0.5);
+  dVar1 = round(local_44 + 0.5);
   *(int *)atlas_height = (int)ROUND(dVar1);
-  dVar1 = crt_math_c_round_FUN_005fe6b0(local_3c + 0.5);
+  dVar1 = round(local_3c + 0.5);
   *(int *)red_out = (int)ROUND(dVar1);
-  dVar1 = crt_math_c_round_FUN_005fe6b0(local_34 + 0.5);
+  dVar1 = round(local_34 + 0.5);
   *(int *)green_out = (int)ROUND(dVar1);
   return;
 }

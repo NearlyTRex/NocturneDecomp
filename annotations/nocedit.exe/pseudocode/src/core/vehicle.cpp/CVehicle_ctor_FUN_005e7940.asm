@@ -28,7 +28,7 @@
 ;   core_course.cpp_CCourse_ctor_FUN_004424c0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -52,15 +52,15 @@ section .text
     PUSH 0x4                            ; 005e7963
     ADD EAX,0x17c                       ; 005e7965
     PUSH EAX                            ; 005e796a
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005e796b
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005e796b
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005e7970
     PUSH 0x665150                       ; 005e7973 | g_CTireTypeInfo
     PUSH 0x4                            ; 005e7978
     ADD EAX,0x668                       ; 005e797a
     PUSH EAX                            ; 005e797f
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005e7980
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005e7980
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005e7985
     ADD EAX,0x6e4                       ; 005e7988
     PUSH EAX                            ; 005e798d

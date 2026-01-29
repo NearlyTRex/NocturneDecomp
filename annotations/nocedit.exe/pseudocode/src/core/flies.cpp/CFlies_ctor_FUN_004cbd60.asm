@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH 0xc8                           ; 004cbd75
     ADD EAX,0x168                       ; 004cbd7a
     PUSH EAX                            ; 004cbd7f
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004cbd80
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004cbd80
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffe98]          ; 004cbd85
     MOV ECX,0x40a00000                  ; 004cbd8b
     MOV dword ptr [EDX + 0x154],0x65e524 ; 004cbd90 | g_CFliesVTable

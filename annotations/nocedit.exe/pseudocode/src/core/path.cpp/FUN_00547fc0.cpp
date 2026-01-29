@@ -106,34 +106,34 @@ void core_path_cpp_FUN_00547fc0(void)
         local_40 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
         local_3c = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
         local_38 = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
-        crt_math_c_round_FUN_005fe6b0
+        round
                   ((double)((float)(int)local_4c *
                            g_CDemonRaytraceInstance.adjusted_size.x * 256.0f));
         fVar5 = fVar5 + fVar6;
         iStack_7c = 0x548213;
-        crt_math_c_round_FUN_005fe6b0((double)fVar7);
+        round((double)fVar7);
         pCVar10 = (CVector3i *)0x548222;
-        dVar8 = crt_math_c_round_FUN_005fe6b0((double)(fVar5 + fVar4));
+        dVar8 = round((double)(fVar5 + fVar4));
         iVar2 = (int)ROUND(dVar8);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&pCVar1->vertex_buffer_ptr->projected_vertex,pCVar10);
         pCVar1 = g_CDemonRendererPtr2;
         local_20 = iStack_7c;
         pCVar10 = (CVector3i *)0x548252;
-        crt_math_c_round_FUN_005fe6b0((double)((float)iStack_7c + local_4c));
+        round((double)((float)iStack_7c + local_4c));
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&pCVar1->vertex_buffer_ptr[1].projected_vertex,pCVar10);
         pCVar1 = g_CDemonRendererPtr2;
         puVar9 = &stack0xffffff80;
         pCVar10 = (CVector3i *)0x548286;
         local_24 = iVar2;
-        dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar2 + local_48));
+        dVar8 = round((double)((float)iVar2 + local_48));
         iStack_7c = (int)ROUND(dVar8);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&pCVar1->vertex_buffer_ptr[2].projected_vertex,pCVar10);
         pCVar1 = g_CDemonRendererPtr2;
         local_28 = puVar9;
-        crt_math_c_round_FUN_005fe6b0((double)((float)(int)puVar9 - local_54));
+        round((double)((float)(int)puVar9 - local_54));
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&pCVar1->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff7c);
         pCVar1 = g_CDemonRendererPtr2;

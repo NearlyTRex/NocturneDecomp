@@ -14,7 +14,7 @@
 ;   WatcomTypeInfo g_CBoundingBox3DTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   crt_memory.c_memset_FUN_005fde40
 ;
 ; *****************************************************************************
@@ -28,15 +28,15 @@ section .text
     PUSH 0x64                           ; 0059a16a
     ADD EBX,0x7c90                      ; 0059a16c
     PUSH EBX                            ; 0059a172
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0059a173
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0059a173
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059a178
     PUSH 0x659900                       ; 0059a17b | g_CBoundingBox3DTypeInfo
     PUSH 0x64                           ; 0059a180
     ADD EAX,0x4bc                       ; 0059a182
     PUSH EAX                            ; 0059a187
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0059a188
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0059a188
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EBX,[EAX + 0xffff7eb4]          ; 0059a18d
     ADD ESP,0xc                         ; 0059a193
     MOV EAX,EBX                         ; 0059a196

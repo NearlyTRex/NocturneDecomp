@@ -30,7 +30,7 @@ core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(CTextureList *
   
   if (this_ptr->master_texture_count == 0) {
     this_ptr->current_master_selection = 0;
-    local_24 = crt_io_c_findFirstFileWrapper_FUN_006021f0("art\\*.raw",&_Stack_1e0);
+    local_24 = _findfirst("art\\*.raw",&_Stack_1e0);
     if (local_24 == (HANDLE)0xffffffff) {
       g_CurrentFilename = "..\\core\\texlist.cpp";
       g_CurrentLineNumber = 0xff;
@@ -66,7 +66,7 @@ core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(CTextureList *
         cVar1 = this_ptr->master_texture_names[this_ptr->master_texture_count][0];
         pacVar3 = this_ptr->master_texture_names + this_ptr->master_texture_count;
         while (cVar1 != '\0') {
-          iVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)(*pacVar3)[0]);
+          iVar2 = toupper((uint)(byte)(*pacVar3)[0]);
           (*pacVar3)[0] = (char)iVar2;
           cVar1 = (*pacVar3)[1];
           pacVar3 = (char (*) [16])(*pacVar3 + 1);
@@ -84,10 +84,10 @@ core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(CTextureList *
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many editable textures!");
         }
       }
-      iVar2 = crt_io_c_findNextFileWrapper_FUN_00602300(local_24,&_Stack_1e0);
+      iVar2 = _findnext(local_24,&_Stack_1e0);
     } while (iVar2 == 0);
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-    crt_io_c_findCloseWrapper_FUN_00602380(local_24);
+    _findclose(local_24);
     local_14 = this_ptr->master_texture_names;
     local_20 = 0;
     for (local_1c = 0; local_1c < this_ptr->master_texture_count + -1; local_1c = local_1c + 1) {
@@ -97,7 +97,7 @@ core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(CTextureList *
         pacVar3 = local_14 + local_28;
         do {
           pcVar9 = *local_14 + local_18;
-          iVar2 = crt_string_c_strcmp_FUN_005fef20(pcVar9,*pacVar3);
+          iVar2 = strcmp(pcVar9,*pacVar3);
           if (0 < iVar2) {
             pcVar8 = local_78;
             pcVar5 = pcVar9;

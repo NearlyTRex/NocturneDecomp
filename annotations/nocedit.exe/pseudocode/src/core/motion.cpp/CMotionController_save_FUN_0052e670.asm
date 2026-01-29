@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ;
@@ -64,7 +64,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0052e6c1
     PUSH ECX                            ; 0052e6c4
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0052e6c5
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 0052e6ca
     POP EBP                             ; 0052e6cd
     POP EDI                             ; 0052e6ce
@@ -82,7 +82,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0052e6e7
     PUSH ECX                            ; 0052e6ea
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0052e6eb
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 0052e6f0
     POP EBP                             ; 0052e6f3
     POP EDI                             ; 0052e6f4

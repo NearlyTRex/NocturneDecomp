@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-LPCRITICAL_SECTION __cdecl crt_sync_c_allocate_critical_section_FUN_00609f24(void)
+LPCRITICAL_SECTION __cdecl allocate_critical_section(void)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
@@ -16,15 +16,15 @@ LPCRITICAL_SECTION __cdecl crt_sync_c_allocate_critical_section_FUN_00609f24(voi
     g_StaticCriticalSectionCounter = g_StaticCriticalSectionCounter + 1;
   }
   else {
-    lpCriticalSection = crt_memory_c_calloc_FUN_0060ca90(1,SYSTEM_CRITICAL_SECTION_SIZE);
+    lpCriticalSection = calloc(1,SYSTEM_CRITICAL_SECTION_SIZE);
     if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
-      crt_startup_c_HandleRuntimeError_FUN_00606660("Unable to allocate semaphore data\r\n",1);
+      HandleRuntimeError("Unable to allocate semaphore data\r\n",1);
     }
     g_DynamicCriticalSectionArray =
-         crt_memory_c_realloc_FUN_00601df0
+         realloc
                    (g_DynamicCriticalSectionArray,(g_DynamicCriticalSectionCounter + 1) * 4);
     if (g_DynamicCriticalSectionArray == (LPCRITICAL_SECTION *)0x0) {
-      crt_startup_c_HandleRuntimeError_FUN_00606660("Unable to allocate semaphore data\r\n",1);
+      HandleRuntimeError("Unable to allocate semaphore data\r\n",1);
     }
     g_DynamicCriticalSectionArray[g_DynamicCriticalSectionCounter] = lpCriticalSection;
     g_DynamicCriticalSectionCounter = g_DynamicCriticalSectionCounter + 1;

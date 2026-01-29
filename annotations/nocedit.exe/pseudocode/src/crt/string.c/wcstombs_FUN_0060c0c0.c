@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_string_c_wcstombs_FUN_0060c0c0(char *dest,wchar_t *src,SIZE_T dest_size)
+int __cdecl wcstombs(char *dest,wchar_t *src,SIZE_T dest_size)
 
 {
   uint uVar1;
@@ -22,7 +22,7 @@ int __cdecl crt_string_c_wcstombs_FUN_0060c0c0(char *dest,wchar_t *src,SIZE_T de
   iVar4 = 0;
   if (dest == (char *)0x0) {
     while ((iVar2 = iVar4, *src != L'\0' &&
-           (iVar2 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
+           (iVar2 = WideCharToSingleByte
                               ((wchar_t)local_14,(char *)(uint)(ushort)*src), iVar2 != -1))) {
       src = src + 1;
       iVar4 = iVar4 + iVar2;
@@ -34,7 +34,7 @@ int __cdecl crt_string_c_wcstombs_FUN_0060c0c0(char *dest,wchar_t *src,SIZE_T de
         *dest = '\0';
         return iVar4;
       }
-      uVar1 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
+      uVar1 = WideCharToSingleByte
                         ((wchar_t)local_14,(char *)(uint)(ushort)*src);
       if (uVar1 == 0xffffffff) {
         return -1;

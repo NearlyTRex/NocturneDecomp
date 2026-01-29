@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 27,
-        "line": 16,
+        "line": 15,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -19,23 +19,23 @@
       {
         "category": "other",
         "column": 10,
-        "line": 16,
+        "line": 15,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 22,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 18
+    "total_lines": 17
   },
   "cross_references": [],
   "function": {
@@ -54,7 +54,7 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     }
   ],
   "globals": [
@@ -113,7 +113,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 9,
+      "line": 8,
       "match": "(SClothVertex *)((int)",
       "text": "return (SClothVertex *)((int)pvVar1 + -0xec);",
       "type": "pointer_cast"

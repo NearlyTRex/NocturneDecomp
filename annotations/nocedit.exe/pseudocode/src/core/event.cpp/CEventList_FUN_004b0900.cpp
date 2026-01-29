@@ -18,7 +18,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004b0900(CEventList *this_ptr)
   if (0 < this_ptr->timer_count) {
     str1 = &this_ptr->timer_list;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,in_stack_00000008);
+      iVar1 = stricmp((char *)str1,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }

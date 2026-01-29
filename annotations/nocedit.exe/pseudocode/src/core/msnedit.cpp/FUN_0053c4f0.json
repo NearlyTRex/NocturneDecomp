@@ -54,9 +54,9 @@
       },
       {
         "category": "other",
-        "column": 26,
+        "column": 38,
         "line": 58,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
       }
     ]
   },
@@ -131,7 +131,7 @@
     {
       "addr": "005ff060",
       "is_variadic": false,
-      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+      "name": "crt_stdlib.c__atexit_FUN_005ff060"
     },
     {
       "addr": "00402ee0",
@@ -441,7 +441,7 @@
       "description": "Undefined global data reference",
       "line": 22,
       "match": "DAT_0068064c",
-      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0068064c);",
+      "text": "_atexit(&DAT_0068064c);",
       "type": "undefined_data"
     },
     {

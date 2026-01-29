@@ -8,25 +8,18 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 15,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 150,
+    "complexity_score": 135,
     "cross_reference_count": 25,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 10,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
-      "format_string_mismatch",
       "param_count_too_few",
       "unaffected_reg",
       "unnamed_param"
@@ -195,7 +188,7 @@
     ],
     "convention": "unknown",
     "name": "core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260",
-    "signature": "void core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,FILE *param_6)"
+    "signature": "void core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,_FILE *param_6)"
   },
   "function_calls": [
     {
@@ -211,7 +204,7 @@
     {
       "addr": "005ff9f3",
       "is_variadic": false,
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe6d0",
@@ -416,35 +409,35 @@
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_5",
-      "text": "CDeformableModelInstance *param_5,FILE *param_6)",
+      "text": "CDeformableModelInstance *param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_6",
-      "text": "CDeformableModelInstance *param_5,FILE *param_6)",
+      "text": "CDeformableModelInstance *param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_EBX",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
+      "text": "_fprintf(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 8,
       "match": "param_6",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
+      "text": "_fprintf(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 8,
       "match": "param_5",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
+      "text": "_fprintf(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
@@ -464,17 +457,6 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"MODELS\\\\%s\\n\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "MODELS\\\\%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 8,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_skipLines_FUN_00459360(FILE *file,int line_count)
+; __cdecl void __cdecl shape_design_c_skipLines_FUN_00459360(_FILE *file,int line_count)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ; int              Stack[0x8]:4   line_count
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -34,7 +34,7 @@ section .text
         ;   Label: LAB_00459372
     PUSH EAX                            ; 00459375
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00459376
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0045937b
     MOV dword ptr [EBP + -0x4],EAX      ; 0045937e
     CMP dword ptr [EBP + -0x4],0x0      ; 00459381

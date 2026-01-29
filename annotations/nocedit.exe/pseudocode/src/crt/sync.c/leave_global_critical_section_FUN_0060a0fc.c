@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_sync_c_leave_global_critical_section_FUN_0060a0fc(void)
+void __cdecl leave_global_critical_section(void)
 
 {
-  crt_sync_c_leave_reentrant_critical_section_FUN_0060a0c4(&g_GlobalSystemCriticalSection);
+  leave_reentrant_critical_section(&g_GlobalSystemCriticalSection);
   return;
 }

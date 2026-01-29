@@ -23,13 +23,13 @@ int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
   }
   else {
     if (cp == 0xfffffffd) {
-      crt_memory_c_memset_FUN_005fde40(&DAT_03f9c030,0,0x101);
+      memset(&DAT_03f9c030,0,0x101);
       g_CodePage = 0;
       g_MultibyteLocaleActive = 0;
       return 0;
     }
     if (cp == 0xfffffffc) {
-      crt_memory_c_memset_FUN_005fde40(&DAT_03f9c030,0,0x101);
+      memset(&DAT_03f9c030,0,0x101);
       iVar4 = 0x81;
       do {
         iVar1 = iVar4 + 1;
@@ -54,7 +54,7 @@ int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
   if (BVar2 == 0) {
     return 1;
   }
-  crt_memory_c_memset_FUN_005fde40(&DAT_03f9c030,0,0x101);
+  memset(&DAT_03f9c030,0,0x101);
   g_MultibyteLocaleActive = (int)(_Stack_20.LeadByte[0] != '\0');
   for (iVar4 = 0; (_Stack_20.LeadByte[iVar4] != '\0' || (_Stack_20.LeadByte[iVar4 + 1] != '\0'));
       iVar4 = iVar4 + 2) {

@@ -16,7 +16,7 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
   DDPIXELFORMAT_union4 DVar5;
   DDSURFACEDESC local_70;
   
-  crt_memory_c_memset_FUN_005fde40(&local_70,0,0x6c);
+  memset(&local_70,0,0x6c);
   local_70.dwSize = 0x6c;
   HVar1 = (*g_SoftwareRenderSurface->vtable->Lock)
                     (g_SoftwareRenderSurface,(RECT *)0x0,&local_70,1,(void *)0x0);

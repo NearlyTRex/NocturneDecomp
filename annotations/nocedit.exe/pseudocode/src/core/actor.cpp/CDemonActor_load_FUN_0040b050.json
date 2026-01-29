@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 69,
+        "column": 45,
         "line": 26,
         "message": "'stack0xffffff24' was not declared in this scope"
       }
@@ -26,12 +26,6 @@
         "category": "other",
         "column": 50,
         "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 55,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -62,12 +56,12 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 182,
+    "complexity_score": 172,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 13,
     "pseudocode_lines": 62,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "format_string_mismatch",
       "stack_param",
@@ -112,7 +106,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_load_FUN_0040b050",
-    "signature": "void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -188,7 +182,7 @@
     {
       "addr": "00822034",
       "name": "g_ActorDataFile",
-      "type": "FILE*",
+      "type": "_FILE*",
       "value": null
     },
     {
@@ -290,7 +284,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -299,35 +293,35 @@
       "description": "Unaffected register variable",
       "line": 9,
       "match": "unaff_EBP",
-      "text": "FILE *unaff_EBP;",
+      "text": "_FILE *unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
+      "text": "_FILE *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 19,
       "match": "&stack0xffffff24",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff24,local_78);",
+      "text": "_fscanf(file_handle,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff24,local_78);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 20,
       "match": "&stack0xffffff24",
-      "text": "iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,&stack0xffffff24);",
+      "text": "iVar2 = stricmp(str1,&stack0xffffff24);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,\" } %s \\\"%[^\\\"]\\\"\\n\",acStack_d8);",
+      "text": "_fscanf(in_stack_0000000c,\" } %s \\\"%[^\\\"]\\\"\\n\",acStack_d8);",
       "type": "stack_param"
     },
     {
@@ -343,17 +337,6 @@
       "match": "unaff_EBP",
       "text": "g_ActorDataFile = unaff_EBP;",
       "type": "unaffected_reg"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \" { %s \\\"%[^\\\"]\\\"\\n\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": " { %s \\\"%[^\\\"]\\\"\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 19,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff24,local_78);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
     },
     {
       "actual_args": 1,

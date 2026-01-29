@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fputs_FUN_0060ebb0(char *str,FILE *file)
+; __cdecl int __cdecl crt_stdio_c_fputs_FUN_0060ebb0(char *str,_FILE *file)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str
-; FILE *           Stack[0x8]:4   file
+; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[1]:
 ;   crt_math.c_print_error_message_FUN_0060e298 at 0060e2c2
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 0060ebdf (CONDITIONAL_JUMP)  ; LAB_0060ebdf
     PUSH ESI                            ; 0060ebd6
     CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 0060ebd7
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
     ADD ESP,0x4                         ; 0060ebdc
     MOV AH,byte ptr [ESI + 0xd]         ; 0060ebdf
         ;   Label: LAB_0060ebdf
@@ -71,7 +71,7 @@ section .text
     PUSH EAX                            ; 0060ec0c
     INC EBX                             ; 0060ec0d
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0060ec0e
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 0060ec13
     CMP EAX,-0x1                        ; 0060ec16
     JNZ 0x0060ec03                      ; 0060ec19
@@ -92,7 +92,7 @@ section .text
         ;   XREF to: 0060ec41 (CONDITIONAL_JUMP)  ; LAB_0060ec41
     PUSH ESI                            ; 0060ec36
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 0060ec37
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0060ec3c
     MOV EDI,EAX                         ; 0060ec3f
     TEST EDI,EDI                        ; 0060ec41

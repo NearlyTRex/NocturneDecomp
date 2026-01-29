@@ -50,7 +50,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
     iVar3 = iVar2 + -4;
     iVar2 = iVar2 + 0x24;
     polygon_info = (SMRGLHeaderPrimitive *)0x47174d;
-    crt_math_c_round_FUN_005fe6b0
+    round
               ((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *
                        this_ptr->radius));
     engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(pCVar1,polygon_info);

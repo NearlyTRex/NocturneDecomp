@@ -19,8 +19,8 @@ core_werewolf_cpp_CWerewolf_dtor_FUN_005f2220
   uint unaff_retaddr;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CWerewolfTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CWerewolfTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720

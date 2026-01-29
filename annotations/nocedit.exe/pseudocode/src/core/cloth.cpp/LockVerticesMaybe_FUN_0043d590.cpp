@@ -197,7 +197,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
         if ((int)(pSVar2[iVar8].projected_vertex.screen_x & -0x80000000) == 0) {
           iVar5 = pSVar2[iVar8].projected_vertex.screen_x;
           local_40 = pSVar2[iVar8].projected_vertex.screen_y >> 0x10;
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_6c,"%d",iVar7);
+          sprintf(local_6c,"%d",iVar7);
           engine_2d_c_drawText_FUN_00401fd0(local_6c,iVar5 >> 0x10,local_40);
         }
         iVar7 = iVar7 + 1;

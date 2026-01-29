@@ -27,12 +27,12 @@ sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevi
   }
   local_18 = (IDirectSoundBuffer *)0x0;
   local_14 = 0;
-  crt_memory_c_memset_FUN_005fde40(local_2c,0,0x12);
+  memset(local_2c,0,0x12);
   local_2c._0_4_ = (int *)0x10001;
   local_2c._4_4_ = 0x5622;
   puStack_20 = (uint *)0x100002;
   local_2c._8_4_ = (int *)0xac44;
-  crt_memory_c_memset_FUN_005fde40(&DStack_40,0,0x14);
+  memset(&DStack_40,0,0x14);
   DStack_40.dwSize = 0x14;
   DStack_40.dwFlags = 0x12;
   DStack_40.lpwfxFormat = (LPWAVEFORMATEX)local_2c;
@@ -60,7 +60,7 @@ sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevi
   }
   else {
     pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (acStack_1d0,"DirectSux: Unable to %s.  (%s)","Create temp secondary buffer for property set creation",
                pcVar1);
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1d0);

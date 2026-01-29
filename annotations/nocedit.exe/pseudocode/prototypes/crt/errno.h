@@ -3,9 +3,9 @@
 // Function prototypes for crt/errno.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_errno.c_errno_FUN_00601450
+// Original: crt_errno.c__errno_FUN_00601450
 // Address: 00601450
-int * errno(void);
+int * ::errno(void);
 
 // Original: crt_errno.c_setErrno_FUN_00602790
 // Address: 00602790
@@ -19,6 +19,6 @@ void __cdecl SetWindowsError(DWORD windows_error_code);
 // Address: 00608390
 int __cdecl convertWindowsErrorToErrno(DWORD windows_error);
 
-// Original: crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+// Original: crt_errno.c___set_errno_FUN_006083fc
 // Address: 006083fc
-DWORD __cdecl getLastErrorAndSetErrno(void);
+DWORD __cdecl ::_set_errno(void);

@@ -1,0 +1,167 @@
+{
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 63,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
+    "suspect_types": [
+      "param_count_too_few",
+      "special_crt_function",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [
+    {
+      "addr": "00601232",
+      "from_addr": "0060124f",
+      "name": "crt_memory.c___vec_new__FUN_00601232",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00601258",
+      "from_addr": "00601268",
+      "name": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00601200",
+    "address_range": [
+      [
+        "00601200",
+        "00601231"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c___arrinit_dispatch_FUN_00601200",
+    "signature": "void * __cdecl crt_memory_c___arrinit_dispatch_FUN_00601200 (void *array_ptr,int element_count,WatcomTypeInfo *type_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00608dc8",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit__FUN_00608dc8"
+    },
+    {
+      "addr": "005fe667",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00601268",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0060124f",
+        "call_type": "direct",
+        "caller": "crt_memory.c___vec_new__FUN_00601232",
+        "estimated_params": 3,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 17,
+      "INT_ADD": 5,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 72
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "array_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "element_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "type_info",
+        "offset": 12,
+        "size": 4,
+        "type": "WatcomTypeInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "text": "code *pcVar1;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:4",
+      "param_delta": 1,
+      "text": "Function declares 3 params but call sites push 4 (1 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "address": "00601200",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_memory.c___arrinit_dispatch_FUN_00601200",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00601200",
+      "type": "special_crt_function"
+    }
+  ]
+}

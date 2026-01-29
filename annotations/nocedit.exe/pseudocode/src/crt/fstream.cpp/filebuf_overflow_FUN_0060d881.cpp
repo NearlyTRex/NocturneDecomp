@@ -39,7 +39,7 @@ int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_p
     pcVar4 = (this_ptr->_streambuf).__reserve_base;
     if (pcVar4 == (char *)0x0) {
       if (character != -1) {
-        iVar3 = crt_io_c_write_FUN_006084ec
+        iVar3 = write
                           (this_ptr->__file_handle,&stack0xffffffec,character & 0xff);
         return (iVar3 == 1) - 1;
       }
@@ -52,8 +52,8 @@ int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_p
   (this_ptr->_streambuf).__put_end = (this_ptr->_streambuf).__reserve_end;
 LAB_0060d930:
   if (((this_ptr->__file_mode & 8) == 0) ||
-     ((unaff_EDI = crt_io_c_tell_FUN_00606720(this_ptr->__file_handle), -1 < unaff_EDI &&
-      (iVar3 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,0,2), -1 < iVar3)))) {
+     ((unaff_EDI = tell(this_ptr->__file_handle), -1 < unaff_EDI &&
+      (iVar3 = lseek(this_ptr->__file_handle,0,2), -1 < iVar3)))) {
     if ((character != -1) &&
        (pcVar4 = (this_ptr->_streambuf).__put_ptr, pcVar4 < (this_ptr->_streambuf).__put_end)) {
       *pcVar4 = (char)character;
@@ -66,7 +66,7 @@ LAB_0060d930:
       if (0x7fffffff < n) {
         count = 0x7fffffff;
       }
-      iVar3 = crt_io_c_write_FUN_006084ec
+      iVar3 = write
                         (this_ptr->__file_handle,(this_ptr->_streambuf).__put_base,count);
       if (iVar3 == -1) {
         return -1;
@@ -79,7 +79,7 @@ LAB_0060d930:
       }
       else {
         pcVar4 = (this_ptr->_streambuf).__put_base;
-        crt_string_c_memmove_FUN_005fe5e0(pcVar4,pcVar4 + iVar3,n);
+        memmove(pcVar4,pcVar4 + iVar3,n);
         (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_base;
         (this_ptr->_streambuf).__put_end = (this_ptr->_streambuf).__put_end;
         (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_ptr + n;
@@ -95,7 +95,7 @@ LAB_0060d930:
       *ppcVar1 = *ppcVar1 + 1;
     }
     if ((((this_ptr->__file_mode & 8) == 0) ||
-        (iVar3 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))
+        (iVar3 = lseek(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))
        && (n == 0)) {
       return 0;
     }

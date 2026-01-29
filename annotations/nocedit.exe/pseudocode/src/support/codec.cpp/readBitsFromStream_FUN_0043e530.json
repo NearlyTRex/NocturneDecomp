@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 45,
+        "message": "'fgetc_outptr' was not declared in this scope"
+      },
+      {
         "category": "other",
         "column": 23,
         "line": 46,
@@ -12,6 +18,12 @@
         "column": 21,
         "line": 59,
         "message": "request for member '_0_1_' in 'bit_count', which is of non-class type 'int'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 69,
+        "message": "'fgetc_outptr' was not declared in this scope"
       },
       {
         "category": "other",
@@ -74,7 +86,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_readBitsFromStream_FUN_0043e530",
-    "signature": "int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,FILE *file_stream,int *bytes_remaining)"
+    "signature": "int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)"
   },
   "function_calls": [
     {
@@ -157,7 +169,7 @@
         "name": "file_stream",
         "offset": 12,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,

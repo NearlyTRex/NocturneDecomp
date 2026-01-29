@@ -91,9 +91,8 @@ shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh *this_p
       iVar3 = 0;
       if ((g_TempFacesInitGuard & 1) == 0) {
         g_TempFacesInitGuard = g_TempFacesInitGuard | 1;
-        crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                  (g_TempNeighborFaces,200,&g_LodFaceTypeInfo);
-        crt_stdlib_c_atexit_FUN_005ff060(&g_TempNeighborFacesDestructorNode);
+        __arrinit(g_TempNeighborFaces,200,&g_LodFaceTypeInfo);
+        _atexit(&g_TempNeighborFacesDestructorNode);
       }
       g_LodGenerationStamp = g_LodGenerationStamp + 1;
       g_LodTempFaceStamp = g_LodTempFaceStamp + 1;

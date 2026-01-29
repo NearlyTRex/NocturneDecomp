@@ -51,7 +51,7 @@ core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
   bVar10 = 0;
   local_40 = 0x80;
   local_3c = 0;
-  iVar1 = crt_string_c_strcmp_FUN_005fef20(light_source->filter_name,"movscrn.raw");
+  iVar1 = strcmp(light_source->filter_name,"movscrn.raw");
   if (iVar1 == 0) {
     local_3c = 1;
     local_40 = 0x100;

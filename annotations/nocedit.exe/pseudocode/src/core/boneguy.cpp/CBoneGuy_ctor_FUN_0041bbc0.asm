@@ -33,7 +33,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   crt_memory.c_memset_FUN_005fde40
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x14                           ; 0041bbd8
     ADD EAX,0xbf3c                      ; 0041bbda
     PUSH EAX                            ; 0041bbdf
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041bbe0
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0041bbe0
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041bbe5
     LEA EBX,[EAX + 0xffff40c4]          ; 0041bbe8
     PUSH 0x615f7d                       ; 0041bbee | = "boneguy.dfm"

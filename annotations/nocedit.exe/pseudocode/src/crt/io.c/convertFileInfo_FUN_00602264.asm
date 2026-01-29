@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,find_t *dos_info)
+; __watcallStack void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info)
 ;
 ; Parameters:
 ; LPWIN32_FIND_DATAA Stack[0x4]:4   win32_data
-; find_t *         Stack[0x8]:4   dos_info
+; _find_t *        Stack[0x8]:4   dos_info
 ;
 ; XREF[2]:
-;   crt_io.c_findFirstFileWrapper_FUN_006021f0 at 0060224f
-;   crt_io.c_findNextFileWrapper_FUN_00602300 at 00602366
+;   crt_io.c__findfirst_FUN_006021f0 at 0060224f
+;   crt_io.c__findnext_FUN_00602300 at 00602366
 ;
 ; Called Functions:
 ;   crt_time.c_filetime_to_time_t_FUN_00609da0

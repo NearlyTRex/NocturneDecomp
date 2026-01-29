@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50 at 00494ffc
@@ -31,7 +31,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00457441
     PUSH EAX                            ; 00457444
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00457445
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045744a
     PUSH EBP                            ; 0045744d
     PUSH 0xc                            ; 0045744e
@@ -39,7 +39,7 @@ section .text
     LEA EAX,[EBX + 0x14]                ; 00457452
     PUSH EAX                            ; 00457455
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00457456
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045745b
     PUSH EBP                            ; 0045745e
     PUSH 0x4                            ; 0045745f
@@ -47,7 +47,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00457463
     PUSH EAX                            ; 00457466
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00457467
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045746c
     PUSH EBP                            ; 0045746f
     PUSH 0x4                            ; 00457470
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 00457477
     XOR ESI,ESI                         ; 00457478
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0045747a
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EDX,dword ptr [EBX + 0x20]      ; 0045747f
     ADD ESP,0x10                        ; 00457482
     TEST EDX,EDX                        ; 00457485
@@ -73,7 +73,7 @@ section .text
     INC ESI                             ; 00457496
     ADD EDI,0xc                         ; 00457497
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0045749a
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV ECX,dword ptr [EBX + 0x20]      ; 0045749f
     ADD ESP,0x10                        ; 004574a2
     CMP ESI,ECX                         ; 004574a5
@@ -97,7 +97,7 @@ section .text
     PUSH EAX                            ; 004574c5
     INC ESI                             ; 004574c6
     CALL core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250 ; 004574c7
-        ;   XREF to: 00455250 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250(CDemonCubeTriangle * this_ptr, FILE * file_handle, CVector3f * vertex_buffer_base)
+        ;   XREF to: 00455250 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250(CDemonCubeTriangle * this_ptr, _FILE * file_handle, CVector3f * vertex_buffer_base)
     ADD EDI,0x20                        ; 004574cc
     MOV EDX,dword ptr [EBX + 0x28]      ; 004574cf
     ADD ESP,0xc                         ; 004574d2
@@ -126,7 +126,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x30]      ; 004574f6
     PUSH EDI                            ; 004574f9
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 004574fa
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004574ff
     CMP dword ptr [EBX + 0x28],0x0      ; 00457502
     JNZ 0x0045750d                      ; 00457506
@@ -143,7 +143,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 00457512
     PUSH EDX                            ; 00457514
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00457515
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045751a
     POP EBP                             ; 0045751d
     POP EDI                             ; 0045751e

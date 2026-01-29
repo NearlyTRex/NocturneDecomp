@@ -48,14 +48,14 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
       pbVar15 = pbVar15 + 4;
     } while (iVar14 < iVar11);
   }
-  dVar16 = crt_math_c_round_FUN_005fe6b0
+  dVar16 = round
                      ((double)(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
   this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar16);
   local_58 = 0.0;
-  dVar16 = crt_math_c_round_FUN_005fe6b0
+  dVar16 = round
                      ((double)(local_34 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
   this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar16);
-  dVar16 = crt_math_c_round_FUN_005fe6b0
+  dVar16 = round
                      ((double)(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
   this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar16);
   uVar12 = this_ptr->boxes[box_index].pixel_count;
@@ -64,7 +64,7 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   this_ptr->boxes[box_index].blue_variance = 0.0;
   this_ptr->boxes[box_index].intensity_variance = 0.0;
   this_ptr->boxes[box_index].weighted_variance = 0.0;
-  dVar16 = crt_math_c_round_FUN_005fe6b0((double)(local_44 / (float)uVar12));
+  dVar16 = round((double)(local_44 / (float)uVar12));
   this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar16);
   for (iVar14 = this_ptr->boxes[box_index].start_index * 4; iVar14 < iVar11 * 4; iVar14 = iVar14 + 4
       ) {

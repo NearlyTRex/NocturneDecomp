@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 44,
+        "column": 48,
         "line": 137,
         "message": "invalid conversion from 'void*' to 'uint*' {aka 'unsigned int*'} [-fpermissive]"
       },
@@ -1094,19 +1094,19 @@
   },
   "function_calls": [
     {
+      "addr": "005fe5e0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    },
+    {
       "addr": "005fe659",
       "is_variadic": false,
-      "name": "crt_memory.c_free_FUN_005fe659"
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
     },
     {
       "addr": "006021da",
       "is_variadic": false,
-      "name": "crt_memory.c_malloc_FUN_006021da"
-    },
-    {
-      "addr": "005fe5e0",
-      "is_variadic": false,
-      "name": "crt_string.c_memmove_FUN_005fe5e0"
+      "name": "shape_memdbg.cpp_malloc_FUN_006021da"
     },
     {
       "addr": "005c7910",
@@ -1809,7 +1809,7 @@
       "description": "Unresolved stack parameter",
       "line": 130,
       "match": "in_stack_0000000c",
-      "text": "puVar9 = crt_memory_c_malloc_FUN_006021da(*in_stack_0000000c << 2);",
+      "text": "puVar9 = shape_memdbg_cpp_malloc_FUN_006021da(*in_stack_0000000c << 2);",
       "type": "stack_param"
     },
     {

@@ -21,7 +21,7 @@
 ;   TerminatedCString s_ART_s_ACT_0064a26d
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
 
     PUSH 0x3c                           ; 0058a2b0
         ;   Label: core_skeledit.cpp_FUN_0058a2b0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058a2b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a2b5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058a2ba
     PUSH ESI                            ; 0058a2bb
     PUSH EDI                            ; 0058a2bc
@@ -44,7 +44,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x3c]      ; 0058a2d1
     PUSH EDX                            ; 0058a2d5
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058a2d6
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0058a2db
     MOV EBX,dword ptr [ESP + 0x30]      ; 0058a2de
     XOR ECX,ECX                         ; 0058a2e2
@@ -116,7 +116,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3c]      ; 0058a364
     PUSH ECX                            ; 0058a368
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058a369
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0058a36e
     MOV ESI,ESP                         ; 0058a371
     PUSH ESI                            ; 0058a373
@@ -124,7 +124,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0058a379
     PUSH ESI                            ; 0058a37d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058a37e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0058a383
     MOV ESI,dword ptr [ESP + 0x30]      ; 0058a386
     INC EBP                             ; 0058a38a

@@ -12,7 +12,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
   char cVar1;
   uint uVar2;
   int iVar3;
-  FILE *file_handle;
+  _FILE *file_handle;
   long lVar4;
   int iVar5;
   char (*pacVar6) [256];
@@ -34,25 +34,25 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
   if ((iVar3 < 1) ||
      (file_handle = engine_dosio_c_getFile_FUN_00481a50
                               (&s_empty_0063e149,message_file,"rt"),
-     file_handle == (FILE *)0x0)) {
+     file_handle == (_FILE *)0x0)) {
     return;
   }
-  lVar4 = crt_stdio_c_ftell_FUN_00601560(file_handle);
+  lVar4 = _ftell(file_handle);
   local_18 = iVar3 + lVar4;
-  crt_stdio_c_fgets_FUN_005fefd0(local_31c,0xff,file_handle);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_1c);
-  crt_stdio_c_fgets_FUN_005fefd0(local_31c,0xff,file_handle);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&g_MessageCount);
+  _fgets(local_31c,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&local_1c);
+  _fgets(local_31c,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&g_MessageCount);
   if (local_1c != 0) {
     g_CurrentFilename = "..\\support\\newmsg.cpp";
     g_CurrentLineNumber = 0x54;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown message file version");
   }
-  crt_stdio_c_fgets_FUN_005fefd0(local_31c,0xff,file_handle);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"\"%[^\"]\"\n",g_OSFontName);
+  _fgets(local_31c,0xff,file_handle);
+  _fscanf(file_handle,"\"%[^\"]\"\n",g_OSFontName);
   do {
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle," ");
-    lVar4 = crt_stdio_c_ftell_FUN_00601560(file_handle);
+    _fscanf(file_handle," ");
+    lVar4 = _ftell(file_handle);
     if (local_18 <= lVar4) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\support\\newmsg.cpp",0x72);
       if (0 < g_LocalizedStringCount) {
@@ -74,7 +74,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
         if (iVar11 < g_LocalizedStringCount) {
           iVar8 = iVar11 * 4;
           do {
-            iVar5 = crt_string_c_strcmp_FUN_005fef20
+            iVar5 = strcmp
                               (*(char **)((int)g_MessageKeys + iVar7),
                                *(char **)((int)g_MessageKeys + iVar8));
             if (0 < iVar5) {
@@ -96,7 +96,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
       g_LocalizationLoaded = 1;
       return;
     }
-    iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
+    iVar3 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
     if (iVar3 != 2) {
       g_CurrentFilename = "..\\support\\newmsg.cpp";
       g_CurrentLineNumber = 0x65;

@@ -8,8 +8,8 @@
 // DOS - System Header
 // =============================================================================
 
-// Structure: find_t
-typedef struct find_t {
+// Structure: _find_t
+typedef struct _find_t {
     uchar attrib;
     uchar padding_0x1[3];
     time_t wr_time;
@@ -17,5 +17,5 @@ typedef struct find_t {
     time_t ac_time;
     long size;
     char name[260];
-} find_t;
+} _find_t;
 

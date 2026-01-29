@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void)
+void __cdecl CompactHeapBlocks(void)
 
 {
   HeapBlock *pHVar1;
@@ -17,7 +17,7 @@ void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void)
   while (block = pHVar1, block != (HeapBlock *)0x0) {
     pHVar1 = block->next;
     if (block->size - 0x2c == **(int **)(block->free_list_area + 4)) {
-      crt_heap_c_UnlinkAndFreeBlock_FUN_0060c9bc(block);
+      UnlinkAndFreeBlock(block);
     }
   }
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();

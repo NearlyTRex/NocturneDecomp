@@ -2,11 +2,11 @@
 // Address: 0051d2d0
 // Address Range: [[0051d2d0, 0051d419]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr,FILE *file_handle)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr,FILE *file_handle)
+void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr,_FILE *file_handle)
 
 {
   SSpatialGrid *pSVar1;
@@ -24,7 +24,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
     g_CurrentLineNumber = 0x1470;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_14);
+  _fscanf(file_handle,"%d\n",&local_14);
   if (local_14 != 0x10) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0x1474;
@@ -34,7 +34,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
   do {
     iVar5 = (int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar4;
     iVar4 = iVar4 + 4;
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",iVar5);
+    _fscanf(file_handle,"%d\n",iVar5);
   } while (iVar4 != 0x4004);
   piVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_data,this_ptr->spatial_grid_ptr->triangle_count << 2,
@@ -49,7 +49,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
   for (iVar5 = 0; iVar5 < this_ptr->spatial_grid_ptr->triangle_count; iVar5 = iVar5 + 1) {
     iVar3 = (int)this_ptr->spatial_grid_data + iVar4;
     iVar4 = iVar4 + 4;
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",iVar3);
+    _fscanf(file_handle,"%d\n",iVar3);
   }
   return;
 }

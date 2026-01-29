@@ -39,7 +39,7 @@ void core_larva_cpp_FUN_00503a20(void)
       else {
         pcVar3 = "sml";
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"l%s-shot?.wav",pcVar3);
+      sprintf(local_84,"l%s-shot?.wav",pcVar3);
       iVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,local_84);
       in_stack_00000004[0x8d].unk14 = iVar4;
     }
@@ -67,7 +67,7 @@ void core_larva_cpp_FUN_00503a20(void)
     else {
       pcVar3 = "sml";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_e8,"l%s-die?.wav",pcVar3);
+    sprintf(local_e8,"l%s-die?.wav",pcVar3);
     iVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,local_e8);
     in_stack_00000004[0x8d].unk14 = iVar4;
   }

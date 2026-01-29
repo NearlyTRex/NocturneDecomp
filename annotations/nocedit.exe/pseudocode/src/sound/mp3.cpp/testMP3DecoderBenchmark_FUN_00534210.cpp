@@ -16,16 +16,16 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   int iVar2;
   int local_38;
   int local_34;
-  FILE *local_30;
+  _FILE *local_30;
   CMP3Decoder *local_2c;
-  FILE *local_28;
+  _FILE *local_28;
   CMP3Decoder *local_24;
   int local_20;
   SIZE_T local_1c;
   int local_18;
   int local_14;
   
-  crt_io_c_deleteFile_FUN_005ff9d0("test.raw");
+  remove("test.raw");
   local_20 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Write file?");
   pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
@@ -46,7 +46,7 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("pixies.raw",(char *)0x0,"wb","..\\sound\\mp3.cpp",
                         0xdd2);
-  if (local_28 == (FILE *)0x0) {
+  if (local_28 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 0xdd3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Hose!");
@@ -54,18 +54,18 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   local_30 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("pixies2.raw",(char *)0x0,"wb","..\\sound\\mp3.cpp",
                         0xdd4);
-  if (local_30 == (FILE *)0x0) {
+  if (local_30 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 0xdd5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Hose!");
   }
   iVar2 = 0;
-  crt_time_c_time_with_rounding_FUN_006001f0(&local_38);
+  time(&local_38);
   do {
     size = sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60
                      (local_24,(short *)g_MpegPCMDecodeTestBuffer,samples_requested);
     if (local_20 != 0) {
-      crt_stdio_c_fwrite_FUN_005fdc00(g_MpegPCMDecodeTestBuffer,size,local_1c,local_28);
+      _fwrite(g_MpegPCMDecodeTestBuffer,size,local_1c,local_28);
     }
     iVar2 = iVar2 + local_1c * size;
     if (local_20 != 0) {
@@ -86,7 +86,7 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
     pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_2c);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   }
-  crt_time_c_time_with_rounding_FUN_006001f0(&local_34);
+  time(&local_34);
   local_14 = local_34 - local_38;
   g_CurrentLineNumber = 0xdf1;
   g_CurrentFilename = "..\\sound\\mp3.cpp";

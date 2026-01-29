@@ -57,7 +57,7 @@ LAB_004d21b9:
     core_main_c_displayErrorAndQuit_FUN_00506f10("WTF!");
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004[1].location.position.z);
+  dVar6 = round((double)in_stack_00000004[1].location.position.z);
   frame_index = (int)ROUND(dVar6);
   iVar1 = *(int *)(in_stack_00000004[3].create_event + 8);
   local_18 = frame_index;

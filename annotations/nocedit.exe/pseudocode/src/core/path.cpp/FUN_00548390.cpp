@@ -25,9 +25,8 @@ CPathMap * core_path_cpp_FUN_00548390(void)
   bVar6 = 0;
   if ((DAT_030c3ab0 & 1) == 0) {
     DAT_030c3ab0 = DAT_030c3ab0 | 1;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_02fd9060,0xc,&g_CPathMapTypeInfo)
-    ;
-    crt_stdlib_c_atexit_FUN_005ff060(&DAT_00680bc8);
+    __arrinit(DAT_02fd9060,0xc,&g_CPathMapTypeInfo);
+    _atexit(&DAT_00680bc8);
   }
   if (DAT_00680bd8 < 0) {
     iVar2 = 0;

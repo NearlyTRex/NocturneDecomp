@@ -7,10 +7,14 @@
 // Address: 006008f0
 uint memavl(void);
 
-// Original: crt_watcom.c_memmax_FUN_00600940
+// Original: crt_watcom.c__memmax_FUN_00600940
 // Address: 00600940
-uint memmax(void);
+uint ::memmax(void);
 
-// Original: crt_watcom.c_heapchk_FUN_00600ad0
+// Original: crt_watcom.c__heapchk_FUN_00600ad0
 // Address: 00600ad0
-int __cdecl heapchk(void);
+int __cdecl ::heapchk(void);
+
+// Original: crt_watcom.c__mkdir_FUN_00600e10
+// Address: 00600e10
+int __cdecl ::mkdir(char *path);

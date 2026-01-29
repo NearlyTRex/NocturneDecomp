@@ -178,7 +178,7 @@ section .text
     PUSH EAX                            ; 00554483
     PUSH 0x640947                       ; 00554484 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00554489
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0055448e
     MOV ESI,EAX                         ; 00554491
     TEST EAX,EAX                        ; 00554493
@@ -199,13 +199,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0x114]     ; 005544c5
     PUSH EDI                            ; 005544cc
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 005544cd
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005544d2
     PUSH 0x66                           ; 005544d5
     PUSH 0x640978                       ; 005544d7 | = "..\\core\\procedur.cpp"
     PUSH ESI                            ; 005544dc
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005544dd
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005544e2
     MOV EBP,dword ptr [ESP + 0x114]     ; 005544e5
     PUSH EBP                            ; 005544ec
@@ -220,7 +220,7 @@ section .text
     PUSH EAX                            ; 00554508
     PUSH 0x64099c                       ; 00554509 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0055450e
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00554513
     MOV ESI,EAX                         ; 00554516
     TEST EAX,EAX                        ; 00554518
@@ -232,17 +232,17 @@ section .text
         ;   Label: LAB_00554522
     PUSH EBX                            ; 00554523
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 00554524
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 00554529
     PUSH ESI                            ; 0055452c
     PUSH EBX                            ; 0055452d
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 0055452e
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 00554533
     PUSH ESI                            ; 00554536
     PUSH EBX                            ; 00554537
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 00554538
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     INC EBX                             ; 0055453d
     ADD ESP,0x8                         ; 0055453e
     CMP EBX,0x100                       ; 00554541
@@ -252,7 +252,7 @@ section .text
     PUSH 0x6409cd                       ; 0055454b | = "..\\core\\procedur.cpp"
     PUSH ESI                            ; 00554550
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00554551
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00554556
     XOR EDI,EDI                         ; 00554559
     MOV EAX,dword ptr [ESP + 0x104]     ; 0055455b

@@ -14,11 +14,11 @@
 ;   WatcomTypeInfo g_CWinFontTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   engine_palette.cpp_CFont_dtor_FUN_00544ec0
 ;   engine_winfont.cpp_CWinFont_reset_FUN_005f2a30
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -51,12 +51,12 @@ section .text
     PUSH 0x665930                       ; 005f23c5 | g_CWinFontTypeInfo
         ;   Label: LAB_005f23c5
     PUSH EBX                            ; 005f23ca
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 005f23cb
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 005f23cb
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005f23d0
     PUSH EAX                            ; 005f23d3
-    CALL crt_memory.c_free_FUN_005fe659 ; 005f23d4
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 005f23d4
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005f23d9
     MOV EAX,EBX                         ; 005f23dc
     POP EBX                             ; 005f23de

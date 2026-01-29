@@ -54,7 +54,7 @@
 ;   crt_file.c_splitpath_s_FUN_00610460
 ;   crt_heap.c_InternalHeapAlloc_FUN_00601bc0
 ;   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
-;   crt_io.c_file_exists_FUN_0060f380
+;   crt_io.c_exists_FUN_0060f380
 ;   crt_memory.c_free_FUN_00601cd0
 ;   crt_memory.c_malloc_FUN_00601bb0
 ;   crt_process.c_build_cmdline_FUN_00610258
@@ -70,8 +70,8 @@ section .text
 
     PUSH 0xe4                           ; 0060f39c
         ;   Label: crt_process.c_spawnvp_FUN_0060f39c
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0060f3a1
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0060f3a1
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0060f3a6
     PUSH ESI                            ; 0060f3a7
     PUSH EDI                            ; 0060f3a8
@@ -382,8 +382,8 @@ section .text
         ;   XREF to: 0060f65c (CONDITIONAL_JUMP)  ; LAB_0060f65c
     PUSH EBX                            ; 0060f644
     MOV EDI,0xffffffff                  ; 0060f645
-    CALL crt_io.c_file_exists_FUN_0060f380 ; 0060f64a
-        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; BOOL crt_io.c_file_exists_FUN_0060f380(char * filename)
+    CALL crt_io.c_exists_FUN_0060f380   ; 0060f64a
+        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; BOOL crt_io.c_exists_FUN_0060f380(char * filename)
     ADD ESP,0x4                         ; 0060f64f
     TEST EAX,EAX                        ; 0060f652
     JNZ 0x0060f79d                      ; 0060f654
@@ -511,8 +511,8 @@ section .text
         ;   XREF to: 00610760 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strcpy_FUN_00610760(char * dest, char * src)
     ADD ESP,0x8                         ; 0060f78d
     PUSH EBX                            ; 0060f790
-    CALL crt_io.c_file_exists_FUN_0060f380 ; 0060f791
-        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; BOOL crt_io.c_file_exists_FUN_0060f380(char * filename)
+    CALL crt_io.c_exists_FUN_0060f380   ; 0060f791
+        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; BOOL crt_io.c_exists_FUN_0060f380(char * filename)
     ADD ESP,0x4                         ; 0060f796
     TEST EAX,EAX                        ; 0060f799
     JZ 0x0060f80e                       ; 0060f79b

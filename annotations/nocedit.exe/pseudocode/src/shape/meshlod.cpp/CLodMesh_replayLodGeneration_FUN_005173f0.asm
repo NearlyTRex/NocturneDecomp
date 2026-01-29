@@ -66,7 +66,7 @@ section .text
     MOVSW ES:EDI,ESI                    ; 00517425 | s_xt_0067d4c0
     MOVSB ES:EDI,ESI                    ; 00517427 | s__0067d4c2
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00517428
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0051742d
     MOV EBP,EAX                         ; 00517430
     TEST EAX,EAX                        ; 00517432
@@ -75,7 +75,7 @@ section .text
     PUSH EAX                            ; 0051743a
     PUSH EBX                            ; 0051743b
     CALL shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180 ; 0051743c
-        ;   XREF to: 0051d180 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180(CLodMesh * this_ptr, FILE * file_handle)
+        ;   XREF to: 0051d180 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00517441
     PUSH 0x6377a7                       ; 00517444 | = "Replaying..."
     MOV EDX,dword ptr [0x00678a60]      ; 00517449 | g_CEditorToolsPtr
@@ -136,13 +136,13 @@ section .text
     PUSH EBP                            ; 005174e8
     PUSH EBX                            ; 005174e9
     CALL shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 ; 005174ea
-        ;   XREF to: 0051cdf0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh * this_ptr, FILE * file_handle)
+        ;   XREF to: 0051cdf0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 005174ef
     PUSH 0x60b                          ; 005174f2
     PUSH 0x6377b4                       ; 005174f7 | = "..\\shape\\meshlod.cpp"
     PUSH EBP                            ; 005174fc
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005174fd
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00517502
     ADD ESP,0x14                        ; 00517505
     POP EBP                             ; 00517508

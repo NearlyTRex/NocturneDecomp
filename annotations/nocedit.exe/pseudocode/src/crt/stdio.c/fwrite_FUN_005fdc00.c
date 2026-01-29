@@ -2,11 +2,11 @@
 // Address: 005fdc00
 // Address Range: [[005fdc00, 005fde38]]
 // Convention: __cdecl
-// Signature: SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,FILE *file)
+// Signature: SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
 
 #include "nocturne.h"
 
-SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,FILE *file)
+SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
 
 {
   byte bVar1;
@@ -26,7 +26,7 @@ SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T coun
   bVar7 = 0;
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   if ((file->_flag & 2) == 0) {
-    crt_errno_c_setErrno_FUN_00602790(4);
+    setErrno(4);
     *(byte *)&file->_flag = (byte)file->_flag | 0x20;
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
     SVar3 = 0;
@@ -38,7 +38,7 @@ SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T coun
       return 0;
     }
     if (file->_link->__reserve_end == (char *)0x0) {
-      crt_stdio_c_InitializeFileBuffer_FUN_006027e0(file);
+      InitializeFileBuffer(file);
     }
     uVar2 = file->_flag;
     bVar1 = (byte)file->_flag;
@@ -57,7 +57,7 @@ SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T coun
       do {
         bVar7 = *(byte *)size;
         size = size + 1;
-        crt_stdio_c_fputc_FUN_006007a0((uint)bVar7,file);
+        _fputc((uint)bVar7,file);
         if ((file->_flag & 0x30) != 0) break;
         iStack_14 = iStack_14 + 1;
       } while (uVar9 - iStack_14 != 0);
@@ -66,7 +66,7 @@ SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T coun
         bVar7 = *(byte *)((int)&file->_flag + 1) & 0xfa;
         *(byte *)((int)&file->_flag + 1) = bVar7;
         *(byte *)((int)&file->_flag + 1) = bVar7 | 4;
-        crt_stdio_c_fflushInternal_FUN_006039d0(file);
+        fflushInternal(file);
       }
     }
     else {
@@ -77,7 +77,7 @@ SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T coun
           if (uVar4 == 0) {
             uVar6 = uVar9;
           }
-          uVar4 = crt_stdio_c_write_FUN_006038c0(file->_handle,(void *)size,uVar6);
+          uVar4 = write(file->_handle,(void *)size,uVar6);
           if (uVar4 != 0xffffffff) {
             if (uVar4 != 0) goto LAB_005fdd50;
             pTVar5 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
@@ -107,7 +107,7 @@ SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T coun
           file->_cnt = file->_cnt + uVar4;
           *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
           if ((file->_cnt == file->_bufsize) || ((file->_flag & 0x400) != 0)) {
-            crt_stdio_c_fflushInternal_FUN_006039d0(file);
+            fflushInternal(file);
           }
         }
 LAB_005fdd50:

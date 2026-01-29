@@ -22,7 +22,7 @@ void core_zombie_cpp_CZombie_FUN_005fc220(void)
   
   if ((0.0 < (float)in_stack_00000008[0xb]) &&
      (in_stack_00000008->_ub == (CDemonActor_vtable *)0xffffffff)) {
-    iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar3 = rand();
     switch(iVar3 % 6) {
     case 0:
       CVar4 = in_stack_00000004[1].base.vtable;

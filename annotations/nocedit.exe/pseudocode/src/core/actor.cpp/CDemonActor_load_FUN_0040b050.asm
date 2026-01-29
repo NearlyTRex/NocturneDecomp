@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined1       Stack[-0xdc]:1  local_dc
 ; undefined1       Stack[-0x78]:1  local_78
@@ -27,7 +27,7 @@
 ;   TerminatedCString s_End_of_actor_file_tag_mi_00613d97
 ;   TerminatedCString s_core_actor_cpp_00613dcd
 ;   TerminatedCString s_IO_Error_after_reading_s_00613ddf
-;   FILE* g_ActorDataFile
+;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;   CDemonActor* g_CurrentActorBeingProcessed
 ;   char* g_CurrentFilename
@@ -67,7 +67,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xf0]      ; 0040b086
     PUSH EDX                            ; 0040b08d
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0040b08e
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b093
     MOV EAX,ESP                         ; 0040b096
     PUSH EAX                            ; 0040b098
@@ -121,7 +121,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xf0]      ; 0040b127
     PUSH EDX                            ; 0040b12e
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0040b12f
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b134
     MOV EAX,ESP                         ; 0040b137
     PUSH EAX                            ; 0040b139

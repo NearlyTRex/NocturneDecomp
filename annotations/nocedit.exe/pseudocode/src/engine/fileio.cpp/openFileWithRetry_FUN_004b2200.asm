@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,char *mode)
+; __cdecl _FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,char *mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
@@ -12,7 +12,7 @@
 ;   TerminatedCString s_engine_fileio_cpp_00626129
 ;
 ; Called Functions:
-;   crt_errno.c_errno_FUN_00601450
+;   crt_errno.c__errno_FUN_00601450
 ;   crt_stdio.c_setvbuf_FUN_00601490
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -35,14 +35,14 @@ section .text
     PUSH 0x0                            ; 004b2219
     PUSH EBP                            ; 004b221b
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b221c
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 004b2221
     ADD ESP,0x14                        ; 004b2223
     TEST EAX,EAX                        ; 004b2226
     JNZ 0x004b224d                      ; 004b2228
         ;   XREF to: 004b224d (CONDITIONAL_JUMP)  ; LAB_004b224d
-    CALL crt_errno.c_errno_FUN_00601450 ; 004b222a
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 004b222a
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
     CMP dword ptr [EAX],0x6             ; 004b222f
     JNZ 0x004b2246                      ; 004b2232
         ;   XREF to: 004b2246 (CONDITIONAL_JUMP)  ; LAB_004b2246
@@ -65,7 +65,7 @@ section .text
     PUSH 0x0                            ; 004b2254
     PUSH EAX                            ; 004b2256
     CALL crt_stdio.c_setvbuf_FUN_00601490 ; 004b2257
-        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
+        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_setvbuf_FUN_00601490(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 004b225c
     MOV EAX,EBX                         ; 004b225f
     POP EBP                             ; 004b2261

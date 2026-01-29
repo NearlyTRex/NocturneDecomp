@@ -11,6 +11,6 @@ int __cdecl core_bodypart_cpp_freeBodyPartModels_FUN_0041b690(SBodyPartModel **o
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(objs,3,&g_SBodyPartModelTypeInfo);
+  iVar1 = __arrfini(objs,3,&g_SBodyPartModelTypeInfo);
   return iVar1;
 }

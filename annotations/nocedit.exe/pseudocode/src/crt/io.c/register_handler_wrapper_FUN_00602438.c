@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)
+int __cdecl register_handler_wrapper(HANDLE file_handle)
 
 {
   int iVar1;
   
-  iVar1 = crt_io_c_register_handle_FUN_00608990(file_handle);
+  iVar1 = register_handle(file_handle);
   return iVar1;
 }

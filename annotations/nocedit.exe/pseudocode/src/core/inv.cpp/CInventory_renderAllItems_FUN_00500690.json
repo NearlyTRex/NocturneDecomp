@@ -90,15 +90,15 @@
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 29,
         "line": 146,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 32,
         "line": 150,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -126,9 +126,9 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 27,
         "line": 167,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects argument of type 'int', but argument 3 has type 'CBitFont*' [-Wformat=]"
       },
       {
         "category": "other",
@@ -144,9 +144,15 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 33,
         "line": 199,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'ulonglong' {aka 'long long unsigned int'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 199,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -180,9 +186,9 @@
       },
       {
         "category": "other",
-        "column": 30,
+        "column": 32,
         "line": 263,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]"
       },
       {
         "category": "other",
@@ -204,9 +210,9 @@
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 29,
         "line": 275,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -228,9 +234,9 @@
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 35,
         "line": 285,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -254,15 +260,14 @@
   },
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 594,
+    "complexity_score": 539,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 53,
     "pseudocode_lines": 379,
-    "suspect_count": 20,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
-      "format_string_mismatch",
       "undefined_data"
     ],
     "total_lines": 1457
@@ -1154,61 +1159,6 @@
       "match": "DAT_02dba070",
       "text": "pcVar6 = DAT_02dba070;",
       "type": "undefined_data"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 139,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_67c,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s %d\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 143,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_67c,\"%s %d\",pcVar6);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"%s\\n\\n%s %s\" has 3 specifiers but 2 arguments after it",
-      "expected_args": 3,
-      "format_string": "%s\\n\\n%s %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 192,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17c,\"%s\\n\\n%s %s\",pcVar6,uVar14);",
-      "text": "Format string expects 3 args but got 2",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 268,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_27c,\"%s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s\\n\\n%s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s\\n\\n%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 278,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_57c,\"%s\\n\\n%s\",pcVar6);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

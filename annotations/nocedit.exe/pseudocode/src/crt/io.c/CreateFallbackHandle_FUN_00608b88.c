@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-HANDLE __cdecl crt_io_c_CreateFallbackHandle_FUN_00608b88(void)
+HANDLE __cdecl CreateFallbackHandle(void)
 
 {
   HANDLE pvVar1;

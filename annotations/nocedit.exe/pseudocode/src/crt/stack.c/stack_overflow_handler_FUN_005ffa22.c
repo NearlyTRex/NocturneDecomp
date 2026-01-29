@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack crt_stack_c_stack_overflow_handler_FUN_005ffa22(SIZE_T required_bytes)
+void __watcallStack stack_overflow_handler(SIZE_T required_bytes)
 
 {
   bool bVar1;
@@ -15,7 +15,7 @@ void __watcallStack crt_stack_c_stack_overflow_handler_FUN_005ffa22(SIZE_T requi
   int iVar4;
   
   iVar4 = 1;
-  crt_startup_c_HandleRuntimeError_FUN_00606660("Stack Overflow!\r\n",1);
+  HandleRuntimeError("Stack Overflow!\r\n",1);
   iVar3 = -4;
   do {
     *(int *)(&stack0xfffffff4 + iVar3) = iVar3;

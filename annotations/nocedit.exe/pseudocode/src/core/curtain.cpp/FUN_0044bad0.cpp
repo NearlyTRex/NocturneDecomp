@@ -13,6 +13,6 @@ void core_curtain_cpp_FUN_0044bad0(void)
 {
   void **in_stack_00000004;
   
-  crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,1000,&g_SCurtainVertexTypeInfo);
+  __arrfini(in_stack_00000004,1000,&g_SCurtainVertexTypeInfo);
   return;
 }

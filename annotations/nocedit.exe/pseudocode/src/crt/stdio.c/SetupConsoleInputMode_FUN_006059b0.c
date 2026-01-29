@@ -6,16 +6,16 @@
 
 #include "nocturne.h"
 
-int crt_stdio_c_SetupConsoleInputMode_FUN_006059b0(void)
+int SetupConsoleInputMode(void)
 
 {
   int iVar1;
   int character;
   
   iVar1 = g_ConsoleInitializationFlag;
-  character = crt_stdio_c_DrainConsoleInputAndSetup_FUN_0060b3f8();
+  character = DrainConsoleInputAndSetup();
   if ((character != -1) && (iVar1 == 0)) {
-    crt_stdio_c_WriteConsoleChar_FUN_0060b490(character);
+    WriteConsoleChar(character);
   }
   return character;
 }

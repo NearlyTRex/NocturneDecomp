@@ -37,10 +37,10 @@ int * engine_colquant_c_FUN_004406c0(void)
   uint local_18;
   
   bVar9 = 0;
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 1,0,0x2000);
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x802,0,0x2000);
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x1002,0,0x4000);
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x2002,0,0x300);
+  memset(in_stack_00000004 + 1,0,0x2000);
+  memset(in_stack_00000004 + 0x802,0,0x2000);
+  memset(in_stack_00000004 + 0x1002,0,0x4000);
+  memset(in_stack_00000004 + 0x2002,0,0x300);
   in_stack_00000004[0x801] = in_stack_00000008;
   *in_stack_00000004 = in_stack_00000010;
   dVar11 = 0.57735027000000005;
@@ -54,7 +54,7 @@ int * engine_colquant_c_FUN_004406c0(void)
       bVar1 = *(byte *)(iVar3 + 2 + iVar6);
       local_18 = (uint)bVar1;
       dVar2 = (double)bVar1;
-      dVar10 = crt_math_c_round_FUN_005fe6b0
+      dVar10 = round
                          (SQRT(dVar2 * dVar2 +
                                (double)*(byte *)(iVar3 + iVar6) * (double)*(byte *)(iVar3 + iVar6) +
                                dVar10 * dVar10) * dVar11);
@@ -66,7 +66,7 @@ int * engine_colquant_c_FUN_004406c0(void)
   in_stack_00000004[0x1010] = 0;
   in_stack_00000004[0x1011] = in_stack_0000000c;
   engine_colquant_c_FUN_00441260();
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_150,"Subdividing histogram array for %d palette entries...\n\n",in_stack_0000000c);
+  sprintf(local_150,"Subdividing histogram array for %d palette entries...\n\n",in_stack_0000000c);
   uVar7 = 0;
   engine_2d_c_drawText_FUN_00401fd0(local_150,0,0x16);
   do {
@@ -142,13 +142,13 @@ int * engine_colquant_c_FUN_004406c0(void)
         piVar4 = in_stack_00000004;
         piVar5 = in_stack_00000004;
         do {
-          dVar11 = crt_math_c_round_FUN_005fe6b0(*(double *)(piVar4 + 0x802));
+          dVar11 = round(*(double *)(piVar4 + 0x802));
           local_24 = (int)ROUND(dVar11);
           *(byte *)(piVar5 + 0x2002) = (byte)local_24;
-          dVar11 = crt_math_c_round_FUN_005fe6b0(*(double *)(piVar4 + 0x804));
+          dVar11 = round(*(double *)(piVar4 + 0x804));
           iStack_28 = (int)ROUND(dVar11);
           *(byte *)((int)piVar5 + 0x8009) = (byte)iStack_28;
-          dVar11 = crt_math_c_round_FUN_005fe6b0(*(double *)(piVar4 + 0x806));
+          dVar11 = round(*(double *)(piVar4 + 0x806));
           iStack_2c = (int)ROUND(dVar11);
           piVar4 = piVar4 + 8;
           *(byte *)((int)piVar5 + 0x800a) = (byte)iStack_2c;
@@ -156,7 +156,7 @@ int * engine_colquant_c_FUN_004406c0(void)
         } while (piVar4 != in_stack_00000004 + 0x800);
         return in_stack_00000004 + 0x2002;
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_150,"%6.6d",uVar7);
+      sprintf(local_150,"%6.6d",uVar7);
       engine_2d_c_drawText_FUN_00401fd0(local_150,0,0x21);
       if ((uVar7 & 7) == 0) {
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

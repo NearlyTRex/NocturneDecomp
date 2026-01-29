@@ -138,7 +138,7 @@ LAB_0047b0cc:
     }
     g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
     g_CurrentDebugLine = 0x943;
-    crt_memory_c_free_FUN_005fe659(ptr);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
     core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
     core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(this_ptr);
     core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(this_ptr);

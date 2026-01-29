@@ -11,7 +11,7 @@ void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel
 {
   char cVar1;
   SIZE_T size;
-  FILE *file;
+  _FILE *file;
   int iVar2;
   char *pcVar3;
   byte bVar4;
@@ -34,7 +34,7 @@ void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_18 = crt_stdlib_c_atoi_FUN_005ffef0(local_74);
+    local_18 = atoi(local_74);
     local_1c = engine_model_c_loadModelFile_FUN_00527ec0(keyframe_model->filenames[0]);
     local_14 = shape_design_c_findVertexListInModel_FUN_00468000(local_1c);
     for (local_24 = 1; local_24 < (keyframe_model->header).child_count; local_24 = local_24 + 1) {
@@ -44,12 +44,12 @@ void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel
                        ("models",keyframe_model->filenames[local_24]);
       file = engine_dosio_c_getFile_FUN_00481a50
                        ("models",keyframe_model->filenames[local_24],"wb");
-      if (file == (FILE *)0x0) {
+      if (file == (_FILE *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";
         g_CurrentLineNumber = 0x2235;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't write key model");
       }
-      crt_stdio_c_fwrite_FUN_005fdc00(local_20,size,1,file);
+      _fwrite(local_20,size,1,file);
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x2237);
       engine_model_c_freeMRGLData_FUN_005280b0(local_20);
     }

@@ -25,7 +25,7 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
   int local_24;
   uint local_20;
   int local_1c;
-  FILE *local_18;
+  _FILE *local_18;
   byte *local_14;
   
   bVar9 = 0;
@@ -53,7 +53,7 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
       pbVar5 = pbVar5 + (uint)bVar9 * -2 + 1;
     } while (bVar1 != 0);
     if (~uVar4 - 1 <= local_20) break;
-    iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_74[local_20]);
+    iVar3 = toupper((uint)local_74[local_20]);
     local_74[local_20] = (byte)iVar3;
     local_20 = local_20 + 1;
   } while( true );
@@ -69,7 +69,7 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
   local_14 = (byte *)0x0;
 LAB_00458b67:
   if (local_14 != (byte *)0x0) {
-    iVar3 = crt_string_c_strcmp_FUN_005fef20((char *)local_14,".BIN");
+    iVar3 = strcmp((char *)local_14,".BIN");
     if (iVar3 == 0) {
       iVar3 = shape_design_c_loadModelBinary_FUN_00458170((char *)local_74);
       if (iVar3 == 0) {
@@ -94,7 +94,7 @@ LAB_00458b67:
       g_PolygonOptimizationPasses = 0;
       return iVar3;
     }
-    iVar3 = crt_string_c_strcmp_FUN_005fef20((char *)local_14,".S3D");
+    iVar3 = strcmp((char *)local_14,".S3D");
     if (iVar3 == 0) {
       iVar3 = shape_design_c_loadS3DModelFile_FUN_004593a0((char *)local_74);
       if (iVar3 == 0) {
@@ -121,7 +121,7 @@ LAB_00458b67:
     }
   }
   local_18 = engine_dosio_c_getFile_FUN_00481a50("models",(char *)local_74,"rt");
-  if (local_18 == (FILE *)0x0) {
+  if (local_18 == (_FILE *)0x0) {
     engine_2d_c_drawText_FUN_00401fd0("FILE ERROR! Nothing changed!",0,0x16);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -142,24 +142,23 @@ LAB_00458b67:
     } while (bVar9 != 0);
     g_PolygonOptimizationPasses = 0;
     g_VertexOptimizationPasses = 0;
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",&g_VertexCount);
+    _fscanf(local_18,"%d\n",&g_VertexCount);
     if (g_VertexCount < 0x4e21) {
       for (local_20 = 0; (int)local_20 < g_VertexCount; local_20 = local_20 + 1) {
-        crt_stdio_c_fscanf_FUN_005fe7c0
-                  (local_18,"%f,%f,%f\n",g_LoadedVertices + local_20,local_20 * 0x14 + 0x1626410
+        _fscanf(local_18,"%f,%f,%f\n",g_LoadedVertices + local_20,local_20 * 0x14 + 0x1626410
                    ,local_20 * 0x14 + 0x1626414);
       }
-      crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",&g_PolygonCount);
+      _fscanf(local_18,"%d\n",&g_PolygonCount);
       if (g_PolygonCount < 0x4e21) {
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
-          crt_stdio_c_fgets_FUN_005fefd0(local_170,0x51,local_18);
-          local_14 = (byte *)crt_string_c_strtok_FUN_005fff50(local_170,",");
-          uVar4 = crt_stdlib_c_atoi_FUN_005ffef0((char *)local_14);
+          _fgets(local_170,0x51,local_18);
+          local_14 = (byte *)strtok(local_170,",");
+          uVar4 = atoi((char *)local_14);
           g_ModelPolygonData[local_20].polygon_type = uVar4;
-          local_14 = (byte *)crt_string_c_strtok_FUN_005fff50((char *)0x0,",");
-          uVar4 = crt_stdlib_c_atoi_FUN_005ffef0((char *)local_14);
+          local_14 = (byte *)strtok((char *)0x0,",");
+          uVar4 = atoi((char *)local_14);
           g_ModelPolygonData[local_20].vertex_indices_count = uVar4;
-          local_14 = (byte *)crt_string_c_strtok_FUN_005fff50((char *)0x0,",\n");
+          local_14 = (byte *)strtok((char *)0x0,",\n");
           pcVar6 = g_ModelPolygonData[local_20].texture_name;
           pcVar7 = (char *)local_14;
           do {
@@ -171,7 +170,7 @@ LAB_00458b67:
             pcVar6[1] = cVar2;
             pcVar6 = pcVar6 + 2;
           } while (cVar2 != '\0');
-          local_14 = (byte *)crt_string_c_strtok_FUN_005fff50((char *)0x0,",\n");
+          local_14 = (byte *)strtok((char *)0x0,",\n");
           if (local_14 == (byte *)0x0) {
             g_ModelPolygonData[local_20].lightmap_name[0] = '\0';
           }
@@ -194,8 +193,7 @@ LAB_00458b67:
           }
           for (local_1c = 0; local_1c < (int)g_ModelPolygonData[local_20].vertex_indices_count;
               local_1c = local_1c + 1) {
-            crt_stdio_c_fscanf_FUN_005fe7c0
-                      (local_18,"%d,%f,%f\n",local_20 * 0x184 + 0x16e99c8 + local_1c * 4,
+            _fscanf(local_18,"%d,%f,%f\n",local_20 * 0x184 + 0x16e99c8 + local_1c * 4,
                        local_20 * 0x184 + 0x16e9a08 + local_1c * 4,
                        local_20 * 0x184 + 0x16e9a48 + local_1c * 4);
             if (g_ModelPolygonData[local_20].uv_u[local_1c] < 0.0) {
@@ -213,12 +211,12 @@ LAB_00458b67:
           }
         }
         g_PartsCount = 0;
-        crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",&g_PartsCount);
+        _fscanf(local_18,"%d\n",&g_PartsCount);
         for (local_20 = 0; (int)local_20 < g_PartsCount; local_20 = local_20 + 1) {
-          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%s\n",g_ModelPartNames + local_20);
+          _fscanf(local_18,"%s\n",g_ModelPartNames + local_20);
         }
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
-          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",local_20 * 0x184 + 0x16e9a88);
+          _fscanf(local_18,"%d\n",local_20 * 0x184 + 0x16e9a88);
         }
         if (g_PartsCount == 0) {
           for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
@@ -239,7 +237,7 @@ LAB_00458b67:
         }
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
           g_ModelPolygonData[local_20].material_id = 0;
-          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",local_20 * 0x184 + 0x16e9a8c);
+          _fscanf(local_18,"%d\n",local_20 * 0x184 + 0x16e9a8c);
           g_ModelPolygonData[local_20].material_id_backup = g_ModelPolygonData[local_20].material_id
           ;
         }
@@ -249,7 +247,7 @@ LAB_00458b67:
         local_24 = 1;
       }
       else {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_11c,"ERROR: Too many polygons! (npoly:%d > MAX_POLYS:%d)",g_PolygonCount,20000);
         engine_2d_c_drawText_FUN_00401fd0(local_11c,0,0x16);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -274,7 +272,7 @@ LAB_00458b67:
       }
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_cc,"ERROR: Too many vertices! (npoints:%d > MAX_POINTS:%d)",g_VertexCount,20000);
       engine_2d_c_drawText_FUN_00401fd0(local_cc,0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

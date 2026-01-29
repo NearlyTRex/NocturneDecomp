@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 __fpu_thunk crt_math_c_fdiv_thunk_FUN_00606bb3(void)
+float10 __fpu_thunk fdiv_thunk(void)
 
 {
   unkbyte10 in_ST0;
@@ -23,6 +23,6 @@ float10 __fpu_thunk crt_math_c_fdiv_thunk_FUN_00606bb3(void)
   uStack00000012 = (uint)((unkuint10)in_ST0 >> 0x30);
   local_res0 = (ulonglong)in_ST2;
   uStack00000008 = (ushort)((unkuint10)in_ST2 >> 0x40);
-  crt_math_c_fdiv_FUN_00606960(in_ST1,in_ST3);
+  fdiv(in_ST1,in_ST3);
   return (float10)CONCAT64(uStack0000000c,CONCAT22(in_stack_0000000a,uStack00000008));
 }

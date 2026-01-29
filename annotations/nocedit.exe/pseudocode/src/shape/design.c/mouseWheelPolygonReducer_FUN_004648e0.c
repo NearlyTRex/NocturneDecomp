@@ -22,7 +22,7 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
   int local_18;
   
   bVar10 = 0;
-  iVar2 = crt_string_c_strcmp_FUN_005fef20(g_LoadedModelName,&s_EmptyChar_0061c2ba);
+  iVar2 = strcmp(g_LoadedModelName,&s_EmptyChar_0061c2ba);
   if (iVar2 == 0) {
     local_18 = -1;
   }
@@ -74,7 +74,7 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
       } while (cVar1 != '\0');
     }
     if ((g_PolygonReducerEnabled == 0) ||
-       (((iVar2 = crt_string_c_strcmp_FUN_005fef20(g_BackupModelName,g_LoadedModelName), iVar2 == 0
+       (((iVar2 = strcmp(g_BackupModelName,g_LoadedModelName), iVar2 == 0
          && (g_VertexCount <= g_BackupVertexCount)) && (g_PolygonCount <= g_BackupPolygonCount)))) {
       if (g_PolygonReducerEnabled == 0) {
         local_18 = selected_polygon_index;

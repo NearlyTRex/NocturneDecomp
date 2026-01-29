@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_loadReplayData_FUN_0051d180(CLodMesh *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_loadReplayData_FUN_0051d180(CLodMesh *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 at 0051b90d
@@ -48,7 +48,7 @@ section .text
     PUSH 0x6380ea                       ; 0051d19b | = "%d\n"
     PUSH EBP                            ; 0051d1a0
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0051d1a1
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051d1a6
     PUSH 0x1446                         ; 0051d1a9
     PUSH 0x6380ee                       ; 0051d1ae | = "..\\shape\\meshlod.cpp"
@@ -92,7 +92,7 @@ section .text
     INC ESI                             ; 0051d210
     ADD EBX,0xf0                        ; 0051d211
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0051d217
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EAX,dword ptr [EDI + 0x4c]      ; 0051d21c
     ADD ESP,0x18                        ; 0051d21f
     CMP ESI,EAX                         ; 0051d222

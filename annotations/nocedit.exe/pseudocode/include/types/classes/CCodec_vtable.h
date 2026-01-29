@@ -2,7 +2,7 @@
 
 // Forward declarations
 struct CCodec;
-struct FILE;
+struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"

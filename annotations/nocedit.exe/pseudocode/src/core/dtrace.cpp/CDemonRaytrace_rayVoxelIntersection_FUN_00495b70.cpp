@@ -53,38 +53,38 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
   fVar20 = ray_start->z;
   fVar17 = (this_ptr->bbox_min).z;
   fVar6 = (this_ptr->cell_size).z;
-  dVar12 = crt_math_c_floor_FUN_005feb90
+  dVar12 = floor
                      ((double)((ray_start->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
-  crt_math_c_round_FUN_005fe6b0(dVar12);
+  round(dVar12);
   dVar14 = (double)((fVar20 - fVar17) / fVar6);
-  local_84 = crt_math_c_floor_FUN_005feb90(dVar14);
+  local_84 = floor(dVar14);
   fVar20 = (float)((ulonglong)dVar14 >> 0x20);
-  crt_math_c_round_FUN_005fe6b0(local_84);
+  round(local_84);
   dVar14 = (double)fVar20;
-  dVar13 = crt_math_c_floor_FUN_005feb90(dVar14);
+  dVar13 = floor(dVar14);
   fVar8 = ((float10)ray_end->x - (float10)(this_ptr->bbox_min).x) / (float10)(this_ptr->cell_size).x
   ;
   fVar20 = (ray_end->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y;
   fVar19 = (float)((ulonglong)dVar14 >> 0x20);
-  crt_math_c_round_FUN_005fe6b0(dVar13);
+  round(dVar13);
   dVar14 = (double)(float)fVar8;
-  dVar13 = crt_math_c_floor_FUN_005feb90(dVar14);
+  dVar13 = floor(dVar14);
   fVar18 = (float)((ulonglong)dVar14 >> 0x20);
   fVar17 = 6.737184e-39;
-  dVar14 = crt_math_c_round_FUN_005fe6b0(dVar13);
+  dVar14 = round(dVar13);
   iVar1 = (int)ROUND(dVar14);
   local_7c._0_4_ = SUB84(dVar12,0);
   dVar14 = (double)fVar17;
-  dVar12 = crt_math_c_floor_FUN_005feb90(dVar14);
+  dVar12 = floor(dVar14);
   fVar16 = (float)((ulonglong)dVar14 >> 0x20);
   fVar15 = 6.73724e-39;
-  dVar14 = crt_math_c_round_FUN_005fe6b0(dVar12);
+  dVar14 = round(dVar12);
   iVar5 = (int)ROUND(dVar14);
   dVar14 = (double)fVar19;
-  value = crt_math_c_floor_FUN_005feb90(dVar14);
+  value = floor(dVar14);
   fVar6 = (float)((ulonglong)dVar14 >> 0x20);
   fVar17 = 6.737297e-39;
-  dVar14 = crt_math_c_round_FUN_005fe6b0(value);
+  dVar14 = round(value);
   local_8c = (int)ROUND(dVar14);
   if ((-1 < local_68) || (-1 < iVar5)) {
     local_90 = (int)((ulonglong)dVar13 >> 0x20);
@@ -113,11 +113,11 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
         fVar8 = (float10)fVar17;
         fVar9 = (float10)2.684355e+08f / (float10)fVar2;
         fVar11 = ABS((float10)fVar18 - (float10)fVar6) * fVar9;
-        crt_math_c_round_FUN_005fe6b0((double)(ABS((float10)fVar19 - (float10)fVar15) * fVar9));
+        round((double)(ABS((float10)fVar19 - (float10)fVar15) * fVar9));
         fVar10 = (float10)fVar19;
-        crt_math_c_round_FUN_005fe6b0((double)(ABS(fVar8 - (float10)fVar16) * fVar9));
+        round((double)(ABS(fVar8 - (float10)fVar16) * fVar9));
         fVar8 = (float10)0;
-        dVar14 = crt_math_c_round_FUN_005fe6b0((double)fVar11);
+        dVar14 = round((double)fVar11);
         local_84 = (double)CONCAT44((int)ROUND(dVar14),(int)local_84);
         if (fVar10 < fVar8) {
           iVar5 = iStack_74 - local_94;
@@ -152,11 +152,11 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
         fVar9 = fVar10 * (float10)fVar6;
         fVar10 = fVar10 * (float10)fVar17;
         fVar11 = (float10)(int)local_84 * (float10)(float)local_7c;
-        crt_math_c_round_FUN_005fe6b0
+        round
                   ((double)((float10)local_58 * (float10)fVar6 -
                            (float10)(int)local_84 * (float10)fVar17));
-        crt_math_c_round_FUN_005fe6b0((double)(fVar8 - fVar10));
-        dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar9 - fVar11));
+        round((double)(fVar8 - fVar10));
+        dVar14 = round((double)(fVar9 - fVar11));
         local_70 = (int)ROUND(dVar14);
       }
       local_7c = CONCAT44(iVar1,(float)local_7c);

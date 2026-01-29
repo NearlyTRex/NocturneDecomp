@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-void crt_cpp_c_handlePureVirtualCall_FUN_006015f1(void)
+void handlePureVirtualCall(void)
 
 {
   if (g_PureVirtualCallFlag != 0) {
     return;
   }
   g_PureVirtualCallFlag = 1;
-  crt_cpp_c_reportPureVirtualError_FUN_00605b23("pure virtual function called!",1);
+  reportPureVirtualError("pure virtual function called!",1);
   return;
 }

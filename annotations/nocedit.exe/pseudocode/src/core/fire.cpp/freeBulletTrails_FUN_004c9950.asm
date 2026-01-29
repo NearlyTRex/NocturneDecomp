@@ -10,7 +10,7 @@
 ;   WatcomTypeInfo g_CBulletTrailTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_freeTypeArray_FUN_005feee9
+;   crt_memory.c___arrfini_FUN_005feee9
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH 0xa                            ; 004c9955
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c9957
     PUSH EDX                            ; 004c995b
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 004c995c
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrfini_FUN_005feee9 ; 004c995c
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c9961
     RET                                 ; 004c9964
 

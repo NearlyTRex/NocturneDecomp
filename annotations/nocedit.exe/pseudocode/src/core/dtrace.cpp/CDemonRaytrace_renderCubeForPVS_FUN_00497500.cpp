@@ -134,7 +134,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
         if (1 < render_mode) {
           local_14 = grid_z;
           pSVar4 = (SMRGLHeaderPrimitive *)0x497be4;
-          crt_math_c_round_FUN_005fe6b0
+          round
                     ((double)(((float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                              (float)-256));
           iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(pCVar1,pSVar4);
@@ -142,7 +142,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
           if (iVar3 == 0) {
             local_18 = grid_z + 1;
             pSVar4 = (SMRGLHeaderPrimitive *)0x497c58;
-            crt_math_c_round_FUN_005fe6b0
+            round
                       ((double)(((float)local_18 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z)
                                * (float)256));
             iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
@@ -151,7 +151,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
             if (iVar3 == 0) {
               local_1c = (float)grid_x;
               pSVar4 = (SMRGLHeaderPrimitive *)0x497cc5;
-              crt_math_c_round_FUN_005fe6b0
+              round
                         ((double)(((float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x)
                                  * (float)-256));
               iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
@@ -160,7 +160,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
               if (iVar3 == 0) {
                 local_20 = (float)(grid_x + 1);
                 pSVar4 = (SMRGLHeaderPrimitive *)0x497d31;
-                crt_math_c_round_FUN_005fe6b0
+                round
                           ((double)(((float)(int)local_20 * (this_ptr->cell_size).x +
                                     (this_ptr->bbox_min).x) * (float)256));
                 iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
@@ -169,7 +169,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                 if (iVar3 == 0) {
                   local_24 = (float)(unaff_EBX + 1);
                   pSVar4 = (SMRGLHeaderPrimitive *)0x497db0;
-                  crt_math_c_round_FUN_005fe6b0
+                  round
                             ((double)(((float)(int)local_24 * (this_ptr->cell_size).y +
                                       (this_ptr->bbox_min).y) * (float)256));
                   iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
@@ -178,7 +178,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                   if (iVar3 == 0) {
                     pSVar4 = (SMRGLHeaderPrimitive *)0x497e23;
                     local_28 = unaff_ESI;
-                    crt_math_c_round_FUN_005fe6b0
+                    round
                               ((double)(((float)(int)unaff_ESI * (this_ptr->cell_size).y +
                                         (this_ptr->bbox_min).y) * (float)-256));
                     iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50

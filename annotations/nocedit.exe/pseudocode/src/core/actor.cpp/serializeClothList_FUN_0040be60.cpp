@@ -15,33 +15,31 @@ core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *prop
   CClothList *pCVar3;
   
   if (g_ActorReadingMode != 1) {
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
+    _fprintf(g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
     iVar1 = 0;
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s%d // clothCount\n",g_PropertyNamePrefix,cloth_list->unk);
+    _fprintf(g_ActorDataFile,"%s%d // clothCount\n",g_PropertyNamePrefix,cloth_list->unk);
     if (0 < cloth_list->unk) {
       pCVar3 = cloth_list + 1;
       do {
         iVar1 = iVar1 + 1;
-        crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s\"%s\"\n",g_PropertyNamePrefix,pCVar3)
+        _fprintf(g_ActorDataFile,"%s\"%s\"\n",g_PropertyNamePrefix,pCVar3)
         ;
         pCVar3 = pCVar3 + 10;
       } while (iVar1 < cloth_list->unk);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
+    _fprintf(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(g_ActorDataFile);
+    iVar1 = _fgetc(g_ActorDataFile);
     if (iVar1 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
                 ("Cloth list opening brace",property_name);
     }
   } while (iVar1 != 10);
-  iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%d",cloth_list);
+  iVar1 = _fscanf(g_ActorDataFile,"%d",cloth_list);
   if (iVar1 != 1) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040b210("cloth count",property_name);
   }
@@ -50,7 +48,7 @@ core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *prop
   if (0 < cloth_list->unk) {
     pCVar3 = cloth_list + 1;
     do {
-      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile," \"%[^\"]\"\n",pCVar3);
+      iVar2 = _fscanf(g_ActorDataFile," \"%[^\"]\"\n",pCVar3);
       if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
                   ("cloth filename entry",property_name);
@@ -60,7 +58,7 @@ core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *prop
     } while (iVar1 < cloth_list->unk);
   }
   do {
-    while (iVar1 = crt_stdio_c_fgetc_FUN_005fe840(g_ActorDataFile), -1 < iVar1) {
+    while (iVar1 = _fgetc(g_ActorDataFile), -1 < iVar1) {
       if (iVar1 == 10) {
         return;
       }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
+; __cdecl int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(_tm *timeptr)
 ;
 ; Parameters:
-; tm *             Stack[0x4]:4   timeptr
+; _tm *            Stack[0x4]:4   timeptr
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   crt_time.c__mktime_FUN_00600f80 at 006010b0
 ;   crt_time.c_localtime_r_FUN_00600230 at 00600258
-;   crt_time.c_mktime_FUN_00600f80 at 006010b0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00665f34+2

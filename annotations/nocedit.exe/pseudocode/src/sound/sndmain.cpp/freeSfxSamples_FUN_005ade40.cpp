@@ -9,6 +9,6 @@
 void __cdecl sound_sndmain_cpp_freeSfxSamples_FUN_005ade40(CSfxSample **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x40,&g_SfxSampleTypeInfo);
+  __arrfini(array,0x40,&g_SfxSampleTypeInfo);
   return;
 }

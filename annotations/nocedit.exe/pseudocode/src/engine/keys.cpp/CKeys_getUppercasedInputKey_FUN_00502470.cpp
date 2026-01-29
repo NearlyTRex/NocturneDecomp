@@ -13,6 +13,6 @@ int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys *this
   int iVar2;
   
   uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-  iVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
+  iVar2 = toupper(uVar1 & 0xff);
   return iVar2;
 }

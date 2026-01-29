@@ -94,7 +94,7 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
     if ((((float)0.01 <= fVar1) &&
         (dVar2 = (double)(SQRT(fVar1 * fVar1 - fStack_20 * fStack_20) / fVar1), dVar2 < 1.0)) &&
        (0.0 <= dVar2)) {
-      dVar2 = crt_math_c_acos_FUN_00600162(dVar2);
+      dVar2 = acos(dVar2);
       fStack_2c = (float)dVar2;
       if (0.0 <= fStack_24) {
         CStack_54.x = CStack_54.x + fStack_2c;
@@ -108,7 +108,7 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
     if ((((float)0.01 <= fStack_bc) &&
         (dVar2 = (double)(SQRT(fStack_bc * fStack_bc - local_9c.x * local_9c.x) / fStack_bc),
         dVar2 < 1.0)) && (0.0 <= dVar2)) {
-      dVar2 = crt_math_c_acos_FUN_00600162(dVar2);
+      dVar2 = acos(dVar2);
       CStack_3c.y = (float)dVar2;
       if (0.0 <= CStack_a8.z) {
         CStack_60.y = CStack_60.y + CStack_3c.y;

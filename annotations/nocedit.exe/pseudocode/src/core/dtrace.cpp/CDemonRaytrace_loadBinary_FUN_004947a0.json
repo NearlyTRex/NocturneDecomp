@@ -46,37 +46,37 @@
       {
         "category": "other",
         "column": 27,
-        "line": 178,
+        "line": 177,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 186,
+        "line": 185,
         "message": "cast from 'CDemonTriangle*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 189,
+        "line": 188,
         "message": "cast from 'uchar*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 207,
+        "line": 206,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 212,
+        "line": 211,
         "message": "cast from 'SVoxelGrid**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 243,
+        "line": 242,
         "message": "cast from 'SVoxelGrid**' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -187,19 +187,25 @@
       {
         "category": "other",
         "column": 19,
-        "line": 178,
+        "line": 177,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 198,
+        "line": 197,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 207,
+        "line": 206,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 211,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -210,49 +216,43 @@
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 213,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 66,
-        "line": 213,
+        "line": 212,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 243,
+        "line": 242,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 248,
+        "line": 247,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 250,
+        "line": 249,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 344,
+    "complexity_score": 343,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
-    "pseudocode_lines": 244,
+    "pseudocode_lines": 243,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 878
+    "total_lines": 877
   },
   "cross_references": [
     {
@@ -272,7 +272,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0",
-    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -719,7 +719,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -754,35 +754,35 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 170,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 200,
+      "line": 199,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)pSVar2->voxel_data + iVar9 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 204,
       "match": "(CDemonCube *)((int)",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 227,
+      "line": 226,
       "match": "DAT_02cee5ac",
       "text": "DAT_02cee5ac = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 236,
+      "line": 235,
       "match": "(CDemonCube *)((int)",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);",
       "type": "pointer_cast"

@@ -112,7 +112,7 @@ section .text
     PUSH EAX                            ; 004029b2
     PUSH 0x613111                       ; 004029b3 | = "fog"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004029b8
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004029bd
     ADD ESP,0xc                         ; 004029bf
     TEST EAX,EAX                        ; 004029c2
@@ -125,7 +125,7 @@ section .text
     PUSH EAX                            ; 004029d4
     PUSH 0x613118                       ; 004029d5 | = "fog"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004029da
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004029df
     MOV EBX,EAX                         ; 004029e2
     TEST EAX,EAX                        ; 004029e4
@@ -145,13 +145,13 @@ section .text
     PUSH 0x1                            ; 00402a11
     PUSH 0x2cf9020                      ; 00402a13 | g_ColorCubeLookup
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00402a18
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00402a1d
     PUSH 0x779                          ; 00402a20
     PUSH 0x613146                       ; 00402a25 | = "..\\engine\\2d.c"
     PUSH EBX                            ; 00402a2a
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00402a2b
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00402a30
     ADD ESP,0x50                        ; 00402a33
     POP EDI                             ; 00402a36
@@ -164,13 +164,13 @@ section .text
     PUSH 0x1                            ; 00402a40
     PUSH 0x2cf9020                      ; 00402a42 | g_ColorCubeLookup
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00402a47
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00402a4c
     PUSH 0x77c                          ; 00402a4f
     PUSH 0x613155                       ; 00402a54 | = "..\\engine\\2d.c"
     PUSH EBX                            ; 00402a59
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00402a5a
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00402a5f
     ADD ESP,0x50                        ; 00402a62
     POP EDI                             ; 00402a65

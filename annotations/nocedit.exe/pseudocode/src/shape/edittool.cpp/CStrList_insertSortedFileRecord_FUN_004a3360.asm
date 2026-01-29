@@ -130,7 +130,7 @@ section .text
         ;   Label: LAB_004a3441
     PUSH EAX                            ; 004a3448
     CALL crt_time.c_localtime_FUN_00600288 ; 004a3449
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 004a344e
     PUSH EAX                            ; 004a3451
     PUSH 0x6239bb                       ; 004a3452 | = "%m/%d/%y %I:%M:%S %p"
@@ -140,7 +140,7 @@ section .text
     LEA EDI,[ESP + 0x410]               ; 004a3461
     MOV ESI,0x679188                    ; 004a3468 | g_FilePathBuffer
     CALL crt_time.c_strftime_FUN_006002d4 ; 004a346d
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, tm * time_ptr)
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004a3472
     MOV ECX,0x41                        ; 004a3475
     MOV EBX,dword ptr [ESP + 0xb10]     ; 004a347a

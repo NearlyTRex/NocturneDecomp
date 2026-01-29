@@ -34,7 +34,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
                 (g_CEditorToolsPtr,"Failed to play \"%s\"",in_stack_00000008);
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_144,"Playing %s",in_stack_00000008);
+      sprintf(local_144,"Playing %s",in_stack_00000008);
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,local_144);
       do {

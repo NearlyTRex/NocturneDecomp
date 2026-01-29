@@ -26,10 +26,10 @@ core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
     out_euler_angles->x = (float)(double)CONCAT44(uStack_14,0x54411744);
     return out_euler_angles;
   }
-  fVar1 = crt_math_c_atan2_FUN_006013b1
+  fVar1 = atan2
                     ((float10)in_direction_vector->x,(float10)in_direction_vector->z);
   out_euler_angles->y = (float)fVar1;
-  fVar1 = crt_math_c_atan2_FUN_006013b1
+  fVar1 = atan2
                     ((float10)in_direction_vector->y,
                      SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +
                           (float10)in_direction_vector->z * (float10)in_direction_vector->z));

@@ -6,7 +6,7 @@
 ;
 ; XREF[22]:
 ;   crt_errno.c_SetWindowsError_FUN_006027c8 at 006027c8
-;   crt_errno.c_errno_FUN_00601450 at 00601450
+;   crt_errno.c__errno_FUN_00601450 at 00601450
 ;   crt_errno.c_setErrno_FUN_00602790 at 00602790
 ;   crt_exception.c_RemoveExceptionHandler_FUN_0060abf4 at 0060ac08
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8 at 0060abc8

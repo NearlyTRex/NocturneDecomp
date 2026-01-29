@@ -51,7 +51,7 @@ shape_design_c_optimizePolygonMesh_FUN_004658e0
                                    ((int *)g_ModelPolygonData[local_20].vertex_indices,
                                     (int *)g_ModelPolygonData[local_1c].vertex_indices,3,3),
                 iVar3 = local_1c, iVar2 != 0)) &&
-               (iVar2 = crt_string_c_strcmp_FUN_005fef20
+               (iVar2 = strcmp
                                   (g_ModelPolygonData[local_20].lightmap_name,
                                    g_ModelPolygonData[local_1c].lightmap_name), iVar3 = local_1c,
                iVar2 == 0)))) &&
@@ -69,7 +69,7 @@ shape_design_c_optimizePolygonMesh_FUN_004658e0
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   shape_design_c_removeUnusedVertices_FUN_00463830();
   g_PolygonOptimizationPasses = g_PolygonOptimizationPasses + 1;
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (local_70,"Original polygons: %d    New total: %d\n\nTotal passes: %d",local_14,g_PolygonCount);
   if (0 < display_progress) {
     pcVar4 = "\n\nHit a key...";

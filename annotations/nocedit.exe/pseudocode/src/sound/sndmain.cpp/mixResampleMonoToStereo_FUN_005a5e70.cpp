@@ -33,21 +33,21 @@ sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70
   ulonglong local_34;
   
   if (0 < resample_position._0_4_) {
-    dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44(sample_data,in_stack_00000010));
-    dVar12 = crt_math_c_round_FUN_005fe6b0(dVar12);
+    dVar12 = floor((double)CONCAT44(sample_data,in_stack_00000010));
+    dVar12 = round(dVar12);
     local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar10 = (uint)local_34;
     local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
-    dVar12 = crt_math_c_round_FUN_005fe6b0
+    dVar12 = round
                        ((_in_stack_00000010 - (double)local_34) * 4294967296);
     local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     uVar8 = (uint)local_34;
-    dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44(channel_gains,channel_buffers));
-    dVar12 = crt_math_c_round_FUN_005fe6b0(dVar12);
+    dVar12 = floor((double)CONCAT44(channel_gains,channel_buffers));
+    dVar12 = round(dVar12);
     local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar7 = (uint)local_34;
     local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
-    dVar12 = crt_math_c_round_FUN_005fe6b0
+    dVar12 = round
                        (((double)CONCAT44(channel_gains,channel_buffers) - (double)local_34) *
                         4294967296);
     local_34._0_4_ = (uint)(longlong)ROUND(dVar12);

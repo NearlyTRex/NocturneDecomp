@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,FILE *output_file,int node_index)
+; __cdecl void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,_FILE *output_file,int node_index)
 ;
 ; Parameters:
 ; STreeNode *      Stack[0x4]:4   node
-; FILE *           Stack[0x8]:4   output_file
+; _FILE *          Stack[0x8]:4   output_file
 ; int              Stack[0xc]:4   node_index
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -45,7 +45,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045a220
     PUSH EAX                            ; 0045a223
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a224
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0045a229
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045a22c
     CMP dword ptr [EAX + 0x8],0x0       ; 0045a22f
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045a24a
     PUSH EAX                            ; 0045a24d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a24e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0045a253
     JMP 0x0045a30a                      ; 0045a256
         ;   XREF to: 0045a30a (UNCONDITIONAL_JUMP)  ; LAB_0045a30a
@@ -110,7 +110,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045a2ce
     PUSH EAX                            ; 0045a2d1
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0045a2d2
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x20                        ; 0045a2d7
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0045a2da
     ADD EAX,EAX                         ; 0045a2dd
@@ -120,7 +120,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045a2e4
     PUSH dword ptr [EAX]                ; 0045a2e7
     CALL shape_design.c_writeSpatialTree_FUN_0045a200 ; 0045a2e9
-        ;   XREF to: 0045a200 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeSpatialTree_FUN_0045a200(STreeNode * node, FILE * output_file, int node_index)
+        ;   XREF to: 0045a200 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeSpatialTree_FUN_0045a200(STreeNode * node, _FILE * output_file, int node_index)
     ADD ESP,0xc                         ; 0045a2ee
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0045a2f1
     ADD EAX,EAX                         ; 0045a2f4
@@ -131,7 +131,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045a2fc
     PUSH dword ptr [EAX + 0x4]          ; 0045a2ff
     CALL shape_design.c_writeSpatialTree_FUN_0045a200 ; 0045a302
-        ;   XREF to: 0045a200 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeSpatialTree_FUN_0045a200(STreeNode * node, FILE * output_file, int node_index)
+        ;   XREF to: 0045a200 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeSpatialTree_FUN_0045a200(STreeNode * node, _FILE * output_file, int node_index)
     ADD ESP,0xc                         ; 0045a307
     MOV ESP,EBP                         ; 0045a30a
         ;   Label: LAB_0045a30a

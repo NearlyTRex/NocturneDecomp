@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_fpemu_c_staticInit_FUN_0060be80(void)
+void __cdecl staticInit(void)
 
 {
   byte uVar1;
@@ -19,8 +19,8 @@ void __cdecl crt_fpemu_c_staticInit_FUN_0060be80(void)
   uVar1 = BYTE_00684acd == 3;
   if (2 < BYTE_00684acd) {
     dVar4 = (double)crt_unknown_c_FUN_0060dcf6(0xc0000000,0x4150017e,0x80000000,0x4147ffff);
-    dVar4 = crt_math_c_dmul_FUN_0060e0b9(dVar4,3145727.0);
-    dVar4 = crt_math_c_dadd_FUN_0060defc(4195835.0,dVar4);
+    dVar4 = dmul(dVar4,3145727.0);
+    dVar4 = dadd(4195835.0,dVar4);
     crt_unknown_c_FUN_0060e256(SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),0xe2308c3a,0x3e45798e)
     ;
     if (!(bool)uVar1 && cVar3 == cVar2) {

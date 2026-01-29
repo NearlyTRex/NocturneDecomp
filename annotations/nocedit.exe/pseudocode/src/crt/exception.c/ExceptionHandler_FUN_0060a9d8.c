@@ -9,7 +9,7 @@
 /* WARNING: Removing unreachable block (ram,0x0060aa79) */
 
 EXCEPTION_DISPOSITION __cdecl
-crt_exception_c_ExceptionHandler_FUN_0060a9d8
+ExceptionHandler
           (EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,
           void *DispatcherContext)
 
@@ -90,8 +90,8 @@ switchD_0060aa00_default:
     goto LAB_0060ab7b;
   }
   g_SignalHandlingActive = '\x01';
-  crt_fpu_c_ClearFPUExceptions_FUN_0060ce50();
-  iVar5 = crt_signal_c_raiseFPE_FUN_0060d028(iVar5);
+  ClearFPUExceptions();
+  iVar5 = raiseFPE(iVar5);
   if ((iVar5 != -1) && (g_SignalHandlingActive != '\0')) {
     *(ushort *)&(ContextRecord->FloatSave).StatusWord =
          ((ushort)(ContextRecord->FloatSave).StatusWord >> 8 & 0x7f) << 8;

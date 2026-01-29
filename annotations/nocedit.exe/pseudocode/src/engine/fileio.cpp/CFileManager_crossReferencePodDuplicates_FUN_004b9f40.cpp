@@ -47,7 +47,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
     pcVar6 = pcVar6 + 4;
   }
   if (pod_filename == (char *)0x0) {
-    crt_io_c_getcwd_wrapper_FUN_00608d20(local_154,0x104);
+    getcwd_wrapper(local_154,0x104);
   }
   else {
     pcVar7 = local_154;
@@ -81,8 +81,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
   local_28 = local_50.item_count;
   pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (local_50.item_count * 0x42c + 4,"..\\engine\\fileio.cpp",0xe36);
-  local_3c = crt_memory_c_constructTypedObjectArray_FUN_00601272
-                       (pvVar2,local_50.item_count,type_info);
+  local_3c = __vec_new(pvVar2,local_50.item_count,type_info);
   if (local_3c == (CPodFile *)0x0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0xe37;
@@ -106,8 +105,8 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
                   (g_CEditorToolsPtr,"Can't mount %s",pcVar7);
         g_CurrentDebugFilename = "..\\engine\\fileio.cpp";
         g_CurrentDebugLine = 0xe3f;
-        pvVar2 = crt_memory_c_freeSingleInstance_FUN_005fe632(local_3c,&g_CPodFileTypeInfo);
-        crt_memory_c_free_FUN_005fe659(pvVar2);
+        pvVar2 = __vec_delete(local_3c,&g_CPodFileTypeInfo);
+        shape_memdbg_cpp_free_FUN_005fe659(pvVar2);
         shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0,in_stack_fffffb04);
         return;
       }
@@ -143,7 +142,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
                 if (local_18 != 0) {
                   shape_edittool_cpp_CStrList_add_FUN_004a2b80
                             ((CStrList *)&stack0xfffffb04,&DAT_00628c6a);
-                  crt_stdio_c_sprintf_FUN_005fdbd0
+                  sprintf
                             (local_154,"%s\t%s\t%08X",pcVar7,local_30,
                              *(uint *)((int)&local_24->directory_entries->checksum + local_2c)
                             );
@@ -151,7 +150,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
                             ((CStrList *)&stack0xfffffb04,local_154);
                   local_18 = 0;
                 }
-                crt_stdio_c_sprintf_FUN_005fdbd0
+                sprintf
                           (local_154,"\t%s\t%08X",pCVar5->filename,
                            pCVar5->directory_entries[local_20].checksum);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffb04,local_154)
@@ -171,8 +170,8 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
   }
   g_CurrentDebugFilename = "..\\engine\\fileio.cpp";
   g_CurrentDebugLine = 0xe63;
-  pvVar2 = crt_memory_c_freeSingleInstance_FUN_005fe632(local_3c,&g_CPodFileTypeInfo);
-  crt_memory_c_free_FUN_005fe659(pvVar2);
+  pvVar2 = __vec_delete(local_3c,&g_CPodFileTypeInfo);
+  shape_memdbg_cpp_free_FUN_005fe659(pvVar2);
   if (0 < (int)in_stack_fffffb04) {
     shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffffb04,1);
     shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90

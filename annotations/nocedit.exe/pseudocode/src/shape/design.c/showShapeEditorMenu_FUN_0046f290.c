@@ -44,7 +44,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
   g_LightDirectionZ2 = 0;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_64,"Demented Shape Editor    Build date: %s %s","Jan 10 2000",
                "12:03:47");
     engine_2d_c_drawText_FUN_00401fd0(local_64,0,0);
@@ -79,7 +79,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
     engine_2d_c_drawText_FUN_00401fd0("U. Bisect mesh",0,0x155);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    local_14 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
+    local_14 = toupper(uVar1 & 0xff);
     if (local_14 == 0x48) {
       shape_design_c_showHelpFile_FUN_00457f00("editmain.hlp");
     }

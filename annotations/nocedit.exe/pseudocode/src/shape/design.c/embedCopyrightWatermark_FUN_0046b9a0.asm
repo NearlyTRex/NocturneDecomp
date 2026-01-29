@@ -33,7 +33,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_time.c_localtime_FUN_00600288
 ;   crt_time.c_strftime_FUN_006002d4
-;   crt_time.c_time_with_rounding_FUN_006001f0
+;   crt_time.c_time_FUN_006001f0
 ;   shape_design.c_quantizePaletteColors_FUN_0046b770
 ;
 ; *****************************************************************************
@@ -197,13 +197,13 @@ section .text
     LEA EAX,[EBP + -0x4]                ; 0046baf4
         ;   Label: LAB_0046baf4
     PUSH EAX                            ; 0046baf7
-    CALL crt_time.c_time_with_rounding_FUN_006001f0 ; 0046baf8
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c_time_FUN_006001f0   ; 0046baf8
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 0046bafd
     LEA EAX,[EBP + -0x4]                ; 0046bb00
     PUSH EAX                            ; 0046bb03
     CALL crt_time.c_localtime_FUN_00600288 ; 0046bb04
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 0046bb09
     PUSH EAX                            ; 0046bb0c
     MOV EAX,0x61d458                    ; 0046bb0d | = "%m%d%y"
@@ -212,7 +212,7 @@ section .text
     LEA EAX,[EBP + 0xffffff34]          ; 0046bb18
     PUSH EAX                            ; 0046bb1e
     CALL crt_time.c_strftime_FUN_006002d4 ; 0046bb1f
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, tm * time_ptr)
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 0046bb24
     MOV EAX,0x61d45f                    ; 0046bb27 | = "Jan 10 2000"
     PUSH EAX                            ; 0046bb2c | = "Jan 10 2000"

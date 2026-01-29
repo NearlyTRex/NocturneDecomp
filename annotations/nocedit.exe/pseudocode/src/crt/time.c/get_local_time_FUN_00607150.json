@@ -17,7 +17,7 @@
     {
       "addr": "006001f0",
       "from_addr": "006001fb",
-      "name": "crt_time.c_time_with_rounding_FUN_006001f0",
+      "name": "crt_time.c_time_FUN_006001f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -31,7 +31,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_time.c_get_local_time_FUN_00607150",
-    "signature": "void __watcallStack crt_time_c_get_local_time_FUN_00607150(tm *tm_output)"
+    "signature": "void __watcallStack crt_time_c_get_local_time_FUN_00607150(_tm *tm_output)"
   },
   "function_calls": [
     {
@@ -54,7 +54,7 @@
       {
         "call_addr": "006001fb",
         "call_type": "direct",
-        "caller": "crt_time.c_time_with_rounding_FUN_006001f0",
+        "caller": "crt_time.c_time_FUN_006001f0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -100,7 +100,7 @@
         "name": "tm_output",
         "offset": 4,
         "size": 4,
-        "type": "tm *"
+        "type": "_tm *"
       }
     ]
   },

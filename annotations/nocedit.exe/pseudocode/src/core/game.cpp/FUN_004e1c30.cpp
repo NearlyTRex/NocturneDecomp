@@ -9,7 +9,7 @@
 void core_game_cpp_FUN_004e1c30(void)
 
 {
-  FILE *file_ptr;
+  _FILE *file_ptr;
   int item_index;
   CPickList *in_stack_00000004;
   int in_stack_00000008;
@@ -24,7 +24,7 @@ void core_game_cpp_FUN_004e1c30(void)
                          ("world",
                           *(char **)(&PTR_s_hq_act1_msn_0067b750 + in_stack_00000008),"rt")
     ;
-    if (file_ptr == (FILE *)0x0) {
+    if (file_ptr == (_FILE *)0x0) {
       shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(in_stack_00000004,item_index,0);
     }
     else {

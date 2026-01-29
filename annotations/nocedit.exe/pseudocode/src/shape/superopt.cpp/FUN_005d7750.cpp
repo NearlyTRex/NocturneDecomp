@@ -18,7 +18,7 @@ int shape_superopt_cpp_FUN_005d7750(void)
   if (0 < DAT_03f6bbe8) {
     str1 = &DAT_03f6bbf0;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000004);
+      iVar1 = stricmp(str1,in_stack_00000004);
       if (iVar1 == 0) {
         return iVar2;
       }

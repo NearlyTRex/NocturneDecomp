@@ -13,8 +13,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder *this_ptr,in
   
   this_ptr->available_samples = 0;
   this_ptr->decode_buffer_pos = (short *)0x0;
-  crt_stdio_c_fseek_FUN_005ffacc
-            ((this_ptr->file_bitstream).file_handle,(this_ptr->file_bitstream).stream_start_position
+  _fseek((this_ptr->file_bitstream).file_handle,(this_ptr->file_bitstream).stream_start_position
              ,0);
   (this_ptr->file_bitstream).current_byte_index = 0;
   (this_ptr->file_bitstream).bits_available = 0;
@@ -29,8 +28,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder *this_ptr,in
   (this_ptr->memory_bitstream).bits_available = 8;
   this_ptr->synthesis_buffer_index[0] = 0x40;
   this_ptr->synthesis_buffer_index[1] = 0x40;
-  crt_memory_c_memset_FUN_005fde40(this_ptr->synthesis_v_buffer,0,0x2000);
-  crt_memory_c_memset_FUN_005fde40(this_ptr->synthesis_history,0,0x1200);
+  memset(this_ptr->synthesis_v_buffer,0,0x2000);
+  memset(this_ptr->synthesis_history,0,0x1200);
   for (; 0x8ff < sample_offset; sample_offset = sample_offset - iVar1) {
     iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr);
     if (iVar1 < 1) {

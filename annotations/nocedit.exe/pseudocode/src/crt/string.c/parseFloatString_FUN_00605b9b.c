@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_string_c_parseFloatString_FUN_00605b9b(char *str,void *result,char **endptr)
+int __cdecl parseFloatString(char *str,void *result,char **endptr)
 
 {
   byte bVar1;

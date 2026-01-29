@@ -27,7 +27,7 @@ core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMissio
     if ((this_ptr_00->location).area_id == *(int *)this_ptr->unk1) {
       if (this_ptr_00->was_created == 0) {
         if (this_ptr_00->create_event[0] != '\0') {
-          iVar2 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr_00->create_event,"none");
+          iVar2 = stricmp(this_ptr_00->create_event,"none");
           if ((iVar2 != 0) &&
              (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                 (g_CEventListPtr,this_ptr_00->create_event), iVar2 == 0))

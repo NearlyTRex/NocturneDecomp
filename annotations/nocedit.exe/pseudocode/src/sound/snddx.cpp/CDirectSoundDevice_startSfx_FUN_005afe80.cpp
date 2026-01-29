@@ -51,7 +51,7 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
                            (g_DirectSoundHardwareSfxBuffers[iVar1],0,0,dwFlags);
     if (error_code != 0) {
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (acStack_198,"DirectSux: Unable to %s.  (%s)","Play hardware sfx secondary buffer",
                  pcVar4);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_198);

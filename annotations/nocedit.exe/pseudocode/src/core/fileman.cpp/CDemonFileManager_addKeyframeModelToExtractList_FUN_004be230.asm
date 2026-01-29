@@ -40,7 +40,7 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 004be254
     PUSH ESI                            ; 004be256
     CALL core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 ; 004be257
-        ;   XREF to: 0047ee30 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_writeModelDependencies_FUN_0047ee30(FILE * dependency_file, char * model_filename)
+        ;   XREF to: 0047ee30 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_writeModelDependencies_FUN_0047ee30(_FILE * dependency_file, char * model_filename)
     ADD ESP,0x8                         ; 004be25c
     POP ESI                             ; 004be25f
     POP EBX                             ; 004be260

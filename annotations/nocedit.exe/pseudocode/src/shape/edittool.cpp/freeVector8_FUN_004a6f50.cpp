@@ -9,6 +9,6 @@
 void __cdecl shape_edittool_cpp_freeVector8_FUN_004a6f50(CVector3f **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,8,&g_CVectorTypeInfo);
+  __arrfini(array,8,&g_CVectorTypeInfo);
   return;
 }

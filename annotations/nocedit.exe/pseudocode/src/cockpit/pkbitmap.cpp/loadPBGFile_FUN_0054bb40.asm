@@ -53,7 +53,7 @@ section .text
     PUSH EDX                            ; 0054bb64
     PUSH 0x63f34f                       ; 0054bb65 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0054bb6a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054bb6f
     MOV EBX,EAX                         ; 0054bb72
     TEST EAX,EAX                        ; 0054bb74
@@ -68,7 +68,7 @@ section .text
     PUSH EBX                            ; 0054bb8d
     PUSH EDI                            ; 0054bb8e
     CALL cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0 ; 0054bb8f
-        ;   XREF to: 0054b9b0 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0(CPackedBitmapSet * bitmap_set, FILE * file_handle, int param3, int param4, ...)
+        ;   XREF to: 0054b9b0 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0(CPackedBitmapSet * bitmap_set, _FILE * file_handle, int param3, int param4, ...)
     ADD ESP,0x14                        ; 0054bb94
     PUSH 0x59a                          ; 0054bb97
     PUSH 0x63f386                       ; 0054bb9c | = "..\\cockpit\\pkbitmap.cpp"
@@ -76,7 +76,7 @@ section .text
     MOV ESI,EAX                         ; 0054bba2
     MOV dword ptr [ESP + 0x170],EAX     ; 0054bba4
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0054bbab
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0054bbb0
     MOV EAX,dword ptr [EDI]             ; 0054bbb3
     XOR EBX,EBX                         ; 0054bbb5

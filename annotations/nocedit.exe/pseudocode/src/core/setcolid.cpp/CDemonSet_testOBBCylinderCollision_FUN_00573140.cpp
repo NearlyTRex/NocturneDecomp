@@ -36,7 +36,7 @@ core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
   
   pCVar2 = &local_1e8;
   corner_index = 0;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_1e8,8,&g_CVectorTypeInfo);
+  __arrinit(&local_1e8,8,&g_CVectorTypeInfo);
   do {
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        ((CBoundingBox3D *)orientation_matrix,&local_38,corner_index);

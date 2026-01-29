@@ -150,12 +150,12 @@ sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
   iStack_48 = (int)((ulonglong)dVar3 >> 0x20);
   iVar10 = g_MixBufferSize / 2;
   iVar13 = iVar10 + 1;
-  dVar28 = crt_math_c_floor_FUN_005feb90
+  dVar28 = floor
                      ((double)((freq_start_hz * (float)iVar13) / (float)g_AudioSampleRate));
   fVar6 = (float)g_AudioSampleRate;
-  crt_math_c_round_FUN_005fe6b0(dVar28);
-  dVar28 = crt_math_c_floor_FUN_005feb90((double)((freq_end_hz * local_1c) / fVar6));
-  dVar28 = crt_math_c_round_FUN_005fe6b0(dVar28);
+  round(dVar28);
+  dVar28 = floor((double)((freq_end_hz * local_1c) / fVar6));
+  dVar28 = round(dVar28);
   local_4c = (int)ROUND(dVar28);
   if ((iStack_48 < iVar13) && (0 < local_4c)) {
     if (iVar13 <= local_4c) {

@@ -11,6 +11,6 @@ int __cdecl core_backgnd_cpp_freeFires_FUN_00412700(SFire **objs)
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(objs,0x32,&g_SFireTypeInfo);
+  iVar1 = __arrfini(objs,0x32,&g_SFireTypeInfo);
   return iVar1;
 }

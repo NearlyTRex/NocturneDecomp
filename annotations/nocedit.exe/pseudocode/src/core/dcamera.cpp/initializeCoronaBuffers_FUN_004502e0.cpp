@@ -12,7 +12,7 @@ void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0(void)
   int iVar1;
   int iVar2;
   
-  crt_memory_c_memset_FUN_005fde40(g_CoronaDepthBuffer,0x7f,0x4b000);
+  memset(g_CoronaDepthBuffer,0x7f,0x4b000);
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 4;

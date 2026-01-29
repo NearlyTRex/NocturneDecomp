@@ -36,9 +36,9 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_io.c_findCloseWrapper_FUN_00602380
-;   crt_io.c_findFirstFileWrapper_FUN_006021f0
-;   crt_io.c_findNextFileWrapper_FUN_00602300
+;   crt_io.c__findclose_FUN_00602380
+;   crt_io.c__findfirst_FUN_006021f0
+;   crt_io.c__findnext_FUN_00602300
 ;   crt_string.c_strcmp_FUN_005fef20
 ;   shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940
 ;   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
@@ -71,8 +71,8 @@ section .text
     MOV EAX,ESP                         ; 005dc2cc
     PUSH EAX                            ; 005dc2ce
     PUSH 0x654ff3                       ; 005dc2cf | = "art\\*.raw"
-    CALL crt_io.c_findFirstFileWrapper_FUN_006021f0 ; 005dc2d4
-        ;   XREF to: 006021f0 (UNCONDITIONAL_CALL)  ; HANDLE crt_io.c_findFirstFileWrapper_FUN_006021f0(char * filespec, LPWIN32_FIND_DATAA find_data)
+    CALL crt_io.c__findfirst_FUN_006021f0 ; 005dc2d4
+        ;   XREF to: 006021f0 (UNCONDITIONAL_CALL)  ; HANDLE crt_io.c__findfirst_FUN_006021f0(char * filespec, LPWIN32_FIND_DATAA find_data)
     ADD ESP,0x8                         ; 005dc2d9
     MOV dword ptr [ESP + 0x1bc],EAX     ; 005dc2dc
     CMP EAX,-0x1                        ; 005dc2e3
@@ -189,8 +189,8 @@ section .text
     PUSH EAX                            ; 005dc41d
     MOV EDX,dword ptr [ESP + 0x1c0]     ; 005dc41e
     PUSH EDX                            ; 005dc425
-    CALL crt_io.c_findNextFileWrapper_FUN_00602300 ; 005dc426
-        ;   XREF to: 00602300 (UNCONDITIONAL_CALL)  ; int crt_io.c_findNextFileWrapper_FUN_00602300(HANDLE find_handle, LPWIN32_FIND_DATAA find_data)
+    CALL crt_io.c__findnext_FUN_00602300 ; 005dc426
+        ;   XREF to: 00602300 (UNCONDITIONAL_CALL)  ; int crt_io.c__findnext_FUN_00602300(HANDLE find_handle, LPWIN32_FIND_DATAA find_data)
     ADD ESP,0x8                         ; 005dc42b
     TEST EAX,EAX                        ; 005dc42e
     JZ 0x005dc30d                       ; 005dc430
@@ -202,8 +202,8 @@ section .text
     ADD ESP,0x4                         ; 005dc442
     MOV EBX,dword ptr [ESP + 0x1bc]     ; 005dc445
     PUSH EBX                            ; 005dc44c
-    CALL crt_io.c_findCloseWrapper_FUN_00602380 ; 005dc44d
-        ;   XREF to: 00602380 (UNCONDITIONAL_CALL)  ; int crt_io.c_findCloseWrapper_FUN_00602380(HANDLE find_handle)
+    CALL crt_io.c__findclose_FUN_00602380 ; 005dc44d
+        ;   XREF to: 00602380 (UNCONDITIONAL_CALL)  ; int crt_io.c__findclose_FUN_00602380(HANDLE find_handle)
     ADD ESP,0x4                         ; 005dc452
     XOR ESI,ESI                         ; 005dc455
     MOV EAX,dword ptr [ESP + 0x1e4]     ; 005dc457

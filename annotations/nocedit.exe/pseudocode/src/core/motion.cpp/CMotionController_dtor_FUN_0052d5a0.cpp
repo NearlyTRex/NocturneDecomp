@@ -13,8 +13,8 @@ core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController *this_ptr,
   void *ptr;
   
   if ((d1 & 4) != 0) {
-    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CMotionControllerTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr);
+    ptr = __vec_delete(this_ptr,&g_CMotionControllerTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }
   this_ptr->vtable = &g_CMotionControllerVTable;

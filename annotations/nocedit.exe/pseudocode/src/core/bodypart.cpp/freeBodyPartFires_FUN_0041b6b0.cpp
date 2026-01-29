@@ -11,6 +11,6 @@ int __cdecl core_bodypart_cpp_freeBodyPartFires_FUN_0041b6b0(SBodyPartFire **obj
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(objs,2,&g_SBodyPartFireTypeInfo);
+  iVar1 = __arrfini(objs,2,&g_SBodyPartFireTypeInfo);
   return iVar1;
 }

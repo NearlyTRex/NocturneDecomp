@@ -12,7 +12,7 @@ void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
   SIZE_T SVar1;
   int iVar2;
   uint uVar3;
-  FILE *file;
+  _FILE *file;
   int iVar4;
   int iVar5;
   SIZE_T count;
@@ -22,7 +22,7 @@ void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
   char *mode;
   char local_5c [16];
   char local_4c [16];
-  FILE *local_3c;
+  _FILE *local_3c;
   SIZE_T local_38;
   uint local_34;
   int local_30;
@@ -39,12 +39,12 @@ void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
     g_CurrentLineNumber = 0xd3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many thumbs!");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_5c,"%s%s.raw");
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_4c,"%s%s.act");
+  sprintf(local_5c,"%s%s.raw");
+  sprintf(local_4c,"%s%s.act");
   local_3c = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_5c,"rb");
-  if (local_3c == (FILE *)0x0) {
+  if (local_3c == (_FILE *)0x0) {
     local_3c = engine_dosio_c_getFile_FUN_00481a50("art",local_5c,"rb");
-    if (local_3c == (FILE *)0x0) {
+    if (local_3c == (_FILE *)0x0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CPickList_03653fc0.base,local_5c);
       goto LAB_00576a3d;
     }
@@ -58,12 +58,12 @@ void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
     directory = "backdrop";
   }
   file = engine_dosio_c_getFile_FUN_00481a50(directory,local_4c,mode);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentLineNumber = 0xfd;
     g_CurrentFilename = "..\\core\\setedit.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",local_4c);
   }
-  crt_stdio_c_fread_FUN_005fd990(&DAT_03653cc0,0x300,1,file);
+  _fread(&DAT_03653cc0,0x300,1,file);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0xff);
   if (uVar3 < 0x40000) {
     if (0xffff < uVar3) {
@@ -79,7 +79,7 @@ LAB_00576b4f:
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
         }
         SVar1 = local_2c;
-        crt_stdio_c_fread_FUN_005fd990(local_18,local_2c,count,local_3c);
+        _fread(local_18,local_2c,count,local_3c);
         local_20 = 0;
         local_30 = in_stack_0000000c * 0x3000;
         local_28 = local_30 + 0x100;

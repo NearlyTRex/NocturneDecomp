@@ -15,7 +15,7 @@ shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry *boun
   int iVar3;
   int in_stack_00000004;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
+  __STK(0x14);
   iVar2 = 0;
   iVar3 = 0;
   if (0 < (int)g_CramTextureCount) {

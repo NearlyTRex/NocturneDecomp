@@ -30,7 +30,7 @@ void core_skeledit_cpp_FUN_0058de70(void)
   int local_18;
   int local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0xb0);
+  __STK(0xb0);
   shape_design_c_initializeTextureManager_FUN_0046a880(1);
   shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
   pSVar8 = &local_98;

@@ -46,7 +46,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -181,8 +181,8 @@ section .text
     FSTP float ptr [EAX + 0x50]         ; 005199c1
     LEA EAX,[ESP + 0xc]                 ; 005199c4
     PUSH EAX                            ; 005199c8
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005199c9
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005199c9
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EAX,[ESP + 0x10]                ; 005199ce
     ADD ESP,0xc                         ; 005199d2
     CMP EAX,ESI                         ; 005199d5

@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_ungetc_helper_FUN_005fe720(int character,scanf_state_t *state)
+int __watcallStack ungetc_helper(int character,scanf_state_t *state)
 
 {
   int iVar1;
   
-  iVar1 = crt_stdio_c_fputc_FUN_005fea10(character,state->input_ptr);
+  iVar1 = _fputc(character,state->input_ptr);
   return iVar1;
 }

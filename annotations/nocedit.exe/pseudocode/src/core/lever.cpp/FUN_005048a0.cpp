@@ -21,7 +21,7 @@ void core_lever_cpp_FUN_005048a0(void)
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   if (((char)in_stack_00000004[2].unk5 == '\0') &&
-     (iVar2 = crt_string_c_stricmp_FUN_005fe7f0
+     (iVar2 = stricmp
                         (in_stack_00000004[1].create_event,"elevbutton.kfm"), iVar2 != 0))
   {
     pcVar3 = "lever-metal.wav";

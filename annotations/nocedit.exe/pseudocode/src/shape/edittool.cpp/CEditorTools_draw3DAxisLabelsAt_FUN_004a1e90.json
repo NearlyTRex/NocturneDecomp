@@ -92,16 +92,17 @@
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 127,
+    "complexity_score": 192,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 22,
-    "suspect_count": 9,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
-      "pointer_cast"
+      "pointer_cast",
+      "unnamed_param"
     ],
     "total_lines": 76
   },
@@ -306,6 +307,20 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param2",
+      "text": "(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param5",
+      "text": "CQuaternion4f *label_offset,void *param5)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "ROUND",
@@ -327,6 +342,13 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param5",
+      "text": "local_18 = (int)ROUND(*(float *)param5 * 10430.38f);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "ROUND",
@@ -341,6 +363,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param5",
+      "text": "local_14 = (int)ROUND(*(float *)((int)param5 + 8) * 10430.38f);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "ROUND",
@@ -355,11 +384,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param5",
+      "text": "local_10 = (int)ROUND(*(float *)((int)param5 + 4) * 10430.38f);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ROUND",
       "text": "local_10 = (int)ROUND(*(float *)((int)param5 + 4) * 10430.38f);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param2",
+      "text": "(this_ptr,(float)param2,(int)world_position);",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 2,

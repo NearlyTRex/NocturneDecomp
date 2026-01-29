@@ -15,7 +15,7 @@ float __cdecl core_dirmat_cpp_atan2Custom_FUN_00472090(double y,double x)
   
   if ((0.70699999999999996 <= y) || (y <= -0.70699999999999996)) {
     if ((-1 < x) && (x < 1.0)) {
-      dVar2 = crt_math_c_acos_FUN_00600162(x);
+      dVar2 = acos(x);
       local_c = (float)dVar2;
     }
     if (y < 0.0) {
@@ -23,7 +23,7 @@ float __cdecl core_dirmat_cpp_atan2Custom_FUN_00472090(double y,double x)
     }
   }
   else {
-    fVar1 = crt_math_c_asin_FUN_00600b94((float10)y);
+    fVar1 = asin((float10)y);
     local_c = (float)fVar1;
     if (x < 0.0) {
       local_c = (float)3.1415926535900001 - local_c;

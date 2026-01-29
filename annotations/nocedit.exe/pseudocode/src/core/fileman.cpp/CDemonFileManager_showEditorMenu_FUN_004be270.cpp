@@ -36,7 +36,7 @@ core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager
     engine_2d_c_drawText_FUN_00401fd0("S. Search for files in mounted PODs",0,0x134);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    uVar1 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
+    uVar1 = toupper(uVar1 & 0xff);
     core_dmodel_cpp_freeAllModels_FUN_00478cb0();
     core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
     core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
@@ -88,7 +88,7 @@ core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager
                           (g_CEditorToolsPtr,"Enter source directory containing sound files",local_110,0x100,0);
         if (iVar2 != 0) {
           engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(&this_ptr->base);
-          core_fileman_cpp_refreshSoundDirectory_FUN_004be590((FILE *)this_ptr,local_110);
+          core_fileman_cpp_refreshSoundDirectory_FUN_004be590((_FILE *)this_ptr,local_110);
           engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base);
         }
       }

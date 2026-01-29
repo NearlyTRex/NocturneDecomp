@@ -11,14 +11,14 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
 {
   uchar uVar1;
   int iVar2;
-  FILE *pFVar3;
+  _FILE *p_Var3;
   SIZE_T size;
   char *pcVar4;
   uint current_crc;
   uint uVar5;
   CPodFile local_44c;
   uint local_20;
-  FILE *local_1c;
+  _FILE *local_1c;
   int local_18;
   SIZE_T local_14;
   
@@ -48,14 +48,14 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
   }
   iVar2 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyString_0064015e,pod_filename);
   size = iVar2 - local_18;
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (pod_filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
   current_crc = 0xffffffff;
-  local_1c = pFVar3;
-  crt_stdio_c_fseek_FUN_005ffacc(pFVar3,local_18,0);
+  local_1c = p_Var3;
+  _fseek(p_Var3,local_18,0);
   for (; 0xffff < (int)size; size = size - 0x10000) {
     pcVar4 = g_FileIOBuffer;
-    crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,pFVar3);
+    _fread(g_FileIOBuffer,0x10000,1,p_Var3);
     uVar5 = 0;
     do {
       uVar1 = *pcVar4;
@@ -65,7 +65,7 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
     } while (uVar5 < 0x10000);
   }
   pcVar4 = g_FileIOBuffer;
-  crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,size,1,pFVar3);
+  _fread(g_FileIOBuffer,size,1,p_Var3);
   uVar5 = 0;
   local_14 = size;
   if (size != 0) {
@@ -78,11 +78,11 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\pod.cpp",0xfb);
   local_20 = current_crc;
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (pod_filename,(char *)0x0,"rb+","..\\engine\\pod.cpp",0x4b8);
-  crt_stdio_c_fseek_FUN_005ffacc(pFVar3,local_18 + -4,0);
-  crt_stdio_c_fwrite_FUN_005fdc00(&local_20,4,1,pFVar3);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\pod.cpp",0x4bb);
+  _fseek(p_Var3,local_18 + -4,0);
+  _fwrite(&local_20,4,1,p_Var3);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\pod.cpp",0x4bb);
 LAB_00551212:
   engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_44c);
   return;

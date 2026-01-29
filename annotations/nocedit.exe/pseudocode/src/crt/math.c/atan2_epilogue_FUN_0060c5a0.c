@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 crt_math_c_atan2_epilogue_FUN_0060c5a0(void)
+float10 atan2_epilogue(void)
 
 {
   float10 in_ST0;

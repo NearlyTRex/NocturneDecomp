@@ -41,11 +41,11 @@ void __cdecl clipPolygonAgainstMaxZ(float max_z_plane);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0
 // Address: 004551d0
-void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,FILE *file_handle,CVector3f *vertex_buffer_base);
+void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250
 // Address: 00455250
-void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,FILE *file_handle,CVector3f *vertex_buffer_base);
+void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0
 // Address: 004552c0
@@ -125,11 +125,11 @@ void __cdecl CDemonCube::loadGeometryFromTriangleList(CDemonCube *this_ptr,void 
 
 // Original: core_dcube.cpp_CDemonCube_save_FUN_00457430
 // Address: 00457430
-void __cdecl CDemonCube::save(CDemonCube *this_ptr,FILE *file_handle);
+void __cdecl CDemonCube::save(CDemonCube *this_ptr,_FILE *file_handle);
 
 // Original: core_dcube.cpp_CDemonCube_load_FUN_00457530
 // Address: 00457530
-void __cdecl CDemonCube::load(CDemonCube *this_ptr,FILE *file_handle);
+void __cdecl CDemonCube::load(CDemonCube *this_ptr,_FILE *file_handle);
 
 // Original: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
 // Address: 00457650

@@ -45,9 +45,6 @@ CDemonFilter CDemonFilter_ARRAY_008229ec[8] = {};
 CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance = {};
 CKeyFramedModelInstance DAT_00823a98 = {};
 
-// FILE*
-FILE* g_ActorDataFile = {};
-
 // SEdge[512]
 SEdge g_TracedEdgeBuffer[512] = {};
 
@@ -66,6 +63,9 @@ SRenderVertex g_ClipperOutputBuffer[16] = {};
 SRenderVertex g_ClipperInputBuffer[16] = {};
 SRenderVertex g_ClipperWorkingBuffer[16] = {};
 SRenderVertex g_ClipperIntermediateBuffer[16] = {};
+
+// _FILE*
+_FILE* g_ActorDataFile = {};
 
 // char[50]
 char g_ActorDebugBuffer[50] = {};

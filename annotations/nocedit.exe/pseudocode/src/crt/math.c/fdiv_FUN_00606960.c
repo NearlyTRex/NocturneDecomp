@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 __fpustack_safe crt_math_c_fdiv_FUN_00606960(float10 dividend,float10 divisor)
+float10 __fpustack_safe fdiv(float10 dividend,float10 divisor)
 
 {
   float10 fVar1;

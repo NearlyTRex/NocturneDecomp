@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-BOOL __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void)
+BOOL __cdecl shutdown_tls_infrastructure(void)
 
 {
   BOOL extraout_EAX;
   BOOL BVar1;
   
-  crt_tls_c_cleanup_thread_tls_data_FUN_0060a334(1);
+  cleanup_thread_tls_data(1);
   BVar1 = extraout_EAX;
   if (g_TLSIndex != 0xffffffff) {
     BVar1 = (*g_TlsFreeFunc)(g_TLSIndex);

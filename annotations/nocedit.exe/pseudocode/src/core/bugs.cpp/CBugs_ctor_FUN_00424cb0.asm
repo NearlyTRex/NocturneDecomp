@@ -31,7 +31,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   crt_memory.c_memset_FUN_005fde40
 ;
 ; *****************************************************************************
@@ -51,15 +51,15 @@ section .text
     PUSH 0x190                          ; 00424cc5
     ADD EAX,0xbec4                      ; 00424cca
     PUSH EAX                            ; 00424ccf
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00424cd0
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00424cd0
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00424cd5
     PUSH 0x65b770                       ; 00424cd8 | g_CKeyFramedModelInstanceTypeInfo
     PUSH 0x4                            ; 00424cdd
     ADD EAX,0x6404                      ; 00424cdf
     PUSH EAX                            ; 00424ce4
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00424ce5
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00424ce5
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00424cea
     LEA EBX,[EAX + 0xfffedd38]          ; 00424ced
     PUSH 0x6400                         ; 00424cf3

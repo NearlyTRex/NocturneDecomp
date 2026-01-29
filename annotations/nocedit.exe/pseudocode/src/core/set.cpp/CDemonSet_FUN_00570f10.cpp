@@ -26,7 +26,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570f10(CDemonSet *this_ptr)
       pcVar1 = this_ptr->lights[0].name + iVar4 + -4;
       *in_stack_0000000c = pcVar1;
       if (*(int *)pcVar1 == 0) {
-        iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar1 + 4,in_stack_00000008);
+        iVar2 = stricmp(pcVar1 + 4,in_stack_00000008);
         if (iVar2 == 0) {
           *in_stack_00000010 = g_MasterLightList[iVar5];
           return;

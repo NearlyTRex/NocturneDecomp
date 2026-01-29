@@ -43,8 +43,8 @@ void __cdecl core_event_cpp_CEventList_process_FUN_004aaac0(CEventList *this_ptr
       if (fVar2 <= 0.0) {
         iVar5 = this_ptr->timer_count + -1;
         this_ptr->timer_count = iVar5;
-        crt_string_c_memmove_FUN_005fe5e0(piVar7,local_14,(iVar5 - iVar4) * 0x20);
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove(piVar7,local_14,(iVar5 - iVar4) * 0x20);
+        memmove
                   (this_ptr->unk6 + iVar4 * 4 + -0x2c,this_ptr->unk6 + iVar4 * 4 + -0x28,
                    (this_ptr->timer_count - iVar4) * 4);
       }

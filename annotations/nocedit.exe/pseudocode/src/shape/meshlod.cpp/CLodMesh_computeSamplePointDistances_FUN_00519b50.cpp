@@ -88,11 +88,11 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   fVar9 = (fVar9 + fVar8) * fVar10;
   local_70 = (float)fVar12;
   g_LodGenerationStamp = g_LodGenerationStamp + 1;
-  dVar13 = crt_math_c_round_FUN_005fe6b0((double)(((float10)local_78 + fVar8) * fVar10));
+  dVar13 = round((double)(((float10)local_78 + fVar8) * fVar10));
   fVar11 = (float10)dVar13;
-  dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
+  dVar13 = round((double)fVar9);
   fStack_9c = 7.494835e-39;
-  dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 * (fVar12 + fVar8)));
+  dVar14 = round((double)(fVar10 * (fVar12 + fVar8)));
   local_40 = (int)ROUND(fVar11);
   local_44 = (int)ROUND(dVar13);
   local_3c = (int)ROUND(dVar14);
@@ -173,7 +173,7 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
       } while (iVar7 < g_SamplePointCount);
     }
     iVar6 = local_40;
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        ((double)((fStack_9c + (float)0.5) * (float)16));
     iVar7 = local_48;
     local_54.z = (float)(int)ROUND(dVar13);
@@ -183,7 +183,7 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     if (-1 < iVar5) {
       iVar6 = iVar5;
     }
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        ((double)((fStack_9c + (float)0.5) * (float)16));
     iVar5 = local_44;
     local_54.y = (float)(int)ROUND(dVar13);
@@ -192,7 +192,7 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     if (iVar6 < iVar7) {
       iVar6 = iVar7;
     }
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        ((double)((fStack_9c + (float)0.5) * (float)16));
     fVar2 = local_54.z;
     local_54.x = (float)(int)ROUND(dVar13);
@@ -201,7 +201,7 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     if (iVar6 < iVar7) {
       iVar6 = iVar7;
     }
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        ((double)((fStack_9c + (float)0.5) * (float)16));
     fVar1 = local_54.x;
     local_58 = (int)ROUND(dVar13);
@@ -210,7 +210,7 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     if (iVar6 < iVar7) {
       iVar6 = iVar7;
     }
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        ((double)((fStack_9c + (float)0.5) * (float)16));
     fVar2 = local_54.y;
     local_5c = (int)ROUND(dVar13);
@@ -221,7 +221,7 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     }
     fVar1 = fStack_9c + (float)0.5;
     fStack_9c = 7.495882e-39;
-    dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)16));
+    dVar13 = round((double)(fVar1 * (float)16));
     local_60 = (int)ROUND(dVar13);
     uVar3 = (int)fVar2 - local_60 >> 0x1f;
     iVar7 = ((int)fVar2 - local_60 ^ uVar3) - uVar3;

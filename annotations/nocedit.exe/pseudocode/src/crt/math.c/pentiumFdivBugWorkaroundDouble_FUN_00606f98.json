@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 123,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 9,
+    "suspect_count": 14,
     "suspect_types": [
       "fpu_register_input",
       "special_math_intrinsic",
-      "unknown_field"
+      "unknown_field",
+      "unnamed_param"
     ],
     "total_lines": 50
   },
@@ -92,6 +93,20 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param0",
+      "text": "pentiumFdivBugWorkaroundDouble(float10 param0,double param1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param1",
+      "text": "pentiumFdivBugWorkaroundDouble(float10 param0,double param1)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "FPU register input (calling convention issue)",
       "line": 8,
       "match": "in_ST1",
@@ -120,31 +135,52 @@
       "type": "unknown_field"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param1",
+      "text": "if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param0",
+      "text": "return param0 / (float10)param1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param1",
+      "text": "return param0 / (float10)param1;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "FPU register input (calling convention issue)",
       "line": 16,
       "match": "in_ST1",
-      "text": "fVar1 = crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(in_ST1,in_ST2);",
+      "text": "fVar1 = pentiumFdivpWorkaround(in_ST1,in_ST2);",
       "type": "fpu_register_input"
     },
     {
       "description": "FPU register input (calling convention issue)",
       "line": 16,
       "match": "in_ST2",
-      "text": "fVar1 = crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(in_ST1,in_ST2);",
+      "text": "fVar1 = pentiumFdivpWorkaround(in_ST1,in_ST2);",
       "type": "fpu_register_input"
     },
     {
       "description": "FPU register input (calling convention issue)",
       "line": 19,
       "match": "in_ST2",
-      "text": "fVar1 = crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(in_ST2,in_ST3);",
+      "text": "fVar1 = pentiumFdivpWorkaround(in_ST2,in_ST3);",
       "type": "fpu_register_input"
     },
     {
       "description": "FPU register input (calling convention issue)",
       "line": 19,
       "match": "in_ST3",
-      "text": "fVar1 = crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(in_ST2,in_ST3);",
+      "text": "fVar1 = pentiumFdivpWorkaround(in_ST2,in_ST3);",
       "type": "fpu_register_input"
     },
     {

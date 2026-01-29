@@ -14,7 +14,7 @@ core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelIns
   void *pvVar2;
   
   pCVar1 = core_motion_cpp_CMotionController_ctor_FUN_0052d570(&this_ptr->motion_controller);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar2 = __arrinit
                      (&pCVar1[1].current_motion_index,100,&g_CVectorTypeInfo);
   *(CMotionController_vtable **)((int)pvVar2 + -8) = &g_CDeformableModelInstanceVTable;
   *(byte *)((int)pvVar2 + 0x2208) = 0;

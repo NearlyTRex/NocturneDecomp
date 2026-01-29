@@ -102,11 +102,11 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
       }
       shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (acStack_134,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,
                g_CubesWithVoxelsCount,g_CubesVisibleCount);
     engine_2d_c_drawText_FUN_00401fd0(acStack_134,0,0x16);
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (acStack_134,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)*(float *)PTR_DAT_00681ab8,
                (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
@@ -114,7 +114,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
                (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10));
     engine_2d_c_drawText_FUN_00401fd0(acStack_134,0,g_WindowHeight + -0x2c);
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (acStack_134,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
     engine_2d_c_drawText_FUN_00401fd0(acStack_134,0,g_WindowHeight + -0xb);
     wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
@@ -131,7 +131,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
   }
   g_CurrentDebugFilename = "..\\core\\setedit.cpp";
   g_CurrentDebugLine = 0x7f0;
-  crt_memory_c_free_FUN_005fe659(ptr);
+  shape_memdbg_cpp_free_FUN_005fe659(ptr);
   core_setedit_cpp_CallToFreeSomeMemory_FUN_00580560(this_ptr);
   core_slew_cpp_CSlew_free_FUN_005a20a0();
   core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);

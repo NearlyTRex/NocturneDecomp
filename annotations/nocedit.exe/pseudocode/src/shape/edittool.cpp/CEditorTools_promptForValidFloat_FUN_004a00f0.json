@@ -11,15 +11,9 @@
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 56,
+        "column": 33,
         "line": 32,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -37,15 +31,13 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 48,
+    "complexity_score": 33,
     "cross_reference_count": 15,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 33,
-    "suspect_count": 1,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 145
   },
   "cross_references": [
@@ -353,17 +345,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "actual_args": 0,
-      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%f",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 25,
-      "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(local_38,\"%f\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

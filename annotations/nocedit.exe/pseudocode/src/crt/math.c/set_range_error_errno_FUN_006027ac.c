@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_math_c_set_range_error_errno_FUN_006027ac(void)
+void __cdecl set_range_error_errno(void)
 
 {
-  crt_errno_c_setErrno_FUN_00602790(0xe);
+  setErrno(0xe);
   return;
 }

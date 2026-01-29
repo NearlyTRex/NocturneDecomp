@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fflush_FUN_00600e29(FILE *stream)
+; __cdecl int __cdecl crt_stdio_c_fflush_FUN_00600e29(_FILE *stream)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   stream
+; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1640

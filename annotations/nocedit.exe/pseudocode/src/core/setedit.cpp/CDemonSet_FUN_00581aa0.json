@@ -246,9 +246,9 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 38,
         "line": 199,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -440,16 +440,15 @@
   },
   "complexity": {
     "assembly_lines": 1363,
-    "complexity_score": 1575,
+    "complexity_score": 1560,
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
     "pseudocode_lines": 500,
-    "suspect_count": 103,
+    "suspect_count": 102,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -2198,17 +2197,6 @@
       "match": "in_stack_fffff408",
       "text": "in_stack_fffff408 = 0x582486;",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Room size: %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Room size: %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 192,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_194,\"Room size: %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

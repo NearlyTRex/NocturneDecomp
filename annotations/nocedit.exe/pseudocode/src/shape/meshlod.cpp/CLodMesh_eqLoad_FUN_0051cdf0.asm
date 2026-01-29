@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x40]:8  local_40
 ; undefined4       Stack[-0x38]:4  local_38
@@ -69,7 +69,7 @@ section .text
     PUSH ECX                            ; 0051ce11
     MOV dword ptr [ESP + 0x2c],EDX      ; 0051ce12
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0051ce16
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051ce1b
     PUSH 0x13e4                         ; 0051ce1e
     PUSH 0x637fd8                       ; 0051ce23 | = "..\\shape\\meshlod.cpp"
@@ -127,7 +127,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x18]      ; 0051cec2
     PUSH EBX                            ; 0051cec5
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0051cec6
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EBX,EAX                         ; 0051cecb
     ADD ESP,0x18                        ; 0051cecd
     MOV EDX,EAX                         ; 0051ced0
@@ -152,7 +152,7 @@ section .text
     PUSH ESI                            ; 0051cf13
         ;   Label: LAB_0051cf13
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0051cf14
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0051cf19
     TEST EAX,EAX                        ; 0051cf1c
     JL 0x0051cf2a                       ; 0051cf1e

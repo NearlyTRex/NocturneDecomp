@@ -9,9 +9,21 @@
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 39,
         "line": 71,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 27,
+        "line": 71,
+        "message": "cannot convert 'tm*' to '_tm*' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 53,
+        "line": 72,
+        "message": "cannot convert '_tm*' to 'const tm*'"
       },
       {
         "category": "other",
@@ -27,7 +39,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 75,
+        "column": 50,
         "line": 96,
         "message": "'stack0xfffff304' was not declared in this scope; did you mean 'in_stack_fffff304'?"
       }
@@ -54,15 +66,9 @@
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 28,
         "line": 71,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 72,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -75,12 +81,6 @@
         "column": 19,
         "line": 89,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 88,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -456,7 +456,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(time_t *)((int)",
-      "text": "time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)((int)&local_8ec->timestamp + iVar4));",
+      "text": "time_ptr = localtime((time_t *)((int)&local_8ec->timestamp + iVar4));",
       "type": "pointer_cast"
     },
     {
@@ -470,7 +470,7 @@
       "description": "Direct stack address reference",
       "line": 89,
       "match": "&stack0xfffff304",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_52c,\"Contents of pod file:\\n%s\",&stack0xfffff304);",
+      "text": "sprintf(local_52c,\"Contents of pod file:\\n%s\",&stack0xfffff304);",
       "type": "stack_ref"
     },
     {

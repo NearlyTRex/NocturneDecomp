@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_sscanf_FUN_0060013c(char *str,char *format,...)
+int __cdecl sscanf(char *str,char *format,...)
 
 {
   int iVar1;
   byte *local_8;
   
   local_8 = &stack0x0000000c;
-  iVar1 = crt_stdio_c_vsscanf_FUN_00600100(str,format,(va_list_t)&local_8);
+  iVar1 = vsscanf(str,format,(va_list_t)&local_8);
   return iVar1;
 }

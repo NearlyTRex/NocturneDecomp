@@ -15,7 +15,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0
   char **local_c;
   
   local_c = &format;
-  crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)height,(va_list_t *)&local_c);
+  vsprintf(&stack0xffffeff4,(char *)height,(va_list_t *)&local_c);
   local_c = (char **)0x0;
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0
             (this_ptr,(int)&stack0xffffeff4,y,in_stack_ffffeff4);

@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void __watcallStack crt_cpp_c_pureVirtualStub_FUN_005fee9f(void)
+void __watcallStack pureVirtualStub(void)
 
 {
-  crt_cpp_c_reportPureVirtualError_FUN_00605b23("byte constructor or destructor called!",1);
+  reportPureVirtualError("byte constructor or destructor called!",1);
   return;
 }

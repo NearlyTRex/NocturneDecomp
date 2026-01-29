@@ -26,7 +26,7 @@ void core_game_cpp_FUN_004d7fa0(void)
   }
   engine_2d_c_fillRectWithBorder_FUN_00403200
             (in_stack_00000004,in_stack_00000008,in_stack_0000000c,in_stack_00000010,0,0);
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     ((double)((float)((in_stack_0000000c - in_stack_00000004) + 1) *
                              in_stack_00000014));
   if ((int)ROUND(dVar1) < 1) {

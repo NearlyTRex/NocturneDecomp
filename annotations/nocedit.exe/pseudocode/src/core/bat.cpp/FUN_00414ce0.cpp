@@ -26,14 +26,14 @@ void core_bat_cpp_FUN_00414ce0(void)
   if (0.0 <= (double)fVar1) {
     dVar3 = (double)(fVar1 / (float)*(int *)(in_stack_00000004 + 0x178));
     uVar4 = (uint)((ulonglong)dVar3 >> 0x20);
-    dVar3 = crt_math_c_floor_FUN_005feb90(dVar3);
+    dVar3 = floor(dVar3);
     fStack_24 = (float)(double)CONCAT44(local_28,uVar4) - (float)dVar3 * fVar1;
     iVar2 = extraout_EBX_00;
   }
   else {
     dVar3 = (double)(-fVar1 / (float)*(int *)(in_stack_00000004 + 0x178));
     uVar4 = (uint)((ulonglong)dVar3 >> 0x20);
-    dVar3 = crt_math_c_floor_FUN_005feb90(dVar3);
+    dVar3 = floor(dVar3);
     fStack_24 = (float)dVar3 * fVar1 + (float)(double)CONCAT44(local_28,uVar4);
     iVar2 = extraout_EBX;
     if (fStack_24 < 0.0) {

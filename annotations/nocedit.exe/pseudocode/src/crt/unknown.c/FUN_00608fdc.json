@@ -40,14 +40,14 @@
     {
       "addr": "00601ee4",
       "is_variadic": false,
-      "name": "crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4"
+      "name": "crt_stdio.c___CClose_FUN_00601ee4"
     }
   ],
   "globals": [
     {
       "addr": "00684cc4",
       "name": "g_StaticFilePoolStart",
-      "type": "FILE*",
+      "type": "_FILE*",
       "value": "00000000"
     },
     {
@@ -129,21 +129,21 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
-      "text": "if ((FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {",
+      "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(FILE *)((int)",
-      "text": "if ((FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {",
+      "match": "(_FILE *)((int)",
+      "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_00684d12",
-      "text": "if (file_handle < (FILE *)&DAT_00684d12) {",
+      "text": "if (file_handle < (_FILE *)&DAT_00684d12) {",
       "type": "undefined_data"
     },
     {

@@ -45,7 +45,7 @@ LAB_00543605:
                 do {
                   if (*(int *)((int)&g_SimFrameHistory + iVar3) < iVar2) {
                     g_SimFrameCount = g_SimFrameCount + -1;
-                    crt_string_c_memmove_FUN_005fe5e0
+                    memmove
                               ((void *)((int)&g_SimFrameHistory + iVar3),local_18,
                                (g_SimFrameCount - iVar1) * 100);
                   }

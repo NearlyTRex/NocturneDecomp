@@ -14,7 +14,7 @@ double __cdecl shape_design_c_clampedArccos_FUN_00461c50(double dot_product)
   
   if (-1 < (double)CONCAT44(dot_product._0_4_,in_stack_00000004)) {
     if ((double)CONCAT44(dot_product._0_4_,in_stack_00000004) < 1.0) {
-      local_18 = crt_math_c_acos_FUN_00600162((double)CONCAT44(dot_product._0_4_,in_stack_00000004))
+      local_18 = acos((double)CONCAT44(dot_product._0_4_,in_stack_00000004))
       ;
     }
     else {

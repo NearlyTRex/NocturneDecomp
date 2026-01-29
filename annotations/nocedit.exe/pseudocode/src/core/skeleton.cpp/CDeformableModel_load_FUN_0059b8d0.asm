@@ -58,7 +58,7 @@ section .text
     PUSH EBX                            ; 0059b902
     PUSH 0x64e863                       ; 0059b903 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0059b908
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0059b90d
     MOV EDI,EAX                         ; 0059b910
     TEST EAX,EAX                        ; 0059b912
@@ -69,13 +69,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0059b917
     PUSH EBX                            ; 0059b91b
     CALL core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 ; 0059b91c
-        ;   XREF to: 0059b970 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970(CDeformableModel * this_ptr, FILE * file_handle)
+        ;   XREF to: 0059b970 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0059b921
     PUSH 0x4b4                          ; 0059b924
     PUSH 0x64e8a6                       ; 0059b929 | = "..\\core\\skeleton.cpp"
     PUSH EDI                            ; 0059b92e
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0059b92f
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0059b934
     POP EDI                             ; 0059b937
     POP ESI                             ; 0059b938

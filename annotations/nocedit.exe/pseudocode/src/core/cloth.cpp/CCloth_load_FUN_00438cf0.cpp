@@ -16,7 +16,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   float fVar5;
   float fVar6;
   float fVar7;
-  FILE *pFVar8;
+  _FILE *p_Var8;
   int iVar9;
   int *piVar10;
   int iVar11;
@@ -27,7 +27,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   char local_138 [256];
   char *local_38;
   char *local_34;
-  FILE *local_30;
+  _FILE *local_30;
   char *local_2c;
   char *local_28;
   char *local_24;
@@ -37,30 +37,29 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   char *local_14;
   
   local_30 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
-  if (local_30 == (FILE *)0x0) {
+  if (local_30 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0x9b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::load - Unable to open file %s",filename);
   }
-  pFVar8 = local_30;
-  crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,local_30);
-  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar8,"%d\n",&this_ptr->version_num);
+  p_Var8 = local_30;
+  _fgets(local_138,0xff,local_30);
+  _fscanf(p_Var8,"%d\n",&this_ptr->version_num);
   if (3 < this_ptr->version_num) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0xa2;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("%s is version %d, this .EXE is old and can only handle up to version %d",filename,this_ptr->version_num,3);
   }
-  pFVar8 = local_30;
-  crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,local_30);
-  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar8,"%s\n",acStack_238);
+  p_Var8 = local_30;
+  _fgets(local_138,0xff,local_30);
+  _fscanf(p_Var8,"%s\n",acStack_238);
   core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0((CKeyFramedModel *)this_ptr,acStack_238);
   core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00478190((CKeyFramedModel *)this_ptr);
-  crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,pFVar8);
+  _fgets(local_138,0xff,p_Var8);
   local_38 = this_ptr->unk + 0x3ce6c;
   if (this_ptr->version_num < 3) {
-    crt_stdio_c_fscanf_FUN_005fe7c0
-              (local_30,"%f,%f,%f,%f,%f,%f\n",this_ptr->unk + 0x3ce58,this_ptr->unk + 0x3ce5c,
+    _fscanf(local_30,"%f,%f,%f,%f,%f,%f\n",this_ptr->unk + 0x3ce58,this_ptr->unk + 0x3ce5c,
                this_ptr->unk + 0x3ce60,this_ptr->unk + 0x3ce64,this_ptr->unk + 0x3ce68,local_38);
     fVar6 = 0.05f;
     fVar5 = 0.5f;
@@ -79,14 +78,13 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
     *(float *)(this_ptr->unk + 0x3ce74) = fVar7;
   }
   else {
-    crt_stdio_c_fscanf_FUN_005fe7c0
-              (local_30,"%f,%f,%f,%f,%f,%f,%f,%f\n",this_ptr->unk + 0x3ce58,this_ptr->unk + 0x3ce5c,
+    _fscanf(local_30,"%f,%f,%f,%f,%f,%f,%f,%f\n",this_ptr->unk + 0x3ce58,this_ptr->unk + 0x3ce5c,
                this_ptr->unk + 0x3ce60,this_ptr->unk + 0x3ce64,this_ptr->unk + 0x3ce68,local_38,
                this_ptr->unk + 0x3ce70,this_ptr->unk + 0x3ce74);
   }
-  pFVar8 = local_30;
-  crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,local_30);
-  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar8,"%f\n",this_ptr->unk + 0x3ce88);
+  p_Var8 = local_30;
+  _fgets(local_138,0xff,local_30);
+  _fscanf(p_Var8,"%f\n",this_ptr->unk + 0x3ce88);
   if (this_ptr->version_num < 2) {
     this_ptr->unk[0x3ce84] = '\0';
     this_ptr->unk[0x3ce85] = '\0';
@@ -94,28 +92,28 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
     this_ptr->unk[0x3ce87] = '\0';
   }
   else {
-    crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,pFVar8);
-    crt_stdio_c_fscanf_FUN_005fe7c0(pFVar8,"%d\n",this_ptr->unk + 0x3ce84);
+    _fgets(local_138,0xff,p_Var8);
+    _fscanf(p_Var8,"%d\n",this_ptr->unk + 0x3ce84);
   }
-  pFVar8 = local_30;
-  crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,local_30);
-  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar8,"%d\n",this_ptr->unk + 0x3f028);
+  p_Var8 = local_30;
+  _fgets(local_138,0xff,local_30);
+  _fscanf(p_Var8,"%d\n",this_ptr->unk + 0x3f028);
   core_cloth_cpp_CCloth_allocMemory_FUN_00438c50(this_ptr);
   iVar11 = 0;
-  crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,pFVar8);
+  _fgets(local_138,0xff,p_Var8);
   iVar9 = *(int *)(this_ptr->unk + 0x3f028);
   if (0 < iVar9) {
     pcVar12 = this_ptr->unk + 0x3f02c;
     do {
       iVar11 = iVar11 + 1;
-      iVar9 = crt_stdio_c_fscanf_FUN_005fe7c0(local_30,"%d\n",pcVar12);
+      iVar9 = _fscanf(local_30,"%d\n",pcVar12);
       pcVar12 = pcVar12 + 4;
     } while (iVar11 < *(int *)(this_ptr->unk + 0x3f028));
   }
   core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(iVar9);
-  pFVar8 = local_30;
-  crt_stdio_c_fgets_FUN_005fefd0(local_138,0xff,local_30);
-  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar8,"%d\n",this_ptr->unk + 0x3ce8c);
+  p_Var8 = local_30;
+  _fgets(local_138,0xff,local_30);
+  _fscanf(p_Var8,"%d\n",this_ptr->unk + 0x3ce8c);
   iVar9 = 0;
   if (0 < *(int *)(this_ptr->unk + 0x3ce8c)) {
     local_34 = this_ptr->unk + 0x3ce90;
@@ -131,8 +129,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
     do {
       iVar11 = iVar9 * 0xac;
       iVar9 = iVar9 + 1;
-      crt_stdio_c_fscanf_FUN_005fe7c0
-                (local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",local_34 + iVar11,pcVar12,local_14,local_18,
+      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",local_34 + iVar11,pcVar12,local_14,local_18,
                  local_20,local_1c,local_24,local_2c,pcVar14,local_28);
       pcVar12 = pcVar12 + 0xac;
       local_14 = local_14 + 0xac;

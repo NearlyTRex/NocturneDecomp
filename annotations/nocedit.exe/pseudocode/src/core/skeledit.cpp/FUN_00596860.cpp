@@ -14,7 +14,7 @@ void core_skeledit_cpp_FUN_00596860(void)
   char *in_stack_00000008;
   char *in_stack_0000000c;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
+  __STK(0x14);
   y_pos = (in_stack_00000004 + 1) * 0xb;
   engine_2d_c_drawText_FUN_00401fd0(in_stack_00000008,7,y_pos);
   engine_2d_c_drawText_FUN_00401fd0(in_stack_0000000c,0x69,y_pos);

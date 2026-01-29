@@ -46,7 +46,7 @@ int __cdecl core_actor_cpp_matchClassTerm_FUN_0040c4f0(CDemonActorType *type_ptr
   }
   uVar3 = 0;
   do {
-    iVar4 = crt_ctype_c_tolower_FUN_005feb30((uint)(byte)**parse_pos);
+    iVar4 = tolower((uint)(byte)**parse_pos);
     uVar3 = iVar4 * 0x20001 + (uVar3 >> 0x19) + uVar3 * 0x80;
     pcVar2 = *parse_pos;
     *parse_pos = pcVar2 + 1;

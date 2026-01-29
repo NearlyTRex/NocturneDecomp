@@ -208,7 +208,7 @@ LAB_005e24c7:
     iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
                       (*(uint *)(this_ptr->unk4 + 0x58),fVar4);
     if (iVar5 == 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"turret-loop.wav * %f",(double)fVar4);
+      sprintf(local_f4,"turret-loop.wav * %f",(double)fVar4);
       uVar7 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
       *(uint *)(this_ptr->unk4 + 0x58) = uVar7;

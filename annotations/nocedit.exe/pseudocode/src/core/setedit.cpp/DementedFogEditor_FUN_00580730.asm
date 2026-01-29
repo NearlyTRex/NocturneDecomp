@@ -56,7 +56,7 @@
 ;   core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   crt_string.c_strupr_FUN_00600770
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -526,8 +526,8 @@ section .text
         ;   XREF to: 00580c22 (CONDITIONAL_JUMP)  ; LAB_00580c22
     LEA EAX,[ESP + 0x4a8]               ; 00580ccf
     PUSH EAX                            ; 00580cd6
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00580cd7
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00580cd7
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [ESP + 0x5ac],EAX     ; 00580cdc
     MOV dword ptr [ESP + 0x5b0],EDX     ; 00580ce3
     FLD double ptr [ESP + 0x5ac]        ; 00580cea
@@ -559,8 +559,8 @@ section .text
         ;   XREF to: 00580c22 (CONDITIONAL_JUMP)  ; LAB_00580c22
     LEA EAX,[ESP + 0x4a8]               ; 00580d35
     PUSH EAX                            ; 00580d3c
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00580d3d
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00580d3d
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [ESP + 0x5ac],EAX     ; 00580d42
     MOV dword ptr [ESP + 0x5b0],EDX     ; 00580d49
     FLD double ptr [ESP + 0x5ac]        ; 00580d50
@@ -592,8 +592,8 @@ section .text
         ;   XREF to: 00580c22 (CONDITIONAL_JUMP)  ; LAB_00580c22
     LEA EAX,[ESP + 0x4a8]               ; 00580d9b
     PUSH EAX                            ; 00580da2
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00580da3
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00580da3
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [ESP + 0x5ac],EAX     ; 00580da8
     MOV dword ptr [ESP + 0x5b0],EDX     ; 00580daf
     FLD double ptr [ESP + 0x5ac]        ; 00580db6

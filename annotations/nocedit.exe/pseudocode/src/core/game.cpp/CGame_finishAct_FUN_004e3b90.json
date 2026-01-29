@@ -60,12 +60,6 @@
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 127,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 63,
         "line": 164,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -74,12 +68,6 @@
         "category": "other",
         "column": 12,
         "line": 185,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 206,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
@@ -746,7 +734,7 @@
       "description": "Unresolved stack parameter",
       "line": 199,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_15c,\"%d\\n\\n\",in_stack_00000004->game_state_flags);",
+      "text": "sprintf(acStack_15c,\"%d\\n\\n\",in_stack_00000004->game_state_flags);",
       "type": "stack_param"
     },
     {

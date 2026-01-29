@@ -32,7 +32,7 @@
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     MOV EBX,EAX                         ; 00558d1c
     LEA EAX,[ESP + 0x20]                ; 00558d1e
     PUSH EAX                            ; 00558d22
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00558d23
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00558d23
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00558d28
     LEA EAX,[ESP + 0x18]                ; 00558d2b
     PUSH EAX                            ; 00558d2f

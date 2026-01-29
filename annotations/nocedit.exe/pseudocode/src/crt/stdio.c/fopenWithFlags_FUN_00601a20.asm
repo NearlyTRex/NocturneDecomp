@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl crt_stdio_c_fopenWithFlags_FUN_00601a20(char *filename,char *mode,int flags)
+; __cdecl _FILE * __cdecl crt_stdio_c_fopenWithFlags_FUN_00601a20(char *filename,char *mode,int flags)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
@@ -14,7 +14,7 @@
 ;   crt_stdio.c_fopen_FUN_00601a7c at 00601a89
 ;
 ; Called Functions:
-;   crt_stdio.c_AllocateFileStruct_FUN_006092f0
+;   crt_stdio.c___allocfp_FUN_006092f0
 ;   crt_stdio.c_OpenFileAndInitialize_FUN_0060190c
 ;   crt_stdio.c_OpenModeStringParser_FUN_006017d0
 ;
@@ -39,8 +39,8 @@ section .text
     JZ 0x00601a72                       ; 00601a3a
         ;   XREF to: 00601a72 (CONDITIONAL_JUMP)  ; LAB_00601a72
     PUSH 0x0                            ; 00601a3c
-    CALL crt_stdio.c_AllocateFileStruct_FUN_006092f0 ; 00601a3e
-        ;   XREF to: 006092f0 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_AllocateFileStruct_FUN_006092f0(int unused_param)
+    CALL crt_stdio.c___allocfp_FUN_006092f0 ; 00601a3e
+        ;   XREF to: 006092f0 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c___allocfp_FUN_006092f0(int unused_param)
     ADD ESP,0x4                         ; 00601a43
     MOV EDX,EAX                         ; 00601a46
     TEST EAX,EAX                        ; 00601a48
@@ -59,7 +59,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 00601a61
     PUSH EDI                            ; 00601a65
     CALL crt_stdio.c_OpenFileAndInitialize_FUN_0060190c ; 00601a66
-        ;   XREF to: 0060190c (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, ...)
+        ;   XREF to: 0060190c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, ...)
     ADD ESP,0x18                        ; 00601a6b
     MOV EDX,EAX                         ; 00601a6e
     MOV EAX,EDX                         ; 00601a70

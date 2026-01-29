@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double __cdecl crt_string_c_strtod_main_FUN_00605d5d(char *str,char **endptr)
+double __cdecl strtod_main(char *str,char **endptr)
 
 {
   uint uVar1;
@@ -23,7 +23,7 @@ double __cdecl crt_string_c_strtod_main_FUN_00605d5d(char *str,char **endptr)
   ulonglong local_20;
   ulonglong local_18;
   
-  iVar4 = crt_string_c_parseFloatString_FUN_00605b9b(in_stack_00000004,&local_34,(char **)str);
+  iVar4 = parseFloatString(in_stack_00000004,&local_34,(char **)str);
   if (iVar4 == 0) {
     uVar5 = 0;
     uVar1 = 0;
@@ -33,7 +33,7 @@ LAB_00605d83:
   }
   uVar6 = (uint)(CONCAT11(bStack_2b,uStack_2c) & 0x7fff);
   if (0x43fe < uVar6) {
-    crt_math_c_set_range_error_errno_FUN_006027ac();
+    set_range_error_errno();
     uVar5 = INFINITY._4_4_;
     uVar1 = INFINITY._0_4_;
     if ((bStack_2b & 0x80) != 0) {
@@ -43,7 +43,7 @@ LAB_00605d83:
   }
   if (uVar6 < 0x3bcd) {
     if ((int)uVar6 < -0x34) {
-      crt_math_c_set_range_error_errno_FUN_006027ac();
+      set_range_error_errno();
       return 0.0;
     }
     local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));
@@ -65,6 +65,6 @@ LAB_00605d83:
     return local_28;
   }
 LAB_00605e33:
-  crt_math_c_set_range_error_errno_FUN_006027ac();
+  set_range_error_errno();
   return local_28;
 }

@@ -38,9 +38,9 @@ void core_msnedit_cpp_FUN_00536bf0(void)
         } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0U) != 0);
       } while ((local_10 == 0x2d) || (local_10 == 0x5f));
       *pcVar4 = '\0';
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_d8,"none");
+      iVar3 = stricmp(local_d8,"none");
       if ((iVar3 == 0) ||
-         (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_d8,"true"), iVar3 == 0))
+         (iVar3 = stricmp(local_d8,"true"), iVar3 == 0))
       goto LAB_00536c76;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(in_stack_00000008,local_d8);
       if (*in_stack_00000004 == '\0') {

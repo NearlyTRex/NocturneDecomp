@@ -66,6 +66,12 @@
         "column": 40,
         "line": 154,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 33,
+        "line": 413,
+        "message": "cannot convert 'tm*' to '_tm*' in assignment"
       }
     ],
     "success": false,
@@ -150,7 +156,7 @@
       },
       {
         "category": "other",
-        "column": 51,
+        "column": 52,
         "line": 157,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -180,9 +186,9 @@
       },
       {
         "category": "other",
-        "column": 46,
+        "column": 32,
         "line": 164,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
       },
       {
         "category": "other",
@@ -228,9 +234,9 @@
       },
       {
         "category": "other",
-        "column": 46,
+        "column": 27,
         "line": 210,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'SFoundFileInfo*' [-Wformat=]"
       },
       {
         "category": "other",
@@ -354,9 +360,9 @@
       },
       {
         "category": "other",
-        "column": 34,
+        "column": 48,
         "line": 355,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'SFoundFileInfo*' [-Wformat=]"
       },
       {
         "category": "other",
@@ -402,97 +408,91 @@
       },
       {
         "category": "other",
-        "column": 33,
-        "line": 415,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 64,
-        "line": 420,
+        "line": 419,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 432,
+        "line": 431,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 436,
+        "line": 435,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 443,
+        "line": 442,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 453,
+        "line": 452,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 464,
+        "line": 463,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 468,
+        "line": 467,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 472,
+        "line": 471,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 479,
+        "line": 478,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 484,
+        "line": 483,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 488,
+        "line": 487,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 491,
+        "line": 490,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 494,
+        "line": 493,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 835,
+    "complexity_score": 834,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
-    "pseudocode_lines": 490,
+    "pseudocode_lines": 489,
     "suspect_count": 32,
     "suspect_types": [
       "negative_offset",
@@ -501,7 +501,7 @@
       "stack_ref",
       "warning_unreachable"
     ],
-    "total_lines": 1777
+    "total_lines": 1776
   },
   "cross_references": [],
   "function": {
@@ -526,12 +526,7 @@
     {
       "addr": "00601450",
       "is_variadic": false,
-      "name": "crt_errno.c_errno_FUN_00601450"
-    },
-    {
-      "addr": "005ff9d0",
-      "is_variadic": false,
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+      "name": "crt_errno.c__errno_FUN_00601450"
     },
     {
       "addr": "00601540",
@@ -542,6 +537,11 @@
       "addr": "005fe6d0",
       "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    },
+    {
+      "addr": "005ff9d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_remove_FUN_005ff9d0"
     },
     {
       "addr": "006015d0",
@@ -566,7 +566,7 @@
     {
       "addr": "006001f0",
       "is_variadic": false,
-      "name": "crt_time.c_time_with_rounding_FUN_006001f0"
+      "name": "crt_time.c_time_FUN_006001f0"
     },
     {
       "addr": "00403260",

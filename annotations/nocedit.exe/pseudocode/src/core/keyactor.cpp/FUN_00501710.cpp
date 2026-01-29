@@ -25,7 +25,7 @@ void core_keyactor_cpp_FUN_00501710(void)
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
             ((CDemonGlobe *)(in_stack_00000004 + 0x2dc),(CColor3f *)(in_stack_00000004 + 0x20));
   fVar3 = (float10)fsin((float10)*(float *)(in_stack_00000004 + 0x2d8));
-  dVar4 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = round
                     ((double)(fVar3 * (float10)8192 + (float10)16384));
   iVar1 = (int)ROUND(dVar4);
   *(int *)(in_stack_00000004 + 0x318) = iVar1;

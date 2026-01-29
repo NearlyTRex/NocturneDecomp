@@ -4,20 +4,20 @@ FUNCTION COMPILATION SUMMARY
 
 SUMMARY
 --------------------------------------------------
-Total functions compiled: 6504
-Successful: 4136 (63.6%)
-Failed: 2368
+Total functions compiled: 6507
+Successful: 4130 (63.5%)
+Failed: 2377
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          11150
-  incompatible_types              1692
-  undeclared_identifier           1382
+  other                          11152
+  incompatible_types              1727
+  undeclared_identifier           1394
   syntax_error                     537
   missing_member                    33
 
 ====================================================================================================
-CATEGORY: other (11150 errors)
+CATEGORY: other (11152 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
@@ -39,10 +39,10 @@ CATEGORY: other (11150 errors)
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     Line 102: cast from 'int*' to 'int' loses precision [-fpermissive]...
 
-  ... and 11120 more errors
+  ... and 11122 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1692 errors)
+CATEGORY: incompatible_types (1727 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -51,12 +51,20 @@ CATEGORY: incompatible_types (1692 errors)
     Line 28: invalid conversion from 'void*' to 'CPackedBitmap*' [-fpermissive]...
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
     Line 34: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     Line 44: invalid conversion from 'void*' to 'void**' [-fpermissive]...
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
     Line 62: invalid conversion from 'void*' to 'void**' [-fpermissive]...
   cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
-    Line 61: invalid conversion from 'void*' to 'CPackedBitmap*' [-fpermissive]...
+    Line 60: invalid conversion from 'void*' to 'CPackedBitmap*' [-fpermissive]...
   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
     Line 18: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
@@ -81,19 +89,11 @@ CATEGORY: incompatible_types (1692 errors)
     Line 13: cannot convert 'void (*)(void*, void*, int)' to 'void (**)(void*, void*, int)' i...
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     Line 33: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
-  cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
-    Line 26: invalid conversion from 'void*' to 'uint*' {aka 'unsigned int*'} [-fpermissive]...
-  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
-    Line 25: invalid conversion from 'void*' to 'char*' [-fpermissive]...
-  support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
-    Line 21: invalid conversion from 'void*' to 'CLZWDictionaryNode*' [-fpermissive]...
-  support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
-    Line 23: invalid conversion from 'void*' to 'FILE*' [-fpermissive]...
 
-  ... and 1662 more errors
+  ... and 1697 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (1382 errors)
+CATEGORY: undeclared_identifier (1394 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -141,7 +141,7 @@ CATEGORY: undeclared_identifier (1382 errors)
   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     Line 22: 'crt_wsock32_c_htons' was not declared in this scope...
 
-  ... and 1352 more errors
+  ... and 1364 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (537 errors)
@@ -213,8 +213,8 @@ CATEGORY: missing_member (33 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 3.41
-Average suspects in failed compilations: 15.07
+Average suspects in successfully compiled functions: 3.39
+Average suspects in failed compilations: 14.93
 
-Functions that compile but have suspect patterns: 1793
+Functions that compile but have suspect patterns: 1775
 (These may have runtime issues even though syntax is valid)

@@ -20,7 +20,7 @@ shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510
     end_pos = this_ptr->current_length;
   }
   if (start_pos < end_pos) {
-    crt_string_c_memmove_FUN_005fe5e0
+    memmove
               (this_ptr->string_data + start_pos,this_ptr->string_data + end_pos,
                this_ptr->current_length - end_pos);
     iVar1 = this_ptr->current_length - (end_pos - start_pos);

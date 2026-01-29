@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_errno_c_setErrno_FUN_00602790(int error_code)
+void __cdecl setErrno(int error_code)
 
 {
   ThreadData *pTVar1;

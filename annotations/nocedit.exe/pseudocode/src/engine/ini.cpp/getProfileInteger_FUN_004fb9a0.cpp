@@ -15,7 +15,7 @@ engine_ini_cpp_getProfileInteger_FUN_004fb9a0
   char local_20c [256];
   char local_10c [256];
   
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_10c,"%d",default_value);
+  sprintf(local_10c,"%d",default_value);
   iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004fb250
                     (&g_CIniInstance,section,key,local_10c,local_20c,0xff,filename);
   if (iVar1 == 0) {
@@ -23,6 +23,6 @@ engine_ini_cpp_getProfileInteger_FUN_004fb9a0
     g_CurrentLineNumber = 0x235;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad ini read!");
   }
-  iVar1 = crt_stdlib_c_atoi_FUN_005ffef0(local_20c);
+  iVar1 = atoi(local_20c);
   return iVar1;
 }

@@ -54,12 +54,6 @@
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 73,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 75,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -68,12 +62,6 @@
         "category": "other",
         "column": 50,
         "line": 77,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 91,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -146,14 +134,13 @@
   },
   "complexity": {
     "assembly_lines": 419,
-    "complexity_score": 515,
+    "complexity_score": 500,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 17,
     "pseudocode_lines": 230,
-    "suspect_count": 27,
+    "suspect_count": 26,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param"
     ],
@@ -189,7 +176,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0",
-    "signature": "void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (CBoneStructure *this_ptr,FILE *file,int *frame_count_out)"
+    "signature": "void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)"
   },
   "function_calls": [
     {
@@ -205,7 +192,7 @@
     {
       "addr": "005ff9f3",
       "is_variadic": false,
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe840",
@@ -682,7 +669,7 @@
         "name": "file",
         "offset": 12,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -705,7 +692,7 @@
       "description": "Unresolved stack parameter",
       "line": 66,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr,\"%d,%d\\n\",in_stack_00000004,file);",
+      "text": "_fscanf((_FILE *)this_ptr,\"%d,%d\\n\",in_stack_00000004,file);",
       "type": "stack_param"
     },
     {
@@ -875,17 +862,6 @@
       "match": "in_stack_00000004",
       "text": "} while (iVar5 < *in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"\\\"%[^\\\"]\\\",%d\\n\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "\\\"%[^\\\"]\\\",%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 84,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr,\"\\\"%[^\\\"]\\\",%d\\n\",piVar9,local_2c);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
     }
   ]
 }

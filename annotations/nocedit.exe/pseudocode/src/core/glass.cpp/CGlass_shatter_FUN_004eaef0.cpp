@@ -51,7 +51,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector
       } while (cVar1 != '\0');
       core_set_cpp_CDemonSet_FUN_00570c60(g_CDemonSetPtr);
     }
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_cc,4,&g_CVectorTypeInfo);
+    __arrinit(&local_cc,4,&g_CVectorTypeInfo);
     local_1c.x = (this_ptr->glass_size).x * (float)0.5;
     local_1c.y = 0.0;
     local_1c.z = 0.0;

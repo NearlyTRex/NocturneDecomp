@@ -24,7 +24,7 @@ void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
   fVar3 = (this_ptr->base).velocity.z;
   iVar7 = g_GlobalDeltaTimeInt >> 0x1f;
   iVar4 = g_GlobalDeltaTimeInt + iVar7 * -4;
-  dVar8 = crt_math_c_round_FUN_005fe6b0
+  dVar8 = round
                     ((double)(SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) *
                              (float)32767.700000000001));
   iVar6 = g_GlobalDeltaTimeInt;

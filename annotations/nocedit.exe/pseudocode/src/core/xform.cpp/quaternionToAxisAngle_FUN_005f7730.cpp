@@ -18,7 +18,7 @@ core_xform_cpp_quaternionToAxisAngle_FUN_005f7730
     dVar2 = (double)quat_in->w;
     if ((float)-1 < quat_in->w) {
       if (dVar2 < 1.0) {
-        dVar2 = crt_math_c_acos_FUN_00600162(dVar2);
+        dVar2 = acos(dVar2);
         *angle_out = (float)((float10)dVar2 * (float10)2);
       }
       else {

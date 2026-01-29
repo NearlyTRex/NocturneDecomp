@@ -12,59 +12,41 @@
       {
         "category": "other",
         "column": 28,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 33,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 35,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 43,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 55,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 60,
+        "line": 61,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 63,
+        "line": 64,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 158,
+    "complexity_score": 159,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 64,
     "suspect_count": 9,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 210
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -84,7 +66,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_loadActor_FUN_00523990",
-    "signature": "CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990 (CDemonMission *this_ptr,FILE *file,CDemonActor *current_actor,char *property_description)"
+    "signature": "CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990 (CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )"
   },
   "function_calls": [
     {
@@ -262,7 +244,7 @@
         "name": "file",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -283,63 +265,63 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 10,
       "match": "unaff_ESI",
       "text": "CDemonActor *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 31,
       "match": "unaff_ESI",
       "text": "unaff_ESI = (CDemonActor *)0x0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 34,
       "match": "unaff_ESI",
       "text": "unaff_ESI = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(this_ptr);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 35,
       "match": "unaff_ESI",
       "text": "if (unaff_ESI == (CDemonActor *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 42,
       "match": "unaff_ESI",
       "text": "pCVar1 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 58,
       "match": "unaff_ESI",
       "text": "pCVar1 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_ESI",
-      "text": "while (unaff_ESI = pCVar1, iVar2 = crt_stdio_c_fgetc_FUN_005fe840(file), iVar2 != -1) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 60,
       "match": "unaff_ESI",
+      "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_ESI",
       "text": "pCVar1 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 63,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

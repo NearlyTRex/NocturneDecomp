@@ -35,7 +35,7 @@ core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170
   fVar4 = (this_ptr->cell_size).y;
   fVar10 = ((float10)world_position->z - (float10)(this_ptr->bbox_min).z) /
            (float10)(this_ptr->cell_size).z;
-  dVar14 = crt_math_c_round_FUN_005fe6b0
+  dVar14 = round
                      ((double)((world_position->x - (this_ptr->bbox_min).x) /
                               (this_ptr->cell_size).x));
   fVar5 = (this_ptr->cell_size).x;
@@ -43,23 +43,23 @@ core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170
   fVar7 = world_position->x;
   fVar11 = (float10)0.125f;
   fVar12 = (float10)(this_ptr->cell_size).x * fVar11;
-  dVar15 = crt_math_c_round_FUN_005fe6b0((double)((fVar2 - fVar3) / fVar4));
+  dVar15 = round((double)((fVar2 - fVar3) / fVar4));
   fVar13 = ((float10)world_position->y -
            ((float10)(int)ROUND(dVar15) * (float10)(this_ptr->cell_size).y +
            (float10)(this_ptr->bbox_min).y)) / ((float10)(this_ptr->cell_size).y * fVar11);
-  dVar15 = crt_math_c_round_FUN_005fe6b0((double)fVar10);
+  dVar15 = round((double)fVar10);
   iStack_34 = (int)ROUND(dVar15);
   fVar2 = (this_ptr->cell_size).z;
   fVar3 = (this_ptr->bbox_min).z;
   fVar4 = world_position->z;
   fVar8 = (this_ptr->cell_size).z;
-  dVar14 = crt_math_c_round_FUN_005fe6b0
+  dVar14 = round
                      ((double)(((float10)fVar7 -
                                ((float10)(int)ROUND(dVar14) * (float10)fVar5 + (float10)fVar6)) /
                               fVar12));
   local_30 = (int)ROUND(dVar14);
-  crt_math_c_round_FUN_005fe6b0((double)fVar13);
-  dVar14 = crt_math_c_round_FUN_005fe6b0
+  round((double)fVar13);
+  dVar14 = round
                      ((double)(((float10)fVar4 -
                                ((float10)iStack_34 * (float10)fVar2 + (float10)fVar3)) /
                               ((float10)fVar8 * fVar11)));

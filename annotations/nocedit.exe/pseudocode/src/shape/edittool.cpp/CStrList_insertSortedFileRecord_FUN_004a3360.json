@@ -9,9 +9,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 59,
+        "column": 35,
         "line": 76,
         "message": "'stack0x00000014' was not declared in this scope"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 49,
+        "line": 77,
+        "message": "cannot convert '_tm*' to 'const tm*'"
       }
     ],
     "success": false,
@@ -33,18 +39,6 @@
         "column": 18,
         "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 77,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 102,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -356,7 +350,7 @@
       "description": "Direct stack address reference",
       "line": 69,
       "match": "&stack0x00000014",
-      "text": "time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)&stack0x00000014);",
+      "text": "time_ptr = localtime((time_t *)&stack0x00000014);",
       "type": "stack_ref"
     }
   ]

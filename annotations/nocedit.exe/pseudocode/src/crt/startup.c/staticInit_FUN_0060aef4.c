@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_startup_c_staticInit_FUN_0060aef4(void)
+void __cdecl staticInit(void)
 
 {
   crt_startup_c_FUN_0060d230(0);

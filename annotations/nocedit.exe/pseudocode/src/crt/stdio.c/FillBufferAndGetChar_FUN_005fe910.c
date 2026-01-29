@@ -2,17 +2,17 @@
 // Address: 005fe910
 // Address Range: [[005fe910, 005fe93e]]
 // Convention: __watcallStack
-// Signature: int __watcallStack crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(FILE *file)
+// Signature: int __watcallStack crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(_FILE *file)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(FILE *file)
+int __watcallStack FillBufferAndGetChar(_FILE *file)
 
 {
   byte *pbVar1;
   int iVar2;
   
-  iVar2 = crt_stdio_c_FillInputBuffer_FUN_005fe940(file);
+  iVar2 = FillInputBuffer(file);
   if (iVar2 == 0) {
     return -1;
   }

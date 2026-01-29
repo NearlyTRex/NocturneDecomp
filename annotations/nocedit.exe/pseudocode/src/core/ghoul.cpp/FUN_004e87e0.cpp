@@ -126,7 +126,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       pCVar4 = (in_stack_00000004->base).vtable._ub;
       spawn_radius = 7.00649e-44;
       iVar9 = 0x4e8999;
-      dVar10 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * fVar8));
+      dVar10 = round((double)(local_14 * fVar8));
       *(int *)(in_stack_00000004[1].base.create_event + 0x28) = (int)ROUND(dVar10);
       (*pCVar4->spawnFlies)(&in_stack_00000004->base,iVar9,spawn_radius);
     }
@@ -144,7 +144,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
     }
     else {
       iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
-      crt_stdio_c_sprintf_FUN_005fdbd0((char *)&local_78,"guul flinch%d",iVar9);
+      sprintf((char *)&local_78,"guul flinch%d",iVar9);
       this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                            (&(in_stack_00000004->model).motion_controller);
       iVar9 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);

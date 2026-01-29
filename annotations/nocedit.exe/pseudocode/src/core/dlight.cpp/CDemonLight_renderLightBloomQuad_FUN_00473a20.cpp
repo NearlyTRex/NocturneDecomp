@@ -95,7 +95,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   }
   iVar2 = (int)g_PerspectiveReciprocal / 2;
   local_1c = -(local_50 * (float)local_44.x + local_58 * local_4c + local_54 * local_48);
-  dVar5 = crt_math_c_round_FUN_005fe6b0
+  dVar5 = round
                     ((double)(local_1c * local_1c * local_1c * local_1c * (float)65536));
   local_1c = (float)(int)ROUND(dVar5);
   lVar1 = (longlong)(0xffff - iVar2) * (longlong)(int)local_1c;

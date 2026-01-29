@@ -2,13 +2,13 @@
 // Address: 0054b690
 // Address Range: [[0054b690, 0054b85a]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690 (CPackedBitmap *this_ptr,FILE *file_handle,int skip_data_load)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690 (CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load)
 
 #include "nocturne.h"
 
 void __cdecl
 cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
-          (CPackedBitmap *this_ptr,FILE *file_handle,int skip_data_load)
+          (CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load)
 
 {
   void *size;
@@ -33,7 +33,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
   bVar9 = 0;
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
   do {
-    SVar1 = crt_stdio_c_fread_FUN_005fd990(local_2c,0x1c,1,file_handle);
+    SVar1 = _fread(local_2c,0x1c,1,file_handle);
     if (SVar1 != 1) goto LAB_0054b71f;
     iVar4 = 4;
     bVar7 = false;
@@ -62,8 +62,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
                           ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
       this_ptr->row_pointers = ppvVar3;
       if (ppvVar3 != (void **)0x0) {
-        SVar1 = crt_stdio_c_fread_FUN_005fd990
-                          (this_ptr->row_pointers,(this_ptr->height + 1) * 4,1,file_handle);
+        SVar1 = _fread(this_ptr->row_pointers,(this_ptr->height + 1) * 4,1,file_handle);
         if (SVar1 == 1) {
           iVar2 = 0;
           if (0 < this_ptr->height) {
@@ -76,14 +75,14 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
           }
           size = this_ptr->row_pointers[this_ptr->height];
           if (skip_data_load != 0) {
-            crt_stdio_c_fseek_FUN_005ffacc(file_handle,(long)size,1);
+            _fseek(file_handle,(long)size,1);
             return;
           }
           buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
           this_ptr->packed_data = buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;
-          SVar1 = crt_stdio_c_fread_FUN_005fd990(buffer,(SIZE_T)size,1,file_handle);
+          SVar1 = _fread(buffer,(SIZE_T)size,1,file_handle);
           if (SVar1 == 1) {
             return;
           }

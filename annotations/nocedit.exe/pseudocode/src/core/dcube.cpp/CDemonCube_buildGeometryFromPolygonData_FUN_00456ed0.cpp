@@ -64,7 +64,7 @@ core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube *
       local_1c = 0;
       local_24 = g_ModelPolygonData[0].texture_name;
       do {
-        iVar3 = crt_stdlib_c_atoi_FUN_005ffef0(local_24);
+        iVar3 = atoi(local_24);
         local_10 = iVar2 << 5;
         iVar4 = 2;
         iVar5 = local_1c + 8;

@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_process_c_execvp_FUN_00610790(int argc,char *program,char *arg1,char *arg2,...)
+int __cdecl execvp(int argc,char *program,char *arg1,char *arg2,...)
 
 {
   int iVar1;
   
-  iVar1 = crt_process_c_spawnvp_FUN_0060f39c(argc,program,&arg1);
+  iVar1 = spawnvp(argc,program,&arg1);
   return iVar1;
 }

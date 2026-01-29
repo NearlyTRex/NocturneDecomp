@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(FILE *file)
+; __watcallStack int __watcallStack crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[1]:
 ;   crt_stdio.c_fgetc_FUN_005fe840 at 005fe8a5
@@ -21,7 +21,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005fe911
     PUSH EBX                            ; 005fe915
     CALL crt_stdio.c_FillInputBuffer_FUN_005fe940 ; 005fe916
-        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(FILE * file)
+        ;   XREF to: 005fe940 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillInputBuffer_FUN_005fe940(_FILE * file)
     ADD ESP,0x4                         ; 005fe91b
     TEST EAX,EAX                        ; 005fe91e
     JNZ 0x005fe929                      ; 005fe920

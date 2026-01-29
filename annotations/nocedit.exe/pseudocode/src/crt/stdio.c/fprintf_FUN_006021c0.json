@@ -32,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fprintf_FUN_006021c0",
-    "signature": "void __cdecl crt_stdio_c_fprintf_FUN_006021c0(FILE *stream,char *format,...)"
+    "signature": "void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...)"
   },
   "function_calls": [
     {
@@ -91,7 +91,7 @@
         "name": "stream",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -114,7 +114,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_vfprintf_FUN_00604850(stream,format,in_stack_0000000c);",
+      "text": "vfprintf(stream,format,in_stack_0000000c);",
       "type": "stack_param"
     },
     {

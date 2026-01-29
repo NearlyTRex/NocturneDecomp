@@ -37,7 +37,7 @@ uint core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
   uint uStack_14;
   
   in_stack_00000004[0x179].scale.x = 0;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&stack0xffffff44,4,&g_CVectorTypeInfo);
+  __arrinit(&stack0xffffff44,4,&g_CVectorTypeInfo);
   local_5c.x = -0.08;
   local_5c.y = 0.44;
   local_5c.z = 1.92;

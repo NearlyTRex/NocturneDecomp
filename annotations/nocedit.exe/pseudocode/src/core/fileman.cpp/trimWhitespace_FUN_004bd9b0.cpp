@@ -33,7 +33,7 @@ void __cdecl core_fileman_cpp_trimWhitespace_FUN_004bd9b0(char *str)
   }
   str[n] = '\0';
   while ((g_CharacterClassificationTable[(byte)(*str + 1)] & 2U) != 0) {
-    crt_string_c_memmove_FUN_005fe5e0(str,str + 1,n);
+    memmove(str,str + 1,n);
     n = n - 1;
   }
   return;

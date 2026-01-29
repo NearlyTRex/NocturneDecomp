@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 char * __cdecl
-crt_time_c_parse_timezone_spec_FUN_00607348(char *tz_string,char *name_buffer,int *offset_seconds)
+parse_timezone_spec(char *tz_string,char *name_buffer,int *offset_seconds)
 
 {
   byte bVar1;
@@ -56,11 +56,11 @@ LAB_006073c8:
     local_1c = 0;
     local_18 = 0;
     local_14 = 0;
-    tz_string = crt_string_c_parse_uint_FUN_00607318(tz_string,&local_14);
+    tz_string = parse_uint(tz_string,&local_14);
     if (*tz_string == 0x3a) {
-      tz_string = crt_string_c_parse_uint_FUN_00607318((char *)((byte *)tz_string + 1),&local_18);
+      tz_string = parse_uint((char *)((byte *)tz_string + 1),&local_18);
       if (*tz_string == 0x3a) {
-        tz_string = crt_string_c_parse_uint_FUN_00607318((char *)((byte *)tz_string + 1),&local_1c);
+        tz_string = parse_uint((char *)((byte *)tz_string + 1),&local_1c);
       }
     }
     local_1c = local_1c + (local_18 + local_14 * 0x3c) * 0x3c;

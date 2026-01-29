@@ -17,23 +17,23 @@ void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr)
   float *pfVar6;
   float *pfVar7;
   CCourseFrameList *pCVar8;
-  FILE *file;
+  _FILE *file;
   int iVar9;
   int iVar10;
   char *in_stack_00000008;
   
   file = engine_dosio_c_getFile_FUN_00481a50("data",in_stack_00000008,"wt");
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create data\\%s");
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// len,loop\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d\n",this_ptr->len);
+  _fprintf(file,"// version\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"// len,loop\n");
+  _fprintf(file,"%d,%d\n",this_ptr->len);
   iVar10 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// frameList: pos(x,y,z), orient(w,x,y,z)\n");
+  _fprintf(file,"// frameList: pos(x,y,z), orient(w,x,y,z)\n");
   if (0 < this_ptr->len) {
     iVar9 = 0;
     do {
@@ -47,8 +47,7 @@ void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr)
       pfVar1 = (float *)((int)&(pCVar8->frame1).pos.x + iVar9);
       iVar9 = iVar9 + 0x1c;
       iVar10 = iVar10 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g, %g,%g,%g,%g\n",(double)*pfVar1,(double)*pfVar7,(double)*pfVar6,
+      _fprintf(file,"%g,%g,%g, %g,%g,%g,%g\n",(double)*pfVar1,(double)*pfVar7,(double)*pfVar6,
                  (double)*pfVar5,(double)*pfVar4,(double)*pfVar3,(double)*pfVar2);
     } while (iVar10 < this_ptr->len);
   }

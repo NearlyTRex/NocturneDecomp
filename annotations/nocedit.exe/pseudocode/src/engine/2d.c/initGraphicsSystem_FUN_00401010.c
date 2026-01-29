@@ -11,7 +11,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
 {
   ulonglong uVar1;
   int iVar2;
-  FILE *file;
+  _FILE *file;
   uint uVar3;
   
   iVar2 = wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10();
@@ -35,10 +35,10 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
     iVar2 = iVar2 + 4;
   } while (uVar3 < 0x640);
   file = engine_dosio_c_getFile_FUN_00481a50("art","default.act","rb");
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     return;
   }
-  crt_stdio_c_fread_FUN_005fd990(g_DefaultPalette,0x300,1,file);
+  _fread(g_DefaultPalette,0x300,1,file);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\2d.c",199);
   return;
 }

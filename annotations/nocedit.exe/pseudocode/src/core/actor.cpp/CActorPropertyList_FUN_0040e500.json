@@ -11,9 +11,15 @@
       },
       {
         "category": "other",
-        "column": 49,
+        "column": 26,
         "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 31,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -31,14 +37,13 @@
   },
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 215,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 30,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
-      "format_string_mismatch",
       "param_count_too_few",
       "stack_param"
     ],
@@ -260,17 +265,6 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s %d\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 24,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,\"%s %d\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

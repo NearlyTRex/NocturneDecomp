@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   crt_heap.c_heapCheck_FUN_00601374 at 00601387
-;   crt_watcom.c_heapchk_FUN_00600ad0 at 00600b1d
+;   crt_watcom.c__heapchk_FUN_00600ad0 at 00600b1d
 ;
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000

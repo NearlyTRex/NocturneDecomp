@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 wchar_t __cdecl
-crt_file_c_normalize_path_separator_FUN_005febe0(wchar_t ch,wchar_t *preferred_separator)
+normalize_path_separator(wchar_t ch,wchar_t *preferred_separator)
 
 {
   ushort in_stack_00000006;

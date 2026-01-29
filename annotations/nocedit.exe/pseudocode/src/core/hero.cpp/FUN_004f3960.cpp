@@ -44,8 +44,7 @@ float core_hero_cpp_FUN_004f3960
         if (iVar3 == 0) {
           iVar3 = (*((this_ptr->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr->base);
           if (iVar3 == 0) {
-            crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                      (aCStack_a0,10,&g_CVectorTypeInfo);
+            __arrinit(aCStack_a0,10,&g_CVectorTypeInfo);
             iVar3 = (*((this_ptr->base).vtable._ub)->getTargetPoints)(&this_ptr->base,aCStack_a0);
             if (0 < iVar3) {
               fStack_20 = *unaff_EBX - (this_ptr->base).location.position.x;

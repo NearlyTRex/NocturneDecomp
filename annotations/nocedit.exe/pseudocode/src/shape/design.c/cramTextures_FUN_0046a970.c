@@ -68,7 +68,7 @@ LAB_0046a9eb:
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   for (local_14 = 0; local_14 < g_TextureProcessedCount; local_14 = local_14 + 1) {
-    iVar2 = crt_string_c_stricmp_FUN_005fe7f0
+    iVar2 = stricmp
                       (g_TextureAtlasEntries[local_14].tga_filename,local_11c);
     if (iVar2 == 0) {
       if (min_u < g_TextureAtlasEntries[local_14].min_u) {
@@ -88,7 +88,7 @@ LAB_0046a9eb:
     }
   }
   if (0xf9 < g_TextureProcessedCount) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_1e4,"Too many textures to cram, max is %d",0xfa);
+    sprintf(local_1e4,"Too many textures to cram, max is %d",0xfa);
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x26f8;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_1e4);

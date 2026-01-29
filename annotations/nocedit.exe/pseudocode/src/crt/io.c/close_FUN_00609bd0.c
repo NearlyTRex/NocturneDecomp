@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_close_FUN_00609bd0(int fd)
+int __cdecl close(int fd)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ int __cdecl crt_io_c_close_FUN_00609bd0(int fd)
   HANDLE unaff_ESI;
   
   if ((fd < 0) || (g_MaxHandleCount < (uint)fd)) {
-    crt_errno_c_setErrno_FUN_00602790(4);
+    setErrno(4);
     iVar1 = -1;
   }
   else {
@@ -24,7 +24,7 @@ int __cdecl crt_io_c_close_FUN_00609bd0(int fd)
        (cleanup_result = (*g_IsSpecialDeviceFuncPtr)(fd), cleanup_result == 0)) {
       BVar2 = (*g_CloseHandleFunc)(unaff_ESI);
       if (BVar2 == 0) {
-        crt_errno_c_setErrno_FUN_00602790(4);
+        setErrno(4);
         return -1;
       }
     }
@@ -32,7 +32,7 @@ int __cdecl crt_io_c_close_FUN_00609bd0(int fd)
       (*g_SpecialDeviceCleanupFunc)(fd);
       (*g_SpecialDeviceCloseFunc)(cleanup_result);
     }
-    crt_io_c_setFileDescriptorFlags_FUN_00608908(fd,0);
+    setFileDescriptorFlags(fd,0);
   }
   return iVar1;
 }

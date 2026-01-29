@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_load_FUN_00569410 at 00569c73
@@ -39,7 +39,7 @@ section .text
     PUSH 0x649263                       ; 005857c2 | = "%d\n"
     PUSH EBP                            ; 005857c7
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005857c8
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005857cd
     PUSH 0xe2                           ; 005857d0
     MOV EAX,dword ptr [EDI + 0x194]     ; 005857d5
@@ -76,7 +76,7 @@ section .text
     INC ESI                             ; 00585825
     ADD EBX,0x4                         ; 00585826
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00585829
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EAX,dword ptr [EDI + 0x194]     ; 0058582e
     ADD ESP,0xc                         ; 00585834
     CMP ESI,EAX                         ; 00585837

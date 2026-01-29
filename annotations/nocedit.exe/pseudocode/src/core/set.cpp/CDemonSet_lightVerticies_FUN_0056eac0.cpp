@@ -220,7 +220,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                     pCVar19 = pCVar19 + 1;
                   } while (iVar16 < tri_count);
                 }
-                crt_memory_c_memset_FUN_005fde40(g_VertexNormalArray,0,vertex_count * 0xc);
+                memset(g_VertexNormalArray,0,vertex_count * 0xc);
                 iVar16 = 0;
                 if (0 < tri_count) {
                   pCVar19 = g_FaceNormalArray;
@@ -283,7 +283,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                     iVar16 = iVar16 + 1;
                   } while (iVar16 < tri_count);
                 }
-                crt_memory_c_memset_FUN_005fde40(g_VertexNormalArray,0,vertex_count * 0xc);
+                memset(g_VertexNormalArray,0,vertex_count * 0xc);
                 iVar16 = 0;
                 if (0 < tri_count) {
                   do {

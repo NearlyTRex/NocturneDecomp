@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
+char * __cdecl build_file_info_env(void)
 
 {
   char cVar1;
@@ -31,7 +31,7 @@ char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + 1;
   } while (cVar1 != '\0');
-  local_18 = crt_memory_c_malloc_FUN_00601bb0(g_MaxHandleCount * 0x1b + ~uVar2);
+  local_18 = malloc(g_MaxHandleCount * 0x1b + ~uVar2);
   uVar2 = g_MaxHandleCount;
   if (local_18 == (char *)0x0) {
     local_18 = (char *)0x0;
@@ -48,11 +48,11 @@ char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
          [((uint)bVar7 * -2 + 1) * 4];
     if (uVar2 != 0) {
       do {
-        uVar2 = crt_io_c_getFileTypeFlags_FUN_006088b0(file_handle_index);
+        uVar2 = getFileTypeFlags(file_handle_index);
         if ((uVar2 & 0x4000) != 0) {
-          local_1c = crt_io_c_get_handle_FUN_006109f0(file_handle_index);
+          local_1c = get_handle(file_handle_index);
           local_44[0] = '\0';
-          crt_stdio_c_IntegerToString_FUN_00607d18(file_handle_index,local_28,0x10);
+          IntegerToString(file_handle_index,local_28,0x10);
           pcVar5 = local_28;
           iVar3 = -1;
           pcVar4 = local_44;
@@ -95,7 +95,7 @@ char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
             pcVar6[1] = cVar1;
             pcVar6 = pcVar6 + 2;
           } while (cVar1 != '\0');
-          crt_stdio_c_IntegerToString_FUN_00607d18(local_1c,local_28,0x10);
+          IntegerToString(local_1c,local_28,0x10);
           pcVar5 = local_28;
           iVar3 = -1;
           pcVar4 = local_44;
@@ -138,7 +138,7 @@ char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
             pcVar6[1] = cVar1;
             pcVar6 = pcVar6 + 2;
           } while (cVar1 != '\0');
-          crt_stdio_c_IntegerToString_FUN_00607d18(uVar2,local_28,0x10);
+          IntegerToString(uVar2,local_28,0x10);
           pcVar5 = local_28;
           iVar3 = -1;
           pcVar4 = local_44;

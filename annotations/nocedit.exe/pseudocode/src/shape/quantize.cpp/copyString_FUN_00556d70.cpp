@@ -9,6 +9,6 @@
 void __cdecl shape_quantize_cpp_copyString_FUN_00556d70(char *dest,char *src)
 
 {
-  crt_string_c_strncpy_FUN_00600f40(dest,src,0x14);
+  strncpy(dest,src,0x14);
   return;
 }

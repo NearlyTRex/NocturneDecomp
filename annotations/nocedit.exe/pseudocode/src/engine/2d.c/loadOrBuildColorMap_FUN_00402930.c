@@ -10,7 +10,7 @@ void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename
 
 {
   char cVar1;
-  FILE *pFVar2;
+  _FILE *p_Var2;
   char *pcVar3;
   char *pcVar4;
   char local_5c [80];
@@ -42,21 +42,21 @@ LAB_00402972:
     g_CurrentLineNumber = 0x770;
     core_main_c_displayErrorAndQuit_FUN_00506f10("hose!");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,".map");
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"rb");
-  if (pFVar2 != (FILE *)0x0) {
-    crt_stdio_c_fread_FUN_005fd990(g_ColorCubeLookup,1,0x8000,pFVar2);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\engine\\2d.c",0x77c);
+  sprintf(pcVar4,".map");
+  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"rb");
+  if (p_Var2 != (_FILE *)0x0) {
+    _fread(g_ColorCubeLookup,1,0x8000,p_Var2);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\engine\\2d.c",0x77c);
     return;
   }
   engine_2d_c_buildColorLookupTable_FUN_00402870();
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"wb");
-  if (pFVar2 == (FILE *)0x0) {
+  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"wb");
+  if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x777;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write quick map!");
   }
-  crt_stdio_c_fwrite_FUN_005fdc00(g_ColorCubeLookup,1,0x8000,pFVar2);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\engine\\2d.c",0x779);
+  _fwrite(g_ColorCubeLookup,1,0x8000,p_Var2);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\engine\\2d.c",0x779);
   return;
 }

@@ -51,7 +51,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
+        "column": 16,
         "line": 163,
         "message": "'DAT_0083b110' was not declared in this scope; did you mean 'DAT_0083b10c'?"
       },
@@ -228,9 +228,9 @@
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 45,
         "line": 204,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'double' [-Wformat=]"
       },
       {
         "category": "other",
@@ -354,9 +354,15 @@
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 46,
         "line": 284,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 284,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -542,16 +548,15 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 1554,
+    "complexity_score": 1529,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 32,
     "pseudocode_lines": 389,
-    "suspect_count": 111,
+    "suspect_count": 109,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -1370,7 +1375,7 @@
       "description": "Undefined global data reference",
       "line": 156,
       "match": "DAT_0083b110",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0083b110,\"noc%d.pcx\");",
+      "text": "sprintf(&DAT_0083b110,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
     {
@@ -1890,28 +1895,6 @@
       "match": "in_stack_00000034",
       "text": "in_stack_00000034 = 0;",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"noc%d.pcx\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "noc%d.pcx",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 156,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0083b110,\"noc%d.pcx\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Editing cylinder %d, on bone %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "Editing cylinder %d, on bone %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 277,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_158,\"Editing cylinder %d, on bone %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

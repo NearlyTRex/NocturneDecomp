@@ -110,7 +110,7 @@ section .text
     PUSH 0x0                            ; 00441929
     PUSH 0x66e8e8                       ; 0044192b | = "console.txt"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00441930
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 00441935
     ADD ESP,0x14                        ; 00441937
     TEST EAX,EAX                        ; 0044193a
@@ -121,13 +121,13 @@ section .text
     PUSH 0x618e02                       ; 00441941 | = "%s"
     PUSH EBX                            ; 00441946
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00441947
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0044194c
     PUSH 0x4d                           ; 0044194f
     PUSH 0x618e05                       ; 00441951 | = "..\\engine\\console.cpp"
     PUSH EBX                            ; 00441956
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00441957
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0044195c
     ADD ESP,0x1004                      ; 0044195f
     POP EBP                             ; 00441965

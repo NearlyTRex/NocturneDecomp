@@ -18,7 +18,7 @@ uint core_boxactor_cpp_CLightActor_FUN_00423440(void)
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CLightActorClassInfo.name_hash);
   local_10 = (float)pCVar1[4].unk14;
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_13c,"Enter FOV (mm) for CLightActor %s",in_stack_00000004);
+  sprintf(local_13c,"Enter FOV (mm) for CLightActor %s",in_stack_00000004);
   iVar2 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                     (g_CEditorToolsPtr,local_13c,&local_10,1,1.0,9999.0,1);
   if (iVar2 == 0) {

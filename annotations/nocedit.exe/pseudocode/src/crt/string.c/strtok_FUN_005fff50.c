@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_strtok_FUN_005fff50(char *str,char *delimiters)
+char * __cdecl strtok(char *str,char *delimiters)
 
 {
   byte bVar1;

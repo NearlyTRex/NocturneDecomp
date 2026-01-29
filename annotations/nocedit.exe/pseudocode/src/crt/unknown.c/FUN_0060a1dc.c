@@ -9,6 +9,6 @@
 void crt_unknown_c_FUN_0060a1dc(void)
 
 {
-  crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(&g_GlobalRuntimeCriticalSection);
+  enter_reentrant_critical_section(&g_GlobalRuntimeCriticalSection);
   return;
 }

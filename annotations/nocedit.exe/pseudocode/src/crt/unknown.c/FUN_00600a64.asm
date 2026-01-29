@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_watcom.c_heapchk_FUN_00600ad0 at 00600b36
+;   crt_watcom.c__heapchk_FUN_00600ad0 at 00600b36
 ;
 ; Referenced Globals:
 ;   int INT_03f9b1f0

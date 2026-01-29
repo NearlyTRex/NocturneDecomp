@@ -85,7 +85,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemo
         iVar4 = g_CZThumbPool[iVar4 * 6 + 1].width;
       }
       iVar4 = iVar3 + iVar4 + -2;
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_98,"%g",(double)g_VDCameraScores[local_14]);
+      sprintf(local_98,"%g",(double)g_VDCameraScores[local_14]);
       engine_2d_c_drawText_FUN_00401fd0
                 (local_98,local_2c,g_CZThumbPool[local_14 * 6].height + iVar5);
       engine_2d_c_drawText_FUN_00401fd0(local_34[local_14].name,local_2c,local_20);

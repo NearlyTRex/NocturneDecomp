@@ -55,14 +55,14 @@ engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00
            (float10)vertex_data[iVar2].y * (float10)fVar5;
   fVar11 = (float10)vertex_data[iVar2].z * (float10)fVar8;
   fVar12 = (float10)fVar8;
-  dVar15 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
-  dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
+  dVar15 = round((double)fVar6);
+  dVar16 = round((double)fVar5);
   fVar13 = (float10)dVar16;
-  dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
+  dVar16 = round((double)fVar12);
   data->normal_x = (int)ROUND(dVar15);
   data->normal_y = (int)ROUND(fVar13);
   data->normal_z = (int)ROUND(dVar16);
-  dVar15 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 + fVar14));
+  dVar15 = round((double)(fVar11 + fVar14));
   data->dot_product = (int)ROUND(dVar15);
   return;
 }

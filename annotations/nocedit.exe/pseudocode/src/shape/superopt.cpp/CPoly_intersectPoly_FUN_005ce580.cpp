@@ -277,10 +277,10 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
       }
     }
     uStack_598 = 0x5ce6e3;
-    crt_memory_c_memset_FUN_005fde40(out_result,0,0x148);
+    memset(out_result,0,0x148);
     pCVar12 = this_ptr->parent_obj->vertex_data;
     uStack_598 = 0x5ce6fc;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&uStack_568,5,&g_CP3DTypeInfo);
+    __arrinit(&uStack_568,5,&g_CP3DTypeInfo);
     pCVar23 = pCVar12 + this_ptr->vertex_idx_0;
     uStack_568._0_4_ = *(uint *)&(pCVar23->position).x;
     uStack_568._4_4_ = *(uint *)((int)&(pCVar23->position).x + 4);
@@ -303,7 +303,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
     uStack_528 = *(uint *)&(pCVar12->position).z;
     uStack_524 = *(uint *)((int)&(pCVar12->position).z + 4);
     uStack_598 = 0x5ce7be;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&uStack_4f0,5,&g_CP2DTypeInfo);
+    __arrinit(&uStack_4f0,5,&g_CP2DTypeInfo);
     uStack_4f0._0_4_ = *(uint *)&this_ptr->uv_coords[0].x;
     uStack_4f0._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].x + 4);
     uStack_4e8._0_4_ = *(uint *)&this_ptr->uv_coords[0].y;

@@ -28,7 +28,7 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(void)
   iVar2 = 0;
   if (0 < in_stack_00000010) {
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"%s %d");
+      sprintf(local_d8,"%s %d");
       iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
                         (in_stack_00000004,0xe,local_d8,in_stack_0000000c,(void *)0x0);
       *(int *)(iVar1 + 0x5c) = iVar2;

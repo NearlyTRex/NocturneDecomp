@@ -126,7 +126,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
     do {
       if ((local_44 != (void *)0x0) && ((char)local_24 == '\0')) {
         local_2e0 = 0x5d4dbe;
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   ((char *)((int)&local_1dc.normal.z + 4),"Deleting T-Junctions (%d deleted so far)",
                    local_40);
       }

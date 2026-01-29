@@ -26,18 +26,18 @@ core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
   }
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x28f;
-  pvVar1 = crt_memory_c_freeSingleInstance_FUN_005fe632
+  pvVar1 = __vec_delete
                      (this_ptr->vertex_data_ptr[lod_index],&g_SVertTypeInfo);
-  crt_memory_c_free_FUN_005fe659(pvVar1);
+  shape_memdbg_cpp_free_FUN_005fe659(pvVar1);
   g_CurrentDebugLine = 0x290;
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
-  crt_memory_c_free_FUN_005fe659(this_ptr->tri_data_ptr[lod_index]);
+  shape_memdbg_cpp_free_FUN_005fe659(this_ptr->tri_data_ptr[lod_index]);
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x291;
-  crt_memory_c_free_FUN_005fe659(this_ptr->index_data_ptr[lod_index]);
+  shape_memdbg_cpp_free_FUN_005fe659(this_ptr->index_data_ptr[lod_index]);
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x292;
-  crt_memory_c_free_FUN_005fe659(this_ptr->cap_index_ptr[lod_index]);
+  shape_memdbg_cpp_free_FUN_005fe659(this_ptr->cap_index_ptr[lod_index]);
   this_ptr->vertex_count[lod_index] = vertex_count;
   this_ptr->tri_count[lod_index] = tri_count;
   this_ptr->cap_tri_count[lod_index] = cap_tri_count;
@@ -45,7 +45,7 @@ core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
   element_count = this_ptr->vertex_count[lod_index];
   pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (element_count * 0x34 + 4,"..\\core\\skeleton.cpp",0x29c);
-  pSVar2 = crt_memory_c_constructTypedObjectArray_FUN_00601272(pvVar1,element_count,type_info);
+  pSVar2 = __vec_new(pvVar1,element_count,type_info);
   this_ptr->vertex_data_ptr[lod_index] = pSVar2;
   pSVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12,

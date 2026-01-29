@@ -13,9 +13,9 @@ uint crt_unknown_c_FUN_0060d576(void)
   int iVar2;
   uint uVar3;
   int iVar4;
-  FILE *in_stack_00000004;
+  _FILE *in_stack_00000004;
   
-  iVar2 = crt_stdio_c_stream_valid_FUN_00608cd1(in_stack_00000004,1);
+  iVar2 = stream_valid(in_stack_00000004,1);
   if (iVar2 == 0) {
     in_stack_00000004->_cnt = 0;
     return 0xffffffff;
@@ -36,7 +36,7 @@ LAB_0060d5b5:
     in_stack_00000004->_cnt = 1;
     return uVar3;
   }
-  crt_stdio_c_reportStreamError_FUN_00606020
+  reportStreamError
             ((FileEmbeddedData *)
              ((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),4);
   in_stack_00000004->_cnt = 0;

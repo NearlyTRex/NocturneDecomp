@@ -39,7 +39,7 @@ core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60
     }
   }
   else {
-    uVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+    uVar1 = rand();
     this_ptr->update_timer = uVar1 & 0x3fff;
   }
   if (this_ptr != (CPathMap *)source_position) {

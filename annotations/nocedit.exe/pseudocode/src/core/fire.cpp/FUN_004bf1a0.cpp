@@ -18,7 +18,7 @@ float core_fire_cpp_FUN_004bf1a0(void)
   }
   else {
     if ((double)in_stack_00000004 < 1.0) {
-      dVar1 = crt_math_c_acos_FUN_00600162((double)in_stack_00000004);
+      dVar1 = acos((double)in_stack_00000004);
       return (float)dVar1;
     }
     local_8 = 0.0;

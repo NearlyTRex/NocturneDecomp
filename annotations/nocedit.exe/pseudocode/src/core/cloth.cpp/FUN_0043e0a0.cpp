@@ -12,9 +12,9 @@ void core_cloth_cpp_FUN_0043e0a0(void)
 
 {
   CKeyFramedModel *in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"models\\%s\n",in_stack_00000004);
+  _fprintf(in_stack_00000008,"models\\%s\n",in_stack_00000004);
   core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
             (in_stack_00000004,in_stack_00000008,0);
   return;

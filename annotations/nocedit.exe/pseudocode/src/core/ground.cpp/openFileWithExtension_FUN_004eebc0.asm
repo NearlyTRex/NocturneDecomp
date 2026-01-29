@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode)
+; __cdecl _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   base_filename
@@ -111,7 +111,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x6c]      ; 004eec55
     PUSH ESI                            ; 004eec59
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004eec5a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004eec5f
     MOV ESI,EAX                         ; 004eec62
     TEST EAX,EAX                        ; 004eec64

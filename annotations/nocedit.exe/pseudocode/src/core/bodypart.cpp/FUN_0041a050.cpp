@@ -117,7 +117,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
         pcVar5 = pcVar5 + 0x2b0;
       } while (iVar8 < *(int *)(in_stack_00000004->unk + 0x5f4));
     }
-    crt_memory_c_memset_FUN_005fde40
+    memset
               (*(void **)(in_stack_00000004->unk + 0x24),0,
                *(int *)(in_stack_00000004->unk + 0x1c) * 0xc);
     local_20 = 0;
@@ -163,10 +163,10 @@ void core_bodypart_cpp_FUN_0041a050(void)
         else {
           fVar13 = (float10)65535 / (float10)dVar15;
           fVar14 = (float10)piVar6[2] * fVar13;
-          dVar15 = crt_math_c_round_FUN_005fe6b0((double)((float10)*piVar6 * fVar13));
-          dVar16 = crt_math_c_round_FUN_005fe6b0((double)((float10)iVar12 * fVar13));
+          dVar15 = round((double)((float10)*piVar6 * fVar13));
+          dVar16 = round((double)((float10)iVar12 * fVar13));
           fVar13 = (float10)dVar16;
-          dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
+          dVar16 = round((double)fVar14);
           *piVar6 = (int)ROUND(dVar15);
           piVar6[1] = (int)ROUND(fVar13);
           piVar6[2] = (int)ROUND(dVar16);

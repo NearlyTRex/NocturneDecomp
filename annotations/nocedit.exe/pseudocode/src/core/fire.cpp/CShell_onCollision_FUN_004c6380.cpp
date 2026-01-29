@@ -36,7 +36,7 @@ core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collis
       iVar4 = iVar4 + 1;
     } while (iVar3 < 0xc);
     if (iVar4 != 3) {
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0
+      iVar3 = stricmp
                         (*(char **)(this_ptr->unk + 0x1c),"shell.kfm");
       if (iVar3 == 0) {
         core_sound_cpp_CSound_playActorSound_FUN_005b3a40

@@ -306,3 +306,17 @@ typedef struct VarFileInfo {
     WORD wType;
 } VarFileInfo;
 
+// PE resource directory entry (extended types)
+typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct {
+    dword OffsetToDirectory;
+    dword DataIsDirectory;
+} IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
+
+typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
+    dword OffsetToData;
+    IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct _IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
+} IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
+
+// 32-bit Image Base Offset Relative Pointer
+typedef void* ImageBaseOffset32;
+

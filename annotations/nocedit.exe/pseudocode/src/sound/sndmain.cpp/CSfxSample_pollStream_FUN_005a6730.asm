@@ -548,7 +548,7 @@ section .text
     PUSH EAX                            ; 005a6c78
     PUSH ESI                            ; 005a6c79
     CALL crt_stdio.c_fread_FUN_005fd990 ; 005a6c7a
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005a6c7f
     MOV dword ptr [ESP + 0x20],EAX      ; 005a6c82
     MOV EAX,dword ptr [EBX + 0x174]     ; 005a6c86

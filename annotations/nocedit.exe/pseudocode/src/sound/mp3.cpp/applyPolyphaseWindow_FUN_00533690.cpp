@@ -209,7 +209,7 @@ sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690
     } while (local_1c < 0x24);
     return;
   }
-  crt_memory_c_memset_FUN_005fde40(output_samples,0,0x90);
+  memset(output_samples,0,0x90);
   iVar10 = 0;
   iVar11 = 0;
   pfVar9 = output_samples;

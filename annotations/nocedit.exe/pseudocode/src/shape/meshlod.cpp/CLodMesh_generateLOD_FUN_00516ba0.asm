@@ -220,7 +220,7 @@ section .text
     PUSH ESI                            ; 00516d2d
     PUSH EBX                            ; 00516d2e
     CALL shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250 ; 00516d2f
-        ;   XREF to: 0051d250 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250(CLodMesh * this_ptr, FILE * file_handle)
+        ;   XREF to: 0051d250 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00516d34
     PUSH EBX                            ; 00516d37
     CALL shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870 ; 00516d38

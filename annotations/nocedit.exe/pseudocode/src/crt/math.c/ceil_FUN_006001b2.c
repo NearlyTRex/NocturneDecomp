@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-double __softfp_double crt_math_c_ceil_FUN_006001b2(double value)
+double __softfp_double ceil(double value)
 
 {
   double dVar1;
   
-  dVar1 = crt_math_c_floor_FUN_005feb90(-value);
+  dVar1 = floor(-value);
   return -dVar1;
 }

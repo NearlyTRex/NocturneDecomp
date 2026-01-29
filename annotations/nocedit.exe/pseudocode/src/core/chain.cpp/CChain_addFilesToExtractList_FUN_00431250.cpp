@@ -2,7 +2,7 @@
 // Address: 00431250
 // Address Range: [[00431250, 0043132c]]
 // Convention: unknown
-// Signature: void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)
+// Signature: void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)
 
 #include "nocturne.h"
 
@@ -11,7 +11,7 @@
 
 void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250
                (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               int param_5,FILE *param_6)
+               int param_5,_FILE *param_6)
 
 {
   char cVar1;
@@ -21,11 +21,11 @@ void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250
   char local_104 [256];
   
   pcVar3 = (char *)(param_5 + 0x174);
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar3,"CHAINLINK.RAW");
+  iVar2 = stricmp(pcVar3,"CHAINLINK.RAW");
   if (iVar2 == 0) {
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",pcVar3);
+  _fprintf(param_6,"ART\\%s\n",pcVar3);
   pcVar4 = local_104;
   do {
     cVar1 = *pcVar3;
@@ -52,7 +52,7 @@ LAB_004312d1:
     g_CurrentLineNumber = 600;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CChain::addFilesToExtractList - invalid texture",unaff_EBX);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,".ACT");
-  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",local_104);
+  sprintf(pcVar4,".ACT");
+  _fprintf(param_6,"ART\\%s\n",local_104);
   return;
 }

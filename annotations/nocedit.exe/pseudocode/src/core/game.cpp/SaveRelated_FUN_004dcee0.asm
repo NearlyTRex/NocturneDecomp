@@ -683,7 +683,7 @@ section .text
     PUSH 0x62b8e9                       ; 004dd57b | = "quicksavedgame.noc"
     PUSH 0x62b8fc                       ; 004dd580 | = "save"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004dd585
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004dd58a
     TEST EAX,EAX                        ; 004dd58d
     JZ 0x004dd5fd                       ; 004dd58f
@@ -692,7 +692,7 @@ section .text
     PUSH 0x62b901                       ; 004dd596 | = "..\\core\\game.cpp"
     PUSH EAX                            ; 004dd59b
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004dd59c
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004dd5a1
     PUSH 0x62b912                       ; 004dd5a4 | = "Restore quick saved game?"
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 004dd5a9

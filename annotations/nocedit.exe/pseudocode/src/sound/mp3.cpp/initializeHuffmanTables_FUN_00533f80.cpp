@@ -30,7 +30,7 @@ void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
     local_c = g_HuffmanTables;
     do {
       str = local_c;
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_c->table_id,"%d",iVar4);
+      sprintf(local_c->table_id,"%d",iVar4);
       *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3) =
            *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_8);
       *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 4) =
@@ -41,7 +41,7 @@ void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
            *(uint *)((int)&g_HuffmanTableSources[0].bits + local_8);
       *(int *)(g_HuffmanTables[0].table_id + iVar3 + 0x10) =
            (1 << (g_HuffmanTables[0].table_id[iVar3 + 0xc] & 0x1fU)) + -1;
-      crt_stdio_c_sscanf_FUN_0060013c(str->table_id,"%u",&local_10);
+      sscanf(str->table_id,"%u",&local_10);
       if (iVar4 != local_10) {
         g_CurrentFilename = "..\\sound\\mp3.cpp";
         g_CurrentLineNumber = 0xd72;

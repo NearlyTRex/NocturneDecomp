@@ -48,16 +48,16 @@ cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0
     fVar10 = (float10)1 - (float10)blend_factor;
     fVar11 = (float10)(byte)g_SourcePaletteData[iVar3 + 2] * fVar10;
     fVar9 = (float10)((float)(uVar7 & 0xff) * blend_factor);
-    dVar12 = crt_math_c_round_FUN_005fe6b0
+    dVar12 = round
                        ((double)(float)((float10)(byte)g_SourcePaletteData[iVar3] * fVar10 +
                                        (float10)((float)(uVar5 & 0xff) * blend_factor)));
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        ((double)((float10)bVar1 * fVar10 +
                                 (float10)((float)(uVar6 & 0xff) * blend_factor)));
     local_3c = (uint)(longlong)ROUND(dVar12);
     local_34 = (uint)(longlong)ROUND(dVar13);
     local_3c = local_3c >> (bVar4 & 0x1f);
-    dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 + fVar9));
+    dVar12 = round((double)(fVar11 + fVar9));
     local_38 = (uint)(longlong)ROUND(dVar12);
     local_34 = local_34 >> ((byte)g_GreenBitCount & 0x1f);
     local_38 = local_38 >> ((byte)g_BlueBitCount & 0x1f);

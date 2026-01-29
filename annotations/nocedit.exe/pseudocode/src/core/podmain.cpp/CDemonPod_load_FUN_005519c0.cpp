@@ -9,7 +9,7 @@
 void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
 
 {
-  FILE *file;
+  _FILE *file;
   int unaff_EBX;
   int iVar1;
   char local_170 [4];
@@ -18,7 +18,7 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("pod.ini",(char *)0x0,"rt","..\\core\\podmain.cpp",0x2f);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     engine_dosio_c_CFileFinder_ctor_FUN_00481c30((CFileFinder *)local_170);
     engine_dosio_c_CFileFinder_openSearch_FUN_00481c70((CFileFinder *)local_170,"*.pod");
     while (local_170[0] != '\0') {
@@ -31,11 +31,11 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
     engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0((CPod *)this_ptr);
     return;
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n",&local_c);
+  _fscanf(file,"%d\n",&local_c);
   iVar1 = 0;
   if (0 < local_c) {
     do {
-      crt_stdio_c_fscanf_FUN_005fe7c0(file,"%s\n",&CStack_168.has_results);
+      _fscanf(file,"%s\n",&CStack_168.has_results);
       (*this_ptr->vtable->mount)((CPod *)this_ptr,(char *)&CStack_168.has_results);
       iVar1 = iVar1 + 1;
     } while (iVar1 < unaff_EBX);

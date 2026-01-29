@@ -21,7 +21,7 @@ shape_meshlod_cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh *this_ptr,char
   if (0 < this_ptr->submesh_count) {
     iVar5 = 0;
     do {
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0
+      iVar2 = stricmp
                         (this_ptr->submesh_data->texture_filename + iVar5,texture_filename);
       if (iVar2 == 0) {
         return iVar4;

@@ -2,11 +2,11 @@
 // Address: 00605fad
 // Address Range: [[00605fad, 0060601f]]
 // Convention: __watcallStack
-// Signature: FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_00605fad(FILE *stream,byte *output_byte)
+// Signature: _FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_00605fad(_FILE *stream,byte *output_byte)
 
 #include "nocturne.h"
 
-FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_00605fad(FILE *stream,byte *output_byte)
+_FILE * __watcallStack fgetcInternal(_FILE *stream,byte *output_byte)
 
 {
   int iVar1;
@@ -31,7 +31,7 @@ LAB_00605fd8:
     stream->_cnt = 1;
     return stream;
   }
-  crt_stdio_c_reportStreamError_FUN_00606020
+  reportStreamError
             ((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),6);
   stream->_cnt = 0;
   return stream;

@@ -23,7 +23,7 @@ void core_skeledit_cpp_FUN_0058e0b0(void)
   int local_18;
   int local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x334);
+  __STK(0x334);
   if (4 < *(int *)(in_stack_00000004 + 0xb8)) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x912;
@@ -37,9 +37,9 @@ void core_skeledit_cpp_FUN_0058e0b0(void)
     local_18 = local_18 * 0x1680;
     path = (char *)(in_stack_00000004 + 200);
     do {
-      crt_string_c_splitpath_FUN_005ff178(path,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_218,in_stack_00000008,local_118);
-      crt_file_c_makepath_FUN_005febfc(local_31c,(char *)0x0,(char *)0x0,local_218,".tga");
+      splitpath(path,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
+      sprintf(local_218,in_stack_00000008,local_118);
+      makepath(local_31c,(char *)0x0,(char *)0x0,local_218,".tga");
       iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_31c);
       path_buffer = (char *)(iVar3 * 0x48 + local_14 + local_18 + 8);
       pcVar4 = path;
@@ -55,7 +55,7 @@ void core_skeledit_cpp_FUN_0058e0b0(void)
         } while (cVar1 != '\0');
       }
       else {
-        crt_file_c_makepath_FUN_005febfc
+        makepath
                   (path_buffer,(char *)0x0,(char *)0x0,local_218,".raw");
       }
       iVar3 = iVar3 + 1;

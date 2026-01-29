@@ -12,14 +12,14 @@ void __cdecl core_actor_cpp_serializeInteger_FUN_0040b7f0(int *int_ptr,char *pro
   int iVar1;
   
   if (g_ActorReadingMode == 1) {
-    iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%d",int_ptr);
+    iVar1 = _fscanf(g_ActorDataFile,"%d",int_ptr);
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
                 ("Integer value",property_name);
     }
   }
   else {
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s%d",g_PropertyNamePrefix,*int_ptr);
+    _fprintf(g_ActorDataFile,"%s%d",g_PropertyNamePrefix,*int_ptr);
   }
   core_actor_cpp_serializeDescription_FUN_0040b290("Integer value",property_name);
   return;

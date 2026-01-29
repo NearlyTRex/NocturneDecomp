@@ -17,13 +17,13 @@
 ;   TerminatedCString s_Deleting_d_disjoing_vert_006544b0
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_malloc_FUN_006021da
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_memory.c_realloc_FUN_00601df0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
+;   shape_memdbg.cpp_malloc_FUN_006021da
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 005d44dd
     SHL EAX,0x2                         ; 005d44df
     PUSH EAX                            ; 005d44e2
-    CALL crt_memory.c_malloc_FUN_006021da ; 005d44e3
-        ;   XREF to: 006021da (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
+    CALL shape_memdbg.cpp_malloc_FUN_006021da ; 005d44e3
+        ;   XREF to: 006021da (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_006021da(SIZE_T size)
     ADD ESP,0x4                         ; 005d44e8
     MOV EBX,EAX                         ; 005d44eb
     TEST EAX,EAX                        ; 005d44ed
@@ -244,8 +244,8 @@ section .text
         ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d46d3
     PUSH EBX                            ; 005d46d6
-    CALL crt_memory.c_free_FUN_005fe659 ; 005d46d7
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 005d46d7
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     MOV EAX,0x1                         ; 005d46dc
     ADD ESP,0x4                         ; 005d46e1
     POP EDI                             ; 005d46e4

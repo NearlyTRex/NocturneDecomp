@@ -40,7 +40,7 @@ core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
   if ((int *)this_ptr->validation_magic != &g_ActorMagicNumber) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x718;
-    crt_memory_c_memset_FUN_005fde40(g_ActorDebugBuffer,0,0x32);
+    memset(g_ActorDebugBuffer,0,0x32);
     pCVar6 = this_ptr;
     pcVar8 = g_ActorDebugBuffer;
     for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -64,7 +64,7 @@ core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
     dVar10 = (double)(this_ptr->location).position.x;
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x723;
-    crt_memory_c_memset_FUN_005fde40(g_ActorDebugBuffer,0,0x32);
+    memset(g_ActorDebugBuffer,0,0x32);
     pCVar6 = this_ptr;
     pcVar8 = g_ActorDebugBuffer;
     for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -92,7 +92,7 @@ core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
       dVar10 = (double)(this_ptr->location).position.x;
       g_CurrentFilename = "..\\core\\actor.cpp";
       g_CurrentLineNumber = 0x731;
-      crt_memory_c_memset_FUN_005fde40(g_ActorDebugBuffer,0,0x32);
+      memset(g_ActorDebugBuffer,0,0x32);
       if (this_ptr != (CDemonActor *)0x0) {
         pCVar7 = this_ptr;
         pcVar8 = g_ActorDebugBuffer;

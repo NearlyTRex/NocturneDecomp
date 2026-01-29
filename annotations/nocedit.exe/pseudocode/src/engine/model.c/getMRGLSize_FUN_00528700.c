@@ -67,7 +67,7 @@ int __cdecl engine_model_c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended *header)
   case 0x10:
     return 0x14;
   default:
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_100,"MRGLSize: Bad type : %d",iVar1);
+    sprintf(local_100,"MRGLSize: Bad type : %d",iVar1);
     g_CurrentFilename = "..\\engine\\model.c";
     g_CurrentLineNumber = 0x25b;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_100);

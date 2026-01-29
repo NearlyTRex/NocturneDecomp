@@ -96,7 +96,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
     puVar7 = puVar11;
     puVar10 = puVar11;
     for (iVar8 = 0; pCVar4 = g_CDemonRendererPtr2, iVar8 < (int)(uint)*puVar11; iVar8 = iVar8 + 1) {
-      dVar13 = crt_math_c_round_FUN_005fe6b0
+      dVar13 = round
                          ((double)(*(float *)(puVar7 + 4) * (float)(&DAT_00823c54)[puVar10[1]]));
       local_18 = (int)ROUND(dVar13);
       puVar7 = puVar7 + 4;
@@ -106,7 +106,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
     if ((float)65535 < local_30) {
       local_30 = 65535.0;
     }
-    dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_30);
+    dVar13 = round((double)local_30);
     local_20 = (CDeformableModel *)(local_1c + 0x34);
     local_1c = local_18 + 0x30;
     *(int *)((int)&pCVar4->vertex_buffer_ptr->w_recip + local_18) = (int)ROUND(dVar13);

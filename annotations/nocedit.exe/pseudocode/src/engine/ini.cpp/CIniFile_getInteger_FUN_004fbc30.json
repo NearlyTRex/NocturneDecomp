@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 37,
+        "column": 12,
         "line": 15,
         "message": "'stack0xffffff94' was not declared in this scope; did you mean 'in_stack_ffffff94'?"
       }
@@ -288,7 +288,7 @@
       "description": "Direct stack address reference",
       "line": 8,
       "match": "&stack0xffffff94",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,\"%d\",*value_ptr);",
+      "text": "sprintf(&stack0xffffff94,\"%d\",*value_ptr);",
       "type": "stack_ref"
     },
     {
@@ -309,7 +309,7 @@
       "description": "Direct stack address reference",
       "line": 11,
       "match": "&stack0xffffff94",
-      "text": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff94,\"%d\",value_ptr);",
+      "text": "sscanf(&stack0xffffff94,\"%d\",value_ptr);",
       "type": "stack_ref"
     }
   ]

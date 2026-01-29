@@ -21,7 +21,7 @@
 ;   TerminatedCString s_engine_fileio_cpp_006261e8
 ;
 ; Called Functions:
-;   crt_errno.c_errno_FUN_00601450
+;   crt_errno.c__errno_FUN_00601450
 ;   crt_stdio.c_setvbuf_FUN_00601490
 ;   engine_fileio.cpp_readTimestampFile_FUN_004b23a0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -47,14 +47,14 @@ section .text
     PUSH 0x0                            ; 004b265c
     PUSH EDI                            ; 004b265e
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b265f
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 004b2664
     ADD ESP,0x14                        ; 004b2666
     TEST EAX,EAX                        ; 004b2669
     JNZ 0x004b2740                      ; 004b266b
         ;   XREF to: 004b2740 (CONDITIONAL_JUMP)  ; LAB_004b2740
-    CALL crt_errno.c_errno_FUN_00601450 ; 004b2671
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 004b2671
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
     CMP dword ptr [EAX],0x6             ; 004b2676
     JZ 0x004b2725                       ; 004b2679
         ;   XREF to: 004b2725 (CONDITIONAL_JUMP)  ; LAB_004b2725
@@ -76,7 +76,7 @@ section .text
     PUSH EAX                            ; 004b26a1
     MOV dword ptr [ESP + 0x14],ECX      ; 004b26a2
     CALL engine_fileio.cpp_readTimestampFile_FUN_004b23a0 ; 004b26a6
-        ;   XREF to: 004b23a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_readTimestampFile_FUN_004b23a0(FILE * file, STimestampRecord * * records, int * count)
+        ;   XREF to: 004b23a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_readTimestampFile_FUN_004b23a0(_FILE * file, STimestampRecord * * records, int * count)
     ADD ESP,0x10                        ; 004b26ab
     MOV EBP,dword ptr [ESP]             ; 004b26ae
     MOV EDI,EAX                         ; 004b26b1
@@ -87,7 +87,7 @@ section .text
     PUSH 0x62604b                       ; 004b26bc | = "..\\engine\\fileio.cpp"
     PUSH EBP                            ; 004b26c1
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b26c2
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b26c7
     XOR EDX,EDX                         ; 004b26ca
     MOV dword ptr [ESP],EDX             ; 004b26cc
@@ -150,7 +150,7 @@ section .text
     PUSH 0x0                            ; 004b2747
     PUSH EAX                            ; 004b2749
     CALL crt_stdio.c_setvbuf_FUN_00601490 ; 004b274a
-        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
+        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_setvbuf_FUN_00601490(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 004b274f
     JMP 0x004b2681                      ; 004b2752
         ;   XREF to: 004b2681 (UNCONDITIONAL_JUMP)  ; LAB_004b2681

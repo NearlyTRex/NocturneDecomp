@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30(void)
+void __cdecl ReportFloatingPointNotLoaded(void)
 
 {
-  crt_startup_c_HandleRuntimeError_FUN_00606660("Floating-point support not loaded\r\n",1);
+  HandleRuntimeError("Floating-point support not loaded\r\n",1);
   return;
 }

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,FILE *file_handle,int file_version)
+; __cdecl void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,_FILE *file_handle,int file_version)
 ;
 ; Parameters:
 ; SFog *           Stack[0x4]:4   fog
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; int              Stack[0xc]:4   file_version
 ; Local Variables:
 ; undefined1       Stack[-0x108]:1  local_108
@@ -39,7 +39,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00453e6c
     PUSH EAX                            ; 00453e70
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 00453e71
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00453e76
     LEA EAX,[EBX + 0x8]                 ; 00453e79
     PUSH EAX                            ; 00453e7c
@@ -49,14 +49,14 @@ section .text
     PUSH 0x61a472                       ; 00453e82 | = "%d,%d,%d\n"
     PUSH ESI                            ; 00453e87
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00453e88
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 00453e8d
     PUSH ESI                            ; 00453e90
     PUSH 0xff                           ; 00453e91
     LEA EAX,[ESP + 0x8]                 ; 00453e96
     PUSH EAX                            ; 00453e9a
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 00453e9b
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00453ea0
     LEA EAX,[EBX + 0x14]                ; 00453ea3
     PUSH EAX                            ; 00453ea6
@@ -67,7 +67,7 @@ section .text
     PUSH 0x61a47c                       ; 00453eaf | = "%f,%f,%f\n"
     PUSH ESI                            ; 00453eb4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00453eb5
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 00453eba
     LEA EAX,[EBX + 0x1c]                ; 00453ebd
     PUSH EAX                            ; 00453ec0
@@ -76,7 +76,7 @@ section .text
     PUSH 0x61a486                       ; 00453ec5 | = "%f,%f\n"
     PUSH ESI                            ; 00453eca
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00453ecb
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 00453ed0
     CMP dword ptr [ESP + 0x114],0x1a    ; 00453ed3
     JGE 0x00453eed                      ; 00453edb
@@ -92,7 +92,7 @@ section .text
     PUSH 0x61a48d                       ; 00453ef1 | = "%f\n"
     PUSH ESI                            ; 00453ef6
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00453ef7
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00453efc
     ADD ESP,0x100                       ; 00453eff
     POP ESI                             ; 00453f05

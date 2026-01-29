@@ -55,7 +55,7 @@ void core_emitter_cpp_FUN_004a7e80(void)
   fptan((float10)1.30899693895833);
   fVar3 = (float10)local_64;
   local_64 = (float)((float10)local_10 + fVar3);
-  fVar3 = crt_math_c_atan2_FUN_006013b1((float10)local_6c,(float10)local_10 + fVar3);
+  fVar3 = atan2((float10)local_6c,(float10)local_10 + fVar3);
   fVar1 = SQRT(local_70 * local_70 + local_68 * local_68);
   fVar4 = (float10)fcos(extraout_ST3);
   fVar5 = (float10)fsin(fVar3);

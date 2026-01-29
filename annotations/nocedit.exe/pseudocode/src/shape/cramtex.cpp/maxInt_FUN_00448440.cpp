@@ -12,7 +12,7 @@ int __cdecl shape_cramtex_cpp_maxInt_FUN_00448440(int a,int b)
   int in_stack_00000004;
   int in_stack_00000008;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(4);
+  __STK(4);
   if (in_stack_00000008 < in_stack_00000004) {
     return in_stack_00000004;
   }

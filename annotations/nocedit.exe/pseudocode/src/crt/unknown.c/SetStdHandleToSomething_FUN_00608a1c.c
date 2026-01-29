@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_SetStdHandleToSomething(byte param_1, uint param_2) */
 
-void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(void)
+void SetStdHandleToSomething(void)
 
 {
   int iVar1;
@@ -36,7 +36,7 @@ LAB_00608a6a:
     g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;
   }
   else {
-    g_IOControlBlock = crt_memory_c_realloc_FUN_00601df0(g_IOControlBlock,in_stack_00000008 * 4 + 4)
+    g_IOControlBlock = realloc(g_IOControlBlock,in_stack_00000008 * 4 + 4)
     ;
     if (g_CurrentHandleCount < (int)in_stack_00000008) {
       iVar1 = g_CurrentHandleCount * 4;

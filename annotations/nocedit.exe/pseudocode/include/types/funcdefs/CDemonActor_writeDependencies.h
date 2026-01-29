@@ -1,15 +1,15 @@
 #pragma once
 
 // Forward declarations
-struct FILE;
+struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"
 
 // Forward declarations
 struct CDemonActor;
-struct FILE;
+struct _FILE;
 
 // Function Definition: CDemonActor_writeDependencies
-typedef void (*CDemonActor_writeDependencies)(struct CDemonActor* this_ptr, struct FILE* file_handle);
+typedef void (*CDemonActor_writeDependencies)(struct CDemonActor* this_ptr, struct _FILE* file_handle);
 

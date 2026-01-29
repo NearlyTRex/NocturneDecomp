@@ -17,7 +17,7 @@ ulonglong core_skeledit_cpp_FUN_0058f790(void)
   int *piVar6;
   int *in_stack_00000004;
   
-  piVar2 = (int *)crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
+  piVar2 = (int *)__STK(0x10);
   pcVar5 = "TheOnlyPart";
   piVar6 = in_stack_00000004 + 0x1c51;
   in_stack_00000004[0x1c50] = 1;

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_process_c_getpid_FUN_006099c0(void)
+void __cdecl getpid(void)
 
 {
   (*g_GetCurrentProcessIdFunc)();

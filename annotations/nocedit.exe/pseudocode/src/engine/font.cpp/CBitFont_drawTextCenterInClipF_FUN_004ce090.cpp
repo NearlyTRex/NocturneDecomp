@@ -15,7 +15,7 @@ engine_font_cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090
   int iVar1;
   char local_1010 [4096];
   
-  crt_stdio_c_vsprintf_FUN_005fdba8(local_1010,format_string,args);
+  vsprintf(local_1010,format_string,args);
   iVar1 = engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0
                     (this_ptr,y_pos,color_mode,color_value,local_1010);
   return iVar1;

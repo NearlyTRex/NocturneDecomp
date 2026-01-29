@@ -70,7 +70,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
   sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-  iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_CurrentTrainMode,"int");
+  iVar4 = stricmp(g_CurrentTrainMode,"int");
   if (iVar4 == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainExteriorAmbientHandle);
     local_120 = 0.4;
@@ -94,7 +94,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
   else {
-    iVar4 = crt_string_c_stricmp_FUN_005fe7f0(g_PreviousTrainMode,g_CurrentTrainMode);
+    iVar4 = stricmp(g_PreviousTrainMode,g_CurrentTrainMode);
     if (iVar4 != 0) {
       sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
                 (g_TrainRailNoiseHandle,local_120 * (float)1.5);
@@ -141,13 +141,13 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
       pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
     }
-    iVar4 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar4 = rand();
     switch(iVar4 % 5) {
     case 0:
     case 1:
       local_11c = local_120 * (float)0.59999999999999998;
       local_20 = 25.0;
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_118,"rail?%s.wav");
+      sprintf(local_118,"rail?%s.wav");
       break;
     case 2:
     case 3:
@@ -176,7 +176,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
     sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(&g_TrainVelocityVector);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_b4,"%s @ %g",local_118,(double)local_11c);
+    sprintf(local_b4,"%s @ %g",local_118,(double)local_11c);
     uVar6 = core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
                       (g_CSoundPtr,(CDemonActor *)0x0,local_b4,&local_1c->position);
     local_1c->sound_handle = uVar6;

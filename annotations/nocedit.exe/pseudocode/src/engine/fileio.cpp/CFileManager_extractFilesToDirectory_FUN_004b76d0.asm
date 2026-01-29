@@ -113,7 +113,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 004b7748
     PUSH EAX                            ; 004b774c
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b774d
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004b7752
     MOV dword ptr [ESP + 0x10fc],EAX    ; 004b7755
     TEST EAX,EAX                        ; 004b775c
@@ -249,7 +249,7 @@ section .text
     LEA EAX,[ESP + 0xde8]               ; 004b78c9
     PUSH EAX                            ; 004b78d0
     CALL crt_time.c_localtime_FUN_00600288 ; 004b78d1
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 004b78d6
     PUSH EAX                            ; 004b78d9
     PUSH 0x627ebe                       ; 004b78da | = "%A, %B, %d, %Y, %I:%M:%S %p"
@@ -257,12 +257,12 @@ section .text
     LEA EAX,[ESP + 0xdfc]               ; 004b78e4
     PUSH EAX                            ; 004b78eb
     CALL crt_time.c_strftime_FUN_006002d4 ; 004b78ec
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, tm * time_ptr)
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b78f1
     LEA EAX,[ESP + 0x10fc]              ; 004b78f4
     PUSH EAX                            ; 004b78fb
     CALL crt_time.c_localtime_FUN_00600288 ; 004b78fc
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 004b7901
     PUSH EAX                            ; 004b7904
     PUSH 0x627eda                       ; 004b7905 | = "%A, %B, %d, %Y, %I:%M:%S %p"
@@ -270,7 +270,7 @@ section .text
     LEA EAX,[ESP + 0xefc]               ; 004b790f
     PUSH EAX                            ; 004b7916
     CALL crt_time.c_strftime_FUN_006002d4 ; 004b7917
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, tm * time_ptr)
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b791c
     LEA EAX,[ESP + 0xef0]               ; 004b791f
     PUSH EAX                            ; 004b7926
@@ -312,7 +312,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b7991
     MOVSD ES:EDI,ESI                    ; 004b7992
     CALL engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50 ; 004b7993
-        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50(FILE * source_file, char * dest_filename, char * name_or_offset, int file_size, ...)
+        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50(_FILE * source_file, char * dest_filename, char * name_or_offset, int file_size, ...)
     ADD ESP,0x1c                        ; 004b7998
     TEST EAX,EAX                        ; 004b799b
     JZ 0x004b7a95                       ; 004b799d
@@ -333,7 +333,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x110c]    ; 004b79cc
     PUSH EBX                            ; 004b79d3
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b79d4
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b79d9
     PUSH 0x0                            ; 004b79dc
     LEA EAX,[ESP + 0x838]               ; 004b79de

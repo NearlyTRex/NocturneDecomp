@@ -11,7 +11,7 @@ CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder *t
 {
   this_ptr->available_samples = 0;
   this_ptr->decode_buffer_pos = (short *)0x0;
-  crt_memory_c_memset_FUN_005fde40(&this_ptr->file_bitstream,0,0x2c);
+  memset(&this_ptr->file_bitstream,0,0x2c);
   this_ptr->filename[0] = '\0';
   return this_ptr;
 }

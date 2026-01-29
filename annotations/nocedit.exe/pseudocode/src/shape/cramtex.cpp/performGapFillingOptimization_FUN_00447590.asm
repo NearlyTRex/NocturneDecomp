@@ -24,7 +24,7 @@
 ;   int g_CramFillGaps
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0
 ;   shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10
 ;   shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930
@@ -36,8 +36,8 @@ section .text
 
     PUSH 0x2c                           ; 00447590
         ;   Label: shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00447595
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447595
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0044759a
     PUSH ESI                            ; 0044759b
     PUSH EDI                            ; 0044759c

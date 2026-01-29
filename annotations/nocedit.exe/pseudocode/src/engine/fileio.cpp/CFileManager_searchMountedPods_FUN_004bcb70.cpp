@@ -44,7 +44,7 @@ engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff634);
   engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_108,&local_624);
   while (local_624.current_file_info.found_path[0] != '\0') {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_308,"%s\t%s",&local_624,local_624.current_file_info.target_path);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff634,local_308);
     engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0((CPod *)g_CDemonPodPtr,&local_624);

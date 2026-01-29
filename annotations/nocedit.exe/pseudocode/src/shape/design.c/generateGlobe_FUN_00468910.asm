@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   crt_stdlib.c_atoi_FUN_005ffef0
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_design.c_addQuadPolygon_FUN_004687c0
 ;   shape_design.c_addVertexFromSphericalCoords_FUN_004686e0
@@ -143,8 +143,8 @@ section .text
     LEA EAX,[EBP + -0x78]               ; 004689f0
         ;   Label: LAB_004689f0
     PUSH EAX                            ; 004689f3
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 004689f4
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 004689f4
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + -0x80],EAX     ; 004689f9
     MOV dword ptr [EBP + -0x7c],EDX     ; 004689fc
     FLD double ptr [EBP + -0x80]        ; 004689ff

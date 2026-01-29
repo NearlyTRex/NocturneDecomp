@@ -17,7 +17,7 @@
 ;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;   FlushFileBuffers
@@ -57,8 +57,8 @@ section .text
     TEST EAX,EAX                        ; 0060af40
     JNZ 0x0060af4e                      ; 0060af42
         ;   XREF to: 0060af4e (CONDITIONAL_JUMP)  ; LAB_0060af4e
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 0060af44
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 0060af44
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     MOV ESI,0xffffffff                  ; 0060af49
     PUSH EBX                            ; 0060af4e
         ;   Label: LAB_0060af4e

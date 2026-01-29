@@ -46,7 +46,7 @@ shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   ((CStrList *)&stack0xfffff744,(int)local_514,output_buffer,1);
         engine_dosio_c_makePath_FUN_00481f50(local_114,(char *)0x0,(char *)0x0,local_314,local_514);
-        iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_114,(char *)auto_select_flag);
+        iVar1 = stricmp(local_114,(char *)auto_select_flag);
         pcVar2 = output_buffer;
         if (iVar1 == 0) break;
         output_buffer = output_buffer + 1;

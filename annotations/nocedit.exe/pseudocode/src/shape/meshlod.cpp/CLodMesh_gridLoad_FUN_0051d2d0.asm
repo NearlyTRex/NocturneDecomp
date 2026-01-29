@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -62,7 +62,7 @@ section .text
     PUSH 0x638180                       ; 0051d308 | = "%d\n"
     PUSH EBP                            ; 0051d30d
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0051d30e
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051d313
     CMP dword ptr [ESP],0x10            ; 0051d316
     JNZ 0x0051d3ae                      ; 0051d31a
@@ -77,7 +77,7 @@ section .text
     PUSH EBP                            ; 0051d32d
     ADD EBX,0x4                         ; 0051d32e
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0051d331
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051d336
     CMP EBX,0x4004                      ; 0051d339
     JNZ 0x0051d322                      ; 0051d33f
@@ -153,7 +153,7 @@ section .text
     INC EDI                             ; 0051d409
     ADD EBX,0x4                         ; 0051d40a
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0051d40d
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051d412
     JMP 0x0051d36f                      ; 0051d415
         ;   XREF to: 0051d36f (UNCONDITIONAL_JUMP)  ; LAB_0051d36f

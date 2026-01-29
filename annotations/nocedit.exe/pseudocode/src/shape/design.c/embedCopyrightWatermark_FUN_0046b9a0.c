@@ -11,7 +11,7 @@ shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
           (void *image_buffer,char *output_filename,int texture_size)
 
 {
-  tm *time_ptr;
+  _tm *time_ptr;
   char local_4dc [1024];
   char local_dc [200];
   time_t local_14;
@@ -53,10 +53,10 @@ shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
               ((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,
                (byte *)0xffffffff,(int)output_filename,"All rights reserved");
   }
-  crt_time_c_time_with_rounding_FUN_006001f0(&local_14);
-  time_ptr = crt_time_c_localtime_FUN_00600288(&local_14);
-  crt_time_c_strftime_FUN_006002d4(local_dc,200,"%m%d%y",time_ptr);
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_4dc,"%s%s",local_dc,"Jan 10 2000");
+  time(&local_14);
+  time_ptr = localtime(&local_14);
+  strftime(local_dc,200,"%m%d%y",time_ptr);
+  sprintf(local_4dc,"%s%s",local_dc,"Jan 10 2000");
   shape_design_c_quantizePaletteColors_FUN_0046b770
             ((byte *)((texture_size + -1) * texture_size + (int)image_buffer),texture_size,1,
              (byte *)-texture_size,(int)output_filename,local_4dc);

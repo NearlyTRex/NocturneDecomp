@@ -11,7 +11,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
 {
   char cVar1;
   int iVar2;
-  FILE *file_handle;
+  _FILE *file_handle;
   uint uVar3;
   int iVar4;
   char *pcVar5;
@@ -26,7 +26,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
   do {
     if (0 < *(int *)((int)g_SfxSamples[0].loop_markers + iVar4 + -0x2c)) {
       pcVar5 = g_SfxSamples[0].sample_info.name + iVar4;
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,(char *)out_sample);
+      iVar2 = stricmp(pcVar5,(char *)out_sample);
       if (iVar2 == 0) {
         for (iVar4 = 0x54; iVar4 != 0; iVar4 = iVar4 + -1) {
           *(uint *)(out_sample->sample_info).name = *(uint *)pcVar5;
@@ -53,16 +53,16 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
         cVar1 = *pcVar5;
         pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
       } while (cVar1 != '\0');
-      crt_string_c_memmove_FUN_005fe5e0(&local_114,local_113,~uVar3 - 1);
+      memmove(&local_114,local_113,~uVar3 - 1);
     }
-    iVar4 = crt_string_c_stricmp_FUN_005fe7f0(&local_114,"wav");
+    iVar4 = stricmp(&local_114,"wav");
     if (iVar4 != 0) {
-      iVar4 = crt_string_c_stricmp_FUN_005fe7f0(&local_114,"mp3");
+      iVar4 = stricmp(&local_114,"mp3");
       if (iVar4 == 0) {
         if ((g_GlobalMP3DecoderInitializedOther & 1) == 0) {
           g_GlobalMP3DecoderInitializedOther = g_GlobalMP3DecoderInitializedOther | 1;
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
-          crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode2);
+          _atexit(&g_CMP3DecoderDestructorNode2);
         }
         sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(&g_CMP3DecoderInstance,(char *)out_sample);
         (out_sample->sample_info).bit_depth = 0x10;
@@ -91,15 +91,15 @@ LAB_005aa53c:
     }
     file_handle = engine_dosio_c_getFile_FUN_00481a50
                             ("sound",(char *)out_sample,"rb");
-    if (file_handle != (FILE *)0x0) {
-      local_14 = crt_stdio_c_ftell_FUN_00601560(file_handle);
+    if (file_handle != (_FILE *)0x0) {
+      local_14 = _ftell(file_handle);
       iVar4 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(file_handle,&local_14,out_sample);
       if (iVar4 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10ba);
         goto LAB_005aa53c;
       }
     }
-    if (file_handle != (FILE *)0x0) {
+    if (file_handle != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10af);
       return 0;
     }

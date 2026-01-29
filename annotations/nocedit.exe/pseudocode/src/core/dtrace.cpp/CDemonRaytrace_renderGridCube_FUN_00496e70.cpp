@@ -106,7 +106,7 @@ core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70
   local_94.z = (int)ROUND(local_68 * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[7].projected_vertex,&local_94);
-  uVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+  uVar1 = rand();
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
             (g_CDemonRendererPtr2,uVar1 & 0xff);
   local_dc.base.count = 4;

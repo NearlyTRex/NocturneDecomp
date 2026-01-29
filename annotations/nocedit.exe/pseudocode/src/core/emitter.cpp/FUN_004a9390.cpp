@@ -13,7 +13,7 @@ void core_emitter_cpp_FUN_004a9390(void)
 
 {
   int in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   if (*(int *)(in_stack_00000004 + 0x158) != 4) {
     return;

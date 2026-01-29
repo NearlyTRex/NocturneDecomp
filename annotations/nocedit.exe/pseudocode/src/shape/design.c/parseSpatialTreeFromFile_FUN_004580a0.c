@@ -2,11 +2,11 @@
 // Address: 004580a0
 // Address Range: [[004580a0, 0045816b]]
 // Convention: __cdecl
-// Signature: STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *file)
+// Signature: STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *file)
 
 #include "nocturne.h"
 
-STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *file)
+STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *file)
 
 {
   STreeNode *pSVar1;
@@ -20,8 +20,7 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
   float local_18;
   float local_14;
   
-  local_24 = crt_stdio_c_fscanf_FUN_005fe7c0
-                       (file,"%d,%d,%f,%f,%f,%f\n",local_2c,&local_28,&local_20,&local_1c,&local_18
+  local_24 = _fscanf(file,"%d,%d,%f,%f,%f,%f\n",local_2c,&local_28,&local_20,&local_1c,&local_18
                         ,&local_14);
   if ((local_24 == 0) || (local_24 == -1)) {
     local_34 = (STreeNode *)0x0;
@@ -30,7 +29,7 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
     local_34 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
     local_34->node_type = local_28;
     if (local_24 == 3) {
-      dVar2 = crt_math_c_round_FUN_005fe6b0((double)local_20);
+      dVar2 = round((double)local_20);
       local_34->data1 = (float)(int)ROUND(dVar2);
     }
     else {

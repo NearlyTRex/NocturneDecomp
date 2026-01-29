@@ -6,12 +6,12 @@
 
 #include "nocturne.h"
 
-void * __cdecl crt_heap_c_SystemAllocWrapper_FUN_00609718(ulong size)
+void * __cdecl SystemAllocWrapper(ulong size)
 
 {
   void *pvVar1;
   
-  crt_heap_c_CompactHeapBlocks_FUN_0060c920();
-  pvVar1 = (void *)crt_heap_c_AllocateNewHeapBlock_FUN_00609668(size);
+  CompactHeapBlocks();
+  pvVar1 = (void *)AllocateNewHeapBlock(size);
   return pvVar1;
 }

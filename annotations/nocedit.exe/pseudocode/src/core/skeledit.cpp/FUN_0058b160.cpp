@@ -21,7 +21,7 @@ void core_skeledit_cpp_FUN_0058b160(void)
   int in_stack_00000008;
   int local_10;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
+  __STK(0x14);
   iVar2 = *(int *)(in_stack_00000008 + 0x28558);
   iVar5 = 0;
   *in_stack_00000004 = iVar2;

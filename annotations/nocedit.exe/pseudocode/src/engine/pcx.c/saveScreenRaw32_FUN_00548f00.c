@@ -10,7 +10,7 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename)
 
 {
   char cVar1;
-  FILE *file;
+  _FILE *file;
   uint *puVar2;
   uint uVar3;
   char *pcVar4;
@@ -60,7 +60,7 @@ LAB_00548f43:
   } while (cVar1 != '\0');
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (local_6c,(char *)0x0,"wb","..\\engine\\pcx.c",0x9d);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
     g_CurrentLineNumber = 0x9e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveScreenRaw32 - Unable to open output");
@@ -75,12 +75,11 @@ LAB_00548f43:
         do {
           uVar3 = (*puVar2 >> ((byte)g_GreenBitPosition & 0x1f)) * g_GreenScaleFactor;
           local_1c = (*puVar2 >> ((byte)g_BlueBitPosition & 0x1f)) * g_BlueScaleFactor & 0xff;
-          crt_stdio_c_fputc_FUN_006007a0
-                    (g_RedScaleFactor * (*puVar2 >> ((byte)g_RedBitPosition & 0x1f)) & 0xff,file);
-          crt_stdio_c_fputc_FUN_006007a0(uVar3 & 0xff,file);
+          _fputc(g_RedScaleFactor * (*puVar2 >> ((byte)g_RedBitPosition & 0x1f)) & 0xff,file);
+          _fputc(uVar3 & 0xff,file);
           puVar2 = puVar2 + 1;
           iVar5 = iVar5 + 1;
-          crt_stdio_c_fputc_FUN_006007a0(local_1c,file);
+          _fputc(local_1c,file);
         } while (iVar5 < g_WindowWidth);
       }
       local_18 = local_18 + 4;

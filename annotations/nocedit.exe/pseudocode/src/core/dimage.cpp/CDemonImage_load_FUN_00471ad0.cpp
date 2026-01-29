@@ -12,7 +12,7 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr
   char cVar1;
   byte bVar2;
   ushort uVar3;
-  FILE *pFVar4;
+  _FILE *p_Var4;
   CDemonImage *pCVar5;
   char *pcVar6;
   CDemonImage *pCVar7;
@@ -36,8 +36,8 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr
     pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  pFVar4 = engine_dosio_c_getFile_FUN_00481a50("art",local_11c,"rb");
-  if (pFVar4 == (FILE *)0x0) {
+  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("art",local_11c,"rb");
+  if (p_Var4 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dimage.cpp";
     g_CurrentLineNumber = 0x68;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonImage::load - Unable to load image!");
@@ -45,8 +45,8 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr
   this_ptr->width = in_stack_0000000c;
   this_ptr->height = in_stack_00000010;
   core_dimage_cpp_CDemonImage_allocMemory_FUN_004719e0(this_ptr);
-  crt_stdio_c_fread_FUN_005fd990(this_ptr->data,in_stack_0000000c,in_stack_00000010,pFVar4);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\dimage.cpp",0x76);
+  _fread(this_ptr->data,in_stack_0000000c,in_stack_00000010,p_Var4);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\dimage.cpp",0x76);
   do {
     pcVar8 = pcVar6;
     if (*pcVar6 == '.') goto LAB_00471b94;
@@ -72,14 +72,14 @@ LAB_00471b94:
     pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  pFVar4 = engine_dosio_c_getFile_FUN_00481a50("art",local_11c,"rb");
-  if (pFVar4 == (FILE *)0x0) {
+  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("art",local_11c,"rb");
+  if (p_Var4 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dimage.cpp";
     g_CurrentLineNumber = 0x7f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonImage::load - Unable to load palette!");
   }
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->palette,0x100,3,pFVar4);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\dimage.cpp",0x81);
+  _fread(&this_ptr->palette,0x100,3,p_Var4);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\dimage.cpp",0x81);
   local_14 = (CDemonImage *)(this_ptr->color_values + 0x80);
   pCVar5 = this_ptr;
   pCVar7 = this_ptr;

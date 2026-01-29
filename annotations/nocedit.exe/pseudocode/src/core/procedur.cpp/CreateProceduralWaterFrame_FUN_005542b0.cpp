@@ -11,7 +11,7 @@ void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
 {
   byte bVar1;
   uint uVar2;
-  FILE *pFVar3;
+  _FILE *p_Var3;
   int *piVar4;
   int iVar5;
   int iVar6;
@@ -32,11 +32,11 @@ void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
   
   iVar6 = in_stack_00000004;
   do {
-    local_14 = crt_stdlib_c_rand_FUN_005feb5c();
+    local_14 = rand();
     *(float *)(iVar6 + 0x10008) = (float)local_14 * 3.051851e-05f * (float)256;
-    local_14 = crt_stdlib_c_rand_FUN_005feb5c();
+    local_14 = rand();
     *(float *)(iVar6 + 0x10208) = (float)local_14 * 3.051851e-05f * (float)256;
-    local_14 = crt_stdlib_c_rand_FUN_005feb5c();
+    local_14 = rand();
     iVar7 = iVar6 + 4;
     *(float *)(iVar6 + 0x10408) = (float)local_14 * 3.051851e-05f * (float)128;
     iVar6 = iVar7;
@@ -48,7 +48,7 @@ void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
   local_1c = 0;
   local_2c = local_30;
   do {
-    crt_memory_c_memset_FUN_005fde40(local_28,0,0x10000);
+    memset(local_28,0,0x10000);
     iVar6 = local_24;
     iVar7 = in_stack_00000004;
     do {
@@ -77,30 +77,30 @@ void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
       iVar10 = iVar10 + 0x100;
       iVar8 = iVar9;
     } while (iVar9 != local_20);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_130,"water%d.raw",local_1c);
-    pFVar3 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"wb");
-    if (pFVar3 == (FILE *)0x0) {
+    sprintf(local_130,"water%d.raw",local_1c);
+    p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"wb");
+    if (p_Var3 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\procedur.cpp";
       g_CurrentLineNumber = 100;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't write water frame");
     }
-    crt_stdio_c_fwrite_FUN_005fdc00(local_28,0x100,0x100,pFVar3);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\core\\procedur.cpp",0x66);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_130,"water%d.act",local_1c);
-    pFVar3 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"wb");
-    if (pFVar3 == (FILE *)0x0) {
+    _fwrite(local_28,0x100,0x100,p_Var3);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\procedur.cpp",0x66);
+    sprintf(local_130,"water%d.act",local_1c);
+    p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"wb");
+    if (p_Var3 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\procedur.cpp";
       g_CurrentLineNumber = 0x69;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't write water frame");
     }
     iVar6 = 0;
     do {
-      crt_stdio_c_fputc_FUN_006007a0(iVar6,pFVar3);
-      crt_stdio_c_fputc_FUN_006007a0(iVar6,pFVar3);
-      crt_stdio_c_fputc_FUN_006007a0(iVar6,pFVar3);
+      _fputc(iVar6,p_Var3);
+      _fputc(iVar6,p_Var3);
+      _fputc(iVar6,p_Var3);
       iVar6 = iVar6 + 1;
     } while (iVar6 < 0x100);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\core\\procedur.cpp",0x6f);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\procedur.cpp",0x6f);
     iVar7 = 0;
     iVar6 = 0;
     local_18 = local_2c;

@@ -37,7 +37,7 @@ section .text
     PUSH EDX                            ; 00470521
     PUSH 0x61e716                       ; 00470522 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00470527
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0047052c
     MOV EDI,EAX                         ; 0047052f
     TEST EAX,EAX                        ; 00470531
@@ -56,7 +56,7 @@ section .text
     PUSH 0x61e750                       ; 00470548 | = "..\\core\\dfilter.cpp"
     PUSH EDI                            ; 0047054d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0047054e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00470553
     POP EBP                             ; 00470556
     POP EDI                             ; 00470557
@@ -83,7 +83,7 @@ section .text
     PUSH EAX                            ; 0047058f
     INC EBX                             ; 00470590
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 00470591
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     ADD ESP,0x8                         ; 00470596
     JMP 0x00470537                      ; 00470599
         ;   XREF to: 00470537 (UNCONDITIONAL_JUMP)  ; LAB_00470537

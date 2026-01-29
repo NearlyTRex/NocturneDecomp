@@ -422,6 +422,47 @@ def transform_crt_functions(code):
     return re.sub(pattern, replace_crt_call, code)
 
 
+def transform_file_pointer_casts(code):
+    """Transform stdio function calls to use _FILE* wrapper functions.
+
+    Ghidra exports the Watcom _FILE struct, but standard library functions
+    expect FILE*. Instead of adding casts everywhere, we rename the function
+    calls to use wrapper functions defined in crt.h that handle the conversion.
+
+    Transforms:
+        fread(...) -> _fread(...)
+        fclose(...) -> _fclose(...)
+        etc.
+
+    The wrapper functions in crt.h take _FILE* and internally convert to FILE*.
+
+    Args:
+        code: Decompiled code string
+
+    Returns:
+        Transformed code with stdio functions renamed to wrapper versions
+    """
+    # All stdio functions that take FILE* arguments
+    file_funcs = [
+        'fread', 'fwrite', 'fgets', 'fputs', 'fputc', 'fgetc', 'ungetc',
+        'fclose', 'ftell', 'fflush', 'feof', 'ferror', 'rewind',
+        'fprintf', 'fscanf', 'fseek', 'fsetpos', 'fgetpos', 'setvbuf', 'setbuf',
+    ]
+
+    result = code
+
+    # Rename each function call: func( -> _func(
+    # Use word boundary to avoid matching partial names or already-prefixed functions
+    for func in file_funcs:
+        # Match function name followed by ( but not already prefixed with _
+        # Negative lookbehind ensures we don't match _fread, etc.
+        pattern = r'(?<!_)\b' + func + r'\s*\('
+        replacement = '_' + func + '('
+        result = re.sub(pattern, replacement, result)
+
+    return result
+
+
 def apply_all_transforms(code, transforms=None):
     """Apply all or specified transforms to decompiled code.
 
@@ -438,6 +479,7 @@ def apply_all_transforms(code, transforms=None):
         ('undefined_ptr_cast', transform_undefined_pointer_casts),
         ('undefined_type', transform_undefined_types),
         ('crt_functions', transform_crt_functions),
+        ('file_pointer_casts', transform_file_pointer_casts),
     ]
 
     if transforms is None:

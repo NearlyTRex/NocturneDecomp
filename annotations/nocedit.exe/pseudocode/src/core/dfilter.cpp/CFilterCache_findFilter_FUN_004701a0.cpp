@@ -18,7 +18,7 @@ core_dfilter_cpp_CFilterCache_findFilter_FUN_004701a0(CFilterCache *this_ptr,cha
   if (0 < this_ptr->filter_count) {
     str1 = this_ptr->filter_names;
     do {
-      iVar1 = crt_string_c_strcmp_FUN_005fef20(*str1,filter_name);
+      iVar1 = strcmp(*str1,filter_name);
       if (iVar1 == 0) {
         return this_ptr->filters[iVar2];
       }

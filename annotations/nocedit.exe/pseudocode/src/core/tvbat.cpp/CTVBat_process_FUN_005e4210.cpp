@@ -226,8 +226,8 @@ LAB_005e4342:
     local_84 = local_6c;
     local_80 = local_68;
   }
-  crt_math_c_atan2_FUN_006013b1((float10)local_88,(float10)local_80);
-  fVar17 = crt_math_c_atan2_FUN_006013b1
+  atan2((float10)local_88,(float10)local_80);
+  fVar17 = atan2
                      ((float10)local_88,
                       SQRT((float10)local_8c * (float10)local_8c +
                            (float10)local_84 * (float10)local_84));

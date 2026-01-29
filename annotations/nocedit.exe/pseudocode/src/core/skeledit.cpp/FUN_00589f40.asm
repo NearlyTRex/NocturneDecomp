@@ -12,7 +12,7 @@
 ;   CDemonPod g_CDemonPodInstance
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;
@@ -22,8 +22,8 @@ section .text
 
     PUSH 0x20                           ; 00589f40
         ;   Label: core_skeledit.cpp_FUN_00589f40
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00589f45
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589f45
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 00589f4a
     PUSH EBP                            ; 00589f4b
     PUSH 0x0                            ; 00589f4c

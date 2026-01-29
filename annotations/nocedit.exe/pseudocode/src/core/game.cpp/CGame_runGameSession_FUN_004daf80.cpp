@@ -92,7 +92,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   g_CheatSystemEnabled = 0;
   this_ptr->velocity_debug_enabled = 0;
   core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
-  pcVar3 = crt_env_c_getenv_FUN_006013f0("VELOCITY");
+  pcVar3 = getenv("VELOCITY");
   if (pcVar3 != (char *)0x0) {
     this_ptr->velocity_debug_enabled = 1;
   }

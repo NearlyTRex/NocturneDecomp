@@ -9,9 +9,8 @@
 void __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_03f8f638,100,&g_CVectorTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (DAT_03f8fae8,100,&g_SCollisionInfoTypeInfo);
+  __arrinit(DAT_03f8f638,100,&g_CVectorTypeInfo);
+  __arrinit(DAT_03f8fae8,100,&g_SCollisionInfoTypeInfo);
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CWaterActorClassInfo,"CWaterActor",
              core_wateract_cpp_factoryFunc_FUN_005ea860,&g_CWaterActorVersion,6,

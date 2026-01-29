@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *this_ptr,FILE **file)
+; __cdecl int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *this_ptr,_FILE **file)
 ;
 ; Parameters:
 ; CCheckOutList *  Stack[0x4]:4   this_ptr
-; FILE * *         Stack[0x8]:4   file
+; _FILE * *        Stack[0x8]:4   file
 ; Local Variables:
 ; undefined        Stack[-0x178]:1  local_178
 ; undefined        Stack[-0x177]:1  local_177
@@ -64,7 +64,7 @@ section .text
     MOV ECX,dword ptr [EBP]             ; 004b2a85
     PUSH ECX                            ; 004b2a88
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 004b2a89
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 004b2a8e
     TEST EAX,EAX                        ; 004b2a91
     JNZ 0x004b2ac1                      ; 004b2a93
@@ -74,7 +74,7 @@ section .text
     MOV ESI,dword ptr [EBP]             ; 004b2a9a
     PUSH ESI                            ; 004b2a9d
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004b2a9e
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EAX,dword ptr [EBP]             ; 004b2aa3
     MOV DL,byte ptr [EAX + 0xc]         ; 004b2aa6
     ADD ESP,0x8                         ; 004b2aa9
@@ -106,7 +106,7 @@ section .text
     PUSH 0x62604b                       ; 004b2ae1 | = "..\\engine\\fileio.cpp"
     PUSH ESI                            ; 004b2ae6
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b2ae7
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b2aec
     MOV dword ptr [EBP],0x0             ; 004b2aef
     MOV EBP,dword ptr [ESP + 0x17c]     ; 004b2af6
@@ -126,7 +126,7 @@ section .text
     PUSH 0x6262d1                       ; 004b2b17 | = "%[^=]= %[^\n]\n"
     PUSH EAX                            ; 004b2b1c
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004b2b1d
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004b2b22
     CMP EAX,0x2                         ; 004b2b25
     JZ 0x004b2b5c                       ; 004b2b28
@@ -139,7 +139,7 @@ section .text
     PUSH 0x62604b                       ; 004b2b36 | = "..\\engine\\fileio.cpp"
     PUSH EDI                            ; 004b2b3b
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b2b3c
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b2b41
     MOV dword ptr [EBP],0x0             ; 004b2b44
     PUSH 0x6262df                       ; 004b2b4b | = "Checkout file is corrupt, or file I/O..."
@@ -269,7 +269,7 @@ section .text
     PUSH 0x62604b                       ; 004b2c4d | = "..\\engine\\fileio.cpp"
     PUSH EDX                            ; 004b2c52
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b2c53
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b2c58
     MOV dword ptr [EBP],0x0             ; 004b2c5b
     LEA EAX,[ESP + 0x104]               ; 004b2c62
@@ -315,7 +315,7 @@ section .text
     PUSH 0x62604b                       ; 004b2cd4 | = "..\\engine\\fileio.cpp"
     PUSH ESI                            ; 004b2cd9
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b2cda
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b2cdf
     MOV dword ptr [EBP],0x0             ; 004b2ce2
     PUSH 0x6263b3                       ; 004b2ce9 | = "Out of memory reading checkout file....."

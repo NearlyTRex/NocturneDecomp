@@ -33,7 +33,7 @@ void __cdecl CSlew::copy(CSlew *this_ptr,CSlew *other);
 
 // Original: core_setutil.cpp_readAndParseLine_FUN_00585290
 // Address: 00585290
-void __cdecl readAndParseLine(FILE *file_handle,char *output_buffer,int max_length);
+void __cdecl readAndParseLine(_FILE *file_handle,char *output_buffer,int max_length);
 
 // Original: core_setutil.cpp_C3DSCamera_ctor_FUN_00585310
 // Address: 00585310
@@ -53,11 +53,11 @@ void __cdecl C3DSCamera::reset(C3DSCamera *this_ptr);
 
 // Original: core_setutil.cpp_C3DSCamera_load_FUN_00585420
 // Address: 00585420
-void __cdecl C3DSCamera::load(C3DSCamera *this_ptr,FILE *file_handle);
+void __cdecl C3DSCamera::load(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
 // Address: 005857b0
-void __cdecl C3DSCamera::loadPVS(C3DSCamera *this_ptr,FILE *file_handle);
+void __cdecl C3DSCamera::loadPVS(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSCamera_apply_FUN_00585870
 // Address: 00585870
@@ -69,15 +69,15 @@ int __cdecl C3DSCamera::testSphereInFrustum(C3DSCamera *this_ptr,CVector3f *worl
 
 // Original: core_setutil.cpp_C3DSCamera_save_FUN_00585a40
 // Address: 00585a40
-void __cdecl C3DSCamera::save(C3DSCamera *this_ptr,FILE *file_handle);
+void __cdecl C3DSCamera::save(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
 // Address: 00585c90
-void __cdecl C3DSCamera::import3DS(C3DSCamera *this_ptr,FILE *file_handle);
+void __cdecl C3DSCamera::import3DS(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
 // Address: 00585ff0
-void __cdecl C3DSCamera::importS3D(C3DSCamera *this_ptr,FILE *file_handle);
+void __cdecl C3DSCamera::importS3D(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSCamera_scalePosition_FUN_00586150
 // Address: 00586150
@@ -85,7 +85,7 @@ void __cdecl C3DSCamera::scalePosition(C3DSCamera *this_ptr,float scale);
 
 // Original: core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190
 // Address: 00586190
-int __cdecl C3DSCamera::exportS3D(C3DSCamera *this_ptr,FILE *file_handle);
+int __cdecl C3DSCamera::exportS3D(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSLight_ctor_FUN_005862f0
 // Address: 005862f0
@@ -93,7 +93,7 @@ C3DSLight * __cdecl C3DSLight::ctor(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_load_FUN_00586310
 // Address: 00586310
-void __cdecl C3DSLight::load(C3DSLight *this_ptr,FILE *file_handle);
+void __cdecl C3DSLight::load(C3DSLight *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSLight_create_FUN_00586a90
 // Address: 00586a90
@@ -125,23 +125,23 @@ void __cdecl C3DSLight::addFilter(C3DSLight *this_ptr,char *filter_name,float du
 
 // Original: core_setutil.cpp_C3DSLight_save_FUN_00587090
 // Address: 00587090
-void __cdecl C3DSLight::save(C3DSLight *this_ptr,FILE *file_ptr);
+void __cdecl C3DSLight::save(C3DSLight *this_ptr,_FILE *file_ptr);
 
 // Original: core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450
 // Address: 00587450
-int __cdecl C3DSCamera::savePVS(C3DSCamera *this_ptr,FILE *file_handle);
+int __cdecl C3DSCamera::savePVS(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
 // Address: 005874d0
-void __cdecl C3DSLight::import3DS(C3DSLight *this_ptr,FILE *file_handle);
+void __cdecl C3DSLight::import3DS(C3DSLight *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSLight_importS3D_FUN_00587710
 // Address: 00587710
-void __cdecl C3DSLight::importS3D(C3DSLight *this_ptr,FILE *file_handle);
+void __cdecl C3DSLight::importS3D(C3DSLight *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSLight_exportS3D_FUN_00587850
 // Address: 00587850
-void __cdecl C3DSLight::exportS3D(C3DSLight *this_ptr,FILE *file_handle);
+void __cdecl C3DSLight::exportS3D(C3DSLight *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSLight_scalePosition_FUN_00587950
 // Address: 00587950

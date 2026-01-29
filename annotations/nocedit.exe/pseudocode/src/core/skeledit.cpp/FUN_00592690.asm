@@ -256,8 +256,8 @@ section .text
 
     PUSH 0x11418                        ; 00592690
         ;   Label: core_skeledit.cpp_FUN_00592690
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00592695
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00592695
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0059269a
     PUSH ESI                            ; 0059269b
     PUSH EDI                            ; 0059269c
@@ -277,7 +277,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x92]      ; 005926c9
     PUSH ECX                            ; 005926cf
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005926d0
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV ESI,EAX                         ; 005926d5
     ADD ESP,0x14                        ; 005926d7
     MOV dword ptr [EBP + 0xffffff6e],EAX ; 005926da
@@ -298,7 +298,7 @@ section .text
     PUSH ESI                            ; 0059270f
         ;   Label: LAB_0059270f
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00592710
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 00592715
     TEST EAX,EAX                        ; 00592718
     JL 0x00592726                       ; 0059271a
@@ -319,7 +319,7 @@ section .text
     PUSH ESI                            ; 0059273a
     MOV dword ptr [EBP + 0xffffff76],EBX ; 0059273b
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00592741
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EDI,dword ptr [EBP + 0xffffff76] ; 00592746
     ADD ESP,0xc                         ; 0059274c
     CMP EDI,0x50                        ; 0059274f
@@ -331,7 +331,7 @@ section .text
     PUSH ESI                            ; 00592763
         ;   Label: LAB_00592763
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00592764
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 00592769
     TEST EAX,EAX                        ; 0059276c
     JL 0x0059277a                       ; 0059276e
@@ -361,7 +361,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0xffffff6e] ; 005927ae
     PUSH EDI                            ; 005927b4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005927b5
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005927ba
     IMUL EDX,dword ptr [EAX],0x1e       ; 005927c0
     MOV BL,byte ptr [EDX + EAX*0x1 + 0x4] ; 005927c3
@@ -396,7 +396,7 @@ section .text
     PUSH 0x64c10f                       ; 00592815 | = "..\\core\\skeledit.cpp"
     PUSH EDI                            ; 0059281a
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0059281b
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00592820
     XOR EBX,EBX                         ; 00592823
         ;   Label: LAB_00592823
@@ -463,7 +463,7 @@ section .text
     PUSH ESI                            ; 005928cf
         ;   Label: LAB_005928cf
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005928d0
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 005928d5
     TEST EAX,EAX                        ; 005928d8
     JL 0x005928e6                       ; 005928da
@@ -482,7 +482,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0xffffff6e] ; 005928f2
     PUSH EBX                            ; 005928f8
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005928f9
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005928fe
     CMP EAX,0x1                         ; 00592901
     JNZ 0x00592e13                      ; 00592904
@@ -557,7 +557,7 @@ section .text
     PUSH ESI                            ; 005929de
         ;   Label: LAB_005929de
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005929df
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 005929e4
     TEST EAX,EAX                        ; 005929e7
     JL 0x005929f5                       ; 005929e9
@@ -573,7 +573,7 @@ section .text
         ;   Label: LAB_005929f5
     PUSH EBX                            ; 005929fb
     CALL crt_stdio.c_ftell_FUN_00601560 ; 005929fc
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 00592a01
     XOR EDI,EDI                         ; 00592a04
     MOV ESI,dword ptr [0x00678a60]      ; 00592a06 | g_CEditorToolsPtr
@@ -607,7 +607,7 @@ section .text
     PUSH EAX                            ; 00592a76
     MOV EBX,dword ptr [EBP + -0x7e]     ; 00592a77
     CALL core_skeledit.cpp_readNonEmptyLine_FUN_005895f0 ; 00592a7a
-        ;   XREF to: 005895f0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)
+        ;   XREF to: 005895f0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, _FILE * file, int require_content)
     ADD ESP,0xc                         ; 00592a7f
     MOV dword ptr [EBP + -0x3e],EAX     ; 00592a82
     TEST EAX,EAX                        ; 00592a85
@@ -704,7 +704,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0xffffff6e] ; 00592b99
     PUSH EAX                            ; 00592b9f
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 00592ba0
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00592ba5
     PUSH 0x64c616                       ; 00592ba8 | = "Importing skeleton animation frames..."
     MOV EDX,dword ptr [0x00678a60]      ; 00592bad | g_CEditorToolsPtr
@@ -753,7 +753,7 @@ section .text
     LEA EAX,[EBP + 0xffffdfe6]          ; 00592c37
     PUSH EAX                            ; 00592c3d
     CALL core_skeledit.cpp_readNonEmptyLine_FUN_005895f0 ; 00592c3e
-        ;   XREF to: 005895f0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)
+        ;   XREF to: 005895f0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, _FILE * file, int require_content)
     ADD ESP,0xc                         ; 00592c43
     TEST EAX,EAX                        ; 00592c46
     JZ 0x00593a86                       ; 00592c48
@@ -840,7 +840,7 @@ section .text
     LEA EAX,[EBP + 0xffffdfe6]          ; 00592d72
     PUSH EAX                            ; 00592d78
     CALL core_skeledit.cpp_readNonEmptyLine_FUN_005895f0 ; 00592d79
-        ;   XREF to: 005895f0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)
+        ;   XREF to: 005895f0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, _FILE * file, int require_content)
     ADD ESP,0xc                         ; 00592d7e
     PUSH 0x3                            ; 00592d81
     PUSH 0x64c670                       ; 00592d83 | = "fps"
@@ -962,7 +962,7 @@ section .text
     PUSH EDX                            ; 00592ed4
     MOV dword ptr [EBP + -0x72],EDX     ; 00592ed5
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00592ed8
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00592edd
     MOV EDI,EAX                         ; 00592ee0
     TEST EAX,EAX                        ; 00592ee2
@@ -973,7 +973,7 @@ section .text
     PUSH ESI                            ; 00592ef1
         ;   Label: LAB_00592ef1
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00592ef2
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 00592ef7
     TEST EAX,EAX                        ; 00592efa
     JL 0x00592f08                       ; 00592efc
@@ -991,7 +991,7 @@ section .text
     PUSH 0x64c27b                       ; 00592f0c | = "%d\n"
     PUSH EDI                            ; 00592f11
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00592f12
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00592f17
     LEA EAX,[EBP + 0x32]                ; 00592f1a
     PUSH EAX                            ; 00592f1d
@@ -999,13 +999,13 @@ section .text
     LEA EAX,[EBP + 0xffff56da]          ; 00592f1f
     PUSH EAX                            ; 00592f25
     CALL core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 ; 00592f26
-        ;   XREF to: 0058a4a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr, FILE * file, int * frame_count_out)
+        ;   XREF to: 0058a4a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr, _FILE * file, int * frame_count_out)
     ADD ESP,0xc                         ; 00592f2b
     PUSH 0x10b8                         ; 00592f2e
     PUSH 0x64c27f                       ; 00592f33 | = "..\\core\\skeledit.cpp"
     PUSH EDI                            ; 00592f38
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00592f39
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV ESI,dword ptr [EBP + -0x7a]     ; 00592f3e
     ADD ESP,0xc                         ; 00592f41
     CMP ESI,0x1869f                     ; 00592f44
@@ -1580,7 +1580,7 @@ section .text
     PUSH 0x0                            ; 005935bf
     PUSH ESI                            ; 005935c1
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005935c2
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005935c7
     TEST EAX,EAX                        ; 005935ca
     JZ 0x00593635                       ; 005935cc
@@ -1589,7 +1589,7 @@ section .text
     PUSH 0x64c489                       ; 005935d3 | = "..\\core\\skeledit.cpp"
     PUSH EAX                            ; 005935d8
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005935d9
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005935de
     JMP 0x00592a67                      ; 005935e1
         ;   XREF to: 00592a67 (UNCONDITIONAL_JUMP)  ; LAB_00592a67
@@ -1883,7 +1883,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0xffffff6e] ; 005938e8
     PUSH EDI                            ; 005938ee
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005938ef
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005938f4
     PUSH 0x64d5c6                       ; 005938f7 | = "Biasing motions."
     MOV EDX,dword ptr [0x00678a60]      ; 005938fc | g_CEditorToolsPtr
@@ -4405,7 +4405,7 @@ section .text
     MOV ESI,dword ptr [EBP + -0x5e]     ; 00595380
     PUSH ESI                            ; 00595383 | DAT_0365caf8
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00595384
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00595389
     MOV dword ptr [EBP + -0x36],EAX     ; 0059538c
     TEST EAX,EAX                        ; 0059538f
@@ -4416,7 +4416,7 @@ section .text
     PUSH EDI                            ; 0059539e
         ;   Label: LAB_0059539e
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0059539f
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 005953a4
     TEST EAX,EAX                        ; 005953a7
     JL 0x005953b5                       ; 005953a9
@@ -4435,7 +4435,7 @@ section .text
     MOV EBX,dword ptr [EBP + -0x36]     ; 005953be
     PUSH EBX                            ; 005953c1
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005953c2
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005953c7
     LEA EAX,[EBP + -0x2e]               ; 005953ca
     PUSH EAX                            ; 005953cd
@@ -4444,7 +4444,7 @@ section .text
     PUSH EAX                            ; 005953d5
     MOV ESI,dword ptr [EBP + 0x4e]      ; 005953d6
     CALL core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 ; 005953d9
-        ;   XREF to: 0058a4a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr, FILE * file, int * frame_count_out)
+        ;   XREF to: 0058a4a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr, _FILE * file, int * frame_count_out)
     XOR EBX,EBX                         ; 005953de
     MOV EDI,dword ptr [ESI + EBP*0x1 + 0xffffd78a] ; 005953e0
     ADD ESP,0xc                         ; 005953e7
@@ -4511,7 +4511,7 @@ section .text
     PUSH EAX                            ; 00595487
     MOV dword ptr [EBP + -0x2e],EBX     ; 00595488
     CALL core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 ; 0059548b
-        ;   XREF to: 0058aa10 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure * this_ptr, FILE * file, int mirror_flag)
+        ;   XREF to: 0058aa10 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure * this_ptr, _FILE * file, int mirror_flag)
     ADD ESP,0xc                         ; 00595490
     LEA EAX,[EBP + 0xffff8bfe]          ; 00595493
     PUSH EAX                            ; 00595499
@@ -4650,7 +4650,7 @@ section .text
     PUSH EBX                            ; 00595674
     XOR ESI,ESI                         ; 00595675
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00595677
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV EAX,dword ptr [EBP + -0x62]     ; 0059567c
     MOV dword ptr [EBP + 0xfffffe86],ESI ; 0059567f
     MOV dword ptr [EBP + 0xfffffe8a],ESI ; 00595685

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_scanf_getc_wrapper_FUN_00604930(scanf_state_t *state)
+int __cdecl scanf_getc_wrapper(scanf_state_t *state)
 
 {
   int iVar1;

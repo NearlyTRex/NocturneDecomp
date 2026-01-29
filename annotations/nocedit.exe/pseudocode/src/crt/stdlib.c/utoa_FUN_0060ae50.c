@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_stdlib_c_utoa_FUN_0060ae50(uint value,char *buffer,int base)
+char * __cdecl utoa(uint value,char *buffer,int base)
 
 {
   char cVar1;

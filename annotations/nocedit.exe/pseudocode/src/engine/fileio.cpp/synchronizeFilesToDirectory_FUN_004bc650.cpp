@@ -2,21 +2,21 @@
 // Address: 004bc650
 // Address Range: [[004bc650, 004bc9ee]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650 (FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
+// Signature: void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650 (_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 
 #include "nocturne.h"
 
 void __cdecl
 engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
-          (FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
+          (_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 
 {
   char cVar1;
   bool bVar2;
   char *full_path;
   int iVar3;
-  FILE *file;
-  FILE *file_ptr;
+  _FILE *file;
+  _FILE *file_ptr;
   char *pcVar4;
   SFoundFileInfo *pSVar5;
   char *pcVar6;
@@ -41,7 +41,7 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
       engine_dosio_c_splitPath_FUN_00481f20(full_path,(char *)0x0,(char *)0x0,local_224,local_124);
       engine_dosio_c_makePath_FUN_00481f50(local_328,(char *)0x0,dest_directory,local_224,local_124)
       ;
-      crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)file_list_output->_ptr,"%s\n",local_328);
+      _fprintf((_FILE *)file_list_output->_ptr,"%s\n",local_328);
       pSVar5 = &local_53c;
       pcVar4 = full_path;
       do {
@@ -75,7 +75,7 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
           ((char *)(local_544 + 1) < local_53c.timestamp)) || (local_53c.file_size != local_54c)) {
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (full_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",0xff8);
-        if (file == (FILE *)0x0) {
+        if (file == (_FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
           g_CurrentLineNumber = 0xff9;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",full_path);
@@ -83,7 +83,7 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
         file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_328,(char *)0x0,"wb","..\\engine\\fileio.cpp",0xffa
                              );
-        if (file_ptr == (FILE *)0x0) {
+        if (file_ptr == (_FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
           g_CurrentLineNumber = 0xffb;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_328);
@@ -91,9 +91,9 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Copying %s -> %s");
         while( true ) {
-          iVar3 = crt_stdio_c_fgetc_FUN_005fe840(file);
+          iVar3 = _fgetc(file);
           if (iVar3 == -1) break;
-          crt_stdio_c_fputc_FUN_006007a0(iVar3,file_ptr);
+          _fputc(iVar3,file_ptr);
         }
         if ((file->_flag & 0x20) != 0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";

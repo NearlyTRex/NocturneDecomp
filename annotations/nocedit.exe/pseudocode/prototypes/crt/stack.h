@@ -3,9 +3,9 @@
 // Function prototypes for crt/stack.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_stack.c_stack_probe_FUN_005ff9f3
+// Original: crt_stack.c___STK_FUN_005ff9f3
 // Address: 005ff9f3
-uint __stdcall stack::probe(uint stack_size);
+uint __stdcall ::_STK(uint stack_size);
 
 // Original: crt_stack.c_check_stack_target_FUN_005ffa03
 // Address: 005ffa03

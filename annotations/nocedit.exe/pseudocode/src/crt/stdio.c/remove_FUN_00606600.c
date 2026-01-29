@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_remove_FUN_00606600(char *filename)
+int __watcallStack remove(char *filename)
 
 {
   BOOL BVar1;
@@ -18,6 +18,6 @@ int __watcallStack crt_stdio_c_remove_FUN_00606600(char *filename)
     return 0;
   }
   windows_error = (*g_GetLastErrorFunc)();
-  iVar2 = crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(windows_error);
+  iVar2 = convertWindowsErrorToErrno(windows_error);
   return iVar2;
 }

@@ -69,7 +69,7 @@ void __cdecl CAmmo::getPropertyList(CAmmo *this_ptr,CActorPropertyList *property
 
 // Original: core_ammo.cpp_CAmmo_writeDependencies_FUN_004113e0
 // Address: 004113e0
-void __cdecl CAmmo::writeDependencies(CAmmo *this_ptr,FILE *file_handle);
+void __cdecl CAmmo::writeDependencies(CAmmo *this_ptr,_FILE *file_handle);
 
 // Original: core_ammo.cpp_CAmmo_dtor_FUN_004114e0
 // Address: 004114e0

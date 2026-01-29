@@ -16,13 +16,13 @@ void core_skeledit_cpp_FUN_0058a2b0(void)
   char *pcVar5;
   char *pcVar6;
   int in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   char local_2c [20];
   int local_18;
   int local_14;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x3c);
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"DATA\\%s\n",in_stack_00000004 + 0x8f5c);
+  __STK(0x3c);
+  _fprintf(in_stack_00000008,"DATA\\%s\n",in_stack_00000004 + 0x8f5c);
   local_18 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0xb8)) {
     local_14 = in_stack_00000004 + 0xc0;
@@ -58,8 +58,8 @@ LAB_0058a355:
           if (pcVar6 != (char *)0x0) {
             *pcVar6 = '\0';
           }
-          crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"ART\\%s.RAW\n",local_2c);
-          crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"ART\\%s.ACT\n",local_2c);
+          _fprintf(in_stack_00000008,"ART\\%s.RAW\n",local_2c);
+          _fprintf(in_stack_00000008,"ART\\%s.ACT\n",local_2c);
           iVar4 = iVar4 + 1;
           pcVar2 = pcVar3 + 0x48;
           pcVar6 = local_2c;

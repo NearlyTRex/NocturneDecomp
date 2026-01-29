@@ -17,7 +17,7 @@ core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float d
   double dVar4;
   
   iVar2 = *(int *)(this_ptr->unk5 + 0x2af94);
-  dVar4 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = round
                     ((double)(delta_time * (float)65536 * (float)8));
   iVar2 = iVar2 + (int)ROUND(dVar4);
   *(int *)(this_ptr->unk5 + 0x2af94) = iVar2;

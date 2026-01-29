@@ -34,7 +34,7 @@
 ;   core_skeledit.cpp_FUN_00589fa0
 ;   core_skeledit.cpp_FUN_00589fe0
 ;   core_skeledit.cpp_FUN_0058a0f0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -53,8 +53,8 @@ section .text
 
     PUSH 0xa84                          ; 00589c20
         ;   Label: core_skeledit.cpp_FUN_00589c20
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00589c25
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589c25
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 00589c2a
     PUSH ESI                            ; 00589c2b
     PUSH EDI                            ; 00589c2c
@@ -184,7 +184,7 @@ section .text
         ;   Label: LAB_00589d87
     PUSH EBX                            ; 00589d8c
     CALL shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770 ; 00589d8d
-        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
+        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; _FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
     ADD ESP,0x8                         ; 00589d92
     MOV dword ptr [EBX + 0x38],EAX      ; 00589d95
     TEST EAX,EAX                        ; 00589d98
@@ -206,7 +206,7 @@ section .text
     PUSH EBP                            ; 00589dc3
     PUSH EBX                            ; 00589dc4
     CALL shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 ; 00589dc5
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, FILE * file_handle)
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00589dca
     TEST EAX,EAX                        ; 00589dcd
     JZ 0x00589e0e                       ; 00589dcf
@@ -259,7 +259,7 @@ section .text
     PUSH EBX                            ; 00589e3f
     MOV ESI,EBX                         ; 00589e40
     CALL shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770 ; 00589e42
-        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
+        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; _FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
     ADD ESP,0x8                         ; 00589e47
     MOV dword ptr [EBX + 0x38],EAX      ; 00589e4a
     TEST EAX,EAX                        ; 00589e4d

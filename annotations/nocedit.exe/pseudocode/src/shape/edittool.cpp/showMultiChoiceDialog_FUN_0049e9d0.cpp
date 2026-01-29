@@ -50,7 +50,7 @@ shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0
   iVar11 = iVar2;
   pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (iVar2 * 0xe4 + 4,"..\\shape\\edittool.cpp",0x412);
-  object_ptr = crt_memory_c_constructTypedObjectArray_FUN_00601272(pvVar3,iVar11,type_info);
+  object_ptr = __vec_new(pvVar3,iVar11,type_info);
   iVar11 = 0;
   local_48 = 0;
   local_3c = object_ptr;
@@ -190,7 +190,7 @@ LAB_0049eae7:
       cVar1 = (char)object_ptr->shortcut_key;
       pCVar12 = object_ptr;
       for (iVar6 = 0; (cVar1 != '\0' && (iVar6 < iVar2)); iVar6 = iVar6 + 1) {
-        iVar7 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)pCVar12->shortcut_key);
+        iVar7 = toupper((uint)(byte)pCVar12->shortcut_key);
         if (iVar7 == iVar9) {
           iVar11 = iVar6;
         }
@@ -232,8 +232,8 @@ LAB_0049eae7:
   } while (iVar11 == -2);
   g_CurrentDebugFilename = "..\\shape\\edittool.cpp";
   g_CurrentDebugLine = 0x49d;
-  pvVar3 = crt_memory_c_freeSingleInstance_FUN_005fe632(object_ptr,&g_CEdButtonTypeInfo);
-  crt_memory_c_free_FUN_005fe659(pvVar3);
+  pvVar3 = __vec_delete(object_ptr,&g_CEdButtonTypeInfo);
+  shape_memdbg_cpp_free_FUN_005fe659(pvVar3);
   g_InputKeyMask = iVar5;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);

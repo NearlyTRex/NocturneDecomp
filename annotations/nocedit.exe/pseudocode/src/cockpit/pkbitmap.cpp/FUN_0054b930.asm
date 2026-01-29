@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void cockpit_pkbitmap_cpp_FUN_0054b930 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,FILE *param_6)
+; unknown void cockpit_pkbitmap_cpp_FUN_0054b930 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,_FILE *param_6)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -47,7 +47,7 @@ section .text
     LEA EDI,[ESP + 0xc]                 ; 0054b962
     PUSH EDI                            ; 0054b966
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b967
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0054b96c
     MOV EDI,dword ptr [ESP + 0x18]      ; 0054b96f
     TEST byte ptr [EDI + 0xc],0x20      ; 0054b973

@@ -29,11 +29,11 @@ CZThumb * __cdecl CZThumb::dtor(CZThumb *this_ptr);
 
 // Original: core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
 // Address: 00574910
-void __cdecl CZThumb::saveZBufferTable(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,FILE *file_handle);
+void __cdecl CZThumb::saveZBufferTable(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle);
 
 // Original: core_setdir.cpp_CZThumb_write_FUN_00574b20
 // Address: 00574b20
-void __cdecl CZThumb::write(CZThumb *this_ptr,FILE *file_handle);
+void __cdecl CZThumb::write(CZThumb *this_ptr,_FILE *file_handle);
 
 // Original: core_setdir.cpp_CZThumb_free_FUN_00574b50
 // Address: 00574b50
@@ -81,7 +81,7 @@ void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 
 // Original: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0
 // Address: 00575bc0
-void __cdecl CDemonSet::saveThumbs(CDemonSet *this_ptr,FILE *file_handle);
+void __cdecl CDemonSet::saveThumbs(CDemonSet *this_ptr,_FILE *file_handle);
 
 // Original: core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0
 // Address: 00575df0
@@ -101,7 +101,7 @@ void __cdecl CDemonSet::renderVirtualDirectors(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200
 // Address: 00576200
-void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,FILE *file_handle);
+void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,_FILE *file_handle);
 
 // Original: core_setdir.cpp_CDemonSet_FUN_005762a0
 // Address: 005762a0

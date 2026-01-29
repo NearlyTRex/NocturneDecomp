@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_strcpy_advance_FUN_00610240(char *dest,char *src)
+char * __cdecl strcpy_advance(char *dest,char *src)
 
 {
   char cVar1;

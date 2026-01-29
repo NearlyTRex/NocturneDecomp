@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   crt_stdlib.c_atoi_FUN_005ffef0
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
@@ -137,8 +137,8 @@ section .text
     LEA ECX,[EBP + 0xffffff28]          ; 00469d41
         ;   Label: LAB_00469d41
     PUSH ECX                            ; 00469d47
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00469d48
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00469d48
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + 0xffffff20],EAX ; 00469d4d
     MOV dword ptr [EBP + 0xffffff24],EDX ; 00469d53
     FLD double ptr [EBP + 0xffffff20]   ; 00469d59
@@ -169,8 +169,8 @@ section .text
     LEA EAX,[EBP + 0xffffff28]          ; 00469d99
         ;   Label: LAB_00469d99
     PUSH EAX                            ; 00469d9f
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 00469da0
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 00469da0
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + 0xffffff20],EAX ; 00469da5
     MOV dword ptr [EBP + 0xffffff24],EDX ; 00469dab
     FLD double ptr [EBP + 0xffffff20]   ; 00469db1

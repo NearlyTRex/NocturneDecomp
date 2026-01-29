@@ -19,7 +19,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   void *pvVar7;
   void *ptr;
   CMorphModel *this_ptr_00;
-  FILE *output_file;
+  _FILE *output_file;
   byte bVar8;
   int aiStackY_1008 [690];
   char *directory;
@@ -65,7 +65,7 @@ LAB_0050740e:
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
       uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      uVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
+      uVar2 = toupper(uVar2 & 0xff);
       if (uVar2 < 0x37) {
         if (uVar2 < 0x34) {
           if (0x30 < uVar2) {
@@ -156,7 +156,7 @@ LAB_0050740e:
                *(int *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                   (pcVar3,directory,mode,source_file,iVar1);
-          if (output_file == (FILE *)0x0) {
+          if (output_file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\main.c";
             g_CurrentLineNumber = 0x2c1;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't createpen %s",local_20);

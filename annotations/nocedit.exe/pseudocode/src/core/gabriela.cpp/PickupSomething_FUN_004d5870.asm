@@ -52,7 +52,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004d5889
     PUSH EAX                            ; 004d588d
     MOV dword ptr [ESI + 0x1fba0],0x0   ; 004d588e
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004d5898
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004d5898
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004d589d
     LEA EAX,[ESP + 0x64]                ; 004d58a0
     MOV EBX,0x3ff5c28f                  ; 004d58a4

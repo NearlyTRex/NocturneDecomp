@@ -26,9 +26,9 @@ core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
   fVar4 = (float10)0.0039215686274509803;
   iVar2 = 0;
   do {
-    fVar4 = crt_math_c_pow_FUN_005ffd76((float10)iVar3 * fVar4,exp);
+    fVar4 = pow((float10)iVar3 * fVar4,exp);
     exp = extraout_ST2;
-    dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar4 * extraout_ST3));
+    dVar5 = round((double)(fVar4 * extraout_ST3));
     uVar1 = (uint)ROUND(dVar5);
     iVar3 = iVar3 + 1;
     *(uint *)((int)g_LightmapTexturePalette + iVar2) =

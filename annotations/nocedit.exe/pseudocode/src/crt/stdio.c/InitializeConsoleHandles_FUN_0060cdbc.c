@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_stdio_c_InitializeConsoleHandles_FUN_0060cdbc(void)
+void InitializeConsoleHandles(void)
 
 {
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(0);

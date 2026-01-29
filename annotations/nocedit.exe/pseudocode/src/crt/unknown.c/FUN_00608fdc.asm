@@ -8,12 +8,12 @@
 ;   crt_unknown.c_staticFinal_FUN_00608fc0 at 00608fc2
 ;
 ; Referenced Globals:
-;   FILE* g_StaticFilePoolStart = 00000000
+;   _FILE* g_StaticFilePoolStart = 00000000
 ;   undefined4 DAT_00684d12
 ;   FileListNode* g_AllocatedListHead
 ;
 ; Called Functions:
-;   crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4
+;   crt_stdio.c___CClose_FUN_00601ee4
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_00609029
     PUSH EAX                            ; 0060902a
     INC EBX                             ; 0060902b
-    CALL crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4 ; 0060902c
-        ;   XREF to: 00601ee4 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4(FILE * file_handle, int close_flags)
+    CALL crt_stdio.c___CClose_FUN_00601ee4 ; 0060902c
+        ;   XREF to: 00601ee4 (UNCONDITIONAL_CALL)  ; int crt_stdio.c___CClose_FUN_00601ee4(_FILE * file_handle, int close_flags)
     ADD ESP,0x8                         ; 00609031
     MOV EAX,ESI                         ; 00609034
         ;   Label: LAB_00609034

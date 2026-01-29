@@ -45,17 +45,17 @@ core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20
   fVar4 = (float10)local_58.y / (float10)(this_ptr->adjusted_size).y;
   fVar5 = (float10)local_58.z / (float10)(this_ptr->adjusted_size).z;
   fVar6 = (float10)2;
-  dVar8 = crt_math_c_round_FUN_005fe6b0
+  dVar8 = round
                     ((double)((float10)1 +
                              ((float10)local_58.x / (float10)(this_ptr->adjusted_size).x) * fVar6));
   iStack_2c = (int)ROUND(dVar8);
   fVar7 = (float10)local_5c / (float10)iStack_2c;
   local_18 = iStack_2c;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)1 + fVar4 * fVar6));
+  dVar8 = round((double)((float10)1 + fVar4 * fVar6));
   iStack_2c = (int)ROUND(dVar8);
   fVar4 = (float10)local_5c / (float10)iStack_2c;
   local_1c = iStack_2c;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)1 + fVar5 * fVar6));
+  dVar8 = round((double)((float10)1 + fVar5 * fVar6));
   local_28 = (int)ROUND(dVar8);
   fVar10 = local_5c / (float)local_28;
   iStack_2c = 0;

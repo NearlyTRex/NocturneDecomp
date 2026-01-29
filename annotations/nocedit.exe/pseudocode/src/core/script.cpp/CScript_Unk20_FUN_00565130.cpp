@@ -173,14 +173,14 @@ LAB_00565363:
         in_stack_00000084 = "Can't find %s";
         in_stack_00000080 = &DAT_0310fdc0;
         in_stack_0000007c = (char *)0x56581f;
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,"Can't find %s");
+        sprintf(&DAT_0310fdc0,"Can't find %s");
       }
       else {
         in_stack_00000088 = &DAT_0310fd58;
         in_stack_00000084 = "Found %s";
         in_stack_00000080 = &DAT_0310fdc0;
         in_stack_0000007c = (char *)0x56551e;
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,"Found %s");
+        sprintf(&DAT_0310fdc0,"Found %s");
         DAT_0310fd48 = (int)in_stack_0000008c;
         DAT_0310fd44 = (int)in_stack_00000098;
         bVar2 = false;
@@ -228,14 +228,14 @@ LAB_00565363:
         in_stack_00000094 = "Can't find %s";
         in_stack_00000090 = &DAT_0310fdc0;
         in_stack_0000008c = (char *)0x56583b;
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,"Can't find %s");
+        sprintf(&DAT_0310fdc0,"Can't find %s");
       }
       else {
         in_stack_00000098 = &DAT_0310fd58;
         in_stack_00000094 = "Found %s";
         in_stack_00000090 = &DAT_0310fdc0;
         in_stack_0000008c = (char *)0x5655fb;
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,"Found %s");
+        sprintf(&DAT_0310fdc0,"Found %s");
         DAT_0310fd48 = (int)in_stack_000000b0;
         DAT_0310fd44 = (int)in_stack_000000ac;
         bVar2 = false;

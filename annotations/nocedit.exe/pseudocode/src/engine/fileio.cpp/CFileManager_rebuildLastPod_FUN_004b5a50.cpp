@@ -12,7 +12,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
 
 {
   char cVar1;
-  FILE *file_handle;
+  _FILE *file_handle;
   int iVar2;
   uint uVar3;
   CPodAuditRecord *pCVar4;
@@ -81,18 +81,18 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
   int local_2c;
   SIZE_T *local_28;
   char (*local_24) [128];
-  FILE *local_20;
+  _FILE *local_20;
   char (*local_1c) [128];
-  FILE *local_18;
+  _FILE *local_18;
   int local_14;
   
   bVar17 = 0;
-  local_20 = (FILE *)0x0;
-  local_18 = (FILE *)0x0;
+  local_20 = (_FILE *)0x0;
+  local_18 = (_FILE *)0x0;
   local_50 = 0;
   local_4c = 0;
   local_48 = 0;
-  crt_memory_c_memset_FUN_005fde40(&local_c8,0,0x60);
+  memset(&local_c8,0,0x60);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Sorting file list...");
   engine_fileio_cpp_CFileManager_load_FUN_004b6c00(this_ptr);
@@ -165,7 +165,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      crt_time_c_time_with_rounding_FUN_006001f0(&g_PodCreationTime);
+      time(&g_PodCreationTime);
       engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xffffe7c8);
       iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650
                         ((CPodFile *)&stack0xffffe7c8,local_290);
@@ -201,7 +201,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
               piVar12 = piVar12 + (uint)bVar17 * -2 + 1;
               pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);
             }
-            crt_memory_c_memset_FUN_005fde40(pCVar4->filename_path,0,0x100);
+            memset(pCVar4->filename_path,0,0x100);
             pcVar13 = local_3a0;
             pcVar14 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
             iVar2 = iVar2 + 1;
@@ -243,7 +243,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             pacVar8 = local_64;
             if (0 < this_ptr->tracked_file_count) {
               do {
-                iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                iVar5 = stricmp
                                   (*(char **)((int)&local_1424->name_or_offset + iVar2),*pacVar8);
                 if (iVar5 == 0) break;
                 iVar7 = iVar7 + 1;
@@ -293,7 +293,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                 piVar12 = piVar12 + (uint)bVar17 * -2 + 1;
                 pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);
               }
-              crt_memory_c_memset_FUN_005fde40(pCVar4->filename_path,0,0x100);
+              memset(pCVar4->filename_path,0,0x100);
               pcVar13 = local_880;
               pcVar14 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
               local_4c = local_4c + 1;
@@ -415,8 +415,8 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
         local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_290,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x866
                              );
-        if (local_20 != (FILE *)0x0) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_aa8,"Building %s...",local_290);
+        if (local_20 != (_FILE *)0x0) {
+          sprintf(local_aa8,"Building %s...",local_290);
           shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                     (g_CEditorToolsPtr,local_aa8);
           local_34 = 0;
@@ -429,21 +429,21 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
               local_14 = local_28[2] - local_60;
               shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                         (g_CEditorToolsPtr,(float)local_14,(float)local_68);
-              crt_stdio_c_fseek_FUN_005ffacc(local_20,local_28[2],0);
+              _fseek(local_20,local_28[2],0);
               iVar2 = local_34;
               pacVar8 = local_5c;
               local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                    (*local_5c,(char *)0x0,"rb","..\\engine\\fileio.cpp"
                                     ,0x876);
               pSVar9 = local_28;
-              if (local_18 == (FILE *)0x0) {
+              if (local_18 == (_FILE *)0x0) {
                 pcVar13 = "Can't open %s";
                 goto LAB_004b629d;
               }
               local_28[4] = 0xffffffff;
               for (iVar7 = 0; local_1c = local_24 + iVar2, iVar7 < (int)pSVar9[1]; iVar7 = iVar7 + 1
                   ) {
-                iVar5 = crt_stdio_c_fgetc_FUN_005fe840(local_18);
+                iVar5 = _fgetc(local_18);
                 if (iVar5 == -1) {
                   pcVar13 = "Error reading %s";
                   pacVar8 = local_1c;
@@ -451,7 +451,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                 }
                 uVar3 = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(pSVar9[4],(uchar)iVar5);
                 pSVar9[4] = uVar3;
-                iVar6 = crt_stdio_c_fputc_FUN_006007a0(iVar5,local_20);
+                iVar6 = _fputc(iVar5,local_20);
                 if (iVar6 != iVar5) {
                   pcVar13 = "Error writing %s";
                   pacVar8 = (char (*) [128])local_290;
@@ -504,7 +504,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                   piVar12 = piVar12 + (uint)bVar17 * -2 + 1;
                   pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);
                 }
-                crt_memory_c_memset_FUN_005fde40(pCVar4->filename_path,0,0x100);
+                memset(pCVar4->filename_path,0,0x100);
                 pcVar14 = local_610;
                 pcVar13 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
                 local_50 = local_50 + 1;
@@ -547,7 +547,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                   piVar12 = piVar12 + (uint)bVar17 * -2 + 1;
                   pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);
                 }
-                crt_memory_c_memset_FUN_005fde40(pCVar4->filename_path,0,0x100);
+                memset(pCVar4->filename_path,0,0x100);
                 pcVar14 = local_748;
                 pcVar13 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
                 local_48 = local_48 + 1;
@@ -568,19 +568,19 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
           }
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
           file_handle = local_20;
-          crt_stdio_c_fwrite_FUN_005fdc00(g_AuditRecordsArray,0x138,g_AuditRecordCount,local_20);
-          crt_stdio_c_ftell_FUN_00601560(file_handle);
+          _fwrite(g_AuditRecordsArray,0x138,g_AuditRecordCount,local_20);
+          _ftell(file_handle);
           local_c7 = 0x4f;
           local_c5 = 0x32;
           local_c8 = 0x50;
           local_c6 = 0x44;
           local_70 = this_ptr->tracked_file_count;
           local_6c = (char *)g_AuditRecordCount;
-          crt_stdio_c_fseek_FUN_005ffacc(file_handle,0,0);
-          crt_stdio_c_fwrite_FUN_005fdc00(&local_c8,0x60,1,file_handle);
+          _fseek(file_handle,0,0);
+          _fwrite(&local_c8,0x60,1,file_handle);
           pSVar9 = local_58;
-          crt_stdio_c_fwrite_FUN_005fdc00(local_58,0x14,this_ptr->tracked_file_count,file_handle);
-          crt_stdio_c_fwrite_FUN_005fdc00(local_54,1,local_44,file_handle);
+          _fwrite(local_58,0x14,this_ptr->tracked_file_count,file_handle);
+          _fwrite(local_54,1,local_44,file_handle);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\engine\\fileio.cpp",0x8c3);
           shape_memdbg_cpp_debugFree_FUN_0050f460(pSVar9,"..\\engine\\fileio.cpp",0x8c8);
           shape_memdbg_cpp_debugFree_FUN_0050f460(local_54,"..\\engine\\fileio.cpp",0x8ca);
@@ -597,7 +597,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
             (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
           }
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (acStack_aa4,"Successfully built %s\n\n%d files totaling %d bytes\n\n%d files added\n%d files removed\n%d files changed\n\nTotal pod size %d bytes",local_290 + 4,
                      *(uint *)(pod_filename + 4),local_34 - (int)local_5c,local_4c,local_48,
                      local_44);
@@ -645,7 +645,7 @@ LAB_004b629d:
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar13,pacVar8);
       }
       else {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_190,"Couldn't build %s because the following files don't exist on the hard disk",local_290);
+        sprintf(local_190,"Couldn't build %s because the following files don't exist on the hard disk",local_290);
         shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                   ((CPickList *)local_140c,local_190,-1,0);
       }
@@ -655,10 +655,10 @@ LAB_004b629d:
                   (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
         g_AuditRecordsArray = (CPodAuditRecord *)0x0;
       }
-      if (local_20 != (FILE *)0x0) {
+      if (local_20 != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",0x85b);
       }
-      if (local_18 != (FILE *)0x0) {
+      if (local_18 != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0x85c);
       }
       if (local_58 != (SIZE_T *)0x0) {

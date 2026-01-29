@@ -12,6 +12,6 @@ void crt_math_c_FUN_00606bcb(void)
   float10 in_ST1;
   float10 in_ST3;
   
-  crt_math_c_fdiv_FUN_00606960(in_ST1,in_ST3);
+  fdiv(in_ST1,in_ST3);
   return;
 }

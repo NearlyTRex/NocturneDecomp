@@ -9,7 +9,6 @@
 void __cdecl core_dtrace_cpp_staticInit_FUN_004941e0(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_PVSCubePositions,20000,&g_CVectorTypeInfo);
+  __arrinit(g_PVSCubePositions,20000,&g_CVectorTypeInfo);
   return;
 }

@@ -34,7 +34,7 @@ void core_setedit_cpp_FUN_00576950(void)
       pbVar2 = pbVar2 + -1;
     } while (0 < iVar5);
   }
-  iVar3 = crt_stdlib_c_atoi_FUN_005ffef0(in_stack_00000004 + iVar5 + 1);
-  crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar5 + 1,"%d",iVar3 + 1);
+  iVar3 = atoi(in_stack_00000004 + iVar5 + 1);
+  sprintf(in_stack_00000004 + iVar5 + 1,"%d",iVar3 + 1);
   return;
 }

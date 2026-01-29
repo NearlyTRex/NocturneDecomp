@@ -26,7 +26,7 @@ shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530
   float local_c;
   
   pCVar1 = this_ptr->tri_data;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_38,3,&g_CVectorTypeInfo);
+  __arrinit(&local_38,3,&g_CVectorTypeInfo);
   pCVar2 = this_ptr->vertex_data + pCVar1[tri_index].vertex_idx_0;
   if ((CLodVert *)&local_38 != pCVar2) {
     local_38.x = (pCVar2->position).x;

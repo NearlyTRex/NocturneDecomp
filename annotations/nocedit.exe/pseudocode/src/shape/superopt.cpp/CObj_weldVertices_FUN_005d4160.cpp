@@ -54,7 +54,7 @@ shape_superopt_cpp_CObj_weldVertices_FUN_005d4160
     iStack_1c = 0;
     do {
       if ((pvStack_20 != (void *)0x0) && ((char)uVar10 == '\0')) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(acStack_f8,"Welding vertices (%d removed so far)",iStack_18);
+        sprintf(acStack_f8,"Welding vertices (%d removed so far)",iStack_18);
       }
       pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_1c);
       pdStack_14 = pdVar4;

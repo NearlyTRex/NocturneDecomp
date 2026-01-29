@@ -116,7 +116,7 @@ void core_larva_cpp_FUN_00503080(void)
       fptan((float10)0.52359877558333301);
       fVar14 = (float10)local_e4;
       local_e4 = (float)((float10)local_14 + fVar14);
-      fVar14 = crt_math_c_atan2_FUN_006013b1((float10)local_ec,(float10)local_14 + fVar14);
+      fVar14 = atan2((float10)local_ec,(float10)local_14 + fVar14);
       fVar3 = SQRT(local_ec * local_ec + local_e4 * local_e4);
       fVar12 = (float10)fcos(extraout_ST3);
       fVar13 = (float10)fsin(fVar14);
@@ -310,7 +310,7 @@ LAB_00503184:
       fVar14 = (float10)fscale(fVar13 + fVar14,fVar12);
       local_68 = (double)fVar14;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.99,1.01);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_1f0,"slime.wav @%f *%f",(double)(in_stack_00000004->base).size_scale,
                  (double)(local_14 * (float)local_68));
       uVar11 = (*((in_stack_00000004->base).base.vtable._ub)->playAmbientSound)

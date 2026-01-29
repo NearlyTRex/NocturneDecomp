@@ -40,10 +40,10 @@ core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
     return output_buffer;
   }
   core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-  dVar13 = crt_math_c_floor_FUN_005feb90((double)start_frame);
-  crt_math_c_round_FUN_005fe6b0(dVar13);
-  dVar13 = crt_math_c_ceil_FUN_006001b2((double)(float)output_buffer);
-  dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
+  dVar13 = floor((double)start_frame);
+  round(dVar13);
+  dVar13 = ceil((double)(float)output_buffer);
+  dVar13 = round(dVar13);
   iVar1 = (int)ROUND(dVar13);
   local_40 = 0.0;
   local_3c = 0.0;

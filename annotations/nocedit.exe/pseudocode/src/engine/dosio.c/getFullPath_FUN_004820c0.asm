@@ -13,7 +13,7 @@
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 at 004a3b27
 ;
 ; Called Functions:
-;   crt_io.c_realpath_FUN_00601140
+;   crt_stdlib.c__fullpath_FUN_00601140
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH 0x100                          ; 004820ca
     PUSH ESI                            ; 004820cf
     PUSH EDI                            ; 004820d0
-    CALL crt_io.c_realpath_FUN_00601140 ; 004820d1
-        ;   XREF to: 00601140 (UNCONDITIONAL_CALL)  ; char * crt_io.c_realpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
+    CALL crt_stdlib.c__fullpath_FUN_00601140 ; 004820d1
+        ;   XREF to: 00601140 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c__fullpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
     ADD ESP,0xc                         ; 004820d6
     CMP EAX,EDI                         ; 004820d9
     JNZ 0x004820e5                      ; 004820db

@@ -31,8 +31,8 @@ ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,u
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
   }
   else {
-    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_OStreamTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr);
+    ptr = __vec_delete(this_ptr,&g_OStreamTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;
 }

@@ -51,7 +51,7 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
   if (0 < local_24) {
     do {
       iVar6 = iVar3 + 1;
-      iVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*extension);
+      iVar2 = toupper((uint)(byte)*extension);
       iVar4 = local_24;
       extension = (char *)((byte *)extension + 1);
       local_44[iVar3] = (char)iVar2;
@@ -90,7 +90,7 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
           pcVar10[1] = cVar1;
           pcVar10 = pcVar10 + 2;
         } while (cVar1 != '\0');
-        iVar3 = crt_string_c_strcmp_FUN_005fef20(local_50,local_44);
+        iVar3 = strcmp(local_50,local_44);
         if (iVar3 == 0) {
           iVar3 = 0;
           ppCVar8 = pod_array;
@@ -105,7 +105,7 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
           }
           pcVar7 = local_1c;
           if (iVar3 == local_38) {
-            crt_string_c_strncpy_FUN_00600f40(local_1c,pcVar9,local_30);
+            strncpy(local_1c,pcVar9,local_30);
             local_1c = pcVar7 + local_28;
             local_14 = local_14 + 1;
             if (max_results <= local_14) {

@@ -17,7 +17,7 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004fd190(CInventory *this_pt
   core_inv_cpp_CInventory_clear_FUN_004fd0e0(this_ptr);
   pCVar2 = this_ptr;
   do {
-    iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar1 = rand();
     ppCVar3 = &pCVar2->owner;
     pCVar2->item_angles[0] =
          (float)iVar1 * 3.051851e-05f * (float)3.1415926535000001 *

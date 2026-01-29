@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -40,29 +40,29 @@ section .text
     PUSH 0xfa                           ; 005690cc
     ADD EBX,0x4                         ; 005690d1
     PUSH EBX                            ; 005690d4
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005690d5
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005690d5
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005690da
     PUSH 0x6628d0                       ; 005690dd | g_C3DSLightTypeInfo
     PUSH 0xc8                           ; 005690e2
     ADD EAX,0x19a2c                     ; 005690e7
     PUSH EAX                            ; 005690ec
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005690ed
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005690ed
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005690f2
     PUSH 0x6628f0                       ; 005690f5 | g_SRoomTypeInfo
     PUSH 0x14                           ; 005690fa
     ADD EAX,0x141490                    ; 005690fc
     PUSH EAX                            ; 00569101
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00569102
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00569102
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00569107
     PUSH 0x662910                       ; 0056910a | g_SVDBoxTypeInfo
     PUSH 0xfa                           ; 0056910f
     ADD EAX,0x554                       ; 00569114
     PUSH EAX                            ; 00569119
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0056911a
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0056911a
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EBX,[EAX + 0xffea4bec]          ; 0056911f
     MOV dword ptr [EBX],0x0             ; 00569125
     MOV dword ptr [EBX + 0x19a2c],0x0   ; 0056912b

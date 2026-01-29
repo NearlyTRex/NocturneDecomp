@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_exit_c_FinalExitHandler_FUN_0060b560(int exit_code)
+void __cdecl FinalExitHandler(int exit_code)
 
 {
   int unaff_EBX;
@@ -17,5 +17,5 @@ void __cdecl crt_exit_c_FinalExitHandler_FUN_0060b560(int exit_code)
     (*DAT_006852c4)();
   }
                     /* WARNING: Subroutine does not return */
-  crt_exit_c_ExitProcess_FUN_00602700(unaff_EBX);
+  ExitProcess(unaff_EBX);
 }

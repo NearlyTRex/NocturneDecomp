@@ -6,16 +6,16 @@
 
 #include "nocturne.h"
 
-void * __cdecl crt_memory_c_calloc_FUN_0060ca90(ulong count,ulong size)
+void * __cdecl calloc(ulong count,ulong size)
 
 {
   void *dest;
   void *pvVar1;
   
-  dest = crt_memory_c_malloc_FUN_00601bb0(count * size);
+  dest = malloc(count * size);
   pvVar1 = (void *)0x0;
   if (dest != (void *)0x0) {
-    pvVar1 = crt_memory_c_memset_FUN_005fde40(dest,0,count * size);
+    pvVar1 = memset(dest,0,count * size);
   }
   return pvVar1;
 }

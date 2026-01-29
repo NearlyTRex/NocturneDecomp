@@ -10,7 +10,7 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_
 
 {
   uchar uVar1;
-  FILE *file;
+  _FILE *file;
   uint uVar2;
   uint current_crc;
   char *pcVar3;
@@ -23,19 +23,19 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x358);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x359;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CPodFile::computeOneFileCRC - can't open %s",this_ptr->filename);
   }
-  crt_stdio_c_fseek_FUN_005ffacc(file,this_ptr->directory_entries[file_index].offset,0);
+  _fseek(file,this_ptr->directory_entries[file_index].offset,0);
   current_crc = 0xffffffff;
   for (size = this_ptr->directory_entries[file_index].size; 0xffff < (int)size;
       size = size - 0x10000) {
     pcVar3 = g_FileIOBuffer;
     uVar2 = 0;
-    crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,file);
+    _fread(g_FileIOBuffer,0x10000,1,file);
     do {
       uVar1 = *pcVar3;
       pcVar3 = (char *)((uchar *)pcVar3 + 1);
@@ -44,7 +44,7 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_
     } while (uVar2 < 0x10000);
   }
   pcVar3 = g_FileIOBuffer;
-  crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,size,1,file);
+  _fread(g_FileIOBuffer,size,1,file);
   uVar2 = 0;
   if (size != 0) {
     do {

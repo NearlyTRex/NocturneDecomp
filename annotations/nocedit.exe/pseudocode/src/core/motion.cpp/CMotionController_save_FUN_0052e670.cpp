@@ -2,12 +2,12 @@
 // Address: 0052e670
 // Address Range: [[0052e670, 0052e6f6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,FILE *file_handle)
+core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle)
 
 {
   SMotion *pSVar1;
@@ -22,10 +22,9 @@ core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,
     }
     dVar2 = (double)this_ptr->current_frame_number;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",in_stack_0000000c,pSVar1,dVar2);
+    _fprintf(file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",in_stack_0000000c,pSVar1,dVar2);
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n");
+  _fprintf(file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n");
   return;
 }

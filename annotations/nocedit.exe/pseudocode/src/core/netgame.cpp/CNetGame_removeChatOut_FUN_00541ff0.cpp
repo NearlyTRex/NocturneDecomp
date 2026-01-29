@@ -120,7 +120,7 @@ void core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
           core_main_c_displayErrorAndQuit_FUN_00506f10("removeChatOut - invalid index");
         }
         DAT_02f98ad0 = DAT_02f98ad0 + -1;
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   (&DAT_02f98ad4 + iVar2 * 0x45,&DAT_02f98ad4 + (iVar2 + 1) * 0x45,
                    (DAT_02f98ad0 - iVar2) * 0x114);
       }

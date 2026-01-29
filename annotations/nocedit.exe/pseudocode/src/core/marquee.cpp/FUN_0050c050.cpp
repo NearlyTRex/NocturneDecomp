@@ -40,7 +40,7 @@ uint core_marquee_cpp_FUN_0050c050(void)
     if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
       fVar1 = in_stack_00000004[1].orient_matrix.m[1].x;
       if (fVar1 == 1.4013e-45) {
-        dVar5 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004[1].location.position.y);
+        dVar5 = round((double)in_stack_00000004[1].location.position.y);
         iVar4 = (int)ROUND(dVar5);
         iVar3 = 0;
         local_14 = iVar4;
@@ -62,7 +62,7 @@ uint core_marquee_cpp_FUN_0050c050(void)
         }
       }
       else if (fVar1 == 0.0) {
-        dVar5 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004[1].location.position.y);
+        dVar5 = round((double)in_stack_00000004[1].location.position.y);
         local_18 = *(CCourse **)this_ptr;
         iVar3 = 0;
         iVar4 = (int)ROUND(dVar5);

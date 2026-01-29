@@ -51,10 +51,10 @@ int crt_unknown_c_FUN_0060fe94(void)
         }
         if (g_EnvironStringArea != (char **)0x0) {
           if (*(char *)(iVar8 + (int)g_EnvironStringArea) != '\0') {
-            crt_memory_c_free_FUN_00601cd0(ptr);
+            free(ptr);
           }
           n = (int)dest - g_EnvironInitialized >> 2;
-          crt_string_c_memmove_FUN_005fe5e0(dest,g_EnvironStringArea,n);
+          memmove(dest,g_EnvironStringArea,n);
           g_EnvironStringArea = dest;
           if (iVar8 < (int)n) {
             puVar6 = (byte *)(iVar8 + (int)dest);

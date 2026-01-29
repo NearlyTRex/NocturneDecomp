@@ -14,8 +14,8 @@
 ;   crt_stdio.c_fopenWithFlags_FUN_00601a20 at 00601a2e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00684ed0
-;   undefined4 DAT_00685280
+;   int INT_00684ed0 = 0x100
+;   int INT_00685280 = 0x0
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
@@ -40,7 +40,7 @@ section .text
     TEST ESI,ESI                        ; 006017ed
     JZ 0x006017ff                       ; 006017ef
         ;   XREF to: 006017ff (CONDITIONAL_JUMP)  ; LAB_006017ff
-    CMP EDX,dword ptr [0x00685280]      ; 006017f1 | DAT_00685280
+    CMP EDX,dword ptr [0x00685280]      ; 006017f1 | INT_00685280
     JNZ 0x006017fd                      ; 006017f7
         ;   XREF to: 006017fd (CONDITIONAL_JUMP)  ; LAB_006017fd
     MOV dword ptr [ESI],EDX             ; 006017f9
@@ -195,7 +195,7 @@ section .text
         ;   Label: LAB_006018ed
     JNZ 0x00601900                      ; 006018ef
         ;   XREF to: 00601900 (CONDITIONAL_JUMP)  ; LAB_00601900
-    CMP dword ptr [0x00684ed0],0x200    ; 006018f1 | DAT_00684ed0
+    CMP dword ptr [0x00684ed0],0x200    ; 006018f1 | INT_00684ed0
     JNZ 0x00601900                      ; 006018fb
         ;   XREF to: 00601900 (CONDITIONAL_JUMP)  ; LAB_00601900
     OR BL,0x40                          ; 006018fd

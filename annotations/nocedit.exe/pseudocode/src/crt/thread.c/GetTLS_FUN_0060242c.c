@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-ThreadData * __cdecl crt_thread_c_GetTLS_FUN_0060242c(void)
+ThreadData * __cdecl GetTLS(void)
 
 {
   return g_CurrentThreadTlsBlock;

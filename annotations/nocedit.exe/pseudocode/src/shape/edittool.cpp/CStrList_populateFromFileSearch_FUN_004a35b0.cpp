@@ -37,7 +37,7 @@ shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
     } while (cVar1 != '\0');
   }
   else {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_310,"%s\\%s",directory_path,file_pattern);
+    sprintf(local_310,"%s\\%s",directory_path,file_pattern);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_310,&local_844);
@@ -53,7 +53,7 @@ shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
           cVar1 = *pcVar3;
           pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
         } while (cVar1 != '\0');
-        crt_string_c_memmove_FUN_005fe5e0(&local_210,local_20f,~uVar2 - 1);
+        memmove(&local_210,local_20f,~uVar2 - 1);
       }
       engine_dosio_c_makePath_FUN_00481f50(local_414,(char *)0x0,(char *)0x0,local_110,&local_210);
       shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360

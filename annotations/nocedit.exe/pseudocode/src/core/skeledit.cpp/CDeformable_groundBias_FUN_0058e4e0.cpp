@@ -17,7 +17,7 @@ void __cdecl core_skeledit_cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableMo
   CDeformableModel *in_stack_00000004;
   float in_stack_0000000c;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x30);
+  __STK(0x30);
   this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeledit.cpp",0x9bc);
   this_ptr_01 = (CDeformableModelInstance *)0x0;
   if (this_ptr_00 != (CDeformableModelInstance *)0x0) {

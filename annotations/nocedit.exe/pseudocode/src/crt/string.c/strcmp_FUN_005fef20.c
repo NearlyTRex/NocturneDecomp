@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_string_c_strcmp_FUN_005fef20(char *str1,char *str2)
+int __cdecl strcmp(char *str1,char *str2)
 
 {
   byte bVar1;

@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 0060598f (CONDITIONAL_JUMP)  ; LAB_0060598f
     PUSH EAX                            ; 00605986
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 00605987
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0060598c
     MOV EBX,dword ptr [EBX]             ; 0060598f
         ;   Label: LAB_0060598f

@@ -19,7 +19,7 @@ core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290
   core_actor_cpp_CActorPropertyList_FUN_0040e260(property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e460(property_list);
   if (this_ptr->create_event[0] != '\0') {
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr->create_event,"none");
+    iVar1 = stricmp(this_ptr->create_event,"none");
     if (iVar1 != 0) {
       core_actor_cpp_CActorPropertyList_FUN_0040e1a0(property_list);
       return;

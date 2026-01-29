@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)
+void __cdecl ProcessInitTermHandlers(int max_priority)
 
 {
   BYTE *pBVar1;
@@ -25,7 +25,7 @@ void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)
       pBVar1 = pBVar1 + 6;
     } while (pBVar1 < &g_ExitHandlerTableStart);
     if (pBVar3 == &g_ExitHandlerTableStart) break;
-    crt_util_c_invokeRuntimeHandler_FUN_0060ac20((RUNTIME_HANDLER_FUNC **)(pBVar3 + 2));
+    invokeRuntimeHandler((RUNTIME_HANDLER_FUNC **)(pBVar3 + 2));
     *pBVar3 = '\x02';
   }
   return;

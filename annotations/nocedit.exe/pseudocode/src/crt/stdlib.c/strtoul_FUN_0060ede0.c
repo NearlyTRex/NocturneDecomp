@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-ulong __cdecl crt_stdlib_c_strtoul_FUN_0060ede0(char *str,char **endptr,int base)
+ulong __cdecl strtoul(char *str,char **endptr,int base)
 
 {
   ulong uVar1;
   
-  uVar1 = crt_stdlib_c_strtol_internal_FUN_0060ec70(str,endptr,base,0);
+  uVar1 = strtol_internal(str,endptr,base,0);
   return uVar1;
 }

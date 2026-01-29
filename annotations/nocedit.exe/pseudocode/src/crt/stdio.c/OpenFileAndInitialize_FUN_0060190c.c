@@ -2,14 +2,14 @@
 // Address: 0060190c
 // Address Range: [[0060190c, 00601a1d]]
 // Convention: __cdecl
-// Signature: FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,FILE *file_struct)
+// Signature: _FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,_FILE *file_struct)
 
 #include "nocturne.h"
 
-FILE * __cdecl
-crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
+_FILE * __cdecl
+OpenFileAndInitialize
           (char *filename,char mode_char,int parsed_mode_flags,int stage1_result,
-          int additional_flags,FILE *file_struct)
+          int additional_flags,_FILE *file_struct)
 
 {
   byte bVar1;
@@ -20,7 +20,7 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
   
   *(byte *)&file_struct->_flag = (byte)file_struct->_flag & 0xfc;
   file_struct->_flag = file_struct->_flag | parsed_mode_flags;
-  iVar3 = crt_ctype_c_tolower_FUN_005feb30((uint)(byte)mode_char);
+  iVar3 = tolower((uint)(byte)mode_char);
   if ((char)iVar3 == 'r') {
     uVar4 = 0;
     if ((parsed_mode_flags & 2U) != 0) {
@@ -51,11 +51,11 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
     uVar4 = (uint)uVar2;
     uVar5 = 0x180;
   }
-  iVar3 = crt_stdio_c_CreateFileVariadic_FUN_00609074(filename,uVar4,additional_flags,uVar5);
+  iVar3 = CreateFileVariadic(filename,uVar4,additional_flags,uVar5);
   file_struct->_handle = iVar3;
   if (file_struct->_handle == -1) {
-    crt_stdio_c_DeallocateFileStruct_FUN_006093b0(file_struct);
-    return (FILE *)0x0;
+    __freefp(file_struct);
+    return (_FILE *)0x0;
   }
   file_struct->_cnt = 0;
   file_struct->_bufsize = 0;
@@ -64,8 +64,8 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
   *(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;
   file_struct->_link->__reserve_end = (char *)0x0;
   if ((parsed_mode_flags & 0x80U) != 0) {
-    crt_stdio_c_fseek_FUN_005ffacc(file_struct,0,2);
+    _fseek(file_struct,0,2);
   }
-  crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(file_struct);
+  DetectDeviceAndSetBuffering(file_struct);
   return file_struct;
 }

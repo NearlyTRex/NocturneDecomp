@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 double __cdecl
-crt_math_c_process_math_error_FUN_0060bf2d(int errorFlags,double *value1,double *value2)
+process_math_error(int errorFlags,double *value1,double *value2)
 
 {
   int unaff_EBX;
@@ -67,6 +67,6 @@ crt_math_c_process_math_error_FUN_0060bf2d(int errorFlags,double *value1,double 
     local_3c.resultValue = -INFINITY;
   }
   local_3c.errorType = unaff_EBX;
-  dVar1 = crt_math_c_report_math_error_FUN_0060e2e5(&local_3c);
+  dVar1 = report_math_error(&local_3c);
   return dVar1;
 }

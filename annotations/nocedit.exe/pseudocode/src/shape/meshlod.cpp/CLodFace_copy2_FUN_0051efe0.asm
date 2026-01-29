@@ -8,7 +8,7 @@
 ; CLodFace *       Stack[0x8]:4   source
 ;
 ; Called Functions:
-;   crt_memory.c_copyArrayWithFunction_FUN_006020c2
+;   crt_memory.c___arr_op_FUN_006020c2
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     FLD float ptr [EBP + 0x50]          ; 0051f043
     PUSH EAX                            ; 0051f046
     FSTP float ptr [EBX + 0x50]         ; 0051f047
-    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051f04a
-        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
+    CALL crt_memory.c___arr_op_FUN_006020c2 ; 0051f04a
+        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arr_op_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
     LEA EDI,[EBX + 0x78]                ; 0051f04f
     LEA ESI,[EBP + 0x78]                ; 0051f052
     MOVSD ES:EDI,ESI                    ; 0051f055

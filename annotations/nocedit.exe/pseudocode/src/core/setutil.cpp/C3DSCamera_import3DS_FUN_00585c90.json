@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 31,
-        "line": 156,
+        "line": 155,
         "message": "invalid cast from type 'C3DSCamera*' to type 'float'"
       }
     ],
@@ -18,55 +18,25 @@
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 72,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 74,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 75,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 76,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 77,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 146,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 44,
+        "line": 145,
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'C3DSCamera*' [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 184,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 154,
+    "pseudocode_lines": 153,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 222
+    "total_lines": 221
   },
   "cross_references": [],
   "function": {
@@ -80,7 +50,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90",
-    "signature": "void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -166,7 +136,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -190,14 +160,14 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 71,
+      "line": 70,
       "match": "8.115118e-39",
       "text": "fVar9 = 8.115118e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 72,
       "match": "ROUND",
       "text": "auStack_1c[0] = (uint)ROUND(dVar8);",
       "type": "decompiler_intrinsic"

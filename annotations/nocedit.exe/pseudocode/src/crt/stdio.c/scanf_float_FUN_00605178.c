@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t *args)
+int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
 
 {
   char *pcVar1;
@@ -38,7 +38,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
   iVar9 = 0;
   local_24 = 0.0;
   while( true ) {
-    character = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state);
+    character = scanf_getc_wrapper(state);
     if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 2U) == 0) break;
     local_24 = (float)((int)local_24 + 1);
   }
@@ -51,7 +51,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
       in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);
       local_24 = (float)((int)local_24 + 1);
       pcVar8 = &stack0xffffff81;
-      character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+      character = scanf_getc_with_width(state);
       if (character == -1) goto LAB_006053ad;
     }
     if (((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) != 0) ||
@@ -68,7 +68,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
             local_1c._2_2_ = (short)character + local_1c._2_2_ * 10 + -0x30;
           }
           iVar9 = iVar9 + 1;
-          character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+          character = scanf_getc_with_width(state);
           if (character == -1) goto LAB_006053ad;
         } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) != 0);
       }
@@ -77,7 +77,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
       if (character == 0x2e) {
         *pcVar8 = '.';
         pcVar8 = pcVar8 + 1;
-        character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+        character = scanf_getc_with_width(state);
         if (character == -1) goto LAB_006053ad;
         if ((local_28 == 0) &&
            ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) == 0))
@@ -88,7 +88,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
           iVar9 = iVar9 + 1;
           *pcVar8 = (char)character;
           pcVar8 = pcVar8 + 1;
-          character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+          character = scanf_getc_with_width(state);
         } while (character != -1);
         if ((state->flags & 0x10) != 0) {
           local_18 = 0;
@@ -116,13 +116,13 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
         iVar9 = iVar10 + 1;
         *pcVar6 = (char)character;
         pcVar8 = pcVar6 + 1;
-        character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+        character = scanf_getc_with_width(state);
         if (character == -1) goto LAB_006053ad;
         if ((character == 0x2b) || (character == 0x2d)) {
           iVar9 = iVar10 + 2;
           *pcVar8 = (char)character;
           pcVar8 = pcVar6 + 2;
-          character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+          character = scanf_getc_with_width(state);
           if (character == -1) goto LAB_006053ad;
         }
         if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) == 0) {
@@ -133,7 +133,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
             iVar9 = iVar9 + 1;
             *pcVar8 = (char)character;
             pcVar8 = pcVar8 + 1;
-            character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+            character = scanf_getc_with_width(state);
             if (character == -1) goto LAB_006053ad;
           } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) != 0);
         }
@@ -141,7 +141,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
     }
   }
 LAB_006053a3:
-  crt_stdio_c_scanf_ungetc_wrapper_FUN_0060493c(character,state);
+  scanf_ungetc_wrapper(character,state);
 LAB_006053ad:
   if ((0 < iVar9) && (iVar9 = iVar9 + (int)local_24, (state->flags & 1) != 0)) {
     *pcVar8 = '\0';
@@ -176,7 +176,7 @@ LAB_006053ad:
         pfVar7[1] = local_20;
         return iVar9;
       }
-      fStack_10 = crt_math_c_doubleToFloat_FUN_0060b26c((double)CONCAT44(local_20,local_24));
+      fStack_10 = doubleToFloat((double)CONCAT44(local_20,local_24));
     }
     *pfVar7 = fStack_10;
   }

@@ -25,7 +25,7 @@ void FUN_00600c80(void);
 
 // Original: crt_unknown.c_FUN_00600ee4
 // Address: 00600ee4
-FILE * FUN_00600ee4(void);
+_FILE * FUN_00600ee4(void);
 
 // Original: crt_unknown.c_AnotherFunctorCall2_FUN_00601258
 // Address: 00601258
@@ -33,7 +33,7 @@ void AnotherFunctorCall2(void);
 
 // Original: crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94
 // Address: 00601a94
-FILE * MultipleDoNothingCalls(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, FILE *param_5);
+_FILE * MultipleDoNothingCalls(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, _FILE *param_5);
 
 // Original: crt_unknown.c_staticInit_FUN_0060240e
 // Address: 0060240e

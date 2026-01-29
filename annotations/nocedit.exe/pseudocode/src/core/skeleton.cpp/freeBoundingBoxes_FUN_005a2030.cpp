@@ -9,6 +9,6 @@
 void __cdecl core_skeleton_cpp_freeBoundingBoxes_FUN_005a2030(CBoundingBox3D **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,100,&g_CBoundingBox3DTypeInfo);
+  __arrfini(array,100,&g_CBoundingBox3DTypeInfo);
   return;
 }

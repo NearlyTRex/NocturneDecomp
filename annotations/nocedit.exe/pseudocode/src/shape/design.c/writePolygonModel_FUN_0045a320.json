@@ -8,82 +8,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 43,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 47,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 52,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 54,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 71,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 74,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 79,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 81,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 83,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 85,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 208,
+    "complexity_score": 159,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
-    "pseudocode_lines": 78,
-    "suspect_count": 12,
+    "pseudocode_lines": 74,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "format_string_mismatch"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 325
+    "total_lines": 321
   },
   "cross_references": [],
   "function": {
@@ -97,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_writePolygonModel_FUN_0045a320",
-    "signature": "void __cdecl shape_design_c_writePolygonModel_FUN_0045a320 (int polygon_index,FILE *output_file,float scale_factor)"
+    "signature": "void __cdecl shape_design_c_writePolygonModel_FUN_0045a320 (int polygon_index,_FILE *output_file,float scale_factor)"
   },
   "function_calls": [
     {
@@ -419,7 +358,7 @@
         "name": "output_file",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -433,103 +372,59 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ROUND",
-      "text": "g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),",
+      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 41,
       "match": "ROUND",
       "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 41,
       "match": "ROUND",
       "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "ROUND",
-      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 66,
       "match": "ROUND",
       "text": "g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
       "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
       "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
       "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\tCOLOR\\t%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "\\tCOLOR\\t%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 36,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tCOLOR\\t%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": ",%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 45,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\tTEXTURE\\t'%s'\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "\\tTEXTURE\\t'%s'\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 64,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tTEXTURE\\t'%s'\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": ",%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 72,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

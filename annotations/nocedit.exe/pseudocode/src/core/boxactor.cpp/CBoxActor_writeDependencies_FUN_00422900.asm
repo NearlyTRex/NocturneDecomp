@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_writeDependencies_FUN_00422900(CBoxActor *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_writeDependencies_FUN_00422900(CBoxActor *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_MODELS_s_006168e8
@@ -32,7 +32,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0042291a
     PUSH EDX                            ; 0042291e
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0042291f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00422924
     PUSH 0x0                            ; 00422927
     MOV ECX,dword ptr [ESP + 0x10]      ; 00422929
@@ -43,7 +43,7 @@ section .text
     ADD ESP,0x4                         ; 00422934
     PUSH EAX                            ; 00422937
     CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 00422938
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 0042293d
     POP EBX                             ; 00422940
     RET                                 ; 00422941

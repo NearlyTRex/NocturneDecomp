@@ -33,7 +33,7 @@ void __cdecl core_actor_cpp_trimActorName_FUN_004087b0(CDemonActor *actor_ptr)
   }
   actor_ptr->actor_name[n] = '\0';
   while ((g_CharacterClassificationTable[(byte)(actor_ptr->actor_name[0] + 1)] & 2U) != 0) {
-    crt_string_c_memmove_FUN_005fe5e0(actor_ptr,actor_ptr->actor_name + 1,n);
+    memmove(actor_ptr,actor_ptr->actor_name + 1,n);
     n = n - 1;
   }
   return;

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_stdlib_c_itoa_FUN_00607cc0(int value,char *buffer,int base)
+char * __cdecl itoa(int value,char *buffer,int base)
 
 {
   char cVar1;

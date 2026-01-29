@@ -38,7 +38,7 @@ section .text
     PUSH 0x62e452                       ; 004ee298 | = "--- Gore ---\n"
     PUSH EDI                            ; 004ee29d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ee29e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004ee2a3
     MOV EDX,dword ptr [0x02da8720]      ; 004ee2a6 | DAT_02da8720
     PUSH EDX                            ; 004ee2ac
@@ -46,7 +46,7 @@ section .text
     PUSH EDI                            ; 004ee2b2
     XOR ESI,ESI                         ; 004ee2b3
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ee2b5
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV ECX,dword ptr [0x02da8720]      ; 004ee2ba | DAT_02da8720
     ADD ESP,0xc                         ; 004ee2c0
     TEST ECX,ECX                        ; 004ee2c3
@@ -74,7 +74,7 @@ section .text
     PUSH EDI                            ; 004ee2fb
     XOR EBX,EBX                         ; 004ee2fc
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ee2fe
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EDX,dword ptr [0x02d873d8]      ; 004ee303 | DAT_02d873d8
     ADD ESP,0xc                         ; 004ee309
     TEST EDX,EDX                        ; 004ee30c

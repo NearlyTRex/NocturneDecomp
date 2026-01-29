@@ -51,15 +51,15 @@ core_dtrace_cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60
   fVar3 = capsule_data->radius;
   g_TempNormal1.y = g_TempNormal0.y;
   g_TempNormal2.y = g_TempNormal0.y;
-  crt_math_c_round_FUN_005fe6b0((double)(fVar6 * (1.0 / fVar1)));
-  crt_math_c_round_FUN_005fe6b0((double)(((fVar5 - fVar2) + fVar3) * (1.0 / fVar1)));
+  round((double)(fVar6 * (1.0 / fVar1)));
+  round((double)(((fVar5 - fVar2) + fVar3) * (1.0 / fVar1)));
   fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);
   pvVar4 = capsule_data->user_data1;
   fVar1 = *(float *)(unaff_EBX + 0x14);
   fVar7 = (float10)0;
-  crt_math_c_round_FUN_005fe6b0
+  round
             ((double)(((float)capsule_data->user_data2 - *(float *)(unaff_EBX + 0x14)) * fVar5));
-  crt_math_c_round_FUN_005fe6b0((double)(((float)pvVar4 - fVar1) * fVar5));
+  round((double)(((float)pvVar4 - fVar1) * fVar5));
   if ((float10)capsule_data->dir_z <= fVar7) {
     fVar6 = ((capsule_data->start_z + capsule_data->dir_z) - *(float *)(unaff_EDI + 0x18)) -
             capsule_data->radius;
@@ -73,7 +73,7 @@ core_dtrace_cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60
   }
   fVar2 = *(float *)(unaff_EDI + 0x18);
   fVar3 = capsule_data->radius;
-  crt_math_c_round_FUN_005fe6b0((double)(fVar6 * (1.0 / fVar1)));
-  crt_math_c_round_FUN_005fe6b0((double)(((fVar5 - fVar2) + fVar3) * (1.0 / fVar1)));
+  round((double)(fVar6 * (1.0 / fVar1)));
+  round((double)(((fVar5 - fVar2) + fVar3) * (1.0 / fVar1)));
   return;
 }

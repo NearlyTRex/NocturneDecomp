@@ -14,7 +14,7 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
   char cVar1;
   int index;
   char *pcVar2;
-  tm *time_ptr;
+  _tm *time_ptr;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -59,9 +59,9 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
       }
       pcVar6 = local_b04;
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
-      crt_stdio_c_sscanf_FUN_0060013c(pcVar2,format,pcVar7,pcVar6);
+      sscanf(pcVar2,format,pcVar7,pcVar6);
       engine_dosio_c_makePath_FUN_00481f50(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(search_key,local_600);
+      iVar3 = stricmp(search_key,local_600);
       if (iVar3 == 0) {
         return;
       }
@@ -73,8 +73,8 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
       }
     } while (local_14 <= iVar5);
   }
-  time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)&stack0x00000014);
-  crt_time_c_strftime_FUN_006002d4(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
+  time_ptr = localtime((time_t *)&stack0x00000014);
+  strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
   pcVar7 = g_FilePathBuffer;
   pcVar6 = local_704;
   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -96,11 +96,11 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
     } while (cVar1 != '\0');
-    crt_string_c_memmove_FUN_005fe5e0(&local_3fc,local_3fb,~uVar4 - 1);
+    memmove(&local_3fc,local_3fb,~uVar4 - 1);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (local_fc,"%s\t%s\t%d\t%s\t%s",local_2fc,&local_3fc,file_size,local_34,local_704);
-  crt_string_c_strupr_FUN_00600770(local_fc);
+  strupr(local_fc);
   (*this_ptr->vtable->insert)(this_ptr,local_14,local_fc);
   return;
 }

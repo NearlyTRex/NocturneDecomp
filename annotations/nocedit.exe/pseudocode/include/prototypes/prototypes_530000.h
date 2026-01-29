@@ -49,7 +49,7 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder *this_ptr);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder *this_ptr);
 void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(CMP3Decoder *this_ptr,char *filename);
-int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630 (CMP3Decoder *this_ptr,FILE *file_handle,int file_size);
+int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630 (CMP3Decoder *this_ptr,_FILE *file_handle,int file_size);
 void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(CMP3Decoder *this_ptr);
 int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60 (CMP3Decoder *this_ptr,short *output_buffer,int samples_requested);
 int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder *this_ptr,int sample_offset);

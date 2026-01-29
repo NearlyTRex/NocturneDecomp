@@ -85,7 +85,7 @@ section .text
     PUSH EAX                            ; 0057a12c
     PUSH 0x647338                       ; 0057a12d | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057a132
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057a137
     MOV EDI,EAX                         ; 0057a13a
     TEST EAX,EAX                        ; 0057a13c
@@ -95,17 +95,17 @@ section .text
         ;   Label: LAB_0057a144
     PUSH EDI                            ; 0057a149
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0057a14a
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0057a14f
     PUSH 0x647376                       ; 0057a152 | = "1\n"
     PUSH EDI                            ; 0057a157
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0057a158
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0057a15d
     PUSH 0x647379                       ; 0057a160 | = "// lightCount,cameraCount\n"
     PUSH EDI                            ; 0057a165
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0057a166
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0057a16b
     MOV ESI,dword ptr [EBP]             ; 0057a16e
     PUSH ESI                            ; 0057a171
@@ -114,13 +114,13 @@ section .text
     PUSH 0x647394                       ; 0057a179 | = "%d,%d\n"
     PUSH EDI                            ; 0057a17e
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0057a17f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0057a184
     PUSH 0x64739b                       ; 0057a187 | = "// light list\n"
     PUSH EDI                            ; 0057a18c
     XOR EBX,EBX                         ; 0057a18d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0057a18f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP + 0x19a2c]   ; 0057a194
     ADD ESP,0x8                         ; 0057a19a
     TEST EDX,EDX                        ; 0057a19d
@@ -132,7 +132,7 @@ section .text
     PUSH ESI                            ; 0057a1a8
     INC EBX                             ; 0057a1a9
     CALL core_setutil.cpp_C3DSLight_exportS3D_FUN_00587850 ; 0057a1aa
-        ;   XREF to: 00587850 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight * this_ptr, FILE * file_handle)
+        ;   XREF to: 00587850 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0057a1af
     MOV ECX,dword ptr [EBP + 0x19a2c]   ; 0057a1b2
     ADD ESI,0x1898                      ; 0057a1b8
@@ -147,7 +147,7 @@ section .text
     PUSH EDI                            ; 0057a1d5
     XOR ESI,ESI                         ; 0057a1d6
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0057a1d8
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EBX,dword ptr [EBP]             ; 0057a1dd
     ADD ESP,0x8                         ; 0057a1e0
     TEST EBX,EBX                        ; 0057a1e3
@@ -159,7 +159,7 @@ section .text
     PUSH EBX                            ; 0057a1eb
     INC ESI                             ; 0057a1ec
     CALL core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190 ; 0057a1ed
-        ;   XREF to: 00586190 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190(C3DSCamera * this_ptr, FILE * file_handle)
+        ;   XREF to: 00586190 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190(C3DSCamera * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0057a1f2
     MOV EAX,dword ptr [EBP]             ; 0057a1f5
     ADD EBX,0x1a4                       ; 0057a1f8
@@ -174,7 +174,7 @@ section .text
     PUSH 0x6473ba                       ; 0057a215 | = "..\\core\\setedit.cpp"
     PUSH EDI                            ; 0057a21a
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057a21b
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057a220
     MOV EAX,ESP                         ; 0057a223
     PUSH EAX                            ; 0057a225

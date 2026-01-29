@@ -19,7 +19,7 @@ core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
   if (0x100 < this_ptr->shadow_map_width) {
     iVar3 = 0;
     iVar2 = 0x476613;
-    dVar1 = crt_math_c_round_FUN_005fe6b0
+    dVar1 = round
                       ((double)(this_ptr->volumetric_intensity *
                                (float)3));
     core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
@@ -28,7 +28,7 @@ core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
   }
   iVar3 = 0;
   iVar2 = 0x476648;
-  dVar1 = crt_math_c_round_FUN_005fe6b0
+  dVar1 = round
                     ((double)(this_ptr->volumetric_intensity * (float)7)
                     );
   core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770

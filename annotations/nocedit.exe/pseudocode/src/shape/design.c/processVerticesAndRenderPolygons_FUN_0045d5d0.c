@@ -21,13 +21,13 @@ void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
   int local_14;
   
   for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_LoadedVertices[local_1c].vertex.x * 256.0f));
     local_28.x = (int)ROUND(dVar4);
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_LoadedVertices[local_1c].vertex.y * 256.0f));
     local_28.y = (int)ROUND(dVar4);
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_LoadedVertices[local_1c].vertex.z * 256.0f));
     local_28.z = (int)ROUND(dVar4);
     engine_matrix_c_transformToCache_FUN_0050cd70(local_1c,&local_28);
@@ -50,11 +50,11 @@ void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
     g_WireframeMode = 1 - g_WireframeMode;
   }
   for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
-    dVar4 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = round
                       ((double)(g_VertexNormals[local_1c].vertex.x * (float)65535));
-    dVar5 = crt_math_c_round_FUN_005fe6b0
+    dVar5 = round
                       ((double)(g_VertexNormals[local_1c].vertex.y * (float)65535));
-    dVar6 = crt_math_c_round_FUN_005fe6b0
+    dVar6 = round
                       ((double)(g_VertexNormals[local_1c].vertex.z * (float)65535));
     fVar3 = (float)engine_light_cpp_calculatePhongLighting_FUN_00505530
                              ((int)ROUND(dVar4),(int)ROUND(dVar5),(int)ROUND(dVar6));

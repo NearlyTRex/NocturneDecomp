@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 23,
-        "line": 80,
+        "line": 76,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 83,
+        "line": 79,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 84,
+        "line": 80,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -30,67 +30,43 @@
       },
       {
         "category": "other",
-        "column": 42,
-        "line": 45,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 31,
-        "line": 51,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 53,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 56,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 60,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 64,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 80,
+        "line": 76,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 83,
+        "line": 79,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 84,
+        "line": 80,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 269,
+    "complexity_score": 265,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 75,
     "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
@@ -98,7 +74,7 @@
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 239
+    "total_lines": 235
   },
   "cross_references": [
     {
@@ -446,96 +422,96 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
-      "text": "FILE *in_stack_00000008;",
+      "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",&local_58,&local_58.m[1].y,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 38,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",&local_58,&local_58.m[1].y,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
       "match": "unaff_ESI",
       "text": "&local_58.m[2].z,unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 38,
       "match": "unaff_EDI",
       "text": "&local_58.m[2].z,unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",&local_58.m[0].y,&local_58.m[1].z,",
+      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",&local_58.m[0].y,&local_58.m[1].z,",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 48,
       "match": "unaff_ESI",
       "text": "local_34,unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 48,
       "match": "unaff_EDI",
       "text": "local_34,unaff_ESI,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",&local_58.m[0].z,local_58.m + 2,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_ESI",
+      "text": "local_30,unaff_ESI,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EDI",
+      "text": "local_30,unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",&local_58.m[0].z,local_58.m + 2,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_ESI",
-      "text": "local_30,unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_EDI",
-      "text": "local_30,unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",local_58.m + 1,&local_58.m[2].y,",
+      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",local_58.m + 1,&local_58.m[2].y,",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 69,
       "match": "(uint *)((int)",
       "text": "puVar6 = (uint *)((int)pCVar1 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 72,
       "match": "(uint *)((int)",
       "text": "puVar5 = (uint *)((int)&local_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 73,
       "match": "(uint *)((int)",
       "text": "*puVar6 = *(uint *)((int)&local_28 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"

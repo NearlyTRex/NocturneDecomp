@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_heap_c_UnlinkAndFreeBlock_FUN_0060c9bc(HeapBlock *block)
+void __cdecl UnlinkAndFreeBlock(HeapBlock *block)
 
 {
   HeapBlock *pHVar1;
@@ -16,7 +16,7 @@ void __cdecl crt_heap_c_UnlinkAndFreeBlock_FUN_0060c9bc(HeapBlock *block)
   
   pHVar1 = block->prev;
   pHVar2 = block->next;
-  iVar4 = crt_heap_c_VirtualFreeBlock_FUN_0060c95c(block);
+  iVar4 = VirtualFreeBlock(block);
   if (iVar4 == 0) {
     pHVar3 = pHVar2;
     if (pHVar1 != (HeapBlock *)0x0) {

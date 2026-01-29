@@ -11,6 +11,6 @@ int __cdecl core_boxactor_cpp_freeFilters_FUN_004236e0(CDemonFilter **objs)
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(objs,8,&g_CDemonFilterTypeInfo);
+  iVar1 = __arrfini(objs,8,&g_CDemonFilterTypeInfo);
   return iVar1;
 }

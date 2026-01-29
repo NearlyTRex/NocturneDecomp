@@ -11,6 +11,6 @@ uint __cdecl core_actor_cpp_updateClassNameHash_FUN_0040c260(uint current_hash,i
 {
   int iVar1;
   
-  iVar1 = crt_ctype_c_tolower_FUN_005feb30(character);
+  iVar1 = tolower(character);
   return current_hash * 0x80 + (current_hash >> 0x19) + iVar1 * 0x20001;
 }

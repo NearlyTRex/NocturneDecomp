@@ -196,12 +196,12 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     return iVar6;
   }
   local_e0 = 0xffffffff;
-  iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"cmp");
+  iVar6 = stricmp(local_150,"cmp");
   if (iVar6 != 0) {
-    iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"exists");
+    iVar6 = stricmp(local_150,"exists");
     if (iVar6 == 0) {
       local_6c = -1;
-      crt_stdio_c_sscanf_FUN_0060013c
+      sscanf
                 ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",acStack_345 + 1,
                  &local_6c);
       if (local_6c < 3) {
@@ -241,14 +241,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
       pcVar13[SVar12] = '\0';
       local_bc = acStack_345 + 2;
       while ((g_CharacterClassificationTable[(byte)(acStack_345[1] + 1)] & 2U) != 0) {
-        crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_bc,SVar12);
+        memmove(pcVar13,local_bc,SVar12);
         SVar12 = SVar12 - 1;
       }
       core_event_cpp_FUN_004aa400();
       *in_stack_0000000c = *in_stack_0000000c + local_6c;
     }
     else {
-      iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"hasItem");
+      iVar6 = stricmp(local_150,"hasItem");
       if (iVar6 == 0) {
         if (g_CNetGamePtr->connection_type != 0) {
           pcVar13 = "Can't use hasItem condition in multi-player";
@@ -267,7 +267,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
           return -1;
         }
         local_b8 = -1;
-        crt_stdio_c_sscanf_FUN_0060013c
+        sscanf
                   ((char *)(in_stack_00000008 + *in_stack_0000000c)," (%[^)])%n",acStack_859 + 1,
                    &local_b8);
         if (local_b8 < 3) {
@@ -307,7 +307,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
         pcVar13[SVar12] = '\0';
         local_b0 = acStack_859 + 2;
         while ((g_CharacterClassificationTable[(byte)(acStack_859[1] + 1)] & 2U) != 0) {
-          crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_b0,SVar12);
+          memmove(pcVar13,local_b0,SVar12);
           SVar12 = SVar12 - 1;
         }
         local_e0 = 0;
@@ -318,10 +318,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
         *in_stack_0000000c = *in_stack_0000000c + local_b8;
       }
       else {
-        iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"hasItemType");
+        iVar6 = stricmp(local_150,"hasItemType");
         if (iVar6 == 0) {
           local_ac = -1;
-          crt_stdio_c_sscanf_FUN_0060013c
+          sscanf
                     ((char *)(in_stack_00000008 + *in_stack_0000000c)," (%[^,], %[^)] )%n",acStack_59d + 1,
                      local_72d + 1,&local_ac);
           if (local_ac < 5) {
@@ -361,7 +361,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
             pcVar13[SVar12] = '\0';
             local_50 = acStack_59d + 2;
             while ((g_CharacterClassificationTable[(byte)(acStack_59d[1] + 1)] & 2U) != 0) {
-              crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_50,SVar12);
+              memmove(pcVar13,local_50,SVar12);
               SVar12 = SVar12 - 1;
             }
             uVar11 = 0xffffffff;
@@ -384,7 +384,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
             (local_72d + 1)[SVar12] = '\0';
             local_a8 = local_72d + 2;
             while ((g_CharacterClassificationTable[(byte)(local_72d[1] + 1)] & 2U) != 0) {
-              crt_string_c_memmove_FUN_005fe5e0(local_72d + 1,local_a8,SVar12);
+              memmove(local_72d + 1,local_a8,SVar12);
               SVar12 = SVar12 - 1;
             }
             pCVar8 = (CDemonActor *)core_event_cpp_FUN_004aa400();
@@ -402,7 +402,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
           }
           return -1;
         }
-        iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"hasKeyMask");
+        iVar6 = stricmp(local_150,"hasKeyMask");
         if (iVar6 == 0) {
           if (g_CNetGamePtr->connection_type != 0) {
             pcVar13 = "Can't use hasKeyMask condition in multi-player";
@@ -421,7 +421,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
             return -1;
           }
           local_a4 = -1;
-          crt_stdio_c_sscanf_FUN_0060013c
+          sscanf
                     ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %d )%n",&local_a0,
                      &local_a4);
           if (local_a4 < 3) {
@@ -480,10 +480,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
           *in_stack_0000000c = *in_stack_0000000c + local_a4;
         }
         else {
-          iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isBroken");
+          iVar6 = stricmp(local_150,"isBroken");
           if (iVar6 == 0) {
             local_9c = -1;
-            crt_stdio_c_sscanf_FUN_0060013c
+            sscanf
                       ((char *)(in_stack_00000008 + *in_stack_0000000c)," (%[^)])%n",acStack_27d + 1
                        ,&local_9c);
             if (local_9c < 3) {
@@ -523,7 +523,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
               pcVar13[SVar12] = '\0';
               local_98 = acStack_27d + 2;
               while ((g_CharacterClassificationTable[(byte)(acStack_27d[1] + 1)] & 2U) != 0) {
-                crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_98,SVar12);
+                memmove(pcVar13,local_98,SVar12);
                 SVar12 = SVar12 - 1;
               }
               pCVar8 = (CDemonActor *)core_event_cpp_FUN_004aa400();
@@ -539,10 +539,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
             }
             return -1;
           }
-          iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isCurrentCamera");
+          iVar6 = stricmp(local_150,"isCurrentCamera");
           if (iVar6 == 0) {
             local_94 = -1;
-            crt_stdio_c_sscanf_FUN_0060013c
+            sscanf
                       ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",local_8bc,
                        &local_94);
             if (local_94 < 3) {
@@ -563,17 +563,17 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
             }
             local_e0 = 0;
             if (-1 < g_CDemonSetPtr->selected_camera_index) {
-              crt_string_c_stricmp_FUN_005fe7f0
+              stricmp
                         (g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].name,
                          local_8bc);
             }
             *in_stack_0000000c = *in_stack_0000000c + local_94;
           }
           else {
-            iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isDead");
+            iVar6 = stricmp(local_150,"isDead");
             if (iVar6 == 0) {
               local_90 = -1;
-              crt_stdio_c_sscanf_FUN_0060013c
+              sscanf
                         ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",local_6c8,
                          &local_90);
               if (local_90 < 3) {
@@ -607,10 +607,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
               }
               return -1;
             }
-            iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isFadeFinished");
+            iVar6 = stricmp(local_150,"isFadeFinished");
             if (iVar6 == 0) {
               local_8c = -1;
-              crt_stdio_c_sscanf_FUN_0060013c
+              sscanf
                         ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( )%n",&local_8c);
               this_ptr_00 = g_CGamePtr;
               if (local_8c < 2) {
@@ -633,10 +633,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
               core_game_cpp_CGame_fadeIn_FUN_004e0b90(this_ptr_00);
             }
             else {
-              iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isInRange");
+              iVar6 = stricmp(local_150,"isInRange");
               if (iVar6 == 0) {
                 local_88 = -1;
-                crt_stdio_c_sscanf_FUN_0060013c
+                sscanf
                           ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %n",&local_88);
                 if (local_88 < 1) {
                   pcVar13 = "Error parsing isInRange parameters.";
@@ -660,7 +660,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   return -1;
                 }
                 local_88 = -1;
-                crt_stdio_c_sscanf_FUN_0060013c
+                sscanf
                           ((char *)(in_stack_00000008 + *in_stack_0000000c)," , %n",&local_88);
                 if (local_88 < 1) {
                   pcVar13 = "Error parsing isInRange parameters.";
@@ -682,7 +682,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   iVar6 = core_event_cpp_FUN_004aa530();
                   if (-1 < iVar6) {
                     local_88 = -1;
-                    crt_stdio_c_sscanf_FUN_0060013c
+                    sscanf
                               ((char *)(in_stack_00000008 + *in_stack_0000000c)," , %f )%n",
                                local_84,&local_88);
                     if (local_88 < 3) {
@@ -707,10 +707,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 }
                 return -1;
               }
-              iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isOfType");
+              iVar6 = stricmp(local_150,"isOfType");
               if (iVar6 == 0) {
                 local_70 = -1;
-                crt_stdio_c_sscanf_FUN_0060013c
+                sscanf
                           ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ ,] , %[^ )] )%n",
                            acStack_471 + 1,local_665 + 1,&local_70);
                 if (local_70 < 3) {
@@ -751,7 +751,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   pcVar13[SVar12] = '\0';
                   local_68 = acStack_471 + 2;
                   while ((g_CharacterClassificationTable[(byte)(acStack_471[1] + 1)] & 2U) != 0) {
-                    crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_68,SVar12);
+                    memmove(pcVar13,local_68,SVar12);
                     SVar12 = SVar12 - 1;
                   }
                   uVar11 = 0xffffffff;
@@ -775,7 +775,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   (local_665 + 1)[SVar12] = '\0';
                   local_64 = local_665 + 2;
                   while ((g_CharacterClassificationTable[(byte)(local_665[1] + 1)] & 2U) != 0) {
-                    crt_string_c_memmove_FUN_005fe5e0(local_665 + 1,local_64,SVar12);
+                    memmove(local_665 + 1,local_64,SVar12);
                     SVar12 = SVar12 - 1;
                   }
                   pCVar8 = (CDemonActor *)core_event_cpp_FUN_004aa400();
@@ -792,10 +792,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 }
                 return -1;
               }
-              iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isFacing");
+              iVar6 = stricmp(local_150,"isFacing");
               if (iVar6 == 0) {
                 local_60 = -1;
-                crt_stdio_c_sscanf_FUN_0060013c
+                sscanf
                           ((char *)(in_stack_00000008 + *in_stack_0000000c)," (%[^,], %[^,)]%n",
                            acStack_1b5 + 1,local_4d5 + 1,&local_60);
                 if (local_60 < 5) {
@@ -835,7 +835,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 pcVar13[SVar12] = '\0';
                 local_5c = acStack_1b5 + 2;
                 while ((g_CharacterClassificationTable[(byte)(acStack_1b5[1] + 1)] & 2U) != 0) {
-                  crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_5c,SVar12);
+                  memmove(pcVar13,local_5c,SVar12);
                   SVar12 = SVar12 - 1;
                 }
                 uVar11 = 0xffffffff;
@@ -858,7 +858,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 (local_4d5 + 1)[SVar12] = '\0';
                 local_58 = local_4d5 + 2;
                 while ((g_CharacterClassificationTable[(byte)(local_4d5[1] + 1)] & 2U) != 0) {
-                  crt_string_c_memmove_FUN_005fe5e0(local_4d5 + 1,local_58,SVar12);
+                  memmove(local_4d5 + 1,local_58,SVar12);
                   SVar12 = SVar12 - 1;
                 }
                 pCVar8 = (CDemonActor *)core_event_cpp_FUN_004aa400();
@@ -871,7 +871,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 local_a88 = 45.0;
                 if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ',') {
                   local_60 = -1;
-                  crt_stdio_c_sscanf_FUN_0060013c
+                  sscanf
                             ((char *)(in_stack_00000008 + *in_stack_0000000c),",%f %n",
                              &local_a88,&local_60);
                   if (local_60 < 2) {
@@ -935,10 +935,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 }
               }
               else {
-                iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isLightOn");
+                iVar6 = stricmp(local_150,"isLightOn");
                 if (iVar6 == 0) {
                   local_54 = -1;
-                  crt_stdio_c_sscanf_FUN_0060013c
+                  sscanf
                             ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",local_218
                              ,&local_54);
                   if (local_54 < 3) {
@@ -959,7 +959,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   }
                   core_set_cpp_CDemonSet_FUN_00570f10(g_CDemonSetPtr);
                   if (local_4c == 0) {
-                    crt_stdio_c_sprintf_FUN_005fdbd0
+                    sprintf
                               (local_a84,"Spotlight %s doesn't exist.",local_218);
                     pcVar13 = local_a84;
                     pcVar14 = &DAT_02d0a460;
@@ -979,10 +979,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   *in_stack_0000000c = *in_stack_0000000c + local_54;
                 }
                 else {
-                  iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isNudityEnabled");
+                  iVar6 = stricmp(local_150,"isNudityEnabled");
                   if (iVar6 == 0) {
                     local_44 = -1;
-                    crt_stdio_c_sscanf_FUN_0060013c
+                    sscanf
                               ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( )%n",
                                &local_44);
                     if (local_44 < 2) {
@@ -1004,10 +1004,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                     *in_stack_0000000c = *in_stack_0000000c + local_44;
                   }
                   else {
-                    iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isSfxActive");
+                    iVar6 = stricmp(local_150,"isSfxActive");
                     if (iVar6 == 0) {
                       local_40 = -1;
-                      crt_stdio_c_sscanf_FUN_0060013c
+                      sscanf
                                 ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",
                                  acStack_791 + 1,&local_40);
                       if (local_40 < 3) {
@@ -1049,7 +1049,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                       local_3c = acStack_791 + 2;
                       while ((g_CharacterClassificationTable[(byte)(acStack_791[1] + 1)] & 2U) != 0)
                       {
-                        crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_3c,SVar12);
+                        memmove(pcVar13,local_3c,SVar12);
                         SVar12 = SVar12 - 1;
                       }
                       local_e0 = 0;
@@ -1057,10 +1057,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                       *in_stack_0000000c = *in_stack_0000000c + local_40;
                     }
                     else {
-                      iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isTalking");
+                      iVar6 = stricmp(local_150,"isTalking");
                       if (iVar6 == 0) {
                         local_38 = -1;
-                        crt_stdio_c_sscanf_FUN_0060013c
+                        sscanf
                                   ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",
                                    local_538,&local_38);
                         if (local_38 < 3) {
@@ -1086,10 +1086,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                         *in_stack_0000000c = *in_stack_0000000c + local_38;
                       }
                       else {
-                        iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"isVictim");
+                        iVar6 = stricmp(local_150,"isVictim");
                         if (iVar6 == 0) {
                           local_34 = -1;
-                          crt_stdio_c_sscanf_FUN_0060013c
+                          sscanf
                                     ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",
                                      local_40c,&local_34);
                           if (local_34 < 3) {
@@ -1140,11 +1140,11 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                           }
                           return -1;
                         }
-                        iVar6 = crt_string_c_stricmp_FUN_005fe7f0
+                        iVar6 = stricmp
                                           (local_150,"isWeaponDrawn");
                         if (iVar6 == 0) {
                           local_20 = -1;
-                          crt_stdio_c_sscanf_FUN_0060013c
+                          sscanf
                                     ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n",
                                      local_2e0,&local_20);
                           if (local_20 < 3) {
@@ -1176,11 +1176,11 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                           *in_stack_0000000c = *in_stack_0000000c + local_1c;
                         }
                         else {
-                          iVar6 = crt_string_c_stricmp_FUN_005fe7f0
+                          iVar6 = stricmp
                                             (local_150,"isWearingGasMask");
                           if (iVar6 == 0) {
                             local_1c = -1;
-                            crt_stdio_c_sscanf_FUN_0060013c
+                            sscanf
                                       ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %[^ )] )%n"
                                        ,local_600,&local_1c);
                             if (local_1c < 3) {
@@ -1211,10 +1211,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                             }
                           }
                           else {
-                            iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_150,"randBool")
+                            iVar6 = stricmp(local_150,"randBool")
                             ;
                             if (iVar6 != 0) {
-                              iVar6 = crt_string_c_stricmp_FUN_005fe7f0
+                              iVar6 = stricmp
                                                 (local_150,"reachedDest");
                               if (iVar6 != 0) {
                                 pcVar13 = "Invalid meta-function";
@@ -1233,7 +1233,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                                 return -1;
                               }
                               local_cc = -1;
-                              crt_stdio_c_sscanf_FUN_0060013c
+                              sscanf
                                         ((char *)(in_stack_00000008 + *in_stack_0000000c),
                                          " ( %[^ )] )%n",local_7f4,&local_cc);
                               if (local_cc < 3) {
@@ -1268,7 +1268,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                               return -1;
                             }
                             local_d8 = -1;
-                            crt_stdio_c_sscanf_FUN_0060013c
+                            sscanf
                                       ((char *)(in_stack_00000008 + *in_stack_0000000c),
                                        " ( %f )%n",local_18,&local_d8);
                             if (local_d8 < 3) {
@@ -1304,7 +1304,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     goto LAB_004ae5e7;
   }
   local_dc = 0xffffffff;
-  crt_stdio_c_sscanf_FUN_0060013c
+  sscanf
             ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %s %s %[^ )] )%n",acStack_921 + 1,
              local_985 + 1,local_3a9 + 1,&local_dc);
   if ((int)local_dc < 3) {
@@ -1344,7 +1344,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   pcVar13[SVar12] = '\0';
   local_d4 = acStack_921 + 2;
   while ((g_CharacterClassificationTable[(byte)(acStack_921[1] + 1)] & 2U) != 0) {
-    crt_string_c_memmove_FUN_005fe5e0(pcVar13,local_d4,SVar12);
+    memmove(pcVar13,local_d4,SVar12);
     SVar12 = SVar12 - 1;
   }
   uVar11 = 0xffffffff;
@@ -1367,7 +1367,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   (local_3a9 + 1)[SVar12] = '\0';
   local_d0 = local_3a9 + 2;
   while ((g_CharacterClassificationTable[(byte)(local_3a9[1] + 1)] & 2U) != 0) {
-    crt_string_c_memmove_FUN_005fe5e0(local_3a9 + 1,local_d0,SVar12);
+    memmove(local_3a9 + 1,local_d0,SVar12);
     SVar12 = SVar12 - 1;
   }
   uVar11 = 0xffffffff;
@@ -1390,33 +1390,33 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   (local_985 + 1)[SVar12] = '\0';
   local_c8 = local_985 + 2;
   while ((g_CharacterClassificationTable[(byte)(local_985[1] + 1)] & 2U) != 0) {
-    crt_string_c_memmove_FUN_005fe5e0(local_985 + 1,local_c8,SVar12);
+    memmove(local_985 + 1,local_c8,SVar12);
     SVar12 = SVar12 - 1;
   }
-  iVar7 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,"<");
+  iVar7 = strcmp(local_985 + 1,"<");
   iVar6 = 0;
   if (iVar7 != 0) {
-    iVar6 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,"<=");
+    iVar6 = strcmp(local_985 + 1,"<=");
     if (iVar6 == 0) {
       iVar6 = 1;
     }
     else {
-      iVar6 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,"==");
+      iVar6 = strcmp(local_985 + 1,"==");
       if (iVar6 == 0) {
         iVar6 = 2;
       }
       else {
-        iVar6 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,"!=");
+        iVar6 = strcmp(local_985 + 1,"!=");
         if (iVar6 == 0) {
           iVar6 = 3;
         }
         else {
-          iVar6 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,">");
+          iVar6 = strcmp(local_985 + 1,">");
           if (iVar6 == 0) {
             iVar6 = 5;
           }
           else {
-            iVar6 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,">=");
+            iVar6 = strcmp(local_985 + 1,">=");
             if (iVar6 == 0) {
               iVar6 = 4;
             }
@@ -1445,11 +1445,11 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     return -1;
   }
   *in_stack_0000000c = *in_stack_0000000c + local_dc;
-  iVar7 = crt_stdio_c_sscanf_FUN_0060013c(acStack_921 + 1,"%d",local_c4);
+  iVar7 = sscanf(acStack_921 + 1,"%d",local_c4);
   if (iVar7 != 1) {
     core_event_cpp_CEventList_FUN_004b0830(g_CEventListPtr);
   }
-  iVar7 = crt_stdio_c_sscanf_FUN_0060013c(local_3a9 + 1,"%d",local_74);
+  iVar7 = sscanf(local_3a9 + 1,"%d",local_74);
   if (iVar7 == 1) {
     switch(iVar6) {
     case 0:

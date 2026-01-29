@@ -34,7 +34,7 @@ sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30
   fVar2 = sound_sndmain_cpp_getMaxSwLatency_FUN_005abea0();
   WStack_24.wFormatTag = 0xa97;
   WStack_24.nChannels = 0x5b;
-  dVar7 = crt_math_c_round_FUN_005fe6b0
+  dVar7 = round
                     ((double)(((float)g_WaveOutSampleRate * fVar2) / (float)g_WaveOutNumBuffers));
   g_WaveOutBufferSize = (int)ROUND(dVar7);
   iVar1 = 0;

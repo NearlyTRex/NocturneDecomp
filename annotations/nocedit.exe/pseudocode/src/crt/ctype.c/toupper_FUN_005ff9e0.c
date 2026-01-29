@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_ctype_c_toupper_FUN_005ff9e0(int c)
+int __cdecl toupper(int c)
 
 {
   if ((0x60 < c) && (c < 0x7b)) {

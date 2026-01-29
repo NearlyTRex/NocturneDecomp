@@ -96,18 +96,18 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   CStack_13c.y = (int)min_corner;
   iVar5 = (this_ptr->source_matrix).m[1].y;
   CStack_13c.x = 0x45221e;
-  dVar9 = crt_math_c_round_FUN_005fe6b0
+  dVar9 = round
                     ((double)(((float10)(float)(this_ptr->base).position.x - (float10)position->x) *
                              fVar7));
   iVar4 = (this_ptr->source_matrix).m[1].z;
   rotation = (CVector3i *)0x452230;
   g_TransformMatrix.m[1].y = iVar5;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)(((float10)fVar2 - (float10)fVar3) * fVar7));
+  dVar10 = round((double)(((float10)fVar2 - (float10)fVar3) * fVar7));
   fVar7 = (float10)dVar10;
   iVar5 = (this_ptr->source_matrix).m[2].x;
   position_00 = (CVector3i *)0x452242;
   g_TransformMatrix.m[1].z = iVar4;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  dVar10 = round((double)fVar8);
   g_TransformMatrix.m[2].y = (this_ptr->source_matrix).m[2].y;
   g_RelativeX = (int)ROUND(dVar9);
   g_TransformMatrix.m[2].z = (this_ptr->source_matrix).m[2].z;

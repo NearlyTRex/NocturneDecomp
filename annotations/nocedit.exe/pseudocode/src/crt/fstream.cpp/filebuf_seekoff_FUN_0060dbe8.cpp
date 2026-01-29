@@ -31,7 +31,7 @@ crt_fstream_cpp_filebuf_seekoff_FUN_0060dbe8(filebuf *this_ptr,long offset,int d
       }
       iVar1 = 2;
     }
-    iVar1 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,offset,iVar1);
+    iVar1 = lseek(this_ptr->__file_handle,offset,iVar1);
   }
   return iVar1;
 }

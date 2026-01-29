@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_FUN_0058a0f0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
 
     PUSH 0x18                           ; 00589bb0
         ;   Label: core_skeledit.cpp_FUN_00589bb0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00589bb5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589bb5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 00589bba
     PUSH EDI                            ; 00589bbb
     PUSH EBP                            ; 00589bbc
@@ -32,7 +32,7 @@ section .text
     PUSH 0x649e31                       ; 00589bc1 | = "wt"
     PUSH EBX                            ; 00589bc6
     CALL shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770 ; 00589bc7
-        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
+        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; _FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
     ADD ESP,0x8                         ; 00589bcc
     MOV dword ptr [EBX + 0x38],EAX      ; 00589bcf
     TEST EAX,EAX                        ; 00589bd2

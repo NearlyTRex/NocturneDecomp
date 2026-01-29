@@ -37,8 +37,8 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_freeVectors_FUN_0043e460
-;   crt_memory.c_copyArrayWithFunction_FUN_006020c2
-;   crt_memory.c_copyObjectArray_FUN_00600bc2
+;   crt_memory.c___arr_op_FUN_006020c2
+;   crt_memory.c___arrcopy_FUN_00600bc2
 ;   shape_meshlod.cpp_copyFloat_FUN_0051f090
 ;   shape_meshlod.cpp_copyFloat_FUN_0051f0a0
 ;   shape_meshlod.cpp_copyFloat_FUN_0051f0b0
@@ -170,8 +170,8 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 0051bea2
     PUSH EAX                            ; 0051bea6
     LEA EDI,[ESP + 0x88]                ; 0051bea7
-    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0051beae
-        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrcopy_FUN_00600bc2 ; 0051beae
+        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrcopy_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
     LEA ESI,[EBX + 0x78]                ; 0051beb3
     ADD ESP,0x10                        ; 0051beb6
     MOVSD ES:EDI,ESI                    ; 0051beb9
@@ -230,8 +230,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xb0]      ; 0051bf58
     ADD EAX,0x54                        ; 0051bf5f
     PUSH EAX                            ; 0051bf62
-    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051bf63
-        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
+    CALL crt_memory.c___arr_op_FUN_006020c2 ; 0051bf63
+        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arr_op_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
     ADD ESP,0x14                        ; 0051bf68
     MOV EDI,dword ptr [ESP + 0xa0]      ; 0051bf6b
     MOV ESI,dword ptr [ESP + 0xa4]      ; 0051bf72
@@ -295,8 +295,8 @@ section .text
     LEA EAX,[EBX + 0x54]                ; 0051c022
     PUSH EAX                            ; 0051c025
     LEA ESI,[ESP + 0x8c]                ; 0051c026
-    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051c02d
-        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
+    CALL crt_memory.c___arr_op_FUN_006020c2 ; 0051c02d
+        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arr_op_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
     LEA EDI,[EBX + 0x78]                ; 0051c032
     ADD ESP,0x14                        ; 0051c035
     MOVSD ES:EDI,ESI                    ; 0051c038

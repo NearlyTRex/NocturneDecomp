@@ -63,7 +63,7 @@ core_xform_cpp_slerpQuaternion_FUN_005f77e0
     }
     if ((double)CONCAT44(uStack_7c,afStack_1830[0x5ec]) <= 0.99999000000000005) {
       fVar8 = (float10)(double)CONCAT44(uStack_7c,afStack_1830[0x5ec]);
-      fVar8 = crt_math_c_atan2_FUN_006013b1(SQRT((float10)1 - fVar8 * fVar8),fVar8);
+      fVar8 = atan2(SQRT((float10)1 - fVar8 * fVar8),fVar8);
       fVar9 = (float10)fsin(((float10)1 - (float10)t) * fVar8);
       fVar8 = (float10)fsin((float10)t * fVar8);
       dVar2 = (double)(fVar9 * ((float10)1 / extraout_ST1));

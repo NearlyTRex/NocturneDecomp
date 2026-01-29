@@ -30,7 +30,7 @@ void core_game_cpp_FUN_004dd9d0(void)
   iVar5 = 0;
   for (iVar4 = ~uVar3 - 1; 0 < iVar4; iVar4 = iVar4 + -1) {
     bVar1 = g_InputHistory[iVar4];
-    uVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*in_stack_00000004);
+    uVar2 = toupper((uint)*in_stack_00000004);
     if (bVar1 == uVar2) {
       iVar5 = iVar5 + 1;
     }

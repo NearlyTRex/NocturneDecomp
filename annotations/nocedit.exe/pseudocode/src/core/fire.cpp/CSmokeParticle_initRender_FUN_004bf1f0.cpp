@@ -60,10 +60,10 @@ int __cdecl core_fire_cpp_CSmokeParticle_initRender_FUN_004bf1f0(CSmokeParticle 
   }
   fVar7 = (float10)-65536;
   fVar8 = (float10)local_48 * fVar7;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_60 * fVar7));
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_54 * fVar7));
+  dVar9 = round((double)((float10)local_60 * fVar7));
+  dVar10 = round((double)((float10)local_54 * fVar7));
   fVar7 = (float10)dVar10;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  dVar10 = round((double)fVar8);
   g_BillboardCameraUp.x = (int)ROUND(dVar9);
   g_BillboardCameraUp.y = (int)ROUND(fVar7);
   g_BillboardCameraUp.z = (int)ROUND(dVar10);

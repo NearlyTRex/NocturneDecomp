@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __stdcall crt_stack_c_ProbeStackSpace_FUN_005ffa2f(uint size)
+void __stdcall ProbeStackSpace(uint size)
 
 {
   bool bVar1;

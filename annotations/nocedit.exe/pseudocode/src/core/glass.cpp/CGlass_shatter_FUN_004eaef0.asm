@@ -77,7 +77,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
 ;   core_set.cpp_CDemonSet_FUN_00570c60
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;
 ; *****************************************************************************
@@ -104,8 +104,8 @@ section .text
     PUSH 0x4                            ; 004eaf2b
     LEA EAX,[ESP + 0x8]                 ; 004eaf2d
     PUSH EAX                            ; 004eaf31
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004eaf32
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004eaf32
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     FLD float ptr [EBX + 0x158]         ; 004eaf37
     FMUL double ptr [0x0062e109]        ; 004eaf3d | DOUBLE_0062e109
     ADD ESP,0xc                         ; 004eaf43

@@ -25,7 +25,7 @@ engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0
     }
     input_path = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(pod_list,index);
     engine_dosio_c_getFullPath_FUN_004820c0(local_210,input_path);
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_10c,local_210);
+    iVar1 = stricmp(local_10c,local_210);
     if (iVar1 == 0) break;
     index = index + 1;
   }

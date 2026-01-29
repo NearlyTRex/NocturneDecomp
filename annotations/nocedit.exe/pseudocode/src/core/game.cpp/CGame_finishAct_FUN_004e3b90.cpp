@@ -71,23 +71,23 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
             ((CAlphaBitmap *)(auStack_5c + 0x10),0,0,0xffff);
   fVar13 = in_stack_00000004->player_pos_y;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 * (float)0.00027777777777777799));
+  dVar12 = round((double)(fVar13 * (float)0.00027777777777777799));
   local_2c = (CBitFont *)(int)ROUND(dVar12);
   fVar13 = fVar13 - (float)(int)local_2c * (float)3600;
   in_stack_00000004->player_pos_y = fVar13;
   local_18 = (int)local_2c;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 * (float)0.016666666666666701));
+  dVar12 = round((double)(fVar13 * (float)0.016666666666666701));
   iStack_38 = (int)ROUND(dVar12);
   fVar13 = fVar13 - (float)iStack_38 * (float)60;
   in_stack_00000004->player_pos_y = fVar13;
   local_1c = iStack_38;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
+  dVar12 = round((double)fVar13);
   local_24 = (int)ROUND(dVar12);
   fVar13 = in_stack_00000004->player_pos_y - (float)local_24;
   in_stack_00000004->player_pos_y = fVar13;
   pcVar3 = (char *)0x4e3d9f;
   local_20 = local_24;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 * (float)100));
+  dVar12 = round((double)(fVar13 * (float)100));
   iStack_3c = (int)ROUND(dVar12);
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
   pcVar3 = &stack0xfffffaa4;
@@ -123,7 +123,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
   uVar7 = 0;
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (acStack_15c,"%2d:%2d:%2d.%2d\n\n",iStack_38,uStack_40,local_28,iVar2);
   do {
     uVar6 = 0xffffffff;
@@ -203,7 +203,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_15c,"%d\n\n",in_stack_00000004->game_state_flags);
+  sprintf(acStack_15c,"%d\n\n",in_stack_00000004->game_state_flags);
   pcVar3 = acStack_15c;
   iVar2 = -1;
   pcVar4 = &stack0xfffffaa4;

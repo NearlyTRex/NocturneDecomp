@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
+; __cdecl int __cdecl crt_stdio_c_fgetc_FUN_005fe840(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[66]:
 ;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690 at 004346fb
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 005fe8b1 (CONDITIONAL_JUMP)  ; LAB_005fe8b1
     PUSH EBX                            ; 005fe8a4
     CALL crt_stdio.c_FillBufferAndGetChar_FUN_005fe910 ; 005fe8a5
-        ;   XREF to: 005fe910 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillBufferAndGetChar_FUN_005fe910(FILE * file)
+        ;   XREF to: 005fe910 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillBufferAndGetChar_FUN_005fe910(_FILE * file)
     ADD ESP,0x4                         ; 005fe8aa
     MOV ESI,EAX                         ; 005fe8ad
     JMP 0x005fe8ba                      ; 005fe8af
@@ -105,7 +105,7 @@ section .text
         ;   XREF to: 005fe8dd (CONDITIONAL_JUMP)  ; LAB_005fe8dd
     PUSH EBX                            ; 005fe8d0
     CALL crt_stdio.c_FillBufferAndGetChar_FUN_005fe910 ; 005fe8d1
-        ;   XREF to: 005fe910 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillBufferAndGetChar_FUN_005fe910(FILE * file)
+        ;   XREF to: 005fe910 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FillBufferAndGetChar_FUN_005fe910(_FILE * file)
     ADD ESP,0x4                         ; 005fe8d6
     MOV ESI,EAX                         ; 005fe8d9
     JMP 0x005fe8e7                      ; 005fe8db

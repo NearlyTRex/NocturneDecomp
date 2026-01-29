@@ -115,7 +115,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
                     * 1.525902e-05f) {
             this_ptr_00 = (CDemonRenderer *)0x474287;
             pCVar5 = g_CDemonRendererPtr2;
-            dVar4 = crt_math_c_round_FUN_005fe6b0((double)(local_148 * (float)65535));
+            dVar4 = round((double)(local_148 * (float)65535));
             local_20 = (float)(int)ROUND(dVar4);
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,(int)pCVar5);
             local_1c = 0;

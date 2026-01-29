@@ -35,13 +35,13 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
   }
   else {
     for (local_4c = 0; local_4c < g_VertexCount; local_4c = local_4c + 1) {
-      dVar2 = crt_math_c_round_FUN_005fe6b0
+      dVar2 = round
                         ((double)(g_LoadedVertices[local_4c].vertex.x * 256.0f));
       local_104.x = (int)ROUND(dVar2);
-      dVar2 = crt_math_c_round_FUN_005fe6b0
+      dVar2 = round
                         ((double)(g_LoadedVertices[local_4c].vertex.y * 256.0f));
       local_104.y = (int)ROUND(dVar2);
-      dVar2 = crt_math_c_round_FUN_005fe6b0
+      dVar2 = round
                         ((double)(g_LoadedVertices[local_4c].vertex.z * 256.0f));
       local_104.z = (int)ROUND(dVar2);
       engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,&local_104);
@@ -91,19 +91,19 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
       local_44 = g_MouseX - g_PolygonScreenCache[local_4c].center_x;
       local_40 = g_MouseY - g_PolygonScreenCache[local_4c].center_y;
       local_18 = local_44 * local_44 + local_40 * local_40;
-      dVar2 = crt_math_c_round_FUN_005fe6b0
+      dVar2 = round
                         ((double)(g_ModelPolygonData[local_4c].normal.x * 65535.0f)
                         );
       local_f0[0].A = (int)ROUND(dVar2);
-      dVar2 = crt_math_c_round_FUN_005fe6b0
+      dVar2 = round
                         ((double)(g_ModelPolygonData[local_38].normal.y * 65535.0f)
                         );
       local_f0[0].B = (int)ROUND(dVar2);
-      dVar2 = crt_math_c_round_FUN_005fe6b0
+      dVar2 = round
                         ((double)(g_ModelPolygonData[local_38].normal.z * 65535.0f)
                         );
       local_f0[0].C = (int)ROUND(dVar2);
-      dVar2 = crt_math_c_round_FUN_005fe6b0
+      dVar2 = round
                         ((double)(g_ModelPolygonData[local_38].plane_distance *
                                   65535.0f * 256.0f));
       local_f0[0].D = (int)ROUND(dVar2);
@@ -119,7 +119,7 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
     local_34 = local_28;
     local_1c = 1;
     local_3c = local_28;
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_a0,"mX: %d  mY: %d",g_MouseX,g_MouseY);
+    sprintf(local_a0,"mX: %d  mY: %d",g_MouseX,g_MouseY);
     engine_2d_c_drawTextColor_FUN_00402430(local_a0,0,g_WindowHeight + -0x37);
     local_50 = local_34;
   }

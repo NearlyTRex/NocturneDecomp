@@ -44,7 +44,7 @@ void shape_superopt_cpp_FUN_005c9340(void)
       dVar3 = *(double *)((int)pvVar6 + 0x30) - *(double *)((int)pvVar6 + 0x18);
       dVar2 = *(double *)((int)pvVar6 + 0x38) - *(double *)((int)pvVar6 + 0x20);
       if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < 1e-10) {
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   (pvVar6,(void *)((uVar7 + 1) * 0x60 + in_stack_00000008),
                    ((*in_stack_0000000c - uVar7) + -1) * 0x60);
         uVar7 = uVar7 - 1;
@@ -97,7 +97,7 @@ void shape_superopt_cpp_FUN_005c9340(void)
       local_18 = local_18 + 1;
     }
     else {
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (pvVar6,(void *)((local_18 + 2) * 0x60 + in_stack_00000008),
                  ((*in_stack_0000000c - local_18) + -2) * 0x60);
       *in_stack_0000000c = *in_stack_0000000c - 2;

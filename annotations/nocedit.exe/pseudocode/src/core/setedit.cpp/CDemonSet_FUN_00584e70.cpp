@@ -10,17 +10,17 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00584e70(CDemonSet *this_ptr)
 
 {
   char cVar1;
-  FILE *file_ptr;
+  _FILE *file_ptr;
   C3DSCamera *pCVar2;
   char *pcVar3;
   char *pcVar4;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   char local_218 [256];
   char local_118 [256];
   CDemonSet *local_18;
   int local_14;
   
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"data\\%s\n",this_ptr->geometry_filename);
+  _fprintf(in_stack_00000008,"data\\%s\n",this_ptr->geometry_filename);
   if (this_ptr->use_enviro_model != 0) {
     core_dmodel_cpp_writeModelDependencies_FUN_0047ee30
               (in_stack_00000008,this_ptr->enviro_model_name);
@@ -53,19 +53,19 @@ LAB_00584f0b:
     g_CurrentLineNumber = 0x1756;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to find ext in geomName");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,".zth");
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"data\\%s\n",local_118);
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,".thm");
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"data\\%s\n",local_118);
+  sprintf(pcVar4,".zth");
+  _fprintf(in_stack_00000008,"data\\%s\n",local_118);
+  sprintf(pcVar4,".thm");
+  _fprintf(in_stack_00000008,"data\\%s\n",local_118);
   local_14 = 0;
   if (0 < this_ptr->camera_count) {
     pCVar2 = this_ptr->cameras;
     local_18 = this_ptr;
     do {
       if (local_18->cameras[0].is_panning == 0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_118,"%s.raw",pCVar2);
+        sprintf(local_118,"%s.raw",pCVar2);
         file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_118,"rb");
-        if (file_ptr == (FILE *)0x0) {
+        if (file_ptr == (_FILE *)0x0) {
           pcVar4 = "art";
           pcVar3 = local_218;
           do {
@@ -92,26 +92,26 @@ LAB_00584f0b:
           } while (cVar1 != '\0');
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x177e);
         }
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%s\\%s.raw\n",local_218,pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%s\\%s.act\n",local_218,pCVar2);
+        _fprintf(in_stack_00000008,"%s\\%s.raw\n",local_218,pCVar2);
+        _fprintf(in_stack_00000008,"%s\\%s.act\n",local_218,pCVar2);
         pcVar3 = "backdrop\\%s.fog\n";
       }
       else {
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%sn.raw\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%sn.act\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%ss.raw\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%ss.act\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%se.raw\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%se.act\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%sw.raw\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%sw.act\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%su.raw\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%su.act\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%sd.raw\n",pCVar2);
-        crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"backdrop\\%sd.act\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%sn.raw\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%sn.act\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%ss.raw\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%ss.act\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%se.raw\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%se.act\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%sw.raw\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%sw.act\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%su.raw\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%su.act\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%sd.raw\n",pCVar2);
+        _fprintf(in_stack_00000008,"backdrop\\%sd.act\n",pCVar2);
         pcVar3 = "backdrop\\%s.cm\n";
       }
-      crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,pcVar3,pCVar2);
+      _fprintf(in_stack_00000008,pcVar3,pCVar2);
       local_18 = (CDemonSet *)&local_18->cameras[0].unk4;
       pCVar2 = pCVar2 + 1;
       local_14 = local_14 + 1;

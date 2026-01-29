@@ -46,7 +46,7 @@
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -59,8 +59,8 @@ section .text
 
     PUSH 0x6c                           ; 0058b660
         ;   Label: core_skeledit.cpp_FUN_0058b660
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058b665
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b665
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058b66a
     PUSH ESI                            ; 0058b66b
     PUSH EDI                            ; 0058b66c
@@ -85,7 +85,7 @@ section .text
     PUSH 0x0                            ; 0058b6a6
     PUSH EDI                            ; 0058b6a8
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0058b6a9
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0058b6ae
     MOV EBX,EAX                         ; 0058b6b1
     TEST EAX,EAX                        ; 0058b6b3
@@ -98,7 +98,7 @@ section .text
         ;   Label: LAB_0058b6c4
     PUSH EAX                            ; 0058b6c8
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058b6c9
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0058b6ce
     TEST EAX,EAX                        ; 0058b6d1
     JL 0x0058b6df                       ; 0058b6d3
@@ -116,7 +116,7 @@ section .text
     PUSH 0x64a7ef                       ; 0058b6e2 | = "%d\n"
     PUSH EBX                            ; 0058b6e7
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058b6e8
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0058b6ed
     MOV EDX,dword ptr [ESP]             ; 0058b6f0
     CMP EDX,0x65                        ; 0058b6f3
@@ -141,7 +141,7 @@ section .text
         ;   Label: LAB_0058b72c
     PUSH ECX                            ; 0058b730
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058b731
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0058b736
     TEST EAX,EAX                        ; 0058b739
     JL 0x0058b747                       ; 0058b73b
@@ -171,7 +171,7 @@ section .text
     PUSH 0x64a84f                       ; 0058b76a | = "%d,%d,%d,%d,%d,%d,%d\n"
     PUSH EBX                            ; 0058b76f
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058b770
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x24                        ; 0058b775
     CMP EAX,0x7                         ; 0058b778
     JZ 0x0058b7a0                       ; 0058b77b
@@ -212,7 +212,7 @@ section .text
         ;   Label: LAB_0058b7d4
     PUSH EAX                            ; 0058b7d8
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058b7d9
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0058b7de
     TEST EAX,EAX                        ; 0058b7e1
     JL 0x0058b7ef                       ; 0058b7e3
@@ -238,7 +238,7 @@ section .text
         ;   Label: LAB_0058b808
     PUSH EAX                            ; 0058b80c
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058b80d
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0058b812
     TEST EAX,EAX                        ; 0058b815
     JL 0x0058b823                       ; 0058b817
@@ -301,7 +301,7 @@ section .text
     PUSH 0x64a889                       ; 0058b89b | = "..\\core\\skeledit.cpp"
     PUSH EBX                            ; 0058b8a0
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058b8a1
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0058b8a6
     PUSH ESI                            ; 0058b8a9
     CALL core_skeledit.cpp_FUN_0058f790 ; 0058b8aa

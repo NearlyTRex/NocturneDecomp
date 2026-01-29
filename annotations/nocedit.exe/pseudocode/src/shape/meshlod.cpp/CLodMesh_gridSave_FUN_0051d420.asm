@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_gridSave_FUN_0051d420(CLodMesh *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_gridSave_FUN_0051d420(CLodMesh *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50 at 00516db9
@@ -44,7 +44,7 @@ section .text
     PUSH EBP                            ; 0051d43c
     XOR EBX,EBX                         ; 0051d43d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d43f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051d444
     MOV EAX,dword ptr [EDI + 0x54]      ; 0051d447
         ;   Label: LAB_0051d447
@@ -54,7 +54,7 @@ section .text
     PUSH EBP                            ; 0051d453
     ADD EBX,0x4                         ; 0051d454
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d457
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051d45c
     CMP EBX,0x4004                      ; 0051d45f
     JNZ 0x0051d447                      ; 0051d465
@@ -74,7 +74,7 @@ section .text
     ADD ESI,0x4                         ; 0051d483
     INC EBX                             ; 0051d486
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d487
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0051d48c
     JMP 0x0051d46b                      ; 0051d48f
         ;   XREF to: 0051d46b (UNCONDITIONAL_JUMP)  ; LAB_0051d46b

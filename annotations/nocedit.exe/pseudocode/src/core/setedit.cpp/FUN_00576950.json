@@ -8,12 +8,6 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -135,14 +129,14 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "iVar3 = crt_stdlib_c_atoi_FUN_005ffef0(in_stack_00000004 + iVar5 + 1);",
+      "text": "iVar3 = atoi(in_stack_00000004 + iVar5 + 1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar5 + 1,\"%d\",iVar3 + 1);",
+      "text": "sprintf(in_stack_00000004 + iVar5 + 1,\"%d\",iVar3 + 1);",
       "type": "stack_param"
     }
   ]

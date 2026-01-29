@@ -23,7 +23,7 @@ void __cdecl core_game_cpp_CGame_FUN_004e0bf0(CGame *this_ptr)
     pcVar4 = this_ptr->unk13;
     if (0 < this_ptr->status_display_count) {
       do {
-        iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,in_stack_00000008);
+        iVar2 = stricmp(pcVar4,in_stack_00000008);
         if (iVar2 == 0) {
           *(uint *)(this_ptr->unk13 + iVar3 * 4 + 0x500) = in_stack_0000000c;
           *(float *)(this_ptr->unk13 + iVar3 * 4 + 0x514) = in_stack_00000010;

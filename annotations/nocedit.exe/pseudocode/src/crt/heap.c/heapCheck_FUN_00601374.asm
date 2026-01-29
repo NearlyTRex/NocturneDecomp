@@ -7,7 +7,7 @@
 ; void *           Stack[0x4]:4   heap_state_ptr
 ;
 ; XREF[1]:
-;   crt_heap.c_heapCheckWrapper_FUN_006012c0 at 006012c5
+;   crt_heap.c__heapwalk_FUN_006012c0 at 006012c5
 ;
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000

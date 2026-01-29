@@ -89,7 +89,7 @@ void __cdecl CGlass::showEditorHelp(CGlass *this_ptr,int *y_pos);
 
 // Original: core_glass.cpp_CGlass_writeDependencies_FUN_004eb690
 // Address: 004eb690
-void __cdecl CGlass::writeDependencies(CGlass *this_ptr,FILE *file_handle);
+void __cdecl CGlass::writeDependencies(CGlass *this_ptr,_FILE *file_handle);
 
 // Original: core_glass.cpp_CGlass_dtor_FUN_004eb820
 // Address: 004eb820

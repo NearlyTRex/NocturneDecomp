@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[44]:
 ;   core_anvil.cpp_CAnvil_FUN_00412090 at 0041209c

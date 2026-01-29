@@ -40,7 +40,7 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
       new_buffer_size = iVar7 + 0x200;
     }
     if (this_ptr->__alloc_fn == (void *)0x0) {
-      new_buffer = crt_memory_c_malloc_FUN_006021da(new_buffer_size);
+      new_buffer = shape_memdbg_cpp_malloc_FUN_006021da(new_buffer_size);
     }
     else {
       new_buffer = (char *)(*this_ptr->__alloc_fn)();
@@ -101,7 +101,7 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
       }
       if (ptr != (char *)0x0) {
         if (this_ptr->__free_fn == (void *)0x0) {
-          crt_memory_c_free_FUN_005fe659(ptr);
+          shape_memdbg_cpp_free_FUN_005fe659(ptr);
         }
         else {
           (*this_ptr->__free_fn)();

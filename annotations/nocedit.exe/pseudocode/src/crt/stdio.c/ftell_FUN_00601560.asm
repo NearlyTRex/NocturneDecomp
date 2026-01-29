@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl long __cdecl crt_stdio_c_ftell_FUN_00601560(FILE *file_handle)
+; __cdecl long __cdecl crt_stdio_c_ftell_FUN_00601560(_FILE *file_handle)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[17]:
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e142f
@@ -12,7 +12,7 @@
 ;   core_script.cpp_CScript_dbLoad_FUN_005603c0 at 00560444
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579080
 ;   core_skeledit.cpp_FUN_00592690 at 005929fc
-;   crt_stdio.c_fclose_force_FUN_00601fd0 at 00602014
+;   crt_stdio.c__fclose_FUN_00601fd0 at 00602014
 ;   engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0 at 004b2f64
 ;   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 at 004b690b
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 at 0054fe27
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 0060157d (CONDITIONAL_JUMP)  ; LAB_0060157d
     PUSH EBX                            ; 00601574
     CALL crt_stdio.c_fflush_FUN_00601540 ; 00601575
-        ;   XREF to: 00601540 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00601540(FILE * stream)
+        ;   XREF to: 00601540 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00601540(_FILE * stream)
     ADD ESP,0x4                         ; 0060157a
     MOV EDX,dword ptr [EBX + 0x10]      ; 0060157d
         ;   Label: LAB_0060157d

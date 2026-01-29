@@ -81,15 +81,15 @@ void * __cdecl debugRealloc(void *ptr,int new_size,char *filename,int line_numbe
 
 // Original: shape_memdbg.cpp_debugMemdump_FUN_0050f6c0
 // Address: 0050f6c0
-void __cdecl debugMemdump(FILE *output_file);
+void __cdecl debugMemdump(_FILE *output_file);
 
 // Original: shape_memdbg.cpp_openFile_FUN_0050f7a0
 // Address: 0050f7a0
-FILE * __cdecl openFile(char *filename,char *directory,char *mode,char *source_file,int line_number);
+_FILE * __cdecl openFile(char *filename,char *directory,char *mode,char *source_file,int line_number);
 
 // Original: shape_memdbg.cpp_closeFile_FUN_0050f9b0
 // Address: 0050f9b0
-int __cdecl closeFile(FILE *file_ptr,char *source_file,int line_number);
+int __cdecl closeFile(_FILE *file_ptr,char *source_file,int line_number);
 
 // Original: shape_memdbg.cpp_CLeakChecker_ctor_FUN_0050fba0
 // Address: 0050fba0
@@ -98,3 +98,11 @@ CLeakChecker * __cdecl CLeakChecker::ctor(CLeakChecker *this_ptr);
 // Original: shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
 // Address: 0050fbc0
 CLeakChecker * __cdecl CLeakChecker::dtor(CLeakChecker *this_ptr,uint d1,uint d2,uint d3,uint d4);
+
+// Original: shape_memdbg.cpp_free_FUN_005fe659
+// Address: 005fe659
+void __cdecl free(void *ptr);
+
+// Original: shape_memdbg.cpp_malloc_FUN_006021da
+// Address: 006021da
+void * __cdecl malloc(SIZE_T size);

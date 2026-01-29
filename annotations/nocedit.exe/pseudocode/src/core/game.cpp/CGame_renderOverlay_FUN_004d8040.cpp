@@ -48,7 +48,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     }
     else {
       iVar3 = 0x4d8422;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar6 = round
                         ((double)this_ptr->message_timer * 65535);
       local_18 = (CGame *)(int)ROUND(dVar6);
     }
@@ -94,7 +94,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     iVar5 = core_script_cpp_FUN_00559ac0();
     iVar5 = g_WindowHeight - iVar5;
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_164,"%d - %s",g_CurrentDisplayText,&DAT_02d830a8);
+    sprintf(local_164,"%d - %s",g_CurrentDisplayText,&DAT_02d830a8);
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
               (this_ptr_00,local_164,iVar4 * 2,(iVar5 - iVar3) - iVar4,0xf8,0);
   }
@@ -137,7 +137,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         local_24 = iVar3;
         engine_2d_c_fillRectWithBorder_FUN_00403200(local_3c,local_34,local_58,iVar3,0,0);
         local_14 = (local_28 - iVar4) + 1;
-        dVar6 = crt_math_c_round_FUN_005fe6b0((double)((float)local_14 * fVar1));
+        dVar6 = round((double)((float)local_14 * fVar1));
         local_30 = (int)ROUND(dVar6);
         if (0 < local_30) {
           engine_2d_c_fillRectColor_FUN_00403170

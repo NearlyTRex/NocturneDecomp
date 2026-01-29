@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 39,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 12,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 52
+    "total_lines": 50
   },
   "cross_references": [],
   "function": {
@@ -51,12 +51,12 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     },
     {
       "addr": "005ff060",
       "is_variadic": false,
-      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+      "name": "crt_stdlib.c__atexit_FUN_005ff060"
     }
   ],
   "globals": [
@@ -153,16 +153,16 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 6,
       "match": "DAT_0066ef5c",
-      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0066ef5c);",
+      "text": "_atexit(&DAT_0066ef5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 8,
       "match": "DAT_0066ef6c",
-      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0066ef6c);",
+      "text": "_atexit(&DAT_0066ef6c);",
       "type": "undefined_data"
     }
   ]

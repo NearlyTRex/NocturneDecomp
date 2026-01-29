@@ -11,6 +11,6 @@ void * __watcallStack crt_iostream_cpp_streambuf_allocBuffer_FUN_0060d790(uint s
 {
   void *pvVar1;
   
-  pvVar1 = crt_memory_c_malloc_FUN_00601bb0(size);
+  pvVar1 = malloc(size);
   return pvVar1;
 }

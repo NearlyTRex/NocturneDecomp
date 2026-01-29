@@ -10,8 +10,8 @@
 ;   shape_superopt.cpp_FUN_005c9500 at 005c984b
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
 ;   crt_memory.c_free_FUN_00601cd0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH EBP                            ; 005c7a1e
     ADD ESI,0x8                         ; 005c7a1f
     INC EBX                             ; 005c7a22
-    CALL crt_memory.c_free_FUN_005fe659 ; 005c7a23
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 005c7a23
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     MOV EAX,dword ptr [EDI + 0x8]       ; 005c7a28
     ADD ESP,0x4                         ; 005c7a2b
     CMP EBX,EAX                         ; 005c7a2e
@@ -63,8 +63,8 @@ section .text
     MOV dword ptr [EDI + 0xc],0x0       ; 005c7a51
     PUSH EBX                            ; 005c7a58
     MOV dword ptr [EDI + 0x2c],0x0      ; 005c7a59
-    CALL crt_memory.c_free_FUN_005fe659 ; 005c7a60
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 005c7a60
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005c7a65
     MOV dword ptr [EDI + 0x30],0x0      ; 005c7a68
     POP EBP                             ; 005c7a6f

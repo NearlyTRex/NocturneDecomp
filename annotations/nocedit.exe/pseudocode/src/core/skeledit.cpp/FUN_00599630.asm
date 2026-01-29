@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -13,8 +13,8 @@ section .text
 
     PUSH 0x4                            ; 00599630
         ;   Label: core_skeledit.cpp_FUN_00599630
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00599635
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00599635
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     MOV EDX,dword ptr [ESP + 0x4]       ; 0059963a
     MOV EAX,dword ptr [ESP + 0x8]       ; 0059963e
     MOV EAX,dword ptr [EAX]             ; 00599642

@@ -2,12 +2,12 @@
 // Address: 005874d0
 // Address Range: [[005874d0, 0058754d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file_handle)
+core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;
@@ -33,7 +33,7 @@ core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file
   
   bVar6 = 0;
   local_14 = this_ptr->name;
-  crt_stdio_c_fgets_FUN_005fefd0(local_188,0xff,file_handle);
+  _fgets(local_188,0xff,file_handle);
   pcVar4 = local_188;
   uVar2 = 0xffffffff;
   pcVar5 = local_188;
@@ -65,28 +65,26 @@ core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",this_ptr);
-  crt_stdio_c_fscanf_FUN_005fe7c0
-            (file_handle,"%d,%d,%d\n",&this_ptr->color,&(this_ptr->color).g,&(this_ptr->color).b
+  _fscanf(file_handle,"%d\n",this_ptr);
+  _fscanf(file_handle,"%d,%d,%d\n",&this_ptr->color,&(this_ptr->color).g,&(this_ptr->color).b
             );
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->atten_start);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->atten_end);
-  crt_stdio_c_fscanf_FUN_005fe7c0
-            (file_handle,"%f,%f,%f\n",&this_ptr->pos,&(this_ptr->pos).y,&(this_ptr->pos).z);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",&fStack_38,&fStack_34,&fStack_30);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",afStack_20);
-  crt_stdio_c_fgets_FUN_005fefd0(acStack_88,0x50,file_handle);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->fov);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",auStack_18);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",auStack_18);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",auStack_18);
+  _fscanf(file_handle,"%f\n",&this_ptr->atten_start);
+  _fscanf(file_handle,"%f\n",&this_ptr->atten_end);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->pos,&(this_ptr->pos).y,&(this_ptr->pos).z);
+  _fscanf(file_handle,"%f,%f,%f\n",&fStack_38,&fStack_34,&fStack_30);
+  _fscanf(file_handle,"%f\n",afStack_20);
+  _fgets(acStack_88,0x50,file_handle);
+  _fscanf(file_handle,"%f\n",&this_ptr->fov);
+  _fscanf(file_handle,"%f\n",auStack_18);
+  _fscanf(file_handle,"%f\n",auStack_18);
+  _fscanf(file_handle,"%f\n",auStack_18);
   fStack_2c = fStack_38 - (this_ptr->pos).x;
   fStack_28 = fStack_34 - (this_ptr->pos).y;
   fStack_24 = fStack_30 - (this_ptr->pos).z;
   (this_ptr->orient).z = afStack_20[0];
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_2c,(float10)fStack_24);
+  fVar7 = atan2((float10)fStack_2c,(float10)fStack_24);
   (this_ptr->orient).y = (float)fVar7;
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_2c,x);
+  fVar7 = atan2((float10)fStack_2c,x);
   (this_ptr->orient).x = (float)-fVar7;
   return;
 }

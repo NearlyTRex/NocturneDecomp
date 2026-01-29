@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeStakes_FUN_004c99d0(CStake **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x100,&g_CStakeTypeInfo);
+  __arrfini(array,0x100,&g_CStakeTypeInfo);
   return;
 }

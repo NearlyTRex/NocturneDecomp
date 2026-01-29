@@ -93,7 +93,7 @@ LAB_0057af67:
     g_CDemonLightInstance.base.base.projection_scale = *(float *)((int)PTR_DAT_00681ab8 + 0x18);
     intensity = &g_CDemonLightInstance;
     this_ptr = (CDemonLight *)0x57b009;
-    dVar6 = crt_math_c_round_FUN_005fe6b0
+    dVar6 = round
                       ((double)(*(float *)(param_6 + 0x120) * (float)65536));
     g_CDemonLightInstance.transform_scale_factor = (int)ROUND(dVar6);
     core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(this_ptr,(float)intensity);
@@ -123,10 +123,10 @@ LAB_0057af67:
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
   engine_2d_c_drawText_FUN_00401fd0(acStack_70,0,0xb);
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (&stack0xfffffe90,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
   engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (&stack0xfffffe90,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8
              ,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),

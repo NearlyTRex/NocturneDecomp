@@ -30,10 +30,10 @@ void __cdecl shape_design_c_normalizeUVCoordinates_FUN_0046e340(void)
         local_20 = g_ModelPolygonData[local_18].uv_v[local_14];
       }
     }
-    dVar3 = crt_math_c_floor_FUN_005feb90
+    dVar3 = floor
                       ((double)((local_24 + 4.0) * (float)0.00390625));
     fVar1 = (float10)256;
-    dVar4 = crt_math_c_floor_FUN_005feb90
+    dVar4 = floor
                       ((double)((local_20 + 4.0) * (float)0.00390625));
     fVar2 = (float10)256;
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[local_18].vertex_indices_count;

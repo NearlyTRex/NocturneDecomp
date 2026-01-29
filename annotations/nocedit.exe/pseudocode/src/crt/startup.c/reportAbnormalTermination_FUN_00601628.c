@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void crt_startup_c_reportAbnormalTermination_FUN_00601628(void)
+void reportAbnormalTermination(void)
 
 {
-  crt_startup_c_HandleRuntimeError_FUN_00606660("ABNORMAL TERMINATION\r\n",0xff);
+  HandleRuntimeError("ABNORMAL TERMINATION\r\n",0xff);
   return;
 }

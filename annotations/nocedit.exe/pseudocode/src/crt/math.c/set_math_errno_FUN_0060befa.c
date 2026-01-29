@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-double __cdecl crt_math_c_set_math_errno_FUN_0060befa(int errorFlags,double *valuePtr)
+double __cdecl set_math_errno(int errorFlags,double *valuePtr)
 
 {
   double dVar1;
   
-  dVar1 = crt_math_c_process_math_error_FUN_0060bf2d(errorFlags,valuePtr,valuePtr);
+  dVar1 = process_math_error(errorFlags,valuePtr,valuePtr);
   return dVar1;
 }

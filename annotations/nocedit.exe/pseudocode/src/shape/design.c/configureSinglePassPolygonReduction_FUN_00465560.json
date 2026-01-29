@@ -29,9 +29,9 @@
       },
       {
         "category": "other",
-        "column": 31,
+        "column": 89,
         "line": 93,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -88,14 +88,14 @@
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
+      "addr": "005ff0f3",
+      "is_variadic": false,
+      "name": "crt_string.c__strtod_FUN_005ff0f3"
+    },
+    {
       "addr": "005fef20",
       "is_variadic": false,
       "name": "crt_string.c_strcmp_FUN_005fef20"
-    },
-    {
-      "addr": "005ff0f3",
-      "is_variadic": false,
-      "name": "crt_string.c_strtod_FUN_005ff0f3"
     },
     {
       "addr": "00401fd0",
@@ -366,7 +366,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_ffffff84",
-      "text": "dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff84);",
+      "text": "dVar8 = _strtod(in_stack_ffffff84);",
       "type": "stack_param"
     },
     {

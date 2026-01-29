@@ -8,15 +8,15 @@
 ;
 ; XREF[32]:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 at 006083ca
+;   crt_io.c_chsize_FUN_00600cf0 at 00600d0d
 ;   crt_io.c_close_FUN_00609bd0 at 00609be9
 ;   crt_io.c_close_handle_safe_FUN_0060c2e0 at 0060c2f4
-;   crt_io.c_ftruncate_FUN_00600cf0 at 00600d0d
 ;   crt_io.c_get_handle_FUN_006109f0 at 00610a02
 ;   crt_io.c_getcwd_FUN_00608d20 at 00608d8b
-;   crt_io.c_realpath_FUN_00601140 at 0060116d
 ;   crt_io.c_stat_FUN_00607e64 at 00607e98
 ;   crt_io.c_tell_FUN_00606720 at 00606734
 ;   crt_io.c_write_FUN_006084ec at 00608880
+;   crt_math.c_set_domain_error_errno_FUN_006027a0 at 006027a2
 ;   ... and 22 more
 ;
 ; Referenced Globals:

@@ -28,6 +28,6 @@ char * crt_unknown_c_FUN_0060ade0(void)
       local_14 = local_14 + 1;
     }
   }
-  crt_stdlib_c_i64toa_FUN_0060ad40((longlong *)&local_18,buffer,in_stack_0000000c);
+  i64toa((longlong *)&local_18,buffer,in_stack_0000000c);
   return in_stack_00000008;
 }

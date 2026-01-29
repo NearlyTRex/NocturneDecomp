@@ -21,17 +21,17 @@ shape_design_c_arePolygonsCoplanar_FUN_00461b70
   double dVar7;
   int local_2c;
   
-  dVar2 = crt_math_c_round_FUN_005fe6b0
+  dVar2 = round
                     ((double)((float)(int)scale_factor * (polygon1_ptr->normal).x));
-  dVar3 = crt_math_c_round_FUN_005fe6b0
+  dVar3 = round
                     ((double)((float)(int)scale_factor * (polygon1_ptr->normal).y));
-  dVar4 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = round
                     ((double)((float)(int)scale_factor * (polygon1_ptr->normal).z));
-  dVar5 = crt_math_c_round_FUN_005fe6b0
+  dVar5 = round
                     ((double)((float)(int)scale_factor * (polygon2_ptr->normal).x));
-  dVar6 = crt_math_c_round_FUN_005fe6b0
+  dVar6 = round
                     ((double)((float)(int)scale_factor * (polygon2_ptr->normal).y));
-  dVar7 = crt_math_c_round_FUN_005fe6b0
+  dVar7 = round
                     ((double)((float)(int)scale_factor * (polygon2_ptr->normal).z));
   uVar1 = (int)ROUND(dVar2) - (int)ROUND(dVar5) >> 0x1f;
   if ((((int)(((int)ROUND(dVar2) - (int)ROUND(dVar5) ^ uVar1) - uVar1) < tolerance) &&

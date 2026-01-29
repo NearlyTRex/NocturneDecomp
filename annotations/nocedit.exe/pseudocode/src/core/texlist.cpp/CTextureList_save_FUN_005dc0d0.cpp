@@ -16,7 +16,7 @@ void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_
   char *pcVar5;
   int iVar6;
   char local_114 [256];
-  FILE *local_14;
+  _FILE *local_14;
   
   pcVar5 = local_114;
   do {
@@ -56,13 +56,13 @@ LAB_005dc120:
     pcVar5 = pcVar5 + 2;
   } while (cVar2 != '\0');
   local_14 = engine_dosio_c_getFile_FUN_00481a50("data",local_114,"wt");
-  if (local_14 == (FILE *)0x0) {
+  if (local_14 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\texlist.cpp";
     g_CurrentLineNumber = 0xb6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureList::save - Bad filename!");
   }
   iVar6 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(local_14,"%d\n",this_ptr->texture_count);
+  _fprintf(local_14,"%d\n",this_ptr->texture_count);
   if (0 < this_ptr->texture_count) {
     pCVar3 = this_ptr;
     pcVar5 = this_ptr->texture_entries[0].texture_name;
@@ -70,7 +70,7 @@ LAB_005dc120:
       piVar1 = pCVar3->texture_values;
       pCVar3 = (CTextureList *)pCVar3->texture_entries;
       iVar6 = iVar6 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(local_14,"%s,%d\n",pcVar5,*piVar1);
+      _fprintf(local_14,"%s,%d\n",pcVar5,*piVar1);
       pcVar5 = pcVar5 + 0x18;
     } while (iVar6 < this_ptr->texture_count);
   }

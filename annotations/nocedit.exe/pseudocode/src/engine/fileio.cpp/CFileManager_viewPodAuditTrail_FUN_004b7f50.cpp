@@ -14,7 +14,7 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
   char cVar1;
   uint uVar2;
   int iVar3;
-  tm *time_ptr;
+  _tm *time_ptr;
   uint unaff_EBX;
   char *pcVar4;
   int record_index;
@@ -99,8 +99,8 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
         puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
         pcVar4 = pcVar4 + ((uint)bVar8 * -2 + 1) * 4;
       }
-      time_ptr = crt_time_c_localtime_FUN_00600288(&local_2e8);
-      crt_time_c_strftime_FUN_006002d4(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
+      time_ptr = localtime(&local_2e8);
+      strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
       pcVar4 = "???";
       if (local_2e4 == 0) {
         pcVar4 = "Add";
@@ -112,8 +112,8 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
         pcVar4 = "Change";
       }
       if ((local_2e8 != local_10) ||
-         (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_308,local_98), iVar3 != 0)) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_508,"--\t%s\t%s",local_308,local_34);
+         (iVar3 = stricmp(local_308,local_98), iVar3 != 0)) {
+        sprintf(local_508,"--\t%s\t%s",local_308,local_34);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
         pcVar6 = local_308;
         pcVar7 = local_98;
@@ -128,12 +128,12 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
           pcVar7 = pcVar7 + 2;
         } while (cVar1 != '\0');
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_508,"\t%s\t%s",pcVar4,local_2e0);
+      sprintf(local_508,"\t%s\t%s",pcVar4,local_2e0);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
       record_index = record_index + 1;
     } while (record_index < (int)local_14);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_508,"Viewing audit history for:\n%s",&stack0xfffff328);
+  sprintf(local_508,"Viewing audit history for:\n%s",&stack0xfffff328);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&local_8b0,local_508,-1,0)
   ;
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80

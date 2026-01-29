@@ -16,7 +16,7 @@ support_trisock_cpp_parseIPComponents_FUN_005e1800(uint *result_ptr,char *dotted
   int local_c;
   int local_8;
   
-  iVar1 = crt_stdio_c_sscanf_FUN_0060013c
+  iVar1 = sscanf
                     (dotted_decimal_string,"%d.%d.%d.%d",&local_14,&local_10,&local_c,&local_8)
   ;
   if (iVar1 != 4) {

@@ -43,39 +43,38 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
   int local_1c;
   int local_18;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x74);
+  __STK(0x74);
   pCVar16 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);
   iVar13 = pCVar16->bone_count;
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// lodCount,textureSetCount,textureCount,boneCount,partCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d,%d,%d,%d,%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// Lod list: VertexCount,triCount,capTriCount,pixelHeight,shadowOnlyFlag\n");
+  _fprintf((_FILE *)this_ptr,"// version\n");
+  _fprintf((_FILE *)this_ptr,"%d\n");
+  _fprintf((_FILE *)this_ptr,"// lodCount,textureSetCount,textureCount,boneCount,partCount\n");
+  _fprintf((_FILE *)this_ptr,"%d,%d,%d,%d,%d\n");
+  _fprintf((_FILE *)this_ptr,"// Lod list: VertexCount,triCount,capTriCount,pixelHeight,shadowOnlyFlag\n");
   iVar22 = 0;
   if (0 < in_stack_00000004->num_lods) {
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d,%d,%d,%d,%d\n");
+      _fprintf((_FILE *)this_ptr,"%d,%d,%d,%d,%d\n");
       iVar22 = iVar22 + 1;
     } while (iVar22 < in_stack_00000004->num_lods);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// skeleton file\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%s\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// partList: \"name\", dominantBone, adjPartCount, adjpartList, lods(triCount, capTriCount)\n");
+  _fprintf((_FILE *)this_ptr,"// skeleton file\n");
+  _fprintf((_FILE *)this_ptr,"%s\n");
+  _fprintf((_FILE *)this_ptr,"// partList: \"name\", dominantBone, adjPartCount, adjpartList, lods(triCount, capTriCount)\n");
   local_24 = 0;
   pCVar20 = in_stack_00000004;
   if (0 < in_stack_00000004->num_parts) {
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"\"%s\", %d\n");
+      _fprintf((_FILE *)this_ptr,"\"%s\", %d\n");
       for (iVar22 = 0; iVar22 < in_stack_00000004->parts[local_24].adj_part_count;
           iVar22 = iVar22 + 1) {
-        crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"\t%d\n");
+        _fprintf((_FILE *)this_ptr,"\t%d\n");
       }
       iVar22 = 0;
       pCVar18 = pCVar20;
       if (0 < in_stack_00000004->num_lods) {
         do {
-          crt_stdio_c_fprintf_FUN_005fe6d0
-                    ((FILE *)this_ptr,"\t%d, %d\n",pCVar18->parts[0].tri_counts[0]);
+          _fprintf((_FILE *)this_ptr,"\t%d, %d\n",pCVar18->parts[0].tri_counts[0]);
           iVar22 = iVar22 + 1;
           pCVar18 = (CDeformableModel *)pCVar18->lod_info;
         } while (iVar22 < in_stack_00000004->num_lods);
@@ -84,7 +83,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
       pCVar20 = (CDeformableModel *)(pCVar20->tri_count + 3);
     } while (local_24 < in_stack_00000004->num_parts);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// vertexList: boneCount, boneInfo(index, weight, x,y,z)\n");
+  _fprintf((_FILE *)this_ptr,"// vertexList: boneCount, boneInfo(index, weight, x,y,z)\n");
   local_28 = 0;
   if (0 < in_stack_00000004->num_lods) {
     local_38 = 0;
@@ -93,12 +92,12 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
       for (local_18 = 0; local_18 < *(int *)((int)in_stack_00000004->vertex_count + local_38);
           local_18 = local_18 + 1) {
         pbVar17 = (byte *)(local_1c + *(int *)((int)in_stack_00000004->vertex_data_ptr + local_38));
-        crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d\n");
+        _fprintf((_FILE *)this_ptr,"%d\n");
         pbVar23 = pbVar17;
         for (iVar22 = 0; iVar22 < (int)(uint)*pbVar17; iVar22 = iVar22 + 1) {
           pbVar1 = pbVar23 + 1;
           pbVar23 = pbVar23 + 1;
-          crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d, %g, %g,%g,%g\n",(uint)*pbVar1);
+          _fprintf((_FILE *)this_ptr,"%d, %g, %g,%g,%g\n",(uint)*pbVar1);
         }
         local_1c = local_1c + 0x34;
       }
@@ -106,7 +105,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
       local_28 = local_28 + 1;
     } while (local_28 < in_stack_00000004->num_lods);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// triList: textureIndex, verts(index, u, v)\n");
+  _fprintf((_FILE *)this_ptr,"// triList: textureIndex, verts(index, u, v)\n");
   local_2c = 0;
   if (0 < in_stack_00000004->num_lods) {
     local_30 = in_stack_00000004;
@@ -127,8 +126,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
         puVar5 = (uint *)((int)local_30->index_data_ptr[0] + iVar22);
         iVar22 = iVar22 + 4;
         iVar21 = iVar21 + 0x12;
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  ((FILE *)this_ptr,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",*puVar5,(uint)*puVar4,
+        _fprintf((_FILE *)this_ptr,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",*puVar5,(uint)*puVar4,
                    (uint)*puVar12 << 8,(uint)*puVar11 << 8,(uint)*puVar10,(uint)*puVar9 << 8,
                    (uint)*puVar8 << 8,(uint)*puVar7,(uint)*puVar6 << 8);
       }
@@ -136,34 +134,34 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
       local_2c = local_2c + 1;
     } while (local_2c < in_stack_00000004->num_lods);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// capTriList: matching part\n");
+  _fprintf((_FILE *)this_ptr,"// capTriList: matching part\n");
   iVar22 = 0;
   if (0 < in_stack_00000004->num_lods) {
     local_34 = 0;
     do {
       for (iVar21 = 0; iVar21 < *(int *)((int)in_stack_00000004->cap_tri_count + local_34);
           iVar21 = iVar21 + 1) {
-        crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d\n");
+        _fprintf((_FILE *)this_ptr,"%d\n");
       }
       iVar22 = iVar22 + 1;
       local_34 = local_34 + 4;
     } while (iVar22 < in_stack_00000004->num_lods);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// texture list\n");
+  _fprintf((_FILE *)this_ptr,"// texture list\n");
   iVar22 = 0;
   if (0 < in_stack_00000004->num_texture_sets) {
     do {
       iVar21 = 0;
       if (0 < in_stack_00000004->num_textures) {
         do {
-          crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%s\n");
+          _fprintf((_FILE *)this_ptr,"%s\n");
           iVar21 = iVar21 + 1;
         } while (iVar21 < in_stack_00000004->num_textures);
       }
       iVar22 = iVar22 + 1;
     } while (iVar22 < in_stack_00000004->num_texture_sets);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// bone origin list\n");
+  _fprintf((_FILE *)this_ptr,"// bone origin list\n");
   iVar22 = 0;
   if (0 < iVar13) {
     pCVar19 = in_stack_00000004->vertex_pool;
@@ -173,25 +171,22 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
       pfVar15 = &pCVar19->x;
       pCVar19 = pCVar19 + 1;
       iVar22 = iVar22 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                ((FILE *)this_ptr,"%g,%g,%g\n",(double)*pfVar15,(double)*pfVar3,(double)*pfVar2)
-      ;
+      _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)*pfVar15,(double)*pfVar3,(double)*pfVar2
+                );
     } while (iVar22 < iVar13);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// defaultRootOffsetScale\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            ((FILE *)this_ptr,"%g,%g,%g\n",(double)(in_stack_00000004->model_scale).x,
+  _fprintf((_FILE *)this_ptr,"// defaultRootOffsetScale\n");
+  _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)(in_stack_00000004->model_scale).x,
              (double)(in_stack_00000004->model_scale).y,(double)(in_stack_00000004->model_scale).z);
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// biasUsed\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            ((FILE *)this_ptr,"%g,%g,%g\n",(double)in_stack_00000004->bbox_pool[0].min.x,
+  _fprintf((_FILE *)this_ptr,"// biasUsed\n");
+  _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)in_stack_00000004->bbox_pool[0].min.x,
              (double)in_stack_00000004->bbox_pool[0].min.y,
              (double)in_stack_00000004->bbox_pool[0].min.z);
-  crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"// partForBoneList\n");
+  _fprintf((_FILE *)this_ptr,"// partForBoneList\n");
   iVar22 = 0;
   if (0 < iVar13) {
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)this_ptr,"%d\n");
+      _fprintf((_FILE *)this_ptr,"%d\n");
       iVar22 = iVar22 + 1;
     } while (iVar22 < iVar13);
   }

@@ -17,11 +17,11 @@ uint core_zombie_cpp_CZombie_FUN_005fbd00(void)
   uint in_stack_00000008;
   
   if ((in_stack_00000008 != 2) &&
-     (iVar1 = crt_string_c_stricmp_FUN_005fe7f0
+     (iVar1 = stricmp
                         ((char *)(in_stack_00000004 + 0x23b8),"jeff.dfm"), iVar1 == 0)) {
     return 0xffffffff;
   }
-  iVar1 = crt_string_c_strnicmp_FUN_005ff070((char *)(in_stack_00000004 + 0x23b8),"new",3);
+  iVar1 = strnicmp((char *)(in_stack_00000004 + 0x23b8),"new",3);
   if (iVar1 == 0) {
     if (in_stack_00000008 < 2) {
       if (in_stack_00000008 != 1) {

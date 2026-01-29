@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -53,7 +53,7 @@ section .text
     PUSH EBP                            ; 004ff22a
     MOV dword ptr [ESP + 0x10],EDX      ; 004ff22b | g_PropertyNamePrefix
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff22f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ff234
     PUSH 0x1                            ; 004ff237
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ; 004ff239
@@ -64,7 +64,7 @@ section .text
     PUSH EBP                            ; 004ff24b
     MOV dword ptr [EBX + 0x32c],0x2     ; 004ff24c
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff256
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ff25b
     MOV ECX,dword ptr [EBX + 0x32c]     ; 004ff25e
     PUSH ECX                            ; 004ff264
@@ -72,13 +72,13 @@ section .text
     PUSH 0x6308aa                       ; 004ff26a | = "%s%d\n"
     PUSH EBP                            ; 004ff26f
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff270
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004ff275
     PUSH 0x66e178                       ; 004ff278 | g_PropertyNamePrefix
     PUSH 0x6308b0                       ; 004ff27d | = "%s// itemCount\n"
     PUSH EBP                            ; 004ff282
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff283
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ff288
     MOV ESI,dword ptr [EBX + 0x8]       ; 004ff28b
     PUSH ESI                            ; 004ff28e
@@ -87,7 +87,7 @@ section .text
     PUSH EBP                            ; 004ff299
     MOV EDI,0xffffffff                  ; 004ff29a
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff29f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004ff2a4
     MOV EDX,dword ptr [EBX + 0x8]       ; 004ff2a7
     XOR EAX,EAX                         ; 004ff2aa
@@ -108,7 +108,7 @@ section .text
     PUSH 0x6308c6                       ; 004ff2cc | = "%s// currentWeapon\n"
     PUSH EBP                            ; 004ff2d1
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff2d2
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ff2d7
     MOV ESI,dword ptr [ESP]             ; 004ff2da
     PUSH ESI                            ; 004ff2dd
@@ -117,13 +117,13 @@ section .text
     PUSH 0x6308da                       ; 004ff2e3 | = "%s%d\n"
     PUSH EBP                            ; 004ff2e8
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff2e9
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004ff2ee
     PUSH EDI                            ; 004ff2f1 | g_PropertyNamePrefix
     PUSH 0x6308e0                       ; 004ff2f2 | = "%s// battery strength\n"
     PUSH EBP                            ; 004ff2f7
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff2f8
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ff2fd
     SUB ESP,0x8                         ; 004ff300
     FLD float ptr [EBX]                 ; 004ff303
@@ -132,25 +132,25 @@ section .text
     PUSH 0x6308f7                       ; 004ff309 | = "%s%f\n"
     PUSH EBP                            ; 004ff30e
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff30f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004ff314
     PUSH EDI                            ; 004ff317 | g_PropertyNamePrefix
     PUSH 0x6308fd                       ; 004ff318 | = "%s// actor name list\n"
     PUSH EBP                            ; 004ff31d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff31e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ff323
     PUSH EBP                            ; 004ff326
     PUSH EBX                            ; 004ff327
     CALL core_inv.cpp_CInventory_saveItems_FUN_004ff3b0 ; 004ff328
-        ;   XREF to: 004ff3b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_saveItems_FUN_004ff3b0(CInventory * this_ptr, FILE * file_handle)
+        ;   XREF to: 004ff3b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_saveItems_FUN_004ff3b0(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004ff32d
     PUSH EDI                            ; 004ff330 | g_PropertyNamePrefix
     PUSH 0x630913                       ; 004ff331 | = "%s// actor data list\n"
     PUSH EBP                            ; 004ff336
     XOR EDI,EDI                         ; 004ff337
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff339
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EAX,dword ptr [EBX + 0x8]       ; 004ff33e
     ADD ESP,0xc                         ; 004ff341
     TEST EAX,EAX                        ; 004ff344
@@ -164,7 +164,7 @@ section .text
     ADD ESI,0x4                         ; 004ff34f
     INC EDI                             ; 004ff352
     CALL core_actor.cpp_CDemonActor_save_FUN_0040af30 ; 004ff353
-        ;   XREF to: 0040af30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040af30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, _FILE * file_handle)
     MOV ECX,dword ptr [EBX + 0x8]       ; 004ff358
     ADD ESP,0x8                         ; 004ff35b
     CMP EDI,ECX                         ; 004ff35e
@@ -183,7 +183,7 @@ section .text
     PUSH 0x630929                       ; 004ff37f | = "%s} // End inventory\n"
     PUSH EBP                            ; 004ff384
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff385
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ff38a
     ADD ESP,0x8                         ; 004ff38d
     POP EBP                             ; 004ff390

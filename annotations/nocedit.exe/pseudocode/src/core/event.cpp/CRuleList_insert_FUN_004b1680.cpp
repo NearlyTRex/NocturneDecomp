@@ -27,11 +27,11 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::insert - list full");
   }
   src = this_ptr + in_stack_00000008 * 0x19 + 1;
-  crt_string_c_memmove_FUN_005fe5e0
+  memmove
             (this_ptr + (in_stack_00000008 + 1) * 0x19 + 1,src,
              (this_ptr->list_size - in_stack_00000008) * 100);
   src_00 = this_ptr + in_stack_00000008 * 0x19 + 0x7e;
-  crt_string_c_memmove_FUN_005fe5e0
+  memmove
             (this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e,src_00,
              (this_ptr->list_size - in_stack_00000008) * 100);
   this_ptr->list_size = this_ptr->list_size + 1;

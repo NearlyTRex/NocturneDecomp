@@ -13,9 +13,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(CPackedBit
   
   g_CurrentDebugFilename = "..\\cockpit\\pkbmpset.cpp";
   g_CurrentDebugLine = 0x4d;
-  ptr = crt_memory_c_freeSingleInstance_FUN_005fe632
-                  (this_ptr->bitmap_array,&g_CPackedBitmapTypeInfo);
-  crt_memory_c_free_FUN_005fe659(ptr);
+  ptr = __vec_delete(this_ptr->bitmap_array,&g_CPackedBitmapTypeInfo);
+  shape_memdbg_cpp_free_FUN_005fe659(ptr);
   this_ptr->bitmap_count = 0;
   this_ptr->bitmap_array = (CPackedBitmap *)0x0;
   return;

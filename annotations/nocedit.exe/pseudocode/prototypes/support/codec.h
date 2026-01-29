@@ -9,15 +9,15 @@ void __cdecl resetDictionary(CLZWDictionary *dict);
 
 // Original: support_codec.cpp_readBitsFromStream_FUN_0043e530
 // Address: 0043e530
-int __cdecl readBitsFromStream(SBitBuffer *bit_buffer,int bit_count,FILE *file_stream,int *bytes_remaining);
+int __cdecl readBitsFromStream(SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining);
 
 // Original: support_codec.cpp_writeBitsToStream_FUN_0043e6c0
 // Address: 0043e6c0
-void __cdecl writeBitsToStream(SBitBuffer *bit_buffer,int bit_count,int bit_value,FILE *output_stream);
+void __cdecl writeBitsToStream(SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream);
 
 // Original: support_codec.cpp_flushBitBuffer_FUN_0043e7e0
 // Address: 0043e7e0
-void __cdecl flushBitBuffer(SBitBuffer *bit_buffer,FILE *output_stream);
+void __cdecl flushBitBuffer(SBitBuffer *bit_buffer,_FILE *output_stream);
 
 // Original: support_codec.cpp_extractBitsFromBuffer_FUN_0043e840
 // Address: 0043e840
@@ -37,11 +37,11 @@ void __cdecl CCodec::init(CCodec *this_ptr);
 
 // Original: support_codec.cpp_CCodec_finalize_FUN_0043ea00
 // Address: 0043ea00
-int __cdecl CCodec::finalize(CCodec *this_ptr,FILE *output_file);
+int __cdecl CCodec::finalize(CCodec *this_ptr,_FILE *output_file);
 
 // Original: support_codec.cpp_CCodec_process_FUN_0043ea10
 // Address: 0043ea10
-int __cdecl CCodec::process(CCodec *this_ptr,FILE *input_file,int byte_count,FILE *output_file);
+int __cdecl CCodec::process(CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file);
 
 // Original: support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
 // Address: 0043ea80
@@ -93,7 +93,7 @@ int __cdecl CLZWDictionary::addNode(CLZWDictionary *this_ptr,int code,int parent
 
 // Original: support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030
 // Address: 0043f030
-int __cdecl CLZWDictionary::readCodeFromStream(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,FILE *input_file,int *bytes_remaining);
+int __cdecl CLZWDictionary::readCodeFromStream(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_FILE *input_file,int *bytes_remaining);
 
 // Original: support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0
 // Address: 0043f0d0
@@ -101,11 +101,11 @@ int __cdecl CLZWDictionary::writeCodeToStream(CLZWDictionary *this_ptr,SBitBuffe
 
 // Original: support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170
 // Address: 0043f170
-void __cdecl CLZWDictionary::writeCodeBits(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,FILE *output_stream);
+void __cdecl CLZWDictionary::writeCodeBits(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_FILE *output_stream);
 
 // Original: support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200
 // Address: 0043f200
-int __cdecl CLZWDictionary::writeCodeSequence(CLZWDictionary *this_ptr,int code,FILE *output_file);
+int __cdecl CLZWDictionary::writeCodeSequence(CLZWDictionary *this_ptr,int code,_FILE *output_file);
 
 // Original: support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
 // Address: 0043f270
@@ -121,11 +121,11 @@ void __cdecl CLZWCompress::init(CLZWCompress *this_ptr);
 
 // Original: support_codec.cpp_CLZWCompress_process_FUN_0043f360
 // Address: 0043f360
-int __cdecl CLZWCompress::process(CLZWCompress *this_ptr,FILE *input_file,int byte_count,FILE *output_file);
+int __cdecl CLZWCompress::process(CLZWCompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file);
 
 // Original: support_codec.cpp_CLZWCompress_finalize_FUN_0043f440
 // Address: 0043f440
-int __cdecl CLZWCompress::finalize(CLZWCompress *this_ptr,FILE *output_file);
+int __cdecl CLZWCompress::finalize(CLZWCompress *this_ptr,_FILE *output_file);
 
 // Original: support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490
 // Address: 0043f490
@@ -137,11 +137,11 @@ void __cdecl CLZWDecompress::init(CLZWDecompress *this_ptr);
 
 // Original: support_codec.cpp_CLZWDecompress_process_FUN_0043f510
 // Address: 0043f510
-int __cdecl CLZWDecompress::process(CLZWDecompress *this_ptr,FILE *input_file,int byte_count,FILE *output_file);
+int __cdecl CLZWDecompress::process(CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file);
 
 // Original: support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590
 // Address: 0043f590
-int __cdecl CLZWDecompress::finalize(CLZWDecompress *this_ptr,FILE *output_file);
+int __cdecl CLZWDecompress::finalize(CLZWDecompress *this_ptr,_FILE *output_file);
 
 // Original: support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0
 // Address: 0043f5d0

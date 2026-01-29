@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_stat_thunk_00600c18(char *filename,stat *file_info)
+; __cdecl int __cdecl crt_io_c_stat_thunk_00600c18(char *filename,_stat *file_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; stat *           Stack[0x8]:4   file_info
+; _stat *          Stack[0x8]:4   file_info
 ; Local Variables:
 ; undefined4       Stack[-0x368]:4  local_368
 ; undefined1       Stack[-0x364]:1  local_364

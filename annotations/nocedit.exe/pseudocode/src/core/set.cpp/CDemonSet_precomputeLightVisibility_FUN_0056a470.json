@@ -39,13 +39,13 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
+        "column": 26,
         "line": 145,
         "message": "'stack0xfffffe8c' was not declared in this scope; did you mean 'in_stack_fffffe8c'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
+        "column": 16,
         "line": 187,
         "message": "'stack0xfffffe8c' was not declared in this scope; did you mean 'in_stack_fffffe8c'?"
       }
@@ -122,14 +122,13 @@
   },
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 398,
+    "complexity_score": 373,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
     "pseudocode_lines": 193,
-    "suspect_count": 18,
+    "suspect_count": 16,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -672,7 +671,7 @@
       "description": "Direct stack address reference",
       "line": 138,
       "match": "&stack0xfffffe8c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
+      "text": "sprintf(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
       "type": "stack_ref"
     },
     {
@@ -686,7 +685,7 @@
       "description": "Direct stack address reference",
       "line": 180,
       "match": "&stack0xfffffe8c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
+      "text": "sprintf(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
       "type": "stack_ref"
     },
     {
@@ -695,28 +694,6 @@
       "match": "&stack0xfffffe8c",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0);",
       "type": "stack_ref"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Light %d, Box : %d,%d,%d,%d\" has 5 specifiers but 0 arguments after it",
-      "expected_args": 5,
-      "format_string": "Light %d, Box : %d,%d,%d,%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 138,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
-      "text": "Format string expects 5 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Precomputing lights from camera : %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Precomputing lights from camera : %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 180,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

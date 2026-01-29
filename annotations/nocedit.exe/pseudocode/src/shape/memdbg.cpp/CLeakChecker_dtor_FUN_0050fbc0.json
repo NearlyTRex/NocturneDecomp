@@ -1,7 +1,20 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 21,
+        "line": 23,
+        "message": "cannot convert 'FILE*' to '_FILE*' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 21,
+        "line": 53,
+        "message": "cannot convert 'FILE*' to '_FILE*' in assignment"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -13,18 +26,6 @@
         "category": "other",
         "column": 47,
         "line": 22,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -41,88 +42,58 @@
       },
       {
         "category": "other",
-        "column": 31,
-        "line": 35,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 40,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 27,
-        "line": 48,
+        "line": 46,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 51,
+        "line": 49,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 54,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 55,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 58,
+        "line": 56,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 60,
+        "line": 58,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 65,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 70,
+        "line": 67,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 72,
+        "line": 69,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 66,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 63,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 236
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -146,7 +117,7 @@
     {
       "addr": "00601ea0",
       "is_variadic": false,
-      "name": "crt_stdio.c_closeTrackedFile_FUN_00601ea0"
+      "name": "crt_stdio.c_fclose_FUN_00601ea0"
     },
     {
       "addr": "00601a7c",

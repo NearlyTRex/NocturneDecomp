@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510 (CLZWDecompress *this_ptr,FILE *input_file,int byte_count,FILE *output_file)
+; __cdecl int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510 (CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
 ;
 ; Parameters:
 ; CLZWDecompress * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   input_file
+; _FILE *          Stack[0x8]:4   input_file
 ; int              Stack[0xc]:4   byte_count
-; FILE *           Stack[0x10]:4   output_file
+; _FILE *          Stack[0x10]:4   output_file
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1618
@@ -37,7 +37,7 @@ section .text
     LEA ESI,[EBX + 0x4]                 ; 0043f526
     PUSH ESI                            ; 0043f529
     CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 ; 0043f52a
-        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)
+        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, _FILE * output_file)
     MOV EDX,dword ptr [EBX + 0x28]      ; 0043f52f
     ADD ESP,0xc                         ; 0043f532
     TEST EDX,EDX                        ; 0043f535
@@ -67,7 +67,7 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 0043f56a
     PUSH EAX                            ; 0043f56d
     CALL support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 ; 0043f56e
-        ;   XREF to: 0043f030 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, FILE * input_file, int * bytes_remaining)
+        ;   XREF to: 0043f030 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, _FILE * input_file, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043f573
     MOV dword ptr [EBX + 0x2c],EAX      ; 0043f576
     TEST EAX,EAX                        ; 0043f579

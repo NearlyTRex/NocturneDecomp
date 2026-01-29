@@ -11,7 +11,7 @@ void __cdecl core_setedit_cpp_CallToFreeSomeMemory_FUN_00580560(CDemonSet *this_
 {
   g_CurrentDebugFilename = "..\\core\\setedit.cpp";
   g_CurrentDebugLine = 0x1036;
-  crt_memory_c_free_FUN_005fe659(DAT_03659384);
+  shape_memdbg_cpp_free_FUN_005fe659(DAT_03659384);
   DAT_03659384 = (void *)0x0;
   return;
 }

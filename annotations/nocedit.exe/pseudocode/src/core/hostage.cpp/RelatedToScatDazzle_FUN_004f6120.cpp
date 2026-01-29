@@ -18,7 +18,7 @@ void core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
   iVar1 = (*(((in_stack_00000004->base).base.vtable._uc)->_uc).isDamageable)
                     (&in_stack_00000004->base);
   if (0 < iVar1) {
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)in_stack_00000004,"ScatDazzle");
+    iVar1 = stricmp((char *)in_stack_00000004,"ScatDazzle");
     if (iVar1 != 0) {
       if (in_stack_0000000c != 0) {
         (in_stack_00000004->base).unk1[0] = '\x01';

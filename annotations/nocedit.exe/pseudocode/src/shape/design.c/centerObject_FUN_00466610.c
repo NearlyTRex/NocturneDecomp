@@ -60,7 +60,7 @@ void __cdecl shape_design_c_centerObject_FUN_00466610(void)
   if (iVar1 == 0x1b) {
     return;
   }
-  local_1c = crt_stdio_c_sscanf_FUN_0060013c(local_b8,"%d,%d",&local_14,&local_20);
+  local_1c = sscanf(local_b8,"%d,%d",&local_14,&local_20);
   if (0 < local_1c) {
     if (local_1c != 2) {
       engine_2d_c_drawText_FUN_00401fd0("Need two points.",0,0x16);
@@ -78,7 +78,7 @@ void __cdecl shape_design_c_centerObject_FUN_00466610(void)
     engine_2d_c_drawText_FUN_00401fd0("Which axis to center - X, Y, or Z? : ",0,0x16);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    uVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
+    uVar2 = toupper(uVar2 & 0xff);
     if (uVar2 < 0x59) {
       if (uVar2 == 0x58) {
         local_38 = (double)g_LoadedVertices[local_20].vertex.x;

@@ -9,7 +9,7 @@
 void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_ptr,char *filename)
 
 {
-  FILE *file_handle;
+  _FILE *file_handle;
   CZThumb *this_ptr_00;
   int iVar1;
   int iVar2;
@@ -18,7 +18,7 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_
   int local_14;
   
   file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"wb");
-  if (file_handle == (FILE *)0x0) {
+  if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
     g_CurrentLineNumber = 0x3bf;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",filename);

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_io_c_getTempDirectory_FUN_00609afc(void)
+char * __cdecl getTempDirectory(void)
 
 {
   char cVar1;
@@ -19,7 +19,7 @@ char * __cdecl crt_io_c_getTempDirectory_FUN_00609afc(void)
   bVar6 = 0;
   if (g_TempDirectoryBuffer[0] == '\0') {
     for (pppcVar4 = &g_TempEnvVarNames; *(char *)*pppcVar4 != '\0'; pppcVar4 = pppcVar4 + 1) {
-      pcVar2 = crt_env_c_getenv_FUN_006013f0((char *)*pppcVar4);
+      pcVar2 = getenv((char *)*pppcVar4);
       if (pcVar2 != (char *)0x0) {
         uVar3 = 0xffffffff;
         pcVar5 = pcVar2;
@@ -30,13 +30,13 @@ char * __cdecl crt_io_c_getTempDirectory_FUN_00609afc(void)
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
         if (~uVar3 - 1 < 0x104) {
-          crt_io_c_realpath_FUN_00601140(g_TempDirectoryBuffer,pcVar2,0x103);
+          _fullpath(g_TempDirectoryBuffer,pcVar2,0x103);
           break;
         }
       }
     }
     if (g_TempDirectoryBuffer[0] == '\0') {
-      pcVar2 = crt_io_c_getcwd_FUN_00608d20((char *)0x0,0);
+      pcVar2 = getcwd((char *)0x0,0);
       pcVar5 = g_TempDirectoryBuffer;
       do {
         cVar1 = *pcVar2;

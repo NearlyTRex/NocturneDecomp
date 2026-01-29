@@ -33,7 +33,7 @@
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
 ;   core_mission.cpp_CDemonMission_FUN_00523fb0
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -47,8 +47,8 @@ section .text
     PUSH EDI                            ; 0053c142
     MOV EBX,dword ptr [ESP + 0x10]      ; 0053c143
     PUSH 0x680800                       ; 0053c147 | = "$$UNDO$$.TMP"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0053c14c
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0053c14c
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 0053c151
     MOV EDX,0xffffffff                  ; 0053c154
     MOV EAX,dword ptr [ESP + 0x14]      ; 0053c159
@@ -86,7 +86,7 @@ section .text
     PUSH 0x0                            ; 0053c1b6
     PUSH 0x680800                       ; 0053c1b8 | = "$$UNDO$$.TMP"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0053c1bd
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV ESI,EAX                         ; 0053c1c2
     ADD ESP,0x14                        ; 0053c1c4
     TEST EAX,EAX                        ; 0053c1c7
@@ -112,13 +112,13 @@ section .text
     MOV EDI,dword ptr [EBX + 0x28]      ; 0053c1e1
     PUSH EDI                            ; 0053c1e4
     CALL core_actor.cpp_CDemonActor_save_FUN_0040af30 ; 0053c1e5
-        ;   XREF to: 0040af30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040af30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0053c1ea
     PUSH 0xa02                          ; 0053c1ed
     PUSH 0x63c83c                       ; 0053c1f2 | = "..\\core\\msnedit.cpp"
     PUSH ESI                            ; 0053c1f7
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0053c1f8
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0053c1fd
     POP EDI                             ; 0053c200
     POP ESI                             ; 0053c201

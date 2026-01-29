@@ -9,7 +9,7 @@
 void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411c00(CAmmoBox *this_ptr)
 
 {
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
             (&this_ptr->model,in_stack_00000008);

@@ -2,11 +2,11 @@
 // Address: 00601678
 // Address Range: [[00601678, 00601767]]
 // Convention: __watcallStack
-// Signature: char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(tm *timeptr,char *buffer)
+// Signature: char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(_tm *timeptr,char *buffer)
 
 #include "nocturne.h"
 
-char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(tm *timeptr,char *buffer)
+char * __watcallStack asctimeFormat(_tm *timeptr,char *buffer)
 
 {
   char cVar1;
@@ -24,20 +24,20 @@ char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(tm *timeptr,char *bu
   cVar1 = g_MonthThirdInitial[iVar2];
   buffer[7] = ' ';
   buffer[6] = cVar1;
-  crt_time_c_formatTwoDigits_FUN_00601640(timeptr->tm_mday,8,buffer);
+  formatTwoDigits(timeptr->tm_mday,8,buffer);
   if (buffer[8] == '0') {
     buffer[8] = ' ';
   }
   buffer[10] = ' ';
-  crt_time_c_formatTwoDigits_FUN_00601640(timeptr->tm_hour,0xb,buffer);
+  formatTwoDigits(timeptr->tm_hour,0xb,buffer);
   buffer[0xd] = ':';
-  crt_time_c_formatTwoDigits_FUN_00601640(timeptr->tm_min,0xe,buffer);
+  formatTwoDigits(timeptr->tm_min,0xe,buffer);
   buffer[0x10] = ':';
-  crt_time_c_formatTwoDigits_FUN_00601640(timeptr->tm_sec,0x11,buffer);
+  formatTwoDigits(timeptr->tm_sec,0x11,buffer);
   buffer[0x13] = ' ';
   iVar2 = timeptr->tm_year;
-  crt_time_c_formatTwoDigits_FUN_00601640(iVar2 / 100 + 0x13,0x14,buffer);
-  crt_time_c_formatTwoDigits_FUN_00601640(iVar2 % 100,0x16,buffer);
+  formatTwoDigits(iVar2 / 100 + 0x13,0x14,buffer);
+  formatTwoDigits(iVar2 % 100,0x16,buffer);
   buffer[0x18] = '\n';
   buffer[0x19] = '\0';
   return buffer;

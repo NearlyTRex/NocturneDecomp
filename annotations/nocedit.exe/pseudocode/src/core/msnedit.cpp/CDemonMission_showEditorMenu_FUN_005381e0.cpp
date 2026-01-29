@@ -34,7 +34,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
             (g_CEditorToolsPtr,"Sec...");
   core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
   core_mission_cpp_FUN_005248e0();
-  crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
+  remove("$$UNDO$$.TMP");
   core_inivar_cpp_readIniData_FUN_004fbd90();
   local_14 = this_ptr->unk2 + 0x38;
   local_1c = this_ptr->unk3;
@@ -65,7 +65,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       } while (cVar1 != '\0');
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_21c,"Current mission: %s.msn",local_14);
+      sprintf(local_21c,"Current mission: %s.msn",local_14);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_21c,0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("1. Load mission",0,0x2c);
@@ -123,7 +123,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
                       (g_CEditorToolsPtr,"No mission loaded.");
           }
           else {
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_320,"%s.msn",local_14);
+            sprintf(local_320,"%s.msn",local_14);
             iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"Save mission to %s",local_320);
             if (iVar4 != 0) {
@@ -189,9 +189,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
               (iVar4 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                                  (g_CEditorToolsPtr,"Save mission to new name",
                                   "world",0x63c162,(int)local_320), iVar4 != 0)) {
-        crt_string_c_splitpath_FUN_005ff178(local_320,(char *)0x0,(char *)0x0,local_11c,(char *)0x0)
+        splitpath(local_320,(char *)0x0,(char *)0x0,local_11c,(char *)0x0)
         ;
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_320,"%s.msn",local_11c);
+        sprintf(local_320,"%s.msn",local_11c);
         core_msnedit_cpp_OpenAndCreateWorld_FUN_00537f60();
       }
     }
@@ -278,7 +278,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
     if (uVar2 == 0x1b) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Cleaning up...");
-      crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
+      remove("$$UNDO$$.TMP");
       this_ptr_00 = g_CEditorToolsPtr;
       this_ptr->unk1[4] = '\0';
       this_ptr->unk1[5] = '\0';

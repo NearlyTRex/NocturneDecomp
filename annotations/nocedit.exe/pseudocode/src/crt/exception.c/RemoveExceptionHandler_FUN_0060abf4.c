@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_exception_c_RemoveExceptionHandler_FUN_0060abf4(void)
+void __cdecl RemoveExceptionHandler(void)
 
 {
   ThreadData *pTVar1;

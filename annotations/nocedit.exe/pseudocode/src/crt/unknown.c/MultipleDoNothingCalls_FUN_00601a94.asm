@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, FILE *param_5)
+; unknown _FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, _FILE *param_5)
 ;
 ;
 ; XREF[1]:
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_stdio.c_fclose_force_FUN_00601fd0
+;   crt_stdio.c__fclose_FUN_00601fd0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
         ;   XREF to: 00601ac0 (CONDITIONAL_JUMP)  ; LAB_00601ac0
     PUSH 0x1                            ; 00601ab5
     PUSH EDX                            ; 00601ab7
-    CALL crt_stdio.c_fclose_force_FUN_00601fd0 ; 00601ab8
-        ;   XREF to: 00601fd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_force_FUN_00601fd0(FILE * file_handle, int force_close_flag)
+    CALL crt_stdio.c__fclose_FUN_00601fd0 ; 00601ab8
+        ;   XREF to: 00601fd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__fclose_FUN_00601fd0(_FILE * file_handle, int force_close_flag)
     ADD ESP,0x8                         ; 00601abd
     CALL dword ptr [0x00684efc]         ; 00601ac0 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc
         ;   Label: LAB_00601ac0

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_fpu_c_staticInit_FUN_006047e0(void)
+void __cdecl staticInit(void)
 
 {
   byte bVar1;

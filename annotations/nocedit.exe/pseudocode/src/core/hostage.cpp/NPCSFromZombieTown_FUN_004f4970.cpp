@@ -23,27 +23,27 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
   ;
   str1 = (in_stack_00000004->base).model.model_name;
   in_stack_00000004[1].base.model.transformed_vertices[0x2a].z = 8.40779e-45;
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickboy.dfm");
+  iVar1 = stricmp(str1,"hickboy.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base.model.transformed_vertices[0x2a].z = 0.0;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"depute.dfm");
+  iVar1 = stricmp(str1,"depute.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base.model.transformed_vertices[0x2a].z = 1.4013e-45;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickho.dfm");
+  iVar1 = stricmp(str1,"hickho.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base.model.transformed_vertices[0x2a].z = 2.8026e-45;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickgirl.dfm");
+  iVar1 = stricmp(str1,"hickgirl.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base.model.transformed_vertices[0x2a].z = 5.60519e-45;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickdad.dfm");
+  iVar1 = stricmp(str1,"hickdad.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base.model.transformed_vertices[0x2a].z = 7.00649e-45;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"preacher.dfm");
+  iVar1 = stricmp(str1,"preacher.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base.model.transformed_vertices[0x2a].z = 4.2039e-45;
   }

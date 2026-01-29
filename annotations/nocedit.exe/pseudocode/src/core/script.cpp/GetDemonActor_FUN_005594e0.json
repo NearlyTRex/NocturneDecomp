@@ -15,13 +15,13 @@
       },
       {
         "category": "incompatible_types",
-        "column": 42,
+        "column": 17,
         "line": 58,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
-        "column": 42,
+        "column": 17,
         "line": 64,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
@@ -60,39 +60,9 @@
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 50,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 58,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 64,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 72,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
+        "column": 99,
         "line": 81,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 5 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
       }
     ]
   },
@@ -435,14 +405,14 @@
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000004",
-      "text": "iVar2 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,\"$\");",
+      "text": "iVar2 = stricmp(in_stack_00000004,\"$\");",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_0310eca0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,\"Can't use '$' actor specifier in multi-player\");",
+      "text": "sprintf(&DAT_0310eca0,\"Can't use '$' actor specifier in multi-player\");",
       "type": "undefined_data"
     },
     {
@@ -456,7 +426,7 @@
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_0310eca0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,\"Hero doesn't exist!!?!\");",
+      "text": "sprintf(&DAT_0310eca0,\"Hero doesn't exist!!?!\");",
       "type": "undefined_data"
     },
     {

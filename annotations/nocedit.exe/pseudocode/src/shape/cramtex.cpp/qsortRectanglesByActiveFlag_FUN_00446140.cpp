@@ -14,6 +14,6 @@ shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140
   int *in_stack_00000004;
   int *in_stack_00000008;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(4);
+  __STK(4);
   return *(int *)(*in_stack_00000004 + 0x24) - *(int *)(*in_stack_00000008 + 0x24);
 }

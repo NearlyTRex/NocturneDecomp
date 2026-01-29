@@ -3,9 +3,33 @@
     "errors": [
       {
         "category": "undeclared_identifier",
+        "column": 5,
+        "line": 28,
+        "message": "'notifyAbnormalTermination' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 15,
         "line": 30,
         "message": "'stack0x00000008' was not declared in this scope"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 49,
+        "line": 32,
+        "message": "cannot convert 'char**' to '__va_list_tag*'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 30,
+        "line": 55,
+        "message": "cannot convert 'tm*' to '_tm*' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 28,
+        "line": 56,
+        "message": "cannot convert '_tm*' to 'const tm*'"
       }
     ],
     "success": false,
@@ -36,12 +60,6 @@
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 54,
         "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -66,55 +84,25 @@
       },
       {
         "category": "other",
-        "column": 51,
-        "line": 51,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 53,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 58,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 62,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 58,
-        "line": 63,
+        "line": 62,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 105,
+    "complexity_score": 104,
     "cross_reference_count": 741,
     "function_call_count": 14,
     "global_count": 20,
-    "pseudocode_lines": 75,
+    "pseudocode_lines": 74,
     "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
       "warning_noreturn"
     ],
-    "total_lines": 273
+    "total_lines": 272
   },
   "cross_references": [
     {
@@ -4589,7 +4577,7 @@
     {
       "addr": "00601450",
       "is_variadic": false,
-      "name": "crt_errno.c_errno_FUN_00601450"
+      "name": "crt_errno.c__errno_FUN_00601450"
     },
     {
       "addr": "00601620",
@@ -4624,7 +4612,7 @@
     {
       "addr": "006001f0",
       "is_variadic": false,
-      "name": "crt_time.c_time_with_rounding_FUN_006001f0"
+      "name": "crt_time.c_time_FUN_006001f0"
     },
     {
       "addr": "00401130",
@@ -4839,7 +4827,7 @@
     },
     {
       "description": "Subroutine marked as non-returning",
-      "line": 61,
+      "line": 60,
       "match": "WARNING: Subroutine does not return",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"

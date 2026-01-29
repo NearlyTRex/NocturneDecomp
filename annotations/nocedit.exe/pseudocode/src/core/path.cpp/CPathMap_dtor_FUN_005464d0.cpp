@@ -20,7 +20,7 @@ CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_005464d0(CPathMap *this_ptr)
       iVar1 = iVar2 + 4;
       if (this_ptr == *(CPathMap **)((int)g_PathMapList + iVar2)) {
         g_PathMapCount = g_PathMapCount + -1;
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   ((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),
                    (g_PathMapCount - iVar3) * 4);
         g_PathMapList[g_PathMapCount] = (CPathMap *)0x0;

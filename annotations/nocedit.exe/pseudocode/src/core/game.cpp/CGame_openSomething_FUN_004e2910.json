@@ -22,25 +22,25 @@
       {
         "category": "other",
         "column": 33,
-        "line": 151,
+        "line": 150,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 155,
+        "line": 154,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 159,
+        "line": 158,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 160,
+        "line": 159,
         "message": "'stack0xfffff5d0' was not declared in this scope; did you mean 'in_stack_fffff5d8'?"
       }
     ],
@@ -139,54 +139,54 @@
       {
         "category": "other",
         "column": 54,
-        "line": 139,
+        "line": 138,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 151,
+        "line": 150,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 155,
+        "line": 154,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 155,
+        "line": 154,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 159,
+        "line": 158,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 159,
+        "line": 158,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 197,
+        "line": 196,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 363,
+    "complexity_score": 362,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 35,
-    "pseudocode_lines": 193,
+    "pseudocode_lines": 192,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
@@ -194,7 +194,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 667
+    "total_lines": 666
   },
   "cross_references": [
     {
@@ -725,63 +725,63 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 143,
       "match": "(byte *)((int)",
       "text": "pbVar5 = (byte *)((int)local_18 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 147,
       "match": "(int *)((int)",
       "text": "local_28 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 151,
       "match": "(int *)((int)",
       "text": "*(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 153,
+      "line": 152,
       "match": "&stack0xfffff5d0",
       "text": "*(uint *)(&stack0xfffff5d0 + (uint)*pbVar5 * 4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
+      "line": 186,
       "match": "in_stack_0000000c",
       "text": "core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 188,
+      "line": 187,
       "match": "in_stack_0000000c",
       "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_0000000c,in_stack_fffff5d8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 188,
+      "line": 187,
       "match": "in_stack_fffff5d8",
       "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_0000000c,in_stack_fffff5d8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 189,
+      "line": 188,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c->unk13[0x528] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 190,
+      "line": 189,
       "match": "unaff_EBP",
       "text": "shape_memdbg_cpp_debugFree_FUN_0050f460(unaff_EBP,\"..\\\\core\\\\game.cpp\",0x1057);",
       "type": "unaffected_reg"

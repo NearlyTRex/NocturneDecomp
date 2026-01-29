@@ -36,12 +36,6 @@
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -56,13 +50,15 @@
   },
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 52,
+    "complexity_score": 97,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
     "pseudocode_lines": 52,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param"
+    ],
     "total_lines": 186
   },
   "cross_references": [
@@ -281,5 +277,34 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param3",
+      "text": "(CPackedBitmapSet *bitmap_set,char *pbg_filename,char *palette_filename,int param3,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param4",
+      "text": "int param4,int selected_bitmap_index)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param3",
+      "text": "(bitmap_set,file_handle,param3,param4,selected_bitmap_index);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param4",
+      "text": "(bitmap_set,file_handle,param3,param4,selected_bitmap_index);",
+      "type": "unnamed_param"
+    }
+  ]
 }

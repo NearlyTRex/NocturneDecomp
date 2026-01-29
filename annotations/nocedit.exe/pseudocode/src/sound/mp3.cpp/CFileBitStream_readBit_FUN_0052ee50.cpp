@@ -32,7 +32,7 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_0052ee50(CFileBitStream *t
           if (0 < this_ptr->bytes_remaining) {
             buffer = this_ptr->buffer + iVar4;
             iVar4 = iVar4 + -1;
-            SVar3 = crt_stdio_c_fread_FUN_005fd990(buffer,1,1,this_ptr->file_handle);
+            SVar3 = _fread(buffer,1,1,this_ptr->file_handle);
           }
           if (SVar3 == 1) {
             this_ptr->bytes_remaining = this_ptr->bytes_remaining + -1;

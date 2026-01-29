@@ -13,7 +13,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   CBitFont *this_ptr_00;
   float fVar2;
   int iVar3;
-  FILE *stream;
+  _FILE *stream;
   char *pcVar4;
   void *pvVar5;
   uint uVar6;
@@ -50,14 +50,14 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
             ((CAlphaBitmap *)(auStack_38 + 4),"stats",0x280,0x1e0);
   stream = engine_dosio_c_getFile_FUN_00481a50("data","credits.txt","rt")
   ;
-  if (stream == (FILE *)0x0) {
+  if (stream == (_FILE *)0x0) {
     engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)(auStack_38 + 4));
     return;
   }
   for (iVar7 = (int)local_14 << 2; ((stream->_flag & 0x10) == 0 && (iVar7 < 0x1000));
       iVar7 = iVar7 + 4) {
-    crt_stdio_c_fgets_FUN_005fefd0(local_134,0xff,stream);
-    iVar3 = crt_string_c_strcmp_FUN_005fef20(local_134,"end\n");
+    _fgets(local_134,0xff,stream);
+    iVar3 = strcmp(local_134,"end\n");
     if (iVar3 == 0) break;
     uVar6 = 0xffffffff;
     pcVar4 = local_134;
@@ -109,7 +109,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   do {
     fVar2 = local_1c;
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)local_18);
+    dVar11 = round((double)local_18);
     local_14 = (float)(int)ROUND(dVar11);
     if (local_14 != fVar2) {
       CStack_30.height = (int)local_14;

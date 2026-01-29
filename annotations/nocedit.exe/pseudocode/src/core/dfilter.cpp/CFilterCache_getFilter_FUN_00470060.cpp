@@ -23,7 +23,7 @@ core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
   if (0 < this_ptr->filter_count) {
     pacVar5 = this_ptr->filter_names;
     do {
-      iVar2 = crt_string_c_strcmp_FUN_005fef20(*pacVar5,filter_name);
+      iVar2 = strcmp(*pacVar5,filter_name);
       if (iVar2 == 0) {
         return this_ptr->filters[iVar4];
       }

@@ -10,6 +10,6 @@ void __cdecl core_ground_cpp_staticInit_FUN_004eeb90(void)
 
 {
   core_ground_cpp_CGround_ctor_FUN_004eee80(&g_CGroundInstance,0x100,0x100);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_CGroundDestructorNode);
+  _atexit(&g_CGroundDestructorNode);
   return;
 }

@@ -11,15 +11,15 @@ void __cdecl shape_design_c_showHelpFile_FUN_00457f00(char *help_filename)
 {
   char *pcVar1;
   char local_68 [80];
-  FILE *local_18;
+  _FILE *local_18;
   int local_14;
   
   local_14 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   local_18 = engine_dosio_c_getFile_FUN_00481a50("help",help_filename,"rt");
-  if (local_18 != (FILE *)0x0) {
+  if (local_18 != (_FILE *)0x0) {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    while (pcVar1 = crt_stdio_c_fgets_FUN_005fefd0(local_68,0x4f,local_18), pcVar1 != (char *)0x0) {
+    while (pcVar1 = _fgets(local_68,0x4f,local_18), pcVar1 != (char *)0x0) {
       engine_2d_c_drawText_FUN_00401fd0(local_68,0,local_14);
       local_14 = local_14 + 0xb;
       if (g_WindowHeight + -0xb < local_14) {

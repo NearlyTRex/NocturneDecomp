@@ -58,7 +58,7 @@ void core_msnedit_cpp_FUN_0053b9f0(void)
     DAT_00680648 = iVar4;
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                        ((CStrList *)&stack0xfffffbb8,iVar4);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_a0,"C%s",pcVar2);
+    sprintf(local_a0,"C%s",pcVar2);
     this_ptr = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
     core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(in_stack_00000004);
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);

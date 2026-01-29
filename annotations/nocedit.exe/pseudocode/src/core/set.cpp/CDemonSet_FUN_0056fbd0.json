@@ -15,9 +15,9 @@
       },
       {
         "category": "incompatible_types",
-        "column": 64,
+        "column": 38,
         "line": 130,
-        "message": "cannot convert 'undefined4 (*)()' {aka 'unsigned int (*)()'} to 'QSORT_COMPARATOR' {aka 'int (**)(void*, void*)'}"
+        "message": "invalid conversion from 'undefined4 (*)()' {aka 'unsigned int (*)()'} to '__compar_fn_t' {aka 'int (*)(const void*, const void*)'} [-fpermissive]"
       },
       {
         "category": "other",
@@ -565,14 +565,14 @@
       "description": "Undefined global data reference",
       "line": 123,
       "match": "DAT_03342b50",
-      "text": "crt_stdlib_c_qsort_FUN_005fdf38(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);",
+      "text": "qsort(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 123,
       "match": "DAT_03342b4c",
-      "text": "crt_stdlib_c_qsort_FUN_005fdf38(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);",
+      "text": "qsort(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);",
       "type": "undefined_data"
     },
     {

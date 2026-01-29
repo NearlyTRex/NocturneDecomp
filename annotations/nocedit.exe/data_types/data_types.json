@@ -5193,6 +5193,10 @@
       "type":"function_definition"
     },
     {
+      "name":"_gethostname",
+      "type":"function_definition"
+    },
+    {
       "name":"_struct_19",
       "type":"struct"
     },
@@ -5218,6 +5222,18 @@
     },
     {
       "name":"_struct_519",
+      "type":"struct"
+    },
+    {
+      "name":"_tm",
+      "type":"struct"
+    },
+    {
+      "name":"ThreadData",
+      "type":"struct"
+    },
+    {
+      "name":"ThreadStartupInfo",
       "type":"struct"
     },
     {
@@ -5341,10 +5357,6 @@
       "type":"function_definition"
     },
     {
-      "name":"gethostname",
-      "type":"function_definition"
-    },
-    {
       "name":"getservbyport",
       "type":"function_definition"
     },
@@ -5441,7 +5453,7 @@
       "type":"struct"
     },
     {
-      "name":"FILE",
+      "name":"_FILE",
       "type":"struct"
     },
     {
@@ -5825,23 +5837,11 @@
       "type":"typedef"
     },
     {
-      "name":"find_t",
+      "name":"_find_t",
       "type":"struct"
     },
     {
-      "name":"stat",
-      "type":"struct"
-    },
-    {
-      "name":"tm",
-      "type":"struct"
-    },
-    {
-      "name":"ThreadData",
-      "type":"struct"
-    },
-    {
-      "name":"ThreadStartupInfo",
+      "name":"_stat",
       "type":"struct"
     },
     {
@@ -6244,6 +6244,24 @@
     }
   ],
   "function_definitions":[
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
+      "importable":true,
+      "name":"_gethostname",
+      "parameters":[
+        {
+          "name":"name",
+          "type":"char*"
+        },
+        {
+          "name":"namelen",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
     {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
@@ -7176,7 +7194,7 @@
         },
         {
           "name":"file_handle",
-          "type":"FILE*"
+          "type":"_FILE*"
         }
       ],
       "return_type":"int",
@@ -7208,7 +7226,7 @@
         },
         {
           "name":"param1",
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "name":"param2",
@@ -7216,7 +7234,7 @@
         },
         {
           "name":"param3",
-          "type":"FILE*"
+          "type":"_FILE*"
         }
       ],
       "return_type":"int",
@@ -8427,7 +8445,7 @@
         },
         {
           "name":"file_handle",
-          "type":"FILE*"
+          "type":"_FILE*"
         }
       ],
       "return_type":"void",
@@ -12692,24 +12710,6 @@
         }
       ],
       "return_type":"HOSTENT*",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
-      "importable":true,
-      "name":"gethostname",
-      "parameters":[
-        {
-          "name":"name",
-          "type":"char*"
-        },
-        {
-          "name":"namelen",
-          "type":"int"
-        }
-      ],
-      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -18685,6 +18685,60 @@
     },
     {
       "alig":4,
+      "cat":"/Nocturne/Struct/System/stdio.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_ptr",
+          "offset":0,
+          "type":"char*"
+        },
+        {
+          "len":4,
+          "name":"_cnt",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_link",
+          "offset":8,
+          "type":"streambuf*"
+        },
+        {
+          "len":4,
+          "name":"_flag",
+          "offset":12,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"_handle",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_bufsize",
+          "offset":20,
+          "type":"uint"
+        },
+        {
+          "len":2,
+          "name":"_ungotten",
+          "offset":24,
+          "type":"ushort"
+        }
+      ],
+      "importable":true,
+      "len":26,
+      "name":"_FILE",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
       "cat":"/Nocturne/Struct/System/winbase.h",
       "desc":"",
       "fields":[
@@ -18705,6 +18759,60 @@
       "len":8,
       "name":"_FILETIME",
       "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Struct/System/dos.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":1,
+          "name":"attrib",
+          "offset":0,
+          "type":"uchar"
+        },
+        {
+          "len":3,
+          "name":"padding_0x1",
+          "offset":1,
+          "type":"uchar[3]"
+        },
+        {
+          "len":4,
+          "name":"wr_time",
+          "offset":4,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"cr_time",
+          "offset":8,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"ac_time",
+          "offset":12,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"size",
+          "offset":16,
+          "type":"long"
+        },
+        {
+          "len":260,
+          "name":"name",
+          "offset":20,
+          "type":"char[260]"
+        }
+      ],
+      "importable":true,
+      "len":280,
+      "name":"_find_t",
+      "pack":false,
       "type":"struct"
     },
     {
@@ -19428,6 +19536,126 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/stat.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_st_dev",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_st_ino",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":2,
+          "name":"_st_mode",
+          "offset":8,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"_st_nlink",
+          "offset":10,
+          "type":"short"
+        },
+        {
+          "len":4,
+          "name":"_st_uid",
+          "offset":12,
+          "type":"ulong"
+        },
+        {
+          "len":2,
+          "name":"_st_gid",
+          "offset":16,
+          "type":"short"
+        },
+        {
+          "len":4,
+          "name":"_st_rdev",
+          "offset":18,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"_st_size",
+          "offset":22,
+          "type":"long"
+        },
+        {
+          "len":4,
+          "name":"_st_atime",
+          "offset":26,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_mtime",
+          "offset":30,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_ctime",
+          "offset":34,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_btime",
+          "offset":38,
+          "type":"time_t"
+        },
+        {
+          "len":4,
+          "name":"_st_attr",
+          "offset":42,
+          "type":"ulong"
+        },
+        {
+          "len":4,
+          "name":"_st_archivedID",
+          "offset":46,
+          "type":"ulong"
+        },
+        {
+          "len":4,
+          "name":"_st_updatedID",
+          "offset":50,
+          "type":"ulong"
+        },
+        {
+          "len":2,
+          "name":"_st_inheritedRightsMask",
+          "offset":54,
+          "type":"ushort"
+        },
+        {
+          "len":1,
+          "name":"_st_originatingNameSpace",
+          "offset":56,
+          "type":"uchar"
+        },
+        {
+          "len":13,
+          "name":"_st_name",
+          "offset":57,
+          "type":"uchar[13]"
+        }
+      ],
+      "importable":true,
+      "len":70,
+      "name":"_stat",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
@@ -19611,6 +19839,72 @@
       "len":172,
       "name":"_TIME_ZONE_INFORMATION",
       "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Struct/System/time.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"tm_sec",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_min",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_hour",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_mday",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_mon",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_year",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_wday",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_yday",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tm_isdst",
+          "offset":32,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":36,
+      "name":"_tm",
+      "pack":false,
       "type":"struct"
     },
     {
@@ -27550,7 +27844,7 @@
           "len":4,
           "name":"file_handle",
           "offset":0,
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "len":4,
@@ -27724,7 +28018,7 @@
           "len":4,
           "name":"file_ptr",
           "offset":0,
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "len":4,
@@ -31184,7 +31478,7 @@
           "len":4,
           "name":"precompute_file",
           "offset":56,
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "len":4,
@@ -35642,7 +35936,7 @@
           "len":4,
           "name":"file_handle",
           "offset":372,
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "len":4,
@@ -39462,60 +39756,6 @@
       "fields":[
         {
           "len":4,
-          "name":"_ptr",
-          "offset":0,
-          "type":"char*"
-        },
-        {
-          "len":4,
-          "name":"_cnt",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_link",
-          "offset":8,
-          "type":"streambuf*"
-        },
-        {
-          "len":4,
-          "name":"_flag",
-          "offset":12,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"_handle",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"_bufsize",
-          "offset":20,
-          "type":"uint"
-        },
-        {
-          "len":2,
-          "name":"_ungotten",
-          "offset":24,
-          "type":"ushort"
-        }
-      ],
-      "importable":true,
-      "len":26,
-      "name":"FILE",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/stdio.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
           "name":"type_or_magic",
           "offset":0,
           "type":"uint"
@@ -39734,7 +39974,7 @@
           "len":4,
           "name":"stream",
           "offset":4,
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "len":4,
@@ -39782,7 +40022,7 @@
           "len":4,
           "name":"file_struct",
           "offset":4,
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "len":4,
@@ -39848,66 +40088,12 @@
           "len":4,
           "name":"file_ptr",
           "offset":804,
-          "type":"FILE*"
+          "type":"_FILE*"
         }
       ],
       "importable":true,
       "len":808,
       "name":"FileTrackingEntry",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/dos.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":1,
-          "name":"attrib",
-          "offset":0,
-          "type":"uchar"
-        },
-        {
-          "len":3,
-          "name":"padding_0x1",
-          "offset":1,
-          "type":"uchar[3]"
-        },
-        {
-          "len":4,
-          "name":"wr_time",
-          "offset":4,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"cr_time",
-          "offset":8,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"ac_time",
-          "offset":12,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"size",
-          "offset":16,
-          "type":"long"
-        },
-        {
-          "len":260,
-          "name":"name",
-          "offset":20,
-          "type":"char[260]"
-        }
-      ],
-      "importable":true,
-      "len":280,
-      "name":"find_t",
       "pack":false,
       "type":"struct"
     },
@@ -39920,7 +40106,7 @@
           "len":4,
           "name":"output_file",
           "offset":0,
-          "type":"FILE*"
+          "type":"_FILE*"
         },
         {
           "len":4,
@@ -49474,126 +49660,6 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/System/stat.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"st_dev",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"st_ino",
-          "offset":4,
-          "type":"uint"
-        },
-        {
-          "len":2,
-          "name":"st_mode",
-          "offset":8,
-          "type":"ushort"
-        },
-        {
-          "len":2,
-          "name":"st_nlink",
-          "offset":10,
-          "type":"short"
-        },
-        {
-          "len":4,
-          "name":"st_uid",
-          "offset":12,
-          "type":"ulong"
-        },
-        {
-          "len":2,
-          "name":"st_gid",
-          "offset":16,
-          "type":"short"
-        },
-        {
-          "len":4,
-          "name":"st_rdev",
-          "offset":18,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"st_size",
-          "offset":22,
-          "type":"long"
-        },
-        {
-          "len":4,
-          "name":"st_atime",
-          "offset":26,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"st_mtime",
-          "offset":30,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"st_ctime",
-          "offset":34,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"st_btime",
-          "offset":38,
-          "type":"time_t"
-        },
-        {
-          "len":4,
-          "name":"st_attr",
-          "offset":42,
-          "type":"ulong"
-        },
-        {
-          "len":4,
-          "name":"st_archivedID",
-          "offset":46,
-          "type":"ulong"
-        },
-        {
-          "len":4,
-          "name":"st_updatedID",
-          "offset":50,
-          "type":"ulong"
-        },
-        {
-          "len":2,
-          "name":"st_inheritedRightsMask",
-          "offset":54,
-          "type":"ushort"
-        },
-        {
-          "len":1,
-          "name":"st_originatingNameSpace",
-          "offset":56,
-          "type":"uchar"
-        },
-        {
-          "len":13,
-          "name":"st_name",
-          "offset":57,
-          "type":"uchar[13]"
-        }
-      ],
-      "importable":true,
-      "len":70,
-      "name":"stat",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
       "cat":"/Nocturne/Struct/Game",
       "desc":"",
       "fields":[
@@ -51983,7 +52049,7 @@
           "len":36,
           "name":"localtime_buffer",
           "offset":20,
-          "type":"tm"
+          "type":"_tm"
         },
         {
           "len":26,
@@ -52127,72 +52193,6 @@
       "importable":true,
       "len":20,
       "name":"ThreadStartupInfo",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/time.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"tm_sec",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_min",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_hour",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_mday",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_mon",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_year",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_wday",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_yday",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"tm_isdst",
-          "offset":32,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":36,
-      "name":"tm",
       "pack":false,
       "type":"struct"
     },

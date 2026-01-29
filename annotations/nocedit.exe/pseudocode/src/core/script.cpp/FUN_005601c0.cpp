@@ -40,9 +40,9 @@ int core_script_cpp_FUN_005601c0(void)
         iVar3 = iVar3 + -1;
       }
       else if (((iVar3 < 1) && (!bVar1)) ||
-              (iVar2 = crt_string_c_strnicmp_FUN_005ff070(str1,"if",2), iVar2 != 0)) {
+              (iVar2 = strnicmp(str1,"if",2), iVar2 != 0)) {
         if (((iVar3 < 1) && (in_stack_0000000c == 0)) ||
-           (iVar2 = crt_string_c_strnicmp_FUN_005ff070(str1,"else",4), iVar2 != 0)) {
+           (iVar2 = strnicmp(str1,"else",4), iVar2 != 0)) {
           if (iVar3 == 0) {
             if (!bVar1) {
               return in_stack_00000008;

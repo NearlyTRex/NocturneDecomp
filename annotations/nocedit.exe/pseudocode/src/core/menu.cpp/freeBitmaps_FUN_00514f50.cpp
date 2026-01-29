@@ -9,6 +9,6 @@
 void __cdecl core_menu_cpp_freeBitmaps_FUN_00514f50(CAlphaBitmap **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,8,&g_CAlphaBitmapTypeInfo);
+  __arrfini(array,8,&g_CAlphaBitmapTypeInfo);
   return;
 }

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_heap_c_VirtualFreeBlock_FUN_0060c95c(HeapBlock *block)
+int __cdecl VirtualFreeBlock(HeapBlock *block)
 
 {
   HeapBlock *pHVar1;

@@ -17,9 +17,9 @@
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
 ;   core_glass.cpp_freeVectors_FUN_004eb8a0
 ;   core_mirror.cpp_CMirror_dtor_FUN_005213e0
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -60,12 +60,12 @@ section .text
     PUSH 0x65efe0                       ; 004eb86d | g_CGlassTypeInfo
         ;   Label: LAB_004eb86d
     PUSH EBX                            ; 004eb872
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 004eb873
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 004eb873
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004eb878
     PUSH EAX                            ; 004eb87b
-    CALL crt_memory.c_free_FUN_005fe659 ; 004eb87c
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004eb87c
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004eb881
     MOV EAX,EBX                         ; 004eb884
     POP EBX                             ; 004eb886

@@ -27,7 +27,7 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
     iVar4 = g_MpegBitrateTable[iVar2 + -1][pSVar3->layer + 2][pSVar3->bitrate_index] /
             frame->samples_per_granule;
     uVar7 = 0x52eb7f;
-    dVar6 = crt_math_c_round_FUN_005fe6b0(g_MpegSampleRateTable[iVar2][pSVar3->sampling_rate_index])
+    dVar6 = round(g_MpegSampleRateTable[iVar2][pSVar3->sampling_rate_index])
     ;
     iVar5 = (int)ROUND(dVar6);
     if (iVar2 == 1) {

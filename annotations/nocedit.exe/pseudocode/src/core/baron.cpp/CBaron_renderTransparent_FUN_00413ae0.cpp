@@ -47,7 +47,7 @@ LAB_00413b43:
     if (uVar2 != 7) goto LAB_00413cc3;
     fVar3 = ((float)pSVar4->frame_count - local_1c) * (float)65000;
   }
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)(fVar3 / (float)pSVar4->frame_count));
+  dVar6 = round((double)(fVar3 / (float)pSVar4->frame_count));
   local_1c = (float)(int)ROUND(dVar6);
 LAB_00413b59:
   if (*(int *)(this_ptr->unk + 0xfc) != 0) {

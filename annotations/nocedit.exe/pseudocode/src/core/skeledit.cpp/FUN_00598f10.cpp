@@ -14,7 +14,7 @@ void __cdecl core_skeledit_cpp_FUN_00598f10(void)
   CDeformableModelInstance *unaff_EBP;
   char *in_stack_00000004;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x20);
+  __STK(0x20);
   this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeledit.cpp",0x1b79);
   this_ptr_00 = (CDeformableModelInstance *)0x0;
   if (this_ptr != (CDeformableModelInstance *)0x0) {

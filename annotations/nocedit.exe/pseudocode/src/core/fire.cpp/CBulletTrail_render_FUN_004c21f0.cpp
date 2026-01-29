@@ -43,7 +43,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
   if (0.0 < local_7c.x) {
     local_20 = 2;
     if (0.0 < *(float *)(this_ptr->unk + 0x1c)) {
-      dVar4 = crt_math_c_round_FUN_005fe6b0((double)(local_7c.x / *(float *)(this_ptr->unk + 0x1c)))
+      dVar4 = round((double)(local_7c.x / *(float *)(this_ptr->unk + 0x1c)))
       ;
       local_24 = (int)ROUND(dVar4);
       if (local_24 < 2) {
@@ -82,7 +82,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
           local_4c.z = 0;
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr2,(CVector3i *)&local_7c,&local_4c);
-          dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+          dVar4 = round((double)fVar2);
           fStack_1c = (float)(int)ROUND(dVar4);
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                     (*(CKeyFramedModel **)(this_ptr->unk + 0x18),(CKeyFramedModelInstance *)0x0,0,

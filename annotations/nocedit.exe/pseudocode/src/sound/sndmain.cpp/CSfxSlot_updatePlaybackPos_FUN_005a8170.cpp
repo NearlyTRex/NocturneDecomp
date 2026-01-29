@@ -68,7 +68,7 @@ sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
     else {
       dVar2 = (double)(this_ptr->sample->sample_info).sample_count;
       local_18 = SUB84(dVar2,0);
-      dVar2 = crt_math_c_floor_FUN_005feb90((this_ptr->options).trigger_time / dVar2);
+      dVar2 = floor((this_ptr->options).trigger_time / dVar2);
       (extraout_EBX->options).trigger_time =
            (extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44(local_18,uStack_1c);
       this_ptr = extraout_EBX;

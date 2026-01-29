@@ -16,7 +16,7 @@
 ;   TerminatedCString s_ERROR_bad_node_in_heap_0061df0d
 ;
 ; Called Functions:
-;   crt_watcom.c_heapchk_FUN_00600ad0
+;   crt_watcom.c__heapchk_FUN_00600ad0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     PUSH EBP                            ; 0046e763
     MOV EBP,ESP                         ; 0046e764
     SUB ESP,0x54                        ; 0046e766
-    CALL crt_watcom.c_heapchk_FUN_00600ad0 ; 0046e76c
-        ;   XREF to: 00600ad0 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c_heapchk_FUN_00600ad0()
+    CALL crt_watcom.c__heapchk_FUN_00600ad0 ; 0046e76c
+        ;   XREF to: 00600ad0 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__heapchk_FUN_00600ad0()
     MOV dword ptr [EBP + -0x4],EAX      ; 0046e771
     JMP 0x0046e7e8                      ; 0046e774
         ;   XREF to: 0046e7e8 (UNCONDITIONAL_JUMP)  ; LAB_0046e7e8

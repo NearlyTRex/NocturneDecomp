@@ -4,61 +4,61 @@
       {
         "category": "other",
         "column": 16,
-        "line": 36,
+        "line": 35,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 46,
+        "line": 45,
         "message": "'stack0xffffffd0' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 48,
+        "line": 47,
         "message": "'stack0xffffffd4' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 52,
+        "line": 51,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 53,
+        "line": 52,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 54,
+        "line": 53,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 57,
+        "line": 56,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 67,
+        "line": 66,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -73,60 +73,60 @@
       {
         "category": "other",
         "column": 8,
-        "line": 36,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 52,
+        "line": 51,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 53,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 54,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 57,
+        "line": 56,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 67,
+        "line": 66,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 68,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 68,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 463,
+    "complexity_score": 462,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 67,
     "suspect_count": 37,
     "suspect_types": [
       "param_count_too_few",
@@ -135,7 +135,7 @@
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 200
+    "total_lines": 199
   },
   "cross_references": [
     {
@@ -171,12 +171,12 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     },
     {
       "addr": "005ff060",
       "is_variadic": false,
-      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+      "name": "crt_stdlib.c__atexit_FUN_005ff060"
     }
   ],
   "globals": [
@@ -409,215 +409,215 @@
       "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_02fd9060",
-      "text": "crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_02fd9060,0xc,&g_CPathMapTypeInfo)",
+      "text": "__arrinit(DAT_02fd9060,0xc,&g_CPathMapTypeInfo);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 22,
       "match": "DAT_00680bc8",
-      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_00680bc8);",
+      "text": "_atexit(&DAT_00680bc8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_00680bd8",
       "text": "if (DAT_00680bd8 < 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_00680bd8",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "(&g_CDemonRaytraceInstance,in_stack_00000004,in_stack_ffffffcc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_ffffffcc",
       "text": "(&g_CDemonRaytraceInstance,in_stack_00000004,in_stack_ffffffcc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 37,
       "match": "in_stack_ffffffcc",
       "text": "local_1c = in_stack_ffffffcc;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 38,
       "match": "&stack0xffffffd0",
       "text": "local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 41,
+      "line": 40,
       "match": "&stack0xffffffd4",
       "text": "*(int *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 44,
       "match": "DAT_02fd9060",
       "text": "if (((local_1c == *(CVector3i **)((int)&DAT_02fd9060[0].cached_voxel_coords.x + iVar3)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(int *)((int)",
       "text": "(local_18[0] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.y + iVar3))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_02fd9060",
       "text": "(local_18[0] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.y + iVar3))) &&",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(int *)((int)",
       "text": "(iVar5 = iVar2, local_18[1] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.z + iVar3))",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_02fd9060",
       "text": "(iVar5 = iVar2, local_18[1] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.z + iVar3))",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_00680bd8",
       "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_00680bd8",
       "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 59,
       "match": "DAT_00680bd8",
       "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 59,
       "match": "DAT_00680bd8",
       "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 60,
       "match": "DAT_00680bd8",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 60,
       "match": "DAT_00680bd8",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 64,
       "match": "DAT_00680bd8",
       "text": "(&DAT_00680bd8)[iVar5] = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 65,
       "match": "in_stack_00000004",
       "text": "local_28.x = in_stack_00000004->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000004",
       "text": "local_28.y = in_stack_00000004->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "local_28.z = in_stack_00000004->z;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 68,
       "match": "DAT_02fd9060",
       "text": "core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(DAT_02fd9060 + iVar5,&local_28,1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_02fd9060",
       "text": "return DAT_02fd9060 + iVar5;",
       "type": "undefined_data"

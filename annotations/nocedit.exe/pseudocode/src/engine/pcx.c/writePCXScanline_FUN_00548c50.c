@@ -2,11 +2,11 @@
 // Address: 00548c50
 // Address Range: [[00548c50, 00548d1f]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,FILE *pcx_file)
+// Signature: void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,_FILE *pcx_file)
 
 #include "nocturne.h"
 
-void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,FILE *pcx_file)
+void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,_FILE *pcx_file)
 
 {
   byte *pbVar1;
@@ -33,7 +33,7 @@ void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,FILE *pcx_
         else {
           iVar3 = 0xc1;
         }
-        crt_stdio_c_fputc_FUN_006007a0(iVar3,pcx_file);
+        _fputc(iVar3,pcx_file);
       }
 LAB_00548c8e:
       if (((pcx_file->_flag & 0x400) == 0) && (1 < pcx_file->_bufsize - pcx_file->_cnt)) {
@@ -50,7 +50,7 @@ LAB_00548c8e:
       else {
         character = (uint)*pbVar1;
 LAB_00548c9a:
-        crt_stdio_c_fputc_FUN_006007a0(character,pcx_file);
+        _fputc(character,pcx_file);
       }
       iVar2 = iVar2 + 1;
       pbVar1 = pbVar1 + 1;

@@ -30,7 +30,7 @@ void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_14 = crt_stdlib_c_atoi_FUN_005ffef0(local_28);
+    local_14 = atoi(local_28);
   }
   if ((-1 < local_14) && (local_14 < g_VertexCount)) {
     g_PointEditorMode = 1;

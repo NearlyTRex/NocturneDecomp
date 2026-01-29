@@ -15,57 +15,19 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 34,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 47,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 58,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 81,
-        "line": 63,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 79,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 96,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 109,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
-    "pseudocode_lines": 94,
-    "suspect_count": 1,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
-    "total_lines": 392
+    "pseudocode_lines": 93,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 391
   },
   "cross_references": [
     {
@@ -85,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(CLodMesh *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(CLodMesh *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -248,21 +210,9 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
-  "suspects": [
-    {
-      "actual_args": 1,
-      "description": "Format \"%d,%*d\\n\" has 3 specifiers but 1 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d,%*d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 27,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%*d\\n\",&local_20);",
-      "text": "Format string expects 3 args but got 1",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

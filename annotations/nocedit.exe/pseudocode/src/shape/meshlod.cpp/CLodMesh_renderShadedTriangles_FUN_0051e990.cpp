@@ -48,14 +48,14 @@ shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
           fVar1 = *(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar4);
           fVar6 = (float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x10) * fVar5 +
                   fVar5;
-          dVar7 = crt_math_c_round_FUN_005fe6b0
+          dVar7 = round
                             ((double)((float10)*(float *)((int)pCVar2->edge_perpendiculars +
                                                          iVar4 + -8) * fVar5 + fVar5));
-          dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar5 + fVar5));
+          dVar8 = round((double)((float10)fVar1 * fVar5 + fVar5));
           iStack_20 = (int)ROUND(dVar7);
           blue_component = 0x51eaa9;
           iStack_1c = (int)ROUND(dVar8);
-          dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
+          dVar7 = round((double)fVar6);
           iStack_20 = (int)ROUND(dVar7);
           engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
                     (g_CDemonRendererPtr2,iStack_20,(int)ROUND(dVar8),blue_component);

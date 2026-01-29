@@ -33,8 +33,8 @@ void shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
   
   g_PolygonCount = 0;
   g_VertexCount = 0;
-  crt_memory_c_memset_FUN_005fde40(g_ModelPolygonData,0,0x766880);
-  crt_memory_c_memset_FUN_005fde40(g_LoadedVertices,0,400000);
+  memset(g_ModelPolygonData,0,0x766880);
+  memset(g_LoadedVertices,0,400000);
   local_34 = 0;
   if (*(int *)(in_stack_00000004 + 0x38) != 0) {
     do {

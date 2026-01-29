@@ -27,7 +27,7 @@ int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e5a0(CActorPropertyList *t
   iVar1 = 0;
   if (0 < in_stack_00000010) {
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"%s %d");
+      sprintf(local_d8,"%s %d");
       in_EAX = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
                          (this_ptr,0x10,local_d8,in_stack_0000000c,(void *)0x0);
       *(int *)(in_EAX + 0x5c) = iVar1;

@@ -111,7 +111,7 @@ void core_scat_cpp_FUN_00558720(void)
     goto LAB_005587bd;
   }
   if (*(int *)(in_stack_00000004[0x17a].actor_name + 8) == 0) goto LAB_005587bd;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(local_138,10,&g_CVectorTypeInfo);
+  __arrinit(local_138,10,&g_CVectorTypeInfo);
   iVar4 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x154) + 0x4c))
                     ();
   if (iVar4 < 1) {

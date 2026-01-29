@@ -26,7 +26,7 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da870(CTeleportDest *this_pt
                 (g_CEditorToolsPtr,"No teleporters go to %s",this_ptr);
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_c4,"Teleporters which go to %s",this_ptr);
+      sprintf(acStack_c4,"Teleporters which go to %s",this_ptr);
       iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         ((CPickList *)&stack0xfffffb94,acStack_c4,-1,0);
       if (-1 < iVar1) {

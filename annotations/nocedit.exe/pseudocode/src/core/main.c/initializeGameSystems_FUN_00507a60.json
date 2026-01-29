@@ -8,6 +8,12 @@
         "message": "'stack0xfffff8d8' was not declared in this scope"
       },
       {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 57,
+        "message": "'fopenThreadSafe' was not declared in this scope"
+      },
+      {
         "category": "incompatible_types",
         "column": 50,
         "line": 63,
@@ -96,12 +102,6 @@
       },
       {
         "category": "other",
-        "column": 42,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -126,7 +126,7 @@
       },
       {
         "category": "other",
-        "column": 58,
+        "column": 62,
         "line": 49,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -140,18 +140,6 @@
         "category": "other",
         "column": 52,
         "line": 53,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 57,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 57,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -192,12 +180,6 @@
       },
       {
         "category": "other",
-        "column": 34,
-        "line": 100,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 66,
         "line": 123,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -230,12 +212,6 @@
         "category": "other",
         "column": 65,
         "line": 319,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 330,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -441,11 +417,6 @@
       "name": "crt_env.c_getenv_FUN_006013f0"
     },
     {
-      "addr": "00600c30",
-      "is_variadic": false,
-      "name": "crt_file.c_setReadonlyAttribute_FUN_00600c30"
-    },
-    {
       "addr": "00601b14",
       "is_variadic": false,
       "name": "crt_stdio.c_fopenThreadSafe_FUN_00601b14"
@@ -484,6 +455,11 @@
       "addr": "00481710",
       "is_variadic": false,
       "name": "engine_dosio.c_addGetFileInfoHook_FUN_00481710"
+    },
+    {
+      "addr": "00600c30",
+      "is_variadic": false,
+      "name": "engine_dosio.c_setReadonlyAttribute_FUN_00600c30"
     },
     {
       "addr": "004d01d0",
@@ -999,7 +975,7 @@
     {
       "addr": "00684cf8",
       "name": "g_StderrLogFile",
-      "type": "FILE*",
+      "type": "_FILE*",
       "value": "00000000"
     },
     {

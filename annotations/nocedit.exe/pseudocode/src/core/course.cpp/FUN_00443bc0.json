@@ -210,23 +210,58 @@
       },
       {
         "category": "other",
+        "column": 38,
+        "line": 210,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 210,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
         "column": 56,
         "line": 210,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 210,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 74,
+        "line": 210,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 210,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 86,
+        "line": 210,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 479,
-    "complexity_score": 935,
+    "complexity_score": 920,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 17,
     "pseudocode_lines": 240,
-    "suspect_count": 66,
+    "suspect_count": 65,
     "suspect_types": [
       "decompiler_intrinsic",
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -1311,7 +1346,7 @@
       "description": "Unresolved stack parameter",
       "line": 203,
       "match": "in_stack_fffffe90",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_fffffe90,\"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f\");",
+      "text": "sprintf(in_stack_fffffe90,\"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f\");",
       "type": "stack_param"
     },
     {
@@ -1348,17 +1383,6 @@
       "match": "SUB84",
       "text": "in_stack_fffffeb8 = SUB84(dVar8,0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f ...\" has 7 specifiers but 0 arguments after it",
-      "expected_args": 7,
-      "format_string": "t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 203,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_fffffe90,\"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4",
-      "text": "Format string expects 7 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

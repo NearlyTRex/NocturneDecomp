@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 00431890
     PUSH 0x6179e2                       ; 00431891 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00431896
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0043189b
     MOV EBX,EAX                         ; 0043189e
     TEST EAX,EAX                        ; 004318a0
@@ -89,7 +89,7 @@ section .text
     PUSH EBP                            ; 004318da
     PUSH ESI                            ; 004318db
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004318dc
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004318e1
     CMP EAX,0x1                         ; 004318e4
     JNZ 0x0043195d                      ; 004318e7
@@ -99,7 +99,7 @@ section .text
     PUSH 0x617a6a                       ; 004318ee | = "..\\cockpit\\ckptutil.c"
     PUSH EBX                            ; 004318f3
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004318f4
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004318f9
     MOV EAX,ESI                         ; 004318fc
     ADD ESP,0x50                        ; 004318fe
@@ -151,7 +151,7 @@ section .text
     PUSH EBX                            ; 0043197a
     MOV EDI,0xeb                        ; 0043197b
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00431980
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00431985
     MOV EAX,ESP                         ; 00431988
     MOV ECX,0x617a54                    ; 0043198a | = "..\\cockpit\\ckptutil.c"

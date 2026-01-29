@@ -31,7 +31,7 @@ void __cdecl shape_design_c_polygonReducer_FUN_004654e0(void)
       pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
     } while (cVar1 != '\0');
     if (iVar2 != -2) {
-      local_14 = crt_stdlib_c_atoi_FUN_005ffef0(local_64);
+      local_14 = atoi(local_64);
     }
     if (local_14 == 1) {
       shape_design_c_configureFullPassPolygonReduction_FUN_00465810(1);

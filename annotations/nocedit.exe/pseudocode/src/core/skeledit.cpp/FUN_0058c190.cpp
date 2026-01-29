@@ -19,8 +19,8 @@ uint core_skeledit_cpp_FUN_0058c190(void)
   CBoneStructure *this_ptr;
   CBoneStructure *pCVar6;
   int iVar7;
-  FILE *file;
-  FILE *file_ptr;
+  _FILE *file;
+  _FILE *file_ptr;
   int iVar8;
   uint uVar9;
   CDeformableModel *pCVar10;
@@ -105,7 +105,7 @@ uint core_skeledit_cpp_FUN_0058c190(void)
   int *piVar11;
   
   bVar24 = 0;
-  crt_stack_c_stack_probe_FUN_005ff9f3(0xa248);
+  __STK(0xa248);
   DAT_03670650 = 0;
   pCVar6 = (CBoneStructure *)
            shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -113,34 +113,34 @@ uint core_skeledit_cpp_FUN_0058c190(void)
                       "..\\core\\skeledit.cpp",0x60a);
   local_24 = pCVar6;
   if (pCVar6 == (CBoneStructure *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,"Can't open %s",in_stack_00000008);
+    sprintf(&DAT_03670650,"Can't open %s",in_stack_00000008);
     return 0;
   }
   iVar14 = 1;
   core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(in_stack_00000004);
   do {
-    iVar7 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar6);
+    iVar7 = _fgetc((_FILE *)pCVar6);
     this_ptr = local_24;
     if (iVar7 < 0) break;
   } while ((iVar7 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
-  crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)local_24,"%d\n",local_20);
+  _fscanf((_FILE *)local_24,"%d\n",local_20);
   core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-            (this_ptr,(FILE *)local_b4,&in_stack_ffff5dd8->num_lods);
+            (this_ptr,(_FILE *)local_b4,&in_stack_ffff5dd8->num_lods);
   core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
-            (this_ptr,(FILE *)0x0,(int)in_stack_ffff5dd8);
+            (this_ptr,(_FILE *)0x0,(int)in_stack_ffff5dd8);
   core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);
   core_skeledit_cpp_FUN_0058b160();
   iVar14 = core_skeledit_cpp_FUN_0058b200();
   if (iVar14 == 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (&DAT_03670650,"Heirarchy in %s does not match that in skeleton %s",in_stack_00000008,
                in_stack_00000004->model_name);
     if (*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].texture_name != 2
        ) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1260);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_418,"Display %s",in_stack_00000008);
+      sprintf(local_418,"Display %s",in_stack_00000008);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_418,"Display %s",in_stack_00000004->model_name)
+      sprintf(local_418,"Display %s",in_stack_00000004->model_name)
       ;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
       iVar14 = 0;
@@ -163,15 +163,14 @@ uint core_skeledit_cpp_FUN_0058c190(void)
   }
   iVar14 = 1;
   do {
-    iVar7 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
+    iVar7 = _fgetc((_FILE *)this_ptr);
     if (iVar7 < 0) break;
   } while ((iVar7 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
-  iVar14 = crt_stdio_c_fscanf_FUN_005fe7c0
-                     ((FILE *)local_24,"%d,%d,%d\n",local_b4 + 4,local_b4 + 8,local_b4 + 0xc);
+  iVar14 = _fscanf((_FILE *)local_24,"%d,%d,%d\n",local_b4 + 4,local_b4 + 8,local_b4 + 0xc);
   if (iVar14 != 3) {
 LAB_0058c613:
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,"%s is corrupt!",in_stack_00000008);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)local_24,"..\\core\\skeledit.cpp",0x647);
+    sprintf(&DAT_03670650,"%s is corrupt!",in_stack_00000008);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x647);
     return 0;
   }
   core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0
@@ -212,9 +211,9 @@ LAB_0058c613:
       local_70 = &((CMatrix3x4f *)((int)local_70 + 0x60))->m[2].x;
     } while (local_28 < (int)in_stack_ffff5dd8);
   }
-  crt_string_c_splitpath_FUN_005ff178
+  splitpath
             ((char *)in_stack_00000008,local_14,local_718,(char *)0x0,(char *)0x0);
-  crt_file_c_makepath_FUN_005febfc(local_d28,local_14,local_718,(char *)0x0,(char *)0x0);
+  makepath(local_d28,local_14,local_718,(char *)0x0,(char *)0x0);
   if ((*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].texture_name == 0)
      && (iVar14 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                             (g_CEditorToolsPtr,"Copy textures from a directory (empty string if textures are already in art directory.)",local_d28,0x104,1
@@ -222,8 +221,8 @@ LAB_0058c613:
     return 0;
   }
   if (local_d28[0] != '\0') {
-    crt_string_c_splitpath_FUN_005ff178(local_d28,local_18,local_618,local_818,local_918);
-    crt_file_c_makepath_FUN_005febfc(local_518,(char *)0x0,local_618,local_818,local_918);
+    splitpath(local_d28,local_18,local_618,local_818,local_918);
+    makepath(local_518,(char *)0x0,local_618,local_818,local_918);
     local_2c = 0;
     if (0 < in_stack_00000004->num_texture_sets) {
       local_6c = in_stack_00000004->texture_sets;
@@ -232,18 +231,18 @@ LAB_0058c613:
         if (0 < in_stack_00000004->num_textures) {
           pcVar17 = local_6c->textures[0].texture_variants[0].texture_name;
           do {
-            crt_string_c_splitpath_FUN_005ff178
+            splitpath
                       (pcVar17,(char *)0x0,(char *)0x0,local_818,(char *)0x0);
-            crt_file_c_makepath_FUN_005febfc(local_a1c,local_18,local_518,local_818,"tga");
-            crt_file_c_makepath_FUN_005febfc
+            makepath(local_a1c,local_18,local_518,local_818,"tga");
+            makepath
                       (local_c24,(char *)0x0,"art",local_818,"tga");
             file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_a1c,(char *)0x0,"rb","..\\core\\skeledit.cpp",0x6a5
                              );
-            if ((file == (FILE *)0x0) &&
-               (pcVar22 = crt_string_c_strstr_FUN_005fedd0(local_818,"gore"),
+            if ((file == (_FILE *)0x0) &&
+               (pcVar22 = strstr(local_818,"gore"),
                pcVar22 != (char *)0x0)) {
-              crt_file_c_makepath_FUN_005febfc
+              makepath
                         (local_a1c,"t:","\\enemy",local_818,"tga");
               file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                (local_a1c,(char *)0x0,"rb","..\\core\\skeledit.cpp",
@@ -251,10 +250,10 @@ LAB_0058c613:
             }
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Copying %s -> %s");
-            if (file == (FILE *)0x0) {
+            if (file == (_FILE *)0x0) {
               if (*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].
                           texture_name != 2) {
-                crt_stdio_c_sprintf_FUN_005fdbd0
+                sprintf
                           (local_eb8,"Can't open %s.  Keep going anyway?",local_a1c);
                 iVar14 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                                    (g_CEditorToolsPtr,local_eb8);
@@ -267,13 +266,13 @@ LAB_0058c613:
               file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                    (local_c24,(char *)0x0,"wb","..\\core\\skeledit.cpp"
                                     ,0x6b5);
-              if (file_ptr == (FILE *)0x0) {
+              if (file_ptr == (_FILE *)0x0) {
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
                 g_CurrentLineNumber = 0x6b6;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_c24);
               }
-              while (iVar14 = crt_stdio_c_fgetc_FUN_005fe840(file), -1 < iVar14) {
-                crt_stdio_c_fputc_FUN_006007a0(iVar14,file_ptr);
+              while (iVar14 = _fgetc(file), -1 < iVar14) {
+                _fputc(iVar14,file_ptr);
               }
               if ((file->_flag & 0x20) != 0) {
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -330,7 +329,7 @@ LAB_0058c4df:
     if (iVar14 == 0) {
       return 0;
     }
-    crt_string_c_splitpath_FUN_005ff178
+    splitpath
               ((char *)in_stack_00000008,(char *)0x0,(char *)0x0,local_b20,(char *)0x0);
     shape_design_c_initializeTextureManager_FUN_0046a880(1);
     shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
@@ -356,7 +355,7 @@ LAB_0058c4df:
   pCVar6 = local_24;
   iVar14 = 1;
   do {
-    iVar7 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar6);
+    iVar7 = _fgetc((_FILE *)pCVar6);
     if (iVar7 < 0) break;
   } while ((iVar7 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
   iVar14 = 0;
@@ -378,7 +377,7 @@ LAB_0058c4df:
         pcVar17[0xf] = '\0';
         pcVar17 = pcVar20;
       } while (pcVar20 != pcVar22 + 400);
-      iVar7 = crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)local_24,"%d\n",&local_94);
+      iVar7 = _fscanf((_FILE *)local_24,"%d\n",&local_94);
       if (((iVar7 != 1) || (local_94 < 1)) || ((int)in_stack_ffff5dd8 < local_94)) {
 LAB_0058c601:
         shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4);
@@ -387,8 +386,7 @@ LAB_0058c601:
       iVar7 = 0;
       if (0 < local_94) {
         do {
-          iVar8 = crt_stdio_c_fscanf_FUN_005fe7c0
-                            ((FILE *)local_24,"%d,%f\n",&local_90,&local_8c);
+          iVar8 = _fscanf((_FILE *)local_24,"%d,%f\n",&local_90,&local_8c);
           if (iVar8 != 2) goto LAB_0058c601;
           local_90 = aiStack_6e94[local_90];
           iVar7 = iVar7 + 1;
@@ -510,7 +508,7 @@ LAB_0058c601:
       pCVar10 = (CDeformableModel *)(pCVar10->vertex_data_ptr + 2);
     } while (iVar14 < in_stack_00000004->num_textures);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)local_24,"..\\core\\skeledit.cpp",0x75a);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x75a);
   shape_meshlod_cpp_CLodMesh_postprocessMesh_FUN_0051b330(&local_1f4);
   shape_meshlod_cpp_CLodMesh_copy_FUN_00515860(&local_350,&local_1f4);
   shape_meshlod_cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0(&local_350);
@@ -531,7 +529,7 @@ LAB_0058c601:
     pSVar5->texture_variants[0].texture_name[7] = '\0';
     local_1f4.precompute_file =
          shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(&local_1f4,"wt");
-    if (local_1f4.precompute_file == (FILE *)0x0) {
+    if (local_1f4.precompute_file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
       g_CurrentLineNumber = 0x179;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
@@ -548,7 +546,7 @@ LAB_0058c601:
     g_LodReplayMode = 1;
     local_350.precompute_file =
          shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(&local_350,"wt");
-    if (local_350.precompute_file == (FILE *)0x0) {
+    if (local_350.precompute_file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
       g_CurrentLineNumber = 0x179;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
@@ -681,7 +679,7 @@ LAB_0058c601:
     if (1 < in_stack_00000004->num_texture_sets) {
       local_3c = in_stack_00000004->texture_sets + 1;
       do {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_180,"%s%d",local_b20,local_38);
+        sprintf(local_180,"%s%d",local_b20,local_38);
         core_skeledit_cpp_FUN_0058de70();
         uVar9 = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
         if (uVar9 != local_b4._20_4_) {

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double __fpureg_safe crt_math_c_round_FUN_005fe6b0(double value)
+double __fpureg_safe round(double value)
 
 {
   return ROUND(value);

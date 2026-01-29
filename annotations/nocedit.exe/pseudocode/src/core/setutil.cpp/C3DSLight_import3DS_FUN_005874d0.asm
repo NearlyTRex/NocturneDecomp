@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x188]:1  local_188
 ; undefined1       Stack[-0x187]:1  local_187
@@ -36,7 +36,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005874f6
     PUSH EAX                            ; 005874fa
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 005874fb
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00587500
     MOV EDI,ESP                         ; 00587503
     SUB ECX,ECX                         ; 00587505

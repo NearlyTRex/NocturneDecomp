@@ -146,7 +146,7 @@ uint core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(void)
         piVar10 = local_24;
         if (local_44[3] == in_stack_00000004[0x45]) {
           DAT_00680a04 = local_44[3] ^ in_stack_00000004[0x45];
-          iVar9 = crt_string_c_strcmp_FUN_005fef20((char *)local_24,pcVar6);
+          iVar9 = strcmp((char *)local_24,pcVar6);
           if (iVar9 != 0) {
             DAT_00680a04 = 1;
           }

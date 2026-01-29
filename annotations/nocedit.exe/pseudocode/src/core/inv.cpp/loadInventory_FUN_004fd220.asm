@@ -48,7 +48,7 @@ section .text
     PUSH 0x6303f1                       ; 004fd231 | = "data"
     MOV [0x02dcd790],EAX                ; 004fd236 | g_InventoryScreenHeight
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004fd23b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004fd240
     ADD ESP,0xc                         ; 004fd242
     TEST EAX,EAX                        ; 004fd245
@@ -239,7 +239,7 @@ section .text
     PUSH 0x6304c1                       ; 004fd479 | s_EmptyChar_006304c1
     MOV dword ptr [0x02dbaac0],EBX      ; 004fd47e | g_ItemDefinitionCount
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004fd484
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004fd489
     MOV EBX,EAX                         ; 004fd48c
     TEST EAX,EAX                        ; 004fd48e
@@ -254,7 +254,7 @@ section .text
     ADD EAX,0x2dbaac8                   ; 004fd4a3 | DAT_02dbadc8 | g_ItemDefinitionArray
     PUSH EAX                            ; 004fd4a8 | g_ItemDefinitionArray | DAT_02dbadc8
     CALL core_inv.cpp_loadItem_FUN_004fcfe0 ; 004fd4a9
-        ;   XREF to: 004fcfe0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo * item_info, FILE * file_handle)
+        ;   XREF to: 004fcfe0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo * item_info, _FILE * file_handle)
     ADD ESP,0x8                         ; 004fd4ae
     TEST EAX,EAX                        ; 004fd4b1
     JZ 0x004fd4ed                       ; 004fd4b3
@@ -268,13 +268,13 @@ section .text
     PUSH 0x6303f6                       ; 004fd4c7 | = "%d,%d\n"
     PUSH EAX                            ; 004fd4cc
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004fd4cd
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004fd4d2
     PUSH 0x139                          ; 004fd4d5
     PUSH 0x6303fd                       ; 004fd4da | = "..\\core\\inv.cpp"
     PUSH EBX                            ; 004fd4df
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004fd4e0
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004fd4e5
     JMP 0x004fd24d                      ; 004fd4e8
         ;   XREF to: 004fd24d (UNCONDITIONAL_JUMP)  ; LAB_004fd24d
@@ -283,7 +283,7 @@ section .text
     PUSH 0x6304c2                       ; 004fd4f2 | = "..\\core\\inv.cpp"
     PUSH EBX                            ; 004fd4f7
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004fd4f8
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004fd4fd
     POP EBP                             ; 004fd500
         ;   Label: LAB_004fd500

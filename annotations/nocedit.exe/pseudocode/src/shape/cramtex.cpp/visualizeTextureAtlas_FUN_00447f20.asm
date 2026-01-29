@@ -47,7 +47,7 @@
 ;   ... and 22 more
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -62,8 +62,8 @@ section .text
 
     PUSH 0x134                          ; 00447f20
         ;   Label: shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00447f25
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447f25
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 00447f2a
     PUSH ESI                            ; 00447f2b
     PUSH EDI                            ; 00447f2c

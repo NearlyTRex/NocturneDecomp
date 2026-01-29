@@ -49,7 +49,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 004b53f3
     PUSH EDX                            ; 004b53f5
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004b53f6
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004b53fb
     MOV EDI,ESP                         ; 004b53fe
     MOV DL,0x2e                         ; 004b5400
@@ -127,7 +127,7 @@ section .text
     PUSH EAX                            ; 004b5489
     PUSH 0x627607                       ; 004b548a | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004b548f
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004b5494
     TEST EAX,EAX                        ; 004b5497
     JNZ 0x004b54a1                      ; 004b5499
@@ -141,7 +141,7 @@ section .text
     PUSH 0x62760b                       ; 004b54a6 | = "..\\engine\\fileio.cpp"
     PUSH EAX                            ; 004b54ab
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b54ac
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b54b1
     MOV EAX,ESP                         ; 004b54b4
     PUSH EAX                            ; 004b54b6
@@ -150,7 +150,7 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 004b54c0
     PUSH ESI                            ; 004b54c2
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004b54c3
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004b54c8
     ADD ESP,0x50                        ; 004b54cb
     POP EDI                             ; 004b54ce

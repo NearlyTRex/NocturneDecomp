@@ -8,32 +8,18 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 42,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 91
   },
   "cross_references": [
@@ -54,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200",
-    "signature": "void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200 (CDemonSet *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200 (CDemonSet *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -148,21 +134,9 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
-  "suspects": [
-    {
-      "actual_args": 1,
-      "description": "Format \"\\\"%*[^\\\"]\\\", %d\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "\\\"%*[^\\\"]\\\", %d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 18,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"\\\"%*[^\\\"]\\\", %d\\n\",&local_14);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

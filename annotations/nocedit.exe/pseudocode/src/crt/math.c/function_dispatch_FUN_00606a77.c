@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_math_c_function_dispatch_FUN_00606a77(int function_index)
+void function_dispatch(int function_index)
 
 {
                     /* WARNING: Could not recover jumptable at 0x00606a7a. Too many branches */

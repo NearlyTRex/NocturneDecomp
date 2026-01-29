@@ -14,7 +14,7 @@ core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(CKeyFramedModel *this_ptr,ch
   CDemonTriangle *pCVar2;
   CVector3i **ppCVar3;
   int iVar4;
-  FILE *file;
+  _FILE *file;
   uint uVar5;
   CKeyFramedModel *pCVar6;
   int iVar7;
@@ -57,41 +57,39 @@ LAB_00478e57:
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (output_filename,(char *)0x0,"wt","..\\core\\dmodel.cpp",0x569);
 LAB_00478e7f:
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 0x56d;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Can't create demon model %s",output_filename);
   }
   pCVar2 = this_ptr->collision_triangle_list;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// .KFM version\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",8);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// vertexCount,polyCount,textureCount,partCount,frameCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file,"%d,%d,%d,%d,%d\n",this_ptr->vertex_count,this_ptr->poly_count,
+  _fprintf(file,"// .KFM version\n");
+  _fprintf(file,"%d\n",8);
+  _fprintf(file,"// vertexCount,polyCount,textureCount,partCount,frameCount\n");
+  _fprintf(file,"%d,%d,%d,%d,%d\n",this_ptr->vertex_count,this_ptr->poly_count,
              this_ptr->texture_count,this_ptr->part_count,this_ptr->frame_count);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// useCollisionListFlag\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",(uint)(pCVar2 != (CDemonTriangle *)0x0));
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// transparentPixelFlag\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->transparent_pixel_flag);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// disableBackfaceCulling\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->disable_backface_culling);
+  _fprintf(file,"// useCollisionListFlag\n");
+  _fprintf(file,"%d\n",(uint)(pCVar2 != (CDemonTriangle *)0x0));
+  _fprintf(file,"// transparentPixelFlag\n");
+  _fprintf(file,"%d\n",this_ptr->transparent_pixel_flag);
+  _fprintf(file,"// disableBackfaceCulling\n");
+  _fprintf(file,"%d\n",this_ptr->disable_backface_culling);
   uVar5 = (uint)(this_ptr->env_map_opac_list != (uchar *)0x0);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// envMapListFlag\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",uVar5);
+  _fprintf(file,"// envMapListFlag\n");
+  _fprintf(file,"%d\n",uVar5);
   iVar7 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// vertex list: x,y,z\n");
+  _fprintf(file,"// vertex list: x,y,z\n");
   for (iVar10 = 0; iVar10 < this_ptr->vertex_count * this_ptr->frame_count; iVar10 = iVar10 + 1) {
     ppCVar3 = this_ptr->vertex_list;
     iVar11 = iVar7 + 8;
     iVar4 = iVar7 + 4;
     puVar1 = (uint *)((int)ppCVar3 + iVar7);
     iVar7 = iVar7 + 0xc;
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (file,"%d,%d,%d\n",*puVar1,*(uint *)((int)ppCVar3 + iVar4),
+    _fprintf(file,"%d,%d,%d\n",*puVar1,*(uint *)((int)ppCVar3 + iVar4),
                *(uint *)((int)ppCVar3 + iVar11));
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// poly list: textureIndex, n, verts(index,x2s,y2s)\n");
+  _fprintf(file,"// poly list: textureIndex, n, verts(index,x2s,y2s)\n");
   local_14 = 0;
   if (0 < this_ptr->poly_count) {
     local_18 = 0;
@@ -99,54 +97,51 @@ LAB_00478e7f:
     do {
       iVar10 = (int)this_ptr->poly_vert_list + local_18;
       iVar11 = 0;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%d,%d",
+      _fprintf(file,"%d,%d",
                  *(uint *)((int)this_ptr->poly_texture_index_list + local_1c),
                  *(uint *)(iVar10 + 4));
       iVar7 = iVar10;
       if (0 < *(int *)(iVar10 + 4)) {
         do {
           iVar11 = iVar11 + 1;
-          crt_stdio_c_fprintf_FUN_005fe6d0
-                    (file,", %d,%d,%d",*(uint *)(iVar7 + 0x18),
+          _fprintf(file,", %d,%d,%d",*(uint *)(iVar7 + 0x18),
                      *(uint *)(iVar7 + 0x1c),*(uint *)(iVar7 + 0x20));
           iVar7 = iVar7 + 0xc;
         } while (iVar11 < *(int *)(iVar10 + 4));
       }
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"\n");
+      _fprintf(file,"\n");
       local_1c = local_1c + 4;
       local_18 = local_18 + 0x48;
       local_14 = local_14 + 1;
     } while (local_14 < this_ptr->poly_count);
   }
   if (uVar5 != 0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"// envMapOpacity list\n");
+    _fprintf(file,"// envMapOpacity list\n");
     iVar7 = 0;
     if (0 < this_ptr->poly_count) {
       do {
-        crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",(uint)this_ptr->env_map_opac_list[iVar7])
+        _fprintf(file,"%d\n",(uint)this_ptr->env_map_opac_list[iVar7])
         ;
         iVar7 = iVar7 + 1;
       } while (iVar7 < this_ptr->poly_count);
     }
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// texture list\n");
+  _fprintf(file,"// texture list\n");
   iVar7 = 0;
   if (0 < this_ptr->texture_count) {
     pcVar9 = this_ptr->texture_list[0].base.texture_name;
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n",pcVar9);
+      _fprintf(file,"%s\n",pcVar9);
       iVar7 = iVar7 + 1;
       pcVar9 = pcVar9 + 0x48;
     } while (iVar7 < this_ptr->texture_count);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"// part list (vertexCount, polyCount)\n");
+  _fprintf(file,"// part list (vertexCount, polyCount)\n");
   iVar7 = 0;
   pCVar6 = this_ptr;
   if (0 < this_ptr->part_count) {
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%d,%d\n",pCVar6->part_list[0].vertex_count,
+      _fprintf(file,"%d,%d\n",pCVar6->part_list[0].vertex_count,
                  pCVar6->part_list[0].poly_count);
       iVar7 = iVar7 + 1;
       pCVar6 = (CKeyFramedModel *)(pCVar6->model_filename + 8);

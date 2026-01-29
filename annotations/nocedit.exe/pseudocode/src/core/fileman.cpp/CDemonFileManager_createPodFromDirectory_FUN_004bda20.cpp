@@ -11,7 +11,7 @@ core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFil
 
 {
   char cVar1;
-  FILE *file_ptr;
+  _FILE *file_ptr;
   int iVar2;
   char *pcVar3;
   uint uVar4;
@@ -27,15 +27,15 @@ core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFil
   char local_140 [100];
   char local_dc [100];
   char local_78 [100];
-  FILE *local_14;
+  _FILE *local_14;
   
   bVar8 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select response file.",&s_EmptyStr_006295ce,
                      "*.vox",(int)local_598);
   if (iVar2 != 0) {
-    crt_string_c_splitpath_FUN_005ff178(local_598,(char *)0x0,(char *)0x0,local_1a4,(char *)0x0);
-    crt_file_c_makepath_FUN_005febfc(local_140,(char *)0x0,(char *)0x0,local_1a4,"pod");
+    splitpath(local_598,(char *)0x0,(char *)0x0,local_1a4,(char *)0x0);
+    makepath(local_140,(char *)0x0,(char *)0x0,local_1a4,"pod");
     iVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                       (g_CEditorToolsPtr,"Enter POD name to build",&s_EmptyStr_006295ed,
                        0x6295e9,(int)local_140);
@@ -50,7 +50,7 @@ LAB_004bdb2c:
       do {
         do {
           file_ptr = local_14;
-          iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(local_14," %[^\n]\n",local_798);
+          iVar2 = _fscanf(local_14," %[^\n]\n",local_798);
           if (iVar2 != 1) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\fileman.cpp",0x12d);
             engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base);
@@ -58,7 +58,7 @@ LAB_004bdb2c:
                       (&this_ptr->base,local_140,(char *)0x0);
             return;
           }
-          pcVar3 = crt_string_c_strstr_FUN_005fedd0(local_798,"//");
+          pcVar3 = strstr(local_798,"//");
           if (pcVar3 != (char *)0x0) {
             *pcVar3 = '\0';
           }
@@ -81,11 +81,11 @@ LAB_004bdb2c:
           }
           local_798[SVar5] = '\0';
           while ((g_CharacterClassificationTable[(byte)(local_798[0] + 1)] & 2U) != 0) {
-            crt_string_c_memmove_FUN_005fe5e0(local_798,local_798 + 1,SVar5);
+            memmove(local_798,local_798 + 1,SVar5);
             SVar5 = SVar5 - 1;
           }
         } while (local_798[0] == '\0');
-        iVar2 = crt_stdio_c_sscanf_FUN_0060013c(local_798," %[^:]:%s",local_2a5 + 1,local_3a5 + 1);
+        iVar2 = sscanf(local_798," %[^:]:%s",local_2a5 + 1,local_3a5 + 1);
         if (iVar2 != 2) {
           pcVar6 = "file";
           pcVar3 = local_2a5 + 1;
@@ -129,7 +129,7 @@ LAB_004bdb2c:
         }
         (local_2a5 + 1)[SVar5] = '\0';
         while ((g_CharacterClassificationTable[(byte)(local_2a5[1] + 1)] & 2U) != 0) {
-          crt_string_c_memmove_FUN_005fe5e0(local_2a5 + 1,local_2a5 + 2,SVar5);
+          memmove(local_2a5 + 1,local_2a5 + 2,SVar5);
           SVar5 = SVar5 - 1;
         }
         uVar4 = 0xffffffff;
@@ -151,26 +151,25 @@ LAB_004bdb2c:
         }
         (local_3a5 + 1)[SVar5] = '\0';
         while ((g_CharacterClassificationTable[(byte)(local_3a5[1] + 1)] & 2U) != 0) {
-          crt_string_c_memmove_FUN_005fe5e0(local_3a5 + 1,local_3a5 + 2,SVar5);
+          memmove(local_3a5 + 1,local_3a5 + 2,SVar5);
           SVar5 = SVar5 - 1;
         }
-        iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"sounds");
+        iVar2 = stricmp(local_2a5 + 1,"sounds");
         if (iVar2 != 0) {
-          iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"file");
+          iVar2 = stricmp(local_2a5 + 1,"file");
           if (iVar2 == 0) {
-            crt_stdio_c_fprintf_FUN_005fe6d0((this_ptr->base).file_ptr,"%s\n",local_3a5 + 1);
+            _fprintf((this_ptr->base).file_ptr,"%s\n",local_3a5 + 1);
           }
           else {
-            iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"msn");
+            iVar2 = stricmp(local_2a5 + 1,"msn");
             if (iVar2 == 0) {
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Loading %s");
               core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_3a5 + 1,0);
               core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
               core_mission_cpp_CDemonMission_FUN_00523cf0(g_CDemonMissionPtr);
-              crt_stdio_c_fprintf_FUN_005fe6d0
-                        ((this_ptr->base).file_ptr,"WORLD\\%s\n",local_3a5 + 1);
-              crt_string_c_splitpath_FUN_005ff178
+              _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_3a5 + 1);
+              splitpath
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_dc,(char *)0x0);
               pcVar6 = ".scr";
               iVar2 = -1;
@@ -195,10 +194,9 @@ LAB_004bdb2c:
               } while (cVar1 != '\0');
               iVar2 = engine_dosio_c_getFileSize_FUN_00481880("world",local_dc);
               if (0 < iVar2) {
-                crt_stdio_c_fprintf_FUN_005fe6d0
-                          ((this_ptr->base).file_ptr,"WORLD\\%s\n",local_dc);
+                _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_dc);
               }
-              crt_string_c_splitpath_FUN_005ff178
+              splitpath
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_78,(char *)0x0);
               pcVar6 = ".txt";
               iVar2 = -1;
@@ -223,33 +221,32 @@ LAB_004bdb2c:
               } while (cVar1 != '\0');
               iVar2 = engine_dosio_c_getFileSize_FUN_00481880("world",local_78);
               if (0 < iVar2) {
-                crt_stdio_c_fprintf_FUN_005fe6d0
-                          ((this_ptr->base).file_ptr,"WORLD\\%s\n",local_78);
+                _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_78);
               }
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Adding to file list.");
               core_mission_cpp_CDemonMission_FUN_00524e60(g_CDemonMissionPtr);
             }
             else {
-              iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"kfm");
+              iVar2 = stricmp(local_2a5 + 1,"kfm");
               if (iVar2 == 0) {
                 core_fileman_cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230
                           (this_ptr,local_3a5 + 1);
               }
               else {
-                iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"cth");
+                iVar2 = stricmp(local_2a5 + 1,"cth");
                 if (iVar2 == 0) {
                   core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
                             (this_ptr,local_3a5 + 1);
                 }
                 else {
-                  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"dfm");
+                  iVar2 = stricmp(local_2a5 + 1,"dfm");
                   if (iVar2 == 0) {
                     core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
                               (this_ptr,local_3a5 + 1);
                   }
                   else {
-                    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_2a5 + 1,"set");
+                    iVar2 = stricmp(local_2a5 + 1,"set");
                     if (iVar2 != 0) {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Invalid tag \"%s\"",local_2a5 + 1);
@@ -266,7 +263,7 @@ LAB_004bdb2c:
           }
           goto LAB_004bdb2c;
         }
-        core_fileman_cpp_refreshSoundDirectory_FUN_004be590((FILE *)this_ptr,local_3a5 + 1);
+        core_fileman_cpp_refreshSoundDirectory_FUN_004be590((_FILE *)this_ptr,local_3a5 + 1);
       } while( true );
     }
   }

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_ctype_c_tolower_FUN_005feb30(int character)
+int __cdecl tolower(int character)
 
 {
   if ((0x40 < character) && (character < 0x5b)) {

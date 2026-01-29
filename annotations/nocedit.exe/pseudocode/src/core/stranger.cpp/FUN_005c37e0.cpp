@@ -28,7 +28,7 @@ CVector3f * core_stranger_cpp_FUN_005c37e0(void)
     if ((((float)0.01 <= fVar2) &&
         (dVar4 = (double)(SQRT(fVar2 * fVar2 - -*in_stack_0000000c * -*in_stack_0000000c) / fVar2),
         dVar4 < 1.0)) && (0.0 <= dVar4)) {
-      dVar4 = crt_math_c_acos_FUN_00600162(dVar4);
+      dVar4 = acos(dVar4);
       if (0.0 <= local_24) {
         fVar3 = *pfVar1 + (float)dVar4;
       }
@@ -42,7 +42,7 @@ CVector3f * core_stranger_cpp_FUN_005c37e0(void)
     if (((0.01 <= (double)fVar2) &&
         (dVar4 = (double)(SQRT(fVar2 * fVar2 - in_stack_0000000c[1] * in_stack_0000000c[1]) / fVar2)
         , dVar4 < 1.0)) && (0.0 <= dVar4)) {
-      dVar4 = crt_math_c_acos_FUN_00600162(dVar4);
+      dVar4 = acos(dVar4);
       if (0.0 <= local_24) {
         fVar2 = in_stack_00000004->x + (float)dVar4;
       }

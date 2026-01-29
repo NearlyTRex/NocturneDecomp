@@ -24,8 +24,8 @@
 ;   short g_DaysInMonth_Leap = 0x0
 ;
 ; Called Functions:
+;   crt_time.c__mktime_FUN_00600f80
 ;   crt_time.c_is_leap_year_FUN_00607820
-;   crt_time.c_mktime_FUN_00600f80
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     PUSH EAX                            ; 006078d0
     MOV dword ptr [ESP + 0x18],EDI      ; 006078d1
     MOV dword ptr [ESP + 0x24],EBP      ; 006078d5
-    CALL crt_time.c_mktime_FUN_00600f80 ; 006078d9
-        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
+    CALL crt_time.c__mktime_FUN_00600f80 ; 006078d9
+        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__mktime_FUN_00600f80(_tm * timeptr)
     ADD ESP,0x4                         ; 006078de
     MOV EDX,dword ptr [EBX + 0x18]      ; 006078e1
     SUB EDX,dword ptr [ESP + 0x18]      ; 006078e4

@@ -8,7 +8,7 @@
 ; ulong            Stack[0x8]:4   new_size
 ;
 ; XREF[1]:
-;   crt_memory.c_realloc_implementation_FUN_00601e08 at 00601e47
+;   crt_memory.c_realloc__FUN_00601e08 at 00601e47
 ;
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000

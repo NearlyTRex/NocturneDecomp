@@ -22,12 +22,12 @@ shape_edittool_cpp_CInputString_init_FUN_0049d3d0
   if (299 < (uint)max_length) {
     this_ptr->max_length = 299;
   }
-  crt_memory_c_memset_FUN_005fde40(this_ptr,0,300);
+  memset(this_ptr,0,300);
   if (source_string == (char *)0x0) {
     this_ptr->current_length = 0;
   }
   else {
-    crt_string_c_strncpy_FUN_00600f40(this_ptr->string_data,source_string,this_ptr->max_length);
+    strncpy(this_ptr->string_data,source_string,this_ptr->max_length);
     uVar2 = 0xffffffff;
     pCVar3 = this_ptr;
     do {

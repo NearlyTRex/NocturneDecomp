@@ -181,7 +181,7 @@ float core_flame_cpp_FUN_004ca110(void)
           g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
           g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
           g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar6 = round
                             ((double)*(float *)(in_stack_00000004[1].actor_name + 0xc));
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                     (g_CDemonRendererPtr2,

@@ -21,7 +21,7 @@ void core_netgame_cpp_FUN_0053f650(void)
     do {
       while (*(int *)((int)&g_SimFrameHistory + iVar2) < in_stack_00000004) {
         g_SimFrameCount = g_SimFrameCount + -1;
-        crt_string_c_memmove_FUN_005fe5e0
+        memmove
                   ((void *)((int)&g_SimFrameHistory + iVar2),src,(g_SimFrameCount - iVar1) * 100);
         if (g_SimFrameCount <= iVar1) {
           return;

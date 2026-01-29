@@ -26,7 +26,7 @@ int core_script_cpp_FUN_00560160(void)
       if (**(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34)) == ':') {
         str2 = in_stack_00000008;
         str1 = (char *)core_script_cpp_FUN_005593d0();
-        iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,str2);
+        iVar1 = stricmp(str1,str2);
         if (iVar1 == 0) {
           return iVar2;
         }

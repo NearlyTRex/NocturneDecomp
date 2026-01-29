@@ -16,6 +16,6 @@ float10 crt_math_c_FUN_00606bff(void)
   
   pcVar1 = (code *)swi(6);
   (*pcVar1)();
-  fVar2 = crt_math_c_fdiv_FUN_00606960(in_ST2,in_ST1);
+  fVar2 = fdiv(in_ST2,in_ST1);
   return fVar2;
 }

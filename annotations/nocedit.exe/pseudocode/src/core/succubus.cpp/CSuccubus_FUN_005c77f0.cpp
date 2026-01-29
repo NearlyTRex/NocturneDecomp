@@ -9,7 +9,7 @@
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c77f0(CSuccubus *this_ptr)
 
 {
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0
             ((CDemonActor *)this_ptr,in_stack_00000008);

@@ -29,18 +29,6 @@
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 65,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 68,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 31,
         "line": 85,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -67,14 +55,13 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 153,
+    "complexity_score": 138,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 14,
     "pseudocode_lines": 88,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "format_string_mismatch",
       "param_count_too_few",
       "stack_param"
     ],
@@ -386,17 +373,6 @@
       "param_delta": 5,
       "text": "Function declares 0 params but call sites push 5 (5 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"%[^,], %s\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "%[^,], %s",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 58,
-      "match": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(pcVar2,\"%[^,], %s\",local_70,local_d4);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
     }
   ]
 }

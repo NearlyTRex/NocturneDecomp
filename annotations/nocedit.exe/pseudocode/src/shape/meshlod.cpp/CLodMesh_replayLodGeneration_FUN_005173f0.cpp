@@ -10,7 +10,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMes
 
 {
   CLodEdge *pCVar1;
-  FILE *file_handle;
+  _FILE *file_handle;
   int iVar2;
   byte bVar3;
   char acStackY_1406 [1018];
@@ -44,7 +44,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMes
        ("replay.txt" + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8)[((uint)bVar3 * -2 + 1) * 2]
   ;
   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0(filename,directory,mode,source_file,iVar4);
-  if (file_handle == (FILE *)0x0) {
+  if (file_handle == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",local_24);
     return;

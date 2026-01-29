@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-void * __cdecl crt_memory_c_malloc_FUN_00601bb0(ulong size)
+void * __cdecl malloc(ulong size)
 
 {
   void *pvVar1;
   
-  pvVar1 = crt_heap_c_InternalHeapAlloc_FUN_00601bc0(size);
+  pvVar1 = InternalHeapAlloc(size);
   return pvVar1;
 }

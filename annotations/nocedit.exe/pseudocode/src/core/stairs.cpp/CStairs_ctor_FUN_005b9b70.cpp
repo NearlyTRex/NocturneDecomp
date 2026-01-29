@@ -13,7 +13,7 @@ CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005b9b70(CStairs *this_ptr)
   void *pvVar2;
   
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar2 = __arrinit
                      (pCVar1[1].actor_name + 0x18,0x28,&g_CDemonTriangleTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar2 + -0x1c) = &g_CStairsVTable;
   *(uint *)((int)pvVar2 + -0x18) = 0x3f800000;

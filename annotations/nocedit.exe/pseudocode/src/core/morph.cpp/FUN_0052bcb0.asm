@@ -121,8 +121,8 @@ section .text
     PUSH 0x2                            ; 0052bcbc
     LEA EAX,[ESP + 0x8]                 ; 0052bcbe
     PUSH EAX                            ; 0052bcc2
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052bcc3
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0052bcc3
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052bcc8
     PUSH 0x0                            ; 0052bccb
     LEA EAX,[ESP + 0x4b94]              ; 0052bccd
@@ -201,8 +201,8 @@ section .text
     MOV dword ptr [ESP + 0x4d44],EAX    ; 0052bdb7
     LEA EAX,[ESP + 0x4924]              ; 0052bdbe
     PUSH EAX                            ; 0052bdc5
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052bdc6
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0052bdc6
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052bdcb
     MOV EAX,[0x006810c8]                ; 0052bdce | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x1f                           ; 0052bdd3
@@ -232,8 +232,8 @@ section .text
     PUSH 0x2                            ; 0052be3f
     LEA EAX,[ESP + 0x4ca4]              ; 0052be41
     PUSH EAX                            ; 0052be48
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052be49
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0052be49
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052be4e
     XOR EAX,EAX                         ; 0052be51
     XOR EDX,EDX                         ; 0052be53

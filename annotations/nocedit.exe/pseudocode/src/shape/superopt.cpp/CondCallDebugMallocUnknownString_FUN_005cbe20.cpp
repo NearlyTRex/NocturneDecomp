@@ -21,13 +21,13 @@ void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
   
   bVar6 = 0;
   shape_superopt_cpp_FUN_005cbf20();
-  pvVar1 = crt_memory_c_realloc_FUN_00601df0
+  pvVar1 = realloc
                      (*(void **)(in_stack_00000004 + 0xc),(*(int *)(in_stack_00000004 + 8) + 1) * 8)
   ;
   if (pvVar1 != (void *)0x0) {
     *(void **)(in_stack_00000004 + 0xc) = pvVar1;
     piVar5 = (int *)(*(int *)(in_stack_00000004 + 0xc) + *(int *)(in_stack_00000004 + 8) * 8);
-    puVar2 = crt_memory_c_malloc_FUN_006021da(in_stack_0000000c * 0x60);
+    puVar2 = shape_memdbg_cpp_malloc_FUN_006021da(in_stack_0000000c * 0x60);
     piVar5[1] = (int)puVar2;
     if (puVar2 != (uint *)0x0) {
       for (uVar3 = (uint)(in_stack_0000000c * 0x60) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {

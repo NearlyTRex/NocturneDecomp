@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 (CKeyFramedModel *this_ptr,FILE *dependency_file,int skip_raw_files)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 (CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   dependency_file
+; _FILE *          Stack[0x8]:4   dependency_file
 ; int              Stack[0xc]:4   skip_raw_files
 ; Local Variables:
 ; undefined1       Stack[-0xd8]:1  local_d8
@@ -101,7 +101,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xe8]      ; 0047ed77
     PUSH EDX                            ; 0047ed7e
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0047ed7f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0047ed84
     MOV ESI,ESP                         ; 0047ed87
         ;   Label: LAB_0047ed87
@@ -110,7 +110,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xe8]      ; 0047ed8f
     PUSH ECX                            ; 0047ed96
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0047ed97
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0047ed9c
     MOV ESI,dword ptr [ESP + 0xdc]      ; 0047ed9f
     INC EBP                             ; 0047eda6

@@ -9,19 +9,19 @@ void __cdecl staticInit(void);
 
 // Original: core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0
 // Address: 0049a4e0
-void __cdecl CDemonTriangle::readDataCSV(CDemonTriangle *this_ptr,FILE *file_handle);
+void __cdecl CDemonTriangle::readDataCSV(CDemonTriangle *this_ptr,_FILE *file_handle);
 
 // Original: core_dtri.cpp_CDemonTriangle_writeDataCSV_FUN_0049a530
 // Address: 0049a530
-void __cdecl CDemonTriangle::writeDataCSV(CDemonTriangle *this_ptr,FILE *file_handle);
+void __cdecl CDemonTriangle::writeDataCSV(CDemonTriangle *this_ptr,_FILE *file_handle);
 
 // Original: core_dtri.cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0
 // Address: 0049a5a0
-void __cdecl CDemonTriangle::readDataBinary(CDemonTriangle *this_ptr,FILE *file_handle);
+void __cdecl CDemonTriangle::readDataBinary(CDemonTriangle *this_ptr,_FILE *file_handle);
 
 // Original: core_dtri.cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0
 // Address: 0049a5f0
-void __cdecl CDemonTriangle::writeDataBinary(CDemonTriangle *this_ptr,FILE *file_handle);
+void __cdecl CDemonTriangle::writeDataBinary(CDemonTriangle *this_ptr,_FILE *file_handle);
 
 // Original: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
 // Address: 0049a640

@@ -21,7 +21,7 @@ int core_setedit_cpp_FUN_005781a0(void)
   if (0 < DAT_03654368) {
     str1 = &DAT_03654370;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,local_10c);
+      iVar1 = stricmp(str1,local_10c);
       if (iVar1 == 0) {
         return iVar2;
       }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_stream_valid_FUN_00608cd1(FILE *stream,int operation_type)
+; __watcallStack int __watcallStack crt_stdio_c_stream_valid_FUN_00608cd1(_FILE *stream,int operation_type)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   stream
+; _FILE *          Stack[0x4]:4   stream
 ; int              Stack[0x8]:4   operation_type
 ;
 ; XREF[3]:
@@ -51,7 +51,7 @@ section .text
     PUSH EBX                            ; 00608d0e
     PUSH EAX                            ; 00608d0f
     CALL crt_stdio.c_stream_setup_FUN_00605f20 ; 00608d10
-        ;   XREF to: 00605f20 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_setup_FUN_00605f20(FILE * stream, int operation_type)
+        ;   XREF to: 00605f20 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_setup_FUN_00605f20(_FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 00608d15
     POP EBX                             ; 00608d18
     RET                                 ; 00608d19

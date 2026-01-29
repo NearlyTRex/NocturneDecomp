@@ -24,7 +24,7 @@ void core_gore_cpp_FUN_004ecce0(void)
   int local_18;
   
   CStack_54.x = 0x4eccf9;
-  dVar2 = crt_math_c_round_FUN_005fe6b0
+  dVar2 = round
                     ((double)((float)in_stack_00000004[6] * (float)8));
   local_18 = (int)ROUND(dVar2);
   if (local_18 < 0) {

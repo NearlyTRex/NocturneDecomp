@@ -16,9 +16,9 @@ void crt_unknown_c_FUN_0060ccb4(void)
   while (ptr != (ThreadRegistryEntry *)0x0) {
     pTVar1 = ptr->next;
     if (ptr->shouldFreeData != 0) {
-      crt_memory_c_free_FUN_00601cd0(ptr->dataBuffer);
+      free(ptr->dataBuffer);
     }
-    crt_memory_c_free_FUN_00601cd0(ptr);
+    free(ptr);
     ptr = pTVar1;
   }
   return;

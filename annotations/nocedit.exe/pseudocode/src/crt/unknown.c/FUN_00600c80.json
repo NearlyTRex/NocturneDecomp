@@ -17,7 +17,7 @@
     {
       "addr": "00600cf0",
       "from_addr": "00600dca",
-      "name": "crt_io.c_ftruncate_FUN_00600cf0",
+      "name": "crt_io.c_chsize_FUN_00600cf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -117,14 +117,14 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
-      "text": "iVar1 = crt_stdio_c_lseek_FUN_00606690(in_stack_00000004,in_stack_00000008,0);",
+      "text": "iVar1 = lseek(in_stack_00000004,in_stack_00000008,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_lseek_FUN_00606690(in_stack_00000004,in_stack_00000008,0);",
+      "text": "iVar1 = lseek(in_stack_00000004,in_stack_00000008,0);",
       "type": "stack_param"
     },
     {
@@ -152,7 +152,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
-      "text": "SVar2 = crt_io_c_write_FUN_006084ec(in_stack_00000004,local_20c,count);",
+      "text": "SVar2 = write(in_stack_00000004,local_20c,count);",
       "type": "stack_param"
     },
     {

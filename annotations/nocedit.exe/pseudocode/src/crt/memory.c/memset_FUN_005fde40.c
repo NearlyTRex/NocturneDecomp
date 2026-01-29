@@ -6,14 +6,14 @@
 
 #include "nocturne.h"
 
-void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count)
+void * __cdecl memset(void *dest,int value,ulong count)
 
 {
   byte uVar1;
   uint unaff_EBX;
   
   uVar1 = (byte)value;
-  crt_memory_c_OptimizedMemFill_FUN_00603b00
+  __memfill
             (dest,CONCAT31(CONCAT21(CONCAT11(uVar1,uVar1),uVar1),uVar1),unaff_EBX);
   return dest;
 }

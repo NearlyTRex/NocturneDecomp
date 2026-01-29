@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(void *ptr,HeapBlock *heap_block,ushort segment)
+void CoalesceAndAddFreeBlock(void *ptr,HeapBlock *heap_block,ushort segment)
 
 {
   uint *puVar1;

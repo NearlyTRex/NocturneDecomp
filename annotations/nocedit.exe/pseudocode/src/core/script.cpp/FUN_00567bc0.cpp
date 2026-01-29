@@ -39,7 +39,7 @@ void core_script_cpp_FUN_00567bc0(void)
           iVar3 = 0;
           do {
             if (*(int *)((int)aiStack_1f4c + iVar3) == 0xd) {
-              crt_stdio_c_sprintf_FUN_005fdbd0
+              sprintf
                         (local_14c,"%s\tScript line %d",auStack_2140 + iVar3,
                          *(uint *)(*(int *)(in_stack_00000004 + 0x34) + iVar1));
               shape_edittool_cpp_CStrList_add_FUN_004a2b80(in_stack_00000008,local_14c);

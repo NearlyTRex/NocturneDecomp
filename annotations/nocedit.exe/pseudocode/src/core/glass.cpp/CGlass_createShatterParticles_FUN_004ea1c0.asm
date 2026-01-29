@@ -143,7 +143,7 @@
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -163,8 +163,8 @@ section .text
     PUSH 0x4                            ; 004ea1eb
     LEA EAX,[ESP + 0x8]                 ; 004ea1ed
     PUSH EAX                            ; 004ea1f1
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004ea1f2
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 004ea1f2
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004ea1f7
     MOV EDX,0x1                         ; 004ea1fa
     MOV ECX,dword ptr [ESP + 0x1f8]     ; 004ea1ff

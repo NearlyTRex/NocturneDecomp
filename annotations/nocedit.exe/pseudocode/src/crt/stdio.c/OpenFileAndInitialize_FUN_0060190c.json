@@ -38,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c",
-    "signature": "FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,FILE *file_struct)"
+    "signature": "_FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,_FILE *file_struct)"
   },
   "function_calls": [
     {
@@ -47,14 +47,14 @@
       "name": "crt_ctype.c_tolower_FUN_005feb30"
     },
     {
+      "addr": "006093b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c___freefp_FUN_006093b0"
+    },
+    {
       "addr": "00609074",
       "is_variadic": true,
       "name": "crt_stdio.c_CreateFileVariadic_FUN_00609074"
-    },
-    {
-      "addr": "006093b0",
-      "is_variadic": false,
-      "name": "crt_stdio.c_DeallocateFileStruct_FUN_006093b0"
     },
     {
       "addr": "00608ee0",
@@ -142,7 +142,7 @@
         "name": "file_struct",
         "offset": 24,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },

@@ -12,8 +12,8 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView
   void *ptr;
   
   if ((d1 & 4) != 0) {
-    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CCameraViewTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr);
+    ptr = __vec_delete(this_ptr,&g_CCameraViewTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }
   this_ptr->vtable = &g_CCameraViewVTable;

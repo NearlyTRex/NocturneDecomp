@@ -10,7 +10,7 @@ int __cdecl
 engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CFileManager *this_ptr)
 
 {
-  FILE *file_ptr;
+  _FILE *file_ptr;
   int iVar1;
   uint in_stack_fffffb30;
   uint in_stack_fffffb34;
@@ -23,7 +23,7 @@ engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CFileManager *
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("pod.ini",(char *)0x0,"rt","..\\engine\\fileio.cpp",
                         0x1076);
-  if (file_ptr != (FILE *)0x0) {
+  if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x1078);
     return 1;
   }

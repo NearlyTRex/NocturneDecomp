@@ -30,7 +30,7 @@ float core_script_cpp_FUN_0055ff00(void)
   bVar5 = 0;
   local_18 = 0;
   if (*(float *)((int)in_stack_00000004 + 0x454) < 0.0) {
-    iVar2 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,&DAT_006431a0,&local_28);
+    iVar2 = sscanf(in_stack_0000000c,&DAT_006431a0,&local_28);
     if (iVar2 != 1) {
       local_28 = core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(g_CSoundPtr,in_stack_0000000c);
       local_14 = local_28;

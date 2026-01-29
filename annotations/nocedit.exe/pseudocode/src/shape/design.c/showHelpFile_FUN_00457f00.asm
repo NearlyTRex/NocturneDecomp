@@ -51,7 +51,7 @@ section .text
     MOV EAX,0x61a86b                    ; 00457f22 | = "help"
     PUSH EAX                            ; 00457f27 | = "help"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00457f28
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00457f2d
     MOV dword ptr [EBP + -0x8],EAX      ; 00457f30
     CMP dword ptr [EBP + -0x8],0x0      ; 00457f33
@@ -66,7 +66,7 @@ section .text
     LEA EAX,[EBP + -0x58]               ; 00457f48
     PUSH EAX                            ; 00457f4b
     CALL crt_stdio.c_fgets_FUN_005fefd0 ; 00457f4c
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00457f51
     TEST EAX,EAX                        ; 00457f54
     JZ 0x00457f98                       ; 00457f56
@@ -104,7 +104,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x8]      ; 00457fa3
     PUSH EAX                            ; 00457fa6
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00457fa7
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00457fac
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00457faf
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

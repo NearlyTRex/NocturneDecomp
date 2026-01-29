@@ -11,7 +11,6 @@ SFly * __cdecl core_flies_cpp_FUN_004ccd20(SFly *this_ptr)
 {
   void *pvVar1;
   
-  pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->unk + 4,4,&g_CVectorTypeInfo);
+  pvVar1 = __arrinit(this_ptr->unk + 4,4,&g_CVectorTypeInfo);
   return (SFly *)((int)pvVar1 + -4);
 }

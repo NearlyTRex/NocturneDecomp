@@ -49,7 +49,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList *
     do {
       pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,iVar5);
       iVar5 = iVar5 + 1;
-      iVar6 = crt_stdio_c_sprintf_FUN_005fdbd0(buffer,"%s\n",pcVar3);
+      iVar6 = sprintf(buffer,"%s\n",pcVar3);
       buffer = buffer + iVar6;
     } while (iVar5 < this_ptr->item_count);
   }
@@ -58,6 +58,6 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList *
   shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(this_ptr_00,pcVar2);
   g_CurrentDebugFilename = "..\\shape\\edittool.cpp";
   g_CurrentDebugLine = 0xc61;
-  crt_memory_c_free_FUN_005fe659(pcVar2);
+  shape_memdbg_cpp_free_FUN_005fe659(pcVar2);
   return;
 }

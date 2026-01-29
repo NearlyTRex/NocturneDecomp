@@ -31,7 +31,7 @@
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 005b8a0a
     XOR EDI,EDI                         ; 005b8a0b
     LEA EBX,[ESP + 0x18]                ; 005b8a0d
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005b8a11
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005b8a11
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005b8a16
     PUSH EDI                            ; 005b8a19
         ;   Label: LAB_005b8a19

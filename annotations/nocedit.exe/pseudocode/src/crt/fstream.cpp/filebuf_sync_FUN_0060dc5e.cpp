@@ -27,7 +27,7 @@ int __watcallStack crt_fstream_cpp_filebuf_sync_FUN_0060dc5e(filebuf *this_ptr)
           }
         }
       }
-      iVar2 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,iVar2,1);
+      iVar2 = lseek(this_ptr->__file_handle,iVar2,1);
       if (iVar2 < 0) {
         return -1;
       }

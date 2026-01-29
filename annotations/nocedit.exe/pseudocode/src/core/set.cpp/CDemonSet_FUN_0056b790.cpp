@@ -18,7 +18,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b790(CDemonSet *this_ptr)
   if (0 < this_ptr->camera_count) {
     str1 = this_ptr->cameras;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->name,in_stack_00000008);
+      iVar1 = stricmp(str1->name,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }

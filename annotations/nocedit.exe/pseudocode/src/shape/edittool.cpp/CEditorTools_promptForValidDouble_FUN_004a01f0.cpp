@@ -25,7 +25,7 @@ shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
   else {
     local_40 = min_value;
     local_38 = max_value;
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_30,"%.15g",*(uint *)result_ptr,
                *(uint *)((int)result_ptr + 4));
     min_value = local_40;
@@ -40,7 +40,7 @@ shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = crt_stdio_c_sscanf_FUN_0060013c(local_30,"%lf",&local_48);
+      iVar1 = sscanf(local_30,"%lf",&local_48);
       if (iVar1 == 1) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (this_ptr,"Please enter a valid number.");

@@ -40,7 +40,7 @@ section .text
     PUSH EDX                            ; 00560785
     MOVSD.REP ES:EDI,ESI                ; 00560786 | DAT_00680d60 | DAT_00680d64
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00560788
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0056078d
     PUSH 0x680d58                       ; 00560790 | = "(none)"
     LEA EAX,[ESP + 0x4]                 ; 00560795

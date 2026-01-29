@@ -43,7 +43,7 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
   this_ptr->rotation_phase = 0.25;
   iVar5 = 0;
   do {
-    iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar2 = rand();
     *(int *)((int)&g_MoonBats[0].course_index + iVar5) = iVar2 % 3;
     fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,(float)g_MoonBatCourses[iVar2 % 3].len);
     fVar4 = (float)g_MoonBatModel.frame_count;

@@ -2,13 +2,13 @@
 // Address: 0043e6c0
 // Address Range: [[0043e6c0, 0043e7d4]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0 (SBitBuffer *bit_buffer,int bit_count,int bit_value,FILE *output_stream)
+// Signature: void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0 (SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
 
 #include "nocturne.h"
 
 void __cdecl
 support_codec_cpp_writeBitsToStream_FUN_0043e6c0
-          (SBitBuffer *bit_buffer,int bit_count,int bit_value,FILE *output_stream)
+          (SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
   
   iVar1 = bit_buffer->bits_available;
   while (7 < iVar1) {
-    crt_stdio_c_fputc_FUN_005ff2d7(output_stream,(uint)(byte)bit_buffer->accumulated_bits);
+    _fputc(output_stream,(uint)(byte)bit_buffer->accumulated_bits);
     iVar1 = bit_buffer->bits_available + -8;
     bit_buffer->accumulated_bits = (uint)bit_buffer->accumulated_bits >> 8;
     bit_buffer->bits_available = iVar1;
@@ -31,8 +31,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
     }
     else {
       if (bit_count != iVar1) {
-        crt_stdio_c_fputc_FUN_005ff2d7
-                  (output_stream,
+        _fputc(output_stream,
                    (uint)(byte)((char)bit_value << ((byte)bit_buffer->bits_available & 0x1f) |
                                (byte)bit_buffer->accumulated_bits));
         bit_buffer->bits_available = 0;
@@ -44,7 +43,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
       }
       bit_buffer->accumulated_bits =
            bit_buffer->accumulated_bits | bit_value << ((byte)bit_buffer->bits_available & 0x1f);
-      crt_stdio_c_fputc_FUN_005ff2d7(output_stream,(uint)(byte)bit_buffer->accumulated_bits);
+      _fputc(output_stream,(uint)(byte)bit_buffer->accumulated_bits);
       bit_buffer->bits_available = 0;
       bit_buffer->accumulated_bits = 0;
     }
@@ -52,7 +51,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
   }
 LAB_0043e753:
   for (; 7 < bit_count; bit_count = bit_count + -8) {
-    crt_stdio_c_fputc_FUN_005ff2d7(output_stream,bit_value & 0xff);
+    _fputc(output_stream,bit_value & 0xff);
     bit_value = (uint)bit_value >> 8;
   }
   bit_buffer->bits_available = bit_count;

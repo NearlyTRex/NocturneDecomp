@@ -12,11 +12,11 @@
 void core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140(void)
 
 {
-  FILE *file_handle;
+  _FILE *file_handle;
   CDemonMission *in_stack_00000004;
   int in_stack_00000008;
   
-  crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
+  remove("$$UNDO$$.TMP");
   INT_02f7c52c = -1;
   *(int *)(in_stack_00000004->unk2 + 0x1c) = in_stack_00000008;
   if (in_stack_00000008 != 0) {
@@ -32,7 +32,7 @@ void core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140(void)
     file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             ("$$UNDO$$.TMP",(char *)0x0,"wt",
                              "..\\core\\msnedit.cpp",0x9fe);
-    if (file_handle != (FILE *)0x0) {
+    if (file_handle != (_FILE *)0x0) {
       core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
       core_actor_cpp_CDemonActor_save_FUN_0040af30
                 (*(CDemonActor **)(in_stack_00000004->unk2 + 0x1c),file_handle);

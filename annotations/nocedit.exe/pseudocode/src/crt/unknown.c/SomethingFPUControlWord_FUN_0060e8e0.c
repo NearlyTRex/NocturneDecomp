@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_SomethingFPUControlWord(uint param_1, uint param_2) */
 
-uint crt_unknown_c_SomethingFPUControlWord_FUN_0060e8e0(void)
+uint SomethingFPUControlWord(void)
 
 {
   ushort in_FPUControlWord;

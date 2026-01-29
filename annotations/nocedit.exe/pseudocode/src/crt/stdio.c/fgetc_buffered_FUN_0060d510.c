@@ -2,17 +2,17 @@
 // Address: 0060d510
 // Address Range: [[0060d510, 0060d575]]
 // Convention: __watcallStack
-// Signature: int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(FILE *stream)
+// Signature: int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(_FILE *stream)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(FILE *stream)
+int __watcallStack fgetc_buffered(_FILE *stream)
 
 {
   int iVar1;
   uint uVar2;
   
-  iVar1 = crt_stdio_c_stream_valid_FUN_00608cd1(stream,1);
+  iVar1 = stream_valid(stream,1);
   if (iVar1 == 0) {
     return -1;
   }
@@ -26,7 +26,7 @@ int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(FILE *stream)
   if (uVar2 != 0xffffffff) {
     return uVar2;
   }
-  crt_stdio_c_reportStreamError_FUN_00606020
+  reportStreamError
             ((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),4);
   return -1;
 }

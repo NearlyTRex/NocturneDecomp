@@ -9,6 +9,6 @@
 void __cdecl core_skeleton_cpp_freeSkeletons_FUN_005a1fb0(CSkeleton **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x28,&g_CSkeletonTypeInfo);
+  __arrfini(array,0x28,&g_CSkeletonTypeInfo);
   return;
 }

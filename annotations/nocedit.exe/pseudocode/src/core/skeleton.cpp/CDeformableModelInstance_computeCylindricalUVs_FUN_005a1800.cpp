@@ -65,8 +65,8 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
         pcVar8 = in_stack_00000008;
       }
       else {
-        fVar12 = crt_math_c_atan2_FUN_006013b1((float10)*piVar7,(float10)piVar7[2]);
-        dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * (float10)2670176.8577967598));
+        fVar12 = atan2((float10)*piVar7,(float10)piVar7[2]);
+        dVar13 = round((double)(fVar12 * (float10)2670176.8577967598));
         pcVar8 = (this_ptr->motion_controller).current_motion_name + (int)ROUND(dVar13) + -0x30;
         pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       }

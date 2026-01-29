@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_FUN_0053fd00
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   support_trisock.cpp_startupWinsock_FUN_005e1ec0
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
@@ -35,8 +35,8 @@ section .text
         ;   Label: core_netgame.cpp_CNetGame_FUN_0053f780
     PUSH EDI                            ; 0053f781
     PUSH 0x63d2bc                       ; 0053f782 | = "netlog.txt"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0053f787
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0053f787
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     MOV EDX,0x1                         ; 0053f78c
     ADD ESP,0x4                         ; 0053f791
     MOV dword ptr [0x02f7c8b8],EDX      ; 0053f794 | g_CurrentGameTime

@@ -134,7 +134,7 @@ section .text
     PUSH EAX                            ; 004e29d3
     PUSH 0x62d2e7                       ; 004e29d4 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e29d9
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004e29de
     ADD ESP,0xc                         ; 004e29e0
     TEST EAX,EAX                        ; 004e29e3
@@ -146,13 +146,13 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 004e29f3
     PUSH EAX                            ; 004e29fa
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004e29fb
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004e2a00
     PUSH 0xfff                          ; 004e2a03
     PUSH 0x62d2f9                       ; 004e2a08 | = "..\\core\\game.cpp"
     PUSH EBX                            ; 004e2a0d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e2a0e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e2a13
     XOR EBX,EBX                         ; 004e2a16
     XOR ESI,ESI                         ; 004e2a18
@@ -234,7 +234,7 @@ section .text
     PUSH ESI                            ; 004e2b4b
     PUSH 0x62d31e                       ; 004e2b4c | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e2b51
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e2b56
     MOV EBX,EAX                         ; 004e2b59
     TEST EAX,EAX                        ; 004e2b5b
@@ -259,14 +259,14 @@ section .text
     MOV EDI,dword ptr [ESP + 0xa24]     ; 004e2b98
     PUSH EDI                            ; 004e2b9f
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004e2ba0
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004e2ba5
     PUSH 0x1021                         ; 004e2ba8
     PUSH 0x62d341                       ; 004e2bad | = "..\\core\\game.cpp"
     PUSH EBX                            ; 004e2bb2
     XOR EBP,EBP                         ; 004e2bb3
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e2bb5
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004e2bba
     MOV EAX,[0x00679398]                ; 004e2bbd | g_WindowHeight
     MOV dword ptr [ESP + 0xa14],EBP     ; 004e2bc2

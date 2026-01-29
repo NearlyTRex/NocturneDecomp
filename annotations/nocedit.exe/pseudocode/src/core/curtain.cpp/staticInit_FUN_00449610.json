@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 46,
-        "line": 16,
+        "line": 15,
         "message": "cannot convert 'CCurtain* (*)()' to 'void* (**)()'"
       }
     ],
@@ -19,23 +19,23 @@
       {
         "category": "other",
         "column": 35,
-        "line": 16,
+        "line": 15,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 35,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 9,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 33
+    "total_lines": 32
   },
   "cross_references": [],
   "function": {
@@ -59,7 +59,7 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     }
   ],
   "globals": [
@@ -152,14 +152,14 @@
       "description": "Undefined global data reference",
       "line": 5,
       "match": "DAT_008879c0",
-      "text": "crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_008879c0,100,&g_CVectorTypeInfo);",
+      "text": "__arrinit(DAT_008879c0,100,&g_CVectorTypeInfo);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 6,
       "match": "DAT_00887e70",
-      "text": "(DAT_00887e70,100,&g_SCollisionInfoTypeInfo);",
+      "text": "__arrinit(DAT_00887e70,100,&g_SCollisionInfoTypeInfo);",
       "type": "undefined_data"
     }
   ]

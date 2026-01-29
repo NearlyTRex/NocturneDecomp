@@ -6,14 +6,14 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_signal_c_raiseFPE_FUN_0060d028(int fpe_code)
+int __cdecl raiseFPE(int fpe_code)
 
 {
   code *pcVar1;
   
-  pcVar1 = (code *)crt_signal_c_getSignalHandler_FUN_0060ceb4(2);
+  pcVar1 = (code *)getSignalHandler(2);
   if (((pcVar1 != (code *)0x1) && (pcVar1 != (code *)0x2)) && (pcVar1 != (code *)0x3)) {
-    crt_signal_c_setSignalHandler_FUN_0060ce60(2,2);
+    setSignalHandler(2,2);
     (*pcVar1)();
     return 0;
   }

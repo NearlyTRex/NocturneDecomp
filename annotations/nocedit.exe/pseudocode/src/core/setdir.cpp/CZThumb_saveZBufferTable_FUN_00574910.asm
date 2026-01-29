@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,FILE *file_handle)
+; __cdecl void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle)
 ;
 ; Parameters:
 ; CZThumb *        Stack[0x4]:4   this_ptr
@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   width
 ; int              Stack[0x14]:4   height
 ; float            Stack[0x18]:4   unknown_scale
-; FILE *           Stack[0x1c]:4   file_handle
+; _FILE *          Stack[0x1c]:4   file_handle
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_006463fe
@@ -238,7 +238,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x24]      ; 00574b0c
     PUSH ECX                            ; 00574b0f
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00574b10
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00574b15
     POP EBP                             ; 00574b18
     POP EDI                             ; 00574b19

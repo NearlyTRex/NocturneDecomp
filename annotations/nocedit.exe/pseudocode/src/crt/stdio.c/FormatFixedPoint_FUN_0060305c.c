@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_stdio_c_FormatFixedPoint_FUN_0060305c(char *buffer,int fixed_point_value,FormatSpec *spec_info)
+FormatFixedPoint(char *buffer,int fixed_point_value,FormatSpec *spec_info)
 
 {
   char cVar1;
@@ -26,7 +26,7 @@ crt_stdio_c_FormatFixedPoint_FUN_0060305c(char *buffer,int fixed_point_value,For
   if (spec_info->precision == -1) {
     spec_info->precision = 4;
   }
-  crt_stdio_c_IntegerToString_FUN_00607d18(local_14 >> 0x10,buffer,10);
+  IntegerToString(local_14 >> 0x10,buffer,10);
   cVar1 = *buffer;
   pcVar4 = buffer;
   while (cVar1 != '\0') {

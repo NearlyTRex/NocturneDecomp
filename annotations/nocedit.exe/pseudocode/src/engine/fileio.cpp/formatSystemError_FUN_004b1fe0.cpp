@@ -13,8 +13,8 @@ void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
   char *pcVar2;
   char *buffer;
   
-  piVar1 = (int *)crt_errno_c_errno_FUN_00601450();
-  pcVar2 = crt_string_c_strerror_FUN_00601470(*piVar1);
+  piVar1 = (int *)_errno();
+  pcVar2 = strerror(*piVar1);
   if (pcVar2 == (char *)0x0) {
     return;
   }
@@ -28,6 +28,6 @@ void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
   } while (*buffer != '\0');
   buffer = (char *)0x0;
 LAB_004b201b:
-  crt_stdio_c_sprintf_FUN_005fdbd0(buffer,"\n%s",pcVar2);
+  sprintf(buffer,"\n%s",pcVar2);
   return;
 }

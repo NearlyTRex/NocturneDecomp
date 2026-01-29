@@ -13,7 +13,7 @@ void core_health_cpp_FUN_004f20b0(void)
 
 {
   int in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),in_stack_00000008);

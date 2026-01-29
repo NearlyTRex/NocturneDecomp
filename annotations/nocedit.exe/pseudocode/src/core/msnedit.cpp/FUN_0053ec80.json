@@ -48,9 +48,15 @@
       },
       {
         "category": "other",
-        "column": 58,
+        "column": 39,
         "line": 48,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 48,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -68,14 +74,13 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 339,
+    "complexity_score": 324,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 9,
     "pseudocode_lines": 59,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
-      "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
       "stack_ref"
@@ -455,17 +460,6 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s\\t%s %s\" has 3 specifiers but 1 arguments after it",
-      "expected_args": 3,
-      "format_string": "%s\\t%s %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 41,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1fc,\"%s\\t%s %s\",acStack_d0);",
-      "text": "Format string expects 3 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

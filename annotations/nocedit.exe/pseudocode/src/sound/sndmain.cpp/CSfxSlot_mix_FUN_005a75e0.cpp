@@ -98,7 +98,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
           aiStack_a4[iVar8] = (int)mix_buffer.channel_buffers[iVar8];
           mix_buffer.channel_buffers[iVar8] = g_ChannelTertiaryBuffers[iVar8];
           in_stack_ffffff30 = 0x5a76e1;
-          crt_memory_c_memset_FUN_005fde40
+          memset
                     (mix_buffer.channel_buffers[iVar8],0,mix_buffer.num_output_samples << 2);
         }
         iVar8 = iVar8 + 1;
@@ -116,10 +116,10 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       local_b0 = (double)pCVar4->streaming_buffer_size;
       local_50 = 0;
       if (0 < (pCVar4->sample_info).sample_count) {
-        uStack_88 = crt_math_c_floor_FUN_005feb90
+        uStack_88 = floor
                               (((double)pCVar4->loop_markers[this_ptr->loop_marker_index + -5] -
                                (this_ptr->options).trigger_time) / local_b8);
-        dVar12 = crt_math_c_round_FUN_005fe6b0(uStack_88);
+        dVar12 = round(uStack_88);
         local_68 = (float *)(int)ROUND(dVar12);
         if ((int)local_68 < iVar8) {
           uVar5 = (ulonglong)local_b0 >> 0x20;
@@ -132,9 +132,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       local_54 = 0;
       uVar15 = (uint)((ulonglong)dVar12 >> 0x20);
       sample_data = (short *)0x5a7889;
-      uStack_88 = crt_math_c_floor_FUN_005feb90(dVar12);
+      uStack_88 = floor(dVar12);
       uVar14 = 0x5a789d;
-      dVar13 = crt_math_c_round_FUN_005fe6b0(uStack_88);
+      dVar13 = round(uStack_88);
       dVar12 = (double)CONCAT44(uVar15,uVar14);
       local_50 = (int)ROUND(dVar13);
       if (local_50 < 1) {
@@ -144,11 +144,11 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
         }
         dVar13 = (local_b8 - dVar12) / local_c0;
         sample_data = (short *)((ulonglong)dVar13 >> 0x20);
-        dVar13 = crt_math_c_floor_FUN_005feb90(dVar13);
+        dVar13 = floor(dVar13);
         afStack_90[0] = SUB84(dVar13,0);
         afStack_90[1] = (float)((ulonglong)dVar13 >> 0x20);
         in_stack_ffffff30 = 0x5a78f1;
-        dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
+        dVar13 = round(dVar13);
         local_58 = (uint)ROUND(dVar13);
       }
       dVar13 = (double)CONCAT44(sample_data,in_stack_ffffff30);
@@ -174,7 +174,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                 uVar15 = (uint)((ulonglong)dVar13 >> 0x20);
                 pCVar4 = this_ptr->sample;
                 uVar14 = 0x5a7a4a;
-                dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
+                dVar13 = round(dVar13);
                 local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13) * 2 + 1
                                     ) - 0x80;
                 uStack_88 = (double)CONCAT44((float)local_28,
@@ -204,7 +204,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
             do {
               uVar15 = (uint)((ulonglong)dVar13 >> 0x20);
               uVar14 = 0x5a7b29;
-              dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
+              dVar13 = round(dVar13);
               local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13)) - 0x80;
               local_2c = (float)local_28;
               iVar10 = 0;
@@ -239,7 +239,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
               uVar15 = (uint)((ulonglong)dVar13 >> 0x20);
               pCVar4 = this_ptr->sample;
               uVar14 = 0x5a7bf3;
-              dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
+              dVar13 = round(dVar13);
               local_28 = (int)ROUND(dVar13);
               afStack_90[0] = (float)*(short *)((int)pCVar4->sample_data + local_28 * 4);
               afStack_90[1] =
@@ -277,7 +277,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
             uVar15 = (uint)((ulonglong)dVar13 >> 0x20);
             pCVar4 = this_ptr->sample;
             uVar14 = 0x5a7cef;
-            dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
+            dVar13 = round(dVar13);
             local_28 = (int)ROUND(dVar13);
             local_30 = (float)*(short *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2);
             iVar10 = 0;

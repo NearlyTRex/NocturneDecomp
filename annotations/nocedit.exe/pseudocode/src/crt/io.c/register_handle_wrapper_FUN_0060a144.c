@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_register_handle_wrapper_FUN_0060a144(HANDLE handle)
+int __cdecl register_handle_wrapper(HANDLE handle)
 
 {
   int iVar1;
   
-  iVar1 = crt_io_c_register_handle_FUN_00608990(handle);
+  iVar1 = register_handle(handle);
   return iVar1;
 }

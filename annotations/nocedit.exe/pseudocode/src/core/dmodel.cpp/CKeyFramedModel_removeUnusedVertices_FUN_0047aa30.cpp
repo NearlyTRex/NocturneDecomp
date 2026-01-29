@@ -42,7 +42,7 @@ core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(CKeyFramedMode
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("CKeyFramedModel::removeUnusedVertices out of memory for auxArray, vertexCount = %d",this_ptr->vertex_count);
     }
-    crt_memory_c_memset_FUN_005fde40(dest,0,this_ptr->vertex_count << 2);
+    memset(dest,0,this_ptr->vertex_count << 2);
     iVar6 = 0;
     if (0 < this_ptr->poly_count) {
       iVar10 = 0;
@@ -165,7 +165,7 @@ core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(CKeyFramedMode
     }
     g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
     g_CurrentDebugLine = 0x8bc;
-    crt_memory_c_free_FUN_005fe659(dest);
+    shape_memdbg_cpp_free_FUN_005fe659(dest);
     core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
     core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(this_ptr);
     return;

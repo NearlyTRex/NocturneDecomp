@@ -44,7 +44,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   if (*(float *)(this_ptr->unk + 0x14) <= 0.0) {
     return;
   }
-  iVar6 = crt_stdlib_c_rand_FUN_005feb5c();
+  iVar6 = rand();
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_FireEffectLightningBoltTextures + iVar6 % 6);
   local_dc.base.count = 4;
@@ -56,7 +56,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   local_b8 = 3;
   local_c0 = 1;
   local_bc = 2;
-  uVar7 = crt_stdlib_c_rand_FUN_005feb5c();
+  uVar7 = rand();
   if ((uVar7 & 1) == 0) {
     g_RenderVertexBuffer[1].u = 7.34684e-40;
     g_RenderVertexBuffer[2].u = 7.34684e-40;
@@ -159,7 +159,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     fVar8 = (float10)256;
     fVar3 = *(float *)(this_ptr->unk + 0x28);
     (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
-    dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar4 * fVar8));
+    dVar9 = round((double)((float10)fVar4 * fVar8));
     local_18.z = (int)ROUND(dVar9);
     piVar2 = &(pCVar5->vertex_buffer_ptr->projected_vertex).transformed_y;
     *piVar2 = *piVar2 - local_18.z;
@@ -167,7 +167,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     piVar2 = &pCVar5->vertex_buffer_ptr[1].projected_vertex.transformed_y;
     *piVar2 = *piVar2 + local_18.z;
     pCVar5->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
-    dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar3 * fVar8));
+    dVar9 = round((double)((float10)fVar3 * fVar8));
     local_18.z = (int)ROUND(dVar9);
     piVar2 = &pCVar5->vertex_buffer_ptr[2].projected_vertex.transformed_y;
     *piVar2 = *piVar2 + local_18.z;

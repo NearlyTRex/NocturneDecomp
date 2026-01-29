@@ -10,7 +10,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
 
 {
   char cVar1;
-  FILE *pFVar2;
+  _FILE *p_Var2;
   int iVar3;
   char *pcVar4;
   int iVar5;
@@ -34,11 +34,11 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   int local_18;
   uint local_14;
   
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50(&g_PodDir,"enemy.pod","rb");
-  if (pFVar2 != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xecf);
+  p_Var2 = engine_dosio_c_getFile_FUN_00481a50(&g_PodDir,"enemy.pod","rb");
+  if (p_Var2 != (_FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xecf);
   }
-  local_14 = (uint)(pFVar2 == (FILE *)0x0);
+  local_14 = (uint)(p_Var2 == (_FILE *)0x0);
   this_ptr->player_pos_x = 0.0;
   this_ptr->game_state_flags = 0;
   this_ptr->player_pos_y = 0.0;
@@ -46,10 +46,10 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   this_ptr->is_loading = 0;
   local_1c = g_EditorFont;
   g_EditorFont = g_ThemeFont;
-  pFVar2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("pod.ini",(char *)0x0,"rt","..\\core\\game.cpp",0xeea);
-  if (pFVar2 != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xeec);
+  if (p_Var2 != (_FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xeec);
   }
   bVar8 = unknown == 1;
   if (local_14 != 0) {
@@ -78,7 +78,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   iVar3 = -1;
   local_30 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("'Epilogue'");
   iVar6 = -1;
-  if (bVar8 || pFVar2 != (FILE *)0x0) {
+  if (bVar8 || p_Var2 != (_FILE *)0x0) {
     iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",(int)local_144);
@@ -114,15 +114,15 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
         iVar3 = 0;
         if (0 < (int)in_stack_fffff914) {
           do {
-            pFVar2 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar3),
                                 "rt");
-            if (pFVar2 == (FILE *)0x0) {
+            if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
                         ((CPickList *)&stack0xfffff914,iVar5,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xf29);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xf29);
             }
             iVar5 = iVar5 + 1;
             iVar3 = iVar3 + 0x34;
@@ -173,17 +173,17 @@ LAB_004e2250:
           iVar6 = 0;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
           while (iVar6 < (int)in_stack_fffff914) {
-            pFVar2 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
                                 "rt");
-            if (pFVar2 == (FILE *)0x0) {
+            if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
                         ((CPickList *)&stack0xfffff914,iVar6,0);
               iVar6 = iVar6 + 1;
               iVar5 = iVar5 + 4;
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
               iVar6 = iVar6 + 1;
               iVar5 = iVar5 + 4;
             }
@@ -221,15 +221,15 @@ LAB_004e2250:
           }
           iVar5 = 0x34;
           for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
-            pFVar2 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
                                 "rt");
-            if (pFVar2 == (FILE *)0x0) {
+            if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
                         ((CPickList *)&stack0xfffff914,iVar6,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
             }
             iVar5 = iVar5 + 4;
           }
@@ -276,15 +276,15 @@ LAB_004e2250:
                              ("Chapter 11 - 'Not You Again'");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
           for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
-            pFVar2 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
                                 "rt");
-            if (pFVar2 == (FILE *)0x0) {
+            if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
                         ((CPickList *)&stack0xfffff914,iVar6,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
             }
             iVar5 = iVar5 + 4;
           }
@@ -310,15 +310,15 @@ LAB_004e2250:
                              ("Chapter 4 - 'Back from Hell'");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
           for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
-            pFVar2 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
                                 "rt");
-            if (pFVar2 == (FILE *)0x0) {
+            if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
                         ((CPickList *)&stack0xfffff914,iVar6,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
             }
             iVar5 = iVar5 + 4;
           }
@@ -335,15 +335,15 @@ LAB_004e2250:
                            ("Chapter 1 - 'Headquarters'");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
         for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
-          pFVar2 = engine_dosio_c_getFile_FUN_00481a50
+          p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                              ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
                               "rt");
-          if (pFVar2 == (FILE *)0x0) {
+          if (p_Var2 == (_FILE *)0x0) {
             shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
                       ((CPickList *)&stack0xfffff914,iVar6,0);
           }
           else {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xec1);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
           }
           iVar5 = iVar5 + 4;
         }
@@ -376,13 +376,13 @@ LAB_004e2376:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pFVar2 = engine_dosio_c_getFile_FUN_00481a50("world",local_144,"rt");
-    if (pFVar2 == (FILE *)0x0) {
+    p_Var2 = engine_dosio_c_getFile_FUN_00481a50("world",local_144,"rt");
+    if (p_Var2 == (_FILE *)0x0) {
       g_EditorFont = local_1c;
       return;
     }
     pcVar4 = &DAT_02d830a8;
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\game.cpp",0xf77);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xf77);
     g_CurrentDisplayText = *(char **)(&DAT_0067b854 + iVar3 * 4);
     pcVar7 = local_40[iVar3];
     do {
@@ -398,7 +398,7 @@ LAB_004e2376:
   }
   core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
   iVar5 = 1;
-  iVar6 = crt_string_c_stricmp_FUN_005fe7f0(&g_CurrentSaveFile,local_144);
+  iVar6 = stricmp(&g_CurrentSaveFile,local_144);
   if (iVar6 != 0) {
     pcVar7 = local_144;
     pcVar4 = &g_CurrentSaveFile;

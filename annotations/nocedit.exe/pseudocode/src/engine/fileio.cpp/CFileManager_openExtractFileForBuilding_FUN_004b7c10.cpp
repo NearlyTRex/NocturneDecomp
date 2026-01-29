@@ -10,13 +10,13 @@ void __cdecl
 engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(CFileManager *this_ptr)
 
 {
-  FILE *pFVar1;
+  _FILE *p_Var1;
   
-  pFVar1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("level.lst",(char *)0x0,"wt","..\\engine\\fileio.cpp",
                       0xa8c);
-  this_ptr->file_ptr = pFVar1;
-  if (pFVar1 != (FILE *)0x0) {
+  this_ptr->file_ptr = p_Var1;
+  if (p_Var1 != (_FILE *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\engine\\fileio.cpp";

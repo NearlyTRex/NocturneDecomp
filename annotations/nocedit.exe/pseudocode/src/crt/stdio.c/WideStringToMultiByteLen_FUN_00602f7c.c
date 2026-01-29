@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 int __cdecl
-crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
+WideStringToMultiByteLen
           (wchar_t *wide_string_offset,ushort segment,int max_chars)
 
 {
@@ -20,7 +20,7 @@ crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
   if (max_chars == -1) {
     while (wVar1 = *wide_string_offset, wVar1 != L'\0') {
       wide_string_offset = wide_string_offset + 1;
-      iVar2 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
+      iVar2 = WideCharToSingleByte
                         ((wchar_t)local_14,(char *)(uint)(ushort)wVar1);
       if (iVar2 != -1) {
         iVar3 = iVar3 + iVar2;
@@ -30,7 +30,7 @@ crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
   else {
     while ((wVar1 = *wide_string_offset, wVar1 != L'\0' && (iVar3 <= max_chars))) {
       wide_string_offset = wide_string_offset + 1;
-      iVar2 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
+      iVar2 = WideCharToSingleByte
                         ((wchar_t)local_14,(char *)(uint)(ushort)wVar1);
       if (iVar2 != -1) {
         iVar3 = iVar3 + iVar2;

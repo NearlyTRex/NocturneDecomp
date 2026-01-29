@@ -52,7 +52,7 @@ section .text
     PUSH EBP                            ; 00528984
     PUSH 0x639c63                       ; 00528985 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0052898a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0052898f
     MOV EDI,EAX                         ; 00528992
     TEST EAX,EAX                        ; 00528994
@@ -92,7 +92,7 @@ section .text
     PUSH 0x1                            ; 005289ed
     PUSH EBX                            ; 005289ef
     CALL crt_stdio.c_fread_FUN_005fd990 ; 005289f0
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005289f5
     CMP EAX,ESI                         ; 005289f8
     JZ 0x00528a1f                       ; 005289fa
@@ -110,7 +110,7 @@ section .text
     PUSH 0x639cf9                       ; 00528a24 | = "..\\engine\\model.c"
     PUSH EDI                            ; 00528a29
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00528a2a
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV AH,byte ptr [EBX]               ; 00528a2f
     ADD ESP,0xc                         ; 00528a31
     CMP AH,0x14                         ; 00528a34

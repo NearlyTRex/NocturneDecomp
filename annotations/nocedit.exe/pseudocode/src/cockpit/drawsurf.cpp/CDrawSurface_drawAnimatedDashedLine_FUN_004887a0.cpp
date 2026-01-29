@@ -34,7 +34,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
       g_DashAnimationAccumulatorOther = 0.0;
     }
   }
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)g_DashOffsetCounter);
+  dVar3 = round((double)g_DashOffsetCounter);
   iVar2 = (int)ROUND(dVar3);
   x_00 = x2;
   if (x2 < x1) {

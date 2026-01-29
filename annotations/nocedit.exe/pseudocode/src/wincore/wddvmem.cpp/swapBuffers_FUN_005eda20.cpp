@@ -41,7 +41,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
         local_1c = g_WindowWidth *
                    ((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
                          (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3);
-        crt_memory_c_memset_FUN_005fde40(&local_8c,0,0x6c);
+        memset(&local_8c,0,0x6c);
         local_8c.dwSize = 0x6c;
         HVar6 = (*g_DirectDrawSurface->vtable->Lock)
                           (g_DirectDrawSurface,(RECT *)0x0,&local_8c,1,(void *)0x0);

@@ -11,7 +11,7 @@ uint core_skeledit_cpp_FUN_00589c20(void)
 {
   int iVar1;
   CPickList *this_ptr;
-  FILE *pFVar2;
+  _FILE *p_Var2;
   char *format_string;
   CLodMesh *in_stack_00000004;
   int in_stack_00000008;
@@ -23,7 +23,7 @@ uint core_skeledit_cpp_FUN_00589c20(void)
   uint in_stack_fffff5a0;
   CPickList local_6c8;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0xa84);
+  __STK(0xa84);
   if (*(int *)(in_stack_00000008 + 0x308) != 1) {
     shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520
               (in_stack_00000004,0,in_stack_0000000c);
@@ -58,10 +58,10 @@ uint core_skeledit_cpp_FUN_00589c20(void)
                  (uint)in_stack_fffff59c,in_stack_fffff5a0);
       if (iVar1 != 0) {
         if (iVar1 == 1) {
-          pFVar2 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
+          p_Var2 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
                              (in_stack_00000004,"wt");
-          in_stack_00000004->precompute_file = pFVar2;
-          if (pFVar2 == (FILE *)0x0) {
+          in_stack_00000004->precompute_file = p_Var2;
+          if (p_Var2 == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
             g_CurrentLineNumber = 0x179;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
@@ -78,10 +78,10 @@ uint core_skeledit_cpp_FUN_00589c20(void)
         }
         return 0;
       }
-      pFVar2 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
+      p_Var2 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
                          (in_stack_00000004,"rt");
-      in_stack_00000004->precompute_file = pFVar2;
-      if (pFVar2 == (FILE *)0x0) {
+      in_stack_00000004->precompute_file = p_Var2;
+      if (p_Var2 == (_FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error loading precompute file.");
         return 0xffffffff;

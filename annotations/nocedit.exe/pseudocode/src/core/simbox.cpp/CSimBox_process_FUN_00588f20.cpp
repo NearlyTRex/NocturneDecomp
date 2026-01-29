@@ -50,13 +50,13 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,floa
       (this_ptr->base).location.position.x = *(float *)(this_ptr->unk + 0x45c);
       (this_ptr->base).location.position.y = *(float *)(this_ptr->unk + 0x460);
       (this_ptr->base).location.position.z = *(float *)(this_ptr->unk + 0x464);
-      iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+      iVar3 = rand();
       (this_ptr->base).orient.pitch =
            ((float)iVar3 * 3.051851e-05f + (float)-0.5) * (float)3.1415926535000001;
-      iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+      iVar3 = rand();
       (this_ptr->base).orient.heading =
            (float)iVar3 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
-      iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+      iVar3 = rand();
       pCVar2 = (this_ptr->base).vtable._ub;
       (this_ptr->base).orient.bank =
            (float)iVar3 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;

@@ -23,85 +23,66 @@
       },
       {
         "category": "other",
-        "column": 48,
+        "column": 66,
         "line": 62,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 180,
+        "line": 179,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 183,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 50,
+        "line": 182,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 209,
+        "column": 18,
+        "line": 207,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 225,
+        "line": 223,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 230,
+        "line": 228,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 232,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 251,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 254,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 257,
+        "line": 230,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 259,
+        "line": 257,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 305,
+    "complexity_score": 278,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 38,
-    "pseudocode_lines": 255,
-    "suspect_count": 4,
+    "pseudocode_lines": 253,
+    "suspect_count": 2,
     "suspect_types": [
-      "format_string_mismatch",
       "stack_param"
     ],
-    "total_lines": 990
+    "total_lines": 988
   },
   "cross_references": [
     {
@@ -770,32 +751,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 227,
+      "line": 225,
       "match": "in_stack_fffffe64",
       "text": "engine_model_c_getMRGLBounds_FUN_00528140(local_1c,in_stack_fffffe64);",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"loadBinary: Unable to read binary file: (%s)\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "loadBinary: Unable to read binary file: (%s)",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 55,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_160,\"loadBinary: Unable to read binary file: (%s)\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"loadBinary: type %d is not known\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "loadBinary: type %d is not known",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 176,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_160,\"loadBinary: type %d is not known\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

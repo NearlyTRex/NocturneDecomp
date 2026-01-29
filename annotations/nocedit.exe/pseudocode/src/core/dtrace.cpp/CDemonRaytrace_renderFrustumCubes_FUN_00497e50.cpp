@@ -135,23 +135,23 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   local_20 = local_134[1];
   local_154 = (float)local_134[1] * fVar10;
   local_158 = (float)local_134[0] * fVar10;
-  dVar15 = crt_math_c_round_FUN_005fe6b0
+  dVar15 = round
                      ((double)((local_15c - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
   fVar5 = local_158;
   local_13c = (int)ROUND(dVar15);
-  dVar15 = crt_math_c_round_FUN_005fe6b0
+  dVar15 = round
                      ((double)(((float)local_134[0] * fVar10 - (this_ptr->bbox_min).y) /
                               (this_ptr->cell_size).y));
   local_13c = (int)ROUND(dVar15);
   fVar10 = (this_ptr->bbox_min).z;
   fVar2 = (this_ptr->cell_size).z;
-  dVar15 = crt_math_c_round_FUN_005fe6b0((double)(fov_or_radius * 256.0f));
+  dVar15 = round((double)(fov_or_radius * 256.0f));
   iVar6 = g_InverseMatrix.m[0].x;
   iVar8 = (int)ROUND(dVar15);
   local_150.x = iVar8;
   local_150.y = iVar8;
   local_150.z = iVar8;
-  dVar15 = crt_math_c_round_FUN_005fe6b0((double)((fVar5 - fVar10) / fVar2));
+  dVar15 = round((double)((fVar5 - fVar10) / fVar2));
   local_140 = (int)ROUND(dVar15);
   local_1a8[0] = ((uint)((longlong)iVar6 * (longlong)iVar8) >> 0x10 |
                  (int)((ulonglong)((longlong)iVar6 * (longlong)iVar8) >> 0x20) << 0x10) +
@@ -278,13 +278,13 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
     fVar14 = (float10)local_140 +
              (float10)*(int *)((int)local_1a8 + iVar7 + 8) / (float10)dStack_1c0;
     uStack_1c4 = 0x4982bc;
-    dVar16 = crt_math_c_round_FUN_005fe6b0
+    dVar16 = round
                        ((double)local_150.z + (double)*(int *)((int)local_1a8 + iVar7) / dVar15);
     uStack_1c8 = 0x4982c3;
-    dVar17 = crt_math_c_round_FUN_005fe6b0(dVar17 + (double)iVar1 / dVar4);
+    dVar17 = round(dVar17 + (double)iVar1 / dVar4);
     fVar13 = (float10)dVar17;
     dStack_1c0 = (double)CONCAT44(dStack_1c0._4_4_,0x4982ca);
-    dVar17 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
+    dVar17 = round((double)fVar14);
     local_134[1] = (int)ROUND(dVar16);
     local_134[2] = (int)ROUND(fVar13);
     local_134[3] = (int)ROUND(dVar17);

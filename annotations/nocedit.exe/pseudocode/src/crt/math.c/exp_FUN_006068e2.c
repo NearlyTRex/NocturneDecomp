@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 __fpureg crt_math_c_exp_FUN_006068e2(float10 x)
+float10 __fpureg exp(float10 x)
 
 {
   char in_AL;
@@ -16,7 +16,7 @@ float10 __fpureg crt_math_c_exp_FUN_006068e2(float10 x)
   
   if ((float10)709.78271289338397 < x) {
     if (in_AL != '\a') {
-      dVar3 = crt_math_c_handle_math_error_FUN_0060c02b();
+      dVar3 = handle_math_error();
       x = (float10)dVar3;
     }
     return x;

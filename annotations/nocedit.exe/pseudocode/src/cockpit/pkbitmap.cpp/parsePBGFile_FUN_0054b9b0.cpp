@@ -2,13 +2,13 @@
 // Address: 0054b9b0
 // Address Range: [[0054b9b0, 0054bb36]]
 // Convention: __cdecl
-// Signature: CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0 (CPackedBitmapSet *bitmap_set,FILE *file_handle,int param3,int param4, int selected_bitmap_index)
+// Signature: CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0 (CPackedBitmapSet *bitmap_set,_FILE *file_handle,int param3,int param4, int selected_bitmap_index)
 
 #include "nocturne.h"
 
 CPackedBitmap * __cdecl
 cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0
-          (CPackedBitmapSet *bitmap_set,FILE *file_handle,int param3,int param4,
+          (CPackedBitmapSet *bitmap_set,_FILE *file_handle,int param3,int param4,
           int selected_bitmap_index)
 
 {
@@ -32,7 +32,7 @@ cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0
   
   bVar9 = 0;
   do {
-    SVar1 = crt_stdio_c_fread_FUN_005fd990(local_20,8,1,file_handle);
+    SVar1 = _fread(local_20,8,1,file_handle);
     if (SVar1 == 1) {
       iVar4 = 4;
       bVar7 = false;
@@ -57,8 +57,7 @@ cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0
       element_count = uVar3;
       array_memory = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                (uVar3 * 0x24 + 4,"..\\cockpit\\pkbitmap.cpp",0x562);
-      local_18 = crt_memory_c_constructTypedObjectArray_FUN_00601272
-                           (array_memory,element_count,type_info);
+      local_18 = __vec_new(array_memory,element_count,type_info);
       if (local_18 != (CPackedBitmap *)0x0) {
         iVar2 = 0;
         local_14 = local_18;

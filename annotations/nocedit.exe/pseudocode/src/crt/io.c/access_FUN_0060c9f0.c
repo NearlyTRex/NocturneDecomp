@@ -1,0 +1,26 @@
+// Name: crt_io.c_access_FUN_0060c9f0
+// Address: 0060c9f0
+// Address Range: [[0060c9f0, 0060ca1d]]
+// Convention: __watcallStack
+// Signature: int __watcallStack crt_io_c_access_FUN_0060c9f0(char *filename,int access_mode)
+
+#include "nocturne.h"
+
+int __watcallStack access(char *filename,int access_mode)
+
+{
+  DWORD DVar1;
+  int iVar2;
+  
+  DVar1 = (*g_GetFileAttributesAFunc)(filename);
+  if (DVar1 == 0xffffffff) {
+    DVar1 = (*g_GetLastErrorFunc)();
+    iVar2 = convertWindowsErrorToErrno(DVar1);
+    return iVar2;
+  }
+  if (((access_mode & 2U) != 0) && ((DVar1 & 1) != 0)) {
+    iVar2 = convertWindowsErrorToErrno(5);
+    return iVar2;
+  }
+  return 0;
+}

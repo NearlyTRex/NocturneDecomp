@@ -50,10 +50,10 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
     if (in_stack_0000000c <= 0.0) {
       iVar4 = this_ptr->timer_count + -1;
       this_ptr->timer_count = iVar4;
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (this_ptr->unk5 + iVar3 * 0x20 + -4,this_ptr->unk5 + iVar3 * 0x20 + 0x1c,
                  (iVar4 - iVar3) * 0x20);
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (this_ptr->unk6 + iVar1 + -0x2c,this_ptr->unk6 + iVar1 + -0x28,
                  (this_ptr->timer_count - iVar3) * 4);
       return;

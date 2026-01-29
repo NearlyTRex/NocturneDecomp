@@ -50,17 +50,17 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
       local_14 = 1.0;
       if (pCVar5->create_event[0] != '\0') {
         local_18 = pCVar5->create_event;
-        iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_18,"none");
+        iVar6 = stricmp(local_18,"none");
         if ((iVar6 != 0) &&
-           (iVar6 = crt_string_c_stricmp_FUN_005fe7f0(local_18,"true"), iVar6 != 0)) {
+           (iVar6 = stricmp(local_18,"true"), iVar6 != 0)) {
           local_14 = pCVar5->create_prob;
         }
       }
       fVar2 = (float)pCVar5[0x1a].next_actor * local_14;
-      dVar7 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * 100.0f));
+      dVar7 = round((double)(local_14 * 100.0f));
       local_28 = (int)ROUND(dVar7);
       dVar7 = (double)fVar2;
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar5,
                  SUB84((double)(float)pCVar5[0x1a].next_actor,0),
                  (int)((ulonglong)(double)(float)pCVar5[0x1a].next_actor >> 0x20),local_28,
@@ -70,7 +70,7 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
     }
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoClassInfo.name_hash);
     if (pCVar5 != (CDemonActor *)0x0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_224,"%s\t%s\t%s\t%d",pCVar5,&pCVar5[2].location.position.y,&DAT_0063cbe7,
                  pCVar5[2].health);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_974.base,local_224);
@@ -81,7 +81,7 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
     if (pCVar5 != (CDemonActor *)0x0) {
       dVar7 = (double)((float)(int)pCVar5[2].location.position.y * pCVar5[2].location.position.z);
       dVar1 = (double)pCVar5[2].location.position.z;
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar5,SUB84(dVar1,0),
                  (int)((ulonglong)dVar1 >> 0x20),pCVar5[2].location.position.y,SUB84(dVar7,0),
                  (int)((ulonglong)dVar7 >> 0x20));
@@ -97,13 +97,13 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   local_30._0_4_ = SUB84(dVar7,0);
   uVar3 = (uint)local_30;
   local_30 = dVar7;
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total enemy HP\t%g",uVar3,uVar4);
+  sprintf(local_224,"Total enemy HP\t%g",uVar3,uVar4);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5cc.base,local_224);
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total\t\t\t\t\t%g hp",uVar3,uVar4);
+  sprintf(local_224,"Total\t\t\t\t\t%g hp",uVar3,uVar4);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_d1c.base,local_224);
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total ammo\t%d",local_1c);
+  sprintf(local_224,"Total ammo\t%d",local_1c);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5cc.base,local_224);
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total\t\t\t%d",local_1c);
+  sprintf(local_224,"Total\t\t\t%d",local_1c);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_974.base,local_224);
   dVar7 = (double)local_24;
   local_30._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);
@@ -111,9 +111,9 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   local_30._0_4_ = SUB84(dVar7,0);
   uVar3 = (uint)local_30;
   local_30 = dVar7;
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total health items\t%g",uVar3,uVar4);
+  sprintf(local_224,"Total health items\t%g",uVar3,uVar4);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5cc.base,local_224);
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total\t\t\t\t\t%g hp",uVar3,uVar4);
+  sprintf(local_224,"Total\t\t\t\t\t%g hp",uVar3,uVar4);
   iVar6 = 0;
   shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffef3c,local_224);
   while( true ) {

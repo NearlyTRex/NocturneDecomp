@@ -239,8 +239,8 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     local_dc.x = fStack_ac - (this_ptr->base).base.base.location.position.y;
     fVar18 = (float10)fStack_a8 - (float10)(this_ptr->base).base.base.location.position.z;
     local_dc.y = (float)fVar18;
-    crt_math_c_atan2_FUN_006013b1((float10)local_e0,fVar18);
-    fVar18 = crt_math_c_atan2_FUN_006013b1
+    atan2((float10)local_e0,fVar18);
+    fVar18 = atan2
                        ((float10)local_e0,
                         SQRT((float10)local_e4 * (float10)local_e4 +
                              (float10)local_dc.x * (float10)local_dc.x));

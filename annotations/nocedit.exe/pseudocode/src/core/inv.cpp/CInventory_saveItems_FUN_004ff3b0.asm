@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(CInventory *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(CInventory *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_save_FUN_004ff210 at 004ff328
@@ -50,7 +50,7 @@ section .text
     ADD EBX,0x4                         ; 004ff3e0
     INC ESI                             ; 004ff3e3
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ff3e4
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EDX,dword ptr [EDI + 0x8]       ; 004ff3e9
     ADD ESP,0x14                        ; 004ff3ec
     CMP ESI,EDX                         ; 004ff3ef

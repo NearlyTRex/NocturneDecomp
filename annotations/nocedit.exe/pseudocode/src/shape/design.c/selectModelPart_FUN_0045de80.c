@@ -31,7 +31,7 @@ void shape_design_c_selectModelPart_FUN_0045de80(void)
   if (iVar2 != -2) {
     local_14 = -1;
     for (local_18 = 0; local_18 < g_PartsCount; local_18 = local_18 + 1) {
-      iVar2 = crt_string_c_strcmp_FUN_005fef20(local_2c,g_ModelPartNames[local_18].name);
+      iVar2 = strcmp(local_2c,g_ModelPartNames[local_18].name);
       if (iVar2 == 0) {
         local_14 = local_18;
         break;

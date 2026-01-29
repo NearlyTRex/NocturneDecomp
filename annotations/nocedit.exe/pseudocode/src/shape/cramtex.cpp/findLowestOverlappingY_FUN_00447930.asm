@@ -24,7 +24,7 @@
 ;   int g_CramCurrentAcceptableSize
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
 
     PUSH 0x14                           ; 00447930
         ;   Label: shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00447935
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447935
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0044793a
     PUSH ESI                            ; 0044793b
     PUSH EDI                            ; 0044793c

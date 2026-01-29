@@ -13,14 +13,13 @@ void core_frankgen_cpp_FUN_004d2560(void)
 
 {
   CDemonActor *in_stack_00000004;
-  FILE *in_stack_00000008;
+  _FILE *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
             ((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,in_stack_00000008);
   if (in_stack_00000004[1].actor_name[8] != '\0') {
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (in_stack_00000008,"data\\%s\n",in_stack_00000004[1].actor_name + 8);
+    _fprintf(in_stack_00000008,"data\\%s\n",in_stack_00000004[1].actor_name + 8);
   }
   if (in_stack_00000004[2].create_event[0x5c] == '\0') {
     return;

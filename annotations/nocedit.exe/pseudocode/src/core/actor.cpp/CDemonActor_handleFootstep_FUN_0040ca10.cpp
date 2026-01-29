@@ -57,7 +57,7 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
 LAB_0040cb07:
   dVar6 = (double)volume;
   pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(surface_type);
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (local_8c,"footstep-%s-!-%s-?.wav @ %f",&this_ptr->unk10,pcVar5,dVar6);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40(g_CSoundPtr,this_ptr,local_8c,position);
   return extraout_EAX;

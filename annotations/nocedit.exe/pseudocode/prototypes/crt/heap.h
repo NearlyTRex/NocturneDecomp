@@ -3,9 +3,9 @@
 // Function prototypes for crt/heap.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_heap.c_heapCheckWrapper_FUN_006012c0
+// Original: crt_heap.c__heapwalk_FUN_006012c0
 // Address: 006012c0
-int __cdecl heapCheckWrapper(void *heap_state_ptr);
+int __cdecl ::heapwalk(void *heap_state_ptr);
 
 // Original: crt_heap.c_heapWalk_FUN_006012d0
 // Address: 006012d0

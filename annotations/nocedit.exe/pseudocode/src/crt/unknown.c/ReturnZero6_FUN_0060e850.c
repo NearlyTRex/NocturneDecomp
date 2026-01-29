@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_ReturnZero6() */
 
-uint crt_unknown_c_ReturnZero6_FUN_0060e850(void)
+uint ReturnZero6(void)
 
 {
   return 0;

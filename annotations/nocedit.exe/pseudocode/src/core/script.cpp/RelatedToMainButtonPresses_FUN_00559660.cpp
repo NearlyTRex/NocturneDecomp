@@ -16,35 +16,35 @@ int core_script_cpp_RelatedToMainButtonPresses_FUN_00559660(void)
   int in_stack_00000004;
   char *in_stack_00000008;
   
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"walk");
+  iVar1 = stricmp(in_stack_00000008,"walk");
   if (iVar1 == 0) {
     return in_stack_00000004;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"backup");
+  iVar1 = stricmp(in_stack_00000008,"backup");
   if (iVar1 == 0) {
     return in_stack_00000004 + 4;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"run");
+  iVar1 = stricmp(in_stack_00000008,"run");
   if (iVar1 == 0) {
     return in_stack_00000004 + 8;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"fire");
+  iVar1 = stricmp(in_stack_00000008,"fire");
   if (iVar1 == 0) {
     return in_stack_00000004 + 0xc;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"useItem");
+  iVar1 = stricmp(in_stack_00000008,"useItem");
   if (iVar1 == 0) {
     return in_stack_00000004 + 0x10;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"light");
+  iVar1 = stricmp(in_stack_00000008,"light");
   if (iVar1 == 0) {
     return in_stack_00000004 + 0x14;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"draw");
+  iVar1 = stricmp(in_stack_00000008,"draw");
   if (iVar1 == 0) {
     return in_stack_00000004 + 0x18;
   }
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,"jump");
+  iVar1 = stricmp(in_stack_00000008,"jump");
   if (iVar1 == 0) {
     return in_stack_00000004 + 0x1c;
   }

@@ -11,22 +11,21 @@
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 19,
         "line": 17,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "too many arguments for format [-Wformat-extra-args]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 135,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 10,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
-      "format_string_mismatch",
       "unaffected_reg",
       "unnamed_param"
     ],
@@ -185,26 +184,15 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_EBX",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(param_7,\"%g mm\",(double)(float)pCVar1[4].unk14,unaff_EBX)",
+      "text": "sprintf(param_7,\"%g mm\",(double)(float)pCVar1[4].unk14,unaff_EBX)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 10,
       "match": "param_7",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(param_7,\"%g mm\",(double)(float)pCVar1[4].unk14,unaff_EBX)",
+      "text": "sprintf(param_7,\"%g mm\",(double)(float)pCVar1[4].unk14,unaff_EBX)",
       "type": "unnamed_param"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"%g mm\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "%g mm",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 10,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(param_7,\"%g mm\",(double)(float)pCVar1[4].unk14,unaff_EBX)",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
     }
   ]
 }

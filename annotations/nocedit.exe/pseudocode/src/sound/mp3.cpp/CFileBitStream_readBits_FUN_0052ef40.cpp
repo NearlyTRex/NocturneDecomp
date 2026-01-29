@@ -51,7 +51,7 @@ LAB_0052f051:
                 if (0 < bitstream->bytes_remaining) {
                   buffer = bitstream->buffer + iVar2;
                   iVar2 = iVar2 + -1;
-                  SVar1 = crt_stdio_c_fread_FUN_005fd990(buffer,1,1,bitstream->file_handle);
+                  SVar1 = _fread(buffer,1,1,bitstream->file_handle);
                 }
                 if (SVar1 != 1) break;
                 bitstream->bytes_remaining = bitstream->bytes_remaining + -1;

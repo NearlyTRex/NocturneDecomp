@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_string_getc_FUN_006000d0(scanf_state_t *state)
+int __cdecl string_getc(scanf_state_t *state)
 
 {
   uint uVar1;

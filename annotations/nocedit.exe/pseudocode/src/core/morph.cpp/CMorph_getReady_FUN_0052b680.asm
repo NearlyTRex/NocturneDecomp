@@ -71,7 +71,7 @@
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_morph.cpp_FUN_0052b280
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -95,8 +95,8 @@ section .text
     PUSH 0x2                            ; 0052b6ad
     LEA EAX,[ESP + 0x8]                 ; 0052b6af
     PUSH EAX                            ; 0052b6b3
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052b6b4
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0052b6b4
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052b6b9
     MOV EAX,dword ptr [ESP + 0xcc]      ; 0052b6bc
     XOR EDI,EDI                         ; 0052b6c3

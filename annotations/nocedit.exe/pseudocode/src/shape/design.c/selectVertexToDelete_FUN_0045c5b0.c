@@ -34,7 +34,7 @@ void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
     pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_18 = crt_stdlib_c_atoi_FUN_005ffef0(local_30);
+    local_18 = atoi(local_30);
   }
   if ((-1 < local_18) && (local_18 < g_VertexCount)) {
     for (local_14 = local_18; local_14 < g_VertexCount + -1; local_14 = local_14 + 1) {

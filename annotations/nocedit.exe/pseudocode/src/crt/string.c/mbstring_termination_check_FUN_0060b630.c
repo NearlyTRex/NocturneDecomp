@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_string_c_mbstring_termination_check_FUN_0060b630(char *str)
+int __watcallStack mbstring_termination_check(char *str)
 
 {
   if (*str == '\0') {

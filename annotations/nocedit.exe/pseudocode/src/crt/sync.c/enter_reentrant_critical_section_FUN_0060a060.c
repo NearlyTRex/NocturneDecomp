@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(ReentrantCriticalSection *rcs)
+void __cdecl enter_reentrant_critical_section(ReentrantCriticalSection *rcs)
 
 {
   DWORD DVar1;
@@ -15,14 +15,14 @@ void __cdecl crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(ReentrantC
   DVar1 = (*g_GetCurrentThreadIdFunc)();
   if (DVar1 != rcs->ownerThreadId) {
     if (rcs->initialized == 0) {
-      crt_sync_c_enter_reentrant_critical_section_FUN_0060a060
+      enter_reentrant_critical_section
                 ((ReentrantCriticalSection *)&g_GlobalInitLock);
       if (rcs->initialized == 0) {
-        p_Var2 = crt_sync_c_allocate_critical_section_FUN_00609f24();
+        p_Var2 = allocate_critical_section();
         rcs->initialized = 1;
         rcs->cs = p_Var2;
       }
-      crt_sync_c_leave_reentrant_critical_section_FUN_0060a0c4
+      leave_reentrant_critical_section
                 ((ReentrantCriticalSection *)&g_GlobalInitLock);
     }
     (*g_EnterCriticalSectionFunc)(rcs->cs);

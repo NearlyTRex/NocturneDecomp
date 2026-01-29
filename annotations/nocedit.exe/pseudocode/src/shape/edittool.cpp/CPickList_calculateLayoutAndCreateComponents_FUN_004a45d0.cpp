@@ -41,7 +41,7 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
   this_ptr->unk1[0x29] = '\0';
   this_ptr->unk1[0x2a] = '\0';
   this_ptr->unk1[0x2b] = '\0';
-  crt_memory_c_memset_FUN_005fde40(this_ptr->unk1,0,0x28);
+  memset(this_ptr->unk1,0,0x28);
   local_14 = 0;
   if (0 < (this_ptr->base).item_count) {
     do {

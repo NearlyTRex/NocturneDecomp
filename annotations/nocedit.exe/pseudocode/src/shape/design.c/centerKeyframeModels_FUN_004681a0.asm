@@ -153,7 +153,7 @@ section .text
     MOV EAX,0x61cc4f                    ; 00468294 | = "models"
     PUSH EAX                            ; 00468299 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046829a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046829f
     MOV dword ptr [EBP + -0x68],EAX     ; 004682a2
     CMP dword ptr [EBP + -0x68],0x0     ; 004682a5
@@ -175,7 +175,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x10]     ; 004682d7
     PUSH EAX                            ; 004682da
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 004682db
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004682e0
     PUSH 0x2237                         ; 004682e3
     MOV EAX,0x61cc7e                    ; 004682e8 | = "..\\shape\\design.c"
@@ -183,7 +183,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x68]     ; 004682ee
     PUSH EAX                            ; 004682f1
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004682f2
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004682f7
     MOV EAX,dword ptr [EBP + -0x10]     ; 004682fa
     PUSH EAX                            ; 004682fd

@@ -2,29 +2,29 @@
 // Address: 0040b050
 // Address Range: [[0040b050, 0040b209]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,FILE *file_handle)
+void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;
   char *str1;
   int iVar2;
   int iVar3;
-  FILE *unaff_EBP;
+  _FILE *unaff_EBP;
   char *pcVar4;
   CDemonActor *pCVar5;
-  FILE *in_stack_0000000c;
+  _FILE *in_stack_0000000c;
   char acStack_d8 [96];
   char local_78 [100];
-  FILE *local_14;
+  _FILE *local_14;
   
   str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr);
   local_78[0] = '\0';
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle," { %s \"%[^\"]\"\n",&stack0xffffff24,local_78);
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,&stack0xffffff24);
+  _fscanf(file_handle," { %s \"%[^\"]\"\n",&stack0xffffff24,local_78);
+  iVar2 = stricmp(str1,&stack0xffffff24);
   if (iVar2 != 0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x7b7;
@@ -52,10 +52,10 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
   (*((this_ptr->vtable)._ub)->serialize)(this_ptr);
   acStack_d8[0] = '\0';
   local_78[4] = 0;
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c," } %s \"%[^\"]\"\n",acStack_d8);
-  iVar3 = crt_string_c_stricmp_FUN_005fe7f0(str1,acStack_d8);
+  _fscanf(in_stack_0000000c," } %s \"%[^\"]\"\n",acStack_d8);
+  iVar3 = stricmp(str1,acStack_d8);
   if ((iVar3 != 0) ||
-     (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr->actor_name,local_78 + 4), iVar3 != 0)) {
+     (iVar3 = stricmp(this_ptr->actor_name,local_78 + 4), iVar3 != 0)) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x7d4;
     core_main_c_displayErrorAndQuit_FUN_00506f10("End of actor file tag mismatch for class %s name \"%s\"",str1);

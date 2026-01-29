@@ -121,7 +121,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_98,pCVar9);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
-      dVar15 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)0.25));
+      dVar15 = round((double)(local_14 * (float)0.25));
       local_34 = (int)ROUND(dVar15);
       core_gore_cpp_FUN_004edbb0();
     }

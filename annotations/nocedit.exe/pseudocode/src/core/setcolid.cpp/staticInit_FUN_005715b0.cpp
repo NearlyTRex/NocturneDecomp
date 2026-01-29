@@ -9,7 +9,6 @@
 void __cdecl core_setcolid_cpp_staticInit_FUN_005715b0(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_RaytraceStateStack,5,&g_SRaytraceStateTypeInfo);
+  __arrinit(g_RaytraceStateStack,5,&g_SRaytraceStateTypeInfo);
   return;
 }

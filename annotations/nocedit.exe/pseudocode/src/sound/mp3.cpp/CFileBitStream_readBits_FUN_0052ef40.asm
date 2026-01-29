@@ -188,7 +188,7 @@ section .text
     PUSH EAX                            ; 0052f074
     DEC ESI                             ; 0052f075
     CALL crt_stdio.c_fread_FUN_005fd990 ; 0052f076
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0052f07b
     CMP EAX,0x1                         ; 0052f07e
         ;   Label: LAB_0052f07e

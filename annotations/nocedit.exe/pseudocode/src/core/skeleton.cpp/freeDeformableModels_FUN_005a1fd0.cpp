@@ -9,6 +9,6 @@
 void __cdecl core_skeleton_cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x40,&g_CDeformableModelTypeInfo);
+  __arrfini(array,0x40,&g_CDeformableModelTypeInfo);
   return;
 }

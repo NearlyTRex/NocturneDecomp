@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-BOOL __cdecl crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(void *init_param)
+BOOL __cdecl initialize_thread_tls_data(void *init_param)
 
 {
   void *thread_param;
@@ -19,10 +19,10 @@ BOOL __cdecl crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(void *init_param)
   thread_param = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_ESI);
   BVar1 = 0;
   if (thread_param != (void *)0x0) {
-    BVar1 = crt_tls_c_register_thread_data_FUN_0060cbd0
+    BVar1 = register_thread_data
                       (*(void **)((int)thread_param + 0xda),thread_param);
     if (BVar1 == 0) {
-      crt_memory_c_free_FUN_00601cd0(thread_param);
+      free(thread_param);
       return 0;
     }
     (*g_TlsSetValueFunc)(g_TLSIndex,thread_param);

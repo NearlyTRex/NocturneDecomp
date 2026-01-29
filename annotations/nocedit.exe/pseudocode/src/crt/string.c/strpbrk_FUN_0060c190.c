@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_strpbrk_FUN_0060c190(char *str,char *char_set)
+char * __cdecl strpbrk(char *str,char *char_set)
 
 {
   wchar_t wc;
@@ -14,14 +14,14 @@ char * __cdecl crt_string_c_strpbrk_FUN_0060c190(char *str,char *char_set)
   char *pcVar2;
   
   while( true ) {
-    iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str);
+    iVar1 = mbstring_termination_check(str);
     if (iVar1 != 0) {
       return (char *)0x0;
     }
-    wc = crt_string_c_mbtowc_peek_FUN_006059e0(str);
-    pcVar2 = crt_string_c_char_in_set_FUN_0060e340(char_set,wc);
+    wc = mbtowc_peek(str);
+    pcVar2 = char_in_set(char_set,wc);
     if (pcVar2 != (char *)0x0) break;
-    str = crt_string_c_mbtowc_next_FUN_00605a70(str);
+    str = mbtowc_next(str);
   }
   return str;
 }

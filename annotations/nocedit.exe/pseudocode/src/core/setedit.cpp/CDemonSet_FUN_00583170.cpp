@@ -955,7 +955,7 @@ LAB_00583c6f:
        iVar5 != 0)) {
       iVar5 = this_ptr->vdir_box_count + -1;
       this_ptr->vdir_box_count = iVar5;
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (local_40 + local_18,local_40 + local_18 + 1,(iVar5 - local_18) * 0x44);
       if (this_ptr->vdir_box_count <= iVar8) {
         local_18 = 0;

@@ -35,7 +35,7 @@ int * core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
   }
   dest = &g_SimFrameHistory + g_SimFrameCount * 0x19;
   g_SimFrameCount = g_SimFrameCount + 1;
-  crt_memory_c_memset_FUN_005fde40(dest,0,100);
+  memset(dest,0,100);
   *dest = in_stack_00000004;
   return dest;
 }

@@ -12,7 +12,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(C3DSCamera *this_ptr
   float fVar1;
   
   core_setutil_cpp_C3DSCamera_free_FUN_00585360(this_ptr);
-  crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x1a4);
+  memset(this_ptr,0,0x1a4);
   this_ptr->projection_scale = 28.0;
   (this_ptr->box_min).y = -300.0;
   (this_ptr->box_min).z = 0.0;

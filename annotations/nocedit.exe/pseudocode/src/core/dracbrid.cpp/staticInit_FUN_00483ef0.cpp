@@ -22,8 +22,7 @@ void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void)
             (&g_CDraculaBrideClassInfo,"CDraculaBride",
              core_dracbrid_cpp_factoryFunc_FUN_00483f80,&g_CDraculaBrideClassVersion,9,
              &g_CEnemyClassInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (SFreaky_ARRAY_02c6d0c0,6,&g_SFreakyTypeInfo);
-  crt_stdlib_c_atexit_FUN_005ff060(&DAT_006703a0);
+  __arrinit(SFreaky_ARRAY_02c6d0c0,6,&g_SFreakyTypeInfo);
+  _atexit(&DAT_006703a0);
   return;
 }

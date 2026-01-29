@@ -32,7 +32,7 @@ void __cdecl shape_design_c_interactiveGlobalWeld_FUN_00466040(float tolerance)
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_14 = crt_stdlib_c_atoi_FUN_005ffef0(local_70);
+    local_14 = atoi(local_70);
     if (((int)local_14 < 0) || (g_VertexCount + -1 < (int)local_14)) {
       engine_2d_c_drawText_FUN_00401fd0("Invalid point.",0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

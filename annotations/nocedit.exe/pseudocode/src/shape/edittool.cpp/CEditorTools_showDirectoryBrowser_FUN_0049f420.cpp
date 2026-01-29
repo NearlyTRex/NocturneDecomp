@@ -13,7 +13,7 @@ shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
 {
   char cVar1;
   char *pcVar2;
-  tm *time_ptr;
+  _tm *time_ptr;
   int iVar3;
   uint uVar4;
   uint unaff_ESI;
@@ -60,7 +60,7 @@ shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
   char local_c [4];
   
   bVar6 = 0;
-  pcVar2 = crt_io_c_getcwd_wrapper_FUN_00608d20(local_14d0,0x104);
+  pcVar2 = getcwd_wrapper(local_14d0,0x104);
   if (pcVar2 == (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (this_ptr,"Error getting current directory.");
@@ -76,9 +76,9 @@ shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
   if ((in_stack_00000014 & 1) != 0) {
     engine_dosio_c_splitPath_FUN_00481f20(initial_path,local_c,local_bc4,local_ec4,local_3c4);
     engine_dosio_c_makePath_FUN_00481f50(local_13cc,local_c,local_bc4,(char *)0x0,(char *)0x0);
-    crt_io_c_chdir_FUN_006012a0(local_13cc);
+    chdir(local_13cc);
     engine_dosio_c_makePath_FUN_00481f50(local_12c8,(char *)0x0,(char *)0x0,local_ec4,local_3c4);
-    crt_io_c_chdir_FUN_006012a0(local_12c8);
+    chdir(local_12c8);
   }
   local_14 = 0;
 LAB_0049f47a:
@@ -90,8 +90,8 @@ LAB_0049f47a:
       pcVar2 = pcVar2 + ((uint)bVar6 * -2 + 1) * 4;
       pcVar7 = pcVar7 + ((uint)bVar6 * -2 + 1) * 4;
     }
-    crt_io_c_getcwd_wrapper_FUN_00608d20(local_17dc,0x104);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_1b20,"%s\n%s",file_pattern,local_17dc);
+    getcwd_wrapper(local_17dc,0x104);
+    sprintf(local_1b20,"%s\n%s",file_pattern,local_17dc);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffe138);
     engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_18f0);
     if (include_files == 0) {
@@ -112,13 +112,13 @@ LAB_0049f47a:
             cVar1 = *pcVar2;
             pcVar2 = pcVar2 + (uint)bVar6 * -2 + 1;
           } while (cVar1 != '\0');
-          crt_string_c_memmove_FUN_005fe5e0(&local_4c4,local_4c3,~uVar4 - 1);
+          memmove(&local_4c4,local_4c3,~uVar4 - 1);
         }
-        time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)&local_18f0.attributes);
-        crt_time_c_strftime_FUN_006002d4(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        time_ptr = localtime((time_t *)&local_18f0.attributes);
+        strftime(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
+        sprintf
                   (local_fc,"%s\t%s\t%d%s",local_dc4,&local_4c4,local_18f0.timestamp,local_34);
-        crt_string_c_strupr_FUN_00600770(local_fc);
+        strupr(local_fc);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffe138,local_fc);
       }
       engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_18f0);
@@ -136,7 +136,7 @@ LAB_0049f47a:
                     ((CStrList *)&stack0xffffe138,(int)local_5c4,pcVar2,1);
           engine_dosio_c_makePath_FUN_00481f50
                     (local_15d4,(char *)0x0,(char *)0x0,local_9c4,local_5c4);
-          iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_15d4,local_12c8);
+          iVar3 = stricmp(local_15d4,local_12c8);
           if (iVar3 == 0) break;
           pcVar2 = pcVar2 + 1;
         } while ((int)pcVar2 < (int)in_stack_ffffe138);
@@ -149,12 +149,12 @@ LAB_0049f47a:
     engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,"*.*");
     while (local_18f0.filename[0] != '\0') {
       if (((byte)local_18f0.file_size & 4) != 0) {
-        iVar3 = crt_string_c_strcmp_FUN_005fef20(local_18f0.filename,"..");
+        iVar3 = strcmp(local_18f0.filename,"..");
         if (iVar3 == 0) {
           pcVar7 = "..\t\t(DIR)";
         }
         else {
-          iVar3 = crt_string_c_strcmp_FUN_005fef20(local_18f0.filename,".");
+          iVar3 = strcmp(local_18f0.filename,".");
           if (iVar3 == 0) goto LAB_0049f64e;
           engine_dosio_c_splitPath_FUN_00481f20
                     (local_18f0.filename,(char *)0x0,(char *)0x0,local_ac4,&local_6c4);
@@ -167,10 +167,10 @@ LAB_0049f47a:
               cVar1 = *pcVar7;
               pcVar7 = pcVar7 + (uint)bVar6 * -2 + 1;
             } while (cVar1 != '\0');
-            crt_string_c_memmove_FUN_005fe5e0(&local_6c4,local_6c3,~uVar4 - 1);
+            memmove(&local_6c4,local_6c3,~uVar4 - 1);
           }
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
-          crt_string_c_strupr_FUN_00600770(local_1c4);
+          sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
+          strupr(local_1c4);
           pcVar7 = local_1c4;
         }
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffe138,pcVar7);
@@ -195,10 +195,10 @@ LAB_0049f64e:
       }
       while ((iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                 (this_ptr,"Enter new path",local_16d8,0x104,1), iVar3 != 0
-             && (iVar3 = crt_io_c_chdir_FUN_006012a0(local_16d8), iVar3 != 0))) {
+             && (iVar3 = chdir(local_16d8), iVar3 != 0))) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (this_ptr,"Can't change to %s",local_16d8);
-        crt_io_c_chdir_FUN_006012a0(local_17dc);
+        chdir(local_17dc);
       }
       engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -220,7 +220,7 @@ LAB_0049f983:
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)&stack0xffffe138,0,unaff_ESI,unaff_EDI,in_stack_ffffe138,
                  in_stack_ffffe13c,(uint)in_stack_ffffe140);
-      crt_io_c_chdir_FUN_006012a0(local_14d0);
+      chdir(local_14d0);
       return local_14;
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
@@ -228,7 +228,7 @@ LAB_0049f983:
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
               ((CStrList *)&stack0xffffe138,(int)local_11c4,pcVar2,1);
     engine_dosio_c_makePath_FUN_00481f50(local_fc4,(char *)0x0,(char *)0x0,local_10c4,local_11c4);
-    crt_io_c_chdir_FUN_006012a0(local_fc4);
+    chdir(local_fc4);
     engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               ((CPickList *)&stack0xffffe138,0,unaff_ESI,unaff_EDI,in_stack_ffffe138,

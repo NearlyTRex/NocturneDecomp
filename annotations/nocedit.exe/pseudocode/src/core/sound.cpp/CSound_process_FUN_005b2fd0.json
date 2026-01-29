@@ -17,12 +17,6 @@
       },
       {
         "category": "other",
-        "column": 61,
-        "line": 77,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 68,
         "line": 98,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -47,12 +41,6 @@
       },
       {
         "category": "other",
-        "column": 66,
-        "line": 155,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 54,
         "line": 167,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -65,36 +53,29 @@
       },
       {
         "category": "other",
-        "column": 51,
+        "column": 33,
         "line": 232,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 18,
         "line": 237,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 261,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 346,
+    "complexity_score": 331,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 68,
     "pseudocode_lines": 261,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "format_string_mismatch"
+      "extra_output"
     ],
     "total_lines": 901
   },
@@ -1013,17 +994,6 @@
       "match": "ABS",
       "text": "if ((float)510 < ABS(g_TrainNoiseArray[iVar4].position.z)) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"rail?%s.wav\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "rail?%s.wav",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 225,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_d0,\"rail?%s.wav\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

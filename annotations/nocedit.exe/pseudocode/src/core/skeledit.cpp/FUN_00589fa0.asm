@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_skeledit.cpp_FUN_00589fc0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
 
     PUSH 0xc                            ; 00589fa0
         ;   Label: core_skeledit.cpp_FUN_00589fa0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00589fa5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589fa5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 00589faa
     MOV EBX,dword ptr [ESP + 0x8]       ; 00589fab
     PUSH EBX                            ; 00589faf

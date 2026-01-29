@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 int __cdecl
-crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int base,int is_signed)
+scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_signed)
 
 {
   byte bVar1;
@@ -36,7 +36,7 @@ crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int 
   local_18 = 0;
   local_1c = 0;
   while( true ) {
-    local_24 = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state);
+    local_24 = scanf_getc_wrapper(state);
     iVar5 = local_24;
     if ((g_CharacterClassificationTable[(byte)((char)local_24 + 1)] & 2U) == 0) break;
     local_1c = local_1c + 1;
@@ -48,24 +48,24 @@ crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int 
     local_24 = iVar5;
     if (iVar4 == 0) {
 LAB_00605786:
-      crt_stdio_c_scanf_ungetc_wrapper_FUN_0060493c(local_24,state);
+      scanf_ungetc_wrapper(local_24,state);
     }
     else {
       local_20 = 0x2b;
       if ((is_signed != 0) && ((local_24 == 0x2b || (local_24 == 0x2d)))) {
         local_1c = local_1c + 1;
         local_20 = local_24;
-        local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+        local_24 = scanf_getc_with_width(state);
         if (local_24 == -1) goto LAB_00605798;
       }
       if (base == 0) {
         if (local_24 == 0x30) {
-          local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+          local_24 = scanf_getc_with_width(state);
           iVar7 = 1;
           if (local_24 == -1) goto LAB_00605798;
           if ((local_24 == 0x78) || (local_24 == 0x58)) {
             iVar7 = local_1c + 2;
-            local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+            local_24 = scanf_getc_with_width(state);
             local_1c = iVar7;
             iVar7 = 0;
             if (local_24 == -1) goto LAB_00605798;
@@ -80,12 +80,12 @@ LAB_00605786:
         }
       }
       else if ((base == 0x10) && (local_24 == 0x30)) {
-        local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+        local_24 = scanf_getc_with_width(state);
         iVar7 = 1;
         if (local_24 == -1) goto LAB_00605798;
         if ((local_24 == 0x78) || (local_24 == 0x58)) {
           iVar7 = local_1c + 2;
-          local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+          local_24 = scanf_getc_with_width(state);
           local_1c = iVar7;
           iVar7 = 0;
           if (local_24 == -1) goto LAB_00605798;
@@ -94,13 +94,13 @@ LAB_00605786:
       if ((state->flags & 0x40) == 0) {
         do {
           iVar5 = local_24;
-          iVar4 = crt_stdio_c_char_to_digit_FUN_006058e8(local_24);
+          iVar4 = char_to_digit(local_24);
           if (base <= iVar4) {
             if ((iVar5 != 0x3a) || ((state->flags & 0x80) == 0)) goto LAB_00605786;
             goto LAB_00605753;
           }
           local_18 = local_18 * base + iVar4;
-          local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+          local_24 = scanf_getc_with_width(state);
           iVar7 = iVar7 + 1;
         } while (local_24 != -1);
       }
@@ -108,19 +108,19 @@ LAB_00605786:
         local_28 = 0;
         local_2c = base;
         do {
-          uVar3 = crt_stdio_c_char_to_digit_FUN_006058e8(local_24);
+          uVar3 = char_to_digit(local_24);
           if (base <= (int)uVar3) {
             if ((local_24 != 0x3a) || ((state->flags & 0x80) == 0)) goto LAB_00605786;
             goto LAB_0060569e;
           }
           local_30 = 0;
           local_34 = uVar3;
-          uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44(local_28,local_2c));
+          uVar10 = multiply64(local_3c,CONCAT44(local_28,local_2c));
           local_3c._4_4_ = (int)(uVar10 >> 0x20);
           local_3c._0_4_ = (uint)uVar10;
           local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),
                               (uint)local_3c + local_34);
-          local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+          local_24 = scanf_getc_with_width(state);
           iVar7 = iVar7 + 1;
         } while (local_24 != -1);
       }
@@ -194,22 +194,22 @@ LAB_00605798:
   }
   return iVar7;
 LAB_00605753:
-  local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+  local_24 = scanf_getc_with_width(state);
   iVar7 = iVar7 + 1;
   if (local_24 == -1) goto LAB_00605798;
-  iVar5 = crt_stdio_c_char_to_digit_FUN_006058e8(local_24);
+  iVar5 = char_to_digit(local_24);
   if (base <= iVar5) goto LAB_00605786;
   local_18 = local_18 * base + iVar5;
   goto LAB_00605753;
 LAB_0060569e:
-  local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
+  local_24 = scanf_getc_with_width(state);
   iVar7 = iVar7 + 1;
   if (local_24 == -1) goto LAB_00605798;
-  uVar3 = crt_stdio_c_char_to_digit_FUN_006058e8(local_24);
+  uVar3 = char_to_digit(local_24);
   if (base <= (int)uVar3) goto LAB_00605786;
   local_30 = 0;
   local_34 = uVar3;
-  uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44(local_28,local_2c));
+  uVar10 = multiply64(local_3c,CONCAT44(local_28,local_2c));
   local_3c._4_4_ = (int)(uVar10 >> 0x20);
   local_3c._0_4_ = (uint)uVar10;
   local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),

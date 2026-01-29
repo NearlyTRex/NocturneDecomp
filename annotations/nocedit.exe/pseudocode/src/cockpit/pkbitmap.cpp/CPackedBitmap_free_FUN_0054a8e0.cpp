@@ -15,7 +15,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(CPackedBitmap 
   }
   g_CurrentDebugFilename = "..\\cockpit\\pkbitmap.cpp";
   g_CurrentDebugLine = 0x99;
-  crt_memory_c_free_FUN_005fe659(this_ptr->row_pointers);
+  shape_memdbg_cpp_free_FUN_005fe659(this_ptr->row_pointers);
   cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_0054a8b0(this_ptr);
   return;
 }

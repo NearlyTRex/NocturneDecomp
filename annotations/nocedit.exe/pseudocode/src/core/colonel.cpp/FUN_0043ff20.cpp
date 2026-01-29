@@ -48,7 +48,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
   local_1c = 0.25;
   local_20 = 0x3f490fdb;
   pCVar7 = g_HeroActors[g_LocalHeroIndex];
-  crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0xbe2c),0,0x2c);
+  memset((void *)(in_stack_00000004 + 0xbe2c),0,0x2c);
   if (*(int *)(in_stack_00000004 + 130000) != 0) {
     pCVar2 = g_HeroActors[g_LocalHeroIndex];
     local_54._0_4_ = *(float *)(in_stack_00000004 + 0x20) - (pCVar2->base).base.location.position.x;

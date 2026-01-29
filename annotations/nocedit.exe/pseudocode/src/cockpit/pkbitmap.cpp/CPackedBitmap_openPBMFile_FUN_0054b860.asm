@@ -56,7 +56,7 @@ section .text
     PUSH EBX                            ; 0054b885
     PUSH 0x63f201                       ; 0054b886 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0054b88b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054b890
     MOV ESI,EAX                         ; 0054b893
     TEST EAX,EAX                        ; 0054b895
@@ -85,13 +85,13 @@ section .text
     PUSH ESI                            ; 0054b8d3
     PUSH EBX                            ; 0054b8d4
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690 ; 0054b8d5
-        ;   XREF to: 0054b690 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPackedBitmap * this_ptr, FILE * file_handle, int skip_data_load)
+        ;   XREF to: 0054b690 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPackedBitmap * this_ptr, _FILE * file_handle, int skip_data_load)
     ADD ESP,0xc                         ; 0054b8da
     PUSH 0x500                          ; 0054b8dd
     PUSH 0x63f238                       ; 0054b8e2 | = "..\\cockpit\\pkbitmap.cpp"
     PUSH ESI                            ; 0054b8e7
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0054b8e8
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0054b8ed
     CMP dword ptr [ESP + 0x78],0x0      ; 0054b8f0
     JNZ 0x0054b8fd                      ; 0054b8f5

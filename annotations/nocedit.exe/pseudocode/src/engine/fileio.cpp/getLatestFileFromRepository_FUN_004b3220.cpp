@@ -11,9 +11,9 @@ engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,
 
 {
   char cVar1;
-  FILE *stream_ptr;
+  _FILE *stream_ptr;
   int *piVar2;
-  FILE *dest_file;
+  _FILE *dest_file;
   uint uVar3;
   int iVar4;
   char *pcVar5;
@@ -57,22 +57,22 @@ engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_53c.found_path,(char *)0x0,"rb",
                             "..\\engine\\fileio.cpp",0x153);
-    if (stream_ptr != (FILE *)0x0) {
-      crt_stdio_c_setvbuf_FUN_00601490(stream_ptr,(char *)0x0,0,0x400);
+    if (stream_ptr != (_FILE *)0x0) {
+      _setvbuf(stream_ptr,(char *)0x0,0,0x400);
       goto LAB_004b32cc;
     }
-    piVar2 = (int *)crt_errno_c_errno_FUN_00601450();
+    piVar2 = (int *)_errno();
     if (*piVar2 != 6) break;
     iVar4 = iVar4 + 1;
     (*g_SleepFunc)(500);
   } while (iVar4 < 10);
-  stream_ptr = (FILE *)0x0;
+  stream_ptr = (_FILE *)0x0;
 LAB_004b32cc:
-  if ((stream_ptr == (FILE *)0x0) ||
+  if ((stream_ptr == (_FILE *)0x0) ||
      (iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_53c), iVar4 == 0)) {
-    if (stream_ptr != (FILE *)0x0) {
+    if (stream_ptr != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
-      stream_ptr = (FILE *)0x0;
+      stream_ptr = (_FILE *)0x0;
     }
     pcVar6 = "Can't access %s.\nPerhaps someone else is checking it in, and it's taking a while?\nTry again in a few minutes, and if that doesn't work, get Fletch";
   }
@@ -95,14 +95,14 @@ LAB_004b32cc:
         ((char *)(local_53c.timestamp + 2) < local_328.timestamp)) ||
        ((char *)(local_328.timestamp + 2) < local_53c.timestamp)) {
       engine_dosio_c_setFileAttributes_FUN_004819f0(local_328.found_path,0);
-      crt_io_c_deleteFile_FUN_005ff9d0(local_328.found_path);
+      remove(local_328.found_path);
       dest_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             (local_328.found_path,(char *)0x0,"wb",
                              "..\\engine\\fileio.cpp",0x3c5);
-      if (dest_file == (FILE *)0x0) {
-        if (stream_ptr != (FILE *)0x0) {
+      if (dest_file == (_FILE *)0x0) {
+        if (stream_ptr != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
-          stream_ptr = (FILE *)0x0;
+          stream_ptr = (_FILE *)0x0;
         }
         pSVar8 = &local_328;
         pcVar6 = "Can't create %s.";
@@ -111,11 +111,11 @@ LAB_004b32cc:
       pcVar6 = engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
                          (stream_ptr,dest_file,local_53c.found_path,local_328.found_path,
                           local_53c.file_size);
-      if (stream_ptr != (FILE *)0x0) {
+      if (stream_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
-        stream_ptr = (FILE *)0x0;
+        stream_ptr = (_FILE *)0x0;
       }
-      if (dest_file != (FILE *)0x0) {
+      if (dest_file != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(dest_file,"..\\engine\\fileio.cpp",0xc4);
       }
       if (pcVar6 != (char *)0x0) {
@@ -130,10 +130,10 @@ LAB_004b32cc:
         return 0;
       }
     }
-    if (stream_ptr != (FILE *)0x0) {
+    if (stream_ptr != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
     }
-    stream_ptr = (FILE *)0x0;
+    stream_ptr = (_FILE *)0x0;
     uVar3 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,local_328.found_path);
     if (((((int)uVar3 < 0) || ((uVar3 & 8) != 0)) ||
         (iVar4 = engine_dosio_c_setFileAttributes_FUN_004819f0(local_328.found_path,(byte)uVar3 | 8)
@@ -146,7 +146,7 @@ LAB_004b32cc:
 LAB_004b32fe:
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6,pSVar8);
 LAB_004b3306:
-  if (stream_ptr != (FILE *)0x0) {
+  if (stream_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
   }
   return 0;

@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   crt_time.c__mktime_FUN_00600f80 at 00601093
 ;   crt_time.c_localtime_r_FUN_00600230 at 0060024f
-;   crt_time.c_mktime_FUN_00600f80 at 00601093
 ;
 ; Referenced Globals:
 ;   short g_DaysInMonth_Normal = 0x0

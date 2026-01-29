@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-ulong __cdecl crt_string_c_wcslen_FUN_0060cd30(LPWSTR str)
+ulong __cdecl wcslen(LPWSTR str)
 
 {
   WCHAR *pWVar1;

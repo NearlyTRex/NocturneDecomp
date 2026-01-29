@@ -43,7 +43,7 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
-    local_38 = crt_stdlib_c_atoi_FUN_005ffef0(local_8c);
+    local_38 = atoi(local_8c);
     local_1c = (float)90 / (float)local_38;
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_8c,10,0,0xb,"Enter in size in pitch : ")
     ;
@@ -57,7 +57,7 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     } while (cVar1 != '\0');
     if (iVar3 != -2) {
-      local_34 = crt_stdlib_c_atoi_FUN_005ffef0(local_8c);
+      local_34 = atoi(local_8c);
       local_18 = (float)90 / (float)local_34;
       engine_2d_c_getInputWithPrompt_FUN_004032c0(local_8c,10,0,0x16,"Enter in radius : ");
       iVar3 = -1;
@@ -70,7 +70,7 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
         pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar3 != -2) {
-        dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff6c);
+        dVar6 = _strtod(in_stack_ffffff6c);
         local_20 = (float)dVar6;
         iVar2 = SUB84(dVar6,0);
         for (local_14 = 0; local_14 < 8; local_14 = local_14 + 1) {

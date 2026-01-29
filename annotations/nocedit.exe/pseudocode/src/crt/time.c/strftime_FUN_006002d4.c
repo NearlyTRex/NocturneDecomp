@@ -2,13 +2,13 @@
 // Address: 006002d4
 // Address Range: [[006002d4, 00600762]]
 // Convention: __cdecl
-// Signature: uint __cdecl crt_time_c_strftime_FUN_006002d4 (char *dest_buffer,uint buffer_size,char *format_string,tm *time_ptr)
+// Signature: uint __cdecl crt_time_c_strftime_FUN_006002d4 (char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr)
 
 #include "nocturne.h"
 
 uint __cdecl
-crt_time_c_strftime_FUN_006002d4
-          (char *dest_buffer,uint buffer_size,char *format_string,tm *time_ptr)
+strftime
+          (char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr)
 
 {
   char cVar1;
@@ -59,7 +59,7 @@ LAB_0060030a:
         }
         if (0x47 < bVar2) {
           if (bVar2 < 0x49) {
-            crt_stdio_c_formatTwoDigits_FUN_006002a0(local_a0,time_ptr->tm_hour);
+            formatTwoDigits(local_a0,time_ptr->tm_hour);
             pacVar6 = (char (*) [4])local_a0;
           }
           else {
@@ -71,7 +71,7 @@ LAB_0060030a:
             if (value == 0) {
               value = 0xc;
             }
-            crt_stdio_c_formatTwoDigits_FUN_006002a0(local_a0,value);
+            formatTwoDigits(local_a0,value);
             pacVar6 = (char (*) [4])local_a0;
           }
           goto LAB_006006c0;
@@ -82,13 +82,13 @@ LAB_0060030a:
         goto LAB_0060030a;
       }
       if (bVar2 < 0x4e) {
-        crt_stdio_c_formatTwoDigits_FUN_006002a0(local_a0,time_ptr->tm_min);
+        formatTwoDigits(local_a0,time_ptr->tm_min);
         pacVar6 = (char (*) [4])local_a0;
       }
       else if (bVar2 < 0x57) {
         if (bVar2 < 0x54) {
           if (bVar2 == 0x53) {
-            crt_stdio_c_formatTwoDigits_FUN_006002a0(local_a0,time_ptr->tm_sec);
+            formatTwoDigits(local_a0,time_ptr->tm_sec);
             pacVar6 = (char (*) [4])local_a0;
           }
           else {
@@ -101,14 +101,14 @@ LAB_006006b4:
         else {
           if (bVar2 < 0x55) goto LAB_00600659;
           if (bVar2 != 0x55) goto LAB_006006b4;
-          crt_stdio_c_formatTwoDigits_FUN_006002a0
+          formatTwoDigits
                     (local_a0,((time_ptr->tm_yday + 7) - time_ptr->tm_wday) / 7);
           pacVar6 = (char (*) [4])local_a0;
         }
       }
       else {
         if (bVar2 < 0x58) {
-          crt_stdio_c_formatTwoDigits_FUN_006002a0
+          formatTwoDigits
                     (local_a0,((6 - ((time_ptr->tm_yday % 7 - time_ptr->tm_wday) + 7) % 7) +
                               time_ptr->tm_yday) / 7);
           pacVar6 = (char (*) [4])local_a0;
@@ -124,7 +124,7 @@ LAB_00600659:
           if (bVar2 == 0x5a) goto LAB_006006a3;
           goto LAB_006006b4;
         }
-        crt_stdio_c_IntegerToString_FUN_00607d18(time_ptr->tm_year + 0x76c,local_a0,10);
+        IntegerToString(time_ptr->tm_year + 0x76c,local_a0,10);
         pacVar6 = (char (*) [4])local_a0;
       }
     }
@@ -142,7 +142,7 @@ LAB_006004a2:
         pacVar6 = g_MonthNamesShort + time_ptr->tm_mon;
       }
       else if (bVar2 < 0x65) {
-        crt_stdio_c_formatTwoDigits_FUN_006002a0(local_a0,time_ptr->tm_mday);
+        formatTwoDigits(local_a0,time_ptr->tm_mday);
         pacVar6 = (char (*) [4])local_a0;
       }
       else {
@@ -151,13 +151,13 @@ LAB_006004a2:
           goto LAB_006004a2;
         }
         if (bVar2 < 0x6b) {
-          crt_stdio_c_IntegerToString_FUN_00607d18(time_ptr->tm_yday + 0x65,local_a0,10);
+          IntegerToString(time_ptr->tm_yday + 0x65,local_a0,10);
           local_a0[0] = local_a0[0] + -1;
           pacVar6 = (char (*) [4])local_a0;
         }
         else {
           if (bVar2 != 0x6d) goto LAB_006006b4;
-          crt_stdio_c_formatTwoDigits_FUN_006002a0(local_a0,time_ptr->tm_mon + 1);
+          formatTwoDigits(local_a0,time_ptr->tm_mon + 1);
           pacVar6 = (char (*) [4])local_a0;
         }
       }
@@ -198,13 +198,13 @@ LAB_006004a2:
         goto LAB_0060030a;
       }
       if (bVar2 < 0x7a) {
-        crt_stdio_c_formatTwoDigits_FUN_006002a0(local_a0,time_ptr->tm_year % 100);
+        formatTwoDigits(local_a0,time_ptr->tm_year % 100);
         pacVar6 = (char (*) [4])local_a0;
       }
       else {
         if (bVar2 != 0x7a) goto LAB_006006b4;
 LAB_006006a3:
-        crt_time_c_tzset_FUN_006072f8();
+        tzset();
         pacVar6 = (&PTR_s_EST_006851c0)[time_ptr->tm_isdst];
       }
     }

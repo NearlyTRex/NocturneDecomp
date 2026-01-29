@@ -22,7 +22,7 @@ void __cdecl core_morph_cpp_FUN_0052b160(void)
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   iVar3 = 0xffff - (int)g_PerspectiveReciprocal;
-  dVar5 = crt_math_c_round_FUN_005fe6b0
+  dVar5 = round
                     ((double)(in_stack_00000008 * (float)65535 *
                              (2.0f - in_stack_00000008)));
   lVar2 = (longlong)iVar3 * (longlong)(int)ROUND(dVar5);

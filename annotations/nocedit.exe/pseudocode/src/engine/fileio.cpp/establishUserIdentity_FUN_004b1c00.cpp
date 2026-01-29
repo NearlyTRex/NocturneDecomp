@@ -35,9 +35,9 @@ int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
     } while (cVar1 != '\0');
     return 1;
   }
-  pcVar2 = crt_env_c_getenv_FUN_006013f0("USERNAME");
+  pcVar2 = getenv("USERNAME");
   if (pcVar2 != (char *)0x0) {
-    crt_string_c_strncpy_FUN_00600f40(g_VersionControlSession.primary_username,pcVar2,0x1f);
+    strncpy(g_VersionControlSession.primary_username,pcVar2,0x1f);
     return 1;
   }
   do {

@@ -9,13 +9,13 @@
 void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(CMP3Decoder *this_ptr)
 
 {
-  FILE *file_ptr;
+  _FILE *file_ptr;
   char *ptr;
   
   this_ptr->decode_buffer_pos = (short *)0x0;
   this_ptr->available_samples = 0;
   file_ptr = (this_ptr->file_bitstream).file_handle;
-  if (file_ptr == (FILE *)0x0) {
+  if (file_ptr == (_FILE *)0x0) {
     ptr = (this_ptr->file_bitstream).buffer;
     if (ptr == (char *)0x0) {
       this_ptr->filename[0] = '\0';
@@ -24,7 +24,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(CMP3Decoder *this_ptr)
   }
   else {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\sound\\mp3.cpp",0x20b);
-    (this_ptr->file_bitstream).file_handle = (FILE *)0x0;
+    (this_ptr->file_bitstream).file_handle = (_FILE *)0x0;
     ptr = (this_ptr->file_bitstream).buffer;
     if (ptr == (char *)0x0) {
       this_ptr->filename[0] = '\0';

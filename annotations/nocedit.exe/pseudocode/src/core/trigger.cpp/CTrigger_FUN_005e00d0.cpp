@@ -96,7 +96,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
       }
       if (*(int *)(this_ptr->unk + 0x18) == 1) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-        dVar12 = crt_math_c_round_FUN_005fe6b0
+        dVar12 = round
                            ((double)(*(float *)(this_ptr->unk + 8) * (float)0.10000000000000001 +
                                     (float)12));
         fStack_cc = (float)(int)ROUND(dVar12);
@@ -110,7 +110,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         CStack_54.x = 0;
         fStack_58 = CStack_88.max.x;
         pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-        dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * 256.0f));
+        dVar12 = round((double)(fVar1 * 256.0f));
         fStack_20 = (float)(int)ROUND(dVar12);
         pSVar5->light = fStack_20;
         pCVar2->vertex_buffer_ptr->color = iVar3 << 8;

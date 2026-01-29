@@ -26,7 +26,7 @@ section .text
     PUSH 0x637d0d                       ; 0051b726 | = "rt"
     PUSH ESI                            ; 0051b72b
     CALL shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770 ; 0051b72c
-        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
+        ;   XREF to: 0051b770 (UNCONDITIONAL_CALL)  ; _FILE * shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh * this_ptr, char * mode)
     MOV EBX,EAX                         ; 0051b731
     ADD ESP,0x8                         ; 0051b733
     TEST EAX,EAX                        ; 0051b736
@@ -39,14 +39,14 @@ section .text
         ;   Label: LAB_0051b73d
     PUSH ESI                            ; 0051b73e
     CALL shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 ; 0051b73f
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, FILE * file_handle)
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0051b744
     PUSH 0x121e                         ; 0051b747
     PUSH 0x637d10                       ; 0051b74c | = "..\\shape\\meshlod.cpp"
     PUSH EBX                            ; 0051b751
     MOV ESI,EAX                         ; 0051b752
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0051b754
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0051b759
     MOV EAX,ESI                         ; 0051b75c
     POP ESI                             ; 0051b75e

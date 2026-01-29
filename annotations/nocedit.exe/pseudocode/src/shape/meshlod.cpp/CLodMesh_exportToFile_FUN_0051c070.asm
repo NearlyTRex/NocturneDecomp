@@ -48,7 +48,7 @@ section .text
     PUSH 0x0                            ; 0051c09b
     PUSH ESI                            ; 0051c09d
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0051c09e
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0051c0a3
     MOV EBX,EAX                         ; 0051c0a6
     TEST EAX,EAX                        ; 0051c0a8
@@ -59,13 +59,13 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 0051c0ad
     PUSH EBP                            ; 0051c0b1
     CALL shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100 ; 0051c0b2
-        ;   XREF to: 0051c100 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh * this_ptr, FILE * file_ptr)
+        ;   XREF to: 0051c100 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh * this_ptr, _FILE * file_ptr)
     ADD ESP,0x8                         ; 0051c0b7
     PUSH 0x1347                         ; 0051c0ba
     PUSH 0x637e6f                       ; 0051c0bf | = "..\\shape\\meshlod.cpp"
     PUSH EBX                            ; 0051c0c4
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0051c0c5
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0051c0ca
     POP EBP                             ; 0051c0cd
     POP ESI                             ; 0051c0ce

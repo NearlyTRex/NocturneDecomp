@@ -18,7 +18,7 @@
 ;   undefined4 DAT_03659384
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EBX                            ; 00580574
     MOV dword ptr [0x0067d20c],EDX      ; 00580575 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ECX      ; 0058057b | g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00580581
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00580581
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00580586
     MOV dword ptr [0x03659384],ESI      ; 00580589 | DAT_03659384
     POP ESI                             ; 0058058f

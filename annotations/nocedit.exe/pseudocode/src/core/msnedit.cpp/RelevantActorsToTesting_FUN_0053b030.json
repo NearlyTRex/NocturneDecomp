@@ -84,27 +84,15 @@
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 66,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 68,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 38,
         "line": 82,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 32,
+        "column": 55,
         "line": 87,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
       },
       {
         "category": "other",
@@ -114,9 +102,9 @@
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 43,
         "line": 115,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -138,34 +126,33 @@
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 149,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 153,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 54,
+        "column": 56,
         "line": 169,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CDemonActor*' [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 69,
+        "line": 169,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 79,
+        "line": 169,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 661,
+    "complexity_score": 646,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
     "pseudocode_lines": 181,
-    "suspect_count": 44,
+    "suspect_count": 43,
     "suspect_types": [
-      "format_string_mismatch",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
@@ -608,7 +595,7 @@
       "description": "Unaffected register variable",
       "line": 106,
       "match": "unaff_EBP",
-      "text": "iVar4 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,unaff_EBP->actor_name);",
+      "text": "iVar4 = stricmp((char *)str1,unaff_EBP->actor_name);",
       "type": "unaffected_reg"
     },
     {
@@ -740,17 +727,6 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\tReferenced by name\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s\\tReferenced by name",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 108,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(CStack_2fc.actor_name,\"%s\\tReferenced by name\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

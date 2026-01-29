@@ -39,13 +39,13 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 14,
         "line": 84,
         "message": "'stack0xffffff44' was not declared in this scope; did you mean 'in_stack_ffffff44'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 14,
         "line": 106,
         "message": "'stack0xffffff40' was not declared in this scope; did you mean 'in_stack_ffffff44'?"
       }
@@ -86,16 +86,15 @@
   },
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 389,
+    "complexity_score": 374,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
     "pseudocode_lines": 149,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "format_string_mismatch",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
@@ -724,7 +723,7 @@
       "description": "Direct stack address reference",
       "line": 77,
       "match": "&stack0xffffff44",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff44,\"%d faces, %d original\",iVar2);",
+      "text": "sprintf(&stack0xffffff44,\"%d faces, %d original\",iVar2);",
       "type": "stack_ref"
     },
     {
@@ -745,7 +744,7 @@
       "description": "Direct stack address reference",
       "line": 99,
       "match": "&stack0xffffff40",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff40,\"Pixel Height: %d\",local_28.z);",
+      "text": "sprintf(&stack0xffffff40,\"Pixel Height: %d\",local_28.z);",
       "type": "stack_ref"
     },
     {
@@ -775,17 +774,6 @@
       "match": "in_stack_ffffff44",
       "text": "in_stack_ffffff44 = (CGame *)0x51d861;",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%d faces, %d original\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d faces, %d original",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 77,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff44,\"%d faces, %d original\",iVar2);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack crt_locale_c_wchar_to_bytes_FUN_00605a20(wchar_t character,char *output_buffer)
+void __watcallStack wchar_to_bytes(wchar_t character,char *output_buffer)
 
 {
   char cVar1;

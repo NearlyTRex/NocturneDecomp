@@ -68,7 +68,7 @@ void core_script_cpp_CScript_RelatedToSubtitles_FUN_00559d80(void)
           iVar1 = 0xff;
         }
         cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(iVar1);
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_a4,"%d",index + 1);
+        sprintf(local_a4,"%d",index + 1);
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
                   (&local_40,(int)local_a4,2,text);
         iVar1 = 0x1e;

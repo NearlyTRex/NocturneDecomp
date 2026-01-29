@@ -192,18 +192,6 @@
       },
       {
         "category": "other",
-        "column": 83,
-        "line": 55,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 83,
-        "line": 57,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 27,
         "line": 59,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -228,9 +216,9 @@
       },
       {
         "category": "other",
-        "column": 64,
+        "column": 59,
         "line": 67,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -258,21 +246,15 @@
       },
       {
         "category": "other",
-        "column": 64,
+        "column": 48,
         "line": 98,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 64,
+        "column": 65,
         "line": 103,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 113,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -282,33 +264,27 @@
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 46,
         "line": 117,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 125,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 125,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 66,
+        "column": 59,
         "line": 128,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 43,
         "line": 134,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 134,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -344,14 +320,13 @@
   },
   "complexity": {
     "assembly_lines": 513,
-    "complexity_score": 832,
+    "complexity_score": 777,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 30,
     "pseudocode_lines": 192,
-    "suspect_count": 62,
+    "suspect_count": 57,
     "suspect_types": [
-      "format_string_mismatch",
       "stack_param",
       "stack_ref",
       "unknown_field"
@@ -1141,61 +1116,6 @@
       "match": "in_stack_fffff0f0",
       "text": "(uint)in_stack_fffff0e8,(uint)in_stack_fffff0ec,(uint)in_stack_fffff0f0);",
       "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Orphaned sfx file %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Orphaned sfx file %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 60,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,\"Orphaned sfx file %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"sound\\\\%s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "sound\\\\%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 91,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(SStack_95c.found_path,\"sound\\\\%s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't get file info for %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't get file info for %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 96,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,\"Can't get file info for %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"No sfx file for %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "No sfx file for %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 121,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,\"No sfx file for %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s older than %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s older than %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 127,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)aCStack_748,\"%s older than %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

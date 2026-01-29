@@ -12,7 +12,7 @@ int __cdecl engine_dosio_c_getFullPath_FUN_004820c0(char *output_path,char *inpu
   char cVar1;
   char *pcVar2;
   
-  pcVar2 = crt_io_c_realpath_FUN_00601140(output_path,input_path,0x100);
+  pcVar2 = _fullpath(output_path,input_path,0x100);
   if (pcVar2 == output_path) {
     return 1;
   }

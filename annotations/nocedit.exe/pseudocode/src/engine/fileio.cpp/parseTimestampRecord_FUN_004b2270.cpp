@@ -25,7 +25,7 @@ engine_fileio_cpp_parseTimestampRecord_FUN_004b2270
   int local_8;
   
   local_8 = -1;
-  crt_stdio_c_sscanf_FUN_0060013c
+  sscanf
             (input_string,"%d: %d / %d / %d %d : %d : %d \"%[^\"]\"%n %n",&local_24,&local_18,&local_20,&local_1c,
              &local_14,&local_10,&local_c,local_224,&local_8,&local_8);
   if (local_8 < 0) {

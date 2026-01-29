@@ -9,7 +9,7 @@
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_ptr,char *filename)
 
 {
-  FILE *pFVar1;
+  _FILE *p_Var1;
   void *pvVar2;
   CDemonFilter *this_ptr_00;
   int iVar3;
@@ -17,27 +17,27 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
   
   core_dfilter_cpp_CFilterFX_free_FUN_00470700(this_ptr);
   if (filename != (char *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_10c,"%s.txt",filename);
-    pFVar1 = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rt");
-    if (pFVar1 == (FILE *)0x0) {
+    sprintf(local_10c,"%s.txt",filename);
+    p_Var1 = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rt");
+    if (p_Var1 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";
       g_CurrentLineNumber = 0x15a;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open movie %s.txt",filename);
     }
-    crt_stdio_c_fscanf_FUN_005fe7c0(pFVar1,"%d\n",this_ptr);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\dfilter.cpp",0x15c);
+    _fscanf(p_Var1,"%d\n",this_ptr);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\dfilter.cpp",0x15c);
     pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->frame_count << 0xd,"..\\core\\dfilter.cpp",0x160);
     this_ptr->movie_data = pvVar2;
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_10c,"%s.mov",filename);
-    pFVar1 = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rb");
-    if (pFVar1 == (FILE *)0x0) {
+    sprintf(local_10c,"%s.mov",filename);
+    p_Var1 = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rb");
+    if (p_Var1 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";
       g_CurrentLineNumber = 0x166;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open movie %s.mov",filename);
     }
-    crt_stdio_c_fread_FUN_005fd990(this_ptr->movie_data,0x2000,this_ptr->frame_count,pFVar1);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\dfilter.cpp",0x168);
+    _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,p_Var1);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\dfilter.cpp",0x168);
     for (iVar3 = 0; iVar3 < this_ptr->frame_count * 0x2000; iVar3 = iVar3 + 1) {
       *(char *)(iVar3 + (int)this_ptr->movie_data) =
            (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);

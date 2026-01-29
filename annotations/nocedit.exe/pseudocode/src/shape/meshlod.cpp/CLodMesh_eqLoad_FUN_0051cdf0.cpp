@@ -2,11 +2,11 @@
 // Address: 0051cdf0
 // Address Range: [[0051cdf0, 0051d0d5]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,FILE *file_handle)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,FILE *file_handle)
+void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_FILE *file_handle)
 
 {
   CLodEdge *pCVar1;
@@ -25,7 +25,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,F
   int *local_18;
   
   local_20 = 1;
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_38);
+  _fscanf(file_handle,"%d\n",&local_38);
   local_34 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                        (local_38,0xf0,"..\\shape\\meshlod.cpp",0x13e4);
   if (local_34 == (void *)0x0) {
@@ -46,8 +46,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,F
     local_30 = (int)local_34 + 0x10;
     do {
       local_18 = (int *)((int)local_34 + local_1c);
-      iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (file_handle,"%d,%d,%lf,%f\n",local_18,local_2c,local_28,local_30);
+      iVar3 = _fscanf(file_handle,"%d,%d,%lf,%f\n",local_18,local_2c,local_28,local_30);
       if (*(double *)(local_18 + 2) <= dVar2) {
 LAB_0051d075:
         if (iVar3 != 4) {
@@ -63,7 +62,7 @@ LAB_0051d075:
         if (iVar3 != 3) goto LAB_0051d075;
         iVar3 = 1;
         do {
-          iVar4 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+          iVar4 = _fgetc(file_handle);
           if (iVar4 < 0) break;
         } while ((iVar4 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
       }

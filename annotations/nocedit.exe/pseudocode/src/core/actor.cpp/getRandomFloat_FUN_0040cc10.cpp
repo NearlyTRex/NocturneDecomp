@@ -14,7 +14,7 @@ float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cc10(float min_value,float m
   int iVar3;
   
   if (g_CGamePtr->is_processing == 0) {
-    iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+    iVar3 = rand();
     fVar1 = (float)iVar3 * 3.051851e-05f;
   }
   else {

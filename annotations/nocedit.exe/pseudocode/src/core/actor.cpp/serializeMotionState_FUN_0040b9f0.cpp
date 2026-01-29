@@ -14,16 +14,15 @@ core_actor_cpp_serializeMotionState_FUN_0040b9f0
   int iVar1;
   
   if (g_ActorReadingMode != 1) {
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
+    _fprintf(g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
     core_motion_cpp_CMotionController_save_FUN_0052e670(motion_controller,g_ActorDataFile);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
+    _fprintf(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(g_ActorDataFile);
+    iVar1 = _fgetc(g_ActorDataFile);
     if (iVar1 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
                 ("motion state info opening brace",property_name);
@@ -32,7 +31,7 @@ core_actor_cpp_serializeMotionState_FUN_0040b9f0
   core_motion_cpp_CMotionController_load_FUN_0052e5d0(motion_controller,g_ActorDataFile);
   do {
     while( true ) {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(g_ActorDataFile);
+      iVar1 = _fgetc(g_ActorDataFile);
       if (-1 < iVar1) break;
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
                 ("motion state info closing brace",property_name);

@@ -29,7 +29,7 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
   int local_28;
   int local_24;
   int local_20;
-  FILE *local_1c;
+  _FILE *local_1c;
   int local_18;
   int local_14;
   
@@ -38,7 +38,7 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
   if ((g_PolygonCount < 1) || (g_VertexCount < 1)) {
     return;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_100,"reduce\\cube%04d.txt");
+  sprintf(local_100,"reduce\\cube%04d.txt");
   iVar6 = 0;
   local_1c = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_100,(char *)0x0,"wt","..\\shape\\superopt.cpp",0x252f);
@@ -50,14 +50,14 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
       iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3) + -2;
     } while (iVar2 < g_PolygonCount * 0x184);
   }
-  if (local_1c != (FILE *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,"// npoint, ntri\n");
-    crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,"%d %d\n",g_VertexCount);
+  if (local_1c != (_FILE *)0x0) {
+    _fprintf(local_1c,"// npoint, ntri\n");
+    _fprintf(local_1c,"%d %d\n",g_VertexCount);
   }
   shape_superopt_cpp_CObj_ctor_FUN_005d2230(&local_58);
   shape_superopt_cpp_CObj_init_FUN_005d22d0(&local_58,iVar6,g_VertexCount);
-  if (local_1c != (FILE *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,"// pointList\n");
+  if (local_1c != (_FILE *)0x0) {
+    _fprintf(local_1c,"// pointList\n");
   }
   iVar6 = 0;
   if (0 < g_VertexCount) {
@@ -70,9 +70,8 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
            (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2);
       *(double *)((int)&((local_58.vertex_data)->position).z + iVar3) =
            (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2);
-      if (local_1c != (FILE *)0x0) {
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (local_1c,"%g %g %g\n",
+      if (local_1c != (_FILE *)0x0) {
+        _fprintf(local_1c,"%g %g %g\n",
                    (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2),
                    (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2),
                    (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2));
@@ -82,8 +81,8 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
       iVar2 = iVar2 + 0x14;
     } while (iVar6 < g_VertexCount);
   }
-  if (local_1c != (FILE *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,"// triList\n");
+  if (local_1c != (_FILE *)0x0) {
+    _fprintf(local_1c,"// triList\n");
   }
   local_30 = 0;
   local_20 = 0;
@@ -103,7 +102,7 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
       if (0 < DAT_03f6bbe8) {
         pcVar4 = &DAT_03f6bbf0;
         do {
-          iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,pcVar5);
+          iVar2 = stricmp(pcVar4,pcVar5);
           if (iVar2 == 0) goto LAB_005d7a1a;
           iVar6 = iVar6 + 1;
           pcVar4 = pcVar4 + 0x50;
@@ -149,8 +148,8 @@ LAB_005d7a1a:
                (double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar2) * 0.00390625;
           local_168.vertex_idx_1 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -4);
           local_168.vertex_idx_2 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2);
-          if (local_1c != (FILE *)0x0) {
-            crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,"%d %d %d\n");
+          if (local_1c != (_FILE *)0x0) {
+            _fprintf(local_1c,"%d %d %d\n");
           }
           shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0(&local_168);
           local_34 = (int *)((int)&((CPoly *)((local_58.poly_array)->uv_coords + -1))->parent_obj +
@@ -160,7 +159,7 @@ LAB_005d7a1a:
           local_34[(uint)bVar7 * -2 + 2] = *(int *)((int)&local_168 + (uint)bVar7 * -8 + 8);
           (local_34 + (uint)bVar7 * -2 + 2)[(uint)bVar7 * -2 + 1] =
                *(int *)((int)&local_168 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0xc);
-          crt_memory_c_copyArrayWithFunction_FUN_006020c2
+          __arr_op
                     (local_34 + 4,local_168.uv_coords,3,0x10,shape_superopt_cpp_FUN_005d8330);
           local_34[0x10] = local_168.normal.x._0_4_;
           local_34[0x11] = local_168.normal.x._4_4_;
@@ -183,7 +182,7 @@ LAB_005d7a1a:
       local_30 = local_30 + 1;
     } while (local_30 < g_PolygonCount);
   }
-  if (local_1c != (FILE *)0x0) {
+  if (local_1c != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\superopt.cpp",0x2571);
   }
   shape_superopt_cpp_COptimize_ctor_FUN_005d6f90(&local_9c);
@@ -202,7 +201,7 @@ LAB_005d7a1a:
   else {
     shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00();
     shape_design_c_vertexReducer_FUN_00467850(0.01,-1.0,-1);
-    crt_io_c_deleteFile_FUN_005ff9d0(local_100);
+    remove(local_100);
   }
   shape_superopt_cpp_CObj_free_FUN_005d2600(&local_58);
   shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0(&local_9c);

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint * crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50(void)
+uint * GetRandomSeedPointer(void)
 
 {
   ThreadData *pTVar1;

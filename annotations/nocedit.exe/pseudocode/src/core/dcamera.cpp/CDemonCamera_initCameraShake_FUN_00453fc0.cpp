@@ -24,12 +24,12 @@ core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0
   iVar1 = 0;
   fVar4 = (float10)decay_time * fVar2;
   g_CameraShakeAttackAccum = 0;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)((float10)peak_intensity * fVar2));
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)((float10)sustain_duration * fVar2));
+  dVar5 = round((double)((float10)peak_intensity * fVar2));
+  dVar6 = round((double)((float10)sustain_duration * fVar2));
   fVar2 = (float10)dVar6;
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  dVar6 = round((double)fVar3);
   fVar3 = (float10)dVar6;
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+  dVar6 = round((double)fVar4);
   g_CameraShakeSustainValue = (int)ROUND(fVar2);
   g_CameraShakeAttackTime = (int)ROUND(fVar3);
   g_CameraShakeDecayDuration = (int)ROUND(dVar6);

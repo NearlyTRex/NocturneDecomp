@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_io_c_invalidate_handle_wrapper_FUN_00602448(int handle_index)
+void __cdecl invalidate_handle_wrapper(int handle_index)
 
 {
-  crt_io_c_invalidate_handle_FUN_00608af4(handle_index);
+  invalidate_handle(handle_index);
   return;
 }

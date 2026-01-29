@@ -61,7 +61,7 @@ void FUN_0050c3e0(void);
 
 // Original: core_marquee.cpp_FUN_0050c480
 // Address: 0050c480
-void FUN_0050c480(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,FILE *param_6);
+void FUN_0050c480(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,_FILE *param_6);
 
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_0050c4c0
 // Address: 0050c4c0

@@ -117,7 +117,7 @@ LAB_0045a814:
     engine_2d_c_drawText_FUN_00401fd0("H) Huge flat track",0,99);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar3 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    local_1c = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
+    local_1c = toupper(uVar3 & 0xff);
     if ((((local_1c == 0x4e) || (local_1c == 0x59)) || (local_1c == 0x58)) ||
        ((local_1c == 0x5a || (local_1c == 0x54)))) {
 LAB_0045a97c:
@@ -131,14 +131,14 @@ LAB_0045a97c:
           engine_2d_c_drawText_FUN_00401fd0("6. Animated model scale",0,0xb0);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           uVar3 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-          local_14 = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
+          local_14 = toupper(uVar3 & 0xff);
         } while (local_14 < 0x31);
       } while (0x36 < local_14);
       engine_2d_c_drawText_FUN_00401fd0("Include texture maps? (Y/N) ",0,0xd1);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
       uVar3 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      local_18 = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
+      local_18 = toupper(uVar3 & 0xff);
       shape_design_c_exportModelToBIN_FUN_0045aa80
                 (local_6c,local_1c,local_14,export_format_type,local_18);
       return;

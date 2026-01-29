@@ -81,7 +81,7 @@ void FUN_0044b8d0(void);
 
 // Original: core_curtain.cpp_FindCurtainTextures_FUN_0044b960
 // Address: 0044b960
-void FindCurtainTextures(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6);
+void FindCurtainTextures(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6);
 
 // Original: core_curtain.cpp_FUN_0044ba30
 // Address: 0044ba30

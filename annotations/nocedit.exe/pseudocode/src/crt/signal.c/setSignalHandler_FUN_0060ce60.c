@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 SIGNAL_HANDLER_TYPE __watcallStack
-crt_signal_c_setSignalHandler_FUN_0060ce60(int signal_number,SIGNAL_HANDLER_TYPE new_handler_type)
+setSignalHandler(int signal_number,SIGNAL_HANDLER_TYPE new_handler_type)
 
 {
   SIGNAL_HANDLER_TYPE SVar1;

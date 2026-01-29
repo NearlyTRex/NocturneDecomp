@@ -9,6 +9,6 @@
 void __cdecl core_manpuz_cpp_freeGems_FUN_0050bab0(SGem **objs)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(objs,0xc,&g_SGemTypeInfo);
+  __arrfini(objs,0xc,&g_SGemTypeInfo);
   return;
 }

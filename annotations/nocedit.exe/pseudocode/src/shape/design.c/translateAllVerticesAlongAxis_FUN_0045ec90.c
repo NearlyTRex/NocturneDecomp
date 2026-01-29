@@ -33,7 +33,7 @@ void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
-    dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffffac);
+    dVar6 = _strtod(in_stack_ffffffac);
     local_1c = (float)dVar6;
     iVar3 = engine_2d_c_getInputWithPrompt_FUN_004032c0
                       (local_48,0x14,0,0x16,"Press <Enter> or enter point to set to location : ");
@@ -47,7 +47,7 @@ void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
         pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar3 != -2) {
-        local_20 = crt_stdlib_c_atoi_FUN_005ffef0(local_48);
+        local_20 = atoi(local_48);
         if ((local_20 < 0) || (g_VertexCount + -1 < local_20)) {
           engine_2d_c_drawText_FUN_00401fd0("Invalid point.",0,0x2c);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -59,7 +59,7 @@ void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
       engine_2d_c_drawText_FUN_00401fd0("Which axis to use - X, Y, or Z? : ",0,0x2c);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      uVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
+      uVar2 = toupper(uVar2 & 0xff);
       if (uVar2 < 0x59) {
         if (uVar2 == 0x58) {
           for (local_14 = 0; local_14 < g_VertexCount; local_14 = local_14 + 1) {

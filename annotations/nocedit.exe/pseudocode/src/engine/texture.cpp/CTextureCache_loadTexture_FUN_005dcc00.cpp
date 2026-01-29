@@ -12,7 +12,7 @@ engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,c
 {
   char cVar1;
   byte *pbVar2;
-  FILE *pFVar3;
+  _FILE *p_Var3;
   void *pvVar4;
   int iVar5;
   SIZE_T unaff_EBP;
@@ -62,7 +62,7 @@ engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,c
       }
     }
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (local_114,"CTextureCache::load - Bad texture length : %s,%d",texture_name,local_14);
   g_CurrentLineNumber = 0x101;
   g_CurrentFilename = "..\\engine\\texture.cpp";
@@ -106,9 +106,9 @@ LAB_005dcd2c:
     g_CurrentLineNumber = 0x111;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureCache::load - Can't find extension");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,".act");
-  pFVar3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
-  if (pFVar3 == (FILE *)0x0) {
+  sprintf(pcVar6,".act");
+  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  if (p_Var3 == (_FILE *)0x0) {
     pbVar2 = (byte *)g_SourcePaletteData;
     pbVar11 = cache->texture_palette_ptrs[cache->current_texture_count];
     for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -123,9 +123,8 @@ LAB_005dcd2c:
     }
   }
   else {
-    crt_stdio_c_fread_FUN_005fd990
-              (cache->texture_palette_ptrs[cache->current_texture_count],0x100,3,pFVar3);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\texture.cpp",0x117);
+    _fread(cache->texture_palette_ptrs[cache->current_texture_count],0x100,3,p_Var3);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x117);
   }
   pacVar10 = cache->texture_names + cache->current_texture_count;
   pcVar6 = texture_name;
@@ -184,17 +183,16 @@ LAB_005dcd2c:
   } while (*pcVar6 != '\0');
   pcVar6 = (char *)0x0;
 LAB_005dceea:
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,".raw");
-  pFVar3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
-  if (pFVar3 == (FILE *)0x0) {
-    crt_memory_c_memset_FUN_005fde40
+  sprintf(pcVar6,".raw");
+  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  if (p_Var3 == (_FILE *)0x0) {
+    memset
               (cache->texture_data_ptrs[cache->current_texture_count],0,unaff_EBP * unaff_EBP);
     pcVar8 = local_114;
   }
   else {
-    crt_stdio_c_fread_FUN_005fd990
-              (cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,pFVar3);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\texture.cpp",0x13a);
+    _fread(cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x13a);
   }
   do {
     cVar1 = *texture_name;
@@ -217,9 +215,9 @@ LAB_005dceea:
   } while (*pcVar8 != '\0');
   pcVar8 = (char *)0x0;
 LAB_005dcf75:
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar8,".opa");
-  pFVar3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
-  if (pFVar3 == (FILE *)0x0) {
+  sprintf(pcVar8,".opa");
+  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  if (p_Var3 == (_FILE *)0x0) {
     if (cache->texture_opacity_ptrs[cache->current_texture_count] != (void *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
                 (cache->texture_opacity_ptrs[cache->current_texture_count],
@@ -238,10 +236,9 @@ LAB_005dcf75:
                          (local_14,"..\\engine\\texture.cpp",0x148);
       cache->texture_opacity_ptrs[cache->current_texture_count] = pvVar4;
     }
-    crt_stdio_c_fread_FUN_005fd990
-              (cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,pFVar3)
+    _fread(cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3)
     ;
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\texture.cpp",0x14b);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x14b);
   }
   cache->texture_dimensions[cache->current_texture_count] = unaff_EBP;
   iVar5 = cache->current_texture_count + 1;

@@ -34,7 +34,7 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
   fVar1 = *(float *)(in_stack_00000004[1].base.actor_name + 8) / 30.0f;
   *(float *)(in_stack_00000004[1].base.actor_name + 0xc) = fVar1;
   iVar2 = in_stack_00000004->weapon_state;
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)100));
+  dVar4 = round((double)(fVar1 * (float)100));
   in_stack_00000004->ammo_count = (int)ROUND(dVar4);
   if (iVar2 == 2) {
     fVar1 = (2.5f - 2.0f) *

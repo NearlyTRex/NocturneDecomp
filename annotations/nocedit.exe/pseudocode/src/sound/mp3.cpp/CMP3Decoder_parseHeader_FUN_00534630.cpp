@@ -2,13 +2,13 @@
 // Address: 00534630
 // Address Range: [[00534630, 005349dd]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630 (CMP3Decoder *this_ptr,FILE *file_handle,int file_size)
+// Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630 (CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)
 
 #include "nocturne.h"
 
 int __cdecl
 sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630
-          (CMP3Decoder *this_ptr,FILE *file_handle,int file_size)
+          (CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)
 
 {
   long lVar1;
@@ -31,9 +31,9 @@ sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630
   local_48.emphasis = 0x1000;
   pCVar7 = &this_ptr->file_bitstream;
   local_48.copyright = file_size;
-  if (pCVar7->file_handle != (FILE *)0x0) {
+  if (pCVar7->file_handle != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(pCVar7->file_handle,"..\\sound\\mp3.cpp",0x20b);
-    pCVar7->file_handle = (FILE *)0x0;
+    pCVar7->file_handle = (_FILE *)0x0;
   }
   pcVar2 = (this_ptr->file_bitstream).buffer;
   if (pcVar2 != (char *)0x0) {
@@ -41,7 +41,7 @@ sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630
     (this_ptr->file_bitstream).buffer = (char *)0x0;
   }
   pCVar7->file_handle = file_handle;
-  lVar1 = crt_stdio_c_ftell_FUN_00601560(file_handle);
+  lVar1 = _ftell(file_handle);
   (this_ptr->file_bitstream).stream_start_position = lVar1;
   (this_ptr->file_bitstream).stream_length = local_48.copyright;
   (this_ptr->file_bitstream).buffer_size = local_48.emphasis;
@@ -54,8 +54,7 @@ sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Out of memory.  File: %s",g_CurrentMp3Filename);
   }
-  crt_stdio_c_fseek_FUN_005ffacc
-            (pCVar7->file_handle,(this_ptr->file_bitstream).stream_start_position,0);
+  _fseek(pCVar7->file_handle,(this_ptr->file_bitstream).stream_start_position,0);
   (this_ptr->file_bitstream).current_byte_index = 0;
   (this_ptr->file_bitstream).bits_available = 0;
   (this_ptr->file_bitstream).total_bits_read = 0;
@@ -87,7 +86,7 @@ sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630
             [local_48.mode_extension] / local_48.sampling_rate_index;
     header_out = (SMpegFrameHeader *)0x534863;
     local_48.original = (int)&local_48;
-    dVar8 = crt_math_c_round_FUN_005fe6b0
+    dVar8 = round
                       (g_MpegSampleRateTable[iVar5][*(int *)(local_48.mpeg_version + 0x10)]);
     local_18 = (int)ROUND(dVar8);
     if (iVar5 == 1) {
@@ -133,7 +132,7 @@ sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630
     local_48.padding = (int)g_MpegLayer2AllocationTables[iVar5][iVar9];
   }
   iVar9 = 0x534945;
-  dVar8 = crt_math_c_round_FUN_005fe6b0
+  dVar8 = round
                     (g_MpegSampleRateTable[(int)header_out][local_6c] * 1000);
   unaff_retaddr->sample_rate = (int)ROUND(dVar8);
   unaff_retaddr->num_channels = local_48.protection;

@@ -10,7 +10,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
 
 {
   char cVar1;
-  FILE *file;
+  _FILE *file;
   C3DSLight *this_ptr_00;
   SRoom *pSVar2;
   SVDBox *pSVar3;
@@ -30,45 +30,44 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   
   this_ptr->set_file_version = 0x1c;
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x6d6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::Unable to save output");
   }
   pcVar9 = local_a0;
   pcVar7 = local_a0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%f\n",(double)this_ptr->set_scale_factor);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"unused.act\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%f\n",(double)this_ptr->min_ambient_value);
+  _fprintf(file,"%d\n");
+  _fprintf(file,"%f\n",(double)this_ptr->set_scale_factor);
+  _fprintf(file,"unused.act\n");
+  _fprintf(file,"%s\n");
+  _fprintf(file,"%f\n",(double)this_ptr->min_ambient_value);
   core_dcamera_cpp_saveCameraFog_FUN_00453f10((SFog *)(this_ptr->unk4 + 0xbb90),file);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"waterHeight,waterTileSize\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file,"%f,%f\n",(double)g_CWaterPtr->water_level_y,(double)g_CWaterPtr->tile_size);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"useEnviroModel,enviroModelName\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%s\n",this_ptr->use_enviro_model);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"transparentWaterFlag\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"hasSky\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  _fprintf(file,"waterHeight,waterTileSize\n");
+  _fprintf(file,"%f,%f\n",(double)g_CWaterPtr->water_level_y,(double)g_CWaterPtr->tile_size);
+  _fprintf(file,"useEnviroModel,enviroModelName\n");
+  _fprintf(file,"%d,%s\n",this_ptr->use_enviro_model);
+  _fprintf(file,"transparentWaterFlag\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"hasSky\n");
+  _fprintf(file,"%d\n");
   if (this_ptr->has_sky == 0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"0,none\n");
+    _fprintf(file,"0,none\n");
   }
   else {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%s\n",this_ptr->sky_type);
+    _fprintf(file,"%d,%s\n",this_ptr->sky_type);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"useWorldGeometryFlag,worldGeometryName\n");
+  _fprintf(file,"useWorldGeometryFlag,worldGeometryName\n");
   if (this_ptr->use_world_geometry_flag == 0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"0,none\n");
+    _fprintf(file,"0,none\n");
   }
   else {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"1,%s\n");
+    _fprintf(file,"1,%s\n");
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"weatherType\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"lightCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  _fprintf(file,"weatherType\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"lightCount\n");
+  _fprintf(file,"%d\n");
   iVar8 = 0;
   if (0 < this_ptr->light_count) {
     this_ptr_00 = this_ptr->lights;
@@ -78,8 +77,8 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
       this_ptr_00 = this_ptr_00 + 1;
     } while (iVar8 < this_ptr->light_count);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"cameraCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  _fprintf(file,"cameraCount\n");
+  _fprintf(file,"%d\n");
   iVar8 = 0;
   if (0 < this_ptr->camera_count) {
     pCVar4 = this_ptr->cameras;
@@ -89,55 +88,49 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
       pCVar4 = pCVar4 + 1;
     } while (iVar8 < this_ptr->camera_count);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Room size info\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  _fprintf(file,"Room size info\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"%d\n");
   iVar8 = 0;
   if (0 < this_ptr->room_count) {
     local_20 = this_ptr->rooms;
     local_18 = &this_ptr->rooms[0].rotation_matrix;
     do {
       pSVar2 = local_20 + iVar8;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)(pSVar2->position).x,(double)(pSVar2->position).y,
+      _fprintf(file,"%g,%g,%g\n",(double)(pSVar2->position).x,(double)(pSVar2->position).y,
                  (double)(pSVar2->position).z);
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)(pSVar2->extents).x,(double)(pSVar2->extents).y,
+      _fprintf(file,"%g,%g,%g\n",(double)(pSVar2->extents).x,(double)(pSVar2->extents).y,
                  (double)(pSVar2->extents).z);
       core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_18,&local_30);
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)local_30.x,(double)local_30.z,(double)local_30.y);
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+      _fprintf(file,"%g,%g,%g\n",(double)local_30.x,(double)local_30.z,(double)local_30.y);
+      _fprintf(file,"%d\n");
       iVar8 = iVar8 + 1;
       local_18 = (CMatrix3x3f *)((int)(local_18 + 1) + 0x20);
     } while (iVar8 < this_ptr->room_count);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Default ground type\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Default master reverb\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Virtual director boxes\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  _fprintf(file,"Default ground type\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"Default master reverb\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"Virtual director boxes\n");
+  _fprintf(file,"%d\n");
   iVar8 = 0;
   if (0 < this_ptr->vdir_box_count) {
     local_24 = this_ptr->vdir_boxes;
     local_1c = &this_ptr->vdir_boxes[0].rotation_matrix;
     do {
       pSVar3 = local_24 + iVar8;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)(pSVar3->position).x,(double)(pSVar3->position).y,
+      _fprintf(file,"%g,%g,%g\n",(double)(pSVar3->position).x,(double)(pSVar3->position).y,
                  (double)(pSVar3->position).z);
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)(pSVar3->extents).x,(double)(pSVar3->extents).y,
+      _fprintf(file,"%g,%g,%g\n",(double)(pSVar3->extents).x,(double)(pSVar3->extents).y,
                  (double)(pSVar3->extents).z);
       core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_1c,&local_3c);
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)local_3c.x,(double)local_3c.z,(double)local_3c.y);
+      _fprintf(file,"%g,%g,%g\n",(double)local_3c.x,(double)local_3c.z,(double)local_3c.y);
       iVar8 = iVar8 + 1;
       local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);
     } while (iVar8 < this_ptr->vdir_box_count);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"PVS list\n");
+  _fprintf(file,"PVS list\n");
   iVar8 = 0;
   if (0 < this_ptr->camera_count) {
     pCVar4 = this_ptr->cameras;

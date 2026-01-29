@@ -22,9 +22,9 @@ uint core_bugs_cpp_FUN_00425b70(void)
   
   fVar2 = 1.0 / 0.5f;
   fVar1 = *(float *)(in_stack_00000004 + 0x199f0);
-  crt_math_c_round_FUN_005fe6b0
+  round
             ((double)((in_stack_00000008 - *(float *)(in_stack_00000004 + 0x199ec)) * fVar2));
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)((in_stack_0000000c - fVar1) * fVar2));
+  dVar4 = round((double)((in_stack_0000000c - fVar1) * fVar2));
   if ((-1 < (int)ROUND(dVar4)) && ((int)ROUND(dVar4) < 0xb)) {
     core_bugs_cpp_FUN_00427ba0();
     core_bugs_cpp_FUN_00427ba0();

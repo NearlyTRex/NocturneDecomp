@@ -17,14 +17,14 @@ void core_netgame_cpp_CNetGame_FUN_0053f780(void)
   char *pcVar4;
   CNetGame *in_stack_00000004;
   
-  crt_io_c_deleteFile_FUN_005ff9d0("netlog.txt");
+  remove("netlog.txt");
   g_CurrentGameTime = 1;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   g_LastPingTime = iVar2 / 0x12;
   support_trisock_cpp_startupWinsock_FUN_005e1ec0();
-  pcVar3 = crt_env_c_getenv_FUN_006013f0("USERNAME");
+  pcVar3 = getenv("USERNAME");
   if (pcVar3 == (char *)0x0) {
-    pcVar3 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME");
+    pcVar3 = getenv("COMPUTERNAME");
   }
   if (pcVar3 == (char *)0x0) {
     pcVar3 = "MyComputer";

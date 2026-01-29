@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_stdio_c_store_count_FUN_00604fb0(scanf_state_t *state,va_list_t *args,int chars_consumed)
+store_count(scanf_state_t *state,va_list_t *args,int chars_consumed)
 
 {
   byte bVar1;

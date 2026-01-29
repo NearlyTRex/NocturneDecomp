@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_startup_c_PlaceholderStub_FUN_0060ca80(void)
+void __cdecl PlaceholderStub(void)
 
 {
   return;

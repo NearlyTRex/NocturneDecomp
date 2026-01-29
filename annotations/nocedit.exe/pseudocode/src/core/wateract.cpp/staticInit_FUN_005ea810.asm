@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c2e0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -26,14 +26,14 @@ section .text
         ;   Label: core_wateract.cpp_staticInit_FUN_005ea810
     PUSH 0x64                           ; 005ea815
     PUSH 0x3f8f638                      ; 005ea817 | DAT_03f8f638
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005ea81c
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005ea81c
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005ea821
     PUSH 0x65c5d0                       ; 005ea824 | g_SCollisionInfoTypeInfo
     PUSH 0x64                           ; 005ea829
     PUSH 0x3f8fae8                      ; 005ea82b | DAT_03f8fae8
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005ea830
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005ea830
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005ea835
     PUSH 0x821ff8                       ; 005ea838 | g_CDemonActorClassInfo
     PUSH 0x6                            ; 005ea83d

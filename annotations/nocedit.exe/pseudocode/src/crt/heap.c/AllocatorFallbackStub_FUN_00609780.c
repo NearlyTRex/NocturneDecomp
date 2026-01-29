@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_heap_c_AllocatorFallbackStub_FUN_00609780(uint size)
+int __cdecl AllocatorFallbackStub(uint size)
 
 {
   return 0;

@@ -10,25 +10,25 @@
       {
         "category": "other",
         "column": 27,
-        "line": 76,
+        "line": 75,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 89,
+        "line": 88,
         "message": "cast from 'SMpegFrameHeader*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 133,
+        "line": 132,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 137,
+        "line": 136,
         "message": "cast from 'SMpegFrameHeader*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -73,66 +73,72 @@
       {
         "category": "other",
         "column": 21,
-        "line": 79,
+        "line": 78,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 81,
+        "line": 80,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 83,
+        "line": 82,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 84,
+        "line": 83,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 85,
+        "line": 84,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 86,
+        "line": 85,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 91,
+        "line": 90,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 112,
+        "line": 111,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 113,
+        "line": 112,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 116,
+        "line": 115,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 8,
+        "line": 123,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
         "line": 124,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -144,36 +150,30 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 126,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 27,
-        "line": 128,
+        "line": 127,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 131,
+        "line": 130,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 157,
+    "complexity_score": 156,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 16,
-    "pseudocode_lines": 132,
+    "pseudocode_lines": 131,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 464
+    "total_lines": 463
   },
   "cross_references": [
     {
@@ -199,7 +199,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630",
-    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630 (CMP3Decoder *this_ptr,FILE *file_handle,int file_size)"
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630 (CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)"
   },
   "function_calls": [
     {
@@ -550,7 +550,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -564,14 +564,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 84,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
+      "line": 130,
       "match": "ROUND",
       "text": "unaff_retaddr->sample_rate = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"

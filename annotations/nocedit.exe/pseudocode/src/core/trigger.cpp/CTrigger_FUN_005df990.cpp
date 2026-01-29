@@ -38,11 +38,11 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005df990(CTrigger *this_ptr)
   this_ptr->unk[0x211] = '\0';
   this_ptr->unk[0x212] = '\0';
   this_ptr->unk[0x213] = '\0';
-  iVar4 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr->unk + 0xcc,"none");
+  iVar4 = stricmp(this_ptr->unk + 0xcc,"none");
   if (iVar4 == 0) {
     this_ptr->unk[0xcc] = '\0';
   }
-  iVar4 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr->unk + 0x130,"none");
+  iVar4 = stricmp(this_ptr->unk + 0x130,"none");
   if (iVar4 == 0) {
     this_ptr->unk[0x130] = '\0';
   }

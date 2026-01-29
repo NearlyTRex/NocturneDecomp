@@ -9,6 +9,6 @@
 void __cdecl core_setcolid_cpp_freeRaytraceState_FUN_00574770(SRaytraceState **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,5,&g_SRaytraceStateTypeInfo);
+  __arrfini(array,5,&g_SRaytraceStateTypeInfo);
   return;
 }

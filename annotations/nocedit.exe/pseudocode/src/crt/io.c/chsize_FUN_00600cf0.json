@@ -1,0 +1,226 @@
+{
+  "complexity": {
+    "assembly_lines": 137,
+    "complexity_score": 125,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 7,
+    "pseudocode_lines": 45,
+    "suspect_count": 7,
+    "suspect_types": [
+      "special_crt_function",
+      "unaffected_reg"
+    ],
+    "total_lines": 182
+  },
+  "cross_references": [
+    {
+      "addr": "00481a20",
+      "from_addr": "00481a35",
+      "name": "engine_dosio.c_truncateFile_FUN_00481a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b2eb0",
+      "from_addr": "004b2f78",
+      "name": "engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00600cf0",
+    "address_range": [
+      [
+        "00600cf0",
+        "00600e0b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_chsize_FUN_00600cf0",
+    "signature": "int __cdecl crt_io_c_chsize_FUN_00600cf0(int file_handle,long new_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "006083fc",
+      "is_variadic": false,
+      "name": "crt_errno.c___set_errno_FUN_006083fc"
+    },
+    {
+      "addr": "00602790",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    },
+    {
+      "addr": "00606690",
+      "is_variadic": false,
+      "name": "crt_stdio.c_lseek_FUN_00606690"
+    },
+    {
+      "addr": "00602434",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    },
+    {
+      "addr": "00600c80",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00600c80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611618",
+      "name": "g_SetEndOfFileFunc",
+      "type": "SetEndOfFile*",
+      "value": "00212150"
+    },
+    {
+      "addr": "0061162c",
+      "name": "g_SetFilePointerFunc",
+      "type": "SetFilePointer*",
+      "value": "002121b6"
+    },
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00685019",
+      "name": "g_WindowsPlatformVersion",
+      "type": "WORD",
+      "value": "0x0"
+    },
+    {
+      "addr": "00685214",
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
+    },
+    {
+      "addr": "0068526c",
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.394495412844036,
+    "instruction_count": 109,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 8,
+      "CALLIND": 6,
+      "CBRANCH": 9,
+      "COPY": 91,
+      "INT_ADD": 38,
+      "INT_AND": 52,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 50,
+      "INT_LESS": 9,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 25,
+      "INT_SUB": 49,
+      "INT_XOR": 1,
+      "LOAD": 25,
+      "POPCOUNT": 25,
+      "RETURN": 4,
+      "STORE": 41
+    },
+    "pcode_op_count": 479
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "new_size",
+        "offset": 8,
+        "size": 4,
+        "type": "long"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "text": "HANDLE unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = lseek(file_handle,0,2);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "text": "DVar2 = (*g_SetFilePointerFunc)(unaff_EBP,new_size,(PLONG)0x0,0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "text": "BVar3 = (*g_SetEndOfFileFunc)(unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EDI",
+      "text": "if ((0x7fff < g_WindowsPlatformVersion) && (unaff_EDI < new_size)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "address": "00600cf0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_io.c_chsize_FUN_00600cf0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00600cf0",
+      "type": "special_crt_function"
+    }
+  ]
+}

@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeGlassParticles_FUN_004c9970(CGlassParticle **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x100,&g_CGlassParticleTypeInfo);
+  __arrfini(array,0x100,&g_CGlassParticleTypeInfo);
   return;
 }

@@ -9,8 +9,7 @@
 void __cdecl core_dmodel_cpp_staticInit_FUN_00476c50(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CKeyFramedModelPool,0x100,&g_CKeyFramedModelTypeInfo);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_CKeyFramedModelPoolDestructorNode);
+  __arrinit(g_CKeyFramedModelPool,0x100,&g_CKeyFramedModelTypeInfo);
+  _atexit(&g_CKeyFramedModelPoolDestructorNode);
   return;
 }

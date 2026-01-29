@@ -2,11 +2,11 @@
 // Address: 005fefd0
 // Address Range: [[005fefd0, 005ff05f]]
 // Convention: __cdecl
-// Signature: char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,FILE *stream)
+// Signature: char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,_FILE *stream)
 
 #include "nocturne.h"
 
-char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,FILE *stream)
+char * __cdecl _fgets(char *str,int num,_FILE *stream)
 
 {
   uint uVar1;
@@ -22,7 +22,7 @@ char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,FILE *stream)
     num = num + -1;
     pcVar3 = pcVar2;
     if (num < 1) break;
-    iStack_14 = crt_stdio_c_fgetc_FUN_005fe840(stream);
+    iStack_14 = _fgetc(stream);
     if (iStack_14 == -1) break;
     pcVar3 = pcVar2 + 1;
     *pcVar2 = (char)iStack_14;

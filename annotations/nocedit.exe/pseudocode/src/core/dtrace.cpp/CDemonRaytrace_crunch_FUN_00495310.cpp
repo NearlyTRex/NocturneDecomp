@@ -77,7 +77,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   char **local_14;
   
   fVar11 = (float10)1 / (float10)cube_size;
-  dVar13 = crt_math_c_round_FUN_005fe6b0
+  dVar13 = round
                      ((double)(((float10)(this_ptr->bbox_max).x - (float10)(this_ptr->bbox_min).x) *
                               fVar11));
   local_14 = (char **)(int)ROUND(dVar13);
@@ -85,7 +85,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   fVar3 = (this_ptr->bbox_min).x;
   (this_ptr->grid_coord).x = (int)local_14 + 1;
   iVar7 = (this_ptr->grid_coord).x;
-  dVar13 = crt_math_c_round_FUN_005fe6b0
+  dVar13 = round
                      ((double)(((float10)(this_ptr->bbox_max).y - (float10)(this_ptr->bbox_min).y) *
                               fVar11));
   local_14 = (char **)(int)ROUND(dVar13);
@@ -93,7 +93,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   fVar12 = ((float10)(this_ptr->bbox_max).y - (float10)(this_ptr->bbox_min).y) /
            (float10)(this_ptr->grid_coord).y;
   uVar14 = 0x495382;
-  dVar13 = crt_math_c_round_FUN_005fe6b0
+  dVar13 = round
                      ((double)(((float10)(this_ptr->bbox_max).z - (float10)(this_ptr->bbox_min).z) *
                               fVar11));
   local_14 = (char **)(int)ROUND(dVar13);
@@ -365,7 +365,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   g_CurrentDebugFilename = "..\\core\\dtrace.cpp";
   g_CurrentDebugLine = 0x38c;
   if (local_44 != (int *)0x0) {
-    crt_memory_c_free_FUN_005fe659(local_44 + -1);
+    shape_memdbg_cpp_free_FUN_005fe659(local_44 + -1);
     return;
   }
   return;

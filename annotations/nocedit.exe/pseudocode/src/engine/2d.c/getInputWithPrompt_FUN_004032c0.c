@@ -20,7 +20,7 @@ engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_length,int x,in
   engine_2d_c_clearInputAndWait_FUN_00403260();
   iVar3 = 0;
   do {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"%s%s_    ",prompt,buffer);
+    sprintf(local_114,"%s%s_    ",prompt,buffer);
     engine_2d_c_drawText_FUN_00401fd0(local_114,x,y);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

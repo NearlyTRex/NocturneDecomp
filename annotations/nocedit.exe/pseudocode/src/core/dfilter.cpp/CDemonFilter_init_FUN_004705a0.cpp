@@ -43,7 +43,7 @@ core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float ini
             fVar1 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
                     fVar1;
           }
-          dVar6 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+          dVar6 = round((double)fVar1);
           bStack_20 = (byte)(int)ROUND(dVar6);
           if (0x3f < bStack_20) {
             bStack_20 = 0x3f;

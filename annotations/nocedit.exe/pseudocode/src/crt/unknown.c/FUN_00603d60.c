@@ -14,8 +14,8 @@ void crt_unknown_c_FUN_00603d60(void)
   int in_stack_00000008;
   
   if ((0x1000 < in_stack_00000008) || (in_stack_00000008 < -0x1000)) {
-    crt_unknown_c_CondCallDoNothing_FUN_00603ccc();
+    CondCallDoNothing();
   }
-  crt_unknown_c_CondCallDoNothing_FUN_00603ccc();
+  CondCallDoNothing();
   return;
 }

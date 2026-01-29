@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_weather.cpp_CWeather_ctor_FUN_005eead0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x6598c0                       ; 005eeaad | g_CVectorTypeInfo
     PUSH 0xc8                           ; 005eeab2
     PUSH 0x3f95df8                      ; 005eeab7 | DAT_03f95df8
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005eeabc
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 005eeabc
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005eeac1
     RET                                 ; 005eeac4
 

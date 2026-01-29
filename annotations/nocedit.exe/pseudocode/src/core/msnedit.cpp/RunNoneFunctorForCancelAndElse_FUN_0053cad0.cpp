@@ -45,7 +45,7 @@ bool core_msnedit_cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0(void)
       pcVar1 = (char *)*in_stack_00000010;
       str1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                        ((CStrList *)&stack0xfffffc48,index);
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,pcVar1);
+      iVar2 = stricmp(str1,pcVar1);
       config_param1 = index;
       if (iVar2 == 0) break;
       index = index + 1;

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
+; __cdecl int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,_FILE *file)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character
-; FILE *           Stack[0x8]:4   file
+; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[25]:
 ;   core_dfilter.cpp_CDemonFilter_save_FUN_00470510 at 00470591
@@ -92,7 +92,7 @@ section .text
         ;   XREF to: 00600824 (CONDITIONAL_JUMP)  ; LAB_00600824
     PUSH EBX                            ; 0060081b
     CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 0060081c
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
     ADD ESP,0x4                         ; 00600821
     MOV EAX,dword ptr [ESP + 0x14]      ; 00600824
         ;   Label: LAB_00600824
@@ -122,7 +122,7 @@ section .text
         ;   XREF to: 00600884 (CONDITIONAL_JUMP)  ; LAB_00600884
     PUSH EBX                            ; 00600860
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 00600861
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00600866
     TEST EAX,EAX                        ; 00600869
     JZ 0x00600884                       ; 0060086b
@@ -160,7 +160,7 @@ section .text
     PUSH EBX                            ; 006008ad
         ;   Label: LAB_006008ad
     CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 006008ae
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
     ADD ESP,0x4                         ; 006008b3
     TEST EAX,EAX                        ; 006008b6
     JZ 0x006008d1                       ; 006008b8

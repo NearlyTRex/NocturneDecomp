@@ -24,7 +24,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   pCVar3 = g_CNetGamePtr;
   this_ptr->is_processing = 1;
   if (pCVar3->connection_type == 0) {
-    seed_value = crt_stdlib_c_rand_FUN_005feb5c();
+    seed_value = rand();
   }
   else {
     seed_value = *(uint *)(pCVar3->unk + 0x54);

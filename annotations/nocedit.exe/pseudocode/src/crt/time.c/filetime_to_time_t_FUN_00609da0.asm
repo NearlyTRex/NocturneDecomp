@@ -16,7 +16,7 @@
 ;   FileTimeToSystemTime* g_FileTimeToSystemTimeFunc = 00211d60
 ;
 ; Called Functions:
-;   crt_time.c_mktime_FUN_00600f80
+;   crt_time.c__mktime_FUN_00600f80
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 00609e50
     MOV dword ptr [ESP + 0x20],ESI      ; 00609e51
     MOV dword ptr [ESP + 0x24],ESI      ; 00609e55
-    CALL crt_time.c_mktime_FUN_00600f80 ; 00609e59
-        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
+    CALL crt_time.c__mktime_FUN_00600f80 ; 00609e59
+        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__mktime_FUN_00600f80(_tm * timeptr)
     ADD ESP,0x4                         ; 00609e5e
     ADD ESP,0x3c                        ; 00609e61
     POP ESI                             ; 00609e64

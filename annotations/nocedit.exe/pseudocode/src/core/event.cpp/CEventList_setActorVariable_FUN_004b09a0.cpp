@@ -61,9 +61,9 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList 
     if (in_stack_0000000c == (CDemonActor *)0x0) {
       iVar4 = this_ptr->actor_var_count + -1;
       this_ptr->actor_var_count = iVar4;
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (pcVar3,this_ptr->variablesVarName2 + iVar2 * 0x1e,(iVar4 - iVar2) * 0x1e);
-      crt_string_c_memmove_FUN_005fe5e0
+      memmove
                 (dest,this_ptr->variablesActorName2 + iVar2 * 0x1e,
                  (this_ptr->actor_var_count - iVar2) * 0x1e);
       return;

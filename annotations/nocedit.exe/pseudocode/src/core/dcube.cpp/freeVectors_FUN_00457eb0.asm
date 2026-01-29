@@ -10,7 +10,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_freeTypeArray_FUN_005feee9
+;   crt_memory.c___arrfini_FUN_005feee9
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH 0x10                           ; 00457eb5
     MOV EDX,dword ptr [ESP + 0xc]       ; 00457eb7
     PUSH EDX                            ; 00457ebb
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 00457ebc
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrfini_FUN_005feee9 ; 00457ebc
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00457ec1
     RET                                 ; 00457ec4
 

@@ -2,11 +2,11 @@
 // Address: 00457530
 // Address Range: [[00457530, 0045762d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,FILE *file_handle)
+void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
@@ -16,14 +16,14 @@ void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,FI
   byte bVar5;
   
   bVar5 = 0;
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->min_bounds,1,0xc,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->max_bounds,1,0xc,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->vertex_count,1,4,file_handle);
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->triangle_count,1,4,file_handle);
+  _fread(&this_ptr->min_bounds,1,0xc,file_handle);
+  _fread(&this_ptr->max_bounds,1,0xc,file_handle);
+  _fread(&this_ptr->vertex_count,1,4,file_handle);
+  _fread(&this_ptr->triangle_count,1,4,file_handle);
   if (this_ptr->triangle_count != 0) {
     core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(this_ptr);
   }
-  crt_stdio_c_fread_FUN_005fd990(this_ptr->vertex_buffer,this_ptr->vertex_count,0xc,file_handle);
+  _fread(this_ptr->vertex_buffer,this_ptr->vertex_count,0xc,file_handle);
   iVar1 = 0;
   if (0 < this_ptr->triangle_count) {
     iVar3 = 0;
@@ -36,11 +36,10 @@ void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,FI
     } while (iVar1 < this_ptr->triangle_count);
   }
   if (this_ptr->triangle_count != 0) {
-    crt_stdio_c_fread_FUN_005fd990
-              (this_ptr->ground_type_memory,1,this_ptr->triangle_count,file_handle);
+    _fread(this_ptr->ground_type_memory,1,this_ptr->triangle_count,file_handle);
   }
   if (this_ptr->triangle_count != 0) {
-    crt_stdio_c_fread_FUN_005fd990(this_ptr->voxel_buffer1,1,0x40,file_handle);
+    _fread(this_ptr->voxel_buffer1,1,0x40,file_handle);
     pSVar2 = this_ptr->voxel_buffer1;
     pSVar4 = this_ptr->voxel_buffer2;
     for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {

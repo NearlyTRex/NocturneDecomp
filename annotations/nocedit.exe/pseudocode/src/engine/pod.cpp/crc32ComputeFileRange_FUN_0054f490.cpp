@@ -11,7 +11,7 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
 {
   uchar uVar1;
   int iVar2;
-  FILE *file;
+  _FILE *file;
   SIZE_T size;
   char *pcVar3;
   uint current_crc;
@@ -22,10 +22,10 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
                    (filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
   size = iVar2 - start_offset;
   current_crc = 0xffffffff;
-  crt_stdio_c_fseek_FUN_005ffacc(file,start_offset,0);
+  _fseek(file,start_offset,0);
   for (; 0xffff < (int)size; size = size - 0x10000) {
     pcVar3 = g_FileIOBuffer;
-    crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,file);
+    _fread(g_FileIOBuffer,0x10000,1,file);
     uVar4 = 0;
     do {
       uVar1 = *pcVar3;
@@ -35,7 +35,7 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
     } while (uVar4 < 0x10000);
   }
   pcVar3 = g_FileIOBuffer;
-  crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,size,1,file);
+  _fread(g_FileIOBuffer,size,1,file);
   uVar4 = 0;
   if (size != 0) {
     do {

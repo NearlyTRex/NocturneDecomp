@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE *file_stream,uint total_bytes)
+; __cdecl uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_0054f3e0(_FILE *file_stream,uint total_bytes)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_stream
+; _FILE *          Stack[0x4]:4   file_stream
 ; uint             Stack[0x8]:4   total_bytes
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -41,7 +41,7 @@ section .text
     MOV ESI,0x30d5090                   ; 0054f409 | g_FileIOBuffer
     XOR EBX,EBX                         ; 0054f40e
     CALL crt_stdio.c_fread_FUN_005fd990 ; 0054f410
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0054f415
     MOV EAX,EBP                         ; 0054f418
     XOR EDX,EDX                         ; 0054f41a
@@ -71,7 +71,7 @@ section .text
     MOV EBX,0x30d5090                   ; 0054f44f | g_FileIOBuffer
     XOR ESI,ESI                         ; 0054f454
     CALL crt_stdio.c_fread_FUN_005fd990 ; 0054f456
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0054f45b
     MOV EAX,EBP                         ; 0054f45e
     MOV dword ptr [ESP],EDI             ; 0054f460

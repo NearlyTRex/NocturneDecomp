@@ -2,11 +2,11 @@
 // Address: 004481d0
 // Address Range: [[004481d0, 00448251]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_file)
+// Signature: void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file)
 
 #include "nocturne.h"
 
-void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_file)
+void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file)
 
 {
   int *piVar1;
@@ -20,9 +20,9 @@ void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_
   SCramWorkingEntry *pSVar9;
   int iVar10;
   int iVar11;
-  FILE *in_stack_00000004;
+  _FILE *in_stack_00000004;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x40);
+  __STK(0x40);
   if (0 < (int)g_CramTextureCount) {
     pSVar9 = g_CramSortedTextureEntries;
     iVar10 = 0;
@@ -37,14 +37,12 @@ void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(FILE *output_
       piVar8 = &pSVar9->width;
       pSVar9 = pSVar9 + 1;
       iVar11 = iVar10 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (in_stack_00000004,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar10,*piVar8,*piVar7,
+      _fprintf(in_stack_00000004,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar10,*piVar8,*piVar7,
                  *piVar6,*piVar5,*piVar4,*piVar3,*piVar2,*piVar1);
       iVar10 = iVar11;
     } while (iVar11 < (int)g_CramTextureCount);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (in_stack_00000004,"%ux%u square found using %u padding.\n",g_CramCurrentAcceptableSize,
+  _fprintf(in_stack_00000004,"%ux%u square found using %u padding.\n",g_CramCurrentAcceptableSize,
              g_CramCurrentAcceptableSize,g_CramPaddingCalculation);
   return;
 }

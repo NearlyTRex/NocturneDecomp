@@ -8,7 +8,7 @@
 
 /* WARNING: Exceeded maximum restarts with more pending */
 
-BOOL __cdecl crt_windows_c_has_active_window_FUN_0060a710(void)
+BOOL __cdecl has_active_window(void)
 
 {
   HMODULE hModule;

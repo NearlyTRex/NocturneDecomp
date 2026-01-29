@@ -35,7 +35,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
       }
       if ((uint)g_BitsPerPixel < 0x10) {
         if (g_BitsPerPixel == 8) {
-          crt_memory_c_memset_FUN_005fde40
+          memset
                     ((void *)((int)g_ScreenBufferArray[y_00] + start_x_00),g_CurrentDrawColor,
                      (end_x_00 - start_x_00) + 1);
           return;

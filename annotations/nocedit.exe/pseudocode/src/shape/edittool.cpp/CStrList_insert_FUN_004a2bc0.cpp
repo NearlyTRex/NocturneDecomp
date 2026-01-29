@@ -30,7 +30,7 @@ shape_edittool_cpp_CStrList_insert_FUN_004a2bc0
   if (this_ptr->capacity < iVar5) {
     shape_edittool_cpp_CStrList_allocate_FUN_004a2cc0(this_ptr,iVar2 + 0x15);
   }
-  crt_string_c_memmove_FUN_005fe5e0
+  memmove
             (this_ptr->data_array + insert_index + 1,this_ptr->data_array + insert_index,
              (this_ptr->item_count - insert_index) * 4 - 4);
   uVar4 = 0xffffffff;

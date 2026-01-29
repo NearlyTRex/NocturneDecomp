@@ -15,7 +15,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
   CScript *pCVar2;
   CDemonSet *pCVar3;
   int iVar4;
-  FILE *file_ptr;
+  _FILE *file_ptr;
   char *pcVar5;
   int *piVar6;
   uint uStack00000078;
@@ -73,7 +73,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       }
     }
     if ((((this_ptr->velocity_debug_enabled != 0) ||
-         (pcVar5 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
+         (pcVar5 = getenv("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
         (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2c), iVar4 != 0)) {
       this_ptr->camera_debug_enabled = 1 - this_ptr->camera_debug_enabled;
@@ -135,7 +135,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x43), iVar4 != 0)) {
       file_ptr = engine_dosio_c_getFile_FUN_00481a50
                            ("save","quicksavedgame.noc","rb");
-      if (file_ptr == (FILE *)0x0) {
+      if (file_ptr == (_FILE *)0x0) {
         fVar7 = 2.0;
         pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("No quicked saved game to load");
@@ -168,7 +168,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       this_ptr->show_customizable_keys = (uint)(this_ptr->show_customizable_keys == 0);
     }
     if (((this_ptr->velocity_debug_enabled != 0) ||
-        (pcVar5 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
+        (pcVar5 = getenv("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar4 != 0)) {
       this_ptr->console_enabled = (uint)(this_ptr->console_enabled == 0);
     }
@@ -222,7 +222,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       if (iVar4 < 0x8000) {
         this_ptr->gamma = 0x8000;
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (acStack_b4,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,acStack_b4,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);
@@ -234,7 +234,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       if (0x10000 < iVar4) {
         this_ptr->gamma = 0x10000;
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (&stack0xfffffe54,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe54,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);

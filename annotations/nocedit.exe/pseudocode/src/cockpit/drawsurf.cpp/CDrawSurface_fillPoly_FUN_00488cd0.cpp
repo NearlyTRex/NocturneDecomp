@@ -190,7 +190,7 @@ cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0
                 }
                 else {
                   iVar7 = iVar7 + -1;
-                  crt_string_c_memmove_FUN_005fe5e0
+                  memmove
                             ((void *)((int)aiStack_d8 + iVar5 + -4),
                              (void *)((int)aiStack_d8 + iVar5),(iVar7 - iVar4) * 4);
                   iVar6 = iVar5;

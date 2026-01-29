@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,stat *file_info)
+; __cdecl int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,_stat *file_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; stat *           Stack[0x8]:4   file_info
+; _stat *          Stack[0x8]:4   file_info
 ; Local Variables:
 ; undefined4       Stack[-0x368]:4  local_368
 ; undefined1       Stack[-0x364]:1  local_364
@@ -35,13 +35,13 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005feb30
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_analyze_file_type_FUN_00607d50
 ;   crt_io.c_chdir_FUN_006012a0
 ;   crt_io.c_getcwd_FUN_00608d20
-;   crt_io.c_realpath_FUN_00601140
 ;   crt_memory.c_memset_FUN_005fde40
+;   crt_stdlib.c__fullpath_FUN_00601140
 ;   crt_string.c_mbtowc_next_FUN_00605a70
 ;   crt_string.c_strncpy_FUN_00600f40
 ;   crt_string.c_strpbrk_FUN_0060c190
@@ -94,8 +94,8 @@ section .text
     PUSH ESI                            ; 00607ec4
     LEA EAX,[ESP + 0x148]               ; 00607ec5
     PUSH EAX                            ; 00607ecc
-    CALL crt_io.c_realpath_FUN_00601140 ; 00607ecd
-        ;   XREF to: 00601140 (UNCONDITIONAL_CALL)  ; char * crt_io.c_realpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
+    CALL crt_stdlib.c__fullpath_FUN_00601140 ; 00607ecd
+        ;   XREF to: 00601140 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c__fullpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
     ADD ESP,0xc                         ; 00607ed2
     TEST EAX,EAX                        ; 00607ed5
     JZ 0x00607f13                       ; 00607ed7
@@ -183,8 +183,8 @@ section .text
     CMP EAX,-0x1                        ; 00607f94
     JNZ 0x00607fa9                      ; 00607f97
         ;   XREF to: 00607fa9 (CONDITIONAL_JUMP)  ; LAB_00607fa9
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00607f99
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00607f99
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     ADD ESP,0x358                       ; 00607f9e
     POP EBP                             ; 00607fa4
     POP EDI                             ; 00607fa5

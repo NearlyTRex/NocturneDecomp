@@ -22,7 +22,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
                         (g_DirectSoundSecondaryBuffer,&local_c,&local_8);
       if (uVar2 != 0) {
         pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (acStack_19c,"DirectSux: Unable to %s.  (%s)",
                    "Get position of secondary buffer",pcVar3);
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_19c);

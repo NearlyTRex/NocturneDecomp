@@ -71,17 +71,17 @@ core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330
   fVar8 = end_position->z;
   fVar9 = start_position->z;
   iVar13 = 1;
-  dVar19 = crt_math_c_round_FUN_005fe6b0
+  dVar19 = round
                      ((double)(((float10)end_position->x - (float10)(this_ptr->bbox_min).x) * fVar15
                               ));
   fVar14 = (float10)dVar19;
-  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)(((float10)fVar4 - (float10)fVar7) * fVar18));
+  dVar19 = round((double)fVar17);
+  dVar20 = round((double)(((float10)fVar4 - (float10)fVar7) * fVar18));
   fVar15 = (float10)local_58;
-  dVar21 = crt_math_c_round_FUN_005fe6b0((double)local_6c);
-  dVar22 = crt_math_c_round_FUN_005fe6b0((double)local_5c);
+  dVar21 = round((double)local_6c);
+  dVar22 = round((double)local_5c);
   fVar17 = (float10)dVar22;
-  dVar22 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
+  dVar22 = round((double)fVar15);
   if ((((float)(int)ROUND(dVar21) == fVar8 - fVar9) && ((float)(int)ROUND(fVar17) == fVar5 - fVar6))
      && (iVar10 = local_54, fVar1 = (float)(((float10)fVar1 - (float10)fVar12) * fVar16),
         fVar12 = (float)(((float10)fVar2 - (float10)fVar3) * fVar18),

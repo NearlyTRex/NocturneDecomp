@@ -45,13 +45,13 @@ void core_msnedit_cpp_FUN_0053c730(void)
         puVar5 = &DAT_02f7a030;
         do {
           core_actor_cpp_CActorProperty_FUN_0040ea50();
-          crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f79c20,"%s\t%s",puVar5,&DAT_02f79820);
+          sprintf(&DAT_02f79c20,"%s\t%s",puVar5,&DAT_02f79820);
           iVar2 = iVar2 + 1;
           puVar5 = puVar5 + 0xec;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);
         } while (iVar2 < INT_02f7a028);
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (acStack_198,"Edit %s properties",*(uint *)(in_stack_00000004 + 0x28))
       ;
       config_param2 = 0;

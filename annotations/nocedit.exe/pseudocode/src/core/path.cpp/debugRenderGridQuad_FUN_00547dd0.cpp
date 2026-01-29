@@ -34,33 +34,33 @@ core_path_cpp_debugRenderGridQuad_FUN_00547dd0
   fVar7 = (float10)grid_y * (float10)(g_CDemonRaytraceInstance.adjusted_size.y * 256.0f);
   fVar8 = (float10)grid_z * (float10)(g_CDemonRaytraceInstance.adjusted_size.z * 256.0f);
   fStack_38 = 7.759508e-39;
-  dVar10 = crt_math_c_round_FUN_005fe6b0
+  dVar10 = round
                      ((double)((float)grid_x *
                               g_CDemonRaytraceInstance.adjusted_size.x * 256.0f));
   fVar9 = (float10)dVar10;
   iStack_3c = 0x547e61;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  dVar10 = round((double)fVar8);
   fStack_38 = (float)(int)ROUND(fVar9);
   pCVar12 = (CVector3i *)0x547e77;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)(fVar5 + fVar6 + fVar7));
+  dVar11 = round((double)(fVar5 + fVar6 + fVar7));
   fStack_38 = (float)(int)ROUND(dVar11);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar1->vertex_buffer_ptr->projected_vertex,pCVar12);
   pCVar1 = g_CDemonRendererPtr2;
   piVar13 = &iStack_3c;
   pCVar12 = (CVector3i *)0x547eaa;
-  crt_math_c_round_FUN_005fe6b0((double)((float)iStack_3c + (float)(int)ROUND(dVar10)));
+  round((double)((float)iStack_3c + (float)(int)ROUND(dVar10)));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar1->vertex_buffer_ptr[1].projected_vertex,pCVar12);
   pCVar1 = g_CDemonRendererPtr2;
   pCVar12 = (CVector3i *)0x547ee0;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float)(int)fStack_38 + local_2c));
+  dVar10 = round((double)((float)(int)fStack_38 + local_2c));
   iStack_3c = (int)ROUND(dVar10);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar1->vertex_buffer_ptr[2].projected_vertex,pCVar12);
   pCVar1 = g_CDemonRendererPtr2;
   pCVar12 = (CVector3i *)0x547f16;
-  crt_math_c_round_FUN_005fe6b0((double)((float)(int)piVar13 - fStack_38));
+  round((double)((float)(int)piVar13 - fStack_38));
   fVar2 = (float)(color << 8);
   iVar3 = fog << 8;
   fVar4 = (float)((int)w_recip << 8);

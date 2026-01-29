@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x40,&g_CFireballTypeInfo);
+  __arrfini(array,0x40,&g_CFireballTypeInfo);
   return;
 }

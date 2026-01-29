@@ -44,19 +44,20 @@
   },
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 319,
+    "complexity_score": 354,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 15,
     "pseudocode_lines": 69,
-    "suspect_count": 22,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "undefined_data",
       "undefined_type",
-      "unknown_field"
+      "unknown_field",
+      "unnamed_param"
     ],
     "total_lines": 261
   },
@@ -606,6 +607,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param5",
+      "text": "uint *param5;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000004",
@@ -711,6 +719,13 @@
       "type": "undefined_data"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param5",
+      "text": "param5 = &DAT_02cf2b6c;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 60,
       "match": "DAT_02cf2b6c",
@@ -737,6 +752,13 @@
       "match": "CONCAT31",
       "text": "(g_CEditorToolsPtr,0x3f800000,(CQuaternion4f *)CONCAT31(extraout_var,uVar1),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param5",
+      "text": "label_offset,param5);",
+      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_skipLines_FUN_00476c80(FILE *file_handle,int line_count)
+; __cdecl void __cdecl core_dmodel_cpp_skipLines_FUN_00476c80(_FILE *file_handle,int line_count)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ; int              Stack[0x8]:4   line_count
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 00476c8e
         ;   Label: LAB_00476c8e
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00476c8f
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 00476c94
     TEST EAX,EAX                        ; 00476c97
     JL 0x00476ca5                       ; 00476c99

@@ -22,7 +22,7 @@ uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
   uint local_18;
   SCramWorkingEntry *local_14;
   
-  uVar1 = crt_stack_c_stack_probe_FUN_005ff9f3(0x2c);
+  uVar1 = __STK(0x2c);
   if (g_CramFillGaps != 0) {
     do {
       iVar5 = 0;

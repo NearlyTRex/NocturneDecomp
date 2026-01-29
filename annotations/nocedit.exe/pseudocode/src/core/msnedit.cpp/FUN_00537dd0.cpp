@@ -10,26 +10,26 @@ void core_msnedit_cpp_FUN_00537dd0(void)
 
 {
   int iVar1;
-  FILE *file_ptr;
-  FILE *file_ptr_00;
+  _FILE *file_ptr;
+  _FILE *file_ptr_00;
   int character;
   char *in_stack_00000004;
   char *in_stack_00000008;
   char *in_stack_0000000c;
-  FILE *file;
+  _FILE *file;
   
   iVar1 = engine_dosio_c_getFileSize_FUN_00481880(in_stack_0000000c,in_stack_00000004);
   if (-1 < iVar1) {
     file_ptr = engine_dosio_c_getFile_FUN_00481a50
                          (in_stack_0000000c,in_stack_00000004,"rb");
-    if (file_ptr == (FILE *)0x0) {
+    if (file_ptr == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
       g_CurrentLineNumber = 0x2eb;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",in_stack_00000004);
     }
     file_ptr_00 = engine_dosio_c_getFile_FUN_00481a50
                             (in_stack_0000000c,in_stack_00000008,"wb");
-    if (file_ptr_00 == (FILE *)0x0) {
+    if (file_ptr_00 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
       g_CurrentLineNumber = 0x2ed;
       core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -37,8 +37,8 @@ void core_msnedit_cpp_FUN_00537dd0(void)
     }
     for (; 0 < iVar1; iVar1 = iVar1 + -1) {
       file = file_ptr_00;
-      character = crt_stdio_c_fgetc_FUN_005fe840(file_ptr);
-      crt_stdio_c_fputc_FUN_006007a0(character,file);
+      character = _fgetc(file_ptr);
+      _fputc(character,file);
     }
     if ((file_ptr->_flag & 0x20) != 0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";

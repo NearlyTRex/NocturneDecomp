@@ -16,6 +16,6 @@ float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cbc0(void)
     uVar1 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
     return (float)(int)uVar1 * (float)INT_006142ec;
   }
-  iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+  iVar2 = rand();
   return (float)iVar2 * 3.051851e-05f;
 }

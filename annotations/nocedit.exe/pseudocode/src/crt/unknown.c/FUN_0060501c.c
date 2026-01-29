@@ -18,7 +18,7 @@ byte * crt_unknown_c_FUN_0060501c(void)
   void *in_stack_00000008;
   
   pbVar3 = in_stack_00000004 + 1;
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000008,0,0x20);
+  memset(in_stack_00000008,0,0x20);
   uVar2 = (uint)*in_stack_00000004;
   if (uVar2 != 0) {
     do {

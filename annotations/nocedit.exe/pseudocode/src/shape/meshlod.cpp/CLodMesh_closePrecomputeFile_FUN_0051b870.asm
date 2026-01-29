@@ -35,7 +35,7 @@ section .text
     PUSH 0x637d43                       ; 0051b883 | = "..\\shape\\meshlod.cpp"
     PUSH EDX                            ; 0051b888
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0051b889
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0051b88e
     MOV dword ptr [EBX + 0x38],0x0      ; 0051b891
     POP EBX                             ; 0051b898

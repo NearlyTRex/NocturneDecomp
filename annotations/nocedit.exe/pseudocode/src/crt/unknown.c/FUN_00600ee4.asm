@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown FILE * crt_unknown_c_FUN_00600ee4(void)
+; unknown _FILE * crt_unknown_c_FUN_00600ee4(void)
 ;
 ;
 ; XREF[2]:
@@ -22,7 +22,7 @@ section .text
     PUSH 0x1                            ; 00600ee9
     PUSH EBX                            ; 00600eeb
     CALL crt_stdio.c_stream_valid_FUN_00608cd1 ; 00600eec
-        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(FILE * stream, int operation_type)
+        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(_FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 00600ef1
     TEST EAX,EAX                        ; 00600ef4
     JNZ 0x00600efc                      ; 00600ef6

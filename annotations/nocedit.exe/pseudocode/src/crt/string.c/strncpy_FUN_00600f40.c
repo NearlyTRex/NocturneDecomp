@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_strncpy_FUN_00600f40(char *dest,char *src,SIZE_T count)
+char * __cdecl strncpy(char *dest,char *src,SIZE_T count)
 
 {
   char *pcVar1;

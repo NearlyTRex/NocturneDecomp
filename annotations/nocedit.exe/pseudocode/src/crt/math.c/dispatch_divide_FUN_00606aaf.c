@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-float10 crt_math_c_dispatch_divide_FUN_00606aaf(void)
+float10 dispatch_divide(void)
 
 {
   float10 fVar1;
   float10 in_ST2;
   float10 in_ST3;
   
-  fVar1 = crt_math_c_fdiv_FUN_00606960(in_ST2,in_ST3);
+  fVar1 = fdiv(in_ST2,in_ST3);
   return fVar1;
 }

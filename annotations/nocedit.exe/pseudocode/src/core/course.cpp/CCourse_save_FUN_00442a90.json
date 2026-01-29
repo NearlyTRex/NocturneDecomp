@@ -72,36 +72,6 @@
       },
       {
         "category": "other",
-        "column": 41,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 32,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 33,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 34,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 16,
         "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -144,32 +114,25 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 51,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 48,
-        "line": 55,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 172,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 47,
-    "suspect_count": 11,
+    "pseudocode_lines": 46,
+    "suspect_count": 9,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 162
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -443,28 +406,6 @@
       "match": "(float *)((int)",
       "text": "pfVar1 = (float *)((int)&(pCVar8->frame1).pos.x + iVar9);",
       "type": "pointer_cast"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 25,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%d,%d\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 27,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%d\\n\",this_ptr->len);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

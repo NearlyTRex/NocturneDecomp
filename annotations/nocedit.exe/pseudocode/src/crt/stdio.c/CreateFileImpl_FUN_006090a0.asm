@@ -23,7 +23,7 @@
 ;   CloseHandle* g_CloseHandleFunc = 00211c38
 ;   CreateFileA* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_con_006590a0
-;   undefined4 DAT_00684ed0
+;   int INT_00684ed0 = 0x100
 ;   REGISTER_HANDLE_FUNC* PTR_crt_sync.c_RegisterHandle_FUN_00602438_00684ef0 = 00602438
 ;   uint g_MaxHandleCount = 0x14
 ;   undefined4 DAT_0068528c
@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   CloseHandle
 ;   CreateFileA
-;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
+;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_CheckFileHandleAvailability_FUN_00608940
 ;   crt_io.c_ConvertAccessMode_FUN_0060c850
@@ -209,8 +209,8 @@ section .text
         ;   Label: LAB_0060922b
     JNZ 0x0060923d                      ; 0060922e
         ;   XREF to: 0060923d (CONDITIONAL_JUMP)  ; LAB_0060923d
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00609230
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    CALL crt_errno.c___set_errno_FUN_006083fc ; 00609230
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_006083fc()
     ADD ESP,0x18                        ; 00609235
     POP EBP                             ; 00609238
     POP EDI                             ; 00609239
@@ -285,7 +285,7 @@ section .text
         ;   XREF to: 006092cd (CONDITIONAL_JUMP)  ; LAB_006092cd
     JMP 0x006092cb                      ; 006092bd
         ;   XREF to: 006092cb (UNCONDITIONAL_JUMP)  ; LAB_006092cb
-    CMP dword ptr [0x00684ed0],0x200    ; 006092bf | DAT_00684ed0
+    CMP dword ptr [0x00684ed0],0x200    ; 006092bf | INT_00684ed0
         ;   Label: LAB_006092bf
     JNZ 0x006092cd                      ; 006092c9
         ;   XREF to: 006092cd (CONDITIONAL_JUMP)  ; LAB_006092cd

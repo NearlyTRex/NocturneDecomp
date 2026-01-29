@@ -18,7 +18,7 @@ void __cdecl core_actor_cpp_serializeActor_FUN_0040b870(CDemonActor *actor_ptr,c
     *(CDemonActor **)actor_ptr->actor_name = pCVar1;
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s",g_PropertyNamePrefix);
+  _fprintf(g_ActorDataFile,"%s",g_PropertyNamePrefix);
   core_mission_cpp_CDemonMission_saveActor_FUN_00523af0
             (g_CDemonMissionPtr,*(CDemonActor **)actor_ptr->actor_name,g_ActorDataFile,
              g_CurrentActorBeingProcessed,property_name);

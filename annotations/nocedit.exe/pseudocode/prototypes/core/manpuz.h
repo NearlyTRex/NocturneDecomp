@@ -197,11 +197,11 @@ void __cdecl CMansionPuzzleCircle::processInEditor(CMansionPuzzleCircle *this_pt
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_writeDependencies_FUN_0050b7d0
 // Address: 0050b7d0
-void __cdecl CMansionPuzzleCircle::writeDependencies(CMansionPuzzleCircle *this_ptr,FILE *file_handle);
+void __cdecl CMansionPuzzleCircle::writeDependencies(CMansionPuzzleCircle *this_ptr,_FILE *file_handle);
 
 // Original: core_manpuz.cpp_CMirrorHack_writeDependencies_FUN_0050b810
 // Address: 0050b810
-void __cdecl CMirrorHack::writeDependencies(CMirrorHack *this_ptr,FILE *file_handle);
+void __cdecl CMirrorHack::writeDependencies(CMirrorHack *this_ptr,_FILE *file_handle);
 
 // Original: core_manpuz.cpp_CMirrorHack_dtor_FUN_0050b840
 // Address: 0050b840

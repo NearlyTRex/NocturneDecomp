@@ -14,7 +14,7 @@ int core_setedit_cpp_UserInputCreate_FUN_0057d660
   int *piVar1;
   char cVar2;
   void *pvVar3;
-  FILE *pFVar4;
+  _FILE *p_Var4;
   float fVar5;
   uint uVar6;
   CKeyFramedModel *ptr;
@@ -70,7 +70,7 @@ int core_setedit_cpp_UserInputCreate_FUN_0057d660
   int *piStack_2c;
   uint local_28;
   void *pvStack_20;
-  FILE *pFStack_1c;
+  _FILE *p_Stack_1c;
   void *pvStack_18;
   byte *pbStack_14;
   
@@ -107,7 +107,7 @@ LAB_0057d6df:
     g_CurrentLineNumber = 0xc3b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find .GEO");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar11,".KFM");
+  sprintf(pcVar11,".KFM");
   local_28 = 0;
   core_slew_cpp_CSlew_init_FUN_005a2060(PTR_DAT_00681ab8);
   pvVar3 = PTR_DAT_00681ab8;
@@ -126,27 +126,27 @@ LAB_0057d6df:
   }
   *(float *)((int)PTR_DAT_00681ab8 + 0x18) = param_5->cameras[param_6].projection_scale;
   pvStack_20 = (void *)0x0;
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,"%s.raw",param_5->cameras + param_6);
-  pFVar4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
-  pFStack_1c = pFVar4;
-  if (pFVar4 != (FILE *)0x0) {
+  sprintf(acStack_ec,"%s.raw",param_5->cameras + param_6);
+  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
+  p_Stack_1c = p_Var4;
+  if (p_Var4 != (_FILE *)0x0) {
     pvStack_20 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                            (0x4b000,"..\\core\\setedit.cpp",0xc64);
     if (pvStack_20 != (void *)0x0) {
-      crt_stdio_c_fread_FUN_005fd990(pvStack_20,0x280,0x1e0,pFVar4);
+      _fread(pvStack_20,0x280,0x1e0,p_Var4);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFStack_1c,"..\\core\\setedit.cpp",0xc68);
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,"%s.act",param_5->cameras + param_6);
-    pFStack_1c = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
-    if (pFStack_1c != (FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_1c,"..\\core\\setedit.cpp",0xc68);
+    sprintf(acStack_ec,"%s.act",param_5->cameras + param_6);
+    p_Stack_1c = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
+    if (p_Stack_1c != (_FILE *)0x0) {
       iVar16 = 0;
       do {
-        pFVar4 = pFStack_1c;
-        fVar5 = (float)crt_stdio_c_fgetc_FUN_005fe840(pFStack_1c);
+        p_Var4 = p_Stack_1c;
+        fVar5 = (float)_fgetc(p_Stack_1c);
         fStack_4c = fVar5;
-        iStack_48 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
+        iStack_48 = _fgetc(p_Var4);
         iStack_44 = iStack_48;
-        uVar6 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
+        uVar6 = _fgetc(p_Var4);
         if (g_BitsPerPixel == 0x20) {
           uStack_34 = (int)fVar5 << ((byte)g_RedBitPosition & 0x1f);
           uVar12 = iStack_44 << ((byte)g_GreenBitPosition & 0x1f) | uStack_34;
@@ -161,7 +161,7 @@ LAB_0057d6df:
         *(int *)(&stack0xffffee84 + iVar16) = (int)uVar6 / 3 + (int)fStack_4c + iStack_48;
         iVar16 = iVar9;
       } while (iVar9 != 0x400);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFStack_1c,"..\\core\\setedit.cpp",0xc73);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_1c,"..\\core\\setedit.cpp",0xc73);
     }
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -182,7 +182,7 @@ LAB_0057d6df:
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
     bVar17 = uStack_34 == 0;
     uStack_34 = (uint)bVar17;
-    if ((pFStack_1c == (FILE *)0x0) ||
+    if ((p_Stack_1c == (_FILE *)0x0) ||
        (((local_54 == 0.0 || (bVar17 == 0)) &&
         (iVar16 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x18), iVar16 == 0)))) {
       uStack_90 = *(uint *)PTR_DAT_00681ab8;
@@ -259,7 +259,7 @@ LAB_0057d6df:
 LAB_0057db4e:
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
         g_CurrentDebugLine = 0xd78;
-        crt_memory_c_free_FUN_005fe659(param_5);
+        shape_memdbg_cpp_free_FUN_005fe659(param_5);
         core_slew_cpp_CSlew_free_FUN_005a20a0();
         g_CurrentDebugLine = 0xd80;
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
@@ -298,18 +298,18 @@ LAB_0057db4e:
           do {
             piVar1 = (int *)((int)auStack_968 + iVar9);
             iVar9 = iVar9 + 4;
-            engine_2d_c_drawTextXY_FUN_00402130(0,y_pos,(char *)(pFStack_1c + *piVar1 * 0xf));
+            engine_2d_c_drawTextXY_FUN_00402130(0,y_pos,(char *)(p_Stack_1c + *piVar1 * 0xf));
             y_pos = y_pos + 0xb;
           } while (iVar9 < iVar16 * 4);
         }
         shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
       }
       engine_2d_c_drawText_FUN_00401fd0("Move camera with slew keys.  Press SPACE when done.  ESC to cancel",0,0);
-      crt_stdio_c_sprintf_FUN_005fdbd0(CStack_570.cancel_button.button_text + 0xbc,"%f");
+      sprintf(CStack_570.cancel_button.button_text + 0xbc,"%f");
       engine_2d_c_drawText_FUN_00401fd0
                 (CStack_570.cancel_button.button_text + 0xbc,0,g_WindowHeight + -0xb);
       if (*(int *)((int)pvStack_18 + 0x144) == 0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (CStack_570.cancel_button.button_text + 0xbc,"FIXED CAMERA: x: %f, y: %f, z: %f, p : %f, h : %f, fov : %f",
                    (double)*(float *)PTR_DAT_00681ab8,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
                    (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
@@ -317,7 +317,7 @@ LAB_0057db4e:
                    (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902);
       }
       else {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (CStack_570.cancel_button.button_text + 0xbc,"PANNING CAMERA: x: %f, y: %f, z: %f",
                    (double)*(float *)PTR_DAT_00681ab8);
       }
@@ -329,12 +329,12 @@ LAB_0057db4e:
         g_CurrentLineNumber = 0xc92;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Screen must be 640x480!");
       }
-      pFStack_1c = (FILE *)0x0;
+      p_Stack_1c = (_FILE *)0x0;
       pbVar13 = pbStack_14;
       do {
         uVar6 = 0;
         iVar16 = 0;
-        puVar10 = (uint *)pFStack_1c[0x19b185]._handle;
+        puVar10 = (uint *)p_Stack_1c[0x19b185]._handle;
         pbVar14 = pbVar13;
         do {
           pbVar13 = pbVar14 + 1;
@@ -365,8 +365,8 @@ LAB_0057db4e:
           iVar16 = iVar16 + 1;
           pbVar14 = pbVar13;
         } while (iVar16 < 0x280);
-        pFStack_1c = (FILE *)&pFStack_1c->_cnt;
-      } while (pFStack_1c != (FILE *)0x780);
+        p_Stack_1c = (_FILE *)&p_Stack_1c->_cnt;
+      } while (p_Stack_1c != (_FILE *)0x780);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);

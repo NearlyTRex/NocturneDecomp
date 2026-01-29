@@ -18,7 +18,7 @@ CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004e9040(CGlass *this_ptr)
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_005213c0((CMirror *)(pCVar2[1].create_event + 0x1c));
-  pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar4 = __arrinit
                      (&pCVar3[1].reflection.reflection_matrix.m[1].y,0x19,&g_CVectorTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar4 + -0x238) = &g_CGlassVTable;
   pcVar5 = "HEADLITE.RAW";

@@ -41,11 +41,11 @@ int __cdecl setFileAttributes(char *filename,byte flags);
 
 // Original: engine_dosio.c_truncateFile_FUN_00481a20
 // Address: 00481a20
-int __cdecl truncateFile(FILE *file_handle,long new_size_bytes);
+int __cdecl truncateFile(_FILE *file_handle,long new_size_bytes);
 
 // Original: engine_dosio.c_getFile_FUN_00481a50
 // Address: 00481a50
-FILE * __cdecl getFile(char *directory,char *filename,char *mode);
+_FILE * __cdecl getFile(char *directory,char *filename,char *mode);
 
 // Original: engine_dosio.c_reopenFileStream_FUN_00481b50
 // Address: 00481b50
@@ -102,3 +102,7 @@ void __cdecl changeFileExtension(char *source_path,char *destination_buffer,char
 // Original: engine_dosio.c_getFullPath_FUN_004820c0
 // Address: 004820c0
 int __cdecl getFullPath(char *output_path,char *input_path);
+
+// Original: engine_dosio.c_setReadonlyAttribute_FUN_00600c30
+// Address: 00600c30
+DWORD __cdecl setReadonlyAttribute(char *filename,DWORD file_attributes);

@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 38,
+        "column": 13,
         "line": 30,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
@@ -30,27 +30,27 @@
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 68,
         "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%f' expects argument of type 'float*', but argument 3 has type 'uint*' {aka 'unsigned int*'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 72,
+        "line": 21,
+        "message": "format '%f' expects argument of type 'float*', but argument 4 has type 'uint*' {aka 'unsigned int*'} [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 21,
+        "message": "format '%f' expects argument of type 'float*', but argument 5 has type 'uint*' {aka 'unsigned int*'} [-Wformat=]"
       },
       {
         "category": "other",
         "column": 14,
         "line": 28,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 30,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -310,7 +310,7 @@
       "description": "Undefined global data reference",
       "line": 23,
       "match": "DAT_02d0a460",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,\"Error parsing vector location\");",
+      "text": "sprintf(&DAT_02d0a460,\"Error parsing vector location\");",
       "type": "undefined_data"
     },
     {

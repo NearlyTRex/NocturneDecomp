@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0 (CFileBitStream *this_ptr,FILE *file_handle,int buffer_size,int stream_length)
+; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0 (CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; int              Stack[0xc]:4   buffer_size
 ; int              Stack[0x10]:4   stream_length
 ;
@@ -59,7 +59,7 @@ section .text
     PUSH EAX                            ; 0052ed29
     MOV dword ptr [EBX],EAX             ; 0052ed2a
     CALL crt_stdio.c_ftell_FUN_00601560 ; 0052ed2c
-        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+        ;   XREF to: 00601560 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00601560(_FILE * file_handle)
     ADD ESP,0x4                         ; 0052ed31
     PUSH 0x1ff                          ; 0052ed34
     MOV dword ptr [EBX + 0x20],EAX      ; 0052ed39
@@ -83,7 +83,7 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0052ed65
     PUSH EAX                            ; 0052ed67
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 0052ed68
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     MOV dword ptr [EBX + 0x10],0x0      ; 0052ed6d
     MOV dword ptr [EBX + 0x14],0x0      ; 0052ed74
     MOV dword ptr [EBX + 0xc],0x0       ; 0052ed7b
@@ -102,7 +102,7 @@ section .text
     PUSH 0x63ace1                       ; 0052eda3 | = "..\\sound\\mp3.cpp"
     PUSH EDX                            ; 0052eda8
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0052eda9
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0052edae
     MOV dword ptr [EBX],0x0             ; 0052edb1
     JMP 0x0052ed04                      ; 0052edb7

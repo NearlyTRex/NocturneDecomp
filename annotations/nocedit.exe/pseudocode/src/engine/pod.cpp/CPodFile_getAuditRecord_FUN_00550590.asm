@@ -69,7 +69,7 @@ section .text
     LEA EDI,[EBP + 0x4]                 ; 005505e9
     PUSH EDI                            ; 005505ec
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005505ed
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005505f2
     MOV ESI,EAX                         ; 005505f5
     TEST EAX,EAX                        ; 005505f7
@@ -97,7 +97,7 @@ section .text
     PUSH EAX                            ; 00550640
     PUSH ESI                            ; 00550641
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 00550642
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00550647
     PUSH ESI                            ; 0055064a
     PUSH 0x1                            ; 0055064b
@@ -105,7 +105,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00550652
     PUSH EAX                            ; 00550656
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00550657
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV AH,byte ptr [ESI + 0xc]         ; 0055065c
     ADD ESP,0x10                        ; 0055065f
     TEST AH,0x20                        ; 00550662
@@ -117,7 +117,7 @@ section .text
     PUSH ESI                            ; 00550671
     MOV EDI,EBX                         ; 00550672
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00550674
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV ECX,0x4e                        ; 00550679
     LEA ESI,[ESP + 0xc]                 ; 0055067e
     ADD ESP,0xc                         ; 00550682

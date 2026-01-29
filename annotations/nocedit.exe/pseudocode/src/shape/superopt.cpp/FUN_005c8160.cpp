@@ -40,11 +40,11 @@ void shape_superopt_cpp_FUN_005c8160(void)
           do {
             if (!bVar4) break;
             if ((*dest == iVar3) && (dest[1] == iVar2)) {
-              crt_string_c_memmove_FUN_005fe5e0
+              memmove
                         (dest,src,((*(int *)(in_stack_00000004 + 0x2c) - uVar7) + -1) * 0x60);
               iVar6 = *(int *)(in_stack_00000004 + 0x2c) + -1;
               *(int *)(in_stack_00000004 + 0x2c) = iVar6;
-              crt_string_c_memmove_FUN_005fe5e0
+              memmove
                         (local_28,piVar1 + iVar5,((iVar6 - local_14) + -1) * 0x60);
               bVar4 = false;
               *(int *)(in_stack_00000004 + 0x2c) = *(int *)(in_stack_00000004 + 0x2c) + -1;

@@ -15,7 +15,7 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580(void)
   DDSURFACEDESC local_74;
   
   if ((g_UseSoftwareRendering == 0) && (g_UseExternalRenderer == 0)) {
-    crt_memory_c_memset_FUN_005fde40(&local_74,0,0x6c);
+    memset(&local_74,0,0x6c);
     local_74.dwSize = 0x6c;
     HVar2 = (*g_SoftwareRenderSurface->vtable->Lock)
                       (g_SoftwareRenderSurface,(RECT *)0x0,&local_74,1,(void *)0x0);

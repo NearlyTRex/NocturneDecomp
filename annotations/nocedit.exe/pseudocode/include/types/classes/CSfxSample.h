@@ -2,7 +2,7 @@
 
 // Forward declarations
 struct CMP3Decoder;
-struct FILE;
+struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -29,7 +29,7 @@ typedef struct CSfxSample {
     int stream_write_position; // 0x168
     struct CMP3Decoder* mp3_data; // 0x16c
     int file_offset; // 0x170
-    struct FILE* file_handle; // 0x174
+    struct _FILE* file_handle; // 0x174
     int locked_offset; // 0x178
     int locked_length; // 0x17c
 } CSfxSample;

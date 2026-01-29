@@ -69,7 +69,7 @@ void __cdecl visualizeTextureAtlas(int visualization_mode,int completion_mode,in
 
 // Original: shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
 // Address: 004481d0
-void __cdecl printAtlasLayoutReport(FILE *output_file);
+void __cdecl printAtlasLayoutReport(_FILE *output_file);
 
 // Original: shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
 // Address: 00448260

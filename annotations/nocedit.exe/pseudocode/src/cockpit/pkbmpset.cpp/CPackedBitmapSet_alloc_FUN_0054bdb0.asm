@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_constructTypedObjectArray_FUN_00601272
+;   crt_memory.c___vec_new_FUN_00601272
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
 ;
@@ -64,8 +64,8 @@ section .text
         ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0054bdfe
     PUSH EAX                            ; 0054be01
-    CALL crt_memory.c_constructTypedObjectArray_FUN_00601272 ; 0054be02
-        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructTypedObjectArray_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_new_FUN_00601272 ; 0054be02
+        ;   XREF to: 00601272 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054be07
     TEST EAX,EAX                        ; 0054be0a
     MOV dword ptr [ESI + 0x4],EAX       ; 0054be0c

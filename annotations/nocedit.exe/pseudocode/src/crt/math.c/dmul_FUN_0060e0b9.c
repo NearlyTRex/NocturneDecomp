@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double crt_math_c_dmul_FUN_0060e0b9(double a,double b)
+double dmul(double a,double b)
 
 {
   longlong lVar1;

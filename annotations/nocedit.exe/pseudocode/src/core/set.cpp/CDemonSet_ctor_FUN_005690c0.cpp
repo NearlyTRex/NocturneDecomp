@@ -15,14 +15,13 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet *this_ptr
   char *pcVar3;
   char *pcVar4;
   
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->cameras,0xfa,&g_C3DSCameraTypeInfo);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar2 = __arrinit(this_ptr->cameras,0xfa,&g_C3DSCameraTypeInfo);
+  pvVar2 = __arrinit
                      ((void *)((int)pvVar2 + 0x19a2c),200,&g_C3DSLightTypeInfo);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  pvVar2 = __arrinit
                      ((void *)((int)pvVar2 + 0x141490),0x14,&g_SRoomTypeInfo);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)((int)pvVar2 + 0x554),0xfa,&g_SVDBoxTypeInfo);
+  pvVar2 = __arrinit((void *)((int)pvVar2 + 0x554),0xfa,&g_SVDBoxTypeInfo)
+  ;
   this_ptr_00 = (CDemonSet *)((int)pvVar2 + -0x15b414);
   this_ptr_00->camera_count = 0;
   *(uint *)((int)pvVar2 + -0x1419e8) = 0;

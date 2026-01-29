@@ -95,11 +95,11 @@
 ;   core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_memory.c_free_FUN_005fe659
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -901,8 +901,8 @@ section .text
     SUB EAX,0x4                         ; 00495a85
         ;   Label: LAB_00495a85
     PUSH EAX                            ; 00495a88
-    CALL crt_memory.c_free_FUN_005fe659 ; 00495a89
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00495a89
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00495a8e
     LEA ESP,[EBP + 0x7a]                ; 00495a91
     POP EBP                             ; 00495a94

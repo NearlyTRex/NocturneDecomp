@@ -2,27 +2,24 @@
 // Address: 00587850
 // Address Range: [[00587850, 00587948]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,FILE *file_handle)
+core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"\"%s\",%d,%g,%g,%g,%g,%g,%g ",this_ptr->name,this_ptr->light_type,
+  _fprintf(file_handle,"\"%s\",%d,%g,%g,%g,%g,%g,%g ",this_ptr->name,this_ptr->light_type,
              (double)(this_ptr->pos).x,(double)(this_ptr->pos).y,(double)(this_ptr->pos).z,
              (double)(this_ptr->color).r,(double)(this_ptr->color).g,(double)(this_ptr->color).b);
   if (this_ptr->light_type == 0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (file_handle,",%g,%g,%g\n",(double)(this_ptr->orient).x,
+    _fprintf(file_handle,",%g,%g,%g\n",(double)(this_ptr->orient).x,
                (double)(this_ptr->orient).z,(double)(this_ptr->orient).y);
     return;
   }
   if (this_ptr->light_type == 1) {
-    crt_stdio_c_fprintf_FUN_005fe6d0
-              (file_handle,",%g,%g\n",(double)this_ptr->atten_start,(double)this_ptr->atten_end)
+    _fprintf(file_handle,",%g,%g\n",(double)this_ptr->atten_start,(double)this_ptr->atten_end)
     ;
     return;
   }

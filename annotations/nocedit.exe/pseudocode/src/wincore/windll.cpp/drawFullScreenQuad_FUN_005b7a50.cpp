@@ -20,7 +20,7 @@ int __cdecl wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50(int color)
   int local_20;
   int local_1c;
   
-  crt_memory_c_memset_FUN_005fde40(&local_c0,0,0xc0);
+  memset(&local_c0,0,0xc0);
   local_c0.projected_vertex.screen_x = g_ClipLeft << 0x10;
   local_c0.projected_vertex.screen_y = g_ClipTop << 0x10;
   local_80 = g_ClipRight << 0x10;

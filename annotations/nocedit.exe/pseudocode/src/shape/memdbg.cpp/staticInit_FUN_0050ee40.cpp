@@ -10,6 +10,6 @@ void __cdecl shape_memdbg_cpp_staticInit_FUN_0050ee40(void)
 
 {
   shape_memdbg_cpp_CLeakChecker_ctor_FUN_0050fba0(&g_CLeakCheckerInstance);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_CLeakCheckerDestructorNode);
+  _atexit(&g_CLeakCheckerDestructorNode);
   return;
 }

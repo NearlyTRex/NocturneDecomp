@@ -11,6 +11,6 @@ cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_0054a820(CPackedBitmap *this_ptr)
 
 {
   cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_0054a8b0(this_ptr);
-  crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x14);
+  memset(this_ptr,0,0x14);
   return this_ptr;
 }

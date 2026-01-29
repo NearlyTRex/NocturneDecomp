@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
 
     PUSH 0x14                           ; 00598ee0
         ;   Label: core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00598ee5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00598ee5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     MOV EDX,dword ptr [ESP + 0x4]       ; 00598eea
     LEA EAX,[EDX + 0xe80]               ; 00598eee
     PUSH EAX                            ; 00598ef4

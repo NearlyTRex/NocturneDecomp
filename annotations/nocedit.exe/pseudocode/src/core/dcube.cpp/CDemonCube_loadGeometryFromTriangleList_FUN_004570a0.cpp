@@ -44,7 +44,7 @@ core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
     g_VertexCount = triangle_count * 3;
     g_PolygonCount = triangle_count;
     if ((20000 < g_VertexCount) || (20000 < triangle_count)) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_120,"Too many! %d, %d",g_VertexCount,triangle_count);
       g_CurrentFilename = "..\\core\\dcube.cpp";
       g_CurrentLineNumber = 0x716;

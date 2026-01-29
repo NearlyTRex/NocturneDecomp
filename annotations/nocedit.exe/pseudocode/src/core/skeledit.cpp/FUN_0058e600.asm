@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
 
     PUSH 0x18                           ; 0058e600
         ;   Label: core_skeledit.cpp_FUN_0058e600
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058e605
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058e605
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058e60a
     PUSH ESI                            ; 0058e60b
     PUSH EDI                            ; 0058e60c

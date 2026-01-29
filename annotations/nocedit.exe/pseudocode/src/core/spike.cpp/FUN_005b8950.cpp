@@ -64,7 +64,7 @@ void core_spike_cpp_FUN_005b8950(void)
   core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0((CBoundingBox3D *)auStack_cc);
   corner_index = 0;
   point = (CVector3f *)(auStack_1c8 + 4);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(auStack_1c8 + 4,8,&g_CVectorTypeInfo);
+  __arrinit(auStack_1c8 + 4,8,&g_CVectorTypeInfo);
   do {
     pCVar4 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        ((CBoundingBox3D *)(local_ec + 8),&CStack_48,corner_index);

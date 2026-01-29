@@ -45,7 +45,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_stdio.c_vfprintf_FUN_00604850",
-    "signature": "int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_list_t args)"
+    "signature": "int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(_FILE *file,char *format,va_list_t args)"
   },
   "function_calls": [
     {
@@ -157,7 +157,7 @@
         "name": "file",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -208,7 +208,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000010",
-      "text": "(file,args,in_stack_00000010,crt_stdio_c_OutputCallback_FUN_00604830);",
+      "text": "(file,args,in_stack_00000010,OutputCallback);",
       "type": "stack_param"
     },
     {

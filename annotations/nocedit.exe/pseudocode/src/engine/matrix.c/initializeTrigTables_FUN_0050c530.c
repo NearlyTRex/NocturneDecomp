@@ -28,8 +28,8 @@ void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
     fVar7 = (float10)fsin(fVar6);
     fVar6 = (float10)fcos(fVar6);
     fVar6 = fVar6 * fVar3;
-    crt_math_c_round_FUN_005fe6b0((double)(fVar7 * fVar3));
-    dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
+    round((double)(fVar7 * fVar3));
+    dVar8 = round((double)fVar6);
     *(uint *)((int)g_SinTable + iVar2) = 0x50c57e;
     iVar1 = iVar1 + 1;
     *(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);

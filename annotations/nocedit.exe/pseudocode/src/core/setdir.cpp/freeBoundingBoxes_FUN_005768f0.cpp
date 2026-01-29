@@ -9,6 +9,6 @@
 void __cdecl core_setdir_cpp_freeBoundingBoxes_FUN_005768f0(CBoundingBox3D **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,2000,&g_CBoundingBox3DTypeInfo);
+  __arrfini(array,2000,&g_CBoundingBox3DTypeInfo);
   return;
 }

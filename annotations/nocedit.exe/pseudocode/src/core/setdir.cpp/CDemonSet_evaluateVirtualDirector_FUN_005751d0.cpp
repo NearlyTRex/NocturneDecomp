@@ -129,7 +129,7 @@ LAB_0057523f:
     pSVar4 = pSVar5;
   } while (pSVar5 != (SMRGLPrimitiveQuad *)&g_BoundingBoxQuadTemplateEnd);
   if (force_evaluation_mode == 0) {
-    dVar13 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = round
                        ((double)((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float
                                 ));
     iStack_60 = (int)ROUND(dVar13);

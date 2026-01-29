@@ -43,7 +43,7 @@ section .text
     PUSH 0x62e356                       ; 004ecbb7 | = "%f,%f,%f\n"
     PUSH ESI                            ; 004ecbbc
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ecbbd
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x20                        ; 004ecbc2
     MOV EDX,dword ptr [EBX]             ; 004ecbc5
     PUSH EDX                            ; 004ecbc7
@@ -54,7 +54,7 @@ section .text
     PUSH 0x62e360                       ; 004ecbd0 | = "%d,%d,%d\n"
     PUSH ESI                            ; 004ecbd5
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ecbd6
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004ecbdb
     SUB ESP,0x8                         ; 004ecbde
     FLD float ptr [EBX + 0x1c]          ; 004ecbe1
@@ -68,7 +68,7 @@ section .text
     PUSH 0x62e36a                       ; 004ecbf9 | = "%f,%f,%f\n"
     PUSH ESI                            ; 004ecbfe
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ecbff
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x20                        ; 004ecc04
     MOV EBP,dword ptr [EBX + 0x40]      ; 004ecc07
     PUSH EBP                            ; 004ecc0a
@@ -87,7 +87,7 @@ section .text
     PUSH 0x62e374                       ; 004ecc23 | = "%d,%d,%d,%d,%d,%d,%d\n"
     PUSH ESI                            ; 004ecc28
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004ecc29
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x24                        ; 004ecc2e
     POP EBP                             ; 004ecc31
     POP EDI                             ; 004ecc32

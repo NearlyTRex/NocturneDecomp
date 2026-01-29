@@ -51,7 +51,7 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
   local_64.w_recip = (float)&CStack_24.y;
   local_18 = 0;
   local_64.fog = 6.80623e-39;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)(scale_factor * (float)256));
+  dVar9 = round((double)(scale_factor * (float)256));
   local_64.color = 0;
   local_18 = (int)ROUND(dVar9);
   local_64.light = 6.806244e-39;
@@ -168,7 +168,7 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
       iVar2 = *(int *)(iVar4 + 0x14);
       local_64.v = 6.806708e-39;
       local_64.light = (float)&local_64.w_recip;
-      crt_stdio_c_sprintf_FUN_005fdbd0((char *)&local_64.w_recip,"%c");
+      sprintf((char *)&local_64.w_recip,"%c");
       local_64.fog = 9.18341e-41;
       local_64.color = 0x4a1e62;
       engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);

@@ -9,15 +9,15 @@
 void __cdecl core_inv_cpp_loadInventory_FUN_004fd220(void)
 
 {
-  FILE *pFVar1;
+  _FILE *p_Var1;
   int iVar2;
   
   g_InventoryScreenHeight = g_WindowHeight;
-  pFVar1 = engine_dosio_c_getFile_FUN_00481a50("data","invsize.txt","rt")
+  p_Var1 = engine_dosio_c_getFile_FUN_00481a50("data","invsize.txt","rt")
   ;
-  if (pFVar1 != (FILE *)0x0) {
-    crt_stdio_c_fscanf_FUN_005fe7c0(pFVar1,"%d,%d\n",&g_InventoryWidth,&g_InventoryHeight);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\inv.cpp",0x139);
+  if (p_Var1 != (_FILE *)0x0) {
+    _fscanf(p_Var1,"%d,%d\n",&g_InventoryWidth,&g_InventoryHeight);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\inv.cpp",0x139);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
             (&g_InvBackgroundBitmap,"invback",g_InventoryWidth,g_InventoryHeight);
@@ -61,16 +61,16 @@ void __cdecl core_inv_cpp_loadInventory_FUN_004fd220(void)
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(&g_HolyBulletIconBitmap,2,2);
   }
   g_ItemDefinitionCount = 0;
-  pFVar1 = engine_dosio_c_getFile_FUN_00481a50
+  p_Var1 = engine_dosio_c_getFile_FUN_00481a50
                      (&s_EmptyChar_006304c1,"itemlist.txt","rt");
-  if (pFVar1 != (FILE *)0x0) {
-    while ((pFVar1->_flag & 0x10) == 0) {
+  if (p_Var1 != (_FILE *)0x0) {
+    while ((p_Var1->_flag & 0x10) == 0) {
       iVar2 = core_inv_cpp_loadItem_FUN_004fcfe0
-                        (g_ItemDefinitionArray + g_ItemDefinitionCount,pFVar1);
+                        (g_ItemDefinitionArray + g_ItemDefinitionCount,p_Var1);
       if (iVar2 == 0) break;
       g_ItemDefinitionCount = g_ItemDefinitionCount + 1;
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\inv.cpp",0x169);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\inv.cpp",0x169);
   }
   return;
 }

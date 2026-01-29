@@ -52,7 +52,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
       if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {
         pcVar5 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
                            (*(CDemonActor **)(in_stack_00000004 + 0x28));
-        iVar6 = crt_string_c_stricmp_FUN_005fe7f0
+        iVar6 = stricmp
                           (*(char **)((int)g_ActorClassRegistrations + iVar8),pcVar5);
         if (iVar6 != 0) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -67,14 +67,14 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
   shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)local_624);
   pcVar5 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
                      (*(CDemonActor **)(in_stack_00000004 + 0x28));
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (local_27c,"Change %s of type %s to new type",*(uint *)(in_stack_00000004 + 0x28)
              ,pcVar5);
   iVar10 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                      ((CPickList *)local_624,local_27c,-1,0);
   if (-1 < iVar10) {
     pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)local_624,iVar10);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_88,"C%s",pcVar5);
+    sprintf(local_88,"C%s",pcVar5);
     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
     local_20 = pCVar7;
     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
@@ -97,7 +97,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
             piVar9 = (int *)&stack0xffffafe0;
             do {
               if ((*piVar9 == pCVar4->type) &&
-                 (iVar10 = crt_string_c_stricmp_FUN_005fe7f0((char *)(piVar9 + 1),pcVar5),
+                 (iVar10 = stricmp((char *)(piVar9 + 1),pcVar5),
                  iVar10 == 0)) {
                 switch(*piVar9) {
                 case 0:

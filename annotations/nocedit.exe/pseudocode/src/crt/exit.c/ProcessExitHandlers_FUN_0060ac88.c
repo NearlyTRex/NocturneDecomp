@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_exit_c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority,uchar max_priority)
+void __cdecl ProcessExitHandlers(uchar min_priority,uchar max_priority)
 
 {
   BYTE *pBVar1;
@@ -27,7 +27,7 @@ void __cdecl crt_exit_c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority,ucha
     } while (pBVar1 < &g_ExitHandlerTableEnd);
     if (pRVar3 == &g_ExitHandlerTableEnd) break;
     if (pRVar3->priority <= max_priority) {
-      crt_util_c_invokeRuntimeHandler_FUN_0060ac20(&pRVar3->func);
+      invokeRuntimeHandler(&pRVar3->func);
     }
     pRVar3->status = '\x02';
   }

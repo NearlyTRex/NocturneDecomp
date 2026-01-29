@@ -33,9 +33,9 @@ void __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebeb0(CWayPoint *this_ptr)
   }
   if ((this_ptr->base).base.create_event[0] != '\0') {
     str1 = (this_ptr->base).base.create_event;
-    iVar6 = crt_string_c_stricmp_FUN_005fe7f0(str1,"none");
+    iVar6 = stricmp(str1,"none");
     if ((iVar6 != 0) &&
-       (iVar6 = crt_string_c_stricmp_FUN_005fe7f0(str1,"true"), iVar6 != 0)) {
+       (iVar6 = stricmp(str1,"true"), iVar6 != 0)) {
       g_CurrentFilename = "..\\core\\waypoint.cpp";
       g_CurrentLineNumber = 0x79;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't have creation event for waypoint.");

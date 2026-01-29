@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-double __softfp_double crt_math_c_floor_FUN_005feb90(double input_value)
+double __softfp_double floor(double input_value)
 
 {
   double dVar1;
   double local_18 [2];
   
-  dVar1 = crt_math_c_modf_FUN_00602102(input_value,local_18);
+  dVar1 = modf(input_value,local_18);
   if (dVar1 < 0.0) {
     local_18[0] = local_18[0] + -1;
   }

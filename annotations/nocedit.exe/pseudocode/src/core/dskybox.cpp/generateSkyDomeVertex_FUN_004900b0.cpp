@@ -39,10 +39,10 @@ core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
   fVar7 = (float10)g_SkyDomeVertexScale;
   fVar8 = (float10)256;
   fVar5 = fVar5 * fVar7 * (float10)(double)fVar6 * fVar8;
-  crt_math_c_round_FUN_005fe6b0((double)(fVar3 * fVar7 * fVar8));
-  crt_math_c_round_FUN_005fe6b0((double)fVar5);
+  round((double)(fVar3 * fVar7 * fVar8));
+  round((double)fVar5);
   input = (CVector3i *)0x49018a;
-  crt_math_c_round_FUN_005fe6b0((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
+  round((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar2->vertex_buffer_ptr[(int)uv_offset].projected_vertex,input);
   fVar1 = *light_color;

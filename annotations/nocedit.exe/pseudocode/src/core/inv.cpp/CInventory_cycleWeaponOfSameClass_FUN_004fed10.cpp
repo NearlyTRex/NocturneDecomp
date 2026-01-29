@@ -50,7 +50,7 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
                          (&this_ptr->selected_weapon->base);
         str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)this_ptr_01)
         ;
-        iVar1 = crt_string_c_strcmp_FUN_005fef20(str1,str2);
+        iVar1 = strcmp(str1,str2);
         if (iVar1 == 0) {
           this_ptr_00 = this_ptr->selected_weapon;
           if (this_ptr_01 == this_ptr_00) {

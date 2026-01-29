@@ -26,15 +26,15 @@ void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int pol
     for (local_20 = 0; local_20 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_20 = local_20 + 1) {
       local_14 = g_ModelPolygonData[polygon_index].vertex_indices[local_20];
-      dVar1 = crt_math_c_round_FUN_005fe6b0
+      dVar1 = round
                         ((double)(g_LoadedVertices[local_14].vertex.x * 256.0f)
                         );
       local_2c.x = (int)ROUND(dVar1);
-      dVar1 = crt_math_c_round_FUN_005fe6b0
+      dVar1 = round
                         ((double)(g_LoadedVertices[local_14].vertex.y * 256.0f)
                         );
       local_2c.y = (int)ROUND(dVar1);
-      dVar1 = crt_math_c_round_FUN_005fe6b0
+      dVar1 = round
                         ((double)(g_LoadedVertices[local_14].vertex.z * 256.0f)
                         );
       local_2c.z = (int)ROUND(dVar1);
@@ -52,7 +52,7 @@ void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int pol
         }
         if (((local_1c + 8 < (uint)g_WindowWidth) && (local_18 + 0xc < (uint)g_WindowHeight)) &&
            (0 < g_RenderVertexBuffer[local_20].projected_vertex.transformed_z)) {
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (local_7c,"%d",
                      g_ModelPolygonData[polygon_index].vertex_indices[local_20]);
           engine_2d_c_drawTextColor_FUN_00402430(local_7c,local_1c + 1,local_18 + 1);

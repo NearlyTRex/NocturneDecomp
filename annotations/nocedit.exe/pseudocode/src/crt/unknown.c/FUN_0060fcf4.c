@@ -37,7 +37,7 @@ uint crt_unknown_c_FUN_0060fcf4(short *param_1)
     if (sVar1 == 0) {
       return 0;
     }
-    ptr = crt_memory_c_malloc_FUN_00601bb0(9);
+    ptr = malloc(9);
     if (ptr == (uint *)0x0) {
       return 0xffffffff;
     }
@@ -56,20 +56,20 @@ uint crt_unknown_c_FUN_0060fcf4(short *param_1)
       n = -iVar3;
       new_size = n + 1 + iVar3 * -4 + 8U;
       if (g_EnvironStringArea == (char **)0x0) {
-        ptr = crt_memory_c_malloc_FUN_00601bb0(new_size);
+        ptr = malloc(new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
-        crt_string_c_memcpy_FUN_0060cd60(ptr,(void *)g_EnvironInitialized,iVar3 * -4);
+        memcpy(ptr,(void *)g_EnvironInitialized,iVar3 * -4);
         g_EnvironStringArea = (char **)(ptr + (2 - iVar3));
-        crt_memory_c_memset_FUN_005fde40(g_EnvironStringArea,0,n + 1);
+        memset(g_EnvironStringArea,0,n + 1);
       }
       else {
-        ptr = crt_memory_c_realloc_FUN_00601df0(ptr,new_size);
+        ptr = realloc(ptr,new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
-        crt_string_c_memmove_FUN_005fe5e0(ptr + (2 - iVar3),g_EnvironStringArea,n);
+        memmove(ptr + (2 - iVar3),g_EnvironStringArea,n);
         g_EnvironStringArea = (char **)(ptr + (2 - iVar3));
       }
       ptr[1 - iVar3] = 0;

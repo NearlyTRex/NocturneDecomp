@@ -2,12 +2,12 @@
 // Address: 0051aa60
 // Address Range: [[0051aa60, 0051ad52]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh *this_ptr,FILE *file_handle)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh *this_ptr,FILE *file_handle)
+shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
@@ -27,10 +27,10 @@ shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh *this_ptr,FILE *fi
   
   iVar4 = 1;
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_30);
+  iVar4 = _fscanf(file_handle,"%d\n",&local_30);
   if (iVar4 == 1) goto LAB_0051aad4;
 LAB_0051aab1:
   do {
@@ -47,43 +47,41 @@ LAB_0051aad4:
       }
       iVar4 = 1;
       do {
-        iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+        iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) break;
       } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-      iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&local_18,&local_14,&local_2c,
+      iVar4 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&local_18,&local_14,&local_2c,
                          &local_24,local_28,local_20,local_1c);
     } while (iVar4 != 7);
     shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(this_ptr,local_2c,local_14,local_18);
     for (iVar4 = local_24 + 1; 0 < iVar4; iVar4 = iVar4 + -1) {
       do {
-        iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+        iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) goto LAB_0051abcf;
       } while (iVar1 != 10);
     }
 LAB_0051abcf:
     iVar4 = 1;
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
     for (iVar4 = 0; iVar4 < this_ptr->submesh_count; iVar4 = iVar4 + 1) {
-      iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n",local_234);
+      iVar1 = _fscanf(file_handle,"%[^\n]\n",local_234);
       if (iVar1 != 1) goto LAB_0051aab1;
-      crt_string_c_splitpath_FUN_005ff178(local_234,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
-      crt_file_c_makepath_FUN_005febfc
+      splitpath(local_234,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
+      makepath
                 (this_ptr->submesh_data[iVar4].texture_filename,(char *)0x0,(char *)0x0,local_130,
                  "raw");
     }
     iVar4 = 1;
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
     for (iVar4 = 0; iVar4 < this_ptr->tri_count; iVar4 = iVar4 + 1) {
       pCVar2 = this_ptr->tri_data + iVar4;
-      iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",pCVar2,&pCVar2->vertex_idx_0,
+      iVar1 = _fscanf(file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",pCVar2,&pCVar2->vertex_idx_0,
                          pCVar2->uv_coords,pCVar2->uv_coords[0] + 1,&pCVar2->vertex_idx_1,
                          pCVar2->uv_coords + 1,pCVar2->uv_coords[1] + 1,&pCVar2->vertex_idx_2,
                          pCVar2->uv_coords + 2,pCVar2->uv_coords[2] + 1);
@@ -91,7 +89,7 @@ LAB_0051abcf:
     }
     iVar4 = 1;
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
     iVar4 = 0;
@@ -104,8 +102,7 @@ LAB_0051abcf:
         return;
       }
       pCVar3 = this_ptr->vertex_data + iVar4;
-      iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (file_handle,"%f,%f,%f\n",pCVar3,&(pCVar3->position).y,
+      iVar1 = _fscanf(file_handle,"%f,%f,%f\n",pCVar3,&(pCVar3->position).y,
                          &(pCVar3->position).z);
       if (iVar1 != 3) break;
       iVar4 = iVar4 + 1;

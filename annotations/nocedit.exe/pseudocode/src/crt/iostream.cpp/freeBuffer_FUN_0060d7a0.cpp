@@ -9,6 +9,6 @@
 void __watcallStack crt_iostream_cpp_freeBuffer_FUN_0060d7a0(void *buffer)
 
 {
-  crt_memory_c_free_FUN_00601cd0(buffer);
+  free(buffer);
   return;
 }

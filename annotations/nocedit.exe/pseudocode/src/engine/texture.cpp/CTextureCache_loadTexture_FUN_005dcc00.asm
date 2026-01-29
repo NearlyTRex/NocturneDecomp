@@ -177,7 +177,7 @@ section .text
     PUSH EAX                            ; 005dcd6b
     PUSH 0x655297                       ; 005dcd6c | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 005dcd71
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 005dcd76
     ADD ESP,0xc                         ; 005dcd78
     TEST EAX,EAX                        ; 005dcd7b
@@ -190,13 +190,13 @@ section .text
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x13008] ; 005dcd91
     PUSH ECX                            ; 005dcd98
     CALL crt_stdio.c_fread_FUN_005fd990 ; 005dcd99
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005dcd9e
     PUSH 0x117                          ; 005dcda1
     PUSH 0x65529b                       ; 005dcda6 | = "..\\engine\\texture.cpp"
     PUSH ESI                            ; 005dcdab
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005dcdac
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005dcdb1
     MOV EDI,dword ptr [EBX + 0x14008]   ; 005dcdb4
         ;   Label: LAB_005dcdb4
@@ -325,7 +325,7 @@ section .text
     PUSH EAX                            ; 005dcf01
     PUSH 0x655364                       ; 005dcf02 | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 005dcf07
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 005dcf0c
     ADD ESP,0xc                         ; 005dcf0e
     TEST EAX,EAX                        ; 005dcf11
@@ -392,7 +392,7 @@ section .text
     PUSH EAX                            ; 005dcf8c
     PUSH 0x655386                       ; 005dcf8d | = "art"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 005dcf92
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005dcf97
     MOV ESI,EAX                         ; 005dcf9a
     TEST EAX,EAX                        ; 005dcf9c
@@ -432,13 +432,13 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x2008] ; 005dd001
     PUSH EDX                            ; 005dd008
     CALL crt_stdio.c_fread_FUN_005fd990 ; 005dd009
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005dd00e
     PUSH 0x14b                          ; 005dd011
     PUSH 0x6553b6                       ; 005dd016 | = "..\\engine\\texture.cpp"
     PUSH ESI                            ; 005dd01b
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005dd01c
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005dd021
     MOV EAX,dword ptr [EBX + 0x14008]   ; 005dd024
         ;   Label: LAB_005dd024
@@ -530,13 +530,13 @@ section .text
     MOV EDI,dword ptr [EBX + EAX*0x4 + 0x1008] ; 005dd0f5
     PUSH EDI                            ; 005dd0fc
     CALL crt_stdio.c_fread_FUN_005fd990 ; 005dd0fd
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005dd102
     PUSH 0x13a                          ; 005dd105
     PUSH 0x655368                       ; 005dd10a | = "..\\engine\\texture.cpp"
     PUSH ESI                            ; 005dd10f
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005dd110
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     JMP 0x005dcf33                      ; 005dd115
         ;   XREF to: 005dcf33 (UNCONDITIONAL_JUMP)  ; LAB_005dcf33
     MOV EAX,dword ptr [EBX + 0x14008]   ; 005dd11a

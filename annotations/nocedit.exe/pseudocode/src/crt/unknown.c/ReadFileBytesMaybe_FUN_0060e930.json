@@ -40,7 +40,7 @@
     {
       "addr": "006083fc",
       "is_variadic": false,
-      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc"
+      "name": "crt_errno.c___set_errno_FUN_006083fc"
     },
     {
       "addr": "00602790",
@@ -317,7 +317,7 @@
       "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_5",
-      "text": "uVar2 = crt_io_c_getFileTypeFlags_FUN_006088b0(param_5);",
+      "text": "uVar2 = getFileTypeFlags(param_5);",
       "type": "unnamed_param"
     },
     {
@@ -415,14 +415,14 @@
       "description": "Unaffected register variable",
       "line": 63,
       "match": "unaff_EDI",
-      "text": "crt_stdio_c_lseek_FUN_00606690(param_10,(uVar7 - unaff_EDI) + 1,1);",
+      "text": "lseek(param_10,(uVar7 - unaff_EDI) + 1,1);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 63,
       "match": "param_10",
-      "text": "crt_stdio_c_lseek_FUN_00606690(param_10,(uVar7 - unaff_EDI) + 1,1);",
+      "text": "lseek(param_10,(uVar7 - unaff_EDI) + 1,1);",
       "type": "unnamed_param"
     },
     {

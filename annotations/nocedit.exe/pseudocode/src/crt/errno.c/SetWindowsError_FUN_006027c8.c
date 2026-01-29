@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_errno_c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)
+void __cdecl SetWindowsError(DWORD windows_error_code)
 
 {
   ThreadData *pTVar1;

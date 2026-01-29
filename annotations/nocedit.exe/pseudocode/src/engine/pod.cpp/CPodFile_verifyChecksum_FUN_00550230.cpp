@@ -11,7 +11,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
 {
   uchar uVar1;
   CPodDirectoryEntry *pCVar2;
-  FILE *pFVar3;
+  _FILE *p_Var3;
   int iVar4;
   int iVar5;
   SIZE_T size;
@@ -25,7 +25,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
   CStrList_vtable *in_stack_fffffc44;
   uint in_stack_fffffc48;
   uint local_20;
-  FILE *local_1c;
+  _FILE *local_1c;
   SIZE_T local_18;
   int local_14;
   
@@ -90,23 +90,23 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
   pcVar6 = this_ptr->filename;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Verifying CRC for %s...");
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (pcVar6,(char *)0x0,"rb","..\\engine\\pod.cpp",0x2ef);
-  if (pFVar3 == (FILE *)0x0) {
+  if (p_Var3 == (_FILE *)0x0) {
     return 0;
   }
-  crt_stdio_c_fseek_FUN_005ffacc(pFVar3,iVar7 + -4,0);
-  crt_stdio_c_fread_FUN_005fd990(&local_20,4,1,pFVar3);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\pod.cpp",0x2f3);
+  _fseek(p_Var3,iVar7 + -4,0);
+  _fread(&local_20,4,1,p_Var3);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\pod.cpp",0x2f3);
   iVar4 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyString_0064015e,pcVar6);
-  pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (pcVar6,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
   uVar8 = 0xffffffff;
-  local_1c = pFVar3;
-  crt_stdio_c_fseek_FUN_005ffacc(pFVar3,iVar7,0);
+  local_1c = p_Var3;
+  _fseek(p_Var3,iVar7,0);
   for (size = iVar4 - iVar7; 0xffff < (int)size; size = size - 0x10000) {
     pcVar6 = g_FileIOBuffer;
-    crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,pFVar3);
+    _fread(g_FileIOBuffer,0x10000,1,p_Var3);
     uVar9 = 0;
     do {
       uVar1 = *pcVar6;
@@ -116,7 +116,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
     } while (uVar9 < 0x10000);
   }
   pcVar6 = g_FileIOBuffer;
-  crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,size,1,pFVar3);
+  _fread(g_FileIOBuffer,size,1,p_Var3);
   uVar9 = 0;
   local_18 = size;
   if (size != 0) {

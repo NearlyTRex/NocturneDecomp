@@ -18,7 +18,7 @@ int __cdecl core_fire_cpp_CFireEffect_FUN_004c90c0(CFireEffect *this_ptr)
   float *in_stack_0000000c;
   float in_stack_00000010;
   
-  dVar4 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = round
                     ((double)((SQRT((in_stack_0000000c[2] - in_stack_00000008[2]) *
                                     (in_stack_0000000c[2] - in_stack_00000008[2]) +
                                     (*in_stack_0000000c - *in_stack_00000008) *

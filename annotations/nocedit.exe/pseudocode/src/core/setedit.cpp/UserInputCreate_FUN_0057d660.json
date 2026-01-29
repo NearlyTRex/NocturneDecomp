@@ -108,12 +108,6 @@
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 110,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 6,
         "line": 117,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -138,9 +132,9 @@
       },
       {
         "category": "other",
-        "column": 47,
+        "column": 24,
         "line": 129,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'C3DSCamera*' [-Wformat=]"
       },
       {
         "category": "other",
@@ -168,9 +162,9 @@
       },
       {
         "category": "other",
-        "column": 49,
+        "column": 26,
         "line": 139,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'C3DSCamera*' [-Wformat=]"
       },
       {
         "category": "other",
@@ -270,9 +264,9 @@
       },
       {
         "category": "other",
-        "column": 84,
+        "column": 61,
         "line": 308,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -362,14 +356,13 @@
   },
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 1765,
+    "complexity_score": 1750,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "pseudocode_lines": 425,
-    "suspect_count": 131,
+    "suspect_count": 130,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -481,11 +474,6 @@
       "name": "core_slew.cpp_CSlew_processInput_FUN_005a20b0"
     },
     {
-      "addr": "005fe659",
-      "is_variadic": false,
-      "name": "crt_memory.c_free_FUN_005fe659"
-    },
-    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -594,6 +582,11 @@
       "addr": "0050f250",
       "is_variadic": false,
       "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    },
+    {
+      "addr": "005fe659",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
     },
     {
       "addr": "005eda20",
@@ -1448,28 +1441,28 @@
       "description": "Unnamed function parameter",
       "line": 122,
       "match": "param_5",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"%s.raw\",param_5->cameras + param_6);",
+      "text": "sprintf(acStack_ec,\"%s.raw\",param_5->cameras + param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 122,
       "match": "param_6",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"%s.raw\",param_5->cameras + param_6);",
+      "text": "sprintf(acStack_ec,\"%s.raw\",param_5->cameras + param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 132,
       "match": "param_5",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"%s.act\",param_5->cameras + param_6);",
+      "text": "sprintf(acStack_ec,\"%s.act\",param_5->cameras + param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 132,
       "match": "param_6",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"%s.act\",param_5->cameras + param_6);",
+      "text": "sprintf(acStack_ec,\"%s.act\",param_5->cameras + param_6);",
       "type": "unnamed_param"
     },
     {
@@ -1924,7 +1917,7 @@
       "description": "Unnamed function parameter",
       "line": 255,
       "match": "param_5",
-      "text": "crt_memory_c_free_FUN_005fe659(param_5);",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(param_5);",
       "type": "unnamed_param"
     },
     {
@@ -2101,17 +2094,6 @@
       "match": "(float *)((int)",
       "text": "(g_CEditorToolsPtr,\"Enter FOV\",(float *)((int)PTR_DAT_00681ab8 + 0x18),",
       "type": "pointer_cast"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 301,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(CStack_570.cancel_button.button_text + 0xbc,\"%f\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

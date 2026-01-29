@@ -38,8 +38,8 @@ crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
   }
   else {
-    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_StrStreamBaseTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr);
+    ptr = __vec_delete(this_ptr,&g_StrStreamBaseTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;
 }

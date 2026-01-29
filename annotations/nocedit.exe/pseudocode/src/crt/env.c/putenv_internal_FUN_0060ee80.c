@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
+int __cdecl putenv_internal(char *envstr)
 
 {
   char *pcVar1;
@@ -23,7 +23,7 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
   LPCSTR local_18;
   
   bVar9 = 0;
-  pcVar1 = crt_string_c_char_in_set_FUN_0060e340(envstr,L'=');
+  pcVar1 = char_in_set(envstr,L'=');
   if (pcVar1 == (char *)0x0) {
     iVar2 = -1;
   }
@@ -32,7 +32,7 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
       return -1;
     }
     uVar3 = (int)pcVar1 - (int)envstr;
-    lpName = crt_memory_c_malloc_FUN_00601bb0(uVar3 + 1);
+    lpName = malloc(uVar3 + 1);
     if (lpName == (LPCSTR)0x0) {
       return -1;
     }
@@ -54,9 +54,9 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
       local_18 = (LPCSTR)0x0;
     }
     else {
-      local_18 = crt_memory_c_malloc_FUN_00601bb0(uVar3 + 1);
+      local_18 = malloc(uVar3 + 1);
       if (local_18 == (char *)0x0) {
-        crt_memory_c_free_FUN_00601cd0(lpName);
+        free(lpName);
         return -1;
       }
       pcVar1 = pcVar1 + 1;
@@ -74,26 +74,26 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
       local_18[uVar3] = '\0';
     }
     BVar4 = (*g_SetEnvironmentVariableAFunc)(lpName,local_18);
-    crt_memory_c_free_FUN_00601cd0(lpName);
-    crt_memory_c_free_FUN_00601cd0(local_18);
+    free(lpName);
+    free(local_18);
     if (BVar4 == 0) {
       return -1;
     }
-    iVar2 = crt_env_c_updateEnvironTable_FUN_0060f04c(envstr);
+    iVar2 = updateEnvironTable(envstr);
     if (iVar2 != 0) {
       return -1;
     }
     iVar2 = 0;
     if (g_EnvironInitialized != 0) {
       iVar2 = crt_unknown_c_FUN_0060fa90();
-      ptr = crt_memory_c_malloc_FUN_00601bb0((iVar2 + 1) * 2);
+      ptr = malloc((iVar2 + 1) * 2);
       if (ptr == (void *)0x0) {
-        crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(5);
+        convertWindowsErrorToErrno(5);
         return -1;
       }
       iVar2 = crt_unknown_c_FUN_0060fac0();
       if (iVar2 == -1) {
-        crt_memory_c_free_FUN_00601cd0(ptr);
+        free(ptr);
         return -1;
       }
       iVar2 = crt_unknown_c_FUN_0060fcf4();

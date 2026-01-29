@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-double __fpustack crt_math_c_acos_FUN_00600162(double x)
+double __fpustack acos(double x)
 
 {
   char extraout_AL;
@@ -25,10 +25,10 @@ double __fpustack crt_math_c_acos_FUN_00600162(double x)
     }
   }
   else {
-    dVar2 = crt_math_c_sqrt_FUN_0060710c((double)fVar1);
+    dVar2 = sqrt((double)fVar1);
     fVar1 = (float10)dVar2;
     if (extraout_AL == '\0') {
-      fVar1 = crt_math_c_atan2_FUN_006013b1(y,fVar1);
+      fVar1 = atan2(y,fVar1);
       fVar1 = 1.5707963f - fVar1;
     }
   }

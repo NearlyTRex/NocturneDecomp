@@ -20,14 +20,14 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
   char local_144 [100];
   char local_e0 [100];
   char local_7c [100];
-  FILE *local_18;
+  _FILE *local_18;
   SIZE_T local_14;
   
   cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(this_ptr);
   iVar1 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);
   local_18 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
-  if (local_18 == (FILE *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_1a8,"Unable to open %s in CPackedBitmapSet::loadJoinedRAW",filename);
+  if (local_18 == (_FILE *)0x0) {
+    sprintf(local_1a8,"Unable to open %s in CPackedBitmapSet::loadJoinedRAW",filename);
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
     g_CurrentLineNumber = 0xba;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_1a8);
@@ -35,7 +35,7 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
   local_14 = bitmap_width * bitmap_height;
   iVar2 = iVar1 / (int)local_14;
   if (local_14 * iVar2 - iVar1 != 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_144,"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW",filename,iVar1,bitmap_width,
                bitmap_height);
     g_CurrentLineNumber = 199;
@@ -49,7 +49,7 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
   bitmap_data = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                           (local_14,"..\\cockpit\\pkbmpset.cpp",0xd3);
   if (bitmap_data == (uchar *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_e0,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",SVar3);
+    sprintf(local_e0,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",SVar3);
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
     g_CurrentLineNumber = 0xd8;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_e0);
@@ -58,9 +58,9 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
   if (0 < this_ptr->bitmap_count) {
     iVar2 = 0;
     do {
-      SVar3 = crt_stdio_c_fread_FUN_005fd990(bitmap_data,local_14,1,local_18);
+      SVar3 = _fread(bitmap_data,local_14,1,local_18);
       if (SVar3 != 1) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_7c,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",filename);
+        sprintf(local_7c,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",filename);
         g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
         g_CurrentLineNumber = 0xe2;
         core_main_c_displayErrorAndQuit_FUN_00506f10(local_7c);

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_environ_c_staticInit_FUN_0060c650(void)
+void __cdecl staticInit(void)
 
 {
   char cVar1;
@@ -33,7 +33,7 @@ void __cdecl crt_environ_c_staticInit_FUN_0060c650(void)
       INT_03f9c150 = (int)pcVar2;
       ppcVar3 = (char **)crt_unknown_c_FUN_0060c640();
       if (ppcVar3 == (char **)0x0) {
-        crt_memory_c_free_FUN_00601cd0(pcVar2);
+        free(pcVar2);
       }
       else {
         count = 0;
@@ -56,10 +56,10 @@ void __cdecl crt_environ_c_staticInit_FUN_0060c650(void)
         *(uint *)(iVar5 + (int)ppcVar3) = 0;
         g_EnvironStringArea = (char **)((int)ppcVar3 + iVar5 + 4);
         g_EnvironmentBlock = ppcVar3;
-        crt_memory_c_memset_FUN_005fde40(g_EnvironStringArea,0,count);
+        memset(g_EnvironStringArea,0,count);
       }
     }
-    crt_io_c_parseFileInfo_FUN_0060e3b0();
+    parseFileInfo();
   }
   return;
 }

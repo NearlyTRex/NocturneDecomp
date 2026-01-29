@@ -46,13 +46,13 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
     pbVar5 = pbVar5 + (uint)bVar6 * -2 + 1;
   } while (bVar1 != 0);
   if (iVar2 != -2) {
-    dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff84);
+    dVar8 = _strtod(in_stack_ffffff84);
     local_14 = (float)dVar8;
   }
   if (0 < ui_mode) {
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               ((char *)local_74,0x14,0,0x16,"Ignore different part names? [y] : ");
-    iVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_74[0]);
+    iVar2 = toupper((uint)local_74[0]);
     if (iVar2 == 0x4e) {
       local_1c = 1;
     }
@@ -76,7 +76,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
        (((iVar2 = shape_design_c_findVertexMatches_FUN_00461ae0
                             ((int *)g_ModelPolygonData[local_18].vertex_indices,
                              (int *)g_ModelPolygonData[local_24].vertex_indices,3,3), iVar2 != 0 &&
-         (iVar2 = crt_string_c_strcmp_FUN_005fef20
+         (iVar2 = strcmp
                             (g_ModelPolygonData[local_18].lightmap_name,
                              g_ModelPolygonData[local_24].lightmap_name), iVar2 == 0)) &&
         ((local_1c == 0 ||
@@ -89,7 +89,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   shape_design_c_removeUnusedVertices_FUN_00463830();
   g_PolygonOptimizationPasses = g_PolygonOptimizationPasses + 1;
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             ((char *)local_74,"Original polygons: %d    New total: %d\n\nTotal passes: %d",local_20,g_PolygonCount);
   if (0 < ui_mode) {
     pcVar3 = "\n\nHit a key...";

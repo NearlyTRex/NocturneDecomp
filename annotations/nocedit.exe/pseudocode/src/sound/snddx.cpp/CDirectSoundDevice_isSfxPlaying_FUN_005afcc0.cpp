@@ -25,7 +25,7 @@ sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_005afcc0
                            (g_DirectSoundHardwareSfxBuffers[iVar1],(LPDWORD)local_4);
     if (error_code != 0) {
       pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (acStack_194,"DirectSux: Unable to %s.  (%s)","Get active sfx secondary buffer status",
                  pcVar2);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_194);

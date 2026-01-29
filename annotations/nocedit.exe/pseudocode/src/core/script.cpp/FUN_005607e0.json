@@ -8,18 +8,6 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 18,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -149,7 +137,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
-      "text": "FILE *in_stack_00000004;",
+      "text": "_FILE *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -170,21 +158,21 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000004,\"\\\"%s\\\"\\n\",\"(none)\");",
+      "text": "_fprintf(in_stack_00000004,\"\\\"%s\\\"\\n\",\"(none)\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000004,\"\\\"%s\\\"\\n\",*in_stack_00000008);",
+      "text": "_fprintf(in_stack_00000004,\"\\\"%s\\\"\\n\",*in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000004,\"\\\"%s\\\"\\n\",*in_stack_00000008);",
+      "text": "_fprintf(in_stack_00000004,\"\\\"%s\\\"\\n\",*in_stack_00000008);",
       "type": "stack_param"
     },
     {

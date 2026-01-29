@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_io_c_invalidate_handle_FUN_00608af4(int handle_index)
+void __cdecl invalidate_handle(int handle_index)
 
 {
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f18)();

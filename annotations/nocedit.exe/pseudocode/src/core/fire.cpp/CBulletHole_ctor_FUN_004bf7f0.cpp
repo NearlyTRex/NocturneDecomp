@@ -46,14 +46,14 @@ core_fire_cpp_CBulletHole_ctor_FUN_004bf7f0
     (this_ptr->position).z = local_30.y;
   }
   local_114.m[0].x = 6.976873e-39;
-  fVar6 = crt_math_c_atan2_FUN_006013b1
+  fVar6 = atan2
                     ((float10)surface_normal->y,
                      SQRT((float10)surface_normal->x * (float10)surface_normal->x +
                           (float10)surface_normal->z * (float10)surface_normal->z));
   (this_ptr->euler_angles).z = 0.0;
   (this_ptr->euler_angles).x = (float)-fVar6;
   local_114.m[0].w = 6.976905e-39;
-  fVar6 = crt_math_c_atan2_FUN_006013b1((float10)surface_normal->x,(float10)surface_normal->z);
+  fVar6 = atan2((float10)surface_normal->x,(float10)surface_normal->z);
   (this_ptr->euler_angles).y = (float)fVar6;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
   this_ptr->active = 1;

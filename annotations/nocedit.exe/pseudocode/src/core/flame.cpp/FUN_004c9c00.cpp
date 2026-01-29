@@ -82,7 +82,7 @@ void core_flame_cpp_FUN_004c9c00(void)
                 (g_CSoundPtr,*(uint *)(in_stack_00000004 + 0x1b0));
       if (extraout_EAX == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   ((char *)((int)&uStack_fc + 4),"torch.wav * %f",SUB84((double)local_14,0),
                    (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
@@ -107,7 +107,7 @@ void core_flame_cpp_FUN_004c9c00(void)
         fStack_34 = (this_ptr->base).base.location.position.z - *(float *)(in_stack_00000004 + 0x28)
         ;
         if (((float)-0.5 < fStack_38) && (fStack_38 < (float)local_94.result_ptr)) {
-          dVar4 = crt_math_c_round_FUN_005fe6b0
+          dVar4 = round
                             ((double)((*(float *)(in_stack_00000004 + 0x158) +
                                       *(float *)(in_stack_00000004 + 0x160)) *
                                      (float)0.25));
@@ -139,7 +139,7 @@ void core_flame_cpp_FUN_004c9c00(void)
           fStack_28 = (this_ptr_00->base).location.position.z - *(float *)(in_stack_00000004 + 0x28)
           ;
           fStack_2c = fVar1;
-          dVar4 = crt_math_c_round_FUN_005fe6b0
+          dVar4 = round
                             ((double)((*(float *)(in_stack_00000004 + 0x158) +
                                       *(float *)(in_stack_00000004 + 0x160)) *
                                      (float)0.25));

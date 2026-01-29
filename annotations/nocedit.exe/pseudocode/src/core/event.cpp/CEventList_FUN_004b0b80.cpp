@@ -18,7 +18,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004b0b80(CEventList *this_ptr)
   if (-1 < iVar1) {
     iVar3 = 0;
     for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0
+      iVar2 = stricmp
                         (*(char **)(g_CDemonSetPtr->actor_list_data + iVar3),
                          this_ptr->variablesActorName1 + iVar1 * 0x1e);
       if (iVar2 == 0) {

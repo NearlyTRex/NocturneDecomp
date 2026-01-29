@@ -28,7 +28,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -83,8 +83,8 @@ section .text
     ADD ESP,0xc                         ; 0058139b
     MOV EAX,ESP                         ; 0058139e
     PUSH EAX                            ; 005813a0
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 005813a1
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 005813a1
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 005813a6
     XOR EDI,EDI                         ; 005813a9
     PUSH ESI                            ; 005813ab

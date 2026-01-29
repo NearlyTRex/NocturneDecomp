@@ -26,7 +26,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_fillBuffer_FUN_0052ec40(CFileBitStream
       if (0 < this_ptr->bytes_remaining) {
         buffer = this_ptr->buffer + iVar2;
         iVar2 = iVar2 + -1;
-        SVar1 = crt_stdio_c_fread_FUN_005fd990(buffer,1,1,this_ptr->file_handle);
+        SVar1 = _fread(buffer,1,1,this_ptr->file_handle);
       }
       if (SVar1 == 1) break;
       this_ptr->end_of_stream_flag = iVar2 + 1;

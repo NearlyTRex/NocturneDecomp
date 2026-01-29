@@ -15,7 +15,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0054a840
   int unaff_EBP;
   
   cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_0054a8b0(this_ptr);
-  crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x14);
+  memset(this_ptr,0,0x14);
   cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
             (this_ptr,filename,width,height,transparency_color,stride,unaff_EBP);
   return this_ptr;

@@ -17,7 +17,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00478c00(char *filename)
   if (0 < g_KeyframeModelCount) {
     pCVar2 = g_CKeyFramedModelPool;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(pCVar2->model_filename,filename);
+      iVar1 = stricmp(pCVar2->model_filename,filename);
       if (iVar1 == 0) {
         return pCVar2;
       }

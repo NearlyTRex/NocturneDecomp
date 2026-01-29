@@ -7,7 +7,7 @@
 ; WatcomStaticDestructorNode * Stack[0x4]:4   node_ptr
 ;
 ; XREF[1]:
-;   crt_stdlib.c_atexit_FUN_005ff060 at 005ff065
+;   crt_stdlib.c__atexit_FUN_005ff060 at 005ff065
 ;
 ; Referenced Globals:
 ;   WatcomStaticDestructorNode* g_AtexitListHead = 00000000

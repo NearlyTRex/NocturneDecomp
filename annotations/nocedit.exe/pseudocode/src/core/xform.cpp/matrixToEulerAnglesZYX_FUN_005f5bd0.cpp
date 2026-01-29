@@ -53,7 +53,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
   fVar1 = -matrix_ptr[1].m[0].x * (float)dVar6;
   if ((float)-1 < fVar1) {
     if ((double)fVar1 < 1.0) {
-      fVar5 = crt_math_c_asin_FUN_00600b94((float10)fVar1);
+      fVar5 = asin((float10)fVar1);
       euler_out->x = (float)fVar5;
       dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);
       if (fVar5 < (float10)-3.1415926535900001) {
@@ -70,7 +70,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
         if ((0.70699999999999996 <= dVar4) ||
            (dVar4 <= -0.70699999999999996)) {
           if ((-1 < dVar6) && (dVar6 < 1.0)) {
-            dVar6 = crt_math_c_acos_FUN_00600162(dVar6);
+            dVar6 = acos(dVar6);
             local_18 = (float)dVar6;
           }
           if ((double)CONCAT44(uStack_34,local_30) < 0.0) {
@@ -78,7 +78,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
           }
         }
         else {
-          fVar5 = crt_math_c_asin_FUN_00600b94((float10)dVar4);
+          fVar5 = asin((float10)dVar4);
           local_18 = (float)fVar5;
           if ((double)CONCAT44(uStack_64,local_68) < 0.0) {
             local_18 = (float)3.1415926535900001 - local_18;
@@ -100,7 +100,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
            (dVar6 <= -0.70699999999999996)) {
           if (-1 < dVar4) {
             if (dVar4 < 1.0) {
-              dVar6 = crt_math_c_acos_FUN_00600162(dVar4);
+              dVar6 = acos(dVar4);
               dVar6 = (double)CONCAT44((float)dVar6,local_b0);
             }
             else {
@@ -115,7 +115,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
           }
         }
         else {
-          crt_math_c_asin_FUN_00600b94((float10)fVar1);
+          asin((float10)fVar1);
         }
         if (local_20 < (float)-3.1415926535900001) {
           local_20 = local_20 + 6.283185f;
@@ -142,7 +142,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
   if ((0.70699999999999996 <= dVar6) || (dVar6 <= -0.70699999999999996)) {
     if (-1 < dVar4) {
       if (dVar4 < 1.0) {
-        crt_math_c_acos_FUN_00600162(dVar4);
+        acos(dVar4);
       }
       else {
         local_18 = 0.0;
@@ -156,7 +156,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
     }
   }
   else {
-    crt_math_c_asin_FUN_00600b94((float10)fVar1);
+    asin((float10)fVar1);
   }
   if (local_18 < (float)-3.1415926535900001) {
     local_18 = local_18 + 6.283185f;

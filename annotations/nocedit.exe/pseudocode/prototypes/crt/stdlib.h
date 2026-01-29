@@ -27,13 +27,17 @@ int __cdecl rand(void);
 // Address: 005feb80
 void __cdecl srand(uint seed);
 
-// Original: crt_stdlib.c_atexit_FUN_005ff060
+// Original: crt_stdlib.c__atexit_FUN_005ff060
 // Address: 005ff060
-void __cdecl atexit(WatcomStaticDestructorNode *exit_node);
+void __cdecl ::atexit(WatcomStaticDestructorNode *exit_node);
 
 // Original: crt_stdlib.c_atoi_FUN_005ffef0
 // Address: 005ffef0
 int __cdecl atoi(char *string_ptr);
+
+// Original: crt_stdlib.c__fullpath_FUN_00601140
+// Address: 00601140
+char * __cdecl ::fullpath(char *buffer,char *path,SIZE_T buffer_size);
 
 // Original: crt_stdlib.c_system_FUN_00602130
 // Address: 00602130

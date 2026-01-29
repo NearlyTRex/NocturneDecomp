@@ -1,7 +1,32 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 20,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 24,
+        "line": 20,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 10,
+        "line": 23,
+        "message": "invalid conversion from '_FILE*' to 'int' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 23,
+        "message": "invalid conversion from 'uint' {aka 'unsigned int'} to '_FILE*' [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -48,7 +73,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200",
-    "signature": "int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 (CLZWDictionary *this_ptr,int code,FILE *output_file)"
+    "signature": "int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 (CLZWDictionary *this_ptr,int code,_FILE *output_file)"
   },
   "function_calls": [
     {
@@ -111,7 +136,7 @@
         "name": "output_file",
         "offset": 12,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -120,7 +145,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 4,
       "match": "code",
-      "text": "(CLZWDictionary *this_ptr,int code,FILE *output_file)",
+      "text": "(CLZWDictionary *this_ptr,int code,_FILE *output_file)",
       "type": "unresolved_funcptr"
     },
     {
@@ -134,28 +159,28 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 13,
       "match": "code",
-      "text": "crt_stdio_c_fputc_FUN_005ff2d7(output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "_fputc(output_file,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 13,
       "match": "code",
-      "text": "crt_stdio_c_fputc_FUN_005ff2d7(output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "_fputc(output_file,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 16,
       "match": "code",
-      "text": "crt_stdio_c_fputc_FUN_005ff2d7(output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "_fputc(output_file,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 16,
       "match": "code",
-      "text": "crt_stdio_c_fputc_FUN_005ff2d7(output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "_fputc(output_file,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_io.c_generateTempFilename_FUN_00601f1c at 00601f32
+;   crt_io.c__tempnam_FUN_00601f1c at 00601f32
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_006590a4
@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_006013f0
 ;   crt_io.c_getcwd_FUN_00608d20
-;   crt_io.c_realpath_FUN_00601140
+;   crt_stdlib.c__fullpath_FUN_00601140
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH 0x103                          ; 00609b3c
     PUSH EDX                            ; 00609b41
     PUSH 0x6852dc                       ; 00609b42 | g_TempDirectoryBuffer
-    CALL crt_io.c_realpath_FUN_00601140 ; 00609b47
-        ;   XREF to: 00601140 (UNCONDITIONAL_CALL)  ; char * crt_io.c_realpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
+    CALL crt_stdlib.c__fullpath_FUN_00601140 ; 00609b47
+        ;   XREF to: 00601140 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c__fullpath_FUN_00601140(char * buffer, char * path, SIZE_T buffer_size)
     ADD ESP,0xc                         ; 00609b4c
     JMP 0x00609b5b                      ; 00609b4f
         ;   XREF to: 00609b5b (UNCONDITIONAL_JUMP)  ; LAB_00609b5b

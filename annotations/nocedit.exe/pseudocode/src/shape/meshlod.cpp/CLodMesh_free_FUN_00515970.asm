@@ -25,9 +25,9 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;   shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 ;   shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950
 ;   shape_meshlod.cpp_CLodMesh_init_FUN_00515880
@@ -127,8 +127,8 @@ section .text
         ;   XREF to: 00515a51 (CONDITIONAL_JUMP)  ; LAB_00515a51
     SUB EAX,0x4                         ; 00515a45
     PUSH EAX                            ; 00515a48
-    CALL crt_memory.c_free_FUN_005fe659 ; 00515a49
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 00515a49
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00515a4e
     MOV EAX,0x220                       ; 00515a51
         ;   Label: LAB_00515a51

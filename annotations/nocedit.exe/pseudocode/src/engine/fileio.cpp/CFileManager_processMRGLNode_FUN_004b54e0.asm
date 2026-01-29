@@ -121,7 +121,7 @@ section .text
     PUSH EDX                            ; 004b55a4
     MOV ESI,EAX                         ; 004b55a5
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004b55a7
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004b55ac
     PUSH ESI                            ; 004b55af
     PUSH EDI                            ; 004b55b0

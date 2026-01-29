@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_stdlib_c_atexitRegisterNode_FUN_00605b89(WatcomStaticDestructorNode *node_ptr)
+void __cdecl atexitRegisterNode(WatcomStaticDestructorNode *node_ptr)
 
 {
   node_ptr->next = g_AtexitListHead;

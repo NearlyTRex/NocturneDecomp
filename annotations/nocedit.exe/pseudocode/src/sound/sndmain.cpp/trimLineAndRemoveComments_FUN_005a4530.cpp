@@ -16,7 +16,7 @@ void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_005a4530(char *line
   byte bVar5;
   
   bVar5 = 0;
-  pcVar2 = crt_string_c_strstr_FUN_005fedd0(line,"//");
+  pcVar2 = strstr(line,"//");
   pcVar4 = line;
   if (pcVar2 != (char *)0x0) {
     *pcVar2 = '\0';
@@ -47,6 +47,6 @@ joined_r0x005a456c:
       cVar1 = *pcVar4;
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     } while (cVar1 != '\0');
-    crt_string_c_memmove_FUN_005fe5e0(line,line + 1,~uVar3 - 1);
+    memmove(line,line + 1,~uVar3 - 1);
   } while( true );
 }

@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 uint * __cdecl
-crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint *param_4)
+gmtime_r(int days,uint seconds,int timezone_offset,uint *param_4)
 
 {
   ulonglong uVar1;
@@ -34,14 +34,14 @@ crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint 
   if (uVar2 != 0) {
     uVar4 = uVar4 - (uVar2 - 1 >> 2);
   }
-  iVar3 = crt_time_c_is_leap_year_FUN_00607820(uVar2 + 0x76c);
+  iVar3 = is_leap_year(uVar2 + 0x76c);
   for (; iVar3 + 0x16dU <= uVar4; uVar4 = uVar4 - (iVar3 + 0x16dU)) {
     uVar2 = uVar2 + 1;
   }
   param_4[5] = uVar2;
   param_4[7] = uVar4;
   local_14 = &g_DaysInMonth_Normal;
-  iVar3 = crt_time_c_is_leap_year_FUN_00607820(uVar2 + 0x76c);
+  iVar3 = is_leap_year(uVar2 + 0x76c);
   if (iVar3 != 0) {
     local_14 = &g_DaysInMonth_Leap;
   }

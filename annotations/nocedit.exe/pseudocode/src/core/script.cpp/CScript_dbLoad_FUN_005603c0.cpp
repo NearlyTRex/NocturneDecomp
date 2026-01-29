@@ -12,7 +12,7 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
 
 {
   char cVar1;
-  FILE *file_handle;
+  _FILE *file_handle;
   long lVar2;
   int iVar3;
   void *pvVar4;
@@ -37,22 +37,21 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
   }
   file_handle = engine_dosio_c_getFile_FUN_00481a50
                           ("world",in_stack_00000008,"rt");
-  if (file_handle == (FILE *)0x0) {
+  if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\script.cpp";
     g_CurrentLineNumber = 0xec2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",in_stack_00000008);
   }
-  lVar2 = crt_stdio_c_ftell_FUN_00601560(file_handle);
+  lVar2 = _ftell(file_handle);
   local_c = local_c + lVar2;
   do {
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle," ");
-    lVar2 = crt_stdio_c_ftell_FUN_00601560(file_handle);
+    _fscanf(file_handle," ");
+    lVar2 = _ftell(file_handle);
     if (local_c <= lVar2) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\script.cpp",0xf02);
       return;
     }
-    iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                      (file_handle,"%[^,], %[^,], %[^\n]\n",local_334,local_2bc,local_29e);
+    iVar3 = _fscanf(file_handle,"%[^,], %[^,], %[^\n]\n",local_334,local_2bc,local_29e);
     if (iVar3 != 3) {
       g_CurrentFilename = "..\\core\\script.cpp";
       g_CurrentLineNumber = 0xed6;
@@ -63,7 +62,7 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
     core_script_cpp_FUN_00559360();
     core_script_cpp_FUN_00559360();
     core_script_cpp_FUN_00559360();
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_2bc,"stranger");
+    iVar3 = stricmp(local_2bc,"stranger");
     if (iVar3 == 0) {
       pcVar5 = "$";
       pcVar6 = local_2bc;
@@ -77,7 +76,7 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
     }
-    crt_string_c_splitpath_FUN_005ff178(local_334,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
+    splitpath(local_334,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
     pcVar5 = local_10c;
     pcVar6 = local_334;
     do {
@@ -94,10 +93,10 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,in_stack_00000008);
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_2f8,"%s.wav",local_334);
+    sprintf(local_2f8,"%s.wav",local_334);
     iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
     if (iVar3 < 1) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_2f8,"%s.mp3",local_334);
+      sprintf(local_2f8,"%s.mp3",local_334);
       iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
       if (iVar3 < 1) {
         pcVar6 = local_334;

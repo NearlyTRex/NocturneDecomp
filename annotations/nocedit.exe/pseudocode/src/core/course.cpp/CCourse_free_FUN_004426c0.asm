@@ -19,7 +19,7 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     SUB EAX,0x4                         ; 004426f1
         ;   Label: LAB_004426f1
     PUSH EAX                            ; 004426f4
-    CALL crt_memory.c_free_FUN_005fe659 ; 004426f5
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004426f5
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004426fa
     MOV dword ptr [EBX],0x0             ; 004426fd
     MOV dword ptr [EBX + 0x4],0x0       ; 00442703

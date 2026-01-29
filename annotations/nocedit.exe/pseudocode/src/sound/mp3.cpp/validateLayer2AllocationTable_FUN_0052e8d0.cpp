@@ -23,7 +23,7 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame 
           frame->samples_per_granule;
   iVar4 = frame->sblimit;
   uVar7 = 0x52e93d;
-  dVar6 = crt_math_c_round_FUN_005fe6b0(g_MpegSampleRateTable[iVar3][pSVar2->sampling_rate_index]);
+  dVar6 = round(g_MpegSampleRateTable[iVar3][pSVar2->sampling_rate_index]);
   iVar1 = (int)ROUND(dVar6);
   if (iVar3 == 1) {
     if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {

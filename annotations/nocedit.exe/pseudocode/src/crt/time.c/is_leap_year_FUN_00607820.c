@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_time_c_is_leap_year_FUN_00607820(int year)
+int __cdecl is_leap_year(int year)
 
 {
   if ((year & 3U) == 0) {

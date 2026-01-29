@@ -76,11 +76,11 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   fVar7 = (float10)fsin((float10)0.58904862253125001);
   fVar8 = (float10)g_SkyDomeVertexScale;
   fVar9 = (float10)256;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar7 * fVar8 * fVar9));
+  dVar10 = round((double)(fVar7 * fVar8 * fVar9));
   pCVar3 = g_CDemonRendererPtr2;
   local_74._4_4_ = (uint)ROUND(dVar10);
   local_68 = local_74._4_4_;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar8 * fVar9));
+  dVar10 = round((double)(fVar8 * fVar9));
   local_74._4_4_ = (uint)ROUND(dVar10);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar3->vertex_buffer_ptr->projected_vertex,(CVector3i *)(local_74 + 4));

@@ -104,7 +104,7 @@ void core_flies_cpp_FUN_004cbf00(void)
         input_value = (double)fVar3;
         pfVar7 = pfVar8;
         if (1.0 <= input_value) {
-          local_2c._8_8_ = crt_math_c_floor_FUN_005feb90(input_value);
+          local_2c._8_8_ = floor(input_value);
           *(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)local_2c._8_8_;
           if ((CLocation *)(extraout_EBX + 4) != (CLocation *)(extraout_EBX + 0x10)) {
             *(float *)(extraout_EBX + 4) = (((CLocation *)(extraout_EBX + 0x10))->position).x;

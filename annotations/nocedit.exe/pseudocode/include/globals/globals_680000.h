@@ -84,10 +84,6 @@ extern EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup;
 // EXCEPTION_FILTER_FUNC*
 extern EXCEPTION_FILTER_FUNC* g_UserExceptionFilter;
 
-// FILE*
-extern FILE* g_StaticFilePoolStart;
-extern FILE* g_StderrLogFile;
-
 // GUID
 extern GUID g_IID_IKsPropertySet;
 extern GUID g_KSPROPSETID_DirectSound3DListener;
@@ -250,6 +246,10 @@ extern WatcomStaticDestructorNode g_CWaterDestructorNode;
 // WatcomStaticDestructorNode*
 extern WatcomStaticDestructorNode* g_AtexitListHead;
 
+// _FILE*
+extern _FILE* g_StaticFilePoolStart;
+extern _FILE* g_StderrLogFile;
+
 // byte
 extern byte BYTE_00684acc;
 extern byte BYTE_00684acd;
@@ -396,6 +396,7 @@ extern int g_CZombieClassVersion;
 extern int g_MaxErrnoValue;
 extern int INT_00684ccc;
 extern int INT_00684cd0;
+extern int INT_00684ed0;
 extern int g_SpecialExitHandler;
 extern int DAT_00684f30;
 extern int g_ConsoleInitializationFlag;
@@ -407,6 +408,7 @@ extern int g_DaylightSavingActive;
 extern int g_DaylightSavingOffset;
 extern int g_CurrentHandleCount;
 extern int g_FakeHandleCounter;
+extern int INT_00685280;
 extern int g_ProcessSpawnEnabled;
 extern int g_ConsoleInputState;
 extern int g_HeapFlags;
@@ -472,7 +474,6 @@ extern undefined4 DAT_00685094;
 extern undefined4 DAT_006850b0;
 extern undefined4 DAT_006850b4;
 extern undefined4 DAT_006850b8;
-extern undefined4 DAT_00685280;
 extern undefined4 DAT_0068528c;
 extern undefined4 DAT_006852c4;
 extern undefined4 DAT_006854ec;

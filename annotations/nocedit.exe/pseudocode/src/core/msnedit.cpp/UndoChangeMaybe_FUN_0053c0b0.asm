@@ -46,7 +46,7 @@ section .text
     PUSH 0x0                            ; 0053c0d3
     PUSH 0x680800                       ; 0053c0d5 | = "$$UNDO$$.TMP"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0053c0da
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 0053c0df
     ADD ESP,0x14                        ; 0053c0e1
     TEST EAX,EAX                        ; 0053c0e4
@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x28]      ; 0053c105
     PUSH ECX                            ; 0053c108
     CALL core_actor.cpp_CDemonActor_load_FUN_0040b050 ; 0053c109
-        ;   XREF to: 0040b050 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_load_FUN_0040b050(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040b050 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_load_FUN_0040b050(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0053c10e
     MOV EAX,dword ptr [ESI + 0x28]      ; 0053c111
     PUSH EAX                            ; 0053c114
@@ -78,7 +78,7 @@ section .text
     PUSH 0x63c811                       ; 0053c125 | = "..\\core\\msnedit.cpp"
     PUSH EBX                            ; 0053c12a
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0053c12b
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0053c130
     POP ESI                             ; 0053c133
     POP EBX                             ; 0053c134

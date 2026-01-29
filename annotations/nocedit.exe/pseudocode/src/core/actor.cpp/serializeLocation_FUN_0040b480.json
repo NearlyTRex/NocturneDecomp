@@ -11,43 +11,30 @@
       },
       {
         "category": "other",
-        "column": 61,
-        "line": 16,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 18,
         "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 52,
-        "line": 28,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 50,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 20,
-    "suspect_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
     "suspect_types": [
-      "format_string_mismatch",
       "param_count_too_few"
     ],
-    "total_lines": 87
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -119,7 +106,7 @@
     {
       "addr": "00822034",
       "name": "g_ActorDataFile",
-      "type": "FILE*",
+      "type": "_FILE*",
       "value": null
     },
     {
@@ -227,17 +214,6 @@
       "param_delta": 1,
       "text": "Function declares 2 params but call sites push 3 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%f,%f,%f\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%d,%f,%f,%f",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 9,
-      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,\"%d,%f,%f,%f\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

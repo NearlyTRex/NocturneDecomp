@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-HeapBlock * __cdecl crt_heap_c_InsertHeapBlockInOrder_FUN_006095f0(HeapBlock *new_block)
+HeapBlock * __cdecl InsertHeapBlockInOrder(HeapBlock *new_block)
 
 {
   uchar *puVar1;

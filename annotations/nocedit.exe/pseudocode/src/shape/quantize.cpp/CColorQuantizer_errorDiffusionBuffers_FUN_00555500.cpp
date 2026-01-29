@@ -22,27 +22,27 @@ shape_quantize_cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500
   if (this_ptr->error_buffer_r != (float *)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x287;
-    crt_memory_c_free_FUN_005fe659(this_ptr->error_buffer_r);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->error_buffer_r);
   }
   if (this_ptr->error_buffer_g != (float *)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x288;
-    crt_memory_c_free_FUN_005fe659(this_ptr->error_buffer_g);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->error_buffer_g);
   }
   if (this_ptr->error_buffer_b != (float *)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x289;
-    crt_memory_c_free_FUN_005fe659(this_ptr->error_buffer_b);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->error_buffer_b);
   }
   if (this_ptr->error_buffer_i != (float *)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x28a;
-    crt_memory_c_free_FUN_005fe659(this_ptr->error_buffer_i);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->error_buffer_i);
   }
   if (this_ptr->flags_buffer != (uchar *)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x28b;
-    crt_memory_c_free_FUN_005fe659(this_ptr->flags_buffer);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->flags_buffer);
   }
   count = num_entries * 8;
   pfVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(count,"..\\shape\\quantize.cpp",0x28d);
@@ -62,11 +62,11 @@ shape_quantize_cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500
                              (num_entries,"..\\shape\\quantize.cpp",0x299);
           this_ptr->flags_buffer = puVar2;
           if (puVar2 != (uchar *)0x0) {
-            crt_memory_c_memset_FUN_005fde40(this_ptr->error_buffer_r,0,count);
-            crt_memory_c_memset_FUN_005fde40(this_ptr->error_buffer_g,0,count);
-            crt_memory_c_memset_FUN_005fde40(this_ptr->error_buffer_b,0,count);
-            crt_memory_c_memset_FUN_005fde40(this_ptr->error_buffer_i,0,count);
-            crt_memory_c_memset_FUN_005fde40(this_ptr->flags_buffer,0,num_entries);
+            memset(this_ptr->error_buffer_r,0,count);
+            memset(this_ptr->error_buffer_g,0,count);
+            memset(this_ptr->error_buffer_b,0,count);
+            memset(this_ptr->error_buffer_i,0,count);
+            memset(this_ptr->flags_buffer,0,num_entries);
             this_ptr->serpentine_toggle = 0;
             this_ptr->status = -1;
             return 1;

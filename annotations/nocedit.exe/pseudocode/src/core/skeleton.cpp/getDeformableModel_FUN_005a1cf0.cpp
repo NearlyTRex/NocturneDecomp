@@ -18,7 +18,7 @@ CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(cha
   if (0 < g_DeformableModelCount) {
     str1 = g_DeformableModelPool[0].model_filename;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,model_filename);
+      iVar1 = stricmp(str1,model_filename);
       if (iVar1 == 0) {
         return g_DeformableModelPool + iVar2;
       }

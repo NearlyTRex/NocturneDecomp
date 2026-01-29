@@ -49,16 +49,16 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   fVar1 = this_ptr->player_rotation;
   fVar3 = this_ptr->player_pos_x;
   iVar5 = this_ptr->game_state_flags;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)0.00027777777777777799));
+  dVar12 = round((double)(fVar1 * (float)0.00027777777777777799));
   local_24 = (int)ROUND(dVar12);
   fVar1 = fVar1 - (float)local_24 * (float)3600;
   local_18 = local_24;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)0.016666666666666701));
+  dVar12 = round((double)(fVar1 * (float)0.016666666666666701));
   iStack_34 = (int)ROUND(dVar12);
   fVar1 = fVar1 - (float)iStack_34 * (float)60;
   this_ptr->player_rotation = fVar1;
   local_1c = iStack_34;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+  dVar12 = round((double)fVar1);
   iStack_34 = (int)ROUND(dVar12);
   fVar1 = this_ptr->player_rotation - (float)iStack_34;
   this_ptr->player_rotation = fVar1;
@@ -66,7 +66,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   this_ptr->game_state_flags = iVar5 + (int)fVar3;
   pcVar13 = (char *)0x4e3936;
   local_20 = iStack_34;
-  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * fVar4));
+  dVar12 = round((double)(fVar1 * fVar4));
   iStack_34 = (int)ROUND(dVar12);
   pcVar13 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar13);
   pcVar9 = &stack0xfffffaa8;
@@ -101,7 +101,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
   uVar8 = 0;
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (acStack_158,"%2d:%2d:%2d.%2d\n\n",uStack_30,uStack_3c,uStack_38,iStack_34);
   do {
     uVar6 = 0xffffffff;
@@ -181,7 +181,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_158,"%d\n\n",*(uint *)(unaff_EDI + 0x24c));
+  sprintf(acStack_158,"%d\n\n",*(uint *)(unaff_EDI + 0x24c));
   this_ptr_00 = g_ThemeFont;
   pcVar13 = acStack_158;
   iVar5 = -1;

@@ -9,8 +9,8 @@
 void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
 
 {
-  FILE *file;
-  tm *timeptr;
+  _FILE *file;
+  _tm *timeptr;
   char *pcVar1;
   int iVar2;
   SSoundDeviceInfo *device_info;
@@ -20,47 +20,47 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   time_t local_c;
   
   local_10 = &stack0x00000008;
-  crt_stdio_c_vsprintf_FUN_005fdba8(local_528,format,&local_10);
+  vsprintf(local_528,format,&local_10);
   local_10 = (va_list_t)0x0;
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",local_528);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("\\\\q\\xfer\\fletch\\sounderr.txt",(char *)0x0,"at",
                     "..\\sound\\sndmain.cpp",0x186e);
-  if (file == (FILE *)0x0) {
+  if (file == (_FILE *)0x0) {
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"----------------------------------------------------------------\n");
-  crt_time_c_time_with_rounding_FUN_006001f0(&local_c);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Msg: %s\n",local_528);
-  timeptr = crt_time_c_localtime_FUN_00600288(&local_c);
-  pcVar1 = crt_time_c_asctime_FUN_00601768(timeptr);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Time: %s",pcVar1);
-  pcVar1 = crt_env_c_getenv_FUN_006013f0("USERNAME");
+  _fprintf(file,"----------------------------------------------------------------\n");
+  time(&local_c);
+  _fprintf(file,"Msg: %s\n",local_528);
+  timeptr = localtime(&local_c);
+  pcVar1 = asctime(timeptr);
+  _fprintf(file,"Time: %s",pcVar1);
+  pcVar1 = getenv("USERNAME");
   if (pcVar1 != (char *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"USERNAME: %s\n",pcVar1);
+    _fprintf(file,"USERNAME: %s\n",pcVar1);
   }
-  pcVar1 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME");
+  pcVar1 = getenv("COMPUTERNAME");
   if (pcVar1 != (char *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"COMPUTERNAME: %s\n",pcVar1);
+    _fprintf(file,"COMPUTERNAME: %s\n",pcVar1);
   }
   iVar2 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"selectedDeviceIndex: %d\n",iVar2);
+  _fprintf(file,"selectedDeviceIndex: %d\n",iVar2);
   iVar2 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
   if (iVar2 < 0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"No device selected.\n");
+    _fprintf(file,"No device selected.\n");
   }
   else {
     device_info = &local_128;
     iVar2 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
     sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,device_info);
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"Device: %s.\n",&local_128);
+    _fprintf(file,"Device: %s.\n",&local_128);
   }
   iVar2 = sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250();
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Bits: %d\n",iVar2);
+  _fprintf(file,"Bits: %d\n",iVar2);
   iVar2 = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Channels: %d\n",iVar2);
+  _fprintf(file,"Channels: %d\n",iVar2);
   iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"Hz: %d\n",iVar2);
+  _fprintf(file,"Hz: %d\n",iVar2);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\sound\\sndmain.cpp",0x188b);
   return;
 }

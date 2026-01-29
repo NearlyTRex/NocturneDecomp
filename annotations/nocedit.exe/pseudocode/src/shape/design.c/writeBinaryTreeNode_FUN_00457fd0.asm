@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_writeBinaryTreeNode_FUN_00457fd0(STreeNode *node,FILE *file,int depth)
+; __cdecl void __cdecl shape_design_c_writeBinaryTreeNode_FUN_00457fd0(STreeNode *node,_FILE *file,int depth)
 ;
 ; Parameters:
 ; STreeNode *      Stack[0x4]:4   node
-; FILE *           Stack[0x8]:4   file
+; _FILE *          Stack[0x8]:4   file
 ; int              Stack[0xc]:4   depth
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
@@ -52,7 +52,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 00458005
     PUSH EAX                            ; 00458008
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00458009
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0045800e
     JMP 0x0045808f                      ; 00458011
         ;   XREF to: 0045808f (UNCONDITIONAL_JUMP)  ; LAB_0045808f
@@ -82,7 +82,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 00458053
     PUSH EAX                            ; 00458056
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00458057
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x30                        ; 0045805c
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0045805f
     ADD EAX,EAX                         ; 00458062
@@ -92,7 +92,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00458069
     PUSH dword ptr [EAX]                ; 0045806c
     CALL shape_design.c_writeBinaryTreeNode_FUN_00457fd0 ; 0045806e
-        ;   XREF to: 00457fd0 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeBinaryTreeNode_FUN_00457fd0(STreeNode * node, FILE * file, int depth)
+        ;   XREF to: 00457fd0 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeBinaryTreeNode_FUN_00457fd0(STreeNode * node, _FILE * file, int depth)
     ADD ESP,0xc                         ; 00458073
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00458076
     ADD EAX,EAX                         ; 00458079
@@ -103,7 +103,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00458081
     PUSH dword ptr [EAX + 0x4]          ; 00458084
     CALL shape_design.c_writeBinaryTreeNode_FUN_00457fd0 ; 00458087
-        ;   XREF to: 00457fd0 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeBinaryTreeNode_FUN_00457fd0(STreeNode * node, FILE * file, int depth)
+        ;   XREF to: 00457fd0 (UNCONDITIONAL_CALL)  ; void shape_design.c_writeBinaryTreeNode_FUN_00457fd0(STreeNode * node, _FILE * file, int depth)
     ADD ESP,0xc                         ; 0045808c
     POP EBP                             ; 0045808f
         ;   Label: LAB_0045808f

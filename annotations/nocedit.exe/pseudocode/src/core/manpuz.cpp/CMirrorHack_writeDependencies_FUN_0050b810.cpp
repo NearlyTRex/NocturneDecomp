@@ -2,12 +2,12 @@
 // Address: 0050b810
 // Address Range: [[0050b810, 0050b83b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_manpuz_cpp_CMirrorHack_writeDependencies_FUN_0050b810(CMirrorHack *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_manpuz_cpp_CMirrorHack_writeDependencies_FUN_0050b810(CMirrorHack *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
-core_manpuz_cpp_CMirrorHack_writeDependencies_FUN_0050b810(CMirrorHack *this_ptr,FILE *file_handle)
+core_manpuz_cpp_CMirrorHack_writeDependencies_FUN_0050b810(CMirrorHack *this_ptr,_FILE *file_handle)
 
 {
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(&this_ptr->base,file_handle);

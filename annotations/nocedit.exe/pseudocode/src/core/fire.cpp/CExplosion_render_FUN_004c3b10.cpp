@@ -34,7 +34,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
     return;
   }
   iStack_98 = 0x4c3b45;
-  dVar4 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = round
                     ((double)((1.0 - *(float *)(this_ptr->unk + 0xc)) * (float)27));
   local_20 = (int)ROUND(dVar4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -48,9 +48,9 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   fVar3 = -*(float *)(this_ptr->unk + 0x10) * 108.0f;
   fVar2 = (float)0.00390625;
   iVar1 = *(int *)(this_ptr->unk + 0x18);
-  dVar4 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = round
                     ((double)(*(float *)(this_ptr->unk + 0x10) * (float)148 * fVar2));
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar3 * fVar2));
+  dVar5 = round((double)(fVar3 * fVar2));
   local_1c = (int)ROUND(dVar4);
   local_20 = (int)ROUND(dVar5);
   if (iVar1 != 0) {

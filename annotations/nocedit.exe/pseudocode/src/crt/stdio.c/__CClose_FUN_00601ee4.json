@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 22,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "00601ea0",
+      "from_addr": "00601ed7",
+      "name": "crt_stdio.c_fclose_FUN_00601ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00608fdc",
+      "from_addr": "0060902c",
+      "name": "crt_unknown.c_FUN_00608fdc",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00601ee4",
+    "address_range": [
+      [
+        "00601ee4",
+        "00601f09"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c___CClose_FUN_00601ee4",
+    "signature": "int __cdecl crt_stdio_c___CClose_FUN_00601ee4(_FILE *file_handle,int close_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "006093b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c___freefp_FUN_006093b0"
+    },
+    {
+      "addr": "00601fd0",
+      "is_variadic": false,
+      "name": "crt_stdio.c__fclose_FUN_00601fd0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 11,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 54
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "close_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "address": "00601ee4",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c___CClose_FUN_00601ee4",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00601ee4",
+      "type": "special_crt_function"
+    }
+  ]
+}

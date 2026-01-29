@@ -122,7 +122,7 @@ section .text
     PUSH 0x0                            ; 0054919e
     PUSH EBX                            ; 005491a0
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005491a1
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005491a6
     MOV EBX,EAX                         ; 005491a9
     TEST EAX,EAX                        ; 005491ab
@@ -144,7 +144,7 @@ section .text
     PUSH EAX                            ; 005491dd
     XOR ESI,ESI                         ; 005491de
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 005491e0
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EDX,dword ptr [0x00679398]      ; 005491e5 | g_WindowHeight
     ADD ESP,0x10                        ; 005491eb
     TEST EDX,EDX                        ; 005491ee
@@ -154,7 +154,7 @@ section .text
         ;   Label: LAB_005491f2
     PUSH ESI                            ; 005491f3
     CALL engine_pcx.c_writePCXScanline_FUN_00548c50 ; 005491f4
-        ;   XREF to: 00548c50 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_00548c50(int row_index, FILE * pcx_file)
+        ;   XREF to: 00548c50 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_00548c50(int row_index, _FILE * pcx_file)
     MOV EAX,[0x00679394]                ; 005491f9 | g_WindowWidth
     ADD ESP,0x8                         ; 005491fe
     CMP EAX,0x280                       ; 00549201
@@ -166,7 +166,7 @@ section .text
     PUSH EBX                            ; 00549214
     PUSH ESI                            ; 00549215
     CALL engine_pcx.c_writePCXScanline_FUN_00548c50 ; 00549216
-        ;   XREF to: 00548c50 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_00548c50(int row_index, FILE * pcx_file)
+        ;   XREF to: 00548c50 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_00548c50(int row_index, _FILE * pcx_file)
     ADD ESP,0x8                         ; 0054921b
     MOV ECX,dword ptr [0x00679398]      ; 0054921e | g_WindowHeight
         ;   Label: LAB_0054921e
@@ -182,7 +182,7 @@ section .text
         ;   Label: LAB_0054922f
     PUSH 0xc                            ; 00549230
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 00549232
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
         ;   Label: LAB_00549232
     ADD ESP,0x8                         ; 00549237
     XOR ESI,ESI                         ; 0054923a
@@ -197,7 +197,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x2d01f48]   ; 00549249 | g_SourcePaletteData | CHAR_ARRAY_02d01f49
     PUSH EAX                            ; 0054924f
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 00549250
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
         ;   Label: LAB_00549250
     ADD ESP,0x8                         ; 00549255
     INC ESI                             ; 00549258
@@ -209,7 +209,7 @@ section .text
     PUSH 0x63ec41                       ; 00549266 | = "..\\engine\\pcx.c"
     PUSH EBX                            ; 0054926b
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0054926c
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00549271
     POP ESI                             ; 00549274
     POP EDI                             ; 00549275

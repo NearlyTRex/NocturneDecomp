@@ -6,14 +6,14 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_string_c_mbstrnbytes_FUN_00605ec0(char *str,int char_count)
+int __watcallStack mbstrnbytes(char *str,int char_count)
 
 {
   int iVar1;
   int iVar2;
   
   iVar2 = 0;
-  for (; (iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str), iVar1 == 0 &&
+  for (; (iVar1 = mbstring_termination_check(str), iVar1 == 0 &&
          (char_count != 0)); char_count = char_count + -1) {
     if ((g_MultibyteLocaleActive == 0) || ((g_LeadByteTable[(byte)*str] & 1U) == 0)) {
       iVar2 = iVar2 + 1;
@@ -22,10 +22,10 @@ int __watcallStack crt_string_c_mbstrnbytes_FUN_00605ec0(char *str,int char_coun
       if (((byte *)str)[1] == 0) {
         return iVar2;
       }
-      iVar1 = crt_locale_c_mblen_FUN_00605a40(str);
+      iVar1 = mblen(str);
       iVar2 = iVar2 + iVar1;
     }
-    str = crt_string_c_mbtowc_next_FUN_00605a70(str);
+    str = mbtowc_next(str);
   }
   return iVar2;
 }

@@ -141,7 +141,7 @@ section .text
     ADD EAX,0xc                         ; 004b752c
     PUSH EAX                            ; 004b752f
     CALL crt_time.c_localtime_FUN_00600288 ; 004b7530
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 004b7535
     PUSH EAX                            ; 004b7538
     PUSH 0x627dd9                       ; 004b7539 | = "%m/%d/%y %I:%M:%S %p"
@@ -149,7 +149,7 @@ section .text
     LEA EAX,[ESP + 0xce4]               ; 004b7540
     PUSH EAX                            ; 004b7547
     CALL crt_time.c_strftime_FUN_006002d4 ; 004b7548
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, tm * time_ptr)
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b754d
     LEA EAX,[ESP + 0x9d8]               ; 004b7550
     PUSH EAX                            ; 004b7557

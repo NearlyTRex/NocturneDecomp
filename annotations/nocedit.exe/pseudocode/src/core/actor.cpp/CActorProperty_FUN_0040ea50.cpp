@@ -24,15 +24,15 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
   
   switch(*in_stack_00000004) {
   case 0:
-    crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,"%d");
+    sprintf(in_stack_0000000c,"%d");
     break;
   case 1:
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (in_stack_0000000c,"%g",(double)*(float *)in_stack_00000004[0x1a]);
     return;
   case 2:
     pfVar2 = (float *)in_stack_00000004[0x1a];
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (in_stack_0000000c,"%g,%g,%g",(double)*pfVar2,(double)pfVar2[1],
                (double)pfVar2[2]);
     return;
@@ -165,7 +165,7 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
                        ((CMotionController *)in_stack_00000004[0x1a]);
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        ((CMotionController *)in_stack_00000004[0x1a]);
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (in_stack_0000000c,"%s (%s)",pSVar4,pCVar3->state_names + pSVar4->state_index);
     return;
   case 0xe:
@@ -227,7 +227,7 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
     piVar6 = (int *)in_stack_00000004[0x1a];
     iVar10 = in_stack_00000004[0x17];
     if (iVar10 < *piVar6) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (in_stack_0000000c,"%s => %s",piVar6 + iVar10 * 0x19 + 1,
                  piVar6 + iVar10 * 0x19 + 0x7e);
       return;
@@ -265,10 +265,10 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
     do {
       if ((*(uint *)in_stack_00000004[0x1a] & *(uint *)((int)&0x00000001 + iVar10)) != 0) {
         if (in_stack_0000000c < pcVar9) {
-          iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar9,", ");
+          iVar5 = sprintf(pcVar9,", ");
           pcVar9 = pcVar9 + iVar5;
         }
-        iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar9,"%s");
+        iVar5 = sprintf(pcVar9,"%s");
         pcVar9 = pcVar9 + iVar5;
       }
       iVar10 = iVar10 + 8;

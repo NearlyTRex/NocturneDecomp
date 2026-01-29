@@ -3,19 +3,19 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 63,
+        "column": 40,
         "line": 33,
         "message": "'stack0xffffffe8' was not declared in this scope; did you mean 'in_stack_ffffffe8'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
+        "column": 36,
         "line": 35,
         "message": "'stack0xffffffec' was not declared in this scope; did you mean 'in_stack_ffffffe8'?"
       },
       {
         "category": "other",
-        "column": 38,
+        "column": 39,
         "line": 37,
         "message": "cast from 'CBoneStructure*' to 'int' loses precision [-fpermissive]"
       }
@@ -54,7 +54,7 @@
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 64,
         "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -118,7 +118,7 @@
     {
       "addr": "005ff9f3",
       "is_variadic": false,
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe840",
@@ -286,28 +286,28 @@
       "description": "Direct stack address reference",
       "line": 26,
       "match": "&stack0xffffffe8",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr_00,\"%d\\n\",&stack0xffffffe8);",
+      "text": "_fscanf((_FILE *)this_ptr_00,\"%d\\n\",&stack0xffffffe8);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_ffffffe8",
-      "text": "(this_ptr_00,(FILE *)&stack0xffffffec,&in_stack_ffffffe8->bone_count);",
+      "text": "(this_ptr_00,(_FILE *)&stack0xffffffec,&in_stack_ffffffe8->bone_count);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 28,
       "match": "&stack0xffffffec",
-      "text": "(this_ptr_00,(FILE *)&stack0xffffffec,&in_stack_ffffffe8->bone_count);",
+      "text": "(this_ptr_00,(_FILE *)&stack0xffffffec,&in_stack_ffffffe8->bone_count);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_ffffffe8",
-      "text": "(this_ptr_00,(FILE *)0x0,(int)in_stack_ffffffe8);",
+      "text": "(this_ptr_00,(_FILE *)0x0,(int)in_stack_ffffffe8);",
       "type": "stack_param"
     },
     {

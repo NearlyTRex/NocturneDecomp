@@ -24,7 +24,7 @@ shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,c
   int local_4c;
   int local_48;
   int local_28;
-  FILE *local_24;
+  _FILE *local_24;
   SMRGLHeaderExtended *local_20;
   float local_1c;
   float local_18;
@@ -32,7 +32,7 @@ shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,c
   
   bVar4 = 0;
   local_24 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
-  if (local_24 == (FILE *)0x0) {
+  if (local_24 == (_FILE *)0x0) {
     local_28 = 0;
   }
   else {

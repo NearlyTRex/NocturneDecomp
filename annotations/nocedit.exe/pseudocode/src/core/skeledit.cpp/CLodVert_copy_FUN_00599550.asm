@@ -8,7 +8,7 @@
 ; CLodVert *       Stack[0x8]:4   other
 ;
 ; Called Functions:
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
 
     PUSH 0xc                            ; 00599550
         ;   Label: core_skeledit.cpp_CLodVert_copy_FUN_00599550
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00599555
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00599555
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH ESI                            ; 0059955a
     PUSH EDI                            ; 0059955b
     MOV ECX,dword ptr [ESP + 0xc]       ; 0059955c

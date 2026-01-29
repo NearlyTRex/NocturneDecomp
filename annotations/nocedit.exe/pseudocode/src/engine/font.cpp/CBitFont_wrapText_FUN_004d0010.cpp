@@ -26,7 +26,7 @@ engine_font_cpp_CBitFont_wrapText_FUN_004d0010
   uint local_14;
   
   bVar9 = 0;
-  crt_memory_c_memset_FUN_005fde40(dest_buffer,0,max_lines * line_width);
+  memset(dest_buffer,0,max_lines * line_width);
   if (source_text == (char *)0x0) {
     return 0;
   }

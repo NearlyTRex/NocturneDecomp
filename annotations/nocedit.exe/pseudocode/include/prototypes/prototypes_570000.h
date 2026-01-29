@@ -116,8 +116,8 @@ void __cdecl core_setdir_cpp_CZThumb_restoreZBufferTable_FUN_00574830(CZThumb *t
 void __cdecl core_setdir_cpp_setPixelGrayscale_FUN_005748a0(int x,int y,int grayscale_value);
 CZThumb * __cdecl core_setdir_cpp_CZThumb_ctor_FUN_005748d0(CZThumb *this_ptr);
 CZThumb * __cdecl core_setdir_cpp_CZThumb_dtor_FUN_005748f0(CZThumb *this_ptr);
-void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,FILE *file_handle);
-void __cdecl core_setdir_cpp_CZThumb_write_FUN_00574b20(CZThumb *this_ptr,FILE *file_handle);
+void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle);
+void __cdecl core_setdir_cpp_CZThumb_write_FUN_00574b20(CZThumb *this_ptr,_FILE *file_handle);
 void __cdecl core_setdir_cpp_CZThumb_free_FUN_00574b50(CZThumb *this_ptr);
 float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (CZThumb *this_ptr,CDemonActor *actor,CVector3i *bounding_box_vertices, SMRGLHeaderPrimitive *primitives,int apply_scaling);
 void __cdecl core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(CZThumb *this_ptr);
@@ -129,12 +129,12 @@ int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (CDem
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00 (CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet *this_ptr,char *filename);
-void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,FILE *file_handle);
+void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_setdir_cpp_CDemonSet_freeThumbs_FUN_00575df0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_ptr,char *filename);
 void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemonSet *this_ptr);
-void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200 (CDemonSet *this_ptr,FILE *file_handle);
+void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200 (CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_setdir_cpp_CDemonSet_FUN_005762a0(CDemonSet *this_ptr);
 int __cdecl core_setdir_cpp_CDemonSet_FUN_00576340(CDemonSet *this_ptr);
 undefined4 core_setdir_cpp_FUN_005763a0(void);

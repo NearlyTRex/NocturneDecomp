@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 37,
+        "column": 11,
         "line": 37,
         "message": "'DAT_030f6158' was not declared in this scope; did you mean 'DAT_030f6159'?"
       }
@@ -327,7 +327,7 @@
       "description": "Undefined global data reference",
       "line": 30,
       "match": "DAT_030f6158",
-      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_030f6158,0,0x10000);",
+      "text": "memset(&DAT_030f6158,0,0x10000);",
       "type": "undefined_data"
     },
     {
@@ -397,14 +397,14 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000008",
-      "text": "crt_math_c_round_FUN_005fe6b0((double)((float)iVar4 - in_stack_00000008));",
+      "text": "round((double)((float)iVar4 - in_stack_00000008));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_0000000c",
-      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float)local_28 - in_stack_0000000c));",
+      "text": "dVar9 = round((double)((float)local_28 - in_stack_0000000c));",
       "type": "stack_param"
     },
     {

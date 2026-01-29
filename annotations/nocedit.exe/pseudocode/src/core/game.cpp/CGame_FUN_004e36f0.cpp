@@ -22,11 +22,11 @@ void __cdecl core_game_cpp_CGame_FUN_004e36f0(CGame *this_ptr)
   
   this_ptr->need_chapter_reload = 0;
   *(byte *)&this_ptr->save_version = 0;
-  crt_string_c_splitpath_FUN_005ff178
+  splitpath
             (&g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_10c,"noc");
+  iVar2 = stricmp(local_10c,"noc");
   if ((iVar2 == 0) ||
-     (iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_10c,".noc"), iVar2 == 0)) {
+     (iVar2 = stricmp(local_10c,".noc"), iVar2 == 0)) {
     pcVar4 = local_210;
     pcVar3 = &g_CurrentSaveFile;
     do {

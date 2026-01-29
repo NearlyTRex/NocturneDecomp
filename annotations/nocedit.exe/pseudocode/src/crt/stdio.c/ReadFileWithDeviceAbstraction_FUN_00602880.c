@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 int __watcallStack
-crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880
+ReadFileWithDeviceAbstraction
           (int file_handle_index,void *buffer,int bytes_to_read)
 
 {
@@ -19,7 +19,7 @@ crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880
   DWORD in_stack_00000014;
   
   if ((file_handle_index < 0) || (g_MaxHandleCount < (uint)file_handle_index)) {
-    crt_errno_c_setErrno_FUN_00602790(4);
+    setErrno(4);
     unaff_ESI = -1;
   }
   else {
@@ -37,7 +37,7 @@ crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880
                               (LPOVERLAPPED)0x0);
     if (BVar2 == 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
-      DVar3 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+      DVar3 = __set_errno();
       return DVar3;
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);

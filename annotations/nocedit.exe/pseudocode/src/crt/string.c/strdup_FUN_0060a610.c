@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl crt_string_c_strdup_FUN_0060a610(char *str)
+char * __cdecl strdup(char *str)
 
 {
   char cVar1;
@@ -26,7 +26,7 @@ char * __cdecl crt_string_c_strdup_FUN_0060a610(char *str)
     pcVar2 = pcVar2 + 1;
   } while (cVar1 != '\0');
   uVar3 = ~uVar3;
-  pcVar2 = crt_memory_c_malloc_FUN_00601bb0(uVar3);
+  pcVar2 = malloc(uVar3);
   if (pcVar2 != (char *)0x0) {
     pcVar5 = pcVar2;
     for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {

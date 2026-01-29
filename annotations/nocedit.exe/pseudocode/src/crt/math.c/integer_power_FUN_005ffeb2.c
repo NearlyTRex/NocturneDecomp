@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 __fpureg crt_math_c_integer_power_FUN_005ffeb2(float10 base,ushort exponent)
+float10 __fpureg integer_power(float10 base,ushort exponent)
 
 {
   ushort uVar1;

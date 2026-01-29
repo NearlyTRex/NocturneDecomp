@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0 (CKeyFramedModelInstance *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0 (CKeyFramedModelInstance *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[21]:
 ;   core_ammo.cpp_CAmmo_writeDependencies_FUN_004113e0 at 004114d3
@@ -58,7 +58,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 0047edfe
     PUSH ECX                            ; 0047ee02
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0047ee03
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0047ee08
     PUSH 0x0                            ; 0047ee0b
     MOV ESI,dword ptr [ESP + 0x14]      ; 0047ee0d
@@ -69,7 +69,7 @@ section .text
     ADD ESP,0x4                         ; 0047ee18
     PUSH EAX                            ; 0047ee1b
     CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0047ee1c
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 0047ee21
     POP ESI                             ; 0047ee24
     POP EBX                             ; 0047ee25

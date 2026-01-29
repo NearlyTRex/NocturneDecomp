@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   filename
 ;
 ; XREF[1]:
-;   crt_io.c_deleteFile_FUN_005ff9d0 at 005ff9d5
+;   crt_stdio.c_remove_FUN_005ff9d0 at 005ff9d5
 ;
 ; Referenced Globals:
 ;   DeleteFileA* g_DeleteFileAFunc = 00211cc2

@@ -20,7 +20,7 @@ void core_trigger_cpp_FUN_005e0ba0(void)
   case 0:
   case 1:
     pfVar1 = (float *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
-    dVar2 = crt_math_c_ceil_FUN_006001b2
+    dVar2 = ceil
                       ((double)(SQRT((pfVar1[5] - pfVar1[2]) * (pfVar1[5] - pfVar1[2]) +
                                      (pfVar1[3] - *pfVar1) * (pfVar1[3] - *pfVar1) +
                                      (pfVar1[4] - pfVar1[1]) * (pfVar1[4] - pfVar1[1])) +

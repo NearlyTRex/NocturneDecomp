@@ -9,6 +9,6 @@
 void __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,2,&g_CMorphModelTypeInfo);
+  __arrfini(array,2,&g_CMorphModelTypeInfo);
   return;
 }

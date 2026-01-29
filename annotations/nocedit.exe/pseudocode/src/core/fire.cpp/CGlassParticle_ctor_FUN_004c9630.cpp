@@ -13,8 +13,7 @@ CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_ctor_FUN_004c9630(CGlassPa
   void *pvVar2;
   
   pCVar1 = core_particle_cpp_CParticle_ctor_FUN_00545650(&this_ptr->base);
-  pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (&pCVar1[2].position.z,3,&g_CVectorTypeInfo);
+  pvVar2 = __arrinit(&pCVar1[2].position.z,3,&g_CVectorTypeInfo);
   *(CParticle_vtable **)((int)pvVar2 + -0x44) = &g_CGlassParticleVTable;
   return (CGlassParticle *)((int)pvVar2 + -0x78);
 }

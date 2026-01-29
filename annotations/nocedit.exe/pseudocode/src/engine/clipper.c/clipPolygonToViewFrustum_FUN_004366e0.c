@@ -60,7 +60,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
   
   bVar22 = 0;
   if ((vertex_count < 0) || (0x10 < vertex_count)) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_24c,"Too many poly verticies : %d",vertex_count);
+    sprintf(local_24c,"Too many poly verticies : %d",vertex_count);
     g_CurrentFilename = "..\\engine\\clipper.c";
     g_CurrentLineNumber = 0x276;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_24c);

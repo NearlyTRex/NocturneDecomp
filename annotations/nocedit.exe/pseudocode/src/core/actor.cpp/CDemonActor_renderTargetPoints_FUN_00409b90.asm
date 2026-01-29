@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   engine_2d.c_plotPixel_FUN_00401140
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
@@ -46,8 +46,8 @@ section .text
     PUSH 0xa                            ; 00409bb9
     LEA EAX,[ESP + 0x8]                 ; 00409bbb
     PUSH EAX                            ; 00409bbf
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00409bc0
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00409bc0
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00409bc5
     MOV EAX,ESP                         ; 00409bc8
     PUSH EAX                            ; 00409bca

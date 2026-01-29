@@ -81,7 +81,7 @@ LAB_0051d5ec:
       shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(this_ptr->next_lod);
     }
     iVar2 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff44,"%d faces, %d original",iVar2);
+    sprintf(&stack0xffffff44,"%d faces, %d original",iVar2);
     engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff44,0,0);
     engine_2d_c_drawText_FUN_00401fd0(g_LodMeshProgressBuffer,0,0xb);
     shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&local_58);
@@ -101,9 +101,9 @@ LAB_0051d5ec:
       local_58.max.z = pCVar4->z;
     }
     local_14 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_58);
-    dVar5 = crt_math_c_round_FUN_005fe6b0((double)local_14);
+    dVar5 = round((double)local_14);
     local_28.z = (float)(int)ROUND(dVar5);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff40,"Pixel Height: %d",local_28.z);
+    sprintf(&stack0xffffff40,"Pixel Height: %d",local_28.z);
     engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff40,0,0x16);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);

@@ -19,7 +19,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 00424b56
     PUSH ECX                            ; 00424b5a
     CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 00424b5b
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00424b60
     MOV EBX,dword ptr [ESP + 0xc]       ; 00424b63
     MOV EAX,dword ptr [ESP + 0x8]       ; 00424b67

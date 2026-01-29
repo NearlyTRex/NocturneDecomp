@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack crt_time_c_formatTwoDigits_FUN_00601640(int number,int position,char *buffer)
+void __watcallStack formatTwoDigits(int number,int position,char *buffer)
 
 {
   char local_c;

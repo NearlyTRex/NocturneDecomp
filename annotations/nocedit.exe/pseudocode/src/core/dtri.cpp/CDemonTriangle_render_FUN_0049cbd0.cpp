@@ -32,12 +32,12 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[2].projected_vertex,&local_24);
   dVar1 = -65536;
-  crt_math_c_round_FUN_005fe6b0((double)(this_ptr->normal).x * -65536);
-  crt_math_c_round_FUN_005fe6b0((double)(this_ptr->normal).y * dVar1);
-  crt_math_c_round_FUN_005fe6b0(dVar1 * (double)(this_ptr->normal).z);
+  round((double)(this_ptr->normal).x * -65536);
+  round((double)(this_ptr->normal).y * dVar1);
+  round(dVar1 * (double)(this_ptr->normal).z);
   this_ptr_00 = (CDemonRenderer *)0x49cd09;
   polygon_info = g_CDemonRendererPtr1;
-  crt_math_c_round_FUN_005fe6b0
+  round
             ((double)(this_ptr->plane_distance * (float)65536 *
                      (float)256));
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0

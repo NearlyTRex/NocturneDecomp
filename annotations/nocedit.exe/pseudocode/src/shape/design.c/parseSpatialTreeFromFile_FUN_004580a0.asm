@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *file)
+; __cdecl STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *file)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -55,7 +55,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004580ca
     PUSH EAX                            ; 004580cd
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004580ce
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x20                        ; 004580d3
     MOV dword ptr [EBP + -0x14],EAX     ; 004580d6
     CMP dword ptr [EBP + -0x14],0x0     ; 004580d9
@@ -101,14 +101,14 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00458139
     PUSH EAX                            ; 0045813c
     CALL shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 ; 0045813d
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(FILE * file)
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(_FILE * file)
     ADD ESP,0x4                         ; 00458142
     MOV EDX,dword ptr [EBP + -0x20]     ; 00458145
     MOV dword ptr [EDX],EAX             ; 00458148
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045814a
     PUSH EAX                            ; 0045814d
     CALL shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 ; 0045814e
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(FILE * file)
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(_FILE * file)
     ADD ESP,0x4                         ; 00458153
     MOV EDX,dword ptr [EBP + -0x20]     ; 00458156
     MOV dword ptr [EDX + 0x4],EAX       ; 00458159

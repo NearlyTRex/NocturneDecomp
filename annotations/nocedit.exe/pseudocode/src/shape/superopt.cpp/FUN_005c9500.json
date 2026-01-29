@@ -192,13 +192,13 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 54,
         "line": 145,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 56,
         "line": 149,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -409,19 +409,19 @@
   },
   "function_calls": [
     {
+      "addr": "0050f1d0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1d0"
+    },
+    {
       "addr": "005fe659",
       "is_variadic": false,
-      "name": "crt_memory.c_free_FUN_005fe659"
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
     },
     {
       "addr": "006021da",
       "is_variadic": false,
-      "name": "crt_memory.c_malloc_FUN_006021da"
-    },
-    {
-      "addr": "0050f1d0",
-      "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1d0"
+      "name": "shape_memdbg.cpp_malloc_FUN_006021da"
     },
     {
       "addr": "005ca590",
@@ -1120,14 +1120,14 @@
       "description": "Unresolved stack parameter",
       "line": 138,
       "match": "in_stack_00000004",
-      "text": "local_1c = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);",
+      "text": "local_1c = shape_memdbg_cpp_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 142,
       "match": "in_stack_00000004",
-      "text": "local_20 = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);",
+      "text": "local_20 = shape_memdbg_cpp_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);",
       "type": "stack_param"
     },
     {

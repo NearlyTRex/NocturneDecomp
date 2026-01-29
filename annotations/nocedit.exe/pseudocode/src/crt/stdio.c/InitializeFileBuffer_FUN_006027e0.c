@@ -2,18 +2,18 @@
 // Address: 006027e0
 // Address Range: [[006027e0, 00602870]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(FILE *file)
+// Signature: void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(_FILE *file)
 
 #include "nocturne.h"
 
-void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(FILE *file)
+void __cdecl InitializeFileBuffer(_FILE *file)
 
 {
   streambuf *psVar1;
   char *pcVar2;
   byte bVar3;
   
-  crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(file);
+  DetectDeviceAndSetBuffering(file);
   if (file->_bufsize == 0) {
     if ((file->_flag & 0x200) == 0) {
       if ((file->_flag & 0x400) == 0) {
@@ -27,7 +27,7 @@ void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(FILE *file)
       file->_bufsize = 0x86;
     }
   }
-  pcVar2 = crt_memory_c_malloc_FUN_00601bb0(file->_bufsize);
+  pcVar2 = malloc(file->_bufsize);
   file->_link->__reserve_end = pcVar2;
   if (file->_link->__reserve_end == (char *)0x0) {
     bVar3 = *(byte *)((int)&file->_flag + 1) & 0xf8;

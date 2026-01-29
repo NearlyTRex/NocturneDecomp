@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 long __cdecl
-crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *ExceptionInfo)
+TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
 
 {
   char cVar1;
@@ -25,9 +25,9 @@ crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *Except
   bVar7 = 0;
   pEVar2 = ExceptionInfo->ExceptionRecord;
   pCVar3 = ExceptionInfo->ContextRecord;
-  BVar4 = crt_windows_c_has_active_window_FUN_0060a710();
+  BVar4 = has_active_window();
   if ((BVar4 != 0) ||
-     (pvVar5 = crt_stdio_c_GetConsoleOutputHandle_FUN_0060ce3c(), pvVar5 == (HANDLE)0xffffffff)) {
+     (pvVar5 = GetConsoleOutputHandle(), pvVar5 == (HANDLE)0xffffffff)) {
     return 0;
   }
   local_114[0] = '\0';
@@ -50,9 +50,9 @@ crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *Except
     }
     if (0xc0000004 < uVar6) {
       if (uVar6 < 0xc0000006) {
-        crt_exception_c_FormatHexString_FUN_0060a748
+        FormatHexString
                   (local_114,"The instruction at 0x00000000 referenced memory ",(DWORD)pEVar2->ExceptionAddress);
-        crt_exception_c_FormatHexString_FUN_0060a748
+        FormatHexString
                   (local_114,"at 0x00000000.\nThe memory could not be ",pEVar2->ExceptionInformation[1]);
         if (pEVar2->ExceptionInformation[0] == 0) {
           pcVar8 = "read.\n";
@@ -117,12 +117,12 @@ crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *Except
       }
     }
   }
-  crt_exception_c_FormatHexString_FUN_0060a748
+  FormatHexString
             (local_114,"The program encountered exception 0x00000000 at ",pEVar2->ExceptionCode);
   value = pEVar2->ExceptionAddress;
   pcVar8 = "address 0x00000000 and\ncannot continue.\n";
 LAB_0060a968:
-  crt_exception_c_FormatHexString_FUN_0060a748(local_114,pcVar8,(DWORD)value);
+  FormatHexString(local_114,pcVar8,(DWORD)value);
   uVar6 = 0xffffffff;
   pcVar8 = local_114;
   do {

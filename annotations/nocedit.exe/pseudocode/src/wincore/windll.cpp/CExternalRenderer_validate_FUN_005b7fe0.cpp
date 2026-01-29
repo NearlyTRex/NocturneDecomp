@@ -43,7 +43,7 @@ wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
       }
     }
     if ((uVar4 != 0) && (capabilities->dll_identifier[0] != '\0')) {
-      iVar5 = crt_string_c_strcmp_FUN_005fef20
+      iVar5 = strcmp
                         (capabilities->dll_identifier,this_ptr->dll_identifier);
       uVar4 = (uint)(iVar5 == 0);
     }

@@ -9,7 +9,7 @@
 /* WARNING: Type propagation algorithm not settling */
 
 int __cdecl
-crt_stdio_c_FormatEngine_FUN_00602950
+FormatEngine
           (void *output_context,char *format,va_list_t args,OUTPUT_CALLBACK callback)
 
 {
@@ -71,7 +71,7 @@ LAB_00602d41:
       }
     }
     local_28 = *(va_list_t *)args;
-    pcVar5 = crt_stdio_c_ScanFormatSpec_FUN_00602d78(format,&local_28,&local_88);
+    pcVar5 = ScanFormatSpec(format,&local_28,&local_88);
     *(va_list_t *)args = local_28;
     local_88.conversion_char = *pcVar5;
     format = pcVar5 + 1;
@@ -86,7 +86,7 @@ LAB_00602d41:
       local_24 = *(va_list_t *)args;
       wide_string_offset =
            (wchar_t *)
-           crt_stdio_c_ConvertFormatSpec_FUN_00603238
+           ConvertFormatSpec
                      ((char *)&local_88.length_modifier_flags,&local_24,&local_88);
       *(va_list_t *)args = local_24;
       local_88.width =
@@ -122,12 +122,12 @@ LAB_00602d41:
           }
         }
         else {
-          crt_stdio_c_FormatWideString_FUN_006031c0
+          FormatWideString
                     (wide_string_offset,(ushort)local_1c,&local_88,callback);
         }
       }
       else if (local_88.conversion_char == 'S') {
-        crt_stdio_c_FormatWideString_FUN_006031c0
+        FormatWideString
                   (wide_string_offset,(ushort)local_1c,&local_88,callback);
       }
       else {

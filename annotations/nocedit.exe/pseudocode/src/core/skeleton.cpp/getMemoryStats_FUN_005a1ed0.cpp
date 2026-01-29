@@ -38,7 +38,7 @@ void __cdecl core_skeleton_cpp_getMemoryStats_FUN_005a1ed0(char *output_buffer)
       this_ptr_00 = this_ptr_00 + 1;
     } while (iVar3 < g_DeformableModelCount);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (output_buffer,"%d skeletons, %d bytes, %d models, %d bytes",g_SkeletonPoolCount,iVar4,
              g_DeformableModelCount,iVar1);
   return;

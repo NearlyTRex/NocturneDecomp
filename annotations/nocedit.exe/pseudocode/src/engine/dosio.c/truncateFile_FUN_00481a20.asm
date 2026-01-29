@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(FILE *file_handle,long new_size_bytes)
+; __cdecl int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(_FILE *file_handle,long new_size_bytes)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   file_handle
+; _FILE *          Stack[0x4]:4   file_handle
 ; long             Stack[0x8]:4   new_size_bytes
 ;
 ; Called Functions:
-;   crt_io.c_ftruncate_FUN_00600cf0
+;   crt_io.c_chsize_FUN_00600cf0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   Label: LAB_00481a2f
     PUSH EDX                            ; 00481a33
     PUSH EAX                            ; 00481a34
-    CALL crt_io.c_ftruncate_FUN_00600cf0 ; 00481a35
-        ;   XREF to: 00600cf0 (UNCONDITIONAL_CALL)  ; int crt_io.c_ftruncate_FUN_00600cf0(int file_handle, long new_size)
+    CALL crt_io.c_chsize_FUN_00600cf0   ; 00481a35
+        ;   XREF to: 00600cf0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chsize_FUN_00600cf0(int file_handle, long new_size)
     ADD ESP,0x8                         ; 00481a3a
     TEST EAX,EAX                        ; 00481a3d
     JNZ 0x00481a2c                      ; 00481a3f

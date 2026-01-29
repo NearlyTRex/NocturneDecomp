@@ -23,7 +23,7 @@ core_texlist_cpp_CTextureList_setMasterTextureSelection_FUN_005dc6c0
   if (0 < this_ptr->master_texture_count) {
     str2 = this_ptr->master_texture_names;
     do {
-      iVar2 = crt_string_c_strcmp_FUN_005fef20(filename,*str2);
+      iVar2 = strcmp(filename,*str2);
       iVar1 = iVar3;
       if (iVar2 == 0) break;
       iVar3 = iVar3 + 1;

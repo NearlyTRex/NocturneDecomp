@@ -29,7 +29,7 @@ void core_smiley_cpp_FUN_005a32a0(void)
     if (2 < iVar1) {
       in_stack_00000008[0xb] = 0x3f800000;
       if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {
-        iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+        iVar1 = rand();
         switch(iVar1 % 6) {
         case 0:
           iVar1 = *(int *)(in_stack_00000004[1].base.create_event + 0x28);

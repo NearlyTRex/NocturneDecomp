@@ -29,7 +29,7 @@
 // FUNCTION PROTOTYPES - Range 0x420000
 // =============================================================================
 
-void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,FILE *file_handle);
+void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,_FILE *file_handle);
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420180 (CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
 SScrape * __cdecl core_box_cpp_SScrape_ctor_FUN_00420200(SScrape *this_ptr);
 SScrape * __cdecl core_box_cpp_SScrape_dtor_FUN_00420210(SScrape *this_ptr);
@@ -76,7 +76,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 
 int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_004226d0(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0 (CBoxActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_boxactor_cpp_CBoxActor_processInEditor_FUN_004228e0(CBoxActor *this_ptr);
-void __cdecl core_boxactor_cpp_CBoxActor_writeDependencies_FUN_00422900(CBoxActor *this_ptr,FILE *file_handle);
+void __cdecl core_boxactor_cpp_CBoxActor_writeDependencies_FUN_00422900(CBoxActor *this_ptr,_FILE *file_handle);
 CLightActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_00422950(void);
 CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_00422980(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00422990(CLightActor *this_ptr);

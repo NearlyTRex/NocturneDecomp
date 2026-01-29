@@ -52,7 +52,7 @@ section .text
     PUSH EDX                            ; 00522d9c
     PUSH 0x6389c8                       ; 00522d9d | = "world"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00522da2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00522da7
     MOV EBX,EAX                         ; 00522daa
     TEST EAX,EAX                        ; 00522dac
@@ -82,7 +82,7 @@ section .text
     PUSH 0x638a1c                       ; 00522de7 | = "..\\core\\mission.cpp"
     PUSH EBX                            ; 00522dec
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00522ded
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00522df2
     MOV EDX,dword ptr [ESP + 0x10]      ; 00522df5
     PUSH EDX                            ; 00522df9

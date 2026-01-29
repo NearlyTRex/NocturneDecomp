@@ -19,12 +19,12 @@ int core_script_cpp_FUN_005606e0(void)
   char local_110 [256];
   
   iVar2 = 0;
-  crt_string_c_splitpath_FUN_005ff178
+  splitpath
             (in_stack_00000008,(char *)0x0,(char *)0x0,local_110,(char *)0x0);
   if (0 < *(int *)(in_stack_00000004 + 0x1c)) {
     iVar3 = 0;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0
+      iVar1 = stricmp
                         ((char *)(*(int *)(in_stack_00000004 + 0x20) + iVar3),local_110);
       if (iVar1 == 0) {
         return iVar2;

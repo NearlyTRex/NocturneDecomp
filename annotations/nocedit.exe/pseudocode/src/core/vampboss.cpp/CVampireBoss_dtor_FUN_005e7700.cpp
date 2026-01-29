@@ -20,8 +20,8 @@ core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700
   uint unaff_retaddr;
   
   if ((d1 & 4) != 0) {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CVampireBossTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr_00 = __vec_delete(this_ptr,&g_CVampireBossTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
   core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)this_ptr->unk2);

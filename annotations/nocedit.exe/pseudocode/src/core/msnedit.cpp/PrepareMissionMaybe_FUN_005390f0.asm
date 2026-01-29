@@ -133,8 +133,8 @@ section .text
     SUB ESP,0x9a4                       ; 005390f6
     SUB EBP,0x7e                        ; 005390fc
     PUSH 0x680800                       ; 005390ff | = "$$UNDO$$.TMP"
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00539104
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00539104
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00539109
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053910c
     PUSH 0x2f7a024                      ; 00539112 | DAT_02f7a024
@@ -1326,8 +1326,8 @@ section .text
     MOV dword ptr [EAX + 0x15ac8c],0x0  ; 00539e41 | g_CDemonSetInstance.unk_lighting_param3
     MOV EBX,dword ptr [EBP + 0x2e]      ; 00539e4b
     MOV dword ptr [EAX + 0x15ac90],0x0  ; 00539e4e | g_CDemonSetInstance.unk_lighting_param4
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00539e58
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00539e58
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00539e5d
     TEST EBX,EBX                        ; 00539e60
     JZ 0x0053af19                       ; 00539e62

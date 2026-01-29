@@ -179,7 +179,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
              (float10)(double)CONCAT44(param_4,unaff_EBX);
   }
   else {
-    fVar20 = crt_math_c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
+    fVar20 = pentiumFdivBugWorkaroundDouble
                        ((float10)(double)CONCAT44(param_2,param_1),
                         (double)CONCAT44(param_4,unaff_EBX));
   }

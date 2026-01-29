@@ -45,26 +45,26 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 17,
-        "line": 106,
+        "column": 16,
+        "line": 105,
         "message": "'stack0xfffffea8' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 113,
+        "line": 112,
         "message": "invalid cast from type 'float' to type 'char*'"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 115,
+        "line": 114,
         "message": "invalid cast from type 'char*' to type 'float'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 123,
+        "line": 122,
         "message": "'stack0xfffffea4' was not declared in this scope"
       }
     ],
@@ -92,11 +92,11 @@
   },
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 377,
+    "complexity_score": 376,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 136,
     "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -106,7 +106,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 541
+    "total_lines": 540
   },
   "cross_references": [
     {
@@ -177,7 +177,7 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     },
     {
       "addr": "00441890",
@@ -440,49 +440,49 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 98,
       "match": "&stack0xfffffea8",
-      "text": "(&stack0xfffffea8,10,&g_CVectorTypeInfo);",
+      "text": "__arrinit(&stack0xfffffea8,10,&g_CVectorTypeInfo);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 99,
       "match": "&stack0xfffffea8",
       "text": "iVar2 = (*((actor_ptr->vtable)._ub)->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 115,
       "match": "&stack0xfffffea4",
       "text": "(actor_ptr,&CStack_54,(CVector3f *)&stack0xfffffea4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 117,
       "match": "in_stack_00000004",
       "text": "(*(CDemonActor **)(in_stack_00000004[5].create_event + 0x50),&CStack_24,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 125,
+      "line": 124,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,&CStack_84,&CStack_54);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
+      "line": 127,
       "match": "SQRT",
       "text": "(SQRT(CStack_90.z * CStack_90.z + CStack_90.x * CStack_90.x + CStack_90.y * CStack_90.y) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 128,
       "match": "SQRT",
       "text": "SQRT(CStack_48.z * CStack_48.z + CStack_48.x * CStack_48.x + CStack_48.y * CStack_48.y)))",
       "type": "decompiler_intrinsic"

@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __watcallStack
-crt_string_c_strncpy_safe_FUN_005ff130(char *dest,char *src,int length,int maxlen)
+strncpy_safe(char *dest,char *src,int length,int maxlen)
 
 {
   int iVar1;
@@ -16,9 +16,9 @@ crt_string_c_strncpy_safe_FUN_005ff130(char *dest,char *src,int length,int maxle
     if (maxlen < length) {
       length = maxlen;
     }
-    iVar1 = crt_string_c_mbstrnlen_FUN_00605e50(src,length);
-    crt_string_c_mbstrncpy_FUN_00605e90(dest,src,iVar1);
-    iVar1 = crt_string_c_mbstrnbytes_FUN_00605ec0(dest,iVar1);
+    iVar1 = mbstrnlen(src,length);
+    mbstrncpy(dest,src,iVar1);
+    iVar1 = mbstrnbytes(dest,iVar1);
     dest[iVar1] = '\0';
   }
   return;

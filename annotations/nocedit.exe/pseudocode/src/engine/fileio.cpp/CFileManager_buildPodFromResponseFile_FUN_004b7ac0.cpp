@@ -11,10 +11,10 @@ engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(CFileManage
 
 {
   int *piVar1;
-  FILE *pFVar2;
+  _FILE *p_Var2;
   byte *pbVar3;
   int iVar4;
-  FILE *file;
+  _FILE *file;
   uint character;
   char local_5c [80];
   
@@ -25,11 +25,11 @@ engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(CFileManage
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (local_5c,(char *)0x0,"rt","..\\engine\\fileio.cpp",0xa67);
-  if (file != (FILE *)0x0) {
+  if (file != (_FILE *)0x0) {
     engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(this_ptr);
     while( true ) {
       if ((file->_cnt < 1) || ((byte)*file->_ptr - 0xd < 0xfe)) {
-        character = crt_stdio_c_fgetc_FUN_005fe840(file);
+        character = _fgetc(file);
       }
       else {
         pbVar3 = (byte *)file->_ptr;
@@ -38,11 +38,11 @@ engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(CFileManage
         character = (uint)*pbVar3;
       }
       if (character == 0xffffffff) break;
-      pFVar2 = this_ptr->file_ptr;
-      if (((pFVar2->_flag & 0x400) == 0) && (1 < pFVar2->_bufsize - pFVar2->_cnt)) {
-        *pFVar2->_ptr = (char)character;
-        if (*pFVar2->_ptr == '\n') {
-          crt_stdio_c_fputc_FUN_006007a0(10,this_ptr->file_ptr);
+      p_Var2 = this_ptr->file_ptr;
+      if (((p_Var2->_flag & 0x400) == 0) && (1 < p_Var2->_bufsize - p_Var2->_cnt)) {
+        *p_Var2->_ptr = (char)character;
+        if (*p_Var2->_ptr == '\n') {
+          _fputc(10,this_ptr->file_ptr);
         }
         else {
           pbVar3 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);
@@ -53,7 +53,7 @@ engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(CFileManage
         }
       }
       else {
-        crt_stdio_c_fputc_FUN_006007a0(character,this_ptr->file_ptr);
+        _fputc(character,this_ptr->file_ptr);
       }
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(this_ptr->file_ptr,"..\\engine\\fileio.cpp",0xa79);

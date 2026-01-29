@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 16,
-        "line": 57,
+        "line": 56,
         "message": "cast from 'SLod*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 58,
+        "line": 57,
         "message": "cast from 'SLod*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 78,
+        "line": 77,
         "message": "'stack0x00000000' was not declared in this scope"
       }
     ],
@@ -31,30 +31,36 @@
       {
         "category": "other",
         "column": 25,
-        "line": 37,
+        "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 39,
+        "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 61,
+        "line": 60,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 67,
+        "line": 66,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 54,
+        "line": 68,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 44,
         "line": 69,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -63,28 +69,22 @@
         "column": 44,
         "line": 70,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 71,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 120,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 89,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
       "stack_ref"
     ],
-    "total_lines": 319
+    "total_lines": 318
   },
   "cross_references": [
     {
@@ -126,7 +126,7 @@
     {
       "addr": "005fe667",
       "is_variadic": false,
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
     }
   ],
   "globals": [
@@ -479,7 +479,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 71,
+      "line": 70,
       "match": "&stack0x00000000",
       "text": "if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 3) {",
       "type": "stack_ref"

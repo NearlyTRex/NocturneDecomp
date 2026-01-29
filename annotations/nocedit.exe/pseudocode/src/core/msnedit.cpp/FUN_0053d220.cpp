@@ -111,7 +111,7 @@ LAB_0053d316:
                 pcVar2 = (char *)0x0;
 LAB_0053d336:
                 if (pcVar2 == (char *)0x0) {
-                  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,in_stack_0000000c);
+                  iVar1 = stricmp(in_stack_00000008,in_stack_0000000c);
                   if ((iVar1 != 0) &&
                      (pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(this_ptr),
                      pcVar3 != (char *)0x0)) {

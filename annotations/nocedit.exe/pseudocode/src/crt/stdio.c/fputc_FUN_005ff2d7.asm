@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fputc_FUN_005ff2d7(FILE *stream,int character)
+; __cdecl int __cdecl crt_stdio_c_fputc_FUN_005ff2d7(_FILE *stream,int character)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   stream
+; _FILE *          Stack[0x4]:4   stream
 ; int              Stack[0x8]:4   character
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 005ff35d
         ;   Label: LAB_005ff35d
     CALL crt_stdio.c_prepare_stream_for_write_FUN_00606055 ; 005ff35e
-        ;   XREF to: 00606055 (UNCONDITIONAL_CALL)  ; BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
+        ;   XREF to: 00606055 (UNCONDITIONAL_CALL)  ; BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(_FILE * stream)
     ADD ESP,0x4                         ; 005ff363
     TEST EAX,EAX                        ; 005ff366
     JNZ 0x005ff305                      ; 005ff368
@@ -111,7 +111,7 @@ section .text
     PUSH EBX                            ; 005ff379
         ;   Label: LAB_005ff379
     CALL crt_stdio.c_stream_flush_FUN_006060bb ; 005ff37a
-        ;   XREF to: 006060bb (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_stream_flush_FUN_006060bb(FILE * stream)
+        ;   XREF to: 006060bb (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_stream_flush_FUN_006060bb(_FILE * stream)
     ADD ESP,0x4                         ; 005ff37f
     JMP 0x005ff355                      ; 005ff382
         ;   XREF to: 005ff355 (UNCONDITIONAL_JUMP)  ; LAB_005ff355

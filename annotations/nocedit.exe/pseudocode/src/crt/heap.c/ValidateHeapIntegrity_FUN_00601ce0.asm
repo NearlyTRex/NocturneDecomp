@@ -10,7 +10,7 @@
 ;   crt_heap.c_AllocateNewHeapBlock_FUN_00609668 at 00609706
 ;   crt_heap.c_ResizeBlockInPlace_FUN_006097b8 at 00609960
 ;   crt_memory.c_free_FUN_00601cd0 at 00601cd5
-;   crt_memory.c_realloc_implementation_FUN_00601e08 at 00601e81
+;   crt_memory.c_realloc__FUN_00601e08 at 00601e81
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f82d
 ;
 ; Referenced Globals:

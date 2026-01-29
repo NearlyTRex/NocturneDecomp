@@ -121,6 +121,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_shovel.cpp_fire_FUN_00588c20
       Suspects: stack_param, stack_param
 
+  core/fileman.cpp (2 remaining of 12)
+    - core_fileman.cpp_CDemonFileManager_dtor_FUN_00508880
+      Suspects: extra_output, extra_output
+    - core_fileman.cpp_preprocessMusicFiles_FUN_004bd750
+      Suspects: stack_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_param
+
   core/dimage.cpp (2 remaining of 6)
     - core_dimage.cpp_CDemonImage_load_FUN_00471ad0
       Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
@@ -161,7 +167,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [special_crt_function] - 259 functions
+  [special_crt_function] - 256 functions
     crt_stub.c_staticInit_FUN_005fde92                      (  4 lines)
     crt_stub.c_staticFinal_FUN_005fde93                     (  4 lines)
     crt_stub.c_staticInit_FUN_005ff9f2                      (  4 lines)
@@ -172,9 +178,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_thread.c_GetTLS_FUN_0060242c                        (  4 lines)
     crt_unknown.c_FUN_0060eb3a                              (  4 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
-    ... and 249 more
+    ... and 246 more
 
-  [param_count_too_few] - 139 functions
+  [param_count_too_few] - 141 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -185,19 +191,19 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
     support_newmsg.cpp_freeSkullBitmaps_FUN_00544750        (  5 lines)
     support_newmsg.cpp_freeBitmap_FUN_00544730              (  5 lines)
-    ... and 129 more
+    ... and 131 more
 
   [pointer_cast] - 65 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
-    core_dracbrid.cpp_ctor_FUN_00486d30                     (  7 lines)
-    core_cloth.cpp_SClothVertex_ctor_FUN_0043e420           (  7 lines)
-    core_gore.cpp_FUN_004ee370                              (  7 lines)
-    core_flies.cpp_FUN_004ccd20                             (  7 lines)
-    core_manpuz.cpp_SGem_ctor_FUN_0050b940                  (  7 lines)
-    core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  7 lines)
-    core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  7 lines)
-    core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  7 lines)
+    core_dracbrid.cpp_ctor_FUN_00486d30                     (  6 lines)
+    core_cloth.cpp_SClothVertex_ctor_FUN_0043e420           (  6 lines)
+    core_gore.cpp_FUN_004ee370                              (  6 lines)
+    core_flies.cpp_FUN_004ccd20                             (  6 lines)
+    core_manpuz.cpp_SGem_ctor_FUN_0050b940                  (  6 lines)
+    core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
+    core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  6 lines)
+    core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
     ... and 55 more
 
   [stack_ref] - 40 functions
@@ -226,7 +232,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_game.cpp_CGame_slamDT_FUN_004e3080                 ( 14 lines)
     ... and 27 more
 
-  [param_count_too_many] - 25 functions
+  [param_count_too_many] - 24 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
     support_trisock.cpp_cleanupWinsock_FUN_005e1ee0         (  7 lines)
     core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0 (  8 lines)
@@ -237,7 +243,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00 (  9 lines)
     core_game.cpp_CallToJoystickStuff_FUN_004dc230          (  9 lines)
     shape_edittool.cpp_CEditorTools_showCheatInputDialog_FU ( 10 lines)
-    ... and 15 more
+    ... and 14 more
 
   [negative_offset] - 22 functions
     core_fire.cpp_CStake_dtor_FUN_004c9760                  (  6 lines)
@@ -258,22 +264,12 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_weather.cpp_staticInit_FUN_005eeaa0                (  6 lines)
     core_event.cpp_CEventList_FUN_004aabe0                  (  6 lines)
     core_drip.cpp_staticInit_FUN_0048df80                   (  8 lines)
+    core_sound.cpp_staticInit_FUN_005b1760                  (  8 lines)
     core_charactr.cpp_staticInit_FUN_00427d80               (  8 lines)
-    core_sound.cpp_staticInit_FUN_005b1760                  (  9 lines)
-    core_netgame.cpp_staticInit_FUN_0053f310                ( 10 lines)
+    core_netgame.cpp_staticInit_FUN_0053f310                (  9 lines)
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettin ( 12 lines)
     core_script.cpp_FUN_00566bc0                            ( 12 lines)
     ... and 7 more
-
-  [format_string_mismatch] - 8 functions
-    core_dcamera.cpp_saveCameraFog_FUN_00453f10             ( 14 lines)
-    shape_design.c_writeBinaryTreeNode_FUN_00457fd0         ( 16 lines)
-    core_actor.cpp_serializeFloat_FUN_0040b770              ( 17 lines)
-    core_actor.cpp_serializeVector_FUN_0040b340             ( 17 lines)
-    core_actor.cpp_serializeOrientation_FUN_0040b3e0        ( 19 lines)
-    core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirector ( 27 lines)
-    shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN ( 33 lines)
-    shape_edittool.cpp_CEditorTools_promptForValidVector_FU ( 34 lines)
 
   [unresolved_funcptr] - 7 functions
     core_stranger.cpp_CStranger_FUN_005c3710                (  9 lines)

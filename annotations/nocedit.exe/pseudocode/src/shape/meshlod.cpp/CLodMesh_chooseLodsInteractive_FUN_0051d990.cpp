@@ -53,7 +53,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   float local_100;
   float local_fc;
   CLodMesh *local_f8;
-  FILE *local_f4;
+  _FILE *local_f4;
   float local_f0;
   float local_ec;
   int local_e8;
@@ -67,7 +67,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   float local_c4;
   float local_c0;
   CLodMesh *local_bc;
-  FILE *local_b8;
+  _FILE *local_b8;
   float local_b4;
   float local_b0;
   CLodEdge *local_a8;
@@ -127,8 +127,8 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   local_44 = local_94.min.z + local_94.max.z;
   local_7c._4_4_ = local_48 * 0.5f;
   local_74 = local_44 * 0.5f;
-  if (&local_b8 != (FILE **)local_7c) {
-    local_b8 = (FILE *)local_7c._0_4_;
+  if (&local_b8 != (_FILE **)local_7c) {
+    local_b8 = (_FILE *)local_7c._0_4_;
     local_b4 = (float)local_7c._4_4_;
     local_b0 = local_74;
   }
@@ -168,7 +168,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
               (g_CDemonRendererPtr2,&g_ZeroVector);
     local_14 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_94);
     iVar12 = 0x51dcf0;
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)local_14);
+    dVar11 = round((double)local_14);
     local_38 = (int)ROUND(dVar11);
     shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)local_d0);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -217,7 +217,7 @@ LAB_0051e453:
       iVar9 = 0;
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_24c,"Editing LOD %d of %d.",iVar4,local_34);
+      sprintf(acStack_24c,"Editing LOD %d of %d.",iVar4,local_34);
       engine_2d_c_drawText_FUN_00401fd0(acStack_24c,0,0);
       engine_2d_c_drawText_FUN_00401fd0("Use LEFT/RIGHT to adjust face count.",0,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Press T to go to test mode.",0,0x16);
@@ -236,10 +236,10 @@ LAB_0051e453:
       local_24 = in_stack_0000000c;
       do {
         if (iVar9 < 1) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_24c,"LOD%d: F=%d",iVar9,*local_24);
+          sprintf(acStack_24c,"LOD%d: F=%d",iVar9,*local_24);
         }
         else {
-          crt_stdio_c_sprintf_FUN_005fdbd0
+          sprintf
                     (acStack_24c,"LOD%d: P=%d F=%d",iVar9,in_stack_00000008[iVar9],*local_24);
         }
         y1 = iStack_28 - (*local_30 * iStack_3c) / 0x1e0;
@@ -289,7 +289,7 @@ LAB_0051e453:
                 ((CLodMesh *)auStack_184,0,iVar12);
     }
     iVar12 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0((CLodMesh *)auStack_184);
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (acStack_24c,"Current: %d pixelHeight, %d faces",local_38,iVar12);
     engine_2d_c_drawText_FUN_00401fd0(acStack_24c,0,g_WindowHeight + -0xb);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -336,17 +336,17 @@ LAB_0051e453:
     }
     iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
     if ((iVar12 != 0) && (0 < iVar4)) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_214,"Delete LOD %d?",iVar4);
+      sprintf(acStack_214,"Delete LOD %d?",iVar4);
       iVar12 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                          (g_CEditorToolsPtr,acStack_214);
       if (iVar12 != 0) {
         this_ptr = (CLodMesh *)((int)&this_ptr[-1].scale_factor + 3);
         n = ((int)this_ptr - iVar4) * 4;
-        crt_string_c_memmove_FUN_005fe5e0(in_stack_00000008 + iVar4,in_stack_00000008 + iVar4 + 1,n)
+        memmove(in_stack_00000008 + iVar4,in_stack_00000008 + iVar4 + 1,n)
         ;
-        crt_string_c_memmove_FUN_005fe5e0(in_stack_0000000c + iVar4,in_stack_0000000c + iVar4 + 1,n)
+        memmove(in_stack_0000000c + iVar4,in_stack_0000000c + iVar4 + 1,n)
         ;
-        crt_string_c_memmove_FUN_005fe5e0(auStack_3a0 + iVar4 + -1,auStack_3a0 + iVar4,n);
+        memmove(auStack_3a0 + iVar4 + -1,auStack_3a0 + iVar4,n);
       }
     }
     in_stack_0000000c = (int *)0x0;

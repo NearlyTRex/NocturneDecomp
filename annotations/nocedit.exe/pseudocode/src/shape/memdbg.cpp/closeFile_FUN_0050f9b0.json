@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "other",
-        "column": 34,
+        "column": 35,
         "line": 36,
-        "message": "cast from 'FILE**' to 'int' loses precision [-fpermissive]"
+        "message": "cast from '_FILE**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -1195,7 +1195,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0",
-    "signature": "int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int line_number)"
+    "signature": "int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source_file,int line_number)"
   },
   "function_calls": [
     {
@@ -1206,7 +1206,7 @@
     {
       "addr": "00601ea0",
       "is_variadic": false,
-      "name": "crt_stdio.c_closeTrackedFile_FUN_00601ea0"
+      "name": "crt_stdio.c_fclose_FUN_00601ea0"
     },
     {
       "addr": "005fe5e0",
@@ -1424,7 +1424,7 @@
         "name": "file_ptr",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,

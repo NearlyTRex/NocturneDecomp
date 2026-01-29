@@ -37,7 +37,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 004bd8f2
     PUSH ECX                            ; 004bd8f4
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004bd8f5
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004bd8fa
     MOV EBX,dword ptr [ESP + 0x18]      ; 004bd8fd
     PUSH EBX                            ; 004bd901

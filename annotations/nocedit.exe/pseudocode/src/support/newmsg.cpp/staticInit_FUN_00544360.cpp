@@ -10,6 +10,6 @@ void __cdecl support_newmsg_cpp_staticInit_FUN_00544360(void)
 
 {
   support_newmsg_cpp_CMouse_ctor_FUN_00544380(&g_CMouseInstance);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_CMouseDestructorNode);
+  _atexit(&g_CMouseDestructorNode);
   return;
 }

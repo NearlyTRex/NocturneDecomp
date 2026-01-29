@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
 
     PUSH 0x14                           ; 00554900
         ;   Label: shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00554905
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00554905
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0055490a
     MOV EBX,dword ptr [ESP + 0x8]       ; 0055490b
     PUSH 0x4b44                         ; 0055490f

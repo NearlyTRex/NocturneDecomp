@@ -60,7 +60,7 @@ void core_script_cpp_FUN_00566390(void)
         n = iVar4 - iVar2;
         iVar4 = iVar4 + 1;
         iVar5 = iVar2 + 1;
-        crt_string_c_memmove_FUN_005fe5e0(local_18,src,n);
+        memmove(local_18,src,n);
         src = src + 1;
         local_18 = local_18 + 1;
         (&DAT_031101c0)[iVar2] = *in_stack_00000008;

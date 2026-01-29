@@ -38,8 +38,8 @@ core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfac
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&this_ptr->broken_texture);
     fVar6 = (float)g_CurrentTextureDimension;
-    dVar7 = crt_math_c_round_FUN_005fe6b0((double)((fVar3 / fVar4 + fVar5) * fVar6));
-    dVar8 = crt_math_c_round_FUN_005fe6b0((double)((1.0 - fVar1 / fVar2) * fVar6));
+    dVar7 = round((double)((fVar3 / fVar4 + fVar5) * fVar6));
+    dVar8 = round((double)((1.0 - fVar1 / fVar2) * fVar6));
     local_20 = (int)ROUND(dVar7);
     local_1c = (int)ROUND(dVar8);
     if (local_20 < 0) {

@@ -36,7 +36,7 @@ shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(CInputString *this_ptr,int ch
       g_CurrentLineNumber = 0x1be;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CInputString::calcX - string too big for hidden text!");
     }
-    crt_memory_c_memset_FUN_005fde40(g_TempStringBuffer,0x2a,char_index);
+    memset(g_TempStringBuffer,0x2a,char_index);
     g_TempStringBuffer[char_index] = '\0';
     iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,g_TempStringBuffer);
   }

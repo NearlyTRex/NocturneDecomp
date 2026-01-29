@@ -29,7 +29,7 @@ void core_flame_cpp_FUN_004c9b90(void)
     iVar3 = iVar3 + 1;
     pSVar2 = pSVar2 + 8;
   } while (iVar3 < 5);
-  uVar1 = crt_stdlib_c_rand_FUN_005feb5c();
+  uVar1 = rand();
   in_stack_00000004[1].previous_transform_state.orientation.z = (float)(uVar1 & 1);
   return;
 }

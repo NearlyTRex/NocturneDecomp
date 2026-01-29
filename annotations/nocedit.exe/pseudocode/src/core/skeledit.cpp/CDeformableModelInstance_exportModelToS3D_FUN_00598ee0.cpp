@@ -15,7 +15,7 @@ core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
   char *output_filename;
   CMatrix3x4f *lod_level;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
+  __STK(0x14);
   lod_level = (this_ptr->bone_transform).bone_world_matrices;
   output_filename = (char *)0x0;
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);

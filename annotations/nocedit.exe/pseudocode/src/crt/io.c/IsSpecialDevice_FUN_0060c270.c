@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_IsSpecialDevice_FUN_0060c270(int handle_index)
+int __cdecl IsSpecialDevice(int handle_index)
 
 {
   int iVar1;

@@ -59,24 +59,24 @@ uint core_script_cpp_FUN_00562920(void)
   int local_14;
   
   bVar9 = 0;
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_7cc,"Enter %s");
+  sprintf(local_7cc,"Enter %s");
   switch(in_stack_00000008) {
   case 0:
-    iVar6 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000004,"%d");
+    iVar6 = sscanf(in_stack_00000004,"%d");
     iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                       (g_CEditorToolsPtr,local_7cc,&local_30,0,0,0,(uint)(iVar6 == 1));
     if (iVar6 != 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004,"%d");
+      sprintf(in_stack_00000004,"%d");
       return 1;
     }
     break;
   case 1:
-    iVar6 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000004,"%f");
+    iVar6 = sscanf(in_stack_00000004,"%f");
     iVar6 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                       (g_CEditorToolsPtr,local_7cc,(float *)&stack0xffffc8a8,0,0.0,0.0,
                        (uint)(iVar6 == 1));
     if (iVar6 != 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004,"%g",(double)in_stack_ffffc8a8);
+      sprintf(in_stack_00000004,"%g",(double)in_stack_ffffc8a8);
       return 1;
     }
     break;
@@ -406,9 +406,9 @@ uint core_script_cpp_FUN_00562920(void)
                (uint)in_stack_ffffc8b4,(uint)in_stack_ffffc8b8);
     return 1;
   case 0x12:
-    crt_string_c_splitpath_FUN_005ff178
+    splitpath
               ((char *)(in_stack_0000000c + 0x25c),(char *)0x0,local_370,local_470,local_270);
-    crt_file_c_makepath_FUN_005febfc(local_574,(char *)0x0,(char *)0x0,local_470,local_270);
+    makepath(local_574,(char *)0x0,(char *)0x0,local_470,local_270);
     iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,local_7cc,local_370,local_574,(int)in_stack_00000004);
     if (iVar6 != 0) {
@@ -505,9 +505,9 @@ uint core_script_cpp_FUN_00562920(void)
         local_24 = iVar6 + 4;
         pcVar3 = (char *)(iVar6 + 0x968);
         do {
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_6a0,"%s\t%s",pcVar3);
+          sprintf(local_6a0,"%s\t%s",pcVar3);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffc8ac,local_6a0);
-          iVar6 = crt_string_c_stricmp_FUN_005fe7f0(pcVar3,in_stack_00000004);
+          iVar6 = stricmp(pcVar3,in_stack_00000004);
           if (iVar6 == 0) {
             local_28 = iVar7;
           }
@@ -581,7 +581,7 @@ uint core_script_cpp_FUN_00562920(void)
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_33ac);
     for (iVar7 = 0; iVar7 < *(int *)(g_CScriptPtr->unk4 + 4); iVar7 = iVar7 + 1) {
       iVar4 = *(int *)(g_CScriptPtr->unk4 + 8) + iVar6;
-      crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_031099e8,"%s\t%s\t%s",iVar4,iVar4 + 0x78);
+      sprintf(&DAT_031099e8,"%s\t%s\t%s",iVar4,iVar4 + 0x78);
       iVar6 = iVar6 + 0x226;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_33ac.base,&DAT_031099e8);
     }
@@ -689,7 +689,7 @@ uint core_script_cpp_FUN_00562920(void)
       iVar7 = core_script_cpp_FUN_00559730();
       if (iVar7 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,&DAT_0310eca0);
-        crt_memory_c_memset_FUN_005fde40(local_a8,0,0x78);
+        memset(local_a8,0,0x78);
       }
       local_20 = (CCharacter *)
                  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -701,7 +701,7 @@ uint core_script_cpp_FUN_00562920(void)
             iVar7 = iVar7 + 1) {
           pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220
                              ((CDeformableModel *)local_20,iVar7);
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_170,"%s\t%s",pSVar5);
+          sprintf(local_170,"%s\t%s",pSVar5);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,local_170);
         }
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,"Done");

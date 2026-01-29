@@ -11,12 +11,6 @@
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 13,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 48,
         "line": 16,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -112,7 +106,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fileman.cpp_refreshSoundDirectory_FUN_004be590",
-    "signature": "void __cdecl core_fileman_cpp_refreshSoundDirectory_FUN_004be590(FILE *file_list_output,char *source_directory)"
+    "signature": "void __cdecl core_fileman_cpp_refreshSoundDirectory_FUN_004be590(_FILE *file_list_output,char *source_directory)"
   },
   "function_calls": [
     {
@@ -123,7 +117,7 @@
     {
       "addr": "00600e10",
       "is_variadic": false,
-      "name": "crt_file.c_create_directory_FUN_00600e10"
+      "name": "crt_watcom.c__mkdir_FUN_00600e10"
     },
     {
       "addr": "004bc650",
@@ -231,7 +225,7 @@
         "name": "file_list_output",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,

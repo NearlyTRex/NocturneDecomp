@@ -9,6 +9,6 @@
 void __cdecl core_manpuz_cpp_freeReflectors_FUN_0050bad0(SReflector **objs)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(objs,2,&g_SReflectorTypeInfo);
+  __arrfini(objs,2,&g_SReflectorTypeInfo);
   return;
 }

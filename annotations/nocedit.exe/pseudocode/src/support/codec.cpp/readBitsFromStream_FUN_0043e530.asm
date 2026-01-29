@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,FILE *file_stream,int *bytes_remaining)
+; __cdecl int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_buffer
 ; int              Stack[0x8]:4   bit_count
-; FILE *           Stack[0xc]:4   file_stream
+; _FILE *          Stack[0xc]:4   file_stream
 ; int *            Stack[0x10]:4   bytes_remaining
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18
@@ -99,7 +99,7 @@ section .text
     PUSH EAX                            ; 0043e5e7
     PUSH EDI                            ; 0043e5e8
     CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043e5e9
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(_FILE * stream, uchar * output_byte)
     MOV EAX,dword ptr [EDI]             ; 0043e5ee
     MOV EAX,dword ptr [EAX + 0x4]       ; 0043e5f0
     MOV EDX,dword ptr [EDI + EAX*0x1 + 0x10] ; 0043e5f3
@@ -170,7 +170,7 @@ section .text
     PUSH EAX                            ; 0043e685
     PUSH EDI                            ; 0043e686
     CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043e687
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(_FILE * stream, uchar * output_byte)
     MOV EAX,dword ptr [EDI]             ; 0043e68c
     ADD EDI,dword ptr [EAX + 0x4]       ; 0043e68e
     MOV ECX,dword ptr [EDI + 0x10]      ; 0043e691

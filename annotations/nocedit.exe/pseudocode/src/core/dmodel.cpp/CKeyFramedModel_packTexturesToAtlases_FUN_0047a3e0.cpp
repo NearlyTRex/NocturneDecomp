@@ -146,10 +146,10 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
           shape_design_c_fixupCramUV_FUN_0046e090(local_1c,afStack_b0,&fStack_b4);
           dVar10 = 65536;
           fVar11 = 6.580217e-39;
-          dVar9 = crt_math_c_round_FUN_005fe6b0((double)afStack_b0[0] * 65536);
+          dVar9 = round((double)afStack_b0[0] * 65536);
           local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar9);
           *(SMRGLTextureExtended **)(iVar4 + 0x1c) = local_3c;
-          dVar10 = crt_math_c_round_FUN_005fe6b0(dVar10 * (double)fVar11);
+          dVar10 = round(dVar10 * (double)fVar11);
           iStack_40 = (int)ROUND(dVar10);
           *(int *)(iVar4 + 0x20) = iStack_40;
           iVar7 = iVar7 + 1;

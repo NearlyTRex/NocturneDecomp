@@ -80,7 +80,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
             puVar4[0x13] = puVar2[0x13];
           }
           puVar4[0x14] = puVar2[0x14];
-          crt_memory_c_copyArrayWithFunction_FUN_006020c2
+          __arr_op
                     (puVar4 + 0x15,puVar2 + 0x15,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
           puVar4[0x1e] = puVar2[0x1e];
           puVar4[(uint)bVar8 * -2 + 0x1f] = puVar2[(uint)bVar8 * -2 + 0x1f];

@@ -32,7 +32,7 @@ sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40
       iVar2 = iVar2 + 4;
     }
     if (iVar4 < 0x19) {
-      crt_memory_c_memset_FUN_005fde40(&local_24,0,0x12);
+      memset(&local_24,0,0x12);
       local_24.wFormatTag = 1;
       local_24.nChannels = (WORD)channel_count;
       local_24.nSamplesPerSec = sample_rate;
@@ -41,7 +41,7 @@ sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40
       local_24.nBlockAlign = (short)iVar2 * local_24.nChannels;
       local_24.nAvgBytesPerSec = sample_rate * (uint)local_24.nBlockAlign;
       local_24.wBitsPerSample = (WORD)bits_per_sample;
-      crt_memory_c_memset_FUN_005fde40(&local_38,0,0x14);
+      memset(&local_38,0,0x14);
       local_38.lpwfxFormat = &local_24;
       local_38.dwBufferBytes = channel_count * sample_count * iVar2;
       local_38.dwSize = 0x14;
@@ -58,7 +58,7 @@ sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40
       }
       else {
         pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (acStack_1c8,"DirectSux: Unable to %s.  (%s)","Create secondary buffer"
                    ,pcVar3);
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1c8);

@@ -42,7 +42,7 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
       pbVar5 = pbVar5 + (uint)bVar6 * -2 + 1;
     } while (bVar1 != 0);
     if (~uVar4 - 1 <= (uint)local_28) break;
-    iVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_90[(int)local_28]);
+    iVar2 = toupper((uint)local_90[(int)local_28]);
     local_90[(int)local_28] = (byte)iVar2;
     local_28 = (float)((int)local_28 + 1);
   } while( true );
@@ -55,11 +55,11 @@ LAB_0046186a:
         engine_2d_c_drawText_FUN_00401fd0("Separation Method : (P)oint list (X) (Y) (Z)",0,0xb);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         uVar4 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-        local_28 = (float)crt_ctype_c_toupper_FUN_005ff9e0(uVar4 & 0xff);
+        local_28 = (float)toupper(uVar4 & 0xff);
         if (local_28 == 1.12104e-43) {
           engine_2d_c_getInputWithPrompt_FUN_004032c0
                     ((char *)local_90,0x46,0,0x16,"Enter in 3 points : ");
-          crt_stdio_c_sscanf_FUN_0060013c
+          sscanf
                     ((char *)local_90,"%d,%d,%d",&local_24,&local_20,&local_1c);
           local_214.vertex_indices_count = 3;
           local_214.vertex_indices[0] = local_24;
@@ -74,7 +74,7 @@ LAB_0046186a:
         else {
           engine_2d_c_getInputWithPrompt_FUN_004032c0
                     ((char *)local_90,0x28,0,0x16,"Enter in point number : ");
-          local_14 = crt_stdlib_c_atoi_FUN_005ffef0((char *)local_90);
+          local_14 = atoi((char *)local_90);
           local_34 = 0.0;
           local_38 = 0.0;
           local_3c = 0.0;
@@ -114,7 +114,7 @@ LAB_0046186a:
       }
       return;
     }
-    iVar2 = crt_string_c_strcmp_FUN_005fef20((char *)local_90,g_ModelPartNames[(int)local_28].name);
+    iVar2 = strcmp((char *)local_90,g_ModelPartNames[(int)local_28].name);
     if (iVar2 == 0) {
       local_18 = local_28;
       goto LAB_0046186a;

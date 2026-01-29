@@ -2,29 +2,29 @@
 // Address: 00457430
 // Address Range: [[00457430, 00457521]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,FILE *file_handle)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,FILE *file_handle)
+void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,_FILE *file_handle)
 
 {
   void *ptr;
   int iVar1;
   int iVar2;
   
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->min_bounds,1,0xc,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->max_bounds,1,0xc,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->vertex_count,1,4,file_handle);
+  _fwrite(&this_ptr->min_bounds,1,0xc,file_handle);
+  _fwrite(&this_ptr->max_bounds,1,0xc,file_handle);
+  _fwrite(&this_ptr->vertex_count,1,4,file_handle);
   iVar1 = 0;
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->triangle_count,1,4,file_handle);
+  _fwrite(&this_ptr->triangle_count,1,4,file_handle);
   if (0 < this_ptr->vertex_count) {
     iVar2 = 0;
     do {
       ptr = (void *)((int)&this_ptr->vertex_buffer->x + iVar2);
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 0xc;
-      crt_stdio_c_fwrite_FUN_005fdc00(ptr,1,0xc,file_handle);
+      _fwrite(ptr,1,0xc,file_handle);
     } while (iVar1 < this_ptr->vertex_count);
   }
   iVar1 = 0;
@@ -44,12 +44,11 @@ void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,FI
     }
   }
   else {
-    crt_stdio_c_fwrite_FUN_005fdc00
-              (this_ptr->ground_type_memory,1,this_ptr->triangle_count,file_handle);
+    _fwrite(this_ptr->ground_type_memory,1,this_ptr->triangle_count,file_handle);
     if (this_ptr->triangle_count == 0) {
       return;
     }
   }
-  crt_stdio_c_fwrite_FUN_005fdc00(this_ptr->voxel_buffer1,1,0x40,file_handle);
+  _fwrite(this_ptr->voxel_buffer1,1,0x40,file_handle);
   return;
 }

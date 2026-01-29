@@ -23,7 +23,7 @@ void core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(void)
   }
   iVar1 = *(int *)(in_stack_00000004 + 0x370) + -1;
   *(int *)(in_stack_00000004 + 0x370) = iVar1;
-  crt_string_c_memmove_FUN_005fe5e0
+  memmove
             ((void *)(in_stack_00000008 * 8 + in_stack_00000004 + 0x374),
              (void *)(in_stack_00000008 * 8 + 8 + in_stack_00000004 + 0x374),
              (iVar1 - in_stack_00000008) * 8);

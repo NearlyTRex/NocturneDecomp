@@ -34,7 +34,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_
         iVar5 = *(int *)(this_ptr->unk + 0x20) + iVar7;
         iVar4 = iVar4 + 1;
         iVar7 = iVar7 + 0xc;
-        crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%d,%d,%d\n",iVar5,iVar5 + 4,iVar5 + 8);
+        _fscanf(g_ActorDataFile,"%d,%d,%d\n",iVar5,iVar5 + 4,iVar5 + 8);
       } while (iVar4 < *(int *)(this_ptr->unk + 0x1c));
     }
     local_14 = 0;
@@ -44,8 +44,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_
       do {
         iVar5 = *(int *)(this_ptr->unk + 0x2c) + iVar4;
         iVar4 = iVar4 + 0x3c;
-        crt_stdio_c_fscanf_FUN_005fe7c0
-                  (g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
+        _fscanf(g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
                    *(int *)(this_ptr->unk + 0x30) + iVar7,iVar5 + 0x18,iVar5 + 0x1c,iVar5 + 0x20,
                    iVar5 + 0x24,iVar5 + 0x28,iVar5 + 0x2c,iVar5 + 0x30,iVar5 + 0x34,iVar5 + 0x38);
         iVar7 = iVar7 + 4;
@@ -58,7 +57,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_
       pcVar6 = this_ptr->unk + 0x40;
       do {
         iVar4 = iVar4 + 1;
-        crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile," \"%[^\"]\"\n",pcVar6);
+        _fscanf(g_ActorDataFile," \"%[^\"]\"\n",pcVar6);
         pcVar6 = pcVar6 + 0x18;
       } while (iVar4 < *(int *)(this_ptr->unk + 0x34));
     }
@@ -75,8 +74,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_
         puVar1 = (uint *)(iVar7 + iVar3);
         iVar7 = iVar7 + 0xc;
         iVar4 = iVar4 + 1;
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*(uint *)(iVar2 + iVar3),
+        _fprintf(g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*(uint *)(iVar2 + iVar3),
                    *(uint *)(iVar5 + iVar3));
       } while (iVar4 < *(int *)(this_ptr->unk + 0x1c));
     }
@@ -86,8 +84,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_
       iVar7 = 0;
       do {
         iVar5 = *(int *)(this_ptr->unk + 0x2c) + local_18;
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (g_ActorDataFile,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
+        _fprintf(g_ActorDataFile,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
                    *(uint *)(iVar7 + *(int *)(this_ptr->unk + 0x30)),
                    *(uint *)(iVar5 + 0x18),*(uint *)(iVar5 + 0x1c),
                    *(uint *)(iVar5 + 0x20),*(uint *)(iVar5 + 0x24),
@@ -104,7 +101,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_
       pcVar6 = this_ptr->unk + 0x40;
       do {
         iVar4 = iVar4 + 1;
-        crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"\t\"%s\"\n",pcVar6);
+        _fprintf(g_ActorDataFile,"\t\"%s\"\n",pcVar6);
         pcVar6 = pcVar6 + 0x18;
       } while (iVar4 < *(int *)(this_ptr->unk + 0x34));
     }

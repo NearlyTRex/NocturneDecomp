@@ -17,7 +17,7 @@
 ;   WatcomTypeInfo g_SNetPlayerTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
+;   crt_memory.c___arrinit_FUN_005fe667
 ;   support_trisock.cpp_invalidateSocket_FUN_005e1ae0
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     PUSH 0x2                            ; 0053f6db
     ADD EDX,0x20                        ; 0053f6dd
     PUSH EDX                            ; 0053f6e0
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0053f6e1
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 0053f6e1
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0053f6e6
     ADD EAX,0x150                       ; 0053f6e9
     PUSH EAX                            ; 0053f6ee

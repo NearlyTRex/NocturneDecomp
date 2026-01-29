@@ -212,8 +212,8 @@ section .text
 
     PUSH 0x33f0                         ; 005968b0
         ;   Label: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 005968b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005968b5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 005968ba
     PUSH ESI                            ; 005968bb
     PUSH EDI                            ; 005968bc
@@ -537,8 +537,8 @@ section .text
         ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00596cd8
     PUSH 0x681850                       ; 00596cdb | DAT_00681850
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00596ce0
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00596ce0
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00596ce5
     JMP 0x00596a90                      ; 00596ce8
         ;   XREF to: 00596a90 (UNCONDITIONAL_JUMP)  ; LAB_00596a90

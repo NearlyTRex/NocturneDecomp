@@ -52,8 +52,8 @@
 ;   ... and 85 more
 ;
 ; Called Functions:
-;   crt_io.c_deleteFile_FUN_005ff9d0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdlib.c_qsort_FUN_005fdf38
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   crt_stdlib.c_srand_FUN_005feb80
@@ -121,8 +121,8 @@ section .text
     PUSH 0x6195c2                       ; 00444e40 | = "..\\shape\\cramlog.txt"
         ;   Label: LAB_00444e40
     MOV EBX,dword ptr [ESP + 0x58]      ; 00444e45
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00444e49
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00444e49
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00444e4e
     CALL crt_stdlib.c_rand_FUN_005feb5c ; 00444e51
         ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
@@ -199,7 +199,7 @@ section .text
     PUSH 0x6195ef                       ; 00444f30 | = "..\\shape\\cramlog.txt"
     MOV [0x0084a880],EAX                ; 00444f35 | g_CramPaddingCalculation
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00444f3a
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 00444f3f
     ADD ESP,0x14                        ; 00444f41
     TEST EAX,EAX                        ; 00444f44
@@ -276,7 +276,7 @@ section .text
     PUSH 0x0                            ; 0044500b
     PUSH 0x619649                       ; 0044500d | = "..\\shape\\cramlog.txt"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00445012
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV ESI,EAX                         ; 00445017
     ADD ESP,0x14                        ; 00445019
     TEST EAX,EAX                        ; 0044501c
@@ -286,26 +286,26 @@ section .text
     PUSH 0x61965e                       ; 00445021 | = "Guess #%d\n"
     PUSH EAX                            ; 00445026
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00445027
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0044502c
     MOV EAX,[0x0084a874]                ; 0044502f | g_CramAcceptableSize
     PUSH EAX                            ; 00445034
     PUSH 0x619669                       ; 00445035 | = "  acceptableSize = %d\n"
     PUSH ESI                            ; 0044503a
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0044503b
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00445040
     PUSH EBX                            ; 00445043
     PUSH 0x619680                       ; 00445044 | = "  estimated pad = %d\n"
     PUSH ESI                            ; 00445049
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0044504a
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0044504f
     PUSH 0x20b                          ; 00445052
     PUSH 0x619696                       ; 00445057 | = "..\\shape\\cramtex.cpp"
     PUSH ESI                            ; 0044505c
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0044505d
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00445062
     CMP EBX,dword ptr [0x0084a880]      ; 00445065 | g_CramPaddingCalculation
         ;   Label: LAB_00445065
@@ -525,7 +525,7 @@ section .text
     PUSH 0x0                            ; 0044531f
     PUSH 0x61973e                       ; 00445321 | = "..\\shape\\CramTex.txt"
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00445326
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0044532b
     MOV EBP,EAX                         ; 0044532e
     TEST EAX,EAX                        ; 00445330
@@ -561,7 +561,7 @@ section .text
     ADD EBX,0x4c                        ; 00445371 | DAT_0083c228 | DAT_0083c274
     INC ESI                             ; 00445374
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00445375
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EDX,dword ptr [0x0084a854]      ; 0044537a | g_CramTextureCount
     ADD ESP,0x2c                        ; 00445380
     CMP ESI,EDX                         ; 00445383
@@ -578,13 +578,13 @@ section .text
     PUSH 0x619790                       ; 0044539f | = "%ux%u square found using %u padding.\n"
     PUSH EDI                            ; 004453a4
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004453a5
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004453aa
     PUSH 0x274                          ; 004453ad
     PUSH 0x6197b6                       ; 004453b2 | = "..\\shape\\cramtex.cpp"
     PUSH EBP                            ; 004453b7
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004453b8
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004453bd
     MOV EDI,dword ptr [ESP]             ; 004453c0
         ;   Label: LAB_004453c0
@@ -649,13 +649,13 @@ section .text
     PUSH 0x619604                       ; 00445469 | = "initial pad guess = %d\n"
     PUSH EAX                            ; 0044546e
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0044546f
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00445474
     PUSH 0x1e6                          ; 00445477
     PUSH 0x61961c                       ; 0044547c | = "..\\shape\\cramtex.cpp"
     PUSH EBX                            ; 00445481
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00445482
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00445487
     JMP 0x00444f4c                      ; 0044548a
         ;   XREF to: 00444f4c (UNCONDITIONAL_JUMP)  ; LAB_00444f4c
@@ -953,7 +953,7 @@ section .text
     PUSH 0x6196c3                       ; 0044575d | = "..\\shape\\cramlog.txt"
     MOV dword ptr [0x0084a874],ECX      ; 00445762 | g_CramAcceptableSize
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00445768
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 0044576d
     ADD ESP,0x14                        ; 0044576f
     TEST EAX,EAX                        ; 00445772
@@ -962,20 +962,20 @@ section .text
     PUSH 0x6196d8                       ; 0044577a | = "UNDERESTIMATED PAD!!\n"
     PUSH EAX                            ; 0044577f
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00445780
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00445785
     MOV ESI,dword ptr [0x0084a874]      ; 00445788 | g_CramAcceptableSize
     PUSH ESI                            ; 0044578e
     PUSH 0x6196ee                       ; 0044578f | = "acceptableSize now adjusted to %d\n"
     PUSH EBX                            ; 00445794
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00445795
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0044579a
     PUSH 0x253                          ; 0044579d
     PUSH 0x619711                       ; 004457a2 | = "..\\shape\\cramtex.cpp"
     PUSH EBX                            ; 004457a7
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004457a8
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004457ad
     JMP 0x00444f54                      ; 004457b0
         ;   XREF to: 00444f54 (UNCONDITIONAL_JUMP)  ; LAB_00444f54

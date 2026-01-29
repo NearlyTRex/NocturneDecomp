@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 (CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,FILE *output_stream)
+; __cdecl void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 (CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_FILE *output_stream)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   code_value
 ; SBitBuffer *     Stack[0xc]:4   bit_buffer
-; FILE *           Stack[0x10]:4   output_stream
+; _FILE *          Stack[0x10]:4   output_stream
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -65,7 +65,7 @@ section .text
     PUSH 0x1                            ; 0043f1b0
     PUSH ESI                            ; 0043f1b2
     CALL support_codec.cpp_writeBitsToStream_FUN_0043e6c0 ; 0043f1b3
-        ;   XREF to: 0043e6c0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer * bit_buffer, int bit_count, int bit_value, FILE * output_stream)
+        ;   XREF to: 0043e6c0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer * bit_buffer, int bit_count, int bit_value, _FILE * output_stream)
     ADD ESP,0x10                        ; 0043f1b8
     SAR EBX,0x1                         ; 0043f1bb
         ;   Label: LAB_0043f1bb
@@ -92,7 +92,7 @@ section .text
     PUSH ESI                            ; 0043f1dd
     SAR EBX,0x1                         ; 0043f1de
     CALL support_codec.cpp_writeBitsToStream_FUN_0043e6c0 ; 0043f1e0
-        ;   XREF to: 0043e6c0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer * bit_buffer, int bit_count, int bit_value, FILE * output_stream)
+        ;   XREF to: 0043e6c0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer * bit_buffer, int bit_count, int bit_value, _FILE * output_stream)
     ADD ESP,0x10                        ; 0043f1e5
     TEST EBX,EBX                        ; 0043f1e8
     JNZ 0x0043f1cc                      ; 0043f1ea

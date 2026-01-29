@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_setvbuf_FUN_00601490 (FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
+; __cdecl int __cdecl crt_stdio_c_setvbuf_FUN_00601490 (_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   stream_ptr
+; _FILE *          Stack[0x4]:4   stream_ptr
 ; char *           Stack[0x8]:4   buffer_ptr
 ; int              Stack[0xc]:4   buffer_mode
 ; SIZE_T           Stack[0x10]:4   buffer_size
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x4                         ; 006014f6
     PUSH EBX                            ; 006014f9
     CALL crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0 ; 006014fa
-        ;   XREF to: 00608ee0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)
+        ;   XREF to: 00608ee0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(_FILE * file)
     ADD ESP,0x4                         ; 006014ff
     TEST EDI,EDI                        ; 00601502
     JZ 0x00601509                       ; 00601504
@@ -111,7 +111,7 @@ section .text
         ;   XREF to: 0060152a (CONDITIONAL_JUMP)  ; LAB_0060152a
     PUSH EBX                            ; 00601521
     CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 00601522
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
     ADD ESP,0x4                         ; 00601527
     MOV ESI,dword ptr [EBX + 0x10]      ; 0060152a
         ;   Label: LAB_0060152a

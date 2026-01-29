@@ -72,7 +72,7 @@ core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
       core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0();
     }
     else {
-      iVar5 = crt_string_c_strcmp_FUN_005fef20(local_1c->name,local_28 + 0xd);
+      iVar5 = strcmp(local_1c->name,local_28 + 0xd);
       if (((iVar5 != 0) || (*(int *)(local_28 + 0x21) != *(int *)(local_1c->name + 0x14))) ||
          (*(int *)(local_28 + 0x25) != *(int *)(local_1c->name + 0x18))) {
         pcVar8 = local_28 + 0xd;
@@ -365,7 +365,7 @@ LAB_00540df8:
     }
     piVar3 = &g_SimFrameHistory + g_SimFrameCount * 0x19;
     g_SimFrameCount = g_SimFrameCount + 1;
-    crt_memory_c_memset_FUN_005fde40(piVar3,0,100);
+    memset(piVar3,0,100);
     *piVar3 = local_2c;
 LAB_00541015:
     piVar3[1] = *(int *)(packet_data + 9);

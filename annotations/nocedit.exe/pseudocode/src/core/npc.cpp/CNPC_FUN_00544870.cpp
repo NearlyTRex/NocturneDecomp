@@ -12,7 +12,7 @@ void __cdecl core_npc_cpp_CNPC_FUN_00544870(CNPC *this_ptr)
   int iVar1;
   
   core_charactr_cpp_CCharacter_FUN_00428140(&this_ptr->base);
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0((this_ptr->base).model.model_name,"priest.dfm")
+  iVar1 = stricmp((this_ptr->base).model.model_name,"priest.dfm")
   ;
   if (iVar1 != 0) {
     return;

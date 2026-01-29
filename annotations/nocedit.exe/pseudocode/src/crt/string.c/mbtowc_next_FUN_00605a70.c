@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * __watcallStack crt_string_c_mbtowc_next_FUN_00605a70(char *str)
+char * __watcallStack mbtowc_next(char *str)
 
 {
   if (((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*str] & 1U) != 0)) &&

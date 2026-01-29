@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 char * __cdecl
-crt_stdio_c_ScanFormatSpec_FUN_00602d78(char *format,va_list_t *args,FormatSpec *spec_info)
+ScanFormatSpec(char *format,va_list_t *args,FormatSpec *spec_info)
 
 {
   byte bVar1;
@@ -17,7 +17,7 @@ crt_stdio_c_ScanFormatSpec_FUN_00602d78(char *format,va_list_t *args,FormatSpec 
   byte *pbVar5;
   
   spec_info->zerofill = ' ';
-  pbVar4 = (byte *)crt_stdio_c_ParseFormatFlags_FUN_00602edc(format,spec_info);
+  pbVar4 = (byte *)ParseFormatFlags(format,spec_info);
   spec_info->width = 0;
   if (*pbVar4 == 0x2a) {
     piVar2 = (int *)*args;

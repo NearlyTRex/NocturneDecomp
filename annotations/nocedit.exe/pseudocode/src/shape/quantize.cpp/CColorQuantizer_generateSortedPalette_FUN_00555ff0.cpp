@@ -98,14 +98,14 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   pCVar7 = this_ptr;
   if (0 < (int)puVar8) {
     do {
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].r);
+      dVar12 = round((double)pCVar7->palette[0].r);
       puVar8 = output_buffer + 3;
       uStack_18 = (uchar)(int)ROUND(dVar12);
       output_buffer[2] = uStack_18;
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].g);
+      dVar12 = round((double)pCVar7->palette[0].g);
       uStack_1c = (uchar)(int)ROUND(dVar12);
       output_buffer[1] = uStack_1c;
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].b);
+      dVar12 = round((double)pCVar7->palette[0].b);
       uStack_20 = (uchar)(int)ROUND(dVar12);
       iVar11 = iVar11 + 1;
       *output_buffer = uStack_20;

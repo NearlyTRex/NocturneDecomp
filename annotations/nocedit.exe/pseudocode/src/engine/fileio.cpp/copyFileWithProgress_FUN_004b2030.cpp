@@ -2,13 +2,13 @@
 // Address: 004b2030
 // Address Range: [[004b2030, 004b21f6]]
 // Convention: __cdecl
-// Signature: char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030 (FILE *source_file,FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes)
+// Signature: char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030 (_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes)
 
 #include "nocturne.h"
 
 char * __cdecl
 engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
-          (FILE *source_file,FILE *dest_file,char *source_filename,char *dest_filename,
+          (_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename,
           int file_size_bytes)
 
 {
@@ -26,7 +26,7 @@ engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
   g_FileTransferErrorMessage[0] = '\0';
   bVar1 = 0xc800 < file_size_bytes;
   if (bVar1) {
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_208,"Copying %s -> %s (%d bytes)",source_filename,dest_filename,
                file_size_bytes);
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -39,25 +39,25 @@ engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
       if (0x8000 < (int)count) {
         count = 0x8000;
       }
-      SVar2 = crt_stdio_c_fread_FUN_005fd990(g_FileTransferBuffer,1,count,source_file);
+      SVar2 = _fread(g_FileTransferBuffer,1,count,source_file);
       if (SVar2 != count) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (g_FileTransferErrorMessage,"Error reading %s",source_filename);
-        piVar3 = (int *)crt_errno_c_errno_FUN_00601450();
+        piVar3 = (int *)_errno();
         iVar5 = *piVar3;
 LAB_004b20b4:
-        pcVar4 = crt_string_c_strerror_FUN_00601470(iVar5);
+        pcVar4 = strerror(iVar5);
         if (pcVar4 != (char *)0x0) {
           pcVar6 = g_FileTransferErrorMessage;
           goto LAB_004b20cd;
         }
         break;
       }
-      SVar2 = crt_stdio_c_fwrite_FUN_005fdc00(g_FileTransferBuffer,1,count,dest_file);
+      SVar2 = _fwrite(g_FileTransferBuffer,1,count,dest_file);
       if (SVar2 != count) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (g_FileTransferErrorMessage,"Error writing %s",dest_filename);
-        piVar3 = (int *)crt_errno_c_errno_FUN_00601450();
+        piVar3 = (int *)_errno();
         iVar5 = *piVar3;
         goto LAB_004b20b4;
       }
@@ -82,7 +82,7 @@ LAB_004b20cd:
   }
   buffer = (char *)0x0;
 LAB_004b20e5:
-  crt_stdio_c_sprintf_FUN_005fdbd0(buffer,"\n%s",pcVar4);
+  sprintf(buffer,"\n%s",pcVar4);
 LAB_004b20ee:
   if (bVar1) {
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);

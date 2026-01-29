@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_heap_c_heapWalk_FUN_006012d0(HeapState *heap_state_ptr,Heap *heap_ptr)
+int __cdecl heapWalk(HeapState *heap_state_ptr,Heap *heap_ptr)
 
 {
   Heap *pHVar1;

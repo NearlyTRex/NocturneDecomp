@@ -24,8 +24,8 @@ shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
     if (bVar1 < 0x2a) {
 LAB_004a6e42:
       if (case_sensitive == 0) {
-        iVar2 = crt_ctype_c_tolower_FUN_005feb30((uint)(byte)*pattern);
-        iVar3 = crt_ctype_c_tolower_FUN_005feb30((uint)(byte)*target_string);
+        iVar2 = tolower((uint)(byte)*pattern);
+        iVar3 = tolower((uint)(byte)*target_string);
         if (iVar2 != iVar3) {
           return 0;
         }

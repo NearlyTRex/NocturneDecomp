@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam,int unused)
+initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
 
 {
   char cVar1;
@@ -30,7 +30,7 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
     }
   }
   else {
-    crt_io_c_InitializeStandardHandles_FUN_00608b20();
+    InitializeStandardHandles();
     g_EnvironmentStrings = (*g_GetEnvironmentStringsFunc)();
     g_EnvironmentBlock = (char **)0x0;
     DVar3 = (*g_GetVersionFunc)();
@@ -43,10 +43,10 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
     g_WindowsVersionCombined = g_WindowsVersionLow << 8 | g_WindowsVersionMid;
     (*g_GetModuleFileNameAFunc)((HMODULE)0x0,g_ExeFileNameBuffer_A,0x104);
     g_ExeFileNameA = g_ExeFileNameBuffer_A;
-    crt_startup_c_GetModuleFileNameCompat_FUN_0060a560((HMODULE)0x0,g_ExeFileNameBuffer_W,0x208);
+    GetModuleFileNameCompat((HMODULE)0x0,g_ExeFileNameBuffer_W,0x208);
     g_ExeFileNameW = g_ExeFileNameBuffer_W;
     str = (*g_GetCommandLineAFunc)();
-    g_CommandLineA = crt_string_c_strdup_FUN_0060a610(str);
+    g_CommandLineA = strdup(str);
     g_WinMainCmdShow = (DWORD)g_CommandLineA;
     if (*g_CommandLineA == '\"') {
       cVar1 = g_CommandLineA[1];
@@ -73,7 +73,7 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
       pcVar5 = g_EmptyStringBuffer;
     }
     else {
-      g_CommandLineW = crt_string_c_wcsdup_FUN_0060a660(str_00);
+      g_CommandLineW = wcsdup(str_00);
       pcVar5 = (char *)g_CommandLineW;
       if (*g_CommandLineW == L'\"') {
         WVar2 = g_CommandLineW[1];
@@ -99,7 +99,7 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
     if (in_stack_00000004 != 0) {
       (*g_GetModuleFileNameAFunc)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);
       g_DllFileNameA = g_DllFileNameBuffer_A;
-      crt_startup_c_GetModuleFileNameCompat_FUN_0060a560
+      GetModuleFileNameCompat
                 (in_stack_0000000c,g_DllFileNameBuffer_W,0x208);
       g_DllFileNameW = g_DllFileNameBuffer_W;
     }

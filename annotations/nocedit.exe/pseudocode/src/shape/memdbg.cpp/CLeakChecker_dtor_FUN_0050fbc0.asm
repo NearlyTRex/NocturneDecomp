@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_closeTrackedFile_FUN_00601ea0
+;   crt_stdio.c_fclose_FUN_00601ea0
 ;   crt_stdio.c_fopen_FUN_00601a7c
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_memdbg.cpp_traceFile_FUN_0050f180
@@ -67,7 +67,7 @@ section .text
     PUSH 0x6364b3                       ; 0050fc11 | = "at"
     PUSH 0x67d1f0                       ; 0050fc16 | = "memdbg.txt"
     CALL crt_stdio.c_fopen_FUN_00601a7c ; 0050fc1b
-        ;   XREF to: 00601a7c (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
+        ;   XREF to: 00601a7c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
     ADD ESP,0x8                         ; 0050fc20
     MOV ESI,EAX                         ; 0050fc23
     TEST EAX,EAX                        ; 0050fc25
@@ -96,7 +96,7 @@ section .text
     PUSH 0x6364f5                       ; 0050fc62 | = "%d bytes, %s line %d\n"
     PUSH ESI                            ; 0050fc67
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050fc68
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EBX,dword ptr [EBX + 0x4]       ; 0050fc6d
     ADD ESP,0x14                        ; 0050fc70
     TEST EBX,EBX                        ; 0050fc73
@@ -106,8 +106,8 @@ section .text
     LEA EDX,[EDX]                       ; 0050fc7d
     PUSH ESI                            ; 0050fc80
         ;   Label: LAB_0050fc80
-    CALL crt_stdio.c_closeTrackedFile_FUN_00601ea0 ; 0050fc81
-        ;   XREF to: 00601ea0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)
+    CALL crt_stdio.c_fclose_FUN_00601ea0 ; 0050fc81
+        ;   XREF to: 00601ea0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00601ea0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0050fc86
     PUSH 0x67d1f0                       ; 0050fc89 | = "memdbg.txt"
     MOV EBX,0x297                       ; 0050fc8e
@@ -133,7 +133,7 @@ section .text
     PUSH 0x6363f3                       ; 0050fcc7 | = "at"
     PUSH 0x67d1f0                       ; 0050fccc | = "memdbg.txt"
     CALL crt_stdio.c_fopen_FUN_00601a7c ; 0050fcd1
-        ;   XREF to: 00601a7c (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
+        ;   XREF to: 00601a7c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
     ADD ESP,0x8                         ; 0050fcd6
     MOV EDI,EAX                         ; 0050fcd9
     TEST EAX,EAX                        ; 0050fcdb
@@ -170,7 +170,7 @@ section .text
     PUSH 0x63642f                       ; 0050fd38 | = "%s, opened %s line %d\n"
     PUSH EDI                            ; 0050fd3d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050fd3e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0050fd43
     MOV ECX,dword ptr [0x02f0d948]      ; 0050fd46 | g_OpenFileCount
         ;   Label: LAB_0050fd46
@@ -181,8 +181,8 @@ section .text
         ;   XREF to: 0050fd18 (CONDITIONAL_JUMP)  ; LAB_0050fd18
     PUSH EDI                            ; 0050fd57
         ;   Label: LAB_0050fd57
-    CALL crt_stdio.c_closeTrackedFile_FUN_00601ea0 ; 0050fd58
-        ;   XREF to: 00601ea0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)
+    CALL crt_stdio.c_fclose_FUN_00601ea0 ; 0050fd58
+        ;   XREF to: 00601ea0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00601ea0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0050fd5d
     PUSH 0x67d1f0                       ; 0050fd60 | = "memdbg.txt"
     MOV EBX,0x636463                    ; 0050fd65 | = "..\\shape\\memdbg.cpp"
@@ -205,7 +205,7 @@ section .text
     PUSH 0x636446                       ; 0050fd9d | = "%s in %s, opened %s line %d\n"
     PUSH EDI                            ; 0050fda2
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0050fda3
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 0050fda8
     JMP 0x0050fd46                      ; 0050fdab
         ;   XREF to: 0050fd46 (UNCONDITIONAL_JUMP)  ; LAB_0050fd46

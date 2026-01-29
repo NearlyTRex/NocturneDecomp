@@ -30,7 +30,7 @@ engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
   if (0 < local_438.file_count) {
     iVar2 = 0;
     do {
-      crt_io_c_deleteFile_FUN_005ff9d0
+      remove
                 (*(char **)((int)&(local_438.directory_entries)->name_or_offset + iVar2));
       iVar1 = iVar1 + 1;
       local_c = iVar1;

@@ -12,8 +12,8 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_
   void *ptr;
   
   if ((d1 & 4) != 0) {
-    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CStrListTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr);
+    ptr = __vec_delete(this_ptr,&g_CStrListTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }
   this_ptr->vtable = &g_CStrListVTable;

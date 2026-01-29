@@ -9,6 +9,6 @@
 void __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x14,&g_SRoomTypeInfo);
+  __arrfini(array,0x14,&g_SRoomTypeInfo);
   return;
 }

@@ -20,7 +20,7 @@ shape_cramtex_cpp_renderAllTexturesAndRectangles_FUN_00447ab0
   SCramWorkingEntry *in_stack_00000004;
   int in_stack_ffffffe8;
   
-  crt_stack_c_stack_probe_FUN_005ff9f3(0x34);
+  __STK(0x34);
   if (g_CramVisualizationFlag != 0) {
     engine_2d_c_fillRectColor_FUN_00403170(x,y,width + -1,height + -1,1);
     uVar1 = g_CramPlacedTextureCount;

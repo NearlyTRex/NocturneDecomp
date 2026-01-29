@@ -36,8 +36,8 @@ void core_msnedit_cpp_FUN_00537330(void)
     do {
       iVar2 = *(int *)((int)g_ActorClassRegistrations + iVar3);
       if (in_stack_00000008 == *(int *)(iVar2 + 0x28)) {
-        crt_memory_c_memset_FUN_005fde40(local_80,0x20,100);
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        memset(local_80,0x20,100);
+        sprintf
                   (local_1c,"%s\t%d",iVar2,*(uint *)(iVar2 + 0x34));
         if (*(int *)(iVar2 + 0x2c) == 0) {
           pcVar4 = "\t(abstract)";

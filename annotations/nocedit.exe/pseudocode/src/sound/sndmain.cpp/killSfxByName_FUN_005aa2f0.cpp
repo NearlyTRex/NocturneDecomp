@@ -18,7 +18,7 @@ void __cdecl sound_sndmain_cpp_killSfxByName_FUN_005aa2f0(char *sample_name)
   do {
     str1 = *(char **)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -8);
     if (str1 != (char *)0x0) {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,sample_name);
+      iVar1 = stricmp(str1,sample_name);
       if (iVar1 == 0) {
         sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60
                   ((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar2 + -0x54));

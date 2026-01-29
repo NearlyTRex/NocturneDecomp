@@ -50,7 +50,7 @@ void core_gabriela_cpp_FUN_004d4190(void)
   float local_18;
   
   local_1c = 0.25;
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004[0x8d].create_event + 0x3c,0,0x2c);
+  memset(in_stack_00000004[0x8d].create_event + 0x3c,0,0x2c);
   if (in_stack_00000004[0x179].previous_transform_state.orientation.y != 0.0) {
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
     local_84 = (in_stack_00000004->location).position.x - (pCVar1->base).base.location.position.x;

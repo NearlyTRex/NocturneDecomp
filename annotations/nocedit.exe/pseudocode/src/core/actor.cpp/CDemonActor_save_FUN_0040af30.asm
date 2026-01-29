@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,FILE *file_handle)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; FILE *           Stack[0x8]:4   file_handle
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -24,7 +24,7 @@
 ;   TerminatedCString s_core_actor_cpp_00613ced
 ;   TerminatedCString s_IO_Error_after_writing_a_00613cff
 ;   char[104] g_PropertyNamePrefix
-;   FILE* g_ActorDataFile
+;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;   CDemonActor* g_CurrentActorBeingProcessed
 ;   char* g_CurrentFilename
@@ -76,7 +76,7 @@ section .text
     PUSH 0x613cd3                       ; 0040af80 | = "%s{ %s \"%s\"\n"
     PUSH EDI                            ; 0040af85
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040af86
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040af8b
     MOV EAX,[0x00822034]                ; 0040af8e | g_ActorDataFile
     MOV EBP,dword ptr [0x0082203c]      ; 0040af93 | g_CurrentActorBeingProcessed
@@ -105,7 +105,7 @@ section .text
     PUSH 0x613ce0                       ; 0040afe7 | = "%s} %s \"%s\"\n"
     PUSH EDI                            ; 0040afec
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040afed
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV DH,byte ptr [EDI + 0xc]         ; 0040aff2
     ADD ESP,0x14                        ; 0040aff5
     TEST DH,0x20                        ; 0040aff8

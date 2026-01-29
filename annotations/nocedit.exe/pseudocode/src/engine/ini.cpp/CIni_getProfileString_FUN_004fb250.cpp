@@ -15,7 +15,7 @@ engine_ini_cpp_CIni_getProfileString_FUN_004fb250
   char cVar1;
   byte bVar2;
   bool bVar3;
-  FILE *stream;
+  _FILE *stream;
   char *pcVar4;
   char *pcVar5;
   int iVar6;
@@ -29,23 +29,23 @@ engine_ini_cpp_CIni_getProfileString_FUN_004fb250
   bVar3 = false;
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (filename,(char *)0x0,"rt","..\\engine\\ini.cpp",0x56);
-  if (stream == (FILE *)0x0) {
+  if (stream == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
     g_CurrentLineNumber = 0x57;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::getProfileString: Unable to open input");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"[%s]\n",section);
+  sprintf(local_110,"[%s]\n",section);
   do {
     if (((stream->_flag & 0x10) != 0) ||
-       (pcVar5 = crt_stdio_c_fgets_FUN_005fefd0(local_210,0xff,stream), pcVar5 == (char *)0x0))
+       (pcVar5 = _fgets(local_210,0xff,stream), pcVar5 == (char *)0x0))
     goto LAB_004fb2d7;
-    iVar6 = crt_string_c_strcmp_FUN_005fef20(local_210,local_110);
+    iVar6 = strcmp(local_210,local_110);
   } while (iVar6 != 0);
   bVar2 = (byte)stream->_flag;
   bVar3 = false;
   do {
     if (((bVar2 & 0x10) != 0) ||
-       (pcVar4 = crt_stdio_c_fgets_FUN_005fefd0(local_210,0xff,stream), pcVar5 = local_210,
+       (pcVar4 = _fgets(local_210,0xff,stream), pcVar5 = local_210,
        pcVar4 == (char *)0x0)) goto LAB_004fb2d7;
     do {
       unaff_EBP = pcVar5;
@@ -60,7 +60,7 @@ LAB_004fb3b0:
     if (unaff_EBP != (char *)0x0) {
       *unaff_EBP = '\0';
     }
-    iVar6 = crt_string_c_strcmp_FUN_005fef20(local_210,key);
+    iVar6 = strcmp(local_210,key);
     if (iVar6 == 0) break;
     bVar2 = (byte)stream->_flag;
   } while( true );

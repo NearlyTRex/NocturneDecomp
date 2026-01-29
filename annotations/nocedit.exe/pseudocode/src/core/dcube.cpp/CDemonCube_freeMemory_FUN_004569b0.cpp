@@ -12,13 +12,13 @@ void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_004569b0(CDemonCube *this_
   if (this_ptr->vertex_buffer != (CVector3f *)0x0) {
     g_CurrentDebugLine = 0x614;
     g_CurrentDebugFilename = "..\\core\\dcube.cpp";
-    crt_memory_c_free_FUN_005fe659(&this_ptr->vertex_buffer[-1].z);
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->vertex_buffer[-1].z);
     this_ptr->vertex_buffer = (CVector3f *)0x0;
   }
   if (this_ptr->triangle_buffer != (CDemonCubeTriangle *)0x0) {
     g_CurrentDebugFilename = "..\\core\\dcube.cpp";
     g_CurrentDebugLine = 0x618;
-    crt_memory_c_free_FUN_005fe659(this_ptr->triangle_buffer);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->triangle_buffer);
     this_ptr->triangle_buffer = (CDemonCubeTriangle *)0x0;
   }
   if (this_ptr->ground_type_memory != (void *)0x0) {

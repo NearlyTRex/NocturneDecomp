@@ -47,7 +47,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     local_f8 = (this_ptr->motion_controller).current_frame_number;
     pcVar2 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
                        (&this_ptr->motion_controller);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"%s (%s)",motion_name,pcVar2);
+    sprintf(local_f4,"%s (%s)",motion_name,pcVar2);
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -58,7 +58,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     if (iVar1 != 0) {
       INT_02f7c52c = -1;
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0
+    sprintf
               (local_f4,"%6.2f",SUB84((double)local_f8,0),
                (int)((ulonglong)(double)local_f8 >> 0x20));
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
@@ -76,7 +76,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     frame_number = 0.0;
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      dVar3 = crt_math_c_ceil_FUN_006001b2((double)local_f8);
+      dVar3 = ceil((double)local_f8);
       uStack_30 = SUB84(dVar3,0);
       local_2c = (uint)((ulonglong)dVar3 >> 0x20);
       frame_number = (float)((float10)dVar3 + (float10)-1);
@@ -100,7 +100,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      dVar3 = crt_math_c_floor_FUN_005feb90((double)frame_number);
+      dVar3 = floor((double)frame_number);
       uStack_34 = SUB84(dVar3,0);
       uStack_30 = (uint)((ulonglong)dVar3 >> 0x20);
       INT_02f7c530 = 0;

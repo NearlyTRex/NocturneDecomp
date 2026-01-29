@@ -37,7 +37,7 @@
 ; Called Functions:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
 ;   core_setedit.cpp_ImportA3DBroken_FUN_00578c60
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0x110]               ; 00578a9a
     PUSH EAX                            ; 00578aa1
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00578aa2
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00578aa7
     MOV EBX,EAX                         ; 00578aaa
     TEST EAX,EAX                        ; 00578aac
@@ -158,7 +158,7 @@ section .text
     PUSH 0x646b6b                       ; 00578b23 | = "..\\core\\setedit.cpp"
     PUSH EBX                            ; 00578b28
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00578b29
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00578b2e
     PUSH 0x646b7f                       ; 00578b31 | = "zth"
     LEA EAX,[ESP + 0x204]               ; 00578b36
@@ -172,8 +172,8 @@ section .text
     ADD ESP,0x14                        ; 00578b52
     LEA EAX,[ESP + 0x300]               ; 00578b55
     PUSH EAX                            ; 00578b5c
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00578b5d
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00578b5d
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00578b62
     PUSH 0x646b88                       ; 00578b65 | = "thm"
     LEA EAX,[ESP + 0x204]               ; 00578b6a
@@ -187,8 +187,8 @@ section .text
     ADD ESP,0x14                        ; 00578b86
     LEA EAX,[ESP + 0x300]               ; 00578b89
     PUSH EAX                            ; 00578b90
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00578b91
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00578b91
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00578b96
     ADD ESP,0x4c8                       ; 00578b99
     POP EBP                             ; 00578b9f
@@ -247,7 +247,7 @@ section .text
     PUSH 0x646b22                       ; 00578c1c | = "..\\core\\setedit.cpp"
     PUSH EBX                            ; 00578c21
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00578c22
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00578c27
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00578c2a
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

@@ -43,17 +43,17 @@ void shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
   engine_2d_c_drawText_FUN_00401fd0("Sweep around X) Y) Z) axis : ",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-  local_54 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
+  local_54 = toupper(uVar1 & 0xff);
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_c4,0x4f,0,0xb,"Enter in point list : ");
-  local_50 = crt_stdio_c_sscanf_FUN_0060013c
+  local_50 = sscanf
                        (local_c4,"%d,%d,%d,%d,%d,%d,%d,%d",local_74,local_74 + 1,local_6c,local_68,
                         local_64,local_60,local_5c,local_58);
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_c4,10,0,0x16,"Enter in # of sections : ");
-  local_4c = crt_stdlib_c_atoi_FUN_005ffef0(local_c4);
+  local_4c = atoi(local_c4);
   engine_2d_c_drawText_FUN_00401fd0("I)nside, O)utside, B)oth ?",0,0x21);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-  local_14 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
+  local_14 = toupper(uVar1 & 0xff);
   if (((0 < local_50) && (local_50 < 7)) && (0 < local_4c)) {
     local_48 = (float)360 / (float)local_4c;
     local_44 = local_48;

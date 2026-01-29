@@ -23,16 +23,16 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename)
   bool bVar9;
   byte bVar10;
   char *pcVar11;
-  FILE *file;
+  _FILE *file;
   char local_114;
   byte local_113 [255];
-  FILE *local_14;
+  _FILE *local_14;
   
   bVar10 = 0;
   pCVar6 = g_SfxSamples;
   iVar7 = 0;
   do {
-    iVar2 = crt_string_c_stricmp_FUN_005fe7f0((char *)pCVar6,filename);
+    iVar2 = stricmp((char *)pCVar6,filename);
     if (iVar2 == 0) {
       return pCVar6;
     }
@@ -63,9 +63,9 @@ LAB_005a4cea:
   if ((g_GlobalMP3DecoderInitialized & 1) == 0) {
     g_GlobalMP3DecoderInitialized = g_GlobalMP3DecoderInitialized | 1;
     sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
-    crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode1);
+    _atexit(&g_CMP3DecoderDestructorNode1);
   }
-  local_14 = (FILE *)0x0;
+  local_14 = (_FILE *)0x0;
   iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
   pcVar11 = filename;
   pCVar8 = pCVar6;
@@ -89,17 +89,17 @@ LAB_005a4cea:
       cVar1 = *pcVar11;
       pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
     } while (cVar1 != '\0');
-    crt_string_c_memmove_FUN_005fe5e0(&local_114,local_113,~uVar5 - 1);
+    memmove(&local_114,local_113,~uVar5 - 1);
   }
-  iVar7 = crt_string_c_stricmp_FUN_005fe7f0(&local_114,"wav");
+  iVar7 = stricmp(&local_114,"wav");
   if (iVar7 == 0) {
     local_14 = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
-    if (local_14 == (FILE *)0x0) {
+    if (local_14 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x2fe;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",filename);
     }
-    lVar3 = crt_stdio_c_ftell_FUN_00601560(local_14);
+    lVar3 = _ftell(local_14);
     pCVar6->file_offset = lVar3;
     iVar7 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(local_14,&pCVar6->file_offset,pCVar6);
     if (iVar7 == 0) goto LAB_005a4ef8;
@@ -114,7 +114,7 @@ LAB_005a4cea:
     pCVar6->stream_write_position = iVar7;
     iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar6);
     if (iVar7 == 0) goto LAB_005a4ef8;
-    crt_stdio_c_fseek_FUN_005ffacc(local_14,pCVar6->file_offset,0);
+    _fseek(local_14,pCVar6->file_offset,0);
     buffer = sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
                        (pCVar6,0,(pCVar6->sample_info).sample_count);
     if (buffer == (void *)0x0) {
@@ -124,7 +124,7 @@ LAB_005a4cea:
       SVar4 = (pCVar6->sample_info).sample_count;
       file = local_14;
       size = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(pCVar6);
-      SVar4 = crt_stdio_c_fread_FUN_005fd990(buffer,size,SVar4,file);
+      SVar4 = _fread(buffer,size,SVar4,file);
       if ((SVar4 == (pCVar6->sample_info).sample_count) && ((local_14->_flag & 0x20) == 0)) {
         sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(pCVar6);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\sound\\sndmain.cpp",0x337);
@@ -134,7 +134,7 @@ LAB_005a4cea:
     }
   }
   else {
-    iVar7 = crt_string_c_stricmp_FUN_005fe7f0(&local_114,"mp3");
+    iVar7 = stricmp(&local_114,"mp3");
     if (iVar7 != 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x37b;
@@ -183,7 +183,7 @@ LAB_005a4cea:
 LAB_005a4ef8:
   sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(&g_CMP3DecoderInstance);
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(pCVar6);
-  if (local_14 != (FILE *)0x0) {
+  if (local_14 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\sound\\sndmain.cpp",0x2eb);
   }
   return (CSfxSample *)0x0;

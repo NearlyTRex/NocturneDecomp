@@ -1,0 +1,111 @@
+{
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 30,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [
+    {
+      "addr": "005feee9",
+      "from_addr": "005fef06",
+      "name": "crt_memory.c___arrfini_FUN_005feee9",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005feeaf",
+    "address_range": [
+      [
+        "005feeaf",
+        "005feee8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c___arrdtor_FUN_005feeaf",
+    "signature": "void * __cdecl crt_memory_c___arrdtor_FUN_005feeaf(WatcomTypeArrayInfo *destroy_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005fef06",
+        "call_type": "direct",
+        "caller": "crt_memory.c___arrfini_FUN_005feee9",
+        "estimated_params": 1,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9655172413793105,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 28,
+      "INT_ADD": 14,
+      "INT_AND": 9,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SEXT": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 13,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 8,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 115
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "destroy_info",
+        "offset": 4,
+        "size": 4,
+        "type": "WatcomTypeArrayInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "address": "005feeaf",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_memory.c___arrdtor_FUN_005feeaf",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005feeaf",
+      "type": "special_crt_function"
+    }
+  ]
+}

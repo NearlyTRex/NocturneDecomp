@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeLaserBeams_FUN_004c98f0(CLaserBeam **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0x40,&g_CLaserBeamTypeInfo);
+  __arrfini(array,0x40,&g_CLaserBeamTypeInfo);
   return;
 }

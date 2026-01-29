@@ -27,6 +27,6 @@ ushort crt_unknown_c_FUN_0060d1a8(void)
     iVar2 = iVar3;
   } while (iVar3 != 0x68);
   g_UserExceptionFilter = (EXCEPTION_FILTER_FUNC *)&LAB_0060cefc;
-  g_ExceptionCleanup = crt_signal_c_processSignal_FUN_0060d128;
+  g_ExceptionCleanup = processSignal;
   return in_DS;
 }

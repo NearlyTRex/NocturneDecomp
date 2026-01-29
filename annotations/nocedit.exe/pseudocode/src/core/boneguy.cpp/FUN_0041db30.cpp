@@ -11,6 +11,6 @@ int __cdecl core_boneguy_cpp_FUN_0041db30(SBoneGuyBox **objs)
 {
   int iVar1;
   
-  iVar1 = crt_memory_c_freeTypeArray_FUN_005feee9(objs,0x14,&g_SBoneGuyBoxTypeInfo);
+  iVar1 = __arrfini(objs,0x14,&g_SBoneGuyBoxTypeInfo);
   return iVar1;
 }

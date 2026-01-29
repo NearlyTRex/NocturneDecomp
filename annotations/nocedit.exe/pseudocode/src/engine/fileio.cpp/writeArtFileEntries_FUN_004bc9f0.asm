@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,FILE **raw_file,FILE **act_file)
+; __cdecl void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,_FILE **raw_file,_FILE **act_file)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; FILE * *         Stack[0x8]:4   raw_file
-; FILE * *         Stack[0xc]:4   act_file
+; _FILE * *        Stack[0x8]:4   raw_file
+; _FILE * *        Stack[0xc]:4   act_file
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ;
@@ -42,7 +42,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 004bca21
     PUSH ECX                            ; 004bca23
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004bca24
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004bca29
     MOV EAX,ESP                         ; 004bca2c
     PUSH EAX                            ; 004bca2e
@@ -51,7 +51,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 004bca3b
     PUSH EBX                            ; 004bca3d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004bca3e
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004bca43
     ADD ESP,0x100                       ; 004bca46
     POP EBX                             ; 004bca4c

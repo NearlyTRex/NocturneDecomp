@@ -53,10 +53,10 @@ void core_curtain_cpp_FUN_00449810(void)
   while( true ) {
     fVar4 = 1.0 / *(float *)(in_stack_00000004[1].create_event + 0x2c);
     fVar17 = *(float *)(in_stack_00000004[1].actor_name + 4);
-    dVar22 = crt_math_c_round_FUN_005fe6b0
+    dVar22 = round
                        ((double)(*(float *)in_stack_00000004[1].actor_name * fVar4));
     iVar10 = (int)ROUND(dVar22);
-    dVar22 = crt_math_c_round_FUN_005fe6b0((double)(fVar17 * fVar4));
+    dVar22 = round((double)(fVar17 * fVar4));
     iVar11 = (int)ROUND(dVar22);
     iVar6 = iVar11 + 1;
     in_stack_00000004[0x152].is_transparent = local_20;
@@ -115,7 +115,7 @@ void core_curtain_cpp_FUN_00449810(void)
           }
           fVar20 = (float10)252;
           fVar21 = (float10)65536;
-          dVar22 = crt_math_c_round_FUN_005fe6b0
+          dVar22 = round
                              ((double)((((float10)*(float *)in_stack_00000004[1].actor_name *
                                          (float10)0.5 +
                                         (float10)*(float *)(local_14 + 0xc)) /
@@ -125,7 +125,7 @@ void core_curtain_cpp_FUN_00449810(void)
           *(int *)(local_14 + 0x18) = iVar2 + 0x20000;
           iVar12 = iVar12 + 1;
           local_1c = local_18 + 0x74;
-          dVar22 = crt_math_c_round_FUN_005fe6b0
+          dVar22 = round
                              ((double)(fVar21 * ((float10)1 -
                                                 (float10)*(float *)(local_14 + 0x10) /
                                                 (float10)*(float *)(in_stack_00000004[1].actor_name

@@ -162,14 +162,14 @@ LAB_004a402a:
         } while (this_ptr->search_text_buffer[0] == '\0');
         pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                            (&this_ptr->base,this_ptr->current_index);
-        iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,pcVar3);
+        iVar2 = stricmp(str1,pcVar3);
         if (iVar2 < 1) {
           this_ptr->current_index = 0;
         }
         while (this_ptr->current_index < (this_ptr->base).item_count) {
           pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                              (&this_ptr->base,this_ptr->current_index);
-          iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,pcVar3);
+          iVar2 = stricmp(str1,pcVar3);
           if (iVar2 < 1) break;
           this_ptr->current_index = this_ptr->current_index + 1;
         }

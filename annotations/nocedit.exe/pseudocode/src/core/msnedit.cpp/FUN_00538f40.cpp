@@ -21,7 +21,7 @@ int core_msnedit_cpp_FUN_00538f40(void)
   if (0 < *(int *)(in_stack_00000004 + 0x144)) {
     str1 = (char *)(in_stack_00000004 + 0x148);
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000008);
+      iVar1 = stricmp(str1,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }

@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_DoSomethingAndSetCtrlHandler(uint param_1, uint param_2) */
 
-SIGNAL_HANDLER_TYPE crt_unknown_c_DoSomethingAndSetCtrlHandler_FUN_0060d068(void)
+SIGNAL_HANDLER_TYPE DoSomethingAndSetCtrlHandler(void)
 
 {
   int iVar1;
@@ -21,20 +21,20 @@ SIGNAL_HANDLER_TYPE crt_unknown_c_DoSomethingAndSetCtrlHandler_FUN_0060d068(void
     if ((in_stack_00000008 != 2) && (in_stack_00000008 != 3)) {
       iVar1 = crt_unknown_c_FUN_0060ced8();
       if ((iVar1 != 0) && (in_stack_00000004 == 2)) {
-        crt_unknown_c_SomethingFPUControlWord_FUN_0060e8e0();
+        SomethingFPUControlWord();
       }
     }
-    SVar2 = crt_signal_c_getSignalHandler_FUN_0060ceb4(in_stack_00000004);
-    crt_signal_c_setSignalHandler_FUN_0060ce60(in_stack_00000004,in_stack_00000008);
+    SVar2 = getSignalHandler(in_stack_00000004);
+    setSignalHandler(in_stack_00000004,in_stack_00000008);
     iVar1 = crt_unknown_c_FUN_0060cf80();
     if (iVar1 == 0) {
-      crt_signal_c_unregisterConsoleHandler_FUN_0060cfe4();
+      unregisterConsoleHandler();
     }
     else {
-      crt_signal_c_registerConsoleHandler_FUN_0060cfb8();
+      registerConsoleHandler();
     }
     return SVar2;
   }
-  crt_errno_c_setErrno_FUN_00602790(9);
+  setErrno(9);
   return 3;
 }

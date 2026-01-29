@@ -44,7 +44,7 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
     local_34 = progress_min / progress_max;
   }
   uVar8 = 0x4a059a;
-  dVar5 = crt_math_c_round_FUN_005fe6b0
+  dVar5 = round
                     ((double)(local_34 * (float)100 +
                              (float)0.5));
   iVar3 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -68,7 +68,7 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
     engine_2d_c_drawHLine_FUN_00402ee0(x1,y,x2);
     engine_2d_c_drawVLine_FUN_00402ff0(x1,y,y2);
     g_ActiveRenderColor = iVar4;
-    dVar5 = crt_math_c_round_FUN_005fe6b0
+    dVar5 = round
                       ((double)((float)((x2 - x1_00) + 1) * local_38 +
                                (float)0.5));
     iVar4 = (int)ROUND(dVar5) + x1_00;
@@ -84,13 +84,13 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
       dVar5 = (double)fVar1;
       if ((float)5 < fVar1) {
         uVar8 = 0x4a077d;
-        dVar6 = crt_math_c_round_FUN_005fe6b0
+        dVar6 = round
                           ((double)(((progress_max - progress_min) * fVar1) / progress_min +
                                    (float)0.5));
         iVar3 = (int)ROUND(dVar6);
         if (0 < iVar3) {
           uVar7 = 0x4a07b4;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar6 = round
                             ((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30

@@ -2,13 +2,13 @@
 // Address: 0054b930
 // Address Range: [[0054b930, 0054b9a9]]
 // Convention: unknown
-// Signature: void cockpit_pkbitmap_cpp_FUN_0054b930 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,FILE *param_6)
+// Signature: void cockpit_pkbitmap_cpp_FUN_0054b930 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,_FILE *param_6)
 
 #include "nocturne.h"
 
 void cockpit_pkbitmap_cpp_FUN_0054b930
                (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               uint param_5,FILE *param_6)
+               uint param_5,_FILE *param_6)
 
 {
   int iVar1;
@@ -29,7 +29,7 @@ void cockpit_pkbitmap_cpp_FUN_0054b930
     pcVar3 = pcVar3 + 1;
   }
   local_c = param_5;
-  crt_stdio_c_fwrite_FUN_005fdc00(local_10,8,1,param_6);
+  _fwrite(local_10,8,1,param_6);
   if ((param_6->_flag & 0x20) == 0) {
     return;
   }

@@ -15,9 +15,9 @@
 ;   WatcomTypeInfo g_CMotionControllerTypeInfo
 ;
 ; Called Functions:
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -40,12 +40,12 @@ section .text
     PUSH 0x661bd0                       ; 0052d5bc | g_CMotionControllerTypeInfo
         ;   Label: LAB_0052d5bc
     PUSH EBX                            ; 0052d5c1
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0052d5c2
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0052d5c2
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0052d5c7
     PUSH EAX                            ; 0052d5ca
-    CALL crt_memory.c_free_FUN_005fe659 ; 0052d5cb
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0052d5cb
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0052d5d0
     MOV EAX,EBX                         ; 0052d5d3
     POP EBX                             ; 0052d5d5

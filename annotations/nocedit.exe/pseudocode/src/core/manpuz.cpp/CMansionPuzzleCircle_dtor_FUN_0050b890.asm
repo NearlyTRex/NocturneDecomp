@@ -19,9 +19,9 @@
 ;   core_manpuz.cpp_freeGems_FUN_0050bab0
 ;   core_manpuz.cpp_freePanels_FUN_0050ba90
 ;   core_manpuz.cpp_freeReflectors_FUN_0050bad0
-;   crt_memory.c_free_FUN_005fe659
-;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
 
@@ -68,12 +68,12 @@ section .text
     PUSH 0x661000                       ; 0050b8ed | g_CMansionPuzzleCircleTypeInfo
         ;   Label: LAB_0050b8ed
     PUSH EBX                            ; 0050b8f2
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0050b8f3
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0050b8f3
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0050b8f8
     PUSH EAX                            ; 0050b8fb
-    CALL crt_memory.c_free_FUN_005fe659 ; 0050b8fc
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0050b8fc
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0050b901
     MOV EAX,EBX                         ; 0050b904
     POP EBX                             ; 0050b906

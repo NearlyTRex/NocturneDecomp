@@ -8,45 +8,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 18,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 245,
+    "complexity_score": 241,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 16,
     "suspect_count": 22,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 79
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -141,145 +117,145 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "FILE *in_stack_00000008;",
+      "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
+      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
+      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
+      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + 0x1c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 16,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",in_stack_00000004 + 0x28,",
+      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",in_stack_00000004 + 0x28,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 16,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",in_stack_00000004 + 0x28,",
+      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",in_stack_00000004 + 0x28,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + 0x38,in_stack_00000004 + 0x3c,in_stack_00000004 + 0x40);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + 0x38,in_stack_00000004 + 0x3c,in_stack_00000004 + 0x40);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + 0x38,in_stack_00000004 + 0x3c,in_stack_00000004 + 0x40);",
       "type": "stack_param"

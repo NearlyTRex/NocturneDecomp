@@ -75,8 +75,8 @@ uint core_script_cpp_SCmdParse_parse_FUN_00561fd0(void)
       piVar12 = in_stack_00000004 + 0x818;
       goto code_r0x005621ce;
     }
-    iVar5 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar9);
-    iVar7 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*(byte *)(local_28 + in_stack_00000008));
+    iVar5 = toupper((uint)*pbVar9);
+    iVar7 = toupper((uint)*(byte *)(local_28 + in_stack_00000008));
     iVar6 = local_24;
     if (iVar5 != iVar7) {
       return 0;
@@ -139,8 +139,8 @@ LAB_005620a2:
     piVar12 = local_1c;
     goto LAB_00562475;
   }
-  iVar7 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*(byte *)(local_28 + in_stack_00000008));
-  iVar8 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*(byte *)(in_stack_0000000c + local_24));
+  iVar7 = toupper((uint)*(byte *)(local_28 + in_stack_00000008));
+  iVar8 = toupper((uint)*(byte *)(in_stack_0000000c + local_24));
   iVar5 = local_28;
   piVar12 = local_1c;
   if (iVar7 == iVar8) {

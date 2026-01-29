@@ -27,8 +27,7 @@ core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't allocate cloth");
   }
   core_cloth_cpp_CCloth_load_FUN_00438cf0(this_ptr,cloth_filename);
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            ((file_manager_ptr->base).file_ptr,"models\\%s\n",cloth_filename);
+  _fprintf((file_manager_ptr->base).file_ptr,"models\\%s\n",cloth_filename);
   core_cloth_cpp_FUN_0043e0a0();
   g_CurrentDebugLine = 0x158;
   g_CurrentDebugFilename = "..\\core\\fileman.cpp";

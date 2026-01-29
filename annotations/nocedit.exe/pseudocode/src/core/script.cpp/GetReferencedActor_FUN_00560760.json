@@ -27,18 +27,6 @@
         "column": 14,
         "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 29,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
@@ -211,7 +199,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "FILE *in_stack_00000004;",
+      "text": "_FILE *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -239,7 +227,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000004,\"\\\"%[^\\\"]\\\"\\n\",local_d0);",
+      "text": "_fscanf(in_stack_00000004,\"\\\"%[^\\\"]\\\"\\n\",local_d0);",
       "type": "stack_param"
     },
     {

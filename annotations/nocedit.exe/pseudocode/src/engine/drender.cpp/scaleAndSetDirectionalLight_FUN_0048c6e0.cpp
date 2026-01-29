@@ -20,10 +20,10 @@ void __cdecl engine_drender_cpp_scaleAndSetDirectionalLight_FUN_0048c6e0(CVector
   fVar2 = (float10)65536;
   fVar1 = in_stack_00000008[1];
   fVar3 = (float10)*in_stack_00000008 * fVar2;
-  crt_math_c_round_FUN_005fe6b0((double)((float10)in_stack_00000008[2] * fVar2));
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar2));
+  round((double)((float10)in_stack_00000008[2] * fVar2));
+  dVar4 = round((double)((float10)fVar1 * fVar2));
   dir_z = 0x48c720;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  dVar5 = round((double)fVar3);
   engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar5),(int)ROUND(dVar4),dir_z)
   ;
   return;

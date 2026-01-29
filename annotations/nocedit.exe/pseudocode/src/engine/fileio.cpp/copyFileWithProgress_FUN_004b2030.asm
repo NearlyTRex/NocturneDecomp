@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030 (FILE *source_file,FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes)
+; __cdecl char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030 (_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes)
 ;
 ; Parameters:
-; FILE *           Stack[0x4]:4   source_file
-; FILE *           Stack[0x8]:4   dest_file
+; _FILE *          Stack[0x4]:4   source_file
+; _FILE *          Stack[0x8]:4   dest_file
 ; char *           Stack[0xc]:4   source_filename
 ; char *           Stack[0x10]:4   dest_filename
 ; int              Stack[0x14]:4   file_size_bytes
@@ -35,7 +35,7 @@
 ;   char[32768] g_FileTransferBuffer
 ;
 ; Called Functions:
-;   crt_errno.c_errno_FUN_00601450
+;   crt_errno.c__errno_FUN_00601450
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -80,7 +80,7 @@ section .text
     PUSH 0x1                            ; 004b207b
     PUSH 0x2d0a990                      ; 004b207d | g_FileTransferBuffer
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004b2082
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004b2087
     CMP EAX,EBX                         ; 004b208a
     JZ 0x004b215a                       ; 004b208c
@@ -92,8 +92,8 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b20a4
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b20a9
-    CALL crt_errno.c_errno_FUN_00601450 ; 004b20ac
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 004b20ac
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
     MOV EDX,dword ptr [EAX]             ; 004b20b1
     PUSH EDX                            ; 004b20b3
     CALL crt_string.c_strerror_FUN_00601470 ; 004b20b4
@@ -180,7 +180,7 @@ section .text
     PUSH 0x1                            ; 004b2163
     PUSH 0x2d0a990                      ; 004b2165 | g_FileTransferBuffer
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 004b216a
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004b216f
     CMP EAX,EBX                         ; 004b2172
     JNZ 0x004b21c0                      ; 004b2174
@@ -216,8 +216,8 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b21d2
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b21d7
-    CALL crt_errno.c_errno_FUN_00601450 ; 004b21da
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
+    CALL crt_errno.c__errno_FUN_00601450 ; 004b21da
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
     MOV ESI,dword ptr [EAX]             ; 004b21df
     PUSH ESI                            ; 004b21e1
     JMP 0x004b20b4                      ; 004b21e2

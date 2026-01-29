@@ -269,7 +269,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_cc = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             local_29c = local_29c + 1;
           }
@@ -306,7 +306,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_2a4 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             local_294 = local_294 + 1;
           }
@@ -332,7 +332,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_2ac._0_4_ = SUB84(dVar7,0);
           uVar9 = (uint)local_2ac;
           local_2ac = dVar7;
-          crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffba8,"FPS: %3.2lf",uVar9,uVar8);
+          sprintf(&stack0xfffffba8,"FPS: %3.2lf",uVar9,uVar8);
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffba8,5.0);
         }
       }
@@ -354,7 +354,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_c8 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               local_28c = local_28c + 1;
             }
@@ -389,7 +389,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_c4 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               local_284 = local_284 + 1;
             }
@@ -432,7 +432,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_c0 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               local_27c = local_27c + 1;
             }
@@ -481,7 +481,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_bc = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               local_274 = local_274 + 1;
             }
@@ -523,7 +523,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_b8 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             local_26c = local_26c + 1;
           }
@@ -558,7 +558,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_b4 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             local_264 = local_264 + 1;
           }
@@ -594,7 +594,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_b0 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               local_25c = local_25c + 1;
             }
@@ -643,7 +643,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           iStack_ac = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               local_254 = local_254 + 1;
             }
@@ -673,7 +673,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_a8 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_24c = iStack_24c + 1;
           }
@@ -727,7 +727,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_a4 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_244 = iStack_244 + 1;
           }
@@ -771,7 +771,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_a0 = 0;
         do {
           bVar3 = g_InputHistory[iVar17];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (uVar12 == bVar3) {
             iVar10 = iVar10 + 1;
           }
@@ -815,7 +815,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_9c = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_230 = iStack_230 + 1;
           }
@@ -851,7 +851,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_98 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_220 = iStack_220 + 1;
           }
@@ -886,7 +886,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_94 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_210 = iStack_210 + 1;
           }
@@ -921,7 +921,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_90 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_200 = iStack_200 + 1;
           }
@@ -957,7 +957,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_8c = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_1f0 = iStack_1f0 + 1;
           }
@@ -993,7 +993,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_88 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_1e0 = iStack_1e0 + 1;
           }
@@ -1029,7 +1029,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_84 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_1d0 = iStack_1d0 + 1;
           }
@@ -1065,7 +1065,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_80 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_1c0 = iStack_1c0 + 1;
           }
@@ -1097,7 +1097,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_7c = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_1b8 = iStack_1b8 + 1;
           }
@@ -1146,7 +1146,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_78 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_1b0 = iStack_1b0 + 1;
           }
@@ -1186,7 +1186,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           iStack_74 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               iStack_1a8 = iStack_1a8 + 1;
             }
@@ -1234,7 +1234,7 @@ LAB_004df408:
         iStack_70 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_1a0 = iStack_1a0 + 1;
           }
@@ -1279,7 +1279,7 @@ LAB_004df408:
         iStack_68 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_198 = iStack_198 + 1;
           }
@@ -1321,7 +1321,7 @@ LAB_004df408:
           iStack_64 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               iStack_190 = iStack_190 + 1;
             }
@@ -1354,7 +1354,7 @@ LAB_004df408:
         iStack_60 = 0;
         do {
           bVar3 = g_InputHistory[iVar17];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (uVar12 == bVar3) {
             iVar10 = iVar10 + 1;
           }
@@ -1385,7 +1385,7 @@ LAB_004df408:
         iStack_5c = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_180 = iStack_180 + 1;
           }
@@ -1416,7 +1416,7 @@ LAB_004df408:
         iStack_58 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_178 = iStack_178 + 1;
           }
@@ -1471,7 +1471,7 @@ LAB_004df408:
           iStack_54 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               iStack_170 = iStack_170 + 1;
             }
@@ -1505,7 +1505,7 @@ LAB_004df408:
           iStack_50 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               iStack_168 = iStack_168 + 1;
             }
@@ -1538,7 +1538,7 @@ LAB_004df408:
           iStack_4c = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               iStack_160 = iStack_160 + 1;
             }
@@ -1578,7 +1578,7 @@ LAB_004df408:
         iStack_48 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_158 = iStack_158 + 1;
           }
@@ -1613,7 +1613,7 @@ LAB_004df408:
         iStack_44 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_150 = iStack_150 + 1;
           }
@@ -1642,7 +1642,7 @@ LAB_004df408:
         iStack_40 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_148 = iStack_148 + 1;
           }
@@ -1671,7 +1671,7 @@ LAB_004df408:
         iStack_3c = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_140 = iStack_140 + 1;
           }
@@ -1801,7 +1801,7 @@ LAB_004df408:
           iStack_34 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               iStack_108 = iStack_108 + 1;
             }
@@ -1831,7 +1831,7 @@ LAB_004df408:
         iStack_30 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_100 = iStack_100 + 1;
           }
@@ -1873,7 +1873,7 @@ LAB_004df408:
         iStack_2c = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_f8 = iStack_f8 + 1;
           }
@@ -1905,7 +1905,7 @@ LAB_004df408:
         iStack_28 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_f0 = iStack_f0 + 1;
           }
@@ -1945,7 +1945,7 @@ LAB_004df408:
         iStack_24 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_e8 = iStack_e8 + 1;
           }
@@ -1974,7 +1974,7 @@ LAB_004df408:
         iStack_20 = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_e0 = iStack_e0 + 1;
           }
@@ -2003,7 +2003,7 @@ LAB_004df408:
         iStack_1c = 0;
         do {
           bVar3 = g_InputHistory[iVar10];
-          uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar12 = toupper((uint)*pbVar14);
           if (bVar3 == uVar12) {
             iStack_d8 = iStack_d8 + 1;
           }
@@ -2033,7 +2033,7 @@ LAB_004df408:
           local_18 = 0;
           do {
             bVar3 = g_InputHistory[iVar10];
-            uVar12 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar12 = toupper((uint)*pbVar14);
             if (bVar3 == uVar12) {
               local_d0 = local_d0 + 1;
             }

@@ -121,7 +121,7 @@ section .text
     PUSH EBP                            ; 005510cc
     SUB EBX,EDX                         ; 005510cd
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005510cf
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005510d4
     PUSH 0x0                            ; 005510d7
     MOV ESI,dword ptr [ESP + 0x438]     ; 005510d9
@@ -132,7 +132,7 @@ section .text
     MOV dword ptr [ESP + 0x43c],EAX     ; 005510e6
     MOV ESI,0xffffffff                  ; 005510ed
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 005510f2
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 005510f7
     CMP EBX,0x10000                     ; 005510fa
     JL 0x00551148                       ; 00551100
@@ -144,7 +144,7 @@ section .text
     PUSH 0x30d5090                      ; 0055110a | g_FileIOBuffer
     MOV EBX,0x30d5090                   ; 0055110f | g_FileIOBuffer
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00551114
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00551119
     MOV EAX,ESI                         ; 0055111c
     XOR ESI,ESI                         ; 0055111e
@@ -174,7 +174,7 @@ section .text
     MOV EBX,0x30d5090                   ; 00551151 | g_FileIOBuffer
     MOV EBP,ESI                         ; 00551156
     CALL crt_stdio.c_fread_FUN_005fd990 ; 00551158
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0055115d
     XOR ESI,ESI                         ; 00551160
     MOV dword ptr [ESP + 0x438],EDI     ; 00551162
@@ -203,7 +203,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x438]     ; 0055119a
     PUSH EAX                            ; 005511a1
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005511a2
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005511a7
     PUSH 0x4b8                          ; 005511aa
     PUSH 0x640810                       ; 005511af | = "..\\engine\\pod.cpp"
@@ -213,7 +213,7 @@ section .text
     PUSH EDX                            ; 005511c2
     MOV dword ptr [ESP + 0x440],EBP     ; 005511c3
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 005511ca
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 005511cf
     MOV EBX,EAX                         ; 005511d2
     MOV EAX,dword ptr [ESP + 0x434]     ; 005511d4
@@ -222,7 +222,7 @@ section .text
     PUSH EAX                            ; 005511e0
     PUSH EBX                            ; 005511e1
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 005511e2
-        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(FILE * file, long offset, int whence)
+        ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 005511e7
     PUSH EBX                            ; 005511ea
     PUSH 0x1                            ; 005511eb
@@ -230,13 +230,13 @@ section .text
     LEA EAX,[ESP + 0x438]               ; 005511ef
     PUSH EAX                            ; 005511f6
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 005511f7
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005511fc
     PUSH 0x4bb                          ; 005511ff
     PUSH 0x640826                       ; 00551204 | = "..\\engine\\pod.cpp"
     PUSH EBX                            ; 00551209
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0055120a
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0055120f
     PUSH 0x0                            ; 00551212
         ;   Label: LAB_00551212

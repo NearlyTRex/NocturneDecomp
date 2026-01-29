@@ -19,7 +19,7 @@ CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr
   byte in_stack_00000010;
   char local_68 [92];
   
-  crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x28);
+  memset(this_ptr,0,0x28);
   if (in_stack_00000010 < 0x10) {
     if (7 < in_stack_00000010) {
       if (in_stack_00000010 < 9) {
@@ -46,7 +46,7 @@ LAB_00556b15:
       }
     }
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0
+  sprintf
             (local_68,"Invalid bit depth [%d] for bitmap",(uint)in_stack_00000010);
   g_CurrentFilename = "..\\shape\\quantize.cpp";
   g_CurrentLineNumber = 0x67;
@@ -72,7 +72,7 @@ LAB_00556a6b:
   if (ppvVar2 == (void **)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x4a1;
-    crt_memory_c_free_FUN_005fe659(this_ptr->pixel_data);
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->pixel_data);
     g_CurrentFilename = "..\\shape\\quantize.cpp";
     g_CurrentLineNumber = 0x67;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Could not allocate row table.");

@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,500,&g_CGunFlameTypeInfo);
+  __arrfini(array,500,&g_CGunFlameTypeInfo);
   return;
 }

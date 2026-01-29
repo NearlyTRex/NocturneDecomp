@@ -9,6 +9,6 @@
 void __cdecl core_set_cpp_free3DSCameras_FUN_00571530(C3DSCamera **array)
 
 {
-  crt_memory_c_freeTypeArray_FUN_005feee9(array,0xfa,&g_C3DSCameraTypeInfo);
+  __arrfini(array,0xfa,&g_C3DSCameraTypeInfo);
   return;
 }

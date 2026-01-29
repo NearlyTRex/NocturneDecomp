@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_exception_c_installExceptionHandler_FUN_0060aba8(ExceptionFrame *pExceptionFrame)
+void __cdecl installExceptionHandler(ExceptionFrame *pExceptionFrame)
 
 {
   EXCEPTION_REGISTRATION_RECORD *pEVar1;
@@ -20,9 +20,9 @@ void __cdecl crt_exception_c_installExceptionHandler_FUN_0060aba8(ExceptionFrame
   pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
   pTVar2->seh_frame->Next = pEVar1;
   pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
-  pTVar2->seh_frame->Handler = crt_exception_c_ExceptionHandler_FUN_0060a9d8;
+  pTVar2->seh_frame->Handler = ExceptionHandler;
   pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
   *in_FS_OFFSET = pTVar2->seh_frame;
-  (*g_SetUnhandledExceptionFilterFunc)(crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4);
+  (*g_SetUnhandledExceptionFilterFunc)(TopLevelExceptionFilter);
   return;
 }

@@ -54,7 +54,7 @@ shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   local_14 = 0;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(this_ptr);
-    crt_string_c_strupr_FUN_00600770(local_158.string_data);
+    strupr(local_158.string_data);
     if (*filename_buffer != '\0') {
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Directory: ");
       pcVar8 = &stack0xfffffca0;

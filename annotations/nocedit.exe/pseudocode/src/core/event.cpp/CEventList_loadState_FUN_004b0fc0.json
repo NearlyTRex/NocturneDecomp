@@ -11,12 +11,6 @@
       },
       {
         "category": "other",
-        "column": 53,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -26,106 +20,21 @@
         "column": 50,
         "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 33,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 44,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 49,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 56,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 61,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 67,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 74,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 84,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 90,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 102,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 107,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 118,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 123,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 390,
+    "complexity_score": 362,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 120,
-    "suspect_count": 26,
+    "pseudocode_lines": 117,
+    "suspect_count": 24,
     "suspect_types": [
-      "format_string_mismatch",
       "stack_param"
     ],
-    "total_lines": 457
+    "total_lines": 454
   },
   "cross_references": [
     {
@@ -370,191 +279,169 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "FILE *in_stack_00000008;",
+      "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&local_20);",
+      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",this_ptr);",
+      "text": "_fscanf(in_stack_00000008,\"%d\\n\",this_ptr);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
+      "text": "_fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&this_ptr->current_event_count);",
+      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->current_event_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
+      "text": "_fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%d\\n\",&this_ptr->persistent_event_count);",
+      "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->persistent_event_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
+      "text": "iVar1 = _fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000008",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 59,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->timer_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 66,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&this_ptr->timer_count);",
+      "text": "iVar1 = _fscanf(in_stack_00000008,\"%f, %[^\\n]\\n\",pcVar3,piVar4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 74,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%f, %[^\\n]\\n\",pcVar3,piVar4);",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 76,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->counter_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 82,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&this_ptr->counter_count);",
+      "text": "_fscanf(in_stack_00000008,\"%d, %[^\\n]\\n\",pcVar3,local_18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 91,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d, %[^\\n]\\n\",pcVar3,local_18);",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 93,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->actor_var_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 98,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%d\\n\",&this_ptr->actor_var_count);",
+      "text": "iVar1 = _fscanf(in_stack_00000008,\"\\\"%[^\\\"]\\\" , \\\"%[^\\\"]\\\"\\n\",pcVar3,local_1c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 100,
+      "line": 106,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"\\\"%[^\\\"]\\\" , \\\"%[^\\\"]\\\"\\n\",pcVar3,local_1c);",
+      "text": "_fgets(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 108,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->game_flag_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 113,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,\"%d\\n\",&this_ptr->game_flag_count);",
+      "text": "_fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 116,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
-      "type": "stack_param"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"%f, %[^\\n]\\n\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "%f, %[^\\n]\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 67,
-      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%f, %[^\\n]\\n\",pcVar3,piVar4);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"%d, %[^\\n]\\n\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d, %[^\\n]\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 83,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d, %[^\\n]\\n\",pcVar3,local_18);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
     }
   ]
 }

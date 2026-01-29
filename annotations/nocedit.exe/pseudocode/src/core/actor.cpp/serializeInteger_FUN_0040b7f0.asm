@@ -25,7 +25,7 @@
 ;   TerminatedCString s_s_d_00613f2b
 ;   string s_Integer_value_0066e148
 ;   char[104] g_PropertyNamePrefix
-;   FILE* g_ActorDataFile
+;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;
 ; Called Functions:
@@ -51,7 +51,7 @@ section .text
     MOV ESI,dword ptr [0x00822034]      ; 0040b806 | g_ActorDataFile
     PUSH ESI                            ; 0040b80c
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0040b80d
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b812
     CMP EAX,0x1                         ; 0040b815
     JNZ 0x0040b830                      ; 0040b818
@@ -85,7 +85,7 @@ section .text
     MOV EBX,dword ptr [0x00822034]      ; 0040b852 | g_ActorDataFile
     PUSH EBX                            ; 0040b858
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040b859
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b85e
     POP EBX                             ; 0040b861
     JMP 0x0040b81a                      ; 0040b862

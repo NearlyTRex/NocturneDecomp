@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_util_c_invokeRuntimeHandler_FUN_0060ac20(RUNTIME_HANDLER_FUNC **ppHandler)
+void __cdecl invokeRuntimeHandler(RUNTIME_HANDLER_FUNC **ppHandler)
 
 {
   if (*ppHandler != (RUNTIME_HANDLER_FUNC *)0x0) {

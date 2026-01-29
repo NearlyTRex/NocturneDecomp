@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
+int __cdecl utime(char *filename,utimbuf *timestamps)
 
 {
   HANDLE hFile;
   DWORD DVar1;
   BOOL BVar2;
-  tm *ptVar3;
+  _tm *p_Var3;
   SYSTEMTIME SStack_54;
   SYSTEMTIME SStack_44;
   _FILETIME _Stack_34;
@@ -23,27 +23,27 @@ int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
   
   hFile = (*g_CreateFileAFunc)(filename,0xc0000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
-    DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+    DVar1 = __set_errno();
   }
   else {
     BVar2 = (*g_GetFileTimeFunc)(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
     if (BVar2 == 0) {
       (*g_CloseHandleFunc)(hFile);
-      DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+      DVar1 = __set_errno();
       return DVar1;
     }
     if (timestamps == (utimbuf *)0x0) {
-      uStack_1c.actime = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
+      uStack_1c.actime = time((time_t *)0x0);
       timestamps = &uStack_1c;
       uStack_1c.modtime = uStack_1c.actime;
     }
-    ptVar3 = crt_time_c_localtime_FUN_00600288(&timestamps->modtime);
-    SStack_54.wYear = (short)ptVar3->tm_year + 0x76c;
-    SStack_54.wMonth = (short)ptVar3->tm_mon + 1;
-    SStack_54.wDay = (WORD)ptVar3->tm_mday;
-    SStack_54.wHour = (WORD)ptVar3->tm_hour;
-    SStack_54.wMinute = (WORD)ptVar3->tm_min;
-    SStack_54.wSecond = (WORD)ptVar3->tm_sec;
+    p_Var3 = localtime(&timestamps->modtime);
+    SStack_54.wYear = (short)p_Var3->tm_year + 0x76c;
+    SStack_54.wMonth = (short)p_Var3->tm_mon + 1;
+    SStack_54.wDay = (WORD)p_Var3->tm_mday;
+    SStack_54.wHour = (WORD)p_Var3->tm_hour;
+    SStack_54.wMinute = (WORD)p_Var3->tm_min;
+    SStack_54.wSecond = (WORD)p_Var3->tm_sec;
     SStack_44.wMilliseconds = 0;
     SStack_54.wMilliseconds = 0;
     SStack_44.wYear = SStack_54.wYear;
@@ -59,7 +59,7 @@ int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
     BVar2 = (*g_SetFileTimeFunc)(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
     if (BVar2 == 0) {
       (*g_CloseHandleFunc)(hFile);
-      DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
+      DVar1 = __set_errno();
       return DVar1;
     }
     (*g_CloseHandleFunc)(hFile);

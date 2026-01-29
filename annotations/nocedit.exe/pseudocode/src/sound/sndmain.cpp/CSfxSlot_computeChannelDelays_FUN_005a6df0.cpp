@@ -33,7 +33,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSl
     pCVar5 = this_ptr;
     if (0 < g_AudioChannelCount) {
       do {
-        dVar6 = crt_math_c_round_FUN_005fe6b0
+        dVar6 = round
                           ((double)(pCVar5->distance_to_speakers[0] * (float)local_20));
         iVar1 = (int)ROUND(dVar6);
         local_20 = (double)CONCAT44(iVar1,0x5a6eb0);

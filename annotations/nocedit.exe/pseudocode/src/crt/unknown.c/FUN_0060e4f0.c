@@ -17,16 +17,16 @@ uint crt_unknown_c_FUN_0060e4f0(void)
       if (g_EnvironStringArea != (char **)0x0) {
         if (*(char *)(((int)ppcVar1 - (int)g_EnvironmentBlock >> 2) + (int)g_EnvironStringArea) !=
             '\0') {
-          crt_memory_c_free_FUN_00601cd0(*ppcVar1);
+          free(*ppcVar1);
         }
         *ppcVar1 = (char *)0x0;
       }
     }
     if (g_EnvironStringArea == (char **)0x0) {
-      ppcVar1 = crt_memory_c_malloc_FUN_00601bb0(5);
+      ppcVar1 = malloc(5);
     }
     else {
-      ppcVar1 = crt_memory_c_realloc_FUN_00601df0(g_EnvironmentBlock,5);
+      ppcVar1 = realloc(g_EnvironmentBlock,5);
     }
     if (ppcVar1 == (char **)0x0) {
       return 0xffffffff;

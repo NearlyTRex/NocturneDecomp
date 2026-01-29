@@ -27,7 +27,7 @@
 ;   core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
 ;   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 ;   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -39,8 +39,8 @@ section .text
 
     PUSH 0x30                           ; 0058a3d0
         ;   Label: core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058a3d5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a3d5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058a3da
     PUSH ESI                            ; 0058a3db
     PUSH EDI                            ; 0058a3dc
@@ -54,7 +54,7 @@ section .text
     PUSH 0x0                            ; 0058a3f8
     PUSH EBX                            ; 0058a3fa
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0058a3fb
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0058a400
     MOV EDI,EAX                         ; 0058a403
     TEST EAX,EAX                        ; 0058a405
@@ -66,7 +66,7 @@ section .text
     PUSH ESI                            ; 0058a410
         ;   Label: LAB_0058a410
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058a411
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(_FILE * file)
     ADD ESP,0x4                         ; 0058a416
     TEST EAX,EAX                        ; 0058a419
     JL 0x0058a427                       ; 0058a41b
@@ -84,26 +84,26 @@ section .text
     PUSH 0x64a2ce                       ; 0058a42a | = "%d\n"
     PUSH EDI                            ; 0058a42f
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058a430
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0058a435
     LEA EAX,[ESP + 0x4]                 ; 0058a438
     PUSH EAX                            ; 0058a43c
     PUSH EDI                            ; 0058a43d
     PUSH EBP                            ; 0058a43e
     CALL core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 ; 0058a43f
-        ;   XREF to: 0058a4a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr, FILE * file, int * frame_count_out)
+        ;   XREF to: 0058a4a0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr, _FILE * file, int * frame_count_out)
     ADD ESP,0xc                         ; 0058a444
     PUSH 0x0                            ; 0058a447
     PUSH EDI                            ; 0058a449
     PUSH EBP                            ; 0058a44a
     CALL core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 ; 0058a44b
-        ;   XREF to: 0058aa10 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure * this_ptr, FILE * file, int mirror_flag)
+        ;   XREF to: 0058aa10 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure * this_ptr, _FILE * file, int mirror_flag)
     ADD ESP,0xc                         ; 0058a450
     PUSH 0x290                          ; 0058a453
     PUSH 0x64a2d2                       ; 0058a458 | = "..\\core\\skeledit.cpp"
     PUSH EDI                            ; 0058a45d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058a45e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0058a463
     PUSH EBP                            ; 0058a466
     CALL core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 ; 0058a467

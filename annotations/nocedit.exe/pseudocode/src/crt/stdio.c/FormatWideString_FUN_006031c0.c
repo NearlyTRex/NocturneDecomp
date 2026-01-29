@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 void __cdecl
-crt_stdio_c_FormatWideString_FUN_006031c0
+FormatWideString
           (wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info,
           OUTPUT_CALLBACK output_func)
 
@@ -25,7 +25,7 @@ crt_stdio_c_FormatWideString_FUN_006031c0
     pbVar3 = local_18;
     wVar1 = *wide_string_offset;
     wide_string_offset = wide_string_offset + 1;
-    iVar2 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
+    iVar2 = WideCharToSingleByte
                       ((wchar_t)local_18,(char *)(uint)(ushort)wVar1);
     if (iVar2 != -1) {
       if (spec_info->content_length < iVar2) {

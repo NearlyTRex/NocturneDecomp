@@ -11,7 +11,7 @@
 void core_msnedit_cpp_UndoChangeMaybe_FUN_0053c0b0(void)
 
 {
-  FILE *file_handle;
+  _FILE *file_handle;
   int in_stack_00000004;
   
   if (*(int *)(in_stack_00000004 + 0x28) == 0) {
@@ -21,7 +21,7 @@ void core_msnedit_cpp_UndoChangeMaybe_FUN_0053c0b0(void)
   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ("$$UNDO$$.TMP",(char *)0x0,"rt","..\\core\\msnedit.cpp"
                            ,0x9ca);
-  if (file_handle == (FILE *)0x0) {
+  if (file_handle == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s.","$$UNDO$$.TMP");
     return;

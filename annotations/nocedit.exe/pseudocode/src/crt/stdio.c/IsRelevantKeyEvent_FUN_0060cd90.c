@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_IsRelevantKeyEvent_FUN_0060cd90(_INPUT_RECORD *pInputRecord)
+int __watcallStack IsRelevantKeyEvent(_INPUT_RECORD *pInputRecord)
 
 {
   ushort uVar1;

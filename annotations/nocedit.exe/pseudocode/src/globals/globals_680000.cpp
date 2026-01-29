@@ -57,10 +57,6 @@ EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup = nullptr;
 // EXCEPTION_FILTER_FUNC*
 EXCEPTION_FILTER_FUNC* g_UserExceptionFilter = nullptr;
 
-// FILE*
-FILE* g_StaticFilePoolStart = nullptr;
-FILE* g_StderrLogFile = nullptr;
-
 // GUID
 GUID g_IID_IKsPropertySet = {0x31EFAC30, 0x515C, 0x11D0, {0xA9, 0xAA, 0x00, 0xAA, 0x00, 0x61, 0xBE, 0x93}};
 GUID g_KSPROPSETID_DirectSound3DListener = {0x62A69BAE, 0xDF9D, 0x11D1, {0x99, 0xA6, 0x00, 0xC0, 0x4F, 0xC9, 0x9D, 0x46}};
@@ -3646,6 +3642,10 @@ WatcomStaticDestructorNode g_CWaterDestructorNode = {
 // WatcomStaticDestructorNode*
 WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 
+// _FILE*
+_FILE* g_StaticFilePoolStart = nullptr;
+_FILE* g_StderrLogFile = nullptr;
+
 // byte
 byte BYTE_00684acc = 0x0;
 byte BYTE_00684acd = 0x0;
@@ -3801,6 +3801,7 @@ int g_CZombieClassVersion = 0xb;
 int g_MaxErrnoValue = 0x28;
 int INT_00684ccc = 0x0;
 int INT_00684cd0 = 0x1;
+int INT_00684ed0 = 0x100;
 int g_SpecialExitHandler = 0x0;
 int DAT_00684f30 = 0x0;
 int g_ConsoleInitializationFlag = 0x0;
@@ -3812,6 +3813,7 @@ int g_DaylightSavingActive = 0x1;
 int g_DaylightSavingOffset = 0xe10;
 int g_CurrentHandleCount = 0x0;
 int g_FakeHandleCounter = 0x2D;
+int INT_00685280 = 0x0;
 int g_ProcessSpawnEnabled = 0x1;
 int g_ConsoleInputState = 0x0;
 int g_HeapFlags = 0x10000;
@@ -3883,7 +3885,6 @@ undefined4 DAT_00685094 = 0;
 undefined4 DAT_006850b0 = 0;
 undefined4 DAT_006850b4 = 0;
 undefined4 DAT_006850b8 = 0;
-undefined4 DAT_00685280 = 0;
 undefined4 DAT_0068528c = 0;
 undefined4 DAT_006852c4 = 0;
 undefined4 DAT_006854ec = 0;

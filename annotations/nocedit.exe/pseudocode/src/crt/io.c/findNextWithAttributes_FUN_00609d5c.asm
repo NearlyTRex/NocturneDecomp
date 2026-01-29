@@ -9,8 +9,8 @@
 ; LPWIN32_FIND_DATAA Stack[0xc]:4   lpFindFileData
 ;
 ; XREF[2]:
-;   crt_io.c_findFirstFileWrapper_FUN_006021f0 at 0060221d
-;   crt_io.c_findNextFileWrapper_FUN_00602300 at 00602336
+;   crt_io.c__findfirst_FUN_006021f0 at 0060221d
+;   crt_io.c__findnext_FUN_00602300 at 00602336
 ;
 ; Referenced Globals:
 ;   FindNextFileA* g_FindNextFileAFunc = 00211d96

@@ -3,17 +3,9 @@
 // Function prototypes for crt/io.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_io.c_deleteFile_FUN_005ff9d0
-// Address: 005ff9d0
-int __watcallStack deleteFile(char *filename);
-
-// Original: crt_io.c_ftruncate_FUN_00600cf0
+// Original: crt_io.c_chsize_FUN_00600cf0
 // Address: 00600cf0
-int __cdecl ftruncate(int file_handle,long new_size);
-
-// Original: crt_io.c_realpath_FUN_00601140
-// Address: 00601140
-char * __cdecl realpath(char *buffer,char *path,SIZE_T buffer_size);
+int __cdecl chsize(int file_handle,long new_size);
 
 // Original: crt_io.c_getcwd_wrapper_FUN_00608d20
 // Address: 0060128c
@@ -23,25 +15,25 @@ char * __cdecl getcwd::wrapper(char *buffer,SIZE_T size);
 // Address: 006012a0
 int __cdecl chdir(char *path);
 
-// Original: crt_io.c_generateTempFilename_FUN_00601f1c
+// Original: crt_io.c__tempnam_FUN_00601f1c
 // Address: 00601f1c
-void __watcallStack generateTempFilename(char *buffer,int file_handle);
+void __watcallStack ::tempnam(char *buffer,int file_handle);
 
-// Original: crt_io.c_findFirstFileWrapper_FUN_006021f0
+// Original: crt_io.c__findfirst_FUN_006021f0
 // Address: 006021f0
-HANDLE __cdecl findFirstFileWrapper(char *filespec,LPWIN32_FIND_DATAA find_data);
+HANDLE __cdecl ::findfirst(char *filespec,LPWIN32_FIND_DATAA find_data);
 
 // Original: crt_io.c_convertFileInfo_FUN_00602264
 // Address: 00602264
-void __watcallStack convertFileInfo(LPWIN32_FIND_DATAA win32_data,find_t *dos_info);
+void __watcallStack convertFileInfo(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info);
 
-// Original: crt_io.c_findNextFileWrapper_FUN_00602300
+// Original: crt_io.c__findnext_FUN_00602300
 // Address: 00602300
-int __cdecl findNextFileWrapper(HANDLE find_handle,LPWIN32_FIND_DATAA find_data);
+int __cdecl ::findnext(HANDLE find_handle,LPWIN32_FIND_DATAA find_data);
 
-// Original: crt_io.c_findCloseWrapper_FUN_00602380
+// Original: crt_io.c__findclose_FUN_00602380
 // Address: 00602380
-int __cdecl findCloseWrapper(HANDLE find_handle);
+int __cdecl ::findclose(HANDLE find_handle);
 
 // Original: crt_io.c_register_handler_wrapper_FUN_00602438
 // Address: 00602438
@@ -61,7 +53,7 @@ uint __watcallStack analyze::file_type(uint open_flags,char *filename);
 
 // Original: crt_io.c_stat_FUN_00607e64
 // Address: 00607e64
-int __cdecl stat(char *filename,stat *file_info);
+int __cdecl stat(char *filename,_stat *file_info);
 
 // Original: crt_io.c_utime_FUN_00608160
 // Address: 00608160
@@ -143,17 +135,17 @@ void __cdecl ConvertAccessMode(int access_mode,DWORD *desired_access,DWORD *shar
 // Address: 0060c894
 void __cdecl ConvertCreationDisposition(DWORD mode_flags,DWORD *creation_disposition);
 
-// Original: crt_io.c_check_file_access_FUN_0060c9f0
+// Original: crt_io.c_access_FUN_0060c9f0
 // Address: 0060c9f0
-int __watcallStack check::file_access(char *filename,int access_mode);
+int __watcallStack access(char *filename,int access_mode);
 
 // Original: crt_io.c_parseFileInfo_FUN_0060e3b0
 // Address: 0060e3b0
 void __cdecl parseFileInfo(void);
 
-// Original: crt_io.c_file_exists_FUN_0060f380
+// Original: crt_io.c_exists_FUN_0060f380
 // Address: 0060f380
-BOOL __watcallStack file::exists(char *filename);
+BOOL __watcallStack exists(char *filename);
 
 // Original: crt_io.c_get_handle_FUN_006109f0
 // Address: 006109f0

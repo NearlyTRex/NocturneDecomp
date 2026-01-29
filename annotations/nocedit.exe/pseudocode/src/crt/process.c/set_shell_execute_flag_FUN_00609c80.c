@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_process_c_set_shell_execute_flag_FUN_00609c80(char *buffer)
+void __cdecl set_shell_execute_flag(char *buffer)
 
 {
   *buffer = '/';

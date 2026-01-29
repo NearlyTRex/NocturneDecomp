@@ -6,15 +6,15 @@
 
 #include "nocturne.h"
 
-void __cdecl crt_math_c_print_error_message_FUN_0060e298(int errorType,char *errorData)
+void __cdecl print_error_message(int errorType,char *errorData)
 
 {
-  FILE *file;
+  _FILE *file;
   
-  file = crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(2);
-  crt_stdio_c_fputs_FUN_0060ebb0(g_MathErrorMessages[errorType],file);
-  crt_stdio_c_fputs_FUN_0060ebb0(&g_SpaceCharacter,file);
-  crt_stdio_c_fputs_FUN_0060ebb0(errorData,file);
-  crt_stdio_c_fputc_FUN_006007a0(10,file);
+  file = get_standard_file_handle(2);
+  _fputs(g_MathErrorMessages[errorType],file);
+  _fputs(&g_SpaceCharacter,file);
+  _fputs(errorData,file);
+  _fputc(10,file);
   return;
 }

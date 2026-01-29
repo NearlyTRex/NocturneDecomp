@@ -64,7 +64,7 @@ section .text
     PUSH 0x635644                       ; 00508591 | = "enemy.pod"
     PUSH 0x63564e                       ; 00508596 | s_EmptyChar_0063564e
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 0050859b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005085a0
     TEST EAX,EAX                        ; 005085a3
     JNZ 0x00508843                      ; 005085a5
@@ -320,7 +320,7 @@ section .text
     PUSH 0x63564f                       ; 00508848 | = "..\\core\\main.c"
     PUSH EAX                            ; 0050884d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0050884e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00508853
     JMP 0x005087aa                      ; 00508856
         ;   XREF to: 005087aa (UNCONDITIONAL_JUMP)  ; LAB_005087aa

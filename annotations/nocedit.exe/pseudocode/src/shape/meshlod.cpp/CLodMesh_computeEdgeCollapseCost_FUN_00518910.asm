@@ -93,8 +93,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_memory.c___arrinit_FUN_005fe667
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
 ;   shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870
@@ -250,12 +250,12 @@ section .text
     OR DL,0x1                           ; 00518ad4
     PUSH 0x2f2a4d0                      ; 00518ad7 | g_TempNeighborFaces
     MOV byte ptr [0x02f31230],DL        ; 00518adc | g_TempFacesInitGuard
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00518ae2
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00518ae2
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00518ae7
     PUSH 0x67d380                       ; 00518aea | g_TempNeighborFacesDestructorNode
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00518aef
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00518aef
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00518af4
     JMP 0x005189cc                      ; 00518af7
         ;   XREF to: 005189cc (UNCONDITIONAL_JUMP)  ; LAB_005189cc

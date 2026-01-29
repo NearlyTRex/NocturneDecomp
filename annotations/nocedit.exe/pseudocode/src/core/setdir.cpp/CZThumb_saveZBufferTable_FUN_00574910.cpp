@@ -2,14 +2,14 @@
 // Address: 00574910
 // Address Range: [[00574910, 00574b1c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,FILE *file_handle)
+// Signature: void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle)
 
 #include "nocturne.h"
 
 void __cdecl
 core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
           (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,
-          float unknown_scale,FILE *file_handle)
+          float unknown_scale,_FILE *file_handle)
 
 {
   int iVar1;
@@ -40,9 +40,8 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
     g_CurrentLineNumber = 0x9f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
-  if (file_handle != (FILE *)0x0) {
-    crt_stdio_c_fread_FUN_005fd990
-              (this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
+  if (file_handle != (_FILE *)0x0) {
+    _fread(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
     return;
   }
   value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);

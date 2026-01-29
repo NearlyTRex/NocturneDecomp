@@ -50,7 +50,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int local_40;
   int local_3c;
   int local_38;
-  FILE *local_34;
+  _FILE *local_34;
   int local_30;
   int local_2c;
   int local_28;
@@ -146,10 +146,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         core_set_cpp_CDemonSet_FUN_0056c990(g_CDemonSetPtr);
       }
       if (((this_ptr->velocity_debug_enabled != 0) ||
-          (pcVar15 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar15 != (char *)0x0))
+          (pcVar15 = getenv("SPOOKHOUSE"), pcVar15 != (char *)0x0))
          && (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e), iVar5 != 0)) {
         DAT_02d82568 = DAT_02d82568 + 1;
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d82570,"demon%d.pcx");
+        sprintf(&DAT_02d82570,"demon%d.pcx");
         engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);
       }
       core_inv_cpp_CInventory_renderAllItems_FUN_00500690
@@ -173,11 +173,11 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         }
         if ((g_DebugRecordingParams < 1) || ((int)FLOAT_02d831bc < g_DebugRecordingParams)) {
           if (g_DebugRecording != 0) {
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"noc%05d.raw");
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_1dc,"Movie recording active: movie\\%s");
+            sprintf(local_114,"noc%05d.raw");
+            sprintf(local_1dc,"Movie recording active: movie\\%s");
             local_34 = engine_dosio_c_getFile_FUN_00481a50("movie",local_114,"wb")
             ;
-            if (local_34 != (FILE *)0x0) {
+            if (local_34 != (_FILE *)0x0) {
               local_38 = 0;
               if (0 < 0x00000040) {
                 do {
@@ -216,10 +216,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                       }
                       iVar14 = iVar14 / local_18;
                       local_1c = local_1c / local_18;
-                      crt_stdio_c_fputc_FUN_006007a0(iVar13 / local_18,local_34);
-                      crt_stdio_c_fputc_FUN_006007a0(iVar14,local_34);
+                      _fputc(iVar13 / local_18,local_34);
+                      _fputc(iVar14,local_34);
                       iVar5 = local_30 + 1;
-                      crt_stdio_c_fputc_FUN_006007a0(local_1c,local_34);
+                      _fputc(local_1c,local_34);
                       local_30 = iVar5;
                     } while (iVar5 < 0x00000040);
                   }
@@ -244,31 +244,31 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         FLOAT_02d7c2e8 = 0.0;
       }
       else {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Camera: \"%s\" Group %d");
+        sprintf(local_3dc,"Camera: \"%s\" Group %d");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x16);
         FLOAT_02d7c2e8 = (float)((int)FLOAT_02d7c2e8 + 1);
         DOUBLE_02d7c2e0 = DOUBLE_02d7c2e0 + (double)this_ptr->delta_time_float;
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"FR: %f, AVG: %f, PC: %d");
+        sprintf(local_3dc,"FR: %f, AVG: %f, PC: %d");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0xb);
         pCVar4 = g_HeroActors[g_LocalHeroIndex];
         dVar1 = (double)(pCVar4->base).base.location.position.z;
         dVar2 = (double)(pCVar4->base).base.location.position.y;
-        crt_stdio_c_sprintf_FUN_005fdbd0
+        sprintf
                   (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
                    (double)(pCVar4->base).base.location.position.x,SUB84(dVar2,0),
                    (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Slew : %s, Virtual Director : %s");
+        sprintf(local_3dc,"Slew : %s, Virtual Director : %s");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
         if (this_ptr->unk14 != 0) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Fudge: %g,%g,%g");
+          sprintf(local_3dc,"Fudge: %g,%g,%g");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
                   (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
         local_14 = local_58;
         sound_sndmain_cpp_countActiveSfx_FUN_005a9ff0();
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk");
+        sprintf(local_3dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x42);
         engine_texture_cpp_getTextureCacheStats_FUN_005dd970(local_3dc);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x37);
@@ -282,7 +282,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x80);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
+          sprintf(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0x2c);
         }
       }

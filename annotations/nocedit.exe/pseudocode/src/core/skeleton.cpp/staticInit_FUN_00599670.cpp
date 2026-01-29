@@ -9,11 +9,9 @@
 void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void)
 
 {
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_DeformableModelPool,0x40,&g_CDeformableModelTypeInfo);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_DeformableModelPoolDestructorNode);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_SkeletonPool,0x28,&g_CSkeletonTypeInfo);
-  crt_stdlib_c_atexit_FUN_005ff060(&g_SkeletonPoolDestructorNode);
+  __arrinit(g_DeformableModelPool,0x40,&g_CDeformableModelTypeInfo);
+  _atexit(&g_DeformableModelPoolDestructorNode);
+  __arrinit(g_SkeletonPool,0x28,&g_CSkeletonTypeInfo);
+  _atexit(&g_SkeletonPoolDestructorNode);
   return;
 }

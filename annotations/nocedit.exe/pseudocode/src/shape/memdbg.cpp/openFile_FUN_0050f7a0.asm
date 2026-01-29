@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0 (char *filename,char *directory,char *mode,char *source_file,int line_number)
+; __cdecl _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0 (char *filename,char *directory,char *mode,char *source_file,int line_number)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   source_file
 ; int              Stack[0x14]:4   line_number
 ; Local Variables:
-; FILE *           Stack[-0x14]:4  opened_file
+; _FILE *          Stack[-0x14]:4  opened_file
 ;
 ; XREF[89]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520 at 0054b53e
@@ -86,7 +86,7 @@ section .text
     PUSH EAX                            ; 0050f7e5
     PUSH ESI                            ; 0050f7e6
     CALL crt_stdio.c_fopen_FUN_00601a7c ; 0050f7e7
-        ;   XREF to: 00601a7c (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
+        ;   XREF to: 00601a7c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)
     ADD ESP,0x8                         ; 0050f7ec
     MOV dword ptr [ESP],EAX             ; 0050f7ef
     TEST EAX,EAX                        ; 0050f7f2

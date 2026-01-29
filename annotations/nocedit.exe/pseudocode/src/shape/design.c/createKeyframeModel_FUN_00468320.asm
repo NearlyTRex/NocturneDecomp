@@ -44,7 +44,7 @@
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
-;   crt_string.c_strtod_FUN_005ff0f3
+;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_design.c_centerKeyframeModels_FUN_004681a0
@@ -230,8 +230,8 @@ section .text
     LEA EAX,[EBP + -0x5c]               ; 004684a1
         ;   Label: LAB_004684a1
     PUSH EAX                            ; 004684a4
-    CALL crt_string.c_strtod_FUN_005ff0f3 ; 004684a5
-        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_FUN_005ff0f3(char * str)
+    CALL crt_string.c__strtod_FUN_005ff0f3 ; 004684a5
+        ;   XREF to: 005ff0f3 (UNCONDITIONAL_CALL)  ; double crt_string.c__strtod_FUN_005ff0f3(char * str)
     MOV dword ptr [EBP + 0xfffffda4],EAX ; 004684aa
     MOV dword ptr [EBP + 0xfffffda8],EDX ; 004684b0
     FLD double ptr [EBP + 0xfffffda4]   ; 004684b6
@@ -267,7 +267,7 @@ section .text
     MOV EAX,0x61cd21                    ; 0046850c | = "models"
     PUSH EAX                            ; 00468511 | = "models"
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00468512
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00468517
     MOV dword ptr [EBP + -0xc],EAX      ; 0046851a
     CMP dword ptr [EBP + -0xc],0x0      ; 0046851d
@@ -288,7 +288,7 @@ section .text
     LEA EAX,[EBP + 0xfffffdac]          ; 00468550
     PUSH EAX                            ; 00468556
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00468557
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0046855c
     MOV dword ptr [EBP + -0x8],0x0      ; 0046855f
     MOV EAX,dword ptr [EBP + -0xc]      ; 00468566
@@ -298,7 +298,7 @@ section .text
     LEA EAX,[EBP + -0x8]                ; 0046856e
     PUSH EAX                            ; 00468571
     CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00468572
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00468577
     PUSH 0x227c                         ; 0046857a
     MOV EAX,0x61cd68                    ; 0046857f | = "..\\shape\\design.c"
@@ -306,7 +306,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 00468585
     PUSH EAX                            ; 00468588
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00468589
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0046858e
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00468591
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

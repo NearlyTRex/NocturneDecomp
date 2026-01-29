@@ -131,7 +131,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   bVar22 = 0;
   DAT_02d0a460 = 0;
   if (((in_stack_00000008 != (byte *)0x0) && (*in_stack_00000008 != 0)) &&
-     (iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)in_stack_00000008,"none"),
+     (iVar5 = stricmp((char *)in_stack_00000008,"none"),
      iVar5 != 0)) {
     if (*in_stack_00000008 == 0x2e) {
       in_stack_00000008 = in_stack_00000008 + 1;
@@ -154,7 +154,7 @@ LAB_004aad41:
       if (0 < this_ptr->event_count) {
         piVar19 = this_ptr->event_list;
         do {
-          iVar6 = crt_string_c_stricmp_FUN_005fe7f0((char *)piVar19,(char *)in_stack_00000008);
+          iVar6 = stricmp((char *)piVar19,(char *)in_stack_00000008);
           if (iVar6 == 0) {
             return (CDemonActor *)0x1;
           }
@@ -209,7 +209,7 @@ LAB_004aad41:
           this_ptr->event_count = this_ptr->event_count + 1;
           return (CDemonActor *)0x1;
         }
-        iVar5 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*piVar17);
+        iVar5 = toupper((uint)(byte)*piVar17);
         *(byte *)piVar17 = (byte)iVar5;
         iVar5 = core_event_cpp_FUN_004b0f90();
         if (iVar5 == 0) {
@@ -220,7 +220,7 @@ LAB_004aad41:
         piVar17 = (int *)((int)piVar17 + 1);
       } while( true );
     }
-    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+    iVar5 = strnicmp
                       ((char *)in_stack_00000008,"advanceLightFilter",0x12);
     if ((iVar5 == 0) &&
        ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0x12] + 1)] & 0xe0U) == 0)) {
@@ -245,7 +245,7 @@ LAB_004aad41:
       }
     }
     else {
-      iVar5 = crt_string_c_strnicmp_FUN_005ff070
+      iVar5 = strnicmp
                         ((char *)in_stack_00000008,"createExplosion",0xf);
       if ((iVar5 == 0) &&
          ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xf] + 1)] & 0xe0U) == 0)) {
@@ -254,17 +254,17 @@ LAB_004aad41:
           local_ec = local_ec + 1;
         }
         local_e4 = -1;
-        crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"( %f , %n",local_e0);
+        sscanf((char *)local_ec,"( %f , %n",local_e0);
         if (local_e4 < 0) {
           pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
           return pCVar7;
         }
         local_ec = local_ec + local_e4;
         local_e4 = -1;
-        crt_stdio_c_sscanf_FUN_0060013c
+        sscanf
                   ((char *)local_ec,"%f , %f , %f %n",&local_128,&local_124,&local_120);
         if ((local_e4 < 0) &&
-           (crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," %[^,)] %n",local_4d5 + 1),
+           (sscanf((char *)local_ec," %[^,)] %n",local_4d5 + 1),
            -1 < local_e4)) {
           uVar12 = 0xffffffff;
           pcVar8 = local_4d5 + 1;
@@ -285,7 +285,7 @@ LAB_004aad41:
           }
           (local_4d5 + 1)[SVar14] = '\0';
           while ((g_CharacterClassificationTable[(byte)(local_4d5[1] + 1)] & 2U) != 0) {
-            crt_string_c_memmove_FUN_005fe5e0(local_4d5 + 1,local_4d5 + 2,SVar14);
+            memmove(local_4d5 + 1,local_4d5 + 2,SVar14);
             SVar14 = SVar14 - 1;
           }
           pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa400();
@@ -312,7 +312,7 @@ LAB_004aad41:
         local_dc = 0x40800000;
         if (*local_ec == 0x2c) {
           local_e4 = -1;
-          crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,", %f %n",&local_dc,&local_e4);
+          sscanf((char *)local_ec,", %f %n",&local_dc,&local_e4);
           if (local_e4 < 0) {
             pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
             return pCVar7;
@@ -332,7 +332,7 @@ LAB_004aad41:
         }
       }
       else {
-        iVar5 = crt_string_c_strnicmp_FUN_005ff070
+        iVar5 = strnicmp
                           ((char *)in_stack_00000008,"deleteActor",0xb);
         if ((iVar5 == 0) &&
            ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xb] + 1)] & 0xe0U) == 0)) {
@@ -369,7 +369,7 @@ LAB_004aad41:
           }
         }
         else {
-          iVar5 = crt_string_c_strnicmp_FUN_005ff070
+          iVar5 = strnicmp
                             ((char *)in_stack_00000008,"displayBitmap",0xd);
           if ((iVar5 == 0) &&
              ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)] & 0xe0U) == 0)) {
@@ -378,7 +378,7 @@ LAB_004aad41:
               local_ec = local_ec + 1;
             }
             local_d0 = -1;
-            crt_stdio_c_sscanf_FUN_0060013c
+            sscanf
                       ((char *)local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4);
             if (local_d0 < 0) {
               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
@@ -402,7 +402,7 @@ LAB_004aad41:
             }
           }
           else {
-            iVar5 = crt_string_c_strnicmp_FUN_005ff070
+            iVar5 = strnicmp
                               ((char *)in_stack_00000008,"fadeAmbientSound",0x10);
             if ((iVar5 == 0) &&
                ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0x10] + 1)] & 0xe0U) == 0))
@@ -412,10 +412,10 @@ LAB_004aad41:
                 local_ec = local_ec + 1;
               }
               local_c4 = -1;
-              crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"(%f, %f )%n",&local_cc,&local_c8)
+              sscanf((char *)local_ec,"(%f, %f )%n",&local_cc,&local_c8)
               ;
               if (local_c4 < 0) {
-                crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,"Error parsing fadeAmbientSound parms");
+                sprintf(&DAT_02d0a460,"Error parsing fadeAmbientSound parms");
                 return (CDemonActor *)0x0;
               }
               local_ec = local_ec + local_c4;
@@ -424,7 +424,7 @@ LAB_004aad41:
               }
             }
             else {
-              iVar5 = crt_string_c_strnicmp_FUN_005ff070
+              iVar5 = strnicmp
                                 ((char *)in_stack_00000008,"fadeSfx",7);
               if ((iVar5 == 0) &&
                  ((g_CharacterClassificationTable[(byte)(in_stack_00000008[7] + 1)] & 0xe0U) == 0))
@@ -434,10 +434,10 @@ LAB_004aad41:
                   local_ec = local_ec + 1;
                 }
                 local_b8 = -1;
-                crt_stdio_c_sscanf_FUN_0060013c
+                sscanf
                           ((char *)local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc);
                 if (local_b8 < 0) {
-                  crt_stdio_c_sprintf_FUN_005fdbd0
+                  sprintf
                             (&DAT_02d0a460,"Error parsing fadeSfx parms");
                   return (CDemonActor *)0x0;
                 }
@@ -461,7 +461,7 @@ LAB_004aad41:
                 }
                 (local_108d + 1)[SVar14] = '\0';
                 while ((g_CharacterClassificationTable[(byte)(local_108d[1] + 1)] & 2U) != 0) {
-                  crt_string_c_memmove_FUN_005fe5e0(local_108d + 1,local_108d + 2,SVar14);
+                  memmove(local_108d + 1,local_108d + 2,SVar14);
                   SVar14 = SVar14 - 1;
                 }
                 if (local_f0 != 0) {
@@ -475,7 +475,7 @@ LAB_004aad41:
                 }
               }
               else {
-                iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                iVar5 = strnicmp
                                   ((char *)in_stack_00000008,"flagOn",6);
                 if ((iVar5 == 0) &&
                    ((g_CharacterClassificationTable[(byte)(in_stack_00000008[6] + 1)] & 0xe0U) == 0)
@@ -506,7 +506,7 @@ LAB_004aaf38:
                   }
                 }
                 else {
-                  iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                  iVar5 = strnicmp
                                     ((char *)in_stack_00000008,"flagOff",7);
                   if ((iVar5 == 0) &&
                      ((g_CharacterClassificationTable[(byte)(in_stack_00000008[7] + 1)] & 0xe0U) ==
@@ -522,7 +522,7 @@ LAB_004aaf38:
                     }
                   }
                   else {
-                    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                    iVar5 = strnicmp
                                       ((char *)in_stack_00000008,"gameFlagOn",10);
                     if ((iVar5 == 0) &&
                        ((g_CharacterClassificationTable[(byte)(in_stack_00000008[10] + 1)] & 0xe0U)
@@ -538,7 +538,7 @@ LAB_004aaf38:
                       }
                     }
                     else {
-                      iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                      iVar5 = strnicmp
                                         ((char *)in_stack_00000008,"gameFlagOff",0xb);
                       if ((iVar5 == 0) &&
                          ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xb] + 1)] &
@@ -554,7 +554,7 @@ LAB_004aaf38:
                         }
                       }
                       else {
-                        iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                        iVar5 = strnicmp
                                           ((char *)in_stack_00000008,"hurtCharacter",0xd);
                         if ((iVar5 == 0) &&
                            ((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)] &
@@ -565,7 +565,7 @@ LAB_004aaf38:
                             local_ec = local_ec + 1;
                           }
                           local_b4 = -1;
-                          crt_stdio_c_sscanf_FUN_0060013c
+                          sscanf
                                     ((char *)local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,local_2e1 + 1,
                                      &local_b0);
                           if (local_b4 < 2) {
@@ -593,7 +593,7 @@ LAB_004aaf38:
                           (local_665 + 1)[SVar14] = '\0';
                           while ((g_CharacterClassificationTable[(byte)(local_665[1] + 1)] & 2U) !=
                                  0) {
-                            crt_string_c_memmove_FUN_005fe5e0(local_665 + 1,local_665 + 2,SVar14);
+                            memmove(local_665 + 1,local_665 + 2,SVar14);
                             SVar14 = SVar14 - 1;
                           }
                           uVar12 = 0xffffffff;
@@ -617,7 +617,7 @@ LAB_004aaf38:
                           (local_2e1 + 1)[SVar14] = '\0';
                           while ((g_CharacterClassificationTable[(byte)(local_2e1[1] + 1)] & 2U) !=
                                  0) {
-                            crt_string_c_memmove_FUN_005fe5e0(local_2e1 + 1,local_2e1 + 2,SVar14);
+                            memmove(local_2e1 + 1,local_2e1 + 2,SVar14);
                             SVar14 = SVar14 - 1;
                           }
                           local_ec = local_ec + local_b4;
@@ -643,7 +643,7 @@ LAB_004aaf38:
                           }
                         }
                         else {
-                          iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                          iVar5 = strnicmp
                                             ((char *)in_stack_00000008,"incCounter",10);
                           if ((iVar5 == 0) &&
                              ((g_CharacterClassificationTable[(byte)(in_stack_00000008[10] + 1)] &
@@ -654,10 +654,10 @@ LAB_004aaf38:
                               local_ec = local_ec + 1;
                             }
                             local_a8 = -1;
-                            crt_stdio_c_sscanf_FUN_0060013c
+                            sscanf
                                       ((char *)local_ec,"( %[^ )] )%n",local_121d + 1);
                             if (local_a8 < 5) {
-                              crt_stdio_c_sprintf_FUN_005fdbd0
+                              sprintf
                                         (&DAT_02d0a460,"Error parsing incCounter arguments");
                               return (CDemonActor *)0x0;
                             }
@@ -683,7 +683,7 @@ LAB_004aaf38:
                             (local_121d + 1)[SVar14] = '\0';
                             while ((g_CharacterClassificationTable[(byte)(local_121d[1] + 1)] & 2U)
                                    != 0) {
-                              crt_string_c_memmove_FUN_005fe5e0
+                              memmove
                                         (local_121d + 1,local_121d + 2,SVar14);
                               SVar14 = SVar14 - 1;
                             }
@@ -693,7 +693,7 @@ LAB_004aaf38:
                             }
                           }
                           else {
-                            iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                            iVar5 = strnicmp
                                               ((char *)in_stack_00000008,"killCharacter",
                                                0xd);
                             if ((iVar5 == 0) &&
@@ -707,19 +707,19 @@ LAB_004aaf38:
                               local_a0 = local_110;
                               local_a4 = -1;
                               local_9c[0] = 0.0;
-                              crt_stdio_c_sscanf_FUN_0060013c
+                              sscanf
                                         ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",local_153d + 1,
                                          local_219 + 1,local_110,local_10c,local_108,local_9c);
                               local_9c[0] = local_9c[0] * (float)0.017453292519444399;
                               if (local_a4 < 0) {
                                 local_9c[0] = -1.0;
-                                crt_stdio_c_sscanf_FUN_0060013c
+                                sscanf
                                           ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f )%n",local_153d + 1,
                                            local_219 + 1,local_110,local_10c,local_108);
                               }
                               if (local_a4 < 0) {
                                 local_a0 = (byte *)0x0;
-                                crt_stdio_c_sscanf_FUN_0060013c
+                                sscanf
                                           ((char *)local_ec," ( %[^,], %[^)])%n",local_153d + 1,
                                            local_219 + 1);
                               }
@@ -748,7 +748,7 @@ LAB_004aaf38:
                               (local_153d + 1)[SVar14] = '\0';
                               while ((g_CharacterClassificationTable[(byte)(local_153d[1] + 1)] & 2U
                                      ) != 0) {
-                                crt_string_c_memmove_FUN_005fe5e0
+                                memmove
                                           (local_153d + 1,local_153d + 2,SVar14);
                                 SVar14 = SVar14 - 1;
                               }
@@ -773,7 +773,7 @@ LAB_004aaf38:
                               (local_219 + 1)[SVar14] = '\0';
                               while ((g_CharacterClassificationTable[(byte)(local_219[1] + 1)] & 2U)
                                      != 0) {
-                                crt_string_c_memmove_FUN_005fe5e0
+                                memmove
                                           (local_219 + 1,local_219 + 2,SVar14);
                                 SVar14 = SVar14 - 1;
                               }
@@ -799,7 +799,7 @@ LAB_004aaf38:
                               }
                             }
                             else {
-                              iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                              iVar5 = strnicmp
                                                 ((char *)in_stack_00000008,"killHero",8);
                               if ((iVar5 == 0) &&
                                  ((g_CharacterClassificationTable[(byte)(in_stack_00000008[8] + 1)]
@@ -814,7 +814,7 @@ LAB_004aaf38:
                                   return pCVar7;
                                 }
                                 local_94[0] = -1;
-                                crt_stdio_c_sscanf_FUN_0060013c
+                                sscanf
                                           ((char *)local_ec," ( %[^)])%n",local_27c,local_94);
                                 if (local_94[0] < 2) {
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
@@ -837,7 +837,7 @@ LAB_004aaf38:
                                 }
                               }
                               else {
-                                iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                iVar5 = strnicmp
                                                   ((char *)in_stack_00000008,"killSfx",7);
                                 if ((iVar5 == 0) &&
                                    ((g_CharacterClassificationTable
@@ -848,10 +848,10 @@ LAB_004aaf38:
                                     local_ec = local_ec + 1;
                                   }
                                   local_8c = -1;
-                                  crt_stdio_c_sscanf_FUN_0060013c
+                                  sscanf
                                             ((char *)local_ec,"(%[^,)]%n",local_efd + 1);
                                   if (local_8c < 3) {
-                                    crt_stdio_c_sprintf_FUN_005fdbd0
+                                    sprintf
                                               (&DAT_02d0a460,"Error parsing killSfx parms");
                                     return (CDemonActor *)0x0;
                                   }
@@ -877,17 +877,17 @@ LAB_004aaf38:
                                   (local_efd + 1)[SVar14] = '\0';
                                   while ((g_CharacterClassificationTable[(byte)(local_efd[1] + 1)] &
                                          2U) != 0) {
-                                    crt_string_c_memmove_FUN_005fe5e0
+                                    memmove
                                               (local_efd + 1,local_efd + 2,SVar14);
                                     SVar14 = SVar14 - 1;
                                   }
                                   local_88 = 0.0;
                                   if (*local_ec == 0x2c) {
                                     local_8c = -1;
-                                    crt_stdio_c_sscanf_FUN_0060013c
+                                    sscanf
                                               ((char *)local_ec,",%f%n",&local_88);
                                     if (local_8c < 3) {
-                                      crt_stdio_c_sprintf_FUN_005fdbd0
+                                      sprintf
                                                 (&DAT_02d0a460,"Error parsing killSfx parms");
                                       return (CDemonActor *)0x0;
                                     }
@@ -900,7 +900,7 @@ LAB_004aaf38:
                                            2U) != 0);
                                   if (*pbVar16 != 0x29) {
                                     local_ec = pbVar16;
-                                    crt_stdio_c_sprintf_FUN_005fdbd0
+                                    sprintf
                                               (&DAT_02d0a460,"Can't find matching ) in killSfx command");
                                     return (CDemonActor *)0x0;
                                   }
@@ -918,7 +918,7 @@ LAB_004aaf38:
                                   }
                                 }
                                 else {
-                                  iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                  iVar5 = strnicmp
                                                     ((char *)in_stack_00000008,"lightning",
                                                      9);
                                   if ((iVar5 == 0) &&
@@ -930,9 +930,9 @@ LAB_004aaf38:
                                       local_ec = local_ec + 1;
                                     }
                                     local_84 = -1;
-                                    crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"( )%n");
+                                    sscanf((char *)local_ec,"( )%n");
                                     if (local_84 < 2) {
-                                      crt_stdio_c_sprintf_FUN_005fdbd0
+                                      sprintf
                                                 (&DAT_02d0a460,"Error parsing lightning command");
                                       return (CDemonActor *)0x0;
                                     }
@@ -943,7 +943,7 @@ LAB_004aaf38:
                                     }
                                   }
                                   else {
-                                    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                    iVar5 = strnicmp
                                                       ((char *)in_stack_00000008,"playSfx",
                                                        7);
                                     if ((iVar5 == 0) &&
@@ -955,10 +955,10 @@ LAB_004aaf38:
                                         local_ec = local_ec + 1;
                                       }
                                       local_7c = -1;
-                                      crt_stdio_c_sscanf_FUN_0060013c
+                                      sscanf
                                                 ((char *)local_ec,"(%[^,)]%n",local_13ad + 1);
                                       if (local_7c < 3) {
-                                        crt_stdio_c_sprintf_FUN_005fdbd0
+                                        sprintf
                                                   (&DAT_02d0a460,"Error parsing playSfx parms"
                                                   );
                                         return (CDemonActor *)0x0;
@@ -986,7 +986,7 @@ LAB_004aaf38:
                                       while (pbVar16 = local_ec,
                                             (g_CharacterClassificationTable
                                              [(byte)(local_13ad[1] + 1)] & 2U) != 0) {
-                                        crt_string_c_memmove_FUN_005fe5e0
+                                        memmove
                                                   (local_13ad + 1,local_13ad + 2,SVar14);
                                         SVar14 = SVar14 - 1;
                                       }
@@ -1000,10 +1000,10 @@ LAB_004aaf38:
                                       }
                                       if (*pbVar16 == 0x2c) {
                                         local_7c = -1;
-                                        crt_stdio_c_sscanf_FUN_0060013c
+                                        sscanf
                                                   ((char *)local_ec,",%[^)]%n",local_b15 + 1);
                                         if (local_7c < 3) {
-                                          crt_stdio_c_sprintf_FUN_005fdbd0
+                                          sprintf
                                                     (&DAT_02d0a460,
                                                      "Error parsing playSfx parms");
                                           return (CDemonActor *)0x0;
@@ -1030,7 +1030,7 @@ LAB_004aaf38:
                                         (local_b15 + 1)[SVar14] = 0;
                                         while ((g_CharacterClassificationTable
                                                 [(byte)(local_b15[1] + 1)] & 2U) != 0) {
-                                          crt_string_c_memmove_FUN_005fe5e0
+                                          memmove
                                                     (local_b15 + 1,local_b15 + 2,SVar14);
                                           SVar14 = SVar14 - 1;
                                         }
@@ -1043,7 +1043,7 @@ LAB_004aaf38:
                                           pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                         } while (cVar2 != '\0');
                                         if (0x13 < ~uVar12 - 1) {
-                                          crt_stdio_c_sprintf_FUN_005fdbd0
+                                          sprintf
                                                     (&DAT_02d0a460,
                                                      "handle name %s is too long, max %d chars",
                                                      local_b15 + 1,0x13);
@@ -1057,13 +1057,13 @@ LAB_004aaf38:
                                                & 2U) != 0);
                                       if (*pbVar16 != 0x29) {
                                         local_ec = pbVar16;
-                                        crt_stdio_c_sprintf_FUN_005fdbd0
+                                        sprintf
                                                   (&DAT_02d0a460,"Can't find matching ) in playSfx command"
                                                   );
                                         return (CDemonActor *)0x0;
                                       }
                                       if (local_f0 != 0) {
-                                        iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                        iVar5 = strnicmp
                                                           (local_13ad + 1,"cue",3);
                                         if (iVar5 == 0) {
                                           iVar5 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0
@@ -1091,7 +1091,7 @@ LAB_004aaf38:
                                       }
                                     }
                                     else {
-                                      iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                      iVar5 = strnicmp
                                                         ((char *)in_stack_00000008,
                                                          "setCameraAmbient",0x10);
                                       if ((iVar5 == 0) &&
@@ -1103,11 +1103,11 @@ LAB_004aaf38:
                                           local_ec = local_ec + 1;
                                         }
                                         local_74 = -1;
-                                        crt_stdio_c_sscanf_FUN_0060013c
+                                        sscanf
                                                   ((char *)local_ec,"(%[^,], %f)%n",local_12e5 + 1,
                                                    &local_78);
                                         if (local_74 < 3) {
-                                          crt_stdio_c_sprintf_FUN_005fdbd0
+                                          sprintf
                                                     (&DAT_02d0a460,
                                                      "Error parsing setCameraAmbient parms");
                                           return (CDemonActor *)0x0;
@@ -1134,19 +1134,19 @@ LAB_004aaf38:
                                         (local_12e5 + 1)[SVar14] = '\0';
                                         while ((g_CharacterClassificationTable
                                                 [(byte)(local_12e5[1] + 1)] & 2U) != 0) {
-                                          crt_string_c_memmove_FUN_005fe5e0
+                                          memmove
                                                     (local_12e5 + 1,local_12e5 + 2,SVar14);
                                           SVar14 = SVar14 - 1;
                                         }
                                         iVar5 = core_set_cpp_CDemonSet_FUN_0056b790(g_CDemonSetPtr);
                                         if (iVar5 < 0) {
-                                          crt_stdio_c_sprintf_FUN_005fdbd0
+                                          sprintf
                                                     (&DAT_02d0a460,
                                                      "Camera \"%s\" does not exist.");
                                           return (CDemonActor *)0x0;
                                         }
                                         if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
-                                          crt_stdio_c_sprintf_FUN_005fdbd0
+                                          sprintf
                                                     (&DAT_02d0a460,
                                                      "Ambient value %g is out of range (1..100)",
                                                      (double)local_78);
@@ -1157,7 +1157,7 @@ LAB_004aaf38:
                                         }
                                       }
                                       else {
-                                        iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                        iVar5 = strnicmp
                                                           ((char *)in_stack_00000008,
                                                            "setCounter",10);
                                         if ((iVar5 == 0) &&
@@ -1169,10 +1169,10 @@ LAB_004aaf38:
                                             local_ec = local_ec + 1;
                                           }
                                           local_6c = -1;
-                                          crt_stdio_c_sscanf_FUN_0060013c
+                                          sscanf
                                                     ((char *)local_ec,"( %[^,)]%n",local_ca5 + 1);
                                           if (local_6c < 5) {
-                                            crt_stdio_c_sprintf_FUN_005fdbd0
+                                            sprintf
                                                       (&DAT_02d0a460,
                                                        "Error parsing setCounter arguments");
                                             return (CDemonActor *)0x0;
@@ -1199,17 +1199,17 @@ LAB_004aaf38:
                                           (local_ca5 + 1)[SVar14] = '\0';
                                           while ((g_CharacterClassificationTable
                                                   [(byte)(local_ca5[1] + 1)] & 2U) != 0) {
-                                            crt_string_c_memmove_FUN_005fe5e0
+                                            memmove
                                                       (local_ca5 + 1,local_ca5 + 2,SVar14);
                                             SVar14 = SVar14 - 1;
                                           }
                                           local_68 = 0;
                                           if (*local_ec == 0x2c) {
                                             local_6c = -1;
-                                            crt_stdio_c_sscanf_FUN_0060013c
+                                            sscanf
                                                       ((char *)local_ec,",%d%n",&local_68);
                                             if (local_6c < 1) {
-                                              crt_stdio_c_sprintf_FUN_005fdbd0
+                                              sprintf
                                                         (&DAT_02d0a460,
                                                          "Error parsing setCounter value argument");
                                               return (CDemonActor *)0x0;
@@ -1221,7 +1221,7 @@ LAB_004aaf38:
                                             }
                                           }
                                           if (*local_ec != 0x29) {
-                                            crt_stdio_c_sprintf_FUN_005fdbd0
+                                            sprintf
                                                       (&DAT_02d0a460,
                                                        "Error parsing setCounter arguments");
                                             return (CDemonActor *)0x0;
@@ -1233,7 +1233,7 @@ LAB_004aaf38:
                                           }
                                         }
                                         else {
-                                          iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                          iVar5 = strnicmp
                                                             ((char *)in_stack_00000008,
                                                              "setGroupAmbient",0xf);
                                           if ((iVar5 == 0) &&
@@ -1246,18 +1246,18 @@ LAB_004aaf38:
                                               local_ec = local_ec + 1;
                                             }
                                             local_5c = -1;
-                                            crt_stdio_c_sscanf_FUN_0060013c
+                                            sscanf
                                                       ((char *)local_ec,"(%d, %f)%n",local_64,
                                                        &local_60);
                                             if (local_5c < 3) {
-                                              crt_stdio_c_sprintf_FUN_005fdbd0
+                                              sprintf
                                                         (&DAT_02d0a460,
                                                          "Error parsing setGroupAmbient parms");
                                               return (CDemonActor *)0x0;
                                             }
                                             local_ec = local_ec + local_5c;
                                             if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
-                                              crt_stdio_c_sprintf_FUN_005fdbd0
+                                              sprintf
                                                         (&DAT_02d0a460,
                                                          "Ambient value %g is out of range (1..100)",
                                                          (double)local_60);
@@ -1268,7 +1268,7 @@ LAB_004aaf38:
                                             }
                                           }
                                           else {
-                                            iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                            iVar5 = strnicmp
                                                               ((char *)in_stack_00000008,
                                                                "setLightFilterFrame",0x13);
                                             if ((iVar5 == 0) &&
@@ -1281,7 +1281,7 @@ LAB_004aaf38:
                                                 local_ec = local_ec + 1;
                                               }
                                               local_58 = -1;
-                                              crt_stdio_c_sscanf_FUN_0060013c
+                                              sscanf
                                                         ((char *)local_ec,"( %[^ ,] , %d )%n",local_7f4,
                                                          &local_54);
                                               if (local_58 < 0) {
@@ -1314,7 +1314,7 @@ LAB_004aaf38:
                                               }
                                             }
                                             else {
-                                              iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                              iVar5 = strnicmp
                                                                 ((char *)in_stack_00000008,
                                                                  "setLeverState",0xd);
                                               if ((iVar5 == 0) &&
@@ -1327,11 +1327,11 @@ LAB_004aaf38:
                                                   local_ec = local_ec + 1;
                                                 }
                                                 local_48 = -1;
-                                                crt_stdio_c_sscanf_FUN_0060013c
+                                                sscanf
                                                           ((char *)local_ec,"(%[^,], %[^)])%n",
                                                            local_d6d + 1,local_1475 + 1);
                                                 if (local_48 < 5) {
-                                                  crt_stdio_c_sprintf_FUN_005fdbd0
+                                                  sprintf
                                                             (&DAT_02d0a460,
                                                              "Error parsing setLeverState command parms");
                                                   return (CDemonActor *)0x0;
@@ -1358,7 +1358,7 @@ LAB_004aaf38:
                                                 (local_d6d + 1)[SVar14] = '\0';
                                                 while ((g_CharacterClassificationTable
                                                         [(byte)(local_d6d[1] + 1)] & 2U) != 0) {
-                                                  crt_string_c_memmove_FUN_005fe5e0
+                                                  memmove
                                                             (local_d6d + 1,local_d6d + 2,SVar14);
                                                   SVar14 = SVar14 - 1;
                                                 }
@@ -1383,7 +1383,7 @@ LAB_004aaf38:
                                                 (local_1475 + 1)[SVar14] = '\0';
                                                 while ((g_CharacterClassificationTable
                                                         [(byte)(local_1475[1] + 1)] & 2U) != 0) {
-                                                  crt_string_c_memmove_FUN_005fe5e0
+                                                  memmove
                                                             (local_1475 + 1,local_1475 + 2,SVar14);
                                                   SVar14 = SVar14 - 1;
                                                 }
@@ -1414,7 +1414,7 @@ LAB_004aaf38:
                                                 }
                                               }
                                               else {
-                                                iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                                iVar5 = strnicmp
                                                                   ((char *)in_stack_00000008,
                                                                    "setModelState",0xd);
                                                 if ((iVar5 == 0) &&
@@ -1427,11 +1427,11 @@ LAB_004aaf38:
                                                     local_ec = local_ec + 1;
                                                   }
                                                   local_40 = -1;
-                                                  crt_stdio_c_sscanf_FUN_0060013c
+                                                  sscanf
                                                             ((char *)local_ec,"(%[^,], %[^)])%n",
                                                              local_985 + 1,local_8bd + 1);
                                                   if (local_40 < 5) {
-                                                    crt_stdio_c_sprintf_FUN_005fdbd0
+                                                    sprintf
                                                               (&DAT_02d0a460,
                                                                "Error parsing setModelState command parms");
                                                     return (CDemonActor *)0x0;
@@ -1459,7 +1459,7 @@ LAB_004aaf38:
                                                   (local_985 + 1)[SVar14] = '\0';
                                                   while ((g_CharacterClassificationTable
                                                           [(byte)(local_985[1] + 1)] & 2U) != 0) {
-                                                    crt_string_c_memmove_FUN_005fe5e0
+                                                    memmove
                                                               (local_985 + 1,local_985 + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
                                                   }
@@ -1485,7 +1485,7 @@ LAB_004aaf38:
                                                   (local_8bd + 1)[SVar14] = '\0';
                                                   while ((g_CharacterClassificationTable
                                                           [(byte)(local_8bd[1] + 1)] & 2U) != 0) {
-                                                    crt_string_c_memmove_FUN_005fe5e0
+                                                    memmove
                                                               (local_8bd + 1,local_8bd + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
                                                   }
@@ -1502,7 +1502,7 @@ LAB_004aaf38:
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                                                             (pCVar10);
                                                   if (iVar5 < 0) {
-                                                    crt_stdio_c_sprintf_FUN_005fdbd0
+                                                    sprintf
                                                               (&DAT_02d0a460,
                                                                "Model %s does not have state %s",
                                                                pCVar7[0x1a].create_event + 0x50,
@@ -1518,7 +1518,7 @@ LAB_004aaf38:
                                                   }
                                                 }
                                                 else {
-                                                  iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                                  iVar5 = strnicmp
                                                                     ((char *)in_stack_00000008,
                                                                      "setTimer",8);
                                                   if ((iVar5 == 0) &&
@@ -1531,11 +1531,11 @@ LAB_004aaf38:
                                                       local_ec = local_ec + 1;
                                                     }
                                                     local_38 = -1;
-                                                    crt_stdio_c_sscanf_FUN_0060013c
+                                                    sscanf
                                                               ((char *)local_ec,"(%[^,], %f)%n",
                                                                local_a4d + 1,&local_3c);
                                                     if (local_38 < 3) {
-                                                      crt_stdio_c_sprintf_FUN_005fdbd0
+                                                      sprintf
                                                                 (&DAT_02d0a460,
                                                                  "Error parsing setTimer command parms"
                                                                 );
@@ -1564,7 +1564,7 @@ LAB_004aaf38:
                                                     (local_a4d + 1)[SVar14] = '\0';
                                                     while ((g_CharacterClassificationTable
                                                             [(byte)(local_a4d[1] + 1)] & 2U) != 0) {
-                                                      crt_string_c_memmove_FUN_005fe5e0
+                                                      memmove
                                                                 (local_a4d + 1,local_a4d + 2,SVar14)
                                                       ;
                                                       SVar14 = SVar14 - 1;
@@ -1578,14 +1578,14 @@ LAB_004aaf38:
                                                       pcVar8 = pcVar8 + (uint)bVar22 * -2 + 1;
                                                     } while (cVar2 != '\0');
                                                     if (0x1f < ~uVar12 - 1) {
-                                                      crt_stdio_c_sprintf_FUN_005fdbd0
+                                                      sprintf
                                                                 (&DAT_02d0a460,
                                                                  "Timer name \"%s\" is too long, (max %d chars)"
                                                                  ,local_a4d + 1,0x1f);
                                                       return (CDemonActor *)0x0;
                                                     }
                                                     if (local_3c < 0.0) {
-                                                      crt_stdio_c_sprintf_FUN_005fdbd0
+                                                      sprintf
                                                                 (&DAT_02d0a460,
                                                                  "Invalid timer duration");
                                                       return (CDemonActor *)0x0;
@@ -1597,7 +1597,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar5 = strnicmp
                                                                       ((char *)in_stack_00000008,
                                                                        "setWeather",10);
                                                     if ((iVar5 == 0) &&
@@ -1610,11 +1610,11 @@ LAB_004aaf38:
                                                         local_ec = local_ec + 1;
                                                       }
                                                       local_34 = -1;
-                                                      crt_stdio_c_sscanf_FUN_0060013c
+                                                      sscanf
                                                                 ((char *)local_ec,"(%[^)])%n",
                                                                  local_e35 + 1);
                                                       if (local_34 < 3) {
-                                                        crt_stdio_c_sprintf_FUN_005fdbd0
+                                                        sprintf
                                                                   (&DAT_02d0a460,
                                                                                                                                       
                                                   "Error parsing setWeather command parms");
@@ -1643,22 +1643,22 @@ LAB_004aaf38:
                                                   (local_e35 + 1)[SVar14] = '\0';
                                                   while ((g_CharacterClassificationTable
                                                           [(byte)(local_e35[1] + 1)] & 2U) != 0) {
-                                                    crt_string_c_memmove_FUN_005fe5e0
+                                                    memmove
                                                               (local_e35 + 1,local_e35 + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
                                                   }
-                                                  iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                                                  iVar5 = stricmp
                                                                     (local_e35 + 1,"none");
                                                   if (((iVar5 != 0) &&
-                                                      (iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                                                      (iVar5 = stricmp
                                                                          (local_e35 + 1,
                                                                           "rain"),
                                                       iVar5 != 0)) &&
-                                                     (iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                                                     (iVar5 = stricmp
                                                                         (local_e35 + 1,
                                                                          "snow"),
                                                      iVar5 != 0)) {
-                                                    crt_stdio_c_sprintf_FUN_005fdbd0
+                                                    sprintf
                                                               (&DAT_02d0a460,
                                                                "Invalid weather type: %s");
                                                     return (CDemonActor *)0x0;
@@ -1668,7 +1668,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar5 = strnicmp
                                                                       ((char *)in_stack_00000008,
                                                                        "shakeScreen",0xb);
                                                     if ((iVar5 == 0) &&
@@ -1681,12 +1681,12 @@ LAB_004aaf38:
                                                         local_ec = local_ec + 1;
                                                       }
                                                       local_24 = -1;
-                                                      crt_stdio_c_sscanf_FUN_0060013c
+                                                      sscanf
                                                                 ((char *)local_ec,
                                                                  "( %f, %f, %f, %f )%n",local_30,
                                                                  local_2c,local_80,local_28);
                                                       if (local_24 < 5) {
-                                                        crt_stdio_c_sprintf_FUN_005fdbd0
+                                                        sprintf
                                                                   (&DAT_02d0a460,
                                                                                                                                       
                                                   "Error parsing shakeScreen command parms");
@@ -1699,7 +1699,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar5 = strnicmp
                                                                       ((char *)in_stack_00000008,
                                                                        "slamModelToMotion",
                                                                        0x11);
@@ -1713,11 +1713,11 @@ LAB_004aaf38:
                                                         local_ec = local_ec + 1;
                                                       }
                                                       local_20 = -1;
-                                                      crt_stdio_c_sscanf_FUN_0060013c
+                                                      sscanf
                                                                 ((char *)local_ec,"(%[^,], %[^)])%n",
                                                                  local_72d + 1,local_40d + 1);
                                                       if (local_20 < 5) {
-                                                        crt_stdio_c_sprintf_FUN_005fdbd0
+                                                        sprintf
                                                                   (&DAT_02d0a460,
                                                                                                                                       
                                                   "Error parsing slamModelToMotion command parms");
@@ -1746,7 +1746,7 @@ LAB_004aaf38:
                                                   (local_72d + 1)[SVar14] = '\0';
                                                   while ((g_CharacterClassificationTable
                                                           [(byte)(local_72d[1] + 1)] & 2U) != 0) {
-                                                    crt_string_c_memmove_FUN_005fe5e0
+                                                    memmove
                                                               (local_72d + 1,local_72d + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
                                                   }
@@ -1772,7 +1772,7 @@ LAB_004aaf38:
                                                   (local_40d + 1)[SVar14] = '\0';
                                                   while ((g_CharacterClassificationTable
                                                           [(byte)(local_40d[1] + 1)] & 2U) != 0) {
-                                                    crt_string_c_memmove_FUN_005fe5e0
+                                                    memmove
                                                               (local_40d + 1,local_40d + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
                                                   }
@@ -1790,7 +1790,7 @@ LAB_004aaf38:
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (pCVar10);
                                                   if (iVar5 < 0) {
-                                                    crt_stdio_c_sprintf_FUN_005fdbd0
+                                                    sprintf
                                                               (&DAT_02d0a460,
                                                                "Model %s does not have motion %s",
                                                                pCVar7[0x1a].create_event + 0x50,
@@ -1812,7 +1812,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar5 = strnicmp
                                                                       ((char *)in_stack_00000008,
                                                                        "switchCamera",0xc);
                                                     if ((iVar5 == 0) &&
@@ -1834,7 +1834,7 @@ LAB_004aaf38:
                                                         puVar21 = puVar21 + (uint)bVar22 * -2 + 1;
                                                       }
                                                       local_ec = pbVar16;
-                                                      crt_stdio_c_sscanf_FUN_0060013c
+                                                      sscanf
                                                                 ((char *)pbVar16," ( %[^ ,)]%n",
                                                                  local_344);
                                                       if (local_1c < 2) {
@@ -1857,7 +1857,7 @@ LAB_004aaf38:
                                                       local_70 = 3.0;
                                                       if (*local_ec == 0x2c) {
                                                         local_1c = -1;
-                                                        crt_stdio_c_sscanf_FUN_0060013c
+                                                        sscanf
                                                                   ((char *)local_ec,",%f%n",
                                                                    &local_70);
                                                         if (local_1c < 2) {
@@ -1885,7 +1885,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar5 = crt_string_c_strnicmp_FUN_005ff070
+                                                    iVar5 = strnicmp
                                                                       ((char *)in_stack_00000008,
                                                                        "warpTo",6);
                                                     if ((iVar5 != 0) ||
@@ -1902,7 +1902,7 @@ LAB_004aaf38:
                                                       local_ec = local_ec + 1;
                                                     }
                                                     local_18 = -1;
-                                                    crt_stdio_c_sscanf_FUN_0060013c
+                                                    sscanf
                                                               ((char *)local_ec,"(%[^,], %[^)])%n",
                                                                local_bdd + 1,local_59d + 1);
                                                     if (local_18 < 5) {
@@ -1932,7 +1932,7 @@ LAB_004aaf38:
                                                     (local_bdd + 1)[SVar14] = '\0';
                                                     while ((g_CharacterClassificationTable
                                                             [(byte)(local_bdd[1] + 1)] & 2U) != 0) {
-                                                      crt_string_c_memmove_FUN_005fe5e0
+                                                      memmove
                                                                 (local_bdd + 1,local_bdd + 2,SVar14)
                                                       ;
                                                       SVar14 = SVar14 - 1;
@@ -1959,7 +1959,7 @@ LAB_004aaf38:
                                                     (local_59d + 1)[SVar14] = '\0';
                                                     while ((g_CharacterClassificationTable
                                                             [(byte)(local_59d[1] + 1)] & 2U) != 0) {
-                                                      crt_string_c_memmove_FUN_005fe5e0
+                                                      memmove
                                                                 (local_59d + 1,local_59d + 2,SVar14)
                                                       ;
                                                       SVar14 = SVar14 - 1;
@@ -1978,7 +1978,7 @@ LAB_004aaf38:
                                                       local_f0 = 0;
                                                     }
                                                     local_18 = -1;
-                                                    crt_stdio_c_sscanf_FUN_0060013c
+                                                    sscanf
                                                               (local_59d + 1,
                                                                "%f,%f,%f,%f,%f,%f%n",&local_11c,
                                                                &local_11c.y,&local_11c.z,&local_134,
@@ -1991,7 +1991,7 @@ LAB_004aaf38:
                                                         local_134.y = (pCVar7->orient).bank;
                                                         local_134.z = (pCVar7->orient).heading;
                                                       }
-                                                      crt_stdio_c_sscanf_FUN_0060013c
+                                                      sscanf
                                                                 (local_59d + 1,"%f,%f,%f,%f%n",
                                                                  &local_11c,&local_11c.y,
                                                                  &local_11c.z,&local_134.y);
@@ -2004,7 +2004,7 @@ LAB_004aaf38:
                                                         local_134.y = (pCVar7->orient).bank;
                                                         local_134.z = (pCVar7->orient).heading;
                                                       }
-                                                      crt_stdio_c_sscanf_FUN_0060013c
+                                                      sscanf
                                                                 (local_59d + 1,"%f,%f,%f%n",
                                                                  &local_11c,&local_11c.y,
                                                                  &local_11c.z);

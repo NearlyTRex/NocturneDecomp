@@ -24,8 +24,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c2e0
-;   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
-;   crt_stdlib.c_atexit_FUN_005ff060
+;   crt_memory.c___arrinit_FUN_005fe667
+;   crt_stdlib.c__atexit_FUN_005ff060
 ;
 ; *****************************************************************************
 
@@ -58,12 +58,12 @@ section .text
     PUSH 0x65cf00                       ; 00483f5a | g_SFreakyTypeInfo
     PUSH 0x6                            ; 00483f5f
     PUSH 0x2c6d0c0                      ; 00483f61 | SFreaky_ARRAY_02c6d0c0
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00483f66
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___arrinit_FUN_005fe667 ; 00483f66
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00483f6b
     PUSH 0x6703a0                       ; 00483f6e | DAT_006703a0
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00483f73
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
+    CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00483f73
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00483f78
     POP ESI                             ; 00483f7b
     RET                                 ; 00483f7c

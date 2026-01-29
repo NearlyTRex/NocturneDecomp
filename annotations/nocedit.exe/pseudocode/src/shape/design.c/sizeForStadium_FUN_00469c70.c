@@ -39,7 +39,7 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar4 != -2) {
-    local_20 = crt_stdlib_c_atoi_FUN_005ffef0(local_e8);
+    local_20 = atoi(local_e8);
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0xb,"Enter in Z point : ");
     iVar4 = -1;
     pcVar5 = local_e8;
@@ -50,7 +50,7 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
       pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
     } while (cVar1 != '\0');
     if (iVar4 != -2) {
-      local_1c = crt_stdlib_c_atoi_FUN_005ffef0(local_e8);
+      local_1c = atoi(local_e8);
       engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0x16,"Enter in X size : ");
       iVar4 = -1;
       pcVar5 = local_e8;
@@ -61,7 +61,7 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
         pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar4 != -2) {
-        dVar7 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff10);
+        dVar7 = _strtod(in_stack_ffffff10);
         local_18 = (float)dVar7;
         engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0x21,"Enter in Z size : ")
         ;
@@ -74,7 +74,7 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar4 != -2) {
-          dVar7 = crt_string_c_strtod_FUN_005ff0f3(SUB84(dVar7,0));
+          dVar7 = _strtod(SUB84(dVar7,0));
           local_44 = 999999.9;
           local_40 = -999999.9;
           local_3c = 999999.9;

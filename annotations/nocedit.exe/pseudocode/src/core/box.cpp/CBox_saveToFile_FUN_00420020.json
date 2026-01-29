@@ -8,79 +8,18 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 12,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 13,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 14,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 15,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 16,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 17,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 18,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 19,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 20,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 134,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "pseudocode_lines": 14,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "format_string_mismatch",
       "param_count_too_few"
     ],
     "total_lines": 137
@@ -103,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_box.cpp_CBox_saveToFile_FUN_00420020",
-    "signature": "void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,FILE *file_handle)"
+    "signature": "void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -261,7 +200,7 @@
         "name": "file_handle",
         "offset": 8,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       }
     ]
   },
@@ -276,116 +215,6 @@
       "param_delta": 1,
       "text": "Function declares 2 params but call sites push 3 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%sboxVersion\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%sboxVersion\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 5,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%sboxVersion\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%d\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 6,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%sboxStateInfo\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%sboxStateInfo\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 7,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%sboxStateInfo\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%f,%f,%f\\n\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%s%f,%f,%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 8,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%f,%f,%f\\n\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%f,%f,%f\\n\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%s%f,%f,%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 9,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%f,%f,%f\\n\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%f,%f,%f\\n\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%s%f,%f,%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 10,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%f,%f,%f\\n\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%f\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 11,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%f\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%f,%f,%f\\n\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%s%f,%f,%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 12,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%f,%f,%f\\n\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%f,%f,%f\\n\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%s%f,%f,%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 13,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%f,%f,%f\\n\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%d\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 14,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

@@ -104,18 +104,13 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50",
-    "signature": "int __cdecl engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50 (FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset, int checksum,int timestamp)"
+    "signature": "int __cdecl engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50 (_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset ,int checksum,int timestamp)"
   },
   "function_calls": [
     {
       "addr": "005ff9e0",
       "is_variadic": false,
       "name": "crt_ctype.c_toupper_FUN_005ff9e0"
-    },
-    {
-      "addr": "00600e10",
-      "is_variadic": false,
-      "name": "crt_file.c_create_directory_FUN_00600e10"
     },
     {
       "addr": "005fe840",
@@ -131,6 +126,11 @@
       "addr": "005ffacc",
       "is_variadic": false,
       "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "00600e10",
+      "is_variadic": false,
+      "name": "crt_watcom.c__mkdir_FUN_00600e10"
     },
     {
       "addr": "00481910",
@@ -249,7 +249,7 @@
         "name": "source_file",
         "offset": 4,
         "size": 4,
-        "type": "FILE *"
+        "type": "_FILE *"
       },
       {
         "is_param": true,

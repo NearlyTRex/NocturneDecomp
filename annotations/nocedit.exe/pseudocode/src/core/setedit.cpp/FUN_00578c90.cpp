@@ -28,7 +28,7 @@ uint core_setedit_cpp_FUN_00578c90(void)
   else {
     bVar1 = 0x59;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_13c,"%s? [%c] ",in_stack_00000008,(uint)bVar1);
+  sprintf(local_13c,"%s? [%c] ",in_stack_00000008,(uint)bVar1);
   engine_2d_c_drawText_FUN_00401fd0(local_13c,0,in_stack_00000004);
   while( true ) {
     uVar2 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
@@ -45,7 +45,7 @@ uint core_setedit_cpp_FUN_00578c90(void)
       pcVar3 = "N";
       uVar4 = 0;
 LAB_00578d14:
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_2cc,"%s %s",local_13c,pcVar3);
+      sprintf(local_2cc,"%s %s",local_13c,pcVar3);
       engine_2d_c_drawText_FUN_00401fd0(local_2cc,0,in_stack_00000004);
       return uVar4;
     }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,FILE *param_6)
+; unknown void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x108]:1  local_108
@@ -39,7 +39,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x118]     ; 0044b97b
     PUSH EDX                            ; 0044b982
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0044b983
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0044b988
     MOV EDI,ESP                         ; 0044b98b
     MOV DL,0x2e                         ; 0044b98d
@@ -108,7 +108,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x118]     ; 0044b9f0
     PUSH ESI                            ; 0044b9f7
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0044b9f8
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0044b9fd
     ADD ESP,0x100                       ; 0044ba00
     POP EDI                             ; 0044ba06

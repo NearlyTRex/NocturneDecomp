@@ -25,7 +25,7 @@ shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T size,char *filenam
   shape_memdbg_cpp_traceMemory_FUN_0050f150
             ("debugCalloc(%d, %d, %s, %d)",count,size,filename,line_number);
   if (count_00 != 0) {
-    header = crt_memory_c_malloc_FUN_00601bb0(count_00 + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
+    header = malloc(count_00 + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
     if (header == (SMemHead *)0x0) {
       shape_memdbg_cpp_traceMemory_FUN_0050f150("   !!FAILED!!");
       wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
@@ -42,7 +42,7 @@ shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T size,char *filenam
     pcVar1[2] = -0x11;
     pcVar1[3] = -0x42;
     shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
-    crt_memory_c_memset_FUN_005fde40(dest,0,count_00);
+    memset(dest,0,count_00);
     shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",dest);
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
     return dest;

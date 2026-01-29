@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_scanf_getc_with_width_FUN_00605918(scanf_state_t *state)
+int __cdecl scanf_getc_with_width(scanf_state_t *state)
 
 {
   int iVar1;
@@ -14,7 +14,7 @@ int __cdecl crt_stdio_c_scanf_getc_with_width_FUN_00605918(scanf_state_t *state)
   iVar1 = state->field_width;
   state->field_width = iVar1 + -1;
   if ((iVar1 != 0) &&
-     (iVar1 = crt_stdio_c_scanf_getc_wrapper_FUN_00604930(state), (state->flags & 2) == 0)) {
+     (iVar1 = scanf_getc_wrapper(state), (state->flags & 2) == 0)) {
     return iVar1;
   }
   return -1;

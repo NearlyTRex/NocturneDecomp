@@ -65,10 +65,10 @@ cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x,int y,float 
     fVar2 = (float)(uVar10 & 0xff) * fVar2 + (float)(uVar9 & 0xff) * alpha;
     if (g_BitsPerPixel != 0x10) {
       fVar13 = (float10)fVar2;
-      dVar15 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
-      dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+      dVar15 = round((double)fVar4);
+      dVar16 = round((double)fVar3);
       fVar14 = (float10)dVar16;
-      dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
+      dVar16 = round((double)fVar13);
       local_34 = (uint)(longlong)ROUND(dVar15);
       uStack_2c = (uint)(longlong)ROUND(dVar16);
       local_3c = (uint)(longlong)ROUND(fVar14);
@@ -78,10 +78,10 @@ cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x,int y,float 
       return;
     }
     fVar13 = (float10)fVar2;
-    dVar15 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
-    dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+    dVar15 = round((double)fVar4);
+    dVar16 = round((double)fVar3);
     fVar14 = (float10)dVar16;
-    dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
+    dVar16 = round((double)fVar13);
     uStack_2c = (uint)(longlong)ROUND(fVar14);
     local_34 = (uint)(longlong)ROUND(dVar16);
     local_3c = (uint)(longlong)ROUND(dVar15);

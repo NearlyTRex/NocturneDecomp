@@ -44,13 +44,13 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
       }
     }
     if (g_PointEditorMode == 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"Insert at end");
+      sprintf(local_84,"Insert at end");
       engine_2d_c_drawText_FUN_00401fd0(local_84,0,0xb);
     }
     else if (g_PointEditorMode == 1) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"Move point : %d");
+      sprintf(local_84,"Move point : %d");
       engine_2d_c_drawText_FUN_00401fd0(local_84,0,0xb);
-      crt_stdio_c_sprintf_FUN_005fdbd0
+      sprintf
                 (local_84,"from %f,%f,%f",
                  (double)g_LoadedVertices[g_SelectedPointIndex].vertex.x,
                  (double)g_LoadedVertices[g_SelectedPointIndex].vertex.y,
@@ -84,13 +84,13 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
       local_14 = 0x59;
       local_1c = 0x5a;
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"%c");
+    sprintf(local_84,"%c");
     engine_2d_c_drawText_FUN_00401fd0(local_84,g_WindowWidth / 2 + 2,0);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"%c");
+    sprintf(local_84,"%c");
     engine_2d_c_drawText_FUN_00401fd0(local_84,g_WindowWidth + -7,g_WindowHeight / 2 + -0xb);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"%c");
+    sprintf(local_84,"%c");
     engine_2d_c_drawText_FUN_00401fd0(local_84,0,0);
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"%d,%d,%d");
+    sprintf(local_84,"%d,%d,%d");
     engine_2d_c_drawText_FUN_00401fd0(local_84,0,g_WindowHeight + -0xb);
     if (g_PointEditorMode == 0) {
       shape_design_c_doNothing_FUN_0045c4f0();

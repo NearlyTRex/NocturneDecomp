@@ -38,7 +38,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
   float local_14;
   
   local_24 = (double)*(float *)(in_stack_00000004 + 0x3a0);
-  dVar8 = crt_math_c_floor_FUN_005feb90(local_24);
+  dVar8 = floor(local_24);
   local_24._4_4_ = SUB84(dVar8,0);
   local_1c = (uint)((ulonglong)dVar8 >> 0x20);
   *(float *)(extraout_EBX + 0x3a0) =
@@ -46,7 +46,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
   if ((*(int *)(extraout_EBX + 0x43c) != 0) && (1.0 < *(float *)(extraout_EBX + 0x3a0))) {
     *(float *)(extraout_EBX + 0x3a0) = *(float *)(extraout_EBX + 0x3a0) + 0.5f;
   }
-  dVar8 = crt_math_c_floor_FUN_005feb90((double)*(float *)(extraout_EBX + 0x3a0));
+  dVar8 = floor((double)*(float *)(extraout_EBX + 0x3a0));
   local_24._0_4_ = SUB84(dVar8,0);
   local_24._4_4_ = (uint)((ulonglong)dVar8 >> 0x20);
   fVar4 = (float10)this_ptr[2].unk4.y - (float10)dVar8;

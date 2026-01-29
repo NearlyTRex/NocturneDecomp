@@ -45,7 +45,7 @@
 ;   core_mission.cpp_FUN_00524660
 ;   core_msnedit.cpp_FUN_0053d220
 ;   core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140
-;   crt_io.c_deleteFile_FUN_005ff9d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   ... and 3 more
 ;
@@ -86,7 +86,7 @@ section .text
     LEA EAX,[ESP + 0x94]                ; 0053bdc8
     PUSH EAX                            ; 0053bdcf
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0053bdd0
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 0053bdd5
     ADD ESP,0x14                        ; 0053bdd7
     TEST EAX,EAX                        ; 0053bdda
@@ -97,13 +97,13 @@ section .text
     MOV ECX,dword ptr [EAX + 0x28]      ; 0053bdea
     PUSH ECX                            ; 0053bded
     CALL core_actor.cpp_CDemonActor_save_FUN_0040af30 ; 0053bdee
-        ;   XREF to: 0040af30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040af30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0053bdf3
     PUSH 0x96b                          ; 0053bdf6
     PUSH 0x63c774                       ; 0053bdfb | = "..\\core\\msnedit.cpp"
     PUSH EBX                            ; 0053be00
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0053be01
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0053be06
     MOV EAX,dword ptr [ESP + 0xa8]      ; 0053be09
     MOV EBX,dword ptr [EAX + 0x28]      ; 0053be10
@@ -123,7 +123,7 @@ section .text
     LEA EAX,[ESP + 0x94]                ; 0053be38
     PUSH EAX                            ; 0053be3f
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0053be40
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0053be45
     MOV EBX,EAX                         ; 0053be48
     TEST EAX,EAX                        ; 0053be4a
@@ -143,18 +143,18 @@ section .text
         ;   Label: LAB_0053be79
     PUSH EBP                            ; 0053be7a
     CALL core_actor.cpp_CDemonActor_load_FUN_0040b050 ; 0053be7b
-        ;   XREF to: 0040b050 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_load_FUN_0040b050(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040b050 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_load_FUN_0040b050(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0053be80
     PUSH 0x976                          ; 0053be83
     PUSH 0x63c7c3                       ; 0053be88 | = "..\\core\\msnedit.cpp"
     PUSH EBX                            ; 0053be8d
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0053be8e
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0053be93
     LEA EAX,[ESP + 0x84]                ; 0053be96
     PUSH EAX                            ; 0053be9d
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0053be9e
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0053be9e
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 0053bea3
     MOV ESI,dword ptr [ESP + 0xa8]      ; 0053bea6
     MOV EDI,ESP                         ; 0053bead

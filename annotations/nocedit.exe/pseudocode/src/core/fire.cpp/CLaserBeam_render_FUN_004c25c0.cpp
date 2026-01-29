@@ -271,7 +271,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_24c.surface_normal.C = 0;
       local_24c.surface_normal.B = 0;
       local_230 = 0;
-      dVar13 = crt_math_c_round_FUN_005fe6b0((double)(local_2e8 * fVar1 * (float)8192));
+      dVar13 = round((double)(local_2e8 * fVar1 * (float)8192));
       fStack_78 = (float)(int)ROUND(dVar13);
       pCVar4->vertex_buffer_ptr->w_recip = fStack_78;
       pCVar4->vertex_buffer_ptr->light = *(float *)(this_ptr->unk + 0x2c);
@@ -373,7 +373,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_108);
         iVar7 = local_20;
         if (local_20 != 0) {
-          dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_48);
+          dVar13 = round((double)local_48);
           pCVar4 = g_CDemonRendererPtr2;
           local_2e0.surface_normal.A = 4;
           local_2c8 = 0;
@@ -416,7 +416,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
           local_2a4 = local_298;
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar4,1);
           fVar1 = local_44;
-          dVar13 = crt_math_c_round_FUN_005fe6b0((double)((float)32767.5 * 448.0));
+          dVar13 = round((double)((float)32767.5 * 448.0));
           pCVar4 = g_CDemonRendererPtr2;
           local_34 = (float)(int)ROUND(dVar13);
           if (fVar1 == 0.0) {
@@ -522,7 +522,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     pCVar4->vertex_buffer_ptr[3].fog = *(float *)(this_ptr->unk + 0x34);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar4,1);
     local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(32768.0,40959.0);
-    dVar13 = crt_math_c_round_FUN_005fe6b0((double)(local_18 * local_2f4));
+    dVar13 = round((double)(local_18 * local_2f4));
     local_20 = (int)ROUND(dVar13);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_20);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
