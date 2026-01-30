@@ -24,6 +24,9 @@ def delete_pseudocode(currentProgram, path):
     for root, dirs, files in os.walk(pseudocode_dir):
         for file in files:
             if file.lower().endswith(('.c', '.cpp', '.h', '.asm', '.json', '.pcode')):
+                # Protect manual override files (.keep.cpp, .keep.h, etc.)
+                if '.keep.' in file.lower():
+                    continue
                 file_path = os.path.join(root, file)
                 try:
                     os.remove(file_path)

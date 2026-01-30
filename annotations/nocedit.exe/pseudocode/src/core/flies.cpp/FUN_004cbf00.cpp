@@ -14,8 +14,8 @@ void __cdecl core_flies_cpp_FUN_004cbf00(void)
 
 {
   float fVar1;
+  uintptr_t uVar2;
   double input_value;
-  int iVar2;
   float fVar3;
   CVector3f *pCVar4;
   int *piVar5;
@@ -80,15 +80,15 @@ void __cdecl core_flies_cpp_FUN_004cbf00(void)
     }
     if ((0 < in_stack_00000004[0x1f].health) &&
        (fVar1 = (float)in_stack_00000004[0x1f].validation_magic - in_stack_00000008,
-       in_stack_00000004[0x1f].validation_magic = (int)fVar1, fVar1 <= 0.0)) {
+       in_stack_00000004[0x1f].validation_magic = (uintptr_t)fVar1, fVar1 <= 0.0)) {
       if (*(int *)(in_stack_00000004[1].actor_name + 0xc) < 200) {
         core_flies_cpp_FUN_004cc760();
-        iVar9 = in_stack_00000004[0x1f].unk1;
-        iVar2 = in_stack_00000004[0x1f].health;
+        uVar2 = in_stack_00000004[0x1f].unk1;
+        iVar9 = in_stack_00000004[0x1f].health;
         *(int *)(in_stack_00000004[1].actor_name + 0xc) =
              *(int *)(in_stack_00000004[1].actor_name + 0xc) + 1;
-        in_stack_00000004[0x1f].validation_magic = iVar9;
-        in_stack_00000004[0x1f].health = iVar2 + -1;
+        in_stack_00000004[0x1f].validation_magic = uVar2;
+        in_stack_00000004[0x1f].health = iVar9 + -1;
       }
       else {
         in_stack_00000004[0x1f].health = 0;

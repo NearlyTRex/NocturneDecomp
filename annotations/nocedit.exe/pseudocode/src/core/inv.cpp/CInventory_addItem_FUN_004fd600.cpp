@@ -1014,8 +1014,8 @@ LAB_004fe2af:
             pcVar12 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar7);
             iVar8 = stricmp((char *)pfStack_14,pcVar12);
             uVar4 = g_CTommyGunClassInfo.name_hash;
-            if ((iVar8 == 0) && (*(int *)(pCVar7[4].actor_name + 0xc) == pCVar5[2].validation_magic)
-               ) {
+            if ((iVar8 == 0) &&
+               (*(uintptr_t *)(pCVar7[4].actor_name + 0xc) == pCVar5[2].validation_magic)) {
               *(int *)(pCVar7[4].actor_name + 8) =
                    *(int *)(pCVar7[4].actor_name + 8) + pCVar5[2].health;
               pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar7,uVar4);
@@ -1123,7 +1123,7 @@ LAB_004fe2af:
             core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
             (*((this_ptr_01->vtable)._ub)->setup)(this_ptr_01);
             *(int *)(this_ptr_01[4].actor_name + 8) = pCVar7[2].health;
-            *(int *)(this_ptr_01[4].actor_name + 0xc) = pCVar7[2].validation_magic;
+            *(uintptr_t *)(this_ptr_01[4].actor_name + 0xc) = pCVar7[2].validation_magic;
             (*((this_ptr_01->vtable)._ub)->pickup)(this_ptr_01,this_ptr->owner);
             (*((this_ptr_01->vtable)._ub)->onPickup)(this_ptr_01,(CDemonActor *)this_ptr);
             core_actor_cpp_deleteActor_FUN_00408820(*(CDemonActor **)(in_stack_00000010 + 0xc));

@@ -259,7 +259,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
       }
       local_38 = (char **)0x0;
       if (0 < (this_ptr->grid_coord).y) {
-        local_60 = (float)((int)local_5c + -1);
+        local_60 = (float)((int)local_5c - 1);
         do {
           local_14 = local_38;
           local_18 = 0;

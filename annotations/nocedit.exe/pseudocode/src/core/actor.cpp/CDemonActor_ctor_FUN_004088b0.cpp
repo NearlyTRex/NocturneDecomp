@@ -62,7 +62,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
   pcVar3 = "str";
   ADJ(pCVar2)->unk14 = 0;
   piVar4 = &ADJ(pCVar2)->unk10;
-  ADJ(pCVar2)->validation_magic = (int)&g_ActorMagicNumber;
+  ADJ(pCVar2)->validation_magic = (uintptr_t)&g_ActorMagicNumber;
   do {
     cVar1 = *pcVar3;
     *(char *)piVar4 = cVar1;

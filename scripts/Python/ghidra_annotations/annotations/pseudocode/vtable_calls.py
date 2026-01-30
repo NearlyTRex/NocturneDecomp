@@ -122,11 +122,18 @@ def scan_pseudocode_directory(pseudocode_dir):
             if not filename.endswith('.cpp'):
                 continue
 
+            # Skip regular .cpp if a .keep.cpp exists (prefer manual override)
+            if not '.keep.' in filename:
+                keep_version = filename.replace('.cpp', '.keep.cpp')
+                if keep_version in files:
+                    continue
+
             cpp_path = os.path.join(root, filename)
 
             # Get caller function name from filename
             # e.g., "CDemonActor_processInEditor_FUN_0040d040.cpp" -> "CDemonActor_processInEditor_FUN_0040d040"
-            caller_name = filename[:-4]  # Remove .cpp
+            # Handle both .cpp and .keep.cpp
+            caller_name = filename.replace('.keep.cpp', '').replace('.cpp', '')
 
             calls = find_vtable_calls_in_file(cpp_path)
 

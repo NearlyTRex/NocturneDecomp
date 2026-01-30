@@ -307,6 +307,11 @@ def find_cpp_files(src_dir, skip_dirs=None, skip_files=None):
             if f.endswith('.cpp'):
                 if f in skip_files:
                     continue
+                # Skip regular .cpp if a .keep.cpp exists (prefer manual override)
+                if not '.keep.' in f:
+                    keep_version = f.replace('.cpp', '.keep.cpp')
+                    if keep_version in files:
+                        continue
                 cpp_files.append(os.path.join(root, f))
     return sorted(cpp_files)
 

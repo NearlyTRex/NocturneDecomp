@@ -1105,9 +1105,13 @@ def load_function_data(pseudocode_src_dir):
                         data['_json_path'] = json_path
                         data['_virtual_file'] = rel_path
                         data['_func_dir'] = root
-                        # Check for both .c and .cpp source files
+                        # Check for source files - prefer .keep.cpp over .cpp/.c
                         base_path = json_path[:-5]  # Remove '.json'
-                        if os.path.exists(base_path + '.cpp'):
+                        if os.path.exists(base_path + '.keep.cpp'):
+                            data['_cpp_path'] = base_path + '.keep.cpp'
+                        elif os.path.exists(base_path + '.keep.c'):
+                            data['_cpp_path'] = base_path + '.keep.c'
+                        elif os.path.exists(base_path + '.cpp'):
                             data['_cpp_path'] = base_path + '.cpp'
                         elif os.path.exists(base_path + '.c'):
                             data['_cpp_path'] = base_path + '.c'

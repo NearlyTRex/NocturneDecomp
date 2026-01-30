@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdint.h"
 #include "types/classes/CDemonActorTransformState.h"
 #include "types/classes/CLocation.h"
 #include "types/classes/CMatrix3x3f.h"
@@ -19,7 +20,7 @@ typedef struct CDemonActor {
     CMatrix3x3f orient_matrix; // 0x3c
     int runtime_state; // 0x60
     int health; // 0x64
-    int validation_magic; // 0x68
+    uintptr_t validation_magic; // 0x68
     int unk1; // 0x6c
     int was_created; // 0x70
     float create_prob; // 0x74
