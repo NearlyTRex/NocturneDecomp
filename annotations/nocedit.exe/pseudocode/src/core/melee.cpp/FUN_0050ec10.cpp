@@ -1,15 +1,15 @@
 // Name: core_melee.cpp_FUN_0050ec10
 // Address: 0050ec10
 // Address Range: [[0050ec10, 0050ecc2]]
-// Convention: unknown
-// Signature: void core_melee_cpp_FUN_0050ec10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_melee_cpp_FUN_0050ec10(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_melee.cpp_FUN_0050ec10(uint param_1, uint
    param_2) */
 
-void core_melee_cpp_FUN_0050ec10(void)
+void __cdecl core_melee_cpp_FUN_0050ec10(void)
 
 {
   CCharacter_full_vtable *pCVar1;
@@ -21,10 +21,8 @@ void core_melee_cpp_FUN_0050ec10(void)
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);
   if ((0 < *(int *)(in_stack_00000004[1].base.actor_name + 0x18)) &&
-     (in_stack_00000008 =
-           *(float *)(in_stack_00000004[1].base.actor_name + 0x1c) - in_stack_00000008,
-     *(float *)(in_stack_00000004[1].base.actor_name + 0x1c) = in_stack_00000008,
-     in_stack_00000008 <= 0.0)) {
+     (fVar2 = *(float *)(in_stack_00000004[1].base.actor_name + 0x1c) - in_stack_00000008,
+     *(float *)(in_stack_00000004[1].base.actor_name + 0x1c) = fVar2, fVar2 <= 0.0)) {
     fVar2 = in_stack_00000004[1].base.location.position.x * (float)1.1499999999999999;
     pCVar1 = (in_stack_00000004->base).vtable._uc;
     *(int *)(in_stack_00000004[1].base.actor_name + 0x18) =

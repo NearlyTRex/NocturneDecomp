@@ -75,7 +75,7 @@ section .text
     PUSH 0x42480000                     ; 004c4b5c
     PUSH EAX                            ; 004c4b61
     CALL core_hero.cpp_FUN_004f2220     ; 004c4b62
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 004c4b67
     TEST EAX,EAX                        ; 004c4b6a
     JZ 0x004c4b8c                       ; 004c4b6c

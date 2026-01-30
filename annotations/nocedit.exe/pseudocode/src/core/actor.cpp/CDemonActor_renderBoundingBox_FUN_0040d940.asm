@@ -15,7 +15,7 @@
 ; XREF[9]:
 ;   core_door.cpp_CDoor_renderOpaque_FUN_004807d0 at 004808cc
 ;   core_emitter.cpp_FUN_004a8860 at 004a89fb
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053a408
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a408
 ;   core_platfrm.cpp_FUN_0054d720 at 0054d8ca
 ;   core_teleport.cpp_CTeleportDest_FUN_005da7d0 at 005da837
 ;   core_teleport.cpp_CTeleport_FUN_005dae10 at 005dae3c
@@ -94,21 +94,21 @@ section .text
     PUSH EDI                            ; 0040d9ce
     MOV EBX,EAX                         ; 0040d9cf
     CALL core_actor.cpp_FUN_004104f0    ; 0040d9d1
-        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104f0()
+        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104f0()
     ADD ESP,0x8                         ; 0040d9d6
     LEA EDI,[EBX + 0x4]                 ; 0040d9d9
     PUSH EDI                            ; 0040d9dc
     LEA EDI,[ESP + 0x104]               ; 0040d9dd
     PUSH EDI                            ; 0040d9e4
     CALL core_actor.cpp_FUN_004104e0    ; 0040d9e5
-        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104e0()
+        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104e0()
     ADD ESP,0x8                         ; 0040d9ea
     LEA EDI,[EBX + 0x8]                 ; 0040d9ed
     PUSH EDI                            ; 0040d9f0
     LEA EDI,[ESP + 0x108]               ; 0040d9f1
     PUSH EDI                            ; 0040d9f8
     CALL core_actor.cpp_FUN_004104d0    ; 0040d9f9
-        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104d0()
+        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104d0()
     ADD ESP,0x8                         ; 0040d9fe
     LEA EDI,[ESP + 0x120]               ; 0040da01
     PUSH EDI                            ; 0040da08
@@ -164,7 +164,7 @@ section .text
     PUSH EBX                            ; 0040daba
     FSTP float ptr [ESP + 0x40]         ; 0040dabb
     CALL core_actor.cpp_FUN_004103d0    ; 0040dabf
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004103d0()
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_004103d0()
     ADD ESP,0x8                         ; 0040dac4
     LEA EBX,[ESP + 0x108]               ; 0040dac7
     PUSH EBX                            ; 0040dace
@@ -179,7 +179,7 @@ section .text
     PUSH EBX                            ; 0040dae6
     MOV ESI,dword ptr [0x006703e8]      ; 0040dae7 | g_CDemonRendererPtr1
     CALL core_actor.cpp_FUN_004103d0    ; 0040daed
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004103d0()
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_004103d0()
     ADD ESP,0x8                         ; 0040daf2
     LEA EBX,[ESP + 0xf0]                ; 0040daf5
     PUSH EBX                            ; 0040dafc
@@ -228,21 +228,21 @@ section .text
     LEA EDI,[ESP + 0xe8]                ; 0040db6e
     PUSH EDI                            ; 0040db75
     CALL core_actor.cpp_FUN_004104f0    ; 0040db76
-        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104f0()
+        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104f0()
     ADD ESP,0x8                         ; 0040db7b
     LEA EDI,[EBX + 0x4]                 ; 0040db7e
     PUSH EDI                            ; 0040db81
     LEA EDI,[ESP + 0xec]                ; 0040db82
     PUSH EDI                            ; 0040db89
     CALL core_actor.cpp_FUN_004104e0    ; 0040db8a
-        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104e0()
+        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104e0()
     ADD ESP,0x8                         ; 0040db8f
     LEA EDI,[EBX + 0x8]                 ; 0040db92
     PUSH EDI                            ; 0040db95
     LEA EDI,[ESP + 0xf0]                ; 0040db96
     PUSH EDI                            ; 0040db9d
     CALL core_actor.cpp_FUN_004104d0    ; 0040db9e
-        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104d0()
+        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104d0()
     ADD ESP,0x8                         ; 0040dba3
     LEA EDI,[ESP + 0xd8]                ; 0040dba6
     PUSH EDI                            ; 0040dbad
@@ -299,7 +299,7 @@ section .text
     PUSH EBX                            ; 0040dc7c
     FSTP float ptr [ESP + 0xdc]         ; 0040dc7d
     CALL core_actor.cpp_FUN_004103d0    ; 0040dc84
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004103d0()
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_004103d0()
     ADD ESP,0x8                         ; 0040dc89
     LEA EBX,[ESP + 0x3c]                ; 0040dc8c
     PUSH EBX                            ; 0040dc90
@@ -314,7 +314,7 @@ section .text
     PUSH EBX                            ; 0040dca8
     MOV ESI,dword ptr [0x006703e8]      ; 0040dca9 | g_CDemonRendererPtr1
     CALL core_actor.cpp_FUN_004103d0    ; 0040dcaf
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004103d0()
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_004103d0()
     ADD ESP,0x8                         ; 0040dcb4
     LEA EBX,[ESP + 0x54]                ; 0040dcb7
     PUSH EBX                            ; 0040dcbb
@@ -363,21 +363,21 @@ section .text
     LEA EDI,[ESP + 0x118]               ; 0040dd33
     PUSH EDI                            ; 0040dd3a
     CALL core_actor.cpp_FUN_004104f0    ; 0040dd3b
-        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104f0()
+        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104f0()
     ADD ESP,0x8                         ; 0040dd40
     LEA EDI,[EBX + 0x4]                 ; 0040dd43
     PUSH EDI                            ; 0040dd46
     LEA EDI,[ESP + 0x11c]               ; 0040dd47
     PUSH EDI                            ; 0040dd4e
     CALL core_actor.cpp_FUN_004104e0    ; 0040dd4f
-        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104e0()
+        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104e0()
     ADD ESP,0x8                         ; 0040dd54
     LEA EDI,[EBX + 0x8]                 ; 0040dd57
     PUSH EDI                            ; 0040dd5a
     LEA EDI,[ESP + 0x120]               ; 0040dd5b
     PUSH EDI                            ; 0040dd62
     CALL core_actor.cpp_FUN_004104d0    ; 0040dd63
-        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004104d0()
+        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_004104d0()
     ADD ESP,0x8                         ; 0040dd68
     LEA EDI,[ESP + 0x48]                ; 0040dd6b
     PUSH EDI                            ; 0040dd6f
@@ -433,7 +433,7 @@ section .text
     PUSH ESI                            ; 0040de15
     FSTP float ptr [ESP + 0xb8]         ; 0040de16
     CALL core_actor.cpp_FUN_004103d0    ; 0040de1d
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004103d0()
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_004103d0()
     ADD ESP,0x8                         ; 0040de22
     LEA ESI,[ESP + 0x78]                ; 0040de25
     PUSH ESI                            ; 0040de29
@@ -448,7 +448,7 @@ section .text
     PUSH EBX                            ; 0040de44
     MOV ESI,dword ptr [0x006703e8]      ; 0040de45 | g_CDemonRendererPtr1
     CALL core_actor.cpp_FUN_004103d0    ; 0040de4b
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004103d0()
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_004103d0()
     ADD ESP,0x8                         ; 0040de50
     LEA EBX,[ESP + 0x12c]               ; 0040de53
     PUSH EBX                            ; 0040de5a

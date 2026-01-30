@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_DefineTexturesMaybe_FUN_00578290
 // Address: 00578290
 // Address Range: [[00578290, 0057841d]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
+void __cdecl core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
 
 {
   char cVar1;
@@ -34,9 +34,7 @@ void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
           if ((byte)(&DAT_03659190)[iVar4] != _uStack00000008) {
             g_CurrentFilename = "..\\core\\setedit.cpp";
             g_CurrentLineNumber = 0x29e;
-            core_main_c_displayErrorAndQuit_FUN_00506f10
-                      ("Tried to define texture %s as ground type %d, but it was already defined as %d",in_stack_00000004,_uStack00000008,
-                       (uint)(byte)(&DAT_03659190)[iVar4]);
+            core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to define texture %s as ground type %d, but it was already defined as %d");
             return;
           }
           return;
@@ -65,8 +63,7 @@ void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
   if (0x27 < ~uVar3 - 1) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x2b1;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Texture filename %s is too long to add to CGroundTypeList!",in_stack_00000004);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Texture filename %s is too long to add to CGroundTypeList!");
   }
   pcVar5 = local_10c;
   pcVar6 = &DAT_03654370 + DAT_03654368 * 0x28;

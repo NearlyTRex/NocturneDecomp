@@ -4,6 +4,18 @@
       {
         "category": "other",
         "column": 48,
+        "line": 29,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 48,
         "line": 35,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
@@ -11,18 +23,6 @@
         "category": "other",
         "column": 19,
         "line": 37,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 41,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 43,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -37,6 +37,18 @@
       {
         "category": "other",
         "column": 38,
+        "line": 29,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 38,
         "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -45,49 +57,35 @@
         "column": 9,
         "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 43,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 388,
+    "complexity_score": 352,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 53,
-    "suspect_count": 31,
+    "pseudocode_lines": 47,
+    "suspect_count": 29,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "pointer_cast",
-      "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 190
+    "total_lines": 184
   },
   "cross_references": [
     {
-      "addr": "0053c970",
-      "from_addr": "0053c9c8",
-      "name": "core_msnedit.cpp_BeginAndEndScene_FUN_0053c970",
+      "addr": "0053b9f0",
+      "from_addr": "0053baf8",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053b9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053b9f0",
-      "from_addr": "0053baf8",
-      "name": "core_msnedit.cpp_FUN_0053b9f0",
+      "addr": "0053c970",
+      "from_addr": "0053c9c8",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c970",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -99,9 +97,9 @@
         "00535de8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_msnedit.cpp_FUN_00535c60",
-    "signature": "float * core_msnedit_cpp_FUN_00535c60(void)"
+    "signature": "float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -159,32 +157,25 @@
       {
         "call_addr": "0053c9c8",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_BeginAndEndScene_FUN_0053c970",
-        "estimated_params": 4,
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053c970",
+        "estimated_params": 3,
         "instructions_analyzed": 6,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       },
       {
         "call_addr": "0053baf8",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_FUN_0053b9f0",
-        "estimated_params": 7,
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053b9f0",
+        "estimated_params": 3,
         "instructions_analyzed": 22,
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "estimated_params": 4
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.123076923076923,
@@ -227,10 +218,10 @@
     "pcode_op_count": 796
   },
   "stack_frame": {
-    "frame_size": 96,
+    "frame_size": 108,
     "local_size": 96,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -337,230 +328,233 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3) */",
+      "line": 2,
+      "match": "param_1",
+      "text": "float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "float *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "text": "(&g_CDemonCameraInstance,param_2,param_3,local_5c);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000008",
-      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,local_5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_0000000c",
-      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,local_5c);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "text": "(&g_CDemonCameraInstance,param_2,param_3,local_5c);",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 22,
       "match": "(float *)((int)",
       "text": "local_2c[(uint)bVar5 * -2 + -2] = *(float *)((int)local_5c + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 24,
       "match": "(float *)((int)",
       "text": "*(float *)((int)local_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 28,
       "match": "(float *)((int)",
       "text": "local_2c[(uint)bVar5 * -2 + -2] = *(float *)((int)&local_20 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 30,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = (float)local_38.x * 0.00390625f;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "text": "*param_1 = (float)local_38.x * 0.00390625f;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1] = (float)local_38.y * 0.00390625f;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "text": "param_1[1] = (float)local_38.y * 0.00390625f;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2] = (float)local_38.z * 0.00390625f;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "text": "param_1[2] = (float)local_38.z * 0.00390625f;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 34,
       "match": "SQRT",
-      "text": "SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
+      "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "text": "fVar1 = *param_1 - (float)g_CDemonCameraInstance.base.position.x;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "text": "fVar2 = param_1[1] - (float)g_CDemonCameraInstance.base.position.y;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "fVar1 = *in_stack_00000004 - (float)g_CDemonCameraInstance.base.position.x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000004",
-      "text": "fVar2 = in_stack_00000004[1] - (float)g_CDemonCameraInstance.base.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "fVar3 = in_stack_00000004[2] - (float)g_CDemonCameraInstance.base.position.z;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "text": "fVar3 = param_1[2] - (float)g_CDemonCameraInstance.base.position.z;",
+      "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 39,
       "match": "SQRT",
       "text": "fVar4 = 10000.0f / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "text": "if (param_1 != local_2c) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "text": "*param_1 = (float)g_CDemonCameraInstance.base.position.x + fVar1 * fVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "text": "param_1[1] = fVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "text": "param_1[2] = fVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "text": "return param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 49,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004 != local_2c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = (float)g_CDemonCameraInstance.base.position.x + fVar1 * fVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1] = fVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2] = fVar3;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
+      "match": "param_1",
+      "text": "return param_1;",
+      "type": "unnamed_param"
     }
   ]
 }

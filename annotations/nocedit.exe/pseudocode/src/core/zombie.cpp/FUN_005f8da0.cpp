@@ -1,12 +1,12 @@
 // Name: core_zombie.cpp_FUN_005f8da0
 // Address: 005f8da0
 // Address Range: [[005f8da0, 005f8e4a]]
-// Convention: unknown
-// Signature: CVector3f * core_zombie_cpp_FUN_005f8da0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_zombie_cpp_FUN_005f8da0(void)
 
 #include "nocturne.h"
 
-CVector3f * core_zombie_cpp_FUN_005f8da0(void)
+CVector3f * __cdecl core_zombie_cpp_FUN_005f8da0(void)
 
 {
   CVector3f *in_stack_00000004;

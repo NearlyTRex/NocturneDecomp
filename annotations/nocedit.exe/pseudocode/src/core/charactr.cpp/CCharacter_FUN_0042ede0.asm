@@ -115,7 +115,7 @@ section .text
         ;   Label: LAB_0042ee63
     PUSH ESI                            ; 0042ee66
     CALL core_hero.cpp_closestHeroToPoint_FUN_004f2170 ; 0042ee67
-        ;   XREF to: 004f2170 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_closestHeroToPoint_FUN_004f2170()
+        ;   XREF to: 004f2170 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_closestHeroToPoint_FUN_004f2170()
     ADD ESP,0x4                         ; 0042ee6c
     MOV EBX,EAX                         ; 0042ee6f
     PUSH ESI                            ; 0042ee71

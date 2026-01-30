@@ -1,14 +1,14 @@
 // Name: core_ladder.cpp_FUN_00502b80
 // Address: 00502b80
 // Address Range: [[00502b80, 00502c89]]
-// Convention: unknown
-// Signature: void core_ladder_cpp_FUN_00502b80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ladder_cpp_FUN_00502b80(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_ladder.cpp_FUN_00502b80(uint param_1) */
 
-void core_ladder_cpp_FUN_00502b80(void)
+void __cdecl core_ladder_cpp_FUN_00502b80(void)
 
 {
   CVector3f *pCVar1;

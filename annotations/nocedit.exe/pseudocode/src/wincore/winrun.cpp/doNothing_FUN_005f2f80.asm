@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[5]:
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e419
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539365
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539365
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e419
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581b7c
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 0058327a
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045ca76

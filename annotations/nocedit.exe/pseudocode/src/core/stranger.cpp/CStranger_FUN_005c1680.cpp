@@ -1,15 +1,15 @@
 // Name: core_stranger.cpp_CStranger_FUN_005c1680
 // Address: 005c1680
 // Address Range: [[005c1680, 005c1ef9]]
-// Convention: unknown
-// Signature: undefined4 core_stranger_cpp_CStranger_FUN_005c1680(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c1680(CStranger* param_1,
    uint param_2) */
 
-uint core_stranger_cpp_CStranger_FUN_005c1680(void)
+int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(void)
 
 {
   CDeformableModelInstance *this_ptr;
@@ -56,12 +56,11 @@ uint core_stranger_cpp_CStranger_FUN_005c1680(void)
   
   if ((((0.0 < in_stack_00000004[0x17a].orient_matrix.m[1].z) ||
        (in_stack_00000004[0x179].scale.x != 0)) ||
-      (local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840(),
-      local_14 < (float)0.98999999999999999)) ||
-     (((local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                             ((CMotionController *)(in_stack_00000004 + 1),0), local_14 < 1.0 ||
-       (in_stack_00000004[0x1b].unk1 != 0)) ||
-      (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) != 0)))) {
+      (local_14 = core_charactr_cpp_CCharacter_FUN_0042e840(), local_14 < (float)0.98999999999999999))
+     || (((local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                                ((CMotionController *)(in_stack_00000004 + 1),0), local_14 < 1.0 ||
+          (in_stack_00000004[0x1b].unk1 != 0)) ||
+         (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) != 0)))) {
     return 0;
   }
   local_24 = &in_stack_00000004->location;

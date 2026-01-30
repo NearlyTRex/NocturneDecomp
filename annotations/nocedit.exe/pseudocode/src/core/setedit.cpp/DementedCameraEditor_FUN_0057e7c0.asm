@@ -320,7 +320,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057ea2e
     PUSH EDX                            ; 0057ea31
     CALL core_setedit.cpp_UserInputCreate_FUN_0057d660 ; 0057ea32
-        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_UserInputCreate_FUN_0057d660()
+        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_UserInputCreate_FUN_0057d660()
     ADD ESP,0x8                         ; 0057ea37
     TEST EAX,EAX                        ; 0057ea3a
     JZ 0x0057ea4c                       ; 0057ea3c
@@ -412,7 +412,7 @@ section .text
     PUSH EBX                            ; 0057eb22
     PUSH EAX                            ; 0057eb23
     CALL core_setedit.cpp_UserInputCreate_FUN_0057d660 ; 0057eb24
-        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_UserInputCreate_FUN_0057d660()
+        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_UserInputCreate_FUN_0057d660()
     ADD ESP,0x8                         ; 0057eb29
     TEST EAX,EAX                        ; 0057eb2c
     JZ 0x0057eb43                       ; 0057eb2e
@@ -492,7 +492,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057ebda
     PUSH ECX                            ; 0057ebdd
     CALL core_setedit.cpp_FUN_0057e430  ; 0057ebde
-        ;   XREF to: 0057e430 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057e430()
+        ;   XREF to: 0057e430 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057e430()
     ADD ESP,0x8                         ; 0057ebe3
     PUSH 0x1                            ; 0057ebe6
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057ebe8
@@ -551,7 +551,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0057ec69
     PUSH EDI                            ; 0057ec6c
     CALL core_setedit.cpp_UserInputCreate_FUN_0057d660 ; 0057ec6d
-        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_UserInputCreate_FUN_0057d660()
+        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_UserInputCreate_FUN_0057d660()
     ADD ESP,0x8                         ; 0057ec72
     TEST EAX,EAX                        ; 0057ec75
     JZ 0x0057ec84                       ; 0057ec77
@@ -682,7 +682,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057edbb
     PUSH EAX                            ; 0057edbe
     CALL core_setedit.cpp_FUN_0057d340  ; 0057edbf
-        ;   XREF to: 0057d340 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057d340()
+        ;   XREF to: 0057d340 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057d340()
     ADD ESP,0x8                         ; 0057edc4
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057edc7
     INC EDI                             ; 0057edca
@@ -1015,7 +1015,7 @@ section .text
     PUSH EDX                            ; 0057f1e8
     PUSH EBX                            ; 0057f1e9
     CALL core_setedit.cpp_UserInputCreate_FUN_0057d660 ; 0057f1ea
-        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_UserInputCreate_FUN_0057d660()
+        ;   XREF to: 0057d660 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_UserInputCreate_FUN_0057d660()
     ADD ESP,0x8                         ; 0057f1ef
     TEST EAX,EAX                        ; 0057f1f2
     JZ 0x0057f208                       ; 0057f1f4
@@ -1200,7 +1200,7 @@ section .text
     PUSH EAX                            ; 0057f411
     PUSH EBX                            ; 0057f412
     CALL core_setedit.cpp_FUN_0057d340  ; 0057f413
-        ;   XREF to: 0057d340 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057d340()
+        ;   XREF to: 0057d340 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057d340()
     ADD ESP,0x8                         ; 0057f418
     PUSH 0x6482b8                       ; 0057f41b | = "Import this camera?"
     MOV EDI,dword ptr [0x00678a60]      ; 0057f420 | g_CEditorToolsPtr

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown char * core_script_cpp_FUN_005593f0(void)
+; __cdecl char * __cdecl core_script_cpp_FUN_005593f0(int *param_1,char *param_2,int param_3)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c1ab
@@ -31,7 +35,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 005593fc
     PUSH EDX                            ; 005593fe
     CALL core_script.cpp_FUN_005593d0   ; 005593ff
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005593d0()
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
     MOV dword ptr [EBX],EAX             ; 00559404
     MOV DL,byte ptr [EAX]               ; 00559406
     ADD ESP,0x4                         ; 00559408
@@ -104,12 +108,12 @@ section .text
     PUSH EBP                            ; 00559470
     MOV byte ptr [EDX + EBP*0x1],0x0    ; 00559471
     CALL core_script.cpp_FUN_00559360   ; 00559475
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00559360()
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
     ADD ESP,0x4                         ; 0055947a
     MOV EBP,dword ptr [EBX]             ; 0055947d
     PUSH EBP                            ; 0055947f
     CALL core_script.cpp_FUN_005593d0   ; 00559480
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005593d0()
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
     ADD ESP,0x4                         ; 00559485
     MOV dword ptr [EBX],EAX             ; 00559488
     XOR EAX,EAX                         ; 0055948a

@@ -1,14 +1,14 @@
 // Name: core_mobster.cpp_FUN_00525650
 // Address: 00525650
 // Address Range: [[00525650, 00525719]]
-// Convention: unknown
-// Signature: void core_mobster_cpp_FUN_00525650(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mobster_cpp_FUN_00525650(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mobster.cpp_FUN_00525650(uint param_1) */
 
-void core_mobster_cpp_FUN_00525650(void)
+void __cdecl core_mobster_cpp_FUN_00525650(void)
 
 {
   float fVar1;

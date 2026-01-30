@@ -527,8 +527,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 004ddfcc | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 004ddfd2 | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x278],0x1     ; 004ddfd3
-    CALL core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0 ; 004ddfdd
-        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0() | g_CDemonSetInstance
+    CALL core_set.cpp_CDemonSet_FUN_0056b7e0 ; 004ddfdd
+        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int param_4) | g_CDemonSetInstance
         ;   Label: LAB_004ddfdd
     ADD ESP,0x10                        ; 004ddfe2
     PUSH 0x62bbb8                       ; 004ddfe5 | = "cheat-1.wav"
@@ -3116,7 +3116,7 @@ section .text
     PUSH ESI                            ; 004dfd0f | g_CWeatherInstance
     MOV byte ptr [0x02d831d8],BH        ; 004dfd10 | CHAR_ARRAY_02d831d8
     CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 004dfd16
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_FUN_005ef8c0()
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0()
     ADD ESP,0x8                         ; 004dfd1b
     PUSH 0x62c654                       ; 004dfd1e | DAT_0062c654
         ;   Label: LAB_004dfd1e
@@ -3172,7 +3172,7 @@ section .text
     PUSH EBX                            ; 004dfda2 | g_CWeatherInstance
     MOV byte ptr [0x02d831d8],CL        ; 004dfda3 | CHAR_ARRAY_02d831d8
     CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 004dfda9
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_FUN_005ef8c0()
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0()
     ADD ESP,0x8                         ; 004dfdae
     PUSH 0x62c68b                       ; 004dfdb1 | DAT_0062c68b
         ;   Label: LAB_004dfdb1

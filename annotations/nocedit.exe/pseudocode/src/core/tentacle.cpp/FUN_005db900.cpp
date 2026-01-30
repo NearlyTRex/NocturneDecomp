@@ -1,15 +1,15 @@
 // Name: core_tentacle.cpp_FUN_005db900
 // Address: 005db900
 // Address Range: [[005db900, 005db9ca]]
-// Convention: unknown
-// Signature: undefined4 core_tentacle_cpp_FUN_005db900(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_tentacle_cpp_FUN_005db900(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_tentacle.cpp_FUN_005db900(uint param_1, uint
    param_2) */
 
-uint core_tentacle_cpp_FUN_005db900(void)
+int __cdecl core_tentacle_cpp_FUN_005db900(void)
 
 {
   CDemonActor *actor_ptr;

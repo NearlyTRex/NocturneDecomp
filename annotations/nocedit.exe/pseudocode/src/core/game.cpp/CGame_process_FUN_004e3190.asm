@@ -77,7 +77,7 @@ section .text
     ADD ESP,0x4                         ; 004e31cb
     PUSH EBX                            ; 004e31ce
     CALL core_game.cpp_FUN_004e09c0     ; 004e31cf
-        ;   XREF to: 004e09c0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004e09c0()
+        ;   XREF to: 004e09c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004e09c0()
     MOV EAX,[0x0067b654]                ; 004e31d4 | g_CGameInstance | g_CGamePtr
     MOV EBP,dword ptr [EAX + 0x20c]     ; 004e31d9 | DAT_02d81ca8
     ADD ESP,0x4                         ; 004e31df
@@ -224,7 +224,7 @@ section .text
         ;   Label: LAB_004e33ae
     PUSH EAX                            ; 004e33b3 | g_CGoreInstance
     CALL core_gore.cpp_CGore_process_FUN_004ed9e0 ; 004e33b4
-        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_process_FUN_004ed9e0()
+        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e33b9 | g_CGameInstance | g_CGamePtr
     MOV EDX,dword ptr [EAX + 0x20c]     ; 004e33be | DAT_02d81ca8
     ADD ESP,0x4                         ; 004e33c4
@@ -350,7 +350,7 @@ section .text
     MOV ECX,dword ptr [0x006848fc]      ; 004e3557 | g_CWeatherInstance | g_CWeatherPtr
     PUSH ECX                            ; 004e355d | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 ; 004e355e
-        ;   XREF to: 005eeaf0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0()
+        ;   XREF to: 005eeaf0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0()
     ADD ESP,0x4                         ; 004e3563
     PUSH EBX                            ; 004e3566
     CALL core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 ; 004e3567

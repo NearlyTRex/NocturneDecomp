@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_passngr_cpp_CPassenger_load_FUN_00546190(void)
+; __cdecl void __cdecl core_passngr_cpp_CPassenger_load_FUN_00546190(void)
 ;
 ;
 ; Referenced Globals:

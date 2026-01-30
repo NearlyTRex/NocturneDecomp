@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_FUN_005be430
 // Address: 005be430
 // Address Range: [[005be430, 005be47f]]
-// Convention: unknown
-// Signature: undefined4 core_stranger_cpp_FUN_005be430(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_FUN_005be430(void)
 
 #include "nocturne.h"
 
-uint core_stranger_cpp_FUN_005be430(void)
+int __cdecl core_stranger_cpp_FUN_005be430(void)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ uint core_stranger_cpp_FUN_005be430(void)
                      (*(CDemonActor **)(in_stack_00000004 + 0x24b4),g_CLightActorClassInfo.name_hash
                      );
   if ((pCVar2 != (CDemonActor *)0x0) && ((iVar1 = pCVar2[4].scale.y, iVar1 == 2 || (iVar1 == 3)))) {
-    return 0xbf860a92;
+    return -0x4079f56e;
   }
-  return 0xbfc80fc6;
+  return -0x4037f03a;
 }

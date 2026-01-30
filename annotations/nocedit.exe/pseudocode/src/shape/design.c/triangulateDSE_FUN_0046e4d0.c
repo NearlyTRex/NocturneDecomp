@@ -1,14 +1,14 @@
 // Name: shape_design.c_triangulateDSE_FUN_0046e4d0
 // Address: 0046e4d0
 // Address Range: [[0046e4d0, 0046e6a4]]
-// Convention: unknown
-// Signature: void shape_design_c_triangulateDSE_FUN_0046e4d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte shape_design.c_triangulateDSE(uint param_1) */
 
-void shape_design_c_triangulateDSE_FUN_0046e4d0(void)
+void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
 
 {
   int iVar1;

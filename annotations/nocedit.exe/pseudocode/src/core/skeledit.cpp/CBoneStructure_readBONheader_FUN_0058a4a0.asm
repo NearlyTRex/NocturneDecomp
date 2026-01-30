@@ -416,7 +416,7 @@ section .text
         ;   Label: LAB_0058a90a
     PUSH EDI                            ; 0058a90b
     CALL core_skeledit.cpp_FUN_0058ac30 ; 0058a90c
-        ;   XREF to: 0058ac30 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058ac30()
+        ;   XREF to: 0058ac30 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058ac30()
     ADD ESP,0x8                         ; 0058a911
     MOV dword ptr [EBP + 0x3394],EAX    ; 0058a914
     TEST EAX,EAX                        ; 0058a91a

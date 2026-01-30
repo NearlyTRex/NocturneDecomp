@@ -1,14 +1,14 @@
 // Name: core_bride.cpp_CBride_load_FUN_00424560
 // Address: 00424560
 // Address Range: [[00424560, 004245e7]]
-// Convention: unknown
-// Signature: void core_bride_cpp_CBride_load_FUN_00424560(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bride_cpp_CBride_load_FUN_00424560(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_enemy_bride.cpp_CBride_load(CBride* param_1, char* param_2) */
 
-void core_bride_cpp_CBride_load_FUN_00424560(void)
+void __cdecl core_bride_cpp_CBride_load_FUN_00424560(void)
 
 {
   CEnemy *in_stack_00000004;

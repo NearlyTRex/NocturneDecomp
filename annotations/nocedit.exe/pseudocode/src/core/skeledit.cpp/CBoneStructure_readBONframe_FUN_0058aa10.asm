@@ -181,7 +181,7 @@ section .text
     PUSH EBP                            ; 0058ab6b
         ;   Label: LAB_0058ab6b
     CALL core_skeledit.cpp_FUN_0058ac80 ; 0058ab6c
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058ac80()
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
     MOV AH,byte ptr [EDI + 0xc]         ; 0058ab71
     ADD ESP,0x4                         ; 0058ab74
     TEST AH,0x20                        ; 0058ab77

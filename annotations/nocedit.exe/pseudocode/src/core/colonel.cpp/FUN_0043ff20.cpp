@@ -1,15 +1,15 @@
 // Name: core_colonel.cpp_FUN_0043ff20
 // Address: 0043ff20
 // Address Range: [[0043ff20, 00440423]]
-// Convention: unknown
-// Signature: void core_colonel_cpp_FUN_0043ff20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_colonel_cpp_FUN_0043ff20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_colonel.cpp_FUN_0043ff20(uint param_1, uint
    param_2) */
 
-void core_colonel_cpp_FUN_0043ff20(void)
+void __cdecl core_colonel_cpp_FUN_0043ff20(void)
 
 {
   bool bVar1;
@@ -17,6 +17,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
   CVector3f *pCVar3;
   SMotion *pSVar4;
   CPathMap *this_ptr;
+  CPathMap *extraout_EAX;
   int iVar5;
   float fVar6;
   CHero *pCVar7;
@@ -82,7 +83,8 @@ void core_colonel_cpp_FUN_0043ff20(void)
                              ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr == (CPathMap *)0x0) {
-        this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
+        core_path_cpp_FUN_00548500();
+        this_ptr = extraout_EAX;
       }
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr,(CVector3f *)(in_stack_00000004 + 0x20),&local_80,

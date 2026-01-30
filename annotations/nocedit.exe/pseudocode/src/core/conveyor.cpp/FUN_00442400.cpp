@@ -1,12 +1,12 @@
 // Name: core_conveyor.cpp_FUN_00442400
 // Address: 00442400
 // Address Range: [[00442400, 00442490]]
-// Convention: unknown
-// Signature: float core_conveyor_cpp_FUN_00442400(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_conveyor_cpp_FUN_00442400(void)
 
 #include "nocturne.h"
 
-float core_conveyor_cpp_FUN_00442400(void)
+float __cdecl core_conveyor_cpp_FUN_00442400(void)
 
 {
   double dVar1;

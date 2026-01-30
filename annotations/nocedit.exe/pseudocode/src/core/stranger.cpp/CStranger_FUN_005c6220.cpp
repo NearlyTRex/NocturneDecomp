@@ -1,14 +1,14 @@
 // Name: core_stranger.cpp_CStranger_FUN_005c6220
 // Address: 005c6220
 // Address Range: [[005c6220, 005c658b]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005c6220(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c6220(int* param_1) */
 
-void core_stranger_cpp_CStranger_FUN_005c6220(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(void)
 
 {
   CCloth *this_ptr;
@@ -24,47 +24,38 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
     iVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x120))();
     bVar2 = false;
     if (iVar3 < 2) {
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 0) {
-        if ((float)0.69999999999999996 < *(float *)(in_stack_00000004 + 0x2a90)) {
-          bVar2 = true;
-        }
+      if ((*(int *)(in_stack_00000004 + 0x2a8c) == 0) &&
+         ((float)0.69999999999999996 < *(float *)(in_stack_00000004 + 0x2a90))) {
+        bVar2 = true;
       }
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 1) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.29999999999999999) {
-          bVar2 = true;
-        }
+      if ((*(int *)(in_stack_00000004 + 0x2a8c) == 1) &&
+         (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.29999999999999999)) {
+        bVar2 = true;
       }
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 2) {
-        if ((float)0.5 < *(float *)(in_stack_00000004 + 0x2a90)) {
-          bVar1 = true;
-        }
+      if ((*(int *)(in_stack_00000004 + 0x2a8c) == 2) &&
+         ((float)0.5 < *(float *)(in_stack_00000004 + 0x2a90))) {
+        bVar1 = true;
       }
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 3) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.5) {
-          bVar1 = true;
-        }
+      if ((*(int *)(in_stack_00000004 + 0x2a8c) == 3) &&
+         (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.5)) {
+        bVar1 = true;
       }
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 4) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.40000000000000002) {
-          bVar1 = true;
-        }
+      if ((*(int *)(in_stack_00000004 + 0x2a8c) == 4) &&
+         (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.40000000000000002)) {
+        bVar1 = true;
       }
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 5) {
-        if ((float)0.59999999999999998 < *(float *)(in_stack_00000004 + 0x2a90)) {
-          bVar1 = true;
-        }
+      if ((*(int *)(in_stack_00000004 + 0x2a8c) == 5) &&
+         ((float)0.59999999999999998 < *(float *)(in_stack_00000004 + 0x2a90))) {
+        bVar1 = true;
       }
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 9) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.40000000000000002) {
-          bVar1 = true;
-        }
+      if ((*(int *)(in_stack_00000004 + 0x2a8c) == 9) &&
+         (*(float *)(in_stack_00000004 + 0x2a90) < (float)0.40000000000000002)) {
+        bVar1 = true;
       }
-      if (*(int *)(in_stack_00000004 + 0x2a8c) == 0xf) {
-        if ((float)0.29999999999999999 < *(float *)(in_stack_00000004 + 0x2a90)) {
-          if ((double)*(float *)(in_stack_00000004 + 0x2a90) < 0.80000000000000004) {
-            bVar1 = true;
-          }
-        }
+      if (((*(int *)(in_stack_00000004 + 0x2a8c) == 0xf) &&
+          ((float)0.29999999999999999 < *(float *)(in_stack_00000004 + 0x2a90))) &&
+         ((double)*(float *)(in_stack_00000004 + 0x2a90) < 0.80000000000000004)) {
+        bVar1 = true;
       }
     }
     this_ptr = *(CCloth **)(in_stack_00000004 + 0x2c28);

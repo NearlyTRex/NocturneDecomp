@@ -1,19 +1,18 @@
 // Name: core_event.cpp_FUN_004aa3c0
 // Address: 004aa3c0
 // Address Range: [[004aa3c0, 004aa3fd]]
-// Convention: unknown
-// Signature: int core_event_cpp_FUN_004aa3c0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_event_cpp_FUN_004aa3c0(char *param_1)
 
 #include "nocturne.h"
 
-int core_event_cpp_FUN_004aa3c0(void)
+int __cdecl core_event_cpp_FUN_004aa3c0(char *param_1)
 
 {
   int iVar1;
-  char *in_stack_00000004;
   int local_4;
   
-  iVar1 = sscanf(in_stack_00000004,"%d",&local_4);
+  iVar1 = sscanf(param_1,"%d",&local_4);
   if (iVar1 == 1) {
     return local_4;
   }

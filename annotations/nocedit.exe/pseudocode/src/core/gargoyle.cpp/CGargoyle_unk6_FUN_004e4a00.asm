@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
+; __cdecl void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x104]:1  local_104
@@ -427,7 +427,7 @@ section .text
     PUSH EAX                            ; 004e4dd0
     PUSH EBX                            ; 004e4dd1
     CALL core_enemy.cpp_FUN_004a9880    ; 004e4dd2
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 004e4dd7
     JMP 0x004e4b2d                      ; 004e4dda
         ;   XREF to: 004e4b2d (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -439,7 +439,7 @@ section .text
     ADD ESP,0x8                         ; 004e4df2
     PUSH EBX                            ; 004e4df5
     CALL core_gargoyle.cpp_CGargoyle_FUN_004e48a0 ; 004e4df6
-        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_CGargoyle_FUN_004e48a0()
+        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_FUN_004e48a0()
     ADD ESP,0x4                         ; 004e4dfb
     TEST EAX,EAX                        ; 004e4dfe
     JZ 0x004e4b2d                       ; 004e4e00
@@ -484,7 +484,7 @@ section .text
     ADD ESP,0x8                         ; 004e4e83
     PUSH EBX                            ; 004e4e86
     CALL core_gargoyle.cpp_CGargoyle_FUN_004e48a0 ; 004e4e87
-        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_CGargoyle_FUN_004e48a0()
+        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_FUN_004e48a0()
     ADD ESP,0x4                         ; 004e4e8c
     TEST EAX,EAX                        ; 004e4e8f
     JZ 0x004e4f3b                       ; 004e4e91
@@ -659,7 +659,7 @@ section .text
     ADD ESP,0x8                         ; 004e5055
     PUSH EBX                            ; 004e5058
     CALL core_gargoyle.cpp_CGargoyle_FUN_004e48a0 ; 004e5059
-        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_CGargoyle_FUN_004e48a0()
+        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_FUN_004e48a0()
     ADD ESP,0x4                         ; 004e505e
     LEA ESI,[EBX + 0x158]               ; 004e5061
     TEST EAX,EAX                        ; 004e5067

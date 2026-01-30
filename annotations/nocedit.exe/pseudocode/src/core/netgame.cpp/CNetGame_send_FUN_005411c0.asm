@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_netgame_cpp_CNetGame_send_FUN_005411c0(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(void)
 ;
 ;
 ; XREF[8]:
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 005411ef
     PUSH ESI                            ; 005411f0
     CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 005411f1
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00541230()
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230()
     ADD ESP,0xc                         ; 005411f6
     POP EBP                             ; 005411f9
     POP ESI                             ; 005411fa

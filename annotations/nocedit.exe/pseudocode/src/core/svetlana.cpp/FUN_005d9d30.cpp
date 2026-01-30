@@ -1,15 +1,15 @@
 // Name: core_svetlana.cpp_FUN_005d9d30
 // Address: 005d9d30
 // Address Range: [[005d9d30, 005d9eba]]
-// Convention: unknown
-// Signature: void core_svetlana_cpp_FUN_005d9d30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_svetlana.cpp_FUN_005d9d30(uint param_1, uint
    param_2) */
 
-void core_svetlana_cpp_FUN_005d9d30(void)
+void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
 
 {
   CDeformableModelInstance *this_ptr;

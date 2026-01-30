@@ -417,7 +417,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057c9d6
     PUSH EBX                            ; 0057c9d9
     CALL core_setedit.cpp_FUN_0057b410  ; 0057c9da
-        ;   XREF to: 0057b410 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057b410()
+        ;   XREF to: 0057b410 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057b410()
     ADD ESP,0x4                         ; 0057c9df
         ;   Label: LAB_0057c9df
     TEST byte ptr [0x02cf6a94],0x1      ; 0057c9e2 | g_MouseButtonFlags
@@ -432,13 +432,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057c9f8
     PUSH EAX                            ; 0057c9fb
     CALL core_setedit.cpp_ResolveMasterLights_FUN_0057c550 ; 0057c9fc
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
     ADD ESP,0x8                         ; 0057ca01
     PUSH EAX                            ; 0057ca04
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057ca05
     PUSH EDX                            ; 0057ca08
     CALL core_setedit.cpp_FUN_0057b500  ; 0057ca09
-        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057b500()
+        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057b500()
     ADD ESP,0x8                         ; 0057ca0e
     CMP dword ptr [ESP + 0xfb0],0x1b    ; 0057ca11
         ;   Label: LAB_0057ca11
@@ -511,13 +511,13 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057cabb
     PUSH ECX                            ; 0057cabe
     CALL core_setedit.cpp_ResolveMasterLights_FUN_0057c550 ; 0057cabf
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
     ADD ESP,0x8                         ; 0057cac4
     PUSH EAX                            ; 0057cac7
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057cac8
     PUSH EBX                            ; 0057cacb
     CALL core_setedit.cpp_FUN_0057b500  ; 0057cacc
-        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057b500()
+        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057b500()
     ADD ESP,0x8                         ; 0057cad1
     PUSH 0x0                            ; 0057cad4
         ;   Label: LAB_0057cad4
@@ -641,13 +641,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057cc0e
     PUSH EAX                            ; 0057cc11
     CALL core_setedit.cpp_ResolveMasterLights_FUN_0057c550 ; 0057cc12
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
     ADD ESP,0x8                         ; 0057cc17
     PUSH EAX                            ; 0057cc1a
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057cc1b
     PUSH EDX                            ; 0057cc1e
     CALL core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 ; 0057cc1f
-        ;   XREF to: 0057bbe0 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0()
+        ;   XREF to: 0057bbe0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0()
     ADD ESP,0x8                         ; 0057cc24
     PUSH 0x0                            ; 0057cc27
         ;   Label: LAB_0057cc27
@@ -701,13 +701,13 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057cc99
     PUSH ECX                            ; 0057cc9c
     CALL core_setedit.cpp_ResolveMasterLights_FUN_0057c550 ; 0057cc9d
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
     ADD ESP,0x8                         ; 0057cca2
     PUSH EAX                            ; 0057cca5
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057cca6
     PUSH EBX                            ; 0057cca9
     CALL core_setedit.cpp_FUN_0057b600  ; 0057ccaa
-        ;   XREF to: 0057b600 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057b600()
+        ;   XREF to: 0057b600 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057b600()
     ADD ESP,0x8                         ; 0057ccaf
     PUSH 0x0                            ; 0057ccb2
         ;   Label: LAB_0057ccb2
@@ -851,7 +851,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057ce1b
     PUSH EAX                            ; 0057ce1e
     CALL core_setedit.cpp_ResolveMasterLights_FUN_0057c550 ; 0057ce1f
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_ResolveMasterLights_FUN_0057c550()
     IMUL EDX,EAX,0x1898                 ; 0057ce24
     ADD ESP,0x8                         ; 0057ce2a
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057ce2d
@@ -860,7 +860,7 @@ section .text
     PUSH ECX                            ; 0057ce33
     MOV EBX,dword ptr [EDX + 0x19a30]   ; 0057ce34
     CALL core_setedit.cpp_FUN_0057b910  ; 0057ce3a
-        ;   XREF to: 0057b910 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057b910()
+        ;   XREF to: 0057b910 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057b910()
     ADD ESP,0x8                         ; 0057ce3f
     TEST EBX,EBX                        ; 0057ce42
     JNZ 0x0057ce5b                      ; 0057ce44

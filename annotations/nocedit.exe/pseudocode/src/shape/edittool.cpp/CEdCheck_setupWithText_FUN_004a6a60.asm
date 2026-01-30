@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   checkbox_text
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 005398fd
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005398fd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_00622eae

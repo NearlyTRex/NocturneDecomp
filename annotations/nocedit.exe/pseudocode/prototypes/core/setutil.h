@@ -5,11 +5,11 @@
 
 // Original: core_setutil.cpp_FUN_005851a0
 // Address: 005851a0
-void FUN_005851a0(void);
+void __cdecl FUN_005851a0(void);
 
 // Original: core_setutil.cpp_FUN_005851d0
 // Address: 005851d0
-void FUN_005851d0(void);
+void __cdecl FUN_005851d0(void);
 
 // Original: core_setutil.cpp_C3DSCamera_getProjectionScale_FUN_005851f0
 // Address: 005851f0
@@ -21,7 +21,7 @@ float __cdecl C3DSCamera::getAmbientValue(C3DSCamera *this_ptr);
 
 // Original: core_setutil.cpp_FUN_00585210
 // Address: 00585210
-undefined4 FUN_00585210(void);
+int __cdecl FUN_00585210(void);
 
 // Original: core_setutil.cpp_FUN_00585220
 // Address: 00585220

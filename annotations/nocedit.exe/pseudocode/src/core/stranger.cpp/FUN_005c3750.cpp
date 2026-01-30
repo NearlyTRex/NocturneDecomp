@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_FUN_005c3750
 // Address: 005c3750
 // Address Range: [[005c3750, 005c37da]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_FUN_005c3750(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_FUN_005c3750(void)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_FUN_005c3750(void)
+void __cdecl core_stranger_cpp_FUN_005c3750(void)
 
 {
   float fVar1;

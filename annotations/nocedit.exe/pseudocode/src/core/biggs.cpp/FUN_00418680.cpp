@@ -1,14 +1,14 @@
 // Name: core_biggs.cpp_FUN_00418680
 // Address: 00418680
 // Address Range: [[00418680, 004186f7]]
-// Convention: unknown
-// Signature: void core_biggs_cpp_FUN_00418680(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_biggs_cpp_FUN_00418680(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_biggs.cpp_FUN_00418680(uint param_1) */
 
-void core_biggs_cpp_FUN_00418680(void)
+void __cdecl core_biggs_cpp_FUN_00418680(void)
 
 {
   CKeyFramedModelInstance *this_ptr;

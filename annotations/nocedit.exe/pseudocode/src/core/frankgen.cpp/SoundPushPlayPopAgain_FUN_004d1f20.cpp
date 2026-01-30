@@ -1,12 +1,12 @@
 // Name: core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20
 // Address: 004d1f20
 // Address Range: [[004d1f20, 004d1f6b]]
-// Convention: unknown
-// Signature: void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
 
 #include "nocturne.h"
 
-void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
+void __cdecl core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
 
 {
   int in_stack_00000004;

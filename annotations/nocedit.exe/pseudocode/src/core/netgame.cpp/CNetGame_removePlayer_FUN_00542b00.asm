@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

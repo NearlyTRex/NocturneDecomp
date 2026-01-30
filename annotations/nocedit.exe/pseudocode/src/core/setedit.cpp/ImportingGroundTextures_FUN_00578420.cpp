@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_ImportingGroundTextures_FUN_00578420
 // Address: 00578420
 // Address Range: [[00578420, 00578624]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
+void __cdecl core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
 
 {
   int iVar1;

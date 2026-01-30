@@ -1,12 +1,12 @@
 // Name: core_actor.cpp_CActorProperty_FUN_0040ea50
 // Address: 0040ea50
 // Address Range: [[0040ea50, 0040ee2b]]
-// Convention: unknown
-// Signature: void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_actor_cpp_CActorProperty_FUN_0040ea50(void)
 
 #include "nocturne.h"
 
-void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
+void __cdecl core_actor_cpp_CActorProperty_FUN_0040ea50(void)
 
 {
   char cVar1;

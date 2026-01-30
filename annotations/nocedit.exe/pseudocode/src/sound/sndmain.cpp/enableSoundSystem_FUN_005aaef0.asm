@@ -6,7 +6,7 @@
 ;
 ; XREF[9]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e40f9
-;   core_msnedit.cpp_FUN_0053eb40 at 0053eb61
+;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053eb61
 ;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 00580f86
 ;   core_skeledit.cpp_FUN_00589b10 at 00589b1b
 ;   core_skeledit.cpp_FUN_00589c20 at 00589e8c

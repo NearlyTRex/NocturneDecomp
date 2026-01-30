@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_crate_cpp_FUN_00448b20(void)
+; __cdecl void __cdecl core_crate_cpp_FUN_00448b20(void)
 ;
 ;
 ; Referenced Globals:

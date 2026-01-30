@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 38,
-        "line": 19,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -66,7 +59,7 @@
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 68,
         "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -98,13 +91,15 @@
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 49,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 14,
     "pseudocode_lines": 49,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 10,
+    "suspect_types": [
+      "extra_output"
+    ],
     "total_lines": 133
   },
   "cross_references": [
@@ -287,7 +282,78 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EAX",
+      "text": "pcVar3 = (char *)(extraout_EAX + -0xa8);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0x1f6c0) = &g_CPassengerVTable;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "text": "pcVar3 = (char *)(extraout_EAX + -0x10c);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -4) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 38,
+      "match": "extraout_EAX",
+      "text": "((CDeformableModelInstance *)(extraout_EAX + -0x1f6bc),\"trainman.dfm\");",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 39,
+      "match": "extraout_EAX",
+      "text": "pcVar3 = (char *)(extraout_EAX + -0x88);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 40,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0xc30) = 0x3f800000;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 50,
+      "match": "extraout_EAX",
+      "text": "*(byte *)(extraout_EAX + -0x68) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_EAX",
+      "text": "return (CPassenger *)(extraout_EAX + -0x1f814);",
+      "type": "extra_output"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

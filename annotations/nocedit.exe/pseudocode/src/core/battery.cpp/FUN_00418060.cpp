@@ -1,15 +1,15 @@
 // Name: core_battery.cpp_FUN_00418060
 // Address: 00418060
 // Address Range: [[00418060, 004180ad]]
-// Convention: unknown
-// Signature: float * core_battery_cpp_FUN_00418060(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_battery_cpp_FUN_00418060(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_battery.cpp_FUN_00418060(uint param_1, uint
    param_2) */
 
-float * core_battery_cpp_FUN_00418060(void)
+float * __cdecl core_battery_cpp_FUN_00418060(void)
 
 {
   CVector3f *pCVar1;

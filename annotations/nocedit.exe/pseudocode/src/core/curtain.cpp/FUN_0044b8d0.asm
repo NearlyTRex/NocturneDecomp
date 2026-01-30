@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_curtain_cpp_FUN_0044b8d0(void)
+; __cdecl void __cdecl core_curtain_cpp_FUN_0044b8d0(void)
 ;
 ;
 ; Referenced Globals:

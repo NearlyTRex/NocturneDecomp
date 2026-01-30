@@ -11,12 +11,12 @@ core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70
           (CDemonActor *this_ptr,int fly_count,float spawn_radius)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x510);
-  iVar1 = core_flies_cpp_FUN_004cca50();
-  if (iVar1 != 0) {
+  pCVar1 = core_flies_cpp_FUN_004cca50();
+  if (pCVar1 != (CDemonActor *)0x0) {
     return;
   }
   core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,this_ptr);

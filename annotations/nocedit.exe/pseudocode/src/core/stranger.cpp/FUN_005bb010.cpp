@@ -1,14 +1,14 @@
 // Name: core_stranger.cpp_FUN_005bb010
 // Address: 005bb010
 // Address Range: [[005bb010, 005bb0d8]]
-// Convention: unknown
-// Signature: float core_stranger_cpp_FUN_005bb010(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_stranger_cpp_FUN_005bb010(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_stone.cpp_FUN_005bb010(uint param_1) */
 
-float core_stranger_cpp_FUN_005bb010(void)
+float __cdecl core_stranger_cpp_FUN_005bb010(void)
 
 {
   CDemonActor *pCVar1;

@@ -1,12 +1,12 @@
 // Name: core_chain.cpp_FUN_00431350
 // Address: 00431350
 // Address Range: [[00431350, 0043135e]]
-// Convention: unknown
-// Signature: int core_chain_cpp_FUN_00431350(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_chain_cpp_FUN_00431350(void)
 
 #include "nocturne.h"
 
-int core_chain_cpp_FUN_00431350(void)
+int __cdecl core_chain_cpp_FUN_00431350(void)
 
 {
   int in_stack_00000004;

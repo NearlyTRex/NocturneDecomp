@@ -1,15 +1,15 @@
 // Name: core_spike.cpp_FUN_005b8e90
 // Address: 005b8e90
 // Address Range: [[005b8e90, 005b901f]]
-// Convention: unknown
-// Signature: void core_spike_cpp_FUN_005b8e90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_spike_cpp_FUN_005b8e90(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_spike.cpp_FUN_005b8e90(uint param_1, uint param_2)
     */
 
-void core_spike_cpp_FUN_005b8e90(void)
+void __cdecl core_spike_cpp_FUN_005b8e90(void)
 
 {
   CDemonActor *in_stack_00000004;

@@ -15,8 +15,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int iVar4;
   int iVar5;
   float fVar6;
-  char *pcVar7;
-  uint d2;
+  uint uVar7;
+  char *pcVar8;
   CGame *in_stack_fffff790;
   CHero *in_stack_fffff794;
   char **in_stack_fffff798;
@@ -98,15 +98,15 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   }
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
   pcVar3 = "Flashlight";
-  pcVar7 = g_CDemonLightInstance.base.camera_name;
+  pcVar8 = g_CDemonLightInstance.base.camera_name;
   do {
     cVar1 = *pcVar3;
-    *pcVar7 = cVar1;
+    *pcVar8 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
+    pcVar8[1] = cVar1;
+    pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
   g_CDemonLightInstance.light_enabled_flag = 0;
   g_CDemonLightInstance.base.max_distance = 64.0;
@@ -174,7 +174,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       iVar4 = 0;
       core_game_cpp_CGame_processFrame_FUN_004da100(this_ptr);
       if (g_CheatSystemEnabled == 0) {
-        d2 = 0x4db6ef;
+        uVar7 = 0x4db6ef;
         iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
         if (iVar5 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
@@ -270,13 +270,13 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               if (iVar5 != 0) {
                 in_stack_fffff798 = (char **)0x0;
                 shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                          ((CPickList *)&stack0xfffff790,0,d2,in_stack_fffff7a0,in_stack_fffff7a4,
-                           in_stack_fffff7a8,in_stack_fffff7ac);
+                          ((CPickList *)&stack0xfffff790,0,uVar7,in_stack_fffff7a0,in_stack_fffff7a4
+                           ,in_stack_fffff7a8,in_stack_fffff7ac);
                 goto LAB_004db434;
               }
             }
             if (iVar4 == 5) {
-              iVar4 = core_script_cpp_CScript_SkipCinematic_FUN_005602e0();
+              iVar4 = core_script_cpp_CScript_FUN_005602e0(g_CScriptPtr);
               this_ptr->cutscene_skippable = (uint)(iVar4 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -288,7 +288,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             in_stack_fffff794 = (CHero *)&stack0xfffff790;
             in_stack_fffff790 = (CGame *)0x4db9b1;
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      ((CPickList *)in_stack_fffff794,0,d2,in_stack_fffff7a0,in_stack_fffff7a4,
+                      ((CPickList *)in_stack_fffff794,0,uVar7,in_stack_fffff7a0,in_stack_fffff7a4,
                        in_stack_fffff7a8,in_stack_fffff7ac);
             iVar4 = 1;
           }
@@ -336,8 +336,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
         if (iVar4 != 0) goto LAB_004db434;
         if (local_14 < 0.0) {
-          iVar4 = core_game_cpp_CGame_fadeIn_FUN_004e0b90(this_ptr);
-          if (iVar4 != 0) goto LAB_004db434;
+          uVar7 = core_game_cpp_CGame_fadeIn_FUN_004e0b90(this_ptr);
+          if (uVar7 != 0) goto LAB_004db434;
         }
         else {
           local_14 = local_14 + this_ptr->delta_time_float;

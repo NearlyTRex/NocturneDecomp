@@ -53,7 +53,7 @@ section .text
     ADD ESP,0x4                         ; 004f3fd7
     PUSH EAX                            ; 004f3fda
     CALL core_skeledit.cpp_FUN_0058a2b0 ; 004f3fdb
-        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058a2b0()
+        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a2b0()
     ADD ESP,0x8                         ; 004f3fe0
     POP EBX                             ; 004f3fe3
     RET                                 ; 004f3fe4

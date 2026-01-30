@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_vampboss_cpp_FUN_005e58d0(void)
+; __cdecl float __cdecl core_vampboss_cpp_FUN_005e58d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

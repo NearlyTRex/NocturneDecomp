@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_grave_cpp_FUN_004ee680(void)
+; __cdecl int __cdecl core_grave_cpp_FUN_004ee680(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1c]:1  local_1c

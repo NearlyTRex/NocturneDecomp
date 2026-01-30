@@ -1,12 +1,12 @@
 // Name: core_litecone.cpp_FUN_00506c20
 // Address: 00506c20
 // Address Range: [[00506c20, 00506ca6]]
-// Convention: unknown
-// Signature: int core_litecone_cpp_FUN_00506c20(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_litecone_cpp_FUN_00506c20(void)
 
 #include "nocturne.h"
 
-int core_litecone_cpp_FUN_00506c20(void)
+int __cdecl core_litecone_cpp_FUN_00506c20(void)
 
 {
   int iVar1;

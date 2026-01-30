@@ -1,12 +1,12 @@
 // Name: core_elephant.cpp_FUN_004a78a0
 // Address: 004a78a0
 // Address Range: [[004a78a0, 004a78d4]]
-// Convention: unknown
-// Signature: void core_elephant_cpp_FUN_004a78a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_elephant_cpp_FUN_004a78a0(void)
 
 #include "nocturne.h"
 
-void core_elephant_cpp_FUN_004a78a0(void)
+void __cdecl core_elephant_cpp_FUN_004a78a0(void)
 
 {
   CVector3f *pCVar1;

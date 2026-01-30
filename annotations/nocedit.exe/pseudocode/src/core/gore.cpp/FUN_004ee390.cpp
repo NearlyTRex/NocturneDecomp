@@ -9,8 +9,8 @@
 CFootstep * __cdecl core_gore_cpp_FUN_004ee390(CFootstep *this_ptr)
 
 {
-  int iVar1;
+  int extraout_EAX;
   
-  iVar1 = core_dracbrid_cpp_FUN_00486e30();
-  return (CFootstep *)(iVar1 + -8);
+  core_dracbrid_cpp_FUN_00486e30();
+  return (CFootstep *)(extraout_EAX + -8);
 }

@@ -81,7 +81,7 @@ section .text
     PUSH EAX                            ; 004fe982
     PUSH EBX                            ; 004fe983
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004fe984
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
     ADD ESP,0x8                         ; 004fe989
     MOV EAX,dword ptr [EBX + 0x154]     ; 004fe98c
     PUSH EBX                            ; 004fe992

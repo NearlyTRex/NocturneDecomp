@@ -13,29 +13,29 @@
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 78,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 8,
-    "suspect_count": 6,
+    "pseudocode_lines": 7,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
+      "param_count_too_many",
       "unnamed_param"
     ],
-    "total_lines": 37
+    "total_lines": 36
   },
   "cross_references": [
     {
       "addr": "00565ae0",
       "from_addr": "00565b56",
-      "name": "core_script.cpp_FUN_00565ae0",
+      "name": "core_script.cpp_CScript_FUN_00565ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00565e70",
       "from_addr": "00565ee8",
-      "name": "core_script.cpp_FUN_00565e70",
+      "name": "core_script.cpp_CScript_FUN_00565e70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -47,9 +47,9 @@
         "00561caa"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_00561c70",
-    "signature": "void core_script_cpp_FUN_00561c70(void)"
+    "signature": "void __cdecl core_script_cpp_FUN_00561c70 (int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)"
   },
   "function_calls": [
     {
@@ -72,7 +72,7 @@
       {
         "call_addr": "00565ee8",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00565e70",
+        "caller": "core_script.cpp_CScript_FUN_00565e70",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -81,7 +81,7 @@
       {
         "call_addr": "00565b56",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00565ae0",
+        "caller": "core_script.cpp_CScript_FUN_00565ae0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -89,7 +89,7 @@
       }
     ],
     "confidence": "medium",
-    "declared_params": 0,
+    "declared_params": 7,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -113,59 +113,123 @@
     "pcode_op_count": 91
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 32,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 28,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_5",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_6",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_7",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 4,
+      "match": "param_1",
+      "text": "(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
       "match": "param_3",
-      "text": "uint param_3, uint param_4, uint param_5, uint param_6, uint",
+      "text": "(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 4,
       "match": "param_4",
-      "text": "uint param_3, uint param_4, uint param_5, uint param_6, uint",
+      "text": "(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 4,
       "match": "param_5",
-      "text": "uint param_3, uint param_4, uint param_5, uint param_6, uint",
+      "text": "(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 4,
       "match": "param_6",
-      "text": "uint param_3, uint param_4, uint param_5, uint param_6, uint",
+      "text": "(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_7",
-      "text": "param_7) */",
+      "text": "(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)",
       "type": "unnamed_param"
     },
     {
       "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
+      "declared_params": 7,
+      "description": "Signature has too many params - likely wrong calling convention",
       "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "fix_type": "remove_params",
+      "match": "declared:7 vs estimated:1",
+      "param_delta": -6,
+      "text": "Function declares 7 params but call sites push 1 (6 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

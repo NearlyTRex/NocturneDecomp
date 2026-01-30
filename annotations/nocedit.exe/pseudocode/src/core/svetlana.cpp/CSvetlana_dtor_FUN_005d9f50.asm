@@ -34,13 +34,13 @@ section .text
     ADD EBX,0x5fa4c                     ; 005d9f5e
     PUSH EBX                            ; 005d9f64
     CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 005d9f65
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
     ADD ESP,0x8                         ; 005d9f6a
     PUSH 0x0                            ; 005d9f6d
     SUB EAX,0x3fe70                     ; 005d9f6f
     PUSH EAX                            ; 005d9f74
     CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 005d9f75
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
     ADD ESP,0x8                         ; 005d9f7a
     PUSH 0x1                            ; 005d9f7d
     LEA EBX,[EAX + 0xfffe0424]          ; 005d9f7f

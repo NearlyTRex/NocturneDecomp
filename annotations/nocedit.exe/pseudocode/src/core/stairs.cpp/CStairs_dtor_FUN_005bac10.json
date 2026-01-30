@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 39,
-        "line": 22,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -18,22 +11,24 @@
       },
       {
         "category": "other",
-        "column": 65,
-        "line": 23,
+        "column": 54,
+        "line": 24,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 19,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 19,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 66
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -149,7 +144,22 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EAX",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(extraout_EAX + -0x170),1);",
+      "type": "extra_output"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

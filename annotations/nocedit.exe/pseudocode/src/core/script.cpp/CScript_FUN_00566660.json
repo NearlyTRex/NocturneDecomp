@@ -1,0 +1,531 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 18,
+        "line": 17,
+        "message": "invalid conversion from 'CBitFont*' to 'undefined4' {aka 'unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 62,
+        "line": 19,
+        "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 70,
+        "line": 21,
+        "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 334,
+    "cross_reference_count": 2,
+    "function_call_count": 9,
+    "global_count": 22,
+    "pseudocode_lines": 44,
+    "suspect_count": 28,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 173
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053aa0a",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005374b0",
+      "from_addr": "005374d8",
+      "name": "core_msnedit.cpp_FUN_005374b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566660",
+    "address_range": [
+      [
+        "00566660",
+        "005667f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_FUN_00566660",
+    "signature": "void __cdecl core_script_cpp_CScript_FUN_00566660 (CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "00566800",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00566800"
+    },
+    {
+      "addr": "005644e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_FUN_005644e0"
+    },
+    {
+      "addr": "004d01a0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0"
+    },
+    {
+      "addr": "004a64b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateGridHeight_FUN_004a64b0"
+    },
+    {
+      "addr": "004a6490",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateGridWidth_FUN_004a6490"
+    },
+    {
+      "addr": "004a5b60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
+    },
+    {
+      "addr": "004a6f00",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontCharSpacing_FUN_004a6f00"
+    },
+    {
+      "addr": "004a6ef0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontMaxCharWidth_FUN_004a6ef0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "020a5728",
+      "name": "g_ConsoleFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "0310fcd8",
+      "name": "CEdScrollBar_0310fcd8",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "0310fcdc",
+      "name": "CEdScrollBar_0310fcd8.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fce0",
+      "name": "CEdScrollBar_0310fcd8.max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd0c",
+      "name": "CEdScrollBar_0310fd0c",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "0310fd10",
+      "name": "CEdScrollBar_0310fd0c.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd14",
+      "name": "CEdScrollBar_0310fd0c.max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141d0",
+      "name": "INT_031141d0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141d4",
+      "name": "INT_031141d4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141d8",
+      "name": "INT_031141d8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141dc",
+      "name": "INT_031141dc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e0",
+      "name": "INT_031141e0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e4",
+      "name": "INT_031141e4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e8",
+      "name": "DAT_031141e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141ec",
+      "name": "DAT_031141ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141f0",
+      "name": "DAT_031141f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141f4",
+      "name": "DAT_031141f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141f8",
+      "name": "DAT_031141f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141fc",
+      "name": "INT_031141fc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114200",
+      "name": "DAT_03114200",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114204",
+      "name": "INT_03114204",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114208",
+      "name": "DAT_03114208",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9292035398230087,
+    "instruction_count": 113,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 1,
+      "COPY": 84,
+      "INT_ADD": 24,
+      "INT_AND": 66,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 2,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 13,
+      "INT_SDIV": 2,
+      "INT_SEXT": 2,
+      "INT_SLESS": 22,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 41,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 10,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 33,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 444
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_5",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_03114200",
+      "text": "DAT_03114200 = g_ConsoleFont;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_03114200",
+      "text": "iVar2 = shape_edittool_cpp_getFontCharSpacing_FUN_004a6f00(DAT_03114200);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_03114208",
+      "text": "DAT_03114208 = shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(DAT_03114200);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_03114200",
+      "text": "DAT_03114208 = shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(DAT_03114200);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "text": "INT_031141d4 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_4",
+      "text": "INT_031141d8 = param_4 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_5",
+      "text": "INT_031141dc = param_5 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "text": "INT_031141d0 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_031141f4",
+      "text": "DAT_031141f4 = INT_031141dc - DAT_03114208;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_03114208",
+      "text": "DAT_031141f4 = INT_031141dc - DAT_03114208;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "text": "DAT_031141f0 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_031141f0",
+      "text": "DAT_031141f0 = param_2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_031141f8",
+      "text": "DAT_031141f8 = INT_031141d8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_031141e8",
+      "text": "DAT_031141e8 = INT_031141d8 - iVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_031141ec",
+      "text": "DAT_031141ec = DAT_031141f4 - iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_031141f4",
+      "text": "DAT_031141ec = DAT_031141f4 - iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_031141ec",
+      "text": "(&CEdScrollBar_0310fd0c,INT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_031141e8",
+      "text": "(&CEdScrollBar_0310fd0c,INT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_031141f4",
+      "text": "(&CEdScrollBar_0310fd0c,INT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_031141e8",
+      "text": "(&CEdScrollBar_0310fcd8,DAT_031141e8,INT_031141e4,INT_031141d8,DAT_031141ec);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_031141ec",
+      "text": "(&CEdScrollBar_0310fcd8,DAT_031141e8,INT_031141e4,INT_031141d8,DAT_031141ec);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_031141ec",
+      "text": "CEdScrollBar_0310fcd8.max_value = (DAT_031141ec - INT_031141e4) / DAT_03114208;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_03114208",
+      "text": "CEdScrollBar_0310fcd8.max_value = (DAT_031141ec - INT_031141e4) / DAT_03114208;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_031141e8",
+      "text": "CEdScrollBar_0310fd0c.max_value = (DAT_031141e8 - INT_031141e0) / INT_03114204;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_FUN_0043e1a0(void)
+; __cdecl void __cdecl core_cloth_cpp_FUN_0043e1a0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c

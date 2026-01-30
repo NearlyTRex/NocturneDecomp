@@ -33,7 +33,7 @@ section .text
     ADD EBX,0x208                       ; 0044ba3e
     PUSH EBX                            ; 0044ba44
     CALL core_curtain.cpp_FUN_0044bad0  ; 0044ba45
-        ;   XREF to: 0044bad0 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_0044bad0()
+        ;   XREF to: 0044bad0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_FUN_0044bad0()
     ADD ESP,0x8                         ; 0044ba4a
     PUSH 0x1                            ; 0044ba4d
     LEA EBX,[EAX + 0xfffffdf8]          ; 0044ba4f

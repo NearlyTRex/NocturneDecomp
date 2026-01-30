@@ -1,14 +1,14 @@
 // Name: core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
 // Address: 005c4370
 // Address Range: [[005c4370, 005c48ae]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_aimLeftPistol(CStranger* param_1) */
 
-void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
+void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
 
 {
   float fVar1;

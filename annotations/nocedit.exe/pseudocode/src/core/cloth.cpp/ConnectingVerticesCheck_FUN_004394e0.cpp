@@ -1,14 +1,14 @@
 // Name: core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0
 // Address: 004394e0
 // Address Range: [[004394e0, 00439705]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_cloth.cpp_ConnectingVerticesCheck(uint param_1) */
 
-void core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(void)
+void __cdecl core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(void)
 
 {
   int iVar1;

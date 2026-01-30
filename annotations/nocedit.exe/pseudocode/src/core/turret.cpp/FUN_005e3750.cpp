@@ -1,14 +1,14 @@
 // Name: core_turret.cpp_FUN_005e3750
 // Address: 005e3750
 // Address Range: [[005e3750, 005e3c6a]]
-// Convention: unknown
-// Signature: undefined4 core_turret_cpp_FUN_005e3750(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_turret_cpp_FUN_005e3750(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_turret.cpp_FUN_005e3750(uint param_1) */
 
-uint core_turret_cpp_FUN_005e3750(void)
+int __cdecl core_turret_cpp_FUN_005e3750(void)
 
 {
   float fVar1;
@@ -132,7 +132,6 @@ uint core_turret_cpp_FUN_005e3750(void)
       }
       SStack_e0.impact_direction.x = *(float *)(in_stack_00000004[4].actor_name + 0xc);
       SStack_e0.impact_direction.y = 1.0;
-      SStack_e0.ammo_type = (int)in_stack_00000004;
       SStack_e0.impact_direction.z = 1.41531e-43;
       SStack_e0.damage_type =
            (int)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);

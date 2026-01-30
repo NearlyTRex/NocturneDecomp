@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_script_cpp_FUN_00561690(void)
+; __cdecl int __cdecl core_script_cpp_FUN_00561690(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x2148]:1  local_2148
@@ -29,8 +29,8 @@
 ;   void* switchdataD_0056160c = 00561842
 ;
 ; Called Functions:
+;   core_script.cpp_CCmdParse_bestParse_FUN_00561db0
 ;   core_script.cpp_FUN_00561a30
-;   core_script.cpp_SCmdParse_bestParse_FUN_00561db0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EDI                            ; 005616c7
     LEA EAX,[ESP + 0x10]                ; 005616c8
     PUSH EAX                            ; 005616cc
-    CALL core_script.cpp_SCmdParse_bestParse_FUN_00561db0 ; 005616cd
-        ;   XREF to: 00561db0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_SCmdParse_bestParse_FUN_00561db0()
+    CALL core_script.cpp_CCmdParse_bestParse_FUN_00561db0 ; 005616cd
+        ;   XREF to: 00561db0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse * this_ptr, int param_2, int param_3, int * param_4, ...)
     ADD ESP,0x14                        ; 005616d2
     MOV dword ptr [ESP + 0x2130],EAX    ; 005616d5
     TEST EAX,EAX                        ; 005616dc
@@ -376,7 +376,7 @@ section .text
     ADD EDX,0x64                        ; 005619bd
     PUSH EDX                            ; 005619c0
     CALL core_script.cpp_FUN_00561a30   ; 005619c1
-        ;   XREF to: 00561a30 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00561a30()
+        ;   XREF to: 00561a30 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00561a30(char * param_1, char * param_2, char * param_3, char * param_4, ...)
     ADD ESP,0x1c                        ; 005619c6
     MOV dword ptr [ESP + 0x212c],EAX    ; 005619c9
     JMP 0x00561893                      ; 005619d0

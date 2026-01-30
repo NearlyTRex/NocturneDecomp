@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_msnedit_cpp_FUN_00536bf0(void)
+; __cdecl void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; CStrList *       Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined1       Stack[-0xd8]:1  local_d8
 ; undefined1       Stack[-0xd7]:1  local_d7

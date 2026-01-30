@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bride_cpp_FUN_00423a30(void)
+; __cdecl void __cdecl core_bride_cpp_FUN_00423a30(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1f4]:1  local_1f4
@@ -244,7 +244,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 00423c09 | g_CGorePtr
     PUSH ESI                            ; 00423c0f | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 00423c10
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 00423c15
     PUSH 0x41c80000                     ; 00423c18
     PUSH 0x32                           ; 00423c1d

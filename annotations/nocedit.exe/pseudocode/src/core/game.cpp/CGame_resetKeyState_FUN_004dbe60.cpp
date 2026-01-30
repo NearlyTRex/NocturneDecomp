@@ -1,14 +1,14 @@
 // Name: core_game.cpp_CGame_resetKeyState_FUN_004dbe60
 // Address: 004dbe60
 // Address Range: [[004dbe60, 004dc22d]]
-// Convention: unknown
-// Signature: void core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_game.cpp_CGame_resetKeyState(CGame* pGame) */
 
-void core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
+void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
 
 {
   DWORD DVar1;

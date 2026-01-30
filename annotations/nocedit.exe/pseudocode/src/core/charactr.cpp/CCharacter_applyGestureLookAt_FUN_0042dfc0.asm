@@ -81,7 +81,7 @@ section .text
     ADD EBX,0x2a94                      ; 0042e036
     PUSH EBX                            ; 0042e03c
     CALL core_cloth.cpp_FUN_0043c2d0    ; 0042e03d
-        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c2d0()
+        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c2d0()
     ADD ESP,0x18                        ; 0042e042
     POP EBX                             ; 0042e045
     RET                                 ; 0042e046

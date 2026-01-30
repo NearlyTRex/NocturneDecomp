@@ -1,15 +1,15 @@
 // Name: core_hotdemon.cpp_FUN_004f78f0
 // Address: 004f78f0
 // Address Range: [[004f78f0, 004f79aa]]
-// Convention: unknown
-// Signature: undefined4 core_hotdemon_cpp_FUN_004f78f0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_hotdemon_cpp_FUN_004f78f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_hotdemon.cpp_FUN_004f78f0(uint param_1, uint
    param_2) */
 
-uint core_hotdemon_cpp_FUN_004f78f0(void)
+int __cdecl core_hotdemon_cpp_FUN_004f78f0(void)
 
 {
   CVector3f *pCVar1;

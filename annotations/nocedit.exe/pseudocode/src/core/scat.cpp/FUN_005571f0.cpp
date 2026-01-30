@@ -1,15 +1,15 @@
 // Name: core_scat.cpp_FUN_005571f0
 // Address: 005571f0
 // Address Range: [[005571f0, 005578dd]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_005571f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_005571f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_005571f0(uint param_1, uint param_2)
     */
 
-void core_scat_cpp_FUN_005571f0(void)
+void __cdecl core_scat_cpp_FUN_005571f0(void)
 
 {
   float fVar1;
@@ -192,7 +192,7 @@ LAB_00557637:
     else {
       if (uVar6 != 3) goto LAB_00557637;
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
       iVar10 = core_scat_cpp_FUN_00558010();
       if (iVar10 == 0) {
         iVar10 = 0;

@@ -71,9 +71,9 @@
         "00438ced"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0",
-    "signature": "void core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)"
+    "signature": "void __cdecl core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)"
   },
   "function_calls": [
     {
@@ -109,28 +109,24 @@
         "call_addr": "00438c06",
         "call_type": "direct",
         "caller": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 3,
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "00438c56",
         "call_type": "direct",
         "caller": "core_cloth.cpp_CCloth_allocMemory_FUN_00438c50",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 3,
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.3157894736842106,
@@ -195,11 +191,11 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

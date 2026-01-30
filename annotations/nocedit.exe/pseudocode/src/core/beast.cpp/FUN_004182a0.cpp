@@ -1,15 +1,15 @@
 // Name: core_beast.cpp_FUN_004182a0
 // Address: 004182a0
 // Address Range: [[004182a0, 00418325]]
-// Convention: unknown
-// Signature: void core_beast_cpp_FUN_004182a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_beast_cpp_FUN_004182a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_beast.cpp_FUN_004182a0(uint param_1, uint param_2)
     */
 
-void core_beast_cpp_FUN_004182a0(void)
+void __cdecl core_beast_cpp_FUN_004182a0(void)
 
 {
   float fVar1;

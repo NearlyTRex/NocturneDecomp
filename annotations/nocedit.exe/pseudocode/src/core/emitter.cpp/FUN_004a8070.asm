@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_emitter_cpp_FUN_004a8070(void)
+; __cdecl void __cdecl core_emitter_cpp_FUN_004a8070(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x108]:8  local_108
@@ -403,7 +403,7 @@ section .text
     PUSH EAX                            ; 004a8480
     PUSH EBX                            ; 004a8481
     CALL core_emitter.cpp_FUN_004a8d20  ; 004a8482
-        ;   XREF to: 004a8d20 (UNCONDITIONAL_CALL)  ; undefined core_emitter.cpp_FUN_004a8d20()
+        ;   XREF to: 004a8d20 (UNCONDITIONAL_CALL)  ; CVector3f * core_emitter.cpp_FUN_004a8d20()
     ADD ESP,0x8                         ; 004a8487
     PUSH 0x1                            ; 004a848a
     PUSH 0x2                            ; 004a848c

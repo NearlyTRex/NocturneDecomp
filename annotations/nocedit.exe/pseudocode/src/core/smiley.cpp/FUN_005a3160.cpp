@@ -1,15 +1,15 @@
 // Name: core_smiley.cpp_FUN_005a3160
 // Address: 005a3160
 // Address Range: [[005a3160, 005a3212]]
-// Convention: unknown
-// Signature: undefined4 core_smiley_cpp_FUN_005a3160(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_smiley_cpp_FUN_005a3160(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_smiley.cpp_FUN_005a3160(uint param_1, uint
    param_2) */
 
-uint core_smiley_cpp_FUN_005a3160(void)
+int __cdecl core_smiley_cpp_FUN_005a3160(void)
 
 {
   int iVar1;

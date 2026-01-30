@@ -1,12 +1,12 @@
 // Name: core_main.c_finalizeGameSystems_FUN_00508570
 // Address: 00508570
 // Address Range: [[00508570, 0050885a]]
-// Convention: unknown
-// Signature: void core_main_c_finalizeGameSystems_FUN_00508570(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
 
 #include "nocturne.h"
 
-void core_main_c_finalizeGameSystems_FUN_00508570(void)
+void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
 
 {
   _FILE *file_ptr;

@@ -21,22 +21,22 @@
 // FUNCTION PROTOTYPES - Range 0x590000
 // =============================================================================
 
-undefined4 core_skeledit_cpp_FUN_00592520(void);
-undefined4 core_skeledit_cpp_FUN_005925c0(void);
-undefined4 core_skeledit_cpp_FUN_00592690(void);
-void core_skeledit_cpp_FUN_00595f30(void);
+int __cdecl core_skeledit_cpp_FUN_00592520(void);
+int __cdecl core_skeledit_cpp_FUN_005925c0(void);
+int __cdecl core_skeledit_cpp_FUN_00592690(void);
+void __cdecl core_skeledit_cpp_FUN_00595f30(void);
 void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices );
-void core_skeledit_cpp_FUN_00596860(void);
+void __cdecl core_skeledit_cpp_FUN_00596860(void);
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (CDeformableModelInstance *this_ptr);
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0 (CDeformableModelInstance *this_ptr,char *filename);
 void __cdecl core_skeledit_cpp_FUN_00598f10(void);
-void core_skeledit_cpp_viewModel_FUN_00598fc0(void);
-void core_skeledit_cpp_FUN_00599480(void);
+void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void);
+void __cdecl core_skeledit_cpp_FUN_00599480(void);
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_copy_FUN_00599550(CLodVert *this_ptr,CLodVert *other);
 CLodVert * __cdecl core_skeledit_cpp_LodVert_dtor_FUN_005995c0(CLodVert *this_ptr,CLodVert *other,CLodVert *other2);
-void core_skeledit_cpp_FUN_005995d0(void);
-undefined4 * core_skeledit_cpp_FUN_00599630(void);
-undefined4 * core_skeledit_cpp_FUN_00599650(void);
+void __cdecl core_skeledit_cpp_FUN_005995d0(void);
+int __cdecl core_skeledit_cpp_FUN_00599630(void);
+int __cdecl core_skeledit_cpp_FUN_00599650(void);
 void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void);
 void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_005996c0(_FILE *file_ptr);
 float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005996e0 (CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);

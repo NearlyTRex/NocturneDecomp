@@ -372,7 +372,7 @@ section .text
     LEA EAX,[EBP + 0x3a]                ; 00443eb4
     PUSH EAX                            ; 00443eb7
     CALL core_course.cpp_FUN_00443760   ; 00443eb8
-        ;   XREF to: 00443760 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00443760()
+        ;   XREF to: 00443760 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00443760()
     ADD ESP,0x4                         ; 00443ebd
     JMP 0x00443d25                      ; 00443ec0
         ;   XREF to: 00443d25 (UNCONDITIONAL_JUMP)  ; LAB_00443d25

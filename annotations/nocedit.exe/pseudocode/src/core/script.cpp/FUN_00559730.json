@@ -2,9 +2,15 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 40,
+        "line": 38,
+        "message": "cast from 'CDeformableModel*' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "incompatible_types",
         "column": 14,
-        "line": 47,
+        "line": 40,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       }
     ],
@@ -19,37 +25,36 @@
       {
         "category": "other",
         "column": 25,
-        "line": 32,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 47,
+        "line": 40,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 47,
-        "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+        "line": 40,
+        "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'int' [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 183,
+    "complexity_score": 162,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 38,
-    "suspect_count": 13,
+    "pseudocode_lines": 32,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 118
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -73,9 +78,9 @@
         "005597eb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_00559730",
-    "signature": "undefined4 core_script_cpp_FUN_00559730(void)"
+    "signature": "int __cdecl core_script_cpp_FUN_00559730(int param_1,char *param_2,int *param_3)"
   },
   "function_calls": [
     {
@@ -153,10 +158,10 @@
     "pcode_op_count": 277
   },
   "stack_frame": {
-    "frame_size": 120,
+    "frame_size": 132,
     "local_size": 120,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -172,99 +177,113 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3) */",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_script_cpp_FUN_00559730(int param_1,char *param_2,int *param_3)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "int __cdecl core_script_cpp_FUN_00559730(int param_1,char *param_2,int *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "int __cdecl core_script_cpp_FUN_00559730(int param_1,char *param_2,int *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 12,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "piVar1 = param_3;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "text": "} while (piVar1 != param_3 + 0x1e);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "uint *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x158));",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "puVar1 = in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "text": "sscanf(param_2,\" %[^ \\t),]%n\",local_74,&local_10);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "text": "} while (puVar1 != in_stack_0000000c + 0x1e);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "text": "param_2 = param_2 + local_10;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158));",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "text": "param_2 = param_2 + local_10;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 29,
-      "match": "in_stack_00000008",
-      "text": "sscanf(in_stack_00000008,\" %[^ \\t),]%n\",local_74,&local_10);",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "param_3[iVar2] = 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 33,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + local_10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + local_10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c[iVar2] = 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_0310eca0,\"Character %s model %s does not have a part '%s'\",in_stack_00000004,uVar3,pcVar4);",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "(&DAT_0310eca0,\"Character %s model %s does not have a part '%s'\",param_1,iVar2,pcVar3);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 33,
       "match": "DAT_0310eca0",
-      "text": "(&DAT_0310eca0,\"Character %s model %s does not have a part '%s'\",in_stack_00000004,uVar3,pcVar4);",
+      "text": "(&DAT_0310eca0,\"Character %s model %s does not have a part '%s'\",param_1,iVar2,pcVar3);",
       "type": "undefined_data"
     }
   ]

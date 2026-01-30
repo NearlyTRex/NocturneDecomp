@@ -63,7 +63,7 @@ section .text
     SUB EAX,0x3fea0                     ; 0051f329
     PUSH EAX                            ; 0051f32e
     CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 0051f32f
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
     ADD ESP,0x8                         ; 0051f334
     PUSH 0x0                            ; 0051f337
     SUB EAX,0x8bb8                      ; 0051f339
@@ -93,7 +93,7 @@ section .text
     SUB EAX,0x1c8                       ; 0051f379
     PUSH EAX                            ; 0051f37e
     CALL core_cloth.cpp_FUN_0043bf80    ; 0051f37f
-        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bf80()
+        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_0043bf80()
     ADD ESP,0x8                         ; 0051f384
     PUSH 0x0                            ; 0051f387
     SUB EAX,0x293c                      ; 0051f389

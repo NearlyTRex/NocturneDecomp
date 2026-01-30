@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 38,
-        "line": 23,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -30,7 +23,7 @@
       },
       {
         "category": "other",
-        "column": 60,
+        "column": 67,
         "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -54,7 +47,7 @@
       },
       {
         "category": "other",
-        "column": 58,
+        "column": 65,
         "line": 30,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -98,13 +91,15 @@
   },
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 39,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 9,
     "pseudocode_lines": 39,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 11,
+    "suspect_types": [
+      "extra_output"
+    ],
     "total_lines": 102
   },
   "cross_references": [
@@ -268,7 +263,85 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EAX",
+      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0xbeec) = &g_CBiggsVTable;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "text": "((CDeformableModelInstance *)(extraout_EAX + -0xbee8),\"biggs.dfm\");",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EAX",
+      "text": "pcVar6 = (char *)(extraout_EAX + 0xc2c);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
+      "match": "extraout_EAX",
+      "text": "((CKeyFramedModelInstance *)(extraout_EAX + -0x184),\"question.kfm\");",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x9264) = 0x3f19999a;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x9260) = 0x3f666666;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EAX",
+      "text": "*(float *)(extraout_EAX + -0x925c) = fVar2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_EAX",
+      "text": "*(float *)(extraout_EAX + -0x9258) = fVar3;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 34,
+      "match": "extraout_EAX",
+      "text": "return (CBiggs *)(extraout_EAX + -0xc040);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 41,
+      "match": "extraout_EAX",
+      "text": "return (CBiggs *)(extraout_EAX + -0xc040);",
+      "type": "extra_output"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bugs_cpp_FUN_00425cc0(void)
+; __cdecl void __cdecl core_bugs_cpp_FUN_00425cc0(void)
 ;
 ;
 ; XREF[1]:
@@ -85,13 +85,13 @@ section .text
     PUSH EBX                            ; 00425d5e
         ;   Label: LAB_00425d5e
     CALL core_bugs.cpp_FUN_004257f0     ; 00425d5f
-        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004257f0()
+        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004257f0()
     ADD ESP,0x4                         ; 00425d64
     MOV ESI,dword ptr [EBX + 0xbe3c]    ; 00425d67
     PUSH ESI                            ; 00425d6d
     PUSH EBX                            ; 00425d6e
     CALL core_bugs.cpp_FUN_00427400     ; 00425d6f
-        ;   XREF to: 00427400 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427400()
+        ;   XREF to: 00427400 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00427400()
     MOV EDI,dword ptr [EBX + 0xbebc]    ; 00425d74
     ADD ESP,0x8                         ; 00425d7a
     CMP EDI,0x1                         ; 00425d7d
@@ -111,7 +111,7 @@ section .text
     PUSH EBX                            ; 00425d9e
     INC ESI                             ; 00425d9f
     CALL core_bugs.cpp_FUN_00426420     ; 00425da0
-        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00426420()
+        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_FUN_00426420()
     ADD EDI,0x40                        ; 00425da5
     MOV EDX,dword ptr [EBX + 0xbec0]    ; 00425da8
     ADD ESP,0x10                        ; 00425dae
@@ -124,7 +124,7 @@ section .text
     PUSH EBX                            ; 00425dc0
         ;   Label: LAB_00425dc0
     CALL core_bugs.cpp_FUN_004272f0     ; 00425dc1
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004272f0()
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004272f0()
     ADD ESP,0x4                         ; 00425dc6
     MOV ESP,EBP                         ; 00425dc9
     POP EBP                             ; 00425dcb
@@ -155,7 +155,7 @@ section .text
     ADD EAX,0x20                        ; 00425e0b
     PUSH EAX                            ; 00425e0e
     CALL core_path.cpp_FUN_00548500     ; 00425e0f
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 00425e14
     MOV EDI,EAX                         ; 00425e17
     MOV EAX,dword ptr [EBX + 0x6c]      ; 00425e19
@@ -301,12 +301,12 @@ section .text
     PUSH EAX                            ; 00425fae
     PUSH EBX                            ; 00425faf
     CALL core_bugs.cpp_FUN_004276c0     ; 00425fb0
-        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004276c0()
+        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004276c0()
     ADD ESP,0x8                         ; 00425fb5
     PUSH EBX                            ; 00425fb8
         ;   Label: LAB_00425fb8
     CALL core_bugs.cpp_FUN_004257f0     ; 00425fb9
-        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004257f0()
+        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004257f0()
     ADD ESP,0x4                         ; 00425fbe
     JMP 0x00425d86                      ; 00425fc1
         ;   XREF to: 00425d86 (UNCONDITIONAL_JUMP)  ; LAB_00425d86
@@ -314,7 +314,7 @@ section .text
         ;   Label: LAB_00425fc6
     PUSH EBX                            ; 00425fc9
     CALL core_bugs.cpp_FUN_00425fe0     ; 00425fca
-        ;   XREF to: 00425fe0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00425fe0()
+        ;   XREF to: 00425fe0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00425fe0()
     ADD ESP,0x8                         ; 00425fcf
     MOV ESP,EBP                         ; 00425fd2
     POP EBP                             ; 00425fd4

@@ -1,14 +1,14 @@
 // Name: core_hero.cpp_FUN_004f3350
 // Address: 004f3350
 // Address Range: [[004f3350, 004f33a4]]
-// Convention: unknown
-// Signature: void core_hero_cpp_FUN_004f3350(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hero_cpp_FUN_004f3350(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_hero.cpp_FUN_004f3350(uint param_1) */
 
-void core_hero_cpp_FUN_004f3350(void)
+void __cdecl core_hero_cpp_FUN_004f3350(void)
 
 {
   CDemonActor *pCVar1;

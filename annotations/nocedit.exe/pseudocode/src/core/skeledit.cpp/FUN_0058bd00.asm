@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_skeledit_cpp_FUN_0058bd00(void)
+; __cdecl void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
@@ -158,7 +158,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0058be12
     PUSH ECX                            ; 0058be15
     CALL core_skeledit.cpp_FUN_0058ac30 ; 0058be16
-        ;   XREF to: 0058ac30 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058ac30()
+        ;   XREF to: 0058ac30 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058ac30()
     ADD ESP,0x8                         ; 0058be1b
     PUSH 0x1                            ; 0058be1e
     PUSH 0x102                          ; 0058be20

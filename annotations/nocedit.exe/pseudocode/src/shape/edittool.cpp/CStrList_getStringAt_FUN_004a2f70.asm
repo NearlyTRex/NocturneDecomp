@@ -13,11 +13,11 @@
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7a6
 ;   core_mission.cpp_FUN_00524c20 at 00524cb6
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c9f3
-;   core_msnedit.cpp_DeleteActors_FUN_0053df90 at 0053e089
-;   core_msnedit.cpp_FUN_0053b510 at 0053b907
-;   core_msnedit.cpp_FUN_0053b9f0 at 0053ba75
-;   core_msnedit.cpp_FUN_0053c210 at 0053c2e4
-;   core_msnedit.cpp_FUN_0053d8b0 at 0053d9ba
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053ac4a
+;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b427
+;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b907
+;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053ba75
+;   core_msnedit.cpp_CDemonMission_FUN_0053c210 at 0053c2e4
 ;   ... and 51 more
 ;
 ; *****************************************************************************

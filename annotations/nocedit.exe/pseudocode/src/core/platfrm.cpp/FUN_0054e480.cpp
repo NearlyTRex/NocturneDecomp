@@ -1,14 +1,14 @@
 // Name: core_platfrm.cpp_FUN_0054e480
 // Address: 0054e480
 // Address Range: [[0054e480, 0054e4df]]
-// Convention: unknown
-// Signature: undefined4 core_platfrm_cpp_FUN_0054e480(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_platfrm_cpp_FUN_0054e480(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_FUN_0054e480(uint param_1) */
 
-uint core_platfrm_cpp_FUN_0054e480(void)
+int __cdecl core_platfrm_cpp_FUN_0054e480(void)
 
 {
   CDemonActor *pCVar1;

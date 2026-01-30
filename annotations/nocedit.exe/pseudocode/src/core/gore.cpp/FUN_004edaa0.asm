@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gore_cpp_FUN_004edaa0(void)
+; __cdecl void __cdecl core_gore_cpp_FUN_004edaa0(void)
 ;
 ;
 ; XREF[8]:
@@ -12,7 +12,7 @@
 ;   core_gore.cpp_FUN_004edbb0 at 004edbe0
 ;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f5093
 ;   core_melee.cpp_FUN_0050ec10 at 0050ecb4
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e6ce
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e6ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02d833d0
@@ -53,7 +53,7 @@ section .text
     PUSH EBP                            ; 004edae1
     PUSH EAX                            ; 004edae2
     CALL core_gore.cpp_FUN_004eb9a0     ; 004edae3
-        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004eb9a0()
+        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004eb9a0()
     ADD ESP,0x10                        ; 004edae8
     POP EDI                             ; 004edaeb
     POP EBP                             ; 004edaec

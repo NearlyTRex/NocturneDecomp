@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dest_cpp_FUN_0046f9b0(void)
+; __cdecl void __cdecl core_dest_cpp_FUN_0046f9b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
@@ -94,7 +94,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046fa41
     PUSH EAX                            ; 0046fa44
     CALL core_dest.cpp_FUN_0046fd50     ; 0046fa45
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_FUN_0046fd50()
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_FUN_0046fd50()
     ADD ESP,0x8                         ; 0046fa4a
     TEST EAX,EAX                        ; 0046fa4d
     JZ 0x0046fa34                       ; 0046fa4f

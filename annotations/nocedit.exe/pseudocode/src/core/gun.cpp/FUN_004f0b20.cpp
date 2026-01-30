@@ -1,14 +1,14 @@
 // Name: core_gun.cpp_FUN_004f0b20
 // Address: 004f0b20
 // Address Range: [[004f0b20, 004f0b31]]
-// Convention: unknown
-// Signature: float core_gun_cpp_FUN_004f0b20(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_gun_cpp_FUN_004f0b20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_gun.cpp_FUN_004f0b20() */
 
-float core_gun_cpp_FUN_004f0b20(void)
+float __cdecl core_gun_cpp_FUN_004f0b20(void)
 
 {
   float fVar1;

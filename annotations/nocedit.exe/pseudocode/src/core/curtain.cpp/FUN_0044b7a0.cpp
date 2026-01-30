@@ -1,21 +1,23 @@
 // Name: core_curtain.cpp_FUN_0044b7a0
 // Address: 0044b7a0
 // Address Range: [[0044b7a0, 0044b8c3]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_FUN_0044b7a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_FUN_0044b7a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_curtain.cpp_FUN_0044b7a0(uint param_1) */
 
-void core_curtain_cpp_FUN_0044b7a0(void)
+void __cdecl core_curtain_cpp_FUN_0044b7a0(void)
 
 {
   int iVar1;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_00000010;
+  uint uStack00000014;
   float in_stack_00000018;
+  uint uStack0000001c;
   float in_stack_00000020;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
@@ -40,6 +42,7 @@ void core_curtain_cpp_FUN_0044b7a0(void)
       *(float *)(in_stack_00000004[1].actor_name + 4) =
            *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_00000020;
     }
+    uStack0000001c = 0x3f000000;
     if (*(int *)in_stack_00000004[1].actor_name < 0x3f000000) {
       in_stack_00000004[1].actor_name[0] = '\0';
       in_stack_00000004[1].actor_name[1] = '\0';
@@ -56,6 +59,7 @@ void core_curtain_cpp_FUN_0044b7a0(void)
     in_stack_00000004[1].actor_name[9] = -0x34;
     in_stack_00000004[1].actor_name[10] = -0x34;
     in_stack_00000004[1].actor_name[0xb] = '=';
+    uStack00000014 = 0x44b8a2;
     (*((in_stack_00000004->vtable)._ub)->setup)(in_stack_00000004);
     return;
   }

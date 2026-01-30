@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_event_cpp_FUN_004b1890(void)
+; __cdecl int __cdecl core_event_cpp_FUN_004b1890(int *param_1)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   param_1
 ;
 ; XREF[1]:
 ;   core_event.cpp_FUN_004b18e0 at 004b18e5

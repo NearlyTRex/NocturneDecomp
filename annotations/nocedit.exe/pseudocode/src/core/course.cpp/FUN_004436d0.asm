@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_course_cpp_FUN_004436d0(void)
+; __cdecl void __cdecl core_course_cpp_FUN_004436d0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 34,
-        "line": 32,
-        "message": "too many arguments to function 'void core_cloth_cpp_FUN_0043bae0()'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -26,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 211,
+    "complexity_score": 139,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 26,
-    "suspect_count": 17,
+    "pseudocode_lines": 24,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 85
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -61,9 +54,9 @@
         "0043c394"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320",
-    "signature": "int core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(int param_1)"
+    "signature": "void __cdecl core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(void)"
   },
   "function_calls": [
     {
@@ -85,28 +78,24 @@
         "call_addr": "00429b25",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_FUN_00429aa0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "005c761e",
         "call_type": "direct",
         "caller": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.319148936170213,
@@ -151,13 +140,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "text": "int core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -194,76 +176,34 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_00000004",
-      "text": "param_1 = *in_stack_00000004;",
+      "text": "} while (iVar2 < *in_stack_00000004);",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "text": "param_1 = *in_stack_00000004;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "text": "} while (iVar2 < param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "text": "core_cloth_cpp_FUN_0043bae0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000004",
-      "text": "param_1 = *in_stack_00000004;",
+      "text": "} while (iVar2 < *in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "text": "param_1 = *in_stack_00000004;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "text": "} while (iVar2 < param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "text": "return param_1;",
-      "type": "unnamed_param"
     },
     {
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

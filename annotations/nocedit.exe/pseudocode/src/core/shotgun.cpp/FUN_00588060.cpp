@@ -1,14 +1,14 @@
 // Name: core_shotgun.cpp_FUN_00588060
 // Address: 00588060
 // Address Range: [[00588060, 005880fc] [0058830a, 005883ba]]
-// Convention: unknown
-// Signature: undefined4 core_shotgun_cpp_FUN_00588060(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_shotgun_cpp_FUN_00588060(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_shotgun.cpp_FUN_00588060(uint param_1) */
 
-uint core_shotgun_cpp_FUN_00588060(void)
+int __cdecl core_shotgun_cpp_FUN_00588060(void)
 
 {
   CVector3f *pCVar1;
@@ -29,7 +29,6 @@ uint core_shotgun_cpp_FUN_00588060(void)
   int iStack_100;
   float fStack_fc;
   int iStack_f8;
-  CDemonActor *pCStack_f4;
   CDemonActor *pCStack_ec;
   float fStack_e8;
   float fStack_e4;
@@ -196,7 +195,6 @@ uint core_shotgun_cpp_FUN_00588060(void)
           iStack_100 = *(int *)(in_stack_00000004[4].actor_name + 0xc);
           iStack_f8 = 0x65;
           fStack_fc = 0.15;
-          pCStack_f4 = in_stack_00000004;
           pCStack_ec = (*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);
           (*(((this_ptr->base).vtable._uc)->_uc).processDamage)
                     (this_ptr,(SDamageInfo *)(auStack_128 + 4));

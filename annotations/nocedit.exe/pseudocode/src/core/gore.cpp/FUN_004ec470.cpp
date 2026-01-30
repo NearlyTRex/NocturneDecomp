@@ -1,12 +1,12 @@
 // Name: core_gore.cpp_FUN_004ec470
 // Address: 004ec470
 // Address Range: [[004ec470, 004ec4f5]]
-// Convention: unknown
-// Signature: void core_gore_cpp_FUN_004ec470(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_FUN_004ec470(void)
 
 #include "nocturne.h"
 
-void core_gore_cpp_FUN_004ec470(void)
+void __cdecl core_gore_cpp_FUN_004ec470(void)
 
 {
   DAT_02d83368.base.count = 4;

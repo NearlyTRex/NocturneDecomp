@@ -1,12 +1,12 @@
 // Name: core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0
 // Address: 005542b0
 // Address Range: [[005542b0, 00554610]]
-// Convention: unknown
-// Signature: void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
 
 #include "nocturne.h"
 
-void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
+void __cdecl core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
 
 {
   byte bVar1;
@@ -28,17 +28,17 @@ void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
+  float local_14;
   
   iVar6 = in_stack_00000004;
   do {
-    local_14 = rand();
-    *(float *)(iVar6 + 0x10008) = (float)local_14 * 3.051851e-05f * (float)256;
-    local_14 = rand();
-    *(float *)(iVar6 + 0x10208) = (float)local_14 * 3.051851e-05f * (float)256;
-    local_14 = rand();
+    local_14 = (float)rand();
+    *(float *)(iVar6 + 0x10008) = (float)(int)local_14 * 3.051851e-05f * (float)256;
+    local_14 = (float)rand();
+    *(float *)(iVar6 + 0x10208) = (float)(int)local_14 * 3.051851e-05f * (float)256;
+    local_14 = (float)rand();
     iVar7 = iVar6 + 4;
-    *(float *)(iVar6 + 0x10408) = (float)local_14 * 3.051851e-05f * (float)128;
+    *(float *)(iVar6 + 0x10408) = (float)(int)local_14 * 3.051851e-05f * (float)128;
     iVar6 = iVar7;
   } while (iVar7 != in_stack_00000004 + 0x200);
   local_28 = (void *)(in_stack_00000004 + 8);
@@ -52,7 +52,7 @@ void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
     iVar6 = local_24;
     iVar7 = in_stack_00000004;
     do {
-      local_14 = local_1c;
+      local_14 = (float)local_1c;
       local_14 = core_procedur_cpp_FUN_00554620();
       iVar7 = iVar7 + 4;
       core_procedur_cpp_FUN_00554670();

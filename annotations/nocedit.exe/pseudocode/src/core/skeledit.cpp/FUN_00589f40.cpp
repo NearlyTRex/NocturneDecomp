@@ -1,12 +1,12 @@
 // Name: core_skeledit.cpp_FUN_00589f40
 // Address: 00589f40
 // Address Range: [[00589f40, 00589f96]]
-// Convention: unknown
-// Signature: void core_skeledit_cpp_FUN_00589f40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeledit_cpp_FUN_00589f40(void)
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_00589f40(void)
+void __cdecl core_skeledit_cpp_FUN_00589f40(void)
 
 {
   CPodFile *pCVar1;

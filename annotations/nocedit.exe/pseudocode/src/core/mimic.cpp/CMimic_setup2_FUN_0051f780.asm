@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
+; __cdecl void __cdecl core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
 ;
 ;
 ; Referenced Globals:
@@ -72,7 +72,7 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 0051f7fd
     PUSH EBX                            ; 0051f801
     CALL core_mimic.cpp_FUN_0051fcc0    ; 0051f802
-        ;   XREF to: 0051fcc0 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_FUN_0051fcc0()
+        ;   XREF to: 0051fcc0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_FUN_0051fcc0()
     ADD ESP,0x8                         ; 0051f807
     PUSH EBX                            ; 0051f80a
         ;   Label: LAB_0051f80a
@@ -100,7 +100,7 @@ section .text
         ;   Label: LAB_0051f840
     PUSH EBX                            ; 0051f844
     CALL core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 ; 0051f845
-        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_CMimic_processMorph_FUN_00520ba0()
+        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processMorph_FUN_00520ba0()
     ADD ESP,0x8                         ; 0051f84a
     POP EDI                             ; 0051f84d
     POP EBX                             ; 0051f84e
@@ -132,7 +132,7 @@ section .text
         ;   XREF to: 0051f80a (CONDITIONAL_JUMP)  ; LAB_0051f80a
     PUSH EBX                            ; 0051f893
     CALL core_mimic.cpp_FUN_0051f930    ; 0051f894
-        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_FUN_0051f930()
+        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_FUN_0051f930()
     MOV ECX,dword ptr [EBX + 0x4bdf4]   ; 0051f899
     ADD ESP,0x4                         ; 0051f89f
     CMP ECX,0x1                         ; 0051f8a2
@@ -158,7 +158,7 @@ section .text
     PUSH EBX                            ; 0051f8da
         ;   Label: LAB_0051f8da
     CALL core_mimic.cpp_FUN_00520500    ; 0051f8db
-        ;   XREF to: 00520500 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_FUN_00520500()
+        ;   XREF to: 00520500 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_FUN_00520500()
     ADD ESP,0x4                         ; 0051f8e0
     PUSH EBX                            ; 0051f8e3
     CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0051f8e4

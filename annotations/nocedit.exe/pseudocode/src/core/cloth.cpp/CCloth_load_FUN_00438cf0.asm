@@ -272,7 +272,7 @@ section .text
     PUSH ESI                            ; 00438fa0
         ;   Label: LAB_00438fa0
     CALL core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0 ; 00438fa1
-        ;   XREF to: 004394e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0()
+        ;   XREF to: 004394e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0()
     ADD ESP,0x4                         ; 00438fa6
     MOV EBX,dword ptr [ESP + 0x208]     ; 00438fa9
     PUSH EBX                            ; 00438fb0

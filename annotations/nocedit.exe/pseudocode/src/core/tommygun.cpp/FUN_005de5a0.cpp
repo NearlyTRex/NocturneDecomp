@@ -1,15 +1,15 @@
 // Name: core_tommygun.cpp_FUN_005de5a0
 // Address: 005de5a0
 // Address Range: [[005de5a0, 005de5c7]]
-// Convention: unknown
-// Signature: void core_tommygun_cpp_FUN_005de5a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_tommygun_cpp_FUN_005de5a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_tommygun.cpp_FUN_005de5a0(uint param_1, uint
    param_2) */
 
-void core_tommygun_cpp_FUN_005de5a0(void)
+void __cdecl core_tommygun_cpp_FUN_005de5a0(void)
 
 {
   CWeapon *in_stack_00000004;

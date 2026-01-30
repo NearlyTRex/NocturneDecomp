@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_gore_cpp_CGore_process_FUN_004ed9e0(void)
+; __cdecl int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e33b4
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e525
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539934
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539934
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e525
 ;
 ; Referenced Globals:
 ;   CBloodParticle[256] DAT_02d833d4
@@ -64,7 +66,7 @@ section .text
     PUSH ESI                            ; 004eda1c | DAT_02d873dc | DAT_02d87420
         ;   Label: LAB_004eda1c
     CALL core_gore.cpp_FUN_004ecad0     ; 004eda1d
-        ;   XREF to: 004ecad0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecad0()
+        ;   XREF to: 004ecad0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ecad0()
     INC EBX                             ; 004eda22
     MOV ECX,dword ptr [0x02d873d8]      ; 004eda23 | DAT_02d873d8
     ADD ESP,0x4                         ; 004eda29
@@ -78,7 +80,7 @@ section .text
     PUSH 0x2da8724                      ; 004eda40 | DAT_02da8724
         ;   Label: LAB_004eda40
     CALL core_gore.cpp_FUN_004ecc40     ; 004eda45
-        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecc40()
+        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ecc40()
     XOR ESI,ESI                         ; 004eda4a
     MOV EBX,dword ptr [0x02da8720]      ; 004eda4c | DAT_02da8720
     ADD ESP,0x4                         ; 004eda52
@@ -89,7 +91,7 @@ section .text
     PUSH EBX                            ; 004eda5e | DAT_02da8724 | DAT_02da874c
         ;   Label: LAB_004eda5e
     CALL core_gore.cpp_FUN_004ed0a0     ; 004eda5f
-        ;   XREF to: 004ed0a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed0a0()
+        ;   XREF to: 004ed0a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed0a0()
     INC ESI                             ; 004eda64
     MOV EDI,dword ptr [0x02da8720]      ; 004eda65 | DAT_02da8720
     ADD ESP,0x4                         ; 004eda6b

@@ -1,15 +1,15 @@
 // Name: core_mobster.cpp_FUN_00527740
 // Address: 00527740
 // Address Range: [[00527740, 005278c5]]
-// Convention: unknown
-// Signature: void core_mobster_cpp_FUN_00527740(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mobster_cpp_FUN_00527740(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mobster.cpp_FUN_00527740(uint param_1, uint
    param_2) */
 
-void core_mobster_cpp_FUN_00527740(void)
+void __cdecl core_mobster_cpp_FUN_00527740(void)
 
 {
   CMotionController *this_ptr;

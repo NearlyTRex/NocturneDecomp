@@ -16,7 +16,7 @@ void __cdecl core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemo
   
   in_stack_00000008->actor_name[0] = '\0';
   core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_00000008);
-  core_mission_cpp_FUN_00524660();
+  core_mission_cpp_CDemonMission_FUN_00524660(this_ptr);
   pcVar2 = local_2c;
   do {
     cVar1 = *pcVar2;

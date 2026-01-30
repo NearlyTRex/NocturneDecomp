@@ -1,15 +1,15 @@
 // Name: core_filmreel.cpp_CFilmProjector_load_FUN_004beb40
 // Address: 004beb40
 // Address Range: [[004beb40, 004beccc]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_filmreel.cpp_CFilmProjector_load(CFilmProjector* param_1,
    uint param_2) */
 
-void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
+void __cdecl core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 
 {
   float fVar1;

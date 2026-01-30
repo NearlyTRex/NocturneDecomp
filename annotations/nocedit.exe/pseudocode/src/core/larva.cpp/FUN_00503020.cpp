@@ -1,14 +1,14 @@
 // Name: core_larva.cpp_FUN_00503020
 // Address: 00503020
 // Address Range: [[00503020, 0050305f]]
-// Convention: unknown
-// Signature: void core_larva_cpp_FUN_00503020(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_larva_cpp_FUN_00503020(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_larva.cpp_FUN_00503020(uint param_1) */
 
-void core_larva_cpp_FUN_00503020(void)
+void __cdecl core_larva_cpp_FUN_00503020(void)
 
 {
   CDeformableModelInstance *this_ptr;

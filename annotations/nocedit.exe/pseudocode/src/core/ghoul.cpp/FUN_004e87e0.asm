@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_ghoul_cpp_FUN_004e87e0(void)
+; __cdecl void __cdecl core_ghoul_cpp_FUN_004e87e0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x78]:1  local_78
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_004e881c
     PUSH EBX                            ; 004e881d
     CALL core_ghoul.cpp_FUN_004e8520    ; 004e881e
-        ;   XREF to: 004e8520 (UNCONDITIONAL_CALL)  ; undefined core_ghoul.cpp_FUN_004e8520()
+        ;   XREF to: 004e8520 (UNCONDITIONAL_CALL)  ; void core_ghoul.cpp_FUN_004e8520()
     MOV EDX,dword ptr [EBX + 0xbe3c]    ; 004e8823
     ADD ESP,0x8                         ; 004e8829
     TEST EDX,EDX                        ; 004e882c
@@ -171,7 +171,7 @@ section .text
         ;   Label: LAB_004e89a9
     PUSH EBX                            ; 004e89aa
     CALL core_enemy.cpp_FUN_004a9f10    ; 004e89ab
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004e89b0
     MOV ESP,EBP                         ; 004e89b3
     POP EBP                             ; 004e89b5
@@ -225,7 +225,7 @@ section .text
     PUSH EDI                            ; 004e8a42
     PUSH EBX                            ; 004e8a43
     CALL core_enemy.cpp_FUN_004a9f10    ; 004e8a44
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004e8a49
     MOV ESP,EBP                         ; 004e8a4c
     POP EBP                             ; 004e8a4e
@@ -319,7 +319,7 @@ section .text
     PUSH EDI                            ; 004e8b27
     PUSH EBX                            ; 004e8b28
     CALL core_enemy.cpp_FUN_004a9f10    ; 004e8b29
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004e8b2e
     MOV ESP,EBP                         ; 004e8b31
     POP EBP                             ; 004e8b33

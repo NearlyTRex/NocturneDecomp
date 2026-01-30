@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_tentacle_cpp_FUN_005db9d0(void)
+; __cdecl int __cdecl core_tentacle_cpp_FUN_005db9d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1cc]:1  local_1cc
@@ -72,7 +72,7 @@ section .text
     LEA ESI,[ESP + 0x190]               ; 005dba49
     LEA EDI,[ESP + 0x100]               ; 005dba50
     CALL core_tentacle.cpp_FUN_005dbb70 ; 005dba57
-        ;   XREF to: 005dbb70 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_FUN_005dbb70()
+        ;   XREF to: 005dbb70 (UNCONDITIONAL_CALL)  ; void core_tentacle.cpp_FUN_005dbb70()
     MOV ECX,0xc                         ; 005dba5c
     ADD ESP,0x4                         ; 005dba61
     LEA EAX,[ESP + 0xfc]                ; 005dba64

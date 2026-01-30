@@ -12,36 +12,35 @@
       {
         "category": "other",
         "column": 12,
-        "line": 20,
+        "line": 18,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 36,
+        "line": 33,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 38,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 140,
+    "complexity_score": 62,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 30,
-    "suspect_count": 10,
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 79
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -52,9 +51,9 @@
         "0054b9a9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_FUN_0054b930",
-    "signature": "void cockpit_pkbitmap_cpp_FUN_0054b930 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,_FILE *param_6)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_FUN_0054b930(void)"
   },
   "function_calls": [
     {
@@ -185,74 +184,25 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 3,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "_FILE *in_stack_00000008;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_1",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "_fwrite(local_10,8,1,in_stack_00000008);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "text": "uint param_5,_FILE *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "text": "uint param_5,_FILE *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_5",
-      "text": "local_c = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_6",
-      "text": "_fwrite(local_10,8,1,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_6",
-      "text": "if ((param_6->_flag & 0x20) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_EBX",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing PBG header\",unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "if ((in_stack_00000008->_flag & 0x20) == 0) {",
+      "type": "stack_param"
     }
   ]
 }

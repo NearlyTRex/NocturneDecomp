@@ -1,15 +1,15 @@
 // Name: core_chain.cpp_CChain_load_FUN_00430fe0
 // Address: 00430fe0
 // Address Range: [[00430fe0, 00431100]]
-// Convention: unknown
-// Signature: void core_chain_cpp_CChain_load_FUN_00430fe0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_chain_cpp_CChain_load_FUN_00430fe0(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_other_chain.cpp_CChain_load(CChain* pChain, uint param_2, char*
    param_3, char* param_4) */
 
-void core_chain_cpp_CChain_load_FUN_00430fe0(void)
+void __cdecl core_chain_cpp_CChain_load_FUN_00430fe0(void)
 
 {
   CDemonActor *in_stack_00000004;

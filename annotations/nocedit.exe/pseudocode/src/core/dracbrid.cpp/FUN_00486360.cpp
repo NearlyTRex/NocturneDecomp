@@ -1,15 +1,15 @@
 // Name: core_dracbrid.cpp_FUN_00486360
 // Address: 00486360
 // Address Range: [[00486360, 00486421]]
-// Convention: unknown
-// Signature: undefined4 core_dracbrid_cpp_FUN_00486360(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_dracbrid_cpp_FUN_00486360(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_draculabride.cpp_FUN_00486360(uint param_1, uint
    param_2) */
 
-uint core_dracbrid_cpp_FUN_00486360(void)
+int __cdecl core_dracbrid_cpp_FUN_00486360(void)
 
 {
   CVector3f *pCVar1;

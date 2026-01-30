@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_icepick_cpp_FUN_004f93a0(void)
+; __cdecl void __cdecl core_icepick_cpp_FUN_004f93a0(void)
 ;
 ;
 ; XREF[1]:
@@ -74,7 +74,7 @@ section .text
     PUSH EDI                            ; 004f9409
     PUSH EBX                            ; 004f940a
     CALL core_icepick.cpp_FUN_004f9490  ; 004f940b
-        ;   XREF to: 004f9490 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_FUN_004f9490()
+        ;   XREF to: 004f9490 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004f9490()
     ADD ESP,0x8                         ; 004f9410
     JMP 0x004f93f0                      ; 004f9413
         ;   XREF to: 004f93f0 (UNCONDITIONAL_JUMP)  ; LAB_004f93f0
@@ -83,7 +83,7 @@ section .text
     PUSH ECX                            ; 004f941b
     PUSH EBX                            ; 004f941c
     CALL core_icepick.cpp_FUN_004f9490  ; 004f941d
-        ;   XREF to: 004f9490 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_FUN_004f9490()
+        ;   XREF to: 004f9490 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004f9490()
     ADD ESP,0x8                         ; 004f9422
     JMP 0x004f93f0                      ; 004f9425
         ;   XREF to: 004f93f0 (UNCONDITIONAL_JUMP)  ; LAB_004f93f0

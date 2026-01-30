@@ -13,8 +13,8 @@
 ;
 ; XREF[9]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f5cb
-;   core_msnedit.cpp_FUN_0053b510 at 0053b7ae
-;   core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030 at 0053b2ce
+;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b2ce
+;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b7ae
 ;   core_script.cpp_FUN_00562920 at 00563911
 ;   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630 at 00578723
 ;   engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 at 004b5216

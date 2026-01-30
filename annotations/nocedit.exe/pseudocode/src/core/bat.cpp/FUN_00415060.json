@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 16,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -33,9 +40,9 @@
         "0041506e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bat.cpp_FUN_00415060",
-    "signature": "undefined4 * core_bat_cpp_FUN_00415060(void)"
+    "signature": "int __cdecl core_bat_cpp_FUN_00415060(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -99,7 +106,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
+      "text": "return (int)in_stack_00000004;",
       "type": "stack_param"
     }
   ]

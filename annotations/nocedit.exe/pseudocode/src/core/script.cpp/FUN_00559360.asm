@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_FUN_00559360(void)
+; __cdecl void __cdecl core_script_cpp_FUN_00559360(char *param_1)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_dbLoad_FUN_005603c0 at 005604c5

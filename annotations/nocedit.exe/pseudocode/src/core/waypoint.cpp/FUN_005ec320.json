@@ -2,16 +2,40 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 18,
+        "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
+      },
+      {
+        "category": "syntax_error",
+        "column": 13,
+        "line": 21,
+        "message": "expected ';' before 'extraout_var_00'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 18,
+        "line": 33,
+        "message": "'extraout_var' was not declared in this scope"
+      },
+      {
         "category": "other",
         "column": 41,
-        "line": 61,
+        "line": 64,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 69,
+        "line": 72,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 68,
+        "line": 87,
+        "message": "'extraout_var_00' was not declared in this scope"
       }
     ],
     "success": false,
@@ -25,98 +49,101 @@
       {
         "category": "other",
         "column": 14,
-        "line": 33,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 38,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 42,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 50,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 52,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 52,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
         "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 26,
+        "column": 22,
         "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 50,
+        "line": 55,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 56,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 58,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 16,
-        "line": 57,
+        "line": 60,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 61,
+        "line": 64,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 75,
+        "line": 78,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 83,
+        "line": 86,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 85,
+        "line": 88,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 255,
+    "complexity_score": 353,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 85,
-    "suspect_count": 15,
+    "pseudocode_lines": 88,
+    "suspect_count": 23,
     "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
       "pointer_cast",
       "stack_param",
       "undefined_data",
+      "undefined_type",
       "unnamed_param"
     ],
-    "total_lines": 257
+    "total_lines": 260
   },
   "cross_references": [
     {
@@ -146,9 +173,9 @@
         "005ec4c1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_waypoint.cpp_FUN_005ec320",
-    "signature": "int core_waypoint_cpp_FUN_005ec320(void)"
+    "signature": "int __cdecl core_waypoint_cpp_FUN_005ec320(void)"
   },
   "function_calls": [
     {
@@ -290,102 +317,158 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved type",
+      "line": 11,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 14,
+      "match": "undefined3 extraout_var_00",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_var_00",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 0) {",
       "type": "stack_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_var",
+      "text": "if (CONCAT31(extraout_var,bVar3) != 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31(extraout_var,bVar3) != 0) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 27,
       "match": "in_stack_00000008",
       "text": "return in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "if (0 < *(int *)(in_stack_00000008 + 0x370)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 37,
       "match": "in_stack_00000008",
       "text": "DAT_03f939a4 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_03f939a4",
-      "text": "DAT_03f939a4 = in_stack_00000008;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 0x554) = 0;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 37,
       "match": "DAT_03f939a4",
-      "text": "iVar7 = DAT_03f939a4;",
+      "text": "DAT_03f939a4 = in_stack_00000008;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 0x554) = 0;",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 40,
+      "match": "DAT_03f939a4",
+      "text": "iVar8 = DAT_03f939a4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
       "match": "DAT_03f939a4",
       "text": "memmove(&DAT_03f939a4,&DAT_03f939a8,n);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 43,
       "match": "DAT_03f939a8",
       "text": "memmove(&DAT_03f939a4,&DAT_03f939a8,n);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 57,
       "match": "(int *)((int)",
-      "text": "if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar4)) break;",
+      "text": "if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar5)) break;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 57,
       "match": "DAT_03f939a4",
-      "text": "if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar4)) break;",
+      "text": "if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar5)) break;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 65,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_03f939a4 + n) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 65,
       "match": "DAT_03f939a4",
       "text": "*(int *)((int)&DAT_03f939a4 + n) = iVar1;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 80,
+      "match": "extraout_var_00",
+      "text": "(bVar3 = core_waypoint_cpp_FUN_005ebd40(), CONCAT31(extraout_var_00,bVar3) != 0)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "CONCAT31",
+      "text": "(bVar3 = core_waypoint_cpp_FUN_005ebd40(), CONCAT31(extraout_var_00,bVar3) != 0)) {",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

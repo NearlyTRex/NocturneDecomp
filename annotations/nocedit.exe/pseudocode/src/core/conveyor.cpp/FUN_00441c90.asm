@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_conveyor_cpp_FUN_00441c90(void)
+; __cdecl CDemonActorType * __cdecl core_conveyor_cpp_FUN_00441c90(void)
 ;
 ;
 ; Referenced Globals:

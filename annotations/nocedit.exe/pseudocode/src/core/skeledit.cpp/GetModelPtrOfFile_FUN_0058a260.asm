@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,_FILE *param_6)
+; __cdecl void __cdecl core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(void)
 ;
 ;
 ; XREF[25]:
@@ -53,7 +53,7 @@ section .text
     ADD ESP,0x4                         ; 0058a296
     PUSH EAX                            ; 0058a299
     CALL core_skeledit.cpp_FUN_0058a2b0 ; 0058a29a
-        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058a2b0()
+        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a2b0()
     ADD ESP,0x8                         ; 0058a29f
     POP EBX                             ; 0058a2a2
     RET                                 ; 0058a2a3

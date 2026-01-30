@@ -1,15 +1,15 @@
 // Name: core_gasmask.cpp_FUN_004e5ef0
 // Address: 004e5ef0
 // Address Range: [[004e5ef0, 004e5f39]]
-// Convention: unknown
-// Signature: void core_gasmask_cpp_FUN_004e5ef0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gasmask_cpp_FUN_004e5ef0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_gasmask.cpp_FUN_004e5ef0(uint param_1, uint
    param_2) */
 
-void core_gasmask_cpp_FUN_004e5ef0(void)
+void __cdecl core_gasmask_cpp_FUN_004e5ef0(void)
 
 {
   CKeyFramedModel *pCVar1;

@@ -1,12 +1,12 @@
 // Name: core_ammobox.cpp_FUN_00411a30
 // Address: 00411a30
 // Address Range: [[00411a30, 00411a99]]
-// Convention: unknown
-// Signature: void core_ammobox_cpp_FUN_00411a30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ammobox_cpp_FUN_00411a30(void)
 
 #include "nocturne.h"
 
-void core_ammobox_cpp_FUN_00411a30(void)
+void __cdecl core_ammobox_cpp_FUN_00411a30(void)
 
 {
   char cVar1;

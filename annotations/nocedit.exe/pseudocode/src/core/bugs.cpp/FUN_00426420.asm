@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_bugs_cpp_FUN_00426420(void)
+; __cdecl int __cdecl core_bugs_cpp_FUN_00426420(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x94]:4  local_94
@@ -108,7 +108,7 @@ section .text
     PUSH dword ptr [EBX + 0x8]          ; 00426497
     PUSH ECX                            ; 0042649a
     CALL core_bugs.cpp_FUN_00425b70     ; 0042649b
-        ;   XREF to: 00425b70 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00425b70()
+        ;   XREF to: 00425b70 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_FUN_00425b70()
     MOV dword ptr [ESP + 0x88],EAX      ; 004264a0
     FLD float ptr [ESP + 0x88]          ; 004264a7
     ADD ESP,0xc                         ; 004264ae
@@ -190,7 +190,7 @@ section .text
     PUSH dword ptr [ESP + 0x8]          ; 0042664a
     PUSH EDI                            ; 0042664e
     CALL core_bugs.cpp_FUN_00425b70     ; 0042664f
-        ;   XREF to: 00425b70 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00425b70()
+        ;   XREF to: 00425b70 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_FUN_00425b70()
     MOV dword ptr [ESP + 0x88],EAX      ; 00426654
     FLD float ptr [ESP + 0x88]          ; 0042665b
     ADD ESP,0xc                         ; 00426662

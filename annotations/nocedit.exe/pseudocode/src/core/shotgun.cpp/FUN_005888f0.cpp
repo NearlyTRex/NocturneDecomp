@@ -1,14 +1,14 @@
 // Name: core_shotgun.cpp_FUN_005888f0
 // Address: 005888f0
 // Address Range: [[005888f0, 00588ad2]]
-// Convention: unknown
-// Signature: void core_shotgun_cpp_FUN_005888f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_shotgun_cpp_FUN_005888f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_shotgun.cpp_FUN_005888f0(uint param_1) */
 
-void core_shotgun_cpp_FUN_005888f0(void)
+void __cdecl core_shotgun_cpp_FUN_005888f0(void)
 
 {
   float fVar1;

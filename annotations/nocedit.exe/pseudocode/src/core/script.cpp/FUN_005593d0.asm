@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_FUN_005593d0(void)
+; __cdecl void __cdecl core_script_cpp_FUN_005593d0(char *param_1)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
 ;
 ; XREF[3]:
+;   core_script.cpp_CScript_FUN_00560160 at 0056019b
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055a926
 ;   core_script.cpp_FUN_005593f0 at 00559480
-;   core_script.cpp_FUN_00560160 at 0056019b
 ;
 ; Referenced Globals:
 ;   char[256] g_CharacterClassificationTable

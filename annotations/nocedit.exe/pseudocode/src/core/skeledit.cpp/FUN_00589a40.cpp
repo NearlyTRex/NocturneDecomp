@@ -1,12 +1,12 @@
 // Name: core_skeledit.cpp_FUN_00589a40
 // Address: 00589a40
 // Address Range: [[00589a40, 00589b06]]
-// Convention: unknown
-// Signature: void core_skeledit_cpp_FUN_00589a40(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeledit_cpp_FUN_00589a40(void)
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)
+void __cdecl core_skeledit_cpp_FUN_00589a40(void)
 
 {
   _FILE *file;
@@ -18,7 +18,7 @@ void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)
   if (file == (_FILE *)0x0) {
     return;
   }
-  _fprintf(file,"// version\n",unaff_EBX);
+  _fprintf(file,"// version\n");
   _fprintf(file,"%d\n",1);
   _fprintf(file,"// lastPOSimported\n");
   _fprintf(file,"\"%s\"\n",&DAT_03670848);

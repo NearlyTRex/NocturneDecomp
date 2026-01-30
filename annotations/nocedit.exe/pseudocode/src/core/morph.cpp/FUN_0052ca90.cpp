@@ -1,14 +1,14 @@
 // Name: core_morph.cpp_FUN_0052ca90
 // Address: 0052ca90
 // Address Range: [[0052ca90, 0052cc08]]
-// Convention: unknown
-// Signature: void core_morph_cpp_FUN_0052ca90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_FUN_0052ca90(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_morph.cpp_FUN_0052ca90(uint param_1) */
 
-void core_morph_cpp_FUN_0052ca90(void)
+void __cdecl core_morph_cpp_FUN_0052ca90(void)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_FUN_004858f0(void)
+; __cdecl void __cdecl core_dracbrid_cpp_FUN_004858f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
@@ -90,7 +90,7 @@ section .text
         ;   Label: LAB_00485964
     PUSH EDI                            ; 00485965
     CALL core_dracbrid.cpp_FUN_00485b20 ; 00485966
-        ;   XREF to: 00485b20 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_00485b20()
+        ;   XREF to: 00485b20 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00485b20()
     ADD ESP,0x10                        ; 0048596b
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0048596e
     INC ESI                             ; 00485975
@@ -176,7 +176,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 00485afc | g_CGorePtr
     PUSH EDI                            ; 00485b02 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 00485b03
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 00485b08
     MOV ESP,EBP                         ; 00485b0b
     POP EBP                             ; 00485b0d

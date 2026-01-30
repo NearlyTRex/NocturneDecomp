@@ -68,10 +68,10 @@
         "00485b11"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dracbrid.cpp_FUN_004858f0",
-    "signature": "void core_dracbrid_cpp_FUN_004858f0(void)"
+    "signature": "void __cdecl core_dracbrid_cpp_FUN_004858f0(void)"
   },
   "function_calls": [
     {
@@ -132,17 +132,15 @@
         "call_addr": "00484575",
         "call_type": "direct",
         "caller": "core_dracbrid.cpp_FUN_00484410",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 7,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 4
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 5
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.306451612903226,
@@ -550,11 +548,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
+      "estimated_params": 4,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
     }
   ]

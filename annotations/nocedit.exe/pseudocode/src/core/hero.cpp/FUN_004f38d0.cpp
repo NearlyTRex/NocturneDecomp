@@ -1,15 +1,15 @@
 // Name: core_hero.cpp_FUN_004f38d0
 // Address: 004f38d0
 // Address Range: [[004f38d0, 004f390f]]
-// Convention: unknown
-// Signature: void core_hero_cpp_FUN_004f38d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hero_cpp_FUN_004f38d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_hero.cpp_FUN_004f38d0(uint param_1, uint param_2)
     */
 
-void core_hero_cpp_FUN_004f38d0(void)
+void __cdecl core_hero_cpp_FUN_004f38d0(void)
 
 {
   int iVar1;

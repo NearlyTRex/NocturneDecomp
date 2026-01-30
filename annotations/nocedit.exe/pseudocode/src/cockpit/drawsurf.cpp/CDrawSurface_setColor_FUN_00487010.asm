@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 at 00489df1
-;   core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80 at 00559dc8
+;   core_script.cpp_CScript_FUN_00559d80 at 00559dc8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_00621c76

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gabriela_cpp_FUN_004d4890(void)
+; __cdecl void __cdecl core_gabriela_cpp_FUN_004d4890(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xa0]:1  local_a0
@@ -152,7 +152,7 @@ section .text
         ;   Label: caseD_14
     PUSH EBX                            ; 004d496d
     CALL core_hero.cpp_FUN_004f3890     ; 004d496e
-        ;   XREF to: 004f3890 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3890()
+        ;   XREF to: 004f3890 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3890()
     ADD ESP,0x8                         ; 004d4973
     JMP 0x004d4927                      ; 004d4976
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
@@ -161,7 +161,7 @@ section .text
     PUSH 0x0                            ; 004d4982
     PUSH EBX                            ; 004d4984
     CALL core_hero.cpp_FUN_004f3890     ; 004d4985
-        ;   XREF to: 004f3890 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3890()
+        ;   XREF to: 004f3890 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3890()
     ADD ESP,0x8                         ; 004d498a
     JMP 0x004d4927                      ; 004d498d
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
@@ -184,7 +184,7 @@ section .text
         ;   Label: caseD_15
     PUSH EBX                            ; 004d49b7
     CALL core_hero.cpp_FUN_004f38d0     ; 004d49b8
-        ;   XREF to: 004f38d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f38d0()
+        ;   XREF to: 004f38d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f38d0()
     ADD ESP,0x8                         ; 004d49bd
     JMP 0x004d4927                      ; 004d49c0
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
@@ -360,7 +360,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 004d4bbe | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 004d4bc4 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004d4bc5
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 004d4bca
     PUSH 0x62af35                       ; 004d4bcd | = "kick1.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004d4bd2
@@ -407,14 +407,14 @@ section .text
     PUSH EBX                            ; 004d4c4d
         ;   Label: caseD_13
     CALL core_gabriela.cpp_FUN_004d5c10 ; 004d4c4e
-        ;   XREF to: 004d5c10 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d5c10()
+        ;   XREF to: 004d5c10 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d5c10()
     ADD ESP,0x4                         ; 004d4c53
     JMP 0x004d4927                      ; 004d4c56
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
     PUSH EBX                            ; 004d4c5b
         ;   Label: caseD_16
     CALL core_hero.cpp_FUN_004f2ed0     ; 004d4c5c
-        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2ed0()
+        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2ed0()
     ADD ESP,0x4                         ; 004d4c61
     TEST EAX,EAX                        ; 004d4c64
     JNZ 0x004d4927                      ; 004d4c66

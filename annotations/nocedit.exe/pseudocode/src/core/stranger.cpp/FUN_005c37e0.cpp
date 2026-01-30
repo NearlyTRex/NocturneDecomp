@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_FUN_005c37e0
 // Address: 005c37e0
 // Address Range: [[005c37e0, 005c395c]]
-// Convention: unknown
-// Signature: CVector3f * core_stranger_cpp_FUN_005c37e0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void)
 
 #include "nocturne.h"
 
-CVector3f * core_stranger_cpp_FUN_005c37e0(void)
+CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void)
 
 {
   float *pfVar1;

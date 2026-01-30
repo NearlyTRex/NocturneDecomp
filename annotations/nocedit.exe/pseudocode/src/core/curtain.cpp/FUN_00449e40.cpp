@@ -1,12 +1,12 @@
 // Name: core_curtain.cpp_FUN_00449e40
 // Address: 00449e40
 // Address Range: [[00449e40, 00449f08]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_FUN_00449e40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_FUN_00449e40(void)
 
 #include "nocturne.h"
 
-void core_curtain_cpp_FUN_00449e40(void)
+void __cdecl core_curtain_cpp_FUN_00449e40(void)
 
 {
   CVector3f *pCVar1;

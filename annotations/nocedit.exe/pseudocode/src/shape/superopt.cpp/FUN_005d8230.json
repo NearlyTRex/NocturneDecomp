@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 223,
+    "complexity_score": 184,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 13,
-    "suspect_count": 20,
+    "pseudocode_lines": 14,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 40
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -34,9 +34,9 @@
         "005d826e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_superopt.cpp_FUN_005d8230",
-    "signature": "void shape_superopt_cpp_FUN_005d8230(void)"
+    "signature": "void __cdecl shape_superopt_cpp_FUN_005d8230(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -84,30 +84,23 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 5,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "double *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 6,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "double in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008 /",
+      "text": "dVar1 = in_stack_00000008 /",
       "type": "stack_param"
     },
     {
@@ -135,91 +128,70 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]);",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]);",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]);",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = *in_stack_00000004 * in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = *in_stack_00000004 * in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000004 = *in_stack_00000004 * in_stack_00000008;",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1] = in_stack_00000004[1] * in_stack_00000008;",
+      "text": "*in_stack_00000004 = *in_stack_00000004 * dVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1] = in_stack_00000004[1] * in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000004[1] = in_stack_00000004[1] * in_stack_00000008;",
+      "text": "*in_stack_00000004 = *in_stack_00000004 * dVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2] = in_stack_00000004[2] * in_stack_00000008;",
+      "text": "in_stack_00000004[1] = in_stack_00000004[1] * dVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2] = in_stack_00000004[2] * in_stack_00000008;",
+      "text": "in_stack_00000004[1] = in_stack_00000004[1] * dVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000004[2] = in_stack_00000004[2] * in_stack_00000008;",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2] = in_stack_00000004[2] * dVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2] = in_stack_00000004[2] * dVar1;",
       "type": "stack_param"
     }
   ]

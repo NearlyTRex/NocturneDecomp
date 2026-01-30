@@ -21,23 +21,23 @@ CSpike * __cdecl CSpike::ctor(CSpike *this_ptr);
 
 // Original: core_spike.cpp_FUN_005b8360
 // Address: 005b8360
-void FUN_005b8360(void);
+void __cdecl FUN_005b8360(void);
 
 // Original: core_spike.cpp_FUN_005b8410
 // Address: 005b8410
-void FUN_005b8410(void);
+void __cdecl FUN_005b8410(void);
 
 // Original: core_spike.cpp_FUN_005b8730
 // Address: 005b8730
-int FUN_005b8730(void);
+int __cdecl FUN_005b8730(void);
 
 // Original: core_spike.cpp_FUN_005b87a0
 // Address: 005b87a0
-float * FUN_005b87a0(void);
+float * __cdecl FUN_005b87a0(void);
 
 // Original: core_spike.cpp_CSpike_load_FUN_005b87f0
 // Address: 005b87f0
-void CSpike::load(void);
+void __cdecl CSpike::load(void);
 
 // Original: core_spike.cpp_CSpike_FUN_005b8940
 // Address: 005b8940
@@ -45,11 +45,11 @@ int __cdecl CSpike(CSpike *this_ptr);
 
 // Original: core_spike.cpp_FUN_005b8950
 // Address: 005b8950
-void FUN_005b8950(void);
+void __cdecl FUN_005b8950(void);
 
 // Original: core_spike.cpp_FUN_005b8e90
 // Address: 005b8e90
-void FUN_005b8e90(void);
+void __cdecl FUN_005b8e90(void);
 
 // Original: core_spike.cpp_CSpike_FUN_005b9020
 // Address: 005b9020

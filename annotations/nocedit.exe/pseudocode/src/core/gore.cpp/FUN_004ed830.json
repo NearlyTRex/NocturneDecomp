@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 39,
-        "line": 20,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 42,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 46,
-        "message": "too many arguments to function 'void core_gore_cpp_FUN_004ecc40()'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -32,20 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 349,
+    "complexity_score": 293,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 84,
-    "suspect_count": 24,
+    "pseudocode_lines": 78,
+    "suspect_count": 20,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 275
+    "total_lines": 269
   },
   "cross_references": [
     {
@@ -276,164 +255,136 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EDX",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 13,
       "match": "DAT_02d873d8",
       "text": "if (0 < DAT_02d873d8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 16,
       "match": "DAT_02d873dc",
-      "text": "if (*(int *)(DAT_02d873dc[0].unk + iVar2) == 0) {",
+      "text": "if (*(int *)(DAT_02d873dc[0].unk + iVar1) == 0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EDX",
-      "text": "uVar1 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "CONCAT44",
-      "text": "uVar4 = CONCAT44(uVar1,DAT_02d873d8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 21,
       "match": "DAT_02d873d8",
-      "text": "uVar4 = CONCAT44(uVar1,DAT_02d873d8);",
+      "text": "} while (iVar2 < DAT_02d873d8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02d873d8",
-      "text": "} while (iVar3 < DAT_02d873d8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
+      "line": 26,
       "match": "DAT_02d873d8",
       "text": "if (0 < DAT_02d873d8) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_02d873d8",
+      "text": "} while (iVar2 < DAT_02d873d8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == 0) {",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 36,
-      "match": "DAT_02d873d8",
-      "text": "} while (iVar3 < DAT_02d873d8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
       "match": "DAT_02da8720",
       "text": "if (0 < DAT_02da8720) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 39,
       "match": "DAT_02da8724",
-      "text": "if (*(int *)(DAT_02da8724[0].unk + iVar2) == 0) {",
+      "text": "if (*(int *)(DAT_02da8724[0].unk + iVar1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 44,
       "match": "DAT_02da8720",
-      "text": "} while (iVar3 < DAT_02da8720);",
+      "text": "} while (iVar2 < DAT_02da8720);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 49,
       "match": "DAT_02da8720",
       "text": "if (0 < DAT_02da8720) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 53,
       "match": "DAT_02da8720",
-      "text": "} while (iVar3 < DAT_02da8720);",
+      "text": "} while (iVar2 < DAT_02da8720);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 56,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 58,
       "match": "DAT_02da8c28",
       "text": "if (0 < DAT_02da8c28) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 61,
       "match": "DAT_02da8c2c",
-      "text": "if (*(int *)(DAT_02da8c2c[0].unk + iVar2) == 0) {",
+      "text": "if (*(int *)(DAT_02da8c2c[0].unk + iVar1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 66,
       "match": "DAT_02da8c28",
-      "text": "} while (iVar3 < DAT_02da8c28);",
+      "text": "} while (iVar2 < DAT_02da8c28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 71,
       "match": "DAT_02da8c28",
       "text": "if (0 < DAT_02da8c28) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 75,
       "match": "DAT_02da8c28",
-      "text": "} while (iVar3 < DAT_02da8c28);",
+      "text": "} while (iVar2 < DAT_02da8c28);",
       "type": "undefined_data"
     },
     {

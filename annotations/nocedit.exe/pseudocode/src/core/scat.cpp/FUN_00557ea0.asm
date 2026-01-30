@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_scat_cpp_FUN_00557ea0(void)
+; __cdecl void __cdecl core_scat_cpp_FUN_00557ea0(void)
 ;
 ;
 ; Referenced Globals:
@@ -138,7 +138,7 @@ section .text
     PUSH EBX                            ; 00557faf
         ;   Label: LAB_00557faf
     CALL core_scat.cpp_FUN_00558010     ; 00557fb0
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     ADD ESP,0x4                         ; 00557fb5
     TEST EAX,EAX                        ; 00557fb8
     JZ 0x00557fea                       ; 00557fba

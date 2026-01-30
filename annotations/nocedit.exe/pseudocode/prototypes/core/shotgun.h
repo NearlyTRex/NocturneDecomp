@@ -21,23 +21,23 @@ CShotgun * __cdecl CShotgun::ctor(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_FUN_00587f70
 // Address: 00587f70
-void FUN_00587f70(void);
+void __cdecl FUN_00587f70(void);
 
 // Original: core_shotgun.cpp_FUN_00588060
 // Address: 00588060
-undefined4 FUN_00588060(void);
+int __cdecl FUN_00588060(void);
 
 // Original: core_shotgun.cpp_CShotgun_FUN_005887a0
 // Address: 005887a0
-void CShotgun(void);
+void __cdecl CShotgun(void);
 
 // Original: core_shotgun.cpp_FUN_005888b0
 // Address: 005888b0
-float FUN_005888b0(void);
+float __cdecl FUN_005888b0(void);
 
 // Original: core_shotgun.cpp_FUN_005888f0
 // Address: 005888f0
-void FUN_005888f0(void);
+void __cdecl FUN_005888f0(void);
 
 // Original: core_shotgun.cpp_CShotgun_dtor_FUN_00588ae0
 // Address: 00588ae0

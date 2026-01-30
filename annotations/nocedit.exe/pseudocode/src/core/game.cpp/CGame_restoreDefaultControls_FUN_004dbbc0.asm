@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void)
+; __cdecl void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void)
 ;
 ;
 ; XREF[3]:

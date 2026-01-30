@@ -1,15 +1,15 @@
 // Name: core_imp.cpp_FUN_004fb110
 // Address: 004fb110
 // Address Range: [[004fb110, 004fb14c]]
-// Convention: unknown
-// Signature: void core_imp_cpp_FUN_004fb110(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_imp_cpp_FUN_004fb110(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_imp.cpp_FUN_004fb110(uint param_1, uint param_2)
     */
 
-void core_imp_cpp_FUN_004fb110(void)
+void __cdecl core_imp_cpp_FUN_004fb110(void)
 
 {
   CEnemy *in_stack_00000004;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_pendulum_cpp_FUN_00549b90(void)
+; __cdecl void __cdecl core_pendulum_cpp_FUN_00549b90(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x70]:8  local_70

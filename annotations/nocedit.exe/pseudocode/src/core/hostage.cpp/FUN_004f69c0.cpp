@@ -1,15 +1,15 @@
 // Name: core_hostage.cpp_FUN_004f69c0
 // Address: 004f69c0
 // Address Range: [[004f69c0, 004f6b2d]]
-// Convention: unknown
-// Signature: void core_hostage_cpp_FUN_004f69c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hostage_cpp_FUN_004f69c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_hostage.cpp_FUN_004f69c0(uint param_1, uint param_2)
     */
 
-void core_hostage_cpp_FUN_004f69c0(void)
+void __cdecl core_hostage_cpp_FUN_004f69c0(void)
 
 {
   CNPC *in_stack_00000004;

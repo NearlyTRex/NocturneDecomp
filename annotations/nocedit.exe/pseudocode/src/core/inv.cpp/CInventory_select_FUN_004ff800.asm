@@ -256,7 +256,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x104]     ; 004ff9e2
     PUSH EAX                            ; 004ff9e9
     CALL core_health.cpp_FUN_004f1fd0   ; 004ff9ea
-        ;   XREF to: 004f1fd0 (UNCONDITIONAL_CALL)  ; undefined core_health.cpp_FUN_004f1fd0()
+        ;   XREF to: 004f1fd0 (UNCONDITIONAL_CALL)  ; int core_health.cpp_FUN_004f1fd0()
     ADD ESP,0x8                         ; 004ff9ef
     TEST EAX,EAX                        ; 004ff9f2
     JG 0x004ff873                       ; 004ff9f4

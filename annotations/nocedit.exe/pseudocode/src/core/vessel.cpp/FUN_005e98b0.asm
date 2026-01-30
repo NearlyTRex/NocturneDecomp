@@ -174,7 +174,7 @@ section .text
         ;   Label: LAB_005e9a0a
     PUSH EAX                            ; 005e9a10
     CALL core_flame.cpp_FUN_004ca110    ; 005e9a11
-        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004ca110()
+        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_FUN_004ca110()
     ADD ESP,0x4                         ; 005e9a16
     JMP 0x005e98d6                      ; 005e9a19
         ;   XREF to: 005e98d6 (UNCONDITIONAL_JUMP)  ; LAB_005e98d6

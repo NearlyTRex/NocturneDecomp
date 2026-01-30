@@ -124,7 +124,7 @@ section .text
     MOV ECX,dword ptr [0x0067b654]      ; 005105a1 | g_CGamePtr | g_CGameInstance
     PUSH ECX                            ; 005105a7 | g_CGameInstance
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 005105a8
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 005105ad
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005105b0
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -205,7 +205,7 @@ section .text
     MOV EBX,dword ptr [0x0067b654]      ; 0051068a | g_CGamePtr | g_CGameInstance
     PUSH EBX                            ; 00510690 | g_CGameInstance
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 00510691
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 00510696
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00510699
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

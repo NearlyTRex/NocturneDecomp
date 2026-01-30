@@ -1,12 +1,12 @@
 // Name: core_charactr.cpp_FUN_0042f990
 // Address: 0042f990
 // Address Range: [[0042f990, 0042f9bd]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_FUN_0042f990(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_FUN_0042f990(void)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_FUN_0042f990(void)
+void __cdecl core_charactr_cpp_FUN_0042f990(void)
 
 {
   uint uVar1;

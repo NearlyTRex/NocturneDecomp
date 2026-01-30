@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_imp_cpp_FUN_004fae00(void)
+; __cdecl void __cdecl core_imp_cpp_FUN_004fae00(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x24]:1  local_24
@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_004fae80
     PUSH ESI                            ; 004fae81
     CALL core_imp.cpp_FUN_004fab60      ; 004fae82
-        ;   XREF to: 004fab60 (UNCONDITIONAL_CALL)  ; undefined core_imp.cpp_FUN_004fab60()
+        ;   XREF to: 004fab60 (UNCONDITIONAL_CALL)  ; void core_imp.cpp_FUN_004fab60()
     FLD float ptr [EDI + 0x4]           ; 004fae87
     ADD ESP,0x8                         ; 004fae8a
     FSUBR float ptr [ESI + 0x243c]      ; 004fae8d
@@ -127,7 +127,7 @@ section .text
         ;   Label: LAB_004faefc
     PUSH ESI                            ; 004faefd
     CALL core_enemy.cpp_FUN_004a9f10    ; 004faefe
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004faf03
     ADD ESP,0x14                        ; 004faf06
     POP EBP                             ; 004faf09

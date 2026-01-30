@@ -37,7 +37,7 @@ section .text
     ADD EAX,0x2d7258c                   ; 004c920e
     PUSH EAX                            ; 004c9213
     CALL core_fire.cpp_FUN_004c6170     ; 004c9214
-        ;   XREF to: 004c6170 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c6170()
+        ;   XREF to: 004c6170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004c6170()
     MOV EDI,dword ptr [0x02d72588]      ; 004c9219 | g_TrailActiveListHead
     INC EDI                             ; 004c921f
     ADD ESP,0x14                        ; 004c9220

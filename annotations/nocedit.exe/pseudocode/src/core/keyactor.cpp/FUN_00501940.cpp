@@ -1,15 +1,15 @@
 // Name: core_keyactor.cpp_FUN_00501940
 // Address: 00501940
 // Address Range: [[00501940, 00501984]]
-// Convention: unknown
-// Signature: void core_keyactor_cpp_FUN_00501940(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_keyactor_cpp_FUN_00501940(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_keyactor.cpp_FUN_00501940(uint param_1, uint
    param_2) */
 
-void core_keyactor_cpp_FUN_00501940(void)
+void __cdecl core_keyactor_cpp_FUN_00501940(void)
 
 {
   CDemonActor *in_stack_00000004;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_svetlana_cpp_FUN_005d9d30(void)
+; __cdecl void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
 ;
 ;
 ; Referenced Globals:

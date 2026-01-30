@@ -9,6 +9,7 @@
 int __cdecl core_gore_cpp_FUN_004ee290(CGore *this_ptr)
 
 {
+  int extraout_EAX;
   int iVar1;
   int iVar2;
   _FILE *in_stack_00000008;
@@ -27,7 +28,8 @@ int __cdecl core_gore_cpp_FUN_004ee290(CGore *this_ptr)
   if (0 < DAT_02d873d8) {
     do {
       iVar1 = iVar1 + 1;
-      iVar2 = core_gore_cpp_FUN_004ecb90();
+      core_gore_cpp_FUN_004ecb90();
+      iVar2 = extraout_EAX;
     } while (iVar1 < DAT_02d873d8);
   }
   return iVar2;

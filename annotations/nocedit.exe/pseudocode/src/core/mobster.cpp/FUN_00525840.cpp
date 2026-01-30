@@ -1,15 +1,15 @@
 // Name: core_mobster.cpp_FUN_00525840
 // Address: 00525840
 // Address Range: [[00525840, 00526793]]
-// Convention: unknown
-// Signature: void core_mobster_cpp_FUN_00525840(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mobster_cpp_FUN_00525840(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mobster.cpp_FUN_00525840(uint param_1, uint
    param_2) */
 
-void core_mobster_cpp_FUN_00525840(void)
+void __cdecl core_mobster_cpp_FUN_00525840(void)
 
 {
   CLocation *pCVar1;
@@ -493,8 +493,6 @@ void core_mobster_cpp_FUN_00525840(void)
     case 9:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_160);
       local_160.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_160.attacker = (CDemonActor *)in_stack_00000004;
-      local_160.wielder = (CDemonActor *)in_stack_00000004;
       local_14 = local_160.damage_amount;
       if ((in_stack_00000004->base).model.part_visibility_flags
           [*(int *)(in_stack_00000004[1].base.base.create_event + 0x38)] != 0) {

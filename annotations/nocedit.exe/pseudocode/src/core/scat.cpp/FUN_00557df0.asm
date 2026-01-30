@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_scat_cpp_FUN_00557df0(void)
+; __cdecl int __cdecl core_scat_cpp_FUN_00557df0(void)
 ;
 ;
 ; Referenced Globals:
@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_00557e4b
     PUSH EBX                            ; 00557e4c
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 00557e4d
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [ESP + 0xc],EAX       ; 00557e52
     FLD float ptr [ESP + 0xc]           ; 00557e56
     ADD ESP,0x8                         ; 00557e5a

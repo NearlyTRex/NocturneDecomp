@@ -377,12 +377,12 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList *
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e670(CActorPropertyList *this_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e6a0(CActorPropertyList *this_ptr);
 int __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,int property_type,char *property_name,void *data_ptr, void *callback_or_extra);
-void core_actor_cpp_CActorPropertyList_FUN_0040e770(void);
-void core_actor_cpp_CActorPropertyList_FUN_0040e850(void);
-int core_actor_cpp_CActorPropertyList_FUN_0040e9c0(void);
-void core_actor_cpp_CActorProperty_FUN_0040ea50(void);
-void core_actor_cpp_FUN_0040ee30(void);
-void core_actor_cpp_FUN_0040ee50(void);
+void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e770 (CActorPropertyList *this_ptr,int param_2,int param_3,int param_4);
+void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e850(void);
+int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e9c0(void);
+void __cdecl core_actor_cpp_CActorProperty_FUN_0040ea50(void);
+void __cdecl core_actor_cpp_FUN_0040ee30(void);
+void __cdecl core_actor_cpp_FUN_0040ee50(void);
 int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0 (CActorProperty *this_ptr,CDemonActor *actor);
-undefined4 core_actor_cpp_FUN_0040fffe(undefined4 param_1,undefined4 param_2,int unaff_EBX);
+int __cdecl core_actor_cpp_FUN_0040fffe(void);
 

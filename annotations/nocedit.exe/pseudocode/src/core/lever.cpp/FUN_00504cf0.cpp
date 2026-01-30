@@ -1,14 +1,14 @@
 // Name: core_lever.cpp_FUN_00504cf0
 // Address: 00504cf0
 // Address Range: [[00504cf0, 00504d7b]]
-// Convention: unknown
-// Signature: int core_lever_cpp_FUN_00504cf0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_lever_cpp_FUN_00504cf0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_lever.cpp_FUN_00504cf0(uint param_1) */
 
-int core_lever_cpp_FUN_00504cf0(void)
+int __cdecl core_lever_cpp_FUN_00504cf0(void)
 
 {
   CBoundingBox3D *this_ptr;

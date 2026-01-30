@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_stranger_cpp_CStranger_FUN_005c5e80(void)
+; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(void)
 ;
 ;
 ; XREF[1]:

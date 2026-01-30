@@ -1,15 +1,15 @@
 // Name: core_moloch.cpp_FUN_005293b0
 // Address: 005293b0
 // Address Range: [[005293b0, 0052974a]]
-// Convention: unknown
-// Signature: void core_moloch_cpp_FUN_005293b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_moloch_cpp_FUN_005293b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_moloch.cpp_FUN_005293b0(uint param_1, uint param_2)
     */
 
-void core_moloch_cpp_FUN_005293b0(void)
+void __cdecl core_moloch_cpp_FUN_005293b0(void)
 
 {
   CLocation *pCVar1;

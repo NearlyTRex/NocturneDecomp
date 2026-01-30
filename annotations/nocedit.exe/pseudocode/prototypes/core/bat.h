@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_bat.cpp_FUN_004146f0
 // Address: 004146f0
-float FUN_004146f0(void);
+float __cdecl FUN_004146f0(void);
 
 // Original: core_bat.cpp_factoryFunc_FUN_00414790
 // Address: 00414790
@@ -45,7 +45,7 @@ int * __cdecl CBat(CBat *this_ptr);
 
 // Original: core_bat.cpp_FUN_00414ce0
 // Address: 00414ce0
-void FUN_00414ce0(void);
+void __cdecl FUN_00414ce0(void);
 
 // Original: core_bat.cpp_CBat_FUN_00414dc0
 // Address: 00414dc0
@@ -69,12 +69,12 @@ CBat * __cdecl CBat::dtor(CBat *this_ptr,uint d1,uint d2,uint d3);
 
 // Original: core_bat.cpp_FUN_00415050
 // Address: 00415050
-undefined4 * FUN_00415050(void);
+int __cdecl FUN_00415050(void);
 
 // Original: core_bat.cpp_FUN_00415060
 // Address: 00415060
-undefined4 * FUN_00415060(void);
+int __cdecl FUN_00415060(void);
 
 // Original: core_bat.cpp_FUN_00415070
 // Address: 00415070
-undefined4 * FUN_00415070(void);
+int __cdecl FUN_00415070(void);

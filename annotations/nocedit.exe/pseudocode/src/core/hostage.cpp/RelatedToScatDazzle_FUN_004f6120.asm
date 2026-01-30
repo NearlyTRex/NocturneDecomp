@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
+; __cdecl void __cdecl core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,12 +1,12 @@
 // Name: shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
 // Address: 0045ea90
 // Address Range: [[0045ea90, 0045ec8d]]
-// Convention: unknown
-// Signature: void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
 
 #include "nocturne.h"
 
-void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
+void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
 
 {
   char cVar1;

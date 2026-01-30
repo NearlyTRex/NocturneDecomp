@@ -1,15 +1,15 @@
 // Name: core_svetlana.cpp_FUN_005d9260
 // Address: 005d9260
 // Address Range: [[005d9260, 005d9968]]
-// Convention: unknown
-// Signature: void core_svetlana_cpp_FUN_005d9260(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_svetlana_cpp_FUN_005d9260(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_svetlana.cpp_FUN_005d9260(uint param_1, uint
    param_2) */
 
-void core_svetlana_cpp_FUN_005d9260(void)
+void __cdecl core_svetlana_cpp_FUN_005d9260(void)
 
 {
   float fVar1;
@@ -21,6 +21,7 @@ void core_svetlana_cpp_FUN_005d9260(void)
   CVector3f *pCVar7;
   SMotion *pSVar8;
   uint uVar9;
+  CPathMap *extraout_EAX;
   CHero *pCVar10;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
@@ -133,7 +134,8 @@ void core_svetlana_cpp_FUN_005d9260(void)
         }
       }
       if (pCStack_20 == (CPathMap *)0x0) {
-        pCStack_20 = (CPathMap *)core_path_cpp_FUN_00548500();
+        core_path_cpp_FUN_00548500();
+        pCStack_20 = extraout_EAX;
       }
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (pCStack_20,&(in_stack_00000004->base).location.position,&CStack_48,

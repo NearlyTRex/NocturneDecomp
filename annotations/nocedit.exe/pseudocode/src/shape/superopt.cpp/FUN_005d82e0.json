@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -13,16 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 92,
+    "complexity_score": 110,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 7,
-    "suspect_count": 8,
+    "pseudocode_lines": 10,
+    "suspect_count": 9,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 24
+    "total_lines": 27
   },
   "cross_references": [],
   "function": {
@@ -33,9 +41,9 @@
         "005d830c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_superopt.cpp_FUN_005d82e0",
-    "signature": "double shape_superopt_cpp_FUN_005d82e0(void)"
+    "signature": "int __cdecl shape_superopt_cpp_FUN_005d82e0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -103,44 +111,51 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "return in_stack_00000004[2] * in_stack_00000008[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "text": "return in_stack_00000004[2] * in_stack_00000008[2] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000008 + in_stack_00000004[1] * in_stack_00000008[1];",
+      "text": "local_8 = SUB84(in_stack_00000004[2] * in_stack_00000008[2] +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "*in_stack_00000004 * *in_stack_00000008 + in_stack_00000004[1] * in_stack_00000008[1];",
+      "text": "local_8 = SUB84(in_stack_00000004[2] * in_stack_00000008[2] +",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 9,
+      "match": "SUB84",
+      "text": "local_8 = SUB84(in_stack_00000004[2] * in_stack_00000008[2] +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 * *in_stack_00000008 + in_stack_00000004[1] * in_stack_00000008[1];",
+      "text": "*in_stack_00000004 * *in_stack_00000008 +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000008",
-      "text": "*in_stack_00000004 * *in_stack_00000008 + in_stack_00000004[1] * in_stack_00000008[1];",
+      "text": "*in_stack_00000004 * *in_stack_00000008 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1] * in_stack_00000008[1],0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000004[1] * in_stack_00000008[1],0);",
       "type": "stack_param"
     }
   ]

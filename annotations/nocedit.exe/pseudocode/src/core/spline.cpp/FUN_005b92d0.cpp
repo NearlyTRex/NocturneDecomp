@@ -1,12 +1,12 @@
 // Name: core_spline.cpp_FUN_005b92d0
 // Address: 005b92d0
 // Address Range: [[005b92d0, 005b93e0]]
-// Convention: unknown
-// Signature: float * core_spline_cpp_FUN_005b92d0(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_spline_cpp_FUN_005b92d0(void)
 
 #include "nocturne.h"
 
-float * core_spline_cpp_FUN_005b92d0(void)
+float * __cdecl core_spline_cpp_FUN_005b92d0(void)
 
 {
   float *pfVar1;

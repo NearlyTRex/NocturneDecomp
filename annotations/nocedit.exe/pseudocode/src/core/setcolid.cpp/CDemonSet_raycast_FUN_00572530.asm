@@ -28,7 +28,7 @@
 ;   core_gun.cpp_FUN_004f0350 at 004f050e
 ;   core_lightgun.cpp_FUN_00505b70 at 00505c07
 ;   core_lightgun.cpp_FUN_00505c70 at 0050606b
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e7d1
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e7d1
 ;   core_scat.cpp_FUN_00558cf0 at 00558f54
 ;   ... and 5 more
 ;

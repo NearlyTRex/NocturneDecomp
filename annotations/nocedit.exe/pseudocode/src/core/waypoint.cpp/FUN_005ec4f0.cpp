@@ -1,17 +1,19 @@
 // Name: core_waypoint.cpp_FUN_005ec4f0
 // Address: 005ec4f0
 // Address Range: [[005ec4f0, 005ec5d6]]
-// Convention: unknown
-// Signature: void core_waypoint_cpp_FUN_005ec4f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_waypoint_cpp_FUN_005ec4f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_waypoint.cpp_FUN_005ec4f0(uint param_1) */
 
-void core_waypoint_cpp_FUN_005ec4f0(void)
+void __cdecl core_waypoint_cpp_FUN_005ec4f0(void)
 
 {
-  int iVar1;
+  bool bVar1;
+  undefined3 extraout_var;
+  undefined3 extraout_var_00;
   int iVar2;
   int iVar3;
   int in_stack_00000004;
@@ -34,8 +36,8 @@ void core_waypoint_cpp_FUN_005ec4f0(void)
     }
     if ((((*(int *)(g_CDemonSetPtr->unk4 + iVar2 + 0x5dc8) != in_stack_00000004) &&
          (*(int *)(*(int *)(g_CDemonSetPtr->unk4 + iVar2 + 0x5dc8) + 0x370) < 0x3c)) &&
-        (iVar1 = core_waypoint_cpp_FUN_005ebd40(), iVar1 != 0)) &&
-       (iVar1 = core_waypoint_cpp_FUN_005ebd40(), iVar1 != 0)) {
+        (bVar1 = core_waypoint_cpp_FUN_005ebd40(), CONCAT31(extraout_var,bVar1) != 0)) &&
+       (bVar1 = core_waypoint_cpp_FUN_005ebd40(), CONCAT31(extraout_var_00,bVar1) != 0)) {
       core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700();
       core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700();
       if (0x3b < *(int *)(in_stack_00000004 + 0x370)) {

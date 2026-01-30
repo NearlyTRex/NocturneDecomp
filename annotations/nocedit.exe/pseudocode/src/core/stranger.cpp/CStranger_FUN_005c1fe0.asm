@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_stranger_cpp_CStranger_FUN_005c1fe0(void)
+; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xe8]:8  local_e8
@@ -57,7 +57,7 @@ section .text
     PUSH EDI                            ; 005c1ff4
     MOV dword ptr [EDI + 0x1fbac],0x0   ; 005c1ff5
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c1fff
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [ESP + 0xdc],EAX      ; 005c2004
     FLD float ptr [ESP + 0xdc]          ; 005c200b
     ADD ESP,0x8                         ; 005c2012

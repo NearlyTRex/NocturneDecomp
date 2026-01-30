@@ -25,24 +25,24 @@ CPassenger * __cdecl CPassenger::dtor(CPassenger *this_ptr,uint d1);
 
 // Original: core_passngr.cpp_FUN_00545d30
 // Address: 00545d30
-void FUN_00545d30(void);
+void __cdecl FUN_00545d30(void);
 
 // Original: core_passngr.cpp_FUN_00545ef0
 // Address: 00545ef0
-void FUN_00545ef0(void);
+void __cdecl FUN_00545ef0(void);
 
 // Original: core_passngr.cpp_FUN_005460c0
 // Address: 005460c0
-int FUN_005460c0(void);
+int __cdecl FUN_005460c0(void);
 
 // Original: core_passngr.cpp_CPassenger_load_FUN_00546190
 // Address: 00546190
-void CPassenger::load(void);
+void __cdecl CPassenger::load(void);
 
 // Original: core_passngr.cpp_FUN_00546270
 // Address: 00546270
-void FUN_00546270(void);
+void __cdecl FUN_00546270(void);
 
 // Original: core_passngr.cpp_FUN_005462f0
 // Address: 005462f0
-void FUN_005462f0(void);
+void __cdecl FUN_005462f0(void);

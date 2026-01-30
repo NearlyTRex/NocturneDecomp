@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_event_cpp_FUN_004aa2a0(void)
+; __cdecl int __cdecl core_event_cpp_FUN_004aa2a0(char *param_1)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

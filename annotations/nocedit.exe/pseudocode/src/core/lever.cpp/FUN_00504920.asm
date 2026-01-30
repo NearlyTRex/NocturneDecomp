@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_lever_cpp_FUN_00504920(void)
+; __cdecl void __cdecl core_lever_cpp_FUN_00504920(void)
 ;
 ;
 ; Referenced Globals:
@@ -133,7 +133,7 @@ section .text
         ;   Label: LAB_00504a6a
     PUSH EAX                            ; 00504a70
     CALL core_lever.cpp_FUN_00504b20    ; 00504a71
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504b20()
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_FUN_00504b20()
     ADD ESP,0x8                         ; 00504a76
     JMP 0x005049c3                      ; 00504a79
         ;   XREF to: 005049c3 (UNCONDITIONAL_JUMP)  ; LAB_005049c3
@@ -145,7 +145,7 @@ section .text
     PUSH dword ptr [ECX + 0x2dc]        ; 00504a8c
     PUSH EAX                            ; 00504a92
     CALL core_lever.cpp_FUN_00504b20    ; 00504a93
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504b20()
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_FUN_00504b20()
     ADD ESP,0x8                         ; 00504a98
     INC EDI                             ; 00504a9b
     ADD ESI,0x4                         ; 00504a9c

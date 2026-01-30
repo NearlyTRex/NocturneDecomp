@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_boneguy_cpp_FUN_0041cc40(void)
+; __cdecl int __cdecl core_boneguy_cpp_FUN_0041cc40(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -206,11 +206,11 @@ section .text
     PUSH EAX                            ; 0041ce3d
     MOV dword ptr [ESP + 0xc4],ESI      ; 0041ce3e
     CALL core_bodypart.cpp_FUN_0041b540 ; 0041ce45
-        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b540()
+        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b540()
     ADD ESP,0xc                         ; 0041ce4a
     PUSH EAX                            ; 0041ce4d
     CALL core_bodypart.cpp_FUN_0041b4e0 ; 0041ce4e
-        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b4e0()
+        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b4e0()
     ADD ESP,0xc                         ; 0041ce53
     LEA EAX,[ESP + 0x70]                ; 0041ce56
     PUSH EAX                            ; 0041ce5a

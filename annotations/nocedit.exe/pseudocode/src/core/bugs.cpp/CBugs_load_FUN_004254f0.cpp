@@ -1,15 +1,15 @@
 // Name: core_bugs.cpp_CBugs_load_FUN_004254f0
 // Address: 004254f0
 // Address Range: [[004254f0, 00425608]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_CBugs_load_FUN_004254f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_CBugs_load_FUN_004254f0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* Signature: int actors_enemy_bugs.cpp_CBugs_load(CBugs* pBugs) */
 
-void core_bugs_cpp_CBugs_load_FUN_004254f0(void)
+void __cdecl core_bugs_cpp_CBugs_load_FUN_004254f0(void)
 
 {
   CKeyFramedModelInstance *pCVar1;

@@ -19,8 +19,8 @@
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1510
 ;   core_game.cpp_CGame_openSomething_FUN_004e2910 at 004e294b
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0f76
+;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 00538042
 ;   core_msnedit.cpp_FUN_00537dd0 at 00537dde
-;   core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60 at 00538042
 ;   ... and 26 more
 ;
 ; Called Functions:

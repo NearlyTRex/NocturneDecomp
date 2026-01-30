@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_marquee_cpp_FUN_0050c480 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,_FILE *param_6)
+; __cdecl void __cdecl core_marquee_cpp_FUN_0050c480(void)
 ;
 ;
 ; Referenced Globals:

@@ -25,7 +25,7 @@ void __cdecl CDoor::setup(CDoor *this_ptr);
 
 // Original: core_door.cpp_FUN_0047fcf0
 // Address: 0047fcf0
-void FUN_0047fcf0(void);
+void __cdecl FUN_0047fcf0(void);
 
 // Original: core_door.cpp_CDoor_reposition_FUN_0047fd20
 // Address: 0047fd20
@@ -89,7 +89,7 @@ void __cdecl CDoor(CDoor *this_ptr);
 
 // Original: core_door.cpp_FUN_00481250
 // Address: 00481250
-void FUN_00481250(void);
+void __cdecl FUN_00481250(void);
 
 // Original: core_door.cpp_FUN_004812b0
 // Address: 004812b0
@@ -109,7 +109,7 @@ void __cdecl CDoor::writeDependencies(CDoor *this_ptr,_FILE *file_handle);
 
 // Original: core_door.cpp_FUN_00481650
 // Address: 00481650
-undefined4 FUN_00481650(void);
+int __cdecl FUN_00481650(void);
 
 // Original: core_door.cpp_CDoor_dtor_FUN_00481670
 // Address: 00481670

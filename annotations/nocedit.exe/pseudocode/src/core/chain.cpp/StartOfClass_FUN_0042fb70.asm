@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_chain_cpp_StartOfClass_FUN_0042fb70(void)
+; __cdecl CDemonActorType * __cdecl core_chain_cpp_StartOfClass_FUN_0042fb70(void)
 ;
 ;
 ; Referenced Globals:

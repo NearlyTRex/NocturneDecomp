@@ -1,15 +1,15 @@
 // Name: core_pendulum.cpp_FUN_0054a550
 // Address: 0054a550
 // Address Range: [[0054a550, 0054a58e]]
-// Convention: unknown
-// Signature: undefined4 core_pendulum_cpp_FUN_0054a550(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_pendulum_cpp_FUN_0054a550(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_pendulum.cpp_FUN_0054a550(uint param_1, uint
    param_2) */
 
-uint core_pendulum_cpp_FUN_0054a550(void)
+int __cdecl core_pendulum_cpp_FUN_0054a550(void)
 
 {
   CKeyFramedModel *pCVar1;

@@ -1,14 +1,14 @@
 // Name: core_drone.cpp_FUN_0048ebc0
 // Address: 0048ebc0
 // Address Range: [[0048ebc0, 0048ec3f]]
-// Convention: unknown
-// Signature: void core_drone_cpp_FUN_0048ebc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drone_cpp_FUN_0048ebc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_drone.cpp_FUN_0048ebc0(uint param_1) */
 
-void core_drone_cpp_FUN_0048ebc0(void)
+void __cdecl core_drone_cpp_FUN_0048ebc0(void)
 
 {
   CDeformableModelInstance *this_ptr;

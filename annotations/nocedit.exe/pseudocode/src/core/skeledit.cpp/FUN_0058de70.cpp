@@ -1,12 +1,12 @@
 // Name: core_skeledit.cpp_FUN_0058de70
 // Address: 0058de70
 // Address Range: [[0058de70, 0058e0aa]]
-// Convention: unknown
-// Signature: void core_skeledit_cpp_FUN_0058de70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeledit_cpp_FUN_0058de70(void)
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_0058de70(void)
+void __cdecl core_skeledit_cpp_FUN_0058de70(void)
 
 {
   char cVar1;
@@ -19,10 +19,7 @@ void core_skeledit_cpp_FUN_0058de70(void)
   SCramConfig *pSVar8;
   int in_stack_00000004;
   char *in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
   int in_stack_00000014;
-  int in_stack_00000018;
   SCramConfig local_98;
   char *local_24;
   int local_20;
@@ -88,11 +85,8 @@ void core_skeledit_cpp_FUN_0058de70(void)
     pSVar8 = (SCramConfig *)((int)pSVar8 + 2);
   } while (cVar1 != '\0');
   local_98.coverage_threshold = 0x5f;
-  local_98.initial_value = in_stack_00000010;
   local_98.enable_optimization = 1;
-  local_98.enable_gap_filling = in_stack_0000000c;
   local_98.enable_scaling = 1;
-  local_98.final_mode = in_stack_00000018;
   local_98.enable_rotation = 1;
   local_98.enable_flipping = 1;
   local_98.algorithm_mode = 2;

@@ -82,23 +82,22 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   }
   this_ptr->selected_camera_index = -1;
   this_ptr->previous_best_camera_index = -1;
-  iVar2 = 0;
+  iVar4 = 0;
   g_ActiveLightCount = 0;
   DAT_03277d80 = 0;
   g_CoronaGlobeCount = 0;
   DAT_0327785c = 0;
   this_ptr->previous_best_camera_timer = 0.0;
   core_setdir_cpp_CDemonSet_FUN_00576710(this_ptr);
-  iVar4 = this_ptr->camera_count;
   pCVar3 = this_ptr;
-  if (0 < iVar4) {
+  if (0 < this_ptr->camera_count) {
     do {
-      iVar2 = iVar2 + 1;
-      iVar4 = core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
-      pCVar3->cameras[0].unk3 = iVar4;
+      iVar4 = iVar4 + 1;
+      iVar2 = core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
+      pCVar3->cameras[0].unk3 = iVar2;
       pCVar3 = (CDemonSet *)&pCVar3->cameras[0].unk4;
-    } while (iVar2 < this_ptr->camera_count);
+    } while (iVar4 < this_ptr->camera_count);
   }
-  core_weather_cpp_CWeather_FUN_005ef8c0(iVar4);
+  core_weather_cpp_CWeather_FUN_005ef8c0();
   return;
 }

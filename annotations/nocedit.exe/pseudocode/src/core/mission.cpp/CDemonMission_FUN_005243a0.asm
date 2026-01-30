@@ -17,7 +17,7 @@
 ;   core_mission.cpp_CDemonMission_FUN_00523cf0
 ;   core_mission.cpp_CDemonMission_FUN_00523f50
 ;   core_mission.cpp_CDemonMission_FUN_00523fb0
-;   core_script.cpp_CScript_FreeSomething1_FUN_00559870
+;   core_script.cpp_CScript_FUN_00559870
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     ADD ESP,0x4                         ; 005243e1
     MOV EDX,dword ptr [0x00680d50]      ; 005243e4 | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 005243ea | g_CScriptInstance
-    CALL core_script.cpp_CScript_FreeSomething1_FUN_00559870 ; 005243eb
-        ;   XREF to: 00559870 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_FreeSomething1_FUN_00559870()
+    CALL core_script.cpp_CScript_FUN_00559870 ; 005243eb
+        ;   XREF to: 00559870 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00559870(CScript * this_ptr)
     ADD ESP,0x4                         ; 005243f0
     PUSH EBX                            ; 005243f3
     CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 005243f4

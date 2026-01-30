@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0(void)
+; __cdecl void __cdecl core_script_cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x33c]:1  local_33c
@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00565e70 at 00565efd
+;   core_script.cpp_CScript_FUN_00565e70 at 00565efd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Template_bug_can_t_show__00643d50
@@ -19,7 +19,7 @@
 ;   TerminatedCString s_s_00643d6f
 ;
 ; Called Functions:
-;   core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0
+;   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
@@ -65,8 +65,8 @@ section .text
     PUSH EDI                            ; 00564436
     LEA EAX,[ESP + 0x8]                 ; 00564437
     PUSH EAX                            ; 0056443b
-    CALL core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0 ; 0056443c
-        ;   XREF to: 00560de0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0()
+    CALL core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0 ; 0056443c
+        ;   XREF to: 00560de0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm * this_ptr, char * param_2, int * param_3)
     ADD ESP,0xc                         ; 00564441
     TEST EAX,EAX                        ; 00564444
     JZ 0x00564462                       ; 00564446

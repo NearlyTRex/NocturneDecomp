@@ -1,12 +1,12 @@
 // Name: shape_superopt.cpp_FUN_005c9aa0
 // Address: 005c9aa0
 // Address Range: [[005c9aa0, 005ca58d]]
-// Convention: unknown
-// Signature: void shape_superopt_cpp_FUN_005c9aa0(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_superopt_cpp_FUN_005c9aa0(void)
 
 #include "nocturne.h"
 
-void shape_superopt_cpp_FUN_005c9aa0(void)
+void __cdecl shape_superopt_cpp_FUN_005c9aa0(void)
 
 {
   ulonglong *puVar1;

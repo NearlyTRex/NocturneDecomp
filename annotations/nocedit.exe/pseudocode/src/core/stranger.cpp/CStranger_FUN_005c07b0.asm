@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
+; __cdecl float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xd64]:4  local_d64
@@ -404,7 +404,7 @@ section .text
     PUSH 0x3                            ; 005c0a09
     PUSH EBX                            ; 005c0a0b
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0a0c
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0a11
     ADD ESP,0x8                         ; 005c0a14
     FLD float ptr [EBP + 0x76]          ; 005c0a17
@@ -481,7 +481,7 @@ section .text
     PUSH 0x3                            ; 005c0b2e
     PUSH EBX                            ; 005c0b30
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0b31
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0b36
     ADD ESP,0x8                         ; 005c0b39
     FLD float ptr [EBP + 0x76]          ; 005c0b3c
@@ -558,7 +558,7 @@ section .text
     PUSH 0x3                            ; 005c0c3b
     PUSH EBX                            ; 005c0c3d
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0c3e
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0c43
     ADD ESP,0x8                         ; 005c0c46
     FLD float ptr [EBP + 0x76]          ; 005c0c49
@@ -700,7 +700,7 @@ section .text
     PUSH 0x0                            ; 005c0e38
     PUSH EBX                            ; 005c0e3a
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0e3b
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0e40
     ADD ESP,0x8                         ; 005c0e43
     FLD float ptr [EBP + 0x76]          ; 005c0e46
@@ -922,7 +922,7 @@ section .text
     PUSH 0x0                            ; 005c11a2
     PUSH EBX                            ; 005c11a4
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c11a5
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [EBP + 0x76],EAX      ; 005c11aa
     ADD ESP,0x8                         ; 005c11ad
     FLD float ptr [EBP + 0x76]          ; 005c11b0
@@ -1121,7 +1121,7 @@ section .text
     FSTP float ptr [EBP + -0x7a]        ; 005c1410
     FSTP float ptr [EBP + -0x7e]        ; 005c1413
     CALL core_stranger.cpp_FUN_005bb010 ; 005c1416
-        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_005bb010()
+        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_FUN_005bb010()
     MOV dword ptr [EBP + 0x76],EAX      ; 005c141b
     ADD ESP,0x4                         ; 005c141e
     FLD float ptr [EBP + 0x76]          ; 005c1421

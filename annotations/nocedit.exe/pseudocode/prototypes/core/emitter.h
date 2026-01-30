@@ -13,7 +13,7 @@ CEmitter * __cdecl factoryFunc(void);
 
 // Original: core_emitter.cpp_OtherClass_FUN_004a7c90
 // Address: 004a7c90
-CDemonActorType * OtherClass(void);
+CDemonActorType * __cdecl OtherClass(void);
 
 // Original: core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0
 // Address: 004a7ca0
@@ -21,55 +21,55 @@ CEmitter * __cdecl CEmitter::ctor(CEmitter *this_ptr);
 
 // Original: core_emitter.cpp_FUN_004a7e00
 // Address: 004a7e00
-void FUN_004a7e00(void);
+void __cdecl FUN_004a7e00(void);
 
 // Original: core_emitter.cpp_FUN_004a7e80
 // Address: 004a7e80
-void FUN_004a7e80(void);
+void __cdecl FUN_004a7e80(void);
 
 // Original: core_emitter.cpp_FUN_004a8070
 // Address: 004a8070
-void FUN_004a8070(void);
+void __cdecl FUN_004a8070(void);
 
 // Original: core_emitter.cpp_FUN_004a8860
 // Address: 004a8860
-undefined4 FUN_004a8860(void);
+int __cdecl FUN_004a8860(void);
 
 // Original: core_emitter.cpp_FUN_004a8a80
 // Address: 004a8a80
-void FUN_004a8a80(void);
+void __cdecl FUN_004a8a80(void);
 
 // Original: core_emitter.cpp_FUN_004a8ad0
 // Address: 004a8ad0
-void FUN_004a8ad0(void);
+void __cdecl FUN_004a8ad0(void);
 
 // Original: core_emitter.cpp_CEmitter_load_FUN_004a8b30
 // Address: 004a8b30
-void CEmitter::load(void);
+void __cdecl CEmitter::load(void);
 
 // Original: core_emitter.cpp_FUN_004a8d10
 // Address: 004a8d10
-undefined4 FUN_004a8d10(void);
+int __cdecl FUN_004a8d10(void);
 
 // Original: core_emitter.cpp_FUN_004a8d20
 // Address: 004a8d20
-CVector3f * FUN_004a8d20(void);
+CVector3f * __cdecl FUN_004a8d20(void);
 
 // Original: core_emitter.cpp_FUN_004a8db0
 // Address: 004a8db0
-void FUN_004a8db0(void);
+void __cdecl FUN_004a8db0(void);
 
 // Original: core_emitter.cpp_FUN_004a8fe0
 // Address: 004a8fe0
-void FUN_004a8fe0(undefined4 param_1,undefined4 param_2,float unaff_EBX,undefined4 param_4, CDemonActor *param_5,undefined4 param_6,float param_7,undefined4 param_8, float param_9,undefined4 param_10,float param_11,undefined4 param_12,float param_13);
+void __cdecl FUN_004a8fe0(void);
 
 // Original: core_emitter.cpp_FUN_004a9350
 // Address: 004a9350
-void FUN_004a9350(void);
+void __cdecl FUN_004a9350(void);
 
 // Original: core_emitter.cpp_FUN_004a9390
 // Address: 004a9390
-void FUN_004a9390(void);
+void __cdecl FUN_004a9390(void);
 
 // Original: core_emitter.cpp_CEmitter_dtor_FUN_004a93c0
 // Address: 004a93c0

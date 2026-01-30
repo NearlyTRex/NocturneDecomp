@@ -44,7 +44,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr)
         if ((*(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) & 0x20) != 0) {
           iVar3 = shape_superopt_cpp_FUN_005c7a90();
           if (iVar3 == 0) {
-            shape_superopt_cpp_logToFile_FUN_005c7910("Unable to add shared triangle for complex pass");
+            shape_superopt_cpp_logToFile_FUN_005c7910("Unable to add shared triangle for complex pass",iVar2);
             return 0;
           }
           bVar1 = *(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1);

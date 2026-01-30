@@ -59,7 +59,7 @@ section .text
     PUSH 0x2e7                          ; 004197a3
     PUSH EDI                            ; 004197a8
     CALL core_bodypart.cpp_FUN_00419340 ; 004197a9
-        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00419340()
+        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419340()
     ADD ESP,0x8                         ; 004197ae
     PUSH EDI                            ; 004197b1
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 004197b2
@@ -78,7 +78,7 @@ section .text
     PUSH ESI                            ; 004197dc
         ;   Label: LAB_004197dc
     CALL core_flame.cpp_FUN_004ca110    ; 004197dd
-        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004ca110()
+        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_FUN_004ca110()
     INC EBX                             ; 004197e2
     ADD ESP,0x4                         ; 004197e3
     MOV ECX,dword ptr [EDI + 0x74c]     ; 004197e6

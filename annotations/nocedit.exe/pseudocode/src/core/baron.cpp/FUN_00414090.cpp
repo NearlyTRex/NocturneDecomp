@@ -1,12 +1,12 @@
 // Name: core_baron.cpp_FUN_00414090
 // Address: 00414090
 // Address Range: [[00414090, 0041409e]]
-// Convention: unknown
-// Signature: void core_baron_cpp_FUN_00414090(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_baron_cpp_FUN_00414090(void)
 
 #include "nocturne.h"
 
-void core_baron_cpp_FUN_00414090(void)
+void __cdecl core_baron_cpp_FUN_00414090(void)
 
 {
   int in_stack_00000004;

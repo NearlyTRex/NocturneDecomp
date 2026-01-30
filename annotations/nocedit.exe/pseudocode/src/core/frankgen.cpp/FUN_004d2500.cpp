@@ -1,12 +1,12 @@
 // Name: core_frankgen.cpp_FUN_004d2500
 // Address: 004d2500
 // Address Range: [[004d2500, 004d2557]]
-// Convention: unknown
-// Signature: void core_frankgen_cpp_FUN_004d2500(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_frankgen_cpp_FUN_004d2500(void)
 
 #include "nocturne.h"
 
-void core_frankgen_cpp_FUN_004d2500(void)
+void __cdecl core_frankgen_cpp_FUN_004d2500(void)
 
 {
   CDemonActor *in_stack_00000004;

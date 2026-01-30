@@ -1,15 +1,15 @@
 // Name: core_icepick.cpp_CIcePick_FUN_004f95b0
 // Address: 004f95b0
 // Address Range: [[004f95b0, 004f975d]]
-// Convention: unknown
-// Signature: void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_icepick_cpp_CIcePick_FUN_004f95b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_icepick.cpp_CIcePick_FUN_004f95b0(CIcePick* param_1, uint
    param_2) */
 
-void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
+void __cdecl core_icepick_cpp_CIcePick_FUN_004f95b0(void)
 
 {
   CDeformableModelInstance *this_ptr;

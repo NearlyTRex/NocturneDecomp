@@ -1,12 +1,12 @@
 // Name: shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 // Address: 0045ec90
 // Address Range: [[0045ec90, 0045ee61]]
-// Convention: unknown
-// Signature: void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
 
 #include "nocturne.h"
 
-void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
+void __cdecl shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
 
 {
   char cVar1;

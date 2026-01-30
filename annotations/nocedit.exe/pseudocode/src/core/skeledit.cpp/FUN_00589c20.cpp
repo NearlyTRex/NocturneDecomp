@@ -1,12 +1,12 @@
 // Name: core_skeledit.cpp_FUN_00589c20
 // Address: 00589c20
 // Address Range: [[00589c20, 00589f39]]
-// Convention: unknown
-// Signature: undefined4 core_skeledit_cpp_FUN_00589c20(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_skeledit_cpp_FUN_00589c20(void)
 
 #include "nocturne.h"
 
-uint core_skeledit_cpp_FUN_00589c20(void)
+int __cdecl core_skeledit_cpp_FUN_00589c20(void)
 
 {
   int iVar1;
@@ -84,7 +84,7 @@ uint core_skeledit_cpp_FUN_00589c20(void)
       if (p_Var2 == (_FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error loading precompute file.");
-        return 0xffffffff;
+        return -1;
       }
       core_skeledit_cpp_FUN_00589fa0();
       core_skeledit_cpp_FUN_00589fe0();
@@ -94,7 +94,7 @@ uint core_skeledit_cpp_FUN_00589c20(void)
         shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(in_stack_00000004);
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error loading precompute file.");
-        return 0xffffffff;
+        return -1;
       }
       shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(in_stack_00000004);
       return 1;

@@ -23,14 +23,20 @@
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 26,
+        "column": 50,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 28,
+        "line": 27,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -38,28 +44,23 @@
         "column": 4,
         "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 39,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 220,
+    "complexity_score": 214,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 30,
-    "suspect_count": 18,
+    "pseudocode_lines": 29,
+    "suspect_count": 17,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -77,9 +78,9 @@
         "004e2908"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_game.cpp_CGame_displayBitmap_FUN_004e2890",
-    "signature": "void core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)"
+    "signature": "void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)"
   },
   "function_calls": [
     {
@@ -199,80 +200,77 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000008",
-      "text": "(\"CGame::displayBitmap - tried to queue %s, but %s already queued!\",in_stack_00000008,in_stack_00000004 + 0x8b4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "(\"CGame::displayBitmap - tried to queue %s, but %s already queued!\",in_stack_00000008,in_stack_00000004 + 0x8b4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "pcVar2 = (char *)(in_stack_00000004 + 0x8b4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "cVar1 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000008",
       "text": "cVar1 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x9b4) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_0000000c",
       "text": "*(uint *)(in_stack_00000004 + 0x9b4) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x9b8) = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000010",
       "text": "*(uint *)(in_stack_00000004 + 0x9b8) = in_stack_00000010;",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"CGame::displayBitmap - tried to queue %s, but %s a...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "CGame::displayBitmap - tried to queue %s, but %s already queued!",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 18,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CGame::displayBitmap - tried to queue %s, but %s alrea",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

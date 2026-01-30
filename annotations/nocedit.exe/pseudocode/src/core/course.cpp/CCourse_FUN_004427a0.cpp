@@ -1,12 +1,12 @@
 // Name: core_course.cpp_CCourse_FUN_004427a0
 // Address: 004427a0
 // Address Range: [[004427a0, 00442a83]]
-// Convention: unknown
-// Signature: void core_course_cpp_CCourse_FUN_004427a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_course_cpp_CCourse_FUN_004427a0(void)
 
 #include "nocturne.h"
 
-void core_course_cpp_CCourse_FUN_004427a0(void)
+void __cdecl core_course_cpp_CCourse_FUN_004427a0(void)
 
 {
   float fVar1;

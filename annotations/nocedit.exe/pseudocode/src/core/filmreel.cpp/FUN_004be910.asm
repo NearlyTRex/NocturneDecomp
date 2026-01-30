@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_filmreel_cpp_FUN_004be910(void)
+; __cdecl float * __cdecl core_filmreel_cpp_FUN_004be910(void)
 ;
 ;
 ; Called Functions:

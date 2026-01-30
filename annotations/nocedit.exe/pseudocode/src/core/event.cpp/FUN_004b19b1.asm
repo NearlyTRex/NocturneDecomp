@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 * core_event_cpp_FUN_004b19b1 (undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4, undefined4 *param_5)
+; __cdecl void __cdecl core_event_cpp_FUN_004b19b1(int *param_1)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   param_1
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

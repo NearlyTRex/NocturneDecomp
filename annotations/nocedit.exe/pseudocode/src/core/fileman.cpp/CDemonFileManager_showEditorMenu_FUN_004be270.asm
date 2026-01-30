@@ -268,7 +268,7 @@ section .text
     JMP 0x004be412                      ; 004be47a
         ;   XREF to: 004be412 (UNCONDITIONAL_JUMP)  ; LAB_004be412
     CALL sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 ; 004be47c
-        ;   XREF to: 005ad5c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0()
+        ;   XREF to: 005ad5c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0()
         ;   Label: LAB_004be47c
     JMP 0x004be412                      ; 004be481
         ;   XREF to: 004be412 (UNCONDITIONAL_JUMP)  ; LAB_004be412

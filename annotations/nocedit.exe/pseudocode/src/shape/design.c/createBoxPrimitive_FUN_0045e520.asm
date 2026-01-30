@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_design_c_createBoxPrimitive_FUN_0045e520(void)
+; __cdecl void __cdecl shape_design_c_createBoxPrimitive_FUN_0045e520(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x88]:1  local_88
@@ -365,7 +365,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e8ee
     PUSH EAX                            ; 0045e8f1
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e8f2
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e8f7
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e8fa
     ADD EAX,0x5                         ; 0045e8fd
@@ -380,7 +380,7 @@ section .text
     INC EAX                             ; 0045e912
     PUSH EAX                            ; 0045e913
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e914
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e919
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e91c
     ADD EAX,0x6                         ; 0045e91f
@@ -395,7 +395,7 @@ section .text
     ADD EAX,0x2                         ; 0045e934
     PUSH EAX                            ; 0045e937
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e938
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e93d
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e940
     ADD EAX,0x7                         ; 0045e943
@@ -409,7 +409,7 @@ section .text
     ADD EAX,0x3                         ; 0045e955
     PUSH EAX                            ; 0045e958
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e959
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e95e
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e961
     ADD EAX,0x7                         ; 0045e964
@@ -424,7 +424,7 @@ section .text
     ADD EAX,0x4                         ; 0045e979
     PUSH EAX                            ; 0045e97c
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e97d
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e982
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e985
     PUSH EAX                            ; 0045e988
@@ -438,7 +438,7 @@ section .text
     ADD EAX,0x3                         ; 0045e998
     PUSH EAX                            ; 0045e99b
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e99c
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e9a1
     CMP dword ptr [EBP + -0x8],0x42     ; 0045e9a4
         ;   Label: LAB_0045e9a4
@@ -460,7 +460,7 @@ section .text
     INC EAX                             ; 0045e9c9
     PUSH EAX                            ; 0045e9ca
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e9cb
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e9d0
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e9d3
     ADD EAX,0x6                         ; 0045e9d6
@@ -475,7 +475,7 @@ section .text
     ADD EAX,0x2                         ; 0045e9e9
     PUSH EAX                            ; 0045e9ec
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e9ed
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e9f2
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e9f5
     ADD EAX,0x7                         ; 0045e9f8
@@ -490,7 +490,7 @@ section .text
     ADD EAX,0x3                         ; 0045ea0d
     PUSH EAX                            ; 0045ea10
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045ea11
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045ea16
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045ea19
     ADD EAX,0x4                         ; 0045ea1c
@@ -504,7 +504,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045ea2e
     PUSH EAX                            ; 0045ea31
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045ea32
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045ea37
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045ea3a
     ADD EAX,0x4                         ; 0045ea3d
@@ -519,7 +519,7 @@ section .text
     ADD EAX,0x7                         ; 0045ea52
     PUSH EAX                            ; 0045ea55
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045ea56
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045ea5b
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045ea5e
     ADD EAX,0x3                         ; 0045ea61
@@ -533,7 +533,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045ea71
     PUSH EAX                            ; 0045ea74
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045ea75
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045ea7a
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0045ea7d
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

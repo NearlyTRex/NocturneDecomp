@@ -1,15 +1,15 @@
 // Name: core_zombie.cpp_CZombie_FUN_005fc120
 // Address: 005fc120
 // Address Range: [[005fc120, 005fc1fc]]
-// Convention: unknown
-// Signature: undefined4 core_zombie_cpp_CZombie_FUN_005fc120(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fc120(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fc120(CZombie* param_1, uint
    param_2) */
 
-uint core_zombie_cpp_CZombie_FUN_005fc120(void)
+int __cdecl core_zombie_cpp_CZombie_FUN_005fc120(void)
 
 {
   CDeformableModelInstance *this_ptr;

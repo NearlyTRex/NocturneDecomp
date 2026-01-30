@@ -1,8 +1,8 @@
 // Name: core_drip.cpp_FUN_0048e830
 // Address: 0048e830
 // Address Range: [[0048e830, 0048e8cb]]
-// Convention: unknown
-// Signature: void core_drip_cpp_FUN_0048e830(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drip_cpp_FUN_0048e830(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* Signature: byte actors_other_drip.cpp_FUN_0048e830(uint param_1, byte param_2,
    uint param_3) */
 
-void core_drip_cpp_FUN_0048e830(void)
+void __cdecl core_drip_cpp_FUN_0048e830(void)
 
 {
   char cVar1;

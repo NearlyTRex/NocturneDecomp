@@ -1,15 +1,15 @@
 // Name: core_health.cpp_FUN_004f1fd0
 // Address: 004f1fd0
 // Address Range: [[004f1fd0, 004f2014]]
-// Convention: unknown
-// Signature: undefined4 core_health_cpp_FUN_004f1fd0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_health_cpp_FUN_004f1fd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_health.cpp_FUN_004f1fd0(uint param_1, uint
    param_2) */
 
-uint core_health_cpp_FUN_004f1fd0(void)
+int __cdecl core_health_cpp_FUN_004f1fd0(void)
 
 {
   float fVar1;
@@ -24,5 +24,5 @@ uint core_health_cpp_FUN_004f1fd0(void)
     }
     *(int *)(in_stack_00000004 + 0x2d4) = *(int *)(in_stack_00000004 + 0x2d4) + -1;
   }
-  return *(uint *)(in_stack_00000004 + 0x2d4);
+  return *(int *)(in_stack_00000004 + 0x2d4);
 }

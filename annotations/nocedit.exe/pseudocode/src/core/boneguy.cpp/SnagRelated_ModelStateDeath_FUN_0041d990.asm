@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_boneguy_cpp_SnagRelated_ModelStateDeath_FUN_0041d990(void)
+; __cdecl void __cdecl core_boneguy_cpp_SnagRelated_ModelStateDeath_FUN_0041d990(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,14 +1,14 @@
 // Name: core_pendulum.cpp_FUN_005494a0
 // Address: 005494a0
 // Address Range: [[005494a0, 005494bc]]
-// Convention: unknown
-// Signature: void core_pendulum_cpp_FUN_005494a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_pendulum_cpp_FUN_005494a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_pendulum.cpp_FUN_005494a0(uint param_1) */
 
-void core_pendulum_cpp_FUN_005494a0(void)
+void __cdecl core_pendulum_cpp_FUN_005494a0(void)
 
 {
   float fVar1;

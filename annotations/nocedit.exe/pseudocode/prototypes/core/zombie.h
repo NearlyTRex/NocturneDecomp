@@ -9,19 +9,19 @@ void __cdecl staticInit(void);
 
 // Original: core_zombie.cpp_FUN_005f8cc0
 // Address: 005f8cc0
-float FUN_005f8cc0(void);
+float __cdecl FUN_005f8cc0(void);
 
 // Original: core_zombie.cpp_FUN_005f8d30
 // Address: 005f8d30
-float * FUN_005f8d30(void);
+float * __cdecl FUN_005f8d30(void);
 
 // Original: core_zombie.cpp_FUN_005f8da0
 // Address: 005f8da0
-CVector3f * FUN_005f8da0(void);
+CVector3f * __cdecl FUN_005f8da0(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005f8e50
 // Address: 005f8e50
-undefined4 CZombie(void);
+int __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_factoryFunc_FUN_005f8fa0
 // Address: 005f8fa0
@@ -45,23 +45,23 @@ void __cdecl CZombie::process(CZombie *this_ptr,float delta_time);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fb1f0
 // Address: 005fb1f0
-void CZombie(void);
+void __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530
 // Address: 005fb530
-undefined4 CZombie::PickupSomethingPossibly(void);
+int __cdecl CZombie::PickupSomethingPossibly(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fbd00
 // Address: 005fbd00
-undefined4 CZombie(void);
+int __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fbda0
 // Address: 005fbda0
-undefined4 CZombie(void);
+int __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fbde0
 // Address: 005fbde0
-void CZombie(void);
+void __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fbe20
 // Address: 005fbe20
@@ -77,15 +77,15 @@ void __cdecl CZombie::serialize(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc120
 // Address: 005fc120
-undefined4 CZombie(void);
+int __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc220
 // Address: 005fc220
-void CZombie(void);
+void __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc4f0
 // Address: 005fc4f0
-void CZombie(void);
+void __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc720
 // Address: 005fc720
@@ -93,15 +93,15 @@ int __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc920
 // Address: 005fc920
-int CZombie(void);
+int __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc960
 // Address: 005fc960
-bool CZombie(void);
+bool __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc970
 // Address: 005fc970
-undefined4 CZombie(void);
+int __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc9e0
 // Address: 005fc9e0
@@ -109,7 +109,7 @@ int __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fca10
 // Address: 005fca10
-void CZombie(void);
+void __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fca80
 // Address: 005fca80
@@ -117,7 +117,7 @@ void __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fcb70
 // Address: 005fcb70
-void CZombie(void);
+void __cdecl CZombie(void);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fcc20
 // Address: 005fcc20
@@ -129,16 +129,16 @@ CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint d1,uint d2,uint d3,uint d
 
 // Original: core_zombie.cpp_FUN_005fcd10
 // Address: 005fcd10
-undefined4 * FUN_005fcd10(void);
+int __cdecl FUN_005fcd10(void);
 
 // Original: core_zombie.cpp_FUN_005fcd20
 // Address: 005fcd20
-void FUN_005fcd20(void);
+void __cdecl FUN_005fcd20(void);
 
 // Original: core_zombie.cpp_FUN_005fce40
 // Address: 005fce40
-void FUN_005fce40(void);
+void __cdecl FUN_005fce40(void);
 
 // Original: core_zombie.cpp_FUN_005fcf80
 // Address: 005fcf80
-SEdgeData * FUN_005fcf80(void);
+SEdgeData * __cdecl FUN_005fcf80(void);

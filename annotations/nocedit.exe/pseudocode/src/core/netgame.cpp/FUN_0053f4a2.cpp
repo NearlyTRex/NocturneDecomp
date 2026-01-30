@@ -1,15 +1,17 @@
 // Name: core_netgame.cpp_FUN_0053f4a2
 // Address: 0053f4a2
 // Address Range: [[0053f4a2, 0053f4ae]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_FUN_0053f4a2(undefined4 param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_FUN_0053f4a2(void)
 
 #include "nocturne.h"
 
-void core_netgame_cpp_FUN_0053f4a2(uint param_1,int param_2)
+void __cdecl core_netgame_cpp_FUN_0053f4a2(void)
 
 {
-  DAT_02f98ad0 = param_2;
-  g_ChatHistoryCount = param_2;
+  int in_EDX;
+  
+  DAT_02f98ad0 = in_EDX;
+  g_ChatHistoryCount = in_EDX;
   return;
 }

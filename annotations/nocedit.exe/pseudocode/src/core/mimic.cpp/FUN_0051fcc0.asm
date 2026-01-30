@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_FUN_0051fcc0(void)
+; __cdecl void __cdecl core_mimic_cpp_FUN_0051fcc0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1e4]:1  local_1e4
@@ -271,7 +271,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 0051fe7f | g_CGorePtr
     PUSH EDI                            ; 0051fe85 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 0051fe86
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 0051fe8b
     MOV dword ptr [EBX + 0xbe28],0x1    ; 0051fe8e
     JMP 0x0051fdb4                      ; 0051fe98
@@ -444,7 +444,7 @@ section .text
         ;   XREF to: 0052008c (CONDITIONAL_JUMP)  ; LAB_0052008c
     PUSH EBX                            ; 0052007e
     CALL core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 ; 0052007f
-        ;   XREF to: 00520a80 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_CMimic_beginMorph_FUN_00520a80()
+        ;   XREF to: 00520a80 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_beginMorph_FUN_00520a80()
     ADD ESP,0x4                         ; 00520084
     JMP 0x0051fdb4                      ; 00520087
         ;   XREF to: 0051fdb4 (UNCONDITIONAL_JUMP)  ; LAB_0051fdb4
@@ -509,7 +509,7 @@ section .text
         ;   XREF to: 00520165 (CONDITIONAL_JUMP)  ; LAB_00520165
     PUSH EBX                            ; 0052014e
     CALL core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 ; 0052014f
-        ;   XREF to: 00520a80 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_CMimic_beginMorph_FUN_00520a80()
+        ;   XREF to: 00520a80 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_beginMorph_FUN_00520a80()
     ADD ESP,0x4                         ; 00520154
     JMP 0x0051fdb4                      ; 00520157
         ;   XREF to: 0051fdb4 (UNCONDITIONAL_JUMP)  ; LAB_0051fdb4
@@ -767,7 +767,7 @@ section .text
     ADD EBX,0xbf84                      ; 005204af
     PUSH EBX                            ; 005204b5
     CALL core_cloth.cpp_FUN_0043ab80    ; 005204b6
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043ab80()
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
     ADD ESP,0x18                        ; 005204bb
     LEA ESP,[EBP + 0x7a]                ; 005204be
     POP EBP                             ; 005204c1

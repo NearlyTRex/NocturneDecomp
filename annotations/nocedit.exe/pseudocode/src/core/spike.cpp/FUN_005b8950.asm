@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_spike_cpp_FUN_005b8950(void)
+; __cdecl void __cdecl core_spike_cpp_FUN_005b8950(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xec]:1  local_ec

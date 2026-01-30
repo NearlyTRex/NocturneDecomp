@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
+; __cdecl void __cdecl core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

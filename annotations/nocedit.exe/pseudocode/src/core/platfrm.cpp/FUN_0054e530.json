@@ -4,55 +4,55 @@
       {
         "category": "other",
         "column": 24,
-        "line": 34,
+        "line": 33,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 64,
-        "line": 37,
+        "line": 36,
         "message": "'stack0xfffffabc' was not declared in this scope; did you mean 'in_stack_fffffabc'?"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 55,
+        "line": 54,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 55,
+        "line": 54,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 60,
+        "line": 59,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 60,
+        "line": 59,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 65,
+        "line": 64,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -68,53 +68,53 @@
         "category": "other",
         "column": 53,
         "line": 30,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CDemonActor*' [-Wformat=]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 33,
+        "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 33,
+        "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 44,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CDemonActor*' [-Wformat=]"
+        "line": 43,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 64,
+        "line": 63,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 64,
+        "line": 63,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 389,
+    "complexity_score": 368,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 12,
-    "pseudocode_lines": 59,
-    "suspect_count": 32,
+    "pseudocode_lines": 58,
+    "suspect_count": 30,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 224
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -132,9 +132,9 @@
         "0054e6f2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_platfrm.cpp_FUN_0054e530",
-    "signature": "int core_platfrm_cpp_FUN_0054e530(void)"
+    "signature": "int __cdecl core_platfrm_cpp_FUN_0054e530(void)"
   },
   "function_calls": [
     {
@@ -371,176 +371,162 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "sprintf(local_d4,\"Select a course for platform %s\",in_stack_00000004)",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 30,
+      "line": 29,
       "match": "&stack0xfffffabc",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffabc);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 32,
+      "line": 31,
       "match": "&stack0xfffffabc",
       "text": "((CStrList *)&stack0xfffffabc,\"Choose a different course file\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 33,
       "match": "&stack0xfffffabc",
       "text": "((CStrList *)&stack0xfffffabc,\"Don't use a course file\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 35,
       "match": "&stack0xfffffabc",
       "text": "((CStrList *)&stack0xfffffabc,\"Oops.  Forget I ever clicked there...\");",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "sprintf(local_19c,\"Change course setting for platform %s\",in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 38,
       "match": "&stack0xfffffabc",
       "text": "((CPickList *)&stack0xfffffabc,local_19c,-1,0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 46,
       "match": "in_stack_fffffabc",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 46,
       "match": "in_stack_fffffac0",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 47,
+      "line": 46,
       "match": "&stack0xfffffabc",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 47,
       "match": "in_stack_fffffac4",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 47,
       "match": "in_stack_fffffac8",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 47,
       "match": "in_stack_fffffacc",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_fffffabc",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_fffffac0",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 52,
+      "line": 51,
       "match": "&stack0xfffffabc",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_fffffac4",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_fffffac8",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_fffffacc",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_fffffabc",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_fffffac0",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 59,
       "match": "&stack0xfffffabc",
       "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_fffffac4",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_fffffac8",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_fffffacc",
       "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
       "type": "stack_param"

@@ -1,14 +1,14 @@
 // Name: core_skeledit.cpp_FUN_0058c190
 // Address: 0058c190
 // Address Range: [[0058c190, 0058d782]]
-// Convention: unknown
-// Signature: undefined4 core_skeledit_cpp_FUN_0058c190(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_skeledit_cpp_FUN_0058c190(void)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-uint core_skeledit_cpp_FUN_0058c190(void)
+int __cdecl core_skeledit_cpp_FUN_0058c190(void)
 
 {
   char cVar1;

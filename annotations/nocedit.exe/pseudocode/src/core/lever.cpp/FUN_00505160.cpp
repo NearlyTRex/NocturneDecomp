@@ -1,12 +1,12 @@
 // Name: core_lever.cpp_FUN_00505160
 // Address: 00505160
 // Address Range: [[00505160, 00505192]]
-// Convention: unknown
-// Signature: undefined4 core_lever_cpp_FUN_00505160(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_lever_cpp_FUN_00505160(void)
 
 #include "nocturne.h"
 
-uint core_lever_cpp_FUN_00505160(void)
+int __cdecl core_lever_cpp_FUN_00505160(void)
 
 {
   CDemonActor *pCVar1;

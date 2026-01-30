@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_dracbrid_cpp_FUN_00483fb0(void)
+; __cdecl CDemonActorType * __cdecl core_dracbrid_cpp_FUN_00483fb0(void)
 ;
 ;
 ; Referenced Globals:

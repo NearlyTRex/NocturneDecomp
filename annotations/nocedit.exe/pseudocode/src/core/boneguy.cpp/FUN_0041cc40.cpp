@@ -1,15 +1,15 @@
 // Name: core_boneguy.cpp_FUN_0041cc40
 // Address: 0041cc40
 // Address Range: [[0041cc40, 0041ccd1] [0041ccf1, 0041d170]]
-// Convention: unknown
-// Signature: undefined4 core_boneguy_cpp_FUN_0041cc40(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_boneguy_cpp_FUN_0041cc40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_boneguy.cpp_FUN_0041cc40(uint param_1, uint
    param_2) */
 
-uint core_boneguy_cpp_FUN_0041cc40(void)
+int __cdecl core_boneguy_cpp_FUN_0041cc40(void)
 
 {
   CDemonActor *pCVar1;
@@ -175,15 +175,14 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
       }
     }
     else {
-      in_stack_00000008 =
-           *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;
-      *(float *)(in_stack_00000004[1].base.create_event + 0x28) = in_stack_00000008;
-      if (in_stack_00000008 < 0.0) {
-        in_stack_00000004 = in_stack_00000004 + 1;
-        (in_stack_00000004->base).create_event[0x28] = '\0';
-        (in_stack_00000004->base).create_event[0x29] = '\0';
-        (in_stack_00000004->base).create_event[0x2a] = '\0';
-        (in_stack_00000004->base).create_event[0x2b] = '\0';
+      fVar3 = *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;
+      *(float *)(in_stack_00000004[1].base.create_event + 0x28) = fVar3;
+      if (fVar3 < 0.0) {
+        pCVar4 = in_stack_00000004 + 1;
+        (pCVar4->base).create_event[0x28] = '\0';
+        (pCVar4->base).create_event[0x29] = '\0';
+        (pCVar4->base).create_event[0x2a] = '\0';
+        (pCVar4->base).create_event[0x2b] = '\0';
       }
     }
   }

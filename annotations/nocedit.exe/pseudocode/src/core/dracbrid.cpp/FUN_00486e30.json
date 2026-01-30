@@ -53,9 +53,9 @@
         "00486e44"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dracbrid.cpp_FUN_00486e30",
-    "signature": "void core_dracbrid_cpp_FUN_00486e30(void)"
+    "signature": "void __cdecl core_dracbrid_cpp_FUN_00486e30(void)"
   },
   "function_calls": [
     {
@@ -79,39 +79,33 @@
         "call_addr": "004ccd4a",
         "call_type": "direct",
         "caller": "core_flies.cpp_FUN_004ccd40",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "00486d5a",
         "call_type": "direct",
         "caller": "core_dracbrid.cpp_dtor_FUN_00486d50",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "004ee39a",
         "call_type": "direct",
         "caller": "core_gore.cpp_FUN_004ee390",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "high",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.857142857142857,
@@ -160,11 +154,11 @@
       "call_site_count": 3,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

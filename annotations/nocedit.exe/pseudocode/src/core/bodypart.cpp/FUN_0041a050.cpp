@@ -1,12 +1,12 @@
 // Name: core_bodypart.cpp_FUN_0041a050
 // Address: 0041a050
 // Address Range: [[0041a050, 0041a5aa] [0041a615, 0041a628]]
-// Convention: unknown
-// Signature: void core_bodypart_cpp_FUN_0041a050(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bodypart_cpp_FUN_0041a050(void)
 
 #include "nocturne.h"
 
-void core_bodypart_cpp_FUN_0041a050(void)
+void __cdecl core_bodypart_cpp_FUN_0041a050(void)
 
 {
   CLocation *pCVar1;

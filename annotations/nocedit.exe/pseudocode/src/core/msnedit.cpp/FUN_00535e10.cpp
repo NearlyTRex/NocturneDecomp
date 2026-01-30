@@ -1,26 +1,18 @@
 // Name: core_msnedit.cpp_FUN_00535e10
 // Address: 00535e10
 // Address Range: [[00535e10, 00535e65]]
-// Convention: unknown
-// Signature: void core_msnedit_cpp_FUN_00535e10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_msnedit_cpp_FUN_00535e10(int *param_1,char *param_2,char *param_3)
 
 #include "nocturne.h"
 
-/* Signature: byte core_msnedit.cpp_FUN_00535e10(uint param_1, uint param_2,
-   uint param_3) */
-
-void core_msnedit_cpp_FUN_00535e10(void)
+void __cdecl core_msnedit_cpp_FUN_00535e10(int *param_1,char *param_2,char *param_3)
 
 {
-  int *in_stack_00000004;
-  char *in_stack_00000008;
-  char *in_stack_0000000c;
-  
-  engine_2d_c_drawText_FUN_00401fd0(in_stack_00000008,g_ClipLeft,*in_stack_00000004);
+  engine_2d_c_drawText_FUN_00401fd0(param_2,g_ClipLeft,*param_1);
   engine_2d_c_drawText_FUN_00401fd0
-            (in_stack_0000000c,
-             ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -8) -
-                   (uint)((g_WindowWidth >> 0x1f) << 2 < 0)) >> 3) + g_ClipLeft,*in_stack_00000004);
-  *in_stack_00000004 = *in_stack_00000004 + 0xb;
+            (param_3,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -8) -
+                           (uint)((g_WindowWidth >> 0x1f) << 2 < 0)) >> 3) + g_ClipLeft,*param_1);
+  *param_1 = *param_1 + 0xb;
   return;
 }

@@ -1,15 +1,15 @@
 // Name: core_boneguy.cpp_FUN_0041d550
 // Address: 0041d550
 // Address Range: [[0041d550, 0041d673]]
-// Convention: unknown
-// Signature: undefined4 core_boneguy_cpp_FUN_0041d550(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_boneguy_cpp_FUN_0041d550(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_boneguy.cpp_FUN_0041d550(uint param_1, uint
    param_2) */
 
-uint core_boneguy_cpp_FUN_0041d550(void)
+int __cdecl core_boneguy_cpp_FUN_0041d550(void)
 
 {
   CVector3f *pCVar1;

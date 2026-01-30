@@ -1,14 +1,14 @@
 // Name: core_beast.cpp_CBeast_load_FUN_00418330
 // Address: 00418330
 // Address Range: [[00418330, 00418377]]
-// Convention: unknown
-// Signature: void core_beast_cpp_CBeast_load_FUN_00418330(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_beast_cpp_CBeast_load_FUN_00418330(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_enemy_beast.cpp_CBeast_load(CBeast* param_1, char* param_2) */
 
-void core_beast_cpp_CBeast_load_FUN_00418330(void)
+void __cdecl core_beast_cpp_CBeast_load_FUN_00418330(void)
 
 {
   CDeformableModelInstance *model_ptr;

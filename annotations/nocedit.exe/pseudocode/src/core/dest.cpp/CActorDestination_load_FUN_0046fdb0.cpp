@@ -1,15 +1,15 @@
 // Name: core_dest.cpp_CActorDestination_load_FUN_0046fdb0
 // Address: 0046fdb0
 // Address Range: [[0046fdb0, 0046fe6c]]
-// Convention: unknown
-// Signature: void core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void)
 
 #include "nocturne.h"
 
 /* Signature: int actors_other_dest.cpp_CActorDestination_load(CActorDestination* pActorDestination)
     */
 
-void core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void)
+void __cdecl core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void)
 
 {
   CDemonActor *in_stack_00000004;

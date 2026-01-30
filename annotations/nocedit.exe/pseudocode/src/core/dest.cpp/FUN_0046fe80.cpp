@@ -1,15 +1,15 @@
 // Name: core_dest.cpp_FUN_0046fe80
 // Address: 0046fe80
 // Address Range: [[0046fe80, 0046fef7]]
-// Convention: unknown
-// Signature: void core_dest_cpp_FUN_0046fe80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dest_cpp_FUN_0046fe80(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_dest.cpp_FUN_0046fe80(uint param_1, uint param_2)
     */
 
-void core_dest_cpp_FUN_0046fe80(void)
+void __cdecl core_dest_cpp_FUN_0046fe80(void)
 
 {
   CDemonActor *in_stack_00000004;

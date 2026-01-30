@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_bugs_cpp_FUN_00425b70(void)
+; __cdecl int __cdecl core_bugs_cpp_FUN_00425b70(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -81,7 +81,7 @@ section .text
     PUSH dword ptr [ESI + 0x128e4]      ; 00425c01
     PUSH dword ptr [EBX + 0x128e4]      ; 00425c07
     CALL core_bugs.cpp_FUN_00427ba0     ; 00425c0d
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_FUN_00427ba0()
         ;   Label: LAB_00425c0d
     MOV dword ptr [ESP + 0x18],EAX      ; 00425c12
     FLD float ptr [ESP + 0x18]          ; 00425c16
@@ -115,7 +115,7 @@ section .text
     PUSH dword ptr [EDX + 0x128b8]      ; 00425c55
     PUSH dword ptr [EBX + EAX*0x1 + 0x128b8] ; 00425c5b
     CALL core_bugs.cpp_FUN_00427ba0     ; 00425c62
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_FUN_00427ba0()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00425c67
     FLD float ptr [ESP + 0x1c]          ; 00425c6b
     ADD ESP,0x8                         ; 00425c6f
@@ -123,7 +123,7 @@ section .text
     PUSH dword ptr [EBX + EDI*0x4 + 0x128bc] ; 00425c79
     FSTP float ptr [ESP + 0xc]          ; 00425c80
     CALL core_bugs.cpp_FUN_00427ba0     ; 00425c84
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_FUN_00427ba0()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00425c89
     FLD float ptr [ESP + 0x1c]          ; 00425c8d
     ADD ESP,0x8                         ; 00425c91
@@ -131,7 +131,7 @@ section .text
     FSTP float ptr [ESP]                ; 00425c97
     PUSH dword ptr [ESP + 0x8]          ; 00425c9a
     CALL core_bugs.cpp_FUN_00427ba0     ; 00425c9e
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_FUN_00427ba0()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00425ca3
     FLD float ptr [ESP + 0x1c]          ; 00425ca7
     ADD ESP,0x8                         ; 00425cab

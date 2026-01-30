@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 21,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -52,9 +59,9 @@
         "005e3745"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_turret.cpp_FUN_005e3720",
-    "signature": "undefined4 * core_turret_cpp_FUN_005e3720(void)"
+    "signature": "int __cdecl core_turret_cpp_FUN_005e3720(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -160,7 +167,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "return in_stack_00000008;",
+      "text": "return (int)in_stack_00000008;",
       "type": "stack_param"
     }
   ],

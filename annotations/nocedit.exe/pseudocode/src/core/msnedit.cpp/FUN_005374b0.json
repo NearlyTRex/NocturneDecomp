@@ -13,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 82,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
       "undefined_data"
     ],
-    "total_lines": 65
+    "total_lines": 73
   },
   "cross_references": [],
   "function": {
@@ -34,20 +33,20 @@
         "00537521"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_msnedit.cpp_FUN_005374b0",
-    "signature": "void core_msnedit_cpp_FUN_005374b0(void)"
+    "signature": "void __cdecl core_msnedit_cpp_FUN_005374b0(int unk)"
   },
   "function_calls": [
     {
       "addr": "00539060",
       "is_variadic": false,
-      "name": "core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060"
+      "name": "core_msnedit.cpp_CDemonMission_FUN_00539060"
     },
     {
       "addr": "00566660",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_unk50_FUN_00566660"
+      "name": "core_script.cpp_CScript_FUN_00566660"
     },
     {
       "addr": "00403260",
@@ -103,8 +102,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.951219512195122,
@@ -135,54 +134,27 @@
     "pcode_op_count": 162
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "unk",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "if ((2 < in_stack_00000004) || (in_stack_00000004 < 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "if ((2 < in_stack_00000004) || (in_stack_00000004 < 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "DAT_02f7c634 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 19,
       "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = in_stack_00000004;",
+      "text": "DAT_02f7c634 = unk;",
       "type": "undefined_data"
     }
   ]

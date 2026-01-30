@@ -152,7 +152,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"headOfHorrorCheat",&g_CGamePtr->head_of_horror_cheat);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Editor");
-  core_msnedit_cpp_readIni_FUN_00537530(g_CDemonMissionPtr,&local_204);
+  core_msnedit_cpp_CDemonMission_readIni_FUN_00537530(g_CDemonMissionPtr,&local_204);
   core_setedit_cpp_CDemonSet_readIni_FUN_00584900(g_CDemonSetPtr,&local_204);
   return;
 }

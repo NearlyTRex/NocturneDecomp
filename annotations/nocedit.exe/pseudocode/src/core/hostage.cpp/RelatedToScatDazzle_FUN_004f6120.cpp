@@ -1,14 +1,14 @@
 // Name: core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120
 // Address: 004f6120
 // Address Range: [[004f6120, 004f616e]]
-// Convention: unknown
-// Signature: void core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_hostage.cpp_RelatedToScatDazzle(uint param_1) */
 
-void core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
+void __cdecl core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120(void)
 
 {
   int iVar1;

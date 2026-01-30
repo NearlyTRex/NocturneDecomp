@@ -1,15 +1,15 @@
 // Name: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
 // Address: 00578d80
 // Address Range: [[00578d80, 0057a0b4]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
 
 #include "nocturne.h"
 
 /* Signature: void core_setedit.cpp_CDemonSet_importS3D(CDemonSet* param_1, uint param_2, int*
    param_3) */
 
-void core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
+void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
 
 {
   CEditorTools *this_ptr;

@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 75,
-        "line": 25,
-        "message": "invalid conversion from 'CDemonActor*' to 'int' [-fpermissive]"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 62,
-        "line": 31,
+        "line": 33,
         "message": "'stack0xffffffcc' was not declared in this scope"
       }
     ],
@@ -21,22 +15,16 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 26,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 251,
+    "complexity_score": 253,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 53,
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -44,7 +32,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 197
+    "total_lines": 199
   },
   "cross_references": [],
   "function": {
@@ -55,10 +43,10 @@
         "004d20e4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_frankgen.cpp_FUN_004d1f70",
-    "signature": "int core_frankgen_cpp_FUN_004d1f70(void)"
+    "signature": "int __cdecl core_frankgen_cpp_FUN_004d1f70(void)"
   },
   "function_calls": [
     {
@@ -247,126 +235,126 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 11,
       "match": "extraout_EBX",
       "text": "CDemonActor *extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar2 + 0x15c);",
+      "text": "*(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(pCVar2[1].actor_name + 4)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffcc);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 26,
       "match": "&stack0xffffffcc",
       "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffcc);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 29,
       "match": "NAN",
-      "text": "fVar5 = -NAN;",
+      "text": "fVar6 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 32,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].location.position.z,-1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 33,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[2].create_event[0x5c] != '\\0') {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(in_stack_00000004[1].actor_name + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "input_value = (double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000.0f) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = extraout_EBX;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
+      "line": 47,
       "match": "extraout_EBX",
       "text": "in_stack_00000004 = extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 50,
       "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar5,-1);",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar6,-1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"

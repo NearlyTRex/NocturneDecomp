@@ -9,7 +9,7 @@
 CFlies * __cdecl core_flies_cpp_FUN_004cccb0(CFlies *this_ptr,uint d1,uint d2,uint d3)
 
 {
-  int iVar1;
+  int extraout_EAX;
   CFlies *ptr;
   void *ptr_00;
   
@@ -18,8 +18,9 @@ CFlies * __cdecl core_flies_cpp_FUN_004cccb0(CFlies *this_ptr,uint d1,uint d2,ui
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  iVar1 = core_flies_cpp_FUN_004ccd60();
-  ptr = (CFlies *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(iVar1 + -0x168),1);
+  core_flies_cpp_FUN_004ccd60();
+  ptr = (CFlies *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(extraout_EAX + -0x168),1);
   if ((d1 & 2) == 0) {
     return ptr;
   }

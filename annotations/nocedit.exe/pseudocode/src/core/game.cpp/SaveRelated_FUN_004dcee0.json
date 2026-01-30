@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 23,
-        "line": 160,
+        "line": 167,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 161,
+        "line": 168,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 238,
+        "line": 246,
         "message": "'stack0xfffffe54' was not declared in this scope"
       }
     ],
@@ -31,91 +31,91 @@
       {
         "category": "other",
         "column": 35,
-        "line": 33,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 129,
+        "line": 136,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 131,
+        "line": 138,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 137,
+        "line": 144,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 137,
+        "line": 144,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 137,
+        "line": 144,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 141,
+        "line": 148,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 145,
+        "line": 152,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 147,
+        "line": 154,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 151,
+        "line": 158,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 160,
+        "line": 167,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 161,
+        "line": 168,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 864,
-    "complexity_score": 323,
+    "complexity_score": 331,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
-    "pseudocode_lines": 248,
+    "pseudocode_lines": 256,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1112
+    "total_lines": 1120
   },
   "cross_references": [
     {
@@ -157,12 +157,12 @@
     {
       "addr": "005602b0",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_005602b0"
+      "name": "core_script.cpp_CScript_FUN_005602b0"
     },
     {
       "addr": "0056b7e0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0"
+      "name": "core_set.cpp_CDemonSet_FUN_0056b7e0"
     },
     {
       "addr": "00570e20",
@@ -557,42 +557,42 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 79,
       "match": "DAT_02f43978",
       "text": "DAT_02f43978 = (uint)(DAT_02f43978 == 0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 79,
       "match": "DAT_02f43978",
       "text": "DAT_02f43978 = (uint)(DAT_02f43978 == 0);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 160,
       "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar6 + 1) = cVar1;",
+      "text": "*(char *)((int)piVar7 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 161,
       "match": "(int *)((int)",
-      "text": "piVar6 = (int *)((int)piVar6 + 2);",
+      "text": "piVar7 = (int *)((int)piVar7 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 231,
+      "line": 239,
       "match": "&stack0xfffffe54",
       "text": "(&stack0xfffffe54,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 232,
+      "line": 240,
       "match": "&stack0xfffffe54",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe54,1.0);",
       "type": "stack_ref"

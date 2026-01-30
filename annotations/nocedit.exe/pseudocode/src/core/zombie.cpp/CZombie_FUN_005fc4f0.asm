@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fc4f0(void)
 ;
 ;
 ; Referenced Globals:
@@ -35,7 +35,7 @@ section .text
     PUSH EDI                            ; 005fc4fb
     PUSH EBX                            ; 005fc4fc
     CALL core_zombie.cpp_CZombie_FUN_005fc220 ; 005fc4fd
-        ;   XREF to: 005fc220 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fc220()
+        ;   XREF to: 005fc220 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fc220()
     ADD ESP,0x8                         ; 005fc502
     MOV EAX,dword ptr [EBX + 0x154]     ; 005fc505
     PUSH EBX                            ; 005fc50b
@@ -74,7 +74,7 @@ section .text
     PUSH ESI                            ; 005fc580
     PUSH EBX                            ; 005fc581
     CALL core_zombie.cpp_CZombie_FUN_005fbde0 ; 005fc582
-        ;   XREF to: 005fbde0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbde0()
+        ;   XREF to: 005fbde0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fbde0()
     MOV EAX,dword ptr [EBX + 0xbf90]    ; 005fc587
     MOV ESI,0x6                         ; 005fc58d
     MOV EBP,dword ptr [EBX + EAX*0x4 + 0x2298] ; 005fc592
@@ -116,7 +116,7 @@ section .text
         ;   Label: LAB_005fc5f9
     PUSH EBX                            ; 005fc5fa
     CALL core_enemy.cpp_FUN_004a9f10    ; 005fc5fb
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 005fc600
     POP EBP                             ; 005fc603
     POP EDI                             ; 005fc604
@@ -192,7 +192,7 @@ section .text
     PUSH EDI                            ; 005fc6d3
     PUSH EBX                            ; 005fc6d4
     CALL core_enemy.cpp_FUN_004a9f10    ; 005fc6d5
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 005fc6da
     POP EBP                             ; 005fc6dd
     POP EDI                             ; 005fc6de
@@ -208,7 +208,7 @@ section .text
     PUSH EDI                            ; 005fc6f9
     PUSH EBX                            ; 005fc6fa
     CALL core_enemy.cpp_FUN_004a9f10    ; 005fc6fb
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 005fc700
     POP EBP                             ; 005fc703
     POP EDI                             ; 005fc704

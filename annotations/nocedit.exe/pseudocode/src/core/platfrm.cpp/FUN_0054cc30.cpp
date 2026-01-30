@@ -1,15 +1,15 @@
 // Name: core_platfrm.cpp_FUN_0054cc30
 // Address: 0054cc30
 // Address Range: [[0054cc30, 0054d687]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_FUN_0054cc30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_platfrm_cpp_FUN_0054cc30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_FUN_0054cc30(uint param_1, uint
    param_2) */
 
-void core_platfrm_cpp_FUN_0054cc30(void)
+void __cdecl core_platfrm_cpp_FUN_0054cc30(void)
 
 {
   char cVar1;

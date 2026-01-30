@@ -21,47 +21,47 @@ CSmiley * __cdecl CSmiley::ctor(CSmiley *this_ptr);
 
 // Original: core_smiley.cpp_FUN_005a24d0
 // Address: 005a24d0
-void FUN_005a24d0(void);
+void __cdecl FUN_005a24d0(void);
 
 // Original: core_smiley.cpp_FUN_005a2800
 // Address: 005a2800
-void FUN_005a2800(void);
+void __cdecl FUN_005a2800(void);
 
 // Original: core_smiley.cpp_FUN_005a3160
 // Address: 005a3160
-undefined4 FUN_005a3160(void);
+int __cdecl FUN_005a3160(void);
 
 // Original: core_smiley.cpp_CSmiley_load_FUN_005a3220
 // Address: 005a3220
-void CSmiley::load(void);
+void __cdecl CSmiley::load(void);
 
 // Original: core_smiley.cpp_FUN_005a3280
 // Address: 005a3280
-undefined4 FUN_005a3280(void);
+int __cdecl FUN_005a3280(void);
 
 // Original: core_smiley.cpp_FUN_005a32a0
 // Address: 005a32a0
-void FUN_005a32a0(void);
+void __cdecl FUN_005a32a0(void);
 
 // Original: core_smiley.cpp_FUN_005a3580
 // Address: 005a3580
-void FUN_005a3580(void);
+void __cdecl FUN_005a3580(void);
 
 // Original: core_smiley.cpp_FUN_005a3690
 // Address: 005a3690
-undefined4 FUN_005a3690(void);
+int __cdecl FUN_005a3690(void);
 
 // Original: core_smiley.cpp_FUN_005a37f0
 // Address: 005a37f0
-void FUN_005a37f0(void);
+void __cdecl FUN_005a37f0(void);
 
 // Original: core_smiley.cpp_FUN_005a3810
 // Address: 005a3810
-void FUN_005a3810(void);
+void __cdecl FUN_005a3810(void);
 
 // Original: core_smiley.cpp_FUN_005a3850
 // Address: 005a3850
-void FUN_005a3850(void);
+void __cdecl FUN_005a3850(void);
 
 // Original: core_smiley.cpp_CSmiley_dtor_FUN_005a3880
 // Address: 005a3880

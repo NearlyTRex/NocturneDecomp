@@ -1,14 +1,14 @@
 // Name: core_filmreel.cpp_FUN_004be810
 // Address: 004be810
 // Address Range: [[004be810, 004be86b] [004be881, 004be895]]
-// Convention: unknown
-// Signature: int core_filmreel_cpp_FUN_004be810(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_filmreel_cpp_FUN_004be810(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_filmreel.cpp_FUN_004be810(uint param_1) */
 
-int core_filmreel_cpp_FUN_004be810(void)
+int __cdecl core_filmreel_cpp_FUN_004be810(void)
 
 {
   CBoundingBox3D *this_ptr;

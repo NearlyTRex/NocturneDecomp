@@ -1,0 +1,145 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 23,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 52,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "0055a6c0",
+      "from_addr": "0055a702",
+      "name": "core_script.cpp_CScript_FUN_0055a6c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565d00",
+      "from_addr": "00565deb",
+      "name": "core_script.cpp_CScript_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a810",
+      "from_addr": "0055a9b5",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00560160",
+    "address_range": [
+      [
+        "00560160",
+        "005601b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_FUN_00560160",
+    "signature": "int __cdecl core_script_cpp_CScript_FUN_00560160(CScript *this_ptr,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005593d0",
+      "is_variadic": false,
+      "name": "core_script.cpp_FUN_005593d0"
+    },
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.642857142857143,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 41,
+      "INT_ADD": 22,
+      "INT_AND": 24,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 11,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "LOAD": 17,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 195
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "int __cdecl core_script_cpp_CScript_FUN_00560160(CScript *this_ptr,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "text": "str2 = param_2;",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 // Name: core_zombie.cpp_FUN_005f8cc0
 // Address: 005f8cc0
 // Address Range: [[005f8cc0, 005f8d24]]
-// Convention: unknown
-// Signature: float core_zombie_cpp_FUN_005f8cc0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_zombie_cpp_FUN_005f8cc0(void)
 
 #include "nocturne.h"
 
-float core_zombie_cpp_FUN_005f8cc0(void)
+float __cdecl core_zombie_cpp_FUN_005f8cc0(void)
 
 {
   int iVar1;

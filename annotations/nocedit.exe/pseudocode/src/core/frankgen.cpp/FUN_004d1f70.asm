@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_frankgen_cpp_FUN_004d1f70(void)
+; __cdecl int __cdecl core_frankgen_cpp_FUN_004d1f70(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
@@ -46,12 +46,12 @@ section .text
     JZ 0x004d1fa4                       ; 004d1f88
         ;   XREF to: 004d1fa4 (CONDITIONAL_JUMP)  ; LAB_004d1fa4
     CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d1f8a
-        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
     FLD float ptr [EAX + 0x15c]         ; 004d1f8f
     PUSH EBX                            ; 004d1f95
     FSTP float ptr [EBX + 0x15c]        ; 004d1f96
     CALL core_frankgen.cpp_LoadModel_FUN_004d2190 ; 004d1f9c
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_LoadModel_FUN_004d2190()
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_LoadModel_FUN_004d2190()
     ADD ESP,0x4                         ; 004d1fa1
     PUSH EBX                            ; 004d1fa4
         ;   Label: LAB_004d1fa4

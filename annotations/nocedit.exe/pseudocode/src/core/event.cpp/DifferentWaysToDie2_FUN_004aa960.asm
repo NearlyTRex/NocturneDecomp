@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_event_cpp_DifferentWaysToDie2_FUN_004aa960(void)
+; __cdecl int __cdecl core_event_cpp_DifferentWaysToDie2_FUN_004aa960(char *param_1,int *param_2)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; int *            Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004aba9c

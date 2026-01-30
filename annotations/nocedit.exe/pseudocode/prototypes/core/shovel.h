@@ -21,15 +21,15 @@ CShovel * __cdecl CShovel::ctor(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_fire_FUN_00588c20
 // Address: 00588c20
-undefined4 fire(void);
+int __cdecl fire(void);
 
 // Original: core_shovel.cpp_FUN_00588c40
 // Address: 00588c40
-float FUN_00588c40(void);
+float __cdecl FUN_00588c40(void);
 
 // Original: core_shovel.cpp_FUN_00588c70
 // Address: 00588c70
-void FUN_00588c70(void);
+void __cdecl FUN_00588c70(void);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_00588c80
 // Address: 00588c80

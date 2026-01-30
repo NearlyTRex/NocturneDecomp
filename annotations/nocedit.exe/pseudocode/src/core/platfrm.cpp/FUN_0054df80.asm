@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_platfrm_cpp_FUN_0054df80(void)
+; __cdecl int __cdecl core_platfrm_cpp_FUN_0054df80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88

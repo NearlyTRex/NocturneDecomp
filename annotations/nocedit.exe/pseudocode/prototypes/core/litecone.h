@@ -21,31 +21,31 @@ CLightCone * __cdecl CLightCone::ctor(CLightCone *this_ptr);
 
 // Original: core_litecone.cpp_FUN_00506bb0
 // Address: 00506bb0
-void FUN_00506bb0(void);
+void __cdecl FUN_00506bb0(void);
 
 // Original: core_litecone.cpp_FUN_00506bc0
 // Address: 00506bc0
-void FUN_00506bc0(void);
+void __cdecl FUN_00506bc0(void);
 
 // Original: core_litecone.cpp_FUN_00506c20
 // Address: 00506c20
-int FUN_00506c20(void);
+int __cdecl FUN_00506c20(void);
 
 // Original: core_litecone.cpp_FUN_00506cb0
 // Address: 00506cb0
-void FUN_00506cb0(void);
+void __cdecl FUN_00506cb0(void);
 
 // Original: core_litecone.cpp_FUN_00506d00
 // Address: 00506d00
-void FUN_00506d00(void);
+void __cdecl FUN_00506d00(void);
 
 // Original: core_litecone.cpp_FUN_00506d90
 // Address: 00506d90
-undefined4 FUN_00506d90(void);
+int __cdecl FUN_00506d90(void);
 
 // Original: core_litecone.cpp_FUN_00506da0
 // Address: 00506da0
-void FUN_00506da0(void);
+void __cdecl FUN_00506da0(void);
 
 // Original: core_litecone.cpp_CLightCone_dtor_FUN_00506e30
 // Address: 00506e30

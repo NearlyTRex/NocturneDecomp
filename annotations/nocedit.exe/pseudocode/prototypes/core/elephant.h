@@ -25,19 +25,19 @@ void __cdecl CElephantGun(CElephantGun *this_ptr,float delta_time);
 
 // Original: core_elephant.cpp_FUN_004a7160
 // Address: 004a7160
-undefined4 FUN_004a7160(void);
+int __cdecl FUN_004a7160(void);
 
 // Original: core_elephant.cpp_FUN_004a78a0
 // Address: 004a78a0
-void FUN_004a78a0(void);
+void __cdecl FUN_004a78a0(void);
 
 // Original: core_elephant.cpp_FUN_004a79b0
 // Address: 004a79b0
-float FUN_004a79b0(void);
+float __cdecl FUN_004a79b0(void);
 
 // Original: core_elephant.cpp_FUN_004a79f0
 // Address: 004a79f0
-void FUN_004a79f0(void);
+void __cdecl FUN_004a79f0(void);
 
 // Original: core_elephant.cpp_dtor_FUN_004a7be0
 // Address: 004a7be0

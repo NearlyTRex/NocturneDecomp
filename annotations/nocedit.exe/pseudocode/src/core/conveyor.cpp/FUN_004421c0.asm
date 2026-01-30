@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_conveyor_cpp_FUN_004421c0(void)
+; __cdecl void __cdecl core_conveyor_cpp_FUN_004421c0(void)
 ;
 ;
 ; Referenced Globals:
@@ -123,7 +123,7 @@ section .text
     PUSH EBX                            ; 004422da
         ;   Label: LAB_004422da
     CALL core_platfrm.cpp_FUN_0054ea00  ; 004422db
-        ;   XREF to: 0054ea00 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054ea00()
+        ;   XREF to: 0054ea00 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054ea00()
     ADD ESP,0x4                         ; 004422e0
     ADD ESP,0x8                         ; 004422e3
     POP EBX                             ; 004422e6

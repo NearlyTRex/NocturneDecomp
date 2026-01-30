@@ -1,14 +1,14 @@
 // Name: core_hostage.cpp_CHostage_load_FUN_004f6170
 // Address: 004f6170
 // Address Range: [[004f6170, 004f638c]]
-// Convention: unknown
-// Signature: void core_hostage_cpp_CHostage_load_FUN_004f6170(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hostage_cpp_CHostage_load_FUN_004f6170(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_hostage.cpp_CHostage_load(CHostage* param_1) */
 
-void core_hostage_cpp_CHostage_load_FUN_004f6170(void)
+void __cdecl core_hostage_cpp_CHostage_load_FUN_004f6170(void)
 
 {
   CDeformableModelInstance *model_ptr;

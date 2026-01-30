@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_netgame_cpp_FUN_0053f550(void)
+; __cdecl int __cdecl core_netgame_cpp_FUN_0053f550(void)
 ;
 ;
 ; Referenced Globals:

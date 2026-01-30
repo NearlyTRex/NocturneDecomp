@@ -6,12 +6,6 @@
         "column": 32,
         "line": 27,
         "message": "cast from 'CDemonLight**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 39,
-        "message": "too few arguments to function 'undefined4 core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(undefined4, undefined4, int, undefined4, CDemonSet*, int, undefined4, undefined4)'"
       }
     ],
     "success": false,
@@ -92,9 +86,9 @@
         "0057b5f9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_setedit.cpp_FUN_0057b500",
-    "signature": "void core_setedit_cpp_FUN_0057b500(void)"
+    "signature": "void __cdecl core_setedit_cpp_FUN_0057b500(void)"
   },
   "function_calls": [
     {
@@ -184,28 +178,24 @@
         "call_addr": "0057ca09",
         "call_type": "direct",
         "caller": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "0057cacc",
         "call_type": "direct",
         "caller": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.620689655172414,
@@ -385,11 +375,11 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

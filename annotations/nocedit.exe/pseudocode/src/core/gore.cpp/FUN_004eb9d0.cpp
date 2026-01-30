@@ -1,12 +1,12 @@
 // Name: core_gore.cpp_FUN_004eb9d0
 // Address: 004eb9d0
 // Address Range: [[004eb9d0, 004ebab2]]
-// Convention: unknown
-// Signature: void core_gore_cpp_FUN_004eb9d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_FUN_004eb9d0(void)
 
 #include "nocturne.h"
 
-void core_gore_cpp_FUN_004eb9d0(void)
+void __cdecl core_gore_cpp_FUN_004eb9d0(void)
 
 {
   int iVar1;

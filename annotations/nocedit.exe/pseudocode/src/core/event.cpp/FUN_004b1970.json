@@ -12,23 +12,23 @@
       {
         "category": "other",
         "column": 11,
-        "line": 14,
+        "line": 12,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 30,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 4,
     "suspect_count": 2,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 9
+    "total_lines": 8
   },
   "cross_references": [
     {
@@ -46,9 +46,9 @@
         "004b197a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_FUN_004b1970",
-    "signature": "undefined4 core_event_cpp_FUN_004b1970(void)"
+    "signature": "int __cdecl core_event_cpp_FUN_004b1970(int param_1)"
   },
   "function_calls": [],
   "globals": [],
@@ -64,27 +64,35 @@
     "pcode_op_count": 9
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_event_cpp_FUN_004b1970(int param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "return *(uint *)(in_stack_00000004 + 0x15aea4);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "text": "return *(int *)(param_1 + 0x15aea4);",
+      "type": "unnamed_param"
     }
   ]
 }

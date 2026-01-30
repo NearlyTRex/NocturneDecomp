@@ -1,12 +1,12 @@
 // Name: core_charactr.cpp_CCharacter_FUN_0042f3e0
 // Address: 0042f3e0
 // Address Range: [[0042f3e0, 0042f72b]]
-// Convention: unknown
-// Signature: undefined4 core_charactr_cpp_CCharacter_FUN_0042f3e0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_charactr_cpp_CCharacter_FUN_0042f3e0(void)
 
 #include "nocturne.h"
 
-uint core_charactr_cpp_CCharacter_FUN_0042f3e0(void)
+int __cdecl core_charactr_cpp_CCharacter_FUN_0042f3e0(void)
 
 {
   CCharacter *this_ptr;

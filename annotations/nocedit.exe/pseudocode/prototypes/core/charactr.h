@@ -29,11 +29,11 @@ void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3
 
 // Original: core_charactr.cpp_FUN_00428620
 // Address: 00428620
-float FUN_00428620(void);
+float __cdecl FUN_00428620(void);
 
 // Original: core_charactr.cpp_FUN_00428670
 // Address: 00428670
-float FUN_00428670(void);
+float __cdecl FUN_00428670(void);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 // Address: 004286e0
@@ -341,7 +341,7 @@ void __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042e840
 // Address: 0042e840
-float CCharacter(void);
+float __cdecl CCharacter(void);
 
 // Original: core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
 // Address: 0042e8c0
@@ -369,7 +369,7 @@ void __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042f3e0
 // Address: 0042f3e0
-undefined4 CCharacter(void);
+int __cdecl CCharacter(void);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042f730
 // Address: 0042f730
@@ -385,19 +385,19 @@ void __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042f8f0
 // Address: 0042f8f0
-void FUN_0042f8f0(void);
+void __cdecl FUN_0042f8f0(void);
 
 // Original: core_charactr.cpp_FUN_0042f920
 // Address: 0042f920
-void FUN_0042f920(void);
+void __cdecl FUN_0042f920(void);
 
 // Original: core_charactr.cpp_FUN_0042f930
 // Address: 0042f930
-void FUN_0042f930(void);
+void __cdecl FUN_0042f930(void);
 
 // Original: core_charactr.cpp_FUN_0042f990
 // Address: 0042f990
-void FUN_0042f990(void);
+void __cdecl FUN_0042f990(void);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042f9c0
 // Address: 0042f9c0
@@ -405,11 +405,11 @@ int __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042f9d0
 // Address: 0042f9d0
-int FUN_0042f9d0(void);
+int __cdecl FUN_0042f9d0(void);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042f9e0
+// Original: core_charactr.cpp_FUN_0042f9e0
 // Address: 0042f9e0
-int __cdecl CCharacter(CCharacter *this_ptr);
+int __cdecl FUN_0042f9e0(CGame *game_ptr);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042f9f0
 // Address: 0042f9f0

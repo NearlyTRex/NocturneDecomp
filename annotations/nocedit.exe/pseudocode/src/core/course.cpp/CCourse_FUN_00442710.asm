@@ -45,7 +45,7 @@ section .text
     PUSH dword ptr [ESP + 0x98]         ; 00442731
     PUSH ECX                            ; 00442738
     CALL core_course.cpp_CCourse_FUN_004427a0 ; 00442739
-        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_FUN_004427a0()
+        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_004427a0()
     ADD ESP,0x10                        ; 0044273e
     LEA EAX,[ESP + 0x70]                ; 00442741
     PUSH EAX                            ; 00442745

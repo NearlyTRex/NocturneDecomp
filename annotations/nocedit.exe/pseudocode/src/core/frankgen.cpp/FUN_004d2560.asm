@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_FUN_004d2560(void)
+; __cdecl void __cdecl core_frankgen_cpp_FUN_004d2560(void)
 ;
 ;
 ; Referenced Globals:

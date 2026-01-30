@@ -1,12 +1,12 @@
 // Name: core_bugs.cpp_FUN_00425340
 // Address: 00425340
 // Address Range: [[00425340, 004254aa]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_FUN_00425340(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_FUN_00425340(void)
 
 #include "nocturne.h"
 
-void core_bugs_cpp_FUN_00425340(void)
+void __cdecl core_bugs_cpp_FUN_00425340(void)
 
 {
   float fVar1;

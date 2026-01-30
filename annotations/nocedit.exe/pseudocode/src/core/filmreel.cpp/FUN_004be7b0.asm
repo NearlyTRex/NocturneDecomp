@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_filmreel_cpp_FUN_004be7b0(void)
+; __cdecl int __cdecl core_filmreel_cpp_FUN_004be7b0(void)
 ;
 ;
 ; Referenced Globals:

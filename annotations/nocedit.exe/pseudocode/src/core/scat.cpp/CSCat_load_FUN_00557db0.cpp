@@ -1,14 +1,14 @@
 // Name: core_scat.cpp_CSCat_load_FUN_00557db0
 // Address: 00557db0
 // Address Range: [[00557db0, 00557dbd]]
-// Convention: unknown
-// Signature: void core_scat_cpp_CSCat_load_FUN_00557db0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_CSCat_load_FUN_00557db0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_CSCat_load(CScat* param_1) */
 
-void core_scat_cpp_CSCat_load_FUN_00557db0(void)
+void __cdecl core_scat_cpp_CSCat_load_FUN_00557db0(void)
 
 {
   CHero *in_stack_00000004;

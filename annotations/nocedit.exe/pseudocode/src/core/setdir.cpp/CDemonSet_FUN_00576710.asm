@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_005767c2
     PUSH ESI                            ; 005767c3
     CALL core_setdir.cpp_FUN_005763a0   ; 005767c4
-        ;   XREF to: 005763a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005763a0()
+        ;   XREF to: 005763a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_FUN_005763a0()
     ADD ESP,0x8                         ; 005767c9
     TEST EAX,EAX                        ; 005767cc
     JNZ 0x0057680c                      ; 005767ce
@@ -131,7 +131,7 @@ section .text
     ADD EBP,ECX                         ; 005767fd
     PUSH EBP                            ; 005767ff
     CALL core_setdir.cpp_FUN_005763a0   ; 00576800
-        ;   XREF to: 005763a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005763a0()
+        ;   XREF to: 005763a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_FUN_005763a0()
     ADD ESP,0x8                         ; 00576805
     TEST EAX,EAX                        ; 00576808
     JZ 0x005767c2                       ; 0057680a

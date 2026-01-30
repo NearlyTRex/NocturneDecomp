@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_shovel_cpp_fire_FUN_00588c20(void)
+; __cdecl int __cdecl core_shovel_cpp_fire_FUN_00588c20(void)
 ;
 ;
 ; Referenced Globals:

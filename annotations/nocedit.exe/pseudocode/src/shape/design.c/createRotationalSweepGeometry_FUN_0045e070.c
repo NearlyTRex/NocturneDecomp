@@ -1,14 +1,14 @@
 // Name: shape_design.c_createRotationalSweepGeometry_FUN_0045e070
 // Address: 0045e070
 // Address Range: [[0045e070, 0045e512]]
-// Convention: unknown
-// Signature: void shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
+void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
 
 {
   uint uVar1;

@@ -11,102 +11,102 @@
       },
       {
         "category": "other",
-        "column": 63,
-        "line": 24,
+        "column": 68,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 26,
+        "line": 22,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 26,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 27,
         "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 66,
-        "line": 31,
+        "column": 52,
+        "line": 30,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 33,
+        "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 44,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 47,
+        "column": 52,
+        "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 50,
+        "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 53,
+        "column": 52,
+        "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 55,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 56,
+        "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 58,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 63,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 271,
+    "complexity_score": 261,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 18,
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 46,
     "suspect_count": 21,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 210
+    "total_lines": 200
   },
   "cross_references": [],
   "function": {
@@ -117,9 +117,9 @@
         "00537f55"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_msnedit.cpp_FUN_00537dd0",
-    "signature": "void core_msnedit_cpp_FUN_00537dd0(void)"
+    "signature": "void __cdecl core_msnedit_cpp_FUN_00537dd0(char *param_1,char *param_2,char *param_3)"
   },
   "function_calls": [
     {
@@ -277,8 +277,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.616,
@@ -307,160 +307,182 @@
     "pcode_op_count": 452
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void __cdecl core_msnedit_cpp_FUN_00537dd0(char *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void __cdecl core_msnedit_cpp_FUN_00537dd0(char *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "void __cdecl core_msnedit_cpp_FUN_00537dd0(char *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "char *in_stack_0000000c;",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "iVar1 = engine_dosio_c_getFileSize_FUN_00481880(param_3,param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = engine_dosio_c_getFileSize_FUN_00481880(in_stack_0000000c,in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "text": "iVar1 = engine_dosio_c_getFileSize_FUN_00481880(param_3,param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = engine_dosio_c_getFileSize_FUN_00481880(in_stack_0000000c,in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(param_3,param_1,\"rb\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(param_3,param_1,\"rb\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,in_stack_00000004,\"rb\");",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open world\\\\%s\",param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_0000000c,in_stack_00000004,\"rb\");",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "text": "file_ptr_00 = engine_dosio_c_getFile_FUN_00481a50(param_3,param_2,\"wb\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open world\\\\%s\",in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "text": "file_ptr_00 = engine_dosio_c_getFile_FUN_00481a50(param_3,param_2,\"wb\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,in_stack_00000008,\"wb\");",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create world\\\\%s\",param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_0000000c,in_stack_00000008,\"wb\");",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error reading world\\\\%s\",param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000008",
-      "text": "(\"Can't create world\\\\%s\",in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing world\\\\%s\",param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "(\"Error reading world\\\\%s\",in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_3",
+      "text": "(g_CEditorToolsPtr,\"Copied %s\\\\%s to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000008",
-      "text": "(\"Error writing world\\\\%s\",in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "text": "(g_CEditorToolsPtr,\"Copied %s\\\\%s to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_0000000c",
-      "text": "(g_CEditorToolsPtr,\"Copied %s\\\\%s to %s\\\\%s\",in_stack_0000000c,in_stack_00000004,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_3",
+      "text": "(g_CEditorToolsPtr,\"Copied %s\\\\%s to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "(g_CEditorToolsPtr,\"Copied %s\\\\%s to %s\\\\%s\",in_stack_0000000c,in_stack_00000004,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "text": "(g_CEditorToolsPtr,\"Copied %s\\\\%s to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c,in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_3",
+      "text": "(g_CEditorToolsPtr,\"Can't find %s\\\\%s to copy to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000008",
-      "text": "in_stack_0000000c,in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "text": "(g_CEditorToolsPtr,\"Can't find %s\\\\%s to copy to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000000c",
-      "text": "(g_CEditorToolsPtr,\"Can't find %s\\\\%s to copy to %s\\\\%s\",in_stack_0000000c,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_3",
+      "text": "(g_CEditorToolsPtr,\"Can't find %s\\\\%s to copy to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004,in_stack_0000000c,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_00000004,in_stack_0000000c,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000004,in_stack_0000000c,in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "text": "(g_CEditorToolsPtr,\"Can't find %s\\\\%s to copy to %s\\\\%s\",param_3,param_1,param_3,param_2);",
+      "type": "unnamed_param"
     }
   ]
 }

@@ -1,12 +1,12 @@
 // Name: core_zombie.cpp_FUN_005fce40
 // Address: 005fce40
 // Address Range: [[005fce40, 005fcf77]]
-// Convention: unknown
-// Signature: void core_zombie_cpp_FUN_005fce40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_zombie_cpp_FUN_005fce40(void)
 
 #include "nocturne.h"
 
-void core_zombie_cpp_FUN_005fce40(void)
+void __cdecl core_zombie_cpp_FUN_005fce40(void)
 
 {
   longlong lVar1;

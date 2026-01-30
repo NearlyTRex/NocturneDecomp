@@ -1,15 +1,15 @@
 // Name: core_litecone.cpp_FUN_00506da0
 // Address: 00506da0
 // Address Range: [[00506da0, 00506e23]]
-// Convention: unknown
-// Signature: void core_litecone_cpp_FUN_00506da0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_litecone_cpp_FUN_00506da0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_litecone.cpp_FUN_00506da0(uint param_1, uint
    param_2) */
 
-void core_litecone_cpp_FUN_00506da0(void)
+void __cdecl core_litecone_cpp_FUN_00506da0(void)
 
 {
   CDemonActor *in_stack_00000004;

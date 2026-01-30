@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_FUN_0057b500(void)
+; __cdecl void __cdecl core_setedit_cpp_FUN_0057b500(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -80,7 +80,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0057b56d
     PUSH ESI                            ; 0057b571
     CALL core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 ; 0057b572
-        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
+        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
     ADD ESP,0x8                         ; 0057b577
     MOV dword ptr [EDI + 0x1cb4],0x1    ; 0057b57a
     TEST EAX,EAX                        ; 0057b584

@@ -1,15 +1,15 @@
 // Name: core_frankgen.cpp_FUN_004d2740
 // Address: 004d2740
 // Address Range: [[004d2740, 004d276e]]
-// Convention: unknown
-// Signature: void core_frankgen_cpp_FUN_004d2740(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_frankgen_cpp_FUN_004d2740(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_frankgen.cpp_FUN_004d2740(uint param_1, uint
    param_2) */
 
-void core_frankgen_cpp_FUN_004d2740(void)
+void __cdecl core_frankgen_cpp_FUN_004d2740(void)
 
 {
   CDemonActor *in_stack_00000004;

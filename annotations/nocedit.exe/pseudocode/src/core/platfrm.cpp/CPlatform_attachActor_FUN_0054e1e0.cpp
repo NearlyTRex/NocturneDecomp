@@ -1,15 +1,15 @@
 // Name: core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
 // Address: 0054e1e0
 // Address Range: [[0054e1e0, 0054e2d5]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_CPlatform_attachActor(CPlatform* param_1,
    uint param_2) */
 
-void core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(void)
+void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(void)
 
 {
   int iVar1;

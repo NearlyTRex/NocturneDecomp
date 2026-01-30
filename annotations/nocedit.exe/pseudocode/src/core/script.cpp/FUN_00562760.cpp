@@ -1,14 +1,12 @@
 // Name: core_script.cpp_FUN_00562760
 // Address: 00562760
 // Address Range: [[00562760, 005627e9]]
-// Convention: unknown
-// Signature: int core_script_cpp_FUN_00562760(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_script_cpp_FUN_00562760(int param_1,int param_2)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_00562760(uint param_1, uint param_2) */
-
-int core_script_cpp_FUN_00562760(void)
+int __cdecl core_script_cpp_FUN_00562760(int param_1,int param_2)
 
 {
   char cVar1;
@@ -18,14 +16,12 @@ int core_script_cpp_FUN_00562760(void)
   int iVar5;
   char *pcVar6;
   char *pcVar7;
-  int in_stack_00000004;
-  int in_stack_00000008;
   
-  if (*(int *)(in_stack_00000004 + 0xcc) <= in_stack_00000008) {
-    in_stack_00000008 = *(int *)(in_stack_00000004 + 0xcc) + -1;
+  if (*(int *)(param_1 + 0xcc) <= param_2) {
+    param_2 = *(int *)(param_1 + 0xcc) + -1;
   }
   uVar2 = 0xffffffff;
-  pcVar6 = (char *)(in_stack_00000004 + 4);
+  pcVar6 = (char *)(param_1 + 4);
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
@@ -34,7 +30,7 @@ int core_script_cpp_FUN_00562760(void)
   } while (cVar1 != '\0');
   iVar5 = 0;
   uVar3 = 0xffffffff;
-  pcVar6 = (char *)(in_stack_00000004 + 0x68);
+  pcVar6 = (char *)(param_1 + 0x68);
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
@@ -42,11 +38,11 @@ int core_script_cpp_FUN_00562760(void)
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
   iVar4 = ~uVar2 + (~uVar3 - 2);
-  if (-1 < in_stack_00000008) {
-    pcVar6 = (char *)(in_stack_00000004 + 0x134);
+  if (-1 < param_2) {
+    pcVar6 = (char *)(param_1 + 0x134);
     do {
       uVar2 = 0xffffffff;
-      pcVar7 = (char *)(iVar5 * 0x328 + in_stack_00000004 + 0xd0);
+      pcVar7 = (char *)(iVar5 * 0x328 + param_1 + 0xd0);
       do {
         if (uVar2 == 0) break;
         uVar2 = uVar2 - 1;
@@ -64,7 +60,7 @@ int core_script_cpp_FUN_00562760(void)
       } while (cVar1 != '\0');
       pcVar6 = pcVar6 + 0x328;
       iVar4 = iVar4 + ~uVar2 + (~uVar3 - 2);
-    } while (iVar5 <= in_stack_00000008);
+    } while (iVar5 <= param_2);
   }
   return iVar4;
 }

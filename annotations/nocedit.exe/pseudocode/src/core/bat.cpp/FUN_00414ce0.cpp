@@ -1,14 +1,14 @@
 // Name: core_bat.cpp_FUN_00414ce0
 // Address: 00414ce0
 // Address Range: [[00414ce0, 00414db6]]
-// Convention: unknown
-// Signature: void core_bat_cpp_FUN_00414ce0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bat_cpp_FUN_00414ce0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_bat.cpp_FUN_00414ce0(uint param_1) */
 
-void core_bat_cpp_FUN_00414ce0(void)
+void __cdecl core_bat_cpp_FUN_00414ce0(void)
 
 {
   float fVar1;

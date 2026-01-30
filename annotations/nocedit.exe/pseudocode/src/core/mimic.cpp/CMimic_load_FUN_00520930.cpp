@@ -1,14 +1,14 @@
 // Name: core_mimic.cpp_CMimic_load_FUN_00520930
 // Address: 00520930
 // Address Range: [[00520930, 005209fe]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_CMimic_load_FUN_00520930(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_CMimic_load_FUN_00520930(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mimic.cpp_CMimic_load(CMimic* param_1) */
 
-void core_mimic_cpp_CMimic_load_FUN_00520930(void)
+void __cdecl core_mimic_cpp_CMimic_load_FUN_00520930(void)
 
 {
   CDeformableModelInstance *model_ptr;

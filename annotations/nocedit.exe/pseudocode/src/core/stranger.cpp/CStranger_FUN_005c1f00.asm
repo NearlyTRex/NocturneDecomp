@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c1f00(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(void)
 ;
 ;
 ; XREF[1]:
@@ -48,7 +48,7 @@ section .text
     PUSH EDX                            ; 005c1f3a
     PUSH EAX                            ; 005c1f3b
     CALL core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700 ; 005c1f3c
-        ;   XREF to: 00411700 (UNCONDITIONAL_CALL)  ; undefined core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700()
+        ;   XREF to: 00411700 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700()
     ADD ESP,0x8                         ; 005c1f41
     MOV dword ptr [EBX + 0x1fc38],0x1   ; 005c1f44
         ;   Label: LAB_005c1f44

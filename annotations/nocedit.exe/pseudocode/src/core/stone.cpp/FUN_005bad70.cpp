@@ -1,15 +1,15 @@
 // Name: core_stone.cpp_FUN_005bad70
 // Address: 005bad70
 // Address Range: [[005bad70, 005badc8]]
-// Convention: unknown
-// Signature: undefined4 core_stone_cpp_FUN_005bad70(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stone_cpp_FUN_005bad70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_stone.cpp_FUN_005bad70(uint param_1, uint param_2)
     */
 
-uint core_stone_cpp_FUN_005bad70(void)
+int __cdecl core_stone_cpp_FUN_005bad70(void)
 
 {
   CDemonActor *pCVar1;
@@ -29,5 +29,5 @@ uint core_stone_cpp_FUN_005bad70(void)
       return 0;
     }
   }
-  return *(uint *)(in_stack_00000004 + 0x314);
+  return *(int *)(in_stack_00000004 + 0x314);
 }

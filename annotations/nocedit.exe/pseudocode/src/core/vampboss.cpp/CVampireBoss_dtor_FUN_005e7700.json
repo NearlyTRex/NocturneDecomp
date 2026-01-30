@@ -3,20 +3,14 @@
     "errors": [
       {
         "category": "other",
-        "column": 68,
-        "line": 30,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 33,
+        "column": 24,
+        "line": 34,
         "message": "cast from 'CVampireBoss*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 41,
+        "line": 42,
         "message": "cast from 'CVampireBoss*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -31,48 +25,49 @@
       {
         "category": "other",
         "column": 23,
-        "line": 32,
+        "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 35,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 55,
         "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 47,
+        "column": 55,
         "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 47,
+        "line": 38,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 23,
-        "line": 40,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 100,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
-    "pseudocode_lines": 40,
-    "suspect_count": 5,
+    "pseudocode_lines": 41,
+    "suspect_count": 7,
     "suspect_types": [
+      "extra_output",
       "negative_offset",
       "unaffected_reg"
     ],
-    "total_lines": 147
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -292,38 +287,52 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 13,
       "match": "unaff_EBX",
       "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_EAX",
+      "text": "((CDeformableModelInstance *)(extraout_EAX + -0x22b4),0,unaff_EBX,unaff_retaddr",
+      "type": "extra_output"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 25,
+      "line": 26,
       "match": "unaff_EBX",
-      "text": "((CDeformableModelInstance *)(iVar1 + -0x22b4),0,unaff_EBX,unaff_retaddr,",
+      "text": "((CDeformableModelInstance *)(extraout_EAX + -0x22b4),0,unaff_EBX,unaff_retaddr",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
-      "match": "pCVar2[-5].",
-      "text": "iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(pCVar2[-5].model_name + 0x34));",
+      "line": 28,
+      "match": "pCVar1[-5].",
+      "text": "iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(pCVar1[-5].model_name + 0x34));",
       "type": "negative_offset"
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 34,
       "match": "unaff_EBX",
-      "text": "((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,",
+      "text": "((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_EBX,unaff_retaddr,",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 37,
-      "match": "pCVar2[-1].",
-      "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);",
+      "line": 38,
+      "match": "pCVar1[-1].",
+      "text": "((CDemonActor *)(pCVar1[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"
     }
   ],

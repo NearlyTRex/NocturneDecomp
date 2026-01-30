@@ -1,12 +1,12 @@
 // Name: core_setdir.cpp_FUN_005763a0
 // Address: 005763a0
 // Address Range: [[005763a0, 0057670e]]
-// Convention: unknown
-// Signature: undefined4 core_setdir_cpp_FUN_005763a0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_setdir_cpp_FUN_005763a0(void)
 
 #include "nocturne.h"
 
-uint core_setdir_cpp_FUN_005763a0(void)
+int __cdecl core_setdir_cpp_FUN_005763a0(void)
 
 {
   CVector3f *pCVar1;

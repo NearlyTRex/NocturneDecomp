@@ -1,15 +1,15 @@
 // Name: core_bride.cpp_FUN_00424aa0
 // Address: 00424aa0
 // Address Range: [[00424aa0, 00424b02]]
-// Convention: unknown
-// Signature: CVector3f * core_bride_cpp_FUN_00424aa0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_bride_cpp_FUN_00424aa0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bride.cpp_FUN_00424aa0(uint param_1, uint param_2)
     */
 
-CVector3f * core_bride_cpp_FUN_00424aa0(void)
+CVector3f * __cdecl core_bride_cpp_FUN_00424aa0(void)
 
 {
   int iVar1;

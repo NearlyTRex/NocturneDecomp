@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stairs_cpp_FUN_005ba900(void)
+; __cdecl void __cdecl core_stairs_cpp_FUN_005ba900(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -135,7 +135,7 @@ section .text
     ADD ESP,0x4                         ; 005baa59
     PUSH EBX                            ; 005baa5c
     CALL core_stairs.cpp_FUN_005ba700   ; 005baa5d
-        ;   XREF to: 005ba700 (UNCONDITIONAL_CALL)  ; undefined core_stairs.cpp_FUN_005ba700()
+        ;   XREF to: 005ba700 (UNCONDITIONAL_CALL)  ; void core_stairs.cpp_FUN_005ba700()
     ADD ESP,0x4                         ; 005baa62
     MOV ESP,EBP                         ; 005baa65
     POP EBP                             ; 005baa67

@@ -1,14 +1,14 @@
 // Name: core_cow.cpp_FUN_004441b0
 // Address: 004441b0
 // Address Range: [[004441b0, 004442f0]]
-// Convention: unknown
-// Signature: void core_cow_cpp_FUN_004441b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cow_cpp_FUN_004441b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_cow.cpp_FUN_004441b0(uint param_1) */
 
-void core_cow_cpp_FUN_004441b0(void)
+void __cdecl core_cow_cpp_FUN_004441b0(void)
 
 {
   CDeformableModelInstance *this_ptr;

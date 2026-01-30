@@ -13,7 +13,7 @@ CHiram * __cdecl getFactoryFunc(void);
 
 // Original: core_hiram.cpp_FUN_004f43e0
 // Address: 004f43e0
-CDemonActorType * FUN_004f43e0(void);
+CDemonActorType * __cdecl FUN_004f43e0(void);
 
 // Original: core_hiram.cpp_CHiram_ctor_FUN_004f43f0
 // Address: 004f43f0
@@ -25,20 +25,20 @@ CHiram * __cdecl CHiram::dtor(CHiram *this_ptr,uint d1,uint d2,uint d3,uint d4,u
 
 // Original: core_hiram.cpp_FUN_004f4530
 // Address: 004f4530
-void FUN_004f4530(void);
+void __cdecl FUN_004f4530(void);
 
 // Original: core_hiram.cpp_FUN_004f4550
 // Address: 004f4550
-void FUN_004f4550(void);
+void __cdecl FUN_004f4550(void);
 
 // Original: core_hiram.cpp_CHiram_load_FUN_004f4690
 // Address: 004f4690
-void CHiram::load(void);
+void __cdecl CHiram::load(void);
 
 // Original: core_hiram.cpp_FUN_004f46a0
 // Address: 004f46a0
-void FUN_004f46a0(void);
+void __cdecl FUN_004f46a0(void);
 
 // Original: core_hiram.cpp_FUN_004f46e0
 // Address: 004f46e0
-void FUN_004f46e0(void);
+void __cdecl FUN_004f46e0(void);

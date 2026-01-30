@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_FUN_00485b20(void)
+; __cdecl void __cdecl core_dracbrid_cpp_FUN_00485b20(void)
 ;
 ;
 ; XREF[1]:
@@ -47,7 +47,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00485b59
     PUSH EAX                            ; 00485b5c
     CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 00485b5d
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 00485b62
     MOV EDI,dword ptr [ESP + 0x20]      ; 00485b65
     PUSH EDI                            ; 00485b69
@@ -61,7 +61,7 @@ section .text
     ADD ESP,0x10                        ; 00485b78
     PUSH ESI                            ; 00485b7b
     CALL core_bodypart.cpp_FUN_0041a050 ; 00485b7c
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a050()
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
     MOV EAX,dword ptr [EBX + 0xbf68]    ; 00485b81
     MOV dword ptr [EBX + EAX*0x4 + 0xbf6c],ESI ; 00485b87
     INC dword ptr [EBX + 0xbf68]        ; 00485b8e

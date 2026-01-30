@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_drone_cpp_FUN_0048f360(void)
+; __cdecl void __cdecl core_drone_cpp_FUN_0048f360(void)
 ;
 ;
 ; Referenced Globals:
@@ -87,7 +87,7 @@ section .text
     PUSH EDX                            ; 0048f413
     PUSH EBX                            ; 0048f414
     CALL core_enemy.cpp_FUN_004a9f10    ; 0048f415
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 0048f41a
     POP EBP                             ; 0048f41d
     POP EDI                             ; 0048f41e
@@ -151,7 +151,7 @@ section .text
     PUSH EDX                            ; 0048f49c
     PUSH EBX                            ; 0048f49d
     CALL core_enemy.cpp_FUN_004a9f10    ; 0048f49e
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 0048f4a3
     POP EBP                             ; 0048f4a6
     POP EDI                             ; 0048f4a7

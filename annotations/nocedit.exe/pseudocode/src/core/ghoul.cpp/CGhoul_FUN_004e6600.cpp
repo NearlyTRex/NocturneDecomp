@@ -1,15 +1,15 @@
 // Name: core_ghoul.cpp_CGhoul_FUN_004e6600
 // Address: 004e6600
 // Address Range: [[004e6600, 004e818c]]
-// Convention: unknown
-// Signature: void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ghoul_cpp_CGhoul_FUN_004e6600(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_ghoul.cpp_CGhoul_FUN_004e6600(uint param_1, uint
    param_2) */
 
-void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
+void __cdecl core_ghoul_cpp_CGhoul_FUN_004e6600(void)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -202,8 +202,6 @@ switchD_004e6f9a_caseD_e:
               local_29c.impact_direction.y = pCVar14->y;
               local_29c.impact_direction.z = pCVar14->z;
             }
-            local_29c.attacker = (CDemonActor *)in_stack_00000004;
-            local_29c.wielder = (CDemonActor *)in_stack_00000004;
             (**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 4) + 0x154) + 0x11c))();
             local_ac = (double)local_29c.damage_amount;
             if (0.0 < local_ac) {
@@ -596,8 +594,6 @@ LAB_004e7576:
               if (in_stack_00000004[1].base.base.was_created != 0) {
                 local_2d8.damage_amount = local_14 * (float)2;
               }
-              local_2d8.attacker = (CDemonActor *)in_stack_00000004;
-              local_2d8.wielder = (CDemonActor *)in_stack_00000004;
               pCVar14 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                   (&local_114,(CVector3f *)&INT_02d832b4,
                                    (in_stack_00000004->base).model.bone_transform.
@@ -791,8 +787,6 @@ LAB_004e7d9a:
             if (in_stack_00000004[1].base.base.was_created != 0) {
               local_314.damage_amount = local_14 * (float)2;
             }
-            local_314.attacker = (CDemonActor *)in_stack_00000004;
-            local_314.wielder = (CDemonActor *)in_stack_00000004;
             pCVar14 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                 (local_210,(CVector3f *)&INT_02d832a8,
                                  (in_stack_00000004->base).model.bone_transform.bone_world_matrices
@@ -989,9 +983,9 @@ LAB_004e6754:
       in_stack_00000004[1].base.base.create_prob = 1.0;
     }
     else {
-      in_stack_00000008 = in_stack_00000004[1].base.base.create_prob - in_stack_00000008;
-      in_stack_00000004[1].base.base.create_prob = in_stack_00000008;
-      if (in_stack_00000008 < 0.0) {
+      fVar15 = in_stack_00000004[1].base.base.create_prob - in_stack_00000008;
+      in_stack_00000004[1].base.base.create_prob = fVar15;
+      if (fVar15 < 0.0) {
         in_stack_00000004[1].base.base.unk1 = 0x41f00000;
         in_stack_00000004[1].base.base.validation_magic = 0;
         in_stack_00000004[1].base.base.was_created = 0;

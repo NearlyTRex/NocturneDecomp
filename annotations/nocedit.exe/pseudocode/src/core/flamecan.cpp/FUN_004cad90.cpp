@@ -1,12 +1,12 @@
 // Name: core_flamecan.cpp_FUN_004cad90
 // Address: 004cad90
 // Address Range: [[004cad90, 004cadfc]]
-// Convention: unknown
-// Signature: void core_flamecan_cpp_FUN_004cad90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flamecan_cpp_FUN_004cad90(void)
 
 #include "nocturne.h"
 
-void core_flamecan_cpp_FUN_004cad90(void)
+void __cdecl core_flamecan_cpp_FUN_004cad90(void)
 
 {
   int iVar1;

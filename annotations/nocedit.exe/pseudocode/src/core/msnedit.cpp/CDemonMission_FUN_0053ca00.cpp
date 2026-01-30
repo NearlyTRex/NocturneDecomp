@@ -9,6 +9,8 @@
 void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ca00(CDemonMission *this_ptr)
 
 {
-  core_msnedit_cpp_BeginAndEndScene_FUN_0053c970();
+  int in_stack_00000008;
+  
+  core_msnedit_cpp_CDemonMission_FUN_0053c970(this_ptr,in_stack_00000008,g_MouseX,g_MouseY);
   return;
 }

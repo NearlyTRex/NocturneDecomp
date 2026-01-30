@@ -33,7 +33,7 @@ int __cdecl CTeleportDest(CTeleportDest *this_ptr);
 
 // Original: core_teleport.cpp_FUN_005da850
 // Address: 005da850
-bool FUN_005da850(void);
+bool __cdecl FUN_005da850(void);
 
 // Original: core_teleport.cpp_CTeleportDest_FUN_005da870
 // Address: 005da870

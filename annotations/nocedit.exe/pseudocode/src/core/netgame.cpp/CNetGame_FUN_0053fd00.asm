@@ -278,7 +278,7 @@ section .text
     PUSH EAX                            ; 0053ff59
     PUSH ESI                            ; 0053ff5a
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 0053ff5b
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 0053ff60
     PUSH ESI                            ; 0053ff63
     MOV EBX,dword ptr [0x02f7c8b8]      ; 0053ff64 | g_CurrentGameTime
@@ -488,7 +488,7 @@ section .text
     PUSH EDI                            ; 0054018f
     PUSH ESI                            ; 00540190
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 00540191
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 00540196
     INC EBX                             ; 00540199
         ;   Label: LAB_00540199

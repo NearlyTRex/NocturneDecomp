@@ -1,15 +1,15 @@
 // Name: core_stairs.cpp_FUN_005ba490
 // Address: 005ba490
 // Address Range: [[005ba490, 005ba4e3]]
-// Convention: unknown
-// Signature: void core_stairs_cpp_FUN_005ba490(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stairs_cpp_FUN_005ba490(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_stairs.cpp_FUN_005ba490(uint param_1, uint
    param_2) */
 
-void core_stairs_cpp_FUN_005ba490(void)
+void __cdecl core_stairs_cpp_FUN_005ba490(void)
 
 {
   float fVar1;

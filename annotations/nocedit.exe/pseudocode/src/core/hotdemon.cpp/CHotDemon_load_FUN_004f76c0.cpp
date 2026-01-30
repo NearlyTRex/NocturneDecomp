@@ -1,14 +1,14 @@
 // Name: core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0
 // Address: 004f76c0
 // Address Range: [[004f76c0, 004f7710]]
-// Convention: unknown
-// Signature: void core_hotdemon_cpp_CHotDemon_load_FUN_004f76c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hotdemon_cpp_CHotDemon_load_FUN_004f76c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_hotdemon.cpp_CHotDemon_load(CHotDemon* param_1) */
 
-void core_hotdemon_cpp_CHotDemon_load_FUN_004f76c0(void)
+void __cdecl core_hotdemon_cpp_CHotDemon_load_FUN_004f76c0(void)
 
 {
   CDeformableModelInstance *model_ptr;

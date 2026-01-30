@@ -1,14 +1,14 @@
 // Name: core_gabriela.cpp_FUN_004d5c60
 // Address: 004d5c60
 // Address Range: [[004d5c60, 004d5f63]]
-// Convention: unknown
-// Signature: undefined4 core_gabriela_cpp_FUN_004d5c60(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_gabriela_cpp_FUN_004d5c60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d5c60(uint param_1) */
 
-uint core_gabriela_cpp_FUN_004d5c60(void)
+int __cdecl core_gabriela_cpp_FUN_004d5c60(void)
 
 {
   CDemonActor *this_ptr;

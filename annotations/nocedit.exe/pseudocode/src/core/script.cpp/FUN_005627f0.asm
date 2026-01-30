@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_script_cpp_FUN_005627f0(void)
+; __cdecl CHero * __cdecl core_script_cpp_FUN_005627f0(int param_1,int param_2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
@@ -59,7 +62,7 @@ section .text
     ADD EAX,0x64                        ; 0056284a
     PUSH EAX                            ; 0056284d
     CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0056284e
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_GetDemonActor_FUN_005594e0()
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 00562853
     POP ESI                             ; 00562856
     ADD ESP,0x4                         ; 00562857

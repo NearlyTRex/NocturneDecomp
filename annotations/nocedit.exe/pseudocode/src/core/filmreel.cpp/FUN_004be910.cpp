@@ -1,15 +1,15 @@
 // Name: core_filmreel.cpp_FUN_004be910
 // Address: 004be910
 // Address Range: [[004be910, 004be95d]]
-// Convention: unknown
-// Signature: float * core_filmreel_cpp_FUN_004be910(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_filmreel_cpp_FUN_004be910(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_filmreel.cpp_FUN_004be910(uint param_1, uint
    param_2) */
 
-float * core_filmreel_cpp_FUN_004be910(void)
+float * __cdecl core_filmreel_cpp_FUN_004be910(void)
 
 {
   CVector3f *pCVar1;

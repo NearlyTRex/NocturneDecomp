@@ -15,8 +15,8 @@
 ; XREF[4]:
 ;   core_inv.cpp_CInventory_load_FUN_004ff400 at 004ff5c9
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 at 00523247
-;   core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80 at 0053be7b
-;   core_msnedit.cpp_UndoChangeMaybe_FUN_0053c0b0 at 0053c109
+;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053be7b
+;   core_msnedit.cpp_CDemonMission_FUN_0053c0b0 at 0053c109
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_00613d27

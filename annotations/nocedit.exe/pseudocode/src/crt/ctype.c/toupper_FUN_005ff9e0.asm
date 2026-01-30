@@ -14,7 +14,7 @@
 ;   core_game.cpp_FUN_004dd7f0 at 004dd828
 ;   core_game.cpp_FUN_004dd9d0 at 004dda0b
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005074fd
-;   core_script.cpp_SCmdParse_parse_FUN_00561fd0 at 00562181
+;   core_script.cpp_CCmdParse_parse_FUN_00561fd0 at 00562181
 ;   core_skeledit.cpp_FUN_00592690 at 00594994
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc392
 ;   ... and 28 more

@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 178,
+    "complexity_score": 175,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 40,
     "suspect_count": 13,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 140
+    "total_lines": 137
   },
   "cross_references": [],
   "function": {
@@ -33,9 +33,9 @@
         "00536cc6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_msnedit.cpp_FUN_00536bf0",
-    "signature": "void core_msnedit_cpp_FUN_00536bf0(void)"
+    "signature": "void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2)"
   },
   "function_calls": [
     {
@@ -73,8 +73,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.702702702702703,
@@ -104,10 +104,10 @@
     "pcode_op_count": 348
   },
   "stack_frame": {
-    "frame_size": 220,
+    "frame_size": 228,
     "local_size": 220,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -130,100 +130,114 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "CStrList *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 12,
-      "match": "in_stack_00000008",
-      "text": "CStrList *in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "cVar2 = *param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "cVar2 = *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "text": "while (((cVar2 = *param_1, pcVar4 = local_d8,",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "while (((cVar2 = *in_stack_00000004, pcVar4 = local_d8,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "text": "*pcVar4 = *param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "text": "*pcVar4 = *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "text": "pbVar1 = (byte *)(param_1 + 1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "pbVar1 = (byte *)(in_stack_00000004 + 1);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(param_2,local_d8);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000008",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(in_stack_00000008,local_d8);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "text": "if (*param_1 == '\\0') {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 39,
-      "match": "in_stack_00000004",
-      "text": "if (*in_stack_00000004 == '\\0') {",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "cVar2 = *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "text": "cVar2 = *param_1;",
+      "type": "unnamed_param"
     }
   ]
 }

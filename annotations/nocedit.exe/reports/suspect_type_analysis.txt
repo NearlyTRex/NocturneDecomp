@@ -4,32 +4,32 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    28947 ( 54.7%)
-  pointer_cast                    5847 ( 11.0%)
-  decompiler_intrinsic            4954 (  9.4%)
-  unknown_field                   2085 (  3.9%)
-  undefined_data                  1993 (  3.8%)
-  unnamed_param                   1612 (  3.0%)
-  stack_ref                       1427 (  2.7%)
-  unaffected_reg                  1151 (  2.2%)
-  suspect_float                    820 (  1.5%)
-  param_count_too_few              628 (  1.2%)
+  stack_param                    27237 ( 52.4%)
+  pointer_cast                    5837 ( 11.2%)
+  decompiler_intrinsic            4973 (  9.6%)
+  unknown_field                   2074 (  4.0%)
+  undefined_data                  2005 (  3.9%)
+  unnamed_param                   1966 (  3.8%)
+  stack_ref                       1434 (  2.8%)
+  unaffected_reg                  1117 (  2.2%)
+  extra_output                     920 (  1.8%)
+  suspect_float                    816 (  1.6%)
   special_crt_function             623 (  1.2%)
-  extra_output                     584 (  1.1%)
-  unresolved_funcptr               493 (  0.9%)
-  negative_offset                  413 (  0.8%)
-  fpu_register_input               341 (  0.6%)
+  param_count_too_few              570 (  1.1%)
+  unresolved_funcptr               485 (  0.9%)
+  negative_offset                  417 (  0.8%)
+  fpu_register_input               341 (  0.7%)
+  register_param                   274 (  0.5%)
   nonstandard_int                  273 (  0.5%)
-  register_param                   200 (  0.4%)
   warning_unreachable               99 (  0.2%)
-  param_count_too_many              86 (  0.2%)
+  param_count_too_many              89 (  0.2%)
   unknown_type                      86 (  0.2%)
-  undefined_type                    46 (  0.1%)
-  format_string_mismatch            38 (  0.1%)
+  undefined_type                    53 (  0.1%)
+  format_string_mismatch            49 (  0.1%)
   mmx_assembly                      34 (  0.1%)
   warning_type_propagation          31 (  0.1%)
   undefined_ram                     27 (  0.1%)
-  eflags_input                      26 (  0.0%)
+  eflags_input                      26 (  0.1%)
   special_math_intrinsic            23 (  0.0%)
   warning_jumptable                 10 (  0.0%)
   warning_indirect_jump             10 (  0.0%)
@@ -50,19 +50,19 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (28947 occurrences)
+TYPE: stack_param (27237 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  15856x  in_stack_00000004
-  6625x  in_stack_00000008
-  1755x  in_stack_0000000c
-   725x  in_stack_00000010
-   337x  in_stack_00000014
-   187x  in_stack_00000018
-   141x  in_stack_0000001c
+  14986x  in_stack_00000004
+  6106x  in_stack_00000008
+  1584x  in_stack_0000000c
+   652x  in_stack_00000010
+   311x  in_stack_00000014
+   181x  in_stack_00000018
+   139x  in_stack_0000001c
     69x  in_stack_fffeec08
-    65x  in_stack_00000020
+    61x  in_stack_00000020
     61x  in_stack_fffffd68
     59x  in_stack_fffeec0c
     59x  in_stack_fffeec10
@@ -102,30 +102,30 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: pointer_cast (5847 occurrences)
+TYPE: pointer_cast (5837 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2212x  (uint *)((int)
-  1237x  (int *)((int)
-   417x  (float *)((int)
+  2206x  (uint *)((int)
+  1215x  (int *)((int)
+   399x  (float *)((int)
    336x  (SRenderVertex *)((int)
    248x  (CMatrix3x4f *)((int)
    217x  (double *)((int)
-   210x  (void *)((int)
-   203x  (byte *)((int)
+   211x  (void *)((int)
+   204x  (byte *)((int)
    153x  (char *)((int)
     83x  (ushort *)((int)
     56x  (short *)((int)
-    38x  (CVector3f *)((int)
     34x  (SShapeEditorPolygon *)((int)
+    32x  (CVector3f *)((int)
+    28x  (CCmdParm *)((int)
     23x  (CMatrix3x3f *)((int)
     21x  (SMRGLHeaderExtended *)((int)
     14x  (HGLOBAL *)((int)
+    12x  (CCmdParse *)((int)
     10x  (SVoxelGrid *)((int)
      9x  (FileEmbeddedData *)((int)
-     9x  (ulonglong *)((int)
-     9x  (CLodFace *)((int)
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
@@ -140,18 +140,18 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (4954 occurrences)
+TYPE: decompiler_intrinsic (4973 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1859x  ROUND
-   590x  CONCAT44
+   601x  CONCAT44
    419x  SQRT
    295x  ABS
-   178x  SUB84
+   184x  SUB84
    162x  CARRY4
    150x  CONCAT11
-   110x  CONCAT22
+   109x  CONCAT22
    106x  fcos
    105x  fsin
     96x  CONCAT12
@@ -160,10 +160,10 @@ Unique patterns:
     65x  CONCAT13
     63x  CONCAT26
     63x  CONCAT24
+    55x  CONCAT31
     55x  CONCAT25
     53x  CONCAT41
     50x  CONCAT34
-    48x  CONCAT31
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
@@ -192,12 +192,12 @@ Example functions:
     uVar12 = SUB84(b,0);...
 
 ====================================================================================================
-TYPE: unknown_field (2085 occurrences)
+TYPE: unknown_field (2074 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   744x  ._0_4_
-   692x  ._4_4_
+   742x  ._0_4_
+   683x  ._4_4_
    156x  ._8_4_
     84x  ._12_4_
     74x  ._16_4_
@@ -236,30 +236,30 @@ Example functions:
     *value._4_4_ = dVar1;...
 
 ====================================================================================================
-TYPE: undefined_data (1993 occurrences)
+TYPE: undefined_data (2005 occurrences)
 ====================================================================================================
 
 Unique patterns:
+   112x  DAT_0310fd48
    108x  DAT_0310eca0
     90x  DAT_0310ec9c
     79x  DAT_02d0a460
-    78x  DAT_0310fd48
-    56x  DAT_0310fd44
-    35x  DAT_031101c0
+    72x  DAT_0310fd44
+    36x  DAT_031101c0
     23x  DAT_02f98ad0
     23x  DAT_02d83368
     22x  DAT_03654368
     22x  DAT_02f7c634
-    20x  DAT_02d873d8
     18x  DAT_02da8720
+    18x  DAT_02d873d8
+    18x  DAT_02f7c53c
     17x  DAT_03365cc0
+    17x  DAT_031141c4
     17x  DAT_008879c0
+    16x  DAT_031141cc
     16x  DAT_03277d80
     16x  DAT_02d831ec
-    15x  DAT_031141cc
     15x  DAT_00821ff4
-    14x  DAT_031141c4
-    13x  DAT_0310f4a4
 
 Example functions:
   crt_io.c_getTempDirectory_FUN_00609afc
@@ -296,46 +296,43 @@ Example functions:
     if (((DAT_03f9b210 == (Heap *)0x0) ||...
 
 ====================================================================================================
-TYPE: unnamed_param (1612 occurrences)
+TYPE: unnamed_param (1966 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   456x  param_5
-   439x  param_2
-   170x  param_1
-   165x  param_3
-   142x  param_4
-   129x  param_6
-    20x  param_7
+   869x  param_2
+   460x  param_1
+   313x  param_3
+   151x  param_4
+    59x  param_5
+    23x  param_6
     17x  param0
     13x  param5
     12x  param3
-    12x  param_8
+    12x  param_7
     10x  param4
-     7x  param_10
+     9x  param_8
      6x  param1
+     6x  param_10
      5x  param2
-     4x  param_9
-     2x  param_11
-     2x  param_13
-     1x  param_12
+     1x  param_9
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480
     (CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3...
   cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40
     (CPackedBitmapSet *bitmap_set,char *pbg_filename,char *palette_filename,int para...
-  cockpit_pkbitmap.cpp_FUN_0054b930
-    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,...
   cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
     (CPackedBitmapSet *bitmap_set,_FILE *file_handle,int param3,int param4,...
   crt_memory.c___arrcopy_FUN_00600bc2
     void *param0;...
   crt_memory.c___arrinit_FUN_005fe667
     void *param0;...
+  crt_memory.c___arrinit__FUN_00608dc8
+    void *param0;...
 
 ====================================================================================================
-TYPE: stack_ref (1427 occurrences)
+TYPE: stack_ref (1434 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -391,11 +388,11 @@ Example functions:
     puVar6 = &stack0xfffffff0;...
 
 ====================================================================================================
-TYPE: unaffected_reg (1151 occurrences)
+TYPE: unaffected_reg (1117 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   417x  unaff_EBX
+   383x  unaff_EBX
    323x  unaff_ESI
    213x  unaff_EDI
    198x  unaff_EBP
@@ -425,21 +422,71 @@ Example functions:
     ushort *unaff_ESI;...
   cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840
     int unaff_EBP;...
-  cockpit_pkbitmap.cpp_FUN_0054b930
-    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,...
   cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     int unaff_EBP;...
 
 ====================================================================================================
-TYPE: suspect_float (820 occurrences)
+TYPE: extra_output (920 occurrences)
+====================================================================================================
+
+Unique patterns:
+   401x  extraout_EAX
+    89x  extraout_EAX_00
+    89x  extraout_EBX
+    44x  extraout_var
+    28x  extraout_ST1
+    27x  extraout_EAX_01
+    19x  extraout_EDX
+    16x  extraout_EAX_02
+    15x  extraout_EBX_00
+    14x  extraout_EDX_00
+    11x  extraout_EDI
+    11x  extraout_EAX_03
+    10x  extraout_EAX_04
+    10x  extraout_var_00
+     8x  extraout_ST2
+     6x  extraout_AL
+     6x  extraout_ST3
+     6x  extraout_EBX_01
+     5x  extraout_EAX_05
+     4x  extraout_EDX_01
+
+Example functions:
+  crt_process.c_spawnvp_FUN_0060f39c
+    char *extraout_EAX;...
+  crt_stdlib.c_qsort_FUN_005fdf38
+    void *extraout_EAX;...
+  crt_fstream.cpp_ofstream_constructor_FUN_005ff710
+    int extraout_EAX;...
+  crt_fstream.cpp_ifstream_constructor_FUN_005ff664
+    int extraout_EAX;...
+  crt_memory.c___memfill_FUN_00603b00
+    byte *extraout_EAX;...
+  crt_math.c_asin_FUN_00600b94
+    char extraout_AL;...
+  crt_math.c_acos_FUN_00600162
+    char extraout_AL;...
+  crt_math.c_pow_FUN_005ffd76
+    char extraout_AL;...
+  crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388
+    BOOL extraout_EAX;...
+  crt_time.c_time_FUN_006001f0
+    int extraout_EAX;...
+  crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0
+    ushort extraout_var;...
+  crt_unknown.c_FUN_0060af5d
+    int extraout_EDX;...
+
+====================================================================================================
+TYPE: suspect_float (816 occurrences)
 ====================================================================================================
 
 Unique patterns:
    132x  9.18341e-41
    108x  7.34684e-40
    104x  2.2775203e-38
-    84x  1.4013e-45
-    38x  2.8026e-45
+    81x  1.4013e-45
+    37x  2.8026e-45
     19x  4.2039e-45
     14x  5.60519e-45
     12x  1.14794e-41
@@ -471,94 +518,6 @@ Example functions:
     local_a0.w_recip = 5.902398e-39;...
   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
     fVar3 = 3.67342e-40;...
-
-====================================================================================================
-TYPE: param_count_too_few (628 occurrences)
-====================================================================================================
-
-Unique patterns:
-   104x  declared:1 vs estimated:2
-    80x  declared:0 vs estimated:2
-    77x  declared:0 vs estimated:1
-    54x  declared:0 vs estimated:4
-    52x  declared:0 vs estimated:3
-    27x  declared:1 vs estimated:3
-    24x  declared:1 vs estimated:5
-    21x  declared:3 vs estimated:4
-    17x  declared:0 vs estimated:5
-    15x  declared:2 vs estimated:3
-    14x  declared:1 vs estimated:4
-    14x  declared:0 vs estimated:6
-     9x  declared:5 vs estimated:6
-     9x  declared:2 vs estimated:6
-     8x  declared:0 vs estimated:9
-     7x  declared:2 vs estimated:5
-     7x  declared:0 vs estimated:7
-     6x  declared:4 vs estimated:5
-     6x  declared:3 vs estimated:5
-     6x  declared:2 vs estimated:4
-
-Example functions:
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
-    Function declares 1 params but call sites push 5 (4 missing)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    Function declares 1 params but call sites push 3 (2 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    Function declares 2 params but call sites push 3 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    Function declares 6 params but call sites push 7 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800
-    Function declares 6 params but call sites push 8 (2 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0
-    Function declares 5 params but call sites push 8 (3 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0
-    Function declares 6 params but call sites push 10 (4 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
-    Function declares 7 params but call sites push 9 (2 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0
-    Function declares 1 params but call sites push 5 (4 missing)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-    Function declares 4 params but call sites push 7 (3 missing)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0
-    Function declares 7 params but call sites push 11 (4 missing)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0
-    Function declares 1 params but call sites push 2 (1 missing)...
-  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    Function declares 8 params but call sites push 12 (4 missing)...
-  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-    Function declares 6 params but call sites push 8 (2 missing)...
-  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    Function declares 2 params but call sites push 5 (3 missing)...
-  cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_io.c_CheckFileHandleAvailability_FUN_00608940
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_windows.c_has_active_window_FUN_0060a710
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_process.c_spawnvp_FUN_0060f39c
-    Function declares 3 params but call sites push 5 (2 missing)...
-  crt_process.c_spawnvp_FUN_0060ca20
-    Function declares 3 params but call sites push 4 (1 missing)...
-  crt_process.c_getpid_FUN_006099c0
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_process.c_spawn_FUN_006105a0
-    Function declares 4 params but call sites push 5 (1 missing)...
-  crt_process.c_spawnvp_with_path_search_FUN_0060e6a0
-    Function declares 3 params but call sites push 6 (3 missing)...
-  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
-    Function declares 1 params but call sites push 3 (2 missing)...
 
 ====================================================================================================
 TYPE: special_crt_function (623 occurrences)
@@ -630,63 +589,99 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
-TYPE: extra_output (584 occurrences)
+TYPE: param_count_too_few (570 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   231x  extraout_EAX
-    87x  extraout_EBX
-    69x  extraout_EAX_00
-    34x  extraout_var
-    28x  extraout_ST1
-    24x  extraout_EAX_01
-    14x  extraout_EAX_02
-    13x  extraout_EBX_00
-    11x  extraout_EDX
-    11x  extraout_EDI
-     8x  extraout_ST2
-     8x  extraout_EAX_03
-     8x  extraout_EAX_04
-     6x  extraout_AL
-     6x  extraout_ST3
-     6x  extraout_var_00
-     6x  extraout_EBX_01
-     2x  extraout_ST0
-     2x  extraout_ESI
-     2x  extraout_ST1_00
+   105x  declared:1 vs estimated:2
+    90x  declared:0 vs estimated:2
+    78x  declared:0 vs estimated:1
+    35x  declared:0 vs estimated:3
+    27x  declared:1 vs estimated:3
+    26x  declared:0 vs estimated:4
+    25x  declared:1 vs estimated:5
+    21x  declared:3 vs estimated:4
+    15x  declared:2 vs estimated:3
+    14x  declared:1 vs estimated:4
+     9x  declared:5 vs estimated:6
+     9x  declared:0 vs estimated:5
+     9x  declared:2 vs estimated:6
+     9x  declared:0 vs estimated:6
+     7x  declared:2 vs estimated:5
+     7x  declared:2 vs estimated:4
+     6x  declared:4 vs estimated:5
+     6x  declared:3 vs estimated:5
+     6x  declared:1 vs estimated:7
+     5x  declared:3 vs estimated:7
 
 Example functions:
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
+    Function declares 1 params but call sites push 5 (4 missing)...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    Function declares 1 params but call sites push 3 (2 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    Function declares 2 params but call sites push 3 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    Function declares 6 params but call sites push 7 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800
+    Function declares 6 params but call sites push 8 (2 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0
+    Function declares 5 params but call sites push 8 (3 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0
+    Function declares 6 params but call sites push 10 (4 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+    Function declares 4 params but call sites push 5 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
+    Function declares 7 params but call sites push 9 (2 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0
+    Function declares 1 params but call sites push 5 (4 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
+    Function declares 4 params but call sites push 7 (3 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0
+    Function declares 7 params but call sites push 11 (4 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0
+    Function declares 1 params but call sites push 2 (1 missing)...
+  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    Function declares 8 params but call sites push 12 (4 missing)...
+  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+    Function declares 6 params but call sites push 8 (2 missing)...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    Function declares 2 params but call sites push 5 (3 missing)...
+  cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_io.c_CheckFileHandleAvailability_FUN_00608940
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_windows.c_has_active_window_FUN_0060a710
+    Function declares 0 params but call sites push 4 (4 missing)...
   crt_process.c_spawnvp_FUN_0060f39c
-    char *extraout_EAX;...
-  crt_stdlib.c_qsort_FUN_005fdf38
-    void *extraout_EAX;...
-  crt_fstream.cpp_ofstream_constructor_FUN_005ff710
-    int extraout_EAX;...
-  crt_fstream.cpp_ifstream_constructor_FUN_005ff664
-    int extraout_EAX;...
-  crt_memory.c___memfill_FUN_00603b00
-    byte *extraout_EAX;...
-  crt_math.c_asin_FUN_00600b94
-    char extraout_AL;...
-  crt_math.c_acos_FUN_00600162
-    char extraout_AL;...
-  crt_math.c_pow_FUN_005ffd76
-    char extraout_AL;...
-  crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388
-    BOOL extraout_EAX;...
-  crt_time.c_time_FUN_006001f0
-    int extraout_EAX;...
-  crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0
-    ushort extraout_var;...
-  crt_unknown.c_FUN_0060af5d
-    int extraout_EDX;...
+    Function declares 3 params but call sites push 5 (2 missing)...
+  crt_process.c_spawnvp_FUN_0060ca20
+    Function declares 3 params but call sites push 4 (1 missing)...
+  crt_process.c_getpid_FUN_006099c0
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_process.c_spawn_FUN_006105a0
+    Function declares 4 params but call sites push 5 (1 missing)...
+  crt_process.c_spawnvp_with_path_search_FUN_0060e6a0
+    Function declares 3 params but call sites push 6 (3 missing)...
+  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
+    Function declares 1 params but call sites push 3 (2 missing)...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (493 occurrences)
+TYPE: unresolved_funcptr (485 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   460x  code *
+   452x  code *
     33x  code
 
 Example functions:
@@ -724,14 +719,14 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: negative_offset (413 occurrences)
+TYPE: negative_offset (417 occurrences)
 ====================================================================================================
 
 Unique patterns:
     59x  this_ptr_00[-1].
     53x  pCVar3[-1].
-    47x  pCVar2[-1].
-    25x  pCVar1[-1].
+    46x  pCVar2[-1].
+    26x  pCVar1[-1].
     18x  pCVar4[-1].
     16x  pCVar3[-5].
     14x  pCVar3[-2].
@@ -740,10 +735,10 @@ Unique patterns:
     10x  this_ptr[-1].
      8x  pCVar1[-2].
      8x  pCVar2[-3].
+     8x  pCVar7[-1].
      7x  piVar4[-2].
      7x  pCVar3[-3].
      7x  pCVar2[-9].
-     6x  pCVar8[-1].
      5x  pCVar2[-10].
      5x  pCVar2[-7].
      4x  piVar2[-2].
@@ -816,6 +811,44 @@ Example functions:
     float10 in_ST0;...
 
 ====================================================================================================
+TYPE: register_param (274 occurrences)
+====================================================================================================
+
+Unique patterns:
+    78x  in_EAX
+    75x  in_ECX
+    54x  in_EDX
+    20x  in_DS
+     9x  in_AX
+     4x  in_AL
+     3x  in_DX
+     2x  in_GS
+     2x  in_ES
+     2x  in_CF
+     2x  in_PF
+     2x  in_AF
+     2x  in_ZF
+     2x  in_SF
+     2x  in_TF
+     2x  in_IF
+     2x  in_OF
+     2x  in_NT
+     2x  in_AC
+     2x  in_VIF
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
+    int in_EAX;...
+  crt_stdlib.c_memory_swap_FUN_005fdf10
+    uint in_ECX;...
+  crt_stdlib.c_qsort_FUN_005fdf38
+    ushort in_GS;...
+  crt_cpp.c_reportPureVirtualError_FUN_00605b23
+    ushort in_DS;...
+  crt_memory.c___stosd_FUN_00603b37
+    uint in_ECX;...
+
+====================================================================================================
 TYPE: nonstandard_int (273 occurrences)
 ====================================================================================================
 
@@ -845,44 +878,6 @@ Example functions:
     uint5 uVar13;...
   core_flies.cpp_FUN_004cc230
     uint5 uVar12;...
-
-====================================================================================================
-TYPE: register_param (200 occurrences)
-====================================================================================================
-
-Unique patterns:
-    78x  in_EAX
-    40x  in_ECX
-    20x  in_EDX
-    20x  in_DS
-     9x  in_AX
-     2x  in_GS
-     2x  in_AL
-     2x  in_ES
-     2x  in_CF
-     2x  in_PF
-     2x  in_AF
-     2x  in_ZF
-     2x  in_SF
-     2x  in_TF
-     2x  in_IF
-     2x  in_OF
-     2x  in_NT
-     2x  in_AC
-     2x  in_VIF
-     2x  in_VIP
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
-    int in_EAX;...
-  crt_stdlib.c_memory_swap_FUN_005fdf10
-    uint in_ECX;...
-  crt_stdlib.c_qsort_FUN_005fdf38
-    ushort in_GS;...
-  crt_cpp.c_reportPureVirtualError_FUN_00605b23
-    ushort in_DS;...
-  crt_memory.c___stosd_FUN_00603b37
-    uint in_ECX;...
 
 ====================================================================================================
 TYPE: warning_unreachable (99 occurrences)
@@ -942,11 +937,11 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x00564514) */...
 
 ====================================================================================================
-TYPE: param_count_too_many (86 occurrences)
+TYPE: param_count_too_many (89 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    23x  declared:2 vs estimated:1
+    24x  declared:2 vs estimated:1
     12x  declared:3 vs estimated:2
      9x  declared:1 vs estimated:0
      7x  declared:3 vs estimated:1
@@ -954,9 +949,9 @@ Unique patterns:
      3x  declared:6 vs estimated:5
      3x  declared:7 vs estimated:6
      3x  declared:2 vs estimated:0
+     3x  declared:5 vs estimated:2
      2x  declared:8 vs estimated:7
      2x  declared:4 vs estimated:2
-     2x  declared:5 vs estimated:2
      2x  declared:6 vs estimated:1
      2x  declared:5 vs estimated:1
      2x  declared:4 vs estimated:3
@@ -965,7 +960,7 @@ Unique patterns:
      1x  declared:6 vs estimated:2
      1x  declared:7 vs estimated:5
      1x  declared:3 vs estimated:0
-     1x  declared:8 vs estimated:1
+     1x  declared:7 vs estimated:1
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480
@@ -1064,15 +1059,15 @@ Example functions:
     unkbyte10 in_ST0;...
 
 ====================================================================================================
-TYPE: undefined_type (46 occurrences)
+TYPE: undefined_type (53 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    12x  undefined3 extraout_var
+    17x  undefined3 extraout_var
      7x  undefined6 uStack00000020
      7x  undefined6 uStack00000050
      7x  undefined6 uStack0000000c
-     3x  undefined3 extraout_var_00
+     5x  undefined3 extraout_var_00
      2x  undefined6 uVar7
      1x  undefined3 in_stack_00000019
      1x  undefined3 in_stack_00000005
@@ -1144,7 +1139,7 @@ Example functions:
     undefined3 extraout_var;...
 
 ====================================================================================================
-TYPE: format_string_mismatch (38 occurrences)
+TYPE: format_string_mismatch (49 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1157,17 +1152,17 @@ Unique patterns:
      1x  sound_sndmain_cpp_logSoundError_FUN_005adba0("Error setting hw sfx %d options (sample %s), killing.\
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"SFXDBG: sample = %s\n");
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Killing %s in compute()\n");
+     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Warning: called fire() for melee weap
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::grabCloth - Can't find bone %s");
+     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s beginning to pickup %s\n");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::panelOccupied - invalid index: %
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to define texture %s as ground type %d, but it w
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Texture filename %s is too long to add to CGroundTypeL
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::editorAction - unknown action: %d parm %d");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown CActorProperty type: %d");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("NULL actor pointer detected, %s line %d",context_file)
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid actor pointer %08X detected at %s, line %d");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Dangling/corrupt actor pointer detected at %s line %d:
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("End of actor file tag mismatch for class %s name \"%s\
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("IO Error after reading %s \"%s\"",str1);
-     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Can't find wav: %s\n");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find motion \"%s\" in motion list");
 
 Example functions:
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
@@ -1178,12 +1173,20 @@ Example functions:
     Format string expects 1 args but got 0...
   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
     Format string expects 1 args but got 0...
+  core_shovel.cpp_fire_FUN_00588c20
+    Format string expects 1 args but got 0...
   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
     Format string expects 1 args but got 0...
+  core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530
+    Format string expects 2 args but got 0...
   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040
     Format string expects 1 args but got 0...
   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630
     Format string expects 1 args but got 0...
+  core_setedit.cpp_DefineTexturesMaybe_FUN_00578290
+    Format string expects 3 args but got 0...
+  core_script.cpp_CScript_editorAction_FUN_00564820
+    Format string expects 2 args but got 0...
   core_actor.cpp_CActorProperty_FUN_0040ea50
     Format string expects 1 args but got 0...
   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
@@ -1192,19 +1195,11 @@ Example functions:
     Format string expects 2 args but got 1...
   core_sound.cpp_playSfxInternal_FUN_005b1fd0
     Format string expects 1 args but got 0...
+  core_turret.cpp_FUN_005e2d50
+    Format string expects 1 args but got 0...
   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
     Format string expects 1 args but got 0...
   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
-    Format string expects 1 args but got 0...
-  core_stranger.cpp_CStranger_FUN_005c1fe0
-    Format string expects 1 args but got 0...
-  core_stranger.cpp_CStranger_FUN_005c07b0
-    Format string expects 1 args but got 0...
-  core_stranger.cpp_CStranger_FUN_005bb960
-    Format string expects 1 args but got 0...
-  core_skeledit.cpp_FUN_00592690
-    Format string expects 1 args but got 0...
-  core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
     Format string expects 1 args but got 0...
 
 ====================================================================================================

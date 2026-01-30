@@ -1,15 +1,12 @@
 // Name: core_script.cpp_FUN_00564560
 // Address: 00564560
 // Address Range: [[00564560, 005645c0]]
-// Convention: unknown
-// Signature: void core_script_cpp_FUN_00564560(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_FUN_00564560(void)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_00564560(uint param_1, uint param_2,
-   uint param_3) */
-
-void core_script_cpp_FUN_00564560(void)
+void __cdecl core_script_cpp_FUN_00564560(void)
 
 {
   int iVar1;

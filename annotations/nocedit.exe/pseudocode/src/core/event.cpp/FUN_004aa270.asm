@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_event_cpp_FUN_004aa270(void)
+; __cdecl int __cdecl core_event_cpp_FUN_004aa270(int param_1,int param_2,char *param_3)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
+; char *           Stack[0xc]:4   param_3
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_02d0a460

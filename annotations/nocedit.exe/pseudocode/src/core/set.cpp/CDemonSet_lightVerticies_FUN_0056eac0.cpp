@@ -24,6 +24,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
   CDemonSet *extraout_EAX;
   float fVar10;
   float fVar11;
+  CDemonSet *extraout_EAX_00;
   SInputFace *pSVar12;
   int iVar13;
   int iVar14;
@@ -416,7 +417,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                   local_e0 = *(uint *)
                               ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z + iVar14
                               );
-                  pCVar9 = (CDemonSet *)core_set_cpp_FUN_0056e890();
+                  core_set_cpp_FUN_0056e890();
                   iVar14 = iVar14 + 0x30;
                   piVar18 = (int *)(local_5c + 0x32cd850 + (uint)bVar20 * -8);
                   *(uint *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_130;
@@ -424,6 +425,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                   piVar18[(uint)bVar20 * -2 + 1] =
                        aiStack_12c[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1];
                   local_5c = local_5c + 0xc;
+                  pCVar9 = extraout_EAX_00;
                 } while (iVar14 < local_70);
               }
               iVar16 = 0;

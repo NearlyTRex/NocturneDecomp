@@ -1,12 +1,12 @@
 // Name: core_mimic.cpp_CMimic_setup_FUN_0051f3e0
 // Address: 0051f3e0
 // Address Range: [[0051f3e0, 0051f77b]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 
 #include "nocturne.h"
 
-void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
+void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 
 {
   CDeformableModelInstance *pCVar1;

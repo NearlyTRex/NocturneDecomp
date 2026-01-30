@@ -1,12 +1,12 @@
 // Name: core_lightgun.cpp_FUN_00505a20
 // Address: 00505a20
 // Address Range: [[00505a20, 00505ab9]]
-// Convention: unknown
-// Signature: undefined4 core_lightgun_cpp_FUN_00505a20(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_lightgun_cpp_FUN_00505a20(void)
 
 #include "nocturne.h"
 
-uint core_lightgun_cpp_FUN_00505a20(void)
+int __cdecl core_lightgun_cpp_FUN_00505a20(void)
 
 {
   int iVar1;

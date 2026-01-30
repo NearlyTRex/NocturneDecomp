@@ -21,47 +21,47 @@ CMarquee * __cdecl CMarquee::ctor(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_FUN_0050bc30
 // Address: 0050bc30
-void FUN_0050bc30(void);
+void __cdecl FUN_0050bc30(void);
 
 // Original: core_marquee.cpp_FUN_0050bd60
 // Address: 0050bd60
-void FUN_0050bd60(void);
+void __cdecl FUN_0050bd60(void);
 
 // Original: core_marquee.cpp_FUN_0050bda0
 // Address: 0050bda0
-void FUN_0050bda0(void);
+void __cdecl FUN_0050bda0(void);
 
 // Original: core_marquee.cpp_FUN_0050be50
 // Address: 0050be50
-float FUN_0050be50(void);
+float __cdecl FUN_0050be50(void);
 
 // Original: core_marquee.cpp_FUN_0050bec0
 // Address: 0050bec0
-void FUN_0050bec0(void);
+void __cdecl FUN_0050bec0(void);
 
 // Original: core_marquee.cpp_FUN_0050c050
 // Address: 0050c050
-undefined4 FUN_0050c050(void);
+int __cdecl FUN_0050c050(void);
 
 // Original: core_marquee.cpp_CMarquee_load_FUN_0050c2f0
 // Address: 0050c2f0
-void CMarquee::load(void);
+void __cdecl CMarquee::load(void);
 
 // Original: core_marquee.cpp_FUN_0050c370
 // Address: 0050c370
-undefined4 FUN_0050c370(void);
+int __cdecl FUN_0050c370(void);
 
 // Original: core_marquee.cpp_FUN_0050c380
 // Address: 0050c380
-void FUN_0050c380(void);
+void __cdecl FUN_0050c380(void);
 
 // Original: core_marquee.cpp_FUN_0050c3e0
 // Address: 0050c3e0
-void FUN_0050c3e0(void);
+void __cdecl FUN_0050c3e0(void);
 
 // Original: core_marquee.cpp_FUN_0050c480
 // Address: 0050c480
-void FUN_0050c480(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,_FILE *param_6);
+void __cdecl FUN_0050c480(void);
 
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_0050c4c0
 // Address: 0050c4c0

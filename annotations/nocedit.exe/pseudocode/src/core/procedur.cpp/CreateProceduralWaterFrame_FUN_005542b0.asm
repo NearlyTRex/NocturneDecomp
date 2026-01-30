@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
+; __cdecl void __cdecl core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x134]:4  local_134
@@ -122,7 +122,7 @@ section .text
     PUSH dword ptr [EBX + 0x10408]      ; 005543de
     PUSH ESI                            ; 005543e4
     CALL core_procedur.cpp_FUN_00554620 ; 005543e5
-        ;   XREF to: 00554620 (UNCONDITIONAL_CALL)  ; undefined core_procedur.cpp_FUN_00554620()
+        ;   XREF to: 00554620 (UNCONDITIONAL_CALL)  ; float core_procedur.cpp_FUN_00554620()
     MOV dword ptr [ESP + 0x128],EAX     ; 005543ea
     FLD float ptr [ESP + 0x128]         ; 005543f1
     ADD ESP,0xc                         ; 005543f8
@@ -133,7 +133,7 @@ section .text
     PUSH ESI                            ; 0055440d
     ADD EBX,0x4                         ; 0055440e
     CALL core_procedur.cpp_FUN_00554670 ; 00554411
-        ;   XREF to: 00554670 (UNCONDITIONAL_CALL)  ; undefined core_procedur.cpp_FUN_00554670()
+        ;   XREF to: 00554670 (UNCONDITIONAL_CALL)  ; void core_procedur.cpp_FUN_00554670()
     ADD ESP,0x10                        ; 00554416
     CMP EBX,EBP                         ; 00554419
     JNZ 0x005543c3                      ; 0055441b

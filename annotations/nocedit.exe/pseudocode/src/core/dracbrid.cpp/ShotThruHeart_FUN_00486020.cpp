@@ -1,15 +1,15 @@
 // Name: core_dracbrid.cpp_ShotThruHeart_FUN_00486020
 // Address: 00486020
 // Address Range: [[00486020, 0048606e]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_ShotThruHeart_FUN_00486020(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_ShotThruHeart_FUN_00486020(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_draculabride.cpp_ShotThruHeart(uint param_1, uint
    param_2) */
 
-void core_dracbrid_cpp_ShotThruHeart_FUN_00486020(void)
+void __cdecl core_dracbrid_cpp_ShotThruHeart_FUN_00486020(void)
 
 {
   CConsole *this_ptr;

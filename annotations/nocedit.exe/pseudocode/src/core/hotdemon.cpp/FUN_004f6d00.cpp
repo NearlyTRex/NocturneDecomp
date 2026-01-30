@@ -1,12 +1,12 @@
 // Name: core_hotdemon.cpp_FUN_004f6d00
 // Address: 004f6d00
 // Address Range: [[004f6d00, 004f6ede]]
-// Convention: unknown
-// Signature: void core_hotdemon_cpp_FUN_004f6d00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hotdemon_cpp_FUN_004f6d00(void)
 
 #include "nocturne.h"
 
-void core_hotdemon_cpp_FUN_004f6d00(void)
+void __cdecl core_hotdemon_cpp_FUN_004f6d00(void)
 
 {
   CDeformableModelInstance *this_ptr;

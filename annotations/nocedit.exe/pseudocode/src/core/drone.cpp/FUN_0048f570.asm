@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_drone_cpp_FUN_0048f570(void)
+; __cdecl void __cdecl core_drone_cpp_FUN_0048f570(void)
 ;
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     ADD EAX,0x158                       ; 0048f58c
     PUSH EAX                            ; 0048f591
     CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 0048f592
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
     ADD ESP,0x8                         ; 0048f597
     POP EBX                             ; 0048f59a
     RET                                 ; 0048f59b

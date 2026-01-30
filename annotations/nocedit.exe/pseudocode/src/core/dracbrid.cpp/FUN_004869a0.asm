@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_FUN_004869a0(void)
+; __cdecl void __cdecl core_dracbrid_cpp_FUN_004869a0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xa0]:8  local_a0
@@ -207,7 +207,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00486bb6
     PUSH EAX                            ; 00486bba
     CALL core_spline.cpp_FUN_005b90a0   ; 00486bbb
-        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_005b90a0()
+        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_FUN_005b90a0()
     ADD ESP,0xc                         ; 00486bc0
     MOV EAX,dword ptr [ESP + 0x68]      ; 00486bc3
     ADD EAX,0x44                        ; 00486bc7
@@ -223,7 +223,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00486bde
     PUSH EAX                            ; 00486be2
     CALL core_spline.cpp_FUN_005b92d0   ; 00486be3
-        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_005b92d0()
+        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; float * core_spline.cpp_FUN_005b92d0()
     ADD ESP,0x18                        ; 00486be8
     MOV EBX,dword ptr [ESP + 0x68]      ; 00486beb
     ADD EBX,0x4                         ; 00486bef | DAT_02c6d118
@@ -270,7 +270,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00486c5e
     PUSH EAX                            ; 00486c62
     CALL core_spline.cpp_FUN_005b9490   ; 00486c63
-        ;   XREF to: 005b9490 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_005b9490()
+        ;   XREF to: 005b9490 (UNCONDITIONAL_CALL)  ; float * core_spline.cpp_FUN_005b9490()
     ADD ESP,0x18                        ; 00486c68
     MOV EBX,dword ptr [ESP + 0x68]      ; 00486c6b
     ADD EBX,0x10                        ; 00486c6f

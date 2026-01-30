@@ -1,12 +1,12 @@
 // Name: core_hero.cpp_FUN_004f2f50
 // Address: 004f2f50
 // Address Range: [[004f2f50, 004f30eb]]
-// Convention: unknown
-// Signature: undefined4 core_hero_cpp_FUN_004f2f50(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_hero_cpp_FUN_004f2f50(void)
 
 #include "nocturne.h"
 
-uint core_hero_cpp_FUN_004f2f50(void)
+int __cdecl core_hero_cpp_FUN_004f2f50(void)
 
 {
   CDemonActor *pCVar1;
@@ -51,8 +51,9 @@ uint core_hero_cpp_FUN_004f2f50(void)
     }
     iVar4 = iVar4 + 4;
   }
-  if (in_stack_00000004[0x179].scale.z != 0) {
-    iVar4 = core_event_cpp_FUN_004b18e0();
+  iVar4 = in_stack_00000004[0x179].scale.z;
+  if (iVar4 != 0) {
+    iVar4 = core_event_cpp_FUN_004b18e0((int *)(iVar4 + 0x420));
     if (iVar4 == 0) {
       in_stack_00000004[0x8d].create_event[0x48] = '\0';
       in_stack_00000004[0x8d].create_event[0x49] = '\0';

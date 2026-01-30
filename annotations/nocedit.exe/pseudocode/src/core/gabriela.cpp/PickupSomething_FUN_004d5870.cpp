@@ -1,14 +1,14 @@
 // Name: core_gabriela.cpp_PickupSomething_FUN_004d5870
 // Address: 004d5870
 // Address Range: [[004d5870, 004d5c0e]]
-// Convention: unknown
-// Signature: undefined4 core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_gabriella.cpp_PickupSomething(uint param_1) */
 
-uint core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
+int __cdecl core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
 
 {
   CDemonActor *this_ptr;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_boneguy_cpp_FUN_0041d970(void)
+; __cdecl int __cdecl core_boneguy_cpp_FUN_0041d970(void)
 ;
 ;
 ; Called Functions:

@@ -354,7 +354,7 @@ section .text
         ;   XREF to: 004e2d01 (CONDITIONAL_JUMP)  ; LAB_004e2d01
     PUSH EAX                            ; 004e2cf8
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 004e2cf9
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 004e2cfe
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 004e2d01
         ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
@@ -529,7 +529,7 @@ section .text
     PUSH EAX                            ; 004e2ef2
         ;   Label: LAB_004e2ef2
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 004e2ef3
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 004e2ef8
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004e2efb
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

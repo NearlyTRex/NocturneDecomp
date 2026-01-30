@@ -10,7 +10,7 @@
 ;   core_event.cpp_CEventList_ctor_FUN_004aaa50 at 004aaa5f
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e13f8
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e1fb3
-;   core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0 at 00538d2e
+;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538d2e
 ;
 ; *****************************************************************************
 

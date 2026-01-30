@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_lightgun_cpp_FUN_005059c0(void)
+; __cdecl int __cdecl core_lightgun_cpp_FUN_005059c0(void)
 ;
 ;
 ; Referenced Globals:

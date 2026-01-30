@@ -1,16 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_CScript_editorPutLine_FUN_005662a0(void)
+; __cdecl void __cdecl core_script_cpp_CScript_editorPutLine_FUN_005662a0(CScript *this_ptr,int param_2)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   param_2
 ;
 ; XREF[6]:
-;   core_script.cpp_CScript_Unk20_FUN_00565130 at 00565a04
+;   core_script.cpp_CScript_FUN_00565130 at 00565a04
+;   core_script.cpp_CScript_FUN_00565ae0 at 00565c01
+;   core_script.cpp_CScript_FUN_00565f70 at 00566023
+;   core_script.cpp_CScript_FUN_00566330 at 00566381
+;   core_script.cpp_CScript_FUN_00566390 at 0056645d
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00565007
-;   core_script.cpp_CScript_insertAndEditorPutLine_FUN_00566330 at 00566381
-;   core_script.cpp_FUN_00565ae0 at 00565c01
-;   core_script.cpp_FUN_00565f70 at 00566023
-;   core_script.cpp_FUN_00566390 at 0056645d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_00643f95
@@ -22,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_script.cpp_FUN_00566800
+;   core_script.cpp_CScript_FUN_00566800
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120
 ;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
@@ -67,8 +70,8 @@ section .text
     ADD ESP,0xc                         ; 005662de
     PUSH ESI                            ; 005662e1
     PUSH EDI                            ; 005662e2
-    CALL core_script.cpp_FUN_00566800   ; 005662e3
-        ;   XREF to: 00566800 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566800()
+    CALL core_script.cpp_CScript_FUN_00566800 ; 005662e3
+        ;   XREF to: 00566800 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566800(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005662e8
     POP EDI                             ; 005662eb
     POP ESI                             ; 005662ec

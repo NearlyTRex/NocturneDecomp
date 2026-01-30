@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stairs_cpp_FUN_005ba660(void)
+; __cdecl void __cdecl core_stairs_cpp_FUN_005ba660(void)
 ;
 ;
 ; Called Functions:

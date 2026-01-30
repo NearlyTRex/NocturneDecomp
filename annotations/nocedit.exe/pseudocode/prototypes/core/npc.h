@@ -41,7 +41,7 @@ void __cdecl CNPC::serialize(CNPC *this_ptr);
 
 // Original: core_npc.cpp_FUN_00544c50
 // Address: 00544c50
-undefined4 FUN_00544c50(void);
+int __cdecl FUN_00544c50(void);
 
 // Original: core_npc.cpp_CNPC_FUN_00544d30
 // Address: 00544d30

@@ -1,0 +1,368 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 38,
+        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 146,
+    "complexity_score": 303,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 5,
+    "pseudocode_lines": 63,
+    "suspect_count": 23,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 209
+  },
+  "cross_references": [
+    {
+      "addr": "00565130",
+      "from_addr": "0056596c",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565f70",
+      "from_addr": "0056606f",
+      "name": "core_script.cpp_CScript_FUN_00565f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564820",
+      "from_addr": "00564bc0",
+      "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566390",
+    "address_range": [
+      [
+        "00566390",
+        "005664c4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_FUN_00566390",
+    "signature": "void __cdecl core_script_cpp_CScript_FUN_00566390(CScript *this_ptr,char *param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "005662a0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_editorPutLine_FUN_005662a0"
+    },
+    {
+      "addr": "00566230",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00566230"
+    },
+    {
+      "addr": "00566330",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00566330"
+    },
+    {
+      "addr": "00566a90",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00566a90"
+    },
+    {
+      "addr": "00566b30",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00566b30"
+    },
+    {
+      "addr": "005fe5e0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0310fd44",
+      "name": "DAT_0310fd44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd48",
+      "name": "DAT_0310fd48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031101bf",
+      "name": "DAT_031101bf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031101c0",
+      "name": "DAT_031101c0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "031101c1",
+      "name": "DAT_031101c1",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.559322033898305,
+    "instruction_count": 118,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 11,
+      "COPY": 88,
+      "INT_ADD": 46,
+      "INT_AND": 71,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 72,
+      "INT_LESS": 12,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 35,
+      "INT_SUB": 42,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 30,
+      "POPCOUNT": 35,
+      "RETURN": 2,
+      "STORE": 33
+    },
+    "pcode_op_count": 538
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void __cdecl core_script_cpp_CScript_FUN_00566390(CScript *this_ptr,char *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "void __cdecl core_script_cpp_CScript_FUN_00566390(CScript *this_ptr,char *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0310fd48",
+      "text": "uVar2 = core_script_cpp_CScript_FUN_00566a90(this_ptr,DAT_0310fd48,DAT_0310fd44);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0310fd44",
+      "text": "uVar2 = core_script_cpp_CScript_FUN_00566a90(this_ptr,DAT_0310fd48,DAT_0310fd44);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "text": "cVar1 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_0310fd48",
+      "text": "local_14 = DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_3",
+      "text": "if (param_3 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = core_script_cpp_CScript_FUN_00566b30(this_ptr,local_14,uVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_0310fd48",
+      "text": "DAT_0310fd48 = local_14;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_031101c0",
+      "text": "pcVar5 = &DAT_031101c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_031101c0",
+      "text": "(&DAT_031101c0)[iVar4] = 0x20;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_031101c1",
+      "text": "local_18 = &DAT_031101c1 + uVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_031101c0",
+      "text": "src = &DAT_031101c0 + uVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "text": "for (; (cVar1 = *param_2, cVar1 != '\\0' && (cVar1 != '\\n')); param_2 = param_2 + 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "text": "for (; (cVar1 = *param_2, cVar1 != '\\0' && (cVar1 != '\\n')); param_2 = param_2 + 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "text": "for (; (cVar1 = *param_2, cVar1 != '\\0' && (cVar1 != '\\n')); param_2 = param_2 + 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "text": "(&DAT_031101c0)[uVar2] = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_031101c0",
+      "text": "(&DAT_031101c0)[uVar2] = *param_2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_031101c0",
+      "text": "(&DAT_031101c0)[iVar4] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_2",
+      "text": "if (*param_2 == '\\n') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_2",
+      "text": "param_2 = param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_2",
+      "text": "param_2 = param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_2",
+      "text": "cVar1 = *param_2;",
+      "type": "unnamed_param"
+    }
+  ]
+}

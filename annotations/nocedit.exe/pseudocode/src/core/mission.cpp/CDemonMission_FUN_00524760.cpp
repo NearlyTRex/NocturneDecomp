@@ -42,8 +42,8 @@ int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr)
     if (extraout_EAX == 0) {
       return 0;
     }
-    core_script_cpp_FUN_0055a540();
-    core_script_cpp_CScript_checkInitSection_FUN_0055a6c0();
+    core_script_cpp_CScript_FUN_0055a540(g_CScriptPtr);
+    core_script_cpp_CScript_FUN_0055a6c0(g_CScriptPtr);
     core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20(g_CDemonSetPtr);
     return 1;
   }

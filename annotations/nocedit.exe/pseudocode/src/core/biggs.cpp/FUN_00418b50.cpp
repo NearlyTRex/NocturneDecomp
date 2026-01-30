@@ -1,15 +1,15 @@
 // Name: core_biggs.cpp_FUN_00418b50
 // Address: 00418b50
 // Address Range: [[00418b50, 00418c03]]
-// Convention: unknown
-// Signature: void core_biggs_cpp_FUN_00418b50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_biggs_cpp_FUN_00418b50(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_biggs.cpp_FUN_00418b50(uint param_1, uint param_2)
     */
 
-void core_biggs_cpp_FUN_00418b50(void)
+void __cdecl core_biggs_cpp_FUN_00418b50(void)
 
 {
   float fVar1;

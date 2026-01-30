@@ -1,12 +1,12 @@
 // Name: core_cloth.cpp_FUN_00439710
 // Address: 00439710
 // Address Range: [[00439710, 0043a108]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_FUN_00439710(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_FUN_00439710(void)
 
 #include "nocturne.h"
 
-void core_cloth_cpp_FUN_00439710(void)
+void __cdecl core_cloth_cpp_FUN_00439710(void)
 
 {
   float *pfVar1;

@@ -1,15 +1,15 @@
 // Name: core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700
 // Address: 005ec700
 // Address Range: [[005ec700, 005ec7a3]]
-// Convention: unknown
-// Signature: void core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_waypoint.cpp_CWayPoint_addAdj(CWayPoint* param_1, uint
    param_2) */
 
-void core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(void)
+void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(void)
 
 {
   float fVar1;

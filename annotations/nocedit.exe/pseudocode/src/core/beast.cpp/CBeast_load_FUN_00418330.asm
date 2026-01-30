@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_beast_cpp_CBeast_load_FUN_00418330(void)
+; __cdecl void __cdecl core_beast_cpp_CBeast_load_FUN_00418330(void)
 ;
 ;
 ; Referenced Globals:

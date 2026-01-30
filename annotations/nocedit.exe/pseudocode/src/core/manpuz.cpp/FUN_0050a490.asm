@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_manpuz_cpp_FUN_0050a490(void)
+; __cdecl int __cdecl core_manpuz_cpp_FUN_0050a490(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

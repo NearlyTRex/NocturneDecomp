@@ -1,14 +1,14 @@
 // Name: core_netgame.cpp_CNetGame_FUN_0053f780
 // Address: 0053f780
 // Address Range: [[0053f780, 0053f821]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_CNetGame_FUN_0053f780(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_netgame.cpp_CNetGame_FUN_0053f780(uint param_1) */
 
-void core_netgame_cpp_CNetGame_FUN_0053f780(void)
+void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(void)
 
 {
   char cVar1;

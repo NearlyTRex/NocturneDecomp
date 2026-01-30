@@ -519,7 +519,7 @@ section .text
     PUSH EBX                            ; 005078a0
     MOV ESI,0x295                       ; 005078a1
     CALL core_morph.cpp_FUN_0052bcb0    ; 005078a6
-        ;   XREF to: 0052bcb0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052bcb0()
+        ;   XREF to: 0052bcb0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052bcb0()
     MOV ECX,0x63521c                    ; 005078ab | = "..\\core\\main.c"
     ADD ESP,0x4                         ; 005078b0
     MOV dword ptr [0x02f0d944],ESI      ; 005078b3 | g_CurrentDebugLine
@@ -541,7 +541,7 @@ section .text
     PUSH EAX                            ; 005078e0
         ;   Label: LAB_005078e0
     CALL core_morph.cpp_FUN_0052b310    ; 005078e1
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
     ADD ESP,0x4                         ; 005078e6
     JMP 0x00507896                      ; 005078e9
         ;   XREF to: 00507896 (UNCONDITIONAL_JUMP)  ; LAB_00507896
@@ -554,7 +554,7 @@ section .text
     JMP 0x00507522                      ; 005078fa
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522
     CALL core_skeledit.cpp_viewModel_FUN_00598fc0 ; 005078ff
-        ;   XREF to: 00598fc0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_viewModel_FUN_00598fc0()
+        ;   XREF to: 00598fc0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_viewModel_FUN_00598fc0()
         ;   Label: LAB_005078ff
     JMP 0x00507522                      ; 00507904
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522
@@ -655,7 +655,7 @@ section .text
     MOV EDI,dword ptr [0x00680cf8]      ; 00507a1f | PTR_DAT_00680cf8
     PUSH EDI                            ; 00507a25 | DAT_030e5b50
     CALL core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880 ; 00507a26
-        ;   XREF to: 00554880 (UNCONDITIONAL_CALL)  ; undefined core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880()
+        ;   XREF to: 00554880 (UNCONDITIONAL_CALL)  ; void core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880()
     ADD ESP,0x4                         ; 00507a2b
     JMP 0x00507522                      ; 00507a2e
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522

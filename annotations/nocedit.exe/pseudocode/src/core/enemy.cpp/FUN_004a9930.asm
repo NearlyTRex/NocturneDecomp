@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_enemy_cpp_FUN_004a9930(void)
+; __cdecl int __cdecl core_enemy_cpp_FUN_004a9930(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
@@ -82,7 +82,7 @@ section .text
     MOV EAX,[0x0067b9a0]                ; 004a99ae | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 004a99b3 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004a99b4
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     MOV EAX,0x1                         ; 004a99b9
     ADD ESP,0x14                        ; 004a99be
     MOV ESP,EBP                         ; 004a99c1

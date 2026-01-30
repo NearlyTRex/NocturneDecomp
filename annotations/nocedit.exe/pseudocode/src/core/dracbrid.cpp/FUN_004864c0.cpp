@@ -1,22 +1,22 @@
 // Name: core_dracbrid.cpp_FUN_004864c0
 // Address: 004864c0
 // Address Range: [[004864c0, 004864df]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_FUN_004864c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_FUN_004864c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_draculabride.cpp_FUN_004864c0(uint param_1, uint
    param_2, uint param_3) */
 
-void core_dracbrid_cpp_FUN_004864c0(void)
+void __cdecl core_dracbrid_cpp_FUN_004864c0(void)
 
 {
   int bone_index;
   int iVar1;
   int iVar2;
   CVector3f *pCVar3;
-  uint *puVar4;
+  float *pfVar4;
   uint uVar5;
   SFreaky *pSVar6;
   CDemonActor *in_stack_00000004;
@@ -121,17 +121,17 @@ void core_dracbrid_cpp_FUN_004864c0(void)
         }
         local_30 = local_60;
         core_spline_cpp_FUN_005b90a0();
-        puVar4 = (uint *)core_spline_cpp_FUN_005b92d0();
-        if (pSVar6->unk1 + 4 != (char *)puVar4) {
-          *(uint *)(pSVar6->unk1 + 4) = *puVar4;
-          *(uint *)(pSVar6->unk1 + 8) = puVar4[1];
-          *(uint *)(pSVar6->unk1 + 0xc) = puVar4[2];
+        pfVar4 = core_spline_cpp_FUN_005b92d0();
+        if ((float *)(pSVar6->unk1 + 4) != pfVar4) {
+          *(float *)(pSVar6->unk1 + 4) = *pfVar4;
+          *(float *)(pSVar6->unk1 + 8) = pfVar4[1];
+          *(float *)(pSVar6->unk1 + 0xc) = pfVar4[2];
         }
-        puVar4 = (uint *)core_spline_cpp_FUN_005b9490();
-        if (pSVar6->unk1 + 0x10 != (char *)puVar4) {
-          *(uint *)(pSVar6->unk1 + 0x10) = *puVar4;
-          *(uint *)(pSVar6->unk1 + 0x14) = puVar4[1];
-          *(uint *)(pSVar6->unk1 + 0x18) = puVar4[2];
+        pfVar4 = core_spline_cpp_FUN_005b9490();
+        if ((float *)(pSVar6->unk1 + 0x10) != pfVar4) {
+          *(float *)(pSVar6->unk1 + 0x10) = *pfVar4;
+          *(float *)(pSVar6->unk1 + 0x14) = pfVar4[1];
+          *(float *)(pSVar6->unk1 + 0x18) = pfVar4[2];
         }
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940

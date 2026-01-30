@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_setdir_cpp_FUN_005763a0(void)
+; __cdecl int __cdecl core_setdir_cpp_FUN_005763a0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x128]:4  local_128

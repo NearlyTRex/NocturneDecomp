@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_msnedit_cpp_FUN_00536bc0(void)
+; __cdecl int __cdecl core_msnedit_cpp_FUN_00536bc0(int param_1)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
 ;
 ; Referenced Globals:
 ;   char[256] g_CharacterClassificationTable

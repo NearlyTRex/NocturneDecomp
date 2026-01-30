@@ -1,21 +1,23 @@
 // Name: core_flame.cpp_FUN_004caf60
 // Address: 004caf60
 // Address Range: [[004caf60, 004cb096]]
-// Convention: unknown
-// Signature: void core_flame_cpp_FUN_004caf60(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flame_cpp_FUN_004caf60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flamecan.cpp_FUN_004caf60(uint param_1) */
 
-void core_flame_cpp_FUN_004caf60(void)
+void __cdecl core_flame_cpp_FUN_004caf60(void)
 
 {
   int iVar1;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_00000010;
+  uint uStack00000014;
   float in_stack_00000018;
+  uint uStack0000001c;
   float in_stack_00000020;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
@@ -40,6 +42,7 @@ void core_flame_cpp_FUN_004caf60(void)
       *(float *)(in_stack_00000004[1].actor_name + 4) =
            *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_00000020;
     }
+    uStack0000001c = 0x3dcccccd;
     if (*(int *)in_stack_00000004[1].actor_name < 0x3dcccccd) {
       in_stack_00000004[1].actor_name[0] = -0x33;
       in_stack_00000004[1].actor_name[1] = -0x34;
@@ -60,6 +63,7 @@ void core_flame_cpp_FUN_004caf60(void)
     }
     *(uint *)(in_stack_00000004[1].actor_name + 8) =
          *(uint *)in_stack_00000004[1].actor_name;
+    uStack00000014 = 0x4cb078;
     core_flamecan_cpp_FUN_004cad90();
     return;
   }

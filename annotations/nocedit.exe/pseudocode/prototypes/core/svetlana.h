@@ -29,15 +29,15 @@ void __cdecl CSvetlana::process(CSvetlana *this_ptr,float delta_time);
 
 // Original: core_svetlana.cpp_FUN_005d9260
 // Address: 005d9260
-void FUN_005d9260(void);
+void __cdecl FUN_005d9260(void);
 
 // Original: core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970
 // Address: 005d9970
-void MotionControllerAdvance::ParentBones(void);
+void __cdecl MotionControllerAdvance::ParentBones(void);
 
 // Original: core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10
 // Address: 005d9a10
-void AttackWithParentBone(void);
+void __cdecl AttackWithParentBone(void);
 
 // Original: core_svetlana.cpp_CSVetlana_serialize_FUN_005d9bb0
 // Address: 005d9bb0
@@ -49,19 +49,19 @@ int __cdecl CSvetlana(CSvetlana *this_ptr);
 
 // Original: core_svetlana.cpp_FUN_005d9d30
 // Address: 005d9d30
-void FUN_005d9d30(void);
+void __cdecl FUN_005d9d30(void);
 
 // Original: core_svetlana.cpp_FUN_005d9ec0
 // Address: 005d9ec0
-undefined4 FUN_005d9ec0(void);
+int __cdecl FUN_005d9ec0(void);
 
 // Original: core_svetlana.cpp_FUN_005d9ed0
 // Address: 005d9ed0
-undefined4 FUN_005d9ed0(void);
+int __cdecl FUN_005d9ed0(void);
 
 // Original: core_svetlana.cpp_FUN_005d9ee0
 // Address: 005d9ee0
-void FUN_005d9ee0(void);
+void __cdecl FUN_005d9ee0(void);
 
 // Original: core_svetlana.cpp_CSvetlana_FUN_005d9ef0
 // Address: 005d9ef0

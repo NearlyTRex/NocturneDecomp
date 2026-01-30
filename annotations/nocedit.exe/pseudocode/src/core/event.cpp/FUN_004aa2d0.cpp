@@ -1,18 +1,16 @@
 // Name: core_event.cpp_FUN_004aa2d0
 // Address: 004aa2d0
 // Address Range: [[004aa2d0, 004aa2e9]]
-// Convention: unknown
-// Signature: void core_event_cpp_FUN_004aa2d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_event_cpp_FUN_004aa2d0(char *param_1)
 
 #include "nocturne.h"
 
-void core_event_cpp_FUN_004aa2d0(void)
+void __cdecl core_event_cpp_FUN_004aa2d0(char *param_1)
 
 {
-  char *in_stack_00000004;
-  
-  while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {
-    in_stack_00000004 = in_stack_00000004 + 1;
+  while ((g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2U) != 0) {
+    param_1 = param_1 + 1;
   }
   return;
 }

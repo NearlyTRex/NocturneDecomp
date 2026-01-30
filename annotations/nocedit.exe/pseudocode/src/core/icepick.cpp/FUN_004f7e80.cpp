@@ -1,12 +1,12 @@
 // Name: core_icepick.cpp_FUN_004f7e80
 // Address: 004f7e80
 // Address Range: [[004f7e80, 004f8094]]
-// Convention: unknown
-// Signature: void core_icepick_cpp_FUN_004f7e80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_icepick_cpp_FUN_004f7e80(void)
 
 #include "nocturne.h"
 
-void core_icepick_cpp_FUN_004f7e80(void)
+void __cdecl core_icepick_cpp_FUN_004f7e80(void)
 
 {
   CHero *pCVar1;

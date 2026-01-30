@@ -54,7 +54,7 @@ section .text
     PUSH EAX                            ; 005450a6
     PUSH EDI                            ; 005450a7
     CALL engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0 ; 005450a8
-        ;   XREF to: 00544fc0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
+        ;   XREF to: 00544fc0 (UNCONDITIONAL_CALL)  ; void engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
     ADD ESP,0x8                         ; 005450ad
     MOV EAX,dword ptr [ESP + 0x4]       ; 005450b0
         ;   Label: LAB_005450b0
@@ -73,7 +73,7 @@ section .text
     PUSH EDI                            ; 005450c8
     INC EBX                             ; 005450c9
     CALL engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0 ; 005450ca
-        ;   XREF to: 00544fc0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
+        ;   XREF to: 00544fc0 (UNCONDITIONAL_CALL)  ; void engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
     ADD ESI,0x20                        ; 005450cf
     MOV ECX,dword ptr [EBP + 0x8]       ; 005450d2
     ADD ESP,0x8                         ; 005450d5
@@ -145,7 +145,7 @@ section .text
     PUSH EDI                            ; 00545157
     INC ESI                             ; 00545158
     CALL engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0 ; 00545159
-        ;   XREF to: 00544fc0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
+        ;   XREF to: 00544fc0 (UNCONDITIONAL_CALL)  ; void engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0()
     ADD EBX,0x18                        ; 0054515e
     MOV ECX,dword ptr [EBP + 0x18]      ; 00545161
     ADD ESP,0x8                         ; 00545164

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_spike_cpp_CSpike_load_FUN_005b87f0(void)
+; __cdecl void __cdecl core_spike_cpp_CSpike_load_FUN_005b87f0(void)
 ;
 ;
 ; Referenced Globals:

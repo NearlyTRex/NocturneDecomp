@@ -85,7 +85,7 @@ section .text
     ADD ESP,0x4                         ; 0057a999
     PUSH EBX                            ; 0057a99c
     CALL core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 ; 0057a99d
-        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()
+        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()
     MOV EAX,[0x00679394]                ; 0057a9a2 | g_WindowWidth
     IMUL EAX,dword ptr [0x00679398]     ; 0057a9a7 | g_WindowHeight
     ADD ESP,0x4                         ; 0057a9ae
@@ -428,7 +428,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057adc8
     PUSH EAX                            ; 0057adcb
     CALL core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00 ; 0057adcc
-        ;   XREF to: 0057fd00 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00()
+        ;   XREF to: 0057fd00 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00()
     MOV EDX,0x1                         ; 0057add1
     ADD ESP,0xc                         ; 0057add6
     MOV dword ptr [ESP + 0x50c],EDX     ; 0057add9

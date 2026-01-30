@@ -1,12 +1,12 @@
 // Name: core_set.cpp_FUN_005713c0
 // Address: 005713c0
 // Address Range: [[005713c0, 00571408]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_005713c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_005713c0(void)
 
 #include "nocturne.h"
 
-void core_set_cpp_FUN_005713c0(void)
+void __cdecl core_set_cpp_FUN_005713c0(void)
 
 {
   CDemonSet *in_stack_00000004;

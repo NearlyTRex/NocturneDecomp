@@ -1,14 +1,14 @@
 // Name: core_gabriela.cpp_FUN_004d4190
 // Address: 004d4190
 // Address Range: [[004d4190, 004d4833]]
-// Convention: unknown
-// Signature: void core_gabriela_cpp_FUN_004d4190(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gabriela_cpp_FUN_004d4190(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d4190(uint param_1) */
 
-void core_gabriela_cpp_FUN_004d4190(void)
+void __cdecl core_gabriela_cpp_FUN_004d4190(void)
 
 {
   CHero *pCVar1;

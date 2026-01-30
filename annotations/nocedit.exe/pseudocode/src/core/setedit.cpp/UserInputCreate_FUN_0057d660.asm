@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_setedit_cpp_UserInputCreate_FUN_0057d660 (undefined4 param_1,undefined4 param_2,void *unaff_EBX,undefined4 param_4, CDemonSet *param_5,int param_6)
+; __cdecl int __cdecl core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1f0]:1  local_1f0
@@ -731,7 +731,7 @@ section .text
     PUSH ESI                            ; 0057df14
     MOV EDI,0x1                         ; 0057df15
     CALL core_setedit.cpp_FUN_0057d340  ; 0057df1a
-        ;   XREF to: 0057d340 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_0057d340()
+        ;   XREF to: 0057d340 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057d340()
     ADD ESP,0x8                         ; 0057df1f
     MOV dword ptr [ESP + 0x1120],EDI    ; 0057df22
     JMP 0x0057db4e                      ; 0057df29
@@ -939,7 +939,7 @@ section .text
     PUSH ESI                            ; 0057e182
     MOV EDI,0x1                         ; 0057e183
     CALL core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00 ; 0057e188
-        ;   XREF to: 0057fd00 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00()
+        ;   XREF to: 0057fd00 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00()
     ADD ESP,0xc                         ; 0057e18d
     MOV dword ptr [ESP + 0x1168],EDI    ; 0057e190
     JMP 0x0057dfbe                      ; 0057e197

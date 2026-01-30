@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_hotdemon_cpp_CHotDemon_load_FUN_004f76c0(void)
+; __cdecl void __cdecl core_hotdemon_cpp_CHotDemon_load_FUN_004f76c0(void)
 ;
 ;
 ; Referenced Globals:

@@ -25,7 +25,7 @@ section .text
     PUSH EDX                            ; 0042cd71
         ;   Label: LAB_0042cd71
     CALL core_door.cpp_FUN_0047fcf0     ; 0042cd72
-        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_0047fcf0()
+        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0()
     ADD ESP,0x4                         ; 0042cd77
     MOV dword ptr [EBX + 0x25b4],0x0    ; 0042cd7a
     POP EBX                             ; 0042cd84

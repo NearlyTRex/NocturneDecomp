@@ -100,7 +100,7 @@ section .text
     PUSH ESI                            ; 005c6be7
     MOV dword ptr [ESP + 0x14],EAX      ; 005c6be8
     CALL core_cloth.cpp_FUN_0043c290    ; 005c6bec
-        ;   XREF to: 0043c290 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c290()
+        ;   XREF to: 0043c290 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c290()
     ADD ESP,0x10                        ; 005c6bf1
     PUSH EDI                            ; 005c6bf4
     PUSH dword ptr [EBX + 0x2414]       ; 005c6bf5
@@ -112,7 +112,7 @@ section .text
     LEA EAX,[EBX + 0x2a94]              ; 005c6c0a
     PUSH EAX                            ; 005c6c10
     CALL core_cloth.cpp_FUN_0043c2d0    ; 005c6c11
-        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c2d0()
+        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c2d0()
     ADD ESP,0x18                        ; 005c6c16
     PUSH EBP                            ; 005c6c19
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005c6c1a
@@ -278,7 +278,7 @@ section .text
     PUSH ESI                            ; 005c6de9
     MOV [0x02f43974],EAX                ; 005c6dea | DAT_02f43974
     CALL core_morph.cpp_FUN_0052b580    ; 005c6def
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005c6df4
     PUSH 0x0                            ; 005c6df7
     MOV EAX,dword ptr [EBX + 0xe304]    ; 005c6df9
@@ -288,7 +288,7 @@ section .text
     PUSH ESI                            ; 005c6e06
     MOV dword ptr [0x02f43974],ECX      ; 005c6e07 | DAT_02f43974
     CALL core_morph.cpp_FUN_0052b580    ; 005c6e0d
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005c6e12
     XOR EDX,EDX                         ; 005c6e15
     PUSH ESI                            ; 005c6e17

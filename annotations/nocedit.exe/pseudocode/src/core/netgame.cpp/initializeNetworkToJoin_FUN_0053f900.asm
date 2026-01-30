@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
+; __cdecl int __cdecl core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
@@ -86,12 +86,12 @@ section .text
     PUSH EAX                            ; 0053f94f
     PUSH EBX                            ; 0053f950
     CALL core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0 ; 0053f951
-        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0()
+        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0()
     ADD ESP,0x14                        ; 0053f956
     PUSH EBX                            ; 0053f959
     MOV dword ptr [EBX + 0x114],EAX     ; 0053f95a
     CALL core_netgame.cpp_initializeNetwork_FUN_0053fbc0 ; 0053f960
-        ;   XREF to: 0053fbc0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_initializeNetwork_FUN_0053fbc0()
+        ;   XREF to: 0053fbc0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_initializeNetwork_FUN_0053fbc0()
     ADD ESP,0x4                         ; 0053f965
     TEST EAX,EAX                        ; 0053f968
     JNZ 0x0053f973                      ; 0053f96a
@@ -118,7 +118,7 @@ section .text
     PUSH EAX                            ; 0053f996
     PUSH EBX                            ; 0053f997
     CALL core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0 ; 0053f998
-        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0()
+        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0()
     MOV EDI,dword ptr [0x02f7c8b8]      ; 0053f99d | g_CurrentGameTime
     ADD ESP,0x14                        ; 0053f9a3
     MOV dword ptr [EBX],0x2             ; 0053f9a6
@@ -210,7 +210,7 @@ section .text
     PUSH ESI                            ; 0053faaa
     PUSH EBX                            ; 0053faab
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 0053faac
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
     MOV EDI,dword ptr [0x02f7c8b8]      ; 0053fab1 | g_CurrentGameTime
     ADD ESP,0xc                         ; 0053fab7
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0053faba

@@ -12,6 +12,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
   CClothList *pCVar1;
   void *pvVar2;
   int iVar3;
+  void *ptr;
   CClothList *pCVar4;
   int iVar5;
   CClothList *filename;
@@ -24,8 +25,8 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
       g_CurrentDebugLine = 0x5a7;
       g_CurrentDebugFilename = "..\\core\\cloth.cpp";
       if (pCVar4[0x65].unk != 0) {
-        pvVar2 = (void *)core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
-        shape_memdbg_cpp_debugFree_FUN_0050f210(pvVar2);
+        core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
+        shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
       }
       pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x3fe70,"..\\core\\cloth.cpp",0x5a8);
       iVar3 = 0;

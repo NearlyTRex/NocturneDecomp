@@ -1,12 +1,12 @@
 // Name: core_event.cpp_FUN_004aa400
 // Address: 004aa400
 // Address Range: [[004aa400, 004aa52c]]
-// Convention: unknown
-// Signature: CHero * core_event_cpp_FUN_004aa400(void)
+// Convention: __cdecl
+// Signature: CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3)
 
 #include "nocturne.h"
 
-CHero * core_event_cpp_FUN_004aa400(void)
+CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3)
 
 {
   char cVar1;
@@ -14,11 +14,8 @@ CHero * core_event_cpp_FUN_004aa400(void)
   int iVar2;
   char *pcVar3;
   char *pcVar4;
-  char *in_stack_00000004;
-  uint in_stack_00000008;
-  uint in_stack_0000000c;
   
-  if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\0')) {
+  if ((param_1 == (char *)0x0) || (*param_1 == '\0')) {
     pcVar3 = "Must specify actor name";
     pcVar4 = &DAT_02d0a460;
     do {
@@ -34,16 +31,15 @@ CHero * core_event_cpp_FUN_004aa400(void)
     } while (cVar1 != '\0');
     return (CHero *)0x0;
   }
-  if (*in_stack_00000004 == '@') {
+  if (*param_1 == '@') {
     actor_ptr = (CHero *)core_event_cpp_CEventList_FUN_004b0b80(g_CEventListPtr);
   }
   else {
-    iVar2 = stricmp(in_stack_00000004,"$");
+    iVar2 = stricmp(param_1,"$");
     if (iVar2 != 0) {
       actor_ptr = (CHero *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
       if (actor_ptr == (CHero *)0x0) {
-        sprintf
-                  (&DAT_02d0a460,"Actor \"%s\" does not exist.",in_stack_00000004);
+        sprintf(&DAT_02d0a460,"Actor \"%s\" does not exist.",param_1);
         return (CHero *)0x0;
       }
       goto LAB_004aa48f;
@@ -58,16 +54,15 @@ CHero * core_event_cpp_FUN_004aa400(void)
     return 0x0FFFFFFF;
   }
 LAB_004aa48f:
-  iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,in_stack_00000008);
+  iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,param_2);
   if (iVar2 != 0) {
     return actor_ptr;
   }
-  if (*in_stack_00000004 == '@') {
+  if (*param_1 == '@') {
     return 0x0FFFFFFF;
   }
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)actor_ptr);
   sprintf
-            (&DAT_02d0a460,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",in_stack_00000004,pcVar3,
-             in_stack_0000000c);
+            (&DAT_02d0a460,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",param_1,pcVar3,param_3);
   return (CHero *)0x0;
 }

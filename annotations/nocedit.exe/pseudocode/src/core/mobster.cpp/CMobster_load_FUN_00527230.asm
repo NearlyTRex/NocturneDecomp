@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mobster_cpp_CMobster_load_FUN_00527230(void)
+; __cdecl void __cdecl core_mobster_cpp_CMobster_load_FUN_00527230(void)
 ;
 ;
 ; Referenced Globals:

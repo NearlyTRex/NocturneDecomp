@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_curtain_cpp_FUN_0044a920(void)
+; __cdecl void __cdecl core_curtain_cpp_FUN_0044a920(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xac]:4  local_ac
@@ -449,7 +449,7 @@ section .text
     PUSH EDI                            ; 0044ad88
         ;   Label: LAB_0044ad88
     CALL core_curtain.cpp_FUN_00449f10  ; 0044ad89
-        ;   XREF to: 00449f10 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_00449f10()
+        ;   XREF to: 00449f10 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_FUN_00449f10()
     ADD ESP,0x4                         ; 0044ad8e
     MOV ESP,EBP                         ; 0044ad91
         ;   Label: LAB_0044ad91
@@ -678,7 +678,7 @@ section .text
     PUSH EDI                            ; 0044b03f
     FSTP float ptr [EAX + 0x8]          ; 0044b040
     CALL core_curtain.cpp_FUN_00449fc0  ; 0044b043
-        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_00449fc0()
+        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_FUN_00449fc0()
     ADD ESP,0x8                         ; 0044b048
     JMP 0x0044ac56                      ; 0044b04b
         ;   XREF to: 0044ac56 (UNCONDITIONAL_JUMP)  ; LAB_0044ac56
@@ -686,7 +686,7 @@ section .text
         ;   Label: LAB_0044b050
     PUSH EDI                            ; 0044b051
     CALL core_curtain.cpp_FUN_00449fc0  ; 0044b052
-        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_00449fc0()
+        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_FUN_00449fc0()
     ADD ESP,0x8                         ; 0044b057
     JMP 0x0044aca5                      ; 0044b05a
         ;   XREF to: 0044aca5 (UNCONDITIONAL_JUMP)  ; LAB_0044aca5

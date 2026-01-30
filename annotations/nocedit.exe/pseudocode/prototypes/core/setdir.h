@@ -113,7 +113,7 @@ int __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_FUN_005763a0
 // Address: 005763a0
-undefined4 FUN_005763a0(void);
+int __cdecl FUN_005763a0(void);
 
 // Original: core_setdir.cpp_CDemonSet_FUN_00576710
 // Address: 00576710

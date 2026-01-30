@@ -1,14 +1,14 @@
 // Name: core_emitter.cpp_FUN_004a7e00
 // Address: 004a7e00
 // Address Range: [[004a7e00, 004a7e0a]]
-// Convention: unknown
-// Signature: void core_emitter_cpp_FUN_004a7e00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_emitter_cpp_FUN_004a7e00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_emitter.cpp_FUN_004a7e00(uint param_1) */
 
-void core_emitter_cpp_FUN_004a7e00(void)
+void __cdecl core_emitter_cpp_FUN_004a7e00(void)
 
 {
   int iVar1;

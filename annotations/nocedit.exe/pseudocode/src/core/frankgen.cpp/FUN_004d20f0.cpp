@@ -1,15 +1,15 @@
 // Name: core_frankgen.cpp_FUN_004d20f0
 // Address: 004d20f0
 // Address Range: [[004d20f0, 004d2165]]
-// Convention: unknown
-// Signature: float * core_frankgen_cpp_FUN_004d20f0(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_frankgen_cpp_FUN_004d20f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_frankgen.cpp_FUN_004d20f0(uint param_1, uint
    param_2) */
 
-float * core_frankgen_cpp_FUN_004d20f0(void)
+float * __cdecl core_frankgen_cpp_FUN_004d20f0(void)
 
 {
   CKeyFramedModel *pCVar1;

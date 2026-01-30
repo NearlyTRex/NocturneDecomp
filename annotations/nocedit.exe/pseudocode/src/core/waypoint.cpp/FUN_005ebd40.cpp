@@ -1,15 +1,15 @@
 // Name: core_waypoint.cpp_FUN_005ebd40
 // Address: 005ebd40
 // Address Range: [[005ebd40, 005ebe2c]]
-// Convention: unknown
-// Signature: bool core_waypoint_cpp_FUN_005ebd40(void)
+// Convention: __cdecl
+// Signature: bool __cdecl core_waypoint_cpp_FUN_005ebd40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_waypoint.cpp_FUN_005ebd40(uint param_1, uint
    param_2, uint param_3) */
 
-bool core_waypoint_cpp_FUN_005ebd40(void)
+bool __cdecl core_waypoint_cpp_FUN_005ebd40(void)
 
 {
   CPathMap *this_ptr;
@@ -40,7 +40,7 @@ LAB_005ebde7:
     local_18.x = *in_stack_00000004;
     local_18.y = in_stack_00000004[1];
     local_18.z = in_stack_00000004[2];
-    this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
+    core_path_cpp_FUN_00548500();
     iVar1 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(this_ptr,&local_18,&local_30,0);
     return iVar1 == 1;
   }

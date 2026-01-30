@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
+; __cdecl void __cdecl core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -128,7 +128,7 @@ section .text
     PUSH EBX                            ; 0050655c
         ;   Label: LAB_0050655c
     CALL core_lightgun.cpp_FUN_00505ac0 ; 0050655d
-        ;   XREF to: 00505ac0 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_FUN_00505ac0()
+        ;   XREF to: 00505ac0 (UNCONDITIONAL_CALL)  ; void core_lightgun.cpp_FUN_00505ac0()
     MOV EBP,dword ptr [EBX + 0x578]     ; 00506562
     ADD ESP,0x4                         ; 00506568
     TEST EBP,EBP                        ; 0050656b
@@ -156,7 +156,7 @@ section .text
     PUSH 0x3dcccccd                     ; 005065b0
     PUSH ESI                            ; 005065b5 | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0 ; 005065b6
-        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
+        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
     ADD ESP,0xc                         ; 005065bb
     PUSH 0x2d7eaf0                      ; 005065be | g_CDemonLightInstance
         ;   Label: LAB_005065be

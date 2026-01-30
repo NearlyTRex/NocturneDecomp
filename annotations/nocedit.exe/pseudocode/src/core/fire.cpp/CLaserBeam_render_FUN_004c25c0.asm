@@ -782,7 +782,7 @@ section .text
     PUSH dword ptr [EAX + 0x38]         ; 004c2e18
     PUSH 0x0                            ; 004c2e1b
     CALL core_fire.cpp_FUN_004c24d0     ; 004c2e1d
-        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c24d0()
+        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_FUN_004c24d0()
     MOV dword ptr [ESP + 0x300],EAX     ; 004c2e22
     FLD float ptr [ESP + 0x300]         ; 004c2e29
     ADD ESP,0x8                         ; 004c2e30
@@ -790,7 +790,7 @@ section .text
     PUSH dword ptr [ESP + 0x28]         ; 004c2e3a
     FSTP float ptr [ESP + 0x2dc]        ; 004c2e3e
     CALL core_fire.cpp_FUN_004c24d0     ; 004c2e45
-        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c24d0()
+        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_FUN_004c24d0()
     MOV dword ptr [ESP + 0x300],EAX     ; 004c2e4a
     FLD float ptr [ESP + 0x300]         ; 004c2e51
     ADD ESP,0x8                         ; 004c2e58

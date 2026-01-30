@@ -1,14 +1,14 @@
 // Name: core_dynamite.cpp_FUN_0049cf20
 // Address: 0049cf20
 // Address Range: [[0049cf20, 0049cf60]]
-// Convention: unknown
-// Signature: void core_dynamite_cpp_FUN_0049cf20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dynamite_cpp_FUN_0049cf20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_dynamite.cpp_FUN_0049cf20(uint param_1) */
 
-void core_dynamite_cpp_FUN_0049cf20(void)
+void __cdecl core_dynamite_cpp_FUN_0049cf20(void)
 
 {
   uint uVar1;

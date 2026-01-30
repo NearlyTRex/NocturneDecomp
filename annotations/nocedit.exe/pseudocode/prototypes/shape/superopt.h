@@ -9,15 +9,15 @@ void __cdecl logToFile(char *format,...);
 
 // Original: shape_superopt.cpp_FUN_005c79a0
 // Address: 005c79a0
-void FUN_005c79a0(void);
+void __cdecl FUN_005c79a0(void);
 
 // Original: shape_superopt.cpp_FUN_005c79d0
 // Address: 005c79d0
-undefined4 FUN_005c79d0(void);
+int __cdecl FUN_005c79d0(void);
 
 // Original: shape_superopt.cpp_FUN_005c79f0
 // Address: 005c79f0
-void FUN_005c79f0(void);
+void __cdecl FUN_005c79f0(void);
 
 // Original: shape_superopt.cpp_FUN_005c7a90
 // Address: 005c7a90
@@ -25,95 +25,95 @@ int __cdecl FUN_005c7a90(void);
 
 // Original: shape_superopt.cpp_FUN_005c7b20
 // Address: 005c7b20
-undefined4 FUN_005c7b20(void);
+int __cdecl FUN_005c7b20(void);
 
 // Original: shape_superopt.cpp_FUN_005c7dc0
 // Address: 005c7dc0
-void FUN_005c7dc0(void);
+void __cdecl FUN_005c7dc0(void);
 
 // Original: shape_superopt.cpp_FUN_005c7fb0
 // Address: 005c7fb0
-int FUN_005c7fb0(void);
+int __cdecl FUN_005c7fb0(void);
 
 // Original: shape_superopt.cpp_FUN_005c8160
 // Address: 005c8160
-void FUN_005c8160(void);
+void __cdecl FUN_005c8160(void);
 
 // Original: shape_superopt.cpp_FUN_005c8280
 // Address: 005c8280
-undefined4 FUN_005c8280(void);
+int __cdecl FUN_005c8280(void);
 
 // Original: shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0
 // Address: 005c84c0
-undefined4 EdgeListCheckPlusFreesLarge(void);
+int __cdecl EdgeListCheckPlusFreesLarge(void);
 
 // Original: shape_superopt.cpp_FUN_005c8b50
 // Address: 005c8b50
-int FUN_005c8b50(void);
+int __cdecl FUN_005c8b50(void);
 
 // Original: shape_superopt.cpp_FUN_005c8e70
 // Address: 005c8e70
-int FUN_005c8e70(void);
+int __cdecl FUN_005c8e70(void);
 
 // Original: shape_superopt.cpp_FUN_005c9100
 // Address: 005c9100
-double FUN_005c9100(void);
+int __cdecl FUN_005c9100(void);
 
 // Original: shape_superopt.cpp_FUN_005c91e0
 // Address: 005c91e0
-uint FUN_005c91e0(void);
+uint __cdecl FUN_005c91e0(void);
 
 // Original: shape_superopt.cpp_FUN_005c9340
 // Address: 005c9340
-void FUN_005c9340(void);
+void __cdecl FUN_005c9340(void);
 
 // Original: shape_superopt.cpp_FUN_005c9500
 // Address: 005c9500
-int FUN_005c9500(void);
+int __cdecl FUN_005c9500(void);
 
 // Original: shape_superopt.cpp_FUN_005c9aa0
 // Address: 005c9aa0
-void FUN_005c9aa0(void);
+void __cdecl FUN_005c9aa0(void);
 
 // Original: shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
 // Address: 005ca590
-undefined4 ComplexEdgeListSplit::UnevenCheck(void);
+int __cdecl ComplexEdgeListSplit::UnevenCheck(void);
 
 // Original: shape_superopt.cpp_FUN_005cb3a0
 // Address: 005cb3a0
-undefined4 FUN_005cb3a0(void);
+int __cdecl FUN_005cb3a0(void);
 
 // Original: shape_superopt.cpp_FUN_005cbb40
 // Address: 005cbb40
-double * FUN_005cbb40(void);
+double * __cdecl FUN_005cbb40(void);
 
 // Original: shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20
 // Address: 005cbe20
-void CondCallDebugMallocUnknownString(void);
+void __cdecl CondCallDebugMallocUnknownString(void);
 
 // Original: shape_superopt.cpp_FUN_005cbec0
 // Address: 005cbec0
-undefined4 FUN_005cbec0(void);
+int __cdecl FUN_005cbec0(void);
 
 // Original: shape_superopt.cpp_FUN_005cbee0
 // Address: 005cbee0
-undefined4 FUN_005cbee0(void);
+int __cdecl FUN_005cbee0(void);
 
 // Original: shape_superopt.cpp_FUN_005cbef0
 // Address: 005cbef0
-int FUN_005cbef0(void);
+int __cdecl FUN_005cbef0(void);
 
 // Original: shape_superopt.cpp_FUN_005cbf00
 // Address: 005cbf00
-undefined4 FUN_005cbf00(void);
+int __cdecl FUN_005cbf00(void);
 
 // Original: shape_superopt.cpp_FUN_005cbf10
 // Address: 005cbf10
-undefined4 FUN_005cbf10(void);
+int __cdecl FUN_005cbf10(void);
 
 // Original: shape_superopt.cpp_FUN_005cbf20
 // Address: 005cbf20
-undefined4 FUN_005cbf20(void);
+int __cdecl FUN_005cbf20(void);
 
 // Original: shape_superopt.cpp_FUN_005cbf90
 // Address: 005cbf90
@@ -605,15 +605,15 @@ void __cdecl COptimize(COptimize *this_ptr);
 
 // Original: shape_superopt.cpp_FUN_005d7750
 // Address: 005d7750
-int FUN_005d7750(void);
+int __cdecl FUN_005d7750(void);
 
 // Original: shape_superopt.cpp_TriListSomething_FUN_005d77a0
 // Address: 005d77a0
-void TriListSomething(void);
+void __cdecl TriListSomething(void);
 
 // Original: shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00
 // Address: 005d7e00
-void BonesAndPointsCheck(void);
+void __cdecl BonesAndPointsCheck(void);
 
 // Original: shape_superopt.cpp_CP3D_ctor_FUN_005d8120
 // Address: 005d8120
@@ -637,107 +637,107 @@ CVec * __cdecl CVec::copy(CVec *this_ptr,CVec *other);
 
 // Original: shape_superopt.cpp_FUN_005d8190
 // Address: 005d8190
-void FUN_005d8190(void);
+void __cdecl FUN_005d8190(void);
 
 // Original: shape_superopt.cpp_FUN_005d81c0
 // Address: 005d81c0
-void FUN_005d81c0(void);
+void __cdecl FUN_005d81c0(void);
 
 // Original: shape_superopt.cpp_FUN_005d8200
 // Address: 005d8200
-double FUN_005d8200(void);
+int __cdecl FUN_005d8200(void);
 
 // Original: shape_superopt.cpp_FUN_005d8230
 // Address: 005d8230
-void FUN_005d8230(void);
+void __cdecl FUN_005d8230(void);
 
 // Original: shape_superopt.cpp_FUN_005d8270
 // Address: 005d8270
-double * FUN_005d8270(void);
+double * __cdecl FUN_005d8270(void);
 
 // Original: shape_superopt.cpp_FUN_005d82b0
 // Address: 005d82b0
-void FUN_005d82b0(void);
+void __cdecl FUN_005d82b0(void);
 
 // Original: shape_superopt.cpp_FUN_005d82e0
 // Address: 005d82e0
-double FUN_005d82e0(void);
+int __cdecl FUN_005d82e0(void);
 
 // Original: shape_superopt.cpp_FUN_005d8310
 // Address: 005d8310
-void FUN_005d8310(void);
+void __cdecl FUN_005d8310(void);
 
 // Original: shape_superopt.cpp_FUN_005d8330
 // Address: 005d8330
-void FUN_005d8330(void);
+void __cdecl FUN_005d8330(void);
 
 // Original: shape_superopt.cpp_FUN_005d8350
 // Address: 005d8350
-void FUN_005d8350(void);
+void __cdecl FUN_005d8350(void);
 
 // Original: shape_superopt.cpp_FUN_005d8390
 // Address: 005d8390
-void FUN_005d8390(void);
+void __cdecl FUN_005d8390(void);
 
 // Original: shape_superopt.cpp_FUN_005d83d0
 // Address: 005d83d0
-void FUN_005d83d0(void);
+void __cdecl FUN_005d83d0(void);
 
 // Original: shape_superopt.cpp_FUN_005d8410
 // Address: 005d8410
-undefined4 FUN_005d8410(void);
+int __cdecl FUN_005d8410(void);
 
 // Original: shape_superopt.cpp_FUN_005d8440
 // Address: 005d8440
-void FUN_005d8440(void);
+void __cdecl FUN_005d8440(void);
 
 // Original: shape_superopt.cpp_FUN_005d8470
 // Address: 005d8470
-void FUN_005d8470(void);
+void __cdecl FUN_005d8470(void);
 
 // Original: shape_superopt.cpp_FUN_005d84a0
 // Address: 005d84a0
-void FUN_005d84a0(void);
+void __cdecl FUN_005d84a0(void);
 
 // Original: shape_superopt.cpp_FUN_005d84d0
 // Address: 005d84d0
-void FUN_005d84d0(void);
+void __cdecl FUN_005d84d0(void);
 
 // Original: shape_superopt.cpp_FUN_005d8520
 // Address: 005d8520
-void FUN_005d8520(void);
+void __cdecl FUN_005d8520(void);
 
 // Original: shape_superopt.cpp_FUN_005d8570
 // Address: 005d8570
-void FUN_005d8570(void);
+void __cdecl FUN_005d8570(void);
 
 // Original: shape_superopt.cpp_FUN_005d85a0
 // Address: 005d85a0
-void FUN_005d85a0(void);
+void __cdecl FUN_005d85a0(void);
 
 // Original: shape_superopt.cpp_FUN_005d85f0
 // Address: 005d85f0
-void FUN_005d85f0(void);
+void __cdecl FUN_005d85f0(void);
 
 // Original: shape_superopt.cpp_FUN_005d8630
 // Address: 005d8630
-void FUN_005d8630(void);
+void __cdecl FUN_005d8630(void);
 
 // Original: shape_superopt.cpp_FUN_005d8670
 // Address: 005d8670
-undefined4 FUN_005d8670(void);
+int __cdecl FUN_005d8670(void);
 
 // Original: shape_superopt.cpp_FUN_005d86a0
 // Address: 005d86a0
-undefined4 FUN_005d86a0(void);
+int __cdecl FUN_005d86a0(void);
 
 // Original: shape_superopt.cpp_FUN_005d86d0
 // Address: 005d86d0
-double FUN_005d86d0(void);
+int __cdecl FUN_005d86d0(void);
 
 // Original: shape_superopt.cpp_FUN_005d8710
 // Address: 005d8710
-void FUN_005d8710(void);
+void __cdecl FUN_005d8710(void);
 
 // Original: shape_superopt.cpp_CP2D_dtor_FUN_005d87c0
 // Address: 005d87c0

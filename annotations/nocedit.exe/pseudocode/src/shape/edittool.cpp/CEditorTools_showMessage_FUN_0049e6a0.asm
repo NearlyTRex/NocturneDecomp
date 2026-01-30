@@ -15,11 +15,11 @@
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d77f5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005079b8
 ;   core_mission.cpp_FUN_00524c20 at 00524d83
-;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538a7c
-;   core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190 at 0053d211
-;   core_msnedit.cpp_DeleteActors_FUN_0053df90 at 0053e166
-;   core_msnedit.cpp_FUN_00537230 at 00537318
-;   core_msnedit.cpp_FUN_005379e0 at 00537c5d
+;   core_msnedit.cpp_CDemonMission_FUN_005379e0 at 00537c5d
+;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 005381cc
+;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b4fe
+;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b9de
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053ce9a
 ;   ... and 25 more
 ;
 ; Referenced Globals:

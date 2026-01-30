@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_zombie_cpp_CZombie_FUN_005fbda0(void)
+; __cdecl int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(void)
 ;
 ;
 ; XREF[1]:
@@ -21,7 +21,7 @@ section .text
     PUSH EDX                            ; 005fbda9
     PUSH EBX                            ; 005fbdaa
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fbdab
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005fbdb0
     TEST EAX,EAX                        ; 005fbdb3
     JL 0x005fbdd2                       ; 005fbdb5

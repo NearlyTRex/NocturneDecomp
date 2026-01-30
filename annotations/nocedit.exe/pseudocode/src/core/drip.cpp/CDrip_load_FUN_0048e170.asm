@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_drip_cpp_CDrip_load_FUN_0048e170(void)
+; __cdecl void __cdecl core_drip_cpp_CDrip_load_FUN_0048e170(void)
 ;
 ;
 ; Referenced Globals:

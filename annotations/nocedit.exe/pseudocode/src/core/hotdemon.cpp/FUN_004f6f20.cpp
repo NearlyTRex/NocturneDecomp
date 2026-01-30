@@ -1,15 +1,15 @@
 // Name: core_hotdemon.cpp_FUN_004f6f20
 // Address: 004f6f20
 // Address Range: [[004f6f20, 004f765a]]
-// Convention: unknown
-// Signature: void core_hotdemon_cpp_FUN_004f6f20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hotdemon_cpp_FUN_004f6f20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_hotdemon.cpp_FUN_004f6f20(uint param_1, uint
    param_2) */
 
-void core_hotdemon_cpp_FUN_004f6f20(void)
+void __cdecl core_hotdemon_cpp_FUN_004f6f20(void)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -102,7 +102,7 @@ LAB_004f7178:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1)
       ;
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
     (in_stack_00000004->base).model.accumulated_root_motion.z = 0.0;
     (in_stack_00000004->base).model.accumulated_root_motion.y =
@@ -277,8 +277,6 @@ LAB_004f73d5:
   case 8:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_10c);
     local_10c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-    local_10c.attacker = (CDemonActor *)in_stack_00000004;
-    local_10c.wielder = (CDemonActor *)in_stack_00000004;
     local_14 = local_10c.damage_amount;
     pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_4c,&g_ZeroVector,

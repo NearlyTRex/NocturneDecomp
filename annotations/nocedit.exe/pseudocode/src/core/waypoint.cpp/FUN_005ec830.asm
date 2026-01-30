@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_waypoint_cpp_FUN_005ec830(void)
+; __cdecl void __cdecl core_waypoint_cpp_FUN_005ec830(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -45,7 +45,7 @@ section .text
     PUSH ECX                            ; 005ec85f
     PUSH EBX                            ; 005ec860
     CALL core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0 ; 005ec861
-        ;   XREF to: 005ec7b0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0()
+        ;   XREF to: 005ec7b0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0()
     ADD ESP,0x8                         ; 005ec866
     MOV EAX,dword ptr [ESP + 0x4]       ; 005ec869
         ;   Label: LAB_005ec869
@@ -78,7 +78,7 @@ section .text
     PUSH ESI                            ; 005ec8a9
     PUSH EBX                            ; 005ec8aa
     CALL core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0 ; 005ec8ab
-        ;   XREF to: 005ec7b0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0()
+        ;   XREF to: 005ec7b0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0()
     ADD ESP,0x8                         ; 005ec8b0
     CMP ESI,dword ptr [EBX + 0x370]     ; 005ec8b3
         ;   Label: LAB_005ec8b3

@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 72,
-        "line": 33,
+        "line": 27,
         "message": "'DAT_00643fd5' was not declared in this scope; did you mean 'DAT_00643f94'?"
       },
       {
         "category": "incompatible_types",
-        "column": 53,
-        "line": 36,
+        "column": 85,
+        "line": 29,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       }
     ],
@@ -24,80 +24,67 @@
       },
       {
         "category": "other",
-        "column": 24,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 25,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 27,
+        "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 153,
+    "complexity_score": 112,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 28,
-    "suspect_count": 11,
+    "pseudocode_lines": 22,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 90
+    "total_lines": 84
   },
   "cross_references": [
     {
       "addr": "00565130",
       "from_addr": "00565a04",
-      "name": "core_script.cpp_CScript_Unk20_FUN_00565130",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565ae0",
+      "from_addr": "00565c01",
+      "name": "core_script.cpp_CScript_FUN_00565ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565f70",
+      "from_addr": "00566023",
+      "name": "core_script.cpp_CScript_FUN_00565f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566330",
+      "from_addr": "00566381",
+      "name": "core_script.cpp_CScript_FUN_00566330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566390",
+      "from_addr": "0056645d",
+      "name": "core_script.cpp_CScript_FUN_00566390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00564820",
       "from_addr": "00565007",
       "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00566330",
-      "from_addr": "00566381",
-      "name": "core_script.cpp_CScript_insertAndEditorPutLine_FUN_00566330",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00565ae0",
-      "from_addr": "00565c01",
-      "name": "core_script.cpp_FUN_00565ae0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00565f70",
-      "from_addr": "00566023",
-      "name": "core_script.cpp_FUN_00565f70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00566390",
-      "from_addr": "0056645d",
-      "name": "core_script.cpp_FUN_00566390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -109,9 +96,9 @@
         "00566323"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_CScript_editorPutLine_FUN_005662a0",
-    "signature": "void core_script_cpp_CScript_editorPutLine_FUN_005662a0(void)"
+    "signature": "void __cdecl core_script_cpp_CScript_editorPutLine_FUN_005662a0(CScript *this_ptr,int param_2)"
   },
   "function_calls": [
     {
@@ -122,7 +109,7 @@
     {
       "addr": "00566800",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_00566800"
+      "name": "core_script.cpp_CScript_FUN_00566800"
     },
     {
       "addr": "004a2b80",
@@ -204,90 +191,84 @@
     "pcode_op_count": 186
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_2",
-      "text": "param_2) */",
+      "text": "void __cdecl core_script_cpp_CScript_editorPutLine_FUN_005662a0(CScript *this_ptr,int param_2)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "text": "if (-1 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 10,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "if (param_2 < iVar1 + 10) goto LAB_005662c2;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "if (-1 < in_stack_00000008) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "((CBitFont *)(in_stack_00000004 + 0x38));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 < iVar1 + 10) goto LAB_005662c2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "font_ptr = (CBitFont *)(in_stack_00000004 + 0x38);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 < iVar1) break;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "text": "if (param_2 < iVar1) break;",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 20,
       "match": "DAT_00643fd5",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)font_ptr,&DAT_00643fd5);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000008",
-      "text": "((CStrList *)font_ptr,in_stack_00000008,&DAT_031101c0);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "text": "shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120((CStrList *)font_ptr,param_2,&DAT_031101c0);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 22,
       "match": "DAT_031101c0",
-      "text": "((CStrList *)font_ptr,in_stack_00000008,&DAT_031101c0);",
+      "text": "shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120((CStrList *)font_ptr,param_2,&DAT_031101c0);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "text": "core_script_cpp_CScript_FUN_00566800(this_ptr,param_2);",
+      "type": "unnamed_param"
     }
   ]
 }

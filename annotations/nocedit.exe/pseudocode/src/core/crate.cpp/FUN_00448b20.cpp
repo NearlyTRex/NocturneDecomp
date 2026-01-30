@@ -1,15 +1,15 @@
 // Name: core_crate.cpp_FUN_00448b20
 // Address: 00448b20
 // Address Range: [[00448b20, 00448b52]]
-// Convention: unknown
-// Signature: void core_crate_cpp_FUN_00448b20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_crate_cpp_FUN_00448b20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_crate.cpp_FUN_00448b20(uint param_1, CActorPropertyList*
    param_2) */
 
-void core_crate_cpp_FUN_00448b20(void)
+void __cdecl core_crate_cpp_FUN_00448b20(void)
 
 {
   CDemonActor *in_stack_00000004;

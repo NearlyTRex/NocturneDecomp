@@ -607,7 +607,7 @@ section .text
     PUSH ECX                            ; 00580dd1
     PUSH EAX                            ; 00580dd2
     CALL core_setedit.cpp_FUN_00581320  ; 00580dd3
-        ;   XREF to: 00581320 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_00581320()
+        ;   XREF to: 00581320 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00581320()
     ADD ESP,0x8                         ; 00580dd8
     JMP 0x00580c22                      ; 00580ddb
         ;   XREF to: 00580c22 (UNCONDITIONAL_JUMP)  ; LAB_00580c22
@@ -616,7 +616,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00580de2
     PUSH EDX                            ; 00580de5
     CALL core_setedit.cpp_FUN_00581320  ; 00580de6
-        ;   XREF to: 00581320 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_00581320()
+        ;   XREF to: 00581320 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00581320()
     ADD ESP,0x8                         ; 00580deb
     JMP 0x00580c22                      ; 00580dee
         ;   XREF to: 00580c22 (UNCONDITIONAL_JUMP)  ; LAB_00580c22
@@ -624,7 +624,7 @@ section .text
         ;   Label: LAB_00580df3
     PUSH EAX                            ; 00580df6
     CALL core_setedit.cpp_BackdropMaybe_FUN_005805a0 ; 00580df7
-        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_BackdropMaybe_FUN_005805a0()
+        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_BackdropMaybe_FUN_005805a0()
     ADD ESP,0x4                         ; 00580dfc
     JMP 0x00580c22                      ; 00580dff
         ;   XREF to: 00580c22 (UNCONDITIONAL_JUMP)  ; LAB_00580c22

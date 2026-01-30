@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flamecan_cpp_CFlameCan_load_FUN_004cb620(void)
+; __cdecl void __cdecl core_flamecan_cpp_CFlameCan_load_FUN_004cb620(void)
 ;
 ;
 ; Referenced Globals:

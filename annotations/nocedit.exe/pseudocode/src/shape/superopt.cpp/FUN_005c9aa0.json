@@ -542,10 +542,10 @@
         "005ca58d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_FUN_005c9aa0",
-    "signature": "void shape_superopt_cpp_FUN_005c9aa0(void)"
+    "signature": "void __cdecl shape_superopt_cpp_FUN_005c9aa0(void)"
   },
   "function_calls": [],
   "globals": [
@@ -569,69 +569,51 @@
         "call_addr": "005c890d",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0",
-        "estimated_params": 9,
+        "estimated_params": 6,
         "instructions_analyzed": 30,
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 6
       },
       {
         "call_addr": "005c8fcf",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_FUN_005c8e70",
-        "estimated_params": 9,
+        "estimated_params": 7,
         "instructions_analyzed": 30,
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_params": 7
       },
       {
         "call_addr": "005c8cb0",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_FUN_005c8b50",
-        "estimated_params": 9,
+        "estimated_params": 7,
         "instructions_analyzed": 30,
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_params": 7
       },
       {
         "call_addr": "005c86b7",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0",
-        "estimated_params": 9,
+        "estimated_params": 6,
         "instructions_analyzed": 30,
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 6
       },
       {
         "call_addr": "005c976c",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_FUN_005c9500",
-        "estimated_params": 10,
+        "estimated_params": 7,
         "instructions_analyzed": 30,
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 7
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 9
+    "estimated_params": 7
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.640992167101827,
@@ -1890,11 +1872,11 @@
       "call_site_count": 5,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 9,
+      "estimated_params": 7,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:9",
-      "param_delta": 9,
-      "text": "Function declares 0 params but call sites push 9 (9 missing)",
+      "match": "declared:0 vs estimated:7",
+      "param_delta": 7,
+      "text": "Function declares 0 params but call sites push 7 (7 missing)",
       "type": "param_count_too_few"
     }
   ]

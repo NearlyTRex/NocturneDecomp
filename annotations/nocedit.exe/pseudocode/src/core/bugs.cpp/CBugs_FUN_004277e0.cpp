@@ -1,15 +1,15 @@
 // Name: core_bugs.cpp_CBugs_FUN_004277e0
 // Address: 004277e0
 // Address Range: [[004277e0, 004278c4]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_CBugs_FUN_004277e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_CBugs_FUN_004277e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bugs.cpp_CBugs_FUN_004277e0(uint param_1,
    CActorPropertyList* param_2) */
 
-void core_bugs_cpp_CBugs_FUN_004277e0(void)
+void __cdecl core_bugs_cpp_CBugs_FUN_004277e0(void)
 
 {
   int extraout_EAX;

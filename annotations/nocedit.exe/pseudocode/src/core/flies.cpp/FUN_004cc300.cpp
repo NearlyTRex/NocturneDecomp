@@ -1,12 +1,12 @@
 // Name: core_flies.cpp_FUN_004cc300
 // Address: 004cc300
 // Address Range: [[004cc300, 004cc6f2]]
-// Convention: unknown
-// Signature: int core_flies_cpp_FUN_004cc300(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_flies_cpp_FUN_004cc300(void)
 
 #include "nocturne.h"
 
-int core_flies_cpp_FUN_004cc300(void)
+int __cdecl core_flies_cpp_FUN_004cc300(void)
 
 {
   short *psVar1;

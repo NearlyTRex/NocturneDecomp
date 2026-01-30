@@ -1,15 +1,15 @@
 // Name: core_imp.cpp_FUN_004f9c30
 // Address: 004f9c30
 // Address Range: [[004f9c30, 004fa8f3]]
-// Convention: unknown
-// Signature: void core_imp_cpp_FUN_004f9c30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_imp_cpp_FUN_004f9c30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_imp.cpp_FUN_004f9c30(uint param_1, uint param_2)
     */
 
-void core_imp_cpp_FUN_004f9c30(void)
+void __cdecl core_imp_cpp_FUN_004f9c30(void)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -136,8 +136,6 @@ LAB_004f9c99:
                   ((CDemonActor *)in_stack_00000004,&local_8c,pCVar9);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_164);
         local_164.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-        local_164.attacker = (CDemonActor *)in_stack_00000004;
-        local_164.wielder = (CDemonActor *)in_stack_00000004;
         local_14 = local_164.damage_amount;
         (**(code **)(*(int *)(*(int *)(in_stack_00000004->unk2 + 4) + 0x154) + 0x11c))();
         dVar14 = round

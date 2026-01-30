@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_cloth_cpp_FUN_0043e2a0(void)
+; __cdecl int __cdecl core_cloth_cpp_FUN_0043e2a0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void)
+; __cdecl void __cdecl core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void)
 ;
 ;
 ; XREF[1]:

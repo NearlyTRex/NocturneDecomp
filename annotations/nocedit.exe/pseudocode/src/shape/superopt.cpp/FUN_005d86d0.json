@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -13,17 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 171,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 11,
-    "suspect_count": 15,
+    "pseudocode_lines": 13,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 33
+    "total_lines": 35
   },
   "cross_references": [],
   "function": {
@@ -34,9 +41,9 @@
         "005d8706"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_superopt.cpp_FUN_005d86d0",
-    "signature": "double shape_superopt_cpp_FUN_005d86d0(void)"
+    "signature": "int __cdecl shape_superopt_cpp_FUN_005d86d0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -106,93 +113,100 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_00000008",
-      "text": "return SQRT((in_stack_00000008[2] - in_stack_00000004[2]) *",
+      "text": "local_20 = SUB84(SQRT((in_stack_00000008[2] - in_stack_00000004[2]) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_00000004",
-      "text": "return SQRT((in_stack_00000008[2] - in_stack_00000004[2]) *",
+      "text": "local_20 = SUB84(SQRT((in_stack_00000008[2] - in_stack_00000004[2]) *",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 8,
+      "line": 9,
+      "match": "SUB84",
+      "text": "local_20 = SUB84(SQRT((in_stack_00000008[2] - in_stack_00000004[2]) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
       "match": "SQRT",
-      "text": "return SQRT((in_stack_00000008[2] - in_stack_00000004[2]) *",
+      "text": "local_20 = SUB84(SQRT((in_stack_00000008[2] - in_stack_00000004[2]) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008[2] - in_stack_00000004[2]) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000008[2] - in_stack_00000004[2]) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008[1] - in_stack_00000004[1]) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000008[1] - in_stack_00000004[1]) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008[1] - in_stack_00000004[1]) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000008[1] - in_stack_00000004[1]) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000008",
-      "text": "(*in_stack_00000008 - *in_stack_00000004) * (*in_stack_00000008 - *in_stack_00000004))",
+      "text": "(*in_stack_00000008 - *in_stack_00000004) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000008 - *in_stack_00000004) * (*in_stack_00000008 - *in_stack_00000004))",
+      "text": "(*in_stack_00000008 - *in_stack_00000004) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "(*in_stack_00000008 - *in_stack_00000004) * (*in_stack_00000008 - *in_stack_00000004))",
+      "text": "(*in_stack_00000008 - *in_stack_00000004)),0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 14,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000008 - *in_stack_00000004) * (*in_stack_00000008 - *in_stack_00000004))",
+      "text": "(*in_stack_00000008 - *in_stack_00000004)),0);",
       "type": "stack_param"
     }
   ]

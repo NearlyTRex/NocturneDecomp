@@ -1,16 +1,17 @@
 // Name: core_gore.cpp_FUN_004ee1e0
 // Address: 004ee1e0
 // Address Range: [[004ee1e0, 004ee28a]]
-// Convention: unknown
-// Signature: int core_gore_cpp_FUN_004ee1e0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_gore_cpp_FUN_004ee1e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_gore.cpp_FUN_004ee1e0(byte param_1, uint param_2) */
 
-int core_gore_cpp_FUN_004ee1e0(void)
+int __cdecl core_gore_cpp_FUN_004ee1e0(void)
 
 {
+  int extraout_EAX;
   int iVar1;
   int iVar2;
   _FILE *in_stack_00000008;
@@ -30,7 +31,8 @@ int core_gore_cpp_FUN_004ee1e0(void)
   if (0 < DAT_02d873d8) {
     do {
       iVar2 = iVar2 + 1;
-      iVar1 = core_gore_cpp_FUN_004ecb00();
+      core_gore_cpp_FUN_004ecb00();
+      iVar1 = extraout_EAX;
     } while (iVar2 < DAT_02d873d8);
   }
   return iVar1;

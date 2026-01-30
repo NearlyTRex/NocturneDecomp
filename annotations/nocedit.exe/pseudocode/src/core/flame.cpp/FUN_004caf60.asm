@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flame_cpp_FUN_004caf60(void)
+; __cdecl void __cdecl core_flame_cpp_FUN_004caf60(void)
 ;
 ;
 ; Referenced Globals:
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [EBX + 0x160],EAX     ; 004cb06c
     PUSH EBX                            ; 004cb072
     CALL core_flamecan.cpp_FUN_004cad90 ; 004cb073
-        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_FUN_004cad90()
+        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cad90()
     ADD ESP,0x4                         ; 004cb078
     ADD ESP,0x8                         ; 004cb07b
     POP EBX                             ; 004cb07e
@@ -130,7 +130,7 @@ section .text
     ADD ESP,0x4                         ; 004cb086
     PUSH EBX                            ; 004cb089
     CALL core_flamecan.cpp_FUN_004cad90 ; 004cb08a
-        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_FUN_004cad90()
+        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cad90()
     ADD ESP,0x4                         ; 004cb08f
     ADD ESP,0x8                         ; 004cb092
     POP EBX                             ; 004cb095

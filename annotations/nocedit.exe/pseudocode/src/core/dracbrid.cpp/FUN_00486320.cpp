@@ -1,12 +1,12 @@
 // Name: core_dracbrid.cpp_FUN_00486320
 // Address: 00486320
 // Address Range: [[00486320, 0048635e]]
-// Convention: unknown
-// Signature: undefined4 core_dracbrid_cpp_FUN_00486320(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_dracbrid_cpp_FUN_00486320(void)
 
 #include "nocturne.h"
 
-uint core_dracbrid_cpp_FUN_00486320(void)
+int __cdecl core_dracbrid_cpp_FUN_00486320(void)
 
 {
   SMotion *pSVar1;

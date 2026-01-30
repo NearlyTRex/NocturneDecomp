@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_main_c_finalizeGameSystems_FUN_00508570(void)
+; __cdecl void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110
@@ -262,7 +262,7 @@ section .text
         ;   Label: LAB_005087aa
     PUSH EBX                            ; 005087b0 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053f830 ; 005087b1
-        ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_0053f830()
+        ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053f830()
     ADD ESP,0x4                         ; 005087b6
     MOV ESI,dword ptr [0x00680b80]      ; 005087b9 | PTR_g_SpecialBitmapsInstance_00680b80
     PUSH ESI                            ; 005087bf | g_CMouseInstance

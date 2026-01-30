@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
+; __cdecl void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -144,7 +144,7 @@ section .text
     LEA ESI,[EBX + 0x4be24]             ; 00520cad
     PUSH ESI                            ; 00520cb3
     CALL core_morph.cpp_FUN_0052b600    ; 00520cb4
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 00520cb9
     MOV EAX,dword ptr [EBX + 0x4ca54]   ; 00520cbc
     PUSH 0x0                            ; 00520cc2
@@ -153,7 +153,7 @@ section .text
     PUSH 0x1                            ; 00520cca
     PUSH ESI                            ; 00520ccc
     CALL core_morph.cpp_FUN_0052b600    ; 00520ccd
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 00520cd2
     MOV ESI,dword ptr [EBX + 0x4be78]   ; 00520cd5
     XOR EAX,EAX                         ; 00520cdb

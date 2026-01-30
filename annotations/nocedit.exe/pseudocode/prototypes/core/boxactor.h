@@ -149,23 +149,23 @@ void __cdecl CLightActor(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_00423380
 // Address: 00423380
-undefined4 CLightActor(void);
+int __cdecl CLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_00423400
 // Address: 00423400
-void CLightActor(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,undefined4 param_6,char *param_7);
+void __cdecl CLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_00423440
 // Address: 00423440
-undefined4 CLightActor(void);
+int __cdecl CLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_004234e0
 // Address: 004234e0
-void CLightActor(void);
+void __cdecl CLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_00423590
 // Address: 00423590
-undefined4 CLightActor(void);
+int __cdecl CLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_004235c0
 // Address: 004235c0

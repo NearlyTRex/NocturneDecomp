@@ -4,14 +4,8 @@
       {
         "category": "other",
         "column": 13,
-        "line": 40,
+        "line": 41,
         "message": "cast from 'SMRGLHeaderExtended*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 99,
-        "line": 43,
-        "message": "void value not ignored as it ought to be"
       },
       {
         "category": "other",
@@ -31,7 +25,7 @@
       {
         "category": "other",
         "column": 16,
-        "line": 38,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -44,13 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 95,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 55,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "extra_output",
       "pointer_cast",
       "register_param"
     ],
@@ -177,11 +172,25 @@
       "type": "register_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "SMRGLHeaderExtended *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Inferred register parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_EAX",
       "text": "local_14 = in_EAX;",
       "type": "register_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 39,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",

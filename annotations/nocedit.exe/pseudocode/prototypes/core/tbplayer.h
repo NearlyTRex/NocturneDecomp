@@ -25,15 +25,15 @@ void __cdecl CBassPlayer(CBassPlayer *this_ptr);
 
 // Original: core_tbplayer.cpp_FUN_005da100
 // Address: 005da100
-void FUN_005da100(void);
+void __cdecl FUN_005da100(void);
 
 // Original: core_tbplayer.cpp_FUN_005da120
 // Address: 005da120
-void FUN_005da120(void);
+void __cdecl FUN_005da120(void);
 
 // Original: core_tbplayer.cpp_FUN_005da240
 // Address: 005da240
-void FUN_005da240(void);
+void __cdecl FUN_005da240(void);
 
 // Original: core_tbplayer.cpp_factoryFunc_FUN_005da280
 // Address: 005da280
@@ -53,11 +53,11 @@ void __cdecl CDrummer(CDrummer *this_ptr);
 
 // Original: core_tbplayer.cpp_FUN_005da370
 // Address: 005da370
-void FUN_005da370(void);
+void __cdecl FUN_005da370(void);
 
 // Original: core_tbplayer.cpp_FUN_005da510
 // Address: 005da510
-void FUN_005da510(void);
+void __cdecl FUN_005da510(void);
 
 // Original: core_tbplayer.cpp_CDrummer_dtor_FUN_005da540
 // Address: 005da540

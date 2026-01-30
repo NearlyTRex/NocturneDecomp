@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
+; __cdecl int __cdecl shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x330]:8  local_330

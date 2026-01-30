@@ -1,14 +1,14 @@
 // Name: core_gun.cpp_FUN_004f0350
 // Address: 004f0350
 // Address Range: [[004f0350, 004f05f2] [004f06df, 004f0b16]]
-// Convention: unknown
-// Signature: undefined4 core_gun_cpp_FUN_004f0350(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_gun_cpp_FUN_004f0350(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_gun.cpp_FUN_004f0350(uint param_1) */
 
-uint core_gun_cpp_FUN_004f0350(void)
+int __cdecl core_gun_cpp_FUN_004f0350(void)
 
 {
   CDemonSet *this_ptr;
@@ -172,7 +172,6 @@ uint core_gun_cpp_FUN_004f0350(void)
       }
       SStack_148.impact_direction.x = *(float *)(in_stack_00000004[4].actor_name + 0xc);
       SStack_148.impact_direction.y = 0.15;
-      SStack_148.ammo_type = (int)in_stack_00000004;
       SStack_148.impact_direction.z = 1.41531e-43;
       SStack_148.damage_type =
            (int)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);

@@ -85,7 +85,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   if (g_CGamePtr->profile_mode == 1) {
     g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
-  core_gore_cpp_CGore_process_FUN_004ed9e0();
+  core_gore_cpp_CGore_process_FUN_004ed9e0(g_CGorePtr);
   if (g_CGamePtr->profile_mode == 1) {
     iVar4 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     engine_console_cpp_CConsole_printf_FUN_00441890

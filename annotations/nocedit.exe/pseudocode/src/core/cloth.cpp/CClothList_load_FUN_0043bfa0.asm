@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 0043c002 (CONDITIONAL_JUMP)  ; LAB_0043c002
     PUSH EAX                            ; 0043bff9
     CALL core_cloth.cpp_FUN_00438ba0    ; 0043bffa
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 0043bfff
     MOV dword ptr [EBX + 0x194],EAX     ; 0043c002
         ;   Label: LAB_0043c002
@@ -104,7 +104,7 @@ section .text
         ;   Label: LAB_0043c056
     PUSH EAX                            ; 0043c058
     CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 0043c059
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
     ADD ESP,0x8                         ; 0043c05e
     PUSH EAX                            ; 0043c061
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043c062

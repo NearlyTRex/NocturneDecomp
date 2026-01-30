@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_msnedit_cpp_FUN_005374b0(void)
+; __cdecl void __cdecl core_msnedit_cpp_FUN_005374b0(int unk)
 ;
+; Parameters:
+; int              Stack[0x4]:4   unk
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
@@ -14,8 +16,8 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060
-;   core_script.cpp_CScript_unk50_FUN_00566660
+;   core_msnedit.cpp_CDemonMission_FUN_00539060
+;   core_script.cpp_CScript_FUN_00566660
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;
 ; *****************************************************************************
@@ -41,16 +43,16 @@ section .text
     PUSH 0x0                            ; 005374cf
     MOV ECX,dword ptr [0x00680d50]      ; 005374d1 | g_CScriptPtr | g_CScriptInstance
     PUSH ECX                            ; 005374d7 | g_CScriptInstance
-    CALL core_script.cpp_CScript_unk50_FUN_00566660 ; 005374d8
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_unk50_FUN_00566660()
+    CALL core_script.cpp_CScript_FUN_00566660 ; 005374d8
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
         ;   Label: LAB_005374d8
     ADD ESP,0x14                        ; 005374dd
     PUSH 0x1                            ; 005374e0
     MOV dword ptr [0x02f7c634],EBX      ; 005374e2 | DAT_02f7c634
     MOV EBX,dword ptr [0x0067d550]      ; 005374e8 | g_CDemonMissionPtr | g_CDemonMissionInstance
     PUSH EBX                            ; 005374ee | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060 ; 005374ef
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060()
+    CALL core_msnedit.cpp_CDemonMission_FUN_00539060 ; 005374ef
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00539060(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005374f4
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 005374f7
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

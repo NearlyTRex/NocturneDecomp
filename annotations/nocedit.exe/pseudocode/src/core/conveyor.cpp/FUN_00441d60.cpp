@@ -1,14 +1,14 @@
 // Name: core_conveyor.cpp_FUN_00441d60
 // Address: 00441d60
 // Address Range: [[00441d60, 00441dec]]
-// Convention: unknown
-// Signature: void core_conveyor_cpp_FUN_00441d60(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_conveyor_cpp_FUN_00441d60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_conveyor.cpp_FUN_00441d60(uint param_1) */
 
-void core_conveyor_cpp_FUN_00441d60(void)
+void __cdecl core_conveyor_cpp_FUN_00441d60(void)
 
 {
   uint *puVar1;

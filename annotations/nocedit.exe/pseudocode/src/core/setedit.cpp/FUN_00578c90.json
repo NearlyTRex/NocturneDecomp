@@ -12,42 +12,48 @@
       {
         "category": "other",
         "column": 23,
-        "line": 31,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+        "line": 30,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 30,
+        "message": "format '%c' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 36,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 45,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 53,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 135,
+    "complexity_score": 114,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 45,
-    "suspect_count": 8,
+    "pseudocode_lines": 44,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 137
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -65,9 +71,9 @@
         "00578d71"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_setedit.cpp_FUN_00578c90",
-    "signature": "undefined4 core_setedit_cpp_FUN_00578c90(void)"
+    "signature": "int __cdecl core_setedit_cpp_FUN_00578c90(void)"
   },
   "function_calls": [
     {
@@ -197,20 +203,13 @@
     {
       "description": "Unresolved stack parameter",
       "line": 13,
-      "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
@@ -218,20 +217,13 @@
     {
       "description": "Unresolved stack parameter",
       "line": 24,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_13c,\"%s? [%c] \",in_stack_00000008,(uint)bVar1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
       "match": "in_stack_00000004",
       "text": "engine_2d_c_drawText_FUN_00401fd0(local_13c,0,in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "engine_2d_c_drawText_FUN_00401fd0(local_2cc,0,in_stack_00000004);",
       "type": "stack_param"

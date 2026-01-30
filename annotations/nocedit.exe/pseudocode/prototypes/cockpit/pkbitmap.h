@@ -117,7 +117,7 @@ void __cdecl CPackedBitmap::loadStoredPBMFile(CPackedBitmap *this_ptr,int post_l
 
 // Original: cockpit_pkbitmap.cpp_FUN_0054b930
 // Address: 0054b930
-void FUN_0054b930(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5,_FILE *param_6);
+void __cdecl FUN_0054b930(void);
 
 // Original: cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
 // Address: 0054b9b0

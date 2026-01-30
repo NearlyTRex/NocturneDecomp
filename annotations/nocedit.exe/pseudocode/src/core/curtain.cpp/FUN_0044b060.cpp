@@ -1,12 +1,12 @@
 // Name: core_curtain.cpp_FUN_0044b060
 // Address: 0044b060
 // Address Range: [[0044b060, 0044b332]]
-// Convention: unknown
-// Signature: int core_curtain_cpp_FUN_0044b060(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_curtain_cpp_FUN_0044b060(void)
 
 #include "nocturne.h"
 
-int core_curtain_cpp_FUN_0044b060(void)
+int __cdecl core_curtain_cpp_FUN_0044b060(void)
 
 {
   bool bVar1;

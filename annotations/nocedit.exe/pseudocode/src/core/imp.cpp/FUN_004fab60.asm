@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_imp_cpp_FUN_004fab60(void)
+; __cdecl void __cdecl core_imp_cpp_FUN_004fab60(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -119,7 +119,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004fac2e
     PUSH EAX                            ; 004fac31
     CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 004fac32
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 004fac37
     MOV EDI,EAX                         ; 004fac3a
     PUSH 0x1                            ; 004fac3c
@@ -211,7 +211,7 @@ section .text
     ADD ESP,0x8                         ; 004fad00
     PUSH EBP                            ; 004fad03
     CALL core_bodypart.cpp_FUN_0041a050 ; 004fad04
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a050()
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
     ADD ESP,0x4                         ; 004fad09
     FLD float ptr [ESI + 0x8]           ; 004fad0c
     FLD ST0                             ; 004fad0f

@@ -13,7 +13,7 @@
 ;
 ; XREF[7]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 004891eb
-;   core_script.cpp_FUN_005645d0 at 00564791
+;   core_script.cpp_CScript_FUN_005645d0 at 00564791
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0 at 004cdf1f
 ;   engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0 at 004ce034
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0 at 004cde15

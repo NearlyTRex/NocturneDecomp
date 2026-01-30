@@ -1,15 +1,15 @@
 // Name: core_crate.cpp_FUN_00448b60
 // Address: 00448b60
 // Address Range: [[00448b60, 00448ba9]]
-// Convention: unknown
-// Signature: void core_crate_cpp_FUN_00448b60(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_crate_cpp_FUN_00448b60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_crate.cpp_FUN_00448b60(uint param_1, uint param_2)
     */
 
-void core_crate_cpp_FUN_00448b60(void)
+void __cdecl core_crate_cpp_FUN_00448b60(void)
 
 {
   CKeyFramedModel *pCVar1;

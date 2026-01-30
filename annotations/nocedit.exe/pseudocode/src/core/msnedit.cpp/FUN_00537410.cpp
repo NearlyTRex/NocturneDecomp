@@ -1,12 +1,12 @@
 // Name: core_msnedit.cpp_FUN_00537410
 // Address: 00537410
 // Address Range: [[00537410, 005374ae]]
-// Convention: unknown
-// Signature: undefined4 core_msnedit_cpp_FUN_00537410(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_msnedit_cpp_FUN_00537410(char *param_1)
 
 #include "nocturne.h"
 
-uint core_msnedit_cpp_FUN_00537410(void)
+int __cdecl core_msnedit_cpp_FUN_00537410(char *param_1)
 
 {
   char cVar1;
@@ -14,12 +14,11 @@ uint core_msnedit_cpp_FUN_00537410(void)
   char *pcVar3;
   char *pcVar4;
   char *pcVar5;
-  char *in_stack_00000004;
   char local_2c [32];
   
   pcVar5 = local_2c;
   pcVar4 = local_2c;
-  pcVar3 = in_stack_00000004;
+  pcVar3 = param_1;
   if (g_ConfirmNewActorNames == 0) {
     return 1;
   }
@@ -38,18 +37,18 @@ uint core_msnedit_cpp_FUN_00537410(void)
     if (iVar2 == 0) {
       return 0;
     }
-    iVar2 = core_msnedit_cpp_FUN_0053d220(g_CDemonMissionPtr);
+    iVar2 = core_msnedit_cpp_CDemonMission_FUN_0053d220(g_CDemonMissionPtr);
   } while (iVar2 == 0);
   do {
     cVar1 = *pcVar4;
-    *in_stack_00000004 = cVar1;
+    *param_1 = cVar1;
     if (cVar1 == '\0') {
       return 1;
     }
     cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    in_stack_00000004[1] = cVar1;
-    in_stack_00000004 = in_stack_00000004 + 2;
+    param_1[1] = cVar1;
+    param_1 = param_1 + 2;
   } while (cVar1 != '\0');
   return 1;
 }

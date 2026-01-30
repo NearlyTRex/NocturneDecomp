@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_boneguy_cpp_FUN_0041b700(void)
+; __cdecl float * __cdecl core_boneguy_cpp_FUN_0041b700(void)
 ;
 ;
 ; Referenced Globals:

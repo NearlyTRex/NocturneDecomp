@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
+; __cdecl void __cdecl core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
 ;
 ;
 ; Referenced Globals:
@@ -71,7 +71,7 @@ section .text
     PUSH ESI                            ; 00568d51
     PUSH EBX                            ; 00568d52
     CALL core_enemy.cpp_FUN_004a9f10    ; 00568d53
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00568d58
     POP EDI                             ; 00568d5b
     POP ESI                             ; 00568d5c

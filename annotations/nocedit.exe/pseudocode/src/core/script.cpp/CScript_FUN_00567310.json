@@ -1,0 +1,362 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 32,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 41,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 44,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 53,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 59,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 60,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 73,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 161,
+    "complexity_score": 246,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 81,
+    "suspect_count": 16,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 242
+  },
+  "cross_references": [
+    {
+      "addr": "005671a0",
+      "from_addr": "005671df",
+      "name": "core_script.cpp_CScript_FUN_005671a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00561a30",
+      "from_addr": "00561a60",
+      "name": "core_script.cpp_FUN_00561a30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00567310",
+    "address_range": [
+      [
+        "00567310",
+        "00567482"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_FUN_00567310",
+    "signature": "int __cdecl core_script_cpp_CScript_FUN_00567310(CScript *this_ptr,int param_2,CBitFont *param_3,int *param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b0f90",
+      "is_variadic": false,
+      "name": "core_event.cpp_FUN_004b0f90"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00561a60",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00561a30",
+        "estimated_params": 4,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005671df",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_005671a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.426229508196721,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "BRANCH": 5,
+      "CALL": 4,
+      "CBRANCH": 16,
+      "COPY": 98,
+      "INT_ADD": 45,
+      "INT_AND": 82,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 75,
+      "INT_LESS": 10,
+      "INT_MULT": 11,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 37,
+      "INT_SUB": 25,
+      "INT_XOR": 5,
+      "LOAD": 28,
+      "POPCOUNT": 37,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 540
+  },
+  "stack_frame": {
+    "frame_size": 448,
+    "local_size": 432,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1ac",
+        "offset": -428,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1ab",
+        "offset": -427,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "core_script_cpp_CScript_FUN_00567310(CScript *this_ptr,int param_2,CBitFont *param_3,int *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "core_script_cpp_CScript_FUN_00567310(CScript *this_ptr,int param_2,CBitFont *param_3,int *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "core_script_cpp_CScript_FUN_00567310(CScript *this_ptr,int param_2,CBitFont *param_3,int *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "text": "pbVar8 = (byte *)(param_2 + iVar6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "text": "if (*(char *)(param_2 + iVar6) == '.') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "text": "pbVar8 = (byte *)(iVar7 + param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "text": "local_1ac[iVar3] = *(char *)(param_2 + iVar7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "text": "pcVar5 = (char *)(iVar6 + param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_2",
+      "text": "local_1ac[iVar3] = *(char *)(param_2 + iVar7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_2",
+      "text": "pcVar1 = (char *)(param_2 + iVar7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_3",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)param_3,local_1ac);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_4",
+      "text": "if (((param_4 != (int *)0x0) && (local_18 <= *param_4)) && (*param_4 <= iVar7)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_4",
+      "text": "if (((param_4 != (int *)0x0) && (local_18 <= *param_4)) && (*param_4 <= iVar7)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_4",
+      "text": "if (((param_4 != (int *)0x0) && (local_18 <= *param_4)) && (*param_4 <= iVar7)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_4",
+      "text": "*param_4 = local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_3",
+      "text": "local_1c = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(param_3);",
+      "type": "unnamed_param"
+    }
+  ]
+}

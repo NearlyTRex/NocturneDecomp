@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c5270(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60
@@ -155,7 +155,7 @@ section .text
         ;   XREF to: 005c5391 (CONDITIONAL_JUMP)  ; caseD_4
     PUSH EAX                            ; 005c5380
     CALL core_dynamite.cpp_FUN_0049cf70 ; 005c5381
-        ;   XREF to: 0049cf70 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0049cf70()
+        ;   XREF to: 0049cf70 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_FUN_0049cf70()
     ADD ESP,0x4                         ; 005c5386
     TEST EAX,EAX                        ; 005c5389
     JZ 0x005c57e6                       ; 005c538b
@@ -221,7 +221,7 @@ section .text
     PUSH EAX                            ; 005c5428
     PUSH EBX                            ; 005c5429
     CALL core_hero.cpp_FUN_004f38d0     ; 005c542a
-        ;   XREF to: 004f38d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f38d0()
+        ;   XREF to: 004f38d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f38d0()
     ADD ESP,0x8                         ; 005c542f
     MOV dword ptr [EBX + 0x1fc38],0x0   ; 005c5432
     MOV EDX,dword ptr [EBX + 0x1fbb4]   ; 005c543c
@@ -378,7 +378,7 @@ section .text
     PUSH ESI                            ; 005c55d5
     PUSH EBX                            ; 005c55d6
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c55d7
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [ESP + 0x50],EAX      ; 005c55dc
     FLD float ptr [ESP + 0x50]          ; 005c55e0
     ADD ESP,0x8                         ; 005c55e4
@@ -614,7 +614,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x38]      ; 005c580e
     PUSH ECX                            ; 005c5812
     CALL core_dynamite.cpp_FUN_0049cf20 ; 005c5813
-        ;   XREF to: 0049cf20 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0049cf20()
+        ;   XREF to: 0049cf20 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_FUN_0049cf20()
     ADD ESP,0x4                         ; 005c5818
     JMP 0x005c5391                      ; 005c581b
         ;   XREF to: 005c5391 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -638,7 +638,7 @@ section .text
     PUSH EAX                            ; 005c5859
     PUSH EBX                            ; 005c585a
     CALL core_stranger.cpp_CStranger_FUN_005c51c0 ; 005c585b
-        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_FUN_005c51c0()
+        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_FUN_005c51c0()
     ADD ESP,0x8                         ; 005c5860
     MOV ECX,dword ptr [0x02ceed20]      ; 005c5863 | g_CDynamiteClassInfo.name_hash
     PUSH ECX                            ; 005c5869

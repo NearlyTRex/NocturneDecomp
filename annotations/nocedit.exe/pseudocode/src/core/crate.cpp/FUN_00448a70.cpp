@@ -1,14 +1,14 @@
 // Name: core_crate.cpp_FUN_00448a70
 // Address: 00448a70
 // Address Range: [[00448a70, 00448b1b]]
-// Convention: unknown
-// Signature: void core_crate_cpp_FUN_00448a70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_crate_cpp_FUN_00448a70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_crate.cpp_FUN_00448a70(uint param_1) */
 
-void core_crate_cpp_FUN_00448a70(void)
+void __cdecl core_crate_cpp_FUN_00448a70(void)
 
 {
   int in_stack_00000004;
@@ -21,8 +21,7 @@ void core_crate_cpp_FUN_00448a70(void)
   if (*(int *)(in_stack_00000004 + 0x70) != 1) {
     return;
   }
-  engine_console_cpp_CConsole_printf_FUN_00441890
-            (g_CConsolePtr,"%s exploding!\n",in_stack_00000004);
+  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s exploding!\n");
   (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
   if (&uStack_10 != (uint *)(in_stack_00000004 + 0x20)) {
     uStack_10 = *(uint *)(in_stack_00000004 + 0x20);

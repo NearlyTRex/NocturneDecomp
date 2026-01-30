@@ -1,14 +1,14 @@
 // Name: core_drip.cpp_CDrip_load_FUN_0048e170
 // Address: 0048e170
 // Address Range: [[0048e170, 0048e295]]
-// Convention: unknown
-// Signature: void core_drip_cpp_CDrip_load_FUN_0048e170(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drip_cpp_CDrip_load_FUN_0048e170(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_drip.cpp_CDrip_load(CDrip* pDrip) */
 
-void core_drip_cpp_CDrip_load_FUN_0048e170(void)
+void __cdecl core_drip_cpp_CDrip_load_FUN_0048e170(void)
 
 {
   CDemonActor *in_stack_00000004;

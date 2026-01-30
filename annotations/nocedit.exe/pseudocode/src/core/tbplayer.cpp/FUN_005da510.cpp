@@ -1,12 +1,12 @@
 // Name: core_tbplayer.cpp_FUN_005da510
 // Address: 005da510
 // Address Range: [[005da510, 005da534]]
-// Convention: unknown
-// Signature: void core_tbplayer_cpp_FUN_005da510(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_tbplayer_cpp_FUN_005da510(void)
 
 #include "nocturne.h"
 
-void core_tbplayer_cpp_FUN_005da510(void)
+void __cdecl core_tbplayer_cpp_FUN_005da510(void)
 
 {
   float fVar1;

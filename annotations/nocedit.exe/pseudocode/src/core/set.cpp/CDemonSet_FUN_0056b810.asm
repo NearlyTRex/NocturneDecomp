@@ -447,7 +447,7 @@ section .text
     PUSH dword ptr [ESP + 0x60]         ; 0056bc42
     PUSH EBX                            ; 0056bc46
     CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 0056bc47
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
     ADD ESP,0x8                         ; 0056bc4c
     MOV EBX,dword ptr [0x02d7a738]      ; 0056bc4f | g_CFlameCanClassInfo.name_hash
         ;   Label: LAB_0056bc4f
@@ -476,7 +476,7 @@ section .text
         ;   XREF to: 0056bc91 (CONDITIONAL_JUMP)  ; LAB_0056bc91
     PUSH EBX                            ; 0056bc88
     CALL core_flamecan.cpp_FUN_004cb340 ; 0056bc89
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_FUN_004cb340()
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cb340()
     ADD ESP,0x4                         ; 0056bc8e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056bc91
         ;   Label: LAB_0056bc91

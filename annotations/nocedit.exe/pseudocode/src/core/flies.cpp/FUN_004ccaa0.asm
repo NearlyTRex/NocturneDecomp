@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flies_cpp_FUN_004ccaa0(void)
+; __cdecl void __cdecl core_flies_cpp_FUN_004ccaa0(void)
 ;
 ;
 ; Referenced Globals:

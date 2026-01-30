@@ -16,7 +16,7 @@
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 0052449b
-;   core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0 at 00538cb8
+;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538cb8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Nocturne_is_alive_and_ki_0062b641
@@ -856,8 +856,8 @@ section .text
         ;   XREF to: 004db966 (CONDITIONAL_JUMP)  ; LAB_004db966
     MOV EBX,dword ptr [0x00680d50]      ; 004db944 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 004db94a | g_CScriptInstance
-    CALL core_script.cpp_CScript_SkipCinematic_FUN_005602e0 ; 004db94b
-        ;   XREF to: 005602e0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_SkipCinematic_FUN_005602e0()
+    CALL core_script.cpp_CScript_FUN_005602e0 ; 004db94b
+        ;   XREF to: 005602e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005602e0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004db950
     TEST EAX,EAX                        ; 004db953
     SETZ AL                             ; 004db955
@@ -1036,7 +1036,7 @@ section .text
         ;   Label: LAB_004dbb3f
     PUSH ESI                            ; 004dbb42
     CALL core_game.cpp_CGame_fadeIn_FUN_004e0b90 ; 004dbb43
-        ;   XREF to: 004e0b90 (UNCONDITIONAL_CALL)  ; undefined4 core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)
+        ;   XREF to: 004e0b90 (UNCONDITIONAL_CALL)  ; uint core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)
     ADD ESP,0x4                         ; 004dbb48
     TEST EAX,EAX                        ; 004dbb4b
     JNZ 0x004db434                      ; 004dbb4d

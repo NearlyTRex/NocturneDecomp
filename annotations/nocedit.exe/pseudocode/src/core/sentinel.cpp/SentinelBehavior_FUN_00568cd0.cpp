@@ -1,15 +1,15 @@
 // Name: core_sentinel.cpp_SentinelBehavior_FUN_00568cd0
 // Address: 00568cd0
 // Address Range: [[00568cd0, 00568dc9]]
-// Convention: unknown
-// Signature: void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_sentinel.cpp_SentinelBehavior(uint param_1, uint
    param_2) */
 
-void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
+void __cdecl core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
 
 {
   CMotionController *this_ptr;

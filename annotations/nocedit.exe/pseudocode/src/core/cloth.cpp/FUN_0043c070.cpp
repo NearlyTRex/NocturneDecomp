@@ -1,14 +1,14 @@
 // Name: core_cloth.cpp_FUN_0043c070
 // Address: 0043c070
 // Address Range: [[0043c070, 0043c0ef]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_FUN_0043c070(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_FUN_0043c070(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_cloth.cpp_FUN_0043c070(uint param_1) */
 
-void core_cloth_cpp_FUN_0043c070(void)
+void __cdecl core_cloth_cpp_FUN_0043c070(void)
 
 {
   void *ptr;
@@ -23,7 +23,7 @@ void core_cloth_cpp_FUN_0043c070(void)
       g_CurrentDebugLine = 0x5bd;
       g_CurrentDebugFilename = "..\\core\\cloth.cpp";
       if (piVar1[0x65] != 0) {
-        ptr = (void *)core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
+        core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
         shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
       }
       iVar2 = iVar2 + 1;

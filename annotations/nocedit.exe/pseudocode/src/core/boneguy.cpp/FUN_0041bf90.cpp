@@ -1,15 +1,15 @@
 // Name: core_boneguy.cpp_FUN_0041bf90
 // Address: 0041bf90
 // Address Range: [[0041bf90, 0041ca3c]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_FUN_0041bf90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_boneguy.cpp_FUN_0041bf90(uint param_1, uint
    param_2) */
 
-void core_boneguy_cpp_FUN_0041bf90(void)
+void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -302,8 +302,6 @@ void core_boneguy_cpp_FUN_0041bf90(void)
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_180);
       local_180.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_180.attacker = (CDemonActor *)in_stack_00000004;
-      local_180.wielder = (CDemonActor *)in_stack_00000004;
       local_14 = local_180.damage_amount;
       pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_94,&g_ZeroVector,
@@ -382,7 +380,7 @@ LAB_0041c60c:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1)
       ;
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
     (in_stack_00000004->base).base.model.accumulated_root_motion.z = 0.0;
     (in_stack_00000004->base).base.model.accumulated_root_motion.y =

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_CScript_editorAction_FUN_00564820(void)
+; __cdecl void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_Unk20_FUN_00565130 at 00565722
+;   core_script.cpp_CScript_FUN_00565130 at 00565722
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005647d0 = 0056483f
@@ -35,16 +35,16 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910
-;   core_script.cpp_CScript_editorIndex2X_FUN_00566b30
 ;   core_script.cpp_CScript_editorPutLine_FUN_005662a0
-;   core_script.cpp_CScript_editorX2Index_FUN_00566a90
-;   core_script.cpp_CScript_Unk18_FUN_005669a0
+;   core_script.cpp_CScript_FUN_00566230
+;   core_script.cpp_CScript_FUN_00566390
+;   core_script.cpp_CScript_FUN_00566910
+;   core_script.cpp_CScript_FUN_005669a0
+;   core_script.cpp_CScript_FUN_00566a90
+;   core_script.cpp_CScript_FUN_00566b30
 ;   core_script.cpp_FUN_005644e0
 ;   core_script.cpp_FUN_00564500
 ;   core_script.cpp_FUN_00564560
-;   core_script.cpp_FUN_00566230
-;   core_script.cpp_FUN_00566390
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
@@ -77,8 +77,8 @@ section .text
     MOV EDX,dword ptr [0x0310fd48]      ; 0056484e | DAT_0310fd48
     PUSH EDX                            ; 00564854
     PUSH EBP                            ; 00564855
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00564856
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00564856
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 0056485b
     MOV EBX,EAX                         ; 0056485e
     CMP EAX,0x1                         ; 00564860
@@ -97,8 +97,8 @@ section .text
         ;   Label: LAB_00564889
     PUSH EDI                            ; 0056488f
     PUSH EBP                            ; 00564890
-    CALL core_script.cpp_FUN_00566230   ; 00564891
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
+    CALL core_script.cpp_CScript_FUN_00566230 ; 00564891
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566230(CScript * this_ptr, int param_2)
     MOV EAX,[0x0310fd44]                ; 00564896 | DAT_0310fd44
     ADD ESP,0x8                         ; 0056489b
     DEC EAX                             ; 0056489e
@@ -119,13 +119,13 @@ section .text
     AND byte ptr [0x0310fd44],0xf8      ; 005648c0 | DAT_0310fd44
     PUSH EBP                            ; 005648c7
         ;   Label: LAB_005648c7
-    CALL core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910 ; 005648c8
-        ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910()
+    CALL core_script.cpp_CScript_FUN_00566910 ; 005648c8
+        ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566910(CScript * this_ptr)
         ;   Label: LAB_005648c8
     ADD ESP,0x4                         ; 005648cd
     PUSH EBP                            ; 005648d0
-    CALL core_script.cpp_CScript_Unk18_FUN_005669a0 ; 005648d1
-        ;   XREF to: 005669a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_Unk18_FUN_005669a0()
+    CALL core_script.cpp_CScript_FUN_005669a0 ; 005648d1
+        ;   XREF to: 005669a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005669a0(CScript * this_ptr)
     ADD ESP,0x4                         ; 005648d6
     ADD ESP,0x1c                        ; 005648d9
         ;   Label: caseD_b
@@ -218,8 +218,8 @@ section .text
     MOV EAX,[0x0310fd48]                ; 005649ad | DAT_0310fd48
     PUSH EAX                            ; 005649b2
     PUSH EBP                            ; 005649b3
-    CALL core_script.cpp_CScript_editorIndex2X_FUN_00566b30 ; 005649b4
-        ;   XREF to: 00566b30 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorIndex2X_FUN_00566b30()
+    CALL core_script.cpp_CScript_FUN_00566b30 ; 005649b4
+        ;   XREF to: 00566b30 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_FUN_00566b30(CScript * this_ptr, int param_2, uint param_3)
     ADD ESP,0xc                         ; 005649b9
     MOV [0x0310fd44],EAX                ; 005649bc | DAT_0310fd44
     JMP 0x005648c7                      ; 005649c1
@@ -249,13 +249,13 @@ section .text
     PUSH 0xd                            ; 005649fb
     PUSH EBP                            ; 005649fd
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 005649fe
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorAction_FUN_00564820()
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820()
     ADD ESP,0xc                         ; 00564a03
     PUSH 0x0                            ; 00564a06
     PUSH 0xf                            ; 00564a08
     PUSH EBP                            ; 00564a0a
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00564a0b
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorAction_FUN_00564820()
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820()
     ADD ESP,0xc                         ; 00564a10
     ADD ESP,0x1c                        ; 00564a13
     POP EBP                             ; 00564a16
@@ -264,7 +264,7 @@ section .text
     POP EBX                             ; 00564a19
     RET                                 ; 00564a1a
     CALL core_script.cpp_FUN_00564500   ; 00564a1b
-        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00564500()
+        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564500()
         ;   Label: caseD_d
     MOV EDX,dword ptr [0x031141c4]      ; 00564a20 | DAT_031141c4
     TEST EDX,EDX                        ; 00564a26
@@ -288,28 +288,28 @@ section .text
     PUSH EAX                            ; 00564a5c
     PUSH EBX                            ; 00564a5d
     CALL core_script.cpp_FUN_00564560   ; 00564a5e
-        ;   XREF to: 00564560 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00564560()
+        ;   XREF to: 00564560 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564560()
     ADD ESP,0xc                         ; 00564a63
     MOV EDI,dword ptr [ESP]             ; 00564a66
     PUSH EDI                            ; 00564a69
     PUSH EBX                            ; 00564a6a
     PUSH EBP                            ; 00564a6b
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00564a6c
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00564a6c
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 00564a71
     MOV dword ptr [ESP],EAX             ; 00564a74
     MOV EAX,dword ptr [ESP + 0x4]       ; 00564a77
     PUSH EAX                            ; 00564a7b
     PUSH EBX                            ; 00564a7c
     PUSH EBP                            ; 00564a7d
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00564a7e
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00564a7e
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 00564a83
     PUSH EBX                            ; 00564a86
     PUSH EBP                            ; 00564a87
     MOV dword ptr [ESP + 0xc],EAX       ; 00564a88
-    CALL core_script.cpp_FUN_00566230   ; 00564a8c
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
+    CALL core_script.cpp_CScript_FUN_00566230 ; 00564a8c
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566230(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564a91
     MOV EDI,0x31101c0                   ; 00564a94 | DAT_031101c0
     SUB ECX,ECX                         ; 00564a99
@@ -420,7 +420,7 @@ section .text
     PUSH 0xf                            ; 00564ba3
     PUSH EBP                            ; 00564ba5
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00564ba6
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorAction_FUN_00564820()
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820()
     ADD ESP,0xc                         ; 00564bab
     PUSH 0x1                            ; 00564bae
     MOV EAX,[0x00678a60]                ; 00564bb0 | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -430,8 +430,8 @@ section .text
     ADD ESP,0x4                         ; 00564bbb
     PUSH EAX                            ; 00564bbe
     PUSH EBP                            ; 00564bbf
-    CALL core_script.cpp_FUN_00566390   ; 00564bc0
-        ;   XREF to: 00566390 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566390()
+    CALL core_script.cpp_CScript_FUN_00566390 ; 00564bc0
+        ;   XREF to: 00566390 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566390(CScript * this_ptr, char * param_2, int param_3)
     ADD ESP,0xc                         ; 00564bc5
     ADD ESP,0x1c                        ; 00564bc8
     POP EBP                             ; 00564bcb
@@ -440,7 +440,7 @@ section .text
     POP EBX                             ; 00564bce
     RET                                 ; 00564bcf
     CALL core_script.cpp_FUN_00564500   ; 00564bd0
-        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00564500()
+        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564500()
         ;   Label: caseD_f
     MOV ESI,dword ptr [0x031141c4]      ; 00564bd5 | DAT_031141c4
     TEST ESI,ESI                        ; 00564bdb
@@ -455,8 +455,8 @@ section .text
     PUSH EBP                            ; 00564bf3
     MOV dword ptr [0x0310fd48],ESI      ; 00564bf4 | DAT_0310fd48
     MOV dword ptr [0x0310fd44],EDI      ; 00564bfa | DAT_0310fd44
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00564c00
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00564c00
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 00564c05
     MOV ECX,dword ptr [0x031141c8]      ; 00564c08 | DAT_031141c8
     PUSH ECX                            ; 00564c0e
@@ -464,15 +464,15 @@ section .text
     PUSH EBX                            ; 00564c15
     PUSH EBP                            ; 00564c16
     MOV [0x031141c0],EAX                ; 00564c17 | DAT_031141c0
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00564c1c
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00564c1c
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 00564c21
     MOV ESI,dword ptr [0x031141c4]      ; 00564c24 | DAT_031141c4
     PUSH ESI                            ; 00564c2a
     PUSH EBP                            ; 00564c2b
     MOV [0x031141c8],EAX                ; 00564c2c | DAT_031141c8
-    CALL core_script.cpp_FUN_00566230   ; 00564c31
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
+    CALL core_script.cpp_CScript_FUN_00566230 ; 00564c31
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566230(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564c36
     MOV EDI,0x31101c0                   ; 00564c39 | DAT_031101c0
     SUB ECX,ECX                         ; 00564c3e
@@ -545,7 +545,7 @@ section .text
     PUSH EAX                            ; 00564cdd
     PUSH EBP                            ; 00564cde
     CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 00564cdf
-        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
+        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorPutLine_FUN_005662a0(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564ce4
     LEA EBX,[EBP + 0x38]                ; 00564ce7
     PUSH EBX                            ; 00564cea
@@ -577,7 +577,7 @@ section .text
         ;   XREF to: 004a2e00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_remove_FUN_004a2e00(CStrList * this_ptr, int start_index, int end_index)
     ADD ESP,0xc                         ; 00564d27
     CALL core_script.cpp_FUN_005644e0   ; 00564d2a
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005644e0()
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
         ;   Label: LAB_00564d2a
     JMP 0x005648c7                      ; 00564d2f
         ;   XREF to: 005648c7 (UNCONDITIONAL_JUMP)  ; LAB_005648c7
@@ -603,8 +603,8 @@ section .text
     LEA EAX,[EDI + -0x1]                ; 00564d6f
     PUSH EAX                            ; 00564d72
     PUSH EBP                            ; 00564d73
-    CALL core_script.cpp_FUN_00566230   ; 00564d74
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
+    CALL core_script.cpp_CScript_FUN_00566230 ; 00564d74
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566230(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564d79
     MOV EDI,0x31101c0                   ; 00564d7c | DAT_031101c0
     SUB ECX,ECX                         ; 00564d81
@@ -666,7 +666,7 @@ section .text
     PUSH EAX                            ; 00564e08
     PUSH EBP                            ; 00564e09
     CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 00564e0a
-        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
+        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorPutLine_FUN_005662a0(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564e0f
     MOV EAX,[0x0310fd48]                ; 00564e12 | DAT_0310fd48
     PUSH EAX                            ; 00564e17
@@ -682,8 +682,8 @@ section .text
     PUSH EDX                            ; 00564e2c
     PUSH EBP                            ; 00564e2d
     MOV dword ptr [0x0310fd48],EDX      ; 00564e2e | DAT_0310fd48
-    CALL core_script.cpp_CScript_editorIndex2X_FUN_00566b30 ; 00564e34
-        ;   XREF to: 00566b30 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorIndex2X_FUN_00566b30()
+    CALL core_script.cpp_CScript_FUN_00566b30 ; 00564e34
+        ;   XREF to: 00566b30 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_FUN_00566b30(CScript * this_ptr, int param_2, uint param_3)
     ADD ESP,0xc                         ; 00564e39
     MOV [0x0310fd44],EAX                ; 00564e3c | DAT_0310fd44
     JMP 0x005648c7                      ; 00564e41
@@ -693,8 +693,8 @@ section .text
     MOV ESI,dword ptr [0x0310fd48]      ; 00564e47 | DAT_0310fd48
     PUSH ESI                            ; 00564e4d
     PUSH EBP                            ; 00564e4e
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00564e4f
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00564e4f
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 00564e54
     MOV EBX,EAX                         ; 00564e57
     CMP EAX,0x1                         ; 00564e59
@@ -712,8 +712,8 @@ section .text
         ;   Label: LAB_00564e80
     PUSH EDX                            ; 00564e86
     PUSH EBP                            ; 00564e87
-    CALL core_script.cpp_FUN_00566230   ; 00564e88
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
+    CALL core_script.cpp_CScript_FUN_00566230 ; 00564e88
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566230(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564e8d
     MOV EDI,0x31101c0                   ; 00564e90 | DAT_031101c0
     DEC EBX                             ; 00564e95
@@ -741,15 +741,15 @@ section .text
     PUSH ECX                            ; 00564ec6
     PUSH EBP                            ; 00564ec7
     CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 00564ec8
-        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
+        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorPutLine_FUN_005662a0(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564ecd
     PUSH EBX                            ; 00564ed0
         ;   Label: LAB_00564ed0
     MOV EBX,dword ptr [0x0310fd48]      ; 00564ed1 | DAT_0310fd48
     PUSH EBX                            ; 00564ed7
     PUSH EBP                            ; 00564ed8
-    CALL core_script.cpp_CScript_editorIndex2X_FUN_00566b30 ; 00564ed9
-        ;   XREF to: 00566b30 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorIndex2X_FUN_00566b30()
+    CALL core_script.cpp_CScript_FUN_00566b30 ; 00564ed9
+        ;   XREF to: 00566b30 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_FUN_00566b30(CScript * this_ptr, int param_2, uint param_3)
     ADD ESP,0xc                         ; 00564ede
     MOV [0x0310fd44],EAX                ; 00564ee1 | DAT_0310fd44
     JMP 0x005648c7                      ; 00564ee6
@@ -766,8 +766,8 @@ section .text
         ;   XREF to: 005648d9 (CONDITIONAL_JUMP)  ; caseD_a
     PUSH EDX                            ; 00564f05
     PUSH EBP                            ; 00564f06
-    CALL core_script.cpp_FUN_00566230   ; 00564f07
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
+    CALL core_script.cpp_CScript_FUN_00566230 ; 00564f07
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566230(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564f0c
     MOV EDI,0x31101c0                   ; 00564f0f | DAT_031101c0
     SUB ECX,ECX                         ; 00564f14
@@ -783,8 +783,8 @@ section .text
     PUSH EBP                            ; 00564f2b
     MOV EBX,ECX                         ; 00564f2c
     MOV EDI,ECX                         ; 00564f2e
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00564f30
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00564f30
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     MOV ECX,EAX                         ; 00564f35
     ADD ESP,0xc                         ; 00564f37
     CMP EAX,EBX                         ; 00564f3a
@@ -843,7 +843,7 @@ section .text
     PUSH ECX                            ; 00564fac
     PUSH EBP                            ; 00564fad
     CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 00564fae
-        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
+        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorPutLine_FUN_005662a0(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00564fb3
     LEA EBX,[EBP + 0x38]                ; 00564fb6
     MOV ESI,dword ptr [0x0310fd48]      ; 00564fb9 | DAT_0310fd48
@@ -879,7 +879,7 @@ section .text
     PUSH EDX                            ; 00565005
     PUSH EBP                            ; 00565006
     CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 00565007
-        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
+        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorPutLine_FUN_005662a0(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0056500c
     JMP 0x005648c7                      ; 0056500f
         ;   XREF to: 005648c7 (UNCONDITIONAL_JUMP)  ; LAB_005648c7
@@ -889,7 +889,7 @@ section .text
     JNZ 0x00565039                      ; 0056501c
         ;   XREF to: 00565039 (CONDITIONAL_JUMP)  ; LAB_00565039
     CALL core_script.cpp_FUN_005644e0   ; 0056501e
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005644e0()
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
     MOV EAX,[0x0310fd48]                ; 00565023 | DAT_0310fd48
     INC EAX                             ; 00565028
     MOV dword ptr [0x0310fd44],ESI      ; 00565029 | DAT_0310fd44
@@ -901,7 +901,7 @@ section .text
     PUSH 0xf                            ; 0056503b
     PUSH EBP                            ; 0056503d
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 0056503e
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorAction_FUN_00564820()
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820()
     ADD ESP,0xc                         ; 00565043
     LEA EDI,[EBP + 0x38]                ; 00565046
     PUSH EDI                            ; 00565049
@@ -923,8 +923,8 @@ section .text
     PUSH EDX                            ; 0056506c
         ;   Label: LAB_0056506c
     PUSH EBP                            ; 0056506d
-    CALL core_script.cpp_FUN_00566230   ; 0056506e
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
+    CALL core_script.cpp_CScript_FUN_00566230 ; 0056506e
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566230(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00565073
     MOV EDI,0x31101c0                   ; 00565076 | DAT_031101c0
     SUB ECX,ECX                         ; 0056507b
@@ -939,8 +939,8 @@ section .text
     PUSH EDI                            ; 00565092
     PUSH EBP                            ; 00565093
     MOV ESI,ECX                         ; 00565094
-    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00565096
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorX2Index_FUN_00566a90()
+    CALL core_script.cpp_CScript_FUN_00566a90 ; 00565096
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 0056509b
     MOV EBX,EAX                         ; 0056509e
     CMP EAX,ESI                         ; 005650a0
@@ -965,7 +965,7 @@ section .text
     PUSH EBP                            ; 005650c9
     MOV byte ptr [EBX + 0x31101c0],CL   ; 005650ca | DAT_031101c0
     CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 005650d0
-        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
+        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorPutLine_FUN_005662a0(CScript * this_ptr, int param_2)
     MOV ECX,dword ptr [0x0310fd48]      ; 005650d5 | DAT_0310fd48
     ADD ESP,0x8                         ; 005650db
     XOR EDX,EDX                         ; 005650de

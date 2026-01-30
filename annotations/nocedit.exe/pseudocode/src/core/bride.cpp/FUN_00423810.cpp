@@ -1,12 +1,12 @@
 // Name: core_bride.cpp_FUN_00423810
 // Address: 00423810
 // Address Range: [[00423810, 00423a04]]
-// Convention: unknown
-// Signature: void core_bride_cpp_FUN_00423810(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bride_cpp_FUN_00423810(void)
 
 #include "nocturne.h"
 
-void core_bride_cpp_FUN_00423810(void)
+void __cdecl core_bride_cpp_FUN_00423810(void)
 
 {
   CDeformableModelInstance *this_ptr;

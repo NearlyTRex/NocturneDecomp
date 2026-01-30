@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_drip_cpp_FUN_0048e740(void)
+; __cdecl float * __cdecl core_drip_cpp_FUN_0048e740(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30

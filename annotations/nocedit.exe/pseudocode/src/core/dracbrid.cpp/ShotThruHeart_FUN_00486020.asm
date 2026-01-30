@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_ShotThruHeart_FUN_00486020(void)
+; __cdecl void __cdecl core_dracbrid_cpp_ShotThruHeart_FUN_00486020(void)
 ;
 ;
 ; XREF[1]:

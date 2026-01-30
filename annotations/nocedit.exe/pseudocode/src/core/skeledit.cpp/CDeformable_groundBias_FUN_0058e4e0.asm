@@ -125,7 +125,7 @@ section .text
     PUSH EBX                            ; 0058e5b7
     FSTP float ptr [ESP + 0xc]          ; 0058e5b8
     CALL core_skeledit.cpp_FUN_0058e600 ; 0058e5bc
-        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058e600()
+        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058e600()
     ADD ESP,0x8                         ; 0058e5c1
     MOV EAX,0x64af5c                    ; 0058e5c4 | = "..\\core\\skeledit.cpp"
     PUSH 0x2                            ; 0058e5c9

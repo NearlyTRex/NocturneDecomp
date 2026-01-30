@@ -1,12 +1,12 @@
 // Name: shape_design.c_createPolygonFromVertexList_FUN_0045cc80
 // Address: 0045cc80
 // Address Range: [[0045cc80, 0045cdf6]]
-// Convention: unknown
-// Signature: void shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
 
 #include "nocturne.h"
 
-void shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
+void __cdecl shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
 
 {
   char local_a8 [80];

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_game_cpp_FUN_004e3110 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5)
+; __cdecl void __cdecl core_game_cpp_FUN_004e3110(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c

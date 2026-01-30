@@ -1,12 +1,12 @@
 // Name: shape_design.c_showModelPartsList_FUN_0045dbe0
 // Address: 0045dbe0
 // Address Range: [[0045dbe0, 0045dcbd]]
-// Convention: unknown
-// Signature: void shape_design_c_showModelPartsList_FUN_0045dbe0(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_showModelPartsList_FUN_0045dbe0(void)
 
 #include "nocturne.h"
 
-void shape_design_c_showModelPartsList_FUN_0045dbe0(void)
+void __cdecl shape_design_c_showModelPartsList_FUN_0045dbe0(void)
 
 {
   char local_cc [172];

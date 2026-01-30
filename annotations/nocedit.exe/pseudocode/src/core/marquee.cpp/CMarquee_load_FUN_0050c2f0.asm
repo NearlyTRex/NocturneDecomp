@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_marquee_cpp_CMarquee_load_FUN_0050c2f0(void)
+; __cdecl void __cdecl core_marquee_cpp_CMarquee_load_FUN_0050c2f0(void)
 ;
 ;
 ; Referenced Globals:

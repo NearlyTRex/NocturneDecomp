@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(void)
+; __cdecl void __cdecl core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(void)
 ;
 ;
 ; XREF[1]:
@@ -46,7 +46,7 @@ section .text
     PUSH EDI                            ; 005d999e
     PUSH EBX                            ; 005d999f
     CALL core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10 ; 005d99a0
-        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
+        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
     MOV EDX,dword ptr [EBX + 0x1fbd8]   ; 005d99a5
     ADD ESP,0x8                         ; 005d99ab
     TEST EDX,EDX                        ; 005d99ae
@@ -73,7 +73,7 @@ section .text
     PUSH EDX                            ; 005d99d7
     PUSH EBX                            ; 005d99d8
     CALL core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10 ; 005d99d9
-        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
+        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
     MOV ECX,dword ptr [EBX + 0x1fbd8]   ; 005d99de
     ADD ESP,0x8                         ; 005d99e4
     TEST ECX,ECX                        ; 005d99e7

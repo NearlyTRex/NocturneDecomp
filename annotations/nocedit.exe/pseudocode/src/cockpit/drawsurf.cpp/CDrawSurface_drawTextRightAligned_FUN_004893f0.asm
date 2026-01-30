@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 at 004894aa
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00489420 at 00489436
-;   core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80 at 00559ec3
+;   core_script.cpp_CScript_FUN_00559d80 at 00559ec3
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120

@@ -1,12 +1,12 @@
 // Name: core_script.cpp_FUN_00564500
 // Address: 00564500
 // Address Range: [[00564500, 0056455d]]
-// Convention: unknown
-// Signature: void core_script_cpp_FUN_00564500(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_FUN_00564500(void)
 
 #include "nocturne.h"
 
-void core_script_cpp_FUN_00564500(void)
+void __cdecl core_script_cpp_FUN_00564500(void)
 
 {
   if ((DAT_0310fd4c < 0) || (DAT_0310fd50 < 0)) {

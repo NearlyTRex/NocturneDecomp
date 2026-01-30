@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_script_cpp_FUN_00561a30(void)
+; __cdecl int __cdecl core_script_cpp_FUN_00561a30 (char *param_1,char *param_2,char *param_3,char *param_4,uint param_5,void *param_6, int param_7)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
+; char *           Stack[0xc]:4   param_3
+; char *           Stack[0x10]:4   param_4
+; uint             Stack[0x14]:4   param_5
+; void *           Stack[0x18]:4   param_6
+; int              Stack[0x1c]:4   param_7
 ; Local Variables:
 ; undefined1       Stack[-0x30]:1  local_30
 ; undefined4       Stack[-0x20]:4  local_20
@@ -19,8 +27,8 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
+;   core_script.cpp_CScript_FUN_00567310
 ;   core_script.cpp_FUN_00561690
-;   core_script.cpp_FUN_00567310
 ;   crt_memory.c_memset_FUN_005fde40
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
@@ -51,8 +59,8 @@ section .text
     MOV EDX,dword ptr [0x00680d50]      ; 00561a55 | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 00561a5b | g_CScriptInstance
     MOV dword ptr [ESP + 0x20],EBP      ; 00561a5c
-    CALL core_script.cpp_FUN_00567310   ; 00561a60
-        ;   XREF to: 00567310 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00567310()
+    CALL core_script.cpp_CScript_FUN_00567310 ; 00561a60
+        ;   XREF to: 00567310 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00567310(CScript * this_ptr, int param_2, CBitFont * param_3, int * param_4)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00561a65
     ADD ESP,0x10                        ; 00561a69
     PUSH 0x328                          ; 00561a6c
@@ -139,7 +147,7 @@ section .text
     ADD ESP,0x8                         ; 00561b25
     PUSH EAX                            ; 00561b28
     CALL core_script.cpp_FUN_00561690   ; 00561b29
-        ;   XREF to: 00561690 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00561690()
+        ;   XREF to: 00561690 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00561690()
     ADD ESP,0x24                        ; 00561b2e
     MOV dword ptr [ESP + 0x18],EAX      ; 00561b31
     CMP dword ptr [ESP + 0x18],0x0      ; 00561b35

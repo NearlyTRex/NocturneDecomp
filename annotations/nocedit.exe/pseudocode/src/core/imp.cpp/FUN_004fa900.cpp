@@ -1,12 +1,12 @@
 // Name: core_imp.cpp_FUN_004fa900
 // Address: 004fa900
 // Address Range: [[004fa900, 004fa918]]
-// Convention: unknown
-// Signature: void core_imp_cpp_FUN_004fa900(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_imp_cpp_FUN_004fa900(void)
 
 #include "nocturne.h"
 
-void core_imp_cpp_FUN_004fa900(void)
+void __cdecl core_imp_cpp_FUN_004fa900(void)
 
 {
   uint *in_stack_00000004;

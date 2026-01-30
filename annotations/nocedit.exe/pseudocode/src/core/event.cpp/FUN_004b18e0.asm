@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_event_cpp_FUN_004b18e0(void)
+; __cdecl int __cdecl core_event_cpp_FUN_004b18e0(int *param_1)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   param_1
 ;
 ; XREF[2]:
 ;   core_hero.cpp_FUN_004f2d70 at 004f2e63
@@ -24,7 +26,7 @@ section .text
         ;   Label: core_event.cpp_FUN_004b18e0
     PUSH EDX                            ; 004b18e4
     CALL core_event.cpp_FUN_004b1890    ; 004b18e5
-        ;   XREF to: 004b1890 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b1890()
+        ;   XREF to: 004b1890 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b1890(int * param_1)
     ADD ESP,0x4                         ; 004b18ea
     TEST EAX,EAX                        ; 004b18ed
     JGE 0x004b18f4                      ; 004b18ef

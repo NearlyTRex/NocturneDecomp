@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_pendulum_cpp_FUN_0054a790(void)
+; __cdecl void __cdecl core_pendulum_cpp_FUN_0054a790(void)
 ;
 ;
 ; Called Functions:
@@ -22,7 +22,7 @@ section .text
     PUSH 0x0                            ; 0054a7a1
     PUSH ECX                            ; 0054a7a3
     CALL core_pendulum.cpp_FUN_00549b90 ; 0054a7a4
-        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_FUN_00549b90()
+        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_FUN_00549b90()
     ADD ESP,0x8                         ; 0054a7a9
     RET                                 ; 0054a7ac
 

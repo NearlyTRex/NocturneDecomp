@@ -1,15 +1,15 @@
 // Name: core_werewolf.cpp_FUN_005f11a0
 // Address: 005f11a0
 // Address Range: [[005f11a0, 005f11d5]]
-// Convention: unknown
-// Signature: void core_werewolf_cpp_FUN_005f11a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_werewolf_cpp_FUN_005f11a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_werewolf.cpp_FUN_005f11a0(uint param_1, uint
    param_2, uint param_3, uint param_4) */
 
-void core_werewolf_cpp_FUN_005f11a0(void)
+void __cdecl core_werewolf_cpp_FUN_005f11a0(void)
 
 {
   SMotion *pSVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_door_cpp_FUN_00481650(void)
+; __cdecl int __cdecl core_door_cpp_FUN_00481650(void)
 ;
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00481651
     PUSH EBX                            ; 00481655
     CALL core_event.cpp_FUN_004b1670    ; 00481656
-        ;   XREF to: 004b1670 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b1670()
+        ;   XREF to: 004b1670 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1670()
     ADD ESP,0x4                         ; 0048165b
     MOV EAX,EBX                         ; 0048165e
     POP EBX                             ; 00481660

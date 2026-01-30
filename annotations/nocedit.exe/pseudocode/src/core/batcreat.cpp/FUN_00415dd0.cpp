@@ -1,15 +1,15 @@
 // Name: core_batcreat.cpp_FUN_00415dd0
 // Address: 00415dd0
 // Address Range: [[00415dd0, 0041602e]]
-// Convention: unknown
-// Signature: void core_batcreat_cpp_FUN_00415dd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_batcreat_cpp_FUN_00415dd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_batcreature.cpp_FUN_00415dd0(uint param_1, uint
    param_2) */
 
-void core_batcreat_cpp_FUN_00415dd0(void)
+void __cdecl core_batcreat_cpp_FUN_00415dd0(void)
 
 {
   int iVar1;

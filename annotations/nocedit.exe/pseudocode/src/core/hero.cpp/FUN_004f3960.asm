@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_hero_cpp_FUN_004f3960 (undefined4 param_1,undefined4 param_2,float *unaff_EBX,undefined4 param_4, int param_5,float *param_6)
+; __cdecl float __cdecl core_hero_cpp_FUN_004f3960(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

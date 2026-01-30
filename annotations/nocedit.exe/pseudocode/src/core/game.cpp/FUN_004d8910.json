@@ -12,23 +12,23 @@
       {
         "category": "other",
         "column": 28,
-        "line": 20,
-        "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+        "line": 19,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 64,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 19,
-    "suspect_count": 4,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 86
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -39,9 +39,9 @@
         "004d89cf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_game.cpp_FUN_004d8910",
-    "signature": "void core_game_cpp_FUN_004d8910(void)"
+    "signature": "void __cdecl core_game_cpp_FUN_004d8910(void)"
   },
   "function_calls": [
     {
@@ -172,23 +172,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_110,\"%s = %s\",pcVar1,in_stack_00000008);",
       "type": "stack_param"
     }
   ]

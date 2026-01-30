@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 55,
-        "line": 22,
-        "message": "invalid conversion from 'CHero*' to 'uint' {aka 'unsigned int'} [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -19,30 +12,35 @@
       {
         "category": "other",
         "column": 10,
-        "line": 20,
+        "line": 16,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 21,
+        "line": 17,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 19,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 75,
+    "complexity_score": 69,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 14,
     "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 56
+    "total_lines": 55
   },
   "cross_references": [
     {
@@ -66,9 +64,9 @@
         "0056285a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_005627f0",
-    "signature": "undefined4 core_script_cpp_FUN_005627f0(void)"
+    "signature": "CHero * __cdecl core_script_cpp_FUN_005627f0(int param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -109,12 +107,9 @@
         "call_addr": "0056286a",
         "call_type": "direct",
         "caller": "core_script.cpp_FUN_00562860",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
@@ -127,9 +122,9 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "estimated_params": 4
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.117647058823529,
@@ -160,10 +155,10 @@
     "pcode_op_count": 174
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 8,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -172,48 +167,58 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "CHero * __cdecl core_script_cpp_FUN_005627f0(int param_1,int param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "CHero * __cdecl core_script_cpp_FUN_005627f0(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 9,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "sscanf((char *)(param_1 + 0x25c),\"%d\",&local_4);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "sscanf((char *)(in_stack_00000004 + 0x25c),\"%d\",&local_4);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "if ((-1 < local_4) && (local_4 < *(int *)(param_2 + 0xcc))) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "if ((-1 < local_4) && (local_4 < *(int *)(in_stack_00000008 + 0xcc))) {",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "text": "((char *)(local_4 * 0x328 + param_2 + 0x134),g_CCharacterClassInfo.name_hash,",
+      "type": "unnamed_param"
     }
   ]
 }

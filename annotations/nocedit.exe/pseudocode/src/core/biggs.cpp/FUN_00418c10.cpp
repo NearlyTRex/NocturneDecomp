@@ -1,15 +1,15 @@
 // Name: core_biggs.cpp_FUN_00418c10
 // Address: 00418c10
 // Address Range: [[00418c10, 00418c58]]
-// Convention: unknown
-// Signature: undefined4 core_biggs_cpp_FUN_00418c10(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_biggs_cpp_FUN_00418c10(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_biggs.cpp_FUN_00418c10(uint param_1, uint param_2)
     */
 
-uint core_biggs_cpp_FUN_00418c10(void)
+int __cdecl core_biggs_cpp_FUN_00418c10(void)
 
 {
   CVector3f *pCVar1;

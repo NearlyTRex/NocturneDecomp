@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_stranger_cpp_CStranger_FUN_005c2850(void)
+; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x108]:8  local_108
@@ -101,7 +101,7 @@ section .text
     PUSH EDX                            ; 005c2886
     PUSH EBX                            ; 005c2887
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c2888
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [ESP + 0xe0],EAX      ; 005c288d
     FLD float ptr [ESP + 0xe0]          ; 005c2894
     ADD ESP,0x8                         ; 005c289b
@@ -209,7 +209,7 @@ section .text
     PUSH EDI                            ; 005c29f5
     PUSH EAX                            ; 005c29f6
     CALL core_dest.cpp_FUN_0046fd50     ; 005c29f7
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_FUN_0046fd50()
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_FUN_0046fd50()
     ADD ESP,0x8                         ; 005c29fc
     TEST EAX,EAX                        ; 005c29ff
     JZ 0x005c29d4                       ; 005c2a01
@@ -307,7 +307,7 @@ section .text
     PUSH EAX                            ; 005c2b01
     FSTP float ptr [ESP + 0xd8]         ; 005c2b02
     CALL core_stranger.cpp_FUN_005bb010 ; 005c2b09
-        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_005bb010()
+        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_FUN_005bb010()
     MOV dword ptr [ESP + 0xdc],EAX      ; 005c2b0e
     FLD float ptr [ESP + 0xdc]          ; 005c2b15
     ADD ESP,0x4                         ; 005c2b1c
@@ -366,7 +366,7 @@ section .text
     PUSH EAX                            ; 005c2bba
     PUSH ESI                            ; 005c2bbb
     CALL core_dest.cpp_FUN_0046fd50     ; 005c2bbc
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_FUN_0046fd50()
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_FUN_0046fd50()
     ADD ESP,0x8                         ; 005c2bc1
     TEST EAX,EAX                        ; 005c2bc4
     JZ 0x005c293f                       ; 005c2bc6

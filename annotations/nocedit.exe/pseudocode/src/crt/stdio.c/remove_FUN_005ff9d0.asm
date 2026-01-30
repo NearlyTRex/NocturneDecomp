@@ -9,11 +9,11 @@
 ; XREF[34]:
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e17ce
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e1116
+;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538d1f
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539104
+;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053be9e
+;   core_msnedit.cpp_CDemonMission_FUN_0053c140 at 0053c14c
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 0053850e
-;   core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80 at 0053be9e
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539104
-;   core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140 at 0053c14c
-;   core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0 at 00538d1f
 ;   core_netgame.cpp_CNetGame_FUN_0053f780 at 0053f787
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 005805e0
 ;   core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20 at 00578b91

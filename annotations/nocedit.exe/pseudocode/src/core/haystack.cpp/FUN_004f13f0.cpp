@@ -1,15 +1,15 @@
 // Name: core_haystack.cpp_FUN_004f13f0
 // Address: 004f13f0
 // Address Range: [[004f13f0, 004f1943]]
-// Convention: unknown
-// Signature: void core_haystack_cpp_FUN_004f13f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_haystack_cpp_FUN_004f13f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_haystack.cpp_FUN_004f13f0(uint param_1, uint
    param_2) */
 
-void core_haystack_cpp_FUN_004f13f0(void)
+void __cdecl core_haystack_cpp_FUN_004f13f0(void)
 
 {
   bool bVar1;
@@ -17,6 +17,7 @@ void core_haystack_cpp_FUN_004f13f0(void)
   CVector3f *pCVar3;
   SMotion *pSVar4;
   CPathMap *this_ptr;
+  CPathMap *extraout_EAX;
   int iVar5;
   float fVar6;
   CHero *pCVar7;
@@ -86,7 +87,8 @@ void core_haystack_cpp_FUN_004f13f0(void)
                              ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr == (CPathMap *)0x0) {
-        this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
+        core_path_cpp_FUN_00548500();
+        this_ptr = extraout_EAX;
       }
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr,(CVector3f *)(in_stack_00000004 + 0x20),&local_80,

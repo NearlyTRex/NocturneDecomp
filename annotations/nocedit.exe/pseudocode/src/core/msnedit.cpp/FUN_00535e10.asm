@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_msnedit_cpp_FUN_00535e10(void)
+; __cdecl void __cdecl core_msnedit_cpp_FUN_00535e10(int *param_1,char *param_2,char *param_3)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
+; char *           Stack[0xc]:4   param_3
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

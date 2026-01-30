@@ -31,7 +31,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00438c51
     PUSH EBX                            ; 00438c55
     CALL core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0 ; 00438c56
-        ;   XREF to: 00438cb0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0()
+        ;   XREF to: 00438cb0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0()
     ADD ESP,0x4                         ; 00438c5b
     PUSH 0x76                           ; 00438c5e
     MOV EAX,dword ptr [EBX + 0x104]     ; 00438c60

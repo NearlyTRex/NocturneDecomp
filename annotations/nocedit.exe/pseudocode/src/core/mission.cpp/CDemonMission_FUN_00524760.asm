@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1a0f
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2049
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 00524587
-;   core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0 at 00538c88
+;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538c88
 ;   core_netgame.cpp_FUN_00541390 at 005419cf
 ;
 ; Referenced Globals:
@@ -37,8 +37,8 @@
 ;   core_mission.cpp_CDemonMission_FUN_005235b0
 ;   core_mission.cpp_CDemonMission_FUN_00523cf0
 ;   core_mission.cpp_CDemonMission_FUN_00523fb0
-;   core_script.cpp_CScript_checkInitSection_FUN_0055a6c0
-;   core_script.cpp_FUN_0055a540
+;   core_script.cpp_CScript_FUN_0055a540
+;   core_script.cpp_CScript_FUN_0055a6c0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
@@ -141,13 +141,13 @@ section .text
     MOV ECX,dword ptr [0x00680d50]      ; 0052485d | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_0052485d
     PUSH ECX                            ; 00524863 | g_CScriptInstance
-    CALL core_script.cpp_FUN_0055a540   ; 00524864
-        ;   XREF to: 0055a540 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_0055a540()
+    CALL core_script.cpp_CScript_FUN_0055a540 ; 00524864
+        ;   XREF to: 0055a540 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_0055a540(CScript * this_ptr)
     ADD ESP,0x4                         ; 00524869
     MOV EBX,dword ptr [0x00680d50]      ; 0052486c | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 00524872 | g_CScriptInstance
-    CALL core_script.cpp_CScript_checkInitSection_FUN_0055a6c0 ; 00524873
-        ;   XREF to: 0055a6c0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_checkInitSection_FUN_0055a6c0()
+    CALL core_script.cpp_CScript_FUN_0055a6c0 ; 00524873
+        ;   XREF to: 0055a6c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_0055a6c0(CScript * this_ptr)
     ADD ESP,0x4                         ; 00524878
     MOV ESI,dword ptr [0x006810c8]      ; 0052487b | g_CDemonSetPtr
     PUSH ESI                            ; 00524881 | g_CDemonSetInstance

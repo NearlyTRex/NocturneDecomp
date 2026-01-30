@@ -161,7 +161,7 @@ section .text
     PUSH EAX                            ; 004d2f04
     PUSH EBX                            ; 004d2f05
     CALL core_gabriela.cpp_FUN_004d4cf0 ; 004d2f06
-        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4cf0()
+        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; float * core_gabriela.cpp_FUN_004d4cf0()
     ADD ESP,0x8                         ; 004d2f0b
     PUSH EAX                            ; 004d2f0e
     LEA EAX,[EBP + 0xffffff06]          ; 004d2f0f
@@ -180,7 +180,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 004d2f3b
     MOV dword ptr [EAX],EDX             ; 004d2f3e
     CALL core_gabriela.cpp_FUN_004d4890 ; 004d2f40
-        ;   XREF to: 004d4890 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4890()
+        ;   XREF to: 004d4890 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d4890()
     FLD float ptr [EBX + 0x243c]        ; 004d2f45
     FLDZ                                ; 004d2f4b
     ADD ESP,0x8                         ; 004d2f4d
@@ -495,14 +495,14 @@ section .text
     FSTP ST1                            ; 004d32df
     FSTP float ptr [EBX + 0x1fbe8]      ; 004d32e1
     CALL core_gabriela.cpp_FUN_004d4c90 ; 004d32e7
-        ;   XREF to: 004d4c90 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4c90()
+        ;   XREF to: 004d4c90 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d4c90()
     MOV dword ptr [EBP + 0x76],EAX      ; 004d32ec
     ADD ESP,0x4                         ; 004d32ef
     FLD float ptr [EBP + 0x76]          ; 004d32f2
     PUSH EBX                            ; 004d32f5
     FSTP float ptr [EBP + 0x42]         ; 004d32f6
     CALL core_gabriela.cpp_FUN_004d4ce0 ; 004d32f9
-        ;   XREF to: 004d4ce0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4ce0()
+        ;   XREF to: 004d4ce0 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d4ce0()
     FLD float ptr [EBX + 0x1fbe8]       ; 004d32fe
     MOV dword ptr [EBP + 0x76],EAX      ; 004d3304
     ADD ESP,0x4                         ; 004d3307
@@ -631,7 +631,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004d348c
     PUSH EBX                            ; 004d3492
     CALL core_gabriela.cpp_FUN_004d6540 ; 004d3493
-        ;   XREF to: 004d6540 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d6540()
+        ;   XREF to: 004d6540 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d6540()
     FLD float ptr [EBP + 0x92]          ; 004d3498
     FDIV float ptr [0x0065e7bc]         ; 004d349e | FLOAT_0065e7bc
     FSUBR float ptr [EBX + 0x1fc0c]     ; 004d34a4
@@ -650,7 +650,7 @@ section .text
     PUSH EBX                            ; 004d34ce
         ;   Label: LAB_004d34ce
     CALL core_gabriela.cpp_FUN_004d4d80 ; 004d34cf
-        ;   XREF to: 004d4d80 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4d80()
+        ;   XREF to: 004d4d80 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d4d80()
     ADD ESP,0x4                         ; 004d34d4
     TEST ESI,ESI                        ; 004d34d7
     SETZ AL                             ; 004d34d9
@@ -659,7 +659,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004d34e2
     PUSH EBX                            ; 004d34e8
     CALL core_gabriela.cpp_FUN_004d6d40 ; 004d34e9
-        ;   XREF to: 004d6d40 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d6d40()
+        ;   XREF to: 004d6d40 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d6d40()
     ADD ESP,0xc                         ; 004d34ee
     PUSH dword ptr [EBP + 0x92]         ; 004d34f1
     PUSH EBX                            ; 004d34f7
@@ -707,7 +707,7 @@ section .text
     PUSH EAX                            ; 004d3562
     PUSH EBX                            ; 004d3563
     CALL core_gabriela.cpp_FUN_004d4cf0 ; 004d3564
-        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4cf0()
+        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; float * core_gabriela.cpp_FUN_004d4cf0()
     ADD ESP,0x8                         ; 004d3569
     LEA EAX,[EBP + 0xe]                 ; 004d356c
     PUSH EAX                            ; 004d356f
@@ -755,7 +755,7 @@ section .text
         ;   Label: LAB_004d35ec
     PUSH EBX                            ; 004d35f2
     CALL core_gabriela.cpp_FUN_004d5550 ; 004d35f3
-        ;   XREF to: 004d5550 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d5550()
+        ;   XREF to: 004d5550 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d5550()
     MOV ESI,dword ptr [EBX + 0x1fbec]   ; 004d35f8
     ADD ESP,0x8                         ; 004d35fe
     CMP ESI,0x3                         ; 004d3601
@@ -779,7 +779,7 @@ section .text
     PUSH EBX                            ; 004d3640
     FSTP float ptr [EBX + 0x5fa84]      ; 004d3641
     CALL core_gabriela.cpp_FUN_004d5f70 ; 004d3647
-        ;   XREF to: 004d5f70 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d5f70()
+        ;   XREF to: 004d5f70 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d5f70()
     ADD ESP,0x4                         ; 004d364c
     TEST EAX,EAX                        ; 004d364f
     JZ 0x004d4152                       ; 004d3651
@@ -789,7 +789,7 @@ section .text
         ;   Label: LAB_004d3661
     MOV dword ptr [EBX + 0x1fbec],0x0   ; 004d3662
     CALL core_gabriela.cpp_FUN_004d5fe0 ; 004d366c
-        ;   XREF to: 004d5fe0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d5fe0()
+        ;   XREF to: 004d5fe0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d5fe0()
     LEA EAX,[EBX + 0x1f738]             ; 004d3671
     MOV EAX,dword ptr [EAX + 0x330]     ; 004d3677
     MOV ESI,dword ptr [EAX + 0x2ec]     ; 004d367d
@@ -816,7 +816,7 @@ section .text
     LEA EAX,[EBX + 0x1fc14]             ; 004d36be
     PUSH EAX                            ; 004d36c4
     CALL core_cloth.cpp_FUN_0043ab80    ; 004d36c5
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043ab80()
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
     ADD ESP,0x18                        ; 004d36ca
     LEA ESI,[EBX + 0x1f738]             ; 004d36cd
         ;   Label: LAB_004d36cd
@@ -842,7 +842,7 @@ section .text
         ;   Label: LAB_004d3708
     PUSH EBX                            ; 004d370e
     CALL core_gabriela.cpp_FUN_004d4190 ; 004d370f
-        ;   XREF to: 004d4190 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4190()
+        ;   XREF to: 004d4190 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d4190()
     ADD ESP,0x8                         ; 004d3714
     JMP 0x004d2ed9                      ; 004d3717
         ;   XREF to: 004d2ed9 (UNCONDITIONAL_JUMP)  ; LAB_004d2ed9
@@ -994,7 +994,7 @@ section .text
     ADD ESP,0xc                         ; 004d3897
     PUSH EBX                            ; 004d389a
     CALL core_hero.cpp_FUN_004f3350     ; 004d389b
-        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3350()
+        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3350()
     ADD ESP,0x4                         ; 004d38a0
     JMP 0x004d321d                      ; 004d38a3
         ;   XREF to: 004d321d (UNCONDITIONAL_JUMP)  ; LAB_004d321d
@@ -1265,14 +1265,14 @@ section .text
         ;   XREF to: 004d321d (CONDITIONAL_JUMP)  ; LAB_004d321d
     PUSH EBX                            ; 004d3ba0
     CALL core_gabriela.cpp_PickupSomething_FUN_004d5870 ; 004d3ba1
-        ;   XREF to: 004d5870 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_PickupSomething_FUN_004d5870()
+        ;   XREF to: 004d5870 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_PickupSomething_FUN_004d5870()
     ADD ESP,0x4                         ; 004d3ba6
     TEST EAX,EAX                        ; 004d3ba9
     JNZ 0x004d321d                      ; 004d3bab
         ;   XREF to: 004d321d (CONDITIONAL_JUMP)  ; LAB_004d321d
     PUSH EBX                            ; 004d3bb1
     CALL core_gabriela.cpp_FUN_004d6050 ; 004d3bb2
-        ;   XREF to: 004d6050 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d6050()
+        ;   XREF to: 004d6050 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d6050()
     ADD ESP,0x4                         ; 004d3bb7
     JMP 0x004d321d                      ; 004d3bba
         ;   XREF to: 004d321d (UNCONDITIONAL_JUMP)  ; LAB_004d321d
@@ -1303,7 +1303,7 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004d3bfe
     PUSH EDI                            ; 004d3c01
     CALL core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690 ; 004d3c02
-        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; undefined core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690()
+        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690()
     ADD ESP,0x8                         ; 004d3c07
     JMP 0x004d321d                      ; 004d3c0a
         ;   XREF to: 004d321d (UNCONDITIONAL_JUMP)  ; LAB_004d321d
@@ -1608,14 +1608,14 @@ section .text
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d3fc7
     CALL core_hero.cpp_FUN_004f2af0     ; 004d3fc8
-        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2af0()
+        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2af0()
     ADD ESP,0x4                         ; 004d3fcd
     TEST EAX,EAX                        ; 004d3fd0
     JNZ 0x004d34ce                      ; 004d3fd2
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d3fd8
     CALL core_hero.cpp_FUN_004f2d70     ; 004d3fd9
-        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2d70()
+        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2d70()
     ADD ESP,0x4                         ; 004d3fde
     MOV EDI,EAX                         ; 004d3fe1
     CMP EAX,0x3                         ; 004d3fe3
@@ -1636,7 +1636,7 @@ section .text
     PUSH EBX                            ; 004d4004
         ;   Label: default
     CALL core_hero.cpp_FUN_004f2ed0     ; 004d4005
-        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2ed0()
+        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2ed0()
     ADD ESP,0x4                         ; 004d400a
     TEST EDI,EDI                        ; 004d400d
         ;   Label: caseD_1
@@ -1644,28 +1644,28 @@ section .text
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d4015
     CALL core_hero.cpp_FUN_004f2c40     ; 004d4016
-        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2c40()
+        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2c40()
     ADD ESP,0x4                         ; 004d401b
     TEST EAX,EAX                        ; 004d401e
     JNZ 0x004d34ce                      ; 004d4020
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d4026
     CALL core_hero.cpp_FUN_004f3120     ; 004d4027
-        ;   XREF to: 004f3120 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3120()
+        ;   XREF to: 004f3120 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f3120()
     ADD ESP,0x4                         ; 004d402c
     TEST EAX,EAX                        ; 004d402f
     JNZ 0x004d404e                      ; 004d4031
         ;   XREF to: 004d404e (CONDITIONAL_JUMP)  ; LAB_004d404e
     PUSH EBX                            ; 004d4033
     CALL core_hero.cpp_FUN_004f2f50     ; 004d4034
-        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2f50()
+        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2f50()
     ADD ESP,0x4                         ; 004d4039
     TEST EAX,EAX                        ; 004d403c
     JZ 0x004d4066                       ; 004d403e
         ;   XREF to: 004d4066 (CONDITIONAL_JUMP)  ; LAB_004d4066
     PUSH EBX                            ; 004d4040
     CALL core_hero.cpp_FUN_004f30f0     ; 004d4041
-        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f30f0()
+        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f30f0()
     ADD ESP,0x4                         ; 004d4046
     JMP 0x004d34ce                      ; 004d4049
         ;   XREF to: 004d34ce (UNCONDITIONAL_JUMP)  ; LAB_004d34ce
@@ -1682,14 +1682,14 @@ section .text
     PUSH EBX                            ; 004d4066
         ;   Label: LAB_004d4066
     CALL core_gabriela.cpp_FUN_004d5c60 ; 004d4067
-        ;   XREF to: 004d5c60 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d5c60()
+        ;   XREF to: 004d5c60 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d5c60()
     ADD ESP,0x4                         ; 004d406c
     JMP 0x004d34ce                      ; 004d406f
         ;   XREF to: 004d34ce (UNCONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d4074
         ;   Label: LAB_004d4074
     CALL core_hero.cpp_FUN_004f3350     ; 004d4075
-        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3350()
+        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3350()
     ADD ESP,0x4                         ; 004d407a
     JMP 0x004d35ec                      ; 004d407d
         ;   XREF to: 004d35ec (UNCONDITIONAL_JUMP)  ; LAB_004d35ec

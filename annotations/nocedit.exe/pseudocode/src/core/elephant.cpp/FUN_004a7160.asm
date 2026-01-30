@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_elephant_cpp_FUN_004a7160(void)
+; __cdecl int __cdecl core_elephant_cpp_FUN_004a7160(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x68]:1  local_68
@@ -53,7 +53,7 @@ section .text
     ADD ESP,0xc                         ; 004a7199
     PUSH EBX                            ; 004a719c
     CALL core_weapon.cpp_FUN_005ee6e0   ; 004a719d
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ee6e0()
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
     ADD ESP,0x4                         ; 004a71a2
     TEST EAX,EAX                        ; 004a71a5
     JZ 0x004a747f                       ; 004a71a7

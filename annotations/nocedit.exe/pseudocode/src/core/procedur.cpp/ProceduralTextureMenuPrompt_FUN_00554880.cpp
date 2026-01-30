@@ -1,14 +1,14 @@
 // Name: core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880
 // Address: 00554880
 // Address Range: [[00554880, 005548f9]]
-// Convention: unknown
-// Signature: void core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005548f1) */
 
-void core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
+void __cdecl core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
 
 {
   uint uVar1;

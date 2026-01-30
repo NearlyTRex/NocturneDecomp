@@ -1,20 +1,16 @@
 // Name: core_script.cpp_FUN_005593d0
 // Address: 005593d0
 // Address Range: [[005593d0, 005593e9]]
-// Convention: unknown
-// Signature: void core_script_cpp_FUN_005593d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_FUN_005593d0(char *param_1)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_005593d0(uint param_1) */
-
-void core_script_cpp_FUN_005593d0(void)
+void __cdecl core_script_cpp_FUN_005593d0(char *param_1)
 
 {
-  char *in_stack_00000004;
-  
-  while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {
-    in_stack_00000004 = in_stack_00000004 + 1;
+  while ((g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2U) != 0) {
+    param_1 = param_1 + 1;
   }
   return;
 }

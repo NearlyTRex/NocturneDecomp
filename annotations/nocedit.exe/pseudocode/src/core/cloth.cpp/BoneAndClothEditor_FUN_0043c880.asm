@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
+; __cdecl void __cdecl core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x558]:4  local_558
@@ -123,7 +123,7 @@ section .text
     PUSH ESI                            ; 0043c945
     MOV dword ptr [EAX + 0x15ac80],0x1  ; 0043c946 | g_CDemonSetInstance.lighting_quality_mode
     CALL core_cloth.cpp_FUN_00439710    ; 0043c950
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 0043c955
     LEA EAX,[ESI + 0x3ce90]             ; 0043c958
     MOV dword ptr [ESP + 0x514],EAX     ; 0043c95e
@@ -186,7 +186,7 @@ section .text
     PUSH 0x838e40                       ; 0043ca50 | INT_00838e40
     PUSH ESI                            ; 0043ca55
     CALL core_cloth.cpp_FUN_0043ab80    ; 0043ca56
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043ab80()
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
     ADD ESP,0x18                        ; 0043ca5b
     MOV EAX,[0x0067cf44]                ; 0043ca5e | g_CKeysPtr
         ;   Label: LAB_0043ca5e
@@ -246,7 +246,7 @@ section .text
     PUSH 0x0                            ; 0043caf6
     PUSH ESI                            ; 0043caf8
     CALL core_cloth.cpp_FUN_0043bae0    ; 0043caf9
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bae0()
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
     ADD ESP,0x8                         ; 0043cafe
     PUSH 0x3e                           ; 0043cb01
         ;   Label: LAB_0043cb01
@@ -313,7 +313,7 @@ section .text
     ADD ESP,0x8                         ; 0043cbd4
     PUSH 0x4e1f                         ; 0043cbd7
     CALL core_cloth.cpp_FUN_0043c6e0    ; 0043cbdc
-        ;   XREF to: 0043c6e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c6e0()
+        ;   XREF to: 0043c6e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c6e0()
     ADD ESP,0x4                         ; 0043cbe1
     MOV EBX,dword ptr [ESP + 0x53c]     ; 0043cbe4
     ADD EDI,0x4                         ; 0043cbeb
@@ -355,7 +355,7 @@ section .text
         ;   Label: LAB_0043cc55
     PUSH ESI                            ; 0043cc56
     CALL core_cloth.cpp_FUN_0043b7e0    ; 0043cc57
-        ;   XREF to: 0043b7e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043b7e0()
+        ;   XREF to: 0043b7e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043b7e0()
     ADD ESP,0xc                         ; 0043cc5c
     INC EBX                             ; 0043cc5f
     CMP EBX,dword ptr [ESI + 0x3ce8c]   ; 0043cc60
@@ -443,7 +443,7 @@ section .text
     PUSH EBX                            ; 0043d50c
     PUSH ESI                            ; 0043d50d
     CALL core_cloth.cpp_FUN_0043a2b0    ; 0043d50e
-        ;   XREF to: 0043a2b0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043a2b0()
+        ;   XREF to: 0043a2b0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043a2b0()
     INC EBX                             ; 0043d513
     MOV ECX,dword ptr [ESI + 0x3ce8c]   ; 0043d514
     ADD ESP,0xc                         ; 0043d51a

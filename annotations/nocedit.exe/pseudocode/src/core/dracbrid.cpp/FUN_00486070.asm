@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_FUN_00486070(void)
+; __cdecl void __cdecl core_dracbrid_cpp_FUN_00486070(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x3c]:1  local_3c
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_004860dc
     PUSH ESI                            ; 004860dd
     CALL core_dracbrid.cpp_ShotThruHeart_FUN_00486020 ; 004860de
-        ;   XREF to: 00486020 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_ShotThruHeart_FUN_00486020()
+        ;   XREF to: 00486020 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_ShotThruHeart_FUN_00486020()
     FLD float ptr [EDI + 0x4]           ; 004860e3
     ADD ESP,0x8                         ; 004860e6
     FSUBR float ptr [ESI + 0x243c]      ; 004860e9
@@ -140,7 +140,7 @@ section .text
         ;   Label: LAB_0048616e
     PUSH ESI                            ; 0048616f
     CALL core_enemy.cpp_FUN_004a9f10    ; 00486170
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00486175
     ADD ESP,0x2c                        ; 00486178
     POP EBP                             ; 0048617b
@@ -197,12 +197,12 @@ section .text
     PUSH 0x621c07                       ; 004861f0 | = "bride-die?.wav"
     PUSH ESI                            ; 004861f5
     CALL core_dracbrid.cpp_FUN_004864c0 ; 004861f6
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 004861fb
     PUSH EDI                            ; 004861fe
     PUSH ESI                            ; 004861ff
     CALL core_enemy.cpp_FUN_004a9f10    ; 00486200
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00486205
     ADD ESP,0x2c                        ; 00486208
     POP EBP                             ; 0048620b
@@ -240,12 +240,12 @@ section .text
     PUSH 0x621c16                       ; 0048624e | = "bride-hurt?.wav"
     PUSH ESI                            ; 00486253
     CALL core_dracbrid.cpp_FUN_004864c0 ; 00486254
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 00486259
     PUSH EDI                            ; 0048625c
     PUSH ESI                            ; 0048625d
     CALL core_enemy.cpp_FUN_004a9f10    ; 0048625e
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00486263
     ADD ESP,0x2c                        ; 00486266
     POP EBP                             ; 00486269

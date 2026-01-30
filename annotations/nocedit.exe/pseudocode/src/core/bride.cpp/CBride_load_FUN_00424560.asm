@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bride_cpp_CBride_load_FUN_00424560(void)
+; __cdecl void __cdecl core_bride_cpp_CBride_load_FUN_00424560(void)
 ;
 ;
 ; Referenced Globals:

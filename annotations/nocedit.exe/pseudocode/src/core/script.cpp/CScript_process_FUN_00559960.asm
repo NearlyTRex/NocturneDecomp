@@ -26,7 +26,7 @@
 ;   undefined4 DAT_0310f4a8
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042f9e0
+;   core_charactr.cpp_FUN_0042f9e0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
 ;   core_script.cpp_CScript_step_FUN_0055a810
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -63,8 +63,8 @@ section .text
         ;   Label: LAB_0055999e
     PUSH EAX                            ; 005599a3 | g_CGameInstance
     XOR ESI,ESI                         ; 005599a4
-    CALL core_charactr.cpp_CCharacter_FUN_0042f9e0 ; 005599a6
-        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042f9e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_FUN_0042f9e0 ; 005599a6
+        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9e0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x8],EAX       ; 005599ab
     XOR EDX,EDX                         ; 005599af
     FLD float ptr [ESP + 0x8]           ; 005599b1
@@ -114,7 +114,7 @@ section .text
     PUSH EBX                            ; 00559a0d
     MOV EDI,dword ptr [EBX + 0x48]      ; 00559a0e
     CALL core_script.cpp_CScript_step_FUN_0055a810 ; 00559a11
-        ;   XREF to: 0055a810 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_step_FUN_0055a810()
+        ;   XREF to: 0055a810 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_0055a810(CScript * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00559a16
     TEST EAX,EAX                        ; 00559a19
     JZ 0x005599d3                       ; 00559a1b

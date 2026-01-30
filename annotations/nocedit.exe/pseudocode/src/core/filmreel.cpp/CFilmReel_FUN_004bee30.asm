@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
+; __cdecl void __cdecl core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
 ;
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@ section .text
     PUSH ESI                            ; 004bee3a
     PUSH EBX                            ; 004bee3b
     CALL core_dest.cpp_FUN_0046fe80     ; 004bee3c
-        ;   XREF to: 0046fe80 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_FUN_0046fe80()
+        ;   XREF to: 0046fe80 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_FUN_0046fe80()
     ADD ESP,0x8                         ; 004bee41
     PUSH 0x0                            ; 004bee44
     PUSH 0x629bde                       ; 004bee46 | = "CFilmReel"

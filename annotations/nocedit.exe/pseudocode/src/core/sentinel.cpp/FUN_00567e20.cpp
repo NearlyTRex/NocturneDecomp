@@ -1,12 +1,12 @@
 // Name: core_sentinel.cpp_FUN_00567e20
 // Address: 00567e20
 // Address Range: [[00567e20, 00567fcf]]
-// Convention: unknown
-// Signature: void core_sentinel_cpp_FUN_00567e20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sentinel_cpp_FUN_00567e20(void)
 
 #include "nocturne.h"
 
-void core_sentinel_cpp_FUN_00567e20(void)
+void __cdecl core_sentinel_cpp_FUN_00567e20(void)
 
 {
   CDeformableModelInstance *this_ptr;

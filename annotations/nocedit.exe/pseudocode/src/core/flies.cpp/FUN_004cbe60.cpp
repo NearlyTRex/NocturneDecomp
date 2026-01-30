@@ -1,12 +1,12 @@
 // Name: core_flies.cpp_FUN_004cbe60
 // Address: 004cbe60
 // Address Range: [[004cbe60, 004cbef4]]
-// Convention: unknown
-// Signature: void core_flies_cpp_FUN_004cbe60(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flies_cpp_FUN_004cbe60(void)
 
 #include "nocturne.h"
 
-void core_flies_cpp_FUN_004cbe60(void)
+void __cdecl core_flies_cpp_FUN_004cbe60(void)
 
 {
   CDemonActor *in_stack_00000004;

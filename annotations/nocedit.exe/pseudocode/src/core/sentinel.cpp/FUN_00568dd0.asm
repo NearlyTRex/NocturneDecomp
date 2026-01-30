@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_sentinel_cpp_FUN_00568dd0(void)
+; __cdecl int __cdecl core_sentinel_cpp_FUN_00568dd0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x4c]:1  local_4c

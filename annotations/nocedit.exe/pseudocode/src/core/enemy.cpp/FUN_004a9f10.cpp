@@ -1,15 +1,15 @@
 // Name: core_enemy.cpp_FUN_004a9f10
 // Address: 004a9f10
 // Address Range: [[004a9f10, 004a9f96]]
-// Convention: unknown
-// Signature: void core_enemy_cpp_FUN_004a9f10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_enemy_cpp_FUN_004a9f10(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_enemy.cpp_FUN_004a9f10(uint param_1, uint param_2)
     */
 
-void core_enemy_cpp_FUN_004a9f10(void)
+void __cdecl core_enemy_cpp_FUN_004a9f10(void)
 
 {
   CCharacter *pCVar1;

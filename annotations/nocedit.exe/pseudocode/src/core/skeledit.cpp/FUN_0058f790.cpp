@@ -1,12 +1,12 @@
 // Name: core_skeledit.cpp_FUN_0058f790
 // Address: 0058f790
 // Address Range: [[0058f790, 0058f80d]]
-// Convention: unknown
-// Signature: undefined8 core_skeledit_cpp_FUN_0058f790(void)
+// Convention: __cdecl
+// Signature: int * __cdecl core_skeledit_cpp_FUN_0058f790(void)
 
 #include "nocturne.h"
 
-ulonglong core_skeledit_cpp_FUN_0058f790(void)
+int * __cdecl core_skeledit_cpp_FUN_0058f790(void)
 
 {
   char cVar1;
@@ -45,5 +45,5 @@ ulonglong core_skeledit_cpp_FUN_0058f790(void)
     } while (iVar4 < *in_stack_00000004);
   }
   in_stack_00000004[0x1c63] = 0;
-  return CONCAT44(iVar4,piVar2);
+  return piVar2;
 }

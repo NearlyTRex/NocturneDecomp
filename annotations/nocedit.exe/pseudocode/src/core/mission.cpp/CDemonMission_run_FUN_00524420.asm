@@ -239,7 +239,7 @@ section .text
     PUSH EAX                            ; 00524616 | g_CGameInstance
         ;   Label: LAB_00524616
     CALL core_game.cpp_CGame_finishAct_FUN_004e3b90 ; 00524617
-        ;   XREF to: 004e3b90 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_finishAct_FUN_004e3b90()
+        ;   XREF to: 004e3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_finishAct_FUN_004e3b90()
     ADD ESP,0x4                         ; 0052461c
     POP EBP                             ; 0052461f
     POP EDI                             ; 00524620

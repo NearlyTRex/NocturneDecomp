@@ -1,15 +1,15 @@
 // Name: core_stranger.cpp_CStranger_FUN_005bdd20
 // Address: 005bdd20
 // Address Range: [[005bdd20, 005be191] [005be262, 005be428]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005bdd20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005bdd20(uint param_1,
    uint param_2) */
 
-void core_stranger_cpp_CStranger_FUN_005bdd20(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(void)
 
 {
   CDeformableModelInstance *this_ptr;
@@ -26,7 +26,6 @@ void core_stranger_cpp_CStranger_FUN_005bdd20(void)
   ulonglong local_b0;
   float fStack_a4;
   CVector3f local_94 [2];
-  CCharacter *local_7c;
   byte local_78 [12];
   CVector3f CStack_6c;
   CVector3f local_5c;
@@ -231,8 +230,6 @@ LAB_005bde44:
             local_94[0].y = pCVar4->y;
             local_94[0].z = pCVar4->z;
           }
-          local_7c = in_stack_00000004;
-          local_78._0_4_ = in_stack_00000004;
           (*(((local_18->base).vtable._uc)->_uc).processDamage)(local_18,(SDamageInfo *)&local_b0);
           local_b0 = (double)fStack_a4;
           if (0.0 < local_b0) {

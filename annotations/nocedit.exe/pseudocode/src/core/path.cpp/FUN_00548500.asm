@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_path_cpp_FUN_00548500(void)
+; __cdecl void __cdecl core_path_cpp_FUN_00548500(void)
 ;
 ;
 ; XREF[10]:
@@ -27,7 +27,7 @@ section .text
         ;   Label: core_path.cpp_FUN_00548500
     PUSH EDX                            ; 00548504
     CALL core_path.cpp_FUN_00548390     ; 00548505
-        ;   XREF to: 00548390 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548390()
+        ;   XREF to: 00548390 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548390()
     ADD ESP,0x4                         ; 0054850a
     RET                                 ; 0054850d
 

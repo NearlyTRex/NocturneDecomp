@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_tommygun_cpp_FUN_005ddb30(void)
+; __cdecl int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60
@@ -89,7 +89,7 @@ section .text
     ADD ESP,0xc                         ; 005ddb9d
     PUSH EBX                            ; 005ddba0
     CALL core_weapon.cpp_FUN_005ee6e0   ; 005ddba1
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ee6e0()
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
     ADD ESP,0x4                         ; 005ddba6
     TEST EAX,EAX                        ; 005ddba9
     JZ 0x005ddecb                       ; 005ddbab
@@ -352,7 +352,7 @@ section .text
         ;   XREF to: 005de2fc (CONDITIONAL_JUMP)  ; LAB_005de2fc
     PUSH EAX                            ; 005de013
     CALL core_flamecan.cpp_FUN_004cb340 ; 005de014
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_FUN_004cb340()
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cb340()
     ADD ESP,0x4                         ; 005de019
     JMP 0x005de2df                      ; 005de01c
         ;   XREF to: 005de2df (UNCONDITIONAL_JUMP)  ; LAB_005de2df
@@ -527,12 +527,12 @@ section .text
     PUSH EDI                            ; 005de27a
         ;   Label: LAB_005de27a
     CALL core_trigger.cpp_FUN_005e0aa0  ; 005de27b
-        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_005e0aa0()
+        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_FUN_005e0aa0()
     ADD ESP,0x4                         ; 005de280
     PUSH EBX                            ; 005de283
     PUSH EDI                            ; 005de284
     CALL core_trigger.cpp_FUN_005e0ac0  ; 005de285
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_005e0ac0()
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_FUN_005e0ac0()
     ADD ESP,0x8                         ; 005de28a
     TEST EAX,EAX                        ; 005de28d
     JZ 0x005de2be                       ; 005de28f
@@ -547,7 +547,7 @@ section .text
     FSTP float ptr [ESP]                ; 005de2b2
     PUSH EDI                            ; 005de2b5
     CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 005de2b6
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
     ADD ESP,0x8                         ; 005de2bb
     MOV EDI,dword ptr [ESP + 0x128]     ; 005de2be
         ;   Label: LAB_005de2be
@@ -562,7 +562,7 @@ section .text
     PUSH ESI                            ; 005de2d6
         ;   Label: LAB_005de2d6
     CALL core_crate.cpp_FUN_00448a70    ; 005de2d7
-        ;   XREF to: 00448a70 (UNCONDITIONAL_CALL)  ; undefined core_crate.cpp_FUN_00448a70()
+        ;   XREF to: 00448a70 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_FUN_00448a70()
     ADD ESP,0x4                         ; 005de2dc
     MOV ECX,dword ptr [ESP + 0x130]     ; 005de2df
         ;   Label: LAB_005de2df

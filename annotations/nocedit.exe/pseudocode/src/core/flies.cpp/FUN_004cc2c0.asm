@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flies_cpp_FUN_004cc2c0(void)
+; __cdecl void __cdecl core_flies_cpp_FUN_004cc2c0(void)
 ;
 ;
 ; Referenced Globals:
@@ -39,7 +39,7 @@ section .text
     PUSH EAX                            ; 004cc2e7
     PUSH EDX                            ; 004cc2e8
     CALL core_flies.cpp_FUN_004cc230    ; 004cc2e9
-        ;   XREF to: 004cc230 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc230()
+        ;   XREF to: 004cc230 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_FUN_004cc230()
     ADD ESP,0xc                         ; 004cc2ee
     POP ESI                             ; 004cc2f1
     RET                                 ; 004cc2f2

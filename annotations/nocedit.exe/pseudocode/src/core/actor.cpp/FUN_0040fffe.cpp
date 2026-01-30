@@ -1,12 +1,12 @@
 // Name: core_actor.cpp_FUN_0040fffe
 // Address: 0040fffe
 // Address Range: [[0040fffe, 004100ed]]
-// Convention: unknown
-// Signature: undefined4 core_actor_cpp_FUN_0040fffe(undefined4 param_1,undefined4 param_2,int unaff_EBX)
+// Convention: __cdecl
+// Signature: int __cdecl core_actor_cpp_FUN_0040fffe(void)
 
 #include "nocturne.h"
 
-uint core_actor_cpp_FUN_0040fffe(uint param_1,uint param_2,int unaff_EBX)
+int __cdecl core_actor_cpp_FUN_0040fffe(void)
 
 {
   char cVar1;
@@ -15,6 +15,7 @@ uint core_actor_cpp_FUN_0040fffe(uint param_1,uint param_2,int unaff_EBX)
   char *pcVar4;
   uint uVar5;
   SIZE_T SVar6;
+  int unaff_EBX;
   char *pcVar7;
   CRuleList *pCVar8;
   char *pcVar9;

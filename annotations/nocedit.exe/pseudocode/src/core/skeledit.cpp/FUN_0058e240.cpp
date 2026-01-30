@@ -1,12 +1,12 @@
 // Name: core_skeledit.cpp_FUN_0058e240
 // Address: 0058e240
 // Address Range: [[0058e240, 0058e3d2]]
-// Convention: unknown
-// Signature: void core_skeledit_cpp_FUN_0058e240(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeledit_cpp_FUN_0058e240(void)
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_0058e240(void)
+void __cdecl core_skeledit_cpp_FUN_0058e240(void)
 
 {
   int *piVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
+; __cdecl void __cdecl core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x94]:1  local_94

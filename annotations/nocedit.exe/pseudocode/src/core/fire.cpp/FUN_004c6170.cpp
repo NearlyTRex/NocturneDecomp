@@ -1,12 +1,12 @@
 // Name: core_fire.cpp_FUN_004c6170
 // Address: 004c6170
 // Address Range: [[004c6170, 004c61bc]]
-// Convention: unknown
-// Signature: void core_fire_cpp_FUN_004c6170(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_FUN_004c6170(void)
 
 #include "nocturne.h"
 
-void core_fire_cpp_FUN_004c6170(void)
+void __cdecl core_fire_cpp_FUN_004c6170(void)
 
 {
   float fVar1;

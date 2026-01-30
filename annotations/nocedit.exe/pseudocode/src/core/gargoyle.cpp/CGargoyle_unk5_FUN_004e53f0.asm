@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gargoyle_cpp_CGargoyle_unk5_FUN_004e53f0(void)
+; __cdecl void __cdecl core_gargoyle_cpp_CGargoyle_unk5_FUN_004e53f0(void)
 ;
 ;
 ; Referenced Globals:

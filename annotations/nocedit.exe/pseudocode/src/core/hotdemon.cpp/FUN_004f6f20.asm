@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_hotdemon_cpp_FUN_004f6f20(void)
+; __cdecl void __cdecl core_hotdemon_cpp_FUN_004f6f20(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x10c]:1  local_10c
@@ -334,7 +334,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 004f71c4 | g_CGorePtr
     PUSH EDI                            ; 004f71ca | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 004f71cb
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 004f71d0
     MOV dword ptr [EBX + 0xbe28],0x1    ; 004f71d3
     JMP 0x004f7017                      ; 004f71dd
@@ -381,7 +381,7 @@ section .text
     PUSH EAX                            ; 004f7258
     PUSH EBX                            ; 004f7259
     CALL core_enemy.cpp_FUN_004a9880    ; 004f725a
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 004f725f
     JMP 0x004f7017                      ; 004f7262
         ;   XREF to: 004f7017 (UNCONDITIONAL_JUMP)  ; caseD_d

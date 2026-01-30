@@ -1,22 +1,21 @@
 // Name: core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900
 // Address: 0053f900
 // Address Range: [[0053f900, 0053fbb5]]
-// Convention: unknown
-// Signature: undefined4 core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
 
 #include "nocturne.h"
 
-uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
+int __cdecl core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
 
 {
   char cVar1;
   CEditorTools *this_ptr;
   int iVar2;
-  uint uVar3;
-  char *pcVar4;
-  uint uVar5;
-  char *pcVar6;
-  byte bVar7;
+  char *pcVar3;
+  uint uVar4;
+  char *pcVar5;
+  byte bVar6;
   CNetGame *in_stack_00000004;
   uint32_t *in_stack_00000008;
   float local_60;
@@ -30,7 +29,7 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
   int local_1c;
   char *local_18;
   
-  bVar7 = 0;
+  bVar6 = 0;
   core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
   in_stack_00000004->player_count = 0;
   support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_30,(uint32_t *)g_AnyAddressIP,0x1ddf);
@@ -41,13 +40,13 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
     return 0;
   }
   support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_28,in_stack_00000008,0x1ddf);
-  uVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0();
-  uVar5 = g_CurrentGameTime;
+  iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0();
+  uVar4 = g_CurrentGameTime;
   in_stack_00000004->connection_type = 2;
   this_ptr = g_CEditorToolsPtr;
   in_stack_00000004->network_mode = 1;
-  *(uint *)in_stack_00000004->padding = uVar3;
-  uVar5 = uVar5 - 0x50000;
+  *(int *)in_stack_00000004->padding = iVar2;
+  uVar4 = uVar4 - 0x50000;
   DAT_02f7c8bc = 0;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (this_ptr,"Contacting server.  Press ESC to give up...");
@@ -56,8 +55,8 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
   if (-1 < *(int *)in_stack_00000004->padding) {
     local_18 = in_stack_00000004->network_data;
     do {
-      local_20 = g_CurrentGameTime - uVar5;
-      local_60 = (float)(int)(g_CurrentGameTime - uVar5) * (float)1.52587890625e-05;
+      local_20 = g_CurrentGameTime - uVar4;
+      local_60 = (float)(int)(g_CurrentGameTime - uVar4) * (float)1.52587890625e-05;
       if (local_60 < 0.0) {
         local_60 = 0.0;
       }
@@ -65,24 +64,24 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
         local_60 = 30.0;
       }
       if ((float)0.20000000000000001 < local_60) {
-        (&uStack_53)[(uint)bVar7 * -2] = *(uint *)&(&local_28)[-(uint)bVar7].port;
+        (&uStack_53)[(uint)bVar6 * -2] = *(uint *)&(&local_28)[-(uint)bVar6].port;
         local_3b = *(uint *)
                     (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);
         local_37 = *(uint *)
                     (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x18);
-        pcVar6 = local_4f;
-        pcVar4 = local_18;
+        pcVar5 = local_4f;
+        pcVar3 = local_18;
         do {
-          cVar1 = *pcVar4;
-          *pcVar6 = cVar1;
+          cVar1 = *pcVar3;
+          *pcVar5 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar4[1];
-          pcVar4 = pcVar4 + 2;
-          pcVar6[1] = cVar1;
-          pcVar6 = pcVar6 + 2;
+          cVar1 = pcVar3[1];
+          pcVar3 = pcVar3 + 2;
+          pcVar5[1] = cVar1;
+          pcVar5 = pcVar5 + 2;
         } while (cVar1 != '\0');
         core_netgame_cpp_CNetGame_send_FUN_005411c0();
-        uVar5 = g_CurrentGameTime;
+        uVar4 = g_CurrentGameTime;
       }
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);

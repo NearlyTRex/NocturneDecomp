@@ -37,7 +37,7 @@ section .text
     ADD EAX,0x1fc14                     ; 004d2b30
     PUSH EAX                            ; 004d2b35
     CALL core_cloth.cpp_FUN_00438ba0    ; 004d2b36
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     LEA EBX,[EAX + 0xfffe03ec]          ; 004d2b3b
     MOV dword ptr [EBX + 0x154],0x65e804 ; 004d2b41 | g_CGabriellaVTable
     MOV dword ptr [EBX + 0x1fbd4],0x0   ; 004d2b4b

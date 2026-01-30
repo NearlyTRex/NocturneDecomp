@@ -13,43 +13,43 @@ float __cdecl FUN_005baee0(int current_bone_index,int target_bone_index,float bl
 
 // Original: core_stranger.cpp_FUN_005baf20
 // Address: 005baf20
-undefined4 FUN_005baf20(void);
+int __cdecl FUN_005baf20(void);
 
 // Original: core_stranger.cpp_FUN_005baf3d
 // Address: 005baf3d
-undefined4 FUN_005baf3d(void);
+int __cdecl FUN_005baf3d(void);
 
 // Original: core_stranger.cpp_FUN_005bafa0
 // Address: 005bafa0
-undefined4 FUN_005bafa0(void);
+int __cdecl FUN_005bafa0(void);
 
 // Original: core_stranger.cpp_FUN_005bafba
 // Address: 005bafba
-undefined4 FUN_005bafba(void);
+int __cdecl FUN_005bafba(void);
 
 // Original: core_stranger.cpp_FUN_005bafc0
 // Address: 005bafc0
-undefined4 FUN_005bafc0(void);
+int __cdecl FUN_005bafc0(void);
 
 // Original: core_stranger.cpp_FUN_005bafc6
 // Address: 005bafc6
-undefined4 FUN_005bafc6(void);
+int __cdecl FUN_005bafc6(void);
 
 // Original: core_stranger.cpp_FUN_005bafcc
 // Address: 005bafcc
-undefined4 FUN_005bafcc(void);
+int __cdecl FUN_005bafcc(void);
 
 // Original: core_stranger.cpp_FUN_005bafd2
 // Address: 005bafd2
-undefined4 FUN_005bafd2(void);
+int __cdecl FUN_005bafd2(void);
 
 // Original: core_stranger.cpp_FUN_005bafe0
 // Address: 005bafe0
-bool FUN_005bafe0(void);
+bool __cdecl FUN_005bafe0(void);
 
 // Original: core_stranger.cpp_FUN_005bb010
 // Address: 005bb010
-float FUN_005bb010(void);
+float __cdecl FUN_005bb010(void);
 
 // Original: core_stranger.cpp_factoryFunc_FUN_005bb0e0
 // Address: 005bb0e0
@@ -73,35 +73,35 @@ void __cdecl CStranger::process(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bb960
 // Address: 005bb960
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bdd20
 // Address: 005bdd20
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_FUN_005be430
 // Address: 005be430
-undefined4 FUN_005be430(void);
+int __cdecl FUN_005be430(void);
 
 // Original: core_stranger.cpp_FUN_005be480
 // Address: 005be480
-undefined4 FUN_005be480(void);
+int __cdecl FUN_005be480(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005be490
 // Address: 005be490
-float * CStranger(void);
+float * __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005be520
 // Address: 005be520
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bf720
 // Address: 005bf720
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bf800
 // Address: 005bf800
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bfb10
 // Address: 005bfb10
@@ -109,43 +109,43 @@ void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bfb60
 // Address: 005bfb60
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c02b0
 // Address: 005c02b0
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c06b0
 // Address: 005c06b0
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c07b0
 // Address: 005c07b0
-float * CStranger(void);
+float * __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c1680
 // Address: 005c1680
-undefined4 CStranger(void);
+int __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c1f00
 // Address: 005c1f00
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c1f80
 // Address: 005c1f80
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c1fe0
 // Address: 005c1fe0
-undefined4 CStranger(void);
+int __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c2400
 // Address: 005c2400
-undefined4 CStranger(void);
+int __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c2850
 // Address: 005c2850
-undefined4 CStranger(void);
+int __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_serialize_FUN_005c2fe0
 // Address: 005c2fe0
@@ -161,27 +161,27 @@ int __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_005c3750
 // Address: 005c3750
-void FUN_005c3750(void);
+void __cdecl FUN_005c3750(void);
 
 // Original: core_stranger.cpp_FUN_005c37e0
 // Address: 005c37e0
-CVector3f * FUN_005c37e0(void);
+CVector3f * __cdecl FUN_005c37e0(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c3960
 // Address: 005c3960
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
 // Address: 005c4370
-void CStranger::aimLeftPistol(void);
+void __cdecl CStranger::aimLeftPistol(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c48b0
 // Address: 005c48b0
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c4c20
 // Address: 005c4c20
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c5170
 // Address: 005c5170
@@ -189,39 +189,39 @@ void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c51c0
 // Address: 005c51c0
-CVector3f * CStranger(void);
+CVector3f * __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c5270
 // Address: 005c5270
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c5b90
 // Address: 005c5b90
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c5e80
 // Address: 005c5e80
-undefined4 CStranger(void);
+int __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c5f10
 // Address: 005c5f10
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c6220
 // Address: 005c6220
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c6590
 // Address: 005c6590
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_FUN_005c6650
 // Address: 005c6650
-undefined4 FUN_005c6650(void);
+int __cdecl FUN_005c6650(void);
 
 // Original: core_stranger.cpp_FUN_005c6660
 // Address: 005c6660
-void FUN_005c6660(void);
+void __cdecl FUN_005c6660(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c66a0
 // Address: 005c66a0
@@ -229,11 +229,11 @@ int __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c6750
 // Address: 005c6750
-void CStranger(void);
+void __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c67c0
 // Address: 005c67c0
-int CStranger(void);
+int __cdecl CStranger(void);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c67f0
 // Address: 005c67f0
@@ -257,23 +257,23 @@ void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_005c6930
 // Address: 005c6930
-void FUN_005c6930(void);
+void __cdecl FUN_005c6930(void);
 
 // Original: core_stranger.cpp_FUN_005c6950
 // Address: 005c6950
-undefined4 FUN_005c6950(void);
+int __cdecl FUN_005c6950(void);
 
 // Original: core_stranger.cpp_FUN_005c695e
 // Address: 005c695e
-undefined4 FUN_005c695e(void);
+int __cdecl FUN_005c695e(void);
 
 // Original: core_stranger.cpp_FUN_005c6970
 // Address: 005c6970
-void FUN_005c6970(void);
+void __cdecl FUN_005c6970(void);
 
 // Original: core_stranger.cpp_FUN_005c69a0
 // Address: 005c69a0
-int FUN_005c69a0(void);
+int __cdecl FUN_005c69a0(void);
 
 // Original: core_stranger.cpp_CStranger_dtor_FUN_005c69c0
 // Address: 005c69c0

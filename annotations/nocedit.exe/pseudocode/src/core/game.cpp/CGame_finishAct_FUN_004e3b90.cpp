@@ -1,14 +1,14 @@
 // Name: core_game.cpp_CGame_finishAct_FUN_004e3b90
 // Address: 004e3b90
 // Address Range: [[004e3b90, 004e400c]]
-// Convention: unknown
-// Signature: void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
 
 #include "nocturne.h"
 
 /* Signature: int core_game.cpp_CGame_finishAct(CGame* param_1) */
 
-void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
+void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
 
 {
   char cVar1;

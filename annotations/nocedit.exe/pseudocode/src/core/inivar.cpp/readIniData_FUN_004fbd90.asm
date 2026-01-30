@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b41
+;   core_msnedit.cpp_CDemonMission_FUN_00537680 at 00537691
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538224
-;   core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680 at 00537691
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_inivar_cpp_0062fd91
@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_msnedit.cpp_readIni_FUN_00537530
+;   core_msnedit.cpp_CDemonMission_readIni_FUN_00537530
 ;   core_setedit.cpp_CDemonSet_readIni_FUN_00584900
 ;   engine_dosio.c_setReadonlyAttribute_FUN_00600c30
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
@@ -257,7 +257,7 @@ section .text
     MOV EBP,dword ptr [0x0067b654]      ; 004fc010 | g_CGamePtr
     PUSH EBP                            ; 004fc016 | g_CGameInstance
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0 ; 004fc017
-        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
     MOV EAX,[0x0067b654]                ; 004fc01c | g_CGamePtr
     ADD ESP,0x4                         ; 004fc021
     ADD EAX,0x28                        ; 004fc024
@@ -645,8 +645,8 @@ section .text
     PUSH EAX                            ; 004fc4bb
     MOV EDX,dword ptr [0x0067d550]      ; 004fc4bc | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EDX                            ; 004fc4c2 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_readIni_FUN_00537530 ; 004fc4c3
-        ;   XREF to: 00537530 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_readIni_FUN_00537530(CDemonMission * mission_ptr, CIniFile * ini_file)
+    CALL core_msnedit.cpp_CDemonMission_readIni_FUN_00537530 ; 004fc4c3
+        ;   XREF to: 00537530 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_readIni_FUN_00537530(CDemonMission * this_ptr, CIniFile * ini_file)
     ADD ESP,0x8                         ; 004fc4c8
     MOV EAX,ESP                         ; 004fc4cb
     PUSH EAX                            ; 004fc4cd

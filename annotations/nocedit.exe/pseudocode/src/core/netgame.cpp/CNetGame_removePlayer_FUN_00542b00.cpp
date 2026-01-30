@@ -1,15 +1,15 @@
 // Name: core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00
 // Address: 00542b00
 // Address Range: [[00542b00, 00542ce5]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_netgame.cpp_CNetGame_removePlayer(CNetGame* param_1, uint
    param_2) */
 
-void core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
+void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)
 
 {
   int iVar1;

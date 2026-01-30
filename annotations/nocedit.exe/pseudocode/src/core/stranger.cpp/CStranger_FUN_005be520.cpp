@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_CStranger_FUN_005be520
 // Address: 005be520
 // Address Range: [[005be520, 005bf711]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005be520(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005be520(void)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_CStranger_FUN_005be520(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005be520(void)
 
 {
   SMotion *pSVar1;
@@ -271,7 +271,7 @@ LAB_005be795:
     if (iVar5 != 0x16) {
       if (iVar5 == 0x1f) {
         if (in_stack_00000004[0x179].scale.z == 0) {
-          pCVar2 = (CVector3f *)core_lever_cpp_FUN_00504dd0();
+          pCVar2 = core_lever_cpp_FUN_00504dd0();
           pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              (in_stack_00000004,&local_154,pCVar2);
           if (pCVar4 != pCVar2) {
@@ -281,7 +281,7 @@ LAB_005be795:
           }
         }
         else {
-          pCVar2 = (CVector3f *)core_lever_cpp_FUN_00504dd0();
+          pCVar2 = core_lever_cpp_FUN_00504dd0();
           pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              (in_stack_00000004,&local_a0,pCVar2);
           if (pCVar4 != pCVar2) {
@@ -489,7 +489,7 @@ LAB_005be795:
                    *(float *)(in_stack_00000004[0x17a].create_event + 0x4c)) -
                    *(float *)(in_stack_00000004[0x17a].create_event + 0x40);
         if (in_stack_00000004[0x179].scale.x != 0) {
-          INT_03f6bb64 = core_stranger_cpp_FUN_005bb010();
+          INT_03f6bb64 = (int)core_stranger_cpp_FUN_005bb010();
           local_18 = (CDeformableModelInstance *)INT_03f6bb64;
         }
         local_20 = local_20 - (float)INT_03f6bb64;

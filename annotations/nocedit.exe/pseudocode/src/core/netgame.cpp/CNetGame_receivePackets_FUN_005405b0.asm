@@ -103,7 +103,7 @@ section .text
     PUSH ESI                            ; 00540644
         ;   Label: LAB_00540644
     CALL core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 ; 00540645
-        ;   XREF to: 00541ff0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0()
+        ;   XREF to: 00541ff0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0()
     ADD ESP,0x4                         ; 0054064a
     ADD ESP,0x8                         ; 0054064d
     POP ESI                             ; 00540650

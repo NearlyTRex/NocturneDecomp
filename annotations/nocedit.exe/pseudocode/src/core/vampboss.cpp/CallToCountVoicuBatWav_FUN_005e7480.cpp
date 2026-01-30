@@ -1,14 +1,14 @@
 // Name: core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480
 // Address: 005e7480
 // Address Range: [[005e7480, 005e74b4]]
-// Convention: unknown
-// Signature: void core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_vampboss.cpp_CallToCountVoicuBatWav(uint param_1) */
 
-void core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void)
+void __cdecl core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void)
 
 {
   int in_stack_00000004;

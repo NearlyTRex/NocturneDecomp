@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_spike_cpp_FUN_005b8410(void)
+; __cdecl void __cdecl core_spike_cpp_FUN_005b8410(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
@@ -267,7 +267,7 @@ section .text
     PUSH EBX                            ; 005b8716
         ;   Label: LAB_005b8716
     CALL core_spike.cpp_FUN_005b8950    ; 005b8717
-        ;   XREF to: 005b8950 (UNCONDITIONAL_CALL)  ; undefined core_spike.cpp_FUN_005b8950()
+        ;   XREF to: 005b8950 (UNCONDITIONAL_CALL)  ; void core_spike.cpp_FUN_005b8950()
     ADD ESP,0x4                         ; 005b871c
     ADD ESP,0x40                        ; 005b871f
     POP EBP                             ; 005b8722

@@ -87,7 +87,7 @@ section .text
     LEA EAX,[EBX + 0xe170]              ; 005c7617
     PUSH EAX                            ; 005c761d
     CALL core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 ; 005c761e
-        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
+        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
     ADD ESP,0x8                         ; 005c7623
         ;   Label: LAB_005c7623
     CMP dword ptr [0x02f43978],0x0      ; 005c7626 | DAT_02f43978
@@ -145,14 +145,14 @@ section .text
     LEA ESI,[EBX + 0xe33c]              ; 005c7699
     PUSH ESI                            ; 005c769f
     CALL core_morph.cpp_FUN_0052b600    ; 005c76a0
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 005c76a5
     PUSH EBP                            ; 005c76a8
     PUSH EDI                            ; 005c76a9
     PUSH 0x1                            ; 005c76aa
     PUSH ESI                            ; 005c76ac
     CALL core_morph.cpp_FUN_0052b600    ; 005c76ad
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 005c76b2
     PUSH 0x1                            ; 005c76b5
     PUSH EBP                            ; 005c76b7

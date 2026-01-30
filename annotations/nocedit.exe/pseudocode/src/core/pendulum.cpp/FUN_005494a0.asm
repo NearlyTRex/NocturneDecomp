@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_pendulum_cpp_FUN_005494a0(void)
+; __cdecl void __cdecl core_pendulum_cpp_FUN_005494a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34

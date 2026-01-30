@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined * core_msnedit_cpp_FUN_0053d3a0(void)
+; __cdecl int * __cdecl core_msnedit_cpp_FUN_0053d3a0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_frankgen_cpp_FUN_004d1710(void)
+; __cdecl CDemonActorType * __cdecl core_frankgen_cpp_FUN_004d1710(void)
 ;
 ;
 ; Referenced Globals:

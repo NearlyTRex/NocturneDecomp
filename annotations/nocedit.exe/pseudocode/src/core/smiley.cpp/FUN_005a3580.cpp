@@ -1,15 +1,15 @@
 // Name: core_smiley.cpp_FUN_005a3580
 // Address: 005a3580
 // Address Range: [[005a3580, 005a3685]]
-// Convention: unknown
-// Signature: void core_smiley_cpp_FUN_005a3580(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_smiley_cpp_FUN_005a3580(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_smiley.cpp_FUN_005a3580(uint param_1, uint
    param_2) */
 
-void core_smiley_cpp_FUN_005a3580(void)
+void __cdecl core_smiley_cpp_FUN_005a3580(void)
 
 {
   CMotionController *this_ptr;

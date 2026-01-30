@@ -58,7 +58,7 @@ section .text
     PUSH EBX                            ; 004ee2cd | DAT_02da8724 | DAT_02da874c
     INC ESI                             ; 004ee2ce
     CALL core_gore.cpp_FUN_004ed1c0     ; 004ee2cf
-        ;   XREF to: 004ed1c0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed1c0()
+        ;   XREF to: 004ed1c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed1c0()
     MOV EBP,dword ptr [0x02da8720]      ; 004ee2d4 | DAT_02da8720
     ADD ESP,0x8                         ; 004ee2da
     ADD EBX,0x28                        ; 004ee2dd | DAT_02da874c
@@ -86,7 +86,7 @@ section .text
     PUSH ESI                            ; 004ee316 | DAT_02d873dc | DAT_02d87420
     INC EBX                             ; 004ee317
     CALL core_gore.cpp_FUN_004ecb90     ; 004ee318
-        ;   XREF to: 004ecb90 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecb90()
+        ;   XREF to: 004ecb90 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ecb90()
     MOV ECX,dword ptr [0x02d873d8]      ; 004ee31d | DAT_02d873d8
     ADD ESP,0x8                         ; 004ee323
     ADD ESI,0x44                        ; 004ee326

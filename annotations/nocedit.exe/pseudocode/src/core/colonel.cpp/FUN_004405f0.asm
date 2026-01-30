@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_colonel_cpp_FUN_004405f0(void)
+; __cdecl void __cdecl core_colonel_cpp_FUN_004405f0(void)
 ;
 ;
 ; Called Functions:

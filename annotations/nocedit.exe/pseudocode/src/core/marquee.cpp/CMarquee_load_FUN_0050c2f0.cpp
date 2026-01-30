@@ -1,14 +1,14 @@
 // Name: core_marquee.cpp_CMarquee_load_FUN_0050c2f0
 // Address: 0050c2f0
 // Address Range: [[0050c2f0, 0050c363]]
-// Convention: unknown
-// Signature: void core_marquee_cpp_CMarquee_load_FUN_0050c2f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_marquee_cpp_CMarquee_load_FUN_0050c2f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_marquee.cpp_CMarquee_load(CMarquee* pMarquee) */
 
-void core_marquee_cpp_CMarquee_load_FUN_0050c2f0(void)
+void __cdecl core_marquee_cpp_CMarquee_load_FUN_0050c2f0(void)
 
 {
   CDemonActor *in_stack_00000004;

@@ -13,9 +13,9 @@
 ; XREF[7]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 00507598
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 005071ad
-;   core_msnedit.cpp_FUN_0053c4f0 at 0053c5bd
-;   core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70 at 00536a3d
-;   core_script.cpp_CScript_unk50_FUN_00566660 at 0056674e
+;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c5bd
+;   core_msnedit.cpp_FUN_00535e70 at 00536a3d
+;   core_script.cpp_CScript_FUN_00566660 at 0056674e
 ;   core_setedit.cpp_CDemonSet_FUN_00577af0 at 00577ba6
 ;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 at 004a4af4
 ;

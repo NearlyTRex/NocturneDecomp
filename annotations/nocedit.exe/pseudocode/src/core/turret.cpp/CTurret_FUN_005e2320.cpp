@@ -21,7 +21,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e2320(CTurret *this_ptr)
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {
     fVar4 = -NAN;
-    fVar2 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
+    fVar2 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&(this_ptr->base).model,fVar2,(int)fVar4);
   }
@@ -35,7 +35,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e2320(CTurret *this_ptr)
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,(CVector3i *)this_ptr->unk1,(CVector3i *)0x0);
       fVar4 = -NAN;
-      fVar2 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
+      fVar2 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc),fVar2,(int)fVar4);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

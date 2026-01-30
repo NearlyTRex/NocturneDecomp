@@ -1,15 +1,15 @@
 // Name: core_drone.cpp_FUN_0048ec70
 // Address: 0048ec70
 // Address Range: [[0048ec70, 0048f2ea]]
-// Convention: unknown
-// Signature: void core_drone_cpp_FUN_0048ec70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drone_cpp_FUN_0048ec70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_drone.cpp_FUN_0048ec70(uint param_1, uint param_2)
     */
 
-void core_drone_cpp_FUN_0048ec70(void)
+void __cdecl core_drone_cpp_FUN_0048ec70(void)
 
 {
   CDeformableModelInstance *this_ptr;
@@ -123,7 +123,7 @@ void core_drone_cpp_FUN_0048ec70(void)
         iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(&in_stack_00000004->base);
         if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",in_stack_00000004);
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr->motion_controller,0,1);
         }
@@ -147,8 +147,6 @@ void core_drone_cpp_FUN_0048ec70(void)
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_dc);
       local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
-      local_dc.attacker = (CDemonActor *)in_stack_00000004;
-      local_dc.wielder = (CDemonActor *)in_stack_00000004;
       local_14 = local_dc.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_88,&g_ZeroVector,
@@ -158,8 +156,6 @@ void core_drone_cpp_FUN_0048ec70(void)
                 ((CDemonActor *)in_stack_00000004,&local_58,pCVar11);
       core_enemy_cpp_FUN_004a9880();
       local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
-      local_dc.attacker = (CDemonActor *)in_stack_00000004;
-      local_dc.wielder = (CDemonActor *)in_stack_00000004;
       local_14 = local_dc.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_4c,&g_ZeroVector,
@@ -206,7 +202,7 @@ LAB_0048ef7a:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller,0,1)
     ;
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (in_stack_00000004->base).model.accumulated_root_motion.z = 0.0;
   (in_stack_00000004->base).model.accumulated_root_motion.y =

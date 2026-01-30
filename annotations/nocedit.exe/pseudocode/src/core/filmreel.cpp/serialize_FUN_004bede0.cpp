@@ -1,14 +1,14 @@
 // Name: core_filmreel.cpp_serialize_FUN_004bede0
 // Address: 004bede0
 // Address Range: [[004bede0, 004bee24]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_serialize_FUN_004bede0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_filmreel_cpp_serialize_FUN_004bede0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_filmreel.cpp_KeyReelAndEvent(uint param_1) */
 
-void core_filmreel_cpp_serialize_FUN_004bede0(void)
+void __cdecl core_filmreel_cpp_serialize_FUN_004bede0(void)
 
 {
   int in_stack_00000004;

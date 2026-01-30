@@ -163,13 +163,13 @@ float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0b0(float *dest_ptr,float *
 void __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace **array);
 void __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f **array);
 void __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void);
-void core_mimic_cpp_FUN_0051f130(void);
+void __cdecl core_mimic_cpp_FUN_0051f130(void);
 CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void);
 CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_0051f1c0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint d1);
-void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void);
-void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void);
-void core_mimic_cpp_FUN_0051f930(void);
-void core_mimic_cpp_FUN_0051fcc0(void);
+void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void);
+void __cdecl core_mimic_cpp_CMimic_setup2_FUN_0051f780(void);
+void __cdecl core_mimic_cpp_FUN_0051f930(void);
+void __cdecl core_mimic_cpp_FUN_0051fcc0(void);
 

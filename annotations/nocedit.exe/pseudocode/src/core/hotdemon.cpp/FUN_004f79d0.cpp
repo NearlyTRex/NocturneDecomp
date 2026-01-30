@@ -1,15 +1,15 @@
 // Name: core_hotdemon.cpp_FUN_004f79d0
 // Address: 004f79d0
 // Address Range: [[004f79d0, 004f7a0c]]
-// Convention: unknown
-// Signature: void core_hotdemon_cpp_FUN_004f79d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hotdemon_cpp_FUN_004f79d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_hotdemon.cpp_FUN_004f79d0(uint param_1, uint
    param_2) */
 
-void core_hotdemon_cpp_FUN_004f79d0(void)
+void __cdecl core_hotdemon_cpp_FUN_004f79d0(void)
 
 {
   CEnemy *in_stack_00000004;

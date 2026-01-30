@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_FUN_00520da0(void)
+; __cdecl void __cdecl core_mimic_cpp_FUN_00520da0(void)
 ;
 ;
 ; Called Functions:

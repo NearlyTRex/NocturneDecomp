@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 at 00489d8c
-;   core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80 at 00559dbe
+;   core_script.cpp_CScript_FUN_00559d80 at 00559dbe
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0

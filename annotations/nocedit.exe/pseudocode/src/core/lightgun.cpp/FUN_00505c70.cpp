@@ -1,14 +1,14 @@
 // Name: core_lightgun.cpp_FUN_00505c70
 // Address: 00505c70
 // Address Range: [[00505c70, 00506442]]
-// Convention: unknown
-// Signature: undefined4 core_lightgun_cpp_FUN_00505c70(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_lightgun_cpp_FUN_00505c70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_lightgun.cpp_FUN_00505c70(uint param_1) */
 
-uint core_lightgun_cpp_FUN_00505c70(void)
+int __cdecl core_lightgun_cpp_FUN_00505c70(void)
 
 {
   float fVar1;
@@ -211,7 +211,6 @@ uint core_lightgun_cpp_FUN_00505c70(void)
           fStack_f0 = 0.0;
           fStack_f4 = 0.0;
           fStack_f8 = 0.0;
-          CStack_d8.min.z = (float)in_stack_00000004;
           CStack_d8.max.y =
                (float)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);
           (*(((this_ptr->base).vtable._uc)->_uc).processDamage)

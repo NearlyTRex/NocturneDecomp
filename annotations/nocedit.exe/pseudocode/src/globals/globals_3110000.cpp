@@ -11,7 +11,14 @@ CDemonActorType g_CSentinelClassInfo = {};
 CDemonSet g_CDemonSetInstance = {};
 
 // int
+int INT_031141d0 = {};
+int INT_031141d4 = {};
+int INT_031141d8 = {};
+int INT_031141dc = {};
+int INT_031141e0 = {};
+int INT_031141e4 = {};
 int INT_031141fc = {};
+int INT_03114204 = {};
 int INT_0311420c = {};
 int INT_03114210 = {};
 int INT_03114214 = {};
@@ -35,18 +42,11 @@ undefined4 DAT_031141c0 = {};
 undefined4 DAT_031141c4 = {};
 undefined4 DAT_031141c8 = {};
 undefined4 DAT_031141cc = {};
-undefined4 DAT_031141d0 = {};
-undefined4 DAT_031141d4 = {};
-undefined4 DAT_031141d8 = {};
-undefined4 DAT_031141dc = {};
-undefined4 DAT_031141e0 = {};
-undefined4 DAT_031141e4 = {};
 undefined4 DAT_031141e8 = {};
 undefined4 DAT_031141ec = {};
 undefined4 DAT_031141f0 = {};
 undefined4 DAT_031141f4 = {};
 undefined4 DAT_031141f8 = {};
 undefined4 DAT_03114200 = {};
-undefined4 DAT_03114204 = {};
 undefined4 DAT_03114208 = {};
 

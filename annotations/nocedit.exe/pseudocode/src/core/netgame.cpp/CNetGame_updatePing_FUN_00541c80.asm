@@ -189,7 +189,7 @@ section .text
     PUSH EBX                            ; 00541e09
     PUSH ESI                            ; 00541e0a
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00541e0b
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
     ADD ESP,0xc                         ; 00541e10
     MOV ESP,EBP                         ; 00541e13
         ;   Label: LAB_00541e13

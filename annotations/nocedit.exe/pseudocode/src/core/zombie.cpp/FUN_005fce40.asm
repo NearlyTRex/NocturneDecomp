@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_zombie_cpp_FUN_005fce40(void)
+; __cdecl void __cdecl core_zombie_cpp_FUN_005fce40(void)
 ;
 ;
 ; Referenced Globals:

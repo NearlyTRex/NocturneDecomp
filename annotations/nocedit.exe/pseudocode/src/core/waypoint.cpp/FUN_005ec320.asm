@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_waypoint_cpp_FUN_005ec320(void)
+; __cdecl int __cdecl core_waypoint_cpp_FUN_005ec320(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -52,7 +52,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 005ec33b
     PUSH EDX                            ; 005ec33f
     CALL core_waypoint.cpp_FUN_005ebd40 ; 005ec340
-        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ebd40()
+        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; bool core_waypoint.cpp_FUN_005ebd40()
     ADD ESP,0xc                         ; 005ec345
     TEST EAX,EAX                        ; 005ec348
     JNZ 0x005ec37e                      ; 005ec34a
@@ -185,7 +185,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2c]      ; 005ec499
     PUSH ECX                            ; 005ec49d
     CALL core_waypoint.cpp_FUN_005ebd40 ; 005ec49e
-        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ebd40()
+        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; bool core_waypoint.cpp_FUN_005ebd40()
     ADD ESP,0xc                         ; 005ec4a3
     TEST EAX,EAX                        ; 005ec4a6
     JZ 0x005ec483                       ; 005ec4a8

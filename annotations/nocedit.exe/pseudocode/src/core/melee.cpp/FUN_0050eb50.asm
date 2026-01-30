@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_melee_cpp_FUN_0050eb50(void)
+; __cdecl void __cdecl core_melee_cpp_FUN_0050eb50(void)
 ;
 ;
 ; Referenced Globals:
@@ -41,7 +41,7 @@ section .text
     PUSH 0x14                           ; 0050eb7f
     PUSH EBX                            ; 0050eb81
     CALL core_melee.cpp_FUN_0050ebe0    ; 0050eb82
-        ;   XREF to: 0050ebe0 (UNCONDITIONAL_CALL)  ; undefined core_melee.cpp_FUN_0050ebe0()
+        ;   XREF to: 0050ebe0 (UNCONDITIONAL_CALL)  ; void core_melee.cpp_FUN_0050ebe0()
     ADD ESP,0xc                         ; 0050eb87
     CMP dword ptr [ESP + 0x10],0x1      ; 0050eb8a
     JNZ 0x0050eba8                      ; 0050eb8f

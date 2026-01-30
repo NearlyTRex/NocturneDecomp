@@ -1,19 +1,20 @@
 // Name: core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00
 // Address: 0057fd00
 // Address Range: [[0057fd00, 0057ff02]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_setedit.cpp_Something2MemoryConstructorMaybe(uint param_1,
    uint param_2, uint param_3) */
 
-void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
+void __cdecl core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
 
 {
-  int iVar1;
+  bool bVar1;
   int iVar2;
+  undefined3 extraout_var;
   char *pcVar3;
   int *piVar4;
   int iVar5;
@@ -83,29 +84,29 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
                   (g_CDemonRendererPtr2,local_20);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr2,local_24,(CVector3i *)0x0);
-        iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(local_28);
+        iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(local_28);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-        if (iVar1 != 0) {
-          iVar1 = 0;
+        if (iVar2 != 0) {
+          iVar2 = 0;
           piVar4 = local_2c;
-          while (iVar1 < g_CDemonCameraInstance.framebuffer_height) {
+          while (iVar2 < g_CDemonCameraInstance.framebuffer_height) {
             iVar5 = 0;
             if (g_CDemonCameraInstance.framebuffer_width < 1) {
-              iVar1 = iVar1 + 1;
+              iVar2 = iVar2 + 1;
             }
             else {
               do {
                 if (*piVar4 < 0x7fffffff) {
-                  iVar2 = core_setedit_cpp_FUN_005801b0();
-                  if (iVar2 != 0) {
-                    pcVar3 = (char *)(g_WindowWidth * iVar1 + iVar5 + (int)in_stack_00000008);
+                  bVar1 = core_setedit_cpp_FUN_005801b0();
+                  if (CONCAT31(extraout_var,bVar1) != 0) {
+                    pcVar3 = (char *)(g_WindowWidth * iVar2 + iVar5 + (int)in_stack_00000008);
                     *pcVar3 = *pcVar3 + '\x01';
                   }
                 }
                 iVar5 = iVar5 + 1;
                 piVar4 = piVar4 + 3;
               } while (iVar5 < g_CDemonCameraInstance.framebuffer_width);
-              iVar1 = iVar1 + 1;
+              iVar2 = iVar2 + 1;
             }
           }
         }

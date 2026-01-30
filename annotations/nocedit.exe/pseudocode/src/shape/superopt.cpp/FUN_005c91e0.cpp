@@ -1,12 +1,12 @@
 // Name: shape_superopt.cpp_FUN_005c91e0
 // Address: 005c91e0
 // Address Range: [[005c91e0, 005c9339]]
-// Convention: unknown
-// Signature: uint shape_superopt_cpp_FUN_005c91e0(void)
+// Convention: __cdecl
+// Signature: uint __cdecl shape_superopt_cpp_FUN_005c91e0(void)
 
 #include "nocturne.h"
 
-uint shape_superopt_cpp_FUN_005c91e0(void)
+uint __cdecl shape_superopt_cpp_FUN_005c91e0(void)
 
 {
   double dVar1;
@@ -14,6 +14,7 @@ uint shape_superopt_cpp_FUN_005c91e0(void)
   double dVar3;
   int iVar4;
   int iVar5;
+  int extraout_EAX;
   uint uVar6;
   double *pdVar7;
   void *dest;
@@ -54,8 +55,8 @@ uint shape_superopt_cpp_FUN_005c91e0(void)
       uVar8 = uVar8 + iVar4;
     }
     else {
-      iVar5 = shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20();
-      if (iVar5 == 0) {
+      shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20();
+      if (extraout_EAX == 0) {
         return 0;
       }
       memmove

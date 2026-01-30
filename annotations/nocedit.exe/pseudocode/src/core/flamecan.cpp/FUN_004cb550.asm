@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_flamecan_cpp_FUN_004cb550(void)
+; __cdecl int __cdecl core_flamecan_cpp_FUN_004cb550(void)
 ;
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
         ;   Label: LAB_004cb566
     PUSH EAX                            ; 004cb56c
     CALL core_flame.cpp_FUN_004ca110    ; 004cb56d
-        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004ca110()
+        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_FUN_004ca110()
     ADD ESP,0x4                         ; 004cb572
     MOV EAX,dword ptr [EBX + 0x5e4]     ; 004cb575
     POP EBX                             ; 004cb57b

@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_FUN_00578a00
 // Address: 00578a00
 // Address Range: [[00578a00, 00578a18]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_FUN_00578a00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_FUN_00578a00(void)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_FUN_00578a00(void)
+void __cdecl core_setedit_cpp_FUN_00578a00(void)
 
 {
   int iVar1;

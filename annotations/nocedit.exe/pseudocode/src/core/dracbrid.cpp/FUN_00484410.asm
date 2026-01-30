@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_FUN_00484410 (uint param_1,int param_2,undefined4 param_3,int param_4,CEnemy *param_5, float param_6)
+; __cdecl void __cdecl core_dracbrid_cpp_FUN_00484410(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x494]:1  local_494
@@ -187,7 +187,7 @@ section .text
         ;   Label: LAB_004844a0
     PUSH EBX                            ; 004844a6
     CALL core_dracbrid.cpp_FUN_004869a0 ; 004844a7
-        ;   XREF to: 004869a0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004869a0()
+        ;   XREF to: 004869a0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004869a0()
     ADD ESP,0x8                         ; 004844ac
     PUSH dword ptr [EBP + 0x92]         ; 004844af
     PUSH EBX                            ; 004844b5
@@ -253,7 +253,7 @@ section .text
     PUSH EAX                            ; 00484573
     PUSH EBX                            ; 00484574
     CALL core_dracbrid.cpp_FUN_004858f0 ; 00484575
-        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004858f0()
+        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004858f0()
     ADD ESP,0x10                        ; 0048457a
     FLD float ptr [0x0065cd8c]          ; 0048457d | FLOAT_0065cd8c
     PUSH 0x6219bd                       ; 00484583 | = "brideexplosion.wav"
@@ -582,7 +582,7 @@ section .text
     PUSH EAX                            ; 00484965
     PUSH EBX                            ; 00484966
     CALL core_dracbrid.cpp_FUN_004864c0 ; 00484967
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 0048496c
     PUSH 0x3e4ccccd                     ; 0048496f
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 00484974
@@ -596,7 +596,7 @@ section .text
     PUSH EAX                            ; 0048498b
     PUSH EBX                            ; 0048498c
     CALL core_dracbrid.cpp_FUN_004864c0 ; 0048498d
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 00484992
     JMP 0x00484911                      ; 00484995
         ;   XREF to: 00484911 (UNCONDITIONAL_JUMP)  ; LAB_00484911
@@ -964,7 +964,7 @@ section .text
     PUSH EAX                            ; 00484dc6
     PUSH EBX                            ; 00484dc7
     CALL core_enemy.cpp_FUN_004a9880    ; 00484dc8
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00484dcd
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484dd0
     JMP 0x004846e0                      ; 00484dda
@@ -1011,7 +1011,7 @@ section .text
     PUSH EAX                            ; 00484e61
     PUSH EBX                            ; 00484e62
     CALL core_enemy.cpp_FUN_004a9880    ; 00484e63
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00484e68
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484e6b
     JMP 0x004846e0                      ; 00484e75
@@ -1059,7 +1059,7 @@ section .text
     PUSH EAX                            ; 00484efe
     PUSH EBX                            ; 00484eff
     CALL core_enemy.cpp_FUN_004a9880    ; 00484f00
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00484f05
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484f08
     JMP 0x004846e0                      ; 00484f12
@@ -1107,7 +1107,7 @@ section .text
     PUSH EAX                            ; 00484f9e
     PUSH EBX                            ; 00484f9f
     CALL core_enemy.cpp_FUN_004a9880    ; 00484fa0
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00484fa5
     JMP 0x004846e0                      ; 00484fa8
         ;   XREF to: 004846e0 (UNCONDITIONAL_JUMP)  ; default
@@ -1140,7 +1140,7 @@ section .text
     MOV EAX,[0x0067b9a0]                ; 00484ff8 | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 00484ffd | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 00484ffe
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 00485003
     MOV dword ptr [EBX + 0xbe28],0x1    ; 00485006
         ;   Label: caseD_10
@@ -1346,7 +1346,7 @@ section .text
     PUSH EAX                            ; 0048524c
     PUSH EBX                            ; 0048524d
     CALL core_dracbrid.cpp_FUN_004864c0 ; 0048524e
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 00485253
     PUSH 0x3e4ccccd                     ; 00485256
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 0048525b
@@ -1360,7 +1360,7 @@ section .text
     PUSH EAX                            ; 00485272
     PUSH EBX                            ; 00485273
     CALL core_dracbrid.cpp_FUN_004864c0 ; 00485274
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 00485279
     PUSH dword ptr [EBP + 0x92]         ; 0048527c
         ;   Label: LAB_0048527c
@@ -1600,7 +1600,7 @@ section .text
     PUSH EAX                            ; 0048552c
     PUSH EBX                            ; 0048552d
     CALL core_enemy.cpp_FUN_004a9880    ; 0048552e
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00485533
     JMP 0x004846e0                      ; 00485536
         ;   XREF to: 004846e0 (UNCONDITIONAL_JUMP)  ; default
@@ -1719,7 +1719,7 @@ section .text
     PUSH EAX                            ; 00485674
     PUSH EBX                            ; 00485675
     CALL core_dracbrid.cpp_FUN_004864c0 ; 00485676
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 0048567b
     PUSH 0x1                            ; 0048567e
     PUSH 0x17                           ; 00485680
@@ -1771,7 +1771,7 @@ section .text
     PUSH EAX                            ; 00485714
     PUSH EBX                            ; 00485715
     CALL core_dracbrid.cpp_FUN_004864c0 ; 00485716
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 0048571b
     PUSH 0x3e4ccccd                     ; 0048571e
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 00485723
@@ -1785,7 +1785,7 @@ section .text
     PUSH EAX                            ; 0048573a
     PUSH EBX                            ; 0048573b
     CALL core_dracbrid.cpp_FUN_004864c0 ; 0048573c
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_004864c0()
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_004864c0()
     ADD ESP,0xc                         ; 00485741
     PUSH dword ptr [EBP + 0x92]         ; 00485744
         ;   Label: LAB_00485744

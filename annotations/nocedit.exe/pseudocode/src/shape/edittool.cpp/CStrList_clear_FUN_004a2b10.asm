@@ -7,7 +7,7 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_script.cpp_CScript_FreeSomething1_FUN_00559870 at 0055987a
+;   core_script.cpp_CScript_FUN_00559870 at 0055987a
 ;   shape_edittool.cpp_CPickList_clear_FUN_004a5770 at 004a579f
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 at 004a2a54
 ;

@@ -1,15 +1,15 @@
 // Name: core_trigger.cpp_FUN_005e0ac0
 // Address: 005e0ac0
 // Address Range: [[005e0ac0, 005e0af8]]
-// Convention: unknown
-// Signature: int core_trigger_cpp_FUN_005e0ac0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_trigger_cpp_FUN_005e0ac0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_trigger.cpp_FUN_005e0ac0(uint param_1, uint
    param_2) */
 
-int core_trigger_cpp_FUN_005e0ac0(void)
+int __cdecl core_trigger_cpp_FUN_005e0ac0(void)
 
 {
   int iVar1;

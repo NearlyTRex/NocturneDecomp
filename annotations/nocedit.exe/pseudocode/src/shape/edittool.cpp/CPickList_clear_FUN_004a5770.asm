@@ -9,11 +9,11 @@
 ; XREF[10]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db26a
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2253
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053cfa4
-;   core_script.cpp_CScript_FreeSomething1_FUN_00559870 at 005598ac
-;   core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80 at 0055a157
-;   core_script.cpp_CScript_StepThroughWholeScript_FUN_0055a4b0 at 0055a4d3
-;   core_script.cpp_FUN_00566080 at 005660f4
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cfa4
+;   core_script.cpp_CScript_FUN_00559870 at 005598ac
+;   core_script.cpp_CScript_FUN_00559f80 at 0055a157
+;   core_script.cpp_CScript_FUN_0055a4b0 at 0055a4d3
+;   core_script.cpp_CScript_FUN_00566080 at 005660f4
 ;   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 at 00576e87
 ;   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630 at 00578686
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 at 004a3c94

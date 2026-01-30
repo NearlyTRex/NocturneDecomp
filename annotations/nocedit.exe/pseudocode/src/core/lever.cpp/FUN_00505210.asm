@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_lever_cpp_FUN_00505210(void)
+; __cdecl int __cdecl core_lever_cpp_FUN_00505210(void)
 ;
 ;
 ; XREF[1]:
@@ -28,7 +28,7 @@ section .text
     ADD ESP,0x8                         ; 00505221
     PUSH EAX                            ; 00505224
     CALL core_lever.cpp_FUN_00504c90    ; 00505225
-        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504c90()
+        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_FUN_00504c90()
     MOV EAX,0x1                         ; 0050522a
     ADD ESP,0x4                         ; 0050522f
     RET                                 ; 00505232

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
+; __cdecl void __cdecl core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void)
 ;
 ;
 ; XREF[1]:
@@ -74,7 +74,7 @@ section .text
     PUSH ESI                            ; 005548e3
         ;   Label: LAB_005548e3
     CALL core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0 ; 005548e4
-        ;   XREF to: 005542b0 (UNCONDITIONAL_CALL)  ; undefined core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0()
+        ;   XREF to: 005542b0 (UNCONDITIONAL_CALL)  ; void core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0()
     ADD ESP,0x4                         ; 005548e9
     CMP EBX,0x1b                        ; 005548ec
     JNZ 0x00554889                      ; 005548ef

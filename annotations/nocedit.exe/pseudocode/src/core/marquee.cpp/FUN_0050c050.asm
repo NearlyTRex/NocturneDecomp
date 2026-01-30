@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_marquee_cpp_FUN_0050c050(void)
+; __cdecl int __cdecl core_marquee_cpp_FUN_0050c050(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x94]:1  local_94
@@ -134,7 +134,7 @@ section .text
     PUSH EBX                            ; 0050c140
     INC EDI                             ; 0050c141
     CALL core_marquee.cpp_FUN_0050bec0  ; 0050c142
-        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_0050bec0()
+        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_FUN_0050bec0()
     ADD ESP,0x8                         ; 0050c147
     CMP EDI,EBP                         ; 0050c14a
     JL 0x0050c0da                       ; 0050c14c
@@ -207,7 +207,7 @@ section .text
     PUSH EBX                            ; 0050c20b
     INC ESI                             ; 0050c20c
     CALL core_marquee.cpp_FUN_0050bec0  ; 0050c20d
-        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_0050bec0()
+        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_FUN_0050bec0()
     ADD ESP,0x8                         ; 0050c212
     CMP ESI,EBP                         ; 0050c215
     JGE 0x0050c14e                      ; 0050c217
@@ -285,7 +285,7 @@ section .text
     PUSH EAX                            ; 0050c2df
     PUSH EBX                            ; 0050c2e0
     CALL core_marquee.cpp_FUN_0050bec0  ; 0050c2e1
-        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_0050bec0()
+        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_FUN_0050bec0()
     ADD ESP,0x8                         ; 0050c2e6
     JMP 0x0050c268                      ; 0050c2e9
         ;   XREF to: 0050c268 (UNCONDITIONAL_JUMP)  ; LAB_0050c268

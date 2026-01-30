@@ -1,12 +1,12 @@
 // Name: core_gore.cpp_FUN_004ed760
 // Address: 004ed760
 // Address Range: [[004ed760, 004ed7aa]]
-// Convention: unknown
-// Signature: void core_gore_cpp_FUN_004ed760(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_FUN_004ed760(void)
 
 #include "nocturne.h"
 
-void core_gore_cpp_FUN_004ed760(void)
+void __cdecl core_gore_cpp_FUN_004ed760(void)
 
 {
   CBloodParticle *pCVar1;

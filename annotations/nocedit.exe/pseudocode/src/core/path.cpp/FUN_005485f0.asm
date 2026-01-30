@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_path_cpp_FUN_005485f0(void)
+; __cdecl void __cdecl core_path_cpp_FUN_005485f0(void)
 ;
 ;
 ; Referenced Globals:
@@ -76,7 +76,7 @@ section .text
     PUSH EBP                            ; 00548668
     PUSH EDX                            ; 00548669
     CALL core_path.cpp_FUN_00547fc0     ; 0054866a
-        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00547fc0()
+        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00547fc0()
     ADD ESP,0x14                        ; 0054866f
     JMP 0x00548625                      ; 00548672
         ;   XREF to: 00548625 (UNCONDITIONAL_JUMP)  ; LAB_00548625

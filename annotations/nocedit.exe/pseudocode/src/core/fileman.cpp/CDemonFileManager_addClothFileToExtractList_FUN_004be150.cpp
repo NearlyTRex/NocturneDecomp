@@ -13,6 +13,7 @@ core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
 {
   void *pvVar1;
   CCloth *this_ptr;
+  void *ptr;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Adding files for %s to extract list...");
@@ -34,7 +35,7 @@ core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
   if (this_ptr == (CCloth *)0x0) {
     return;
   }
-  pvVar1 = (void *)core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
-  shape_memdbg_cpp_debugFree_FUN_0050f210(pvVar1);
+  core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
+  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   return;
 }

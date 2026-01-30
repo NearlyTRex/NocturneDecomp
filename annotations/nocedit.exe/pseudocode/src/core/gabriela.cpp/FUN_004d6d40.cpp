@@ -1,27 +1,28 @@
 // Name: core_gabriela.cpp_FUN_004d6d40
 // Address: 004d6d40
 // Address Range: [[004d6d40, 004d6f74]]
-// Convention: unknown
-// Signature: void core_gabriela_cpp_FUN_004d6d40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gabriela_cpp_FUN_004d6d40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d6d40(uint param_1, uint
    param_2, uint param_3) */
 
-void core_gabriela_cpp_FUN_004d6d40(void)
+void __cdecl core_gabriela_cpp_FUN_004d6d40(void)
 
 {
   float fVar1;
+  float fVar2;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   int in_stack_0000000c;
   
   fVar1 = *(float *)(in_stack_00000004[0x17a].actor_name + 4);
-  in_stack_00000008 = in_stack_00000008 / 0.5f;
+  fVar2 = in_stack_00000008 / 0.5f;
   *(float *)in_stack_00000004[0x17a].actor_name =
-       *(float *)in_stack_00000004[0x17a].actor_name - in_stack_00000008;
-  *(float *)(in_stack_00000004[0x17a].actor_name + 4) = fVar1 - in_stack_00000008;
+       *(float *)in_stack_00000004[0x17a].actor_name - fVar2;
+  *(float *)(in_stack_00000004[0x17a].actor_name + 4) = fVar1 - fVar2;
   if (*(float *)in_stack_00000004[0x17a].actor_name < 0.0) {
     in_stack_00000004[0x17a].actor_name[0] = '\0';
     in_stack_00000004[0x17a].actor_name[1] = '\0';

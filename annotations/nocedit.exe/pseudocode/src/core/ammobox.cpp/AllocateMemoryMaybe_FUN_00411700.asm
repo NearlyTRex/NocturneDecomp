@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
+; __cdecl void __cdecl core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
 ;
 ;
 ; XREF[2]:
@@ -92,13 +92,13 @@ section .text
     PUSH ESI                            ; 00411798
     PUSH EBX                            ; 00411799
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 0041179a
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
     ADD ESP,0x8                         ; 0041179f
     MOV EAX,dword ptr [EBP + 0x314]     ; 004117a2
     PUSH EAX                            ; 004117a8
     PUSH EBX                            ; 004117a9
     CALL core_ammo.cpp_CAmmo_FUN_004111b0 ; 004117aa
-        ;   XREF to: 004111b0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_004111b0()
+        ;   XREF to: 004111b0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_004111b0()
     MOV EAX,dword ptr [EBP + 0x318]     ; 004117af
     ADD ESP,0x8                         ; 004117b5
     MOV dword ptr [EBX + 0x318],EAX     ; 004117b8
@@ -109,7 +109,7 @@ section .text
     PUSH ESI                            ; 004117ca
     PUSH EBX                            ; 004117cb
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004117cc
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
     ADD ESP,0x8                         ; 004117d1
     MOV EDI,EBX                         ; 004117d4
     MOV ESI,0x614c16                    ; 004117d6 | = "Some_ammo"

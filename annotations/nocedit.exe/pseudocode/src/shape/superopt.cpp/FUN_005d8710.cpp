@@ -1,12 +1,12 @@
 // Name: shape_superopt.cpp_FUN_005d8710
 // Address: 005d8710
 // Address Range: [[005d8710, 005d87b2]]
-// Convention: unknown
-// Signature: void shape_superopt_cpp_FUN_005d8710(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_superopt_cpp_FUN_005d8710(void)
 
 #include "nocturne.h"
 
-void shape_superopt_cpp_FUN_005d8710(void)
+void __cdecl shape_superopt_cpp_FUN_005d8710(void)
 
 {
   uint *in_stack_00000004;

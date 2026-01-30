@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_smiley_cpp_FUN_005a37f0(void)
+; __cdecl void __cdecl core_smiley_cpp_FUN_005a37f0(void)
 ;
 ;
 ; Called Functions:

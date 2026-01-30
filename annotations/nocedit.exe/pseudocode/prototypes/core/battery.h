@@ -13,7 +13,7 @@ CBattery * __cdecl factoryFunc(void);
 
 // Original: core_battery.cpp_FUN_00417e80
 // Address: 00417e80
-CDemonActorType * FUN_00417e80(void);
+CDemonActorType * __cdecl FUN_00417e80(void);
 
 // Original: core_battery.cpp_CBattery_ctor_FUN_00417e90
 // Address: 00417e90
@@ -21,51 +21,51 @@ CBattery * __cdecl CBattery::ctor(CBattery *this_ptr);
 
 // Original: core_battery.cpp_FUN_00417ef0
 // Address: 00417ef0
-void FUN_00417ef0(void);
+void __cdecl FUN_00417ef0(void);
 
 // Original: core_battery.cpp_FUN_00417f20
 // Address: 00417f20
-undefined4 FUN_00417f20(void);
+int __cdecl FUN_00417f20(void);
 
 // Original: core_battery.cpp_FUN_00417f40
 // Address: 00417f40
-void FUN_00417f40(void);
+void __cdecl FUN_00417f40(void);
 
 // Original: core_battery.cpp_FUN_00417f50
 // Address: 00417f50
-void FUN_00417f50(void);
+void __cdecl FUN_00417f50(void);
 
 // Original: core_battery.cpp_FUN_00417f60
 // Address: 00417f60
-undefined4 FUN_00417f60(void);
+int __cdecl FUN_00417f60(void);
 
 // Original: core_battery.cpp_FUN_00417f70
 // Address: 00417f70
-void FUN_00417f70(void);
+void __cdecl FUN_00417f70(void);
 
 // Original: core_battery.cpp_FUN_00417f80
 // Address: 00417f80
-int FUN_00417f80(void);
+int __cdecl FUN_00417f80(void);
 
 // Original: core_battery.cpp_CBattery_load_FUN_00418000
 // Address: 00418000
-void CBattery::load(void);
+void __cdecl CBattery::load(void);
 
 // Original: core_battery.cpp_FUN_00418050
 // Address: 00418050
-undefined4 FUN_00418050(void);
+int __cdecl FUN_00418050(void);
 
 // Original: core_battery.cpp_FUN_00418060
 // Address: 00418060
-float * FUN_00418060(void);
+float * __cdecl FUN_00418060(void);
 
 // Original: core_battery.cpp_FUN_004180b0
 // Address: 004180b0
-void FUN_004180b0(void);
+void __cdecl FUN_004180b0(void);
 
 // Original: core_battery.cpp_FUN_00418110
 // Address: 00418110
-void FUN_00418110(void);
+void __cdecl FUN_00418110(void);
 
 // Original: core_battery.cpp_CBattery_dtor_FUN_00418160
 // Address: 00418160

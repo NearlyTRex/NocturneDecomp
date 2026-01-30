@@ -1,15 +1,15 @@
 // Name: core_tvbat.cpp_FUN_005e5130
 // Address: 005e5130
 // Address Range: [[005e5130, 005e519d]]
-// Convention: unknown
-// Signature: void core_tvbat_cpp_FUN_005e5130(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_tvbat_cpp_FUN_005e5130(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_tvbat.cpp_FUN_005e5130(uint param_1, uint param_2)
     */
 
-void core_tvbat_cpp_FUN_005e5130(void)
+void __cdecl core_tvbat_cpp_FUN_005e5130(void)
 
 {
   float fVar1;

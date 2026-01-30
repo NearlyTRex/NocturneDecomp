@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_battery_cpp_FUN_00417f80(void)
+; __cdecl int __cdecl core_battery_cpp_FUN_00417f80(void)
 ;
 ;
 ; Referenced Globals:

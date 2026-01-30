@@ -1,17 +1,17 @@
 // Name: core_skeledit.cpp_FUN_0058bd00
 // Address: 0058bd00
 // Address Range: [[0058bd00, 0058c188]]
-// Convention: unknown
-// Signature: void core_skeledit_cpp_FUN_0058bd00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_0058bd00(void)
+void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
 
 {
   float fVar1;
   _FILE *file;
-  uint uVar2;
+  int iVar2;
   CVector3f *pCVar3;
   byte *dest;
   CVector3f *pCVar4;
@@ -74,8 +74,8 @@ void core_skeledit_cpp_FUN_0058bd00(void)
       _fread(&local_14,4,1,local_28);
       memset(dest,0,0x32);
       _fread(dest,local_14,1,local_28);
-      uVar2 = core_skeledit_cpp_FUN_0058ac30();
-      *(uint *)((int)aiStack_430 + iVar7) = uVar2;
+      iVar2 = core_skeledit_cpp_FUN_0058ac30();
+      *(int *)((int)aiStack_430 + iVar7) = iVar2;
       iVar7 = iVar7 + 4;
       _fseek(local_28,0x102,1);
       iVar5 = iVar5 + 1;

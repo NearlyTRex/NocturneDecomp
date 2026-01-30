@@ -1,12 +1,12 @@
 // Name: shape_design.c_createQuadPolygon_FUN_0045df60
 // Address: 0045df60
 // Address Range: [[0045df60, 0045e03f]]
-// Convention: unknown
-// Signature: void shape_design_c_createQuadPolygon_FUN_0045df60(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(void)
 
 #include "nocturne.h"
 
-void shape_design_c_createQuadPolygon_FUN_0045df60(void)
+void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(void)
 
 {
   uint in_stack_00000004;

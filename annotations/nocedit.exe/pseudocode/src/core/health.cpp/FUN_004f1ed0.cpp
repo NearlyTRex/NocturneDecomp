@@ -1,15 +1,15 @@
 // Name: core_health.cpp_FUN_004f1ed0
 // Address: 004f1ed0
 // Address Range: [[004f1ed0, 004f1f1d]]
-// Convention: unknown
-// Signature: float * core_health_cpp_FUN_004f1ed0(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_health_cpp_FUN_004f1ed0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_health.cpp_FUN_004f1ed0(uint param_1, uint
    param_2) */
 
-float * core_health_cpp_FUN_004f1ed0(void)
+float * __cdecl core_health_cpp_FUN_004f1ed0(void)
 
 {
   CVector3f *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_zombie_cpp_FUN_005f8cc0(void)
+; __cdecl float __cdecl core_zombie_cpp_FUN_005f8cc0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

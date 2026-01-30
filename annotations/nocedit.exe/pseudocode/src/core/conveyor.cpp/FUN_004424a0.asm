@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_conveyor_cpp_FUN_004424a0(void)
+; __cdecl void __cdecl core_conveyor_cpp_FUN_004424a0(void)
 ;
 ;
 ; Called Functions:

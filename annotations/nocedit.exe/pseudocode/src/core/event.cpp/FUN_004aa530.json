@@ -4,14 +4,14 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 30,
+        "line": 27,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
-        "category": "incompatible_types",
-        "column": 38,
-        "line": 33,
-        "message": "invalid conversion from 'CHero*' to 'int' [-fpermissive]"
+        "category": "other",
+        "column": 14,
+        "line": 35,
+        "message": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
       }
     ],
     "success": false,
@@ -25,72 +25,30 @@
       {
         "category": "other",
         "column": 14,
-        "line": 21,
+        "line": 19,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 68,
-        "line": 21,
-        "message": "format '%f' expects argument of type 'float*', but argument 3 has type 'uint*' {aka 'unsigned int*'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 72,
-        "line": 21,
-        "message": "format '%f' expects argument of type 'float*', but argument 4 has type 'uint*' {aka 'unsigned int*'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 21,
-        "message": "format '%f' expects argument of type 'float*', but argument 5 has type 'uint*' {aka 'unsigned int*'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 39,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 40,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 42,
+        "column": 10,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 237,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 35,
     "suspect_count": 19,
     "suspect_types": [
-      "stack_param",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 157
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -108,9 +66,9 @@
         "004aa643"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_FUN_004aa530",
-    "signature": "undefined4 core_event_cpp_FUN_004aa530(void)"
+    "signature": "int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)"
   },
   "function_calls": [
     {
@@ -199,10 +157,10 @@
     "pcode_op_count": 438
   },
   "stack_frame": {
-    "frame_size": 124,
+    "frame_size": 136,
     "local_size": 124,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -218,142 +176,163 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "int *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "uint *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "((char *)(in_stack_00000004 + *in_stack_00000008),\" { %f, %f, %f }%n\",in_stack_0000000c,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "((char *)(param_1 + *param_2),\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000004 + *in_stack_00000008),\" { %f, %f, %f }%n\",in_stack_0000000c,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "text": "((char *)(param_1 + *param_2),\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000004 + *in_stack_00000008),\" { %f, %f, %f }%n\",in_stack_0000000c,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_3",
+      "text": "((char *)(param_1 + *param_2),\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_3",
+      "text": "((char *)(param_1 + *param_2),\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_3",
+      "text": "((char *)(param_1 + *param_2),\" { %f, %f, %f }%n\",param_3,param_3 + 1,param_3 + 2,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c + 1,in_stack_0000000c + 2,&local_14);",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = *param_2 + local_14;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c + 1,in_stack_0000000c + 2,&local_14);",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = *param_2 + local_14;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = *in_stack_00000008 + local_14;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "text": "sscanf((char *)(param_1 + *param_2),\" %[^ ,(){}]%n\",local_78,&local_14);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = *in_stack_00000008 + local_14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "((char *)(in_stack_00000004 + *in_stack_00000008),\" %[^ ,(){}]%n\",local_78,&local_14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000004 + *in_stack_00000008),\" %[^ ,(){}]%n\",local_78,&local_14);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "text": "sscanf((char *)(param_1 + *param_2),\" %[^ ,(){}]%n\",local_78,&local_14);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 20,
       "match": "DAT_02d0a460",
       "text": "sprintf(&DAT_02d0a460,\"Error parsing vector location\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = *in_stack_00000008 + local_14;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "text": "*param_2 = *param_2 + local_14;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = *in_stack_00000008 + local_14;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "text": "*param_2 = *param_2 + local_14;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "text": "if ((CLocation *)param_3 != pCVar2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_3",
+      "text": "*param_3 = (pCVar2->position).x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != (uint *)(iVar1 + 0x20)) {",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "param_3[1] = (pCVar1->base).base.location.position.y;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 33,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *(uint *)(iVar1 + 0x20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c[1] = *(uint *)(iVar1 + 0x24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c[2] = *(uint *)(iVar1 + 0x28);",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "param_3[2] = (pCVar1->base).base.location.position.z;",
+      "type": "unnamed_param"
     }
   ]
 }

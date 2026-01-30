@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 332,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 12,
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 65,
     "suspect_count": 26,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 244
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -40,9 +40,9 @@
         "004aa95a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_DifferentWaysToDie_FUN_004aa7d0",
-    "signature": "undefined4 core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(void)"
+    "signature": "int __cdecl core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(char *param_1,int *param_2)"
   },
   "function_calls": [
     {
@@ -149,195 +149,210 @@
     "pcode_op_count": 548
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(char *param_1,int *param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "int __cdecl core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(char *param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 7,
-      "match": "in_stack_00000008",
-      "text": "uint *in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"generic\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 9,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"generic\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 0;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 0;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"drown\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 14,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"drown\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"fall\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 19,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"fall\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 2;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 2;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"explode\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 24,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"explode\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 3;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 3;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"fallApart\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 29,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"fallApart\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 4;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 4;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"shatter\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 34,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"shatter\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 5;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 5;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"electrocute\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 39,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"electrocute\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 6;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 6;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"gas\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 44,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"gas\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 0x69;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 0x69;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"Chopped\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 49,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"Chopped\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 7;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 7;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"Crushed\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 54,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"Crushed\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 8;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 8;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"Impale\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 59,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"Impale\");",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 9;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 9;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "text": "iVar1 = stricmp(param_1,\"Fire\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 64,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"Fire\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = 10;",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "*param_2 = 10;",
+      "type": "unnamed_param"
     }
   ]
 }

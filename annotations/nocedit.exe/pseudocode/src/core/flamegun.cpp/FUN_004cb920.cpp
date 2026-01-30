@@ -1,14 +1,14 @@
 // Name: core_flamegun.cpp_FUN_004cb920
 // Address: 004cb920
 // Address Range: [[004cb920, 004cb9ad]]
-// Convention: unknown
-// Signature: undefined4 core_flamegun_cpp_FUN_004cb920(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_flamegun_cpp_FUN_004cb920(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_FUN_004cb920(uint param_1) */
 
-uint core_flamegun_cpp_FUN_004cb920(void)
+int __cdecl core_flamegun_cpp_FUN_004cb920(void)
 
 {
   float fVar1;

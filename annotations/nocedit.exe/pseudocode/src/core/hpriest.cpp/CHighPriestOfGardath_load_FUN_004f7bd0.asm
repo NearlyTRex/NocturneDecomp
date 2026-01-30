@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_hpriest_cpp_CHighPriestOfGardath_load_FUN_004f7bd0(void)
+; __cdecl void __cdecl core_hpriest_cpp_CHighPriestOfGardath_load_FUN_004f7bd0(void)
 ;
 ;
 ; Referenced Globals:

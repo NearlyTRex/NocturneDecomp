@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00448e42
     PUSH EBX                            ; 00448e44
     CALL core_crossbow.cpp_FUN_00449540 ; 00448e45
-        ;   XREF to: 00449540 (UNCONDITIONAL_CALL)  ; undefined core_crossbow.cpp_FUN_00449540()
+        ;   XREF to: 00449540 (UNCONDITIONAL_CALL)  ; float core_crossbow.cpp_FUN_00449540()
     MOV dword ptr [ESP + 0x20],EAX      ; 00448e4a
     FLD float ptr [ESP + 0x20]          ; 00448e4e
     ADD ESP,0x4                         ; 00448e52

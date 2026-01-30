@@ -1,15 +1,15 @@
 // Name: core_mimic.cpp_FUN_0051f930
 // Address: 0051f930
 // Address Range: [[0051f930, 0051fcb8]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_FUN_0051f930(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_FUN_0051f930(void)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* Signature: byte actors_enemy_mimic.cpp_FUN_0051f930(uint param_1) */
 
-void core_mimic_cpp_FUN_0051f930(void)
+void __cdecl core_mimic_cpp_FUN_0051f930(void)
 
 {
   CQuaternion4f *pCVar1;

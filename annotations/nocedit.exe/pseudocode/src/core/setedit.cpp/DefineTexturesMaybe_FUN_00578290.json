@@ -16,7 +16,7 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 72,
+        "line": 69,
         "message": "'DAT_03654370' was not declared in this scope; did you mean 'DAT_03FB4370'?"
       }
     ],
@@ -36,43 +36,50 @@
       },
       {
         "category": "other",
+        "column": 58,
+        "line": 37,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
         "column": 25,
-        "line": 53,
+        "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 55,
+        "line": 53,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 66,
+        "line": 64,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 69,
+        "column": 50,
+        "line": 66,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 255,
+    "complexity_score": 247,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 16,
-    "pseudocode_lines": 75,
-    "suspect_count": 17,
+    "pseudocode_lines": 72,
+    "suspect_count": 16,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 225
+    "total_lines": 222
   },
   "cross_references": [
     {
@@ -96,9 +103,9 @@
         "0057841d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_setedit.cpp_DefineTexturesMaybe_FUN_00578290",
-    "signature": "void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)"
+    "signature": "void __cdecl core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)"
   },
   "function_calls": [
     {
@@ -314,88 +321,89 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "(\"Tried to define texture %s as ground type %d, but it was already defined as %d\",in_stack_00000004,_uStack00000008,",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_03659190",
-      "text": "(uint)(byte)(&DAT_03659190)[iVar4]);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_03654368",
       "text": "} while (iVar4 < DAT_03654368);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 43,
       "match": "DAT_03654368",
       "text": "if (499 < DAT_03654368) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000004",
-      "text": "(\"Texture filename %s is too long to add to CGroundTypeList!\",in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 62,
       "match": "DAT_03654370",
       "text": "pcVar6 = &DAT_03654370 + DAT_03654368 * 0x28;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 62,
       "match": "DAT_03654368",
       "text": "pcVar6 = &DAT_03654370 + DAT_03654368 * 0x28;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 72,
       "match": "DAT_03659190",
       "text": "(&DAT_03659190)[DAT_03654368] = uStack00000008;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 72,
       "match": "DAT_03654368",
       "text": "(&DAT_03659190)[DAT_03654368] = uStack00000008;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 73,
       "match": "DAT_03654368",
       "text": "DAT_03654368 = DAT_03654368 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 73,
       "match": "DAT_03654368",
       "text": "DAT_03654368 = DAT_03654368 + 1;",
       "type": "undefined_data"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Tried to define texture %s as ground type %d, but ...\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Tried to define texture %s as ground type %d, but it was already defined as %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 30,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Tried to define texture %s as ground type %d, but it w",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Texture filename %s is too long to add to CGroundT...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Texture filename %s is too long to add to CGroundTypeList!",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 59,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Texture filename %s is too long to add to CGroundTypeL",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
+; __cdecl void __cdecl core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 ;
 ;
 ; Referenced Globals:
@@ -52,7 +52,7 @@ section .text
     PUSH EBX                            ; 004beb6c
     MOV dword ptr [EBX + 0x3dc],EAX     ; 004beb6d
     CALL core_dest.cpp_FUN_0046f9b0     ; 004beb73
-        ;   XREF to: 0046f9b0 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_FUN_0046f9b0()
+        ;   XREF to: 0046f9b0 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_FUN_0046f9b0()
     ADD ESP,0x8                         ; 004beb78
     ADD ESP,0x10                        ; 004beb7b
     POP EBP                             ; 004beb7e

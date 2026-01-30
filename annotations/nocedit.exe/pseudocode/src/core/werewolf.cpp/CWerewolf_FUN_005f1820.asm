@@ -107,12 +107,12 @@ section .text
     PUSH 0x3f96b44                      ; 005f18fa | FLOAT_03f96b44
     PUSH EBX                            ; 005f18ff
     CALL core_werewolf.cpp_FUN_005f1230 ; 005f1900
-        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f1230()
+        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f1230()
     ADD ESP,0x8                         ; 005f1905
     PUSH 0x3f96b50                      ; 005f1908 | FLOAT_03f96b50
     PUSH EBX                            ; 005f190d
     CALL core_werewolf.cpp_FUN_005f1230 ; 005f190e
-        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f1230()
+        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f1230()
     ADD ESP,0x8                         ; 005f1913
     PUSH EBX                            ; 005f1916
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 005f1917

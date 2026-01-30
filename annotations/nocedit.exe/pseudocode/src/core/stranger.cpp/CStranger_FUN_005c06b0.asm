@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c06b0(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
@@ -58,7 +58,7 @@ section .text
     PUSH EBX                            ; 005c0701
     LEA ESI,[ESP + 0x10]                ; 005c0702
     CALL core_stranger.cpp_CStranger_FUN_005c07b0 ; 005c0706
-        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_FUN_005c07b0()
+        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; float * core_stranger.cpp_CStranger_FUN_005c07b0()
     ADD ESP,0xc                         ; 005c070b
     LEA EAX,[EBX + 0x30]                ; 005c070e
     LEA EDI,[ESP + 0x64]                ; 005c0711

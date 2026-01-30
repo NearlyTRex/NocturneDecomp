@@ -1,15 +1,15 @@
 // Name: core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990
 // Address: 0041d990
 // Address Range: [[0041d990, 0041d9fa]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_SnagRelated_ModelStateDeath_FUN_0041d990(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_boneguy_cpp_SnagRelated_ModelStateDeath_FUN_0041d990(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_boneguy.cpp_SnagRelated_ModelStateDeath(uint param_1,
    uint param_2) */
 
-void core_boneguy_cpp_SnagRelated_ModelStateDeath_FUN_0041d990(void)
+void __cdecl core_boneguy_cpp_SnagRelated_ModelStateDeath_FUN_0041d990(void)
 
 {
   CEnemy *in_stack_00000004;

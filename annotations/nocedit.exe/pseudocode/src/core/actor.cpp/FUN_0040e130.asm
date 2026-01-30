@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[8]:
-;   core_msnedit.cpp_FUN_00538ea0 at 00538eed
-;   core_msnedit.cpp_FUN_0053b510 at 0053b5fe
-;   core_msnedit.cpp_FUN_0053d8b0 at 0053da21
-;   core_msnedit.cpp_FUN_0053ea30 at 0053ea59
-;   core_msnedit.cpp_FUN_0053ec80 at 0053eced
-;   core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030 at 0053b11e
+;   core_msnedit.cpp_CDemonMission_FUN_00538ea0 at 00538eed
+;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b11e
+;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b5fe
+;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053da21
+;   core_msnedit.cpp_CDemonMission_FUN_0053ea30 at 0053ea59
+;   core_msnedit.cpp_CDemonMission_FUN_0053ec80 at 0053eced
 ;   core_msnedit.cpp_staticInit_FUN_00535c30 at 00535c35
-;   core_script.cpp_FUN_005677a0 at 00567ac0
+;   core_script.cpp_CScript_FUN_005677a0 at 00567ac0
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_0040e150

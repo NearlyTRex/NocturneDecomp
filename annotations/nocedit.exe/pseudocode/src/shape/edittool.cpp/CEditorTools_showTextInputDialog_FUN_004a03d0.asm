@@ -18,9 +18,9 @@
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be51b
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004df205
 ;   core_game.cpp_FUN_004e2fc0 at 004e2feb
-;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538b3e
-;   core_msnedit.cpp_DeleteActors_FUN_0053df90 at 0053e1a3
-;   core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80 at 0053c024
+;   core_msnedit.cpp_CDemonMission_FUN_005379e0 at 00537ad3
+;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053bb6a
+;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053c024
 ;   ... and 29 more
 ;
 ; Called Functions:

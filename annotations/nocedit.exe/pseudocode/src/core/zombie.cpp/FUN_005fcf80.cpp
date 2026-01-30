@@ -1,12 +1,12 @@
 // Name: core_zombie.cpp_FUN_005fcf80
 // Address: 005fcf80
 // Address Range: [[005fcf80, 005fcfb5]]
-// Convention: unknown
-// Signature: SEdgeData * core_zombie_cpp_FUN_005fcf80(void)
+// Convention: __cdecl
+// Signature: SEdgeData * __cdecl core_zombie_cpp_FUN_005fcf80(void)
 
 #include "nocturne.h"
 
-SEdgeData * core_zombie_cpp_FUN_005fcf80(void)
+SEdgeData * __cdecl core_zombie_cpp_FUN_005fcf80(void)
 
 {
   SEdgeData *pSVar1;

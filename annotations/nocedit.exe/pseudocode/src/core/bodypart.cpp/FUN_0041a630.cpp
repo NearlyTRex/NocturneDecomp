@@ -1,12 +1,12 @@
 // Name: core_bodypart.cpp_FUN_0041a630
 // Address: 0041a630
 // Address Range: [[0041a630, 0041aa34]]
-// Convention: unknown
-// Signature: void core_bodypart_cpp_FUN_0041a630(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bodypart_cpp_FUN_0041a630(void)
 
 #include "nocturne.h"
 
-void core_bodypart_cpp_FUN_0041a630(void)
+void __cdecl core_bodypart_cpp_FUN_0041a630(void)
 
 {
   COrientation *euler_angles;

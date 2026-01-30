@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 39,
-        "line": 18,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,13 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 34,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "extra_output",
       "stack_param"
     ],
     "total_lines": 14
@@ -40,9 +34,9 @@
         "005b9be9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_stairs.cpp_FUN_005b9be0",
-    "signature": "undefined4 core_stairs_cpp_FUN_005b9be0(void)"
+    "signature": "int __cdecl core_stairs_cpp_FUN_005b9be0(void)"
   },
   "function_calls": [
     {
@@ -82,6 +76,13 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
@@ -94,6 +95,13 @@
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
     }
   ],
   "vtable_info": {

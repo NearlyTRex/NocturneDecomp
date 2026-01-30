@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(void)
+; __cdecl void __cdecl core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c

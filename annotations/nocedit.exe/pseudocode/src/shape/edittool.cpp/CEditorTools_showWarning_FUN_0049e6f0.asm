@@ -11,8 +11,8 @@
 ;
 ; XREF[12]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00508022
+;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 005380f5
 ;   core_msnedit.cpp_FUN_00537dd0 at 00537e7b
-;   core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60 at 005380f5
 ;   core_script.cpp_CScript_loadState_FUN_00560820 at 00560b34
 ;   core_set.cpp_CDemonSet_saveStateInfo_FUN_00571230 at 005712a0
 ;   core_stranger.cpp_CStranger_FUN_005bdd20 at 005be3a0

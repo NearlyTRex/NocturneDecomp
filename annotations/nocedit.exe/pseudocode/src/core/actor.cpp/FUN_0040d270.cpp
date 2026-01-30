@@ -9,6 +9,6 @@
 void __cdecl core_actor_cpp_FUN_0040d270(void)
 
 {
-  core_msnedit_cpp_FUN_0053d220(g_CDemonMissionPtr);
+  core_msnedit_cpp_CDemonMission_FUN_0053d220(g_CDemonMissionPtr);
   return;
 }

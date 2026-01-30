@@ -1,15 +1,15 @@
 // Name: core_ghoul.cpp_FUN_004e8dc0
 // Address: 004e8dc0
 // Address Range: [[004e8dc0, 004e8e1c]]
-// Convention: unknown
-// Signature: void core_ghoul_cpp_FUN_004e8dc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ghoul_cpp_FUN_004e8dc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_ghoul.cpp_FUN_004e8dc0(uint param_1, uint param_2)
     */
 
-void core_ghoul_cpp_FUN_004e8dc0(void)
+void __cdecl core_ghoul_cpp_FUN_004e8dc0(void)
 
 {
   CEnemy *in_stack_00000004;

@@ -72,7 +72,7 @@ section .text
     ADD ESP,0xc                         ; 00448f59
     PUSH EBX                            ; 00448f5c
     CALL core_weapon.cpp_FUN_005ee6e0   ; 00448f5d
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ee6e0()
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
     ADD ESP,0x4                         ; 00448f62
     TEST EAX,EAX                        ; 00448f65
     JNZ 0x00448f70                      ; 00448f67
@@ -311,12 +311,12 @@ section .text
         ;   XREF to: 0044950a (CONDITIONAL_JUMP)  ; LAB_0044950a
     PUSH EDI                            ; 0044926c
     CALL core_trigger.cpp_FUN_005e0aa0  ; 0044926d
-        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_005e0aa0()
+        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_FUN_005e0aa0()
     ADD ESP,0x4                         ; 00449272
     PUSH EBX                            ; 00449275
     PUSH EDI                            ; 00449276
     CALL core_trigger.cpp_FUN_005e0ac0  ; 00449277
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_005e0ac0()
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_FUN_005e0ac0()
     ADD ESP,0x8                         ; 0044927c
     TEST EAX,EAX                        ; 0044927f
     JZ 0x004492b0                       ; 00449281
@@ -331,7 +331,7 @@ section .text
     FSTP float ptr [ESP]                ; 004492a4
     PUSH EDI                            ; 004492a7
     CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 004492a8
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
     ADD ESP,0x8                         ; 004492ad
     MOV ESI,dword ptr [ESP + 0xdc]      ; 004492b0
         ;   Label: LAB_004492b0

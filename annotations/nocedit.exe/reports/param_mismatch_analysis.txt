@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 790
-Signature accuracy rate: 57.5%
+Parameter mismatches detected: 735
+Signature accuracy rate: 60.5%
 
 Mismatches by confidence:
-  High confidence:   77 (multiple call sites agree)
-  Medium confidence: 105 (some agreement)
-  Low confidence:    608 (limited data)
+  High confidence:   76 (multiple call sites agree)
+  Medium confidence: 99 (some agreement)
+  Low confidence:    560 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -47,6 +47,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_flies.cpp_FUN_004ccaa0 at 004ccad0: 0 reg [], 6 stack
       core_bugs.cpp_CBugs_FUN_004277 at 00427811: 0 reg [], 6 stack
 
+  core_bodypart.cpp_FUN_0041b540
+    Declared: 0 params, Estimated: 5 params (+5)
+    Call sites: 4, Confidence: high
+    File: core/bodypart.cpp
+    Signature: void __cdecl core_bodypart_cpp_FUN_0041b540(void)
+    Sample call sites:
+      core_boneguy.cpp_FUN_0041cc40 at 0041ce45: 0 reg [], 5 stack
+      core_mobster.cpp_FUN_00526d90 at 00526fc6: 0 reg [], 5 stack
+      core_zombie.cpp_CZombie_Pickup at 005fb79f: 0 reg [], 5 stack
+
   core_manpuz.cpp_FUN_0050a4f0
     Declared: 1 params, Estimated: 6 params (+5)
     Call sites: 3, Confidence: high
@@ -57,16 +67,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_manpuz.cpp_CMansionPuzzle at 0050a6c7: 0 reg [], 6 stack
       core_manpuz.cpp_CMansionPuzzle at 0050a67c: 0 reg [], 6 stack
 
-  core_actor.cpp_FUN_004104f0
-    Declared: 0 params, Estimated: 4 params (+4)
-    Call sites: 3, Confidence: high
-    File: core/actor.cpp
-    Signature: undefined4 * core_actor_cpp_FUN_004104f0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040d9d1: 2 reg [EBX, EDX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040db76: 2 reg [EBX, EDX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040dd3b: 2 reg [EBX, EDX], 2 stack
-
   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0
     Declared: 1 params, Estimated: 5 params (+4)
     Call sites: 19, Confidence: high
@@ -76,16 +76,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_scat.cpp_CScat_ctor_FUN_0 at 00556f83: 0 reg [], 5 stack
       core_stranger.cpp_CStranger_ct at 005bb343: 0 reg [], 5 stack
       core_stranger.cpp_CStranger_ct at 005bb3e3: 0 reg [], 5 stack
-
-  core_event.cpp_FUN_004aa6c0
-    Declared: 0 params, Estimated: 4 params (+4)
-    Call sites: 6, Confidence: high
-    File: core/event.cpp
-    Signature: char * core_event_cpp_FUN_004aa6c0(void)
-    Sample call sites:
-      core_event.cpp_CEventList_FUN_ at 004ab821: 1 reg [EAX], 3 stack
-      core_event.cpp_CEventList_FUN_ at 004aaee6: 1 reg [EAX], 3 stack
-      core_event.cpp_CEventList_FUN_ at 004ab8a6: 1 reg [EAX], 3 stack
 
   core_fire.cpp_CFireEffect_FUN_004c76a0
     Declared: 1 params, Estimated: 5 params (+4)
@@ -107,35 +97,25 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_emitter.cpp_FUN_004a8070 at 004a849e: 0 reg [], 5 stack
       core_dracbrid.cpp_FUN_00484410 at 00484cfe: 0 reg [], 5 stack
 
-  core_script.cpp_FUN_005593f0
+  core_morph.cpp_FUN_0052b580
     Declared: 0 params, Estimated: 4 params (+4)
-    Call sites: 18, Confidence: high
-    File: core/script.cpp
-    Signature: char * core_script_cpp_FUN_005593f0(void)
+    Call sites: 8, Confidence: high
+    File: core/morph.cpp
+    Signature: void __cdecl core_morph_cpp_FUN_0052b580(void)
     Sample call sites:
-      core_script.cpp_FUN_005594a0 at 005594ac: 2 reg [ECX, EDX], 3 stack
-      core_script.cpp_CScript_step_F at 0055c1ab: 1 reg [EAX], 3 stack
-      core_script.cpp_CScript_step_F at 0055c2d2: 1 reg [EAX], 3 stack
+      core_vampboss.cpp_CVampireBoss at 005e57c2: 0 reg [], 4 stack
+      core_succubus.cpp_CSuccubus_FU at 005c6e0d: 0 reg [], 4 stack
+      core_succubus.cpp_CSuccubus_FU at 005c6def: 0 reg [], 4 stack
 
-  core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
+  engine_colquant.c_FUN_00441790
     Declared: 0 params, Estimated: 4 params (+4)
-    Call sites: 25, Confidence: high
-    File: core/skeledit.cpp
-    Signature: void core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDeformableModelInstance *param_5,_FILE *param_6)
-    Sample call sites:
-      core_beast.cpp_FUN_00418460 at 00418482: 2 reg [EAX, EBX], 2 stack
-      core_biggs.cpp_FUN_00418ce0 at 00418d02: 2 reg [EAX, EBX], 2 stack
-      core_cow.cpp_FUN_00444ca0 at 00444cc2: 2 reg [EAX, EBX], 2 stack
-
-  engine_colquant.c_FUN_00441110
-    Declared: 0 params, Estimated: 4 params (+4)
-    Call sites: 4, Confidence: high
+    Call sites: 7, Confidence: high
     File: engine/colquant.c
-    Signature: void engine_colquant_c_FUN_00441110(void)
+    Signature: int __cdecl engine_colquant_c_FUN_00441790(void)
     Sample call sites:
-      engine_colquant.c_FUN_00440b40 at 00440c62: 1 reg [EDX], 3 stack
-      engine_colquant.c_FUN_00440c80 at 00440da4: 1 reg [EDX], 3 stack
-      engine_colquant.c_FUN_00440dc0 at 00440ee4: 1 reg [EDX], 3 stack
+      engine_colquant.c_FUN_00441260 at 00441526: 0 reg [], 4 stack
+      engine_colquant.c_FUN_00441260 at 004416e9: 0 reg [], 4 stack
+      engine_colquant.c_FUN_00441260 at 004414f0: 0 reg [], 4 stack
 
   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
     Declared: 1 params, Estimated: 4 params (+3)
@@ -146,36 +126,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_beast.cpp_FUN_00418420 at 00418443: 0 reg [], 4 stack
       core_dog.cpp_CZombieDog_getPro at 0047f943: 0 reg [], 4 stack
       core_drone.cpp_FUN_0048f520 at 0048f543: 0 reg [], 4 stack
-
-  core_actor.cpp_FUN_004103d0
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 6, Confidence: high
-    File: core/actor.cpp
-    Signature: void core_actor_cpp_FUN_004103d0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040dc84: 1 reg [EBX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040de4b: 1 reg [EBX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040daed: 1 reg [EBX], 2 stack
-
-  core_actor.cpp_FUN_004104d0
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 3, Confidence: high
-    File: core/actor.cpp
-    Signature: undefined4 * core_actor_cpp_FUN_004104d0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040dd63: 1 reg [EDX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040d9f9: 1 reg [EDX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040db9e: 1 reg [EDX], 2 stack
-
-  core_actor.cpp_FUN_004104e0
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 3, Confidence: high
-    File: core/actor.cpp
-    Signature: undefined4 * core_actor_cpp_FUN_004104e0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040d9e5: 1 reg [EDX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040db8a: 1 reg [EDX], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040dd4f: 1 reg [EDX], 2 stack
 
   core_box.cpp_CBoundingBox3D_render_FUN_004210b0
     Declared: 4 params, Estimated: 1 params (-3)
@@ -197,21 +147,11 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_ghoul.cpp_CGhoul_FUN_004e at 004e813c: 0 reg [], 4 stack
       core_zombie.cpp_CZombie_proces at 005fa015: 0 reg [], 4 stack
 
-  core_dracbrid.cpp_FUN_00486e30
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 3, Confidence: high
-    File: core/dracbrid.cpp
-    Signature: void core_dracbrid_cpp_FUN_00486e30(void)
-    Sample call sites:
-      core_flies.cpp_FUN_004ccd40 at 004ccd4a: 1 reg [EAX], 2 stack
-      core_dracbrid.cpp_dtor_FUN_004 at 00486d5a: 1 reg [EAX], 2 stack
-      core_gore.cpp_FUN_004ee390 at 004ee39a: 1 reg [EAX], 2 stack
-
   core_frankgen.cpp_FUN_004d23a0
     Declared: 0 params, Estimated: 3 params (+3)
     Call sites: 5, Confidence: high
     File: core/frankgen.cpp
-    Signature: void core_frankgen_cpp_FUN_004d23a0(void)
+    Signature: void __cdecl core_frankgen_cpp_FUN_004d23a0(void)
     Sample call sites:
       core_frankgen.cpp_LoadModel_FU at 004d22c4: 0 reg [], 3 stack
       core_frankgen.cpp_LoadModel_FU at 004d2285: 0 reg [], 3 stack
@@ -221,7 +161,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 3 params (+3)
     Call sites: 13, Confidence: high
     File: core/frankgen.cpp
-    Signature: void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
+    Signature: void __cdecl core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
     Sample call sites:
       core_frankgen.cpp_PlaySounds_F at 004d1d14: 0 reg [], 3 stack
       core_frankgen.cpp_PlaySounds_F at 004d1d27: 0 reg [], 3 stack
@@ -236,6 +176,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_scat.cpp_FUN_00557ea0 at 00557f86: 0 reg [], 5 stack
       core_actor.cpp_CDemonActor_spa at 00409ea9: 0 reg [], 5 stack
       core_svetlana.cpp_FUN_005d9d30 at 005d9e4f: 0 reg [], 5 stack
+
+  core_gore.cpp_FUN_004ede30
+    Declared: 0 params, Estimated: 3 params (+3)
+    Call sites: 19, Confidence: high
+    File: core/gore.cpp
+    Signature: void __cdecl core_gore_cpp_FUN_004ede30(void)
+    Sample call sites:
+      core_npc.cpp_CNPC_process_FUN_ at 00544983: 0 reg [], 3 stack
+      core_msnedit.cpp_CDemonMission at 0053e896: 0 reg [], 3 stack
+      core_dog.cpp_CZombieDog_proces at 0047f4f3: 0 reg [], 3 stack
 
   core_morph.cpp_FUN_0052b430
     Declared: 0 params, Estimated: 3 params (+3)
@@ -256,16 +206,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_motion.cpp_CMotionControl at 0052d822: 0 reg [], 4 stack
       core_motion.cpp_CMotionControl at 0052d808: 0 reg [], 4 stack
       core_motion.cpp_CMotionControl at 0052d7ee: 0 reg [], 4 stack
-
-  core_script.cpp_FUN_005594a0
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 6, Confidence: high
-    File: core/script.cpp
-    Signature: void core_script_cpp_FUN_005594a0(void)
-    Sample call sites:
-      core_script.cpp_CScript_step_F at 0055be43: 1 reg [EAX], 2 stack
-      core_script.cpp_CScript_step_F at 0055beab: 1 reg [EAX], 2 stack
-      core_script.cpp_CScript_step_F at 0055bf21: 1 reg [EAX], 2 stack
 
   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
     Declared: 5 params, Estimated: 2 params (-3)
@@ -307,6 +247,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_dcamera.cpp_CDemonCamera_ at 00452f64: 0 reg [], 2 stack
       core_game.cpp_CGame_loadSaveGa at 004e1808: 0 reg [], 2 stack
 
+  engine_colquant.c_FUN_00441110
+    Declared: 0 params, Estimated: 3 params (+3)
+    Call sites: 4, Confidence: high
+    File: engine/colquant.c
+    Signature: void __cdecl engine_colquant_c_FUN_00441110(void)
+    Sample call sites:
+      engine_colquant.c_FUN_00440b40 at 00440c62: 0 reg [], 3 stack
+      engine_colquant.c_FUN_00440c80 at 00440da4: 0 reg [], 3 stack
+      engine_colquant.c_FUN_00440dc0 at 00440ee4: 0 reg [], 3 stack
+
   core_actor.cpp_CActorPropertyList_FUN_0040e300
     Declared: 1 params, Estimated: 3 params (+2)
     Call sites: 7, Confidence: high
@@ -337,6 +287,46 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_cow.cpp_FUN_00444c50 at 00444c82: 0 reg [], 3 stack
       core_hotdemon.cpp_FUN_004f79d0 at 004f7a02: 0 reg [], 3 stack
 
+  core_actor.cpp_FUN_004103d0
+    Declared: 0 params, Estimated: 2 params (+2)
+    Call sites: 6, Confidence: high
+    File: core/actor.cpp
+    Signature: void __cdecl core_actor_cpp_FUN_004103d0(void)
+    Sample call sites:
+      core_actor.cpp_CDemonActor_ren at 0040dc84: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040de4b: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040daed: 0 reg [], 2 stack
+
+  core_actor.cpp_FUN_004104d0
+    Declared: 0 params, Estimated: 2 params (+2)
+    Call sites: 3, Confidence: high
+    File: core/actor.cpp
+    Signature: int __cdecl core_actor_cpp_FUN_004104d0(void)
+    Sample call sites:
+      core_actor.cpp_CDemonActor_ren at 0040dd63: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040d9f9: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040db9e: 0 reg [], 2 stack
+
+  core_actor.cpp_FUN_004104e0
+    Declared: 0 params, Estimated: 2 params (+2)
+    Call sites: 3, Confidence: high
+    File: core/actor.cpp
+    Signature: int __cdecl core_actor_cpp_FUN_004104e0(void)
+    Sample call sites:
+      core_actor.cpp_CDemonActor_ren at 0040d9e5: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040db8a: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040dd4f: 0 reg [], 2 stack
+
+  core_actor.cpp_FUN_004104f0
+    Declared: 0 params, Estimated: 2 params (+2)
+    Call sites: 3, Confidence: high
+    File: core/actor.cpp
+    Signature: int __cdecl core_actor_cpp_FUN_004104f0(void)
+    Sample call sites:
+      core_actor.cpp_CDemonActor_ren at 0040d9d1: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040db76: 0 reg [], 2 stack
+      core_actor.cpp_CDemonActor_ren at 0040dd3b: 0 reg [], 2 stack
+
   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80
     Declared: 1 params, Estimated: 3 params (+2)
     Call sites: 3, Confidence: high
@@ -351,7 +341,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 2 params (+2)
     Call sites: 38, Confidence: high
     File: core/cloth.cpp
-    Signature: undefined4 core_cloth_cpp_FUN_0043bf80(void)
+    Signature: int __cdecl core_cloth_cpp_FUN_0043bf80(void)
     Sample call sites:
       core_hiram.cpp_CHiram_dtor_FUN at 004f44c3: 0 reg [], 2 stack
       core_beast.cpp_CBeast_dtor_FUN at 004184e9: 0 reg [], 2 stack
@@ -361,7 +351,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 2 params (+2)
     Call sites: 14, Confidence: high
     File: core/cloth.cpp
-    Signature: void core_cloth_cpp_FUN_0043e170(void)
+    Signature: void __cdecl core_cloth_cpp_FUN_0043e170(void)
     Sample call sites:
       core_stranger.cpp_CStranger_FU at 005c6544: 0 reg [], 2 stack
       core_stranger.cpp_CStranger_FU at 005c64c6: 0 reg [], 2 stack
@@ -377,11 +367,21 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_setutil.cpp_C3DSLight_cre at 00586bcd: 0 reg [], 3 stack
       core_game.cpp_staticInit_FUN_0 at 004d76df: 0 reg [], 3 stack
 
+  core_dracbrid.cpp_FUN_00486e30
+    Declared: 0 params, Estimated: 2 params (+2)
+    Call sites: 3, Confidence: high
+    File: core/dracbrid.cpp
+    Signature: void __cdecl core_dracbrid_cpp_FUN_00486e30(void)
+    Sample call sites:
+      core_flies.cpp_FUN_004ccd40 at 004ccd4a: 0 reg [], 2 stack
+      core_dracbrid.cpp_dtor_FUN_004 at 00486d5a: 0 reg [], 2 stack
+      core_gore.cpp_FUN_004ee390 at 004ee39a: 0 reg [], 2 stack
+
   core_enemy.cpp_FUN_004a9880
     Declared: 0 params, Estimated: 2 params (+2)
     Call sites: 23, Confidence: high
     File: core/enemy.cpp
-    Signature: undefined4 core_enemy_cpp_FUN_004a9880(void)
+    Signature: int __cdecl core_enemy_cpp_FUN_004a9880(void)
     Sample call sites:
       core_dog.cpp_CZombieDog_proces at 0047f468: 0 reg [], 2 stack
       core_drone.cpp_FUN_0048ec70 at 0048f014: 0 reg [], 2 stack
@@ -397,25 +397,25 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_emitter.cpp_FUN_004a8070 at 004a8552: 0 reg [], 3 stack
       core_emitter.cpp_FUN_004a8070 at 004a8563: 0 reg [], 3 stack
 
-  core_gore.cpp_CGore_process_FUN_004ed9e0
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 3, Confidence: high
-    File: core/gore.cpp
-    Signature: undefined4 core_gore_cpp_CGore_process_FUN_004ed9e0(void)
-    Sample call sites:
-      core_msnedit.cpp_PrepareMissio at 0053e525: 1 reg [EDX], 1 stack
-      core_game.cpp_CGame_process_FU at 004e33b4: 1 reg [EAX], 1 stack
-      core_msnedit.cpp_PrepareMissio at 00539934: 1 reg [EDX], 1 stack
-
   core_hostage.cpp_FUN_004f5ff0
     Declared: 0 params, Estimated: 2 params (+2)
     Call sites: 3, Confidence: high
     File: core/hostage.cpp
-    Signature: undefined4 core_hostage_cpp_FUN_004f5ff0(void)
+    Signature: int __cdecl core_hostage_cpp_FUN_004f5ff0(void)
     Sample call sites:
       core_hostage.cpp_RelatedToResc at 004f54e7: 0 reg [], 2 stack
       core_hostage.cpp_RelatedToResc at 004f565b: 0 reg [], 2 stack
       core_hostage.cpp_RelatedToResc at 004f574b: 0 reg [], 2 stack
+
+  core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
+    Declared: 0 params, Estimated: 2 params (+2)
+    Call sites: 25, Confidence: high
+    File: core/skeledit.cpp
+    Signature: void __cdecl core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(void)
+    Sample call sites:
+      core_beast.cpp_FUN_00418460 at 00418482: 0 reg [], 2 stack
+      core_biggs.cpp_FUN_00418ce0 at 00418d02: 0 reg [], 2 stack
+      core_cow.cpp_FUN_00444ca0 at 00444cc2: 0 reg [], 2 stack
 
   crt_fstream.cpp_fstreambase_dtor_FUN_00606509
     Declared: 4 params, Estimated: 2 params (-2)
@@ -491,7 +491,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 1 params (+1)
     Call sites: 4, Confidence: high
     File: core/bodypart.cpp
-    Signature: void core_bodypart_cpp_FUN_0041b4e0(void)
+    Signature: void __cdecl core_bodypart_cpp_FUN_0041b4e0(void)
     Sample call sites:
       core_boneguy.cpp_FUN_0041cc40 at 0041ce4e: 0 reg [], 1 stack
       core_mobster.cpp_FUN_00526d90 at 00526fcf: 0 reg [], 1 stack
@@ -521,7 +521,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 1 params (+1)
     Call sites: 4, Confidence: high
     File: core/crate.cpp
-    Signature: void core_crate_cpp_FUN_00448a70(void)
+    Signature: void __cdecl core_crate_cpp_FUN_00448a70(void)
     Sample call sites:
       core_actor.cpp_CDemonActor_pro at 0040abaa: 0 reg [], 1 stack
       core_turret.cpp_FUN_005e3750 at 005e3c2a: 0 reg [], 1 stack
@@ -551,7 +551,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 1 params (+1)
     Call sites: 3, Confidence: high
     File: core/gargoyle.cpp
-    Signature: undefined4 core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
+    Signature: int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
     Sample call sites:
       core_gargoyle.cpp_CGargoyle_un at 004e4df6: 0 reg [], 1 stack
       core_gargoyle.cpp_CGargoyle_un at 004e4e87: 0 reg [], 1 stack
@@ -571,7 +571,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 1 params (+1)
     Call sites: 8, Confidence: high
     File: core/hero.cpp
-    Signature: undefined4 core_hero_cpp_FUN_004f2ed0(void)
+    Signature: int __cdecl core_hero_cpp_FUN_004f2ed0(void)
     Sample call sites:
       core_gabriela.cpp_CGabriella_p at 004d4005: 0 reg [], 1 stack
       core_colonel.cpp_FUN_0043fa00 at 0043fe0a: 0 reg [], 1 stack
@@ -581,7 +581,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 1 params (+1)
     Call sites: 4, Confidence: high
     File: core/hero.cpp
-    Signature: void core_hero_cpp_FUN_004f3350(void)
+    Signature: void __cdecl core_hero_cpp_FUN_004f3350(void)
     Sample call sites:
       core_stranger.cpp_CStranger_FU at 005bcf33: 0 reg [], 1 stack
       core_gabriela.cpp_CGabriella_p at 004d4075: 0 reg [], 1 stack
@@ -621,7 +621,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 1 params (+1)
     Call sites: 7, Confidence: high
     File: core/morph.cpp
-    Signature: void core_morph_cpp_FUN_0052b310(void)
+    Signature: void __cdecl core_morph_cpp_FUN_0052b310(void)
     Sample call sites:
       core_main.c_showDeveloperTools at 005078e1: 0 reg [], 1 stack
       core_biggs.cpp_CBiggs_ctor_FUN at 004185e4: 0 reg [], 1 stack
@@ -636,16 +636,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_fire.cpp_CPopcorn_dtor_FU at 004c94e7: 0 reg [], 2 stack
       core_fire.cpp_CFireball_dtor_F at 004c9707: 0 reg [], 2 stack
       core_fire.cpp_CRainDrop_dtor_F at 004c94b7: 0 reg [], 2 stack
-
-  core_script.cpp_CScript_Unk18_FUN_005669a0
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 8, Confidence: high
-    File: core/script.cpp
-    Signature: void core_script_cpp_CScript_Unk18_FUN_005669a0(void)
-    Sample call sites:
-      core_script.cpp_FUN_00566080 at 0056614d: 0 reg [], 1 stack
-      core_script.cpp_FUN_005677a0 at 005679ee: 0 reg [], 1 stack
-      core_script.cpp_CScript_Unk20_ at 0056516f: 0 reg [], 1 stack
 
   core_set.cpp_CDemonSet_FUN_0056aca0
     Declared: 1 params, Estimated: 2 params (+1)
@@ -671,7 +661,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 0 params, Estimated: 1 params (+1)
     Call sites: 12, Confidence: high
     File: core/set.cpp
-    Signature: void core_set_cpp_FUN_00570af0(void)
+    Signature: void __cdecl core_set_cpp_FUN_00570af0(void)
     Sample call sites:
       core_set.cpp_CDemonSet_FUN_005 at 0056c540: 0 reg [], 1 stack
       core_set.cpp_CDemonSet_FUN_005 at 0056c943: 0 reg [], 1 stack
@@ -763,9 +753,9 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: engine/matrix.c
     Signature: void __cdecl engine_matrix_c_popViewport_FUN_0050e480(CDemonRenderer *this_ptr)
     Sample call sites:
-      core_script.cpp_FUN_005645d0 at 00564725: 0 reg [], 0 stack
+      core_script.cpp_CScript_FUN_00 at 00564725: 0 reg [], 0 stack
       shape_edittool.cpp_CEditorTool at 004a1089: 0 reg [], 0 stack
-      core_msnedit.cpp_FUN_0053c4f0 at 0053c66a: 0 reg [], 0 stack
+      core_msnedit.cpp_CDemonMission at 0053c66a: 0 reg [], 0 stack
 
   shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
     Declared: 1 params, Estimated: 2 params (+1)
@@ -802,38 +792,26 @@ MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
   core_fire.cpp_CLaserBeam_FUN_004c2420              declared:1 est:14 (+13) [2 calls]
-  shape_superopt.cpp_FUN_005c9aa0                    declared:0 est:9 (+9) [5 calls]
   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0 declared:9 est:18 (+9) [5 calls]
-  core_bodypart.cpp_FUN_0041b540                     declared:0 est:6 (+6) [4 calls]
-  core_morph.cpp_FUN_0052b580                        declared:0 est:6 (+6) [8 calls]
-  core_script.cpp_FUN_00567310                       declared:0 est:6 (+6) [2 calls]
+  core_setedit.cpp_WriteActBackdrop_FUN_0057ce80     declared:0 est:8 (+8) [7 calls]
+  core_gabriela.cpp_FUN_004d6f80                     declared:0 est:6 (+6) [2 calls]
+  core_script.cpp_FUN_00561c70                       declared:7 est:1 (-6) [2 calls]
   core_set.cpp_CDemonSet_FUN_00570040                declared:1 est:7 (+6) [2 calls]
   core_morph.cpp_FUN_0052b640                        declared:0 est:5 (+5) [9 calls]
-  core_script.cpp_FUN_005677a0                       declared:0 est:5 (+5) [7 calls]
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
   core_charactr.cpp_CCharacter_FUN_0042d360          declared:1 est:5 (+4) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0 declared:5 est:1 (-4) [2 calls]
   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a420  declared:1 est:5 (+4) [2 calls]
-  core_script.cpp_FUN_005671a0                       declared:0 est:4 (+4) [2 calls]
   core_setedit.cpp_CDemonSet_FUN_005800d0            declared:1 est:5 (+4) [2 calls]
-  core_skeledit.cpp_FUN_00589c20                     declared:0 est:4 (+4) [2 calls]
   engine_fileio.cpp_CFileManager_createPodConfigWiza declared:1 est:5 (+4) [5 calls]
   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  declared:0 est:4 (+4) [2 calls]
   shape_meshlod.cpp_CLodMesh_initializeLodGeneration declared:1 est:5 (+4) [2 calls]
   core_actor.cpp_CActorPropertyList_FUN_0040e5a0     declared:1 est:4 (+3) [2 calls]
   core_charactr.cpp_CCharacter_FUN_0042b9e0          declared:1 est:4 (+3) [9 calls]
-  core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_004 declared:0 est:3 (+3) [2 calls]
-  core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_0043 declared:0 est:3 (+3) [2 calls]
   core_dtrace.cpp_CDemonRaytrace_worldPositionToGrid declared:3 est:6 (+3) [2 calls]
-  core_haystack.cpp_FUN_004f1ab0                     declared:0 est:3 (+3) [2 calls]
-  core_icepick.cpp_FUN_004f9490                      declared:0 est:3 (+3) [2 calls]
-  core_msnedit.cpp_FUN_0053eb40                      declared:0 est:3 (+3) [2 calls]
-  core_script.cpp_FUN_005607e0                       declared:0 est:3 (+3) [2 calls]
-  core_script.cpp_FUN_00567630                       declared:0 est:3 (+3) [7 calls]
-  core_script.cpp_GetReferencedActor_FUN_00560760    declared:0 est:3 (+3) [2 calls]
-  core_script.cpp_RelatedToMainButtonPresses_FUN_005 declared:0 est:3 (+3) [2 calls]
-  core_setedit.cpp_FUN_0057b500                      declared:0 est:3 (+3) [2 calls]
-  core_skeledit.cpp_FUN_0058aeb0                     declared:0 est:3 (+3) [2 calls]
+  core_script.cpp_CCmdParse_bestParse_FUN_00561db0   declared:5 est:2 (-3) [4 calls]
+  core_setedit.cpp_Something2MemoryConstructorMaybe_ declared:0 est:3 (+3) [2 calls]
+  core_skeledit.cpp_FUN_00589c20                     declared:0 est:3 (+3) [2 calls]
   core_stranger.cpp_CStranger_FUN_005c3960           declared:0 est:3 (+3) [2 calls]
   core_weapon.cpp_CWeapon_FUN_005ee9f0               declared:1 est:4 (+3) [2 calls]
   support_trisock.cpp_createNetworkAddr_FUN_005e1940 declared:3 est:6 (+3) [4 calls]
@@ -843,22 +821,34 @@ MEDIUM CONFIDENCE MISMATCHES
   core_boxactor.cpp_CLightActor_FUN_00423110         declared:1 est:3 (+2) [2 calls]
   core_bugs.cpp_FUN_00425fe0                         declared:0 est:2 (+2) [2 calls]
   core_cloth.cpp_FUN_0043a420                        declared:0 est:2 (+2) [2 calls]
+  core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_004 declared:0 est:2 (+2) [2 calls]
+  core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_0043 declared:0 est:2 (+2) [2 calls]
   core_course.cpp_CCourse_importMatrices_FUN_00442ea declared:1 est:3 (+2) [2 calls]
+  core_curtain.cpp_FUN_00449fc0                      declared:0 est:2 (+2) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_writeDependencies_ declared:3 est:1 (-2) [10 calls]
   core_fire.cpp_CFireEffect_FUN_004c8ea0             declared:1 est:3 (+2) [2 calls]
   core_gore.cpp_FUN_004ed830                         declared:1 est:3 (+2) [4 calls]
+  core_haystack.cpp_FUN_004f1ab0                     declared:0 est:2 (+2) [2 calls]
+  core_icepick.cpp_FUN_004f9490                      declared:0 est:2 (+2) [2 calls]
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0    declared:0 est:2 (+2) [2 calls]
-  core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN declared:0 est:2 (+2) [2 calls]
-  core_script.cpp_FUN_00562860                       declared:0 est:2 (+2) [2 calls]
   core_set.cpp_CDemonSet_FUN_00570ea0                declared:1 est:3 (+2) [2 calls]
+  core_setedit.cpp_FUN_0057b500                      declared:0 est:2 (+2) [2 calls]
+  core_setedit.cpp_FUN_00581320                      declared:0 est:2 (+2) [2 calls]
+  core_skeledit.cpp_FUN_0058aeb0                     declared:0 est:2 (+2) [2 calls]
+  core_skeledit.cpp_FUN_0058b8e0                     declared:0 est:2 (+2) [2 calls]
+  core_stranger.cpp_CStranger_FUN_005c02b0           declared:0 est:2 (+2) [2 calls]
+  core_stranger.cpp_CStranger_FUN_005c1680           declared:0 est:2 (+2) [2 calls]
+  core_turret.cpp_FUN_005e3560                       declared:0 est:2 (+2) [2 calls]
+  core_werewolf.cpp_FUN_005f1230                     declared:0 est:2 (+2) [2 calls]
+  crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
 
-  ... and 55 more
+  ... and 49 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  608 functions with low-confidence mismatches
+  560 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -875,30 +865,27 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 93
+Functions where declaration has MORE params than estimated: 96
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 697
+Functions where declaration has FEWER params than estimated: 639
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -7 params: 1 functions
-  -6 params: 1 functions
+  -6 params: 2 functions
   -5 params: 2 functions
   -4 params: 3 functions
-  -3 params: 11 functions
+  -3 params: 12 functions
   -2 params: 18 functions
-  -1 params: 57 functions
-  +1 params: 262 functions
-  +2 params: 151 functions
-  +3 params: 96 functions
-  +4 params: 111 functions
-  +5 params: 24 functions
-  +6 params: 23 functions
-  +7 params: 10 functions
-  +8 params: 2 functions
-  +9 params: 10 functions
-  +10 params: 1 functions
-  +11 params: 4 functions
-  +12 params: 2 functions
+  -1 params: 58 functions
+  +1 params: 267 functions
+  +2 params: 166 functions
+  +3 params: 76 functions
+  +4 params: 82 functions
+  +5 params: 15 functions
+  +6 params: 18 functions
+  +7 params: 7 functions
+  +8 params: 4 functions
+  +9 params: 3 functions
   +13 params: 1 functions

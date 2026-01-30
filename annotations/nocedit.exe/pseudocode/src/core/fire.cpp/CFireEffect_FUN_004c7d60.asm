@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 004c7da2
     PUSH EAX                            ; 004c7da3
     CALL core_fire.cpp_FUN_004c2170     ; 004c7da4
-        ;   XREF to: 004c2170 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c2170()
+        ;   XREF to: 004c2170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004c2170()
     ADD ESP,0x14                        ; 004c7da9
     POP EBP                             ; 004c7dac
     POP EDI                             ; 004c7dad

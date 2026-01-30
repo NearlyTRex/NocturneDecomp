@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_script_cpp_FUN_00559730(void)
+; __cdecl int __cdecl core_script_cpp_FUN_00559730(int param_1,char *param_2,int *param_3)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
+; int *            Stack[0xc]:4   param_3
 ; Local Variables:
 ; undefined1       Stack[-0x74]:1  local_74
 ; undefined4       Stack[-0x10]:4  local_10
@@ -91,7 +95,7 @@ section .text
     PUSH EAX                            ; 005597be
     PUSH ESI                            ; 005597bf
     CALL core_script.cpp_FUN_00567d30   ; 005597c0
-        ;   XREF to: 00567d30 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00567d30()
+        ;   XREF to: 00567d30 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00567d30(int param_1)
     ADD ESP,0x4                         ; 005597c5
     PUSH EAX                            ; 005597c8
     MOV EAX,dword ptr [ESP + 0x80]      ; 005597c9

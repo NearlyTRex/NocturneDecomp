@@ -294,7 +294,7 @@ section .text
     CALL core_main.c_enterMainGameMenu_FUN_00512f40 ; 005f3900
         ;   XREF to: 00507a50 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_00512f40()
     CALL core_main.c_finalizeGameSystems_FUN_00508570 ; 005f3905
-        ;   XREF to: 00508570 (UNCONDITIONAL_CALL)  ; undefined core_main.c_finalizeGameSystems_FUN_00508570()
+        ;   XREF to: 00508570 (UNCONDITIONAL_CALL)  ; void core_main.c_finalizeGameSystems_FUN_00508570()
     XOR EAX,EAX                         ; 005f390a
     ADD ESP,0x48                        ; 005f390c
     POP EBP                             ; 005f390f

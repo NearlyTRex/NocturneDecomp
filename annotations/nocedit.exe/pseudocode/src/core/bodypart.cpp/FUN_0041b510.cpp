@@ -1,12 +1,12 @@
 // Name: core_bodypart.cpp_FUN_0041b510
 // Address: 0041b510
 // Address Range: [[0041b510, 0041b534]]
-// Convention: unknown
-// Signature: void core_bodypart_cpp_FUN_0041b510(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bodypart_cpp_FUN_0041b510(void)
 
 #include "nocturne.h"
 
-void core_bodypart_cpp_FUN_0041b510(void)
+void __cdecl core_bodypart_cpp_FUN_0041b510(void)
 
 {
   float *in_stack_00000004;

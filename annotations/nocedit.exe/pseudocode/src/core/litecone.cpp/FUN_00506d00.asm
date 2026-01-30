@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_litecone_cpp_FUN_00506d00(void)
+; __cdecl void __cdecl core_litecone_cpp_FUN_00506d00(void)
 ;
 ;
 ; Referenced Globals:

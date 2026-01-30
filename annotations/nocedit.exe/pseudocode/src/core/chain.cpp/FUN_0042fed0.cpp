@@ -1,15 +1,15 @@
 // Name: core_chain.cpp_FUN_0042fed0
 // Address: 0042fed0
 // Address Range: [[0042fed0, 004300c5]]
-// Convention: unknown
-// Signature: void core_chain_cpp_FUN_0042fed0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_chain_cpp_FUN_0042fed0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_chain.cpp_FUN_0042fed0(uint param_1, uint param_2,
    uint param_3) */
 
-void core_chain_cpp_FUN_0042fed0(void)
+void __cdecl core_chain_cpp_FUN_0042fed0(void)
 
 {
   float *pfVar1;

@@ -92,7 +92,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2dc]     ; 005e923d
     PUSH EAX                            ; 005e9243
     CALL core_vessel.cpp_FUN_005e9180   ; 005e9244
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; undefined core_vessel.cpp_FUN_005e9180()
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
     ADD ESP,0x4                         ; 005e9249
     TEST EAX,EAX                        ; 005e924c
     JZ 0x005e9294                       ; 005e924e
@@ -292,7 +292,7 @@ section .text
     PUSH dword ptr [ESP + 0x50]         ; 005e949e
     PUSH EAX                            ; 005e94a2
     CALL core_flame.cpp_FUN_004c9c00    ; 005e94a3
-        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004c9c00()
+        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9c00()
     ADD ESP,0x8                         ; 005e94a8
     JMP 0x005e91d8                      ; 005e94ab
         ;   XREF to: 005e91d8 (UNCONDITIONAL_JUMP)  ; LAB_005e91d8
@@ -322,7 +322,7 @@ section .text
     PUSH EDX                            ; 005e94fa
         ;   Label: LAB_005e94fa
     CALL core_vessel.cpp_FUN_005e9180   ; 005e94fb
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; undefined core_vessel.cpp_FUN_005e9180()
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
     ADD ESP,0x4                         ; 005e9500
     TEST EAX,EAX                        ; 005e9503
     JZ 0x005e956d                       ; 005e9505
@@ -330,7 +330,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x2dc]     ; 005e9507
     PUSH ESI                            ; 005e950d
     CALL core_vessel.cpp_FUN_005e9180   ; 005e950e
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; undefined core_vessel.cpp_FUN_005e9180()
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
     ADD ESP,0x4                         ; 005e9513
     TEST EAX,EAX                        ; 005e9516
     JZ 0x005e956d                       ; 005e9518
@@ -365,7 +365,7 @@ section .text
         ;   Label: LAB_005e956d
     PUSH EDI                            ; 005e9573
     CALL core_vessel.cpp_FUN_005e9180   ; 005e9574
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; undefined core_vessel.cpp_FUN_005e9180()
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
     ADD ESP,0x4                         ; 005e9579
     TEST EAX,EAX                        ; 005e957c
     JZ 0x005e959a                       ; 005e957e
@@ -380,7 +380,7 @@ section .text
         ;   Label: LAB_005e959a
     PUSH EBP                            ; 005e95a0
     CALL core_vessel.cpp_FUN_005e9180   ; 005e95a1
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; undefined core_vessel.cpp_FUN_005e9180()
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
     ADD ESP,0x4                         ; 005e95a6
     TEST EAX,EAX                        ; 005e95a9
     JNZ 0x005e9580                      ; 005e95ab

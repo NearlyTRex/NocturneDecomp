@@ -1,14 +1,14 @@
 // Name: core_melee.cpp_FUN_0050ea70
 // Address: 0050ea70
 // Address Range: [[0050ea70, 0050ea87]]
-// Convention: unknown
-// Signature: float core_melee_cpp_FUN_0050ea70(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_melee_cpp_FUN_0050ea70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_melee.cpp_FUN_0050ea70(uint param_1) */
 
-float core_melee_cpp_FUN_0050ea70(void)
+float __cdecl core_melee_cpp_FUN_0050ea70(void)
 
 {
   float fVar1;

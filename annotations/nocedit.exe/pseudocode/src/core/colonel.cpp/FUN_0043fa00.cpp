@@ -1,15 +1,15 @@
 // Name: core_colonel.cpp_FUN_0043fa00
 // Address: 0043fa00
 // Address Range: [[0043fa00, 0043ff16]]
-// Convention: unknown
-// Signature: void core_colonel_cpp_FUN_0043fa00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_colonel_cpp_FUN_0043fa00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_colonel.cpp_FUN_0043fa00(uint param_1, uint
    param_2) */
 
-void core_colonel_cpp_FUN_0043fa00(void)
+void __cdecl core_colonel_cpp_FUN_0043fa00(void)
 
 {
   uint uVar1;
@@ -158,7 +158,7 @@ LAB_0043fcd4:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->model).motion_controller,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
           goto switchD_0043fe37_caseD_5;
         }
         goto LAB_0043fcd4;

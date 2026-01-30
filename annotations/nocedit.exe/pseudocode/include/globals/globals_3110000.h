@@ -16,7 +16,14 @@ extern CDemonActorType g_CSentinelClassInfo;
 extern CDemonSet g_CDemonSetInstance;
 
 // int
+extern int INT_031141d0;
+extern int INT_031141d4;
+extern int INT_031141d8;
+extern int INT_031141dc;
+extern int INT_031141e0;
+extern int INT_031141e4;
 extern int INT_031141fc;
+extern int INT_03114204;
 extern int INT_0311420c;
 extern int INT_03114210;
 extern int INT_03114214;
@@ -40,18 +47,11 @@ extern undefined4 DAT_031141c0;
 extern undefined4 DAT_031141c4;
 extern undefined4 DAT_031141c8;
 extern undefined4 DAT_031141cc;
-extern undefined4 DAT_031141d0;
-extern undefined4 DAT_031141d4;
-extern undefined4 DAT_031141d8;
-extern undefined4 DAT_031141dc;
-extern undefined4 DAT_031141e0;
-extern undefined4 DAT_031141e4;
 extern undefined4 DAT_031141e8;
 extern undefined4 DAT_031141ec;
 extern undefined4 DAT_031141f0;
 extern undefined4 DAT_031141f4;
 extern undefined4 DAT_031141f8;
 extern undefined4 DAT_03114200;
-extern undefined4 DAT_03114204;
 extern undefined4 DAT_03114208;
 

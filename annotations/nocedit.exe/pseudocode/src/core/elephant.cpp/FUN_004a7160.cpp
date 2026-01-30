@@ -1,12 +1,12 @@
 // Name: core_elephant.cpp_FUN_004a7160
 // Address: 004a7160
 // Address Range: [[004a7160, 004a71ff] [004a7406, 004a74a4]]
-// Convention: unknown
-// Signature: undefined4 core_elephant_cpp_FUN_004a7160(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_elephant_cpp_FUN_004a7160(void)
 
 #include "nocturne.h"
 
-uint core_elephant_cpp_FUN_004a7160(void)
+int __cdecl core_elephant_cpp_FUN_004a7160(void)
 
 {
   CVector3f *pCVar1;
@@ -25,7 +25,6 @@ uint core_elephant_cpp_FUN_004a7160(void)
   int iStack_100;
   float fStack_fc;
   int iStack_f8;
-  CDemonActor *pCStack_f4;
   CVector3f aCStack_ec [2];
   CVector3f CStack_d4;
   float fStack_c8;
@@ -192,7 +191,6 @@ uint core_elephant_cpp_FUN_004a7160(void)
           iStack_100 = *(int *)(in_stack_00000004[4].actor_name + 0xc);
           iStack_f8 = 0x6b;
           fStack_fc = 1.0;
-          pCStack_f4 = in_stack_00000004;
           aCStack_ec[0].x =
                (float)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);
           (*(((this_ptr->base).vtable._uc)->_uc).processDamage)

@@ -1,8 +1,8 @@
 // Name: core_emitter.cpp_FUN_004a8070
 // Address: 004a8070
 // Address Range: [[004a8070, 004a8858]]
-// Convention: unknown
-// Signature: void core_emitter_cpp_FUN_004a8070(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_emitter_cpp_FUN_004a8070(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* Signature: byte actors_other_emitter.cpp_FUN_004a8070(uint param_1, uint
    param_2) */
 
-void core_emitter_cpp_FUN_004a8070(void)
+void __cdecl core_emitter_cpp_FUN_004a8070(void)
 
 {
   CHero *this_ptr;
@@ -227,26 +227,26 @@ LAB_004a8221:
   *(uint *)(in_stack_00000004 + 0x490) = *(uint *)(in_stack_00000004 + 0x168);
   if (*(int *)(in_stack_00000004 + 0x3c8) == 0) {
     if ((0.0 < *(float *)(in_stack_00000004 + 0x234)) &&
-       (in_stack_00000008 = *(float *)(in_stack_00000004 + 0x448) - in_stack_00000008,
-       *(float *)(in_stack_00000004 + 0x448) = in_stack_00000008, in_stack_00000008 <= 0.0)) {
+       (fVar11 = *(float *)(in_stack_00000004 + 0x448) - in_stack_00000008,
+       *(float *)(in_stack_00000004 + 0x448) = fVar11, fVar11 <= 0.0)) {
       *(uint *)(in_stack_00000004 + 0x448) = 0;
       *(uint *)(in_stack_00000004 + 0x168) = 0;
       return;
     }
   }
   else if (*(int *)(in_stack_00000004 + 0x168) == 0) {
-    in_stack_00000008 = *(float *)(in_stack_00000004 + 0x448) - in_stack_00000008;
-    *(float *)(in_stack_00000004 + 0x448) = in_stack_00000008;
-    if (in_stack_00000008 <= 0.0) {
+    fVar11 = *(float *)(in_stack_00000004 + 0x448) - in_stack_00000008;
+    *(float *)(in_stack_00000004 + 0x448) = fVar11;
+    if (fVar11 <= 0.0) {
       *(uint *)(in_stack_00000004 + 0x168) = 1;
       *(uint *)(in_stack_00000004 + 0x448) = *(uint *)(in_stack_00000004 + 0x234);
       return;
     }
   }
   else {
-    in_stack_00000008 = *(float *)(in_stack_00000004 + 0x448) - in_stack_00000008;
-    *(float *)(in_stack_00000004 + 0x448) = in_stack_00000008;
-    if (in_stack_00000008 <= 0.0) {
+    fVar11 = *(float *)(in_stack_00000004 + 0x448) - in_stack_00000008;
+    *(float *)(in_stack_00000004 + 0x448) = fVar11;
+    if (fVar11 <= 0.0) {
       *(uint *)(in_stack_00000004 + 0x168) = 0;
       *(uint *)(in_stack_00000004 + 0x448) = *(uint *)(in_stack_00000004 + 0x3cc);
       return;

@@ -1,15 +1,15 @@
 // Name: core_mimic.cpp_FUN_0051fcc0
 // Address: 0051fcc0
 // Address Range: [[0051fcc0, 00520203] [0052029d, 005204f8]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_FUN_0051fcc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_FUN_0051fcc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mimic.cpp_FUN_0051fcc0(uint param_1, uint param_2)
     */
 
-void core_mimic_cpp_FUN_0051fcc0(void)
+void __cdecl core_mimic_cpp_FUN_0051fcc0(void)
 
 {
   CDeformableModelInstance *this_ptr;

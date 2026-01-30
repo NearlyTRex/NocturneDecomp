@@ -1,25 +1,25 @@
 // Name: core_gasmask.cpp_CGasMask_FUN_004e5d70
 // Address: 004e5d70
 // Address Range: [[004e5d70, 004e5d8f]]
-// Convention: unknown
-// Signature: undefined4 core_gasmask_cpp_CGasMask_FUN_004e5d70(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_gasmask_cpp_CGasMask_FUN_004e5d70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_gasmask.cpp_CGasMask_FUN_004e5d70(byte param_1,
    uint param_2) */
 
-uint core_gasmask_cpp_CGasMask_FUN_004e5d70(void)
+int __cdecl core_gasmask_cpp_CGasMask_FUN_004e5d70(void)
 
 {
   int iVar1;
-  uint uVar2;
+  int iVar2;
   CDemonActor *in_stack_00000008;
   
   iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CHero");
-  uVar2 = 0;
+  iVar2 = 0;
   if (iVar1 != 0) {
-    uVar2 = 2;
+    iVar2 = 2;
   }
-  return uVar2;
+  return iVar2;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
+; __cdecl void __cdecl core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x50]:1  local_50
@@ -66,7 +66,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057fd09
     PUSH EDX                            ; 0057fd0c
     CALL core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 ; 0057fd0d
-        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()
+        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()
     MOV EAX,[0x00679394]                ; 0057fd12 | g_WindowWidth
     IMUL EAX,dword ptr [0x00679398]     ; 0057fd17 | g_WindowHeight
     ADD ESP,0x4                         ; 0057fd1e

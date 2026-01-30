@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_hostage_cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0(void)
+; __cdecl void __cdecl core_hostage_cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c4]:4  local_1c4
@@ -504,7 +504,7 @@ section .text
     MOV EAX,[0x0067b9a0]                ; 004f508d | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 004f5092 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edaa0     ; 004f5093
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edaa0()
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
     ADD ESP,0x10                        ; 004f5098
     PUSH EBX                            ; 004f509b
         ;   Label: LAB_004f509b
@@ -883,7 +883,7 @@ section .text
         ;   Label: caseD_0
     PUSH EBX                            ; 004f54e6
     CALL core_hostage.cpp_FUN_004f5ff0  ; 004f54e7
-        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; undefined core_hostage.cpp_FUN_004f5ff0()
+        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_FUN_004f5ff0()
     ADD ESP,0x8                         ; 004f54ec
     TEST EAX,EAX                        ; 004f54ef
     JNZ 0x004f4fc5                      ; 004f54f1
@@ -996,7 +996,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004f5640
     PUSH EAX                            ; 004f5643
     CALL core_waypoint.cpp_FUN_005ec320 ; 004f5644
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec320()
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
     ADD ESP,0x8                         ; 004f5649
     MOV dword ptr [EBX + 0x1fac8],EAX   ; 004f564c
     JMP 0x004f55ce                      ; 004f5652
@@ -1005,7 +1005,7 @@ section .text
         ;   Label: LAB_004f5657
     PUSH EBX                            ; 004f565a
     CALL core_hostage.cpp_FUN_004f5ff0  ; 004f565b
-        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; undefined core_hostage.cpp_FUN_004f5ff0()
+        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_FUN_004f5ff0()
     ADD ESP,0x8                         ; 004f5660
     TEST EAX,EAX                        ; 004f5663
     JNZ 0x004f4fc5                      ; 004f5665
@@ -1096,7 +1096,7 @@ section .text
         ;   Label: caseD_2
     PUSH EBX                            ; 004f574a
     CALL core_hostage.cpp_FUN_004f5ff0  ; 004f574b
-        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; undefined core_hostage.cpp_FUN_004f5ff0()
+        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_FUN_004f5ff0()
     ADD ESP,0x8                         ; 004f5750
     TEST EAX,EAX                        ; 004f5753
     JNZ 0x004f4fc5                      ; 004f5755
@@ -1220,7 +1220,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004f589f
     PUSH EAX                            ; 004f58a2
     CALL core_waypoint.cpp_FUN_005ec320 ; 004f58a3
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec320()
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
     ADD ESP,0x8                         ; 004f58a8
     MOV dword ptr [EBX + 0x1fac8],EAX   ; 004f58ab
     JMP 0x004f4fc5                      ; 004f58b1

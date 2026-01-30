@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bugs_cpp_FUN_004268e0(void)
+; __cdecl void __cdecl core_bugs_cpp_FUN_004268e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x118]:4  local_118
@@ -584,7 +584,7 @@ section .text
     PUSH ESI                            ; 00427008
     PUSH EDI                            ; 00427009
     CALL core_bugs.cpp_FUN_00426420     ; 0042700a
-        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00426420()
+        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_FUN_00426420()
     ADD ESP,0x10                        ; 0042700f
     TEST EAX,EAX                        ; 00427012
     JZ 0x00426f94                       ; 00427014
@@ -592,7 +592,7 @@ section .text
     PUSH ESI                            ; 0042701a
     PUSH EDI                            ; 0042701b
     CALL core_bugs.cpp_FUN_004270f0     ; 0042701c
-        ;   XREF to: 004270f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004270f0()
+        ;   XREF to: 004270f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004270f0()
     ADD ESP,0x8                         ; 00427021
     MOV dword ptr [ESI + 0x34],0x0      ; 00427024
     MOV ESP,EBP                         ; 0042702b
@@ -605,7 +605,7 @@ section .text
         ;   Label: LAB_00427032
     PUSH EDI                            ; 00427033
     CALL core_bugs.cpp_FUN_004270f0     ; 00427034
-        ;   XREF to: 004270f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004270f0()
+        ;   XREF to: 004270f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004270f0()
     ADD ESP,0x8                         ; 00427039
     MOV dword ptr [ESI + 0x34],0x0      ; 0042703c
     JMP 0x0042696c                      ; 00427043
@@ -614,7 +614,7 @@ section .text
         ;   Label: LAB_00427048
     PUSH EDI                            ; 00427049
     CALL core_bugs.cpp_FUN_004270f0     ; 0042704a
-        ;   XREF to: 004270f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004270f0()
+        ;   XREF to: 004270f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004270f0()
     ADD ESP,0x8                         ; 0042704f
     FLD float ptr [ESP + 0xc]           ; 00427052
     FLD1                                ; 00427056

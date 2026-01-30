@@ -1,15 +1,15 @@
 // Name: core_dracbrid.cpp_FUN_00486d00
 // Address: 00486d00
 // Address Range: [[00486d00, 00486d2b]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_FUN_00486d00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_FUN_00486d00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_draculabride.cpp_FUN_00486d00(uint param_1, uint
    param_2) */
 
-void core_dracbrid_cpp_FUN_00486d00(void)
+void __cdecl core_dracbrid_cpp_FUN_00486d00(void)
 
 {
   CDemonActor *in_stack_00000004;

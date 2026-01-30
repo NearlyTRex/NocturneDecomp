@@ -33,7 +33,7 @@ section .text
     ADD EBX,0x29c                       ; 005ebc6e
     PUSH EBX                            ; 005ebc74
     CALL core_wateract.cpp_FUN_005ebcf0 ; 005ebc75
-        ;   XREF to: 005ebcf0 (UNCONDITIONAL_CALL)  ; undefined core_wateract.cpp_FUN_005ebcf0()
+        ;   XREF to: 005ebcf0 (UNCONDITIONAL_CALL)  ; void core_wateract.cpp_FUN_005ebcf0()
     ADD ESP,0x8                         ; 005ebc7a
     PUSH 0x1                            ; 005ebc7d
     LEA EBX,[EAX + 0xfffffd64]          ; 005ebc7f

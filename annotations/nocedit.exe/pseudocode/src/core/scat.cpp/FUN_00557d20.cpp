@@ -1,15 +1,15 @@
 // Name: core_scat.cpp_FUN_00557d20
 // Address: 00557d20
 // Address Range: [[00557d20, 00557dad]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_00557d20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_00557d20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_00557d20(uint param_1, uint param_2)
     */
 
-void core_scat_cpp_FUN_00557d20(void)
+void __cdecl core_scat_cpp_FUN_00557d20(void)
 
 {
   int iVar1;
@@ -28,8 +28,6 @@ void core_scat_cpp_FUN_00557d20(void)
       if (this_ptr != (CCharacter *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_50);
         SStack_50.damage_amount = 5.0;
-        SStack_50.attacker = &in_stack_00000004->base;
-        SStack_50.wielder = &in_stack_00000004->base;
         (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&SStack_50);
       }
     }

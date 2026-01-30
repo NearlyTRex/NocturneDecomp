@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_event_cpp_FUN_004aa320(void)
+; __cdecl int __cdecl core_event_cpp_FUN_004aa320(char *param_1)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_00624439

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_path_cpp_FUN_00547fc0(void)
+; __cdecl void __cdecl core_path_cpp_FUN_00547fc0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x70]:4  local_70

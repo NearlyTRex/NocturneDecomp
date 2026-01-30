@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
+; __cdecl void __cdecl shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
 ;
 ;
 ; XREF[1]:
@@ -27,7 +27,7 @@ section .text
     PUSH ECX                            ; 005cbe30
     PUSH EBX                            ; 005cbe31
     CALL shape_superopt.cpp_FUN_005cbf20 ; 005cbe32
-        ;   XREF to: 005cbf20 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005cbf20()
+        ;   XREF to: 005cbf20 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005cbf20()
     MOV EAX,dword ptr [EBX + 0x8]       ; 005cbe37
     INC EAX                             ; 005cbe3a
     ADD ESP,0xc                         ; 005cbe3b

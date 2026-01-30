@@ -1,12 +1,12 @@
 // Name: core_boxactor.cpp_CLightActor_FUN_004234e0
 // Address: 004234e0
 // Address Range: [[004234e0, 0042358b]]
-// Convention: unknown
-// Signature: void core_boxactor_cpp_CLightActor_FUN_004234e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_boxactor_cpp_CLightActor_FUN_004234e0(void)
 
 #include "nocturne.h"
 
-void core_boxactor_cpp_CLightActor_FUN_004234e0(void)
+void __cdecl core_boxactor_cpp_CLightActor_FUN_004234e0(void)
 
 {
   CBoxActor *in_stack_00000004;

@@ -1,21 +1,15 @@
 // Name: core_event.cpp_FUN_004b1930
 // Address: 004b1930
 // Address Range: [[004b1930, 004b1964]]
-// Convention: unknown
-// Signature: float core_event_cpp_FUN_004b1930(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_event_cpp_FUN_004b1930(float *param_1,float *param_2)
 
 #include "nocturne.h"
 
-float core_event_cpp_FUN_004b1930(void)
+float __cdecl core_event_cpp_FUN_004b1930(float *param_1,float *param_2)
 
 {
-  float *in_stack_00000004;
-  float *in_stack_00000008;
-  
-  return SQRT((in_stack_00000004[2] - in_stack_00000008[2]) *
-              (in_stack_00000004[2] - in_stack_00000008[2]) +
-              (in_stack_00000004[1] - in_stack_00000008[1]) *
-              (in_stack_00000004[1] - in_stack_00000008[1]) +
-              (*in_stack_00000004 - *in_stack_00000008) * (*in_stack_00000004 - *in_stack_00000008))
-  ;
+  return SQRT((param_1[2] - param_2[2]) * (param_1[2] - param_2[2]) +
+              (param_1[1] - param_2[1]) * (param_1[1] - param_2[1]) +
+              (*param_1 - *param_2) * (*param_1 - *param_2));
 }

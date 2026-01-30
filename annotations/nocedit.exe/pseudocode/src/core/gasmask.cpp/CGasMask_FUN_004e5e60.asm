@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_gasmask_cpp_CGasMask_FUN_004e5e60(void)
+; __cdecl float * __cdecl core_gasmask_cpp_CGasMask_FUN_004e5e60(void)
 ;
 ;
 ; Called Functions:

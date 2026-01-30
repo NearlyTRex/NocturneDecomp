@@ -45,11 +45,11 @@ int __cdecl CLadder(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_FUN_00502a70
 // Address: 00502a70
-void FUN_00502a70(void);
+void __cdecl FUN_00502a70(void);
 
 // Original: core_ladder.cpp_FUN_00502b80
 // Address: 00502b80
-void FUN_00502b80(void);
+void __cdecl FUN_00502b80(void);
 
 // Original: core_ladder.cpp_CLadder_FUN_00502c90
 // Address: 00502c90

@@ -331,7 +331,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0052ba08
     PUSH EAX                            ; 0052ba0f
     CALL core_morph.cpp_FUN_0052b280    ; 0052ba10
-        ;   XREF to: 0052b280 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b280()
+        ;   XREF to: 0052b280 (UNCONDITIONAL_CALL)  ; int core_morph.cpp_FUN_0052b280()
     ADD ESP,0x8                         ; 0052ba15
     MOV EDX,dword ptr [ESP + 0xb4]      ; 0052ba18
     MOV EDX,dword ptr [EDX + 0x58]      ; 0052ba1f

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_tbplayer_cpp_FUN_005da370(void)
+; __cdecl void __cdecl core_tbplayer_cpp_FUN_005da370(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xc0]:1  local_c0

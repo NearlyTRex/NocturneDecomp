@@ -12,8 +12,8 @@
 ; undefined1       Stack[-0x224]:1  local_224
 ;
 ; XREF[6]:
+;   core_msnedit.cpp_CDemonMission_FUN_0053d190 at 0053d1ae
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538981
-;   core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190 at 0053d1ae
 ;   core_msnedit.cpp_FUN_00537230 at 00537274
 ;   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040 at 0058f075
 ;   core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0 at 0058b2f5

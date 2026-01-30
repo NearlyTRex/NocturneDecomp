@@ -1,12 +1,12 @@
 // Name: core_netgame.cpp_removeChatOut_FUN_0053f4b0
 // Address: 0053f4b0
 // Address Range: [[0053f4b0, 0053f541]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)
 
 #include "nocturne.h"
 
-void core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)
+void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)
 
 {
   int in_stack_00000004;

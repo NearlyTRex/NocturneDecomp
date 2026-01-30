@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_hero_cpp_FUN_004f2d70(void)
+; __cdecl int __cdecl core_hero_cpp_FUN_004f2d70(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -136,7 +136,7 @@ section .text
     LEA EAX,[EBX + 0x478]               ; 004f2e5c
     PUSH EAX                            ; 004f2e62
     CALL core_event.cpp_FUN_004b18e0    ; 004f2e63
-        ;   XREF to: 004b18e0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b18e0()
+        ;   XREF to: 004b18e0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b18e0(int * param_1)
     ADD ESP,0x4                         ; 004f2e68
     TEST EAX,EAX                        ; 004f2e6b
     JZ 0x004f2e7b                       ; 004f2e6d
@@ -164,7 +164,7 @@ section .text
         ;   XREF to: 004f2ead (CONDITIONAL_JUMP)  ; LAB_004f2ead
     PUSH EBX                            ; 004f2e99
     CALL core_door.cpp_FUN_0047fcf0     ; 004f2e9a
-        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_0047fcf0()
+        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0()
     ADD ESP,0x4                         ; 004f2e9f
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f2ea2
     MOV ESP,EBP                         ; 004f2ea6

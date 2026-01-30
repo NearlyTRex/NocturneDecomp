@@ -1,15 +1,15 @@
 // Name: core_vehicle.cpp_FUN_005e8b50
 // Address: 005e8b50
 // Address Range: [[005e8b50, 005e8b97]]
-// Convention: unknown
-// Signature: uint core_vehicle_cpp_FUN_005e8b50(void)
+// Convention: __cdecl
+// Signature: uint __cdecl core_vehicle_cpp_FUN_005e8b50(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_vehicle.cpp_FUN_005e8b50(uint param_1, uint
    param_2) */
 
-uint core_vehicle_cpp_FUN_005e8b50(void)
+uint __cdecl core_vehicle_cpp_FUN_005e8b50(void)
 
 {
   uint uVar1;

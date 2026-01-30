@@ -33,7 +33,7 @@ void __cdecl CMoloch::process(CMoloch *this_ptr,float delta_time);
 
 // Original: core_moloch.cpp_FUN_005293b0
 // Address: 005293b0
-void FUN_005293b0(void);
+void __cdecl FUN_005293b0(void);
 
 // Original: core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750
 // Address: 00529750
@@ -41,24 +41,24 @@ int __cdecl CMoloch::renderOpaque(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_load_FUN_00529880
 // Address: 00529880
-void CMoloch::load(void);
+void __cdecl CMoloch::load(void);
 
 // Original: core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900
 // Address: 00529900
-void PlaySoundAbtMolochMorphing(void);
+void __cdecl PlaySoundAbtMolochMorphing(void);
 
 // Original: core_moloch.cpp_FUN_00529950
 // Address: 00529950
-void FUN_00529950(void);
+void __cdecl FUN_00529950(void);
 
 // Original: core_moloch.cpp_FUN_005299b0
 // Address: 005299b0
-void FUN_005299b0(void);
+void __cdecl FUN_005299b0(void);
 
 // Original: core_moloch.cpp_FUN_005299d0
 // Address: 005299d0
-void FUN_005299d0(void);
+void __cdecl FUN_005299d0(void);
 
 // Original: core_moloch.cpp_FUN_005299e0
 // Address: 005299e0
-undefined4 FUN_005299e0(void);
+int __cdecl FUN_005299e0(void);

@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_FUN_005607e0(void)
+; __cdecl void __cdecl core_script_cpp_FUN_005607e0(_FILE *param_1,int *param_2)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   param_1
+; int *            Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_WriteScriptFile_FUN_00560b50 at 00560cd2
+;   core_script.cpp_CScript_FUN_00560b50 at 00560cd2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_006433e6

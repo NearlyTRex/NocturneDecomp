@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_spike_cpp_FUN_005b87a0(void)
+; __cdecl float * __cdecl core_spike_cpp_FUN_005b87a0(void)
 ;
 ;
 ; Called Functions:

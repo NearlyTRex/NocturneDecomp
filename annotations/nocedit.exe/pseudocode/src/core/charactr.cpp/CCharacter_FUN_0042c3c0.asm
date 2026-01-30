@@ -153,7 +153,7 @@ section .text
     MOV EAX,[0x0067b9a0]                ; 0042c49f | g_CGoreInstance | g_CGorePtr
     PUSH EAX                            ; 0042c4a4 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 0042c4a5
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 0042c4aa
     POP EDI                             ; 0042c4ad
     CMP dword ptr [EBX + 0x2444],0x1    ; 0042c4ae

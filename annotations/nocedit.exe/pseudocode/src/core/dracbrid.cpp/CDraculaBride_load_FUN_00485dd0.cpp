@@ -1,15 +1,15 @@
 // Name: core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0
 // Address: 00485dd0
 // Address Range: [[00485dd0, 00486019]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_draculabride.cpp_CDraculaBride_load(CDraculaBride*
    pDraculaBride) */
 
-void core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void)
+void __cdecl core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void)
 
 {
   int iVar1;

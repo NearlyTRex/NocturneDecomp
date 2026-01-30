@@ -1,12 +1,12 @@
 // Name: core_pendulum.cpp_FUN_005495c0
 // Address: 005495c0
 // Address Range: [[005495c0, 00549a92]]
-// Convention: unknown
-// Signature: void core_pendulum_cpp_FUN_005495c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_pendulum_cpp_FUN_005495c0(void)
 
 #include "nocturne.h"
 
-void core_pendulum_cpp_FUN_005495c0(void)
+void __cdecl core_pendulum_cpp_FUN_005495c0(void)
 
 {
   int iVar1;

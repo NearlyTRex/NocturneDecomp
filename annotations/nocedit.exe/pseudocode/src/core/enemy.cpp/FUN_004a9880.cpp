@@ -1,12 +1,12 @@
 // Name: core_enemy.cpp_FUN_004a9880
 // Address: 004a9880
 // Address Range: [[004a9880, 004a9927]]
-// Convention: unknown
-// Signature: undefined4 core_enemy_cpp_FUN_004a9880(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_enemy_cpp_FUN_004a9880(void)
 
 #include "nocturne.h"
 
-uint core_enemy_cpp_FUN_004a9880(void)
+int __cdecl core_enemy_cpp_FUN_004a9880(void)
 
 {
   int in_stack_00000004;

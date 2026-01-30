@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_FUN_004864c0(void)
+; __cdecl void __cdecl core_dracbrid_cpp_FUN_004864c0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x174]:1  local_174

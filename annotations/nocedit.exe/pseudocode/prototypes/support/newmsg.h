@@ -41,19 +41,19 @@ void __cdecl doNothing(void);
 
 // Original: support_newmsg.cpp_FUN_00544510
 // Address: 00544510
-undefined4 FUN_00544510(void);
+int __cdecl FUN_00544510(void);
 
 // Original: support_newmsg.cpp_FUN_00544540
 // Address: 00544540
-undefined4 FUN_00544540(void);
+int __cdecl FUN_00544540(void);
 
 // Original: support_newmsg.cpp_FUN_005445a0
 // Address: 005445a0
-void FUN_005445a0(void);
+void __cdecl FUN_005445a0(void);
 
 // Original: support_newmsg.cpp_FUN_005445c0
 // Address: 005445c0
-void FUN_005445c0(void);
+void __cdecl FUN_005445c0(void);
 
 // Original: support_newmsg.cpp_freeBitmap_FUN_00544730
 // Address: 00544730

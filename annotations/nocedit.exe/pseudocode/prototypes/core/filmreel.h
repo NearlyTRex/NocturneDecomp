@@ -21,23 +21,23 @@ CFilmReel * __cdecl CFilmReel::ctor(CFilmReel *this_ptr);
 
 // Original: core_filmreel.cpp_FUN_004be720
 // Address: 004be720
-void FUN_004be720(void);
+void __cdecl FUN_004be720(void);
 
 // Original: core_filmreel.cpp_FUN_004be7b0
 // Address: 004be7b0
-undefined4 FUN_004be7b0(void);
+int __cdecl FUN_004be7b0(void);
 
 // Original: core_filmreel.cpp_FUN_004be7d0
 // Address: 004be7d0
-void FUN_004be7d0(void);
+void __cdecl FUN_004be7d0(void);
 
 // Original: core_filmreel.cpp_FUN_004be7e0
 // Address: 004be7e0
-void FUN_004be7e0(void);
+void __cdecl FUN_004be7e0(void);
 
 // Original: core_filmreel.cpp_FUN_004be7f0
 // Address: 004be7f0
-undefined4 FUN_004be7f0(void);
+int __cdecl FUN_004be7f0(void);
 
 // Original: core_filmreel.cpp_CFilmReel_process_FUN_004be800
 // Address: 004be800
@@ -45,31 +45,31 @@ void __cdecl CFilmReel::process(CFilmReel *this_ptr,float delta_time);
 
 // Original: core_filmreel.cpp_FUN_004be810
 // Address: 004be810
-int FUN_004be810(void);
+int __cdecl FUN_004be810(void);
 
 // Original: core_filmreel.cpp_FUN_004be880
 // Address: 004be880
-void FUN_004be880(void);
+void __cdecl FUN_004be880(void);
 
 // Original: core_filmreel.cpp_FUN_004be8a0
 // Address: 004be8a0
-void FUN_004be8a0(void);
+void __cdecl FUN_004be8a0(void);
 
 // Original: core_filmreel.cpp_FUN_004be8f0
 // Address: 004be8f0
-bool FUN_004be8f0(void);
+bool __cdecl FUN_004be8f0(void);
 
 // Original: core_filmreel.cpp_FUN_004be910
 // Address: 004be910
-float * FUN_004be910(void);
+float * __cdecl FUN_004be910(void);
 
 // Original: core_filmreel.cpp_FUN_004be960
 // Address: 004be960
-void FUN_004be960(void);
+void __cdecl FUN_004be960(void);
 
 // Original: core_filmreel.cpp_FUN_004be9b0
 // Address: 004be9b0
-void FUN_004be9b0(void);
+void __cdecl FUN_004be9b0(void);
 
 // Original: core_filmreel.cpp_factoryFunc_FUN_004bea00
 // Address: 004bea00
@@ -85,27 +85,27 @@ CFilmProjector * __cdecl CFilmProjector::ctor(CFilmProjector *this_ptr);
 
 // Original: core_filmreel.cpp_FUN_004beb00
 // Address: 004beb00
-void FUN_004beb00(void);
+void __cdecl FUN_004beb00(void);
 
 // Original: core_filmreel.cpp_CFilmProjector_load_FUN_004beb40
 // Address: 004beb40
-void CFilmProjector::load(void);
+void __cdecl CFilmProjector::load(void);
 
 // Original: core_filmreel.cpp_FUN_004becd0
 // Address: 004becd0
-void FUN_004becd0(void);
+void __cdecl FUN_004becd0(void);
 
 // Original: core_filmreel.cpp_FUN_004bed00
 // Address: 004bed00
-int FUN_004bed00(void);
+int __cdecl FUN_004bed00(void);
 
 // Original: core_filmreel.cpp_serialize_FUN_004bede0
 // Address: 004bede0
-void serialize(void);
+void __cdecl serialize(void);
 
 // Original: core_filmreel.cpp_CFilmReel_FUN_004bee30
 // Address: 004bee30
-void CFilmReel(void);
+void __cdecl CFilmReel(void);
 
 // Original: core_filmreel.cpp_CFilmReel_dtor_FUN_004bee80
 // Address: 004bee80

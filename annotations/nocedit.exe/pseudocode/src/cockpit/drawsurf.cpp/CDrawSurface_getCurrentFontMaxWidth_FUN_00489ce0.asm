@@ -7,7 +7,7 @@
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80 at 00559df7
+;   core_script.cpp_CScript_FUN_00559d80 at 00559df7
 ;
 ; Referenced Globals:
 ;   CBitFont* g_CurrentFont

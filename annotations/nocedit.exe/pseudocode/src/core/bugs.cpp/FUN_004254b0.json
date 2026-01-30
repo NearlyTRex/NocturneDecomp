@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 24,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -69,9 +76,9 @@
         "004254ee"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bugs.cpp_FUN_004254b0",
-    "signature": "undefined4 * core_bugs_cpp_FUN_004254b0(void)"
+    "signature": "int __cdecl core_bugs_cpp_FUN_004254b0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -212,7 +219,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
-      "text": "return in_stack_00000008;",
+      "text": "return (int)in_stack_00000008;",
       "type": "stack_param"
     }
   ],

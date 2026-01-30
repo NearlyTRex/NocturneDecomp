@@ -1,14 +1,14 @@
 // Name: core_larva.cpp_CLarva_load_FUN_00503960
 // Address: 00503960
 // Address Range: [[00503960, 005039cc]]
-// Convention: unknown
-// Signature: void core_larva_cpp_CLarva_load_FUN_00503960(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_larva_cpp_CLarva_load_FUN_00503960(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_larva.cpp_CLarva_load(CLarva* param_1) */
 
-void core_larva_cpp_CLarva_load_FUN_00503960(void)
+void __cdecl core_larva_cpp_CLarva_load_FUN_00503960(void)
 
 {
   CEnemy *in_stack_00000004;

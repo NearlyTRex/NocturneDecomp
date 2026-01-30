@@ -52,7 +52,7 @@ section .text
     LEA EBX,[EAX + 0x320]               ; 0047faee
     PUSH EBX                            ; 0047faf4
     CALL core_event.cpp_FUN_004b1670    ; 0047faf5
-        ;   XREF to: 004b1670 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b1670()
+        ;   XREF to: 004b1670 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1670()
     ADD ESP,0x4                         ; 0047fafa
     SUB EBX,0x478                       ; 0047fafd
     PUSH 0x621096                       ; 0047fb03 | = "churchd01.kfm"

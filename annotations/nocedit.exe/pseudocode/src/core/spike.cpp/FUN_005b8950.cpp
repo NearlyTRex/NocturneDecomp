@@ -1,14 +1,14 @@
 // Name: core_spike.cpp_FUN_005b8950
 // Address: 005b8950
 // Address Range: [[005b8950, 005b8e8b]]
-// Convention: unknown
-// Signature: void core_spike_cpp_FUN_005b8950(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_spike_cpp_FUN_005b8950(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_spike.cpp_FUN_005b8950(uint param_1) */
 
-void core_spike_cpp_FUN_005b8950(void)
+void __cdecl core_spike_cpp_FUN_005b8950(void)
 
 {
   CLocation *input_world_point;
@@ -22,8 +22,7 @@ void core_spike_cpp_FUN_005b8950(void)
   CDemonActor *in_stack_00000004;
   byte auStack_1c8 [8];
   float fStack_1c0;
-  byte auStack_15c [56];
-  CDemonActor *pCStack_124;
+  byte auStack_15c [60];
   SCollisionInfo SStack_120;
   CVector3f CStack_f8;
   byte local_ec [12];
@@ -150,7 +149,6 @@ void core_spike_cpp_FUN_005b8950(void)
             auStack_15c._36_4_ = fStack_8c;
           }
           auStack_15c._52_4_ = in_stack_00000004;
-          pCStack_124 = in_stack_00000004;
           (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,(SDamageInfo *)auStack_15c)
           ;
         }

@@ -265,7 +265,7 @@ section .text
         ;   Label: LAB_0041b4ae
     PUSH ECX                            ; 0041b4b5
     CALL core_bodypart.cpp_FUN_0041a050 ; 0041b4b6
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a050()
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
     ADD ESP,0x4                         ; 0041b4bb
     PUSH 0x0                            ; 0041b4be
     LEA EAX,[ESP + 0x4]                 ; 0041b4c0

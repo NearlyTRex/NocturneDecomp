@@ -63,7 +63,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_script.cpp_FUN_005664d0 at 00566616
+;   core_script.cpp_CScript_FUN_005664d0 at 00566616
 ;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 at 004cdbca
 ;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850 at 004d08d0
 ;   engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0 at 004d050d

@@ -1,0 +1,364 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 27,
+        "message": "'stack0xfffffecc' was not declared in this scope; did you mean 'in_stack_fffffecc'?"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 80,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 52,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 56,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 60,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 162,
+    "complexity_score": 209,
+    "cross_reference_count": 2,
+    "function_call_count": 8,
+    "global_count": 3,
+    "pseudocode_lines": 74,
+    "suspect_count": 12,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref",
+      "unnamed_param"
+    ],
+    "total_lines": 236
+  },
+  "cross_references": [
+    {
+      "addr": "0053ea30",
+      "from_addr": "0053eb0a",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053ea30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564090",
+      "from_addr": "00564156",
+      "name": "core_script.cpp_FUN_00564090",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005671a0",
+    "address_range": [
+      [
+        "005671a0",
+        "0056730b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_FUN_005671a0",
+    "signature": "void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,int *param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00567310",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00567310"
+    },
+    {
+      "addr": "00567490",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00567490"
+    },
+    {
+      "addr": "00567510",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00567510"
+    },
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "004a2a20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20"
+    },
+    {
+      "addr": "004a2a40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00644047",
+      "name": "s_none_00644047",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064404c",
+      "name": "s_true_0064404c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00644051",
+      "name": "s_false_00644051",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0053eb0a",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053ea30",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00564156",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00564090",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.357142857142857,
+    "instruction_count": 126,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 13,
+      "CBRANCH": 12,
+      "COPY": 87,
+      "INT_ADD": 42,
+      "INT_AND": 72,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 69,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 34,
+      "INT_SUB": 57,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 14,
+      "POPCOUNT": 34,
+      "RETURN": 1,
+      "STORE": 49
+    },
+    "pcode_op_count": 549
+  },
+  "stack_frame": {
+    "frame_size": 324,
+    "local_size": 312,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_134",
+        "offset": -308,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_133",
+        "offset": -307,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005672d5",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,int *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,int *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_fffffecc",
+      "text": "uint in_stack_fffffecc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "text": "core_script_cpp_CScript_FUN_00567310(this_ptr,param_2,(CBitFont *)&local_20,(int *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xfffffecc",
+      "text": "piVar6 = (int *)&stack0xfffffecc;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_3",
+      "text": "*piVar6 = *param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_3",
+      "text": "param_3 = param_3 + (uint)bVar7 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_3",
+      "text": "param_3 = param_3 + (uint)bVar7 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_fffffecc",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_20,0,in_stack_fffffecc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffecc",
+      "text": "pcVar5 = &stack0xfffffecc;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xfffffecc",
+      "text": "core_script_cpp_CScript_FUN_00567510(this_ptr,(int *)&stack0xfffffecc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 73,
+      "match": "&stack0xfffffecc",
+      "text": "core_script_cpp_CScript_FUN_00567490(this_ptr,(int)pcVar2,(int)&stack0xfffffecc);",
+      "type": "stack_ref"
+    }
+  ]
+}

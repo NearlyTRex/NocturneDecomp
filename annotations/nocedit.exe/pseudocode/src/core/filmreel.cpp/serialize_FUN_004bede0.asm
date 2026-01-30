@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_filmreel_cpp_serialize_FUN_004bede0(void)
+; __cdecl void __cdecl core_filmreel_cpp_serialize_FUN_004bede0(void)
 ;
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004bede1
     PUSH EBX                            ; 004bede5
     CALL core_dest.cpp_CActorDestination_load_FUN_0046fdb0 ; 004bede6
-        ;   XREF to: 0046fdb0 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_CActorDestination_load_FUN_0046fdb0()
+        ;   XREF to: 0046fdb0 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_load_FUN_0046fdb0()
     MOV EDX,dword ptr [0x0067a2fc]      ; 004bedeb | g_CFilmProjectorClassVersion
     ADD ESP,0x4                         ; 004bedf1
     CMP EDX,0x2                         ; 004bedf4

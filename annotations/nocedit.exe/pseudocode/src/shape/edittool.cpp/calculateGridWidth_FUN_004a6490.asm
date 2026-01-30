@@ -7,8 +7,8 @@
 ; XREF[6]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 00507582
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 00507197
-;   core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70 at 00536a27
-;   core_script.cpp_CScript_unk50_FUN_00566660 at 00566701
+;   core_msnedit.cpp_FUN_00535e70 at 00536a27
+;   core_script.cpp_CScript_FUN_00566660 at 00566701
 ;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 at 004a4906
 ;   shape_edittool.cpp_calculateGridHeight_FUN_004a64b0 at 004a64b0
 ;

@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 16,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -33,10 +40,10 @@
         "004423fe"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_conveyor.cpp_FUN_004423f0",
-    "signature": "undefined4 * core_conveyor_cpp_FUN_004423f0(void)"
+    "signature": "int __cdecl core_conveyor_cpp_FUN_004423f0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -100,7 +107,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
+      "text": "return (int)in_stack_00000004;",
       "type": "stack_param"
     }
   ]

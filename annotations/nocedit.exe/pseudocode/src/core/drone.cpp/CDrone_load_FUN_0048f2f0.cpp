@@ -1,14 +1,14 @@
 // Name: core_drone.cpp_CDrone_load_FUN_0048f2f0
 // Address: 0048f2f0
 // Address Range: [[0048f2f0, 0048f35c]]
-// Convention: unknown
-// Signature: void core_drone_cpp_CDrone_load_FUN_0048f2f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drone_cpp_CDrone_load_FUN_0048f2f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_drone.cpp_CDrone_load(CDrone* param_1) */
 
-void core_drone_cpp_CDrone_load_FUN_0048f2f0(void)
+void __cdecl core_drone_cpp_CDrone_load_FUN_0048f2f0(void)
 
 {
   CEnemy *in_stack_00000004;

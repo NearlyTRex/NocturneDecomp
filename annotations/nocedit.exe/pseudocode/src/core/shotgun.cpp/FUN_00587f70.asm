@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_shotgun_cpp_FUN_00587f70(void)
+; __cdecl void __cdecl core_shotgun_cpp_FUN_00587f70(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14

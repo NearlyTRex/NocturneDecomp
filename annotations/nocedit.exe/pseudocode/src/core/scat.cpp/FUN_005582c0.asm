@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_scat_cpp_FUN_005582c0(void)
+; __cdecl void __cdecl core_scat_cpp_FUN_005582c0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
@@ -199,7 +199,7 @@ section .text
         ;   Label: LAB_00558484
     PUSH EBX                            ; 00558485
     CALL core_scat.cpp_FUN_005584a0     ; 00558486
-        ;   XREF to: 005584a0 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_005584a0()
+        ;   XREF to: 005584a0 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_005584a0()
     ADD ESP,0x8                         ; 0055848b
     MOV ESP,EBP                         ; 0055848e
     POP EBP                             ; 00558490

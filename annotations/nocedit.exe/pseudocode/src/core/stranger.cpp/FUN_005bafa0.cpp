@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_FUN_005bafa0
 // Address: 005bafa0
 // Address Range: [[005bafa0, 005bafb9]]
-// Convention: unknown
-// Signature: undefined4 core_stranger_cpp_FUN_005bafa0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_FUN_005bafa0(void)
 
 #include "nocturne.h"
 
-uint core_stranger_cpp_FUN_005bafa0(void)
+int __cdecl core_stranger_cpp_FUN_005bafa0(void)
 
 {
   int in_stack_00000004;

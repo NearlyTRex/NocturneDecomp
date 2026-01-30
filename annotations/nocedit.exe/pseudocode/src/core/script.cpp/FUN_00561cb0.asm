@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_script_cpp_FUN_00561cb0(void)
+; __cdecl int __cdecl core_script_cpp_FUN_00561cb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_script.cpp_SCmdParse_parse_FUN_00561fd0 at 0056230e
+;   core_script.cpp_CCmdParse_parse_FUN_00561fd0 at 0056230e
 ;
 ; Referenced Globals:
 ;   char[256] g_CharacterClassificationTable

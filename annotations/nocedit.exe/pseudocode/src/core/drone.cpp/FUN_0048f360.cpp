@@ -1,15 +1,15 @@
 // Name: core_drone.cpp_FUN_0048f360
 // Address: 0048f360
 // Address Range: [[0048f360, 0048f4c7]]
-// Convention: unknown
-// Signature: void core_drone_cpp_FUN_0048f360(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drone_cpp_FUN_0048f360(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_drone.cpp_FUN_0048f360(uint param_1, uint param_2)
     */
 
-void core_drone_cpp_FUN_0048f360(void)
+void __cdecl core_drone_cpp_FUN_0048f360(void)
 
 {
   float fVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_grave_cpp_FUN_004ee5a0(void)
+; __cdecl void __cdecl core_grave_cpp_FUN_004ee5a0(void)
 ;
 ;
 ; Called Functions:

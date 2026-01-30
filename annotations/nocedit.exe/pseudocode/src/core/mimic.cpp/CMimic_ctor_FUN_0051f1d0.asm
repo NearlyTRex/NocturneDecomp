@@ -38,12 +38,12 @@ section .text
     ADD EAX,0xbf84                      ; 0051f1df
     PUSH EAX                            ; 0051f1e4
     CALL core_cloth.cpp_FUN_00438ba0    ; 0051f1e5
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 0051f1ea
     ADD EAX,0x3fea0                     ; 0051f1ed
     PUSH EAX                            ; 0051f1f2
     CALL core_morph.cpp_FUN_0052b310    ; 0051f1f3
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
     LEA EDX,[EAX + 0xfffb41dc]          ; 0051f1f8
     MOV dword ptr [EDX + 0x154],0x661424 ; 0051f1fe | g_CMimicVTable
     MOV dword ptr [EDX + 0x2ddc],0x3f000000 ; 0051f208

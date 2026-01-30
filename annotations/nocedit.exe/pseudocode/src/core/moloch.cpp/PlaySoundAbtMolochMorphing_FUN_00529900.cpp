@@ -1,15 +1,15 @@
 // Name: core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900
 // Address: 00529900
 // Address Range: [[00529900, 00529947]]
-// Convention: unknown
-// Signature: void core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_moloch.cpp_PlaySoundAbtMolochMorphingToHumanOrDemon(uint
    param_1) */
 
-void core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void)
+void __cdecl core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void)
 
 {
   int in_stack_00000004;

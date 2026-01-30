@@ -1,22 +1,18 @@
 // Name: core_script.cpp_FUN_00567d00
 // Address: 00567d00
 // Address Range: [[00567d00, 00567d25]]
-// Convention: unknown
-// Signature: CVector3f * core_script_cpp_FUN_00567d00(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_script_cpp_FUN_00567d00(CVector3f *param_1,float param_2,float param_3,float param_4)
 
 #include "nocturne.h"
 
-CVector3f * core_script_cpp_FUN_00567d00(void)
+CVector3f * __cdecl
+core_script_cpp_FUN_00567d00(CVector3f *param_1,float param_2,float param_3,float param_4)
 
 {
-  CVector3f *in_stack_00000004;
-  float in_stack_00000008;
-  float in_stack_0000000c;
-  float in_stack_00000010;
-  
-  core_actor_cpp_CVector_ctor_FUN_00410340(in_stack_00000004);
-  in_stack_00000004->x = in_stack_00000008;
-  in_stack_00000004->z = in_stack_0000000c;
-  in_stack_00000004->y = in_stack_00000010;
-  return in_stack_00000004;
+  core_actor_cpp_CVector_ctor_FUN_00410340(param_1);
+  param_1->x = param_2;
+  param_1->z = param_3;
+  param_1->y = param_4;
+  return param_1;
 }

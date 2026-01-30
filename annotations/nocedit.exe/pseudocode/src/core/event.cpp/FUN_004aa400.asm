@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CHero * core_event_cpp_FUN_004aa400(void)
+; __cdecl CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; uint             Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ad941

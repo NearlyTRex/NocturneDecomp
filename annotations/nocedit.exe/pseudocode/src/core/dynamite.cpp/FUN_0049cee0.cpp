@@ -1,14 +1,14 @@
 // Name: core_dynamite.cpp_FUN_0049cee0
 // Address: 0049cee0
 // Address Range: [[0049cee0, 0049cef1]]
-// Convention: unknown
-// Signature: float core_dynamite_cpp_FUN_0049cee0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_dynamite_cpp_FUN_0049cee0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_dynamite.cpp_FUN_0049cee0() */
 
-float core_dynamite_cpp_FUN_0049cee0(void)
+float __cdecl core_dynamite_cpp_FUN_0049cee0(void)
 
 {
   float fVar1;

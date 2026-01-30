@@ -21,11 +21,11 @@ CGun * __cdecl CGun::ctor(CGun *this_ptr);
 
 // Original: core_gun.cpp_FUN_004f0350
 // Address: 004f0350
-undefined4 FUN_004f0350(void);
+int __cdecl FUN_004f0350(void);
 
 // Original: core_gun.cpp_FUN_004f0b20
 // Address: 004f0b20
-float FUN_004f0b20(void);
+float __cdecl FUN_004f0b20(void);
 
 // Original: core_gun.cpp_CGun_dtor_FUN_004f0b50
 // Address: 004f0b50

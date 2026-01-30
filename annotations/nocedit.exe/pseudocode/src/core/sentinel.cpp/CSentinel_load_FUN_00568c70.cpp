@@ -1,14 +1,14 @@
 // Name: core_sentinel.cpp_CSentinel_load_FUN_00568c70
 // Address: 00568c70
 // Address Range: [[00568c70, 00568cc8]]
-// Convention: unknown
-// Signature: void core_sentinel_cpp_CSentinel_load_FUN_00568c70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sentinel_cpp_CSentinel_load_FUN_00568c70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_sentinel.cpp_CSentinel_load(CSentinel* param_1) */
 
-void core_sentinel_cpp_CSentinel_load_FUN_00568c70(void)
+void __cdecl core_sentinel_cpp_CSentinel_load_FUN_00568c70(void)
 
 {
   CEnemy *in_stack_00000004;

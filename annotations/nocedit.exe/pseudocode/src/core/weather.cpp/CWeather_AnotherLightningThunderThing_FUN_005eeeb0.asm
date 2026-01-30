@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0(void)
+; __cdecl void __cdecl core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x98]:4  local_98

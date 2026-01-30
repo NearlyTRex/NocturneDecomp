@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10 at 0040cf2b
 ;   core_actor.cpp_crc32ProcessString_FUN_0040cf90 at 0040cfa7
-;   core_script.cpp_CalculateCRC_FUN_00560d80 at 00560db2
+;   core_script.cpp_CScript_FUN_00560d80 at 00560db2
 ;
 ; *****************************************************************************
 

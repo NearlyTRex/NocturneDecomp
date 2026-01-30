@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_emitter_cpp_FUN_004a8860(void)
+; __cdecl int __cdecl core_emitter_cpp_FUN_004a8860(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xd0]:4  local_d0

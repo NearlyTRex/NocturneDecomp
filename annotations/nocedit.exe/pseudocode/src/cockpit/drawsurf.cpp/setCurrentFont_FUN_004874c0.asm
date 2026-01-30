@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 at 00489ea5
-;   core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80 at 00559ddf
+;   core_script.cpp_CScript_FUN_00559d80 at 00559ddf
 ;
 ; Referenced Globals:
 ;   CBitFont* g_CurrentFont

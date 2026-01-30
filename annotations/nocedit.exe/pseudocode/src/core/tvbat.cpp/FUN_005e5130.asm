@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_tvbat_cpp_FUN_005e5130(void)
+; __cdecl void __cdecl core_tvbat_cpp_FUN_005e5130(void)
 ;
 ;
 ; Referenced Globals:
@@ -33,7 +33,7 @@ section .text
     PUSH ECX                            ; 005e5155
     PUSH EBX                            ; 005e5156
     CALL core_enemy.cpp_FUN_004a9f10    ; 005e5157
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 005e515c
     POP EBX                             ; 005e515f
     RET                                 ; 005e5160
@@ -47,14 +47,14 @@ section .text
     PUSH EDX                            ; 005e5171 | g_CGoreInstance
     MOV dword ptr [EBX + 0x243c],0x0    ; 005e5172
     CALL core_gore.cpp_FUN_004edbb0     ; 005e517c
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 005e5181
     MOV dword ptr [EBX + 0xc078],0x1    ; 005e5184
     MOV ECX,dword ptr [ESP + 0xc]       ; 005e518e
     PUSH ECX                            ; 005e5192
     PUSH EBX                            ; 005e5193
     CALL core_enemy.cpp_FUN_004a9f10    ; 005e5194
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 005e5199
     POP EBX                             ; 005e519c
     RET                                 ; 005e519d

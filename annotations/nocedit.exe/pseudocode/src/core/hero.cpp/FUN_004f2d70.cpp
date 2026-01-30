@@ -1,12 +1,12 @@
 // Name: core_hero.cpp_FUN_004f2d70
 // Address: 004f2d70
 // Address Range: [[004f2d70, 004f2ec0]]
-// Convention: unknown
-// Signature: int core_hero_cpp_FUN_004f2d70(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_hero_cpp_FUN_004f2d70(void)
 
 #include "nocturne.h"
 
-int core_hero_cpp_FUN_004f2d70(void)
+int __cdecl core_hero_cpp_FUN_004f2d70(void)
 
 {
   float fVar1;
@@ -42,7 +42,7 @@ int core_hero_cpp_FUN_004f2d70(void)
       if ((0.0 < pCVar5->z) &&
          ((ABS(fVar1 - fVar2) <= (float)5 &&
           (SQRT(fVar4 * fVar4 + fVar3 * fVar3) < (float)4)))) {
-        iVar6 = core_event_cpp_FUN_004b18e0();
+        iVar6 = core_event_cpp_FUN_004b18e0(&this_ptr->open_rules);
         if (iVar6 != 0) {
           return 1;
         }

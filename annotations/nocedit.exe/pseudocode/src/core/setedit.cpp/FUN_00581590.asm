@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_FUN_00581590(void)
+; __cdecl void __cdecl core_setedit_cpp_FUN_00581590(void)
 ;
 ;
 ; Referenced Globals:

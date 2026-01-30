@@ -155,7 +155,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 0042c2ce | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0042c2d4 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 0042c2d5
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 0042c2da
     FLD float ptr [ESP + 0x48]          ; 0042c2dd
         ;   Label: LAB_0042c2dd

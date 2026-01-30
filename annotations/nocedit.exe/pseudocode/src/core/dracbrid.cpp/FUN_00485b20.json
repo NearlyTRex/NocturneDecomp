@@ -1,54 +1,29 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 58,
-        "line": 22,
-        "message": "invalid conversion from 'CBodyPart*' to 'int' [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 30,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 31,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 154,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 31,
     "suspect_count": 12,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 82
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -66,9 +41,9 @@
         "00485bb9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dracbrid.cpp_FUN_00485b20",
-    "signature": "void core_dracbrid_cpp_FUN_00485b20(void)"
+    "signature": "void __cdecl core_dracbrid_cpp_FUN_00485b20(void)"
   },
   "function_calls": [
     {
@@ -187,21 +162,21 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].model.motion_controller.current_motion_name +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base.unk13 * 4 + -0x40) = iVar2;",
+      "text": "(in_stack_00000004[1].model.motion_controller.current_motion_name +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].base.unk13 * 4 + -0x40) = pCVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "piVar1 = &in_stack_00000004[1].base.unk13;",
       "type": "stack_param"

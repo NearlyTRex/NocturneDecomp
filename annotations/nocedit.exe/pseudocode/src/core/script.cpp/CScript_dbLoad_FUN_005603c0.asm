@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
+; __cdecl void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined1       Stack[-0x334]:1  local_334
 ; undefined1       Stack[-0x333]:1  local_333
@@ -16,7 +19,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80 at 0055a026
+;   core_script.cpp_CScript_FUN_00559f80 at 0055a026
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_world_006432a2
@@ -38,8 +41,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   core_script.cpp_CScript_FUN_005606e0
 ;   core_script.cpp_FUN_00559360
-;   core_script.cpp_FUN_005606e0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -138,17 +141,17 @@ section .text
         ;   Label: LAB_005604b0
     PUSH EAX                            ; 005604b4
     CALL core_script.cpp_FUN_00559360   ; 005604b5
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00559360()
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
     ADD ESP,0x4                         ; 005604ba
     LEA EAX,[ESP + 0x80]                ; 005604bd
     PUSH EAX                            ; 005604c4
     CALL core_script.cpp_FUN_00559360   ; 005604c5
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00559360()
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
     ADD ESP,0x4                         ; 005604ca
     LEA EAX,[ESP + 0x9e]                ; 005604cd
     PUSH EAX                            ; 005604d4
     CALL core_script.cpp_FUN_00559360   ; 005604d5
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00559360()
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
     ADD ESP,0x4                         ; 005604da
     PUSH 0x64332f                       ; 005604dd | = "stranger"
     LEA EAX,[ESP + 0x84]                ; 005604e2
@@ -209,8 +212,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0056055c
     PUSH EAX                            ; 00560560
     PUSH EBX                            ; 00560561
-    CALL core_script.cpp_FUN_005606e0   ; 00560562
-        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005606e0()
+    CALL core_script.cpp_CScript_FUN_005606e0 ; 00560562
+        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005606e0(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 00560567
     TEST EAX,EAX                        ; 0056056a
     JL 0x0056058f                       ; 0056056c

@@ -1,8 +1,8 @@
 // Name: core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510
 // Address: 005e7510
 // Address Range: [[005e7510, 005e75ec]]
-// Convention: unknown
-// Signature: void core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* Signature: byte actors_enemy_vampboss.cpp_CVampireBoss_chooseDestWayPoint(CVampireBoss*
    param_1) */
 
-void core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
+void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
 
 {
   CHero *pCVar1;

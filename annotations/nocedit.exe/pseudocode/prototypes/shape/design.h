@@ -133,11 +133,11 @@ void __cdecl calculatePolygonNormal(SShapeEditorPolygon *polygon);
 
 // Original: shape_design.c_createPolygonFromVertexList_FUN_0045cc80
 // Address: 0045cc80
-void createPolygonFromVertexList(void);
+void __cdecl createPolygonFromVertexList(void);
 
 // Original: shape_design.c_doNothing_FUN_0045ce00
 // Address: 0045ce00
-void doNothing(void);
+void __cdecl doNothing(void);
 
 // Original: shape_design.c_renderSinglePolygon_FUN_0045ce20
 // Address: 0045ce20
@@ -165,47 +165,47 @@ void __cdecl renderEditorBackgroundOverlay(void);
 
 // Original: shape_design.c_showPolygonDetailsList_FUN_0045d9c0
 // Address: 0045d9c0
-void showPolygonDetailsList(void);
+void __cdecl showPolygonDetailsList(void);
 
 // Original: shape_design.c_showModelPartsList_FUN_0045dbe0
 // Address: 0045dbe0
-void showModelPartsList(void);
+void __cdecl showModelPartsList(void);
 
 // Original: shape_design.c_deleteSinglePolygon_FUN_0045dcc0
 // Address: 0045dcc0
-void deleteSinglePolygon(void);
+void __cdecl deleteSinglePolygon(void);
 
 // Original: shape_design.c_deletePolygonRange_FUN_0045dd70
 // Address: 0045dd70
-void deletePolygonRange(void);
+void __cdecl deletePolygonRange(void);
 
 // Original: shape_design.c_selectModelPart_FUN_0045de80
 // Address: 0045de80
-void selectModelPart(void);
+void __cdecl selectModelPart(void);
 
 // Original: shape_design.c_createQuadPolygon_FUN_0045df60
 // Address: 0045df60
-void createQuadPolygon(void);
+void __cdecl createQuadPolygon(void);
 
 // Original: shape_design.c_createReversedQuadPolygon_FUN_0045e040
 // Address: 0045e040
-void createReversedQuadPolygon(void);
+void __cdecl createReversedQuadPolygon(void);
 
 // Original: shape_design.c_createRotationalSweepGeometry_FUN_0045e070
 // Address: 0045e070
-void createRotationalSweepGeometry(void);
+void __cdecl createRotationalSweepGeometry(void);
 
 // Original: shape_design.c_createBoxPrimitive_FUN_0045e520
 // Address: 0045e520
-void createBoxPrimitive(void);
+void __cdecl createBoxPrimitive(void);
 
 // Original: shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
 // Address: 0045ea90
-void centerVerticesAroundPoint(void);
+void __cdecl centerVerticesAroundPoint(void);
 
 // Original: shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 // Address: 0045ec90
-void translateAllVerticesAlongAxis(void);
+void __cdecl translateAllVerticesAlongAxis(void);
 
 // Original: shape_design.c_realignObject_FUN_0045ee70
 // Address: 0045ee70
@@ -225,11 +225,11 @@ int __cdecl checkVertexCountLimit(void);
 
 // Original: shape_design.c_showFacetPartEditorHelp_FUN_00460ac0
 // Address: 00460ac0
-void showFacetPartEditorHelp(void);
+void __cdecl showFacetPartEditorHelp(void);
 
 // Original: shape_design.c_displayPalette_FUN_00461560
 // Address: 00461560
-void displayPalette(void);
+void __cdecl displayPalette(void);
 
 // Original: shape_design.c_renderPolygonsByPart_FUN_004616a0
 // Address: 004616a0
@@ -617,7 +617,7 @@ void __cdecl normalizeUVCoordinates(void);
 
 // Original: shape_design.c_triangulateDSE_FUN_0046e4d0
 // Address: 0046e4d0
-void triangulateDSE(void);
+void __cdecl triangulateDSE(void);
 
 // Original: shape_design.c_clearAllTextureNames_FUN_0046e6b0
 // Address: 0046e6b0
@@ -633,7 +633,7 @@ void __cdecl displayHeapStatus(int line_number);
 
 // Original: shape_design.c_loadPalette_FUN_0046e810
 // Address: 0046e810
-void loadPalette(void);
+void __cdecl loadPalette(void);
 
 // Original: shape_design.c_multicramTextures_FUN_0046eb80
 // Address: 0046eb80

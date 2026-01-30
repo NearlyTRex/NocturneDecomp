@@ -1,12 +1,12 @@
 // Name: core_boneguy.cpp_FUN_0041b700
 // Address: 0041b700
 // Address Range: [[0041b700, 0041b76d]]
-// Convention: unknown
-// Signature: float * core_boneguy_cpp_FUN_0041b700(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_boneguy_cpp_FUN_0041b700(void)
 
 #include "nocturne.h"
 
-float * core_boneguy_cpp_FUN_0041b700(void)
+float * __cdecl core_boneguy_cpp_FUN_0041b700(void)
 
 {
   float fVar1;

@@ -25,11 +25,11 @@ void __cdecl CWaterActor(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_FUN_005eafa0
 // Address: 005eafa0
-void FUN_005eafa0(void);
+void __cdecl FUN_005eafa0(void);
 
 // Original: core_wateract.cpp_FUN_005eb040
 // Address: 005eb040
-void FUN_005eb040(void);
+void __cdecl FUN_005eb040(void);
 
 // Original: core_wateract.cpp_CWaterActor_process_FUN_005eb100
 // Address: 005eb100
@@ -93,4 +93,4 @@ SWaterVertex * __cdecl SWaterVertex::dtor(SWaterVertex *this_ptr);
 
 // Original: core_wateract.cpp_FUN_005ebcf0
 // Address: 005ebcf0
-void FUN_005ebcf0(void);
+void __cdecl FUN_005ebcf0(void);

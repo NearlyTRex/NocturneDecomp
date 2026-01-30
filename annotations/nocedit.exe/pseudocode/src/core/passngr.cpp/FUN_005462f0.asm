@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_passngr_cpp_FUN_005462f0(void)
+; __cdecl void __cdecl core_passngr_cpp_FUN_005462f0(void)
 ;
 ;
 ; Called Functions:

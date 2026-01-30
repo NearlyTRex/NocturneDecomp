@@ -1,12 +1,12 @@
 // Name: core_procedur.cpp_FUN_00554670
 // Address: 00554670
 // Address Range: [[00554670, 0055487b]]
-// Convention: unknown
-// Signature: void core_procedur_cpp_FUN_00554670(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_procedur_cpp_FUN_00554670(void)
 
 #include "nocturne.h"
 
-void core_procedur_cpp_FUN_00554670(void)
+void __cdecl core_procedur_cpp_FUN_00554670(void)
 
 {
   float fVar1;

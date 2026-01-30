@@ -1,14 +1,14 @@
 // Name: core_flies.cpp_FUN_004cca50
 // Address: 004cca50
 // Address Range: [[004cca50, 004cca9d]]
-// Convention: unknown
-// Signature: CDemonActor * core_flies_cpp_FUN_004cca50(void)
+// Convention: __cdecl
+// Signature: CDemonActor * __cdecl core_flies_cpp_FUN_004cca50(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flies.cpp_FUN_004cca50(uint param_1) */
 
-CDemonActor * core_flies_cpp_FUN_004cca50(void)
+CDemonActor * __cdecl core_flies_cpp_FUN_004cca50(void)
 
 {
   CDemonActor *pCVar1;

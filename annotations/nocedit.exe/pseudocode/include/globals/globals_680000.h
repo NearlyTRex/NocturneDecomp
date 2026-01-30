@@ -301,6 +301,7 @@ extern dst_rule g_DstStartRule;
 extern float g_MaxSoftwareLatency;
 
 // int
+extern int INT_00680648;
 extern int g_DynamicRenderMode;
 extern int g_ConfirmNewActorNames;
 extern int g_CNPCClassVersion;
@@ -452,7 +453,6 @@ extern undefined1 DAT_0068500c;
 extern undefined1 DAT_006852db;
 
 // undefined4
-extern undefined4 DAT_00680648;
 extern undefined4 DAT_00680818;
 extern undefined4 DAT_00680830;
 extern undefined4 DAT_00680834;

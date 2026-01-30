@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_FUN_005624f0(void)
+; __cdecl void __cdecl core_script_cpp_FUN_005624f0(int param_1,char *param_2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00565f70 at 00566013
+;   core_script.cpp_CScript_FUN_00565f70 at 00566013
 ;
 ; *****************************************************************************
 

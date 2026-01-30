@@ -1,14 +1,14 @@
 // Name: core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310
 // Address: 00580310
 // Address Range: [[00580310, 00580553]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_setedit.cpp_SomethingMemoryConstructorMaybe(uint param_1) */
 
-void core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310(void)
+void __cdecl core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310(void)
 
 {
   int iVar1;

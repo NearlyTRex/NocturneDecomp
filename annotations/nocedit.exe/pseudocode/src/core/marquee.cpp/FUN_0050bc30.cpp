@@ -1,12 +1,12 @@
 // Name: core_marquee.cpp_FUN_0050bc30
 // Address: 0050bc30
 // Address Range: [[0050bc30, 0050bd53]]
-// Convention: unknown
-// Signature: void core_marquee_cpp_FUN_0050bc30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_marquee_cpp_FUN_0050bc30(void)
 
 #include "nocturne.h"
 
-void core_marquee_cpp_FUN_0050bc30(void)
+void __cdecl core_marquee_cpp_FUN_0050bc30(void)
 
 {
   CCourse *this_ptr;

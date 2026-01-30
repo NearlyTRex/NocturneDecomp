@@ -1,15 +1,15 @@
 // Name: core_weather.cpp_CWeather_FUN_005ef940
 // Address: 005ef940
 // Address Range: [[005ef940, 005ef99b] [005efb24, 005efb3f]]
-// Convention: unknown
-// Signature: void core_weather_cpp_CWeather_FUN_005ef940(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_weather_cpp_CWeather_FUN_005ef940(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_weather.cpp_CWeather_FUN_005ef940(CWeather* param_1, uint
    param_2, uint param_3) */
 
-void core_weather_cpp_CWeather_FUN_005ef940(void)
+void __cdecl core_weather_cpp_CWeather_FUN_005ef940(void)
 
 {
   float fVar1;

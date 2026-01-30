@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 004ee0ce
     PUSH EDX                            ; 004ee0cf
     CALL core_gore.cpp_FUN_004ed240     ; 004ee0d0
-        ;   XREF to: 004ed240 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed240()
+        ;   XREF to: 004ed240 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed240()
     ADD ESP,0x18                        ; 004ee0d5
     POP EBP                             ; 004ee0d8
     POP EDI                             ; 004ee0d9

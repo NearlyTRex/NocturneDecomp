@@ -1,37 +1,39 @@
 // Name: core_frankgen.cpp_FUN_004d1f70
 // Address: 004d1f70
 // Address Range: [[004d1f70, 004d20e4]]
-// Convention: unknown
-// Signature: int core_frankgen_cpp_FUN_004d1f70(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_frankgen_cpp_FUN_004d1f70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_frankgen.cpp_FUN_004d1f70(uint param_1) */
 
-int core_frankgen_cpp_FUN_004d1f70(void)
+int __cdecl core_frankgen_cpp_FUN_004d1f70(void)
 
 {
   int iVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CBoundingBox3D *this_ptr;
+  int iVar3;
   CDemonActor *extraout_EBX;
-  float10 fVar3;
-  double dVar4;
+  float10 fVar4;
+  double dVar5;
   CDemonActor *in_stack_00000004;
-  float fVar5;
+  float fVar6;
   double input_value;
   
   if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
-    iVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
-    *(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar2 + 0x15c);
+    pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
+    *(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(pCVar2[1].actor_name + 4)
+    ;
     core_frankgen_cpp_LoadModel_FUN_004d2190();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
   this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffcc);
-  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
-  if (iVar2 != 0) {
-    fVar5 = -NAN;
+  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
+  if (iVar3 != 0) {
+    fVar6 = -NAN;
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               ((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,
                in_stack_00000004[1].location.position.z,-1);
@@ -41,22 +43,22 @@ int core_frankgen_cpp_FUN_004d1f70(void)
          (0x44f9ffff < iVar1)) {
         input_value = (double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000.0f) *
                                (float)3 * 0.005f);
-        dVar4 = floor(input_value);
-        fVar3 = (float10)(float)((ulonglong)input_value >> 0x20) -
-                (float10)dVar4 * (float10)200;
-        fVar5 = (float)fVar3;
-        if ((float10)100.0f < fVar3) {
-          fVar5 = 200.0f - fVar5;
+        dVar5 = floor(input_value);
+        fVar4 = (float10)(float)((ulonglong)input_value >> 0x20) -
+                (float10)dVar5 * (float10)200;
+        fVar6 = (float)fVar4;
+        if ((float10)100.0f < fVar4) {
+          fVar6 = 200.0f - fVar6;
         }
-        fVar5 = fVar5 + 99.0f;
+        fVar6 = fVar6 + 99.0f;
         in_stack_00000004 = extraout_EBX;
       }
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                ((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar5,-1);
+                ((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar6,-1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
-      return iVar2;
+      return iVar3;
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
-  return iVar2;
+  return iVar3;
 }

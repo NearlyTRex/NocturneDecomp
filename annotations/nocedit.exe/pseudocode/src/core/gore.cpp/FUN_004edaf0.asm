@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CBloodSplat * core_gore_cpp_FUN_004edaf0(void)
+; __cdecl CBloodSplat * __cdecl core_gore_cpp_FUN_004edaf0(void)
 ;
 ;
 ; XREF[2]:

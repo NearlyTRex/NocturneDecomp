@@ -133,12 +133,12 @@
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 348,
+    "complexity_score": 288,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 48,
-    "suspect_count": 29,
+    "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
@@ -161,9 +161,9 @@
         "00440db3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_colquant.c_FUN_00440c80",
-    "signature": "void engine_colquant_c_FUN_00440c80(void)"
+    "signature": "void __cdecl engine_colquant_c_FUN_00440c80(void)"
   },
   "function_calls": [
     {
@@ -340,14 +340,7 @@
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 * 0x40;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 * 0x40;",
+      "text": "iVar2 = in_stack_00000008 * 0x40;",
       "type": "stack_param"
     },
     {
@@ -367,15 +360,8 @@
     {
       "description": "Unresolved stack parameter",
       "line": 41,
-      "match": "in_stack_00000008",
-      "text": "iVar5 = *(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
       "match": "in_stack_00000004",
-      "text": "iVar5 = *(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004);",
+      "text": "iVar5 = *(int *)(iVar2 + 0x4044 + in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -395,57 +381,29 @@
     {
       "description": "Unresolved stack parameter",
       "line": 43,
-      "match": "in_stack_00000008",
-      "text": "iVar5 - (iVar4 - *(int *)(in_stack_00000008 + 0x4040 + in_stack_00000004));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
       "match": "in_stack_00000004",
-      "text": "iVar5 - (iVar4 - *(int *)(in_stack_00000008 + 0x4040 + in_stack_00000004));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000008",
-      "text": "*(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004) =",
+      "text": "iVar5 - (iVar4 - *(int *)(iVar2 + 0x4040 + in_stack_00000004));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000008",
-      "text": "iVar4 - *(int *)(in_stack_00000008 + 0x4040 + in_stack_00000004);",
+      "text": "*(int *)(iVar2 + 0x4044 + in_stack_00000004) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000004",
-      "text": "iVar4 - *(int *)(in_stack_00000008 + 0x4040 + in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000008",
-      "text": "*(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004) = iVar5;",
+      "text": "iVar4 - *(int *)(iVar2 + 0x4040 + in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004) = iVar5;",
+      "text": "*(int *)(iVar2 + 0x4044 + in_stack_00000004) = iVar5;",
       "type": "stack_param"
     },
     {

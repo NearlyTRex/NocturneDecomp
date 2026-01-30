@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 shape_superopt_cpp_FUN_005cbec0(void)
+; __cdecl int __cdecl shape_superopt_cpp_FUN_005cbec0(void)
 ;
 ;
 ; XREF[1]:

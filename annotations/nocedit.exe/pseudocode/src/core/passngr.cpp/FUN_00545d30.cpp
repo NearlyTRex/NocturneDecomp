@@ -1,14 +1,14 @@
 // Name: core_passngr.cpp_FUN_00545d30
 // Address: 00545d30
 // Address Range: [[00545d30, 00545ee7]]
-// Convention: unknown
-// Signature: void core_passngr_cpp_FUN_00545d30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_passngr_cpp_FUN_00545d30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_passenger.cpp_FUN_00545d30(uint param_1) */
 
-void core_passngr_cpp_FUN_00545d30(void)
+void __cdecl core_passngr_cpp_FUN_00545d30(void)
 
 {
   COrientation *pCVar1;

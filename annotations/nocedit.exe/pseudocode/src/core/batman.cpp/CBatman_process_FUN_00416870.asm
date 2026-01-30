@@ -585,7 +585,7 @@ section .text
     PUSH EBX                            ; 00416db9
     MOV dword ptr [EBX + 0xbf58],0x0    ; 00416dba
     CALL core_batman.cpp_FUN_004167f0   ; 00416dc4
-        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; undefined core_batman.cpp_FUN_004167f0()
+        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_FUN_004167f0()
     ADD ESP,0x4                         ; 00416dc9
     JMP 0x00416970                      ; 00416dcc
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default
@@ -633,7 +633,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 00416e35 | g_CGorePtr
     PUSH EDI                            ; 00416e3b | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 00416e3c
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 00416e41
     MOV dword ptr [EBX + 0xbe28],0x1    ; 00416e44
     JMP 0x00416970                      ; 00416e4e
@@ -761,7 +761,7 @@ section .text
     PUSH EAX                            ; 00416fb4
     PUSH EBX                            ; 00416fb5
     CALL core_enemy.cpp_FUN_004a9880    ; 00416fb6
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00416fbb
     JMP 0x00416970                      ; 00416fbe
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default
@@ -856,7 +856,7 @@ section .text
     PUSH EBX                            ; 004170ac
         ;   Label: LAB_004170ac
     CALL core_batman.cpp_FUN_004167f0   ; 004170ad
-        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; undefined core_batman.cpp_FUN_004167f0()
+        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_FUN_004167f0()
     ADD ESP,0x4                         ; 004170b2
     JMP 0x00416970                      ; 004170b5
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default

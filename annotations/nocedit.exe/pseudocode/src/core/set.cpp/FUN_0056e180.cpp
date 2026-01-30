@@ -1,12 +1,12 @@
 // Name: core_set.cpp_FUN_0056e180
 // Address: 0056e180
 // Address Range: [[0056e180, 0056e2a3]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_0056e180(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_0056e180(void)
 
 #include "nocturne.h"
 
-void core_set_cpp_FUN_0056e180(void)
+void __cdecl core_set_cpp_FUN_0056e180(void)
 
 {
   int *piVar1;

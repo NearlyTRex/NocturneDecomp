@@ -1,14 +1,14 @@
 // Name: core_icepick.cpp_FUN_004f80b0
 // Address: 004f80b0
 // Address Range: [[004f80b0, 004f8807]]
-// Convention: unknown
-// Signature: void core_icepick_cpp_FUN_004f80b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_icepick_cpp_FUN_004f80b0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004f86be) */
 
-void core_icepick_cpp_FUN_004f80b0(void)
+void __cdecl core_icepick_cpp_FUN_004f80b0(void)
 
 {
   bool bVar1;
@@ -224,7 +224,7 @@ LAB_004f8417:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->model).motion_controller,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
           goto LAB_004f81b6;
         }
         goto LAB_004f8417;

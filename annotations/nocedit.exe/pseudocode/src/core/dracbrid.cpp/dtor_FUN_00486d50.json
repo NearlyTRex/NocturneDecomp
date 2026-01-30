@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 41,
-        "line": 14,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -26,13 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 6,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
     "total_lines": 16
   },
   "cross_references": [],
@@ -101,7 +96,22 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "return (SFreaky *)(extraout_EAX + -0x20);",
+      "type": "extra_output"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

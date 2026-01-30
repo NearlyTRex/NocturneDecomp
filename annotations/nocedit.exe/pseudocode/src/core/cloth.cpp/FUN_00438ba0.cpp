@@ -1,12 +1,12 @@
 // Name: core_cloth.cpp_FUN_00438ba0
 // Address: 00438ba0
 // Address Range: [[00438ba0, 00438bf7]]
-// Convention: unknown
-// Signature: int core_cloth_cpp_FUN_00438ba0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_cloth_cpp_FUN_00438ba0(void)
 
 #include "nocturne.h"
 
-int core_cloth_cpp_FUN_00438ba0(void)
+int __cdecl core_cloth_cpp_FUN_00438ba0(void)
 
 {
   CKeyFramedModel *pCVar1;

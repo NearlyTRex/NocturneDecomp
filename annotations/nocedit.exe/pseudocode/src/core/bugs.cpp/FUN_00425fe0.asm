@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bugs_cpp_FUN_00425fe0(void)
+; __cdecl void __cdecl core_bugs_cpp_FUN_00425fe0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x184]:4  local_184
@@ -178,7 +178,7 @@ section .text
     PUSH EBX                            ; 00426149
     INC EDI                             ; 0042614a
     CALL core_bugs.cpp_FUN_004268e0     ; 0042614b
-        ;   XREF to: 004268e0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004268e0()
+        ;   XREF to: 004268e0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004268e0()
     ADD ESI,0x40                        ; 00426150
     MOV ECX,dword ptr [EBX + 0xbec0]    ; 00426153
     ADD ESP,0xc                         ; 00426159
@@ -188,7 +188,7 @@ section .text
     PUSH EBX                            ; 00426160
         ;   Label: LAB_00426160
     CALL core_bugs.cpp_FUN_004272f0     ; 00426161
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004272f0()
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004272f0()
     LEA EAX,[EBX + 0x199cc]             ; 00426166
     LEA ESI,[EBX + 0x199d8]             ; 0042616c
     FLD float ptr [EAX]                 ; 00426172
@@ -229,7 +229,7 @@ section .text
     PUSH EBX                            ; 004261ff
     FSTP float ptr [ESP + 0x164]        ; 00426200
     CALL core_bugs.cpp_FUN_004276c0     ; 00426207
-        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004276c0()
+        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004276c0()
     ADD ESP,0x8                         ; 0042620c
     MOV ESP,EBP                         ; 0042620f
     POP EBP                             ; 00426211
@@ -279,7 +279,7 @@ section .text
     ADD EAX,0x20                        ; 00426289
     PUSH EAX                            ; 0042628c
     CALL core_path.cpp_FUN_00548500     ; 0042628d
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 00426292
     MOV EDX,EAX                         ; 00426295
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00426297
@@ -354,12 +354,12 @@ section .text
     PUSH EAX                            ; 004263ab
     PUSH EBX                            ; 004263ac
     CALL core_bugs.cpp_FUN_004276c0     ; 004263ad
-        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004276c0()
+        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004276c0()
     ADD ESP,0x8                         ; 004263b2
     PUSH EBX                            ; 004263b5
         ;   Label: LAB_004263b5
     CALL core_bugs.cpp_FUN_004257f0     ; 004263b6
-        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004257f0()
+        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004257f0()
     ADD ESP,0x4                         ; 004263bb
     JMP 0x00426034                      ; 004263be
         ;   XREF to: 00426034 (UNCONDITIONAL_JUMP)  ; LAB_00426034
@@ -380,7 +380,7 @@ section .text
         ;   XREF to: 00426267 (CONDITIONAL_JUMP)  ; LAB_00426267
     PUSH EBX                            ; 004263f3
     CALL core_bugs.cpp_FUN_004257f0     ; 004263f4
-        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004257f0()
+        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004257f0()
     ADD ESP,0x4                         ; 004263f9
     JMP 0x00426034                      ; 004263fc
         ;   XREF to: 00426034 (UNCONDITIONAL_JUMP)  ; LAB_00426034

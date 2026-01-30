@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void)
+; __cdecl void __cdecl core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void)
 ;
 ;
 ; XREF[1]:

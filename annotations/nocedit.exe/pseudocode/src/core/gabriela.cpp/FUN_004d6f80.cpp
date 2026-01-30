@@ -1,15 +1,15 @@
 // Name: core_gabriela.cpp_FUN_004d6f80
 // Address: 004d6f80
 // Address Range: [[004d6f80, 004d711f]]
-// Convention: unknown
-// Signature: void core_gabriela_cpp_FUN_004d6f80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gabriela_cpp_FUN_004d6f80(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d6f80(uint param_1, uint
    param_2, uint param_3, uint param_4, uint param_5, uint param_6) */
 
-void core_gabriela_cpp_FUN_004d6f80(void)
+void __cdecl core_gabriela_cpp_FUN_004d6f80(void)
 
 {
   CDeformableModelInstance *this_ptr;

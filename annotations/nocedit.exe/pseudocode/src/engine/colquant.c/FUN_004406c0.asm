@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int * engine_colquant_c_FUN_004406c0(void)
+; __cdecl int * __cdecl engine_colquant_c_FUN_004406c0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x160]:8  local_160
@@ -131,7 +131,7 @@ section .text
     PUSH EAX                            ; 004407d9
     MOV dword ptr [EAX + 0x4044],ESI    ; 004407da
     CALL engine_colquant.c_FUN_00441260 ; 004407e0
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441260()
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00441260()
     ADD ESP,0x8                         ; 004407e5
     PUSH ESI                            ; 004407e8
     PUSH 0x618d41                       ; 004407e9 | = "Subdividing histogram array for %d pa..."
@@ -257,7 +257,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00440922
     PUSH EAX                            ; 00440925
     CALL engine_colquant.c_FUN_00440b40 ; 00440926
-        ;   XREF to: 00440b40 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00440b40()
+        ;   XREF to: 00440b40 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00440b40()
     ADD ESP,0xc                         ; 0044092b
     JMP 0x0044091a                      ; 0044092e
         ;   XREF to: 0044091a (UNCONDITIONAL_JUMP)  ; LAB_0044091a
@@ -267,7 +267,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 00440932
     PUSH ESI                            ; 00440935
     CALL engine_colquant.c_FUN_00440c80 ; 00440936
-        ;   XREF to: 00440c80 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00440c80()
+        ;   XREF to: 00440c80 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00440c80()
     ADD ESP,0xc                         ; 0044093b
     JMP 0x0044091a                      ; 0044093e
         ;   XREF to: 0044091a (UNCONDITIONAL_JUMP)  ; LAB_0044091a
@@ -277,7 +277,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 00440942
     PUSH ECX                            ; 00440945
     CALL engine_colquant.c_FUN_00440dc0 ; 00440946
-        ;   XREF to: 00440dc0 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00440dc0()
+        ;   XREF to: 00440dc0 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00440dc0()
     ADD ESP,0xc                         ; 0044094b
     JMP 0x0044091a                      ; 0044094e
         ;   XREF to: 0044091a (UNCONDITIONAL_JUMP)  ; LAB_0044091a
@@ -287,7 +287,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00440952
     PUSH EDX                            ; 00440955
     CALL engine_colquant.c_FUN_00440f00 ; 00440956
-        ;   XREF to: 00440f00 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00440f00()
+        ;   XREF to: 00440f00 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00440f00()
     ADD ESP,0xc                         ; 0044095b
     INC EBX                             ; 0044095e
     JMP 0x00440813                      ; 0044095f

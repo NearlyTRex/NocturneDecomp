@@ -1,14 +1,14 @@
 // Name: core_crate.cpp_FUN_00448660
 // Address: 00448660
 // Address Range: [[00448660, 0044887d]]
-// Convention: unknown
-// Signature: void core_crate_cpp_FUN_00448660(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_crate_cpp_FUN_00448660(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_crate.cpp_FUN_00448660(uint param_1) */
 
-void core_crate_cpp_FUN_00448660(void)
+void __cdecl core_crate_cpp_FUN_00448660(void)
 
 {
   int iVar1;

@@ -165,7 +165,7 @@ section .text
     PUSH EDX                            ; 004c4d3b
         ;   Label: LAB_004c4d3b
     CALL core_flamecan.cpp_FUN_004cb340 ; 004c4d3c
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_FUN_004cb340()
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cb340()
     ADD ESP,0x4                         ; 004c4d41
     JMP 0x004c4cae                      ; 004c4d44
         ;   XREF to: 004c4cae (UNCONDITIONAL_JUMP)  ; LAB_004c4cae

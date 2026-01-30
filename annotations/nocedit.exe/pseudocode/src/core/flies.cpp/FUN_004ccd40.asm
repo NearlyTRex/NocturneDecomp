@@ -19,7 +19,7 @@ section .text
     ADD EAX,0x4                         ; 004ccd46
     PUSH EAX                            ; 004ccd49
     CALL core_dracbrid.cpp_FUN_00486e30 ; 004ccd4a
-        ;   XREF to: 00486e30 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_FUN_00486e30()
+        ;   XREF to: 00486e30 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_00486e30()
     ADD ESP,0x8                         ; 004ccd4f
     SUB EAX,0x4                         ; 004ccd52
     RET                                 ; 004ccd55

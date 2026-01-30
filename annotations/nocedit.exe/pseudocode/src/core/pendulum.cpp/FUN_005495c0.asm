@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_pendulum_cpp_FUN_005495c0(void)
+; __cdecl void __cdecl core_pendulum_cpp_FUN_005495c0(void)
 ;
 ;
 ; XREF[1]:
@@ -412,7 +412,7 @@ section .text
     MOV EBX,dword ptr [0x0067b9a0]      ; 00549a7d | g_CGoreInstance | g_CGorePtr
     PUSH EBX                            ; 00549a83 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 00549a84
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 00549a89
     MOV ESP,EBP                         ; 00549a8c
     POP EBP                             ; 00549a8e

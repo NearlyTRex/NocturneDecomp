@@ -1,15 +1,15 @@
 // Name: core_flamecan.cpp_FUN_004cb750
 // Address: 004cb750
 // Address Range: [[004cb750, 004cb799]]
-// Convention: unknown
-// Signature: void core_flamecan_cpp_FUN_004cb750(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flamecan_cpp_FUN_004cb750(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_FUN_004cb750(uint param_1, uint param_2)
     */
 
-void core_flamecan_cpp_FUN_004cb750(void)
+void __cdecl core_flamecan_cpp_FUN_004cb750(void)
 
 {
   CKeyFramedModel *pCVar1;

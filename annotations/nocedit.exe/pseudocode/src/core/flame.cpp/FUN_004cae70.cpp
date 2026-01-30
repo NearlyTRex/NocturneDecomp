@@ -1,15 +1,15 @@
 // Name: core_flame.cpp_FUN_004cae70
 // Address: 004cae70
 // Address Range: [[004cae70, 004caf50]]
-// Convention: unknown
-// Signature: void core_flame_cpp_FUN_004cae70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flame_cpp_FUN_004cae70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_FUN_004cae70(uint param_1, uint param_2)
     */
 
-void core_flame_cpp_FUN_004cae70(void)
+void __cdecl core_flame_cpp_FUN_004cae70(void)
 
 {
   CDemonActor *in_stack_00000004;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_crate_cpp_FUN_00448660(void)
+; __cdecl void __cdecl core_crate_cpp_FUN_00448660(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

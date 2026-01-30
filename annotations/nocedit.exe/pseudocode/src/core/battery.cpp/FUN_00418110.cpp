@@ -1,15 +1,15 @@
 // Name: core_battery.cpp_FUN_00418110
 // Address: 00418110
 // Address Range: [[00418110, 00418159]]
-// Convention: unknown
-// Signature: void core_battery_cpp_FUN_00418110(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_battery_cpp_FUN_00418110(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_battery.cpp_FUN_00418110(uint param_1, uint
    param_2) */
 
-void core_battery_cpp_FUN_00418110(void)
+void __cdecl core_battery_cpp_FUN_00418110(void)
 
 {
   CKeyFramedModel *pCVar1;

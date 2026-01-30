@@ -78,8 +78,8 @@
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 48,
+        "column": 67,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -92,7 +92,7 @@
   },
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 376,
+    "complexity_score": 381,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
@@ -100,6 +100,7 @@
     "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
+      "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
       "stack_ref",
@@ -124,9 +125,9 @@
         "005e3273"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_turret.cpp_FUN_005e2d50",
-    "signature": "void core_turret_cpp_FUN_005e2d50(void)"
+    "signature": "void __cdecl core_turret_cpp_FUN_005e2d50(void)"
   },
   "function_calls": [
     {
@@ -363,13 +364,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "(g_CConsolePtr,\"%s has no guard trigger!\\n\",in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[5].create_event + 0x50) + 0x154) + 0x14))();",
@@ -497,6 +491,17 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s has no guard trigger!\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s has no guard trigger!\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 40,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s has no guard trigger!\\n\")",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

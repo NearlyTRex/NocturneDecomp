@@ -29,7 +29,7 @@ void __cdecl CTrash::serialize(CTrash *this_ptr);
 
 // Original: core_trash.cpp_FUN_005decc0
 // Address: 005decc0
-void FUN_005decc0(void);
+void __cdecl FUN_005decc0(void);
 
 // Original: core_trash.cpp_CTrash_process_FUN_005decf0
 // Address: 005decf0

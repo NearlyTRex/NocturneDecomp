@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_curtain_cpp_FUN_00449690(void)
+; __cdecl CDemonActorType * __cdecl core_curtain_cpp_FUN_00449690(void)
 ;
 ;
 ; Referenced Globals:

@@ -71,7 +71,7 @@ section .text
     PUSH EAX                            ; 004d2c89
     PUSH EBX                            ; 004d2c8a
     CALL core_cloth.cpp_FUN_00439710    ; 004d2c8b
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 004d2c90
     PUSH EDI                            ; 004d2c93
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 004d2c94

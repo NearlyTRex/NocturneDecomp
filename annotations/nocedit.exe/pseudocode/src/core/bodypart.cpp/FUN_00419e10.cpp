@@ -1,12 +1,12 @@
 // Name: core_bodypart.cpp_FUN_00419e10
 // Address: 00419e10
 // Address Range: [[00419e10, 00419f41]]
-// Convention: unknown
-// Signature: void core_bodypart_cpp_FUN_00419e10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bodypart_cpp_FUN_00419e10(void)
 
 #include "nocturne.h"
 
-void core_bodypart_cpp_FUN_00419e10(void)
+void __cdecl core_bodypart_cpp_FUN_00419e10(void)
 
 {
   float fVar1;
@@ -22,9 +22,9 @@ void core_bodypart_cpp_FUN_00419e10(void)
   char *local_14;
   
   if (*(int *)(in_stack_00000004[5].create_event + 0x1c) != 0) {
-    in_stack_00000008 = *(float *)(in_stack_00000004[9].create_event + 0x38) - in_stack_00000008;
-    *(float *)(in_stack_00000004[9].create_event + 0x38) = in_stack_00000008;
-    if (in_stack_00000008 < 0.0) {
+    fVar1 = *(float *)(in_stack_00000004[9].create_event + 0x38) - in_stack_00000008;
+    *(float *)(in_stack_00000004[9].create_event + 0x38) = fVar1;
+    if (fVar1 < 0.0) {
       in_stack_00000004[5].create_event[0x1c] = '\0';
       in_stack_00000004[5].create_event[0x1d] = '\0';
       in_stack_00000004[5].create_event[0x1e] = '\0';

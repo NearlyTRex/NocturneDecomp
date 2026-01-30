@@ -7,7 +7,7 @@
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053990a
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053990a
 ;
 ; Referenced Globals:
 ;   CEdButton* g_ActiveButton

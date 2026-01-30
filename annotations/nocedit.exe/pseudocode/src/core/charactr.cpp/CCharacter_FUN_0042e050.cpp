@@ -12,13 +12,12 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042e050(CCharacter *this_ptr)
   char *target_string;
   float fVar1;
   int iVar2;
-  uint uVar3;
+  int iVar3;
   int iVar4;
-  int iVar5;
   float in_stack_00000008;
   char *in_stack_0000000c;
+  float fVar5;
   float fVar6;
-  float fVar7;
   int local_1f80 [2005];
   int local_2c;
   int local_28;
@@ -42,19 +41,19 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042e050(CCharacter *this_ptr)
     this_ptr->unk2[0x4f] = '\0';
     return 0;
   }
-  fVar6 = *(float *)(this_ptr->unk2 + 0x54) - in_stack_00000008;
-  *(float *)(this_ptr->unk2 + 0x54) = fVar6;
-  if (0.0 < fVar6) goto LAB_0042e20c;
-  iVar5 = *(int *)(this_ptr->unk2 + 0x4c);
-  if ((iVar5 == 0) ||
-     (fVar6 = *(float *)(iVar5 + 0x20) - (this_ptr->base).location.position.x,
-     fVar1 = *(float *)(iVar5 + 0x24) - (this_ptr->base).location.position.y,
-     fVar7 = *(float *)(iVar5 + 0x28) - (this_ptr->base).location.position.z,
-     (float)4 <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
+  fVar5 = *(float *)(this_ptr->unk2 + 0x54) - in_stack_00000008;
+  *(float *)(this_ptr->unk2 + 0x54) = fVar5;
+  if (0.0 < fVar5) goto LAB_0042e20c;
+  iVar4 = *(int *)(this_ptr->unk2 + 0x4c);
+  if ((iVar4 == 0) ||
+     (fVar5 = *(float *)(iVar4 + 0x20) - (this_ptr->base).location.position.x,
+     fVar1 = *(float *)(iVar4 + 0x24) - (this_ptr->base).location.position.y,
+     fVar6 = *(float *)(iVar4 + 0x28) - (this_ptr->base).location.position.z,
+     (float)4 <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {
     if (*(int *)(this_ptr->unk2 + 0x50) == 0) goto LAB_0042e0e4;
     if (*(int *)(this_ptr->unk2 + 0x4c) == 0) goto LAB_0042e0ee;
-    uVar3 = core_waypoint_cpp_FUN_005ec320();
-    *(uint *)(this_ptr->unk2 + 0x50) = uVar3;
+    iVar4 = core_waypoint_cpp_FUN_005ec320();
+    *(int *)(this_ptr->unk2 + 0x50) = iVar4;
   }
   else {
     this_ptr->unk2[0x50] = '\0';
@@ -74,67 +73,67 @@ LAB_0042e0ee:
     local_28 = 0;
     local_1c = &(this_ptr->base).location;
     local_24 = 0;
-    iVar5 = 0;
+    iVar4 = 0;
     for (local_20 = 0; local_20 < *(int *)(g_CDemonSetPtr->unk4 + 0x5dc4); local_20 = local_20 + 1)
     {
       target_string = *(char **)(g_CDemonSetPtr->unk4 + local_24 + 0x5dc8);
       iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20(in_stack_0000000c,target_string,0)
       ;
-      iVar4 = iVar5;
+      iVar3 = iVar4;
       if ((iVar2 != 0) &&
-         (fVar6 = (local_1c->position).x - *(float *)(target_string + 0x20),
+         (fVar5 = (local_1c->position).x - *(float *)(target_string + 0x20),
          fVar1 = (local_1c->position).y - *(float *)(target_string + 0x24),
-         fVar7 = (local_1c->position).z - *(float *)(target_string + 0x28),
-         20.0f <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
-        iVar4 = iVar5 + 4;
+         fVar6 = (local_1c->position).z - *(float *)(target_string + 0x28),
+         20.0f <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {
+        iVar3 = iVar4 + 4;
         local_28 = local_28 + 1;
-        *(char **)((int)local_1f80 + iVar5) = target_string;
+        *(char **)((int)local_1f80 + iVar4) = target_string;
       }
       local_24 = local_24 + 4;
-      iVar5 = iVar4;
+      iVar4 = iVar3;
     }
     if (0 < local_28) {
       local_2c = local_28 + -1;
-      iVar5 = 0;
+      iVar4 = 0;
       do {
         while( true ) {
-          iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_2c);
-          if (local_1f80[iVar4] != 0) break;
-          iVar5 = iVar5 + 1;
-          if (9 < iVar5) goto LAB_0042e1d9;
+          iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_2c);
+          if (local_1f80[iVar3] != 0) break;
+          iVar4 = iVar4 + 1;
+          if (9 < iVar4) goto LAB_0042e1d9;
         }
         iVar2 = core_waypoint_cpp_FUN_005ec320();
         *(int *)(this_ptr->unk2 + 0x50) = iVar2;
         if (iVar2 != 0) {
-          *(int *)(this_ptr->unk2 + 0x4c) = local_1f80[iVar4];
+          *(int *)(this_ptr->unk2 + 0x4c) = local_1f80[iVar3];
           break;
         }
-        local_1f80[iVar4] = 0;
-        iVar5 = iVar5 + 1;
-      } while (iVar5 < 10);
+        local_1f80[iVar3] = 0;
+        iVar4 = iVar4 + 1;
+      } while (iVar4 < 10);
     }
   }
 LAB_0042e1d9:
   if (*(int *)(this_ptr->unk2 + 0x50) == 0) {
-    fVar7 = 10.0;
-    fVar6 = 4.0;
+    fVar6 = 10.0;
+    fVar5 = 4.0;
   }
   else {
-    fVar7 = 2.0;
-    fVar6 = 1.0;
+    fVar6 = 2.0;
+    fVar5 = 1.0;
   }
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar6,fVar7);
+  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar5,fVar6);
   *(float *)(this_ptr->unk2 + 0x54) = local_14;
 LAB_0042e20c:
   if (*(int *)(this_ptr->unk2 + 0x50) == 0) {
     return 0;
   }
   (**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x50) + 0x154) + 0xbc))();
-  iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr);
-  if (iVar5 == 0) {
+  iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr);
+  if (iVar4 == 0) {
     return 1;
   }
-  if (iVar5 < 0) {
+  if (iVar4 < 0) {
     this_ptr->unk2[0x50] = '\0';
     this_ptr->unk2[0x51] = '\0';
     this_ptr->unk2[0x52] = '\0';

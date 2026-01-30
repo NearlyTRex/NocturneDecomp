@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
+; __cdecl void __cdecl core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 ;
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     PUSH ECX                            ; 0041d517
     PUSH EBX                            ; 0041d518
     CALL core_enemy.cpp_FUN_004a9f10    ; 0041d519
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 0041d51e
     POP EBX                             ; 0041d521
     RET                                 ; 0041d522
@@ -57,7 +57,7 @@ section .text
     PUSH ECX                            ; 0041d53a
     PUSH EBX                            ; 0041d53b
     CALL core_enemy.cpp_FUN_004a9f10    ; 0041d53c
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 0041d541
     POP EBX                             ; 0041d544
     RET                                 ; 0041d545

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_flamecan_cpp_FUN_004cb690(void)
+; __cdecl float * __cdecl core_flamecan_cpp_FUN_004cb690(void)
 ;
 ;
 ; Called Functions:

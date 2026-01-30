@@ -1,15 +1,15 @@
 // Name: core_flame.cpp_FUN_004cb0a0
 // Address: 004cb0a0
 // Address Range: [[004cb0a0, 004cb0df]]
-// Convention: unknown
-// Signature: void core_flame_cpp_FUN_004cb0a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flame_cpp_FUN_004cb0a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_FUN_004cb0a0(uint param_1, uint param_2)
     */
 
-void core_flame_cpp_FUN_004cb0a0(void)
+void __cdecl core_flame_cpp_FUN_004cb0a0(void)
 
 {
   int iVar1;

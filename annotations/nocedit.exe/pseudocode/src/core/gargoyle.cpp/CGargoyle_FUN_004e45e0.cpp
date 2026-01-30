@@ -1,12 +1,12 @@
 // Name: core_gargoyle.cpp_CGargoyle_FUN_004e45e0
 // Address: 004e45e0
 // Address Range: [[004e45e0, 004e4899]]
-// Convention: unknown
-// Signature: void core_gargoyle_cpp_CGargoyle_FUN_004e45e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e45e0(void)
 
 #include "nocturne.h"
 
-void core_gargoyle_cpp_CGargoyle_FUN_004e45e0(void)
+void __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e45e0(void)
 
 {
   CDeformableModelInstance *this_ptr;

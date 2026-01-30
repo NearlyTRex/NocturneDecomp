@@ -1,12 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CHero * core_script_cpp_GetDemonActor_FUN_005594e0(void)
+; __cdecl CHero * __cdecl core_script_cpp_GetDemonActor_FUN_005594e0(char *param_1,uint param_2,int param_3)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; uint             Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
 ;
 ; XREF[3]:
+;   core_script.cpp_CScript_FUN_0055ff00 at 0055ff3e
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bc6f
-;   core_script.cpp_FUN_0055ff00 at 0055ff3e
 ;   core_script.cpp_FUN_005627f0 at 0056284e
 ;
 ; Referenced Globals:
@@ -32,7 +36,7 @@
 ;   core_actor.cpp_isOfClassHash_FUN_0040c760
 ;   core_event.cpp_CEventList_FUN_004b0b80
 ;   core_mission.cpp_CDemonMission_FUN_00524030
-;   core_script.cpp_CheckingActorVariableName_FUN_00559220
+;   core_script.cpp_FUN_00559220
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
@@ -59,8 +63,8 @@ section .text
     JNZ 0x00559597                      ; 005594fd
         ;   XREF to: 00559597 (CONDITIONAL_JUMP)  ; LAB_00559597
     PUSH EBX                            ; 00559503
-    CALL core_script.cpp_CheckingActorVariableName_FUN_00559220 ; 00559504
-        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CheckingActorVariableName_FUN_00559220()
+    CALL core_script.cpp_FUN_00559220   ; 00559504
+        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00559220(char * param_1)
     ADD ESP,0x4                         ; 00559509
     TEST EAX,EAX                        ; 0055950c
     JNZ 0x00559540                      ; 0055950e

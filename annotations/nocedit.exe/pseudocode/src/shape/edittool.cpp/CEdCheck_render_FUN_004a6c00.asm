@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539917
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539917
 ;
 ; Referenced Globals:
 ;   CBitFont* g_EditorFont

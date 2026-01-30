@@ -4,67 +4,61 @@
       {
         "category": "other",
         "column": 26,
-        "line": 57,
+        "line": 56,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 100,
+        "line": 99,
         "message": "invalid cast from type 'float' to type 'CDemonActor*'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 108,
+        "line": 107,
         "message": "ISO C++ forbids casting to an array type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 110,
+        "line": 109,
         "message": "invalid cast from type 'byte*' {aka 'unsigned char*'} to type 'double'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 110,
+        "line": 109,
         "message": "invalid cast from type 'byte*' {aka 'unsigned char*'} to type 'double'"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 128,
+        "line": 127,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 149,
-        "message": "too few arguments to function 'void core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00(undefined4, undefined4, undefined4, undefined4, int, float)'"
-      },
-      {
-        "category": "other",
         "column": 20,
-        "line": 162,
+        "line": 161,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 165,
+        "line": 164,
         "message": "request for member '_4_4_' in 'auStack_128', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 166,
+        "line": 165,
         "message": "request for member '_0_4_' in 'auStack_128', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 197,
+        "line": 195,
         "message": "invalid cast from type 'CDemonActor*' to type 'float'"
       }
     ],
@@ -79,32 +73,32 @@
       {
         "category": "other",
         "column": 46,
-        "line": 62,
+        "line": 61,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 214,
+        "line": 212,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 497,
+    "complexity_score": 485,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 207,
-    "suspect_count": 27,
+    "pseudocode_lines": 205,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 312
+    "total_lines": 310
   },
   "cross_references": [],
   "function": {
@@ -119,10 +113,10 @@
         "004a74a4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_elephant.cpp_FUN_004a7160",
-    "signature": "undefined4 core_elephant_cpp_FUN_004a7160(void)"
+    "signature": "int __cdecl core_elephant_cpp_FUN_004a7160(void)"
   },
   "function_calls": [
     {
@@ -301,133 +295,133 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_00000004",
       "text": "pCVar1 = (CVector3f *)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc3)();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_80,pCVar1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "(g_CSoundPtr,in_stack_00000004,\"shotgun-noammo.wav\",&CStack_80);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 57,
       "match": "in_stack_00000004",
       "text": "fVar5 = (float10)fptan((float10)*(float *)(in_stack_00000004[4].actor_name + 0x18) *",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 57,
       "match": "fptan",
       "text": "fVar5 = (float10)fptan((float10)*(float *)(in_stack_00000004[4].actor_name + 0x18) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_00000004",
       "text": "fStack_44 = (float)(fVar5 * (float10)in_stack_00000004[2].orient.heading);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 67,
       "match": "fcos",
       "text": "fVar5 = (float10)fcos((float10)fStack_48);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 68,
       "match": "fsin",
       "text": "fVar6 = (float10)fsin((float10)fStack_48);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 71,
       "match": "in_stack_00000004",
       "text": "CStack_bc.z = in_stack_00000004[2].orient.heading;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 73,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,&CStack_b0,&CStack_bc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_00000004",
       "text": "fStack_3c = (float)1.5 / in_stack_00000004[2].orient.heading;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 91,
       "match": "in_stack_00000004",
       "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 92,
       "match": "in_stack_00000004",
       "text": "pCVar3 = (CDemonActor *)in_stack_00000004[2].orient_matrix.m[2].x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 121,
+      "line": 120,
       "match": "in_stack_00000004",
       "text": "fVar4 = (float)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc6)();",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 149,
+      "line": 148,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 157,
       "match": "._4_4_",
       "text": "auStack_128._4_4_ = pCStack_34;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 159,
+      "line": 158,
       "match": "._0_4_",
       "text": "auStack_128._0_4_ = g_CDemonSetPtr->unk1;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
+      "line": 167,
       "match": "SQRT",
       "text": "SQRT(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 185,
+      "line": 184,
       "match": "in_stack_00000004",
       "text": "iStack_100 = *(int *)(in_stack_00000004[4].actor_name + 0xc);",
       "type": "stack_param"
@@ -436,40 +430,33 @@
       "description": "Unresolved stack parameter",
       "line": 188,
       "match": "in_stack_00000004",
-      "text": "pCStack_f4 = in_stack_00000004;",
+      "text": "(float)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 190,
+      "line": 188,
       "match": "in_stack_00000004",
       "text": "(float)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_00000004",
-      "text": "(float)(*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 193,
+      "line": 191,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[2].orient.bank == 0.0) break;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 205,
       "match": "in_stack_00000004",
       "text": "(g_CSoundPtr,in_stack_00000004,\"elephantgun.wav\",&CStack_80);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 208,
+      "line": 206,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient_matrix.m[1].z = 1.0;",
       "type": "stack_param"

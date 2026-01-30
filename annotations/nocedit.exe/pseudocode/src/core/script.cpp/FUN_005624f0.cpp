@@ -1,14 +1,12 @@
 // Name: core_script.cpp_FUN_005624f0
 // Address: 005624f0
 // Address Range: [[005624f0, 00562615]]
-// Convention: unknown
-// Signature: void core_script_cpp_FUN_005624f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_FUN_005624f0(int param_1,char *param_2)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_005624f0(uint param_1, uint param_2) */
-
-void core_script_cpp_FUN_005624f0(void)
+void __cdecl core_script_cpp_FUN_005624f0(int param_1,char *param_2)
 
 {
   char cVar1;
@@ -18,11 +16,9 @@ void core_script_cpp_FUN_005624f0(void)
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
-  int in_stack_00000004;
-  char *in_stack_00000008;
   
-  pcVar4 = (char *)(in_stack_00000004 + 4);
-  pcVar5 = in_stack_00000008;
+  pcVar4 = (char *)(param_1 + 4);
+  pcVar5 = param_2;
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -32,9 +28,9 @@ void core_script_cpp_FUN_005624f0(void)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = (char *)(in_stack_00000004 + 0x68);
+  pcVar4 = (char *)(param_1 + 0x68);
   iVar2 = -1;
-  pcVar5 = in_stack_00000008;
+  pcVar5 = param_2;
   do {
     pcVar6 = pcVar5;
     if (iVar2 == 0) break;
@@ -54,12 +50,12 @@ void core_script_cpp_FUN_005624f0(void)
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   iVar2 = 0;
-  if (0 < *(int *)(in_stack_00000004 + 0xcc)) {
-    pcVar5 = (char *)(in_stack_00000004 + 0x134);
+  if (0 < *(int *)(param_1 + 0xcc)) {
+    pcVar5 = (char *)(param_1 + 0x134);
     do {
-      pcVar6 = (char *)(iVar2 * 0x328 + in_stack_00000004 + 0xd0);
+      pcVar6 = (char *)(iVar2 * 0x328 + param_1 + 0xd0);
       iVar3 = -1;
-      pcVar4 = in_stack_00000008;
+      pcVar4 = param_2;
       do {
         pcVar7 = pcVar4;
         if (iVar3 == 0) break;
@@ -79,7 +75,7 @@ void core_script_cpp_FUN_005624f0(void)
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
       iVar3 = -1;
-      pcVar4 = in_stack_00000008;
+      pcVar4 = param_2;
       do {
         pcVar6 = pcVar4;
         if (iVar3 == 0) break;
@@ -101,17 +97,17 @@ void core_script_cpp_FUN_005624f0(void)
       } while (cVar1 != '\0');
       iVar2 = iVar2 + 1;
       pcVar5 = pcVar5 + 0x328;
-    } while (iVar2 < *(int *)(in_stack_00000004 + 0xcc));
+    } while (iVar2 < *(int *)(param_1 + 0xcc));
   }
-  pcVar5 = (char *)(in_stack_00000004 + 0x2060);
+  pcVar5 = (char *)(param_1 + 0x2060);
   iVar2 = -1;
   do {
-    pcVar4 = in_stack_00000008;
+    pcVar4 = param_2;
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
-    pcVar4 = in_stack_00000008 + 1;
-    cVar1 = *in_stack_00000008;
-    in_stack_00000008 = pcVar4;
+    pcVar4 = param_2 + 1;
+    cVar1 = *param_2;
+    param_2 = pcVar4;
   } while (cVar1 != '\0');
   pcVar4 = pcVar4 + -1;
   do {

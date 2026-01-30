@@ -1,15 +1,15 @@
 // Name: core_stranger.cpp_CStranger_FUN_005c48b0
 // Address: 005c48b0
 // Address Range: [[005c48b0, 005c4b51] [005c4b7c, 005c4c15]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005c48b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c48b0(uint param_1,
    uint param_2) */
 
-void core_stranger_cpp_CStranger_FUN_005c48b0(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(void)
 
 {
   CDeformableModelInstance *this_ptr;

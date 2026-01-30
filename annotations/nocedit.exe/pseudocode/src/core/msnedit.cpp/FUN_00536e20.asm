@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_msnedit_cpp_FUN_00536e20(void)
+; __cdecl void __cdecl core_msnedit_cpp_FUN_00536e20(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_FUN_0053c4f0 at 0053c6a7
+;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c6a7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_0063b6f4
@@ -154,7 +154,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00536f46
     PUSH EAX                            ; 00536f4a
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00536f4b
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 00536f50
     TEST EAX,EAX                        ; 00536f53
     JZ 0x00536f83                       ; 00536f55
@@ -184,7 +184,7 @@ section .text
     PUSH EAX                            ; 00536f99
     PUSH 0x63b6fc                       ; 00536f9a | = " X "
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00536f9f
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 00536fa4
     TEST EAX,EAX                        ; 00536fa7
     JZ 0x00536fb5                       ; 00536fa9
@@ -210,7 +210,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00536fe7
     PUSH EAX                            ; 00536feb
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00536fec
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 00536ff1
     TEST EAX,EAX                        ; 00536ff4
     JZ 0x0053702f                       ; 00536ff6
@@ -244,7 +244,7 @@ section .text
     PUSH 0x63b719                       ; 00537049 | DAT_0063b719
     MOV dword ptr [ESP + 0xf0],EAX      ; 0053704e
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00537055
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 0053705a
     TEST EAX,EAX                        ; 0053705d
     JZ 0x0053706c                       ; 0053705f
@@ -261,7 +261,7 @@ section .text
     PUSH EBX                            ; 0053707b
     PUSH 0x63b71e                       ; 0053707c | DAT_0063b71e
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00537081
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 00537086
     TEST EAX,EAX                        ; 00537089
     JZ 0x005370e2                       ; 0053708b
@@ -304,7 +304,7 @@ section .text
     PUSH EBX                            ; 005370ff
     PUSH 0x63b722                       ; 00537100 | DAT_0063b722
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00537105
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 0053710a
     TEST EAX,EAX                        ; 0053710d
     JZ 0x00537118                       ; 0053710f
@@ -320,7 +320,7 @@ section .text
     PUSH EBX                            ; 00537127
     PUSH 0x63b72c                       ; 00537128 | DAT_0063b72c
     CALL core_msnedit.cpp_FUN_00536cd0  ; 0053712d
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 00537132
     TEST EAX,EAX                        ; 00537135
     JZ 0x0053716e                       ; 00537137
@@ -348,7 +348,7 @@ section .text
     PUSH EBX                            ; 0053717d
     PUSH 0x63b730                       ; 0053717e | DAT_0063b730
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00537183
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 00537188
     TEST EAX,EAX                        ; 0053718b
     JZ 0x005371ac                       ; 0053718d
@@ -403,7 +403,7 @@ section .text
     PUSH EBX                            ; 00537201
     PUSH 0x63b727                       ; 00537202 | DAT_0063b727
     CALL core_msnedit.cpp_FUN_00536cd0  ; 00537207
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00536cd0()
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
     ADD ESP,0x14                        ; 0053720c
     TEST EAX,EAX                        ; 0053720f
     JZ 0x00537118                       ; 00537211

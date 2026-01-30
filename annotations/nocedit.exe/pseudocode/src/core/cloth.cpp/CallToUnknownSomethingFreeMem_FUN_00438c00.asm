@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00(void)
+; __cdecl void __cdecl core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00(void)
 ;
 ;
 ; XREF[8]:
@@ -29,7 +29,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00438c01
     PUSH EBX                            ; 00438c05
     CALL core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0 ; 00438c06
-        ;   XREF to: 00438cb0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0()
+        ;   XREF to: 00438cb0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0()
     ADD ESP,0x4                         ; 00438c0b
     PUSH 0x0                            ; 00438c0e
     ADD EBX,0x3ce90                     ; 00438c10

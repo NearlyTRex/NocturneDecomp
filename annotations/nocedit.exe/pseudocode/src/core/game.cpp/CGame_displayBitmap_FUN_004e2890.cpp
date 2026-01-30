@@ -1,15 +1,15 @@
 // Name: core_game.cpp_CGame_displayBitmap_FUN_004e2890
 // Address: 004e2890
 // Address Range: [[004e2890, 004e2908]]
-// Convention: unknown
-// Signature: void core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_game.cpp_CGame_displayBitmap(CGame* param_1, uint param_2,
    uint param_3, uint param_4) */
 
-void core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
+void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
 
 {
   char cVar1;
@@ -22,8 +22,7 @@ void core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
   if (*(char *)(in_stack_00000004 + 0x8b4) != '\0') {
     g_CurrentFilename = "..\\core\\game.cpp";
     g_CurrentLineNumber = 0xfc6;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CGame::displayBitmap - tried to queue %s, but %s already queued!",in_stack_00000008,in_stack_00000004 + 0x8b4);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::displayBitmap - tried to queue %s, but %s already queued!");
   }
   pcVar2 = (char *)(in_stack_00000004 + 0x8b4);
   do {

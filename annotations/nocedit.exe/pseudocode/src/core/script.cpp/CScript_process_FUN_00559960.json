@@ -2,15 +2,21 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 66,
+        "line": 34,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 60,
+        "line": 62,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 60,
+        "line": 62,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -25,54 +31,54 @@
       {
         "category": "other",
         "column": 21,
-        "line": 37,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 38,
+        "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 36,
+        "line": 38,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 51,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 50,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 60,
+        "line": 62,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 148,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 60,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 203
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -99,7 +105,7 @@
     {
       "addr": "0042f9e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042f9e0"
+      "name": "core_charactr.cpp_FUN_0042f9e0"
     },
     {
       "addr": "004dce70",
@@ -295,58 +301,58 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 11,
       "match": "DAT_0310ec9c",
       "text": "DAT_0310ec9c = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_0310f4a4",
       "text": "DAT_0310f4a4 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 33,
       "match": "DAT_0310eca0",
       "text": "*(uint *)(*(int *)(this_ptr->unk4 + 0x1c) + 4 + iVar1 * 8),&DAT_0310eca0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 43,
       "match": "DAT_0310f4a8",
       "text": "if (DAT_0310f4a8 == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 47,
       "match": "DAT_0310f4a8",
       "text": "DAT_0310f4a8 = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_0310f4a4",
       "text": "if (DAT_0310f4a4 != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 52,
       "match": "DAT_0310f4a4",
       "text": "DAT_0310f4a4 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
+      "line": 55,
       "match": "code *",
-      "text": "iVar4 = (**(code **)(*(int *)(this_ptr->who_is_speaking + 0x154) + 0x120))();",
+      "text": "iVar3 = (**(code **)(*(int *)(this_ptr->who_is_speaking + 0x154) + 0x120))();",
       "type": "unresolved_funcptr"
     }
   ]

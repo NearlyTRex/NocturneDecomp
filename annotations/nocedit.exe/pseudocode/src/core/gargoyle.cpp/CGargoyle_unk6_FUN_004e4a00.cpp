@@ -1,15 +1,15 @@
 // Name: core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00
 // Address: 004e4a00
 // Address Range: [[004e4a00, 004e53e1]]
-// Convention: unknown
-// Signature: void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_gargoyle.cpp_CGargoyle_unk6(CGargoyle* param_1, uint
    param_2) */
 
-void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
+void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -265,8 +265,6 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
     case 3:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_104);
       local_104.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
-      local_104.attacker = (CDemonActor *)in_stack_00000004;
-      local_104.wielder = (CDemonActor *)in_stack_00000004;
       local_14 = local_104.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_8c,&g_ZeroVector,
@@ -314,7 +312,7 @@ LAB_004e4d57:
     if (uVar3 != 3) goto LAB_004e4d57;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (in_stack_00000004->base).model.accumulated_root_motion.z = 0.0;
   (in_stack_00000004->base).model.accumulated_root_motion.y =

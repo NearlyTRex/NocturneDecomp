@@ -1,15 +1,15 @@
 // Name: core_batman.cpp_FUN_00417660
 // Address: 00417660
 // Address Range: [[00417660, 00417997]]
-// Convention: unknown
-// Signature: void core_batman_cpp_FUN_00417660(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_batman_cpp_FUN_00417660(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_batman.cpp_FUN_00417660(uint param_1, uint
    param_2) */
 
-void core_batman_cpp_FUN_00417660(void)
+void __cdecl core_batman_cpp_FUN_00417660(void)
 
 {
   float fVar1;

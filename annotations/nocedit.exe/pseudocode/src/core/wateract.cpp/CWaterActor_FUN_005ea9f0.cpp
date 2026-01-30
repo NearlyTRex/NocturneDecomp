@@ -87,9 +87,8 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
       } while (local_18 < (int)(-fVar1 * fVar4));
     }
     pcVar9 = this_ptr->unk5 + 0x7d10;
-    iVar8 = *(int *)(this_ptr->unk5 + 0x7d0c);
     local_30 = 0;
-    if (0 < iVar8) {
+    if (0 < *(int *)(this_ptr->unk5 + 0x7d0c)) {
       do {
         iVar5 = 0;
         if (0 < *(int *)(this_ptr->unk5 + 0x7d08)) {
@@ -151,11 +150,10 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
           } while (iVar5 < *(int *)(this_ptr->unk5 + 0x7d08));
         }
         local_30 = local_30 + 1;
-        iVar8 = *(int *)(this_ptr->unk5 + 0x7d0c);
-      } while (local_30 < iVar8);
+      } while (local_30 < *(int *)(this_ptr->unk5 + 0x7d0c));
     }
-    iVar11 = *(int *)(this_ptr->unk5 + 0x7d08) * *(int *)(this_ptr->unk5 + 0x7d0c) * 2;
-    *(int *)(this_ptr->unk5 + 0x2af9c) = iVar11;
+    *(int *)(this_ptr->unk5 + 0x2af9c) =
+         *(int *)(this_ptr->unk5 + 0x7d08) * *(int *)(this_ptr->unk5 + 0x7d0c) * 2;
   }
   else {
     this_ptr->unk5[0x2af9c] = ' ';
@@ -209,10 +207,8 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
     *(uint *)(this_ptr->unk5 + iVar5 + 8) = *(uint *)(this_ptr->unk5 + iVar5 + 0xc);
     *(uint *)(this_ptr->unk5 + iVar5 + 4) = *(uint *)(this_ptr->unk5 + iVar5 + 8);
     iVar5 = *(int *)(this_ptr->unk5 + 0x2af9c);
-    iVar11 = 0;
-    iVar8 = *(int *)this_ptr->unk5 + 1;
     local_1c = 0;
-    *(int *)this_ptr->unk5 = iVar8;
+    *(int *)this_ptr->unk5 = *(int *)this_ptr->unk5 + 1;
     if (0 < iVar5) {
       pcVar9 = this_ptr->unk5 + 0x7d10;
       pCVar13 = this_ptr;
@@ -229,7 +225,7 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
         *(uint *)(pcVar9 + 0x10) = uVar2;
         *(uint *)(pcVar9 + 0xc) = uVar2;
         *(uint *)(pcVar9 + 8) = uVar2;
-        iVar12 = local_1c + 1;
+        iVar11 = local_1c + 1;
         uVar2 = *(uint *)(this_ptr->unk5 + 0x2af9c);
         pcVar9[0x1c] = '\0';
         pcVar9[0x1d] = '\0';
@@ -240,23 +236,21 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
         pcVar9[0x22] = '\0';
         pcVar9[0x23] = '\0';
         *(uint *)(pcVar9 + 0x18) = uVar2;
-        iVar5 = iVar12 % *(int *)(this_ptr->unk5 + 0x2af9c);
+        iVar5 = iVar11 % *(int *)(this_ptr->unk5 + 0x2af9c);
         *(int *)(pcVar9 + 0x24) = local_1c;
         *(uint *)(pcVar9 + 0x28) = *(uint *)(pCVar13->unk5 + 0x1c);
         uVar2 = *(uint *)(pCVar13->unk5 + 0x20);
         *(int *)(pcVar9 + 0x30) = iVar5;
         *(uint *)(pcVar9 + 0x2c) = uVar2;
-        iVar8 = *(int *)(this_ptr->unk5 + iVar5 * 0x20 + 0x1c);
-        *(int *)(pcVar9 + 0x34) = iVar8;
+        *(uint *)(pcVar9 + 0x34) = *(uint *)(this_ptr->unk5 + iVar5 * 0x20 + 0x1c);
         pCVar13 = (CWaterActor *)&(pCVar13->base).location;
         *(uint *)(pcVar9 + 0x38) = *(uint *)(this_ptr->unk5 + iVar5 * 0x20 + 0x20);
         pcVar9 = pcVar9 + 0x48;
-        iVar11 = *(int *)(this_ptr->unk5 + 0x2af9c);
-        local_1c = iVar12;
-      } while (iVar12 < iVar11);
+        local_1c = iVar11;
+      } while (iVar11 < *(int *)(this_ptr->unk5 + 0x2af9c));
     }
   }
-  core_wateract_cpp_FUN_005eafa0(iVar11,iVar8);
+  core_wateract_cpp_FUN_005eafa0();
   this_ptr->unk5[0x2af90] = '\0';
   this_ptr->unk5[0x2af91] = '\0';
   this_ptr->unk5[0x2af92] = '\0';

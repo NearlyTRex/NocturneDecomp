@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_shovel_cpp_FUN_00588c40(void)
+; __cdecl float __cdecl core_shovel_cpp_FUN_00588c40(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

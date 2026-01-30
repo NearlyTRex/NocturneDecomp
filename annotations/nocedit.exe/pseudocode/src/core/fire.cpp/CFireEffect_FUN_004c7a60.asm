@@ -50,7 +50,7 @@ section .text
     PUSH EDI                            ; 004c7a9d
     PUSH EAX                            ; 004c7a9e
     CALL core_fire.cpp_FUN_004c1940     ; 004c7a9f
-        ;   XREF to: 004c1940 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c1940()
+        ;   XREF to: 004c1940 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004c1940()
     ADD ESP,0xc                         ; 004c7aa4
     POP EDI                             ; 004c7aa7
     POP ESI                             ; 004c7aa8

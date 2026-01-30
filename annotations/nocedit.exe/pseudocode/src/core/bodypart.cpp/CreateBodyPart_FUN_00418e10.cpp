@@ -1,12 +1,12 @@
 // Name: core_bodypart.cpp_CreateBodyPart_FUN_00418e10
 // Address: 00418e10
 // Address Range: [[00418e10, 00418f34] [00418fa2, 00418fca]]
-// Convention: unknown
-// Signature: CBodyPart * core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
+// Convention: __cdecl
+// Signature: CBodyPart * __cdecl core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
 
 #include "nocturne.h"
 
-CBodyPart * core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
+CBodyPart * __cdecl core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
 
 {
   COrientation *pCVar1;

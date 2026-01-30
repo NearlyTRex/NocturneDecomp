@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c6590(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(void)
 ;
 ;
 ; XREF[1]:
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)  ; LAB_005c65a1
     PUSH EAX                            ; 005c65d2
     CALL core_dynamite.cpp_FUN_0049cf90 ; 005c65d3
-        ;   XREF to: 0049cf90 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0049cf90()
+        ;   XREF to: 0049cf90 (UNCONDITIONAL_CALL)  ; bool core_dynamite.cpp_FUN_0049cf90()
     ADD ESP,0x4                         ; 005c65d8
     TEST EAX,EAX                        ; 005c65db
     JZ 0x005c65a1                       ; 005c65dd

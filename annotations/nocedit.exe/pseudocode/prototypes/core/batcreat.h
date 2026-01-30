@@ -33,11 +33,11 @@ void __cdecl CBatCreature::serialize(CBatCreature *this_ptr);
 
 // Original: core_batcreat.cpp_FUN_00415dd0
 // Address: 00415dd0
-void FUN_00415dd0(void);
+void __cdecl FUN_00415dd0(void);
 
 // Original: core_batcreat.cpp_FUN_00416030
 // Address: 00416030
-void FUN_00416030(void);
+void __cdecl FUN_00416030(void);
 
 // Original: core_batcreat.cpp_CBatCreature_FUN_00416240
 // Address: 00416240

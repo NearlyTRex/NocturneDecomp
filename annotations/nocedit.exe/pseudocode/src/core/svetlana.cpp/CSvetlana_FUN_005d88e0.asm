@@ -218,7 +218,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 005d8ae4
     PUSH EAX                            ; 005d8ae8
     CALL core_cloth.cpp_FUN_00439710    ; 005d8ae9
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 005d8aee
     PUSH 0x654a32                       ; 005d8af1 | = "svethair.cth"
     LEA EAX,[ESI + 0x5fa4c]             ; 005d8af6
@@ -233,7 +233,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 005d8b0c
     PUSH ECX                            ; 005d8b10
     CALL core_cloth.cpp_FUN_00439710    ; 005d8b11
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 005d8b16
     PUSH EDI                            ; 005d8b19
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005d8b1a

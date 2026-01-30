@@ -1,14 +1,14 @@
 // Name: core_hero.cpp_FUN_004f3120
 // Address: 004f3120
 // Address Range: [[004f3120, 004f3345]]
-// Convention: unknown
-// Signature: undefined4 core_hero_cpp_FUN_004f3120(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_hero_cpp_FUN_004f3120(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_hero.cpp_FUN_004f3120(uint param_1) */
 
-uint core_hero_cpp_FUN_004f3120(void)
+int __cdecl core_hero_cpp_FUN_004f3120(void)
 
 {
   int iVar1;
@@ -91,11 +91,11 @@ uint core_hero_cpp_FUN_004f3120(void)
         *(uint *)pCVar2[2].create_event = uVar3;
       }
     }
-    uVar3 = 1;
+    iVar1 = 1;
   }
   else {
 LAB_004f31b0:
-    uVar3 = 0;
+    iVar1 = 0;
   }
-  return uVar3;
+  return iVar1;
 }

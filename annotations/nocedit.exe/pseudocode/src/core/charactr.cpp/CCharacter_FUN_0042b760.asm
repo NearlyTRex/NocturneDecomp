@@ -93,7 +93,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 0042b7ec | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 0042b7f2 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edaa0     ; 0042b7f3
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edaa0()
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
     ADD ESP,0x10                        ; 0042b7f8
     POP ESI                             ; 0042b7fb
     POP EDI                             ; 0042b7fc

@@ -1,60 +1,56 @@
 // Name: core_script.cpp_FUN_005593f0
 // Address: 005593f0
 // Address Range: [[005593f0, 00559490]]
-// Convention: unknown
-// Signature: char * core_script_cpp_FUN_005593f0(void)
+// Convention: __cdecl
+// Signature: char * __cdecl core_script_cpp_FUN_005593f0(int *param_1,char *param_2,int param_3)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_005593f0(uint param_1, uint param_2,
-   uint param_3) */
-
-char * core_script_cpp_FUN_005593f0(void)
+char * __cdecl core_script_cpp_FUN_005593f0(int *param_1,char *param_2,int param_3)
 
 {
   char cVar1;
-  char *pcVar2;
+  char *extraout_EAX;
+  int iVar2;
+  int extraout_EAX_00;
   int iVar3;
   int iVar4;
-  int iVar5;
-  int *in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
+  char *pcVar5;
   
-  pcVar2 = (char *)core_script_cpp_FUN_005593d0();
-  *in_stack_00000004 = (int)pcVar2;
-  if (*pcVar2 != '(') {
+  core_script_cpp_FUN_005593d0((char *)*param_1);
+  *param_1 = (int)extraout_EAX;
+  if (*extraout_EAX != '(') {
     return "No opening parenthesis";
   }
+  iVar2 = 0;
   iVar3 = 0;
-  iVar4 = 0;
-  if (0 < in_stack_0000000c) {
+  if (0 < param_3) {
     do {
-      iVar5 = *in_stack_00000004;
-      pcVar2 = (char *)(iVar5 + 1);
-      *in_stack_00000004 = (int)pcVar2;
-      cVar1 = *pcVar2;
+      iVar4 = *param_1;
+      pcVar5 = (char *)(iVar4 + 1);
+      *param_1 = (int)pcVar5;
+      cVar1 = *pcVar5;
       if (cVar1 == '\0') {
         return "Can't find closing parenthesis";
       }
       if (cVar1 == '(') {
-        iVar3 = iVar3 + 1;
+        iVar2 = iVar2 + 1;
       }
       else if (cVar1 == ')') {
-        if (iVar3 == 0) {
-          *in_stack_00000004 = iVar5 + 2;
-          *(byte *)(iVar4 + in_stack_00000008) = 0;
-          core_script_cpp_FUN_00559360();
-          iVar4 = core_script_cpp_FUN_005593d0();
-          *in_stack_00000004 = iVar4;
+        if (iVar2 == 0) {
+          *param_1 = iVar4 + 2;
+          param_2[iVar3] = '\0';
+          core_script_cpp_FUN_00559360(param_2);
+          core_script_cpp_FUN_005593d0((char *)*param_1);
+          *param_1 = extraout_EAX_00;
           return (char *)0x0;
         }
-        iVar3 = iVar3 + -1;
+        iVar2 = iVar2 + -1;
       }
-      iVar5 = iVar4 + 1;
-      *(byte *)(iVar4 + in_stack_00000008) = *(byte *)*in_stack_00000004;
-      iVar4 = iVar5;
-    } while (iVar5 < in_stack_0000000c);
+      iVar4 = iVar3 + 1;
+      param_2[iVar3] = *(char *)*param_1;
+      iVar3 = iVar4;
+    } while (iVar4 < param_3);
   }
   return "Argument too long";
 }

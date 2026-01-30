@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x9c]:1  local_9c

@@ -203,7 +203,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x8a]      ; 0042beda
     PUSH EDI                            ; 0042bee0
     CALL core_bodypart.cpp_FUN_0041add0 ; 0042bee1
-        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041add0()
+        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041add0()
     ADD ESP,0x10                        ; 0042bee6
     JMP 0x0042bdcb                      ; 0042bee9
         ;   XREF to: 0042bdcb (UNCONDITIONAL_JUMP)  ; LAB_0042bdcb
@@ -227,7 +227,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x8a]      ; 0042bf13
     PUSH ECX                            ; 0042bf19
     CALL core_bodypart.cpp_FUN_0041ae50 ; 0042bf1a
-        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041ae50()
+        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041ae50()
     ADD ESP,0x8                         ; 0042bf1f
     JMP 0x0042be11                      ; 0042bf22
         ;   XREF to: 0042be11 (UNCONDITIONAL_JUMP)  ; LAB_0042be11

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_keyactor_cpp_FUN_00501940(void)
+; __cdecl void __cdecl core_keyactor_cpp_FUN_00501940(void)
 ;
 ;
 ; Referenced Globals:

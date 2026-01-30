@@ -1,15 +1,15 @@
 // Name: core_bride.cpp_FUN_00423a30
 // Address: 00423a30
 // Address Range: [[00423a30, 00423ace] [00423b02, 00423ce5] [00423d1a, 00423e83] [0042404a, 0042409a] [004242b3, 00424559]]
-// Convention: unknown
-// Signature: void core_bride_cpp_FUN_00423a30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bride_cpp_FUN_00423a30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bride.cpp_FUN_00423a30(uint param_1, uint param_2)
     */
 
-void core_bride_cpp_FUN_00423a30(void)
+void __cdecl core_bride_cpp_FUN_00423a30(void)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -117,7 +117,6 @@ void core_bride_cpp_FUN_00423a30(void)
         fVar4 = (float)1.57079632675;
         local_1f4.damage_amount = in_stack_00000008;
         pCVar3 = (in_stack_00000004->base).base.vtable._ue;
-        local_1f4.unknown = (int)in_stack_00000004;
         pCVar1 = &(in_stack_00000004->base).model;
         *(float *)((in_stack_00000004->base).unk1 + 0x28) =
              in_stack_00000004->speed * (float)3 * in_stack_00000008;
@@ -189,8 +188,6 @@ void core_bride_cpp_FUN_00423a30(void)
                    [*(int *)(in_stack_00000004[1].base.base.actor_name + 0xc)] != 0)))) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_140);
                 local_140.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-                local_140.attacker = (CDemonActor *)in_stack_00000004;
-                local_140.wielder = (CDemonActor *)in_stack_00000004;
                 local_14 = local_140.damage_amount;
                 pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                    (&local_a4,(CVector3f *)&FLOAT_00822c94,
@@ -205,8 +202,6 @@ void core_bride_cpp_FUN_00423a30(void)
                      [*(int *)(in_stack_00000004[1].base.base.actor_name + 0x14)] != 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1f4);
               local_1f4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-              local_1f4.attacker = (CDemonActor *)in_stack_00000004;
-              local_1f4.wielder = (CDemonActor *)in_stack_00000004;
               local_14 = local_1f4.damage_amount;
               pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                  (&local_e0,(CVector3f *)&FLOAT_00822c94,
@@ -247,8 +242,6 @@ void core_bride_cpp_FUN_00423a30(void)
                   [*(int *)(in_stack_00000004[1].base.base.actor_name + 0x14)] != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_17c);
                 local_17c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-                local_17c.attacker = (CDemonActor *)in_stack_00000004;
-                local_17c.wielder = (CDemonActor *)in_stack_00000004;
                 local_14 = local_17c.damage_amount;
                 pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                    (&local_80,(CVector3f *)&FLOAT_00822c94,
@@ -268,8 +261,6 @@ void core_bride_cpp_FUN_00423a30(void)
                   [*(int *)(in_stack_00000004[1].base.base.actor_name + 0xc)] != 0)) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1b8);
                 local_1b8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-                local_1b8.attacker = (CDemonActor *)in_stack_00000004;
-                local_1b8.wielder = (CDemonActor *)in_stack_00000004;
                 local_14 = local_1b8.damage_amount;
                 pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                    (&local_98,(CVector3f *)&FLOAT_00822c94,

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_FUN_0043ddf0(void)
+; __cdecl void __cdecl core_cloth_cpp_FUN_0043ddf0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x278]:1  local_278
@@ -180,13 +180,13 @@ section .text
     PUSH EAX                            ; 0043df55
     PUSH EBP                            ; 0043df56
     CALL core_cloth.cpp_ParseClothFile_FUN_00439260 ; 0043df57
-        ;   XREF to: 00439260 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_ParseClothFile_FUN_00439260()
+        ;   XREF to: 00439260 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_ParseClothFile_FUN_00439260()
     JMP 0x0043df06                      ; 0043df5c
         ;   XREF to: 0043df06 (UNCONDITIONAL_JUMP)  ; LAB_0043df06
     PUSH EBP                            ; 0043df5e
         ;   Label: caseD_33
     CALL core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 ; 0043df5f
-        ;   XREF to: 0043d590 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_LockVerticesMaybe_FUN_0043d590()
+        ;   XREF to: 0043d590 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_LockVerticesMaybe_FUN_0043d590()
     ADD ESP,0x4                         ; 0043df64
     JMP 0x0043df09                      ; 0043df67
         ;   XREF to: 0043df09 (UNCONDITIONAL_JUMP)  ; default
@@ -226,7 +226,7 @@ section .text
         ;   XREF to: 0043df09 (CONDITIONAL_JUMP)  ; default
     PUSH EBP                            ; 0043dfcf
     CALL core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 ; 0043dfd0
-        ;   XREF to: 0043c880 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_BoneAndClothEditor_FUN_0043c880()
+        ;   XREF to: 0043c880 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_BoneAndClothEditor_FUN_0043c880()
     ADD ESP,0x4                         ; 0043dfd5
     JMP 0x0043df09                      ; 0043dfd8
         ;   XREF to: 0043df09 (UNCONDITIONAL_JUMP)  ; default
@@ -297,7 +297,7 @@ section .text
     PUSH EAX                            ; 0043e08c
     PUSH EBP                            ; 0043e08d
     CALL core_cloth.cpp_FUN_0043dcc0    ; 0043e08e
-        ;   XREF to: 0043dcc0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043dcc0()
+        ;   XREF to: 0043dcc0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043dcc0()
     JMP 0x0043df06                      ; 0043e093
         ;   XREF to: 0043df06 (UNCONDITIONAL_JUMP)  ; LAB_0043df06
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_lightgun_cpp_FUN_005066b0(void)
+; __cdecl void __cdecl core_lightgun_cpp_FUN_005066b0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x94]:1  local_94

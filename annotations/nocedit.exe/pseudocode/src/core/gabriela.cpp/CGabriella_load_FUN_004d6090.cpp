@@ -1,14 +1,14 @@
 // Name: core_gabriela.cpp_CGabriella_load_FUN_004d6090
 // Address: 004d6090
 // Address Range: [[004d6090, 004d6132]]
-// Convention: unknown
-// Signature: void core_gabriela_cpp_CGabriella_load_FUN_004d6090(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gabriela_cpp_CGabriella_load_FUN_004d6090(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_gabriella.cpp_CGabriella_load(CGabriella* param_1) */
 
-void core_gabriela_cpp_CGabriella_load_FUN_004d6090(void)
+void __cdecl core_gabriela_cpp_CGabriella_load_FUN_004d6090(void)
 
 {
   CHero *in_stack_00000004;

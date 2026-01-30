@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c48b0(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c
@@ -68,7 +68,7 @@ section .text
     PUSH EBX                            ; 005c48e3
         ;   Label: LAB_005c48e3
     CALL core_hero.cpp_FUN_004f3580     ; 005c48e4
-        ;   XREF to: 004f3580 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3580()
+        ;   XREF to: 004f3580 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3580()
     FLD float ptr [EBX + 0xbe24]        ; 005c48e9
     FLDZ                                ; 005c48ef
     ADD ESP,0x4                         ; 005c48f1

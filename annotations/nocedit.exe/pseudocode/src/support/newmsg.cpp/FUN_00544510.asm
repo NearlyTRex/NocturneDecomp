@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 support_newmsg_cpp_FUN_00544510(void)
+; __cdecl int __cdecl support_newmsg_cpp_FUN_00544510(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CVector3f * core_bride_cpp_FUN_00424aa0(void)
+; __cdecl CVector3f * __cdecl core_bride_cpp_FUN_00424aa0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x7c]:1  local_7c

@@ -1,14 +1,12 @@
 // Name: core_script.cpp_FUN_005675a0
 // Address: 005675a0
 // Address Range: [[005675a0, 00567623]]
-// Convention: unknown
-// Signature: int core_script_cpp_FUN_005675a0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_script_cpp_FUN_005675a0(char *param_1,char *param_2)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_005675a0(uint param_1, uint param_2) */
-
-int core_script_cpp_FUN_005675a0(void)
+int __cdecl core_script_cpp_FUN_005675a0(char *param_1,char *param_2)
 
 {
   uint uVar1;
@@ -17,23 +15,21 @@ int core_script_cpp_FUN_005675a0(void)
   int iVar4;
   bool bVar5;
   bool bVar6;
-  char *in_stack_00000004;
-  char *in_stack_00000008;
   
-  iVar4 = stricmp(in_stack_00000004,in_stack_00000008);
+  iVar4 = stricmp(param_1,param_2);
   if (iVar4 == 0) {
-    if (*(int *)(in_stack_00000004 + 0x100) < *(int *)(in_stack_00000008 + 0x100)) {
+    if (*(int *)(param_1 + 0x100) < *(int *)(param_2 + 0x100)) {
       return -1;
     }
-    if (*(int *)(in_stack_00000004 + 0x100) <= *(int *)(in_stack_00000008 + 0x100)) {
-      uVar1 = *(uint *)(in_stack_00000004 + 0x104);
-      if (uVar1 < *(uint *)(in_stack_00000008 + 0x104)) {
+    if (*(int *)(param_1 + 0x100) <= *(int *)(param_2 + 0x100)) {
+      uVar1 = *(uint *)(param_1 + 0x104);
+      if (uVar1 < *(uint *)(param_2 + 0x104)) {
         return -1;
       }
-      if (uVar1 == *(uint *)(in_stack_00000008 + 0x104)) {
+      if (uVar1 == *(uint *)(param_2 + 0x104)) {
         if (uVar1 == 0) {
-          iVar4 = *(int *)(in_stack_00000008 + 0x10c);
-          iVar2 = *(int *)(in_stack_00000004 + 0x10c);
+          iVar4 = *(int *)(param_2 + 0x10c);
+          iVar2 = *(int *)(param_1 + 0x10c);
           bVar6 = SBORROW4(iVar2,iVar4);
           iVar3 = iVar2 - iVar4;
           bVar5 = iVar2 == iVar4;
@@ -42,8 +38,8 @@ int core_script_cpp_FUN_005675a0(void)
           }
         }
         else {
-          iVar4 = *(int *)(in_stack_00000008 + 0x108);
-          iVar2 = *(int *)(in_stack_00000004 + 0x108);
+          iVar4 = *(int *)(param_2 + 0x108);
+          iVar2 = *(int *)(param_1 + 0x108);
           bVar6 = SBORROW4(iVar2,iVar4);
           iVar3 = iVar2 - iVar4;
           bVar5 = iVar2 == iVar4;

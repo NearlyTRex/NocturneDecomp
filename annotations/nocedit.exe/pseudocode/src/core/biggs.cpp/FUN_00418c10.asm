@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_biggs_cpp_FUN_00418c10(void)
+; __cdecl int __cdecl core_biggs_cpp_FUN_00418c10(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x10]:1  local_10

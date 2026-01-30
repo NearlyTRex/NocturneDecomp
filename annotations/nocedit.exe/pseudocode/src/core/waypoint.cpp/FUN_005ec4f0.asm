@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_waypoint_cpp_FUN_005ec4f0(void)
+; __cdecl void __cdecl core_waypoint_cpp_FUN_005ec4f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_FUN_0053d7b0 at 0053d854
+;   core_msnedit.cpp_CDemonMission_FUN_0053d7b0 at 0053d854
 ;   core_waypoint.cpp_CWayPoint_FUN_005ec5e0 at 005ec5e6
 ;
 ; Referenced Globals:
@@ -40,7 +40,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005ec4f7
     PUSH EBX                            ; 005ec4fb
     CALL core_waypoint.cpp_FUN_005ec830 ; 005ec4fc
-        ;   XREF to: 005ec830 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec830()
+        ;   XREF to: 005ec830 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_FUN_005ec830()
     XOR ESI,ESI                         ; 005ec501
     MOV EDX,dword ptr [EBX + 0x370]     ; 005ec503
     ADD ESP,0x4                         ; 005ec509
@@ -55,7 +55,7 @@ section .text
     ADD EDI,0x8                         ; 005ec51a
     INC ESI                             ; 005ec51d
     CALL core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640 ; 005ec51e
-        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640()
+        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640()
     MOV EBP,dword ptr [EBX + 0x370]     ; 005ec523
     ADD ESP,0x8                         ; 005ec529
     CMP ESI,EBP                         ; 005ec52c
@@ -97,7 +97,7 @@ section .text
     PUSH EDX                            ; 005ec587
     MOV dword ptr [ESP + 0x10],EAX      ; 005ec588
     CALL core_waypoint.cpp_FUN_005ebd40 ; 005ec58c
-        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ebd40()
+        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; bool core_waypoint.cpp_FUN_005ebd40()
     ADD ESP,0xc                         ; 005ec591
     TEST EAX,EAX                        ; 005ec594
     JZ 0x005ec56e                       ; 005ec596
@@ -108,7 +108,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 005ec59f
     PUSH EAX                            ; 005ec5a3
     CALL core_waypoint.cpp_FUN_005ebd40 ; 005ec5a4
-        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ebd40()
+        ;   XREF to: 005ebd40 (UNCONDITIONAL_CALL)  ; bool core_waypoint.cpp_FUN_005ebd40()
     ADD ESP,0xc                         ; 005ec5a9
     TEST EAX,EAX                        ; 005ec5ac
     JZ 0x005ec56e                       ; 005ec5ae
@@ -116,12 +116,12 @@ section .text
     PUSH ESI                            ; 005ec5b0
     PUSH EBX                            ; 005ec5b1
     CALL core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700 ; 005ec5b2
-        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700()
+        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700()
     ADD ESP,0x8                         ; 005ec5b7
     PUSH EBX                            ; 005ec5ba
     PUSH ESI                            ; 005ec5bb
     CALL core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700 ; 005ec5bc
-        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700()
+        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700()
     MOV EDX,dword ptr [EBX + 0x370]     ; 005ec5c1
     ADD ESP,0x8                         ; 005ec5c7
     CMP EDX,0x3c                        ; 005ec5ca

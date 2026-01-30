@@ -192,7 +192,7 @@ section .text
         ;   Label: LAB_005ec10e
     PUSH ESI                            ; 005ec111
     CALL core_path.cpp_FUN_00548500     ; 005ec112
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 005ec117
     PUSH EAX                            ; 005ec11a
     MOV EBX,EAX                         ; 005ec11b
@@ -207,7 +207,7 @@ section .text
     PUSH EDI                            ; 005ec136
     PUSH EBX                            ; 005ec137
     CALL core_path.cpp_FUN_00547fc0     ; 005ec138
-        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00547fc0()
+        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00547fc0()
     ADD ESP,0x14                        ; 005ec13d
     XOR EAX,EAX                         ; 005ec140
     ADD ESP,0x9c                        ; 005ec142

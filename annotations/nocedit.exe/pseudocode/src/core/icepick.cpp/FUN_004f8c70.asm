@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_icepick_cpp_FUN_004f8c70(void)
+; __cdecl void __cdecl core_icepick_cpp_FUN_004f8c70(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -124,7 +124,7 @@ section .text
     PUSH EBX                            ; 004f8d86
     MOV dword ptr [ESP + 0x84],EDX      ; 004f8d87
     CALL core_hero.cpp_FUN_004f3960     ; 004f8d8e
-        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3960()
+        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_FUN_004f3960()
     MOV EDX,EAX                         ; 004f8d93
     ADD ESP,0x8                         ; 004f8d95
     TEST EAX,EAX                        ; 004f8d98
@@ -480,7 +480,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 004f9203
     PUSH EAX                            ; 004f9206
     CALL core_path.cpp_FUN_00548500     ; 004f9207
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 004f920c
     MOV dword ptr [ESP + 0x98],EAX      ; 004f920f
     MOV ECX,dword ptr [EBX + 0x6c]      ; 004f9216

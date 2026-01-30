@@ -209,7 +209,7 @@ section .text
         ;   Label: LAB_005e2622
     PUSH EBX                            ; 005e2625
     CALL core_turret.cpp_FUN_005e2d50   ; 005e2626
-        ;   XREF to: 005e2d50 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_FUN_005e2d50()
+        ;   XREF to: 005e2d50 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_FUN_005e2d50()
     ADD ESP,0x8                         ; 005e262b
     MOV dword ptr [EBX + 0x77c],0x0     ; 005e262e
     JMP 0x005e24da                      ; 005e2638
@@ -258,7 +258,7 @@ section .text
         ;   Label: LAB_005e26df
     PUSH EBX                            ; 005e26e2
     CALL core_turret.cpp_FUN_005e3560   ; 005e26e3
-        ;   XREF to: 005e3560 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_FUN_005e3560()
+        ;   XREF to: 005e3560 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_FUN_005e3560()
     ADD ESP,0x8                         ; 005e26e8
     JMP 0x005e24da                      ; 005e26eb
         ;   XREF to: 005e24da (UNCONDITIONAL_JUMP)  ; LAB_005e24da

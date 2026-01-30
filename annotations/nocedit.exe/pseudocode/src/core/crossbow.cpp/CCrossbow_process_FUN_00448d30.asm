@@ -71,7 +71,7 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 00448dbb
     PUSH EAX                            ; 00448dbf
     CALL core_flame.cpp_FUN_004c9c00    ; 00448dc0
-        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004c9c00()
+        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9c00()
     MOV EAX,dword ptr [EBX + 0x578]     ; 00448dc5
     ADD ESP,0x8                         ; 00448dcb
     MOV dword ptr [EBX + 0xfc],EAX      ; 00448dce
@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_00448dd9
     PUSH EAX                            ; 00448ddf
     CALL core_flame.cpp_FUN_004caa70    ; 00448de0
-        ;   XREF to: 004caa70 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004caa70()
+        ;   XREF to: 004caa70 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004caa70()
     ADD ESP,0x4                         ; 00448de5
     MOV dword ptr [EBX + 0x578],0x0     ; 00448de8
     JMP 0x00448db5                      ; 00448df2

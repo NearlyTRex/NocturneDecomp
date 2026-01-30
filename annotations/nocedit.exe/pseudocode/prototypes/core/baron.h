@@ -129,7 +129,7 @@ void __cdecl CBaron(CBaron *this_ptr);
 
 // Original: core_baron.cpp_FUN_00414090
 // Address: 00414090
-void FUN_00414090(void);
+void __cdecl FUN_00414090(void);
 
 // Original: core_baron.cpp_CBaron_FUN_004140a0
 // Address: 004140a0

@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 54,
+    "complexity_score": 53,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 8,
     "suspect_count": 4,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 26
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -40,13 +40,13 @@
     {
       "addr": "00567080",
       "from_addr": "005670f7",
-      "name": "core_script.cpp_FUN_00567080",
+      "name": "core_script.cpp_CScript_FUN_00567080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00567310",
       "from_addr": "00567384",
-      "name": "core_script.cpp_FUN_00567310",
+      "name": "core_script.cpp_CScript_FUN_00567310",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,9 +58,9 @@
         "004b0fb9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_FUN_004b0f90",
-    "signature": "undefined4 core_event_cpp_FUN_004b0f90(void)"
+    "signature": "int __cdecl core_event_cpp_FUN_004b0f90(int param_1)"
   },
   "function_calls": [],
   "globals": [
@@ -93,41 +93,49 @@
     "pcode_op_count": 61
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_event_cpp_FUN_004b0f90(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 5,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "if ((((g_CharacterClassificationTable[(byte)((char)param_1 + 1)] & 0xe0U) == 0) &&",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "if ((((g_CharacterClassificationTable[(byte)((char)in_stack_00000004 + 1)] & 0xe0U) == 0) &&",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "text": "(param_1 != 0x5f)) && (param_1 != 0x2d)) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004 != 0x5f)) && (in_stack_00000004 != 0x2d)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004 != 0x5f)) && (in_stack_00000004 != 0x2d)) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "text": "(param_1 != 0x5f)) && (param_1 != 0x2d)) {",
+      "type": "unnamed_param"
     }
   ]
 }

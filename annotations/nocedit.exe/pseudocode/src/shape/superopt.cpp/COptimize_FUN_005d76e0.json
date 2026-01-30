@@ -3,14 +3,8 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 23,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
         "column": 14,
-        "line": 32,
+        "line": 34,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,24 +19,25 @@
       {
         "category": "other",
         "column": 6,
-        "line": 32,
+        "line": 34,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 105,
+    "complexity_score": 132,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "pseudocode_lines": 27,
+    "suspect_count": 9,
     "suspect_types": [
+      "extra_output",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 79
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -127,50 +122,64 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 18,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = shape_superopt_cpp_FUN_005c79a0();",
+      "text": "in_stack_00000008 = extraout_EAX;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 18,
+      "match": "extraout_EAX",
+      "text": "in_stack_00000008 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 27,
       "match": "in_stack_00000008",
       "text": "*(int *)((int)this_ptr->unk6 + iVar1 * 4) = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->unk6 + iVar1 * 4) = in_stack_00000008;",
       "type": "pointer_cast"

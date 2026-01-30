@@ -4,43 +4,43 @@
       {
         "category": "other",
         "column": 18,
-        "line": 76,
+        "line": 75,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 76,
+        "line": 75,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 90,
+        "line": 89,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 91,
+        "line": 90,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 116,
+        "line": 115,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 30,
-        "line": 116,
+        "line": 115,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "syntax_error",
         "column": 34,
-        "line": 145,
+        "line": 144,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -55,55 +55,55 @@
       {
         "category": "other",
         "column": 70,
-        "line": 80,
+        "line": 79,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 90,
+        "line": 89,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 91,
+        "line": 90,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 116,
+        "line": 115,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 133,
+        "line": 132,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 134,
+        "line": 133,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 145,
+        "line": 144,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 348,
-    "complexity_score": 743,
+    "complexity_score": 662,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
-    "pseudocode_lines": 173,
-    "suspect_count": 54,
+    "pseudocode_lines": 172,
+    "suspect_count": 46,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -112,7 +112,7 @@
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 521
+    "total_lines": 520
   },
   "cross_references": [
     {
@@ -134,10 +134,10 @@
         "005271b7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_mobster.cpp_FUN_00526d90",
-    "signature": "undefined4 core_mobster_cpp_FUN_00526d90(void)"
+    "signature": "int __cdecl core_mobster_cpp_FUN_00526d90(void)"
   },
   "function_calls": [
     {
@@ -447,272 +447,216 @@
     {
       "description": "Unresolved stack parameter",
       "line": 48,
+      "match": "in_stack_00000004",
+      "text": "fVar9 = *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008 =",
+      "text": "fVar9 = *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 49,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000008",
-      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28) = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000008",
-      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28) = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 < 0.0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).create_event[0x28] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).create_event[0x29] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).create_event[0x2a] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).create_event[0x2b] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000004",
-      "text": "iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000004",
-      "text": "pCVar1 = &(in_stack_00000004->base).location;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
-      "match": "SQRT",
-      "text": "SQRT(CStack_50.x * CStack_50.x + fStack_58 * fStack_58 + fStack_54 * fStack_54);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(CLocation *)((int)",
-      "text": "local_20 = (CLocation *)((int)&(local_20->position).x + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_00000004",
-      "text": "pCVar4 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 100,
-      "match": "in_stack_00000004",
-      "text": "iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 101,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x2c) = fVar9;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base.create_event + 0x20) = iVar8 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_00000004",
-      "text": "(&(in_stack_00000004->model).motion_controller,1,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 109,
-      "match": "code *",
-      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x8c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000004",
-      "text": "pCVar4 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 116,
-      "match": "in_stack_00000004",
-      "text": "pCVar4 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_00000004",
-      "text": "(&(in_stack_00000004->model).motion_controller,1,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000004",
-      "text": "iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_00000004",
-      "text": "fVar3 = (in_stack_00000004->base).location.position.z - *(float *)(iVar8 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
-      "match": "SQRT",
-      "text": "SQRT(fVar3 * fVar3 + fVar9 * fVar9) * (float)0.33333333333333298;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 133,
-      "match": "in_stack_00000008",
-      "text": "fVar9 = in_stack_00000008 * fVar9 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28) = fVar9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000004",
+      "text": "iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = &(in_stack_00000004->base).location;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "SQRT",
+      "text": "SQRT(CStack_50.x * CStack_50.x + fStack_58 * fStack_58 + fStack_54 * fStack_54);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(CLocation *)((int)",
+      "text": "local_20 = (CLocation *)((int)&(local_20->position).x + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_00000004",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_00000004",
+      "text": "iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x2c) = fVar9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004[1].base.create_event + 0x20) = iVar8 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_00000004",
+      "text": "(&(in_stack_00000004->model).motion_controller,1,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 108,
+      "match": "code *",
+      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x8c))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_00000004",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 115,
+      "match": "in_stack_00000004",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 121,
+      "match": "in_stack_00000004",
+      "text": "(&(in_stack_00000004->model).motion_controller,1,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 124,
+      "match": "in_stack_00000004",
+      "text": "iVar8 = *(int *)(in_stack_00000004[1].base.create_event + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 126,
+      "match": "in_stack_00000004",
+      "text": "fVar3 = (in_stack_00000004->base).location.position.z - *(float *)(iVar8 + 0x28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 128,
+      "match": "SQRT",
+      "text": "SQRT(fVar3 * fVar3 + fVar9 * fVar9) * (float)0.33333333333333298;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_00000008",
+      "text": "fVar9 = in_stack_00000008 * fVar9 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 133,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 135,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].base.create_event + 0x28) = fVar9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 137,
       "match": "in_stack_00000004",
       "text": "(iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base.create_event + 0x2c)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 138,
+      "line": 137,
       "match": "code *",
       "text": "(iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base.create_event + 0x2c)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 139,
       "match": "in_stack_00000004",
       "text": "pCVar2 = *(CDemonActor **)(in_stack_00000004[1].base.create_event + 0x2c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 150,
+      "line": 149,
       "match": "in_stack_00000004",
       "text": "iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 157,
+      "line": 156,
       "match": "in_stack_00000004",
       "text": "(&(in_stack_00000004->model).motion_controller,7,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 160,
+      "line": 159,
       "match": "in_stack_00000004",
       "text": "pCVar4 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 165,
+      "line": 164,
       "match": "in_stack_00000004",
       "text": "pCVar4 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 171,
+      "line": 170,
       "match": "in_stack_00000004",
       "text": "(&(in_stack_00000004->model).motion_controller,1,1);",
       "type": "stack_param"

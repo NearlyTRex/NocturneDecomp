@@ -5,7 +5,7 @@
 
 // Original: core_morph.cpp_FUN_0052a490
 // Address: 0052a490
-int FUN_0052a490(void);
+int __cdecl FUN_0052a490(void);
 
 // Original: core_morph.cpp_CMorphModel_ctor_FUN_0052a4c0
 // Address: 0052a4c0
@@ -45,7 +45,7 @@ void __cdecl CMorphModel(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_FUN_0052aa30
 // Address: 0052aa30
-void __cdecl FUN_0052aa30(CMorphModel *param_1,undefined4 param_2,CDeformableModelInstance *param_3);
+void __cdecl FUN_0052aa30(void);
 
 // Original: core_morph.cpp_FUN_0052aa80
 // Address: 0052aa80
@@ -77,11 +77,11 @@ void __cdecl FUN_0052b160(void);
 
 // Original: core_morph.cpp_FUN_0052b280
 // Address: 0052b280
-int FUN_0052b280(void);
+int __cdecl FUN_0052b280(void);
 
 // Original: core_morph.cpp_FUN_0052b310
 // Address: 0052b310
-void FUN_0052b310(void);
+void __cdecl FUN_0052b310(void);
 
 // Original: core_morph.cpp_CMorphModel_FUN_0052b330
 // Address: 0052b330
@@ -93,11 +93,11 @@ void __cdecl CMorphModel(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_FUN_0052b370
 // Address: 0052b370
-void FUN_0052b370(void);
+void __cdecl FUN_0052b370(void);
 
 // Original: core_morph.cpp_FUN_0052b3d0
 // Address: 0052b3d0
-void FUN_0052b3d0(void);
+void __cdecl FUN_0052b3d0(void);
 
 // Original: core_morph.cpp_FUN_0052b430
 // Address: 0052b430
@@ -109,27 +109,27 @@ void __cdecl FUN_0052b470(void);
 
 // Original: core_morph.cpp_FUN_0052b4b0
 // Address: 0052b4b0
-void FUN_0052b4b0(void);
+void __cdecl FUN_0052b4b0(void);
 
 // Original: core_morph.cpp_FUN_0052b500
 // Address: 0052b500
-void FUN_0052b500(void);
+void __cdecl FUN_0052b500(void);
 
 // Original: core_morph.cpp_FUN_0052b550
 // Address: 0052b550
-void FUN_0052b550(void);
+void __cdecl FUN_0052b550(void);
 
 // Original: core_morph.cpp_FUN_0052b580
 // Address: 0052b580
-void FUN_0052b580(void);
+void __cdecl FUN_0052b580(void);
 
 // Original: core_morph.cpp_FUN_0052b5c0
 // Address: 0052b5c0
-void FUN_0052b5c0(void);
+void __cdecl FUN_0052b5c0(void);
 
 // Original: core_morph.cpp_FUN_0052b600
 // Address: 0052b600
-void FUN_0052b600(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,int param_6,undefined4 param_7,undefined4 param_8);
+void __cdecl FUN_0052b600(void);
 
 // Original: core_morph.cpp_FUN_0052b640
 // Address: 0052b640
@@ -145,11 +145,11 @@ void __cdecl CMorphModel(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_FUN_0052bb50
 // Address: 0052bb50
-void FUN_0052bb50(void);
+void __cdecl FUN_0052bb50(void);
 
 // Original: core_morph.cpp_FUN_0052bb80
 // Address: 0052bb80
-void FUN_0052bb80(void);
+void __cdecl FUN_0052bb80(void);
 
 // Original: core_morph.cpp_FUN_0052bcb0
 // Address: 0052bcb0
@@ -157,15 +157,15 @@ void __cdecl FUN_0052bcb0(void);
 
 // Original: core_morph.cpp_FUN_0052ca90
 // Address: 0052ca90
-void FUN_0052ca90(void);
+void __cdecl FUN_0052ca90(void);
 
 // Original: core_morph.cpp_FUN_0052cc10
 // Address: 0052cc10
-void FUN_0052cc10(void);
+void __cdecl FUN_0052cc10(void);
 
 // Original: core_morph.cpp_FUN_0052cc40
 // Address: 0052cc40
-int FUN_0052cc40(void);
+int __cdecl FUN_0052cc40(void);
 
 // Original: core_morph.cpp_SMorphControlPoint_ctor_FUN_0052cc50
 // Address: 0052cc50
@@ -197,4 +197,4 @@ void __cdecl freeMorphModels(CMorphModel **array);
 
 // Original: core_morph.cpp_FUN_0052cd30
 // Address: 0052cd30
-void FUN_0052cd30(void);
+void __cdecl FUN_0052cd30(void);

@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_FUN_00578210
 // Address: 00578210
 // Address Range: [[00578210, 00578285]]
-// Convention: unknown
-// Signature: undefined1 core_setedit_cpp_FUN_00578210(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_setedit_cpp_FUN_00578210(void)
 
 #include "nocturne.h"
 
-byte core_setedit_cpp_FUN_00578210(void)
+int __cdecl core_setedit_cpp_FUN_00578210(void)
 
 {
   int iVar1;
@@ -24,13 +24,13 @@ byte core_setedit_cpp_FUN_00578210(void)
       iVar1 = stricmp(str1,local_10c);
       if (iVar1 == 0) {
         if (iVar2 < 0) {
-          return 0xff;
+          return -1;
         }
-        return (&DAT_03659190)[iVar2];
+        return (uint)(byte)(&DAT_03659190)[iVar2];
       }
       iVar2 = iVar2 + 1;
       str1 = str1 + 0x28;
     } while (iVar2 < DAT_03654368);
   }
-  return 0xff;
+  return -1;
 }

@@ -1,15 +1,15 @@
 // Name: core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0
 // Address: 005412b0
 // Address Range: [[005412b0, 0054138f]]
-// Convention: unknown
-// Signature: int core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_netgame.cpp_CNetGame_addPlayer(CNetGame* param_1, uint param_2,
    uint param_3, uint param_4, uint param_5) */
 
-int core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
+int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
 
 {
   char cVar1;

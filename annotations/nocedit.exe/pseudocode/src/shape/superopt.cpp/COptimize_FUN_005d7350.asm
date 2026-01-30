@@ -118,7 +118,7 @@ section .text
         ;   Label: LAB_005d7407
     PUSH EDX                            ; 005d740a
     CALL shape_superopt.cpp_FUN_005c7b20 ; 005d740b
-        ;   XREF to: 005c7b20 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c7b20()
+        ;   XREF to: 005c7b20 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c7b20()
     ADD ESP,0x4                         ; 005d7410
     TEST EAX,EAX                        ; 005d7413
     JNZ 0x005d7369                      ; 005d7415

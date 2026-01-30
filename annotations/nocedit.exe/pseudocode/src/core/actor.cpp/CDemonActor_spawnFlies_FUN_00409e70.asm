@@ -36,7 +36,7 @@ section .text
     ADD ESP,0xc                         ; 00409e85
     PUSH EBX                            ; 00409e88
     CALL core_flies.cpp_FUN_004cca50    ; 00409e89
-        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cca50()
+        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; CDemonActor * core_flies.cpp_FUN_004cca50()
     ADD ESP,0x4                         ; 00409e8e
     TEST EAX,EAX                        ; 00409e91
     JZ 0x00409e97                       ; 00409e93

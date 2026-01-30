@@ -1,14 +1,14 @@
 // Name: core_turret.cpp_FUN_005e2d50
 // Address: 005e2d50
 // Address Range: [[005e2d50, 005e3273]]
-// Convention: unknown
-// Signature: void core_turret_cpp_FUN_005e2d50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_turret_cpp_FUN_005e2d50(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_turret.cpp_FUN_005e2d50(uint param_1) */
 
-void core_turret_cpp_FUN_005e2d50(void)
+void __cdecl core_turret_cpp_FUN_005e2d50(void)
 
 {
   CDemonActor *actor_ptr;
@@ -44,8 +44,8 @@ void core_turret_cpp_FUN_005e2d50(void)
   char *pcStack_14;
   
   if (*(int *)(in_stack_00000004[5].create_event + 0x50) == 0) {
-    engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s has no guard trigger!\n",in_stack_00000004);
+    engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s has no guard trigger!\n")
+    ;
     return;
   }
   (**(code **)(*(int *)(*(int *)(in_stack_00000004[5].create_event + 0x50) + 0x154) + 0x14))();

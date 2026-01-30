@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_boneguy_cpp_FUN_0041bf90(void)
+; __cdecl void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1bc]:1  local_1bc
@@ -180,7 +180,7 @@ section .text
         ;   XREF to: 0041c218 (CONDITIONAL_JUMP)  ; LAB_0041c218
     PUSH EBX                            ; 0041c053
     CALL core_boneguy.cpp_FUN_0041d8a0  ; 0041c054
-        ;   XREF to: 0041d8a0 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_FUN_0041d8a0()
+        ;   XREF to: 0041d8a0 (UNCONDITIONAL_CALL)  ; void core_boneguy.cpp_FUN_0041d8a0()
     ADD ESP,0x4                         ; 0041c059
     CMP dword ptr [EBX + 0xc4dc],0x2    ; 0041c05c
         ;   Label: LAB_0041c05c
@@ -739,7 +739,7 @@ section .text
     PUSH EAX                            ; 0041c694
     PUSH EBX                            ; 0041c695
     CALL core_enemy.cpp_FUN_004a9880    ; 0041c696
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 0041c69b
     JMP 0x0041c3f4                      ; 0041c69e
         ;   XREF to: 0041c3f4 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -864,7 +864,7 @@ section .text
     PUSH EBX                            ; 0041c7fc
     MOV dword ptr [EBP + 0xffffff06],EBX ; 0041c7fd
     CALL core_enemy.cpp_FUN_004a9930    ; 0041c803
-        ;   XREF to: 004a9930 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9930()
+        ;   XREF to: 004a9930 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9930()
     ADD ESP,0x10                        ; 0041c808
     JMP 0x0041c3f4                      ; 0041c80b
         ;   XREF to: 0041c3f4 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -952,7 +952,7 @@ section .text
         ;   Label: LAB_0041c8f3
     PUSH EBX                            ; 0041c8f9
     CALL core_boneguy.cpp_FUN_0041cc40  ; 0041c8fa
-        ;   XREF to: 0041cc40 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_FUN_0041cc40()
+        ;   XREF to: 0041cc40 (UNCONDITIONAL_CALL)  ; int core_boneguy.cpp_FUN_0041cc40()
     ADD ESP,0x8                         ; 0041c8ff
     TEST EAX,EAX                        ; 0041c902
     JNZ 0x0041c3f4                      ; 0041c904

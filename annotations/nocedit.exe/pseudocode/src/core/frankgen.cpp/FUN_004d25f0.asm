@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_FUN_004d25f0(void)
+; __cdecl void __cdecl core_frankgen_cpp_FUN_004d25f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -64,7 +64,7 @@ section .text
     FMUL double ptr [0x0062ac05]        ; 004d264a | DOUBLE_0062ac05
     FSTP float ptr [ESP]                ; 004d2650
     CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d2653
-        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
         ;   Label: LAB_004d2653
     PUSH 0x34                           ; 004d2658
     MOV EDI,EAX                         ; 004d265a
@@ -119,7 +119,7 @@ section .text
     PUSH EBX                            ; 004d26ec
     FSTP float ptr [EBX + 0x15c]        ; 004d26ed
     CALL core_frankgen.cpp_LoadModel_FUN_004d2190 ; 004d26f3
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_LoadModel_FUN_004d2190()
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_LoadModel_FUN_004d2190()
     ADD ESP,0x4                         ; 004d26f8
     MOV ESP,EBP                         ; 004d26fb
     POP EBP                             ; 004d26fd

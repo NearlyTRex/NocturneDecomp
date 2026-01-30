@@ -1,14 +1,14 @@
 // Name: core_biggs.cpp_CBiggs_load_FUN_00418ac0
 // Address: 00418ac0
 // Address Range: [[00418ac0, 00418b43]]
-// Convention: unknown
-// Signature: void core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_enemy_biggs.cpp_CBiggs_load(CBiggs* param_1, char* param_2) */
 
-void core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
+void __cdecl core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
 
 {
   CDeformableModelInstance *model_ptr;

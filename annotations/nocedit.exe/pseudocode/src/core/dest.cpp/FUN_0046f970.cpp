@@ -1,14 +1,14 @@
 // Name: core_dest.cpp_FUN_0046f970
 // Address: 0046f970
 // Address Range: [[0046f970, 0046f97a]]
-// Convention: unknown
-// Signature: void core_dest_cpp_FUN_0046f970(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dest_cpp_FUN_0046f970(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_dest.cpp_FUN_0046f970(uint param_1) */
 
-void core_dest_cpp_FUN_0046f970(void)
+void __cdecl core_dest_cpp_FUN_0046f970(void)
 
 {
   int iVar1;

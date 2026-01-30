@@ -1,12 +1,12 @@
 // Name: core_path.cpp_FUN_005485f0
 // Address: 005485f0
 // Address Range: [[005485f0, 00548673]]
-// Convention: unknown
-// Signature: void core_path_cpp_FUN_005485f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_path_cpp_FUN_005485f0(void)
 
 #include "nocturne.h"
 
-void core_path_cpp_FUN_005485f0(void)
+void __cdecl core_path_cpp_FUN_005485f0(void)
 
 {
   int iVar1;

@@ -1,15 +1,15 @@
 // Name: core_scat.cpp_FUN_005578e0
 // Address: 005578e0
 // Address Range: [[005578e0, 00557d1a]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_005578e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_005578e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_005578e0(uint param_1, uint param_2)
     */
 
-void core_scat_cpp_FUN_005578e0(void)
+void __cdecl core_scat_cpp_FUN_005578e0(void)
 
 {
   float fVar1;
@@ -17,6 +17,7 @@ void core_scat_cpp_FUN_005578e0(void)
   CHero *pCVar3;
   SMotion *pSVar4;
   CPathMap *this_ptr;
+  CPathMap *extraout_EAX;
   CVector3f *pCVar5;
   CHero *this_ptr_00;
   int iVar6;
@@ -125,7 +126,8 @@ LAB_00557a94:
   }
   this_ptr = (*((this_ptr_00->base).base.vtable._ub)->getPathMap)((CDemonActor *)this_ptr_00);
   if (this_ptr == (CPathMap *)0x0) {
-    this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
+    core_path_cpp_FUN_00548500();
+    this_ptr = extraout_EAX;
   }
   iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                     (this_ptr,&(in_stack_00000004->base).location.position,&CStack_50,

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_FUN_00439710(void)
+; __cdecl void __cdecl core_cloth_cpp_FUN_00439710(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xfc]:4  local_fc
@@ -284,7 +284,7 @@ section .text
         ;   Label: LAB_004399b3
     PUSH EBP                            ; 004399ba
     CALL core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0 ; 004399bb
-        ;   XREF to: 004394e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0()
+        ;   XREF to: 004394e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0()
     ADD ESP,0x4                         ; 004399c0
     MOV ECX,dword ptr [EBP + 0x3f028]   ; 004399c3
     XOR EAX,EAX                         ; 004399c9
@@ -499,7 +499,7 @@ section .text
     PUSH EBX                            ; 00439c99
     PUSH EBP                            ; 00439c9a
     CALL core_cloth.cpp_OrientBoneCheck_FUN_0043a110 ; 00439c9b
-        ;   XREF to: 0043a110 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_OrientBoneCheck_FUN_0043a110()
+        ;   XREF to: 0043a110 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_OrientBoneCheck_FUN_0043a110()
     INC EBX                             ; 00439ca0
     MOV EDX,dword ptr [EBP + 0x3ce8c]   ; 00439ca1
     ADD ESP,0xc                         ; 00439ca7

@@ -1,12 +1,12 @@
 // Name: core_boxactor.cpp_CLightActor_FUN_00423590
 // Address: 00423590
 // Address Range: [[00423590, 004235b7]]
-// Convention: unknown
-// Signature: undefined4 core_boxactor_cpp_CLightActor_FUN_00423590(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_boxactor_cpp_CLightActor_FUN_00423590(void)
 
 #include "nocturne.h"
 
-uint core_boxactor_cpp_CLightActor_FUN_00423590(void)
+int __cdecl core_boxactor_cpp_CLightActor_FUN_00423590(void)
 
 {
   int iVar1;

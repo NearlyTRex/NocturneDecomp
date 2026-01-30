@@ -4,55 +4,55 @@
       {
         "category": "other",
         "column": 16,
-        "line": 125,
+        "line": 124,
         "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 127,
+        "line": 126,
         "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 140,
+        "line": 139,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 140,
+        "line": 139,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 141,
+        "line": 140,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 141,
+        "line": 140,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 142,
+        "line": 141,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 143,
+        "line": 142,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 212,
+        "line": 211,
         "message": "cast from 'CDemonActorTransformState*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -67,66 +67,66 @@
       {
         "category": "other",
         "column": 6,
-        "line": 140,
+        "line": 139,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 140,
+        "line": 139,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 141,
+        "line": 140,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 141,
+        "line": 140,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 142,
+        "line": 141,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 143,
+        "line": 142,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 211,
+        "line": 210,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 214,
+        "line": 213,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 215,
+        "line": 214,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 1373,
+    "complexity_score": 1372,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 283,
+    "pseudocode_lines": 282,
     "suspect_count": 107,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -134,7 +134,7 @@
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 942
+    "total_lines": 941
   },
   "cross_references": [],
   "function": {
@@ -145,10 +145,10 @@
         "004308ed"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_chain.cpp_FUN_004300d0",
-    "signature": "void core_chain_cpp_FUN_004300d0(void)"
+    "signature": "void __cdecl core_chain_cpp_FUN_004300d0(void)"
   },
   "function_calls": [
     {
@@ -633,238 +633,245 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 61,
       "match": "in_stack_00000004",
       "text": "if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < -9900.0f) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000004",
-      "text": "fVar5 = (*((in_stack_00000004->vtable)._ub)->cylinderGroundCheck)",
+      "text": "fVar4 = (*((in_stack_00000004->vtable)._ub)->cylinderGroundCheck)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 63,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,0.1,(CVector3f *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 64,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[4].actor_name + 0xc) = fVar5;",
+      "text": "*(float *)(in_stack_00000004[4].actor_name + 0xc) = fVar4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {",
+      "text": "pCVar7 = in_stack_00000004 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 69,
       "match": "in_stack_00000004",
-      "text": "pCVar8 = in_stack_00000004 + 2;",
+      "text": "for (iVar8 = 0; iVar8 < *(int *)in_stack_00000004[1].actor_name + -1; iVar8 = iVar8 + 1) {",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Negative struct offset (wrong base type)",
       "line": 70,
-      "match": "in_stack_00000004",
-      "text": "for (iVar9 = 0; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {",
-      "type": "stack_param"
+      "match": "pCVar7[-1].",
+      "text": "local_70 = pCVar7[-1].previous_transform_state.orientation.x - *(float *)pCVar7->actor_name;",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 71,
-      "match": "pCVar8[-1].",
-      "text": "local_70 = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;",
+      "match": "pCVar7[-1].",
+      "text": "fStack_6c = pCVar7[-1].previous_transform_state.orientation.y -",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 72,
-      "match": "pCVar8[-1].",
-      "text": "fStack_6c = pCVar8[-1].previous_transform_state.orientation.y -",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 74,
-      "match": "pCVar8[-1].",
-      "text": "fStack_68 = pCVar8[-1].previous_transform_state.orientation.z -",
+      "line": 73,
+      "match": "pCVar7[-1].",
+      "text": "fStack_68 = pCVar7[-1].previous_transform_state.orientation.z -",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 76,
       "match": "SQRT",
       "text": "fStack_e0 = SQRT(fStack_68 * fStack_68 + local_70 * local_70 + fStack_6c * fStack_6c) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 80,
       "match": "in_stack_00000004",
-      "text": "piVar1 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;",
+      "text": "piVar2 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_00000004",
+      "text": "piVar2 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 81,
-      "match": "in_stack_00000004",
-      "text": "piVar1 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[4].actor_name + 0x10) = 1.0 / in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 81,
       "match": "in_stack_00000008",
       "text": "*(float *)(in_stack_00000004[4].actor_name + 0x10) = 1.0 / in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 86,
       "match": "in_stack_00000004",
       "text": "piVar2 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 86,
       "match": "in_stack_00000004",
       "text": "piVar2 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 92,
+      "match": "in_stack_00000004",
+      "text": "iVar8 = *(int *)in_stack_00000004[1].actor_name;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 93,
       "match": "in_stack_00000004",
-      "text": "iVar9 = *(int *)in_stack_00000004[1].actor_name;",
+      "text": "pCVar1 = &in_stack_00000004[1].previous_transform_state.orientation;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = &in_stack_00000004[1].previous_transform_state.orientation;",
+      "text": "(&in_stack_00000004[1].unk12)[iVar8 * 9] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 95,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].unk12)[iVar9 * 9] = 0;",
+      "text": "(&in_stack_00000004[1].unk11)[iVar8 * 9] = (&in_stack_00000004[1].unk12)[iVar8 * 9];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004[1].unk11)[iVar8 * 9] = (&in_stack_00000004[1].unk12)[iVar8 * 9];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].unk11)[iVar9 * 9] = (&in_stack_00000004[1].unk12)[iVar9 * 9];",
+      "text": "(&in_stack_00000004[1].unk10)[iVar8 * 9] = (&in_stack_00000004[1].unk11)[iVar8 * 9];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].unk11)[iVar9 * 9] = (&in_stack_00000004[1].unk12)[iVar9 * 9];",
+      "text": "(&in_stack_00000004[1].unk10)[iVar8 * 9] = (&in_stack_00000004[1].unk11)[iVar8 * 9];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 97,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].unk10)[iVar9 * 9] = (&in_stack_00000004[1].unk11)[iVar9 * 9];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[1].unk10)[iVar9 * 9] = (&in_stack_00000004[1].unk11)[iVar9 * 9];",
+      "text": "if ((CLocation *)pCVar1 != &in_stack_00000004->location) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 98,
       "match": "in_stack_00000004",
-      "text": "if ((CLocation *)pCVar6 != &in_stack_00000004->location) {",
+      "text": "pCVar1->x = (in_stack_00000004->location).position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_00000004",
-      "text": "pCVar6->x = (in_stack_00000004->location).position.x;",
+      "text": "in_stack_00000004[1].previous_transform_state.orientation.y =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 100,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].previous_transform_state.orientation.y =",
+      "text": "(in_stack_00000004->location).position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 101,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.y;",
+      "text": "in_stack_00000004[1].previous_transform_state.orientation.z =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 102,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].previous_transform_state.orientation.z =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 104,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].unk14 = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
+      "line": 105,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].unk13 = in_stack_00000004[1].unk14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 105,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].unk13 = in_stack_00000004[1].unk14;",
       "type": "stack_param"
@@ -873,12 +880,12 @@
       "description": "Unresolved stack parameter",
       "line": 106,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].unk13 = in_stack_00000004[1].unk14;",
+      "text": "in_stack_00000004[1].previous_transform_state.dirty_flags = in_stack_00000004[1].unk13;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 107,
+      "line": 106,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.dirty_flags = in_stack_00000004[1].unk13;",
       "type": "stack_param"
@@ -886,496 +893,489 @@
     {
       "description": "Unresolved stack parameter",
       "line": 107,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].previous_transform_state.dirty_flags = in_stack_00000004[1].unk13;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
       "match": "in_stack_00000004",
       "text": "local_4c = &in_stack_00000004[1].previous_transform_state.orientation;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 108,
       "match": "in_stack_00000004",
       "text": "local_34 = in_stack_00000004[4].actor_name + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 109,
       "match": "in_stack_00000004",
       "text": "local_28 = &in_stack_00000004[2].location.position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 110,
       "match": "in_stack_00000004",
-      "text": "pCVar10 = (COrientation *)(in_stack_00000004[2].actor_name + 0xc);",
+      "text": "pCVar9 = (COrientation *)(in_stack_00000004[2].actor_name + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 112,
       "match": "in_stack_00000004",
       "text": "for (local_24 = 1; local_24 < *(int *)in_stack_00000004[1].actor_name + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 117,
       "match": "in_stack_00000004",
       "text": "local_38 = (float)in_stack_00000004[3].vtable * (float)0.03125;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 120,
+      "line": 119,
       "match": "in_stack_00000004",
       "text": "fStack_a8 = (0.0 - (float)in_stack_00000004[3].vtable) * (1.0 / local_38);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 126,
       "match": "in_stack_00000008",
       "text": "local_7c = local_c4 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 127,
       "match": "in_stack_00000008",
       "text": "local_78 = local_c0 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 128,
       "match": "in_stack_00000008",
       "text": "local_74 = local_bc * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 131,
       "match": "in_stack_00000008",
       "text": "local_88 = local_88 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 132,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)(pCVar6 + 1) + 4) = *(float *)((int)(pCVar6 + 1) + 4) + local_78;",
+      "text": "*(float *)((int)(pCVar1 + 1) + 4) = *(float *)((int)(pCVar1 + 1) + 4) + local_78;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)(pCVar1 + 1) + 4) = *(float *)((int)(pCVar1 + 1) + 4) + local_78;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 133,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)(pCVar6 + 1) + 4) = *(float *)((int)(pCVar6 + 1) + 4) + local_78;",
+      "text": "*(float *)((int)(pCVar1 + 1) + 8) = *(float *)((int)(pCVar1 + 1) + 8) + local_74;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)(pCVar1 + 1) + 8) = *(float *)((int)(pCVar1 + 1) + 8) + local_74;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 134,
+      "match": "in_stack_00000008",
+      "text": "local_84 = *(float *)((int)(pCVar1 + 1) + 4) * in_stack_00000008;",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 134,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)(pCVar6 + 1) + 8) = *(float *)((int)(pCVar6 + 1) + 8) + local_74;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)(pCVar6 + 1) + 8) = *(float *)((int)(pCVar6 + 1) + 8) + local_74;",
+      "text": "local_84 = *(float *)((int)(pCVar1 + 1) + 4) * in_stack_00000008;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 135,
       "match": "in_stack_00000008",
-      "text": "local_84 = *(float *)((int)(pCVar6 + 1) + 4) * in_stack_00000008;",
+      "text": "local_80 = in_stack_00000008 * *(float *)((int)(pCVar1 + 1) + 8);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 135,
       "match": "(float *)((int)",
-      "text": "local_84 = *(float *)((int)(pCVar6 + 1) + 4) * in_stack_00000008;",
+      "text": "local_80 = in_stack_00000008 * *(float *)((int)(pCVar1 + 1) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_00000008",
-      "text": "local_80 = in_stack_00000008 * *(float *)((int)(pCVar6 + 1) + 8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 136,
-      "match": "(float *)((int)",
-      "text": "local_80 = in_stack_00000008 * *(float *)((int)(pCVar6 + 1) + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 146,
       "match": "in_stack_00000004",
       "text": "local_1c = &in_stack_00000004[1].previous_transform_state.dirty_flags;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 148,
+      "line": 147,
       "match": "in_stack_00000004",
       "text": "pCStack_18 = &in_stack_00000004[1].previous_transform_state.orientation;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 149,
+      "line": 148,
       "match": "in_stack_00000004",
       "text": "local_20 = &in_stack_00000004->location;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 150,
+      "line": 149,
       "match": "in_stack_00000004",
       "text": "local_40 = &in_stack_00000004[2].location.position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 150,
       "match": "in_stack_00000004",
       "text": "local_3c = in_stack_00000004 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 154,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = pCStack_18 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;",
+      "text": "pCVar5 = pCStack_18 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 160,
       "match": "in_stack_00000004",
-      "text": "iVar9 = *(int *)in_stack_00000004[1].actor_name + -1;",
+      "text": "iVar8 = *(int *)in_stack_00000004[1].actor_name + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_00000004",
-      "text": "for (iVar9 = 1; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {",
+      "text": "for (iVar8 = 1; iVar8 < *(int *)in_stack_00000004[1].actor_name + -1; iVar8 = iVar8 + 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
+      "line": 179,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = pCStack_18 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;",
+      "text": "pCVar5 = pCStack_18 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 186,
+      "line": 185,
       "match": "in_stack_00000004",
-      "text": "iVar9 = *(int *)in_stack_00000004[1].actor_name + -1;",
+      "text": "iVar8 = *(int *)in_stack_00000004[1].actor_name + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 201,
+      "line": 200,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)in_stack_00000004[1].actor_name) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 202,
+      "line": 201,
       "match": "in_stack_00000004",
-      "text": "ppCVar7 = &in_stack_00000004[1].next_actor;",
+      "text": "ppCVar6 = &in_stack_00000004[1].next_actor;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 205,
+      "line": 204,
       "match": "in_stack_00000004",
-      "text": "((int)&in_stack_00000004[1].previous_transform_state + iVar9 * 0x24 + 0xc);",
+      "text": "((int)&in_stack_00000004[1].previous_transform_state + iVar8 * 0x24 + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 212,
       "match": "in_stack_00000004",
-      "text": "} while (iVar9 < *(int *)in_stack_00000004[1].actor_name);",
+      "text": "} while (iVar8 < *(int *)in_stack_00000004[1].actor_name);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
+      "line": 216,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 218,
+      "line": 217,
       "match": "in_stack_00000004",
       "text": "if (fStack_e0 < *(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.90000000000000002) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 219,
+      "line": 218,
       "match": "in_stack_00000004",
-      "text": "pCVar8 = in_stack_00000004 + 2;",
+      "text": "pCVar7 = in_stack_00000004 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 221,
+      "line": 220,
       "match": "in_stack_00000004",
-      "text": "for (iVar9 = 0; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {",
+      "text": "for (iVar8 = 0; iVar8 < *(int *)in_stack_00000004[1].actor_name + -1; iVar8 = iVar8 + 1) {",
       "type": "stack_param"
     },
     {
       "description": "Negative struct offset (wrong base type)",
+      "line": 221,
+      "match": "pCVar7[-1].",
+      "text": "local_b8 = pCVar7[-1].previous_transform_state.orientation.x - *(float *)pCVar7->actor_name;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
       "line": 222,
-      "match": "pCVar8[-1].",
-      "text": "local_b8 = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;",
+      "match": "pCVar7[-1].",
+      "text": "local_b4 = pCVar7[-1].previous_transform_state.orientation.y -",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 223,
-      "match": "pCVar8[-1].",
-      "text": "local_b4 = pCVar8[-1].previous_transform_state.orientation.y -",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 225,
-      "match": "pCVar8[-1].",
-      "text": "local_b0 = pCVar8[-1].previous_transform_state.orientation.z -",
+      "line": 224,
+      "match": "pCVar7[-1].",
+      "text": "local_b0 = pCVar7[-1].previous_transform_state.orientation.z -",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 228,
+      "line": 227,
       "match": "SQRT",
       "text": "fStack_e4 = SQRT(local_b0 * local_b0 + local_b8 * local_b8 + local_b4 * local_b4) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 231,
+      "line": 230,
       "match": "in_stack_00000004",
       "text": "if (*(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.90000000000000002 < fStack_e4) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 234,
+      "match": "in_stack_00000004",
+      "text": "iVar8 = *(int *)in_stack_00000004[1].actor_name;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 235,
       "match": "in_stack_00000004",
-      "text": "iVar9 = *(int *)in_stack_00000004[1].actor_name;",
+      "text": "local_94 = local_58 - (float)(&in_stack_00000004[1].scale)[iVar8 * 3].z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 236,
       "match": "in_stack_00000004",
-      "text": "local_94 = local_58 - (float)(&in_stack_00000004[1].scale)[iVar9 * 3].z;",
+      "text": "local_90 = local_54 - (float)(&in_stack_00000004[1].unk8)[iVar8 * 9];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 237,
       "match": "in_stack_00000004",
-      "text": "local_90 = local_54 - (float)(&in_stack_00000004[1].unk8)[iVar9 * 9];",
+      "text": "local_8c = local_50 - (float)(&in_stack_00000004[1].unk9)[iVar8 * 9];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 238,
-      "match": "in_stack_00000004",
-      "text": "local_8c = local_50 - (float)(&in_stack_00000004[1].unk9)[iVar9 * 9];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 239,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 * (float)0.10000000000000001 <",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 240,
+      "line": 239,
       "match": "SQRT",
       "text": "SQRT(local_8c * local_8c + local_94 * local_94 + local_90 * local_90)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 244,
+      "line": 243,
       "match": "in_stack_00000004",
       "text": "if ((local_44 != 0) && (*(char *)&in_stack_00000004[1].orient_matrix.m[2].z != '\\0')) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 246,
+      "line": 245,
       "match": "in_stack_00000004",
       "text": "((uint)in_stack_00000004[1].previous_transform_state.position.x);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 248,
+      "line": 247,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[1].create_event + 0x48));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 250,
+      "match": "in_stack_00000004",
+      "text": "(g_CSoundPtr,in_stack_00000004,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 251,
       "match": "in_stack_00000004",
-      "text": "(g_CSoundPtr,in_stack_00000004,",
+      "text": "(char *)&in_stack_00000004[1].orient_matrix.m[2].z,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 252,
+      "line": 253,
       "match": "in_stack_00000004",
-      "text": "(char *)&in_stack_00000004[1].orient_matrix.m[2].z,",
+      "text": "&(&in_stack_00000004[1].scale)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 254,
       "match": "in_stack_00000004",
-      "text": "&(&in_stack_00000004[1].scale)",
+      "text": "[*(int *)in_stack_00000004[1].actor_name * 3].z);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 255,
       "match": "in_stack_00000004",
-      "text": "[*(int *)in_stack_00000004[1].actor_name * 3].z);",
+      "text": "in_stack_00000004[1].previous_transform_state.position.x = fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 256,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].previous_transform_state.position.x = fVar5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 259,
+      "line": 258,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.position.y =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 260,
+      "line": 259,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.position.y - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 260,
+      "line": 259,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004[1].previous_transform_state.position.y - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 262,
+      "line": 261,
       "match": "in_stack_00000004",
       "text": "if (0.0 <= in_stack_00000004[1].previous_transform_state.position.y) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 265,
+      "line": 264,
       "match": "in_stack_00000004",
-      "text": "fVar5 = in_stack_00000004[1].previous_transform_state.position.x;",
+      "text": "fVar4 = in_stack_00000004[1].previous_transform_state.position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 266,
+      "line": 265,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.position.y = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 271,
+      "line": 270,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[1].create_event + 0x48));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 274,
+      "line": 273,
       "match": "in_stack_00000004",
       "text": "((uint)in_stack_00000004[1].previous_transform_state.position.x);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 277,
+      "line": 276,
       "match": "in_stack_00000004",
       "text": "(g_CSoundPtr,in_stack_00000004,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 278,
+      "line": 277,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].create_event + 0x4c,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 280,
+      "line": 279,
       "match": "in_stack_00000004",
       "text": "&(&in_stack_00000004[1].scale)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 281,
+      "line": 280,
       "match": "in_stack_00000004",
       "text": "[*(int *)in_stack_00000004[1].actor_name * 3].z);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 282,
+      "line": 281,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].previous_transform_state.position.x = fVar5;",
+      "text": "in_stack_00000004[1].previous_transform_state.position.x = fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 285,
+      "line": 284,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.position.y = 0.5;",
       "type": "stack_param"

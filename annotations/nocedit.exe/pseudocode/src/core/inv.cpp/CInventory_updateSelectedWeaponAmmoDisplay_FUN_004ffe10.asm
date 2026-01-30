@@ -48,7 +48,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x458]     ; 004ffe5e
     PUSH ESI                            ; 004ffe64
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004ffe65
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
     ADD ESP,0x8                         ; 004ffe6a
     POP ESI                             ; 004ffe6d
     POP EBX                             ; 004ffe6e

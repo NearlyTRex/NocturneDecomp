@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
+; __cdecl int __cdecl core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x24]:1  local_24

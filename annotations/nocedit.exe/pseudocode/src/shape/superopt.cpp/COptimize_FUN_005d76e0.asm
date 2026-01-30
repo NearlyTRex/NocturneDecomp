@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 005d7739 (CONDITIONAL_JUMP)  ; LAB_005d7739
     PUSH EAX                            ; 005d7730
     CALL shape_superopt.cpp_FUN_005c79a0 ; 005d7731
-        ;   XREF to: 005c79a0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c79a0()
+        ;   XREF to: 005c79a0 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_FUN_005c79a0()
     ADD ESP,0x4                         ; 005d7736
     MOV EDX,EAX                         ; 005d7739
         ;   Label: LAB_005d7739

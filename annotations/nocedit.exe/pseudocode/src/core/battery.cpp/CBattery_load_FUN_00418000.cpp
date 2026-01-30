@@ -1,15 +1,15 @@
 // Name: core_battery.cpp_CBattery_load_FUN_00418000
 // Address: 00418000
 // Address Range: [[00418000, 0041804b]]
-// Convention: unknown
-// Signature: void core_battery_cpp_CBattery_load_FUN_00418000(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_battery_cpp_CBattery_load_FUN_00418000(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_other_battery.cpp_CBattery_load(CBattery* param_1, uint param_2,
    char* param_3, char* param_4) */
 
-void core_battery_cpp_CBattery_load_FUN_00418000(void)
+void __cdecl core_battery_cpp_CBattery_load_FUN_00418000(void)
 
 {
   CDemonActor *in_stack_00000004;

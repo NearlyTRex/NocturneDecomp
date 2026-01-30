@@ -1,24 +1,25 @@
 // Name: core_platfrm.cpp_FUN_0054f2a0
 // Address: 0054f2a0
 // Address Range: [[0054f2a0, 0054f2df]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_FUN_0054f2a0 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)
+// Convention: __cdecl
+// Signature: void __cdecl core_platfrm_cpp_FUN_0054f2a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_FUN_0054f2a0(uint param_1, uint
    param_2) */
 
-void core_platfrm_cpp_FUN_0054f2a0
-               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               int param_5,_FILE *param_6)
+void __cdecl core_platfrm_cpp_FUN_0054f2a0(void)
 
 {
+  int in_stack_00000004;
+  _FILE *in_stack_00000008;
+  
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
-            ((CKeyFramedModelInstance *)(param_5 + 0x158),param_6);
-  if (*(char *)(param_5 + 0x2f0) == '\0') {
+            ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),in_stack_00000008);
+  if (*(char *)(in_stack_00000004 + 0x2f0) == '\0') {
     return;
   }
-  _fprintf(param_6,"data\\%s\n",param_5 + 0x2f0,unaff_EBX);
+  _fprintf(in_stack_00000008,"data\\%s\n",in_stack_00000004 + 0x2f0);
   return;
 }

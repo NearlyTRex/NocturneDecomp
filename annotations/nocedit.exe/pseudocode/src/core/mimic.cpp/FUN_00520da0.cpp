@@ -1,15 +1,15 @@
 // Name: core_mimic.cpp_FUN_00520da0
 // Address: 00520da0
 // Address Range: [[00520da0, 00520dc4]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_FUN_00520da0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_FUN_00520da0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mimic.cpp_FUN_00520da0(uint param_1, uint param_2)
     */
 
-void core_mimic_cpp_FUN_00520da0(void)
+void __cdecl core_mimic_cpp_FUN_00520da0(void)
 
 {
   CCharacter *in_stack_00000004;

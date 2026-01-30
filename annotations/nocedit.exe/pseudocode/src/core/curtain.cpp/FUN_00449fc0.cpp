@@ -1,15 +1,15 @@
 // Name: core_curtain.cpp_FUN_00449fc0
 // Address: 00449fc0
 // Address Range: [[00449fc0, 0044a912]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_FUN_00449fc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_FUN_00449fc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_curtain.cpp_FUN_00449fc0(uint param_1, uint
    param_2) */
 
-void core_curtain_cpp_FUN_00449fc0(void)
+void __cdecl core_curtain_cpp_FUN_00449fc0(void)
 
 {
   float *pfVar1;

@@ -42,7 +42,7 @@ section .text
     MOV EBP,dword ptr [EBX + EAX*0x1]   ; 005d701f
     PUSH EBP                            ; 005d7022
     CALL shape_superopt.cpp_FUN_005c79f0 ; 005d7023
-        ;   XREF to: 005c79f0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c79f0()
+        ;   XREF to: 005c79f0 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_FUN_005c79f0()
     MOV EAX,dword ptr [ESI + 0x3c]      ; 005d7028
     MOV EAX,dword ptr [EBX + EAX*0x1]   ; 005d702b
     ADD ESP,0x4                         ; 005d702e
@@ -96,7 +96,7 @@ section .text
         ;   Label: LAB_005d70a2
     PUSH EAX                            ; 005d70a4
     CALL shape_superopt.cpp_FUN_005c79d0 ; 005d70a5
-        ;   XREF to: 005c79d0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c79d0()
+        ;   XREF to: 005c79d0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c79d0()
     ADD ESP,0x8                         ; 005d70aa
     PUSH EAX                            ; 005d70ad
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d70ae

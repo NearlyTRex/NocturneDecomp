@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
-;   core_mission.cpp_FUN_00524660
+;   core_mission.cpp_CDemonMission_FUN_00524660
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH EAX                            ; 00524727
     MOV EDX,dword ptr [ESP + 0x38]      ; 00524728
     PUSH EDX                            ; 0052472c
-    CALL core_mission.cpp_FUN_00524660  ; 0052472d
-        ;   XREF to: 00524660 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_00524660()
+    CALL core_mission.cpp_CDemonMission_FUN_00524660 ; 0052472d
+        ;   XREF to: 00524660 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00524660(CDemonMission * this_ptr)
     ADD ESP,0xc                         ; 00524732
     MOV ESI,ESP                         ; 00524735
     PUSH EDI                            ; 00524737

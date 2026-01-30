@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_FUN_0043c070(void)
+; __cdecl void __cdecl core_cloth_cpp_FUN_0043c070(void)
 ;
 ;
 ; XREF[2]:
@@ -45,7 +45,7 @@ section .text
     PUSH 0x0                            ; 0043c0a1
     PUSH EAX                            ; 0043c0a3
     CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 0043c0a4
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
     ADD ESP,0x8                         ; 0043c0a9
     PUSH EAX                            ; 0043c0ac
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043c0ad

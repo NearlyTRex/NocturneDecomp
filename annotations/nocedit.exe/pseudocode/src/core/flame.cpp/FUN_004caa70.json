@@ -47,10 +47,10 @@
         "004caa7e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_flame.cpp_FUN_004caa70",
-    "signature": "void core_flame_cpp_FUN_004caa70(void)"
+    "signature": "void __cdecl core_flame_cpp_FUN_004caa70(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -61,17 +61,15 @@
         "call_addr": "00448de0",
         "call_type": "direct",
         "caller": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 3,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 1
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 2
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0,
@@ -112,11 +110,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
+      "estimated_params": 1,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

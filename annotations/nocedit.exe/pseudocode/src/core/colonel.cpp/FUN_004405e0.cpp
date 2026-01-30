@@ -1,15 +1,15 @@
 // Name: core_colonel.cpp_FUN_004405e0
 // Address: 004405e0
 // Address Range: [[004405e0, 004405ee]]
-// Convention: unknown
-// Signature: void core_colonel_cpp_FUN_004405e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_colonel_cpp_FUN_004405e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_colonel.cpp_FUN_004405e0(uint param_1, uint
    param_2) */
 
-void core_colonel_cpp_FUN_004405e0(void)
+void __cdecl core_colonel_cpp_FUN_004405e0(void)
 
 {
   int in_stack_00000004;

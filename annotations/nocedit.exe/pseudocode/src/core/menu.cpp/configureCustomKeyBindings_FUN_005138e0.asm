@@ -1321,7 +1321,7 @@ section .text
     MOV ESI,dword ptr [0x0067b654]      ; 00514799 | g_CGamePtr
     PUSH ESI                            ; 0051479f | g_CGameInstance
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0 ; 005147a0
-        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
     ADD ESP,0x4                         ; 005147a5
     PUSH 0x0                            ; 005147a8
     LEA EAX,[ESP + 0xc]                 ; 005147aa
@@ -1512,7 +1512,7 @@ section .text
     PUSH EAX                            ; 0051494a | g_CGameInstance
         ;   Label: LAB_0051494a
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 0051494b
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 00514950
     JMP 0x005148f2                      ; 00514953
         ;   XREF to: 005148f2 (UNCONDITIONAL_JUMP)  ; LAB_005148f2
@@ -1681,14 +1681,14 @@ section .text
     PUSH EAX                            ; 00514ac3 | g_CGameInstance
         ;   Label: LAB_00514ac3
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 00514ac4
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 00514ac9
     JMP 0x00514a1b                      ; 00514acc
         ;   XREF to: 00514a1b (UNCONDITIONAL_JUMP)  ; LAB_00514a1b
     PUSH EAX                            ; 00514ad1 | g_CGameInstance
         ;   Label: LAB_00514ad1
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 00514ad2
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 00514ad7
     JMP 0x00514a7a                      ; 00514ada
         ;   XREF to: 00514a7a (UNCONDITIONAL_JUMP)  ; LAB_00514a7a
@@ -2095,7 +2095,7 @@ section .text
     MOV EBP,dword ptr [0x0067b654]      ; 00514f19 | g_CGamePtr
     PUSH EBP                            ; 00514f1f | g_CGameInstance
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0 ; 00514f20
-        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
     ADD ESP,0x4                         ; 00514f25
     PUSH 0x6372cc                       ; 00514f28 | = "One or more keys not valid.  Restorin..."
     MOV EAX,[0x00678a60]                ; 00514f2d | g_CEditorToolsInstance | g_CEditorToolsPtr

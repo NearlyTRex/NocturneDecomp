@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_pendulum_cpp_FUN_0054a360(void)
+; __cdecl float * __cdecl core_pendulum_cpp_FUN_0054a360(void)
 ;
 ;
 ; Called Functions:

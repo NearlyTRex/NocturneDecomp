@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bodypart_cpp_FUN_00419e10(void)
+; __cdecl void __cdecl core_bodypart_cpp_FUN_00419e10(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
@@ -104,7 +104,7 @@ section .text
     FSTP float ptr [EBX + 0x15c]        ; 00419ef1
     MOV dword ptr [EBX + 0x160],EAX     ; 00419ef7
     CALL core_flame.cpp_FUN_004c9c00    ; 00419efd
-        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004c9c00()
+        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9c00()
     ADD ESP,0x8                         ; 00419f02
     MOV EAX,dword ptr [EBP + 0x14]      ; 00419f05
     INC EDI                             ; 00419f08

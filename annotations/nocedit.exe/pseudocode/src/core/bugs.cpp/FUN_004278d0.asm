@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bugs_cpp_FUN_004278d0(void)
+; __cdecl void __cdecl core_bugs_cpp_FUN_004278d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -79,12 +79,12 @@ section .text
     PUSH EAX                            ; 00427944
     PUSH EDI                            ; 00427945
     CALL core_bugs.cpp_FUN_004276c0     ; 00427946
-        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004276c0()
+        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004276c0()
     ADD ESP,0x8                         ; 0042794b
     PUSH EDI                            ; 0042794e
     XOR ESI,ESI                         ; 0042794f
     CALL core_bugs.cpp_FUN_004257f0     ; 00427951
-        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004257f0()
+        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004257f0()
     MOV EDX,dword ptr [EDI + 0xbec0]    ; 00427956
     ADD ESP,0x4                         ; 0042795c
     TEST EDX,EDX                        ; 0042795f
@@ -101,7 +101,7 @@ section .text
     PUSH EDI                            ; 0042797d
     INC ESI                             ; 0042797e
     CALL core_bugs.cpp_FUN_00426420     ; 0042797f
-        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00426420()
+        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_FUN_00426420()
     ADD EBX,0x40                        ; 00427984
     MOV ECX,dword ptr [EDI + 0xbec0]    ; 00427987
     ADD ESP,0x10                        ; 0042798d
@@ -113,7 +113,7 @@ section .text
     PUSH EDI                            ; 004279a0
         ;   Label: LAB_004279a0
     CALL core_bugs.cpp_FUN_004272f0     ; 004279a1
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004272f0()
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004272f0()
     ADD ESP,0x4                         ; 004279a6
     MOV ESP,EBP                         ; 004279a9
     POP EBP                             ; 004279ab

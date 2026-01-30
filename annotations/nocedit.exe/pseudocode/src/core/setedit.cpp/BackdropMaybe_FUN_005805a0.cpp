@@ -1,14 +1,14 @@
 // Name: core_setedit.cpp_BackdropMaybe_FUN_005805a0
 // Address: 005805a0
 // Address Range: [[005805a0, 00580722]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_setedit.cpp_BackdropMaybe(uint param_1) */
 
-void core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
+void __cdecl core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
 
 {
   int *ptr;

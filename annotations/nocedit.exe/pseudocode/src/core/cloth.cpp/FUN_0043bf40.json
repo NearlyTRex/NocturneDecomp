@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 19,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -47,9 +54,9 @@
         "0043bf74"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_cloth.cpp_FUN_0043bf40",
-    "signature": "undefined4 * core_cloth_cpp_FUN_0043bf40(void)"
+    "signature": "int __cdecl core_cloth_cpp_FUN_0043bf40(void)"
   },
   "function_calls": [
     {
@@ -146,7 +153,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
+      "text": "return (int)in_stack_00000004;",
       "type": "stack_param"
     },
     {

@@ -1,15 +1,15 @@
 // Name: core_flies.cpp_FUN_004cc230
 // Address: 004cc230
 // Address Range: [[004cc230, 004cc2b6]]
-// Convention: unknown
-// Signature: void core_flies_cpp_FUN_004cc230(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flies_cpp_FUN_004cc230(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flies.cpp_FUN_004cc230(uint param_1, uint param_2,
    uint param_3) */
 
-void core_flies_cpp_FUN_004cc230(void)
+void __cdecl core_flies_cpp_FUN_004cc230(void)
 
 {
   uint uVar1;

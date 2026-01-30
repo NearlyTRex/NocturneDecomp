@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
+; __cdecl void __cdecl core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
 ;
 ;
 ; XREF[2]:

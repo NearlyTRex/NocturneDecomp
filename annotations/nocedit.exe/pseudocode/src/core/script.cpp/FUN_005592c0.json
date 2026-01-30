@@ -13,23 +13,23 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 204,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 40,
     "suspect_count": 15,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
+      "param_count_too_many",
+      "unnamed_param"
     ],
-    "total_lines": 132
+    "total_lines": 128
   },
   "cross_references": [
     {
       "addr": "0055a370",
       "from_addr": "0055a3b8",
-      "name": "core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370",
+      "name": "core_script.cpp_CScript_FUN_0055a370",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -41,9 +41,9 @@
         "00559352"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_005592c0",
-    "signature": "void core_script_cpp_FUN_005592c0(void)"
+    "signature": "void __cdecl core_script_cpp_FUN_005592c0(char *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -72,7 +72,7 @@
       {
         "call_addr": "0055a3b8",
         "call_type": "direct",
-        "caller": "core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370",
+        "caller": "core_script.cpp_CScript_FUN_0055a370",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -80,7 +80,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
+    "declared_params": 2,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -112,122 +112,137 @@
     "pcode_op_count": 301
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void __cdecl core_script_cpp_FUN_005592c0(char *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void __cdecl core_script_cpp_FUN_005592c0(char *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "text": "*param_2 = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 10,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "while (pcVar3 = param_2, (g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2U) != 0) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "text": "while (pcVar3 = param_2, (g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2U) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 11,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = '\\0';",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 14,
-      "match": "in_stack_00000008",
-      "text": "while (pcVar3 = in_stack_00000008,",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "cVar1 = *param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "(g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "text": "cVar1 = param_1[1];",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 2;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 2;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "cVar1 = *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 22,
-      "match": "in_stack_00000004",
-      "text": "cVar1 = in_stack_00000004[1];",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "pcVar2 = strstr(param_2,\"//\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 23,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 2;",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "pcVar3 = param_2;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "pcVar2 = strstr(in_stack_00000008,\"//\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000008",
-      "text": "pcVar3 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "text": "while ((in_stack_00000008 < pcVar2 &&",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "text": "while ((param_2 < pcVar2 && ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2U) != 0)))",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
       "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

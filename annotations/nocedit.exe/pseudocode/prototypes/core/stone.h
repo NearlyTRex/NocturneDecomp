@@ -21,15 +21,15 @@ CTempleStone * __cdecl CTempleStone::ctor(CTempleStone *this_ptr);
 
 // Original: core_stone.cpp_FUN_005bad40
 // Address: 005bad40
-void FUN_005bad40(void);
+void __cdecl FUN_005bad40(void);
 
 // Original: core_stone.cpp_FUN_005bad70
 // Address: 005bad70
-undefined4 FUN_005bad70(void);
+int __cdecl FUN_005bad70(void);
 
 // Original: core_stone.cpp_FUN_005badd0
 // Address: 005badd0
-void FUN_005badd0(void);
+void __cdecl FUN_005badd0(void);
 
 // Original: core_stone.cpp_CTempleStone_dtor_FUN_005bae10
 // Address: 005bae10

@@ -5,28 +5,28 @@
 
 // Original: core_spline.cpp_FUN_005b90a0
 // Address: 005b90a0
-void FUN_005b90a0(void);
+void __cdecl FUN_005b90a0(void);
 
 // Original: core_spline.cpp_FUN_005b9230
 // Address: 005b9230
-float FUN_005b9230(void);
+float __cdecl FUN_005b9230(void);
 
 // Original: core_spline.cpp_FUN_005b9270
 // Address: 005b9270
-int FUN_005b9270(void);
+int __cdecl FUN_005b9270(void);
 
 // Original: core_spline.cpp_FUN_005b92d0
 // Address: 005b92d0
-float * FUN_005b92d0(void);
+float * __cdecl FUN_005b92d0(void);
 
 // Original: core_spline.cpp_FUN_005b93f0
 // Address: 005b93f0
-float FUN_005b93f0(void);
+float __cdecl FUN_005b93f0(void);
 
 // Original: core_spline.cpp_FUN_005b9430
 // Address: 005b9430
-int FUN_005b9430(void);
+int __cdecl FUN_005b9430(void);
 
 // Original: core_spline.cpp_FUN_005b9490
 // Address: 005b9490
-float * FUN_005b9490(void);
+float * __cdecl FUN_005b9490(void);

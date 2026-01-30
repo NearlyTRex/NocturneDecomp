@@ -1,15 +1,15 @@
 // Name: core_imp.cpp_FUN_004faf40
 // Address: 004faf40
 // Address Range: [[004faf40, 004fb0e9]]
-// Convention: unknown
-// Signature: int core_imp_cpp_FUN_004faf40(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_imp_cpp_FUN_004faf40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_imp.cpp_FUN_004faf40(uint param_1, uint param_2)
     */
 
-int core_imp_cpp_FUN_004faf40(void)
+int __cdecl core_imp_cpp_FUN_004faf40(void)
 
 {
   CVector3f *pCVar1;
@@ -77,11 +77,11 @@ int core_imp_cpp_FUN_004faf40(void)
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_24,INT_02db8a20
                      );
-  in_stack_00000008 = in_stack_00000008 + iVar3;
-  if (in_stack_00000008 != pCVar1) {
-    in_stack_00000008->x = pCVar1->x;
-    in_stack_00000008->y = pCVar1->y;
-    in_stack_00000008->z = pCVar1->z;
+  pCVar2 = in_stack_00000008 + iVar3;
+  if (pCVar2 != pCVar1) {
+    pCVar2->x = pCVar1->x;
+    pCVar2->y = pCVar1->y;
+    pCVar2->z = pCVar1->z;
   }
   return iVar3 + 1;
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_script_cpp_CScript_processTimer_FUN_005600c0(void)
+; __cdecl int __cdecl core_script_cpp_CScript_processTimer_FUN_005600c0(CScript *this_ptr,float param_2,float *param_3)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   param_2
+; float *          Stack[0xc]:4   param_3
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c4dd

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_ghoul_cpp_FUN_004e6160(void)
+; __cdecl void __cdecl core_ghoul_cpp_FUN_004e6160(void)
 ;
 ;
 ; Referenced Globals:

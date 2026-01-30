@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_grave_cpp_FUN_004ee5c0(void)
+; __cdecl void __cdecl core_grave_cpp_FUN_004ee5c0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 004ee5dc (CONDITIONAL_JUMP)  ; LAB_004ee5dc
     PUSH EBX                            ; 004ee614
     CALL core_grave.cpp_FUN_004ee790    ; 004ee615
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; undefined core_grave.cpp_FUN_004ee790()
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_FUN_004ee790()
     ADD ESP,0x4                         ; 004ee61a
     JMP 0x004ee5dc                      ; 004ee61d
         ;   XREF to: 004ee5dc (UNCONDITIONAL_JUMP)  ; LAB_004ee5dc

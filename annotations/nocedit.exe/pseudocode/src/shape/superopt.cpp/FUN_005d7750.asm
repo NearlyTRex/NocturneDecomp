@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int shape_superopt_cpp_FUN_005d7750(void)
+; __cdecl int __cdecl shape_superopt_cpp_FUN_005d7750(void)
 ;
 ;
 ; Referenced Globals:

@@ -641,27 +641,27 @@ int __cdecl CActorPropertyList::snag(CActorPropertyList *this_ptr,int property_t
 
 // Original: core_actor.cpp_CActorPropertyList_FUN_0040e770
 // Address: 0040e770
-void CActorPropertyList(void);
+void __cdecl CActorPropertyList(CActorPropertyList *this_ptr,int param_2,int param_3,int param_4);
 
 // Original: core_actor.cpp_CActorPropertyList_FUN_0040e850
 // Address: 0040e850
-void CActorPropertyList(void);
+void __cdecl CActorPropertyList(void);
 
 // Original: core_actor.cpp_CActorPropertyList_FUN_0040e9c0
 // Address: 0040e9c0
-int CActorPropertyList(void);
+int __cdecl CActorPropertyList(void);
 
 // Original: core_actor.cpp_CActorProperty_FUN_0040ea50
 // Address: 0040ea50
-void CActorProperty(void);
+void __cdecl CActorProperty(void);
 
 // Original: core_actor.cpp_FUN_0040ee30
 // Address: 0040ee30
-void FUN_0040ee30(void);
+void __cdecl FUN_0040ee30(void);
 
 // Original: core_actor.cpp_FUN_0040ee50
 // Address: 0040ee50
-void FUN_0040ee50(void);
+void __cdecl FUN_0040ee50(void);
 
 // Original: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 // Address: 0040eed0
@@ -669,7 +669,7 @@ int __cdecl CActorProperty::editInteractive(CActorProperty *this_ptr,CDemonActor
 
 // Original: core_actor.cpp_FUN_0040fffe
 // Address: 0040fffe
-undefined4 FUN_0040fffe(undefined4 param_1,undefined4 param_2,int unaff_EBX);
+int __cdecl FUN_0040fffe(void);
 
 // Original: core_actor.cpp_CVector_ctor_FUN_00410340
 // Address: 00410340
@@ -685,15 +685,15 @@ void __cdecl copyVector(CVector3f *dst_ptr,CVector3f *src_ptr);
 
 // Original: core_actor.cpp_FUN_00410380
 // Address: 00410380
-float FUN_00410380(void);
+float __cdecl FUN_00410380(void);
 
 // Original: core_actor.cpp_FUN_004103b0
 // Address: 004103b0
-void FUN_004103b0(void);
+void __cdecl FUN_004103b0(void);
 
 // Original: core_actor.cpp_FUN_004103d0
 // Address: 004103d0
-void FUN_004103d0(void);
+void __cdecl FUN_004103d0(void);
 
 // Original: core_actor.cpp_CSlew_ctor_FUN_00410400
 // Address: 00410400
@@ -725,15 +725,15 @@ void __cdecl CVector::copy(CVector3f *this_ptr,CVector3f *other);
 
 // Original: core_actor.cpp_FUN_004104d0
 // Address: 004104d0
-undefined4 * FUN_004104d0(void);
+int __cdecl FUN_004104d0(void);
 
 // Original: core_actor.cpp_FUN_004104e0
 // Address: 004104e0
-undefined4 * FUN_004104e0(void);
+int __cdecl FUN_004104e0(void);
 
 // Original: core_actor.cpp_FUN_004104f0
 // Address: 004104f0
-undefined4 * FUN_004104f0(void);
+int __cdecl FUN_004104f0(void);
 
 // Original: core_actor.cpp_freeVectors_FUN_00410500
 // Address: 00410500

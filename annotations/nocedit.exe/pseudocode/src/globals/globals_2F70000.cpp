@@ -7,6 +7,9 @@
 // CEdCheck
 CEdCheck g_CEdCheckInstance = {};
 
+// CEdScrollBar
+CEdScrollBar DAT_02f797e4 = {};
+
 // CNetGame
 CNetGame g_CNetGameInstance = {};
 
@@ -18,9 +21,6 @@ float FLOAT_02f7c540 = {};
 float FLOAT_02f7c630 = {};
 
 // int
-int INT_02f797e8 = {};
-int INT_02f797ec = {};
-int INT_02f797f0 = {};
 int g_DisableMouseHitOnBarrier = {};
 int INT_02f7a028 = {};
 int INT_02f7c510 = {};
@@ -38,7 +38,6 @@ undefined1 DAT_02f79818 = {};
 
 // undefined4
 undefined4 DAT_02f797e0 = {};
-undefined4 DAT_02f797e4 = {};
 undefined4 DAT_02f7c528 = {};
 undefined4 DAT_02f7c538 = {};
 undefined4 DAT_02f7c53c = {};

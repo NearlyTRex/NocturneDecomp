@@ -1,14 +1,14 @@
 // Name: core_setedit.cpp_FUN_0057d340
 // Address: 0057d340
 // Address Range: [[0057d340, 0057d654]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_FUN_0057d340(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_FUN_0057d340(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_setedit.cpp_FUN_0057d340(byte param_1, uint param_2) */
 
-void core_setedit_cpp_FUN_0057d340(void)
+void __cdecl core_setedit_cpp_FUN_0057d340(void)
 
 {
   uint *puVar1;
@@ -63,7 +63,7 @@ void core_setedit_cpp_FUN_0057d340(void)
   puVar1 = (uint *)(in_stack_00000008 + 0x108);
   puVar2 = (uint *)(in_stack_00000008 + 0x104);
   if (*(int *)(in_stack_00000008 + 0x140) != 0) {
-    sprintf(local_120,"%sn",in_stack_00000008);
+    sprintf(local_120,"%sn");
     local_a4 = 0;
     local_9c = 0;
     local_a0 = 0;
@@ -71,7 +71,7 @@ void core_setedit_cpp_FUN_0057d340(void)
     local_94 = *puVar2;
     local_90 = *puVar1;
     core_setedit_cpp_WriteActBackdrop_FUN_0057ce80();
-    sprintf(local_120,"%ss",in_stack_00000008);
+    sprintf(local_120,"%ss");
     local_8c = 0;
     local_84 = 0;
     local_88 = 0x40490fdb;
@@ -79,7 +79,7 @@ void core_setedit_cpp_FUN_0057d340(void)
     local_70 = *puVar2;
     local_6c = *puVar1;
     core_setedit_cpp_WriteActBackdrop_FUN_0057ce80();
-    sprintf(local_120,"%se",in_stack_00000008);
+    sprintf(local_120,"%se");
     local_38 = 0;
     local_30 = 0;
     local_34 = 0x3fc90fdb;
@@ -87,7 +87,7 @@ void core_setedit_cpp_FUN_0057d340(void)
     local_64 = *puVar2;
     local_60 = *puVar1;
     core_setedit_cpp_WriteActBackdrop_FUN_0057ce80();
-    sprintf(local_120,"%sw",in_stack_00000008);
+    sprintf(local_120,"%sw");
     local_80 = 0;
     local_78 = 0;
     local_7c = 0xbfc90fdb;
@@ -95,7 +95,7 @@ void core_setedit_cpp_FUN_0057d340(void)
     local_ac = *puVar2;
     local_a8 = *puVar1;
     core_setedit_cpp_WriteActBackdrop_FUN_0057ce80();
-    sprintf(local_120,"%su",in_stack_00000008);
+    sprintf(local_120,"%su");
     local_48 = 0;
     local_4c = 0;
     local_50 = 0xbfc90fdb;
@@ -103,7 +103,7 @@ void core_setedit_cpp_FUN_0057d340(void)
     local_58 = *puVar2;
     local_54 = *puVar1;
     core_setedit_cpp_WriteActBackdrop_FUN_0057ce80();
-    sprintf(local_120,"%sd",in_stack_00000008);
+    sprintf(local_120,"%sd");
     local_18 = 0;
     local_1c = 0;
     local_20 = 0x3fc90fdb;

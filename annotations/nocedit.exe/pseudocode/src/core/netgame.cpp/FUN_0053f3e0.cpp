@@ -1,12 +1,12 @@
 // Name: core_netgame.cpp_FUN_0053f3e0
 // Address: 0053f3e0
 // Address Range: [[0053f3e0, 0053f438]]
-// Convention: unknown
-// Signature: float core_netgame_cpp_FUN_0053f3e0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_netgame_cpp_FUN_0053f3e0(void)
 
 #include "nocturne.h"
 
-float core_netgame_cpp_FUN_0053f3e0(void)
+float __cdecl core_netgame_cpp_FUN_0053f3e0(void)
 
 {
   int in_stack_00000004;

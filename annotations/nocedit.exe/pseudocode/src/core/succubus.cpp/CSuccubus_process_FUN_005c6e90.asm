@@ -434,7 +434,7 @@ section .text
     LEA EAX,[EBX + 0xe170]              ; 005c728a
     PUSH EAX                            ; 005c7290
     CALL core_cloth.cpp_FUN_0043c2d0    ; 005c7291
-        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c2d0()
+        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c2d0()
     ADD ESP,0x18                        ; 005c7296
     PUSH 0x654182                       ; 005c7299 | = "succubusShutUp"
         ;   Label: LAB_005c7299

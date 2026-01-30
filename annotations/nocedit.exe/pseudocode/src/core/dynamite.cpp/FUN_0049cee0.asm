@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_dynamite_cpp_FUN_0049cee0(void)
+; __cdecl float __cdecl core_dynamite_cpp_FUN_0049cee0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

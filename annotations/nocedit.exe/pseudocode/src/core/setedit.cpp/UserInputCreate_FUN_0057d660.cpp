@@ -1,14 +1,12 @@
 // Name: core_setedit.cpp_UserInputCreate_FUN_0057d660
 // Address: 0057d660
 // Address Range: [[0057d660, 0057e425]]
-// Convention: unknown
-// Signature: int core_setedit_cpp_UserInputCreate_FUN_0057d660 (undefined4 param_1,undefined4 param_2,void *unaff_EBX,undefined4 param_4, CDemonSet *param_5,int param_6)
+// Convention: __cdecl
+// Signature: int __cdecl core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
 
 #include "nocturne.h"
 
-int core_setedit_cpp_UserInputCreate_FUN_0057d660
-              (uint param_1,uint param_2,void *unaff_EBX,uint param_4,
-              CDemonSet *param_5,int param_6)
+int __cdecl core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
 
 {
   int *piVar1;
@@ -20,6 +18,7 @@ int core_setedit_cpp_UserInputCreate_FUN_0057d660
   CKeyFramedModel *ptr;
   CVector3f *pCVar7;
   uint uVar8;
+  void *unaff_EBX;
   int iVar9;
   uint *puVar10;
   CKeyFramedModel *unaff_ESI;
@@ -32,6 +31,8 @@ int core_setedit_cpp_UserInputCreate_FUN_0057d660
   int iVar16;
   bool bVar17;
   int unaff_retaddr;
+  CDemonSet *in_stack_00000004;
+  int in_stack_00000008;
   ulonglong in_stack_ffffee80;
   CGame *n2;
   uint in_stack_ffffeea8;
@@ -80,7 +81,7 @@ int core_setedit_cpp_UserInputCreate_FUN_0057d660
   local_40 = 0;
   local_5c = 0.0;
   local_3c = 0;
-  pcVar11 = param_5->geometry_filename;
+  pcVar11 = in_stack_00000004->geometry_filename;
   local_54 = 0.0;
   do {
     cVar2 = *pcVar11;
@@ -111,22 +112,24 @@ LAB_0057d6df:
   local_28 = 0;
   core_slew_cpp_CSlew_init_FUN_005a2060(PTR_DAT_00681ab8);
   pvVar3 = PTR_DAT_00681ab8;
-  pCVar7 = &param_5->cameras[param_6].position;
+  pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].position;
   if (PTR_DAT_00681ab8 != pCVar7) {
     *(float *)PTR_DAT_00681ab8 = pCVar7->x;
-    *(float *)((int)pvVar3 + 4) = param_5->cameras[param_6].position.y;
-    *(float *)((int)pvVar3 + 8) = param_5->cameras[param_6].position.z;
+    *(float *)((int)pvVar3 + 4) = in_stack_00000004->cameras[in_stack_00000008].position.y;
+    *(float *)((int)pvVar3 + 8) = in_stack_00000004->cameras[in_stack_00000008].position.z;
   }
   pvVar3 = PTR_DAT_00681ab8;
-  pCVar7 = &param_5->cameras[param_6].orientation;
+  pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].orientation;
   if ((CVector3f *)((int)PTR_DAT_00681ab8 + 0xc) != pCVar7) {
     *(float *)((int)PTR_DAT_00681ab8 + 0xc) = pCVar7->x;
-    *(float *)((int)pvVar3 + 0x10) = param_5->cameras[param_6].orientation.y;
-    *(float *)((int)pvVar3 + 0x14) = param_5->cameras[param_6].orientation.z;
+    *(float *)((int)pvVar3 + 0x10) = in_stack_00000004->cameras[in_stack_00000008].orientation.y;
+    *(float *)((int)pvVar3 + 0x14) = in_stack_00000004->cameras[in_stack_00000008].orientation.z;
   }
-  *(float *)((int)PTR_DAT_00681ab8 + 0x18) = param_5->cameras[param_6].projection_scale;
+  *(float *)((int)PTR_DAT_00681ab8 + 0x18) =
+       in_stack_00000004->cameras[in_stack_00000008].projection_scale;
   pvStack_20 = (void *)0x0;
-  sprintf(acStack_ec,"%s.raw",param_5->cameras + param_6);
+  sprintf
+            (acStack_ec,"%s.raw",in_stack_00000004->cameras + in_stack_00000008);
   p_Var4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
   p_Stack_1c = p_Var4;
   if (p_Var4 != (_FILE *)0x0) {
@@ -136,7 +139,8 @@ LAB_0057d6df:
       _fread(pvStack_20,0x280,0x1e0,p_Var4);
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_1c,"..\\core\\setedit.cpp",0xc68);
-    sprintf(acStack_ec,"%s.act",param_5->cameras + param_6);
+    sprintf
+              (acStack_ec,"%s.act",in_stack_00000004->cameras + in_stack_00000008);
     p_Stack_1c = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
     if (p_Stack_1c != (_FILE *)0x0) {
       iVar16 = 0;
@@ -176,8 +180,8 @@ LAB_0057d6df:
   local_54 = 0.0;
   pbStack_14 = (byte *)0x0;
   core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,0x1e0);
-  piStack_2c = &param_5->cameras[param_6 + -1].unk4;
-  pCStack_30 = param_5->cameras;
+  piStack_2c = &in_stack_00000004->cameras[in_stack_00000008 + -1].unk4;
+  pCStack_30 = in_stack_00000004->cameras;
   do {
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
     bVar17 = uStack_34 == 0;
@@ -211,55 +215,58 @@ LAB_0057d6df:
       else {
         g_CDemonRaytraceInstance.rendering_mode = 4;
       }
-      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(param_5,9999.9,0);
+      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(in_stack_00000004,9999.9,0);
       core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);
       pvVar3 = PTR_DAT_00681ab8;
       if (iVar16 != 0) {
-        pCVar7 = &param_5->cameras[param_6].position;
+        pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].position;
         if (pCVar7 != PTR_DAT_00681ab8) {
           pCVar7->x = *(float *)PTR_DAT_00681ab8;
-          param_5->cameras[param_6].position.y = *(float *)((int)pvVar3 + 4);
-          param_5->cameras[param_6].position.z = *(float *)((int)pvVar3 + 8);
+          in_stack_00000004->cameras[in_stack_00000008].position.y = *(float *)((int)pvVar3 + 4);
+          in_stack_00000004->cameras[in_stack_00000008].position.z = *(float *)((int)pvVar3 + 8);
         }
         pvVar3 = PTR_DAT_00681ab8;
-        pCVar7 = &param_5->cameras[param_6].orientation;
+        pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].orientation;
         if (pCVar7 != (CVector3f *)((int)PTR_DAT_00681ab8 + 0xc)) {
           pCVar7->x = *(float *)((int)PTR_DAT_00681ab8 + 0xc);
-          param_5->cameras[param_6].orientation.y = *(float *)((int)pvVar3 + 0x10);
-          param_5->cameras[param_6].orientation.z = *(float *)((int)pvVar3 + 0x14);
+          in_stack_00000004->cameras[in_stack_00000008].orientation.y =
+               *(float *)((int)pvVar3 + 0x10);
+          in_stack_00000004->cameras[in_stack_00000008].orientation.z =
+               *(float *)((int)pvVar3 + 0x14);
         }
         pCVar7 = (CVector3f *)((int)PTR_DAT_00681ab8 + 0xc);
-        param_5->cameras[param_6].projection_scale = *(float *)((int)PTR_DAT_00681ab8 + 0x18);
+        in_stack_00000004->cameras[in_stack_00000008].projection_scale =
+             *(float *)((int)PTR_DAT_00681ab8 + 0x18);
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&param_5->cameras[param_6].rotation_matrix,pCVar7);
+                  (&in_stack_00000004->cameras[in_stack_00000008].rotation_matrix,pCVar7);
         uStack_6c = 0x43fa0000;
         uStack_68 = 0x43fa0000;
         uStack_64 = 0x43fa0000;
-        local_54 = param_5->cameras[param_6].position.x + -500.0f;
-        fStack_50 = param_5->cameras[param_6].position.y + -500.0f;
-        pCVar7 = &param_5->cameras[param_6].box_min;
-        fStack_4c = -500.0f + param_5->cameras[param_6].position.z;
+        local_54 = in_stack_00000004->cameras[in_stack_00000008].position.x + -500.0f;
+        fStack_50 = in_stack_00000004->cameras[in_stack_00000008].position.y + -500.0f;
+        pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].box_min;
+        fStack_4c = -500.0f + in_stack_00000004->cameras[in_stack_00000008].position.z;
         if (pCVar7 != (CVector3f *)&local_54) {
           pCVar7->x = local_54;
-          param_5->cameras[param_6].box_min.y = fStack_50;
-          param_5->cameras[param_6].box_min.z = fStack_4c;
+          in_stack_00000004->cameras[in_stack_00000008].box_min.y = fStack_50;
+          in_stack_00000004->cameras[in_stack_00000008].box_min.z = fStack_4c;
         }
-        local_60 = param_5->cameras[param_6].position.x + 500.0;
-        local_5c = param_5->cameras[param_6].position.y + 500.0;
-        pCVar7 = &param_5->cameras[param_6].box_max;
-        fStack_58 = param_5->cameras[param_6].position.z + 500.0;
+        local_60 = in_stack_00000004->cameras[in_stack_00000008].position.x + 500.0;
+        local_5c = in_stack_00000004->cameras[in_stack_00000008].position.y + 500.0;
+        pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].box_max;
+        fStack_58 = in_stack_00000004->cameras[in_stack_00000008].position.z + 500.0;
         if (pCVar7 != (CVector3f *)&local_60) {
           pCVar7->x = local_60;
-          param_5->cameras[param_6].box_max.y = local_5c;
-          param_5->cameras[param_6].box_max.z = fStack_58;
+          in_stack_00000004->cameras[in_stack_00000008].box_max.y = local_5c;
+          in_stack_00000004->cameras[in_stack_00000008].box_max.z = fStack_58;
         }
         core_setedit_cpp_FUN_0057d340();
         iStack_48 = 1;
 LAB_0057db4e:
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
         g_CurrentDebugLine = 0xd78;
-        shape_memdbg_cpp_free_FUN_005fe659(param_5);
+        shape_memdbg_cpp_free_FUN_005fe659(in_stack_00000004);
         core_slew_cpp_CSlew_free_FUN_005a20a0();
         g_CurrentDebugLine = 0xd80;
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
@@ -290,8 +297,8 @@ LAB_0057db4e:
           core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00();
           unaff_retaddr = 1;
         }
-        core_setedit_cpp_CDemonSet_FUN_0057ff70(param_5);
-        iVar16 = core_setedit_cpp_CDemonSet_FUN_005800d0(param_5);
+        core_setedit_cpp_CDemonSet_FUN_0057ff70(in_stack_00000004);
+        iVar16 = core_setedit_cpp_CDemonSet_FUN_005800d0(in_stack_00000004);
         if (0 < iVar16) {
           y_pos = 0x21;
           iVar9 = 0;

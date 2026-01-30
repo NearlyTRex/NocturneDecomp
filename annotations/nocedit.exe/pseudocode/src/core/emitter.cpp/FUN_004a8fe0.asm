@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_emitter_cpp_FUN_004a8fe0 (undefined4 param_1,undefined4 param_2,float unaff_EBX,undefined4 param_4, CDemonActor *param_5,undefined4 param_6,float param_7,undefined4 param_8, float param_9,undefined4 param_10,float param_11,undefined4 param_12,float param_13)
+; __cdecl void __cdecl core_emitter_cpp_FUN_004a8fe0(void)
 ;
 ;
 ; Referenced Globals:

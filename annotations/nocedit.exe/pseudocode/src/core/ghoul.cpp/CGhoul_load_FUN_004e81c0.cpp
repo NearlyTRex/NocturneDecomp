@@ -1,14 +1,14 @@
 // Name: core_ghoul.cpp_CGhoul_load_FUN_004e81c0
 // Address: 004e81c0
 // Address Range: [[004e81c0, 004e82c4]]
-// Convention: unknown
-// Signature: void core_ghoul_cpp_CGhoul_load_FUN_004e81c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ghoul_cpp_CGhoul_load_FUN_004e81c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_ghoul.cpp_CGhoul_load(CGhoul* pGhoul) */
 
-void core_ghoul_cpp_CGhoul_load_FUN_004e81c0(void)
+void __cdecl core_ghoul_cpp_CGhoul_load_FUN_004e81c0(void)
 
 {
   CEnemy *in_stack_00000004;

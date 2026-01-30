@@ -1,14 +1,14 @@
 // Name: core_flame.cpp_CFlame_load_FUN_004cac60
 // Address: 004cac60
 // Address Range: [[004cac60, 004cad7a]]
-// Convention: unknown
-// Signature: void core_flame_cpp_CFlame_load_FUN_004cac60(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flame_cpp_CFlame_load_FUN_004cac60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_CFlame_load(CFlame* pFlame) */
 
-void core_flame_cpp_CFlame_load_FUN_004cac60(void)
+void __cdecl core_flame_cpp_CFlame_load_FUN_004cac60(void)
 
 {
   CDemonActor *in_stack_00000004;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_boneguy_cpp_FUN_0041b850(void)
+; __cdecl CDemonActorType * __cdecl core_boneguy_cpp_FUN_0041b850(void)
 ;
 ;
 ; Referenced Globals:

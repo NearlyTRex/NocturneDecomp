@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_boxactor_cpp_CLightActor_FUN_004234e0(void)
+; __cdecl void __cdecl core_boxactor_cpp_CLightActor_FUN_004234e0(void)
 ;
 ;
 ; Referenced Globals:

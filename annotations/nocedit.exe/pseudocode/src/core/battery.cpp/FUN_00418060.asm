@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_battery_cpp_FUN_00418060(void)
+; __cdecl float * __cdecl core_battery_cpp_FUN_00418060(void)
 ;
 ;
 ; Called Functions:

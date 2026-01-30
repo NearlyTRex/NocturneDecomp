@@ -12,43 +12,43 @@
       {
         "category": "other",
         "column": 23,
-        "line": 53,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 96,
+        "line": 95,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 104,
+        "line": 103,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 110,
+        "line": 109,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 409,
+    "complexity_score": 408,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 19,
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 113,
     "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 392
+    "total_lines": 391
   },
   "cross_references": [
     {
@@ -66,10 +66,10 @@
         "0053fbb5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
-    "signature": "undefined4 core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)"
+    "signature": "int __cdecl core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)"
   },
   "function_calls": [
     {
@@ -241,17 +241,15 @@
         "call_addr": "004e3016",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004e2fc0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.573913043478261,
@@ -414,189 +412,189 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "CNetGame *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "uint32_t *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->player_count = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->local_player_index = iVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_00000008",
       "text": "support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_28,in_stack_00000008,0x1ddf);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->connection_type = 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->network_mode = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
       "match": "in_stack_00000004",
-      "text": "*(uint *)in_stack_00000004->padding = uVar3;",
+      "text": "*(int *)in_stack_00000004->padding = iVar2;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_02f7c8bc",
       "text": "DAT_02f7c8bc = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "if (-1 < *(int *)in_stack_00000004->padding) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_00000004",
       "text": "local_18 = in_stack_00000004->network_data;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 80,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 81,
       "match": "DAT_02f7c8bc",
       "text": "if (DAT_02f7c8bc == 1) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 85,
       "match": "DAT_02f7c8bc",
       "text": "if (DAT_02f7c8bc < 3) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 86,
       "match": "DAT_02f7c8bc",
       "text": "if (DAT_02f7c8bc == 2) {",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 89,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 94,
       "match": "DAT_02f7c8bc",
       "text": "if (DAT_02f7c8bc < 4) {",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 98,
+      "line": 97,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 100,
       "match": "DAT_02f7c8bc",
       "text": "if (DAT_02f7c8bc == 4) {",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 109,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 112,
       "match": "in_stack_00000004",
       "text": "} while (-1 < *(int *)in_stack_00000004->padding);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 114,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
@@ -605,11 +603,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

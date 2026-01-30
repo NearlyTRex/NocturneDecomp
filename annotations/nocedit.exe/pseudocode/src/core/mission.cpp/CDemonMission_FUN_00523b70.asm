@@ -14,9 +14,9 @@
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 at 00524a40
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 at 00523475
 ;   core_mission.cpp_FUN_00524c20 at 00524d6f
-;   core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80 at 0053bf32
-;   core_msnedit.cpp_FUN_0053b9f0 at 0053bbda
-;   core_msnedit.cpp_FUN_0053d8b0 at 0053dbd5
+;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053bbda
+;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053bf32
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053d16d
 ;   ... and 7 more
 ;
 ; Called Functions:

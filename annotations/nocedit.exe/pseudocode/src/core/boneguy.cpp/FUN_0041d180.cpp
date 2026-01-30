@@ -1,14 +1,14 @@
 // Name: core_boneguy.cpp_FUN_0041d180
 // Address: 0041d180
 // Address Range: [[0041d180, 0041d1a1]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_FUN_0041d180(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_boneguy_cpp_FUN_0041d180(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_boneguy.cpp_FUN_0041d180(uint param_1) */
 
-void core_boneguy_cpp_FUN_0041d180(void)
+void __cdecl core_boneguy_cpp_FUN_0041d180(void)
 
 {
   int iVar1;

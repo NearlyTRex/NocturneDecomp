@@ -64,7 +64,7 @@ section .text
     PUSH 0x0                            ; 0043c1d4
     PUSH EAX                            ; 0043c1d6
     CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 0043c1d7
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
     ADD ESP,0x8                         ; 0043c1dc
     PUSH EAX                            ; 0043c1df
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043c1e0

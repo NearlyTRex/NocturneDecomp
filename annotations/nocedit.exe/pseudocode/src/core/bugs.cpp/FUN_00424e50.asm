@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bugs_cpp_FUN_00424e50(void)
+; __cdecl void __cdecl core_bugs_cpp_FUN_00424e50(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
@@ -163,7 +163,7 @@ section .text
         ;   Label: LAB_00425083
     PUSH EBX                            ; 00425086
     CALL core_bugs.cpp_FUN_004272f0     ; 00425087
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004272f0()
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004272f0()
     MOV dword ptr [EBX + 0x199e4],0xffffd8f1 ; 0042508c
     MOV dword ptr [EBX + 0x199e8],0xffffd8f1 ; 00425096
     MOV dword ptr [EBX + 0x100],0x1     ; 004250a0

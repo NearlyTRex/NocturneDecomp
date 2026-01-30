@@ -14,7 +14,7 @@
 ;   int g_MouseY
 ;
 ; Called Functions:
-;   core_msnedit.cpp_BeginAndEndScene_FUN_0053c970
+;   core_msnedit.cpp_CDemonMission_FUN_0053c970
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EBX                            ; 0053ca14
     MOV ESI,dword ptr [ESP + 0x18]      ; 0053ca15
     PUSH ESI                            ; 0053ca19
-    CALL core_msnedit.cpp_BeginAndEndScene_FUN_0053c970 ; 0053ca1a
-        ;   XREF to: 0053c970 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
+    CALL core_msnedit.cpp_CDemonMission_FUN_0053c970 ; 0053ca1a
+        ;   XREF to: 0053c970 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c970(CDemonMission * this_ptr, int param_2, int param_3, int param_4)
     ADD ESP,0x10                        ; 0053ca1f
     POP ESI                             ; 0053ca22
     POP EBX                             ; 0053ca23

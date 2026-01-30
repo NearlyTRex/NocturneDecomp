@@ -1,15 +1,15 @@
 // Name: core_drip.cpp_FUN_0048e930
 // Address: 0048e930
 // Address Range: [[0048e930, 0048ea24]]
-// Convention: unknown
-// Signature: void core_drip_cpp_FUN_0048e930(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drip_cpp_FUN_0048e930(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_drip.cpp_FUN_0048e930(uint param_1, uint param_2)
     */
 
-void core_drip_cpp_FUN_0048e930(void)
+void __cdecl core_drip_cpp_FUN_0048e930(void)
 
 {
   CDemonActor *in_stack_00000004;

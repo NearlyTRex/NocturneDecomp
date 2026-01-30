@@ -1,14 +1,14 @@
 // Name: core_dest.cpp_CDestActor_renderTransparent_FUN_0046fb70
 // Address: 0046fb70
 // Address Range: [[0046fb70, 0046fcb8]]
-// Convention: unknown
-// Signature: undefined4 core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_dest.cpp_CDestActor_renderTransparent(uint param_1) */
 
-uint core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
+int __cdecl core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
 
 {
   int iVar1;

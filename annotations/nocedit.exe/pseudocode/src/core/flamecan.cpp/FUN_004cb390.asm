@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flamecan_cpp_FUN_004cb390(void)
+; __cdecl void __cdecl core_flamecan_cpp_FUN_004cb390(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x40]:1  local_40
@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 004cb3c0
         ;   Label: LAB_004cb3c0
     CALL core_flamecan.cpp_FUN_004cb340 ; 004cb3c1
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_FUN_004cb340()
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cb340()
     ADD ESP,0x4                         ; 004cb3c6
     CMP dword ptr [EBX + 0x2d4],0x0     ; 004cb3c9
     JNZ 0x004cb3d7                      ; 004cb3d0
@@ -63,7 +63,7 @@ section .text
     PUSH dword ptr [ESP + 0x48]         ; 004cb3dd
     PUSH EAX                            ; 004cb3e1
     CALL core_flame.cpp_FUN_004c9c00    ; 004cb3e2
-        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004c9c00()
+        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9c00()
     ADD ESP,0x8                         ; 004cb3e7
     FLD float ptr [EBX + 0x2d8]         ; 004cb3ea
     FSUB float ptr [ESP + 0x48]         ; 004cb3f0

@@ -161,7 +161,7 @@ void __cdecl renderEdgeArrayWithBufferLookup(uchar *color_buffer,SEdge *edge_arr
 
 // Original: cockpit_ckptutil.c_FUN_004338f0
 // Address: 004338f0
-void FUN_004338f0(void);
+void __cdecl FUN_004338f0(void);
 
 // Original: cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
 // Address: 004339c0

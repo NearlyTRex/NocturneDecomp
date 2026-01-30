@@ -1,12 +1,12 @@
 // Name: core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0
 // Address: 004840b0
 // Address Range: [[004840b0, 004842f2] [00484329, 00484390]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
 
 #include "nocturne.h"
 
-void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
+void __cdecl core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
 
 {
   CDeformableModelInstance *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_hostage_cpp_FUN_004f4b40(void)
+; __cdecl int __cdecl core_hostage_cpp_FUN_004f4b40(void)
 ;
 ;
 ; Referenced Globals:

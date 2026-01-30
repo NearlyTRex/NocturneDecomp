@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_sentinel_cpp_FUN_00568030(void)
+; __cdecl void __cdecl core_sentinel_cpp_FUN_00568030(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1a0]:1  local_1a0
@@ -584,7 +584,7 @@ section .text
     MOV EAX,[0x0067b9a0]                ; 00568569 | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 0056856e | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 0056856f
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 00568574
     MOV dword ptr [EBX + 0xbe28],0x1    ; 00568577
     JMP 0x00568128                      ; 00568581
@@ -631,7 +631,7 @@ section .text
     PUSH EAX                            ; 00568605
     PUSH EBX                            ; 00568606
     CALL core_enemy.cpp_FUN_004a9880    ; 00568607
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 0056860c
     PUSH 0x41f00000                     ; 0056860f
     PUSH 0x41700000                     ; 00568614
@@ -668,7 +668,7 @@ section .text
     PUSH EAX                            ; 00568679
     PUSH EBX                            ; 0056867a
     CALL core_enemy.cpp_FUN_004a9880    ; 0056867b
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00568680
     JMP 0x00568128                      ; 00568683
         ;   XREF to: 00568128 (UNCONDITIONAL_JUMP)  ; caseD_c

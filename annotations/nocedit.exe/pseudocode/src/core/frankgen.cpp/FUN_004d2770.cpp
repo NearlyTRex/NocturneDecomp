@@ -1,14 +1,14 @@
 // Name: core_frankgen.cpp_FUN_004d2770
 // Address: 004d2770
 // Address Range: [[004d2770, 004d2870]]
-// Convention: unknown
-// Signature: undefined4 core_frankgen_cpp_FUN_004d2770(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_frankgen_cpp_FUN_004d2770(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_frankgen.cpp_FUN_004d2770(uint param_1) */
 
-uint core_frankgen_cpp_FUN_004d2770(void)
+int __cdecl core_frankgen_cpp_FUN_004d2770(void)
 
 {
   int iVar1;

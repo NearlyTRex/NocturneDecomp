@@ -1,15 +1,15 @@
 // Name: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
 // Address: 005267a0
 // Address Range: [[005267a0, 00526afd]]
-// Convention: unknown
-// Signature: void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mobster.cpp_CMobster_aimTommyGun(CMobster* param_1, uint
    param_2) */
 
-void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
+void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 
 {
   CCharacter *pCVar1;
@@ -92,10 +92,9 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
                            (local_2c.y - (in_stack_00000004->base).base.orient.bank);
       local_84 = SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y);
       if ((local_88 <= ABS((float)local_18)) || (local_84 <= (float)2)) {
-        in_stack_00000008 =
-             *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) - in_stack_00000008;
-        *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) = in_stack_00000008;
-        if (in_stack_00000008 < 0.0) {
+        fVar8 = *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) - in_stack_00000008;
+        *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) = fVar8;
+        if (fVar8 < 0.0) {
           pCVar1 = &in_stack_00000004[1].base;
           (pCVar1->base).create_event[0x60] = '\0';
           (pCVar1->base).create_event[0x61] = '\0';
@@ -104,10 +103,9 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
         }
       }
       else {
-        in_stack_00000008 =
-             *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) + in_stack_00000008;
-        *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) = in_stack_00000008;
-        if (1.0 < in_stack_00000008) {
+        fVar8 = *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) + in_stack_00000008;
+        *(float *)(in_stack_00000004[1].base.base.create_event + 0x60) = fVar8;
+        if (1.0 < fVar8) {
           pCVar1 = &in_stack_00000004[1].base;
           (pCVar1->base).create_event[0x60] = '\0';
           (pCVar1->base).create_event[0x61] = '\0';

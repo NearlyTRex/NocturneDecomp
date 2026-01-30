@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mobster_cpp_FUN_00525840(void)
+; __cdecl void __cdecl core_mobster_cpp_FUN_00525840(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x19c]:1  local_19c
@@ -136,7 +136,7 @@ section .text
     PUSH EBX                            ; 00525879
         ;   Label: LAB_00525879
     CALL core_mobster.cpp_FUN_00525650  ; 0052587a
-        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_00525650()
+        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_00525650()
     ADD ESP,0x4                         ; 0052587f
     PUSH dword ptr [EBP + 0x92]         ; 00525882
     PUSH EBX                            ; 00525888
@@ -543,7 +543,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00525d57
     PUSH EBX                            ; 00525d5d
     CALL core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 ; 00525d5e
-        ;   XREF to: 005267a0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0()
+        ;   XREF to: 005267a0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0()
     ADD ESP,0x8                         ; 00525d63
     PUSH dword ptr [EBP + 0x92]         ; 00525d66
         ;   Label: LAB_00525d66
@@ -631,7 +631,7 @@ section .text
     PUSH EAX                            ; 00525e4a
     PUSH EBX                            ; 00525e4b
     CALL core_enemy.cpp_FUN_004a9880    ; 00525e4c
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00525e51
     PUSH 0x41700000                     ; 00525e54
         ;   Label: LAB_00525e54
@@ -674,7 +674,7 @@ section .text
     PUSH EAX                            ; 00525ecf
     PUSH EBX                            ; 00525ed0
     CALL core_enemy.cpp_FUN_004a9880    ; 00525ed1
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 00525ed6
     JMP 0x00525b97                      ; 00525ed9
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -688,7 +688,7 @@ section .text
         ;   XREF to: 00525b97 (CONDITIONAL_JUMP)  ; caseD_4
     PUSH EBX                            ; 00525ef1
     CALL core_mobster.cpp_FUN_005271c0  ; 00525ef2
-        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_005271c0()
+        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_005271c0()
     ADD ESP,0x4                         ; 00525ef7
     JMP 0x00525b97                      ; 00525efa
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -739,7 +739,7 @@ section .text
     PUSH 0x3                            ; 00525f87
     PUSH EBX                            ; 00525f89
     CALL core_mobster.cpp_FUN_005279f0  ; 00525f8a
-        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_005279f0()
+        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_005279f0()
     ADD ESP,0x8                         ; 00525f8f
     JMP 0x00525b97                      ; 00525f92
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -861,7 +861,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 005260ea | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 005260f0 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 005260f1
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 005260f6
     MOV dword ptr [EBX + 0xbe28],0x1    ; 005260f9
     JMP 0x00525b97                      ; 00526103
@@ -882,7 +882,7 @@ section .text
     PUSH EBX                            ; 00526138
         ;   Label: LAB_00526138
     CALL core_mobster.cpp_FUN_005271c0  ; 00526139
-        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_005271c0()
+        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_005271c0()
     ADD ESP,0x4                         ; 0052613e
     JMP 0x00525b97                      ; 00526141
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -945,7 +945,7 @@ section .text
         ;   XREF to: 00526138 (CONDITIONAL_JUMP)  ; LAB_00526138
     PUSH EBX                            ; 005261f3
     CALL core_mobster.cpp_FUN_00525720  ; 005261f4
-        ;   XREF to: 00525720 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_00525720()
+        ;   XREF to: 00525720 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_00525720()
     ADD ESP,0x4                         ; 005261f9
     JMP 0x00525b97                      ; 005261fc
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -1095,7 +1095,7 @@ section .text
     PUSH 0x1                            ; 00526374
     PUSH EBX                            ; 00526376
     CALL core_mobster.cpp_FUN_005279f0  ; 00526377
-        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_005279f0()
+        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_005279f0()
     ADD ESP,0x8                         ; 0052637c
     MOV dword ptr [EBX + 0xbecc],0x1    ; 0052637f
     JMP 0x00525b97                      ; 00526389
@@ -1195,7 +1195,7 @@ section .text
         ;   Label: LAB_00526493
     PUSH EBX                            ; 00526499
     CALL core_mobster.cpp_FUN_00526d90  ; 0052649a
-        ;   XREF to: 00526d90 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_00526d90()
+        ;   XREF to: 00526d90 (UNCONDITIONAL_CALL)  ; int core_mobster.cpp_FUN_00526d90()
     ADD ESP,0x8                         ; 0052649f
     TEST EAX,EAX                        ; 005264a2
     JNZ 0x00525b97                      ; 005264a4
@@ -1382,7 +1382,7 @@ section .text
     PUSH 0x2                            ; 005266ad
     PUSH EBX                            ; 005266af
     CALL core_mobster.cpp_FUN_005279f0  ; 005266b0
-        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_005279f0()
+        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_005279f0()
     ADD ESP,0x8                         ; 005266b5
     FLD float ptr [EBX + 0xbed4]        ; 005266b8
         ;   Label: LAB_005266b8
@@ -1417,7 +1417,7 @@ section .text
     PUSH EBX                            ; 005266fb
         ;   Label: LAB_005266fb
     CALL core_mobster.cpp_FUN_005271c0  ; 005266fc
-        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_005271c0()
+        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_005271c0()
     ADD ESP,0x4                         ; 00526701
     JMP 0x0052663e                      ; 00526704
         ;   XREF to: 0052663e (UNCONDITIONAL_JUMP)  ; LAB_0052663e
@@ -1471,7 +1471,7 @@ section .text
     PUSH EBX                            ; 00526786
         ;   Label: LAB_00526786
     CALL core_mobster.cpp_FUN_00525650  ; 00526787
-        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_FUN_00525650()
+        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_FUN_00525650()
     ADD ESP,0x4                         ; 0052678c
     JMP 0x00525cd1                      ; 0052678f
         ;   XREF to: 00525cd1 (UNCONDITIONAL_JUMP)  ; LAB_00525cd1

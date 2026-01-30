@@ -5,19 +5,19 @@
 
 // Original: core_path.cpp_FUN_00546310
 // Address: 00546310
-void FUN_00546310(void);
+void __cdecl FUN_00546310(void);
 
 // Original: core_path.cpp_FUN_00546330
 // Address: 00546330
-bool FUN_00546330(void);
+bool __cdecl FUN_00546330(void);
 
 // Original: core_path.cpp_FUN_00546350
 // Address: 00546350
-void FUN_00546350(void);
+void __cdecl FUN_00546350(void);
 
 // Original: core_path.cpp_FUN_005463d0
 // Address: 005463d0
-void FUN_005463d0(void);
+void __cdecl FUN_005463d0(void);
 
 // Original: core_path.cpp_CPathMap_ctor_FUN_00546450
 // Address: 00546450
@@ -65,15 +65,15 @@ void __cdecl debugRenderGridQuad(int grid_x,int grid_y,int grid_z,int color,int 
 
 // Original: core_path.cpp_FUN_00547fc0
 // Address: 00547fc0
-void FUN_00547fc0(void);
+void __cdecl FUN_00547fc0(void);
 
 // Original: core_path.cpp_FUN_00548390
 // Address: 00548390
-CPathMap * FUN_00548390(void);
+CPathMap * __cdecl FUN_00548390(void);
 
 // Original: core_path.cpp_FUN_00548500
 // Address: 00548500
-void FUN_00548500(void);
+void __cdecl FUN_00548500(void);
 
 // Original: core_path.cpp_CPathMap_reset_FUN_00548510
 // Address: 00548510
@@ -81,15 +81,15 @@ void __cdecl CPathMap::reset(CPathMap *this_ptr);
 
 // Original: core_path.cpp_GlobalPathmapListCorruption_FUN_00548590
 // Address: 00548590
-void GlobalPathmapListCorruption(void);
+void __cdecl GlobalPathmapListCorruption(void);
 
 // Original: core_path.cpp_FUN_005485f0
 // Address: 005485f0
-void FUN_005485f0(void);
+void __cdecl FUN_005485f0(void);
 
 // Original: core_path.cpp_FUN_00548680
 // Address: 00548680
-void FUN_00548680(void);
+void __cdecl FUN_00548680(void);
 
 // Original: core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750
 // Address: 00548750

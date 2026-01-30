@@ -21,48 +21,48 @@ CFlame * __cdecl CFlame::ctor(CFlame *this_ptr);
 
 // Original: core_flame.cpp_FUN_004c9b90
 // Address: 004c9b90
-void FUN_004c9b90(void);
+void __cdecl FUN_004c9b90(void);
 
 // Original: core_flame.cpp_FUN_004c9c00
 // Address: 004c9c00
-void FUN_004c9c00(void);
+void __cdecl FUN_004c9c00(void);
 
 // Original: core_flame.cpp_FUN_004ca110
 // Address: 004ca110
-float FUN_004ca110(void);
+float __cdecl FUN_004ca110(void);
 
 // Original: core_flame.cpp_FUN_004caa70
 // Address: 004caa70
-void FUN_004caa70(void);
+void __cdecl FUN_004caa70(void);
 
 // Original: core_flame.cpp_FUN_004caa80
 // Address: 004caa80
-void FUN_004caa80(void);
+void __cdecl FUN_004caa80(void);
 
 // Original: core_flame.cpp_FUN_004cac00
 // Address: 004cac00
-void FUN_004cac00(void);
+void __cdecl FUN_004cac00(void);
 
 // Original: core_flame.cpp_CFlame_load_FUN_004cac60
 // Address: 004cac60
-void CFlame::load(void);
+void __cdecl CFlame::load(void);
 
 // Original: core_flame.cpp_FUN_004cad80
 // Address: 004cad80
-undefined4 FUN_004cad80(void);
+int __cdecl FUN_004cad80(void);
 
 // Original: core_flame.cpp_FUN_004cae70
 // Address: 004cae70
-void FUN_004cae70(void);
+void __cdecl FUN_004cae70(void);
 
 // Original: core_flame.cpp_FUN_004caf60
 // Address: 004caf60
-void FUN_004caf60(void);
+void __cdecl FUN_004caf60(void);
 
 // Original: core_flame.cpp_FUN_004cb0a0
 // Address: 004cb0a0
-void FUN_004cb0a0(void);
+void __cdecl FUN_004cb0a0(void);
 
 // Original: core_flame.cpp_FUN_004cb0e0
 // Address: 004cb0e0
-void FUN_004cb0e0(void);
+void __cdecl FUN_004cb0e0(void);

@@ -11,8 +11,8 @@
 ;   core_fire.cpp_CFireEffect_load_FUN_004c9300 at 004c9321
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1a75
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db5ae
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e329
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 005392bc
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005392bc
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e329
 ;
 ; Referenced Globals:
 ;   int g_SmokeParticleAllocIndex

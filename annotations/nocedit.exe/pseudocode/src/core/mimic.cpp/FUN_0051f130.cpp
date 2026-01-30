@@ -1,12 +1,12 @@
 // Name: core_mimic.cpp_FUN_0051f130
 // Address: 0051f130
 // Address Range: [[0051f130, 0051f181]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_FUN_0051f130(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_FUN_0051f130(void)
 
 #include "nocturne.h"
 
-void core_mimic_cpp_FUN_0051f130(void)
+void __cdecl core_mimic_cpp_FUN_0051f130(void)
 
 {
   engine_matrix_c_matrixPush_FUN_0050d620();

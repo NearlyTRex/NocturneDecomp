@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_filmreel_cpp_FUN_004beb00(void)
+; __cdecl void __cdecl core_filmreel_cpp_FUN_004beb00(void)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004beb01
     PUSH EBX                            ; 004beb05
     CALL core_dest.cpp_FUN_0046f970     ; 004beb06
-        ;   XREF to: 0046f970 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_FUN_0046f970()
+        ;   XREF to: 0046f970 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_FUN_0046f970()
     ADD ESP,0x4                         ; 004beb0b
     LEA EAX,[EBX + 0x1f4]               ; 004beb0e
     PUSH EAX                            ; 004beb14

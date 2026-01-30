@@ -1,15 +1,15 @@
 // Name: core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740
 // Address: 00425740
 // Address Range: [[00425740, 004257e7]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bugs.cpp_CBugs_addSwarmGraphEdge(CBugs* param_1, uint
    param_2, uint param_3, uint param_4) */
 
-void core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
+void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
 
 {
   int iVar1;

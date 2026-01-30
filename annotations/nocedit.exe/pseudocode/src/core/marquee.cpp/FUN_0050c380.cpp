@@ -1,15 +1,15 @@
 // Name: core_marquee.cpp_FUN_0050c380
 // Address: 0050c380
 // Address Range: [[0050c380, 0050c3d2]]
-// Convention: unknown
-// Signature: void core_marquee_cpp_FUN_0050c380(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_marquee_cpp_FUN_0050c380(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_marquee.cpp_FUN_0050c380(uint param_1, uint
    param_2) */
 
-void core_marquee_cpp_FUN_0050c380(void)
+void __cdecl core_marquee_cpp_FUN_0050c380(void)
 
 {
   int in_stack_00000004;

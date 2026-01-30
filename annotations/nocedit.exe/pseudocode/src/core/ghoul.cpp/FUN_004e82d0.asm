@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_ghoul_cpp_FUN_004e82d0(void)
+; __cdecl int __cdecl core_ghoul_cpp_FUN_004e82d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x94]:1  local_94

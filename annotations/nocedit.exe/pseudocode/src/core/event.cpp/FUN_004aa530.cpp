@@ -1,45 +1,43 @@
 // Name: core_event.cpp_FUN_004aa530
 // Address: 004aa530
 // Address Range: [[004aa530, 004aa643]]
-// Convention: unknown
-// Signature: undefined4 core_event_cpp_FUN_004aa530(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)
 
 #include "nocturne.h"
 
-uint core_event_cpp_FUN_004aa530(void)
+int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)
 
 {
-  int iVar1;
-  int in_stack_00000004;
-  int *in_stack_00000008;
-  uint *in_stack_0000000c;
-  byte local_78 [100];
+  CHero *pCVar1;
+  CLocation *pCVar2;
+  char local_78 [100];
   int local_14;
   
   local_14 = -1;
   sscanf
-            ((char *)(in_stack_00000004 + *in_stack_00000008)," { %f, %f, %f }%n",in_stack_0000000c,
-             in_stack_0000000c + 1,in_stack_0000000c + 2,&local_14);
+            ((char *)(param_1 + *param_2)," { %f, %f, %f }%n",param_3,param_3 + 1,param_3 + 2,
+             &local_14);
   if (6 < local_14) {
-    *in_stack_00000008 = *in_stack_00000008 + local_14;
+    *param_2 = *param_2 + local_14;
     return 1;
   }
-  sscanf
-            ((char *)(in_stack_00000004 + *in_stack_00000008)," %[^ ,(){}]%n",local_78,&local_14);
+  sscanf((char *)(param_1 + *param_2)," %[^ ,(){}]%n",local_78,&local_14);
   if (local_14 < 0) {
     sprintf(&DAT_02d0a460,"Error parsing vector location");
-    return 0xffffffff;
+    return -1;
   }
-  iVar1 = core_event_cpp_FUN_004aa400();
-  if (iVar1 == 0) {
-    return 0xffffffff;
+  pCVar1 = core_event_cpp_FUN_004aa400(local_78,g_CDemonActorClassInfo.name_hash,0x821ff8);
+  if (pCVar1 == (CHero *)0x0) {
+    return -1;
   }
-  *in_stack_00000008 = *in_stack_00000008 + local_14;
-  if (iVar1 != 0x0FFFFFFF) {
-    if (in_stack_0000000c != (uint *)(iVar1 + 0x20)) {
-      *in_stack_0000000c = *(uint *)(iVar1 + 0x20);
-      in_stack_0000000c[1] = *(uint *)(iVar1 + 0x24);
-      in_stack_0000000c[2] = *(uint *)(iVar1 + 0x28);
+  *param_2 = *param_2 + local_14;
+  if (pCVar1 != 0x0FFFFFFF) {
+    pCVar2 = &(pCVar1->base).base.location;
+    if ((CLocation *)param_3 != pCVar2) {
+      *param_3 = (pCVar2->position).x;
+      param_3[1] = (pCVar1->base).base.location.position.y;
+      param_3[2] = (pCVar1->base).base.location.position.z;
     }
     return 1;
   }

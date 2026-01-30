@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_melee_cpp_FUN_0050ec10(void)
+; __cdecl void __cdecl core_melee_cpp_FUN_0050ec10(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x24]:1  local_24
@@ -80,7 +80,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 0050ecad | g_CGorePtr
     PUSH EDI                            ; 0050ecb3 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edaa0     ; 0050ecb4
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edaa0()
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
     ADD ESP,0x10                        ; 0050ecb9
     POP ESI                             ; 0050ecbc
     POP EDI                             ; 0050ecbd

@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x8                         ; 00502a07
     PUSH EBX                            ; 00502a0a
     CALL core_ladder.cpp_FUN_00502b80   ; 00502a0b
-        ;   XREF to: 00502b80 (UNCONDITIONAL_CALL)  ; undefined core_ladder.cpp_FUN_00502b80()
+        ;   XREF to: 00502b80 (UNCONDITIONAL_CALL)  ; void core_ladder.cpp_FUN_00502b80()
     MOV EDX,dword ptr [0x0067cf48]      ; 00502a10 | g_CLadderClassVersion
     ADD ESP,0x4                         ; 00502a16
     CMP EDX,0x2                         ; 00502a19

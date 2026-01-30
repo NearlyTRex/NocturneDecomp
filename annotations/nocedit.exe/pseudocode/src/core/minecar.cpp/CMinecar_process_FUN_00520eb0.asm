@@ -25,7 +25,7 @@ section .text
     PUSH dword ptr [ESP + 0xc]          ; 00520eb5
     PUSH EBX                            ; 00520eb9
     CALL core_platfrm.cpp_FUN_0054cc30  ; 00520eba
-        ;   XREF to: 0054cc30 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054cc30()
+        ;   XREF to: 0054cc30 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054cc30()
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 00520ebf
     ADD ESP,0x8                         ; 00520ec5
     CMP EDX,0x3                         ; 00520ec8

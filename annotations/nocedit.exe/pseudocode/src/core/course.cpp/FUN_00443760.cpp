@@ -1,12 +1,12 @@
 // Name: core_course.cpp_FUN_00443760
 // Address: 00443760
 // Address Range: [[00443760, 00443bb7]]
-// Convention: unknown
-// Signature: void core_course_cpp_FUN_00443760(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_course_cpp_FUN_00443760(void)
 
 #include "nocturne.h"
 
-void core_course_cpp_FUN_00443760(void)
+void __cdecl core_course_cpp_FUN_00443760(void)
 
 {
   SRenderVertex *pSVar1;

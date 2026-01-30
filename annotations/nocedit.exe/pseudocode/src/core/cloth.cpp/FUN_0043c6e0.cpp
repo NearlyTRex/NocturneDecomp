@@ -1,14 +1,14 @@
 // Name: core_cloth.cpp_FUN_0043c6e0
 // Address: 0043c6e0
 // Address Range: [[0043c6e0, 0043c813]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_FUN_0043c6e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_FUN_0043c6e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_cloth.cpp_FUN_0043c6e0(uint param_1) */
 
-void core_cloth_cpp_FUN_0043c6e0(void)
+void __cdecl core_cloth_cpp_FUN_0043c6e0(void)
 
 {
   SRenderVertex *pSVar1;

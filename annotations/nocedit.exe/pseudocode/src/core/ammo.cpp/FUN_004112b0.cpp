@@ -1,12 +1,12 @@
 // Name: core_ammo.cpp_FUN_004112b0
 // Address: 004112b0
 // Address Range: [[004112b0, 00411355]]
-// Convention: unknown
-// Signature: undefined4 core_ammo_cpp_FUN_004112b0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_ammo_cpp_FUN_004112b0(void)
 
 #include "nocturne.h"
 
-uint core_ammo_cpp_FUN_004112b0(void)
+int __cdecl core_ammo_cpp_FUN_004112b0(void)
 
 {
   CDemonActor *pCVar1;

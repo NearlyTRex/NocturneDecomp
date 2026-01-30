@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_morph_cpp_FUN_0052b600 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,int param_6,undefined4 param_7,undefined4 param_8)
+; __cdecl void __cdecl core_morph_cpp_FUN_0052b600(void)
 ;
 ;
 ; XREF[6]:
@@ -35,7 +35,7 @@ section .text
     ADD EAX,EBX                         ; 0052b624
     PUSH EAX                            ; 0052b626
     CALL core_morph.cpp_FUN_0052aa30    ; 0052b627
-        ;   XREF to: 0052aa30 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052aa30()
+        ;   XREF to: 0052aa30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052aa30()
     ADD ESP,0xc                         ; 0052b62c
     POP EBX                             ; 0052b62f
     RET                                 ; 0052b630

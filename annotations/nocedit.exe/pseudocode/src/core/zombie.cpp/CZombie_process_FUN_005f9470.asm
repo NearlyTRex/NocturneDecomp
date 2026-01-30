@@ -321,7 +321,7 @@ section .text
     PUSH EBX                            ; 005f95b3
         ;   Label: LAB_005f95b3
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005f95b4
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005f95b9
     JMP 0x005f9504                      ; 005f95bc
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
@@ -454,7 +454,7 @@ section .text
         ;   XREF to: 005f9504 (CONDITIONAL_JUMP)  ; LAB_005f9504
     PUSH EBX                            ; 005f9760
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005f9761
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005f9766
     JMP 0x005f9504                      ; 005f9769
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
@@ -464,7 +464,7 @@ section .text
         ;   XREF to: 005f9785 (CONDITIONAL_JUMP)  ; LAB_005f9785
     PUSH EBX                            ; 005f9777
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005f9778
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005f977d
     JMP 0x005f9504                      ; 005f9780
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
@@ -499,7 +499,7 @@ section .text
         ;   XREF to: 005f981b (CONDITIONAL_JUMP)  ; LAB_005f981b
     PUSH EBX                            ; 005f97d4
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005f97d5
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005f97da
     JMP 0x005f9504                      ; 005f97dd
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
@@ -520,7 +520,7 @@ section .text
         ;   XREF to: 005f981b (CONDITIONAL_JUMP)  ; LAB_005f981b
     PUSH EBX                            ; 005f980d
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005f980e
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005f9813
     JMP 0x005f9504                      ; 005f9816
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
@@ -545,7 +545,7 @@ section .text
     MOV EDI,EAX                         ; 005f9921
     MOV dword ptr [EBX + 0xbecc],0x0    ; 005f9923
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005f992d
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005f9932
     MOV ESI,EAX                         ; 005f9935
     TEST EAX,EAX                        ; 005f9937
@@ -574,7 +574,7 @@ section .text
         ;   Label: LAB_005f996c
     PUSH EBX                            ; 005f996e
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005f996f
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005f9974
     MOV ESI,EAX                         ; 005f9977
     TEST EAX,EAX                        ; 005f9979
@@ -630,7 +630,7 @@ section .text
         ;   Label: LAB_005f9a1b
     PUSH EBX                            ; 005f9a1d
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005f9a1e
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005f9a23
     MOV EDI,EAX                         ; 005f9a26
     TEST EAX,EAX                        ; 005f9a28
@@ -876,7 +876,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 005f9d38 | g_CGorePtr | g_CGoreInstance
     PUSH EDX                            ; 005f9d3e | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 005f9d3f
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 005f9d44
     PUSH 0x3f000000                     ; 005f9d47
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 005f9d4c
@@ -1008,7 +1008,7 @@ section .text
         ;   XREF to: 005f9eb4 (CONDITIONAL_JUMP)  ; LAB_005f9eb4
     PUSH EBX                            ; 005f9eab
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005f9eac
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005f9eb1
     LEA EAX,[EBX + 0x23ac]              ; 005f9eb4
         ;   Label: LAB_005f9eb4
@@ -1142,7 +1142,7 @@ section .text
         ;   Label: LAB_005fa033
     PUSH EBX                            ; 005fa035
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fa036
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     MOV EDX,dword ptr [EBP + 0x42]      ; 005fa03b
     ADD ESP,0x8                         ; 005fa03e
     TEST EDX,EDX                        ; 005fa041
@@ -1311,7 +1311,7 @@ section .text
     ADD ESP,0xc                         ; 005fa23a
     PUSH EBX                            ; 005fa23d
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fa23e
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fa243
     MOV dword ptr [EBX + 0x2418],0x0    ; 005fa246
     JMP 0x005f9ecc                      ; 005fa250
@@ -1605,7 +1605,7 @@ section .text
         ;   XREF to: 005fa5df (CONDITIONAL_JUMP)  ; LAB_005fa5df
     PUSH ECX                            ; 005fa5cc
     CALL core_grave.cpp_FUN_004ee790    ; 005fa5cd
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; undefined core_grave.cpp_FUN_004ee790()
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_FUN_004ee790()
     ADD ESP,0x4                         ; 005fa5d2
     MOV dword ptr [EBX + 0xbed4],0x0    ; 005fa5d5
     MOV dword ptr [EBX + 0xbe34],0x42c80000 ; 005fa5df
@@ -1640,7 +1640,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 005fa630 | g_CGorePtr | g_CGoreInstance
     PUSH EDX                            ; 005fa636 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 005fa637
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 005fa63c
     MOV dword ptr [EBX + 0xbe28],0x1    ; 005fa63f
     JMP 0x005fa18b                      ; 005fa649
@@ -1682,7 +1682,7 @@ section .text
         ;   XREF to: 005fa6b0 (CONDITIONAL_JUMP)  ; LAB_005fa6b0
     PUSH EBX                            ; 005fa6a7
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fa6a8
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fa6ad
     PUSH dword ptr [EBP + 0x92]         ; 005fa6b0
         ;   Label: LAB_005fa6b0
@@ -1703,7 +1703,7 @@ section .text
         ;   XREF to: 005fa18b (CONDITIONAL_JUMP)  ; LAB_005fa18b
     PUSH EBX                            ; 005fa6e3
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fa6e4
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fa6e9
     MOV EAX,dword ptr [EBX + 0xbfa0]    ; 005fa6ec
     PUSH EAX                            ; 005fa6f2
@@ -1816,7 +1816,7 @@ section .text
     PUSH EBX                            ; 005fa85e
         ;   Label: LAB_005fa85e
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fa85f
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fa864
     JMP 0x005fa18b                      ; 005fa867
         ;   XREF to: 005fa18b (UNCONDITIONAL_JUMP)  ; LAB_005fa18b
@@ -1866,7 +1866,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 005fa8e4
     MOV dword ptr [EAX],EDX             ; 005fa8e7
     CALL core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530 ; 005fa8e9
-        ;   XREF to: 005fb530 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530()
+        ;   XREF to: 005fb530 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530()
     ADD ESP,0x8                         ; 005fa8ee
     TEST EAX,EAX                        ; 005fa8f1
     JNZ 0x005fa18b                      ; 005fa8f3
@@ -1876,7 +1876,7 @@ section .text
     PUSH EBX                            ; 005fa900
     MOV dword ptr [EBP + 0x3a],EAX      ; 005fa901
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fa904
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005fa909
     MOV dword ptr [EBP + 0x4a],EAX      ; 005fa90c
     TEST EAX,EAX                        ; 005fa90f
@@ -2057,7 +2057,7 @@ section .text
     PUSH EDI                            ; 005faaff
     PUSH EBX                            ; 005fab00
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fab01
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     LEA EDX,[EBX + 0x20]                ; 005fab06
     MOV EDI,EAX                         ; 005fab09
     MOV EAX,dword ptr [EBX + 0xbe3c]    ; 005fab0b
@@ -2197,7 +2197,7 @@ section .text
     PUSH EBX                            ; 005fac96
         ;   Label: LAB_005fac96
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fac97
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fac9c
     JMP 0x005fa18b                      ; 005fac9f
         ;   XREF to: 005fa18b (UNCONDITIONAL_JUMP)  ; LAB_005fa18b
@@ -2208,7 +2208,7 @@ section .text
     PUSH 0x1                            ; 005facad
     PUSH EBX                            ; 005facaf
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005facb0
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005facb5
     MOV ESI,EAX                         ; 005facb8
     TEST EAX,EAX                        ; 005facba
@@ -2315,7 +2315,7 @@ section .text
     ADD ESP,0xc                         ; 005fadf6
     PUSH EBX                            ; 005fadf9
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fadfa
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fadff
     JMP 0x005fa18b                      ; 005fae02
         ;   XREF to: 005fa18b (UNCONDITIONAL_JUMP)  ; LAB_005fa18b

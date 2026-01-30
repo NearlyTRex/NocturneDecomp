@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_script_cpp_FUN_005626d0(void)
+; __cdecl int __cdecl core_script_cpp_FUN_005626d0(int param_1,int param_2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

@@ -1,14 +1,14 @@
 // Name: core_gore.cpp_FUN_004edaf0
 // Address: 004edaf0
 // Address Range: [[004edaf0, 004edb36]]
-// Convention: unknown
-// Signature: CBloodSplat * core_gore_cpp_FUN_004edaf0(void)
+// Convention: __cdecl
+// Signature: CBloodSplat * __cdecl core_gore_cpp_FUN_004edaf0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_gore.cpp_FUN_004edaf0() */
 
-CBloodSplat * core_gore_cpp_FUN_004edaf0(void)
+CBloodSplat * __cdecl core_gore_cpp_FUN_004edaf0(void)
 
 {
   CBloodSplat *pCVar1;

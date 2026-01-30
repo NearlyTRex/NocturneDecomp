@@ -37,16 +37,14 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 106,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 15,
     "pseudocode_lines": 21,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
-      "unaffected_reg",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 93
   },
@@ -59,9 +57,9 @@
         "00589b06"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_00589a40",
-    "signature": "void core_skeledit_cpp_FUN_00589a40(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX)"
+    "signature": "void __cdecl core_skeledit_cpp_FUN_00589a40(void)"
   },
   "function_calls": [
     {
@@ -215,34 +213,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 2,
-      "match": "unaff_EBX",
-      "text": "void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "text": "void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "text": "_fprintf(file,\"// version\\n\",unaff_EBX);",
-      "type": "unaffected_reg"
-    },
     {
       "description": "Undefined global data reference",
       "line": 17,

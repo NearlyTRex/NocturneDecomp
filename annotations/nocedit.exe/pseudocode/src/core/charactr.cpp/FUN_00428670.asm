@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_charactr_cpp_FUN_00428670(void)
+; __cdecl float __cdecl core_charactr_cpp_FUN_00428670(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

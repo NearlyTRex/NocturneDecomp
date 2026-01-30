@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 45,
-        "line": 37,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -19,31 +12,25 @@
       {
         "category": "other",
         "column": 12,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
         "line": 29,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 12,
+        "line": 30,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 19,
-        "line": 38,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 45,
+        "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -54,55 +41,62 @@
       },
       {
         "category": "other",
+        "column": 21,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 41,
-        "line": 48,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 49,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 49,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 52,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 56,
+        "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 190,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 50,
-    "suspect_count": 13,
+    "pseudocode_lines": 51,
+    "suspect_count": 15,
     "suspect_types": [
+      "extra_output",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 172
+    "total_lines": 173
   },
   "cross_references": [
     {
       "addr": "0053c4f0",
       "from_addr": "0053c662",
-      "name": "core_msnedit.cpp_FUN_0053c4f0",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c4f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -114,9 +108,9 @@
         "0040e9b9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_CActorPropertyList_FUN_0040e850",
-    "signature": "void core_actor_cpp_CActorPropertyList_FUN_0040e850(void)"
+    "signature": "void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e850(void)"
   },
   "function_calls": [
     {
@@ -164,18 +158,16 @@
       {
         "call_addr": "0053c662",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_FUN_0053c4f0",
-        "estimated_params": 3,
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053c4f0",
+        "estimated_params": 2,
         "instructions_analyzed": 6,
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.333333333333333,
@@ -258,85 +250,99 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(in_stack_00000004 + 0x2500);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004 + 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "iVar3 = in_stack_00000004 + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 32,
       "match": "in_stack_00000004",
-      "text": "local_20 = *(int *)(in_stack_00000004 + 0x24f0) - local_20;",
+      "text": "local_20 = *(int *)(in_stack_00000004 + 0x24f0) - extraout_EAX;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 32,
+      "match": "extraout_EAX",
+      "text": "local_20 = *(int *)(in_stack_00000004 + 0x24f0) - extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
       "match": "in_stack_00000008",
       "text": "if (iVar2 == in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "(*(int *)(in_stack_00000004 + 0x24f8) + 1,local_18,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x24fc) + -1,local_14,0,iVar1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "engine_2d_c_drawText_FUN_00401fd0(\": \",*(int *)(in_stack_00000004 + 0x24f0),y_pos);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "engine_2d_c_drawText_FUN_00401fd0(local_ec,*(int *)(in_stack_00000004 + 0x24f4),y_pos);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 4));",
       "type": "stack_param"
@@ -345,11 +351,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

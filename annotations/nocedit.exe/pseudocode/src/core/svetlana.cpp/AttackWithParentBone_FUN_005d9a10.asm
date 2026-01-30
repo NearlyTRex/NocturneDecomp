@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
+; __cdecl void __cdecl core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x84]:1  local_84

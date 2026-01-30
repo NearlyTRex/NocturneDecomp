@@ -1,12 +1,12 @@
 // Name: shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20
 // Address: 005cbe20
 // Address Range: [[005cbe20, 005cbeb2]]
-// Convention: unknown
-// Signature: void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
 
 #include "nocturne.h"
 
-void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
+void __cdecl shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
 
 {
   void *pvVar1;

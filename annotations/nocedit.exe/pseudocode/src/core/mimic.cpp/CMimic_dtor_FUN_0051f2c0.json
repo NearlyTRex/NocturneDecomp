@@ -4,25 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 29,
+        "line": 30,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 29,
+        "line": 30,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
-        "column": 68,
-        "line": 36,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 44,
+        "line": 45,
         "message": "cast from 'CMimic*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -37,61 +31,62 @@
       {
         "category": "other",
         "column": 28,
-        "line": 26,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 29,
+        "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 51,
         "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 55,
+        "column": 51,
         "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 47,
+        "column": 55,
         "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 47,
+        "line": 41,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 23,
-        "line": 43,
+        "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 98,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "pseudocode_lines": 43,
-    "suspect_count": 4,
+    "pseudocode_lines": 44,
+    "suspect_count": 6,
     "suspect_types": [
+      "extra_output",
       "negative_offset",
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 148
+    "total_lines": 149
   },
   "cross_references": [],
   "function": {
@@ -252,29 +247,43 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 10,
       "match": "unaff_EBX",
       "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 23,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))();",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EAX",
+      "text": "iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(extraout_EAX + -0x8bb8));",
+      "type": "extra_output"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 37,
       "match": "unaff_EBX",
       "text": "((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
+      "line": 41,
       "match": "pCVar2[-1].",
       "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"

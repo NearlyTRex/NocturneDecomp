@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_marquee_cpp_FUN_0050bd60(void)
+; __cdecl void __cdecl core_marquee_cpp_FUN_0050bd60(void)
 ;
 ;
 ; Called Functions:

@@ -12,8 +12,9 @@ core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700
           uint d9,uint d10,uint d11,uint d12,uint d13)
 
 {
-  int iVar1;
-  CDeformableModelInstance *pCVar2;
+  int extraout_EAX;
+  CDeformableModelInstance *pCVar1;
+  int iVar2;
   CVampireBoss *ptr;
   void *ptr_00;
   uint unaff_EBX;
@@ -27,21 +28,21 @@ core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700
   core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)this_ptr->unk2);
   core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
   core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
-  iVar1 = core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x22b4),0,unaff_EBX,unaff_retaddr,
-                      (uint)this_ptr);
-  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(pCVar2[-5].model_name + 0x34));
-  iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
-  iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
-  core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
-  iVar1 = core_cloth_cpp_FUN_0043bf80();
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,
+  core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
+                     ((CDeformableModelInstance *)(extraout_EAX + -0x22b4),0,unaff_EBX,unaff_retaddr
+                      ,(uint)this_ptr);
+  iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(pCVar1[-5].model_name + 0x34));
+  iVar2 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar2 + -0x4b0));
+  iVar2 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0x20c));
+  core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0xb4));
+  iVar2 = core_cloth_cpp_FUN_0043bf80();
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
+                     ((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_EBX,unaff_retaddr,
                       (uint)this_ptr);
   ptr = (CVampireBoss *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);
+                  ((CDemonActor *)(pCVar1[-1].part_visibility_flags + 7),1);
   if ((d1 & 2) == 0) {
     return ptr;
   }

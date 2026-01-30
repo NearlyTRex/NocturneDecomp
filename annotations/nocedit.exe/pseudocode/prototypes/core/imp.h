@@ -13,7 +13,7 @@ CImp * __cdecl factoryFunc(void);
 
 // Original: core_imp.cpp_FUN_004f9890
 // Address: 004f9890
-CDemonActorType * FUN_004f9890(void);
+CDemonActorType * __cdecl FUN_004f9890(void);
 
 // Original: core_imp.cpp_CImp_ctor_FUN_004f98a0
 // Address: 004f98a0
@@ -21,51 +21,51 @@ CImp * __cdecl CImp::ctor(CImp *this_ptr);
 
 // Original: core_imp.cpp_FUN_004f9910
 // Address: 004f9910
-void FUN_004f9910(void);
+void __cdecl FUN_004f9910(void);
 
 // Original: core_imp.cpp_FUN_004f9c30
 // Address: 004f9c30
-void FUN_004f9c30(void);
+void __cdecl FUN_004f9c30(void);
 
 // Original: core_imp.cpp_FUN_004fa900
 // Address: 004fa900
-void FUN_004fa900(void);
+void __cdecl FUN_004fa900(void);
 
 // Original: core_imp.cpp_FUN_004fa920
 // Address: 004fa920
-void FUN_004fa920(void);
+void __cdecl FUN_004fa920(void);
 
 // Original: core_imp.cpp_FUN_004faaf0
 // Address: 004faaf0
-bool FUN_004faaf0(void);
+bool __cdecl FUN_004faaf0(void);
 
 // Original: core_imp.cpp_CImp_load_FUN_004fab00
 // Address: 004fab00
-void CImp::load(void);
+void __cdecl CImp::load(void);
 
 // Original: core_imp.cpp_FUN_004fab60
 // Address: 004fab60
-void FUN_004fab60(void);
+void __cdecl FUN_004fab60(void);
 
 // Original: core_imp.cpp_FUN_004fae00
 // Address: 004fae00
-void FUN_004fae00(void);
+void __cdecl FUN_004fae00(void);
 
 // Original: core_imp.cpp_FUN_004faf40
 // Address: 004faf40
-int FUN_004faf40(void);
+int __cdecl FUN_004faf40(void);
 
 // Original: core_imp.cpp_FUN_004fb0f0
 // Address: 004fb0f0
-void FUN_004fb0f0(void);
+void __cdecl FUN_004fb0f0(void);
 
 // Original: core_imp.cpp_FUN_004fb110
 // Address: 004fb110
-void FUN_004fb110(void);
+void __cdecl FUN_004fb110(void);
 
 // Original: core_imp.cpp_FUN_004fb150
 // Address: 004fb150
-void FUN_004fb150(void);
+void __cdecl FUN_004fb150(void);
 
 // Original: core_imp.cpp_CImp_dtor_FUN_004fb180
 // Address: 004fb180

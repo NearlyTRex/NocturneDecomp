@@ -21,71 +21,71 @@ CLever * __cdecl CLever::ctor(CLever *this_ptr);
 
 // Original: core_lever.cpp_FUN_005048a0
 // Address: 005048a0
-void FUN_005048a0(void);
+void __cdecl FUN_005048a0(void);
 
 // Original: core_lever.cpp_FUN_00504920
 // Address: 00504920
-void FUN_00504920(void);
+void __cdecl FUN_00504920(void);
 
 // Original: core_lever.cpp_FUN_00504b20
 // Address: 00504b20
-void FUN_00504b20(void);
+void __cdecl FUN_00504b20(void);
 
 // Original: core_lever.cpp_FUN_00504c90
 // Address: 00504c90
-void FUN_00504c90(void);
+void __cdecl FUN_00504c90(void);
 
 // Original: core_lever.cpp_FUN_00504cf0
 // Address: 00504cf0
-int FUN_00504cf0(void);
+int __cdecl FUN_00504cf0(void);
 
 // Original: core_lever.cpp_FUN_00504d80
 // Address: 00504d80
-float * FUN_00504d80(void);
+float * __cdecl FUN_00504d80(void);
 
 // Original: core_lever.cpp_FUN_00504dd0
 // Address: 00504dd0
-CVector3f * FUN_00504dd0(void);
+CVector3f * __cdecl FUN_00504dd0(void);
 
 // Original: core_lever.cpp_CLever_load_FUN_00504e80
 // Address: 00504e80
-void CLever::load(void);
+void __cdecl CLever::load(void);
 
 // Original: core_lever.cpp_FUN_00505060
 // Address: 00505060
-bool FUN_00505060(void);
+bool __cdecl FUN_00505060(void);
 
 // Original: core_lever.cpp_FUN_00505080
 // Address: 00505080
-undefined4 FUN_00505080(void);
+int __cdecl FUN_00505080(void);
 
 // Original: core_lever.cpp_FUN_00505100
 // Address: 00505100
-void FUN_00505100(void);
+void __cdecl FUN_00505100(void);
 
 // Original: core_lever.cpp_FUN_00505160
 // Address: 00505160
-undefined4 FUN_00505160(void);
+int __cdecl FUN_00505160(void);
 
 // Original: core_lever.cpp_FUN_005051a0
 // Address: 005051a0
-void FUN_005051a0(void);
+void __cdecl FUN_005051a0(void);
 
 // Original: core_lever.cpp_FUN_00505210
 // Address: 00505210
-undefined4 FUN_00505210(void);
+int __cdecl FUN_00505210(void);
 
 // Original: core_lever.cpp_FUN_00505240
 // Address: 00505240
-void FUN_00505240(void);
+void __cdecl FUN_00505240(void);
 
 // Original: core_lever.cpp_FUN_00505370
 // Address: 00505370
-void FUN_00505370(void);
+void __cdecl FUN_00505370(void);
 
 // Original: core_lever.cpp_FUN_00505390
 // Address: 00505390
-void FUN_00505390(void);
+void __cdecl FUN_00505390(void);
 
 // Original: core_lever.cpp_CLever_dtor_FUN_00505430
 // Address: 00505430

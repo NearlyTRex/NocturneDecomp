@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_sentinel_cpp_FUN_00567e20(void)
+; __cdecl void __cdecl core_sentinel_cpp_FUN_00567e20(void)
 ;
 ;
 ; Referenced Globals:

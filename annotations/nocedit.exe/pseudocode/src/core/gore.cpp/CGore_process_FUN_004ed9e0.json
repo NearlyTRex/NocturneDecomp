@@ -2,46 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 68,
-        "line": 22,
-        "message": "expression cannot be used as a function"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 25,
+        "column": 11,
+        "line": 21,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
-        "column": 26,
-        "line": 25,
+        "column": 18,
+        "line": 21,
         "message": "expected primary-expression before ')' token"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 33,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 37,
-        "message": "too many arguments to function 'void core_gore_cpp_FUN_004ecc40()'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 37,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 41,
-        "message": "void value not ignored as it ought to be"
       }
     ],
     "success": false,
@@ -56,19 +26,18 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 166,
+    "complexity_score": 158,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 13,
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 33,
     "suspect_count": 11,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_few",
+      "extra_output",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 117
+    "total_lines": 114
   },
   "cross_references": [
     {
@@ -78,15 +47,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053e220",
-      "from_addr": "0053e525",
-      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220",
+      "addr": "005390f0",
+      "from_addr": "00539934",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005390f0",
-      "from_addr": "00539934",
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "addr": "0053e220",
+      "from_addr": "0053e525",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -98,10 +67,10 @@
         "004eda95"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_gore.cpp_CGore_process_FUN_004ed9e0",
-    "signature": "undefined4 core_gore_cpp_CGore_process_FUN_004ed9e0(void)"
+    "signature": "int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)"
   },
   "function_calls": [
     {
@@ -206,40 +175,34 @@
       {
         "call_addr": "0053e525",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220",
-        "estimated_params": 2,
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
+        "estimated_params": 1,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 1
       },
       {
         "call_addr": "004e33b4",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_process_FUN_004e3190",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 1
       },
       {
         "call_addr": "00539934",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
-        "estimated_params": 2,
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+        "estimated_params": 1,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 1
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "estimated_params": 2
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.968253968253968,
@@ -279,12 +242,20 @@
     "pcode_op_count": 313
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -305,85 +276,81 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_02d833d4",
-      "text": "pCVar4 = DAT_02d833d4;",
-      "type": "undefined_data"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
-      "match": "NAN",
-      "text": "uVar3 = (uint)(ushort)((ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |",
-      "type": "decompiler_intrinsic"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02d833d4",
+      "text": "pCVar1 = DAT_02d833d4;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
+      "line": 14,
       "match": "code *",
-      "text": "uVar3 = (**(code **)(*(int *)(pCVar4->unk + 0x34) + 4))();",
+      "text": "(**(code **)(*(int *)(pCVar1->unk + 0x34) + 4))();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "CONCAT44",
-      "text": "uVar6 = CONCAT44(DAT_02d873d8,uVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_02d873d8",
-      "text": "uVar6 = CONCAT44(DAT_02d873d8,uVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
+      "line": 17,
       "match": "DAT_02d873d4",
-      "text": "} while (pCVar4 != (CBloodParticle *)&DAT_02d873d4);",
+      "text": "} while (pCVar1 != (CBloodParticle *)&DAT_02d873d4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 19,
       "match": "DAT_02d873d8",
       "text": "if (0 < DAT_02d873d8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 23,
       "match": "DAT_02d873d8",
-      "text": "} while (iVar5 < DAT_02d873d8);",
+      "text": "} while (iVar2 < DAT_02d873d8);",
       "type": "undefined_data"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_EAX",
+      "text": "iVar2 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 28,
       "match": "DAT_02da8720",
       "text": "if (0 < DAT_02da8720) {",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_02da8720",
-      "text": "} while (iVar5 < DAT_02da8720);",
-      "type": "undefined_data"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
+      "match": "extraout_EAX_00",
+      "text": "iVar2 = extraout_EAX_00;",
+      "type": "extra_output"
     },
     {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_02da8720",
+      "text": "} while (iVar3 < DAT_02da8720);",
+      "type": "undefined_data"
     }
   ]
 }

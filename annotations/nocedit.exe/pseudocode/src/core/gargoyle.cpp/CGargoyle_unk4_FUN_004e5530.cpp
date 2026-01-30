@@ -1,15 +1,15 @@
 // Name: core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530
 // Address: 004e5530
 // Address Range: [[004e5530, 004e57c8]]
-// Convention: unknown
-// Signature: void core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_gargoyle.cpp_CGargoyle_unk4(CGargoyle* param_1, uint
    param_2) */
 
-void core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530(void)
+void __cdecl core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530(void)
 
 {
   int iVar1;

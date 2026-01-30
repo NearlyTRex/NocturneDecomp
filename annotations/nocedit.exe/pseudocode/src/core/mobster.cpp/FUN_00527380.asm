@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mobster_cpp_FUN_00527380(void)
+; __cdecl void __cdecl core_mobster_cpp_FUN_00527380(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
@@ -147,7 +147,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00527487
     PUSH EAX                            ; 0052748a
     CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 0052748b
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 00527490
     MOV EDI,EAX                         ; 00527493
     PUSH 0x0                            ; 00527495
@@ -253,7 +253,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 0052758e
     PUSH ECX                            ; 00527592
     CALL core_bodypart.cpp_FUN_0041a050 ; 00527593
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a050()
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
     MOV EAX,dword ptr [EBX + 0xbf88]    ; 00527598
     MOV EDI,dword ptr [EBX + EAX*0x4 + 0x2298] ; 0052759e
     ADD ESP,0x4                         ; 005275a5

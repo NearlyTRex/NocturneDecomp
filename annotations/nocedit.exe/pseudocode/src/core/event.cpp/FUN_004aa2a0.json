@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 17,
-        "message": "'stack0x00000008' was not declared in this scope; did you mean 'in_stack_00000004'?"
+        "line": 14,
+        "message": "'stack0x00000008' was not declared in this scope"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 18,
+        "line": 15,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
-        "column": 44,
-        "line": 18,
+        "column": 34,
+        "line": 15,
         "message": "cannot convert 'char**' to '__va_list_tag*'"
       }
     ],
@@ -32,18 +32,18 @@
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 64,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 7,
     "suspect_count": 4,
     "suspect_types": [
-      "stack_param",
       "stack_ref",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 27
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -61,9 +61,9 @@
         "004aa2c9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_FUN_004aa2a0",
-    "signature": "undefined4 core_event_cpp_FUN_004aa2a0(void)"
+    "signature": "int __cdecl core_event_cpp_FUN_004aa2a0(char *param_1)"
   },
   "function_calls": [
     {
@@ -104,10 +104,10 @@
     "pcode_op_count": 70
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 8,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -116,36 +116,43 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_event_cpp_FUN_004aa2a0(char *param_1)",
+      "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 10,
+      "line": 7,
       "match": "&stack0x00000008",
       "text": "local_4 = &stack0x00000008;",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "vsprintf(&DAT_02d0a460,in_stack_00000004,&local_4);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "text": "vsprintf(&DAT_02d0a460,param_1,&local_4);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 8,
       "match": "DAT_02d0a460",
-      "text": "vsprintf(&DAT_02d0a460,in_stack_00000004,&local_4);",
+      "text": "vsprintf(&DAT_02d0a460,param_1,&local_4);",
       "type": "undefined_data"
     }
   ]

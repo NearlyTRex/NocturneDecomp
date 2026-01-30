@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flies_cpp_FUN_004cbf00(void)
+; __cdecl void __cdecl core_flies_cpp_FUN_004cbf00(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58
@@ -240,7 +240,7 @@ section .text
         ;   Label: LAB_004cc145
     PUSH EDI                            ; 004cc146
     CALL core_flies.cpp_FUN_004cc760    ; 004cc147
-        ;   XREF to: 004cc760 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc760()
+        ;   XREF to: 004cc760 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_FUN_004cc760()
     FLD float ptr [EDI + 0x2a14]        ; 004cc14c
     MOV EDX,dword ptr [EDI + 0x164]     ; 004cc152
     ADD ESP,0x8                         ; 004cc158
@@ -311,7 +311,7 @@ section .text
     PUSH EDI                            ; 004cc1f9
     ADD ESI,0x28                        ; 004cc1fa
     CALL core_flies.cpp_FUN_004cc820    ; 004cc1fd
-        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc820()
+        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; float * core_flies.cpp_FUN_004cc820()
     ADD ESP,0xc                         ; 004cc202
     CMP ESI,EAX                         ; 004cc205
     JZ 0x004cbfa7                       ; 004cc207

@@ -13,18 +13,24 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 54,
+    "complexity_score": 52,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 7,
     "suspect_count": 4,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 21
+    "total_lines": 19
   },
   "cross_references": [
+    {
+      "addr": "00560160",
+      "from_addr": "0056019b",
+      "name": "core_script.cpp_CScript_FUN_00560160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0055a810",
       "from_addr": "0055a926",
@@ -36,12 +42,6 @@
       "from_addr": "00559480",
       "name": "core_script.cpp_FUN_005593f0",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00560160",
-      "from_addr": "0056019b",
-      "name": "core_script.cpp_FUN_00560160",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -52,9 +52,9 @@
         "005593e9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_005593d0",
-    "signature": "void core_script_cpp_FUN_005593d0(void)"
+    "signature": "void __cdecl core_script_cpp_FUN_005593d0(char *param_1)"
   },
   "function_calls": [],
   "globals": [
@@ -83,41 +83,49 @@
     "pcode_op_count": 43
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void __cdecl core_script_cpp_FUN_005593d0(char *param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "text": "while ((g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2U) != 0) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     }
   ]
 }

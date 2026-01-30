@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_imp_cpp_FUN_004fb150(void)
+; __cdecl void __cdecl core_imp_cpp_FUN_004fb150(void)
 ;
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     ADD EAX,0x158                       ; 004fb16c
     PUSH EAX                            ; 004fb171
     CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 004fb172
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
     ADD ESP,0x8                         ; 004fb177
     POP EBX                             ; 004fb17a
     RET                                 ; 004fb17b

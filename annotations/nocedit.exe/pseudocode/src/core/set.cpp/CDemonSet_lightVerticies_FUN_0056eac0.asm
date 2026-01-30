@@ -340,7 +340,7 @@ section .text
     PUSH EAX                            ; 0056ed0f
     LEA ESI,[ESP + 0x34]                ; 0056ed10
     CALL core_set.cpp_FUN_0056e890      ; 0056ed14
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0056e890()
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
     ADD ESP,0x4                         ; 0056ed19
     PUSH 0x0                            ; 0056ed1c
     MOV ECX,dword ptr [ESP + 0x13c]     ; 0056ed1e
@@ -458,7 +458,7 @@ section .text
     PUSH EAX                            ; 0056ee5f
     LEA ESI,[ESP + 0x4c]                ; 0056ee60
     CALL core_set.cpp_FUN_0056e890      ; 0056ee64
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0056e890()
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
     ADD ESP,0x4                         ; 0056ee69
     MOV EDI,dword ptr [ESP + 0x11c]     ; 0056ee6c
     LEA ESI,[ESP + 0x48]                ; 0056ee73
@@ -615,7 +615,7 @@ section .text
     LEA ESI,[ESP + 0x28]                ; 0056f077
     LEA EDI,[ESP + 0x1c]                ; 0056f07b
     CALL core_set.cpp_FUN_0056e890      ; 0056f07f
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0056e890()
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
     LEA ESI,[ESP + 0x28]                ; 0056f084
     ADD ESP,0x4                         ; 0056f088
     MOVSD ES:EDI,ESI                    ; 0056f08b
@@ -664,7 +664,7 @@ section .text
     PUSH EAX                            ; 0056f10b
     LEA ESI,[ESP + 0x64]                ; 0056f10c
     CALL core_set.cpp_FUN_0056e890      ; 0056f110
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0056e890()
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
     ADD ESP,0x4                         ; 0056f115
     ADD EBX,0x30                        ; 0056f118
     MOV EDI,dword ptr [ESP + 0x10c]     ; 0056f11b

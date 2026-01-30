@@ -1,12 +1,12 @@
 // Name: core_marquee.cpp_FUN_0050bec0
 // Address: 0050bec0
 // Address Range: [[0050bec0, 0050c046]]
-// Convention: unknown
-// Signature: void core_marquee_cpp_FUN_0050bec0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_marquee_cpp_FUN_0050bec0(void)
 
 #include "nocturne.h"
 
-void core_marquee_cpp_FUN_0050bec0(void)
+void __cdecl core_marquee_cpp_FUN_0050bec0(void)
 
 {
   int *piVar1;

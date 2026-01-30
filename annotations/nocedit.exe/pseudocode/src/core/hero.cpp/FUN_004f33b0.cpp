@@ -1,14 +1,14 @@
 // Name: core_hero.cpp_FUN_004f33b0
 // Address: 004f33b0
 // Address Range: [[004f33b0, 004f3576]]
-// Convention: unknown
-// Signature: undefined4 core_hero_cpp_FUN_004f33b0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_hero_cpp_FUN_004f33b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_hero.cpp_FUN_004f33b0(uint param_1) */
 
-uint core_hero_cpp_FUN_004f33b0(void)
+int __cdecl core_hero_cpp_FUN_004f33b0(void)
 
 {
   CLocation *input_world_point;

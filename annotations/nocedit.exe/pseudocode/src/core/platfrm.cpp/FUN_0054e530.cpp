@@ -1,14 +1,14 @@
 // Name: core_platfrm.cpp_FUN_0054e530
 // Address: 0054e530
 // Address Range: [[0054e530, 0054e6f2]]
-// Convention: unknown
-// Signature: int core_platfrm_cpp_FUN_0054e530(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_platfrm_cpp_FUN_0054e530(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_FUN_0054e530(uint param_1) */
 
-int core_platfrm_cpp_FUN_0054e530(void)
+int __cdecl core_platfrm_cpp_FUN_0054e530(void)
 
 {
   float *auto_select_flag;
@@ -27,8 +27,7 @@ int core_platfrm_cpp_FUN_0054e530(void)
                      (in_stack_00000004,g_CPlatformClassInfo.name_hash);
   auto_select_flag = &pCVar1[2].orient_matrix.m[0].y;
   if (*(char *)&pCVar1[2].orient_matrix.m[0].y == '\0') {
-    sprintf(local_d4,"Select a course for platform %s",in_stack_00000004)
-    ;
+    sprintf(local_d4,"Select a course for platform %s");
     iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,local_d4,"data","*.pth",
                        (int)auto_select_flag);
@@ -41,7 +40,7 @@ int core_platfrm_cpp_FUN_0054e530(void)
             ((CStrList *)&stack0xfffffabc,"Don't use a course file");
   shape_edittool_cpp_CStrList_add_FUN_004a2b80
             ((CStrList *)&stack0xfffffabc,"Oops.  Forget I ever clicked there...");
-  sprintf(local_19c,"Change course setting for platform %s",in_stack_00000004);
+  sprintf(local_19c,"Change course setting for platform %s");
   iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     ((CPickList *)&stack0xfffffabc,local_19c,-1,0);
   if (iVar2 != 0) {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
+; __cdecl void __cdecl core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1c]:1  local_1c
@@ -73,7 +73,7 @@ section .text
     PUSH EDI                            ; 004e583b
     PUSH ESI                            ; 004e583c
     CALL core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 ; 004e583d
-        ;   XREF to: 004e5530 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530()
+        ;   XREF to: 004e5530 (UNCONDITIONAL_CALL)  ; void core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530()
     FLD float ptr [EDI + 0x4]           ; 004e5842
     FSUBR float ptr [ESI + 0x243c]      ; 004e5845
     ADD ESP,0x8                         ; 004e584b
@@ -120,7 +120,7 @@ section .text
         ;   Label: LAB_004e58bc
     PUSH ESI                            ; 004e58bd
     CALL core_enemy.cpp_FUN_004a9f10    ; 004e58be
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004e58c3
     ADD ESP,0xc                         ; 004e58c6
     POP EBP                             ; 004e58c9
@@ -133,7 +133,7 @@ section .text
     PUSH ESI                            ; 004e58cf
     MOV dword ptr [EDI + 0x4],0x0       ; 004e58d0
     CALL core_enemy.cpp_FUN_004a9f10    ; 004e58d7
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004e58dc
     ADD ESP,0xc                         ; 004e58df
     POP EBP                             ; 004e58e2
@@ -159,7 +159,7 @@ section .text
     PUSH EDI                            ; 004e5912
     PUSH ESI                            ; 004e5913
     CALL core_enemy.cpp_FUN_004a9f10    ; 004e5914
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004e5919
     ADD ESP,0xc                         ; 004e591c
     POP EBP                             ; 004e591f

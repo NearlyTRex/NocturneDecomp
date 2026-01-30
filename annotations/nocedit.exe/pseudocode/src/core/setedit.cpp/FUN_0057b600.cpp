@@ -1,14 +1,14 @@
 // Name: core_setedit.cpp_FUN_0057b600
 // Address: 0057b600
 // Address Range: [[0057b600, 0057b900]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_FUN_0057b600(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_FUN_0057b600(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_setedit.cpp_FUN_0057b600(uint param_1, uint param_2) */
 
-void core_setedit_cpp_FUN_0057b600(void)
+void __cdecl core_setedit_cpp_FUN_0057b600(void)
 
 {
   C3DSLight *pCVar1;

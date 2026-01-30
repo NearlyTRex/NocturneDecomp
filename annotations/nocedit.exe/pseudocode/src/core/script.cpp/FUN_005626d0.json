@@ -12,53 +12,53 @@
       {
         "category": "other",
         "column": 12,
-        "line": 23,
+        "line": 21,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 31,
+        "line": 29,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 39,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 40,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 44,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 47,
+        "line": 38,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 42,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 183,
+    "complexity_score": 181,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 56,
     "suspect_count": 12,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 126
+    "total_lines": 124
   },
   "cross_references": [],
   "function": {
@@ -69,9 +69,9 @@
         "00562758"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_005626d0",
-    "signature": "int core_script_cpp_FUN_005626d0(void)"
+    "signature": "int __cdecl core_script_cpp_FUN_005626d0(int param_1,int param_2)"
   },
   "function_calls": [],
   "globals": [],
@@ -79,8 +79,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.80327868852459,
@@ -113,10 +113,10 @@
     "pcode_op_count": 415
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -125,93 +125,107 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_script_cpp_FUN_005626d0(int param_1,int param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "int __cdecl core_script_cpp_FUN_005626d0(int param_1,int param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "pcVar6 = (char *)(in_stack_00000004 + 4);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "text": "pcVar6 = (char *)(param_1 + 4);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "pcVar6 = (char *)(in_stack_00000004 + 0x68);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "text": "pcVar6 = (char *)(param_1 + 0x68);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0xcc) < in_stack_00000008) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "text": "if (*(int *)(param_1 + 0xcc) < param_2) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000008",
-      "text": "if (*(int *)(in_stack_00000004 + 0xcc) < in_stack_00000008) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "text": "if (*(int *)(param_1 + 0xcc) < param_2) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0xcc);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "text": "param_2 = *(int *)(param_1 + 0xcc);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0xcc);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "text": "param_2 = *(int *)(param_1 + 0xcc);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "text": "if (0 < in_stack_00000008) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "text": "if (0 < param_2) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "pcVar6 = (char *)(in_stack_00000004 + 0x134);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "text": "pcVar6 = (char *)(param_1 + 0x134);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "pcVar7 = (char *)(iVar5 * 0x328 + in_stack_00000004 + 0xd0);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "text": "pcVar7 = (char *)(iVar5 * 0x328 + param_1 + 0xd0);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000008",
-      "text": "} while (iVar5 < in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_2",
+      "text": "} while (iVar5 < param_2);",
+      "type": "unnamed_param"
     }
   ]
 }

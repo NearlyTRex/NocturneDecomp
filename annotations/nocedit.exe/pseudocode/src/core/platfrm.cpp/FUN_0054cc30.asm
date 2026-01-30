@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_platfrm_cpp_FUN_0054cc30(void)
+; __cdecl void __cdecl core_platfrm_cpp_FUN_0054cc30(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x334]:4  local_334
@@ -105,7 +105,7 @@ section .text
     PUSH EAX                            ; 0054ccb4
     MOV EBX,0x1                         ; 0054ccb5
     CALL core_platfrm.cpp_FUN_0054d690  ; 0054ccba
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054d690()
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054d690()
     ADD ESP,0xc                         ; 0054ccbf
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054ccc2
         ;   Label: LAB_0054ccc2
@@ -244,7 +244,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0054ce49
     PUSH EDI                            ; 0054ce4c
     CALL core_platfrm.cpp_FUN_0054cab0  ; 0054ce4d
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054cab0()
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054cab0()
     ADD ESP,0x4                         ; 0054ce52
     PUSH EBX                            ; 0054ce55
     PUSH ESI                            ; 0054ce56
@@ -312,7 +312,7 @@ section .text
     PUSH EAX                            ; 0054cf28
     MOV EBX,0x1                         ; 0054cf29
     CALL core_platfrm.cpp_FUN_0054d690  ; 0054cf2e
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054d690()
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054d690()
     ADD ESP,0xc                         ; 0054cf33
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054cf36
         ;   Label: LAB_0054cf36
@@ -340,7 +340,7 @@ section .text
     PUSH 0x3f800000                     ; 0054cf77
     PUSH EAX                            ; 0054cf7c
     CALL core_platfrm.cpp_FUN_0054d690  ; 0054cf7d
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054d690()
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054d690()
     ADD ESP,0xc                         ; 0054cf82
     JMP 0x0054cccf                      ; 0054cf85
         ;   XREF to: 0054cccf (UNCONDITIONAL_JUMP)  ; default
@@ -365,7 +365,7 @@ section .text
     PUSH 0x0                            ; 0054cfbc
     PUSH EAX                            ; 0054cfbe
     CALL core_platfrm.cpp_FUN_0054d690  ; 0054cfbf
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054d690()
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054d690()
     ADD ESP,0xc                         ; 0054cfc4
     JMP 0x0054cccf                      ; 0054cfc7
         ;   XREF to: 0054cccf (UNCONDITIONAL_JUMP)  ; default
@@ -733,7 +733,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0054d4ca
     PUSH ECX                            ; 0054d4cd
     CALL core_platfrm.cpp_FUN_0054df80  ; 0054d4ce
-        ;   XREF to: 0054df80 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054df80()
+        ;   XREF to: 0054df80 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_FUN_0054df80()
     ADD ESP,0x8                         ; 0054d4d3
     TEST EAX,EAX                        ; 0054d4d6
     JZ 0x0054d4f3                       ; 0054d4d8
@@ -840,7 +840,7 @@ section .text
         ;   Label: LAB_0054d675
     PUSH EBX                            ; 0054d678
     CALL core_platfrm.cpp_FUN_0054e320  ; 0054d679
-        ;   XREF to: 0054e320 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054e320()
+        ;   XREF to: 0054e320 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054e320()
     ADD ESP,0x4                         ; 0054d67e
     MOV ESP,EBP                         ; 0054d681
         ;   Label: LAB_0054d681

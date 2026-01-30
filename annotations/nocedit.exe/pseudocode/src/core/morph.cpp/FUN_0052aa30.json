@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 100,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 10,
-    "suspect_count": 8,
+    "pseudocode_lines": 11,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 43
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_FUN_0052aa30",
-    "signature": "void __cdecl core_morph_cpp_FUN_0052aa30 (CMorphModel *param_1,undefined4 param_2,CDeformableModelInstance *param_3)"
+    "signature": "void __cdecl core_morph_cpp_FUN_0052aa30(void)"
   },
   "function_calls": [
     {
@@ -116,53 +116,46 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "text": "(CMorphModel *param_1,uint param_2,CDeformableModelInstance *param_3)",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "CMorphModel *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "text": "(CMorphModel *param_1,uint param_2,CDeformableModelInstance *param_3)",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "CDeformableModelInstance *in_stack_0000000c;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "text": "(CMorphModel *param_1,uint param_2,CDeformableModelInstance *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_3",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "param_3",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(param_3);",
-      "type": "unnamed_param"
+      "match": "in_stack_0000000c",
+      "text": "(in_stack_0000000c);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "param_1",
-      "text": "core_morph_cpp_CMorphModel_animate_FUN_0052a920(param_1);",
-      "type": "unnamed_param"
+      "match": "in_stack_0000000c",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(in_stack_0000000c,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorphModel_animate_FUN_0052a920(in_stack_00000004);",
+      "type": "stack_param"
     },
     {
       "call_site_count": 1,

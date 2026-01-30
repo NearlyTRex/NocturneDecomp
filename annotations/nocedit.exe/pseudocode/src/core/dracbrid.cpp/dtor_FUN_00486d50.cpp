@@ -9,8 +9,8 @@
 SFreaky * __cdecl core_dracbrid_cpp_dtor_FUN_00486d50(SFreaky *this_ptr)
 
 {
-  int iVar1;
+  int extraout_EAX;
   
-  iVar1 = core_dracbrid_cpp_FUN_00486e30();
-  return (SFreaky *)(iVar1 + -0x20);
+  core_dracbrid_cpp_FUN_00486e30();
+  return (SFreaky *)(extraout_EAX + -0x20);
 }

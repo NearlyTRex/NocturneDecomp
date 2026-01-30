@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_turret_cpp_FUN_005e3560(void)
+; __cdecl void __cdecl core_turret_cpp_FUN_005e3560(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
@@ -68,7 +68,7 @@ section .text
     PUSH EBX                            ; 005e35c2
     PUSH ESI                            ; 005e35c3
     CALL core_turret.cpp_FUN_005e3280   ; 005e35c4
-        ;   XREF to: 005e3280 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_FUN_005e3280()
+        ;   XREF to: 005e3280 (UNCONDITIONAL_CALL)  ; int core_turret.cpp_FUN_005e3280()
     ADD ESP,0xc                         ; 005e35c9
     TEST EAX,EAX                        ; 005e35cc
     JZ 0x005e3589                       ; 005e35ce

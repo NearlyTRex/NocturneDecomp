@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_beast_cpp_FUN_00418380(void)
+; __cdecl void __cdecl core_beast_cpp_FUN_00418380(void)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     PUSH EDX                            ; 00418389
     MOV dword ptr [EAX + 0x4],0x0       ; 0041838a
     CALL core_enemy.cpp_FUN_004a9f10    ; 00418391
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00418396
     RET                                 ; 00418399
 

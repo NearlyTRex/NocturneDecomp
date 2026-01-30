@@ -53,9 +53,9 @@
         "0041b564"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bodypart.cpp_FUN_0041b540",
-    "signature": "void core_bodypart_cpp_FUN_0041b540(void)"
+    "signature": "void __cdecl core_bodypart_cpp_FUN_0041b540(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -66,51 +66,42 @@
         "call_addr": "0041ce45",
         "call_type": "direct",
         "caller": "core_boneguy.cpp_FUN_0041cc40",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 14,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 5
       },
       {
         "call_addr": "00526fc6",
         "call_type": "direct",
         "caller": "core_mobster.cpp_FUN_00526d90",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 14,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 5
       },
       {
         "call_addr": "005fb79f",
         "call_type": "direct",
         "caller": "core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 14,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 5
       },
       {
         "call_addr": "005fb990",
         "call_type": "direct",
         "caller": "core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530",
-        "estimated_params": 7,
+        "estimated_params": 5,
         "instructions_analyzed": 14,
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_params": 5
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 0,
-    "estimated_params": 6
+    "estimated_params": 5
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.384615384615385,
@@ -223,11 +214,11 @@
       "call_site_count": 4,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
+      "estimated_params": 5,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
       "type": "param_count_too_few"
     }
   ]

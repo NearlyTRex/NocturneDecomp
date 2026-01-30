@@ -1,15 +1,15 @@
 // Name: core_gargoyle.cpp_FUN_004e5ba0
 // Address: 004e5ba0
 // Address Range: [[004e5ba0, 004e5bcb]]
-// Convention: unknown
-// Signature: void core_gargoyle_cpp_FUN_004e5ba0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gargoyle_cpp_FUN_004e5ba0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_gargoyle.cpp_FUN_004e5ba0(uint param_1, uint
    param_2) */
 
-void core_gargoyle_cpp_FUN_004e5ba0(void)
+void __cdecl core_gargoyle_cpp_FUN_004e5ba0(void)
 
 {
   CDemonActor *in_stack_00000004;

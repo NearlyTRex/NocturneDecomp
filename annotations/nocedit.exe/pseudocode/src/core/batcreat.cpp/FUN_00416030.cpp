@@ -1,15 +1,15 @@
 // Name: core_batcreat.cpp_FUN_00416030
 // Address: 00416030
 // Address Range: [[00416030, 0041623c]]
-// Convention: unknown
-// Signature: void core_batcreat_cpp_FUN_00416030(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_batcreat_cpp_FUN_00416030(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_batcreature.cpp_FUN_00416030(uint param_1, uint
    param_2) */
 
-void core_batcreat_cpp_FUN_00416030(void)
+void __cdecl core_batcreat_cpp_FUN_00416030(void)
 
 {
   CDeformableModelInstance *this_ptr;
@@ -19,25 +19,24 @@ void core_batcreat_cpp_FUN_00416030(void)
   SMotion *pSVar3;
   uint uVar4;
   CCharacter *in_stack_00000004;
-  float in_stack_00000008;
+  int in_stack_00000008;
   CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[1].base.create_event + 0x60));
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[1].base.create_event + 0x58));
-  if (*(int *)((int)in_stack_00000008 + 0x28) == 7) {
+  if (*(int *)(in_stack_00000008 + 0x28) == 7) {
     iVar2 = 0;
-    *(float *)((int)in_stack_00000008 + 4) =
-         *(float *)((int)in_stack_00000008 + 4) * (float)2;
+    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base,&local_30,(CVector3f *)((int)in_stack_00000008 + 0x1c));
+              (&in_stack_00000004->base,&local_30,(CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar2 < 5);
   }
-  if (*(int *)((int)in_stack_00000008 + 0x30) == 0x6c) {
+  if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&in_stack_00000004->model,&local_3c,0);
@@ -46,7 +45,7 @@ void core_batcreat_cpp_FUN_00416030(void)
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_batcreat_cpp_FUN_00415dd0();
-  fVar1 = in_stack_00000004->hit_points - *(float *)((int)in_stack_00000008 + 4);
+  fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
@@ -61,8 +60,6 @@ void core_batcreat_cpp_FUN_00416030(void)
       uVar4 = (*((in_stack_00000004->base).vtable._ub)->playSound)
                         (&in_stack_00000004->base,"batman-die.wav");
       *(uint *)(in_stack_00000004[1].base.create_event + 0x5c) = uVar4;
-      local_3c.y = in_stack_00000008;
-      local_3c.x = (float)in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
@@ -87,8 +84,6 @@ void core_batcreat_cpp_FUN_00416030(void)
       uVar4 = (*((in_stack_00000004->base).vtable._ub)->playSound)
                         (&in_stack_00000004->base,"batman-hurt?.wav");
       *(uint *)(in_stack_00000004[1].base.create_event + 0x5c) = uVar4;
-      local_3c.y = in_stack_00000008;
-      local_3c.x = (float)in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }

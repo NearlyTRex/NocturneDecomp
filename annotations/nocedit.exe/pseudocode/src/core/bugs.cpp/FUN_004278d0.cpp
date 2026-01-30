@@ -1,14 +1,14 @@
 // Name: core_bugs.cpp_FUN_004278d0
 // Address: 004278d0
 // Address Range: [[004278d0, 004279af]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_FUN_004278d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_FUN_004278d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bugs.cpp_FUN_004278d0(CDemonActor* param_1) */
 
-void core_bugs_cpp_FUN_004278d0(void)
+void __cdecl core_bugs_cpp_FUN_004278d0(void)
 
 {
   CLocation *pCVar1;
@@ -16,9 +16,6 @@ void core_bugs_cpp_FUN_004278d0(void)
   float fVar3;
   float fVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
-  ulonglong uVar8;
   CCharacter *in_stack_00000004;
   
   pCVar1 = &(in_stack_00000004->base).location;
@@ -34,16 +31,14 @@ void core_bugs_cpp_FUN_004278d0(void)
   (in_stack_00000004->base).location.position.y = fVar3;
   (in_stack_00000004->base).location.position.z = fVar4;
   core_bugs_cpp_FUN_004276c0();
-  iVar7 = 0;
-  uVar6 = core_bugs_cpp_FUN_004257f0();
-  iVar5 = *(int *)(in_stack_00000004[1].base.create_event + 0x24);
-  uVar8 = CONCAT44(iVar5,uVar6);
-  if (0 < iVar5) {
+  iVar5 = 0;
+  core_bugs_cpp_FUN_004257f0();
+  if (0 < *(int *)(in_stack_00000004[1].base.create_event + 0x24)) {
     do {
-      iVar7 = iVar7 + 1;
-      uVar8 = core_bugs_cpp_FUN_00426420();
-    } while (iVar7 < *(int *)(in_stack_00000004[1].base.create_event + 0x24));
+      iVar5 = iVar5 + 1;
+      core_bugs_cpp_FUN_00426420();
+    } while (iVar5 < *(int *)(in_stack_00000004[1].base.create_event + 0x24));
   }
-  core_bugs_cpp_FUN_004272f0((int)uVar8,(int)((ulonglong)uVar8 >> 0x20));
+  core_bugs_cpp_FUN_004272f0();
   return;
 }

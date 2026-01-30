@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gabriela_cpp_FUN_004d4d80(void)
+; __cdecl void __cdecl core_gabriela_cpp_FUN_004d4d80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x200]:4  local_200
@@ -207,14 +207,14 @@ section .text
     ADD ESP,0x14                        ; 004d4e9c
     PUSH EBX                            ; 004d4e9f
     CALL core_gabriela.cpp_FUN_004d4c90 ; 004d4ea0
-        ;   XREF to: 004d4c90 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4c90()
+        ;   XREF to: 004d4c90 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d4c90()
     MOV dword ptr [EBP + 0x7a],EAX      ; 004d4ea5
     ADD ESP,0x4                         ; 004d4ea8
     FLD float ptr [EBP + 0x7a]          ; 004d4eab
     PUSH EBX                            ; 004d4eae
     FSTP float ptr [EBP + 0x42]         ; 004d4eaf
     CALL core_gabriela.cpp_FUN_004d4ce0 ; 004d4eb2
-        ;   XREF to: 004d4ce0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d4ce0()
+        ;   XREF to: 004d4ce0 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d4ce0()
     FLD float ptr [EBX + 0x1fbe8]       ; 004d4eb7
     MOV dword ptr [EBP + 0x7a],EAX      ; 004d4ebd
     FSUB float ptr [EBP + 0x42]         ; 004d4ec0

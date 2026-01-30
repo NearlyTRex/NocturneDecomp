@@ -1,12 +1,12 @@
 // Name: core_dracbrid.cpp_FUN_00486e70
 // Address: 00486e70
 // Address Range: [[00486e70, 00486e95]]
-// Convention: unknown
-// Signature: CDrawSurface * core_dracbrid_cpp_FUN_00486e70(void)
+// Convention: __cdecl
+// Signature: CDrawSurface * __cdecl core_dracbrid_cpp_FUN_00486e70(void)
 
 #include "nocturne.h"
 
-CDrawSurface * core_dracbrid_cpp_FUN_00486e70(void)
+CDrawSurface * __cdecl core_dracbrid_cpp_FUN_00486e70(void)
 
 {
   CDrawSurface *in_stack_00000004;

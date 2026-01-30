@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flame_cpp_FUN_004cae70(void)
+; __cdecl void __cdecl core_flame_cpp_FUN_004cae70(void)
 ;
 ;
 ; Referenced Globals:

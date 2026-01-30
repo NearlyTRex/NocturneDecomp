@@ -1,12 +1,12 @@
 // Name: support_newmsg.cpp_FUN_005445c0
 // Address: 005445c0
 // Address Range: [[005445c0, 00544725]]
-// Convention: unknown
-// Signature: void support_newmsg_cpp_FUN_005445c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl support_newmsg_cpp_FUN_005445c0(void)
 
 #include "nocturne.h"
 
-void support_newmsg_cpp_FUN_005445c0(void)
+void __cdecl support_newmsg_cpp_FUN_005445c0(void)
 
 {
   int iVar1;

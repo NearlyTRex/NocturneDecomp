@@ -1,13 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_actor_cpp_CActorPropertyList_FUN_0040e770(void)
+; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e770 (CActorPropertyList *this_ptr,int param_2,int param_3,int param_4)
 ;
+; Parameters:
+; CActorPropertyList * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
+; int              Stack[0x10]:4   param_4
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_FUN_0053c4f0 at 0053c5a1
+;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c5a1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_006144b9
@@ -40,7 +45,7 @@ section .text
     PUSH EBX                            ; 0040e78c
         ;   Label: LAB_0040e78c
     CALL core_actor.cpp_FUN_0040ee30    ; 0040e78d
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ee30()
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040ee30()
     ADD ESP,0x4                         ; 0040e792
     CMP EAX,EBP                         ; 0040e795
     JLE 0x0040e79b                      ; 0040e797
@@ -51,7 +56,7 @@ section .text
     PUSH EDX                            ; 0040e79d
     PUSH EBX                            ; 0040e79e
     CALL core_actor.cpp_FUN_0040ee50    ; 0040e79f
-        ;   XREF to: 0040ee50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ee50()
+        ;   XREF to: 0040ee50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040ee50()
     ADD ESP,0x8                         ; 0040e7a4
     CMP EAX,dword ptr [ESP]             ; 0040e7a7
     JLE 0x0040e7af                      ; 0040e7aa

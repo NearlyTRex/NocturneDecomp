@@ -9,51 +9,51 @@ void __cdecl staticInit(void);
 
 // Original: core_event.cpp_FUN_004aa270
 // Address: 004aa270
-undefined4 FUN_004aa270(void);
+int __cdecl FUN_004aa270(int param_1,int param_2,char *param_3);
 
 // Original: core_event.cpp_FUN_004aa2a0
 // Address: 004aa2a0
-undefined4 FUN_004aa2a0(void);
+int __cdecl FUN_004aa2a0(char *param_1);
 
 // Original: core_event.cpp_FUN_004aa2d0
 // Address: 004aa2d0
-void FUN_004aa2d0(void);
+void __cdecl FUN_004aa2d0(char *param_1);
 
 // Original: core_event.cpp_FUN_004aa2f0
 // Address: 004aa2f0
-void FUN_004aa2f0(void);
+void __cdecl FUN_004aa2f0(int param_1,int *param_2);
 
 // Original: core_event.cpp_FUN_004aa320
 // Address: 004aa320
-undefined4 FUN_004aa320(void);
+int __cdecl FUN_004aa320(char *param_1);
 
 // Original: core_event.cpp_FUN_004aa3c0
 // Address: 004aa3c0
-int FUN_004aa3c0(void);
+int __cdecl FUN_004aa3c0(char *param_1);
 
 // Original: core_event.cpp_FUN_004aa400
 // Address: 004aa400
-CHero * FUN_004aa400(void);
+CHero * __cdecl FUN_004aa400(char *param_1,uint param_2,int param_3);
 
 // Original: core_event.cpp_FUN_004aa530
 // Address: 004aa530
-undefined4 FUN_004aa530(void);
+int __cdecl FUN_004aa530(int param_1,int *param_2,float *param_3);
 
 // Original: core_event.cpp_FUN_004aa650
 // Address: 004aa650
-void FUN_004aa650(void);
+void __cdecl FUN_004aa650(char *param_1);
 
 // Original: core_event.cpp_FUN_004aa6c0
 // Address: 004aa6c0
-char * FUN_004aa6c0(void);
+char * __cdecl FUN_004aa6c0(int *param_1,char *param_2,int param_3);
 
 // Original: core_event.cpp_DifferentWaysToDie_FUN_004aa7d0
 // Address: 004aa7d0
-undefined4 DifferentWaysToDie(void);
+int __cdecl DifferentWaysToDie(char *param_1,int *param_2);
 
 // Original: core_event.cpp_DifferentWaysToDie2_FUN_004aa960
 // Address: 004aa960
-undefined4 DifferentWaysToDie2(void);
+int __cdecl DifferentWaysToDie2(char *param_1,int *param_2);
 
 // Original: core_event.cpp_CEventList_ctor_FUN_004aaa50
 // Address: 004aaa50
@@ -185,7 +185,7 @@ void __cdecl CEventList(CEventList *this_ptr);
 
 // Original: core_event.cpp_FUN_004b0f90
 // Address: 004b0f90
-undefined4 FUN_004b0f90(void);
+int __cdecl FUN_004b0f90(int param_1);
 
 // Original: core_event.cpp_CEventList_loadState_FUN_004b0fc0
 // Address: 004b0fc0
@@ -197,7 +197,7 @@ int __cdecl CEventList::saveState(CEventList *this_ptr,_FILE *file_handle);
 
 // Original: core_event.cpp_FUN_004b1670
 // Address: 004b1670
-void FUN_004b1670(void);
+void __cdecl FUN_004b1670(void);
 
 // Original: core_event.cpp_CRuleList_insert_FUN_004b1680
 // Address: 004b1680
@@ -209,35 +209,35 @@ void __cdecl CRuleList::remove(CRuleList *this_ptr);
 
 // Original: core_event.cpp_FUN_004b1890
 // Address: 004b1890
-int FUN_004b1890(void);
+int __cdecl FUN_004b1890(int *param_1);
 
 // Original: core_event.cpp_FUN_004b18e0
 // Address: 004b18e0
-undefined4 FUN_004b18e0(void);
+int __cdecl FUN_004b18e0(int *param_1);
 
 // Original: core_event.cpp_FUN_004b1930
 // Address: 004b1930
-float FUN_004b1930(void);
+float __cdecl FUN_004b1930(float *param_1,float *param_2);
 
 // Original: core_event.cpp_FUN_004b1970
 // Address: 004b1970
-undefined4 FUN_004b1970(void);
+int __cdecl FUN_004b1970(int param_1);
 
 // Original: core_event.cpp_FUN_004b1980
 // Address: 004b1980
-undefined4 FUN_004b1980(void);
+int __cdecl FUN_004b1980(int param_1);
 
 // Original: core_event.cpp_FUN_004b19a1
 // Address: 004b19a1
-undefined4 * FUN_004b19a1(undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4, undefined4 *param_5);
+void __cdecl FUN_004b19a1(int *param_1);
 
 // Original: core_event.cpp_FUN_004b19b1
 // Address: 004b19b1
-undefined4 * FUN_004b19b1(undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4, undefined4 *param_5);
+void __cdecl FUN_004b19b1(int *param_1);
 
 // Original: core_event.cpp_FUN_004b19c1
 // Address: 004b19c1
-undefined4 * FUN_004b19c1(undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4, undefined4 *param_5);
+void __cdecl FUN_004b19c1(int *param_1);
 
 // Original: core_event.cpp_FUN_004b19d0
 // Address: 004b19d0
@@ -245,11 +245,11 @@ void __cdecl FUN_004b19d0(void);
 
 // Original: core_event.cpp_FUN_004b1a49
 // Address: 004b1a49
-void FUN_004b1a49(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
+void __cdecl FUN_004b1a49(void);
 
 // Original: core_event.cpp_FUN_004b1a59
 // Address: 004b1a59
-char FUN_004b1a59(char param_1,undefined2 param_2,undefined4 param_3,undefined2 *param_4);
+char __cdecl FUN_004b1a59(void);
 
 // Original: core_event.cpp_FUN_004b1a78
 // Address: 004b1a78
@@ -257,20 +257,20 @@ void __cdecl FUN_004b1a78(void);
 
 // Original: core_event.cpp_FUN_004b1b1c
 // Address: 004b1b1c
-void FUN_004b1b1c(undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4);
+void __cdecl FUN_004b1b1c(void);
 
 // Original: core_event.cpp_FUN_004b1b31
 // Address: 004b1b31
-void FUN_004b1b31(undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4);
+void __cdecl FUN_004b1b31(void);
 
 // Original: core_event.cpp_FUN_004b1b41
 // Address: 004b1b41
-void FUN_004b1b41(undefined4 param_1,undefined2 *param_2,undefined4 param_3,undefined2 *param_4);
+void __cdecl FUN_004b1b41(void);
 
 // Original: core_event.cpp_FUN_004b1b54
 // Address: 004b1b54
-void FUN_004b1b54(undefined4 param_1,undefined1 *param_2,undefined4 param_3,undefined1 *param_4);
+void __cdecl FUN_004b1b54(void);
 
 // Original: core_event.cpp_FUN_004b1b5c
 // Address: 004b1b5c
-void FUN_004b1b5c(undefined4 param_1,uint *param_2,undefined4 param_3,uint *param_4);
+void __cdecl FUN_004b1b5c(void);

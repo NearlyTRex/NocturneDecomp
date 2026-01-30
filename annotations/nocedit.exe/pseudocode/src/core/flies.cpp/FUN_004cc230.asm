@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flies_cpp_FUN_004cc230(void)
+; __cdecl void __cdecl core_flies_cpp_FUN_004cc230(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

@@ -1,14 +1,14 @@
 // Name: core_smiley.cpp_CSmiley_load_FUN_005a3220
 // Address: 005a3220
 // Address Range: [[005a3220, 005a327b]]
-// Convention: unknown
-// Signature: void core_smiley_cpp_CSmiley_load_FUN_005a3220(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_smiley_cpp_CSmiley_load_FUN_005a3220(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_smiley.cpp_CSmiley_load(CSmiley* param_1) */
 
-void core_smiley_cpp_CSmiley_load_FUN_005a3220(void)
+void __cdecl core_smiley_cpp_CSmiley_load_FUN_005a3220(void)
 
 {
   CDeformableModelInstance *model_ptr;

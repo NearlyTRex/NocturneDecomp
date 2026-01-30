@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_FUN_0043c430(void)
+; __cdecl void __cdecl core_cloth_cpp_FUN_0043c430(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x4cc]:1  local_4cc
@@ -107,7 +107,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4dc]     ; 0043c4d7
     PUSH EAX                            ; 0043c4de
     CALL core_cloth.cpp_FUN_00439710    ; 0043c4df
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 0043c4e4
     PUSH 0x0                            ; 0043c4e7
     LEA EAX,[ESP + 0x4]                 ; 0043c4e9

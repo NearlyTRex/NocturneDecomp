@@ -1,15 +1,15 @@
 // Name: core_conveyor.cpp_FUN_00441df0
 // Address: 00441df0
 // Address Range: [[00441df0, 00441f3a]]
-// Convention: unknown
-// Signature: void core_conveyor_cpp_FUN_00441df0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_conveyor_cpp_FUN_00441df0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_conveyor.cpp_FUN_00441df0(uint param_1, uint
    param_2) */
 
-void core_conveyor_cpp_FUN_00441df0(void)
+void __cdecl core_conveyor_cpp_FUN_00441df0(void)
 
 {
   CDemonActor *actor_ptr;

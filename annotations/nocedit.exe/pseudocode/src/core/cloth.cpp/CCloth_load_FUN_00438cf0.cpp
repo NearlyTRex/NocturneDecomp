@@ -101,20 +101,19 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   core_cloth_cpp_CCloth_allocMemory_FUN_00438c50(this_ptr);
   iVar11 = 0;
   _fgets(local_138,0xff,p_Var8);
-  iVar9 = *(int *)(this_ptr->unk + 0x3f028);
-  if (0 < iVar9) {
+  if (0 < *(int *)(this_ptr->unk + 0x3f028)) {
     pcVar12 = this_ptr->unk + 0x3f02c;
     do {
       iVar11 = iVar11 + 1;
-      iVar9 = _fscanf(local_30,"%d\n",pcVar12);
+      _fscanf(local_30,"%d\n",pcVar12);
       pcVar12 = pcVar12 + 4;
     } while (iVar11 < *(int *)(this_ptr->unk + 0x3f028));
   }
-  core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0(iVar9);
+  core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0();
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
   _fscanf(p_Var8,"%d\n",this_ptr->unk + 0x3ce8c);
-  iVar9 = 0;
+  iVar11 = 0;
   if (0 < *(int *)(this_ptr->unk + 0x3ce8c)) {
     local_34 = this_ptr->unk + 0x3ce90;
     pcVar12 = this_ptr->unk + 0x3cea4;
@@ -127,9 +126,9 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
     local_28 = this_ptr->unk + 0x3cec4;
     pcVar14 = this_ptr->unk + 0x3cebc;
     do {
-      iVar11 = iVar9 * 0xac;
-      iVar9 = iVar9 + 1;
-      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",local_34 + iVar11,pcVar12,local_14,local_18,
+      iVar9 = iVar11 * 0xac;
+      iVar11 = iVar11 + 1;
+      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",local_34 + iVar9,pcVar12,local_14,local_18,
                  local_20,local_1c,local_24,local_2c,pcVar14,local_28);
       pcVar12 = pcVar12 + 0xac;
       local_14 = local_14 + 0xac;
@@ -140,23 +139,23 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
       local_2c = local_2c + 0xac;
       local_28 = local_28 + 0xac;
       pcVar14 = pcVar14 + 0xac;
-    } while (iVar9 < *(int *)(this_ptr->unk + 0x3ce8c));
+    } while (iVar11 < *(int *)(this_ptr->unk + 0x3ce8c));
   }
-  iVar11 = 0;
-  iVar9 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\core\\cloth.cpp",0x112);
+  iVar9 = 0;
+  iVar11 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\core\\cloth.cpp",0x112);
   if (0 < *(int *)(this_ptr->unk + 0x104)) {
     pcVar12 = this_ptr->unk + 0x5798;
     iVar13 = 0;
     do {
       piVar10 = (int *)(*(int *)(this_ptr->unk + 0x10c) + iVar13);
-      iVar11 = iVar11 + 1;
+      iVar9 = iVar9 + 1;
       *(float *)pcVar12 = (float)*piVar10 * 0.00390625f;
       *(float *)(pcVar12 + 4) = (float)piVar10[1] * 0.00390625f;
       *(float *)(pcVar12 + 8) = (float)piVar10[2] * 0.00390625f;
       pcVar12 = pcVar12 + 0x11c;
-      iVar9 = *(int *)(this_ptr->unk + 0x104);
+      iVar11 = *(int *)(this_ptr->unk + 0x104);
       iVar13 = iVar13 + 0xc;
-    } while (iVar11 < iVar9);
+    } while (iVar9 < iVar11);
   }
-  return iVar9;
+  return iVar11;
 }

@@ -11,14 +11,17 @@
 void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
 
 {
-  int iVar1;
-  CVector3f *pCVar2;
-  CBoneGuy *pCVar3;
+  COrientation *pCVar1;
+  int iVar2;
+  CBodyPart *pCVar3;
   CVector3f *pCVar4;
-  uint *puVar5;
-  uint *puVar6;
-  uint *puVar7;
-  byte bVar8;
+  CBoneGuy *pCVar5;
+  CLocation *pCVar6;
+  CVector3f *pCVar7;
+  uint *puVar8;
+  uint *puVar9;
+  uint *puVar10;
+  byte bVar11;
   float afStackY_1824 [1523];
   CQuaternion4f local_48;
   float local_38;
@@ -32,15 +35,15 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
   int local_18;
   float local_14;
   
-  bVar8 = 0;
+  bVar11 = 0;
   core_charactr_cpp_CCharacter_FUN_0042d060((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
   this_ptr->param = 0.0;
   local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                        (&(this_ptr->base).base.model);
-  iVar1 = local_24->num_parts;
-  this_ptr->box_count = iVar1;
-  if (0x14 < iVar1) {
+  iVar2 = local_24->num_parts;
+  this_ptr->box_count = iVar2;
+  if (0x14 < iVar2) {
     g_CurrentFilename = "..\\core\\boneguy.cpp";
     g_CurrentLineNumber = 0x443;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneGuy::explode - Not enough containers");
@@ -50,7 +53,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
     local_20 = &this_ptr->box_list_pos;
     local_2c = &(this_ptr->base).base.base.orient;
     local_28 = &(this_ptr->base).base.base.location;
-    pCVar4 = &this_ptr->box_list_orient;
+    pCVar7 = &this_ptr->box_list_orient;
     local_1c = this_ptr;
     do {
       local_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
@@ -59,34 +62,39 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
       local_14 = local_34;
       local_30 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
       local_14 = local_30;
-      iVar1 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+      pCVar3 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
-      *(uint *)(iVar1 + 0xcc4) = 1;
+      pCVar3->unk[0xb6c] = '\x01';
+      pCVar3->unk[0xb6d] = '\0';
+      pCVar3->unk[0xb6e] = '\0';
+      pCVar3->unk[0xb6f] = '\0';
       core_bodypart_cpp_FUN_0041a050();
-      *(int *)local_1c->unk2 = iVar1;
-      pCVar2 = local_20 + local_18 * 6;
-      if (pCVar2 != (CVector3f *)(iVar1 + 0x20)) {
-        pCVar2->x = *(float *)(iVar1 + 0x20);
-        pCVar2->y = *(float *)(iVar1 + 0x24);
-        pCVar2->z = *(float *)(iVar1 + 0x28);
+      *(CBodyPart **)local_1c->unk2 = pCVar3;
+      pCVar6 = &(pCVar3->base).location;
+      pCVar4 = local_20 + local_18 * 6;
+      if ((CLocation *)pCVar4 != pCVar6) {
+        pCVar4->x = (pCVar6->position).x;
+        pCVar4->y = (pCVar3->base).location.position.y;
+        pCVar4->z = (pCVar3->base).location.position.z;
       }
-      if (pCVar4 != (CVector3f *)(iVar1 + 0x30)) {
-        pCVar4->x = *(float *)(iVar1 + 0x30);
-        pCVar4->y = *(float *)(iVar1 + 0x34);
-        pCVar4->z = *(float *)(iVar1 + 0x38);
+      pCVar1 = &(pCVar3->base).orient;
+      if ((COrientation *)pCVar7 != pCVar1) {
+        pCVar7->x = pCVar1->pitch;
+        pCVar7->y = (pCVar3->base).orient.bank;
+        pCVar7->z = (pCVar3->base).orient.heading;
       }
-      pCVar4 = pCVar4 + 6;
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(iVar1 + 0x30),&local_48);
-      pCVar3 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
+      pCVar7 = pCVar7 + 6;
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&(pCVar3->base).orient,&local_48);
+      pCVar5 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
-      puVar6 = (uint *)((int)local_1c + (uint)bVar8 * -8 + 49000);
+      puVar9 = (uint *)((int)local_1c + (uint)bVar11 * -8 + 49000);
       (local_1c->box_list_start_orient).w = local_48.w;
-      puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
-      puVar5 = (uint *)((int)&local_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-      *puVar6 = *(uint *)((int)&local_48 + (uint)bVar8 * -8 + 4);
-      *puVar7 = *puVar5;
-      puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
-      local_1c = pCVar3;
+      puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
+      puVar8 = (uint *)((int)&local_48 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+      *puVar9 = *(uint *)((int)&local_48 + (uint)bVar11 * -8 + 4);
+      *puVar10 = *puVar8;
+      puVar10[(uint)bVar11 * -2 + 1] = puVar8[(uint)bVar11 * -2 + 1];
+      local_1c = pCVar5;
     } while (local_18 < local_24->num_parts);
   }
   (*((this_ptr->base).base.base.vtable._ub)->playSound)

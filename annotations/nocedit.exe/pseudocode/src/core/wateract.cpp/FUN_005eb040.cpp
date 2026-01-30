@@ -1,12 +1,12 @@
 // Name: core_wateract.cpp_FUN_005eb040
 // Address: 005eb040
 // Address Range: [[005eb040, 005eb0eb]]
-// Convention: unknown
-// Signature: void core_wateract_cpp_FUN_005eb040(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_wateract_cpp_FUN_005eb040(void)
 
 #include "nocturne.h"
 
-void core_wateract_cpp_FUN_005eb040(void)
+void __cdecl core_wateract_cpp_FUN_005eb040(void)
 
 {
   CVector3f *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_wateract_cpp_FUN_005ebcf0(void)
+; __cdecl void __cdecl core_wateract_cpp_FUN_005ebcf0(void)
 ;
 ;
 ; XREF[1]:

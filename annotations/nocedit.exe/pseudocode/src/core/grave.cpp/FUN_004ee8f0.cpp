@@ -1,12 +1,12 @@
 // Name: core_grave.cpp_FUN_004ee8f0
 // Address: 004ee8f0
 // Address Range: [[004ee8f0, 004ee9c4]]
-// Convention: unknown
-// Signature: CVector3f * core_grave_cpp_FUN_004ee8f0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_grave_cpp_FUN_004ee8f0(void)
 
 #include "nocturne.h"
 
-CVector3f * core_grave_cpp_FUN_004ee8f0(void)
+CVector3f * __cdecl core_grave_cpp_FUN_004ee8f0(void)
 
 {
   CKeyFramedModel *pCVar1;

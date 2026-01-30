@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bride_cpp_FUN_00424830(void)
+; __cdecl void __cdecl core_bride_cpp_FUN_00424830(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x3c]:1  local_3c
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_004248a1
     PUSH ESI                            ; 004248a2
     CALL core_bride.cpp_FUN_00424600    ; 004248a3
-        ;   XREF to: 00424600 (UNCONDITIONAL_CALL)  ; undefined core_bride.cpp_FUN_00424600()
+        ;   XREF to: 00424600 (UNCONDITIONAL_CALL)  ; void core_bride.cpp_FUN_00424600()
     FLD float ptr [EDI + 0x4]           ; 004248a8
     FSUBR float ptr [ESI + 0x243c]      ; 004248ab
     MOV EAX,dword ptr [ESI + 0xbedc]    ; 004248b1
@@ -145,7 +145,7 @@ section .text
         ;   Label: LAB_00424955
     PUSH ESI                            ; 00424956
     CALL core_enemy.cpp_FUN_004a9f10    ; 00424957
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 0042495c
     MOV ESP,EBP                         ; 0042495f
     POP EBP                             ; 00424961

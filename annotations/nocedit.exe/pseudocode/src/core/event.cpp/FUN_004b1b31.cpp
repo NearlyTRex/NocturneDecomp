@@ -1,16 +1,18 @@
 // Name: core_event.cpp_FUN_004b1b31
 // Address: 004b1b31
 // Address Range: [[004b1b31, 004b1b40]]
-// Convention: unknown
-// Signature: void core_event_cpp_FUN_004b1b31 (undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_event_cpp_FUN_004b1b31(void)
 
 #include "nocturne.h"
 
-void core_event_cpp_FUN_004b1b31
-               (uint param_1,uint *param_2,uint param_3,uint *param_4)
+void __cdecl core_event_cpp_FUN_004b1b31(void)
 
 {
-  *(byte *)(param_4 + 1) = *(byte *)(param_2 + 1);
-  *param_4 = *param_2;
+  uint *in_ECX;
+  uint *in_EDX;
+  
+  *(byte *)(in_ECX + 1) = *(byte *)(in_EDX + 1);
+  *in_ECX = *in_EDX;
   return;
 }

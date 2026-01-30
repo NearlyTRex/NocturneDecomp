@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_msnedit_cpp_FUN_00537330(void)
+; __cdecl void __cdecl core_msnedit_cpp_FUN_00537330(CStrList *param_1,int param_2,int param_3)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
 ; Local Variables:
 ; undefined1       Stack[-0x80]:1  local_80
 ; undefined1       Stack[-0x7f]:1  local_7f
@@ -131,7 +135,7 @@ section .text
     PUSH EBX                            ; 00537401
     PUSH EDI                            ; 00537402
     CALL core_msnedit.cpp_FUN_00537330  ; 00537403
-        ;   XREF to: 00537330 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00537330()
+        ;   XREF to: 00537330 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_FUN_00537330(CStrList * param_1, int param_2, int param_3)
     ADD ESP,0xc                         ; 00537408
     JMP 0x00537373                      ; 0053740b
         ;   XREF to: 00537373 (UNCONDITIONAL_JUMP)  ; LAB_00537373

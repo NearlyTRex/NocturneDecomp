@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_smiley_cpp_FUN_005a3580(void)
+; __cdecl void __cdecl core_smiley_cpp_FUN_005a3580(void)
 ;
 ;
 ; Referenced Globals:
@@ -48,7 +48,7 @@ section .text
     PUSH ESI                            ; 005a35c0
     PUSH EBX                            ; 005a35c1
     CALL core_smiley.cpp_FUN_005a32a0   ; 005a35c2
-        ;   XREF to: 005a32a0 (UNCONDITIONAL_CALL)  ; undefined core_smiley.cpp_FUN_005a32a0()
+        ;   XREF to: 005a32a0 (UNCONDITIONAL_CALL)  ; void core_smiley.cpp_FUN_005a32a0()
     ADD ESP,0x8                         ; 005a35c7
     PUSH EDI                            ; 005a35ca
         ;   Label: LAB_005a35ca
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_005a3640
     PUSH EBX                            ; 005a3641
     CALL core_enemy.cpp_FUN_004a9f10    ; 005a3642
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 005a3647
     POP EDI                             ; 005a364a
     POP ESI                             ; 005a364b
@@ -121,7 +121,7 @@ section .text
     PUSH ESI                            ; 005a3678
     PUSH EBX                            ; 005a3679
     CALL core_enemy.cpp_FUN_004a9f10    ; 005a367a
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 005a367f
     POP EDI                             ; 005a3682
     POP ESI                             ; 005a3683

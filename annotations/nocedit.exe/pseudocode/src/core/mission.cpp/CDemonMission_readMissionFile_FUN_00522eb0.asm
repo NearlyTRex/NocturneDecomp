@@ -513,7 +513,7 @@ section .text
     PUSH EDI                            ; 00523392 | g_CGoreInstance
     MOV dword ptr [EBX],0xffffffff      ; 00523393
     CALL core_gore.cpp_FUN_004ed760     ; 00523399
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed760()
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed760()
     MOV EBP,dword ptr [EBX + 0x8]       ; 0052339e
     ADD ESP,0x4                         ; 005233a1
     CMP EBP,0x7                         ; 005233a4
@@ -632,7 +632,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 005234ff | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 00523505 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ee1e0     ; 00523506
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ee1e0()
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_FUN_004ee1e0()
     ADD ESP,0x8                         ; 0052350b
     ADD ESP,0x148                       ; 0052350e
     POP EBP                             ; 00523514

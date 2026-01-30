@@ -1,15 +1,15 @@
 // Name: core_mimic.cpp_FUN_005208b0
 // Address: 005208b0
 // Address Range: [[005208b0, 0052092d]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_FUN_005208b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_FUN_005208b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mimic.cpp_FUN_005208b0(uint param_1, uint param_2)
     */
 
-void core_mimic_cpp_FUN_005208b0(void)
+void __cdecl core_mimic_cpp_FUN_005208b0(void)
 
 {
   CBoundingBox3D *this_ptr;

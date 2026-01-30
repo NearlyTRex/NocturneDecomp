@@ -1,15 +1,15 @@
 // Name: core_bugs.cpp_FUN_00427400
 // Address: 00427400
 // Address Range: [[00427400, 004276bc]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_FUN_00427400(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_FUN_00427400(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00427400(uint param_1, uint param_2)
     */
 
-void core_bugs_cpp_FUN_00427400(void)
+void __cdecl core_bugs_cpp_FUN_00427400(void)
 
 {
   int iVar1;
@@ -46,11 +46,9 @@ void core_bugs_cpp_FUN_00427400(void)
     do {
       pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                          (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc));
-      iVar1 = *(int *)(in_stack_00000004 + 0x12b30);
-      if (pCVar4->vertex_count[iVar1] < 0x2bd) {
+      if (pCVar4->vertex_count[*(int *)(in_stack_00000004 + 0x12b30)] < 0x2bd) {
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"%s swarming on %s at LOD %d\n",in_stack_00000004,
-                   in_stack_00000008,iVar1);
+                  (g_CConsolePtr,"%s swarming on %s at LOD %d\n",in_stack_00000004);
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                   (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc));
         core_bugs_cpp_FUN_00425660();
@@ -106,7 +104,7 @@ void core_bugs_cpp_FUN_00427400(void)
         } while (iVar8 < *(int *)(in_stack_00000004 + 0xbec0));
         return;
       }
-      *(int *)(in_stack_00000004 + 0x12b30) = iVar1 + 1;
+      *(int *)(in_stack_00000004 + 0x12b30) = *(int *)(in_stack_00000004 + 0x12b30) + 1;
       pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                          (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc));
     } while (*(int *)(in_stack_00000004 + 0x12b30) < pCVar4->num_lods);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_hotdemon_cpp_FUN_004f7720(void)
+; __cdecl void __cdecl core_hotdemon_cpp_FUN_004f7720(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x24]:1  local_24
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_004f77b1
     PUSH ESI                            ; 004f77b2
     CALL core_enemy.cpp_FUN_004a9f10    ; 004f77b3
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004f77b8
     ADD ESP,0x14                        ; 004f77bb
     POP EBP                             ; 004f77be
@@ -169,7 +169,7 @@ section .text
     PUSH EDI                            ; 004f788c
     PUSH ESI                            ; 004f788d
     CALL core_enemy.cpp_FUN_004a9f10    ; 004f788e
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004f7893
     ADD ESP,0x14                        ; 004f7896
     POP EBP                             ; 004f7899
@@ -201,7 +201,7 @@ section .text
     PUSH EDI                            ; 004f78cf
     PUSH ESI                            ; 004f78d0
     CALL core_enemy.cpp_FUN_004a9f10    ; 004f78d1
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 004f78d6
     ADD ESP,0x14                        ; 004f78d9
     POP EBP                             ; 004f78dc

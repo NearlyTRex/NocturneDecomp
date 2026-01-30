@@ -11,7 +11,7 @@
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bddd6
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2036
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 00524576
-;   core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0 at 00538c05
+;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538c05
 ;   core_netgame.cpp_FUN_00541390 at 005419bd
 ;
 ; Referenced Globals:

@@ -1,14 +1,14 @@
 // Name: core_filmreel.cpp_FUN_004be720
 // Address: 004be720
 // Address Range: [[004be720, 004be72d]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_FUN_004be720(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_filmreel_cpp_FUN_004be720(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_filmreel.cpp_FUN_004be720(uint param_1) */
 
-void core_filmreel_cpp_FUN_004be720(void)
+void __cdecl core_filmreel_cpp_FUN_004be720(void)
 
 {
   float fVar1;

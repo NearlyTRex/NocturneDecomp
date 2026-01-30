@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
+; __cdecl void __cdecl core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -301,7 +301,7 @@ section .text
     PUSH 0x3dcccccd                     ; 005eedbd
     PUSH EDX                            ; 005eedc2
     CALL core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0 ; 005eedc3
-        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
+        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
     ADD ESP,0xc                         ; 005eedc8
     JMP 0x005eec84                      ; 005eedcb
         ;   XREF to: 005eec84 (UNCONDITIONAL_JUMP)  ; LAB_005eec84
@@ -309,7 +309,7 @@ section .text
         ;   Label: LAB_005eedd0
     PUSH EAX                            ; 005eedd3
     CALL core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140 ; 005eedd4
-        ;   XREF to: 005ef140 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140()
+        ;   XREF to: 005ef140 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140()
     ADD ESP,0x4                         ; 005eedd9
     JMP 0x005eec84                      ; 005eeddc
         ;   XREF to: 005eec84 (UNCONDITIONAL_JUMP)  ; LAB_005eec84

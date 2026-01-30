@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 11,
+        "column": 18,
         "line": 12,
         "message": "'DAT_0063cbe7' was not declared in this scope; did you mean 'DAT_0067ceb4'?"
       }
@@ -40,10 +40,10 @@
         "0053d3a5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_msnedit.cpp_FUN_0053d3a0",
-    "signature": "undefined * core_msnedit_cpp_FUN_0053d3a0(void)"
+    "signature": "int * __cdecl core_msnedit_cpp_FUN_0053d3a0(void)"
   },
   "function_calls": [],
   "globals": [
@@ -85,7 +85,7 @@
       "description": "Undefined global data reference",
       "line": 5,
       "match": "DAT_0063cbe7",
-      "text": "return &DAT_0063cbe7;",
+      "text": "return (int *)&DAT_0063cbe7;",
       "type": "undefined_data"
     }
   ]

@@ -1,12 +1,12 @@
 // Name: core_lever.cpp_FUN_00505100
 // Address: 00505100
 // Address Range: [[00505100, 00505158]]
-// Convention: unknown
-// Signature: void core_lever_cpp_FUN_00505100(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_lever_cpp_FUN_00505100(void)
 
 #include "nocturne.h"
 
-void core_lever_cpp_FUN_00505100(void)
+void __cdecl core_lever_cpp_FUN_00505100(void)
 
 {
   char cVar1;

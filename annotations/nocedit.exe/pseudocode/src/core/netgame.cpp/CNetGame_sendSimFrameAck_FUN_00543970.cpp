@@ -1,14 +1,14 @@
 // Name: core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970
 // Address: 00543970
 // Address Range: [[00543970, 00543aa8]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_netgame.cpp_CNetGame_sendSimFrameAck(CNetGame* param_1) */
 
-void core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
+void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
 
 {
   int iVar1;

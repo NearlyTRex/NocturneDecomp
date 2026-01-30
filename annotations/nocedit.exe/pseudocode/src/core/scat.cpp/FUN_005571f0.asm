@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_scat_cpp_FUN_005571f0(void)
+; __cdecl void __cdecl core_scat_cpp_FUN_005571f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
@@ -102,7 +102,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x4]       ; 0055726d
     MOV dword ptr [ESI],EAX             ; 00557270
     CALL core_scat.cpp_FUN_00557d20     ; 00557272
-        ;   XREF to: 00557d20 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00557d20()
+        ;   XREF to: 00557d20 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_00557d20()
     ADD ESP,0x8                         ; 00557277
     PUSH dword ptr [EBP + 0x18]         ; 0055727a
     FLD float ptr [EBX + 0x23b4]        ; 0055727d
@@ -129,7 +129,7 @@ section .text
         ;   XREF to: 00557637 (CONDITIONAL_JUMP)  ; LAB_00557637
     PUSH EBX                            ; 005572ca
     CALL core_scat.cpp_FUN_00558010     ; 005572cb
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     ADD ESP,0x4                         ; 005572d0
     TEST EAX,EAX                        ; 005572d3
     JZ 0x00557604                       ; 005572d5
@@ -270,7 +270,7 @@ section .text
         ;   Label: LAB_00557431
     PUSH EBX                            ; 00557434
     CALL core_scat.cpp_FUN_00558060     ; 00557435
-        ;   XREF to: 00558060 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558060()
+        ;   XREF to: 00558060 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_00558060()
     ADD ESP,0x8                         ; 0055743a
     PUSH EBX                            ; 0055743d
     XOR ESI,ESI                         ; 0055743e
@@ -363,7 +363,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00557512
     PUSH EBX                            ; 00557515
     CALL core_scat.cpp_FUN_00558720     ; 00557516
-        ;   XREF to: 00558720 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558720()
+        ;   XREF to: 00558720 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_00558720()
     ADD ESP,0xc                         ; 0055751b
     LEA EAX,[EBX + 0x158]               ; 0055751e
     PUSH EAX                            ; 00557524
@@ -373,11 +373,11 @@ section .text
     ADD ESP,0x4                         ; 0055752e
     PUSH EBX                            ; 00557531
     CALL core_scat.cpp_FUN_005582c0     ; 00557532
-        ;   XREF to: 005582c0 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_005582c0()
+        ;   XREF to: 005582c0 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_005582c0()
     ADD ESP,0x4                         ; 00557537
     PUSH EBX                            ; 0055753a
     CALL core_scat.cpp_FUN_00558010     ; 0055753b
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     ADD ESP,0x4                         ; 00557540
     TEST EAX,EAX                        ; 00557543
     JNZ 0x0055759e                      ; 00557545
@@ -420,7 +420,7 @@ section .text
     ADD ESP,0x8                         ; 005575a7
     PUSH EBX                            ; 005575aa
     CALL core_scat.cpp_FUN_00558fd0     ; 005575ab
-        ;   XREF to: 00558fd0 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558fd0()
+        ;   XREF to: 00558fd0 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_00558fd0()
     ADD ESP,0x4                         ; 005575b0
     MOV ESP,EBP                         ; 005575b3
         ;   Label: caseD_5
@@ -445,7 +445,7 @@ section .text
     ADD ESP,0xc                         ; 005575e3
     PUSH EBX                            ; 005575e6
     CALL core_scat.cpp_FUN_00558010     ; 005575e7
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     ADD ESP,0x4                         ; 005575ec
     TEST EAX,EAX                        ; 005575ef
     JZ 0x005575fc                       ; 005575f1
@@ -467,7 +467,7 @@ section .text
     PUSH EBX                            ; 0055760d
         ;   Label: LAB_0055760d
     CALL core_scat.cpp_FUN_00558010     ; 0055760e
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     ADD ESP,0x4                         ; 00557613
     TEST EAX,EAX                        ; 00557616
     JNZ 0x005572db                      ; 00557618
@@ -491,7 +491,7 @@ section .text
     PUSH EBX                            ; 00557637
         ;   Label: LAB_00557637
     CALL core_scat.cpp_FUN_00558010     ; 00557638
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     MOV ESI,EAX                         ; 0055763d
     ADD ESP,0x4                         ; 0055763f
     LEA EAX,[EBX + 0x158]               ; 00557642
@@ -510,7 +510,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0055765f
     PUSH EBX                            ; 00557662
     CALL core_scat.cpp_FUN_005578e0     ; 00557663
-        ;   XREF to: 005578e0 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_005578e0()
+        ;   XREF to: 005578e0 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_005578e0()
     ADD ESP,0x8                         ; 00557668
     LEA EAX,[EBX + 0x158]               ; 0055766b
         ;   Label: LAB_0055766b
@@ -530,7 +530,7 @@ section .text
         ;   XREF to: 005572e8 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH EBX                            ; 0055769a
     CALL core_scat.cpp_FUN_00558010     ; 0055769b
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     XOR ESI,ESI                         ; 005576a0
     ADD ESP,0x4                         ; 005576a2
     TEST EAX,EAX                        ; 005576a5
@@ -543,7 +543,7 @@ section .text
         ;   XREF to: 005576cd (CONDITIONAL_JUMP)  ; LAB_005576cd
     PUSH EBX                            ; 005576b7
     CALL core_scat.cpp_FUN_00558010     ; 005576b8
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     ADD ESP,0x4                         ; 005576bd
     TEST EAX,EAX                        ; 005576c0
     JZ 0x005577c9                       ; 005576c2
@@ -555,7 +555,7 @@ section .text
         ;   XREF to: 005576ec (CONDITIONAL_JUMP)  ; LAB_005576ec
     PUSH EBX                            ; 005576d6
     CALL core_scat.cpp_FUN_00558010     ; 005576d7
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558010()
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558010()
     ADD ESP,0x4                         ; 005576dc
     TEST EAX,EAX                        ; 005576df
     JZ 0x005577e6                       ; 005576e1

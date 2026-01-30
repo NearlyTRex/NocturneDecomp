@@ -40,22 +40,22 @@ section .text
     ADD EAX,0x22b4                      ; 005e55ac
     PUSH EAX                            ; 005e55b1
     CALL core_cloth.cpp_FUN_00438ba0    ; 005e55b2
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 005e55b7
     ADD EAX,0x3fe70                     ; 005e55ba
     PUSH EAX                            ; 005e55bf
     CALL core_cloth.cpp_FUN_00438ba0    ; 005e55c0
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 005e55c5
     ADD EAX,0x3fe70                     ; 005e55c8
     PUSH EAX                            ; 005e55cd
     CALL core_cloth.cpp_FUN_00438ba0    ; 005e55ce
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 005e55d3
     ADD EAX,0x3fe74                     ; 005e55d6
     PUSH EAX                            ; 005e55db
     CALL core_morph.cpp_FUN_0052b310    ; 005e55dc
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
     ADD ESP,0x4                         ; 005e55e1
     LEA EBX,[EAX + 0xfff3233c]          ; 005e55e4
     PUSH 0x656ac5                       ; 005e55ea | = "nosfer.dfm"

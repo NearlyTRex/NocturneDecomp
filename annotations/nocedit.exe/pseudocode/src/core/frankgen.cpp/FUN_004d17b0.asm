@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_FUN_004d17b0(void)
+; __cdecl void __cdecl core_frankgen_cpp_FUN_004d17b0(void)
 ;
 ;
 ; Referenced Globals:
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 004d19b2 (CONDITIONAL_JUMP)  ; LAB_004d19b2
     PUSH EBX                            ; 004d1856
     CALL core_frankgen.cpp_LoadModel_FUN_004d2190 ; 004d1857
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_LoadModel_FUN_004d2190()
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_LoadModel_FUN_004d2190()
     ADD ESP,0x4                         ; 004d185c
     POP EDI                             ; 004d185f
     POP ESI                             ; 004d1860
@@ -242,7 +242,7 @@ section .text
     ADD ESP,0x8                         ; 004d19c5
     PUSH EBX                            ; 004d19c8
     CALL core_frankgen.cpp_LoadModel_FUN_004d2190 ; 004d19c9
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_LoadModel_FUN_004d2190()
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_LoadModel_FUN_004d2190()
     ADD ESP,0x4                         ; 004d19ce
     POP EDI                             ; 004d19d1
     POP ESI                             ; 004d19d2

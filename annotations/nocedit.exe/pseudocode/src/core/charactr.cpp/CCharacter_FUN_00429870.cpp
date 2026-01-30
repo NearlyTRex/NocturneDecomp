@@ -10,6 +10,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
 
 {
   float fVar1;
+  CScript *this_ptr_00;
   float fVar2;
   int iVar3;
   CCharacter *pCVar4;
@@ -35,12 +36,12 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
   }
   if ((0.0 < *(float *)(this_ptr->unk2 + 0x78)) &&
      (fVar2 = *(float *)(this_ptr->unk2 + 0x78) - in_stack_00000008,
-     *(float *)(this_ptr->unk2 + 0x78) = fVar2, fVar2 < 0.0)) {
+     *(float *)(this_ptr->unk2 + 0x78) = fVar2, this_ptr_00 = g_CScriptPtr, fVar2 < 0.0)) {
     this_ptr->unk2[0x78] = '\0';
     this_ptr->unk2[0x79] = '\0';
     this_ptr->unk2[0x7a] = '\0';
     this_ptr->unk2[0x7b] = '\0';
-    core_script_cpp_FUN_00560140();
+    core_script_cpp_CScript_FUN_00560140(this_ptr_00,(int)this_ptr);
   }
   if (this_ptr->health_bar_mode == 2) {
     core_game_cpp_CGame_FUN_004e0bf0(g_CGamePtr);

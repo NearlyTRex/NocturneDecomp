@@ -4,19 +4,31 @@
       {
         "category": "undeclared_identifier",
         "column": 66,
-        "line": 22,
+        "line": 23,
         "message": "'stack0xfffffb94' was not declared in this scope; did you mean 'in_stack_fffffb94'?"
       },
       {
         "category": "other",
+        "column": 64,
+        "line": 25,
+        "message": "cast from 'CTeleportDest*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 72,
+        "line": 38,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
         "column": 16,
-        "line": 40,
+        "line": 43,
         "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 40,
+        "line": 43,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -31,31 +43,31 @@
       {
         "category": "other",
         "column": 36,
-        "line": 26,
+        "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 29,
+        "line": 32,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CTeleportDest*' [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 200,
+    "complexity_score": 213,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 9,
-    "pseudocode_lines": 35,
-    "suspect_count": 15,
+    "pseudocode_lines": 38,
+    "suspect_count": 16,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 135
+    "total_lines": 138
   },
   "cross_references": [],
   "function": {
@@ -82,14 +94,14 @@
       "name": "core_mission.cpp_CDemonMission_FUN_00524030"
     },
     {
-      "addr": "0053cc30",
-      "is_variadic": false,
-      "name": "core_msnedit.cpp_FUN_0053cc30"
-    },
-    {
       "addr": "0053c140",
       "is_variadic": false,
-      "name": "core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140"
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c140"
+    },
+    {
+      "addr": "0053cc30",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053cc30"
     },
     {
       "addr": "005fdbd0",
@@ -230,105 +242,112 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 6,
+      "line": 7,
       "match": "unaff_EDI",
       "text": "uint unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 8,
       "match": "in_stack_fffffb94",
       "text": "uint in_stack_fffffb94;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_fffffb98",
       "text": "uint in_stack_fffffb98;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_fffffb9c",
       "text": "char **in_stack_fffffb9c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 11,
       "match": "in_stack_fffffba0",
       "text": "CStrList_vtable *in_stack_fffffba0;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 15,
+      "line": 16,
       "match": "&stack0xfffffb94",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb94);",
       "type": "stack_ref"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xfffffb94",
+      "text": "(g_CDemonMissionPtr,(CStrList *)&stack0xfffffb94,(uint)this_ptr,\"CTeleport\",",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 20,
       "match": "in_stack_fffffb94",
       "text": "if ((int)in_stack_fffffb94 < 1) {",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 27,
       "match": "&stack0xfffffb94",
       "text": "((CPickList *)&stack0xfffffb94,acStack_c4,-1,0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 26,
+      "line": 29,
       "match": "&stack0xfffffb94",
       "text": "shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffffb94,iVar1);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 35,
       "match": "in_stack_fffffb94",
       "text": "((CPickList *)&stack0xfffffb94,0,unaff_EDI,in_stack_fffffb94,in_stack_fffffb98,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 35,
       "match": "in_stack_fffffb98",
       "text": "((CPickList *)&stack0xfffffb94,0,unaff_EDI,in_stack_fffffb94,in_stack_fffffb98,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 32,
+      "line": 35,
       "match": "&stack0xfffffb94",
       "text": "((CPickList *)&stack0xfffffb94,0,unaff_EDI,in_stack_fffffb94,in_stack_fffffb98,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 32,
+      "line": 35,
       "match": "unaff_EDI",
       "text": "((CPickList *)&stack0xfffffb94,0,unaff_EDI,in_stack_fffffb94,in_stack_fffffb98,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 36,
       "match": "in_stack_fffffb9c",
       "text": "(uint)in_stack_fffffb9c,(uint)in_stack_fffffba0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 36,
       "match": "in_stack_fffffba0",
       "text": "(uint)in_stack_fffffb9c,(uint)in_stack_fffffba0);",
       "type": "stack_param"

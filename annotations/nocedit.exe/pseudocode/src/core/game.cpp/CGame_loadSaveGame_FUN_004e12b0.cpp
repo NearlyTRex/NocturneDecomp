@@ -287,7 +287,7 @@ LAB_004e14f5:
         iVar2 = core_mission_cpp_CDemonMission_FUN_00524760(g_CDemonMissionPtr);
         if (iVar2 == 0) goto LAB_004e17ac;
         core_event_cpp_CEventList_loadState_FUN_004b0fc0(g_CEventListPtr);
-        core_script_cpp_CScript_loadState_FUN_00560820();
+        core_script_cpp_CScript_loadState_FUN_00560820(g_CScriptPtr,file_handle);
         if (local_34 < 4) {
           core_gore_cpp_FUN_004ed760();
         }

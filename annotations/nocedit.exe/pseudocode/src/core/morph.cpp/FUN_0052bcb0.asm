@@ -574,7 +574,7 @@ section .text
     ADD ESI,0x20                        ; 0052c2e6
     INC EBX                             ; 0052c2e9
     CALL core_morph.cpp_FUN_0052bb80    ; 0052c2ea
-        ;   XREF to: 0052bb80 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052bb80()
+        ;   XREF to: 0052bb80 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052bb80()
     ADD ESP,0x8                         ; 0052c2ef
     CMP EBX,EBP                         ; 0052c2f2
     JL 0x0052c2b2                       ; 0052c2f4
@@ -601,7 +601,7 @@ section .text
     PUSH EAX                            ; 0052c334
         ;   Label: LAB_0052c334
     CALL core_morph.cpp_FUN_0052bb80    ; 0052c335
-        ;   XREF to: 0052bb80 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052bb80()
+        ;   XREF to: 0052bb80 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052bb80()
     ADD ESP,0x8                         ; 0052c33a
     MOV EBX,dword ptr [0x006703ec]      ; 0052c33d | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0052c33d
@@ -723,7 +723,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4dcc]    ; 0052c4b8
     PUSH EBX                            ; 0052c4bf
     CALL core_morph.cpp_FUN_0052ca90    ; 0052c4c0
-        ;   XREF to: 0052ca90 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052ca90()
+        ;   XREF to: 0052ca90 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052ca90()
     ADD ESP,0x8                         ; 0052c4c5
     PUSH EBX                            ; 0052c4c8
     CALL core_morph.cpp_CMorphModel_FUN_0052b350 ; 0052c4c9

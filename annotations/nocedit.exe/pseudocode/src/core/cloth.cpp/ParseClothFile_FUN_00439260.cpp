@@ -1,14 +1,14 @@
 // Name: core_cloth.cpp_ParseClothFile_FUN_00439260
 // Address: 00439260
 // Address Range: [[00439260, 004394df]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_ParseClothFile_FUN_00439260(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_ParseClothFile_FUN_00439260(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_cloth.cpp_ParseClothFile(uint param_1, uint param_2) */
 
-void core_cloth_cpp_ParseClothFile_FUN_00439260(void)
+void __cdecl core_cloth_cpp_ParseClothFile_FUN_00439260(void)
 
 {
   _FILE *file;

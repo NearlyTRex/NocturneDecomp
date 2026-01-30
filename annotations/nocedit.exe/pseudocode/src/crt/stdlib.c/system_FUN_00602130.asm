@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80 at 0055a244
+;   core_script.cpp_CScript_FUN_00559f80 at 0055a244
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ComSpec_00658fb0

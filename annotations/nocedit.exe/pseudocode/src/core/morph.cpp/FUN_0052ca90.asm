@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_morph_cpp_FUN_0052ca90(void)
+; __cdecl void __cdecl core_morph_cpp_FUN_0052ca90(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

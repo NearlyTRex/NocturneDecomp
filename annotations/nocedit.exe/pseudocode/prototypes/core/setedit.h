@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_setedit.cpp_FUN_00576950
 // Address: 00576950
-void FUN_00576950(void);
+void __cdecl FUN_00576950(void);
 
 // Original: core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0
 // Address: 005769a0
@@ -21,23 +21,23 @@ void __cdecl CDemonSet::BuildingThumbnailImages(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_FUN_00577120
 // Address: 00577120
-void FUN_00577120(void);
+void __cdecl FUN_00577120(void);
 
 // Original: core_setedit.cpp_FUN_00577200
 // Address: 00577200
-void FUN_00577200(void);
+void __cdecl FUN_00577200(void);
 
 // Original: core_setedit.cpp_FUN_00577330
 // Address: 00577330
-void FUN_00577330(void);
+void __cdecl FUN_00577330(void);
 
 // Original: core_setedit.cpp_FUN_00577430
 // Address: 00577430
-void FUN_00577430(void);
+void __cdecl FUN_00577430(void);
 
 // Original: core_setedit.cpp_FUN_00577730
 // Address: 00577730
-undefined4 FUN_00577730(void);
+int __cdecl FUN_00577730(void);
 
 // Original: core_setedit.cpp_CDemonSet_FUN_00577af0
 // Address: 00577af0
@@ -45,19 +45,19 @@ int __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_FUN_005781a0
 // Address: 005781a0
-int FUN_005781a0(void);
+int __cdecl FUN_005781a0(void);
 
 // Original: core_setedit.cpp_FUN_00578210
 // Address: 00578210
-undefined1 FUN_00578210(void);
+int __cdecl FUN_00578210(void);
 
 // Original: core_setedit.cpp_DefineTexturesMaybe_FUN_00578290
 // Address: 00578290
-void DefineTexturesMaybe(void);
+void __cdecl DefineTexturesMaybe(void);
 
 // Original: core_setedit.cpp_ImportingGroundTextures_FUN_00578420
 // Address: 00578420
-void ImportingGroundTextures(void);
+void __cdecl ImportingGroundTextures(void);
 
 // Original: core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630
 // Address: 00578630
@@ -65,7 +65,7 @@ void __cdecl EditingGroundTypesAndSaving(void);
 
 // Original: core_setedit.cpp_FUN_00578a00
 // Address: 00578a00
-void FUN_00578a00(void);
+void __cdecl FUN_00578a00(void);
 
 // Original: core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20
 // Address: 00578a20
@@ -73,15 +73,15 @@ void __cdecl CDemonSet::OpenAndProcessFileMaybe(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_ImportA3DBroken_FUN_00578c60
 // Address: 00578c60
-void ImportA3DBroken(void);
+void __cdecl ImportA3DBroken(void);
 
 // Original: core_setedit.cpp_FUN_00578c90
 // Address: 00578c90
-undefined4 FUN_00578c90(void);
+int __cdecl FUN_00578c90(void);
 
 // Original: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
 // Address: 00578d80
-void CDemonSet::importS3D(void);
+void __cdecl CDemonSet::importS3D(void);
 
 // Original: core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0
 // Address: 0057a0c0
@@ -89,7 +89,7 @@ void __cdecl CDemonSet::ExportSomething(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_FUN_0057a270
 // Address: 0057a270
-void FUN_0057a270(void);
+void __cdecl FUN_0057a270(void);
 
 // Original: core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
 // Address: 0057a2a0
@@ -101,31 +101,31 @@ void __cdecl CDemonSet::ViewerVisitSet(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50
 // Address: 0057ae50
-undefined4 CDemonSet::unk201(undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,CDemonSet *param_5 ,int param_6,undefined4 param_7,undefined4 param_8);
+int __cdecl CDemonSet::unk201(void);
 
 // Original: core_setedit.cpp_FUN_0057b410
 // Address: 0057b410
-void FUN_0057b410(void);
+void __cdecl FUN_0057b410(void);
 
 // Original: core_setedit.cpp_FUN_0057b500
 // Address: 0057b500
-void FUN_0057b500(void);
+void __cdecl FUN_0057b500(void);
 
 // Original: core_setedit.cpp_FUN_0057b600
 // Address: 0057b600
-void FUN_0057b600(void);
+void __cdecl FUN_0057b600(void);
 
 // Original: core_setedit.cpp_FUN_0057b910
 // Address: 0057b910
-void FUN_0057b910(void);
+void __cdecl FUN_0057b910(void);
 
 // Original: core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0
 // Address: 0057bbe0
-void RelatedToDemonLightEditor(void);
+void __cdecl RelatedToDemonLightEditor(void);
 
 // Original: core_setedit.cpp_ResolveMasterLights_FUN_0057c550
 // Address: 0057c550
-int ResolveMasterLights(void);
+int __cdecl ResolveMasterLights(void);
 
 // Original: core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0
 // Address: 0057c5d0
@@ -133,19 +133,19 @@ void __cdecl showDementedLightEditor(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_WriteActBackdrop_FUN_0057ce80
 // Address: 0057ce80
-void WriteActBackdrop(void);
+void __cdecl WriteActBackdrop(void);
 
 // Original: core_setedit.cpp_FUN_0057d340
 // Address: 0057d340
-void FUN_0057d340(void);
+void __cdecl FUN_0057d340(void);
 
 // Original: core_setedit.cpp_UserInputCreate_FUN_0057d660
 // Address: 0057d660
-int UserInputCreate(undefined4 param_1,undefined4 param_2,void *unaff_EBX,undefined4 param_4, CDemonSet *param_5,int param_6);
+int __cdecl UserInputCreate(void);
 
 // Original: core_setedit.cpp_FUN_0057e430
 // Address: 0057e430
-void FUN_0057e430(void);
+void __cdecl FUN_0057e430(void);
 
 // Original: core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0
 // Address: 0057e7c0
@@ -153,7 +153,7 @@ void __cdecl DementedCameraEditor(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00
 // Address: 0057fd00
-void Something2MemoryConstructorMaybe(void);
+void __cdecl Something2MemoryConstructorMaybe(void);
 
 // Original: core_setedit.cpp_CDemonSet_FUN_0057ff70
 // Address: 0057ff70
@@ -165,11 +165,11 @@ int __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_FUN_005801b0
 // Address: 005801b0
-bool FUN_005801b0(void);
+bool __cdecl FUN_005801b0(void);
 
 // Original: core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310
 // Address: 00580310
-void SomethingMemoryConstructorMaybe(void);
+void __cdecl SomethingMemoryConstructorMaybe(void);
 
 // Original: core_setedit.cpp_CallToFreeSomeMemory_FUN_00580560
 // Address: 00580560
@@ -177,7 +177,7 @@ void __cdecl CallToFreeSomeMemory(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_BackdropMaybe_FUN_005805a0
 // Address: 005805a0
-void BackdropMaybe(void);
+void __cdecl BackdropMaybe(void);
 
 // Original: core_setedit.cpp_DementedFogEditor_FUN_00580730
 // Address: 00580730
@@ -185,19 +185,19 @@ void __cdecl DementedFogEditor(void *unk);
 
 // Original: core_setedit.cpp_FUN_00581320
 // Address: 00581320
-void FUN_00581320(void);
+void __cdecl FUN_00581320(void);
 
 // Original: core_setedit.cpp_FUN_00581450
 // Address: 00581450
-undefined4 FUN_00581450(void);
+int __cdecl FUN_00581450(void);
 
 // Original: core_setedit.cpp_FUN_00581520
 // Address: 00581520
-void FUN_00581520(void);
+void __cdecl FUN_00581520(void);
 
 // Original: core_setedit.cpp_FUN_00581590
 // Address: 00581590
-void FUN_00581590(void);
+void __cdecl FUN_00581590(void);
 
 // Original: core_setedit.cpp_FUN_005817d0
 // Address: 005817d0
@@ -209,11 +209,11 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_FUN_00582930
 // Address: 00582930
-void FUN_00582930(void);
+void __cdecl FUN_00582930(void);
 
 // Original: core_setedit.cpp_FUN_00582f30
 // Address: 00582f30
-void FUN_00582f30(void);
+void __cdecl FUN_00582f30(void);
 
 // Original: core_setedit.cpp_CDemonSet_FUN_00583170
 // Address: 00583170

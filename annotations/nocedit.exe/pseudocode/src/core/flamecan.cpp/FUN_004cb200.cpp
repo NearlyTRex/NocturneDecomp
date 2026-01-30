@@ -1,14 +1,14 @@
 // Name: core_flamecan.cpp_FUN_004cb200
 // Address: 004cb200
 // Address Range: [[004cb200, 004cb212]]
-// Convention: unknown
-// Signature: void core_flamecan_cpp_FUN_004cb200(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flamecan_cpp_FUN_004cb200(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_FUN_004cb200(uint param_1) */
 
-void core_flamecan_cpp_FUN_004cb200(void)
+void __cdecl core_flamecan_cpp_FUN_004cb200(void)
 
 {
   float fVar1;

@@ -1,15 +1,15 @@
 // Name: core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0
 // Address: 004f7bd0
 // Address Range: [[004f7bd0, 004f7bf4]]
-// Convention: unknown
-// Signature: void core_hpriest_cpp_CHighPriestOfGardath_load_FUN_004f7bd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hpriest_cpp_CHighPriestOfGardath_load_FUN_004f7bd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_highpriestg.cpp_CHighPriestOfGardath_load(CHighPriestOfGardath*
    param_1) */
 
-void core_hpriest_cpp_CHighPriestOfGardath_load_FUN_004f7bd0(void)
+void __cdecl core_hpriest_cpp_CHighPriestOfGardath_load_FUN_004f7bd0(void)
 
 {
   CNPC *in_stack_00000004;

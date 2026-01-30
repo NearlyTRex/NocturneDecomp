@@ -1,14 +1,15 @@
 // Name: core_colonel.cpp_FUN_0043f850
 // Address: 0043f850
 // Address Range: [[0043f850, 0043f9e1]]
-// Convention: unknown
-// Signature: void core_colonel_cpp_FUN_0043f850(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_colonel_cpp_FUN_0043f850(void)
 
 #include "nocturne.h"
 
-void core_colonel_cpp_FUN_0043f850(void)
+void __cdecl core_colonel_cpp_FUN_0043f850(void)
 
 {
+  CHero *pCVar1;
   CSkeleton *this_ptr;
   CHero *in_stack_00000004;
   
@@ -47,10 +48,10 @@ void core_colonel_cpp_FUN_0043f850(void)
   INT_0083b160 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Spine2")
   ;
   INT_0083b164 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Spine");
-  in_stack_00000004 = in_stack_00000004 + 1;
-  (in_stack_00000004->base).base.actor_name[0] = '\0';
-  (in_stack_00000004->base).base.actor_name[1] = '\0';
-  (in_stack_00000004->base).base.actor_name[2] = '\0';
-  (in_stack_00000004->base).base.actor_name[3] = '\0';
+  pCVar1 = in_stack_00000004 + 1;
+  (pCVar1->base).base.actor_name[0] = '\0';
+  (pCVar1->base).base.actor_name[1] = '\0';
+  (pCVar1->base).base.actor_name[2] = '\0';
+  (pCVar1->base).base.actor_name[3] = '\0';
   return;
 }

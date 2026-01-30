@@ -9,8 +9,8 @@
 SFly * __cdecl core_flies_cpp_FUN_004ccd40(SFly *this_ptr)
 
 {
-  int iVar1;
+  int extraout_EAX;
   
-  iVar1 = core_dracbrid_cpp_FUN_00486e30();
-  return (SFly *)(iVar1 + -4);
+  core_dracbrid_cpp_FUN_00486e30();
+  return (SFly *)(extraout_EAX + -4);
 }

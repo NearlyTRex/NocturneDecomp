@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_curtain_cpp_FUN_0044b340(void)
+; __cdecl int __cdecl core_curtain_cpp_FUN_0044b340(void)
 ;
 ;
 ; Called Functions:
@@ -21,7 +21,7 @@ section .text
     PUSH EAX                            ; 0044b353
         ;   Label: LAB_0044b353
     CALL core_curtain.cpp_FUN_0044b060  ; 0044b354
-        ;   XREF to: 0044b060 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_0044b060()
+        ;   XREF to: 0044b060 (UNCONDITIONAL_CALL)  ; int core_curtain.cpp_FUN_0044b060()
     ADD ESP,0x4                         ; 0044b359
     RET                                 ; 0044b35c
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005be520(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005be520(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1f58]:4  local_1f58
@@ -241,7 +241,7 @@ section .text
     PUSH EAX                            ; 005be5cc
     PUSH EBX                            ; 005be5cd
     CALL core_stranger.cpp_CStranger_FUN_005bf720 ; 005be5ce
-        ;   XREF to: 005bf720 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_FUN_005bf720()
+        ;   XREF to: 005bf720 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bf720()
     ADD ESP,0x8                         ; 005be5d3
     XOR EAX,EAX                         ; 005be5d6
     PUSH 0x59ddb0                       ; 005be5d8
@@ -258,7 +258,7 @@ section .text
     PUSH EBX                            ; 005be602
         ;   Label: LAB_005be602
     CALL core_stranger.cpp_CStranger_FUN_005bfb60 ; 005be603
-        ;   XREF to: 005bfb60 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_FUN_005bfb60()
+        ;   XREF to: 005bfb60 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bfb60()
     ADD ESP,0x4                         ; 005be608
     LEA EDI,[EBX + 0x158]               ; 005be60b
     PUSH EDI                            ; 005be611
@@ -465,7 +465,7 @@ section .text
     PUSH EAX                            ; 005be8cd
     PUSH EDI                            ; 005be8ce
     CALL core_lever.cpp_FUN_00504dd0    ; 005be8cf
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504dd0()
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_FUN_00504dd0()
     ADD ESP,0x8                         ; 005be8d4
     PUSH EAX                            ; 005be8d7
     LEA EAX,[ESP + 0x1eb4]              ; 005be8d8
@@ -968,7 +968,7 @@ section .text
     MOV EAX,[0x03f6baa8]                ; 005bf00b | DAT_03f6baa8
     PUSH EAX                            ; 005bf010
     CALL core_lever.cpp_FUN_00504dd0    ; 005bf011
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504dd0()
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_FUN_00504dd0()
     ADD ESP,0x8                         ; 005bf016
     PUSH EAX                            ; 005bf019
     LEA EAX,[ESP + 0x1e00]              ; 005bf01a
@@ -1133,7 +1133,7 @@ section .text
         ;   XREF to: 005bf233 (CONDITIONAL_JUMP)  ; LAB_005bf233
     PUSH ESI                            ; 005bf217
     CALL core_stranger.cpp_FUN_005bb010 ; 005bf218
-        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_005bb010()
+        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_FUN_005bb010()
     MOV dword ptr [ESP + 0x1f3c],EAX    ; 005bf21d
     MOV EAX,dword ptr [ESP + 0x1f3c]    ; 005bf224
     MOV [0x03f6bb64],EAX                ; 005bf22b | INT_03f6bb64

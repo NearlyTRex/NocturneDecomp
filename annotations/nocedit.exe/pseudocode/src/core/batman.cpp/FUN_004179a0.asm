@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_batman_cpp_FUN_004179a0(void)
+; __cdecl void __cdecl core_batman_cpp_FUN_004179a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x3c]:1  local_3c
@@ -89,7 +89,7 @@ section .text
         ;   Label: LAB_00417a24
     PUSH ESI                            ; 00417a25
     CALL core_batman.cpp_FUN_00417660   ; 00417a26
-        ;   XREF to: 00417660 (UNCONDITIONAL_CALL)  ; undefined core_batman.cpp_FUN_00417660()
+        ;   XREF to: 00417660 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_FUN_00417660()
     FLD float ptr [EDI + 0x4]           ; 00417a2b
     ADD ESP,0x8                         ; 00417a2e
     FSUBR float ptr [ESI + 0x243c]      ; 00417a31
@@ -151,7 +151,7 @@ section .text
         ;   Label: LAB_00417ab5
     PUSH ESI                            ; 00417ab6
     CALL core_enemy.cpp_FUN_004a9f10    ; 00417ab7
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00417abc
     ADD ESP,0x2c                        ; 00417abf
     POP EBP                             ; 00417ac2
@@ -227,7 +227,7 @@ section .text
     PUSH EDI                            ; 00417b71
     PUSH ESI                            ; 00417b72
     CALL core_enemy.cpp_FUN_004a9f10    ; 00417b73
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00417b78
     ADD ESP,0x2c                        ; 00417b7b
     POP EBP                             ; 00417b7e
@@ -245,7 +245,7 @@ section .text
     PUSH EDI                            ; 00417b9b
     PUSH ESI                            ; 00417b9c
     CALL core_enemy.cpp_FUN_004a9f10    ; 00417b9d
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00417ba2
     ADD ESP,0x2c                        ; 00417ba5
     POP EBP                             ; 00417ba8

@@ -74,7 +74,7 @@ section .text
     PUSH dword ptr [ESI + 0x158]        ; 005dfaf6
     PUSH EAX                            ; 005dfafc
     CALL core_hero.cpp_FUN_004f2220     ; 005dfafd
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 005dfb02
     TEST EAX,EAX                        ; 005dfb05
     JZ 0x005dfb58                       ; 005dfb07
@@ -96,7 +96,7 @@ section .text
     PUSH EDX                            ; 005dfb2e
     PUSH ESI                            ; 005dfb2f
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005dfb30
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
     ADD ESP,0x8                         ; 005dfb35
     TEST EAX,EAX                        ; 005dfb38
     JZ 0x005dfbbb                       ; 005dfb3a
@@ -203,7 +203,7 @@ section .text
     PUSH EBX                            ; 005dfc63
     PUSH ESI                            ; 005dfc64
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005dfc65
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
     ADD ESP,0x8                         ; 005dfc6a
     TEST EAX,EAX                        ; 005dfc6d
     JZ 0x005dfb58                       ; 005dfc6f
@@ -218,7 +218,7 @@ section .text
     PUSH dword ptr [ESI + 0x158]        ; 005dfc8f
     PUSH EAX                            ; 005dfc95
     CALL core_hero.cpp_FUN_004f2220     ; 005dfc96
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 005dfc9b
     TEST EAX,EAX                        ; 005dfc9e
     JZ 0x005dfb58                       ; 005dfca0
@@ -349,7 +349,7 @@ section .text
     PUSH dword ptr [ESI + 0x158]        ; 005dfe26
     PUSH EBX                            ; 005dfe2c
     CALL core_hero.cpp_FUN_004f2220     ; 005dfe2d
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 005dfe32
     TEST EAX,EAX                        ; 005dfe35
     JZ 0x005dfb58                       ; 005dfe37
@@ -384,7 +384,7 @@ section .text
     PUSH dword ptr [ESI + 0x158]        ; 005dfe94
     PUSH EAX                            ; 005dfe9a
     CALL core_hero.cpp_FUN_004f2220     ; 005dfe9b
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 005dfea0
     TEST EAX,EAX                        ; 005dfea3
     JZ 0x005dfb58                       ; 005dfea5
@@ -416,7 +416,7 @@ section .text
         ;   Label: LAB_005dfef7
     PUSH ESI                            ; 005dfef8
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005dfef9
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
     ADD ESP,0x8                         ; 005dfefe
     TEST EAX,EAX                        ; 005dff01
     JZ 0x005dfee3                       ; 005dff03
@@ -431,7 +431,7 @@ section .text
     PUSH dword ptr [ESI + 0x158]        ; 005dff1f
     PUSH EBX                            ; 005dff25
     CALL core_hero.cpp_FUN_004f2220     ; 005dff26
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 005dff2b
     TEST EAX,EAX                        ; 005dff2e
     JZ 0x005dfb58                       ; 005dff30
@@ -506,7 +506,7 @@ section .text
     PUSH EBX                            ; 005dffff
     PUSH ESI                            ; 005e0000
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005e0001
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
     ADD ESP,0x8                         ; 005e0006
     TEST EAX,EAX                        ; 005e0009
     JZ 0x005dffbb                       ; 005e000b

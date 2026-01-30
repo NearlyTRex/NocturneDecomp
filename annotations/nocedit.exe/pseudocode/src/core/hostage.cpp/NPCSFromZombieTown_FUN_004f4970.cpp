@@ -1,14 +1,14 @@
 // Name: core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970
 // Address: 004f4970
 // Address Range: [[004f4970, 004f4b38]]
-// Convention: unknown
-// Signature: void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_hostage.cpp_NPCSFromZombieTown(uint param_1) */
 
-void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
+void __cdecl core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 
 {
   char *str1;

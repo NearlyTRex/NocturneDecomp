@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
+; __cdecl void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2478]:4  local_2478
@@ -144,7 +144,7 @@ section .text
     PUSH 0x646bd8                       ; 00578d91 | = "Import geometry"
     PUSH 0x0                            ; 00578d96
     CALL core_setedit.cpp_FUN_00578c90  ; 00578d98
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_00578c90()
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
     ADD ESP,0xc                         ; 00578d9d
     MOV dword ptr [ESP + 0x2400],EAX    ; 00578da0
     TEST EAX,EAX                        ; 00578da7
@@ -162,7 +162,7 @@ section .text
     PUSH 0x646be8                       ; 00578db8 | = "Import omni lights"
     PUSH 0xb                            ; 00578dbd
     CALL core_setedit.cpp_FUN_00578c90  ; 00578dbf
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_00578c90()
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
     ADD ESP,0xc                         ; 00578dc4
     MOV EBX,EAX                         ; 00578dc7
     MOV dword ptr [ESP + 0x2404],EAX    ; 00578dc9
@@ -173,7 +173,7 @@ section .text
     PUSH 0x646bfb                       ; 00578dd6 | = "Import spot lights"
     PUSH 0x16                           ; 00578ddb
     CALL core_setedit.cpp_FUN_00578c90  ; 00578ddd
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_00578c90()
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
     ADD ESP,0xc                         ; 00578de2
     MOV ESI,EAX                         ; 00578de5
     MOV dword ptr [ESP + 0x2408],EAX    ; 00578de7
@@ -184,7 +184,7 @@ section .text
     PUSH 0x646c0e                       ; 00578df4 | = "Import cameras"
     PUSH 0x21                           ; 00578df9
     CALL core_setedit.cpp_FUN_00578c90  ; 00578dfb
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_00578c90()
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
     ADD ESP,0xc                         ; 00578e00
     MOV dword ptr [ESP + 0x240c],EAX    ; 00578e03
     TEST EAX,EAX                        ; 00578e0a
@@ -808,7 +808,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x247c]    ; 005794fa
     PUSH EBX                            ; 00579501
     CALL core_setedit.cpp_BackdropMaybe_FUN_005805a0 ; 00579502
-        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_BackdropMaybe_FUN_005805a0()
+        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_BackdropMaybe_FUN_005805a0()
     ADD ESP,0x4                         ; 00579507
     PUSH 0x6472ed                       ; 0057950a | = "CDemonSet::importS3D completed OK"
         ;   Label: LAB_0057950a
@@ -965,7 +965,7 @@ section .text
     LEA EAX,[ESP + 0x1dd0]              ; 005796e5
     PUSH EAX                            ; 005796ec
     CALL core_setedit.cpp_ImportingGroundTextures_FUN_00578420 ; 005796ed
-        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
+        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
     ADD ESP,0x4                         ; 005796f2
     PUSH 0x646e83                       ; 005796f5 | = "Reading textures"
     MOV EBX,dword ptr [0x00678a60]      ; 005796fa | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -1201,7 +1201,7 @@ section .text
     MOV ESI,0x1                         ; 0057997c
     MOV dword ptr [EDI + 0x3364d18],ECX ; 00579981 | DAT_03364d18
     CALL core_setedit.cpp_DefineTexturesMaybe_FUN_00578290 ; 00579987
-        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_DefineTexturesMaybe_FUN_00578290()
+        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_DefineTexturesMaybe_FUN_00578290()
     ADD ESP,0x8                         ; 0057998c
     MOV dword ptr [ESP + 0x2448],ESI    ; 0057998f
     JMP 0x00579835                      ; 00579996

@@ -1,14 +1,14 @@
 // Name: core_hiram.cpp_FUN_004f4530
 // Address: 004f4530
 // Address Range: [[004f4530, 004f454b]]
-// Convention: unknown
-// Signature: void core_hiram_cpp_FUN_004f4530(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hiram_cpp_FUN_004f4530(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_hiram.cpp_FUN_004f4530(uint param_1) */
 
-void core_hiram_cpp_FUN_004f4530(void)
+void __cdecl core_hiram_cpp_FUN_004f4530(void)
 
 {
   CNPC *in_stack_00000004;

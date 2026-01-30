@@ -1,15 +1,15 @@
 // Name: core_gabriela.cpp_FUN_004d4890
 // Address: 004d4890
 // Address Range: [[004d4890, 004d4c8b]]
-// Convention: unknown
-// Signature: void core_gabriela_cpp_FUN_004d4890(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gabriela_cpp_FUN_004d4890(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d4890(uint param_1, uint
    param_2) */
 
-void core_gabriela_cpp_FUN_004d4890(void)
+void __cdecl core_gabriela_cpp_FUN_004d4890(void)
 
 {
   CDeformableModelInstance *this_ptr;
@@ -26,7 +26,6 @@ void core_gabriela_cpp_FUN_004d4890(void)
   ulonglong local_a0;
   float fStack_94;
   CVector3f local_84 [2];
-  CCharacter *local_6c;
   byte local_68 [12];
   byte auStack_5c [28];
   CVector3f local_40;
@@ -132,8 +131,6 @@ void core_gabriela_cpp_FUN_004d4890(void)
           local_84[0].y = pCVar4->y;
           local_84[0].z = pCVar4->z;
         }
-        local_6c = in_stack_00000004;
-        local_68._0_4_ = in_stack_00000004;
         (*(((local_1c->base).vtable._uc)->_uc).processDamage)(local_1c,(SDamageInfo *)&local_a0);
         local_a0 = (double)fStack_94;
         if (0.0 < local_a0) {

@@ -151,7 +151,7 @@ section .text
     PUSH EBX                            ; 00578b14
     PUSH EBP                            ; 00578b15
     CALL core_setedit.cpp_ImportA3DBroken_FUN_00578c60 ; 00578b16
-        ;   XREF to: 00578c60 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ImportA3DBroken_FUN_00578c60()
+        ;   XREF to: 00578c60 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_ImportA3DBroken_FUN_00578c60()
     ADD ESP,0x8                         ; 00578b1b
         ;   Label: LAB_00578b1b
     PUSH 0x399                          ; 00578b1e
@@ -239,7 +239,7 @@ section .text
     PUSH EBX                            ; 00578c0b
     PUSH EBP                            ; 00578c0c
     CALL core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 ; 00578c0d
-        ;   XREF to: 00578d80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80()
+        ;   XREF to: 00578d80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80()
     JMP 0x00578b1b                      ; 00578c12
         ;   XREF to: 00578b1b (UNCONDITIONAL_JUMP)  ; LAB_00578b1b
     PUSH 0x38f                          ; 00578c17

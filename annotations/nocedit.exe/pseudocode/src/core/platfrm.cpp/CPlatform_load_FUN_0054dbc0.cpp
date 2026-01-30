@@ -1,14 +1,14 @@
 // Name: core_platfrm.cpp_CPlatform_load_FUN_0054dbc0
 // Address: 0054dbc0
 // Address Range: [[0054dbc0, 0054df75]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_CPlatform_load(CPlatform* pPlatform) */
 
-void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
+void __cdecl core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
 
 {
   CDemonActor *pCVar1;

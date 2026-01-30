@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_platfrm_cpp_FUN_0054ea00(void)
+; __cdecl void __cdecl core_platfrm_cpp_FUN_0054ea00(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x2f0]:8  local_2f0
@@ -156,7 +156,7 @@ section .text
     PUSH 0x0                            ; 0054eb44
     PUSH EBX                            ; 0054eb46
     CALL core_platfrm.cpp_FUN_0054e480  ; 0054eb47
-        ;   XREF to: 0054e480 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054e480()
+        ;   XREF to: 0054e480 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_FUN_0054e480()
     ADD ESP,0x8                         ; 0054eb4c
     MOV EAX,dword ptr [EBX + 0x724]     ; 0054eb4f
         ;   Label: LAB_0054eb4f
@@ -222,7 +222,7 @@ section .text
     PUSH EBX                            ; 0054ebef
         ;   Label: LAB_0054ebef
     CALL core_platfrm.cpp_FUN_0054cab0  ; 0054ebf0
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054cab0()
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054cab0()
     ADD ESP,0x4                         ; 0054ebf5
     MOV ESP,EBP                         ; 0054ebf8
     POP EBP                             ; 0054ebfa

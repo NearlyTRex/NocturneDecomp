@@ -1,15 +1,15 @@
 // Name: core_ammo.cpp_CAmmo_FUN_00410fd0
 // Address: 00410fd0
 // Address Range: [[00410fd0, 004111a7]]
-// Convention: unknown
-// Signature: void core_ammo_cpp_CAmmo_FUN_00410fd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_ammo.cpp_CAmmo_FUN_00410fd0(CAmmo* param_1_00, uint
    param_2_00, uint param_3, uint sClassNameMaybe) */
 
-void core_ammo_cpp_CAmmo_FUN_00410fd0(void)
+void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(void)
 
 {
   char cVar1;

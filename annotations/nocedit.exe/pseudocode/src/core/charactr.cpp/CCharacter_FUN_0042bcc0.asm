@@ -59,7 +59,7 @@ section .text
     LEA ESI,[EBX + 0x20]                ; 0042bcfa
     PUSH ESI                            ; 0042bcfd
     CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 0042bcfe
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 0042bd03
     MOV EDI,dword ptr [ESP + 0x20]      ; 0042bd06
     PUSH EDI                            ; 0042bd0a
@@ -73,7 +73,7 @@ section .text
     ADD ESP,0x10                        ; 0042bd19
     PUSH ESI                            ; 0042bd1c
     CALL core_bodypart.cpp_FUN_0041a050 ; 0042bd1d
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a050()
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
     ADD ESP,0x4                         ; 0042bd22
     POP EDI                             ; 0042bd25
     POP EBP                             ; 0042bd26

@@ -1,156 +1,161 @@
 // Name: core_script.cpp_FUN_00561a30
 // Address: 00561a30
 // Address Range: [[00561a30, 00561c69]]
-// Convention: unknown
-// Signature: int core_script_cpp_FUN_00561a30(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_script_cpp_FUN_00561a30 (char *param_1,char *param_2,char *param_3,char *param_4,uint param_5,void *param_6, int param_7)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_FUN_00561a30(uint param_1, uint param_2,
-   uint param_3, uint param_4, uint param_5, uint param_6, uint
-   param_7) */
-
-int core_script_cpp_FUN_00561a30(void)
+int __cdecl
+core_script_cpp_FUN_00561a30
+          (char *param_1,char *param_2,char *param_3,char *param_4,uint param_5,void *param_6,
+          int param_7)
 
 {
   char cVar1;
   int iVar2;
   char *pcVar3;
   uint uVar4;
-  char *pcVar5;
-  byte bVar6;
-  char *in_stack_00000004;
-  char *in_stack_00000008;
-  char *in_stack_0000000c;
-  char *in_stack_00000010;
-  uint in_stack_00000014;
-  void *in_stack_00000018;
+  uint uVar5;
+  int iVar6;
+  char *pcVar7;
+  byte bVar8;
   uint in_stack_ffffffd0;
+  uint local_20;
+  int local_1c;
   int local_18;
+  int local_14;
   
-  bVar6 = 0;
+  bVar8 = 0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0xffffffd0);
-  iVar2 = core_script_cpp_FUN_00567310();
-  memset(in_stack_00000018,0,0x328);
-  if (iVar2 < 0) {
+  local_20 = param_5;
+  local_1c = core_script_cpp_CScript_FUN_00567310
+                       (g_CScriptPtr,(int)param_1,(CBitFont *)&stack0xffffffd0,(int *)&local_20);
+  local_14 = local_1c;
+  memset(param_6,0,0x328);
+  if (local_14 < 0) {
     uVar4 = 0xffffffff;
-    pcVar3 = in_stack_00000004;
+    pcVar3 = param_1;
     do {
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
       cVar1 = *pcVar3;
-      pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
+      pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
     } while (cVar1 != '\0');
-    if (~uVar4 - 1 < in_stack_00000014) {
+    if (~uVar4 - 1 < param_5) {
       uVar4 = 0xffffffff;
-      pcVar3 = in_stack_00000004;
+      pcVar3 = param_1;
       do {
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
         cVar1 = *pcVar3;
-        pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
+        pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
       } while (cVar1 != '\0');
-      in_stack_00000014 = ~uVar4 - 1;
+      param_5 = ~uVar4 - 1;
     }
-    pcVar3 = in_stack_00000004;
-    pcVar5 = in_stack_00000008;
-    for (uVar4 = in_stack_00000014 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(uint *)pcVar5 = *(uint *)pcVar3;
-      pcVar3 = pcVar3 + (uint)bVar6 * -8 + 4;
-      pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
+    pcVar3 = param_1;
+    pcVar7 = param_2;
+    for (uVar4 = param_5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *(uint *)pcVar7 = *(uint *)pcVar3;
+      pcVar3 = pcVar3 + (uint)bVar8 * -8 + 4;
+      pcVar7 = pcVar7 + (uint)bVar8 * -8 + 4;
     }
-    for (uVar4 = in_stack_00000014 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pcVar5 = *pcVar3;
-      pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
-      pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+    for (uVar4 = param_5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *pcVar7 = *pcVar3;
+      pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
+      pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
     }
-    in_stack_00000008[in_stack_00000014] = '\0';
-    in_stack_00000004 = in_stack_00000004 + in_stack_00000014;
-    *in_stack_0000000c = '\0';
+    param_2[param_5] = '\0';
+    pcVar3 = param_1 + param_5;
+    *param_3 = '\0';
     do {
-      cVar1 = *in_stack_00000004;
-      *in_stack_00000010 = cVar1;
+      cVar1 = *pcVar3;
+      *param_4 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = in_stack_00000004[1];
-      in_stack_00000004 = in_stack_00000004 + 2;
-      in_stack_00000010[1] = cVar1;
-      in_stack_00000010 = in_stack_00000010 + 2;
+      cVar1 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
+      param_4[1] = cVar1;
+      param_4 = param_4 + 2;
     } while (cVar1 != '\0');
     shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0xffffffd0,0,in_stack_ffffffd0);
     return 0x20;
   }
-  pcVar3 = in_stack_00000004;
-  pcVar5 = in_stack_00000008;
-  for (uVar4 = in_stack_00000014 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(uint *)pcVar5 = *(uint *)pcVar3;
-    pcVar3 = pcVar3 + (uint)bVar6 * -8 + 4;
-    pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
+  pcVar3 = param_1;
+  pcVar7 = param_2;
+  for (uVar4 = local_20 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *(uint *)pcVar7 = *(uint *)pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar8 * -8 + 4;
+    pcVar7 = pcVar7 + (uint)bVar8 * -8 + 4;
   }
-  for (uVar4 = in_stack_00000014 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar5 = *pcVar3;
-    pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
-    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+  for (uVar4 = local_20 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pcVar7 = *pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
+    pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
   }
-  in_stack_00000008[in_stack_00000014] = '\0';
+  param_2[local_20] = '\0';
   local_18 = -1;
-  pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xffffffd0,iVar2);
+  pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                     ((CStrList *)&stack0xffffffd0,local_14);
   do {
-    pcVar5 = pcVar3;
+    pcVar7 = pcVar3;
     if (*pcVar3 == '(') goto LAB_00561ae9;
     if (*pcVar3 == '\0') break;
-    pcVar5 = pcVar3 + 1;
-    if (*pcVar5 == '(') goto LAB_00561ae9;
+    pcVar7 = pcVar3 + 1;
+    if (*pcVar7 == '(') goto LAB_00561ae9;
     pcVar3 = pcVar3 + 2;
-  } while (*pcVar5 != '\0');
-  pcVar5 = (char *)0x0;
+  } while (*pcVar7 != '\0');
+  pcVar7 = (char *)0x0;
 LAB_00561ae9:
-  if (pcVar5 != (char *)0x0) {
-    shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xffffffd0,iVar2);
+  if (pcVar7 != (char *)0x0) {
+    shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xffffffd0,local_14);
     local_18 = core_script_cpp_FUN_00561690();
   }
   if (local_18 < 0) {
     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                       ((CStrList *)&stack0xffffffd0,iVar2);
+                       ((CStrList *)&stack0xffffffd0,local_1c);
     do {
       cVar1 = *pcVar3;
-      *in_stack_0000000c = cVar1;
+      *param_3 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      in_stack_0000000c[1] = cVar1;
-      in_stack_0000000c = in_stack_0000000c + 2;
+      param_3[1] = cVar1;
+      param_3 = param_3 + 2;
     } while (cVar1 != '\0');
     local_18 = 0x20;
-    *in_stack_00000010 = '\0';
+    *param_4 = '\0';
   }
-  pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xffffffd0,iVar2);
-  uVar4 = 0xffffffff;
+  uVar4 = local_20;
+  pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                     ((CStrList *)&stack0xffffffd0,local_1c);
+  iVar2 = local_18;
+  uVar5 = 0xffffffff;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
     cVar1 = *pcVar3;
-    pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
+    pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
   } while (cVar1 != '\0');
-  in_stack_00000004 = in_stack_00000004 + (~uVar4 - 1) + in_stack_00000014;
-  iVar2 = -1;
+  pcVar3 = param_1 + (~uVar5 - 1) + uVar4;
+  iVar6 = -1;
   do {
-    pcVar3 = in_stack_00000010;
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    pcVar3 = in_stack_00000010 + (uint)bVar6 * -2 + 1;
-    cVar1 = *in_stack_00000010;
-    in_stack_00000010 = pcVar3;
+    pcVar7 = param_4;
+    if (iVar6 == 0) break;
+    iVar6 = iVar6 + -1;
+    pcVar7 = param_4 + (uint)bVar8 * -2 + 1;
+    cVar1 = *param_4;
+    param_4 = pcVar7;
   } while (cVar1 != '\0');
-  pcVar3 = pcVar3 + -1;
+  pcVar7 = pcVar7 + -1;
   do {
-    cVar1 = *in_stack_00000004;
-    *pcVar3 = cVar1;
+    cVar1 = *pcVar3;
+    *pcVar7 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000004[1];
-    in_stack_00000004 = in_stack_00000004 + 2;
-    pcVar3[1] = cVar1;
+    cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
+    pcVar7[1] = cVar1;
+    pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0xffffffd0,0,in_stack_ffffffd0);
-  return local_18;
+  return iVar2;
 }

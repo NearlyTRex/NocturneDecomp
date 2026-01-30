@@ -1,14 +1,14 @@
 // Name: core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0
 // Address: 00438cb0
 // Address Range: [[00438cb0, 00438ced]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_cloth.cpp_UnknownSomethingAndFreeMem(uint param_1) */
 
-void core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
+void __cdecl core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
 
 {
   int in_stack_00000004;

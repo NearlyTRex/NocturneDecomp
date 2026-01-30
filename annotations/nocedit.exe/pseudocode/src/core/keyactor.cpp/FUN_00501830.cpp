@@ -1,15 +1,15 @@
 // Name: core_keyactor.cpp_FUN_00501830
 // Address: 00501830
 // Address Range: [[00501830, 0050187d]]
-// Convention: unknown
-// Signature: float * core_keyactor_cpp_FUN_00501830(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_keyactor_cpp_FUN_00501830(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_keyactor.cpp_FUN_00501830(uint param_1, uint
    param_2) */
 
-float * core_keyactor_cpp_FUN_00501830(void)
+float * __cdecl core_keyactor_cpp_FUN_00501830(void)
 
 {
   CVector3f *pCVar1;

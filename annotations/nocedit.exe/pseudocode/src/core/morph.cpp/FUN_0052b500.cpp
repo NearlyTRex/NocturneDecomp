@@ -1,12 +1,12 @@
 // Name: core_morph.cpp_FUN_0052b500
 // Address: 0052b500
 // Address Range: [[0052b500, 0052b54c]]
-// Convention: unknown
-// Signature: void core_morph_cpp_FUN_0052b500(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_FUN_0052b500(void)
 
 #include "nocturne.h"
 
-void core_morph_cpp_FUN_0052b500(void)
+void __cdecl core_morph_cpp_FUN_0052b500(void)
 
 {
   int in_stack_00000004;

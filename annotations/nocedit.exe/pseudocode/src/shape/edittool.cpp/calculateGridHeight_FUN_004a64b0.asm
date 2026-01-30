@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_script.cpp_CScript_unk50_FUN_00566660 at 005666fa
+;   core_script.cpp_CScript_FUN_00566660 at 005666fa
 ;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 at 004a4914
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40 at 004a4e02
 ;

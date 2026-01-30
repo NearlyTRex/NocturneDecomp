@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_emitter_cpp_FUN_004a9390(void)
+; __cdecl void __cdecl core_emitter_cpp_FUN_004a9390(void)
 ;
 ;
 ; Called Functions:

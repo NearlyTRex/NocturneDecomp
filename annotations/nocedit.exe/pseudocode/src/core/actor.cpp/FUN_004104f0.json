@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 16,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -41,9 +48,9 @@
         "004104fe"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_FUN_004104f0",
-    "signature": "undefined4 * core_actor_cpp_FUN_004104f0(void)"
+    "signature": "int __cdecl core_actor_cpp_FUN_004104f0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -54,42 +61,33 @@
         "call_addr": "0040d9d1",
         "call_type": "direct",
         "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 6,
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "0040db76",
         "call_type": "direct",
         "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 6,
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "0040dd3b",
         "call_type": "direct",
         "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 6,
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "high",
     "declared_params": 0,
-    "estimated_params": 4
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.3333333333333335,
@@ -144,18 +142,18 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
+      "text": "return (int)in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "call_site_count": 3,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

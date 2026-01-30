@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(void)
+; __cdecl void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

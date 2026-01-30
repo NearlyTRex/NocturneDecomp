@@ -25,7 +25,7 @@ void __cdecl CBatman(CBatman *this_ptr);
 
 // Original: core_batman.cpp_FUN_004167f0
 // Address: 004167f0
-void FUN_004167f0(void);
+void __cdecl FUN_004167f0(void);
 
 // Original: core_batman.cpp_CBatman_process_FUN_00416870
 // Address: 00416870
@@ -41,11 +41,11 @@ void __cdecl CBatman::serialize(CBatman *this_ptr);
 
 // Original: core_batman.cpp_FUN_00417660
 // Address: 00417660
-void FUN_00417660(void);
+void __cdecl FUN_00417660(void);
 
 // Original: core_batman.cpp_FUN_004179a0
 // Address: 004179a0
-void FUN_004179a0(void);
+void __cdecl FUN_004179a0(void);
 
 // Original: core_batman.cpp_CBatman_FUN_00417bb0
 // Address: 00417bb0

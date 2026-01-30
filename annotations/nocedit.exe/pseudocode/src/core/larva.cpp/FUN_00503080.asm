@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_larva_cpp_FUN_00503080(void)
+; __cdecl void __cdecl core_larva_cpp_FUN_00503080(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x200]:8  local_200
@@ -414,7 +414,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 00503547 | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 0050354d | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 0050354e
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 00503553
     MOV dword ptr [EBX + 0xbe28],0x1    ; 00503556
     JMP 0x00503184                      ; 00503560

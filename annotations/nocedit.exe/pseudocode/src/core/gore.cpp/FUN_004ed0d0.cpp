@@ -1,15 +1,15 @@
 // Name: core_gore.cpp_FUN_004ed0d0
 // Address: 004ed0d0
 // Address Range: [[004ed0d0, 004ed15b]]
-// Convention: unknown
-// Signature: void core_gore_cpp_FUN_004ed0d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_FUN_004ed0d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_gore.cpp_FUN_004ed0d0(uint param_1, uint param_2,
    uint param_3) */
 
-void core_gore_cpp_FUN_004ed0d0(void)
+void __cdecl core_gore_cpp_FUN_004ed0d0(void)
 
 {
   CDemonSet *this_ptr;

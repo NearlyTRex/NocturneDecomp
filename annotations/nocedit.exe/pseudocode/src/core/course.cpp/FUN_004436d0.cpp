@@ -1,12 +1,12 @@
 // Name: core_course.cpp_FUN_004436d0
 // Address: 004436d0
 // Address Range: [[004436d0, 00443759]]
-// Convention: unknown
-// Signature: void core_course_cpp_FUN_004436d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_course_cpp_FUN_004436d0(void)
 
 #include "nocturne.h"
 
-void core_course_cpp_FUN_004436d0(void)
+void __cdecl core_course_cpp_FUN_004436d0(void)
 
 {
   SRenderVertex *vertices;

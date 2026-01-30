@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bugs_cpp_FUN_00427400(void)
+; __cdecl void __cdecl core_bugs_cpp_FUN_00427400(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -120,7 +120,7 @@ section .text
     PUSH EBX                            ; 00427517
     PUSH EBP                            ; 00427518
     CALL core_bugs.cpp_FUN_00425660     ; 00427519
-        ;   XREF to: 00425660 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00425660()
+        ;   XREF to: 00425660 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00425660()
     ADD ESP,0xc                         ; 0042751e
     MOV EDI,dword ptr [EBP + 0x12b30]   ; 00427521
     PUSH EDI                            ; 00427527

@@ -41,7 +41,7 @@ int __cdecl CCryptVessel(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_FUN_005e9180
 // Address: 005e9180
-undefined4 FUN_005e9180(void);
+int __cdecl FUN_005e9180(void);
 
 // Original: core_vessel.cpp_CCryptVessel_process_FUN_005e91a0
 // Address: 005e91a0

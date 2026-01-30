@@ -1,0 +1,344 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 30,
+        "line": 68,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 73,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 76,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 35,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 39,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 184,
+    "complexity_score": 177,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 2,
+    "pseudocode_lines": 72,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 256
+  },
+  "cross_references": [
+    {
+      "addr": "004da100",
+      "from_addr": "004da9d2",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00559d80",
+    "address_range": [
+      [
+        "00559d80",
+        "00559f76"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_FUN_00559d80",
+    "signature": "void __cdecl core_script_cpp_CScript_FUN_00559d80 (CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "00486ea0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0"
+    },
+    {
+      "addr": "00488530",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530"
+    },
+    {
+      "addr": "00489c20",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20"
+    },
+    {
+      "addr": "004893f0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0"
+    },
+    {
+      "addr": "00488c70",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00488c70"
+    },
+    {
+      "addr": "00489ce0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0"
+    },
+    {
+      "addr": "00487010",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010"
+    },
+    {
+      "addr": "004874c0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641798",
+      "name": "s_d_00641798",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064179b",
+      "name": "s_No_script_loaded_0064179b",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7465753424657535,
+    "instruction_count": 146,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 15,
+      "CBRANCH": 8,
+      "COPY": 98,
+      "INT_ADD": 56,
+      "INT_AND": 102,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 1,
+      "INT_LESS": 11,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 9,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 19,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 38,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 5,
+      "INT_SUB": 66,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 22,
+      "POPCOUNT": 38,
+      "RETURN": 1,
+      "STORE": 56,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 693
+  },
+  "stack_frame": {
+    "frame_size": 188,
+    "local_size": 168,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_5",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_5",
+      "text": "iVar1 = (param_5 - param_3) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "text": "iVar1 = (param_5 - param_3) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "text": "(&local_40,param_2,param_3,(param_4 - param_2) + 1,iVar1,(CDrawSurface *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "text": "(&local_40,param_2,param_3,(param_4 - param_2) + 1,iVar1,(CDrawSurface *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_4",
+      "text": "(&local_40,param_2,param_3,(param_4 - param_2) + 1,iVar1,(CDrawSurface *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "text": "(&local_40,param_2,param_3,(param_4 - param_2) + 1,iVar1,(CDrawSurface *)0x0);",
+      "type": "unnamed_param"
+    }
+  ]
+}

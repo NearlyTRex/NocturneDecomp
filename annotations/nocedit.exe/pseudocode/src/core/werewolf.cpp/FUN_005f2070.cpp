@@ -1,12 +1,12 @@
 // Name: core_werewolf.cpp_FUN_005f2070
 // Address: 005f2070
 // Address Range: [[005f2070, 005f20c1]]
-// Convention: unknown
-// Signature: undefined4 core_werewolf_cpp_FUN_005f2070(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_werewolf_cpp_FUN_005f2070(void)
 
 #include "nocturne.h"
 
-uint core_werewolf_cpp_FUN_005f2070(void)
+int __cdecl core_werewolf_cpp_FUN_005f2070(void)
 
 {
   CDemonActor *pCVar1;

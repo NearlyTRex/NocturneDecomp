@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_FUN_0053c340 at 0053c3a5
+;   core_msnedit.cpp_CDemonMission_FUN_0053c340 at 0053c3a5
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583fa6
 ;
 ; *****************************************************************************

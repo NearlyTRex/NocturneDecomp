@@ -21,27 +21,27 @@ CDynamite * __cdecl CDynamite::ctor(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_FUN_0049ce70
 // Address: 0049ce70
-undefined4 FUN_0049ce70(void);
+int __cdecl FUN_0049ce70(void);
 
 // Original: core_dynamite.cpp_FUN_0049cee0
 // Address: 0049cee0
-float FUN_0049cee0(void);
+float __cdecl FUN_0049cee0(void);
 
 // Original: core_dynamite.cpp_FUN_0049cf10
 // Address: 0049cf10
-void FUN_0049cf10(void);
+void __cdecl FUN_0049cf10(void);
 
 // Original: core_dynamite.cpp_FUN_0049cf20
 // Address: 0049cf20
-void FUN_0049cf20(void);
+void __cdecl FUN_0049cf20(void);
 
 // Original: core_dynamite.cpp_FUN_0049cf70
 // Address: 0049cf70
-undefined4 FUN_0049cf70(void);
+int __cdecl FUN_0049cf70(void);
 
 // Original: core_dynamite.cpp_FUN_0049cf90
 // Address: 0049cf90
-bool FUN_0049cf90(void);
+bool __cdecl FUN_0049cf90(void);
 
 // Original: core_dynamite.cpp_CDynamite_process_FUN_0049cfb0
 // Address: 0049cfb0

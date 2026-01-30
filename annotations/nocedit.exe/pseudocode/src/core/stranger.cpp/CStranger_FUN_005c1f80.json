@@ -91,9 +91,9 @@
         "005c1fd1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_stranger.cpp_CStranger_FUN_005c1f80",
-    "signature": "void core_stranger_cpp_CStranger_FUN_005c1f80(void)"
+    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(void)"
   },
   "function_calls": [
     {
@@ -110,17 +110,15 @@
         "call_addr": "005bde10",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005bdd20",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 3,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 1
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 2
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2727272727272725,
@@ -216,11 +214,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
+      "estimated_params": 1,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CBloodPool * core_gore_cpp_FUN_004edde0(void)
+; __cdecl CBloodPool * __cdecl core_gore_cpp_FUN_004edde0(void)
 ;
 ;
 ; XREF[1]:

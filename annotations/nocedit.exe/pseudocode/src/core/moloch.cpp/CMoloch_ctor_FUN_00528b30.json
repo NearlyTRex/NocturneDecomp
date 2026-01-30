@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 38,
-        "line": 21,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -30,7 +23,7 @@
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 68,
         "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -86,13 +79,15 @@
   },
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 41,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "pseudocode_lines": 41,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 9,
+    "suspect_types": [
+      "extra_output"
+    ],
     "total_lines": 112
   },
   "cross_references": [
@@ -256,7 +251,71 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX",
+      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0x21e08) = &g_CMolochVTable;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EAX",
+      "text": "((CDeformableModelInstance *)(extraout_EAX + -0x21e04),\"moloch_h.dfm\");",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "text": "pcVar4 = (char *)(extraout_EAX + -200);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_EAX",
+      "text": "pcVar4 = (char *)(extraout_EAX + -100);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 40,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0xd4) = 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 41,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0xd0) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 42,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0xcc) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 43,
+      "match": "extraout_EAX",
+      "text": "return (CMoloch *)(extraout_EAX + -0x21f5c);",
+      "type": "extra_output"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

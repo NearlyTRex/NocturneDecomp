@@ -1,14 +1,14 @@
 // Name: core_flamecan.cpp_FUN_004cb4c0
 // Address: 004cb4c0
 // Address Range: [[004cb4c0, 004cb521] [004cb52d, 004cb541]]
-// Convention: unknown
-// Signature: int core_flamecan_cpp_FUN_004cb4c0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_flamecan_cpp_FUN_004cb4c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_FUN_004cb4c0(uint param_1) */
 
-int core_flamecan_cpp_FUN_004cb4c0(void)
+int __cdecl core_flamecan_cpp_FUN_004cb4c0(void)
 
 {
   CBoundingBox3D *this_ptr;

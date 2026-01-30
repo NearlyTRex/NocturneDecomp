@@ -1,12 +1,12 @@
 // Name: core_enemy.cpp_FUN_004aa0f0
 // Address: 004aa0f0
 // Address Range: [[004aa0f0, 004aa16b]]
-// Convention: unknown
-// Signature: int core_enemy_cpp_FUN_004aa0f0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_enemy_cpp_FUN_004aa0f0(void)
 
 #include "nocturne.h"
 
-int core_enemy_cpp_FUN_004aa0f0(void)
+int __cdecl core_enemy_cpp_FUN_004aa0f0(void)
 
 {
   CCharacter *this_ptr;

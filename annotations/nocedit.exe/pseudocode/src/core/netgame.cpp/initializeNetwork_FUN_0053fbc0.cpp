@@ -1,12 +1,12 @@
 // Name: core_netgame.cpp_initializeNetwork_FUN_0053fbc0
 // Address: 0053fbc0
 // Address Range: [[0053fbc0, 0053fcfa]]
-// Convention: unknown
-// Signature: undefined4 core_netgame_cpp_initializeNetwork_FUN_0053fbc0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_netgame_cpp_initializeNetwork_FUN_0053fbc0(void)
 
 #include "nocturne.h"
 
-uint core_netgame_cpp_initializeNetwork_FUN_0053fbc0(void)
+int __cdecl core_netgame_cpp_initializeNetwork_FUN_0053fbc0(void)
 
 {
   SSocketContext *socket_ctx;

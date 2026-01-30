@@ -59,7 +59,7 @@ section .text
     PUSH 0x2d873dc                      ; 004ed855 | DAT_02d873dc
         ;   Label: LAB_004ed855
     CALL core_gore.cpp_FUN_004ec470     ; 004ed85a
-        ;   XREF to: 004ec470 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ec470()
+        ;   XREF to: 004ec470 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ec470()
     ADD ESP,0x4                         ; 004ed85f
     TEST EBP,EBP                        ; 004ed862
     JZ 0x004ed91b                       ; 004ed864
@@ -75,7 +75,7 @@ section .text
     PUSH EBX                            ; 004ed87d | DAT_02d873dc | DAT_02d87420
     INC ESI                             ; 004ed87e
     CALL core_gore.cpp_FUN_004ec500     ; 004ed87f
-        ;   XREF to: 004ec500 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ec500()
+        ;   XREF to: 004ec500 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ec500()
     MOV ECX,dword ptr [0x02d873d8]      ; 004ed884 | DAT_02d873d8
     ADD ESP,0x8                         ; 004ed88a
     ADD EBX,0x44                        ; 004ed88d | DAT_02d87420
@@ -87,7 +87,7 @@ section .text
     PUSH 0x2da8724                      ; 004ed8a0 | DAT_02da8724
         ;   Label: LAB_004ed8a0
     CALL core_gore.cpp_FUN_004ecc40     ; 004ed8a5
-        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecc40()
+        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ecc40()
     ADD ESP,0x4                         ; 004ed8aa
     TEST EBP,EBP                        ; 004ed8ad
     JZ 0x004ed95c                       ; 004ed8af
@@ -103,7 +103,7 @@ section .text
     PUSH ESI                            ; 004ed8c8 | DAT_02da8724 | DAT_02da874c
     INC EBX                             ; 004ed8c9
     CALL core_gore.cpp_FUN_004ecce0     ; 004ed8ca
-        ;   XREF to: 004ecce0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecce0()
+        ;   XREF to: 004ecce0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ecce0()
     MOV ECX,dword ptr [0x02da8720]      ; 004ed8cf | DAT_02da8720
     ADD ESP,0x8                         ; 004ed8d5
     ADD ESI,0x28                        ; 004ed8d8
@@ -126,7 +126,7 @@ section .text
     PUSH ESI                            ; 004ed8ff | DAT_02da8c2c | DAT_02da8c6c
     INC EBX                             ; 004ed900
     CALL core_gore.cpp_FUN_004ed3c0     ; 004ed901
-        ;   XREF to: 004ed3c0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed3c0()
+        ;   XREF to: 004ed3c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed3c0()
     MOV EDX,dword ptr [0x02da8c28]      ; 004ed906 | DAT_02da8c28
     ADD ESP,0x8                         ; 004ed90c
     ADD ESI,0x40                        ; 004ed90f
@@ -164,7 +164,7 @@ section .text
     ADD EAX,EBX                         ; 004ed94f | DAT_02d87420
     PUSH EAX                            ; 004ed951 | DAT_02d87420
     CALL core_gore.cpp_FUN_004ec500     ; 004ed952
-        ;   XREF to: 004ec500 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ec500()
+        ;   XREF to: 004ec500 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ec500()
     ADD ESP,0x8                         ; 004ed957
     JMP 0x004ed936                      ; 004ed95a
         ;   XREF to: 004ed936 (UNCONDITIONAL_JUMP)  ; LAB_004ed936
@@ -194,7 +194,7 @@ section .text
     ADD EAX,EBX                         ; 004ed990 | DAT_02da874c
     PUSH EAX                            ; 004ed992 | DAT_02da874c
     CALL core_gore.cpp_FUN_004ecce0     ; 004ed993
-        ;   XREF to: 004ecce0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecce0()
+        ;   XREF to: 004ecce0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ecce0()
     ADD ESP,0x8                         ; 004ed998
     JMP 0x004ed977                      ; 004ed99b
         ;   XREF to: 004ed977 (UNCONDITIONAL_JUMP)  ; LAB_004ed977
@@ -224,7 +224,7 @@ section .text
     ADD EAX,EBX                         ; 004ed9d2 | DAT_02da8c6c
     PUSH EAX                            ; 004ed9d4 | DAT_02da8c6c
     CALL core_gore.cpp_FUN_004ed3c0     ; 004ed9d5
-        ;   XREF to: 004ed3c0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed3c0()
+        ;   XREF to: 004ed3c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed3c0()
     ADD ESP,0x8                         ; 004ed9da
     JMP 0x004ed9b8                      ; 004ed9dd
         ;   XREF to: 004ed9b8 (UNCONDITIONAL_JUMP)  ; LAB_004ed9b8

@@ -1,15 +1,15 @@
 // Name: core_haystack.cpp_FUN_004f0e40
 // Address: 004f0e40
 // Address Range: [[004f0e40, 004f13e7]]
-// Convention: unknown
-// Signature: void core_haystack_cpp_FUN_004f0e40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_haystack_cpp_FUN_004f0e40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_haystack.cpp_FUN_004f0e40(uint param_1, uint
    param_2) */
 
-void core_haystack_cpp_FUN_004f0e40(void)
+void __cdecl core_haystack_cpp_FUN_004f0e40(void)
 
 {
   bool bVar1;
@@ -178,7 +178,7 @@ LAB_004f1134:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->model).motion_controller,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
           goto switchD_004f12ce_caseD_8;
         }
         goto LAB_004f1134;

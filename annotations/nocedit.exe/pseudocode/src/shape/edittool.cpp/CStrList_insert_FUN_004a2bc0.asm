@@ -9,8 +9,8 @@
 ; char *           Stack[0xc]:4   string_data
 ;
 ; XREF[3]:
+;   core_script.cpp_CScript_FUN_00566330 at 0056636f
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 005650b9
-;   core_script.cpp_CScript_insertAndEditorPutLine_FUN_00566330 at 0056636f
 ;   shape_edittool.cpp_CPickList_insert_FUN_004a5670 at 004a5693
 ;
 ; Referenced Globals:

@@ -1,14 +1,14 @@
 // Name: core_vampboss.cpp_SomethingVoicuHumanWav_FUN_005e74c0
 // Address: 005e74c0
 // Address Range: [[005e74c0, 005e7502]]
-// Convention: unknown
-// Signature: void core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_vampboss.cpp_SomethingVoicuHumanWav(uint param_1) */
 
-void core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
+void __cdecl core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
 
 {
   int in_stack_00000004;

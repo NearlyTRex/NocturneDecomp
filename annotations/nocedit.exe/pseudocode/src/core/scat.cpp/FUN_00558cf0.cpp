@@ -1,15 +1,15 @@
 // Name: core_scat.cpp_FUN_00558cf0
 // Address: 00558cf0
 // Address Range: [[00558cf0, 00558fc0]]
-// Convention: unknown
-// Signature: undefined4 core_scat_cpp_FUN_00558cf0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_scat_cpp_FUN_00558cf0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_00558cf0(uint param_1, uint param_2,
    uint param_3) */
 
-uint core_scat_cpp_FUN_00558cf0(void)
+int __cdecl core_scat_cpp_FUN_00558cf0(void)
 
 {
   CCharacter *this_ptr;
@@ -17,7 +17,7 @@ uint core_scat_cpp_FUN_00558cf0(void)
   CVector3f *pCVar2;
   CBoundingBox3D *pCVar3;
   float fVar4;
-  uint unaff_EDI;
+  int unaff_EDI;
   CDemonActor *in_stack_00000004;
   CDemonActor *in_stack_00000008;
   int in_stack_0000000c;
@@ -57,25 +57,25 @@ uint core_scat_cpp_FUN_00558cf0(void)
     fStack_f4 = pCVar2->y;
     if (in_stack_0000000c == 0) {
       if ((float)30 < fStack_f0) {
-        return 0xbf800000;
+        return -0x40800000;
       }
       if (fStack_f4 < (float)-0.78149070982587099) {
-        return 0xbf800000;
+        return -0x40800000;
       }
       if (1.56298141965174 < (double)fStack_f4) {
-        return 0xbf800000;
+        return -0x40800000;
       }
     }
     else {
       if ((float)35 < fStack_f0) {
-        return 0xbf800000;
+        return -0x40800000;
       }
       auStack_fc = (byte  [8])(double)fStack_f4;
       if (fStack_f4 < (float)-0.78539816337500001) {
-        return 0xbf800000;
+        return -0x40800000;
       }
       if (1.57079632675 < (double)auStack_fc) {
-        return 0xbf800000;
+        return -0x40800000;
       }
     }
     pCVar3 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&CStack_74);
@@ -98,5 +98,5 @@ uint core_scat_cpp_FUN_00558cf0(void)
       return unaff_EDI;
     }
   }
-  return 0xbf800000;
+  return -0x40800000;
 }

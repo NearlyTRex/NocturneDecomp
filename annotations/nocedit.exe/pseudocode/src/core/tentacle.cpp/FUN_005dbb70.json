@@ -4,19 +4,13 @@
       {
         "category": "other",
         "column": 30,
-        "line": 35,
-        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 30,
         "line": 36,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 45,
+        "line": 37,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
@@ -28,7 +22,13 @@
       {
         "category": "other",
         "column": 30,
-        "line": 52,
+        "line": 47,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 53,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -43,19 +43,13 @@
       {
         "category": "other",
         "column": 14,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
         "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 35,
+        "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -67,7 +61,7 @@
       {
         "category": "other",
         "column": 14,
-        "line": 39,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -79,7 +73,7 @@
       {
         "category": "other",
         "column": 14,
-        "line": 45,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -91,19 +85,25 @@
       {
         "category": "other",
         "column": 14,
-        "line": 52,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 280,
+    "complexity_score": 231,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 45,
-    "suspect_count": 21,
+    "pseudocode_lines": 46,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -111,7 +111,7 @@
       "unaffected_reg",
       "undefined_data"
     ],
-    "total_lines": 114
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -135,9 +135,9 @@
         "005dbc5b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_tentacle.cpp_FUN_005dbb70",
-    "signature": "void core_tentacle_cpp_FUN_005dbb70(void)"
+    "signature": "void __cdecl core_tentacle_cpp_FUN_005dbb70(void)"
   },
   "function_calls": [
     {
@@ -179,29 +179,24 @@
         "call_addr": "005dba57",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_FUN_005db9d0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 7,
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "005db204",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_CTentacle_process_FUN_005db050",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 1
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 4
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.615384615384615,
@@ -281,153 +276,118 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 9,
       "match": "unaff_ESI",
       "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 21,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 0xfd8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 0xfd8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "((CMatrix3x4f *)(DAT_03f6cd08 * 0x30 + in_stack_00000004),",
+      "text": "iVar2 = in_stack_00000004 + 0xfd8;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_03f6cd08",
-      "text": "((CMatrix3x4f *)(DAT_03f6cd08 * 0x30 + in_stack_00000004),",
+      "text": "((CMatrix3x4f *)(DAT_03f6cd08 * 0x30 + iVar2),",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "(CMatrix3x4f *)(DAT_03f6cd0c * 0x30 + in_stack_00000004),0.5,&local_6c);",
-      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_03f6cd0c",
-      "text": "(CMatrix3x4f *)(DAT_03f6cd0c * 0x30 + in_stack_00000004),0.5,&local_6c);",
+      "text": "(CMatrix3x4f *)(DAT_03f6cd0c * 0x30 + iVar2),0.5,&local_6c);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "((CMatrix3x4f *)(DAT_03f6cd10 * 0x30 + in_stack_00000004),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_03f6cd10",
-      "text": "((CMatrix3x4f *)(DAT_03f6cd10 * 0x30 + in_stack_00000004),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "(CMatrix3x4f *)(DAT_03f6cd14 * 0x30 + in_stack_00000004),0.5,&local_fc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_03f6cd14",
-      "text": "(CMatrix3x4f *)(DAT_03f6cd14 * 0x30 + in_stack_00000004),0.5,&local_fc);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 30,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_03f6cd10",
+      "text": "((CMatrix3x4f *)(DAT_03f6cd10 * 0x30 + iVar2),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_03f6cd14",
+      "text": "(CMatrix3x4f *)(DAT_03f6cd14 * 0x30 + iVar2),0.5,&local_fc);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 44,
+      "line": 45,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = pCVar2->m[0].w;",
+      "text": "*unaff_ESI = pCVar3->m[0].w;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 46,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 47,
       "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 47,
       "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_msnedit_cpp_FUN_00535c60(void)
+; __cdecl float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
 ; Local Variables:
 ; undefined1       Stack[-0x5c]:1  local_5c
 ; undefined4       Stack[-0x50]:4  local_50
@@ -21,8 +25,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_BeginAndEndScene_FUN_0053c970 at 0053c9c8
-;   core_msnedit.cpp_FUN_0053b9f0 at 0053baf8
+;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053baf8
+;   core_msnedit.cpp_CDemonMission_FUN_0053c970 at 0053c9c8
 ;
 ; Referenced Globals:
 ;   float FLOAT_0063b2ec = 10000

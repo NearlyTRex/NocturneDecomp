@@ -1,15 +1,15 @@
 // Name: core_curtain.cpp_CCurtain_load_FUN_0044b3e0
 // Address: 0044b3e0
 // Address Range: [[0044b3e0, 0044b5f9]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_other_curtain.cpp_CCurtain_load(CCurtain* param_1, char* param_2, char*
    param_3, char* param_4) */
 
-void core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
+void __cdecl core_curtain_cpp_CCurtain_load_FUN_0044b3e0(void)
 
 {
   CDemonActor *in_stack_00000004;

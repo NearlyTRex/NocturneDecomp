@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
+; __cdecl void __cdecl core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

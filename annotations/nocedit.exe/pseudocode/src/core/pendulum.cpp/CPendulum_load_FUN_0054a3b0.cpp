@@ -1,14 +1,14 @@
 // Name: core_pendulum.cpp_CPendulum_load_FUN_0054a3b0
 // Address: 0054a3b0
 // Address Range: [[0054a3b0, 0054a54b]]
-// Convention: unknown
-// Signature: void core_pendulum_cpp_CPendulum_load_FUN_0054a3b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_pendulum_cpp_CPendulum_load_FUN_0054a3b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_pendulum.cpp_CPendulum_load(CPendulum* pPendulum) */
 
-void core_pendulum_cpp_CPendulum_load_FUN_0054a3b0(void)
+void __cdecl core_pendulum_cpp_CPendulum_load_FUN_0054a3b0(void)
 
 {
   CDemonActor *in_stack_00000004;

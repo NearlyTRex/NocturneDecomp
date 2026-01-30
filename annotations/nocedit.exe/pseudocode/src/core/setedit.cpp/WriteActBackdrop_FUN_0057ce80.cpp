@@ -1,8 +1,8 @@
 // Name: core_setedit.cpp_WriteActBackdrop_FUN_0057ce80
 // Address: 0057ce80
 // Address Range: [[0057ce80, 0057d335]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
    uint param_3, uint param_4, uint param_5, uint param_6, uint
    param_7, uint param_8) */
 
-void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
+void __cdecl core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
 
 {
   void *pvVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -136,7 +136,7 @@ section .text
     PUSH ESI                            ; 00543107
     PUSH EBX                            ; 00543108
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00543109
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
     MOV EAX,dword ptr [EBX + 0x114]     ; 0054310e
     SHL EAX,0x3                         ; 00543114
     MOV EDX,EAX                         ; 00543117

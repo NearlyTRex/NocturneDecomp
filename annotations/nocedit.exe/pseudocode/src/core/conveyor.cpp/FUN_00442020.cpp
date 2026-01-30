@@ -1,14 +1,14 @@
 // Name: core_conveyor.cpp_FUN_00442020
 // Address: 00442020
 // Address Range: [[00442020, 004420b4]]
-// Convention: unknown
-// Signature: void core_conveyor_cpp_FUN_00442020(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_conveyor_cpp_FUN_00442020(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_conveyor.cpp_FUN_00442020(uint param_1) */
 
-void core_conveyor_cpp_FUN_00442020(void)
+void __cdecl core_conveyor_cpp_FUN_00442020(void)
 
 {
   int in_stack_00000004;

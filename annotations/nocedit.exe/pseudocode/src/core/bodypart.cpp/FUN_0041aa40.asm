@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bodypart_cpp_FUN_0041aa40(void)
+; __cdecl void __cdecl core_bodypart_cpp_FUN_0041aa40(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc0]:4  local_c0
@@ -336,7 +336,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 0041adb0
     PUSH ESI                            ; 0041adb3
     CALL core_bodypart.cpp_FUN_0041a630 ; 0041adb4
-        ;   XREF to: 0041a630 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a630()
+        ;   XREF to: 0041a630 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a630()
     ADD ESP,0x8                         ; 0041adb9
     MOV ESP,EBP                         ; 0041adbc
     POP EBP                             ; 0041adbe

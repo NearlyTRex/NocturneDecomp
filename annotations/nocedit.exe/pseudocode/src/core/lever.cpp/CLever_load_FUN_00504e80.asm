@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_lever_cpp_CLever_load_FUN_00504e80(void)
+; __cdecl void __cdecl core_lever_cpp_CLever_load_FUN_00504e80(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xd4]:1  local_d4

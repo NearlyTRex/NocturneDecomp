@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_gabriela_cpp_FUN_004d2b10(void)
+; __cdecl CDemonActorType * __cdecl core_gabriela_cpp_FUN_004d2b10(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,12 +1,12 @@
 // Name: core_game.cpp_FUN_004dd9d0
 // Address: 004dd9d0
 // Address Range: [[004dd9d0, 004dda7a]]
-// Convention: unknown
-// Signature: void core_game_cpp_FUN_004dd9d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_FUN_004dd9d0(void)
 
 #include "nocturne.h"
 
-void core_game_cpp_FUN_004dd9d0(void)
+void __cdecl core_game_cpp_FUN_004dd9d0(void)
 
 {
   byte bVar1;

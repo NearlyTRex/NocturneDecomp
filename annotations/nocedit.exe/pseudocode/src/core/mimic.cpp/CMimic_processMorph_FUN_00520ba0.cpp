@@ -1,15 +1,15 @@
 // Name: core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
 // Address: 00520ba0
 // Address Range: [[00520ba0, 00520d07]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mimic.cpp_CMimic_processMorph(CMimic* param_1, uint
    param_2) */
 
-void core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
+void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
 
 {
   float fVar1;

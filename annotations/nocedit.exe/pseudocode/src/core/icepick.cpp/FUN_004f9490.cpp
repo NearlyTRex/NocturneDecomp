@@ -1,15 +1,15 @@
 // Name: core_icepick.cpp_FUN_004f9490
 // Address: 004f9490
 // Address Range: [[004f9490, 004f9508] [004f9564, 004f958c]]
-// Convention: unknown
-// Signature: void core_icepick_cpp_FUN_004f9490(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_icepick_cpp_FUN_004f9490(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_icepick.cpp_FUN_004f9490(uint param_1, uint
    param_2) */
 
-void core_icepick_cpp_FUN_004f9490(void)
+void __cdecl core_icepick_cpp_FUN_004f9490(void)
 
 {
   CCharacter *this_ptr;
@@ -53,8 +53,6 @@ LAB_004f94e9:
     local_6c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(90.0,130.0);
     local_6c.weapon_damage_modifier = 0.5;
     local_6c.unknown = -1;
-    local_6c.attacker = &in_stack_00000004->base;
-    local_6c.wielder = &in_stack_00000004->base;
     local_14 = local_6c.damage_amount;
     iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                       (this_ptr,&local_30,1.0,&local_6c);

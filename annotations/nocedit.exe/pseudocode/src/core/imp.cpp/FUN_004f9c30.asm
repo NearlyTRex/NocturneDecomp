@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_imp_cpp_FUN_004f9c30(void)
+; __cdecl void __cdecl core_imp_cpp_FUN_004f9c30(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1a0]:1  local_1a0
@@ -365,7 +365,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 004f9ed1 | g_CGorePtr
     PUSH ESI                            ; 004f9ed7 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004f9ed8
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 004f9edd
     MOV EAX,dword ptr [EBX + 0xbe3c]    ; 004f9ee0
     PUSH EAX                            ; 004f9ee6
@@ -615,7 +615,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 004fa1a9 | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 004fa1af | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 004fa1b0
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 004fa1b5
     MOV dword ptr [EBX + 0xbe28],0x1    ; 004fa1b8
     JMP 0x004f9fef                      ; 004fa1c2
@@ -705,7 +705,7 @@ section .text
     PUSH EAX                            ; 004fa2b5
     PUSH EBX                            ; 004fa2b6
     CALL core_enemy.cpp_FUN_004a9880    ; 004fa2b7
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 004fa2bc
     TEST EAX,EAX                        ; 004fa2bf
     JZ 0x004f9fef                       ; 004fa2c1

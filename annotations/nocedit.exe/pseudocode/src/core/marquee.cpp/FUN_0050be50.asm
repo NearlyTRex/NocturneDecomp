@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_marquee_cpp_FUN_0050be50(void)
+; __cdecl float __cdecl core_marquee_cpp_FUN_0050be50(void)
 ;
 ;
 ; Referenced Globals:

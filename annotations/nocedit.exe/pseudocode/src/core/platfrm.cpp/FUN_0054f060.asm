@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_platfrm_cpp_FUN_0054f060(void)
+; __cdecl void __cdecl core_platfrm_cpp_FUN_0054f060(void)
 ;
 ;
 ; Referenced Globals:

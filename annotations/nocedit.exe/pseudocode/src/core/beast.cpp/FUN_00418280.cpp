@@ -1,14 +1,14 @@
 // Name: core_beast.cpp_FUN_00418280
 // Address: 00418280
 // Address Range: [[00418280, 0041829f]]
-// Convention: unknown
-// Signature: void core_beast_cpp_FUN_00418280(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_beast_cpp_FUN_00418280(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_beast.cpp_FUN_00418280(uint param_1) */
 
-void core_beast_cpp_FUN_00418280(void)
+void __cdecl core_beast_cpp_FUN_00418280(void)
 
 {
   CEnemy *in_stack_00000004;

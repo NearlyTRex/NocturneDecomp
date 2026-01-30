@@ -1,15 +1,15 @@
 // Name: core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800
 // Address: 00543800
 // Address Range: [[00543800, 005438b7]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_netgame.cpp_CNetGame_applySimFrameHistory(CNetGame* param_1,
    uint param_2) */
 
-void core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
+void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
 
 {
   int *piVar1;

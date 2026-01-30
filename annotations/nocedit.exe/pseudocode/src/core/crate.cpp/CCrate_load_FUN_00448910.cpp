@@ -1,15 +1,15 @@
 // Name: core_crate.cpp_CCrate_load_FUN_00448910
 // Address: 00448910
 // Address Range: [[00448910, 00448954]]
-// Convention: unknown
-// Signature: void core_crate_cpp_CCrate_load_FUN_00448910(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_crate_cpp_CCrate_load_FUN_00448910(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_other_crate.cpp_CCrate_load(CCrate* pCrate, uint param_2, char*
    param_3, char* param_4) */
 
-void core_crate_cpp_CCrate_load_FUN_00448910(void)
+void __cdecl core_crate_cpp_CCrate_load_FUN_00448910(void)
 
 {
   CDemonActor *in_stack_00000004;

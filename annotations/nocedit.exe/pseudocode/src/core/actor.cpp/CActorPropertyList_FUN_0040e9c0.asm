@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_actor_cpp_CActorPropertyList_FUN_0040e9c0(void)
+; __cdecl int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e9c0(void)
 ;
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_FUN_0053c4f0 at 0053c649
+;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c649
 ;
 ; *****************************************************************************
 

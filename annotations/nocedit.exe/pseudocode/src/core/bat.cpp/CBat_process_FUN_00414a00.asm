@@ -60,7 +60,7 @@ section .text
     PUSH EBX                            ; 00414a38
     FSTP float ptr [EBX + 0x304]        ; 00414a39
     CALL core_bat.cpp_FUN_00414ce0      ; 00414a3f
-        ;   XREF to: 00414ce0 (UNCONDITIONAL_CALL)  ; undefined core_bat.cpp_FUN_00414ce0()
+        ;   XREF to: 00414ce0 (UNCONDITIONAL_CALL)  ; void core_bat.cpp_FUN_00414ce0()
     ADD ESP,0x4                         ; 00414a44
     FLD float ptr [ESI]                 ; 00414a47
     FSUB float ptr [ESP + 0x10]         ; 00414a49

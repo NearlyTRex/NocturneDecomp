@@ -74,7 +74,7 @@ section .text
     SUB EAX,0x1c8                       ; 005da5a3
     PUSH EAX                            ; 005da5a8
     CALL core_cloth.cpp_FUN_0043bf80    ; 005da5a9
-        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bf80()
+        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_0043bf80()
     ADD ESP,0x8                         ; 005da5ae
     PUSH 0x0                            ; 005da5b1
     SUB EAX,0x293c                      ; 005da5b3

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_pendulum_cpp_FUN_0054a180(void)
+; __cdecl void __cdecl core_pendulum_cpp_FUN_0054a180(void)
 ;
 ;
 ; Referenced Globals:
@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_0054a1cf
     PUSH ESI                            ; 0054a1d3
     CALL core_pendulum.cpp_FUN_00549b90 ; 0054a1d4
-        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_FUN_00549b90()
+        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_FUN_00549b90()
     FLD float ptr [ESI + 0x430]         ; 0054a1d9
     FMUL double ptr [0x0063ed01]        ; 0054a1df | DOUBLE_0063ed01
     FMUL float ptr [ESI + 0x434]        ; 0054a1e5
@@ -142,7 +142,7 @@ section .text
     PUSH EBX                            ; 0054a2a1
     PUSH ESI                            ; 0054a2a2
     CALL core_pendulum.cpp_FUN_005495c0 ; 0054a2a3
-        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_FUN_005495c0()
+        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_FUN_005495c0()
     ADD ESP,0x10                        ; 0054a2a8
     JMP 0x0054a24e                      ; 0054a2ab
         ;   XREF to: 0054a24e (UNCONDITIONAL_JUMP)  ; LAB_0054a24e
@@ -161,7 +161,7 @@ section .text
     PUSH EBX                            ; 0054a2c4
     PUSH ESI                            ; 0054a2c5
     CALL core_pendulum.cpp_FUN_005495c0 ; 0054a2c6
-        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_FUN_005495c0()
+        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_FUN_005495c0()
     ADD ESP,0x10                        ; 0054a2cb
     INC EBP                             ; 0054a2ce
     ADD EDI,0x4                         ; 0054a2cf

@@ -1,12 +1,12 @@
 // Name: core_health.cpp_CHealthItem_serialize_FUN_004f1f20
 // Address: 004f1f20
 // Address Range: [[004f1f20, 004f1f9f]]
-// Convention: unknown
-// Signature: void core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
 
 #include "nocturne.h"
 
-void core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
+void __cdecl core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
 
 {
   CDemonActor *in_stack_00000004;

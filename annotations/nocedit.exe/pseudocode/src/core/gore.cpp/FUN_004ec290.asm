@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_gore_cpp_FUN_004ec290(void)
+; __cdecl int __cdecl core_gore_cpp_FUN_004ec290(void)
 ;
 ;
 ; Referenced Globals:
@@ -34,7 +34,7 @@ section .text
     MOV EBP,dword ptr [0x0067b9a0]      ; 004ec2ad | g_CGorePtr
     PUSH EBP                            ; 004ec2b3 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edb40     ; 004ec2b4
-        ;   XREF to: 004edb40 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edb40()
+        ;   XREF to: 004edb40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edb40()
     ADD ESP,0xc                         ; 004ec2b9
     MOV EAX,0x1                         ; 004ec2bc
     POP EBP                             ; 004ec2c1
@@ -50,7 +50,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 004ec2cc | g_CGorePtr
     PUSH ESI                            ; 004ec2d2 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edb70     ; 004ec2d3
-        ;   XREF to: 004edb70 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edb70()
+        ;   XREF to: 004edb70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edb70()
     ADD ESP,0x10                        ; 004ec2d8
     POP EBX                             ; 004ec2db
     POP ESI                             ; 004ec2dc

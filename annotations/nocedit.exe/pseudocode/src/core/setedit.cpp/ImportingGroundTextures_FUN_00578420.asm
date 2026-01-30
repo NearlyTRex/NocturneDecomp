@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
+; __cdecl void __cdecl core_setedit_cpp_ImportingGroundTextures_FUN_00578420(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x19c]:1  local_19c
@@ -205,7 +205,7 @@ section .text
     LEA EAX,[ESP + 0x138]               ; 0057857b
     PUSH EAX                            ; 00578582
     CALL core_setedit.cpp_DefineTexturesMaybe_FUN_00578290 ; 00578583
-        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_DefineTexturesMaybe_FUN_00578290()
+        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_DefineTexturesMaybe_FUN_00578290()
     ADD ESP,0x8                         ; 00578588
     JMP 0x00578473                      ; 0057858b
         ;   XREF to: 00578473 (UNCONDITIONAL_JUMP)  ; LAB_00578473

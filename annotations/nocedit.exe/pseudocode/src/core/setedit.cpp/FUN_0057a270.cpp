@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_FUN_0057a270
 // Address: 0057a270
 // Address Range: [[0057a270, 0057a293]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_FUN_0057a270(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_FUN_0057a270(void)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_FUN_0057a270(void)
+void __cdecl core_setedit_cpp_FUN_0057a270(void)
 
 {
   g_CurrentFilename = "..\\core\\setedit.cpp";

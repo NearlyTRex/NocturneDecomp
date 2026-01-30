@@ -13,10 +13,9 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   CBoundingBox3D *pCVar2;
   int iVar3;
   CBoundingBox3D *pCVar4;
-  uint uVar5;
+  int iVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
   CBoundingBox3D local_c8;
   float local_a4 [3];
   float local_98;
@@ -79,10 +78,10 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
     }
     pCVar4 = local_24;
     iVar1 = local_2c;
-    iVar7 = 0x10;
-    for (iVar8 = 1; iVar8 < *(int *)((int)&this_ptr[0x15].unk + iVar1); iVar8 = iVar8 + 1) {
-      iVar3 = *(int *)((int)&this_ptr[0x16].unk + iVar1) + iVar7;
-      iVar7 = iVar7 + 0x10;
+    iVar6 = 0x10;
+    for (iVar7 = 1; iVar7 < *(int *)((int)&this_ptr[0x15].unk + iVar1); iVar7 = iVar7 + 1) {
+      iVar3 = *(int *)((int)&this_ptr[0x16].unk + iVar1) + iVar6;
+      iVar6 = iVar6 + 0x10;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar4,(CVector3f *)(iVar3 + 4));
     }
     local_2c = local_2c + 0x608;
@@ -97,54 +96,54 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   do {
     iVar1 = local_28;
     local_14 = local_30;
-    iVar7 = 1 - local_28;
+    iVar6 = 1 - local_28;
     local_18 = local_34;
-    pCVar2 = &local_c8 + iVar7;
+    pCVar2 = &local_c8 + iVar6;
     local_8c = *local_1c - (pCVar2->min).x;
-    local_88 = local_1c[1] - (&local_c8)[iVar7].min.y;
+    local_88 = local_1c[1] - (&local_c8)[iVar6].min.y;
     pCVar4 = &local_c8 + local_28;
-    local_84 = local_1c[2] - (&local_c8)[iVar7].min.z;
+    local_84 = local_1c[2] - (&local_c8)[iVar6].min.z;
     local_5c = local_20->x - (pCVar4->min).x;
     local_58 = local_20->y - (&local_c8)[local_28].min.y;
     local_54 = local_20->z - (&local_c8)[local_28].min.z;
     local_68 = local_8c / local_5c;
     local_44 = *local_1c - (pCVar2->min).x;
-    local_40 = local_1c[1] - (&local_c8)[iVar7].min.y;
-    local_3c = local_1c[2] - (&local_c8)[iVar7].min.z;
+    local_40 = local_1c[1] - (&local_c8)[iVar6].min.y;
+    local_3c = local_1c[2] - (&local_c8)[iVar6].min.z;
     local_74 = local_20->x - (pCVar4->min).x;
     local_70 = local_20->y - (&local_c8)[local_28].min.y;
     local_6c = local_20->z - (&local_c8)[local_28].min.z;
     local_64 = local_40 / local_70;
     local_98 = *local_1c - (pCVar2->min).x;
-    local_94 = local_1c[1] - (&local_c8)[iVar7].min.y;
-    local_90 = local_1c[2] - (&local_c8)[iVar7].min.z;
+    local_94 = local_1c[1] - (&local_c8)[iVar6].min.y;
+    local_90 = local_1c[2] - (&local_c8)[iVar6].min.z;
     local_80 = local_20->x - (pCVar4->min).x;
     local_7c = local_20->y - (&local_c8)[local_28].min.y;
     local_78 = local_20->z - (&local_c8)[local_28].min.z;
     local_60 = local_90 / local_78;
-    iVar8 = 0;
+    iVar7 = 0;
     if (0 < local_30[0x15].unk) {
       iVar3 = 0;
       do {
-        iVar6 = local_14[0x16].unk + iVar3;
-        local_50 = *(float *)(iVar6 + 4);
-        local_4c = *(float *)(iVar6 + 8);
-        local_48 = *(float *)(iVar6 + 0xc);
+        iVar5 = local_14[0x16].unk + iVar3;
+        local_50 = *(float *)(iVar5 + 4);
+        local_4c = *(float *)(iVar5 + 8);
+        local_48 = *(float *)(iVar5 + 0xc);
         if (this_ptr[0x30a].unk != 0) {
-          local_50 = *(float *)(iVar6 + 4) - (pCVar4->min).x;
+          local_50 = *(float *)(iVar5 + 4) - (pCVar4->min).x;
           local_50 = local_50 * local_68;
-          local_4c = *(float *)(iVar6 + 8) - (&local_c8)[iVar1].min.y;
+          local_4c = *(float *)(iVar5 + 8) - (&local_c8)[iVar1].min.y;
           local_4c = local_4c * local_64;
-          local_48 = (*(float *)(iVar6 + 0xc) - (&local_c8)[iVar1].min.z) * local_60;
+          local_48 = (*(float *)(iVar5 + 0xc) - (&local_c8)[iVar1].min.z) * local_60;
           local_50 = local_50 + (pCVar2->min).x;
-          local_4c = local_4c + (&local_c8)[iVar7].min.y;
-          local_48 = local_48 + (&local_c8)[iVar7].min.z;
+          local_4c = local_4c + (&local_c8)[iVar6].min.y;
+          local_48 = local_48 + (&local_c8)[iVar6].min.z;
         }
-        uVar5 = core_morph_cpp_FUN_0052b280();
-        *(uint *)(local_14[0x16].unk + iVar3) = uVar5;
-        iVar8 = iVar8 + 1;
+        iVar5 = core_morph_cpp_FUN_0052b280();
+        *(int *)(local_14[0x16].unk + iVar3) = iVar5;
+        iVar7 = iVar7 + 1;
         iVar3 = iVar3 + 0x10;
-      } while (iVar8 < local_14[0x15].unk);
+      } while (iVar7 < local_14[0x15].unk);
     }
     local_28 = local_28 + 1;
     local_1c = local_1c + -6;

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 16,
+        "line": 15,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       }
     ],
@@ -20,17 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 89,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "pseudocode_lines": 19,
-    "suspect_count": 6,
+    "pseudocode_lines": 18,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 44
+    "total_lines": 43
   },
   "cross_references": [],
   "function": {
@@ -41,9 +41,9 @@
         "004aa29c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_FUN_004aa270",
-    "signature": "undefined4 core_event_cpp_FUN_004aa270(void)"
+    "signature": "int __cdecl core_event_cpp_FUN_004aa270(int param_1,int param_2,char *param_3)"
   },
   "function_calls": [],
   "globals": [
@@ -76,8 +76,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.9,
@@ -103,55 +103,91 @@
     "pcode_op_count": 78
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000000c",
-      "text": "char *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int __cdecl core_event_cpp_FUN_004aa270(int param_1,int param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "int __cdecl core_event_cpp_FUN_004aa270(int param_1,int param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "int __cdecl core_event_cpp_FUN_004aa270(int param_1,int param_2,char *param_3)",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 8,
       "match": "DAT_02d0a460",
       "text": "pcVar2 = &DAT_02d0a460;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "cVar1 = *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_3",
+      "text": "cVar1 = *param_3;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "text": "cVar1 = param_3[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 16,
-      "match": "in_stack_0000000c",
-      "text": "cVar1 = in_stack_0000000c[1];",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "param_3 = param_3 + 2;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "text": "param_3 = param_3 + 2;",
+      "type": "unnamed_param"
     }
   ]
 }

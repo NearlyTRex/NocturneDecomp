@@ -1,14 +1,14 @@
 // Name: core_boneguy.cpp_CBoneGuy_load_FUN_0041d270
 // Address: 0041d270
 // Address Range: [[0041d270, 0041d4b2]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
 
 #include "nocturne.h"
 
 /* Signature: CBoneGuy* actors_enemy_boneguy.cpp_CBoneGuy_load(CBoneGuy* param_1, char* param_2) */
 
-void core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
+void __cdecl core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
 
 {
   CDeformableModelInstance *motion_controller;

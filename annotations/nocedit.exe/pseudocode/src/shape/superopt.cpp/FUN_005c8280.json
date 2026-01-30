@@ -91,9 +91,9 @@
         "005c84b9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_superopt.cpp_FUN_005c8280",
-    "signature": "undefined4 shape_superopt_cpp_FUN_005c8280(void)"
+    "signature": "int __cdecl shape_superopt_cpp_FUN_005c8280(void)"
   },
   "function_calls": [
     {
@@ -115,31 +115,24 @@
         "call_addr": "005c7d87",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_FUN_005c7b20",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 7,
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       },
       {
         "call_addr": "005c91fa",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_FUN_005c91e0",
-        "estimated_params": 10,
+        "estimated_params": 7,
         "instructions_analyzed": 14,
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 7
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 5
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.975124378109452,
@@ -362,11 +355,11 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

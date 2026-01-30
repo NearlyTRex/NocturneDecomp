@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_skeledit_cpp_FUN_00589b10 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5)
+; __cdecl void __cdecl core_skeledit_cpp_FUN_00589b10(void)
 ;
 ;
 ; Referenced Globals:

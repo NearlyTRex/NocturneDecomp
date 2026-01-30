@@ -228,7 +228,7 @@ section .text
         ;   XREF to: 00428854 (CONDITIONAL_JUMP)  ; LAB_00428854
     PUSH EDI                            ; 00428848
     CALL core_path.cpp_FUN_00548500     ; 00428849
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 0042884e
     MOV dword ptr [EBP + 0x1c],EAX      ; 00428851
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00428854

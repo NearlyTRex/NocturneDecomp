@@ -1,12 +1,12 @@
 // Name: shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00
 // Address: 005d7e00
 // Address Range: [[005d7e00, 005d811a]]
-// Convention: unknown
-// Signature: void shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
 
 #include "nocturne.h"
 
-void shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
+void __cdecl shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
 
 {
   double *pdVar1;

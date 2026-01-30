@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 11,
-        "line": 18,
+        "line": 20,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 55,
-        "line": 18,
+        "column": 53,
+        "line": 20,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 23,
+        "line": 25,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 24,
-        "line": 24,
-        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 35,
+        "column": 23,
+        "line": 26,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 56,
+        "line": 37,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 58,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -48,50 +48,50 @@
       },
       {
         "category": "other",
-        "column": 46,
-        "line": 18,
+        "column": 44,
+        "line": 20,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 23,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 35,
+        "column": 14,
+        "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 56,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 433,
+    "complexity_score": 415,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 58,
-    "suspect_count": 36,
+    "pseudocode_lines": 60,
+    "suspect_count": 34,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "unnamed_param"
+      "register_param"
     ],
-    "total_lines": 140
+    "total_lines": 142
   },
   "cross_references": [],
   "function": {
@@ -114,9 +114,9 @@
         "004b1bfe"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_FUN_004b1b5c",
-    "signature": "void core_event_cpp_FUN_004b1b5c(undefined4 param_1,uint *param_2,undefined4 param_3,uint *param_4)"
+    "signature": "void __cdecl core_event_cpp_FUN_004b1b5c(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -163,256 +163,242 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ECX",
+      "text": "uint *in_ECX;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 10,
-      "match": "param_2",
-      "text": "cVar2 = (char)*param_2;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "uint *in_EDX;",
+      "type": "register_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(uint *)((int)",
-      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_4",
-      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_4",
-      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_4",
-      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 12,
-      "match": "param_4",
-      "text": "*(char *)param_4 = cVar2;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "cVar2 = (char)*in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ECX",
+      "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ECX",
+      "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ECX",
+      "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
+      "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(char *)((int)",
-      "text": "cVar2 = *(char *)((int)param_2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "text": "cVar2 = *(char *)((int)param_2 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
+      "line": 13,
       "match": "(uint *)((int)",
-      "text": "param_2 = (uint *)((int)param_2 + 1);",
+      "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "text": "param_2 = (uint *)((int)param_2 + 1);",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_ECX",
+      "text": "*(char *)in_ECX = cVar2;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "text": "param_2 = (uint *)((int)param_2 + 1);",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_EDX",
+      "text": "cVar2 = *(char *)((int)in_EDX + 1);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "text": "lVar1 = *(longlong *)param_2;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(char *)((int)",
+      "text": "cVar2 = *(char *)((int)in_EDX + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "text": "uVar3 = *param_2;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EDX",
+      "text": "in_EDX = (uint *)((int)in_EDX + 1);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EDX",
+      "text": "in_EDX = (uint *)((int)in_EDX + 1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)",
+      "text": "in_EDX = (uint *)((int)in_EDX + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 22,
+      "match": "in_EDX",
+      "text": "lVar1 = *(longlong *)in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
       "line": 23,
-      "match": "param_4",
-      "text": "*(char *)param_4 = (char)uVar3;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "uVar3 = *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 25,
+      "match": "in_ECX",
+      "text": "*(char *)in_ECX = (char)uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_ECX",
+      "text": "*(byte *)((int)in_ECX + 2) = 0;",
+      "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 30,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)param_4 + 2) = 0;",
+      "text": "*(byte *)((int)in_ECX + 2) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_4",
-      "text": "*(byte *)((int)param_4 + 2) = 0;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_ECX",
+      "text": "*in_ECX = uVar3;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "text": "*param_4 = uVar3;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 38,
+      "match": "in_EDX",
+      "text": "uVar4 = in_EDX[1];",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "text": "uVar4 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 39,
-      "match": "param_4",
-      "text": "*(char *)(param_4 + 1) = (char)uVar4;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "in_EDX = in_EDX + 2;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_4",
-      "text": "*(short *)(param_4 + 1) = (short)uVar4;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 39,
+      "match": "in_EDX",
+      "text": "in_EDX = in_EDX + 2;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_4",
-      "text": "*param_4 = uVar3;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 41,
+      "match": "in_ECX",
+      "text": "*(char *)(in_ECX + 1) = (char)uVar4;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 46,
+      "match": "in_ECX",
+      "text": "*(short *)(in_ECX + 1) = (short)uVar4;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 47,
+      "match": "in_ECX",
+      "text": "*in_ECX = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 51,
+      "match": "in_ECX",
+      "text": "*(byte *)((int)in_ECX + 6) = 0;",
+      "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 51,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)param_4 + 6) = 0;",
+      "text": "*(byte *)((int)in_ECX + 6) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_4",
-      "text": "*(byte *)((int)param_4 + 6) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_4",
-      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 55,
+      "match": "in_ECX",
+      "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
+      "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 55,
       "match": "ROUND",
-      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
+      "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_4",
-      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 58,
+      "match": "in_ECX",
+      "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
+      "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 58,
       "match": "ROUND",
-      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
+      "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_4",
-      "text": "param_4 = param_4 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_4",
-      "text": "param_4 = param_4 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 59,
-      "match": "param_4",
-      "text": "*(short *)param_4 = (short)uVar3;",
-      "type": "unnamed_param"
+      "match": "in_ECX",
+      "text": "in_ECX = in_ECX + 2;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 59,
+      "match": "in_ECX",
+      "text": "in_ECX = in_ECX + 2;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 61,
+      "match": "in_ECX",
+      "text": "*(short *)in_ECX = (short)uVar3;",
+      "type": "register_param"
     }
   ]
 }

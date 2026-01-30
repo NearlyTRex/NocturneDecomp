@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
+; __cdecl void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 ;
 ;
 ; Referenced Globals:
@@ -215,7 +215,7 @@ section .text
     PUSH EAX                            ; 0051f5c9
     PUSH ESI                            ; 0051f5ca
     CALL core_cloth.cpp_FUN_00439710    ; 0051f5cb
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 0051f5d0
     MOV EBP,dword ptr [0x02cf2bf0]      ; 0051f5d3 | g_CEnemyClassInfo.name_hash
     PUSH EBP                            ; 0051f5d9

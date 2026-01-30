@@ -1,15 +1,15 @@
 // Name: core_ghoul.cpp_FUN_004e82d0
 // Address: 004e82d0
 // Address Range: [[004e82d0, 004e8495]]
-// Convention: unknown
-// Signature: undefined4 core_ghoul_cpp_FUN_004e82d0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_ghoul_cpp_FUN_004e82d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_ghoul.cpp_FUN_004e82d0(uint param_1, uint param_2)
     */
 
-uint core_ghoul_cpp_FUN_004e82d0(void)
+int __cdecl core_ghoul_cpp_FUN_004e82d0(void)
 
 {
   CVector3f *pCVar1;

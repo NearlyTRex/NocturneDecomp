@@ -1,14 +1,14 @@
 // Name: core_moloch.cpp_CMoloch_load_FUN_00529880
 // Address: 00529880
 // Address Range: [[00529880, 005298f3]]
-// Convention: unknown
-// Signature: void core_moloch_cpp_CMoloch_load_FUN_00529880(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_moloch_cpp_CMoloch_load_FUN_00529880(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_moloch.cpp_CMoloch_load(CMoloch* param_1) */
 
-void core_moloch_cpp_CMoloch_load_FUN_00529880(void)
+void __cdecl core_moloch_cpp_CMoloch_load_FUN_00529880(void)
 
 {
   CHero *in_stack_00000004;

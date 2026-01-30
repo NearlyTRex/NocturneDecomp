@@ -1,12 +1,12 @@
 // Name: core_msnedit.cpp_FUN_00537230
 // Address: 00537230
 // Address Range: [[00537230, 00537321]]
-// Convention: unknown
-// Signature: void core_msnedit_cpp_FUN_00537230(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_msnedit_cpp_FUN_00537230(void)
 
 #include "nocturne.h"
 
-void core_msnedit_cpp_FUN_00537230(void)
+void __cdecl core_msnedit_cpp_FUN_00537230(void)
 
 {
   CPodFile *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_hero_cpp_FUN_004f35b0(void)
+; __cdecl int __cdecl core_hero_cpp_FUN_004f35b0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x48]:1  local_48
@@ -107,7 +107,7 @@ section .text
     PUSH EAX                            ; 004f364e
     PUSH EBX                            ; 004f364f
     CALL core_dest.cpp_FUN_0046fd50     ; 004f3650
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_FUN_0046fd50()
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_FUN_0046fd50()
     ADD ESP,0x8                         ; 004f3655
     TEST EAX,EAX                        ; 004f3658
     JZ 0x004f3619                       ; 004f365a

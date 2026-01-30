@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_game_cpp_FUN_004e30f0(void)
+; __cdecl void __cdecl core_game_cpp_FUN_004e30f0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_msnedit_cpp_FUN_00537410(void)
+; __cdecl int __cdecl core_msnedit_cpp_FUN_00537410(char *param_1)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
 ; Local Variables:
 ; undefined1       Stack[-0x2c]:1  local_2c
 ; undefined1       Stack[-0x2b]:1  local_2b
@@ -16,7 +18,7 @@
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
-;   core_msnedit.cpp_FUN_0053d220
+;   core_msnedit.cpp_CDemonMission_FUN_0053d220
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;
 ; *****************************************************************************
@@ -77,8 +79,8 @@ section .text
     PUSH EBX                            ; 00537471
     MOV EDI,dword ptr [0x0067d550]      ; 00537472 | g_CDemonMissionPtr
     PUSH EDI                            ; 00537478 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_FUN_0053d220  ; 00537479
-        ;   XREF to: 0053d220 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_0053d220(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_FUN_0053d220 ; 00537479
+        ;   XREF to: 0053d220 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_0053d220(CDemonMission * this_ptr)
     ADD ESP,0xc                         ; 0053747e
     TEST EAX,EAX                        ; 00537481
     JZ 0x0053744d                       ; 00537483

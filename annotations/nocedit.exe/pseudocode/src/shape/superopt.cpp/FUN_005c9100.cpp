@@ -1,15 +1,15 @@
 // Name: shape_superopt.cpp_FUN_005c9100
 // Address: 005c9100
 // Address Range: [[005c9100, 005c91d8]]
-// Convention: unknown
-// Signature: double shape_superopt_cpp_FUN_005c9100(void)
+// Convention: __cdecl
+// Signature: int __cdecl shape_superopt_cpp_FUN_005c9100(void)
 
 #include "nocturne.h"
 
 /* Signature: byte shape_superopt.cpp_FUN_005c9100(byte param_1, uint param_2,
    uint param_3) */
 
-double shape_superopt_cpp_FUN_005c9100(void)
+int __cdecl shape_superopt_cpp_FUN_005c9100(void)
 
 {
   double *pdVar1;
@@ -30,6 +30,7 @@ double shape_superopt_cpp_FUN_005c9100(void)
   double local_28;
   double local_20;
   double local_18;
+  int local_10;
   
   local_28 = 0.0;
   local_18 = 0.0;
@@ -55,5 +56,6 @@ double shape_superopt_cpp_FUN_005c9100(void)
       local_18 = (dVar12 + *pdVar10) * (*pdVar4 - *pdVar7) * 0.5 + local_18;
     } while (pdVar13 < (double *)(in_stack_0000000c * 0x60 + 0x10 + in_stack_00000008));
   }
-  return SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20);
+  local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);
+  return local_10;
 }

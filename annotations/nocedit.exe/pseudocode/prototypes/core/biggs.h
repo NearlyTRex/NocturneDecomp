@@ -13,7 +13,7 @@ CBiggs * __cdecl factoryFunc(void);
 
 // Original: core_biggs.cpp_FUN_004185b0
 // Address: 004185b0
-CDemonActorType * FUN_004185b0(void);
+CDemonActorType * __cdecl FUN_004185b0(void);
 
 // Original: core_biggs.cpp_CBiggs_ctor_FUN_004185c0
 // Address: 004185c0
@@ -21,7 +21,7 @@ CBiggs * __cdecl CBiggs::ctor(CBiggs *this_ptr);
 
 // Original: core_biggs.cpp_FUN_00418680
 // Address: 00418680
-void FUN_00418680(void);
+void __cdecl FUN_00418680(void);
 
 // Original: core_biggs.cpp_CBiggs_FUN_00418700
 // Address: 00418700
@@ -33,27 +33,27 @@ int __cdecl CBiggs::renderOpaque(CBiggs *this_ptr);
 
 // Original: core_biggs.cpp_CBiggs_load_FUN_00418ac0
 // Address: 00418ac0
-void CBiggs::load(void);
+void __cdecl CBiggs::load(void);
 
 // Original: core_biggs.cpp_FUN_00418b50
 // Address: 00418b50
-void FUN_00418b50(void);
+void __cdecl FUN_00418b50(void);
 
 // Original: core_biggs.cpp_FUN_00418c10
 // Address: 00418c10
-undefined4 FUN_00418c10(void);
+int __cdecl FUN_00418c10(void);
 
 // Original: core_biggs.cpp_FUN_00418c60
 // Address: 00418c60
-void FUN_00418c60(void);
+void __cdecl FUN_00418c60(void);
 
 // Original: core_biggs.cpp_snag_FUN_00418c80
 // Address: 00418c80
-void snag(void);
+void __cdecl snag(void);
 
 // Original: core_biggs.cpp_FUN_00418ce0
 // Address: 00418ce0
-void FUN_00418ce0(void);
+void __cdecl FUN_00418ce0(void);
 
 // Original: core_biggs.cpp_CBiggs_dtor_FUN_00418d10
 // Address: 00418d10

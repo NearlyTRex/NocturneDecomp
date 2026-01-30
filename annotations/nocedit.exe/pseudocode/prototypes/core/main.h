@@ -41,4 +41,4 @@ void __cdecl showPromoScreen(void);
 
 // Original: core_main.c_finalizeGameSystems_FUN_00508570
 // Address: 00508570
-void finalizeGameSystems(void);
+void __cdecl finalizeGameSystems(void);

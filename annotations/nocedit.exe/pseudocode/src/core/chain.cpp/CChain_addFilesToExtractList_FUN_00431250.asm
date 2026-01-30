@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)
+; __cdecl void __cdecl core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x104]:1  local_104

@@ -14,8 +14,8 @@
 ;   core_dmodel.cpp_copyFile_FUN_0047c930 at 0047c9d8
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dad32
 ;   core_game.cpp_FUN_004d7810 at 004d7a7e
+;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 005380ca
 ;   core_msnedit.cpp_FUN_00537dd0 at 00537e59
-;   core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60 at 005380ca
 ;   core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0 at 00554524
 ;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057fc44
 ;   ... and 15 more

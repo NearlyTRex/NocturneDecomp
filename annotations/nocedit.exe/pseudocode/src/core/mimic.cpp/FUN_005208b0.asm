@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_FUN_005208b0(void)
+; __cdecl void __cdecl core_mimic_cpp_FUN_005208b0(void)
 ;
 ;
 ; Called Functions:
@@ -57,7 +57,7 @@ section .text
     LEA EAX,[EBX + 0xbf84]              ; 00520911
     PUSH EAX                            ; 00520917
     CALL core_cloth.cpp_FUN_0043bae0    ; 00520918
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bae0()
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
     ADD ESP,0x8                         ; 0052091d
     PUSH EBX                            ; 00520920
         ;   Label: LAB_00520920

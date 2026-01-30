@@ -1,14 +1,14 @@
 // Name: core_cow.cpp_CZombieCow_load_FUN_00444840
 // Address: 00444840
 // Address Range: [[00444840, 004448ac]]
-// Convention: unknown
-// Signature: void core_cow_cpp_CZombieCow_load_FUN_00444840(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cow_cpp_CZombieCow_load_FUN_00444840(void)
 
 #include "nocturne.h"
 
 /* Signature: void actors_enemy_cow.cpp_CZombieCow_load(CZombieCow* param_1, char* param_2) */
 
-void core_cow_cpp_CZombieCow_load_FUN_00444840(void)
+void __cdecl core_cow_cpp_CZombieCow_load_FUN_00444840(void)
 
 {
   CEnemy *in_stack_00000004;

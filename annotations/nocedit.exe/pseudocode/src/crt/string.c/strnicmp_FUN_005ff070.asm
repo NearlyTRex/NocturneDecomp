@@ -14,11 +14,11 @@
 ;   core_emitter.cpp_FUN_004a8070 at 004a82c0
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab860
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e171e
-;   core_mission.cpp_FUN_00524660 at 0052468f
+;   core_mission.cpp_CDemonMission_FUN_00524660 at 0052468f
+;   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0 at 00560fc2
+;   core_script.cpp_CScript_FUN_005601c0 at 0056025e
+;   core_script.cpp_CScript_FUN_00566cc0 at 00566dc5
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055aa37
-;   core_script.cpp_FUN_005601c0 at 0056025e
-;   core_script.cpp_FUN_00566cc0 at 00566dc5
-;   core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0 at 00560fc2
 ;   ... and 8 more
 ;
 ; *****************************************************************************

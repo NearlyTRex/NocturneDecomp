@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_FUN_00486d00(void)
+; __cdecl void __cdecl core_dracbrid_cpp_FUN_00486d00(void)
 ;
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     ADD EAX,0x158                       ; 00486d1c
     PUSH EAX                            ; 00486d21
     CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 00486d22
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
     ADD ESP,0x8                         ; 00486d27
     POP EBX                             ; 00486d2a
     RET                                 ; 00486d2b

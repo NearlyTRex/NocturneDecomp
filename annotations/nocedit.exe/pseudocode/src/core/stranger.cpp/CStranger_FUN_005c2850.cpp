@@ -1,14 +1,14 @@
 // Name: core_stranger.cpp_CStranger_FUN_005c2850
 // Address: 005c2850
 // Address Range: [[005c2850, 005c2fdb]]
-// Convention: unknown
-// Signature: undefined4 core_stranger_cpp_CStranger_FUN_005c2850(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c2850(CStranger* param_1) */
 
-uint core_stranger_cpp_CStranger_FUN_005c2850(void)
+int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(void)
 
 {
   double dVar1;
@@ -59,8 +59,7 @@ uint core_stranger_cpp_CStranger_FUN_005c2850(void)
     return 0;
   }
   if ((in_stack_00000004[0x1f].unk3.y != 1.96182e-44) &&
-     (local_18 = (float)core_charactr_cpp_CCharacter_FUN_0042e840(),
-     local_18 < (float)0.98999999999999999)) {
+     (local_18 = core_charactr_cpp_CCharacter_FUN_0042e840(), local_18 < (float)0.98999999999999999)) {
     return 0;
   }
   local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
@@ -148,7 +147,7 @@ uint core_stranger_cpp_CStranger_FUN_005c2850(void)
           }
           fStack_1c = *(float *)(in_stack_00000004[0x17a].create_event + 0x4c) -
                       *(float *)(in_stack_00000004[0x17a].create_event + 0x40);
-          local_18 = (float)core_stranger_cpp_FUN_005bb010();
+          local_18 = core_stranger_cpp_FUN_005bb010();
           fVar2 = in_stack_00000004[0x17a].orient_matrix.m[1].x;
           *(float *)(in_stack_00000004[0x17a].create_event + 0x34) =
                (fStack_1c - local_18) + *(float *)(in_stack_00000004[0x17a].create_event + 0x34);

@@ -1,8 +1,8 @@
 // Name: core_flies.cpp_FUN_004cbf00
 // Address: 004cbf00
 // Address Range: [[004cbf00, 004cc221]]
-// Convention: unknown
-// Signature: void core_flies_cpp_FUN_004cbf00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flies_cpp_FUN_004cbf00(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* Signature: byte actors_other_flies.cpp_FUN_004cbf00(uint param_1, uint param_2)
     */
 
-void core_flies_cpp_FUN_004cbf00(void)
+void __cdecl core_flies_cpp_FUN_004cbf00(void)
 
 {
   float fVar1;
@@ -121,7 +121,7 @@ void core_flies_cpp_FUN_004cbf00(void)
             pfVar8[8] = pfVar8[0xb];
             pfVar8[9] = pfVar8[0xc];
           }
-          pfVar6 = (float *)core_flies_cpp_FUN_004cc820();
+          pfVar6 = core_flies_cpp_FUN_004cc820();
           pfVar7 = (float *)extraout_EBX;
           if (pfVar8 + 10 != pfVar6) {
             pfVar8[10] = *pfVar6;

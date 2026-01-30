@@ -45,11 +45,11 @@ int __cdecl CAmmo::hasCollision(CAmmo *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_ammo.cpp_CAmmo_FUN_00410fd0
 // Address: 00410fd0
-void CAmmo(void);
+void __cdecl CAmmo(void);
 
 // Original: core_ammo.cpp_CAmmo_FUN_004111b0
 // Address: 004111b0
-void CAmmo(void);
+void __cdecl CAmmo(void);
 
 // Original: core_ammo.cpp_CAmmo_canPickup_FUN_004111c0
 // Address: 004111c0
@@ -57,11 +57,11 @@ int __cdecl CAmmo::canPickup(CAmmo *this_ptr,CDemonActor *picker);
 
 // Original: core_ammo.cpp_FUN_00411200
 // Address: 00411200
-void FUN_00411200(void);
+void __cdecl FUN_00411200(void);
 
 // Original: core_ammo.cpp_FUN_004112b0
 // Address: 004112b0
-undefined4 FUN_004112b0(void);
+int __cdecl FUN_004112b0(void);
 
 // Original: core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360
 // Address: 00411360

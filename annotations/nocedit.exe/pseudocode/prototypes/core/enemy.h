@@ -29,11 +29,11 @@ int __cdecl CEnemy(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_FUN_004a9880
 // Address: 004a9880
-undefined4 FUN_004a9880(void);
+int __cdecl FUN_004a9880(void);
 
 // Original: core_enemy.cpp_FUN_004a9930
 // Address: 004a9930
-undefined4 FUN_004a9930(void);
+int __cdecl FUN_004a9930(void);
 
 // Original: core_enemy.cpp_CEnemy_FUN_004a99d0
 // Address: 004a99d0
@@ -49,11 +49,11 @@ void __cdecl CEnemy(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_FUN_004a9ef0
 // Address: 004a9ef0
-void FUN_004a9ef0(void);
+void __cdecl FUN_004a9ef0(void);
 
 // Original: core_enemy.cpp_FUN_004a9f10
 // Address: 004a9f10
-void FUN_004a9f10(void);
+void __cdecl FUN_004a9f10(void);
 
 // Original: core_enemy.cpp_CEnemy_FUN_004a9fa0
 // Address: 004a9fa0
@@ -73,7 +73,7 @@ void __cdecl CEnemy(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_FUN_004aa0f0
 // Address: 004aa0f0
-int FUN_004aa0f0(void);
+int __cdecl FUN_004aa0f0(void);
 
 // Original: core_enemy.cpp_CEnemy_FUN_004aa170
 // Address: 004aa170

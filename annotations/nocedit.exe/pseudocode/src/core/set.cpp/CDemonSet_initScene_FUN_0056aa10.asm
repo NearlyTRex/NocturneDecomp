@@ -11,8 +11,8 @@
 ; XREF[16]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db1f1
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250 at 00524383
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e292
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539184
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539184
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e292
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a73c
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 0058065a
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581aca
@@ -250,7 +250,7 @@ section .text
     MOV EBX,dword ptr [0x006848fc]      ; 0056ac27 | g_CWeatherInstance | g_CWeatherPtr
     PUSH EBX                            ; 0056ac2d | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 0056ac2e
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_FUN_005ef8c0()
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0()
     ADD ESP,0x8                         ; 0056ac33
     ADD ESP,0x4                         ; 0056ac36
     POP EBP                             ; 0056ac39

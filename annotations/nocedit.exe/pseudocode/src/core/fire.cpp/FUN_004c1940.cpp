@@ -1,12 +1,12 @@
 // Name: core_fire.cpp_FUN_004c1940
 // Address: 004c1940
 // Address Range: [[004c1940, 004c19f1]]
-// Convention: unknown
-// Signature: void core_fire_cpp_FUN_004c1940(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_FUN_004c1940(void)
 
 #include "nocturne.h"
 
-void core_fire_cpp_FUN_004c1940(void)
+void __cdecl core_fire_cpp_FUN_004c1940(void)
 
 {
   CDemonSet *this_ptr;

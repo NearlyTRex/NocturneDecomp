@@ -322,9 +322,9 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_54 = (float)(fVar11 * (float10)fVar2);
     }
     local_40 = (uint)(0.0 < fVar1);
-    local_3c = (float)core_fire_cpp_FUN_004c24d0();
+    local_3c = core_fire_cpp_FUN_004c24d0();
     local_18 = local_3c;
-    local_38 = (float)core_fire_cpp_FUN_004c24d0();
+    local_38 = core_fire_cpp_FUN_004c24d0();
     local_20 = 0;
     local_18 = local_38;
     if (-1 < (int)local_24) {

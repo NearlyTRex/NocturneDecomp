@@ -64,7 +64,7 @@ section .text
     PUSH EBP                            ; 00578641
     MOV dword ptr [0x03654368],EDX      ; 00578642 | DAT_03654368
     CALL core_setedit.cpp_ImportingGroundTextures_FUN_00578420 ; 00578648
-        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
+        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
     MOV ECX,dword ptr [0x03654368]      ; 0057864d | DAT_03654368
     ADD ESP,0x4                         ; 00578653
     CMP ECX,0x1                         ; 00578656

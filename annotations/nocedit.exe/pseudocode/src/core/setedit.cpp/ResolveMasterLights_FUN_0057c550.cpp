@@ -1,15 +1,15 @@
 // Name: core_setedit.cpp_ResolveMasterLights_FUN_0057c550
 // Address: 0057c550
 // Address Range: [[0057c550, 0057c5cc]]
-// Convention: unknown
-// Signature: int core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_setedit.cpp_ResolveMasterLights(uint param_1, uint
    param_2) */
 
-int core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
+int __cdecl core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
 
 {
   int iVar1;

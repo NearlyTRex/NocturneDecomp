@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flamecan_cpp_FUN_004cb200(void)
+; __cdecl void __cdecl core_flamecan_cpp_FUN_004cb200(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x38]:1  local_38

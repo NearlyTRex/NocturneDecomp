@@ -77,7 +77,7 @@ section .text
     LEA ESI,[EBX + 0x21f5c]             ; 005297cf
     PUSH ESI                            ; 005297d5
     CALL core_morph.cpp_FUN_0052b600    ; 005297d6
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 005297db
     PUSH 0x0                            ; 005297de
     LEA EAX,[EBX + 0x1fbd4]             ; 005297e0
@@ -85,7 +85,7 @@ section .text
     PUSH 0x1                            ; 005297e7
     PUSH ESI                            ; 005297e9
     CALL core_morph.cpp_FUN_0052b600    ; 005297ea
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     FLD float ptr [EBX + 0x21e90]       ; 005297ef
     FDIV float ptr [0x00661938]         ; 005297f5 | FLOAT_00661938
     ADD ESP,0x10                        ; 005297fb

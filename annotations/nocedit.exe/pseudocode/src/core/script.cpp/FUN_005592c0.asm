@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_FUN_005592c0(void)
+; __cdecl void __cdecl core_script_cpp_FUN_005592c0(char *param_1,char *param_2)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370 at 0055a3b8
+;   core_script.cpp_CScript_FUN_0055a370 at 0055a3b8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0064151b

@@ -1,14 +1,14 @@
 // Name: core_melee.cpp_CMelee_fire_FUN_0050ea40
 // Address: 0050ea40
 // Address Range: [[0050ea40, 0050ea68]]
-// Convention: unknown
-// Signature: undefined4 core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_melee.cpp_CMelee_fire() */
 
-uint core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
+int __cdecl core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
 
 {
   g_CurrentFilename = "..\\core\\melee.cpp";

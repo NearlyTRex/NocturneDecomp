@@ -73,7 +73,7 @@ section .text
     PUSH EBX                            ; 004dd98a
     MOV dword ptr [EBX + 0x318],EAX     ; 004dd98b
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004dd991
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
     ADD ESP,0x8                         ; 004dd996
     PUSH 0x1                            ; 004dd999
     MOV dword ptr [EBX + 0x314],0x1f4   ; 004dd99b

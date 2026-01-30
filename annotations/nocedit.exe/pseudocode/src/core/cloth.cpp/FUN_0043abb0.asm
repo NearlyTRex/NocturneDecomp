@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_FUN_0043abb0(void)
+; __cdecl void __cdecl core_cloth_cpp_FUN_0043abb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1e0]:4  local_1e0
@@ -270,7 +270,7 @@ section .text
     PUSH EBX                            ; 0043ad8b
     PUSH EDI                            ; 0043ad8c
     CALL core_cloth.cpp_FUN_0043a2b0    ; 0043ad8d
-        ;   XREF to: 0043a2b0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043a2b0()
+        ;   XREF to: 0043a2b0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043a2b0()
     INC EBX                             ; 0043ad92
     MOV ECX,dword ptr [EDI + 0x3ce8c]   ; 0043ad93
     ADD ESP,0xc                         ; 0043ad99
@@ -958,7 +958,7 @@ section .text
     PUSH EDI                            ; 0043b76a
     FSTP float ptr [EBX + 0x8]          ; 0043b76b
     CALL core_cloth.cpp_FUN_0043a420    ; 0043b76e
-        ;   XREF to: 0043a420 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043a420()
+        ;   XREF to: 0043a420 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043a420()
     ADD ESP,0x8                         ; 0043b773
     JMP 0x0043b34d                      ; 0043b776
         ;   XREF to: 0043b34d (UNCONDITIONAL_JUMP)  ; LAB_0043b34d
@@ -966,7 +966,7 @@ section .text
         ;   Label: LAB_0043b77b
     PUSH EDI                            ; 0043b77c
     CALL core_cloth.cpp_FUN_0043a420    ; 0043b77d
-        ;   XREF to: 0043a420 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043a420()
+        ;   XREF to: 0043a420 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043a420()
     ADD ESP,0x8                         ; 0043b782
     JMP 0x0043b3b9                      ; 0043b785
         ;   XREF to: 0043b3b9 (UNCONDITIONAL_JUMP)  ; LAB_0043b3b9

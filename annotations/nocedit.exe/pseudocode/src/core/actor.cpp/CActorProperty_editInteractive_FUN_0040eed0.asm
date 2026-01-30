@@ -63,9 +63,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053ae03
+;   core_msnedit.cpp_CDemonMission_FUN_0053c730 at 0053c8a4
 ;   core_msnedit.cpp_FUN_00536e20 at 00536f7b
-;   core_msnedit.cpp_FUN_0053c730 at 0053c8a4
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053ae03
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040ee84 = 0040ef01
@@ -97,7 +97,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
-;   core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0
+;   core_msnedit.cpp_CDemonMission_FUN_0053cad0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_sound.cpp_editSoundName_FUN_005b3de0
 ;   crt_file.c_makepath_FUN_005febfc
@@ -376,8 +376,8 @@ section .text
     PUSH EBP                            ; 0040f22b
     MOV ESI,dword ptr [0x0067d550]      ; 0040f22c | g_CDemonMissionPtr
     PUSH ESI                            ; 0040f232 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0 ; 0040f233
-        ;   XREF to: 0053cad0 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0()
+    CALL core_msnedit.cpp_CDemonMission_FUN_0053cad0 ; 0040f233
+        ;   XREF to: 0053cad0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_0053cad0(CDemonMission * this_ptr, int param_2, char * param_3, int * param_4, ...)
     ADD ESP,0x20                        ; 0040f238
     TEST EAX,EAX                        ; 0040f23b
     JZ 0x0040eef2                       ; 0040f23d

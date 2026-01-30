@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void engine_colquant_c_FUN_00441260(void)
+; __cdecl void __cdecl engine_colquant_c_FUN_00441260(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x90]:8  local_90
@@ -224,7 +224,7 @@ section .text
     PUSH EDX                            ; 004414e9
     FSTP double ptr [EBX + 0x4030]      ; 004414ea
     CALL engine_colquant.c_FUN_00441790 ; 004414f0
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; int engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 004414f5
     MOV dword ptr [ESP + 0x74],EDX      ; 004414f9
     FLD double ptr [ESP + 0x70]         ; 004414fd
@@ -239,7 +239,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x4038]    ; 0044151f
     PUSH EAX                            ; 00441525
     CALL engine_colquant.c_FUN_00441790 ; 00441526
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; int engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 0044152b
     MOV dword ptr [ESP + 0x74],EDX      ; 0044152f
     FLD double ptr [ESP + 0x70]         ; 00441533
@@ -254,7 +254,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x4038]    ; 00441555
     PUSH EDI                            ; 0044155b
     CALL engine_colquant.c_FUN_00441790 ; 0044155c
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; int engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 00441561
     MOV dword ptr [ESP + 0x74],EDX      ; 00441565
     MOV EAX,dword ptr [ESP + 0x70]      ; 00441569
@@ -345,7 +345,7 @@ section .text
     PUSH EDX                            ; 0044168a
     FSTP double ptr [EBX + 0x4030]      ; 0044168b
     CALL engine_colquant.c_FUN_00441790 ; 00441691
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; int engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 00441696
     MOV dword ptr [ESP + 0x74],EDX      ; 0044169a
     FLD double ptr [ESP + 0x70]         ; 0044169e
@@ -360,7 +360,7 @@ section .text
     PUSH ECX                            ; 004416b8
     FSTP double ptr [ESP + 0x38]        ; 004416b9
     CALL engine_colquant.c_FUN_00441790 ; 004416bd
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; int engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 004416c2
     MOV dword ptr [ESP + 0x74],EDX      ; 004416c6
     FLD double ptr [ESP + 0x70]         ; 004416ca
@@ -375,7 +375,7 @@ section .text
     PUSH EAX                            ; 004416e4
     FSTP double ptr [ESP + 0x48]        ; 004416e5
     CALL engine_colquant.c_FUN_00441790 ; 004416e9
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; int engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 004416ee
     MOV dword ptr [ESP + 0x74],EDX      ; 004416f2
     FLD double ptr [ESP + 0x70]         ; 004416f6
@@ -390,7 +390,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x3c]      ; 0044170f
     PUSH EDX                            ; 00441713
     CALL engine_colquant.c_FUN_00441790 ; 00441714
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; int engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 00441719
     MOV dword ptr [ESP + 0x74],EDX      ; 0044171d
     FLD double ptr [ESP + 0x70]         ; 00441721

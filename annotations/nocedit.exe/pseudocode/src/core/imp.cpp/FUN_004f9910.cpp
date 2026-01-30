@@ -1,12 +1,12 @@
 // Name: core_imp.cpp_FUN_004f9910
 // Address: 004f9910
 // Address Range: [[004f9910, 004f9bf0]]
-// Convention: unknown
-// Signature: void core_imp_cpp_FUN_004f9910(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_imp_cpp_FUN_004f9910(void)
 
 #include "nocturne.h"
 
-void core_imp_cpp_FUN_004f9910(void)
+void __cdecl core_imp_cpp_FUN_004f9910(void)
 
 {
   CDeformableModelInstance *this_ptr;

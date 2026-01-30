@@ -1,25 +1,22 @@
 // Name: core_bugs.cpp_FUN_00425cc0
 // Address: 00425cc0
 // Address Range: [[00425cc0, 00425fd8]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_FUN_00425cc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_FUN_00425cc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00425cc0(uint param_1, uint param_2)
     */
 
-void core_bugs_cpp_FUN_00425cc0(void)
+void __cdecl core_bugs_cpp_FUN_00425cc0(void)
 
 {
   CLocation *dest_position;
   float *pfVar1;
-  int iVar2;
   CPathMap *this_ptr;
-  int iVar3;
-  int extraout_EDX;
-  int extraout_EDX_00;
-  int iVar4;
+  CPathMap *extraout_EAX;
+  int iVar2;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CMatrix3x3f CStack_a8;
@@ -48,15 +45,14 @@ void core_bugs_cpp_FUN_00425cc0(void)
   
   (*(((in_stack_00000004->base).vtable._ue)->_ue).field_4)();
   if ((in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].z != 0.0) &&
-     (iVar3 = *(int *)(in_stack_00000004[1].base.actor_name + 0x18), iVar3 != 0)) {
-    fStack_74 = (in_stack_00000004->base).location.position.x - *(float *)(iVar3 + 0x20);
-    fStack_70 = (in_stack_00000004->base).location.position.y - *(float *)(iVar3 + 0x24);
-    fStack_6c = (in_stack_00000004->base).location.position.z - *(float *)(iVar3 + 0x28);
+     (iVar2 = *(int *)(in_stack_00000004[1].base.actor_name + 0x18), iVar2 != 0)) {
+    fStack_74 = (in_stack_00000004->base).location.position.x - *(float *)(iVar2 + 0x20);
+    fStack_70 = (in_stack_00000004->base).location.position.y - *(float *)(iVar2 + 0x24);
+    fStack_6c = (in_stack_00000004->base).location.position.z - *(float *)(iVar2 + 0x28);
     if ((ABS(fStack_70) < (float)2) &&
        ((ABS(fStack_74) < (float)2 && (ABS(fStack_6c) < (float)2)))) {
       core_bugs_cpp_FUN_004257f0();
       core_bugs_cpp_FUN_00427400();
-      iVar3 = extraout_EDX;
       if (*(int *)(in_stack_00000004[1].base.create_event + 0x20) == 1) {
         core_bugs_cpp_FUN_00425fe0();
         return;
@@ -65,15 +61,16 @@ void core_bugs_cpp_FUN_00425cc0(void)
     }
   }
   if ((in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].y != 0.0) &&
-     (iVar3 = *(int *)(in_stack_00000004[1].base.actor_name + 0x18), iVar3 != 0)) {
-    this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar3 + 0x154) + 0xbc))();
+     (iVar2 = *(int *)(in_stack_00000004[1].base.actor_name + 0x18), iVar2 != 0)) {
+    this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar2 + 0x154) + 0xbc))();
     if (this_ptr == (CPathMap *)0x0) {
-      this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
+      core_path_cpp_FUN_00548500();
+      this_ptr = extraout_EAX;
     }
     dest_position = &(in_stack_00000004->base).location;
-    iVar3 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+    iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                       (this_ptr,&dest_position->position,&CStack_50,(in_stack_00000004->base).unk1);
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_a8,&CStack_50);
       CStack_80.z = 2.0f * in_stack_00000008;
       CStack_80.x = 0.0;
@@ -119,17 +116,14 @@ void core_bugs_cpp_FUN_00425cc0(void)
     }
   }
   core_bugs_cpp_FUN_004257f0();
-  iVar3 = extraout_EDX_00;
 LAB_00425d86:
-  iVar2 = *(int *)(in_stack_00000004[1].base.create_event + 0x24);
-  iVar4 = 0;
-  if (0 < iVar2) {
+  iVar2 = 0;
+  if (0 < *(int *)(in_stack_00000004[1].base.create_event + 0x24)) {
     do {
-      iVar4 = iVar4 + 1;
-      iVar2 = core_bugs_cpp_FUN_00426420();
-      iVar3 = *(int *)(in_stack_00000004[1].base.create_event + 0x24);
-    } while (iVar4 < iVar3);
+      iVar2 = iVar2 + 1;
+      core_bugs_cpp_FUN_00426420();
+    } while (iVar2 < *(int *)(in_stack_00000004[1].base.create_event + 0x24));
   }
-  core_bugs_cpp_FUN_004272f0(iVar2,iVar3);
+  core_bugs_cpp_FUN_004272f0();
   return;
 }

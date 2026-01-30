@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_larva_cpp_CLarva_load_FUN_00503960(void)
+; __cdecl void __cdecl core_larva_cpp_CLarva_load_FUN_00503960(void)
 ;
 ;
 ; Referenced Globals:

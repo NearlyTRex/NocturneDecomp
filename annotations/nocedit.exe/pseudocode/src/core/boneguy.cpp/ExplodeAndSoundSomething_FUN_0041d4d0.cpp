@@ -1,15 +1,15 @@
 // Name: core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0
 // Address: 0041d4d0
 // Address Range: [[0041d4d0, 0041d545]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_boneguy.cpp_ExplodeAndSoundSomething(uint param_1,
    uint param_2) */
 
-void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
+void __cdecl core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 
 {
   float fVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c6750(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(void)
 ;
 ;
 ; Referenced Globals:

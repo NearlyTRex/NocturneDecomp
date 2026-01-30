@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_FUN_00564500(void)
+; __cdecl void __cdecl core_script_cpp_FUN_00564500(void)
 ;
 ;
 ; XREF[3]:
-;   core_script.cpp_CScript_Unk20_FUN_00565130 at 00565a55
+;   core_script.cpp_CScript_FUN_005645d0 at 005645e1
+;   core_script.cpp_CScript_FUN_00565130 at 00565a55
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564bd0
-;   core_script.cpp_FUN_005645d0 at 005645e1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0310fd44

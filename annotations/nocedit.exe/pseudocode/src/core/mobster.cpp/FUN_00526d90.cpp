@@ -1,15 +1,15 @@
 // Name: core_mobster.cpp_FUN_00526d90
 // Address: 00526d90
 // Address Range: [[00526d90, 00526e9b] [00526ebb, 005271b7]]
-// Convention: unknown
-// Signature: undefined4 core_mobster_cpp_FUN_00526d90(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_mobster_cpp_FUN_00526d90(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mobster.cpp_FUN_00526d90(uint param_1, uint
    param_2) */
 
-uint core_mobster_cpp_FUN_00526d90(void)
+int __cdecl core_mobster_cpp_FUN_00526d90(void)
 
 {
   CLocation *pCVar1;
@@ -52,15 +52,14 @@ uint core_mobster_cpp_FUN_00526d90(void)
          [*(int *)(in_stack_00000004->carry_hands[1].unk1 + 4)] != 0) &&
        (in_stack_00000004->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       if (0.0 < *(float *)(in_stack_00000004[1].base.create_event + 0x28)) {
-        in_stack_00000008 =
-             *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;
-        *(float *)(in_stack_00000004[1].base.create_event + 0x28) = in_stack_00000008;
-        if (in_stack_00000008 < 0.0) {
-          in_stack_00000004 = in_stack_00000004 + 1;
-          (in_stack_00000004->base).create_event[0x28] = '\0';
-          (in_stack_00000004->base).create_event[0x29] = '\0';
-          (in_stack_00000004->base).create_event[0x2a] = '\0';
-          (in_stack_00000004->base).create_event[0x2b] = '\0';
+        fVar9 = *(float *)(in_stack_00000004[1].base.create_event + 0x28) - in_stack_00000008;
+        *(float *)(in_stack_00000004[1].base.create_event + 0x28) = fVar9;
+        if (fVar9 < 0.0) {
+          pCVar4 = in_stack_00000004 + 1;
+          (pCVar4->base).create_event[0x28] = '\0';
+          (pCVar4->base).create_event[0x29] = '\0';
+          (pCVar4->base).create_event[0x2a] = '\0';
+          (pCVar4->base).create_event[0x2b] = '\0';
           return 0;
         }
       }

@@ -73,7 +73,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 005e5717
     PUSH EAX                            ; 005e571b
     CALL core_cloth.cpp_FUN_00439710    ; 005e571c
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 005e5721
     PUSH 0x656ae8                       ; 005e5724 | = "noscape.cth"
     LEA EAX,[EBX + 0x4dfe0]             ; 005e5729
@@ -89,7 +89,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 005e5743
     PUSH EAX                            ; 005e5747
     CALL core_cloth.cpp_FUN_00439710    ; 005e5748
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 005e574d
     PUSH 0x656af4                       ; 005e5750 | = "nosskirt.cth"
     LEA EAX,[EBX + 0x8de50]             ; 005e5755
@@ -105,7 +105,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005e576f
     PUSH ESI                            ; 005e5773
     CALL core_cloth.cpp_FUN_00439710    ; 005e5774
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 005e5779
     PUSH EDI                            ; 005e577c
     CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80 ; 005e577d
@@ -138,7 +138,7 @@ section .text
     PUSH 0x0                            ; 005e57bf
     PUSH ESI                            ; 005e57c1
     CALL core_morph.cpp_FUN_0052b580    ; 005e57c2
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005e57c7
     PUSH 0x0                            ; 005e57ca
     MOV EAX,dword ptr [ESP + 0x10]      ; 005e57cc
@@ -148,7 +148,7 @@ section .text
     PUSH ESI                            ; 005e57d8
     MOV dword ptr [0x02f43974],ECX      ; 005e57d9 | DAT_02f43974
     CALL core_morph.cpp_FUN_0052b580    ; 005e57df
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005e57e4
     XOR EDX,EDX                         ; 005e57e7
     PUSH EDX                            ; 005e57e9
@@ -158,7 +158,7 @@ section .text
     PUSH ESI                            ; 005e57f0
     MOV dword ptr [0x02f43974],EDX      ; 005e57f1 | DAT_02f43974
     CALL core_morph.cpp_FUN_0052b580    ; 005e57f7
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005e57fc
     PUSH 0x0                            ; 005e57ff
     MOV EDX,dword ptr [ESP + 0x8]       ; 005e5801
@@ -168,7 +168,7 @@ section .text
     PUSH ESI                            ; 005e580d
     MOV [0x02f43974],EAX                ; 005e580e | DAT_02f43974
     CALL core_morph.cpp_FUN_0052b580    ; 005e5813
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005e5818
     PUSH EBP                            ; 005e581b
     PUSH 0x1                            ; 005e581c
@@ -184,7 +184,7 @@ section .text
     PUSH 0x1                            ; 005e5836
     PUSH ESI                            ; 005e5838
     CALL core_morph.cpp_FUN_0052b580    ; 005e5839
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005e583e
     PUSH 0x0                            ; 005e5841
     MOV ECX,dword ptr [ESP + 0xc]       ; 005e5843
@@ -194,7 +194,7 @@ section .text
     PUSH ESI                            ; 005e584e
     MOV dword ptr [0x02f43974],EDX      ; 005e584f | DAT_02f43974
     CALL core_morph.cpp_FUN_0052b580    ; 005e5855
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b580()
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b580()
     ADD ESP,0x10                        ; 005e585a
     XOR EAX,EAX                         ; 005e585d
     PUSH ESI                            ; 005e585f

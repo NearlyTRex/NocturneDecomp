@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 33,
+        "line": 35,
         "message": "'DAT_02f7a02c' was not declared in this scope; did you mean 'INT_02f7a028'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 34,
+        "line": 36,
         "message": "'DAT_02f7a094' was not declared in this scope; did you mean 'DAT_03f90a94'?"
       },
       {
@@ -20,16 +20,52 @@
         "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       },
       {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
+        "category": "undeclared_identifier",
+        "column": 44,
+        "line": 74,
+        "message": "'DAT_0063b719' was not declared in this scope; did you mean 'DAT_0067b718'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 44,
+        "line": 81,
+        "message": "'DAT_0063b71e' was not declared in this scope; did you mean 'DAT_0067b718'?"
       },
       {
         "category": "incompatible_types",
         "column": 42,
         "line": 127,
         "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 46,
+        "line": 95,
+        "message": "'DAT_0063b727' was not declared in this scope; did you mean 'DAT_00684720'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 46,
+        "line": 101,
+        "message": "'DAT_0063b722' was not declared in this scope; did you mean 'DAT_00684720'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 44,
+        "line": 107,
+        "message": "'DAT_0063b72c' was not declared in this scope; did you mean 'DAT_0083c22c'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 44,
+        "line": 115,
+        "message": "'DAT_0063b730' was not declared in this scope; did you mean 'DAT_0067C730'?"
       }
     ],
     "success": false,
@@ -43,36 +79,43 @@
       {
         "category": "other",
         "column": 24,
-        "line": 50,
+        "line": 52,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'SMotion*' [-Wformat=]"
       },
       {
         "category": "other",
+        "column": 43,
+        "line": 59,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
         "column": 36,
-        "line": 68,
+        "line": 70,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 204,
+    "complexity_score": 316,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 114,
-    "suspect_count": 8,
+    "pseudocode_lines": 121,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "undefined_data"
     ],
-    "total_lines": 473
+    "total_lines": 480
   },
   "cross_references": [
     {
       "addr": "0053c4f0",
       "from_addr": "0053c6a7",
-      "name": "core_msnedit.cpp_FUN_0053c4f0",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c4f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -84,10 +127,10 @@
         "00537225"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_msnedit.cpp_FUN_00536e20",
-    "signature": "void core_msnedit_cpp_FUN_00536e20(void)"
+    "signature": "void __cdecl core_msnedit_cpp_FUN_00536e20(void)"
   },
   "function_calls": [
     {
@@ -310,7 +353,7 @@
       {
         "call_addr": "0053c6a7",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_FUN_0053c4f0",
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053c4f0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -319,7 +362,7 @@
       {
         "call_addr": "0053c71b",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_FUN_0053c4f0",
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053c4f0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -460,60 +503,130 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EBX",
+      "text": "int extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EBX_00",
+      "text": "int extraout_EBX_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 25,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 28,
       "match": "DAT_02f7a02c",
       "text": "((*(int *)(&DAT_02f7a02c + INT_02f7c52c * 0xec) == 0xd &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 29,
       "match": "DAT_02f7a094",
       "text": "(this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 37,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 49,
       "match": "DAT_02f7a02c",
       "text": "((CActorProperty *)(&DAT_02f7a02c + INT_02f7c52c * 0xec),",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 57,
       "match": "SUB84",
       "text": "(local_f4,\"%6.2f\",SUB84((double)local_f8,0),",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "SUB84",
-      "text": "uStack_30 = SUB84(dVar3,0);",
-      "type": "decompiler_intrinsic"
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_0063b719",
+      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b719,local_24 + 7,local_1c,1,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_0063b71e",
+      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b71e,iVar1,local_1c,0,0);",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 77,
       "match": "SUB84",
-      "text": "uStack_34 = SUB84(dVar3,0);",
+      "text": "uStack_30 = SUB84(dVar4,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 85,
+      "match": "extraout_EBX",
+      "text": "iVar1 = extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_0063b727",
+      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b727,iVar1 + 0x15,local_20,1,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_0063b722",
+      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b722,iVar1 + 0x15,local_20,1,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_0063b72c",
+      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b72c,iVar1,local_20,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "SUB84",
+      "text": "uStack_34 = SUB84(dVar4,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 106,
+      "match": "extraout_EBX_00",
+      "text": "iVar1 = extraout_EBX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_0063b730",
+      "text": "iVar1 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b730,iVar1 + 0x15,local_20,1,0);",
+      "type": "undefined_data"
     }
   ]
 }

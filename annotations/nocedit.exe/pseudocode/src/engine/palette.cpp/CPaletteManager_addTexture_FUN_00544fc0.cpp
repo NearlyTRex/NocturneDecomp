@@ -1,12 +1,12 @@
 // Name: engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0
 // Address: 00544fc0
 // Address Range: [[00544fc0, 00545051]]
-// Convention: unknown
-// Signature: void engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
 
 #include "nocturne.h"
 
-void engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
+void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
 
 {
   char cVar1;

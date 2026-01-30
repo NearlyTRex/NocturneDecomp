@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown char * core_msnedit_cpp_FUN_00535df0(void)
+; __cdecl char * __cdecl core_msnedit_cpp_FUN_00535df0(int param_1)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ON_0063b2f0

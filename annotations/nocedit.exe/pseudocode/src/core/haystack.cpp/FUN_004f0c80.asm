@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_haystack_cpp_FUN_004f0c80(void)
+; __cdecl void __cdecl core_haystack_cpp_FUN_004f0c80(void)
 ;
 ;
 ; Referenced Globals:

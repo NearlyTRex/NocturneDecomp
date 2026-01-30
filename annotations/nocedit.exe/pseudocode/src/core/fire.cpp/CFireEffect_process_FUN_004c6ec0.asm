@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3451
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e516
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539925
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539925
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e516
 ;
 ; Referenced Globals:
 ;   CSmokeParticle[2048] g_SmokeParticlePool
@@ -59,7 +59,7 @@ section .text
     MOV EBX,0x2d141ec                   ; 004c6ecb | g_SmokeParticlePool
     MOV dword ptr [0x02d667ac],EDX      ; 004c6ed0 | g_CFireEffectRocksEnd
     CALL core_fire.cpp_FUN_004c3870     ; 004c6ed6
-        ;   XREF to: 004c3870 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c3870()
+        ;   XREF to: 004c3870 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004c3870()
     LEA ESI,[EBX + 0x16000]             ; 004c6edb | g_BulletHoleActiveCount
     MOV EAX,dword ptr [EBX]             ; 004c6ee1 | g_SmokeParticlePool | DAT_02d14218
         ;   Label: LAB_004c6ee1

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_platfrm_cpp_FUN_0054db70(void)
+; __cdecl float * __cdecl core_platfrm_cpp_FUN_0054db70(void)
 ;
 ;
 ; Called Functions:

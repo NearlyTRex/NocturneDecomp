@@ -37,7 +37,7 @@ void __cdecl CPaletteManager::addTexture(CPaletteManager *this_ptr,char *filenam
 
 // Original: engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0
 // Address: 00544fc0
-void CPaletteManager::addTexture(void);
+void __cdecl CPaletteManager::addTexture(void);
 
 // Original: engine_palette.cpp_CPaletteManager_FUN_00545060
 // Address: 00545060
@@ -45,4 +45,4 @@ SMRGLHeaderExtended * __cdecl CPaletteManager(CPaletteManager *this_ptr,SMRGLHea
 
 // Original: engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
 // Address: 00545180
-undefined4 CPaletteManager::createOutputPalette(void);
+int __cdecl CPaletteManager::createOutputPalette(void);

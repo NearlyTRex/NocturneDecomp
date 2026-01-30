@@ -19,7 +19,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005ec5e1
     PUSH EBX                            ; 005ec5e5
     CALL core_waypoint.cpp_FUN_005ec4f0 ; 005ec5e6
-        ;   XREF to: 005ec4f0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec4f0()
+        ;   XREF to: 005ec4f0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_FUN_005ec4f0()
     ADD ESP,0x4                         ; 005ec5eb
     PUSH EBX                            ; 005ec5ee
     CALL core_trigger.cpp_CTrigger_FUN_005e1180 ; 005ec5ef

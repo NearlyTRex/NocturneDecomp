@@ -1,15 +1,15 @@
 // Name: core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0
 // Address: 00442bc0
 // Address Range: [[00442bc0, 00442d64]]
-// Convention: unknown
-// Signature: undefined4 core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_course.cpp_OpeningCourseFileMaybe(uint param_1, uint
    param_2) */
 
-uint core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
+int __cdecl core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
 
 {
   _FILE *file;
@@ -25,7 +25,7 @@ uint core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
                    (in_stack_00000008,(char *)0x0,"rt","..\\core\\course.cpp",0x14b);
   if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Can't open %s",in_stack_00000008);
+              (g_CEditorToolsPtr,"Can't open %s");
     return 0;
   }
   do {
@@ -40,7 +40,7 @@ uint core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
   _fscanf(file,"%d,%d\n",&local_18,local_14);
   if (local_18 != 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"%s contains %d nodes - must only contain 1!",in_stack_00000008,local_18);
+              (g_CEditorToolsPtr,"%s contains %d nodes - must only contain 1!");
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x161);
     return 0;
   }
@@ -56,7 +56,7 @@ uint core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
     iVar1 = _fgetc(file);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  sprintf(local_184,"Importing %s",in_stack_00000008);
+  sprintf(local_184,"Importing %s");
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,local_184);
   core_course_cpp_CCourse_importMatrices_FUN_00442ea0(in_stack_00000004);

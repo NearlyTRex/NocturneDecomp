@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 193,
+    "complexity_score": 168,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 18,
-    "suspect_count": 16,
+    "suspect_count": 14,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_unreachable"
     ],
     "total_lines": 47
@@ -30,49 +29,49 @@
     {
       "addr": "00565130",
       "from_addr": "00565a62",
-      "name": "core_script.cpp_CScript_Unk20_FUN_00565130",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565ae0",
+      "from_addr": "00565c4b",
+      "name": "core_script.cpp_CScript_FUN_00565ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565d00",
+      "from_addr": "00565e0b",
+      "name": "core_script.cpp_CScript_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565f70",
+      "from_addr": "0056604f",
+      "name": "core_script.cpp_CScript_FUN_00565f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566080",
+      "from_addr": "0056612e",
+      "name": "core_script.cpp_CScript_FUN_00566080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566660",
+      "from_addr": "005667e3",
+      "name": "core_script.cpp_CScript_FUN_00566660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005677a0",
+      "from_addr": "005679df",
+      "name": "core_script.cpp_CScript_FUN_005677a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00564820",
       "from_addr": "00564d2a",
       "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00566660",
-      "from_addr": "005667e3",
-      "name": "core_script.cpp_CScript_unk50_FUN_00566660",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00565ae0",
-      "from_addr": "00565c4b",
-      "name": "core_script.cpp_FUN_00565ae0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00565d00",
-      "from_addr": "00565e0b",
-      "name": "core_script.cpp_FUN_00565d00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00565f70",
-      "from_addr": "0056604f",
-      "name": "core_script.cpp_FUN_00565f70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00566080",
-      "from_addr": "0056612e",
-      "name": "core_script.cpp_FUN_00566080",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005677a0",
-      "from_addr": "005679df",
-      "name": "core_script.cpp_FUN_005677a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,9 +87,9 @@
         "005644ff"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_005644e0",
-    "signature": "undefined4 core_script_cpp_FUN_005644e0(undefined4 param_1)"
+    "signature": "void __cdecl core_script_cpp_FUN_005644e0(void)"
   },
   "function_calls": [],
   "globals": [
@@ -188,13 +187,6 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "text": "uint core_script_cpp_FUN_005644e0(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_031141c4",
@@ -235,13 +227,6 @@
       "match": "DAT_031141c8",
       "text": "DAT_031141c8 = 0xffffffff;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "text": "return param_1;",
-      "type": "unnamed_param"
     }
   ]
 }

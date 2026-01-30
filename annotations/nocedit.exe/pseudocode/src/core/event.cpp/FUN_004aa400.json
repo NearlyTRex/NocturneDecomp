@@ -4,37 +4,37 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 23,
+        "line": 20,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
-        "column": 20,
-        "line": 46,
+        "column": 17,
+        "line": 42,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 52,
+        "line": 48,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 58,
+        "line": 54,
         "message": "invalid conversion from 'int' to 'CHero*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 66,
+        "line": 62,
         "message": "invalid conversion from 'int' to 'CHero*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 70,
+        "line": 66,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       }
     ],
@@ -49,36 +49,36 @@
       {
         "category": "other",
         "column": 14,
-        "line": 22,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 38,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 97,
-        "line": 70,
-        "message": "format '%s' expects argument of type 'char*', but argument 5 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+        "line": 66,
+        "message": "format '%s' expects argument of type 'char*', but argument 5 has type 'int' [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 233,
+    "complexity_score": 228,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 21,
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 58,
     "suspect_count": 16,
     "suspect_types": [
-      "stack_param",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 220
+    "total_lines": 215
   },
   "cross_references": [
     {
@@ -108,9 +108,9 @@
         "004aa52c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_event.cpp_FUN_004aa400",
-    "signature": "CHero * core_event_cpp_FUN_004aa400(void)"
+    "signature": "CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -299,125 +299,147 @@
     "pcode_op_count": 528
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 11,
-      "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\\0')) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\\0')) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 13,
       "match": "DAT_02d0a460",
       "text": "pcVar4 = &DAT_02d0a460;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "if (*in_stack_00000004 == '@') {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "text": "if (*param_1 == '@') {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = stricmp(in_stack_00000004,\"$\");",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "text": "iVar2 = stricmp(param_1,\"$\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "text": "sprintf(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 35,
       "match": "DAT_02d0a460",
-      "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",in_stack_00000004);",
+      "text": "sprintf(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",param_1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 41,
       "match": "DAT_02d0a460",
       "text": "sprintf(&DAT_02d0a460,\"Can't use '$' actor specifier in multi-player\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_2",
+      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 54,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,in_stack_00000008);",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "if (*param_1 == '@') {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000004",
-      "text": "if (*in_stack_00000004 == '@') {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",in_stack_00000004,pcVar3,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_3",
+      "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 59,
       "match": "DAT_02d0a460",
-      "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",in_stack_00000004,pcVar3,",
+      "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c);",
-      "type": "stack_param"
     }
   ]
 }

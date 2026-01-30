@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053a357
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a357
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c462
 ;
 ; Referenced Globals:
@@ -172,7 +172,7 @@ section .text
     PUSH EDI                            ; 0056cec3
     INC ESI                             ; 0056cec4
     CALL core_set.cpp_FUN_00570af0      ; 0056cec5
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV ECX,dword ptr [EDI + 0x15acb4]  ; 0056ceca
     ADD ESP,0x4                         ; 0056ced0
     CMP ESI,ECX                         ; 0056ced3

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_script_cpp_CScript_loadState_FUN_00560820(void)
+; __cdecl int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *param_2)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined1       Stack[-0x118]:1  local_118
 ; undefined4       Stack[-0x18]:4  local_18
@@ -31,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_script.cpp_CalculateCRC_FUN_00560d80
+;   core_script.cpp_CScript_FUN_00560d80
 ;   core_script.cpp_GetReferencedActor_FUN_00560760
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -207,7 +210,7 @@ section .text
     PUSH EAX                            ; 005609ea
     PUSH EDI                            ; 005609eb
     CALL core_script.cpp_GetReferencedActor_FUN_00560760 ; 005609ec
-        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_GetReferencedActor_FUN_00560760()
+        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; void core_script.cpp_GetReferencedActor_FUN_00560760(_FILE * param_1, int * param_2)
     ADD ESP,0x8                         ; 005609f1
     PUSH EDI                            ; 005609f4
     PUSH 0xff                           ; 005609f5
@@ -220,7 +223,7 @@ section .text
     PUSH EAX                            ; 00560a0a
     PUSH EDI                            ; 00560a0b
     CALL core_script.cpp_GetReferencedActor_FUN_00560760 ; 00560a0c
-        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_GetReferencedActor_FUN_00560760()
+        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; void core_script.cpp_GetReferencedActor_FUN_00560760(_FILE * param_1, int * param_2)
     ADD ESP,0x8                         ; 00560a11
     CMP dword ptr [ESP + 0x100],0x5     ; 00560a14
     JL 0x00560a43                       ; 00560a1c
@@ -316,8 +319,8 @@ section .text
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00560b13
     PUSH EBP                            ; 00560b16
-    CALL core_script.cpp_CalculateCRC_FUN_00560d80 ; 00560b17
-        ;   XREF to: 00560d80 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CalculateCRC_FUN_00560d80()
+    CALL core_script.cpp_CScript_FUN_00560d80 ; 00560b17
+        ;   XREF to: 00560d80 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_FUN_00560d80(CScript * this_ptr)
     ADD ESP,0x4                         ; 00560b1c
     CMP EAX,dword ptr [ESP + 0x104]     ; 00560b1f
     JZ 0x00560aba                       ; 00560b26

@@ -1,15 +1,15 @@
 // Name: core_beast.cpp_FUN_004183b0
 // Address: 004183b0
 // Address Range: [[004183b0, 004183f8]]
-// Convention: unknown
-// Signature: undefined4 core_beast_cpp_FUN_004183b0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_beast_cpp_FUN_004183b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_beast.cpp_FUN_004183b0(uint param_1, uint param_2)
     */
 
-uint core_beast_cpp_FUN_004183b0(void)
+int __cdecl core_beast_cpp_FUN_004183b0(void)
 
 {
   CVector3f *pCVar1;

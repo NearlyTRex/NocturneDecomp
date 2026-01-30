@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
+; __cdecl int __cdecl core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
 ;
 ;
 ; XREF[1]:
@@ -69,7 +69,7 @@ section .text
     PUSH ESI                            ; 004f37bc
         ;   Label: LAB_004f37bc
     CALL core_hero.cpp_FUN_004f35b0     ; 004f37bd
-        ;   XREF to: 004f35b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f35b0()
+        ;   XREF to: 004f35b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f35b0()
     ADD ESP,0x4                         ; 004f37c2
     TEST EAX,EAX                        ; 004f37c5
     JZ 0x004f37a8                       ; 004f37c7

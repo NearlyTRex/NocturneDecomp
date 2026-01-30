@@ -1,14 +1,14 @@
 // Name: core_spike.cpp_CSpike_load_FUN_005b87f0
 // Address: 005b87f0
 // Address Range: [[005b87f0, 005b893f]]
-// Convention: unknown
-// Signature: void core_spike_cpp_CSpike_load_FUN_005b87f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_spike_cpp_CSpike_load_FUN_005b87f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_spike.cpp_CSpike_load(CSpike* param_1) */
 
-void core_spike_cpp_CSpike_load_FUN_005b87f0(void)
+void __cdecl core_spike_cpp_CSpike_load_FUN_005b87f0(void)
 
 {
   CDemonActor *in_stack_00000004;

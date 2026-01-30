@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250 at 005242bb
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 0052448c
-;   core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0 at 00538c95
+;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538c95
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_006391fb

@@ -1,12 +1,12 @@
 // Name: core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
 // Address: 0043c880
 // Address Range: [[0043c880, 0043cc73] [0043d413, 0043d540]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 
 #include "nocturne.h"
 
-void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
+void __cdecl core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 
 {
   int iVar1;

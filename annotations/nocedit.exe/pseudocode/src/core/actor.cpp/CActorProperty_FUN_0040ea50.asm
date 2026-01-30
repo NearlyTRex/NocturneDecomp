@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
+; __cdecl void __cdecl core_actor_cpp_CActorProperty_FUN_0040ea50(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
@@ -11,10 +11,10 @@
 ; XREF[6]:
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e850 at 0040e8b2
 ;   core_actor.cpp_FUN_0040ee50 at 0040ee69
-;   core_msnedit.cpp_FUN_0053c730 at 0053c7c8
-;   core_msnedit.cpp_FUN_0053ea30 at 0053ea8c
-;   core_msnedit.cpp_FUN_0053ec80 at 0053ed25
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053adaf
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053adaf
+;   core_msnedit.cpp_CDemonMission_FUN_0053c730 at 0053c7c8
+;   core_msnedit.cpp_CDemonMission_FUN_0053ea30 at 0053ea8c
+;   core_msnedit.cpp_CDemonMission_FUN_0053ec80 at 0053ed25
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040ea00 = 0040ea6e

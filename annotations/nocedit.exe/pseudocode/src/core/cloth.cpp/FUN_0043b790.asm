@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_FUN_0043b790(void)
+; __cdecl void __cdecl core_cloth_cpp_FUN_0043b790(void)
 ;
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@ section .text
     PUSH EBX                            ; 0043b7b9
     PUSH ESI                            ; 0043b7ba
     CALL core_cloth.cpp_FUN_0043b7e0    ; 0043b7bb
-        ;   XREF to: 0043b7e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043b7e0()
+        ;   XREF to: 0043b7e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043b7e0()
     INC EBX                             ; 0043b7c0
     MOV EDI,dword ptr [ESI + 0x3ce8c]   ; 0043b7c1
     ADD ESP,0xc                         ; 0043b7c7

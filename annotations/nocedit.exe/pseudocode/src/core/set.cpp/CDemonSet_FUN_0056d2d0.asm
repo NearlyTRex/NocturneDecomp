@@ -9,8 +9,8 @@
 ; XREF[16]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db564
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250 at 00524374
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e98a
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539e07
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539e07
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e98a
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a9e6
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 005806f2
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 005828e8

@@ -1,12 +1,12 @@
 // Name: core_charactr.cpp_FUN_0042f920
 // Address: 0042f920
 // Address Range: [[0042f920, 0042f92b]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_FUN_0042f920(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_FUN_0042f920(void)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_FUN_0042f920(void)
+void __cdecl core_charactr_cpp_FUN_0042f920(void)
 
 {
   int in_stack_00000004;

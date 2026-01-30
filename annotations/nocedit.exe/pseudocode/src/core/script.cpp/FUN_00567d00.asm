@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CVector3f * core_script_cpp_FUN_00567d00(void)
+; __cdecl CVector3f * __cdecl core_script_cpp_FUN_00567d00(CVector3f *param_1,float param_2,float param_3,float param_4)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   param_1
+; float            Stack[0x8]:4   param_2
+; float            Stack[0xc]:4   param_3
+; float            Stack[0x10]:4   param_4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector_ctor_FUN_00410340

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_conveyor_cpp_FUN_00442020(void)
+; __cdecl void __cdecl core_conveyor_cpp_FUN_00442020(void)
 ;
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00442021
     PUSH EBX                            ; 00442025
     CALL core_platfrm.cpp_CPlatform_load_FUN_0054dbc0 ; 00442026
-        ;   XREF to: 0054dbc0 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_CPlatform_load_FUN_0054dbc0()
+        ;   XREF to: 0054dbc0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_load_FUN_0054dbc0()
     ADD ESP,0x4                         ; 0044202b
     PUSH 0x618e44                       ; 0044202e | = "size"
     LEA EAX,[EBX + 0x72c]               ; 00442033

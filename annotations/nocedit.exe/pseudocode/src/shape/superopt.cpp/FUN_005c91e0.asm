@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown uint shape_superopt_cpp_FUN_005c91e0(void)
+; __cdecl uint __cdecl shape_superopt_cpp_FUN_005c91e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -41,7 +41,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005c91f6
     PUSH EBX                            ; 005c91f9
     CALL shape_superopt.cpp_FUN_005c8280 ; 005c91fa
-        ;   XREF to: 005c8280 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c8280()
+        ;   XREF to: 005c8280 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c8280()
     ADD ESP,0xc                         ; 005c91ff
     TEST EAX,EAX                        ; 005c9202
     JNZ 0x005c9211                      ; 005c9204
@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 005c9215
     PUSH EBX                            ; 005c9216
     CALL shape_superopt.cpp_FUN_005c9340 ; 005c9217
-        ;   XREF to: 005c9340 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c9340()
+        ;   XREF to: 005c9340 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_FUN_005c9340()
     MOV EDX,dword ptr [ESI]             ; 005c921c
     ADD ESP,0xc                         ; 005c921e
     TEST EDX,EDX                        ; 005c9221
@@ -144,7 +144,7 @@ section .text
     PUSH EAX                            ; 005c92af
     MOV dword ptr [ESP + 0x28],EDX      ; 005c92b0
     CALL shape_superopt.cpp_FUN_005cb3a0 ; 005c92b4
-        ;   XREF to: 005cb3a0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005cb3a0()
+        ;   XREF to: 005cb3a0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005cb3a0()
     ADD ESP,0xc                         ; 005c92b9
     TEST EAX,EAX                        ; 005c92bc
     JZ 0x005c92e2                       ; 005c92be
@@ -187,7 +187,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005c9300
     PUSH EDX                            ; 005c9303
     CALL shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20 ; 005c9304
-        ;   XREF to: 005cbe20 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20()
+        ;   XREF to: 005cbe20 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20()
     ADD ESP,0xc                         ; 005c9309
     TEST EAX,EAX                        ; 005c930c
     JZ 0x005c9206                       ; 005c930e

@@ -1,8 +1,8 @@
 // Name: core_morph.cpp_FUN_0052b370
 // Address: 0052b370
 // Address Range: [[0052b370, 0052b3c5]]
-// Convention: unknown
-// Signature: void core_morph_cpp_FUN_0052b370(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_FUN_0052b370(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
    uint param_3, uint param_4, uint param_5, uint param_6, uint
    param_7, uint param_8) */
 
-void core_morph_cpp_FUN_0052b370(void)
+void __cdecl core_morph_cpp_FUN_0052b370(void)
 
 {
   CMorphModel *this_ptr;

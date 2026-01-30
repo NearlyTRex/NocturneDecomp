@@ -1,12 +1,12 @@
 // Name: core_dracbrid.cpp_FUN_00486430
 // Address: 00486430
 // Address Range: [[00486430, 0048644b]]
-// Convention: unknown
-// Signature: float * core_dracbrid_cpp_FUN_00486430(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_dracbrid_cpp_FUN_00486430(void)
 
 #include "nocturne.h"
 
-float * core_dracbrid_cpp_FUN_00486430(void)
+float * __cdecl core_dracbrid_cpp_FUN_00486430(void)
 
 {
   float fVar1;

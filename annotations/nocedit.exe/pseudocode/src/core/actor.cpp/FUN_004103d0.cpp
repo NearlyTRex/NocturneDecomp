@@ -1,12 +1,12 @@
 // Name: core_actor.cpp_FUN_004103d0
 // Address: 004103d0
 // Address Range: [[004103d0, 004103fc]]
-// Convention: unknown
-// Signature: void core_actor_cpp_FUN_004103d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_actor_cpp_FUN_004103d0(void)
 
 #include "nocturne.h"
 
-void core_actor_cpp_FUN_004103d0(void)
+void __cdecl core_actor_cpp_FUN_004103d0(void)
 
 {
   float *in_stack_00000004;

@@ -1,15 +1,15 @@
 // Name: core_stone.cpp_FUN_005badd0
 // Address: 005badd0
 // Address Range: [[005badd0, 005bae09]]
-// Convention: unknown
-// Signature: void core_stone_cpp_FUN_005badd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stone_cpp_FUN_005badd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_stone.cpp_FUN_005badd0(uint param_1, uint param_2)
     */
 
-void core_stone_cpp_FUN_005badd0(void)
+void __cdecl core_stone_cpp_FUN_005badd0(void)
 
 {
   CBoxActor *in_stack_00000004;

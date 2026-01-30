@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_moloch_cpp_CMoloch_load_FUN_00529880(void)
+; __cdecl void __cdecl core_moloch_cpp_CMoloch_load_FUN_00529880(void)
 ;
 ;
 ; Referenced Globals:

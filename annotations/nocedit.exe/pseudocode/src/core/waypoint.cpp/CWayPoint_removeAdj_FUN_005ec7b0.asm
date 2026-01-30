@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(void)
+; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(void)
 ;
 ;
 ; XREF[2]:

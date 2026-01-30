@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600 at 00523773
-;   core_msnedit.cpp_FUN_0053b510 at 0053b5c7
-;   core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030 at 0053b0e7
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053ce7d
+;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b0e7
+;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b5c7
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053ce7d
 ;
 ; *****************************************************************************
 

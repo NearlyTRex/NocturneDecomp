@@ -95,7 +95,7 @@ section .text
     PUSH EBX                            ; 004be0f8
     MOV ESI,0x147                       ; 004be0f9
     CALL core_skeledit.cpp_FUN_0058a2b0 ; 004be0fe
-        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058a2b0()
+        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a2b0()
     MOV ECX,0x629763                    ; 004be103 | = "..\\core\\fileman.cpp"
     ADD ESP,0x8                         ; 004be108
     MOV dword ptr [0x02f0d944],ESI      ; 004be10b | g_CurrentDebugLine

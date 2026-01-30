@@ -100,7 +100,7 @@ section .text
     LEA EAX,[EBX + 0x2a94]              ; 00429b1e
     PUSH EAX                            ; 00429b24
     CALL core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 ; 00429b25
-        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
+        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
     ADD ESP,0x8                         ; 00429b2a
     POP ESI                             ; 00429b2d
     JMP 0x00429ab0                      ; 00429b2e

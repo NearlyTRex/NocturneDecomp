@@ -1,14 +1,14 @@
 // Name: core_turret.cpp_FUN_005e36f0
 // Address: 005e36f0
 // Address Range: [[005e36f0, 005e3701]]
-// Convention: unknown
-// Signature: float core_turret_cpp_FUN_005e36f0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_turret_cpp_FUN_005e36f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_turret.cpp_FUN_005e36f0() */
 
-float core_turret_cpp_FUN_005e36f0(void)
+float __cdecl core_turret_cpp_FUN_005e36f0(void)
 
 {
   float fVar1;

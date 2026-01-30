@@ -1,15 +1,15 @@
 // Name: core_dracbrid.cpp_FUN_004858f0
 // Address: 004858f0
 // Address Range: [[004858f0, 00485a41] [00485aed, 00485b11]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_FUN_004858f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_FUN_004858f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_draculabride.cpp_FUN_004858f0(uint param_1, uint
    param_2, uint param_3, uint param_4) */
 
-void core_dracbrid_cpp_FUN_004858f0(void)
+void __cdecl core_dracbrid_cpp_FUN_004858f0(void)
 
 {
   CDeformableModel *pCVar1;

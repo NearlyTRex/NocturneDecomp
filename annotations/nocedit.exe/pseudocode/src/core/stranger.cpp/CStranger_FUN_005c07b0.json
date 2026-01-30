@@ -232,7 +232,7 @@
       {
         "category": "other",
         "column": 30,
-        "line": 576,
+        "line": 574,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -523,25 +523,25 @@
       {
         "category": "other",
         "column": 24,
-        "line": 561,
+        "line": 559,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 576,
+        "line": 574,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1063,
-    "complexity_score": 1401,
+    "complexity_score": 1359,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
-    "pseudocode_lines": 576,
-    "suspect_count": 79,
+    "pseudocode_lines": 574,
+    "suspect_count": 75,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
@@ -551,7 +551,7 @@
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 1639
+    "total_lines": 1637
   },
   "cross_references": [
     {
@@ -575,10 +575,10 @@
         "005c165b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_CStranger_FUN_005c07b0",
-    "signature": "float * core_stranger_cpp_CStranger_FUN_005c07b0(void)"
+    "signature": "float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(void)"
   },
   "function_calls": [
     {
@@ -2134,21 +2134,21 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_0000000c",
-      "text": "float in_stack_0000000c;",
+      "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 137,
       "match": "in_stack_00000004",
-      "text": "iVar1 = *(int *)(in_stack_00000004 + 0x24ac + (int)in_stack_0000000c * 0x44);",
+      "text": "iVar1 = *(int *)(in_stack_00000004 + 0x24ac + in_stack_0000000c * 0x44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 137,
       "match": "in_stack_0000000c",
-      "text": "iVar1 = *(int *)(in_stack_00000004 + 0x24ac + (int)in_stack_0000000c * 0x44);",
+      "text": "iVar1 = *(int *)(in_stack_00000004 + 0x24ac + in_stack_0000000c * 0x44);",
       "type": "stack_param"
     },
     {
@@ -2274,7 +2274,7 @@
       "description": "Unresolved stack parameter",
       "line": 284,
       "match": "in_stack_0000000c",
-      "text": "else if (in_stack_0000000c == 0.0) {",
+      "text": "else if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
@@ -2470,7 +2470,7 @@
       "description": "Unresolved stack parameter",
       "line": 435,
       "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == 0.0) {",
+      "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
@@ -2491,15 +2491,8 @@
       "description": "Unresolved stack parameter",
       "line": 447,
       "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == 1.4013e-45) {",
+      "text": "if (in_stack_0000000c == 1) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 447,
-      "match": "1.4013e-45",
-      "text": "if (in_stack_0000000c == 1.4013e-45) {",
-      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2582,61 +2575,40 @@
       "description": "Unresolved stack parameter",
       "line": 528,
       "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == 0.0) {",
+      "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 529,
+      "line": 536,
       "match": "in_stack_0000000c",
-      "text": "local_b4.y = in_stack_0000000c;",
+      "text": "else if (in_stack_0000000c == 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 530,
-      "match": "in_stack_0000000c",
-      "text": "local_b4.z = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 538,
-      "match": "in_stack_0000000c",
-      "text": "else if (in_stack_0000000c == 1.4013e-45) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 538,
-      "match": "1.4013e-45",
-      "text": "else if (in_stack_0000000c == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 554,
+      "line": 552,
       "match": "in_stack_00000004",
       "text": "(&local_e4,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8));",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 569,
+      "line": 567,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 573,
+      "line": 571,
       "match": "unaff_ESI",
       "text": "pfVar12 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 579,
+      "line": 577,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

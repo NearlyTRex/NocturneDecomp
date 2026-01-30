@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_script_cpp_GetReferencedActor_FUN_00560760(void)
+; __cdecl void __cdecl core_script_cpp_GetReferencedActor_FUN_00560760(_FILE *param_1,int *param_2)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   param_1
+; int *            Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined1       Stack[-0xd0]:1  local_d0
 ;

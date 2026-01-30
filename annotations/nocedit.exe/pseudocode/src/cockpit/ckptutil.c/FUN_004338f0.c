@@ -1,12 +1,12 @@
 // Name: cockpit_ckptutil.c_FUN_004338f0
 // Address: 004338f0
 // Address Range: [[004338f0, 004339b6]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_FUN_004338f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_FUN_004338f0(void)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_FUN_004338f0(void)
+void __cdecl cockpit_ckptutil_c_FUN_004338f0(void)
 
 {
   short sVar1;

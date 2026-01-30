@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_gun_cpp_FUN_004f0b20(void)
+; __cdecl float __cdecl core_gun_cpp_FUN_004f0b20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

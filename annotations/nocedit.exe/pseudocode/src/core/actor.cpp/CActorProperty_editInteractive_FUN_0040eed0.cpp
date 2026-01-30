@@ -72,7 +72,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   float local_34;
   float local_30;
   int local_2c;
-  uint local_28;
+  int local_28;
   CMotionList *local_24;
   int local_20;
   char (*local_1c) [30];
@@ -184,10 +184,12 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     *(uint *)this_ptr->data_ptr = (uint)(*(int *)this_ptr->data_ptr == 0);
     return 1;
   case 5:
-    local_28 = *(uint *)this_ptr->data_ptr;
-    iVar12 = core_msnedit_cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0();
+    local_28 = *(int *)this_ptr->data_ptr;
+    iVar12 = core_msnedit_cpp_CDemonMission_FUN_0053cad0
+                       (g_CDemonMissionPtr,(int)actor,local_2a0,&local_28,this_ptr->min_or_index,
+                        (int)(this_ptr->unknown + 0x18),(int)this_ptr->validator_or_callback,1);
     if (iVar12 != 0) {
-      *(uint *)this_ptr->data_ptr = local_28;
+      *(int *)this_ptr->data_ptr = local_28;
       if (this_ptr->auto_update_flag == 0) {
         return 1;
       }

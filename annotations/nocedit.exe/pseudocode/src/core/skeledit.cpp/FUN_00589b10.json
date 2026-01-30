@@ -12,36 +12,35 @@
       {
         "category": "other",
         "column": 43,
-        "line": 20,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 25,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 40,
+        "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 113,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 5,
-    "pseudocode_lines": 33,
-    "suspect_count": 7,
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 102
+    "total_lines": 101
   },
   "cross_references": [],
   "function": {
@@ -52,9 +51,9 @@
         "00589baf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_00589b10",
-    "signature": "void core_skeledit_cpp_FUN_00589b10 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5)"
+    "signature": "void __cdecl core_skeledit_cpp_FUN_00589b10(void)"
   },
   "function_calls": [
     {
@@ -179,53 +178,18 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 3,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_1",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "text": "int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_5",
-      "text": "if (param_5 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EBX",
-      "text": "(g_CEditorToolsPtr,\"LOD generation complete!\",unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004 == 0) {",
+      "type": "stack_param"
     }
   ]
 }

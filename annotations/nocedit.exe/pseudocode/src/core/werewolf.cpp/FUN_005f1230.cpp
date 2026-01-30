@@ -1,15 +1,15 @@
 // Name: core_werewolf.cpp_FUN_005f1230
 // Address: 005f1230
 // Address Range: [[005f1230, 005f181d]]
-// Convention: unknown
-// Signature: void core_werewolf_cpp_FUN_005f1230(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_werewolf_cpp_FUN_005f1230(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_werewolf.cpp_FUN_005f1230(uint param_1, uint
    param_2) */
 
-void core_werewolf_cpp_FUN_005f1230(void)
+void __cdecl core_werewolf_cpp_FUN_005f1230(void)
 
 {
   float *pfVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_curtain_cpp_FUN_00449e40(void)
+; __cdecl void __cdecl core_curtain_cpp_FUN_00449e40(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30

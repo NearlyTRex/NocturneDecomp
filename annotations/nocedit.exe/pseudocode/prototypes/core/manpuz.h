@@ -89,7 +89,7 @@ void __cdecl CMansionPuzzleCircle(CMansionPuzzleCircle *this_ptr);
 
 // Original: core_manpuz.cpp_FUN_0050a490
 // Address: 0050a490
-undefined4 FUN_0050a490(void);
+int __cdecl FUN_0050a490(void);
 
 // Original: core_manpuz.cpp_FUN_0050a4f0
 // Address: 0050a4f0
@@ -237,7 +237,7 @@ SPanel * __cdecl SPanel::dtor(SPanel *this_ptr);
 
 // Original: core_manpuz.cpp_FUN_0050b9a0
 // Address: 0050b9a0
-void FUN_0050b9a0(void);
+void __cdecl FUN_0050b9a0(void);
 
 // Original: core_manpuz.cpp_freeTriangles_FUN_0050ba70
 // Address: 0050ba70

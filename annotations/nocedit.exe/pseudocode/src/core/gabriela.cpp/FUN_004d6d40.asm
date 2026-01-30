@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gabriela_cpp_FUN_004d6d40(void)
+; __cdecl void __cdecl core_gabriela_cpp_FUN_004d6d40(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x50]:1  local_50
@@ -143,7 +143,7 @@ section .text
     PUSH dword ptr [ESP + 0x80]         ; 004d6e6f
     PUSH EBX                            ; 004d6e76
     CALL core_gabriela.cpp_FUN_004d6f80 ; 004d6e77
-        ;   XREF to: 004d6f80 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d6f80()
+        ;   XREF to: 004d6f80 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d6f80()
     MOV ECX,dword ptr [EBX + 0x24f8]    ; 004d6e7c
     ADD ESP,0x18                        ; 004d6e82
     TEST ECX,ECX                        ; 004d6e85
@@ -179,7 +179,7 @@ section .text
     PUSH dword ptr [ESP + 0x80]         ; 004d6ede
     PUSH EBX                            ; 004d6ee5
     CALL core_gabriela.cpp_FUN_004d6f80 ; 004d6ee6
-        ;   XREF to: 004d6f80 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004d6f80()
+        ;   XREF to: 004d6f80 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d6f80()
     ADD ESP,0x18                        ; 004d6eeb
     MOV EAX,[0x006810c8]                ; 004d6eee | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 004d6ef3 | g_CDemonSetInstance

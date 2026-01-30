@@ -77,7 +77,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
-  local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
+  local_14 = core_charactr_cpp_CCharacter_FUN_0042e840();
   if ((float)0.98999999999999999 < local_14) {
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     start_pos = (CVector3f *)0x0;
@@ -95,7 +95,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
                 (g_CDemonSetPtr,*(CDemonActor **)(this_ptr->unk1 + 0x54));
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
-      input = (CVector3f *)core_stranger_cpp_CStranger_FUN_005c51c0();
+      input = core_stranger_cpp_CStranger_FUN_005c51c0();
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                 ((CDemonActor *)this_ptr,local_7c,input);
       local_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
@@ -133,7 +133,7 @@ switchD_005c331f_caseD_3:
     case 7:
     }
   }
-  local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
+  local_14 = core_charactr_cpp_CCharacter_FUN_0042e840();
   bVar2 = (float)0.94999999999999996 < local_14;
   if ((*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0) == 1) &&
      (*(int *)((this_ptr->base).base.unk3 + 0x46c) == 8)) {

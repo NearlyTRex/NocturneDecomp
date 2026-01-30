@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_larva_cpp_FUN_00502f80(void)
+; __cdecl CDemonActorType * __cdecl core_larva_cpp_FUN_00502f80(void)
 ;
 ;
 ; Referenced Globals:

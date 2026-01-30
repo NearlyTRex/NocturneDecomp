@@ -1,15 +1,15 @@
 // Name: core_grave.cpp_FUN_004ee5c0
 // Address: 004ee5c0
 // Address Range: [[004ee5c0, 004ee67c]]
-// Convention: unknown
-// Signature: void core_grave_cpp_FUN_004ee5c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_grave_cpp_FUN_004ee5c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_grave.cpp_FUN_004ee5c0(uint param_1, uint param_2)
     */
 
-void core_grave_cpp_FUN_004ee5c0(void)
+void __cdecl core_grave_cpp_FUN_004ee5c0(void)
 
 {
   float fVar1;

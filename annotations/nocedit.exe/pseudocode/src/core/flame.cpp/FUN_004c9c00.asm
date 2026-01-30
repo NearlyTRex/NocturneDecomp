@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flame_cpp_FUN_004c9c00(void)
+; __cdecl void __cdecl core_flame_cpp_FUN_004c9c00(void)
 ;
 ; Local Variables:
 ; undefined1[12]   Stack[-0x114]:12  local_114
@@ -160,7 +160,7 @@ section .text
     PUSH ESI                            ; 004c9d5f
     MOV dword ptr [ESI + 0x34],0x0      ; 004c9d60
     CALL core_flamecan.cpp_FUN_004cad90 ; 004c9d67
-        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_FUN_004cad90()
+        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cad90()
     MOV ECX,dword ptr [ESI + 0x2a0]     ; 004c9d6c
     ADD ESP,0x4                         ; 004c9d72
     TEST ECX,ECX                        ; 004c9d75

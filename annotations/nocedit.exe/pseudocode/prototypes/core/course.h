@@ -29,7 +29,7 @@ void __cdecl CCourse(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_FUN_004427a0
 // Address: 004427a0
-void CCourse(void);
+void __cdecl CCourse(void);
 
 // Original: core_course.cpp_CCourse_save_FUN_00442a90
 // Address: 00442a90
@@ -37,11 +37,11 @@ void __cdecl CCourse::save(CCourse *this_ptr);
 
 // Original: core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0
 // Address: 00442bc0
-undefined4 OpeningCourseFileMaybe(void);
+int __cdecl OpeningCourseFileMaybe(void);
 
 // Original: core_course.cpp_OpeningCourseFile2_FUN_00442d70
 // Address: 00442d70
-undefined4 OpeningCourseFile2(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CCourse *param_5,char *param_6);
+int __cdecl OpeningCourseFile2(void);
 
 // Original: core_course.cpp_CCourse_importMatrices_FUN_00442ea0
 // Address: 00442ea0
@@ -53,11 +53,11 @@ void __cdecl CCourse::showEditorMenu(CCourse *this_ptr);
 
 // Original: core_course.cpp_FUN_004436d0
 // Address: 004436d0
-void FUN_004436d0(void);
+void __cdecl FUN_004436d0(void);
 
 // Original: core_course.cpp_FUN_00443760
 // Address: 00443760
-void FUN_00443760(void);
+void __cdecl FUN_00443760(void);
 
 // Original: core_course.cpp_FUN_00443bc0
 // Address: 00443bc0

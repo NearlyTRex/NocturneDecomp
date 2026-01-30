@@ -1,15 +1,15 @@
 // Name: core_passngr.cpp_FUN_00546270
 // Address: 00546270
 // Address Range: [[00546270, 005462e4]]
-// Convention: unknown
-// Signature: void core_passngr_cpp_FUN_00546270(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_passngr_cpp_FUN_00546270(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_passenger.cpp_FUN_00546270(uint param_1, uint
    param_2) */
 
-void core_passngr_cpp_FUN_00546270(void)
+void __cdecl core_passngr_cpp_FUN_00546270(void)
 
 {
   CNPC *in_stack_00000004;

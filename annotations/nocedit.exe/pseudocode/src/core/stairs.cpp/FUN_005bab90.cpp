@@ -1,15 +1,15 @@
 // Name: core_stairs.cpp_FUN_005bab90
 // Address: 005bab90
 // Address Range: [[005bab90, 005babe3]]
-// Convention: unknown
-// Signature: void core_stairs_cpp_FUN_005bab90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stairs_cpp_FUN_005bab90(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_stairs.cpp_FUN_005bab90(uint param_1, uint
    param_2) */
 
-void core_stairs_cpp_FUN_005bab90(void)
+void __cdecl core_stairs_cpp_FUN_005bab90(void)
 
 {
   CDemonActor *in_stack_00000004;

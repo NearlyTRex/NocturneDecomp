@@ -1,12 +1,12 @@
 // Name: core_mobster.cpp_FUN_00525110
 // Address: 00525110
 // Address Range: [[00525110, 005251ba]]
-// Convention: unknown
-// Signature: CVector3f * core_mobster_cpp_FUN_00525110(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_mobster_cpp_FUN_00525110(void)
 
 #include "nocturne.h"
 
-CVector3f * core_mobster_cpp_FUN_00525110(void)
+CVector3f * __cdecl core_mobster_cpp_FUN_00525110(void)
 
 {
   CVector3f *in_stack_00000004;

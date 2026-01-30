@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_beast_cpp_FUN_004182a0(void)
+; __cdecl void __cdecl core_beast_cpp_FUN_004182a0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

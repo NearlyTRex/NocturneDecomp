@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_boneguy_cpp_FUN_0041d1b0(void)
+; __cdecl int __cdecl core_boneguy_cpp_FUN_0041d1b0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x20]:1  local_20

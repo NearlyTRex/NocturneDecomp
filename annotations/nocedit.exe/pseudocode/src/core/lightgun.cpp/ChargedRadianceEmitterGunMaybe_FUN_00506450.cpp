@@ -1,15 +1,15 @@
 // Name: core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450
 // Address: 00506450
 // Address Range: [[00506450, 00506663]]
-// Convention: unknown
-// Signature: void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_lightgun.cpp_ChargedRadianceEmitterGunMaybe(uint
    param_1, uint param_2) */
 
-void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
+void __cdecl core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 
 {
   float base_frequency;

@@ -37,7 +37,7 @@ void __cdecl CSuccubus::serialize(CSuccubus *this_ptr);
 
 // Original: core_succubus.cpp_FUN_005c7760
 // Address: 005c7760
-void FUN_005c7760(void);
+void __cdecl FUN_005c7760(void);
 
 // Original: core_succubus.cpp_CSuccubus_FUN_005c7780
 // Address: 005c7780

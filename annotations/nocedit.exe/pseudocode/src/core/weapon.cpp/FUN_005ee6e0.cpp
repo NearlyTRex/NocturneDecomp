@@ -1,14 +1,14 @@
 // Name: core_weapon.cpp_FUN_005ee6e0
 // Address: 005ee6e0
 // Address Range: [[005ee6e0, 005ee703]]
-// Convention: unknown
-// Signature: undefined4 core_weapon_cpp_FUN_005ee6e0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_weapon_cpp_FUN_005ee6e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_weapon.cpp_FUN_005ee6e0(uint param_1) */
 
-uint core_weapon_cpp_FUN_005ee6e0(void)
+int __cdecl core_weapon_cpp_FUN_005ee6e0(void)
 
 {
   int in_stack_00000004;

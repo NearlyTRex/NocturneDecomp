@@ -94,10 +94,10 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     this_ptr->boxes[box_index].green_variance = fVar10 + fVar7;
     this_ptr->boxes[box_index].blue_variance = fVar1 + fVar8;
     this_ptr->boxes[box_index].intensity_variance = fVar2 + fVar9;
-    local_58 = (float)core_bugs_cpp_FUN_00427ba0();
-    local_44 = (float)core_bugs_cpp_FUN_00427ba0();
-    local_50 = (float)core_bugs_cpp_FUN_00427ba0();
-    local_3c = (float)core_bugs_cpp_FUN_00427ba0();
+    local_58 = core_bugs_cpp_FUN_00427ba0();
+    local_44 = core_bugs_cpp_FUN_00427ba0();
+    local_50 = core_bugs_cpp_FUN_00427ba0();
+    local_3c = core_bugs_cpp_FUN_00427ba0();
     this_ptr->boxes[box_index].weighted_variance =
          fVar9 * fVar9 * (float)0.69999999999999996 +
          fVar8 * fVar8 * (float)0.11 +
@@ -115,11 +115,11 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   this_ptr->boxes[box_index].green_variance = fVar10 * fVar6 * local_44;
   this_ptr->boxes[box_index].blue_variance = fVar1 * fVar7 * local_50;
   this_ptr->boxes[box_index].intensity_variance = fVar2 * fVar8 * local_3c;
-  fVar10 = (float)core_bugs_cpp_FUN_00427ba0();
+  fVar10 = core_bugs_cpp_FUN_00427ba0();
   this_ptr->boxes[box_index].final_metric = fVar10;
-  fVar10 = (float)core_bugs_cpp_FUN_00427ba0();
+  fVar10 = core_bugs_cpp_FUN_00427ba0();
   this_ptr->boxes[box_index].final_metric = fVar10;
-  fVar10 = (float)core_bugs_cpp_FUN_00427ba0();
+  fVar10 = core_bugs_cpp_FUN_00427ba0();
   this_ptr->boxes[box_index].final_metric = fVar10;
   return;
 }

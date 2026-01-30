@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_icepick_cpp_FUN_004f80b0(void)
+; __cdecl void __cdecl core_icepick_cpp_FUN_004f80b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x98]:4  local_98
@@ -112,7 +112,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x4]       ; 004f814e
     MOV dword ptr [ESI],EAX             ; 004f8151
     CALL core_icepick.cpp_FUN_004f93a0  ; 004f8153
-        ;   XREF to: 004f93a0 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_FUN_004f93a0()
+        ;   XREF to: 004f93a0 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004f93a0()
     ADD ESP,0x8                         ; 004f8158
     PUSH dword ptr [EBP + 0x18]         ; 004f815b
     FLD float ptr [EBX + 0x23b4]        ; 004f815e
@@ -326,7 +326,7 @@ section .text
         ;   Label: LAB_004f83b3
     PUSH EBX                            ; 004f83b6
     CALL core_icepick.cpp_FUN_004f8810  ; 004f83b7
-        ;   XREF to: 004f8810 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_FUN_004f8810()
+        ;   XREF to: 004f8810 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004f8810()
     ADD ESP,0x8                         ; 004f83bc
     PUSH dword ptr [EBP + 0x18]         ; 004f83bf
     PUSH EBX                            ; 004f83c2
@@ -344,7 +344,7 @@ section .text
         ;   Label: LAB_004f83d2
     PUSH EBX                            ; 004f83d5
     CALL core_icepick.cpp_FUN_004f8c70  ; 004f83d6
-        ;   XREF to: 004f8c70 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_FUN_004f8c70()
+        ;   XREF to: 004f8c70 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004f8c70()
     ADD ESP,0x8                         ; 004f83db
     JMP 0x004f80f0                      ; 004f83de
         ;   XREF to: 004f80f0 (UNCONDITIONAL_JUMP)  ; LAB_004f80f0
@@ -497,14 +497,14 @@ section .text
         ;   XREF to: 004f81b6 (CONDITIONAL_JUMP)  ; LAB_004f81b6
     PUSH EBX                            ; 004f8578
     CALL core_icepick.cpp_FUN_004f8970  ; 004f8579
-        ;   XREF to: 004f8970 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_FUN_004f8970()
+        ;   XREF to: 004f8970 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_FUN_004f8970()
     ADD ESP,0x4                         ; 004f857e
     TEST EAX,EAX                        ; 004f8581
     JNZ 0x004f81b6                      ; 004f8583
         ;   XREF to: 004f81b6 (CONDITIONAL_JUMP)  ; LAB_004f81b6
     PUSH EBX                            ; 004f8589
     CALL core_icepick.cpp_FUN_004f8ad0  ; 004f858a
-        ;   XREF to: 004f8ad0 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_FUN_004f8ad0()
+        ;   XREF to: 004f8ad0 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_FUN_004f8ad0()
     ADD ESP,0x4                         ; 004f858f
     JMP 0x004f81b6                      ; 004f8592
         ;   XREF to: 004f81b6 (UNCONDITIONAL_JUMP)  ; LAB_004f81b6
@@ -526,7 +526,7 @@ section .text
         ;   XREF to: 004f84cc (CONDITIONAL_JUMP)  ; LAB_004f84cc
     PUSH EBX                            ; 004f85c2
     CALL core_hero.cpp_FUN_004f2af0     ; 004f85c3
-        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2af0()
+        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2af0()
     XOR EDI,EDI                         ; 004f85c8
     ADD ESP,0x4                         ; 004f85ca
     TEST EAX,EAX                        ; 004f85cd
@@ -534,7 +534,7 @@ section .text
         ;   XREF to: 004f84cc (CONDITIONAL_JUMP)  ; LAB_004f84cc
     PUSH EBX                            ; 004f85d5
     CALL core_hero.cpp_FUN_004f2d70     ; 004f85d6
-        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2d70()
+        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2d70()
     ADD ESP,0x4                         ; 004f85db
     MOV dword ptr [ESP + 0x74],EAX      ; 004f85de
     TEST EAX,EAX                        ; 004f85e2
@@ -549,14 +549,14 @@ section .text
         ;   XREF to: 004f84cc (CONDITIONAL_JUMP)  ; LAB_004f84cc
     PUSH EBX                            ; 004f85f6
     CALL core_hero.cpp_FUN_004f2c40     ; 004f85f7
-        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2c40()
+        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2c40()
     ADD ESP,0x4                         ; 004f85fc
     TEST EAX,EAX                        ; 004f85ff
     JNZ 0x004f84cc                      ; 004f8601
         ;   XREF to: 004f84cc (CONDITIONAL_JUMP)  ; LAB_004f84cc
     PUSH EBX                            ; 004f8607
     CALL core_hero.cpp_FUN_004f2f50     ; 004f8608
-        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2f50()
+        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2f50()
     ADD ESP,0x4                         ; 004f860d
     TEST EAX,EAX                        ; 004f8610
     JNZ 0x004f8624                      ; 004f8612
@@ -566,14 +566,14 @@ section .text
     PUSH EBX                            ; 004f8619
         ;   Label: LAB_004f8619
     CALL core_hero.cpp_FUN_004f2ed0     ; 004f861a
-        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2ed0()
+        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2ed0()
     ADD ESP,0x4                         ; 004f861f
     JMP 0x004f85eb                      ; 004f8622
         ;   XREF to: 004f85eb (UNCONDITIONAL_JUMP)  ; LAB_004f85eb
     PUSH EBX                            ; 004f8624
         ;   Label: LAB_004f8624
     CALL core_hero.cpp_FUN_004f30f0     ; 004f8625
-        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f30f0()
+        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f30f0()
     ADD ESP,0x4                         ; 004f862a
     JMP 0x004f84cc                      ; 004f862d
         ;   XREF to: 004f84cc (UNCONDITIONAL_JUMP)  ; LAB_004f84cc

@@ -1,12 +1,12 @@
 // Name: core_dracbrid.cpp_FUN_004869a0
 // Address: 004869a0
 // Address Range: [[004869a0, 00486b04] [00486b9d, 00486c8e]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_FUN_004869a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_FUN_004869a0(void)
 
 #include "nocturne.h"
 
-void core_dracbrid_cpp_FUN_004869a0(void)
+void __cdecl core_dracbrid_cpp_FUN_004869a0(void)
 
 {
   CVector3f *pCVar1;
@@ -97,7 +97,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
           }
         }
         core_spline_cpp_FUN_005b90a0();
-        pfVar7 = (float *)core_spline_cpp_FUN_005b92d0();
+        pfVar7 = core_spline_cpp_FUN_005b92d0();
         if ((float *)(local_20->unk1 + 4) != pfVar7) {
           *(float *)(local_20->unk1 + 4) = *pfVar7;
           *(float *)(local_20->unk1 + 8) = pfVar7[1];
@@ -106,7 +106,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",(double)*(float *)(local_20->unk1 + 4),
                    (double)*(float *)(local_20->unk1 + 8),(double)*(float *)(local_20->unk1 + 0xc));
-        pfVar7 = (float *)core_spline_cpp_FUN_005b9490();
+        pfVar7 = core_spline_cpp_FUN_005b9490();
         if ((float *)(local_20->unk1 + 0x10) != pfVar7) {
           *(float *)(local_20->unk1 + 0x10) = *pfVar7;
           *(float *)(local_20->unk1 + 0x14) = pfVar7[1];

@@ -1,15 +1,15 @@
 // Name: core_gore.cpp_FUN_004edbb0
 // Address: 004edbb0
 // Address Range: [[004edbb0, 004edce4] [004eddc2, 004eddd4]]
-// Convention: unknown
-// Signature: void core_gore_cpp_FUN_004edbb0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_FUN_004edbb0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_gore.cpp_FUN_004edbb0(uint param_1, uint param_2,
    uint param_3, uint param_4, uint param_5) */
 
-void core_gore_cpp_FUN_004edbb0(void)
+void __cdecl core_gore_cpp_FUN_004edbb0(void)
 
 {
   float fVar1;
@@ -18,7 +18,7 @@ void core_gore_cpp_FUN_004edbb0(void)
   float10 extraout_ST1;
   float *in_stack_0000000c;
   int in_stack_00000010;
-  float in_stack_00000014;
+  int in_stack_00000014;
   CMatrix3x3f local_7c;
   CVector3f local_54;
   float local_44;
@@ -31,12 +31,11 @@ void core_gore_cpp_FUN_004edbb0(void)
   float local_20;
   float local_1c;
   
-  if (in_stack_00000014 != 2.8026e-45) {
+  if (in_stack_00000014 != 2) {
     if (in_stack_0000000c == (float *)0x0) {
       iVar2 = 0;
       if (0 < in_stack_00000010) {
         do {
-          local_7c.m[0].x = in_stack_00000014;
           iVar2 = iVar2 + 1;
           core_gore_cpp_FUN_004edaa0();
         } while (iVar2 < in_stack_00000010);

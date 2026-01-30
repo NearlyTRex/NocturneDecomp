@@ -1,12 +1,12 @@
 // Name: core_fire.cpp_FUN_004c24d0
 // Address: 004c24d0
 // Address Range: [[004c24d0, 004c25b7]]
-// Convention: unknown
-// Signature: float core_fire_cpp_FUN_004c24d0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_fire_cpp_FUN_004c24d0(void)
 
 #include "nocturne.h"
 
-float core_fire_cpp_FUN_004c24d0(void)
+float __cdecl core_fire_cpp_FUN_004c24d0(void)
 
 {
   float fVar1;
@@ -17,12 +17,10 @@ float core_fire_cpp_FUN_004c24d0(void)
   CVector3i local_34;
   uint local_28;
   uint local_24;
-  float local_20;
   float local_8;
   
   local_28 = 0;
   local_24 = 0;
-  local_20 = in_stack_00000004;
   local_34.x = (int)ROUND(256.0f * 0.0);
   local_34.y = (int)ROUND(256.0f * 0.0);
   local_34.z = (int)ROUND(in_stack_00000004 * 256.0f);

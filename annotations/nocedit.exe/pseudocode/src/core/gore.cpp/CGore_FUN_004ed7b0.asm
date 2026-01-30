@@ -7,7 +7,7 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053a384
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a384
 ;   core_set.cpp_CDemonSet_FUN_0056be80 at 0056c063
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c484
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cb77
@@ -75,7 +75,7 @@ section .text
     PUSH 0x2d833d4                      ; 004ed7f0 | DAT_02d833d4
     MOV EBX,0x2d833d4                   ; 004ed7f5 | DAT_02d833d4
     CALL core_gore.cpp_FUN_004eb9d0     ; 004ed7fa
-        ;   XREF to: 004eb9d0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004eb9d0()
+        ;   XREF to: 004eb9d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004eb9d0()
     LEA ESI,[EBX + 0x4000]              ; 004ed7ff | DAT_02d873d4
     ADD ESP,0x4                         ; 004ed805
     FLD float ptr [EBX + 0x18]          ; 004ed808 | DAT_02d833ec | DAT_02d8342c

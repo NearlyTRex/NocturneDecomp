@@ -37,14 +37,14 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 173,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 53,
-    "suspect_count": 11,
+    "suspect_count": 6,
     "suspect_types": [
-      "unaffected_reg",
+      "stack_param",
       "unnamed_param"
     ],
     "total_lines": 152
@@ -58,9 +58,9 @@
         "0044ba2f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_curtain.cpp_FindCurtainTextures_FUN_0044b960",
-    "signature": "void core_curtain_cpp_FindCurtainTextures_FUN_0044b960 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)"
+    "signature": "void __cdecl core_curtain_cpp_FindCurtainTextures_FUN_0044b960(void)"
   },
   "function_calls": [
     {
@@ -238,74 +238,39 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "_FILE *in_stack_00000008;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_4",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_5",
-      "text": "int param_5,_FILE *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_6",
-      "text": "int param_5,_FILE *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "param_5",
-      "text": "pcVar2 = (char *)(param_5 + 0x16c);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "pcVar2 = (char *)(in_stack_00000004 + 0x16c);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "param_6",
-      "text": "_fprintf(param_6,\"ART\\\\%s\\n\",pcVar2);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000008",
+      "text": "_fprintf(in_stack_00000008,\"ART\\\\%s\\n\",pcVar2);",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_EBX",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Cannot find curtain texture extension\",unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 55,
-      "match": "param_6",
-      "text": "_fprintf(param_6,\"ART\\\\%s\\n\",local_108);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000008",
+      "text": "_fprintf(in_stack_00000008,\"ART\\\\%s\\n\",local_108);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

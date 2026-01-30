@@ -1,15 +1,15 @@
 // Name: core_grave.cpp_FUN_004ee710
 // Address: 004ee710
 // Address Range: [[004ee710, 004ee785]]
-// Convention: unknown
-// Signature: void core_grave_cpp_FUN_004ee710(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_grave_cpp_FUN_004ee710(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_grave.cpp_FUN_004ee710(uint param_1, uint param_2)
     */
 
-void core_grave_cpp_FUN_004ee710(void)
+void __cdecl core_grave_cpp_FUN_004ee710(void)
 
 {
   CBoundingBox3D *this_ptr;

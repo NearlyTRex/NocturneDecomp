@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_flies_cpp_FUN_004cc760(void)
+; __cdecl void __cdecl core_flies_cpp_FUN_004cc760(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x30]:1  local_30
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [ESP + 0x24],EBX      ; 004cc790
     ADD EBX,0x4                         ; 004cc794
     CALL core_flies.cpp_FUN_004cc820    ; 004cc797
-        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc820()
+        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; float * core_flies.cpp_FUN_004cc820()
     ADD ESP,0xc                         ; 004cc79c
     CMP EBX,EAX                         ; 004cc79f
     JNZ 0x004cc808                      ; 004cc7a1
@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 004cc7bb
     PUSH EBP                            ; 004cc7bc
     CALL core_flies.cpp_FUN_004cc820    ; 004cc7bd
-        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc820()
+        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; float * core_flies.cpp_FUN_004cc820()
     ADD ESP,0xc                         ; 004cc7c2
     CMP EBX,EAX                         ; 004cc7c5
     JZ 0x004cc7d9                       ; 004cc7c7

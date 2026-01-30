@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_zombie_cpp_CZombie_FUN_005fbde0(void)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(void)
 ;
 ;
 ; XREF[1]:

@@ -815,7 +815,7 @@ section .text
     MOV ECX,dword ptr [0x00680a00]      ; 005081c4 | g_CNetGameInstance | g_CNetGamePtr
     PUSH ECX                            ; 005081ca | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053f780 ; 005081cb
-        ;   XREF to: 0053f780 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_0053f780()
+        ;   XREF to: 0053f780 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053f780()
     ADD ESP,0x4                         ; 005081d0
     PUSH 0x635580                       ; 005081d3 | = "0"
     PUSH 0x635582                       ; 005081d8 | = "Flip on VBlank"

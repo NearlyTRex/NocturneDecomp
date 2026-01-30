@@ -37,11 +37,11 @@ void __cdecl CTentacle::serialize(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_FUN_005db900
 // Address: 005db900
-undefined4 FUN_005db900(void);
+int __cdecl FUN_005db900(void);
 
 // Original: core_tentacle.cpp_FUN_005db9d0
 // Address: 005db9d0
-undefined4 FUN_005db9d0(void);
+int __cdecl FUN_005db9d0(void);
 
 // Original: core_tentacle.cpp_CTentacle_FUN_005dbb30
 // Address: 005dbb30
@@ -49,7 +49,7 @@ int __cdecl CTentacle(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_FUN_005dbb70
 // Address: 005dbb70
-void FUN_005dbb70(void);
+void __cdecl FUN_005dbb70(void);
 
 // Original: core_tentacle.cpp_CTentacle_FUN_005dbc60
 // Address: 005dbc60

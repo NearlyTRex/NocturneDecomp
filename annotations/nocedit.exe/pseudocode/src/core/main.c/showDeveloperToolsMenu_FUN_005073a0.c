@@ -17,8 +17,9 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   CKeyFramedModel *this_ptr;
   CKeyFramedModel *pCVar6;
   void *pvVar7;
-  void *ptr;
   CMorphModel *this_ptr_00;
+  void *ptr;
+  CMorphModel *extraout_EAX;
   _FILE *output_file;
   byte bVar8;
   int aiStackY_1008 [690];
@@ -118,10 +119,11 @@ LAB_0050740e:
             pvVar7 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
             this_ptr_00 = (CMorphModel *)0x0;
             if (pvVar7 != (void *)0x0) {
-              this_ptr_00 = (CMorphModel *)core_morph_cpp_FUN_0052b310();
+              core_morph_cpp_FUN_0052b310();
+              this_ptr_00 = extraout_EAX;
             }
             if (this_ptr_00 != (CMorphModel *)0x0) {
-              core_morph_cpp_FUN_0052bcb0(this_ptr_00);
+              core_morph_cpp_FUN_0052bcb0();
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
               if (this_ptr_00 != (CMorphModel *)0x0) {

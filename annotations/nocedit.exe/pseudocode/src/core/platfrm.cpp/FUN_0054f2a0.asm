@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_platfrm_cpp_FUN_0054f2a0 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,_FILE *param_6)
+; __cdecl void __cdecl core_platfrm_cpp_FUN_0054f2a0(void)
 ;
 ;
 ; XREF[1]:

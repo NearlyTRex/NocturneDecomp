@@ -12,24 +12,23 @@
       {
         "category": "other",
         "column": 28,
-        "line": 21,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 95,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 11,
-    "pseudocode_lines": 15,
-    "suspect_count": 7,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 53
+    "total_lines": 52
   },
   "cross_references": [],
   "function": {
@@ -40,9 +39,9 @@
         "004e3181"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_game.cpp_FUN_004e3110",
-    "signature": "void core_game_cpp_FUN_004e3110 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, undefined4 param_5)"
+    "signature": "void __cdecl core_game_cpp_FUN_004e3110(void)"
   },
   "function_calls": [
     {
@@ -183,53 +182,18 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 3,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_1",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "text": "uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_5",
-      "text": "(g_CConsolePtr,\"%s : %3.2f ms\\n\",param_5,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "text": "1000) / (double)g_CGamePtr->delta_time_float,unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "(g_CConsolePtr,\"%s : %3.2f ms\\n\",in_stack_00000004,",
+      "type": "stack_param"
     }
   ]
 }

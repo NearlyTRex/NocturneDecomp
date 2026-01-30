@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_waypoint_cpp_CallWayPoint_removeAdj_FUN_005ec640(void)
+; __cdecl void __cdecl core_waypoint_cpp_CallWayPoint_removeAdj_FUN_005ec640(void)
 ;
 ;
 ; XREF[3]:
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_005ec673
     PUSH EDI                            ; 005ec674
     CALL core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0 ; 005ec675
-        ;   XREF to: 005ec7b0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0()
+        ;   XREF to: 005ec7b0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0()
     ADD ESP,0x8                         ; 005ec67a
     CMP EBX,dword ptr [EDI + 0x370]     ; 005ec67d
     JL 0x005ec65a                       ; 005ec683

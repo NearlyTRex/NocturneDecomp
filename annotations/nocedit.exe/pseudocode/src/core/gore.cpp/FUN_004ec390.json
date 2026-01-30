@@ -50,9 +50,9 @@
         "004ec462"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gore.cpp_FUN_004ec390",
-    "signature": "void core_gore_cpp_FUN_004ec390(void)"
+    "signature": "void __cdecl core_gore_cpp_FUN_004ec390(void)"
   },
   "function_calls": [
     {
@@ -87,18 +87,15 @@
         "call_addr": "004edb98",
         "call_type": "direct",
         "caller": "core_gore.cpp_FUN_004edb70",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 9,
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 4
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 6
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.661764705882353,
@@ -479,11 +476,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
+      "estimated_params": 4,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
     }
   ]

@@ -97,7 +97,7 @@ section .text
     PUSH ECX                            ; 005406b9
     XOR EDI,EDI                         ; 005406ba
     CALL core_netgame.cpp_CNetGame_FUN_00541260 ; 005406bc
-        ;   XREF to: 00541260 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00541260()
+        ;   XREF to: 00541260 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_FUN_00541260()
     ADD ESP,0x8                         ; 005406c1
     MOV EBX,EAX                         ; 005406c4
     MOV dword ptr [ESP + 0xd4],EDI      ; 005406c6
@@ -173,7 +173,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0054078f
     PUSH EDI                            ; 00540792
     CALL core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0 ; 00540793
-        ;   XREF to: 00542cf0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0()
+        ;   XREF to: 00542cf0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0()
     ADD ESP,0x4                         ; 00540798
     MOV EAX,0x71                        ; 0054079b
         ;   Label: LAB_0054079b
@@ -228,7 +228,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00540806
     MOVSD ES:EDI,ESI                    ; 00540807
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00540808
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
     ADD ESP,0xc                         ; 0054080d
     MOV EAX,dword ptr [EBP + 0x14]      ; 00540810
     MOV EAX,dword ptr [EAX + 0x114]     ; 00540813
@@ -261,7 +261,7 @@ section .text
     PUSH EDI                            ; 0054085b
     MOV dword ptr [ESP + 0xa4],EDX      ; 0054085c
     CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 00540863
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00541230()
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230()
     ADD ESP,0xc                         ; 00540868
     JMP 0x0054071f                      ; 0054086b
         ;   XREF to: 0054071f (UNCONDITIONAL_JUMP)  ; LAB_0054071f
@@ -277,7 +277,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 00540884
     PUSH EDI                            ; 00540887
     CALL core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0 ; 00540888
-        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0()
+        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0()
     ADD ESP,0x14                        ; 0054088d
     MOV EBX,EAX                         ; 00540890
     JMP 0x0054079b                      ; 00540892
@@ -379,7 +379,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00540985
     PUSH EDX                            ; 00540988
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 00540989
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 0054098e
     MOV ESP,EBP                         ; 00540991
     POP EBP                             ; 00540993
@@ -398,7 +398,7 @@ section .text
     PUSH ECX                            ; 005409a5
     PUSH EAX                            ; 005409a6
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 005409a7
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 005409ac
     MOV ESP,EBP                         ; 005409af
     POP EBP                             ; 005409b1
@@ -420,7 +420,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005409e1
     PUSH EDX                            ; 005409e4
     CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 005409e5
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00541230()
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230()
     ADD ESP,0xc                         ; 005409ea
     MOV ESP,EBP                         ; 005409ed
     POP EBP                             ; 005409ef
@@ -517,7 +517,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00540ae9
     PUSH EBX                            ; 00540aec
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 00540aed
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 00540af2
     MOV ESP,EBP                         ; 00540af5
     POP EBP                             ; 00540af7
@@ -568,7 +568,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00540b66
     PUSH EDX                            ; 00540b69
     CALL core_netgame.cpp_CNetGame_FUN_00542370 ; 00540b6a
-        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00542370()
+        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00542370()
     ADD ESP,0x14                        ; 00540b6f
     MOV dword ptr [ESP + 0x80],0x9      ; 00540b72
         ;   Label: LAB_00540b72
@@ -582,7 +582,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 00540b9b
     PUSH ESI                            ; 00540b9e
     CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 00540b9f
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00541230()
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230()
     ADD ESP,0xc                         ; 00540ba4
     MOV ESP,EBP                         ; 00540ba7
     POP EBP                             ; 00540ba9
@@ -688,7 +688,7 @@ section .text
     PUSH ECX                            ; 00540cbe
     PUSH EDX                            ; 00540cbf
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00540cc0
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
     MOV EDI,dword ptr [0x02f7c8c0]      ; 00540cc5 | g_RemoteSyncStage
     MOV EAX,dword ptr [ESI + 0x5]       ; 00540ccb
     ADD ESP,0xc                         ; 00540cce
@@ -732,7 +732,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 00540d1e
     PUSH ESI                            ; 00540d21
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 00540d22
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 00540d27
     MOV ESP,EBP                         ; 00540d2a
     POP EBP                             ; 00540d2c
@@ -811,7 +811,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00540de5
     PUSH EAX                            ; 00540de8
     CALL core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0 ; 00540de9
-        ;   XREF to: 00542cf0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0()
+        ;   XREF to: 00542cf0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0()
     ADD ESP,0x4                         ; 00540dee
     MOV ESP,EBP                         ; 00540df1
     POP EBP                             ; 00540df3
@@ -826,7 +826,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 00540dfe
     PUSH ECX                            ; 00540e01
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 00540e02
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 00540e07
     MOV ESP,EBP                         ; 00540e0a
     POP EBP                             ; 00540e0c
@@ -860,7 +860,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 00540e52
     PUSH EDI                            ; 00540e55
     CALL core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 ; 00540e56
-        ;   XREF to: 00542470 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470()
+        ;   XREF to: 00542470 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470()
     ADD ESP,0x8                         ; 00540e5b
     TEST EAX,EAX                        ; 00540e5e
     JZ 0x0054044c                       ; 00540e60
@@ -879,7 +879,7 @@ section .text
     PUSH EDX                            ; 00540e9e
     PUSH EAX                            ; 00540e9f
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00540ea0
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
     ADD ESP,0xc                         ; 00540ea5
     MOV ESP,EBP                         ; 00540ea8
     POP EBP                             ; 00540eaa
@@ -927,13 +927,13 @@ section .text
     PUSH EBX                            ; 00540f08
     PUSH EAX                            ; 00540f09
     CALL core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 ; 00540f0a
-        ;   XREF to: 00542b00 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00()
+        ;   XREF to: 00542b00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00()
     ADD ESP,0x8                         ; 00540f0f
     MOV EDI,dword ptr [EBP + 0x14]      ; 00540f12
         ;   Label: LAB_00540f12
     PUSH EDI                            ; 00540f15
     CALL core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0 ; 00540f16
-        ;   XREF to: 00542cf0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0()
+        ;   XREF to: 00542cf0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0()
     ADD ESP,0x4                         ; 00540f1b
     MOV EAX,dword ptr [EBP + 0x14]      ; 00540f1e
         ;   Label: LAB_00540f1e
@@ -966,7 +966,7 @@ section .text
     MOV ESI,EBX                         ; 00540f6f
     PUSH ESI                            ; 00540f71
     CALL core_netgame.cpp_CNetGame_FUN_00542370 ; 00540f72
-        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00542370()
+        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00542370()
     ADD ESP,0x14                        ; 00540f77
     MOV ESP,EBP                         ; 00540f7a
     POP EBP                             ; 00540f7c
@@ -981,7 +981,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00540f87
     PUSH EDX                            ; 00540f8a
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 00540f8b
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 00540f90
     JMP 0x00540efc                      ; 00540f93
         ;   XREF to: 00540efc (UNCONDITIONAL_JUMP)  ; LAB_00540efc
@@ -1159,7 +1159,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 005411a0
     PUSH EDI                            ; 005411a3
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 005411a4
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
     ADD ESP,0xc                         ; 005411a9
     MOV ESP,EBP                         ; 005411ac
     POP EBP                             ; 005411ae

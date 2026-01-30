@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   text_data
 ;
 ; XREF[7]:
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053ae4c
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053ae4c
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564b68
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005986b2
 ;   core_skeledit.cpp_FUN_0058afe0 at 0058b14c

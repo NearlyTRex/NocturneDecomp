@@ -1,12 +1,12 @@
 // Name: core_larva.cpp_FUN_005039d0
 // Address: 005039d0
 // Address Range: [[005039d0, 00503a12]]
-// Convention: unknown
-// Signature: char * core_larva_cpp_FUN_005039d0(void)
+// Convention: __cdecl
+// Signature: char * __cdecl core_larva_cpp_FUN_005039d0(void)
 
 #include "nocturne.h"
 
-char * core_larva_cpp_FUN_005039d0(void)
+char * __cdecl core_larva_cpp_FUN_005039d0(void)
 
 {
   float in_stack_00000004;

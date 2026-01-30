@@ -2,15 +2,14 @@
 // Address: 005b9c10
 // Address Range: [[005b9c10, 005ba486]]
 // Convention: __cdecl
-// Signature: int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,undefined4 param_2,CDemonActor *param_3)
+// Signature: int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemonActor *param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Variable defined which should be unmapped: local_114 */
 /* WARNING: Variable defined which should be unmapped: local_144 */
 
-int __cdecl
-core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemonActor *param_3)
+int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemonActor *param_3)
 
 {
   SRenderVertex vertex2;

@@ -66,6 +66,12 @@
       },
       {
         "category": "other",
+        "column": 55,
+        "line": 69,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
         "column": 52,
         "line": 84,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -92,12 +98,12 @@
   },
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 760,
+    "complexity_score": 750,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "pseudocode_lines": 195,
-    "suspect_count": 55,
+    "suspect_count": 54,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -121,10 +127,10 @@
         "00440b32"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_colquant.c_FUN_004406c0",
-    "signature": "int * engine_colquant_c_FUN_004406c0(void)"
+    "signature": "int * __cdecl engine_colquant_c_FUN_004406c0(void)"
   },
   "function_calls": [
     {
@@ -479,13 +485,6 @@
       "line": 60,
       "match": "in_stack_0000000c",
       "text": "in_stack_00000004[0x1011] = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_0000000c",
-      "text": "sprintf(local_150,\"Subdividing histogram array for %d palette entries...\\n\\n\",in_stack_0000000c);",
       "type": "stack_param"
     },
     {

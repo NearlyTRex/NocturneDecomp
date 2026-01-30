@@ -29,15 +29,15 @@ void __cdecl CWerewolf::process(CWerewolf *this_ptr,float delta_time);
 
 // Original: core_werewolf.cpp_FUN_005f11a0
 // Address: 005f11a0
-void FUN_005f11a0(void);
+void __cdecl FUN_005f11a0(void);
 
 // Original: core_werewolf.cpp_FUN_005f11e0
 // Address: 005f11e0
-void FUN_005f11e0(void);
+void __cdecl FUN_005f11e0(void);
 
 // Original: core_werewolf.cpp_FUN_005f1230
 // Address: 005f1230
-void FUN_005f1230(void);
+void __cdecl FUN_005f1230(void);
 
 // Original: core_werewolf.cpp_CWerewolf_FUN_005f1820
 // Address: 005f1820
@@ -49,11 +49,11 @@ void __cdecl CWerewolf::serialize(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_FUN_005f1ac0
 // Address: 005f1ac0
-void FUN_005f1ac0(void);
+void __cdecl FUN_005f1ac0(void);
 
 // Original: core_werewolf.cpp_FUN_005f1db0
 // Address: 005f1db0
-undefined4 FUN_005f1db0(void);
+int __cdecl FUN_005f1db0(void);
 
 // Original: core_werewolf.cpp_CWerewolf_FUN_005f1df0
 // Address: 005f1df0
@@ -61,15 +61,15 @@ int __cdecl CWerewolf(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_FUN_005f1e40
 // Address: 005f1e40
-void FUN_005f1e40(void);
+void __cdecl FUN_005f1e40(void);
 
 // Original: core_werewolf.cpp_FUN_005f2010
 // Address: 005f2010
-void FUN_005f2010(void);
+void __cdecl FUN_005f2010(void);
 
 // Original: core_werewolf.cpp_FUN_005f2070
 // Address: 005f2070
-undefined4 FUN_005f2070(void);
+int __cdecl FUN_005f2070(void);
 
 // Original: core_werewolf.cpp_CWerewolf_FUN_005f20d0
 // Address: 005f20d0
@@ -77,7 +77,7 @@ void __cdecl CWerewolf(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_FUN_005f21e0
 // Address: 005f21e0
-void FUN_005f21e0(void);
+void __cdecl FUN_005f21e0(void);
 
 // Original: core_werewolf.cpp_CWerewolf_FUN_005f21f0
 // Address: 005f21f0

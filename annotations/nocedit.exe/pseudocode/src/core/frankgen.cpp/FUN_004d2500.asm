@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_FUN_004d2500(void)
+; __cdecl void __cdecl core_frankgen_cpp_FUN_004d2500(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x70]:8  local_70
@@ -42,7 +42,7 @@ section .text
     ADD ESP,0x10                        ; 004d2531
     PUSH 0x0                            ; 004d2534
     CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d2536
-        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
     ADD EAX,0x15c                       ; 004d253b
     PUSH EAX                            ; 004d2540
     LEA EAX,[ESP + 0x8]                 ; 004d2541

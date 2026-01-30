@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
+; __cdecl void __cdecl shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -87,12 +87,12 @@ section .text
     PUSH EAX                            ; 005d7e66
     PUSH EBX                            ; 005d7e67
     CALL shape_superopt.cpp_FUN_005cbec0 ; 005d7e68
-        ;   XREF to: 005cbec0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005cbec0()
+        ;   XREF to: 005cbec0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005cbec0()
     ADD ESP,0x8                         ; 005d7e6d
     PUSH EBX                            ; 005d7e70
     MOV ESI,EAX                         ; 005d7e71
     CALL shape_superopt.cpp_FUN_005cbf00 ; 005d7e73
-        ;   XREF to: 005cbf00 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005cbf00()
+        ;   XREF to: 005cbf00 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005cbf00()
     IMUL EAX,EAX,0x50                   ; 005d7e78
     XOR EDI,EDI                         ; 005d7e7b
     ADD ESP,0x4                         ; 005d7e7d

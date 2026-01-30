@@ -1,14 +1,14 @@
 // Name: core_scat.cpp_FUN_00557150
 // Address: 00557150
 // Address Range: [[00557150, 005571b4]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_00557150(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_00557150(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_00557150(uint param_1) */
 
-void core_scat_cpp_FUN_00557150(void)
+void __cdecl core_scat_cpp_FUN_00557150(void)
 
 {
   char cVar1;

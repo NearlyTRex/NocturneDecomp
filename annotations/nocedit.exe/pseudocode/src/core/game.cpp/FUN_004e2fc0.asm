@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_game_cpp_FUN_004e2fc0(void)
+; __cdecl void __cdecl core_game_cpp_FUN_004e2fc0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74
@@ -70,7 +70,7 @@ section .text
     MOV ECX,dword ptr [0x00680a00]      ; 004e300f | g_CNetGamePtr | g_CNetGameInstance
     PUSH ECX                            ; 004e3015 | g_CNetGameInstance
     CALL core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900 ; 004e3016
-        ;   XREF to: 0053f900 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900()
+        ;   XREF to: 0053f900 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900()
     ADD ESP,0x8                         ; 004e301b
     TEST EAX,EAX                        ; 004e301e
     JZ 0x004e304e                       ; 004e3020
@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_004e302a
     PUSH ESI                            ; 004e3030 | g_CNetGameInstance
     CALL core_netgame.cpp_FUN_00541390  ; 004e3031
-        ;   XREF to: 00541390 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_00541390()
+        ;   XREF to: 00541390 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_FUN_00541390()
     ADD ESP,0x4                         ; 004e3036
     TEST EAX,EAX                        ; 004e3039
     JZ 0x004e3067                       ; 004e303b

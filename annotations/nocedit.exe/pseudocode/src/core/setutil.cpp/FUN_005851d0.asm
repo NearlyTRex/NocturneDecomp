@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setutil_cpp_FUN_005851d0(void)
+; __cdecl void __cdecl core_setutil_cpp_FUN_005851d0(void)
 ;
 ;
 ; Called Functions:

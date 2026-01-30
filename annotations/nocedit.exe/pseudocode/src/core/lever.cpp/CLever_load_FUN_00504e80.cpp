@@ -1,14 +1,14 @@
 // Name: core_lever.cpp_CLever_load_FUN_00504e80
 // Address: 00504e80
 // Address Range: [[00504e80, 0050505a]]
-// Convention: unknown
-// Signature: void core_lever_cpp_CLever_load_FUN_00504e80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_lever_cpp_CLever_load_FUN_00504e80(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_lever.cpp_CLever_load(CLever* pLever) */
 
-void core_lever_cpp_CLever_load_FUN_00504e80(void)
+void __cdecl core_lever_cpp_CLever_load_FUN_00504e80(void)
 
 {
   char cVar1;

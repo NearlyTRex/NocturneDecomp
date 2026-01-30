@@ -1,0 +1,206 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 27,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 29,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 31,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 33,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 35,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 37,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 30,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "004fbd90",
+      "from_addr": "004fc4c3",
+      "name": "core_inivar.cpp_readIniData_FUN_004fbd90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00537530",
+    "address_range": [
+      [
+        "00537530",
+        "005375c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_readIni_FUN_00537530",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_readIni_FUN_00537530(CDemonMission *this_ptr,CIniFile *ini_file)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fbc30",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063b7cd",
+      "name": "s_renderSkyInEditor_0063b7cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b7df",
+      "name": "s_renderWaterInEditor_0063b7df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b7f3",
+      "name": "s_fullLightInEditor_0063b7f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b805",
+      "name": "s_disableMouseHitOnBarrier_0063b805",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b81f",
+      "name": "s_dynamicRenderMode_0063b81f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b831",
+      "name": "s_confirmNewActorNames_0063b831",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00680810",
+      "name": "g_DynamicRenderMode",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "00680814",
+      "name": "g_ConfirmNewActorNames",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "02f7a020",
+      "name": "g_DisableMouseHitOnBarrier",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fc4c3",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_readIniData_FUN_004fbd90",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.022222222222222,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 34,
+      "INT_ADD": 17,
+      "INT_AND": 16,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 8,
+      "INT_SUB": 26,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 29
+    },
+    "pcode_op_count": 181
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "ini_file",
+        "offset": 8,
+        "size": 4,
+        "type": "CIniFile *"
+      }
+    ]
+  },
+  "suspects": []
+}

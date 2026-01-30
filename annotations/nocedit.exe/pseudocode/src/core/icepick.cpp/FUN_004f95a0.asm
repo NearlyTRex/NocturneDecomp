@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_icepick_cpp_FUN_004f95a0(void)
+; __cdecl void __cdecl core_icepick_cpp_FUN_004f95a0(void)
 ;
 ;
 ; Called Functions:

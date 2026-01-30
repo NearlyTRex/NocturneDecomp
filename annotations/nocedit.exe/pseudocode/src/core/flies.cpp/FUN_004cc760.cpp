@@ -1,15 +1,15 @@
 // Name: core_flies.cpp_FUN_004cc760
 // Address: 004cc760
 // Address Range: [[004cc760, 004cc7ee] [004cc808, 004cc819]]
-// Convention: unknown
-// Signature: void core_flies_cpp_FUN_004cc760(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flies_cpp_FUN_004cc760(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flies.cpp_FUN_004cc760(uint param_1, uint param_2)
     */
 
-void core_flies_cpp_FUN_004cc760(void)
+void __cdecl core_flies_cpp_FUN_004cc760(void)
 
 {
   float *pfVar1;
@@ -21,7 +21,7 @@ void core_flies_cpp_FUN_004cc760(void)
   int in_stack_00000008;
   
   pfVar4 = (float *)(in_stack_00000004 + 0x168 + in_stack_00000008 * 0x34);
-  pfVar1 = (float *)core_flies_cpp_FUN_004cc820();
+  pfVar1 = core_flies_cpp_FUN_004cc820();
   if (pfVar4 + 1 != pfVar1) {
     pfVar4[1] = *pfVar1;
     pfVar4[2] = pfVar1[1];
@@ -30,7 +30,7 @@ void core_flies_cpp_FUN_004cc760(void)
   pfVar5 = pfVar4 + 1;
   pfVar1 = pfVar4 + 4;
   do {
-    pfVar2 = (float *)core_flies_cpp_FUN_004cc820();
+    pfVar2 = core_flies_cpp_FUN_004cc820();
     if (pfVar1 != pfVar2) {
       *pfVar1 = *pfVar2;
       pfVar1[1] = pfVar2[1];

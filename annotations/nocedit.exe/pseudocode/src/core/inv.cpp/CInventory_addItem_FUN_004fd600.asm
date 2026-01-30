@@ -1441,7 +1441,7 @@ section .text
     PUSH EAX                            ; 004fe217
     XOR ESI,ESI                         ; 004fe218
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004fe21a
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
     MOV EDI,dword ptr [EBP + 0x8]       ; 004fe21f
     ADD ESP,0x8                         ; 004fe222
     TEST EDI,EDI                        ; 004fe225

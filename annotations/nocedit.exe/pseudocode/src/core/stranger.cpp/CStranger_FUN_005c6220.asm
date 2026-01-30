@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c6220(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(void)
 ;
 ;
 ; XREF[1]:
@@ -285,62 +285,62 @@ section .text
         ;   Label: LAB_005c64ad
     PUSH EBX                            ; 005c64af
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64b0
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c64b5
     PUSH 0x33                           ; 005c64b8
     PUSH EBX                            ; 005c64ba
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64bb
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c64c0
     PUSH 0x34                           ; 005c64c3
     PUSH EBX                            ; 005c64c5
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64c6
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c64cb
     PUSH 0x35                           ; 005c64ce
     PUSH EBX                            ; 005c64d0
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64d1
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c64d6
     PUSH 0x36                           ; 005c64d9
     PUSH EBX                            ; 005c64db
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64dc
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c64e1
     PUSH 0x37                           ; 005c64e4
     PUSH EBX                            ; 005c64e6
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64e7
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c64ec
     PUSH 0x20                           ; 005c64ef
     PUSH EBX                            ; 005c64f1
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64f2
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c64f7
     PUSH 0x21                           ; 005c64fa
     PUSH EBX                            ; 005c64fc
     CALL core_cloth.cpp_FUN_0043e170    ; 005c64fd
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c6502
     PUSH 0x22                           ; 005c6505
     PUSH EBX                            ; 005c6507
     CALL core_cloth.cpp_FUN_0043e170    ; 005c6508
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c650d
     PUSH 0x23                           ; 005c6510
     PUSH EBX                            ; 005c6512
     CALL core_cloth.cpp_FUN_0043e170    ; 005c6513
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c6518
     PUSH 0x24                           ; 005c651b
     PUSH EBX                            ; 005c651d
     CALL core_cloth.cpp_FUN_0043e170    ; 005c651e
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c6523
     PUSH 0x25                           ; 005c6526
     PUSH EBX                            ; 005c6528
     CALL core_cloth.cpp_FUN_0043e170    ; 005c6529
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c652e
     JMP 0x005c6432                      ; 005c6531
         ;   XREF to: 005c6432 (UNCONDITIONAL_JUMP)  ; LAB_005c6432
@@ -348,12 +348,12 @@ section .text
         ;   Label: LAB_005c6536
     PUSH EBX                            ; 005c6538
     CALL core_cloth.cpp_FUN_0043e170    ; 005c6539
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c653e
     PUSH 0x32                           ; 005c6541
     PUSH EBX                            ; 005c6543
     CALL core_cloth.cpp_FUN_0043e170    ; 005c6544
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e170()
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
     ADD ESP,0x8                         ; 005c6549
     JMP 0x005c645a                      ; 005c654c
         ;   XREF to: 005c645a (UNCONDITIONAL_JUMP)  ; LAB_005c645a

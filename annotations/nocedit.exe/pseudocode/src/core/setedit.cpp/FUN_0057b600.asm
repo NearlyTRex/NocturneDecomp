@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_FUN_0057b600(void)
+; __cdecl void __cdecl core_setedit_cpp_FUN_0057b600(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -168,7 +168,7 @@ section .text
     PUSH EAX                            ; 0057b85b
     PUSH EBX                            ; 0057b85c
     CALL core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 ; 0057b85d
-        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
+        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
     ADD ESP,0x8                         ; 0057b862
     TEST EAX,EAX                        ; 0057b865
     JNZ 0x0057b8b1                      ; 0057b867

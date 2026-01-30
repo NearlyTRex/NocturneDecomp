@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_skeledit_cpp_FUN_0058aeb0(void)
+; __cdecl void __cdecl core_skeledit_cpp_FUN_0058aeb0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
@@ -75,7 +75,7 @@ section .text
         ;   Label: LAB_0058af23
     PUSH EBP                            ; 0058af27
     CALL core_skeledit.cpp_FUN_0058ac80 ; 0058af28
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058ac80()
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
     ADD ESP,0x4                         ; 0058af2d
     ADD ESP,0x34                        ; 0058af30
     POP EBP                             ; 0058af33

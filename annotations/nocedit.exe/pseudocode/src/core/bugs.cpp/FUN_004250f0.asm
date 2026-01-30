@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bugs_cpp_FUN_004250f0(void)
+; __cdecl void __cdecl core_bugs_cpp_FUN_004250f0(void)
 ;
 ;
 ; Referenced Globals:
@@ -50,7 +50,7 @@ section .text
         ;   Label: caseD_0
     PUSH EBX                            ; 0042512f
     CALL core_bugs.cpp_FUN_00425cc0     ; 00425130
-        ;   XREF to: 00425cc0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00425cc0()
+        ;   XREF to: 00425cc0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00425cc0()
     ADD ESP,0x8                         ; 00425135
     POP EDI                             ; 00425138
         ;   Label: caseD_3
@@ -88,7 +88,7 @@ section .text
         ;   Label: caseD_1
     PUSH EBX                            ; 0042518b
     CALL core_bugs.cpp_FUN_00425fe0     ; 0042518c
-        ;   XREF to: 00425fe0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00425fe0()
+        ;   XREF to: 00425fe0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00425fe0()
     ADD ESP,0x8                         ; 00425191
     POP EDI                             ; 00425194
     POP EBX                             ; 00425195
@@ -97,7 +97,7 @@ section .text
         ;   Label: caseD_2
     PUSH EBX                            ; 0042519b
     CALL core_bugs.cpp_FUN_00426410     ; 0042519c
-        ;   XREF to: 00426410 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00426410()
+        ;   XREF to: 00426410 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00426410()
     ADD ESP,0x8                         ; 004251a1
     POP EDI                             ; 004251a4
     POP EBX                             ; 004251a5

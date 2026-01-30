@@ -15,7 +15,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450 at 00494467
 ;   core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 at 004955c5
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 at 00494ae7
-;   core_msnedit.cpp_FUN_0053eb40 at 0053ebbe
+;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053ebbe
 ;   core_netgame.cpp_CNetGame_FUN_0053fd00 at 0053ffa0
 ;   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 at 00576e9b
 ;   ... and 15 more

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
+; __cdecl int __cdecl core_setedit_cpp_ResolveMasterLights_FUN_0057c550(void)
 ;
 ;
 ; XREF[1]:

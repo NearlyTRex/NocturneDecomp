@@ -125,7 +125,7 @@ section .text
     PUSH 0x654ddc                       ; 005db12d | = "CHero CNPC"
     PUSH EBX                            ; 005db132
     CALL core_tentacle.cpp_FUN_005db900 ; 005db133
-        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_FUN_005db900()
+        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_FUN_005db900()
     ADD ESP,0x8                         ; 005db138
     TEST EAX,EAX                        ; 005db13b
     JZ 0x005db16f                       ; 005db13d
@@ -140,7 +140,7 @@ section .text
     PUSH EDX                            ; 005db152
     MOV dword ptr [EBX + 0xbebc],0x0    ; 005db153
     CALL core_grave.cpp_FUN_004ee790    ; 005db15d
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; undefined core_grave.cpp_FUN_004ee790()
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_FUN_004ee790()
     ADD ESP,0x4                         ; 005db162
     MOV dword ptr [EBX + 0xbec4],0x0    ; 005db165
     FLD float ptr [EBP + 0x18]          ; 005db16f
@@ -198,7 +198,7 @@ section .text
     LEA ESI,[ESP + 0xa4]                ; 005db1f9
     LEA EDI,[ESP + 0x74]                ; 005db200
     CALL core_tentacle.cpp_FUN_005dbb70 ; 005db204
-        ;   XREF to: 005dbb70 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_FUN_005dbb70()
+        ;   XREF to: 005dbb70 (UNCONDITIONAL_CALL)  ; void core_tentacle.cpp_FUN_005dbb70()
     ADD ESP,0x4                         ; 005db209
     LEA EAX,[ESP + 0x1cc]               ; 005db20c
     MOV ECX,0xc                         ; 005db213
@@ -366,7 +366,7 @@ section .text
         ;   Label: LAB_005db4e1
     PUSH EBX                            ; 005db4e6
     CALL core_tentacle.cpp_FUN_005db900 ; 005db4e7
-        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_FUN_005db900()
+        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_FUN_005db900()
     ADD ESP,0x8                         ; 005db4ec
     TEST EAX,EAX                        ; 005db4ef
     JZ 0x005db16f                       ; 005db4f1

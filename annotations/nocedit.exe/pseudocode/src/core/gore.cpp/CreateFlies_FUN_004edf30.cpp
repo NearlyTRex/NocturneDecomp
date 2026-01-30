@@ -1,15 +1,15 @@
 // Name: core_gore.cpp_CreateFlies_FUN_004edf30
 // Address: 004edf30
 // Address Range: [[004edf30, 004ee021]]
-// Convention: unknown
-// Signature: CFlies * core_gore_cpp_CreateFlies_FUN_004edf30(void)
+// Convention: __cdecl
+// Signature: CFlies * __cdecl core_gore_cpp_CreateFlies_FUN_004edf30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_gore.cpp_CreateFlies(byte param_1, uint param_2,
    uint param_3, uint param_4, uint param_5) */
 
-CFlies * core_gore_cpp_CreateFlies_FUN_004edf30(void)
+CFlies * __cdecl core_gore_cpp_CreateFlies_FUN_004edf30(void)
 
 {
   int iVar1;

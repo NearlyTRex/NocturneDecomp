@@ -46,7 +46,7 @@ section .text
     ADD EAX,0x293c                      ; 00427e3e
     PUSH EAX                            ; 00427e43
     CALL core_cloth.cpp_FUN_0043bf40    ; 00427e44
-        ;   XREF to: 0043bf40 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bf40()
+        ;   XREF to: 0043bf40 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_0043bf40()
     ADD ESP,0x4                         ; 00427e49
     PUSH 0x6598c0                       ; 00427e4c | g_CVectorTypeInfo
     PUSH 0xf                            ; 00427e51

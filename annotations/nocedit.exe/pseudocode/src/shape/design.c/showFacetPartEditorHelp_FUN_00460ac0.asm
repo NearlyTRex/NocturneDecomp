@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
+; __cdecl void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

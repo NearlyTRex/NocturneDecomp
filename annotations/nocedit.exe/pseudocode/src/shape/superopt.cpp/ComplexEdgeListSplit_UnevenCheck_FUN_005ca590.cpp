@@ -1,12 +1,12 @@
 // Name: shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
 // Address: 005ca590
 // Address Range: [[005ca590, 005cb395]]
-// Convention: unknown
-// Signature: undefined4 shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
+// Convention: __cdecl
+// Signature: int __cdecl shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
 
 #include "nocturne.h"
 
-uint shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
+int __cdecl shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
 
 {
   uint uVar1;

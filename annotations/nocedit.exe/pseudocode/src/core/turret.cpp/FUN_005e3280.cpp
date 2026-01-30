@@ -1,15 +1,15 @@
 // Name: core_turret.cpp_FUN_005e3280
 // Address: 005e3280
 // Address Range: [[005e3280, 005e343e]]
-// Convention: unknown
-// Signature: undefined4 core_turret_cpp_FUN_005e3280(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_turret_cpp_FUN_005e3280(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_turret.cpp_FUN_005e3280(uint param_1, uint
    param_2, uint param_3) */
 
-uint core_turret_cpp_FUN_005e3280(void)
+int __cdecl core_turret_cpp_FUN_005e3280(void)
 
 {
   CDemonActor *in_stack_00000004;

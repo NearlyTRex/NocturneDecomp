@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_CStranger_FUN_005bb960
 // Address: 005bb960
 // Address Range: [[005bb960, 005bdd15]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005bb960(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(void)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_CStranger_FUN_005bb960(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(void)
 
 {
   CLocation *pCVar1;
@@ -1151,7 +1151,7 @@ LAB_005bc1a6:
     fVar18 = *(float *)(in_stack_00000004[2].cloth_data + 0x54f8) -
              in_stack_00000008 / 1.2f;
     *(float *)(in_stack_00000004[2].cloth_data + 0x54f8) = fVar18;
-    if (fVar18 <= 0.0) {
+    if (fVar18 < 0.0) {
       in_stack_00000004[2].cloth_data[0x54f8] = '\0';
       in_stack_00000004[2].cloth_data[0x54f9] = '\0';
       in_stack_00000004[2].cloth_data[0x54fa] = '\0';

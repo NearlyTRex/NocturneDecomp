@@ -9,7 +9,8 @@
 int __cdecl core_setedit_cpp_CDemonSet_FUN_005800d0(CDemonSet *this_ptr)
 
 {
-  int iVar1;
+  bool bVar1;
+  undefined3 extraout_var;
   int iVar2;
   int iVar3;
   byte bVar4;
@@ -47,7 +48,7 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_005800d0(CDemonSet *this_ptr)
       if (0 < this_ptr->camera_count) {
         do {
           while ((iVar2 != in_stack_00000014 &&
-                 (iVar1 = core_setedit_cpp_FUN_005801b0(), iVar1 != 0))) {
+                 (bVar1 = core_setedit_cpp_FUN_005801b0(), CONCAT31(extraout_var,bVar1) != 0))) {
             iVar3 = iVar3 + 1;
             *in_stack_00000010 = iVar2;
             iVar2 = iVar2 + 1;

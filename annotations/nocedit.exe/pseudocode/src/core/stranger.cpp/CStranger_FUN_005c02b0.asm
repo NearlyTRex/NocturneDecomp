@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c02b0(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1e0]:4  local_1e0

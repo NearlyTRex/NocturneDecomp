@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown double shape_superopt_cpp_FUN_005c9100(void)
+; __cdecl int __cdecl shape_superopt_cpp_FUN_005c9100(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28

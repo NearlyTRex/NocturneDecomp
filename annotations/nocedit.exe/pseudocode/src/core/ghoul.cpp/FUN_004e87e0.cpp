@@ -1,15 +1,15 @@
 // Name: core_ghoul.cpp_FUN_004e87e0
 // Address: 004e87e0
 // Address Range: [[004e87e0, 004e896d] [004e89a9, 004e8ba1]]
-// Convention: unknown
-// Signature: void core_ghoul_cpp_FUN_004e87e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ghoul_cpp_FUN_004e87e0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_ghoul.cpp_FUN_004e87e0(uint param_1, uint param_2)
     */
 
-void core_ghoul_cpp_FUN_004e87e0(void)
+void __cdecl core_ghoul_cpp_FUN_004e87e0(void)
 
 {
   CLocation *pCVar1;
@@ -26,8 +26,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   float spawn_radius;
-  CCharacter *local_78;
-  int iStack_74;
+  char local_78 [100];
   float local_14;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[1].base.unk3.z);
@@ -144,7 +143,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
     }
     else {
       iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
-      sprintf((char *)&local_78,"guul flinch%d",iVar9);
+      sprintf(local_78,"guul flinch%d",iVar9);
       this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                            (&(in_stack_00000004->model).motion_controller);
       iVar9 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
@@ -160,8 +159,6 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       fVar8 = (float)(*((in_stack_00000004->base).vtable._ub)->playSound)
                                (&in_stack_00000004->base,"ghoul-mad-!-?.wav");
       in_stack_00000004[1].base.unk4.x = fVar8;
-      iStack_74 = in_stack_00000008;
-      local_78 = in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }

@@ -35,7 +35,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005ec62b
     PUSH EBX                            ; 005ec62f
     CALL core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640 ; 005ec630
-        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640()
+        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640()
     ADD ESP,0x8                         ; 005ec635
     POP EBX                             ; 005ec638
     RET                                 ; 005ec639

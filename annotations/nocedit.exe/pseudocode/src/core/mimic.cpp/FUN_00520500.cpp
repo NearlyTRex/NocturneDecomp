@@ -1,14 +1,14 @@
 // Name: core_mimic.cpp_FUN_00520500
 // Address: 00520500
 // Address Range: [[00520500, 005205e8]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_FUN_00520500(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_FUN_00520500(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mimic.cpp_FUN_00520500(uint param_1) */
 
-void core_mimic_cpp_FUN_00520500(void)
+void __cdecl core_mimic_cpp_FUN_00520500(void)
 
 {
   CDemonActor *pCVar1;
@@ -51,7 +51,6 @@ void core_mimic_cpp_FUN_00520500(void)
   ;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             ((CMotionController *)(in_stack_00000004 + 0x158),1,1);
-  engine_console_cpp_CConsole_printf_FUN_00441890
-            (g_CConsolePtr,"%s attacking hero\n",in_stack_00000004);
+  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s attacking hero\n");
   return;
 }

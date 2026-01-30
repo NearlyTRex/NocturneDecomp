@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 shape_superopt_cpp_FUN_005c7b20(void)
+; __cdecl int __cdecl shape_superopt_cpp_FUN_005c7b20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -234,11 +234,11 @@ section .text
         ;   Label: LAB_005c7d68
     PUSH EDI                            ; 005c7d6c
     CALL shape_superopt.cpp_FUN_005c8160 ; 005c7d6d
-        ;   XREF to: 005c8160 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c8160()
+        ;   XREF to: 005c8160 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_FUN_005c8160()
     ADD ESP,0x4                         ; 005c7d72
     PUSH EDI                            ; 005c7d75
     CALL shape_superopt.cpp_FUN_005c7dc0 ; 005c7d76
-        ;   XREF to: 005c7dc0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c7dc0()
+        ;   XREF to: 005c7dc0 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_FUN_005c7dc0()
     ADD ESP,0x4                         ; 005c7d7b
     MOV EDX,dword ptr [EDI + 0x2c]      ; 005c7d7e
     PUSH EDX                            ; 005c7d81
@@ -246,7 +246,7 @@ section .text
     PUSH ECX                            ; 005c7d85
     PUSH EDI                            ; 005c7d86
     CALL shape_superopt.cpp_FUN_005c8280 ; 005c7d87
-        ;   XREF to: 005c8280 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c8280()
+        ;   XREF to: 005c8280 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c8280()
     ADD ESP,0xc                         ; 005c7d8c
     TEST EAX,EAX                        ; 005c7d8f
     JZ 0x005c7d9f                       ; 005c7d91

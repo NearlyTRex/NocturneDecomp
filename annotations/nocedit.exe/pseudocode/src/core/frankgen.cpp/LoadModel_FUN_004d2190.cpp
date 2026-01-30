@@ -1,12 +1,12 @@
 // Name: core_frankgen.cpp_LoadModel_FUN_004d2190
 // Address: 004d2190
 // Address Range: [[004d2190, 004d232c]]
-// Convention: unknown
-// Signature: void core_frankgen_cpp_LoadModel_FUN_004d2190(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_frankgen_cpp_LoadModel_FUN_004d2190(void)
 
 #include "nocturne.h"
 
-void core_frankgen_cpp_LoadModel_FUN_004d2190(void)
+void __cdecl core_frankgen_cpp_LoadModel_FUN_004d2190(void)
 
 {
   int iVar1;

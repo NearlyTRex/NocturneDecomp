@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 shape_superopt_cpp_FUN_005cb3a0(void)
+; __cdecl int __cdecl shape_superopt_cpp_FUN_005cb3a0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x180]:8  local_180
@@ -113,7 +113,7 @@ section .text
     PUSH EAX                            ; 005cb3be
     PUSH EBX                            ; 005cb3bf
     CALL shape_superopt.cpp_FUN_005cbb40 ; 005cb3c0
-        ;   XREF to: 005cbb40 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005cbb40()
+        ;   XREF to: 005cbb40 (UNCONDITIONAL_CALL)  ; double * shape_superopt.cpp_FUN_005cbb40()
     ADD ESP,0x10                        ; 005cb3c5
     LEA EAX,[EBX + 0x14]                ; 005cb3c8
     FLD double ptr [ESP + 0x48]         ; 005cb3cb

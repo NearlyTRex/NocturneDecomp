@@ -10,10 +10,10 @@
 ;
 ; XREF[11]:
 ;   core_charactr.cpp_CCharacter_FUN_0042e050 at 0042e14e
-;   core_msnedit.cpp_DeleteActors_FUN_0053df90 at 0053e13a
-;   core_msnedit.cpp_FUN_005379e0 at 00537cdf
-;   core_msnedit.cpp_HideActors_FUN_0053dcf0 at 0053ded2
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053d135
+;   core_msnedit.cpp_CDemonMission_FUN_005379e0 at 00537cdf
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053d135
+;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053ded2
+;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e13a
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0 at 005b1f16
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0 at 005b1802
 ;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005dfff3

@@ -1,14 +1,14 @@
 // Name: core_stranger.cpp_CStranger_FUN_005c5f10
 // Address: 005c5f10
 // Address Range: [[005c5f10, 005c6215]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005c5f10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c5f10(uint param_1) */
 
-void core_stranger_cpp_CStranger_FUN_005c5f10(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(void)
 
 {
   float fVar1;
@@ -104,7 +104,7 @@ switchD_005c5ffd_caseD_8:
     case 7:
     }
   }
-  fVar1 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
+  fVar1 = core_charactr_cpp_CCharacter_FUN_0042e840();
   if ((float)0.98999999999999999 <= fVar1) {
     iVar4 = in_stack_00000004 + 0x1fbe8;
     if ((*(int *)(in_stack_00000004 + 0x1fc30) != 0) &&

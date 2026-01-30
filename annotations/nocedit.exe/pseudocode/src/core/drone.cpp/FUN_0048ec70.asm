@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_drone_cpp_FUN_0048ec70(void)
+; __cdecl void __cdecl core_drone_cpp_FUN_0048ec70(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xfc]:8  local_fc
@@ -412,7 +412,7 @@ section .text
     PUSH EAX                            ; 0048f012
     PUSH EBX                            ; 0048f013
     CALL core_enemy.cpp_FUN_004a9880    ; 0048f014
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 0048f019
     PUSH 0x41700000                     ; 0048f01c
     PUSH 0x41200000                     ; 0048f021
@@ -449,7 +449,7 @@ section .text
     PUSH EAX                            ; 0048f07a
     PUSH EBX                            ; 0048f07b
     CALL core_enemy.cpp_FUN_004a9880    ; 0048f07c
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 0048f081
     JMP 0x0048ed7c                      ; 0048f084
         ;   XREF to: 0048ed7c (UNCONDITIONAL_JUMP)  ; caseD_7
@@ -481,7 +481,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 0048f0c6 | g_CGorePtr | g_CGoreInstance
     PUSH EDX                            ; 0048f0cc | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 0048f0cd
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 0048f0d2
     MOV dword ptr [EBX + 0xbe28],0x1    ; 0048f0d5
     JMP 0x0048ed7c                      ; 0048f0df

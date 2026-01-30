@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_hero_cpp_FUN_004f2f50(void)
+; __cdecl int __cdecl core_hero_cpp_FUN_004f2f50(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x50]:8  local_50
@@ -149,7 +149,7 @@ section .text
     PUSH EDX                            ; 004f3053
     PUSH EBX                            ; 004f3054
     CALL core_lever.cpp_FUN_00505080    ; 004f3055
-        ;   XREF to: 00505080 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00505080()
+        ;   XREF to: 00505080 (UNCONDITIONAL_CALL)  ; int core_lever.cpp_FUN_00505080()
     ADD ESP,0x8                         ; 004f305a
     TEST EAX,EAX                        ; 004f305d
     JZ 0x004f30b3                       ; 004f305f
@@ -187,7 +187,7 @@ section .text
         ;   Label: LAB_004f30bc
     PUSH EAX                            ; 004f30c2
     CALL core_event.cpp_FUN_004b18e0    ; 004f30c3
-        ;   XREF to: 004b18e0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b18e0()
+        ;   XREF to: 004b18e0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b18e0(int * param_1)
     ADD ESP,0x4                         ; 004f30c8
     TEST EAX,EAX                        ; 004f30cb
     JNZ 0x004f2f9b                      ; 004f30cd

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gore_cpp_FUN_004ee460(void)
+; __cdecl void __cdecl core_gore_cpp_FUN_004ee460(void)
 ;
 ;
 ; Referenced Globals:

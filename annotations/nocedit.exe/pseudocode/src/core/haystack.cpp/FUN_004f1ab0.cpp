@@ -1,15 +1,15 @@
 // Name: core_haystack.cpp_FUN_004f1ab0
 // Address: 004f1ab0
 // Address Range: [[004f1ab0, 004f1b48]]
-// Convention: unknown
-// Signature: void core_haystack_cpp_FUN_004f1ab0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_haystack_cpp_FUN_004f1ab0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_haystack.cpp_FUN_004f1ab0(uint param_1, uint
    param_2) */
 
-void core_haystack_cpp_FUN_004f1ab0(void)
+void __cdecl core_haystack_cpp_FUN_004f1ab0(void)
 
 {
   CCharacter *this_ptr;
@@ -35,8 +35,6 @@ void core_haystack_cpp_FUN_004f1ab0(void)
     if (this_ptr != in_stack_00000004) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_64);
       SStack_64.damage_amount = 10.0;
-      SStack_64.attacker = &in_stack_00000004->base;
-      SStack_64.wielder = &in_stack_00000004->base;
       (*(((this_ptr->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                 (this_ptr,&local_1c,0.5,&SStack_64);
     }

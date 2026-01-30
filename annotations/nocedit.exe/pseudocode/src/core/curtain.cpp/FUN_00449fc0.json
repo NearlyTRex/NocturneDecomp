@@ -706,10 +706,10 @@
         "0044a912"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_curtain.cpp_FUN_00449fc0",
-    "signature": "void core_curtain_cpp_FUN_00449fc0(void)"
+    "signature": "void __cdecl core_curtain_cpp_FUN_00449fc0(void)"
   },
   "function_calls": [],
   "globals": [
@@ -781,11 +781,9 @@
         "call_addr": "0044b043",
         "call_type": "direct",
         "caller": "core_curtain.cpp_FUN_0044a920",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 30,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
@@ -798,9 +796,9 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.079734219269103,
@@ -2290,11 +2288,11 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

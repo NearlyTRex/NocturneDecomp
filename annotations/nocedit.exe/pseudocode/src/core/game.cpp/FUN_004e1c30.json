@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 47,
         "line": 25,
         "message": "'PTR_s_hq_act1_msn_0067b750' was not declared in this scope; did you mean 's_hq_act5_msn_0062d7ab'?"
       }
@@ -26,12 +26,12 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 132,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 27,
-    "suspect_count": 10,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
     ],
@@ -46,9 +46,9 @@
         "004e1ca2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_game.cpp_FUN_004e1c30",
-    "signature": "void core_game_cpp_FUN_004e1c30(void)"
+    "signature": "void __cdecl core_game_cpp_FUN_004e1c30(void)"
   },
   "function_calls": [
     {
@@ -147,44 +147,30 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "CPickList *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 * 0x34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 * 0x34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 12,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = in_stack_00000008 * 0x34;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->base).item_count < 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "*(char **)(&PTR_s_hq_act1_msn_0067b750 + in_stack_00000008),\"rt\")",
       "type": "stack_param"
     },
     {
@@ -192,20 +178,6 @@
       "line": 21,
       "match": "in_stack_00000004",
       "text": "shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(in_stack_00000004,item_index,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 4;",
       "type": "stack_param"
     },
     {

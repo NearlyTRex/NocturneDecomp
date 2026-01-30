@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_lightgun_cpp_FUN_00505c70(void)
+; __cdecl int __cdecl core_lightgun_cpp_FUN_00505c70(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x78]:1  local_78
@@ -209,7 +209,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00505eb4
     PUSH EDX                            ; 00505eb7
     CALL core_lightgun.cpp_FUN_00505ac0 ; 00505eb8
-        ;   XREF to: 00505ac0 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_FUN_00505ac0()
+        ;   XREF to: 00505ac0 (UNCONDITIONAL_CALL)  ; void core_lightgun.cpp_FUN_00505ac0()
     ADD ESP,0x4                         ; 00505ebd
     XOR ECX,ECX                         ; 00505ec0
     MOV dword ptr [ESP + 0x100],ECX     ; 00505ec2
@@ -465,13 +465,13 @@ section .text
         ;   XREF to: 00506265 (CONDITIONAL_JUMP)  ; LAB_00506265
     PUSH EAX                            ; 005061f2
     CALL core_trigger.cpp_FUN_005e0aa0  ; 005061f3
-        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_005e0aa0()
+        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_FUN_005e0aa0()
     ADD ESP,0x4                         ; 005061f8
     MOV ESI,dword ptr [EBP + 0x14]      ; 005061fb
     PUSH ESI                            ; 005061fe
     PUSH EBX                            ; 005061ff
     CALL core_trigger.cpp_FUN_005e0ac0  ; 00506200
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_005e0ac0()
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_FUN_005e0ac0()
     ADD ESP,0x8                         ; 00506205
     TEST EAX,EAX                        ; 00506208
     JZ 0x00506239                       ; 0050620a
@@ -486,7 +486,7 @@ section .text
     FSTP float ptr [ESP]                ; 0050622d
     PUSH EBX                            ; 00506230
     CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 00506231
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
     ADD ESP,0x8                         ; 00506236
     MOV EAX,dword ptr [ESP + 0xf4]      ; 00506239
         ;   Label: LAB_00506239

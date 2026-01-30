@@ -1,12 +1,12 @@
 // Name: core_boneguy.cpp_FUN_0041b770
 // Address: 0041b770
 // Address Range: [[0041b770, 0041b81a]]
-// Convention: unknown
-// Signature: CVector3f * core_boneguy_cpp_FUN_0041b770(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_boneguy_cpp_FUN_0041b770(void)
 
 #include "nocturne.h"
 
-CVector3f * core_boneguy_cpp_FUN_0041b770(void)
+CVector3f * __cdecl core_boneguy_cpp_FUN_0041b770(void)
 
 {
   CVector3f *in_stack_00000004;

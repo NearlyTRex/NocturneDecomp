@@ -1,15 +1,15 @@
 // Name: core_icepick.cpp_FUN_004f8c70
 // Address: 004f8c70
 // Address Range: [[004f8c70, 004f9378]]
-// Convention: unknown
-// Signature: void core_icepick_cpp_FUN_004f8c70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_icepick_cpp_FUN_004f8c70(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_icepick.cpp_FUN_004f8c70(uint param_1, uint
    param_2) */
 
-void core_icepick_cpp_FUN_004f8c70(void)
+void __cdecl core_icepick_cpp_FUN_004f8c70(void)
 
 {
   float fVar1;
@@ -21,6 +21,7 @@ void core_icepick_cpp_FUN_004f8c70(void)
   CVector3f *pCVar7;
   SMotion *pSVar8;
   uint uVar9;
+  CPathMap *extraout_EAX;
   CHero *pCVar10;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
@@ -133,7 +134,8 @@ void core_icepick_cpp_FUN_004f8c70(void)
         }
       }
       if (pCStack_20 == (CPathMap *)0x0) {
-        pCStack_20 = (CPathMap *)core_path_cpp_FUN_00548500();
+        core_path_cpp_FUN_00548500();
+        pCStack_20 = extraout_EAX;
       }
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (pCStack_20,&(in_stack_00000004->base).location.position,&CStack_48,

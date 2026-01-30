@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_FUN_00581590
 // Address: 00581590
 // Address Range: [[00581590, 005817cd]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_FUN_00581590(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_FUN_00581590(void)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_FUN_00581590(void)
+void __cdecl core_setedit_cpp_FUN_00581590(void)
 
 {
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

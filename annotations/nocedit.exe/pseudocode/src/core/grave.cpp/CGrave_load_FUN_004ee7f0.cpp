@@ -1,14 +1,14 @@
 // Name: core_grave.cpp_CGrave_load_FUN_004ee7f0
 // Address: 004ee7f0
 // Address Range: [[004ee7f0, 004ee8e9]]
-// Convention: unknown
-// Signature: void core_grave_cpp_CGrave_load_FUN_004ee7f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_grave_cpp_CGrave_load_FUN_004ee7f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_grave.cpp_CGrave_load(CGrave* pGrave) */
 
-void core_grave_cpp_CGrave_load_FUN_004ee7f0(void)
+void __cdecl core_grave_cpp_CGrave_load_FUN_004ee7f0(void)
 
 {
   CDemonActor *in_stack_00000004;

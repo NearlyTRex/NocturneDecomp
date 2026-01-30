@@ -124,7 +124,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005077f8
-;   core_msnedit.cpp_FUN_0053af50 at 0053af94
+;   core_msnedit.cpp_CDemonMission_FUN_0053af50 at 0053af94
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_No_model_00620667

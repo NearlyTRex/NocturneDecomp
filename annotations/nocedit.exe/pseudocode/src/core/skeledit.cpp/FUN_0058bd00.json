@@ -9,7 +9,7 @@
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 16,
         "line": 78,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
@@ -174,10 +174,10 @@
         "0058c188"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeledit.cpp_FUN_0058bd00",
-    "signature": "void core_skeledit_cpp_FUN_0058bd00(void)"
+    "signature": "void __cdecl core_skeledit_cpp_FUN_0058bd00(void)"
   },
   "function_calls": [
     {
@@ -617,8 +617,8 @@
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)aiStack_430 + iVar7) = uVar2;",
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)aiStack_430 + iVar7) = iVar2;",
       "type": "pointer_cast"
     },
     {

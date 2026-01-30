@@ -1,14 +1,14 @@
 // Name: core_game.cpp_FUN_004e09a0
 // Address: 004e09a0
 // Address Range: [[004e09a0, 004e09bc]]
-// Convention: unknown
-// Signature: void core_game_cpp_FUN_004e09a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_FUN_004e09a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_game.cpp_FUN_004e09a0() */
 
-void core_game_cpp_FUN_004e09a0(void)
+void __cdecl core_game_cpp_FUN_004e09a0(void)
 
 {
   float *pfVar1;

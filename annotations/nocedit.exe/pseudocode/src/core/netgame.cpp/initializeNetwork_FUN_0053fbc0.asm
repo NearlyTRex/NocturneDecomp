@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_netgame_cpp_initializeNetwork_FUN_0053fbc0(void)
+; __cdecl int __cdecl core_netgame_cpp_initializeNetwork_FUN_0053fbc0(void)
 ;
 ;
 ; XREF[2]:
@@ -93,7 +93,7 @@ section .text
     PUSH ESI                            ; 0053fc4e
     MOV EBP,0x1                         ; 0053fc4f
     CALL core_netgame.cpp_FUN_00540550  ; 0053fc54
-        ;   XREF to: 00540550 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_00540550()
+        ;   XREF to: 00540550 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_00540550()
     ADD ESP,0x4                         ; 0053fc59
     MOV dword ptr [0x02f7c8b8],EBP      ; 0053fc5c | g_CurrentGameTime
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0053fc62

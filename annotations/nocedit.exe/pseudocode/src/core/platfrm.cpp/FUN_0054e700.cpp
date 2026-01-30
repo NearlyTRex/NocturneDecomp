@@ -1,15 +1,15 @@
 // Name: core_platfrm.cpp_FUN_0054e700
 // Address: 0054e700
 // Address Range: [[0054e700, 0054e758]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_FUN_0054e700(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_platfrm_cpp_FUN_0054e700(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_FUN_0054e700(uint param_1, byte
    param_2, uint param_3) */
 
-void core_platfrm_cpp_FUN_0054e700(void)
+void __cdecl core_platfrm_cpp_FUN_0054e700(void)
 
 {
   char cVar1;

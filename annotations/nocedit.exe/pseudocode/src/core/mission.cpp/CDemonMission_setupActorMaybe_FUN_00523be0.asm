@@ -12,7 +12,7 @@
 ;   core_inv.cpp_CInventory_loadItems_FUN_004ff740 at 004ff762
 ;   core_mission.cpp_CDemonMission_FUN_00523f20 at 00523f31
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 005244b4
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053d14a
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053d14a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_00639087

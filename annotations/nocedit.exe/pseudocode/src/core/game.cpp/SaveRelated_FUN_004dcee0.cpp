@@ -15,12 +15,14 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
   CScript *pCVar2;
   CDemonSet *pCVar3;
   int iVar4;
+  int iVar5;
   _FILE *file_ptr;
-  char *pcVar5;
-  int *piVar6;
+  char *pcVar6;
+  int *piVar7;
   uint uStack00000078;
   int iStack0000007c;
-  float fVar7;
+  uint uVar8;
+  float fVar9;
   char acStack_b4 [164];
   
   if (g_CheatSystemEnabled == 0) {
@@ -73,7 +75,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       }
     }
     if ((((this_ptr->velocity_debug_enabled != 0) ||
-         (pcVar5 = getenv("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
+         (pcVar6 = getenv("SPOOKHOUSE"), pcVar6 != (char *)0x0)) &&
         (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2c), iVar4 != 0)) {
       this_ptr->camera_debug_enabled = 1 - this_ptr->camera_debug_enabled;
@@ -99,10 +101,15 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
     }
     if ((((this_ptr->velocity_debug_enabled != 0) &&
          (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
-        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x11), iVar4 != 0)) &&
-       (0x1df < g_WindowHeight)) {
-      this_ptr->screen_clear_enabled = 1 - this_ptr->screen_clear_enabled;
-      core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0();
+        (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x11), iVar4 = g_WindowHeight
+        , iVar5 != 0)) && (0x1df < g_WindowHeight)) {
+      iVar5 = 1 - this_ptr->screen_clear_enabled;
+      this_ptr->screen_clear_enabled = iVar5;
+      if (iVar5 != 0) {
+        iVar4 = 0xf0;
+      }
+      uVar8 = (uint)(iVar5 != 0);
+      core_set_cpp_CDemonSet_FUN_0056b7e0(g_CDemonSetPtr,uVar8,uVar8,iVar4);
     }
     if (((this_ptr->velocity_debug_enabled != 0) && (g_CheatFlags == 0)) &&
        ((iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0 &&
@@ -127,38 +134,38 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x40);
     if ((iVar4 != 0) && (this_ptr->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr,"quicksavedgame.noc");
-      fVar7 = 2.0;
-      pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quick Save");
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,fVar7);
+      fVar9 = 2.0;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quick Save");
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar6,fVar9);
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x43), iVar4 != 0)) {
       file_ptr = engine_dosio_c_getFile_FUN_00481a50
                            ("save","quicksavedgame.noc","rb");
       if (file_ptr == (_FILE *)0x0) {
-        fVar7 = 2.0;
-        pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+        fVar9 = 2.0;
+        pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("No quicked saved game to load");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,fVar7);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar6,fVar9);
       }
       else {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",0x975);
-        pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+        pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("Restore quick saved game?");
         iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                          (g_CEditorToolsPtr,pcVar5);
+                          (g_CEditorToolsPtr,pcVar6);
         if (iVar4 != 0) {
-          pcVar5 = "quicksavedgame.noc";
-          piVar6 = &this_ptr->save_version;
+          pcVar6 = "quicksavedgame.noc";
+          piVar7 = &this_ptr->save_version;
           this_ptr->need_chapter_reload = 1;
           do {
-            cVar1 = *pcVar5;
-            *(char *)piVar6 = cVar1;
+            cVar1 = *pcVar6;
+            *(char *)piVar7 = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            *(char *)((int)piVar6 + 1) = cVar1;
-            piVar6 = (int *)((int)piVar6 + 2);
+            cVar1 = pcVar6[1];
+            pcVar6 = pcVar6 + 2;
+            *(char *)((int)piVar7 + 1) = cVar1;
+            piVar7 = (int *)((int)piVar7 + 2);
           } while (cVar1 != '\0');
         }
       }
@@ -168,15 +175,16 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       this_ptr->show_customizable_keys = (uint)(this_ptr->show_customizable_keys == 0);
     }
     if (((this_ptr->velocity_debug_enabled != 0) ||
-        (pcVar5 = getenv("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
+        (pcVar6 = getenv("SPOOKHOUSE"), pcVar6 != (char *)0x0)) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar4 != 0)) {
       this_ptr->console_enabled = (uint)(this_ptr->console_enabled == 0);
     }
     if (this_ptr->is_paused == 0) {
       if ((*(int *)g_CScriptPtr->unk4 != 2) &&
-         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3f), iVar4 != 0)) {
+         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3f),
+         pCVar3 = g_CDemonSetPtr, iVar4 != 0)) {
         this_ptr->screen_clear_enabled = 1;
-        core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0();
+        core_set_cpp_CDemonSet_FUN_0056b7e0(pCVar3,0,0,0xf0);
         pCVar2 = g_CScriptPtr;
         this_ptr->subtitle_system_enabled = 1;
         if (*(int *)pCVar2->unk4 == 1) {
@@ -211,7 +219,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         }
         iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x43);
         if (iVar4 != 0) {
-          core_script_cpp_FUN_005602b0();
+          core_script_cpp_CScript_FUN_005602b0(g_CScriptPtr);
         }
       }
     }

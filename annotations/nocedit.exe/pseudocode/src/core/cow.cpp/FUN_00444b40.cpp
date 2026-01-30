@@ -1,15 +1,15 @@
 // Name: core_cow.cpp_FUN_00444b40
 // Address: 00444b40
 // Address Range: [[00444b40, 00444bf3]]
-// Convention: unknown
-// Signature: void core_cow_cpp_FUN_00444b40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cow_cpp_FUN_00444b40(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_cow.cpp_FUN_00444b40(uint param_1, uint param_2)
     */
 
-void core_cow_cpp_FUN_00444b40(void)
+void __cdecl core_cow_cpp_FUN_00444b40(void)
 
 {
   float fVar1;

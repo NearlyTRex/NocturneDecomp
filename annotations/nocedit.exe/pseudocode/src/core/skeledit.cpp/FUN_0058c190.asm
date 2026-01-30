@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_skeledit_cpp_FUN_0058c190(void)
+; __cdecl int __cdecl core_skeledit_cpp_FUN_0058c190(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xa228]:4  local_a228
@@ -214,14 +214,14 @@ section .text
     LEA EAX,[ESP + 0x3528]              ; 0058c257
     PUSH EAX                            ; 0058c25e
     CALL core_skeledit.cpp_FUN_0058b160 ; 0058c25f
-        ;   XREF to: 0058b160 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058b160()
+        ;   XREF to: 0058b160 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058b160()
     ADD ESP,0x8                         ; 0058c264
     LEA EAX,[ESP + 0x3524]              ; 0058c267
     PUSH EAX                            ; 0058c26e
     LEA EAX,[ESP + 0x4]                 ; 0058c26f
     PUSH EAX                            ; 0058c273
     CALL core_skeledit.cpp_FUN_0058b200 ; 0058c274
-        ;   XREF to: 0058b200 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058b200()
+        ;   XREF to: 0058b200 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058b200()
     ADD ESP,0x8                         ; 0058c279
     TEST EAX,EAX                        ; 0058c27c
     JZ 0x0058c67f                       ; 0058c27e
@@ -282,7 +282,7 @@ section .text
     PUSH ESI                            ; 0058c313
     PUSH EBP                            ; 0058c314
     CALL core_skeledit.cpp_FUN_0058b8e0 ; 0058c315
-        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058b8e0()
+        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058b8e0()
     ADD ESP,0x8                         ; 0058c31a
     TEST EAX,EAX                        ; 0058c31d
     JZ 0x0058c613                       ; 0058c31f
@@ -290,7 +290,7 @@ section .text
     PUSH ESI                            ; 0058c325
     PUSH EBP                            ; 0058c326
     CALL core_skeledit.cpp_FUN_0058b9b0 ; 0058c327
-        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058b9b0()
+        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058b9b0()
     ADD ESP,0x8                         ; 0058c32c
     TEST EAX,EAX                        ; 0058c32f
     JZ 0x0058c613                       ; 0058c331
@@ -298,7 +298,7 @@ section .text
     PUSH ESI                            ; 0058c337
     PUSH EBP                            ; 0058c338
     CALL core_skeledit.cpp_FUN_0058bc40 ; 0058c339
-        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058bc40()
+        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058bc40()
     ADD ESP,0x8                         ; 0058c33e
     TEST EAX,EAX                        ; 0058c341
     JZ 0x0058c613                       ; 0058c343
@@ -309,7 +309,7 @@ section .text
         ;   XREF to: 0058c78b (CONDITIONAL_JUMP)  ; LAB_0058c78b
     PUSH EBP                            ; 0058c35d
     CALL core_skeledit.cpp_FUN_0058f790 ; 0058c35e
-        ;   XREF to: 0058f790 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058f790()
+        ;   XREF to: 0058f790 (UNCONDITIONAL_CALL)  ; int * core_skeledit.cpp_FUN_0058f790()
     ADD ESP,0x4                         ; 0058c363
     PUSH EBP                            ; 0058c366
         ;   Label: LAB_0058c366
@@ -321,13 +321,13 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0058c377
     PUSH EAX                            ; 0058c37b
     CALL core_skeledit.cpp_FUN_0058aeb0 ; 0058c37c
-        ;   XREF to: 0058aeb0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058aeb0()
+        ;   XREF to: 0058aeb0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058aeb0()
     ADD ESP,0x8                         ; 0058c381
     MOV EAX,ESP                         ; 0058c384
     PUSH EAX                            ; 0058c386
     PUSH EBP                            ; 0058c387
     CALL core_skeledit.cpp_FUN_0058dde0 ; 0058c388
-        ;   XREF to: 0058dde0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058dde0()
+        ;   XREF to: 0058dde0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058dde0()
     ADD ESP,0x8                         ; 0058c38d
     XOR ECX,ECX                         ; 0058c390
     MOV EBX,dword ptr [ESP]             ; 0058c392
@@ -450,7 +450,7 @@ section .text
     PUSH EAX                            ; 0058c510
     PUSH EBP                            ; 0058c511
     CALL core_skeledit.cpp_FUN_0058de70 ; 0058c512
-        ;   XREF to: 0058de70 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058de70()
+        ;   XREF to: 0058de70 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058de70()
     ADD ESP,0x18                        ; 0058c517
     CALL shape_design.c_getLastTextureProcessIndex_FUN_0046a860 ; 0058c51a
         ;   XREF to: 0046a860 (UNCONDITIONAL_CALL)  ; int shape_design.c_getLastTextureProcessIndex_FUN_0046a860()
@@ -645,7 +645,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0058c745
     PUSH EAX                            ; 0058c749
     CALL core_skeledit.cpp_FUN_0058afe0 ; 0058c74a
-        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058afe0()
+        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058afe0()
     ADD ESP,0x8                         ; 0058c74f
     CMP EBX,0x1                         ; 0058c752
         ;   Label: LAB_0058c752
@@ -655,7 +655,7 @@ section .text
     LEA EAX,[ESP + 0x3528]              ; 0058c758
     PUSH EAX                            ; 0058c75f
     CALL core_skeledit.cpp_FUN_0058afe0 ; 0058c760
-        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058afe0()
+        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058afe0()
     ADD ESP,0x8                         ; 0058c765
     JMP 0x0058c724                      ; 0058c768
         ;   XREF to: 0058c724 (UNCONDITIONAL_JUMP)  ; LAB_0058c724
@@ -1387,7 +1387,7 @@ section .text
     PUSH EAX                            ; 0058d15b
     PUSH EBX                            ; 0058d15c
     CALL core_skeledit.cpp_FUN_0058a0f0 ; 0058d15d
-        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058a0f0()
+        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a0f0()
     ADD ESP,0x8                         ; 0058d162
     MOV EAX,dword ptr [ESP + 0xa230]    ; 0058d165
     PUSH 0x2                            ; 0058d16c
@@ -1418,7 +1418,7 @@ section .text
     PUSH EBP                            ; 0058d1ca
     PUSH EBX                            ; 0058d1cb
     CALL core_skeledit.cpp_FUN_0058a0f0 ; 0058d1cc
-        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058a0f0()
+        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a0f0()
     ADD ESP,0x8                         ; 0058d1d1
     MOV EAX,dword ptr [ESP + 0xa230]    ; 0058d1d4
     PUSH 0x0                            ; 0058d1db
@@ -1510,7 +1510,7 @@ section .text
     LEA EAX,[ESP + 0xa03c]              ; 0058d2c8
     PUSH EAX                            ; 0058d2cf
     CALL core_skeledit.cpp_FUN_00589c20 ; 0058d2d0
-        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_00589c20()
+        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_00589c20()
     ADD ESP,0xc                         ; 0058d2d5
     MOV dword ptr [ESP + 0xa18c],EAX    ; 0058d2d8
     TEST EAX,EAX                        ; 0058d2df
@@ -1620,7 +1620,7 @@ section .text
     PUSH EBX                            ; 0058d417
     PUSH EBP                            ; 0058d418
     CALL core_skeledit.cpp_FUN_0058d790 ; 0058d419
-        ;   XREF to: 0058d790 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058d790()
+        ;   XREF to: 0058d790 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058d790()
     ADD ESP,0x10                        ; 0058d41e
     PUSH 0x0                            ; 0058d421
     LEA EAX,[ESP + 0x9f50]              ; 0058d423
@@ -1673,7 +1673,7 @@ section .text
     PUSH EAX                            ; 0058d4d7
     PUSH EBP                            ; 0058d4d8
     CALL core_skeledit.cpp_FUN_0058de70 ; 0058d4d9
-        ;   XREF to: 0058de70 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058de70()
+        ;   XREF to: 0058de70 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058de70()
     ADD ESP,0x18                        ; 0058d4de
     CALL shape_design.c_getLastTextureProcessIndex_FUN_0046a860 ; 0058d4e1
         ;   XREF to: 0046a860 (UNCONDITIONAL_CALL)  ; int shape_design.c_getLastTextureProcessIndex_FUN_0046a860()
@@ -1839,7 +1839,7 @@ section .text
     PUSH EAX                            ; 0058d6b6
     MOV dword ptr [0x02f33330],ESI      ; 0058d6b7 | g_LodReplayMode
     CALL core_skeledit.cpp_FUN_00589c20 ; 0058d6bd
-        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_00589c20()
+        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_00589c20()
     ADD ESP,0xc                         ; 0058d6c2
     TEST EAX,EAX                        ; 0058d6c5
     JL 0x0058d5ef                       ; 0058d6c7
@@ -1891,7 +1891,7 @@ section .text
     PUSH EAX                            ; 0058d762
     PUSH EBP                            ; 0058d763
     CALL core_skeledit.cpp_FUN_0058d790 ; 0058d764
-        ;   XREF to: 0058d790 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058d790()
+        ;   XREF to: 0058d790 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058d790()
     ADD ESP,0x10                        ; 0058d769
     PUSH 0x0                            ; 0058d76c
     LEA EAX,[ESP + 0x9fc4]              ; 0058d76e

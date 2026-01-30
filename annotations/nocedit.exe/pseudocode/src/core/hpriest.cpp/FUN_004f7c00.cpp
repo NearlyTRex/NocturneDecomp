@@ -1,15 +1,15 @@
 // Name: core_hpriest.cpp_FUN_004f7c00
 // Address: 004f7c00
 // Address Range: [[004f7c00, 004f7c41]]
-// Convention: unknown
-// Signature: void core_hpriest_cpp_FUN_004f7c00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hpriest_cpp_FUN_004f7c00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_highpriestg.cpp_FUN_004f7c00(uint param_1, uint
    param_2) */
 
-void core_hpriest_cpp_FUN_004f7c00(void)
+void __cdecl core_hpriest_cpp_FUN_004f7c00(void)
 
 {
   int iVar1;

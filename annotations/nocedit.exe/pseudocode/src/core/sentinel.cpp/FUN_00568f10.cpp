@@ -1,15 +1,15 @@
 // Name: core_sentinel.cpp_FUN_00568f10
 // Address: 00568f10
 // Address Range: [[00568f10, 00568f4c]]
-// Convention: unknown
-// Signature: void core_sentinel_cpp_FUN_00568f10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sentinel_cpp_FUN_00568f10(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_sentinel.cpp_FUN_00568f10(uint param_1, uint
    param_2) */
 
-void core_sentinel_cpp_FUN_00568f10(void)
+void __cdecl core_sentinel_cpp_FUN_00568f10(void)
 
 {
   CEnemy *in_stack_00000004;

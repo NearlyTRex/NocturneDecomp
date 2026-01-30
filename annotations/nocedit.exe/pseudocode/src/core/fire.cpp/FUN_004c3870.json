@@ -41,9 +41,9 @@
         "004c38bd"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_FUN_004c3870",
-    "signature": "void core_fire_cpp_FUN_004c3870(void)"
+    "signature": "void __cdecl core_fire_cpp_FUN_004c3870(void)"
   },
   "function_calls": [],
   "globals": [
@@ -73,18 +73,15 @@
         "call_addr": "004c6ed6",
         "call_type": "direct",
         "caller": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 9,
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 4
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 6
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 11.615384615384615,
@@ -157,11 +154,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
+      "estimated_params": 4,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
     }
   ]

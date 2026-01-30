@@ -221,24 +221,25 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 48,
+        "column": 60,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 285,
+    "complexity_score": 278,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 40,
-    "suspect_count": 24,
+    "pseudocode_lines": 38,
+    "suspect_count": 23,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param"
     ],
-    "total_lines": 121
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -256,9 +257,9 @@
         "00520b93"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mimic.cpp_CMimic_beginMorph_FUN_00520a80",
-    "signature": "void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)"
+    "signature": "void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)"
   },
   "function_calls": [
     {
@@ -514,18 +515,15 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "(this_ptr,\"%s morphing into type %s\\n\",in_stack_00000004,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 + 0x4bdfc);",
-      "type": "stack_param"
+      "actual_args": 0,
+      "description": "Format \"%s morphing into type %s\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s morphing into type %s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 40,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr,\"%s morphing into type %s\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

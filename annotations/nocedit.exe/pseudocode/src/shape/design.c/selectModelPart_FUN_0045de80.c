@@ -1,12 +1,12 @@
 // Name: shape_design.c_selectModelPart_FUN_0045de80
 // Address: 0045de80
 // Address Range: [[0045de80, 0045df53]]
-// Convention: unknown
-// Signature: void shape_design_c_selectModelPart_FUN_0045de80(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_selectModelPart_FUN_0045de80(void)
 
 #include "nocturne.h"
 
-void shape_design_c_selectModelPart_FUN_0045de80(void)
+void __cdecl shape_design_c_selectModelPart_FUN_0045de80(void)
 
 {
   char cVar1;

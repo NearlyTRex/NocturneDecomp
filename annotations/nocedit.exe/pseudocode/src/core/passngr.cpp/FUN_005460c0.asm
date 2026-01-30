@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_passngr_cpp_FUN_005460c0(void)
+; __cdecl int __cdecl core_passngr_cpp_FUN_005460c0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x1c]:1  local_1c
@@ -84,7 +84,7 @@ section .text
     LEA ESI,[EBX + 0x1f814]             ; 00546145
     PUSH ESI                            ; 0054614b
     CALL core_morph.cpp_FUN_0052b600    ; 0054614c
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 00546151
     MOV EAX,dword ptr [EBX + 0x1f810]   ; 00546154
     PUSH 0x0                            ; 0054615a
@@ -93,7 +93,7 @@ section .text
     PUSH 0x1                            ; 00546162
     PUSH ESI                            ; 00546164
     CALL core_morph.cpp_FUN_0052b600    ; 00546165
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 0054616a
     PUSH dword ptr [EBX + 0x20440]      ; 0054616d
     PUSH ESI                            ; 00546173

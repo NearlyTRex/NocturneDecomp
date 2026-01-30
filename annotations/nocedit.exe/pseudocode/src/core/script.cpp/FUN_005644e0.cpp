@@ -1,8 +1,8 @@
 // Name: core_script.cpp_FUN_005644e0
 // Address: 005644e0
 // Address Range: [[0056449b, 005644d0] [005644e0, 005644ff]]
-// Convention: unknown
-// Signature: undefined4 core_script_cpp_FUN_005644e0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_FUN_005644e0(void)
 
 #include "nocturne.h"
 
@@ -15,7 +15,7 @@
 /* WARNING: Removing unreachable block (ram,0x005644cb) */
 /* WARNING: Removing unreachable block (ram,0x00564531) */
 
-uint core_script_cpp_FUN_005644e0(uint param_1)
+void __cdecl core_script_cpp_FUN_005644e0(void)
 
 {
   DAT_031141c4 = 0xffffffff;
@@ -24,5 +24,5 @@ uint core_script_cpp_FUN_005644e0(uint param_1)
   DAT_031141c0 = 0xffffffff;
   DAT_031141cc = 0xffffffff;
   DAT_031141c8 = 0xffffffff;
-  return param_1;
+  return;
 }

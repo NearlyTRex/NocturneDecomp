@@ -7,7 +7,7 @@
 ; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_FUN_0053c4f0 at 0053c713
+;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c713
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20 at 004a5b26
 ;
 ; Referenced Globals:

@@ -1,15 +1,15 @@
 // Name: core_melee.cpp_FUN_0050eb50
 // Address: 0050eb50
 // Address Range: [[0050eb50, 0050ebd5]]
-// Convention: unknown
-// Signature: void core_melee_cpp_FUN_0050eb50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_melee_cpp_FUN_0050eb50(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_melee.cpp_FUN_0050eb50(uint param_1, uint
    param_2, byte param_3, uint param_4) */
 
-void core_melee_cpp_FUN_0050eb50(void)
+void __cdecl core_melee_cpp_FUN_0050eb50(void)
 
 {
   CDemonActor *pCVar1;

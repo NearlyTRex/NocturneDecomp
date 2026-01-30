@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_superopt_cpp_FUN_005c7dc0(void)
+; __cdecl void __cdecl shape_superopt_cpp_FUN_005c7dc0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
@@ -97,7 +97,7 @@ section .text
     PUSH EDX                            ; 005c7e6d
     PUSH EDI                            ; 005c7e6e
     CALL shape_superopt.cpp_FUN_005c7fb0 ; 005c7e6f
-        ;   XREF to: 005c7fb0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c7fb0()
+        ;   XREF to: 005c7fb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c7fb0()
     ADD ESP,0xc                         ; 005c7e74
     TEST EAX,EAX                        ; 005c7e77
     JZ 0x005c7ef3                       ; 005c7e79

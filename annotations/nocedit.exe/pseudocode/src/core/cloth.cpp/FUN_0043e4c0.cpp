@@ -1,12 +1,12 @@
 // Name: core_cloth.cpp_FUN_0043e4c0
 // Address: 0043e4c0
 // Address Range: [[0043e4c0, 0043e50a]]
-// Convention: unknown
-// Signature: uint core_cloth_cpp_FUN_0043e4c0(void)
+// Convention: __cdecl
+// Signature: uint __cdecl core_cloth_cpp_FUN_0043e4c0(void)
 
 #include "nocturne.h"
 
-uint core_cloth_cpp_FUN_0043e4c0(void)
+uint __cdecl core_cloth_cpp_FUN_0043e4c0(void)
 
 {
   _FILE *in_stack_00000004;

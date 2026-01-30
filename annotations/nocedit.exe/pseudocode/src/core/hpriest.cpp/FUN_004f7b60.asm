@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_hpriest_cpp_FUN_004f7b60(void)
+; __cdecl CDemonActorType * __cdecl core_hpriest_cpp_FUN_004f7b60(void)
 ;
 ;
 ; Referenced Globals:

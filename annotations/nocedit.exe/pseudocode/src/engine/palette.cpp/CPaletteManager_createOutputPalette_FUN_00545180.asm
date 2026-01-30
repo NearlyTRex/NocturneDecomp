@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
+; __cdecl int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
@@ -355,7 +355,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x68]      ; 0054542c
     PUSH EDI                            ; 00545430
     CALL engine_colquant.c_FUN_004406c0 ; 00545431
-        ;   XREF to: 004406c0 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_004406c0()
+        ;   XREF to: 004406c0 (UNCONDITIONAL_CALL)  ; int * engine_colquant.c_FUN_004406c0()
     ADD ESP,0x10                        ; 00545436
     MOV DL,0x5c                         ; 00545439
     MOV ESI,dword ptr [ESP + 0x7c]      ; 0054543b

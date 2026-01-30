@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_game_cpp_FUN_004e0aa0(void)
+; __cdecl void __cdecl core_game_cpp_FUN_004e0aa0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -50,7 +50,7 @@ section .text
     JL 0x004e0b61                       ; 004e0ad7
         ;   XREF to: 004e0b61 (CONDITIONAL_JUMP)  ; LAB_004e0b61
     CALL core_game.cpp_FUN_004e09a0     ; 004e0add
-        ;   XREF to: 004e09a0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004e09a0()
+        ;   XREF to: 004e09a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004e09a0()
     CMP dword ptr [0x0067939c],0x20     ; 004e0ae2 | g_BitsPerPixel
     JNZ 0x004e0b53                      ; 004e0ae9
         ;   XREF to: 004e0b53 (CONDITIONAL_JUMP)  ; LAB_004e0b53

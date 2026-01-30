@@ -1,12 +1,12 @@
 // Name: core_set.cpp_FUN_0056fba0
 // Address: 0056fba0
 // Address Range: [[0056fba0, 0056fbcc]]
-// Convention: unknown
-// Signature: undefined4 core_set_cpp_FUN_0056fba0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_set_cpp_FUN_0056fba0(void)
 
 #include "nocturne.h"
 
-uint core_set_cpp_FUN_0056fba0(void)
+int __cdecl core_set_cpp_FUN_0056fba0(void)
 
 {
   int in_stack_00000004;
@@ -16,7 +16,7 @@ uint core_set_cpp_FUN_0056fba0(void)
     return 1;
   }
   if (*(float *)(in_stack_00000004 + 4) < *(float *)(in_stack_00000008 + 4)) {
-    return 0xffffffff;
+    return -1;
   }
   return 0;
 }

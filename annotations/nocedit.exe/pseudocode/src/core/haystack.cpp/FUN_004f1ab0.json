@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 151,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 36,
-    "suspect_count": 10,
+    "pseudocode_lines": 34,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 103
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -42,9 +42,9 @@
         "004f1b48"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_haystack.cpp_FUN_004f1ab0",
-    "signature": "void core_haystack_cpp_FUN_004f1ab0(void)"
+    "signature": "void __cdecl core_haystack_cpp_FUN_004f1ab0(void)"
   },
   "function_calls": [
     {
@@ -96,28 +96,24 @@
         "call_addr": "004f19e5",
         "call_type": "direct",
         "caller": "core_haystack.cpp_FUN_004f1970",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       },
       {
         "call_addr": "004f19ac",
         "call_type": "direct",
         "caller": "core_haystack.cpp_FUN_004f1970",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 4,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2,
@@ -242,28 +238,14 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "SStack_64.attacker = &in_stack_00000004->base;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "SStack_64.wielder = &in_stack_00000004->base;",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_haystack_cpp_FUN_004f1970(void)
+; __cdecl void __cdecl core_haystack_cpp_FUN_004f1970(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
@@ -57,7 +57,7 @@ section .text
     PUSH EDI                            ; 004f19aa
     PUSH EBX                            ; 004f19ab
     CALL core_haystack.cpp_FUN_004f1ab0 ; 004f19ac
-        ;   XREF to: 004f1ab0 (UNCONDITIONAL_CALL)  ; undefined core_haystack.cpp_FUN_004f1ab0()
+        ;   XREF to: 004f1ab0 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_FUN_004f1ab0()
     MOV EDX,dword ptr [EBX + 0x1fbd8]   ; 004f19b1
     ADD ESP,0x8                         ; 004f19b7
     TEST EDX,EDX                        ; 004f19ba
@@ -84,7 +84,7 @@ section .text
     PUSH EDX                            ; 004f19e3
     PUSH EBX                            ; 004f19e4
     CALL core_haystack.cpp_FUN_004f1ab0 ; 004f19e5
-        ;   XREF to: 004f1ab0 (UNCONDITIONAL_CALL)  ; undefined core_haystack.cpp_FUN_004f1ab0()
+        ;   XREF to: 004f1ab0 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_FUN_004f1ab0()
     MOV ECX,dword ptr [EBX + 0x1fbd8]   ; 004f19ea
     ADD ESP,0x8                         ; 004f19f0
     TEST ECX,ECX                        ; 004f19f3

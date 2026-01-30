@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_biggs_cpp_FUN_00418b50(void)
+; __cdecl void __cdecl core_biggs_cpp_FUN_00418b50(void)
 ;
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
     PUSH EDX                            ; 00418bb8
     PUSH EBX                            ; 00418bb9
     CALL core_enemy.cpp_FUN_004a9f10    ; 00418bba
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00418bbf
     POP EDI                             ; 00418bc2
     POP ESI                             ; 00418bc3
@@ -92,7 +92,7 @@ section .text
     PUSH EDX                            ; 00418bf6
     PUSH EBX                            ; 00418bf7
     CALL core_enemy.cpp_FUN_004a9f10    ; 00418bf8
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00418bfd
     POP EDI                             ; 00418c00
     POP ESI                             ; 00418c01

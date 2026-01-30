@@ -1,12 +1,12 @@
 // Name: core_flies.cpp_FUN_004cc2c0
 // Address: 004cc2c0
 // Address Range: [[004cc2c0, 004cc2f2]]
-// Convention: unknown
-// Signature: void core_flies_cpp_FUN_004cc2c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flies_cpp_FUN_004cc2c0(void)
 
 #include "nocturne.h"
 
-void core_flies_cpp_FUN_004cc2c0(void)
+void __cdecl core_flies_cpp_FUN_004cc2c0(void)
 
 {
   int in_stack_00000004;

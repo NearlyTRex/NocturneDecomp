@@ -1,15 +1,15 @@
 // Name: core_cloth.cpp_OrientBoneCheck_FUN_0043a110
 // Address: 0043a110
 // Address Range: [[0043a110, 0043a2af]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_cloth.cpp_OrientBoneCheck(uint param_1, uint param_2,
    uint param_3) */
 
-void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
+void __cdecl core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
 
 {
   CSkeleton *this_ptr;

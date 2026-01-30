@@ -36,12 +36,6 @@
         "column": 22,
         "line": 34,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'int*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -74,12 +68,12 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 189,
+    "complexity_score": 179,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 39,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -110,9 +104,9 @@
         "0058f80d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_0058f790",
-    "signature": "undefined8 core_skeledit_cpp_FUN_0058f790(void)"
+    "signature": "int * __cdecl core_skeledit_cpp_FUN_0058f790(void)"
   },
   "function_calls": [
     {
@@ -266,13 +260,6 @@
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x1c63] = 0;",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "CONCAT44",
-      "text": "return CONCAT44(iVar4,piVar2);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

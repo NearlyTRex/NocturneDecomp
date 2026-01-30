@@ -1,12 +1,12 @@
 // Name: core_vampboss.cpp_FUN_005e58d0
 // Address: 005e58d0
 // Address Range: [[005e58d0, 005e5931]]
-// Convention: unknown
-// Signature: float core_vampboss_cpp_FUN_005e58d0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_vampboss_cpp_FUN_005e58d0(void)
 
 #include "nocturne.h"
 
-float core_vampboss_cpp_FUN_005e58d0(void)
+float __cdecl core_vampboss_cpp_FUN_005e58d0(void)
 
 {
   float fVar1;

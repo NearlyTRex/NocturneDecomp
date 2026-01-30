@@ -53,7 +53,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_script.cpp_FUN_00559ac0
+;   core_script.cpp_CScript_FUN_00559ac0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -122,13 +122,13 @@ section .text
     MOV ESI,EAX                         ; 004d80e3
     MOV EAX,[0x00680d50]                ; 004d80e5 | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 004d80ea | g_CScriptInstance
-    CALL core_script.cpp_FUN_00559ac0   ; 004d80eb
-        ;   XREF to: 00559ac0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00559ac0()
+    CALL core_script.cpp_CScript_FUN_00559ac0 ; 004d80eb
+        ;   XREF to: 00559ac0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00559ac0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004d80f0
     MOV EDX,dword ptr [0x00680d50]      ; 004d80f3 | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 004d80f9 | g_CScriptInstance
-    CALL core_script.cpp_FUN_00559ac0   ; 004d80fa
-        ;   XREF to: 00559ac0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00559ac0()
+    CALL core_script.cpp_CScript_FUN_00559ac0 ; 004d80fa
+        ;   XREF to: 00559ac0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00559ac0(CScript * this_ptr)
     MOV EDX,dword ptr [0x00679398]      ; 004d80ff | g_WindowHeight
     SUB EDX,EAX                         ; 004d8105
     MOV EAX,EDX                         ; 004d8107
@@ -410,8 +410,8 @@ section .text
     SUB EAX,EBX                         ; 004d84cf
     PUSH EDI                            ; 004d84d1 | g_CScriptInstance
     MOV EBX,EAX                         ; 004d84d2
-    CALL core_script.cpp_FUN_00559ac0   ; 004d84d4
-        ;   XREF to: 00559ac0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00559ac0()
+    CALL core_script.cpp_CScript_FUN_00559ac0 ; 004d84d4
+        ;   XREF to: 00559ac0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00559ac0(CScript * this_ptr)
     SUB EBX,EAX                         ; 004d84d9
     MOV EAX,EBX                         ; 004d84db
     MOV EDX,dword ptr [0x020a5724]      ; 004d84dd | g_SmallEditorFont

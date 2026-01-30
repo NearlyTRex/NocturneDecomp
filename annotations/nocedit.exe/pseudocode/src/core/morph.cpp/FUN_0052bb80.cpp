@@ -1,17 +1,18 @@
 // Name: core_morph.cpp_FUN_0052bb80
 // Address: 0052bb80
 // Address Range: [[0052bb80, 0052bcaa]]
-// Convention: unknown
-// Signature: void core_morph_cpp_FUN_0052bb80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_FUN_0052bb80(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_morph.cpp_FUN_0052bb80(uint param_1, uint param_2) */
 
-void core_morph_cpp_FUN_0052bb80(void)
+void __cdecl core_morph_cpp_FUN_0052bb80(void)
 
 {
   int y;
+  int iVar1;
   int x;
   int y_00;
   int x_00;
@@ -25,7 +26,7 @@ void core_morph_cpp_FUN_0052bb80(void)
       engine_2d_c_plotPixel_FUN_00401140(x,y);
     }
     if (0 < in_stack_00000008) {
-      in_stack_00000008 = y + in_stack_00000008;
+      iVar1 = y + in_stack_00000008;
       y_00 = y + 1;
       x_00 = x;
       do {
@@ -45,7 +46,7 @@ void core_morph_cpp_FUN_0052bb80(void)
           engine_2d_c_plotPixel_FUN_00401140(x,y_00);
         }
         y_00 = y_00 + 1;
-      } while (y_00 <= in_stack_00000008);
+      } while (y_00 <= iVar1);
     }
   }
   return;

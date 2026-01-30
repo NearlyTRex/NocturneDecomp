@@ -1,21 +1,17 @@
 // Name: core_script.cpp_GetReferencedActor_FUN_00560760
 // Address: 00560760
 // Address Range: [[00560760, 005607df]]
-// Convention: unknown
-// Signature: void core_script_cpp_GetReferencedActor_FUN_00560760(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_GetReferencedActor_FUN_00560760(_FILE *param_1,int *param_2)
 
 #include "nocturne.h"
 
-/* Signature: void core_script.cpp_GetReferencedActor(FILE* param_1, CDemonActor** param_2) */
-
-void core_script_cpp_GetReferencedActor_FUN_00560760(void)
+void __cdecl core_script_cpp_GetReferencedActor_FUN_00560760(_FILE *param_1,int *param_2)
 
 {
   char *pcVar1;
   int iVar2;
   uint *puVar3;
-  _FILE *in_stack_00000004;
-  uint *in_stack_00000008;
   char local_d0 [200];
   
   puVar3 = &DAT_00680d60;
@@ -25,13 +21,13 @@ void core_script_cpp_GetReferencedActor_FUN_00560760(void)
     puVar3 = puVar3 + 1;
     pcVar1 = (char *)((int)pcVar1 + 4);
   }
-  _fscanf(in_stack_00000004,"\"%[^\"]\"\n",local_d0);
+  _fscanf(param_1,"\"%[^\"]\"\n",local_d0);
   iVar2 = stricmp(local_d0,"(none)");
   if (iVar2 == 0) {
-    *in_stack_00000008 = 0;
+    *param_2 = 0;
     return;
   }
   pcVar1 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-  *in_stack_00000008 = pcVar1;
+  *param_2 = (int)pcVar1;
   return;
 }

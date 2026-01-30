@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_course_cpp_OpeningCourseFile2_FUN_00442d70 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CCourse *param_5,char *param_6)
+; __cdecl int __cdecl core_course_cpp_OpeningCourseFile2_FUN_00442d70(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x17c]:1  local_17c

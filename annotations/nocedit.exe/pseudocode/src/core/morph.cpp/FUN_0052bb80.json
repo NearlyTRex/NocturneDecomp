@@ -12,12 +12,6 @@
       {
         "category": "other",
         "column": 9,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
         "line": 22,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -26,21 +20,27 @@
         "column": 10,
         "line": 23,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 24,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 136,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 41,
-    "suspect_count": 9,
+    "pseudocode_lines": 42,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 190
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -58,9 +58,9 @@
         "0052bcaa"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_morph.cpp_FUN_0052bb80",
-    "signature": "void core_morph_cpp_FUN_0052bb80(void)"
+    "signature": "void __cdecl core_morph_cpp_FUN_0052bb80(void)"
   },
   "function_calls": [
     {
@@ -138,65 +138,51 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "if ((*(byte *)(in_stack_00000004 + 0x13) & 0x80) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "y = *(int *)(in_stack_00000004 + 0x14) >> 0x10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "x = *(int *)(in_stack_00000004 + 0x10) >> 0x10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "if (0 < in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 22,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = y + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = y + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "text": "} while (y_00 <= in_stack_00000008);",
+      "text": "iVar1 = y + in_stack_00000008;",
       "type": "stack_param"
     }
   ]

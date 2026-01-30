@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_vampboss_cpp_VoicuSummonWavFile2_FUN_005e7410(void)
+; __cdecl void __cdecl core_vampboss_cpp_VoicuSummonWavFile2_FUN_005e7410(void)
 ;
 ;
 ; XREF[1]:
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 005e746b (CONDITIONAL_JUMP)  ; LAB_005e746b
     PUSH EAX                            ; 005e7462
     CALL core_emitter.cpp_FUN_004a7e80  ; 005e7463
-        ;   XREF to: 004a7e80 (UNCONDITIONAL_CALL)  ; undefined core_emitter.cpp_FUN_004a7e80()
+        ;   XREF to: 004a7e80 (UNCONDITIONAL_CALL)  ; void core_emitter.cpp_FUN_004a7e80()
     ADD ESP,0x4                         ; 005e7468
     INC ESI                             ; 005e746b
         ;   Label: LAB_005e746b

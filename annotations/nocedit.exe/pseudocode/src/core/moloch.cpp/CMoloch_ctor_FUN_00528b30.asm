@@ -48,7 +48,7 @@ section .text
     ADD EAX,0x2388                      ; 00528b4e
     PUSH EAX                            ; 00528b53
     CALL core_morph.cpp_FUN_0052b310    ; 00528b54
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
     ADD ESP,0x4                         ; 00528b59
     LEA EBX,[EAX + 0xfffde0a4]          ; 00528b5c
     PUSH 0x639d48                       ; 00528b62 | = "moloch_h.dfm"

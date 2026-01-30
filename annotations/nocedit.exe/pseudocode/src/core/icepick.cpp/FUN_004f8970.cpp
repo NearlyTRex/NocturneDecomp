@@ -1,14 +1,14 @@
 // Name: core_icepick.cpp_FUN_004f8970
 // Address: 004f8970
 // Address Range: [[004f8970, 004f8ac6]]
-// Convention: unknown
-// Signature: undefined4 core_icepick_cpp_FUN_004f8970(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_icepick_cpp_FUN_004f8970(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_icepick.cpp_FUN_004f8970(uint param_1) */
 
-uint core_icepick_cpp_FUN_004f8970(void)
+int __cdecl core_icepick_cpp_FUN_004f8970(void)
 
 {
   CDemonActor *this_ptr;

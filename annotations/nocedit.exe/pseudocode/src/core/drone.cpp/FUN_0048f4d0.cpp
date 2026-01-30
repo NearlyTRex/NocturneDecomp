@@ -1,15 +1,15 @@
 // Name: core_drone.cpp_FUN_0048f4d0
 // Address: 0048f4d0
 // Address Range: [[0048f4d0, 0048f518]]
-// Convention: unknown
-// Signature: undefined4 core_drone_cpp_FUN_0048f4d0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_drone_cpp_FUN_0048f4d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_drone.cpp_FUN_0048f4d0(uint param_1, uint param_2)
     */
 
-uint core_drone_cpp_FUN_0048f4d0(void)
+int __cdecl core_drone_cpp_FUN_0048f4d0(void)
 
 {
   CVector3f *pCVar1;

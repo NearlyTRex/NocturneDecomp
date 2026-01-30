@@ -1,14 +1,14 @@
 // Name: core_weather.cpp_CWeather_FUN_005ef190
 // Address: 005ef190
 // Address Range: [[005ef190, 005ef5f0] [005ef5f4, 005ef8b6]]
-// Convention: unknown
-// Signature: void core_weather_cpp_CWeather_FUN_005ef190(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_weather.cpp_CWeather_FUN_005ef190(CWeather* param_1) */
 
-void core_weather_cpp_CWeather_FUN_005ef190(void)
+void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
 
 {
   SRenderVertex *vertex_ptr;

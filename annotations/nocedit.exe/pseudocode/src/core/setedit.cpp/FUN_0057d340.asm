@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_FUN_0057d340(void)
+; __cdecl void __cdecl core_setedit_cpp_FUN_0057d340(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x124]:4  local_124
@@ -119,7 +119,7 @@ section .text
     LEA EAX,[EBP + -0xe]                ; 0057d3ce
     PUSH EAX                            ; 0057d3d1
     CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d3d2
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d3d7
     PUSH EBX                            ; 0057d3da
     PUSH 0x647dce                       ; 0057d3db | = "%ss"
@@ -152,7 +152,7 @@ section .text
     LEA EAX,[EBP + 0x16]                ; 0057d435
     PUSH EAX                            ; 0057d438
     CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d439
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d43e
     PUSH EBX                            ; 0057d441
     PUSH 0x647dd2                       ; 0057d442 | = "%se"
@@ -185,7 +185,7 @@ section .text
     LEA EAX,[EBP + 0x22]                ; 0057d49c
     PUSH EAX                            ; 0057d49f
     CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d4a0
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d4a5
     PUSH EBX                            ; 0057d4a8
     PUSH 0x647dd6                       ; 0057d4a9 | = "%sw"
@@ -218,7 +218,7 @@ section .text
     LEA EAX,[EBP + -0x26]               ; 0057d503
     PUSH EAX                            ; 0057d506
     CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d507
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d50c
     PUSH EBX                            ; 0057d50f
     PUSH 0x647dda                       ; 0057d510 | = "%su"
@@ -251,7 +251,7 @@ section .text
     LEA EAX,[EBP + 0x2e]                ; 0057d56a
     PUSH EAX                            ; 0057d56d
     CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d56e
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d573
     PUSH EBX                            ; 0057d576
     PUSH 0x647dde                       ; 0057d577 | = "%sd"
@@ -284,7 +284,7 @@ section .text
     LEA EAX,[EBP + 0x46]                ; 0057d5d1
     PUSH EAX                            ; 0057d5d4
     CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d5d5
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d5da
     LEA ESP,[EBP + 0x7a]                ; 0057d5dd
     POP EBP                             ; 0057d5e0
@@ -323,7 +323,7 @@ section .text
     LEA EAX,[EBP + 0x5e]                ; 0057d641
     PUSH EAX                            ; 0057d644
     CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d645
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d64a
     LEA ESP,[EBP + 0x7a]                ; 0057d64d
     POP EBP                             ; 0057d650

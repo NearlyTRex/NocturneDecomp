@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
+; __cdecl void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x8b0]:8  local_8b0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActor * core_flies_cpp_FUN_004cca50(void)
+; __cdecl CDemonActor * __cdecl core_flies_cpp_FUN_004cca50(void)
 ;
 ;
 ; XREF[1]:

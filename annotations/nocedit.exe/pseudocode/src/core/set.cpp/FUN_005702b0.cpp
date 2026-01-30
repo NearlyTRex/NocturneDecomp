@@ -1,12 +1,12 @@
 // Name: core_set.cpp_FUN_005702b0
 // Address: 005702b0
 // Address Range: [[005702b0, 005706f4]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_005702b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_005702b0(void)
 
 #include "nocturne.h"
 
-void core_set_cpp_FUN_005702b0(void)
+void __cdecl core_set_cpp_FUN_005702b0(void)
 
 {
   short *psVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
+; __cdecl void __cdecl core_setedit_cpp_DefineTexturesMaybe_FUN_00578290(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x20c]:1  local_20c

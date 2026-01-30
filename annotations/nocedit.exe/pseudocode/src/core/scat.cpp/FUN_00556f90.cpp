@@ -1,12 +1,12 @@
 // Name: core_scat.cpp_FUN_00556f90
 // Address: 00556f90
 // Address Range: [[00556f90, 0055714c]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_00556f90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_00556f90(void)
 
 #include "nocturne.h"
 
-void core_scat_cpp_FUN_00556f90(void)
+void __cdecl core_scat_cpp_FUN_00556f90(void)
 
 {
   CHero *pCVar1;

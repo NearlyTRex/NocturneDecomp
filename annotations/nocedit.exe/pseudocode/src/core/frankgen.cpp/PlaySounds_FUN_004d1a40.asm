@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
+; __cdecl void __cdecl core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x80]:1  local_80
@@ -49,7 +49,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x15c]     ; 004d1a4c
     MOV [0x02d7b7f0],EAX                ; 004d1a52 | FLOAT_02d7b7f0
     CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d1a57
-        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
     CMP EAX,ESI                         ; 004d1a5c
     JZ 0x004d1d83                       ; 004d1a5e
         ;   XREF to: 004d1d83 (CONDITIONAL_JUMP)  ; LAB_004d1d83
@@ -68,7 +68,7 @@ section .text
     PUSH ESI                            ; 004d1a93
         ;   Label: LAB_004d1a93
     CALL core_frankgen.cpp_LoadModel_FUN_004d2190 ; 004d1a94
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_LoadModel_FUN_004d2190()
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_LoadModel_FUN_004d2190()
     MOV EAX,dword ptr [ESI + 0x158]     ; 004d1a99
     ADD ESP,0x4                         ; 004d1a9f
     CMP EAX,0x8                         ; 004d1aa2
@@ -100,7 +100,7 @@ section .text
     PUSH dword ptr [ESP + 0x7c]         ; 004d1b07
     PUSH ESI                            ; 004d1b0b
     CALL core_frankgen.cpp_FUN_004d1ec0 ; 004d1b0c
-        ;   XREF to: 004d1ec0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004d1ec0()
+        ;   XREF to: 004d1ec0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004d1ec0()
     ADD ESP,0xc                         ; 004d1b11
     LEA EDX,[ESP + 0x20]                ; 004d1b14
     MOV EBP,EAX                         ; 004d1b18
@@ -261,37 +261,37 @@ section .text
     PUSH 0x3f800000                     ; 004d1d0e
     PUSH ESI                            ; 004d1d13
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d14
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1d19
     PUSH 0x62a9e8                       ; 004d1d1c | = "frankx-bed2.wav"
     PUSH 0x43ed8000                     ; 004d1d21
     PUSH ESI                            ; 004d1d26
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d27
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1d2c
     PUSH 0x62a9f8                       ; 004d1d2f | = "frankx-bed3.wav"
     PUSH 0x444a4000                     ; 004d1d34
     PUSH ESI                            ; 004d1d39
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d3a
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1d3f
     PUSH 0x62aa08                       ; 004d1d42 | = "frankx-bed4.wav"
     PUSH 0x44834000                     ; 004d1d47
     PUSH ESI                            ; 004d1d4c
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d4d
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1d52
     PUSH 0x62aa18                       ; 004d1d55 | = "frankx-water-dip.wav"
     PUSH 0x44ac8000                     ; 004d1d5a
     PUSH ESI                            ; 004d1d5f
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d60
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1d65
     PUSH 0x62aa2d                       ; 004d1d68 | = "frankx-big-ramp-bed5.wav"
     PUSH 0x44ff0000                     ; 004d1d6d
     PUSH ESI                            ; 004d1d72
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d73
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1d78
     POP EBX                             ; 004d1d7b
     POP EDI                             ; 004d1d7c
@@ -327,7 +327,7 @@ section .text
     PUSH 0x43030000                     ; 004d1de4
     PUSH ESI                            ; 004d1de9
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1dea
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1def
     ADD ESP,0x78                        ; 004d1df2
     POP EBP                             ; 004d1df5
@@ -338,7 +338,7 @@ section .text
     PUSH 0x4403c000                     ; 004d1dfd
     PUSH ESI                            ; 004d1e02
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e03
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1e08
     ADD ESP,0x78                        ; 004d1e0b
     POP EBP                             ; 004d1e0e
@@ -349,7 +349,7 @@ section .text
     PUSH 0x44882000                     ; 004d1e16
     PUSH ESI                            ; 004d1e1b
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e1c
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1e21
     ADD ESP,0x78                        ; 004d1e24
     POP EBP                             ; 004d1e27
@@ -360,7 +360,7 @@ section .text
     PUSH 0x44580000                     ; 004d1e2f
     PUSH ESI                            ; 004d1e34
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e35
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1e3a
     ADD ESP,0x78                        ; 004d1e3d
     POP EBP                             ; 004d1e40
@@ -371,13 +371,13 @@ section .text
     PUSH 0x44d4c000                     ; 004d1e48
     PUSH ESI                            ; 004d1e4d
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e4e
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1e53
     PUSH 0x62aa9e                       ; 004d1e56 | = "frankx-flap-down.wav"
     PUSH 0x44eb2000                     ; 004d1e5b
     PUSH ESI                            ; 004d1e60
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e61
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1e66
     ADD ESP,0x78                        ; 004d1e69
     POP EBP                             ; 004d1e6c
@@ -388,7 +388,7 @@ section .text
     PUSH 0x44f3c000                     ; 004d1e74
     PUSH ESI                            ; 004d1e79
     CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e7a
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
     ADD ESP,0xc                         ; 004d1e7f
     ADD ESP,0x78                        ; 004d1e82
     POP EBP                             ; 004d1e85

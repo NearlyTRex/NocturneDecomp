@@ -1,15 +1,15 @@
 // Name: core_sentinel.cpp_FUN_00568030
 // Address: 00568030
 // Address Range: [[00568030, 00568b6b]]
-// Convention: unknown
-// Signature: void core_sentinel_cpp_FUN_00568030(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sentinel_cpp_FUN_00568030(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_sentinel.cpp_FUN_00568030(uint param_1, uint
    param_2) */
 
-void core_sentinel_cpp_FUN_00568030(void)
+void __cdecl core_sentinel_cpp_FUN_00568030(void)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -342,8 +342,6 @@ LAB_0056878f:
     case 4:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1a0);
       local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_1a0.attacker = (CDemonActor *)in_stack_00000004;
-      local_1a0.wielder = (CDemonActor *)in_stack_00000004;
       local_14 = local_1a0.damage_amount;
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_b0,&g_ZeroVector,
@@ -353,8 +351,6 @@ LAB_0056878f:
                 ((CDemonActor *)in_stack_00000004,&local_a4,pCVar10);
       core_enemy_cpp_FUN_004a9880();
       local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
-      local_1a0.attacker = (CDemonActor *)in_stack_00000004;
-      local_1a0.wielder = (CDemonActor *)in_stack_00000004;
       local_14 = local_1a0.damage_amount;
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_50,&g_ZeroVector,
@@ -418,7 +414,7 @@ LAB_0056845d:
     if (uVar4 != 3) goto LAB_0056845d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (in_stack_00000004->base).model.accumulated_root_motion.z = 0.0;
   (in_stack_00000004->base).model.accumulated_root_motion.y =

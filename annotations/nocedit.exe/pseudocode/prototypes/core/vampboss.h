@@ -25,7 +25,7 @@ void __cdecl CVampireBoss(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_FUN_005e58d0
 // Address: 005e58d0
-float FUN_005e58d0(void);
+float __cdecl FUN_005e58d0(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
 // Address: 005e5970
@@ -33,11 +33,11 @@ void __cdecl CVampireBoss::process(CVampireBoss *this_ptr,float delta_time);
 
 // Original: core_vampboss.cpp_FUN_005e6b80
 // Address: 005e6b80
-void FUN_005e6b80(void);
+void __cdecl FUN_005e6b80(void);
 
 // Original: core_vampboss.cpp_FUN_005e6ca0
 // Address: 005e6ca0
-void FUN_005e6ca0(void);
+void __cdecl FUN_005e6ca0(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0
 // Address: 005e6da0
@@ -49,11 +49,11 @@ void __cdecl CVampireBoss::serialize(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_FUN_005e7030
 // Address: 005e7030
-void FUN_005e7030(void);
+void __cdecl FUN_005e7030(void);
 
 // Original: core_vampboss.cpp_FUN_005e7270
 // Address: 005e7270
-undefined4 FUN_005e7270(void);
+int __cdecl FUN_005e7270(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_FUN_005e7280
 // Address: 005e7280
@@ -61,27 +61,27 @@ int __cdecl CVampireBoss(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_VoicuSummonWavFile_FUN_005e7320
 // Address: 005e7320
-void VoicuSummonWavFile(void);
+void __cdecl VoicuSummonWavFile(void);
 
 // Original: core_vampboss.cpp_AnotherVoicuSummonWavCall_FUN_005e7390
 // Address: 005e7390
-void AnotherVoicuSummonWavCall(void);
+void __cdecl AnotherVoicuSummonWavCall(void);
 
 // Original: core_vampboss.cpp_VoicuSummonWavFile2_FUN_005e7410
 // Address: 005e7410
-void VoicuSummonWavFile2(void);
+void __cdecl VoicuSummonWavFile2(void);
 
 // Original: core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480
 // Address: 005e7480
-void CallToCountVoicuBatWav(void);
+void __cdecl CallToCountVoicuBatWav(void);
 
 // Original: core_vampboss.cpp_SomethingVoicuHumanWav_FUN_005e74c0
 // Address: 005e74c0
-void SomethingVoicuHumanWav(void);
+void __cdecl SomethingVoicuHumanWav(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510
 // Address: 005e7510
-void CVampireBoss::chooseDestWayPoint(void);
+void __cdecl CVampireBoss::chooseDestWayPoint(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_FUN_005e75f0
 // Address: 005e75f0

@@ -1,12 +1,12 @@
 // Name: shape_design.c_loadPalette_FUN_0046e810
 // Address: 0046e810
 // Address Range: [[0046e810, 0046eb7d]]
-// Convention: unknown
-// Signature: void shape_design_c_loadPalette_FUN_0046e810(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
 
 #include "nocturne.h"
 
-void shape_design_c_loadPalette_FUN_0046e810(void)
+void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
 
 {
   char cVar1;

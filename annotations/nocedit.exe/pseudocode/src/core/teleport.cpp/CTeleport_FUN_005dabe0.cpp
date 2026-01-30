@@ -33,7 +33,7 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dabe0(CTeleport *this_ptr)
                       (g_CEditorToolsPtr,"Switch to destination %s",
                        *(int *)(this_ptr->unk + 0xc));
     if (iVar1 != 0) {
-      core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
+      core_msnedit_cpp_CDemonMission_FUN_0053c140(g_CDemonMissionPtr,*(int *)(this_ptr->unk + 0xc));
       return;
     }
   }

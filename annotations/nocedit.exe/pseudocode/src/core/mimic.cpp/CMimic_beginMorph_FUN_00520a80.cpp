@@ -1,14 +1,14 @@
 // Name: core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
 // Address: 00520a80
 // Address Range: [[00520a80, 00520b93]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mimic.cpp_CMimic_beginMorph(uint param_1) */
 
-void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
+void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
 
 {
   int iVar1;
@@ -44,8 +44,6 @@ void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
   core_mimic_cpp_CMimic_processMorph_FUN_00520ba0();
   this_ptr = g_CConsolePtr;
   *(uint *)(in_stack_00000004 + 0xfc) = 1;
-  engine_console_cpp_CConsole_printf_FUN_00441890
-            (this_ptr,"%s morphing into type %s\n",in_stack_00000004,
-             in_stack_00000004 + 0x4bdfc);
+  engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr,"%s morphing into type %s\n");
   return;
 }

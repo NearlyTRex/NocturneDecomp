@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_stranger_cpp_CStranger_FUN_005c1680(void)
+; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x16c]:1  local_16c
@@ -80,7 +80,7 @@ section .text
         ;   Label: LAB_005c16b4
     PUSH ESI                            ; 005c16b5
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c16b6
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [ESP + 0x164],EAX     ; 005c16bb
     FLD float ptr [ESP + 0x164]         ; 005c16c2
     ADD ESP,0x8                         ; 005c16c9

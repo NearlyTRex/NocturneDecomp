@@ -21,83 +21,83 @@ CScat * __cdecl CScat::ctor(CScat *this_ptr);
 
 // Original: core_scat.cpp_FUN_00556f90
 // Address: 00556f90
-void FUN_00556f90(void);
+void __cdecl FUN_00556f90(void);
 
 // Original: core_scat.cpp_FUN_00557150
 // Address: 00557150
-void FUN_00557150(void);
+void __cdecl FUN_00557150(void);
 
 // Original: core_scat.cpp_FUN_005571f0
 // Address: 005571f0
-void FUN_005571f0(void);
+void __cdecl FUN_005571f0(void);
 
 // Original: core_scat.cpp_FUN_005578e0
 // Address: 005578e0
-void FUN_005578e0(void);
+void __cdecl FUN_005578e0(void);
 
 // Original: core_scat.cpp_FUN_00557d20
 // Address: 00557d20
-void FUN_00557d20(void);
+void __cdecl FUN_00557d20(void);
 
 // Original: core_scat.cpp_CSCat_load_FUN_00557db0
 // Address: 00557db0
-void CSCat::load(void);
+void __cdecl CSCat::load(void);
 
 // Original: core_scat.cpp_FUN_00557df0
 // Address: 00557df0
-undefined4 FUN_00557df0(void);
+int __cdecl FUN_00557df0(void);
 
 // Original: core_scat.cpp_FUN_00557ea0
 // Address: 00557ea0
-void FUN_00557ea0(void);
+void __cdecl FUN_00557ea0(void);
 
 // Original: core_scat.cpp_FUN_00557ff0
 // Address: 00557ff0
-undefined4 FUN_00557ff0(void);
+int __cdecl FUN_00557ff0(void);
 
 // Original: core_scat.cpp_FUN_00558000
 // Address: 00558000
-void FUN_00558000(void);
+void __cdecl FUN_00558000(void);
 
 // Original: core_scat.cpp_FUN_00558010
 // Address: 00558010
-undefined4 FUN_00558010(void);
+int __cdecl FUN_00558010(void);
 
 // Original: core_scat.cpp_FUN_00558060
 // Address: 00558060
-void FUN_00558060(void);
+void __cdecl FUN_00558060(void);
 
 // Original: core_scat.cpp_FUN_005582c0
 // Address: 005582c0
-void FUN_005582c0(void);
+void __cdecl FUN_005582c0(void);
 
 // Original: core_scat.cpp_FUN_005584a0
 // Address: 005584a0
-void FUN_005584a0(void);
+void __cdecl FUN_005584a0(void);
 
 // Original: core_scat.cpp_FUN_00558720
 // Address: 00558720
-void FUN_00558720(void);
+void __cdecl FUN_00558720(void);
 
 // Original: core_scat.cpp_FUN_00558cf0
 // Address: 00558cf0
-undefined4 FUN_00558cf0(void);
+int __cdecl FUN_00558cf0(void);
 
 // Original: core_scat.cpp_FUN_00558fd0
 // Address: 00558fd0
-void FUN_00558fd0(void);
+void __cdecl FUN_00558fd0(void);
 
 // Original: core_scat.cpp_FUN_00559100
 // Address: 00559100
-void FUN_00559100(void);
+void __cdecl FUN_00559100(void);
 
 // Original: core_scat.cpp_FUN_00559120
 // Address: 00559120
-void FUN_00559120(void);
+void __cdecl FUN_00559120(void);
 
 // Original: core_scat.cpp_FUN_00559140
 // Address: 00559140
-void FUN_00559140(void);
+void __cdecl FUN_00559140(void);
 
 // Original: core_scat.cpp_CScat_dtor_FUN_00559160
 // Address: 00559160

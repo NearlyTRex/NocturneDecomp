@@ -73,7 +73,7 @@ int * __cdecl CWeapon(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_FUN_005ee6e0
 // Address: 005ee6e0
-undefined4 FUN_005ee6e0(void);
+int __cdecl FUN_005ee6e0(void);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee710
 // Address: 005ee710

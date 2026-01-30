@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_larva_cpp_FUN_00503a20(void)
+; __cdecl void __cdecl core_larva_cpp_FUN_00503a20(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
@@ -128,12 +128,12 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 00503b16 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 00503b1c | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 00503b1d
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 00503b22
     PUSH EDI                            ; 00503b25
     PUSH EBX                            ; 00503b26
     CALL core_enemy.cpp_FUN_004a9f10    ; 00503b27
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00503b2c
     MOV ESP,EBP                         ; 00503b2f
     POP EBP                             ; 00503b31

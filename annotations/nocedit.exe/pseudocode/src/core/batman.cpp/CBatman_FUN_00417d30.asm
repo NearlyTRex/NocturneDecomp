@@ -29,7 +29,7 @@ section .text
     ADD EAX,0x158                       ; 00417d4c
     PUSH EAX                            ; 00417d51
     CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 00417d52
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
     ADD ESP,0x8                         ; 00417d57
     POP EBX                             ; 00417d5a
     RET                                 ; 00417d5b

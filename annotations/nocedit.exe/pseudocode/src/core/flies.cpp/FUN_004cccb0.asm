@@ -33,7 +33,7 @@ section .text
     ADD EBX,0x168                       ; 004cccbe
     PUSH EBX                            ; 004cccc4
     CALL core_flies.cpp_FUN_004ccd60    ; 004cccc5
-        ;   XREF to: 004ccd60 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004ccd60()
+        ;   XREF to: 004ccd60 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_FUN_004ccd60()
     ADD ESP,0x8                         ; 004cccca
     PUSH 0x1                            ; 004ccccd
     LEA EBX,[EAX + 0xfffffe98]          ; 004ccccf

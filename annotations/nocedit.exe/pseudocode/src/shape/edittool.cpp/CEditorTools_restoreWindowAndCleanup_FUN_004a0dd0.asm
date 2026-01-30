@@ -16,7 +16,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 at 00494d73
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db400
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 at 005109fc
-;   core_msnedit.cpp_FUN_0053eb40 at 0053ec23
+;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053ec23
 ;   ... and 26 more
 ;
 ; Referenced Globals:

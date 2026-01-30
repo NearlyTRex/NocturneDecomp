@@ -262,7 +262,7 @@ section .text
     PUSH EBX                            ; 005e0916
         ;   Label: LAB_005e0916
     CALL core_trigger.cpp_FUN_005e0ba0  ; 005e0917
-        ;   XREF to: 005e0ba0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_005e0ba0()
+        ;   XREF to: 005e0ba0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_FUN_005e0ba0()
     ADD ESP,0x4                         ; 005e091c
     JMP 0x005e08b8                      ; 005e091f
         ;   XREF to: 005e08b8 (UNCONDITIONAL_JUMP)  ; LAB_005e08b8

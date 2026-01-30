@@ -1,14 +1,14 @@
 // Name: core_passngr.cpp_FUN_005460c0
 // Address: 005460c0
 // Address Range: [[005460c0, 0054618d]]
-// Convention: unknown
-// Signature: int core_passngr_cpp_FUN_005460c0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_passngr_cpp_FUN_005460c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_passenger.cpp_FUN_005460c0(uint param_1) */
 
-int core_passngr_cpp_FUN_005460c0(void)
+int __cdecl core_passngr_cpp_FUN_005460c0(void)
 
 {
   CBoundingBox3D *this_ptr;

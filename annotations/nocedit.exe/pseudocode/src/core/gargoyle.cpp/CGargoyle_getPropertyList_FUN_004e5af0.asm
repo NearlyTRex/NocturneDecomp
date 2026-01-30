@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0(void)
+; __cdecl void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0(void)
 ;
 ;
 ; Referenced Globals:

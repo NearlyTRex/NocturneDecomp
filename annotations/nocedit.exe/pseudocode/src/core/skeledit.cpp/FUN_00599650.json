@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 17,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -33,9 +40,9 @@
         "00599668"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_00599650",
-    "signature": "undefined4 * core_skeledit_cpp_FUN_00599650(void)"
+    "signature": "int __cdecl core_skeledit_cpp_FUN_00599650(void)"
   },
   "function_calls": [
     {
@@ -107,7 +114,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
+      "text": "return (int)in_stack_00000004;",
       "type": "stack_param"
     }
   ]

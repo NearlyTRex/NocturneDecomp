@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
+; __cdecl void __cdecl core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
 ;
 ;
 ; XREF[1]:

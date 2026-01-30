@@ -1,12 +1,12 @@
 // Name: core_ghoul.cpp_FUN_004e6160
 // Address: 004e6160
 // Address Range: [[004e6160, 004e63c1]]
-// Convention: unknown
-// Signature: void core_ghoul_cpp_FUN_004e6160(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ghoul_cpp_FUN_004e6160(void)
 
 #include "nocturne.h"
 
-void core_ghoul_cpp_FUN_004e6160(void)
+void __cdecl core_ghoul_cpp_FUN_004e6160(void)
 
 {
   CDeformableModelInstance *this_ptr;

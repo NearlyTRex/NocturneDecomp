@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
+; __cdecl void __cdecl core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0(void)
 ;
 ;
 ; XREF[2]:

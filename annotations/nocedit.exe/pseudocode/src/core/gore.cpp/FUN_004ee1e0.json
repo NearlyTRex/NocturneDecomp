@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 41,
-        "line": 33,
-        "message": "void value not ignored as it ought to be"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,17 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 136,
+    "complexity_score": 163,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 26,
-    "suspect_count": 10,
+    "pseudocode_lines": 28,
+    "suspect_count": 12,
     "suspect_types": [
+      "extra_output",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 97
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -54,9 +48,9 @@
         "004ee28a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gore.cpp_FUN_004ee1e0",
-    "signature": "int core_gore_cpp_FUN_004ee1e0(void)"
+    "signature": "int __cdecl core_gore_cpp_FUN_004ee1e0(void)"
   },
   "function_calls": [
     {
@@ -174,71 +168,85 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "_fgets(local_110,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "_fscanf(in_stack_00000008,\"%d\\n\",&DAT_02da8720);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_02da8720",
       "text": "_fscanf(in_stack_00000008,\"%d\\n\",&DAT_02da8720);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_02da8720",
       "text": "if (0 < DAT_02da8720) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 20,
       "match": "DAT_02da8720",
       "text": "} while (iVar1 < DAT_02da8720);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&DAT_02d873d8);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_02d873d8",
       "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&DAT_02d873d8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_02d873d8",
       "text": "if (0 < DAT_02d873d8) {",
       "type": "undefined_data"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EAX",
+      "text": "iVar1 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 29,
       "match": "DAT_02d873d8",
       "text": "} while (iVar2 < DAT_02d873d8);",
       "type": "undefined_data"

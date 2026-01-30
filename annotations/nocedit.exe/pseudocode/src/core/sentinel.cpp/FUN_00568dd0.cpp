@@ -1,15 +1,15 @@
 // Name: core_sentinel.cpp_FUN_00568dd0
 // Address: 00568dd0
 // Address Range: [[00568dd0, 00568eed]]
-// Convention: unknown
-// Signature: undefined4 core_sentinel_cpp_FUN_00568dd0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_sentinel_cpp_FUN_00568dd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_sentinel.cpp_FUN_00568dd0(uint param_1, uint
    param_2) */
 
-uint core_sentinel_cpp_FUN_00568dd0(void)
+int __cdecl core_sentinel_cpp_FUN_00568dd0(void)
 
 {
   CVector3f *pCVar1;

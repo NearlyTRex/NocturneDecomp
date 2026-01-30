@@ -346,7 +346,7 @@ section .text
     PUSH EBX                            ; 00419bb0
         ;   Label: LAB_00419bb0
     CALL core_bodypart.cpp_FUN_0041a050 ; 00419bb1
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a050()
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
     ADD ESP,0x4                         ; 00419bb6
     JMP 0x004199f0                      ; 00419bb9
         ;   XREF to: 004199f0 (UNCONDITIONAL_JUMP)  ; LAB_004199f0

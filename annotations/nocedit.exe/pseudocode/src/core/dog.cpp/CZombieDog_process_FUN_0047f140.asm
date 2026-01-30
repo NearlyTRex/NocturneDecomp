@@ -369,7 +369,7 @@ section .text
     PUSH EAX                            ; 0047f466
     PUSH EBX                            ; 0047f467
     CALL core_enemy.cpp_FUN_004a9880    ; 0047f468
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 0047f46d
     MOV EDI,dword ptr [EBX + 0xbec4]    ; 0047f470
     PUSH EDI                            ; 0047f476
@@ -417,7 +417,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 0047f4ec | g_CGorePtr
     PUSH ESI                            ; 0047f4f2 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 0047f4f3
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 0047f4f8
     MOV dword ptr [EBX + 0xbe28],0x1    ; 0047f4fb
     JMP 0x0047f252                      ; 0047f505

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
+; __cdecl int __cdecl core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -185,7 +185,7 @@ section .text
     PUSH ESI                            ; 005fb6d7
     FSTP float ptr [ESI + 0xbec8]       ; 005fb6d8
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fb6de
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005fb6e3
     MOV EDI,EAX                         ; 005fb6e6
     TEST EAX,EAX                        ; 005fb6e8
@@ -211,7 +211,7 @@ section .text
     PUSH EDX                            ; 005fb726
     PUSH ESI                            ; 005fb727
     CALL core_zombie.cpp_CZombie_FUN_005fbda0 ; 005fb728
-        ;   XREF to: 005fbda0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbda0()
+        ;   XREF to: 005fbda0 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbda0()
     ADD ESP,0x8                         ; 005fb72d
     TEST EAX,EAX                        ; 005fb730
     JZ 0x005fb8f0                       ; 005fb732
@@ -244,11 +244,11 @@ section .text
     LEA EAX,[ESP + 0x98]                ; 005fb797
     PUSH EAX                            ; 005fb79e
     CALL core_bodypart.cpp_FUN_0041b540 ; 005fb79f
-        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b540()
+        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b540()
     ADD ESP,0xc                         ; 005fb7a4
     PUSH EAX                            ; 005fb7a7
     CALL core_bodypart.cpp_FUN_0041b4e0 ; 005fb7a8
-        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b4e0()
+        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b4e0()
     ADD ESP,0xc                         ; 005fb7ad
     LEA EAX,[ESP + 0xe8]                ; 005fb7b0
     PUSH EAX                            ; 005fb7b7
@@ -353,7 +353,7 @@ section .text
     PUSH ESI                            ; 005fb92c
     MOV dword ptr [ESI + 0xbec8],EBX    ; 005fb92d
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fb933
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fb938
     XOR EAX,EAX                         ; 005fb93b
     MOV ESP,EBP                         ; 005fb93d
@@ -383,11 +383,11 @@ section .text
     PUSH EAX                            ; 005fb988
     MOV dword ptr [ESP + 0x14c],ECX     ; 005fb989
     CALL core_bodypart.cpp_FUN_0041b540 ; 005fb990
-        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b540()
+        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b540()
     ADD ESP,0xc                         ; 005fb995
     PUSH EAX                            ; 005fb998
     CALL core_bodypart.cpp_FUN_0041b4e0 ; 005fb999
-        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b4e0()
+        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b4e0()
     ADD ESP,0xc                         ; 005fb99e
     LEA EAX,[ESP + 0xac]                ; 005fb9a1
     PUSH EAX                            ; 005fb9a8
@@ -446,7 +446,7 @@ section .text
     PUSH ESI                            ; 005fba71
     MOV dword ptr [ESI + 0xbec8],0x41a00000 ; 005fba72
     CALL core_zombie.cpp_CZombie_FUN_005fca10 ; 005fba7c
-        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fca10()
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fca10()
     ADD ESP,0x4                         ; 005fba81
     XOR EAX,EAX                         ; 005fba84
     MOV ESP,EBP                         ; 005fba86
@@ -545,7 +545,7 @@ section .text
     PUSH EAX                            ; 005fbb66
     FSTP float ptr [ESP + 0x118]        ; 005fbb67
     CALL core_zombie.cpp_CZombie_FUN_005f8e50 ; 005fbb6e
-        ;   XREF to: 005f8e50 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005f8e50()
+        ;   XREF to: 005f8e50 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005f8e50()
     ADD ESP,0x4                         ; 005fbb73
     MOV dword ptr [ESP + 0x140],EAX     ; 005fbb76
     TEST EAX,EAX                        ; 005fbb7d
@@ -554,7 +554,7 @@ section .text
     PUSH EAX                            ; 005fbb85
     PUSH ESI                            ; 005fbb86
     CALL core_zombie.cpp_CZombie_FUN_005fbda0 ; 005fbb87
-        ;   XREF to: 005fbda0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbda0()
+        ;   XREF to: 005fbda0 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbda0()
     ADD ESP,0x8                         ; 005fbb8c
     TEST EAX,EAX                        ; 005fbb8f
     JZ 0x005fb64d                       ; 005fbb91

@@ -275,7 +275,7 @@ section .text
     PUSH EAX                            ; 0042cce3
     PUSH EDI                            ; 0042cce4
     CALL core_waypoint.cpp_FUN_005ec320 ; 0042cce5
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec320()
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
     ADD ESP,0x8                         ; 0042ccea
     MOV ESI,EAX                         ; 0042cced
     TEST EAX,EAX                        ; 0042ccef

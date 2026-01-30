@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_smiley_cpp_FUN_005a2800(void)
+; __cdecl void __cdecl core_smiley_cpp_FUN_005a2800(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1cc]:1  local_1cc
@@ -483,7 +483,7 @@ section .text
     PUSH EAX                            ; 005a2c44
     PUSH EBX                            ; 005a2c45
     CALL core_enemy.cpp_FUN_004a9880    ; 005a2c46
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 005a2c4b
     JMP 0x005a2abb                      ; 005a2c4e
         ;   XREF to: 005a2abb (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -570,7 +570,7 @@ section .text
     PUSH EAX                            ; 005a2d38
     PUSH EBX                            ; 005a2d39
     CALL core_enemy.cpp_FUN_004a9880    ; 005a2d3a
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 005a2d3f
     JMP 0x005a2abb                      ; 005a2d42
         ;   XREF to: 005a2abb (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -625,7 +625,7 @@ section .text
     MOV EAX,[0x0067b9a0]                ; 005a2dca | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 005a2dcf | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 005a2dd0
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 005a2dd5
     MOV dword ptr [EBX + 0xbe28],0x1    ; 005a2dd8
     JMP 0x005a2abb                      ; 005a2de2

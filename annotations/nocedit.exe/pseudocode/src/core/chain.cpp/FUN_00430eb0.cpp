@@ -1,15 +1,15 @@
 // Name: core_chain.cpp_FUN_00430eb0
 // Address: 00430eb0
 // Address Range: [[00430eb0, 00430fd6]]
-// Convention: unknown
-// Signature: CVector3f * core_chain_cpp_FUN_00430eb0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_chain_cpp_FUN_00430eb0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_chain.cpp_FUN_00430eb0(uint param_1, uint param_2)
     */
 
-CVector3f * core_chain_cpp_FUN_00430eb0(void)
+CVector3f * __cdecl core_chain_cpp_FUN_00430eb0(void)
 
 {
   CVector3f *pCVar1;

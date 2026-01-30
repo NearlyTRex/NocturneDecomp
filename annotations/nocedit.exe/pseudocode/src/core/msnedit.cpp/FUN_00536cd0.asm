@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_msnedit_cpp_FUN_00536cd0(void)
+; __cdecl int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
+; int              Stack[0x10]:4   param_4
+; int              Stack[0x14]:4   param_5
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined4       Stack[-0x20]:4  local_20
@@ -10,8 +16,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005398c0
 ;   core_msnedit.cpp_FUN_00536e20 at 00537081
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 005398c0
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0063b6ec = 0.300000000000000

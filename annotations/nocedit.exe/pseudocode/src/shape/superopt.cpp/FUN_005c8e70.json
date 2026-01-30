@@ -3,26 +3,8 @@
     "errors": [
       {
         "category": "other",
-        "column": 37,
-        "line": 40,
-        "message": "request for member '_4_4_' in 'local_34', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 44,
-        "message": "request for member '_0_4_' in 'local_3c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 45,
-        "message": "request for member '_4_4_' in 'local_3c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
         "column": 29,
-        "line": 67,
+        "line": 68,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -37,31 +19,19 @@
       {
         "category": "other",
         "column": 8,
-        "line": 47,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 51,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 52,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 60,
+        "line": 54,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -86,39 +56,51 @@
         "category": "other",
         "column": 47,
         "line": 62,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 63,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 63,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 67,
+        "line": 68,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 98,
+        "line": 100,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 240,
+    "complexity_score": 322,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 90,
-    "suspect_count": 12,
+    "pseudocode_lines": 92,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
-      "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 358
+    "total_lines": 360
   },
   "cross_references": [
     {
@@ -136,10 +118,10 @@
         "005c90fe"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_FUN_005c8e70",
-    "signature": "int shape_superopt_cpp_FUN_005c8e70(void)"
+    "signature": "int __cdecl shape_superopt_cpp_FUN_005c8e70(void)"
   },
   "function_calls": [
     {
@@ -166,17 +148,15 @@
         "call_addr": "005c879b",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 4
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.067226890756302,
@@ -483,71 +463,127 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EDX",
+      "text": "uint extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EDX_00",
+      "text": "uint extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "text": "dVar7 = (double)CONCAT44(local_34._4_4_,(uint)local_34);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "CONCAT44",
-      "text": "dVar7 = (double)CONCAT44(local_34._4_4_,(uint)local_34);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._0_4_",
-      "text": "local_3c._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._4_4_",
-      "text": "local_3c._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0x2c) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000004",
-      "text": "local_1c = in_stack_00000004 + 0x14;",
+      "text": "if (*(int *)(in_stack_00000004 + 0x2c) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
+      "text": "local_1c = in_stack_00000004 + 0x14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
       "text": "iVar2 = local_28 + *(int *)(in_stack_00000004 + 0x30);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 61,
       "match": "(double *)((int)",
       "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 75,
+      "match": "extraout_EDX",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 78,
+      "match": "extraout_EDX",
+      "text": "uStack_38 = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 82,
+      "match": "extraout_EDX_00",
+      "text": "local_30 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 84,
+      "match": "extraout_EDX_00",
+      "text": "uStack_50 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 85,
+      "match": "extraout_EDX_00",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 85,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 85,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 87,
+      "match": "extraout_EDX_00",
+      "text": "uStack_38 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 93,
       "match": "in_stack_00000004",
       "text": "} while (local_24 < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"
@@ -556,11 +592,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

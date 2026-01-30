@@ -21,51 +21,51 @@ CMelee * __cdecl CMelee::ctor(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_load_FUN_0050e920
 // Address: 0050e920
-void CMelee::load(void);
+void __cdecl CMelee::load(void);
 
 // Original: core_melee.cpp_CMelee_fire_FUN_0050ea40
 // Address: 0050ea40
-undefined4 CMelee::fire(void);
+int __cdecl CMelee::fire(void);
 
 // Original: core_melee.cpp_FUN_0050ea70
 // Address: 0050ea70
-float FUN_0050ea70(void);
+float __cdecl FUN_0050ea70(void);
 
 // Original: core_melee.cpp_FUN_0050eaa0
 // Address: 0050eaa0
-void FUN_0050eaa0(void);
+void __cdecl FUN_0050eaa0(void);
 
 // Original: core_melee.cpp_FUN_0050eab0
 // Address: 0050eab0
-undefined4 FUN_0050eab0(void);
+int __cdecl FUN_0050eab0(void);
 
 // Original: core_melee.cpp_FUN_0050eae0
 // Address: 0050eae0
-undefined4 FUN_0050eae0(void);
+int __cdecl FUN_0050eae0(void);
 
 // Original: core_melee.cpp_FUN_0050eaf0
 // Address: 0050eaf0
-void FUN_0050eaf0(void);
+void __cdecl FUN_0050eaf0(void);
 
 // Original: core_melee.cpp_FUN_0050eb50
 // Address: 0050eb50
-void FUN_0050eb50(void);
+void __cdecl FUN_0050eb50(void);
 
 // Original: core_melee.cpp_FUN_0050ebe0
 // Address: 0050ebe0
-void FUN_0050ebe0(void);
+void __cdecl FUN_0050ebe0(void);
 
 // Original: core_melee.cpp_FUN_0050ec10
 // Address: 0050ec10
-void FUN_0050ec10(void);
+void __cdecl FUN_0050ec10(void);
 
 // Original: core_melee.cpp_FUN_0050ecd0
 // Address: 0050ecd0
-void FUN_0050ecd0(void);
+void __cdecl FUN_0050ecd0(void);
 
 // Original: core_melee.cpp_FUN_0050ecf0
 // Address: 0050ecf0
-void FUN_0050ecf0(void);
+void __cdecl FUN_0050ecf0(void);
 
 // Original: core_melee.cpp_CMelee_dtor_FUN_0050edf0
 // Address: 0050edf0

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 0050811d
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053cde5
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cde5
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_02f35f10

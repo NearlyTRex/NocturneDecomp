@@ -17,7 +17,7 @@ section .text
         ;   Label: core_ladder.cpp_CLadder_FUN_00502610
     PUSH EDX                            ; 00502614
     CALL core_ladder.cpp_FUN_00502a70   ; 00502615
-        ;   XREF to: 00502a70 (UNCONDITIONAL_CALL)  ; undefined core_ladder.cpp_FUN_00502a70()
+        ;   XREF to: 00502a70 (UNCONDITIONAL_CALL)  ; void core_ladder.cpp_FUN_00502a70()
     ADD ESP,0x4                         ; 0050261a
     RET                                 ; 0050261d
 

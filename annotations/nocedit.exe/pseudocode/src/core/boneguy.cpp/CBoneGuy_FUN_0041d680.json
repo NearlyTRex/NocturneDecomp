@@ -2,27 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 60,
-        "line": 62,
-        "message": "invalid conversion from 'CBodyPart*' to 'int' [-fpermissive]"
-      },
-      {
         "category": "other",
         "column": 25,
-        "line": 82,
+        "line": 90,
         "message": "cast from 'CBoneGuy*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 85,
+        "line": 93,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 86,
+        "line": 94,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -37,113 +31,53 @@
       {
         "category": "other",
         "column": 25,
-        "line": 44,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 46,
+        "line": 49,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 8,
-        "line": 64,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 68,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 69,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 70,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 71,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 73,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 74,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 75,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 76,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 79,
+        "column": 16,
+        "line": 90,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 82,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 85,
+        "line": 93,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 86,
+        "line": 94,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 93,
+        "line": 101,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 119,
+    "complexity_score": 127,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 92,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 161
+    "total_lines": 169
   },
   "cross_references": [
     {
@@ -355,23 +289,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 83,
       "match": "(uint *)((int)",
-      "text": "puVar6 = (uint *)((int)local_1c + (uint)bVar8 * -8 + 49000);",
+      "text": "puVar9 = (uint *)((int)local_1c + (uint)bVar11 * -8 + 49000);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 86,
       "match": "(uint *)((int)",
-      "text": "puVar5 = (uint *)((int)&local_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "text": "puVar8 = (uint *)((int)&local_48 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 87,
       "match": "(uint *)((int)",
-      "text": "*puVar6 = *(uint *)((int)&local_48 + (uint)bVar8 * -8 + 4);",
+      "text": "*puVar9 = *(uint *)((int)&local_48 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

@@ -140,13 +140,13 @@ section .text
     LEA EAX,[ESI + 0x1fbdc]             ; 005d9cf2
     PUSH EAX                            ; 005d9cf8
     CALL core_cloth.cpp_FUN_0043bae0    ; 005d9cf9
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bae0()
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
     ADD ESP,0x8                         ; 005d9cfe
     PUSH 0x0                            ; 005d9d01
     LEA EAX,[ESI + 0x5fa4c]             ; 005d9d03
     PUSH EAX                            ; 005d9d09
     CALL core_cloth.cpp_FUN_0043bae0    ; 005d9d0a
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bae0()
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
     ADD ESP,0x8                         ; 005d9d0f
     PUSH ESI                            ; 005d9d12
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 005d9d13

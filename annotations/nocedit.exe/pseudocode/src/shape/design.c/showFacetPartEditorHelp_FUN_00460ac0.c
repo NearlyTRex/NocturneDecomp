@@ -1,12 +1,12 @@
 // Name: shape_design.c_showFacetPartEditorHelp_FUN_00460ac0
 // Address: 00460ac0
 // Address Range: [[00460ac0, 00461559]]
-// Convention: unknown
-// Signature: void shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
 
 #include "nocturne.h"
 
-void shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
+void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
 
 {
   uint uVar1;

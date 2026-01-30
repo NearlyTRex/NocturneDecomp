@@ -1,8 +1,8 @@
 // Name: core_larva.cpp_FUN_00503080
 // Address: 00503080
 // Address Range: [[00503080, 0050334d] [005034b7, 00503676] [0050368b, 005038ec] [0050393e, 00503951]]
-// Convention: unknown
-// Signature: void core_larva_cpp_FUN_00503080(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_larva_cpp_FUN_00503080(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* Signature: byte actors_enemy_larva.cpp_FUN_00503080(uint param_1, uint param_2)
     */
 
-void core_larva_cpp_FUN_00503080(void)
+void __cdecl core_larva_cpp_FUN_00503080(void)
 
 {
   CLocation *pCVar1;

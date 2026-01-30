@@ -10,6 +10,7 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da870(CTeleportDest *this_pt
 
 {
   int iVar1;
+  char *pcVar2;
   uint unaff_EDI;
   uint in_stack_fffffb94;
   uint in_stack_fffffb98;
@@ -20,7 +21,9 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da870(CTeleportDest *this_pt
   iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
   if (iVar1 != 0) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb94);
-    core_msnedit_cpp_FUN_0053cc30();
+    core_msnedit_cpp_CDemonMission_FUN_0053cc30
+              (g_CDemonMissionPtr,(CStrList *)&stack0xfffffb94,(uint)this_ptr,"CTeleport",
+               0x5da850);
     if ((int)in_stack_fffffb94 < 1) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"No teleporters go to %s",this_ptr);
@@ -31,8 +34,8 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da870(CTeleportDest *this_pt
                         ((CPickList *)&stack0xfffffb94,acStack_c4,-1,0);
       if (-1 < iVar1) {
         shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffffb94,iVar1);
-        core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-        core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
+        pcVar2 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+        core_msnedit_cpp_CDemonMission_FUN_0053c140(g_CDemonMissionPtr,(int)pcVar2);
       }
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80

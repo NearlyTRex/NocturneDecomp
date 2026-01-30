@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_colonel_cpp_FUN_0043ff20(void)
+; __cdecl void __cdecl core_colonel_cpp_FUN_0043ff20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xac]:4  local_ac
@@ -126,7 +126,7 @@ section .text
     PUSH EAX                            ; 0043ffe1
     PUSH EBX                            ; 0043ffe2
     CALL core_hero.cpp_FUN_004f3960     ; 0043ffe3
-        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f3960()
+        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_FUN_004f3960()
     MOV EDX,EAX                         ; 0043ffe8
     ADD ESP,0x8                         ; 0043ffea
     TEST EAX,EAX                        ; 0043ffed
@@ -418,7 +418,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 0044033f
     PUSH EAX                            ; 00440342
     CALL core_path.cpp_FUN_00548500     ; 00440343
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 00440348
     MOV EDX,dword ptr [EBX + 0x6c]      ; 0044034b
         ;   Label: LAB_0044034b

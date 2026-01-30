@@ -1,15 +1,15 @@
 // Name: core_vampboss.cpp_FUN_005e7030
 // Address: 005e7030
 // Address Range: [[005e7030, 005e726e]]
-// Convention: unknown
-// Signature: void core_vampboss_cpp_FUN_005e7030(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_vampboss_cpp_FUN_005e7030(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_vampboss.cpp_FUN_005e7030(uint param_1, uint
    param_2) */
 
-void core_vampboss_cpp_FUN_005e7030(void)
+void __cdecl core_vampboss_cpp_FUN_005e7030(void)
 
 {
   float fVar1;

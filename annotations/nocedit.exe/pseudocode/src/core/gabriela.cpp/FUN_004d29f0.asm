@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_gabriela_cpp_FUN_004d29f0(void)
+; __cdecl float __cdecl core_gabriela_cpp_FUN_004d29f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

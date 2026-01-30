@@ -1,12 +1,12 @@
 // Name: shape_design.c_deletePolygonRange_FUN_0045dd70
 // Address: 0045dd70
 // Address Range: [[0045dd70, 0045de7d]]
-// Convention: unknown
-// Signature: void shape_design_c_deletePolygonRange_FUN_0045dd70(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_deletePolygonRange_FUN_0045dd70(void)
 
 #include "nocturne.h"
 
-void shape_design_c_deletePolygonRange_FUN_0045dd70(void)
+void __cdecl shape_design_c_deletePolygonRange_FUN_0045dd70(void)
 
 {
   char cVar1;

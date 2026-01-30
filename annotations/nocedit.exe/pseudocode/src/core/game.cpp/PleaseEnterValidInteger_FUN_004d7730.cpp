@@ -1,12 +1,12 @@
 // Name: core_game.cpp_PleaseEnterValidInteger_FUN_004d7730
 // Address: 004d7730
 // Address Range: [[004d7730, 004d780c]]
-// Convention: unknown
-// Signature: void core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void)
 
 #include "nocturne.h"
 
-void core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void)
+void __cdecl core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void)
 
 {
   int iVar1;

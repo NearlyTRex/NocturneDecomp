@@ -21,39 +21,39 @@ CGasMask * __cdecl CGasMask::ctor(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_FUN_004e5d50
 // Address: 004e5d50
-void CGasMask(void);
+void __cdecl CGasMask(void);
 
 // Original: core_gasmask.cpp_CGasMask_FUN_004e5d70
 // Address: 004e5d70
-undefined4 CGasMask(void);
+int __cdecl CGasMask(void);
 
 // Original: core_gasmask.cpp_FUN_004e5d90
 // Address: 004e5d90
-void FUN_004e5d90(void);
+void __cdecl FUN_004e5d90(void);
 
 // Original: core_gasmask.cpp_CGasMask_FUN_004e5da0
 // Address: 004e5da0
-int CGasMask(void);
+int __cdecl CGasMask(void);
 
 // Original: core_gasmask.cpp_CGasMask_load_FUN_004e5e20
 // Address: 004e5e20
-void CGasMask::load(void);
+void __cdecl CGasMask::load(void);
 
 // Original: core_gasmask.cpp_FUN_004e5e50
 // Address: 004e5e50
-undefined4 FUN_004e5e50(void);
+int __cdecl FUN_004e5e50(void);
 
 // Original: core_gasmask.cpp_CGasMask_FUN_004e5e60
 // Address: 004e5e60
-float * CGasMask(void);
+float * __cdecl CGasMask(void);
 
 // Original: core_gasmask.cpp_CGasMask_FUN_004e5eb0
 // Address: 004e5eb0
-void CGasMask(void);
+void __cdecl CGasMask(void);
 
 // Original: core_gasmask.cpp_FUN_004e5ef0
 // Address: 004e5ef0
-void FUN_004e5ef0(void);
+void __cdecl FUN_004e5ef0(void);
 
 // Original: core_gasmask.cpp_CGasMask_dtor_FUN_004e5f40
 // Address: 004e5f40

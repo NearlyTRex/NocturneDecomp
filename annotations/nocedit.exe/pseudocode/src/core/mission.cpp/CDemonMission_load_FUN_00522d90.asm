@@ -12,10 +12,10 @@
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bddc5
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2025
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 0052456c
+;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538cf8
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cf3b
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005384d9
 ;   core_msnedit.cpp_FUN_00537230 at 005372a9
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053cf3b
-;   core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0 at 00538cf8
 ;   core_netgame.cpp_FUN_00541390 at 005419ac
 ;
 ; Referenced Globals:

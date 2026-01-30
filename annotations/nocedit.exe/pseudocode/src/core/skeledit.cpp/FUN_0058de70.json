@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 15,
-        "line": 87,
+        "line": 84,
         "message": "cast from 'SCramConfig*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 88,
+        "line": 85,
         "message": "cast from 'SCramConfig*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,48 +25,60 @@
       {
         "category": "other",
         "column": 12,
-        "line": 38,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 39,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 48,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 60,
+        "line": 45,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 48,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 26,
         "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 50,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 35,
         "line": 51,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 51,
+        "column": 30,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 18,
+        "column": 42,
         "line": 54,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -78,7 +90,7 @@
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 18,
         "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -90,7 +102,7 @@
       },
       {
         "category": "other",
-        "column": 18,
+        "column": 42,
         "line": 60,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -102,49 +114,37 @@
       },
       {
         "category": "other",
-        "column": 42,
-        "line": 63,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 64,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 26,
-        "line": 78,
+        "line": 75,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 87,
+        "line": 84,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 88,
+        "line": 85,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 336,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
-    "pseudocode_lines": 96,
-    "suspect_count": 23,
+    "pseudocode_lines": 90,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 295
+    "total_lines": 289
   },
   "cross_references": [
     {
@@ -162,9 +162,9 @@
         "0058e0aa"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_0058de70",
-    "signature": "void core_skeledit_cpp_FUN_0058de70(void)"
+    "signature": "void __cdecl core_skeledit_cpp_FUN_0058de70(void)"
   },
   "function_calls": [
     {
@@ -375,149 +375,107 @@
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
       "match": "in_stack_00000014",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004 + 0xbc)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "local_24 = (char *)(in_stack_00000004 + in_stack_00000014 * 0x1680 + 200);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 29,
       "match": "in_stack_00000014",
       "text": "local_24 = (char *)(in_stack_00000004 + in_stack_00000014 * 0x1680 + 200);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "local_1c < *(int *)(in_stack_00000004 + 0x54) + *(int *)(in_stack_00000004 + 0x68);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "local_1c < *(int *)(in_stack_00000004 + 0x54) + *(int *)(in_stack_00000004 + 0x68);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "iVar4 = *(int *)(in_stack_00000004 + 0x7c) + local_18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "if (local_20 == *(int *)(*(int *)(in_stack_00000004 + 0x90) + local_14)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "} while (local_20 < *(int *)(in_stack_00000004 + 0xbc));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 72,
       "match": "in_stack_00000008",
       "text": "cVar1 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 75,
       "match": "in_stack_00000008",
       "text": "cVar1 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 76,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 76,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 77,
       "match": "(char *)((int)",
       "text": "*(char *)((int)pSVar8 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 78,
       "match": "(SCramConfig *)((int)",
       "text": "pSVar8 = (SCramConfig *)((int)pSVar8 + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_00000010",
-      "text": "local_98.initial_value = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_0000000c",
-      "text": "local_98.enable_gap_filling = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000018",
-      "text": "local_98.final_mode = in_stack_00000018;",
-      "type": "stack_param"
     }
   ]
 }

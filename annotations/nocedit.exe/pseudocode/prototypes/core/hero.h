@@ -9,15 +9,15 @@ void __cdecl staticInit(void);
 
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004f2170
 // Address: 004f2170
-int closestHeroToPoint(void);
+int __cdecl closestHeroToPoint(void);
 
 // Original: core_hero.cpp_FUN_004f2220
 // Address: 004f2220
-undefined4 FUN_004f2220(void);
+int __cdecl FUN_004f2220(void);
 
 // Original: core_hero.cpp_FUN_004f22a0
 // Address: 004f22a0
-undefined4 FUN_004f22a0(void);
+int __cdecl FUN_004f22a0(void);
 
 // Original: core_hero.cpp_CHero_ctor_FUN_004f2340
 // Address: 004f2340
@@ -73,51 +73,51 @@ void __cdecl CHero(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004f2af0
 // Address: 004f2af0
-undefined4 FUN_004f2af0(void);
+int __cdecl FUN_004f2af0(void);
 
 // Original: core_hero.cpp_FUN_004f2c40
 // Address: 004f2c40
-undefined4 FUN_004f2c40(void);
+int __cdecl FUN_004f2c40(void);
 
 // Original: core_hero.cpp_FUN_004f2d70
 // Address: 004f2d70
-int FUN_004f2d70(void);
+int __cdecl FUN_004f2d70(void);
 
 // Original: core_hero.cpp_FUN_004f2ed0
 // Address: 004f2ed0
-undefined4 FUN_004f2ed0(void);
+int __cdecl FUN_004f2ed0(void);
 
 // Original: core_hero.cpp_FUN_004f2f50
 // Address: 004f2f50
-undefined4 FUN_004f2f50(void);
+int __cdecl FUN_004f2f50(void);
 
 // Original: core_hero.cpp_FUN_004f30f0
 // Address: 004f30f0
-undefined4 FUN_004f30f0(void);
+int __cdecl FUN_004f30f0(void);
 
 // Original: core_hero.cpp_FUN_004f3120
 // Address: 004f3120
-undefined4 FUN_004f3120(void);
+int __cdecl FUN_004f3120(void);
 
 // Original: core_hero.cpp_FUN_004f3350
 // Address: 004f3350
-void FUN_004f3350(void);
+void __cdecl FUN_004f3350(void);
 
 // Original: core_hero.cpp_FUN_004f33b0
 // Address: 004f33b0
-undefined4 FUN_004f33b0(void);
+int __cdecl FUN_004f33b0(void);
 
 // Original: core_hero.cpp_FUN_004f3580
 // Address: 004f3580
-void FUN_004f3580(void);
+void __cdecl FUN_004f3580(void);
 
 // Original: core_hero.cpp_FUN_004f35b0
 // Address: 004f35b0
-undefined4 FUN_004f35b0(void);
+int __cdecl FUN_004f35b0(void);
 
 // Original: core_hero.cpp_CallInventorySelectHealth_FUN_004f3760
 // Address: 004f3760
-int CallInventorySelectHealth(void);
+int __cdecl CallInventorySelectHealth(void);
 
 // Original: core_hero.cpp_CHero_isActiveTarget_FUN_004f37d0
 // Address: 004f37d0
@@ -125,23 +125,23 @@ int __cdecl CHero::isActiveTarget(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004f3890
 // Address: 004f3890
-void FUN_004f3890(void);
+void __cdecl FUN_004f3890(void);
 
 // Original: core_hero.cpp_FUN_004f38d0
 // Address: 004f38d0
-void FUN_004f38d0(void);
+void __cdecl FUN_004f38d0(void);
 
 // Original: core_hero.cpp_FUN_004f3910
 // Address: 004f3910
-void FUN_004f3910(void);
+void __cdecl FUN_004f3910(void);
 
 // Original: core_hero.cpp_FUN_004f3930
 // Address: 004f3930
-void FUN_004f3930(void);
+void __cdecl FUN_004f3930(void);
 
 // Original: core_hero.cpp_FUN_004f3960
 // Address: 004f3960
-float FUN_004f3960(undefined4 param_1,undefined4 param_2,float *unaff_EBX,undefined4 param_4, int param_5,float *param_6);
+float __cdecl FUN_004f3960(void);
 
 // Original: core_hero.cpp_CHero_FUN_004f3af0
 // Address: 004f3af0

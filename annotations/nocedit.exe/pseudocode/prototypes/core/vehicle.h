@@ -61,7 +61,7 @@ void __cdecl CVehicle(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_FUN_005e8b50
 // Address: 005e8b50
-uint FUN_005e8b50(void);
+uint __cdecl FUN_005e8b50(void);
 
 // Original: core_vehicle.cpp_CVehicle_FUN_005e8ba0
 // Address: 005e8ba0
@@ -89,4 +89,4 @@ CTire * __cdecl CTire::dtor(CTire *this_ptr);
 
 // Original: core_vehicle.cpp_FUN_005e8dd0
 // Address: 005e8dd0
-void FUN_005e8dd0(void);
+void __cdecl FUN_005e8dd0(void);

@@ -1,12 +1,12 @@
 // Name: core_icepick.cpp_FUN_004f8b00
 // Address: 004f8b00
 // Address Range: [[004f8b00, 004f8b18]]
-// Convention: unknown
-// Signature: void core_icepick_cpp_FUN_004f8b00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_icepick_cpp_FUN_004f8b00(void)
 
 #include "nocturne.h"
 
-void core_icepick_cpp_FUN_004f8b00(void)
+void __cdecl core_icepick_cpp_FUN_004f8b00(void)
 
 {
   uint *in_stack_00000004;

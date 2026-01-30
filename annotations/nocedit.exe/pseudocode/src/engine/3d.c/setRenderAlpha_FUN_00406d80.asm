@@ -15,7 +15,7 @@
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0 at 004d89ec
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_00500690 at 00500ee0
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00510000 at 00510206
-;   core_script.cpp_FUN_00559b20 at 00559cc1
+;   core_script.cpp_CScript_FUN_00559b20 at 00559cc1
 ;   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0 at 004060e7
 ;   ... and 16 more
 ;

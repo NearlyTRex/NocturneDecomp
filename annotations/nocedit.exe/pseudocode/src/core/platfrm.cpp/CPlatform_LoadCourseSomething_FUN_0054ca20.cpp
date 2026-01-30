@@ -1,15 +1,15 @@
 // Name: core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20
 // Address: 0054ca20
 // Address Range: [[0054ca20, 0054ca2c]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_platform.cpp_CPlatform_LoadCourseSomething(uint param_1)
     */
 
-void core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
+void __cdecl core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
 
 {
   CDemonActor *pCVar1;

@@ -117,7 +117,7 @@ section .text
         ;   Label: LAB_0058ae8f
     PUSH EDX                            ; 0058ae92
     CALL core_skeledit.cpp_FUN_0058ac80 ; 0058ae93
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058ac80()
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
     ADD ESP,0x4                         ; 0058ae98
     MOV ESP,EBP                         ; 0058ae9b
     POP EBP                             ; 0058ae9d

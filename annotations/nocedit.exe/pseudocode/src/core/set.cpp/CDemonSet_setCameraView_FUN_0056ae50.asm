@@ -34,10 +34,10 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db5e4
 ;   core_game.cpp_KeypressesAndCGame_FUN_004dc3e0 at 004dcca5
 ;   core_game.cpp_SaveRelated_FUN_004dcee0 at 004dd416
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e304
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053a9a9
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a9a9
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e304
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055da68
-;   core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0 at 0056b7fe
+;   core_set.cpp_CDemonSet_FUN_0056b7e0 at 0056b7fe
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00570c70 at 00570c84
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575209
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580675
@@ -306,7 +306,7 @@ section .text
     MOV EDX,dword ptr [0x006848fc]      ; 0056b16a | g_CWeatherInstance | g_CWeatherPtr
     PUSH EDX                            ; 0056b170 | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_FUN_005ef940 ; 0056b171
-        ;   XREF to: 005ef940 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_FUN_005ef940()
+        ;   XREF to: 005ef940 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef940()
     ADD ESP,0xc                         ; 0056b176
     MOV EAX,dword ptr [ESP + 0x188]     ; 0056b179
     MOV ECX,dword ptr [EAX + 0x14d154]  ; 0056b180

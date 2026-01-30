@@ -1,14 +1,14 @@
 // Name: core_flamecan.cpp_CFlameCan_load_FUN_004cb620
 // Address: 004cb620
 // Address Range: [[004cb620, 004cb67f]]
-// Convention: unknown
-// Signature: void core_flamecan_cpp_CFlameCan_load_FUN_004cb620(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flamecan_cpp_CFlameCan_load_FUN_004cb620(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_flame.cpp_CFlameCan_load(CFlameCan* pFlameCan) */
 
-void core_flamecan_cpp_CFlameCan_load_FUN_004cb620(void)
+void __cdecl core_flamecan_cpp_CFlameCan_load_FUN_004cb620(void)
 
 {
   CDemonActor *in_stack_00000004;

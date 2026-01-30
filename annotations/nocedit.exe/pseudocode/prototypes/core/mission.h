@@ -119,9 +119,9 @@ void __cdecl CDemonMission::run(CDemonMission *this_ptr);
 // Address: 00524630
 void __cdecl CDemonMission(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_00524660
+// Original: core_mission.cpp_CDemonMission_FUN_00524660
 // Address: 00524660
-void __cdecl FUN_00524660(void);
+void __cdecl CDemonMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
 // Address: 00524700

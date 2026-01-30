@@ -1,15 +1,15 @@
 // Name: core_scat.cpp_FUN_00557ea0
 // Address: 00557ea0
 // Address Range: [[00557ea0, 00557fef]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_00557ea0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_00557ea0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_00557ea0(uint param_1, uint param_2)
     */
 
-void core_scat_cpp_FUN_00557ea0(void)
+void __cdecl core_scat_cpp_FUN_00557ea0(void)
 
 {
   CDeformableModelInstance *this_ptr;

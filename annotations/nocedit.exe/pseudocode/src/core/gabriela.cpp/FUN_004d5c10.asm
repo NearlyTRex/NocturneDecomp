@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_gabriela_cpp_FUN_004d5c10(void)
+; __cdecl void __cdecl core_gabriela_cpp_FUN_004d5c10(void)
 ;
 ;
 ; XREF[1]:
@@ -41,7 +41,7 @@ section .text
     PUSH EDX                            ; 004d5c3b
     PUSH EAX                            ; 004d5c3c
     CALL core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700 ; 004d5c3d
-        ;   XREF to: 00411700 (UNCONDITIONAL_CALL)  ; undefined core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700()
+        ;   XREF to: 00411700 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700()
     ADD ESP,0x8                         ; 004d5c42
     MOV dword ptr [EBX + 0x1fba0],0x0   ; 004d5c45
         ;   Label: LAB_004d5c45

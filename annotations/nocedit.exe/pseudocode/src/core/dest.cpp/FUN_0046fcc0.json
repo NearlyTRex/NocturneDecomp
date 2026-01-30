@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 12,
+        "line": 25,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 7,
         "line": 27,
@@ -12,6 +18,12 @@
         "column": 14,
         "line": 27,
         "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 28,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -65,9 +77,9 @@
         "0046fd4b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dest.cpp_FUN_0046fcc0",
-    "signature": "undefined4 * core_dest_cpp_FUN_0046fcc0(void)"
+    "signature": "int __cdecl core_dest_cpp_FUN_0046fcc0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -221,7 +233,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
-      "text": "return in_stack_00000008;",
+      "text": "return (int)in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -242,7 +254,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
-      "text": "return in_stack_00000008;",
+      "text": "return (int)in_stack_00000008;",
       "type": "stack_param"
     }
   ],

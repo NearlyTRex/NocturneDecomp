@@ -1,15 +1,15 @@
 // Name: core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10
 // Address: 005d9a10
 // Address Range: [[005d9a10, 005d9ba2]]
-// Convention: unknown
-// Signature: void core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_svetlana.cpp_AttackWithParentBone(uint param_1,
    uint param_2) */
 
-void core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
+void __cdecl core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
 
 {
   CDemonActor *pCVar1;

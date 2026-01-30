@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_emitter_cpp_OtherClass_FUN_004a7c90(void)
+; __cdecl CDemonActorType * __cdecl core_emitter_cpp_OtherClass_FUN_004a7c90(void)
 ;
 ;
 ; Referenced Globals:

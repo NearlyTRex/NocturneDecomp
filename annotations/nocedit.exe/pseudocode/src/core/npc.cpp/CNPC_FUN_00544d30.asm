@@ -61,7 +61,7 @@ section .text
     PUSH 0x63e3bc                       ; 00544d85 | = "HURT"
     PUSH ESI                            ; 00544d8a
     CALL core_npc.cpp_FUN_00544c50      ; 00544d8b
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544d90
     TEST EAX,EAX                        ; 00544d93
     JNZ 0x00544da9                      ; 00544d95
@@ -69,7 +69,7 @@ section .text
     PUSH 0x63e3c1                       ; 00544d97 | = "DAMAGE"
     PUSH ESI                            ; 00544d9c
     CALL core_npc.cpp_FUN_00544c50      ; 00544d9d
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544da2
     TEST EAX,EAX                        ; 00544da5
     JZ 0x00544df1                       ; 00544da7
@@ -99,7 +99,7 @@ section .text
     PUSH 0x63e3b8                       ; 00544de1 | = "DIE"
     PUSH ESI                            ; 00544de6
     CALL core_npc.cpp_FUN_00544c50      ; 00544de7
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544dec
     JMP 0x00544da9                      ; 00544def
         ;   XREF to: 00544da9 (UNCONDITIONAL_JUMP)  ; LAB_00544da9
@@ -107,7 +107,7 @@ section .text
         ;   Label: LAB_00544df1
     PUSH ESI                            ; 00544df6
     CALL core_npc.cpp_FUN_00544c50      ; 00544df7
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544dfc
     PUSH EDI                            ; 00544dff
     PUSH EBX                            ; 00544e00

@@ -1,12 +1,12 @@
 // Name: core_game.cpp_FUN_004e30f0
 // Address: 004e30f0
 // Address Range: [[004e30f0, 004e3109]]
-// Convention: unknown
-// Signature: void core_game_cpp_FUN_004e30f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_FUN_004e30f0(void)
 
 #include "nocturne.h"
 
-void core_game_cpp_FUN_004e30f0(void)
+void __cdecl core_game_cpp_FUN_004e30f0(void)
 
 {
   if (g_CGamePtr->profile_mode != 1) {

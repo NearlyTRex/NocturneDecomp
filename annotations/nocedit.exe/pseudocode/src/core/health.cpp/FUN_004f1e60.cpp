@@ -1,14 +1,14 @@
 // Name: core_health.cpp_FUN_004f1e60
 // Address: 004f1e60
 // Address Range: [[004f1e60, 004f1ec5]]
-// Convention: unknown
-// Signature: int core_health_cpp_FUN_004f1e60(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_health_cpp_FUN_004f1e60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_health.cpp_FUN_004f1e60(uint param_1) */
 
-int core_health_cpp_FUN_004f1e60(void)
+int __cdecl core_health_cpp_FUN_004f1e60(void)
 
 {
   CBoundingBox3D *this_ptr;

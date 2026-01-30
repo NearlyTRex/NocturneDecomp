@@ -1,12 +1,12 @@
 // Name: engine_colquant.c_FUN_004406c0
 // Address: 004406c0
 // Address Range: [[004406c0, 00440b32]]
-// Convention: unknown
-// Signature: int * engine_colquant_c_FUN_004406c0(void)
+// Convention: __cdecl
+// Signature: int * __cdecl engine_colquant_c_FUN_004406c0(void)
 
 #include "nocturne.h"
 
-int * engine_colquant_c_FUN_004406c0(void)
+int * __cdecl engine_colquant_c_FUN_004406c0(void)
 
 {
   byte bVar1;
@@ -66,7 +66,7 @@ int * engine_colquant_c_FUN_004406c0(void)
   in_stack_00000004[0x1010] = 0;
   in_stack_00000004[0x1011] = in_stack_0000000c;
   engine_colquant_c_FUN_00441260();
-  sprintf(local_150,"Subdividing histogram array for %d palette entries...\n\n",in_stack_0000000c);
+  sprintf(local_150,"Subdividing histogram array for %d palette entries...\n\n");
   uVar7 = 0;
   engine_2d_c_drawText_FUN_00401fd0(local_150,0,0x16);
   do {

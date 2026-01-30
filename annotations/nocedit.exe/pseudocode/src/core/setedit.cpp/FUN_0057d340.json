@@ -37,37 +37,37 @@
         "category": "other",
         "column": 25,
         "line": 66,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 25,
         "line": 74,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 25,
         "line": 82,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 25,
         "line": 90,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 25,
         "line": 98,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 25,
         "line": 106,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]"
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
@@ -91,12 +91,12 @@
   },
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 258,
+    "complexity_score": 198,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 113,
-    "suspect_count": 14,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_param"
     ],
@@ -124,10 +124,10 @@
         "0057d654"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_setedit.cpp_FUN_0057d340",
-    "signature": "void core_setedit_cpp_FUN_0057d340(void)"
+    "signature": "void __cdecl core_setedit_cpp_FUN_0057d340(void)"
   },
   "function_calls": [
     {
@@ -576,48 +576,6 @@
       "line": 58,
       "match": "in_stack_00000008",
       "text": "if (*(int *)(in_stack_00000008 + 0x140) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_120,\"%sn\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_120,\"%ss\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_120,\"%se\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_120,\"%sw\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_120,\"%su\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_00000008",
-      "text": "sprintf(local_120,\"%sd\",in_stack_00000008);",
       "type": "stack_param"
     },
     {

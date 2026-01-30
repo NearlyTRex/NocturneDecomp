@@ -386,7 +386,7 @@ section .text
     PUSH 0x656e26                       ; 005e8298 | = "model-t-horn?.wav"
     PUSH EBX                            ; 005e829d
     CALL core_vehicle.cpp_FUN_005e8b50  ; 005e829e
-        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; undefined core_vehicle.cpp_FUN_005e8b50()
+        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_FUN_005e8b50()
     ADD ESP,0x8                         ; 005e82a3
     MOV dword ptr [EBX + 0x1054],EAX    ; 005e82a6
     JMP 0x005e816d                      ; 005e82ac
@@ -426,7 +426,7 @@ section .text
     PUSH 0x656eb1                       ; 005e8307 | = "ext-modelt-fast_??.wav"
     PUSH EBX                            ; 005e830c
     CALL core_vehicle.cpp_FUN_005e8b50  ; 005e830d
-        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; undefined core_vehicle.cpp_FUN_005e8b50()
+        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_FUN_005e8b50()
     ADD ESP,0x8                         ; 005e8312
     MOV dword ptr [EBX + 0x1058],EAX    ; 005e8315
     MOV ESI,dword ptr [EBX + 0x1058]    ; 005e831b
@@ -743,7 +743,7 @@ section .text
     PUSH 0x656ec8                       ; 005e86b2 | = "skid_??.wav"
     PUSH EBX                            ; 005e86b7
     CALL core_vehicle.cpp_FUN_005e8b50  ; 005e86b8
-        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; undefined core_vehicle.cpp_FUN_005e8b50()
+        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_FUN_005e8b50()
     ADD ESP,0x8                         ; 005e86bd
     MOV dword ptr [EBX + 0x105c],EAX    ; 005e86c0
     MOV ESP,EBP                         ; 005e86c6

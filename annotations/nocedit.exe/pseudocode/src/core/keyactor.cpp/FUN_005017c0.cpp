@@ -1,14 +1,14 @@
 // Name: core_keyactor.cpp_FUN_005017c0
 // Address: 005017c0
 // Address Range: [[005017c0, 00501825]]
-// Convention: unknown
-// Signature: int core_keyactor_cpp_FUN_005017c0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_keyactor_cpp_FUN_005017c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_keyactor.cpp_FUN_005017c0(uint param_1) */
 
-int core_keyactor_cpp_FUN_005017c0(void)
+int __cdecl core_keyactor_cpp_FUN_005017c0(void)
 
 {
   CBoundingBox3D *this_ptr;

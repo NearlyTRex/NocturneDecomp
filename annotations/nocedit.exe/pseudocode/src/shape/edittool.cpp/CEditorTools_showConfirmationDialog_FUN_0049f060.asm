@@ -16,9 +16,9 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d891
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db92f
 ;   core_game.cpp_SaveRelated_FUN_004dcee0 at 004dd5b9
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a622
+;   core_msnedit.cpp_CDemonMission_FUN_0053bc80 at 0053bcd2
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538928
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053a622
-;   core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80 at 0053bcd2
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00582109
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583cac
 ;   ... and 8 more

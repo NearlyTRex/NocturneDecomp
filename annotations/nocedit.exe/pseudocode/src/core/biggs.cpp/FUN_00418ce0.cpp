@@ -1,15 +1,15 @@
 // Name: core_biggs.cpp_FUN_00418ce0
 // Address: 00418ce0
 // Address Range: [[00418ce0, 00418d0b]]
-// Convention: unknown
-// Signature: void core_biggs_cpp_FUN_00418ce0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_biggs_cpp_FUN_00418ce0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_biggs.cpp_FUN_00418ce0(uint param_1, uint param_2)
     */
 
-void core_biggs_cpp_FUN_00418ce0(void)
+void __cdecl core_biggs_cpp_FUN_00418ce0(void)
 
 {
   CDemonActor *in_stack_00000004;

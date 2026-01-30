@@ -119,7 +119,7 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_shovel.cpp_CShovel_dtor_FUN_00588c80
       Suspects: unaffected_reg, unaffected_reg
     - core_shovel.cpp_fire_FUN_00588c20
-      Suspects: stack_param, stack_param
+      Suspects: format_string_mismatch
 
   core/fileman.cpp (2 remaining of 12)
     - core_fileman.cpp_CDemonFileManager_dtor_FUN_00508880
@@ -141,7 +141,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/gun.cpp (2 remaining of 7)
     - core_gun.cpp_FUN_004f0350
-      Suspects: extra_output, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, unknown_field, unknown_field, stack_param, stack_param, stack_param, stack_param, stack_param, extra_output, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, stack_param, unknown_field
+      Suspects: extra_output, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, unknown_field, unknown_field, stack_param, stack_param, stack_param, stack_param, stack_param, extra_output, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, stack_param, unknown_field
     - core_gun.cpp_CGun_dtor_FUN_004f0b50
       Suspects: unaffected_reg, unaffected_reg
 
@@ -180,7 +180,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
     ... and 246 more
 
-  [param_count_too_few] - 141 functions
+  [param_count_too_few] - 139 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -191,7 +191,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
     support_newmsg.cpp_freeSkullBitmaps_FUN_00544750        (  5 lines)
     support_newmsg.cpp_freeBitmap_FUN_00544730              (  5 lines)
-    ... and 131 more
+    ... and 129 more
 
   [pointer_cast] - 65 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
@@ -206,7 +206,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
     ... and 55 more
 
-  [stack_ref] - 40 functions
+  [stack_ref] - 41 functions
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
     engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210  ( 11 lines)
@@ -217,12 +217,12 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f ( 11 lines)
     shape_edittool.cpp_CEditorTools_showError_FUN_0049e740  ( 11 lines)
     engine_2d.c_drawTextCenteredFormatted_FUN_004023c0      ( 12 lines)
-    ... and 30 more
+    ... and 31 more
 
-  [decompiler_intrinsic] - 37 functions
+  [decompiler_intrinsic] - 38 functions
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0         (  7 lines)
-    core_script.cpp_FUN_00559ac0                            (  8 lines)
+    core_script.cpp_CScript_FUN_00559ac0                    (  8 lines)
     engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00 (  9 lines)
     engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN (  9 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScaleSim ( 10 lines)
@@ -230,7 +230,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScale_FU ( 11 lines)
     wincore_winrun.cpp_sleep_FUN_005f40e0                   ( 12 lines)
     core_game.cpp_CGame_slamDT_FUN_004e3080                 ( 14 lines)
-    ... and 27 more
+    ... and 28 more
 
   [param_count_too_many] - 24 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
@@ -258,7 +258,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_course.cpp_CCourse_free_FUN_004426c0               ( 14 lines)
     ... and 12 more
 
-  [undefined_data] - 17 functions
+  [undefined_data] - 20 functions
     core_msnedit.cpp_FUN_0053d3a0                           (  4 lines)
     core_setedit.cpp_staticInit_FUN_00576930                (  6 lines)
     core_weather.cpp_staticInit_FUN_005eeaa0                (  6 lines)
@@ -268,14 +268,15 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_charactr.cpp_staticInit_FUN_00427d80               (  8 lines)
     core_netgame.cpp_staticInit_FUN_0053f310                (  9 lines)
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettin ( 12 lines)
-    core_script.cpp_FUN_00566bc0                            ( 12 lines)
-    ... and 7 more
+    core_script.cpp_CScript_FUN_00566bc0                    ( 13 lines)
+    ... and 10 more
 
-  [unresolved_funcptr] - 7 functions
+  [unresolved_funcptr] - 8 functions
     core_stranger.cpp_CStranger_FUN_005c3710                (  9 lines)
     core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0 ( 18 lines)
     support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50  ( 20 lines)
     engine_3d.c_dispatchMRGLBlockChain_FUN_00407890         ( 21 lines)
+    core_msnedit.cpp_CDemonMission_FUN_0053c0b0             ( 21 lines)
     engine_dosio.c_findFile_FUN_00481760                    ( 23 lines)
     core_charactr.cpp_CCharacter_FUN_0042b110               ( 23 lines)
     core_boxactor.cpp_CBoxActor_FUN_00422590                ( 31 lines)
@@ -306,6 +307,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [suspect_float] - 2 functions
     core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 45 lines)
     core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
+
+  [format_string_mismatch] - 1 functions
+    core_shovel.cpp_fire_FUN_00588c20                       (  7 lines)
 
   [unnamed_param] - 1 functions
     core_conveyor.cpp_FUN_004422f0                          (  7 lines)

@@ -1,14 +1,14 @@
 // Name: core_cloth.cpp_LockVerticesMaybe_FUN_0043d590
 // Address: 0043d590
 // Address Range: [[0043d590, 0043dcbc]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_cloth.cpp_LockVerticesMaybe(uint param_1) */
 
-void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
+void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 
 {
   float *pfVar1;

@@ -1,14 +1,14 @@
 // Name: core_drip.cpp_FUN_0048e8d0
 // Address: 0048e8d0
 // Address Range: [[0048e8d0, 0048e921]]
-// Convention: unknown
-// Signature: undefined4 core_drip_cpp_FUN_0048e8d0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_drip_cpp_FUN_0048e8d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_drip.cpp_FUN_0048e8d0(uint param_1) */
 
-uint core_drip_cpp_FUN_0048e8d0(void)
+int __cdecl core_drip_cpp_FUN_0048e8d0(void)
 
 {
   float fVar1;

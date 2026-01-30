@@ -1,15 +1,15 @@
 // Name: core_hiram.cpp_FUN_004f4550
 // Address: 004f4550
 // Address Range: [[004f4550, 004f468d]]
-// Convention: unknown
-// Signature: void core_hiram_cpp_FUN_004f4550(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hiram_cpp_FUN_004f4550(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_npc_hiram.cpp_FUN_004f4550(uint param_1, uint param_2)
     */
 
-void core_hiram_cpp_FUN_004f4550(void)
+void __cdecl core_hiram_cpp_FUN_004f4550(void)
 
 {
   CDeformableModelInstance *this_ptr;

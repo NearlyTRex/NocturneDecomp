@@ -1,15 +1,15 @@
 // Name: core_smiley.cpp_FUN_005a2800
 // Address: 005a2800
 // Address Range: [[005a2800, 005a3159]]
-// Convention: unknown
-// Signature: void core_smiley_cpp_FUN_005a2800(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_smiley_cpp_FUN_005a2800(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_smiley.cpp_FUN_005a2800(uint param_1, uint
    param_2) */
 
-void core_smiley_cpp_FUN_005a2800(void)
+void __cdecl core_smiley_cpp_FUN_005a2800(void)
 
 {
   CLocation *pCVar1;
@@ -235,8 +235,6 @@ void core_smiley_cpp_FUN_005a2800(void)
       else {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_190);
         local_190.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-        local_190.attacker = &in_stack_00000004->base;
-        local_190.wielder = &in_stack_00000004->base;
         local_14 = local_190.damage_amount;
         pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                            (&local_b8,&g_ZeroVector,
@@ -273,8 +271,6 @@ void core_smiley_cpp_FUN_005a2800(void)
         if (iVar4 == 0) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_154);
           local_154.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-          local_154.attacker = &in_stack_00000004->base;
-          local_154.wielder = &in_stack_00000004->base;
           local_14 = local_154.damage_amount;
           pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              (&local_88,&g_ZeroVector,

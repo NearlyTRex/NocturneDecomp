@@ -1,15 +1,15 @@
 // Name: core_turret.cpp_FUN_005e3560
 // Address: 005e3560
 // Address Range: [[005e3560, 005e3610]]
-// Convention: unknown
-// Signature: void core_turret_cpp_FUN_005e3560(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_turret_cpp_FUN_005e3560(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_turret.cpp_FUN_005e3560(uint param_1, uint
    param_2) */
 
-void core_turret_cpp_FUN_005e3560(void)
+void __cdecl core_turret_cpp_FUN_005e3560(void)
 
 {
   CVector3f *input_local_point;

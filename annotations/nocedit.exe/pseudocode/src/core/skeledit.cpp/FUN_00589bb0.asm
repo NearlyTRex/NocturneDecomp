@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_skeledit_cpp_FUN_00589bb0(void)
+; __cdecl void __cdecl core_skeledit_cpp_FUN_00589bb0(void)
 ;
 ;
 ; Referenced Globals:
@@ -44,7 +44,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 00589bda
     PUSH EBP                            ; 00589bde
     CALL core_skeledit.cpp_FUN_0058a0f0 ; 00589bdf
-        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058a0f0()
+        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a0f0()
     ADD ESP,0x8                         ; 00589be4
     POP EBP                             ; 00589be7
     POP EDI                             ; 00589be8

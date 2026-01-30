@@ -1,14 +1,14 @@
 // Name: core_spike.cpp_FUN_005b8360
 // Address: 005b8360
 // Address Range: [[005b8360, 005b837c]]
-// Convention: unknown
-// Signature: void core_spike_cpp_FUN_005b8360(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_spike_cpp_FUN_005b8360(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_spike.cpp_FUN_005b8360(uint param_1) */
 
-void core_spike_cpp_FUN_005b8360(void)
+void __cdecl core_spike_cpp_FUN_005b8360(void)
 
 {
   float fVar1;

@@ -1,14 +1,14 @@
 // Name: core_curtain.cpp_FUN_00449f10
 // Address: 00449f10
 // Address Range: [[00449f10, 00449fb5]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_FUN_00449f10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_FUN_00449f10(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_curtain.cpp_FUN_00449f10(uint param_1) */
 
-void core_curtain_cpp_FUN_00449f10(void)
+void __cdecl core_curtain_cpp_FUN_00449f10(void)
 
 {
   CVector3f *pCVar1;

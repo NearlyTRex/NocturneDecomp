@@ -1,15 +1,15 @@
 // Name: core_bugs.cpp_FUN_00426420
 // Address: 00426420
 // Address Range: [[00426420, 004264fb] [004265af, 004268d4]]
-// Convention: unknown
-// Signature: undefined4 core_bugs_cpp_FUN_00426420(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_bugs_cpp_FUN_00426420(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00426420(uint param_1, uint param_2,
    uint param_3, uint param_4) */
 
-uint core_bugs_cpp_FUN_00426420(void)
+int __cdecl core_bugs_cpp_FUN_00426420(void)
 
 {
   float *pfVar1;

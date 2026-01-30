@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0
 // Address: 0057bbe0
 // Address Range: [[0057bbe0, 0057c544]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
+void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
 
 {
   char cVar1;

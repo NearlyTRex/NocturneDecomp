@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_enemy_cpp_FUN_004a9880(void)
+; __cdecl int __cdecl core_enemy_cpp_FUN_004a9880(void)
 ;
 ;
 ; XREF[14]:
@@ -93,7 +93,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 004a990e | g_CGorePtr
     PUSH ESI                            ; 004a9914 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004a9915
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     MOV EAX,0x1                         ; 004a991a
     ADD ESP,0x14                        ; 004a991f
     MOV ESP,EBP                         ; 004a9922

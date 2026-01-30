@@ -1,14 +1,14 @@
 // Name: core_elephant.cpp_FUN_004a79f0
 // Address: 004a79f0
 // Address Range: [[004a79f0, 004a7bd2]]
-// Convention: unknown
-// Signature: void core_elephant_cpp_FUN_004a79f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_elephant_cpp_FUN_004a79f0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_emitter.cpp_FUN_004a79f0(uint param_1) */
 
-void core_elephant_cpp_FUN_004a79f0(void)
+void __cdecl core_elephant_cpp_FUN_004a79f0(void)
 
 {
   float fVar1;

@@ -1,15 +1,15 @@
 // Name: core_succubus.cpp_FUN_005c7760
 // Address: 005c7760
 // Address Range: [[005c7760, 005c7779]]
-// Convention: unknown
-// Signature: void core_succubus_cpp_FUN_005c7760(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_succubus_cpp_FUN_005c7760(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_succubus.cpp_FUN_005c7760(uint param_1, uint
    param_2) */
 
-void core_succubus_cpp_FUN_005c7760(void)
+void __cdecl core_succubus_cpp_FUN_005c7760(void)
 
 {
   int in_stack_00000008;

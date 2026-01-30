@@ -1,15 +1,15 @@
 // Name: core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0
 // Address: 005e0cd0
 // Address Range: [[005e0cd0, 005e0f61]]
-// Convention: unknown
-// Signature: undefined4 core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_trigger.cpp_CTrigger_containsActor(CTrigger* param_1,
    uint param_2) */
 
-uint core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
+int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
 
 {
   float fVar1;
@@ -76,7 +76,7 @@ uint core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
           g_CurrentLineNumber = 0x37d;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("CTrigger::containsActor - invalid trigger shape %d for %s",
-                     *(uint *)(in_stack_00000004[1].actor_name + 0x18),in_stack_00000004);
+                     *(uint *)(in_stack_00000004[1].actor_name + 0x18));
           g_CurrentLineNumber = 899;
           g_CurrentFilename = "..\\core\\trigger.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze...");

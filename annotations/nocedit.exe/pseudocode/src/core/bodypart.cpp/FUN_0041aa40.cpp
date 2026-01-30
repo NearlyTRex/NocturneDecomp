@@ -1,8 +1,8 @@
 // Name: core_bodypart.cpp_FUN_0041aa40
 // Address: 0041aa40
 // Address Range: [[0041aa40, 0041adcb]]
-// Convention: unknown
-// Signature: void core_bodypart_cpp_FUN_0041aa40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bodypart_cpp_FUN_0041aa40(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* WARNING: Removing unreachable block (ram,0x0041ad97) */
 /* WARNING: Type propagation algorithm not settling */
 
-void core_bodypart_cpp_FUN_0041aa40(void)
+void __cdecl core_bodypart_cpp_FUN_0041aa40(void)
 
 {
   longlong lVar1;

@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_FUN_00582930
 // Address: 00582930
 // Address Range: [[00582930, 00582f23]]
-// Convention: unknown
-// Signature: void core_setedit_cpp_FUN_00582930(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_FUN_00582930(void)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_FUN_00582930(void)
+void __cdecl core_setedit_cpp_FUN_00582930(void)
 
 {
   SRenderVertex vertex2;

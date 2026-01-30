@@ -3,13 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 68,
-        "line": 25,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
-        "column": 68,
+        "column": 75,
         "line": 27,
         "message": "cast from 'CSvetlana*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
@@ -32,16 +26,17 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 48,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
+      "extra_output",
       "unaffected_reg"
     ],
-    "total_lines": 76
+    "total_lines": 77
   },
   "cross_references": [],
   "function": {
@@ -168,6 +163,13 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 9,
       "match": "unaff_EBX",
@@ -175,10 +177,17 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_EAX",
+      "text": "((CHero *)(extraout_EAX + -0x1fbdc),1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,d4",
+      "type": "extra_output"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 20,
       "match": "unaff_EBX",
-      "text": "((CHero *)(iVar1 + -0x1fbdc),1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,d4);",
+      "text": "((CHero *)(extraout_EAX + -0x1fbdc),1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,d4",
       "type": "unaffected_reg"
     }
   ],

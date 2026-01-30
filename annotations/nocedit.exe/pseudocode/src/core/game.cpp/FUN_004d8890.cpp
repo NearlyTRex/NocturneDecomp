@@ -1,12 +1,12 @@
 // Name: core_game.cpp_FUN_004d8890
 // Address: 004d8890
 // Address Range: [[004d8890, 004d890f]]
-// Convention: unknown
-// Signature: void core_game_cpp_FUN_004d8890(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_FUN_004d8890(void)
 
 #include "nocturne.h"
 
-void core_game_cpp_FUN_004d8890(void)
+void __cdecl core_game_cpp_FUN_004d8890(void)
 
 {
   char *in_stack_00000004;

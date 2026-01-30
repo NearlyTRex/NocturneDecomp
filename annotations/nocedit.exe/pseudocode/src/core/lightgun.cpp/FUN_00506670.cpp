@@ -1,14 +1,14 @@
 // Name: core_lightgun.cpp_FUN_00506670
 // Address: 00506670
 // Address Range: [[00506670, 0050669a]]
-// Convention: unknown
-// Signature: float core_lightgun_cpp_FUN_00506670(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_lightgun_cpp_FUN_00506670(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_lightgun.cpp_FUN_00506670(uint param_1) */
 
-float core_lightgun_cpp_FUN_00506670(void)
+float __cdecl core_lightgun_cpp_FUN_00506670(void)
 
 {
   float fVar1;

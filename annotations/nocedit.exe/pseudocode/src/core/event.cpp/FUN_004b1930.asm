@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_event_cpp_FUN_004b1930(void)
+; __cdecl float __cdecl core_event_cpp_FUN_004b1930(float *param_1,float *param_2)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   param_1
+; float *          Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_actor_cpp_CActorPropertyList_FUN_0040e850(void)
+; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e850(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xec]:1  local_ec
@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_FUN_0053c4f0 at 0053c662
+;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c662
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_006144bf
@@ -63,11 +63,11 @@ section .text
     PUSH ESI                            ; 0040e8aa
     MOV dword ptr [ESP + 0xdc],ESI      ; 0040e8ab
     CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0040e8b2
-        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CActorProperty_FUN_0040ea50()
+        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_FUN_0040ea50()
     ADD ESP,0xc                         ; 0040e8b7
     PUSH ESI                            ; 0040e8ba
     CALL core_actor.cpp_FUN_0040ee30    ; 0040e8bb
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ee30()
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040ee30()
     MOV EDX,dword ptr [EBX + 0x24f0]    ; 0040e8c0
     ADD ESP,0x4                         ; 0040e8c6
     SUB EDX,EAX                         ; 0040e8c9

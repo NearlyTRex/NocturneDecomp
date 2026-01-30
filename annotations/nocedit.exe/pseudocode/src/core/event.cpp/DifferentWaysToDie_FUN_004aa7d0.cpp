@@ -1,76 +1,74 @@
 // Name: core_event.cpp_DifferentWaysToDie_FUN_004aa7d0
 // Address: 004aa7d0
 // Address Range: [[004aa7d0, 004aa95a]]
-// Convention: unknown
-// Signature: undefined4 core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(char *param_1,int *param_2)
 
 #include "nocturne.h"
 
-uint core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(void)
+int __cdecl core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(char *param_1,int *param_2)
 
 {
   int iVar1;
-  char *in_stack_00000004;
-  uint *in_stack_00000008;
   
-  iVar1 = stricmp(in_stack_00000004,"generic");
+  iVar1 = stricmp(param_1,"generic");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 0;
+    *param_2 = 0;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"drown");
+  iVar1 = stricmp(param_1,"drown");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 1;
+    *param_2 = 1;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"fall");
+  iVar1 = stricmp(param_1,"fall");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 2;
+    *param_2 = 2;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"explode");
+  iVar1 = stricmp(param_1,"explode");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 3;
+    *param_2 = 3;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"fallApart");
+  iVar1 = stricmp(param_1,"fallApart");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 4;
+    *param_2 = 4;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"shatter");
+  iVar1 = stricmp(param_1,"shatter");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 5;
+    *param_2 = 5;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"electrocute");
+  iVar1 = stricmp(param_1,"electrocute");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 6;
+    *param_2 = 6;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"gas");
+  iVar1 = stricmp(param_1,"gas");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 0x69;
+    *param_2 = 0x69;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"Chopped");
+  iVar1 = stricmp(param_1,"Chopped");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 7;
+    *param_2 = 7;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"Crushed");
+  iVar1 = stricmp(param_1,"Crushed");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 8;
+    *param_2 = 8;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"Impale");
+  iVar1 = stricmp(param_1,"Impale");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 9;
+    *param_2 = 9;
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"Fire");
+  iVar1 = stricmp(param_1,"Fire");
   if (iVar1 == 0) {
-    *in_stack_00000008 = 10;
+    *param_2 = 10;
     return 1;
   }
   return 0;

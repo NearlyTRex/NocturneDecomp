@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
+; __cdecl void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x180]:8  local_180
@@ -500,7 +500,7 @@ section .text
     LEA EAX,[ESP + 0xcc]                ; 005d7ceb
     PUSH EAX                            ; 005d7cf2
     CALL shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00 ; 005d7cf3
-        ;   XREF to: 005d7e00 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00()
+        ;   XREF to: 005d7e00 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00()
     ADD ESP,0x4                         ; 005d7cf8
     PUSH -0x1                           ; 005d7cfb
     PUSH 0xbf800000                     ; 005d7cfd

@@ -1,12 +1,12 @@
 // Name: core_hero.cpp_CallInventorySelectHealth_FUN_004f3760
 // Address: 004f3760
 // Address Range: [[004f3760, 004f37ce]]
-// Convention: unknown
-// Signature: int core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
 
 #include "nocturne.h"
 
-int core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
+int __cdecl core_hero_cpp_CallInventorySelectHealth_FUN_004f3760(void)
 
 {
   int iVar1;

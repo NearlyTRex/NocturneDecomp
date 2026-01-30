@@ -41,7 +41,7 @@ section .text
     SUB EAX,0x6e4                       ; 005e8d3f
     PUSH EAX                            ; 005e8d44
     CALL core_vehicle.cpp_FUN_005e8dd0  ; 005e8d45
-        ;   XREF to: 005e8dd0 (UNCONDITIONAL_CALL)  ; undefined core_vehicle.cpp_FUN_005e8dd0()
+        ;   XREF to: 005e8dd0 (UNCONDITIONAL_CALL)  ; void core_vehicle.cpp_FUN_005e8dd0()
     ADD ESP,0x8                         ; 005e8d4a
     PUSH 0x1                            ; 005e8d4d
     LEA EBX,[EAX + 0xfffff6c4]          ; 005e8d4f

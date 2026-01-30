@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDrawSurface * core_dracbrid_cpp_FUN_00486e70(void)
+; __cdecl CDrawSurface * __cdecl core_dracbrid_cpp_FUN_00486e70(void)
 ;
 ;
 ; Referenced Globals:

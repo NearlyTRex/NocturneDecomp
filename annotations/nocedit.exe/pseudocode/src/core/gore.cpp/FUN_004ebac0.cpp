@@ -1,14 +1,14 @@
 // Name: core_gore.cpp_FUN_004ebac0
 // Address: 004ebac0
 // Address Range: [[004ebac0, 004ebe5c] [004ec23c, 004ec280]]
-// Convention: unknown
-// Signature: void core_gore_cpp_FUN_004ebac0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_FUN_004ebac0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_gore.cpp_FUN_004ebac0(uint param_1) */
 
-void core_gore_cpp_FUN_004ebac0(void)
+void __cdecl core_gore_cpp_FUN_004ebac0(void)
 
 {
   SRenderVertex *output;

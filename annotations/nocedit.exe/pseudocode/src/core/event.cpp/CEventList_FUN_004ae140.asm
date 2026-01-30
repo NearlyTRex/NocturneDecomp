@@ -315,7 +315,7 @@ section .text
     AND EAX,0xff                        ; 004ae275
     PUSH EAX                            ; 004ae27a
     CALL core_event.cpp_FUN_004b0f90    ; 004ae27b
-        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b0f90()
+        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b0f90(int param_1)
     ADD ESP,0x4                         ; 004ae280
     TEST EAX,EAX                        ; 004ae283
     JZ 0x004ae2e2                       ; 004ae285
@@ -336,7 +336,7 @@ section .text
     AND EAX,0xff                        ; 004ae2a4
     PUSH EAX                            ; 004ae2a9
     CALL core_event.cpp_FUN_004b0f90    ; 004ae2aa
-        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b0f90()
+        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b0f90(int param_1)
     ADD ESP,0x4                         ; 004ae2af
     TEST EAX,EAX                        ; 004ae2b2
     JNZ 0x004ae28e                      ; 004ae2b4
@@ -948,7 +948,7 @@ section .text
     LEA EAX,[ESP + 0x754]               ; 004ae88c
     PUSH EAX                            ; 004ae893
     CALL core_event.cpp_FUN_004aa400    ; 004ae894
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004ae899
     TEST EAX,EAX                        ; 004ae89c
     JZ 0x004ae8c6                       ; 004ae89e
@@ -1294,7 +1294,7 @@ section .text
     LEA EAX,[ESP + 0x4fc]               ; 004aebec
     PUSH EAX                            ; 004aebf3
     CALL core_event.cpp_FUN_004aa400    ; 004aebf4
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004aebf9
     TEST EAX,EAX                        ; 004aebfc
     JZ 0x004aeb4e                       ; 004aebfe
@@ -1601,7 +1601,7 @@ section .text
     LEA EAX,[ESP + 0x81c]               ; 004aeee7
     PUSH EAX                            ; 004aeeee
     CALL core_event.cpp_FUN_004aa400    ; 004aeeef
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004aeef4
     TEST EAX,EAX                        ; 004aeef7
     JZ 0x004aeec3                       ; 004aeef9
@@ -1738,7 +1738,7 @@ section .text
     LEA EAX,[ESP + 0x3d0]               ; 004af083
     PUSH EAX                            ; 004af08a
     CALL core_event.cpp_FUN_004aa400    ; 004af08b
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004af090
     TEST EAX,EAX                        ; 004af093
     JZ 0x004af0da                       ; 004af095
@@ -1825,7 +1825,7 @@ section .text
     PUSH ECX                            ; 004af170 | g_CGameInstance
     MOV dword ptr [ESI],EDX             ; 004af171
     CALL core_game.cpp_CGame_fadeIn_FUN_004e0b90 ; 004af173
-        ;   XREF to: 004e0b90 (UNCONDITIONAL_CALL)  ; undefined4 core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)
+        ;   XREF to: 004e0b90 (UNCONDITIONAL_CALL)  ; uint core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)
     ADD ESP,0x4                         ; 004af178
     JMP 0x004ae5dd                      ; 004af17b
         ;   XREF to: 004ae5dd (UNCONDITIONAL_JUMP)  ; LAB_004ae5dd
@@ -1891,7 +1891,7 @@ section .text
     PUSH EDI                            ; 004af210
     MOV dword ptr [ESI],EBX             ; 004af211
     CALL core_event.cpp_FUN_004aa530    ; 004af213
-        ;   XREF to: 004aa530 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa530()
+        ;   XREF to: 004aa530 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004aa530(int param_1, int * param_2, float * param_3)
     ADD ESP,0xc                         ; 004af218
     MOV EBX,EAX                         ; 004af21b
     TEST EAX,EAX                        ; 004af21d
@@ -1955,7 +1955,7 @@ section .text
     PUSH EAX                            ; 004af2a4
     MOV dword ptr [ESI],EDI             ; 004af2a5
     CALL core_event.cpp_FUN_004aa530    ; 004af2a7
-        ;   XREF to: 004aa530 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa530()
+        ;   XREF to: 004aa530 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004aa530(int param_1, int * param_2, float * param_3)
     ADD ESP,0xc                         ; 004af2ac
     MOV EDI,EAX                         ; 004af2af
     TEST EAX,EAX                        ; 004af2b1
@@ -2230,7 +2230,7 @@ section .text
     LEA EAX,[ESP + 0x628]               ; 004af54f
     PUSH EAX                            ; 004af556
     CALL core_event.cpp_FUN_004aa400    ; 004af557
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004af55c
     TEST EAX,EAX                        ; 004af55f
     JZ 0x004af4b1                       ; 004af561
@@ -2421,7 +2421,7 @@ section .text
     LEA EAX,[ESP + 0x8e4]               ; 004af72f
     PUSH EAX                            ; 004af736
     CALL core_event.cpp_FUN_004aa400    ; 004af737
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004af73c
     MOV EDI,EAX                         ; 004af73f
     TEST EAX,EAX                        ; 004af741
@@ -2442,7 +2442,7 @@ section .text
     LEA EAX,[ESP + 0x5c4]               ; 004af75d
     PUSH EAX                            ; 004af764
     CALL core_event.cpp_FUN_004aa400    ; 004af765
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004af76a
     MOV EBX,EAX                         ; 004af76d
     TEST EAX,EAX                        ; 004af76f
@@ -2963,7 +2963,7 @@ section .text
     LEA EAX,[ESP + 0x560]               ; 004afc94
     PUSH EAX                            ; 004afc9b
     CALL core_event.cpp_FUN_004aa400    ; 004afc9c
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004afca1
     TEST EAX,EAX                        ; 004afca4
     JZ 0x004afcf9                       ; 004afca6
@@ -3063,7 +3063,7 @@ section .text
     LEA EAX,[ESP + 0x68c]               ; 004afd85
     PUSH EAX                            ; 004afd8c
     CALL core_event.cpp_FUN_004aa400    ; 004afd8d
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004afd92
     MOV dword ptr [ESP + 0x9dc],EAX     ; 004afd95
     TEST EAX,EAX                        ; 004afd9c
@@ -3200,7 +3200,7 @@ section .text
     LEA EAX,[ESP + 0x7b8]               ; 004aff1f
     PUSH EAX                            ; 004aff26
     CALL core_event.cpp_FUN_004aa400    ; 004aff27
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004aff2c
     TEST EAX,EAX                        ; 004aff2f
     JZ 0x004afcf9                       ; 004aff31
@@ -3284,7 +3284,7 @@ section .text
     LEA EAX,[ESP + 0x498]               ; 004b0000
     PUSH EAX                            ; 004b0007
     CALL core_event.cpp_FUN_004aa400    ; 004b0008
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004b000d
     TEST EAX,EAX                        ; 004b0010
     JZ 0x004afcf9                       ; 004b0012
@@ -3430,7 +3430,7 @@ section .text
     LEA EAX,[ESP + 0x2a4]               ; 004b019f
     PUSH EAX                            ; 004b01a6
     CALL core_event.cpp_FUN_004aa400    ; 004b01a7
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     ADD ESP,0xc                         ; 004b01ac
     TEST EAX,EAX                        ; 004b01af
     JZ 0x004b01f6                       ; 004b01b1

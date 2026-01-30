@@ -12,9 +12,9 @@
 ;
 ; XREF[20]:
 ;   core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0 at 00494e91
-;   core_msnedit.cpp_FUN_0053d8b0 at 0053da09
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e8c2
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053cd0c
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cd0c
+;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053da09
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e8c2
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00578e74
 ;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057f427
 ;   core_setedit.cpp_FUN_0057b410 at 0057b4b9

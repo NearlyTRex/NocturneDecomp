@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
+; __cdecl int __cdecl core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
 ;
 ;
 ; Referenced Globals:

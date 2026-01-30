@@ -1,14 +1,14 @@
 // Name: core_gore.cpp_FUN_004ed1c0
 // Address: 004ed1c0
 // Address Range: [[004ed1c0, 004ed235]]
-// Convention: unknown
-// Signature: void core_gore_cpp_FUN_004ed1c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_FUN_004ed1c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_gore.cpp_FUN_004ed1c0(uint param_1, uint param_2) */
 
-void core_gore_cpp_FUN_004ed1c0(void)
+void __cdecl core_gore_cpp_FUN_004ed1c0(void)
 
 {
   uint *in_stack_00000004;

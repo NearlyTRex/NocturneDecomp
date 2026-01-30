@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_hero_cpp_FUN_004f30f0(void)
+; __cdecl int __cdecl core_hero_cpp_FUN_004f30f0(void)
 ;
 ;
 ; XREF[6]:
@@ -32,7 +32,7 @@ section .text
     PUSH EDX                            ; 004f3103
         ;   Label: LAB_004f3103
     CALL core_lever.cpp_FUN_00504c90    ; 004f3104
-        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504c90()
+        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_FUN_00504c90()
     MOV EAX,0x1                         ; 004f3109
     ADD ESP,0x4                         ; 004f310e
     MOV dword ptr [EBX + 0x1fba8],0x0   ; 004f3111

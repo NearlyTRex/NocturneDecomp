@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_design_c_createReversedQuadPolygon_FUN_0045e040(void)
+; __cdecl void __cdecl shape_design_c_createReversedQuadPolygon_FUN_0045e040(void)
 ;
 ;
 ; XREF[1]:
@@ -30,7 +30,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x20]      ; 0045e058
     PUSH EAX                            ; 0045e05b
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e05c
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e061
     POP EBP                             ; 0045e064
     POP EDI                             ; 0045e065

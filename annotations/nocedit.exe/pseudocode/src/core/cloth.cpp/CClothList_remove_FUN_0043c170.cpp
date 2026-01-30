@@ -27,7 +27,7 @@ void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043c170(CClothList *this_ptr)
   g_CurrentDebugLine = 0x5e8;
   g_CurrentDebugFilename = "..\\core\\cloth.cpp";
   if (this_ptr[in_stack_00000008 + 0x65].unk != 0) {
-    ptr = (void *)core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
+    core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   }
   iVar5 = in_stack_00000008 + 1;

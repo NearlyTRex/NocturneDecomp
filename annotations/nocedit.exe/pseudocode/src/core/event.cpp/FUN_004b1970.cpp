@@ -1,15 +1,13 @@
 // Name: core_event.cpp_FUN_004b1970
 // Address: 004b1970
 // Address Range: [[004b1970, 004b197a]]
-// Convention: unknown
-// Signature: undefined4 core_event_cpp_FUN_004b1970(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_event_cpp_FUN_004b1970(int param_1)
 
 #include "nocturne.h"
 
-uint core_event_cpp_FUN_004b1970(void)
+int __cdecl core_event_cpp_FUN_004b1970(int param_1)
 
 {
-  int in_stack_00000004;
-  
-  return *(uint *)(in_stack_00000004 + 0x15aea4);
+  return *(int *)(param_1 + 0x15aea4);
 }

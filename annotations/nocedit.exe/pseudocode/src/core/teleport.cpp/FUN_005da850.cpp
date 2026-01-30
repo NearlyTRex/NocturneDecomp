@@ -1,12 +1,12 @@
 // Name: core_teleport.cpp_FUN_005da850
 // Address: 005da850
 // Address Range: [[005da850, 005da868]]
-// Convention: unknown
-// Signature: bool core_teleport_cpp_FUN_005da850(void)
+// Convention: __cdecl
+// Signature: bool __cdecl core_teleport_cpp_FUN_005da850(void)
 
 #include "nocturne.h"
 
-bool core_teleport_cpp_FUN_005da850(void)
+bool __cdecl core_teleport_cpp_FUN_005da850(void)
 
 {
   int in_stack_00000004;

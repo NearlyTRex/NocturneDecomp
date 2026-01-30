@@ -347,7 +347,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 0041571b | g_CGorePtr
     PUSH ESI                            ; 00415721 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 00415722
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 00415727
     MOV dword ptr [EBX + 0xbe28],0x1    ; 0041572a
     JMP 0x0041556b                      ; 00415734
@@ -394,7 +394,7 @@ section .text
     PUSH EAX                            ; 004157b2
     PUSH EBX                            ; 004157b3
     CALL core_enemy.cpp_FUN_004a9880    ; 004157b4
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 004157b9
     JMP 0x0041556b                      ; 004157bc
         ;   XREF to: 0041556b (UNCONDITIONAL_JUMP)  ; caseD_7

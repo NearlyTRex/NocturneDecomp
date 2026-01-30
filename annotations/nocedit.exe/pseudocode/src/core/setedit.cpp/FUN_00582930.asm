@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_FUN_00582930(void)
+; __cdecl void __cdecl core_setedit_cpp_FUN_00582930(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x7c]:4  local_7c

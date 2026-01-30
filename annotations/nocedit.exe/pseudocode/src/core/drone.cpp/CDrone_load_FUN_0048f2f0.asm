@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_drone_cpp_CDrone_load_FUN_0048f2f0(void)
+; __cdecl void __cdecl core_drone_cpp_CDrone_load_FUN_0048f2f0(void)
 ;
 ;
 ; Referenced Globals:

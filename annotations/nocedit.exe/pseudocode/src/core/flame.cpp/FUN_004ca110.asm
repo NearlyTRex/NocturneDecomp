@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_flame_cpp_FUN_004ca110(void)
+; __cdecl float __cdecl core_flame_cpp_FUN_004ca110(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xf4]:1  local_f4

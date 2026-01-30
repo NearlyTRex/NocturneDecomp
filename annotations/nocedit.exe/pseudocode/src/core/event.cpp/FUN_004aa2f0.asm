@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_event_cpp_FUN_004aa2f0(void)
+; __cdecl void __cdecl core_event_cpp_FUN_004aa2f0(int param_1,int *param_2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int *            Stack[0x8]:4   param_2
 ;
 ; Referenced Globals:
 ;   char[256] g_CharacterClassificationTable

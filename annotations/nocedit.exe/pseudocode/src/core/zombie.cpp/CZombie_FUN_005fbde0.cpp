@@ -1,14 +1,14 @@
 // Name: core_zombie.cpp_CZombie_FUN_005fbde0
 // Address: 005fbde0
 // Address Range: [[005fbde0, 005fbe18]]
-// Convention: unknown
-// Signature: void core_zombie_cpp_CZombie_FUN_005fbde0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fbde0(CZombie* param_1) */
 
-void core_zombie_cpp_CZombie_FUN_005fbde0(void)
+void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(void)
 
 {
   int in_stack_00000004;

@@ -21,39 +21,39 @@ CSentinel * __cdecl CSentinel::ctor(CSentinel *this_ptr);
 
 // Original: core_sentinel.cpp_FUN_00567e20
 // Address: 00567e20
-void FUN_00567e20(void);
+void __cdecl FUN_00567e20(void);
 
 // Original: core_sentinel.cpp_FUN_00568030
 // Address: 00568030
-void FUN_00568030(void);
+void __cdecl FUN_00568030(void);
 
 // Original: core_sentinel.cpp_FUN_00568b70
 // Address: 00568b70
-undefined4 FUN_00568b70(void);
+int __cdecl FUN_00568b70(void);
 
 // Original: core_sentinel.cpp_CSentinel_load_FUN_00568c70
 // Address: 00568c70
-void CSentinel::load(void);
+void __cdecl CSentinel::load(void);
 
 // Original: core_sentinel.cpp_SentinelBehavior_FUN_00568cd0
 // Address: 00568cd0
-void SentinelBehavior(void);
+void __cdecl SentinelBehavior(void);
 
 // Original: core_sentinel.cpp_FUN_00568dd0
 // Address: 00568dd0
-undefined4 FUN_00568dd0(void);
+int __cdecl FUN_00568dd0(void);
 
 // Original: core_sentinel.cpp_FUN_00568ef0
 // Address: 00568ef0
-void FUN_00568ef0(void);
+void __cdecl FUN_00568ef0(void);
 
 // Original: core_sentinel.cpp_FUN_00568f10
 // Address: 00568f10
-void FUN_00568f10(void);
+void __cdecl FUN_00568f10(void);
 
 // Original: core_sentinel.cpp_FUN_00568f50
 // Address: 00568f50
-void FUN_00568f50(void);
+void __cdecl FUN_00568f50(void);
 
 // Original: core_sentinel.cpp_CSentinel_dtor_FUN_00568f80
 // Address: 00568f80

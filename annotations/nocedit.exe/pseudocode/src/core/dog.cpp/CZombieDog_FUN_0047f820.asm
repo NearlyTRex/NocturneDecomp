@@ -58,7 +58,7 @@ section .text
     PUSH ESI                            ; 0047f873
     PUSH EBX                            ; 0047f874
     CALL core_enemy.cpp_FUN_004a9f10    ; 0047f875
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 0047f87a
     POP ESI                             ; 0047f87d
     POP EBX                             ; 0047f87e
@@ -91,7 +91,7 @@ section .text
     PUSH ESI                            ; 0047f8c2
     PUSH EBX                            ; 0047f8c3
     CALL core_enemy.cpp_FUN_004a9f10    ; 0047f8c4
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 0047f8c9
     POP ESI                             ; 0047f8cc
     POP EBX                             ; 0047f8cd

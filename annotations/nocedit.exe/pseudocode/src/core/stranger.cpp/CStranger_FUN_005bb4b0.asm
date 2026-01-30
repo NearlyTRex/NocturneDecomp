@@ -284,7 +284,7 @@ section .text
     PUSH ESI                            ; 005bb756
         ;   Label: LAB_005bb756
     CALL core_stranger.cpp_CStranger_FUN_005be520 ; 005bb757
-        ;   XREF to: 005be520 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_FUN_005be520()
+        ;   XREF to: 005be520 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005be520()
     ADD ESP,0x4                         ; 005bb75c
     PUSH 0x65348e                       ; 005bb75f | = "stranger-hat.kfm"
     LEA EBX,[ESI + 0x1fcd8]             ; 005bb764

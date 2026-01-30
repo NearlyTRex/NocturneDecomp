@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float * core_boneguy_cpp_FUN_0041ba10(void)
+; __cdecl float * __cdecl core_boneguy_cpp_FUN_0041ba10(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58

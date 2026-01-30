@@ -63,7 +63,7 @@ section .text
     PUSH EBX                            ; 00419c22
         ;   Label: LAB_00419c22
     CALL core_bodypart.cpp_FUN_0041b1b0 ; 00419c23
-        ;   XREF to: 0041b1b0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b1b0()
+        ;   XREF to: 0041b1b0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b1b0()
     ADD ESP,0x4                         ; 00419c28
     PUSH EDI                            ; 00419c2b
         ;   Label: LAB_00419c2b
@@ -86,7 +86,7 @@ section .text
         ;   Label: LAB_00419c5f
     PUSH EBX                            ; 00419c63
     CALL core_bodypart.cpp_FUN_00419e10 ; 00419c64
-        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00419e10()
+        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419e10()
     ADD ESP,0x8                         ; 00419c69
     POP EDI                             ; 00419c6c
     ADD ESP,0x4c                        ; 00419c6d
@@ -132,7 +132,7 @@ section .text
         ;   Label: LAB_00419cd0
     PUSH EBX                            ; 00419cd4
     CALL core_bodypart.cpp_FUN_00419e10 ; 00419cd5
-        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00419e10()
+        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419e10()
     ADD ESP,0x8                         ; 00419cda
     ADD ESP,0x4c                        ; 00419cdd
     POP ESI                             ; 00419ce0

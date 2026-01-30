@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_health_cpp_FUN_004f2040(void)
+; __cdecl void __cdecl core_health_cpp_FUN_004f2040(void)
 ;
 ;
 ; Referenced Globals:

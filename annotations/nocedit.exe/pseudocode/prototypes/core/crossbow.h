@@ -41,7 +41,7 @@ int __cdecl CCrossbow(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_FUN_00449540
 // Address: 00449540
-float FUN_00449540(void);
+float __cdecl FUN_00449540(void);
 
 // Original: core_crossbow.cpp_CCrossbow_FUN_00449570
 // Address: 00449570

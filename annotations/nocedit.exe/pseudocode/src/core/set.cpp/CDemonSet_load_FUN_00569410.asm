@@ -839,7 +839,7 @@ section .text
         ;   XREF to: 00494de0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(CDemonRaytrace * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00569d3d
     CALL core_path.cpp_GlobalPathmapListCorruption_FUN_00548590 ; 00569d40
-        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()
+        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; void core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()
         ;   Label: LAB_00569d40
     PUSH 0x0                            ; 00569d45
         ;   Label: LAB_00569d45

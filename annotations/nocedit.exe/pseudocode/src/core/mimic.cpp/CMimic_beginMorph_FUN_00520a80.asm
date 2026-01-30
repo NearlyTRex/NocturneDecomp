@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
+; __cdecl void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
 ;
 ;
 ; XREF[1]:
@@ -79,7 +79,7 @@ section .text
     PUSH 0x0                            ; 00520b36
     PUSH EBX                            ; 00520b38
     CALL core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 ; 00520b39
-        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_CMimic_processMorph_FUN_00520ba0()
+        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processMorph_FUN_00520ba0()
     ADD ESP,0x8                         ; 00520b3e
     LEA EAX,[EBX + 0x4bdfc]             ; 00520b41
     PUSH EAX                            ; 00520b47

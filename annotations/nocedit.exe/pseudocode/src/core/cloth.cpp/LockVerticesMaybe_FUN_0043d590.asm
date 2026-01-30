@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
+; __cdecl void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x84]:4  local_84
@@ -105,7 +105,7 @@ section .text
     PUSH 0x3f87558                      ; 0043d5e4 | g_ZeroVector
     PUSH EBP                            ; 0043d5e9
     CALL core_cloth.cpp_FUN_00439710    ; 0043d5ea
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     LEA EAX,[ESP + 0x10]                ; 0043d5ef
     LEA EDX,[EBP + 0x56d8]              ; 0043d5f3
     ADD ESP,0x10                        ; 0043d5f9
@@ -339,7 +339,7 @@ section .text
     PUSH ESI                            ; 0043d872
         ;   Label: LAB_0043d872
     CALL core_cloth.cpp_FUN_0043c6e0    ; 0043d873
-        ;   XREF to: 0043c6e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c6e0()
+        ;   XREF to: 0043c6e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c6e0()
     ADD EDI,0x30                        ; 0043d878
     ADD EBX,0x11c                       ; 0043d87b
     INC ESI                             ; 0043d881

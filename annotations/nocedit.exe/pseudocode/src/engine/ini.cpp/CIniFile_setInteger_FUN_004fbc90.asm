@@ -15,7 +15,7 @@
 ;   core_inivar.cpp_writeIniData_FUN_004fc510 at 004fc740
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 00507665
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 00507345
-;   core_msnedit.cpp_writeIni_FUN_005375d0 at 005375e6
+;   core_msnedit.cpp_CDemonMission_writeIni_FUN_005375d0 at 005375e6
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055ef72
 ;   sound_sndmain.cpp_writeIni_FUN_005ac220 at 005ac2e6
 ;

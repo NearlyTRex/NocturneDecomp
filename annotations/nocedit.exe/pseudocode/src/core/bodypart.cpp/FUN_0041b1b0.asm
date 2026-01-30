@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bodypart_cpp_FUN_0041b1b0(void)
+; __cdecl void __cdecl core_bodypart_cpp_FUN_0041b1b0(void)
 ;
 ;
 ; XREF[1]:
@@ -39,7 +39,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 0041b1d6 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0041b1dc | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edaa0     ; 0041b1dd
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edaa0()
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
     ADD ESP,0x10                        ; 0041b1e2
     RET                                 ; 0041b1e5
 

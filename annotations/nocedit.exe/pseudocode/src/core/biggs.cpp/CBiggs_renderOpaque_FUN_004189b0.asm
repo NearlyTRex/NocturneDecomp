@@ -76,7 +76,7 @@ section .text
     LEA ESI,[EBX + 0xc040]              ; 00418a1d
     PUSH ESI                            ; 00418a23
     CALL core_morph.cpp_FUN_0052b600    ; 00418a24
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 00418a29
     PUSH 0x0                            ; 00418a2c
     PUSH 0x0                            ; 00418a2e

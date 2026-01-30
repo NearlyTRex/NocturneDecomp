@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50 (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,CDemonSet *param_5 ,int param_6,undefined4 param_7,undefined4 param_8)
+; __cdecl int __cdecl core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -39,7 +39,7 @@
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
-;   core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0
+;   core_set.cpp_CDemonSet_FUN_0056b7e0
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 ;   core_setedit.cpp_CDemonSet_FUN_00577af0
@@ -470,8 +470,8 @@ section .text
     PUSH 0x0                            ; 0057b2fc
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057b2fe
     PUSH EBX                            ; 0057b301
-    CALL core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0 ; 0057b302
-        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0()
+    CALL core_set.cpp_CDemonSet_FUN_0056b7e0 ; 0057b302
+        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int param_4)
     ADD ESP,0x10                        ; 0057b307
     JMP 0x0057af62                      ; 0057b30a
         ;   XREF to: 0057af62 (UNCONDITIONAL_JUMP)  ; LAB_0057af62

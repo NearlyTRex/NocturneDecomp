@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_skeledit_cpp_FUN_0058b660(void)
+; __cdecl void __cdecl core_skeledit_cpp_FUN_0058b660(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
@@ -276,7 +276,7 @@ section .text
         ;   Label: LAB_0058b860
     PUSH ESI                            ; 0058b861
     CALL core_skeledit.cpp_FUN_0058b8e0 ; 0058b862
-        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058b8e0()
+        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058b8e0()
     ADD ESP,0x8                         ; 0058b867
     TEST EAX,EAX                        ; 0058b86a
     JZ 0x0058b77d                       ; 0058b86c
@@ -284,7 +284,7 @@ section .text
     PUSH EBX                            ; 0058b872
     PUSH ESI                            ; 0058b873
     CALL core_skeledit.cpp_FUN_0058b9b0 ; 0058b874
-        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058b9b0()
+        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058b9b0()
     ADD ESP,0x8                         ; 0058b879
     TEST EAX,EAX                        ; 0058b87c
     JZ 0x0058b77d                       ; 0058b87e
@@ -292,7 +292,7 @@ section .text
     PUSH EBX                            ; 0058b884
     PUSH ESI                            ; 0058b885
     CALL core_skeledit.cpp_FUN_0058bc40 ; 0058b886
-        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058bc40()
+        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058bc40()
     ADD ESP,0x8                         ; 0058b88b
     TEST EAX,EAX                        ; 0058b88e
     JZ 0x0058b77d                       ; 0058b890
@@ -305,11 +305,11 @@ section .text
     ADD ESP,0xc                         ; 0058b8a6
     PUSH ESI                            ; 0058b8a9
     CALL core_skeledit.cpp_FUN_0058f790 ; 0058b8aa
-        ;   XREF to: 0058f790 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058f790()
+        ;   XREF to: 0058f790 (UNCONDITIONAL_CALL)  ; int * core_skeledit.cpp_FUN_0058f790()
     ADD ESP,0x4                         ; 0058b8af
     PUSH ESI                            ; 0058b8b2
     CALL core_skeledit.cpp_FUN_0058e240 ; 0058b8b3
-        ;   XREF to: 0058e240 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058e240()
+        ;   XREF to: 0058e240 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058e240()
     ADD ESP,0x4                         ; 0058b8b8
     PUSH EDI                            ; 0058b8bb
     PUSH 0x64a89e                       ; 0058b8bc | = "Imported deformable model from %s OK"

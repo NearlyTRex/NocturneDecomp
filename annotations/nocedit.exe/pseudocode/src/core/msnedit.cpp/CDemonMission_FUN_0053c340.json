@@ -1,0 +1,436 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 41,
+        "line": 37,
+        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 37,
+        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 38,
+        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 38,
+        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 55,
+        "message": "ISO C++ forbids casting to an array type 'byte [8]' {aka 'unsigned char [8]'}"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 57,
+        "message": "invalid cast from type 'byte*' {aka 'unsigned char*'} to type 'double'"
+      },
+      {
+        "category": "other",
+        "column": 74,
+        "line": 57,
+        "message": "invalid cast from type 'byte*' {aka 'unsigned char*'} to type 'double'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 47,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 175,
+    "complexity_score": 237,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "pseudocode_lines": 57,
+    "suspect_count": 16,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "unaffected_reg",
+      "unknown_field",
+      "unnamed_param"
+    ],
+    "total_lines": 232
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053a3e1",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053c340",
+    "address_range": [
+      [
+        "0053c340",
+        "0053c4e7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_msnedit.cpp_CDemonMission_FUN_0053c340",
+    "signature": "CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "00420940",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940"
+    },
+    {
+      "addr": "0044d480",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063c862",
+      "name": "s_CBarrier_0063c862",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c86c",
+      "name": "DOUBLE_0063c86c",
+      "type": "double",
+      "value": "1000"
+    },
+    {
+      "addr": "02f7a020",
+      "name": "g_DisableMouseHitOnBarrier",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    },
+    {
+      "addr": "032758e8",
+      "name": "DAT_032758e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758ec",
+      "name": "g_CDemonCameraInstance.base.position.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758f0",
+      "name": "g_CDemonCameraInstance.base.position.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.412162162162162,
+    "instruction_count": 148,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 13,
+      "COPY": 299,
+      "FLOAT2FLOAT": 21,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 64,
+      "INT_AND": 63,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 12,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 15,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 22,
+      "INT_SUB": 38,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 41,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 40
+    },
+    "pcode_op_count": 801
+  },
+  "stack_frame": {
+    "frame_size": 116,
+    "local_size": 104,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053c349",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "text": "float unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "text": "if ((((*(int *)(this_ptr->unk2 + 8) < param_2) && (*(int *)(this_ptr->unk2 + 0xc) < param_3)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_3",
+      "text": "if ((((*(int *)(this_ptr->unk2 + 8) < param_2) && (*(int *)(this_ptr->unk2 + 0xc) < param_3)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "text": "(param_2 < *(int *)(this_ptr->unk2 + 0x10) + -1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_3",
+      "text": "(param_3 < *(int *)(this_ptr->unk2 + 0x14) + -1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "text": "(&g_CDemonCameraInstance,(CVector3f *)(auStack_5c + 0x10),param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_3",
+      "text": "(&g_CDemonCameraInstance,(CVector3f *)(auStack_5c + 0x10),param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "SQRT",
+      "text": "SQRT(local_44.x * local_44.x +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._16_4_",
+      "text": "(float)auStack_5c._16_4_ * (float)auStack_5c._16_4_ + local_48 * local_48);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._16_4_",
+      "text": "(float)auStack_5c._16_4_ * (float)auStack_5c._16_4_ + local_48 * local_48);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 31,
+      "match": "._16_4_",
+      "text": "auStack_5c._16_4_ = (float)auStack_5c._16_4_ * local_20.z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 31,
+      "match": "._16_4_",
+      "text": "auStack_5c._16_4_ = (float)auStack_5c._16_4_ * local_20.z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EDI",
+      "text": "if (((0.0 < (double)auStack_68) && (fStack_60 <= unaff_EDI)) && ((double)auStack_68 <= 1.0))",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = fStack_60;",
+      "type": "unaffected_reg"
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 // Name: core_larva.cpp_FUN_00503c00
 // Address: 00503c00
 // Address Range: [[00503c00, 00503c48]]
-// Convention: unknown
-// Signature: undefined4 core_larva_cpp_FUN_00503c00(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_larva_cpp_FUN_00503c00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_larva.cpp_FUN_00503c00(uint param_1, uint param_2)
     */
 
-uint core_larva_cpp_FUN_00503c00(void)
+int __cdecl core_larva_cpp_FUN_00503c00(void)
 
 {
   CVector3f *pCVar1;

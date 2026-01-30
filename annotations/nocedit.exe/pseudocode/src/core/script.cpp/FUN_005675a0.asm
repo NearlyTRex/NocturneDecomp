@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_script_cpp_FUN_005675a0(void)
+; __cdecl int __cdecl core_script_cpp_FUN_005675a0(char *param_1,char *param_2)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00567630 at 005676af
+;   core_script.cpp_CScript_FUN_00567630 at 005676af
 ;
 ; Called Functions:
 ;   crt_string.c_stricmp_FUN_005fe7f0

@@ -1,15 +1,15 @@
 // Name: core_emitter.cpp_FUN_004a8d20
 // Address: 004a8d20
 // Address Range: [[004a8d20, 004a8d49]]
-// Convention: unknown
-// Signature: CVector3f * core_emitter_cpp_FUN_004a8d20(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_emitter_cpp_FUN_004a8d20(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_emitter.cpp_FUN_004a8d20(uint param_1, uint
    param_2) */
 
-CVector3f * core_emitter_cpp_FUN_004a8d20(void)
+CVector3f * __cdecl core_emitter_cpp_FUN_004a8d20(void)
 
 {
   CDemonActor *in_stack_00000004;

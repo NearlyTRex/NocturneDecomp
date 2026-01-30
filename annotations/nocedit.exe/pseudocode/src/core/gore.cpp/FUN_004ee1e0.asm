@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_gore_cpp_FUN_004ee1e0(void)
+; __cdecl int __cdecl core_gore_cpp_FUN_004ee1e0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110
@@ -61,7 +61,7 @@ section .text
     PUSH EBX                            ; 004ee229 | DAT_02da8724 | DAT_02da874c
     INC ESI                             ; 004ee22a
     CALL core_gore.cpp_FUN_004ed160     ; 004ee22b
-        ;   XREF to: 004ed160 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed160()
+        ;   XREF to: 004ed160 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed160()
     MOV ECX,dword ptr [0x02da8720]      ; 004ee230 | DAT_02da8720
     ADD ESP,0x8                         ; 004ee236
     ADD EBX,0x28                        ; 004ee239 | DAT_02da874c
@@ -86,7 +86,7 @@ section .text
     PUSH EBX                            ; 004ee265 | DAT_02d873dc | DAT_02d87420
     INC ESI                             ; 004ee266
     CALL core_gore.cpp_FUN_004ecb00     ; 004ee267
-        ;   XREF to: 004ecb00 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecb00()
+        ;   XREF to: 004ecb00 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ecb00()
     MOV EBP,dword ptr [0x02d873d8]      ; 004ee26c | DAT_02d873d8
     ADD ESP,0x8                         ; 004ee272
     ADD EBX,0x44                        ; 004ee275 | DAT_02d87420

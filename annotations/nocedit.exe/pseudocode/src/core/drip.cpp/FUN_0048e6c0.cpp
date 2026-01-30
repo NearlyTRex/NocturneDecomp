@@ -1,14 +1,14 @@
 // Name: core_drip.cpp_FUN_0048e6c0
 // Address: 0048e6c0
 // Address Range: [[0048e6c0, 0048e739]]
-// Convention: unknown
-// Signature: int core_drip_cpp_FUN_0048e6c0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_drip_cpp_FUN_0048e6c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_drip.cpp_FUN_0048e6c0(uint param_1) */
 
-int core_drip_cpp_FUN_0048e6c0(void)
+int __cdecl core_drip_cpp_FUN_0048e6c0(void)
 
 {
   CBoundingBox3D *this_ptr;

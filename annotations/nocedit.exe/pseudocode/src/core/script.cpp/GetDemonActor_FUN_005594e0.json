@@ -4,19 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 27,
+        "line": 21,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
-        "column": 18,
-        "line": 50,
+        "column": 15,
+        "line": 43,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 58,
+        "line": 51,
+        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 57,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
@@ -27,14 +33,8 @@
       },
       {
         "category": "incompatible_types",
-        "column": 20,
-        "line": 72,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
         "column": 16,
-        "line": 81,
+        "line": 73,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       }
     ],
@@ -49,48 +49,48 @@
       {
         "category": "other",
         "column": 14,
-        "line": 26,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 47,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 99,
-        "line": 81,
-        "message": "format '%s' expects argument of type 'char*', but argument 5 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+        "line": 73,
+        "message": "format '%s' expects argument of type 'char*', but argument 5 has type 'int' [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 295,
+    "complexity_score": 297,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 23,
-    "pseudocode_lines": 75,
-    "suspect_count": 21,
+    "pseudocode_lines": 67,
+    "suspect_count": 22,
     "suspect_types": [
-      "stack_param",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 258
+    "total_lines": 250
   },
   "cross_references": [
+    {
+      "addr": "0055ff00",
+      "from_addr": "0055ff3e",
+      "name": "core_script.cpp_CScript_FUN_0055ff00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0055a810",
       "from_addr": "0055bc6f",
       "name": "core_script.cpp_CScript_step_FUN_0055a810",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055ff00",
-      "from_addr": "0055ff3e",
-      "name": "core_script.cpp_FUN_0055ff00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -108,9 +108,9 @@
         "0055965d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_GetDemonActor_FUN_005594e0",
-    "signature": "CHero * core_script_cpp_GetDemonActor_FUN_005594e0(void)"
+    "signature": "CHero * __cdecl core_script_cpp_GetDemonActor_FUN_005594e0(char *param_1,uint param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -136,7 +136,7 @@
     {
       "addr": "00559220",
       "is_variadic": false,
-      "name": "core_script.cpp_CheckingActorVariableName_FUN_00559220"
+      "name": "core_script.cpp_FUN_00559220"
     },
     {
       "addr": "005fdbd0",
@@ -316,160 +316,189 @@
     "pcode_op_count": 628
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "CHero * __cdecl core_script_cpp_GetDemonActor_FUN_005594e0(char *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "CHero * __cdecl core_script_cpp_GetDemonActor_FUN_005594e0(char *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "CHero * __cdecl core_script_cpp_GetDemonActor_FUN_005594e0(char *param_1,uint param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 11,
       "match": "DAT_0310f4ac",
       "text": "DAT_0310f4ac = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\\0')) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\\0')) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 14,
       "match": "DAT_0310eca0",
       "text": "pcVar4 = &DAT_0310eca0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "if (*in_stack_00000004 == '@') {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "text": "if (*param_1 == '@') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "text": "iVar2 = core_script_cpp_FUN_00559220(param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 33,
       "match": "DAT_0310f4ac",
       "text": "DAT_0310f4ac = 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_0310eca0,\"Actor variable %s not defined, or doesn't reference an existing actor\",in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "text": "sprintf(&DAT_0310eca0,\"Actor variable %s not defined, or doesn't reference an existing actor\",param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 36,
       "match": "DAT_0310eca0",
-      "text": "(&DAT_0310eca0,\"Actor variable %s not defined, or doesn't reference an existing actor\",in_stack_00000004);",
+      "text": "sprintf(&DAT_0310eca0,\"Actor variable %s not defined, or doesn't reference an existing actor\",param_1);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = stricmp(in_stack_00000004,\"$\");",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "text": "iVar2 = stricmp(param_1,\"$\");",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 44,
       "match": "DAT_0310eca0",
       "text": "sprintf(&DAT_0310eca0,\"Can't use '$' actor specifier in multi-player\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 49,
       "match": "DAT_0310f4ac",
       "text": "DAT_0310f4ac = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 50,
       "match": "DAT_0310eca0",
       "text": "sprintf(&DAT_0310eca0,\"Hero doesn't exist!!?!\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" does not exist.\",in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "text": "sprintf(&DAT_0310eca0,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 57,
       "match": "DAT_0310eca0",
-      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" does not exist.\",in_stack_00000004);",
+      "text": "sprintf(&DAT_0310eca0,\"Actor \\\"%s\\\" does not exist.\",param_1);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_2",
+      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",in_stack_00000004,pcVar3,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_3",
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 66,
       "match": "DAT_0310eca0",
-      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",in_stack_00000004,pcVar3,",
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c);",
-      "type": "stack_param"
     }
   ]
 }

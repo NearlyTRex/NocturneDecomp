@@ -1,14 +1,14 @@
 // Name: core_spike.cpp_FUN_005b8730
 // Address: 005b8730
 // Address Range: [[005b8730, 005b8795]]
-// Convention: unknown
-// Signature: int core_spike_cpp_FUN_005b8730(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_spike_cpp_FUN_005b8730(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_spike.cpp_FUN_005b8730(uint param_1) */
 
-int core_spike_cpp_FUN_005b8730(void)
+int __cdecl core_spike_cpp_FUN_005b8730(void)
 
 {
   CBoundingBox3D *this_ptr;

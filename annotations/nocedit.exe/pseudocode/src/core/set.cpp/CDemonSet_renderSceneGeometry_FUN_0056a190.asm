@@ -14,7 +14,7 @@
 ;
 ; XREF[14]:
 ;   core_course.cpp_FUN_00443bc0 at 00443d1d
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053a338
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a338
 ;   core_set.cpp_CDemonSet_FUN_0056be80 at 0056bfae
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056caf7
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056ab84
@@ -220,7 +220,7 @@ section .text
     ADD ESI,0x4                         ; 0056a336
     INC EDI                             ; 0056a339
     CALL core_set.cpp_FUN_00570af0      ; 0056a33a
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV ECX,dword ptr [EBX + 0x15acb4]  ; 0056a33f
     ADD ESP,0x4                         ; 0056a345
     CMP EDI,ECX                         ; 0056a348
@@ -327,7 +327,7 @@ section .text
     ADD ESI,0x4                         ; 0056a449
     INC EDI                             ; 0056a44c
     CALL core_set.cpp_FUN_00570af0      ; 0056a44d
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV EAX,dword ptr [EBX + 0x15acb4]  ; 0056a452
     ADD ESP,0x4                         ; 0056a458
     CMP EDI,EAX                         ; 0056a45b

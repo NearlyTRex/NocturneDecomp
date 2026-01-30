@@ -1,12 +1,12 @@
 // Name: core_skeledit.cpp_FUN_0058a0f0
 // Address: 0058a0f0
 // Address Range: [[0058a0f0, 0058a1a8]]
-// Convention: unknown
-// Signature: void core_skeledit_cpp_FUN_0058a0f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeledit_cpp_FUN_0058a0f0(void)
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_0058a0f0(void)
+void __cdecl core_skeledit_cpp_FUN_0058a0f0(void)
 
 {
   int in_stack_00000004;

@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_CStranger_FUN_005bf720
 // Address: 005bf720
 // Address Range: [[005bf720, 005bf7fe]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005bf720(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(void)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_CStranger_FUN_005bf720(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(void)
 
 {
   CDeformableModelInstance *this_ptr;

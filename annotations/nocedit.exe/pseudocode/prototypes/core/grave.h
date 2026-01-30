@@ -21,51 +21,51 @@ CGrave * __cdecl CGrave::ctor(CGrave *this_ptr);
 
 // Original: core_grave.cpp_FUN_004ee5a0
 // Address: 004ee5a0
-void FUN_004ee5a0(void);
+void __cdecl FUN_004ee5a0(void);
 
 // Original: core_grave.cpp_FUN_004ee5c0
 // Address: 004ee5c0
-void FUN_004ee5c0(void);
+void __cdecl FUN_004ee5c0(void);
 
 // Original: core_grave.cpp_FUN_004ee680
 // Address: 004ee680
-int FUN_004ee680(void);
+int __cdecl FUN_004ee680(void);
 
 // Original: core_grave.cpp_FUN_004ee710
 // Address: 004ee710
-void FUN_004ee710(void);
+void __cdecl FUN_004ee710(void);
 
 // Original: core_grave.cpp_FUN_004ee790
 // Address: 004ee790
-void FUN_004ee790(void);
+void __cdecl FUN_004ee790(void);
 
 // Original: core_grave.cpp_CGrave_load_FUN_004ee7f0
 // Address: 004ee7f0
-void CGrave::load(void);
+void __cdecl CGrave::load(void);
 
 // Original: core_grave.cpp_FUN_004ee8f0
 // Address: 004ee8f0
-CVector3f * FUN_004ee8f0(void);
+CVector3f * __cdecl FUN_004ee8f0(void);
 
 // Original: core_grave.cpp_FUN_004ee9d0
 // Address: 004ee9d0
-undefined4 FUN_004ee9d0(void);
+int __cdecl FUN_004ee9d0(void);
 
 // Original: core_grave.cpp_FUN_004ee9e0
 // Address: 004ee9e0
-void FUN_004ee9e0(void);
+void __cdecl FUN_004ee9e0(void);
 
 // Original: core_grave.cpp_FUN_004eea70
 // Address: 004eea70
-void FUN_004eea70(void);
+void __cdecl FUN_004eea70(void);
 
 // Original: core_grave.cpp_FUN_004eead0
 // Address: 004eead0
-void FUN_004eead0(void);
+void __cdecl FUN_004eead0(void);
 
 // Original: core_grave.cpp_FUN_004eeb10
 // Address: 004eeb10
-void FUN_004eeb10(void);
+void __cdecl FUN_004eeb10(void);
 
 // Original: core_grave.cpp_CGrave_dtor_FUN_004eeb40
 // Address: 004eeb40

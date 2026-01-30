@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_FUN_005c69a0
 // Address: 005c69a0
 // Address Range: [[005c69a0, 005c69b5]]
-// Convention: unknown
-// Signature: int core_stranger_cpp_FUN_005c69a0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_FUN_005c69a0(void)
 
 #include "nocturne.h"
 
-int core_stranger_cpp_FUN_005c69a0(void)
+int __cdecl core_stranger_cpp_FUN_005c69a0(void)
 
 {
   SMotion *pSVar1;

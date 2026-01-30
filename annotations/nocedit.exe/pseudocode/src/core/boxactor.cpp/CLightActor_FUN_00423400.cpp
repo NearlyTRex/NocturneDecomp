@@ -1,20 +1,21 @@
 // Name: core_boxactor.cpp_CLightActor_FUN_00423400
 // Address: 00423400
 // Address Range: [[00423400, 00423434]]
-// Convention: unknown
-// Signature: void core_boxactor_cpp_CLightActor_FUN_00423400 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, CDemonActor *param_5,undefined4 param_6,char *param_7)
+// Convention: __cdecl
+// Signature: void __cdecl core_boxactor_cpp_CLightActor_FUN_00423400(void)
 
 #include "nocturne.h"
 
-void core_boxactor_cpp_CLightActor_FUN_00423400
-               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               CDemonActor *param_5,uint param_6,char *param_7)
+void __cdecl core_boxactor_cpp_CLightActor_FUN_00423400(void)
 
 {
   CDemonActor *pCVar1;
+  CDemonActor *in_stack_00000004;
+  char *in_stack_0000000c;
   
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(param_5,g_CLightActorClassInfo.name_hash);
-  sprintf(param_7,"%g mm",(double)(float)pCVar1[4].unk14,unaff_EBX)
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
+                     (in_stack_00000004,g_CLightActorClassInfo.name_hash);
+  sprintf(in_stack_0000000c,"%g mm",(double)(float)pCVar1[4].unk14)
   ;
   return;
 }

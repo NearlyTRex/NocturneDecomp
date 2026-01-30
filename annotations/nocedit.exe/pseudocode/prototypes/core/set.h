@@ -51,9 +51,9 @@ void __cdecl CDemonSet::setCameraView(CDemonSet *this_ptr,int index);
 // Address: 0056b790
 int __cdecl CDemonSet(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0
+// Original: core_set.cpp_CDemonSet_FUN_0056b7e0
 // Address: 0056b7e0
-void CDemonSet::CallToDemonCameraInitAndSetView(void);
+void __cdecl CDemonSet(CDemonSet *this_ptr,uint param_2,uint param_3,int param_4);
 
 // Original: core_set.cpp_CDemonSet_FUN_0056b810
 // Address: 0056b810
@@ -121,11 +121,11 @@ int __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_posi
 
 // Original: core_set.cpp_FUN_0056e180
 // Address: 0056e180
-void FUN_0056e180(void);
+void __cdecl FUN_0056e180(void);
 
 // Original: core_set.cpp_FUN_0056e2b0
 // Address: 0056e2b0
-void FUN_0056e2b0(void);
+void __cdecl FUN_0056e2b0(void);
 
 // Original: core_set.cpp_CDemonSet_FUN_0056e3e0
 // Address: 0056e3e0
@@ -141,11 +141,11 @@ void __cdecl CDemonSet::rotateVertices(CDemonSet *this_ptr,int vertex_count,int 
 
 // Original: core_set.cpp_FUN_0056e890
 // Address: 0056e890
-void FUN_0056e890(void);
+void __cdecl FUN_0056e890(void);
 
 // Original: core_set.cpp_FUN_0056e960
 // Address: 0056e960
-void FUN_0056e960(void);
+void __cdecl FUN_0056e960(void);
 
 // Original: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
 // Address: 0056eac0
@@ -165,7 +165,7 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_FUN_0056fba0
 // Address: 0056fba0
-undefined4 FUN_0056fba0(void);
+int __cdecl FUN_0056fba0(void);
 
 // Original: core_set.cpp_CDemonSet_FUN_0056fbd0
 // Address: 0056fbd0
@@ -185,11 +185,11 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_FUN_005702b0
 // Address: 005702b0
-void FUN_005702b0(void);
+void __cdecl FUN_005702b0(void);
 
 // Original: core_set.cpp_FUN_00570700
 // Address: 00570700
-void FUN_00570700(void);
+void __cdecl FUN_00570700(void);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
 // Address: 00570770
@@ -213,7 +213,7 @@ void __cdecl CDemonSet::setupMirrorRendering(CDemonSet *this_ptr,int mirror_inde
 
 // Original: core_set.cpp_FUN_00570af0
 // Address: 00570af0
-void FUN_00570af0(void);
+void __cdecl FUN_00570af0(void);
 
 // Original: core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70
 // Address: 00570b70
@@ -293,19 +293,19 @@ int __cdecl CDemonSet::isCameraPanning(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_FUN_00571380
 // Address: 00571380
-void FUN_00571380(void);
+void __cdecl FUN_00571380(void);
 
 // Original: core_set.cpp_FUN_005713c0
 // Address: 005713c0
-void FUN_005713c0(void);
+void __cdecl FUN_005713c0(void);
 
 // Original: core_set.cpp_FUN_00571410
 // Address: 00571410
-undefined4 FUN_00571410(void);
+int __cdecl FUN_00571410(void);
 
 // Original: core_set.cpp_FUN_00571440
 // Address: 00571440
-undefined4 FUN_00571440(void);
+int __cdecl FUN_00571440(void);
 
 // Original: core_set.cpp_SRoom_ctor_FUN_00571470
 // Address: 00571470
@@ -329,7 +329,7 @@ C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr);
 
 // Original: core_set.cpp_FUN_005714c0
 // Address: 005714c0
-void FUN_005714c0(void);
+void __cdecl FUN_005714c0(void);
 
 // Original: core_set.cpp_freeVectors_FUN_00571510
 // Address: 00571510

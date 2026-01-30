@@ -1,19 +1,20 @@
 // Name: core_mobster.cpp_FUN_005278d0
 // Address: 005278d0
 // Address Range: [[005278d0, 005279c8]]
-// Convention: unknown
-// Signature: int core_mobster_cpp_FUN_005278d0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_mobster_cpp_FUN_005278d0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_mobster.cpp_FUN_005278d0(uint param_1, uint
    param_2) */
 
-int core_mobster_cpp_FUN_005278d0(void)
+int __cdecl core_mobster_cpp_FUN_005278d0(void)
 
 {
   CVector3f *pCVar1;
   int iVar2;
+  CVector3f *pCVar3;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
   CVector3f local_34;
@@ -46,11 +47,11 @@ int core_mobster_cpp_FUN_005278d0(void)
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_34,INT_02f37ef4
                      );
-  in_stack_00000008 = in_stack_00000008 + iVar2;
-  if (in_stack_00000008 != pCVar1) {
-    in_stack_00000008->x = pCVar1->x;
-    in_stack_00000008->y = pCVar1->y;
-    in_stack_00000008->z = pCVar1->z;
+  pCVar3 = in_stack_00000008 + iVar2;
+  if (pCVar3 != pCVar1) {
+    pCVar3->x = pCVar1->x;
+    pCVar3->y = pCVar1->y;
+    pCVar3->z = pCVar1->z;
   }
   return iVar2 + 1;
 }

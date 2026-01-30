@@ -57,19 +57,19 @@ void __cdecl CTrigger(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_FUN_005e0aa0
 // Address: 005e0aa0
-void FUN_005e0aa0(void);
+void __cdecl FUN_005e0aa0(void);
 
 // Original: core_trigger.cpp_FUN_005e0ac0
 // Address: 005e0ac0
-int FUN_005e0ac0(void);
+int __cdecl FUN_005e0ac0(void);
 
 // Original: core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00
 // Address: 005e0b00
-void SomethingReceivedDamage(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,float param_6);
+void __cdecl SomethingReceivedDamage(void);
 
 // Original: core_trigger.cpp_FUN_005e0ba0
 // Address: 005e0ba0
-void FUN_005e0ba0(void);
+void __cdecl FUN_005e0ba0(void);
 
 // Original: core_trigger.cpp_CTrigger_FUN_005e0c30
 // Address: 005e0c30
@@ -77,7 +77,7 @@ int __cdecl CTrigger(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0
 // Address: 005e0cd0
-undefined4 CTrigger::containsActor(void);
+int __cdecl CTrigger::containsActor(void);
 
 // Original: core_trigger.cpp_CTrigger_FUN_005e0f70
 // Address: 005e0f70

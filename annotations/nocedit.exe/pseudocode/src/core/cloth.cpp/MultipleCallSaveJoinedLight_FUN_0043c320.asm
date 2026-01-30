@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(int param_1)
+; __cdecl void __cdecl core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(void)
 ;
 ;
 ; XREF[2]:
@@ -61,7 +61,7 @@ section .text
     ADD EBX,0x4                         ; 0043c372
     INC ESI                             ; 0043c375
     CALL core_cloth.cpp_FUN_0043bae0    ; 0043c376
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bae0()
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
     MOV EAX,dword ptr [EDI]             ; 0043c37b
     ADD ESP,0x8                         ; 0043c37d
     CMP ESI,EAX                         ; 0043c380

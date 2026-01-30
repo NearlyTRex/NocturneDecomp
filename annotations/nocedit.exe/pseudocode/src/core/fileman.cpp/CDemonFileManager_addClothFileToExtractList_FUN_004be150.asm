@@ -95,7 +95,7 @@ section .text
     PUSH EBX                            ; 004be1dc
     MOV ESI,0x158                       ; 004be1dd
     CALL core_cloth.cpp_FUN_0043e0a0    ; 004be1e2
-        ;   XREF to: 0043e0a0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e0a0()
+        ;   XREF to: 0043e0a0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e0a0()
     MOV ECX,0x6297e6                    ; 004be1e7 | = "..\\core\\fileman.cpp"
     ADD ESP,0x8                         ; 004be1ec
     MOV dword ptr [0x02f0d944],ESI      ; 004be1ef | g_CurrentDebugLine
@@ -110,7 +110,7 @@ section .text
     PUSH EAX                            ; 004be203
         ;   Label: LAB_004be203
     CALL core_cloth.cpp_FUN_00438ba0    ; 004be204
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 004be209
     JMP 0x004be18b                      ; 004be20c
         ;   XREF to: 004be18b (UNCONDITIONAL_JUMP)  ; LAB_004be18b
@@ -118,7 +118,7 @@ section .text
         ;   Label: LAB_004be211
     PUSH EBX                            ; 004be213
     CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 004be214
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
     ADD ESP,0x8                         ; 004be219
     PUSH EAX                            ; 004be21c
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004be21d

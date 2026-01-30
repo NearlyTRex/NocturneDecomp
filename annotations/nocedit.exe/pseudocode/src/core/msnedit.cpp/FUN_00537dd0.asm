@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_msnedit_cpp_FUN_00537dd0(void)
+; __cdecl void __cdecl core_msnedit_cpp_FUN_00537dd0(char *param_1,char *param_2,char *param_3)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
+; char *           Stack[0xc]:4   param_3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Can_t_find_s_s_to_copy_t_0063bc4b

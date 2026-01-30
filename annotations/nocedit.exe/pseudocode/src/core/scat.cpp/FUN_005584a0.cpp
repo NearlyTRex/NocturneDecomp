@@ -1,15 +1,15 @@
 // Name: core_scat.cpp_FUN_005584a0
 // Address: 005584a0
 // Address Range: [[005584a0, 00558718]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_005584a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_005584a0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_005584a0(uint param_1, uint param_2)
     */
 
-void core_scat_cpp_FUN_005584a0(void)
+void __cdecl core_scat_cpp_FUN_005584a0(void)
 
 {
   CQuaternion4f *pCVar1;

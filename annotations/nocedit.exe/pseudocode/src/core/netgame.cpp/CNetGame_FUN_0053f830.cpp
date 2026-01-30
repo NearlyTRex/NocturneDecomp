@@ -1,14 +1,14 @@
 // Name: core_netgame.cpp_CNetGame_FUN_0053f830
 // Address: 0053f830
 // Address Range: [[0053f830, 0053f855]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_CNetGame_FUN_0053f830(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_netgame.cpp_CNetGame_FUN_0053f830(CNetGame* param_1) */
 
-void core_netgame_cpp_CNetGame_FUN_0053f830(void)
+void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(void)
 
 {
   WORD WStack00000004;

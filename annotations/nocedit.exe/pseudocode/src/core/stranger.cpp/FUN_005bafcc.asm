@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_stranger_cpp_FUN_005bafcc(void)
+; __cdecl int __cdecl core_stranger_cpp_FUN_005bafcc(void)
 ;
 ;
 ; XREF[1]:

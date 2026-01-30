@@ -32,12 +32,12 @@ section .text
     ADD EAX,0x1fbdc                     ; 005d885e
     PUSH EAX                            ; 005d8863
     CALL core_cloth.cpp_FUN_00438ba0    ; 005d8864
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 005d8869
     ADD EAX,0x3fe70                     ; 005d886c
     PUSH EAX                            ; 005d8871
     CALL core_cloth.cpp_FUN_00438ba0    ; 005d8872
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
     ADD ESP,0x4                         ; 005d8877
     LEA EBX,[EAX + 0xfffa05b4]          ; 005d887a
     PUSH 0x6548f9                       ; 005d8880 | = "svetlana.dfm"

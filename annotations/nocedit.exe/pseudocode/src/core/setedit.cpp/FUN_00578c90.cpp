@@ -1,23 +1,22 @@
 // Name: core_setedit.cpp_FUN_00578c90
 // Address: 00578c90
 // Address Range: [[00578c90, 00578d71]]
-// Convention: unknown
-// Signature: undefined4 core_setedit_cpp_FUN_00578c90(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_setedit_cpp_FUN_00578c90(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_setedit.cpp_FUN_00578c90(uint param_1, uint param_2,
    uint param_3) */
 
-uint core_setedit_cpp_FUN_00578c90(void)
+int __cdecl core_setedit_cpp_FUN_00578c90(void)
 
 {
   byte bVar1;
   uint uVar2;
   char *pcVar3;
-  uint uVar4;
+  int iVar4;
   int in_stack_00000004;
-  uint in_stack_00000008;
   int in_stack_0000000c;
   char local_2cc [400];
   char local_13c [300];
@@ -28,13 +27,13 @@ uint core_setedit_cpp_FUN_00578c90(void)
   else {
     bVar1 = 0x59;
   }
-  sprintf(local_13c,"%s? [%c] ",in_stack_00000008,(uint)bVar1);
+  sprintf(local_13c,"%s? [%c] ");
   engine_2d_c_drawText_FUN_00401fd0(local_13c,0,in_stack_00000004);
   while( true ) {
     uVar2 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     if (uVar2 == 0x1b) {
       pcVar3 = "ESC";
-      uVar4 = 0xffffffff;
+      iVar4 = -1;
       goto LAB_00578d14;
     }
     if (uVar2 == 0xd) {
@@ -43,14 +42,14 @@ uint core_setedit_cpp_FUN_00578c90(void)
     if (uVar2 == 0x59) break;
     if (uVar2 == 0x4e) {
       pcVar3 = "N";
-      uVar4 = 0;
+      iVar4 = 0;
 LAB_00578d14:
       sprintf(local_2cc,"%s %s",local_13c,pcVar3);
       engine_2d_c_drawText_FUN_00401fd0(local_2cc,0,in_stack_00000004);
-      return uVar4;
+      return iVar4;
     }
   }
   pcVar3 = "Y";
-  uVar4 = 1;
+  iVar4 = 1;
   goto LAB_00578d14;
 }

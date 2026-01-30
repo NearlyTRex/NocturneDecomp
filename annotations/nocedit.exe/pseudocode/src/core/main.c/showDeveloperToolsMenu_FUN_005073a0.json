@@ -4,20 +4,8 @@
       {
         "category": "incompatible_types",
         "column": 62,
-        "line": 84,
+        "line": 85,
         "message": "invalid conversion from 'void*' to 'CKeyFramedModel*' [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 71,
-        "line": 121,
-        "message": "void value not ignored as it ought to be"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 124,
-        "message": "too many arguments to function 'void core_morph_cpp_FUN_0052bcb0()'"
       }
     ],
     "success": false,
@@ -31,19 +19,13 @@
       {
         "category": "other",
         "column": 56,
-        "line": 45,
+        "line": 46,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 48,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 53,
+        "line": 49,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -114,106 +96,114 @@
       },
       {
         "category": "other",
+        "column": 41,
+        "line": 65,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
         "column": 70,
-        "line": 84,
+        "line": 85,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 90,
+        "line": 91,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 92,
+        "line": 93,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 96,
+        "line": 97,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 118,
+        "line": 119,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 126,
+        "line": 128,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 146,
+        "line": 148,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 147,
+        "line": 149,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 160,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 58,
         "line": 162,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 63,
-        "line": 165,
+        "column": 58,
+        "line": 164,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 40,
+        "column": 63,
         "line": 167,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 193,
+        "column": 40,
+        "line": 169,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 196,
+        "line": 195,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 198,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 200,
+        "line": 202,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 609,
-    "complexity_score": 211,
+    "complexity_score": 238,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 58,
-    "pseudocode_lines": 211,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 820
+    "pseudocode_lines": 213,
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 822
   },
   "cross_references": [
     {
@@ -960,5 +950,20 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX",
+      "text": "CMorphModel *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 116,
+      "match": "extraout_EAX",
+      "text": "this_ptr_00 = extraout_EAX;",
+      "type": "extra_output"
+    }
+  ]
 }

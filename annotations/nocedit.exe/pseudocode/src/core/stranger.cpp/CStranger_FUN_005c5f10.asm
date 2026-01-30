@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_stranger_cpp_CStranger_FUN_005c5f10(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -103,7 +103,7 @@ section .text
         ;   Label: LAB_005c6009
     PUSH EBX                            ; 005c600a
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c600b
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
     MOV dword ptr [ESP + 0x8],EAX       ; 005c6010
     FLD float ptr [ESP + 0x8]           ; 005c6014
     ADD ESP,0x8                         ; 005c6018
@@ -277,7 +277,7 @@ section .text
         ;   Label: LAB_005c61af
     PUSH EBX                            ; 005c61b1
     CALL core_stranger.cpp_CStranger_FUN_005c06b0 ; 005c61b2
-        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_FUN_005c06b0()
+        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0()
     MOV EAX,dword ptr [EBX + 0x1fc2c]   ; 005c61b7
     MOV ECX,dword ptr [EAX + 0x2dc]     ; 005c61bd
     ADD ESP,0x8                         ; 005c61c3
@@ -297,7 +297,7 @@ section .text
     PUSH EBP                            ; 005c61f1
     PUSH EBX                            ; 005c61f2
     CALL core_stranger.cpp_CStranger_FUN_005c06b0 ; 005c61f3
-        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_FUN_005c06b0()
+        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0()
     MOV EDX,dword ptr [EBX + 0x1fc30]   ; 005c61f8
     ADD ESP,0x8                         ; 005c61fe
     TEST EDX,EDX                        ; 005c6201

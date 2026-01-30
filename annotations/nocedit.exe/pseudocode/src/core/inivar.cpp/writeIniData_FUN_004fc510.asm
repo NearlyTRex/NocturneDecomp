@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 00508821
 ;   core_menu.cpp_showOptionsScreen_FUN_00512d30 at 00512e85
-;   core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680 at 005378b4
+;   core_msnedit.cpp_CDemonMission_FUN_00537680 at 005378b4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gamePIXX_00630069
@@ -30,7 +30,7 @@
 ;   ... and 113 more
 ;
 ; Called Functions:
-;   core_msnedit.cpp_writeIni_FUN_005375d0
+;   core_msnedit.cpp_CDemonMission_writeIni_FUN_005375d0
 ;   core_setedit.cpp_CDemonSet_writeIni_FUN_00584920
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0
@@ -590,8 +590,8 @@ section .text
     PUSH EAX                            ; 004fcba5
     MOV EDI,dword ptr [0x0067d550]      ; 004fcba6 | g_CDemonMissionPtr
     PUSH EDI                            ; 004fcbac | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_writeIni_FUN_005375d0 ; 004fcbad
-        ;   XREF to: 005375d0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_writeIni_FUN_005375d0(CDemonMission * mission, CIniFile * ini_file)
+    CALL core_msnedit.cpp_CDemonMission_writeIni_FUN_005375d0 ; 004fcbad
+        ;   XREF to: 005375d0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_writeIni_FUN_005375d0(CDemonMission * this_ptr, CIniFile * ini_file)
     ADD ESP,0x8                         ; 004fcbb2
     MOV EAX,ESP                         ; 004fcbb5
     PUSH EAX                            ; 004fcbb7

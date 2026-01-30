@@ -138,7 +138,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x4]       ; 005d8c61
     MOV dword ptr [ESI],EAX             ; 005d8c64
     CALL core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970 ; 005d8c66
-        ;   XREF to: 005d9970 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970()
+        ;   XREF to: 005d9970 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970()
     ADD ESP,0x8                         ; 005d8c6b
     PUSH dword ptr [EBP + 0x18]         ; 005d8c6e
     FLD float ptr [EBX + 0x23b4]        ; 005d8c71
@@ -356,7 +356,7 @@ section .text
     LEA EAX,[EBX + 0x1fbdc]             ; 005d8ecb
     PUSH EAX                            ; 005d8ed1
     CALL core_cloth.cpp_FUN_0043ab80    ; 005d8ed2
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043ab80()
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
     ADD ESP,0x18                        ; 005d8ed7
     PUSH ESI                            ; 005d8eda
     PUSH dword ptr [EBX + 0x2414]       ; 005d8edb
@@ -367,7 +367,7 @@ section .text
     ADD EBX,0x5fa4c                     ; 005d8eed
     PUSH EBX                            ; 005d8ef3
     CALL core_cloth.cpp_FUN_0043ab80    ; 005d8ef4
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043ab80()
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
     ADD ESP,0x18                        ; 005d8ef9
     MOV ESP,EBP                         ; 005d8efc
     POP EBP                             ; 005d8efe
@@ -415,7 +415,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005d8f50
     PUSH EBX                            ; 005d8f53
     CALL core_svetlana.cpp_FUN_005d9260 ; 005d8f54
-        ;   XREF to: 005d9260 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_FUN_005d9260()
+        ;   XREF to: 005d9260 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_FUN_005d9260()
     ADD ESP,0x8                         ; 005d8f59
     LEA EAX,[EBX + 0x158]               ; 005d8f5c
         ;   Label: LAB_005d8f5c
@@ -517,7 +517,7 @@ section .text
         ;   XREF to: 005d9011 (CONDITIONAL_JUMP)  ; LAB_005d9011
     PUSH EBX                            ; 005d907e
     CALL core_hero.cpp_FUN_004f2af0     ; 005d907f
-        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2af0()
+        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2af0()
     XOR EDI,EDI                         ; 005d9084
     ADD ESP,0x4                         ; 005d9086
     TEST EAX,EAX                        ; 005d9089
@@ -525,7 +525,7 @@ section .text
         ;   XREF to: 005d9011 (CONDITIONAL_JUMP)  ; LAB_005d9011
     PUSH EBX                            ; 005d908d
     CALL core_hero.cpp_FUN_004f2d70     ; 005d908e
-        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2d70()
+        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2d70()
     ADD ESP,0x4                         ; 005d9093
     MOV dword ptr [ESP + 0x74],EAX      ; 005d9096
     TEST EAX,EAX                        ; 005d909a
@@ -540,14 +540,14 @@ section .text
         ;   XREF to: 005d9011 (CONDITIONAL_JUMP)  ; LAB_005d9011
     PUSH EBX                            ; 005d90ae
     CALL core_hero.cpp_FUN_004f2c40     ; 005d90af
-        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2c40()
+        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2c40()
     ADD ESP,0x4                         ; 005d90b4
     TEST EAX,EAX                        ; 005d90b7
     JNZ 0x005d9011                      ; 005d90b9
         ;   XREF to: 005d9011 (CONDITIONAL_JUMP)  ; LAB_005d9011
     PUSH EBX                            ; 005d90bf
     CALL core_hero.cpp_FUN_004f2f50     ; 005d90c0
-        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2f50()
+        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2f50()
     ADD ESP,0x4                         ; 005d90c5
     TEST EAX,EAX                        ; 005d90c8
     JNZ 0x005d90dc                      ; 005d90ca
@@ -557,14 +557,14 @@ section .text
     PUSH EBX                            ; 005d90d1
         ;   Label: LAB_005d90d1
     CALL core_hero.cpp_FUN_004f2ed0     ; 005d90d2
-        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2ed0()
+        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2ed0()
     ADD ESP,0x4                         ; 005d90d7
     JMP 0x005d90a3                      ; 005d90da
         ;   XREF to: 005d90a3 (UNCONDITIONAL_JUMP)  ; LAB_005d90a3
     PUSH EBX                            ; 005d90dc
         ;   Label: LAB_005d90dc
     CALL core_hero.cpp_FUN_004f30f0     ; 005d90dd
-        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f30f0()
+        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f30f0()
     ADD ESP,0x4                         ; 005d90e2
     JMP 0x005d9011                      ; 005d90e5
         ;   XREF to: 005d9011 (UNCONDITIONAL_JUMP)  ; LAB_005d9011

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_dynamite_cpp_FUN_0049ce70(void)
+; __cdecl int __cdecl core_dynamite_cpp_FUN_0049ce70(void)
 ;
 ;
 ; Referenced Globals:
@@ -21,7 +21,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0049ce71
     PUSH EBX                            ; 0049ce75
     CALL core_weapon.cpp_FUN_005ee6e0   ; 0049ce76
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ee6e0()
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
     ADD ESP,0x4                         ; 0049ce7b
     TEST EAX,EAX                        ; 0049ce7e
     JNZ 0x0049ce84                      ; 0049ce80

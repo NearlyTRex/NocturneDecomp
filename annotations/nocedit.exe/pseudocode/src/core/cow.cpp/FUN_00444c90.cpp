@@ -1,14 +1,14 @@
 // Name: core_cow.cpp_FUN_00444c90
 // Address: 00444c90
 // Address Range: [[00444c90, 00444c9d]]
-// Convention: unknown
-// Signature: void core_cow_cpp_FUN_00444c90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cow_cpp_FUN_00444c90(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_cow.cpp_FUN_00444c90(uint param_1) */
 
-void core_cow_cpp_FUN_00444c90(void)
+void __cdecl core_cow_cpp_FUN_00444c90(void)
 
 {
   CEnemy *in_stack_00000004;

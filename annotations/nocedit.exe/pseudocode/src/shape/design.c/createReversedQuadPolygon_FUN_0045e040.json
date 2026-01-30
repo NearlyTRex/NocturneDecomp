@@ -40,10 +40,10 @@
         "0045e068"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_createReversedQuadPolygon_FUN_0045e040",
-    "signature": "void shape_design_c_createReversedQuadPolygon_FUN_0045e040(void)"
+    "signature": "void __cdecl shape_design_c_createReversedQuadPolygon_FUN_0045e040(void)"
   },
   "function_calls": [
     {
@@ -60,18 +60,15 @@
         "call_addr": "0045e471",
         "call_type": "direct",
         "caller": "shape_design.c_createRotationalSweepGeometry_FUN_0045e070",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 30,
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 4
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 6
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6666666666666665,
@@ -108,11 +105,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
+      "estimated_params": 4,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
     }
   ]

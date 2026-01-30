@@ -1,12 +1,12 @@
 // Name: shape_design.c_createBoxPrimitive_FUN_0045e520
 // Address: 0045e520
 // Address Range: [[0045e520, 0045ea88]]
-// Convention: unknown
-// Signature: void shape_design_c_createBoxPrimitive_FUN_0045e520(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_createBoxPrimitive_FUN_0045e520(void)
 
 #include "nocturne.h"
 
-void shape_design_c_createBoxPrimitive_FUN_0045e520(void)
+void __cdecl shape_design_c_createBoxPrimitive_FUN_0045e520(void)
 
 {
   char cVar1;

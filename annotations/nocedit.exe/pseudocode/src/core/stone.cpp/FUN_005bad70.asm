@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_stone_cpp_FUN_005bad70(void)
+; __cdecl int __cdecl core_stone_cpp_FUN_005bad70(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_bodypart_cpp_FUN_0041ae50(void)
+; __cdecl void __cdecl core_bodypart_cpp_FUN_0041ae50(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18
@@ -70,7 +70,7 @@ section .text
     PUSH EAX                            ; 0041aebb
     FSTP float ptr [EDX + 0x8]          ; 0041aebc
     CALL core_flame.cpp_FUN_004c9b90    ; 0041aebf
-        ;   XREF to: 004c9b90 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004c9b90()
+        ;   XREF to: 004c9b90 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9b90()
     MOV dword ptr [ESI + 0x1b8],0x0     ; 0041aec4
     MOV dword ptr [ESI + 0x164],0x3fc00000 ; 0041aece
     MOV dword ptr [ESI + 0x168],0x40400000 ; 0041aed8

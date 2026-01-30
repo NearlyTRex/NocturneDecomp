@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_platfrm_cpp_FUN_0054e760(void)
+; __cdecl int __cdecl core_platfrm_cpp_FUN_0054e760(void)
 ;
 ;
 ; XREF[1]:
@@ -36,7 +36,7 @@ section .text
     MOV dword ptr [EAX + 0x2d4],0x1     ; 0054e78b
     PUSH EDX                            ; 0054e795
     CALL core_platfrm.cpp_FUN_0054cab0  ; 0054e796
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054cab0()
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054cab0()
     MOV EAX,0x1                         ; 0054e79b
     ADD ESP,0x4                         ; 0054e7a0
     POP EBX                             ; 0054e7a3
@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [EAX + 0x2d4],0x0     ; 0054e7af
     PUSH EDX                            ; 0054e7b9
     CALL core_platfrm.cpp_FUN_0054cab0  ; 0054e7ba
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054cab0()
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054cab0()
     MOV EAX,0x1                         ; 0054e7bf
     ADD ESP,0x4                         ; 0054e7c4
     POP EBX                             ; 0054e7c7

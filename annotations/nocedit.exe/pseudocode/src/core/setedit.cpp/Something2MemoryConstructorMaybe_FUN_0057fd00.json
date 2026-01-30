@@ -2,51 +2,63 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 17,
+        "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
+      },
+      {
         "category": "incompatible_types",
         "column": 24,
-        "line": 40,
+        "line": 41,
         "message": "invalid conversion from 'void*' to 'int*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 56,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 22,
         "line": 57,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 22,
         "line": 58,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 22,
+        "column": 17,
         "line": 59,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
+        "column": 22,
+        "line": 60,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
         "column": 49,
-        "line": 64,
+        "line": 65,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 66,
+        "line": 67,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 101,
+        "message": "'extraout_var' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 101,
+        "line": 102,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -61,86 +73,89 @@
       {
         "category": "other",
         "column": 72,
-        "line": 41,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 44,
+        "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 46,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 56,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 13,
         "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 8,
+        "column": 13,
         "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 13,
+        "column": 8,
         "line": 59,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 13,
+        "line": 60,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 41,
-        "line": 64,
+        "line": 65,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 66,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 101,
+        "line": 102,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 121,
+        "line": 122,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 333,
+    "complexity_score": 389,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
-    "pseudocode_lines": 113,
-    "suspect_count": 20,
+    "pseudocode_lines": 114,
+    "suspect_count": 24,
     "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
+      "undefined_type",
       "unnamed_param"
     ],
-    "total_lines": 313
+    "total_lines": 314
   },
   "cross_references": [
     {
@@ -164,10 +179,10 @@
         "0057ff02"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00",
-    "signature": "void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)"
+    "signature": "void __cdecl core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)"
   },
   "function_calls": [
     {
@@ -335,31 +350,24 @@
         "call_addr": "0057e188",
         "call_type": "direct",
         "caller": "core_setedit.cpp_UserInputCreate_FUN_0057d660",
-        "estimated_params": 6,
+        "estimated_params": 3,
         "instructions_analyzed": 8,
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       },
       {
         "call_addr": "0057adcc",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 6,
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 6
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.607361963190184,
@@ -497,120 +505,148 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved type",
+      "line": 10,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "void *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 32,
       "match": "in_stack_00000008",
       "text": "memset(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 51,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 52,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 53,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 58,
       "match": "(int *)((int)",
       "text": "piVar4[(uint)bVar6 * -2 + 1] = *(int *)((int)&local_50 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 71,
       "match": "in_stack_00000004",
       "text": "local_28 = (CBoundingBox3D *)(in_stack_00000004 + 0x60);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 72,
       "match": "in_stack_00000004",
       "text": "local_24 = (CVector3i *)(in_stack_00000004 + 0x44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 73,
       "match": "in_stack_00000004",
       "text": "local_20 = (CVector3f *)(in_stack_00000004 + 0x41);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 75,
       "match": "in_stack_0000000c",
       "text": "if (local_14 != in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 94,
+      "match": "extraout_var",
+      "text": "if (CONCAT31(extraout_var,bVar1) != 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31(extraout_var,bVar1) != 0) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
       "match": "in_stack_00000008",
-      "text": "pcVar3 = (char *)(g_WindowWidth * iVar1 + iVar5 + (int)in_stack_00000008);",
+      "text": "pcVar3 = (char *)(g_WindowWidth * iVar2 + iVar5 + (int)in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 111,
       "match": "in_stack_00000004",
       "text": "} while (local_14 < *in_stack_00000004);",
       "type": "stack_param"
@@ -619,11 +655,11 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

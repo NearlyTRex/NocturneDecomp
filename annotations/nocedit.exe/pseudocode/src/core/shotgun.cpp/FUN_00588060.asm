@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_shotgun_cpp_FUN_00588060(void)
+; __cdecl int __cdecl core_shotgun_cpp_FUN_00588060(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x80]:1  local_80
@@ -56,7 +56,7 @@ section .text
     ADD ESP,0xc                         ; 00588096
     PUSH EBX                            ; 00588099
     CALL core_weapon.cpp_FUN_005ee6e0   ; 0058809a
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ee6e0()
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
     ADD ESP,0x4                         ; 0058809f
     TEST EAX,EAX                        ; 005880a2
     JZ 0x00588398                       ; 005880a4

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown bool core_waypoint_cpp_FUN_005ebd40(void)
+; __cdecl bool __cdecl core_waypoint_cpp_FUN_005ebd40(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x30]:1  local_30
@@ -116,7 +116,7 @@ section .text
     PUSH ECX                            ; 005ebdfb
     MOV dword ptr [ESP + 0x24],EAX      ; 005ebdfc
     CALL core_path.cpp_FUN_00548500     ; 005ebe00
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 005ebe05
     PUSH 0x0                            ; 005ebe08
     LEA EDX,[ESP + 0x4]                 ; 005ebe0a

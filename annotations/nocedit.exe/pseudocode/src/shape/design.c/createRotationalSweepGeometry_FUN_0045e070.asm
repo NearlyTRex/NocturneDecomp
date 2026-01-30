@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
+; __cdecl void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xc4]:1  local_c4
@@ -411,7 +411,7 @@ section .text
     DEC EAX                             ; 0045e46f
     PUSH EAX                            ; 0045e470
     CALL shape_design.c_createReversedQuadPolygon_FUN_0045e040 ; 0045e471
-        ;   XREF to: 0045e040 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createReversedQuadPolygon_FUN_0045e040()
+        ;   XREF to: 0045e040 (UNCONDITIONAL_CALL)  ; void shape_design.c_createReversedQuadPolygon_FUN_0045e040()
     ADD ESP,0x10                        ; 0045e476
     JMP 0x0045e41e                      ; 0045e479
         ;   XREF to: 0045e41e (UNCONDITIONAL_JUMP)  ; LAB_0045e41e
@@ -480,7 +480,7 @@ section .text
     DEC EAX                             ; 0045e4fe
     PUSH EAX                            ; 0045e4ff
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e500
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e505
     JMP 0x0045e4ad                      ; 0045e508
         ;   XREF to: 0045e4ad (UNCONDITIONAL_JUMP)  ; LAB_0045e4ad

@@ -50,7 +50,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 00556f22
     MOV dword ptr [EAX],EDX             ; 00556f25
     CALL core_scat.cpp_FUN_00557150     ; 00556f27
-        ;   XREF to: 00557150 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00557150()
+        ;   XREF to: 00557150 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_00557150()
     ADD ESP,0x4                         ; 00556f2c
     MOV dword ptr [EBX + 0x1fbe8],0x0   ; 00556f2f
     PUSH 0x0                            ; 00556f39

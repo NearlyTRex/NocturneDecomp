@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_scat_cpp_FUN_00558720(void)
+; __cdecl void __cdecl core_scat_cpp_FUN_00558720(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x144]:4  local_144
@@ -258,7 +258,7 @@ section .text
     PUSH EBX                            ; 00558a15
     PUSH ESI                            ; 00558a16
     CALL core_scat.cpp_FUN_00558cf0     ; 00558a17
-        ;   XREF to: 00558cf0 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00558cf0()
+        ;   XREF to: 00558cf0 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_FUN_00558cf0()
     MOV dword ptr [ESP + 0x134],EAX     ; 00558a1c
     FLD float ptr [ESP + 0x134]         ; 00558a23
     ADD ESP,0xc                         ; 00558a2a

@@ -3706,6 +3706,7 @@ dst_rule g_DstStartRule = {
 float g_MaxSoftwareLatency = 0.5f;
 
 // int
+int INT_00680648 = 0x2D;
 int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
 int g_CNPCClassVersion = 0x4;
@@ -3863,7 +3864,6 @@ undefined1 DAT_0068500c = 0;
 undefined1 DAT_006852db = 0;
 
 // undefined4
-undefined4 DAT_00680648 = 0xFFFFFFFF;
 undefined4 DAT_00680818 = 0x501502F9;
 undefined4 DAT_00680830 = 0;
 undefined4 DAT_00680834 = 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int shape_superopt_cpp_FUN_005c8e70(void)
+; __cdecl int __cdecl shape_superopt_cpp_FUN_005c8e70(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xe4]:4  local_e4
@@ -185,7 +185,7 @@ section .text
     PUSH EBX                            ; 005c8fcb
     MOV dword ptr [EBP + 0x66],EDX      ; 005c8fcc
     CALL shape_superopt.cpp_FUN_005c9aa0 ; 005c8fcf
-        ;   XREF to: 005c9aa0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c9aa0()
+        ;   XREF to: 005c9aa0 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_FUN_005c9aa0()
     MOV EDI,dword ptr [EBP + 0x5a]      ; 005c8fd4
     ADD ESP,0x1c                        ; 005c8fd7
     TEST EDI,EDI                        ; 005c8fda
@@ -223,7 +223,7 @@ section .text
     PUSH EBX                            ; 005c901b
     MOV ESI,EDI                         ; 005c901c
     CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c901e
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
     ADD ESP,0x10                        ; 005c9023
     TEST EAX,EAX                        ; 005c9026
     JZ 0x005c90e7                       ; 005c9028
@@ -236,7 +236,7 @@ section .text
     PUSH ECX                            ; 005c903a
     PUSH EBX                            ; 005c903b
     CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c903c
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
     ADD ESP,0x10                        ; 005c9041
     TEST EAX,EAX                        ; 005c9044
     JZ 0x005c90ee                       ; 005c9046
@@ -255,7 +255,7 @@ section .text
     PUSH EDI                            ; 005c9062
     PUSH EBX                            ; 005c9063
     CALL shape_superopt.cpp_FUN_005c9100 ; 005c9064
-        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c9100()
+        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c9100()
     MOV dword ptr [EBP + 0x52],EAX      ; 005c9069
     MOV dword ptr [EBP + 0x56],EDX      ; 005c906c
     ADD ESP,0xc                         ; 005c906f
@@ -282,7 +282,7 @@ section .text
     PUSH EDX                            ; 005c90a5
     PUSH EBX                            ; 005c90a6
     CALL shape_superopt.cpp_FUN_005c9100 ; 005c90a7
-        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c9100()
+        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c9100()
     MOV dword ptr [EBP + 0x52],EAX      ; 005c90ac
     MOV dword ptr [EBP + 0x56],EDX      ; 005c90af
     ADD ESP,0xc                         ; 005c90b2

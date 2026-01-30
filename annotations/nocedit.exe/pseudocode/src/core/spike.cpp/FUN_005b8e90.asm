@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_spike_cpp_FUN_005b8e90(void)
+; __cdecl void __cdecl core_spike_cpp_FUN_005b8e90(void)
 ;
 ;
 ; Referenced Globals:

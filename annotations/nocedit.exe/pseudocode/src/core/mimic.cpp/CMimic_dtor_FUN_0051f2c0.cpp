@@ -9,6 +9,7 @@
 CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint d1)
 
 {
+  int extraout_EAX;
   int iVar1;
   CDeformableModelInstance *pCVar2;
   CMimic *ptr;
@@ -33,8 +34,8 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint d
   this_ptr->unk2[0xc5e] = '\0';
   this_ptr->unk2[0xc5f] = '\0';
   core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->unk2 + 0x2c));
-  iVar1 = core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
-  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(iVar1 + -0x8bb8));
+  core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
+  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(extraout_EAX + -0x8bb8));
   iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
   iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));

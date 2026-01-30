@@ -1,14 +1,12 @@
 // Name: core_script.cpp_CScript_dbLoad_FUN_005603c0
 // Address: 005603c0
 // Address Range: [[005603c0, 005606dc]]
-// Convention: unknown
-// Signature: void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)
 
 #include "nocturne.h"
 
-/* Signature: byte core_script.cpp_CScript_dbLoad(CScript* param_1, uint dbfilename) */
-
-void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
+void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)
 
 {
   char cVar1;
@@ -20,27 +18,27 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
   char *pcVar6;
   uint *puVar7;
   byte bVar8;
-  int in_stack_00000004;
-  char *in_stack_00000008;
   char local_334 [60];
   char local_2f8 [60];
   char local_2bc [30];
-  byte local_29e [402];
+  char local_29e [402];
   char local_10c [256];
   int local_c;
   
   bVar8 = 0;
-  *(uint *)(in_stack_00000004 + 0x1c) = 0;
-  local_c = engine_dosio_c_getFileSize_FUN_00481880("world",in_stack_00000008);
+  this_ptr->unk4[4] = '\0';
+  this_ptr->unk4[5] = '\0';
+  this_ptr->unk4[6] = '\0';
+  this_ptr->unk4[7] = '\0';
+  local_c = engine_dosio_c_getFileSize_FUN_00481880("world",param_2);
   if (local_c < 1) {
     return;
   }
-  file_handle = engine_dosio_c_getFile_FUN_00481a50
-                          ("world",in_stack_00000008,"rt");
+  file_handle = engine_dosio_c_getFile_FUN_00481a50("world",param_2,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\script.cpp";
     g_CurrentLineNumber = 0xec2;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",in_stack_00000008);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",param_2);
   }
   lVar2 = _ftell(file_handle);
   local_c = local_c + lVar2;
@@ -56,12 +54,11 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
       g_CurrentFilename = "..\\core\\script.cpp";
       g_CurrentLineNumber = 0xed6;
       core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("SCScipt::dbLoad - error parsing %s record %d",in_stack_00000008,
-                 *(uint *)(in_stack_00000004 + 0x1c));
+                ("SCScipt::dbLoad - error parsing %s record %d",param_2,*(uint *)(this_ptr->unk4 + 4));
     }
-    core_script_cpp_FUN_00559360();
-    core_script_cpp_FUN_00559360();
-    core_script_cpp_FUN_00559360();
+    core_script_cpp_FUN_00559360(local_334);
+    core_script_cpp_FUN_00559360(local_2bc);
+    core_script_cpp_FUN_00559360(local_29e);
     iVar3 = stricmp(local_2bc,"stranger");
     if (iVar3 == 0) {
       pcVar5 = "$";
@@ -88,10 +85,10 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
       pcVar6[1] = cVar1;
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
-    iVar3 = core_script_cpp_FUN_005606e0();
+    iVar3 = core_script_cpp_CScript_FUN_005606e0(this_ptr,local_334);
     if (-1 < iVar3) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,in_stack_00000008);
+                (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,param_2);
     }
     sprintf(local_2f8,"%s.wav",local_334);
     iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
@@ -112,12 +109,12 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
         } while (cVar1 != '\0');
       }
     }
-    iVar3 = *(int *)(in_stack_00000004 + 0x1c) + 1;
-    *(int *)(in_stack_00000004 + 0x1c) = iVar3;
+    iVar3 = *(int *)(this_ptr->unk4 + 4) + 1;
+    *(int *)(this_ptr->unk4 + 4) = iVar3;
     pvVar4 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (*(void **)(in_stack_00000004 + 0x20),iVar3 * 0x226,
-                        "..\\core\\script.cpp",0xefa);
-    *(void **)(in_stack_00000004 + 0x20) = pvVar4;
+                       (*(void **)(this_ptr->unk4 + 8),iVar3 * 0x226,"..\\core\\script.cpp",
+                        0xefa);
+    *(void **)(this_ptr->unk4 + 8) = pvVar4;
     if (pvVar4 == (void *)0x0) {
       g_CurrentFilename = "..\\core\\script.cpp";
       g_CurrentLineNumber = 0xefb;
@@ -125,8 +122,7 @@ void core_script_cpp_CScript_dbLoad_FUN_005603c0(void)
     }
     pcVar6 = local_334;
     puVar7 = (uint *)
-             (*(int *)(in_stack_00000004 + 0x20) + (*(int *)(in_stack_00000004 + 0x1c) + -1) * 0x226
-             );
+             (*(int *)(this_ptr->unk4 + 8) + (*(int *)(this_ptr->unk4 + 4) + -1) * 0x226);
     for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar7 = *(uint *)pcVar6;
       pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;

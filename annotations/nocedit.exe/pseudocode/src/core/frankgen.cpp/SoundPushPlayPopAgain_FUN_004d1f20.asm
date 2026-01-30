@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
+; __cdecl void __cdecl core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
 ;
 ;
 ; XREF[1]:

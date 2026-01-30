@@ -1,14 +1,14 @@
 // Name: core_stranger.cpp_CStranger_FUN_005c2400
 // Address: 005c2400
 // Address Range: [[005c2400, 005c2846]]
-// Convention: unknown
-// Signature: undefined4 core_stranger_cpp_CStranger_FUN_005c2400(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c2400(CStranger* param_1) */
 
-uint core_stranger_cpp_CStranger_FUN_005c2400(void)
+int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(void)
 
 {
   int *piVar1;
@@ -56,7 +56,7 @@ uint core_stranger_cpp_CStranger_FUN_005c2400(void)
   float local_18;
   
   in_stack_00000004[0x17a].orient.heading = 0.0;
-  local_18 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
+  local_18 = core_charactr_cpp_CCharacter_FUN_0042e840();
   if ((((float)0.98999999999999999 <= local_18) && (in_stack_00000004[0x1b].unk1 == 0)) &&
      (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0)) {
     local_28 = &(in_stack_00000004->location).position;

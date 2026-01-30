@@ -13,7 +13,7 @@ CHostage * __cdecl factoryFunc(void);
 
 // Original: core_hostage.cpp_FUN_004f4830
 // Address: 004f4830
-CDemonActorType * FUN_004f4830(void);
+CDemonActorType * __cdecl FUN_004f4830(void);
 
 // Original: core_hostage.cpp_CHostage_ctor_FUN_004f4840
 // Address: 004f4840
@@ -21,27 +21,27 @@ CHostage * __cdecl CHostage::ctor(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970
 // Address: 004f4970
-void NPCSFromZombieTown(void);
+void __cdecl NPCSFromZombieTown(void);
 
 // Original: core_hostage.cpp_FUN_004f4b40
 // Address: 004f4b40
-int FUN_004f4b40(void);
+int __cdecl FUN_004f4b40(void);
 
 // Original: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0
 // Address: 004f4bd0
-void RelatedToRescuedTownsfolk(void);
+void __cdecl RelatedToRescuedTownsfolk(void);
 
 // Original: core_hostage.cpp_FUN_004f5ff0
 // Address: 004f5ff0
-undefined4 FUN_004f5ff0(void);
+int __cdecl FUN_004f5ff0(void);
 
 // Original: core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120
 // Address: 004f6120
-void RelatedToScatDazzle(void);
+void __cdecl RelatedToScatDazzle(void);
 
 // Original: core_hostage.cpp_CHostage_load_FUN_004f6170
 // Address: 004f6170
-void CHostage::load(void);
+void __cdecl CHostage::load(void);
 
 // Original: core_hostage.cpp_CHostage_FUN_004f6390
 // Address: 004f6390
@@ -65,11 +65,11 @@ void __cdecl CHostage(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_FUN_004f69c0
 // Address: 004f69c0
-void FUN_004f69c0(void);
+void __cdecl FUN_004f69c0(void);
 
 // Original: core_hostage.cpp_FUN_004f6b30
 // Address: 004f6b30
-void FUN_004f6b30(void);
+void __cdecl FUN_004f6b30(void);
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004f6b60
 // Address: 004f6b60

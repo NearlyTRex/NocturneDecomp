@@ -1,14 +1,14 @@
 // Name: core_scat.cpp_FUN_005582c0
 // Address: 005582c0
 // Address Range: [[005582c0, 00558494]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_005582c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_005582c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_scat.cpp_FUN_005582c0(uint param_1) */
 
-void core_scat_cpp_FUN_005582c0(void)
+void __cdecl core_scat_cpp_FUN_005582c0(void)
 
 {
   CMotionController *this_ptr;

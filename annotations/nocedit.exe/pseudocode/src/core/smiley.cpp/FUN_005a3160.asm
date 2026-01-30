@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_smiley_cpp_FUN_005a3160(void)
+; __cdecl int __cdecl core_smiley_cpp_FUN_005a3160(void)
 ;
 ;
 ; Referenced Globals:

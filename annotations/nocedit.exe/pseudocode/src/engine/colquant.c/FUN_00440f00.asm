@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void engine_colquant_c_FUN_00440f00(void)
+; __cdecl void __cdecl engine_colquant_c_FUN_00440f00(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -104,13 +104,13 @@ section .text
     PUSH EDX                            ; 00440ffa
     PUSH EBX                            ; 00440ffb
     CALL engine_colquant.c_FUN_00441260 ; 00440ffc
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441260()
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00441260()
     ADD ESP,0x8                         ; 00441001
     MOV ECX,dword ptr [ESP + 0x24]      ; 00441004
     PUSH ECX                            ; 00441008
     PUSH EBX                            ; 00441009
     CALL engine_colquant.c_FUN_00441260 ; 0044100a
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441260()
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00441260()
     ADD ESP,0x8                         ; 0044100f
     MOV dword ptr [ESI + EBX*0x1 + 0x4044],EDI ; 00441012
     MOV ESI,dword ptr [ESP + 0x24]      ; 00441019
@@ -119,7 +119,7 @@ section .text
     PUSH EDI                            ; 00441022
     PUSH EBX                            ; 00441023
     CALL engine_colquant.c_FUN_00441110 ; 00441024
-        ;   XREF to: 00441110 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441110()
+        ;   XREF to: 00441110 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_FUN_00441110()
     ADD ESP,0xc                         ; 00441029
     ADD ESP,0x8                         ; 0044102c
     POP EBP                             ; 0044102f

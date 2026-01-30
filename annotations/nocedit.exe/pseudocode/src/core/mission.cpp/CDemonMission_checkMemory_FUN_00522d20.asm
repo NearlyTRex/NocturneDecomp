@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 005087cf
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053cef4
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cef4
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30

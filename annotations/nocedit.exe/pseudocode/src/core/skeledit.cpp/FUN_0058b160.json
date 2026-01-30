@@ -85,9 +85,9 @@
         "0058b1f3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_0058b160",
-    "signature": "void core_skeledit_cpp_FUN_0058b160(void)"
+    "signature": "void __cdecl core_skeledit_cpp_FUN_0058b160(void)"
   },
   "function_calls": [
     {
@@ -104,17 +104,15 @@
         "call_addr": "0058c25f",
         "call_type": "direct",
         "caller": "core_skeledit.cpp_FUN_0058c190",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_params": 2
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 3
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.547169811320755,
@@ -241,11 +239,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

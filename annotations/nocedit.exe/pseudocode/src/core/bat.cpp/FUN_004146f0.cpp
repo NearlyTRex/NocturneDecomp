@@ -1,12 +1,12 @@
 // Name: core_bat.cpp_FUN_004146f0
 // Address: 004146f0
 // Address Range: [[004146f0, 00414780]]
-// Convention: unknown
-// Signature: float core_bat_cpp_FUN_004146f0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_bat_cpp_FUN_004146f0(void)
 
 #include "nocturne.h"
 
-float core_bat_cpp_FUN_004146f0(void)
+float __cdecl core_bat_cpp_FUN_004146f0(void)
 
 {
   double dVar1;

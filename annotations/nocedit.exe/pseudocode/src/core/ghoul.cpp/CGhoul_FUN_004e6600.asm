@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
+; __cdecl void __cdecl core_ghoul_cpp_CGhoul_FUN_004e6600(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x38c]:4  local_38c
@@ -752,7 +752,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 004e6cfe | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 004e6d04 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004e6d05
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 004e6d0a
     MOV EDX,dword ptr [EBX + 0xbe3c]    ; 004e6d0d
         ;   Label: LAB_004e6d0d
@@ -843,7 +843,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 004e6df6 | g_CGorePtr
     PUSH ESI                            ; 004e6dfc | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004e6dfd
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 004e6e02
     PUSH 0x62dc76                       ; 004e6e05 | = "ghoul-dig-?.wav @1.3"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004e6e0a
@@ -892,7 +892,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 004e6e81 | g_CGorePtr
     PUSH ESI                            ; 004e6e87 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004e6e88
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 004e6e8d
     PUSH 0x62dc8b                       ; 004e6e90 | = "ghoul-eat-?.wav @1.3"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004e6e95
@@ -941,7 +941,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 004e6f0c | g_CGorePtr
     PUSH ESI                            ; 004e6f12 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004edbb0     ; 004e6f13
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
     ADD ESP,0x14                        ; 004e6f18
     PUSH 0x3f000000                     ; 004e6f1b
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 004e6f20
@@ -1068,7 +1068,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 004e7026 | g_CGorePtr | g_CGoreInstance
     PUSH EDX                            ; 004e702c | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 004e702d
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 004e7032
     MOV dword ptr [EBX + 0xbe28],0x1    ; 004e7035
     MOV ECX,dword ptr [EBX + 0xbedc]    ; 004e703f
@@ -1638,7 +1638,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004e7716
     PUSH EBX                            ; 004e771c
     CALL core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0 ; 004e771d
-        ;   XREF to: 004e63d0 (UNCONDITIONAL_CALL)  ; undefined core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0()
+        ;   XREF to: 004e63d0 (UNCONDITIONAL_CALL)  ; void core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0()
     ADD ESP,0x8                         ; 004e7722
     LEA EAX,[EBX + 0x158]               ; 004e7725
         ;   Label: LAB_004e7725
@@ -2171,7 +2171,7 @@ section .text
     PUSH EAX                            ; 004e7d53
     PUSH EBX                            ; 004e7d54
     CALL core_enemy.cpp_FUN_004a9880    ; 004e7d55
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 004e7d5a
     TEST EAX,EAX                        ; 004e7d5d
     JZ 0x004e70a3                       ; 004e7d5f
@@ -2291,7 +2291,7 @@ section .text
     PUSH EAX                            ; 004e7ec1
     PUSH EBX                            ; 004e7ec2
     CALL core_enemy.cpp_FUN_004a9880    ; 004e7ec3
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9880()
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
     ADD ESP,0x10                        ; 004e7ec8
     TEST EAX,EAX                        ; 004e7ecb
     JZ 0x004e70a3                       ; 004e7ecd

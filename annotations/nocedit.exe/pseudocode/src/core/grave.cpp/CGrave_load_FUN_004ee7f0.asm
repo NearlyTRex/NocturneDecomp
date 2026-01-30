@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_grave_cpp_CGrave_load_FUN_004ee7f0(void)
+; __cdecl void __cdecl core_grave_cpp_CGrave_load_FUN_004ee7f0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

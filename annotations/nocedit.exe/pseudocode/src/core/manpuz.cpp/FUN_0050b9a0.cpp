@@ -1,12 +1,12 @@
 // Name: core_manpuz.cpp_FUN_0050b9a0
 // Address: 0050b9a0
 // Address Range: [[0050b9a0, 0050ba60]]
-// Convention: unknown
-// Signature: void core_manpuz_cpp_FUN_0050b9a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_manpuz_cpp_FUN_0050b9a0(void)
 
 #include "nocturne.h"
 
-void core_manpuz_cpp_FUN_0050b9a0(void)
+void __cdecl core_manpuz_cpp_FUN_0050b9a0(void)
 
 {
   uint *in_stack_00000004;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_lever_cpp_FUN_005051a0(void)
+; __cdecl void __cdecl core_lever_cpp_FUN_005051a0(void)
 ;
 ;
 ; XREF[1]:
@@ -46,7 +46,7 @@ section .text
     PUSH 0x0                            ; 005051cd
     PUSH ESI                            ; 005051cf
     CALL core_lever.cpp_FUN_00504b20    ; 005051d0
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504b20()
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_FUN_00504b20()
     ADD ESP,0x8                         ; 005051d5
     MOV ESI,0x631178                    ; 005051d8 | = "Off"
     PUSH EDI                            ; 005051dd
@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_005051fa
     PUSH ESI                            ; 005051ff
     CALL core_lever.cpp_FUN_00504b20    ; 00505200
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504b20()
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_FUN_00504b20()
     ADD ESP,0x8                         ; 00505205
     MOV ESI,0x63117c                    ; 00505208 | = "On"
     JMP 0x005051dd                      ; 0050520d

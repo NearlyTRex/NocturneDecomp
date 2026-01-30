@@ -147,7 +147,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 0042e1c7
     PUSH EAX                            ; 0042e1ca
     CALL core_waypoint.cpp_FUN_005ec320 ; 0042e1cb
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec320()
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
     ADD ESP,0x8                         ; 0042e1d0
     MOV dword ptr [EDI + 0x25f0],EAX    ; 0042e1d3
     CMP dword ptr [EDI + 0x25f0],0x0    ; 0042e1d9
@@ -230,7 +230,7 @@ section .text
         ;   Label: LAB_0042e2c6
     PUSH EBP                            ; 0042e2c7
     CALL core_waypoint.cpp_FUN_005ec320 ; 0042e2c8
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec320()
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
     ADD ESP,0x8                         ; 0042e2cd
     MOV dword ptr [EDI + 0x25f0],EAX    ; 0042e2d0
     TEST EAX,EAX                        ; 0042e2d6

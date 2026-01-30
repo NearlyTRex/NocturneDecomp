@@ -1,15 +1,15 @@
 // Name: core_cow.cpp_FUN_00444c00
 // Address: 00444c00
 // Address Range: [[00444c00, 00444c4e]]
-// Convention: unknown
-// Signature: undefined4 core_cow_cpp_FUN_00444c00(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_cow_cpp_FUN_00444c00(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_cow.cpp_FUN_00444c00(uint param_1, uint param_2)
     */
 
-uint core_cow_cpp_FUN_00444c00(void)
+int __cdecl core_cow_cpp_FUN_00444c00(void)
 
 {
   CVector3f *pCVar1;

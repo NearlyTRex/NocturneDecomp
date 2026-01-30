@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_event_cpp_FUN_004aa530(void)
+; __cdecl int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int *            Stack[0x8]:4   param_2
+; float *          Stack[0xc]:4   param_3
 ; Local Variables:
 ; undefined1       Stack[-0x78]:1  local_78
 ; undefined4       Stack[-0x14]:4  local_14
@@ -90,7 +94,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004aa5c9
     PUSH EAX                            ; 004aa5cd
     CALL core_event.cpp_FUN_004aa400    ; 004aa5ce
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; CHero * core_event.cpp_FUN_004aa400(char * param_1, uint param_2, int param_3)
     MOV EDX,EAX                         ; 004aa5d3
     ADD ESP,0xc                         ; 004aa5d5
     TEST EAX,EAX                        ; 004aa5d8

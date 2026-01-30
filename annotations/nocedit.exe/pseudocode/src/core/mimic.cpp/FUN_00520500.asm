@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_mimic_cpp_FUN_00520500(void)
+; __cdecl void __cdecl core_mimic_cpp_FUN_00520500(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -43,7 +43,7 @@ section .text
     PUSH ESI                            ; 0052051b
     MOV dword ptr [EBX + 0x4bdf4],0x2   ; 0052051c
     CALL core_cloth.cpp_FUN_00439710    ; 00520526
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 0052052b
     MOV EDX,dword ptr [0x02d7b8d0]      ; 0052052e | g_CGabriellaClassInfo.name_hash
     MOV EAX,[0x02db87d0]                ; 00520534 | g_LocalHeroIndex

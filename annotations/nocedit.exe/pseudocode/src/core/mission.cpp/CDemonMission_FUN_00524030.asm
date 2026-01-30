@@ -11,12 +11,12 @@
 ;   core_event.cpp_FUN_004aa400 at 004aa4d5
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e199e
 ;   core_hiram.cpp_FUN_004f4550 at 004f4626
+;   core_mission.cpp_CDemonMission_FUN_00524660 at 005246c4
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_00523990 at 00523a8f
-;   core_mission.cpp_FUN_00524660 at 005246c4
 ;   core_mission.cpp_FUN_00524c20 at 00524cc0
-;   core_msnedit.cpp_DeleteActors_FUN_0053df90 at 0053e093
-;   core_msnedit.cpp_FUN_0053b510 at 0053b7c6
-;   core_msnedit.cpp_FUN_0053c210 at 0053c2f5
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053ac5a
+;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b2e6
+;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b7c6
 ;   ... and 11 more
 ;
 ; Called Functions:

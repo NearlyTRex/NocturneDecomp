@@ -1,15 +1,15 @@
 // Name: core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700
 // Address: 00411700
 // Address Range: [[00411700, 00411813]]
-// Convention: unknown
-// Signature: void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_ammobox.cpp_AllocateMemoryMaybe(CAmmoBox* param_1, uint
    param_2) */
 
-void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
+void __cdecl core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
 
 {
   char cVar1;

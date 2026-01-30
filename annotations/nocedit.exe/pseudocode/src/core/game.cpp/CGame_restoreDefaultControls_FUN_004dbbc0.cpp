@@ -1,14 +1,14 @@
 // Name: core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0
 // Address: 004dbbc0
 // Address Range: [[004dbbc0, 004dbd77]]
-// Convention: unknown
-// Signature: void core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void)
 
 #include "nocturne.h"
 
 /* Signature: CGame* core_game.cpp_CGame_restoreDefaultControls(CGame* param_1) */
 
-void core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void)
+void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void)
 
 {
   int in_stack_00000004;

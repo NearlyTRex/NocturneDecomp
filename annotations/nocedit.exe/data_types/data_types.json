@@ -261,6 +261,14 @@
       "type":"struct"
     },
     {
+      "name":"CCmdParm",
+      "type":"struct"
+    },
+    {
+      "name":"CCmdParse",
+      "type":"struct"
+    },
+    {
       "name":"CCodec_dtor",
       "type":"function_definition"
     },
@@ -1322,14 +1330,6 @@
     },
     {
       "name":"CScript",
-      "type":"struct"
-    },
-    {
-      "name":"CScriptCmdParm",
-      "type":"struct"
-    },
-    {
-      "name":"CScriptCmdParse",
       "type":"struct"
     },
     {
@@ -22584,6 +22584,42 @@
       "fields":[
         {
           "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CCmdParm",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"unk",
+          "offset":0,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CCmdParse",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"vtable",
           "offset":0,
           "type":"CCodec_vtable*"
@@ -35636,42 +35672,6 @@
       "importable":true,
       "len":1152,
       "name":"CScript",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Class/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"unk",
-          "offset":0,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"CScriptCmdParm",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Class/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"unk",
-          "offset":0,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"CScriptCmdParse",
       "pack":false,
       "type":"struct"
     },

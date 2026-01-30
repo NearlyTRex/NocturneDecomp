@@ -28,8 +28,8 @@
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da211
-;   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 at 0053e508
-;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 00539525
+;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539525
+;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e508
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580680
 ;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b033
 ;   core_setedit.cpp_FUN_00581320 at 005813b7
@@ -204,7 +204,7 @@ section .text
     PUSH EBX                            ; 0056c2f1
     INC ESI                             ; 0056c2f2
     CALL core_set.cpp_FUN_00570af0      ; 0056c2f3
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV ECX,dword ptr [EBX + 0x15acb4]  ; 0056c2f8
     ADD ESP,0x4                         ; 0056c2fe
     CMP ESI,ECX                         ; 0056c301
@@ -261,7 +261,7 @@ section .text
     PUSH EBX                            ; 0056c383
     INC ESI                             ; 0056c384
     CALL core_set.cpp_FUN_00570af0      ; 0056c385
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV EDX,dword ptr [EBX + 0x15acb4]  ; 0056c38a
     ADD ESP,0x4                         ; 0056c390
     CMP ESI,EDX                         ; 0056c393
@@ -377,7 +377,7 @@ section .text
     PUSH EBX                            ; 0056c4b1
     INC ESI                             ; 0056c4b2
     CALL core_set.cpp_FUN_00570af0      ; 0056c4b3
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV ECX,dword ptr [EBX + 0x15acb4]  ; 0056c4b8
     ADD ESP,0x4                         ; 0056c4be
     CMP ESI,ECX                         ; 0056c4c1
@@ -437,7 +437,7 @@ section .text
     PUSH EBX                            ; 0056c53e
     INC ESI                             ; 0056c53f
     CALL core_set.cpp_FUN_00570af0      ; 0056c540
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV EAX,dword ptr [EBX + 0x15acb4]  ; 0056c545
     ADD ESP,0x4                         ; 0056c54b
     CMP ESI,EAX                         ; 0056c54e
@@ -450,7 +450,7 @@ section .text
         ;   Label: LAB_0056c560
     PUSH EDX                            ; 0056c566 | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_FUN_005ef190 ; 0056c567
-        ;   XREF to: 005ef190 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_FUN_005ef190()
+        ;   XREF to: 005ef190 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef190()
     MOV ESI,dword ptr [0x032776b4]      ; 0056c56c | g_DynamicLightCount
     XOR ECX,ECX                         ; 0056c572
     ADD ESP,0x4                         ; 0056c574
@@ -758,7 +758,7 @@ section .text
     ADD ESP,0xc                         ; 0056c864
     PUSH EBX                            ; 0056c867
     CALL core_set.cpp_FUN_00570af0      ; 0056c868
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     ADD ESP,0x4                         ; 0056c86d
     JMP 0x0056c400                      ; 0056c870
         ;   XREF to: 0056c400 (UNCONDITIONAL_JUMP)  ; LAB_0056c400
@@ -802,7 +802,7 @@ section .text
     PUSH EBX                            ; 0056c8ce
     INC ESI                             ; 0056c8cf
     CALL core_set.cpp_FUN_00570af0      ; 0056c8d0
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV ECX,dword ptr [EBX + 0x15acb4]  ; 0056c8d5
     ADD ESP,0x4                         ; 0056c8db
     CMP ESI,ECX                         ; 0056c8de
@@ -850,7 +850,7 @@ section .text
     PUSH EBX                            ; 0056c941
     INC ESI                             ; 0056c942
     CALL core_set.cpp_FUN_00570af0      ; 0056c943
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00570af0()
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
     MOV EAX,dword ptr [EBX + 0x15acb4]  ; 0056c948
     ADD ESP,0x4                         ; 0056c94e
     CMP ESI,EAX                         ; 0056c951

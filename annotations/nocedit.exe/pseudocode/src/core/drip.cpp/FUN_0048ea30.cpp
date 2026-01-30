@@ -1,14 +1,14 @@
 // Name: core_drip.cpp_FUN_0048ea30
 // Address: 0048ea30
 // Address Range: [[0048ea30, 0048ea5c]]
-// Convention: unknown
-// Signature: void core_drip_cpp_FUN_0048ea30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_drip_cpp_FUN_0048ea30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_drip.cpp_FUN_0048ea30(uint param_1) */
 
-void core_drip_cpp_FUN_0048ea30(void)
+void __cdecl core_drip_cpp_FUN_0048ea30(void)
 
 {
   CVector3f *pCVar1;

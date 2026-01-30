@@ -1,14 +1,14 @@
 // Name: core_melee.cpp_CMelee_load_FUN_0050e920
 // Address: 0050e920
 // Address Range: [[0050e920, 0050ea3a]]
-// Convention: unknown
-// Signature: void core_melee_cpp_CMelee_load_FUN_0050e920(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_melee_cpp_CMelee_load_FUN_0050e920(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_weapon_melee.cpp_CMelee_load(CMelee* pMelee) */
 
-void core_melee_cpp_CMelee_load_FUN_0050e920(void)
+void __cdecl core_melee_cpp_CMelee_load_FUN_0050e920(void)
 
 {
   CWeapon *in_stack_00000004;

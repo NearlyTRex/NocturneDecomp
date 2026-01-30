@@ -21,7 +21,7 @@ CFlameThrower * __cdecl CFlameThrower::ctor(CFlameThrower *this_ptr);
 
 // Original: core_flamegun.cpp_FUN_004cb920
 // Address: 004cb920
-undefined4 FUN_004cb920(void);
+int __cdecl FUN_004cb920(void);
 
 // Original: core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0
 // Address: 004cb9b0
@@ -29,15 +29,15 @@ void __cdecl CFlameThrower::process(CFlameThrower *this_ptr,float delta_time);
 
 // Original: core_flamegun.cpp_FUN_004cbab0
 // Address: 004cbab0
-float FUN_004cbab0(void);
+float __cdecl FUN_004cbab0(void);
 
 // Original: core_flamegun.cpp_FUN_004cbad0
 // Address: 004cbad0
-void FUN_004cbad0(void);
+void __cdecl FUN_004cbad0(void);
 
 // Original: core_flamegun.cpp_FUN_004cbad1
 // Address: 004cbad1
-float FUN_004cbad1(void);
+float __cdecl FUN_004cbad1(void);
 
 // Original: core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00
 // Address: 004cbb00
@@ -53,11 +53,11 @@ CFlashlight * __cdecl CFlashlight::ctor(CFlashlight *this_ptr);
 
 // Original: core_flamegun.cpp_FUN_004cbc40
 // Address: 004cbc40
-undefined4 FUN_004cbc40(void);
+int __cdecl FUN_004cbc40(void);
 
 // Original: core_flamegun.cpp_FUN_004cbc50
 // Address: 004cbc50
-undefined4 FUN_004cbc50(void);
+int __cdecl FUN_004cbc50(void);
 
 // Original: core_flamegun.cpp_CFlashlight_dtor_FUN_004cbc60
 // Address: 004cbc60

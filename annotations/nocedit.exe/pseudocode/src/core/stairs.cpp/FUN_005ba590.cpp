@@ -1,15 +1,15 @@
 // Name: core_stairs.cpp_FUN_005ba590
 // Address: 005ba590
 // Address Range: [[005ba590, 005ba659]]
-// Convention: unknown
-// Signature: float core_stairs_cpp_FUN_005ba590(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_stairs_cpp_FUN_005ba590(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_stairs.cpp_FUN_005ba590(uint param_1, uint
    param_2, uint param_3, uint param_4) */
 
-float core_stairs_cpp_FUN_005ba590(void)
+float __cdecl core_stairs_cpp_FUN_005ba590(void)
 
 {
   CDemonTriangle *triangle;

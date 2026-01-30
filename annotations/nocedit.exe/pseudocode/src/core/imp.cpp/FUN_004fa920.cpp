@@ -1,15 +1,15 @@
 // Name: core_imp.cpp_FUN_004fa920
 // Address: 004fa920
 // Address Range: [[004fa920, 004faaef]]
-// Convention: unknown
-// Signature: void core_imp_cpp_FUN_004fa920(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_imp_cpp_FUN_004fa920(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_imp.cpp_FUN_004fa920(uint param_1, uint param_2)
     */
 
-void core_imp_cpp_FUN_004fa920(void)
+void __cdecl core_imp_cpp_FUN_004fa920(void)
 
 {
   int iVar1;

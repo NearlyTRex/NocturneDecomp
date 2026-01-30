@@ -1,12 +1,12 @@
 // Name: core_lever.cpp_FUN_00504dd0
 // Address: 00504dd0
 // Address Range: [[00504dd0, 00504e7f]]
-// Convention: unknown
-// Signature: CVector3f * core_lever_cpp_FUN_00504dd0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_lever_cpp_FUN_00504dd0(void)
 
 #include "nocturne.h"
 
-CVector3f * core_lever_cpp_FUN_00504dd0(void)
+CVector3f * __cdecl core_lever_cpp_FUN_00504dd0(void)
 
 {
   CKeyFramedModel *pCVar1;

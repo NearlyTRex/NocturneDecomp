@@ -72,9 +72,9 @@
         "0050ec0e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_melee.cpp_FUN_0050ebe0",
-    "signature": "void core_melee_cpp_FUN_0050ebe0(void)"
+    "signature": "void __cdecl core_melee_cpp_FUN_0050ebe0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -85,17 +85,15 @@
         "call_addr": "0050eb82",
         "call_type": "direct",
         "caller": "core_melee.cpp_FUN_0050eb50",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 4
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.0,
@@ -207,11 +205,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

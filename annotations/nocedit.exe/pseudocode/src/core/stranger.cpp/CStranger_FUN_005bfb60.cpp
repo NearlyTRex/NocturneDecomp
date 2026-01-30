@@ -1,14 +1,14 @@
 // Name: core_stranger.cpp_CStranger_FUN_005bfb60
 // Address: 005bfb60
 // Address Range: [[005bfb60, 005bfe1c] [005bfe53, 005c02ae]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_FUN_005bfb60(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bfb60(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005bfb60(CStranger* param_1) */
 
-void core_stranger_cpp_CStranger_FUN_005bfb60(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005bfb60(void)
 
 {
   CMotionController *this_ptr;
@@ -173,7 +173,7 @@ LAB_005bfd3a:
     if (0.0 < fVar1) {
       local_100 = ((fVar1 - 0.2617994) / (1.22173f - 0.2617994)) * 0.6;
     }
-    local_18 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
+    local_18 = core_charactr_cpp_CCharacter_FUN_0042e840();
     local_100 = (1.0 - local_18) * local_f8 * local_100;
     if (0.0 < local_100) {
       pcVar15 = core_stranger_cpp_FUN_005baee0;
@@ -215,7 +215,7 @@ LAB_005bfd3a:
   iVar4 = *(int *)(in_stack_00000004 + 0x2a8c);
   if ((((iVar4 == 3) || (iVar4 == 4)) || ((iVar4 == 9 || ((iVar4 == 6 || (iVar4 == 7)))))) ||
      (iVar4 == 8)) {
-    local_18 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
+    local_18 = core_charactr_cpp_CCharacter_FUN_0042e840();
     local_38 = (1.0 - local_18) * local_f8;
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
               (*(float *)(in_stack_00000004 + 0x1fbf0),&local_80);

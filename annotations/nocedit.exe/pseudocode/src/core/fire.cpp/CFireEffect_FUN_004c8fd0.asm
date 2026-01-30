@@ -41,7 +41,7 @@ section .text
     ADD EAX,0x2d715bc                   ; 004c8ffa | g_LightningBoltPool
     PUSH EAX                            ; 004c8fff
     CALL core_fire.cpp_FUN_004c5680     ; 004c9000
-        ;   XREF to: 004c5680 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c5680()
+        ;   XREF to: 004c5680 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004c5680()
     MOV EBX,dword ptr [0x02d715b8]      ; 004c9005 | g_GunFlameActiveListHead
     INC EBX                             ; 004c900b
     ADD ESP,0x14                        ; 004c900c

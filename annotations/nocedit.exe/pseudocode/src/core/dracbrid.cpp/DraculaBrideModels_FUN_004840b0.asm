@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
+; __cdecl void __cdecl core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

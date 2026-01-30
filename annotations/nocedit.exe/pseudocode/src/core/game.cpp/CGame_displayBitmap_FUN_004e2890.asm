@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
+; __cdecl void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
 ;
 ;
 ; XREF[1]:

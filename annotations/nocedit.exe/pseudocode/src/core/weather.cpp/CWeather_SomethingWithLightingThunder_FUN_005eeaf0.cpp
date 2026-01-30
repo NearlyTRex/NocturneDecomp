@@ -1,15 +1,15 @@
 // Name: core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0
 // Address: 005eeaf0
 // Address Range: [[005eeaf0, 005eec56] [005eec84, 005eede0] [005eee7c, 005eeeae]]
-// Convention: unknown
-// Signature: void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte core_weather.cpp_CWeather_SomethingWithLightingThunder(CWeather* param_1)
     */
 
-void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
+void __cdecl core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
 
 {
   float fVar1;

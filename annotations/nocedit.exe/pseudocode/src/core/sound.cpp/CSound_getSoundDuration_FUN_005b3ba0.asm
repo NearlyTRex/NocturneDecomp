@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_mobster.cpp_FUN_005279f0 at 00527a90
-;   core_script.cpp_FUN_0055ff00 at 0055ff90
+;   core_script.cpp_CScript_FUN_0055ff00 at 0055ff90
 ;
 ; Referenced Globals:
 ;   char[256] g_CharacterClassificationTable

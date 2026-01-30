@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_mobster_cpp_FUN_00526d90(void)
+; __cdecl int __cdecl core_mobster_cpp_FUN_00526d90(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -206,11 +206,11 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 00526fc1
     PUSH EAX                            ; 00526fc5
     CALL core_bodypart.cpp_FUN_0041b540 ; 00526fc6
-        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b540()
+        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b540()
     ADD ESP,0xc                         ; 00526fcb
     PUSH EAX                            ; 00526fce
     CALL core_bodypart.cpp_FUN_0041b4e0 ; 00526fcf
-        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b4e0()
+        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b4e0()
     ADD ESP,0xc                         ; 00526fd4
     LEA EAX,[ESP + 0x6c]                ; 00526fd7
     PUSH EAX                            ; 00526fdb

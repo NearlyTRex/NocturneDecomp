@@ -12,6 +12,7 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d76e0(COptimize *this_ptr)
   int iVar1;
   void *pvVar2;
   void *pvVar3;
+  int extraout_EAX;
   int in_stack_00000008;
   
   pvVar2 = realloc(this_ptr->unk6,(this_ptr->unk5 + 1) * 4);
@@ -20,7 +21,8 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d76e0(COptimize *this_ptr)
       pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34);
       in_stack_00000008 = 0;
       if (pvVar3 != (void *)0x0) {
-        in_stack_00000008 = shape_superopt_cpp_FUN_005c79a0();
+        shape_superopt_cpp_FUN_005c79a0();
+        in_stack_00000008 = extraout_EAX;
       }
       if (in_stack_00000008 == 0) {
         return;

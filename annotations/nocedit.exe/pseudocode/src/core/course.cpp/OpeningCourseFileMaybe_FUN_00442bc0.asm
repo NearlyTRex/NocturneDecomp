@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
+; __cdecl int __cdecl core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x184]:1  local_184

@@ -1,12 +1,12 @@
 // Name: core_mobster.cpp_FUN_005250a0
 // Address: 005250a0
 // Address Range: [[005250a0, 0052510d]]
-// Convention: unknown
-// Signature: float * core_mobster_cpp_FUN_005250a0(void)
+// Convention: __cdecl
+// Signature: float * __cdecl core_mobster_cpp_FUN_005250a0(void)
 
 #include "nocturne.h"
 
-float * core_mobster_cpp_FUN_005250a0(void)
+float * __cdecl core_mobster_cpp_FUN_005250a0(void)
 
 {
   float fVar1;

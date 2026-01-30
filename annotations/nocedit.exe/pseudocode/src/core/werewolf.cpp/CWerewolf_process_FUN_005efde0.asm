@@ -481,7 +481,7 @@ section .text
     ADD ESP,0x8                         ; 005f01e4
     PUSH EBX                            ; 005f01e7
     CALL core_werewolf.cpp_FUN_005f1e40 ; 005f01e8
-        ;   XREF to: 005f1e40 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f1e40()
+        ;   XREF to: 005f1e40 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f1e40()
     FLD float ptr [EBP + 0x92]          ; 005f01ed
     FMUL double ptr [0x00657d9c]        ; 005f01f3 | DOUBLE_00657d9c
     FLD float ptr [EBX + 0xbf00]        ; 005f01f9
@@ -723,7 +723,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 005f080d | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 005f0813 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ede30     ; 005f0814
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ede30()
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
     ADD ESP,0xc                         ; 005f0819
     MOV dword ptr [EBX + 0xbe28],0x1    ; 005f081c
     JMP 0x005f0010                      ; 005f0826
@@ -840,7 +840,7 @@ section .text
     PUSH EBX                            ; 005f0942
         ;   Label: LAB_005f0942
     CALL core_werewolf.cpp_FUN_005f11e0 ; 005f0943
-        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f11e0()
+        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f11e0()
     ADD ESP,0x4                         ; 005f0948
     JMP 0x005f0906                      ; 005f094b
         ;   XREF to: 005f0906 (UNCONDITIONAL_JUMP)  ; LAB_005f0906
@@ -1126,7 +1126,7 @@ section .text
         ;   XREF to: 005f0c92 (CONDITIONAL_JUMP)  ; LAB_005f0c92
     PUSH EBX                            ; 005f0c89
     CALL core_werewolf.cpp_FUN_005f11e0 ; 005f0c8a
-        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f11e0()
+        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f11e0()
     ADD ESP,0x4                         ; 005f0c8f
     FLD float ptr [EBX + 0xbedc]        ; 005f0c92
         ;   Label: LAB_005f0c92
@@ -1140,7 +1140,7 @@ section .text
         ;   XREF to: 005f0010 (CONDITIONAL_JUMP)  ; LAB_005f0010
     PUSH EBX                            ; 005f0cb1
     CALL core_werewolf.cpp_FUN_005f11e0 ; 005f0cb2
-        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f11e0()
+        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f11e0()
     ADD ESP,0x4                         ; 005f0cb7
     JMP 0x005f0010                      ; 005f0cba
         ;   XREF to: 005f0010 (UNCONDITIONAL_JUMP)  ; LAB_005f0010
@@ -1403,7 +1403,7 @@ section .text
     PUSH EBX                            ; 005f0fae
         ;   Label: LAB_005f0fae
     CALL core_werewolf.cpp_FUN_005f11e0 ; 005f0faf
-        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005f11e0()
+        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f11e0()
     ADD ESP,0x4                         ; 005f0fb4
     JMP 0x005f0f78                      ; 005f0fb7
         ;   XREF to: 005f0f78 (UNCONDITIONAL_JUMP)  ; LAB_005f0f78

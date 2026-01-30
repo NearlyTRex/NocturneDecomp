@@ -1,0 +1,341 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 68,
+        "line": 36,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 23,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 25,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 27,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 38,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 42,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 41,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 49,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 51,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 127,
+    "complexity_score": 108,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 15,
+    "pseudocode_lines": 53,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 180
+  },
+  "cross_references": [
+    {
+      "addr": "00524760",
+      "from_addr": "00524873",
+      "name": "core_mission.cpp_CDemonMission_FUN_00524760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055a6c0",
+    "address_range": [
+      [
+        "0055a6c0",
+        "0055a80c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_FUN_0055a6c0",
+    "signature": "void __cdecl core_script_cpp_CScript_FUN_0055a6c0(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004dce70",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00560160",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00560160"
+    },
+    {
+      "addr": "0055a810",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_step_FUN_0055a810"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641a99",
+      "name": "s_initSection_00641a99",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641aa5",
+      "name": "s_initSectionEnd_00641aa5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641ab4",
+      "name": "s_core_script_cpp_00641ab4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641ac7",
+      "name": "s_Script_has_initSection_l_00641ac7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641b06",
+      "name": "s_core_script_cpp_00641b06",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641b19",
+      "name": "s_Error_processing_script__00641b19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641b56",
+      "name": "s_core_script_cpp_00641b56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641b69",
+      "name": "s_Infinite_loop_detected_i_00641b69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310ec9c",
+      "name": "DAT_0310ec9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310eca0",
+      "name": "DAT_0310eca0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0310f4a4",
+      "name": "DAT_0310f4a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00524873",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_FUN_00524760",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.040404040404041,
+    "instruction_count": 99,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 7,
+      "CBRANCH": 8,
+      "COPY": 82,
+      "INT_ADD": 35,
+      "INT_AND": 49,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 46,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 23,
+      "INT_SUB": 30,
+      "INT_XOR": 4,
+      "LOAD": 19,
+      "POPCOUNT": 23,
+      "RETURN": 2,
+      "STORE": 28
+    },
+    "pcode_op_count": 400
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0310ec9c",
+      "text": "DAT_0310ec9c = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_0310f4a4",
+      "text": "DAT_0310f4a4 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_0310eca0",
+      "text": "*(uint *)(*(int *)(this_ptr->unk4 + 0x1c) + 4 + iVar1 * 8),&DAT_0310eca0)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_0310f4a4",
+      "text": "if (DAT_0310f4a4 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0310f4a4",
+      "text": "DAT_0310f4a4 = 0;",
+      "type": "undefined_data"
+    }
+  ]
+}

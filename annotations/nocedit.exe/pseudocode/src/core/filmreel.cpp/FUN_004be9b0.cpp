@@ -1,15 +1,15 @@
 // Name: core_filmreel.cpp_FUN_004be9b0
 // Address: 004be9b0
 // Address Range: [[004be9b0, 004be9f9]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_FUN_004be9b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_filmreel_cpp_FUN_004be9b0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_filmreel.cpp_FUN_004be9b0(uint param_1, uint
    param_2) */
 
-void core_filmreel_cpp_FUN_004be9b0(void)
+void __cdecl core_filmreel_cpp_FUN_004be9b0(void)
 
 {
   CKeyFramedModel *pCVar1;

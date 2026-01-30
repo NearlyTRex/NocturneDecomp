@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_moloch_cpp_FUN_005293b0(void)
+; __cdecl void __cdecl core_moloch_cpp_FUN_005293b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74

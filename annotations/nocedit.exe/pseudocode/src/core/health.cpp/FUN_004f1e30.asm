@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_health_cpp_FUN_004f1e30(void)
+; __cdecl void __cdecl core_health_cpp_FUN_004f1e30(void)
 ;
 ;
 ; Called Functions:

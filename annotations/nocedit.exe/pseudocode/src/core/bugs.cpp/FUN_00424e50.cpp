@@ -1,15 +1,15 @@
 // Name: core_bugs.cpp_FUN_00424e50
 // Address: 00424e50
 // Address Range: [[00424e50, 00424fdf] [00425083, 004250d2]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_FUN_00424e50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_FUN_00424e50(void)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00424e50(uint param_1) */
 
-void core_bugs_cpp_FUN_00424e50(void)
+void __cdecl core_bugs_cpp_FUN_00424e50(void)
 
 {
   float fVar1;

@@ -38,7 +38,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2087
 ;   core_menu.cpp_showMainGameMenu_FUN_00512f40 at 005133ff
-;   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 at 0053ce34
+;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053ce34
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_noc_0062ca88
@@ -730,7 +730,7 @@ section .text
     MOV EDX,dword ptr [0x00680d50]      ; 004e1a2f | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 004e1a35 | g_CScriptInstance
     CALL core_script.cpp_CScript_loadState_FUN_00560820 ; 004e1a36
-        ;   XREF to: 00560820 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_loadState_FUN_00560820()
+        ;   XREF to: 00560820 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_loadState_FUN_00560820(CScript * this_ptr, _FILE * param_2)
     ADD ESP,0x8                         ; 004e1a3b
     MOV ECX,dword ptr [ESP + 0x604]     ; 004e1a3e
     CMP ECX,0x4                         ; 004e1a45
@@ -742,7 +742,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 004e1a51 | g_CGorePtr
     PUSH EDI                            ; 004e1a57 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ee1e0     ; 004e1a58
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ee1e0()
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_FUN_004ee1e0()
     ADD ESP,0x8                         ; 004e1a5d
     CMP dword ptr [ESP + 0x604],0x7     ; 004e1a60
         ;   Label: LAB_004e1a60
@@ -872,7 +872,7 @@ section .text
         ;   Label: LAB_004e1bef
     PUSH EBP                            ; 004e1bf5 | g_CGoreInstance
     CALL core_gore.cpp_FUN_004ed760     ; 004e1bf6
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed760()
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed760()
     ADD ESP,0x4                         ; 004e1bfb
     JMP 0x004e1a60                      ; 004e1bfe
         ;   XREF to: 004e1a60 (UNCONDITIONAL_JUMP)  ; LAB_004e1a60

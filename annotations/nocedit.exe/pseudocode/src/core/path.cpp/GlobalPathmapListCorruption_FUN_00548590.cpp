@@ -1,12 +1,12 @@
 // Name: core_path.cpp_GlobalPathmapListCorruption_FUN_00548590
 // Address: 00548590
 // Address Range: [[00548590, 005485ec]]
-// Convention: unknown
-// Signature: void core_path_cpp_GlobalPathmapListCorruption_FUN_00548590(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_path_cpp_GlobalPathmapListCorruption_FUN_00548590(void)
 
 #include "nocturne.h"
 
-void core_path_cpp_GlobalPathmapListCorruption_FUN_00548590(void)
+void __cdecl core_path_cpp_GlobalPathmapListCorruption_FUN_00548590(void)
 
 {
   uint *puVar1;

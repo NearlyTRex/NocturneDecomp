@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int core_flies_cpp_FUN_004cc300(void)
+; __cdecl int __cdecl core_flies_cpp_FUN_004cc300(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x58]:1  local_58
@@ -107,7 +107,7 @@ section .text
     PUSH ESI                            ; 004cc3ab | DAT_02d7a808 | DAT_02d7a828
     INC EBX                             ; 004cc3ac
     CALL core_spline.cpp_FUN_005b90a0   ; 004cc3ad
-        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_005b90a0()
+        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_FUN_005b90a0()
     ADD ESP,0xc                         ; 004cc3b2
     ADD ESI,0x20                        ; 004cc3b5
     CMP EBX,0x40                        ; 004cc3b8
@@ -212,7 +212,7 @@ section .text
     PUSH EAX                            ; 004cc52e | DAT_02d7afe8
     LEA EBX,[ESP + 0x84]                ; 004cc52f
     CALL core_spline.cpp_FUN_005b92d0   ; 004cc536
-        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_005b92d0()
+        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; float * core_spline.cpp_FUN_005b92d0()
     ADD ESP,0x18                        ; 004cc53b
     LEA EAX,[ESP + 0x60]                ; 004cc53e
     MOV EDX,dword ptr [0x006703ec]      ; 004cc542 | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -361,7 +361,7 @@ section .text
     PUSH EDI                            ; 004cc6e4
     PUSH ESI                            ; 004cc6e5
     CALL core_flies.cpp_FUN_004cc230    ; 004cc6e6
-        ;   XREF to: 004cc230 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc230()
+        ;   XREF to: 004cc230 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_FUN_004cc230()
     ADD ESP,0xc                         ; 004cc6eb
     JMP 0x004cc58d                      ; 004cc6ee
         ;   XREF to: 004cc58d (UNCONDITIONAL_JUMP)  ; LAB_004cc58d

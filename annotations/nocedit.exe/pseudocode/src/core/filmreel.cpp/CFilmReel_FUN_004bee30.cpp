@@ -1,15 +1,15 @@
 // Name: core_filmreel.cpp_CFilmReel_FUN_004bee30
 // Address: 004bee30
 // Address Range: [[004bee30, 004bee79]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_filmreel.cpp_CFilmReel_FUN_004bee30(uint param_1,
    uint param_2) */
 
-void core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
+void __cdecl core_filmreel_cpp_CFilmReel_FUN_004bee30(void)
 
 {
   CActorPropertyList *in_stack_00000008;

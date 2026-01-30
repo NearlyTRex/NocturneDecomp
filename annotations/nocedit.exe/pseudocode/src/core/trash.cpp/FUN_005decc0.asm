@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_trash_cpp_FUN_005decc0(void)
+; __cdecl void __cdecl core_trash_cpp_FUN_005decc0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

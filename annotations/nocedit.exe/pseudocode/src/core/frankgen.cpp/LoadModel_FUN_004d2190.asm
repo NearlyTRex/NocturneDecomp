@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_frankgen_cpp_LoadModel_FUN_004d2190(void)
+; __cdecl void __cdecl core_frankgen_cpp_LoadModel_FUN_004d2190(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x38]:1  local_38
@@ -61,7 +61,7 @@ section .text
     PUSH EBP                            ; 004d21b9
         ;   Label: LAB_004d21b9
     CALL core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430 ; 004d21ba
-        ;   XREF to: 004d2430 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430()
+        ;   XREF to: 004d2430 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430()
     ADD ESP,0xc                         ; 004d21bf
         ;   Label: LAB_004d21bf
     PUSH EBP                            ; 004d21c2
@@ -128,7 +128,7 @@ section .text
     PUSH 0x43030000                     ; 004d226a
     PUSH EBP                            ; 004d226f
     CALL core_frankgen.cpp_FUN_004d23a0 ; 004d2270
-        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004d23a0()
+        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004d23a0()
     JMP 0x004d21bf                      ; 004d2275
         ;   XREF to: 004d21bf (UNCONDITIONAL_JUMP)  ; LAB_004d21bf
     PUSH 0x445dc000                     ; 004d227a
@@ -136,7 +136,7 @@ section .text
     PUSH 0x4403c000                     ; 004d227f
     PUSH EBP                            ; 004d2284
     CALL core_frankgen.cpp_FUN_004d23a0 ; 004d2285
-        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004d23a0()
+        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004d23a0()
     JMP 0x004d21bf                      ; 004d228a
         ;   XREF to: 004d21bf (UNCONDITIONAL_JUMP)  ; LAB_004d21bf
     PUSH 0x44d9a000                     ; 004d228f
@@ -144,7 +144,7 @@ section .text
     PUSH 0x44882000                     ; 004d2294
     PUSH EBP                            ; 004d2299
     CALL core_frankgen.cpp_FUN_004d23a0 ; 004d229a
-        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004d23a0()
+        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004d23a0()
     JMP 0x004d21bf                      ; 004d229f
         ;   XREF to: 004d21bf (UNCONDITIONAL_JUMP)  ; LAB_004d21bf
     PUSH 0x43c80000                     ; 004d22a4
@@ -152,7 +152,7 @@ section .text
     PUSH 0x43af0000                     ; 004d22a9
     PUSH EBP                            ; 004d22ae
     CALL core_frankgen.cpp_FUN_004d23a0 ; 004d22af
-        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004d23a0()
+        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004d23a0()
     JMP 0x004d21bf                      ; 004d22b4
         ;   XREF to: 004d21bf (UNCONDITIONAL_JUMP)  ; LAB_004d21bf
     PUSH 0x44828000                     ; 004d22b9
@@ -160,7 +160,7 @@ section .text
     PUSH 0x44580000                     ; 004d22be
     PUSH EBP                            ; 004d22c3
     CALL core_frankgen.cpp_FUN_004d23a0 ; 004d22c4
-        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004d23a0()
+        ;   XREF to: 004d23a0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004d23a0()
     JMP 0x004d21bf                      ; 004d22c9
         ;   XREF to: 004d21bf (UNCONDITIONAL_JUMP)  ; LAB_004d21bf
     PUSH 0x44f14000                     ; 004d22ce

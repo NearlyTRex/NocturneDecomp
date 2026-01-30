@@ -1,15 +1,15 @@
 // Name: core_stranger.cpp_CStranger_FUN_005c51c0
 // Address: 005c51c0
 // Address Range: [[005c51c0, 005c5225]]
-// Convention: unknown
-// Signature: CVector3f * core_stranger_cpp_CStranger_FUN_005c51c0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c51c0(uint param_1,
    uint param_2) */
 
-CVector3f * core_stranger_cpp_CStranger_FUN_005c51c0(void)
+CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(void)
 
 {
   int in_stack_00000004;

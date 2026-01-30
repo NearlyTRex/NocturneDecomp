@@ -81,16 +81,16 @@ void __cdecl CPackedBitmapSet::ensureBitmapLoaded(CPackedBitmapSet *this_ptr,int
 
 // Original: cockpit_pkbmpset.cpp_FUN_0054c7a0
 // Address: 0054c7a0
-undefined4 FUN_0054c7a0(void);
+int __cdecl FUN_0054c7a0(void);
 
 // Original: cockpit_pkbmpset.cpp_FUN_0054c7b0
 // Address: 0054c7b0
-undefined4 FUN_0054c7b0(void);
+int __cdecl FUN_0054c7b0(void);
 
 // Original: cockpit_pkbmpset.cpp_FUN_0054c7c0
 // Address: 0054c7c0
-void FUN_0054c7c0(void);
+void __cdecl FUN_0054c7c0(void);
 
 // Original: cockpit_pkbmpset.cpp_FUN_0054c7d0
 // Address: 0054c7d0
-void FUN_0054c7d0(void);
+void __cdecl FUN_0054c7d0(void);

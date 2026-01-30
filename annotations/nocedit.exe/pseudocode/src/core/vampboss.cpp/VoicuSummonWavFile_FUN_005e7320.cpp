@@ -1,14 +1,14 @@
 // Name: core_vampboss.cpp_VoicuSummonWavFile_FUN_005e7320
 // Address: 005e7320
 // Address Range: [[005e7320, 005e7380]]
-// Convention: unknown
-// Signature: void core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_vampboss.cpp_VoicuSummonWavFile(uint param_1) */
 
-void core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320(void)
+void __cdecl core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320(void)
 
 {
   CDemonActor *pCVar1;

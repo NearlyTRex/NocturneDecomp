@@ -1,12 +1,12 @@
 // Name: engine_colquant.c_FUN_00440c80
 // Address: 00440c80
 // Address Range: [[00440c80, 00440db3]]
-// Convention: unknown
-// Signature: void engine_colquant_c_FUN_00440c80(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_colquant_c_FUN_00440c80(void)
 
 #include "nocturne.h"
 
-void engine_colquant_c_FUN_00440c80(void)
+void __cdecl engine_colquant_c_FUN_00440c80(void)
 
 {
   uint uVar1;
@@ -43,16 +43,16 @@ void engine_colquant_c_FUN_00440c80(void)
       local_14 = local_14 + 1;
     } while (local_14 < iVar4);
   }
-  in_stack_00000008 = in_stack_00000008 * 0x40;
+  iVar2 = in_stack_00000008 * 0x40;
   *(int *)(in_stack_00000004 + 0x4040 + in_stack_0000000c * 0x40) = iVar4;
-  iVar5 = *(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004);
+  iVar5 = *(int *)(iVar2 + 0x4044 + in_stack_00000004);
   *(int *)(in_stack_00000004 + 0x4044 + in_stack_0000000c * 0x40) =
-       iVar5 - (iVar4 - *(int *)(in_stack_00000008 + 0x4040 + in_stack_00000004));
-  *(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004) =
-       iVar4 - *(int *)(in_stack_00000008 + 0x4040 + in_stack_00000004);
+       iVar5 - (iVar4 - *(int *)(iVar2 + 0x4040 + in_stack_00000004));
+  *(int *)(iVar2 + 0x4044 + in_stack_00000004) =
+       iVar4 - *(int *)(iVar2 + 0x4040 + in_stack_00000004);
   engine_colquant_c_FUN_00441260();
   engine_colquant_c_FUN_00441260();
-  *(int *)(in_stack_00000008 + 0x4044 + in_stack_00000004) = iVar5;
+  *(int *)(iVar2 + 0x4044 + in_stack_00000004) = iVar5;
   engine_colquant_c_FUN_00441110();
   return;
 }

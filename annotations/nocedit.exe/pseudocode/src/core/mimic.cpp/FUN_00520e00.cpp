@@ -1,12 +1,12 @@
 // Name: core_mimic.cpp_FUN_00520e00
 // Address: 00520e00
 // Address Range: [[00520e00, 00520e1e]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_FUN_00520e00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_FUN_00520e00(void)
 
 #include "nocturne.h"
 
-void core_mimic_cpp_FUN_00520e00(void)
+void __cdecl core_mimic_cpp_FUN_00520e00(void)
 
 {
   uint *in_stack_00000004;

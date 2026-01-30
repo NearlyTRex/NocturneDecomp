@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_setedit_cpp_FUN_0057b410(void)
+; __cdecl void __cdecl core_setedit_cpp_FUN_0057b410(void)
 ;
 ;
 ; XREF[1]:
@@ -58,7 +58,7 @@ section .text
     PUSH EDI                            ; 0057b45e
     MOV dword ptr [EDI + 0x19a2c],ESI   ; 0057b45f
     CALL core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 ; 0057b465
-        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
+        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
     ADD ESP,0x8                         ; 0057b46a
     TEST EAX,EAX                        ; 0057b46d
     JZ 0x0057b4f4                       ; 0057b46f

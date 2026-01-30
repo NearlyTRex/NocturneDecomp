@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void core_course_cpp_CCourse_FUN_004427a0(void)
+; __cdecl void __cdecl core_course_cpp_CCourse_FUN_004427a0(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x98]:8  local_98

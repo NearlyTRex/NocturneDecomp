@@ -1,14 +1,14 @@
 // Name: core_gargoyle.cpp_CGargoyle_load_FUN_004e5470
 // Address: 004e5470
 // Address Range: [[004e5470, 004e5515]]
-// Convention: unknown
-// Signature: void core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_gargoyle.cpp_CGargoyle_load(CGargoyle* pGargoyle) */
 
-void core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
+void __cdecl core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
 
 {
   CDeformableModelInstance *model_ptr;

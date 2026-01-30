@@ -29,7 +29,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_005243a0(CDemonMission *this_ptr
   this_ptr->unk1[2] = '\0';
   this_ptr->unk1[3] = '\0';
   core_mission_cpp_CDemonMission_FUN_00523f50(this_ptr);
-  core_script_cpp_CScript_FreeSomething1_FUN_00559870();
+  core_script_cpp_CScript_FUN_00559870(g_CScriptPtr);
   core_mission_cpp_CDemonMission_FUN_00523cf0(this_ptr);
   this_ptr->unk1[0] = -1;
   this_ptr->unk1[1] = -1;

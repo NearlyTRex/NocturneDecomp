@@ -1,12 +1,12 @@
 // Name: core_health.cpp_FUN_004f1e30
 // Address: 004f1e30
 // Address Range: [[004f1e30, 004f1e4b]]
-// Convention: unknown
-// Signature: void core_health_cpp_FUN_004f1e30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_health_cpp_FUN_004f1e30(void)
 
 #include "nocturne.h"
 
-void core_health_cpp_FUN_004f1e30(void)
+void __cdecl core_health_cpp_FUN_004f1e30(void)
 
 {
   CDemonActor *in_stack_00000004;

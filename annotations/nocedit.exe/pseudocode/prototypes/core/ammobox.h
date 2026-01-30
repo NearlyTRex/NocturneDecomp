@@ -29,11 +29,11 @@ void __cdecl CAmmoBox::process(CAmmoBox *this_ptr,float delta_time);
 
 // Original: core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690
 // Address: 00411690
-void LogConsoleOpenPCTFile(undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, int param_5,float param_6);
+void __cdecl LogConsoleOpenPCTFile(void);
 
 // Original: core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700
 // Address: 00411700
-void AllocateMemoryMaybe(void);
+void __cdecl AllocateMemoryMaybe(void);
 
 // Original: core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820
 // Address: 00411820
@@ -57,11 +57,11 @@ int __cdecl CAmmoBox::canPickup(CAmmoBox *this_ptr);
 
 // Original: core_ammobox.cpp_FUN_00411a30
 // Address: 00411a30
-void FUN_00411a30(void);
+void __cdecl FUN_00411a30(void);
 
 // Original: core_ammobox.cpp_FUN_00411ab0
 // Address: 00411ab0
-undefined4 FUN_00411ab0(void);
+int __cdecl FUN_00411ab0(void);
 
 // Original: core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30
 // Address: 00411b30

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_procedur_cpp_FUN_00554620(void)
+; __cdecl float __cdecl core_procedur_cpp_FUN_00554620(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

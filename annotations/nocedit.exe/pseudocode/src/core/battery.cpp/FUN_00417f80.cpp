@@ -1,14 +1,14 @@
 // Name: core_battery.cpp_FUN_00417f80
 // Address: 00417f80
 // Address Range: [[00417f80, 00417fdb] [00417fe7, 00417ffb]]
-// Convention: unknown
-// Signature: int core_battery_cpp_FUN_00417f80(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_battery_cpp_FUN_00417f80(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_other_battery.cpp_FUN_00417f80(uint param_1) */
 
-int core_battery_cpp_FUN_00417f80(void)
+int __cdecl core_battery_cpp_FUN_00417f80(void)
 
 {
   CBoundingBox3D *this_ptr;

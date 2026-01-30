@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void shape_design_c_selectModelPart_FUN_0045de80(void)
+; __cdecl void __cdecl shape_design_c_selectModelPart_FUN_0045de80(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c

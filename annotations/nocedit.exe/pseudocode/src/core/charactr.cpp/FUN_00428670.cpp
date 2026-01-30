@@ -1,12 +1,12 @@
 // Name: core_charactr.cpp_FUN_00428670
 // Address: 00428670
 // Address Range: [[00428670, 004286d1]]
-// Convention: unknown
-// Signature: float core_charactr_cpp_FUN_00428670(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_charactr_cpp_FUN_00428670(void)
 
 #include "nocturne.h"
 
-float core_charactr_cpp_FUN_00428670(void)
+float __cdecl core_charactr_cpp_FUN_00428670(void)
 
 {
   float fVar1;

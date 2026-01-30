@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown float core_stairs_cpp_FUN_005ba590(void)
+; __cdecl float __cdecl core_stairs_cpp_FUN_005ba590(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30

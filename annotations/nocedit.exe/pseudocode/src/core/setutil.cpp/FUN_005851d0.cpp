@@ -1,12 +1,12 @@
 // Name: core_setutil.cpp_FUN_005851d0
 // Address: 005851d0
 // Address Range: [[005851d0, 005851e5]]
-// Convention: unknown
-// Signature: void core_setutil_cpp_FUN_005851d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setutil_cpp_FUN_005851d0(void)
 
 #include "nocturne.h"
 
-void core_setutil_cpp_FUN_005851d0(void)
+void __cdecl core_setutil_cpp_FUN_005851d0(void)
 
 {
   int in_stack_00000004;

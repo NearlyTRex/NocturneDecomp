@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown CDemonActorType * core_drip_cpp_FUN_0048dff0(void)
+; __cdecl CDemonActorType * __cdecl core_drip_cpp_FUN_0048dff0(void)
 ;
 ;
 ; Referenced Globals:

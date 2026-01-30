@@ -1,15 +1,15 @@
 // Name: core_ghoul.cpp_FUN_004e8bc0
 // Address: 004e8bc0
 // Address Range: [[004e8bc0, 004e8db6]]
-// Convention: unknown
-// Signature: int core_ghoul_cpp_FUN_004e8bc0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_ghoul_cpp_FUN_004e8bc0(void)
 
 #include "nocturne.h"
 
 /* Signature: byte actors_enemy_ghoul.cpp_FUN_004e8bc0(uint param_1, uint param_2)
     */
 
-int core_ghoul_cpp_FUN_004e8bc0(void)
+int __cdecl core_ghoul_cpp_FUN_004e8bc0(void)
 
 {
   CDeformableModelInstance *this_ptr;
